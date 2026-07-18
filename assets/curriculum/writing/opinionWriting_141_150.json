@@ -5,102 +5,102 @@
     "quests": [
         {
             "id": "WRT_OPINIONWRITING_L141_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "All fossil fuels should be phased out and banned within the next ten years.",
             "options": [
+                "A ten-year fossil fuel ban is technically impossible given current energy system dependency globally.",
                 "The scientific consensus is clear that continuing fossil fuel combustion makes climate targets unachievable.",
                 "An accelerated phase-out creates the urgent investment pressure needed to scale renewable alternatives.",
-                "A ten-year fossil fuel ban is technically impossible given current energy system dependency globally.",
                 "Abrupt phase-out without adequate alternatives causes energy poverty, economic collapse, and social unrest."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the scientific urgency case for rapid fossil fuel phase-out (Pros) and the technical and social feasibility concerns (Cons).",
             "explanation": "Scientific consensus makes continued fossil fuel use incompatible with climate targets, and urgency drives renewable scaling (Pros), but a ten-year ban is technically impossible globally, and abrupt phase-out without alternatives causes severe harm to the most vulnerable (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L141_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A rapid fossil fuel phase-out must be paired with just transition support for affected workers.",
             "options": [
+                "Just transition commitments are frequently made but insufficiently funded when implemented in practice.",
                 "Coal and oil workers in affected communities deserve retraining, income support, and economic alternatives.",
                 "A just transition that wins community support is essential for the political sustainability of climate policy.",
-                "Just transition commitments are frequently made but insufficiently funded when implemented in practice.",
                 "Transition support for fossil fuel workers competes with the enormous investment needed in renewable infrastructure."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Consider the just transition case for pairing phase-out with worker support (Pros) and the funding and competition concerns (Cons).",
             "explanation": "Fossil fuel workers and communities deserve genuine transition support, and just transitions are politically essential (Pros), but transition commitments are chronically underfunded and compete with the infrastructure investment urgently needed for clean energy (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L141_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Carbon capture and storage technology allows fossil fuels to continue within climate targets.",
             "options": [
-                "CCS technology can capture emissions from fossil fuel plants, enabling their continued operation at lower impact.",
-                "Investment in CCS buys time for renewable deployment without risking energy security or economic disruption.",
                 "CCS at scale is not yet technically demonstrated and remains very expensive per tonne of carbon captured.",
-                "Investing in CCS may delay the renewable energy deployment that is needed urgently and independently."
+                "Investing in CCS may delay the renewable energy deployment that is needed urgently and independently.",
+                "CCS technology can capture emissions from fossil fuel plants, enabling their continued operation at lower impact.",
+                "Investment in CCS buys time for renewable deployment without risking energy security or economic disruption."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about CCS as a fossil fuel continuation strategy (Pros) and the technical readiness and delay concerns (Cons).",
             "explanation": "CCS enables fossil fuel continuation at reduced emissions, buying time for renewable scaling without energy disruption (Pros), but CCS is not yet demonstrated at scale, is expensive, and investment in it may delay the urgent renewable deployment that is needed regardless (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L142_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Nuclear energy must be part of a realistic plan to address climate change.",
             "options": [
-                "Nuclear power provides reliable low-carbon baseload electricity that intermittent renewables cannot deliver alone.",
-                "Advanced nuclear technologies including SMRs promise lower costs, improved safety, and faster deployment.",
                 "Nuclear waste remains dangerously radioactive for thousands of years with no permanent storage solution.",
-                "The long construction timelines and enormous costs of nuclear plants make them too slow for the climate window."
+                "Nuclear power provides reliable low-carbon baseload electricity that intermittent renewables cannot deliver alone.",
+                "The long construction timelines and enormous costs of nuclear plants make them too slow for the climate window.",
+                "Advanced nuclear technologies including SMRs promise lower costs, improved safety, and faster deployment."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the reliable low-carbon baseload case for nuclear (Pros) and the waste and timeline concerns (Cons).",
             "explanation": "Nuclear delivers reliable low-carbon baseload and advanced technologies promise improved economics and safety (Pros), but unsolved long-term waste storage and decade-long construction times make nuclear too slow and problematic for urgent climate targets (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L142_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The risks of nuclear energy are exaggerated relative to the risks of climate change.",
             "options": [
-                "Nuclear power's safety record per unit of energy generated is statistically better than fossil fuels.",
-                "Abandoning nuclear in the name of safety while continuing coal combustion has demonstrably worse public health outcomes.",
                 "Nuclear accidents, while rare, can produce severe and long-lasting environmental and public health consequences.",
-                "Nuclear proliferation risks are real: civilian nuclear programmes can provide cover for weapons development."
+                "Nuclear proliferation risks are real: civilian nuclear programmes can provide cover for weapons development.",
+                "Nuclear power's safety record per unit of energy generated is statistically better than fossil fuels.",
+                "Abandoning nuclear in the name of safety while continuing coal combustion has demonstrably worse public health outcomes."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider whether nuclear risks are overstated relative to climate change risks (Pros) and the accident and proliferation concerns (Cons).",
             "explanation": "Nuclear's statistical safety record per unit of energy is better than fossil fuels, and abandoning nuclear for coal produces worse health outcomes (Pros), but rare nuclear accidents carry severe long-term consequences, and civilian programmes can enable weapons proliferation (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L142_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Investing in renewables, storage, and grids is a better use of capital than nuclear.",
@@ -119,26 +119,26 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L143_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Individual carbon footprints should be subject to legal annual limits.",
             "options": [
-                "Per-capita carbon limits ensure that climate responsibility is shared fairly across the entire population.",
-                "Individual limits remove the moral hazard of wealthy people buying unlimited carbon access through offsets.",
                 "Individual carbon limits are administratively impossible to monitor and enforce across all behaviours.",
-                "People in rural areas, cold climates, or physically demanding work cannot reduce their footprints as easily as urban professionals."
+                "Per-capita carbon limits ensure that climate responsibility is shared fairly across the entire population.",
+                "People in rural areas, cold climates, or physically demanding work cannot reduce their footprints as easily as urban professionals.",
+                "Individual limits remove the moral hazard of wealthy people buying unlimited carbon access through offsets."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the fairness and moral hazard case for individual carbon limits (Pros) and the enforceability and equity concerns (Cons).",
             "explanation": "Per-capita limits ensure fair shared responsibility and prevent wealthy individuals from offsetting without limits (Pros), but monitoring is administratively impossible, and rural, cold-climate, and manual workers cannot reduce footprints as easily as urban knowledge workers (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L143_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Carbon pricing is more effective and equitable than individual carbon limits.",
@@ -157,7 +157,7 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L143_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Personal carbon trading would be more equitable than either limits or pricing alone.",
@@ -176,64 +176,64 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L144_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "All large companies should be legally required to achieve net-zero emissions.",
             "options": [
                 "Mandatory net-zero requirements create clear and certain investment signals for corporate decarbonisation.",
-                "Legal requirements prevent the free rider problem of companies waiting for competitors to act first.",
                 "Small and medium enterprises lack the resources and expertise to achieve net-zero at the same pace as corporates.",
-                "Net-zero targets are vulnerable to gaming through creative accounting and low-quality carbon offsetting."
+                "Net-zero targets are vulnerable to gaming through creative accounting and low-quality carbon offsetting.",
+                "Legal requirements prevent the free rider problem of companies waiting for competitors to act first."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about mandatory net-zero requirements for large companies (Pros) and the SME and accounting integrity concerns (Cons).",
             "explanation": "Mandatory requirements create investment certainty and prevent free riding (Pros), but SMEs cannot move at the same pace as corporates, and net-zero accounting is routinely gamed through creative offsets (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L144_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Science-based targets are more rigorous than voluntary net-zero commitments.",
             "options": [
                 "Science-based targets require companies to align reductions with a credible 1.5°C pathway.",
-                "Third-party verification of science-based targets significantly reduces greenwashing risk.",
                 "Science-based target frameworks are complex and expensive to implement for smaller companies.",
+                "Third-party verification of science-based targets significantly reduces greenwashing risk.",
                 "The science-based target methodology itself contains contested assumptions about sectoral pathways."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider science-based targets as superior to voluntary net-zero commitments (Pros) and the complexity and methodology concerns (Cons).",
             "explanation": "Science-based targets align with credible climate pathways and third-party verification reduces greenwashing (Pros), but complexity and cost exclude smaller companies, and the methodology contains contested assumptions about how emission reductions should be distributed across sectors (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L144_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Supply chain decarbonisation requirements must accompany direct operational net-zero targets.",
             "options": [
-                "Scope 3 emissions from supply chains typically represent the majority of large companies' carbon impact.",
-                "Requiring supply chain decarbonisation creates economy-wide pressure that market incentives alone cannot generate.",
                 "Measuring Scope 3 emissions accurately is technically very difficult and data quality is often poor.",
-                "Compliance costs for supply chain requirements may push production to lower-regulation jurisdictions, worsening outcomes."
+                "Scope 3 emissions from supply chains typically represent the majority of large companies' carbon impact.",
+                "Compliance costs for supply chain requirements may push production to lower-regulation jurisdictions, worsening outcomes.",
+                "Requiring supply chain decarbonisation creates economy-wide pressure that market incentives alone cannot generate."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about supply chain decarbonisation as a necessary extension of corporate net-zero requirements (Pros) and the measurement and leakage concerns (Cons).",
             "explanation": "Supply chain emissions often dominate corporate carbon impact and systemic pressure requires extending targets beyond operations (Pros), but Scope 3 measurement is technically difficult, and compliance costs may relocate production to less-regulated regions, worsening global outcomes (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L145_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The sale of new petrol and diesel cars should be banned by 2035.",
@@ -252,159 +252,159 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L145_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The 2035 ICE ban should be brought forward to accelerate the clean transport transition.",
             "options": [
-                "Moving the deadline to 2030 creates greater urgency in the automotive industry and supply chain.",
-                "Earlier bans produce faster air quality improvements in urban areas with disproportionate pollution health impacts.",
                 "The automotive industry needs adequate lead time to retool manufacturing for electric vehicle production.",
-                "An earlier ban date risks stranding investment in ICE technology before alternatives are widely available."
+                "An earlier ban date risks stranding investment in ICE technology before alternatives are widely available.",
+                "Moving the deadline to 2030 creates greater urgency in the automotive industry and supply chain.",
+                "Earlier bans produce faster air quality improvements in urban areas with disproportionate pollution health impacts."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider the urgency case for moving the ICE ban forward to 2030 (Pros) and the industry readiness and stranded investment concerns (Cons).",
             "explanation": "An earlier deadline creates greater automotive industry urgency and faster urban air quality improvements (Pros), but manufacturers need lead time to retool factories, and accelerating the ban risks stranding substantial ICE manufacturing investment (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L145_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Technology neutrality is preferable to mandating electric vehicles through an ICE ban.",
             "options": [
                 "Technology neutrality allows hydrogen and other clean alternatives to compete alongside battery electric vehicles.",
-                "Mandating a specific technology through ICE bans risks backing the wrong horse if better alternatives emerge.",
                 "Electric vehicles are the most mature and commercially ready low-carbon transport alternative available.",
-                "Technology neutrality in practice delays action while awaiting the emergence of commercially perfect alternatives."
+                "Technology neutrality in practice delays action while awaiting the emergence of commercially perfect alternatives.",
+                "Mandating a specific technology through ICE bans risks backing the wrong horse if better alternatives emerge."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about technology neutrality versus a specific EV mandate (Pros for neutrality) and the maturity and delay concerns (Cons).",
             "explanation": "Technology neutrality allows hydrogen and other alternatives to compete and avoids mandating potentially inferior solutions (Pros), but EVs are already the most mature technology, and neutrality in practice delays necessary action while awaiting perfect alternatives (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L146_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Intensive factory farming of animals should be made illegal.",
             "options": [
-                "Factory farming inflicts systematic suffering on billions of sentient animals kept in inhumane conditions.",
-                "Intensive animal agriculture is a significant driver of greenhouse gas emissions, deforestation, and water pollution.",
                 "Banning intensive farming would dramatically increase food prices, affecting lower-income consumers most.",
-                "Many developing countries depend on affordable animal protein that intensive farming makes possible."
+                "Factory farming inflicts systematic suffering on billions of sentient animals kept in inhumane conditions.",
+                "Many developing countries depend on affordable animal protein that intensive farming makes possible.",
+                "Intensive animal agriculture is a significant driver of greenhouse gas emissions, deforestation, and water pollution."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the animal welfare and environmental case for banning factory farming (Pros) and the food cost and global access concerns (Cons).",
             "explanation": "Factory farming inflicts systematic animal suffering and drives major environmental harms (Pros), but banning it would dramatically increase food prices, hitting lower-income consumers hardest and limiting affordable protein access globally (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L146_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The environmental harms of industrial animal agriculture justify urgent regulatory intervention.",
             "options": [
                 "Livestock farming produces 14.5% of global greenhouse gas emissions, more than the entire transport sector.",
-                "Industrial animal agriculture drives catastrophic biodiversity loss through land clearance and monoculture feed crops.",
                 "Regulating rather than banning animal farming can deliver significant environmental improvements.",
-                "Consumer demand for cheap meat makes political intervention against industrial farming extremely difficult."
+                "Consumer demand for cheap meat makes political intervention against industrial farming extremely difficult.",
+                "Industrial animal agriculture drives catastrophic biodiversity loss through land clearance and monoculture feed crops."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider the environmental emergency case for intervening in industrial animal agriculture (Pros) and the regulatory and political concerns (Cons).",
             "explanation": "Livestock emissions exceed total transport and industrial animal farming devastates biodiversity (Pros), but regulation rather than banning can deliver improvements, and consumer demand for cheap meat makes ambitious political intervention extremely difficult (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L146_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A significant reduction in meat consumption is more achievable than banning intensive farming.",
             "options": [
                 "Reducing meat demand through taxation, education, and plant-based alternatives achieves environmental benefits.",
-                "A dietary shift away from meat is already occurring through market forces and changing consumer values.",
                 "Dietary change alone is insufficient given the scale and speed of transformation climate targets require.",
-                "Voluntary dietary change is slow and leaves intensive farming profitable and protected from regulation."
+                "Voluntary dietary change is slow and leaves intensive farming profitable and protected from regulation.",
+                "A dietary shift away from meat is already occurring through market forces and changing consumer values."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about demand reduction as an alternative to supply-side farming bans (Pros) and the scale and speed concerns (Cons).",
             "explanation": "Demand reduction through taxes, education, and plant-based alternatives leverages existing consumer trends (Pros), but voluntary dietary change is too slow and limited in scale to achieve the transformation that climate urgency requires (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L147_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Large-scale rewilding of natural landscapes should be a national environmental policy priority.",
             "options": [
                 "Rewilding at scale restores biodiversity, sequesters carbon, and rebuilds natural ecosystem services.",
-                "Large rewilded landscapes provide flood protection, water purification, and climate resilience benefits.",
                 "Rewilding of productive agricultural land threatens food security and rural livelihoods.",
+                "Large rewilded landscapes provide flood protection, water purification, and climate resilience benefits.",
                 "Rewilding programmes without adequate community consent and support create destructive conflicts."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about the biodiversity and ecosystem services case for rewilding (Pros) and the food security and community consent concerns (Cons).",
             "explanation": "Rewilding restores biodiversity, sequesters carbon, and delivers valuable ecosystem services including flood protection (Pros), but converting productive agricultural land threatens food security, and rewilding without community consent creates destructive and politically damaging conflicts (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L147_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Reintroducing apex predators is essential for genuine ecological restoration.",
             "options": [
                 "Apex predators regulate ecosystems through trophic cascades that rewilding without them cannot achieve.",
-                "Wolf reintroduction in Yellowstone demonstrates measurable and wide-ranging ecological benefits.",
                 "Reintroducing large predators poses genuine safety and livestock security risks for rural communities.",
+                "Wolf reintroduction in Yellowstone demonstrates measurable and wide-ranging ecological benefits.",
                 "Without adequate compensation and dialogue, predator reintroduction generates powerful opposition that undermines broader rewilding."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider the ecological necessity of apex predator reintroduction (Pros) and the safety and community relations concerns (Cons).",
             "explanation": "Apex predators drive ecological restoration through trophic cascades and Yellowstone demonstrates measurable benefits (Pros), but predators pose genuine safety and livestock risks, and inadequate community engagement generates opposition that undermines broader rewilding programmes (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L147_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Urban rewilding and green infrastructure provide rewilding benefits accessible to most citizens.",
             "options": [
-                "Urban nature corridors, green roofs, and rewilded parks deliver biodiversity near where most people live.",
-                "Urban rewilding provides accessible mental health and physical wellbeing benefits alongside ecological restoration.",
                 "Urban areas represent a small fraction of total land and cannot deliver the scale of ecosystem restoration needed.",
-                "Urban rewilding risks becoming a superficial substitute for the large-landscape transformation actually required."
+                "Urban rewilding risks becoming a superficial substitute for the large-landscape transformation actually required.",
+                "Urban nature corridors, green roofs, and rewilded parks deliver biodiversity near where most people live.",
+                "Urban rewilding provides accessible mental health and physical wellbeing benefits alongside ecological restoration."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about urban rewilding as an accessible rewilding approach (Pros) and its scale and substitution concerns (Cons).",
             "explanation": "Urban nature corridors and green infrastructure deliver biodiversity and wellbeing benefits near most citizens (Pros), but urban land is a tiny fraction of total land, and urban rewilding cannot deliver the ecosystem scale needed and risks becoming a cosmetic substitute for genuine large-landscape transformation (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L148_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Climate change education should be a compulsory part of the curriculum in every school.",
@@ -423,140 +423,140 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L148_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Climate anxiety in students is a serious concern that climate education must address.",
             "options": [
-                "Teaching climate change without emotional support and agency-building creates paralyzing anxiety in students.",
-                "Effective climate education must balance scientific honesty with empowerment and solution-focused thinking.",
                 "Avoiding difficult climate realities to protect students' wellbeing leaves them unprepared for the future.",
-                "Teacher training for emotionally sensitive climate education is currently inadequate and under-resourced."
+                "Teaching climate change without emotional support and agency-building creates paralyzing anxiety in students.",
+                "Teacher training for emotionally sensitive climate education is currently inadequate and under-resourced.",
+                "Effective climate education must balance scientific honesty with empowerment and solution-focused thinking."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider the climate anxiety dimension of climate education (Pros for balanced approach) and the avoidance and training concerns (Cons).",
             "explanation": "Climate education must pair scientific honesty with emotional support and solution focus to avoid paralysing anxiety (Pros), but softening difficult realities leaves students unprepared, and teachers currently lack adequate training for emotionally sensitive delivery (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L148_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Integrating climate content across all subjects is more effective than dedicated climate lessons.",
             "options": [
                 "Embedding climate into geography, science, economics, and humanities shows its relevance across all domains.",
-                "Cross-curricular integration avoids curriculum crowding while reinforcing climate literacy in multiple contexts.",
                 "Without dedicated climate lessons, coverage depends on individual teacher enthusiasm and varies enormously.",
+                "Cross-curricular integration avoids curriculum crowding while reinforcing climate literacy in multiple contexts.",
                 "Cross-curricular climate education without a dedicated lead champion can lack depth and coherence."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about cross-curricular climate integration versus dedicated lessons (Pros for integration) and the consistency and depth concerns (Cons).",
             "explanation": "Embedding climate across subjects demonstrates its universal relevance and avoids curriculum crowding (Pros), but without dedicated lessons coverage becomes inconsistent and teacher-dependent, and cross-curricular approaches often lack the depth that dedicated teaching provides (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L149_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Businesses that generate excessive waste should face substantial financial penalties.",
             "options": [
-                "Financial penalties provide powerful incentives for businesses to invest in waste reduction and circular design.",
-                "Polluter-pays principles ensure that businesses bear the cost of the waste they generate rather than the public.",
                 "Waste penalties fall hardest on small businesses that lack the resources to invest in waste reduction.",
-                "Poorly designed penalty systems create perverse incentives to conceal rather than reduce waste."
+                "Financial penalties provide powerful incentives for businesses to invest in waste reduction and circular design.",
+                "Poorly designed penalty systems create perverse incentives to conceal rather than reduce waste.",
+                "Polluter-pays principles ensure that businesses bear the cost of the waste they generate rather than the public."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the incentive and polluter-pays case for business waste penalties (Pros) and the small business and design concerns (Cons).",
             "explanation": "Waste penalties incentivise reduction and circular design through the polluter-pays principle (Pros), but small businesses face disproportionate burdens, and poorly designed systems incentivise concealment rather than genuine reduction (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L149_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Extended producer responsibility is more effective than waste penalties in reducing business waste.",
             "options": [
                 "EPR makes producers responsible for the full lifecycle of their products, including disposal and recycling.",
-                "End-of-life responsibility gives manufacturers strong design incentives to produce less waste from the outset.",
                 "EPR administrative complexity creates significant compliance costs that smaller businesses disproportionately bear.",
-                "EPR works only when recycling infrastructure meets the quality standards producers are required to fund."
+                "EPR works only when recycling infrastructure meets the quality standards producers are required to fund.",
+                "End-of-life responsibility gives manufacturers strong design incentives to produce less waste from the outset."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider EPR as superior to waste penalties for reducing business waste (Pros) and the complexity and infrastructure concerns (Cons).",
             "explanation": "EPR creates full lifecycle responsibility and motivates less wasteful product design from the outset (Pros), but administrative complexity disadvantages small businesses, and EPR requires recycling infrastructure of adequate quality to function (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L149_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Circular economy regulation would reduce waste more effectively than penalties or EPR alone.",
             "options": [
+                "Circular economy standards require extraordinary international coordination to prevent regulatory arbitrage.",
                 "Circular economy standards mandate design for repair, reuse, and recyclability across entire product categories.",
                 "System-level circular requirements prevent waste from being generated rather than managing it after creation.",
-                "Circular economy standards require extraordinary international coordination to prevent regulatory arbitrage.",
                 "Mandatory design standards may constrain innovation and prevent better solutions from emerging organically."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about circular economy regulation as the most effective waste reduction approach (Pros) and the coordination and innovation concerns (Cons).",
             "explanation": "Circular economy standards prevent waste generation through design requirements rather than managing it after creation (Pros), but international coordination requirements are immense, and mandatory design standards may constrain the innovation needed to find better solutions (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L150_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Binding international agreements are the only effective response to the climate crisis.",
             "options": [
-                "The global nature of climate change requires coordinated international action that national policies alone cannot deliver.",
-                "Binding treaties with verification mechanisms create the accountability necessary for genuine emission reductions.",
                 "No meaningful binding climate treaty with universal participation has been achieved despite decades of effort.",
-                "Countries routinely exit or undermine binding climate commitments when domestic political costs become apparent."
+                "Countries routinely exit or undermine binding climate commitments when domestic political costs become apparent.",
+                "The global nature of climate change requires coordinated international action that national policies alone cannot deliver.",
+                "Binding treaties with verification mechanisms create the accountability necessary for genuine emission reductions."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the necessity of binding international climate agreements (Pros) and the historical effectiveness concerns (Cons).",
             "explanation": "Climate change is inherently global and requires coordinated international commitment with accountability (Pros), but no binding universal climate treaty has succeeded, and countries abandon commitments when domestic political costs materialise (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L150_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "National policy and technology leadership can drive global climate action without binding treaties.",
             "options": [
                 "Countries that lead on clean technology create cheaper renewable energy that other nations adopt voluntarily.",
-                "Economic competitiveness in clean industries creates powerful incentives for global adoption without coercion.",
                 "Voluntary national action produces insufficient ambition and is not resilient to changes in national government.",
+                "Economic competitiveness in clean industries creates powerful incentives for global adoption without coercion.",
                 "Geopolitical competition between major powers undermines the cooperative climate action that is urgently needed."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider whether national technology leadership can substitute for binding treaties (Pros) and the ambition and geopolitical concerns (Cons).",
             "explanation": "Technology leadership makes clean energy cheaper globally and creates economic incentives for adoption (Pros), but voluntary action lacks ambition and resilience to political change, and great power competition undermines necessary cooperation (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L150_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Climate clubs among willing nations can create effective international pressure without universal treaties.",

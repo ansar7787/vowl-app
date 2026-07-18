@@ -5,7 +5,7 @@
     "quests": [
         {
             "id": "ACC_PITCHMODULATION_L41_Q1",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "It's a nice day, isn't it?",
@@ -18,11 +18,11 @@
             "correctAnswerIndex": 1,
             "hint": "The sun is clearly out - the speaker already knows the answer. Listen for the tag 'isn't it' to drop, not lift.",
             "explanation": "With clear sunshine all around, 'isn't it?' falls like a comment rather than a real question, since the speaker is already sure.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L41_Q2",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "You haven't seen my glasses, have you?",
@@ -35,11 +35,11 @@
             "correctAnswerIndex": 1,
             "hint": "The speaker has actually lost their glasses and doesn't know the answer. Listen for the tag 'have you' to lift at the end.",
             "explanation": "Because the speaker truly doesn't know where the glasses are, 'have you?' rises as a real request for information.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L41_Q3",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "This cake tastes great, doesn't it?",
@@ -52,11 +52,11 @@
             "correctAnswerIndex": 1,
             "hint": "The speaker is already enjoying the cake and expects agreement. The tag should fall like a shared opinion.",
             "explanation": "'Doesn't it?' falls here because the speaker is confidently sharing an opinion and expects the listener to agree.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L42_Q1",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "You're coming to the party, aren't you?",
@@ -69,11 +69,11 @@
             "correctAnswerIndex": 0,
             "hint": "The speaker assumes the answer is yes and is just double-checking casually. Expect the tag to fall.",
             "explanation": "'Aren't you?' falls because the speaker already assumes the listener is coming and is simply confirming a known plan.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L42_Q2",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "She didn't call you, did she?",
@@ -86,11 +86,11 @@
             "correctAnswerIndex": 1,
             "hint": "The speaker truly doesn't know whether the call happened. Listen for the tag 'did she' to lift at the end.",
             "explanation": "'Did she?' rises here because the speaker has no idea what happened and is genuinely asking for new information.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L42_Q3",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "That's the right address, isn't it?",
@@ -103,11 +103,11 @@
             "correctAnswerIndex": 1,
             "hint": "The speaker is fairly sure of the address and just wants a quick nod. Expect the tag to fall.",
             "explanation": "'Isn't it?' falls because the speaker is fairly confident already and simply wants the listener to confirm it.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L43_Q1",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "You can drive, can't you?",
@@ -120,11 +120,11 @@
             "correctAnswerIndex": 1,
             "hint": "The speaker assumes the answer is obviously yes. Listen for a falling tag, almost like a statement.",
             "explanation": "'Can't you?' falls because the speaker takes the answer for granted and is barely asking at all.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L43_Q2",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "We haven't met before, have we?",
@@ -137,11 +137,11 @@
             "correctAnswerIndex": 1,
             "hint": "The speaker truly can't remember whether they've met. Listen for the tag 'have we' to climb upward.",
             "explanation": "'Have we?' rises because the speaker genuinely isn't sure and is asking to find out for certain.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L43_Q3",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "It's getting late, isn't it?",
@@ -154,11 +154,11 @@
             "correctAnswerIndex": 0,
             "hint": "Both speakers can clearly see the time. The tag here just confirms what's already obvious.",
             "explanation": "'Isn't it?' falls because this is an obvious shared observation, not a real request for new information.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L44_Q1",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "You locked the door, didn't you?",
@@ -171,11 +171,11 @@
             "correctAnswerIndex": 0,
             "hint": "The speaker suddenly isn't sure and feels a flicker of worry. Listen for the tag to lift nervously.",
             "explanation": "'Didn't you?' rises here because a sudden doubt makes the speaker genuinely unsure, turning it into a real, anxious question.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L44_Q2",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "You finished the report, didn't you?",
@@ -188,11 +188,11 @@
             "correctAnswerIndex": 0,
             "hint": "The manager fully expects the work is done. Listen for the tag to fall like a quick confirmation.",
             "explanation": "'Didn't you?' falls because the speaker is confident the report is finished and is only checking out of habit.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L44_Q3",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "You're not allergic to nuts, are you?",
@@ -205,11 +205,11 @@
             "correctAnswerIndex": 0,
             "hint": "This matters for safety, so the speaker genuinely needs to know. Listen for the tag to rise carefully.",
             "explanation": "'Are you?' rises because allergy information is important and the speaker is genuinely checking before serving food.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L45_Q1",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "This is the right platform, isn't it?",
@@ -222,11 +222,11 @@
             "correctAnswerIndex": 0,
             "hint": "A traveler who isn't sure of the way will let the tag rise, asking for real reassurance.",
             "explanation": "'Isn't it?' rises because the traveler genuinely doesn't know if they're in the right place and needs a real answer.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L45_Q2",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "You take cards here, don't you?",
@@ -239,11 +239,11 @@
             "correctAnswerIndex": 0,
             "hint": "Most shops accept cards nowadays, so the shopper expects a 'yes'. Listen for the tag to fall.",
             "explanation": "'Don't you?' falls because the shopper is fairly confident cards are accepted and is simply confirming the obvious.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L45_Q3",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "You backed up the files, didn't you?",
@@ -256,11 +256,11 @@
             "correctAnswerIndex": 0,
             "hint": "Losing files would be a disaster, so the speaker is nervously checking. Listen for the tag to lift with worry.",
             "explanation": "'Didn't you?' rises because the speaker is genuinely worried and needs real reassurance, not just a casual nod.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L46_Q1",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "The meeting's at three, isn't it?",
@@ -273,11 +273,11 @@
             "correctAnswerIndex": 0,
             "hint": "The speaker isn't fully certain about the time and wants to confirm it for real. Listen for a rising tag.",
             "explanation": "'Isn't it?' rises because the speaker genuinely isn't sure of the time and is asking to avoid showing up wrong.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L46_Q2",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "You did your homework, didn't you?",
@@ -290,11 +290,11 @@
             "correctAnswerIndex": 0,
             "hint": "A parent who expects the answer to be yes will let the tag fall, almost like a gentle reminder.",
             "explanation": "'Didn't you?' falls because the parent expects a 'yes' and is using the tag mainly as a gentle prompt.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L46_Q3",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "Grandma's visiting this weekend, isn't she?",
@@ -307,11 +307,11 @@
             "correctAnswerIndex": 0,
             "hint": "This is a known family plan, so the speaker just wants a quick nod. Listen for the tag to fall.",
             "explanation": "'Isn't she?' falls because this is an already-known plan, so the tag simply confirms shared information.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L47_Q1",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "That movie was fantastic, wasn't it?",
@@ -324,11 +324,11 @@
             "correctAnswerIndex": 0,
             "hint": "The speaker clearly loved the movie and expects agreement. Listen for the tag to fall with confidence.",
             "explanation": "'Wasn't it?' falls because the speaker is confidently sharing an enthusiastic opinion, expecting the listener to agree.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L47_Q2",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "You're feeling better today, aren't you?",
@@ -341,11 +341,11 @@
             "correctAnswerIndex": 0,
             "hint": "When someone has been unwell, this question is asked with real concern. Listen for the tag to lift gently.",
             "explanation": "'Aren't you?' rises because the speaker genuinely wants to know how the person is doing, not just confirm an assumption.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L47_Q3",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "You closed the windows, didn't you?",
@@ -358,11 +358,11 @@
             "correctAnswerIndex": 0,
             "hint": "Dark clouds are rolling in and the speaker suddenly isn't sure. Listen for a worried, rising tag.",
             "explanation": "'Didn't you?' rises because sudden worry about the weather makes the speaker genuinely unsure and in need of reassurance.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L48_Q1",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "We still have time to catch the train, don't we?",
@@ -375,11 +375,11 @@
             "correctAnswerIndex": 0,
             "hint": "A traveler glancing nervously at the clock genuinely doesn't know the answer. Listen for the tag to rise.",
             "explanation": "'Don't we?' rises because the anxious traveler genuinely isn't sure there's enough time and needs a real answer.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L48_Q2",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "This jacket suits me, doesn't it?",
@@ -392,11 +392,11 @@
             "correctAnswerIndex": 0,
             "hint": "The shopper already feels good about the jacket and just wants praise. Listen for the tag to fall confidently.",
             "explanation": "'Doesn't it?' falls because the speaker already believes the jacket suits them and is simply inviting a compliment.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L48_Q3",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "You sent the email already, didn't you?",
@@ -409,11 +409,11 @@
             "correctAnswerIndex": 0,
             "hint": "The speaker is fairly sure the task is done and is just checking it off. Listen for the tag to fall.",
             "explanation": "'Didn't you?' falls because the speaker confidently assumes the email was already sent and is simply confirming it.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L49_Q1",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "You charged your phone, didn't you?",
@@ -426,11 +426,11 @@
             "correctAnswerIndex": 0,
             "hint": "A low battery before an important call makes the speaker genuinely uneasy. Listen for a rising, worried tag.",
             "explanation": "'Didn't you?' rises because the speaker is genuinely worried the phone might be dead and needs a true answer.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L49_Q2",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "Dad's cooking tonight, isn't he?",
@@ -443,11 +443,11 @@
             "correctAnswerIndex": 1,
             "hint": "This is part of the usual family routine, so the speaker just wants a quick nod. Listen for the tag to fall.",
             "explanation": "'Isn't he?' falls because this follows a known routine, so the tag merely confirms what's already expected.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L49_Q3",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "This isn't too spicy for you, is it?",
@@ -460,11 +460,11 @@
             "correctAnswerIndex": 1,
             "hint": "A thoughtful host genuinely wants to know before someone takes a bite. Listen for the tag to lift with real concern.",
             "explanation": "'Is it?' rises because the host genuinely doesn't know the guest's spice tolerance and is asking for real feedback.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L50_Q1",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "The exam's next Monday, isn't it?",
@@ -477,11 +477,11 @@
             "correctAnswerIndex": 0,
             "hint": "The student isn't completely sure of the date and is checking to avoid a mistake. Listen for the tag to rise.",
             "explanation": "'Isn't it?' rises because the student genuinely isn't certain of the exam date and wants a real confirmation.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L50_Q2",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "You'll be home for dinner, won't you?",
@@ -494,11 +494,11 @@
             "correctAnswerIndex": 1,
             "hint": "A parent expecting the usual routine will let the tag fall, almost like a gentle reminder.",
             "explanation": "'Won't you?' falls because the speaker confidently expects the usual routine and is simply reminding, not really asking.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "A falling tag suggests the speaker is confident and simply expects agreement; a rising tag suggests genuine uncertainty and a real request for an answer."
         },
         {
             "id": "ACC_PITCHMODULATION_L50_Q3",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "That was a great concert, wasn't it?",
@@ -511,7 +511,7 @@
             "correctAnswerIndex": 1,
             "hint": "The speaker clearly enjoyed the show and expects agreement. Listen for a confident, falling tag.",
             "explanation": "'Wasn't it?' falls because the speaker is confidently sharing enjoyment and expects the listener to feel the same way.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Tag questions fall when they're really comments in disguise, and rise when the speaker truly doesn't know the answer."
         }
     ]
 }

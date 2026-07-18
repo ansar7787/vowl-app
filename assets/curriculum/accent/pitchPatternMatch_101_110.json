@@ -8,720 +8,720 @@
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Despite your doubts, I did lock the door.",
-            "textToSpeak": "Despite your doubts, I did lock the door.",
+            "word": "The long-awaited package finally arrives on Thursday.",
+            "textToSpeak": "The long-awaited package finally arrives on Thursday.",
             "options": [
-                "Emphasis on DID (Auxiliary/Polarity focus)",
-                "Emphasis on DOOR (Object focus)"
+                "Emphasis on THURSDAY (Time focus)",
+                "Emphasis on PACKAGE (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on THURSDAY (Time focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'Despite your doubts' signals the speaker is pushing back against disbelief. Listen for a strong pitch peak on 'did'.",
-            "explanation": "To emphatically counter doubt, English stresses the auxiliary 'did' itself, not the object 'door'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence has no contrast or correction — so, as always, listen for the peak on the very last content word, whatever role it plays.",
+            "explanation": "THURSDAY is the final content word here, so it takes the nuclear stress — its job as Time focus doesn't change the default rule.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_302",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Contrary to what you think, she does understand French.",
-            "textToSpeak": "Contrary to what you think, she does understand French.",
+            "word": "She handed the traffic officer her expired license.",
+            "textToSpeak": "She handed the traffic officer her expired license.",
             "options": [
-                "Emphasis on FRENCH (Object focus)",
-                "Emphasis on DOES (Auxiliary/Polarity focus)"
+                "Emphasis on OFFICER (Recipient focus)",
+                "Emphasis on LICENSE (Item focus)"
             ],
-            "correctAnswer": "Emphasis on DOES (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on LICENSE (Item focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                3,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'Contrary to what you think' signals a pushback against a wrong belief. Listen for the pitch to peak on 'does'.",
-            "explanation": "The auxiliary 'does' carries the nuclear stress here, emphatically confirming the fact against the listener's wrong belief.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Focus on the last meaningful word in the sentence, not the earlier one — that's usually where the peak sits.",
+            "explanation": "With no special contrast in this sentence, the pitch peak still falls on LICENSE, the Item detail that closes it.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_303",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I promise you, we have finished the project.",
-            "textToSpeak": "I promise you, we have finished the project.",
+            "word": "The follow-up interview took place at headquarters.",
+            "textToSpeak": "The follow-up interview took place at headquarters.",
             "options": [
-                "Emphasis on PROJECT (Object focus)",
-                "Emphasis on HAVE (Auxiliary/Polarity focus)"
+                "Emphasis on HEADQUARTERS (Place focus)",
+                "Emphasis on INTERVIEW (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on HAVE (Auxiliary/Polarity focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on HEADQUARTERS (Place focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'I promise you' signals the speaker is reassuring against doubt. Listen for the pitch to peak on 'have'.",
-            "explanation": "'Have' takes the nuclear stress as an emphatic reassurance, not the object 'project'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "One of these two words simply appears earlier; the real peak is on the detail added at the end.",
+            "explanation": "INTERVIEW appears earlier in the sentence, so the stress lands on HEADQUARTERS, the word that ends it — here, a Place focus.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_304",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Despite what they said, he can swim.",
-            "textToSpeak": "Despite what they said, he can swim.",
+            "word": "The on-call technician solved the network issue quickly.",
+            "textToSpeak": "The on-call technician solved the network issue quickly.",
             "options": [
-                "Emphasis on SWIM (Verb focus)",
-                "Emphasis on CAN (Auxiliary/Polarity focus)"
+                "Emphasis on TECHNICIAN (Subject focus)",
+                "Emphasis on QUICKLY (Manner focus)"
             ],
-            "correctAnswer": "Emphasis on CAN (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on QUICKLY (Manner focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                3,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'Despite what they said' signals a correction of a false claim. Listen for the pitch to peak sharply on 'can'.",
-            "explanation": "The auxiliary 'can' carries the nuclear stress, emphatically contradicting the earlier claim, rather than the verb 'swim'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Whether it's a time, a place, a manner, or something else, the last content word usually wins the stress in a neutral sentence.",
+            "explanation": "Whatever grammatical role it plays, the last content word attracts the stress; here that's QUICKLY, functioning as Manner focus.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_305",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Contrary to popular belief, the team will win the match.",
-            "textToSpeak": "Contrary to popular belief, the team will win the match.",
+            "word": "Without any warning at all, the storm suddenly intensified.",
+            "textToSpeak": "Without any warning at all, the storm suddenly intensified.",
             "options": [
-                "Emphasis on MATCH (Object focus)",
-                "Emphasis on WILL (Auxiliary/Polarity focus)"
+                "Emphasis on INTENSIFIED (Verb focus)",
+                "Emphasis on STORM (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on WILL (Auxiliary/Polarity focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on INTENSIFIED (Verb focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'Contrary to popular belief' signals pushback against a common assumption. Listen for the pitch to peak on 'will'.",
-            "explanation": "'Will' takes the nuclear stress as an emphatic prediction against popular doubt, not the object 'match'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Say the sentence naturally — your voice should build toward whatever detail comes last.",
+            "explanation": "The sentence saves its strongest beat for INTENSIFIED, the closing Verb detail, rather than STORM earlier on.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_306",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I assure you, I did pay the bill.",
-            "textToSpeak": "I assure you, I did pay the bill.",
+            "word": "The Saturday farmers market relocated to the harbor.",
+            "textToSpeak": "The Saturday farmers market relocated to the harbor.",
             "options": [
-                "Emphasis on BILL (Object focus)",
-                "Emphasis on DID (Auxiliary/Polarity focus)"
+                "Emphasis on MARKET (Subject focus)",
+                "Emphasis on HARBOR (Place focus)"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on HARBOR (Place focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                3,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'I assure you' signals reassurance against suspicion. Listen for the pitch to peak on 'did'.",
-            "explanation": "The auxiliary 'did' carries the nuclear stress here as an emphatic confirmation, not the object 'bill'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Don't be pulled toward the earlier word. Listen for where the pitch actually lifts near the end.",
+            "explanation": "HARBOR is the final content word here, so it takes the nuclear stress — its job as Place focus doesn't change the default rule.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_307",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Despite your concerns, the doctor has examined the patient.",
-            "textToSpeak": "Despite your concerns, the doctor has examined the patient.",
+            "word": "The new memory-foam mattress feels surprisingly firm.",
+            "textToSpeak": "The new memory-foam mattress feels surprisingly firm.",
             "options": [
-                "Emphasis on PATIENT (Object focus)",
-                "Emphasis on HAS (Auxiliary/Polarity focus)"
+                "Emphasis on FIRM (Complement focus)",
+                "Emphasis on MATTRESS (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on HAS (Auxiliary/Polarity focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on FIRM (Complement focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'Despite your concerns' signals reassurance against worry. Listen for the pitch to peak on 'has'.",
-            "explanation": "'Has' takes the nuclear stress as an emphatic reassurance, not the object 'patient'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is still the same rule as always: the final content word carries the emphasis, regardless of its grammatical job.",
+            "explanation": "With no special contrast in this sentence, the pitch peak still falls on FIRM, the Complement detail that closes it.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_308",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Contrary to expectations, the kids did finish their homework.",
-            "textToSpeak": "Contrary to expectations, the kids did finish their homework.",
+            "word": "The downtown flagship store closes at midnight.",
+            "textToSpeak": "The downtown flagship store closes at midnight.",
             "options": [
-                "Emphasis on HOMEWORK (Object focus)",
-                "Emphasis on DID (Auxiliary/Polarity focus)"
+                "Emphasis on STORE (Subject focus)",
+                "Emphasis on MIDNIGHT (Time focus)"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on MIDNIGHT (Time focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                3,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'Contrary to expectations' signals a surprising confirmation. Listen for the pitch to peak sharply on 'did'.",
-            "explanation": "The auxiliary 'did' carries the nuclear stress, emphatically confirming the unexpected fact, not the object 'homework'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Don't let the sentence type distract you — the peak is still on the last important word.",
+            "explanation": "STORE appears earlier in the sentence, so the stress lands on MIDNIGHT, the word that ends it — here, a Time focus.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_309",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I promise you, the company will deliver the package.",
-            "textToSpeak": "I promise you, the company will deliver the package.",
+            "word": "The exhausted toddler ate her entire lunch messily.",
+            "textToSpeak": "The exhausted toddler ate her entire lunch messily.",
             "options": [
-                "Emphasis on WILL (Auxiliary/Polarity focus)",
-                "Emphasis on PACKAGE (Object focus)"
+                "Emphasis on MESSILY (Manner focus)",
+                "Emphasis on TODDLER (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on WILL (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on MESSILY (Manner focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'I promise you' signals a firm reassurance. Listen for the pitch to peak on 'will'.",
-            "explanation": "'Will' takes the nuclear stress as an emphatic promise, not the object 'package'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence has no contrast or correction — so, as always, listen for the peak on the very last content word, whatever role it plays.",
+            "explanation": "Whatever grammatical role it plays, the last content word attracts the stress; here that's MESSILY, functioning as Manner focus.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_310",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Despite the rumors, she does enjoy her job.",
-            "textToSpeak": "Despite the rumors, she does enjoy her job.",
+            "word": "The rescheduled wedding will take place upstairs instead.",
+            "textToSpeak": "The rescheduled wedding will take place upstairs instead.",
             "options": [
-                "Emphasis on JOB (Object focus)",
-                "Emphasis on DOES (Auxiliary/Polarity focus)"
+                "Emphasis on WEDDING (Subject focus)",
+                "Emphasis on UPSTAIRS (Place focus)"
             ],
-            "correctAnswer": "Emphasis on DOES (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on UPSTAIRS (Place focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                3,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'Despite the rumors' signals a correction of gossip. Listen for the pitch to peak on 'does'.",
-            "explanation": "The auxiliary 'does' carries the nuclear stress, emphatically countering the rumor, not the object 'job'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Focus on the last meaningful word in the sentence, not the earlier one — that's usually where the peak sits.",
+            "explanation": "The sentence saves its strongest beat for UPSTAIRS, the closing Place detail, rather than WEDDING earlier on.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_311",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Contrary to what you heard, we have booked the flight.",
-            "textToSpeak": "Contrary to what you heard, we have booked the flight.",
+            "word": "I told the emergency room nurse my symptoms.",
+            "textToSpeak": "I told the emergency room nurse my symptoms.",
             "options": [
-                "Emphasis on FLIGHT (Object focus)",
-                "Emphasis on HAVE (Auxiliary/Polarity focus)"
+                "Emphasis on SYMPTOMS (Item focus)",
+                "Emphasis on NURSE (Recipient focus)"
             ],
-            "correctAnswer": "Emphasis on HAVE (Auxiliary/Polarity focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on SYMPTOMS (Item focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'Contrary to what you heard' signals a correction of misinformation. Listen for the pitch to peak on 'have'.",
-            "explanation": "'Have' takes the nuclear stress as an emphatic correction, not the object 'flight'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "One of these two words simply appears earlier; the real peak is on the detail added at the end.",
+            "explanation": "SYMPTOMS is the final content word here, so it takes the nuclear stress — its job as Item focus doesn't change the default rule.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_312",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I assure you, he did call the office.",
-            "textToSpeak": "I assure you, he did call the office.",
+            "word": "She returned the spare keys to the old landlord.",
+            "textToSpeak": "She returned the spare keys to the old landlord.",
             "options": [
-                "Emphasis on OFFICE (Object focus)",
-                "Emphasis on DID (Auxiliary/Polarity focus)"
+                "Emphasis on KEYS (Item focus)",
+                "Emphasis on LANDLORD (Recipient focus)"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on LANDLORD (Recipient focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                3,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'I assure you' signals reassurance against doubt. Listen for the pitch to peak on 'did'.",
-            "explanation": "The auxiliary 'did' carries the nuclear stress here as an emphatic confirmation, not the object 'office'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Whether it's a time, a place, a manner, or something else, the last content word usually wins the stress in a neutral sentence.",
+            "explanation": "With no special contrast in this sentence, the pitch peak still falls on LANDLORD, the Recipient detail that closes it.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_313",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Despite your skepticism, the medicine does work.",
-            "textToSpeak": "Despite your skepticism, the medicine does work.",
+            "word": "The international conference begins in early September.",
+            "textToSpeak": "The international conference begins in early September.",
             "options": [
-                "Emphasis on DOES (Auxiliary/Polarity focus)",
-                "Emphasis on WORK (Verb focus)"
+                "Emphasis on SEPTEMBER (Time focus)",
+                "Emphasis on CONFERENCE (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on DOES (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on SEPTEMBER (Time focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'Despite your skepticism' signals pushback against disbelief. Listen for the pitch to peak sharply on 'does'.",
-            "explanation": "The auxiliary 'does' carries the nuclear stress, emphatically confirming effectiveness, rather than the verb 'work'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Say the sentence naturally — your voice should build toward whatever detail comes last.",
+            "explanation": "CONFERENCE appears earlier in the sentence, so the stress lands on SEPTEMBER, the word that ends it — here, a Time focus.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_314",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Contrary to the report, the bridge has been inspected.",
-            "textToSpeak": "Contrary to the report, the bridge has been inspected.",
+            "word": "We showed the visiting clients the finished prototype.",
+            "textToSpeak": "We showed the visiting clients the finished prototype.",
             "options": [
-                "Emphasis on HAS (Auxiliary/Polarity focus)",
-                "Emphasis on INSPECTED (Verb focus)"
+                "Emphasis on CLIENTS (Recipient focus)",
+                "Emphasis on PROTOTYPE (Item focus)"
             ],
-            "correctAnswer": "Emphasis on HAS (Auxiliary/Polarity focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on PROTOTYPE (Item focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                3,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'Contrary to the report' signals a correction of a false claim. Listen for the pitch to peak on 'has'.",
-            "explanation": "'Has' takes the nuclear stress as an emphatic correction, not the participle 'inspected'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Don't be pulled toward the earlier word. Listen for where the pitch actually lifts near the end.",
+            "explanation": "Whatever grammatical role it plays, the last content word attracts the stress; here that's PROTOTYPE, functioning as Item focus.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_315",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I promise you, I will finish the report.",
-            "textToSpeak": "I promise you, I will finish the report.",
+            "word": "We delivered the heavy package to the wrong address.",
+            "textToSpeak": "We delivered the heavy package to the wrong address.",
             "options": [
-                "Emphasis on WILL (Auxiliary/Polarity focus)",
-                "Emphasis on REPORT (Object focus)"
+                "Emphasis on ADDRESS (Recipient focus)",
+                "Emphasis on PACKAGE (Item focus)"
             ],
-            "correctAnswer": "Emphasis on WILL (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on ADDRESS (Recipient focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'I promise you' signals a firm commitment. Listen for the pitch to peak on 'will'.",
-            "explanation": "'Will' takes the nuclear stress as an emphatic promise, not the object 'report'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is still the same rule as always: the final content word carries the emphasis, regardless of its grammatical job.",
+            "explanation": "The sentence saves its strongest beat for ADDRESS, the closing Recipient detail, rather than PACKAGE earlier on.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_316",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Despite his nerves, he did pass the exam.",
-            "textToSpeak": "Despite his nerves, he did pass the exam.",
+            "word": "The final exam results come out early tomorrow.",
+            "textToSpeak": "The final exam results come out early tomorrow.",
             "options": [
-                "Emphasis on DID (Auxiliary/Polarity focus)",
-                "Emphasis on EXAM (Object focus)"
+                "Emphasis on RESULTS (Subject focus)",
+                "Emphasis on TOMORROW (Time focus)"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on TOMORROW (Time focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                3,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'Despite his nerves' signals an unexpected but confirmed success. Listen for the pitch to peak sharply on 'did'.",
-            "explanation": "The auxiliary 'did' carries the nuclear stress, emphatically confirming the success, not the object 'exam'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Don't let the sentence type distract you — the peak is still on the last important word.",
+            "explanation": "TOMORROW is the final content word here, so it takes the nuclear stress — its job as Time focus doesn't change the default rule.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_317",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Contrary to what you assumed, they have already left.",
-            "textToSpeak": "Contrary to what you assumed, they have already left.",
+            "word": "As the long meeting continued, the early tension gradually eased.",
+            "textToSpeak": "As the long meeting continued, the early tension gradually eased.",
             "options": [
-                "Emphasis on HAVE (Auxiliary/Polarity focus)",
-                "Emphasis on LEFT (Verb focus)"
+                "Emphasis on EASED (Verb focus)",
+                "Emphasis on TENSION (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on HAVE (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on EASED (Verb focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'Contrary to what you assumed' signals a correction of a wrong guess. Listen for the pitch to peak on 'have'.",
-            "explanation": "'Have' takes the nuclear stress as an emphatic correction, not the verb 'left'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence has no contrast or correction — so, as always, listen for the peak on the very last content word, whatever role it plays.",
+            "explanation": "With no special contrast in this sentence, the pitch peak still falls on EASED, the Verb detail that closes it.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_318",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I assure you, the chef does taste every dish.",
-            "textToSpeak": "I assure you, the chef does taste every dish.",
+            "word": "Halfway through the trip, the rental engine unexpectedly stalled.",
+            "textToSpeak": "Halfway through the trip, the rental engine unexpectedly stalled.",
             "options": [
-                "Emphasis on DISH (Object focus)",
-                "Emphasis on DOES (Auxiliary/Polarity focus)"
+                "Emphasis on ENGINE (Subject focus)",
+                "Emphasis on STALLED (Verb focus)"
             ],
-            "correctAnswer": "Emphasis on DOES (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on STALLED (Verb focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                3,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'I assure you' signals reassurance against doubt about quality control. Listen for the pitch to peak on 'does'.",
-            "explanation": "The auxiliary 'does' carries the nuclear stress here as an emphatic reassurance, not the object 'dish'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Focus on the last meaningful word in the sentence, not the earlier one — that's usually where the peak sits.",
+            "explanation": "ENGINE appears earlier in the sentence, so the stress lands on STALLED, the word that ends it — here, a Verb focus.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_319",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Despite the delay, the train will arrive shortly.",
-            "textToSpeak": "Despite the delay, the train will arrive shortly.",
+            "word": "The regional tournament is being held entirely indoors.",
+            "textToSpeak": "The regional tournament is being held entirely indoors.",
             "options": [
-                "Emphasis on SHORTLY (Time focus)",
-                "Emphasis on WILL (Auxiliary/Polarity focus)"
+                "Emphasis on INDOORS (Place focus)",
+                "Emphasis on TOURNAMENT (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on WILL (Auxiliary/Polarity focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on INDOORS (Place focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'Despite the delay' signals reassurance against worry about lateness. Listen for the pitch to peak on 'will'.",
-            "explanation": "'Will' takes the nuclear stress as an emphatic reassurance, not the time word 'shortly'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "One of these two words simply appears earlier; the real peak is on the detail added at the end.",
+            "explanation": "Whatever grammatical role it plays, the last content word attracts the stress; here that's INDOORS, functioning as Place focus.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_320",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Contrary to your worries, the team did submit the proposal.",
-            "textToSpeak": "Contrary to your worries, the team did submit the proposal.",
+            "word": "After the new campaign launched, ticket sales dramatically improved.",
+            "textToSpeak": "After the new campaign launched, ticket sales dramatically improved.",
             "options": [
-                "Emphasis on DID (Auxiliary/Polarity focus)",
-                "Emphasis on PROPOSAL (Object focus)"
+                "Emphasis on SALES (Subject focus)",
+                "Emphasis on IMPROVED (Verb focus)"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on IMPROVED (Verb focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                3,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'Contrary to your worries' signals reassurance against anxiety. Listen for the pitch to peak sharply on 'did'.",
-            "explanation": "The auxiliary 'did' carries the nuclear stress, emphatically confirming completion, not the object 'proposal'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Whether it's a time, a place, a manner, or something else, the last content word usually wins the stress in a neutral sentence.",
+            "explanation": "The sentence saves its strongest beat for IMPROVED, the closing Verb detail, rather than SALES earlier on.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_321",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I promise you, she has read the entire book.",
-            "textToSpeak": "I promise you, she has read the entire book.",
+            "word": "The newly renovated museum reopens next spring.",
+            "textToSpeak": "The newly renovated museum reopens next spring.",
             "options": [
-                "Emphasis on HAS (Auxiliary/Polarity focus)",
-                "Emphasis on BOOK (Object focus)"
+                "Emphasis on SPRING (Time focus)",
+                "Emphasis on MUSEUM (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on HAS (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on SPRING (Time focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'I promise you' signals a firm reassurance. Listen for the pitch to peak on 'has'.",
-            "explanation": "'Has' takes the nuclear stress as an emphatic reassurance, not the object 'book'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Say the sentence naturally — your voice should build toward whatever detail comes last.",
+            "explanation": "SPRING is the final content word here, so it takes the nuclear stress — its job as Time focus doesn't change the default rule.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_322",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Despite appearances, the engine does run smoothly.",
-            "textToSpeak": "Despite appearances, the engine does run smoothly.",
+            "word": "The award-winning school choir will perform outside.",
+            "textToSpeak": "The award-winning school choir will perform outside.",
             "options": [
-                "Emphasis on DOES (Auxiliary/Polarity focus)",
-                "Emphasis on SMOOTHLY (Manner focus)"
+                "Emphasis on CHOIR (Subject focus)",
+                "Emphasis on OUTSIDE (Place focus)"
             ],
-            "correctAnswer": "Emphasis on DOES (Auxiliary/Polarity focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on OUTSIDE (Place focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                3,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'Despite appearances' signals pushback against a wrong impression. Listen for the pitch to peak sharply on 'does'.",
-            "explanation": "The auxiliary 'does' carries the nuclear stress, emphatically countering the wrong impression, rather than the adverb 'smoothly'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Don't be pulled toward the earlier word. Listen for where the pitch actually lifts near the end.",
+            "explanation": "With no special contrast in this sentence, the pitch peak still falls on OUTSIDE, the Place detail that closes it.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_323",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Contrary to what you think, I can cook.",
-            "textToSpeak": "Contrary to what you think, I can cook.",
+            "word": "I offered the unexpected guests some hot tea.",
+            "textToSpeak": "I offered the unexpected guests some hot tea.",
             "options": [
-                "Emphasis on COOK (Verb focus)",
-                "Emphasis on CAN (Auxiliary/Polarity focus)"
+                "Emphasis on TEA (Item focus)",
+                "Emphasis on GUESTS (Recipient focus)"
             ],
-            "correctAnswer": "Emphasis on CAN (Auxiliary/Polarity focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on TEA (Item focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'Contrary to what you think' signals a correction of a wrong belief. Listen for the pitch to peak on 'can'.",
-            "explanation": "'Can' takes the nuclear stress as an emphatic correction of the listener's assumption, not the verb 'cook'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is still the same rule as always: the final content word carries the emphasis, regardless of its grammatical job.",
+            "explanation": "GUESTS appears earlier in the sentence, so the stress lands on TEA, the word that ends it — here, a Item focus.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_324",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I assure you, we will fix the issue.",
-            "textToSpeak": "I assure you, we will fix the issue.",
+            "word": "I explained the whole situation to my new supervisor.",
+            "textToSpeak": "I explained the whole situation to my new supervisor.",
             "options": [
-                "Emphasis on WILL (Auxiliary/Polarity focus)",
-                "Emphasis on ISSUE (Object focus)"
+                "Emphasis on SITUATION (Item focus)",
+                "Emphasis on SUPERVISOR (Recipient focus)"
             ],
-            "correctAnswer": "Emphasis on WILL (Auxiliary/Polarity focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on SUPERVISOR (Recipient focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                3,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'I assure you' signals a firm commitment against doubt. Listen for the pitch to peak on 'will'.",
-            "explanation": "'Will' takes the nuclear stress as an emphatic promise, not the object 'issue'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Don't let the sentence type distract you — the peak is still on the last important word.",
+            "explanation": "Whatever grammatical role it plays, the last content word attracts the stress; here that's SUPERVISOR, functioning as Recipient focus.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_325",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Despite the criticism, the movie does deserve praise.",
-            "textToSpeak": "Despite the criticism, the movie does deserve praise.",
+            "word": "We forwarded the customer complaint to upper management.",
+            "textToSpeak": "We forwarded the customer complaint to upper management.",
             "options": [
-                "Emphasis on PRAISE (Object focus)",
-                "Emphasis on DOES (Auxiliary/Polarity focus)"
+                "Emphasis on MANAGEMENT (Recipient focus)",
+                "Emphasis on COMPLAINT (Item focus)"
             ],
-            "correctAnswer": "Emphasis on DOES (Auxiliary/Polarity focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on MANAGEMENT (Recipient focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'Despite the criticism' signals pushback against negative opinions. Listen for the pitch to peak sharply on 'does'.",
-            "explanation": "The auxiliary 'does' carries the nuclear stress, emphatically defending the movie, rather than the object 'praise'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence has no contrast or correction — so, as always, listen for the peak on the very last content word, whatever role it plays.",
+            "explanation": "The sentence saves its strongest beat for MANAGEMENT, the closing Recipient detail, rather than COMPLAINT earlier on.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_326",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Contrary to the forecast, it did rain yesterday.",
-            "textToSpeak": "Contrary to the forecast, it did rain yesterday.",
+            "word": "The exhausted hiring committee reached the decision unanimously.",
+            "textToSpeak": "The exhausted hiring committee reached the decision unanimously.",
             "options": [
-                "Emphasis on YESTERDAY (Time focus)",
-                "Emphasis on DID (Auxiliary/Polarity focus)"
+                "Emphasis on COMMITTEE (Subject focus)",
+                "Emphasis on UNANIMOUSLY (Manner focus)"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on UNANIMOUSLY (Manner focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                3,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'Contrary to the forecast' signals a correction of a wrong prediction. Listen for the pitch to peak on 'did'.",
-            "explanation": "The auxiliary 'did' carries the nuclear stress, emphatically correcting the forecast, not the time word 'yesterday'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Focus on the last meaningful word in the sentence, not the earlier one — that's usually where the peak sits.",
+            "explanation": "UNANIMOUSLY is the final content word here, so it takes the nuclear stress — its job as Manner focus doesn't change the default rule.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_327",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I promise you, the staff has cleaned the rooms.",
-            "textToSpeak": "I promise you, the staff has cleaned the rooms.",
+            "word": "The freshly painted hallway smells faintly of paint.",
+            "textToSpeak": "The freshly painted hallway smells faintly of paint.",
             "options": [
-                "Emphasis on HAS (Auxiliary/Polarity focus)",
-                "Emphasis on ROOMS (Object focus)"
+                "Emphasis on PAINT (Complement focus)",
+                "Emphasis on HALLWAY (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on HAS (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on PAINT (Complement focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'I promise you' signals firm reassurance about a task being done. Listen for the pitch to peak on 'has'.",
-            "explanation": "'Has' takes the nuclear stress as an emphatic reassurance, not the object 'rooms'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "One of these two words simply appears earlier; the real peak is on the detail added at the end.",
+            "explanation": "With no special contrast in this sentence, the pitch peak still falls on PAINT, the Complement detail that closes it.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_328",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Despite his age, my grandfather can still dance.",
-            "textToSpeak": "Despite his age, my grandfather can still dance.",
+            "word": "I gave my youngest sister the spare umbrella.",
+            "textToSpeak": "I gave my youngest sister the spare umbrella.",
             "options": [
-                "Emphasis on CAN (Auxiliary/Polarity focus)",
-                "Emphasis on DANCE (Verb focus)"
+                "Emphasis on SISTER (Recipient focus)",
+                "Emphasis on UMBRELLA (Item focus)"
             ],
-            "correctAnswer": "Emphasis on CAN (Auxiliary/Polarity focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on UMBRELLA (Item focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                3,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'Despite his age' signals a surprising ability despite an assumption. Listen for the pitch to peak sharply on 'can'.",
-            "explanation": "The auxiliary 'can' carries the nuclear stress, emphatically confirming the surprising ability, rather than the verb 'dance'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Whether it's a time, a place, a manner, or something else, the last content word usually wins the stress in a neutral sentence.",
+            "explanation": "SISTER appears earlier in the sentence, so the stress lands on UMBRELLA, the word that ends it — here, a Item focus.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_329",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Contrary to your fears, the surgery did go well.",
-            "textToSpeak": "Contrary to your fears, the surgery did go well.",
+            "word": "I finally sent the overdue invoice to accounting.",
+            "textToSpeak": "I finally sent the overdue invoice to accounting.",
             "options": [
-                "Emphasis on DID (Auxiliary/Polarity focus)",
-                "Emphasis on WELL (Manner focus)"
+                "Emphasis on ACCOUNTING (Recipient focus)",
+                "Emphasis on INVOICE (Item focus)"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on ACCOUNTING (Recipient focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'Contrary to your fears' signals reassurance against worry. Listen for the pitch to peak on 'did'.",
-            "explanation": "The auxiliary 'did' carries the nuclear stress, emphatically reassuring against the listener's fear, not the adverb 'well'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Say the sentence naturally — your voice should build toward whatever detail comes last.",
+            "explanation": "Whatever grammatical role it plays, the last content word attracts the stress; here that's ACCOUNTING, functioning as Recipient focus.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_330",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I assure you, the bank will approve the loan.",
-            "textToSpeak": "I assure you, the bank will approve the loan.",
+            "word": "The experienced pilot landed the damaged plane smoothly.",
+            "textToSpeak": "The experienced pilot landed the damaged plane smoothly.",
             "options": [
-                "Emphasis on LOAN (Object focus)",
-                "Emphasis on WILL (Auxiliary/Polarity focus)"
+                "Emphasis on PILOT (Subject focus)",
+                "Emphasis on SMOOTHLY (Manner focus)"
             ],
-            "correctAnswer": "Emphasis on WILL (Auxiliary/Polarity focus)",
+            "correctAnswer": "Emphasis on SMOOTHLY (Manner focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                3,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'I assure you' signals a firm, reassuring commitment. Listen for the pitch to peak on 'will'.",
-            "explanation": "'Will' takes the nuclear stress as an emphatic reassurance, not the object 'loan'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Don't be pulled toward the earlier word. Listen for where the pitch actually lifts near the end.",
+            "explanation": "The sentence saves its strongest beat for SMOOTHLY, the closing Manner detail, rather than PILOT earlier on.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         }
     ]
 }

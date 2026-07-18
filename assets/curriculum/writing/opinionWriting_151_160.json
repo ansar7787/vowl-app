@@ -5,178 +5,178 @@
     "quests": [
         {
             "id": "WRT_OPINIONWRITING_L151_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Artificial intelligence development should be governed by a binding global treaty.",
             "options": [
-                "A global AI treaty would prevent the race-to-the-bottom on safety standards between competing nations.",
-                "International governance of AI risk prevents any single nation from imposing existential technology risks on humanity.",
                 "Binding AI treaties are virtually impossible to verify and enforce across secretive development environments.",
-                "AI governance requires technical expertise and agility that slow-moving international treaty processes cannot provide."
+                "A global AI treaty would prevent the race-to-the-bottom on safety standards between competing nations.",
+                "AI governance requires technical expertise and agility that slow-moving international treaty processes cannot provide.",
+                "International governance of AI risk prevents any single nation from imposing existential technology risks on humanity."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the safety and global risk case for an AI treaty (Pros) and the verifiability and agility concerns (Cons).",
             "explanation": "A global AI treaty prevents safety races to the bottom and protects humanity from unilateral existential risks (Pros), but verifying compliance is nearly impossible in secretive environments, and treaty processes are too slow for a rapidly evolving technology (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L151_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "National AI regulation is more practical than global governance and can set international standards.",
             "options": [
-                "Jurisdictions like the EU are already creating comprehensive AI regulation that is influencing global standards.",
-                "National regulation can move faster and adapt more readily to technical developments than global processes.",
                 "Fragmented national AI regulations create compliance complexity and regulatory arbitrage opportunities.",
-                "AI systems trained in unregulated jurisdictions can be deployed globally regardless of national restrictions."
+                "Jurisdictions like the EU are already creating comprehensive AI regulation that is influencing global standards.",
+                "AI systems trained in unregulated jurisdictions can be deployed globally regardless of national restrictions.",
+                "National regulation can move faster and adapt more readily to technical developments than global processes."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider national AI regulation as an alternative to global governance (Pros) and the fragmentation and deployment concerns (Cons).",
             "explanation": "National regulation like the EU AI Act moves faster and already influences global standards (Pros), but fragmented rules create arbitrage opportunities, and AI systems trained in unregulated jurisdictions can be deployed globally regardless of national restrictions (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L151_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "AI self-regulation by companies is insufficient and creates fundamental conflicts of interest.",
             "options": [
-                "Companies have direct financial incentives to minimise the constraints that safety regulation would impose.",
-                "Historical precedents from tobacco, firearms, and social media show that industry self-regulation consistently fails.",
                 "AI companies have technical expertise that regulators lack and are better placed to identify and manage risks.",
-                "Independent technical advisory bodies can provide expertise to regulators without requiring industry self-regulation."
+                "Companies have direct financial incentives to minimise the constraints that safety regulation would impose.",
+                "Independent technical advisory bodies can provide expertise to regulators without requiring industry self-regulation.",
+                "Historical precedents from tobacco, firearms, and social media show that industry self-regulation consistently fails."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the limitations of AI self-regulation (Pros for external regulation) and the expertise and advisory alternative (Cons).",
             "explanation": "Financial incentives create fundamental self-regulation conflicts and tobacco and social media show industry self-regulation consistently fails (Pros), but AI companies have irreplaceable technical expertise, and independent advisory bodies can channel that expertise into effective external regulation (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L152_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Large social media corporations should be broken up by competition regulators.",
             "options": [
                 "Network effects and data advantages have created monopoly power that cannot be addressed without structural remedies.",
-                "Breaking up dominant platforms would create space for competing services with different values and moderation approaches.",
                 "Breaking up successful companies punishes innovation and success rather than addressing specific harms.",
+                "Breaking up dominant platforms would create space for competing services with different values and moderation approaches.",
                 "Fragmented smaller platforms may lack the resources to invest adequately in safety and content moderation."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about the competition and values diversity case for breaking up social media companies (Pros) and the innovation punishment and safety resource concerns (Cons).",
             "explanation": "Network monopolies cannot be addressed without structural remedies, and breakup creates diversity of platform values (Pros), but breaking up successful companies punishes innovation, and smaller platforms may lack resources for adequate safety investment (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L152_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Interoperability requirements are more effective than breakup at restoring social media competition.",
             "options": [
-                "Requiring platforms to allow data portability lets users move between services without losing social connections.",
-                "Interoperability enables competitive entry without destroying the network scale that users benefit from.",
                 "Interoperability standards are technically complex to implement and can create new security vulnerabilities.",
-                "Dominant platforms can comply superficially with interoperability requirements while retaining competitive advantages."
+                "Requiring platforms to allow data portability lets users move between services without losing social connections.",
+                "Dominant platforms can comply superficially with interoperability requirements while retaining competitive advantages.",
+                "Interoperability enables competitive entry without destroying the network scale that users benefit from."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider interoperability as an alternative to social media breakup (Pros) and the technical and gaming concerns (Cons).",
             "explanation": "Interoperability enables competition without destroying network scale benefits that users value (Pros), but technical implementation is complex, creates security risks, and dominant platforms can game compliance while retaining competitive advantages (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L152_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Public ownership of core social media infrastructure offers an alternative to corporate dominance.",
             "options": [
                 "Publicly owned social media infrastructure could operate for public benefit rather than private profit.",
-                "A non-profit or public model eliminates the profit incentive that drives engagement-maximising harmful design.",
                 "Governments have no track record of successfully managing large-scale digital social platforms.",
-                "Public ownership of communication infrastructure raises fundamental freedom of speech and censorship concerns."
+                "Public ownership of communication infrastructure raises fundamental freedom of speech and censorship concerns.",
+                "A non-profit or public model eliminates the profit incentive that drives engagement-maximising harmful design."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about public social media ownership as an alternative to corporate dominance (Pros) and the governance and freedom concerns (Cons).",
             "explanation": "Public ownership could eliminate profit-driven harmful design and operate infrastructure for public benefit (Pros), but governments have no successful track record managing digital platforms, and state ownership of social communication raises serious freedom of speech risks (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L153_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Personal data privacy should be enshrined as a fundamental right in national and international law.",
             "options": [
+                "Strong data privacy rights can conflict with legitimate law enforcement and national security needs.",
                 "Without legal protection, data privacy depends entirely on corporate goodwill that market incentives undermine.",
                 "Legal data rights give individuals enforceable recourse against organisations that misuse their personal data.",
-                "Strong data privacy rights can conflict with legitimate law enforcement and national security needs.",
                 "Privacy as absolute right ignores the genuine social benefits of data sharing for research and public services."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the legal protection case for data privacy rights (Pros) and the law enforcement and social benefit concerns (Cons).",
             "explanation": "Legal data rights protect individuals from corporate misuse through enforceable recourse (Pros), but strong privacy rights conflict with law enforcement needs and can prevent the data sharing that delivers real public health and social research benefits (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L153_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Consent-based data collection fails to provide genuine privacy protection for citizens.",
             "options": [
-                "Consent agreements are routinely designed to obscure data uses and obtain blanket permission without understanding.",
-                "The power imbalance between individuals and platforms makes meaningful consent practically impossible.",
                 "Redesigning consent mechanisms with clearer language and genuine choice can make consent genuinely meaningful.",
-                "Alternative models like data trusts can provide collective rather than individual protection from privacy harm."
+                "Alternative models like data trusts can provide collective rather than individual protection from privacy harm.",
+                "Consent agreements are routinely designed to obscure data uses and obtain blanket permission without understanding.",
+                "The power imbalance between individuals and platforms makes meaningful consent practically impossible."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider whether consent-based privacy protection is fundamentally broken (Pros) and the reform and alternative models (Cons).",
             "explanation": "Consent agreements are designed to obscure and the power imbalance makes genuine individual consent impossible (Pros), but redesigned clear consent with genuine choice can be meaningful, and collective data trust models offer alternative protection frameworks (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L153_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Data minimisation requirements are more effective than consent at protecting privacy.",
             "options": [
                 "Restricting how much data can be collected removes the privacy risk before consent questions even arise.",
-                "Data minimisation requirements reduce the security risk and harm potential of large personal data breaches.",
                 "Data minimisation may prevent legitimate personalisation and analytics that users genuinely value and choose.",
-                "Defining what data is necessary is contested and varies significantly by service and individual user need."
+                "Defining what data is necessary is contested and varies significantly by service and individual user need.",
+                "Data minimisation requirements reduce the security risk and harm potential of large personal data breaches."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about data minimisation requirements as an alternative to consent-based protection (Pros) and the personalisation and definition concerns (Cons).",
             "explanation": "Data minimisation prevents collection before consent risks arise and reduces breach harm potential (Pros), but it may prevent personalisation users want, and defining necessary data is contested and service-specific (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L154_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "National governments should have significantly greater powers to regulate the internet.",
@@ -195,64 +195,64 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L154_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Internet regulation should be multi-stakeholder rather than purely governmental.",
             "options": [
-                "Multi-stakeholder governance including civil society, technical experts, and users produces more balanced outcomes.",
-                "A non-governmental approach maintains the decentralised architecture that has driven internet innovation.",
                 "Multi-stakeholder governance lacks democratic accountability and is dominated by powerful industry interests.",
-                "Corporate and civil society representatives in multi-stakeholder bodies are unelected and unrepresentative."
+                "Corporate and civil society representatives in multi-stakeholder bodies are unelected and unrepresentative.",
+                "Multi-stakeholder governance including civil society, technical experts, and users produces more balanced outcomes.",
+                "A non-governmental approach maintains the decentralised architecture that has driven internet innovation."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider multi-stakeholder internet governance as an alternative to government control (Pros) and the accountability and industry dominance concerns (Cons).",
             "explanation": "Multi-stakeholder governance produces more balanced decisions and preserves the decentralised architecture enabling innovation (Pros), but it lacks democratic accountability and is dominated by industry interests rather than genuine civil society representation (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L154_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "An independent global internet governance body is necessary to address transborder harms.",
             "options": [
-                "Transborder internet harms require coordination between jurisdictions that no single government can provide.",
-                "An independent body with technical expertise and international legitimacy can set globally consistent standards.",
                 "Nation states are extremely unlikely to delegate significant internet governance authority to an international body.",
-                "The interests of authoritarian and democratic nations are so divergent that meaningful consensus is unachievable."
+                "The interests of authoritarian and democratic nations are so divergent that meaningful consensus is unachievable.",
+                "Transborder internet harms require coordination between jurisdictions that no single government can provide.",
+                "An independent body with technical expertise and international legitimacy can set globally consistent standards."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about a global internet governance body (Pros) and the political feasibility and divergent interests concerns (Cons).",
             "explanation": "Transborder internet harms require internationally coordinated governance beyond any single jurisdiction (Pros), but nation states will not cede significant authority to international bodies, and the interests of democratic and authoritarian governments are irreconcilably divergent (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L155_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Technology companies should pay full taxes in every country where they generate profit.",
             "options": [
                 "Current international tax rules allow technology companies to report profits in low-tax jurisdictions where little value is created.",
-                "Full country-by-country profit taxation would restore billions in public revenue for health and education.",
                 "International tax reform requires unanimous agreement among nations with very different interests.",
-                "Tax competition between countries reflects legitimate national policy choices and is not inherently unfair."
+                "Tax competition between countries reflects legitimate national policy choices and is not inherently unfair.",
+                "Full country-by-country profit taxation would restore billions in public revenue for health and education."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the fairness and revenue case for full tech company country-by-country taxation (Pros) and the coordination and sovereignty concerns (Cons).",
             "explanation": "Current rules allow profit shifting to low-tax jurisdictions and full country-level taxation would restore public revenue (Pros), but unanimous international agreement is extremely difficult, and tax competition reflects legitimate national sovereignty choices (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L155_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The OECD global minimum corporate tax is an important but insufficient step towards tech company fairness.",
@@ -271,7 +271,7 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L155_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Digital services taxes targeting revenue rather than profit better capture tech company tax liability.",
@@ -290,121 +290,121 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L156_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Creating or distributing deepfake content without consent should be a criminal offence.",
             "options": [
-                "Non-consensual deepfake pornography causes severe psychological harm to victims whose images are misused.",
-                "Criminal law against deepfakes without consent protects individual dignity and deters malicious creation.",
                 "Defining deepfake content precisely for criminal prosecution creates significant technical legal challenges.",
-                "Satire, parody, and artistic uses of manipulated imagery may be criminalised under broadly drawn laws."
+                "Non-consensual deepfake pornography causes severe psychological harm to victims whose images are misused.",
+                "Satire, parody, and artistic uses of manipulated imagery may be criminalised under broadly drawn laws.",
+                "Criminal law against deepfakes without consent protects individual dignity and deters malicious creation."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the victim harm and deterrence case for criminalising deepfakes (Pros) and the definition and artistic freedom concerns (Cons).",
             "explanation": "Non-consensual deepfakes cause severe harm and criminalisation deters creation and distribution (Pros), but precise legal definition of deepfakes is technically challenging, and broadly drawn laws risk criminalising legitimate satire and artistic uses (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L156_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Deepfake technology poses a fundamental threat to democratic elections and public trust.",
             "options": [
-                "Realistic AI-generated video of candidates saying false things can irreversibly damage electoral integrity.",
-                "Once deepfake disinformation spreads, it cannot be recalled or corrected before electoral damage occurs.",
                 "Technology to detect deepfakes is developing in parallel with creation tools.",
-                "Media literacy education can help citizens identify and resist deepfake disinformation."
+                "Media literacy education can help citizens identify and resist deepfake disinformation.",
+                "Realistic AI-generated video of candidates saying false things can irreversibly damage electoral integrity.",
+                "Once deepfake disinformation spreads, it cannot be recalled or corrected before electoral damage occurs."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider the electoral threat of deepfakes (Pros for strong regulation) and the detection and literacy counters (Cons).",
             "explanation": "Realistic AI video disinformation can damage elections irreversibly before correction is possible (Pros), but detection technology is advancing alongside creation tools, and media literacy education helps citizens identify and resist deepfake content (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L156_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Platform responsibility for hosting deepfake content is as important as criminalising its creation.",
             "options": [
-                "Platforms that host and algorithmically amplify deepfake content share moral and legal responsibility for its harm.",
-                "Platform liability for deepfakes creates financial incentives to invest in detection and removal technology.",
                 "Requiring platforms to detect and remove deepfakes at scale is technically extremely challenging.",
-                "Over-aggressive automated deepfake removal may remove legitimate satire and parody content incorrectly."
+                "Platforms that host and algorithmically amplify deepfake content share moral and legal responsibility for its harm.",
+                "Over-aggressive automated deepfake removal may remove legitimate satire and parody content incorrectly.",
+                "Platform liability for deepfakes creates financial incentives to invest in detection and removal technology."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about platform responsibility for deepfake content (Pros) and the technical and false positive concerns (Cons).",
             "explanation": "Platforms that amplify deepfakes share responsibility and liability creates detection investment incentives (Pros), but large-scale automated deepfake detection is technically very difficult and risks incorrectly removing legitimate satirical content (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L157_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Using algorithms to make hiring decisions without human review should be prohibited.",
             "options": [
-                "Algorithmic hiring systems embed and amplify historical biases that disadvantage already marginalised groups.",
-                "Without human oversight, algorithmic errors that exclude qualified candidates cannot be identified or corrected.",
                 "Well-designed algorithmic screening can reduce human bias and provide more consistent evaluation than human reviewers.",
-                "Prohibiting algorithmic hiring tools may return decision-making to biased human processes without improving fairness."
+                "Algorithmic hiring systems embed and amplify historical biases that disadvantage already marginalised groups.",
+                "Prohibiting algorithmic hiring tools may return decision-making to biased human processes without improving fairness.",
+                "Without human oversight, algorithmic errors that exclude qualified candidates cannot be identified or corrected."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the bias and accountability case for prohibiting algorithmic hiring (Pros) and the consistent evaluation and return-to-bias concerns (Cons).",
             "explanation": "Algorithmic hiring embeds historical bias and excludes oversight needed to identify and correct errors (Pros), but well-designed algorithms can reduce human bias, and prohibiting tools may return decision-making to equally or more biased human processes (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L157_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Algorithmic hiring tools must be subject to mandatory bias auditing and transparency.",
             "options": [
                 "Regular independent bias audits identify and quantify discriminatory patterns in hiring algorithm outputs.",
-                "Transparency requirements allow candidates to understand and challenge automated hiring decisions.",
                 "Bias auditing methodologies are contested and auditors may miss discriminatory patterns in opaque systems.",
-                "Transparency about algorithmic hiring criteria may enable gaming of criteria rather than genuine candidate improvement."
+                "Transparency about algorithmic hiring criteria may enable gaming of criteria rather than genuine candidate improvement.",
+                "Transparency requirements allow candidates to understand and challenge automated hiring decisions."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider mandatory bias auditing and transparency for algorithmic hiring (Pros) and the audit quality and gaming concerns (Cons).",
             "explanation": "Bias audits identify discriminatory patterns and transparency enables candidate challenges (Pros), but auditing methodologies are contested, opaque systems resist meaningful auditing, and transparency about criteria enables gaming (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L157_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Human decision-makers in hiring are subject to bias that algorithmic tools can reduce.",
             "options": [
                 "Research consistently demonstrates that human recruiters hold systematic biases around race, gender, and age.",
-                "Structured algorithmic assessments can evaluate candidates on job-relevant criteria with greater consistency.",
                 "Algorithmic tools trained on historical hiring data perpetuate past discriminatory patterns at scale.",
-                "Accountability for discriminatory algorithmic hiring decisions is more difficult to assign than for human decisions."
+                "Accountability for discriminatory algorithmic hiring decisions is more difficult to assign than for human decisions.",
+                "Structured algorithmic assessments can evaluate candidates on job-relevant criteria with greater consistency."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the human bias argument for algorithmic hiring tools (Pros) and the historical data and accountability concerns (Cons).",
             "explanation": "Human recruiters hold well-documented systematic biases that structured algorithmic tools can reduce (Pros), but tools trained on biased historical data perpetuate past discrimination at scale, and assigning accountability for algorithmic discrimination is far harder than for human decisions (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L158_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Every person should have a legally enforceable right to be forgotten online.",
@@ -423,64 +423,64 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L158_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The right to be forgotten must be balanced against the public's right to accurate information.",
             "options": [
                 "Courts must weigh private individuals' right to data removal against the public interest in historical accuracy.",
-                "Proportionate case-by-case judicial balancing produces fairer outcomes than absolute rights in either direction.",
                 "Case-by-case judicial balancing is expensive, slow, and produces inconsistent outcomes across different cases.",
-                "Requiring judicial review of every removal request creates enormous backlogs that prevent the right from functioning."
+                "Requiring judicial review of every removal request creates enormous backlogs that prevent the right from functioning.",
+                "Proportionate case-by-case judicial balancing produces fairer outcomes than absolute rights in either direction."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider judicial balancing as the appropriate way to implement the right to be forgotten (Pros) and the practical concerns (Cons).",
             "explanation": "Proportionate judicial balancing produces fairer outcomes than absolute rules in either direction (Pros), but individual judicial review is expensive, slow, produces inconsistent results, and creates massive backlogs that prevent the right from operating effectively (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L158_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Platform-level implementation of the right to be forgotten is more practical than judicial oversight.",
             "options": [
-                "Platforms with technical capacity can implement removal requests far more efficiently than court systems.",
-                "Clear platform removal criteria can deliver consistent outcomes without expensive individual judicial proceedings.",
                 "Platform-level decisions lack the impartiality and legal rigour of judicial oversight.",
-                "Commercial platforms have incentives to both over-retain and over-remove data depending on competing interests."
+                "Platforms with technical capacity can implement removal requests far more efficiently than court systems.",
+                "Commercial platforms have incentives to both over-retain and over-remove data depending on competing interests.",
+                "Clear platform removal criteria can deliver consistent outcomes without expensive individual judicial proceedings."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about platform-level removal implementation (Pros) and the impartiality and commercial incentive concerns (Cons).",
             "explanation": "Platform implementation is faster and more efficient than court-by-court review (Pros), but platforms lack judicial impartiality, and commercial incentives create contradictory pressures to retain or remove data based on platform interests rather than public interest (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L159_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Biometric mass surveillance in public spaces is fundamentally incompatible with a free society.",
             "options": [
                 "Real-time facial recognition in public enables the state to track every citizen's movements permanently.",
-                "Mass surveillance has a chilling effect on free assembly, protest, and political dissent.",
                 "Targeted and appropriately regulated biometric surveillance provides valuable tools for serious crime detection.",
+                "Mass surveillance has a chilling effect on free assembly, protest, and political dissent.",
                 "Democratic nations have consistently demonstrated the ability to use surveillance powers with legal safeguards."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about the freedom and chilling effect case against mass biometric surveillance (Pros) and the targeted use and safeguard arguments (Cons).",
             "explanation": "Mass biometric surveillance enables permanent movement tracking and chills protest and political dissent (Pros), but targeted biometric tools with legal safeguards provide valuable crime detection, and democratic nations can govern surveillance powers responsibly (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L159_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Facial recognition technology in policing carries unacceptable accuracy and bias problems.",
@@ -499,76 +499,76 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L159_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Public biometric surveillance requires explicit legislative authorisation and strict judicial oversight.",
             "options": [
-                "Democratic legitimacy for powerful surveillance tools requires explicit legislative consent rather than executive discretion.",
-                "Judicial oversight of biometric surveillance prevents executive overreach and protects against misuse.",
                 "Strict oversight requirements may prevent legitimate and effective use of surveillance tools in emergencies.",
-                "International human rights law already provides frameworks for regulating surveillance with or without domestic legislation."
+                "International human rights law already provides frameworks for regulating surveillance with or without domestic legislation.",
+                "Democratic legitimacy for powerful surveillance tools requires explicit legislative consent rather than executive discretion.",
+                "Judicial oversight of biometric surveillance prevents executive overreach and protects against misuse."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about legislative authorisation and judicial oversight as necessary conditions for biometric surveillance (Pros) and the emergency and international law concerns (Cons).",
             "explanation": "Democratic legitimacy requires explicit legislative authorisation and judicial oversight prevents executive overreach (Pros), but strict prior authorisation requirements may impede legitimate emergency use, and international human rights frameworks already provide governing principles (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L160_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Government agencies should switch to open-source software to improve transparency and security.",
             "options": [
                 "Open-source code can be publicly audited for security vulnerabilities and malicious backdoors.",
-                "Switching to open-source eliminates vendor lock-in and the recurring licensing costs of proprietary software.",
                 "Open-source software often lacks the commercial support, documentation, and usability of proprietary alternatives.",
-                "Government security requirements may not be met by community-maintained open-source software."
+                "Government security requirements may not be met by community-maintained open-source software.",
+                "Switching to open-source eliminates vendor lock-in and the recurring licensing costs of proprietary software."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the transparency and cost case for government open-source adoption (Pros) and the support and security quality concerns (Cons).",
             "explanation": "Open-source enables public security auditing and eliminates proprietary licensing costs and vendor lock-in (Pros), but commercial support and documentation quality often lags proprietary alternatives, and some government security requirements may not be met by community-maintained code (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L160_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Open-source government software creates economic benefits and reduces dependency on foreign technology.",
             "options": [
                 "Open-source reduces dependence on foreign technology companies that may be subject to foreign government influence.",
-                "Investment in domestic open-source development builds national digital sovereignty and technical capacity.",
                 "Developing high-quality open-source government software requires substantial initial public investment.",
-                "Domestic open-source development may duplicate existing quality solutions, representing inefficient use of resources."
+                "Domestic open-source development may duplicate existing quality solutions, representing inefficient use of resources.",
+                "Investment in domestic open-source development builds national digital sovereignty and technical capacity."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider the sovereignty and economic case for government open-source (Pros) and the investment and duplication concerns (Cons).",
             "explanation": "Open-source reduces foreign technology dependency and builds national digital sovereignty and technical capacity (Pros), but developing quality open-source government software requires substantial initial investment, and domestic development may inefficiently duplicate excellent existing solutions (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L160_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A mixed model combining open-source and proprietary government software is most practical.",
             "options": [
-                "Critical public-facing infrastructure benefits from open-source transparency while back-office systems use best-available tools.",
-                "Hybrid approaches allow governments to adopt open-source where benefits are clear while maintaining continuity elsewhere.",
                 "Hybrid models create complex system integration challenges between open and proprietary components.",
-                "Partial open-source adoption may be used to claim transparency credentials while critical systems remain opaque."
+                "Critical public-facing infrastructure benefits from open-source transparency while back-office systems use best-available tools.",
+                "Partial open-source adoption may be used to claim transparency credentials while critical systems remain opaque.",
+                "Hybrid approaches allow governments to adopt open-source where benefits are clear while maintaining continuity elsewhere."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about a mixed open-source and proprietary government software model (Pros) and the integration and credibility concerns (Cons).",
             "explanation": "Hybrid models apply open-source where transparency benefits are greatest while maintaining continuity in other areas (Pros), but open-proprietary integration is technically complex, and partial adoption can create false transparency claims while critical opaque systems remain unchallenged (Cons)."

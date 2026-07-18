@@ -8,720 +8,720 @@
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Tom cooked the pasta, and Lisa made the salad.",
-            "textToSpeak": "Tom cooked the pasta, and Lisa made the salad.",
+            "word": "Despite the delay, the package did arrive today.",
+            "textToSpeak": "Despite the delay, the package did arrive today.",
             "options": [
-                "Single Nucleus: Emphasis only on SALAD (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on PASTA and SALAD (One Peak per Clause)"
+                "Emphasis on DID (Auxiliary/Polarity focus)",
+                "Emphasis on TODAY (Time focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on PASTA and SALAD (One Peak per Clause)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 3,
                 1,
                 1,
-                3
+                1
             ],
-            "hint": "Each half of this sentence reports its own separate news. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'pasta' and 'salad' are peaked, not just the final word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The word ‘did’ isn't just a helper verb here — it's confirming something that was doubted, so it gets extra emphasis.",
+            "explanation": "Because the opening phrase implies this might not have happened, ‘did’ is stressed to firmly confirm that it did.",
+            "emphasisRule": "When a sentence confirms that something happened despite doubt or difficulty, the auxiliary verb (did/was/is) carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_392",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The boys played soccer, and the girls played basketball.",
-            "textToSpeak": "The boys played soccer, and the girls played basketball.",
+            "word": "Even though it rained, the parade did continue downtown.",
+            "textToSpeak": "Even though it rained, the parade did continue downtown.",
             "options": [
-                "Single Nucleus: Emphasis only on BASKETBALL (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on SOCCER and BASKETBALL (One Peak per Clause)"
+                "Emphasis on DOWNTOWN (Place focus)",
+                "Emphasis on DID (Auxiliary/Polarity focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on SOCCER and BASKETBALL (One Peak per Clause)",
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
                 3,
                 1,
                 1,
-                3
+                1,
+                1
             ],
-            "hint": "Each group is doing something different, so each part gets its own news value. Listen for two separate pitch peaks.",
-            "explanation": "Each parallel clause carries its own nuclear stress, so 'soccer' and 'basketball' are both peaked, not just 'basketball' alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence pushes back against an assumption of failure — that pushback lands directly on the auxiliary verb.",
+            "explanation": "The auxiliary ‘did’ carries the nuclear stress here because it's asserting the truth of the action against doubt.",
+            "emphasisRule": "Emphatic auxiliaries like ‘did’ are stressed when they assert that an action truly occurred against expectations."
         },
         {
             "id": "pitchPatternMatch_393",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My father grills the meat, and my mother prepares the salad.",
-            "textToSpeak": "My father grills the meat, and my mother prepares the salad.",
+            "word": "Despite the traffic, we did arrive on time.",
+            "textToSpeak": "Despite the traffic, we did arrive on time.",
             "options": [
-                "Single Nucleus: Emphasis only on SALAD (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on MEAT and SALAD (One Peak per Clause)"
+                "Emphasis on DID (Auxiliary/Polarity focus)",
+                "Emphasis on TIME (Time focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on MEAT and SALAD (One Peak per Clause)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 3,
                 1,
                 1,
-                3
+                1
             ],
-            "hint": "Each parent is handling a separate task, so each task is its own piece of news. Listen for two separate pitch peaks.",
-            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'meat' and 'salad' are peaked, not just the final word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Despite the obstacle mentioned first, the sentence insists something still happened — that insistence is stressed on ‘did’.",
+            "explanation": "This sentence emphasizes that the action really did occur, despite the obstacle — so the stress lands on ‘did’, not on TIME.",
+            "emphasisRule": "When a sentence confirms that something happened despite doubt or difficulty, the auxiliary verb (did/was/is) carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_394",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The pilot checked the engine, and the crew loaded the luggage.",
-            "textToSpeak": "The pilot checked the engine, and the crew loaded the luggage.",
+            "word": "The pilot didn't just delay the flight - he rerouted it.",
+            "textToSpeak": "The pilot didn't just delay the flight - he rerouted it.",
             "options": [
-                "Single Nucleus: Emphasis only on LUGGAGE (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on ENGINE and LUGGAGE (One Peak per Clause)"
+                "Emphasis on FLIGHT (Object focus)",
+                "Emphasis on REROUTED (Verb/Action focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on ENGINE and LUGGAGE (One Peak per Clause)",
+            "correctAnswer": "Emphasis on REROUTED (Verb/Action focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                1,
                 3,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "Two separate teams are doing two separate jobs here. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Each parallel clause carries its own nuclear stress, so 'engine' and 'luggage' are both peaked, not just 'luggage' alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The object stays the same throughout; what changes is what was actually done to it — that's where the peak goes.",
+            "explanation": "Since “didn't just” rules out a lesser action, the real action, REROUTED, receives the pitch accent.",
+            "emphasisRule": "Contrastive verb focus places the nuclear stress on the action itself, not on an object shared by both possible actions."
         },
         {
             "id": "pitchPatternMatch_395",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "She studies biology, and he studies chemistry.",
-            "textToSpeak": "She studies biology, and he studies chemistry.",
+            "word": "The barista didn't just make the coffee - she personalized it.",
+            "textToSpeak": "The barista didn't just make the coffee - she personalized it.",
             "options": [
-                "Single Nucleus: Emphasis only on CHEMISTRY (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on BIOLOGY and CHEMISTRY (One Peak per Clause)"
+                "Emphasis on PERSONALIZED (Verb/Action focus)",
+                "Emphasis on COFFEE (Object focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on BIOLOGY and CHEMISTRY (One Peak per Clause)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on PERSONALIZED (Verb/Action focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 3,
                 1,
                 1,
-                3
+                1
             ],
-            "hint": "Each person studies something different, so each subject is its own piece of news. Listen for two separate pitch peaks.",
-            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'biology' and 'chemistry' are peaked, not just the final word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Listen for the corrected action — it's being emphasized precisely because a lesser action was just ruled out.",
+            "explanation": "Because the contrast is between two possible actions on the same object, the stress falls on PERSONALIZED, the true action, not on the object.",
+            "emphasisRule": "When a sentence contrasts two possible actions on the same object, the stress shifts to the verb describing what actually happened."
         },
         {
             "id": "pitchPatternMatch_396",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The nurse measured the temperature, and the doctor reviewed the chart.",
-            "textToSpeak": "The nurse measured the temperature, and the doctor reviewed the chart.",
+            "word": "The teacher didn't just grade the essay - she annotated it.",
+            "textToSpeak": "The teacher didn't just grade the essay - she annotated it.",
             "options": [
-                "Single Nucleus: Emphasis only on CHART (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on TEMPERATURE and CHART (One Peak per Clause)"
+                "Emphasis on ESSAY (Object focus)",
+                "Emphasis on ANNOTATED (Verb/Action focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on TEMPERATURE and CHART (One Peak per Clause)",
+            "correctAnswer": "Emphasis on ANNOTATED (Verb/Action focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                1,
                 3,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "Two separate medical staff are doing two separate tasks. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Each parallel clause carries its own nuclear stress, so 'temperature' and 'chart' are both peaked, not just 'chart' alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The sentence explicitly denies one action and confirms a stronger one — the confirmed action itself gets the emphasis, not the object.",
+            "explanation": "ANNOTATED is the corrected, stronger action here, so it takes the nuclear stress instead of the shared object.",
+            "emphasisRule": "Contrastive verb focus places the nuclear stress on the action itself, not on an object shared by both possible actions."
         },
         {
             "id": "pitchPatternMatch_397",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "We visited the museum, and they explored the park.",
-            "textToSpeak": "We visited the museum, and they explored the park.",
+            "word": "Despite the criticism, the film did win an award.",
+            "textToSpeak": "Despite the criticism, the film did win an award.",
             "options": [
-                "Single Nucleus: Emphasis only on PARK (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on MUSEUM and PARK (One Peak per Clause)"
+                "Emphasis on DID (Auxiliary/Polarity focus)",
+                "Emphasis on AWARD (Object focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on MUSEUM and PARK (One Peak per Clause)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
                 3,
                 1,
                 1,
-                3
+                1,
+                1
             ],
-            "hint": "Two separate groups visited two separate places. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'museum' and 'park' are peaked, not just the final word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence pushes back against an assumption of failure — that pushback lands directly on the auxiliary verb.",
+            "explanation": "This sentence emphasizes that the action really did occur, despite the obstacle — so the stress lands on ‘did’, not on AWARD.",
+            "emphasisRule": "When a sentence confirms that something happened despite doubt or difficulty, the auxiliary verb (did/was/is) carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_398",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The manager reviewed the budget, and the assistant filed the paperwork.",
-            "textToSpeak": "The manager reviewed the budget, and the assistant filed the paperwork.",
+            "word": "The coach didn't just watch the game - he recorded it.",
+            "textToSpeak": "The coach didn't just watch the game - he recorded it.",
             "options": [
-                "Single Nucleus: Emphasis only on PAPERWORK (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on BUDGET and PAPERWORK (One Peak per Clause)"
+                "Emphasis on GAME (Object focus)",
+                "Emphasis on RECORDED (Verb/Action focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on BUDGET and PAPERWORK (One Peak per Clause)",
+            "correctAnswer": "Emphasis on RECORDED (Verb/Action focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 3,
                 1,
                 1,
-                3
+                1
             ],
-            "hint": "Two coworkers handled two separate tasks. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Each parallel clause carries its own nuclear stress, so 'budget' and 'paperwork' are both peaked, not just 'paperwork' alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This isn't about which object was involved — both actions share the same object. The contrast is in the action itself.",
+            "explanation": "Since “didn't just” rules out a lesser action, the real action, RECORDED, receives the pitch accent.",
+            "emphasisRule": "Contrastive verb focus places the nuclear stress on the action itself, not on an object shared by both possible actions."
         },
         {
             "id": "pitchPatternMatch_399",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I cleaned the kitchen, and my roommate organized the closet.",
-            "textToSpeak": "I cleaned the kitchen, and my roommate organized the closet.",
+            "word": "The mechanic didn't just check the brakes - he replaced them.",
+            "textToSpeak": "The mechanic didn't just check the brakes - he replaced them.",
             "options": [
-                "Two Nuclei: Emphasis on KITCHEN and CLOSET (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on CLOSET (Whole Sentence as One Unit)"
+                "Emphasis on REPLACED (Verb/Action focus)",
+                "Emphasis on BRAKES (Object focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on KITCHEN and CLOSET (One Peak per Clause)",
+            "correctAnswer": "Emphasis on REPLACED (Verb/Action focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
                 3,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "Two housemates tackled two separate chores. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'kitchen' and 'closet' are peaked, not just the final word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The object stays the same throughout; what changes is what was actually done to it — that's where the peak goes.",
+            "explanation": "Because the contrast is between two possible actions on the same object, the stress falls on REPLACED, the true action, not on the object.",
+            "emphasisRule": "When a sentence contrasts two possible actions on the same object, the stress shifts to the verb describing what actually happened."
         },
         {
             "id": "pitchPatternMatch_400",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The chef prepared the appetizer, and the baker finished the dessert.",
-            "textToSpeak": "The chef prepared the appetizer, and the baker finished the dessert.",
+            "word": "The technician didn't just inspect the elevator - she repaired it.",
+            "textToSpeak": "The technician didn't just inspect the elevator - she repaired it.",
             "options": [
-                "Two Nuclei: Emphasis on APPETIZER and DESSERT (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on DESSERT (Whole Sentence as One Unit)"
+                "Emphasis on ELEVATOR (Object focus)",
+                "Emphasis on REPAIRED (Verb/Action focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on APPETIZER and DESSERT (One Peak per Clause)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on REPAIRED (Verb/Action focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 3,
                 1,
                 1,
-                3
+                1
             ],
-            "hint": "Two kitchen staff handled two separate courses. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Each parallel clause carries its own nuclear stress, so 'appetizer' and 'dessert' are both peaked, not just 'dessert' alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Listen for the corrected action — it's being emphasized precisely because a lesser action was just ruled out.",
+            "explanation": "REPAIRED is the corrected, stronger action here, so it takes the nuclear stress instead of the shared object.",
+            "emphasisRule": "Contrastive verb focus places the nuclear stress on the action itself, not on an object shared by both possible actions."
         },
         {
             "id": "pitchPatternMatch_401",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The coach reviewed the footage, and the players studied the playbook.",
-            "textToSpeak": "The coach reviewed the footage, and the players studied the playbook.",
+            "word": "The editor didn't just review the article - she rewrote it.",
+            "textToSpeak": "The editor didn't just review the article - she rewrote it.",
             "options": [
-                "Single Nucleus: Emphasis only on PLAYBOOK (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on FOOTAGE and PLAYBOOK (One Peak per Clause)"
+                "Emphasis on REWROTE (Verb/Action focus)",
+                "Emphasis on ARTICLE (Object focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on FOOTAGE and PLAYBOOK (One Peak per Clause)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on REWROTE (Verb/Action focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
                 1,
                 3,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "Two groups prepared in two separate ways. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'footage' and 'playbook' are peaked, not just the final word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The sentence explicitly denies one action and confirms a stronger one — the confirmed action itself gets the emphasis, not the object.",
+            "explanation": "The object doesn't change between the two clauses, so the emphasis falls on REWROTE — the action that actually happened.",
+            "emphasisRule": "When a sentence contrasts two possible actions on the same object, the stress shifts to the verb describing what actually happened."
         },
         {
             "id": "pitchPatternMatch_402",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My sister practices the violin, and my brother practices the drums.",
-            "textToSpeak": "My sister practices the violin, and my brother practices the drums.",
+            "word": "The manager didn't just approve the request - she expedited it.",
+            "textToSpeak": "The manager didn't just approve the request - she expedited it.",
             "options": [
-                "Two Nuclei: Emphasis on VIOLIN and DRUMS (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on DRUMS (Whole Sentence as One Unit)"
+                "Emphasis on REQUEST (Object focus)",
+                "Emphasis on EXPEDITED (Verb/Action focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on VIOLIN and DRUMS (One Peak per Clause)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on EXPEDITED (Verb/Action focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 3,
                 1,
                 1,
-                3
+                1
             ],
-            "hint": "Two siblings play two different instruments. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Each parallel clause carries its own nuclear stress, so 'violin' and 'drums' are both peaked, not just 'drums' alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Notice the structure “didn't just X - Y.” That Y is the real point, so the verb carries the stress, not the noun after it.",
+            "explanation": "Since “didn't just” rules out a lesser action, the real action, EXPEDITED, receives the pitch accent.",
+            "emphasisRule": "Contrastive verb focus places the nuclear stress on the action itself, not on an object shared by both possible actions."
         },
         {
             "id": "pitchPatternMatch_403",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The technician installed the software, and the engineer tested the hardware.",
-            "textToSpeak": "The technician installed the software, and the engineer tested the hardware.",
+            "word": "Despite the small crowd, the band did perform enthusiastically.",
+            "textToSpeak": "Despite the small crowd, the band did perform enthusiastically.",
             "options": [
-                "Single Nucleus: Emphasis only on HARDWARE (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on SOFTWARE and HARDWARE (One Peak per Clause)"
+                "Emphasis on DID (Auxiliary/Polarity focus)",
+                "Emphasis on ENTHUSIASTICALLY (Manner focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on SOFTWARE and HARDWARE (One Peak per Clause)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 3,
                 1,
                 1,
-                3
+                1
             ],
-            "hint": "Two workers handled two separate parts of the project. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'software' and 'hardware' are peaked, not just the final word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Despite the obstacle mentioned first, the sentence insists something still happened — that insistence is stressed on ‘did’.",
+            "explanation": "Because the opening phrase implies this might not have happened, ‘did’ is stressed to firmly confirm that it did.",
+            "emphasisRule": "When a sentence confirms that something happened despite doubt or difficulty, the auxiliary verb (did/was/is) carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_404",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The librarian organized the books, and the volunteer sorted the donations.",
-            "textToSpeak": "The librarian organized the books, and the volunteer sorted the donations.",
+            "word": "The tutor didn't just explain the problem - she simplified it.",
+            "textToSpeak": "The tutor didn't just explain the problem - she simplified it.",
             "options": [
-                "Single Nucleus: Emphasis only on DONATIONS (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on BOOKS and DONATIONS (One Peak per Clause)"
+                "Emphasis on PROBLEM (Object focus)",
+                "Emphasis on SIMPLIFIED (Verb/Action focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on BOOKS and DONATIONS (One Peak per Clause)",
+            "correctAnswer": "Emphasis on SIMPLIFIED (Verb/Action focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                1,
                 3,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "Two people handled two separate tasks at the library. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Each parallel clause carries its own nuclear stress, so 'books' and 'donations' are both peaked, not just 'donations' alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The object stays the same throughout; what changes is what was actually done to it — that's where the peak goes.",
+            "explanation": "SIMPLIFIED is the corrected, stronger action here, so it takes the nuclear stress instead of the shared object.",
+            "emphasisRule": "Contrastive verb focus places the nuclear stress on the action itself, not on an object shared by both possible actions."
         },
         {
             "id": "pitchPatternMatch_405",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "He repaired the engine, and she replaced the battery.",
-            "textToSpeak": "He repaired the engine, and she replaced the battery.",
+            "word": "Despite the language barrier, they did reach an agreement.",
+            "textToSpeak": "Despite the language barrier, they did reach an agreement.",
             "options": [
-                "Two Nuclei: Emphasis on ENGINE and BATTERY (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on BATTERY (Whole Sentence as One Unit)"
+                "Emphasis on DID (Auxiliary/Polarity focus)",
+                "Emphasis on AGREEMENT (Object focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on ENGINE and BATTERY (One Peak per Clause)",
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
                 3,
                 1,
                 1,
-                3
+                1,
+                1
             ],
-            "hint": "Two people worked on two separate parts of the car. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'engine' and 'battery' are peaked, not just the final word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Ignore the final word for a moment — the emphasis is on confirming the action happened at all.",
+            "explanation": "This sentence emphasizes that the action really did occur, despite the obstacle — so the stress lands on ‘did’, not on AGREEMENT.",
+            "emphasisRule": "When a sentence confirms that something happened despite doubt or difficulty, the auxiliary verb (did/was/is) carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_406",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The waiter took the order, and the chef started the meal.",
-            "textToSpeak": "The waiter took the order, and the chef started the meal.",
+            "word": "Even with the budget cuts, the school did renovate the gym.",
+            "textToSpeak": "Even with the budget cuts, the school did renovate the gym.",
             "options": [
-                "Two Nuclei: Emphasis on ORDER and MEAL (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on MEAL (Whole Sentence as One Unit)"
+                "Emphasis on GYM (Object focus)",
+                "Emphasis on DID (Auxiliary/Polarity focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on ORDER and MEAL (One Peak per Clause)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 3,
                 1,
                 1,
-                3
+                1
             ],
-            "hint": "Two restaurant staff handled two separate steps. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Each parallel clause carries its own nuclear stress, so 'order' and 'meal' are both peaked, not just 'meal' alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The word ‘did’ isn't just a helper verb here — it's confirming something that was doubted, so it gets extra emphasis.",
+            "explanation": "‘Did’ is doing real work here, confirming the action happened despite the setback mentioned — that's why it's stressed, not GYM.",
+            "emphasisRule": "Emphatic auxiliaries like ‘did’ are stressed when they assert that an action truly occurred against expectations."
         },
         {
             "id": "pitchPatternMatch_407",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The tourists photographed the landmark, and the guide explained the history.",
-            "textToSpeak": "The tourists photographed the landmark, and the guide explained the history.",
+            "word": "Even with low funding, the clinic did treat every patient.",
+            "textToSpeak": "Even with low funding, the clinic did treat every patient.",
             "options": [
-                "Single Nucleus: Emphasis only on HISTORY (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on LANDMARK and HISTORY (One Peak per Clause)"
+                "Emphasis on DID (Auxiliary/Polarity focus)",
+                "Emphasis on PATIENT (Object focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on LANDMARK and HISTORY (One Peak per Clause)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
                 3,
                 1,
                 1,
-                3
+                1,
+                1
             ],
-            "hint": "Two groups did two separate things during the tour. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'landmark' and 'history' are peaked, not just the final word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence pushes back against an assumption of failure — that pushback lands directly on the auxiliary verb.",
+            "explanation": "Because the opening phrase implies this might not have happened, ‘did’ is stressed to firmly confirm that it did.",
+            "emphasisRule": "When a sentence confirms that something happened despite doubt or difficulty, the auxiliary verb (did/was/is) carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_408",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My uncle painted the fence, and my aunt planted the garden.",
-            "textToSpeak": "My uncle painted the fence, and my aunt planted the garden.",
+            "word": "Even with the delay, the surgeon did complete the operation.",
+            "textToSpeak": "Even with the delay, the surgeon did complete the operation.",
             "options": [
-                "Single Nucleus: Emphasis only on GARDEN (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on FENCE and GARDEN (One Peak per Clause)"
+                "Emphasis on OPERATION (Object focus)",
+                "Emphasis on DID (Auxiliary/Polarity focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on FENCE and GARDEN (One Peak per Clause)",
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 3,
                 1,
                 1,
-                3
+                1
             ],
-            "hint": "Two relatives tackled two separate outdoor projects. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Each parallel clause carries its own nuclear stress, so 'fence' and 'garden' are both peaked, not just 'garden' alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Despite the obstacle mentioned first, the sentence insists something still happened — that insistence is stressed on ‘did’.",
+            "explanation": "The auxiliary ‘did’ carries the nuclear stress here because it's asserting the truth of the action against doubt.",
+            "emphasisRule": "Emphatic auxiliaries like ‘did’ are stressed when they assert that an action truly occurred against expectations."
         },
         {
             "id": "pitchPatternMatch_409",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The student answered the question, and the teacher graded the test.",
-            "textToSpeak": "The student answered the question, and the teacher graded the test.",
+            "word": "Even with the injury, the athlete did break the record.",
+            "textToSpeak": "Even with the injury, the athlete did break the record.",
             "options": [
-                "Two Nuclei: Emphasis on QUESTION and TEST (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on TEST (Whole Sentence as One Unit)"
+                "Emphasis on DID (Auxiliary/Polarity focus)",
+                "Emphasis on RECORD (Object focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on QUESTION and TEST (One Peak per Clause)",
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
                 3,
                 1,
                 1,
-                3
+                1,
+                1
             ],
-            "hint": "Two people did two separate academic tasks. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'question' and 'test' are peaked, not just the final word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The auxiliary carries the real news here: yes, it truly happened, against expectations.",
+            "explanation": "This sentence emphasizes that the action really did occur, despite the obstacle — so the stress lands on ‘did’, not on RECORD.",
+            "emphasisRule": "When a sentence confirms that something happened despite doubt or difficulty, the auxiliary verb (did/was/is) carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_410",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The athlete stretched the muscles, and the trainer adjusted the schedule.",
-            "textToSpeak": "The athlete stretched the muscles, and the trainer adjusted the schedule.",
+            "word": "The photographer didn't just capture the moment - she edited it.",
+            "textToSpeak": "The photographer didn't just capture the moment - she edited it.",
             "options": [
-                "Single Nucleus: Emphasis only on SCHEDULE (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on MUSCLES and SCHEDULE (One Peak per Clause)"
+                "Emphasis on MOMENT (Object focus)",
+                "Emphasis on EDITED (Verb/Action focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on MUSCLES and SCHEDULE (One Peak per Clause)",
+            "correctAnswer": "Emphasis on EDITED (Verb/Action focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 3,
                 1,
                 1,
-                3
+                1
             ],
-            "hint": "Two people each handled a separate part of the training. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Each parallel clause carries its own nuclear stress, so 'muscles' and 'schedule' are both peaked, not just 'schedule' alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Listen for the corrected action — it's being emphasized precisely because a lesser action was just ruled out.",
+            "explanation": "Since “didn't just” rules out a lesser action, the real action, EDITED, receives the pitch accent.",
+            "emphasisRule": "Contrastive verb focus places the nuclear stress on the action itself, not on an object shared by both possible actions."
         },
         {
             "id": "pitchPatternMatch_411",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "We booked the flights, and they reserved the hotel.",
-            "textToSpeak": "We booked the flights, and they reserved the hotel.",
+            "word": "Even with heavy rain, the concert did continue outdoors.",
+            "textToSpeak": "Even with heavy rain, the concert did continue outdoors.",
             "options": [
-                "Two Nuclei: Emphasis on FLIGHTS and HOTEL (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on HOTEL (Whole Sentence as One Unit)"
+                "Emphasis on DID (Auxiliary/Polarity focus)",
+                "Emphasis on OUTDOORS (Place focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on FLIGHTS and HOTEL (One Peak per Clause)",
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 3,
                 1,
                 1,
-                3
+                1
             ],
-            "hint": "Two groups handled two separate parts of the trip planning. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'flights' and 'hotel' are peaked, not just the final word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The word ‘did’ isn't just a helper verb here — it's confirming something that was doubted, so it gets extra emphasis.",
+            "explanation": "Because the opening phrase implies this might not have happened, ‘did’ is stressed to firmly confirm that it did.",
+            "emphasisRule": "When a sentence confirms that something happened despite doubt or difficulty, the auxiliary verb (did/was/is) carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_412",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The designer updated the logo, and the developer fixed the website.",
-            "textToSpeak": "The designer updated the logo, and the developer fixed the website.",
+            "word": "Despite his doubts, the plan did work perfectly.",
+            "textToSpeak": "Despite his doubts, the plan did work perfectly.",
             "options": [
-                "Two Nuclei: Emphasis on LOGO and WEBSITE (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on WEBSITE (Whole Sentence as One Unit)"
+                "Emphasis on PERFECTLY (Manner focus)",
+                "Emphasis on DID (Auxiliary/Polarity focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on LOGO and WEBSITE (One Peak per Clause)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
                 3,
                 1,
                 1,
-                3
+                1,
+                1
             ],
-            "hint": "Two coworkers worked on two separate parts of the project. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Each parallel clause carries its own nuclear stress, so 'logo' and 'website' are both peaked, not just 'website' alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence pushes back against an assumption of failure — that pushback lands directly on the auxiliary verb.",
+            "explanation": "The auxiliary ‘did’ carries the nuclear stress here because it's asserting the truth of the action against doubt.",
+            "emphasisRule": "Emphatic auxiliaries like ‘did’ are stressed when they assert that an action truly occurred against expectations."
         },
         {
             "id": "pitchPatternMatch_413",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "She wrote the introduction, and he wrote the conclusion.",
-            "textToSpeak": "She wrote the introduction, and he wrote the conclusion.",
+            "word": "The driver didn't just deliver the package - he confirmed it.",
+            "textToSpeak": "The driver didn't just deliver the package - he confirmed it.",
             "options": [
-                "Two Nuclei: Emphasis on INTRODUCTION and CONCLUSION (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on CONCLUSION (Whole Sentence as One Unit)"
+                "Emphasis on CONFIRMED (Verb/Action focus)",
+                "Emphasis on PACKAGE (Object focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on INTRODUCTION and CONCLUSION (One Peak per Clause)",
+            "correctAnswer": "Emphasis on CONFIRMED (Verb/Action focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
                 3,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "Two co-authors each wrote a separate section. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'introduction' and 'conclusion' are peaked, not just the final word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This isn't about which object was involved — both actions share the same object. The contrast is in the action itself.",
+            "explanation": "The object doesn't change between the two clauses, so the emphasis falls on CONFIRMED — the action that actually happened.",
+            "emphasisRule": "When a sentence contrasts two possible actions on the same object, the stress shifts to the verb describing what actually happened."
         },
         {
             "id": "pitchPatternMatch_414",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The vet examined the puppy, and the assistant prepared the medicine.",
-            "textToSpeak": "The vet examined the puppy, and the assistant prepared the medicine.",
+            "word": "The librarian didn't just catalog the book - she restored it.",
+            "textToSpeak": "The librarian didn't just catalog the book - she restored it.",
             "options": [
-                "Two Nuclei: Emphasis on PUPPY and MEDICINE (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on MEDICINE (Whole Sentence as One Unit)"
+                "Emphasis on BOOK (Object focus)",
+                "Emphasis on RESTORED (Verb/Action focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on PUPPY and MEDICINE (One Peak per Clause)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on RESTORED (Verb/Action focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 3,
                 1,
                 1,
-                3
+                1
             ],
-            "hint": "Two clinic staff each handled a separate task. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Each parallel clause carries its own nuclear stress, so 'puppy' and 'medicine' are both peaked, not just 'medicine' alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The object stays the same throughout; what changes is what was actually done to it — that's where the peak goes.",
+            "explanation": "Since “didn't just” rules out a lesser action, the real action, RESTORED, receives the pitch accent.",
+            "emphasisRule": "Contrastive verb focus places the nuclear stress on the action itself, not on an object shared by both possible actions."
         },
         {
             "id": "pitchPatternMatch_415",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My mother ironed the shirts, and my father washed the dishes.",
-            "textToSpeak": "My mother ironed the shirts, and my father washed the dishes.",
+            "word": "Despite her nerves, she did pass the audition.",
+            "textToSpeak": "Despite her nerves, she did pass the audition.",
             "options": [
-                "Single Nucleus: Emphasis only on DISHES (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on SHIRTS and DISHES (One Peak per Clause)"
+                "Emphasis on DID (Auxiliary/Polarity focus)",
+                "Emphasis on AUDITION (Object focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on SHIRTS and DISHES (One Peak per Clause)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                1,
-                3,
-                1,
-                1,
-                3
-            ],
-            "hint": "Two parents handled two separate household chores. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'shirts' and 'dishes' are peaked, not just the final word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
-        },
-        {
-            "id": "pitchPatternMatch_416",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "The barista made the latte, and the cashier processed the payment.",
-            "textToSpeak": "The barista made the latte, and the cashier processed the payment.",
-            "options": [
-                "Single Nucleus: Emphasis only on PAYMENT (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on LATTE and PAYMENT (One Peak per Clause)"
-            ],
-            "correctAnswer": "Two Nuclei: Emphasis on LATTE and PAYMENT (One Peak per Clause)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                1,
-                3,
-                1,
-                1,
-                3
-            ],
-            "hint": "Two café staff handled two separate steps of the order. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Each parallel clause carries its own nuclear stress, so 'latte' and 'payment' are both peaked, not just 'payment' alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
-        },
-        {
-            "id": "pitchPatternMatch_417",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "The actor rehearsed the script, and the director adjusted the lighting.",
-            "textToSpeak": "The actor rehearsed the script, and the director adjusted the lighting.",
-            "options": [
-                "Single Nucleus: Emphasis only on LIGHTING (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on SCRIPT and LIGHTING (One Peak per Clause)"
-            ],
-            "correctAnswer": "Two Nuclei: Emphasis on SCRIPT and LIGHTING (One Peak per Clause)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                1,
-                3,
-                1,
-                1,
-                3
-            ],
-            "hint": "Two crew members each handled a separate part of the rehearsal. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'script' and 'lighting' are peaked, not just the final word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
-        },
-        {
-            "id": "pitchPatternMatch_418",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "The farmer harvested the crop, and the driver loaded the truck.",
-            "textToSpeak": "The farmer harvested the crop, and the driver loaded the truck.",
-            "options": [
-                "Single Nucleus: Emphasis only on TRUCK (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on CROP and TRUCK (One Peak per Clause)"
-            ],
-            "correctAnswer": "Two Nuclei: Emphasis on CROP and TRUCK (One Peak per Clause)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                1,
-                3,
-                1,
-                1,
-                3
-            ],
-            "hint": "Two workers handled two separate stages of the harvest. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Each parallel clause carries its own nuclear stress, so 'crop' and 'truck' are both peaked, not just 'truck' alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
-        },
-        {
-            "id": "pitchPatternMatch_419",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "The analyst reviewed the data, and the manager approved the proposal.",
-            "textToSpeak": "The analyst reviewed the data, and the manager approved the proposal.",
-            "options": [
-                "Two Nuclei: Emphasis on DATA and PROPOSAL (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on PROPOSAL (Whole Sentence as One Unit)"
-            ],
-            "correctAnswer": "Two Nuclei: Emphasis on DATA and PROPOSAL (One Peak per Clause)",
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 3,
                 1,
                 1,
-                3
+                1
             ],
-            "hint": "Two coworkers handled two separate steps of the process. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'data' and 'proposal' are peaked, not just the final word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Ignore the final word for a moment — the emphasis is on confirming the action happened at all.",
+            "explanation": "Because the opening phrase implies this might not have happened, ‘did’ is stressed to firmly confirm that it did.",
+            "emphasisRule": "When a sentence confirms that something happened despite doubt or difficulty, the auxiliary verb (did/was/is) carries the nuclear stress."
+        },
+        {
+            "id": "pitchPatternMatch_416",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "The chef didn't just plate the dish - he redesigned it.",
+            "textToSpeak": "The chef didn't just plate the dish - he redesigned it.",
+            "options": [
+                "Emphasis on DISH (Object focus)",
+                "Emphasis on REDESIGNED (Verb/Action focus)"
+            ],
+            "correctAnswer": "Emphasis on REDESIGNED (Verb/Action focus)",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                3,
+                1,
+                1
+            ],
+            "hint": "The sentence explicitly denies one action and confirms a stronger one — the confirmed action itself gets the emphasis, not the object.",
+            "explanation": "REDESIGNED is the corrected, stronger action here, so it takes the nuclear stress instead of the shared object.",
+            "emphasisRule": "Contrastive verb focus places the nuclear stress on the action itself, not on an object shared by both possible actions."
+        },
+        {
+            "id": "pitchPatternMatch_417",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "The nurse didn't just monitor the patient - she comforted him.",
+            "textToSpeak": "The nurse didn't just monitor the patient - she comforted him.",
+            "options": [
+                "Emphasis on COMFORTED (Verb/Action focus)",
+                "Emphasis on PATIENT (Object focus)"
+            ],
+            "correctAnswer": "Emphasis on COMFORTED (Verb/Action focus)",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                1
+            ],
+            "hint": "Notice the structure “didn't just X - Y.” That Y is the real point, so the verb carries the stress, not the noun after it.",
+            "explanation": "The object doesn't change between the two clauses, so the emphasis falls on COMFORTED — the action that actually happened.",
+            "emphasisRule": "When a sentence contrasts two possible actions on the same object, the stress shifts to the verb describing what actually happened."
+        },
+        {
+            "id": "pitchPatternMatch_418",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "The lawyer didn't just read the contract - she challenged it.",
+            "textToSpeak": "The lawyer didn't just read the contract - she challenged it.",
+            "options": [
+                "Emphasis on CONTRACT (Object focus)",
+                "Emphasis on CHALLENGED (Verb/Action focus)"
+            ],
+            "correctAnswer": "Emphasis on CHALLENGED (Verb/Action focus)",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                3,
+                1,
+                1
+            ],
+            "hint": "This isn't about which object was involved — both actions share the same object. The contrast is in the action itself.",
+            "explanation": "Since “didn't just” rules out a lesser action, the real action, CHALLENGED, receives the pitch accent.",
+            "emphasisRule": "Contrastive verb focus places the nuclear stress on the action itself, not on an object shared by both possible actions."
+        },
+        {
+            "id": "pitchPatternMatch_419",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "Even without power, the team did finish the presentation.",
+            "textToSpeak": "Even without power, the team did finish the presentation.",
+            "options": [
+                "Emphasis on DID (Auxiliary/Polarity focus)",
+                "Emphasis on PRESENTATION (Object focus)"
+            ],
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                3,
+                1,
+                1,
+                1,
+                1
+            ],
+            "hint": "The auxiliary carries the real news here: yes, it truly happened, against expectations.",
+            "explanation": "Because the opening phrase implies this might not have happened, ‘did’ is stressed to firmly confirm that it did.",
+            "emphasisRule": "When a sentence confirms that something happened despite doubt or difficulty, the auxiliary verb (did/was/is) carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_420",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The singer rehearsed the melody, and the band tuned the instruments.",
-            "textToSpeak": "The singer rehearsed the melody, and the band tuned the instruments.",
+            "word": "Despite the short notice, the caterer did finish the order.",
+            "textToSpeak": "Despite the short notice, the caterer did finish the order.",
             "options": [
-                "Single Nucleus: Emphasis only on INSTRUMENTS (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on MELODY and INSTRUMENTS (One Peak per Clause)"
+                "Emphasis on ORDER (Object focus)",
+                "Emphasis on DID (Auxiliary/Polarity focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on MELODY and INSTRUMENTS (One Peak per Clause)",
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 3,
                 1,
                 1,
-                3
+                1
             ],
-            "hint": "Two parts of the group each prepared separately. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Each parallel clause carries its own nuclear stress, so 'melody' and 'instruments' are both peaked, not just 'instruments' alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Ignore the final word for a moment — the emphasis is on confirming the action happened at all.",
+            "explanation": "The auxiliary ‘did’ carries the nuclear stress here because it's asserting the truth of the action against doubt.",
+            "emphasisRule": "Emphatic auxiliaries like ‘did’ are stressed when they assert that an action truly occurred against expectations."
         }
     ]
 }

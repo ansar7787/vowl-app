@@ -5,26 +5,26 @@
     "quests": [
         {
             "id": "WRT_OPINIONWRITING_L161_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Euthanasia should be legalised and carefully regulated in all countries.",
             "options": [
-                "Terminally ill individuals have the fundamental right to determine the timing and manner of their own death.",
-                "Legalised and regulated euthanasia eliminates uncontrolled illegal mercy killing with no safeguards.",
                 "Vulnerable people may feel pressured to choose death to avoid being a burden on their families.",
-                "Religious and cultural communities for whom life is sacred should not have end-of-life norms legislated."
+                "Terminally ill individuals have the fundamental right to determine the timing and manner of their own death.",
+                "Religious and cultural communities for whom life is sacred should not have end-of-life norms legislated.",
+                "Legalised and regulated euthanasia eliminates uncontrolled illegal mercy killing with no safeguards."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the autonomy and safety case for legalised euthanasia (Pros) and the vulnerability and cultural concerns (Cons).",
             "explanation": "Autonomy over one's death is fundamental and regulation eliminates illegal uncontrolled mercy killing (Pros), but vulnerable people risk feeling pressured to choose death, and legislating end-of-life norms overrides the values of communities for whom life is sacred (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L161_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Palliative care investment is a more humane response to end-of-life suffering than legalising euthanasia.",
@@ -43,64 +43,64 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L161_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Countries with legalised euthanasia demonstrate that safeguards can prevent abuse.",
             "options": [
-                "Netherlands, Belgium, and Canada show that euthanasia can be regulated without evidence of systematic abuse.",
-                "Long-running legalised euthanasia programmes generate data that allows continuous safeguard improvement.",
                 "The gradual expansion of euthanasia criteria in countries like Belgium raises concerns about safeguard erosion.",
-                "Evidence of absence of abuse is not evidence that abuse does not occur in undetectable ways."
+                "Netherlands, Belgium, and Canada show that euthanasia can be regulated without evidence of systematic abuse.",
+                "Evidence of absence of abuse is not evidence that abuse does not occur in undetectable ways.",
+                "Long-running legalised euthanasia programmes generate data that allows continuous safeguard improvement."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the international evidence case for euthanasia safety (Pros) and the criteria creep and detection concerns (Cons).",
             "explanation": "Netherlands and Belgium demonstrate that euthanasia can be regulated safely with continuous improvement (Pros), but criteria expansion in some countries suggests safeguard erosion, and absence of detected abuse does not prove undetectable abuse is absent (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L162_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Access to safe and legal abortion should be recognised as a fundamental human right.",
             "options": [
-                "Restricting abortion forces people to carry unwanted pregnancies against their will, violating bodily autonomy.",
-                "Criminalising abortion drives it underground, causing preventable deaths from unsafe illegal procedures.",
                 "Many religious and cultural traditions hold that life begins at conception, making abortion morally equivalent to killing.",
-                "Democratic communities have legitimate rights to determine ethical norms for their own societies through law."
+                "Democratic communities have legitimate rights to determine ethical norms for their own societies through law.",
+                "Restricting abortion forces people to carry unwanted pregnancies against their will, violating bodily autonomy.",
+                "Criminalising abortion drives it underground, causing preventable deaths from unsafe illegal procedures."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the autonomy and safety case for abortion as a right (Pros) and the life and democratic self-determination concerns (Cons).",
             "explanation": "Abortion restrictions violate bodily autonomy and criminalisation causes preventable deaths from unsafe procedures (Pros), but many hold sincere beliefs that life begins at conception, and democratic communities may legitimately legislate their ethical norms (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L162_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Restricting abortion access disproportionately harms women from lower-income backgrounds.",
             "options": [
                 "Wealthy women can always access abortion in permissive jurisdictions; restrictions primarily punish the poor.",
-                "Abortion restrictions compound existing inequalities by denying lower-income women reproductive autonomy.",
                 "The economic impact of restriction does not determine whether the moral prohibition is correct.",
-                "If abortion is genuinely morally wrong, the harm of restriction falls on those who perform the morally wrong act."
+                "If abortion is genuinely morally wrong, the harm of restriction falls on those who perform the morally wrong act.",
+                "Abortion restrictions compound existing inequalities by denying lower-income women reproductive autonomy."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider the class-based inequality argument for abortion access (Pros) and the moral relativism counter (Cons).",
             "explanation": "Abortion restrictions disproportionately punish lower-income women while wealthy women access care elsewhere (Pros), but economic impact on restriction does not settle the underlying moral question, and if abortion is genuinely wrong, restrictions may be appropriate regardless of distributional effects (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L162_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The debate about abortion rights reflects a genuine and irresolvable conflict of fundamental values.",
@@ -119,83 +119,83 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L163_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "All animal testing for cosmetic products should be banned globally through international agreement.",
             "options": [
-                "Cosmetic testing inflicts suffering on animals for products that are entirely unnecessary for human health.",
-                "Many countries have already banned cosmetic animal testing without harm to the cosmetics industry.",
                 "Verifying that cosmetics sold globally were tested without animals anywhere in their supply chain is extremely difficult.",
-                "Consumer demand for international products sold in countries requiring animal testing creates irresolvable compliance conflicts."
+                "Cosmetic testing inflicts suffering on animals for products that are entirely unnecessary for human health.",
+                "Consumer demand for international products sold in countries requiring animal testing creates irresolvable compliance conflicts.",
+                "Many countries have already banned cosmetic animal testing without harm to the cosmetics industry."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the unnecessary suffering and feasibility case for a global cosmetic animal testing ban (Pros) and the verification and compliance conflicts (Cons).",
             "explanation": "Cosmetic animal testing inflicts unnecessary suffering and many countries have already banned it successfully (Pros), but verifying global supply chains for animal testing is extremely difficult, and markets like China that require testing create irresolvable compliance conflicts (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L163_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Alternative testing methods are now sufficiently advanced to replace animal testing entirely.",
             "options": [
-                "In vitro cell testing, organ-on-a-chip technology, and AI modelling provide validated alternatives to animal tests.",
-                "Investing in alternative methods produces better and more human-relevant safety data than animal models.",
                 "Regulators in many countries have not yet fully validated alternative methods for all required safety assessments.",
-                "Transitioning the entire global testing industry to alternatives requires significant time and investment."
+                "Transitioning the entire global testing industry to alternatives requires significant time and investment.",
+                "In vitro cell testing, organ-on-a-chip technology, and AI modelling provide validated alternatives to animal tests.",
+                "Investing in alternative methods produces better and more human-relevant safety data than animal models."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider whether alternative methods are ready to replace all animal cosmetic testing (Pros) and the validation and transition concerns (Cons).",
             "explanation": "In vitro, organ-on-chip, and AI methods provide validated and more human-relevant alternatives (Pros), but regulatory validation is incomplete for all safety assessments, and industry-wide transition requires substantial time and investment (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L163_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A global ban on cosmetic animal testing requires enforcement mechanisms beyond national legislation.",
             "options": [
-                "International enforcement bodies with inspection powers are needed to prevent testing relocation to unregulated countries.",
-                "Trade restrictions on cosmetics from non-compliant countries create economic incentives for global adoption.",
                 "Trade restrictions on cosmetics provoke retaliatory measures that harm unrelated industries and diplomatic relations.",
-                "Creating international enforcement capacity for cosmetic testing would require institutional investment disproportionate to the harm."
+                "International enforcement bodies with inspection powers are needed to prevent testing relocation to unregulated countries.",
+                "Creating international enforcement capacity for cosmetic testing would require institutional investment disproportionate to the harm.",
+                "Trade restrictions on cosmetics from non-compliant countries create economic incentives for global adoption."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about enforcement mechanisms for a global cosmetic testing ban (Pros) and the trade retaliation and proportionality concerns (Cons).",
             "explanation": "International inspection powers and trade restrictions create economic incentives for global compliance (Pros), but trade measures provoke retaliation harming unrelated industries, and enforcement institutions may be disproportionately costly relative to cosmetic testing's harm (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L164_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Keeping wild animals in zoos is ethically unjustifiable and should be ended.",
             "options": [
                 "Confining wild animals to artificial enclosures denies their fundamental need for natural behaviour and movement.",
-                "Modern zoos exist primarily for human entertainment rather than genuine conservation benefit.",
                 "Accredited zoos fund and conduct important conservation and research programmes for endangered species.",
-                "In-situ habitat protection is a more effective use of conservation resources than expensive zoo breeding."
+                "In-situ habitat protection is a more effective use of conservation resources than expensive zoo breeding.",
+                "Modern zoos exist primarily for human entertainment rather than genuine conservation benefit."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the animal welfare and conservation effectiveness case against zoos (Pros) and the conservation and funding concerns (Cons).",
             "explanation": "Zoos deny wild animals natural behaviour and primarily serve entertainment rather than genuine conservation (Pros), but accredited zoos fund real conservation research and some species exist today only because of zoo breeding programmes (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L164_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Modern zoos have transformed into genuine conservation centres that save species from extinction.",
@@ -214,140 +214,140 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L164_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Wildlife sanctuaries and virtual reality experiences offer better alternatives to traditional zoos.",
             "options": [
                 "Accredited sanctuaries provide care for animals that cannot be rewilded without the entertainment-driven captive breeding model.",
-                "Immersive virtual reality wildlife experiences could replace much of what zoos offer for public education.",
                 "Virtual experiences cannot replicate the genuine wonder of encountering real animals that inspires conservation commitment.",
-                "Wildlife sanctuaries typically cannot accommodate the range and scale of species that large zoos currently house."
+                "Wildlife sanctuaries typically cannot accommodate the range and scale of species that large zoos currently house.",
+                "Immersive virtual reality wildlife experiences could replace much of what zoos offer for public education."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about sanctuaries and VR as zoo alternatives (Pros) and the authentic experience and scale concerns (Cons).",
             "explanation": "Sanctuaries provide ethical care and VR could replace zoo education without captive suffering (Pros), but virtual encounters cannot replicate the authentic wonder that inspires real conservation commitment, and sanctuaries cannot house the species diversity of large zoos (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L165_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Extraction of a nation's natural resources should require international community consent.",
             "options": [
-                "Many natural resources exist in global commons such as deep oceans and Antarctica that no nation owns.",
-                "Resource extraction causes transboundary environmental harms that affected nations have standing to contest.",
                 "Requiring international consent for resource extraction within sovereign borders violates national sovereignty.",
-                "International consent requirements could be used as economic weapons against resource-dependent nations."
+                "International consent requirements could be used as economic weapons against resource-dependent nations.",
+                "Many natural resources exist in global commons such as deep oceans and Antarctica that no nation owns.",
+                "Resource extraction causes transboundary environmental harms that affected nations have standing to contest."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the global commons and transboundary harm case for international consent (Pros) and the sovereignty and weaponisation concerns (Cons).",
             "explanation": "Resources in global commons belong to all humanity, and transboundary harms give affected nations legitimate standing (Pros), but consent requirements for sovereign territory violate national sovereignty and could be weaponised economically against resource-dependent nations (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L165_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Indigenous communities' rights to their traditional territories must protect natural resources from extraction.",
             "options": [
-                "Indigenous peoples whose lands are being extracted from have the most direct stake in resource decisions.",
-                "Free, prior, and informed consent frameworks give indigenous communities genuine veto power over extraction.",
                 "National governments often override indigenous consent rights through legal mechanisms and economic pressure.",
-                "Indigenous consent requirements are inconsistently applied and frequently circumvented in practice."
+                "Indigenous consent requirements are inconsistently applied and frequently circumvented in practice.",
+                "Indigenous peoples whose lands are being extracted from have the most direct stake in resource decisions.",
+                "Free, prior, and informed consent frameworks give indigenous communities genuine veto power over extraction."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider indigenous rights as the primary protection for natural resources (Pros) and the override and consistency concerns (Cons).",
             "explanation": "Indigenous peoples have the most direct stake in land extraction decisions and FPIC frameworks provide genuine veto power (Pros), but governments routinely override indigenous consent through legal mechanisms and economic pressure, and rights are inconsistently applied globally (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L165_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Resource extraction must be governed by strict international environmental impact standards.",
             "options": [
-                "Binding environmental impact standards prevent the worst extraction methods regardless of national politics.",
-                "International environmental standards create a level playing field that prevents regulatory races to the bottom.",
                 "Enforcement of international environmental standards requires compliance mechanisms that are currently absent.",
-                "Nations that depend economically on resource extraction resist international standards that constrain their income."
+                "Binding environmental impact standards prevent the worst extraction methods regardless of national politics.",
+                "Nations that depend economically on resource extraction resist international standards that constrain their income.",
+                "International environmental standards create a level playing field that prevents regulatory races to the bottom."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about binding international environmental standards for extraction (Pros) and the enforcement and resistance concerns (Cons).",
             "explanation": "Binding environmental standards prevent worst-practice extraction and prevent regulatory races to the bottom (Pros), but enforcement mechanisms are currently absent, and extraction-dependent nations resist standards that constrain their primary income source (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L166_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Cultural artefacts held in foreign museums should be returned to their nations of origin.",
             "options": [
                 "Artefacts taken during colonial conquest were obtained without legitimate consent and belong to source communities.",
-                "Repatriation enables source communities to reclaim and manage their own cultural heritage on their own terms.",
                 "Many artefacts are better preserved and more accessible to global audiences in major international museums.",
-                "Repatriation claims are complicated by the difficulty of establishing clear provenance and legal ownership."
+                "Repatriation claims are complicated by the difficulty of establishing clear provenance and legal ownership.",
+                "Repatriation enables source communities to reclaim and manage their own cultural heritage on their own terms."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the justice and cultural sovereignty case for repatriation (Pros) and the preservation and provenance concerns (Cons).",
             "explanation": "Colonial acquisition without consent makes artefacts illegitimately held, and repatriation restores cultural sovereignty (Pros), but major museums offer world-class preservation and global access, and provenance complexity makes many repatriation claims legally difficult (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L166_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Major museums are global custodians of humanity's shared heritage and should retain diverse collections.",
             "options": [
                 "Universal museums preserve humanity's collective cultural heritage in accessible, secure, and scholarly conditions.",
-                "Dispersing collections across origin countries may fragment coherent historical narratives that spanning collections preserve.",
                 "Treating cultural objects as globally shared ignores the specific meaning they hold for source communities.",
+                "Dispersing collections across origin countries may fragment coherent historical narratives that spanning collections preserve.",
                 "Nations of origin can and do build world-class museum facilities capable of caring for returned heritage."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider the global custodianship and narrative coherence case for retaining collections (Pros) and the community meaning and capacity counter (Cons).",
             "explanation": "Universal museums preserve shared heritage accessibly and coherent spanning collections illuminate historical narratives (Pros), but treating heritage as globally shared denies its specific meaning to source communities, and many origin nations have built excellent facilities capable of caring for returned artefacts (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L166_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Long-term loans and partnerships offer a middle ground between retention and full repatriation.",
             "options": [
+                "Long-term loan arrangements maintain colonial-era power relationships without resolving fundamental ownership.",
                 "Long-term loans allow source communities to display artefacts at home without permanent legal transfer.",
                 "Museum partnerships build curatorial capacity in origin countries through shared expertise and training.",
-                "Long-term loan arrangements maintain colonial-era power relationships without resolving fundamental ownership.",
                 "Source communities reasonably argue that loans of their own cultural property at the lender's discretion are unacceptable."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about long-term loans and partnerships as a compromise approach (Pros) and the power dynamics and acceptability concerns (Cons).",
             "explanation": "Long-term loans enable home display and partnerships build origin country curatorial capacity (Pros), but loan arrangements maintain colonial power dynamics without resolving ownership, and source communities reasonably reject the notion of borrowing their own cultural property (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L167_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Mass international tourism causes more harm than good to local communities and environments.",
@@ -366,83 +366,83 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L167_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Sustainable tourism can deliver economic benefits while minimising environmental and cultural harm.",
             "options": [
-                "Carefully managed eco-tourism can deliver higher income per visitor with lower environmental impact.",
-                "Sustainable tourism models give communities greater ownership and control over their own cultural assets.",
                 "Sustainable tourism is a niche market unable to replace the economic volume that mass tourism generates.",
-                "Market incentives for cheaper mass tourism consistently undermine sustainability standards in practice."
+                "Market incentives for cheaper mass tourism consistently undermine sustainability standards in practice.",
+                "Carefully managed eco-tourism can deliver higher income per visitor with lower environmental impact.",
+                "Sustainable tourism models give communities greater ownership and control over their own cultural assets."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider sustainable tourism as an alternative to mass tourism (Pros) and the scale and market pressure concerns (Cons).",
             "explanation": "Sustainable eco-tourism delivers higher per-visitor income with lower environmental impact and greater community ownership (Pros), but sustainable tourism cannot replace mass tourism volumes, and market pressure for cheaper alternatives consistently erodes sustainability standards (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L167_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Tourism taxes and visitor limits can manage overcrowding without eliminating tourism's economic benefits.",
             "options": [
                 "Tourist taxes fund infrastructure investment and environmental repair that excessive visitor numbers damage.",
-                "Visitor cap systems protect fragile environments and cultural sites while maintaining viable tourism economies.",
                 "Visitor caps favour wealthier tourists who can afford premium entry, excluding lower-income travellers.",
+                "Visitor cap systems protect fragile environments and cultural sites while maintaining viable tourism economies.",
                 "Neighbouring uncapped destinations absorb displaced tourists, making local caps environmentally ineffective."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about tourism taxes and caps as management tools (Pros) and the inequality and displacement concerns (Cons).",
             "explanation": "Tourist taxes fund environmental repair and visitor caps protect fragile sites while maintaining economic benefit (Pros), but caps favour wealthy tourists and displaced visitors simply move to nearby uncapped destinations, making environmental benefits limited (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L168_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Economic and cultural globalisation has irreversibly damaged the world's cultural diversity.",
             "options": [
-                "Global media and consumer culture is homogenising language, food, music, and values across diverse societies.",
-                "English linguistic dominance is rapidly reducing the number of speakers of minority and indigenous languages.",
                 "Globalisation also creates new hybrid cultures that combine global and local elements in creative ways.",
-                "Technology enables minority cultures to reach global audiences and sustain communities across borders."
+                "Technology enables minority cultures to reach global audiences and sustain communities across borders.",
+                "Global media and consumer culture is homogenising language, food, music, and values across diverse societies.",
+                "English linguistic dominance is rapidly reducing the number of speakers of minority and indigenous languages."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about globalisation as a force for cultural homogenisation and loss (Pros) and the hybrid culture and digital preservation counters (Cons).",
             "explanation": "Global media homogenises culture and English dominance erodes minority language speakers (Pros), but globalisation also produces creative hybrid cultures, and technology enables minority communities to sustain and share their culture globally (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L168_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Cultural exchange through globalisation enriches and diversifies rather than destroys local cultures.",
             "options": [
                 "Access to global culture creates new creative possibilities by combining local traditions with global influences.",
-                "Communities that engage with globalisation often strengthen distinctive local identity as a counterpoint to global norms.",
                 "The power imbalance between global and local cultures means exchange is rarely equal or genuinely reciprocal.",
+                "Communities that engage with globalisation often strengthen distinctive local identity as a counterpoint to global norms.",
                 "Local cultures that engage with global markets face commercial pressure to simplify for international consumption."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider cultural exchange as enriching rather than eroding local cultures (Pros) and the power imbalance and commercialisation concerns (Cons).",
             "explanation": "Global cultural access enables creative combination and often strengthens local identity as a distinctive counterpoint (Pros), but the profound power imbalance makes exchange unequal, and commercial globalisation pressure simplifies local culture for international markets (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L168_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Active state cultural policy is necessary to preserve cultural diversity in the face of globalisation.",
@@ -461,7 +461,7 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L169_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Endangered minority languages should be actively preserved even at significant public expense.",
@@ -480,95 +480,95 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L169_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Communities themselves rather than governments should decide whether their language survives.",
             "options": [
+                "Minority language communities face economic pressures that make transmission choices genuinely constrained.",
                 "Language vitality depends ultimately on community desire to speak and transmit it intergenerationally.",
                 "Externally funded preservation without community ownership produces archives rather than living languages.",
-                "Minority language communities face economic pressures that make transmission choices genuinely constrained.",
                 "Government support can create conditions for community-driven revitalisation without imposing external priorities."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Consider community ownership versus government direction in language preservation (Pros for community) and the constraint and enabling role concerns (Cons).",
             "explanation": "Language survival depends on community transmission will, and external preservation without community ownership produces archives not living languages (Pros), but economic pressures constrain genuine choice, and governments can create enabling conditions without imposing external priorities on communities (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L169_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Digital technology offers unprecedented tools for minority language preservation and revitalisation.",
             "options": [
-                "Online communities, apps, and social media enable minority language speakers to maintain global communities.",
-                "Digital language learning tools can reach the diaspora speakers critical for intergenerational transmission.",
                 "Digital preservation serves communities that already speak a language better than it recruits new speakers.",
-                "Social media algorithms favour major languages and systematically disadvantage minority language content."
+                "Social media algorithms favour major languages and systematically disadvantage minority language content.",
+                "Online communities, apps, and social media enable minority language speakers to maintain global communities.",
+                "Digital language learning tools can reach the diaspora speakers critical for intergenerational transmission."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about digital technology as a language preservation and revitalisation tool (Pros) and the new speaker and algorithmic bias concerns (Cons).",
             "explanation": "Digital tools enable global minority language communities and reach diaspora speakers for transmission (Pros), but digital tools serve existing speakers better than recruiting new ones, and algorithmic bias systematically disadvantages minority language content (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L170_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Absolute freedom of speech is incompatible with a just and safe society.",
             "options": [
                 "Unconstrained speech permits hate speech that causes real psychological harm and incites violence against minorities.",
-                "Absolute free speech protects the powerful who can broadcast harmful speech from those most harmed by it.",
                 "Restricting hate speech gives governments dangerous powers to define permissible views and silence dissent.",
-                "Historical evidence shows that speech restrictions are typically used against minority and marginalised voices."
+                "Historical evidence shows that speech restrictions are typically used against minority and marginalised voices.",
+                "Absolute free speech protects the powerful who can broadcast harmful speech from those most harmed by it."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the harm and power case for limiting free speech (Pros) and the government power and historical misuse concerns (Cons).",
             "explanation": "Unconstrained hate speech causes real harm and protects the powerful at the expense of the marginalised (Pros), but speech restrictions give governments powers to silence dissent, and historically such powers are primarily used against minorities rather than protecting them (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L170_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Counterspeech is a more effective response to harmful expression than legal prohibition.",
             "options": [
                 "Challenging harmful speech with better arguments and social disapproval is more democratic than censorship.",
-                "Prohibiting speech drives it underground where it radicalises in unmonitored spaces rather than being challenged.",
                 "Counterspeech is insufficient protection when harmful speech is systematically amplified by algorithms.",
+                "Prohibiting speech drives it underground where it radicalises in unmonitored spaces rather than being challenged.",
                 "Victims of hate speech cannot be expected to engage in open debate against coordinated harassment campaigns."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider counterspeech as the better alternative to speech prohibition (Pros) and its insufficiency concerns (Cons).",
             "explanation": "Counterspeech is more democratic than censorship and prohibition drives harmful speech underground to radicalise unmonitored (Pros), but algorithmic amplification makes counterspeech inadequate, and expecting victims to debate their harassers is unreasonable (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L170_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Context-dependent speech regulation is more proportionate than either absolute freedom or broad restriction.",
             "options": [
-                "Different contexts - workplace, school, broadcast media, and public square - warrant different speech standards.",
-                "Proportionate context-based regulation can protect the most vulnerable without silencing legitimate political debate.",
                 "Context-based regulation creates legal uncertainty and inconsistency that creates compliance problems.",
-                "Determining appropriate context distinctions requires value judgments that are themselves politically contested."
+                "Different contexts - workplace, school, broadcast media, and public square - warrant different speech standards.",
+                "Determining appropriate context distinctions requires value judgments that are themselves politically contested.",
+                "Proportionate context-based regulation can protect the most vulnerable without silencing legitimate political debate."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about context-dependent speech regulation as a proportionate middle ground (Pros) and the legal uncertainty and contested values concerns (Cons).",
             "explanation": "Context-specific speech standards protect vulnerable groups proportionately without silencing legitimate political debate (Pros), but context distinctions create legal uncertainty and the value judgments required to define context are themselves politically contested (Cons)."

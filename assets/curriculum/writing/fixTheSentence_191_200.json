@@ -42,7 +42,7 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "She is one of those people who is never satisfied with their work.",
+            "passage": "She has become one of those people who is never satisfied with their work.",
             "missingWord": "is",
             "options": [
                 "are",
@@ -51,8 +51,8 @@
                 "were"
             ],
             "correctAnswer": "are",
-            "hint": "'One of those people who' - does the relative clause refer to 'one' or 'those people'? Which verb is correct?",
-            "explanation": "The relative clause ('who') refers to 'those people' (plural): 'She is one of those people who are never satisfied'."
+            "hint": "'Who' here refers back to 'those people' (plural), not to 'she'. What verb form matches a plural antecedent?",
+            "explanation": "In 'one of those [plural noun] who', the relative pronoun 'who' refers to the plural noun, so the verb must be plural: 'people who are never satisfied'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L192_Q1",
@@ -178,17 +178,17 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "Due to the storm, the event was cancelled and the organisers were devastated.",
-            "missingWord": "Due to",
+            "passage": "Although the heavy storm, the event was cancelled and the organisers were devastated.",
+            "missingWord": "Although",
             "options": [
-                "Due to",
-                "Because of",
-                "Owing to",
-                "Since"
+                "Despite",
+                "Although",
+                "Because",
+                "Even though"
             ],
-            "correctAnswer": "Due to",
-            "hint": "'Due to' vs 'because of' - 'due to' should follow a form of 'to be'. Is 'due to' correct here?",
-            "explanation": "'Due to' is formally used only after a form of 'be': 'The cancellation was due to the storm'. Use 'Because of' in other cases."
+            "correctAnswer": "Despite",
+            "hint": "'Although' needs a full clause with a subject and verb. 'The heavy storm' is just a noun phrase - which word fits a noun phrase instead?",
+            "explanation": "'Despite'/'in spite of' are followed by a noun: 'Despite the heavy storm'. 'Although', 'because', and 'even though' all need a full clause, like 'although there was a heavy storm'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L194_Q3",

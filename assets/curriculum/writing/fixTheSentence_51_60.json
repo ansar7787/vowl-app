@@ -59,7 +59,7 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "Between you and I, I think the project is already behind schedule.",
+            "passage": "Between you and I, this project seems to be behind schedule already.",
             "missingWord": "I",
             "options": [
                 "me",
@@ -68,8 +68,8 @@
                 "mine"
             ],
             "correctAnswer": "me",
-            "hint": "After prepositions like 'between', 'for', 'with', 'to', which pronoun form do we use?",
-            "explanation": "After prepositions, always use the object pronoun. 'Between you and me' is correct, not 'between you and I'."
+            "hint": "'Between' is a preposition. What pronoun form always follows a preposition?",
+            "explanation": "Prepositions are followed by object pronouns: 'between you and me'. 'I' is a subject pronoun and can't follow 'between'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L52_Q2",
@@ -93,8 +93,8 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "He introduced himself to the new team members on his very first day.",
-            "missingWord": "himself",
+            "passage": "He introduced him to the new team members on his very first day.",
+            "missingWord": "him",
             "options": [
                 "himself",
                 "him",
@@ -102,8 +102,8 @@
                 "oneself"
             ],
             "correctAnswer": "himself",
-            "hint": "He performed the action on himself - the doer and receiver are the same person. What pronoun is this?",
-            "explanation": "Reflexive pronouns (himself/herself/myself) are used when the subject and object are the same. 'He introduced himself' is correct."
+            "hint": "The subject and the object refer to the same person here. What kind of pronoun is needed?",
+            "explanation": "When the subject and object are the same person, use a reflexive pronoun: 'He introduced himself'. 'Him' would mean he introduced someone else."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L53_Q1",
@@ -161,8 +161,8 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "The children played quietly by themselves while their parents cooked dinner.",
-            "missingWord": "themselves",
+            "passage": "The children played quietly by them while their parents cooked dinner.",
+            "missingWord": "them",
             "options": [
                 "themselves",
                 "them",
@@ -170,8 +170,8 @@
                 "oneself"
             ],
             "correctAnswer": "themselves",
-            "hint": "The children played alone, without help. What reflexive pronoun means 'by oneself' for a group?",
-            "explanation": "'By themselves' means alone, without help. The reflexive pronoun 'themselves' is correct here."
+            "hint": "'By ___' meaning 'alone, with no one else' needs a reflexive pronoun. Which one matches 'the children'?",
+            "explanation": "'By themselves' means alone/unsupervised. 'By them' would need 'them' to refer to some other group, which doesn't fit here."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L54_Q2",
@@ -195,8 +195,8 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "Neither of us wanted to leave early, but we had to catch the last train.",
-            "missingWord": "us",
+            "passage": "Neither of we wanted to leave the celebration early that night.",
+            "missingWord": "we",
             "options": [
                 "us",
                 "we",
@@ -204,15 +204,15 @@
                 "ours"
             ],
             "correctAnswer": "us",
-            "hint": "'Of' is a preposition. Which pronoun follows a preposition - 'us' or 'we'?",
-            "explanation": "After a preposition like 'of', use the object pronoun 'us': 'Neither of us'. 'We' is a subject pronoun."
+            "hint": "After a preposition like 'of', which pronoun form is correct - subject or object?",
+            "explanation": "Prepositions like 'of' are followed by object pronouns: 'neither of us'. 'We' is a subject pronoun and can't follow 'of'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L55_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "The tour guide showed my friend and I around the historic old city.",
+            "passage": "Just between you and I, this year's conference felt poorly organised.",
             "missingWord": "I",
             "options": [
                 "me",
@@ -221,8 +221,8 @@
                 "myself"
             ],
             "correctAnswer": "me",
-            "hint": "Is this pronoun doing the action or receiving it? The tour guide showed ___ around.",
-            "explanation": "The pronoun is the object (receiving the action). Use 'me': 'showed my friend and me around the city'."
+            "hint": "'Between' is a preposition. What pronoun form always follows a preposition?",
+            "explanation": "Prepositions take object pronouns: 'between you and me'. 'I' is a subject pronoun and cannot follow 'between'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L55_Q2",
@@ -246,7 +246,7 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "She saw her reflection at the mirror in the bathroom before leaving.",
+            "passage": "He checked his tie at the mirror in the hallway before the interview.",
             "missingWord": "at",
             "options": [
                 "in",
@@ -256,7 +256,7 @@
             ],
             "correctAnswer": "in",
             "hint": "Think about looking into a mirror to see a reflection - which preposition captures this idea?",
-            "explanation": "Use 'in' with a mirror: 'She saw her reflection in the mirror'. 'At' would mean she simply looked towards it."
+            "explanation": "Use 'in' with a mirror: 'He checked his tie in the mirror'. 'At' would mean he simply looked towards it, not into it."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L56_Q1",
@@ -365,7 +365,7 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "The doctor told my father and I to eat less sugar and exercise daily.",
+            "passage": "It was kind of the neighbours to invite my father and I to dinner.",
             "missingWord": "I",
             "options": [
                 "me",
@@ -374,8 +374,8 @@
                 "myself"
             ],
             "correctAnswer": "me",
-            "hint": "The doctor told ___. Is the pronoun doing the action or receiving it?",
-            "explanation": "The pronoun is the object of 'told'. Use 'me': 'The doctor told my father and me to eat less sugar'."
+            "hint": "Try each part of the compound alone: would you say 'invite I to dinner'? What sounds right there?",
+            "explanation": "Removing 'my father and' shows the answer clearly: you would never say 'invite I to dinner'. Object position needs 'me': '...invite my father and me'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L58_Q2",
@@ -433,7 +433,7 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "Can you help my colleague and I with this difficult calculation please?",
+            "passage": "It would mean a lot to my colleague and I if you joined the call.",
             "missingWord": "I",
             "options": [
                 "me",
@@ -442,8 +442,8 @@
                 "myself"
             ],
             "correctAnswer": "me",
-            "hint": "After 'help', is the pronoun the subject or the object? Try the sentence without 'my colleague and'.",
-            "explanation": "Use 'me' as the object pronoun: 'Can you help my colleague and me?' 'I' is a subject pronoun only."
+            "hint": "Try removing 'my colleague and' - would the sentence still say 'mean a lot to I'?",
+            "explanation": "Test it alone: 'it would mean a lot to I' sounds clearly wrong. The object pronoun 'me' is needed: '...to my colleague and me'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L59_Q3",
@@ -484,7 +484,7 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "Her and she partner have just moved into a new flat in the city centre.",
+            "passage": "She and she partner have just moved into a new flat in the city centre.",
             "missingWord": "she",
             "options": [
                 "her",
@@ -493,8 +493,8 @@
                 "herself"
             ],
             "correctAnswer": "her",
-            "hint": "There are two pronouns: 'Her and she partner'. Which form of the pronoun goes before 'partner'?",
-            "explanation": "Before a noun, use the possessive adjective 'her': 'her partner'. 'She' is a subject pronoun used before verbs."
+            "hint": "Before a noun like 'partner', do we need a subject pronoun or a possessive one?",
+            "explanation": "Before a noun, use the possessive 'her': 'her partner'. 'She' is a subject pronoun, used before verbs, not before nouns."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L60_Q3",

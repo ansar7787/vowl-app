@@ -12,6 +12,7 @@ import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/utils/text_similarity_helper.dart';
 
 import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_header.dart';
 import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_positive_pole_panel.dart';
@@ -159,7 +160,8 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
         final String cleanAnt = ant.trim().toLowerCase();
         if (cleanWord == cleanAnt ||
             cleanWord.contains(cleanAnt) ||
-            cleanAnt.contains(cleanWord)) {
+            cleanAnt.contains(cleanWord) ||
+            TextSimilarityHelper.isMatch(cleanWord, cleanAnt, threshold: 0.70)) {
           matchFound = true;
           break;
         }

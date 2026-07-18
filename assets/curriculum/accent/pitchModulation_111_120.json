@@ -5,7 +5,7 @@
     "quests": [
         {
             "id": "ACC_PITCHMODULATION_L111_Q1",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "I'm meeting Sarah at the CAFE.",
@@ -18,28 +18,28 @@
             "correctAnswerIndex": 0,
             "hint": "No mistake is being fixed here - the speaker is simply answering 'where?'. Listen for the natural final emphasis on 'cafe'.",
             "explanation": "The stress on 'CAFE' highlights new information answering 'where', not a correction of any previous error.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted."
         },
         {
             "id": "ACC_PITCHMODULATION_L111_Q2",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "We're leaving on FRIDAY.",
-            "textToSpeak": "We're leaving on FRIDAY.",
+            "word": "We're leaving on FRIDAY, not Saturday.",
+            "textToSpeak": "We're leaving on FRIDAY, not Saturday.",
             "options": [
-                "Stress on 'FRIDAY' (Disputing Wrong Information)",
-                "Stress on 'FRIDAY' (New Information - Highlighting When)"
+                "Stress on 'FRIDAY' (New Information - Simply Announcing the Day)",
+                "Stress on 'FRIDAY' (Correcting the Departure Day)"
             ],
-            "correctAnswer": "Stress on 'FRIDAY' (New Information - Highlighting When)",
+            "correctAnswer": "Stress on 'FRIDAY' (Correcting the Departure Day)",
             "correctAnswerIndex": 1,
-            "hint": "This simply answers the question 'when?' with new information. Listen for the natural emphasis landing on 'Friday'.",
-            "explanation": "The stress on 'FRIDAY' highlights new information answering 'when', delivered as fresh news rather than a dispute.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "hint": "The trailing 'not Saturday' shows this corrects an earlier assumption, not just shares news. Listen for a pointed emphasis on 'FRIDAY'.",
+            "explanation": "The stress on 'FRIDAY', followed by 'not Saturday', corrects a mistaken date rather than simply announcing new information.",
+            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed."
         },
         {
             "id": "ACC_PITCHMODULATION_L111_Q3",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "She works as a NURSE.",
@@ -52,45 +52,45 @@
             "correctAnswerIndex": 0,
             "hint": "This answers 'what does she do?' with new information. Listen for the natural emphasis on 'nurse'.",
             "explanation": "The stress on 'NURSE' highlights new information about her profession, simply answering the question, not correcting anyone.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted."
         },
         {
             "id": "ACC_PITCHMODULATION_L112_Q1",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "He's bringing the DESSERT.",
-            "textToSpeak": "He's bringing the DESSERT.",
+            "word": "He's bringing the DESSERT, not the drinks.",
+            "textToSpeak": "He's bringing the DESSERT, not the drinks.",
             "options": [
-                "Stress on 'DESSERT' (Correcting an Earlier Mistake)",
-                "Stress on 'DESSERT' (New Information - Highlighting What)"
+                "Stress on 'DESSERT' (Correcting Who's Bringing What)",
+                "Stress on 'DESSERT' (New Information - Simply Sharing the Plan)"
             ],
-            "correctAnswer": "Stress on 'DESSERT' (New Information - Highlighting What)",
-            "correctAnswerIndex": 1,
-            "hint": "This answers 'what is he bringing?' with new information. Listen for the natural emphasis on 'dessert'.",
-            "explanation": "The stress on 'DESSERT' highlights new information about what he's bringing, not a correction of a previous error.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "correctAnswer": "Stress on 'DESSERT' (Correcting Who's Bringing What)",
+            "correctAnswerIndex": 0,
+            "hint": "The trailing 'not the drinks' shows this fixes a mix-up about assignments. Listen for a pointed emphasis on 'DESSERT'.",
+            "explanation": "The stress on 'DESSERT', followed by 'not the drinks', corrects a misunderstanding about who's bringing what, rather than simply sharing a plan.",
+            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed."
         },
         {
             "id": "ACC_PITCHMODULATION_L112_Q2",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I left my umbrella at the OFFICE.",
-            "textToSpeak": "I left my umbrella at the OFFICE.",
+            "word": "I left my umbrella at the OFFICE, not the gym.",
+            "textToSpeak": "I left my umbrella at the OFFICE, not the gym.",
             "options": [
-                "Stress on 'OFFICE' (Disputing Wrong Information)",
-                "Stress on 'OFFICE' (New Information - Highlighting Where)"
+                "Stress on 'OFFICE' (New Information - Simply Reporting the Location)",
+                "Stress on 'OFFICE' (Correcting Where It Was Left)"
             ],
-            "correctAnswer": "Stress on 'OFFICE' (New Information - Highlighting Where)",
+            "correctAnswer": "Stress on 'OFFICE' (Correcting Where It Was Left)",
             "correctAnswerIndex": 1,
-            "hint": "This answers 'where did you leave it?' with new information. Listen for the natural emphasis on 'office'.",
-            "explanation": "The stress on 'OFFICE' highlights new information about the location, simply answering the question.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "hint": "The trailing 'not the gym' shows this corrects a wrong guess about the location. Listen for a pointed emphasis on 'OFFICE'.",
+            "explanation": "The stress on 'OFFICE', followed by 'not the gym', corrects a mistaken guess about where the umbrella was left.",
+            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted."
         },
         {
             "id": "ACC_PITCHMODULATION_L112_Q3",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "They're flying to BARCELONA.",
@@ -103,11 +103,11 @@
             "correctAnswerIndex": 1,
             "hint": "This answers 'where are they flying to?' with new information. Listen for the natural emphasis on 'Barcelona'.",
             "explanation": "The stress on 'BARCELONA' highlights new information about the destination, not a correction of any earlier guess.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed."
         },
         {
             "id": "ACC_PITCHMODULATION_L113_Q1",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "I'll see you at SEVEN.",
@@ -120,28 +120,28 @@
             "correctAnswerIndex": 1,
             "hint": "This answers 'what time?' with new information. Listen for the natural emphasis landing on 'seven'.",
             "explanation": "The stress on 'SEVEN' highlights new information about the meeting time, simply answering the question.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted."
         },
         {
             "id": "ACC_PITCHMODULATION_L113_Q2",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "She adopted a RABBIT.",
-            "textToSpeak": "She adopted a RABBIT.",
+            "word": "She adopted a RABBIT, not a hamster.",
+            "textToSpeak": "She adopted a RABBIT, not a hamster.",
             "options": [
-                "Stress on 'RABBIT' (New Information - Highlighting What Pet)",
-                "Stress on 'RABBIT' (Disputing Wrong Information)"
+                "Stress on 'RABBIT' (Correcting the Type of Pet)",
+                "Stress on 'RABBIT' (New Information - Simply Sharing the News)"
             ],
-            "correctAnswer": "Stress on 'RABBIT' (New Information - Highlighting What Pet)",
+            "correctAnswer": "Stress on 'RABBIT' (Correcting the Type of Pet)",
             "correctAnswerIndex": 0,
-            "hint": "This answers 'what did she adopt?' with new information. Listen for the natural emphasis on 'rabbit'.",
-            "explanation": "The stress on 'RABBIT' highlights new information about the pet, delivered as fresh news, not a dispute.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "hint": "The trailing 'not a hamster' shows this corrects a wrong guess about the pet. Listen for a pointed emphasis on 'RABBIT'.",
+            "explanation": "The stress on 'RABBIT', followed by 'not a hamster', corrects an incorrect guess about which animal she adopted.",
+            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed."
         },
         {
             "id": "ACC_PITCHMODULATION_L113_Q3",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "We're studying for the SCIENCE exam.",
@@ -154,45 +154,45 @@
             "correctAnswerIndex": 1,
             "hint": "This answers 'which exam?' with new information. Listen for the natural emphasis on 'science'.",
             "explanation": "The stress on 'SCIENCE' highlights new information about the subject, simply answering the question.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted."
         },
         {
             "id": "ACC_PITCHMODULATION_L114_Q1",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "He's allergic to PEANUTS.",
-            "textToSpeak": "He's allergic to PEANUTS.",
+            "word": "He's allergic to PEANUTS, not tree nuts.",
+            "textToSpeak": "He's allergic to PEANUTS, not tree nuts.",
             "options": [
-                "Stress on 'PEANUTS' (New Information - Highlighting the Allergen)",
-                "Stress on 'PEANUTS' (Correcting an Earlier Mistake)"
+                "Stress on 'PEANUTS' (New Information - Simply Sharing Health Information)",
+                "Stress on 'PEANUTS' (Correcting the Allergen)"
             ],
-            "correctAnswer": "Stress on 'PEANUTS' (New Information - Highlighting the Allergen)",
-            "correctAnswerIndex": 0,
-            "hint": "This answers 'allergic to what?' with new information. Listen for the natural emphasis on 'peanuts'.",
-            "explanation": "The stress on 'PEANUTS' highlights new information about the allergen, simply sharing important new information.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "correctAnswer": "Stress on 'PEANUTS' (Correcting the Allergen)",
+            "correctAnswerIndex": 1,
+            "hint": "The trailing 'not tree nuts' shows this corrects a mix-up about the allergy. Listen for a pointed emphasis on 'PEANUTS'.",
+            "explanation": "The stress on 'PEANUTS', followed by 'not tree nuts', corrects a specific mix-up about the allergen, rather than simply sharing new information.",
+            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed."
         },
         {
             "id": "ACC_PITCHMODULATION_L114_Q2",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "The package arrived this MORNING.",
-            "textToSpeak": "The package arrived this MORNING.",
+            "word": "The package arrived this MORNING, not last night.",
+            "textToSpeak": "The package arrived this MORNING, not last night.",
             "options": [
-                "Stress on 'MORNING' (Disputing Wrong Information)",
-                "Stress on 'MORNING' (New Information - Highlighting When)"
+                "Stress on 'MORNING' (Correcting the Arrival Time)",
+                "Stress on 'MORNING' (New Information - Simply Reporting the Time)"
             ],
-            "correctAnswer": "Stress on 'MORNING' (New Information - Highlighting When)",
-            "correctAnswerIndex": 1,
-            "hint": "This answers 'when did it arrive?' with new information. Listen for the natural emphasis on 'morning'.",
-            "explanation": "The stress on 'MORNING' highlights new information about the arrival time, not a dispute over an earlier claim.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "correctAnswer": "Stress on 'MORNING' (Correcting the Arrival Time)",
+            "correctAnswerIndex": 0,
+            "hint": "The trailing 'not last night' shows this corrects a wrong guess about timing. Listen for a pointed emphasis on 'MORNING'.",
+            "explanation": "The stress on 'MORNING', followed by 'not last night', corrects a mistaken assumption about when the package arrived.",
+            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted."
         },
         {
             "id": "ACC_PITCHMODULATION_L114_Q3",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "I downloaded a new FITNESS app.",
@@ -205,11 +205,11 @@
             "correctAnswerIndex": 0,
             "hint": "This answers 'what kind of app?' with new information. Listen for the natural emphasis on 'fitness'.",
             "explanation": "The stress on 'FITNESS' highlights new information about the type of app, simply answering the question.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed."
         },
         {
             "id": "ACC_PITCHMODULATION_L115_Q1",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "We watched a HORROR movie.",
@@ -222,28 +222,28 @@
             "correctAnswerIndex": 0,
             "hint": "This answers 'what kind of movie?' with new information. Listen for the natural emphasis on 'horror'.",
             "explanation": "The stress on 'HORROR' highlights new information about the genre, simply sharing what was watched.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted."
         },
         {
             "id": "ACC_PITCHMODULATION_L115_Q2",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "She's training to be a PILOT.",
-            "textToSpeak": "She's training to be a PILOT.",
+            "word": "She's training to be a PILOT, not a flight attendant.",
+            "textToSpeak": "She's training to be a PILOT, not a flight attendant.",
             "options": [
-                "Stress on 'PILOT' (New Information - Highlighting the Career)",
-                "Stress on 'PILOT' (Disputing Wrong Information)"
+                "Stress on 'PILOT' (New Information - Simply Sharing Her Plan)",
+                "Stress on 'PILOT' (Correcting Her Career Path)"
             ],
-            "correctAnswer": "Stress on 'PILOT' (New Information - Highlighting the Career)",
-            "correctAnswerIndex": 0,
-            "hint": "This answers 'training to be what?' with new information. Listen for the natural emphasis on 'pilot'.",
-            "explanation": "The stress on 'PILOT' highlights new information about her career path, not a dispute over a previous guess.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "correctAnswer": "Stress on 'PILOT' (Correcting Her Career Path)",
+            "correctAnswerIndex": 1,
+            "hint": "The trailing 'not a flight attendant' shows this corrects a wrong guess about her career. Listen for a pointed emphasis on 'PILOT'.",
+            "explanation": "The stress on 'PILOT', followed by 'not a flight attendant', corrects a mistaken guess about her career path.",
+            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed."
         },
         {
             "id": "ACC_PITCHMODULATION_L115_Q3",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "I'm cooking PASTA tonight.",
@@ -256,45 +256,45 @@
             "correctAnswerIndex": 0,
             "hint": "This answers 'what are you cooking?' with new information. Listen for the natural emphasis on 'pasta'.",
             "explanation": "The stress on 'PASTA' highlights new information about dinner, simply answering the question, not correcting anyone.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted."
         },
         {
             "id": "ACC_PITCHMODULATION_L116_Q1",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "The train leaves from PLATFORM nine.",
-            "textToSpeak": "The train leaves from PLATFORM nine.",
+            "word": "The train leaves from PLATFORM nine, not platform six.",
+            "textToSpeak": "The train leaves from PLATFORM nine, not platform six.",
             "options": [
-                "Stress on 'PLATFORM' (New Information - Highlighting Where)",
-                "Stress on 'PLATFORM' (Correcting an Earlier Mistake)"
+                "Stress on 'PLATFORM' (Correcting the Departure Point)",
+                "Stress on 'PLATFORM' (New Information - Simply Announcing Where)"
             ],
-            "correctAnswer": "Stress on 'PLATFORM' (New Information - Highlighting Where)",
+            "correctAnswer": "Stress on 'PLATFORM' (Correcting the Departure Point)",
             "correctAnswerIndex": 0,
-            "hint": "This answers 'which platform?' with new information. Listen for the natural emphasis landing on 'platform'.",
-            "explanation": "The stress on 'PLATFORM' highlights new information about where to find the train, simply answering the question.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "hint": "The trailing 'not platform six' shows this corrects a wrong platform number. Listen for a pointed emphasis on 'PLATFORM'.",
+            "explanation": "The stress on 'PLATFORM', followed by 'not platform six', corrects a mistaken platform number rather than simply announcing one.",
+            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed."
         },
         {
             "id": "ACC_PITCHMODULATION_L116_Q2",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "He fixed it with a SCREWDRIVER.",
-            "textToSpeak": "He fixed it with a SCREWDRIVER.",
+            "word": "He fixed it with a SCREWDRIVER, not a hammer.",
+            "textToSpeak": "He fixed it with a SCREWDRIVER, not a hammer.",
             "options": [
-                "Stress on 'SCREWDRIVER' (New Information - Highlighting the Tool Used)",
-                "Stress on 'SCREWDRIVER' (Disputing Wrong Information)"
+                "Stress on 'SCREWDRIVER' (New Information - Simply Sharing How)",
+                "Stress on 'SCREWDRIVER' (Correcting the Tool Used)"
             ],
-            "correctAnswer": "Stress on 'SCREWDRIVER' (New Information - Highlighting the Tool Used)",
-            "correctAnswerIndex": 0,
-            "hint": "This answers 'fixed it with what?' with new information. Listen for the natural emphasis on 'screwdriver'.",
-            "explanation": "The stress on 'SCREWDRIVER' highlights new information about the tool, not a dispute over how it was fixed.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "correctAnswer": "Stress on 'SCREWDRIVER' (Correcting the Tool Used)",
+            "correctAnswerIndex": 1,
+            "hint": "The trailing 'not a hammer' shows this corrects a wrong guess about the tool. Listen for a pointed emphasis on 'SCREWDRIVER'.",
+            "explanation": "The stress on 'SCREWDRIVER', followed by 'not a hammer', corrects a mistaken guess about which tool was used.",
+            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted."
         },
         {
             "id": "ACC_PITCHMODULATION_L116_Q3",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "We're celebrating at my AUNT's house.",
@@ -307,11 +307,11 @@
             "correctAnswerIndex": 0,
             "hint": "This answers 'celebrating where?' with new information. Listen for the natural emphasis on 'aunt's'.",
             "explanation": "The stress on 'AUNT's' highlights new information about the location, simply sharing the plan.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed."
         },
         {
             "id": "ACC_PITCHMODULATION_L117_Q1",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "I ordered the package from JAPAN.",
@@ -324,28 +324,28 @@
             "correctAnswerIndex": 1,
             "hint": "This answers 'ordered from where?' with new information. Listen for the natural emphasis on 'Japan'.",
             "explanation": "The stress on 'JAPAN' highlights new information about the package's origin, simply answering the question.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted."
         },
         {
             "id": "ACC_PITCHMODULATION_L117_Q2",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "She's learning to play the VIOLIN.",
-            "textToSpeak": "She's learning to play the VIOLIN.",
+            "word": "She's learning to play the VIOLIN, not the cello.",
+            "textToSpeak": "She's learning to play the VIOLIN, not the cello.",
             "options": [
-                "Stress on 'VIOLIN' (Disputing Wrong Information)",
-                "Stress on 'VIOLIN' (New Information - Highlighting the Instrument)"
+                "Stress on 'VIOLIN' (Correcting the Instrument)",
+                "Stress on 'VIOLIN' (New Information - Simply Sharing the News)"
             ],
-            "correctAnswer": "Stress on 'VIOLIN' (New Information - Highlighting the Instrument)",
-            "correctAnswerIndex": 1,
-            "hint": "This answers 'learning to play what?' with new information. Listen for the natural emphasis on 'violin'.",
-            "explanation": "The stress on 'VIOLIN' highlights new information about the instrument, not a dispute over an earlier guess.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "correctAnswer": "Stress on 'VIOLIN' (Correcting the Instrument)",
+            "correctAnswerIndex": 0,
+            "hint": "The trailing 'not the cello' shows this corrects a wrong guess about the instrument. Listen for a pointed emphasis on 'VIOLIN'.",
+            "explanation": "The stress on 'VIOLIN', followed by 'not the cello', corrects a mistaken guess about which instrument she's learning.",
+            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed."
         },
         {
             "id": "ACC_PITCHMODULATION_L117_Q3",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "The class starts at NINE.",
@@ -358,45 +358,45 @@
             "correctAnswerIndex": 1,
             "hint": "This answers 'what time does it start?' with new information. Listen for the natural emphasis on 'nine'.",
             "explanation": "The stress on 'NINE' highlights new information about the start time, simply answering the question.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted."
         },
         {
             "id": "ACC_PITCHMODULATION_L118_Q1",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "He works at the HOSPITAL.",
-            "textToSpeak": "He works at the HOSPITAL.",
+            "word": "He works at the HOSPITAL, not the clinic.",
+            "textToSpeak": "He works at the HOSPITAL, not the clinic.",
             "options": [
-                "Stress on 'HOSPITAL' (New Information - Highlighting Where)",
-                "Stress on 'HOSPITAL' (Correcting an Earlier Mistake)"
+                "Stress on 'HOSPITAL' (New Information - Simply Answering the Question)",
+                "Stress on 'HOSPITAL' (Correcting His Workplace)"
             ],
-            "correctAnswer": "Stress on 'HOSPITAL' (New Information - Highlighting Where)",
-            "correctAnswerIndex": 0,
-            "hint": "This answers 'where does he work?' with new information. Listen for the natural emphasis on 'hospital'.",
-            "explanation": "The stress on 'HOSPITAL' highlights new information about his workplace, simply answering the question.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "correctAnswer": "Stress on 'HOSPITAL' (Correcting His Workplace)",
+            "correctAnswerIndex": 1,
+            "hint": "The trailing 'not the clinic' shows this corrects a wrong guess about his workplace. Listen for a pointed emphasis on 'HOSPITAL'.",
+            "explanation": "The stress on 'HOSPITAL', followed by 'not the clinic', corrects a mistaken guess about where he works.",
+            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed."
         },
         {
             "id": "ACC_PITCHMODULATION_L118_Q2",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "We're driving to the MOUNTAINS.",
-            "textToSpeak": "We're driving to the MOUNTAINS.",
+            "word": "We're driving to the MOUNTAINS, not the coast.",
+            "textToSpeak": "We're driving to the MOUNTAINS, not the coast.",
             "options": [
-                "Stress on 'MOUNTAINS' (Disputing Wrong Information)",
-                "Stress on 'MOUNTAINS' (New Information - Highlighting the Destination)"
+                "Stress on 'MOUNTAINS' (Correcting the Destination)",
+                "Stress on 'MOUNTAINS' (New Information - Simply Sharing the Plan)"
             ],
-            "correctAnswer": "Stress on 'MOUNTAINS' (New Information - Highlighting the Destination)",
-            "correctAnswerIndex": 1,
-            "hint": "This answers 'driving to where?' with new information. Listen for the natural emphasis on 'mountains'.",
-            "explanation": "The stress on 'MOUNTAINS' highlights new information about the destination, not a dispute over the plan.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "correctAnswer": "Stress on 'MOUNTAINS' (Correcting the Destination)",
+            "correctAnswerIndex": 0,
+            "hint": "The trailing 'not the coast' shows this corrects a wrong guess about the destination. Listen for a pointed emphasis on 'MOUNTAINS'.",
+            "explanation": "The stress on 'MOUNTAINS', followed by 'not the coast', corrects a mistaken guess about where they're headed.",
+            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted."
         },
         {
             "id": "ACC_PITCHMODULATION_L118_Q3",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "I bought it at the FARMERS market.",
@@ -409,11 +409,11 @@
             "correctAnswerIndex": 1,
             "hint": "This answers 'bought it where?' with new information. Listen for the natural emphasis on 'farmers'.",
             "explanation": "The stress on 'FARMERS' highlights new information about where the item was bought, simply answering the question.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed."
         },
         {
             "id": "ACC_PITCHMODULATION_L119_Q1",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "She's reading a MYSTERY novel.",
@@ -426,28 +426,28 @@
             "correctAnswerIndex": 0,
             "hint": "This answers 'what kind of novel?' with new information. Listen for the natural emphasis on 'mystery'.",
             "explanation": "The stress on 'MYSTERY' highlights new information about the genre, simply sharing what she's reading.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted."
         },
         {
             "id": "ACC_PITCHMODULATION_L119_Q2",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "He's allergic to SHELLFISH.",
-            "textToSpeak": "He's allergic to SHELLFISH.",
+            "word": "He's allergic to SHELLFISH, not dairy.",
+            "textToSpeak": "He's allergic to SHELLFISH, not dairy.",
             "options": [
-                "Stress on 'SHELLFISH' (New Information - Highlighting the Allergen)",
-                "Stress on 'SHELLFISH' (Disputing Wrong Information)"
+                "Stress on 'SHELLFISH' (New Information - Simply Sharing Health Information)",
+                "Stress on 'SHELLFISH' (Correcting the Allergen)"
             ],
-            "correctAnswer": "Stress on 'SHELLFISH' (New Information - Highlighting the Allergen)",
-            "correctAnswerIndex": 0,
-            "hint": "This answers 'allergic to what?' with new information. Listen for the natural emphasis on 'shellfish'.",
-            "explanation": "The stress on 'SHELLFISH' highlights new information about the allergen, not a dispute over a previous claim.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "correctAnswer": "Stress on 'SHELLFISH' (Correcting the Allergen)",
+            "correctAnswerIndex": 1,
+            "hint": "The trailing 'not dairy' shows this corrects a mix-up about the allergy. Listen for a pointed emphasis on 'SHELLFISH'.",
+            "explanation": "The stress on 'SHELLFISH', followed by 'not dairy', corrects a specific mix-up about the allergen.",
+            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed."
         },
         {
             "id": "ACC_PITCHMODULATION_L119_Q3",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "We're meeting on ZOOM this time.",
@@ -460,45 +460,45 @@
             "correctAnswerIndex": 1,
             "hint": "This answers 'meeting how?' with new information. Listen for the natural emphasis on 'Zoom'.",
             "explanation": "The stress on 'ZOOM' highlights new information about the meeting method, simply answering the question.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted."
         },
         {
             "id": "ACC_PITCHMODULATION_L120_Q1",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "I left the keys with the RECEPTIONIST.",
-            "textToSpeak": "I left the keys with the RECEPTIONIST.",
+            "word": "I left the keys with the RECEPTIONIST, not the security guard.",
+            "textToSpeak": "I left the keys with the RECEPTIONIST, not the security guard.",
             "options": [
-                "Stress on 'RECEPTIONIST' (Correcting an Earlier Mistake)",
-                "Stress on 'RECEPTIONIST' (New Information - Highlighting With Whom)"
+                "Stress on 'RECEPTIONIST' (Correcting Who Has the Keys)",
+                "Stress on 'RECEPTIONIST' (New Information - Simply Answering the Question)"
             ],
-            "correctAnswer": "Stress on 'RECEPTIONIST' (New Information - Highlighting With Whom)",
-            "correctAnswerIndex": 1,
-            "hint": "This answers 'left the keys with whom?' with new information. Listen for the natural emphasis on 'receptionist'.",
-            "explanation": "The stress on 'RECEPTIONIST' highlights new information about who has the keys, simply answering the question.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "correctAnswer": "Stress on 'RECEPTIONIST' (Correcting Who Has the Keys)",
+            "correctAnswerIndex": 0,
+            "hint": "The trailing 'not the security guard' shows this corrects a wrong guess about who has the keys. Listen for a pointed emphasis on 'RECEPTIONIST'.",
+            "explanation": "The stress on 'RECEPTIONIST', followed by 'not the security guard', corrects a mistaken guess about who has the keys.",
+            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed."
         },
         {
             "id": "ACC_PITCHMODULATION_L120_Q2",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
-            "word": "The concert starts at EIGHT.",
-            "textToSpeak": "The concert starts at EIGHT.",
+            "word": "The concert starts at EIGHT, not seven.",
+            "textToSpeak": "The concert starts at EIGHT, not seven.",
             "options": [
-                "Stress on 'EIGHT' (New Information - Highlighting the Time)",
-                "Stress on 'EIGHT' (Disputing Wrong Information)"
+                "Stress on 'EIGHT' (New Information - Simply Announcing the Time)",
+                "Stress on 'EIGHT' (Correcting the Start Time)"
             ],
-            "correctAnswer": "Stress on 'EIGHT' (New Information - Highlighting the Time)",
-            "correctAnswerIndex": 0,
-            "hint": "This answers 'what time does it start?' with new information. Listen for the natural emphasis on 'eight'.",
-            "explanation": "The stress on 'EIGHT' highlights new information about the start time, not a dispute over an earlier guess.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "correctAnswer": "Stress on 'EIGHT' (Correcting the Start Time)",
+            "correctAnswerIndex": 1,
+            "hint": "The trailing 'not seven' shows this corrects a wrong guess about the start time. Listen for a pointed emphasis on 'EIGHT'.",
+            "explanation": "The stress on 'EIGHT', followed by 'not seven', corrects a mistaken assumption about the start time.",
+            "modulationPattern": "Nuclear stress naturally falls on the word carrying the most important new information in a sentence, not on words the listener would already expect or take for granted."
         },
         {
             "id": "ACC_PITCHMODULATION_L120_Q3",
-            "instruction": "Identify the pitch",
+            "instruction": "Listen to how it's said, then choose the pitch pattern you hear.",
             "subtype": "pitchModulation",
             "interactionType": "slider",
             "word": "We're flying with a BUDGET airline.",
@@ -511,7 +511,7 @@
             "correctAnswerIndex": 0,
             "hint": "This answers 'flying with what kind of airline?' with new information. Listen for the natural emphasis on 'budget'.",
             "explanation": "The stress on 'BUDGET' highlights new information about the type of airline, simply answering the question.",
-            "modulationPattern": "Pitch modulation conveys complex emotions and attitudes."
+            "modulationPattern": "English speakers instinctively emphasize whichever word answers the implied question; every other word, including the main verb, stays comparatively unstressed."
         }
     ]
 }

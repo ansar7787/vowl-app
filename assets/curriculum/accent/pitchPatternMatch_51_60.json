@@ -5,723 +5,723 @@
     "quests": [
         {
             "id": "pitchPatternMatch_151",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "No, the tourist found the wallet.",
-            "textToSpeak": "No, the tourist found the wallet.",
+            "word": "I might be misremembering, but the concert starts at eight, doesn't it?",
+            "textToSpeak": "I might be misremembering, but the concert starts at eight, doesn't it?",
             "options": [
-                "Emphasis on WALLET (Object focus)",
-                "Emphasis on TOURIST (Subject focus)"
+                "Rising tag (a real question — the speaker isn't sure)",
+                "Falling tag (seeking agreement — the speaker is fairly sure)"
             ],
-            "correctAnswer": "Emphasis on TOURIST (Subject focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
                 3,
-                1,
-                1,
-                1,
-                1
+                2,
+                3
             ],
-            "hint": "'No' signals that someone guessed the wrong finder. Listen for the pitch to peak early, on 'tourist'.",
-            "explanation": "The opening 'No' corrects a wrong assumption about who found it, so the nuclear stress moves to 'tourist'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "Notice the speaker openly admits they're not sure — a genuine question like this usually rises on the tag.",
+            "explanation": "Because the speaker signals genuine uncertainty, the tag question rises in pitch, like a real yes/no question.",
+            "emphasisRule": "When a tag question expresses genuine uncertainty, it typically rises in pitch, like a real yes/no question."
         },
         {
             "id": "pitchPatternMatch_152",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The scout explores the trail eagerly.",
-            "textToSpeak": "The scout explores the trail eagerly.",
+            "word": "That movie was fantastic, wasn't it?",
+            "textToSpeak": "That movie was fantastic, wasn't it?",
             "options": [
-                "Emphasis on SCOUT (Subject focus)",
-                "Emphasis on TRAIL (Object focus)"
+                "Rising tag (a real question — the speaker isn't sure)",
+                "Falling tag (seeking agreement — the speaker is fairly sure)"
             ],
-            "correctAnswer": "Emphasis on TRAIL (Object focus)",
+            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "This is a plain, routine description with no correction cue - listen for the pitch peak landing on 'trail'.",
-            "explanation": "With no contrastive cue, the nuclear stress falls on 'trail', the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "Words like 'obviously' or 'clearly' show the speaker is already confident — that tag usually falls.",
+            "explanation": "Because the speaker is already confident, the tag simply invites agreement and falls in pitch.",
+            "emphasisRule": "When a tag question simply invites agreement from a confident speaker, it typically falls in pitch."
         },
         {
             "id": "pitchPatternMatch_153",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "In fact, my cousin baked the pie.",
-            "textToSpeak": "In fact, my cousin baked the pie.",
+            "word": "I could be mistaken, but this seat is taken, isn't it?",
+            "textToSpeak": "I could be mistaken, but this seat is taken, isn't it?",
             "options": [
-                "Emphasis on COUSIN (Subject focus)",
-                "Emphasis on PIE (Object focus)"
+                "Rising tag (a real question — the speaker isn't sure)",
+                "Falling tag (seeking agreement — the speaker is fairly sure)"
             ],
-            "correctAnswer": "Emphasis on COUSIN (Subject focus)",
+            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
                 3,
-                1,
-                1,
-                1,
-                1
+                2,
+                3
             ],
-            "hint": "'In fact' signals a correction about who baked it. Listen for the pitch to peak early, on 'cousin'.",
-            "explanation": "'In fact' corrects an assumption about who baked the pie, so the nuclear stress shifts onto 'cousin'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "Phrases like 'I could be wrong' signal real uncertainty, which usually means the tag lifts in pitch.",
+            "explanation": "When a speaker isn't sure and is truly asking, the tag at the end typically rises.",
+            "emphasisRule": "A tag added to check something the speaker truly isn't sure about usually rises at the end."
         },
         {
             "id": "pitchPatternMatch_154",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My father trims the hedges neatly.",
-            "textToSpeak": "My father trims the hedges neatly.",
+            "word": "Correct me if I'm mistaken, but the store closes at six, doesn't it?",
+            "textToSpeak": "Correct me if I'm mistaken, but the store closes at six, doesn't it?",
             "options": [
-                "Emphasis on HEDGES (Object focus)",
-                "Emphasis on FATHER (Subject focus)"
+                "Falling tag (seeking agreement — the speaker is fairly sure)",
+                "Rising tag (a real question — the speaker isn't sure)"
             ],
-            "correctAnswer": "Emphasis on HEDGES (Object focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
-                1
+                2,
+                3
             ],
-            "hint": "There's no correction here - this is a routine chore description, so listen for the peak near the end.",
-            "explanation": "With no contrastive cue, the nuclear stress stays on 'hedges', not on 'father'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "This speaker is genuinely checking, not just confirming — expect the tag to rise.",
+            "explanation": "This tag functions as a real question here, so it takes rising intonation, not falling.",
+            "emphasisRule": "When a tag question expresses genuine uncertainty, it typically rises in pitch, like a real yes/no question."
         },
         {
             "id": "pitchPatternMatch_155",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Surprisingly, the intern impressed the client.",
-            "textToSpeak": "Surprisingly, the intern impressed the client.",
+            "word": "This traffic is unbelievable, isn't it?",
+            "textToSpeak": "This traffic is unbelievable, isn't it?",
             "options": [
-                "Emphasis on INTERN (Subject focus)",
-                "Emphasis on CLIENT (Object focus)"
+                "Falling tag (seeking agreement — the speaker is fairly sure)",
+                "Rising tag (a real question — the speaker isn't sure)"
             ],
-            "correctAnswer": "Emphasis on INTERN (Subject focus)",
+            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
                 3,
-                1,
-                1,
                 1,
                 1
             ],
-            "hint": "'Surprisingly' flags who did the impressing as the unexpected detail. Listen for the pitch to peak on 'intern'.",
-            "explanation": "'Surprisingly' marks the subject as the unexpected new information, so the nuclear stress shifts onto 'intern'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "This speaker isn't really asking; they're inviting agreement, so the tag typically drops in pitch.",
+            "explanation": "When a speaker is sure and just wants confirmation, the tag question falls rather than rises.",
+            "emphasisRule": "A tag added mainly to confirm something the speaker already believes usually falls at the end."
         },
         {
             "id": "pitchPatternMatch_156",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The analyst reviews the data carefully.",
-            "textToSpeak": "The analyst reviews the data carefully.",
+            "word": "Correct me if I'm wrong, but her flight lands tonight, doesn't it?",
+            "textToSpeak": "Correct me if I'm wrong, but her flight lands tonight, doesn't it?",
             "options": [
-                "Emphasis on DATA (Object focus)",
-                "Emphasis on ANALYST (Subject focus)"
+                "Falling tag (seeking agreement — the speaker is fairly sure)",
+                "Rising tag (a real question — the speaker isn't sure)"
             ],
-            "correctAnswer": "Emphasis on DATA (Object focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
-                1
+                2,
+                3
             ],
-            "hint": "This is a plain workplace description with no correction involved - listen for the peak near the end.",
-            "explanation": "With no contrastive cue, the nuclear stress falls on 'data', the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "When someone admits they might be mistaken, the tag question that follows usually rises.",
+            "explanation": "The speaker's hedging shows real doubt, which is why the tag rises instead of falling.",
+            "emphasisRule": "A tag added to check something the speaker truly isn't sure about usually rises at the end."
         },
         {
             "id": "pitchPatternMatch_157",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Honestly, the student answered the riddle.",
-            "textToSpeak": "Honestly, the student answered the riddle.",
+            "word": "The lecture ran long again, didn't it?",
+            "textToSpeak": "The lecture ran long again, didn't it?",
             "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on RIDDLE (Object focus)"
+                "Falling tag (seeking agreement — the speaker is fairly sure)",
+                "Rising tag (a real question — the speaker isn't sure)"
             ],
-            "correctAnswer": "Emphasis on STUDENT (Subject focus)",
+            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
                 3,
-                1,
-                1,
                 1,
                 1
             ],
-            "hint": "'Honestly' signals surprise about who solved it. Listen for the pitch to peak early, on 'student'.",
-            "explanation": "'Honestly' highlights a correction or surprise about who answered, so the nuclear stress moves onto 'student'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "Since the speaker already seems sure, expect the tag to fall rather than rise.",
+            "explanation": "This tag isn't a real question; it's inviting agreement, so it takes falling intonation.",
+            "emphasisRule": "When a tag question simply invites agreement from a confident speaker, it typically falls in pitch."
         },
         {
             "id": "pitchPatternMatch_158",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The barber cuts the hair precisely.",
-            "textToSpeak": "The barber cuts the hair precisely.",
+            "word": "You obviously forgot your umbrella, didn't you?",
+            "textToSpeak": "You obviously forgot your umbrella, didn't you?",
             "options": [
-                "Emphasis on HAIR (Object focus)",
-                "Emphasis on BARBER (Subject focus)"
+                "Rising tag (a real question — the speaker isn't sure)",
+                "Falling tag (seeking agreement — the speaker is fairly sure)"
             ],
-            "correctAnswer": "Emphasis on HAIR (Object focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "There's no correction cue here - this is a plain grooming description, so listen for the pitch peak on 'hair'.",
-            "explanation": "With no contrastive cue, the nuclear stress falls on 'hair', the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "This sounds like the speaker expects you to simply agree — that kind of tag usually falls.",
+            "explanation": "Since there's no genuine doubt here, the tag falls instead of rising.",
+            "emphasisRule": "A tag added mainly to confirm something the speaker already believes usually falls at the end."
         },
         {
             "id": "pitchPatternMatch_159",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "As it turns out, the mechanic spotted the issue.",
-            "textToSpeak": "As it turns out, the mechanic spotted the issue.",
+            "word": "Feel free to correct me, but this size runs small, doesn't it?",
+            "textToSpeak": "Feel free to correct me, but this size runs small, doesn't it?",
             "options": [
-                "Emphasis on ISSUE (Object focus)",
-                "Emphasis on MECHANIC (Subject focus)"
+                "Rising tag (a real question — the speaker isn't sure)",
+                "Falling tag (seeking agreement — the speaker is fairly sure)"
             ],
-            "correctAnswer": "Emphasis on MECHANIC (Subject focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
                 3,
-                1,
-                1,
-                1,
-                1
+                2,
+                3
             ],
-            "hint": "'As it turns out' flags who spotted it as the surprising detail. Listen for the pitch to peak on 'mechanic'.",
-            "explanation": "'As it turns out' marks the subject as unexpected new information, so the nuclear stress shifts onto 'mechanic'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "The hedge at the start shows real doubt, so listen for an upward pitch on the tag itself.",
+            "explanation": "Because the speaker signals genuine uncertainty, the tag question rises in pitch, like a real yes/no question.",
+            "emphasisRule": "When a tag question expresses genuine uncertainty, it typically rises in pitch, like a real yes/no question."
         },
         {
             "id": "pitchPatternMatch_160",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My brother charges the phone overnight.",
-            "textToSpeak": "My brother charges the phone overnight.",
+            "word": "Please correct me, but this medication needs food, doesn't it?",
+            "textToSpeak": "Please correct me, but this medication needs food, doesn't it?",
             "options": [
-                "Emphasis on BROTHER (Subject focus)",
-                "Emphasis on PHONE (Object focus)"
+                "Falling tag (seeking agreement — the speaker is fairly sure)",
+                "Rising tag (a real question — the speaker isn't sure)"
             ],
-            "correctAnswer": "Emphasis on PHONE (Object focus)",
+            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
-                1
+                2,
+                3
             ],
-            "hint": "This is routine daily behavior with no correction involved - listen for the peak near the end.",
-            "explanation": "With no contrastive cue, the nuclear stress stays on 'phone', not on 'brother'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "Notice the speaker openly admits they're not sure — a genuine question like this usually rises on the tag.",
+            "explanation": "When a speaker isn't sure and is truly asking, the tag at the end typically rises.",
+            "emphasisRule": "A tag added to check something the speaker truly isn't sure about usually rises at the end."
         },
         {
             "id": "pitchPatternMatch_161",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Believe it or not, my sister fixed the laptop.",
-            "textToSpeak": "Believe it or not, my sister fixed the laptop.",
+            "word": "You've been here before, haven't you?",
+            "textToSpeak": "You've been here before, haven't you?",
             "options": [
-                "Emphasis on LAPTOP (Object focus)",
-                "Emphasis on SISTER (Subject focus)"
+                "Falling tag (seeking agreement — the speaker is fairly sure)",
+                "Rising tag (a real question — the speaker isn't sure)"
             ],
-            "correctAnswer": "Emphasis on SISTER (Subject focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
                 3,
-                1,
-                1,
                 1,
                 1
             ],
-            "hint": "'Believe it or not' flags the fixer's identity as the shocking detail. Listen for the pitch to peak on 'sister'.",
-            "explanation": "'Believe it or not' highlights surprise about who fixed it, so the nuclear stress moves onto 'sister'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "There's no real doubt here, just an invitation to agree, so the tag pitch typically drops.",
+            "explanation": "Because the speaker is already confident, the tag simply invites agreement and falls in pitch.",
+            "emphasisRule": "When a tag question simply invites agreement from a confident speaker, it typically falls in pitch."
         },
         {
             "id": "pitchPatternMatch_162",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The therapist treats the injury gently.",
-            "textToSpeak": "The therapist treats the injury gently.",
+            "word": "Forgive me if I'm wrong, but we've met somewhere before, haven't we?",
+            "textToSpeak": "Forgive me if I'm wrong, but we've met somewhere before, haven't we?",
             "options": [
-                "Emphasis on THERAPIST (Subject focus)",
-                "Emphasis on INJURY (Object focus)"
+                "Falling tag (seeking agreement — the speaker is fairly sure)",
+                "Rising tag (a real question — the speaker isn't sure)"
             ],
-            "correctAnswer": "Emphasis on INJURY (Object focus)",
+            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
-                1
+                2,
+                3
             ],
-            "hint": "There's no hint of correction here - this is just a plain statement, so listen for the pitch peak on 'injury'.",
-            "explanation": "With no contrastive cue, the nuclear stress falls on 'injury', the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "Phrases like 'I could be wrong' signal real uncertainty, which usually means the tag lifts in pitch.",
+            "explanation": "This tag functions as a real question here, so it takes rising intonation, not falling.",
+            "emphasisRule": "When a tag question expresses genuine uncertainty, it typically rises in pitch, like a real yes/no question."
         },
         {
             "id": "pitchPatternMatch_163",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Actually, the nurse calmed the patient.",
-            "textToSpeak": "Actually, the nurse calmed the patient.",
+            "word": "Obviously, this coffee shop is amazing, isn't it?",
+            "textToSpeak": "Obviously, this coffee shop is amazing, isn't it?",
             "options": [
-                "Emphasis on PATIENT (Object focus)",
-                "Emphasis on NURSE (Subject focus)"
+                "Falling tag (seeking agreement — the speaker is fairly sure)",
+                "Rising tag (a real question — the speaker isn't sure)"
             ],
-            "correctAnswer": "Emphasis on NURSE (Subject focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
                 3,
-                1,
-                1,
                 1,
                 1
             ],
-            "hint": "'Actually' signals a correction about who calmed them. Listen for the pitch to peak early, on 'nurse'.",
-            "explanation": "'Actually' corrects an assumption about who calmed the patient, so the nuclear stress shifts onto 'nurse'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "Words like 'obviously' or 'clearly' show the speaker is already confident — that tag usually falls.",
+            "explanation": "When a speaker is sure and just wants confirmation, the tag question falls rather than rises.",
+            "emphasisRule": "A tag added mainly to confirm something the speaker already believes usually falls at the end."
         },
         {
             "id": "pitchPatternMatch_164",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The florist arranges the bouquet elegantly.",
-            "textToSpeak": "The florist arranges the bouquet elegantly.",
+            "word": "I might have the date wrong, but the exam is tomorrow, isn't it?",
+            "textToSpeak": "I might have the date wrong, but the exam is tomorrow, isn't it?",
             "options": [
-                "Emphasis on FLORIST (Subject focus)",
-                "Emphasis on BOUQUET (Object focus)"
+                "Falling tag (seeking agreement — the speaker is fairly sure)",
+                "Rising tag (a real question — the speaker isn't sure)"
             ],
-            "correctAnswer": "Emphasis on BOUQUET (Object focus)",
+            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
-                1
+                2,
+                3
             ],
-            "hint": "This is a plain shop description with no correction cue - listen for the pitch peak near the end.",
-            "explanation": "With no contrastive cue, the nuclear stress falls on 'bouquet', the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "This speaker is genuinely checking, not just confirming — expect the tag to rise.",
+            "explanation": "The speaker's hedging shows real doubt, which is why the tag rises instead of falling.",
+            "emphasisRule": "A tag added to check something the speaker truly isn't sure about usually rises at the end."
         },
         {
             "id": "pitchPatternMatch_165",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "No, the chef created the recipe.",
-            "textToSpeak": "No, the chef created the recipe.",
+            "word": "The view from here is stunning, isn't it?",
+            "textToSpeak": "The view from here is stunning, isn't it?",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on RECIPE (Object focus)"
+                "Falling tag (seeking agreement — the speaker is fairly sure)",
+                "Rising tag (a real question — the speaker isn't sure)"
             ],
-            "correctAnswer": "Emphasis on CHEF (Subject focus)",
+            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
                 3,
-                1,
-                1,
                 1,
                 1
             ],
-            "hint": "'No' signals that someone guessed the wrong creator. Listen for the pitch to peak early, on 'chef'.",
-            "explanation": "The opening 'No' corrects a wrong assumption about who created it, so the nuclear stress moves to 'chef'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "This speaker isn't really asking; they're inviting agreement, so the tag typically drops in pitch.",
+            "explanation": "This tag isn't a real question; it's inviting agreement, so it takes falling intonation.",
+            "emphasisRule": "When a tag question simply invites agreement from a confident speaker, it typically falls in pitch."
         },
         {
             "id": "pitchPatternMatch_166",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My mother irons the shirts carefully.",
-            "textToSpeak": "My mother irons the shirts carefully.",
+            "word": "You two have met before, haven't you?",
+            "textToSpeak": "You two have met before, haven't you?",
             "options": [
-                "Emphasis on MOTHER (Subject focus)",
-                "Emphasis on SHIRTS (Object focus)"
+                "Rising tag (a real question — the speaker isn't sure)",
+                "Falling tag (seeking agreement — the speaker is fairly sure)"
             ],
-            "correctAnswer": "Emphasis on SHIRTS (Object focus)",
+            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "There's no correction here - this is a routine household chore, so listen for the peak near the end.",
-            "explanation": "With no contrastive cue, the nuclear stress stays on 'shirts', not on 'mother'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "Since the speaker already seems sure, expect the tag to fall rather than rise.",
+            "explanation": "Since there's no genuine doubt here, the tag falls instead of rising.",
+            "emphasisRule": "A tag added mainly to confirm something the speaker already believes usually falls at the end."
         },
         {
             "id": "pitchPatternMatch_167",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "In fact, the teenager designed the website.",
-            "textToSpeak": "In fact, the teenager designed the website.",
+            "word": "I'm not positive, but you canceled the order, didn't you?",
+            "textToSpeak": "I'm not positive, but you canceled the order, didn't you?",
             "options": [
-                "Emphasis on WEBSITE (Object focus)",
-                "Emphasis on TEENAGER (Subject focus)"
+                "Rising tag (a real question — the speaker isn't sure)",
+                "Falling tag (seeking agreement — the speaker is fairly sure)"
             ],
-            "correctAnswer": "Emphasis on TEENAGER (Subject focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
                 3,
-                1,
-                1,
-                1,
-                1
+                2,
+                3
             ],
-            "hint": "'In fact' signals a correction about who designed it. Listen for the pitch to peak early, on 'teenager'.",
-            "explanation": "'In fact' corrects an assumption about who designed the website, so the nuclear stress shifts onto 'teenager'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "When someone admits they might be mistaken, the tag question that follows usually rises.",
+            "explanation": "Because the speaker signals genuine uncertainty, the tag question rises in pitch, like a real yes/no question.",
+            "emphasisRule": "When a tag question expresses genuine uncertainty, it typically rises in pitch, like a real yes/no question."
         },
         {
             "id": "pitchPatternMatch_168",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The curator displays the artifacts thoughtfully.",
-            "textToSpeak": "The curator displays the artifacts thoughtfully.",
+            "word": "I'm not totally sure, but this is the right platform, isn't it?",
+            "textToSpeak": "I'm not totally sure, but this is the right platform, isn't it?",
             "options": [
-                "Emphasis on CURATOR (Subject focus)",
-                "Emphasis on ARTIFACTS (Object focus)"
+                "Falling tag (seeking agreement — the speaker is fairly sure)",
+                "Rising tag (a real question — the speaker isn't sure)"
             ],
-            "correctAnswer": "Emphasis on ARTIFACTS (Object focus)",
+            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
-                1
+                2,
+                3
             ],
-            "hint": "This is a plain museum description with no correction involved - listen for the peak near the end.",
-            "explanation": "With no contrastive cue, the nuclear stress falls on 'artifacts', the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "The hedge at the start shows real doubt, so listen for an upward pitch on the tag itself.",
+            "explanation": "When a speaker isn't sure and is truly asking, the tag at the end typically rises.",
+            "emphasisRule": "A tag added to check something the speaker truly isn't sure about usually rises at the end."
         },
         {
             "id": "pitchPatternMatch_169",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Surprisingly, the apprentice repaired the engine.",
-            "textToSpeak": "Surprisingly, the apprentice repaired the engine.",
+            "word": "I'm genuinely unsure, but the deadline moved, didn't it?",
+            "textToSpeak": "I'm genuinely unsure, but the deadline moved, didn't it?",
             "options": [
-                "Emphasis on APPRENTICE (Subject focus)",
-                "Emphasis on ENGINE (Object focus)"
+                "Rising tag (a real question — the speaker isn't sure)",
+                "Falling tag (seeking agreement — the speaker is fairly sure)"
             ],
-            "correctAnswer": "Emphasis on APPRENTICE (Subject focus)",
+            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
                 3,
-                1,
-                1,
-                1,
-                1
+                2,
+                3
             ],
-            "hint": "'Surprisingly' flags who did the repairing as the unexpected detail. Listen for the pitch to peak on 'apprentice'.",
-            "explanation": "'Surprisingly' marks the subject as the unexpected new information, so the nuclear stress shifts onto 'apprentice'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "Notice the speaker openly admits they're not sure — a genuine question like this usually rises on the tag.",
+            "explanation": "This tag functions as a real question here, so it takes rising intonation, not falling.",
+            "emphasisRule": "When a tag question expresses genuine uncertainty, it typically rises in pitch, like a real yes/no question."
         },
         {
             "id": "pitchPatternMatch_170",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The lifeguard scans the shore constantly.",
-            "textToSpeak": "The lifeguard scans the shore constantly.",
+            "word": "I'm honestly not certain, but you two work together, don't you?",
+            "textToSpeak": "I'm honestly not certain, but you two work together, don't you?",
             "options": [
-                "Emphasis on LIFEGUARD (Subject focus)",
-                "Emphasis on SHORE (Object focus)"
+                "Falling tag (seeking agreement — the speaker is fairly sure)",
+                "Rising tag (a real question — the speaker isn't sure)"
             ],
-            "correctAnswer": "Emphasis on SHORE (Object focus)",
+            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
-                1
+                2,
+                3
             ],
-            "hint": "This is routine, expected behavior with no correction cue - listen for the pitch peak near the end.",
-            "explanation": "With no contrastive cue, the nuclear stress falls on 'shore', the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "Phrases like 'I could be wrong' signal real uncertainty, which usually means the tag lifts in pitch.",
+            "explanation": "The speaker's hedging shows real doubt, which is why the tag rises instead of falling.",
+            "emphasisRule": "A tag added to check something the speaker truly isn't sure about usually rises at the end."
         },
         {
             "id": "pitchPatternMatch_171",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Honestly, my uncle taught the lesson.",
-            "textToSpeak": "Honestly, my uncle taught the lesson.",
+            "word": "That was clearly the best presentation, wasn't it?",
+            "textToSpeak": "That was clearly the best presentation, wasn't it?",
             "options": [
-                "Emphasis on UNCLE (Subject focus)",
-                "Emphasis on LESSON (Object focus)"
+                "Falling tag (seeking agreement — the speaker is fairly sure)",
+                "Rising tag (a real question — the speaker isn't sure)"
             ],
-            "correctAnswer": "Emphasis on UNCLE (Subject focus)",
+            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
                 3,
-                1,
-                1,
                 1,
                 1
             ],
-            "hint": "'Honestly' signals a correction or surprise about who taught it. Listen for the pitch to peak on 'uncle'.",
-            "explanation": "'Honestly' highlights a correction about who did the teaching, so the nuclear stress moves onto 'uncle'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "This sounds like the speaker expects you to simply agree — that kind of tag usually falls.",
+            "explanation": "Because the speaker is already confident, the tag simply invites agreement and falls in pitch.",
+            "emphasisRule": "When a tag question simply invites agreement from a confident speaker, it typically falls in pitch."
         },
         {
             "id": "pitchPatternMatch_172",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My uncle repairs the fence sturdily.",
-            "textToSpeak": "My uncle repairs the fence sturdily.",
+            "word": "This restaurant gets busy every weekend, doesn't it?",
+            "textToSpeak": "This restaurant gets busy every weekend, doesn't it?",
             "options": [
-                "Emphasis on FENCE (Object focus)",
-                "Emphasis on UNCLE (Subject focus)"
+                "Rising tag (a real question — the speaker isn't sure)",
+                "Falling tag (seeking agreement — the speaker is fairly sure)"
             ],
-            "correctAnswer": "Emphasis on FENCE (Object focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "There's no correction here - this is a routine weekend task, so listen for the peak near the end.",
-            "explanation": "With no contrastive cue, the nuclear stress stays on 'fence', not on 'uncle'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "There's no real doubt here, just an invitation to agree, so the tag pitch typically drops.",
+            "explanation": "When a speaker is sure and just wants confirmation, the tag question falls rather than rises.",
+            "emphasisRule": "A tag added mainly to confirm something the speaker already believes usually falls at the end."
         },
         {
             "id": "pitchPatternMatch_173",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The chemist mixes the solution precisely.",
-            "textToSpeak": "The chemist mixes the solution precisely.",
+            "word": "That new phone is expensive, isn't it?",
+            "textToSpeak": "That new phone is expensive, isn't it?",
             "options": [
-                "Emphasis on SOLUTION (Object focus)",
-                "Emphasis on CHEMIST (Subject focus)"
+                "Falling tag (seeking agreement — the speaker is fairly sure)",
+                "Rising tag (a real question — the speaker isn't sure)"
             ],
-            "correctAnswer": "Emphasis on SOLUTION (Object focus)",
+            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "This is a plain lab description with no correction involved - listen for the pitch peak near the end.",
-            "explanation": "With no contrastive cue, the nuclear stress falls on 'solution', the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "Words like 'obviously' or 'clearly' show the speaker is already confident — that tag usually falls.",
+            "explanation": "This tag isn't a real question; it's inviting agreement, so it takes falling intonation.",
+            "emphasisRule": "When a tag question simply invites agreement from a confident speaker, it typically falls in pitch."
         },
         {
             "id": "pitchPatternMatch_174",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "As it turns out, the passenger reported the delay.",
-            "textToSpeak": "As it turns out, the passenger reported the delay.",
+            "word": "I'm not fully sure, but the gate changed, didn't it?",
+            "textToSpeak": "I'm not fully sure, but the gate changed, didn't it?",
             "options": [
-                "Emphasis on DELAY (Object focus)",
-                "Emphasis on PASSENGER (Subject focus)"
+                "Falling tag (seeking agreement — the speaker is fairly sure)",
+                "Rising tag (a real question — the speaker isn't sure)"
             ],
-            "correctAnswer": "Emphasis on PASSENGER (Subject focus)",
+            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
+                1,
+                1,
                 3,
-                1,
-                1,
-                1,
-                1
+                2,
+                3
             ],
-            "hint": "'As it turns out' flags who reported it as the surprising detail. Listen for the pitch to peak on 'passenger'.",
-            "explanation": "'As it turns out' marks the subject as unexpected new information, so the nuclear stress shifts onto 'passenger'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "This speaker is genuinely checking, not just confirming — expect the tag to rise.",
+            "explanation": "Because the speaker signals genuine uncertainty, the tag question rises in pitch, like a real yes/no question.",
+            "emphasisRule": "When a tag question expresses genuine uncertainty, it typically rises in pitch, like a real yes/no question."
         },
         {
             "id": "pitchPatternMatch_175",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Believe it or not, the kid beat the champion.",
-            "textToSpeak": "Believe it or not, the kid beat the champion.",
+            "word": "I could be wrong about this, but the wifi password changed, didn't it?",
+            "textToSpeak": "I could be wrong about this, but the wifi password changed, didn't it?",
             "options": [
-                "Emphasis on KID (Subject focus)",
-                "Emphasis on CHAMPION (Object focus)"
+                "Rising tag (a real question — the speaker isn't sure)",
+                "Falling tag (seeking agreement — the speaker is fairly sure)"
             ],
-            "correctAnswer": "Emphasis on KID (Subject focus)",
+            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
                 3,
-                1,
-                1,
-                1,
-                1
+                2,
+                3
             ],
-            "hint": "'Believe it or not' flags the winner's identity as the shocking detail. Listen for the pitch to peak on 'kid'.",
-            "explanation": "'Believe it or not' highlights surprise about who won, so the nuclear stress moves onto 'kid' instead of 'champion'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "When someone admits they might be mistaken, the tag question that follows usually rises.",
+            "explanation": "When a speaker isn't sure and is truly asking, the tag at the end typically rises.",
+            "emphasisRule": "A tag added to check something the speaker truly isn't sure about usually rises at the end."
         },
         {
             "id": "pitchPatternMatch_176",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Actually, the librarian solved the mystery.",
-            "textToSpeak": "Actually, the librarian solved the mystery.",
+            "word": "You obviously trained for this race, didn't you?",
+            "textToSpeak": "You obviously trained for this race, didn't you?",
             "options": [
-                "Emphasis on MYSTERY (Object focus)",
-                "Emphasis on LIBRARIAN (Subject focus)"
+                "Rising tag (a real question — the speaker isn't sure)",
+                "Falling tag (seeking agreement — the speaker is fairly sure)"
             ],
-            "correctAnswer": "Emphasis on LIBRARIAN (Subject focus)",
+            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
+                1,
+                1,
                 3,
-                1,
-                1,
                 1,
                 1
             ],
-            "hint": "'Actually' signals a correction about who solved it. Listen for the pitch to peak early, on 'librarian'.",
-            "explanation": "'Actually' corrects an assumption about who solved the mystery, so the nuclear stress shifts onto 'librarian'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "This speaker isn't really asking; they're inviting agreement, so the tag typically drops in pitch.",
+            "explanation": "Since there's no genuine doubt here, the tag falls instead of rising.",
+            "emphasisRule": "A tag added mainly to confirm something the speaker already believes usually falls at the end."
         },
         {
             "id": "pitchPatternMatch_177",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The tailor adjusts the suit perfectly.",
-            "textToSpeak": "The tailor adjusts the suit perfectly.",
+            "word": "You clearly finished first, didn't you?",
+            "textToSpeak": "You clearly finished first, didn't you?",
             "options": [
-                "Emphasis on TAILOR (Subject focus)",
-                "Emphasis on SUIT (Object focus)"
+                "Falling tag (seeking agreement — the speaker is fairly sure)",
+                "Rising tag (a real question — the speaker isn't sure)"
             ],
-            "correctAnswer": "Emphasis on SUIT (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "There's no correction cue here - this is a plain description, so listen for the pitch peak on 'suit'.",
-            "explanation": "With no contrastive cue, the nuclear stress falls on 'suit', the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "Since the speaker already seems sure, expect the tag to fall rather than rise.",
+            "explanation": "Because the speaker is already confident, the tag simply invites agreement and falls in pitch.",
+            "emphasisRule": "When a tag question simply invites agreement from a confident speaker, it typically falls in pitch."
         },
         {
             "id": "pitchPatternMatch_178",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "No, the gardener noticed the damage.",
-            "textToSpeak": "No, the gardener noticed the damage.",
+            "word": "You two are twins, aren't you?",
+            "textToSpeak": "You two are twins, aren't you?",
             "options": [
-                "Emphasis on GARDENER (Subject focus)",
-                "Emphasis on DAMAGE (Object focus)"
+                "Rising tag (a real question — the speaker isn't sure)",
+                "Falling tag (seeking agreement — the speaker is fairly sure)"
             ],
-            "correctAnswer": "Emphasis on GARDENER (Subject focus)",
-            "correctAnswerIndex": 0,
-            "pitchPatterns": [
-                3,
-                1,
-                1,
-                1,
-                1
-            ],
-            "hint": "'No' signals that someone guessed the wrong observer. Listen for the pitch to peak early, on 'gardener'.",
-            "explanation": "The opening 'No' corrects a wrong assumption about who noticed it, so the nuclear stress moves to 'gardener'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
-        },
-        {
-            "id": "pitchPatternMatch_179",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "My aunt waters the plants regularly.",
-            "textToSpeak": "My aunt waters the plants regularly.",
-            "options": [
-                "Emphasis on AUNT (Subject focus)",
-                "Emphasis on PLANTS (Object focus)"
-            ],
-            "correctAnswer": "Emphasis on PLANTS (Object focus)",
+            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "This is routine, everyday information with no correction involved - listen for the pitch peak on 'plants'.",
-            "explanation": "With no contrastive cue, the nuclear stress stays on 'plants', not on 'aunt'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "This sounds like the speaker expects you to simply agree — that kind of tag usually falls.",
+            "explanation": "When a speaker is sure and just wants confirmation, the tag question falls rather than rises.",
+            "emphasisRule": "A tag added mainly to confirm something the speaker already believes usually falls at the end."
         },
         {
-            "id": "pitchPatternMatch_180",
-            "instruction": "Identify the emphasis",
+            "id": "pitchPatternMatch_179",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The captain inspects the cargo thoroughly.",
-            "textToSpeak": "The captain inspects the cargo thoroughly.",
+            "word": "You already know the answer, don't you?",
+            "textToSpeak": "You already know the answer, don't you?",
             "options": [
-                "Emphasis on CARGO (Object focus)",
-                "Emphasis on CAPTAIN (Subject focus)"
+                "Falling tag (seeking agreement — the speaker is fairly sure)",
+                "Rising tag (a real question — the speaker isn't sure)"
             ],
-            "correctAnswer": "Emphasis on CARGO (Object focus)",
+            "correctAnswer": "Falling tag (seeking agreement — the speaker is fairly sure)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "There's no hint of correction here - this is just a plain statement, so listen for the pitch peak on 'cargo'.",
-            "explanation": "With no contrastive cue, the nuclear stress falls on 'cargo', the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "There's no real doubt here, just an invitation to agree, so the tag pitch typically drops.",
+            "explanation": "This tag isn't a real question; it's inviting agreement, so it takes falling intonation.",
+            "emphasisRule": "When a tag question simply invites agreement from a confident speaker, it typically falls in pitch."
+        },
+        {
+            "id": "pitchPatternMatch_180",
+            "instruction": "Identify the intonation pattern",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "I could be wrong, but you're new here, aren't you?",
+            "textToSpeak": "I could be wrong, but you're new here, aren't you?",
+            "options": [
+                "Falling tag (seeking agreement — the speaker is fairly sure)",
+                "Rising tag (a real question — the speaker isn't sure)"
+            ],
+            "correctAnswer": "Rising tag (a real question — the speaker isn't sure)",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                3,
+                2,
+                3
+            ],
+            "hint": "The hedge at the start shows real doubt, so listen for an upward pitch on the tag itself.",
+            "explanation": "This tag functions as a real question here, so it takes rising intonation, not falling.",
+            "emphasisRule": "When a tag question expresses genuine uncertainty, it typically rises in pitch, like a real yes/no question."
         }
     ]
 }

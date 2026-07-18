@@ -13,12 +13,12 @@
             "options": [
                 "who",
                 "which",
-                "that",
+                "whom",
                 "whose"
             ],
             "correctAnswer": "who",
             "hint": "The relative clause describes a person. Which relative pronoun is used for people?",
-            "explanation": "Use 'who' (or 'that') to introduce a relative clause about a person: 'The woman who lives next door'."
+            "explanation": "Use 'who' for people acting as the subject: 'the woman who lives next door'. 'Whom' is for object position, and 'whose' shows possession - neither fits as the subject of 'lives'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L151_Q2",
@@ -59,8 +59,8 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "I have a colleague whose name I can never remember correctly.",
-            "missingWord": "whose",
+            "passage": "I have a colleague who's name I can never remember correctly.",
+            "missingWord": "who's",
             "options": [
                 "whose",
                 "who's",
@@ -68,25 +68,25 @@
                 "which"
             ],
             "correctAnswer": "whose",
-            "hint": "The colleague possesses a name. Which relative pronoun shows possession?",
-            "explanation": "'Whose' is the possessive relative pronoun: 'a colleague whose name I can never remember'. 'Who's' = 'who is'."
+            "hint": "'Who's' is a contraction of 'who is'. Does that meaning fit before 'name', or is a possessive needed?",
+            "explanation": "'Whose' shows possession: 'whose name'. 'Who's' means 'who is' and doesn't fit here: 'I have a colleague whose name...' is correct."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L152_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "The hotel which we stayed at was absolutely beautiful and very comfortable.",
-            "missingWord": "which",
+            "passage": "The hotel who we stayed at was absolutely beautiful and very comfortable.",
+            "missingWord": "who",
             "options": [
                 "which",
-                "that",
                 "who",
+                "whom",
                 "where"
             ],
             "correctAnswer": "which",
-            "hint": "We're describing a hotel (a thing). The relative pronoun refers to the hotel. Which pronoun is correct?",
-            "explanation": "'Which' or 'that' are used for things: 'The hotel which we stayed at' or 'The hotel we stayed at' (relative pronoun omitted)."
+            "hint": "A hotel is a place, not a person. Which relative pronoun refers to things?",
+            "explanation": "Use 'which' for things: 'the hotel which we stayed at'. 'Who' and 'whom' are only for people."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L152_Q3",
@@ -150,11 +150,11 @@
                 "who scored",
                 "whose scored",
                 "which scored",
-                "that scored"
+                "whom scored"
             ],
             "correctAnswer": "who scored",
             "hint": "What is wrong with 'whose scored'? Think about whether a possessive pronoun is needed here.",
-            "explanation": "'Scored' needs a subject pronoun, not a possessive. Use 'who': 'The students who scored the highest'."
+            "explanation": "'Who' is the subject pronoun for people: 'the students who scored'. 'Whose' shows possession, 'which' is for things, and 'whom' is for object position - none of these can be the subject of 'scored'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L154_Q1",
@@ -178,34 +178,34 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "The company which I work for has recently been taken over by a larger firm.",
-            "missingWord": "which",
+            "passage": "The company who I work for has recently been taken over by a larger firm.",
+            "missingWord": "who",
             "options": [
                 "which",
-                "that",
                 "who",
+                "whom",
                 "where"
             ],
             "correctAnswer": "which",
-            "hint": "The relative pronoun refers to a company (a thing/organisation). Is 'which' correct here?",
-            "explanation": "'Which' is correct for organisations and things: 'The company which I work for'. Both 'which' and 'that' are acceptable."
+            "hint": "A company is a thing, not a person, even though people work there. Which relative pronoun fits?",
+            "explanation": "Use 'which' for organisations and things: 'the company which I work for'. 'Who' is reserved for people."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L154_Q3",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "The town where I grew up has changed enormously since I was a child.",
-            "missingWord": "where",
+            "passage": "The town which I grew up has changed enormously since I was a child.",
+            "missingWord": "which",
             "options": [
                 "where",
                 "which",
                 "that",
-                "in which"
+                "when"
             ],
             "correctAnswer": "where",
-            "hint": "We're describing a place ('the town'). Which relative pronoun is used for places?",
-            "explanation": "'Where' is used for places: 'The town where I grew up'. 'Which' could also work: 'the town in which I grew up'."
+            "hint": "'Grew up' needs a place-word here, and 'which' alone is missing something. What single word fixes it?",
+            "explanation": "'Where' already means 'in which place', so no extra preposition is needed: 'the town where I grew up'. 'Which' alone would need 'in which'."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L155_Q1",
@@ -217,12 +217,12 @@
             "options": [
                 "why",
                 "which",
-                "that",
-                "for which"
+                "when",
+                "where"
             ],
             "correctAnswer": "why",
             "hint": "The antecedent is 'reason'. Which relative pronoun is most natural for reasons?",
-            "explanation": "Use 'why' after 'reason': 'the reason why she arrived late'. 'That' is also acceptable. 'Which' is less natural here."
+            "explanation": "'Why' is the natural relative word after 'reason': 'the reason why she gave'. 'Which' sounds unnatural here, and 'when'/'where' refer to time and place, not cause."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L155_Q2",
@@ -234,12 +234,12 @@
             "options": [
                 "when",
                 "which",
-                "that",
+                "why",
                 "where"
             ],
             "correctAnswer": "when",
             "hint": "The antecedent is 'the day' (a time). Which relative pronoun is used for time references?",
-            "explanation": "Use 'when' after time expressions like 'day', 'time', 'year': 'the day when we first met'."
+            "explanation": "'When' is used for a point in time: 'the day when we first met'. 'Which' sounds unnatural after 'day', and 'why'/'where' refer to reason and place, not time."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L155_Q3",
@@ -263,8 +263,8 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "The film, which I had been waiting to see for weeks, was disappointing.",
-            "missingWord": "which",
+            "passage": "The film, who I had been waiting to see for weeks, was disappointing.",
+            "missingWord": "who",
             "options": [
                 "which",
                 "that",
@@ -272,8 +272,8 @@
                 "whose"
             ],
             "correctAnswer": "which",
-            "hint": "This is a non-defining relative clause (with commas). Which pronoun is used in non-defining clauses?",
-            "explanation": "In non-defining relative clauses (with commas), use 'which' for things. 'That' cannot be used in non-defining clauses."
+            "hint": "A film is a thing, not a person. Which relative pronoun is needed after the comma?",
+            "explanation": "Use 'which' for things: 'the film, which I had been waiting to see'. 'Who' is only for people."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L156_Q2",
@@ -314,17 +314,17 @@
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "This is the same restaurant which we celebrated our anniversary at last year.",
-            "missingWord": "which",
+            "passage": "This is the same restaurant who we celebrated our anniversary last year.",
+            "missingWord": "who",
             "options": [
                 "where",
                 "which",
-                "that",
-                "in which"
+                "who",
+                "when"
             ],
             "correctAnswer": "where",
-            "hint": "'Restaurant' is a place. The sentence describes what happened there. Which pronoun introduces a place?",
-            "explanation": "Use 'where' when describing something that happened at a place: 'the restaurant where we celebrated our anniversary'."
+            "hint": "A restaurant is a place, not a person. Which relative word fits, without needing an extra preposition?",
+            "explanation": "'Where' already means 'in/at which place', so it fits directly: 'the restaurant where we celebrated'. 'Who' is only for people."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L157_Q2",
@@ -354,36 +354,36 @@
                 "which",
                 "whom",
                 "who",
-                "that"
+                "whose"
             ],
             "correctAnswer": "which",
             "hint": "The relative pronoun refers to 'the report' (a thing). Which pronoun is used for things?",
-            "explanation": "Use 'which' or 'that' for things: 'The report which the manager approved'. 'Whom' is only for people."
+            "explanation": "Use 'which' for things: 'the report which the manager approved'. 'Whom' and 'who' are for people, and 'whose' shows possession - none fit a report."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L158_Q1",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "She told me the reason for which she was unable to attend the meeting.",
-            "missingWord": "for which",
+            "passage": "She told me the reason which she was unable to attend the meeting.",
+            "missingWord": "which",
             "options": [
                 "why",
-                "for which",
                 "which",
-                "that"
+                "when",
+                "where"
             ],
             "correctAnswer": "why",
-            "hint": "What is the most natural relative pronoun after 'reason'?",
-            "explanation": "Use 'why' after 'reason': 'the reason why she was unable to attend'. 'For which' is formally correct but awkward."
+            "hint": "After 'reason', 'which' alone is missing something. What single relative word fits without needing an extra preposition?",
+            "explanation": "'Why' fits naturally after 'reason': 'the reason why she was unable to attend'. 'Which' alone would need 'for which' to work."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L158_Q2",
             "instruction": "Tap or scrub the incorrect word to restore the sentence.",
             "subtype": "fixTheSentence",
             "interactionType": "Error Eraser",
-            "passage": "He is an expert in his field whose opinion is highly respected worldwide.",
-            "missingWord": "whose",
+            "passage": "He is an expert in his field who's opinion is highly respected worldwide.",
+            "missingWord": "who's",
             "options": [
                 "whose",
                 "who's",
@@ -391,8 +391,8 @@
                 "that"
             ],
             "correctAnswer": "whose",
-            "hint": "The expert possesses an opinion. Which relative pronoun shows possession for a person?",
-            "explanation": "'Whose' is the possessive relative pronoun for people: 'an expert whose opinion is highly respected'."
+            "hint": "Does 'who is' make sense before 'opinion', or is this showing possession?",
+            "explanation": "'Whose' shows possession (his opinion): 'whose opinion is highly respected'. 'Who's' means 'who is', which doesn't fit here."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L158_Q3",
@@ -455,12 +455,12 @@
             "options": [
                 "when",
                 "which",
-                "that",
+                "why",
                 "where"
             ],
             "correctAnswer": "when",
             "hint": "The antecedent is 'the year' (a time reference). Which relative pronoun is used with time expressions?",
-            "explanation": "Use 'when' with time expressions: 'the year when the internet became widely available'."
+            "explanation": "'When' refers to a point in time: 'the year when the internet became available'. 'Which' sounds unnatural after 'year', and 'why'/'where' refer to reason and place."
         },
         {
             "id": "WRT_FIXTHESENTENCE_L160_Q1",

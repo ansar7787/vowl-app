@@ -8,11 +8,11 @@
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Despite the budget cuts, the engineering team did deliver the project on time.",
-            "textToSpeak": "Despite the budget cuts, the engineering team did deliver the project on time.",
+            "word": "Even though the reviews were mixed, the restaurant did stay fully booked all month.",
+            "textToSpeak": "Even though the reviews were mixed, the restaurant did stay fully booked all month.",
             "options": [
                 "Emphasis on DID (Auxiliary/Polarity focus)",
-                "Emphasis on TIME (Object focus)"
+                "Emphasis on MONTH (Time focus)"
             ],
             "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 0,
@@ -23,47 +23,47 @@
                 1,
                 1
             ],
-            "hint": "'Despite the budget cuts' signals reassurance against doubt about the outcome. Listen for the pitch to peak sharply on 'did'.",
-            "explanation": "The auxiliary 'did' carries the nuclear stress here, emphatically confirming delivery happened despite the obstacle, not the object 'time'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The opening concession suggests low turnout was likely — listen for the word that firmly contradicts that.",
+            "explanation": "The mixed reviews set up an expectation of empty tables, so ‘did’ is stressed to firmly confirm the opposite happened.",
+            "emphasisRule": "When a sentence confirms something happened despite a stated reason for doubt, the auxiliary verb carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_572",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "It wasn't the storm that delayed the harvest - it was the drought.",
-            "textToSpeak": "It wasn't the storm that delayed the harvest - it was the drought.",
+            "word": "Despite the skeptics, the small clinic's trial did receive federal approval.",
+            "textToSpeak": "Despite the skeptics, the small clinic's trial did receive federal approval.",
             "options": [
-                "Emphasis on STORM (Given/Rejected Information)",
-                "Emphasis on DROUGHT (New/Corrected Information)"
+                "Emphasis on APPROVAL (Object focus)",
+                "Emphasis on DID (Auxiliary/Polarity focus)"
             ],
-            "correctAnswer": "Emphasis on DROUGHT (New/Corrected Information)",
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "'The storm' is the rejected cause, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'drought'.",
-            "explanation": "'Storm' is the rejected assumption about the cause, so it stays deaccented, while 'drought' - the real cause - carries the nuclear stress.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Skeptics doubted this outcome — the word confirming it happened anyway carries the peak, not the final noun.",
+            "explanation": "Because skeptics are mentioned first, ‘did’ is stressed to assert that approval genuinely came through.",
+            "emphasisRule": "Emphatic auxiliaries are stressed when a sentence pushes back against an explicitly stated doubt."
         },
         {
             "id": "pitchPatternMatch_573",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The ambassador didn't merely attend the summit - she chaired it.",
-            "textToSpeak": "The ambassador didn't merely attend the summit - she chaired it.",
+            "word": "Although the launch was rushed, the app did pass every safety review.",
+            "textToSpeak": "Although the launch was rushed, the app did pass every safety review.",
             "options": [
-                "Emphasis on SUMMIT (Object focus)",
-                "Emphasis on CHAIRED (Verb/Action focus)"
+                "Emphasis on DID (Auxiliary/Polarity focus)",
+                "Emphasis on REVIEW (Object focus)"
             ],
-            "correctAnswer": "Emphasis on CHAIRED (Verb/Action focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 3,
@@ -71,23 +71,23 @@
                 1,
                 1
             ],
-            "hint": "The contrast with 'merely attend' tells you her actual role is the key new information. Listen for the pitch to peak on 'chaired'.",
-            "explanation": "The contrast with 'merely attend' highlights the more significant action she actually took, so the nuclear stress falls on the verb 'chaired'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "A rushed launch implies corners were cut — listen for the word insisting that isn't true.",
+            "explanation": "The rushed launch implies a likely failure, so ‘did’ is stressed to confirm the review was actually passed.",
+            "emphasisRule": "When a sentence confirms success despite a reason to doubt it, the auxiliary carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_574",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Contrary to the headlines, the smaller airline reported the highest customer satisfaction.",
-            "textToSpeak": "Contrary to the headlines, the smaller airline reported the highest customer satisfaction.",
+            "word": "Even with half the usual staff, the shift did finish every order on time.",
+            "textToSpeak": "Even with half the usual staff, the shift did finish every order on time.",
             "options": [
-                "Emphasis on AIRLINE (Subject focus)",
-                "Emphasis on SATISFACTION (Object focus)"
+                "Emphasis on TIME (Time focus)",
+                "Emphasis on DID (Auxiliary/Polarity focus)"
             ],
-            "correctAnswer": "Emphasis on AIRLINE (Subject focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 3,
                 1,
@@ -95,46 +95,46 @@
                 1,
                 1
             ],
-            "hint": "'Contrary to the headlines' flags which airline as the surprising correction. Listen for the pitch to peak early, on 'airline'.",
-            "explanation": "The marker 'contrary to the headlines' signals the subject is the surprising correction, so the nuclear stress falls on 'airline', not 'satisfaction'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "Being short-staffed suggests delays — the word confirming that didn't happen gets the stress.",
+            "explanation": "Short staffing sets up an expectation of delay, so ‘did’ is stressed to confirm everything still finished on time.",
+            "emphasisRule": "Emphatic auxiliaries are stressed when a sentence confirms an outcome despite a clear obstacle."
         },
         {
             "id": "pitchPatternMatch_575",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The surgeon completed the procedure flawlessly, despite the equipment failure.",
-            "textToSpeak": "The surgeon completed the procedure flawlessly, despite the equipment failure.",
+            "word": "Despite years of doubt, the old bridge did withstand the earthquake.",
+            "textToSpeak": "Despite years of doubt, the old bridge did withstand the earthquake.",
             "options": [
-                "Emphasis on PROCEDURE (Object focus)",
-                "Emphasis on FLAWLESSLY (Manner focus)"
+                "Emphasis on DID (Auxiliary/Polarity focus)",
+                "Emphasis on EARTHQUAKE (Object focus)"
             ],
-            "correctAnswer": "Emphasis on FLAWLESSLY (Manner focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                3,
                 1,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "'Despite the equipment failure' signals the manner of completing it is the impressive, noteworthy detail. Listen for the pitch to peak on 'flawlessly'.",
-            "explanation": "The contrast with the equipment failure highlights how impressively it was still done, so the nuclear stress falls on 'flawlessly'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Years of doubt suggest the bridge was expected to fail — listen for the word confirming it held.",
+            "explanation": "Long-standing doubt sets up an expectation of failure, so ‘did’ is stressed to confirm the bridge held after all.",
+            "emphasisRule": "When a sentence confirms something happened despite long-standing doubt, the auxiliary carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_576",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I never claimed the proposal was perfect - I said it was promising.",
-            "textToSpeak": "I never claimed the proposal was perfect - I said it was promising.",
+            "word": "It wasn't the marketing team that missed the deadline - it was legal.",
+            "textToSpeak": "It wasn't the marketing team that missed the deadline - it was legal.",
             "options": [
-                "Emphasis on PROMISING (New/Corrected Information)",
-                "Emphasis on PERFECT (Given/Rejected Information)"
+                "Emphasis on LEGAL (Correcting WHO Did It)",
+                "Emphasis on DEADLINE (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on PROMISING (New/Corrected Information)",
+            "correctAnswer": "Emphasis on LEGAL (Correcting WHO Did It)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -143,406 +143,406 @@
                 3,
                 1
             ],
-            "hint": "'Perfect' is the rejected claim, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'promising'.",
-            "explanation": "'Perfect' is the rejected claim being corrected, so it stays deaccented, while 'promising' - the actual, more modest claim - carries the nuclear stress.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Both teams agree a deadline was missed — what's corrected is which department is responsible.",
+            "explanation": "The missed deadline is already established; the correction is about which team is responsible, so LEGAL takes the stress.",
+            "emphasisRule": "Correcting who is responsible places stress on the true party, even when the rest of the sentence is unchanged."
         },
         {
             "id": "pitchPatternMatch_577",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Even the harshest critics praised the documentary's cinematography.",
-            "textToSpeak": "Even the harshest critics praised the documentary's cinematography.",
+            "word": "The recall wasn't about a software flaw - it was about a battery defect.",
+            "textToSpeak": "The recall wasn't about a software flaw - it was about a battery defect.",
             "options": [
-                "Emphasis on CRITICS (Even Modifies This Word)",
-                "Emphasis on CINEMATOGRAPHY (Object focus)"
+                "Emphasis on BATTERY (New/Corrected Information)",
+                "Emphasis on SOFTWARE (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on CRITICS (Even Modifies This Word)",
+            "correctAnswer": "Emphasis on BATTERY (New/Corrected Information)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                3,
                 1,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'Even' sits right before 'the harshest critics', flagging them as the surprising group who praised it. Listen for the pitch to peak early, on 'critics'.",
-            "explanation": "'Even' attaches to 'critics' here, suggesting it's surprising that even the harshest reviewers gave praise.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "One possible cause is firmly ruled out here — the real cause named afterward gets the stress.",
+            "explanation": "SOFTWARE is explicitly ruled out, so the stress shifts to BATTERY, the actual cause of the recall.",
+            "emphasisRule": "A firmly rejected explanation stays unstressed; the confirmed explanation carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_578",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The museum will unveil the exhibit, not postpone it as rumored.",
-            "textToSpeak": "The museum will unveil the exhibit, not postpone it as rumored.",
+            "word": "The board didn't merely approve the merger - they accelerated it.",
+            "textToSpeak": "The board didn't merely approve the merger - they accelerated it.",
             "options": [
-                "Emphasis on POSTPONE (Given/Rejected Information)",
-                "Emphasis on UNVEIL (Verb/Action focus)"
+                "Emphasis on MERGER (Object focus)",
+                "Emphasis on ACCELERATED (Correcting the Action)"
             ],
-            "correctAnswer": "Emphasis on UNVEIL (Verb/Action focus)",
+            "correctAnswer": "Emphasis on ACCELERATED (Correcting the Action)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                3,
                 1,
+                3,
                 1,
                 1
             ],
-            "hint": "'Not postpone it as rumored' tells you the correction is about the action itself. Listen for the pitch to peak on 'unveil'.",
-            "explanation": "The contrast with the rumored 'postpone' shows the actual action 'unveil' is the new, corrected information, so it carries the nuclear stress.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The object doesn't change between the two clauses — only the strength of the action does.",
+            "explanation": "Since the merger itself doesn't change, the stress falls on ACCELERATED, the stronger action that actually took place.",
+            "emphasisRule": "When a sentence upgrades a modest action to a stronger one on the same object, the stress falls on the corrected action."
         },
         {
             "id": "pitchPatternMatch_579",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Only the senior researchers were briefed on the experimental results.",
-            "textToSpeak": "Only the senior researchers were briefed on the experimental results.",
+            "word": "It wasn't a scheduling error - it was a deliberate decision.",
+            "textToSpeak": "It wasn't a scheduling error - it was a deliberate decision.",
             "options": [
-                "Emphasis on RESULTS (Object focus)",
-                "Emphasis on RESEARCHERS (Only Modifies This Word)"
+                "Emphasis on DELIBERATE (New/Corrected Information)",
+                "Emphasis on SCHEDULING (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on RESEARCHERS (Only Modifies This Word)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DELIBERATE (New/Corrected Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                3,
                 1,
+                3,
                 1,
                 1,
                 1
             ],
-            "hint": "'Only' sits right before 'the senior researchers' - nobody else was briefed. Listen for the pitch to peak early, on 'researchers'.",
-            "explanation": "'Only' attaches to 'researchers' here, meaning nobody else was informed - the stress isn't on the final word 'results'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "One explanation is being ruled out in favor of a more pointed one — stress the real explanation.",
+            "explanation": "SCHEDULING is dismissed as an innocent explanation, so the stress falls on DELIBERATE, the real, more pointed one.",
+            "emphasisRule": "When a sentence replaces an innocent explanation with a pointed one, the stress lands on the corrected explanation."
         },
         {
             "id": "pitchPatternMatch_580",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "We didn't say the treatment failed - we said it needed more time.",
-            "textToSpeak": "We didn't say the treatment failed - we said it needed more time.",
+            "word": "The complaint wasn't filed against the driver - it was filed against the dispatcher.",
+            "textToSpeak": "The complaint wasn't filed against the driver - it was filed against the dispatcher.",
             "options": [
-                "Emphasis on TIME (New/Corrected Information)",
-                "Emphasis on FAILED (Given/Rejected Information)"
+                "Emphasis on DISPATCHER (Correcting WHO Did It)",
+                "Emphasis on DRIVER (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on TIME (New/Corrected Information)",
+            "correctAnswer": "Emphasis on DISPATCHER (Correcting WHO Did It)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Failed' is the rejected claim, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'time'.",
-            "explanation": "'Failed' is the rejected characterization being corrected, so it stays deaccented, while 'time' - the actual, more measured claim - carries the nuclear stress.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The complaint itself isn't in question — only who it targets is being corrected.",
+            "explanation": "The complaint is already established; the correction is about its target, so DISPATCHER carries the stress.",
+            "emphasisRule": "Correcting who an action targets places the stress on the corrected name, not the shared action."
         },
         {
             "id": "pitchPatternMatch_581",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The committee approved the grant, and the board confirmed the funding.",
-            "textToSpeak": "The committee approved the grant, and the board confirmed the funding.",
+            "word": "You won't believe this: the entire warehouse shipment arrived a week early.",
+            "textToSpeak": "You won't believe this: the entire warehouse shipment arrived a week early.",
             "options": [
-                "Two Nuclei: Emphasis on GRANT and FUNDING (One Peak per Clause)",
-                "Single Nucleus: Emphasis only on FUNDING (Whole Sentence as One Unit)"
+                "Broad Focus (the Whole Sentence is News)",
+                "Narrow Focus on SHIPMENT Only"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on GRANT and FUNDING (One Peak per Clause)",
+            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                3,
+                2,
                 1,
-                1,
-                3
+                2,
+                1
             ],
-            "hint": "Two separate bodies completed two separate steps. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'grant' and 'funding' are peaked, not just the final word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Nothing here was already expected — the whole update is fresh news, so no single word should dominate.",
+            "explanation": "Since nothing here was already known, the entire sentence counts as news, so focus stays broad rather than narrowing onto one word.",
+            "emphasisRule": "When an entire event is reported as news for the first time, prominence spreads across the sentence instead of narrowing."
         },
         {
             "id": "pitchPatternMatch_582",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Remarkably, the smallest bakery in town won the regional award.",
-            "textToSpeak": "Remarkably, the smallest bakery in town won the regional award.",
+            "word": "Someone finally cracked the encryption - turns out it was a summer intern.",
+            "textToSpeak": "Someone finally cracked the encryption - turns out it was a summer intern.",
             "options": [
-                "Emphasis on BAKERY (Subject focus)",
-                "Emphasis on AWARD (Object focus)"
+                "Narrow Focus on INTERN Only",
+                "Broad Focus (the Whole Sentence is News)"
             ],
-            "correctAnswer": "Emphasis on BAKERY (Subject focus)",
+            "correctAnswer": "Narrow Focus on INTERN Only",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
+                1,
                 3,
-                1,
-                1,
-                1,
                 1
             ],
-            "hint": "'Remarkably' flags which bakery won as the impressive, unexpected detail. Listen for the pitch to peak early, on 'bakery'.",
-            "explanation": "The marker 'remarkably' signals the subject's surprising win is the key point, so the nuclear stress falls on 'bakery', not 'award'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "The event is already established — only the identity of who did it is still missing.",
+            "explanation": "The first clause already establishes the event, leaving only INTERN as new information, so the stress narrows sharply there.",
+            "emphasisRule": "When most of a sentence is already established, the stress narrows onto the single new element."
         },
         {
             "id": "pitchPatternMatch_583",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Not the vaccine - the antibiotic caused the allergic reaction.",
-            "textToSpeak": "Not the vaccine - the antibiotic caused the allergic reaction.",
+            "word": "Big news: the two rival firms just announced a full merger.",
+            "textToSpeak": "Big news: the two rival firms just announced a full merger.",
             "options": [
-                "Emphasis on ANTIBIOTIC (New/Corrected Information)",
-                "Emphasis on VACCINE (Given/Rejected Information)"
+                "Narrow Focus on FIRMS Only",
+                "Broad Focus (the Whole Sentence is News)"
             ],
-            "correctAnswer": "Emphasis on ANTIBIOTIC (New/Corrected Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                3,
                 1,
+                2,
                 1,
-                1,
+                2,
                 1
             ],
-            "hint": "'The vaccine' is the rejected assumption, so it stays unstressed despite coming first. Listen for the pitch to peak on 'antibiotic'.",
-            "explanation": "'Vaccine' is the rejected assumed cause, so it stays deaccented, while 'antibiotic' - the real cause - carries the nuclear stress.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This opener signals a fresh announcement, not an answer to a narrow question — expect even prominence throughout.",
+            "explanation": "This announces an entirely new event, so prominence spreads across the sentence rather than narrowing onto FIRMS alone.",
+            "emphasisRule": "Broad focus applies when nothing in the sentence is already known - the whole clause is new information."
         },
         {
             "id": "pitchPatternMatch_584",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Despite his injury, the goalkeeper did make the final save.",
-            "textToSpeak": "Despite his injury, the goalkeeper did make the final save.",
+            "word": "Something delayed the vaccine rollout - turns out it was a labeling issue.",
+            "textToSpeak": "Something delayed the vaccine rollout - turns out it was a labeling issue.",
             "options": [
-                "Emphasis on DID (Auxiliary/Polarity focus)",
-                "Emphasis on SAVE (Object focus)"
+                "Broad Focus (the Whole Sentence is News)",
+                "Narrow Focus on LABELING Only"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Narrow Focus on LABELING Only",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'Despite his injury' signals reassurance against doubt about his performance. Listen for the pitch to peak sharply on 'did'.",
-            "explanation": "The auxiliary 'did' carries the nuclear stress here, emphatically confirming the save happened despite the injury, not the object 'save'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The delay itself is already old news here — only its specific cause is new.",
+            "explanation": "The delay is already established by the first clause, so the stress narrows onto LABELING, the newly revealed cause.",
+            "emphasisRule": "Narrow focus applies when a sentence answers a specific question about an already-known event."
         },
         {
             "id": "pitchPatternMatch_585",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The professor didn't just summarize the theory - she challenged it.",
-            "textToSpeak": "The professor didn't just summarize the theory - she challenged it.",
+            "word": "Guess what: the company is opening three new offices overseas.",
+            "textToSpeak": "Guess what: the company is opening three new offices overseas.",
             "options": [
-                "Emphasis on CHALLENGED (Verb/Action focus)",
-                "Emphasis on THEORY (Object focus)"
+                "Broad Focus (the Whole Sentence is News)",
+                "Narrow Focus on OFFICES Only"
             ],
-            "correctAnswer": "Emphasis on CHALLENGED (Verb/Action focus)",
+            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                3,
+                2,
                 1,
-                1,
+                2,
                 1
             ],
-            "hint": "The contrast with 'just summarize' tells you her actual action is the key new information. Listen for the pitch to peak on 'challenged'.",
-            "explanation": "The contrast with 'just summarize' highlights the bolder action she actually took, so the nuclear stress falls on the verb 'challenged'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is a fresh announcement with nothing already known — expect the stress to spread rather than sharpen on one word.",
+            "explanation": "Nothing here was previously known, so the whole announcement counts as news, keeping focus broad instead of narrow.",
+            "emphasisRule": "When an entire event is being reported as news for the first time, prominence spreads across the whole sentence."
         },
         {
             "id": "pitchPatternMatch_586",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Against expectations, the budget hotel received better reviews than the resort.",
-            "textToSpeak": "Against expectations, the budget hotel received better reviews than the resort.",
+            "word": "The merger talks concluded after eighteen months.",
+            "textToSpeak": "The merger talks concluded after eighteen months.",
             "options": [
-                "Emphasis on HOTEL (Subject focus)",
-                "Emphasis on RESORT (Object focus)"
+                "Emphasis on MONTHS (Time focus)",
+                "Emphasis on TALKS (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on HOTEL (Subject focus)",
+            "correctAnswer": "Emphasis on MONTHS (Time focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
+                1,
                 3,
-                1,
-                1,
-                1,
                 1
             ],
-            "hint": "'Against expectations' flags which hotel did better as the surprising detail. Listen for the pitch to peak early, on 'hotel'.",
-            "explanation": "The marker 'against expectations' signals the subject is the surprising new information, so the nuclear stress falls on 'hotel', not 'resort'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "The subject just names what was happening — the real detail added at the end is how long it took.",
+            "explanation": "With no special contrast, the pitch peak still falls on the final content word, MONTHS, functioning as a time focus.",
+            "emphasisRule": "The final content word carries the nuclear stress by default, regardless of what grammatical role it plays."
         },
         {
             "id": "pitchPatternMatch_587",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The technician replaced the motherboard, not the hard drive.",
-            "textToSpeak": "The technician replaced the motherboard, not the hard drive.",
+            "word": "The keynote speech will be delivered at the main auditorium.",
+            "textToSpeak": "The keynote speech will be delivered at the main auditorium.",
             "options": [
-                "Emphasis on HARD DRIVE (Given/Rejected Information)",
-                "Emphasis on MOTHERBOARD (New/Corrected Information)"
+                "Emphasis on SPEECH (Subject focus)",
+                "Emphasis on AUDITORIUM (Place focus)"
             ],
-            "correctAnswer": "Emphasis on MOTHERBOARD (New/Corrected Information)",
+            "correctAnswer": "Emphasis on AUDITORIUM (Place focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'The hard drive' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'motherboard'.",
-            "explanation": "'Hard drive' is the rejected assumption about what was replaced, so it stays deaccented, while 'motherboard' carries the nuclear stress.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The subject only tells you what's happening — listen for the location named at the end.",
+            "explanation": "The sentence saves its strongest beat for AUDITORIUM, the closing place detail, rather than SPEECH at the start.",
+            "emphasisRule": "The final content word carries the nuclear stress by default, regardless of what grammatical role it plays."
         },
         {
             "id": "pitchPatternMatch_588",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Even the youngest passengers remained calm during the turbulence.",
-            "textToSpeak": "Even the youngest passengers remained calm during the turbulence.",
+            "word": "The negotiators resolved the standoff remarkably diplomatically.",
+            "textToSpeak": "The negotiators resolved the standoff remarkably diplomatically.",
             "options": [
-                "Emphasis on TURBULENCE (Object focus)",
-                "Emphasis on PASSENGERS (Even Modifies This Word)"
+                "Emphasis on DIPLOMATICALLY (Manner focus)",
+                "Emphasis on NEGOTIATORS (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on PASSENGERS (Even Modifies This Word)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DIPLOMATICALLY (Manner focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
+                1,
                 3,
-                1,
-                1,
-                1,
                 1
             ],
-            "hint": "'Even' sits right before 'the youngest passengers', flagging them as the surprising group who stayed calm. Listen for the pitch to peak early, on 'passengers'.",
-            "explanation": "'Even' attaches to 'passengers' here, suggesting it's surprising that even the youngest travelers remained calm.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The subject opens the sentence, but listen for how the action was carried out, described at the very end.",
+            "explanation": "DIPLOMATICALLY is the final content word here, so it takes the nuclear stress as the manner focus of the sentence.",
+            "emphasisRule": "The final content word carries the nuclear stress by default, regardless of what grammatical role it plays."
         },
         {
             "id": "pitchPatternMatch_589",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The bakery didn't run out of bread - it ran out of flour.",
-            "textToSpeak": "The bakery didn't run out of bread - it ran out of flour.",
+            "word": "The firm finally sent the settlement offer to opposing counsel.",
+            "textToSpeak": "The firm finally sent the settlement offer to opposing counsel.",
             "options": [
-                "Emphasis on BREAD (Given/Rejected Information)",
-                "Emphasis on FLOUR (New/Corrected Information)"
+                "Emphasis on OFFER (Item focus)",
+                "Emphasis on COUNSEL (Recipient focus)"
             ],
-            "correctAnswer": "Emphasis on FLOUR (New/Corrected Information)",
+            "correctAnswer": "Emphasis on COUNSEL (Recipient focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Bread' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'flour'.",
-            "explanation": "'Bread' is the rejected assumption about what ran out, so it stays deaccented, while 'flour' - the real shortage - carries the nuclear stress.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The item being sent is mentioned early — listen for who it was actually sent to, at the end.",
+            "explanation": "COUNSEL is the final content word, so it carries the stress as the recipient, ahead of OFFER earlier in the sentence.",
+            "emphasisRule": "The final content word carries the nuclear stress by default, regardless of what grammatical role it plays."
         },
         {
             "id": "pitchPatternMatch_590",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The new manager did approve the overtime request.",
-            "textToSpeak": "The new manager did approve the overtime request.",
+            "word": "The committee awarded the visiting professor a lifetime achievement prize.",
+            "textToSpeak": "The committee awarded the visiting professor a lifetime achievement prize.",
             "options": [
-                "Emphasis on DID (Auxiliary/Polarity focus)",
-                "Emphasis on REQUEST (Object focus)"
+                "Emphasis on PROFESSOR (Recipient focus)",
+                "Emphasis on PRIZE (Item focus)"
             ],
-            "correctAnswer": "Emphasis on DID (Auxiliary/Polarity focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on PRIZE (Item focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "This sentence emphatically confirms an action that was apparently in doubt. Listen for the pitch to peak sharply on 'did'.",
-            "explanation": "The auxiliary 'did' carries the nuclear stress here, emphatically confirming the approval happened, not the object 'request'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The recipient is named first — the actual item being awarded comes right at the end.",
+            "explanation": "PRIZE is the final content word, so it carries the stress as the item awarded, ahead of PROFESSOR earlier on.",
+            "emphasisRule": "The final content word carries the nuclear stress by default, regardless of what grammatical role it plays."
         },
         {
             "id": "pitchPatternMatch_591",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Not the printer driver - the network settings caused the issue.",
-            "textToSpeak": "Not the printer driver - the network settings caused the issue.",
+            "word": "The auditors flagged the discrepancy, and the board demanded an explanation.",
+            "textToSpeak": "The auditors flagged the discrepancy, and the board demanded an explanation.",
             "options": [
-                "Emphasis on DRIVER (Given/Rejected Information)",
-                "Emphasis on SETTINGS (New/Corrected Information)"
+                "Two Nuclei: Emphasis on DISCREPANCY and EXPLANATION (One Peak per Clause)",
+                "Single Nucleus: Emphasis only on EXPLANATION (Whole Sentence as One Unit)"
             ],
-            "correctAnswer": "Emphasis on SETTINGS (New/Corrected Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Two Nuclei: Emphasis on DISCREPANCY and EXPLANATION (One Peak per Clause)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
                 3,
                 1,
                 1,
-                1,
-                1
+                3
             ],
-            "hint": "'The printer driver' is the rejected guess, so it stays unstressed despite coming first. Listen for the pitch to peak on 'settings'.",
-            "explanation": "'Driver' is the rejected assumed cause, so it stays deaccented, while 'settings' - the real cause - carries the nuclear stress.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Two different groups each contribute separate news here — expect each clause to keep its own peak.",
+            "explanation": "The auditors and the board each report independent actions, so both DISCREPANCY and EXPLANATION carry their own stress.",
+            "emphasisRule": "When two clauses report separate news about two different parties, each clause keeps its own nuclear stress."
         },
         {
             "id": "pitchPatternMatch_592",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Surprisingly, the substitute teacher handled the unruly class brilliantly.",
-            "textToSpeak": "Surprisingly, the substitute teacher handled the unruly class brilliantly.",
+            "word": "She reviewed the contract and signed it without hesitation.",
+            "textToSpeak": "She reviewed the contract and signed it without hesitation.",
             "options": [
-                "Emphasis on CLASS (Object focus)",
-                "Emphasis on BRILLIANTLY (Manner focus)"
+                "Single Nucleus: Emphasis only on HESITATION (Whole Sentence as One Unit)",
+                "Two Nuclei: Emphasis on CONTRACT and HESITATION (One Peak per Clause)"
             ],
-            "correctAnswer": "Emphasis on BRILLIANTLY (Manner focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Single Nucleus: Emphasis only on HESITATION (Whole Sentence as One Unit)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                1,
-                3
+                3,
+                1
             ],
-            "hint": "'Surprisingly' signals the skillful manner of handling it is the noteworthy detail, not the class itself. Listen for the pitch to peak on 'brilliantly'.",
-            "explanation": "The marker 'surprisingly' signals the manner of handling the class is the key point, so the nuclear stress falls on 'brilliantly', not 'class'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The same person carries out one smooth sequence of actions here — expect just one main peak, near the end.",
+            "explanation": "Because the same person performs one natural sequence of actions, the sentence takes a single nucleus on HESITATION.",
+            "emphasisRule": "When the same subject performs a natural sequence of actions, the whole sentence is treated as one unit with a single nuclear stress."
         },
         {
             "id": "pitchPatternMatch_593",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The landlord fixed the heating, and the tenant repainted the walls.",
-            "textToSpeak": "The landlord fixed the heating, and the tenant repainted the walls.",
+            "word": "The regulators fined the bank, and the CEO resigned within days.",
+            "textToSpeak": "The regulators fined the bank, and the CEO resigned within days.",
             "options": [
-                "Single Nucleus: Emphasis only on WALLS (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on HEATING and WALLS (One Peak per Clause)"
+                "Single Nucleus: Emphasis only on DAYS (Whole Sentence as One Unit)",
+                "Two Nuclei: Emphasis on BANK and DAYS (One Peak per Clause)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on HEATING and WALLS (One Peak per Clause)",
+            "correctAnswer": "Two Nuclei: Emphasis on BANK and DAYS (One Peak per Clause)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -551,118 +551,70 @@
                 1,
                 3
             ],
-            "hint": "Two different people handled two separate home improvements. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'heating' and 'walls' are peaked, not just the final word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Two separate parties are each making separate news here — listen for a reset in pitch after the comma.",
+            "explanation": "The regulators and the CEO each contribute independent news, so both BANK and DAYS carry their own nuclear stress.",
+            "emphasisRule": "Coordinated clauses describing independent events are each treated as their own information unit."
         },
         {
             "id": "pitchPatternMatch_594",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Only the night shift nurses noticed the equipment malfunction.",
-            "textToSpeak": "Only the night shift nurses noticed the equipment malfunction.",
+            "word": "He drafted the proposal and submitted it before the deadline.",
+            "textToSpeak": "He drafted the proposal and submitted it before the deadline.",
             "options": [
-                "Emphasis on NURSES (Only Modifies This Word)",
-                "Emphasis on MALFUNCTION (Object focus)"
+                "Two Nuclei: Emphasis on PROPOSAL and DEADLINE (One Peak per Clause)",
+                "Single Nucleus: Emphasis only on DEADLINE (Whole Sentence as One Unit)"
             ],
-            "correctAnswer": "Emphasis on NURSES (Only Modifies This Word)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Single Nucleus: Emphasis only on DEADLINE (Whole Sentence as One Unit)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                3,
                 1,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'Only' sits right before 'the night shift nurses' - nobody else noticed. Listen for the pitch to peak early, on 'nurses'.",
-            "explanation": "'Only' attaches to 'nurses' here, meaning nobody else noticed the problem - the stress isn't on the final word 'malfunction'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is one connected task told in two steps by the same person — expect a single peak, near the end.",
+            "explanation": "Drafting and submitting form one connected task by the same person, so only DEADLINE carries the main stress.",
+            "emphasisRule": "A tightly connected action sequence keeps one main pitch peak near the end, rather than splitting stress across each verb."
         },
         {
             "id": "pitchPatternMatch_595",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "We didn't book the cheaper flight - we booked the direct one.",
-            "textToSpeak": "We didn't book the cheaper flight - we booked the direct one.",
+            "word": "The union rejected the offer, and the strike continued into its third week.",
+            "textToSpeak": "The union rejected the offer, and the strike continued into its third week.",
             "options": [
-                "Emphasis on CHEAPER (Given/Rejected Information)",
-                "Emphasis on DIRECT (New/Corrected Information)"
+                "Two Nuclei: Emphasis on OFFER and WEEK (One Peak per Clause)",
+                "Single Nucleus: Emphasis only on WEEK (Whole Sentence as One Unit)"
             ],
-            "correctAnswer": "Emphasis on DIRECT (New/Corrected Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Two Nuclei: Emphasis on OFFER and WEEK (One Peak per Clause)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
-                1
+                1,
+                1,
+                3
             ],
-            "hint": "'The cheaper flight' is the rejected assumption, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'direct'.",
-            "explanation": "'Cheaper' is the rejected assumption about which flight was booked, so it stays deaccented, while 'direct' carries the nuclear stress.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Two separate developments are reported here, not one flowing action — expect two independent peaks.",
+            "explanation": "Rejecting the offer and the strike continuing are two separate pieces of news, so both OFFER and WEEK carry stress.",
+            "emphasisRule": "When two clauses report separate news about two different developments, each clause keeps its own nuclear stress."
         },
         {
             "id": "pitchPatternMatch_596",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The startup didn't just survive the recession - it thrived.",
-            "textToSpeak": "The startup didn't just survive the recession - it thrived.",
+            "word": "Only the original founders retained voting shares after the buyout.",
+            "textToSpeak": "Only the original founders retained voting shares after the buyout.",
             "options": [
-                "Emphasis on RECESSION (Object focus)",
-                "Emphasis on THRIVED (Verb/Action focus)"
+                "Emphasis on FOUNDERS (Only Modifies This Word)",
+                "Emphasis on SHARES (Object focus)"
             ],
-            "correctAnswer": "Emphasis on THRIVED (Verb/Action focus)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                1,
-                3,
-                1,
-                1,
-                1
-            ],
-            "hint": "The contrast with 'just survive' tells you the actual outcome is the key new information. Listen for the pitch to peak on 'thrived'.",
-            "explanation": "The contrast with 'just survive' highlights the far stronger outcome that actually happened, so the nuclear stress falls on the verb 'thrived'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
-        },
-        {
-            "id": "pitchPatternMatch_597",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "Against all odds, the community clinic secured federal funding.",
-            "textToSpeak": "Against all odds, the community clinic secured federal funding.",
-            "options": [
-                "Emphasis on FUNDING (Object focus)",
-                "Emphasis on CLINIC (Subject focus)"
-            ],
-            "correctAnswer": "Emphasis on CLINIC (Subject focus)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                3,
-                1,
-                1,
-                1,
-                1
-            ],
-            "hint": "'Against all odds' flags which clinic secured funding as the surprising detail. Listen for the pitch to peak early, on 'clinic'.",
-            "explanation": "The marker 'against all odds' signals the subject's surprising success is the key point, so the nuclear stress falls on 'clinic', not 'funding'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
-        },
-        {
-            "id": "pitchPatternMatch_598",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "The choir didn't merely perform the anthem - they reinvented it.",
-            "textToSpeak": "The choir didn't merely perform the anthem - they reinvented it.",
-            "options": [
-                "Emphasis on REINVENTED (Verb/Action focus)",
-                "Emphasis on ANTHEM (Object focus)"
-            ],
-            "correctAnswer": "Emphasis on REINVENTED (Verb/Action focus)",
+            "correctAnswer": "Emphasis on FOUNDERS (Only Modifies This Word)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -671,19 +623,19 @@
                 1,
                 1
             ],
-            "hint": "The contrast with 'merely perform' tells you the actual achievement is the key new information. Listen for the pitch to peak on 'reinvented'.",
-            "explanation": "The contrast with 'merely perform' highlights the more creative achievement that actually happened, so the nuclear stress falls on the verb 'reinvented'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Ask yourself: only who? The answer to that is exactly what carries the stress.",
+            "explanation": "‘Only’ restricts FOUNDERS specifically, so the nuclear stress lands there rather than on SHARES.",
+            "emphasisRule": "The word directly following ‘only’ carries the nuclear stress, since that's the word being restricted."
         },
         {
-            "id": "pitchPatternMatch_599",
+            "id": "pitchPatternMatch_597",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Even the strictest critics admired the chef's creativity.",
-            "textToSpeak": "Even the strictest critics admired the chef's creativity.",
+            "word": "Even the company's harshest critics praised the turnaround.",
+            "textToSpeak": "Even the company's harshest critics praised the turnaround.",
             "options": [
-                "Emphasis on CREATIVITY (Object focus)",
+                "Emphasis on TURNAROUND (Object focus)",
                 "Emphasis on CRITICS (Even Modifies This Word)"
             ],
             "correctAnswer": "Emphasis on CRITICS (Even Modifies This Word)",
@@ -695,33 +647,81 @@
                 1,
                 1
             ],
-            "hint": "'Even' sits right before 'the strictest critics', flagging them as the surprising group who admired it. Listen for the pitch to peak early, on 'critics'.",
-            "explanation": "'Even' attaches to 'critics' here, suggesting it's surprising that even the strictest reviewers showed admiration.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Ask yourself: even who? That's the surprising case ‘even’ is pointing to, and it takes the stress.",
+            "explanation": "‘Even’ marks CRITICS as the surprising case here, so the nuclear stress lands there rather than on TURNAROUND.",
+            "emphasisRule": "The word directly following ‘even’ carries the nuclear stress, since that's the word marked as surprising."
+        },
+        {
+            "id": "pitchPatternMatch_598",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "Only board-certified specialists can perform that procedure.",
+            "textToSpeak": "Only board-certified specialists can perform that procedure.",
+            "options": [
+                "Emphasis on SPECIALISTS (Only Modifies This Word)",
+                "Emphasis on PROCEDURE (Object focus)"
+            ],
+            "correctAnswer": "Emphasis on SPECIALISTS (Only Modifies This Word)",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                1
+            ],
+            "hint": "Ask yourself: only who is allowed? That answer carries the stress, not the final noun.",
+            "explanation": "‘Only’ restricts SPECIALISTS specifically, so the nuclear stress lands there rather than on PROCEDURE.",
+            "emphasisRule": "The word directly following ‘only’ carries the nuclear stress, since that's the word being restricted."
+        },
+        {
+            "id": "pitchPatternMatch_599",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "Even the most experienced negotiators were caught off guard.",
+            "textToSpeak": "Even the most experienced negotiators were caught off guard.",
+            "options": [
+                "Emphasis on NEGOTIATORS (Even Modifies This Word)",
+                "Emphasis on GUARD (Object focus)"
+            ],
+            "correctAnswer": "Emphasis on NEGOTIATORS (Even Modifies This Word)",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                3,
+                1,
+                1,
+                1,
+                1
+            ],
+            "hint": "Ask yourself: even who was caught off guard? That surprising case is exactly what carries the stress.",
+            "explanation": "‘Even’ marks NEGOTIATORS as the surprising case here, so the nuclear stress lands there rather than at the end of the idiom.",
+            "emphasisRule": "The word directly following ‘even’ carries the nuclear stress, since that's the word marked as surprising."
         },
         {
             "id": "pitchPatternMatch_600",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The airline upgraded her seat, and the hotel upgraded her room.",
-            "textToSpeak": "The airline upgraded her seat, and the hotel upgraded her room.",
+            "word": "Only shareholders of record can attend the annual meeting.",
+            "textToSpeak": "Only shareholders of record can attend the annual meeting.",
             "options": [
-                "Single Nucleus: Emphasis only on ROOM (Whole Sentence as One Unit)",
-                "Two Nuclei: Emphasis on SEAT and ROOM (One Peak per Clause)"
+                "Emphasis on SHAREHOLDERS (Only Modifies This Word)",
+                "Emphasis on MEETING (Object focus)"
             ],
-            "correctAnswer": "Two Nuclei: Emphasis on SEAT and ROOM (One Peak per Clause)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on SHAREHOLDERS (Only Modifies This Word)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 3,
                 1,
                 1,
-                3
+                1
             ],
-            "hint": "Two separate companies each gave a separate upgrade. Listen for two separate pitch peaks, not just one at the very end.",
-            "explanation": "Coordinated parallel clauses each get their own nuclear stress, so both 'seat' and 'room' are peaked, not just the final word - a fitting final pattern to close the curriculum.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Ask yourself: only who can attend? That restricted group carries the stress, not the event itself.",
+            "explanation": "‘Only’ restricts SHAREHOLDERS specifically, so the nuclear stress lands there rather than on MEETING.",
+            "emphasisRule": "The word directly following ‘only’ carries the nuclear stress, since that's the word being restricted."
         }
     ]
 }

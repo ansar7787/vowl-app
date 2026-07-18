@@ -5,16 +5,16 @@
     "quests": [
         {
             "id": "pitchPatternMatch_61",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The soup tastes delicious.",
-            "textToSpeak": "The soup tastes delicious.",
+            "word": "The doctor adjusted his medication.",
+            "textToSpeak": "The doctor adjusted his medication.",
             "options": [
-                "Emphasis on DELICIOUS (Complement focus)",
-                "Emphasis on SOUP (Subject focus)"
+                "Falling intonation (a statement)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on DELICIOUS (Complement focus)",
+            "correctAnswer": "Falling intonation (a statement)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -23,94 +23,94 @@
                 3,
                 1
             ],
-            "hint": "This sentence describes a quality of the soup. Listen for the pitch to climb on 'delicious', not on 'soup'.",
-            "explanation": "The adjective 'delicious' is the final content word, so it naturally carries the nuclear pitch accent, not 'soup'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence simply reports information — statements usually settle downward by the end.",
+            "explanation": "Statements share information rather than ask for it, so the pitch falls naturally toward the end.",
+            "emphasisRule": "Statements that simply share information are typically marked by falling intonation at the end."
         },
         {
             "id": "pitchPatternMatch_62",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My sister lives in Chicago.",
-            "textToSpeak": "My sister lives in Chicago.",
+            "word": "Did you take your vitamins today?",
+            "textToSpeak": "Did you take your vitamins today?",
             "options": [
-                "Emphasis on CHICAGO (Place focus)",
-                "Emphasis on SISTER (Subject focus)"
+                "Falling intonation (a statement)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on CHICAGO (Place focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "The new, important detail here is where she lives. Listen for the pitch to peak on 'Chicago'.",
-            "explanation": "'Chicago' is the final content word and the new information, so it takes the nuclear stress, not 'sister'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is a yes/no question — in English, that usually means the pitch climbs upward right at the end.",
+            "explanation": "Yes/no questions in English typically end with rising intonation, signaling that a yes-or-no answer is expected.",
+            "emphasisRule": "Yes/no questions in English are typically marked by rising intonation at the end of the sentence."
         },
         {
             "id": "pitchPatternMatch_63",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The package arrived yesterday.",
-            "textToSpeak": "The package arrived yesterday.",
+            "word": "Did you lock the back door?",
+            "textToSpeak": "Did you lock the back door?",
             "options": [
-                "Emphasis on PACKAGE (Subject focus)",
-                "Emphasis on YESTERDAY (Time focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a statement)"
             ],
-            "correctAnswer": "Emphasis on YESTERDAY (Time focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "The key new detail is when it arrived. Listen for the pitch to peak on 'yesterday' at the very end.",
-            "explanation": "'Yesterday' is the sentence's final content word, so the nuclear pitch accent naturally falls there.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Notice this sentence is asking for a simple yes or no. Where does your voice go as you reach the last word?",
+            "explanation": "Because this asks for a simple yes or no, the pitch rises toward the end rather than falling.",
+            "emphasisRule": "A question that can be answered with yes or no usually ends with an upward pitch movement."
         },
         {
             "id": "pitchPatternMatch_64",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The movie seems interesting.",
-            "textToSpeak": "The movie seems interesting.",
+            "word": "We missed the last bus downtown.",
+            "textToSpeak": "We missed the last bus downtown.",
             "options": [
-                "Emphasis on INTERESTING (Complement focus)",
-                "Emphasis on MOVIE (Subject focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a statement)"
             ],
-            "correctAnswer": "Emphasis on INTERESTING (Complement focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Falling intonation (a statement)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                2,
+                1,
+                1,
                 1
             ],
-            "hint": "The opinion word at the end carries the real information here. Listen for the pitch to rise on 'interesting'.",
-            "explanation": "'Interesting' is the final content word describing the movie, so it carries the nuclear pitch accent.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "There's no question here, just a plain statement, so expect the pitch to drop toward the end.",
+            "explanation": "Because this sentence simply states a fact, the pitch drops at the end instead of rising.",
+            "emphasisRule": "A sentence that states a fact rather than asks one usually ends with a downward pitch movement."
         },
         {
             "id": "pitchPatternMatch_65",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My brother works in Boston.",
-            "textToSpeak": "My brother works in Boston.",
+            "word": "The clinic extended its weekend hours.",
+            "textToSpeak": "The clinic extended its weekend hours.",
             "options": [
-                "Emphasis on BOSTON (Place focus)",
-                "Emphasis on BROTHER (Subject focus)"
+                "Falling intonation (a statement)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on BOSTON (Place focus)",
+            "correctAnswer": "Falling intonation (a statement)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -119,119 +119,119 @@
                 3,
                 1
             ],
-            "hint": "The location is the new piece of information. Listen for the pitch peak landing on 'Boston'.",
-            "explanation": "'Boston' is the final content word, so the nuclear stress naturally falls there rather than on 'brother'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Read this as a simple fact being shared — the voice usually falls as the sentence closes.",
+            "explanation": "This is a plain declarative sentence, and those are marked by falling intonation at the finish.",
+            "emphasisRule": "Statements that simply share information are typically marked by falling intonation at the end."
         },
         {
             "id": "pitchPatternMatch_66",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The meeting starts soon.",
-            "textToSpeak": "The meeting starts soon.",
+            "word": "Is the dryer still running?",
+            "textToSpeak": "Is the dryer still running?",
             "options": [
-                "Emphasis on SOON (Time focus)",
-                "Emphasis on MEETING (Subject focus)"
+                "Falling intonation (a statement)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on SOON (Time focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "The timing detail at the end is the important new information. Listen for the pitch peak on 'soon'.",
-            "explanation": "'Soon' is the sentence's final content word, so it receives the nuclear pitch accent under neutral intonation.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Questions like this one typically end with an upward glide, not a drop.",
+            "explanation": "This is a classic yes/no question, and those are marked by an upward pitch glide at the finish.",
+            "emphasisRule": "Yes/no questions in English are typically marked by rising intonation at the end of the sentence."
         },
         {
             "id": "pitchPatternMatch_67",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The bread smells wonderful.",
-            "textToSpeak": "The bread smells wonderful.",
+            "word": "My sister returned the shoes yesterday.",
+            "textToSpeak": "My sister returned the shoes yesterday.",
             "options": [
-                "Emphasis on BREAD (Subject focus)",
-                "Emphasis on WONDERFUL (Complement focus)"
+                "Falling intonation (a statement)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on WONDERFUL (Complement focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling intonation (a statement)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                2,
+                1,
+                1,
                 1
             ],
-            "hint": "The describing word at the end carries the main information about the bread. Listen for the pitch on 'wonderful'.",
-            "explanation": "'Wonderful' is the final content word, so it naturally carries the nuclear pitch accent, not 'bread'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This isn't asking anything; it's telling you something, so the pitch should ease downward at the end.",
+            "explanation": "The falling pitch at the end signals that this is a statement, not a question.",
+            "emphasisRule": "A sentence that states a fact rather than asks one usually ends with a downward pitch movement."
         },
         {
             "id": "pitchPatternMatch_68",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Our office is in London.",
-            "textToSpeak": "Our office is in London.",
+            "word": "Would you like extra cheese?",
+            "textToSpeak": "Would you like extra cheese?",
             "options": [
-                "Emphasis on OFFICE (Subject focus)",
-                "Emphasis on LONDON (Place focus)"
+                "Falling intonation (a statement)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on LONDON (Place focus)",
+            "correctAnswer": "Rising intonation (a yes/no question)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "The city name at the end is the key new detail. Listen for the pitch to peak on 'London'.",
-            "explanation": "'London' is the final content word, so the nuclear stress falls there rather than on 'office'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Read the ending carefully — a yes/no question usually finishes on a rising note.",
+            "explanation": "The rising pitch at the end signals a genuine yes/no question, inviting a direct answer.",
+            "emphasisRule": "A question that can be answered with yes or no usually ends with an upward pitch movement."
         },
         {
             "id": "pitchPatternMatch_69",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The concert begins tonight.",
-            "textToSpeak": "The concert begins tonight.",
+            "word": "Do they accept coupons here?",
+            "textToSpeak": "Do they accept coupons here?",
             "options": [
-                "Emphasis on CONCERT (Subject focus)",
-                "Emphasis on TONIGHT (Time focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a statement)"
             ],
-            "correctAnswer": "Emphasis on TONIGHT (Time focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "The timing word at the end is the most important new detail. Listen for the pitch peak on 'tonight'.",
-            "explanation": "'Tonight' is the sentence's final content word, so it carries the nuclear pitch accent.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This isn't a statement; it's a direct question expecting yes or no, so listen for a climb at the end.",
+            "explanation": "Since the speaker is asking rather than telling, the pitch climbs upward instead of dropping.",
+            "emphasisRule": "Yes/no questions in English are typically marked by rising intonation at the end of the sentence."
         },
         {
             "id": "pitchPatternMatch_70",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The water feels freezing.",
-            "textToSpeak": "The water feels freezing.",
+            "word": "We recycle the bottles every Friday.",
+            "textToSpeak": "We recycle the bottles every Friday.",
             "options": [
-                "Emphasis on FREEZING (Complement focus)",
-                "Emphasis on WATER (Subject focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a statement)"
             ],
-            "correctAnswer": "Emphasis on FREEZING (Complement focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Falling intonation (a statement)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
@@ -239,95 +239,95 @@
                 3,
                 1
             ],
-            "hint": "The describing word at the end tells you the most. Listen for the pitch to rise sharply on 'freezing'.",
-            "explanation": "'Freezing' is the final content word describing the water, so it naturally takes the nuclear pitch accent.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Plain statements like this one typically end on a falling note, not a rising one.",
+            "explanation": "Since nothing here is being asked, the voice naturally eases downward by the final word.",
+            "emphasisRule": "Statements that simply share information are typically marked by falling intonation at the end."
         },
         {
             "id": "pitchPatternMatch_71",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My parents live in Denver.",
-            "textToSpeak": "My parents live in Denver.",
+            "word": "Did the update fix the bug?",
+            "textToSpeak": "Did the update fix the bug?",
             "options": [
-                "Emphasis on PARENTS (Subject focus)",
-                "Emphasis on DENVER (Place focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a statement)"
             ],
-            "correctAnswer": "Emphasis on DENVER (Place focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "The city name carries the key new information. Listen for the pitch peak landing on 'Denver'.",
-            "explanation": "'Denver' is the final content word, so the nuclear stress naturally falls there, not on 'parents'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Try asking this out loud — yes/no questions naturally lift the pitch as they finish.",
+            "explanation": "Yes/no questions in English typically end with rising intonation, signaling that a yes-or-no answer is expected.",
+            "emphasisRule": "A question that can be answered with yes or no usually ends with an upward pitch movement."
         },
         {
             "id": "pitchPatternMatch_72",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The flight departs shortly.",
-            "textToSpeak": "The flight departs shortly.",
+            "word": "The hotel upgraded our room for free.",
+            "textToSpeak": "The hotel upgraded our room for free.",
             "options": [
-                "Emphasis on SHORTLY (Time focus)",
-                "Emphasis on FLIGHT (Subject focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a statement)"
             ],
-            "correctAnswer": "Emphasis on SHORTLY (Time focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Falling intonation (a statement)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                2,
+                1,
+                1,
                 1
             ],
-            "hint": "The timing detail is the important new information here. Listen for the pitch to peak on 'shortly'.",
-            "explanation": "'Shortly' is the sentence's final content word, so it receives the nuclear pitch accent.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Say this out loud as a simple fact — notice how natural it feels for the pitch to drop at the end.",
+            "explanation": "Statements share information rather than ask for it, so the pitch falls naturally toward the end.",
+            "emphasisRule": "A sentence that states a fact rather than asks one usually ends with a downward pitch movement."
         },
         {
             "id": "pitchPatternMatch_73",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The cake looks amazing.",
-            "textToSpeak": "The cake looks amazing.",
+            "word": "Have they signed the new contract yet?",
+            "textToSpeak": "Have they signed the new contract yet?",
             "options": [
-                "Emphasis on CAKE (Subject focus)",
-                "Emphasis on AMAZING (Complement focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a statement)"
             ],
-            "correctAnswer": "Emphasis on AMAZING (Complement focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "The describing word at the end is what really stands out here. Listen for the pitch to peak on 'amazing'.",
-            "explanation": "'Amazing' is the final content word, so it naturally carries the nuclear pitch accent, not 'cake'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is a yes/no question — in English, that usually means the pitch climbs upward right at the end.",
+            "explanation": "Because this asks for a simple yes or no, the pitch rises toward the end rather than falling.",
+            "emphasisRule": "Yes/no questions in English are typically marked by rising intonation at the end of the sentence."
         },
         {
             "id": "pitchPatternMatch_74",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The school is in Seattle.",
-            "textToSpeak": "The school is in Seattle.",
+            "word": "The team finished the presentation on time.",
+            "textToSpeak": "The team finished the presentation on time.",
             "options": [
-                "Emphasis on SEATTLE (Place focus)",
-                "Emphasis on SCHOOL (Subject focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a statement)"
             ],
-            "correctAnswer": "Emphasis on SEATTLE (Place focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Falling intonation (a statement)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
@@ -335,119 +335,119 @@
                 3,
                 1
             ],
-            "hint": "The city name is the key new detail. Listen for the pitch peak landing on 'Seattle', not on 'school'.",
-            "explanation": "'Seattle' is the final content word, so the nuclear stress naturally falls there.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence simply reports information — statements usually settle downward by the end.",
+            "explanation": "Because this sentence simply states a fact, the pitch drops at the end instead of rising.",
+            "emphasisRule": "Statements that simply share information are typically marked by falling intonation at the end."
         },
         {
             "id": "pitchPatternMatch_75",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The store closes early.",
-            "textToSpeak": "The store closes early.",
+            "word": "Have you been sleeping enough?",
+            "textToSpeak": "Have you been sleeping enough?",
             "options": [
-                "Emphasis on STORE (Subject focus)",
-                "Emphasis on EARLY (Time focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a statement)"
             ],
-            "correctAnswer": "Emphasis on EARLY (Time focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "The timing word at the end is the most useful new information. Listen for the pitch peak on 'early'.",
-            "explanation": "'Early' is the sentence's final content word, so it carries the nuclear pitch accent under neutral intonation.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Notice this sentence is asking for a simple yes or no. Where does your voice go as you reach the last word?",
+            "explanation": "This is a classic yes/no question, and those are marked by an upward pitch glide at the finish.",
+            "emphasisRule": "A question that can be answered with yes or no usually ends with an upward pitch movement."
         },
         {
             "id": "pitchPatternMatch_76",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The exam seems difficult.",
-            "textToSpeak": "The exam seems difficult.",
+            "word": "Did you print your boarding pass?",
+            "textToSpeak": "Did you print your boarding pass?",
             "options": [
-                "Emphasis on DIFFICULT (Complement focus)",
-                "Emphasis on EXAM (Subject focus)"
+                "Falling intonation (a statement)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on DIFFICULT (Complement focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "The describing word at the end carries the real news about the exam. Listen for the pitch on 'difficult'.",
-            "explanation": "'Difficult' is the final content word, so it naturally takes the nuclear pitch accent, not 'exam'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Questions like this one typically end with an upward glide, not a drop.",
+            "explanation": "The rising pitch at the end signals a genuine yes/no question, inviting a direct answer.",
+            "emphasisRule": "Yes/no questions in English are typically marked by rising intonation at the end of the sentence."
         },
         {
             "id": "pitchPatternMatch_77",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My cousin studies in Paris.",
-            "textToSpeak": "My cousin studies in Paris.",
+            "word": "Grandpa tells the same story every year.",
+            "textToSpeak": "Grandpa tells the same story every year.",
             "options": [
-                "Emphasis on COUSIN (Subject focus)",
-                "Emphasis on PARIS (Place focus)"
+                "Falling intonation (a statement)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on PARIS (Place focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling intonation (a statement)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                2,
+                1,
+                1,
                 1
             ],
-            "hint": "The city name is the key new detail. Listen for the pitch peak landing on 'Paris', not on 'cousin'.",
-            "explanation": "'Paris' is the final content word, so the nuclear stress naturally falls there.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "There's no question here, just a plain statement, so expect the pitch to drop toward the end.",
+            "explanation": "This is a plain declarative sentence, and those are marked by falling intonation at the finish.",
+            "emphasisRule": "A sentence that states a fact rather than asks one usually ends with a downward pitch movement."
         },
         {
             "id": "pitchPatternMatch_78",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The bus leaves immediately.",
-            "textToSpeak": "The bus leaves immediately.",
+            "word": "Is your password still working?",
+            "textToSpeak": "Is your password still working?",
             "options": [
-                "Emphasis on BUS (Subject focus)",
-                "Emphasis on IMMEDIATELY (Time focus)"
+                "Falling intonation (a statement)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on IMMEDIATELY (Time focus)",
+            "correctAnswer": "Rising intonation (a yes/no question)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "The urgency word at the end is the important new detail. Listen for the pitch to peak on 'immediately'.",
-            "explanation": "'Immediately' is the sentence's final content word, so it carries the nuclear pitch accent.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Read the ending carefully — a yes/no question usually finishes on a rising note.",
+            "explanation": "Since the speaker is asking rather than telling, the pitch climbs upward instead of dropping.",
+            "emphasisRule": "A question that can be answered with yes or no usually ends with an upward pitch movement."
         },
         {
             "id": "pitchPatternMatch_79",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The patient appears stable.",
-            "textToSpeak": "The patient appears stable.",
+            "word": "The students submitted their projects early.",
+            "textToSpeak": "The students submitted their projects early.",
             "options": [
-                "Emphasis on PATIENT (Subject focus)",
-                "Emphasis on STABLE (Complement focus)"
+                "Falling intonation (a statement)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on STABLE (Complement focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling intonation (a statement)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -455,71 +455,71 @@
                 3,
                 1
             ],
-            "hint": "The condition word at the end is the real medical update here. Listen for the pitch to peak on 'stable'.",
-            "explanation": "'Stable' is the final content word describing the patient's condition, so it takes the nuclear pitch accent.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Read this as a simple fact being shared — the voice usually falls as the sentence closes.",
+            "explanation": "The falling pitch at the end signals that this is a statement, not a question.",
+            "emphasisRule": "Statements that simply share information are typically marked by falling intonation at the end."
         },
         {
             "id": "pitchPatternMatch_80",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The hospital is in Austin.",
-            "textToSpeak": "The hospital is in Austin.",
+            "word": "My manager approved the vacation request.",
+            "textToSpeak": "My manager approved the vacation request.",
             "options": [
-                "Emphasis on HOSPITAL (Subject focus)",
-                "Emphasis on AUSTIN (Place focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a statement)"
             ],
-            "correctAnswer": "Emphasis on AUSTIN (Place focus)",
+            "correctAnswer": "Falling intonation (a statement)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                2,
+                1,
+                1,
                 1
             ],
-            "hint": "The city name carries the key new information. Listen for the pitch peak landing on 'Austin'.",
-            "explanation": "'Austin' is the final content word, so the nuclear stress naturally falls there, not on 'hospital'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This isn't asking anything; it's telling you something, so the pitch should ease downward at the end.",
+            "explanation": "Since nothing here is being asked, the voice naturally eases downward by the final word.",
+            "emphasisRule": "A sentence that states a fact rather than asks one usually ends with a downward pitch movement."
         },
         {
             "id": "pitchPatternMatch_81",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The appointment starts later.",
-            "textToSpeak": "The appointment starts later.",
+            "word": "Does your sister still play the violin?",
+            "textToSpeak": "Does your sister still play the violin?",
             "options": [
-                "Emphasis on APPOINTMENT (Subject focus)",
-                "Emphasis on LATER (Time focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a statement)"
             ],
-            "correctAnswer": "Emphasis on LATER (Time focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "The timing word at the end is the useful new detail. Listen for the pitch to peak on 'later'.",
-            "explanation": "'Later' is the sentence's final content word, so it receives the nuclear pitch accent.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This isn't a statement; it's a direct question expecting yes or no, so listen for a climb at the end.",
+            "explanation": "Yes/no questions in English typically end with rising intonation, signaling that a yes-or-no answer is expected.",
+            "emphasisRule": "Yes/no questions in English are typically marked by rising intonation at the end of the sentence."
         },
         {
             "id": "pitchPatternMatch_82",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The app looks impressive.",
-            "textToSpeak": "The app looks impressive.",
+            "word": "The neighbors moved out last week.",
+            "textToSpeak": "The neighbors moved out last week.",
             "options": [
-                "Emphasis on IMPRESSIVE (Complement focus)",
-                "Emphasis on APP (Subject focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a statement)"
             ],
-            "correctAnswer": "Emphasis on IMPRESSIVE (Complement focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Falling intonation (a statement)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
@@ -527,94 +527,118 @@
                 3,
                 1
             ],
-            "hint": "The describing word at the end tells you the most about the app. Listen for the pitch on 'impressive'.",
-            "explanation": "'Impressive' is the final content word, so it naturally carries the nuclear pitch accent, not 'app'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Plain statements like this one typically end on a falling note, not a rising one.",
+            "explanation": "Statements share information rather than ask for it, so the pitch falls naturally toward the end.",
+            "emphasisRule": "Statements that simply share information are typically marked by falling intonation at the end."
         },
         {
             "id": "pitchPatternMatch_83",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Our headquarters is in Tokyo.",
-            "textToSpeak": "Our headquarters is in Tokyo.",
+            "word": "Is the sequel out yet?",
+            "textToSpeak": "Is the sequel out yet?",
             "options": [
-                "Emphasis on HEADQUARTERS (Subject focus)",
-                "Emphasis on TOKYO (Place focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a statement)"
             ],
-            "correctAnswer": "Emphasis on TOKYO (Place focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "The city name is the key new detail. Listen for the pitch peak landing on 'Tokyo'.",
-            "explanation": "'Tokyo' is the final content word, so the nuclear stress naturally falls there.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Try asking this out loud — yes/no questions naturally lift the pitch as they finish.",
+            "explanation": "Because this asks for a simple yes or no, the pitch rises toward the end rather than falling.",
+            "emphasisRule": "A question that can be answered with yes or no usually ends with an upward pitch movement."
         },
         {
             "id": "pitchPatternMatch_84",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The update arrives tomorrow.",
-            "textToSpeak": "The update arrives tomorrow.",
+            "word": "Can you explain that formula again?",
+            "textToSpeak": "Can you explain that formula again?",
             "options": [
-                "Emphasis on TOMORROW (Time focus)",
-                "Emphasis on UPDATE (Subject focus)"
+                "Falling intonation (a statement)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on TOMORROW (Time focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "The timing word at the end is the most important new information. Listen for the pitch peak on 'tomorrow'.",
-            "explanation": "'Tomorrow' is the sentence's final content word, so it carries the nuclear pitch accent.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is a yes/no question — in English, that usually means the pitch climbs upward right at the end.",
+            "explanation": "This is a classic yes/no question, and those are marked by an upward pitch glide at the finish.",
+            "emphasisRule": "Yes/no questions in English are typically marked by rising intonation at the end of the sentence."
         },
         {
             "id": "pitchPatternMatch_85",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The garden smells lovely.",
-            "textToSpeak": "The garden smells lovely.",
+            "word": "The office is moving to a new building.",
+            "textToSpeak": "The office is moving to a new building.",
             "options": [
-                "Emphasis on LOVELY (Complement focus)",
-                "Emphasis on GARDEN (Subject focus)"
+                "Falling intonation (a statement)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on LOVELY (Complement focus)",
+            "correctAnswer": "Falling intonation (a statement)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                2,
+                1,
+                1,
                 1
             ],
-            "hint": "The describing word at the end carries the real impression here. Listen for the pitch on 'lovely'.",
-            "explanation": "'Lovely' is the final content word, so it naturally takes the nuclear pitch accent, not 'garden'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Say this out loud as a simple fact — notice how natural it feels for the pitch to drop at the end.",
+            "explanation": "Because this sentence simply states a fact, the pitch drops at the end instead of rising.",
+            "emphasisRule": "A sentence that states a fact rather than asks one usually ends with a downward pitch movement."
         },
         {
             "id": "pitchPatternMatch_86",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My friend lives in Miami.",
-            "textToSpeak": "My friend lives in Miami.",
+            "word": "Did you find the receipt?",
+            "textToSpeak": "Did you find the receipt?",
             "options": [
-                "Emphasis on MIAMI (Place focus)",
-                "Emphasis on FRIEND (Subject focus)"
+                "Falling intonation (a statement)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on MIAMI (Place focus)",
+            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                2,
+                3
+            ],
+            "hint": "Notice this sentence is asking for a simple yes or no. Where does your voice go as you reach the last word?",
+            "explanation": "The rising pitch at the end signals a genuine yes/no question, inviting a direct answer.",
+            "emphasisRule": "A question that can be answered with yes or no usually ends with an upward pitch movement."
+        },
+        {
+            "id": "pitchPatternMatch_87",
+            "instruction": "Identify the intonation pattern",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "Our flight landed twenty minutes early.",
+            "textToSpeak": "Our flight landed twenty minutes early.",
+            "options": [
+                "Falling intonation (a statement)",
+                "Rising intonation (a yes/no question)"
+            ],
+            "correctAnswer": "Falling intonation (a statement)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -623,71 +647,47 @@
                 3,
                 1
             ],
-            "hint": "The city name is the key new detail. Listen for the pitch peak landing on 'Miami', not on 'friend'.",
-            "explanation": "'Miami' is the final content word, so the nuclear stress naturally falls there.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
-        },
-        {
-            "id": "pitchPatternMatch_87",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "The party starts at noon.",
-            "textToSpeak": "The party starts at noon.",
-            "options": [
-                "Emphasis on PARTY (Subject focus)",
-                "Emphasis on NOON (Time focus)"
-            ],
-            "correctAnswer": "Emphasis on NOON (Time focus)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
-                3,
-                1
-            ],
-            "hint": "The timing detail at the end is the important new information. Listen for the pitch to peak on 'noon'.",
-            "explanation": "'Noon' is the sentence's final content word, so it carries the nuclear pitch accent, not 'party'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence simply reports information — statements usually settle downward by the end.",
+            "explanation": "This is a plain declarative sentence, and those are marked by falling intonation at the finish.",
+            "emphasisRule": "Statements that simply share information are typically marked by falling intonation at the end."
         },
         {
             "id": "pitchPatternMatch_88",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The fabric feels soft.",
-            "textToSpeak": "The fabric feels soft.",
+            "word": "Our wifi went down for an hour.",
+            "textToSpeak": "Our wifi went down for an hour.",
             "options": [
-                "Emphasis on FABRIC (Subject focus)",
-                "Emphasis on SOFT (Complement focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a statement)"
             ],
-            "correctAnswer": "Emphasis on SOFT (Complement focus)",
+            "correctAnswer": "Falling intonation (a statement)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                2,
+                1,
+                1,
                 1
             ],
-            "hint": "The describing word at the end carries the key sensory detail. Listen for the pitch on 'soft'.",
-            "explanation": "'Soft' is the final content word describing the fabric, so it naturally takes the nuclear pitch accent.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "There's no question here, just a plain statement, so expect the pitch to drop toward the end.",
+            "explanation": "The falling pitch at the end signals that this is a statement, not a question.",
+            "emphasisRule": "A sentence that states a fact rather than asks one usually ends with a downward pitch movement."
         },
         {
             "id": "pitchPatternMatch_89",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The factory is in Detroit.",
-            "textToSpeak": "The factory is in Detroit.",
+            "word": "My aunt moved closer to the coast.",
+            "textToSpeak": "My aunt moved closer to the coast.",
             "options": [
-                "Emphasis on FACTORY (Subject focus)",
-                "Emphasis on DETROIT (Place focus)"
+                "Falling intonation (a statement)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on DETROIT (Place focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling intonation (a statement)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -695,33 +695,33 @@
                 3,
                 1
             ],
-            "hint": "The city name is the key new detail. Listen for the pitch peak landing on 'Detroit'.",
-            "explanation": "'Detroit' is the final content word, so the nuclear stress naturally falls there, not on 'factory'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Read this as a simple fact being shared — the voice usually falls as the sentence closes.",
+            "explanation": "Since nothing here is being asked, the voice naturally eases downward by the final word.",
+            "emphasisRule": "Statements that simply share information are typically marked by falling intonation at the end."
         },
         {
             "id": "pitchPatternMatch_90",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The show begins promptly.",
-            "textToSpeak": "The show begins promptly.",
+            "word": "Did your cousin call you back?",
+            "textToSpeak": "Did your cousin call you back?",
             "options": [
-                "Emphasis on SHOW (Subject focus)",
-                "Emphasis on PROMPTLY (Time focus)"
+                "Falling intonation (a statement)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on PROMPTLY (Time focus)",
+            "correctAnswer": "Rising intonation (a yes/no question)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "The timing word at the end is the useful new information. Listen for the pitch peak on 'promptly'.",
-            "explanation": "'Promptly' is the sentence's final content word, so it receives the nuclear pitch accent.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Questions like this one typically end with an upward glide, not a drop.",
+            "explanation": "Since the speaker is asking rather than telling, the pitch climbs upward instead of dropping.",
+            "emphasisRule": "Yes/no questions in English are typically marked by rising intonation at the end of the sentence."
         }
     ]
 }

@@ -12,6 +12,7 @@ import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/utils/text_similarity_helper.dart';
 
 import 'package:vowl/features/speaking/yes_no_speaking/presentation/widgets/yes_no_speaking_header_instruction.dart';
 import 'package:vowl/features/speaking/yes_no_speaking/presentation/widgets/yes_no_speaking_audition_card.dart';
@@ -134,29 +135,11 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
     final bool chosenMatch = _tiltValue > 0;
     final bool binaryIsCorrect = chosenMatch == expectedMatch;
 
-    final String cleanSpeech = _spokenText.trim().toLowerCase().replaceAll(
-      RegExp(r'[^\w\s]'),
-      '',
+    final bool speechIsCorrect = TextSimilarityHelper.isMatch(
+      _spokenText,
+      expectedText,
+      threshold: 0.70,
     );
-    final String cleanExpected = expectedText.trim().toLowerCase().replaceAll(
-      RegExp(r'[^\w\s]'),
-      '',
-    );
-
-    final List<String> speechWords = cleanSpeech.split(' ');
-    final List<String> expectedWords = cleanExpected.split(' ');
-
-    int matches = 0;
-    for (var word in speechWords) {
-      if (expectedWords.contains(word)) {
-        matches++;
-      }
-    }
-
-    final double similarity = expectedWords.isNotEmpty
-        ? matches / expectedWords.length
-        : 0.0;
-    final bool speechIsCorrect = similarity >= 0.70;
 
     final bool isCorrect = binaryIsCorrect && speechIsCorrect;
 

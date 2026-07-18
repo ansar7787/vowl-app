@@ -8,109 +8,109 @@
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "She adopted the routine, not the diet.",
-            "textToSpeak": "She adopted the routine, not the diet.",
+            "word": "She returned the sweater, not the scarf.",
+            "textToSpeak": "She returned the sweater, not the scarf.",
             "options": [
-                "Emphasis on ROUTINE (New Information focus)",
-                "Emphasis on DIET (Given/Old Information)"
+                "Emphasis on SWEATER (New Information)",
+                "Emphasis on SCARF (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on ROUTINE (New Information focus)",
+            "correctAnswer": "Emphasis on SWEATER (New Information)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "'The diet' is the rejected guess, so it stays low at the end. Listen for the peak on 'routine'.",
-            "explanation": "'Routine' is the corrected new information, so it carries the nuclear stress, not 'diet', which is being denied.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "One of these two words is old news already on the table — the other is the actual correction. Stress goes on the correction.",
+            "explanation": "SWEATER answers what actually happened, so it gets the nuclear stress — SCARF is just the idea being dismissed.",
+            "emphasisRule": "New, corrected information takes the nuclear stress, even if it isn't the last word in the sentence."
         },
         {
             "id": "pitchPatternMatch_272",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "We painted the fence, not the gate.",
-            "textToSpeak": "We painted the fence, not the gate.",
+            "word": "I packed the charger, not the headphones.",
+            "textToSpeak": "I packed the charger, not the headphones.",
             "options": [
-                "Emphasis on GATE (Given/Old Information)",
-                "Emphasis on FENCE (New Information focus)"
+                "Emphasis on HEADPHONES (Given/Old Information)",
+                "Emphasis on CHARGER (New Information)"
             ],
-            "correctAnswer": "Emphasis on FENCE (New Information focus)",
+            "correctAnswer": "Emphasis on CHARGER (New Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "'The gate' is the wrong assumption being corrected, so it stays unstressed at the end. Listen for the peak on 'fence'.",
-            "explanation": "'Fence' takes the nuclear stress as the genuine correction; 'gate' stays deaccented as the denied guess.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Whichever word is being ruled out stays low in pitch, even if it comes last. Listen for where the real news is.",
+            "explanation": "The contrast here rejects HEADPHONES in favor of CHARGER, and that correction is exactly where the stress lands.",
+            "emphasisRule": "Information that is being rejected or replaced stays unstressed, no matter where it falls in the sentence."
         },
         {
             "id": "pitchPatternMatch_273",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "He recommended the comedy, not the thriller.",
-            "textToSpeak": "He recommended the comedy, not the thriller.",
+            "word": "I finished the algebra homework, not the essay.",
+            "textToSpeak": "I finished the algebra homework, not the essay.",
             "options": [
-                "Emphasis on COMEDY (New Information focus)",
-                "Emphasis on THRILLER (Given/Old Information)"
+                "Emphasis on ALGEBRA (New Information)",
+                "Emphasis on ESSAY (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on COMEDY (New Information focus)",
+            "correctAnswer": "Emphasis on ALGEBRA (New Information)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "'The thriller' is the rejected guess, so it doesn't get the peak. Listen for the stress on 'comedy'.",
-            "explanation": "'Comedy' is the corrected information, so it carries the nuclear stress, while 'thriller' stays unstressed as the denied assumption.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence rejects one idea and confirms another — the confirmed word gets the stronger pitch, wherever it sits.",
+            "explanation": "ALGEBRA is the genuine correction here, so it carries the nuclear stress, while ESSAY — the rejected idea — stays unstressed.",
+            "emphasisRule": "When a sentence corrects a mistaken assumption, the correction — not the rejected idea — carries the pitch accent."
         },
         {
             "id": "pitchPatternMatch_274",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I confirmed the flight, not the hotel.",
-            "textToSpeak": "I confirmed the flight, not the hotel.",
+            "word": "Not the appetizer - the dessert impressed the guests.",
+            "textToSpeak": "Not the appetizer - the dessert impressed the guests.",
             "options": [
-                "Emphasis on FLIGHT (New Information focus)",
-                "Emphasis on HOTEL (Given/Old Information)"
+                "Emphasis on APPETIZER (Given/Old Information)",
+                "Emphasis on DESSERT (New Information)"
             ],
-            "correctAnswer": "Emphasis on FLIGHT (New Information focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on DESSERT (New Information)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'The hotel' is the wrong guess being denied, so it stays low at the end. Listen for the peak on 'flight'.",
-            "explanation": "'Flight' carries the nuclear stress as the correction, while 'hotel' stays deaccented as the rejected assumption.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Don't assume the last word automatically wins the stress here — focus on which word is actually new information.",
+            "explanation": "Even though position might suggest otherwise, APPETIZER is old, rejected information, so the real stress falls on DESSERT.",
+            "emphasisRule": "New, corrected information takes the nuclear stress, even if it isn't the last word in the sentence."
         },
         {
             "id": "pitchPatternMatch_275",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "She finished the report, not the presentation.",
-            "textToSpeak": "She finished the report, not the presentation.",
+            "word": "Not the elevator - we took the stairs.",
+            "textToSpeak": "Not the elevator - we took the stairs.",
             "options": [
-                "Emphasis on REPORT (New Information focus)",
-                "Emphasis on PRESENTATION (Given/Old Information)"
+                "Emphasis on STAIRS (New Information)",
+                "Emphasis on ELEVATOR (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on REPORT (New Information focus)",
+            "correctAnswer": "Emphasis on STAIRS (New Information)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -119,70 +119,70 @@
                 3,
                 1
             ],
-            "hint": "'The presentation' is the assumption being corrected, so it stays unstressed despite coming last. Listen for the peak on 'report'.",
-            "explanation": "'Report' is the genuinely new correction, so it takes the nuclear stress, not 'presentation', which is being denied.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "One word here is just the mistaken guess being corrected — it stays unstressed no matter where it falls.",
+            "explanation": "The speaker is correcting away from ELEVATOR and toward STAIRS, so STAIRS takes the pitch accent.",
+            "emphasisRule": "Information that is being rejected or replaced stays unstressed, no matter where it falls in the sentence."
         },
         {
             "id": "pitchPatternMatch_276",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "We watched the sunrise, not the sunset.",
-            "textToSpeak": "We watched the sunrise, not the sunset.",
+            "word": "It wasn't stage fright - it was genuine excitement.",
+            "textToSpeak": "It wasn't stage fright - it was genuine excitement.",
             "options": [
-                "Emphasis on SUNSET (Given/Old Information)",
-                "Emphasis on SUNRISE (New Information focus)"
+                "Emphasis on FRIGHT (Given/Old Information)",
+                "Emphasis on EXCITEMENT (New Information)"
             ],
-            "correctAnswer": "Emphasis on SUNRISE (New Information focus)",
+            "correctAnswer": "Emphasis on EXCITEMENT (New Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'The sunset' is the wrong guess being corrected, so it doesn't carry the peak. Listen for the stress on 'sunrise'.",
-            "explanation": "'Sunrise' carries the nuclear stress as the correction, while 'sunset' stays unstressed as the rejected guess.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Listen for which word answers 'what actually happened' — that's the one carrying the pitch peak.",
+            "explanation": "FRIGHT is being ruled out, not confirmed, so it stays flat while EXCITEMENT — the actual answer — gets the peak.",
+            "emphasisRule": "When a sentence corrects a mistaken assumption, the correction — not the rejected idea — carries the pitch accent."
         },
         {
             "id": "pitchPatternMatch_277",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "He ordered the dessert, not the appetizer.",
-            "textToSpeak": "He ordered the dessert, not the appetizer.",
+            "word": "We hired the second candidate, not the first.",
+            "textToSpeak": "We hired the second candidate, not the first.",
             "options": [
-                "Emphasis on APPETIZER (Given/Old Information)",
-                "Emphasis on DESSERT (New Information focus)"
+                "Emphasis on SECOND (New Information)",
+                "Emphasis on FIRST (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on DESSERT (New Information focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on SECOND (New Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "'The appetizer' is the rejected guess, so it stays low at the end. Listen for the peak on 'dessert'.",
-            "explanation": "'Dessert' is the corrected new information, so it carries the nuclear stress, not 'appetizer', which is being denied.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The rejected idea can appear anywhere in the sentence and still stay flat in pitch — the correction is what peaks.",
+            "explanation": "New, corrected information always attracts the stress. Here that's SECOND, not the rejected FIRST.",
+            "emphasisRule": "New, corrected information takes the nuclear stress, even if it isn't the last word in the sentence."
         },
         {
             "id": "pitchPatternMatch_278",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I borrowed the ladder, not the toolbox.",
-            "textToSpeak": "I borrowed the ladder, not the toolbox.",
+            "word": "Not the guitarist - the drummer wrote that song.",
+            "textToSpeak": "Not the guitarist - the drummer wrote that song.",
             "options": [
-                "Emphasis on TOOLBOX (Given/Old Information)",
-                "Emphasis on LADDER (New Information focus)"
+                "Emphasis on GUITARIST (Given/Old Information)",
+                "Emphasis on DRUMMER (New Information)"
             ],
-            "correctAnswer": "Emphasis on LADDER (New Information focus)",
+            "correctAnswer": "Emphasis on DRUMMER (New Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -191,166 +191,166 @@
                 3,
                 1
             ],
-            "hint": "'The toolbox' is the wrong assumption being corrected, so it stays unstressed at the end. Listen for the peak on 'ladder'.",
-            "explanation": "'Ladder' takes the nuclear stress as the genuine correction; 'toolbox' stays deaccented as the denied guess.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Position doesn't decide the stress here; meaning does. Find the word that corrects the assumption.",
+            "explanation": "Because GUITARIST is the mistaken assumption being corrected, it's deaccented, and DRUMMER carries the emphasis instead.",
+            "emphasisRule": "Information that is being rejected or replaced stays unstressed, no matter where it falls in the sentence."
         },
         {
             "id": "pitchPatternMatch_279",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "She majored in history, not literature.",
-            "textToSpeak": "She majored in history, not literature.",
+            "word": "The bakery ran out of croissants, not muffins.",
+            "textToSpeak": "The bakery ran out of croissants, not muffins.",
             "options": [
-                "Emphasis on HISTORY (New Information focus)",
-                "Emphasis on LITERATURE (Given/Old Information)"
+                "Emphasis on CROISSANTS (New Information)",
+                "Emphasis on MUFFINS (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on HISTORY (New Information focus)",
+            "correctAnswer": "Emphasis on CROISSANTS (New Information)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "'Literature' is the rejected guess, so it doesn't get the peak. Listen for the stress on 'history'.",
-            "explanation": "'History' is the corrected information, so it carries the nuclear stress, while 'literature' stays unstressed as the denied assumption.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is a classic correction pattern — the old, rejected idea stays quiet, and the true answer gets the emphasis.",
+            "explanation": "CROISSANTS answers what actually happened, so it gets the nuclear stress — MUFFINS is just the idea being dismissed.",
+            "emphasisRule": "When a sentence corrects a mistaken assumption, the correction — not the rejected idea — carries the pitch accent."
         },
         {
             "id": "pitchPatternMatch_280",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "We installed the software, not the hardware.",
-            "textToSpeak": "We installed the software, not the hardware.",
+            "word": "We watched the documentary, not the drama.",
+            "textToSpeak": "We watched the documentary, not the drama.",
             "options": [
-                "Emphasis on SOFTWARE (New Information focus)",
-                "Emphasis on HARDWARE (Given/Old Information)"
+                "Emphasis on DRAMA (Given/Old Information)",
+                "Emphasis on DOCUMENTARY (New Information)"
             ],
-            "correctAnswer": "Emphasis on SOFTWARE (New Information focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on DOCUMENTARY (New Information)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "'The hardware' is the wrong guess being denied, so it stays low at the end. Listen for the peak on 'software'.",
-            "explanation": "'Software' carries the nuclear stress as the correction, while 'hardware' stays deaccented as the rejected assumption.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Notice which word the speaker is actively correcting away from — that one loses the stress, wherever it sits.",
+            "explanation": "The contrast here rejects DRAMA in favor of DOCUMENTARY, and that correction is exactly where the stress lands.",
+            "emphasisRule": "New, corrected information takes the nuclear stress, even if it isn't the last word in the sentence."
         },
         {
             "id": "pitchPatternMatch_281",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "He visited the clinic, not the hospital.",
-            "textToSpeak": "He visited the clinic, not the hospital.",
+            "word": "Not the highlights - we watched the full match.",
+            "textToSpeak": "Not the highlights - we watched the full match.",
             "options": [
-                "Emphasis on HOSPITAL (Given/Old Information)",
-                "Emphasis on CLINIC (New Information focus)"
+                "Emphasis on MATCH (New Information)",
+                "Emphasis on HIGHLIGHTS (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on CLINIC (New Information focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on MATCH (New Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'The hospital' is the assumption being corrected, so it stays unstressed despite coming last. Listen for the peak on 'clinic'.",
-            "explanation": "'Clinic' is the genuinely new correction, so it takes the nuclear stress, not 'hospital', which is being denied.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "One of these two words is old news already on the table — the other is the actual correction. Stress goes on the correction.",
+            "explanation": "MATCH is the genuine correction here, so it carries the nuclear stress, while HIGHLIGHTS — the rejected idea — stays unstressed.",
+            "emphasisRule": "Information that is being rejected or replaced stays unstressed, no matter where it falls in the sentence."
         },
         {
             "id": "pitchPatternMatch_282",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I called the landlord, not the neighbor.",
-            "textToSpeak": "I called the landlord, not the neighbor.",
+            "word": "The update fixed the login bug, not the crash.",
+            "textToSpeak": "The update fixed the login bug, not the crash.",
             "options": [
-                "Emphasis on NEIGHBOR (Given/Old Information)",
-                "Emphasis on LANDLORD (New Information focus)"
+                "Emphasis on CRASH (Given/Old Information)",
+                "Emphasis on LOGIN (New Information)"
             ],
-            "correctAnswer": "Emphasis on LANDLORD (New Information focus)",
+            "correctAnswer": "Emphasis on LOGIN (New Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "'The neighbor' is the wrong guess being corrected, so it doesn't carry the peak. Listen for the stress on 'landlord'.",
-            "explanation": "'Landlord' carries the nuclear stress as the correction, while 'neighbor' stays unstressed as the rejected guess.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Whichever word is being ruled out stays low in pitch, even if it comes last. Listen for where the real news is.",
+            "explanation": "Even though position might suggest otherwise, CRASH is old, rejected information, so the real stress falls on LOGIN.",
+            "emphasisRule": "When a sentence corrects a mistaken assumption, the correction — not the rejected idea — carries the pitch accent."
         },
         {
             "id": "pitchPatternMatch_283",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "She recommended the novel, not the biography.",
-            "textToSpeak": "She recommended the novel, not the biography.",
+            "word": "She swept the porch, not the driveway.",
+            "textToSpeak": "She swept the porch, not the driveway.",
             "options": [
-                "Emphasis on NOVEL (New Information focus)",
-                "Emphasis on BIOGRAPHY (Given/Old Information)"
+                "Emphasis on PORCH (New Information)",
+                "Emphasis on DRIVEWAY (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on NOVEL (New Information focus)",
+            "correctAnswer": "Emphasis on PORCH (New Information)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "'The biography' is the rejected guess, so it stays low at the end. Listen for the peak on 'novel'.",
-            "explanation": "'Novel' is the corrected new information, so it carries the nuclear stress, not 'biography', which is being denied.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence rejects one idea and confirms another — the confirmed word gets the stronger pitch, wherever it sits.",
+            "explanation": "The speaker is correcting away from DRIVEWAY and toward PORCH, so PORCH takes the pitch accent.",
+            "emphasisRule": "New, corrected information takes the nuclear stress, even if it isn't the last word in the sentence."
         },
         {
             "id": "pitchPatternMatch_284",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "We booked the window seat, not the aisle seat.",
-            "textToSpeak": "We booked the window seat, not the aisle seat.",
+            "word": "We compared the tablets, not the phones.",
+            "textToSpeak": "We compared the tablets, not the phones.",
             "options": [
-                "Emphasis on WINDOW (New Information focus)",
-                "Emphasis on AISLE (Given/Old Information)"
+                "Emphasis on PHONES (Given/Old Information)",
+                "Emphasis on TABLETS (New Information)"
             ],
-            "correctAnswer": "Emphasis on WINDOW (New Information focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on TABLETS (New Information)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "'The aisle seat' is the wrong assumption being corrected, so it stays unstressed at the end. Listen for the peak on 'window'.",
-            "explanation": "'Window' takes the nuclear stress as the genuine correction; 'aisle' stays deaccented as the denied guess.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Don't assume the last word automatically wins the stress here — focus on which word is actually new information.",
+            "explanation": "PHONES is being ruled out, not confirmed, so it stays flat while TABLETS — the actual answer — gets the peak.",
+            "emphasisRule": "Information that is being rejected or replaced stays unstressed, no matter where it falls in the sentence."
         },
         {
             "id": "pitchPatternMatch_285",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "He fixed the faucet, not the drain.",
-            "textToSpeak": "He fixed the faucet, not the drain.",
+            "word": "Not the intern - the manager signed the contract.",
+            "textToSpeak": "Not the intern - the manager signed the contract.",
             "options": [
-                "Emphasis on FAUCET (New Information focus)",
-                "Emphasis on DRAIN (Given/Old Information)"
+                "Emphasis on MANAGER (New Information)",
+                "Emphasis on INTERN (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on FAUCET (New Information focus)",
+            "correctAnswer": "Emphasis on MANAGER (New Information)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -359,71 +359,71 @@
                 3,
                 1
             ],
-            "hint": "'The drain' is the rejected guess, so it doesn't get the peak. Listen for the stress on 'faucet'.",
-            "explanation": "'Faucet' is the corrected information, so it carries the nuclear stress, while 'drain' stays unstressed as the denied assumption.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "One word here is just the mistaken guess being corrected — it stays unstressed no matter where it falls.",
+            "explanation": "New, corrected information always attracts the stress. Here that's MANAGER, not the rejected INTERN.",
+            "emphasisRule": "When a sentence corrects a mistaken assumption, the correction — not the rejected idea — carries the pitch accent."
         },
         {
             "id": "pitchPatternMatch_286",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I ordered the iced tea, not the lemonade.",
-            "textToSpeak": "I ordered the iced tea, not the lemonade.",
+            "word": "The leak was in the ceiling, not the wall.",
+            "textToSpeak": "The leak was in the ceiling, not the wall.",
             "options": [
-                "Emphasis on LEMONADE (Given/Old Information)",
-                "Emphasis on ICED (New Information focus)"
+                "Emphasis on WALL (Given/Old Information)",
+                "Emphasis on CEILING (New Information)"
             ],
-            "correctAnswer": "Emphasis on ICED (New Information focus)",
+            "correctAnswer": "Emphasis on CEILING (New Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "'The lemonade' is the wrong guess being denied, so it stays low at the end. Listen for the peak on 'iced'.",
-            "explanation": "'Iced tea' carries the nuclear stress as the correction, while 'lemonade' stays deaccented as the rejected assumption.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Listen for which word answers 'what actually happened' — that's the one carrying the pitch peak.",
+            "explanation": "Because WALL is the mistaken assumption being corrected, it's deaccented, and CEILING carries the emphasis instead.",
+            "emphasisRule": "New, corrected information takes the nuclear stress, even if it isn't the last word in the sentence."
         },
         {
             "id": "pitchPatternMatch_287",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "She joined the debate team, not the drama club.",
-            "textToSpeak": "She joined the debate team, not the drama club.",
+            "word": "It wasn't the monitor - it was the keyboard that broke.",
+            "textToSpeak": "It wasn't the monitor - it was the keyboard that broke.",
             "options": [
-                "Emphasis on DRAMA (Given/Old Information)",
-                "Emphasis on DEBATE (New Information focus)"
+                "Emphasis on KEYBOARD (New Information)",
+                "Emphasis on MONITOR (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on DEBATE (New Information focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on KEYBOARD (New Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'The drama club' is the assumption being corrected, so it stays unstressed despite coming last. Listen for the peak on 'debate'.",
-            "explanation": "'Debate team' is the genuinely new correction, so it takes the nuclear stress, not 'drama club', which is being denied.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The rejected idea can appear anywhere in the sentence and still stay flat in pitch — the correction is what peaks.",
+            "explanation": "KEYBOARD answers what actually happened, so it gets the nuclear stress — MONITOR is just the idea being dismissed.",
+            "emphasisRule": "Information that is being rejected or replaced stays unstressed, no matter where it falls in the sentence."
         },
         {
             "id": "pitchPatternMatch_288",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "We hired the contractor, not the architect.",
-            "textToSpeak": "We hired the contractor, not the architect.",
+            "word": "Not the highway - we drove along the coast.",
+            "textToSpeak": "Not the highway - we drove along the coast.",
             "options": [
-                "Emphasis on CONTRACTOR (New Information focus)",
-                "Emphasis on ARCHITECT (Given/Old Information)"
+                "Emphasis on HIGHWAY (Given/Old Information)",
+                "Emphasis on COAST (New Information)"
             ],
-            "correctAnswer": "Emphasis on CONTRACTOR (New Information focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on COAST (New Information)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
@@ -431,94 +431,94 @@
                 3,
                 1
             ],
-            "hint": "'The architect' is the wrong guess being corrected, so it doesn't carry the peak. Listen for the stress on 'contractor'.",
-            "explanation": "'Contractor' carries the nuclear stress as the correction, while 'architect' stays unstressed as the rejected guess.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Position doesn't decide the stress here; meaning does. Find the word that corrects the assumption.",
+            "explanation": "The contrast here rejects HIGHWAY in favor of COAST, and that correction is exactly where the stress lands.",
+            "emphasisRule": "When a sentence corrects a mistaken assumption, the correction — not the rejected idea — carries the pitch accent."
         },
         {
             "id": "pitchPatternMatch_289",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "He treated the cough, not the fever.",
-            "textToSpeak": "He treated the cough, not the fever.",
+            "word": "The critic praised the acting, not the script.",
+            "textToSpeak": "The critic praised the acting, not the script.",
             "options": [
-                "Emphasis on COUGH (New Information focus)",
-                "Emphasis on FEVER (Given/Old Information)"
+                "Emphasis on ACTING (New Information)",
+                "Emphasis on SCRIPT (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on COUGH (New Information focus)",
+            "correctAnswer": "Emphasis on ACTING (New Information)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "'The fever' is the rejected guess, so it stays low at the end. Listen for the peak on 'cough'.",
-            "explanation": "'Cough' is the corrected new information, so it carries the nuclear stress, not 'fever', which is being denied.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is a classic correction pattern — the old, rejected idea stays quiet, and the true answer gets the emphasis.",
+            "explanation": "ACTING is the genuine correction here, so it carries the nuclear stress, while SCRIPT — the rejected idea — stays unstressed.",
+            "emphasisRule": "New, corrected information takes the nuclear stress, even if it isn't the last word in the sentence."
         },
         {
             "id": "pitchPatternMatch_290",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I packed the raincoat, not the umbrella.",
-            "textToSpeak": "I packed the raincoat, not the umbrella.",
+            "word": "It wasn't food poisoning - it was motion sickness.",
+            "textToSpeak": "It wasn't food poisoning - it was motion sickness.",
             "options": [
-                "Emphasis on RAINCOAT (New Information focus)",
-                "Emphasis on UMBRELLA (Given/Old Information)"
+                "Emphasis on POISONING (Given/Old Information)",
+                "Emphasis on SICKNESS (New Information)"
             ],
-            "correctAnswer": "Emphasis on RAINCOAT (New Information focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on SICKNESS (New Information)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'The umbrella' is the wrong assumption being corrected, so it stays unstressed at the end. Listen for the peak on 'raincoat'.",
-            "explanation": "'Raincoat' takes the nuclear stress as the genuine correction; 'umbrella' stays deaccented as the denied guess.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Notice which word the speaker is actively correcting away from — that one loses the stress, wherever it sits.",
+            "explanation": "Even though position might suggest otherwise, POISONING is old, rejected information, so the real stress falls on SICKNESS.",
+            "emphasisRule": "Information that is being rejected or replaced stays unstressed, no matter where it falls in the sentence."
         },
         {
             "id": "pitchPatternMatch_291",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "She updated the website, not the app.",
-            "textToSpeak": "She updated the website, not the app.",
+            "word": "The band changed the setlist, not the lineup.",
+            "textToSpeak": "The band changed the setlist, not the lineup.",
             "options": [
-                "Emphasis on WEBSITE (New Information focus)",
-                "Emphasis on APP (Given/Old Information)"
+                "Emphasis on SETLIST (New Information)",
+                "Emphasis on LINEUP (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on WEBSITE (New Information focus)",
+            "correctAnswer": "Emphasis on SETLIST (New Information)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "'The app' is the rejected guess, so it doesn't get the peak. Listen for the stress on 'website'.",
-            "explanation": "'Website' is the corrected information, so it carries the nuclear stress, while 'app' stays unstressed as the denied assumption.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "One of these two words is old news already on the table — the other is the actual correction. Stress goes on the correction.",
+            "explanation": "The speaker is correcting away from LINEUP and toward SETLIST, so SETLIST takes the pitch accent.",
+            "emphasisRule": "When a sentence corrects a mistaken assumption, the correction — not the rejected idea — carries the pitch accent."
         },
         {
             "id": "pitchPatternMatch_292",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "We chose the round table, not the square one.",
-            "textToSpeak": "We chose the round table, not the square one.",
+            "word": "It wasn't jealousy - it was genuine concern.",
+            "textToSpeak": "It wasn't jealousy - it was genuine concern.",
             "options": [
-                "Emphasis on SQUARE (Given/Old Information)",
-                "Emphasis on ROUND (New Information focus)"
+                "Emphasis on JEALOUSY (Given/Old Information)",
+                "Emphasis on CONCERN (New Information)"
             ],
-            "correctAnswer": "Emphasis on ROUND (New Information focus)",
+            "correctAnswer": "Emphasis on CONCERN (New Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -527,46 +527,46 @@
                 3,
                 1
             ],
-            "hint": "'The square one' is the wrong guess being denied, so it stays low at the end. Listen for the peak on 'round'.",
-            "explanation": "'Round' carries the nuclear stress as the correction, while 'square' stays deaccented as the rejected assumption.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Whichever word is being ruled out stays low in pitch, even if it comes last. Listen for where the real news is.",
+            "explanation": "JEALOUSY is being ruled out, not confirmed, so it stays flat while CONCERN — the actual answer — gets the peak.",
+            "emphasisRule": "New, corrected information takes the nuclear stress, even if it isn't the last word in the sentence."
         },
         {
             "id": "pitchPatternMatch_293",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "He coached the juniors, not the seniors.",
-            "textToSpeak": "He coached the juniors, not the seniors.",
+            "word": "It wasn't a virus - it was a corrupted file.",
+            "textToSpeak": "It wasn't a virus - it was a corrupted file.",
             "options": [
-                "Emphasis on JUNIORS (New Information focus)",
-                "Emphasis on SENIORS (Given/Old Information)"
+                "Emphasis on FILE (New Information)",
+                "Emphasis on VIRUS (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on JUNIORS (New Information focus)",
+            "correctAnswer": "Emphasis on FILE (New Information)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'The seniors' is the assumption being corrected, so it stays unstressed despite coming last. Listen for the peak on 'juniors'.",
-            "explanation": "'Juniors' is the genuinely new correction, so it takes the nuclear stress, not 'seniors', which is being denied.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence rejects one idea and confirms another — the confirmed word gets the stronger pitch, wherever it sits.",
+            "explanation": "New, corrected information always attracts the stress. Here that's FILE, not the rejected VIRUS.",
+            "emphasisRule": "Information that is being rejected or replaced stays unstressed, no matter where it falls in the sentence."
         },
         {
             "id": "pitchPatternMatch_294",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I reserved the corner table, not the booth.",
-            "textToSpeak": "I reserved the corner table, not the booth.",
+            "word": "It wasn't the babysitter - grandma picked up the kids.",
+            "textToSpeak": "It wasn't the babysitter - grandma picked up the kids.",
             "options": [
-                "Emphasis on BOOTH (Given/Old Information)",
-                "Emphasis on CORNER (New Information focus)"
+                "Emphasis on BABYSITTER (Given/Old Information)",
+                "Emphasis on GRANDMA (New Information)"
             ],
-            "correctAnswer": "Emphasis on CORNER (New Information focus)",
+            "correctAnswer": "Emphasis on GRANDMA (New Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -575,153 +575,153 @@
                 3,
                 1
             ],
-            "hint": "'The booth' is the wrong guess being corrected, so it doesn't carry the peak. Listen for the stress on 'corner'.",
-            "explanation": "'Corner table' carries the nuclear stress as the correction, while 'booth' stays unstressed as the rejected guess.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Don't assume the last word automatically wins the stress here — focus on which word is actually new information.",
+            "explanation": "Because BABYSITTER is the mistaken assumption being corrected, it's deaccented, and GRANDMA carries the emphasis instead.",
+            "emphasisRule": "When a sentence corrects a mistaken assumption, the correction — not the rejected idea — carries the pitch accent."
         },
         {
             "id": "pitchPatternMatch_295",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "She studied the report, not the summary.",
-            "textToSpeak": "She studied the report, not the summary.",
+            "word": "We rescheduled the checkup, not the surgery.",
+            "textToSpeak": "We rescheduled the checkup, not the surgery.",
             "options": [
-                "Emphasis on SUMMARY (Given/Old Information)",
-                "Emphasis on REPORT (New Information focus)"
+                "Emphasis on CHECKUP (New Information)",
+                "Emphasis on SURGERY (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on REPORT (New Information focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on CHECKUP (New Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "'The summary' is the rejected guess, so it stays low at the end. Listen for the peak on 'report'.",
-            "explanation": "'Report' is the corrected new information, so it carries the nuclear stress, not 'summary', which is being denied.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "One word here is just the mistaken guess being corrected — it stays unstressed no matter where it falls.",
+            "explanation": "CHECKUP answers what actually happened, so it gets the nuclear stress — SURGERY is just the idea being dismissed.",
+            "emphasisRule": "New, corrected information takes the nuclear stress, even if it isn't the last word in the sentence."
         },
         {
             "id": "pitchPatternMatch_296",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "We toured the vineyard, not the brewery.",
-            "textToSpeak": "We toured the vineyard, not the brewery.",
+            "word": "We tried the new cafe, not the usual one.",
+            "textToSpeak": "We tried the new cafe, not the usual one.",
             "options": [
-                "Emphasis on VINEYARD (New Information focus)",
-                "Emphasis on BREWERY (Given/Old Information)"
+                "Emphasis on USUAL (Given/Old Information)",
+                "Emphasis on CAFE (New Information)"
             ],
-            "correctAnswer": "Emphasis on VINEYARD (New Information focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on CAFE (New Information)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "'The brewery' is the wrong assumption being corrected, so it stays unstressed at the end. Listen for the peak on 'vineyard'.",
-            "explanation": "'Vineyard' takes the nuclear stress as the genuine correction; 'brewery' stays deaccented as the denied guess.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Listen for which word answers 'what actually happened' — that's the one carrying the pitch peak.",
+            "explanation": "The contrast here rejects USUAL in favor of CAFE, and that correction is exactly where the stress lands.",
+            "emphasisRule": "Information that is being rejected or replaced stays unstressed, no matter where it falls in the sentence."
         },
         {
             "id": "pitchPatternMatch_297",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "He replaced the battery, not the charger.",
-            "textToSpeak": "He replaced the battery, not the charger.",
+            "word": "I ordered the grilled salmon, not the steak.",
+            "textToSpeak": "I ordered the grilled salmon, not the steak.",
             "options": [
-                "Emphasis on CHARGER (Given/Old Information)",
-                "Emphasis on BATTERY (New Information focus)"
+                "Emphasis on SALMON (New Information)",
+                "Emphasis on STEAK (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on BATTERY (New Information focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on SALMON (New Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "'The charger' is the rejected guess, so it doesn't get the peak. Listen for the stress on 'battery'.",
-            "explanation": "'Battery' is the corrected information, so it carries the nuclear stress, while 'charger' stays unstressed as the denied assumption.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The rejected idea can appear anywhere in the sentence and still stay flat in pitch — the correction is what peaks.",
+            "explanation": "SALMON is the genuine correction here, so it carries the nuclear stress, while STEAK — the rejected idea — stays unstressed.",
+            "emphasisRule": "When a sentence corrects a mistaken assumption, the correction — not the rejected idea — carries the pitch accent."
         },
         {
             "id": "pitchPatternMatch_298",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I cleaned the garage, not the basement.",
-            "textToSpeak": "I cleaned the garage, not the basement.",
+            "word": "I emailed the client, not the vendor.",
+            "textToSpeak": "I emailed the client, not the vendor.",
             "options": [
-                "Emphasis on BASEMENT (Given/Old Information)",
-                "Emphasis on GARAGE (New Information focus)"
+                "Emphasis on VENDOR (Given/Old Information)",
+                "Emphasis on CLIENT (New Information)"
             ],
-            "correctAnswer": "Emphasis on GARAGE (New Information focus)",
+            "correctAnswer": "Emphasis on CLIENT (New Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "'The basement' is the wrong guess being denied, so it stays low at the end. Listen for the peak on 'garage'.",
-            "explanation": "'Garage' carries the nuclear stress as the correction, while 'basement' stays deaccented as the rejected assumption.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Position doesn't decide the stress here; meaning does. Find the word that corrects the assumption.",
+            "explanation": "Even though position might suggest otherwise, VENDOR is old, rejected information, so the real stress falls on CLIENT.",
+            "emphasisRule": "New, corrected information takes the nuclear stress, even if it isn't the last word in the sentence."
         },
         {
             "id": "pitchPatternMatch_299",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "She adopted the diet plan, not the workout plan.",
-            "textToSpeak": "She adopted the diet plan, not the workout plan.",
+            "word": "I recycled the bottles, not the cans.",
+            "textToSpeak": "I recycled the bottles, not the cans.",
             "options": [
-                "Emphasis on DIET (New Information focus)",
-                "Emphasis on WORKOUT (Given/Old Information)"
+                "Emphasis on BOTTLES (New Information)",
+                "Emphasis on CANS (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on DIET (New Information focus)",
+            "correctAnswer": "Emphasis on BOTTLES (New Information)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "'The workout plan' is the assumption being corrected, so it stays unstressed despite coming last. Listen for the peak on 'diet'.",
-            "explanation": "'Diet plan' is the genuinely new correction, so it takes the nuclear stress, not 'workout plan', which is being denied.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is a classic correction pattern — the old, rejected idea stays quiet, and the true answer gets the emphasis.",
+            "explanation": "The speaker is correcting away from CANS and toward BOTTLES, so BOTTLES takes the pitch accent.",
+            "emphasisRule": "Information that is being rejected or replaced stays unstressed, no matter where it falls in the sentence."
         },
         {
             "id": "pitchPatternMatch_300",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "We watched the rehearsal, not the final show.",
-            "textToSpeak": "We watched the rehearsal, not the final show.",
+            "word": "Not the freezer - the fridge stopped working.",
+            "textToSpeak": "Not the freezer - the fridge stopped working.",
             "options": [
-                "Emphasis on REHEARSAL (New Information focus)",
-                "Emphasis on FINAL (Given/Old Information)"
+                "Emphasis on FREEZER (Given/Old Information)",
+                "Emphasis on FRIDGE (New Information)"
             ],
-            "correctAnswer": "Emphasis on REHEARSAL (New Information focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on FRIDGE (New Information)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'The final show' is the wrong guess being corrected, so it doesn't carry the peak. Listen for the stress on 'rehearsal'.",
-            "explanation": "'Rehearsal' carries the nuclear stress as the correction, while 'final show' stays unstressed as the rejected guess.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Notice which word the speaker is actively correcting away from — that one loses the stress, wherever it sits.",
+            "explanation": "FREEZER is being ruled out, not confirmed, so it stays flat while FRIDGE — the actual answer — gets the peak.",
+            "emphasisRule": "When a sentence corrects a mistaken assumption, the correction — not the rejected idea — carries the pitch accent."
         }
     ]
 }

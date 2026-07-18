@@ -8,371 +8,11 @@
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The tutor explains the lesson patiently.",
-            "textToSpeak": "The tutor explains the lesson patiently.",
-            "options": [
-                "Emphasis on TUTOR (Subject focus)",
-                "Emphasis on LESSON (Object focus)"
-            ],
-            "correctAnswer": "Emphasis on LESSON (Object focus)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
-                3,
-                1
-            ],
-            "hint": "The subject is simply doing the explaining - the pitch peak comes later, on what's explained.",
-            "explanation": "Under neutral intonation, 'lesson' carries the nuclear pitch accent as the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
-        },
-        {
-            "id": "pitchPatternMatch_32",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "My roommate cleans the kitchen thoroughly.",
-            "textToSpeak": "My roommate cleans the kitchen thoroughly.",
-            "options": [
-                "Emphasis on ROOMMATE (Subject focus)",
-                "Emphasis on KITCHEN (Object focus)"
-            ],
-            "correctAnswer": "Emphasis on KITCHEN (Object focus)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
-                3,
-                1
-            ],
-            "hint": "This is a plain household update - listen for the pitch peak landing on the object, not the subject.",
-            "explanation": "The nuclear pitch accent falls on 'kitchen', the last content word, leaving 'roommate' unstressed.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
-        },
-        {
-            "id": "pitchPatternMatch_33",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "The photographer captures the moment perfectly.",
-            "textToSpeak": "The photographer captures the moment perfectly.",
-            "options": [
-                "Emphasis on PHOTOGRAPHER (Subject focus)",
-                "Emphasis on MOMENT (Object focus)"
-            ],
-            "correctAnswer": "Emphasis on MOMENT (Object focus)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
-                3,
-                1
-            ],
-            "hint": "Try humming just the pitch shape of the sentence - where does it peak?",
-            "explanation": "With no special emphasis intended, the pitch accent falls on 'moment', the final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
-        },
-        {
-            "id": "pitchPatternMatch_34",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "The driver navigates the traffic calmly.",
-            "textToSpeak": "The driver navigates the traffic calmly.",
-            "options": [
-                "Emphasis on TRAFFIC (Object focus)",
-                "Emphasis on DRIVER (Subject focus)"
-            ],
-            "correctAnswer": "Emphasis on TRAFFIC (Object focus)",
-            "correctAnswerIndex": 0,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
-                3,
-                1
-            ],
-            "hint": "This is a routine description of a skill - listen for the pitch peak on the object being handled.",
-            "explanation": "Neutral nuclear stress lands on 'traffic', the sentence's last content word, not on 'driver'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
-        },
-        {
-            "id": "pitchPatternMatch_35",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "My grandfather tells the story warmly.",
-            "textToSpeak": "My grandfather tells the story warmly.",
-            "options": [
-                "Emphasis on STORY (Object focus)",
-                "Emphasis on GRANDFATHER (Subject focus)"
-            ],
-            "correctAnswer": "Emphasis on STORY (Object focus)",
-            "correctAnswerIndex": 0,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
-                3,
-                1
-            ],
-            "hint": "The subject just introduces who's speaking - the spotlight falls on the object instead.",
-            "explanation": "The default pitch accent targets 'story', the final content word, under ordinary intonation.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
-        },
-        {
-            "id": "pitchPatternMatch_36",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "The vet examines the puppy gently.",
-            "textToSpeak": "The vet examines the puppy gently.",
-            "options": [
-                "Emphasis on PUPPY (Object focus)",
-                "Emphasis on VET (Subject focus)"
-            ],
-            "correctAnswer": "Emphasis on PUPPY (Object focus)",
-            "correctAnswerIndex": 0,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
-                3,
-                1
-            ],
-            "hint": "Listen for the highest pitch point in the sentence - it should land near the end.",
-            "explanation": "The nuclear pitch accent naturally falls on 'puppy', the last content word, not on 'vet'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
-        },
-        {
-            "id": "pitchPatternMatch_37",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "The designer updates the logo creatively.",
-            "textToSpeak": "The designer updates the logo creatively.",
-            "options": [
-                "Emphasis on LOGO (Object focus)",
-                "Emphasis on DESIGNER (Subject focus)"
-            ],
-            "correctAnswer": "Emphasis on LOGO (Object focus)",
-            "correctAnswerIndex": 0,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
-                3,
-                1
-            ],
-            "hint": "This is a plain workplace update with no special focus on the subject - listen for the peak later on.",
-            "explanation": "Under neutral intonation, 'logo' carries the nuclear pitch accent as the final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
-        },
-        {
-            "id": "pitchPatternMatch_38",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "My classmate borrows the textbook briefly.",
-            "textToSpeak": "My classmate borrows the textbook briefly.",
-            "options": [
-                "Emphasis on CLASSMATE (Subject focus)",
-                "Emphasis on TEXTBOOK (Object focus)"
-            ],
-            "correctAnswer": "Emphasis on TEXTBOOK (Object focus)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
-                3,
-                1
-            ],
-            "hint": "Try comparing the pitch on each noun - one stays flat, the other rises and falls.",
-            "explanation": "The nuclear pitch accent falls on 'textbook', the sentence's last content word, not on 'classmate'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
-        },
-        {
-            "id": "pitchPatternMatch_39",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "The agent negotiates the contract carefully.",
-            "textToSpeak": "The agent negotiates the contract carefully.",
-            "options": [
-                "Emphasis on AGENT (Subject focus)",
-                "Emphasis on CONTRACT (Object focus)"
-            ],
-            "correctAnswer": "Emphasis on CONTRACT (Object focus)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
-                3,
-                1
-            ],
-            "hint": "Nothing here marks the subject as the important new information - listen for the peak on the object.",
-            "explanation": "The default nuclear stress targets 'contract', the final content word, under neutral intonation.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
-        },
-        {
-            "id": "pitchPatternMatch_40",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "The tourist photographs the landmark eagerly.",
-            "textToSpeak": "The tourist photographs the landmark eagerly.",
-            "options": [
-                "Emphasis on TOURIST (Subject focus)",
-                "Emphasis on LANDMARK (Object focus)"
-            ],
-            "correctAnswer": "Emphasis on LANDMARK (Object focus)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
-                3,
-                1
-            ],
-            "hint": "This is a simple travel description - listen for the pitch peak landing on the object being photographed.",
-            "explanation": "Neutral declarative stress falls on 'landmark', the sentence's final content word, not on 'tourist'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
-        },
-        {
-            "id": "pitchPatternMatch_41",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "My boss approves the proposal quickly.",
-            "textToSpeak": "My boss approves the proposal quickly.",
-            "options": [
-                "Emphasis on PROPOSAL (Object focus)",
-                "Emphasis on BOSS (Subject focus)"
-            ],
-            "correctAnswer": "Emphasis on PROPOSAL (Object focus)",
-            "correctAnswerIndex": 0,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
-                3,
-                1
-            ],
-            "hint": "The subject is simply who's approving - the real pitch peak lands on what's approved.",
-            "explanation": "The nuclear pitch accent naturally falls on 'proposal', the last content word in the sentence.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
-        },
-        {
-            "id": "pitchPatternMatch_42",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "The waiter recommends the dessert enthusiastically.",
-            "textToSpeak": "The waiter recommends the dessert enthusiastically.",
-            "options": [
-                "Emphasis on DESSERT (Object focus)",
-                "Emphasis on WAITER (Subject focus)"
-            ],
-            "correctAnswer": "Emphasis on DESSERT (Object focus)",
-            "correctAnswerIndex": 0,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
-                3,
-                1
-            ],
-            "hint": "Listen for where the pitch climbs highest - usually near the end of a neutral sentence like this.",
-            "explanation": "Under ordinary intonation, 'dessert' carries the nuclear pitch accent as the final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
-        },
-        {
-            "id": "pitchPatternMatch_43",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "The coach motivates the team loudly.",
-            "textToSpeak": "The coach motivates the team loudly.",
-            "options": [
-                "Emphasis on COACH (Subject focus)",
-                "Emphasis on TEAM (Object focus)"
-            ],
-            "correctAnswer": "Emphasis on TEAM (Object focus)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
-                3,
-                1
-            ],
-            "hint": "This is a plain description of routine behavior - listen for the pitch peak on the object, not the subject.",
-            "explanation": "The default nuclear stress falls on 'team', the sentence's final content word, not on 'coach'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
-        },
-        {
-            "id": "pitchPatternMatch_44",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "My niece colors the picture happily.",
-            "textToSpeak": "My niece colors the picture happily.",
-            "options": [
-                "Emphasis on NIECE (Subject focus)",
-                "Emphasis on PICTURE (Object focus)"
-            ],
-            "correctAnswer": "Emphasis on PICTURE (Object focus)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
-                3,
-                1
-            ],
-            "hint": "Try saying it aloud naturally - your voice should peak on the object, not on 'niece'.",
-            "explanation": "Neutral nuclear stress lands on 'picture', the last content word, leaving 'niece' unstressed.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
-        },
-        {
-            "id": "pitchPatternMatch_45",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "The pharmacist explains the dosage carefully.",
-            "textToSpeak": "The pharmacist explains the dosage carefully.",
-            "options": [
-                "Emphasis on DOSAGE (Object focus)",
-                "Emphasis on PHARMACIST (Subject focus)"
-            ],
-            "correctAnswer": "Emphasis on DOSAGE (Object focus)",
-            "correctAnswerIndex": 0,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
-                3,
-                1
-            ],
-            "hint": "The subject just introduces who's speaking - the real focus falls on the object explained.",
-            "explanation": "The nuclear pitch accent targets 'dosage', the final content word, under neutral intonation.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
-        },
-        {
-            "id": "pitchPatternMatch_46",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "The shopper compares the prices wisely.",
-            "textToSpeak": "The shopper compares the prices wisely.",
+            "word": "My mother compared the prices.",
+            "textToSpeak": "My mother compared the prices.",
             "options": [
                 "Emphasis on PRICES (Object focus)",
-                "Emphasis on SHOPPER (Subject focus)"
+                "Emphasis on MOTHER (Subject focus)"
             ],
             "correctAnswer": "Emphasis on PRICES (Object focus)",
             "correctAnswerIndex": 0,
@@ -383,22 +23,382 @@
                 3,
                 1
             ],
-            "hint": "This is everyday shopping behavior - listen for the pitch peak landing on the object being compared.",
-            "explanation": "With no special emphasis intended, the pitch accent falls on 'prices', the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "Listen for where the pitch climbs highest — near the start of the sentence, or closer to the end?",
+            "explanation": "This is a plain statement, so the stress falls where it usually does — on PRICES, not MOTHER.",
+            "emphasisRule": "In a neutral sentence with no special context, the strongest pitch accent falls on the final content word."
+        },
+        {
+            "id": "pitchPatternMatch_32",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "The cashier scanned the groceries.",
+            "textToSpeak": "The cashier scanned the groceries.",
+            "options": [
+                "Emphasis on CASHIER (Subject focus)",
+                "Emphasis on GROCERIES (Object focus)"
+            ],
+            "correctAnswer": "Emphasis on GROCERIES (Object focus)",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                1,
+                1,
+                3
+            ],
+            "hint": "In a plain, everyday sentence like this, the strongest beat usually falls late, not on the very first word.",
+            "explanation": "GROCERIES carries the nuclear stress here simply because it's the last content word in a neutral sentence.",
+            "emphasisRule": "Without contrast or correction, English naturally places the main stress on the last important word of a sentence."
+        },
+        {
+            "id": "pitchPatternMatch_33",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "My roommate returned the broken toaster.",
+            "textToSpeak": "My roommate returned the broken toaster.",
+            "options": [
+                "Emphasis on TOASTER (Object focus)",
+                "Emphasis on ROOMMATE (Subject focus)"
+            ],
+            "correctAnswer": "Emphasis on TOASTER (Object focus)",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                1,
+                3,
+                1
+            ],
+            "hint": "Try saying the sentence naturally — does your voice peak early, or does it build toward the end?",
+            "explanation": "With nothing marking ROOMMATE as special, the pitch peak naturally lands on TOASTER, the final content word.",
+            "emphasisRule": "Default sentence stress lands on the final content word unless the context shifts it elsewhere."
+        },
+        {
+            "id": "pitchPatternMatch_34",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "The clerk wrapped the gift.",
+            "textToSpeak": "The clerk wrapped the gift.",
+            "options": [
+                "Emphasis on CLERK (Subject focus)",
+                "Emphasis on GIFT (Object focus)"
+            ],
+            "correctAnswer": "Emphasis on GIFT (Object focus)",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                1,
+                1,
+                3
+            ],
+            "hint": "Nothing here makes the opening word special, so listen for the peak further along.",
+            "explanation": "In neutral, everyday speech, the nuclear stress falls on GIFT because it's the last important word in the sentence.",
+            "emphasisRule": "In a neutral sentence with no special context, the strongest pitch accent falls on the final content word."
+        },
+        {
+            "id": "pitchPatternMatch_35",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "My sister tried on the boots.",
+            "textToSpeak": "My sister tried on the boots.",
+            "options": [
+                "Emphasis on BOOTS (Object focus)",
+                "Emphasis on SISTER (Subject focus)"
+            ],
+            "correctAnswer": "Emphasis on BOOTS (Object focus)",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                1,
+                3,
+                1
+            ],
+            "hint": "The first word simply sets the scene — the real peak comes later in the sentence.",
+            "explanation": "There's nothing special about SISTER here, so the strongest pitch peak lands later, on BOOTS.",
+            "emphasisRule": "Without contrast or correction, English naturally places the main stress on the last important word of a sentence."
+        },
+        {
+            "id": "pitchPatternMatch_36",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "The shopper found a discount.",
+            "textToSpeak": "The shopper found a discount.",
+            "options": [
+                "Emphasis on SHOPPER (Subject focus)",
+                "Emphasis on DISCOUNT (Object focus)"
+            ],
+            "correctAnswer": "Emphasis on DISCOUNT (Object focus)",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                1,
+                1,
+                3
+            ],
+            "hint": "Compare the pitch on the first word with the pitch near the end — one stays flat, one stands out.",
+            "explanation": "Without any contrast or correction, English defaults to stressing the final content word — here, DISCOUNT.",
+            "emphasisRule": "Default sentence stress lands on the final content word unless the context shifts it elsewhere."
+        },
+        {
+            "id": "pitchPatternMatch_37",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "The chef seasoned the soup.",
+            "textToSpeak": "The chef seasoned the soup.",
+            "options": [
+                "Emphasis on SOUP (Object focus)",
+                "Emphasis on CHEF (Subject focus)"
+            ],
+            "correctAnswer": "Emphasis on SOUP (Object focus)",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                1,
+                3,
+                1
+            ],
+            "hint": "With no special context, English usually saves its strongest beat for last.",
+            "explanation": "The sentence has no special emphasis on CHEF, so the natural peak falls on SOUP instead.",
+            "emphasisRule": "In a neutral sentence with no special context, the strongest pitch accent falls on the final content word."
+        },
+        {
+            "id": "pitchPatternMatch_38",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "My brother grilled the chicken.",
+            "textToSpeak": "My brother grilled the chicken.",
+            "options": [
+                "Emphasis on BROTHER (Subject focus)",
+                "Emphasis on CHICKEN (Object focus)"
+            ],
+            "correctAnswer": "Emphasis on CHICKEN (Object focus)",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                1,
+                1,
+                3
+            ],
+            "hint": "Hum the rhythm of the sentence — where does it feel like the peak lands?",
+            "explanation": "Since nothing highlights BROTHER, the pitch accent settles on CHICKEN, the word that ends the sentence.",
+            "emphasisRule": "Without contrast or correction, English naturally places the main stress on the last important word of a sentence."
+        },
+        {
+            "id": "pitchPatternMatch_39",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "The baker sliced the bread.",
+            "textToSpeak": "The baker sliced the bread.",
+            "options": [
+                "Emphasis on BREAD (Object focus)",
+                "Emphasis on BAKER (Subject focus)"
+            ],
+            "correctAnswer": "Emphasis on BREAD (Object focus)",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                1,
+                3,
+                1
+            ],
+            "hint": "The opening word just introduces who's involved; listen for where the energy actually builds.",
+            "explanation": "This is a plain statement, so the stress falls where it usually does — on BREAD, not BAKER.",
+            "emphasisRule": "Default sentence stress lands on the final content word unless the context shifts it elsewhere."
+        },
+        {
+            "id": "pitchPatternMatch_40",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "We ordered a large pizza.",
+            "textToSpeak": "We ordered a large pizza.",
+            "options": [
+                "Emphasis on WE (Subject focus)",
+                "Emphasis on PIZZA (Object focus)"
+            ],
+            "correctAnswer": "Emphasis on PIZZA (Object focus)",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                1,
+                1,
+                3
+            ],
+            "hint": "In neutral speech like this, the ending of the sentence carries more weight than the opening.",
+            "explanation": "PIZZA carries the nuclear stress here simply because it's the last content word in a neutral sentence.",
+            "emphasisRule": "In a neutral sentence with no special context, the strongest pitch accent falls on the final content word."
+        },
+        {
+            "id": "pitchPatternMatch_41",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "The waiter refilled our glasses.",
+            "textToSpeak": "The waiter refilled our glasses.",
+            "options": [
+                "Emphasis on GLASSES (Object focus)",
+                "Emphasis on WAITER (Subject focus)"
+            ],
+            "correctAnswer": "Emphasis on GLASSES (Object focus)",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                1,
+                3,
+                1
+            ],
+            "hint": "Listen for where the pitch climbs highest — near the start of the sentence, or closer to the end?",
+            "explanation": "With nothing marking WAITER as special, the pitch peak naturally lands on GLASSES, the final content word.",
+            "emphasisRule": "Without contrast or correction, English naturally places the main stress on the last important word of a sentence."
+        },
+        {
+            "id": "pitchPatternMatch_42",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "My aunt boiled the rice.",
+            "textToSpeak": "My aunt boiled the rice.",
+            "options": [
+                "Emphasis on AUNT (Subject focus)",
+                "Emphasis on RICE (Object focus)"
+            ],
+            "correctAnswer": "Emphasis on RICE (Object focus)",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                1,
+                1,
+                3
+            ],
+            "hint": "In a plain, everyday sentence like this, the strongest beat usually falls late, not on the very first word.",
+            "explanation": "In neutral, everyday speech, the nuclear stress falls on RICE because it's the last important word in the sentence.",
+            "emphasisRule": "Default sentence stress lands on the final content word unless the context shifts it elsewhere."
+        },
+        {
+            "id": "pitchPatternMatch_43",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "The technician updated the software.",
+            "textToSpeak": "The technician updated the software.",
+            "options": [
+                "Emphasis on SOFTWARE (Object focus)",
+                "Emphasis on TECHNICIAN (Subject focus)"
+            ],
+            "correctAnswer": "Emphasis on SOFTWARE (Object focus)",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                1,
+                3,
+                1
+            ],
+            "hint": "Try saying the sentence naturally — does your voice peak early, or does it build toward the end?",
+            "explanation": "There's nothing special about TECHNICIAN here, so the strongest pitch peak lands later, on SOFTWARE.",
+            "emphasisRule": "In a neutral sentence with no special context, the strongest pitch accent falls on the final content word."
+        },
+        {
+            "id": "pitchPatternMatch_44",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "My roommate charged his laptop.",
+            "textToSpeak": "My roommate charged his laptop.",
+            "options": [
+                "Emphasis on ROOMMATE (Subject focus)",
+                "Emphasis on LAPTOP (Object focus)"
+            ],
+            "correctAnswer": "Emphasis on LAPTOP (Object focus)",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                1,
+                1,
+                3
+            ],
+            "hint": "Nothing here makes the opening word special, so listen for the peak further along.",
+            "explanation": "Without any contrast or correction, English defaults to stressing the final content word — here, LAPTOP.",
+            "emphasisRule": "Without contrast or correction, English naturally places the main stress on the last important word of a sentence."
+        },
+        {
+            "id": "pitchPatternMatch_45",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "The engineer restarted the router.",
+            "textToSpeak": "The engineer restarted the router.",
+            "options": [
+                "Emphasis on ROUTER (Object focus)",
+                "Emphasis on ENGINEER (Subject focus)"
+            ],
+            "correctAnswer": "Emphasis on ROUTER (Object focus)",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                1,
+                3,
+                1
+            ],
+            "hint": "The first word simply sets the scene — the real peak comes later in the sentence.",
+            "explanation": "The sentence has no special emphasis on ENGINEER, so the natural peak falls on ROUTER instead.",
+            "emphasisRule": "Default sentence stress lands on the final content word unless the context shifts it elsewhere."
+        },
+        {
+            "id": "pitchPatternMatch_46",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "My colleague backed up the files.",
+            "textToSpeak": "My colleague backed up the files.",
+            "options": [
+                "Emphasis on COLLEAGUE (Subject focus)",
+                "Emphasis on FILES (Object focus)"
+            ],
+            "correctAnswer": "Emphasis on FILES (Object focus)",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                1,
+                1,
+                3
+            ],
+            "hint": "Compare the pitch on the first word with the pitch near the end — one stays flat, one stands out.",
+            "explanation": "Since nothing highlights COLLEAGUE, the pitch accent settles on FILES, the word that ends the sentence.",
+            "emphasisRule": "In a neutral sentence with no special context, the strongest pitch accent falls on the final content word."
         },
         {
             "id": "pitchPatternMatch_47",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My colleague drafts the report quickly.",
-            "textToSpeak": "My colleague drafts the report quickly.",
+            "word": "The app updated the calendar.",
+            "textToSpeak": "The app updated the calendar.",
             "options": [
-                "Emphasis on REPORT (Object focus)",
-                "Emphasis on COLLEAGUE (Subject focus)"
+                "Emphasis on CALENDAR (Object focus)",
+                "Emphasis on APP (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on REPORT (Object focus)",
+            "correctAnswer": "Emphasis on CALENDAR (Object focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -407,46 +407,46 @@
                 3,
                 1
             ],
-            "hint": "Listen for the strongest pitch movement - it should land near the end, not at the start.",
-            "explanation": "Under neutral intonation, 'report' carries the nuclear pitch accent as the final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "With no special context, English usually saves its strongest beat for last.",
+            "explanation": "This is a plain statement, so the stress falls where it usually does — on CALENDAR, not APP.",
+            "emphasisRule": "Without contrast or correction, English naturally places the main stress on the last important word of a sentence."
         },
         {
             "id": "pitchPatternMatch_48",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The singer rehearses the melody softly.",
-            "textToSpeak": "The singer rehearses the melody softly.",
+            "word": "My dad muted the notifications.",
+            "textToSpeak": "My dad muted the notifications.",
             "options": [
-                "Emphasis on SINGER (Subject focus)",
-                "Emphasis on MELODY (Object focus)"
+                "Emphasis on DAD (Subject focus)",
+                "Emphasis on NOTIFICATIONS (Object focus)"
             ],
-            "correctAnswer": "Emphasis on MELODY (Object focus)",
+            "correctAnswer": "Emphasis on NOTIFICATIONS (Object focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "The subject is simply who's rehearsing - the spotlight naturally falls on what's rehearsed.",
-            "explanation": "The nuclear pitch accent naturally falls on 'melody', the last content word in the sentence.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "Hum the rhythm of the sentence — where does it feel like the peak lands?",
+            "explanation": "NOTIFICATIONS carries the nuclear stress here simply because it's the last content word in a neutral sentence.",
+            "emphasisRule": "Default sentence stress lands on the final content word unless the context shifts it elsewhere."
         },
         {
             "id": "pitchPatternMatch_49",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The plumber fixes the pipe efficiently.",
-            "textToSpeak": "The plumber fixes the pipe efficiently.",
+            "word": "The nurse measured his temperature.",
+            "textToSpeak": "The nurse measured his temperature.",
             "options": [
-                "Emphasis on PIPE (Object focus)",
-                "Emphasis on PLUMBER (Subject focus)"
+                "Emphasis on TEMPERATURE (Object focus)",
+                "Emphasis on NURSE (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on PIPE (Object focus)",
+            "correctAnswer": "Emphasis on TEMPERATURE (Object focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -455,47 +455,47 @@
                 3,
                 1
             ],
-            "hint": "This is a routine repair update - listen for the pitch peak on the object being fixed.",
-            "explanation": "The default nuclear stress falls on 'pipe', the sentence's final content word, not on 'plumber'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "The opening word just introduces who's involved; listen for where the energy actually builds.",
+            "explanation": "With nothing marking NURSE as special, the pitch peak naturally lands on TEMPERATURE, the final content word.",
+            "emphasisRule": "In a neutral sentence with no special context, the strongest pitch accent falls on the final content word."
         },
         {
             "id": "pitchPatternMatch_50",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My grandmother knits the sweater patiently.",
-            "textToSpeak": "My grandmother knits the sweater patiently.",
+            "word": "My doctor renewed the prescription.",
+            "textToSpeak": "My doctor renewed the prescription.",
             "options": [
-                "Emphasis on SWEATER (Object focus)",
-                "Emphasis on GRANDMOTHER (Subject focus)"
+                "Emphasis on DOCTOR (Subject focus)",
+                "Emphasis on PRESCRIPTION (Object focus)"
             ],
-            "correctAnswer": "Emphasis on SWEATER (Object focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on PRESCRIPTION (Object focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "Try tapping the beat of the sentence - the strongest beat should land on the object.",
-            "explanation": "Neutral nuclear stress lands on 'sweater', the last content word, leaving 'grandmother' unstressed.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "In neutral speech like this, the ending of the sentence carries more weight than the opening.",
+            "explanation": "In neutral, everyday speech, the nuclear stress falls on PRESCRIPTION because it's the last important word in the sentence.",
+            "emphasisRule": "Without contrast or correction, English naturally places the main stress on the last important word of a sentence."
         },
         {
             "id": "pitchPatternMatch_51",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The engineer tests the prototype carefully.",
-            "textToSpeak": "The engineer tests the prototype carefully.",
+            "word": "The dentist examined her teeth.",
+            "textToSpeak": "The dentist examined her teeth.",
             "options": [
-                "Emphasis on ENGINEER (Subject focus)",
-                "Emphasis on PROTOTYPE (Object focus)"
+                "Emphasis on TEETH (Object focus)",
+                "Emphasis on DENTIST (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on PROTOTYPE (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on TEETH (Object focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -503,47 +503,47 @@
                 3,
                 1
             ],
-            "hint": "Nothing here marks the subject as the key new information - the focus lands on the object instead.",
-            "explanation": "Under ordinary intonation, 'prototype' carries the nuclear pitch accent as the final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "Listen for where the pitch climbs highest — near the start of the sentence, or closer to the end?",
+            "explanation": "There's nothing special about DENTIST here, so the strongest pitch peak lands later, on TEETH.",
+            "emphasisRule": "Default sentence stress lands on the final content word unless the context shifts it elsewhere."
         },
         {
             "id": "pitchPatternMatch_52",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The student submits the assignment promptly.",
-            "textToSpeak": "The student submits the assignment promptly.",
+            "word": "My mother scheduled the checkup.",
+            "textToSpeak": "My mother scheduled the checkup.",
             "options": [
-                "Emphasis on STUDENT (Subject focus)",
-                "Emphasis on ASSIGNMENT (Object focus)"
+                "Emphasis on MOTHER (Subject focus)",
+                "Emphasis on CHECKUP (Object focus)"
             ],
-            "correctAnswer": "Emphasis on ASSIGNMENT (Object focus)",
+            "correctAnswer": "Emphasis on CHECKUP (Object focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "This is a plain academic update - listen for the pitch peak landing on the object, not the subject.",
-            "explanation": "The nuclear pitch accent falls on 'assignment', the final content word, under neutral intonation.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "In a plain, everyday sentence like this, the strongest beat usually falls late, not on the very first word.",
+            "explanation": "Without any contrast or correction, English defaults to stressing the final content word — here, CHECKUP.",
+            "emphasisRule": "In a neutral sentence with no special context, the strongest pitch accent falls on the final content word."
         },
         {
             "id": "pitchPatternMatch_53",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My friend recommends the restaurant enthusiastically.",
-            "textToSpeak": "My friend recommends the restaurant enthusiastically.",
+            "word": "The trainer stretched his shoulder.",
+            "textToSpeak": "The trainer stretched his shoulder.",
             "options": [
-                "Emphasis on FRIEND (Subject focus)",
-                "Emphasis on RESTAURANT (Object focus)"
+                "Emphasis on SHOULDER (Object focus)",
+                "Emphasis on TRAINER (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on RESTAURANT (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on SHOULDER (Object focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -551,46 +551,46 @@
                 3,
                 1
             ],
-            "hint": "The subject is just who's recommending - the real pitch peak lands on what's recommended.",
-            "explanation": "With no special emphasis, the nuclear stress falls on 'restaurant', the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "Try saying the sentence naturally — does your voice peak early, or does it build toward the end?",
+            "explanation": "The sentence has no special emphasis on TRAINER, so the natural peak falls on SHOULDER instead.",
+            "emphasisRule": "Without contrast or correction, English naturally places the main stress on the last important word of a sentence."
         },
         {
             "id": "pitchPatternMatch_54",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The lifeguard watches the pool attentively.",
-            "textToSpeak": "The lifeguard watches the pool attentively.",
+            "word": "My father took his medicine.",
+            "textToSpeak": "My father took his medicine.",
             "options": [
-                "Emphasis on LIFEGUARD (Subject focus)",
-                "Emphasis on POOL (Object focus)"
+                "Emphasis on FATHER (Subject focus)",
+                "Emphasis on MEDICINE (Object focus)"
             ],
-            "correctAnswer": "Emphasis on POOL (Object focus)",
+            "correctAnswer": "Emphasis on MEDICINE (Object focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "Listen for where the pitch rises most - usually near the end in a calm, neutral statement.",
-            "explanation": "Under neutral intonation, 'pool' carries the nuclear pitch accent as the final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "Nothing here makes the opening word special, so listen for the peak further along.",
+            "explanation": "Since nothing highlights FATHER, the pitch accent settles on MEDICINE, the word that ends the sentence.",
+            "emphasisRule": "Default sentence stress lands on the final content word unless the context shifts it elsewhere."
         },
         {
             "id": "pitchPatternMatch_55",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The clerk restocks the shelves quickly.",
-            "textToSpeak": "The clerk restocks the shelves quickly.",
+            "word": "The band released a new album.",
+            "textToSpeak": "The band released a new album.",
             "options": [
-                "Emphasis on SHELVES (Object focus)",
-                "Emphasis on CLERK (Subject focus)"
+                "Emphasis on ALBUM (Object focus)",
+                "Emphasis on BAND (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on SHELVES (Object focus)",
+            "correctAnswer": "Emphasis on ALBUM (Object focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -599,70 +599,46 @@
                 3,
                 1
             ],
-            "hint": "This is routine store activity - listen for the pitch peak landing on the object, not the subject.",
-            "explanation": "The default nuclear stress falls on 'shelves', the sentence's final content word, not on 'clerk'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "The first word simply sets the scene — the real peak comes later in the sentence.",
+            "explanation": "This is a plain statement, so the stress falls where it usually does — on ALBUM, not BAND.",
+            "emphasisRule": "In a neutral sentence with no special context, the strongest pitch accent falls on the final content word."
         },
         {
             "id": "pitchPatternMatch_56",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My sister updates the app regularly.",
-            "textToSpeak": "My sister updates the app regularly.",
+            "word": "My friend downloaded the movie.",
+            "textToSpeak": "My friend downloaded the movie.",
             "options": [
-                "Emphasis on APP (Object focus)",
-                "Emphasis on SISTER (Subject focus)"
+                "Emphasis on FRIEND (Subject focus)",
+                "Emphasis on MOVIE (Object focus)"
             ],
-            "correctAnswer": "Emphasis on APP (Object focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on MOVIE (Object focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "Try comparing the pitch on 'sister' versus 'app' - one stays low, the other peaks.",
-            "explanation": "Neutral nuclear stress lands on 'app', the last content word, leaving 'sister' unstressed.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "Compare the pitch on the first word with the pitch near the end — one stays flat, one stands out.",
+            "explanation": "MOVIE carries the nuclear stress here simply because it's the last content word in a neutral sentence.",
+            "emphasisRule": "Without contrast or correction, English naturally places the main stress on the last important word of a sentence."
         },
         {
             "id": "pitchPatternMatch_57",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The host welcomes the visitors politely.",
-            "textToSpeak": "The host welcomes the visitors politely.",
+            "word": "The director praised the actors.",
+            "textToSpeak": "The director praised the actors.",
             "options": [
-                "Emphasis on HOST (Subject focus)",
-                "Emphasis on VISITORS (Object focus)"
+                "Emphasis on ACTORS (Object focus)",
+                "Emphasis on DIRECTOR (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on VISITORS (Object focus)",
-            "correctAnswerIndex": 1,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
-                3,
-                1
-            ],
-            "hint": "The subject is simply who's welcoming - the spotlight naturally falls on who's welcomed.",
-            "explanation": "The nuclear pitch accent naturally falls on 'visitors', the last content word in the sentence.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
-        },
-        {
-            "id": "pitchPatternMatch_58",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "The trainer demonstrates the exercise slowly.",
-            "textToSpeak": "The trainer demonstrates the exercise slowly.",
-            "options": [
-                "Emphasis on EXERCISE (Object focus)",
-                "Emphasis on TRAINER (Subject focus)"
-            ],
-            "correctAnswer": "Emphasis on EXERCISE (Object focus)",
+            "correctAnswer": "Emphasis on ACTORS (Object focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -671,23 +647,47 @@
                 3,
                 1
             ],
-            "hint": "This is a plain instructional moment - listen for the pitch peak landing on the object being shown.",
-            "explanation": "Under neutral intonation, 'exercise' carries the nuclear pitch accent as the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "With no special context, English usually saves its strongest beat for last.",
+            "explanation": "With nothing marking DIRECTOR as special, the pitch peak naturally lands on ACTORS, the final content word.",
+            "emphasisRule": "Default sentence stress lands on the final content word unless the context shifts it elsewhere."
+        },
+        {
+            "id": "pitchPatternMatch_58",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "We watched the final episode.",
+            "textToSpeak": "We watched the final episode.",
+            "options": [
+                "Emphasis on WE (Subject focus)",
+                "Emphasis on EPISODE (Object focus)"
+            ],
+            "correctAnswer": "Emphasis on EPISODE (Object focus)",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                1,
+                1,
+                3
+            ],
+            "hint": "Hum the rhythm of the sentence — where does it feel like the peak lands?",
+            "explanation": "In neutral, everyday speech, the nuclear stress falls on EPISODE because it's the last important word in the sentence.",
+            "emphasisRule": "In a neutral sentence with no special context, the strongest pitch accent falls on the final content word."
         },
         {
             "id": "pitchPatternMatch_59",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My father repairs the roof carefully.",
-            "textToSpeak": "My father repairs the roof carefully.",
+            "word": "The singer rehearsed the chorus.",
+            "textToSpeak": "The singer rehearsed the chorus.",
             "options": [
-                "Emphasis on FATHER (Subject focus)",
-                "Emphasis on ROOF (Object focus)"
+                "Emphasis on CHORUS (Object focus)",
+                "Emphasis on SINGER (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on ROOF (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on CHORUS (Object focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -695,33 +695,33 @@
                 3,
                 1
             ],
-            "hint": "The subject just introduces who's working - the real pitch peak lands on what's repaired.",
-            "explanation": "The nuclear pitch accent targets 'roof', the final content word, under ordinary intonation.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "The opening word just introduces who's involved; listen for where the energy actually builds.",
+            "explanation": "There's nothing special about SINGER here, so the strongest pitch peak lands later, on CHORUS.",
+            "emphasisRule": "Without contrast or correction, English naturally places the main stress on the last important word of a sentence."
         },
         {
             "id": "pitchPatternMatch_60",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The chef plates the dish elegantly.",
-            "textToSpeak": "The chef plates the dish elegantly.",
+            "word": "My sister joined the trivia game.",
+            "textToSpeak": "My sister joined the trivia game.",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on DISH (Object focus)"
+                "Emphasis on SISTER (Subject focus)",
+                "Emphasis on GAME (Object focus)"
             ],
-            "correctAnswer": "Emphasis on DISH (Object focus)",
+            "correctAnswer": "Emphasis on GAME (Object focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "Listen for the highest pitch point in the sentence - it should land near the end, on the object.",
-            "explanation": "With no special emphasis intended, the pitch accent falls on 'dish', the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "In neutral speech like this, the ending of the sentence carries more weight than the opening.",
+            "explanation": "Without any contrast or correction, English defaults to stressing the final content word — here, GAME.",
+            "emphasisRule": "Default sentence stress lands on the final content word unless the context shifts it elsewhere."
         }
     ]
 }

@@ -5,83 +5,83 @@
     "quests": [
         {
             "id": "WRT_OPINIONWRITING_L71_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A levy on all plastic packaging would drive meaningful environmental improvement.",
             "options": [
-                "A plastic packaging tax gives manufacturers a strong financial incentive to reduce packaging volumes.",
-                "Tax revenue can fund research into sustainable alternatives and plastic recycling infrastructure.",
                 "Packaging taxes ultimately raise consumer prices, falling hardest on lower-income households.",
-                "Industry lobbying consistently weakens packaging taxes, creating exemptions that undermine impact."
+                "Industry lobbying consistently weakens packaging taxes, creating exemptions that undermine impact.",
+                "A plastic packaging tax gives manufacturers a strong financial incentive to reduce packaging volumes.",
+                "Tax revenue can fund research into sustainable alternatives and plastic recycling infrastructure."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the incentive case for a packaging tax (Pros) and the regressive and lobbying concerns (Cons).",
             "explanation": "Packaging taxes incentivise reduction and fund sustainable innovation (Pros), but costs are passed to consumers hitting lower-income families hardest, and industry lobbying frequently dilutes ambition through exemptions (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L71_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Taxing plastic packaging accelerates the development of sustainable alternatives.",
             "options": [
-                "Higher costs for plastic packaging make biodegradable and recycled materials more commercially competitive.",
-                "A levy creates a market advantage for innovative companies pioneering sustainable packaging solutions.",
                 "Genuinely sustainable packaging alternatives are not yet affordable or available at industrial scale.",
-                "Companies may select cheaper but less effective alternatives that do not deliver real environmental benefit."
+                "Higher costs for plastic packaging make biodegradable and recycled materials more commercially competitive.",
+                "Companies may select cheaper but less effective alternatives that do not deliver real environmental benefit.",
+                "A levy creates a market advantage for innovative companies pioneering sustainable packaging solutions."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider the innovation case for packaging taxes (Pros) and the readiness of sustainable alternatives (Cons).",
             "explanation": "Packaging taxes create market conditions favouring sustainable alternatives and rewarding innovation (Pros), but affordable and truly effective alternatives are not yet scalable, risking adoption of inadequate substitutes (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L71_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Extended producer responsibility makes manufacturers accountable for the full lifecycle of packaging.",
             "options": [
-                "Making producers financially responsible for their packaging's end-of-life drives better design choices.",
-                "Companies that design for recyclability or minimal packaging face lower overall costs under EPR schemes.",
                 "Small businesses face disproportionate administrative and financial burdens under EPR frameworks.",
-                "EPR works only when backed by effective national recycling infrastructure, which many countries lack."
+                "Making producers financially responsible for their packaging's end-of-life drives better design choices.",
+                "EPR works only when backed by effective national recycling infrastructure, which many countries lack.",
+                "Companies that design for recyclability or minimal packaging face lower overall costs under EPR schemes."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about extended producer responsibility as a packaging policy (Pros) and its implementation challenges (Cons).",
             "explanation": "Producer accountability drives better packaging design and rewards recyclability (Pros), but small businesses face disproportionate burdens and EPR schemes require recycling infrastructure investment absent in many countries (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L72_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Community service should be compulsory for all young people before higher education.",
             "options": [
                 "Compulsory service before university builds social cohesion by bringing diverse young people together.",
-                "Meaningful service gives young people a clearer sense of purpose and direction before further study.",
                 "Compulsory service delays university entry and careers, with real opportunity costs for young people.",
-                "Those from disadvantaged backgrounds face the greatest opportunity cost of a year without earnings."
+                "Those from disadvantaged backgrounds face the greatest opportunity cost of a year without earnings.",
+                "Meaningful service gives young people a clearer sense of purpose and direction before further study."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the social cohesion and development case for compulsory service (Pros) and who it disadvantages (Cons).",
             "explanation": "Compulsory service builds social cohesion and personal purpose (Pros), but it delays careers and falls hardest on disadvantaged young people who can least afford a year without income or study (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L72_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Mandatory community service develops young people's empathy and sense of civic duty.",
@@ -100,83 +100,83 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L72_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Community service programmes address social problems while building participants' skills.",
             "options": [
+                "Skills value depends entirely on placement quality, which varies enormously between programmes.",
                 "Young volunteers provide genuine capacity to stretched community organisations and charities.",
                 "Service placements develop communication, leadership, and professional skills valuable in any career.",
-                "Skills value depends entirely on placement quality, which varies enormously between programmes.",
                 "Young people's time may be more productively invested in education or paid work experience."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the dual benefit of service (Pros) and the quality and opportunity cost concerns (Cons).",
             "explanation": "Community service delivers social capacity and career-relevant skills (Pros), but placement quality varies enormously, and time invested may be less valuable than education or paid work for many young people's futures (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L73_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The number of flights each person takes annually should be legally capped.",
             "options": [
                 "Personal flight limits ensure individual contributions to aviation emissions are constrained fairly.",
-                "Caps signal clearly that aviation must decarbonise and cannot continue expanding indefinitely.",
                 "Flight limits disproportionately affect those who travel for work or to maintain family relationships.",
+                "Caps signal clearly that aviation must decarbonise and cannot continue expanding indefinitely.",
                 "Global flight restrictions are virtually impossible to enforce without an international compliance framework."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about flight caps as a climate fairness policy (Pros) and the enforcement and equity concerns (Cons).",
             "explanation": "Flight limits cap individual aviation emissions and signal decarbonisation urgency (Pros), but they harm those who depend on flights for work or family, and enforcement without global agreement is impractical (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L73_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A progressive frequent flyer levy is fairer and more effective than absolute flight caps.",
             "options": [
-                "A progressive levy charges increasing rates for each additional flight, targeting heavy aviation users.",
-                "Revenue from the levy can fund green aviation research and improve public transport alternatives.",
                 "A frequent flyer levy still allows wealthy individuals to buy their way out of climate responsibility.",
-                "Complex levy structures are difficult for the public to understand and easily gamed by regular flyers."
+                "A progressive levy charges increasing rates for each additional flight, targeting heavy aviation users.",
+                "Complex levy structures are difficult for the public to understand and easily gamed by regular flyers.",
+                "Revenue from the levy can fund green aviation research and improve public transport alternatives."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider whether a frequent flyer levy is better policy than a flight cap (Pros) and its fairness limitations (Cons).",
             "explanation": "A progressive levy targets heavy flyers and funds sustainable alternatives without prohibiting air travel (Pros), but it remains a wealth-dependent solution that allows affluent travellers to externalise their climate costs (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L73_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Sustainable aviation fuel makes restricting flight numbers unnecessary in the long term.",
             "options": [
-                "SAF can reduce aviation's carbon emissions by up to 80% without limiting passengers or destinations.",
-                "Investing in SAF allows aviation growth alongside meaningful decarbonisation of the sector.",
                 "SAF is currently very expensive, available only in small quantities, and years from widespread adoption.",
-                "Relying on future technology delays necessary demand reduction during the critical climate window."
+                "SAF can reduce aviation's carbon emissions by up to 80% without limiting passengers or destinations.",
+                "Relying on future technology delays necessary demand reduction during the critical climate window.",
+                "Investing in SAF allows aviation growth alongside meaningful decarbonisation of the sector."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about SAF as an alternative to flight restrictions (Pros) and the timeline and readiness concerns (Cons).",
             "explanation": "SAF enables decarbonisation without restricting travel freedom (Pros), but current SAF costs and limited supply make it premature as a substitute for demand-side policies during the urgent climate action period (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L74_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Employees should be permitted to work from home permanently if they choose.",
@@ -195,64 +195,64 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L74_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Permanent remote working supports greater geographic diversity and economic inclusion.",
             "options": [
                 "Remote working allows people in rural or economically deprived regions to access high-quality urban jobs.",
-                "Geographic diversity in hiring improves companies' access to a much broader and deeper talent pool.",
                 "Remote hiring without proper onboarding support risks isolation and underperformance for new employees.",
+                "Geographic diversity in hiring improves companies' access to a much broader and deeper talent pool.",
                 "Regional economic disparities require structural investment, not employment dispersal through remote work."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider how remote work supports geographic economic equity (Pros) and its structural limitations (Cons).",
             "explanation": "Remote work opens quality jobs to people in disadvantaged regions (Pros), but inadequate onboarding creates isolation, and regional inequality requires structural investment beyond work distribution to genuinely resolve (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L74_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Hybrid working combining home and office days is the most balanced modern model.",
             "options": [
                 "Hybrid work balances flexibility and productivity of home working with in-person team collaboration.",
-                "Shared office days maintain relationships and enable the spontaneous creative interaction of physical proximity.",
                 "Hybrid models require complex scheduling that can disadvantage part-time and carer employees.",
+                "Shared office days maintain relationships and enable the spontaneous creative interaction of physical proximity.",
                 "Maintaining office space for hybrid workers represents a costly and inefficient use of real estate."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about hybrid working as the optimal model (Pros) and its practical costs and equity concerns (Cons).",
             "explanation": "Hybrid work balances individual and collaborative needs effectively (Pros), but scheduling complexity disadvantages flexible workers, and maintaining partly used office space is a persistent financial inefficiency (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L75_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Governments should subsidise healthy food to make it more affordable than junk food.",
             "options": [
+                "Subsidies are expensive and require sustained political will and consistent public funding over many years.",
                 "Price subsidies directly address the cost barrier preventing lower-income families from eating healthily.",
                 "Cheaper healthy food changes the economic incentive structure that currently makes junk food the rational choice.",
-                "Subsidies are expensive and require sustained political will and consistent public funding over many years.",
                 "Subsidies treat the symptom of poor diet rather than addressing the systemic drivers of food inequality."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about healthy food subsidies as a public health and equity policy (Pros) and the cost and systemic concerns (Cons).",
             "explanation": "Subsidies correct price distortions making junk food the economically rational choice for lower-income families (Pros), but they are costly, require political sustainability, and address symptoms rather than underlying causes (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L75_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Making healthy food cheaper would significantly reduce population rates of diet-related disease.",
@@ -271,64 +271,64 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L75_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Taxing junk food and subsidising healthy options creates the most effective dual nutrition policy.",
             "options": [
-                "Simultaneously raising junk food costs and lowering healthy food prices maximises the dietary incentive.",
-                "Combined fiscal policies generate revenue while improving diet, creating a self-funding sustainability loop.",
                 "Combined tax-and-subsidy nutrition policies are administratively complex and politically very difficult.",
-                "Defining which foods qualify as junk or healthy is scientifically contested and legally contentious."
+                "Simultaneously raising junk food costs and lowering healthy food prices maximises the dietary incentive.",
+                "Defining which foods qualify as junk or healthy is scientifically contested and legally contentious.",
+                "Combined fiscal policies generate revenue while improving diet, creating a self-funding sustainability loop."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about combined fiscal nutrition policy (Pros) and the administrative and definitional challenges (Cons).",
             "explanation": "Simultaneous taxes and subsidies maximise dietary incentives and create funding sustainability (Pros), but administrative complexity, political resistance, and the difficulty of legally defining food categories are major implementation barriers (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L76_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Every citizen should receive an unconditional universal basic income from the state.",
             "options": [
-                "UBI eliminates the poverty trap created by conditional benefit systems that penalise earning additional income.",
-                "Unconditional income gives individuals freedom to pursue education, care work, and entrepreneurship.",
                 "UBI is extremely expensive to fund at a level that is genuinely meaningful for all citizens.",
-                "A flat universal payment fails to address the significantly greater needs of disabled or chronically ill people."
+                "A flat universal payment fails to address the significantly greater needs of disabled or chronically ill people.",
+                "UBI eliminates the poverty trap created by conditional benefit systems that penalise earning additional income.",
+                "Unconditional income gives individuals freedom to pursue education, care work, and entrepreneurship."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the freedom and poverty trap arguments for UBI (Pros) and the cost and adequacy concerns (Cons).",
             "explanation": "UBI removes poverty traps and enables free pursuit of education and entrepreneurship (Pros), but meaningful UBI is enormously costly, and a flat payment is inadequate for those with substantially greater support needs (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L76_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Universal basic income would transform society's relationship with work and labour markets.",
             "options": [
-                "UBI enables people to refuse exploitative, unsafe, or poorly paid work, improving labour standards broadly.",
-                "Economic security from UBI allows people to take calculated risks in starting businesses or retraining.",
                 "UBI may reduce motivation to work, particularly in low-wage roles that society fundamentally depends on.",
-                "Pilot evidence is promising but covers short periods in specific contexts, limiting what can be generalised."
+                "UBI enables people to refuse exploitative, unsafe, or poorly paid work, improving labour standards broadly.",
+                "Pilot evidence is promising but covers short periods in specific contexts, limiting what can be generalised.",
+                "Economic security from UBI allows people to take calculated risks in starting businesses or retraining."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider the labour market transformation case for UBI (Pros) and the incentive and evidence concerns (Cons).",
             "explanation": "UBI improves workers' bargaining power and enables entrepreneurship and retraining (Pros), but work incentive effects are a real concern, and short-term pilots cannot reliably predict long-term universal implementation effects (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L76_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Universal basic income is the most humane societal response to the automation of work.",
@@ -347,26 +347,26 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L77_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "All forms of tobacco advertising and sponsorship should be completely banned.",
             "options": [
-                "A total ban removes the normalisation of tobacco use that advertising perpetuates in society.",
-                "Tobacco advertising specifically targets young people, and a ban reduces uptake in new generations.",
                 "A ban reduces commercial revenue for sports and entertainment events that depend on tobacco sponsorship.",
-                "Adult smokers who are already addicted are not materially affected by advertising restrictions."
+                "Adult smokers who are already addicted are not materially affected by advertising restrictions.",
+                "A total ban removes the normalisation of tobacco use that advertising perpetuates in society.",
+                "Tobacco advertising specifically targets young people, and a ban reduces uptake in new generations."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the public health case for a complete tobacco advertising ban (Pros) and the economic and effectiveness concerns (Cons).",
             "explanation": "A complete ban denormalises tobacco and reduces young people's initiation (Pros), but it removes a revenue source for events and has limited impact on existing addicted adult smokers (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L77_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A complete tobacco advertising ban is among the most cost-effective public health interventions.",
@@ -385,190 +385,190 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L77_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Banning tobacco advertising protects public health while respecting individual freedom.",
             "options": [
                 "Banning advertising does not prohibit smoking - it restricts commercial promotion of an addictive product.",
-                "A ban protects non-smokers and young people from exposure to persuasive pro-smoking messages.",
                 "Restricting legal product advertising sets a precedent that could extend to other consumer categories.",
-                "Adult smokers retain the right to access information about legal products they choose to purchase."
+                "Adult smokers retain the right to access information about legal products they choose to purchase.",
+                "A ban protects non-smokers and young people from exposure to persuasive pro-smoking messages."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about whether tobacco bans are compatible with individual freedom (Pros) and the precedent concern (Cons).",
             "explanation": "Banning advertising restricts promotion, not the product, protecting non-smokers and young people (Pros), but it sets a precedent for wider product advertising restrictions and raises questions about adults' right to commercial information (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L78_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Wearing a cycling helmet should be made legally compulsory for all cyclists.",
             "options": [
+                "Helmet laws reduce cycling uptake, which may increase car use and worsen overall public health.",
                 "Helmet wearing significantly reduces the severity of head injuries sustained in cycling accidents.",
                 "Compulsory helmets send a clear public safety message that encourages a culture of safe cycling.",
-                "Helmet laws reduce cycling uptake, which may increase car use and worsen overall public health.",
                 "Helmets are most critical in high-speed or high-risk contexts, not routine everyday urban cycling."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the safety case for compulsory helmet laws (Pros) and the cycling uptake and proportionality concerns (Cons).",
             "explanation": "Helmets reduce head injury severity and promote safety culture (Pros), but compulsion reduces cycling rates, potentially worsening net public health, and helmet necessity varies greatly by cycling context (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L78_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A cycling helmet law may disproportionately deter the groups who benefit most from cycling.",
             "options": [
-                "Lower-income cyclists and casual bike share users are most deterred by helmet requirements.",
-                "The population health benefits of increased cycling outweigh the individual injury risk reduction from helmets.",
                 "Head injuries from cycling accidents, though uncommon, are often severe and justify precautionary legislation.",
-                "Helmet laws are most effective when combined with high-quality infrastructure and safety education."
+                "Helmet laws are most effective when combined with high-quality infrastructure and safety education.",
+                "Lower-income cyclists and casual bike share users are most deterred by helmet requirements.",
+                "The population health benefits of increased cycling outweigh the individual injury risk reduction from helmets."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider whether helmet laws harm cycling levels disproportionately (Pros for concern) and the counter-arguments (Cons).",
             "explanation": "Compulsory helmets most deter lower-income and casual cyclists, reducing broader public health gains from cycling (Pros), but severe head injuries justify legislation, which works best alongside infrastructure and education (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L78_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Voluntary helmet promotion campaigns are more effective than legal compulsion for cyclists.",
             "options": [
                 "Education campaigns and subsidised helmets can increase voluntary helmet wearing without deterring cycling.",
-                "Positive promotion making helmets desirable is more sustainable than coercive legislative requirements.",
                 "Voluntary approaches have historically failed to achieve the widespread helmet wearing needed to reduce injuries.",
-                "Only legal requirements produce the consistent, population-wide helmet use necessary for meaningful safety."
+                "Only legal requirements produce the consistent, population-wide helmet use necessary for meaningful safety.",
+                "Positive promotion making helmets desirable is more sustainable than coercive legislative requirements."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about voluntary versus compulsory helmet approaches (Pros for voluntary) and the evidence (Cons).",
             "explanation": "Education and subsidies increase helmet use without deterring cycling (Pros for voluntary), but historical evidence shows voluntary campaigns fail to achieve adequate wearing rates, and only legal requirements deliver consistent population-wide safety (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L79_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "All employers should be legally required to provide paid parental leave to all staff.",
             "options": [
-                "Mandatory paid leave ensures that having children does not cause serious financial hardship.",
-                "Paid parental leave improves child development outcomes during the critical early months of life.",
                 "Mandatory employer-funded leave imposes significant costs on small businesses with limited resources.",
-                "State-funded rather than employer-funded parental leave creates more equitable outcomes across all employment types."
+                "State-funded rather than employer-funded parental leave creates more equitable outcomes across all employment types.",
+                "Mandatory paid leave ensures that having children does not cause serious financial hardship.",
+                "Paid parental leave improves child development outcomes during the critical early months of life."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the family welfare case for mandatory parental leave (Pros) and the business cost and equity concerns (Cons).",
             "explanation": "Mandatory paid leave removes financial barriers to parenthood and supports early child development (Pros), but small businesses face real cost burdens, and state funding may deliver more equitable outcomes (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L79_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Equal parental leave entitlements for all parents regardless of gender advances workplace equality.",
             "options": [
                 "Shared leave entitlements challenge the assumption that career sacrifice is primarily a women's issue.",
-                "When fathers take substantial leave, employers cannot discriminate against women as inherently higher-risk.",
                 "Gendered uptake patterns persist even when equal leave is available due to persistent wage differentials.",
-                "The gender pay gap means shared leave costs families more when mothers take it, compounding inequality."
+                "The gender pay gap means shared leave costs families more when mothers take it, compounding inequality.",
+                "When fathers take substantial leave, employers cannot discriminate against women as inherently higher-risk."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider the gender equality arguments for shared parental leave (Pros) and the structural barriers to equal uptake (Cons).",
             "explanation": "Equal leave entitlements challenge gender assumptions in both hiring and domestic care (Pros), but wage gaps ensure most leave is still taken by mothers in practice, and financial reality makes genuine sharing irrational for many families (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L79_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Paid parental leave generates significant long-term economic returns for society.",
             "options": [
-                "Higher workforce participation by returning parents increases overall economic productivity.",
-                "Improved child development through early parental bonding reduces long-term social and healthcare costs.",
                 "Short-term costs of covering for absent employees create real operational challenges for businesses.",
-                "Economic returns on parental leave depend heavily on the quality of leave and the speed of workforce return."
+                "Higher workforce participation by returning parents increases overall economic productivity.",
+                "Economic returns on parental leave depend heavily on the quality of leave and the speed of workforce return.",
+                "Improved child development through early parental bonding reduces long-term social and healthcare costs."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the long-term economic case for paid parental leave (Pros) and the short-term and return conditions (Cons).",
             "explanation": "Parental leave improves workforce productivity and reduces long-term social costs through better child outcomes (Pros), but replacement costs are a real burden, and the economic return depends critically on leave structure and reintegration quality (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L80_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Working hours should be subject to a legal maximum of 40 hours per week.",
             "options": [
-                "A legal hours cap protects employees from exploitative long-hours workplace cultures.",
-                "Limiting hours reduces the serious health risks of chronic overwork, including burnout and heart disease.",
                 "Many professional and managerial roles cannot be effectively completed within a strict 40-hour limit.",
-                "Senior employees with professional autonomy value the right to manage their own working hours."
+                "A legal hours cap protects employees from exploitative long-hours workplace cultures.",
+                "Senior employees with professional autonomy value the right to manage their own working hours.",
+                "Limiting hours reduces the serious health risks of chronic overwork, including burnout and heart disease."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the health protection case for a working hours cap (Pros) and the professional autonomy concerns (Cons).",
             "explanation": "Hours caps protect workers from overwork health risks and exploitative cultures (Pros), but many professional roles require variable hours, and high-autonomy workers value and expect to manage their own schedules (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L80_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Capping working hours improves employee productivity and significantly reduces costly errors.",
             "options": [
                 "Chronically overworked employees make more mistakes, have higher accident rates, and are less innovative.",
-                "Properly rested and focused employees consistently outperform their exhausted counterparts.",
                 "For knowledge workers, quality of thinking matters more than the number of hours spent working.",
+                "Properly rested and focused employees consistently outperform their exhausted counterparts.",
                 "Output measurement rather than input hours is the more appropriate way to manage professional performance."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider whether hours caps genuinely improve productivity (Pros) and whether hours are the right metric (Cons).",
             "explanation": "Limiting hours reduces costly errors and improves innovation in well-rested workers (Pros), but for knowledge professionals output quality matters more than hours, and results-based performance management is more appropriate than time input restrictions (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L80_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Legal working hour limits protect employees with less workplace power from exploitation.",
             "options": [
+                "Hour limits reduce flexibility for businesses managing unpredictable demand and seasonal peaks.",
                 "Hour caps protect lower-paid workers who cannot refuse excessive demands without risking their jobs.",
                 "Legal limits create a fairer playing field between workers with and without employment alternatives.",
-                "Hour limits reduce flexibility for businesses managing unpredictable demand and seasonal peaks.",
                 "Overtime pay requirements already provide a market-based incentive to limit excessive working hours."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about hours caps as protection for vulnerable workers (Pros) and the existing mechanisms and flexibility concerns (Cons).",
             "explanation": "Hours caps protect lower-power workers from coerced overwork and reduce power imbalances (Pros), but business flexibility needs are real, and overtime requirements already create financial disincentives for demanding excessive hours (Cons)."

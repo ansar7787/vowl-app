@@ -2,20 +2,20 @@
     "levels": "61-70",
     "quests": [
         {
-            "word": "CANDOR",
+            "word": "INTEGRITY",
             "interactionType": "Detective Lens",
             "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L61_Q1",
-            "sentence": "The CEO addressed the layoffs with surprising [TARGET], explaining every detail to the staff.",
-            "hint": "This word names the quality of speaking honestly and openly.",
+            "sentence": "Even when no one was watching, the accountant reported the error immediately - a clear sign of his [TARGET].",
+            "hint": "This word names doing the right thing even when it would be easy not to.",
             "options": [
-                "Secrecy",
-                "OPENNESS",
-                "Deception",
-                "Evasiveness"
+                "Honesty",
+                "Dishonesty",
+                "Deceit",
+                "Corruption"
             ],
-            "explanation": "Explaining every detail openly to staff shows the quality of speaking honestly, so [TARGET] means OPENNESS.",
-            "correctAnswer": "OPENNESS"
+            "explanation": "Reporting the error immediately with no one watching shows doing the right thing even when it would be easy not to, so [TARGET] means HONESTY.",
+            "correctAnswer": "Honesty"
         },
         {
             "word": "AVERSION",
@@ -28,10 +28,10 @@
                 "Affection",
                 "Fondness",
                 "Attraction",
-                "DISLIKE"
+                "Dislike"
             ],
             "explanation": "Wanting to avoid seafood after getting sick shows a strong feeling against it, so [TARGET] means DISLIKE.",
-            "correctAnswer": "DISLIKE"
+            "correctAnswer": "Dislike"
         },
         {
             "word": "DEFERENCE",
@@ -39,15 +39,15 @@
             "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L61_Q3",
             "sentence": "The young intern showed great [TARGET] toward the senior engineer's decades of experience.",
-            "hint": "This word names showing respect for someone's authority or experience.",
+            "hint": "This word describes yielding to someone else's greater experience or authority.",
             "options": [
                 "Contempt",
                 "Defiance",
                 "Disrespect",
-                "RESPECT"
+                "Respect"
             ],
             "explanation": "Showing high regard for decades of experience is showing respect, so [TARGET] means RESPECT.",
-            "correctAnswer": "RESPECT"
+            "correctAnswer": "Respect"
         },
         {
             "word": "CYNICAL",
@@ -60,10 +60,10 @@
                 "Idealistic",
                 "Trusting",
                 "Optimistic",
-                "DISTRUSTFUL"
+                "Distrustful"
             ],
             "explanation": "Distrusting any 'amazing deal' after being scammed shows assuming the worst, so [TARGET] means DISTRUSTFUL.",
-            "correctAnswer": "DISTRUSTFUL"
+            "correctAnswer": "Distrustful"
         },
         {
             "word": "AMBIVALENT",
@@ -76,10 +76,10 @@
                 "Certain",
                 "Decisive",
                 "Resolved",
-                "UNDECIDED"
+                "Undecided"
             ],
             "explanation": "Feeling excited and worried at the same time about one decision shows having opposite feelings, so [TARGET] means UNDECIDED.",
-            "correctAnswer": "UNDECIDED"
+            "correctAnswer": "Undecided"
         },
         {
             "word": "EGREGIOUS",
@@ -91,11 +91,11 @@
             "options": [
                 "Negligible",
                 "Minor",
-                "OUTRAGEOUS",
+                "Outrageous",
                 "Trivial"
             ],
             "explanation": "Billing one million instead of one thousand is a mistake shocking enough to stand out, so [TARGET] means OUTRAGEOUS.",
-            "correctAnswer": "OUTRAGEOUS"
+            "correctAnswer": "Outrageous"
         },
         {
             "word": "FORTUITOUS",
@@ -106,12 +106,12 @@
             "hint": "This word describes a happy accident, not planned at all.",
             "options": [
                 "Disastrous",
-                "LUCKY",
+                "Lucky",
                 "Unfortunate",
                 "Unlucky"
             ],
             "explanation": "Finding a lost ring right before throwing out the trash is a happy, unplanned accident, so [TARGET] means LUCKY.",
-            "correctAnswer": "LUCKY"
+            "correctAnswer": "Lucky"
         },
         {
             "word": "IMPERVIOUS",
@@ -121,13 +121,13 @@
             "sentence": "After years in customer service, he seemed [TARGET] to even the rudest complaints.",
             "hint": "This word describes not being bothered by something that would bother most people.",
             "options": [
-                "UNAFFECTED",
+                "Unaffected",
                 "Sensitive",
                 "Susceptible",
                 "Vulnerable"
             ],
             "explanation": "Not being bothered by even the rudest complaints shows being unaffected, so [TARGET] means UNAFFECTED.",
-            "correctAnswer": "UNAFFECTED"
+            "correctAnswer": "Unaffected"
         },
         {
             "word": "JUDICIOUS",
@@ -139,11 +139,11 @@
             "options": [
                 "Foolish",
                 "Reckless",
-                "SENSIBLE",
+                "Sensible",
                 "Rash"
             ],
             "explanation": "Waiting one more quarter before a big move shows a careful, well-reasoned choice, so [TARGET] means SENSIBLE.",
-            "correctAnswer": "SENSIBLE"
+            "correctAnswer": "Sensible"
         },
         {
             "word": "LUCID",
@@ -153,13 +153,13 @@
             "sentence": "Despite the fever, the patient remained [TARGET] and answered every question correctly.",
             "hint": "This word describes thinking clearly even under difficult conditions.",
             "options": [
-                "CLEAR-MINDED",
+                "Clear-minded",
                 "Disoriented",
                 "Delirious",
                 "Confused"
             ],
             "explanation": "Answering every question correctly despite a fever shows thinking clearly, so [TARGET] means CLEAR-MINDED.",
-            "correctAnswer": "CLEAR-MINDED"
+            "correctAnswer": "Clear-minded"
         },
         {
             "word": "NONCHALANT",
@@ -169,13 +169,13 @@
             "sentence": "He stayed surprisingly [TARGET] about missing his flight, simply shrugging and booking another.",
             "hint": "This word describes acting unbothered, almost too relaxed.",
             "options": [
-                "CASUAL",
+                "Casual",
                 "Worried",
                 "Anxious",
                 "Frantic"
             ],
             "explanation": "Simply shrugging and booking another flight shows acting unbothered, so [TARGET] means CASUAL.",
-            "correctAnswer": "CASUAL"
+            "correctAnswer": "Casual"
         },
         {
             "word": "PERNICIOUS",
@@ -186,12 +186,12 @@
             "hint": "This word describes harm that spreads slowly and is hard to notice at first.",
             "options": [
                 "Beneficial",
-                "DESTRUCTIVE",
+                "Destructive",
                 "Helpful",
                 "Harmless"
             ],
             "explanation": "Effects that don't appear for years but still cause harm describe slow, hidden damage, so [TARGET] means DESTRUCTIVE.",
-            "correctAnswer": "DESTRUCTIVE"
+            "correctAnswer": "Destructive"
         },
         {
             "word": "QUIXOTIC",
@@ -202,12 +202,12 @@
             "hint": "This word describes an idealistic plan that ignores practical limits.",
             "options": [
                 "Practical",
-                "UNREALISTIC",
+                "Unrealistic",
                 "Realistic",
                 "Sensible"
             ],
             "explanation": "Impressing friends while worrying a bank manager shows an idealistic plan ignoring practical limits, so [TARGET] means UNREALISTIC.",
-            "correctAnswer": "UNREALISTIC"
+            "correctAnswer": "Unrealistic"
         },
         {
             "word": "RESOLUTE",
@@ -215,15 +215,15 @@
             "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L65_Q2",
             "sentence": "Despite three rejections, she remained [TARGET] in her decision to start the business.",
-            "hint": "This word describes staying firmly committed to a decision.",
+            "hint": "This word describes someone who won't be shaken from their decision, no matter the setbacks.",
             "options": [
                 "Uncertain",
-                "FIRM",
+                "Firm",
                 "Hesitant",
                 "Wavering"
             ],
             "explanation": "Staying committed after three rejections shows being firmly committed, so [TARGET] means FIRM.",
-            "correctAnswer": "FIRM"
+            "correctAnswer": "Firm"
         },
         {
             "word": "STOIC",
@@ -234,12 +234,12 @@
             "hint": "This word describes hiding pain or emotion without complaint.",
             "options": [
                 "Dramatic",
-                "UNEMOTIONAL",
+                "Unemotional",
                 "Expressive",
                 "Emotional"
             ],
             "explanation": "Not showing a single wince during painful treatment shows hiding emotion without complaint, so [TARGET] means UNEMOTIONAL.",
-            "correctAnswer": "UNEMOTIONAL"
+            "correctAnswer": "Unemotional"
         },
         {
             "word": "TENUOUS",
@@ -250,12 +250,12 @@
             "hint": "This word describes a relationship or argument that is easily broken.",
             "options": [
                 "Solid",
-                "WEAK",
+                "Weak",
                 "Firm",
                 "Strong"
             ],
             "explanation": "Breaking down after just one late shipment shows a connection that was easily broken, so [TARGET] means WEAK.",
-            "correctAnswer": "WEAK"
+            "correctAnswer": "Weak"
         },
         {
             "word": "UNPRECEDENTED",
@@ -267,11 +267,11 @@
             "options": [
                 "Routine",
                 "Typical",
-                "UNHEARD-OF",
+                "Unheard-of",
                 "Common"
             ],
             "explanation": "Doubling users in a single month had never happened before, so [TARGET] means UNHEARD-OF.",
-            "correctAnswer": "UNHEARD-OF"
+            "correctAnswer": "Unheard-of"
         },
         {
             "word": "VIVACIOUS",
@@ -282,12 +282,12 @@
             "hint": "This word describes someone full of energy and spirit.",
             "options": [
                 "Lifeless",
-                "LIVELY",
+                "Lively",
                 "Subdued",
                 "Dull"
             ],
             "explanation": "Keeping an audience laughing and energized throughout the show shows being full of energy, so [TARGET] means LIVELY.",
-            "correctAnswer": "LIVELY"
+            "correctAnswer": "Lively"
         },
         {
             "word": "WISTFUL",
@@ -298,12 +298,12 @@
             "hint": "This word describes a gentle sadness when remembering the past.",
             "options": [
                 "Detached",
-                "NOSTALGIC",
-                "Indifferent",
+                "Nostalgic",
+                "Aloof",
                 "Unconcerned"
             ],
             "explanation": "Remembering a childhood farm while looking at old photos shows gentle sadness about the past, so [TARGET] means NOSTALGIC.",
-            "correctAnswer": "NOSTALGIC"
+            "correctAnswer": "Nostalgic"
         },
         {
             "word": "ZEALOUS",
@@ -314,12 +314,12 @@
             "hint": "This word describes intense enthusiasm for a cause.",
             "options": [
                 "Apathetic",
-                "PASSIONATE",
+                "Passionate",
                 "Lukewarm",
                 "Indifferent"
             ],
             "explanation": "Spending every weekend organizing events shows intense enthusiasm for the cause, so [TARGET] means PASSIONATE.",
-            "correctAnswer": "PASSIONATE"
+            "correctAnswer": "Passionate"
         },
         {
             "word": "INSOLENT",
@@ -332,10 +332,10 @@
                 "Courteous",
                 "Respectful",
                 "Polite",
-                "DISRESPECTFUL"
+                "Disrespectful"
             ],
             "explanation": "Being sent to the principal for remarks made in class shows rude behavior toward authority, so [TARGET] means DISRESPECTFUL.",
-            "correctAnswer": "DISRESPECTFUL"
+            "correctAnswer": "Disrespectful"
         },
         {
             "word": "PLACID",
@@ -343,15 +343,15 @@
             "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L68_Q1",
             "sentence": "The [TARGET] surface of the mountain lake reflected the sky like a mirror.",
-            "hint": "This word describes a calm, undisturbed scene.",
+            "hint": "This word describes a scene so still and peaceful that nothing seems to disturb it.",
             "options": [
                 "Agitated",
-                "CALM",
+                "Calm",
                 "Turbulent",
                 "Stormy"
             ],
             "explanation": "Reflecting the sky like a mirror shows a calm, undisturbed scene, so [TARGET] means CALM.",
-            "correctAnswer": "CALM"
+            "correctAnswer": "Calm"
         },
         {
             "word": "VEXING",
@@ -363,11 +363,11 @@
             "options": [
                 "Delightful",
                 "Pleasing",
-                "ANNOYING",
+                "Annoying",
                 "Satisfying"
             ],
             "explanation": "Driving the whole office crazy with a jamming habit shows ongoing irritation, so [TARGET] means ANNOYING.",
-            "correctAnswer": "ANNOYING"
+            "correctAnswer": "Annoying"
         },
         {
             "word": "INCESSANT",
@@ -377,29 +377,29 @@
             "sentence": "The [TARGET] barking from the neighbor's dog kept the whole street awake.",
             "hint": "This word describes something that never stops, going on and on.",
             "options": [
-                "CONSTANT",
+                "Constant",
                 "Intermittent",
                 "Sporadic",
                 "Occasional"
             ],
             "explanation": "Keeping the whole street awake shows the barking never stopped, so [TARGET] means CONSTANT.",
-            "correctAnswer": "CONSTANT"
+            "correctAnswer": "Constant"
         },
         {
             "word": "PRECARIOUS",
             "interactionType": "Detective Lens",
             "instruction": "Select the word that best completes the sentence.",
             "id": "VOC_CONTEXTCLUES_L69_Q1",
-            "sentence": "After the merger, many employees found themselves in a [TARGET] position, unsure if their jobs were safe.",
+            "sentence": "After the merger, many employees found themselves in an [TARGET] position, unsure if their jobs were safe.",
             "hint": "This word describes a situation that could collapse at any moment.",
             "options": [
                 "Secure",
                 "Stable",
                 "Steady",
-                "UNSTABLE"
+                "Unstable"
             ],
             "explanation": "Being unsure if their jobs were safe shows a situation that could collapse at any moment, so [TARGET] means UNSTABLE.",
-            "correctAnswer": "UNSTABLE"
+            "correctAnswer": "Unstable"
         },
         {
             "word": "INSATIABLE",
@@ -410,12 +410,12 @@
             "hint": "This word describes a desire that can never fully be satisfied.",
             "options": [
                 "Content",
-                "UNSATISFIABLE",
+                "Unsatisfiable",
                 "Fulfilled",
                 "Satisfied"
             ],
             "explanation": "Finishing huge meals and still wanting snacks shows a desire that can never be satisfied, so [TARGET] means UNSATISFIABLE.",
-            "correctAnswer": "UNSATISFIABLE"
+            "correctAnswer": "Unsatisfiable"
         },
         {
             "word": "MERCURIAL",
@@ -425,13 +425,13 @@
             "sentence": "The chef's [TARGET] moods meant the kitchen staff never knew if he'd be calm or shouting.",
             "hint": "This word describes moods that change suddenly and without warning.",
             "options": [
-                "UNPREDICTABLE",
+                "Unpredictable",
                 "Consistent",
                 "Predictable",
-                "Steady"
+                "Balanced"
             ],
             "explanation": "Never knowing if he'd be calm or shouting shows moods that change suddenly, so [TARGET] means UNPREDICTABLE.",
-            "correctAnswer": "UNPREDICTABLE"
+            "correctAnswer": "Unpredictable"
         },
         {
             "word": "INDOMITABLE",
@@ -442,12 +442,12 @@
             "hint": "This word describes a spirit that simply cannot be defeated.",
             "options": [
                 "Submissive",
-                "UNSTOPPABLE",
+                "Unstoppable",
                 "Yielding",
                 "Defeated"
             ],
             "explanation": "Continuing to train after two surgeries shows a spirit that cannot be defeated, so [TARGET] means UNSTOPPABLE.",
-            "correctAnswer": "UNSTOPPABLE"
+            "correctAnswer": "Unstoppable"
         },
         {
             "word": "CONDESCENDING",
@@ -459,11 +459,11 @@
             "options": [
                 "Respectful",
                 "Humble",
-                "PATRONIZING",
+                "Patronizing",
                 "Gracious"
             ],
             "explanation": "Explaining basic math to a senior engineer treats them as less capable, so [TARGET] means PATRONIZING.",
-            "correctAnswer": "PATRONIZING"
+            "correctAnswer": "Patronizing"
         },
         {
             "word": "INNOCUOUS",
@@ -473,13 +473,13 @@
             "sentence": "The doctor reassured her that the small skin spot was completely [TARGET].",
             "hint": "This word describes something that seems concerning but causes no real harm.",
             "options": [
-                "HARMLESS",
+                "Harmless",
                 "Toxic",
                 "Dangerous",
                 "Harmful"
             ],
             "explanation": "Reassuring her there was nothing to worry about shows it causes no real harm, so [TARGET] means HARMLESS.",
-            "correctAnswer": "HARMLESS"
+            "correctAnswer": "Harmless"
         }
     ],
     "gameType": "contextClues",

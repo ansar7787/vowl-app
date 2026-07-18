@@ -5,256 +5,256 @@
     "quests": [
         {
             "id": "pitchPatternMatch_451",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say she stole it - someone else did.",
-            "textToSpeak": "I didn't say she stole it - someone else did.",
+            "word": "In his free time, he plays the guitar, the piano, and the drums.",
+            "textToSpeak": "In his free time, he plays the guitar, the piano, and the drums.",
             "options": [
-                "Emphasis on SAY (Correcting How It Was Communicated)",
-                "Emphasis on SHE (Correcting WHO Did It)"
+                "Rising on each item, falling on the last (a list)",
+                "One smooth fall across the whole sentence (not a list)"
             ],
-            "correctAnswer": "Emphasis on SHE (Correcting WHO Did It)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rising on each item, falling on the last (a list)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
+                2,
                 3,
-                1,
+                2,
+                3,
                 1
             ],
-            "hint": "The follow-up clause 'someone else did' tells you the correction is about identity, not wording. Listen for the pitch to peak on 'she'.",
-            "explanation": "Since the correction is about who is responsible, the nuclear stress falls on the embedded subject 'she', not on 'say'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence names several items in a row — each one before the last typically lifts in pitch, and only the final item falls.",
+            "explanation": "Because this sentence lists several separate items, each one before the last rises slightly, and only the final item falls — the classic list pattern.",
+            "emphasisRule": "In a list of items, each item before the last is typically spoken with a slight rise, while the final item falls to close the list."
         },
         {
             "id": "pitchPatternMatch_452",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say she stole it - she borrowed it.",
-            "textToSpeak": "I didn't say she stole it - she borrowed it.",
+            "word": "For breakfast this morning, I had eggs, toast, and coffee.",
+            "textToSpeak": "For breakfast this morning, I had eggs, toast, and coffee.",
             "options": [
-                "Emphasis on SAY (Correcting How It Was Communicated)",
-                "Emphasis on STOLE (Correcting the Action)"
+                "One smooth fall across the whole sentence (not a list)",
+                "Rising on each item, falling on the last (a list)"
             ],
-            "correctAnswer": "Emphasis on STOLE (Correcting the Action)",
+            "correctAnswer": "Rising on each item, falling on the last (a list)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
+                2,
+                3,
+                2,
                 3,
                 1
             ],
-            "hint": "The follow-up clause 'she borrowed it' tells you the correction is about the action, not the wording. Listen for the pitch to peak on 'stole'.",
-            "explanation": "Since the correction is about what action happened, the nuclear stress falls on the embedded verb 'stole', not on 'say'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Try reading each item separately — notice how your voice rises on the earlier ones and drops only at the very end.",
+            "explanation": "This is an enumerated list, so the pitch rises on each item except the last, which falls to signal the list is complete.",
+            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion."
         },
         {
             "id": "pitchPatternMatch_453",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say she stole it - I just thought it.",
-            "textToSpeak": "I didn't say she stole it - I just thought it.",
+            "word": "The downtown clinic treats children, adults, and seniors.",
+            "textToSpeak": "The downtown clinic treats children, adults, and seniors.",
             "options": [
-                "Emphasis on SHE (Correcting WHO Did It)",
-                "Emphasis on SAY (Correcting How It Was Communicated)"
+                "Rising on each item, falling on the last (a list)",
+                "One smooth fall across the whole sentence (not a list)"
             ],
-            "correctAnswer": "Emphasis on SAY (Correcting How It Was Communicated)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rising on each item, falling on the last (a list)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
+                2,
                 3,
-                1,
-                1,
+                2,
+                3,
                 1
             ],
-            "hint": "'I just thought it' tells you the correction is about the mode of communication, not who did it. Listen for the pitch to peak on 'say'.",
-            "explanation": "Since the correction is about whether it was said aloud versus merely thought, the nuclear stress falls on 'say' itself.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Lists in English usually bounce up on each item except the last, which settles down to close the list.",
+            "explanation": "A series of items like this is read with small rises on every item but the final one, which falls.",
+            "emphasisRule": "In a list of items, each item before the last is typically spoken with a slight rise, while the final item falls to close the list."
         },
         {
             "id": "pitchPatternMatch_454",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the manager approved it - the director did.",
-            "textToSpeak": "I didn't say the manager approved it - the director did.",
+            "word": "Over the summer, the hotel renovated the entire lobby.",
+            "textToSpeak": "Over the summer, the hotel renovated the entire lobby.",
             "options": [
-                "Emphasis on SAY (Correcting How It Was Communicated)",
-                "Emphasis on MANAGER (Correcting WHO Did It)"
+                "Rising on each item, falling on the last (a list)",
+                "One smooth fall across the whole sentence (not a list)"
             ],
-            "correctAnswer": "Emphasis on MANAGER (Correcting WHO Did It)",
+            "correctAnswer": "One smooth fall across the whole sentence (not a list)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                3,
                 1,
+                3,
                 1
             ],
-            "hint": "The follow-up clause 'the director did' tells you the correction is about identity. Listen for the pitch to peak on 'manager'.",
-            "explanation": "Since the correction is about who approved it, the nuclear stress falls on the embedded subject 'manager', not on 'say'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Nothing here is being counted off one by one, so the pitch should move smoothly downward, not bounce between items.",
+            "explanation": "This is a plain statement, not a series, so the intonation moves smoothly downward rather than lifting between separate items.",
+            "emphasisRule": "Only genuine enumerated lists use the rising-then-falling pattern; ordinary statements simply fall once, at the end."
         },
         {
             "id": "pitchPatternMatch_455",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say he broke the vase - he cracked it.",
-            "textToSpeak": "I didn't say he broke the vase - he cracked it.",
+            "word": "The bag includes a passport, tickets, and a boarding pass.",
+            "textToSpeak": "The bag includes a passport, tickets, and a boarding pass.",
             "options": [
-                "Emphasis on BROKE (Correcting the Action)",
-                "Emphasis on SAY (Correcting How It Was Communicated)"
+                "Rising on each item, falling on the last (a list)",
+                "One smooth fall across the whole sentence (not a list)"
             ],
-            "correctAnswer": "Emphasis on BROKE (Correcting the Action)",
+            "correctAnswer": "Rising on each item, falling on the last (a list)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
+                2,
+                3,
+                2,
                 3,
                 1
             ],
-            "hint": "The follow-up clause 'he cracked it' tells you the correction is about the action. Listen for the pitch to peak on 'broke'.",
-            "explanation": "Since the correction is about what exactly happened to the vase, the nuclear stress falls on the embedded verb 'broke', not on 'say'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This isn't one single idea; it's a series of items, and series are read with a rise-rise-fall pattern.",
+            "explanation": "Because this sentence lists several separate items, each one before the last rises slightly, and only the final item falls — the classic list pattern.",
+            "emphasisRule": "In a list of items, each item before the last is typically spoken with a slight rise, while the final item falls to close the list."
         },
         {
             "id": "pitchPatternMatch_456",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the deal fell through - I only suspected it.",
-            "textToSpeak": "I didn't say the deal fell through - I only suspected it.",
+            "word": "This year, the garden grows tomatoes, peppers, and basil.",
+            "textToSpeak": "This year, the garden grows tomatoes, peppers, and basil.",
             "options": [
-                "Emphasis on DEAL (Correcting WHO Did It)",
-                "Emphasis on SAY (Correcting How It Was Communicated)"
+                "One smooth fall across the whole sentence (not a list)",
+                "Rising on each item, falling on the last (a list)"
             ],
-            "correctAnswer": "Emphasis on SAY (Correcting How It Was Communicated)",
+            "correctAnswer": "Rising on each item, falling on the last (a list)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
+                2,
                 3,
-                1,
-                1,
+                2,
+                3,
                 1
             ],
-            "hint": "'I only suspected it' tells you the correction is about the mode of communication, not the content. Listen for the pitch to peak on 'say'.",
-            "explanation": "Since the correction is about how the information was conveyed - said versus merely suspected - the nuclear stress falls on 'say' itself.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence names several items in a row — each one before the last typically lifts in pitch, and only the final item falls.",
+            "explanation": "This is an enumerated list, so the pitch rises on each item except the last, which falls to signal the list is complete.",
+            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion."
         },
         {
             "id": "pitchPatternMatch_457",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say my brother broke it - my cousin did.",
-            "textToSpeak": "I didn't say my brother broke it - my cousin did.",
+            "word": "After the shelter closed, my cousin adopted a senior cat.",
+            "textToSpeak": "After the shelter closed, my cousin adopted a senior cat.",
             "options": [
-                "Emphasis on BROTHER (Correcting WHO Did It)",
-                "Emphasis on SAY (Correcting How It Was Communicated)"
+                "One smooth fall across the whole sentence (not a list)",
+                "Rising on each item, falling on the last (a list)"
             ],
-            "correctAnswer": "Emphasis on BROTHER (Correcting WHO Did It)",
+            "correctAnswer": "One smooth fall across the whole sentence (not a list)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                3,
                 1,
+                3,
                 1
             ],
-            "hint": "The follow-up clause 'my cousin did' tells you the correction is about identity. Listen for the pitch to peak on 'brother'.",
-            "explanation": "Since the correction is about who broke it, the nuclear stress falls on the embedded subject 'brother', not on 'say'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "There's no list here, just one connected idea, so expect a single smooth drop in pitch, not repeated little rises.",
+            "explanation": "There's only one point being made here, so the sentence takes one steady fall, unlike a list, which would rise between items.",
+            "emphasisRule": "A sentence describing a single idea, not a series of items, takes one smooth falling contour rather than a list's rise-rise-fall pattern."
         },
         {
             "id": "pitchPatternMatch_458",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the team lost the game - they tied it.",
-            "textToSpeak": "I didn't say the team lost the game - they tied it.",
+            "word": "The repair kit includes a hammer, a wrench, and pliers.",
+            "textToSpeak": "The repair kit includes a hammer, a wrench, and pliers.",
             "options": [
-                "Emphasis on LOST (Correcting the Action)",
-                "Emphasis on SAY (Correcting How It Was Communicated)"
+                "One smooth fall across the whole sentence (not a list)",
+                "Rising on each item, falling on the last (a list)"
             ],
-            "correctAnswer": "Emphasis on LOST (Correcting the Action)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising on each item, falling on the last (a list)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
+                2,
+                3,
+                2,
                 3,
                 1
             ],
-            "hint": "The follow-up clause 'they tied it' tells you the correction is about the outcome. Listen for the pitch to peak on 'lost'.",
-            "explanation": "Since the correction is about what actually happened in the game, the nuclear stress falls on the embedded verb 'lost', not on 'say'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Lists in English usually bounce up on each item except the last, which settles down to close the list.",
+            "explanation": "The list pattern applies here: rising pitch on each item keeps the list open, and the final falling pitch closes it.",
+            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion."
         },
         {
             "id": "pitchPatternMatch_459",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the medicine failed - I merely wondered about it.",
-            "textToSpeak": "I didn't say the medicine failed - I merely wondered about it.",
+            "word": "For the party, we need milk, eggs, and butter from the store.",
+            "textToSpeak": "For the party, we need milk, eggs, and butter from the store.",
             "options": [
-                "Emphasis on SAY (Correcting How It Was Communicated)",
-                "Emphasis on MEDICINE (Correcting WHO Did It)"
+                "Rising on each item, falling on the last (a list)",
+                "One smooth fall across the whole sentence (not a list)"
             ],
-            "correctAnswer": "Emphasis on SAY (Correcting How It Was Communicated)",
+            "correctAnswer": "Rising on each item, falling on the last (a list)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
+                2,
                 3,
-                1,
-                1,
+                2,
+                3,
                 1
             ],
-            "hint": "'I merely wondered about it' tells you the correction is about the mode of communication. Listen for the pitch to peak on 'say'.",
-            "explanation": "Since the correction is about whether it was said versus merely wondered, the nuclear stress falls on 'say' itself.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Count how many things are being listed here — all but the final one usually rise slightly before the pitch finally falls.",
+            "explanation": "Because this sentence lists several separate items, each one before the last rises slightly, and only the final item falls — the classic list pattern.",
+            "emphasisRule": "In a list of items, each item before the last is typically spoken with a slight rise, while the final item falls to close the list."
         },
         {
             "id": "pitchPatternMatch_460",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the teacher graded it - the assistant did.",
-            "textToSpeak": "I didn't say the teacher graded it - the assistant did.",
+            "word": "Our itinerary this spring covers Rome, Florence, and Venice.",
+            "textToSpeak": "Our itinerary this spring covers Rome, Florence, and Venice.",
             "options": [
-                "Emphasis on TEACHER (Correcting WHO Did It)",
-                "Emphasis on SAY (Correcting How It Was Communicated)"
+                "One smooth fall across the whole sentence (not a list)",
+                "Rising on each item, falling on the last (a list)"
             ],
-            "correctAnswer": "Emphasis on TEACHER (Correcting WHO Did It)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising on each item, falling on the last (a list)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
+                2,
                 3,
-                1,
+                2,
+                3,
                 1
             ],
-            "hint": "The follow-up clause 'the assistant did' tells you the correction is about identity. Listen for the pitch to peak on 'teacher'.",
-            "explanation": "Since the correction is about who graded it, the nuclear stress falls on the embedded subject 'teacher', not on 'say'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This isn't one single idea; it's a series of items, and series are read with a rise-rise-fall pattern.",
+            "explanation": "This is an enumerated list, so the pitch rises on each item except the last, which falls to signal the list is complete.",
+            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion."
         },
         {
             "id": "pitchPatternMatch_461",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the company fired him - he resigned.",
-            "textToSpeak": "I didn't say the company fired him - he resigned.",
+            "word": "After a long delay, the band recorded their new single.",
+            "textToSpeak": "After a long delay, the band recorded their new single.",
             "options": [
-                "Emphasis on FIRED (Correcting the Action)",
-                "Emphasis on SAY (Correcting How It Was Communicated)"
+                "One smooth fall across the whole sentence (not a list)",
+                "Rising on each item, falling on the last (a list)"
             ],
-            "correctAnswer": "Emphasis on FIRED (Correcting the Action)",
+            "correctAnswer": "One smooth fall across the whole sentence (not a list)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -263,287 +263,287 @@
                 3,
                 1
             ],
-            "hint": "The follow-up clause 'he resigned' tells you the correction is about the action. Listen for the pitch to peak on 'fired'.",
-            "explanation": "Since the correction is about what actually ended his employment, the nuclear stress falls on the embedded verb 'fired', not on 'say'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Look closely — this sentence isn't actually listing separate items, so it should flow as one smooth fall, not a rise-rise-fall.",
+            "explanation": "There's only one point being made here, so the sentence takes one steady fall, unlike a list, which would rise between items.",
+            "emphasisRule": "A sentence describing a single idea, not a series of items, takes one smooth falling contour rather than a list's rise-rise-fall pattern."
         },
         {
             "id": "pitchPatternMatch_462",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the trip was cancelled - I simply assumed it.",
-            "textToSpeak": "I didn't say the trip was cancelled - I simply assumed it.",
+            "word": "After several complaints, my brother finally fixed the leaky faucet.",
+            "textToSpeak": "After several complaints, my brother finally fixed the leaky faucet.",
             "options": [
-                "Emphasis on SAY (Correcting How It Was Communicated)",
-                "Emphasis on TRIP (Correcting WHO Did It)"
+                "Rising on each item, falling on the last (a list)",
+                "One smooth fall across the whole sentence (not a list)"
             ],
-            "correctAnswer": "Emphasis on SAY (Correcting How It Was Communicated)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "One smooth fall across the whole sentence (not a list)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'I simply assumed it' tells you the correction is about the mode of communication. Listen for the pitch to peak on 'say'.",
-            "explanation": "Since the correction is about whether it was said versus merely assumed, the nuclear stress falls on 'say' itself.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "There's no list here, just one connected idea, so expect a single smooth drop in pitch, not repeated little rises.",
+            "explanation": "This is a plain statement, not a series, so the intonation moves smoothly downward rather than lifting between separate items.",
+            "emphasisRule": "Only genuine enumerated lists use the rising-then-falling pattern; ordinary statements simply fall once, at the end."
         },
         {
             "id": "pitchPatternMatch_463",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the chef burned it - the new cook did.",
-            "textToSpeak": "I didn't say the chef burned it - the new cook did.",
+            "word": "Because of renovations, our teacher rescheduled the final exam.",
+            "textToSpeak": "Because of renovations, our teacher rescheduled the final exam.",
             "options": [
-                "Emphasis on CHEF (Correcting WHO Did It)",
-                "Emphasis on SAY (Correcting How It Was Communicated)"
+                "One smooth fall across the whole sentence (not a list)",
+                "Rising on each item, falling on the last (a list)"
             ],
-            "correctAnswer": "Emphasis on CHEF (Correcting WHO Did It)",
+            "correctAnswer": "One smooth fall across the whole sentence (not a list)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                3,
                 1,
+                3,
                 1
             ],
-            "hint": "The follow-up clause 'the new cook did' tells you the correction is about identity. Listen for the pitch to peak on 'chef'.",
-            "explanation": "Since the correction is about who burned it, the nuclear stress falls on the embedded subject 'chef', not on 'say'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Don't mistake this for an enumerated list — it's a plain statement with one steady fall at the end.",
+            "explanation": "This sentence describes one single idea, not a list of separate items, so it takes a single smooth falling contour instead of rise-rise-fall.",
+            "emphasisRule": "A sentence describing a single idea, not a series of items, takes one smooth falling contour rather than a list's rise-rise-fall pattern."
         },
         {
             "id": "pitchPatternMatch_464",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the doctor cured the illness - he managed it.",
-            "textToSpeak": "I didn't say the doctor cured the illness - he managed it.",
+            "word": "For winter, the hallway closet has coats, scarves, and gloves.",
+            "textToSpeak": "For winter, the hallway closet has coats, scarves, and gloves.",
             "options": [
-                "Emphasis on CURED (Correcting the Action)",
-                "Emphasis on SAY (Correcting How It Was Communicated)"
+                "One smooth fall across the whole sentence (not a list)",
+                "Rising on each item, falling on the last (a list)"
             ],
-            "correctAnswer": "Emphasis on CURED (Correcting the Action)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising on each item, falling on the last (a list)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
+                2,
+                3,
+                2,
                 3,
                 1
             ],
-            "hint": "The follow-up clause 'he managed it' tells you the correction is about the action. Listen for the pitch to peak on 'cured'.",
-            "explanation": "Since the correction is about what exactly the treatment achieved, the nuclear stress falls on the embedded verb 'cured', not on 'say'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Count how many things are being listed here — all but the final one usually rise slightly before the pitch finally falls.",
+            "explanation": "This is an enumerated list, so the pitch rises on each item except the last, which falls to signal the list is complete.",
+            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion."
         },
         {
             "id": "pitchPatternMatch_465",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the project was late - I only worried about it.",
-            "textToSpeak": "I didn't say the project was late - I only worried about it.",
+            "word": "Last month, the team recruited a designer, a developer, and a tester.",
+            "textToSpeak": "Last month, the team recruited a designer, a developer, and a tester.",
             "options": [
-                "Emphasis on PROJECT (Correcting WHO Did It)",
-                "Emphasis on SAY (Correcting How It Was Communicated)"
+                "Rising on each item, falling on the last (a list)",
+                "One smooth fall across the whole sentence (not a list)"
             ],
-            "correctAnswer": "Emphasis on SAY (Correcting How It Was Communicated)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rising on each item, falling on the last (a list)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
+                2,
                 3,
-                1,
-                1,
+                2,
+                3,
                 1
             ],
-            "hint": "'I only worried about it' tells you the correction is about the mode of communication. Listen for the pitch to peak on 'say'.",
-            "explanation": "Since the correction is about whether it was said versus merely worried about, the nuclear stress falls on 'say' itself.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This isn't one single idea; it's a series of items, and series are read with a rise-rise-fall pattern.",
+            "explanation": "A series of items like this is read with small rises on every item but the final one, which falls.",
+            "emphasisRule": "In a list of items, each item before the last is typically spoken with a slight rise, while the final item falls to close the list."
         },
         {
             "id": "pitchPatternMatch_466",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the mechanic fixed it - the technician did.",
-            "textToSpeak": "I didn't say the mechanic fixed it - the technician did.",
+            "word": "The intake form asks for your name, address, and phone number.",
+            "textToSpeak": "The intake form asks for your name, address, and phone number.",
             "options": [
-                "Emphasis on MECHANIC (Correcting WHO Did It)",
-                "Emphasis on SAY (Correcting How It Was Communicated)"
+                "One smooth fall across the whole sentence (not a list)",
+                "Rising on each item, falling on the last (a list)"
             ],
-            "correctAnswer": "Emphasis on MECHANIC (Correcting WHO Did It)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising on each item, falling on the last (a list)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
+                2,
                 3,
-                1,
+                2,
+                3,
                 1
             ],
-            "hint": "The follow-up clause 'the technician did' tells you the correction is about identity. Listen for the pitch to peak on 'mechanic'.",
-            "explanation": "Since the correction is about who fixed it, the nuclear stress falls on the embedded subject 'mechanic', not on 'say'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence names several items in a row — each one before the last typically lifts in pitch, and only the final item falls.",
+            "explanation": "The list pattern applies here: rising pitch on each item keeps the list open, and the final falling pitch closes it.",
+            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion."
         },
         {
             "id": "pitchPatternMatch_467",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the printer broke - it just jammed.",
-            "textToSpeak": "I didn't say the printer broke - it just jammed.",
+            "word": "At this zoo, you can see lions, giraffes, and penguins.",
+            "textToSpeak": "At this zoo, you can see lions, giraffes, and penguins.",
             "options": [
-                "Emphasis on BROKE (Correcting the Action)",
-                "Emphasis on SAY (Correcting How It Was Communicated)"
+                "Rising on each item, falling on the last (a list)",
+                "One smooth fall across the whole sentence (not a list)"
             ],
-            "correctAnswer": "Emphasis on BROKE (Correcting the Action)",
+            "correctAnswer": "Rising on each item, falling on the last (a list)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
+                2,
+                3,
+                2,
                 3,
                 1
             ],
-            "hint": "The follow-up clause 'it just jammed' tells you the correction is about the severity of the problem. Listen for the pitch to peak on 'broke'.",
-            "explanation": "Since the correction is about what actually went wrong with the printer, the nuclear stress falls on the embedded verb 'broke', not on 'say'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Try reading each item separately — notice how your voice rises on the earlier ones and drops only at the very end.",
+            "explanation": "Because this sentence lists several separate items, each one before the last rises slightly, and only the final item falls — the classic list pattern.",
+            "emphasisRule": "In a list of items, each item before the last is typically spoken with a slight rise, while the final item falls to close the list."
         },
         {
             "id": "pitchPatternMatch_468",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the cake was ruined - I privately feared it.",
-            "textToSpeak": "I didn't say the cake was ruined - I privately feared it.",
+            "word": "The new gym offers yoga, spinning, and pilates classes.",
+            "textToSpeak": "The new gym offers yoga, spinning, and pilates classes.",
             "options": [
-                "Emphasis on CAKE (Correcting WHO Did It)",
-                "Emphasis on SAY (Correcting How It Was Communicated)"
+                "One smooth fall across the whole sentence (not a list)",
+                "Rising on each item, falling on the last (a list)"
             ],
-            "correctAnswer": "Emphasis on SAY (Correcting How It Was Communicated)",
+            "correctAnswer": "Rising on each item, falling on the last (a list)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
+                2,
                 3,
-                1,
-                1,
+                2,
+                3,
                 1
             ],
-            "hint": "'I privately feared it' tells you the correction is about the mode of communication. Listen for the pitch to peak on 'say'.",
-            "explanation": "Since the correction is about whether it was said versus merely feared privately, the nuclear stress falls on 'say' itself.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Lists in English usually bounce up on each item except the last, which settles down to close the list.",
+            "explanation": "This is an enumerated list, so the pitch rises on each item except the last, which falls to signal the list is complete.",
+            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion."
         },
         {
             "id": "pitchPatternMatch_469",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the nurse lost it - the orderly did.",
-            "textToSpeak": "I didn't say the nurse lost it - the orderly did.",
+            "word": "Due to the storm, the airline canceled the connecting flight.",
+            "textToSpeak": "Due to the storm, the airline canceled the connecting flight.",
             "options": [
-                "Emphasis on NURSE (Correcting WHO Did It)",
-                "Emphasis on SAY (Correcting How It Was Communicated)"
+                "One smooth fall across the whole sentence (not a list)",
+                "Rising on each item, falling on the last (a list)"
             ],
-            "correctAnswer": "Emphasis on NURSE (Correcting WHO Did It)",
+            "correctAnswer": "One smooth fall across the whole sentence (not a list)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                3,
                 1,
+                3,
                 1
             ],
-            "hint": "The follow-up clause 'the orderly did' tells you the correction is about identity. Listen for the pitch to peak on 'nurse'.",
-            "explanation": "Since the correction is about who lost it, the nuclear stress falls on the embedded subject 'nurse', not on 'say'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Nothing here is being counted off one by one, so the pitch should move smoothly downward, not bounce between items.",
+            "explanation": "There's only one point being made here, so the sentence takes one steady fall, unlike a list, which would rise between items.",
+            "emphasisRule": "A sentence describing a single idea, not a series of items, takes one smooth falling contour rather than a list's rise-rise-fall pattern."
         },
         {
             "id": "pitchPatternMatch_470",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the student failed the test - she passed it narrowly.",
-            "textToSpeak": "I didn't say the student failed the test - she passed it narrowly.",
+            "word": "This weekend's workshop covers budgeting, saving, and investing.",
+            "textToSpeak": "This weekend's workshop covers budgeting, saving, and investing.",
             "options": [
-                "Emphasis on SAY (Correcting How It Was Communicated)",
-                "Emphasis on FAILED (Correcting the Action)"
+                "One smooth fall across the whole sentence (not a list)",
+                "Rising on each item, falling on the last (a list)"
             ],
-            "correctAnswer": "Emphasis on FAILED (Correcting the Action)",
+            "correctAnswer": "Rising on each item, falling on the last (a list)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
+                2,
+                3,
+                2,
                 3,
                 1
             ],
-            "hint": "The follow-up clause 'she passed it narrowly' tells you the correction is about the outcome. Listen for the pitch to peak on 'failed'.",
-            "explanation": "Since the correction is about what actually happened with the test result, the nuclear stress falls on the embedded verb 'failed', not on 'say'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This isn't one single idea; it's a series of items, and series are read with a rise-rise-fall pattern.",
+            "explanation": "The list pattern applies here: rising pitch on each item keeps the list open, and the final falling pitch closes it.",
+            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion."
         },
         {
             "id": "pitchPatternMatch_471",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the test was hard - I quietly believed it.",
-            "textToSpeak": "I didn't say the test was hard - I quietly believed it.",
+            "word": "After months of searching, the clinic hired a new pediatrician.",
+            "textToSpeak": "After months of searching, the clinic hired a new pediatrician.",
             "options": [
-                "Emphasis on SAY (Correcting How It Was Communicated)",
-                "Emphasis on TEST (Correcting WHO Did It)"
+                "One smooth fall across the whole sentence (not a list)",
+                "Rising on each item, falling on the last (a list)"
             ],
-            "correctAnswer": "Emphasis on SAY (Correcting How It Was Communicated)",
+            "correctAnswer": "One smooth fall across the whole sentence (not a list)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'I quietly believed it' tells you the correction is about the mode of communication. Listen for the pitch to peak on 'say'.",
-            "explanation": "Since the correction is about whether it was said versus merely believed quietly, the nuclear stress falls on 'say' itself.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Look closely — this sentence isn't actually listing separate items, so it should flow as one smooth fall, not a rise-rise-fall.",
+            "explanation": "This sentence describes one single idea, not a list of separate items, so it takes a single smooth falling contour instead of rise-rise-fall.",
+            "emphasisRule": "A sentence describing a single idea, not a series of items, takes one smooth falling contour rather than a list's rise-rise-fall pattern."
         },
         {
             "id": "pitchPatternMatch_472",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the pilot delayed it - air traffic control did.",
-            "textToSpeak": "I didn't say the pilot delayed it - air traffic control did.",
+            "word": "This semester, the course covers grammar, vocabulary, and pronunciation.",
+            "textToSpeak": "This semester, the course covers grammar, vocabulary, and pronunciation.",
             "options": [
-                "Emphasis on SAY (Correcting How It Was Communicated)",
-                "Emphasis on PILOT (Correcting WHO Did It)"
+                "One smooth fall across the whole sentence (not a list)",
+                "Rising on each item, falling on the last (a list)"
             ],
-            "correctAnswer": "Emphasis on PILOT (Correcting WHO Did It)",
+            "correctAnswer": "Rising on each item, falling on the last (a list)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
+                2,
                 3,
-                1,
+                2,
+                3,
                 1
             ],
-            "hint": "The follow-up clause 'air traffic control did' tells you the correction is about identity. Listen for the pitch to peak on 'pilot'.",
-            "explanation": "Since the correction is about who caused the delay, the nuclear stress falls on the embedded subject 'pilot', not on 'say'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Try reading each item separately — notice how your voice rises on the earlier ones and drops only at the very end.",
+            "explanation": "This is an enumerated list, so the pitch rises on each item except the last, which falls to signal the list is complete.",
+            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion."
         },
         {
             "id": "pitchPatternMatch_473",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the storm destroyed the roof - it damaged it.",
-            "textToSpeak": "I didn't say the storm destroyed the roof - it damaged it.",
+            "word": "Earlier this month, the store extended its holiday hours.",
+            "textToSpeak": "Earlier this month, the store extended its holiday hours.",
             "options": [
-                "Emphasis on SAY (Correcting How It Was Communicated)",
-                "Emphasis on DESTROYED (Correcting the Action)"
+                "One smooth fall across the whole sentence (not a list)",
+                "Rising on each item, falling on the last (a list)"
             ],
-            "correctAnswer": "Emphasis on DESTROYED (Correcting the Action)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "One smooth fall across the whole sentence (not a list)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -551,177 +551,177 @@
                 3,
                 1
             ],
-            "hint": "The follow-up clause 'it damaged it' tells you the correction is about the severity of the action. Listen for the pitch to peak on 'destroyed'.",
-            "explanation": "Since the correction is about the extent of what happened, the nuclear stress falls on the embedded verb 'destroyed', not on 'say'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Don't mistake this for an enumerated list — it's a plain statement with one steady fall at the end.",
+            "explanation": "There's only one point being made here, so the sentence takes one steady fall, unlike a list, which would rise between items.",
+            "emphasisRule": "A sentence describing a single idea, not a series of items, takes one smooth falling contour rather than a list's rise-rise-fall pattern."
         },
         {
             "id": "pitchPatternMatch_474",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the engine was broken - I only guessed it.",
-            "textToSpeak": "I didn't say the engine was broken - I only guessed it.",
+            "word": "Today's lunch menu offers soup, salad, or a sandwich.",
+            "textToSpeak": "Today's lunch menu offers soup, salad, or a sandwich.",
             "options": [
-                "Emphasis on ENGINE (Correcting WHO Did It)",
-                "Emphasis on SAY (Correcting How It Was Communicated)"
+                "One smooth fall across the whole sentence (not a list)",
+                "Rising on each item, falling on the last (a list)"
             ],
-            "correctAnswer": "Emphasis on SAY (Correcting How It Was Communicated)",
+            "correctAnswer": "Rising on each item, falling on the last (a list)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
+                2,
                 3,
-                1,
-                1,
+                2,
+                3,
                 1
             ],
-            "hint": "'I only guessed it' tells you the correction is about the mode of communication. Listen for the pitch to peak on 'say'.",
-            "explanation": "Since the correction is about whether it was said versus merely guessed, the nuclear stress falls on 'say' itself.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Count how many things are being listed here — all but the final one usually rise slightly before the pitch finally falls.",
+            "explanation": "The list pattern applies here: rising pitch on each item keeps the list open, and the final falling pitch closes it.",
+            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion."
         },
         {
             "id": "pitchPatternMatch_475",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the intern sent it - the manager did.",
-            "textToSpeak": "I didn't say the intern sent it - the manager did.",
+            "word": "For the fall season, the chef introduced a seasonal menu.",
+            "textToSpeak": "For the fall season, the chef introduced a seasonal menu.",
             "options": [
-                "Emphasis on INTERN (Correcting WHO Did It)",
-                "Emphasis on SAY (Correcting How It Was Communicated)"
+                "One smooth fall across the whole sentence (not a list)",
+                "Rising on each item, falling on the last (a list)"
             ],
-            "correctAnswer": "Emphasis on INTERN (Correcting WHO Did It)",
+            "correctAnswer": "One smooth fall across the whole sentence (not a list)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                3,
                 1,
+                3,
                 1
             ],
-            "hint": "The follow-up clause 'the manager did' tells you the correction is about identity. Listen for the pitch to peak on 'intern'.",
-            "explanation": "Since the correction is about who sent it, the nuclear stress falls on the embedded subject 'intern', not on 'say'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence describes a single action, not a series — so it takes one smooth falling contour, start to finish.",
+            "explanation": "This sentence describes one single idea, not a list of separate items, so it takes a single smooth falling contour instead of rise-rise-fall.",
+            "emphasisRule": "A sentence describing a single idea, not a series of items, takes one smooth falling contour rather than a list's rise-rise-fall pattern."
         },
         {
             "id": "pitchPatternMatch_476",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the chef ruined the dish - he just changed it.",
-            "textToSpeak": "I didn't say the chef ruined the dish - he just changed it.",
+            "word": "For the trip, we packed sunscreen, towels, and snacks for the beach.",
+            "textToSpeak": "For the trip, we packed sunscreen, towels, and snacks for the beach.",
             "options": [
-                "Emphasis on RUINED (Correcting the Action)",
-                "Emphasis on SAY (Correcting How It Was Communicated)"
+                "One smooth fall across the whole sentence (not a list)",
+                "Rising on each item, falling on the last (a list)"
             ],
-            "correctAnswer": "Emphasis on RUINED (Correcting the Action)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising on each item, falling on the last (a list)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
+                2,
+                3,
+                2,
                 3,
                 1
             ],
-            "hint": "The follow-up clause 'he just changed it' tells you the correction is about the action. Listen for the pitch to peak on 'ruined'.",
-            "explanation": "Since the correction is about what exactly happened to the dish, the nuclear stress falls on the embedded verb 'ruined', not on 'say'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence names several items in a row — each one before the last typically lifts in pitch, and only the final item falls.",
+            "explanation": "This is an enumerated list, so the pitch rises on each item except the last, which falls to signal the list is complete.",
+            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion."
         },
         {
             "id": "pitchPatternMatch_477",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the show was cancelled - I merely heard a rumor.",
-            "textToSpeak": "I didn't say the show was cancelled - I merely heard a rumor.",
+            "word": "The updated app now supports English, Spanish, and French.",
+            "textToSpeak": "The updated app now supports English, Spanish, and French.",
             "options": [
-                "Emphasis on SHOW (Correcting WHO Did It)",
-                "Emphasis on SAY (Correcting How It Was Communicated)"
+                "Rising on each item, falling on the last (a list)",
+                "One smooth fall across the whole sentence (not a list)"
             ],
-            "correctAnswer": "Emphasis on SAY (Correcting How It Was Communicated)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rising on each item, falling on the last (a list)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
+                2,
                 3,
-                1,
-                1,
+                2,
+                3,
                 1
             ],
-            "hint": "'I merely heard a rumor' tells you the correction is about the mode of communication. Listen for the pitch to peak on 'say'.",
-            "explanation": "Since the correction is about whether it was said versus merely heard as a rumor, the nuclear stress falls on 'say' itself.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Try reading each item separately — notice how your voice rises on the earlier ones and drops only at the very end.",
+            "explanation": "A series of items like this is read with small rises on every item but the final one, which falls.",
+            "emphasisRule": "In a list of items, each item before the last is typically spoken with a slight rise, while the final item falls to close the list."
         },
         {
             "id": "pitchPatternMatch_478",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the dog ate it - the cat did.",
-            "textToSpeak": "I didn't say the dog ate it - the cat did.",
+            "word": "This month, the shared playlist has jazz, blues, and soul.",
+            "textToSpeak": "This month, the shared playlist has jazz, blues, and soul.",
             "options": [
-                "Emphasis on SAY (Correcting How It Was Communicated)",
-                "Emphasis on DOG (Correcting WHO Did It)"
+                "One smooth fall across the whole sentence (not a list)",
+                "Rising on each item, falling on the last (a list)"
             ],
-            "correctAnswer": "Emphasis on DOG (Correcting WHO Did It)",
+            "correctAnswer": "Rising on each item, falling on the last (a list)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
+                2,
                 3,
-                1,
+                2,
+                3,
                 1
             ],
-            "hint": "The follow-up clause 'the cat did' tells you the correction is about identity. Listen for the pitch to peak on 'dog'.",
-            "explanation": "Since the correction is about which animal ate it, the nuclear stress falls on the embedded subject 'dog', not on 'say'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Lists in English usually bounce up on each item except the last, which settles down to close the list.",
+            "explanation": "The list pattern applies here: rising pitch on each item keeps the list open, and the final falling pitch closes it.",
+            "emphasisRule": "English lists follow a rise-rise-fall pattern: every item keeps the pitch up except the last, which drops to signal completion."
         },
         {
             "id": "pitchPatternMatch_479",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the airline cancelled the flight - they delayed it.",
-            "textToSpeak": "I didn't say the airline cancelled the flight - they delayed it.",
+            "word": "This term, she is studying biology, chemistry, and physics.",
+            "textToSpeak": "This term, she is studying biology, chemistry, and physics.",
             "options": [
-                "Emphasis on SAY (Correcting How It Was Communicated)",
-                "Emphasis on CANCELLED (Correcting the Action)"
+                "Rising on each item, falling on the last (a list)",
+                "One smooth fall across the whole sentence (not a list)"
             ],
-            "correctAnswer": "Emphasis on CANCELLED (Correcting the Action)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Rising on each item, falling on the last (a list)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
+                2,
+                3,
+                2,
                 3,
                 1
             ],
-            "hint": "The follow-up clause 'they delayed it' tells you the correction is about the action. Listen for the pitch to peak on 'cancelled'.",
-            "explanation": "Since the correction is about what actually happened to the flight, the nuclear stress falls on the embedded verb 'cancelled', not on 'say'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Count how many things are being listed here — all but the final one usually rise slightly before the pitch finally falls.",
+            "explanation": "Because this sentence lists several separate items, each one before the last rises slightly, and only the final item falls — the classic list pattern.",
+            "emphasisRule": "In a list of items, each item before the last is typically spoken with a slight rise, while the final item falls to close the list."
         },
         {
             "id": "pitchPatternMatch_480",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the pitch pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I didn't say the patient was worse - I only noted it privately.",
-            "textToSpeak": "I didn't say the patient was worse - I only noted it privately.",
+            "word": "After two years of development, the company launched its mobile app.",
+            "textToSpeak": "After two years of development, the company launched its mobile app.",
             "options": [
-                "Emphasis on PATIENT (Correcting WHO Did It)",
-                "Emphasis on SAY (Correcting How It Was Communicated)"
+                "Rising on each item, falling on the last (a list)",
+                "One smooth fall across the whole sentence (not a list)"
             ],
-            "correctAnswer": "Emphasis on SAY (Correcting How It Was Communicated)",
+            "correctAnswer": "One smooth fall across the whole sentence (not a list)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'I only noted it privately' tells you the correction is about the mode of communication. Listen for the pitch to peak on 'say'.",
-            "explanation": "Since the correction is about whether it was said versus merely noted privately, the nuclear stress falls on 'say' itself.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence describes a single action, not a series — so it takes one smooth falling contour, start to finish.",
+            "explanation": "Since nothing here is being enumerated, the pitch falls smoothly across the whole sentence rather than bouncing between items.",
+            "emphasisRule": "Only genuine enumerated lists use the rising-then-falling pattern; ordinary statements simply fall once, at the end."
         }
     ]
 }

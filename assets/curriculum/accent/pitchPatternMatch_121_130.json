@@ -8,14 +8,14 @@
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Get this: the cake fell off the table.",
-            "textToSpeak": "Get this: the cake fell off the table.",
+            "word": "Guess what happened: the whole kitchen flooded overnight.",
+            "textToSpeak": "Guess what happened: the whole kitchen flooded overnight.",
             "options": [
-                "Narrow Focus on TABLE Only",
-                "Broad Focus (the Whole Event is News)"
+                "Broad Focus (the Whole Sentence is News)",
+                "Narrow Focus on KITCHEN Only"
             ],
-            "correctAnswer": "Broad Focus (the Whole Event is News)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 2,
@@ -23,22 +23,22 @@
                 2,
                 1
             ],
-            "hint": "'Get this' introduces a whole surprising event, not just one detail. Listen for moderate prominence spread across several words, not one sharp peak.",
-            "explanation": "The entire event - the cake falling - is new information, so prominence spreads broadly across the predicate rather than peaking sharply on just one word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Nothing here was already known — the entire sentence is fresh news, so no single word should jump out above the rest.",
+            "explanation": "Nothing in this sentence was already known, so the whole clause counts as news — the stress spreads out instead of sharpening on one word.",
+            "emphasisRule": "When an entire event is being reported as news for the first time, prominence spreads across the whole sentence instead of narrowing onto one word."
         },
         {
             "id": "pitchPatternMatch_362",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Only one thing is different: the bus arrived early.",
-            "textToSpeak": "Only one thing is different: the bus arrived early.",
+            "word": "Something triggered the alarm - turns out it was a false sensor.",
+            "textToSpeak": "Something triggered the alarm - turns out it was a false sensor.",
             "options": [
-                "Broad Focus (the Whole Event is News)",
-                "Narrow Focus on EARLY Only"
+                "Broad Focus (the Whole Sentence is News)",
+                "Narrow Focus on SENSOR Only"
             ],
-            "correctAnswer": "Narrow Focus on EARLY Only",
+            "correctAnswer": "Narrow Focus on SENSOR Only",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -47,23 +47,23 @@
                 3,
                 1
             ],
-            "hint": "'Only one thing is different' tells you just a single detail is new. Listen for one sharp pitch peak, on 'early'.",
-            "explanation": "'Only one thing is different' signals that just 'early' is new information, so the nuclear stress sharply peaks there alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Most of this idea was already established by the first clause — only the final detail is genuinely new.",
+            "explanation": "Everything except SENSOR was already implied by the first clause, which is why the pitch peak narrows onto just SENSOR.",
+            "emphasisRule": "Narrow focus applies when a sentence answers a specific who or what about an already-known event — only that answer is stressed."
         },
         {
             "id": "pitchPatternMatch_363",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "You should know what happened: the printer caught fire.",
-            "textToSpeak": "You should know what happened: the printer caught fire.",
+            "word": "Guess what: I adopted a rescue dog this weekend.",
+            "textToSpeak": "Guess what: I adopted a rescue dog this weekend.",
             "options": [
-                "Narrow Focus on FIRE Only",
-                "Broad Focus (the Whole Event is News)"
+                "Broad Focus (the Whole Sentence is News)",
+                "Narrow Focus on DOG Only"
             ],
-            "correctAnswer": "Broad Focus (the Whole Event is News)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 2,
@@ -71,142 +71,142 @@
                 2,
                 1
             ],
-            "hint": "The whole alarming event is news here, not one isolated word. Listen for moderate prominence spread across the sentence.",
-            "explanation": "Since the whole event - the printer catching fire - is new, prominence spreads across the predicate rather than peaking on a single word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Since everything in this sentence is new to the listener, the stress spreads across the sentence instead of sharpening on one word.",
+            "explanation": "Since there's no already-given information to contrast against, the whole sentence carries roughly equal weight — that's broad focus.",
+            "emphasisRule": "When an entire event is being reported as news for the first time, prominence spreads across the whole sentence instead of narrowing onto one word."
         },
         {
             "id": "pitchPatternMatch_364",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Just to clarify, the meeting starts at three.",
-            "textToSpeak": "Just to clarify, the meeting starts at three.",
+            "word": "Here's some news: my sister just got engaged.",
+            "textToSpeak": "Here's some news: my sister just got engaged.",
             "options": [
-                "Narrow Focus on THREE Only",
-                "Broad Focus (the Whole Event is News)"
+                "Narrow Focus on SISTER Only",
+                "Broad Focus (the Whole Sentence is News)"
             ],
-            "correctAnswer": "Narrow Focus on THREE Only",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 1,
-                1,
-                3,
+                2,
                 1
             ],
-            "hint": "'Just to clarify' signals only one specific detail needs confirming. Listen for one sharp pitch peak, on 'three'.",
-            "explanation": "'Just to clarify' signals that only the time 'three' is the new, confirmed detail, so the nuclear stress peaks sharply there alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "There's no known 'given' part here to contrast against — the whole clause counts as the news.",
+            "explanation": "The opener signals a fresh announcement, not an answer to a narrow question, so focus stays broad across the whole clause.",
+            "emphasisRule": "Broad focus applies when nothing in the sentence is already known — the whole clause is treated as new information."
         },
         {
             "id": "pitchPatternMatch_365",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Here's the big news: the company is moving offices.",
-            "textToSpeak": "Here's the big news: the company is moving offices.",
+            "word": "Someone requested the room change - turns out it was the coach.",
+            "textToSpeak": "Someone requested the room change - turns out it was the coach.",
             "options": [
-                "Narrow Focus on OFFICES Only",
-                "Broad Focus (the Whole Event is News)"
+                "Narrow Focus on COACH Only",
+                "Broad Focus (the Whole Sentence is News)"
             ],
-            "correctAnswer": "Broad Focus (the Whole Event is News)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Focus on COACH Only",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                2,
                 1,
-                2,
+                1,
+                3,
                 1
             ],
-            "hint": "'Here's the big news' introduces a whole new situation, not one isolated fact. Listen for prominence spread across several words.",
-            "explanation": "The entire move is presented as news, so prominence spreads broadly across the predicate instead of peaking on one word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence answers one narrow question (who or what, specifically) — the answer word gets a single strong peak.",
+            "explanation": "The setup already establishes the event, leaving only COACH as new information — so the stress narrows sharply onto COACH alone.",
+            "emphasisRule": "When most of a sentence is already established and only one element is new, the stress narrows sharply onto that single word."
         },
         {
             "id": "pitchPatternMatch_366",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The only change is that the price increased slightly.",
-            "textToSpeak": "The only change is that the price increased slightly.",
+            "word": "You'll never guess: a major app update just launched.",
+            "textToSpeak": "You'll never guess: a major app update just launched.",
             "options": [
-                "Narrow Focus on SLIGHTLY Only",
-                "Broad Focus (the Whole Event is News)"
+                "Narrow Focus on UPDATE Only",
+                "Broad Focus (the Whole Sentence is News)"
             ],
-            "correctAnswer": "Narrow Focus on SLIGHTLY Only",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 1,
-                1,
-                3,
+                2,
                 1
             ],
-            "hint": "'The only change' signals just one specific detail is new. Listen for one sharp pitch peak, on 'slightly'.",
-            "explanation": "'The only change' signals that just the degree, 'slightly', is the new detail, so the nuclear stress peaks sharply there alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Nothing here was already known — the entire sentence is fresh news, so no single word should jump out above the rest.",
+            "explanation": "This announces an entirely new event, so prominence is distributed across the sentence rather than narrowed onto a single word.",
+            "emphasisRule": "Broad focus applies when nothing in the sentence is already known — the whole clause is treated as new information."
         },
         {
             "id": "pitchPatternMatch_367",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Listen to this: the flight got rerouted entirely.",
-            "textToSpeak": "Listen to this: the flight got rerouted entirely.",
+            "word": "Something caused the delay - turns out it was a software glitch.",
+            "textToSpeak": "Something caused the delay - turns out it was a software glitch.",
             "options": [
-                "Narrow Focus on ENTIRELY Only",
-                "Broad Focus (the Whole Event is News)"
+                "Narrow Focus on GLITCH Only",
+                "Broad Focus (the Whole Sentence is News)"
             ],
-            "correctAnswer": "Broad Focus (the Whole Event is News)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Focus on GLITCH Only",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                2,
                 1,
-                2,
+                1,
+                3,
                 1
             ],
-            "hint": "'Listen to this' introduces a whole surprising development, not one isolated word. Listen for prominence spread across the sentence.",
-            "explanation": "Since the whole rerouting situation is new, prominence spreads across the predicate rather than peaking sharply on a single word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Most of this idea was already established by the first clause — only the final detail is genuinely new.",
+            "explanation": "Since the event itself is already known, only GLITCH — the answer to who or what, specifically — carries the narrow stress.",
+            "emphasisRule": "When most of a sentence is already established and only one element is new, the stress narrows sharply onto that single word."
         },
         {
             "id": "pitchPatternMatch_368",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Just to confirm, the package weighs two kilograms.",
-            "textToSpeak": "Just to confirm, the package weighs two kilograms.",
+            "word": "Big news: the power went out across the entire city.",
+            "textToSpeak": "Big news: the power went out across the entire city.",
             "options": [
-                "Narrow Focus on TWO Only",
-                "Broad Focus (the Whole Event is News)"
+                "Narrow Focus on POWER Only",
+                "Broad Focus (the Whole Sentence is News)"
             ],
-            "correctAnswer": "Narrow Focus on TWO Only",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 1,
-                1,
-                3,
+                2,
                 1
             ],
-            "hint": "'Just to confirm' signals only one specific number needs verifying. Listen for one sharp pitch peak, on 'two'.",
-            "explanation": "'Just to confirm' signals that only the quantity, 'two', is the detail being verified, so the nuclear stress peaks sharply there alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Since everything in this sentence is new to the listener, the stress spreads across the sentence instead of sharpening on one word.",
+            "explanation": "The opener signals a fresh announcement, not an answer to a narrow question, so focus stays broad across the whole clause.",
+            "emphasisRule": "Broad focus applies when nothing in the sentence is already known — the whole clause is treated as new information."
         },
         {
             "id": "pitchPatternMatch_369",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Something unexpected happened: the power went out citywide.",
-            "textToSpeak": "Something unexpected happened: the power went out citywide.",
+            "word": "You won't believe it: a pipe burst at the clinic this morning.",
+            "textToSpeak": "You won't believe it: a pipe burst at the clinic this morning.",
             "options": [
-                "Broad Focus (the Whole Event is News)",
-                "Narrow Focus on CITYWIDE Only"
+                "Broad Focus (the Whole Sentence is News)",
+                "Narrow Focus on PIPE Only"
             ],
-            "correctAnswer": "Broad Focus (the Whole Event is News)",
+            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -215,215 +215,215 @@
                 2,
                 1
             ],
-            "hint": "'Something unexpected happened' introduces a whole new event, not one isolated detail. Listen for prominence spread broadly.",
-            "explanation": "The entire power outage is new information, so prominence spreads across the predicate rather than peaking on just one word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "There's no known 'given' part here to contrast against — the whole clause counts as the news.",
+            "explanation": "Nothing in this sentence was already known, so the whole clause counts as news — the stress spreads out instead of sharpening on one word.",
+            "emphasisRule": "When an entire event is being reported as news for the first time, prominence spreads across the whole sentence instead of narrowing onto one word."
         },
         {
             "id": "pitchPatternMatch_370",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "One small detail changed: the room number is twelve.",
-            "textToSpeak": "One small detail changed: the room number is twelve.",
+            "word": "Guess what: the gym installed brand new equipment.",
+            "textToSpeak": "Guess what: the gym installed brand new equipment.",
             "options": [
-                "Broad Focus (the Whole Event is News)",
-                "Narrow Focus on TWELVE Only"
+                "Narrow Focus on GYM Only",
+                "Broad Focus (the Whole Sentence is News)"
             ],
-            "correctAnswer": "Narrow Focus on TWELVE Only",
+            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 1,
-                1,
-                3,
+                2,
                 1
             ],
-            "hint": "'One small detail changed' signals just one specific fact is new. Listen for one sharp pitch peak, on 'twelve'.",
-            "explanation": "'One small detail changed' signals that only the room number, 'twelve', is new, so the nuclear stress peaks sharply there alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Try reading this as one big announcement rather than a pointed correction — nothing here needs a single sharp peak.",
+            "explanation": "This announces an entirely new event, so prominence is distributed across the sentence rather than narrowed onto a single word.",
+            "emphasisRule": "Broad focus applies when nothing in the sentence is already known — the whole clause is treated as new information."
         },
         {
             "id": "pitchPatternMatch_371",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Get this: the puppy chewed through the couch.",
-            "textToSpeak": "Get this: the puppy chewed through the couch.",
+            "word": "Something jammed the printer - turns out it was a paperclip.",
+            "textToSpeak": "Something jammed the printer - turns out it was a paperclip.",
             "options": [
-                "Broad Focus (the Whole Event is News)",
-                "Narrow Focus on COUCH Only"
+                "Narrow Focus on PAPERCLIP Only",
+                "Broad Focus (the Whole Sentence is News)"
             ],
-            "correctAnswer": "Broad Focus (the Whole Event is News)",
+            "correctAnswer": "Narrow Focus on PAPERCLIP Only",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                2,
                 1,
-                2,
+                1,
+                3,
                 1
             ],
-            "hint": "'Get this' introduces a whole funny mishap, not one isolated word. Listen for prominence spread across several words.",
-            "explanation": "Since the whole incident with the puppy is new, prominence spreads across the predicate rather than peaking sharply on one word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Notice the setup already tells you what happened — only one detail is still missing. That word gets the sharp peak.",
+            "explanation": "Since the event itself is already known, only PAPERCLIP — the answer to who or what, specifically — carries the narrow stress.",
+            "emphasisRule": "When most of a sentence is already established and only one element is new, the stress narrows sharply onto that single word."
         },
         {
             "id": "pitchPatternMatch_372",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Just to clarify, the exam covers only chapter five.",
-            "textToSpeak": "Just to clarify, the exam covers only chapter five.",
+            "word": "You'll never guess: the server crashed during the live demo.",
+            "textToSpeak": "You'll never guess: the server crashed during the live demo.",
             "options": [
-                "Narrow Focus on FIVE Only",
-                "Broad Focus (the Whole Event is News)"
+                "Narrow Focus on SERVER Only",
+                "Broad Focus (the Whole Sentence is News)"
             ],
-            "correctAnswer": "Narrow Focus on FIVE Only",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 1,
-                1,
-                3,
+                2,
                 1
             ],
-            "hint": "'Just to clarify' signals only one specific number needs confirming. Listen for one sharp pitch peak, on 'five'.",
-            "explanation": "'Just to clarify' signals that only the chapter number, 'five', is the detail being confirmed, so the nuclear stress peaks sharply there alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is announcing a whole new event, not answering a specific question about one detail — expect fairly even prominence throughout.",
+            "explanation": "The opener signals a fresh announcement, not an answer to a narrow question, so focus stays broad across the whole clause.",
+            "emphasisRule": "Broad focus applies when nothing in the sentence is already known — the whole clause is treated as new information."
         },
         {
             "id": "pitchPatternMatch_373",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "You should know what happened: the server crashed overnight.",
-            "textToSpeak": "You should know what happened: the server crashed overnight.",
+            "word": "Someone won the office raffle - turns out it was the intern.",
+            "textToSpeak": "Someone won the office raffle - turns out it was the intern.",
             "options": [
-                "Broad Focus (the Whole Event is News)",
-                "Narrow Focus on OVERNIGHT Only"
+                "Narrow Focus on INTERN Only",
+                "Broad Focus (the Whole Sentence is News)"
             ],
-            "correctAnswer": "Broad Focus (the Whole Event is News)",
+            "correctAnswer": "Narrow Focus on INTERN Only",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                2,
                 1,
-                2,
+                1,
+                3,
                 1
             ],
-            "hint": "'You should know what happened' introduces a whole new problem, not one isolated word. Listen for prominence spread broadly.",
-            "explanation": "Since the entire server crash is news, prominence spreads across the predicate rather than peaking sharply on a single word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The event itself isn't news here; only the specific answer at the end is — that's where the pitch should sharpen.",
+            "explanation": "The setup already establishes the event, leaving only INTERN as new information — so the stress narrows sharply onto INTERN alone.",
+            "emphasisRule": "When most of a sentence is already established and only one element is new, the stress narrows sharply onto that single word."
         },
         {
             "id": "pitchPatternMatch_374",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The only update is that the flight is delayed thirty minutes.",
-            "textToSpeak": "The only update is that the flight is delayed thirty minutes.",
+            "word": "You won't believe this: our flight got upgraded to first class.",
+            "textToSpeak": "You won't believe this: our flight got upgraded to first class.",
             "options": [
-                "Narrow Focus on THIRTY Only",
-                "Broad Focus (the Whole Event is News)"
+                "Narrow Focus on FLIGHT Only",
+                "Broad Focus (the Whole Sentence is News)"
             ],
-            "correctAnswer": "Narrow Focus on THIRTY Only",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 1,
-                1,
-                3,
+                2,
                 1
             ],
-            "hint": "'The only update' signals just one specific number is new. Listen for one sharp pitch peak, on 'thirty'.",
-            "explanation": "'The only update' signals that only the delay length, 'thirty' minutes, is new, so the nuclear stress peaks sharply there alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "There's no known 'given' part here to contrast against — the whole clause counts as the news.",
+            "explanation": "This announces an entirely new event, so prominence is distributed across the sentence rather than narrowed onto a single word.",
+            "emphasisRule": "Broad focus applies when nothing in the sentence is already known — the whole clause is treated as new information."
         },
         {
             "id": "pitchPatternMatch_375",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Here's the big news: the concert got moved to a stadium.",
-            "textToSpeak": "Here's the big news: the concert got moved to a stadium.",
+            "word": "Something delayed the shipment - turns out it was customs.",
+            "textToSpeak": "Something delayed the shipment - turns out it was customs.",
             "options": [
-                "Narrow Focus on STADIUM Only",
-                "Broad Focus (the Whole Event is News)"
+                "Narrow Focus on CUSTOMS Only",
+                "Broad Focus (the Whole Sentence is News)"
             ],
-            "correctAnswer": "Broad Focus (the Whole Event is News)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Focus on CUSTOMS Only",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                2,
                 1,
-                2,
+                1,
+                3,
                 1
             ],
-            "hint": "'Here's the big news' introduces a whole new development, not one isolated detail. Listen for prominence spread across the sentence.",
-            "explanation": "The entire venue change is presented as news, so prominence spreads broadly across the predicate instead of peaking on one word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence answers one narrow question (who or what, specifically) — the answer word gets a single strong peak.",
+            "explanation": "Since the event itself is already known, only CUSTOMS — the answer to who or what, specifically — carries the narrow stress.",
+            "emphasisRule": "When most of a sentence is already established and only one element is new, the stress narrows sharply onto that single word."
         },
         {
             "id": "pitchPatternMatch_376",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Just to confirm, the dosage is two pills daily.",
-            "textToSpeak": "Just to confirm, the dosage is two pills daily.",
+            "word": "Here's what happened: our luggage got lost at the airport.",
+            "textToSpeak": "Here's what happened: our luggage got lost at the airport.",
             "options": [
-                "Broad Focus (the Whole Event is News)",
-                "Narrow Focus on TWO Only"
+                "Narrow Focus on LUGGAGE Only",
+                "Broad Focus (the Whole Sentence is News)"
             ],
-            "correctAnswer": "Narrow Focus on TWO Only",
+            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 1,
-                1,
-                3,
+                2,
                 1
             ],
-            "hint": "'Just to confirm' signals only one specific dosage detail needs verifying. Listen for one sharp pitch peak, on 'two'.",
-            "explanation": "'Just to confirm' signals that only the quantity, 'two' pills, is the detail being verified, so the nuclear stress peaks sharply there alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Nothing here was already known — the entire sentence is fresh news, so no single word should jump out above the rest.",
+            "explanation": "The opener signals a fresh announcement, not an answer to a narrow question, so focus stays broad across the whole clause.",
+            "emphasisRule": "Broad focus applies when nothing in the sentence is already known — the whole clause is treated as new information."
         },
         {
             "id": "pitchPatternMatch_377",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Listen to this: the test got cancelled completely.",
-            "textToSpeak": "Listen to this: the test got cancelled completely.",
+            "word": "Someone left the review online - turns out it was a regular customer.",
+            "textToSpeak": "Someone left the review online - turns out it was a regular customer.",
             "options": [
-                "Narrow Focus on COMPLETELY Only",
-                "Broad Focus (the Whole Event is News)"
+                "Narrow Focus on CUSTOMER Only",
+                "Broad Focus (the Whole Sentence is News)"
             ],
-            "correctAnswer": "Broad Focus (the Whole Event is News)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Focus on CUSTOMER Only",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                2,
                 1,
-                2,
+                1,
+                3,
                 1
             ],
-            "hint": "'Listen to this' introduces a whole surprising update, not one isolated word. Listen for prominence spread across the sentence.",
-            "explanation": "Since the entire cancellation is news, prominence spreads across the predicate rather than peaking sharply on a single word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Most of this idea was already established by the first clause — only the final detail is genuinely new.",
+            "explanation": "The setup already establishes the event, leaving only CUSTOMER as new information — so the stress narrows sharply onto CUSTOMER alone.",
+            "emphasisRule": "When most of a sentence is already established and only one element is new, the stress narrows sharply onto that single word."
         },
         {
             "id": "pitchPatternMatch_378",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "One small detail changed: the deadline moved to Friday.",
-            "textToSpeak": "One small detail changed: the deadline moved to Friday.",
+            "word": "Something delayed the surgery - turns out it was a staffing issue.",
+            "textToSpeak": "Something delayed the surgery - turns out it was a staffing issue.",
             "options": [
-                "Narrow Focus on FRIDAY Only",
-                "Broad Focus (the Whole Event is News)"
+                "Broad Focus (the Whole Sentence is News)",
+                "Narrow Focus on ISSUE Only"
             ],
-            "correctAnswer": "Narrow Focus on FRIDAY Only",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Narrow Focus on ISSUE Only",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
@@ -431,23 +431,23 @@
                 3,
                 1
             ],
-            "hint": "'One small detail changed' signals just one specific fact is new. Listen for one sharp pitch peak, on 'Friday'.",
-            "explanation": "'One small detail changed' signals that only the new date, 'Friday', is new, so the nuclear stress peaks sharply there alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The event itself isn't news here; only the specific answer at the end is — that's where the pitch should sharpen.",
+            "explanation": "Everything except ISSUE was already implied by the first clause, which is why the pitch peak narrows onto just ISSUE.",
+            "emphasisRule": "Narrow focus applies when a sentence answers a specific who or what about an already-known event — only that answer is stressed."
         },
         {
             "id": "pitchPatternMatch_379",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Something unexpected happened: the pipes froze overnight.",
-            "textToSpeak": "Something unexpected happened: the pipes froze overnight.",
+            "word": "Big news: the cafeteria changed its whole menu today.",
+            "textToSpeak": "Big news: the cafeteria changed its whole menu today.",
             "options": [
-                "Narrow Focus on OVERNIGHT Only",
-                "Broad Focus (the Whole Event is News)"
+                "Broad Focus (the Whole Sentence is News)",
+                "Narrow Focus on MENU Only"
             ],
-            "correctAnswer": "Broad Focus (the Whole Event is News)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 2,
@@ -455,22 +455,22 @@
                 2,
                 1
             ],
-            "hint": "'Something unexpected happened' introduces a whole new problem, not one isolated detail. Listen for prominence spread broadly.",
-            "explanation": "Since the entire freezing incident is new, prominence spreads across the predicate rather than peaking sharply on one word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "There's no known 'given' part here to contrast against — the whole clause counts as the news.",
+            "explanation": "Since there's no already-given information to contrast against, the whole sentence carries roughly equal weight — that's broad focus.",
+            "emphasisRule": "When an entire event is being reported as news for the first time, prominence spreads across the whole sentence instead of narrowing onto one word."
         },
         {
             "id": "pitchPatternMatch_380",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Just to clarify, the discount applies to one item only.",
-            "textToSpeak": "Just to clarify, the discount applies to one item only.",
+            "word": "Someone canceled the reservation - turns out it was my brother.",
+            "textToSpeak": "Someone canceled the reservation - turns out it was my brother.",
             "options": [
-                "Broad Focus (the Whole Event is News)",
-                "Narrow Focus on ONE Only"
+                "Broad Focus (the Whole Sentence is News)",
+                "Narrow Focus on BROTHER Only"
             ],
-            "correctAnswer": "Narrow Focus on ONE Only",
+            "correctAnswer": "Narrow Focus on BROTHER Only",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -479,47 +479,47 @@
                 3,
                 1
             ],
-            "hint": "'Just to clarify' signals only one specific limit needs confirming. Listen for one sharp pitch peak, on 'one'.",
-            "explanation": "'Just to clarify' signals that only the limit, 'one' item, is the detail being confirmed, so the nuclear stress peaks sharply there alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence answers one narrow question (who or what, specifically) — the answer word gets a single strong peak.",
+            "explanation": "BROTHER is the single new piece of information here, so it gets a sharp, isolated peak instead of spreading emphasis across the sentence.",
+            "emphasisRule": "Narrow focus applies when a sentence answers a specific who or what about an already-known event — only that answer is stressed."
         },
         {
             "id": "pitchPatternMatch_381",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Get this: the chef quit in the middle of service.",
-            "textToSpeak": "Get this: the chef quit in the middle of service.",
+            "word": "Something caused the allergic reaction - turns out it was shellfish.",
+            "textToSpeak": "Something caused the allergic reaction - turns out it was shellfish.",
             "options": [
-                "Narrow Focus on SERVICE Only",
-                "Broad Focus (the Whole Event is News)"
+                "Narrow Focus on SHELLFISH Only",
+                "Broad Focus (the Whole Sentence is News)"
             ],
-            "correctAnswer": "Broad Focus (the Whole Event is News)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Focus on SHELLFISH Only",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                2,
                 1,
-                2,
+                1,
+                3,
                 1
             ],
-            "hint": "'Get this' introduces a whole dramatic event, not one isolated word. Listen for prominence spread across several words.",
-            "explanation": "Since the entire incident with the chef is new, prominence spreads across the predicate rather than peaking sharply on one word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Notice the setup already tells you what happened — only one detail is still missing. That word gets the sharp peak.",
+            "explanation": "The setup already establishes the event, leaving only SHELLFISH as new information — so the stress narrows sharply onto SHELLFISH alone.",
+            "emphasisRule": "When most of a sentence is already established and only one element is new, the stress narrows sharply onto that single word."
         },
         {
             "id": "pitchPatternMatch_382",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The only difference is the recipe needs one more egg.",
-            "textToSpeak": "The only difference is the recipe needs one more egg.",
+            "word": "Someone donated the piano to the school - turns out it was the mayor.",
+            "textToSpeak": "Someone donated the piano to the school - turns out it was the mayor.",
             "options": [
-                "Narrow Focus on ONE Only",
-                "Broad Focus (the Whole Event is News)"
+                "Broad Focus (the Whole Sentence is News)",
+                "Narrow Focus on MAYOR Only"
             ],
-            "correctAnswer": "Narrow Focus on ONE Only",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Narrow Focus on MAYOR Only",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
@@ -527,142 +527,94 @@
                 3,
                 1
             ],
-            "hint": "'The only difference' signals just one specific number is new. Listen for one sharp pitch peak, on 'one'.",
-            "explanation": "'The only difference' signals that only the extra egg count, 'one', is new, so the nuclear stress peaks sharply there alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Most of this idea was already established by the first clause — only the final detail is genuinely new.",
+            "explanation": "Everything except MAYOR was already implied by the first clause, which is why the pitch peak narrows onto just MAYOR.",
+            "emphasisRule": "Narrow focus applies when a sentence answers a specific who or what about an already-known event — only that answer is stressed."
         },
         {
             "id": "pitchPatternMatch_383",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "You should know what happened: the patient's condition changed suddenly.",
-            "textToSpeak": "You should know what happened: the patient's condition changed suddenly.",
+            "word": "Someone fixed the leaky faucet - turns out it was our neighbor.",
+            "textToSpeak": "Someone fixed the leaky faucet - turns out it was our neighbor.",
             "options": [
-                "Broad Focus (the Whole Event is News)",
-                "Narrow Focus on SUDDENLY Only"
+                "Narrow Focus on NEIGHBOR Only",
+                "Broad Focus (the Whole Sentence is News)"
             ],
-            "correctAnswer": "Broad Focus (the Whole Event is News)",
+            "correctAnswer": "Narrow Focus on NEIGHBOR Only",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                2,
                 1,
-                2,
+                1,
+                3,
                 1
             ],
-            "hint": "'You should know what happened' introduces a whole urgent update, not one isolated word. Listen for prominence spread broadly.",
-            "explanation": "Since the entire change in condition is news, prominence spreads across the predicate rather than peaking sharply on a single word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The event itself isn't news here; only the specific answer at the end is — that's where the pitch should sharpen.",
+            "explanation": "Since the event itself is already known, only NEIGHBOR — the answer to who or what, specifically — carries the narrow stress.",
+            "emphasisRule": "When most of a sentence is already established and only one element is new, the stress narrows sharply onto that single word."
         },
         {
             "id": "pitchPatternMatch_384",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Just to confirm, the rehearsal lasts two hours.",
-            "textToSpeak": "Just to confirm, the rehearsal lasts two hours.",
+            "word": "Here's the update: turbulence delayed the entire meal service.",
+            "textToSpeak": "Here's the update: turbulence delayed the entire meal service.",
             "options": [
-                "Broad Focus (the Whole Event is News)",
-                "Narrow Focus on TWO Only"
+                "Narrow Focus on SERVICE Only",
+                "Broad Focus (the Whole Sentence is News)"
             ],
-            "correctAnswer": "Narrow Focus on TWO Only",
+            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                2,
                 1,
-                1,
-                3,
+                2,
                 1
             ],
-            "hint": "'Just to confirm' signals only one specific duration needs verifying. Listen for one sharp pitch peak, on 'two'.",
-            "explanation": "'Just to confirm' signals that only the duration, 'two' hours, is the detail being verified, so the nuclear stress peaks sharply there alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "There's no known 'given' part here to contrast against — the whole clause counts as the news.",
+            "explanation": "The opener signals a fresh announcement, not an answer to a narrow question, so focus stays broad across the whole clause.",
+            "emphasisRule": "Broad focus applies when nothing in the sentence is already known — the whole clause is treated as new information."
         },
         {
             "id": "pitchPatternMatch_385",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Here's the big news: the museum extended its hours.",
-            "textToSpeak": "Here's the big news: the museum extended its hours.",
+            "word": "Someone reported the outage first - turns out it was the doorman.",
+            "textToSpeak": "Someone reported the outage first - turns out it was the doorman.",
             "options": [
-                "Narrow Focus on HOURS Only",
-                "Broad Focus (the Whole Event is News)"
+                "Narrow Focus on DOORMAN Only",
+                "Broad Focus (the Whole Sentence is News)"
             ],
-            "correctAnswer": "Broad Focus (the Whole Event is News)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Narrow Focus on DOORMAN Only",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                2,
                 1,
-                2,
+                1,
+                3,
                 1
             ],
-            "hint": "'Here's the big news' introduces a whole new policy, not one isolated detail. Listen for prominence spread across the sentence.",
-            "explanation": "The entire schedule change is presented as news, so prominence spreads broadly across the predicate instead of peaking on one word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence answers one narrow question (who or what, specifically) — the answer word gets a single strong peak.",
+            "explanation": "The setup already establishes the event, leaving only DOORMAN as new information — so the stress narrows sharply onto DOORMAN alone.",
+            "emphasisRule": "When most of a sentence is already established and only one element is new, the stress narrows sharply onto that single word."
         },
         {
             "id": "pitchPatternMatch_386",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "One small detail changed: the password needs eight characters.",
-            "textToSpeak": "One small detail changed: the password needs eight characters.",
+            "word": "Someone approved the budget increase - turns out it was the board.",
+            "textToSpeak": "Someone approved the budget increase - turns out it was the board.",
             "options": [
-                "Narrow Focus on EIGHT Only",
-                "Broad Focus (the Whole Event is News)"
+                "Broad Focus (the Whole Sentence is News)",
+                "Narrow Focus on BOARD Only"
             ],
-            "correctAnswer": "Narrow Focus on EIGHT Only",
-            "correctAnswerIndex": 0,
-            "pitchPatterns": [
-                1,
-                1,
-                1,
-                3,
-                1
-            ],
-            "hint": "'One small detail changed' signals just one specific number is new. Listen for one sharp pitch peak, on 'eight'.",
-            "explanation": "'One small detail changed' signals that only the character count, 'eight', is new, so the nuclear stress peaks sharply there alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
-        },
-        {
-            "id": "pitchPatternMatch_387",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "Listen to this: the store ran out of everything.",
-            "textToSpeak": "Listen to this: the store ran out of everything.",
-            "options": [
-                "Broad Focus (the Whole Event is News)",
-                "Narrow Focus on EVERYTHING Only"
-            ],
-            "correctAnswer": "Broad Focus (the Whole Event is News)",
-            "correctAnswerIndex": 0,
-            "pitchPatterns": [
-                1,
-                2,
-                1,
-                2,
-                1
-            ],
-            "hint": "'Listen to this' introduces a whole dramatic situation, not one isolated word. Listen for prominence spread across the sentence.",
-            "explanation": "Since the entire shortage is news, prominence spreads across the predicate rather than peaking sharply on a single word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
-        },
-        {
-            "id": "pitchPatternMatch_388",
-            "instruction": "Identify the emphasis",
-            "subtype": "pitchPatternMatch",
-            "interactionType": "choice",
-            "word": "Just to clarify, the trail is only three miles.",
-            "textToSpeak": "Just to clarify, the trail is only three miles.",
-            "options": [
-                "Broad Focus (the Whole Event is News)",
-                "Narrow Focus on THREE Only"
-            ],
-            "correctAnswer": "Narrow Focus on THREE Only",
+            "correctAnswer": "Narrow Focus on BOARD Only",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -671,22 +623,22 @@
                 3,
                 1
             ],
-            "hint": "'Just to clarify' signals only one specific number needs confirming. Listen for one sharp pitch peak, on 'three'.",
-            "explanation": "'Just to clarify' signals that only the distance, 'three' miles, is the detail being confirmed, so the nuclear stress peaks sharply there alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Notice the setup already tells you what happened — only one detail is still missing. That word gets the sharp peak.",
+            "explanation": "Everything except BOARD was already implied by the first clause, which is why the pitch peak narrows onto just BOARD.",
+            "emphasisRule": "Narrow focus applies when a sentence answers a specific who or what about an already-known event — only that answer is stressed."
         },
         {
-            "id": "pitchPatternMatch_389",
+            "id": "pitchPatternMatch_387",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Something unexpected happened: the wifi went down citywide.",
-            "textToSpeak": "Something unexpected happened: the wifi went down citywide.",
+            "word": "Get this: a fire alarm went off in the middle of class.",
+            "textToSpeak": "Get this: a fire alarm went off in the middle of class.",
             "options": [
-                "Broad Focus (the Whole Event is News)",
-                "Narrow Focus on CITYWIDE Only"
+                "Broad Focus (the Whole Sentence is News)",
+                "Narrow Focus on ALARM Only"
             ],
-            "correctAnswer": "Broad Focus (the Whole Event is News)",
+            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -695,22 +647,46 @@
                 2,
                 1
             ],
-            "hint": "'Something unexpected happened' introduces a whole new outage, not one isolated detail. Listen for prominence spread broadly.",
-            "explanation": "Since the entire outage is new, prominence spreads across the predicate rather than peaking sharply on one word.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is announcing a whole new event, not answering a specific question about one detail — expect fairly even prominence throughout.",
+            "explanation": "Since there's no already-given information to contrast against, the whole sentence carries roughly equal weight — that's broad focus.",
+            "emphasisRule": "When an entire event is being reported as news for the first time, prominence spreads across the whole sentence instead of narrowing onto one word."
         },
         {
-            "id": "pitchPatternMatch_390",
+            "id": "pitchPatternMatch_388",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The only update is the appointment moved up one day.",
-            "textToSpeak": "The only update is the appointment moved up one day.",
+            "word": "Get this: the band's van broke down before the wedding.",
+            "textToSpeak": "Get this: the band's van broke down before the wedding.",
             "options": [
-                "Narrow Focus on ONE Only",
-                "Broad Focus (the Whole Event is News)"
+                "Narrow Focus on VAN Only",
+                "Broad Focus (the Whole Sentence is News)"
             ],
-            "correctAnswer": "Narrow Focus on ONE Only",
+            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                2,
+                1,
+                2,
+                1
+            ],
+            "hint": "Since everything in this sentence is new to the listener, the stress spreads across the sentence instead of sharpening on one word.",
+            "explanation": "The opener signals a fresh announcement, not an answer to a narrow question, so focus stays broad across the whole clause.",
+            "emphasisRule": "Broad focus applies when nothing in the sentence is already known — the whole clause is treated as new information."
+        },
+        {
+            "id": "pitchPatternMatch_389",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "Something spoiled in the fridge - turns out it was the milk.",
+            "textToSpeak": "Something spoiled in the fridge - turns out it was the milk.",
+            "options": [
+                "Narrow Focus on MILK Only",
+                "Broad Focus (the Whole Sentence is News)"
+            ],
+            "correctAnswer": "Narrow Focus on MILK Only",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -719,9 +695,33 @@
                 3,
                 1
             ],
-            "hint": "'The only update' signals just one specific number is new. Listen for one sharp pitch peak, on 'one'.",
-            "explanation": "'The only update' signals that only the day count, 'one', is new, so the nuclear stress peaks sharply there alone.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Everything except the last word was already implied — listen for a single, sharp peak there instead of spread-out stress.",
+            "explanation": "The setup already establishes the event, leaving only MILK as new information — so the stress narrows sharply onto MILK alone.",
+            "emphasisRule": "When most of a sentence is already established and only one element is new, the stress narrows sharply onto that single word."
+        },
+        {
+            "id": "pitchPatternMatch_390",
+            "instruction": "Identify the emphasis",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "choice",
+            "word": "Big news: the bakery is closing for good next month.",
+            "textToSpeak": "Big news: the bakery is closing for good next month.",
+            "options": [
+                "Narrow Focus on BAKERY Only",
+                "Broad Focus (the Whole Sentence is News)"
+            ],
+            "correctAnswer": "Broad Focus (the Whole Sentence is News)",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                2,
+                1,
+                2,
+                1
+            ],
+            "hint": "Try reading this as one big announcement rather than a pointed correction — nothing here needs a single sharp peak.",
+            "explanation": "This announces an entirely new event, so prominence is distributed across the sentence rather than narrowed onto a single word.",
+            "emphasisRule": "Broad focus applies when nothing in the sentence is already known — the whole clause is treated as new information."
         }
     ]
 }

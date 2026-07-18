@@ -5,16 +5,16 @@
     "quests": [
         {
             "id": "pitchPatternMatch_121",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Actually, the intern fixed the printer.",
-            "textToSpeak": "Actually, the intern fixed the printer.",
+            "word": "Which bus goes downtown?",
+            "textToSpeak": "Which bus goes downtown?",
             "options": [
-                "Emphasis on INTERN (Subject focus)",
-                "Emphasis on PRINTER (Object focus)"
+                "Falling intonation (a Wh-question)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on INTERN (Subject focus)",
+            "correctAnswer": "Falling intonation (a Wh-question)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 3,
@@ -23,167 +23,167 @@
                 1,
                 1
             ],
-            "hint": "The word 'actually' signals a correction about who did it, not what was fixed. Listen for the pitch to peak early, on 'intern'.",
-            "explanation": "'Actually' introduces a correction about who performed the action, so the nuclear stress shifts onto 'intern' instead of the object.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "This question starts with a question word asking for specific information — those usually fall in pitch, unlike yes/no questions.",
+            "explanation": "Wh-questions (asking for specific information) typically fall in pitch, just like statements, even though they end in a question mark.",
+            "emphasisRule": "Wh-questions (asking who, what, where, when, why, or how) typically fall in pitch, just like statements."
         },
         {
             "id": "pitchPatternMatch_122",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The dentist examines the teeth carefully.",
-            "textToSpeak": "The dentist examines the teeth carefully.",
+            "word": "Does the store open at nine?",
+            "textToSpeak": "Does the store open at nine?",
             "options": [
-                "Emphasis on TEETH (Object focus)",
-                "Emphasis on DENTIST (Subject focus)"
+                "Falling intonation (a Wh-question)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on TEETH (Object focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "There's no correction cue here - this is a plain statement, so the pitch peak stays on the final content word.",
-            "explanation": "With no contrastive cue, this sentence keeps the default pattern: the nuclear stress falls on 'teeth', not 'dentist'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "This question can be answered with a simple yes or no — that type usually rises at the end.",
+            "explanation": "Because this question can be answered with a simple yes or no, the pitch rises at the end.",
+            "emphasisRule": "Yes/no questions consistently end with rising intonation, even as the surrounding context changes."
         },
         {
             "id": "pitchPatternMatch_123",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "No, the assistant scheduled the meeting.",
-            "textToSpeak": "No, the assistant scheduled the meeting.",
+            "word": "Was the meeting canceled again?",
+            "textToSpeak": "Was the meeting canceled again?",
             "options": [
-                "Emphasis on ASSISTANT (Subject focus)",
-                "Emphasis on MEETING (Object focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a Wh-question)"
             ],
-            "correctAnswer": "Emphasis on ASSISTANT (Subject focus)",
+            "correctAnswer": "Rising intonation (a yes/no question)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                3,
                 1,
                 1,
-                1,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "'No' signals that someone guessed the wrong person. Listen for the pitch to peak early, on 'assistant'.",
-            "explanation": "The opening 'No' corrects an assumption about who scheduled it, so the nuclear stress moves to 'assistant'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "Unlike information questions, yes/no questions like this one typically climb in pitch toward the finish.",
+            "explanation": "Yes/no questions consistently end with rising pitch, unlike Wh-questions, which fall.",
+            "emphasisRule": "A question answerable with a simple yes or no typically ends with rising pitch."
         },
         {
             "id": "pitchPatternMatch_124",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My father mows the lawn weekly.",
-            "textToSpeak": "My father mows the lawn weekly.",
+            "word": "Does this bus go downtown?",
+            "textToSpeak": "Does this bus go downtown?",
             "options": [
-                "Emphasis on FATHER (Subject focus)",
-                "Emphasis on LAWN (Object focus)"
+                "Falling intonation (a Wh-question)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on LAWN (Object focus)",
+            "correctAnswer": "Rising intonation (a yes/no question)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "This is a routine fact with no correction involved - the pitch peak stays near the end of the sentence.",
-            "explanation": "There's no contrastive cue here, so the nuclear stress stays on 'lawn', the final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "A simple yes or no would answer this question, so expect the pitch to lift at the end.",
+            "explanation": "This is a genuine yes/no question, so the pitch climbs upward at the finish.",
+            "emphasisRule": "Yes/no questions consistently end with rising intonation, even as the surrounding context changes."
         },
         {
             "id": "pitchPatternMatch_125",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "In fact, my roommate cooked the dinner.",
-            "textToSpeak": "In fact, my roommate cooked the dinner.",
+            "word": "Did the doctor call you back?",
+            "textToSpeak": "Did the doctor call you back?",
             "options": [
-                "Emphasis on ROOMMATE (Subject focus)",
-                "Emphasis on DINNER (Object focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a Wh-question)"
             ],
-            "correctAnswer": "Emphasis on ROOMMATE (Subject focus)",
+            "correctAnswer": "Rising intonation (a yes/no question)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                3,
                 1,
                 1,
-                1,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "'In fact' signals a correction about who actually cooked. Listen for the pitch to peak early, on 'roommate'.",
-            "explanation": "'In fact' corrects a wrong assumption about who cooked, so the nuclear stress shifts onto 'roommate'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "This is a direct yes/no question, and those are marked by a rising finish.",
+            "explanation": "Since only yes or no would answer this question, the pitch rises rather than falls.",
+            "emphasisRule": "A question answerable with a simple yes or no typically ends with rising pitch."
         },
         {
             "id": "pitchPatternMatch_126",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The baker decorates the cupcakes beautifully.",
-            "textToSpeak": "The baker decorates the cupcakes beautifully.",
+            "word": "Did the wifi go down again?",
+            "textToSpeak": "Did the wifi go down again?",
             "options": [
-                "Emphasis on CUPCAKES (Object focus)",
-                "Emphasis on BAKER (Subject focus)"
+                "Falling intonation (a Wh-question)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on CUPCAKES (Object focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "There's no hint of correction here - this is just a plain description, so listen for the peak near the end.",
-            "explanation": "With no contrastive cue, the nuclear stress falls on 'cupcakes', the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "Because the answer here is just yes or no, the pitch usually rises rather than falls.",
+            "explanation": "Because this question can be answered with a simple yes or no, the pitch rises at the end.",
+            "emphasisRule": "Yes/no questions consistently end with rising intonation, even as the surrounding context changes."
         },
         {
             "id": "pitchPatternMatch_127",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Surprisingly, the rookie scored the goal.",
-            "textToSpeak": "Surprisingly, the rookie scored the goal.",
+            "word": "Where does your cousin live now?",
+            "textToSpeak": "Where does your cousin live now?",
             "options": [
-                "Emphasis on ROOKIE (Subject focus)",
-                "Emphasis on GOAL (Object focus)"
+                "Falling intonation (a Wh-question)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on ROOKIE (Subject focus)",
+            "correctAnswer": "Falling intonation (a Wh-question)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                3,
                 1,
+                3,
                 1,
                 1,
                 1
             ],
-            "hint": "'Surprisingly' signals that the identity of the scorer is the unexpected part. Listen for the pitch to peak on 'rookie'.",
-            "explanation": "'Surprisingly' marks the subject as the unexpected new information, so the nuclear stress shifts onto 'rookie'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "Because this can't be answered with a simple yes or no, expect the pitch to drop by the end, much like a statement.",
+            "explanation": "Because this question seeks a specific detail rather than yes or no, the pitch falls toward the end.",
+            "emphasisRule": "Questions that ask for specific information usually end with falling intonation, unlike yes/no questions."
         },
         {
             "id": "pitchPatternMatch_128",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Honestly, the toddler solved the puzzle.",
-            "textToSpeak": "Honestly, the toddler solved the puzzle.",
+            "word": "Why did the meeting get canceled?",
+            "textToSpeak": "Why did the meeting get canceled?",
             "options": [
-                "Emphasis on TODDLER (Subject focus)",
-                "Emphasis on PUZZLE (Object focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a Wh-question)"
             ],
-            "correctAnswer": "Emphasis on TODDLER (Subject focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Falling intonation (a Wh-question)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 3,
                 1,
@@ -191,118 +191,118 @@
                 1,
                 1
             ],
-            "hint": "'Honestly' signals genuine surprise at who managed it. Listen for the pitch to peak early, on 'toddler'.",
-            "explanation": "'Honestly' highlights surprise about who solved it, so the nuclear stress moves onto 'toddler' instead of 'puzzle'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "Information questions like this one behave differently from yes/no questions — listen for a fall, not a rise.",
+            "explanation": "Information questions like this one pattern with statements: the pitch drops at the end, not rises.",
+            "emphasisRule": "Wh-questions (asking who, what, where, when, why, or how) typically fall in pitch, just like statements."
         },
         {
             "id": "pitchPatternMatch_129",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The journalist writes the article quickly.",
-            "textToSpeak": "The journalist writes the article quickly.",
+            "word": "Where did you park the car?",
+            "textToSpeak": "Where did you park the car?",
             "options": [
-                "Emphasis on ARTICLE (Object focus)",
-                "Emphasis on JOURNALIST (Subject focus)"
+                "Falling intonation (a Wh-question)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on ARTICLE (Object focus)",
+            "correctAnswer": "Falling intonation (a Wh-question)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "This is a plain, routine description with no correction cue - listen for the pitch peak landing on 'article'.",
-            "explanation": "With no contrastive cue, the nuclear stress falls on 'article', the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "This is asking for a specific detail, not a yes/no answer, so the ending pitch typically falls.",
+            "explanation": "This question word signals a request for details, and such questions typically end with falling pitch.",
+            "emphasisRule": "Questions that ask for specific information usually end with falling intonation, unlike yes/no questions."
         },
         {
             "id": "pitchPatternMatch_130",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My roommate organizes the closet neatly.",
-            "textToSpeak": "My roommate organizes the closet neatly.",
+            "word": "Is the flight longer than expected?",
+            "textToSpeak": "Is the flight longer than expected?",
             "options": [
-                "Emphasis on ROOMMATE (Subject focus)",
-                "Emphasis on CLOSET (Object focus)"
+                "Falling intonation (a Wh-question)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on CLOSET (Object focus)",
+            "correctAnswer": "Rising intonation (a yes/no question)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "There's no correction involved here - this is routine information, so the pitch peak stays near the end.",
-            "explanation": "With no contrastive cue, the nuclear stress stays on 'closet', not on 'roommate'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "This question can be answered with a simple yes or no — that type usually rises at the end.",
+            "explanation": "Yes/no questions consistently end with rising pitch, unlike Wh-questions, which fall.",
+            "emphasisRule": "A question answerable with a simple yes or no typically ends with rising pitch."
         },
         {
             "id": "pitchPatternMatch_131",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The captain steers the ship skillfully.",
-            "textToSpeak": "The captain steers the ship skillfully.",
+            "word": "How was your appointment today?",
+            "textToSpeak": "How was your appointment today?",
             "options": [
-                "Emphasis on CAPTAIN (Subject focus)",
-                "Emphasis on SHIP (Object focus)"
+                "Falling intonation (a Wh-question)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on SHIP (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling intonation (a Wh-question)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "This is a plain statement about routine duties - listen for the pitch peak on the final content word.",
-            "explanation": "With no contrastive cue, the nuclear stress falls on 'ship', the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "Even though it's a question, this type usually ends low, similar to how statements end.",
+            "explanation": "Wh-questions (asking for specific information) typically fall in pitch, just like statements, even though they end in a question mark.",
+            "emphasisRule": "Wh-questions (asking who, what, where, when, why, or how) typically fall in pitch, just like statements."
         },
         {
             "id": "pitchPatternMatch_132",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "As it turns out, the janitor reported the leak.",
-            "textToSpeak": "As it turns out, the janitor reported the leak.",
+            "word": "Where should we meet for lunch?",
+            "textToSpeak": "Where should we meet for lunch?",
             "options": [
-                "Emphasis on LEAK (Object focus)",
-                "Emphasis on JANITOR (Subject focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a Wh-question)"
             ],
-            "correctAnswer": "Emphasis on JANITOR (Subject focus)",
+            "correctAnswer": "Falling intonation (a Wh-question)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                3,
                 1,
+                3,
                 1,
                 1,
                 1
             ],
-            "hint": "'As it turns out' signals that who reported it is the surprising part. Listen for the pitch to peak on 'janitor'.",
-            "explanation": "'As it turns out' marks the subject as unexpected new information, so the nuclear stress shifts onto 'janitor'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "This question starts with a question word asking for specific information — those usually fall in pitch, unlike yes/no questions.",
+            "explanation": "Because this question seeks a specific detail rather than yes or no, the pitch falls toward the end.",
+            "emphasisRule": "Questions that ask for specific information usually end with falling intonation, unlike yes/no questions."
         },
         {
             "id": "pitchPatternMatch_133",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Believe it or not, my grandmother won the race.",
-            "textToSpeak": "Believe it or not, my grandmother won the race.",
+            "word": "Why is the flight delayed?",
+            "textToSpeak": "Why is the flight delayed?",
             "options": [
-                "Emphasis on GRANDMOTHER (Subject focus)",
-                "Emphasis on RACE (Object focus)"
+                "Falling intonation (a Wh-question)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on GRANDMOTHER (Subject focus)",
+            "correctAnswer": "Falling intonation (a Wh-question)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 3,
@@ -311,142 +311,142 @@
                 1,
                 1
             ],
-            "hint": "'Believe it or not' flags the winner's identity as the shocking detail. Listen for the pitch to peak on 'grandmother'.",
-            "explanation": "'Believe it or not' highlights surprise about who won, so the nuclear stress moves onto 'grandmother' instead of 'race'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "Because this can't be answered with a simple yes or no, expect the pitch to drop by the end, much like a statement.",
+            "explanation": "Information questions like this one pattern with statements: the pitch drops at the end, not rises.",
+            "emphasisRule": "Wh-questions (asking who, what, where, when, why, or how) typically fall in pitch, just like statements."
         },
         {
             "id": "pitchPatternMatch_134",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The artist paints the mural creatively.",
-            "textToSpeak": "The artist paints the mural creatively.",
+            "word": "Did someone borrow my charger?",
+            "textToSpeak": "Did someone borrow my charger?",
             "options": [
-                "Emphasis on MURAL (Object focus)",
-                "Emphasis on ARTIST (Subject focus)"
+                "Falling intonation (a Wh-question)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on MURAL (Object focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "There's no correction cue here - this is a plain description, so the pitch peak stays near the end.",
-            "explanation": "With no contrastive cue, the nuclear stress falls on 'mural', the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "Unlike information questions, yes/no questions like this one typically climb in pitch toward the finish.",
+            "explanation": "This is a genuine yes/no question, so the pitch climbs upward at the finish.",
+            "emphasisRule": "Yes/no questions consistently end with rising intonation, even as the surrounding context changes."
         },
         {
             "id": "pitchPatternMatch_135",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Actually, the substitute taught the class.",
-            "textToSpeak": "Actually, the substitute taught the class.",
+            "word": "Does the semester start in August?",
+            "textToSpeak": "Does the semester start in August?",
             "options": [
-                "Emphasis on SUBSTITUTE (Subject focus)",
-                "Emphasis on CLASS (Object focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a Wh-question)"
             ],
-            "correctAnswer": "Emphasis on SUBSTITUTE (Subject focus)",
+            "correctAnswer": "Rising intonation (a yes/no question)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                3,
                 1,
                 1,
-                1,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "'Actually' signals a correction about who taught it. Listen for the pitch to peak early, on 'substitute'.",
-            "explanation": "'Actually' corrects an assumption about who taught the class, so the nuclear stress shifts onto 'substitute'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "A simple yes or no would answer this question, so expect the pitch to lift at the end.",
+            "explanation": "Since only yes or no would answer this question, the pitch rises rather than falls.",
+            "emphasisRule": "A question answerable with a simple yes or no typically ends with rising pitch."
         },
         {
             "id": "pitchPatternMatch_136",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My grandson builds the puzzle patiently.",
-            "textToSpeak": "My grandson builds the puzzle patiently.",
+            "word": "Is someone cooking dinner tonight?",
+            "textToSpeak": "Is someone cooking dinner tonight?",
             "options": [
-                "Emphasis on PUZZLE (Object focus)",
-                "Emphasis on GRANDSON (Subject focus)"
+                "Falling intonation (a Wh-question)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on PUZZLE (Object focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "This is a calm, routine description with no correction involved - listen for the peak near the end.",
-            "explanation": "With no contrastive cue, the nuclear stress stays on 'puzzle', not on 'grandson'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "This is a direct yes/no question, and those are marked by a rising finish.",
+            "explanation": "Because this question can be answered with a simple yes or no, the pitch rises at the end.",
+            "emphasisRule": "Yes/no questions consistently end with rising intonation, even as the surrounding context changes."
         },
         {
             "id": "pitchPatternMatch_137",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "No, the volunteer organized the event.",
-            "textToSpeak": "No, the volunteer organized the event.",
+            "word": "Is the flight delayed again?",
+            "textToSpeak": "Is the flight delayed again?",
             "options": [
-                "Emphasis on VOLUNTEER (Subject focus)",
-                "Emphasis on EVENT (Object focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a Wh-question)"
             ],
-            "correctAnswer": "Emphasis on VOLUNTEER (Subject focus)",
+            "correctAnswer": "Rising intonation (a yes/no question)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                3,
                 1,
                 1,
-                1,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "'No' signals that someone guessed the wrong organizer. Listen for the pitch to peak early, on 'volunteer'.",
-            "explanation": "The opening 'No' corrects a wrong assumption about who organized it, so the nuclear stress moves to 'volunteer'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "Because the answer here is just yes or no, the pitch usually rises rather than falls.",
+            "explanation": "Yes/no questions consistently end with rising pitch, unlike Wh-questions, which fall.",
+            "emphasisRule": "A question answerable with a simple yes or no typically ends with rising pitch."
         },
         {
             "id": "pitchPatternMatch_138",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The electrician wires the house safely.",
-            "textToSpeak": "The electrician wires the house safely.",
+            "word": "When does the semester start?",
+            "textToSpeak": "When does the semester start?",
             "options": [
-                "Emphasis on ELECTRICIAN (Subject focus)",
-                "Emphasis on HOUSE (Object focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a Wh-question)"
             ],
-            "correctAnswer": "Emphasis on HOUSE (Object focus)",
+            "correctAnswer": "Falling intonation (a Wh-question)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "There's no hint of correction here - this is just a plain statement, so listen for the pitch peak on 'house'.",
-            "explanation": "With no contrastive cue, the nuclear stress falls on 'house', the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "Information questions like this one behave differently from yes/no questions — listen for a fall, not a rise.",
+            "explanation": "This question word signals a request for details, and such questions typically end with falling pitch.",
+            "emphasisRule": "Questions that ask for specific information usually end with falling intonation, unlike yes/no questions."
         },
         {
             "id": "pitchPatternMatch_139",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "In fact, the new employee closed the deal.",
-            "textToSpeak": "In fact, the new employee closed the deal.",
+            "word": "What did the doctor say?",
+            "textToSpeak": "What did the doctor say?",
             "options": [
-                "Emphasis on EMPLOYEE (Subject focus)",
-                "Emphasis on DEAL (Object focus)"
+                "Falling intonation (a Wh-question)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on EMPLOYEE (Subject focus)",
+            "correctAnswer": "Falling intonation (a Wh-question)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 3,
@@ -455,47 +455,47 @@
                 1,
                 1
             ],
-            "hint": "'In fact' signals a correction about who closed it. Listen for the pitch to peak early, on 'employee'.",
-            "explanation": "'In fact' corrects an assumption about who closed the deal, so the nuclear stress shifts onto 'employee'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "This is asking for a specific detail, not a yes/no answer, so the ending pitch typically falls.",
+            "explanation": "Wh-questions (asking for specific information) typically fall in pitch, just like statements, even though they end in a question mark.",
+            "emphasisRule": "Wh-questions (asking who, what, where, when, why, or how) typically fall in pitch, just like statements."
         },
         {
             "id": "pitchPatternMatch_140",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The coach reviews the footage closely.",
-            "textToSpeak": "The coach reviews the footage closely.",
+            "word": "What happened to the wifi?",
+            "textToSpeak": "What happened to the wifi?",
             "options": [
-                "Emphasis on FOOTAGE (Object focus)",
-                "Emphasis on COACH (Subject focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a Wh-question)"
             ],
-            "correctAnswer": "Emphasis on FOOTAGE (Object focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Falling intonation (a Wh-question)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "This is routine post-game behavior with no correction cue - listen for the pitch peak near the end.",
-            "explanation": "With no contrastive cue, the nuclear stress falls on 'footage', the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "Even though it's a question, this type usually ends low, similar to how statements end.",
+            "explanation": "Because this question seeks a specific detail rather than yes or no, the pitch falls toward the end.",
+            "emphasisRule": "Questions that ask for specific information usually end with falling intonation, unlike yes/no questions."
         },
         {
             "id": "pitchPatternMatch_141",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Surprisingly, the puppy found the keys.",
-            "textToSpeak": "Surprisingly, the puppy found the keys.",
+            "word": "What time does the store open?",
+            "textToSpeak": "What time does the store open?",
             "options": [
-                "Emphasis on KEYS (Object focus)",
-                "Emphasis on PUPPY (Subject focus)"
+                "Falling intonation (a Wh-question)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on PUPPY (Subject focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling intonation (a Wh-question)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 3,
                 1,
@@ -503,225 +503,225 @@
                 1,
                 1
             ],
-            "hint": "'Surprisingly' flags the finder's identity as the unexpected detail. Listen for the pitch to peak on 'puppy'.",
-            "explanation": "'Surprisingly' marks the subject as the unexpected new information, so the nuclear stress shifts onto 'puppy'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "This question starts with a question word asking for specific information — those usually fall in pitch, unlike yes/no questions.",
+            "explanation": "Information questions like this one pattern with statements: the pitch drops at the end, not rises.",
+            "emphasisRule": "Wh-questions (asking who, what, where, when, why, or how) typically fall in pitch, just like statements."
         },
         {
             "id": "pitchPatternMatch_142",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My teacher grades the essays thoroughly.",
-            "textToSpeak": "My teacher grades the essays thoroughly.",
+            "word": "Who's cooking dinner tonight?",
+            "textToSpeak": "Who's cooking dinner tonight?",
             "options": [
-                "Emphasis on TEACHER (Subject focus)",
-                "Emphasis on ESSAYS (Object focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a Wh-question)"
             ],
-            "correctAnswer": "Emphasis on ESSAYS (Object focus)",
+            "correctAnswer": "Falling intonation (a Wh-question)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "There's no correction here - this is routine academic information, so listen for the peak near the end.",
-            "explanation": "With no contrastive cue, the nuclear stress stays on 'essays', not on 'teacher'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "Because this can't be answered with a simple yes or no, expect the pitch to drop by the end, much like a statement.",
+            "explanation": "This question word signals a request for details, and such questions typically end with falling pitch.",
+            "emphasisRule": "Questions that ask for specific information usually end with falling intonation, unlike yes/no questions."
         },
         {
             "id": "pitchPatternMatch_143",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The vet vaccinates the kitten gently.",
-            "textToSpeak": "The vet vaccinates the kitten gently.",
+            "word": "How much does this cost?",
+            "textToSpeak": "How much does this cost?",
             "options": [
-                "Emphasis on VET (Subject focus)",
-                "Emphasis on KITTEN (Object focus)"
+                "Falling intonation (a Wh-question)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on KITTEN (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Falling intonation (a Wh-question)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "This is a plain, calm description with no correction involved - listen for the pitch peak near the end.",
-            "explanation": "With no contrastive cue, the nuclear stress falls on 'kitten', the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "Information questions like this one behave differently from yes/no questions — listen for a fall, not a rise.",
+            "explanation": "Wh-questions (asking for specific information) typically fall in pitch, just like statements, even though they end in a question mark.",
+            "emphasisRule": "Wh-questions (asking who, what, where, when, why, or how) typically fall in pitch, just like statements."
         },
         {
             "id": "pitchPatternMatch_144",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Honestly, my neighbor planted the tree.",
-            "textToSpeak": "Honestly, my neighbor planted the tree.",
+            "word": "Does your cousin still live nearby?",
+            "textToSpeak": "Does your cousin still live nearby?",
             "options": [
-                "Emphasis on NEIGHBOR (Subject focus)",
-                "Emphasis on TREE (Object focus)"
+                "Falling intonation (a Wh-question)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on NEIGHBOR (Subject focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Rising intonation (a yes/no question)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                3,
                 1,
                 1,
-                1,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "'Honestly' signals genuine surprise or correction about who planted it. Listen for the pitch to peak on 'neighbor'.",
-            "explanation": "'Honestly' highlights a correction about who did the planting, so the nuclear stress moves onto 'neighbor'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "This question can be answered with a simple yes or no — that type usually rises at the end.",
+            "explanation": "This is a genuine yes/no question, so the pitch climbs upward at the finish.",
+            "emphasisRule": "Yes/no questions consistently end with rising intonation, even as the surrounding context changes."
         },
         {
             "id": "pitchPatternMatch_145",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "As it turns out, the trainee diagnosed the issue.",
-            "textToSpeak": "As it turns out, the trainee diagnosed the issue.",
+            "word": "Should we meet at the usual place?",
+            "textToSpeak": "Should we meet at the usual place?",
             "options": [
-                "Emphasis on TRAINEE (Subject focus)",
-                "Emphasis on ISSUE (Object focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a Wh-question)"
             ],
-            "correctAnswer": "Emphasis on TRAINEE (Subject focus)",
+            "correctAnswer": "Rising intonation (a yes/no question)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                3,
                 1,
                 1,
-                1,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "'As it turns out' flags the diagnoser's identity as the surprising detail. Listen for the pitch to peak on 'trainee'.",
-            "explanation": "'As it turns out' marks the subject as unexpected new information, so the nuclear stress shifts onto 'trainee'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "Unlike information questions, yes/no questions like this one typically climb in pitch toward the finish.",
+            "explanation": "Since only yes or no would answer this question, the pitch rises rather than falls.",
+            "emphasisRule": "A question answerable with a simple yes or no typically ends with rising pitch."
         },
         {
             "id": "pitchPatternMatch_146",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Believe it or not, the freshman won the award.",
-            "textToSpeak": "Believe it or not, the freshman won the award.",
+            "word": "Did you park near the entrance?",
+            "textToSpeak": "Did you park near the entrance?",
             "options": [
-                "Emphasis on AWARD (Object focus)",
-                "Emphasis on FRESHMAN (Subject focus)"
+                "Falling intonation (a Wh-question)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on FRESHMAN (Subject focus)",
+            "correctAnswer": "Rising intonation (a yes/no question)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                3,
                 1,
                 1,
-                1,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "'Believe it or not' flags the winner's identity as the shocking detail. Listen for the pitch to peak on 'freshman'.",
-            "explanation": "'Believe it or not' highlights surprise about who won, so the nuclear stress moves onto 'freshman' instead of 'award'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "A simple yes or no would answer this question, so expect the pitch to lift at the end.",
+            "explanation": "Because this question can be answered with a simple yes or no, the pitch rises at the end.",
+            "emphasisRule": "Yes/no questions consistently end with rising intonation, even as the surrounding context changes."
         },
         {
             "id": "pitchPatternMatch_147",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The translator interprets the speech accurately.",
-            "textToSpeak": "The translator interprets the speech accurately.",
+            "word": "Who borrowed my charger?",
+            "textToSpeak": "Who borrowed my charger?",
             "options": [
-                "Emphasis on SPEECH (Object focus)",
-                "Emphasis on TRANSLATOR (Subject focus)"
+                "Falling intonation (a Wh-question)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on SPEECH (Object focus)",
+            "correctAnswer": "Falling intonation (a Wh-question)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "There's no correction cue here - this is a plain description, so listen for the pitch peak on 'speech'.",
-            "explanation": "With no contrastive cue, the nuclear stress falls on 'speech', the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "This is asking for a specific detail, not a yes/no answer, so the ending pitch typically falls.",
+            "explanation": "Because this question seeks a specific detail rather than yes or no, the pitch falls toward the end.",
+            "emphasisRule": "Questions that ask for specific information usually end with falling intonation, unlike yes/no questions."
         },
         {
             "id": "pitchPatternMatch_148",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My sister braids the hair carefully.",
-            "textToSpeak": "My sister braids the hair carefully.",
+            "word": "Did your appointment go well?",
+            "textToSpeak": "Did your appointment go well?",
             "options": [
-                "Emphasis on SISTER (Subject focus)",
-                "Emphasis on HAIR (Object focus)"
+                "Falling intonation (a Wh-question)",
+                "Rising intonation (a yes/no question)"
             ],
-            "correctAnswer": "Emphasis on HAIR (Object focus)",
+            "correctAnswer": "Rising intonation (a yes/no question)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
-                1,
-                3,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "This is routine, everyday information with no correction involved - listen for the pitch peak on 'hair'.",
-            "explanation": "With no contrastive cue, the nuclear stress stays on 'hair', not on 'sister'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "This is a direct yes/no question, and those are marked by a rising finish.",
+            "explanation": "Yes/no questions consistently end with rising pitch, unlike Wh-questions, which fall.",
+            "emphasisRule": "A question answerable with a simple yes or no typically ends with rising pitch."
         },
         {
             "id": "pitchPatternMatch_149",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Actually, the waitress caught the thief.",
-            "textToSpeak": "Actually, the waitress caught the thief.",
+            "word": "Does this cost more than fifty?",
+            "textToSpeak": "Does this cost more than fifty?",
             "options": [
-                "Emphasis on WAITRESS (Subject focus)",
-                "Emphasis on THIEF (Object focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a Wh-question)"
             ],
-            "correctAnswer": "Emphasis on WAITRESS (Subject focus)",
+            "correctAnswer": "Rising intonation (a yes/no question)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                3,
                 1,
                 1,
-                1,
-                1
+                2,
+                2,
+                3
             ],
-            "hint": "'Actually' signals a correction about who caught him. Listen for the pitch to peak early, on 'waitress'.",
-            "explanation": "'Actually' corrects an assumption about who caught the thief, so the nuclear stress shifts onto 'waitress'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "Because the answer here is just yes or no, the pitch usually rises rather than falls.",
+            "explanation": "This is a genuine yes/no question, so the pitch climbs upward at the finish.",
+            "emphasisRule": "Yes/no questions consistently end with rising intonation, even as the surrounding context changes."
         },
         {
             "id": "pitchPatternMatch_150",
-            "instruction": "Identify the emphasis",
+            "instruction": "Identify the intonation pattern",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The waiter clears the table swiftly.",
-            "textToSpeak": "The waiter clears the table swiftly.",
+            "word": "How long is the flight?",
+            "textToSpeak": "How long is the flight?",
             "options": [
-                "Emphasis on TABLE (Object focus)",
-                "Emphasis on WAITER (Subject focus)"
+                "Rising intonation (a yes/no question)",
+                "Falling intonation (a Wh-question)"
             ],
-            "correctAnswer": "Emphasis on TABLE (Object focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Falling intonation (a Wh-question)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "There's no hint of correction here - this is just a plain statement, so listen for the pitch peak on 'table'.",
-            "explanation": "With no contrastive cue, the nuclear stress falls on 'table', the sentence's final content word.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "Even though it's a question, this type usually ends low, similar to how statements end.",
+            "explanation": "Information questions like this one pattern with statements: the pitch drops at the end, not rises.",
+            "emphasisRule": "Wh-questions (asking who, what, where, when, why, or how) typically fall in pitch, just like statements."
         }
     ]
 }

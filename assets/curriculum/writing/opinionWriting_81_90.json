@@ -5,26 +5,26 @@
     "quests": [
         {
             "id": "WRT_OPINIONWRITING_L81_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Social media platforms must be legally required to verify users' ages before granting access.",
             "options": [
-                "Age verification prevents underage users from accessing social platforms designed for adults.",
-                "Protecting children from harmful online content justifies the privacy trade-off that verification requires.",
                 "Effective age verification requires collecting and storing sensitive personal identity data at security risk.",
-                "Determined young users will bypass verification systems through proxy accounts or family credentials."
+                "Age verification prevents underage users from accessing social platforms designed for adults.",
+                "Determined young users will bypass verification systems through proxy accounts or family credentials.",
+                "Protecting children from harmful online content justifies the privacy trade-off that verification requires."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the child safety case for age verification (Pros) and the privacy and circumvention concerns (Cons).",
             "explanation": "Age verification protects children from adult content (Pros), but it requires sensitive data collection at risk of breach, and motivated young users readily bypass verification systems (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L81_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Mandatory age verification would reduce harmful content exposure for children on social media.",
@@ -43,7 +43,7 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L81_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Age verification on social media establishes important precedents for platform accountability.",
@@ -62,83 +62,83 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L82_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Violent video games should carry mandatory health warning labels.",
             "options": [
                 "Health warnings ensure parents are fully informed about the potential impact of games before purchase.",
-                "Visible warnings preserve adult consumer choice while providing protective information.",
                 "Existing age rating systems already provide comprehensive content guidance to consumers.",
-                "The scientific consensus on whether violent games cause real-world behavioural harm is strongly contested."
+                "The scientific consensus on whether violent games cause real-world behavioural harm is strongly contested.",
+                "Visible warnings preserve adult consumer choice while providing protective information."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the consumer information case for health warnings on games (Pros) and the existing systems and evidence concerns (Cons).",
             "explanation": "Health warnings inform parents while preserving adult choice (Pros), but existing age ratings already perform this function, and contested science makes explicit 'health warnings' potentially misleading to consumers (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L82_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Research evidence provides sufficient justification for health warnings on violent games.",
             "options": [
-                "Some studies link prolonged violent game exposure with desensitisation and increased measured aggression.",
-                "Even contested risks to children's development justify precautionary labelling and clear parental information.",
                 "Major systematic reviews find no consistent evidence that violent games cause real-world harmful behaviour.",
-                "Applying 'health warnings' to contested science trivialises the concept and may mislead consumers."
+                "Some studies link prolonged violent game exposure with desensitisation and increased measured aggression.",
+                "Applying 'health warnings' to contested science trivialises the concept and may mislead consumers.",
+                "Even contested risks to children's development justify precautionary labelling and clear parental information."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider whether evidence justifies health warnings (Pros) and the risk of misleading consumers (Cons).",
             "explanation": "Uncertain risks to children justify precautionary labelling (Pros), but major reviews show no consistent evidence of real-world harm, and health warnings on contested evidence risk alarming consumers without scientific basis (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L82_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Content warnings on games support more thoughtful media consumption among young people.",
             "options": [
-                "Prominent content labels prompt young people and parents to pause and consider their media choices.",
-                "Warning systems that include recommended age ranges and play duration alerts address broader wellbeing.",
                 "Games already include comprehensive content descriptions that effectively serve the same purpose.",
-                "Teenagers routinely ignore or actively circumvent mandatory content warnings across all media formats."
+                "Teenagers routinely ignore or actively circumvent mandatory content warnings across all media formats.",
+                "Prominent content labels prompt young people and parents to pause and consider their media choices.",
+                "Warning systems that include recommended age ranges and play duration alerts address broader wellbeing."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about content warnings as responsible consumption tools (Pros) and their actual effectiveness (Cons).",
             "explanation": "Content warnings prompt consumption reflection and address time and age appropriateness (Pros), but comprehensive in-app content descriptions already exist, and teenagers typically disregard mandatory warnings across all media (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L83_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Online news outlets should be permitted to charge readers subscription fees.",
             "options": [
                 "Subscriptions create a sustainable funding model that reduces dependence on advertising revenue.",
-                "Readers who pay for journalism demonstrate greater engagement and trust in the content they access.",
                 "Subscription paywalls restrict quality journalism to those who can afford to pay for it.",
-                "Free news sources of variable quality proliferate when quality journalism retreats behind paywalls."
+                "Free news sources of variable quality proliferate when quality journalism retreats behind paywalls.",
+                "Readers who pay for journalism demonstrate greater engagement and trust in the content they access."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the sustainability case for news subscriptions (Pros) and the access and quality concerns (Cons).",
             "explanation": "Subscriptions create sustainable journalism funding and build reader engagement (Pros), but paywalls exclude lower-income readers and create space for low-quality misinformation to fill the gap (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L83_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Subscription-funded journalism produces higher-quality and more independent reporting.",
@@ -157,121 +157,121 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L83_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A platform news levy could fund universally accessible high-quality journalism.",
             "options": [
+                "Platform levies are fiercely resisted by technology companies and difficult to implement across borders.",
                 "Requiring platforms that profit from shared news to fund journalism creates a fair commercial relationship.",
                 "Platform levies could finance a public journalism fund making quality reporting freely accessible to all.",
-                "Platform levies are fiercely resisted by technology companies and difficult to implement across borders.",
                 "Government-mediated journalism funding creates potential conflicts of interest and threatens editorial independence."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about a platform journalism levy (Pros) and the implementation and independence concerns (Cons).",
             "explanation": "Platform levies create fair commercial arrangements and could fund universally accessible journalism (Pros), but tech giants resist strongly, and government administration of journalism funds risks editorial independence (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L84_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Online shopping is more beneficial and convenient than shopping in physical stores.",
             "options": [
                 "Online retail provides access to a far greater product range at consistently competitive prices.",
-                "Buying online saves consumers significant time, travel costs, and physical effort.",
                 "Physical stores allow customers to inspect, try, and evaluate products before committing to purchase.",
-                "Online shopping concentrates retail spending in large digital platforms, harming local independent businesses."
+                "Online shopping concentrates retail spending in large digital platforms, harming local independent businesses.",
+                "Buying online saves consumers significant time, travel costs, and physical effort."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the convenience benefits of online shopping (Pros) and what it costs consumers and communities (Cons).",
             "explanation": "Online shopping offers unmatched range, price, and time saving (Pros), but it prevents tactile pre-purchase evaluation and concentrates spending in large platforms at the expense of local economies (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L84_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The growth of online shopping is causing serious harm to local high streets and communities.",
             "options": [
-                "Local shops provide employment, community gathering spaces, and the social fabric of town centres.",
-                "Distinctive local businesses create unique community identities that online platforms cannot replicate.",
                 "Physical retailers failing to adapt to online competition face a commercial, not a policy, challenge.",
-                "Local businesses that integrate online and physical retail can successfully thrive alongside e-commerce."
+                "Local shops provide employment, community gathering spaces, and the social fabric of town centres.",
+                "Local businesses that integrate online and physical retail can successfully thrive alongside e-commerce.",
+                "Distinctive local businesses create unique community identities that online platforms cannot replicate."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider the local economy case against online shopping dominance (Pros) and the adaptation argument (Cons).",
             "explanation": "Local retail supports employment, community identity, and social space (Pros), but struggling physical retailers face an adaptation challenge, and those integrating online channels can succeed alongside e-commerce (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L84_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Online shopping can have a larger environmental footprint than buying locally.",
             "options": [
                 "Individual parcel deliveries generate significantly more packaging waste than aggregated in-store purchasing.",
-                "High return rates in online fashion create enormous volumes of unnecessary transport and material waste.",
                 "Driving to out-of-town retail parks typically generates more emissions per purchase than home delivery.",
+                "High return rates in online fashion create enormous volumes of unnecessary transport and material waste.",
                 "Online retail eliminates the energy cost of maintaining large physical store buildings and car parks."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
-            "hint": "Think about the environmental comparison between online and in-store shopping (both directions).",
+            "hint": "Think about the environmental costs of online shopping (Pros) and where in-store shopping can be worse (Cons).",
             "explanation": "Parcel packaging and high return rates generate significant environmental waste (Pros for local shopping), but home delivery can be more efficient per purchase than car-based retail trips, and avoiding large stores reduces energy use (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L85_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Streaming services are making traditional cinemas commercially unviable.",
             "options": [
-                "Cinema attendance has declined dramatically since the widespread adoption of major streaming platforms.",
-                "Streaming platforms release high-budget films at home simultaneously with or before theatrical releases.",
                 "The cinema experience of communal large-screen viewing cannot be replicated in domestic settings.",
-                "Cinema chains are adapting successfully through luxury formats, event screenings, and premium experiences."
+                "Cinema chains are adapting successfully through luxury formats, event screenings, and premium experiences.",
+                "Cinema attendance has declined dramatically since the widespread adoption of major streaming platforms.",
+                "Streaming platforms release high-budget films at home simultaneously with or before theatrical releases."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the threat streaming poses to cinemas (Pros) and cinema's unique and evolving offering (Cons).",
             "explanation": "Streaming has cut cinema attendance and directly competes with theatrical releases (Pros for the threat), but the communal large-screen experience is irreplaceable, and cinemas are successfully adapting to premium formats (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L85_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Streaming platforms are democratising global access to film and television culture.",
             "options": [
+                "Streaming algorithms create preference bubbles that significantly limit discovery of diverse content.",
                 "Streaming libraries give audiences everywhere access to international cinema unavailable locally.",
                 "Subscription models make a wide range of content affordable for most households.",
-                "Streaming algorithms create preference bubbles that significantly limit discovery of diverse content.",
                 "Independent and international films struggle for visibility on platforms dominated by commercial recommendations."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Consider streaming's democratising effect (Pros) and its algorithmic discovery limitations (Cons).",
             "explanation": "Streaming provides affordable global access to film and television culture (Pros), but algorithms create preference bubbles, and independent film struggles for visibility against commercially prioritised content (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L85_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The growth of streaming has weakened film-going as a shared cultural experience.",
@@ -290,64 +290,64 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L86_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The widespread use of smartphones is making people significantly less sociable.",
             "options": [
-                "Constant phone use displaces face-to-face conversation even when people are physically together.",
-                "Growing up with smartphones reduces young people's practice of reading non-verbal social signals.",
                 "Smartphones enable people to maintain meaningful social relationships across otherwise impossible distances.",
-                "Digital communication is a valid and increasingly important form of social interaction."
+                "Digital communication is a valid and increasingly important form of social interaction.",
+                "Constant phone use displaces face-to-face conversation even when people are physically together.",
+                "Growing up with smartphones reduces young people's practice of reading non-verbal social signals."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about smartphones' impact on face-to-face sociability (Pros for concern) and their social benefits (Cons).",
             "explanation": "Phone use displaces in-person conversation and reduces non-verbal social skill development (Pros for concern), but smartphones maintain important relationships and digital communication is a legitimate and valued social form (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L86_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Smartphones facilitate valuable social connection across cultural and geographic boundaries.",
             "options": [
-                "Messaging and video calling enable genuinely meaningful relationships despite physical distance.",
-                "Social media connects people with shared communities and interests that do not exist locally.",
                 "Online social connections are typically less emotionally deep than those formed through physical proximity.",
-                "Excessive digital sociability can replace, rather than supplement, meaningful real-world social engagement."
+                "Messaging and video calling enable genuinely meaningful relationships despite physical distance.",
+                "Excessive digital sociability can replace, rather than supplement, meaningful real-world social engagement.",
+                "Social media connects people with shared communities and interests that do not exist locally."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider the social benefits of smartphones (Pros) and the depth and quality of digital relationships (Cons).",
             "explanation": "Smartphones enable meaningful long-distance relationships and connect people with like-minded communities (Pros), but digital connections tend to be shallower, and heavy digital sociability can crowd out deeper in-person engagement (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L86_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Social media platforms are designed to maximise engagement rather than genuine human connection.",
             "options": [
+                "Social media can be used intentionally and thoughtfully as a genuine tool for meaningful connection.",
                 "Social media is engineered to deliver dopamine-triggering shallow interactions rather than meaningful conversation.",
                 "Time spent passively scrolling displaces the reciprocal, effortful interaction that builds real relationships.",
-                "Social media can be used intentionally and thoughtfully as a genuine tool for meaningful connection.",
                 "Platform design is evolving, with increasing emphasis on meaningful rather than passive engagement."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about social media's design intent and its impact on real connection (Pros for concern) and intentional use (Cons).",
             "explanation": "Engagement-maximising design promotes shallow dopamine interactions over meaningful conversation (Pros for concern), but critical and intentional users can use platforms for genuine connection, and platform design is gradually improving (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L87_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Modern technology is making people physically lazier and more sedentary in daily life.",
@@ -366,121 +366,121 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L87_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Technology is progressively replacing skilled manual work and reducing practical physical competence.",
             "options": [
                 "GPS navigation has demonstrably reduced spatial awareness and map-reading ability across the population.",
-                "Domestic appliances and cleaning robots reduce the everyday practical and physical competence of users.",
                 "Offloading routine tasks to technology frees human cognitive capacity for higher-value creative work.",
+                "Domestic appliances and cleaning robots reduce the everyday practical and physical competence of users.",
                 "The skills technology replaces are often tedious, and the time saved is more productively deployed."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider whether technology erodes valuable practical skills (Pros for concern) and the productivity argument (Cons).",
             "explanation": "Technology dependence reduces traditional navigation and practical household skills (Pros for concern), but offloading routine tasks frees time and cognitive capacity for higher-value and more fulfilling activities (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L87_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Technology can and should be designed to incorporate physical activity into daily use.",
             "options": [
-                "Activity-integrated technology like walking desks and exergames merges productivity with physical movement.",
-                "Wearable health technology creates strong habits of physical self-monitoring and goal-setting.",
                 "Technology cannot substitute for structured exercise and continues to reduce overall daily movement.",
-                "Commercial pressures drive technology companies to maximise engagement time rather than physical activity."
+                "Activity-integrated technology like walking desks and exergames merges productivity with physical movement.",
+                "Commercial pressures drive technology companies to maximise engagement time rather than physical activity.",
+                "Wearable health technology creates strong habits of physical self-monitoring and goal-setting."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about activity-promoting technology design as a solution (Pros) and its limitations (Cons).",
             "explanation": "Activity-integrated and wearable technology builds physical habits and merges movement with productivity (Pros), but screen technology still reduces net daily movement, and commercial incentives prioritise engagement over health (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L88_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Artificial intelligence will ultimately create more jobs than it displaces.",
             "options": [
                 "Every major technological transition in history has ultimately created more jobs than it destroyed.",
-                "AI generates entirely new industries and job categories that cannot yet be anticipated or measured.",
                 "Unlike previous automation, AI targets cognitive and white-collar work, displacing many educated workers.",
+                "AI generates entirely new industries and job categories that cannot yet be anticipated or measured.",
                 "The pace of AI-driven job displacement is so rapid that worker retraining cannot keep pace."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about the historical and optimistic case for AI job creation (Pros) and the unprecedented scale concern (Cons).",
             "explanation": "Historical technology transitions have consistently created net new employment (Pros), but AI targets cognitive work at unprecedented speed, leaving retraining unable to keep pace with the scale of displacement (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L88_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "AI productivity gains can fund the social protection and retraining that displaced workers need.",
             "options": [
-                "The economic surplus generated by AI automation creates the fiscal capacity to support transitions.",
-                "Well-designed retraining programmes funded by AI productivity gains can successfully reskill workers.",
                 "Productivity gains from AI will disproportionately benefit capital owners rather than workers or governments.",
-                "Retraining success depends heavily on displaced workers' age, education level, and access to learning."
+                "Retraining success depends heavily on displaced workers' age, education level, and access to learning.",
+                "The economic surplus generated by AI automation creates the fiscal capacity to support transitions.",
+                "Well-designed retraining programmes funded by AI productivity gains can successfully reskill workers."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider whether AI productivity gains can fund worker transition (Pros) and the distribution concerns (Cons).",
             "explanation": "AI productivity creates fiscal capacity for retraining and social protection (Pros), but gains accrue disproportionately to capital, and retraining effectiveness depends heavily on individual characteristics and access conditions (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L88_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The impact of AI on employment depends primarily on the policy choices governments make today.",
             "options": [
+                "The pace of AI development makes timely and effective policy responses extremely difficult to achieve.",
                 "Proactive taxation of AI profits and investment in education can shape a positive employment future.",
                 "Countries that actively manage AI transition through policy will experience better labour market outcomes.",
-                "The pace of AI development makes timely and effective policy responses extremely difficult to achieve.",
                 "Governments have historically failed to regulate transformative technologies before significant harm occurs."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about policy determinism in the AI employment debate (Pros) and governance capacity concerns (Cons).",
             "explanation": "Proactive policy and AI profit taxation can shape a positive employment transition (Pros), but AI develops faster than policy can respond, and the historical record of governing transformative technologies quickly is poor (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L89_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Online education can be just as effective as traditional classroom teaching.",
             "options": [
-                "High-quality online courses delivered by expert educators can match classroom content and depth.",
-                "Online platforms provide essential flexible access to education for those who cannot attend in person.",
                 "Classroom environments offer social interaction, spontaneous discussion, and peer learning difficult to replicate.",
-                "Many students lack the self-discipline needed to succeed in unsupported online learning environments."
+                "Many students lack the self-discipline needed to succeed in unsupported online learning environments.",
+                "High-quality online courses delivered by expert educators can match classroom content and depth.",
+                "Online platforms provide essential flexible access to education for those who cannot attend in person."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the effectiveness and access case for online education (Pros) and the social and motivational concerns (Cons).",
             "explanation": "Online education matches classroom content and provides crucial access for non-traditional students (Pros), but social learning and collaborative interaction are very difficult to replicate, and many students lack self-motivation for unsupported online study (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L89_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Online learning significantly increases access to education for students facing traditional barriers.",
@@ -499,7 +499,7 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L89_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Blended learning combining online and classroom teaching produces the strongest educational outcomes.",
@@ -518,57 +518,57 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L90_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Industrial robots will replace most human manufacturing workers within a generation.",
             "options": [
                 "Robotics has already displaced millions of manufacturing jobs and is advancing rapidly in capability.",
-                "Increasing robot precision, adaptability, and falling costs make widespread automation economically inevitable.",
                 "Tasks requiring nuanced human judgment, creativity, and complex physical dexterity remain beyond robots.",
-                "Manufacturing companies still need skilled human workers for quality control, maintenance, and problem-solving."
+                "Manufacturing companies still need skilled human workers for quality control, maintenance, and problem-solving.",
+                "Increasing robot precision, adaptability, and falling costs make widespread automation economically inevitable."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the automation trajectory in manufacturing (Pros for displacement concern) and its limits (Cons).",
             "explanation": "Robots have displaced millions and economic trends point to further widespread displacement (Pros), but nuanced judgment and complex physical tasks remain beyond robotic capability, and human oversight roles persist (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L90_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Manufacturing automation creates new, higher-quality jobs for human workers.",
             "options": [
                 "Robotics creates sustained demand for engineers, programmers, and technicians to build and maintain machines.",
-                "Automation raises productivity, enabling market expansion and creating substantial indirect employment.",
                 "New jobs created by automation require very different skills than those displaced, leaving many workers behind.",
+                "Automation raises productivity, enabling market expansion and creating substantial indirect employment.",
                 "Productivity gains from automation flow primarily to shareholders rather than creating broadly distributed jobs."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider the job creation argument for automation (Pros) and the skills mismatch and distribution concerns (Cons).",
             "explanation": "Automation creates new technical roles and enables market expansion (Pros), but the skills gap between displaced and new jobs is vast, and productivity gains may not translate into broadly distributed employment benefit (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L90_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Society must fundamentally rethink the relationship between work and income to respond to automation.",
             "options": [
+                "Automation has not yet delivered the mass unemployment that these structural responses are designed to address.",
                 "If automation displaces most routine work, working hours must reduce and income must be decoupled from employment.",
                 "Universal basic income or reduced working weeks are necessary structural responses to technological unemployment.",
-                "Automation has not yet delivered the mass unemployment that these structural responses are designed to address.",
                 "Prematurely restructuring work before automation's full effects materialise carries significant economic risks."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the structural rethinking of work in response to automation (Pros) and the premature action concern (Cons).",
             "explanation": "If automation causes structural unemployment, decoupling income from work through UBI or shorter weeks is necessary (Pros), but restructuring before mass unemployment materialises may be premature and economically risky (Cons)."

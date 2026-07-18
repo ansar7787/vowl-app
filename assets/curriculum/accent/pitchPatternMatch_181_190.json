@@ -8,85 +8,85 @@
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Much to everyone's surprise, the intern closed the biggest deal of the quarter.",
-            "textToSpeak": "Much to everyone's surprise, the intern closed the biggest deal of the quarter.",
+            "word": "For privacy reasons, only the lab technician can access those files.",
+            "textToSpeak": "For privacy reasons, only the lab technician can access those files.",
             "options": [
-                "Emphasis on QUARTER (Object focus)",
-                "Emphasis on INTERN (Subject focus)"
+                "Emphasis on TECHNICIAN (Only Modifies This Word)",
+                "Emphasis on FILES (Object focus)"
             ],
-            "correctAnswer": "Emphasis on INTERN (Subject focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on TECHNICIAN (Only Modifies This Word)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                3,
                 1,
+                3,
                 1,
                 1,
                 1
             ],
-            "hint": "'Much to everyone's surprise' flags who did it as the unexpected detail, not what was closed. Listen for the pitch to peak early, on 'intern'.",
-            "explanation": "The sophisticated marker 'much to everyone's surprise' signals the subject is the surprising new information, so the nuclear stress falls on 'intern', not the final word 'quarter'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "The word ‘only’ attaches to whatever comes right after it — that's the word being restricted, and it takes the stress.",
+            "explanation": "‘Only’ restricts TECHNICIAN specifically, so the nuclear stress lands right there, not on FILES.",
+            "emphasisRule": "The word directly following ‘only’ carries the nuclear stress, since that's the word being restricted."
         },
         {
             "id": "pitchPatternMatch_542",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The new policy will take effect at the start of next month.",
-            "textToSpeak": "The new policy will take effect at the start of next month.",
+            "word": "By the finale, even the strictest critics enjoyed the new season.",
+            "textToSpeak": "By the finale, even the strictest critics enjoyed the new season.",
             "options": [
-                "Emphasis on POLICY (Subject focus)",
-                "Emphasis on MONTH (Object focus)"
+                "Emphasis on SEASON (Object focus)",
+                "Emphasis on CRITICS (Even Modifies This Word)"
             ],
-            "correctAnswer": "Emphasis on MONTH (Object focus)",
+            "correctAnswer": "Emphasis on CRITICS (Even Modifies This Word)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "There's no discourse marker here flagging a correction - this is a plain announcement. Listen for the pitch to peak at the very end, on 'month'.",
-            "explanation": "With no contrastive marker present, this plain policy statement keeps the default pattern, stressing the final content word 'month'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "Ask yourself: even who, or even what? That answer is exactly what carries the pitch peak.",
+            "explanation": "Because ‘even’ attaches to CRITICS, that word carries the stress — SEASON is just the ordinary object.",
+            "emphasisRule": "‘Even’ always stresses the element it highlights, regardless of where that element sits in the sentence."
         },
         {
             "id": "pitchPatternMatch_543",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Against all predictions, the smallest startup won the contract.",
-            "textToSpeak": "Against all predictions, the smallest startup won the contract.",
+            "word": "Despite calling IT twice, even the manager's assistant couldn't fix the printer.",
+            "textToSpeak": "Despite calling IT twice, even the manager's assistant couldn't fix the printer.",
             "options": [
-                "Emphasis on CONTRACT (Object focus)",
-                "Emphasis on STARTUP (Subject focus)"
+                "Emphasis on ASSISTANT (Even Modifies This Word)",
+                "Emphasis on PRINTER (Object focus)"
             ],
-            "correctAnswer": "Emphasis on STARTUP (Subject focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on ASSISTANT (Even Modifies This Word)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                3,
                 1,
+                3,
                 1,
                 1,
                 1
             ],
-            "hint": "'Against all predictions' flags who won as the unexpected detail. Listen for the pitch to peak early, on 'startup'.",
-            "explanation": "The marker 'against all predictions' signals the subject is the surprising new information, so the nuclear stress falls on 'startup', not 'contract'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "‘Even’ signals that this case is more surprising than expected — stress lands right on the word it's attached to.",
+            "explanation": "The sentence highlights ASSISTANT as unexpected, which is why ASSISTANT, not PRINTER, takes the pitch peak.",
+            "emphasisRule": "The word directly following ‘even’ carries the nuclear stress, since that's the word marked as surprising or extreme."
         },
         {
             "id": "pitchPatternMatch_544",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "True to form, the veteran captain steadied the team under pressure.",
-            "textToSpeak": "True to form, the veteran captain steadied the team under pressure.",
+            "word": "Because of the noise, only the front row heard the announcement.",
+            "textToSpeak": "Because of the noise, only the front row heard the announcement.",
             "options": [
-                "Emphasis on PRESSURE (Object focus)",
-                "Emphasis on CAPTAIN (Subject focus)"
+                "Emphasis on ANNOUNCEMENT (Object focus)",
+                "Emphasis on ROW (Only Modifies This Word)"
             ],
-            "correctAnswer": "Emphasis on CAPTAIN (Subject focus)",
+            "correctAnswer": "Emphasis on ROW (Only Modifies This Word)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 3,
@@ -95,95 +95,95 @@
                 1,
                 1
             ],
-            "hint": "'True to form' flags the captain's reliable identity as the key point, not the pressure itself. Listen for the pitch to peak early, on 'captain'.",
-            "explanation": "The marker 'true to form' signals the subject's predictable role is the key point, so the nuclear stress falls on 'captain', not 'pressure'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "The object here isn't what's limited — the word right after ‘only’ is. That's where the emphasis belongs.",
+            "explanation": "ROW is exactly what ‘only’ is narrowing down to, so the emphasis falls there instead of on ANNOUNCEMENT.",
+            "emphasisRule": "‘Only’ always stresses the element it limits, regardless of where that element sits in the sentence."
         },
         {
             "id": "pitchPatternMatch_545",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "We rescheduled the appointment for next Tuesday afternoon.",
-            "textToSpeak": "We rescheduled the appointment for next Tuesday afternoon.",
+            "word": "After the surprise renovation, even longtime fans didn't recognize the new menu.",
+            "textToSpeak": "After the surprise renovation, even longtime fans didn't recognize the new menu.",
             "options": [
-                "Emphasis on AFTERNOON (Object focus)",
-                "Emphasis on APPOINTMENT (Subject-like focus)"
+                "Emphasis on FANS (Even Modifies This Word)",
+                "Emphasis on MENU (Object focus)"
             ],
-            "correctAnswer": "Emphasis on AFTERNOON (Object focus)",
+            "correctAnswer": "Emphasis on FANS (Even Modifies This Word)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "There's no marker here flagging a correction - this is a plain update. Listen for the pitch to peak at the very end, on 'afternoon'.",
-            "explanation": "With no contrastive marker present, this plain statement keeps the default pattern, stressing the final content word 'afternoon'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "‘Even’ marks the word right after it as the most surprising or extreme case — that word takes the stress.",
+            "explanation": "‘Even’ marks FANS as the surprising, extreme case, so the nuclear stress lands right there, not on MENU.",
+            "emphasisRule": "The word directly following ‘even’ carries the nuclear stress, since that's the word marked as surprising or extreme."
         },
         {
             "id": "pitchPatternMatch_546",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Just as we feared, the budget cuts hit the research department hardest.",
-            "textToSpeak": "Just as we feared, the budget cuts hit the research department hardest.",
+            "word": "During the first snowfall, even careful drivers skidded on that icy road.",
+            "textToSpeak": "During the first snowfall, even careful drivers skidded on that icy road.",
             "options": [
-                "Emphasis on CUTS (Verb-like focus)",
-                "Emphasis on RESEARCH (Object focus)"
+                "Emphasis on ROAD (Object focus)",
+                "Emphasis on DRIVERS (Even Modifies This Word)"
             ],
-            "correctAnswer": "Emphasis on RESEARCH (Object focus)",
+            "correctAnswer": "Emphasis on DRIVERS (Even Modifies This Word)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "'Just as we feared' confirms a worry, and the new specific detail is which department was hit hardest. Listen for the pitch to peak on 'research'.",
-            "explanation": "The marker 'just as we feared' confirms the general worry, making 'research' - the specific department - the genuinely new detail that carries the nuclear stress.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "Ask yourself: even who, or even what? That answer is exactly what carries the pitch peak.",
+            "explanation": "Because ‘even’ attaches to DRIVERS, that word carries the stress — ROAD is just the ordinary object.",
+            "emphasisRule": "‘Even’ always stresses the element it highlights, regardless of where that element sits in the sentence."
         },
         {
             "id": "pitchPatternMatch_547",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The committee will review all applications by the end of the week.",
-            "textToSpeak": "The committee will review all applications by the end of the week.",
+            "word": "During the rollout, even trained professionals found the software confusing.",
+            "textToSpeak": "During the rollout, even trained professionals found the software confusing.",
             "options": [
-                "Emphasis on COMMITTEE (Subject focus)",
-                "Emphasis on WEEK (Object focus)"
+                "Emphasis on PROFESSIONALS (Even Modifies This Word)",
+                "Emphasis on SOFTWARE (Object focus)"
             ],
-            "correctAnswer": "Emphasis on WEEK (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on PROFESSIONALS (Even Modifies This Word)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "There's no marker here flagging a correction - this is a plain deadline announcement. Listen for the pitch to peak at the very end, on 'week'.",
-            "explanation": "With no contrastive marker present, this plain deadline statement keeps the default pattern, stressing the final content word 'week'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "‘Even’ signals that this case is more surprising than expected — stress lands right on the word it's attached to.",
+            "explanation": "The sentence highlights PROFESSIONALS as unexpected, which is why PROFESSIONALS, not SOFTWARE, takes the pitch peak.",
+            "emphasisRule": "The word directly following ‘even’ carries the nuclear stress, since that's the word marked as surprising or extreme."
         },
         {
             "id": "pitchPatternMatch_548",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Contrary to all expectations, the youngest player scored the winning goal.",
-            "textToSpeak": "Contrary to all expectations, the youngest player scored the winning goal.",
+            "word": "Under the new policy, only full-time staff receive health benefits.",
+            "textToSpeak": "Under the new policy, only full-time staff receive health benefits.",
             "options": [
-                "Emphasis on PLAYER (Subject focus)",
-                "Emphasis on GOAL (Object focus)"
+                "Emphasis on BENEFITS (Object focus)",
+                "Emphasis on STAFF (Only Modifies This Word)"
             ],
-            "correctAnswer": "Emphasis on PLAYER (Subject focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on STAFF (Only Modifies This Word)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 3,
                 1,
@@ -191,47 +191,47 @@
                 1,
                 1
             ],
-            "hint": "'Contrary to all expectations' flags who scored as the unexpected detail. Listen for the pitch to peak early, on 'player'.",
-            "explanation": "The marker 'contrary to all expectations' signals the subject is the surprising new information, so the nuclear stress falls on 'player', not 'goal'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "The object here isn't what's limited — the word right after ‘only’ is. That's where the emphasis belongs.",
+            "explanation": "STAFF is exactly what ‘only’ is narrowing down to, so the emphasis falls there instead of on BENEFITS.",
+            "emphasisRule": "‘Only’ always stresses the element it limits, regardless of where that element sits in the sentence."
         },
         {
             "id": "pitchPatternMatch_549",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "She will present the quarterly results during Thursday's meeting.",
-            "textToSpeak": "She will present the quarterly results during Thursday's meeting.",
+            "word": "During their honeymoon, even seasoned travelers got lost in that airport.",
+            "textToSpeak": "During their honeymoon, even seasoned travelers got lost in that airport.",
             "options": [
-                "Emphasis on RESULTS (Verb-like focus)",
-                "Emphasis on MEETING (Object focus)"
+                "Emphasis on TRAVELERS (Even Modifies This Word)",
+                "Emphasis on AIRPORT (Object focus)"
             ],
-            "correctAnswer": "Emphasis on MEETING (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on TRAVELERS (Even Modifies This Word)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "There's no marker here flagging a correction - this is a plain schedule update. Listen for the pitch to peak at the very end, on 'meeting'.",
-            "explanation": "With no contrastive marker present, this plain statement keeps the default pattern, stressing the final content word 'meeting'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "‘Even’ marks the word right after it as the most surprising or extreme case — that word takes the stress.",
+            "explanation": "‘Even’ marks TRAVELERS as the surprising, extreme case, so the nuclear stress lands right there, not on AIRPORT.",
+            "emphasisRule": "The word directly following ‘even’ carries the nuclear stress, since that's the word marked as surprising or extreme."
         },
         {
             "id": "pitchPatternMatch_550",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Remarkably, the junior associate drafted the entire contract overnight.",
-            "textToSpeak": "Remarkably, the junior associate drafted the entire contract overnight.",
+            "word": "Under store policy, only the original receipt allows a refund.",
+            "textToSpeak": "Under store policy, only the original receipt allows a refund.",
             "options": [
-                "Emphasis on ASSOCIATE (Subject focus)",
-                "Emphasis on OVERNIGHT (Time/Manner focus)"
+                "Emphasis on REFUND (Object focus)",
+                "Emphasis on RECEIPT (Only Modifies This Word)"
             ],
-            "correctAnswer": "Emphasis on ASSOCIATE (Subject focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on RECEIPT (Only Modifies This Word)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 3,
                 1,
@@ -239,46 +239,46 @@
                 1,
                 1
             ],
-            "hint": "'Remarkably' flags who did it as the impressive, unexpected detail. Listen for the pitch to peak early, on 'associate'.",
-            "explanation": "The marker 'remarkably' signals the subject's identity is the impressive new information, so the nuclear stress falls on 'associate', not 'overnight'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "Ask yourself: only what, or only who? The answer to that question is exactly what carries the pitch peak.",
+            "explanation": "Because ‘only’ attaches to RECEIPT, that word carries the stress — REFUND is just the ordinary object.",
+            "emphasisRule": "‘Only’ always stresses the element it limits, regardless of where that element sits in the sentence."
         },
         {
             "id": "pitchPatternMatch_551",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The flight attendants will distribute the meals after takeoff.",
-            "textToSpeak": "The flight attendants will distribute the meals after takeoff.",
+            "word": "As part of the promotion, only direct flights qualify for the discount.",
+            "textToSpeak": "As part of the promotion, only direct flights qualify for the discount.",
             "options": [
-                "Emphasis on TAKEOFF (Time focus)",
-                "Emphasis on ATTENDANTS (Subject focus)"
+                "Emphasis on FLIGHTS (Only Modifies This Word)",
+                "Emphasis on DISCOUNT (Object focus)"
             ],
-            "correctAnswer": "Emphasis on TAKEOFF (Time focus)",
+            "correctAnswer": "Emphasis on FLIGHTS (Only Modifies This Word)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "There's no marker here flagging a correction - this is a plain routine announcement. Listen for the pitch to peak at the very end, on 'takeoff'.",
-            "explanation": "With no contrastive marker present, this plain statement keeps the default pattern, stressing the final content word 'takeoff'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "‘Only’ narrows the sentence down to one specific group or thing — stress lands right on that word, not the object.",
+            "explanation": "The sentence limits the claim to FLIGHTS alone, which is why FLIGHTS, not DISCOUNT, takes the pitch peak.",
+            "emphasisRule": "The word directly following ‘only’ carries the nuclear stress, since that's the word being restricted."
         },
         {
             "id": "pitchPatternMatch_552",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Surprisingly, the quietest student delivered the most persuasive argument.",
-            "textToSpeak": "Surprisingly, the quietest student delivered the most persuasive argument.",
+            "word": "Over the holiday weekend, even quiet neighborhoods reported an increase in traffic.",
+            "textToSpeak": "Over the holiday weekend, even quiet neighborhoods reported an increase in traffic.",
             "options": [
-                "Emphasis on ARGUMENT (Object focus)",
-                "Emphasis on STUDENT (Subject focus)"
+                "Emphasis on TRAFFIC (Object focus)",
+                "Emphasis on NEIGHBORHOODS (Even Modifies This Word)"
             ],
-            "correctAnswer": "Emphasis on STUDENT (Subject focus)",
+            "correctAnswer": "Emphasis on NEIGHBORHOODS (Even Modifies This Word)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 3,
@@ -287,94 +287,94 @@
                 1,
                 1
             ],
-            "hint": "'Surprisingly' flags who delivered the argument as the unexpected detail. Listen for the pitch to peak early, on 'student'.",
-            "explanation": "The marker 'surprisingly' signals the subject is the surprising new information, so the nuclear stress falls on 'student', not 'argument'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "The object isn't the surprising part here — the word right after ‘even’ is. That's where the emphasis belongs.",
+            "explanation": "NEIGHBORHOODS is exactly what ‘even’ is drawing attention to, so the emphasis falls there instead of on TRAFFIC.",
+            "emphasisRule": "‘Even’ always stresses the element it highlights, regardless of where that element sits in the sentence."
         },
         {
             "id": "pitchPatternMatch_553",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "We will announce the final decision sometime next week.",
-            "textToSpeak": "We will announce the final decision sometime next week.",
+            "word": "On exam day, even top students struggled with that exam.",
+            "textToSpeak": "On exam day, even top students struggled with that exam.",
             "options": [
-                "Emphasis on DECISION (Object-like focus)",
-                "Emphasis on WEEK (Time focus)"
+                "Emphasis on STUDENTS (Even Modifies This Word)",
+                "Emphasis on EXAM (Object focus)"
             ],
-            "correctAnswer": "Emphasis on WEEK (Time focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on STUDENTS (Even Modifies This Word)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "There's no marker here flagging a correction - this is simply a plain heads-up about timing. Listen for the pitch to peak at the very end, on 'week'.",
-            "explanation": "With no contrastive marker present, this plain heads-up keeps the default pattern, stressing the final content word 'week'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "‘Even’ marks the word right after it as the most surprising or extreme case — that word takes the stress.",
+            "explanation": "‘Even’ marks STUDENTS as the surprising, extreme case, so the nuclear stress lands right there, not on EXAM.",
+            "emphasisRule": "The word directly following ‘even’ carries the nuclear stress, since that's the word marked as surprising or extreme."
         },
         {
             "id": "pitchPatternMatch_554",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "True to form, the experienced pilot handled the turbulence calmly.",
-            "textToSpeak": "True to form, the experienced pilot handled the turbulence calmly.",
+            "word": "During the holiday rush, only the manager can approve overtime requests.",
+            "textToSpeak": "During the holiday rush, only the manager can approve overtime requests.",
             "options": [
-                "Emphasis on TURBULENCE (Object focus)",
-                "Emphasis on CALMLY (Manner focus)"
+                "Emphasis on REQUESTS (Object focus)",
+                "Emphasis on MANAGER (Only Modifies This Word)"
             ],
-            "correctAnswer": "Emphasis on CALMLY (Manner focus)",
+            "correctAnswer": "Emphasis on MANAGER (Only Modifies This Word)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
+                3,
                 1,
                 1,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "'True to form' signals the calm manner is the predictable, noteworthy detail, not the turbulence itself. Listen for the pitch to peak on 'calmly'.",
-            "explanation": "The marker 'true to form' signals the manner of handling it is the key point, so the nuclear stress falls on 'calmly', not 'turbulence'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Ask yourself: only what, or only who? The answer to that question is exactly what carries the pitch peak.",
+            "explanation": "Because ‘only’ attaches to MANAGER, that word carries the stress — REQUESTS is just the ordinary object.",
+            "emphasisRule": "‘Only’ always stresses the element it limits, regardless of where that element sits in the sentence."
         },
         {
             "id": "pitchPatternMatch_555",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The hospital will open a new wing for pediatric care.",
-            "textToSpeak": "The hospital will open a new wing for pediatric care.",
+            "word": "Halfway through repairs, even the backup generator failed during the storm.",
+            "textToSpeak": "Halfway through repairs, even the backup generator failed during the storm.",
             "options": [
-                "Emphasis on CARE (Object focus)",
-                "Emphasis on HOSPITAL (Subject focus)"
+                "Emphasis on GENERATOR (Even Modifies This Word)",
+                "Emphasis on STORM (Object focus)"
             ],
-            "correctAnswer": "Emphasis on CARE (Object focus)",
+            "correctAnswer": "Emphasis on GENERATOR (Even Modifies This Word)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "There's no marker here flagging a correction - this is a plain announcement. Listen for the pitch to peak at the very end, on 'care'.",
-            "explanation": "With no contrastive marker present, this plain statement keeps the default pattern, stressing the final content word 'care'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "‘Even’ signals that this case is more surprising than expected — stress lands right on the word it's attached to.",
+            "explanation": "The sentence highlights GENERATOR as unexpected, which is why GENERATOR, not STORM, takes the pitch peak.",
+            "emphasisRule": "The word directly following ‘even’ carries the nuclear stress, since that's the word marked as surprising or extreme."
         },
         {
             "id": "pitchPatternMatch_556",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Against the odds, the underfunded clinic treated more patients than the city hospital.",
-            "textToSpeak": "Against the odds, the underfunded clinic treated more patients than the city hospital.",
+            "word": "To prevent spam, only verified accounts can post reviews.",
+            "textToSpeak": "To prevent spam, only verified accounts can post reviews.",
             "options": [
-                "Emphasis on HOSPITAL (Object focus)",
-                "Emphasis on CLINIC (Subject focus)"
+                "Emphasis on REVIEWS (Object focus)",
+                "Emphasis on ACCOUNTS (Only Modifies This Word)"
             ],
-            "correctAnswer": "Emphasis on CLINIC (Subject focus)",
+            "correctAnswer": "Emphasis on ACCOUNTS (Only Modifies This Word)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 3,
@@ -383,95 +383,95 @@
                 1,
                 1
             ],
-            "hint": "'Against the odds' flags the clinic's identity as the surprising detail, despite limited funding. Listen for the pitch to peak early, on 'clinic'.",
-            "explanation": "The marker 'against the odds' signals the subject's surprising performance is the key point, so the nuclear stress falls on 'clinic'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "The object here isn't what's limited — the word right after ‘only’ is. That's where the emphasis belongs.",
+            "explanation": "ACCOUNTS is exactly what ‘only’ is narrowing down to, so the emphasis falls there instead of on REVIEWS.",
+            "emphasisRule": "‘Only’ always stresses the element it limits, regardless of where that element sits in the sentence."
         },
         {
             "id": "pitchPatternMatch_557",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The library will extend its hours during final exam week.",
-            "textToSpeak": "The library will extend its hours during final exam week.",
+            "word": "Near the final stretch, even experienced climbers turned back at the summit.",
+            "textToSpeak": "Near the final stretch, even experienced climbers turned back at the summit.",
             "options": [
-                "Emphasis on WEEK (Time focus)",
-                "Emphasis on LIBRARY (Subject focus)"
+                "Emphasis on CLIMBERS (Even Modifies This Word)",
+                "Emphasis on SUMMIT (Object focus)"
             ],
-            "correctAnswer": "Emphasis on WEEK (Time focus)",
+            "correctAnswer": "Emphasis on CLIMBERS (Even Modifies This Word)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "There's no marker here flagging a correction - this is a plain scheduling notice. Listen for the pitch to peak at the very end, on 'week'.",
-            "explanation": "With no contrastive marker present, this plain scheduling notice keeps the default pattern, stressing the final content word 'week'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "‘Even’ marks the word right after it as the most surprising or extreme case — that word takes the stress.",
+            "explanation": "‘Even’ marks CLIMBERS as the surprising, extreme case, so the nuclear stress lands right there, not on SUMMIT.",
+            "emphasisRule": "The word directly following ‘even’ carries the nuclear stress, since that's the word marked as surprising or extreme."
         },
         {
             "id": "pitchPatternMatch_558",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Much to her relief, the biopsy results came back completely clear.",
-            "textToSpeak": "Much to her relief, the biopsy results came back completely clear.",
+            "word": "According to the rules, only the top three finishers qualify for the final.",
+            "textToSpeak": "According to the rules, only the top three finishers qualify for the final.",
             "options": [
-                "Emphasis on CLEAR (Complement focus)",
-                "Emphasis on RESULTS (Subject-like focus)"
+                "Emphasis on FINAL (Object focus)",
+                "Emphasis on FINISHERS (Only Modifies This Word)"
             ],
-            "correctAnswer": "Emphasis on CLEAR (Complement focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on FINISHERS (Only Modifies This Word)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                1,
-                1,
-                1,
                 3,
+                1,
+                1,
+                1,
                 1
             ],
-            "hint": "'Much to her relief' signals the outcome itself is the important news. Listen for the pitch to peak on 'clear'.",
-            "explanation": "The marker 'much to her relief' points to the reassuring outcome as the key new information, so the nuclear stress falls on 'clear'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Ask yourself: only what, or only who? The answer to that question is exactly what carries the pitch peak.",
+            "explanation": "Because ‘only’ attaches to FINISHERS, that word carries the stress — FINAL is just the ordinary object.",
+            "emphasisRule": "‘Only’ always stresses the element it limits, regardless of where that element sits in the sentence."
         },
         {
             "id": "pitchPatternMatch_559",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The airline will update passengers through email notifications.",
-            "textToSpeak": "The airline will update passengers through email notifications.",
+            "word": "For this particular medication, only the pediatrician can adjust that dosage.",
+            "textToSpeak": "For this particular medication, only the pediatrician can adjust that dosage.",
             "options": [
-                "Emphasis on AIRLINE (Subject focus)",
-                "Emphasis on NOTIFICATIONS (Object focus)"
+                "Emphasis on PEDIATRICIAN (Only Modifies This Word)",
+                "Emphasis on DOSAGE (Object focus)"
             ],
-            "correctAnswer": "Emphasis on NOTIFICATIONS (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on PEDIATRICIAN (Only Modifies This Word)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "There's no marker here flagging a correction - this is a plain policy announcement. Listen for the pitch to peak at the very end, on 'notifications'.",
-            "explanation": "With no contrastive marker present, this plain statement keeps the default pattern, stressing the final content word 'notifications'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "‘Only’ narrows the sentence down to one specific group or thing — stress lands right on that word, not the object.",
+            "explanation": "The sentence limits the claim to PEDIATRICIAN alone, which is why PEDIATRICIAN, not DOSAGE, takes the pitch peak.",
+            "emphasisRule": "The word directly following ‘only’ carries the nuclear stress, since that's the word being restricted."
         },
         {
             "id": "pitchPatternMatch_560",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Unexpectedly, the smallest investor ended up funding the entire project.",
-            "textToSpeak": "Unexpectedly, the smallest investor ended up funding the entire project.",
+            "word": "Under the new bylaws, only senior members can vote on the budget.",
+            "textToSpeak": "Under the new bylaws, only senior members can vote on the budget.",
             "options": [
-                "Emphasis on INVESTOR (Subject focus)",
-                "Emphasis on PROJECT (Object focus)"
+                "Emphasis on BUDGET (Object focus)",
+                "Emphasis on MEMBERS (Only Modifies This Word)"
             ],
-            "correctAnswer": "Emphasis on INVESTOR (Subject focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on MEMBERS (Only Modifies This Word)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 3,
                 1,
@@ -479,46 +479,46 @@
                 1,
                 1
             ],
-            "hint": "'Unexpectedly' flags who funded it as the surprising detail. Listen for the pitch to peak early, on 'investor'.",
-            "explanation": "The marker 'unexpectedly' signals the subject is the surprising new information, so the nuclear stress falls on 'investor', not 'project'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "The object here isn't what's limited — the word right after ‘only’ is. That's where the emphasis belongs.",
+            "explanation": "MEMBERS is exactly what ‘only’ is narrowing down to, so the emphasis falls there instead of on BUDGET.",
+            "emphasisRule": "‘Only’ always stresses the element it limits, regardless of where that element sits in the sentence."
         },
         {
             "id": "pitchPatternMatch_561",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The museum will showcase ancient artifacts next spring.",
-            "textToSpeak": "The museum will showcase ancient artifacts next spring.",
+            "word": "By the third hour, even the veteran nurses found the shift exhausting.",
+            "textToSpeak": "By the third hour, even the veteran nurses found the shift exhausting.",
             "options": [
-                "Emphasis on SPRING (Time focus)",
-                "Emphasis on MUSEUM (Subject focus)"
+                "Emphasis on NURSES (Even Modifies This Word)",
+                "Emphasis on SHIFT (Object focus)"
             ],
-            "correctAnswer": "Emphasis on SPRING (Time focus)",
+            "correctAnswer": "Emphasis on NURSES (Even Modifies This Word)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "There's no marker here flagging a correction - this is a plain announcement. Listen for the pitch to peak at the very end, on 'spring'.",
-            "explanation": "With no contrastive marker present, this plain statement keeps the default pattern, stressing the final content word 'spring'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "‘Even’ marks the word right after it as the most surprising or extreme case — that word takes the stress.",
+            "explanation": "‘Even’ marks NURSES as the surprising, extreme case, so the nuclear stress lands right there, not on SHIFT.",
+            "emphasisRule": "The word directly following ‘even’ carries the nuclear stress, since that's the word marked as surprising or extreme."
         },
         {
             "id": "pitchPatternMatch_562",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Against all odds, the local team defended their championship title.",
-            "textToSpeak": "Against all odds, the local team defended their championship title.",
+            "word": "During the year-end review, even the newest employees received a bonus.",
+            "textToSpeak": "During the year-end review, even the newest employees received a bonus.",
             "options": [
-                "Emphasis on TITLE (Object focus)",
-                "Emphasis on TEAM (Subject focus)"
+                "Emphasis on BONUS (Object focus)",
+                "Emphasis on EMPLOYEES (Even Modifies This Word)"
             ],
-            "correctAnswer": "Emphasis on TEAM (Subject focus)",
+            "correctAnswer": "Emphasis on EMPLOYEES (Even Modifies This Word)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 3,
@@ -527,95 +527,95 @@
                 1,
                 1
             ],
-            "hint": "'Against all odds' flags the team's success as the unexpected detail. Listen for the pitch to peak early, on 'team'.",
-            "explanation": "The marker 'against all odds' signals the subject's surprising success is the key point, so the nuclear stress falls on 'team', not 'title'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "Ask yourself: even who, or even what? That answer is exactly what carries the pitch peak.",
+            "explanation": "Because ‘even’ attaches to EMPLOYEES, that word carries the stress — BONUS is just the ordinary object.",
+            "emphasisRule": "‘Even’ always stresses the element it highlights, regardless of where that element sits in the sentence."
         },
         {
             "id": "pitchPatternMatch_563",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The new software update will fix several security vulnerabilities.",
-            "textToSpeak": "The new software update will fix several security vulnerabilities.",
+            "word": "According to the new policy, even minor injuries required a hospital visit.",
+            "textToSpeak": "According to the new policy, even minor injuries required a hospital visit.",
             "options": [
-                "Emphasis on UPDATE (Subject focus)",
-                "Emphasis on VULNERABILITIES (Object focus)"
+                "Emphasis on INJURIES (Even Modifies This Word)",
+                "Emphasis on VISIT (Object focus)"
             ],
-            "correctAnswer": "Emphasis on VULNERABILITIES (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on INJURIES (Even Modifies This Word)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "There's no marker here flagging a correction - this is a plain technical announcement. Listen for the pitch to peak at the very end, on 'vulnerabilities'.",
-            "explanation": "With no contrastive marker present, this plain statement keeps the default pattern, stressing the final content word 'vulnerabilities'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "‘Even’ signals that this case is more surprising than expected — stress lands right on the word it's attached to.",
+            "explanation": "The sentence highlights INJURIES as unexpected, which is why INJURIES, not VISIT, takes the pitch peak.",
+            "emphasisRule": "The word directly following ‘even’ carries the nuclear stress, since that's the word marked as surprising or extreme."
         },
         {
             "id": "pitchPatternMatch_564",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Remarkably, the rookie firefighter remained composed throughout the crisis.",
-            "textToSpeak": "Remarkably, the rookie firefighter remained composed throughout the crisis.",
+            "word": "During peak season, even the smallest delay affected the whole schedule.",
+            "textToSpeak": "During peak season, even the smallest delay affected the whole schedule.",
             "options": [
-                "Emphasis on COMPOSED (Manner focus)",
-                "Emphasis on CRISIS (Object focus)"
+                "Emphasis on SCHEDULE (Object focus)",
+                "Emphasis on DELAY (Even Modifies This Word)"
             ],
-            "correctAnswer": "Emphasis on COMPOSED (Manner focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on DELAY (Even Modifies This Word)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
+                3,
                 1,
                 1,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "'Remarkably' signals the calm manner is the noteworthy detail, not the crisis itself. Listen for the pitch to peak on 'composed'.",
-            "explanation": "The marker 'remarkably' signals the manner of staying calm is the key point, so the nuclear stress falls on 'composed', not 'crisis'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The object isn't the surprising part here — the word right after ‘even’ is. That's where the emphasis belongs.",
+            "explanation": "DELAY is exactly what ‘even’ is drawing attention to, so the emphasis falls there instead of on SCHEDULE.",
+            "emphasisRule": "‘Even’ always stresses the element it highlights, regardless of where that element sits in the sentence."
         },
         {
             "id": "pitchPatternMatch_565",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The conference will take place at the downtown convention center.",
-            "textToSpeak": "The conference will take place at the downtown convention center.",
+            "word": "Under league rules, only the captain can call a timeout.",
+            "textToSpeak": "Under league rules, only the captain can call a timeout.",
             "options": [
-                "Emphasis on CONFERENCE (Subject focus)",
-                "Emphasis on CENTER (Object focus)"
+                "Emphasis on CAPTAIN (Only Modifies This Word)",
+                "Emphasis on TIMEOUT (Object focus)"
             ],
-            "correctAnswer": "Emphasis on CENTER (Object focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on CAPTAIN (Only Modifies This Word)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "There's no marker here flagging a correction - this is a plain venue announcement. Listen for the pitch to peak at the very end, on 'center'.",
-            "explanation": "With no contrastive marker present, this plain statement keeps the default pattern, stressing the final content word 'center'.",
-            "emphasisRule": "In a neutral sentence, the main pitch accent (emphasis) naturally lands on the final content word (the object)."
+            "hint": "The word ‘only’ attaches to whatever comes right after it — that's the word being restricted, and it takes the stress.",
+            "explanation": "‘Only’ restricts CAPTAIN specifically, so the nuclear stress lands right there, not on TIMEOUT.",
+            "emphasisRule": "The word directly following ‘only’ carries the nuclear stress, since that's the word being restricted."
         },
         {
             "id": "pitchPatternMatch_566",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Just as we suspected, the cheaper material wore out within months.",
-            "textToSpeak": "Just as we suspected, the cheaper material wore out within months.",
+            "word": "As part of the promotion, only premium members get free shipping.",
+            "textToSpeak": "As part of the promotion, only premium members get free shipping.",
             "options": [
-                "Emphasis on MATERIAL (Subject focus)",
-                "Emphasis on MONTHS (Time focus)"
+                "Emphasis on SHIPPING (Object focus)",
+                "Emphasis on MEMBERS (Only Modifies This Word)"
             ],
-            "correctAnswer": "Emphasis on MATERIAL (Subject focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on MEMBERS (Only Modifies This Word)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 3,
                 1,
@@ -623,46 +623,46 @@
                 1,
                 1
             ],
-            "hint": "'Just as we suspected' confirms a prior doubt about the material specifically. Listen for the pitch to peak early, on 'material'.",
-            "explanation": "The marker 'just as we suspected' confirms a specific prior doubt about the subject, so the nuclear stress falls on 'material'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "Ask yourself: only what, or only who? The answer to that question is exactly what carries the pitch peak.",
+            "explanation": "Because ‘only’ attaches to MEMBERS, that word carries the stress — SHIPPING is just the ordinary object.",
+            "emphasisRule": "‘Only’ always stresses the element it limits, regardless of where that element sits in the sentence."
         },
         {
             "id": "pitchPatternMatch_567",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The school will introduce a new curriculum starting next year.",
-            "textToSpeak": "The school will introduce a new curriculum starting next year.",
+            "word": "After midnight, only the night shift covers the emergency line.",
+            "textToSpeak": "After midnight, only the night shift covers the emergency line.",
             "options": [
-                "Emphasis on SCHOOL (Subject focus)",
-                "Emphasis on YEAR (Time focus)"
+                "Emphasis on SHIFT (Only Modifies This Word)",
+                "Emphasis on LINE (Object focus)"
             ],
-            "correctAnswer": "Emphasis on YEAR (Time focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on SHIFT (Only Modifies This Word)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "There's no marker here flagging a correction - this is a plain announcement. Listen for the pitch to peak at the very end, on 'year'.",
-            "explanation": "With no contrastive marker present, this plain statement keeps the default pattern, stressing the final content word 'year'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "‘Only’ narrows the sentence down to one specific group or thing — stress lands right on that word, not the object.",
+            "explanation": "The sentence limits the claim to SHIFT alone, which is why SHIFT, not LINE, takes the pitch peak.",
+            "emphasisRule": "The word directly following ‘only’ carries the nuclear stress, since that's the word being restricted."
         },
         {
             "id": "pitchPatternMatch_568",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Surprisingly, the smallest clinic outperformed every major hospital in patient satisfaction.",
-            "textToSpeak": "Surprisingly, the smallest clinic outperformed every major hospital in patient satisfaction.",
+            "word": "Under state law, only licensed electricians can install this panel.",
+            "textToSpeak": "Under state law, only licensed electricians can install this panel.",
             "options": [
-                "Emphasis on SATISFACTION (Object focus)",
-                "Emphasis on CLINIC (Subject focus)"
+                "Emphasis on PANEL (Object focus)",
+                "Emphasis on ELECTRICIANS (Only Modifies This Word)"
             ],
-            "correctAnswer": "Emphasis on CLINIC (Subject focus)",
+            "correctAnswer": "Emphasis on ELECTRICIANS (Only Modifies This Word)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 3,
@@ -671,46 +671,46 @@
                 1,
                 1
             ],
-            "hint": "'Surprisingly' flags the clinic's identity as the unexpected detail. Listen for the pitch to peak early, on 'clinic'.",
-            "explanation": "The marker 'surprisingly' signals the subject's surprising performance is the key point, so the nuclear stress falls on 'clinic'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "The object here isn't what's limited — the word right after ‘only’ is. That's where the emphasis belongs.",
+            "explanation": "ELECTRICIANS is exactly what ‘only’ is narrowing down to, so the emphasis falls there instead of on PANEL.",
+            "emphasisRule": "‘Only’ always stresses the element it limits, regardless of where that element sits in the sentence."
         },
         {
             "id": "pitchPatternMatch_569",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The restaurant will close temporarily for renovations next month.",
-            "textToSpeak": "The restaurant will close temporarily for renovations next month.",
+            "word": "To everyone's surprise, even loyal customers complained about the price increase.",
+            "textToSpeak": "To everyone's surprise, even loyal customers complained about the price increase.",
             "options": [
-                "Emphasis on MONTH (Time focus)",
-                "Emphasis on RESTAURANT (Subject focus)"
+                "Emphasis on CUSTOMERS (Even Modifies This Word)",
+                "Emphasis on INCREASE (Object focus)"
             ],
-            "correctAnswer": "Emphasis on MONTH (Time focus)",
+            "correctAnswer": "Emphasis on CUSTOMERS (Even Modifies This Word)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "There's no marker here flagging a correction - this is a plain announcement. Listen for the pitch to peak at the very end, on 'month'.",
-            "explanation": "With no contrastive marker present, this plain closure notice keeps the default pattern, stressing the final content word 'month'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "‘Even’ marks the word right after it as the most surprising or extreme case — that word takes the stress.",
+            "explanation": "‘Even’ marks CUSTOMERS as the surprising, extreme case, so the nuclear stress lands right there, not on INCREASE.",
+            "emphasisRule": "The word directly following ‘even’ carries the nuclear stress, since that's the word marked as surprising or extreme."
         },
         {
             "id": "pitchPatternMatch_570",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Against expectations, the budget version of the phone outsold the premium model.",
-            "textToSpeak": "Against expectations, the budget version of the phone outsold the premium model.",
+            "word": "For safety reasons, only registered guests can access the pool.",
+            "textToSpeak": "For safety reasons, only registered guests can access the pool.",
             "options": [
-                "Emphasis on MODEL (Object focus)",
-                "Emphasis on VERSION (Subject focus)"
+                "Emphasis on POOL (Object focus)",
+                "Emphasis on GUESTS (Only Modifies This Word)"
             ],
-            "correctAnswer": "Emphasis on VERSION (Subject focus)",
+            "correctAnswer": "Emphasis on GUESTS (Only Modifies This Word)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 3,
@@ -719,9 +719,9 @@
                 1,
                 1
             ],
-            "hint": "'Against expectations' flags which version sold better as the surprising detail. Listen for the pitch to peak early, on 'version'.",
-            "explanation": "The marker 'against expectations' signals the subject is the surprising new information, so the nuclear stress falls on 'version', not 'model'.",
-            "emphasisRule": "When contrasting or clarifying information, the pitch accent shifts to the subject, highlighting it over the object."
+            "hint": "Ask yourself: only what, or only who? The answer to that question is exactly what carries the pitch peak.",
+            "explanation": "Because ‘only’ attaches to GUESTS, that word carries the stress — POOL is just the ordinary object.",
+            "emphasisRule": "‘Only’ always stresses the element it limits, regardless of where that element sits in the sentence."
         }
     ]
 }

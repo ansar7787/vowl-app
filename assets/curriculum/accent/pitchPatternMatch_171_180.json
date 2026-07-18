@@ -8,14 +8,14 @@
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Not the morning meeting - the afternoon one.",
-            "textToSpeak": "Not the morning meeting - the afternoon one.",
+            "word": "The complaint wasn't about the food - it was about the service.",
+            "textToSpeak": "The complaint wasn't about the food - it was about the service.",
             "options": [
-                "Emphasis on MORNING (Given/Rejected Information)",
-                "Emphasis on AFTERNOON (New/Corrected Information)"
+                "Emphasis on SERVICE (New/Corrected Information)",
+                "Emphasis on FOOD (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on AFTERNOON (New/Corrected Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on SERVICE (New/Corrected Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -23,143 +23,143 @@
                 3,
                 1
             ],
-            "hint": "'The morning meeting' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'afternoon'.",
-            "explanation": "Even in this short fragment, the rejected 'morning' stays deaccented, while the corrected 'afternoon' carries the nuclear stress.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence firmly rules out one possibility and names the real cause — stress belongs on the real cause, not the ruled-out one.",
+            "explanation": "FOOD is explicitly ruled out here, so the stress falls on SERVICE, the information actually being confirmed.",
+            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_512",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Chicken, not beef.",
-            "textToSpeak": "Chicken, not beef.",
+            "word": "The malfunction wasn't in the software - it was in the hardware.",
+            "textToSpeak": "The malfunction wasn't in the software - it was in the hardware.",
             "options": [
-                "Emphasis on CHICKEN (New/Corrected Information)",
-                "Emphasis on BEEF (Given/Rejected Information)"
+                "Emphasis on SOFTWARE (Given/Rejected Information)",
+                "Emphasis on HARDWARE (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on CHICKEN (New/Corrected Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on HARDWARE (New/Corrected Information)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                3,
                 1,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'Beef' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'chicken'.",
-            "explanation": "In this short fragment, 'chicken' is the new, corrected information, so it carries the nuclear stress, not the rejected 'beef'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Read past the first clause quickly — it's just there to be dismissed. The second clause holds the actual answer.",
+            "explanation": "Because this sentence firmly denies SOFTWARE, the pitch accent shifts to HARDWARE, the real explanation.",
+            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial."
         },
         {
             "id": "pitchPatternMatch_513",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The blue one, not the red.",
-            "textToSpeak": "The blue one, not the red.",
+            "word": "The apology wasn't for the delay - it was for the miscommunication.",
+            "textToSpeak": "The apology wasn't for the delay - it was for the miscommunication.",
             "options": [
-                "Emphasis on RED (Given/Rejected Information)",
-                "Emphasis on BLUE (New/Corrected Information)"
+                "Emphasis on MISCOMMUNICATION (New/Corrected Information)",
+                "Emphasis on DELAY (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on BLUE (New/Corrected Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on MISCOMMUNICATION (New/Corrected Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
+                1,
                 3,
-                1,
-                1,
-                1,
                 1
             ],
-            "hint": "'Red' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'blue'.",
-            "explanation": "In this short fragment, 'blue' is the corrected choice, so it carries the nuclear stress, not the rejected 'red'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "One of these two ideas is being actively denied — that one stays flat no matter where it sits in the sentence.",
+            "explanation": "MISCOMMUNICATION answers what's actually true, while DELAY is only mentioned to be dismissed — so MISCOMMUNICATION carries the stress.",
+            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_514",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Not today - tomorrow.",
-            "textToSpeak": "Not today - tomorrow.",
+            "word": "The recall wasn't about the engine - it was about the airbags.",
+            "textToSpeak": "The recall wasn't about the engine - it was about the airbags.",
             "options": [
-                "Emphasis on TOMORROW (New/Corrected Information)",
-                "Emphasis on TODAY (Given/Rejected Information)"
+                "Emphasis on ENGINE (Given/Rejected Information)",
+                "Emphasis on AIRBAGS (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on TOMORROW (New/Corrected Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on AIRBAGS (New/Corrected Information)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Today' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'tomorrow'.",
-            "explanation": "Even in this short fragment, the rejected 'today' stays deaccented, while the corrected 'tomorrow' carries the nuclear stress.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is a firm correction, not a simple description — find the piece of information that's genuinely being confirmed.",
+            "explanation": "The correction here confirms AIRBAGS over ENGINE, and that confirmed information is exactly where the emphasis lands.",
+            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial."
         },
         {
             "id": "pitchPatternMatch_515",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My sister, not my brother.",
-            "textToSpeak": "My sister, not my brother.",
+            "word": "The tension wasn't between the players - it was between the coaches.",
+            "textToSpeak": "The tension wasn't between the players - it was between the coaches.",
             "options": [
-                "Emphasis on SISTER (New/Corrected Information)",
-                "Emphasis on BROTHER (Given/Rejected Information)"
+                "Emphasis on COACHES (New/Corrected Information)",
+                "Emphasis on PLAYERS (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on SISTER (New/Corrected Information)",
+            "correctAnswer": "Emphasis on COACHES (New/Corrected Information)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
+                1,
                 3,
-                1,
-                1,
-                1,
                 1
             ],
-            "hint": "'My brother' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'sister'.",
-            "explanation": "In this short fragment, 'sister' is the corrected information, so it carries the nuclear stress, not the rejected 'brother'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Notice the structure rules out one idea before confirming another — the confirmed one is always where the true stress belongs.",
+            "explanation": "PLAYERS is explicitly ruled out here, so the stress falls on COACHES, the information actually being confirmed.",
+            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_516",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The window seat, not the aisle.",
-            "textToSpeak": "The window seat, not the aisle.",
+            "word": "The renovation isn't about the kitchen - it's about the bathroom this time.",
+            "textToSpeak": "The renovation isn't about the kitchen - it's about the bathroom this time.",
             "options": [
-                "Emphasis on WINDOW (New/Corrected Information)",
-                "Emphasis on AISLE (Given/Rejected Information)"
+                "Emphasis on KITCHEN (Given/Rejected Information)",
+                "Emphasis on BATHROOM (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on WINDOW (New/Corrected Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on BATHROOM (New/Corrected Information)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                3,
                 1,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'The aisle' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'window'.",
-            "explanation": "In this short fragment, 'window' is the corrected choice, so it carries the nuclear stress, not the rejected 'aisle'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence firmly rules out one possibility and names the real cause — stress belongs on the real cause, not the ruled-out one.",
+            "explanation": "Because this sentence firmly denies KITCHEN, the pitch accent shifts to BATHROOM, the real explanation.",
+            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial."
         },
         {
             "id": "pitchPatternMatch_517",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Not the printer - the scanner.",
-            "textToSpeak": "Not the printer - the scanner.",
+            "word": "The concern wasn't about allergies - it was about the dosage.",
+            "textToSpeak": "The concern wasn't about allergies - it was about the dosage.",
             "options": [
-                "Emphasis on PRINTER (Given/Rejected Information)",
-                "Emphasis on SCANNER (New/Corrected Information)"
+                "Emphasis on DOSAGE (New/Corrected Information)",
+                "Emphasis on ALLERGIES (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on SCANNER (New/Corrected Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DOSAGE (New/Corrected Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -167,142 +167,142 @@
                 3,
                 1
             ],
-            "hint": "'The printer' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'scanner'.",
-            "explanation": "Even in this short fragment, the rejected 'printer' stays deaccented, while the corrected 'scanner' carries the nuclear stress.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Read past the first clause quickly — it's just there to be dismissed. The second clause holds the actual answer.",
+            "explanation": "DOSAGE answers what's actually true, while ALLERGIES is only mentioned to be dismissed — so DOSAGE carries the stress.",
+            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_518",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Math class, not science class.",
-            "textToSpeak": "Math class, not science class.",
+            "word": "The scholarship isn't based on financial need - it's based on merit.",
+            "textToSpeak": "The scholarship isn't based on financial need - it's based on merit.",
             "options": [
-                "Emphasis on SCIENCE (Given/Rejected Information)",
-                "Emphasis on MATH (New/Corrected Information)"
+                "Emphasis on NEED (Given/Rejected Information)",
+                "Emphasis on MERIT (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on MATH (New/Corrected Information)",
+            "correctAnswer": "Emphasis on MERIT (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                3,
                 1,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'Science class' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'math'.",
-            "explanation": "In this short fragment, 'math' is the corrected information, so it carries the nuclear stress, not the rejected 'science'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "One of these two ideas is being actively denied — that one stays flat no matter where it sits in the sentence.",
+            "explanation": "The correction here confirms MERIT over NEED, and that confirmed information is exactly where the emphasis lands.",
+            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial."
         },
         {
             "id": "pitchPatternMatch_519",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The small size, not the large.",
-            "textToSpeak": "The small size, not the large.",
+            "word": "The delay in the results wasn't the lab's fault - it was a courier problem.",
+            "textToSpeak": "The delay in the results wasn't the lab's fault - it was a courier problem.",
             "options": [
-                "Emphasis on LARGE (Given/Rejected Information)",
-                "Emphasis on SMALL (New/Corrected Information)"
+                "Emphasis on COURIER (New/Corrected Information)",
+                "Emphasis on LAB (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on SMALL (New/Corrected Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on COURIER (New/Corrected Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
+                1,
                 3,
-                1,
-                1,
-                1,
                 1
             ],
-            "hint": "'The large' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'small'.",
-            "explanation": "In this short fragment, 'small' is the corrected size, so it carries the nuclear stress, not the rejected 'large'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is a firm correction, not a simple description — find the piece of information that's genuinely being confirmed.",
+            "explanation": "LAB is explicitly ruled out here, so the stress falls on COURIER, the information actually being confirmed.",
+            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_520",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Not Monday - Wednesday.",
-            "textToSpeak": "Not Monday - Wednesday.",
+            "word": "The rejection letter didn't mention grades - it mentioned the personal essay.",
+            "textToSpeak": "The rejection letter didn't mention grades - it mentioned the personal essay.",
             "options": [
-                "Emphasis on MONDAY (Given/Rejected Information)",
-                "Emphasis on WEDNESDAY (New/Corrected Information)"
+                "Emphasis on GRADES (Given/Rejected Information)",
+                "Emphasis on ESSAY (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on WEDNESDAY (New/Corrected Information)",
+            "correctAnswer": "Emphasis on ESSAY (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Monday' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'Wednesday'.",
-            "explanation": "Even in this short fragment, the rejected 'Monday' stays deaccented, while the corrected 'Wednesday' carries the nuclear stress.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Notice the structure rules out one idea before confirming another — the confirmed one is always where the true stress belongs.",
+            "explanation": "Because this sentence firmly denies GRADES, the pitch accent shifts to ESSAY, the real explanation.",
+            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial."
         },
         {
             "id": "pitchPatternMatch_521",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The dentist, not the doctor.",
-            "textToSpeak": "The dentist, not the doctor.",
+            "word": "The lawsuit isn't about the contract - it's about the trademark.",
+            "textToSpeak": "The lawsuit isn't about the contract - it's about the trademark.",
             "options": [
-                "Emphasis on DOCTOR (Given/Rejected Information)",
-                "Emphasis on DENTIST (New/Corrected Information)"
+                "Emphasis on TRADEMARK (New/Corrected Information)",
+                "Emphasis on CONTRACT (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on DENTIST (New/Corrected Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on TRADEMARK (New/Corrected Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
+                1,
                 3,
-                1,
-                1,
-                1,
                 1
             ],
-            "hint": "'The doctor' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'dentist'.",
-            "explanation": "In this short fragment, 'dentist' is the corrected information, so it carries the nuclear stress, not the rejected 'doctor'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence firmly rules out one possibility and names the real cause — stress belongs on the real cause, not the ruled-out one.",
+            "explanation": "TRADEMARK answers what's actually true, while CONTRACT is only mentioned to be dismissed — so TRADEMARK carries the stress.",
+            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_522",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Two tickets, not four.",
-            "textToSpeak": "Two tickets, not four.",
+            "word": "The dispute wasn't over the deadline - it was over the budget.",
+            "textToSpeak": "The dispute wasn't over the deadline - it was over the budget.",
             "options": [
-                "Emphasis on FOUR (Given/Rejected Information)",
-                "Emphasis on TWO (New/Corrected Information)"
+                "Emphasis on DEADLINE (Given/Rejected Information)",
+                "Emphasis on BUDGET (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on TWO (New/Corrected Information)",
+            "correctAnswer": "Emphasis on BUDGET (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                3,
                 1,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'Four' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'two'.",
-            "explanation": "In this short fragment, 'two' is the corrected quantity, so it carries the nuclear stress, not the rejected 'four'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Read past the first clause quickly — it's just there to be dismissed. The second clause holds the actual answer.",
+            "explanation": "The correction here confirms BUDGET over DEADLINE, and that confirmed information is exactly where the emphasis lands.",
+            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial."
         },
         {
             "id": "pitchPatternMatch_523",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Not the highway - the back road.",
-            "textToSpeak": "Not the highway - the back road.",
+            "word": "The complaint wasn't filed by a customer - it was filed by a competitor.",
+            "textToSpeak": "The complaint wasn't filed by a customer - it was filed by a competitor.",
             "options": [
-                "Emphasis on BACK (New/Corrected Information)",
-                "Emphasis on HIGHWAY (Given/Rejected Information)"
+                "Emphasis on COMPETITOR (New/Corrected Information)",
+                "Emphasis on CUSTOMER (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on BACK (New/Corrected Information)",
+            "correctAnswer": "Emphasis on COMPETITOR (New/Corrected Information)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -311,46 +311,46 @@
                 3,
                 1
             ],
-            "hint": "'The highway' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'back road'.",
-            "explanation": "Even in this short fragment, the rejected 'highway' stays deaccented, while the corrected 'back road' carries the nuclear stress.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "One of these two ideas is being actively denied — that one stays flat no matter where it sits in the sentence.",
+            "explanation": "CUSTOMER is explicitly ruled out here, so the stress falls on COMPETITOR, the information actually being confirmed.",
+            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_524",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The comedy, not the drama.",
-            "textToSpeak": "The comedy, not the drama.",
+            "word": "The damage wasn't from the flood - it was from the earlier fire.",
+            "textToSpeak": "The damage wasn't from the flood - it was from the earlier fire.",
             "options": [
-                "Emphasis on DRAMA (Given/Rejected Information)",
-                "Emphasis on COMEDY (New/Corrected Information)"
+                "Emphasis on FLOOD (Given/Rejected Information)",
+                "Emphasis on FIRE (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on COMEDY (New/Corrected Information)",
+            "correctAnswer": "Emphasis on FIRE (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                3,
                 1,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'The drama' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'comedy'.",
-            "explanation": "In this short fragment, 'comedy' is the corrected choice, so it carries the nuclear stress, not the rejected 'drama'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is a firm correction, not a simple description — find the piece of information that's genuinely being confirmed.",
+            "explanation": "Because this sentence firmly denies FLOOD, the pitch accent shifts to FIRE, the real explanation.",
+            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial."
         },
         {
             "id": "pitchPatternMatch_525",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Not my keys - my wallet.",
-            "textToSpeak": "Not my keys - my wallet.",
+            "word": "The inspection wasn't about the roof - it was about the foundation.",
+            "textToSpeak": "The inspection wasn't about the roof - it was about the foundation.",
             "options": [
-                "Emphasis on WALLET (New/Corrected Information)",
-                "Emphasis on KEYS (Given/Rejected Information)"
+                "Emphasis on FOUNDATION (New/Corrected Information)",
+                "Emphasis on ROOF (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on WALLET (New/Corrected Information)",
+            "correctAnswer": "Emphasis on FOUNDATION (New/Corrected Information)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -359,190 +359,190 @@
                 3,
                 1
             ],
-            "hint": "'My keys' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'wallet'.",
-            "explanation": "Even in this short fragment, the rejected 'keys' stays deaccented, while the corrected 'wallet' carries the nuclear stress.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Notice the structure rules out one idea before confirming another — the confirmed one is always where the true stress belongs.",
+            "explanation": "FOUNDATION answers what's actually true, while ROOF is only mentioned to be dismissed — so FOUNDATION carries the stress.",
+            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_526",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The second floor, not the first.",
-            "textToSpeak": "The second floor, not the first.",
+            "word": "The warranty doesn't include accidental drops - it includes manufacturing defects.",
+            "textToSpeak": "The warranty doesn't include accidental drops - it includes manufacturing defects.",
             "options": [
-                "Emphasis on SECOND (New/Corrected Information)",
-                "Emphasis on FIRST (Given/Rejected Information)"
+                "Emphasis on DROPS (Given/Rejected Information)",
+                "Emphasis on DEFECTS (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on SECOND (New/Corrected Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on DEFECTS (New/Corrected Information)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                3,
                 1,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'The first' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'second'.",
-            "explanation": "In this short fragment, 'second' is the corrected floor, so it carries the nuclear stress, not the rejected 'first'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence firmly rules out one possibility and names the real cause — stress belongs on the real cause, not the ruled-out one.",
+            "explanation": "The correction here confirms DEFECTS over DROPS, and that confirmed information is exactly where the emphasis lands.",
+            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial."
         },
         {
             "id": "pitchPatternMatch_527",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Decaf, not regular.",
-            "textToSpeak": "Decaf, not regular.",
+            "word": "The promotion wasn't about seniority - it was about performance.",
+            "textToSpeak": "The promotion wasn't about seniority - it was about performance.",
             "options": [
-                "Emphasis on REGULAR (Given/Rejected Information)",
-                "Emphasis on DECAF (New/Corrected Information)"
+                "Emphasis on PERFORMANCE (New/Corrected Information)",
+                "Emphasis on SENIORITY (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on DECAF (New/Corrected Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on PERFORMANCE (New/Corrected Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
+                1,
                 3,
-                1,
-                1,
-                1,
                 1
             ],
-            "hint": "'Regular' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'decaf'.",
-            "explanation": "In this short fragment, 'decaf' is the corrected choice, so it carries the nuclear stress, not the rejected 'regular'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Read past the first clause quickly — it's just there to be dismissed. The second clause holds the actual answer.",
+            "explanation": "SENIORITY is explicitly ruled out here, so the stress falls on PERFORMANCE, the information actually being confirmed.",
+            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_528",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Not the manager - the owner.",
-            "textToSpeak": "Not the manager - the owner.",
+            "word": "The insurance didn't cover water damage - it covered fire damage only.",
+            "textToSpeak": "The insurance didn't cover water damage - it covered fire damage only.",
             "options": [
-                "Emphasis on MANAGER (Given/Rejected Information)",
-                "Emphasis on OWNER (New/Corrected Information)"
+                "Emphasis on WATER (Given/Rejected Information)",
+                "Emphasis on FIRE (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on OWNER (New/Corrected Information)",
+            "correctAnswer": "Emphasis on FIRE (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'The manager' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'owner'.",
-            "explanation": "Even in this short fragment, the rejected 'manager' stays deaccented, while the corrected 'owner' carries the nuclear stress.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "One of these two ideas is being actively denied — that one stays flat no matter where it sits in the sentence.",
+            "explanation": "Because this sentence firmly denies WATER, the pitch accent shifts to FIRE, the real explanation.",
+            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial."
         },
         {
             "id": "pitchPatternMatch_529",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The red folder, not the blue one.",
-            "textToSpeak": "The red folder, not the blue one.",
+            "word": "The investigation isn't about the accident - it's about the cover-up.",
+            "textToSpeak": "The investigation isn't about the accident - it's about the cover-up.",
             "options": [
-                "Emphasis on RED (New/Corrected Information)",
-                "Emphasis on BLUE (Given/Rejected Information)"
+                "Emphasis on COVER-UP (New/Corrected Information)",
+                "Emphasis on ACCIDENT (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on RED (New/Corrected Information)",
+            "correctAnswer": "Emphasis on COVER-UP (New/Corrected Information)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
+                1,
                 3,
-                1,
-                1,
-                1,
                 1
             ],
-            "hint": "'The blue one' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'red'.",
-            "explanation": "In this short fragment, 'red' is the corrected folder, so it carries the nuclear stress, not the rejected 'blue'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is a firm correction, not a simple description — find the piece of information that's genuinely being confirmed.",
+            "explanation": "COVER-UP answers what's actually true, while ACCIDENT is only mentioned to be dismissed — so COVER-UP carries the stress.",
+            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_530",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Not lunch - dinner.",
-            "textToSpeak": "Not lunch - dinner.",
+            "word": "The backlash wasn't about the pricing - it was about the false advertising.",
+            "textToSpeak": "The backlash wasn't about the pricing - it was about the false advertising.",
             "options": [
-                "Emphasis on DINNER (New/Corrected Information)",
-                "Emphasis on LUNCH (Given/Rejected Information)"
+                "Emphasis on PRICING (Given/Rejected Information)",
+                "Emphasis on ADVERTISING (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on DINNER (New/Corrected Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on ADVERTISING (New/Corrected Information)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Lunch' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'dinner'.",
-            "explanation": "Even in this short fragment, the rejected 'lunch' stays deaccented, while the corrected 'dinner' carries the nuclear stress.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Notice the structure rules out one idea before confirming another — the confirmed one is always where the true stress belongs.",
+            "explanation": "The correction here confirms ADVERTISING over PRICING, and that confirmed information is exactly where the emphasis lands.",
+            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial."
         },
         {
             "id": "pitchPatternMatch_531",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "My cousin's car, not mine.",
-            "textToSpeak": "My cousin's car, not mine.",
+            "word": "The praise wasn't for the design - it was for the execution.",
+            "textToSpeak": "The praise wasn't for the design - it was for the execution.",
             "options": [
-                "Emphasis on MINE (Given/Rejected Information)",
-                "Emphasis on COUSIN'S (New/Corrected Information)"
+                "Emphasis on EXECUTION (New/Corrected Information)",
+                "Emphasis on DESIGN (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on COUSIN'S (New/Corrected Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on EXECUTION (New/Corrected Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
+                1,
                 3,
-                1,
-                1,
-                1,
                 1
             ],
-            "hint": "'Mine' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'cousin's'.",
-            "explanation": "In this short fragment, 'cousin's' is the corrected owner, so it carries the nuclear stress, not the rejected 'mine'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence firmly rules out one possibility and names the real cause — stress belongs on the real cause, not the ruled-out one.",
+            "explanation": "DESIGN is explicitly ruled out here, so the stress falls on EXECUTION, the information actually being confirmed.",
+            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_532",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The early flight, not the late one.",
-            "textToSpeak": "The early flight, not the late one.",
+            "word": "The audit wasn't triggered by an error - it was triggered by a routine check.",
+            "textToSpeak": "The audit wasn't triggered by an error - it was triggered by a routine check.",
             "options": [
-                "Emphasis on LATE (Given/Rejected Information)",
-                "Emphasis on EARLY (New/Corrected Information)"
+                "Emphasis on ERROR (Given/Rejected Information)",
+                "Emphasis on ROUTINE (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on EARLY (New/Corrected Information)",
+            "correctAnswer": "Emphasis on ROUTINE (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
-                3,
                 1,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'The late one' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'early'.",
-            "explanation": "In this short fragment, 'early' is the corrected choice, so it carries the nuclear stress, not the rejected 'late'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Read past the first clause quickly — it's just there to be dismissed. The second clause holds the actual answer.",
+            "explanation": "Because this sentence firmly denies ERROR, the pitch accent shifts to ROUTINE, the real explanation.",
+            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial."
         },
         {
             "id": "pitchPatternMatch_533",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Not the cat - the dog.",
-            "textToSpeak": "Not the cat - the dog.",
+            "word": "The strike wasn't about wages - it was about safety conditions.",
+            "textToSpeak": "The strike wasn't about wages - it was about safety conditions.",
             "options": [
-                "Emphasis on DOG (New/Corrected Information)",
-                "Emphasis on CAT (Given/Rejected Information)"
+                "Emphasis on SAFETY (New/Corrected Information)",
+                "Emphasis on WAGES (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on DOG (New/Corrected Information)",
+            "correctAnswer": "Emphasis on SAFETY (New/Corrected Information)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -551,177 +551,177 @@
                 3,
                 1
             ],
-            "hint": "'The cat' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'dog'.",
-            "explanation": "Even in this short fragment, the rejected 'cat' stays deaccented, while the corrected 'dog' carries the nuclear stress.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "One of these two ideas is being actively denied — that one stays flat no matter where it sits in the sentence.",
+            "explanation": "SAFETY answers what's actually true, while WAGES is only mentioned to be dismissed — so SAFETY carries the stress.",
+            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_534",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The science exam, not the math exam.",
-            "textToSpeak": "The science exam, not the math exam.",
+            "word": "The delay wasn't due to weather - it was due to a mechanical issue.",
+            "textToSpeak": "The delay wasn't due to weather - it was due to a mechanical issue.",
             "options": [
-                "Emphasis on SCIENCE (New/Corrected Information)",
-                "Emphasis on MATH (Given/Rejected Information)"
+                "Emphasis on WEATHER (Given/Rejected Information)",
+                "Emphasis on MECHANICAL (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on SCIENCE (New/Corrected Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on MECHANICAL (New/Corrected Information)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                3,
                 1,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'The math exam' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'science'.",
-            "explanation": "In this short fragment, 'science' is the corrected subject, so it carries the nuclear stress, not the rejected 'math'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is a firm correction, not a simple description — find the piece of information that's genuinely being confirmed.",
+            "explanation": "The correction here confirms MECHANICAL over WEATHER, and that confirmed information is exactly where the emphasis lands.",
+            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial."
         },
         {
             "id": "pitchPatternMatch_535",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Just water, not soda.",
-            "textToSpeak": "Just water, not soda.",
+            "word": "The infection wasn't bacterial - it turned out to be viral.",
+            "textToSpeak": "The infection wasn't bacterial - it turned out to be viral.",
             "options": [
-                "Emphasis on SODA (Given/Rejected Information)",
-                "Emphasis on WATER (New/Corrected Information)"
+                "Emphasis on VIRAL (New/Corrected Information)",
+                "Emphasis on BACTERIAL (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on WATER (New/Corrected Information)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on VIRAL (New/Corrected Information)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
+                1,
                 3,
-                1,
-                1,
-                1,
                 1
             ],
-            "hint": "'Soda' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'water'.",
-            "explanation": "In this short fragment, 'water' is the corrected choice, so it carries the nuclear stress, not the rejected 'soda'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Notice the structure rules out one idea before confirming another — the confirmed one is always where the true stress belongs.",
+            "explanation": "BACTERIAL is explicitly ruled out here, so the stress falls on VIRAL, the information actually being confirmed.",
+            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_536",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Not the hallway - the lobby.",
-            "textToSpeak": "Not the hallway - the lobby.",
+            "word": "The shortage isn't about staff - it's about equipment.",
+            "textToSpeak": "The shortage isn't about staff - it's about equipment.",
             "options": [
-                "Emphasis on LOBBY (New/Corrected Information)",
-                "Emphasis on HALLWAY (Given/Rejected Information)"
+                "Emphasis on STAFF (Given/Rejected Information)",
+                "Emphasis on EQUIPMENT (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on LOBBY (New/Corrected Information)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on EQUIPMENT (New/Corrected Information)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'The hallway' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'lobby'.",
-            "explanation": "Even in this short fragment, the rejected 'hallway' stays deaccented, while the corrected 'lobby' carries the nuclear stress.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence firmly rules out one possibility and names the real cause — stress belongs on the real cause, not the ruled-out one.",
+            "explanation": "Because this sentence firmly denies STAFF, the pitch accent shifts to EQUIPMENT, the real explanation.",
+            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial."
         },
         {
             "id": "pitchPatternMatch_537",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The violin, not the cello.",
-            "textToSpeak": "The violin, not the cello.",
+            "word": "The delay wasn't caused by customs - it was caused by the shipping company.",
+            "textToSpeak": "The delay wasn't caused by customs - it was caused by the shipping company.",
             "options": [
-                "Emphasis on VIOLIN (New/Corrected Information)",
-                "Emphasis on CELLO (Given/Rejected Information)"
+                "Emphasis on SHIPPING (New/Corrected Information)",
+                "Emphasis on CUSTOMS (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on VIOLIN (New/Corrected Information)",
+            "correctAnswer": "Emphasis on SHIPPING (New/Corrected Information)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
+                1,
                 3,
-                1,
-                1,
-                1,
                 1
             ],
-            "hint": "'The cello' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'violin'.",
-            "explanation": "In this short fragment, 'violin' is the corrected instrument, so it carries the nuclear stress, not the rejected 'cello'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Read past the first clause quickly — it's just there to be dismissed. The second clause holds the actual answer.",
+            "explanation": "SHIPPING answers what's actually true, while CUSTOMS is only mentioned to be dismissed — so SHIPPING carries the stress.",
+            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_538",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Not Friday - Saturday.",
-            "textToSpeak": "Not Friday - Saturday.",
+            "word": "The award wasn't for best actor - it was for best director.",
+            "textToSpeak": "The award wasn't for best actor - it was for best director.",
             "options": [
-                "Emphasis on FRIDAY (Given/Rejected Information)",
-                "Emphasis on SATURDAY (New/Corrected Information)"
+                "Emphasis on ACTOR (Given/Rejected Information)",
+                "Emphasis on DIRECTOR (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on SATURDAY (New/Corrected Information)",
+            "correctAnswer": "Emphasis on DIRECTOR (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Friday' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'Saturday'.",
-            "explanation": "Even in this short fragment, the rejected 'Friday' stays deaccented, while the corrected 'Saturday' carries the nuclear stress.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "One of these two ideas is being actively denied — that one stays flat no matter where it sits in the sentence.",
+            "explanation": "The correction here confirms DIRECTOR over ACTOR, and that confirmed information is exactly where the emphasis lands.",
+            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial."
         },
         {
             "id": "pitchPatternMatch_539",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The left side, not the right.",
-            "textToSpeak": "The left side, not the right.",
+            "word": "The budget cut wasn't aimed at research - it was aimed at marketing.",
+            "textToSpeak": "The budget cut wasn't aimed at research - it was aimed at marketing.",
             "options": [
-                "Emphasis on LEFT (New/Corrected Information)",
-                "Emphasis on RIGHT (Given/Rejected Information)"
+                "Emphasis on MARKETING (New/Corrected Information)",
+                "Emphasis on RESEARCH (Given/Rejected Information)"
             ],
-            "correctAnswer": "Emphasis on LEFT (New/Corrected Information)",
+            "correctAnswer": "Emphasis on MARKETING (New/Corrected Information)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
+                1,
                 3,
-                1,
-                1,
-                1,
                 1
             ],
-            "hint": "'The right' is the rejected guess, so it stays unstressed despite coming last. Listen for the pitch to peak on 'left'.",
-            "explanation": "In this short fragment, 'left' is the corrected side, so it carries the nuclear stress, not the rejected 'right'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is a firm correction, not a simple description — find the piece of information that's genuinely being confirmed.",
+            "explanation": "RESEARCH is explicitly ruled out here, so the stress falls on MARKETING, the information actually being confirmed.",
+            "emphasisRule": "A firmly rejected idea stays unstressed no matter where it appears; the confirmed correction always carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_540",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Not coffee - tea.",
-            "textToSpeak": "Not coffee - tea.",
+            "word": "The outage wasn't caused by the storm - it was caused by a failed generator.",
+            "textToSpeak": "The outage wasn't caused by the storm - it was caused by a failed generator.",
             "options": [
-                "Emphasis on COFFEE (Given/Rejected Information)",
-                "Emphasis on TEA (New/Corrected Information)"
+                "Emphasis on STORM (Given/Rejected Information)",
+                "Emphasis on GENERATOR (New/Corrected Information)"
             ],
-            "correctAnswer": "Emphasis on TEA (New/Corrected Information)",
+            "correctAnswer": "Emphasis on GENERATOR (New/Corrected Information)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Coffee' is the rejected guess, so it stays unstressed even though it comes first. Listen for the pitch to peak on 'tea'.",
-            "explanation": "Even in this short fragment, the rejected 'coffee' stays deaccented, while the corrected 'tea' carries the nuclear stress.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Notice the structure rules out one idea before confirming another — the confirmed one is always where the true stress belongs.",
+            "explanation": "Because this sentence firmly denies STORM, the pitch accent shifts to GENERATOR, the real explanation.",
+            "emphasisRule": "When a sentence explicitly denies one explanation in favor of another, the stress lands on the true explanation, not the denial."
         }
     ]
 }

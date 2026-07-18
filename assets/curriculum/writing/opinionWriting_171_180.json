@@ -5,121 +5,121 @@
     "quests": [
         {
             "id": "WRT_OPINIONWRITING_L171_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The international community has a duty to intervene in states committing serious humanitarian abuses.",
             "options": [
+                "Humanitarian intervention has consistently been selectively applied based on strategic interest rather than genuine need.",
                 "The Responsibility to Protect (R2P) doctrine establishes that sovereignty is not a shield for mass atrocity.",
                 "Allowing genocides and mass crimes against humanity to continue unchallenged violates basic human rights.",
-                "Humanitarian intervention has consistently been selectively applied based on strategic interest rather than genuine need.",
                 "Military intervention frequently causes civilian deaths and instability that exceed the harms it aims to prevent."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the humanitarian duty and R2P case for intervention (Pros) and the selective application and harm escalation concerns (Cons).",
             "explanation": "R2P doctrine establishes that sovereignty does not protect mass atrocity, and non-intervention allows continuing genocide (Pros), but intervention is selectively applied based on strategic interest and frequently causes greater civilian casualties and instability (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L171_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Non-military humanitarian intervention is more effective than military action in failing states.",
             "options": [
                 "Targeted sanctions, ICC prosecution, and diplomatic pressure can change state behaviour without military harm.",
-                "Economic and diplomatic tools build sustained international pressure without the destabilising effects of invasion.",
                 "Non-military options are too slow and uncertain to prevent ongoing mass atrocities requiring immediate action.",
+                "Economic and diplomatic tools build sustained international pressure without the destabilising effects of invasion.",
                 "Authoritarian states that commit atrocities often resist non-military pressure successfully for many years."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider non-military intervention as superior to military action (Pros) and the speed and resistance concerns (Cons).",
             "explanation": "Sanctions, ICC prosecution, and diplomacy can change behaviour without military casualties and destabilisation (Pros), but non-military options are too slow for ongoing mass atrocities and authoritarian states often resist economic pressure effectively for years (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L171_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "State sovereignty remains the essential foundation of international order despite its costs.",
             "options": [
                 "The principle of non-interference in sovereign states prevents great powers from imposing their values globally.",
-                "Undermining sovereignty for some states sets precedents that powerful nations exploit for strategic intervention.",
                 "Absolute sovereignty prevents any international response to the worst state-perpetrated crimes against humanity.",
-                "A rules-based international order requires some constraints on sovereignty to protect basic human rights."
+                "A rules-based international order requires some constraints on sovereignty to protect basic human rights.",
+                "Undermining sovereignty for some states sets precedents that powerful nations exploit for strategic intervention."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about sovereignty as the foundation of international order (Pros) and the mass atrocity and human rights constraint concerns (Cons).",
             "explanation": "Non-interference prevents great power value imposition and sovereign precedents are exploited for strategic ends (Pros), but absolute sovereignty precludes any response to state-perpetrated atrocity, and a rules-based order requires some sovereignty constraints to protect fundamental rights (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L172_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Wealthy nations have a moral and historical obligation to compensate former colonies.",
             "options": [
                 "Colonial extraction of wealth, natural resources, and labour created the economic disparities that persist today.",
-                "Reparations represent acknowledgement of historical wrongs and a commitment to address their lasting consequences.",
                 "Determining fair compensation amounts and identifying appropriate recipients is practically extremely difficult.",
+                "Reparations represent acknowledgement of historical wrongs and a commitment to address their lasting consequences.",
                 "Modern citizens cannot be held collectively responsible for historical wrongs committed before their birth."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about the historical injustice and reparative justice case for colonial reparations (Pros) and the practicality and collective responsibility concerns (Cons).",
             "explanation": "Colonial extraction created today's economic disparities and reparations acknowledge historical wrongs (Pros), but calculating fair amounts and identifying recipients is practically very difficult, and collective responsibility of modern citizens for historical wrongs is philosophically contested (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L172_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Colonial reparations would address current inequality more effectively than existing aid programmes.",
             "options": [
-                "Direct reparation transfers would be larger and more unconditional than the aid that has failed to close the gap.",
-                "Reparations would shift power in the development relationship from donor to recipient nations.",
                 "Aid has the same redistributive potential as reparations if delivered on genuinely fair and unconditional terms.",
-                "Reparation transfers may not reach the populations most directly harmed by specific colonial legacies."
+                "Reparation transfers may not reach the populations most directly harmed by specific colonial legacies.",
+                "Direct reparation transfers would be larger and more unconditional than the aid that has failed to close the gap.",
+                "Reparations would shift power in the development relationship from donor to recipient nations."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider reparations as more effective than aid for addressing colonial inequality (Pros) and the aid reform and targeting concerns (Cons).",
             "explanation": "Reparations would be larger, more unconditional, and shift power from donor to recipient unlike current aid (Pros), but reformed aid delivered on fair terms has the same redistributive potential, and reparation transfers may miss populations most directly harmed by specific colonial legacies (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L172_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Structural reforms to global trade and financial systems matter more than reparation transfers.",
             "options": [
-                "Unequal trade rules, tax havens, and intellectual property regimes extract more from developing nations than reparations could replace.",
-                "System reform addresses ongoing extraction rather than compensating for historical injustice alone.",
                 "Structural reform and reparations address different dimensions of injustice and are not mutually exclusive.",
-                "Reforming global trade and finance systems faces even more powerful resistance than reparation demands."
+                "Reforming global trade and finance systems faces even more powerful resistance than reparation demands.",
+                "Unequal trade rules, tax havens, and intellectual property regimes extract more from developing nations than reparations could replace.",
+                "System reform addresses ongoing extraction rather than compensating for historical injustice alone."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about structural economic reform versus reparations as the more important priority (Pros for reform) and the complementarity and feasibility concerns (Cons).",
             "explanation": "Unequal global rules extract more than reparations could compensate and reform addresses ongoing rather than historical injustice (Pros), but reform and reparations address different dimensions and are complementary, while structural reform faces even more powerful resistance than reparation demands (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L173_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "International courts should have binding authority that overrides national governments.",
@@ -138,7 +138,7 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L173_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The International Criminal Court represents important progress in global accountability despite its limitations.",
@@ -157,7 +157,7 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L173_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Regional international courts are more politically feasible than a global judicial authority.",
@@ -176,7 +176,7 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L174_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "All nuclear weapons should be comprehensively banned and permanently destroyed by global treaty.",
@@ -195,216 +195,216 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L174_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Nuclear deterrence maintains a fragile stability that disarmament would dangerously undermine.",
             "options": [
                 "Nuclear deterrence has prevented direct conflict between nuclear-armed states throughout the Cold War and since.",
-                "Selective disarmament risks destabilising strategic balances by emboldening non-disarming nuclear states.",
                 "Nuclear deterrence requires constant modernisation, creating proliferation risks and enormous economic costs.",
-                "Deterrence stability depends on rational actors and is fatally vulnerable to miscalculation and accident."
+                "Deterrence stability depends on rational actors and is fatally vulnerable to miscalculation and accident.",
+                "Selective disarmament risks destabilising strategic balances by emboldening non-disarming nuclear states."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider nuclear deterrence as essential stability (Pros) and the modernisation, accident, and rationality concerns (Cons).",
             "explanation": "Nuclear deterrence has demonstrably prevented great power direct conflict (Pros), but it requires expensive modernisation that creates proliferation risks, and deterrence is fatally vulnerable to accident, miscalculation, and non-rational actors (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L174_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Step-by-step arms control is more achievable than comprehensive nuclear disarmament.",
             "options": [
                 "Verifiable arms reduction agreements build the trust and precedent needed for eventual deeper disarmament.",
-                "New START and similar agreements demonstrate that nuclear states can accept binding reduction obligations.",
                 "Incremental arms control may become the ceiling rather than a step towards genuine disarmament.",
-                "Arms control treaties have repeatedly stalled or collapsed, suggesting they cannot deliver the progress claimed."
+                "Arms control treaties have repeatedly stalled or collapsed, suggesting they cannot deliver the progress claimed.",
+                "New START and similar agreements demonstrate that nuclear states can accept binding reduction obligations."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about incremental arms control as the path to disarmament (Pros) and the ceiling and historical collapse concerns (Cons).",
             "explanation": "Verifiable reductions build trust for deeper disarmament and New START shows nuclear states accept reduction obligations (Pros), but incremental control risks becoming the permanent ceiling rather than a step towards disarmament, and arms treaties repeatedly collapse without delivering genuine progress (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L175_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A formal world government would bring greater global stability than the current state system.",
             "options": [
-                "A world government could address collective action problems like climate change and pandemic response effectively.",
-                "Eliminating competitive nationalism would remove the driver of many wars and geopolitical conflicts.",
                 "A world government would concentrate unprecedented power without the democratic accountability needed to prevent tyranny.",
-                "Cultural and political diversity among nations makes single global governance irreconcilably illegitimate for most populations."
+                "A world government could address collective action problems like climate change and pandemic response effectively.",
+                "Cultural and political diversity among nations makes single global governance irreconcilably illegitimate for most populations.",
+                "Eliminating competitive nationalism would remove the driver of many wars and geopolitical conflicts."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the collective action and peace case for world government (Pros) and the tyranny and legitimacy concerns (Cons).",
             "explanation": "World government could solve collective action problems and eliminate nationalist drivers of conflict (Pros), but unprecedented power concentration without democratic accountability risks global tyranny, and diverse nations would never accept single global governance as legitimate (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L175_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Global federalism with strong national autonomy would be more stable than either world government or anarchy.",
             "options": [
+                "The EU itself demonstrates the severe strain that federal integration places on national democratic consent.",
                 "A federal world system could coordinate global challenges while preserving meaningful national self-determination.",
                 "Successful federal systems like the EU demonstrate that pooled sovereignty with national autonomy can function.",
-                "The EU itself demonstrates the severe strain that federal integration places on national democratic consent.",
                 "Global federalism would require a degree of international trust that currently does not exist between major powers."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Consider global federalism as a middle ground between world government and the current state system (Pros) and the democratic strain and trust concerns (Cons).",
             "explanation": "Federal models coordinate global challenges while preserving national self-determination, and EU experience shows it can work (Pros), but EU federalism demonstrates severe democratic strain, and global federalism requires levels of international trust that currently do not exist (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L175_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Strengthening existing international institutions is more achievable than creating world government.",
             "options": [
                 "Reformed multilateral institutions including a more representative Security Council could manage global challenges better.",
-                "Incremental institutional strengthening builds on existing infrastructure rather than requiring revolutionary change.",
                 "Existing international institutions have consistently failed to prevent major global threats and crises.",
+                "Incremental institutional strengthening builds on existing infrastructure rather than requiring revolutionary change.",
                 "Powers that benefit from current institutional asymmetries will block meaningful reform just as they have before."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about institutional reform as an alternative to world government (Pros) and the track record and reform blocking concerns (Cons).",
             "explanation": "Reformed multilateralism builds on existing infrastructure more practically than revolutionary world government (Pros), but existing institutions have a poor track record on major global threats, and powers benefiting from current asymmetries consistently block meaningful reform (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L176_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The traditional nation state is becoming increasingly irrelevant in the modern world.",
             "options": [
-                "Transnational challenges from climate change to pandemics cannot be managed within national boundaries.",
-                "Economic globalisation has transferred significant power from states to corporations and international capital.",
                 "Nation states retain primary responsibility for welfare, security, and democratic representation of their populations.",
-                "Nationalist movements worldwide demonstrate that state identity remains powerful rather than declining."
+                "Transnational challenges from climate change to pandemics cannot be managed within national boundaries.",
+                "Nationalist movements worldwide demonstrate that state identity remains powerful rather than declining.",
+                "Economic globalisation has transferred significant power from states to corporations and international capital."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the transnational challenge and economic power case for declining state relevance (Pros) and the welfare responsibility and nationalism concerns (Cons).",
             "explanation": "Climate change, pandemics, and economic globalisation exceed national governance capacity (Pros), but states retain primary welfare and security responsibility, and resurgent nationalism demonstrates state identity remains powerfully relevant (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L176_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Nation states remain the primary vehicle for democratic accountability and citizen representation.",
             "options": [
                 "Democratic institutions, constitutional rights, and welfare states are delivered primarily through national frameworks.",
-                "Citizens relate most meaningfully to political communities at the national rather than global level.",
                 "National democratic accountability is increasingly undermined by global economic forces that states cannot control.",
-                "Supranational bodies like the EU demonstrate that democratic accountability can function beyond the national level."
+                "Supranational bodies like the EU demonstrate that democratic accountability can function beyond the national level.",
+                "Citizens relate most meaningfully to political communities at the national rather than global level."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider nation states as the primary vehicle for democracy and citizenship (Pros) and the global economic constraint and supranational democracy concerns (Cons).",
             "explanation": "Welfare states, constitutional rights, and democratic institutions are delivered nationally and citizens relate most to national communities (Pros), but global economic forces undermine national democratic capacity, and supranational institutions demonstrate democracy can function beyond the state (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L176_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "City-regions rather than nation states are becoming the most effective unit of governance.",
             "options": [
-                "Major city-regions produce a disproportionate share of GDP and innovation and function with greater agility than nation states.",
-                "Successful city governance models demonstrate that dense urban areas can manage complex challenges effectively.",
                 "City-regions represent only a fraction of populations and cannot provide governance for rural and dispersed communities.",
-                "City-state governance models historically have tended to prioritise urban commercial interests over broader populations."
+                "Major city-regions produce a disproportionate share of GDP and innovation and function with greater agility than nation states.",
+                "City-state governance models historically have tended to prioritise urban commercial interests over broader populations.",
+                "Successful city governance models demonstrate that dense urban areas can manage complex challenges effectively."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about city-regions as the most effective modern governance unit (Pros) and the rural representation and historical pattern concerns (Cons).",
             "explanation": "City-regions drive disproportionate economic output and innovation and govern with greater agility than nation states (Pros), but cities represent only urban populations and historical city-state models prioritised commercial interests over broader welfare (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L177_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Refugees have the right to permanent resettlement in safe countries that have the capacity to receive them.",
             "options": [
+                "Host country populations have legitimate concerns about pace of cultural change and public resource pressure.",
                 "The 1951 Refugee Convention and subsequent international law establish fundamental rights to protection.",
                 "Permanent resettlement enables refugees to build stable lives and contribute to host society economies and cultures.",
-                "Host country populations have legitimate concerns about pace of cultural change and public resource pressure.",
                 "Indefinitely temporary status with no pathway to permanence violates the dignity and humanity of refugees."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the legal and human rights case for permanent refugee resettlement (Pros) and the host community and permanence concerns (Cons).",
             "explanation": "International law establishes protection rights and permanence enables stable contribution to host economies and cultures (Pros), but host communities have legitimate concerns about cultural change and resource pressure, and indefinite temporary status is humiliating and damaging (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L177_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Addressing root causes of displacement is more important than expanding resettlement capacity.",
             "options": [
-                "Conflict resolution, climate adaptation, and economic development reduce the drivers of forced displacement.",
-                "Permanent resettlement addresses the symptoms while root cause work addresses the structural drivers.",
                 "Root cause interventions take decades and cannot address the needs of currently displaced people.",
-                "Root cause and resettlement responses address different dimensions of displacement and are complementary."
+                "Root cause and resettlement responses address different dimensions of displacement and are complementary.",
+                "Conflict resolution, climate adaptation, and economic development reduce the drivers of forced displacement.",
+                "Permanent resettlement addresses the symptoms while root cause work addresses the structural drivers."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider root cause reduction versus resettlement expansion (Pros for root causes) and the timeline and complementarity concerns (Cons).",
             "explanation": "Conflict resolution, climate adaptation, and development reduce structural displacement drivers (Pros), but root cause work takes decades and cannot help the millions currently displaced, and both root cause and resettlement responses are complementary rather than competing (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L177_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Burden-sharing agreements between nations are essential for fair refugee resettlement.",
             "options": [
                 "Current resettlement is unequally distributed, with neighbouring low-income countries hosting most of the world's refugees.",
-                "Mandatory burden-sharing quotas would distribute both costs and human responsibilities more equitably.",
                 "Mandatory national refugee quotas violate national sovereignty over migration and admission decisions.",
+                "Mandatory burden-sharing quotas would distribute both costs and human responsibilities more equitably.",
                 "Refugees themselves have preferences about destination that mandatory quotas may override and ignore."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about mandatory burden-sharing for refugee resettlement (Pros) and the sovereignty and refugee preference concerns (Cons).",
             "explanation": "Unequal distribution burdens low-income neighbouring countries and mandatory quotas distribute responsibilities equitably (Pros), but mandatory national quotas violate sovereignty over admission decisions, and refugees' own destination preferences deserve respect and may conflict with assigned quotas (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L178_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Developed nations must accept legal obligations to support climate change refugees.",
@@ -423,152 +423,152 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L178_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Creating a new international legal framework for climate displacement is urgently needed.",
             "options": [
-                "Climate displacement does not fit neatly into existing refugee definitions and creates protection gaps.",
-                "A dedicated legal framework would provide clear status, rights, and obligations for climate-displaced people.",
                 "Negotiating a new global legal framework for climate displacement could take decades given geopolitical divisions.",
-                "Climate-displaced people need immediate support that cannot wait for years of treaty negotiation."
+                "Climate displacement does not fit neatly into existing refugee definitions and creates protection gaps.",
+                "Climate-displaced people need immediate support that cannot wait for years of treaty negotiation.",
+                "A dedicated legal framework would provide clear status, rights, and obligations for climate-displaced people."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider a new legal framework for climate displacement (Pros) and the negotiation timeline and urgency concerns (Cons).",
             "explanation": "Existing law creates protection gaps for climate displaced people and a dedicated framework would provide clear rights (Pros), but treaty negotiation takes decades, and displaced people need immediate support that cannot wait for a new framework to be agreed (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L178_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "In-situ climate adaptation support reduces displacement more effectively than resettlement capacity.",
             "options": [
-                "Funding adaptation in vulnerable regions enables communities to remain in place rather than being forced to migrate.",
-                "Adequate adaptation finance is the most cost-effective way to address climate displacement at its source.",
                 "Some climate impacts like sea level rise on small island states cannot be adapted to and require resettlement.",
-                "Adaptation and resettlement capacity are both necessary and serve different climate displacement scenarios."
+                "Adaptation and resettlement capacity are both necessary and serve different climate displacement scenarios.",
+                "Funding adaptation in vulnerable regions enables communities to remain in place rather than being forced to migrate.",
+                "Adequate adaptation finance is the most cost-effective way to address climate displacement at its source."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about in-situ adaptation as the primary climate displacement response (Pros) and the inescapable displacement scenarios and complementarity concerns (Cons).",
             "explanation": "In-situ adaptation enables communities to stay and is the most cost-effective approach to climate displacement (Pros), but sea level rise and extreme events will displace some communities regardless of adaptation, and adaptation and resettlement capacity are complementary rather than competing responses (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L179_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Economic sanctions are an effective and ethical foreign policy instrument.",
             "options": [
                 "Targeted sanctions against regimes can change behaviour at significantly lower human cost than military action.",
-                "Sanctions generate international normative pressure that signals collective disapproval of unacceptable behaviour.",
                 "Sanctions most heavily affect civilian populations rather than the elite decision-makers they target.",
+                "Sanctions generate international normative pressure that signals collective disapproval of unacceptable behaviour.",
                 "Authoritarian regimes use sanctions as justification for domestic repression and blame for economic suffering."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about the effectiveness and ethics case for economic sanctions (Pros) and the civilian harm and regime exploitation concerns (Cons).",
             "explanation": "Targeted sanctions change behaviour at lower cost than military action and signal collective international condemnation (Pros), but sanctions primarily harm civilian populations rather than targeted elites, and authoritarian regimes exploit sanctions to justify repression and blame external enemies (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L179_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Targeted individual sanctions are more ethical and effective than broad economic sanctions.",
             "options": [
+                "Targeted individuals often evade asset freezes through family members and networks in non-sanctioning jurisdictions.",
                 "Asset freezes and travel bans on specific regime members cause pain precisely where decision-making power lies.",
                 "Targeted measures avoid the humanitarian collateral damage of broad economic blockades affecting whole populations.",
-                "Targeted individuals often evade asset freezes through family members and networks in non-sanctioning jurisdictions.",
                 "Individual targeted sanctions lack the economic scale to create sufficient pressure to change state behaviour."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Consider targeted individual sanctions as superior to broad sanctions (Pros) and the evasion and scale concerns (Cons).",
             "explanation": "Targeted asset freezes and travel bans hit decision-makers rather than civilians and avoid humanitarian collateral damage (Pros), but sanctioned individuals evade measures through family networks, and individual targeting lacks the economic scale to pressure state-level behaviour change (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L179_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Diplomatic engagement is more effective than sanctions in changing state behaviour.",
             "options": [
                 "Diplomatic engagement keeps open the communication channels essential for de-escalation and negotiation.",
-                "Isolation through sanctions removes the economic interdependence that incentivises regime moderation.",
                 "Diplomatic engagement without economic pressure gives authoritarian regimes international legitimacy without demanding change.",
+                "Isolation through sanctions removes the economic interdependence that incentivises regime moderation.",
                 "Some regimes are unresponsive to diplomatic incentives and require economic coercion to change behaviour."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about diplomatic engagement as superior to sanctions for changing state behaviour (Pros) and the legitimacy and coercive necessity concerns (Cons).",
             "explanation": "Engagement preserves communication channels and economic interdependence incentivises moderation (Pros), but engagement without pressure grants legitimacy without demanding change, and some regimes are unresponsive to diplomatic incentives and require economic coercion (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L180_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Media ownership should be strictly regulated to prevent dangerous concentrations of power.",
             "options": [
-                "Concentrated media ownership allows few owners to exert disproportionate influence over democratic public discourse.",
-                "Diversity of media ownership is essential to ensure citizens have access to genuinely independent viewpoints.",
                 "Media ownership regulation risks government interference in press freedom and editorial independence.",
-                "Digital media has created such diverse information sources that traditional ownership concentration concerns are outdated."
+                "Digital media has created such diverse information sources that traditional ownership concentration concerns are outdated.",
+                "Concentrated media ownership allows few owners to exert disproportionate influence over democratic public discourse.",
+                "Diversity of media ownership is essential to ensure citizens have access to genuinely independent viewpoints."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the democratic discourse and viewpoint diversity case for media regulation (Pros) and the press freedom and digital diversity concerns (Cons).",
             "explanation": "Concentrated media ownership distorts democratic discourse and ownership diversity ensures independent viewpoints (Pros), but regulation risks government press interference, and digital media has vastly diversified information sources beyond traditional ownership models (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L180_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Social media algorithms present a greater democratic threat than traditional media ownership.",
             "options": [
                 "Algorithmic curation creates filter bubbles that are more pervasive and harder to regulate than ownership bias.",
-                "Platform recommendation systems amplify extreme and divisive content at scale regardless of who owns them.",
                 "Traditional media ownership still exerts enormous influence over the agenda that social media subsequently amplifies.",
+                "Platform recommendation systems amplify extreme and divisive content at scale regardless of who owns them.",
                 "Algorithmically driven media is itself shaped by market and political forces that traditional regulation can address."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider whether algorithmic curation poses a greater democratic threat than media ownership (Pros) and the agenda-setting and regulatory capacity concerns (Cons).",
             "explanation": "Algorithmic filter bubbles are more pervasive than ownership bias and recommendation systems amplify extremism regardless of ownership (Pros), but traditional media still sets the agenda that social media amplifies, and algorithmic media is itself shaped by forces that existing regulation can address (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L180_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Public service media funded independently of commercial and state interests is essential for democracy.",
             "options": [
-                "Genuinely independent public media provides democratic anchoring amid fragmented commercial information.",
-                "Public service media with guaranteed funding can resist both commercial and political editorial pressure.",
                 "Public service media organisations have consistently faced political pressure that compromises their independence.",
-                "Public funding models risk creating a false impression of neutrality that masks institutional bias."
+                "Public funding models risk creating a false impression of neutrality that masks institutional bias.",
+                "Genuinely independent public media provides democratic anchoring amid fragmented commercial information.",
+                "Public service media with guaranteed funding can resist both commercial and political editorial pressure."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about independent public service media as essential for democracy (Pros) and the political pressure and neutrality illusion concerns (Cons).",
             "explanation": "Independent public media provides democratic anchoring amid fragmented commercial information and can resist commercial and political pressure through guaranteed funding (Pros), but public broadcasters consistently face political pressure that compromises independence, and public funding models can create false impressions of neutrality that mask institutional bias (Cons)."

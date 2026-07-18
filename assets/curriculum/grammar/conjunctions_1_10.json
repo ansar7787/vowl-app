@@ -8,17 +8,17 @@
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "I like tea ___ coffee.",
+            "question": "My little sister loves cats ___ dogs equally.",
             "options": [
+                "when",
                 "unless",
-                "and",
-                "nor",
-                "in case"
+                "because",
+                "and"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "and",
-            "hint": "Both items are joined — you enjoy two things.",
-            "explanation": "'And' is a coordinating conjunction that joins two related ideas, nouns, or clauses. Here it links the two drinks the speaker likes.",
+            "hint": "She feels the same way about both animals.",
+            "explanation": "'And' links two ideas that are both true — she loves both animals equally.",
             "grammarRule": "Coordinating Conjunctions"
         },
         {
@@ -26,35 +26,35 @@
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "I'll call you ___ I get home.",
+            "question": "The soup smelled wonderful, ___ it tasted quite bland.",
             "options": [
-                "when",
-                "and",
+                "because",
                 "but",
-                "yet"
+                "so",
+                "and"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "when",
-            "hint": "The second action happens at a specific time point.",
-            "explanation": "'When' is a subordinating conjunction of time. It links the phone call to the moment of arriving home.",
-            "grammarRule": "Subordinating Conjunctions"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "but",
+            "hint": "The taste didn't match the amazing smell.",
+            "explanation": "'But' joins two contrasting ideas: a great smell led to a disappointing taste.",
+            "grammarRule": "Coordinating Conjunctions"
         },
         {
             "id": "cj_l1_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "We went home ___ it got dark.",
+            "question": "Please turn off the lights ___ you leave the room.",
             "options": [
-                "so",
+                "when",
                 "but",
-                "as",
-                "nor"
+                "or",
+                "so"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "as",
-            "hint": "The two events happened at the same time, or one caused the other.",
-            "explanation": "'As' can mean 'when' (simultaneous time) or 'because' (reason). Either reading works here: they went home at the same time darkness fell.",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "when",
+            "hint": "The lights should go off at one exact moment.",
+            "explanation": "'When' points to the exact time something happens — turning off the lights matches the moment of leaving.",
             "grammarRule": "Subordinating Conjunctions"
         },
         {
@@ -62,17 +62,17 @@
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "I wanted to go, ___ it rained.",
+            "question": "It started to snow, ___ the children ran outside to play.",
             "options": [
                 "so",
-                "until",
+                "but",
                 "or",
-                "but"
+                "although"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "but",
-            "hint": "The rain is the opposite of what you expected would happen.",
-            "explanation": "'But' is a coordinating conjunction showing contrast or opposition between two ideas.",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "so",
+            "hint": "The snow directly caused their excited reaction.",
+            "explanation": "'So' introduces a result — the snow is the cause, and running outside is the effect.",
             "grammarRule": "Coordinating Conjunctions"
         },
         {
@@ -80,35 +80,35 @@
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "She is talented ___ modest.",
+            "question": "Grandma is resting ___ she has a headache.",
             "options": [
-                "or",
-                "but",
-                "although",
-                "yet"
+                "because",
+                "so",
+                "and",
+                "while"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "yet",
-            "hint": "The second quality is surprisingly different from what you might expect.",
-            "explanation": "'Yet' is a coordinating conjunction that shows unexpected contrast — similar to 'but', yet slightly more formal.",
-            "grammarRule": "Coordinating Conjunctions"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "because",
+            "hint": "Her headache explains why she needs to rest.",
+            "explanation": "'Because' gives the reason for an action — the headache is why she is resting.",
+            "grammarRule": "Subordinating Conjunctions"
         },
         {
             "id": "cj_l2_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "You won't pass ___ you study.",
+            "question": "Always wash the vegetables ___ you cook them.",
             "options": [
-                "if",
-                "unless",
-                "because",
+                "so",
+                "before",
+                "and",
                 "until"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "unless",
-            "hint": "Think: 'if NOT' — passing requires studying.",
-            "explanation": "'Unless' means 'if not' or 'except if'. It sets a negative condition: studying is required to pass.",
+            "correctAnswer": "before",
+            "hint": "One action must happen first, ahead of the other.",
+            "explanation": "'Before' shows the order of two actions — washing comes earlier than cooking.",
             "grammarRule": "Subordinating Conjunctions"
         },
         {
@@ -116,17 +116,17 @@
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "Would you like tea ___ coffee?",
+            "question": "For dessert, would you prefer cake ___ ice cream?",
             "options": [
-                "or",
-                "until",
                 "but",
-                "and"
+                "and",
+                "so",
+                "or"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "or",
-            "hint": "A question offering a choice between two things.",
-            "explanation": "'Or' is a coordinating conjunction presenting two alternatives. Only one option can be chosen.",
+            "hint": "Only one dessert will be chosen, not both.",
+            "explanation": "'Or' offers a choice between two options — the listener picks just one.",
             "grammarRule": "Coordinating Conjunctions"
         },
         {
@@ -134,71 +134,71 @@
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "He ran fast ___ still missed the bus.",
+            "question": "You can join the team ___ you attend practice every week.",
             "options": [
-                "unless",
-                "although",
+                "when",
+                "if",
                 "but",
-                "and"
+                "so"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "but",
-            "hint": "Despite his effort, the result was the opposite of what you'd expect.",
-            "explanation": "'But' introduces an opposing or unexpected result. Running fast should have meant catching the bus, but it didn't.",
-            "grammarRule": "Coordinating Conjunctions"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "if",
+            "hint": "Attending practice is the condition for joining.",
+            "explanation": "'If' introduces a condition — joining the team depends on this one requirement.",
+            "grammarRule": "Subordinating Conjunctions"
         },
         {
             "id": "cj_l3_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "I will come ___ you need me.",
+            "question": "Dad reads the newspaper ___ Mom makes breakfast.",
             "options": [
-                "unless",
                 "until",
-                "if",
-                "lest"
+                "because",
+                "while",
+                "or"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "if",
-            "hint": "The coming depends on a condition — a possibility, not a certainty.",
-            "explanation": "'If' is a subordinating conjunction expressing a condition. The speaker will only come if the condition (being needed) is true.",
-            "grammarRule": "Conditionals (if)"
+            "correctAnswer": "while",
+            "hint": "Two people are busy with different tasks at the same moment.",
+            "explanation": "'While' shows two actions happening at the same time — reading and cooking happen together.",
+            "grammarRule": "Subordinating Conjunctions"
         },
         {
             "id": "cj_l4_q1",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "He was tired, ___ he went to bed early.",
+            "question": "We went home ___ the movie finished.",
             "options": [
-                "until",
+                "after",
                 "so",
-                "yet",
-                "when"
+                "unless",
+                "and"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "so",
-            "hint": "The second action is a direct result of the first.",
-            "explanation": "'So' is a coordinating conjunction that introduces a result or consequence. Because he was tired, the result was going to bed early.",
-            "grammarRule": "Coordinating Conjunctions"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "after",
+            "hint": "One event ended, and then the other one started.",
+            "explanation": "'After' shows one event follows another — going home came once the movie was over.",
+            "grammarRule": "Subordinating Conjunctions"
         },
         {
             "id": "cj_l4_q2",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "Take an umbrella ___ it rains.",
+            "question": "Keep stirring the sauce ___ it thickens.",
             "options": [
-                "although",
                 "so",
-                "when",
-                "in case"
+                "because",
+                "and",
+                "until"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "in case",
-            "hint": "You're preparing for a possible event — not a certain one.",
-            "explanation": "'In case' is a subordinating conjunction expressing precaution. It introduces a possible future situation you want to be prepared for.",
+            "correctAnswer": "until",
+            "hint": "The stirring continues all the way up to one point.",
+            "explanation": "'Until' marks the stopping point of a continuous action — stirring shouldn't stop before the sauce thickens.",
             "grammarRule": "Subordinating Conjunctions"
         },
         {
@@ -206,35 +206,35 @@
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "She ate breakfast ___ she was hungry.",
+            "question": "She packed her bag ___ locked the front door.",
             "options": [
-                "in case",
-                "lest",
-                "because",
-                "unless"
+                "although",
+                "and",
+                "until",
+                "because"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "because",
-            "hint": "The eating happened for a reason — what was that reason?",
-            "explanation": "'Because' is a subordinating conjunction of reason. It directly explains why she ate breakfast — hunger was the cause.",
-            "grammarRule": "Subordinating Conjunctions"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "and",
+            "hint": "Two simple actions happened one after another, both completed.",
+            "explanation": "'And' joins two actions the same person did in sequence — packing and locking both happened.",
+            "grammarRule": "Coordinating Conjunctions"
         },
         {
             "id": "cj_l5_q1",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "___ he is poor, he is happy.",
+            "question": "We won't have the picnic ___ the weather improves.",
             "options": [
-                "and",
-                "in case",
+                "unless",
                 "because",
-                "Although"
+                "when",
+                "and"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "Although",
-            "hint": "Being poor and being happy seem contradictory — one concedes to the other.",
-            "explanation": "'Although' is a subordinating conjunction of concession. It acknowledges the first fact (being poor) while showing the unexpected second fact (being happy).",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "unless",
+            "hint": "Think 'if not' — better weather is the one thing that would change this.",
+            "explanation": "'Unless' means 'except if' — the picnic depends entirely on this one condition.",
             "grammarRule": "Subordinating Conjunctions"
         },
         {
@@ -242,17 +242,17 @@
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "___ you finish, call me.",
+            "question": "___ the backpack was heavy, she carried it all the way up the hill.",
             "options": [
                 "When",
-                "and",
-                "unless",
-                "but"
+                "Because",
+                "So",
+                "Although"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "When",
-            "hint": "The call should happen at a specific time: after finishing.",
-            "explanation": "'When' introduces a time clause here — the speaker wants a call at the moment the listener finishes the task.",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Although",
+            "hint": "A real difficulty is acknowledged, but it didn't stop her.",
+            "explanation": "'Although' introduces a fact that makes the rest surprising — despite the heavy bag, she still made the climb.",
             "grammarRule": "Subordinating Conjunctions"
         },
         {
@@ -260,35 +260,35 @@
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "I ran fast ___ I could catch the train.",
+            "question": "The kids were exhausted, ___ they fell asleep during the car ride.",
             "options": [
+                "unless",
+                "when",
                 "although",
-                "so that",
-                "lest",
-                "until"
+                "so"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "so that",
-            "hint": "Running fast had a purpose — what outcome were you aiming for?",
-            "explanation": "'So that' is a subordinating conjunction of purpose. It explains the goal behind the action: catching the train was the intended result of running fast.",
-            "grammarRule": "Subordinating Conjunctions"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "so",
+            "hint": "Their tiredness directly led to falling asleep.",
+            "explanation": "'So' introduces a result — being exhausted caused them to fall asleep.",
+            "grammarRule": "Coordinating Conjunctions"
         },
         {
             "id": "cj_l6_q1",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "I'll wait ___ you arrive.",
+            "question": "I always feel nervous ___ I speak in front of the class.",
             "options": [
                 "or",
-                "until",
+                "although",
                 "but",
-                "and"
+                "when"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "until",
-            "hint": "The waiting continues right up to a specific moment.",
-            "explanation": "'Until' is a subordinating conjunction of time. It marks the end point of the waiting — arriving is when the wait stops.",
+            "correctAnswerIndex": 3,
+            "correctAnswer": "when",
+            "hint": "The nervous feeling happens at one specific moment.",
+            "explanation": "'When' marks the exact situation that triggers a feeling — speaking in class causes the nerves.",
             "grammarRule": "Subordinating Conjunctions"
         },
         {
@@ -296,53 +296,53 @@
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "I like apples ___ I dislike grapes.",
+            "question": "He studied all night, ___ he still failed the quiz.",
             "options": [
                 "because",
-                "while",
-                "until",
-                "unless"
+                "so",
+                "and",
+                "but"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "while",
-            "hint": "Two contrasting preferences are being described side by side.",
-            "explanation": "'While' can express simultaneous time, but here it shows contrast between two opposing states — like 'whereas'.",
-            "grammarRule": "Subordinating Conjunctions"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "but",
+            "hint": "Hard work didn't lead to the result you'd expect.",
+            "explanation": "'But' shows an unexpected contrast — effort here didn't lead to success.",
+            "grammarRule": "Coordinating Conjunctions"
         },
         {
             "id": "cj_l6_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "No sooner had I left ___ it began to rain.",
+            "question": "The picnic was cancelled ___ it started to rain.",
             "options": [
-                "when",
-                "than",
-                "but",
-                "then"
+                "because",
+                "until",
+                "so",
+                "although"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "than",
-            "hint": "This is a fixed two-part phrase. 'No sooner' always pairs with one specific word.",
-            "explanation": "The correlative pair 'no sooner...than' shows that two events happened almost simultaneously, with the second immediately following the first.",
-            "grammarRule": "Correlative Conjunctions"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "because",
+            "hint": "Rain is the direct reason for the cancellation.",
+            "explanation": "'Because' explains the cause of an event — rain is why the picnic was cancelled.",
+            "grammarRule": "Subordinating Conjunctions"
         },
         {
             "id": "cj_l7_q1",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "I study hard ___ I want to succeed.",
+            "question": "Try not to talk ___ the teacher is explaining the lesson.",
             "options": [
-                "and",
-                "in case",
-                "but",
-                "because"
+                "while",
+                "so",
+                "because",
+                "until"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "because",
-            "hint": "Studying is the action; wanting to succeed is the reason behind it.",
-            "explanation": "'Because' introduces the cause or reason. Here, the desire to succeed is the direct reason for studying hard.",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "while",
+            "hint": "Both things would be happening at the same time.",
+            "explanation": "'While' connects two actions happening at once — the request is to avoid talking during the explanation.",
             "grammarRule": "Subordinating Conjunctions"
         },
         {
@@ -350,197 +350,197 @@
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "We went for a walk ___ it was raining.",
+            "question": "Should we walk ___ take the bus to school?",
             "options": [
-                "so",
                 "but",
-                "although",
-                "nor"
+                "or",
+                "so",
+                "and"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "although",
-            "hint": "The rain didn't stop the walk — one fact gives way to another.",
-            "explanation": "'Although' introduces a concession — the rain is an obstacle you acknowledge but don't let stop you.",
-            "grammarRule": "Subordinating Conjunctions"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "or",
+            "hint": "Two travel methods are offered, and only one will be chosen.",
+            "explanation": "'Or' presents a choice between two options in a question.",
+            "grammarRule": "Coordinating Conjunctions"
         },
         {
             "id": "cj_l7_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "Scarcely had I arrived ___ she left.",
+            "question": "Brush your teeth ___ you go to bed.",
             "options": [
-                "than",
-                "when",
-                "then",
-                "but"
+                "before",
+                "until",
+                "and",
+                "so"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "when",
-            "hint": "'Scarcely' always pairs with just one specific conjunction. Which one?",
-            "explanation": "The correlative pair 'scarcely...when' (like 'hardly...when') shows that two events happened in very quick succession.",
-            "grammarRule": "Correlative Conjunctions"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "before",
+            "hint": "One habit should always be the very first step in the bedtime routine.",
+            "explanation": "'Before' places one action ahead of another in time — brushing comes first, sleeping comes after.",
+            "grammarRule": "Subordinating Conjunctions"
         },
         {
             "id": "cj_l8_q1",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "Neither Tom ___ Jerry came to the party.",
+            "question": "You will get wet ___ you forget your umbrella.",
             "options": [
                 "because",
-                "nor",
-                "yet",
-                "but"
+                "so",
+                "when",
+                "if"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "nor",
-            "hint": "'Neither' always pairs with one specific word to show that both options are negative.",
-            "explanation": "The correlative conjunction pair 'neither...nor' expresses that two subjects are both excluded. 'Neither A nor B' means not A and not B.",
-            "grammarRule": "Correlative Conjunctions"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "if",
+            "hint": "Getting wet depends on one missing item.",
+            "explanation": "'If' sets a condition — forgetting the umbrella is what would cause getting wet.",
+            "grammarRule": "Subordinating Conjunctions"
         },
         {
             "id": "cj_l8_q2",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "Both my brother ___ my sister enjoy music.",
+            "question": "The cat stretched, yawned, ___ curled up on the sofa.",
             "options": [
-                "or",
-                "nor",
                 "and",
-                "but"
+                "but",
+                "so",
+                "because"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "and",
-            "hint": "'Both' always pairs with one specific word to include two people or things.",
-            "explanation": "The correlative conjunction pair 'both...and' shows that two subjects share the same characteristic. Both people enjoy music.",
-            "grammarRule": "Correlative Conjunctions"
+            "hint": "This is the final item in a simple list of actions.",
+            "explanation": "'And' connects the last item in a list of actions — it simply completes the sequence.",
+            "grammarRule": "Coordinating Conjunctions"
         },
         {
             "id": "cj_l8_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "He speaks ___ he knew everything.",
+            "question": "The baby cried ___ her mother picked her up.",
             "options": [
-                "if",
-                "as if",
-                "though",
-                "like"
+                "when",
+                "until",
+                "because",
+                "so"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "as if",
-            "hint": "His manner of speaking suggests something that isn't necessarily true.",
-            "explanation": "'As if' introduces a hypothetical or unreal comparison. He doesn't actually know everything — he just speaks in a way that suggests it.",
-            "grammarRule": "Correlative Conjunctions"
+            "correctAnswer": "until",
+            "hint": "The crying stopped at one specific moment.",
+            "explanation": "'Until' shows the ending point of a continuous action — the crying continued up to that moment.",
+            "grammarRule": "Subordinating Conjunctions"
         },
         {
             "id": "cj_l9_q1",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "Either stay ___ leave — you must decide.",
+            "question": "We boarded the train ___ our platform number was announced.",
             "options": [
-                "or",
+                "so",
+                "when",
                 "unless",
-                "and",
                 "but"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "'Either' always pairs with one specific word when offering two choices.",
-            "explanation": "The correlative pair 'either...or' presents exactly two alternatives. The listener must choose one of the two options offered.",
-            "grammarRule": "Correlative Conjunctions"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "when",
+            "hint": "Boarding happened at one exact announced moment.",
+            "explanation": "'When' introduces the exact time boarding took place — right after the announcement.",
+            "grammarRule": "Subordinating Conjunctions"
         },
         {
             "id": "cj_l9_q2",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "Whether we win ___ lose, we are proud.",
+            "question": "We missed our flight ___ traffic was terrible.",
             "options": [
-                "or",
-                "nor",
-                "but",
-                "yet"
+                "so",
+                "although",
+                "until",
+                "because"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "or",
-            "hint": "'Whether' always pairs with one specific word to cover both alternatives.",
-            "explanation": "The correlative pair 'whether...or' covers both possibilities. The team is proud regardless of which outcome occurs.",
-            "grammarRule": "Correlative Conjunctions"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "because",
+            "hint": "Traffic explains why the flight was missed.",
+            "explanation": "'Because' gives the direct reason for missing the flight — heavy traffic was the cause.",
+            "grammarRule": "Subordinating Conjunctions"
         },
         {
             "id": "cj_l9_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "She cried ___ she heard the sad news.",
+            "question": "The hotel room was small, ___ the view was beautiful.",
             "options": [
-                "so",
+                "and",
                 "but",
-                "when",
-                "nor"
+                "so",
+                "because"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "when",
-            "hint": "The crying happened at a specific moment — what triggered it?",
-            "explanation": "'When' marks the time point at which an event occurs. She cried at the moment she heard the news.",
-            "grammarRule": "Subordinating Conjunctions"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "but",
+            "hint": "One disappointing detail is balanced by a surprising positive one.",
+            "explanation": "'But' introduces a contrast — a small room is offset by a beautiful view.",
+            "grammarRule": "Coordinating Conjunctions"
         },
         {
             "id": "cj_l10_q1",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "He is not only smart ___ also very generous.",
+            "question": "She stayed home from work ___ she caught a cold.",
             "options": [
-                "and",
-                "yet",
-                "but",
-                "nor"
+                "so",
+                "although",
+                "because",
+                "while"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "but",
-            "hint": "'Not only' always pairs with one specific word to add a further positive quality.",
-            "explanation": "The correlative pair 'not only...but also' adds an extra quality to what's already been said. He is smart, and additionally he is generous.",
-            "grammarRule": "Correlative Conjunctions"
+            "correctAnswer": "because",
+            "hint": "Illness explains her absence from work.",
+            "explanation": "'Because' explains the reason for staying home — a cold is the cause.",
+            "grammarRule": "Subordinating Conjunctions"
         },
         {
             "id": "cj_l10_q2",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "She stayed home ___ she was feeling sick.",
+            "question": "He felt dizzy, ___ he sat down immediately.",
             "options": [
+                "or",
                 "so",
-                "but",
-                "since",
-                "yet"
+                "unless",
+                "but"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "since",
-            "hint": "Being sick is the explanation for staying home.",
-            "explanation": "'Since' can mean 'because' — it introduces a reason or cause. Here it explains why she stayed home.",
-            "grammarRule": "Subordinating Conjunctions"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "so",
+            "hint": "Feeling dizzy led directly to an action.",
+            "explanation": "'So' introduces the result of feeling dizzy — sitting down was the response.",
+            "grammarRule": "Coordinating Conjunctions"
         },
         {
             "id": "cj_l10_q3",
             "instruction": "JOIN THE JUNCTION",
             "subtype": "conjunctions",
             "interactionType": "Brick Drag",
-            "question": "You can watch TV ___ you finish your homework first.",
+            "question": "___ she felt tired, she finished the whole race.",
             "options": [
-                "as long as",
-                "unless",
-                "until",
-                "although"
+                "Although",
+                "Until",
+                "So",
+                "Because"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "as long as",
-            "hint": "There is a condition attached to being allowed to watch TV.",
-            "explanation": "'As long as' is a conditional conjunction meaning 'provided that' or 'on the condition that'. Finishing homework is the required condition.",
+            "correctAnswer": "Although",
+            "hint": "Tiredness is real, but it didn't stop her from finishing.",
+            "explanation": "'Although' introduces a concession — despite being tired, she still completed the race.",
             "grammarRule": "Subordinating Conjunctions"
         }
     ]

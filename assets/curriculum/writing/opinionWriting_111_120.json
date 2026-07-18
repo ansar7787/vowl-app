@@ -5,64 +5,64 @@
     "quests": [
         {
             "id": "WRT_OPINIONWRITING_L111_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "All processed food products should carry prominent graphic health warnings.",
             "options": [
-                "Graphic warnings alert consumers to specific health risks and increase the salience of nutritional decisions.",
-                "Warning labels that quantify health impacts give all consumers equal access to relevant health information.",
                 "Processed food is a broad category covering many products that do not pose significant health risks.",
-                "Warning label fatigue sets in quickly, reducing the impact of labelling after initial exposure."
+                "Warning label fatigue sets in quickly, reducing the impact of labelling after initial exposure.",
+                "Graphic warnings alert consumers to specific health risks and increase the salience of nutritional decisions.",
+                "Warning labels that quantify health impacts give all consumers equal access to relevant health information."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the consumer information case for graphic food warnings (Pros) and the definition and fatigue concerns (Cons).",
             "explanation": "Graphic warnings raise health risk salience and democratise nutritional information (Pros), but processed food is a very broad category, and warning fatigue significantly reduces label impact after initial exposure (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L111_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Graphic health warnings on food should specifically target sugar, fat, and salt content.",
             "options": [
                 "Prominent front-of-pack labelling on specific harmful nutrients makes health risks immediately comprehensible.",
-                "Targeted nutrient warnings have been shown to shift consumer purchasing decisions towards healthier options.",
                 "Nutrient-specific warnings do not capture the complexity of overall dietary pattern and interaction effects.",
-                "Food manufacturers lobby successfully to weaken or delay the implementation of nutrient labelling schemes."
+                "Food manufacturers lobby successfully to weaken or delay the implementation of nutrient labelling schemes.",
+                "Targeted nutrient warnings have been shown to shift consumer purchasing decisions towards healthier options."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider the targeted nutrient warning case (Pros) and the systemic food complexity and lobbying concerns (Cons).",
             "explanation": "Targeted nutrient warnings are comprehensible and demonstrably shift purchasing behaviour (Pros), but they miss dietary complexity and food manufacturers consistently lobby to weaken labelling requirements (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L111_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Health warning labels on food empower consumers without infringing on their freedom.",
             "options": [
                 "Providing clearer information enables genuinely informed choice rather than restricting what people may buy.",
-                "Better-informed consumers create market pressure on manufacturers to improve product nutritional quality.",
                 "Food choices are driven by habit, culture, price, and availability - not primarily by labelling information.",
+                "Better-informed consumers create market pressure on manufacturers to improve product nutritional quality.",
                 "People with lower literacy or numeracy skills may not benefit from health label information equally."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about food labels as an empowerment tool (Pros) and the limits of information-only interventions (Cons).",
             "explanation": "Health labels enable informed choice and create consumer market pressure for product improvement (Pros), but food choices are primarily driven by habit, culture, and cost, and labels benefit literate consumers far more than those with lower literacy skills (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L112_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Routine dental care should be fully covered by the national health service.",
@@ -81,45 +81,45 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L112_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Dental health inequality is one of the most visible markers of social and economic inequality.",
             "options": [
+                "Expanding NHS dental provision requires recruiting significantly more dentists than currently train in the UK.",
                 "Dental disease disproportionately affects lower-income communities who cannot afford preventive care.",
                 "Addressing dental inequality through public provision has measurable long-term public health benefits.",
-                "Expanding NHS dental provision requires recruiting significantly more dentists than currently train in the UK.",
                 "Dental health is strongly influenced by lifestyle behaviours that public provision alone cannot change."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Consider dental inequality as a public health policy target (Pros) and the workforce and lifestyle barriers (Cons).",
             "explanation": "Dental disease disproportionately affects lower-income communities and NHS provision reduces long-term health inequality (Pros), but workforce shortages limit provision capacity, and dental health depends on lifestyle behaviours beyond the reach of healthcare alone (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L112_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Prevention-focused dental programmes are more cost-effective than expanding NHS treatment.",
             "options": [
-                "Fluoride in water, school dental health education, and subsidised preventive check-ups cost less than remedial treatment.",
-                "Investing in early preventive care reduces future demand for expensive restorative NHS dental procedures.",
                 "Prevention programmes alone cannot meet the existing backlog of untreated dental disease in the population.",
-                "Prevention must be complemented by accessible and affordable treatment for those who already need care."
+                "Prevention must be complemented by accessible and affordable treatment for those who already need care.",
+                "Fluoride in water, school dental health education, and subsidised preventive check-ups cost less than remedial treatment.",
+                "Investing in early preventive care reduces future demand for expensive restorative NHS dental procedures."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about dental prevention versus treatment as the most cost-effective NHS approach (Pros) and the backlog and access concerns (Cons).",
             "explanation": "Prevention is significantly cheaper than remedial treatment and reduces future NHS demand (Pros), but existing disease backlogs cannot be addressed through prevention alone, and prevention must complement rather than replace accessible treatment (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L113_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "All junk food advertising should be banned before nine in the evening.",
@@ -138,64 +138,64 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L113_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A total ban on junk food advertising would more effectively protect children's health.",
             "options": [
-                "An all-time ban removes junk food advertising from all broadcast media, eliminating the loophole of late-night viewing.",
-                "Total advertising prohibition removes the commercial incentive to create persuasive food marketing targeting children.",
                 "A total advertising ban significantly affects media businesses and entertainment companies that rely on food advertising.",
-                "Adults have the right to receive advertising information about legal food products they are free to purchase."
+                "An all-time ban removes junk food advertising from all broadcast media, eliminating the loophole of late-night viewing.",
+                "Adults have the right to receive advertising information about legal food products they are free to purchase.",
+                "Total advertising prohibition removes the commercial incentive to create persuasive food marketing targeting children."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider a total ban versus a watershed restriction on junk food advertising (Pros) and the commercial and rights concerns (Cons).",
             "explanation": "A total ban eliminates all broadcast loopholes and removes commercial incentives for child-targeted marketing (Pros), but it significantly impacts media revenues and raises questions about adults' right to receive information about legal products (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L113_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Digital platform restrictions on junk food advertising are essential alongside broadcast regulation.",
             "options": [
                 "Online platforms carry vast volumes of junk food advertising targeted precisely at children using algorithms.",
-                "Broadcast-only restrictions are ineffective without equivalent digital platform regulation.",
                 "Digital platform regulation is technically complex and difficult to enforce across global platform operators.",
+                "Broadcast-only restrictions are ineffective without equivalent digital platform regulation.",
                 "Platform self-regulation of food advertising has historically been weak and commercially compromised."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about the necessity of digital platform junk food advertising regulation (Pros) and the enforcement challenges (Cons).",
             "explanation": "Digital food advertising targets children algorithmically and makes broadcast-only restrictions ineffective without equivalent digital rules (Pros), but global platform regulation is technically complex, and self-regulation by platforms has consistently failed to protect children (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L114_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Mental health treatment should be provided completely free at the point of need.",
             "options": [
-                "Mental illness is as serious as physical illness and must receive equivalent free access to treatment.",
-                "Removing financial barriers to mental health treatment encourages earlier intervention before crises develop.",
                 "Providing truly comprehensive free mental health care requires enormous sustained public investment.",
-                "Free provision without capacity expansion creates long waiting lists that reduce clinical effectiveness."
+                "Free provision without capacity expansion creates long waiting lists that reduce clinical effectiveness.",
+                "Mental illness is as serious as physical illness and must receive equivalent free access to treatment.",
+                "Removing financial barriers to mental health treatment encourages earlier intervention before crises develop."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the equity and early intervention case for free mental health care (Pros) and the capacity and cost concerns (Cons).",
             "explanation": "Free mental health treatment removes financial barriers and enables earlier intervention (Pros), but genuine comprehensiveness requires enormous investment, and free provision without capacity growth creates dangerous waiting list delays (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L114_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Long waiting times for NHS mental health treatment cause serious harm to patients.",
@@ -214,7 +214,7 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L114_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Prevention and community support can reduce demand for expensive mental health treatment.",
@@ -233,45 +233,45 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L115_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Employers should be legally required to offer workplace wellness programmes to all staff.",
             "options": [
-                "Workplace wellness programmes reduce absenteeism and improve productivity in measurable ways.",
-                "Employer-led wellness programmes reach employees who would not otherwise access health support.",
                 "Wellness programmes vary enormously in quality and many deliver little measurable health benefit.",
-                "Mandatory wellness programmes can feel intrusive and patronising, reducing employee autonomy."
+                "Mandatory wellness programmes can feel intrusive and patronising, reducing employee autonomy.",
+                "Workplace wellness programmes reduce absenteeism and improve productivity in measurable ways.",
+                "Employer-led wellness programmes reach employees who would not otherwise access health support."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the productivity and access case for mandatory wellness programmes (Pros) and the quality and autonomy concerns (Cons).",
             "explanation": "Wellness programmes reduce absenteeism and reach otherwise unreached employees (Pros), but quality varies enormously, and mandatory programmes can feel intrusive and undermine the employee autonomy that genuine wellbeing requires (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L115_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Compulsory wellness programmes benefit employers through reduced healthcare and absence costs.",
             "options": [
+                "Small businesses cannot afford the infrastructure and cost of running meaningful wellness programmes.",
                 "Healthier employees take fewer sick days, reducing the direct and indirect cost of absence to employers.",
                 "Early detection of health conditions through workplace programmes prevents costly long-term medical treatment.",
-                "Small businesses cannot afford the infrastructure and cost of running meaningful wellness programmes.",
                 "Wellness programme ROI is often overstated in industry studies with significant conflicts of interest."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Consider the employer cost-reduction case for wellness programmes (Pros) and the small business and evidence quality concerns (Cons).",
             "explanation": "Wellness programmes reduce absence costs and enable early health condition detection (Pros), but small businesses cannot afford meaningful programmes, and the financial return on wellness investment is often overstated in industry-funded research (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L115_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Voluntary rather than compulsory wellness programmes produce better employee engagement.",
@@ -290,178 +290,178 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L116_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Physical education grades should count towards students' final academic results.",
             "options": [
+                "Grading PE on physical performance disadvantages students with disabilities and chronic health conditions.",
                 "Including PE grades in academic results signals that physical health matters as much as academic achievement.",
                 "Graded PE motivates students to engage seriously with exercise as a valued and assessed discipline.",
-                "Grading PE on physical performance disadvantages students with disabilities and chronic health conditions.",
                 "Academic grades already reflect learning effort; measuring physical ability alongside them is a categorical error."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the motivation and values case for graded PE (Pros) and the equity and category concerns (Cons).",
             "explanation": "Counting PE grades signals the importance of health and motivates serious engagement (Pros), but performance-based grading disadvantages disabled students and conflates physical ability with academic achievement (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L116_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Assessing PE on effort, progress, and knowledge rather than ability makes grading more equitable.",
             "options": [
                 "Assessing on personal improvement and sports science knowledge rewards effort rather than natural athleticism.",
-                "Including effort-based PE grades motivates all students equally regardless of physical starting point.",
                 "Effort-based grading is subjective and open to teacher bias in ways that undermine its academic legitimacy.",
+                "Including effort-based PE grades motivates all students equally regardless of physical starting point.",
                 "Students quickly learn to appear to be trying without genuinely engaging with physical activity."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider effort-based PE grading as an equitable approach (Pros) and the subjectivity and gaming concerns (Cons).",
             "explanation": "Effort and progress-based PE grades reward commitment over natural ability and motivate all students (Pros), but effort assessment is highly subjective and vulnerable to teacher bias, and students can perform effort without genuine engagement (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L116_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "PE is better delivered as an enriching non-assessed experience than as an examined academic subject.",
             "options": [
+                "Without assessment, PE lacks the status, funding priority, and teacher accountability of assessed subjects.",
                 "Non-assessed PE removes the anxiety and competition that undermine its enjoyment and health benefits.",
                 "Physical activity experienced as intrinsically enjoyable is more likely to continue beyond compulsory schooling.",
-                "Without assessment, PE lacks the status, funding priority, and teacher accountability of assessed subjects.",
                 "Non-assessed subjects risk becoming marginalised in schools dominated by examination performance pressure."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about PE as a non-assessed enriching experience (Pros) and the status and marginalisation risks without assessment (Cons).",
             "explanation": "Non-assessed PE promotes intrinsic enjoyment and reduces competitive anxiety, building lifelong activity habits (Pros), but without assessment PE lacks academic status, funding, and accountability, risking marginalisation in exam-focused schools (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L117_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Schools should teach students about the importance and science of sleep.",
             "options": [
+                "Sleep education competes for limited curriculum time against more immediately assessable academic subjects.",
                 "Evidence-based sleep education helps adolescents understand and manage the biological sleep shifts of puberty.",
                 "Understanding sleep science equips students to make better decisions about bedtime, screens, and rest.",
-                "Sleep education competes for limited curriculum time against more immediately assessable academic subjects.",
                 "Parental behaviour and family environment have far greater influence on adolescent sleep than school education."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the evidence-based case for sleep education in schools (Pros) and the curriculum and parent influence concerns (Cons).",
             "explanation": "Sleep education helps adolescents understand biological sleep changes and make better rest decisions (Pros), but it competes for scarce curriculum time and family environment exerts far greater influence on sleep than school-based education (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L117_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Poor adolescent sleep is a significant and underaddressed public health concern.",
             "options": [
-                "Chronic sleep deprivation in teenagers is strongly associated with depression, anxiety, and reduced academic performance.",
-                "Schools are ideally placed to identify and address sleep deficits that families may not recognise.",
                 "Adolescent sleep problems are primarily driven by digital device use and social pressures beyond school control.",
-                "Addressing sleep requires family and community-level intervention, not school education programmes alone."
+                "Addressing sleep requires family and community-level intervention, not school education programmes alone.",
+                "Chronic sleep deprivation in teenagers is strongly associated with depression, anxiety, and reduced academic performance.",
+                "Schools are ideally placed to identify and address sleep deficits that families may not recognise."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider the public health case for school sleep intervention (Pros) and the root cause and systemic concerns (Cons).",
             "explanation": "Chronic teen sleep deprivation links to depression and academic decline, and schools can identify patterns families miss (Pros), but device use and social pressures are the primary drivers, and effective sleep improvement requires family and community-level action (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L117_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Later school start times are more effective than sleep education in addressing teen sleep deprivation.",
             "options": [
+                "Later school starts displace the school day and create significant logistical problems for working families.",
                 "Structural change to school start times addresses the biological clock mismatch without requiring behaviour change.",
                 "Later starts have demonstrated measurable improvements in attendance, mood, and academic performance in pilots.",
-                "Later school starts displace the school day and create significant logistical problems for working families.",
                 "Later starts do not address the late-night digital device use that is the primary cause of teen sleep loss."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about later starts versus sleep education as responses to teen sleep deprivation (Pros for later starts) and the practical and root cause concerns (Cons).",
             "explanation": "Later starts address biological clock mismatch structurally and show positive pilot results for attendance and performance (Pros), but they create serious family logistics problems and do not address the underlying cause of device-driven late-night sleep loss (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L118_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Governments should significantly increase research funding for rare and neglected diseases.",
             "options": [
+                "Public research budgets are finite and every rare disease investment displaces funding for common condition research.",
                 "Rare disease patients are systematically underserved by market-driven pharmaceutical research.",
                 "Public research investment in rare diseases produces scientific discoveries applicable to common conditions.",
-                "Public research budgets are finite and every rare disease investment displaces funding for common condition research.",
                 "Orphan drug legislation and commercial incentives have already significantly improved rare disease research."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the equity and spillover case for more rare disease funding (Pros) and the opportunity cost and existing incentives (Cons).",
             "explanation": "Rare disease patients deserve research investment and rare disease science generates widely applicable discoveries (Pros), but public research budgets are finite, every rare disease investment displaces common condition funding, and existing orphan drug incentives already drive some private investment (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L118_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Market incentives alone are insufficient to ensure adequate research into rare diseases.",
             "options": [
-                "The commercial market is too small to justify private investment in diseases affecting few patients.",
-                "Without public funding, patients with rare conditions face a lifetime without treatment options or diagnosis.",
                 "Tax incentives and guaranteed purchase commitments can motivate sufficient private sector rare disease research.",
-                "Public bodies are less efficient than private research companies in translating funding into effective treatments."
+                "The commercial market is too small to justify private investment in diseases affecting few patients.",
+                "Public bodies are less efficient than private research companies in translating funding into effective treatments.",
+                "Without public funding, patients with rare conditions face a lifetime without treatment options or diagnosis."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider why market incentives are insufficient for rare disease research (Pros) and the private sector alternative (Cons).",
             "explanation": "Small rare disease markets cannot justify private investment without public support (Pros), but tax incentives and guaranteed purchase agreements can motivate private research, and private companies may translate investment into treatments more efficiently than public bodies (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L118_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "International collaboration in rare disease research is more efficient than national funding alone.",
             "options": [
+                "International research collaboration raises complex questions of data sharing, intellectual property, and access.",
                 "Pooling patients across countries enables clinical trials with sufficient participants for rare conditions.",
                 "Shared research infrastructure reduces duplication and significantly lowers the cost of rare disease investigation.",
-                "International research collaboration raises complex questions of data sharing, intellectual property, and access.",
                 "National governments may prioritise domestic research capacity and control over international collaborative efficiency."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about international collaboration as the most effective rare disease research model (Pros) and the coordination challenges (Cons).",
             "explanation": "International pooling enables adequate trial participation and reduces duplication in rare disease research (Pros), but data sharing and IP questions complicate collaboration, and governments may prioritise national control over collaborative efficiency (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L119_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Alcohol should be taxed significantly more heavily to reduce harmful consumption.",
@@ -480,83 +480,83 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L119_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Minimum unit pricing for alcohol is more targeted and effective than blanket taxation.",
             "options": [
-                "Minimum unit pricing specifically increases the cost of the cheapest high-strength alcohol used by heavy drinkers.",
-                "Scottish evidence demonstrates that minimum unit pricing measurably reduced alcohol-related hospital admissions.",
                 "Minimum unit pricing increases profits for producers and retailers rather than generating public health revenue.",
-                "Middle-class wine drinkers are largely unaffected by minimum unit pricing on cheap high-strength products."
+                "Middle-class wine drinkers are largely unaffected by minimum unit pricing on cheap high-strength products.",
+                "Minimum unit pricing specifically increases the cost of the cheapest high-strength alcohol used by heavy drinkers.",
+                "Scottish evidence demonstrates that minimum unit pricing measurably reduced alcohol-related hospital admissions."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider minimum unit pricing versus taxation as the optimal alcohol policy tool (Pros) and the revenue and targeting concerns (Cons).",
             "explanation": "Minimum unit pricing targets cheap high-strength alcohol used by heavy drinkers and Scottish evidence shows measurable health benefits (Pros), but producers capture the revenue benefit rather than the public, and the policy largely bypasses moderate wine and beer drinkers (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L119_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Education and cultural change are more effective long-term responses to harmful drinking than taxation.",
             "options": [
+                "Cultural change in alcohol consumption takes generations to achieve and cannot address immediate harms.",
                 "Changing social norms about alcohol requires sustained cultural and educational investment, not price intervention.",
                 "Countries with positive drinking cultures achieve lower harm levels through norms rather than tax structures.",
-                "Cultural change in alcohol consumption takes generations to achieve and cannot address immediate harms.",
                 "Evidence from tobacco shows that price measures are consistently more effective than education in changing behaviour."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about cultural change versus taxation as the more effective alcohol harm reduction strategy (Pros for culture) and the speed and evidence concerns (Cons).",
             "explanation": "Sustainable cultural change about alcohol is more durable than price interventions (Pros), but cultural change takes generations, and tobacco evidence shows price measures consistently outperform education in changing consumption behaviour (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L120_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Annual health checks at work should be compulsory for all full-time employees.",
             "options": [
-                "Compulsory checks detect chronic conditions early, reducing long-term healthcare costs and sick leave.",
-                "Workplace health checks reach people who would not proactively visit their GP for routine screening.",
                 "Compulsory health checks raise complex questions about medical privacy and employee autonomy.",
-                "Employers who access employee health data may use it to discriminate in pay, promotion, or redundancy."
+                "Compulsory checks detect chronic conditions early, reducing long-term healthcare costs and sick leave.",
+                "Employers who access employee health data may use it to discriminate in pay, promotion, or redundancy.",
+                "Workplace health checks reach people who would not proactively visit their GP for routine screening."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the preventive health case for compulsory workplace checks (Pros) and the privacy and discrimination concerns (Cons).",
             "explanation": "Compulsory checks enable early detection and reach people who avoid healthcare (Pros), but they raise serious medical privacy concerns and risk employer misuse of health data for discriminatory employment decisions (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L120_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Employer-funded health monitoring programmes deliver measurable returns on investment.",
             "options": [
+                "Financial return on health monitoring investment typically takes many years to materialise.",
                 "Early detection of conditions reduces the cost of subsequent treatment for employers funding health insurance.",
                 "Healthier employees demonstrate higher productivity, lower absence rates, and stronger retention.",
-                "Financial return on health monitoring investment typically takes many years to materialise.",
                 "Small businesses cannot afford meaningful health monitoring infrastructure for their employees."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Consider the employer ROI case for health monitoring (Pros) and the timeline and small business concerns (Cons).",
             "explanation": "Early detection saves treatment costs and healthier employees are more productive and reliable (Pros), but returns take years to materialise and small businesses face disproportionate cost barriers to implementing health monitoring (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L120_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Voluntary occupational health programmes are more effective than compulsory workplace checks.",

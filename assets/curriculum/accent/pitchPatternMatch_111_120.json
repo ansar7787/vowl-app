@@ -8,13 +8,13 @@
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "She gave the flowers to John, not Mark.",
-            "textToSpeak": "She gave the flowers to John, not Mark.",
+            "word": "The embarrassed waiter apologized to the table sincerely.",
+            "textToSpeak": "The embarrassed waiter apologized to the table sincerely.",
             "options": [
-                "Emphasis on JOHN (Recipient focus)",
-                "Emphasis on FLOWERS (Item focus)"
+                "Emphasis on SINCERELY (Manner focus)",
+                "Emphasis on WAITER (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on JOHN (Recipient focus)",
+            "correctAnswer": "Emphasis on SINCERELY (Manner focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -23,46 +23,46 @@
                 3,
                 1
             ],
-            "hint": "'Not Mark' tells you the correction is about who received them. Listen for the pitch to peak on 'John'.",
-            "explanation": "The contrast 'not Mark' shows the recipient is the new information, so the nuclear stress falls on 'John', not 'flowers'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is still the same rule as always: the final content word carries the emphasis, regardless of its grammatical job.",
+            "explanation": "SINCERELY is the final content word here, so it takes the nuclear stress — its job as Manner focus doesn't change the default rule.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_332",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "She gave John the flowers, not the chocolates.",
-            "textToSpeak": "She gave John the flowers, not the chocolates.",
+            "word": "The local jazz band is performing downtown.",
+            "textToSpeak": "The local jazz band is performing downtown.",
             "options": [
-                "Emphasis on FLOWERS (Item focus)",
-                "Emphasis on JOHN (Recipient focus)"
+                "Emphasis on BAND (Subject focus)",
+                "Emphasis on DOWNTOWN (Place focus)"
             ],
-            "correctAnswer": "Emphasis on FLOWERS (Item focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on DOWNTOWN (Place focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Not the chocolates' tells you the correction is about what was given. Listen for the pitch to peak on 'flowers'.",
-            "explanation": "The contrast 'not the chocolates' shows the item is the new information, so the nuclear stress falls on 'flowers', not 'John'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Don't let the sentence type distract you — the peak is still on the last important word.",
+            "explanation": "With no special contrast in this sentence, the pitch peak still falls on DOWNTOWN, the Place detail that closes it.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_333",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "He sent the invoice to the client, not the vendor.",
-            "textToSpeak": "He sent the invoice to the client, not the vendor.",
+            "word": "He handed the wireless microphone to the nervous host.",
+            "textToSpeak": "He handed the wireless microphone to the nervous host.",
             "options": [
-                "Emphasis on CLIENT (Recipient focus)",
-                "Emphasis on INVOICE (Item focus)"
+                "Emphasis on HOST (Recipient focus)",
+                "Emphasis on MICROPHONE (Item focus)"
             ],
-            "correctAnswer": "Emphasis on CLIENT (Recipient focus)",
+            "correctAnswer": "Emphasis on HOST (Recipient focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -71,47 +71,47 @@
                 3,
                 1
             ],
-            "hint": "'Not the vendor' tells you the correction is about who received it. Listen for the pitch to peak on 'client'.",
-            "explanation": "The contrast 'not the vendor' shows the recipient is the new information, so the nuclear stress falls on 'client'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence has no contrast or correction — so, as always, listen for the peak on the very last content word, whatever role it plays.",
+            "explanation": "MICROPHONE appears earlier in the sentence, so the stress lands on HOST, the word that ends it — here, a Recipient focus.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_334",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "He sent the client the invoice, not the contract.",
-            "textToSpeak": "He sent the client the invoice, not the contract.",
+            "word": "He bought his exhausted roommate a strong coffee.",
+            "textToSpeak": "He bought his exhausted roommate a strong coffee.",
             "options": [
-                "Emphasis on CLIENT (Recipient focus)",
-                "Emphasis on INVOICE (Item focus)"
+                "Emphasis on ROOMMATE (Recipient focus)",
+                "Emphasis on COFFEE (Item focus)"
             ],
-            "correctAnswer": "Emphasis on INVOICE (Item focus)",
+            "correctAnswer": "Emphasis on COFFEE (Item focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Not the contract' tells you the correction is about what was sent. Listen for the pitch to peak on 'invoice'.",
-            "explanation": "The contrast 'not the contract' shows the item is the new information, so the nuclear stress falls on 'invoice'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Focus on the last meaningful word in the sentence, not the earlier one — that's usually where the peak sits.",
+            "explanation": "Whatever grammatical role it plays, the last content word attracts the stress; here that's COFFEE, functioning as Item focus.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_335",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I showed the photos to my sister, not my brother.",
-            "textToSpeak": "I showed the photos to my sister, not my brother.",
+            "word": "The final contract negotiation seemed genuinely productive.",
+            "textToSpeak": "The final contract negotiation seemed genuinely productive.",
             "options": [
-                "Emphasis on PHOTOS (Item focus)",
-                "Emphasis on SISTER (Recipient focus)"
+                "Emphasis on PRODUCTIVE (Complement focus)",
+                "Emphasis on NEGOTIATION (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on SISTER (Recipient focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on PRODUCTIVE (Complement focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -119,47 +119,47 @@
                 3,
                 1
             ],
-            "hint": "'Not my brother' tells you the correction is about who saw them. Listen for the pitch to peak on 'sister'.",
-            "explanation": "The contrast 'not my brother' shows the recipient is the new information, so the nuclear stress falls on 'sister'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "One of these two words simply appears earlier; the real peak is on the detail added at the end.",
+            "explanation": "The sentence saves its strongest beat for PRODUCTIVE, the closing Complement detail, rather than NEGOTIATION earlier on.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_336",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I showed my sister the photos, not the videos.",
-            "textToSpeak": "I showed my sister the photos, not the videos.",
+            "word": "The neighborhood library extends its hours tonight.",
+            "textToSpeak": "The neighborhood library extends its hours tonight.",
             "options": [
-                "Emphasis on PHOTOS (Item focus)",
-                "Emphasis on SISTER (Recipient focus)"
+                "Emphasis on LIBRARY (Subject focus)",
+                "Emphasis on TONIGHT (Time focus)"
             ],
-            "correctAnswer": "Emphasis on PHOTOS (Item focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on TONIGHT (Time focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Not the videos' tells you the correction is about what was shown. Listen for the pitch to peak on 'photos'.",
-            "explanation": "The contrast 'not the videos' shows the item is the new information, so the nuclear stress falls on 'photos'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Whether it's a time, a place, a manner, or something else, the last content word usually wins the stress in a neutral sentence.",
+            "explanation": "TONIGHT is the final content word here, so it takes the nuclear stress — its job as Time focus doesn't change the default rule.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_337",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "We told the news to the manager, not the intern.",
-            "textToSpeak": "We told the news to the manager, not the intern.",
+            "word": "The first-year rookie answered the tough question confidently.",
+            "textToSpeak": "The first-year rookie answered the tough question confidently.",
             "options": [
-                "Emphasis on NEWS (Item focus)",
-                "Emphasis on MANAGER (Recipient focus)"
+                "Emphasis on CONFIDENTLY (Manner focus)",
+                "Emphasis on ROOKIE (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on MANAGER (Recipient focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on CONFIDENTLY (Manner focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -167,47 +167,47 @@
                 3,
                 1
             ],
-            "hint": "'Not the intern' tells you the correction is about who was told. Listen for the pitch to peak on 'manager'.",
-            "explanation": "The contrast 'not the intern' shows the recipient is the new information, so the nuclear stress falls on 'manager'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Say the sentence naturally — your voice should build toward whatever detail comes last.",
+            "explanation": "With no special contrast in this sentence, the pitch peak still falls on CONFIDENTLY, the Manner detail that closes it.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_338",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "We told the manager the news, not the rumor.",
-            "textToSpeak": "We told the manager the news, not the rumor.",
+            "word": "After months of tense talks, the negotiations finally concluded.",
+            "textToSpeak": "After months of tense talks, the negotiations finally concluded.",
             "options": [
-                "Emphasis on NEWS (Item focus)",
-                "Emphasis on MANAGER (Recipient focus)"
+                "Emphasis on NEGOTIATIONS (Subject focus)",
+                "Emphasis on CONCLUDED (Verb focus)"
             ],
-            "correctAnswer": "Emphasis on NEWS (Item focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on CONCLUDED (Verb focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Not the rumor' tells you the correction is about what was told. Listen for the pitch to peak on 'news'.",
-            "explanation": "The contrast 'not the rumor' shows the item is the new information, so the nuclear stress falls on 'news'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Don't be pulled toward the earlier word. Listen for where the pitch actually lifts near the end.",
+            "explanation": "NEGOTIATIONS appears earlier in the sentence, so the stress lands on CONCLUDED, the word that ends it — here, a Verb focus.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_339",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "She handed the keys to the valet, not the doorman.",
-            "textToSpeak": "She handed the keys to the valet, not the doorman.",
+            "word": "The updated weekend forecast looks fairly promising.",
+            "textToSpeak": "The updated weekend forecast looks fairly promising.",
             "options": [
-                "Emphasis on KEYS (Item focus)",
-                "Emphasis on VALET (Recipient focus)"
+                "Emphasis on PROMISING (Complement focus)",
+                "Emphasis on FORECAST (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on VALET (Recipient focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on PROMISING (Complement focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -215,46 +215,46 @@
                 3,
                 1
             ],
-            "hint": "'Not the doorman' tells you the correction is about who received them. Listen for the pitch to peak on 'valet'.",
-            "explanation": "The contrast 'not the doorman' shows the recipient is the new information, so the nuclear stress falls on 'valet'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is still the same rule as always: the final content word carries the emphasis, regardless of its grammatical job.",
+            "explanation": "Whatever grammatical role it plays, the last content word attracts the stress; here that's PROMISING, functioning as Complement focus.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_340",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "She handed the valet the keys, not the ticket.",
-            "textToSpeak": "She handed the valet the keys, not the ticket.",
+            "word": "The veteran trauma surgeon handled the crisis calmly.",
+            "textToSpeak": "The veteran trauma surgeon handled the crisis calmly.",
             "options": [
-                "Emphasis on VALET (Recipient focus)",
-                "Emphasis on KEYS (Item focus)"
+                "Emphasis on SURGEON (Subject focus)",
+                "Emphasis on CALMLY (Manner focus)"
             ],
-            "correctAnswer": "Emphasis on KEYS (Item focus)",
+            "correctAnswer": "Emphasis on CALMLY (Manner focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Not the ticket' tells you the correction is about what was handed over. Listen for the pitch to peak on 'keys'.",
-            "explanation": "The contrast 'not the ticket' shows the item is the new information, so the nuclear stress falls on 'keys'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Don't let the sentence type distract you — the peak is still on the last important word.",
+            "explanation": "The sentence saves its strongest beat for CALMLY, the closing Manner detail, rather than SURGEON earlier on.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_341",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "He read the story to his daughter, not his son.",
-            "textToSpeak": "He read the story to his daughter, not his son.",
+            "word": "The quarterly budget meeting moved to the lobby.",
+            "textToSpeak": "The quarterly budget meeting moved to the lobby.",
             "options": [
-                "Emphasis on DAUGHTER (Recipient focus)",
-                "Emphasis on STORY (Item focus)"
+                "Emphasis on LOBBY (Place focus)",
+                "Emphasis on MEETING (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on DAUGHTER (Recipient focus)",
+            "correctAnswer": "Emphasis on LOBBY (Place focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -263,46 +263,46 @@
                 3,
                 1
             ],
-            "hint": "'Not his son' tells you the correction is about who was read to. Listen for the pitch to peak on 'daughter'.",
-            "explanation": "The contrast 'not his son' shows the recipient is the new information, so the nuclear stress falls on 'daughter'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence has no contrast or correction — so, as always, listen for the peak on the very last content word, whatever role it plays.",
+            "explanation": "LOBBY is the final content word here, so it takes the nuclear stress — its job as Place focus doesn't change the default rule.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_342",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "He read his daughter the story, not the poem.",
-            "textToSpeak": "He read his daughter the story, not the poem.",
+            "word": "I passed the urgent message to the front desk.",
+            "textToSpeak": "I passed the urgent message to the front desk.",
             "options": [
-                "Emphasis on STORY (Item focus)",
-                "Emphasis on DAUGHTER (Recipient focus)"
+                "Emphasis on MESSAGE (Item focus)",
+                "Emphasis on DESK (Recipient focus)"
             ],
-            "correctAnswer": "Emphasis on STORY (Item focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on DESK (Recipient focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Not the poem' tells you the correction is about what was read. Listen for the pitch to peak on 'story'.",
-            "explanation": "The contrast 'not the poem' shows the item is the new information, so the nuclear stress falls on 'story'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Focus on the last meaningful word in the sentence, not the earlier one — that's usually where the peak sits.",
+            "explanation": "With no special contrast in this sentence, the pitch peak still falls on DESK, the Recipient detail that closes it.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_343",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I mailed the package to my aunt, not my uncle.",
-            "textToSpeak": "I mailed the package to my aunt, not my uncle.",
+            "word": "She mailed the handwritten postcard to her grandmother.",
+            "textToSpeak": "She mailed the handwritten postcard to her grandmother.",
             "options": [
-                "Emphasis on AUNT (Recipient focus)",
-                "Emphasis on PACKAGE (Item focus)"
+                "Emphasis on GRANDMOTHER (Recipient focus)",
+                "Emphasis on POSTCARD (Item focus)"
             ],
-            "correctAnswer": "Emphasis on AUNT (Recipient focus)",
+            "correctAnswer": "Emphasis on GRANDMOTHER (Recipient focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -311,46 +311,46 @@
                 3,
                 1
             ],
-            "hint": "'Not my uncle' tells you the correction is about who received it. Listen for the pitch to peak on 'aunt'.",
-            "explanation": "The contrast 'not my uncle' shows the recipient is the new information, so the nuclear stress falls on 'aunt'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "One of these two words simply appears earlier; the real peak is on the detail added at the end.",
+            "explanation": "POSTCARD appears earlier in the sentence, so the stress lands on GRANDMOTHER, the word that ends it — here, a Recipient focus.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_344",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I mailed my aunt the package, not the card.",
-            "textToSpeak": "I mailed my aunt the package, not the card.",
+            "word": "Long after the curtain fell, the applause slowly faded.",
+            "textToSpeak": "Long after the curtain fell, the applause slowly faded.",
             "options": [
-                "Emphasis on PACKAGE (Item focus)",
-                "Emphasis on AUNT (Recipient focus)"
+                "Emphasis on APPLAUSE (Subject focus)",
+                "Emphasis on FADED (Verb focus)"
             ],
-            "correctAnswer": "Emphasis on PACKAGE (Item focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on FADED (Verb focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Not the card' tells you the correction is about what was mailed. Listen for the pitch to peak on 'package'.",
-            "explanation": "The contrast 'not the card' shows the item is the new information, so the nuclear stress falls on 'package'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Whether it's a time, a place, a manner, or something else, the last content word usually wins the stress in a neutral sentence.",
+            "explanation": "Whatever grammatical role it plays, the last content word attracts the stress; here that's FADED, functioning as Verb focus.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_345",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "We gave the award to the captain, not the coach.",
-            "textToSpeak": "We gave the award to the captain, not the coach.",
+            "word": "The hospital's crowded waiting room felt oddly quiet.",
+            "textToSpeak": "The hospital's crowded waiting room felt oddly quiet.",
             "options": [
-                "Emphasis on CAPTAIN (Recipient focus)",
-                "Emphasis on AWARD (Item focus)"
+                "Emphasis on QUIET (Complement focus)",
+                "Emphasis on ROOM (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on CAPTAIN (Recipient focus)",
+            "correctAnswer": "Emphasis on QUIET (Complement focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -359,47 +359,47 @@
                 3,
                 1
             ],
-            "hint": "'Not the coach' tells you the correction is about who received it. Listen for the pitch to peak on 'captain'.",
-            "explanation": "The contrast 'not the coach' shows the recipient is the new information, so the nuclear stress falls on 'captain'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Say the sentence naturally — your voice should build toward whatever detail comes last.",
+            "explanation": "The sentence saves its strongest beat for QUIET, the closing Complement detail, rather than ROOM earlier on.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_346",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "We gave the captain the award, not the medal.",
-            "textToSpeak": "We gave the captain the award, not the medal.",
+            "word": "The homemade tomato soup tastes surprisingly spicy.",
+            "textToSpeak": "The homemade tomato soup tastes surprisingly spicy.",
             "options": [
-                "Emphasis on AWARD (Item focus)",
-                "Emphasis on CAPTAIN (Recipient focus)"
+                "Emphasis on SOUP (Subject focus)",
+                "Emphasis on SPICY (Complement focus)"
             ],
-            "correctAnswer": "Emphasis on AWARD (Item focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on SPICY (Complement focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Not the medal' tells you the correction is about what was given. Listen for the pitch to peak on 'award'.",
-            "explanation": "The contrast 'not the medal' shows the item is the new information, so the nuclear stress falls on 'award'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Don't be pulled toward the earlier word. Listen for where the pitch actually lifts near the end.",
+            "explanation": "SPICY is the final content word here, so it takes the nuclear stress — its job as Complement focus doesn't change the default rule.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_347",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "She sold the car to a neighbor, not a stranger.",
-            "textToSpeak": "She sold the car to a neighbor, not a stranger.",
+            "word": "Once the announcement ended, the restless crowd slowly dispersed.",
+            "textToSpeak": "Once the announcement ended, the restless crowd slowly dispersed.",
             "options": [
-                "Emphasis on CAR (Item focus)",
-                "Emphasis on NEIGHBOR (Recipient focus)"
+                "Emphasis on DISPERSED (Verb focus)",
+                "Emphasis on CROWD (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on NEIGHBOR (Recipient focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DISPERSED (Verb focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -407,47 +407,47 @@
                 3,
                 1
             ],
-            "hint": "'Not a stranger' tells you the correction is about who bought it. Listen for the pitch to peak on 'neighbor'.",
-            "explanation": "The contrast 'not a stranger' shows the recipient is the new information, so the nuclear stress falls on 'neighbor'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is still the same rule as always: the final content word carries the emphasis, regardless of its grammatical job.",
+            "explanation": "With no special contrast in this sentence, the pitch peak still falls on DISPERSED, the Verb detail that closes it.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_348",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "She sold the neighbor the car, not the bike.",
-            "textToSpeak": "She sold the neighbor the car, not the bike.",
+            "word": "The neighborhood kids are playing in the yard.",
+            "textToSpeak": "The neighborhood kids are playing in the yard.",
             "options": [
-                "Emphasis on CAR (Item focus)",
-                "Emphasis on NEIGHBOR (Recipient focus)"
+                "Emphasis on KIDS (Subject focus)",
+                "Emphasis on YARD (Place focus)"
             ],
-            "correctAnswer": "Emphasis on CAR (Item focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on YARD (Place focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Not the bike' tells you the correction is about what was sold. Listen for the pitch to peak on 'car'.",
-            "explanation": "The contrast 'not the bike' shows the item is the new information, so the nuclear stress falls on 'car'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Don't let the sentence type distract you — the peak is still on the last important word.",
+            "explanation": "KIDS appears earlier in the sentence, so the stress lands on YARD, the word that ends it — here, a Place focus.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_349",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "He taught the lesson to the beginners, not the advanced group.",
-            "textToSpeak": "He taught the lesson to the beginners, not the advanced group.",
+            "word": "After weeks of gossip, the office rumors eventually stopped.",
+            "textToSpeak": "After weeks of gossip, the office rumors eventually stopped.",
             "options": [
-                "Emphasis on LESSON (Item focus)",
-                "Emphasis on BEGINNERS (Recipient focus)"
+                "Emphasis on STOPPED (Verb focus)",
+                "Emphasis on RUMORS (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on BEGINNERS (Recipient focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on STOPPED (Verb focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -455,46 +455,46 @@
                 3,
                 1
             ],
-            "hint": "'Not the advanced group' tells you the correction is about who was taught. Listen for the pitch to peak on 'beginners'.",
-            "explanation": "The contrast 'not the advanced group' shows the recipient is the new information, so the nuclear stress falls on 'beginners'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence has no contrast or correction — so, as always, listen for the peak on the very last content word, whatever role it plays.",
+            "explanation": "Whatever grammatical role it plays, the last content word attracts the stress; here that's STOPPED, functioning as Verb focus.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_350",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "He taught the beginners the lesson, not the test.",
-            "textToSpeak": "He taught the beginners the lesson, not the test.",
+            "word": "She taught the beginner students a brand new song.",
+            "textToSpeak": "She taught the beginner students a brand new song.",
             "options": [
-                "Emphasis on LESSON (Item focus)",
-                "Emphasis on BEGINNERS (Recipient focus)"
+                "Emphasis on STUDENTS (Recipient focus)",
+                "Emphasis on SONG (Item focus)"
             ],
-            "correctAnswer": "Emphasis on LESSON (Item focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on SONG (Item focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Not the test' tells you the correction is about what was taught. Listen for the pitch to peak on 'lesson'.",
-            "explanation": "The contrast 'not the test' shows the item is the new information, so the nuclear stress falls on 'lesson'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Focus on the last meaningful word in the sentence, not the earlier one — that's usually where the peak sits.",
+            "explanation": "The sentence saves its strongest beat for SONG, the closing Item detail, rather than STUDENTS earlier on.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_351",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I lent the book to my classmate, not my roommate.",
-            "textToSpeak": "I lent the book to my classmate, not my roommate.",
+            "word": "After three long days in the hospital, her fever finally broke.",
+            "textToSpeak": "After three long days in the hospital, her fever finally broke.",
             "options": [
-                "Emphasis on CLASSMATE (Recipient focus)",
-                "Emphasis on BOOK (Item focus)"
+                "Emphasis on BROKE (Verb focus)",
+                "Emphasis on FEVER (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on CLASSMATE (Recipient focus)",
+            "correctAnswer": "Emphasis on BROKE (Verb focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -503,46 +503,46 @@
                 3,
                 1
             ],
-            "hint": "'Not my roommate' tells you the correction is about who borrowed it. Listen for the pitch to peak on 'classmate'.",
-            "explanation": "The contrast 'not my roommate' shows the recipient is the new information, so the nuclear stress falls on 'classmate'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "One of these two words simply appears earlier; the real peak is on the detail added at the end.",
+            "explanation": "BROKE is the final content word here, so it takes the nuclear stress — its job as Verb focus doesn't change the default rule.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_352",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I lent my classmate the book, not the notes.",
-            "textToSpeak": "I lent my classmate the book, not the notes.",
+            "word": "The delayed biopsy results came back completely clear.",
+            "textToSpeak": "The delayed biopsy results came back completely clear.",
             "options": [
-                "Emphasis on BOOK (Item focus)",
-                "Emphasis on CLASSMATE (Recipient focus)"
+                "Emphasis on RESULTS (Subject focus)",
+                "Emphasis on CLEAR (Complement focus)"
             ],
-            "correctAnswer": "Emphasis on BOOK (Item focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on CLEAR (Complement focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Not the notes' tells you the correction is about what was lent. Listen for the pitch to peak on 'book'.",
-            "explanation": "The contrast 'not the notes' shows the item is the new information, so the nuclear stress falls on 'book'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Whether it's a time, a place, a manner, or something else, the last content word usually wins the stress in a neutral sentence.",
+            "explanation": "With no special contrast in this sentence, the pitch peak still falls on CLEAR, the Complement detail that closes it.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_353",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "We served the dessert to the guests, not the staff.",
-            "textToSpeak": "We served the dessert to the guests, not the staff.",
+            "word": "We wished the exhausted travel team good luck.",
+            "textToSpeak": "We wished the exhausted travel team good luck.",
             "options": [
-                "Emphasis on GUESTS (Recipient focus)",
-                "Emphasis on DESSERT (Item focus)"
+                "Emphasis on LUCK (Item focus)",
+                "Emphasis on TEAM (Recipient focus)"
             ],
-            "correctAnswer": "Emphasis on GUESTS (Recipient focus)",
+            "correctAnswer": "Emphasis on LUCK (Item focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -551,46 +551,46 @@
                 3,
                 1
             ],
-            "hint": "'Not the staff' tells you the correction is about who was served. Listen for the pitch to peak on 'guests'.",
-            "explanation": "The contrast 'not the staff' shows the recipient is the new information, so the nuclear stress falls on 'guests'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Say the sentence naturally — your voice should build toward whatever detail comes last.",
+            "explanation": "TEAM appears earlier in the sentence, so the stress lands on LUCK, the word that ends it — here, a Item focus.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_354",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "We served the guests the dessert, not the appetizer.",
-            "textToSpeak": "We served the guests the dessert, not the appetizer.",
+            "word": "The old diesel engine sounds unusually loud.",
+            "textToSpeak": "The old diesel engine sounds unusually loud.",
             "options": [
-                "Emphasis on GUESTS (Recipient focus)",
-                "Emphasis on DESSERT (Item focus)"
+                "Emphasis on ENGINE (Subject focus)",
+                "Emphasis on LOUD (Complement focus)"
             ],
-            "correctAnswer": "Emphasis on DESSERT (Item focus)",
+            "correctAnswer": "Emphasis on LOUD (Complement focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Not the appetizer' tells you the correction is about what was served. Listen for the pitch to peak on 'dessert'.",
-            "explanation": "The contrast 'not the appetizer' shows the item is the new information, so the nuclear stress falls on 'dessert'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Don't be pulled toward the earlier word. Listen for where the pitch actually lifts near the end.",
+            "explanation": "Whatever grammatical role it plays, the last content word attracts the stress; here that's LOUD, functioning as Complement focus.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_355",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "She wrote the letter to her mentor, not her colleague.",
-            "textToSpeak": "She wrote the letter to her mentor, not her colleague.",
+            "word": "The overnight parcel was left at the entrance.",
+            "textToSpeak": "The overnight parcel was left at the entrance.",
             "options": [
-                "Emphasis on MENTOR (Recipient focus)",
-                "Emphasis on LETTER (Item focus)"
+                "Emphasis on ENTRANCE (Place focus)",
+                "Emphasis on PARCEL (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on MENTOR (Recipient focus)",
+            "correctAnswer": "Emphasis on ENTRANCE (Place focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -599,46 +599,46 @@
                 3,
                 1
             ],
-            "hint": "'Not her colleague' tells you the correction is about who it was written to. Listen for the pitch to peak on 'mentor'.",
-            "explanation": "The contrast 'not her colleague' shows the recipient is the new information, so the nuclear stress falls on 'mentor'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is still the same rule as always: the final content word carries the emphasis, regardless of its grammatical job.",
+            "explanation": "The sentence saves its strongest beat for ENTRANCE, the closing Place detail, rather than PARCEL earlier on.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_356",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "She wrote her mentor the letter, not the email.",
-            "textToSpeak": "She wrote her mentor the letter, not the email.",
+            "word": "The annual music festival starts next weekend.",
+            "textToSpeak": "The annual music festival starts next weekend.",
             "options": [
-                "Emphasis on MENTOR (Recipient focus)",
-                "Emphasis on LETTER (Item focus)"
+                "Emphasis on FESTIVAL (Subject focus)",
+                "Emphasis on WEEKEND (Time focus)"
             ],
-            "correctAnswer": "Emphasis on LETTER (Item focus)",
+            "correctAnswer": "Emphasis on WEEKEND (Time focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Not the email' tells you the correction is about what was written. Listen for the pitch to peak on 'letter'.",
-            "explanation": "The contrast 'not the email' shows the item is the new information, so the nuclear stress falls on 'letter'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Don't let the sentence type distract you — the peak is still on the last important word.",
+            "explanation": "WEEKEND is the final content word here, so it takes the nuclear stress — its job as Time focus doesn't change the default rule.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_357",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "He passed the ball to the striker, not the goalkeeper.",
-            "textToSpeak": "He passed the ball to the striker, not the goalkeeper.",
+            "word": "The award-winning choir performed the anthem beautifully.",
+            "textToSpeak": "The award-winning choir performed the anthem beautifully.",
             "options": [
-                "Emphasis on STRIKER (Recipient focus)",
-                "Emphasis on BALL (Item focus)"
+                "Emphasis on BEAUTIFULLY (Manner focus)",
+                "Emphasis on CHOIR (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on STRIKER (Recipient focus)",
+            "correctAnswer": "Emphasis on BEAUTIFULLY (Manner focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -647,46 +647,46 @@
                 3,
                 1
             ],
-            "hint": "'Not the goalkeeper' tells you the correction is about who received the pass. Listen for the pitch to peak on 'striker'.",
-            "explanation": "The contrast 'not the goalkeeper' shows the recipient is the new information, so the nuclear stress falls on 'striker'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This sentence has no contrast or correction — so, as always, listen for the peak on the very last content word, whatever role it plays.",
+            "explanation": "With no special contrast in this sentence, the pitch peak still falls on BEAUTIFULLY, the Manner detail that closes it.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_358",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "He passed the striker the ball, not the cone.",
-            "textToSpeak": "He passed the striker the ball, not the cone.",
+            "word": "The walk-in clinic opens unusually early today.",
+            "textToSpeak": "The walk-in clinic opens unusually early today.",
             "options": [
-                "Emphasis on BALL (Item focus)",
-                "Emphasis on STRIKER (Recipient focus)"
+                "Emphasis on CLINIC (Subject focus)",
+                "Emphasis on TODAY (Time focus)"
             ],
-            "correctAnswer": "Emphasis on BALL (Item focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on TODAY (Time focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Not the cone' tells you the correction is about what was passed. Listen for the pitch to peak on 'ball'.",
-            "explanation": "The contrast 'not the cone' shows the item is the new information, so the nuclear stress falls on 'ball'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Focus on the last meaningful word in the sentence, not the earlier one — that's usually where the peak sits.",
+            "explanation": "CLINIC appears earlier in the sentence, so the stress lands on TODAY, the word that ends it — here, a Time focus.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         },
         {
             "id": "pitchPatternMatch_359",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I gave the feedback to the writer, not the editor.",
-            "textToSpeak": "I gave the feedback to the writer, not the editor.",
+            "word": "Our connecting flight to Chicago departs at dawn.",
+            "textToSpeak": "Our connecting flight to Chicago departs at dawn.",
             "options": [
-                "Emphasis on WRITER (Recipient focus)",
-                "Emphasis on FEEDBACK (Item focus)"
+                "Emphasis on DAWN (Time focus)",
+                "Emphasis on FLIGHT (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on WRITER (Recipient focus)",
+            "correctAnswer": "Emphasis on DAWN (Time focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -695,33 +695,33 @@
                 3,
                 1
             ],
-            "hint": "'Not the editor' tells you the correction is about who received it. Listen for the pitch to peak on 'writer'.",
-            "explanation": "The contrast 'not the editor' shows the recipient is the new information, so the nuclear stress falls on 'writer'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "One of these two words simply appears earlier; the real peak is on the detail added at the end.",
+            "explanation": "Whatever grammatical role it plays, the last content word attracts the stress; here that's DAWN, functioning as Time focus.",
+            "emphasisRule": "The final content word carries the nuclear stress by default — whether it names a time, a place, a manner, a recipient, an item, a complement, or the verb itself."
         },
         {
             "id": "pitchPatternMatch_360",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "I gave the writer the feedback, not the deadline.",
-            "textToSpeak": "I gave the writer the feedback, not the deadline.",
+            "word": "The patient math tutor explained the concept patiently.",
+            "textToSpeak": "The patient math tutor explained the concept patiently.",
             "options": [
-                "Emphasis on WRITER (Recipient focus)",
-                "Emphasis on FEEDBACK (Item focus)"
+                "Emphasis on TUTOR (Subject focus)",
+                "Emphasis on PATIENTLY (Manner focus)"
             ],
-            "correctAnswer": "Emphasis on FEEDBACK (Item focus)",
+            "correctAnswer": "Emphasis on PATIENTLY (Manner focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Not the deadline' tells you the correction is about what was given. Listen for the pitch to peak on 'feedback'.",
-            "explanation": "The contrast 'not the deadline' shows the item is the new information, so the nuclear stress falls on 'feedback'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Whether it's a time, a place, a manner, or something else, the last content word usually wins the stress in a neutral sentence.",
+            "explanation": "The sentence saves its strongest beat for PATIENTLY, the closing Manner detail, rather than TUTOR earlier on.",
+            "emphasisRule": "Default sentence stress always lands on the last content word, regardless of what grammatical role that word plays."
         }
     ]
 }

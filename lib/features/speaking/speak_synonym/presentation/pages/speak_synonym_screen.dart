@@ -12,6 +12,7 @@ import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/utils/text_similarity_helper.dart';
 
 import 'package:vowl/features/speaking/speak_synonym/presentation/widgets/speak_synonym_header.dart';
 import 'package:vowl/features/speaking/speak_synonym/presentation/widgets/speak_synonym_sentence_panel.dart';
@@ -158,7 +159,8 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
         final String cleanSyn = syn.trim().toLowerCase();
         if (cleanWord == cleanSyn ||
             cleanWord.contains(cleanSyn) ||
-            cleanSyn.contains(cleanWord)) {
+            cleanSyn.contains(cleanWord) ||
+            TextSimilarityHelper.isMatch(cleanWord, cleanSyn, threshold: 0.70)) {
           matchFound = true;
           break;
         }

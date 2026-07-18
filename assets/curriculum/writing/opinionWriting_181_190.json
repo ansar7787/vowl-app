@@ -5,26 +5,26 @@
     "quests": [
         {
             "id": "WRT_OPINIONWRITING_L181_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Genetic engineering of human embryos to prevent inherited disease should be permitted.",
             "options": [
+                "Germline editing creates heritable genetic changes in all future descendants who did not consent to modification.",
                 "Eliminating severe hereditary diseases like Huntington's and cystic fibrosis reduces profound suffering.",
                 "Germline therapy could eradicate genetic conditions from families permanently, ending intergenerational harm.",
-                "Germline editing creates heritable genetic changes in all future descendants who did not consent to modification.",
                 "Even therapeutic applications create a regulatory pathway towards enhancement that crosses critical ethical lines."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the suffering reduction and therapeutic case for germline editing (Pros) and the consent and slippery slope concerns (Cons).",
             "explanation": "Eliminating severe genetic diseases prevents profound suffering and ends intergenerational transmission (Pros), but germline changes are heritable by future non-consenting generations, and therapeutic applications create a pathway towards enhancement that may be impossible to regulate (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L181_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The distinction between treating disease and enhancing traits cannot be clearly maintained in genetic engineering.",
@@ -43,254 +43,254 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L181_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Somatic genetic therapy for individuals is ethically distinct from germline modification.",
             "options": [
-                "Somatic gene therapy modifies only the treated individual with their consent, leaving germline inheritance unchanged.",
-                "Individual-level somatic therapy provides therapeutic benefit without creating contested heritable modifications.",
                 "Somatic therapy is less efficient than germline editing at eliminating genetic conditions from populations.",
-                "The distinction between somatic and germline may become less clear as gene drive technologies develop."
+                "Somatic gene therapy modifies only the treated individual with their consent, leaving germline inheritance unchanged.",
+                "The distinction between somatic and germline may become less clear as gene drive technologies develop.",
+                "Individual-level somatic therapy provides therapeutic benefit without creating contested heritable modifications."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about somatic therapy as ethically preferable to germline editing (Pros) and the efficiency and distinction clarity concerns (Cons).",
             "explanation": "Somatic therapy treats consenting individuals without heritable consequences (Pros), but it cannot eliminate conditions from populations as efficiently as germline editing, and technological development may blur the somatic-germline boundary (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L182_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Cognitive enhancement drugs should be available to students during periods of intensive study.",
             "options": [
                 "Cognitive enhancers are already widely used informally; regulation would ensure safe access and quality control.",
-                "Students who cannot access enhancement drugs are placed at unfair competitive disadvantage against those who can.",
                 "Cognitive enhancers have serious side effects including dependency, anxiety, and cardiovascular risk.",
-                "Normalising pharmacological enhancement redefines academic achievement in terms of medication access rather than effort."
+                "Normalising pharmacological enhancement redefines academic achievement in terms of medication access rather than effort.",
+                "Students who cannot access enhancement drugs are placed at unfair competitive disadvantage against those who can."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the safety and fairness case for legal cognitive enhancement (Pros) and the health risk and achievement meaning concerns (Cons).",
             "explanation": "Regulation ensures safe access and eliminates the competitive disadvantage of informal unequal access (Pros), but cognitive enhancers carry serious health risks and normalisation redefines academic merit in terms of pharmacological access rather than genuine ability (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L182_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Permitting cognitive enhancement would fundamentally undermine educational integrity and equality.",
             "options": [
-                "Assessment systems measure cognitive enhancement as much as learning if enhancement is normalised.",
-                "Students without financial access to enhancement drugs face compounded inequality in already unequal systems.",
                 "Education systems already tolerate caffeine and other cognitive aids without undermining academic integrity.",
-                "Prohibition drives enhancement underground where unregulated, potentially dangerous products are used instead."
+                "Assessment systems measure cognitive enhancement as much as learning if enhancement is normalised.",
+                "Prohibition drives enhancement underground where unregulated, potentially dangerous products are used instead.",
+                "Students without financial access to enhancement drugs face compounded inequality in already unequal systems."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider the educational integrity and equality case against cognitive enhancement (Pros) and the existing toleration and prohibition drive concerns (Cons).",
             "explanation": "Normalising enhancement makes assessments measure pharmacological access rather than learning, compounding inequality (Pros), but caffeine is already tolerated, and prohibition drives use underground to unregulated dangerous substances (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L182_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The ethics of cognitive enhancement depends on the social context in which it is used.",
             "options": [
-                "Enhancement in a fair, well-resourced educational system differs ethically from enhancement in an inequitable one.",
-                "Context-dependent ethical evaluation produces more nuanced and practical policy than blanket prohibition or permission.",
                 "Context-dependency creates regulatory instability and provides no clear principle for distinguishing acceptable from unacceptable.",
-                "Individuals within the same educational system experience very different contexts that context-level policy cannot address."
+                "Enhancement in a fair, well-resourced educational system differs ethically from enhancement in an inequitable one.",
+                "Individuals within the same educational system experience very different contexts that context-level policy cannot address.",
+                "Context-dependent ethical evaluation produces more nuanced and practical policy than blanket prohibition or permission."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about context-dependent ethics of cognitive enhancement (Pros) and the regulatory instability and individual variation concerns (Cons).",
             "explanation": "Enhancement ethics genuinely differs across fair and inequitable educational contexts, producing more nuanced policy (Pros), but context-dependence creates regulatory instability and cannot address individual variation within the same nominal system context (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L183_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Selecting embryos for desired genetic traits crosses an unacceptable ethical boundary.",
             "options": [
                 "Selecting embryos based on desired traits reduces human reproduction to a consumerist design exercise.",
-                "Trait selection establishes social hierarchies based on genetic characteristics, reinforcing existing inequalities.",
                 "Pre-implantation genetic diagnosis already involves selection of embryos for medical reasons.",
+                "Trait selection establishes social hierarchies based on genetic characteristics, reinforcing existing inequalities.",
                 "The social construction of desirability means trait selection reflects and amplifies cultural prejudices."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about the commodification and inequality case against trait-based embryo selection (Pros) and the existing practice and cultural bias concerns (Cons).",
             "explanation": "Trait-based selection reduces reproduction to consumerist design and creates genetic hierarchy (Pros), but PGD already involves selection for medical conditions, and trait selection reflects and amplifies cultural prejudices about desirable characteristics (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L183_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Permitting limited embryo selection for non-disease traits would be practically uncontrollable.",
             "options": [
-                "Commercial pressure from fertility industries would push selection beyond any regulatory line drawn.",
-                "The most economically powerful families would access the best selection, compounding existing privilege.",
                 "Regulatory bodies in many countries have successfully limited PGD to genuine medical applications.",
-                "Transparency and public oversight of fertility technology can prevent commercial exploitation of selection."
+                "Transparency and public oversight of fertility technology can prevent commercial exploitation of selection.",
+                "Commercial pressure from fertility industries would push selection beyond any regulatory line drawn.",
+                "The most economically powerful families would access the best selection, compounding existing privilege."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider whether non-disease trait selection can be practically regulated (Pros against the slippery slope) and the regulatory success and oversight counters (Cons).",
             "explanation": "Commercial fertility industry pressure would push selection beyond regulatory limits and compound privilege (Pros), but regulatory bodies have successfully limited PGD to medical uses, and transparency and public oversight can constrain commercial exploitation (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L183_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The disability rights perspective reveals important blind spots in anti-selection arguments.",
             "options": [
-                "Treating certain genetic traits as inherently undesirable to select against reflects and reinforces disablist assumptions.",
-                "The diversity of human genetics includes variation that has social and evolutionary value beyond individual preference.",
                 "Selection against severe suffering-causing conditions differs meaningfully from selection against disability per se.",
-                "Many disabled people support preventing severe disease while opposing the equation of disability with reduced value."
+                "Many disabled people support preventing severe disease while opposing the equation of disability with reduced value.",
+                "Treating certain genetic traits as inherently undesirable to select against reflects and reinforces disablist assumptions.",
+                "The diversity of human genetics includes variation that has social and evolutionary value beyond individual preference."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the disability rights dimension of genetic selection debates (Pros for this perspective) and the suffering distinction and community nuance concerns (Cons).",
             "explanation": "Anti-selection arguments that ignore disability rights perspectives reinforce disablist assumptions about which lives have value (Pros), but severe suffering-causing conditions differ meaningfully from disability per se, and many disabled people draw the same distinction themselves (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L184_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Cloning human organs for transplant purposes should be permitted under strict medical supervision.",
             "options": [
                 "Organ shortages cause preventable deaths - cloned organs could eliminate transplant waiting lists.",
-                "Personalised cloned organs from a patient's own cells would eliminate rejection without lifelong immunosuppression.",
                 "Creating and destroying human embryos for organ harvesting purposes raises fundamental ethical objections.",
+                "Personalised cloned organs from a patient's own cells would eliminate rejection without lifelong immunosuppression.",
                 "The technical complexity and safety risks of cloning viable human organs remain inadequately resolved."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about the life-saving and personalisation case for therapeutic organ cloning (Pros) and the embryo ethics and safety concerns (Cons).",
             "explanation": "Cloned organs could eliminate organ shortages and rejection without immunosuppression (Pros), but creating and destroying embryos for harvesting raises fundamental ethical objections, and technical safety risks remain inadequately resolved (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L184_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Induced pluripotent stem cell technology makes embryonic organ cloning ethically unnecessary.",
             "options": [
                 "iPSC technology can generate patient-specific cells and potentially organs without creating or destroying embryos.",
-                "Continuous iPSC innovation is likely to resolve the technical challenges before cloning produces viable organs.",
                 "iPSC-derived organs still face significant technical hurdles including vascularisation and immune compatibility.",
+                "Continuous iPSC innovation is likely to resolve the technical challenges before cloning produces viable organs.",
                 "Restricting research to iPSC pathways may be premature when embryonic research could advance faster."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider iPSC technology as an ethical alternative to organ cloning (Pros) and the remaining hurdles and research restriction concerns (Cons).",
             "explanation": "iPSC technology generates patient-specific organs without creating embryos, resolving the primary ethical concern (Pros), but iPSC organs face technical challenges including vascularisation, and restricting embryonic research pathways may unnecessarily delay life-saving advances (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L184_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Xenotransplantation of genetically modified animal organs offers an alternative to human organ cloning.",
             "options": [
                 "Genetically humanised pig organs are now being transplanted into humans with growing clinical success.",
-                "Xenotransplantation avoids embryo creation entirely and could provide unlimited organ supply.",
                 "Xenotransplantation carries zoonotic infection risks that organ cloning from human cells would not.",
+                "Xenotransplantation avoids embryo creation entirely and could provide unlimited organ supply.",
                 "Animal welfare concerns about farming pigs for organ harvesting are not resolved by genetic humanisation."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about xenotransplantation as an alternative to human organ cloning (Pros) and the zoonotic and animal welfare concerns (Cons).",
             "explanation": "Humanised pig organs are showing growing clinical success and provide unlimited supply without embryo creation (Pros), but xenotransplantation carries zoonotic disease risks that human cell-derived organs would not, and intensive animal farming for organ harvesting raises serious animal welfare questions (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L185_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Artificial intelligence can never truly replicate or reproduce human consciousness.",
             "options": [
+                "The hard problem of consciousness is unsolved in neuroscience itself, making confident claims in either direction premature.",
                 "Consciousness involves subjective experience - qualia - that no computational process has demonstrated.",
                 "Human consciousness emerges from biological complexity that cannot be fully captured in silicon architectures.",
-                "The hard problem of consciousness is unsolved in neuroscience itself, making confident claims in either direction premature.",
                 "Intelligence and consciousness are distinct - machines may develop human-like intelligence without consciousness."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the subjective experience and biological basis case against AI consciousness (Pros) and the hard problem and intelligence-consciousness distinction concerns (Cons).",
             "explanation": "Consciousness involves qualia that computation has not demonstrated and emerges from biological complexity not replicable in silicon (Pros), but the hard problem remains unsolved in neuroscience, making confident denial premature, and intelligence and consciousness may be distinct phenomena (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L185_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Functional consciousness equivalent to human experience may emerge in sufficiently complex AI systems.",
             "options": [
-                "If consciousness is a property of information processing complexity, sufficiently complex systems may possess it.",
-                "Dismissing AI consciousness without a solved theory of consciousness is scientifically premature.",
                 "Complexity alone has not produced consciousness in non-biological systems of any demonstrated degree.",
-                "Attributing consciousness to AI systems risks misallocating the moral consideration that genuine consciousness demands."
+                "If consciousness is a property of information processing complexity, sufficiently complex systems may possess it.",
+                "Attributing consciousness to AI systems risks misallocating the moral consideration that genuine consciousness demands.",
+                "Dismissing AI consciousness without a solved theory of consciousness is scientifically premature."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider whether functional AI consciousness is possible given information processing complexity (Pros) and the empirical and moral allocation concerns (Cons).",
             "explanation": "If consciousness is a function of information processing complexity, sufficiently complex AI may possess it, and confident denial without a solved consciousness theory is scientifically premature (Pros), but complexity alone has not produced demonstrated non-biological consciousness, and premature attribution misallocates moral consideration (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L185_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The question of AI consciousness has profound ethical implications regardless of its resolution.",
             "options": [
                 "If AI systems could be conscious, the ethical obligations this creates require serious anticipatory moral preparation.",
-                "Developing ethical frameworks for potentially conscious AI before the question is resolved is more prudent than waiting.",
                 "Developing ethics for hypothetical AI consciousness diverts moral attention from concrete harms AI causes now.",
+                "Developing ethical frameworks for potentially conscious AI before the question is resolved is more prudent than waiting.",
                 "Anticipatory ethics based on uncertain consciousness claims may produce obligations that are impossible to fulfil."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about the ethical implications of AI consciousness questions (Pros for anticipatory ethics) and the attention diversion and uncertainty concerns (Cons).",
             "explanation": "Potential AI consciousness demands anticipatory ethical frameworks before the question is resolved (Pros), but speculative ethics diverts attention from concrete present AI harms, and obligations based on uncertain consciousness claims may be impossible to fulfil in practice (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L186_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The social contract theory remains the most compelling basis for legitimate modern government.",
@@ -309,64 +309,64 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L186_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Social contract theory has failed to account for the structural exclusions built into its foundations.",
             "options": [
                 "Classical social contracts explicitly or implicitly excluded women, enslaved people, and non-property owners.",
-                "Rawlsian revisions have improved but not resolved the problem of who counts as a contracting party.",
                 "Social contract theory is a progressive framework precisely because it provides tools to critique its own exclusions.",
-                "The theory's internal logic demands the inclusion it historically failed to deliver, making it self-correcting."
+                "The theory's internal logic demands the inclusion it historically failed to deliver, making it self-correcting.",
+                "Rawlsian revisions have improved but not resolved the problem of who counts as a contracting party."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider the structural exclusion critique of social contract theory (Pros) and the self-correcting and progressive capacity counter (Cons).",
             "explanation": "Classical contracts explicitly excluded women and enslaved people, and Rawlsian revisions have not fully resolved the inclusion problem (Pros), but social contract theory's internal logic demands inclusion and provides the progressive tools to critique and remedy its own historical exclusions (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L186_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Deliberative democracy theory offers a more dynamic alternative to social contract theory.",
             "options": [
-                "Deliberative democracy grounds legitimacy in ongoing rational public discourse rather than a founding contract.",
-                "Deliberation allows continuous renegotiation of political authority in light of new circumstances and challenges.",
                 "Deliberative democracy assumes conditions of reasonableness and access that do not exist in actual democracies.",
-                "The founding contract provides stability that ongoing deliberation cannot guarantee in politically contested societies."
+                "Deliberative democracy grounds legitimacy in ongoing rational public discourse rather than a founding contract.",
+                "The founding contract provides stability that ongoing deliberation cannot guarantee in politically contested societies.",
+                "Deliberation allows continuous renegotiation of political authority in light of new circumstances and challenges."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about deliberative democracy as superior to social contract theory (Pros) and the ideal conditions and stability concerns (Cons).",
             "explanation": "Deliberative democracy grounds legitimacy in ongoing discourse and enables continuous renegotiation as circumstances change (Pros), but it requires conditions of reasonableness and equal access that actual democracies do not provide, and the stability of a founding contract is lost in perpetual deliberation (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L187_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Democracy remains the least harmful form of government despite its profound limitations.",
             "options": [
+                "Democratic systems produce gridlock, short-termism, and the tyranny of majorities over minorities.",
                 "Democratic accountability provides peaceful mechanisms to remove incompetent or corrupt leaders.",
                 "Democracy generates more legitimacy and civic cooperation than alternative forms of government.",
-                "Democratic systems produce gridlock, short-termism, and the tyranny of majorities over minorities.",
                 "Democracy's dependence on an informed citizenry makes it vulnerable to misinformation and demagogy."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the peaceful accountability and legitimacy case for democracy (Pros) and the gridlock and vulnerability concerns (Cons).",
             "explanation": "Democratic accountability removes corrupt leaders peacefully and generates superior legitimacy and cooperation (Pros), but democracy produces gridlock, short-termism, majority tyranny, and is profoundly vulnerable to misinformation and demagogic manipulation (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L187_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Epistocracy - governance weighted by knowledge and competence - addresses democracy's worst failures.",
@@ -385,140 +385,140 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L187_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Democratic institutions must be actively protected and reformed to survive authoritarian erosion.",
             "options": [
                 "Democratic backsliding in Hungary, Turkey, and elsewhere shows that democracy requires active institutional defence.",
-                "Constitutional reforms that entrench judicial independence and electoral fairness protect democracy from within.",
                 "Reforming democratic institutions through democratic processes is extremely slow when institutions are already compromised.",
+                "Constitutional reforms that entrench judicial independence and electoral fairness protect democracy from within.",
                 "External protection of democratic institutions risks being perceived as foreign interference, delegitimising reform."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about active institutional protection and reform as necessary for democracy's survival (Pros) and the process speed and legitimacy concerns (Cons).",
             "explanation": "Democratic backsliding demonstrates that democracy requires active institutional defence and constitutional reforms protecting judicial independence (Pros), but reforming compromised institutions democratically is dangerously slow, and external protection risks delegitimisation as foreign interference (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L188_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Infinite economic growth is fundamentally incompatible with long-term environmental sustainability.",
             "options": [
+                "Green technology and efficiency improvements can decouple economic growth from resource consumption.",
                 "Material throughput cannot increase infinitely on a finite planet with limited resources and carrying capacity.",
                 "GDP growth measured without accounting for natural capital depletion systematically overstates real economic progress.",
-                "Green technology and efficiency improvements can decouple economic growth from resource consumption.",
                 "Developed nations have demonstrated some decoupling of GDP growth from emissions and material use."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the finite planet case for growth-sustainability incompatibility (Pros) and the decoupling and efficiency counters (Cons).",
             "explanation": "Infinite material throughput is impossible on a finite planet and GDP growth ignores natural capital depletion (Pros), but green technology enables decoupling of growth from resource use, and some developed nations demonstrate measurable GDP-emissions decoupling (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L188_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Degrowth in wealthy economies is necessary for global environmental justice.",
             "options": [
                 "Wealthy nations' material consumption levels cannot be universalised to developing populations within planetary limits.",
-                "Reducing material throughput in wealthy economies creates ecological space for development in poorer ones.",
                 "Degrowth in wealthy economies would cause unemployment, reduced public services, and significant social harm.",
-                "Green growth in wealthy nations can fund the clean technology transfer that enables sustainable development globally."
+                "Green growth in wealthy nations can fund the clean technology transfer that enables sustainable development globally.",
+                "Reducing material throughput in wealthy economies creates ecological space for development in poorer ones."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider the environmental justice case for degrowth in wealthy nations (Pros) and the social harm and green growth alternative (Cons).",
             "explanation": "Wealthy nation consumption cannot be universalised within planetary limits, and degrowth creates ecological space for poorer nations (Pros), but degrowth causes unemployment and public service cuts, and green growth could fund clean technology transfer for sustainable global development (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L188_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Measuring prosperity beyond GDP can make growth compatible with sustainability.",
             "options": [
-                "Metrics like genuine progress indicators and wellbeing indices measure what economic activity actually delivers.",
-                "Redefining prosperity to include ecosystem health and social wellbeing changes what economic policy optimises for.",
                 "Political and business cycles are organised around GDP targets that are deeply resistant to metric substitution.",
-                "Alternative metrics do not resolve the underlying physical constraints on material throughput that growth demands."
+                "Metrics like genuine progress indicators and wellbeing indices measure what economic activity actually delivers.",
+                "Alternative metrics do not resolve the underlying physical constraints on material throughput that growth demands.",
+                "Redefining prosperity to include ecosystem health and social wellbeing changes what economic policy optimises for."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about alternative prosperity metrics as making growth sustainable (Pros) and the political resistance and physical constraint concerns (Cons).",
             "explanation": "Wellbeing and genuine progress indicators measure actual prosperity and redefine what economic policy optimises for (Pros), but GDP targets are deeply embedded in political and business cycles, and alternative metrics do not resolve the underlying physical constraints on material throughput (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L189_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The concept of fixed national identity is more harmful than beneficial in the modern world.",
             "options": [
                 "Rigid national identity fuels exclusionary nationalism, xenophobia, and conflict between communities.",
-                "Fixed national identity creates artificial us-versus-them divisions that prevent cooperation on global challenges.",
                 "National identity provides communities with cultural continuity, shared narrative, and a sense of collective belonging.",
+                "Fixed national identity creates artificial us-versus-them divisions that prevent cooperation on global challenges.",
                 "Multiple, fluid, and overlapping identities including national ones can coexist without requiring exclusion."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about the exclusion and division case against fixed national identity (Pros) and the cultural continuity and multiplicity concerns (Cons).",
             "explanation": "Fixed national identity fuels exclusionary nationalism and prevents cooperation on global challenges (Pros), but national identity provides cultural continuity and belonging, and multiple overlapping identities including national ones can coexist without requiring exclusion (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L189_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "National identity is a politically constructed myth that perpetuates historical power structures.",
             "options": [
-                "Nations are modern constructions - 'imagined communities' - that naturalise contingent historical arrangements.",
-                "National identity narratives are typically written by dominant groups to exclude minorities and justify hierarchy.",
                 "Even constructed communities generate real belonging, meaning, and solidarity that cannot be dismissed as mere myth.",
-                "The constructedness of national identity is an argument for its conscious transformation, not its abolition."
+                "Nations are modern constructions - 'imagined communities' - that naturalise contingent historical arrangements.",
+                "The constructedness of national identity is an argument for its conscious transformation, not its abolition.",
+                "National identity narratives are typically written by dominant groups to exclude minorities and justify hierarchy."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider national identity as political construction and power perpetuation (Pros) and the real community and transformation counters (Cons).",
             "explanation": "Nations are imagined communities whose identity narratives typically serve dominant groups and naturalise contingent power (Pros), but constructed communities generate genuine belonging and solidarity, and constructedness is an argument for transformation rather than dismissal (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L189_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Cosmopolitan identity offers a more just and globally appropriate alternative to national identity.",
             "options": [
-                "A shared cosmopolitan identity grounds moral obligations to all human beings regardless of national origin.",
-                "Cosmopolitan frameworks provide ethical principles that transcend the partiality of national interest.",
                 "Cosmopolitan identity is an elite abstraction accessible mainly to mobile and privileged global citizens.",
-                "Strong cosmopolitan commitments are vulnerable to populist backlash that discredits the progressive causes they accompany."
+                "Strong cosmopolitan commitments are vulnerable to populist backlash that discredits the progressive causes they accompany.",
+                "A shared cosmopolitan identity grounds moral obligations to all human beings regardless of national origin.",
+                "Cosmopolitan frameworks provide ethical principles that transcend the partiality of national interest."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about cosmopolitan identity as a superior alternative to national identity (Pros) and the elite access and backlash concerns (Cons).",
             "explanation": "Cosmopolitan identity grounds universal moral obligations and transcends the partiality of national interest (Pros), but cosmopolitan identity is primarily accessible to privileged mobile elites, and strong cosmopolitan commitments attract populist backlash that damages the progressive causes associated with them (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L190_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Moral relativism is more intellectually honest than any form of moral absolutism.",
@@ -537,38 +537,38 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L190_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Universal human rights provide a non-relativist moral framework that transcends cultural particularity.",
             "options": [
+                "Existing human rights frameworks reflect the power structures of their post-war Western drafting context.",
                 "Human rights frameworks represent cross-cultural consensus on basic protections built through genuine dialogue.",
                 "Rights-based minimalism avoids imposing thick cultural values while establishing inviolable universal protections.",
-                "Existing human rights frameworks reflect the power structures of their post-war Western drafting context.",
                 "Universal human rights are frequently deployed selectively as geopolitical tools rather than applied impartially."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Consider universal human rights as a viable non-relativist framework (Pros) and the drafting context and selective deployment concerns (Cons).",
             "explanation": "Human rights represent cross-cultural consensus and rights minimalism avoids imposing thick cultural values (Pros), but existing frameworks reflect their Western post-war drafting context, and rights are frequently deployed selectively as geopolitical instruments rather than impartially applied (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L190_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Reflective equilibrium provides a third path between moral absolutism and pure relativism.",
             "options": [
+                "Reflective equilibrium produces local moral coherence without establishing grounds for cross-cultural moral judgment.",
                 "Reflective equilibrium tests principles against intuitions iteratively, producing contextually grounded moral knowledge.",
                 "The method allows for cross-cultural moral learning without claiming universal foundations in advance.",
-                "Reflective equilibrium produces local moral coherence without establishing grounds for cross-cultural moral judgment.",
                 "Without some universally accessible rational basis, reflective equilibrium cannot adjudicate between radically different systems."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about reflective equilibrium as a middle path between absolutism and relativism (Pros) and the cross-cultural adjudication concerns (Cons).",
             "explanation": "Reflective equilibrium generates contextually grounded moral knowledge through iterative testing and enables cross-cultural learning without prior universal claims (Pros), but it produces only local coherence and lacks a universal rational basis for adjudicating between radically different moral systems (Cons)."

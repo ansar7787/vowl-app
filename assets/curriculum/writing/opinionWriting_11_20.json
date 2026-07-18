@@ -5,26 +5,26 @@
     "quests": [
         {
             "id": "WRT_OPINIONWRITING_L11_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Children should watch less television each day.",
             "options": [
                 "Reducing TV time encourages children to read, play, and explore other interests.",
-                "Less screen time before bed improves the quality of children's sleep.",
                 "Television offers genuinely educational content that supports children's learning.",
+                "Less screen time before bed improves the quality of children's sleep.",
                 "Restricting TV can make children feel left out when their friends discuss popular programmes."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about the benefits of less TV (Pros) and what children lose when it is restricted (Cons).",
             "explanation": "Cutting TV time frees children for enriching activities and improves sleep (Pros), but educational content has real value, and restrictions can cause social exclusion among peers (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L11_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Less television allows children to be more physically active.",
@@ -43,64 +43,64 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L11_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Watching less TV helps children develop better social skills.",
             "options": [
                 "Time away from screens encourages children to play and interact with others face to face.",
-                "Family conversations naturally increase when television is not the focus of the evening.",
                 "Television can be a shared social experience that brings family members together.",
+                "Family conversations naturally increase when television is not the focus of the evening.",
                 "Children who feel they are missing out on popular TV shows may become more socially isolated."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about how reducing TV improves social interaction (Pros) and how TV can itself be social (Cons).",
             "explanation": "Less TV encourages face-to-face interaction and family conversation (Pros), but shared TV viewing bonds families together, and exclusion from popular shows can isolate children from peers (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L12_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Children should share household chores with the rest of the family.",
             "options": [
+                "Chores take up time that children could spend on homework, reading, or rest.",
                 "Doing chores teaches children practical skills they will need throughout adult life.",
                 "Contributing to household tasks builds children's sense of responsibility and self-worth.",
-                "Chores take up time that children could spend on homework, reading, or rest.",
                 "Assigning chores can create arguments and resentment within the family."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about what children gain from doing chores (Pros) and the problems chores can cause (Cons).",
             "explanation": "Chores build practical skills and a sense of responsibility (Pros), but they reduce available study and rest time and can become a source of household conflict (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L12_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Sharing chores teaches children about fairness and cooperation.",
             "options": [
+                "Very young children lack the physical ability and focus to complete most household tasks.",
                 "Working together on household tasks demonstrates that everyone contributes equally.",
                 "Children who do chores learn to work as part of a team from an early age.",
-                "Very young children lack the physical ability and focus to complete most household tasks.",
                 "Parents sometimes find it faster and easier to do chores themselves rather than teach children."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Consider what fairness and cooperation lessons chores teach (Pros) and when they are not practical (Cons).",
             "explanation": "Chores teach equality and teamwork (Pros), but young children are often physically incapable, and it is frequently quicker for parents to do the work themselves (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L12_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Completing chores prepares children for independent adult life.",
@@ -119,26 +119,26 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L13_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Children should keep their bedroom clean and tidy at all times.",
             "options": [
-                "A tidy bedroom makes it easier for children to find their belongings and study effectively.",
-                "Keeping personal spaces clean teaches children to take responsibility for their environment.",
                 "A child's bedroom is their personal space, and forcing tidiness can feel controlling.",
-                "Many children are naturally untidy, and constant enforcement causes unnecessary conflict."
+                "A tidy bedroom makes it easier for children to find their belongings and study effectively.",
+                "Many children are naturally untidy, and constant enforcement causes unnecessary conflict.",
+                "Keeping personal spaces clean teaches children to take responsibility for their environment."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the benefits of a tidy bedroom (Pros) and when tidiness rules cause problems (Cons).",
             "explanation": "Tidiness aids organisation and teaches responsibility (Pros), but enforcing strict tidiness in a personal space can feel controlling and creates ongoing conflict with naturally untidy children (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L13_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A tidy bedroom improves children's focus and mental clarity.",
@@ -157,45 +157,45 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L13_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Keeping shared spaces tidy shows respect for other family members.",
             "options": [
                 "Tidying communal areas teaches children to consider the needs and comfort of others.",
-                "Shared domestic responsibilities reduce the burden on one parent or carer in the household.",
                 "Different family members have different standards of tidiness, making agreement difficult.",
+                "Shared domestic responsibilities reduce the burden on one parent or carer in the household.",
                 "Constant requests to tidy up can damage parent-child relationships and breed resentment."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about how tidiness supports family life (Pros) and what problems differing standards create (Cons).",
             "explanation": "Keeping shared spaces tidy shows consideration for others and shares the domestic burden (Pros), but conflicting standards of tidiness and constant reminders can create tension and resentment at home (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L14_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Children should learn to play a musical instrument.",
             "options": [
                 "Learning an instrument builds discipline, patience, and a strong work ethic.",
-                "Playing music develops children's coordination and fine motor skills effectively.",
                 "Regular instrument practice requires significant time that could be used for other activities.",
+                "Playing music develops children's coordination and fine motor skills effectively.",
                 "Instruments, lessons, and associated costs can be financially prohibitive for many families."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about what learning an instrument gives children (Pros) and what it costs (Cons).",
             "explanation": "Instrument learning builds discipline and motor skills (Pros), but the time commitment and financial costs of lessons and instruments can be significant barriers for many families (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L14_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Learning music improves children's academic performance and brain development.",
@@ -214,45 +214,45 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L14_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Playing a musical instrument gives children a lifelong creative outlet.",
             "options": [
                 "Music provides a healthy emotional outlet that helps children express feelings constructively.",
-                "Performing music in groups teaches collaboration and boosts children's self-confidence.",
                 "The pressure of public performances and exams causes significant anxiety in some children.",
-                "Children who do not enjoy music may waste years on lessons before abandoning them."
+                "Children who do not enjoy music may waste years on lessons before abandoning them.",
+                "Performing music in groups teaches collaboration and boosts children's self-confidence."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about music as a creative and emotional tool (Pros) and when it causes pressure (Cons).",
             "explanation": "Music offers emotional expression and builds confidence through performance (Pros), but exam pressure and recitals cause real anxiety, and years of reluctant lessons may ultimately produce lasting dislike (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L15_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Families should eat meals together every day.",
             "options": [
+                "Conflicting work, school, and activity schedules make daily shared meals very difficult.",
                 "Regular shared meals strengthen communication and family bonds significantly.",
                 "Children who eat with their families tend to have healthier and more balanced diets.",
-                "Conflicting work, school, and activity schedules make daily shared meals very difficult.",
                 "Some family mealtimes become tense occasions if relationships are strained."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about what shared meals give the family (Pros) and what makes them difficult (Cons).",
             "explanation": "Family meals strengthen communication and improve diet quality (Pros), but busy and conflicting schedules make them hard to achieve daily, and difficult family relationships can make meals stressful (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L15_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Eating together as a family benefits children's emotional wellbeing.",
@@ -271,159 +271,159 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L15_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Shared family meals help children develop good social and communication skills.",
             "options": [
-                "Conversation at family meals teaches children how to discuss topics respectfully.",
-                "Children learn table manners and social etiquette naturally during shared mealtimes.",
                 "Screens at the dinner table undermine conversation even when the whole family is present.",
-                "Children with social anxiety may find forced conversation at mealtimes very stressful."
+                "Children with social anxiety may find forced conversation at mealtimes very stressful.",
+                "Conversation at family meals teaches children how to discuss topics respectfully.",
+                "Children learn table manners and social etiquette naturally during shared mealtimes."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the social skills family meals build (Pros) and when they fail to deliver these benefits (Cons).",
             "explanation": "Family meals teach conversation skills and social etiquette naturally (Pros), but screens undermine the conversation, and socially anxious children may find enforced mealtime talk genuinely distressing (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L16_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Children and adults should get regular physical exercise every day.",
             "options": [
-                "Daily exercise strengthens the heart, builds muscle, and maintains a healthy body weight.",
-                "Regular physical activity significantly reduces the risk of many serious long-term diseases.",
                 "Busy schedules at school and work leave many people with very little time for exercise.",
-                "Exercise can cause injury, particularly when people push too hard too quickly."
+                "Daily exercise strengthens the heart, builds muscle, and maintains a healthy body weight.",
+                "Exercise can cause injury, particularly when people push too hard too quickly.",
+                "Regular physical activity significantly reduces the risk of many serious long-term diseases."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the health benefits of regular exercise (Pros) and the barriers to getting it (Cons).",
             "explanation": "Regular exercise protects cardiovascular health and reduces disease risk (Pros), but time pressure from school and work commitments and the risk of injury are genuine obstacles for many people (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L16_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Regular exercise improves people's mental health and emotional wellbeing.",
             "options": [
-                "Physical activity releases endorphins that reduce symptoms of stress, anxiety, and depression.",
-                "Exercise provides a healthy break from screens and mental demands of daily life.",
+                "Physical activity releases natural brain chemicals that reduce feelings of stress, anxiety, and low mood.",
                 "Competitive sports can cause anxiety and damage self-esteem in less athletic individuals.",
+                "Exercise provides a healthy break from screens and mental demands of daily life.",
                 "Over-exercising driven by pressure to look a certain way can harm mental health."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider the mental health benefits of exercise (Pros) and when it becomes harmful (Cons).",
-            "explanation": "Exercise reduces stress and improves mood through endorphin release (Pros), but competitive pressure and obsession with appearance can make exercise a source of anxiety and harm to self-esteem (Cons)."
+            "explanation": "Exercise reduces stress and improves mood by releasing natural feel-good brain chemicals (Pros), but competitive pressure and obsession with appearance can make exercise a source of anxiety and harm to self-esteem (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L16_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Physical exercise is essential for children's healthy development.",
             "options": [
                 "Active children develop stronger bones, better coordination, and greater physical confidence.",
-                "Children who are physically active tend to sleep better and concentrate more effectively at school.",
                 "Highly academic school environments increasingly prioritise studying over physical activity.",
-                "Children who dislike exercise may develop a lasting aversion if it is forced on them."
+                "Children who dislike exercise may develop a lasting aversion if it is forced on them.",
+                "Children who are physically active tend to sleep better and concentrate more effectively at school."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about why exercise matters for children's development (Pros) and what reduces access to it (Cons).",
             "explanation": "Regular activity builds physical health, coordination, and sleep quality in children (Pros), but academic pressure squeezes out exercise time, and forced participation can create a lifelong dislike of physical activity (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L17_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Children should be encouraged to save a portion of their pocket money.",
             "options": [
-                "Saving money teaches children the value of delayed gratification and financial planning.",
-                "Children who save regularly from a young age develop healthy financial habits for life.",
                 "Children with very little pocket money have almost nothing spare to put into savings.",
-                "Forcing young children to save can remove the enjoyment and learning value of spending."
+                "Saving money teaches children the value of delayed gratification and financial planning.",
+                "Forcing young children to save can remove the enjoyment and learning value of spending.",
+                "Children who save regularly from a young age develop healthy financial habits for life."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about what saving teaches children (Pros) and when it is not practical or helpful (Cons).",
             "explanation": "Saving teaches delayed gratification and builds lifelong financial habits (Pros), but children with little pocket money have nothing to save, and forced saving removes the natural learning experience of spending (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L17_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Saving pocket money teaches children about financial responsibility.",
             "options": [
-                "Children who manage savings learn to set goals and work patiently towards them.",
-                "Understanding saving and budgeting from an early age prepares children for adult financial life.",
                 "Some parents believe children should enjoy their money rather than being burdened with saving.",
-                "Financial anxiety created by over-emphasising saving can cause children unnecessary stress."
+                "Financial anxiety created by over-emphasising saving can cause children unnecessary stress.",
+                "Children who manage savings learn to set goals and work patiently towards them.",
+                "Understanding saving and budgeting from an early age prepares children for adult financial life."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider how saving develops financial skills (Pros) and when saving becomes a pressure (Cons).",
             "explanation": "Managing savings builds goal-setting and financial planning skills (Pros), but over-emphasising saving can create financial anxiety in children and deny them the simpler joy of spending their pocket money (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L17_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Encouraging children to save money builds self-discipline and patience.",
             "options": [
                 "Resisting the urge to spend immediately develops willpower that benefits other areas of life.",
-                "Working steadily towards a savings goal teaches children the satisfaction of achievement.",
                 "Advertising and peer pressure constantly encourage children to spend rather than save.",
+                "Working steadily towards a savings goal teaches children the satisfaction of achievement.",
                 "Very young children lack the cognitive development to understand the long-term value of saving."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about how saving builds self-discipline (Pros) and what works against it (Cons).",
             "explanation": "Saving builds willpower and teaches the satisfaction of achieving goals (Pros), but peer pressure and advertising work against saving, and very young children cannot yet understand why saving now is worthwhile (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L18_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Families should grow plants or herbs in their home.",
             "options": [
-                "Looking after plants teaches children to care for a living thing and observe its growth.",
-                "Growing herbs at home encourages healthier cooking and an interest in fresh ingredients.",
                 "Not all homes have enough space, light, or suitable conditions to grow plants successfully.",
-                "Plants require consistent watering and care, which busy families may not be able to maintain."
+                "Plants require consistent watering and care, which busy families may not be able to maintain.",
+                "Looking after plants teaches children to care for a living thing and observe its growth.",
+                "Growing herbs at home encourages healthier cooking and an interest in fresh ingredients."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about what growing plants teaches the family (Pros) and what makes it difficult (Cons).",
             "explanation": "Growing plants builds nurturing skills and encourages healthy cooking (Pros), but unsuitable living spaces and the time needed to maintain plants make it impractical for many busy families (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L18_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Growing plants at home improves mental wellbeing for the whole family.",
@@ -442,7 +442,7 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L18_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Growing plants at home builds children's environmental awareness.",
@@ -461,114 +461,114 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L19_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Children should visit their local library on a regular basis.",
             "options": [
-                "Libraries give children free access to thousands of books across every subject and genre.",
-                "Regular library visits build a lifelong love of reading and learning from an early age.",
                 "Many children find libraries boring and prefer faster, more interactive digital content.",
-                "Libraries in some areas have reduced their opening hours or closed due to funding cuts."
+                "Libraries in some areas have reduced their opening hours or closed due to funding cuts.",
+                "Libraries give children free access to thousands of books across every subject and genre.",
+                "Regular library visits build a lifelong love of reading and learning from an early age."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about what regular library visits give children (Pros) and what limits access (Cons).",
             "explanation": "Libraries provide free, wide-ranging reading material and build a love of learning (Pros), but children may find them dull compared to digital alternatives, and funding cuts have reduced availability in many areas (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L19_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Public libraries strengthen communities and support lifelong learning.",
             "options": [
                 "Libraries provide a welcoming public space where people of all ages and backgrounds can meet.",
-                "Free access to information and resources at libraries reduces educational inequality.",
                 "Online resources and e-books now offer many of the services libraries once provided exclusively.",
-                "Some communities see libraries as less relevant in the digital age and prioritise other funding."
+                "Some communities see libraries as less relevant in the digital age and prioritise other funding.",
+                "Free access to information and resources at libraries reduces educational inequality."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider how libraries support communities (Pros) and what challenges they face (Cons).",
             "explanation": "Libraries foster community and reduce educational inequality through free access (Pros), but digital alternatives now compete with traditional library services, and some communities question their continued relevance (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L19_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Encouraging children to use the library builds research and information skills.",
             "options": [
                 "Finding information in a library teaches children to evaluate and select reliable sources.",
-                "Librarians help children navigate resources and develop independent research skills.",
                 "Internet searches feel faster and more relevant to children than browsing library shelves.",
+                "Librarians help children navigate resources and develop independent research skills.",
                 "Not all children have equal access to well-resourced libraries with trained staff."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about the research skills libraries build (Pros) and the barriers children face (Cons).",
             "explanation": "Library use builds critical research and source evaluation skills (Pros), but the immediacy of internet searching feels more relevant to children, and unequal library quality means not all children benefit equally (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L20_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "People should take regular walks in nature.",
             "options": [
+                "People living in cities may have very limited access to parks, woodland, or natural areas.",
                 "Time spent in natural green spaces significantly improves mood and reduces stress.",
                 "Regular outdoor walking provides gentle, low-impact exercise suitable for all fitness levels.",
-                "People living in cities may have very limited access to parks, woodland, or natural areas.",
                 "Extreme weather conditions such as intense heat or cold can make outdoor walking unpleasant."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the benefits of walking in nature (Pros) and the barriers people face (Cons).",
             "explanation": "Nature walks improve mood and provide accessible exercise (Pros), but urban residents often lack nearby green spaces, and extreme weather makes outdoor walking impractical for much of the year (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L20_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Spending time in nature improves children's wellbeing and creativity.",
             "options": [
                 "Natural environments stimulate children's curiosity and encourage imaginative, unstructured play.",
-                "Regular exposure to nature from childhood builds environmental appreciation and responsibility.",
                 "Many children today prefer indoor digital entertainment to outdoor natural experiences.",
+                "Regular exposure to nature from childhood builds environmental appreciation and responsibility.",
                 "Concerns about safety, insects, and getting dirty make some parents reluctant to encourage outdoor nature activities."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider how nature benefits children's development (Pros) and what prevents regular access (Cons).",
             "explanation": "Nature stimulates imagination and builds environmental values in children (Pros), but digital entertainment competes strongly for children's attention, and parental anxieties about outdoor safety further reduce access (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L20_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Walking in nature regularly benefits people's long-term physical health.",
             "options": [
                 "Regular walking reduces blood pressure, improves cardiovascular health, and controls weight.",
-                "Time in natural light and fresh air supports healthy sleep patterns and immune function.",
                 "People with physical disabilities or health conditions may find outdoor walking very difficult.",
-                "The environmental quality of some outdoor areas, including pollution levels, can reduce health benefits."
+                "The environmental quality of some outdoor areas, including pollution levels, can reduce health benefits.",
+                "Time in natural light and fresh air supports healthy sleep patterns and immune function."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the long-term physical health benefits of nature walks (Pros) and who may not benefit (Cons).",
             "explanation": "Walking in nature improves cardiovascular health and sleep (Pros), but physical disability limits access for some, and pollution in many outdoor areas can undermine the expected health benefits (Cons)."

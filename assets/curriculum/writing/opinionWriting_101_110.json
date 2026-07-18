@@ -5,216 +5,216 @@
     "quests": [
         {
             "id": "WRT_OPINIONWRITING_L101_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "University education should be provided free of charge to all qualifying students.",
             "options": [
-                "Free higher education removes the financial barrier that prevents talented lower-income students from progressing.",
-                "A highly educated workforce generates economic returns that far outweigh the cost of public investment.",
                 "Universally free university education is enormously expensive and requires major tax increases to fund.",
-                "Free university primarily benefits graduates who go on to earn more, representing a middle-class subsidy."
+                "Free university primarily benefits graduates who go on to earn more, representing a middle-class subsidy.",
+                "Free higher education removes the financial barrier that prevents talented lower-income students from progressing.",
+                "A highly educated workforce generates economic returns that far outweigh the cost of public investment."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the access and economic returns case for free university (Pros) and the funding and equity concerns (Cons).",
             "explanation": "Free university removes financial barriers and generates economic returns through a more educated workforce (Pros), but it is enormously costly and primarily benefits higher-earning graduates, making it a regressive use of public funds (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L101_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Free higher education produces a more innovative, adaptable, and skilled national economy.",
             "options": [
-                "Nations with well-educated, debt-free workforces demonstrate stronger long-term economic performance.",
-                "Students who graduate without debt are more willing to take entrepreneurial risks and drive innovation.",
                 "Countries with free university systems still face significant skills shortages in key technical sectors.",
-                "Vocational training and apprenticeships produce more economically relevant skills for many sectors."
+                "Vocational training and apprenticeships produce more economically relevant skills for many sectors.",
+                "Nations with well-educated, debt-free workforces demonstrate stronger long-term economic performance.",
+                "Students who graduate without debt are more willing to take entrepreneurial risks and drive innovation."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider the economic innovation case for free university (Pros) and the skills mismatch and alternative concerns (Cons).",
             "explanation": "Debt-free graduates take greater entrepreneurial risks and educated workforces show stronger economic performance (Pros), but free university doesn't automatically address skills shortages, and vocational routes may better serve many economic needs (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L101_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Student loans are a fair and sustainable mechanism for funding higher education.",
             "options": [
-                "Income-contingent loans ensure graduates pay only when they earn enough, protecting lower-income students.",
-                "Loan systems spread the cost of education to those who benefit most from the financial returns of a degree.",
                 "The psychological burden of large student debt negatively affects graduates' mental health and life decisions.",
-                "High debt levels deter students from lower-income families even when effective repayment protection exists."
+                "Income-contingent loans ensure graduates pay only when they earn enough, protecting lower-income students.",
+                "High debt levels deter students from lower-income families even when effective repayment protection exists.",
+                "Loan systems spread the cost of education to those who benefit most from the financial returns of a degree."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about loan systems as a fair funding mechanism (Pros) and the psychological and deterrence concerns (Cons).",
             "explanation": "Income-contingent loans protect lower earners and direct costs to those who benefit from graduate premiums (Pros), but debt burden affects mental health and deters lower-income students even when practical repayment protections exist (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L102_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Continuous assessment should replace traditional end-of-year examinations in schools.",
             "options": [
                 "Continuous assessment reduces the high-stakes pressure of a single exam determining a student's entire grade.",
-                "Ongoing assessment provides richer, more accurate data about student progress throughout the year.",
                 "Continuous assessment is vulnerable to inconsistency, teacher bias, and grade inflation between schools.",
-                "Some students perform best under the clear, standardised conditions of a final examination."
+                "Some students perform best under the clear, standardised conditions of a final examination.",
+                "Ongoing assessment provides richer, more accurate data about student progress throughout the year."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the case for replacing exams with continuous assessment (Pros) and the fairness and accuracy concerns (Cons).",
             "explanation": "Continuous assessment reduces single-event pressure and provides richer progress data (Pros), but vulnerability to teacher bias and grade inflation raises fairness concerns, and some students genuinely perform best in final exam conditions (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L102_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Traditional examinations provide a fair and consistent measure of student attainment.",
             "options": [
                 "Standardised exams are marked anonymously, reducing the scope for conscious or unconscious bias.",
-                "Examinations test recall, synthesis, and performance under pressure - skills valuable in adult life.",
                 "Exam performance is strongly correlated with socioeconomic background and privately funded preparation.",
-                "A single high-stakes test fails to capture creativity, collaboration, and the full range of student ability."
+                "A single high-stakes test fails to capture creativity, collaboration, and the full range of student ability.",
+                "Examinations test recall, synthesis, and performance under pressure - skills valuable in adult life."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider the fairness and skills case for traditional examinations (Pros) and the socioeconomic and breadth concerns (Cons).",
             "explanation": "Anonymous standardised marking reduces bias and exams test valuable pressure-performance skills (Pros), but results strongly correlate with socioeconomic background and private tutoring, and exams miss creativity and collaborative ability (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L102_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A mixed model combining coursework and examinations best serves all students.",
             "options": [
-                "Combining formats allows different types of learner to demonstrate their abilities in appropriate ways.",
-                "Mixed models reduce the extreme risk of a student's entire future depending on one bad exam day.",
                 "Managing coursework and examinations simultaneously increases workload stress for students and teachers.",
-                "Mixed models can be gamed by students who focus effort strategically on whichever component weighs more."
+                "Combining formats allows different types of learner to demonstrate their abilities in appropriate ways.",
+                "Mixed models can be gamed by students who focus effort strategically on whichever component weighs more.",
+                "Mixed models reduce the extreme risk of a student's entire future depending on one bad exam day."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about mixed assessment models as an optimal solution (Pros) and the practical and gaming concerns (Cons).",
             "explanation": "Mixed models serve different learner types and reduce single-event risk (Pros), but simultaneous demands increase stress, and strategic gaming of assessment weightings undermines the model's integrity (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L103_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Independent fee-paying schools should be abolished to improve educational equality.",
             "options": [
-                "Fee-paying schools concentrate educational resources and social advantage among the already privileged.",
-                "Abolishing private schools would force investment into the state sector, benefiting the majority.",
                 "Private schools produce excellent academic outcomes and abolishing them denies parental choice.",
-                "Parents have the legal and moral right to spend their money on education as they choose."
+                "Fee-paying schools concentrate educational resources and social advantage among the already privileged.",
+                "Parents have the legal and moral right to spend their money on education as they choose.",
+                "Abolishing private schools would force investment into the state sector, benefiting the majority."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the equality case for abolishing private schools (Pros) and the rights and outcome concerns (Cons).",
             "explanation": "Private schools concentrate advantage and their abolition would redirect investment to state education (Pros), but they produce strong academic outcomes and abolition infringes parental freedom to choose and fund education (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L103_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Private schools reinforce class privilege and undermine social cohesion.",
             "options": [
+                "Private schools instil discipline, leadership, and excellence that benefit their alumni and the wider economy.",
                 "Fee-paying schools network alumni into positions of disproportionate economic and political power.",
                 "Segregation of education by income creates separate social worlds that damage national cohesion.",
-                "Private schools instil discipline, leadership, and excellence that benefit their alumni and the wider economy.",
                 "Social segregation exists in state education too through housing and selective school systems."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Consider the class privilege and social cohesion arguments against private schools (Pros) and the counterarguments (Cons).",
             "explanation": "Private school alumni networks perpetuate disproportionate power, and income-based education segregation damages cohesion (Pros), but private schools develop valuable qualities, and social segregation persists in state education through housing and selection (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L103_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Integrating private school resources into the state system would benefit all children.",
             "options": [
-                "Former private school facilities, teachers, and expertise could dramatically raise standards state-wide.",
-                "Equal access to high-quality educational facilities would significantly reduce opportunity inequality.",
                 "Compulsorily integrating private schools would be legally complex and face sustained judicial challenge.",
-                "The abrupt removal of school choice would cause political backlash and undermine reform credibility."
+                "The abrupt removal of school choice would cause political backlash and undermine reform credibility.",
+                "Former private school facilities, teachers, and expertise could dramatically raise standards state-wide.",
+                "Equal access to high-quality educational facilities would significantly reduce opportunity inequality."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the integration of private school resources (Pros) and the legal and political challenges (Cons).",
             "explanation": "Integrating private facilities and expertise could dramatically raise state school standards (Pros), but compulsory integration faces serious legal obstacles and politically damaging backlash that would undermine the credibility of reform (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L104_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Young people should be encouraged to take a gap year before starting university.",
             "options": [
+                "Gap years are prohibitively expensive for students from lower-income backgrounds.",
                 "A structured gap year develops maturity, self-awareness, and clarity about future educational direction.",
                 "Students who take gap years often perform better academically through greater focus and motivation.",
-                "Gap years are prohibitively expensive for students from lower-income backgrounds.",
                 "Universities prefer direct entry students and some defer students lose their place or momentum entirely."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the personal development case for gap years (Pros) and the equity and practical concerns (Cons).",
             "explanation": "Gap years build maturity and improve academic performance through greater focus (Pros), but high costs make them accessible mainly to wealthier students, and universities sometimes prefer or require direct entry (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L104_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Gap years provide valuable work and volunteer experience that enhances graduate employability.",
             "options": [
-                "Structured work or volunteering in gap years develops professional skills that classroom study cannot.",
-                "Employers value the initiative, independence, and global awareness that gap year experience demonstrates.",
                 "Many gap year programmes are commercially exploitative and deliver little genuine personal development.",
-                "Academic skills atrophy during prolonged study breaks, making the return to higher education harder."
+                "Structured work or volunteering in gap years develops professional skills that classroom study cannot.",
+                "Academic skills atrophy during prolonged study breaks, making the return to higher education harder.",
+                "Employers value the initiative, independence, and global awareness that gap year experience demonstrates."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider the employability benefits of gap years (Pros) and the quality and academic disruption concerns (Cons).",
             "explanation": "Gap years build professional skills and signal initiative to employers (Pros), but many programmes are commercially exploitative, and academic skills can deteriorate significantly during extended breaks from study (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L104_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Gap years are most valuable when they involve structured learning or social purpose.",
@@ -233,121 +233,121 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L105_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "All children should learn computer coding from primary school onwards.",
             "options": [
-                "Coding education equips children with foundational digital skills essential in a technology-driven economy.",
-                "Learning to code develops logical thinking, problem-solving, and computational reasoning across subjects.",
                 "Teacher shortages in computer science make consistent, high-quality coding teaching extremely difficult.",
-                "Digital literacy skills, not coding per se, may be more broadly valuable for most future workers."
+                "Digital literacy skills, not coding per se, may be more broadly valuable for most future workers.",
+                "Coding education equips children with foundational digital skills essential in a technology-driven economy.",
+                "Learning to code develops logical thinking, problem-solving, and computational reasoning across subjects."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the skills case for universal coding education (Pros) and the teacher capacity and relevance concerns (Cons).",
             "explanation": "Coding builds essential digital skills and develops logical reasoning (Pros), but teacher shortages make quality delivery difficult, and broad digital literacy may be more universally valuable than coding specifically (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L105_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Early coding education builds creative problem-solving skills valuable across all disciplines.",
             "options": [
-                "Programming challenges develop structured thinking and iterative problem-solving applicable anywhere.",
-                "Students who can build and create with technology approach other subjects with greater analytical confidence.",
                 "Coding is a rapidly evolving field where skills taught today may be obsolete within a decade.",
-                "AI tools are increasingly able to generate code, reducing the long-term value of manual coding skills."
+                "Programming challenges develop structured thinking and iterative problem-solving applicable anywhere.",
+                "AI tools are increasingly able to generate code, reducing the long-term value of manual coding skills.",
+                "Students who can build and create with technology approach other subjects with greater analytical confidence."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider the broader problem-solving case for coding education (Pros) and the obsolescence and AI concerns (Cons).",
             "explanation": "Coding builds transferable analytical and creative problem-solving skills (Pros), but the field evolves rapidly and AI-generated code reduces the long-term value of manual coding as a core curriculum subject (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L105_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Coding education must be matched with strong ethics and critical digital literacy teaching.",
             "options": [
                 "Teaching children to build technology without teaching them to evaluate its impact is irresponsible.",
-                "Critical digital thinking prepares children to be responsible, reflective technology creators and users.",
                 "Ethics education in computing is hard to deliver effectively given teachers' limited philosophical training.",
-                "Children benefit most from learning the how of coding before the philosophical why of its applications."
+                "Children benefit most from learning the how of coding before the philosophical why of its applications.",
+                "Critical digital thinking prepares children to be responsible, reflective technology creators and users."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about coding ethics as a necessary complement to technical coding education (Pros) and the delivery challenges (Cons).",
             "explanation": "Coding without ethics education risks creating powerful but irresponsible technology builders (Pros), but delivering meaningful ethics teaching is difficult given teacher training limitations, and technical foundations typically precede applied ethical thinking (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L106_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Standardised national tests are an accurate and fair measure of student ability.",
             "options": [
                 "Common standardised tests allow objective comparison of student performance across all schools.",
-                "Standardised assessments ensure accountability and flag underperforming schools for targeted intervention.",
                 "Standardised tests measure a very narrow range of skills, excluding creativity, resilience, and collaboration.",
-                "Test results are strongly predicted by socioeconomic background, measuring advantage as much as ability."
+                "Test results are strongly predicted by socioeconomic background, measuring advantage as much as ability.",
+                "Standardised assessments ensure accountability and flag underperforming schools for targeted intervention."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the fairness and accountability case for standardised testing (Pros) and the breadth and equity concerns (Cons).",
             "explanation": "Standardised tests enable objective comparison and school accountability (Pros), but they measure a narrow range of skills and results are heavily predicted by socioeconomic advantage rather than pure ability (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L106_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Standardised testing narrows the curriculum and reduces the quality of education.",
             "options": [
                 "Teaching to the test leads schools to prioritise tested subjects at the expense of broader learning.",
-                "Excessive focus on assessment preparation creates anxiety and reduces intrinsic motivation to learn.",
                 "Without standardised measures, it becomes impossible to reliably identify and close performance gaps.",
+                "Excessive focus on assessment preparation creates anxiety and reduces intrinsic motivation to learn.",
                 "Well-designed tests can assess a broad range of skills if curriculum and assessment are aligned properly."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider the curriculum narrowing argument against standardised testing (Pros) and the accountability counter (Cons).",
             "explanation": "Test-focused teaching narrows curriculum and damages intrinsic motivation (Pros), but without standardised measures identifying and closing performance gaps becomes very difficult (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L106_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Alternative assessment methods can measure student achievement more accurately than standardised tests.",
             "options": [
-                "Portfolio-based and project assessments capture creativity, depth of thinking, and complex problem-solving.",
-                "Teacher-assessed work over time provides a richer and more contextualised picture of each student.",
                 "Alternative assessments introduce inconsistency and teacher bias that disadvantages some students.",
-                "School-based assessment is harder to aggregate into the national data needed to drive systemic improvement."
+                "Portfolio-based and project assessments capture creativity, depth of thinking, and complex problem-solving.",
+                "School-based assessment is harder to aggregate into the national data needed to drive systemic improvement.",
+                "Teacher-assessed work over time provides a richer and more contextualised picture of each student."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about alternative assessments as superior measures of student achievement (Pros) and the comparability and bias concerns (Cons).",
             "explanation": "Portfolio and project-based assessments capture creativity and complex thinking (Pros), but they introduce teacher bias and inconsistency, and are difficult to aggregate into the national data needed for systemic educational improvement (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L107_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The school day should be extended until six in the evening.",
@@ -366,45 +366,45 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L107_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Longer school days would improve outcomes for students from disadvantaged backgrounds.",
             "options": [
                 "Disadvantaged students benefit most from extended structured learning that supplements limited home support.",
-                "More time at school reduces inequality in access to academic support, facilities, and enrichment activities.",
                 "Longer mandatory days can feel punitive and disengaging to students who are already struggling.",
+                "More time at school reduces inequality in access to academic support, facilities, and enrichment activities.",
                 "The quality of additional time matters more than its quantity - more poor teaching helps no one."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider the equity case for extended school days (Pros) and the quality and engagement concerns (Cons).",
             "explanation": "Extended days provide additional structured support for disadvantaged students (Pros), but mandatory longer hours risk disengagement for struggling students, and additional time must be high-quality to deliver any benefit (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L107_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Schools should use additional time to focus on wellbeing and enrichment rather than academics.",
             "options": [
                 "Time after core hours could develop sport, arts, and social-emotional skills that exams do not assess.",
-                "Enrichment activities in extended school time provide a safer and more productive alternative to unsupervised afternoons.",
                 "Extending school specifically for non-academic purposes may not justify the significant staffing and resource costs.",
+                "Enrichment activities in extended school time provide a safer and more productive alternative to unsupervised afternoons.",
                 "Children also need unstructured free time to develop creativity, independence, and self-directed play."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about using extended school time for wellbeing and enrichment (Pros) and the cost and free time concerns (Cons).",
             "explanation": "Extended time for enrichment and wellbeing develops skills exams miss and provides safe, productive afternoons (Pros), but significant staffing costs may not be justified, and children need unstructured time for creativity and independence (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L108_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Teachers should receive salaries comparable to those of medical doctors.",
@@ -423,7 +423,7 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L108_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Raising teacher pay significantly would transform the teaching profession's social status.",
@@ -442,83 +442,83 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L108_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Improving teacher working conditions matters more than salary increases for retention.",
             "options": [
                 "Reduced administrative burden, greater autonomy, and smaller class sizes would keep more teachers in the profession.",
-                "Teachers who leave cite excessive workload more often than salary as their primary reason for leaving.",
                 "Without adequate pay, working condition improvements will not attract talented graduates into teaching.",
-                "Competitive graduate salaries in other professions make teaching financially unviable for many despite good conditions."
+                "Competitive graduate salaries in other professions make teaching financially unviable for many despite good conditions.",
+                "Teachers who leave cite excessive workload more often than salary as their primary reason for leaving."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about working conditions versus salary as the key driver of teacher retention (Pros for conditions) and the graduate market concern (Cons).",
             "explanation": "Reduced workload, autonomy, and class size improvements address the primary reasons teachers leave (Pros), but without competitive salaries, the financial comparison with other graduate professions makes teaching unattractive regardless of conditions (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L109_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Religious education should be an optional rather than compulsory school subject.",
             "options": [
                 "Optional RE respects the plurality of belief, including non-belief, in modern secular societies.",
-                "Students who choose RE will engage with it more meaningfully and benefit more from the experience.",
                 "Compulsory RE promotes cultural literacy about the beliefs that have shaped human history and society.",
-                "Optional RE risks creating knowledge gaps about major world religions affecting millions of citizens."
+                "Optional RE risks creating knowledge gaps about major world religions affecting millions of citizens.",
+                "Students who choose RE will engage with it more meaningfully and benefit more from the experience."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the case for making RE optional (Pros) and what would be lost without universal provision (Cons).",
             "explanation": "Optional RE respects religious diversity and non-belief, producing more engaged voluntary learners (Pros), but compulsory RE builds cultural literacy about beliefs central to history and global societies (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L109_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Compulsory religious education builds understanding and respect across faith communities.",
             "options": [
                 "Learning about diverse religions in school reduces prejudice and builds empathy between different communities.",
-                "Shared RE classes in multicultural schools can create spaces for meaningful interfaith dialogue.",
                 "RE taught dogmatically promotes one religion over others rather than building genuine understanding.",
-                "Cultural and ethical understanding can be effectively built through humanities subjects without specifically religious content."
+                "Cultural and ethical understanding can be effectively built through humanities subjects without specifically religious content.",
+                "Shared RE classes in multicultural schools can create spaces for meaningful interfaith dialogue."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider the tolerance and interfaith case for compulsory RE (Pros) and the delivery and alternatives concerns (Cons).",
             "explanation": "Compulsory RE reduces religious prejudice and creates interfaith dialogue opportunities in diverse schools (Pros), but dogmatic teaching promotes one faith over others, and humanities subjects can develop cultural and ethical understanding without specifically religious content (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L109_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Religious education should evolve into comparative ethics and philosophy of religion.",
             "options": [
                 "A comparative and philosophical approach builds critical thinking about fundamental questions of values.",
-                "An inclusive ethics curriculum serves all students, regardless of personal religious belief or background.",
                 "Diluting specific religious content disappoints faith communities who value traditional RE for their children.",
+                "An inclusive ethics curriculum serves all students, regardless of personal religious belief or background.",
                 "Teachers trained in traditional RE may lack the philosophical preparation to deliver reformed curricula."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about reforming RE into comparative ethics (Pros) and the faith community and teacher capacity concerns (Cons).",
             "explanation": "Comparative ethics builds critical thinking and serves all students regardless of belief (Pros), but faith communities value traditional specific religious content, and teachers need retraining that goes beyond their current preparation (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L110_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Single-sex schools produce better academic outcomes than co-educational institutions.",
@@ -537,38 +537,38 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L110_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Single-sex schools reinforce gender norms and limit students' social development.",
             "options": [
-                "Educating boys and girls separately perpetuates gender stereotypes about academic interests and abilities.",
-                "Students in single-sex schools are less prepared for the co-educational professional and social world.",
                 "Single-sex schools report higher academic engagement and greater willingness to challenge gender norms.",
-                "Many students perform significantly better in the lower-pressure social environment of single-sex education."
+                "Many students perform significantly better in the lower-pressure social environment of single-sex education.",
+                "Educating boys and girls separately perpetuates gender stereotypes about academic interests and abilities.",
+                "Students in single-sex schools are less prepared for the co-educational professional and social world."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider the gender norms and social development argument against single-sex schools (Pros) and the performance counter (Cons).",
             "explanation": "Separate schooling perpetuates gender stereotypes and limits preparation for mixed-gender adult life (Pros), but single-sex schools report better academic engagement and can create environments where students challenge rather than conform to gender norms (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L110_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "School choice between single-sex and co-educational options is a matter for families.",
             "options": [
                 "Parental choice in education respects family values, cultural practices, and children's individual learning needs.",
-                "A diverse educational landscape that includes both models produces richer collective knowledge about effective schooling.",
                 "Preserving single-sex options uses resources that could improve the majority co-educational sector.",
-                "Allowing single-sex schooling preserves institutional practices that reinforce gender inequality."
+                "Allowing single-sex schooling preserves institutional practices that reinforce gender inequality.",
+                "A diverse educational landscape that includes both models produces richer collective knowledge about effective schooling."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about educational choice as the right approach (Pros) and the resource and equity concerns (Cons).",
             "explanation": "Parental choice respects diverse values and creates a rich educational landscape (Pros), but maintaining single-sex options uses resources that could benefit the co-educational majority and preserves institutional practices that some argue reinforce gender inequality (Cons)."

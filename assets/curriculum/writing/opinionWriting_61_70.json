@@ -5,140 +5,140 @@
     "quests": [
         {
             "id": "WRT_OPINIONWRITING_L61_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Voting should be made compulsory in all national elections.",
             "options": [
                 "Compulsory voting ensures electoral outcomes genuinely represent the full diversity of the population.",
-                "High-turnout governments have a stronger democratic mandate to govern and implement their programmes.",
                 "Forcing citizens to vote violates the democratic principle of freedom of political conscience.",
+                "High-turnout governments have a stronger democratic mandate to govern and implement their programmes.",
                 "Compelled voting may produce large numbers of uninformed or arbitrary votes that distort results."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about the democratic representation case for compulsory voting (Pros) and the freedom and quality concerns (Cons).",
             "explanation": "Compulsory voting produces genuinely representative outcomes and stronger mandates (Pros), but it infringes on the right not to vote and risks increasing the proportion of ill-considered, arbitrary ballots (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L61_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Mandatory voting would create a more politically engaged and informed citizenry.",
             "options": [
                 "Citizens required to vote engage more actively with political information before making their decision.",
-                "Regular voting, once habitual, tends to create lasting civic participation beyond election day.",
                 "People coerced into voting resent the obligation and are unlikely to become genuinely engaged citizens.",
+                "Regular voting, once habitual, tends to create lasting civic participation beyond election day.",
                 "Voter education and accessible politics are more authentic ways to improve civic engagement."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider whether compulsory voting builds genuine civic engagement (Pros) or merely formal compliance (Cons).",
             "explanation": "Compulsory voting builds political engagement habits that persist beyond individual elections (Pros), but coerced voters are unlikely to become genuinely curious citizens, and education and political accessibility drive more authentic engagement (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L61_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Compulsory voting reduces the disproportionate influence of well-organised political minorities.",
             "options": [
+                "Turnout alone cannot prevent the rise of extremist parties if the underlying social conditions remain unchanged.",
                 "Mandatory participation dilutes the electoral power of highly motivated extreme political groups.",
                 "High-turnout elections are more resistant to manipulation by groups with disproportionate partisan energy.",
-                "Turnout alone cannot prevent the rise of extremist parties if the underlying social conditions remain unchanged.",
                 "Compulsory voting may increase protest votes for fringe parties among disengaged but compelled voters."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about compulsory voting as a safeguard against political extremism (Pros) and its structural limitations (Cons).",
             "explanation": "Mandatory turnout dilutes extremist influence and resists partisan manipulation (Pros), but root social causes of extremism are unaddressed by turnout, and disengaged compelled voters may choose fringe protest parties (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L62_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "All advertising specifically targeted at children should be legally banned.",
             "options": [
+                "Advertising revenue funds much of the children's media content that families rely on and enjoy.",
                 "Children lack the critical capacity to evaluate commercial messages and resist emotional manipulation.",
                 "Protecting children from targeted advertising prevents the early formation of unhealthy consumer values.",
-                "Advertising revenue funds much of the children's media content that families rely on and enjoy.",
                 "Defining advertising 'specifically targeted' at children is legally complex and commercially contested."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the child protection case for banning children's advertising (Pros) and the practical and funding concerns (Cons).",
             "explanation": "Banning targeted advertising protects children from manipulation and unhealthy consumer values (Pros), but ad revenue funds valued children's media, and defining the scope of a ban is legally and practically complex (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L62_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Advertising to children is a primary driver of childhood obesity and poor nutritional choices.",
             "options": [
                 "Junk food advertising directed at children demonstrably increases consumption of unhealthy products.",
-                "Removing advertising exposure would reduce pester power and the pressure on parents to buy unhealthy food.",
                 "Childhood obesity has multiple causes that advertising restrictions alone cannot adequately address.",
+                "Removing advertising exposure would reduce pester power and the pressure on parents to buy unhealthy food.",
                 "Food companies readily adapt to bans through channels not covered by children's advertising restrictions."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider the public health case for restricting children's food advertising (Pros) and its limitations (Cons).",
             "explanation": "Children's food advertising directly increases junk food consumption and parental pester power (Pros), but obesity has multiple drivers, and advertisers exploit regulatory gaps by moving to uncovered channels (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L62_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Restricting advertising preserves children's authentic imagination and intrinsic motivation.",
             "options": [
                 "Commercial advertising shapes children's desires and identity before they have developed independently.",
-                "A childhood less saturated with commercial messages allows children to develop genuine individual interests.",
                 "Children are exposed to advertising through family devices and public spaces regardless of media-specific bans.",
-                "Algorithmic digital advertising targets children so precisely that platform-level regulation is essential."
+                "Algorithmic digital advertising targets children so precisely that platform-level regulation is essential.",
+                "A childhood less saturated with commercial messages allows children to develop genuine individual interests."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about advertising's effect on childhood identity development (Pros for restriction) and the difficulty of comprehensive enforcement (Cons).",
             "explanation": "Limiting advertising protects children's developing interests from commercial capture (Pros), but advertising reaches children through family devices and public spaces well beyond the scope of children's media regulations (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L63_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A significant tax on sugary drinks would meaningfully improve population health.",
             "options": [
-                "Higher prices demonstrably reduce consumption of sugary drinks, particularly among lower-income groups.",
-                "Tax revenue can fund public health initiatives and dental care programmes that benefit the whole population.",
                 "A sugar tax disproportionately affects lower-income households who spend a larger share of income on food.",
-                "Individual adults have the right to make their own dietary choices without government price intervention."
+                "Higher prices demonstrably reduce consumption of sugary drinks, particularly among lower-income groups.",
+                "Individual adults have the right to make their own dietary choices without government price intervention.",
+                "Tax revenue can fund public health initiatives and dental care programmes that benefit the whole population."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the public health benefits of a sugar tax (Pros) and the regressive and liberty concerns (Cons).",
             "explanation": "Sugar taxes reduce consumption and generate health funding (Pros), but they fall harder on lower-income households and raise legitimate questions about government interference in personal food choices (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L63_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Taxing sugary drinks provides strong incentives for manufacturers to reduce sugar content.",
@@ -157,7 +157,7 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L63_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A sugar tax is a justified and proportionate government response to public health costs.",
@@ -176,64 +176,64 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L64_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "All major cities should be legally required to build dedicated protected cycle lanes.",
             "options": [
-                "Protected cycle lanes make cycling safe and accessible to a far wider range of road users.",
-                "Cycling infrastructure investment reduces long-term transport costs and public health expenditure.",
                 "Building cycle lanes requires removing road space currently used by cars, buses, and delivery vehicles.",
-                "Cycle lanes are inappropriate as a primary transport solution in hilly or geographically challenging cities."
+                "Protected cycle lanes make cycling safe and accessible to a far wider range of road users.",
+                "Cycle lanes are inappropriate as a primary transport solution in hilly or geographically challenging cities.",
+                "Cycling infrastructure investment reduces long-term transport costs and public health expenditure."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the safety and investment case for mandatory cycle lanes (Pros) and the road space trade-offs (Cons).",
             "explanation": "Protected lanes make cycling safe and accessible (Pros), but removing road space increases congestion, and cycling infrastructure is not universally appropriate across different urban geographies (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L64_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Mandatory cycle lane construction would significantly reduce urban carbon emissions.",
             "options": [
+                "Shifting commuters from cars to bikes requires cultural change that infrastructure alone cannot deliver.",
                 "Safe cycling infrastructure shifts journeys from carbon-emitting cars to zero-emission cycling.",
                 "Cities with extensive cycling networks show measurable and sustained reductions in traffic emissions.",
-                "Shifting commuters from cars to bikes requires cultural change that infrastructure alone cannot deliver.",
                 "Electric vehicles may reduce urban emissions equally effectively without removing valuable road space."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Consider whether mandatory cycle lanes are the most effective emission reduction strategy (Pros) and the alternatives (Cons).",
             "explanation": "Safe cycling infrastructure demonstrably shifts car journeys to cycling and reduces emissions (Pros), but cultural change is also essential, and EV technology may offer comparable reductions without sacrificing road space (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L64_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Cycling infrastructure investment is among the most cost-effective public health policies available.",
             "options": [
                 "Regular cycling significantly improves cardiovascular health, mental wellbeing, and life expectancy.",
-                "Cycling infrastructure encourages daily active travel, reducing NHS demand across the population.",
                 "Cycling carries injury risks that may partially offset health benefits, particularly without effective safety design.",
-                "Health benefits can be achieved through other forms of active travel without large-scale infrastructure spending."
+                "Health benefits can be achieved through other forms of active travel without large-scale infrastructure spending.",
+                "Cycling infrastructure encourages daily active travel, reducing NHS demand across the population."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about cycling infrastructure as a public health investment (Pros) and the injury risk and alternatives (Cons).",
             "explanation": "Cycling infrastructure promotes cardiovascular health and reduces healthcare demand (Pros), but cycling carries injury risks without careful safety design, and active health benefits can come from other modes (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L65_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Private cars should be permanently banned from entering city centres.",
@@ -252,45 +252,45 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L65_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Banning cars from city centres improves safety and wellbeing for residents and visitors.",
             "options": [
                 "Removing vehicles from city centres dramatically reduces traffic accidents and pedestrian casualties.",
-                "Car-free streets allow residents to walk, cycle, and socialise safely, improving community wellbeing.",
                 "Emergency vehicle access in car-free areas requires careful dedicated infrastructure planning.",
-                "Effective car-free schemes depend on adequate public transport alternatives not all cities can provide."
+                "Effective car-free schemes depend on adequate public transport alternatives not all cities can provide.",
+                "Car-free streets allow residents to walk, cycle, and socialise safely, improving community wellbeing."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider the safety and wellbeing benefits of car-free centres (Pros) and the practical conditions required (Cons).",
             "explanation": "Removing cars improves safety and creates welcoming public spaces (Pros), but emergency access needs special planning, and success depends on public transport capacity many cities currently lack (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L65_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Banning city centre cars promotes more sustainable and human-centred urban planning.",
             "options": [
                 "Car-free areas accelerate investment in walking, cycling, and public transport infrastructure.",
-                "Reduced road space frees valuable urban land for housing, parks, and community facilities.",
                 "Relocating car access to ring roads and peripheral parking increases congestion and pollution at city margins.",
+                "Reduced road space frees valuable urban land for housing, parks, and community facilities.",
                 "Car bans succeed only as part of a comprehensive integrated transport policy, not in isolation."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about the urban planning case for car-free city centres (Pros) and the displacement and planning concerns (Cons).",
             "explanation": "Car-free areas drive sustainable infrastructure development and free urban land for community benefit (Pros), but displacing traffic to city margins worsens congestion there, and car bans require comprehensive complementary transport policy to succeed (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L66_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "All teenagers in employment should be entitled to a legal minimum wage.",
@@ -309,45 +309,45 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L66_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A legal minimum wage for teenagers helps reduce youth poverty and family financial pressure.",
             "options": [
-                "Young workers from lower-income families depend on part-time earnings to contribute to household income.",
-                "Fair wages for teenagers reduce the financial pressure that drives some young people to leave education.",
                 "Teenagers generally lack the experience and productivity that would justify equal pay with experienced adults.",
-                "Wage parity with adults may cause employers to prefer experienced adult workers over teenage applicants."
+                "Wage parity with adults may cause employers to prefer experienced adult workers over teenage applicants.",
+                "Young workers from lower-income families depend on part-time earnings to contribute to household income.",
+                "Fair wages for teenagers reduce the financial pressure that drives some young people to leave education."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider the poverty reduction case for teen minimum wages (Pros) and the productivity and employment concerns (Cons).",
             "explanation": "Fair teen wages reduce family poverty and prevent financial pressure from pushing young people out of education (Pros), but productivity differences may justify lower starting wages, and parity with adults risks excluding teenagers from the labour market (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L66_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Legal wage protection for young workers promotes dignity and fairness in the workplace.",
             "options": [
-                "Minimum wage legislation signals that young people's time and effort have equal legal and moral value.",
-                "Legal wage protection is essential in the sectors where young workers are most vulnerable to underpayment.",
                 "Lower starting wages already reflect the training investment employers make in inexperienced young workers.",
-                "Structured apprenticeship frameworks are more appropriate and effective protection than blanket wage laws."
+                "Minimum wage legislation signals that young people's time and effort have equal legal and moral value.",
+                "Structured apprenticeship frameworks are more appropriate and effective protection than blanket wage laws.",
+                "Legal wage protection is essential in the sectors where young workers are most vulnerable to underpayment."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about minimum wages as a dignity policy for young workers (Pros) and the training and alternatives argument (Cons).",
             "explanation": "Legal wage protection affirms the equal value of young workers and protects the most vulnerable (Pros), but lower starting wages may reflect genuine training investment, and apprenticeship frameworks may offer more appropriate and targeted protection (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L67_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "All public parks and beaches should be entirely free to enter and use.",
@@ -366,26 +366,26 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L67_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Charging for access to natural spaces risks excluding lower-income citizens from nature's benefits.",
             "options": [
+                "Modest fees can fund essential environmental stewardship and help prevent overcrowding at popular sites.",
                 "Entry fees to parks and beaches create a two-tier system where nature becomes a privilege of wealth.",
                 "Communities with the least access to private green space depend most on free public natural areas.",
-                "Modest fees can fund essential environmental stewardship and help prevent overcrowding at popular sites.",
                 "Tiered pricing with free access for lower-income groups can balance equity and sustainable funding needs."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Consider the social equity arguments against charging for parks (Pros) and the viable funding alternatives (Cons).",
             "explanation": "Paid access to public nature creates class-based exclusion from spaces society depends on (Pros), but modest fees fund conservation, and tiered pricing can balance equity with the sustainable resources needed for maintenance (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L67_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Free access to parks and beaches is a vital investment in preventive public health.",
@@ -404,7 +404,7 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L68_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "All employees should have the right to work a four-day week for the same full-time pay.",
@@ -423,121 +423,121 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L68_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A four-day working week would significantly reduce environmental impact and urban congestion.",
             "options": [
                 "One fewer commuting day weekly cumulatively produces meaningful reductions in carbon emissions.",
-                "Reduced peak-hour travel eases congestion and cuts air pollution across urban transport networks.",
                 "Environmental gains may be offset if workers use their extra free day for carbon-intensive leisure activities.",
-                "Workplace energy use is unchanged if buildings remain fully operational five days a week."
+                "Workplace energy use is unchanged if buildings remain fully operational five days a week.",
+                "Reduced peak-hour travel eases congestion and cuts air pollution across urban transport networks."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider the environmental benefits of a four-day week (Pros) and the offsetting factors that reduce net gains (Cons).",
             "explanation": "Four-day weeks reduce commuting emissions and ease congestion (Pros), but leisure activities on the extra day and unchanged office energy use can significantly offset environmental savings (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L68_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A four-day working week improves work-life balance and reduces inequality in caring responsibilities.",
             "options": [
-                "Extra personal time helps employees care for family members without compromising career progression.",
-                "A shorter working week particularly benefits women and primary carers carrying disproportionate domestic load.",
                 "Four-day weeks may not be equally available across income levels, widening inequality rather than reducing it.",
-                "Essential service and frontline workers cannot easily take an additional rest day each week."
+                "Essential service and frontline workers cannot easily take an additional rest day each week.",
+                "Extra personal time helps employees care for family members without compromising career progression.",
+                "A shorter working week particularly benefits women and primary carers carrying disproportionate domestic load."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the work-life and equality case for a four-day week (Pros) and who it risks excluding (Cons).",
             "explanation": "Shorter weeks improve family care capacity and benefit those with disproportionate domestic responsibilities (Pros), but the policy may mainly benefit higher-income knowledge workers, while essential service workers are excluded (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L69_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Disposable coffee cups should be banned from all cafes and coffee shops.",
             "options": [
                 "Disposable cups generate millions of tonnes of non-recyclable waste that pollutes land and water.",
-                "A ban forces widespread adoption of reusable alternatives, eliminating single-use waste at source.",
                 "Disposable cups serve genuine consumer needs for hygiene, convenience, and on-the-go lifestyles.",
-                "A small financial charge on disposable cups is a more proportionate intervention than an outright ban."
+                "A small financial charge on disposable cups is a more proportionate intervention than an outright ban.",
+                "A ban forces widespread adoption of reusable alternatives, eliminating single-use waste at source."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the waste reduction case for banning disposable cups (Pros) and the consumer and proportionality concerns (Cons).",
             "explanation": "A ban eliminates single-use waste at source (Pros), but cups serve real consumer needs, and a charge may be a more proportionate and effective measure than outright prohibition (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L69_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Financial incentives for reusable cups are more effective than banning disposable ones.",
             "options": [
                 "Discounts for reusable cups reward environmentally responsible consumer behaviour positively.",
-                "Positive incentives are more likely to produce lasting behavioural change than punitive legislative bans.",
                 "Most customers do not bring reusable cups even when significant discounts are offered.",
+                "Positive incentives are more likely to produce lasting behavioural change than punitive legislative bans.",
                 "Only a ban creates the systemic change needed to eliminate disposable cup waste at the scale required."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
-            "hint": "Consider whether incentives or bans are the more effective policy approach to disposable cups.",
+            "hint": "Consider the case for incentives over bans (Pros) and why incentives alone may not be enough (Cons).",
             "explanation": "Positive incentives generate willing behavioural change more sustainably (Pros for incentives), but evidence shows incentives alone fail to shift most consumers, and only bans create the systemic change required at scale (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L69_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Eliminating disposable cups reduces plastic pollution in rivers and marine environments.",
             "options": [
+                "Cups represent a very small fraction of total plastic pollution, and banning them has limited overall impact.",
                 "Coffee cups are a visible and symbolically significant contributor to the plastic pollution problem.",
                 "Banning them sends a clear cultural signal that single-use disposable consumption is no longer acceptable.",
-                "Cups represent a very small fraction of total plastic pollution, and banning them has limited overall impact.",
                 "Focusing policy attention on cups risks distracting from far more damaging industrial plastic pollution sources."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about cup bans as environmental policy (Pros) and their scale relative to other sources of plastic pollution (Cons).",
             "explanation": "Cup bans reduce visible pollution and signal decisive action against single-use culture (Pros), but cups are a tiny share of total plastic waste, and this focus may divert scarce policy attention from industrial sources of far greater environmental damage (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L70_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "All employees should have a legal entitlement to paid mental health days.",
             "options": [
-                "Recognising mental health as equivalent to physical health removes stigma and encourages recovery.",
-                "Early preventive rest reduces long-term sick leave and the associated productivity and healthcare costs.",
                 "Without medical certification requirements, mental health day entitlements risk widespread misuse.",
-                "Proactive workplace mental health support and early intervention are more effective than reactive sick days."
+                "Proactive workplace mental health support and early intervention are more effective than reactive sick days.",
+                "Recognising mental health as equivalent to physical health removes stigma and encourages recovery.",
+                "Early preventive rest reduces long-term sick leave and the associated productivity and healthcare costs."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the wellbeing case for legal mental health days (Pros) and the misuse and effectiveness concerns (Cons).",
             "explanation": "Mental health parity removes stigma and prevents escalation to long-term illness (Pros), but uncertified days risk misuse, and proactive workplace programmes offer more effective prevention than reactive entitlements (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L70_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Legal mental health day entitlements reduce long-term employee absence and healthcare costs.",
@@ -556,19 +556,19 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L70_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Paid mental health day entitlements reduce workplace stigma and encourage help-seeking behaviour.",
             "options": [
+                "Stigma around mental health is deeply embedded in workplace culture and cannot be resolved by policy alone.",
                 "Normalising mental health days makes it safer for employees to acknowledge and address their wellbeing.",
                 "Employees who feel genuinely supported seek professional help earlier rather than suffering in silence.",
-                "Stigma around mental health is deeply embedded in workplace culture and cannot be resolved by policy alone.",
                 "Uptake may be unequal, with the most vulnerable employees least likely to use their entitlement."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about how mental health day policies change workplace culture (Pros) and their structural limitations (Cons).",
             "explanation": "Normalising mental health days reduces stigma and encourages early professional help-seeking (Pros), but deep cultural stigma cannot be resolved by entitlement alone, and the most vulnerable employees are often least able to use what they are entitled to (Cons)."

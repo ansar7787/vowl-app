@@ -8,62 +8,62 @@
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Only Maria finished the marathon.",
-            "textToSpeak": "Only Maria finished the marathon.",
+            "word": "The reviewer didn't just criticize the restaurant - she boycotted it.",
+            "textToSpeak": "The reviewer didn't just criticize the restaurant - she boycotted it.",
             "options": [
-                "Emphasis on MARIA (Only Modifies This Word)",
-                "Emphasis on MARATHON (Object focus)"
+                "Emphasis on BOYCOTTED (Correcting the Action)",
+                "Emphasis on RESTAURANT (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on MARIA (Only Modifies This Word)",
+            "correctAnswer": "Emphasis on BOYCOTTED (Correcting the Action)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
                 3,
-                1,
-                1,
                 1,
                 1
             ],
-            "hint": "'Only' sits right before 'Maria', attaching its meaning there - nobody else finished. Listen for the pitch to peak early, on 'Maria'.",
-            "explanation": "'Only' attaches to the word right after it, so here it focuses 'Maria', meaning nobody else finished - the stress isn't on the final word 'marathon'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The object stays exactly the same in both halves — what's being corrected is the action taken, so stress the stronger verb.",
+            "explanation": "The object RESTAURANT is identical in both clauses, so the contrast — and the stress — falls on BOYCOTTED, the real action.",
+            "emphasisRule": "When a sentence upgrades a dismissed action to a stronger one on the same object, the stress falls on the corrected action."
         },
         {
             "id": "pitchPatternMatch_482",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Maria only finished the marathon.",
-            "textToSpeak": "Maria only finished the marathon.",
+            "word": "It wasn't the junior associate who found the loophole - it was the paralegal.",
+            "textToSpeak": "It wasn't the junior associate who found the loophole - it was the paralegal.",
             "options": [
-                "Emphasis on MARATHON (Object focus)",
-                "Emphasis on FINISHED (Only Modifies This Word)"
+                "Emphasis on LOOPHOLE (Given/Old Information)",
+                "Emphasis on PARALEGAL (Correcting WHO Did It)"
             ],
-            "correctAnswer": "Emphasis on FINISHED (Only Modifies This Word)",
+            "correctAnswer": "Emphasis on PARALEGAL (Correcting WHO Did It)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'Only' now sits right before 'finished' - she didn't win or place, just finished. Listen for the pitch to peak on 'finished'.",
-            "explanation": "With 'only' right before the verb, it focuses 'finished', meaning that's all she managed to do - not the final word 'marathon'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is correcting who was responsible — the corrected name carries the peak, not the object everyone already agrees on.",
+            "explanation": "LOOPHOLE was already settled by the first clause, so the stress falls on PARALEGAL, the corrected identity.",
+            "emphasisRule": "Correcting identity (who did it) places stress on the true agent, even though the action and object stay unstressed."
         },
         {
             "id": "pitchPatternMatch_483",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Maria finished only the marathon.",
-            "textToSpeak": "Maria finished only the marathon.",
+            "word": "He didn't accept the offer graciously - he accepted it reluctantly.",
+            "textToSpeak": "He didn't accept the offer graciously - he accepted it reluctantly.",
             "options": [
-                "Emphasis on MARIA (Subject focus)",
-                "Emphasis on MARATHON (Only Modifies This Word)"
+                "Emphasis on RELUCTANTLY (Correcting HOW It Was Done)",
+                "Emphasis on GRACIOUSLY (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on MARATHON (Only Modifies This Word)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on RELUCTANTLY (Correcting HOW It Was Done)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
@@ -71,70 +71,70 @@
                 3,
                 1
             ],
-            "hint": "'Only' now sits right before 'the marathon' - she didn't do other events. Listen for the pitch to peak on 'marathon'.",
-            "explanation": "With 'only' right before the object, it focuses 'marathon', meaning that's the only event she did - not the subject 'Maria'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The verb doesn't change here, only the way it was done — stress the corrected manner word.",
+            "explanation": "Because only how it happened is being corrected, the second adverb, RELUCTANTLY, takes the emphasis.",
+            "emphasisRule": "When a sentence corrects the manner of an action while the action and object stay the same, the stress falls on the corrected manner word."
         },
         {
             "id": "pitchPatternMatch_484",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Even the manager apologized to the client.",
-            "textToSpeak": "Even the manager apologized to the client.",
+            "word": "The doctor didn't explain the diagnosis simply - she explained it vaguely.",
+            "textToSpeak": "The doctor didn't explain the diagnosis simply - she explained it vaguely.",
             "options": [
-                "Emphasis on MANAGER (Even Modifies This Word)",
-                "Emphasis on CLIENT (Object focus)"
+                "Emphasis on SIMPLY (Given/Old Information)",
+                "Emphasis on VAGUELY (Correcting HOW It Was Done)"
             ],
-            "correctAnswer": "Emphasis on MANAGER (Even Modifies This Word)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on VAGUELY (Correcting HOW It Was Done)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                3,
                 1,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'Even' sits right before 'manager', flagging her as the surprising one who apologized. Listen for the pitch to peak early, on 'manager'.",
-            "explanation": "'Even' attaches to the word right after it, so here it focuses 'manager', suggesting it's surprising that even she apologized.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Notice the first adverb is being firmly ruled out — the true manner comes right after and takes the stress.",
+            "explanation": "The action and the people involved don't change — only the manner does, which is why VAGUELY is stressed, not SIMPLY.",
+            "emphasisRule": "Correcting how something happened places the nuclear stress on the true manner, even though the action itself stays unstressed."
         },
         {
             "id": "pitchPatternMatch_485",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The manager even apologized to the client.",
-            "textToSpeak": "The manager even apologized to the client.",
+            "word": "It wasn't the receptionist who rescheduled my appointment - it was the office manager.",
+            "textToSpeak": "It wasn't the receptionist who rescheduled my appointment - it was the office manager.",
             "options": [
-                "Emphasis on CLIENT (Object focus)",
-                "Emphasis on APOLOGIZED (Even Modifies This Word)"
+                "Emphasis on MANAGER (Correcting WHO Did It)",
+                "Emphasis on APPOINTMENT (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on APOLOGIZED (Even Modifies This Word)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on MANAGER (Correcting WHO Did It)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                3,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'Even' now sits right before 'apologized' - she went further than expected. Listen for the pitch to peak on 'apologized'.",
-            "explanation": "With 'even' right before the verb, it focuses 'apologized', suggesting this action went beyond what was expected.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The sentence names one person only to rule them out — listen for the actual person named afterward, who gets the real stress.",
+            "explanation": "Both clauses agree on the event; only the person responsible is corrected, so MANAGER — not APPOINTMENT — carries the stress.",
+            "emphasisRule": "When a sentence corrects who performed an action everyone already agrees on, the corrected name carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_486",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The manager apologized even to the client.",
-            "textToSpeak": "The manager apologized even to the client.",
+            "word": "The company didn't announce the layoffs gently - it announced them abruptly.",
+            "textToSpeak": "The company didn't announce the layoffs gently - it announced them abruptly.",
             "options": [
-                "Emphasis on MANAGER (Subject focus)",
-                "Emphasis on CLIENT (Even Modifies This Word)"
+                "Emphasis on GENTLY (Given/Old Information)",
+                "Emphasis on ABRUPTLY (Correcting HOW It Was Done)"
             ],
-            "correctAnswer": "Emphasis on CLIENT (Even Modifies This Word)",
+            "correctAnswer": "Emphasis on ABRUPTLY (Correcting HOW It Was Done)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -143,143 +143,143 @@
                 3,
                 1
             ],
-            "hint": "'Even' now sits right before 'the client' - she apologized to others too, surprisingly even to the client. Listen for the pitch to peak on 'client'.",
-            "explanation": "With 'even' right before the object, it focuses 'client', suggesting the client was an unexpected recipient of the apology.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is correcting the manner, not the action itself — listen for the second adverb, which carries the real answer.",
+            "explanation": "GENTLY is the rejected manner here, so the real answer, ABRUPTLY, gets the nuclear stress instead.",
+            "emphasisRule": "Correcting how something happened places the nuclear stress on the true manner, even though the action itself stays unstressed."
         },
         {
             "id": "pitchPatternMatch_487",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Only the children ate breakfast.",
-            "textToSpeak": "Only the children ate breakfast.",
+            "word": "The team didn't win the game easily - they won it narrowly.",
+            "textToSpeak": "The team didn't win the game easily - they won it narrowly.",
             "options": [
-                "Emphasis on CHILDREN (Only Modifies This Word)",
-                "Emphasis on BREAKFAST (Object focus)"
+                "Emphasis on NARROWLY (Correcting HOW It Was Done)",
+                "Emphasis on EASILY (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on CHILDREN (Only Modifies This Word)",
+            "correctAnswer": "Emphasis on NARROWLY (Correcting HOW It Was Done)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                3,
                 1,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'Only' sits right before 'children' - nobody else ate. Listen for the pitch to peak early, on 'children'.",
-            "explanation": "'Only' attaches to 'children' here, meaning nobody else ate breakfast - the stress isn't on the final word 'breakfast'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The verb doesn't change here, only the way it was done — stress the corrected manner word.",
+            "explanation": "Because only how it happened is being corrected, the second adverb, NARROWLY, takes the emphasis.",
+            "emphasisRule": "When a sentence corrects the manner of an action while the action and object stay the same, the stress falls on the corrected manner word."
         },
         {
             "id": "pitchPatternMatch_488",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The children only ate breakfast.",
-            "textToSpeak": "The children only ate breakfast.",
+            "word": "It wasn't the manager who approved the transfer - it was the director.",
+            "textToSpeak": "It wasn't the manager who approved the transfer - it was the director.",
             "options": [
-                "Emphasis on ATE (Only Modifies This Word)",
-                "Emphasis on BREAKFAST (Object focus)"
+                "Emphasis on TRANSFER (Given/Old Information)",
+                "Emphasis on DIRECTOR (Correcting WHO Did It)"
             ],
-            "correctAnswer": "Emphasis on ATE (Only Modifies This Word)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on DIRECTOR (Correcting WHO Did It)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'Only' now sits right before 'ate' - they didn't do anything else, just ate. Listen for the pitch to peak on 'ate'.",
-            "explanation": "With 'only' right before the verb, it focuses 'ate', meaning eating was the only thing they did - not the final word 'breakfast'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Notice both halves agree on what happened; they disagree on who did it — stress the corrected person.",
+            "explanation": "Since only who did it is in question here, DIRECTOR — the real answer — gets the emphasis, not TRANSFER.",
+            "emphasisRule": "Correcting identity (who did it) places stress on the true agent, even though the action and object stay unstressed."
         },
         {
             "id": "pitchPatternMatch_489",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The children ate only breakfast.",
-            "textToSpeak": "The children ate only breakfast.",
+            "word": "It wasn't the professor who wrote that review - it was a graduate student.",
+            "textToSpeak": "It wasn't the professor who wrote that review - it was a graduate student.",
             "options": [
-                "Emphasis on BREAKFAST (Only Modifies This Word)",
-                "Emphasis on CHILDREN (Subject focus)"
+                "Emphasis on STUDENT (Correcting WHO Did It)",
+                "Emphasis on REVIEW (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on BREAKFAST (Only Modifies This Word)",
+            "correctAnswer": "Emphasis on STUDENT (Correcting WHO Did It)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Only' now sits right before 'breakfast' - they ate nothing else all day. Listen for the pitch to peak on 'breakfast'.",
-            "explanation": "With 'only' right before the object, it focuses 'breakfast', meaning that's the only meal they had - not the subject 'children'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The sentence names one person only to rule them out — listen for the actual person named afterward, who gets the real stress.",
+            "explanation": "Both clauses agree on the event; only the person responsible is corrected, so STUDENT — not REVIEW — carries the stress.",
+            "emphasisRule": "When a sentence corrects who performed an action everyone already agrees on, the corrected name carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_490",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Even the coach praised the substitutes.",
-            "textToSpeak": "Even the coach praised the substitutes.",
+            "word": "The board didn't just discuss the merger - they finalized it.",
+            "textToSpeak": "The board didn't just discuss the merger - they finalized it.",
             "options": [
-                "Emphasis on COACH (Even Modifies This Word)",
-                "Emphasis on SUBSTITUTES (Object focus)"
+                "Emphasis on MERGER (Given/Old Information)",
+                "Emphasis on FINALIZED (Correcting the Action)"
             ],
-            "correctAnswer": "Emphasis on COACH (Even Modifies This Word)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on FINALIZED (Correcting the Action)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                3,
                 1,
+                3,
                 1,
                 1,
                 1
             ],
-            "hint": "'Even' sits right before 'coach', flagging him as the surprising one who praised them. Listen for the pitch to peak early, on 'coach'.",
-            "explanation": "'Even' attaches to 'coach' here, suggesting it's surprising that even he gave praise.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This ranks a bigger action above a smaller one that's being dismissed — the bigger action gets the emphasis.",
+            "explanation": "FINALIZED corrects a weaker action that was just dismissed, so it carries the nuclear stress instead of MERGER.",
+            "emphasisRule": "Correcting what was done places the nuclear stress on the true action, even though the shared object stays unstressed."
         },
         {
             "id": "pitchPatternMatch_491",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The coach even praised the substitutes.",
-            "textToSpeak": "The coach even praised the substitutes.",
+            "word": "It wasn't the pilot who reported the delay - it was the dispatcher.",
+            "textToSpeak": "It wasn't the pilot who reported the delay - it was the dispatcher.",
             "options": [
-                "Emphasis on PRAISED (Even Modifies This Word)",
-                "Emphasis on SUBSTITUTES (Object focus)"
+                "Emphasis on DISPATCHER (Correcting WHO Did It)",
+                "Emphasis on DELAY (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on PRAISED (Even Modifies This Word)",
+            "correctAnswer": "Emphasis on DISPATCHER (Correcting WHO Did It)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'Even' now sits right before 'praised' - he went further than just coaching them. Listen for the pitch to peak on 'praised'.",
-            "explanation": "With 'even' right before the verb, it focuses 'praised', suggesting this action went beyond what was expected of him.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The object here isn't in question — only the identity of who did it is being corrected.",
+            "explanation": "This sentence rejects one candidate and confirms another as the true agent, so DISPATCHER takes the nuclear stress.",
+            "emphasisRule": "When a sentence corrects who performed an action everyone already agrees on, the corrected name carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_492",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The coach praised even the substitutes.",
-            "textToSpeak": "The coach praised even the substitutes.",
+            "word": "He didn't finish the marathon comfortably - he finished it painfully.",
+            "textToSpeak": "He didn't finish the marathon comfortably - he finished it painfully.",
             "options": [
-                "Emphasis on SUBSTITUTES (Even Modifies This Word)",
-                "Emphasis on COACH (Subject focus)"
+                "Emphasis on COMFORTABLY (Given/Old Information)",
+                "Emphasis on PAINFULLY (Correcting HOW It Was Done)"
             ],
-            "correctAnswer": "Emphasis on SUBSTITUTES (Even Modifies This Word)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on PAINFULLY (Correcting HOW It Was Done)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
@@ -287,190 +287,190 @@
                 3,
                 1
             ],
-            "hint": "'Even' now sits right before 'the substitutes' - he praised the starters too, and surprisingly the substitutes as well. Listen for the pitch to peak on 'substitutes'.",
-            "explanation": "With 'even' right before the object, it focuses 'substitutes', suggesting they were an unexpected group to receive praise.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Notice the first adverb is being firmly ruled out — the true manner comes right after and takes the stress.",
+            "explanation": "The action and the people involved don't change — only the manner does, which is why PAINFULLY is stressed, not COMFORTABLY.",
+            "emphasisRule": "Correcting how something happened places the nuclear stress on the true manner, even though the action itself stays unstressed."
         },
         {
             "id": "pitchPatternMatch_493",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Only the nurse checked the temperature.",
-            "textToSpeak": "Only the nurse checked the temperature.",
+            "word": "They didn't settle the dispute quietly - they settled it publicly.",
+            "textToSpeak": "They didn't settle the dispute quietly - they settled it publicly.",
             "options": [
-                "Emphasis on TEMPERATURE (Object focus)",
-                "Emphasis on NURSE (Only Modifies This Word)"
+                "Emphasis on PUBLICLY (Correcting HOW It Was Done)",
+                "Emphasis on QUIETLY (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on NURSE (Only Modifies This Word)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on PUBLICLY (Correcting HOW It Was Done)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                3,
                 1,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'Only' sits right before 'nurse' - nobody else checked it. Listen for the pitch to peak early, on 'nurse'.",
-            "explanation": "'Only' attaches to 'nurse' here, meaning nobody else did the checking - the stress isn't on the final word 'temperature'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Both halves describe the same event happening to the same people — what changes is how it happened.",
+            "explanation": "The event and its object stay the same; only the manner changes, so PUBLICLY — the corrected manner — carries the stress.",
+            "emphasisRule": "When a sentence corrects the manner of an action while the action and object stay the same, the stress falls on the corrected manner word."
         },
         {
             "id": "pitchPatternMatch_494",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The nurse only checked the temperature.",
-            "textToSpeak": "The nurse only checked the temperature.",
+            "word": "She didn't leave the meeting quietly - she left it furiously.",
+            "textToSpeak": "She didn't leave the meeting quietly - she left it furiously.",
             "options": [
-                "Emphasis on CHECKED (Only Modifies This Word)",
-                "Emphasis on TEMPERATURE (Object focus)"
+                "Emphasis on QUIETLY (Given/Old Information)",
+                "Emphasis on FURIOUSLY (Correcting HOW It Was Done)"
             ],
-            "correctAnswer": "Emphasis on CHECKED (Only Modifies This Word)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on FURIOUSLY (Correcting HOW It Was Done)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'Only' now sits right before 'checked' - she didn't treat or examine, just checked. Listen for the pitch to peak on 'checked'.",
-            "explanation": "With 'only' right before the verb, it focuses 'checked', meaning that's the only action taken - not the final word 'temperature'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is correcting the manner, not the action itself — listen for the second adverb, which carries the real answer.",
+            "explanation": "QUIETLY is the rejected manner here, so the real answer, FURIOUSLY, gets the nuclear stress instead.",
+            "emphasisRule": "Correcting how something happened places the nuclear stress on the true manner, even though the action itself stays unstressed."
         },
         {
             "id": "pitchPatternMatch_495",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The nurse checked only the temperature.",
-            "textToSpeak": "The nurse checked only the temperature.",
+            "word": "The critic didn't just dislike the film - she panned it.",
+            "textToSpeak": "The critic didn't just dislike the film - she panned it.",
             "options": [
-                "Emphasis on NURSE (Subject focus)",
-                "Emphasis on TEMPERATURE (Only Modifies This Word)"
+                "Emphasis on PANNED (Correcting the Action)",
+                "Emphasis on FILM (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on TEMPERATURE (Only Modifies This Word)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on PANNED (Correcting the Action)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "'Only' now sits right before 'the temperature' - she didn't check anything else. Listen for the pitch to peak on 'temperature'.",
-            "explanation": "With 'only' right before the object, it focuses 'temperature', meaning that's the only thing she checked - not the subject 'nurse'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "‘Didn't just’ rules out a lesser action — listen for the real action named right after.",
+            "explanation": "Since the object doesn't change, the emphasis lands on the verb that describes what genuinely happened: PANNED.",
+            "emphasisRule": "When a sentence upgrades a dismissed action to a stronger one on the same object, the stress falls on the corrected action."
         },
         {
             "id": "pitchPatternMatch_496",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Even the teacher forgave the latecomers.",
-            "textToSpeak": "Even the teacher forgave the latecomers.",
+            "word": "The investors didn't just fund the startup - they acquired it.",
+            "textToSpeak": "The investors didn't just fund the startup - they acquired it.",
             "options": [
-                "Emphasis on TEACHER (Even Modifies This Word)",
-                "Emphasis on LATECOMERS (Object focus)"
+                "Emphasis on STARTUP (Given/Old Information)",
+                "Emphasis on ACQUIRED (Correcting the Action)"
             ],
-            "correctAnswer": "Emphasis on TEACHER (Even Modifies This Word)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on ACQUIRED (Correcting the Action)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                3,
                 1,
+                3,
                 1,
                 1,
                 1
             ],
-            "hint": "'Even' sits right before 'teacher', flagging her as the surprising one who forgave them. Listen for the pitch to peak early, on 'teacher'.",
-            "explanation": "'Even' attaches to 'teacher' here, suggesting it's surprising that even she showed forgiveness.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The correction here is about degree of action, not about who or what — stress the verb that describes what truly happened.",
+            "explanation": "This sentence upgrades a modest action to a stronger one, and that stronger action, ACQUIRED, takes the stress.",
+            "emphasisRule": "Correcting what was done places the nuclear stress on the true action, even though the shared object stays unstressed."
         },
         {
             "id": "pitchPatternMatch_497",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The teacher even forgave the latecomers.",
-            "textToSpeak": "The teacher even forgave the latecomers.",
+            "word": "The union didn't just protest the policy - they overturned it.",
+            "textToSpeak": "The union didn't just protest the policy - they overturned it.",
             "options": [
-                "Emphasis on FORGAVE (Even Modifies This Word)",
-                "Emphasis on LATECOMERS (Object focus)"
+                "Emphasis on OVERTURNED (Correcting the Action)",
+                "Emphasis on POLICY (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on FORGAVE (Even Modifies This Word)",
+            "correctAnswer": "Emphasis on OVERTURNED (Correcting the Action)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                3,
                 1,
+                3,
                 1,
                 1
             ],
-            "hint": "'Even' now sits right before 'forgave' - she went further than just tolerating them. Listen for the pitch to peak on 'forgave'.",
-            "explanation": "With 'even' right before the verb, it focuses 'forgave', suggesting this action went beyond what was expected.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The object stays exactly the same in both halves — what's being corrected is the action taken, so stress the stronger verb.",
+            "explanation": "The object POLICY is identical in both clauses, so the contrast — and the stress — falls on OVERTURNED, the real action.",
+            "emphasisRule": "When a sentence upgrades a dismissed action to a stronger one on the same object, the stress falls on the corrected action."
         },
         {
             "id": "pitchPatternMatch_498",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The teacher forgave even the latecomers.",
-            "textToSpeak": "The teacher forgave even the latecomers.",
+            "word": "It wasn't the tenant who reported the leak - it was the building inspector.",
+            "textToSpeak": "It wasn't the tenant who reported the leak - it was the building inspector.",
             "options": [
-                "Emphasis on TEACHER (Subject focus)",
-                "Emphasis on LATECOMERS (Even Modifies This Word)"
+                "Emphasis on LEAK (Given/Old Information)",
+                "Emphasis on INSPECTOR (Correcting WHO Did It)"
             ],
-            "correctAnswer": "Emphasis on LATECOMERS (Even Modifies This Word)",
+            "correctAnswer": "Emphasis on INSPECTOR (Correcting WHO Did It)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Even' now sits right before 'the latecomers' - she forgave others too, and surprisingly the latecomers as well. Listen for the pitch to peak on 'latecomers'.",
-            "explanation": "With 'even' right before the object, it focuses 'latecomers', suggesting they were an unexpected group to be forgiven.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is correcting who was responsible — the corrected name carries the peak, not the object everyone already agrees on.",
+            "explanation": "LEAK was already settled by the first clause, so the stress falls on INSPECTOR, the corrected identity.",
+            "emphasisRule": "Correcting identity (who did it) places stress on the true agent, even though the action and object stay unstressed."
         },
         {
             "id": "pitchPatternMatch_499",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Only the driver used the highway.",
-            "textToSpeak": "Only the driver used the highway.",
+            "word": "He didn't win the race fairly - he won it illegally.",
+            "textToSpeak": "He didn't win the race fairly - he won it illegally.",
             "options": [
-                "Emphasis on DRIVER (Only Modifies This Word)",
-                "Emphasis on HIGHWAY (Object focus)"
+                "Emphasis on ILLEGALLY (Correcting HOW It Was Done)",
+                "Emphasis on FAIRLY (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on DRIVER (Only Modifies This Word)",
+            "correctAnswer": "Emphasis on ILLEGALLY (Correcting HOW It Was Done)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                3,
                 1,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'Only' sits right before 'driver' - nobody else used it. Listen for the pitch to peak early, on 'driver'.",
-            "explanation": "'Only' attaches to 'driver' here, meaning nobody else took that route - the stress isn't on the final word 'highway'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The verb doesn't change here, only the way it was done — stress the corrected manner word.",
+            "explanation": "Because only how it happened is being corrected, the second adverb, ILLEGALLY, takes the emphasis.",
+            "emphasisRule": "When a sentence corrects the manner of an action while the action and object stay the same, the stress falls on the corrected manner word."
         },
         {
             "id": "pitchPatternMatch_500",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The driver only used the highway.",
-            "textToSpeak": "The driver only used the highway.",
+            "word": "The committee didn't just review the proposal - they rejected it.",
+            "textToSpeak": "The committee didn't just review the proposal - they rejected it.",
             "options": [
-                "Emphasis on HIGHWAY (Object focus)",
-                "Emphasis on USED (Only Modifies This Word)"
+                "Emphasis on PROPOSAL (Given/Old Information)",
+                "Emphasis on REJECTED (Correcting the Action)"
             ],
-            "correctAnswer": "Emphasis on USED (Only Modifies This Word)",
+            "correctAnswer": "Emphasis on REJECTED (Correcting the Action)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -479,249 +479,249 @@
                 1,
                 1
             ],
-            "hint": "'Only' now sits right before 'used' - that's all he did with it, simply used it. Listen for the pitch to peak on 'used'.",
-            "explanation": "With 'only' right before the verb, it focuses 'used', meaning that's the only action taken - not the final word 'highway'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The correction here is about degree of action, not about who or what — stress the verb that describes what truly happened.",
+            "explanation": "This sentence upgrades a modest action to a stronger one, and that stronger action, REJECTED, takes the stress.",
+            "emphasisRule": "Correcting what was done places the nuclear stress on the true action, even though the shared object stays unstressed."
         },
         {
             "id": "pitchPatternMatch_501",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The driver used only the highway.",
-            "textToSpeak": "The driver used only the highway.",
+            "word": "The inspector didn't just flag the wiring - he condemned it.",
+            "textToSpeak": "The inspector didn't just flag the wiring - he condemned it.",
             "options": [
-                "Emphasis on DRIVER (Subject focus)",
-                "Emphasis on HIGHWAY (Only Modifies This Word)"
+                "Emphasis on CONDEMNED (Correcting the Action)",
+                "Emphasis on WIRING (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on HIGHWAY (Only Modifies This Word)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on CONDEMNED (Correcting the Action)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
-                1,
                 3,
+                1,
                 1
             ],
-            "hint": "'Only' now sits right before 'the highway' - he avoided every other route. Listen for the pitch to peak on 'highway'.",
-            "explanation": "With 'only' right before the object, it focuses 'highway', meaning that's the only route he took - not the subject 'driver'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The object stays exactly the same in both halves — what's being corrected is the action taken, so stress the stronger verb.",
+            "explanation": "The object WIRING is identical in both clauses, so the contrast — and the stress — falls on CONDEMNED, the real action.",
+            "emphasisRule": "When a sentence upgrades a dismissed action to a stronger one on the same object, the stress falls on the corrected action."
         },
         {
             "id": "pitchPatternMatch_502",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Even the chef seasoned the vegetables.",
-            "textToSpeak": "Even the chef seasoned the vegetables.",
+            "word": "It wasn't the goalkeeper who scored that goal - it was the defender.",
+            "textToSpeak": "It wasn't the goalkeeper who scored that goal - it was the defender.",
             "options": [
-                "Emphasis on VEGETABLES (Object focus)",
-                "Emphasis on CHEF (Even Modifies This Word)"
+                "Emphasis on GOAL (Given/Old Information)",
+                "Emphasis on DEFENDER (Correcting WHO Did It)"
             ],
-            "correctAnswer": "Emphasis on CHEF (Even Modifies This Word)",
+            "correctAnswer": "Emphasis on DEFENDER (Correcting WHO Did It)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
+                1,
+                1,
+                1,
                 3,
-                1,
-                1,
-                1,
                 1
             ],
-            "hint": "'Even' sits right before 'chef', flagging him as the surprising one who did this himself. Listen for the pitch to peak early, on 'chef'.",
-            "explanation": "'Even' attaches to 'chef' here, suggesting it's surprising that even he handled this particular task.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is correcting who was responsible — the corrected name carries the peak, not the object everyone already agrees on.",
+            "explanation": "GOAL was already settled by the first clause, so the stress falls on DEFENDER, the corrected identity.",
+            "emphasisRule": "Correcting identity (who did it) places stress on the true agent, even though the action and object stay unstressed."
         },
         {
             "id": "pitchPatternMatch_503",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The chef even seasoned the vegetables.",
-            "textToSpeak": "The chef even seasoned the vegetables.",
+            "word": "It wasn't the intern who drafted that email - it was the CEO herself.",
+            "textToSpeak": "It wasn't the intern who drafted that email - it was the CEO herself.",
             "options": [
-                "Emphasis on SEASONED (Even Modifies This Word)",
-                "Emphasis on VEGETABLES (Object focus)"
+                "Emphasis on CEO (Correcting WHO Did It)",
+                "Emphasis on EMAIL (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on SEASONED (Even Modifies This Word)",
+            "correctAnswer": "Emphasis on CEO (Correcting WHO Did It)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                3,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'Even' now sits right before 'seasoned' - he went further than just chopping them. Listen for the pitch to peak on 'seasoned'.",
-            "explanation": "With 'even' right before the verb, it focuses 'seasoned', suggesting this action went beyond what was expected.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The object here isn't in question — only the identity of who did it is being corrected.",
+            "explanation": "This sentence rejects one candidate and confirms another as the true agent, so CEO takes the nuclear stress.",
+            "emphasisRule": "When a sentence corrects who performed an action everyone already agrees on, the corrected name carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_504",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The chef seasoned even the vegetables.",
-            "textToSpeak": "The chef seasoned even the vegetables.",
+            "word": "The engineers didn't just patch the software - they rebuilt it.",
+            "textToSpeak": "The engineers didn't just patch the software - they rebuilt it.",
             "options": [
-                "Emphasis on CHEF (Subject focus)",
-                "Emphasis on VEGETABLES (Even Modifies This Word)"
+                "Emphasis on SOFTWARE (Given/Old Information)",
+                "Emphasis on REBUILT (Correcting the Action)"
             ],
-            "correctAnswer": "Emphasis on VEGETABLES (Even Modifies This Word)",
+            "correctAnswer": "Emphasis on REBUILT (Correcting the Action)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
-                1,
-                1,
                 3,
+                1,
+                1,
                 1
             ],
-            "hint": "'Even' now sits right before 'the vegetables' - he seasoned the meat too, and surprisingly the vegetables as well. Listen for the pitch to peak on 'vegetables'.",
-            "explanation": "With 'even' right before the object, it focuses 'vegetables', suggesting they were an unexpected item to receive seasoning.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The correction here is about degree of action, not about who or what — stress the verb that describes what truly happened.",
+            "explanation": "This sentence upgrades a modest action to a stronger one, and that stronger action, REBUILT, takes the stress.",
+            "emphasisRule": "Correcting what was done places the nuclear stress on the true action, even though the shared object stays unstressed."
         },
         {
             "id": "pitchPatternMatch_505",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Only the technician replaced the battery.",
-            "textToSpeak": "Only the technician replaced the battery.",
+            "word": "The surgeon didn't just stabilize the patient - she saved him.",
+            "textToSpeak": "The surgeon didn't just stabilize the patient - she saved him.",
             "options": [
-                "Emphasis on BATTERY (Object focus)",
-                "Emphasis on TECHNICIAN (Only Modifies This Word)"
+                "Emphasis on SAVED (Correcting the Action)",
+                "Emphasis on PATIENT (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on TECHNICIAN (Only Modifies This Word)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on SAVED (Correcting the Action)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
+                1,
+                1,
                 3,
-                1,
-                1,
                 1,
                 1
             ],
-            "hint": "'Only' sits right before 'technician' - nobody else did the replacing. Listen for the pitch to peak early, on 'technician'.",
-            "explanation": "'Only' attaches to 'technician' here, meaning nobody else handled the repair - the stress isn't on the final word 'battery'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The object stays exactly the same in both halves — what's being corrected is the action taken, so stress the stronger verb.",
+            "explanation": "The object PATIENT is identical in both clauses, so the contrast — and the stress — falls on SAVED, the real action.",
+            "emphasisRule": "When a sentence upgrades a dismissed action to a stronger one on the same object, the stress falls on the corrected action."
         },
         {
             "id": "pitchPatternMatch_506",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The technician only replaced the battery.",
-            "textToSpeak": "The technician only replaced the battery.",
+            "word": "It wasn't the head chef who created that dessert - it was the intern.",
+            "textToSpeak": "It wasn't the head chef who created that dessert - it was the intern.",
             "options": [
-                "Emphasis on BATTERY (Object focus)",
-                "Emphasis on REPLACED (Only Modifies This Word)"
+                "Emphasis on DESSERT (Given/Old Information)",
+                "Emphasis on INTERN (Correcting WHO Did It)"
             ],
-            "correctAnswer": "Emphasis on REPLACED (Only Modifies This Word)",
+            "correctAnswer": "Emphasis on INTERN (Correcting WHO Did It)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'Only' now sits right before 'replaced' - that's all he did, simply replaced it. Listen for the pitch to peak on 'replaced'.",
-            "explanation": "With 'only' right before the verb, it focuses 'replaced', meaning that's the only action taken - not the final word 'battery'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is correcting who was responsible — the corrected name carries the peak, not the object everyone already agrees on.",
+            "explanation": "DESSERT was already settled by the first clause, so the stress falls on INTERN, the corrected identity.",
+            "emphasisRule": "Correcting identity (who did it) places stress on the true agent, even though the action and object stay unstressed."
         },
         {
             "id": "pitchPatternMatch_507",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The technician replaced only the battery.",
-            "textToSpeak": "The technician replaced only the battery.",
+            "word": "It wasn't the babysitter who noticed the smoke - it was the neighbor.",
+            "textToSpeak": "It wasn't the babysitter who noticed the smoke - it was the neighbor.",
             "options": [
-                "Emphasis on TECHNICIAN (Subject focus)",
-                "Emphasis on BATTERY (Only Modifies This Word)"
+                "Emphasis on NEIGHBOR (Correcting WHO Did It)",
+                "Emphasis on SMOKE (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on BATTERY (Only Modifies This Word)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on NEIGHBOR (Correcting WHO Did It)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Only' now sits right before 'the battery' - he left every other part untouched. Listen for the pitch to peak on 'battery'.",
-            "explanation": "With 'only' right before the object, it focuses 'battery', meaning that's the only part he replaced - not the subject 'technician'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The object here isn't in question — only the identity of who did it is being corrected.",
+            "explanation": "This sentence rejects one candidate and confirms another as the true agent, so NEIGHBOR takes the nuclear stress.",
+            "emphasisRule": "When a sentence corrects who performed an action everyone already agrees on, the corrected name carries the nuclear stress."
         },
         {
             "id": "pitchPatternMatch_508",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Even the tourist photographed the locals.",
-            "textToSpeak": "Even the tourist photographed the locals.",
+            "word": "The judge didn't just fine the company - she suspended it.",
+            "textToSpeak": "The judge didn't just fine the company - she suspended it.",
             "options": [
-                "Emphasis on TOURIST (Even Modifies This Word)",
-                "Emphasis on LOCALS (Object focus)"
+                "Emphasis on COMPANY (Given/Old Information)",
+                "Emphasis on SUSPENDED (Correcting the Action)"
             ],
-            "correctAnswer": "Emphasis on TOURIST (Even Modifies This Word)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on SUSPENDED (Correcting the Action)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
-                3,
                 1,
+                3,
                 1,
                 1,
                 1
             ],
-            "hint": "'Even' sits right before 'tourist', flagging them as a surprising person to do this. Listen for the pitch to peak early, on 'tourist'.",
-            "explanation": "'Even' attaches to 'tourist' here, suggesting it's surprising that even a visitor took this kind of photo.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The correction here is about degree of action, not about who or what — stress the verb that describes what truly happened.",
+            "explanation": "This sentence upgrades a modest action to a stronger one, and that stronger action, SUSPENDED, takes the stress.",
+            "emphasisRule": "Correcting what was done places the nuclear stress on the true action, even though the shared object stays unstressed."
         },
         {
             "id": "pitchPatternMatch_509",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The tourist even photographed the locals.",
-            "textToSpeak": "The tourist even photographed the locals.",
+            "word": "She didn't deliver the news calmly - she delivered it tearfully.",
+            "textToSpeak": "She didn't deliver the news calmly - she delivered it tearfully.",
             "options": [
-                "Emphasis on LOCALS (Object focus)",
-                "Emphasis on PHOTOGRAPHED (Even Modifies This Word)"
+                "Emphasis on TEARFULLY (Correcting HOW It Was Done)",
+                "Emphasis on CALMLY (Given/Old Information)"
             ],
-            "correctAnswer": "Emphasis on PHOTOGRAPHED (Even Modifies This Word)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on TEARFULLY (Correcting HOW It Was Done)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'Even' now sits right before 'photographed' - they went further than just sightseeing. Listen for the pitch to peak on 'photographed'.",
-            "explanation": "With 'even' right before the verb, it focuses 'photographed', suggesting this action went beyond typical sightseeing.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Both halves describe the same event happening to the same people — what changes is how it happened.",
+            "explanation": "The event and its object stay the same; only the manner changes, so TEARFULLY — the corrected manner — carries the stress.",
+            "emphasisRule": "When a sentence corrects the manner of an action while the action and object stay the same, the stress falls on the corrected manner word."
         },
         {
             "id": "pitchPatternMatch_510",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "The tourist photographed even the locals.",
-            "textToSpeak": "The tourist photographed even the locals.",
+            "word": "She didn't apologize sincerely - she apologized sarcastically.",
+            "textToSpeak": "She didn't apologize sincerely - she apologized sarcastically.",
             "options": [
-                "Emphasis on TOURIST (Subject focus)",
-                "Emphasis on LOCALS (Even Modifies This Word)"
+                "Emphasis on SINCERELY (Given/Old Information)",
+                "Emphasis on SARCASTICALLY (Correcting HOW It Was Done)"
             ],
-            "correctAnswer": "Emphasis on LOCALS (Even Modifies This Word)",
+            "correctAnswer": "Emphasis on SARCASTICALLY (Correcting HOW It Was Done)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                3,
-                1
+                1,
+                3
             ],
-            "hint": "'Even' now sits right before 'the locals' - they photographed the landmarks too, and surprisingly the locals as well. Listen for the pitch to peak on 'locals'.",
-            "explanation": "With 'even' right before the object, it focuses 'locals', suggesting they were an unexpected subject for a tourist's photo.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This is correcting the manner, not the action itself — listen for the second adverb, which carries the real answer.",
+            "explanation": "SINCERELY is the rejected manner here, so the real answer, SARCASTICALLY, gets the nuclear stress instead.",
+            "emphasisRule": "Correcting how something happened places the nuclear stress on the true manner, even though the action itself stays unstressed."
         }
     ]
 }

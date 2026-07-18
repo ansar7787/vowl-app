@@ -12,6 +12,7 @@ import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/utils/text_similarity_helper.dart';
 
 import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/dialogue_roleplay_header.dart';
 import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/dialogue_roleplay_exchange_stage.dart';
@@ -132,7 +133,8 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
         RegExp(r'[^\w\s]'),
         '',
       );
-      if (cleanSpeech.contains(cleanSub)) {
+      if (cleanSpeech.contains(cleanSub) ||
+          TextSimilarityHelper.isMatch(cleanSpeech, cleanSub, threshold: 0.70)) {
         matchFound = true;
         break;
       }

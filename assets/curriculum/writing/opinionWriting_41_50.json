@@ -5,64 +5,64 @@
     "quests": [
         {
             "id": "WRT_OPINIONWRITING_L41_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Physical education should be compulsory for all students throughout secondary school.",
             "options": [
                 "Compulsory PE ensures every student receives regular physical activity regardless of background.",
-                "Structured PE teaches teamwork, fair play, and resilience that benefit students across all subjects.",
                 "Older teenagers should have the freedom to choose activities they genuinely enjoy and value.",
-                "Forcing uninterested students through PE can create a lasting aversion to all forms of exercise."
+                "Forcing uninterested students through PE can create a lasting aversion to all forms of exercise.",
+                "Structured PE teaches teamwork, fair play, and resilience that benefit students across all subjects."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about why compulsory PE benefits all students (Pros) and what it costs reluctant participants (Cons).",
             "explanation": "Mandatory PE guarantees activity and teaches social skills for every student (Pros), but removing student choice can generate lasting resentment and aversion to exercise in those who find competitive sports distressing (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L41_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Regular physical education improves students' academic performance across all subjects.",
             "options": [
-                "Physical activity increases blood flow to the brain, directly enhancing cognitive function and memory.",
-                "Students who exercise regularly demonstrate better concentration and behaviour in academic lessons.",
                 "Time allocated to PE directly reduces the hours available for academic subject teaching.",
-                "The academic benefits of exercise can be achieved through active commuting without formal PE lessons."
+                "The academic benefits of exercise can be achieved through active commuting without formal PE lessons.",
+                "Physical activity increases blood flow to the brain, directly enhancing cognitive function and memory.",
+                "Students who exercise regularly demonstrate better concentration and behaviour in academic lessons."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider whether compulsory PE genuinely supports academic achievement (Pros) and whether the time cost is justified (Cons).",
             "explanation": "Exercise boosts brain function and classroom concentration (Pros), but PE reduces academic teaching hours, and similar benefits could come from active travel and unstructured break time (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L41_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Making PE compulsory addresses the public health crisis of youth inactivity.",
             "options": [
-                "Compulsory school PE is one of the few guaranteed touchpoints for physical activity in young people's lives.",
-                "Building exercise habits during adolescence significantly reduces the risk of adult obesity and disease.",
                 "School PE sessions alone are insufficient to meet recommended daily physical activity guidelines.",
-                "Addressing youth inactivity requires broader community investment, not just school PE provision."
+                "Compulsory school PE is one of the few guaranteed touchpoints for physical activity in young people's lives.",
+                "Addressing youth inactivity requires broader community investment, not just school PE provision.",
+                "Building exercise habits during adolescence significantly reduces the risk of adult obesity and disease."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about PE's role in public health (Pros) and whether it is sufficient on its own (Cons).",
             "explanation": "Compulsory PE is a reliable way to build activity habits and reduce obesity risk (Pros), but PE alone falls far short of recommended daily activity levels, and systemic inactivity requires community-wide solutions beyond school sport (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L42_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The school day should be shortened by one hour to reduce student stress.",
@@ -81,102 +81,102 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L42_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Shorter school days can significantly improve teacher wellbeing and professional retention.",
             "options": [
                 "Reducing teacher working hours improves job satisfaction and lowers unsustainable burnout rates.",
-                "Better-rested, less stressed teachers are more effective, enthusiastic, and engaging in the classroom.",
                 "Shorter days reduce the ability to cover required curriculum content within the school year.",
-                "Teacher wellbeing is better improved through better pay and workload support rather than fewer teaching hours."
+                "Teacher wellbeing is better improved through better pay and workload support rather than fewer teaching hours.",
+                "Better-rested, less stressed teachers are more effective, enthusiastic, and engaging in the classroom."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider the teacher wellbeing case for shorter days (Pros) and alternative ways to support staff effectively (Cons).",
             "explanation": "Fewer hours reduce burnout and improve teacher effectiveness (Pros), but shorter days sacrifice curriculum coverage, and teacher wellbeing could be addressed more effectively through pay reform and professional development (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L42_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A shorter school day creates time for extracurricular activities and healthy family life.",
             "options": [
                 "Earlier school finishes give students time for clubs, sport, creative hobbies, and shared family meals.",
-                "Balanced daily schedules that include downtime produce more well-rounded and emotionally resilient young people.",
                 "Many working parents depend on school as supervised childcare throughout the standard working day.",
-                "High-achieving school systems internationally often feature longer, not shorter, school days."
+                "High-achieving school systems internationally often feature longer, not shorter, school days.",
+                "Balanced daily schedules that include downtime produce more well-rounded and emotionally resilient young people."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the lifestyle benefits of a shorter day (Pros) and the practical and international concerns (Cons).",
             "explanation": "Shorter days create space for enrichment activities and family connection (Pros), but working parents depend on school for childcare, and many high-performing education systems demonstrate that longer days can produce excellent outcomes (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L43_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Secondary school students should be allowed to choose their own subjects freely.",
             "options": [
                 "Student autonomy in subject choice significantly increases motivation and genuine engagement in learning.",
-                "Allowing personal choice produces graduates with deeper expertise and passion in their chosen fields.",
                 "Young teenagers often lack the maturity and information to make sound long-term educational decisions.",
-                "Free subject choice creates social pressure where students avoid subjects considered academically unfashionable."
+                "Free subject choice creates social pressure where students avoid subjects considered academically unfashionable.",
+                "Allowing personal choice produces graduates with deeper expertise and passion in their chosen fields."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the motivational benefits of student subject choice (Pros) and the risks of early autonomy (Cons).",
             "explanation": "Student-chosen subjects boost motivation and build genuine expertise (Pros), but teenagers may lack the maturity to choose wisely, and social pressure can push them towards fashionable rather than individually appropriate subjects (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L43_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A compulsory core curriculum ensures a broad and balanced education for all students.",
             "options": [
                 "Required subjects expose every student to essential knowledge across all disciplines without exception.",
-                "Structured curriculum prevents students from avoiding challenging subjects they might need in the future.",
                 "Rigid compulsory curricula deny students the agency that research consistently shows improves performance.",
+                "Structured curriculum prevents students from avoiding challenging subjects they might need in the future.",
                 "Breadth requirements can result in surface-level coverage rather than genuine depth of understanding."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
-            "hint": "Consider the arguments for compulsory breadth versus student-chosen specialisation in school curricula.",
+            "hint": "Consider what a compulsory core curriculum guarantees for every student (Pros) and what rigid subject requirements can cost them (Cons).",
             "explanation": "Compulsory subjects guarantee breadth and prevent knowledge gaps (Pros for structure), but rigid curricula undermine motivation and can produce wide but shallow learning rather than genuine understanding (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L43_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Allowing students to choose subjects better prepares them for adult and career life.",
             "options": [
                 "Students who choose relevant subjects arrive at university or employment significantly better prepared.",
-                "Making meaningful educational choices at school develops the decision-making skills needed in adult life.",
                 "Early specialisation limits future flexibility and may permanently close off career pathways.",
+                "Making meaningful educational choices at school develops the decision-making skills needed in adult life.",
                 "Students who drop foundational subjects too early may face significant knowledge gaps later in life."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about how subject choice prepares students for the future (Pros) and the risks of over-specialising early (Cons).",
             "explanation": "Relevant subject choice improves preparedness and builds adult decision-making capacity (Pros), but early specialisation narrows future options and can leave students with fundamental knowledge gaps they cannot easily recover (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L44_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Schools should adopt a four-day week to benefit students and teaching staff.",
@@ -195,7 +195,7 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L44_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A four-day school week reduces teacher burnout and significantly improves staff retention.",
@@ -214,26 +214,26 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L44_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A four-day school week actively supports student mental health and reduces anxiety levels.",
             "options": [
+                "Students in difficult home situations depend on school for safety, structured routine, and meals five days a week.",
                 "A three-day weekend gives students recovering from mental health difficulties more time to stabilise.",
                 "Reduced school pressure allows students to develop personal interests and social connections outside school.",
-                "Students in difficult home situations depend on school for safety, structured routine, and meals five days a week.",
                 "Extended school breaks may increase inequality as wealthier families provide richer out-of-school experiences."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the mental health case for a four-day week (Pros) and who it may leave behind (Cons).",
             "explanation": "Extra rest days support mental health recovery and personal development (Pros), but vulnerable students depend on school structure five days a week, and longer breaks risk deepening the inequality between advantaged and disadvantaged students (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L45_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Music and art should be compulsory subjects throughout secondary school.",
@@ -252,140 +252,140 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L45_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Compulsory music education builds cognitive skills that benefit all academic subjects.",
             "options": [
                 "Learning to read music and play instruments strengthens mathematical reasoning and working memory.",
-                "Music education develops disciplined practice habits that support learning across all subjects.",
                 "The cognitive benefits attributed to music can be equally well achieved through other rigorous subjects.",
+                "Music education develops disciplined practice habits that support learning across all subjects.",
                 "Students already receiving private instrument tuition gain little additional benefit from compulsory school music."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider whether compulsory music uniquely builds cognitive skills (Pros) and whether those skills are music-specific (Cons).",
             "explanation": "Music strengthens mathematical reasoning and builds disciplined practice habits (Pros), but those cognitive gains are achievable through other subjects, and musically experienced students may find compulsory school music lessons unrewarding (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L45_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Art and music education preserves cultural heritage and identity for young people.",
             "options": [
                 "Studying artistic traditions connects students to their cultural history and national heritage.",
-                "Creative subjects develop cultural literacy that helps students engage thoughtfully with diverse global societies.",
                 "Cultural heritage can be effectively transmitted through history, literature, and other subjects.",
+                "Creative subjects develop cultural literacy that helps students engage thoughtfully with diverse global societies.",
                 "Arts curricula often reflect majority cultural traditions, potentially marginalising minority students."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about arts education as cultural preservation (Pros) and whose culture it may or may not represent (Cons).",
             "explanation": "Arts education connects students to cultural heritage and builds global cultural literacy (Pros), but culture can be taught through other subjects, and dominant cultural traditions in arts curricula may marginalise minority students' identities (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L46_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Schools should replace all printed textbooks with digital tablets for learning.",
             "options": [
+                "Tablets are costly to purchase, maintain, and replace, creating a significant ongoing financial burden.",
                 "Tablets provide instant access to up-to-date information, eliminating the problem of outdated textbooks.",
                 "Interactive digital content can adapt to individual students' learning speeds and comprehension levels.",
-                "Tablets are costly to purchase, maintain, and replace, creating a significant ongoing financial burden.",
                 "Screen-based reading is consistently associated with lower comprehension than reading from print."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the benefits of replacing textbooks with tablets (Pros) and the costs and learning risks (Cons).",
             "explanation": "Tablets offer current information and adaptive learning (Pros), but high device costs and evidence that screen reading produces lower comprehension than print are significant drawbacks (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L46_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Digital tablets make school resources more accessible and equitable for all learners.",
             "options": [
                 "A single tablet can hold every textbook a student needs, significantly reducing the weight of school bags.",
-                "Tablets can be updated instantly to reflect curriculum changes without expensive new print runs.",
                 "Not all students have reliable home internet access, creating a digital divide in out-of-school use.",
-                "Students from disadvantaged backgrounds may be less able to replace expensive damaged or stolen devices."
+                "Students from disadvantaged backgrounds may be less able to replace expensive damaged or stolen devices.",
+                "Tablets can be updated instantly to reflect curriculum changes without expensive new print runs."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider how tablets improve access (Pros) and how they risk widening educational inequality (Cons).",
             "explanation": "Tablets reduce physical burden and lower long-term resource update costs (Pros), but internet inequality at home and the financial impact of device loss create new forms of educational disadvantage (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L46_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Printed textbooks provide a more reliable and focused learning environment than screens.",
             "options": [
-                "Physical books do not require charging, internet connectivity, or technical support to function.",
-                "Reading print is less distracting than devices, which students can use to access games and social media.",
                 "Printed textbooks become outdated quickly and are expensive to replace across a whole school system.",
-                "Students who learn to navigate physical reference materials develop valuable research skills."
+                "Students who learn to navigate physical reference materials develop valuable research skills.",
+                "Physical books do not require charging, internet connectivity, or technical support to function.",
+                "Reading print is less distracting than devices, which students can use to access games and social media."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the reliability advantages of printed textbooks (Pros for keeping them) and their long-term costs (Cons).",
             "explanation": "Print requires no power or connectivity and creates a more focused reading environment (Pros for keeping books), but textbooks become outdated rapidly and are costly to update at scale (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L47_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Well-behaved dogs should be permitted in office workplaces.",
             "options": [
                 "Studies consistently show that the presence of dogs in offices significantly reduces employee stress levels.",
-                "Office dogs create natural opportunities for conversation and improve social bonds between colleagues.",
                 "Dog allergies and phobias affect a significant proportion of the working population.",
+                "Office dogs create natural opportunities for conversation and improve social bonds between colleagues.",
                 "Dogs can be disruptive, unpredictable, or noisy, undermining professional concentration and focus."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about the wellbeing benefits of office dogs (Pros) and the problems they create for other employees (Cons).",
             "explanation": "Office dogs reduce stress and improve colleague interaction and morale (Pros), but allergies, phobias, and disruptive animal behaviour make them incompatible with many professional environments (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L47_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Allowing dogs in offices improves employee retention and overall job satisfaction.",
             "options": [
-                "Unique workplace perks like pet-friendly policies attract talent and signal a modern, progressive culture.",
-                "Employees who can bring their dogs to work save on dog care costs and experience less separation anxiety.",
                 "Dog-friendly policies require significant investment in clear guidelines and appropriate facilities.",
-                "Non-dog-owning employees may feel a pet-friendly policy disproportionately benefits dog owners only."
+                "Unique workplace perks like pet-friendly policies attract talent and signal a modern, progressive culture.",
+                "Non-dog-owning employees may feel a pet-friendly policy disproportionately benefits dog owners only.",
+                "Employees who can bring their dogs to work save on dog care costs and experience less separation anxiety."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider whether dog-friendly offices genuinely improve workplace culture (Pros) and the equity concerns (Cons).",
             "explanation": "Pet-friendly workplaces attract talent and reduce dog owner stress and costs (Pros), but implementation requires infrastructure, and non-pet-owning employees may perceive the policy as unfair and exclusionary (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L47_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Dog-friendly offices are inappropriate in most professional working environments.",
@@ -404,64 +404,64 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L48_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Employers should offer flexible starting and finishing times to all office workers.",
             "options": [
+                "Team coordination becomes significantly harder when colleagues work different daily schedules.",
                 "Flexible hours allow employees to work during their natural peak hours of energy and cognitive focus.",
                 "Removing rigid hour requirements reduces stressful rush-hour commuting and travel time.",
-                "Team coordination becomes significantly harder when colleagues work different daily schedules.",
                 "Customer-facing roles require standard hours that flexible working arrangements cannot easily accommodate."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about how flexible hours benefit employees (Pros) and the coordination challenges they create (Cons).",
             "explanation": "Flexible hours match work to natural productivity rhythms and reduce commuting stress (Pros), but team coordination suffers when colleagues are not simultaneously available, and customer-facing roles cannot easily adopt flexible arrangements (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L48_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Flexible working hours significantly improve employee mental health and work-life balance.",
             "options": [
+                "Employers cannot always guarantee that flexible workers will be available for genuinely urgent requirements.",
                 "Control over working hours reduces the chronic stress of rigid scheduling that affects personal life.",
                 "Flexibility allows employees to attend medical appointments, school events, and family commitments.",
-                "Employers cannot always guarantee that flexible workers will be available for genuinely urgent requirements.",
                 "Inequitable access to flexible arrangements between office and frontline staff can create workplace resentment."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Consider how flexibility supports wellbeing (Pros) and the inequities it can create between staff types (Cons).",
             "explanation": "Schedule control reduces stress and allows employees to meet personal obligations (Pros), but flexibility is hard to guarantee in urgent situations, and unequal access between office and frontline staff breeds resentment (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L48_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Flexible hours increase employee productivity and meaningfully reduce absenteeism.",
             "options": [
-                "Employees who control their own schedules consistently report higher job satisfaction and engagement.",
-                "Flexibility reduces sick leave by allowing staff to proactively manage health and personal needs.",
                 "Without clear boundaries, flexible workers often end up working significantly longer than their contracted hours.",
-                "Measuring productivity fairly becomes more complex when employees are working to different daily patterns."
+                "Employees who control their own schedules consistently report higher job satisfaction and engagement.",
+                "Measuring productivity fairly becomes more complex when employees are working to different daily patterns.",
+                "Flexibility reduces sick leave by allowing staff to proactively manage health and personal needs."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about how flexibility affects output and attendance (Pros) and the overwork and measurement risks (Cons).",
             "explanation": "Schedule autonomy raises satisfaction and reduces absenteeism (Pros), but without boundaries flexible workers tend to overwork, and tracking performance across varied schedules is significantly more complex for employers (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L49_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "All public transport should be made completely free of charge for every user.",
@@ -480,95 +480,95 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L49_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Free public transport would significantly reduce air pollution in cities and towns.",
             "options": [
                 "Removing the cost barrier would shift millions of car journeys onto buses and trains each day.",
-                "Better urban air quality from modal shift improves public health, reducing healthcare costs.",
                 "Free fares alone do not address the poor reliability and infrequency that deter many car users.",
+                "Better urban air quality from modal shift improves public health, reducing healthcare costs.",
                 "Significant service improvement investment is required before free fares can effectively replace car trips."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider whether free fares alone are sufficient to cut urban pollution (Pros) and what else is needed (Cons).",
             "explanation": "Free fares shift car users to public transport, improving air quality (Pros), but poor service reliability deters mode shift, and service investment must accompany fare removal to achieve meaningful emission reductions (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L49_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Free public transport strengthens social cohesion and reduces inequality across communities.",
             "options": [
                 "Universal free access gives everyone equal freedom to participate in community and economic life.",
-                "Free networks allow lower-income individuals to access employment, healthcare, and education freely.",
                 "Wealthy people who easily afford fares would benefit from free transport unnecessarily.",
-                "The same public funding redirected from free transport could deliver greater social benefit if targeted."
+                "The same public funding redirected from free transport could deliver greater social benefit if targeted.",
+                "Free networks allow lower-income individuals to access employment, healthcare, and education freely."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about free transport as a social equity policy (Pros) and whether it is the most efficient use of funds (Cons).",
             "explanation": "Free universal transport promotes equal participation and supports low-income access to opportunity (Pros), but subsidising wealthy users who do not need support is inefficient, and targeted spending might deliver greater social return (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L50_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Single-use plastic should be banned in all shops, cafes, and restaurants.",
             "options": [
-                "Eliminating single-use plastic at the point of sale directly reduces plastic waste entering ecosystems.",
-                "A ban pushes businesses and consumers to develop and adopt more sustainable packaging alternatives.",
                 "Small businesses face significant costs in sourcing and switching to sustainable packaging materials.",
-                "A partial ban on retail plastic has limited impact if it continues to be used widely in other sectors."
+                "Eliminating single-use plastic at the point of sale directly reduces plastic waste entering ecosystems.",
+                "A partial ban on retail plastic has limited impact if it continues to be used widely in other sectors.",
+                "A ban pushes businesses and consumers to develop and adopt more sustainable packaging alternatives."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the environmental case for banning single-use retail plastic (Pros) and the economic and scope concerns (Cons).",
             "explanation": "Banning single-use plastic reduces ecosystem pollution and drives innovation in sustainable packaging (Pros), but small businesses face real cost pressures, and sector-only bans have limited effect while plastic persists in other industries (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L50_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Banning single-use plastic encourages broader cultural change towards sustainable consumption.",
             "options": [
                 "A high-profile and widely discussed ban raises public awareness of the global plastic pollution crisis.",
-                "Policy bans normalise sustainable behaviour, making environmentally responsible choices the default option.",
                 "Cultural change driven by legislation can feel coercive and generate significant public resistance.",
-                "Industry lobbying frequently weakens plastic bans, creating loopholes that severely undermine environmental impact."
+                "Industry lobbying frequently weakens plastic bans, creating loopholes that severely undermine environmental impact.",
+                "Policy bans normalise sustainable behaviour, making environmentally responsible choices the default option."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider whether plastic bans genuinely drive cultural change (Pros) and the risks of legislative enforcement (Cons).",
             "explanation": "High-profile bans raise awareness and normalise sustainability as a default (Pros), but coercive policy can generate resistance, and industry lobbying produces diluted bans with major loopholes that reduce environmental benefit (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L50_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A ban on single-use plastic protects marine ecosystems and wildlife from serious harm.",
             "options": [
-                "Millions of tonnes of plastic enter oceans annually, killing marine animals and entering the food chain.",
-                "Reducing plastic at source is the most direct and reliable way to protect vulnerable marine ecosystems.",
                 "Most ocean plastic originates in countries without effective waste management or plastic bans.",
-                "Many supposedly biodegradable alternatives are not genuinely better for the environment across their full lifecycle."
+                "Many supposedly biodegradable alternatives are not genuinely better for the environment across their full lifecycle.",
+                "Millions of tonnes of plastic enter oceans annually, killing marine animals and entering the food chain.",
+                "Reducing plastic at source is the most direct and reliable way to protect vulnerable marine ecosystems."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the marine conservation case for plastic bans (Pros) and the limits of national-level action (Cons).",
             "explanation": "Reducing retail plastic at source directly protects marine life (Pros), but most ocean plastic comes from countries without effective bans, and supposedly greener alternatives are not always environmentally superior when their full production is considered (Cons)."

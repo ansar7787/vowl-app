@@ -8,38 +8,38 @@
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Instead of postponing it, the team launched the project.",
-            "textToSpeak": "Instead of postponing it, the team launched the project.",
+            "word": "At checkout, the cashier applied the discount.",
+            "textToSpeak": "At checkout, the cashier applied the discount.",
             "options": [
-                "Emphasis on PROJECT (Object focus)",
-                "Emphasis on LAUNCHED (Verb/Action focus)"
+                "Emphasis on DISCOUNT (Object focus)",
+                "Emphasis on CASHIER (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on LAUNCHED (Verb/Action focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DISCOUNT (Object focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'Instead of postponing it' contrasts two possible choices - listen for the pitch to peak on the verb 'launched'.",
-            "explanation": "The contrast with 'postponing' highlights the decisive action taken, so the nuclear stress falls on the verb 'launched'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Even with an introduction, nothing marks the subject as surprising here, so the default final-word stress still applies.",
+            "explanation": "The opening phrase only sets the scene — it doesn't make CASHIER special, so the default stress still lands on DISCOUNT.",
+            "emphasisRule": "An introduction that only sets the time or scene doesn't shift stress; the final content word still carries the pitch accent."
         },
         {
             "id": "pitchPatternMatch_212",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Remarkably, the nervous pilot landed the plane smoothly.",
-            "textToSpeak": "Remarkably, the nervous pilot landed the plane smoothly.",
+            "word": "During recess, the children shared their snacks.",
+            "textToSpeak": "During recess, the children shared their snacks.",
             "options": [
-                "Emphasis on SMOOTHLY (Manner focus)",
-                "Emphasis on PLANE (Object focus)"
+                "Emphasis on CHILDREN (Subject focus)",
+                "Emphasis on SNACKS (Object focus)"
             ],
-            "correctAnswer": "Emphasis on SMOOTHLY (Manner focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on SNACKS (Object focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
@@ -47,95 +47,95 @@
                 1,
                 3
             ],
-            "hint": "'Remarkably' points to how smooth the landing was despite the nerves, not the plane itself. Listen for the pitch to peak on 'smoothly'.",
-            "explanation": "'Remarkably' signals that the smooth manner of landing is the surprising detail, so the nuclear stress lands on 'smoothly'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The lead-in only tells you when or where — the real news is still the action described at the end.",
+            "explanation": "Since nothing marks CHILDREN as surprising, the sentence still follows the neutral pattern, stressing SNACKS at the end.",
+            "emphasisRule": "Not every lead-in creates contrast — if the subject isn't marked as surprising, default final-word stress still applies."
         },
         {
             "id": "pitchPatternMatch_213",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Rather than blaming others, the driver admitted the fault.",
-            "textToSpeak": "Rather than blaming others, the driver admitted the fault.",
+            "word": "During the layover, we explored the airport shops.",
+            "textToSpeak": "During the layover, we explored the airport shops.",
             "options": [
-                "Emphasis on FAULT (Object focus)",
-                "Emphasis on ADMITTED (Verb/Action focus)"
+                "Emphasis on SHOPS (Object focus)",
+                "Emphasis on WE (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on ADMITTED (Verb/Action focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on SHOPS (Object focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'Rather than blaming others' contrasts two possible reactions - listen for the pitch to peak on the verb 'admitted'.",
-            "explanation": "The contrast with 'blaming others' highlights the honest action taken, so the nuclear stress falls on the verb 'admitted'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Don't be fooled by the introduction — it's just context, so the stress still lands on the final content word.",
+            "explanation": "This introduction gives background information only, so the nuclear stress still falls on SHOPS, the final content word.",
+            "emphasisRule": "An introduction that only sets the time or scene doesn't shift stress; the final content word still carries the pitch accent."
         },
         {
             "id": "pitchPatternMatch_214",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Against expectations, the novice chef prepared the meal flawlessly.",
-            "textToSpeak": "Against expectations, the novice chef prepared the meal flawlessly.",
+            "word": "Oddly enough, the older printer finished the job first.",
+            "textToSpeak": "Oddly enough, the older printer finished the job first.",
             "options": [
-                "Emphasis on FLAWLESSLY (Manner focus)",
-                "Emphasis on MEAL (Object focus)"
+                "Emphasis on JOB (Object focus)",
+                "Emphasis on PRINTER (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on FLAWLESSLY (Manner focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on PRINTER (Subject focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                3,
                 1,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "'Against expectations' points to the skill shown, not the meal itself. Listen for the pitch to peak on 'flawlessly'.",
-            "explanation": "'Against expectations' signals that the flawless manner of preparing it is the surprising detail, so the nuclear stress lands on 'flawlessly'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Notice the sentence is really about who did it, not just what happened — listen for the peak near the start.",
+            "explanation": "PRINTER is the genuinely newsworthy part of this sentence, so it takes the stress rather than the final word JOB.",
+            "emphasisRule": "When an introduction marks the subject as surprising or noteworthy, the pitch accent shifts to the subject instead of the final word."
         },
         {
             "id": "pitchPatternMatch_215",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Instead of forgetting, the assistant confirmed the appointment.",
-            "textToSpeak": "Instead of forgetting, the assistant confirmed the appointment.",
+            "word": "Believe it or not, my shy cousin led the presentation.",
+            "textToSpeak": "Believe it or not, my shy cousin led the presentation.",
             "options": [
-                "Emphasis on APPOINTMENT (Object focus)",
-                "Emphasis on CONFIRMED (Verb/Action focus)"
+                "Emphasis on COUSIN (Subject focus)",
+                "Emphasis on PRESENTATION (Object focus)"
             ],
-            "correctAnswer": "Emphasis on CONFIRMED (Verb/Action focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on COUSIN (Subject focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
                 3,
+                1,
                 1,
                 1,
                 1
             ],
-            "hint": "'Instead of forgetting' contrasts two possible outcomes - listen for the pitch to peak on the verb 'confirmed'.",
-            "explanation": "The contrast with 'forgetting' highlights the reliable action taken, so the nuclear stress falls on the verb 'confirmed'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The opening phrase signals something surprising about the subject — that's usually where the peak lands, not the final word.",
+            "explanation": "The context makes COUSIN unexpected, which is why the pitch accent lands there instead of on PRESENTATION.",
+            "emphasisRule": "Context that highlights who did something pulls the nuclear stress forward, onto the subject."
         },
         {
             "id": "pitchPatternMatch_216",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Surprisingly, the tired traveler carried the luggage easily.",
-            "textToSpeak": "Surprisingly, the tired traveler carried the luggage easily.",
+            "word": "This afternoon, the doctor reviewed my results.",
+            "textToSpeak": "This afternoon, the doctor reviewed my results.",
             "options": [
-                "Emphasis on EASILY (Manner focus)",
-                "Emphasis on LUGGAGE (Object focus)"
+                "Emphasis on DOCTOR (Subject focus)",
+                "Emphasis on RESULTS (Object focus)"
             ],
-            "correctAnswer": "Emphasis on EASILY (Manner focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on RESULTS (Object focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
@@ -143,22 +143,22 @@
                 1,
                 3
             ],
-            "hint": "The surprise here is how little effort it took, not the luggage itself. Listen for the pitch to peak on 'easily'.",
-            "explanation": "'Surprisingly' points to the unexpected ease of carrying it, so the nuclear stress lands on 'easily'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This opening phrase doesn't single out the subject, so the sentence behaves like an ordinary neutral statement.",
+            "explanation": "Even with a lead-in, DOCTOR isn't presented as unexpected, so the stress stays on RESULTS as usual.",
+            "emphasisRule": "Not every lead-in creates contrast — if the subject isn't marked as surprising, default final-word stress still applies."
         },
         {
             "id": "pitchPatternMatch_217",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Rather than complaining, the guest praised the service.",
-            "textToSpeak": "Rather than complaining, the guest praised the service.",
+            "word": "Against the odds, the budget resort earned five stars.",
+            "textToSpeak": "Against the odds, the budget resort earned five stars.",
             "options": [
-                "Emphasis on PRAISED (Verb/Action focus)",
-                "Emphasis on SERVICE (Object focus)"
+                "Emphasis on RESORT (Subject focus)",
+                "Emphasis on STARS (Object focus)"
             ],
-            "correctAnswer": "Emphasis on PRAISED (Verb/Action focus)",
+            "correctAnswer": "Emphasis on RESORT (Subject focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -167,46 +167,46 @@
                 1,
                 1
             ],
-            "hint": "'Rather than complaining' contrasts two possible reactions - listen for the pitch to peak on the verb 'praised'.",
-            "explanation": "The contrast with 'complaining' highlights the positive action taken, so the nuclear stress falls on the verb 'praised'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Words like this at the start often mark the subject itself as the surprising news — listen for an early peak.",
+            "explanation": "The lead-in marks RESORT as the surprising or noteworthy element, so the nuclear stress shifts there instead of staying on STARS.",
+            "emphasisRule": "When an introduction marks the subject as surprising or noteworthy, the pitch accent shifts to the subject instead of the final word."
         },
         {
             "id": "pitchPatternMatch_218",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Unusually, the junior analyst presented the data brilliantly.",
-            "textToSpeak": "Unusually, the junior analyst presented the data brilliantly.",
+            "word": "Contrary to what we thought, the budget airline offered the better service.",
+            "textToSpeak": "Contrary to what we thought, the budget airline offered the better service.",
             "options": [
-                "Emphasis on DATA (Object focus)",
-                "Emphasis on BRILLIANTLY (Manner focus)"
+                "Emphasis on SERVICE (Object focus)",
+                "Emphasis on AIRLINE (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on BRILLIANTLY (Manner focus)",
+            "correctAnswer": "Emphasis on AIRLINE (Subject focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
+                3,
                 1,
                 1,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "'Unusually' points to the unexpected brilliance, not the data itself. Listen for the pitch to peak on 'brilliantly'.",
-            "explanation": "'Unusually' signals that the brilliant manner of presenting is the surprising detail, so the nuclear stress lands on 'brilliantly'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This isn't just scene-setting — the introduction makes the subject noteworthy, so the stress shifts there.",
+            "explanation": "Because the introduction flags AIRLINE specifically, the pitch peak moves earlier in the sentence to highlight it.",
+            "emphasisRule": "Context that highlights who did something pulls the nuclear stress forward, onto the subject."
         },
         {
             "id": "pitchPatternMatch_219",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Instead of declining, the singer accepted the invitation.",
-            "textToSpeak": "Instead of declining, the singer accepted the invitation.",
+            "word": "Surprisingly, my youngest brother fixed the computer.",
+            "textToSpeak": "Surprisingly, my youngest brother fixed the computer.",
             "options": [
-                "Emphasis on ACCEPTED (Verb/Action focus)",
-                "Emphasis on INVITATION (Object focus)"
+                "Emphasis on BROTHER (Subject focus)",
+                "Emphasis on COMPUTER (Object focus)"
             ],
-            "correctAnswer": "Emphasis on ACCEPTED (Verb/Action focus)",
+            "correctAnswer": "Emphasis on BROTHER (Subject focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -215,190 +215,190 @@
                 1,
                 1
             ],
-            "hint": "'Instead of declining' contrasts two possible responses - listen for the pitch to peak on the verb 'accepted'.",
-            "explanation": "The contrast with 'declining' highlights the willing action taken, so the nuclear stress falls on the verb 'accepted'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The lead-in flags the subject as unexpected, which pulls the pitch peak forward instead of leaving it at the end.",
+            "explanation": "BROTHER is the genuinely newsworthy part of this sentence, so it takes the stress rather than the final word COMPUTER.",
+            "emphasisRule": "When an introduction marks the subject as surprising or noteworthy, the pitch accent shifts to the subject instead of the final word."
         },
         {
             "id": "pitchPatternMatch_220",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Remarkably, the young patient handled the news bravely.",
-            "textToSpeak": "Remarkably, the young patient handled the news bravely.",
+            "word": "Believe it or not, the tired driver still passed the test.",
+            "textToSpeak": "Believe it or not, the tired driver still passed the test.",
             "options": [
-                "Emphasis on BRAVELY (Manner focus)",
-                "Emphasis on NEWS (Object focus)"
+                "Emphasis on TEST (Object focus)",
+                "Emphasis on DRIVER (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on BRAVELY (Manner focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on DRIVER (Subject focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
+                3,
                 1,
                 1,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "'Remarkably' points to the bravery shown, not the news itself. Listen for the pitch to peak on 'bravely'.",
-            "explanation": "'Remarkably' signals that the brave manner of handling it is the surprising detail, so the nuclear stress lands on 'bravely'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Notice the sentence is really about who did it, not just what happened — listen for the peak near the start.",
+            "explanation": "The context makes DRIVER unexpected, which is why the pitch accent lands there instead of on TEST.",
+            "emphasisRule": "Context that highlights who did something pulls the nuclear stress forward, onto the subject."
         },
         {
             "id": "pitchPatternMatch_221",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Rather than losing hope, the team trusted the plan.",
-            "textToSpeak": "Rather than losing hope, the team trusted the plan.",
+            "word": "This morning, my sister finally cleaned her room.",
+            "textToSpeak": "This morning, my sister finally cleaned her room.",
             "options": [
-                "Emphasis on PLAN (Object focus)",
-                "Emphasis on TRUSTED (Verb/Action focus)"
+                "Emphasis on ROOM (Object focus)",
+                "Emphasis on SISTER (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on TRUSTED (Verb/Action focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on ROOM (Object focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'Rather than losing hope' contrasts two possible attitudes - listen for the pitch to peak on the verb 'trusted'.",
-            "explanation": "The contrast with 'losing hope' highlights the confident action taken, so the nuclear stress falls on the verb 'trusted'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This opening phrase just sets the time or scene — it doesn't make the subject special, so the peak still falls late.",
+            "explanation": "The opening phrase only sets the scene — it doesn't make SISTER special, so the default stress still lands on ROOM.",
+            "emphasisRule": "An introduction that only sets the time or scene doesn't shift stress; the final content word still carries the pitch accent."
         },
         {
             "id": "pitchPatternMatch_222",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Against the odds, the underdog completed the marathon impressively.",
-            "textToSpeak": "Against the odds, the underdog completed the marathon impressively.",
+            "word": "Unexpectedly, the older sibling forgave the mistake.",
+            "textToSpeak": "Unexpectedly, the older sibling forgave the mistake.",
             "options": [
-                "Emphasis on MARATHON (Object focus)",
-                "Emphasis on IMPRESSIVELY (Manner focus)"
+                "Emphasis on MISTAKE (Object focus)",
+                "Emphasis on SIBLING (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on IMPRESSIVELY (Manner focus)",
+            "correctAnswer": "Emphasis on SIBLING (Subject focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                3,
                 1,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "'Against the odds' points to how impressive the performance was, not the marathon itself. Listen for the pitch to peak on 'impressively'.",
-            "explanation": "'Against the odds' signals that the impressive manner of completing it is the surprising detail, so the nuclear stress lands on 'impressively'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The opening phrase signals something surprising about the subject — that's usually where the peak lands, not the final word.",
+            "explanation": "The lead-in marks SIBLING as the surprising or noteworthy element, so the nuclear stress shifts there instead of staying on MISTAKE.",
+            "emphasisRule": "When an introduction marks the subject as surprising or noteworthy, the pitch accent shifts to the subject instead of the final word."
         },
         {
             "id": "pitchPatternMatch_223",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Instead of skipping it, the student reviewed the material.",
-            "textToSpeak": "Instead of skipping it, the student reviewed the material.",
+            "word": "To everyone's surprise, the new intern closed the deal.",
+            "textToSpeak": "To everyone's surprise, the new intern closed the deal.",
             "options": [
-                "Emphasis on REVIEWED (Verb/Action focus)",
-                "Emphasis on MATERIAL (Object focus)"
+                "Emphasis on INTERN (Subject focus)",
+                "Emphasis on DEAL (Object focus)"
             ],
-            "correctAnswer": "Emphasis on REVIEWED (Verb/Action focus)",
+            "correctAnswer": "Emphasis on INTERN (Subject focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
                 3,
+                1,
                 1,
                 1,
                 1
             ],
-            "hint": "'Instead of skipping it' contrasts two possible choices - listen for the pitch to peak on the verb 'reviewed'.",
-            "explanation": "The contrast with 'skipping it' highlights the diligent action taken, so the nuclear stress falls on the verb 'reviewed'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Words like this at the start often mark the subject itself as the surprising news — listen for an early peak.",
+            "explanation": "Because the introduction flags INTERN specifically, the pitch peak moves earlier in the sentence to highlight it.",
+            "emphasisRule": "Context that highlights who did something pulls the nuclear stress forward, onto the subject."
         },
         {
             "id": "pitchPatternMatch_224",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Surprisingly, the new employee solved the bug instantly.",
-            "textToSpeak": "Surprisingly, the new employee solved the bug instantly.",
+            "word": "Remarkably, the shy intern impressed the entire board.",
+            "textToSpeak": "Remarkably, the shy intern impressed the entire board.",
             "options": [
-                "Emphasis on INSTANTLY (Manner focus)",
-                "Emphasis on BUG (Object focus)"
+                "Emphasis on BOARD (Object focus)",
+                "Emphasis on INTERN (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on INSTANTLY (Manner focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on INTERN (Subject focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
+                3,
                 1,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "The surprise here is the speed of the fix, not the bug itself. Listen for the pitch to peak on 'instantly'.",
-            "explanation": "'Surprisingly' points to the unexpected speed of solving it, so the nuclear stress lands on 'instantly'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This isn't just scene-setting — the introduction makes the subject noteworthy, so the stress shifts there.",
+            "explanation": "INTERN is the genuinely newsworthy part of this sentence, so it takes the stress rather than the final word BOARD.",
+            "emphasisRule": "When an introduction marks the subject as surprising or noteworthy, the pitch accent shifts to the subject instead of the final word."
         },
         {
             "id": "pitchPatternMatch_225",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Rather than panicking, the parent calmed the baby.",
-            "textToSpeak": "Rather than panicking, the parent calmed the baby.",
+            "word": "During the storm, the family played board games.",
+            "textToSpeak": "During the storm, the family played board games.",
             "options": [
-                "Emphasis on CALMED (Verb/Action focus)",
-                "Emphasis on BABY (Object focus)"
+                "Emphasis on GAMES (Object focus)",
+                "Emphasis on FAMILY (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on CALMED (Verb/Action focus)",
+            "correctAnswer": "Emphasis on GAMES (Object focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                3,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'Rather than panicking' contrasts two possible reactions - listen for the pitch to peak on the verb 'calmed'.",
-            "explanation": "The contrast with 'panicking' highlights the composed action taken, so the nuclear stress falls on the verb 'calmed'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Even with an introduction, nothing marks the subject as surprising here, so the default final-word stress still applies.",
+            "explanation": "Since nothing marks FAMILY as surprising, the sentence still follows the neutral pattern, stressing GAMES at the end.",
+            "emphasisRule": "Not every lead-in creates contrast — if the subject isn't marked as surprising, default final-word stress still applies."
         },
         {
             "id": "pitchPatternMatch_226",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Unusually, the cautious driver completed the route swiftly.",
-            "textToSpeak": "Unusually, the cautious driver completed the route swiftly.",
+            "word": "Against all odds, the community garden survived the drought.",
+            "textToSpeak": "Against all odds, the community garden survived the drought.",
             "options": [
-                "Emphasis on ROUTE (Object focus)",
-                "Emphasis on SWIFTLY (Manner focus)"
+                "Emphasis on DROUGHT (Object focus)",
+                "Emphasis on GARDEN (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on SWIFTLY (Manner focus)",
+            "correctAnswer": "Emphasis on GARDEN (Subject focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
+                3,
                 1,
                 1,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "'Unusually' points to the unexpected speed, not the route itself. Listen for the pitch to peak on 'swiftly'.",
-            "explanation": "'Unusually' signals that the swift manner of completing it is the surprising detail, so the nuclear stress lands on 'swiftly'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The lead-in flags the subject as unexpected, which pulls the pitch peak forward instead of leaving it at the end.",
+            "explanation": "The context makes GARDEN unexpected, which is why the pitch accent lands there instead of on DROUGHT.",
+            "emphasisRule": "Context that highlights who did something pulls the nuclear stress forward, onto the subject."
         },
         {
             "id": "pitchPatternMatch_227",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Instead of waiting longer, the customer cancelled the order.",
-            "textToSpeak": "Instead of waiting longer, the customer cancelled the order.",
+            "word": "Unexpectedly, the part-time cashier caught the counterfeit bill.",
+            "textToSpeak": "Unexpectedly, the part-time cashier caught the counterfeit bill.",
             "options": [
-                "Emphasis on CANCELLED (Verb/Action focus)",
-                "Emphasis on ORDER (Object focus)"
+                "Emphasis on CASHIER (Subject focus)",
+                "Emphasis on BILL (Object focus)"
             ],
-            "correctAnswer": "Emphasis on CANCELLED (Verb/Action focus)",
+            "correctAnswer": "Emphasis on CASHIER (Subject focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -407,46 +407,46 @@
                 1,
                 1
             ],
-            "hint": "'Instead of waiting longer' contrasts two possible choices - listen for the pitch to peak on the verb 'cancelled'.",
-            "explanation": "The contrast with 'waiting longer' highlights the decisive action taken, so the nuclear stress falls on the verb 'cancelled'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Notice the sentence is really about who did it, not just what happened — listen for the peak near the start.",
+            "explanation": "The lead-in marks CASHIER as the surprising or noteworthy element, so the nuclear stress shifts there instead of staying on BILL.",
+            "emphasisRule": "When an introduction marks the subject as surprising or noteworthy, the pitch accent shifts to the subject instead of the final word."
         },
         {
             "id": "pitchPatternMatch_228",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Remarkably, the shy singer performed the song confidently.",
-            "textToSpeak": "Remarkably, the shy singer performed the song confidently.",
+            "word": "Unexpectedly, the youngest player scored the winning goal.",
+            "textToSpeak": "Unexpectedly, the youngest player scored the winning goal.",
             "options": [
-                "Emphasis on CONFIDENTLY (Manner focus)",
-                "Emphasis on SONG (Object focus)"
+                "Emphasis on GOAL (Object focus)",
+                "Emphasis on PLAYER (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on CONFIDENTLY (Manner focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on PLAYER (Subject focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
+                3,
                 1,
                 1,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "'Remarkably' points to the unexpected confidence, not the song itself. Listen for the pitch to peak on 'confidently'.",
-            "explanation": "'Remarkably' signals that the confident manner of performing is the surprising detail, so the nuclear stress lands on 'confidently'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The opening phrase signals something surprising about the subject — that's usually where the peak lands, not the final word.",
+            "explanation": "Because the introduction flags PLAYER specifically, the pitch peak moves earlier in the sentence to highlight it.",
+            "emphasisRule": "Context that highlights who did something pulls the nuclear stress forward, onto the subject."
         },
         {
             "id": "pitchPatternMatch_229",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Rather than ignoring the alert, the technician checked the system.",
-            "textToSpeak": "Rather than ignoring the alert, the technician checked the system.",
+            "word": "Unexpectedly, the quiet neighbor organized the entire block party.",
+            "textToSpeak": "Unexpectedly, the quiet neighbor organized the entire block party.",
             "options": [
-                "Emphasis on CHECKED (Verb/Action focus)",
-                "Emphasis on SYSTEM (Object focus)"
+                "Emphasis on NEIGHBOR (Subject focus)",
+                "Emphasis on PARTY (Object focus)"
             ],
-            "correctAnswer": "Emphasis on CHECKED (Verb/Action focus)",
+            "correctAnswer": "Emphasis on NEIGHBOR (Subject focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -455,118 +455,118 @@
                 1,
                 1
             ],
-            "hint": "'Rather than ignoring the alert' contrasts two possible reactions - listen for the pitch to peak on the verb 'checked'.",
-            "explanation": "The contrast with 'ignoring the alert' highlights the responsible action taken, so the nuclear stress falls on the verb 'checked'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Words like this at the start often mark the subject itself as the surprising news — listen for an early peak.",
+            "explanation": "NEIGHBOR is the genuinely newsworthy part of this sentence, so it takes the stress rather than the final word PARTY.",
+            "emphasisRule": "When an introduction marks the subject as surprising or noteworthy, the pitch accent shifts to the subject instead of the final word."
         },
         {
             "id": "pitchPatternMatch_230",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Against expectations, the small clinic treated the outbreak efficiently.",
-            "textToSpeak": "Against expectations, the small clinic treated the outbreak efficiently.",
+            "word": "Once school ended, the kids joined soccer practice.",
+            "textToSpeak": "Once school ended, the kids joined soccer practice.",
             "options": [
-                "Emphasis on OUTBREAK (Object focus)",
-                "Emphasis on EFFICIENTLY (Manner focus)"
+                "Emphasis on KIDS (Subject focus)",
+                "Emphasis on PRACTICE (Object focus)"
             ],
-            "correctAnswer": "Emphasis on EFFICIENTLY (Manner focus)",
+            "correctAnswer": "Emphasis on PRACTICE (Object focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                1,
-                3
+                3,
+                1
             ],
-            "hint": "'Against expectations' points to how well it was managed, not the outbreak itself. Listen for the pitch to peak on 'efficiently'.",
-            "explanation": "'Against expectations' signals that the efficient manner of treating it is the surprising detail, so the nuclear stress lands on 'efficiently'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The lead-in only tells you when or where — the real news is still the action described at the end.",
+            "explanation": "This introduction gives background information only, so the nuclear stress still falls on PRACTICE, the final content word.",
+            "emphasisRule": "An introduction that only sets the time or scene doesn't shift stress; the final content word still carries the pitch accent."
         },
         {
             "id": "pitchPatternMatch_231",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Instead of complaining, the patient followed the advice.",
-            "textToSpeak": "Instead of complaining, the patient followed the advice.",
+            "word": "Every weekend, my parents visit the farmers market.",
+            "textToSpeak": "Every weekend, my parents visit the farmers market.",
             "options": [
-                "Emphasis on FOLLOWED (Verb/Action focus)",
-                "Emphasis on ADVICE (Object focus)"
+                "Emphasis on MARKET (Object focus)",
+                "Emphasis on PARENTS (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on FOLLOWED (Verb/Action focus)",
+            "correctAnswer": "Emphasis on MARKET (Object focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
-                3,
                 1,
                 1,
-                1
+                1,
+                3
             ],
-            "hint": "'Instead of complaining' contrasts two possible reactions - listen for the pitch to peak on the verb 'followed'.",
-            "explanation": "The contrast with 'complaining' highlights the cooperative action taken, so the nuclear stress falls on the verb 'followed'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Don't be fooled by the introduction — it's just context, so the stress still lands on the final content word.",
+            "explanation": "Even with a lead-in, PARENTS isn't presented as unexpected, so the stress stays on MARKET as usual.",
+            "emphasisRule": "Not every lead-in creates contrast — if the subject isn't marked as surprising, default final-word stress still applies."
         },
         {
             "id": "pitchPatternMatch_232",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Surprisingly, the rookie negotiated the contract skillfully.",
-            "textToSpeak": "Surprisingly, the rookie negotiated the contract skillfully.",
+            "word": "Oddly enough, the discount store had the freshest produce.",
+            "textToSpeak": "Oddly enough, the discount store had the freshest produce.",
             "options": [
-                "Emphasis on SKILLFULLY (Manner focus)",
-                "Emphasis on CONTRACT (Object focus)"
+                "Emphasis on PRODUCE (Object focus)",
+                "Emphasis on STORE (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on SKILLFULLY (Manner focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on STORE (Subject focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
+                3,
                 1,
                 1,
                 1,
-                1,
-                3
+                1
             ],
-            "hint": "The surprise here is the skill shown, not the contract itself. Listen for the pitch to peak on 'skillfully'.",
-            "explanation": "'Surprisingly' points to the unexpected skill in negotiating, so the nuclear stress lands on 'skillfully'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This isn't just scene-setting — the introduction makes the subject noteworthy, so the stress shifts there.",
+            "explanation": "The context makes STORE unexpected, which is why the pitch accent lands there instead of on PRODUCE.",
+            "emphasisRule": "Context that highlights who did something pulls the nuclear stress forward, onto the subject."
         },
         {
             "id": "pitchPatternMatch_233",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Rather than rushing, the driver checked the mirror.",
-            "textToSpeak": "Rather than rushing, the driver checked the mirror.",
+            "word": "During the flight, the passengers watched a movie.",
+            "textToSpeak": "During the flight, the passengers watched a movie.",
             "options": [
-                "Emphasis on CHECKED (Verb/Action focus)",
-                "Emphasis on MIRROR (Object focus)"
+                "Emphasis on MOVIE (Object focus)",
+                "Emphasis on PASSENGERS (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on CHECKED (Verb/Action focus)",
+            "correctAnswer": "Emphasis on MOVIE (Object focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'Rather than rushing' contrasts two possible behaviors - listen for the pitch to peak on the verb 'checked'.",
-            "explanation": "The contrast with 'rushing' highlights the careful action taken, so the nuclear stress falls on the verb 'checked'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This opening phrase doesn't single out the subject, so the sentence behaves like an ordinary neutral statement.",
+            "explanation": "The opening phrase only sets the scene — it doesn't make PASSENGERS special, so the default stress still lands on MOVIE.",
+            "emphasisRule": "An introduction that only sets the time or scene doesn't shift stress; the final content word still carries the pitch accent."
         },
         {
             "id": "pitchPatternMatch_234",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Unusually, the quiet kid answered the question loudly.",
-            "textToSpeak": "Unusually, the quiet kid answered the question loudly.",
+            "word": "Before dinner, my brother set the table.",
+            "textToSpeak": "Before dinner, my brother set the table.",
             "options": [
-                "Emphasis on QUESTION (Object focus)",
-                "Emphasis on LOUDLY (Manner focus)"
+                "Emphasis on BROTHER (Subject focus)",
+                "Emphasis on TABLE (Object focus)"
             ],
-            "correctAnswer": "Emphasis on LOUDLY (Manner focus)",
+            "correctAnswer": "Emphasis on TABLE (Object focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -575,46 +575,46 @@
                 1,
                 3
             ],
-            "hint": "'Unusually' points to the unexpected volume, not the question itself. Listen for the pitch to peak on 'loudly'.",
-            "explanation": "'Unusually' signals that the loud manner of answering is the surprising detail, so the nuclear stress lands on 'loudly'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This opening phrase just sets the time or scene — it doesn't make the subject special, so the peak still falls late.",
+            "explanation": "Since nothing marks BROTHER as surprising, the sentence still follows the neutral pattern, stressing TABLE at the end.",
+            "emphasisRule": "Not every lead-in creates contrast — if the subject isn't marked as surprising, default final-word stress still applies."
         },
         {
             "id": "pitchPatternMatch_235",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Instead of skipping breakfast, the runner ate the meal.",
-            "textToSpeak": "Instead of skipping breakfast, the runner ate the meal.",
+            "word": "Right after lunch, the manager called a meeting.",
+            "textToSpeak": "Right after lunch, the manager called a meeting.",
             "options": [
-                "Emphasis on ATE (Verb/Action focus)",
-                "Emphasis on MEAL (Object focus)"
+                "Emphasis on MEETING (Object focus)",
+                "Emphasis on MANAGER (Subject focus)"
             ],
-            "correctAnswer": "Emphasis on ATE (Verb/Action focus)",
+            "correctAnswer": "Emphasis on MEETING (Object focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
+                1,
+                1,
                 3,
-                1,
-                1,
                 1
             ],
-            "hint": "'Instead of skipping breakfast' contrasts two possible choices - listen for the pitch to peak on the verb 'ate'.",
-            "explanation": "The contrast with 'skipping breakfast' highlights the healthy action taken, so the nuclear stress falls on the verb 'ate'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Even with an introduction, nothing marks the subject as surprising here, so the default final-word stress still applies.",
+            "explanation": "This introduction gives background information only, so the nuclear stress still falls on MEETING, the final content word.",
+            "emphasisRule": "An introduction that only sets the time or scene doesn't shift stress; the final content word still carries the pitch accent."
         },
         {
             "id": "pitchPatternMatch_236",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Remarkably, the exhausted hiker finished the trail energetically.",
-            "textToSpeak": "Remarkably, the exhausted hiker finished the trail energetically.",
+            "word": "Later that day, the nurse updated the chart.",
+            "textToSpeak": "Later that day, the nurse updated the chart.",
             "options": [
-                "Emphasis on TRAIL (Object focus)",
-                "Emphasis on ENERGETICALLY (Manner focus)"
+                "Emphasis on NURSE (Subject focus)",
+                "Emphasis on CHART (Object focus)"
             ],
-            "correctAnswer": "Emphasis on ENERGETICALLY (Manner focus)",
+            "correctAnswer": "Emphasis on CHART (Object focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -623,22 +623,22 @@
                 1,
                 3
             ],
-            "hint": "'Remarkably' points to the unexpected energy despite exhaustion, not the trail itself. Listen for the pitch to peak on 'energetically'.",
-            "explanation": "'Remarkably' signals that the energetic manner of finishing is the surprising detail, so the nuclear stress lands on 'energetically'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The lead-in only tells you when or where — the real news is still the action described at the end.",
+            "explanation": "Even with a lead-in, NURSE isn't presented as unexpected, so the stress stays on CHART as usual.",
+            "emphasisRule": "Not every lead-in creates contrast — if the subject isn't marked as surprising, default final-word stress still applies."
         },
         {
             "id": "pitchPatternMatch_237",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Rather than delaying, the council approved the plan.",
-            "textToSpeak": "Rather than delaying, the council approved the plan.",
+            "word": "To everyone's surprise, the newest nurse caught the error.",
+            "textToSpeak": "To everyone's surprise, the newest nurse caught the error.",
             "options": [
-                "Emphasis on APPROVED (Verb/Action focus)",
-                "Emphasis on PLAN (Object focus)"
+                "Emphasis on NURSE (Subject focus)",
+                "Emphasis on ERROR (Object focus)"
             ],
-            "correctAnswer": "Emphasis on APPROVED (Verb/Action focus)",
+            "correctAnswer": "Emphasis on NURSE (Subject focus)",
             "correctAnswerIndex": 0,
             "pitchPatterns": [
                 1,
@@ -647,70 +647,70 @@
                 1,
                 1
             ],
-            "hint": "'Rather than delaying' contrasts two possible outcomes - listen for the pitch to peak on the verb 'approved'.",
-            "explanation": "The contrast with 'delaying' highlights the prompt action taken, so the nuclear stress falls on the verb 'approved'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "The lead-in flags the subject as unexpected, which pulls the pitch peak forward instead of leaving it at the end.",
+            "explanation": "The lead-in marks NURSE as the surprising or noteworthy element, so the nuclear stress shifts there instead of staying on ERROR.",
+            "emphasisRule": "When an introduction marks the subject as surprising or noteworthy, the pitch accent shifts to the subject instead of the final word."
         },
         {
             "id": "pitchPatternMatch_238",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Against the odds, the local team defended the title successfully.",
-            "textToSpeak": "Against the odds, the local team defended the title successfully.",
+            "word": "This semester, the school updated the curriculum.",
+            "textToSpeak": "This semester, the school updated the curriculum.",
             "options": [
-                "Emphasis on SUCCESSFULLY (Manner focus)",
-                "Emphasis on TITLE (Object focus)"
+                "Emphasis on SCHOOL (Subject focus)",
+                "Emphasis on CURRICULUM (Object focus)"
             ],
-            "correctAnswer": "Emphasis on SUCCESSFULLY (Manner focus)",
-            "correctAnswerIndex": 0,
+            "correctAnswer": "Emphasis on CURRICULUM (Object focus)",
+            "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
                 1,
                 1,
-                1,
-                3
+                3,
+                1
             ],
-            "hint": "'Against the odds' points to how successful the defense was, not the title itself. Listen for the pitch to peak on 'successfully'.",
-            "explanation": "'Against the odds' signals that the successful manner of defending it is the surprising detail, so the nuclear stress lands on 'successfully'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Don't be fooled by the introduction — it's just context, so the stress still lands on the final content word.",
+            "explanation": "The opening phrase only sets the scene — it doesn't make SCHOOL special, so the default stress still lands on CURRICULUM.",
+            "emphasisRule": "An introduction that only sets the time or scene doesn't shift stress; the final content word still carries the pitch accent."
         },
         {
             "id": "pitchPatternMatch_239",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Instead of arguing further, the siblings resolved the conflict.",
-            "textToSpeak": "Instead of arguing further, the siblings resolved the conflict.",
+            "word": "Remarkably, the rookie doctor diagnosed the rare illness.",
+            "textToSpeak": "Remarkably, the rookie doctor diagnosed the rare illness.",
             "options": [
-                "Emphasis on CONFLICT (Object focus)",
-                "Emphasis on RESOLVED (Verb/Action focus)"
+                "Emphasis on DOCTOR (Subject focus)",
+                "Emphasis on ILLNESS (Object focus)"
             ],
-            "correctAnswer": "Emphasis on RESOLVED (Verb/Action focus)",
-            "correctAnswerIndex": 1,
+            "correctAnswer": "Emphasis on DOCTOR (Subject focus)",
+            "correctAnswerIndex": 0,
             "pitchPatterns": [
-                1,
                 3,
+                1,
                 1,
                 1,
                 1
             ],
-            "hint": "'Instead of arguing further' contrasts two possible outcomes - listen for the pitch to peak on the verb 'resolved'.",
-            "explanation": "The contrast with 'arguing further' highlights the mature action taken, so the nuclear stress falls on the verb 'resolved'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "Notice the sentence is really about who did it, not just what happened — listen for the peak near the start.",
+            "explanation": "Because the introduction flags DOCTOR specifically, the pitch peak moves earlier in the sentence to highlight it.",
+            "emphasisRule": "Context that highlights who did something pulls the nuclear stress forward, onto the subject."
         },
         {
             "id": "pitchPatternMatch_240",
             "instruction": "Identify the emphasis",
             "subtype": "pitchPatternMatch",
             "interactionType": "choice",
-            "word": "Surprisingly, the modest designer presented the collection boldly.",
-            "textToSpeak": "Surprisingly, the modest designer presented the collection boldly.",
+            "word": "Right before bed, my son brushed his teeth.",
+            "textToSpeak": "Right before bed, my son brushed his teeth.",
             "options": [
-                "Emphasis on COLLECTION (Object focus)",
-                "Emphasis on BOLDLY (Manner focus)"
+                "Emphasis on SON (Subject focus)",
+                "Emphasis on TEETH (Object focus)"
             ],
-            "correctAnswer": "Emphasis on BOLDLY (Manner focus)",
+            "correctAnswer": "Emphasis on TEETH (Object focus)",
             "correctAnswerIndex": 1,
             "pitchPatterns": [
                 1,
@@ -719,9 +719,9 @@
                 1,
                 3
             ],
-            "hint": "The surprise here is the boldness shown, not the collection itself. Listen for the pitch to peak on 'boldly'.",
-            "explanation": "'Surprisingly' points to the unexpectedly bold manner of presenting, so the nuclear stress lands on 'boldly'.",
-            "emphasisRule": "Sentence stress dictates where the nuclear pitch accent falls."
+            "hint": "This opening phrase doesn't single out the subject, so the sentence behaves like an ordinary neutral statement.",
+            "explanation": "Since nothing marks SON as surprising, the sentence still follows the neutral pattern, stressing TEETH at the end.",
+            "emphasisRule": "Not every lead-in creates contrast — if the subject isn't marked as surprising, default final-word stress still applies."
         }
     ]
 }

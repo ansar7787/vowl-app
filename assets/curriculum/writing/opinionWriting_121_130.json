@@ -5,159 +5,159 @@
     "quests": [
         {
             "id": "WRT_OPINIONWRITING_L121_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A wealth tax should be levied on billionaires and the ultra-wealthy.",
             "options": [
-                "Extreme wealth concentration undermines democratic equality and a wealth tax directly addresses it.",
-                "Tax revenue from the ultra-wealthy could fund public services without raising taxes on working people.",
                 "Capital flight is a serious risk as wealthy individuals relocate to lower-tax jurisdictions.",
-                "Valuing illiquid assets for taxation purposes is technically complex and legally contested."
+                "Valuing illiquid assets for taxation purposes is technically complex and legally contested.",
+                "Extreme wealth concentration undermines democratic equality and a wealth tax directly addresses it.",
+                "Tax revenue from the ultra-wealthy could fund public services without raising taxes on working people."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the democratic and fiscal case for a wealth tax (Pros) and the capital flight and valuation concerns (Cons).",
             "explanation": "Wealth taxes address extreme inequality and fund public services without burdening ordinary workers (Pros), but capital flight risk and the technical difficulty of valuing illiquid wealth create major implementation challenges (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L121_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Extreme wealth concentration poses a fundamental threat to democracy.",
             "options": [
+                "Wealth legitimately accumulated through innovation and risk-taking reflects and rewards societal contribution.",
                 "Billionaires wield disproportionate influence over political processes through lobbying and media ownership.",
                 "Concentrating economic power in very few hands undermines the principle of one person, one vote.",
-                "Wealth legitimately accumulated through innovation and risk-taking reflects and rewards societal contribution.",
                 "Taxing success discourages the entrepreneurial investment that drives economic growth and innovation."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Consider whether extreme wealth concentration threatens democracy (Pros) and the entrepreneurship and merit concerns (Cons).",
             "explanation": "Billionaire political influence through lobbying and media undermines democratic equality (Pros), but wealth legitimately earned through innovation reflects societal contribution, and taxing entrepreneurial success risks discouraging investment (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L121_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "International coordination is essential for a wealth tax to be effective.",
             "options": [
                 "Without global minimum wealth tax standards, capital moves easily to avoid national-level taxation.",
-                "Coordinated wealth taxation through bodies like the G20 can prevent the race to the bottom on rates.",
                 "International tax cooperation is politically very difficult and progresses extremely slowly.",
-                "Powerful lobbying by global financial interests consistently undermines wealth tax coordination efforts."
+                "Powerful lobbying by global financial interests consistently undermines wealth tax coordination efforts.",
+                "Coordinated wealth taxation through bodies like the G20 can prevent the race to the bottom on rates."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about why international coordination is necessary for wealth taxation (Pros) and the political and lobbying obstacles (Cons).",
             "explanation": "Global minimum standards prevent wealth from escaping to low-tax jurisdictions (Pros), but international tax cooperation is painfully slow, and financial industry lobbying consistently undermines coordination efforts (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L122_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The national minimum wage should be raised significantly above its current level.",
             "options": [
-                "A higher minimum wage directly lifts the incomes of the lowest-paid and most economically vulnerable workers.",
-                "Evidence from countries and regions that have raised minimum wages shows limited negative employment effects.",
                 "Higher minimum wages increase costs for small businesses operating on thin profit margins.",
-                "Rapid minimum wage increases above productivity levels can trigger inflationary wage-price spirals."
+                "A higher minimum wage directly lifts the incomes of the lowest-paid and most economically vulnerable workers.",
+                "Rapid minimum wage increases above productivity levels can trigger inflationary wage-price spirals.",
+                "Evidence from countries and regions that have raised minimum wages shows limited negative employment effects."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the income and evidence case for a higher minimum wage (Pros) and the business cost and inflation concerns (Cons).",
             "explanation": "Higher minimum wages lift low-paid workers and evidence shows limited employment impact (Pros), but costs fall on small businesses and rapid increases above productivity growth risk triggering inflationary wage-price cycles (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L122_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A higher minimum wage reduces reliance on in-work benefits and public spending.",
             "options": [
                 "Better-paid workers claim fewer means-tested benefits, reducing the welfare bill paid by taxpayers.",
-                "Employers paying living wages shift the cost of poverty wages from the public to the private sector.",
                 "Some minimum wage increases are partly absorbed through reduced employee hours rather than cuts.",
+                "Employers paying living wages shift the cost of poverty wages from the public to the private sector.",
                 "Employers who cannot afford higher wages may substitute labour with automation, displacing workers."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider the welfare cost reduction argument for a higher minimum wage (Pros) and the hours and automation concerns (Cons).",
             "explanation": "Higher minimum wages reduce in-work benefit spending and shift poverty wage costs to employers (Pros), but employers may reduce hours rather than wages, and businesses facing higher costs may accelerate automation, displacing workers (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L122_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A living wage rather than a minimum wage should be the legal standard for all workers.",
             "options": [
-                "A real living wage, calculated from actual living costs, ensures all workers can meet basic needs.",
-                "Replacing the minimum wage with a living wage standard directly addresses in-work poverty.",
                 "Living wage calculations vary by location, creating legal complexity across different regional contexts.",
-                "Living wages set above market-clearing levels in some sectors may reduce employment in those areas."
+                "Living wages set above market-clearing levels in some sectors may reduce employment in those areas.",
+                "A real living wage, calculated from actual living costs, ensures all workers can meet basic needs.",
+                "Replacing the minimum wage with a living wage standard directly addresses in-work poverty."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the living wage as a legal standard (Pros) and the regional and employment concerns (Cons).",
             "explanation": "A living wage calculated from real costs ensures all workers meet basic needs and directly addresses in-work poverty (Pros), but regional cost variation creates complex legal implementation, and living wages set above market rates may reduce employment in some sectors (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L123_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Companies should be legally required to publish their internal pay ratios.",
             "options": [
                 "Pay ratio transparency allows employees, shareholders, and the public to scrutinise internal inequality.",
-                "Publishing ratios creates reputational pressure on companies paying executives excessively relative to workers.",
                 "Pay ratio data can be misleading without understanding the full context of company structure and strategy.",
-                "Mandatory disclosure may cause excessive focus on ratio optics rather than genuinely addressing inequality."
+                "Mandatory disclosure may cause excessive focus on ratio optics rather than genuinely addressing inequality.",
+                "Publishing ratios creates reputational pressure on companies paying executives excessively relative to workers."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the transparency and accountability case for pay ratio disclosure (Pros) and the data and gaming concerns (Cons).",
             "explanation": "Pay ratio disclosure enables scrutiny of internal inequality and creates reputational pressure (Pros), but ratio data without context is misleading, and companies may game ratios without genuinely addressing pay inequality (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L123_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Executive pay has grown at an unjustifiable rate relative to average worker compensation.",
             "options": [
+                "Executive pay reflects a competitive global market for rare leadership talent rather than governance failure.",
                 "The dramatic divergence between executive and worker pay reflects market failure and poor governance.",
                 "Linking executive pay more closely to average worker pay through mandated ratios would restore proportionality.",
-                "Executive pay reflects a competitive global market for rare leadership talent rather than governance failure.",
                 "Setting ratio targets may drive companies to outsource lower-paid work, distorting the ratio without reducing inequality."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Consider the governance failure case for addressing executive pay growth (Pros) and the talent market and outsourcing concerns (Cons).",
             "explanation": "Executive pay divergence from worker pay reflects governance failure and pay disclosure would restore proportionality (Pros), but executive pay markets are globally competitive, and ratio targets may incentivise outsourcing lower-paid roles rather than actually reducing inequality (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L123_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Shareholder voting on executive pay packages should be legally binding rather than advisory.",
@@ -176,178 +176,178 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L124_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Gig economy workers should receive the same legal rights as permanent employees.",
             "options": [
-                "Gig workers perform the same tasks as employees but are denied security, benefits, and legal protections.",
-                "Extending employee rights to gig workers reduces the exploitation of vulnerable low-income individuals.",
                 "Full employee rights would undermine the flexibility that many gig workers genuinely value and depend on.",
-                "Platform companies could not maintain their business models if required to treat all workers as employees."
+                "Platform companies could not maintain their business models if required to treat all workers as employees.",
+                "Gig workers perform the same tasks as employees but are denied security, benefits, and legal protections.",
+                "Extending employee rights to gig workers reduces the exploitation of vulnerable low-income individuals."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the protection case for gig worker employee rights (Pros) and the flexibility and business model concerns (Cons).",
             "explanation": "Gig workers deserve the same protections as employees for equivalent work (Pros), but employee rights undermine valued flexibility and would fundamentally alter business models that workers themselves often prefer (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L124_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Flexible gig work provides valuable opportunities for people who cannot work conventional hours.",
             "options": [
                 "Gig platforms enable carers, students, and people with variable health to earn flexibly around commitments.",
-                "Flexible work supplements income for people who need secondary earnings without a rigid employment contract.",
                 "Flexibility in gig work primarily benefits platforms that use it to avoid employment costs and obligations.",
+                "Flexible work supplements income for people who need secondary earnings without a rigid employment contract.",
                 "Many gig workers would prefer stable employment but accept gig work because no alternatives exist."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider the flexibility benefits of gig work for workers (Pros) and who primarily benefits from the flexibility model (Cons).",
             "explanation": "Gig platforms enable flexible working for carers, students, and those with variable health (Pros), but flexibility primarily benefits platforms avoiding employment costs, and many gig workers would prefer stable employment if it were available (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L124_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A new intermediate worker category between employment and self-employment would better serve gig workers.",
             "options": [
-                "A 'worker' status recognising gig workers' reality could provide portable benefits without full employment rigidity.",
-                "Intermediate worker status could be designed to maintain operational flexibility while guaranteeing basic protections.",
                 "Intermediate categories create complex legal uncertainty and can be gamed by companies to avoid full rights.",
-                "Clear binary classifications of employee versus self-employed are more enforceable and legally certain."
+                "A 'worker' status recognising gig workers' reality could provide portable benefits without full employment rigidity.",
+                "Clear binary classifications of employee versus self-employed are more enforceable and legally certain.",
+                "Intermediate worker status could be designed to maintain operational flexibility while guaranteeing basic protections."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about an intermediate worker category as a gig economy solution (Pros) and the gaming and clarity concerns (Cons).",
             "explanation": "An intermediate worker status could provide portable benefits and basic protections with maintained flexibility (Pros), but intermediate categories are vulnerable to gaming by platforms and create legal uncertainty that may be worse than clear binary classification (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L125_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Universal basic income is the most effective policy for reducing poverty.",
             "options": [
                 "A guaranteed income floor eliminates the gaps and cliffs in current means-tested benefit systems.",
-                "UBI's unconditional nature removes the stigma and conditionality that reduce take-up of current benefits.",
                 "Funding a meaningful UBI would require either very high taxes or significant cuts to existing welfare.",
-                "Unconditional income may reduce work incentives, particularly in low-wage and essential service sectors."
+                "Unconditional income may reduce work incentives, particularly in low-wage and essential service sectors.",
+                "UBI's unconditional nature removes the stigma and conditionality that reduce take-up of current benefits."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about UBI as a poverty reduction mechanism (Pros) and the funding and incentive concerns (Cons).",
             "explanation": "UBI eliminates benefit system gaps and stigma, providing a guaranteed floor for all (Pros), but funding a meaningful UBI requires major tax increases or existing welfare cuts, and may reduce work incentives in essential low-wage sectors (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L125_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A targeted benefit system delivers better poverty reduction than universal income.",
             "options": [
                 "Means-tested benefits direct the most support to those in greatest need rather than distributing universally.",
-                "Well-designed targeted systems can provide more generous support to the poorest than a flat UBI allows.",
                 "Means-tested benefits create poverty traps that penalise work, stigmatise recipients, and have low take-up.",
+                "Well-designed targeted systems can provide more generous support to the poorest than a flat UBI allows.",
                 "Complex means testing involves high administrative costs that a simple UBI system would eliminate."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider targeted benefits versus UBI as poverty reduction strategies (Pros for targeted) and the poverty trap and admin concerns (Cons).",
             "explanation": "Targeted benefits concentrate the most support on the poorest rather than spreading it universally (Pros), but means testing creates poverty traps, stigma, low take-up, and high administration costs that simple UBI would eliminate (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L125_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The strongest poverty reduction comes from combining UBI with targeted additional support.",
             "options": [
                 "A modest UBI providing an income floor combined with additional support for disability and care needs addresses both coverage and adequacy.",
-                "Combining universal and targeted elements retains the simplicity and coverage advantages of both.",
                 "Combined systems are complex to design and administer and may inherit the weaknesses of both approaches.",
+                "Combining universal and targeted elements retains the simplicity and coverage advantages of both.",
                 "Effective poverty reduction requires strong labour markets, housing, and public services more than income transfers."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about combining UBI with targeted support (Pros) and the complexity and structural concerns (Cons).",
             "explanation": "Combining a UBI floor with targeted disability and care support addresses both coverage gaps and adequacy (Pros), but combined systems inherit administrative complexity, and effective poverty reduction ultimately depends on labour markets, housing, and services more than income transfers alone (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L126_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Adequate housing should be recognised as a fundamental human right in national law.",
             "options": [
+                "A legal right to housing without adequate supply cannot be enforced and creates false expectations.",
                 "A legal right to housing creates enforceable obligations on the state to ensure no one sleeps rough.",
                 "Housing rights legislation shifts political and legal accountability for homelessness firmly to government.",
-                "A legal right to housing without adequate supply cannot be enforced and creates false expectations.",
                 "Constitutional housing rights have not consistently produced better housing outcomes internationally."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the accountability and enforcement case for a housing right (Pros) and the supply and international evidence concerns (Cons).",
             "explanation": "A legal housing right creates state accountability and enforceable obligations to prevent homelessness (Pros), but rights without adequate supply cannot be delivered, and international evidence shows constitutional housing rights do not consistently improve outcomes (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L126_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A housing shortage, not a rights deficit, is the primary cause of the housing crisis.",
             "options": [
+                "Legal rights frameworks create political pressure that can accelerate supply-side policy changes.",
                 "Insufficient housing supply drives unaffordability and homelessness more directly than any legal framework.",
                 "Building significantly more homes requires planning reform and public investment that rights legislation cannot deliver.",
-                "Legal rights frameworks create political pressure that can accelerate supply-side policy changes.",
                 "Social housing investment in the post-war era demonstrates that political will can dramatically expand supply."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Consider whether supply is more important than rights in addressing the housing crisis (Pros for supply) and the rights-driven pressure argument (Cons).",
             "explanation": "Insufficient housing supply is the primary driver of unaffordability and homelessness, and supply requires planning and investment reform, not rights frameworks (Pros), but rights create political pressure for supply-side action, and historical social housing shows political will can transform supply (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L126_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Social housing investment is essential to make housing a genuine right in practice.",
             "options": [
-                "Publicly funded social housing provides affordable homes independent of private market conditions.",
-                "Expanding social housing supply directly reduces homelessness and housing poverty for lower-income citizens.",
                 "Social housing concentrations can create socially segregated communities that marginalise residents.",
-                "Social housing programmes require sustained long-term government commitment that often fails to materialise."
+                "Social housing programmes require sustained long-term government commitment that often fails to materialise.",
+                "Publicly funded social housing provides affordable homes independent of private market conditions.",
+                "Expanding social housing supply directly reduces homelessness and housing poverty for lower-income citizens."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about social housing investment as the practical delivery of a housing right (Pros) and the social segregation and commitment concerns (Cons).",
             "explanation": "Social housing provides affordable supply independent of market conditions, directly reducing homelessness (Pros), but concentrated social housing can create stigmatised segregated communities, and these programmes require sustained political commitment that frequently lapses (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L127_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Inherited wealth should be taxed much more heavily than it currently is.",
@@ -366,7 +366,7 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L127_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Inheritance tax breaks perpetuate class privilege across generations.",
@@ -385,7 +385,7 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L127_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A lifetime gifts allowance is fairer than a traditional death-based inheritance tax.",
@@ -404,45 +404,45 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L128_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Small and medium enterprises deserve significantly greater government financial support.",
             "options": [
                 "SMEs generate the majority of private sector employment and innovation in most economies.",
-                "Targeted support for small businesses counterbalances the structural advantages that large corporations enjoy.",
                 "Government support for specific business types risks distorting markets and picking commercial winners.",
-                "Large corporations also contribute substantially to employment, tax, and economic infrastructure."
+                "Large corporations also contribute substantially to employment, tax, and economic infrastructure.",
+                "Targeted support for small businesses counterbalances the structural advantages that large corporations enjoy."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the SME support case (Pros) and the market distortion and large business contribution concerns (Cons).",
             "explanation": "SMEs drive employment and innovation and deserve support to offset the structural advantages of large corporations (Pros), but targeted business support distorts markets, and large corporations also make substantial economic contributions (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L128_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Small businesses are disproportionately burdened by regulation and administrative requirements.",
             "options": [
                 "Regulatory compliance costs consume a larger share of small business resources than large corporate ones.",
-                "Reducing administrative burden on SMEs frees resources for growth, innovation, and employment creation.",
                 "Proportionate regulation protects workers, consumers, and competitors from small business exploitation too.",
+                "Reducing administrative burden on SMEs frees resources for growth, innovation, and employment creation.",
                 "Deregulation for SMEs creates unlevel playing fields if large competitors remain subject to full regulation."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider the regulatory burden argument for SME support (Pros) and the proportionality and unlevel playing field concerns (Cons).",
             "explanation": "Disproportionate regulatory compliance costs burden SMEs and reducing them frees resources for growth (Pros), but proportionate regulation protects workers and consumers, and SME-only deregulation creates unfair advantages over compliant larger competitors (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L128_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Local independent businesses strengthen communities in ways that large chains cannot replicate.",
@@ -461,26 +461,26 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L129_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Economic globalisation has ultimately benefited developing nations.",
             "options": [
-                "Export-led growth through global trade has lifted hundreds of millions out of extreme poverty in Asia and beyond.",
-                "Global supply chain integration gives developing country workers access to foreign investment and technology.",
                 "Globalisation has created dangerous economic dependency that leaves developing nations vulnerable to external shocks.",
-                "The majority of the gains from globalisation in developing countries have accrued to economic elites, not workers."
+                "Export-led growth through global trade has lifted hundreds of millions out of extreme poverty in Asia and beyond.",
+                "The majority of the gains from globalisation in developing countries have accrued to economic elites, not workers.",
+                "Global supply chain integration gives developing country workers access to foreign investment and technology."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the poverty reduction case for globalisation's benefits to developing nations (Pros) and the dependency and distribution concerns (Cons).",
             "explanation": "Export-led growth has driven enormous poverty reduction and trade brings foreign investment and technology (Pros), but globalisation creates dependency on external markets and most gains have accrued to economic elites rather than poor workers (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L129_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Globalisation has undermined workers' rights and environmental standards in developing countries.",
@@ -499,26 +499,26 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L129_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Developing nations need the freedom to protect domestic industries before full trade liberalisation.",
             "options": [
                 "Historical evidence shows that successful developers like South Korea initially protected domestic industries.",
-                "Industrial policy allowing domestic firms to develop before foreign competition enables sustainable growth.",
                 "Trade protection creates domestic inefficiency and delays the productivity benefits of international competition.",
+                "Industrial policy allowing domestic firms to develop before foreign competition enables sustainable growth.",
                 "Free trade agreements forced on developing countries by global institutions can prevent beneficial industrial policy."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about the infant industry protection argument for developing nations (Pros) and the efficiency and coercion concerns (Cons).",
             "explanation": "Protected domestic industries in South Korea and Taiwan developed into globally competitive sectors, showing the historical value of temporary protection (Pros), but protection creates inefficiency, and trade agreements imposed on developing countries by institutions can prevent beneficial industrial policy (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L130_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Free trade agreements produce net economic benefits for working people overall.",
@@ -537,7 +537,7 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L130_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Free trade must be accompanied by strong adjustment support for displaced workers.",
@@ -556,19 +556,19 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L130_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Managed trade with strategic industrial policy better serves national economic interests than pure free trade.",
             "options": [
-                "Strategic protection of key industries creates long-term economic independence and security.",
-                "Countries like China demonstrate that managed trade combined with targeted industrial policy can drive rapid development.",
                 "Industrial policy risks picking commercial losers and creating inefficient protected sectors that burden consumers.",
-                "Managed trade provokes reciprocal tariffs and retaliatory measures that reduce overall global trade volumes."
+                "Strategic protection of key industries creates long-term economic independence and security.",
+                "Managed trade provokes reciprocal tariffs and retaliatory measures that reduce overall global trade volumes.",
+                "Countries like China demonstrate that managed trade combined with targeted industrial policy can drive rapid development."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about managed trade and industrial policy versus free trade as national economic strategy (Pros) and the inefficiency and retaliation risks (Cons).",
             "explanation": "Strategic protection creates long-term economic independence and China's managed trade model demonstrates rapid development potential (Pros), but industrial policy risks picking losers, and managed trade provokes retaliatory tariffs that reduce overall global trade volumes (Cons)."

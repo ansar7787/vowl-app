@@ -5,311 +5,311 @@
     "quests": [
         {
             "id": "WRT_OPINIONWRITING_L191_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The enormous financial cost of space exploration is justified by the benefits it delivers.",
             "options": [
-                "Space exploration drives technological innovation that produces transformative civilian applications.",
-                "Humanity's long-term survival requires the capability to become a multi-planetary species.",
                 "Space exploration resources could address urgent existential problems including poverty and climate change on Earth.",
-                "International space competition accelerates geopolitical tension rather than producing cooperative benefit."
+                "International space competition accelerates geopolitical tension rather than producing cooperative benefit.",
+                "Space exploration drives technological innovation that produces transformative civilian applications.",
+                "Humanity's long-term survival requires the capability to become a multi-planetary species."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the innovation and survival case for space exploration investment (Pros) and the opportunity cost and geopolitical concerns (Cons).",
             "explanation": "Space drives transformative technological innovation and developing multi-planetary capacity is essential for long-term survival (Pros), but enormous resources could address urgent Earth problems, and international space competition accelerates geopolitical tension rather than cooperation (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L191_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Private space companies are more efficient than national agencies at driving space exploration forward.",
             "options": [
-                "SpaceX and other commercial operators have dramatically reduced launch costs and accelerated development timelines.",
-                "Commercial competition drives innovation in ways that government monopolies structurally cannot replicate.",
                 "Private space exploration extracts public goods from shared heritage for private profit without democratic accountability.",
-                "National security and public science objectives require government-directed rather than commercially driven exploration."
+                "SpaceX and other commercial operators have dramatically reduced launch costs and accelerated development timelines.",
+                "National security and public science objectives require government-directed rather than commercially driven exploration.",
+                "Commercial competition drives innovation in ways that government monopolies structurally cannot replicate."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider private sector efficiency in space exploration (Pros) and the public goods, accountability, and mission concerns (Cons).",
             "explanation": "Commercial operators have dramatically cut costs and drive innovation that government monopolies cannot match (Pros), but private extraction of space public goods lacks democratic accountability, and national security and public science require government-directed missions (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L191_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "International cooperation in space exploration produces greater scientific and strategic benefits than competition.",
             "options": [
                 "The International Space Station demonstrates that cooperative space programmes can transcend geopolitical rivalry.",
-                "Pooling resources through international cooperation allows more ambitious missions than any nation can fund alone.",
                 "Space cooperation provides an asymmetric benefit to nations that lack independent launch capacity.",
+                "Pooling resources through international cooperation allows more ambitious missions than any nation can fund alone.",
                 "Technological advantage in space is a genuine strategic asset that nations are unwilling to share with competitors."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about international space cooperation versus competition (Pros for cooperation) and the asymmetric benefit and strategic asset concerns (Cons).",
             "explanation": "The ISS demonstrates cooperation transcending geopolitics, and pooled resources enable more ambitious missions (Pros), but cooperation benefits less capable nations asymmetrically, and space technological advantage is a genuine strategic asset nations are unwilling to share with geopolitical rivals (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L192_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The transhumanist movement poses greater risks to humanity than the benefits it promises.",
             "options": [
-                "Radical human enhancement would create profound inequalities between those who can and cannot access modification.",
-                "Transforming human nature undermines the shared biological basis of mutual understanding and moral community.",
                 "Human suffering and limitation have driven art, meaning, and moral development throughout history.",
-                "Technological enhancement of limited capabilities is a natural extension of tools humans have always used."
+                "Radical human enhancement would create profound inequalities between those who can and cannot access modification.",
+                "Technological enhancement of limited capabilities is a natural extension of tools humans have always used.",
+                "Transforming human nature undermines the shared biological basis of mutual understanding and moral community."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the inequality and human nature case against transhumanism (Pros) and the continuity of tool use counter (Cons).",
             "explanation": "Radical enhancement creates profound access inequalities and undermines the shared biology grounding moral community (Pros), but human enhancement is a natural extension of the tools - eyeglasses, vaccines, prosthetics - that humanity has always used (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L192_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Life extension technologies threaten to create permanent gerontocracies that stifle generational renewal.",
             "options": [
-                "Radical life extension would allow the same individuals to accumulate power and wealth indefinitely.",
-                "Intergenerational power transfer is essential for societies to adapt to new circumstances and values.",
                 "People living longer already work, lead, and contribute well beyond what previous generations managed.",
-                "Individual choices about longevity should not be overridden by sociological concerns about political renewal."
+                "Individual choices about longevity should not be overridden by sociological concerns about political renewal.",
+                "Radical life extension would allow the same individuals to accumulate power and wealth indefinitely.",
+                "Intergenerational power transfer is essential for societies to adapt to new circumstances and values."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider the gerontocracy and generational renewal case against life extension (Pros) and the current longevity trends and individual choice counters (Cons).",
             "explanation": "Radical life extension concentrates power indefinitely and prevents the generational renewal essential for social adaptation (Pros), but people already successfully lead and contribute well into advanced age, and individual longevity choices should not be overridden by sociological concerns (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L192_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Transhumanism raises profound questions about what it means to remain recognisably human.",
             "options": [
                 "Fundamental alterations to cognition, mortality, and embodiment may produce beings no longer continuous with humanity.",
-                "Philosophical continuity of identity is essential to maintaining the moral obligations that ground human community.",
                 "Identity and humanity are dynamic and culturally constructed rather than fixed biological properties.",
-                "Humans have always changed through technology and culture without ceasing to be recognisably human."
+                "Humans have always changed through technology and culture without ceasing to be recognisably human.",
+                "Philosophical continuity of identity is essential to maintaining the moral obligations that ground human community."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the identity continuity and moral community case against radical transhumanism (Pros) and the dynamic identity and historical change counters (Cons).",
             "explanation": "Radical alterations to cognition and embodiment may break continuity with human identity and undermine grounding of moral obligations (Pros), but identity and humanity are dynamic constructs, and humans have changed profoundly through technology without ceasing to be recognisably human (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L193_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The prospect of digital immortality raises profound and unresolvable questions about personal identity.",
             "options": [
-                "A digital copy of a person's mind is not that person - it is a new entity with memories of being someone else.",
-                "Digital immortality based on copying rather than continuity creates a profound metaphysical identity paradox.",
                 "If psychological continuity is sufficient for identity, a sufficiently accurate mind copy may constitute the same person.",
-                "The philosophical question of what constitutes identity is unresolved, making confident claims in either direction premature."
+                "The philosophical question of what constitutes identity is unresolved, making confident claims in either direction premature.",
+                "A digital copy of a person's mind is not that person - it is a new entity with memories of being someone else.",
+                "Digital immortality based on copying rather than continuity creates a profound metaphysical identity paradox."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the copy-not-continuity problem of digital immortality (Pros) and the psychological continuity and philosophical uncertainty counters (Cons).",
             "explanation": "A digital mind copy is not the same person but a new entity with inherited memories - not genuine continuity (Pros), but psychological continuity theories suggest accurate mind copying may constitute identity, and the underlying philosophical question is unresolved (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L193_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Digital immortality would represent the ultimate triumph of individual existence over mortality.",
             "options": [
                 "Extending consciousness beyond biological death represents the highest fulfilment of human desire for self-continuation.",
-                "Digital preservation of minds would allow accumulated knowledge and wisdom to persist indefinitely.",
                 "Indefinite digital existence might produce profound psychological problems including meaninglessness and stagnation.",
-                "A world of digitally immortal beings would face catastrophic resource and social organisation challenges."
+                "A world of digitally immortal beings would face catastrophic resource and social organisation challenges.",
+                "Digital preservation of minds would allow accumulated knowledge and wisdom to persist indefinitely."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider the self-continuation and knowledge preservation case for digital immortality (Pros) and the psychological and social organisation concerns (Cons).",
             "explanation": "Digital immortality fulfils the human desire for continuity and preserves accumulated knowledge indefinitely (Pros), but indefinite existence risks profound psychological stagnation and meaninglessness, and a world of digitally immortal beings faces catastrophic social organisation challenges (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L193_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Pursuing digital immortality reveals a problematic refusal to accept the finitude essential to human meaning.",
             "options": [
                 "Mortality gives human life urgency, poignancy, and the drive to create meaning within finite time.",
-                "Acceptance of death is central to many wisdom traditions' understanding of a well-lived human life.",
                 "The value of finitude does not require that everyone should experience it if technology permits alternatives.",
+                "Acceptance of death is central to many wisdom traditions' understanding of a well-lived human life.",
                 "Philosophical traditions that celebrate finitude reflect specific cultural conditions rather than universal truths."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about finitude as constitutive of human meaning and why its acceptance matters (Pros) and the optionality and cultural specificity counters (Cons).",
             "explanation": "Mortality creates urgency and meaning-making drive essential to human experience, and acceptance of death is central to multiple wisdom traditions (Pros), but finitude's value does not require universal application, and death-acceptance philosophies reflect specific cultural contexts rather than universal truths (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L194_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The rights and interests of future generations should be enshrined in current law.",
             "options": [
-                "Future generations will live with the consequences of decisions made today but cannot participate in making them.",
-                "Legally entrenching future generations' interests creates enforceable political obligations to act beyond electoral cycles.",
                 "Future generations' preferences cannot be known, making legal representation philosophically problematic.",
-                "Representatives speaking for future generations risk substituting their own present values for authentic future interests."
+                "Representatives speaking for future generations risk substituting their own present values for authentic future interests.",
+                "Future generations will live with the consequences of decisions made today but cannot participate in making them.",
+                "Legally entrenching future generations' interests creates enforceable political obligations to act beyond electoral cycles."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the representation and legal obligation case for future generation rights (Pros) and the knowability and substitution concerns (Cons).",
             "explanation": "Future generations bear consequences of current decisions without representation, and legal entrenchment overcomes short electoral cycles (Pros), but future preferences cannot be known and appointed representatives risk substituting their own present values for authentic future interests (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L194_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Welsh and other existing future generations commissioners demonstrate that institutional representation is workable.",
             "options": [
                 "The Welsh Future Generations Commissioner has successfully influenced long-term planning in practical and demonstrable ways.",
-                "Institutional commissioners can represent long-term interests without claiming to know unknowable future preferences.",
                 "Commissioner models depend on political goodwill and can be defunded or ignored when their conclusions are inconvenient.",
-                "The scope of current commissioners is limited to domestic legislation and cannot address global future generation interests."
+                "The scope of current commissioners is limited to domestic legislation and cannot address global future generation interests.",
+                "Institutional commissioners can represent long-term interests without claiming to know unknowable future preferences."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider the Welsh model as evidence that future generation representation is workable (Pros) and the political dependency and scope concerns (Cons).",
             "explanation": "The Welsh Commissioner has demonstrably influenced long-term planning and represents long-term interests without claiming to know future preferences (Pros), but commissioner models depend on political goodwill that can be withdrawn, and domestic scope cannot address global future generation interests (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L194_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A constitutional duty to future generations would be more durable than advisory commissioners.",
             "options": [
-                "Constitutional duties require future governments to consider long-term consequences regardless of political preference.",
-                "Constitutional entrenchment survives changes in government that commissioner models do not.",
                 "Constitutional duties to future generations create justiciable obligations that courts may interpret beyond democratic intent.",
-                "Constitutional rigidity may prevent necessary adaptation when future circumstances differ from those anticipated."
+                "Constitutional duties require future governments to consider long-term consequences regardless of political preference.",
+                "Constitutional rigidity may prevent necessary adaptation when future circumstances differ from those anticipated.",
+                "Constitutional entrenchment survives changes in government that commissioner models do not."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about constitutional duties as more durable than commissioners (Pros) and the judicial overreach and rigidity concerns (Cons).",
             "explanation": "Constitutional duties require long-term consideration regardless of political preference and survive government changes (Pros), but constitutional duties create justiciable obligations that courts may interpret beyond democratic intent, and constitutional rigidity prevents adaptation to unanticipated future circumstances (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L195_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Meritocracy is ultimately a comforting myth that entrenches rather than reduces inequality.",
             "options": [
-                "Meritocratic outcomes reflect starting conditions rather than pure merit, laundering inherited advantage as earned.",
-                "Belief in meritocracy reduces support for redistribution by attributing economic failure to individual shortcomings.",
                 "Some degree of reward proportional to effort and contribution is both motivationally and morally necessary.",
-                "Meritocracy is a standard that can be progressively better approximated through policy even if never fully achieved."
+                "Meritocracy is a standard that can be progressively better approximated through policy even if never fully achieved.",
+                "Meritocratic outcomes reflect starting conditions rather than pure merit, laundering inherited advantage as earned.",
+                "Belief in meritocracy reduces support for redistribution by attributing economic failure to individual shortcomings."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the inherited advantage and redistribution-reducing case against meritocracy (Pros) and the motivation and approximation counters (Cons).",
             "explanation": "Meritocratic outcomes reflect inherited advantage and belief in meritocracy reduces support for redistribution by blaming individuals for structurally caused failure (Pros), but some effort-proportional reward is motivationally and morally necessary, and meritocracy remains a valuable aspiration even if imperfect in practice (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L195_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Luck egalitarianism provides a more honest foundation for distributive justice than meritocracy.",
             "options": [
-                "Luck egalitarianism distinguishes between inequalities arising from chosen actions versus unchosen circumstances.",
-                "Compensating for bad brute luck while allowing inequalities from voluntary choice reflects genuine moral responsibility.",
                 "The distinction between chosen actions and unchosen circumstances is practically difficult to draw clearly.",
-                "Luck egalitarianism may produce harsh outcomes for those whose bad circumstances resulted from their own choices."
+                "Luck egalitarianism may produce harsh outcomes for those whose bad circumstances resulted from their own choices.",
+                "Luck egalitarianism distinguishes between inequalities arising from chosen actions versus unchosen circumstances.",
+                "Compensating for bad brute luck while allowing inequalities from voluntary choice reflects genuine moral responsibility."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider luck egalitarianism as an honest alternative to meritocracy (Pros) and the practical distinction and harsh outcomes concerns (Cons).",
             "explanation": "Luck egalitarianism honestly distinguishes voluntary choices from unchosen circumstances, grounding genuine moral responsibility (Pros), but the chosen-unchosen distinction is practically difficult to draw, and the theory can produce harsh outcomes for those whose circumstances partly resulted from their own decisions (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L195_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Structural inequality requires structural solutions that go beyond rethinking meritocracy.",
             "options": [
-                "Redistributive taxation, universal public services, and labour market reform address structural inequality more directly.",
-                "Philosophical critiques of meritocracy without structural change produce academic discourse rather than material improvement.",
                 "The ideological legitimation that meritocracy provides for inequality makes challenging its premises essential.",
-                "Structural reform and ideological critique are complementary - dismantling both the practice and the justification."
+                "Redistributive taxation, universal public services, and labour market reform address structural inequality more directly.",
+                "Structural reform and ideological critique are complementary - dismantling both the practice and the justification.",
+                "Philosophical critiques of meritocracy without structural change produce academic discourse rather than material improvement."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about structural solutions as more effective than meritocracy critique (Pros) and the ideological critique necessity and complementarity concerns (Cons).",
             "explanation": "Taxation, public services, and labour reform address structural inequality more directly than philosophical critique (Pros), but meritocracy's ideological legitimation of inequality makes challenging its premises essential, and structural reform and ideological critique are complementary rather than competing (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L196_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The sense of conscious free will is an illusion generated by deterministic neurological processes.",
             "options": [
-                "Neuroscientific experiments show decisions occur in the brain before conscious awareness of choosing emerges.",
-                "Physical determinism at the neurological level leaves no causal role for a consciousness that 'freely' decides.",
                 "The causal closure of the physical does not exclude emergent mental causation at the level of conscious experience.",
-                "Compatibilist accounts show that meaningful freedom is compatible with determinism at lower physical levels."
+                "Compatibilist accounts show that meaningful freedom is compatible with determinism at lower physical levels.",
+                "Neuroscientific experiments show decisions occur in the brain before conscious awareness of choosing emerges.",
+                "Physical determinism at the neurological level leaves no causal role for a consciousness that 'freely' decides."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the neuroscience and determinism case against free will (Pros) and the emergent causation and compatibilism counters (Cons).",
             "explanation": "Brain decisions precede conscious awareness and physical determinism leaves no causal role for free consciousness (Pros), but emergent mental causation is compatible with physical determinism, and compatibilist free will accounts show meaningful freedom is compatible with lower-level determinism (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L196_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The social and moral consequences of abandoning belief in free will would be catastrophic.",
@@ -328,102 +328,102 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L196_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Compatibilism offers the most philosophically coherent account of freedom and responsibility.",
             "options": [
+                "Compatibilism may simply relabel determinism rather than providing genuine freedom of the kind moral intuitions require.",
                 "Compatibilism reconciles determinism with meaningful freedom by defining freedom as acting from one's own reasons without external compulsion.",
                 "Compatible free will grounds responsibility and moral practice without requiring metaphysically dubious libertarian agency.",
-                "Compatibilism may simply relabel determinism rather than providing genuine freedom of the kind moral intuitions require.",
                 "Hard determinism may be the more honest position even if its moral and social implications are deeply uncomfortable."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about compatibilism as the most coherent freedom account (Pros) and the relabelling charge and hard determinism honesty concerns (Cons).",
             "explanation": "Compatibilism reconciles determinism with freedom and grounds responsibility without requiring metaphysically dubious libertarian agency (Pros), but compatibilism may simply relabel determinism, and hard determinism may be more intellectually honest even if its implications are deeply uncomfortable (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L197_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "National happiness and wellbeing should replace GDP as the primary measure of a country's success.",
             "options": [
+                "Happiness and wellbeing are subjective and culturally variable, making cross-national comparison unreliable.",
                 "GDP measures economic activity, not what that activity delivers in terms of human flourishing and quality of life.",
                 "Countries optimising for wellbeing rather than growth produce better health, social cohesion, and life satisfaction.",
-                "Happiness and wellbeing are subjective and culturally variable, making cross-national comparison unreliable.",
                 "Government policies targeting subjective wellbeing are vulnerable to manipulation of how wellbeing is measured and reported."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the flourishing and wellbeing measurement case for replacing GDP (Pros) and the subjectivity and manipulation concerns (Cons).",
             "explanation": "GDP measures activity not flourishing, and wellbeing-optimising countries produce better health and social outcomes (Pros), but wellbeing is subjective and culturally variable making comparison unreliable, and policies targeting wellbeing measures are vulnerable to statistical manipulation (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L197_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The Genuine Progress Indicator and similar metrics offer more honest measures of economic prosperity.",
             "options": [
-                "GPI adjusts GDP for inequality, environmental degradation, unpaid care work, and other factors GDP ignores.",
-                "Accounting for externalities through adjusted indicators reveals that economic growth often destroys genuine prosperity.",
                 "Multiple competing metrics create policy incoherence when different measures point in different directions.",
-                "The political economy of GDP is deeply entrenched and alternatives face powerful institutional resistance."
+                "GPI adjusts GDP for inequality, environmental degradation, unpaid care work, and other factors GDP ignores.",
+                "The political economy of GDP is deeply entrenched and alternatives face powerful institutional resistance.",
+                "Accounting for externalities through adjusted indicators reveals that economic growth often destroys genuine prosperity."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider GPI and adjusted metrics as better prosperity measures (Pros) and the policy incoherence and institutional resistance concerns (Cons).",
             "explanation": "GPI adjusts for inequality and environmental destruction revealing how GDP growth can mask genuine prosperity loss (Pros), but competing metrics create policy incoherence and GDP's political-economic entrenchment makes institutional transition extremely difficult (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L197_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A dashboard of indicators rather than any single metric best captures multidimensional national progress.",
             "options": [
-                "Multiple complementary indicators capture different dimensions of wellbeing without reducing them to a single number.",
-                "Dashboard approaches enable nuanced policy that improves different welfare dimensions simultaneously and appropriately.",
                 "Dashboard indicators are politically vulnerable when governments selectively emphasise whichever metrics look best.",
-                "Without a primary metric, political actors lack clear accountability for overall national progress."
+                "Without a primary metric, political actors lack clear accountability for overall national progress.",
+                "Multiple complementary indicators capture different dimensions of wellbeing without reducing them to a single number.",
+                "Dashboard approaches enable nuanced policy that improves different welfare dimensions simultaneously and appropriately."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about dashboard approaches versus single metrics for measuring national progress (Pros) and the cherry-picking and accountability concerns (Cons).",
             "explanation": "Multiple complementary indicators capture wellbeing dimensions that no single number can represent (Pros), but dashboards are vulnerable to selective political emphasis on favourable metrics, and without a primary indicator, governments lack clear accountability for overall national welfare (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L198_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Capitalism as currently practised is fundamentally incompatible with genuine human flourishing.",
             "options": [
                 "Capitalism structurally requires treating labour, nature, and human attention as commodities subject to exploitation.",
-                "Market imperatives drive short-termism that systematically prioritises profit over human and ecological wellbeing.",
                 "Capitalism has produced the greatest improvement in human living standards in recorded history.",
-                "Capitalism's flaws are features of current forms that reformed market economies can substantially address."
+                "Capitalism's flaws are features of current forms that reformed market economies can substantially address.",
+                "Market imperatives drive short-termism that systematically prioritises profit over human and ecological wellbeing."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the commodification and short-termism case against capitalism and human flourishing (Pros) and the historical improvement and reform capacity counters (Cons).",
             "explanation": "Capitalism commodifies labour and nature and drives short-termism that prioritises profit over wellbeing (Pros), but it has produced unprecedented living standard improvements and reformed market economies can substantially address capitalism's structural flaws (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L198_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Market economies can be reformed to serve human flourishing without replacing capitalism.",
@@ -442,45 +442,45 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L198_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The failures of actually existing alternatives to capitalism provide insufficient grounds for defending it.",
             "options": [
                 "The failure of twentieth-century state socialism does not demonstrate that no better alternative to capitalism exists.",
-                "New economic models including commons-based systems and cooperative economies offer unexplored alternatives.",
                 "Alternatives to capitalism face the same incentive and coordination problems that brought down existing alternatives.",
+                "New economic models including commons-based systems and cooperative economies offer unexplored alternatives.",
                 "Defending capitalism's worst features by pointing to failed alternatives reflects a failure of political imagination."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about the beyond capitalism exploration case (Pros) and the coordination problems and incentive structure counters (Cons).",
             "explanation": "Failed state socialism does not prove no better alternative exists and commons-based and cooperative models remain unexplored (Pros), but alternatives face the same coordination and incentive problems that destroyed existing alternatives, and defending capitalism by pointing to failures reflects political imagination failure (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L199_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The development of artificial general intelligence represents an unacceptable existential risk.",
             "options": [
-                "An AGI significantly more capable than humans could pursue goals misaligned with human values in uncontrollable ways.",
-                "The difficulty of specifying human values precisely enough to guarantee aligned AGI behaviour may be unsolvable.",
                 "The existential risk from misaligned AGI is speculative and may not materialise within any relevant timeframe.",
-                "Pausing AGI development cedes competitive advantage to less safety-conscious actors."
+                "Pausing AGI development cedes competitive advantage to less safety-conscious actors.",
+                "An AGI significantly more capable than humans could pursue goals misaligned with human values in uncontrollable ways.",
+                "The difficulty of specifying human values precisely enough to guarantee aligned AGI behaviour may be unsolvable."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the misalignment and control case for treating AGI as existential risk (Pros) and the speculative timeline and competitive concerns (Cons).",
             "explanation": "Misaligned AGI pursuing unspecifiable human values in uncontrollable ways poses genuine existential risk (Pros), but the risk timeline is speculative and halting development cedes advantage to less safety-conscious competitors who will not pause (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L199_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "The alignment problem is solvable and AGI need not pose an existential threat.",
@@ -499,76 +499,76 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L199_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Global governance of AGI development is necessary to prevent catastrophic unilateral deployment.",
             "options": [
+                "States competing for strategic AGI advantage have powerful incentives to defect from any cooperative agreement.",
                 "A single actor's unilateral AGI deployment without adequate safety testing poses global rather than merely local risks.",
                 "International AGI governance can establish minimum safety standards and verification mechanisms.",
-                "States competing for strategic AGI advantage have powerful incentives to defect from any cooperative agreement.",
                 "Verification of AGI capability levels and safety properties is technically extremely difficult across secretive programmes."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the global governance case for managing AGI risk (Pros) and the defection incentives and verification concerns (Cons).",
             "explanation": "Unilateral AGI deployment poses global risks requiring international governance with minimum safety standards (Pros), but geopolitical competition creates strong defection incentives from cooperative agreements, and verifying AGI capabilities across secretive programmes is technically extremely difficult (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L200_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Truth is always culturally constructed and therefore can never be fully objective or universal.",
             "options": [
                 "All knowledge is filtered through cultural frameworks, language, and social practices that shape what can be known.",
-                "The history of science reveals that even physical truth claims are historically and culturally situated.",
                 "Mathematical theorems and physical constants hold regardless of the cultural context in which they are discovered.",
-                "Radical truth relativism is self-refuting - the claim that truth is relative must itself claim to be true."
+                "Radical truth relativism is self-refuting - the claim that truth is relative must itself claim to be true.",
+                "The history of science reveals that even physical truth claims are historically and culturally situated."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the cultural mediation and scientific situatedness case for truth relativism (Pros) and the mathematics and self-refutation concerns (Cons).",
             "explanation": "All knowledge is culturally filtered and the history of science reveals situatedness even in physical truth claims (Pros), but mathematical truths and physical constants transcend cultural contexts, and radical relativism is self-refuting because the relativist claim itself purports to be objectively true (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L200_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Scientific realism provides the most defensible account of objective knowledge.",
             "options": [
-                "Science's track record of predictive success provides compelling evidence for mind-independent reality.",
-                "The convergence of different scientific methods on the same conclusions suggests genuine truth rather than social construction.",
                 "The history of scientific revolutions shows that even well-confirmed theories are later overturned.",
-                "Pessimistic meta-induction suggests current science is as likely to be fundamentally wrong as past theories proved to be."
+                "Pessimistic meta-induction suggests current science is as likely to be fundamentally wrong as past theories proved to be.",
+                "Science's track record of predictive success provides compelling evidence for mind-independent reality.",
+                "The convergence of different scientific methods on the same conclusions suggests genuine truth rather than social construction."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider scientific realism as the best account of objective knowledge (Pros) and the scientific revolutions and pessimistic meta-induction concerns (Cons).",
             "explanation": "Science's predictive success and methodological convergence provide compelling evidence for mind-independent reality (Pros), but scientific revolutions show even confirmed theories fall, and pessimistic meta-induction suggests current theories are likely as wrong as past ones proved to be (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L200_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Pragmatism offers the most useful account of truth for practical human purposes.",
             "options": [
                 "Pragmatic truth - what works reliably in practice - provides a functional criterion usable across cultural contexts.",
-                "Pragmatism avoids both absolute relativism and metaphysically demanding realism, serving practical reasoning better.",
                 "Pragmatism's 'what works' criterion assumes agreement on what constitutes working that cultures do not always share.",
-                "Pragmatic truth accounts cannot ground normative claims about what we ought to value or how we ought to live."
+                "Pragmatic truth accounts cannot ground normative claims about what we ought to value or how we ought to live.",
+                "Pragmatism avoids both absolute relativism and metaphysically demanding realism, serving practical reasoning better."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about pragmatism as the most useful truth account for practical purposes (Pros) and the working-agreement and normative grounding concerns (Cons).",
             "explanation": "Pragmatic truth provides a functional criterion usable across contexts and avoids extremes of relativism and demanding realism (Pros), but 'what works' assumes cross-cultural agreement on success criteria that often does not exist, and pragmatism cannot ground normative claims about values and how to live (Cons)."

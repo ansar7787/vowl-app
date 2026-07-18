@@ -48,8 +48,8 @@ class AccentFeedbackCard extends StatelessWidget {
         ? context.tr('games.excellent', fallback: 'Excellent!')
         : context.tr('games.not_quite', fallback: 'Not Quite');
 
-    // Explanation is shown unconditionally on all answers (success and failure) to maximize pedagogy.
-    final showExplanation = true;
+    // Explanation is shown on correct answers and on the final failure attempt.
+    final showExplanation = success || (!success && state.isFinalFailure);
     final explanationText = state.currentQuest.explanation ??
         (success
             ? "Excellent listening! You correctly identified the precise sound."

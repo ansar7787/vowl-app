@@ -5,7 +5,7 @@
     "quests": [
         {
             "id": "WRT_OPINIONWRITING_L31_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Mobile phones should be banned from school classrooms.",
@@ -24,159 +24,159 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L31_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Banning phones in school improves student mental health and social interaction.",
             "options": [
-                "Phone-free school time reduces harmful social media comparisons and cyberbullying.",
-                "Without phones, students engage more naturally in face-to-face conversation during breaks.",
                 "Teenagers denied phone access during school hours may become anxious or feel out of control.",
-                "Many students use their phones to access mental health and wellbeing apps that support them."
+                "Phone-free school time reduces harmful social media comparisons and cyberbullying.",
+                "Many students use their phones to access mental health and wellbeing apps that support them.",
+                "Without phones, students engage more naturally in face-to-face conversation during breaks."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider the mental health benefits of phone-free schools (Pros) and the risks of restricting access (Cons).",
             "explanation": "Phone bans reduce social media harm and encourage real-world socialising (Pros), but some students rely on their devices for mental health support, and forced phone separation can itself cause anxiety (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L31_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A phone ban in school teaches students valuable digital self-control skills.",
             "options": [
                 "Learning to disconnect from devices for periods of time is an important modern skill.",
-                "Students who practise phone-free periods at school are better equipped to focus in professional life.",
                 "Banning phones does not teach healthy digital habits - it simply removes the choice entirely.",
+                "Students who practise phone-free periods at school are better equipped to focus in professional life.",
                 "Students who are denied all access may use phones covertly, making the situation harder to manage."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about the self-control skills a ban might build (Pros) and whether banning teaches real skills (Cons).",
             "explanation": "Phone-free periods build the ability to focus without digital distraction - a key professional skill (Pros), but banning does not develop genuine self-regulation, and covert use makes enforcement counterproductive (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L32_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Schools should teach cooking as a compulsory subject.",
             "options": [
+                "Curriculum time is already very limited, and cooking may displace more academic subjects.",
                 "Cooking education gives all students essential practical life skills they will use every day.",
                 "Understanding how to prepare meals at home supports healthier eating habits for life.",
-                "Curriculum time is already very limited, and cooking may displace more academic subjects.",
                 "Not all schools have adequate kitchen facilities or trained food technology teachers."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about what compulsory cooking achieves (Pros) and the resource challenges it faces (Cons).",
             "explanation": "Compulsory cooking provides universal life skills and encourages healthy eating (Pros), but limited curriculum time and inadequate facilities make it difficult for many schools to implement effectively (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L32_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Learning to cook at school helps reduce unhealthy eating among young people.",
             "options": [
                 "Students who learn to cook are more likely to choose home-cooked meals over fast food.",
-                "Food education builds nutritional literacy, helping young people make informed meal choices.",
                 "Cooking classes can reinforce gender stereotypes if they are associated mainly with domestic roles.",
-                "External food environments, peer influence, and advertising have far more impact than school cooking lessons."
+                "External food environments, peer influence, and advertising have far more impact than school cooking lessons.",
+                "Food education builds nutritional literacy, helping young people make informed meal choices."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider how cooking lessons affect eating habits (Pros) and whether they are sufficient on their own (Cons).",
             "explanation": "Cooking skills encourage home cooking over fast food and build nutritional awareness (Pros), but gender stereotypes risk being reinforced, and external influences on young people's diets far outweigh what a weekly lesson can achieve (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L32_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Cooking lessons in school build creativity and cultural awareness.",
             "options": [
+                "Students with dietary restrictions or allergies may feel excluded during certain cooking lessons.",
                 "Preparing dishes from different cultures introduces students to global food traditions and histories.",
                 "Creative cooking challenges build lateral thinking and practical problem-solving abilities.",
-                "Students with dietary restrictions or allergies may feel excluded during certain cooking lessons.",
                 "Without consistent practice at home, school cooking skills are quickly forgotten by most students."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the cultural and creative benefits of cooking education (Pros) and its practical limitations (Cons).",
             "explanation": "Cooking builds cultural awareness and creative thinking (Pros), but dietary exclusions can marginalise some students, and without regular home practice the skills taught at school are soon lost (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L33_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Teenagers should have daily limits set on their social media use.",
             "options": [
-                "Restricted social media time reduces exposure to harmful content and negative social comparisons.",
-                "Time limits encourage teenagers to invest more energy in offline hobbies and relationships.",
                 "Teenagers who want to access social media will simply use it on other devices or at other times.",
-                "Social media also provides genuine social support, creative communities, and learning opportunities."
+                "Restricted social media time reduces exposure to harmful content and negative social comparisons.",
+                "Social media also provides genuine social support, creative communities, and learning opportunities.",
+                "Time limits encourage teenagers to invest more energy in offline hobbies and relationships."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the protective benefits of social media limits (Pros) and why they are hard to enforce (Cons).",
             "explanation": "Limits reduce exposure to harmful content and free up time for offline activities (Pros), but determined teenagers will find workarounds, and social media offers real social and educational value that blanket limits ignore (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L33_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Limiting social media use improves teenagers' academic performance.",
             "options": [
-                "Fewer hours on social media means more time available for studying and reading.",
-                "Reduced late-night social media use improves sleep quality, which directly supports learning.",
                 "Social media is also used for academic purposes, including homework groups and revision sharing.",
-                "Academic performance is shaped by many factors, and isolating social media as the cause is oversimplistic."
+                "Fewer hours on social media means more time available for studying and reading.",
+                "Academic performance is shaped by many factors, and isolating social media as the cause is oversimplistic.",
+                "Reduced late-night social media use improves sleep quality, which directly supports learning."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider the academic benefits of social media limits (Pros) and whether they address the real causes of poor performance (Cons).",
             "explanation": "Less social media creates more study time and improves sleep quality (Pros), but social media has academic uses, and attributing poor results solely to social media ignores other significant factors (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L33_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Social media limits help teenagers develop healthier digital habits.",
             "options": [
-                "Learning to moderate social media use while young builds self-regulation skills for adult life.",
-                "Enforced breaks from constant connectivity allow teenagers to rediscover non-digital interests.",
                 "Teenagers resent externally imposed limits and may use them as a reason to argue with parents.",
-                "Self-imposed limits are more effective in the long run than external restrictions set by others."
+                "Self-imposed limits are more effective in the long run than external restrictions set by others.",
+                "Learning to moderate social media use while young builds self-regulation skills for adult life.",
+                "Enforced breaks from constant connectivity allow teenagers to rediscover non-digital interests."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about what imposed limits teach teenagers (Pros) and whether self-regulation would be more effective (Cons).",
             "explanation": "Early moderation builds long-term self-regulation and reconnects teenagers with offline interests (Pros), but teenagers resent imposed rules, and research suggests self-chosen limits are more effective than externally set ones (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L34_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Schools should have more physical education lessons each week.",
@@ -195,330 +195,330 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L34_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Regular PE teaches teamwork and builds students' confidence.",
             "options": [
                 "Team sports in PE develop cooperation, leadership, and communication skills.",
-                "Physical achievement in PE can build confidence that transfers to other areas of school life.",
                 "Students with physical disabilities or chronic health conditions may be excluded from much of PE.",
+                "Physical achievement in PE can build confidence that transfers to other areas of school life.",
                 "PE focused on competitive team sports disadvantages less athletic students and can harm self-esteem."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider how PE builds social and personal skills (Pros) and who it excludes or harms (Cons).",
             "explanation": "Team sports in PE build cooperation and confidence (Pros), but students with disabilities or weaker athletic ability can be marginalised, and competitive PE can damage self-esteem rather than build it (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L34_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Physical education lessons teach children lifelong healthy lifestyle habits.",
             "options": [
                 "Children who participate in PE are more likely to maintain active lifestyles as adults.",
-                "Positive experiences of exercise at school reduce the likelihood of a sedentary adult lifestyle.",
                 "PE alone is insufficient to establish lifelong fitness without support from home and community.",
+                "Positive experiences of exercise at school reduce the likelihood of a sedentary adult lifestyle.",
                 "Students who are put off exercise by negative PE experiences may avoid physical activity for years."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about PE's potential to build lifelong habits (Pros) and when it fails to achieve this (Cons).",
             "explanation": "Positive PE experiences encourage lifelong activity (Pros), but school-only exercise cannot build lasting habits without community and family support, and bad PE experiences can create lasting aversion to physical activity (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L35_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "People who live close enough should cycle to work instead of driving.",
             "options": [
                 "Cycling to work provides daily physical exercise without needing additional gym time.",
-                "Cycling produces no direct carbon emissions, making it a genuinely sustainable commuting option.",
                 "Many roads lack safe, dedicated cycle lanes, making cycling to work dangerous in practice.",
-                "Poor weather, physical limitations, and the need to arrive presentably make cycling impractical for many workers."
+                "Poor weather, physical limitations, and the need to arrive presentably make cycling impractical for many workers.",
+                "Cycling produces no direct carbon emissions, making it a genuinely sustainable commuting option."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the health and environmental benefits of cycling to work (Pros) and the barriers (Cons).",
             "explanation": "Cycling provides built-in exercise and produces zero emissions (Pros), but unsafe roads and practical barriers like weather, hills, and the need to arrive professionally presentable make it unrealistic for many commuters (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L35_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Cycling infrastructure in cities should be expanded to encourage more commuters.",
             "options": [
                 "Protected cycle lanes make cycling to work safe and accessible for a much wider population.",
-                "Investing in cycling infrastructure reduces long-term traffic and public health costs.",
                 "Building cycle lanes reduces road space for cars and buses, causing congestion for other users.",
-                "The financial cost of building and maintaining extensive cycling networks is substantial."
+                "The financial cost of building and maintaining extensive cycling networks is substantial.",
+                "Investing in cycling infrastructure reduces long-term traffic and public health costs."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider the benefits of more cycling infrastructure (Pros) and the trade-offs for other transport users (Cons).",
             "explanation": "More cycle lanes make cycling safe and accessible (Pros), but they reduce road space for other vehicles and require significant sustained public investment (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L35_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Cycling to work improves workers' mental health and morning energy levels.",
             "options": [
-                "The physical activity and fresh air of cycling significantly improve mood and reduce stress.",
-                "Cyclists arrive at work feeling alert and energised rather than frustrated by traffic delays.",
                 "Cycling in heavy urban traffic can be stressful and dangerous, negating mental health benefits.",
-                "Workers who arrive sweaty or rained-on may feel self-conscious without shower facilities at work."
+                "The physical activity and fresh air of cycling significantly improve mood and reduce stress.",
+                "Workers who arrive sweaty or rained-on may feel self-conscious without shower facilities at work.",
+                "Cyclists arrive at work feeling alert and energised rather than frustrated by traffic delays."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about cycling's mental health benefits (Pros) and when the experience is negative (Cons).",
             "explanation": "Cycling reduces stress and delivers cyclists feeling energised (Pros), but urban traffic stress and the absence of workplace shower facilities make the experience unpleasant or impractical for many workers (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L36_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Everyone should use reusable shopping bags instead of single-use plastic ones.",
             "options": [
-                "Reusable bags dramatically reduce the volume of plastic entering landfill and oceans.",
-                "Switching to reusable bags is a simple, low-cost action that individuals can take immediately.",
                 "Reusable bags must be used many times before their environmental impact becomes positive.",
-                "Many people repeatedly forget their reusable bags, making consistent change difficult."
+                "Many people repeatedly forget their reusable bags, making consistent change difficult.",
+                "Reusable bags dramatically reduce the volume of plastic entering landfill and oceans.",
+                "Switching to reusable bags is a simple, low-cost action that individuals can take immediately."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the environmental benefits of reusable bags (Pros) and the practical challenges (Cons).",
             "explanation": "Reusable bags reduce plastic waste in a simple, affordable way (Pros), but they require many uses to be genuinely better environmentally, and most people frequently forget to bring them (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L36_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A ban on single-use plastic bags is the most effective way to drive change.",
             "options": [
+                "Bans disproportionately affect lower-income shoppers who rely on cheap or free plastic bags.",
                 "Legal bans remove the option of plastic bags entirely, making behaviour change automatic.",
                 "Countries that have banned plastic bags have seen dramatic reductions in plastic pollution.",
-                "Bans disproportionately affect lower-income shoppers who rely on cheap or free plastic bags.",
                 "Bags represent only a tiny fraction of total plastic production, making bag bans a limited solution."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Consider whether banning plastic bags is the right policy approach (Pros) and its limitations (Cons).",
             "explanation": "Bans automatically eliminate plastic bags and have measurably reduced plastic pollution (Pros), but they burden lower-income consumers and address only a tiny portion of the overall plastic pollution problem (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L36_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Reusable bags encourage broader environmentally responsible consumer behaviour.",
             "options": [
                 "Carrying a reusable bag acts as a daily visible reminder of personal environmental responsibility.",
-                "Normalising sustainable choices in small areas of life can motivate broader behavioural changes.",
                 "There is limited evidence that small green actions like bag use translate into larger lifestyle changes.",
-                "Focusing on individual consumer choices can distract attention from corporate and industrial pollution."
+                "Focusing on individual consumer choices can distract attention from corporate and industrial pollution.",
+                "Normalising sustainable choices in small areas of life can motivate broader behavioural changes."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about what reusable bags signal and encourage (Pros) and whether individual actions are sufficient (Cons).",
             "explanation": "Reusable bags normalise sustainability and can motivate broader green choices (Pros), but evidence for spillover behaviour is weak, and personal consumer choices distract from the much larger impact of corporate and industrial pollution (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L37_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "Employees should be allowed to work from home permanently.",
+            "prompt": "Teenagers should get a part-time job while they are still at school.",
             "options": [
-                "Remote work eliminates long commutes, saving employees significant time and travel costs.",
-                "Working from home allows employees to better balance their professional and personal responsibilities.",
-                "Some roles require physical presence, equipment, or collaboration that cannot be replicated remotely.",
-                "Home environments are not always suitable for concentrated professional work."
+                "A part-time job teaches teenagers to manage their own money and take on real responsibility.",
+                "Part-time work can leave teenagers with too little time and energy for homework and revision.",
+                "Earning their own money gives teenagers a valuable sense of independence and achievement.",
+                "Some employers do not respect the special working-hour limits that protect younger employees."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
-            "hint": "Think about the work-life balance benefits of remote work (Pros) and when it is not practical (Cons).",
-            "explanation": "Remote work saves commute time and improves work-life balance (Pros), but many roles require physical presence, and home environments often lack the space and quiet needed for effective work (Cons)."
+            "hint": "Think about what a part-time job gives teenagers (Pros) and what it can take away from school life (Cons).",
+            "explanation": "A part-time job builds money skills and independence (Pros), but it can eat into study time, and some employers fail to follow the rules that protect young workers (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L37_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "Working from home reduces environmental impact and urban congestion.",
+            "prompt": "Balancing a part-time job with schoolwork can improve a teenager's time-management skills.",
             "options": [
-                "Fewer people commuting by car each day meaningfully reduces road traffic and emissions.",
-                "Less daily travel reduces the carbon footprint associated with millions of working journeys.",
-                "Empty offices still consume energy, water, and resources regardless of whether employees are present.",
-                "Employees working from home increase residential energy use, which may offset some gains."
+                "Tired teenagers who finish a late shift may struggle to concentrate on homework or revise properly.",
+                "Balancing work and school teaches teenagers to plan their time and prioritise tasks efficiently.",
+                "Students with a part-time job often become more focused and organised during their limited study time.",
+                "Even a few hours of paid work each week can clash with after-school clubs, sports, or exam preparation."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
-            "hint": "Consider the environmental benefits of home working (Pros) and the offsetting costs (Cons).",
-            "explanation": "Remote work reduces commuter emissions and road congestion (Pros), but offices remain energy-intensive even when empty, and increased domestic energy use at home partially offsets transportation savings (Cons)."
+            "hint": "Consider how balancing work and school can build organisation (Pros) and when it gets in the way of study (Cons).",
+            "explanation": "Balancing a job with school can teach planning and focus (Pros), but tiredness and clashing schedules can make it harder to study and take part in other activities (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L37_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
-            "prompt": "Permanent remote work damages team collaboration and company culture.",
+            "prompt": "A part-time job prepares teenagers for working life better than school alone can.",
             "options": [
-                "Spontaneous in-person conversations spark creativity and solve problems faster than digital messages.",
-                "Shared physical workspaces build trust, team cohesion, and a strong sense of common purpose.",
-                "Video conferencing technology has made effective remote collaboration far more achievable.",
-                "Many employees report feeling more focused and productive when working away from office distractions."
+                "Talking to customers and following a manager's instructions teaches practical workplace skills.",
+                "Early work experience on a CV can make it easier for teenagers to find their first full-time job.",
+                "Most part-time jobs for teenagers involve repetitive tasks that teach very few new skills.",
+                "Schools already provide work-experience placements and careers guidance without the pressure of paid work."
             ],
             "correctOrder": [
                 0,
                 1
             ],
-            "hint": "Think about what is lost when remote work becomes permanent (Cons for the thesis) and what it delivers (Pros for remote work).",
-            "explanation": "In-person work drives spontaneous collaboration and builds team culture (Pros), but technology now enables effective remote collaboration, and many workers are genuinely more productive at home (Cons)."
+            "hint": "Think about the workplace skills a part-time job builds (Pros) and what schools already provide (Cons).",
+            "explanation": "Part-time work builds real workplace skills and strengthens a teenager's CV (Pros), but many jobs are repetitive, and schools already offer work-experience placements without the demands of paid employment (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L38_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Students should take short breaks after every 45 to 60 minutes of study.",
             "options": [
-                "Brief breaks prevent mental fatigue and allow the brain to consolidate information just learned.",
-                "Regular study intervals with breaks improve long-term memory retention significantly.",
                 "Frequent breaks can interrupt concentration and make it harder to return to complex tasks.",
-                "Some students work best in longer, uninterrupted sessions and find breaks disruptive."
+                "Some students work best in longer, uninterrupted sessions and find breaks disruptive.",
+                "Brief breaks prevent mental fatigue and allow the brain to consolidate information just learned.",
+                "Regular study intervals with breaks improve long-term memory retention significantly."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the cognitive benefits of regular study breaks (Pros) and when they are counterproductive (Cons).",
             "explanation": "Breaks prevent mental fatigue and consolidate learning (Pros), but they can interrupt deep focus, and some students genuinely work better in sustained, unbroken periods of concentration (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L38_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Taking regular breaks during study protects students' physical health.",
             "options": [
-                "Study breaks encourage movement, reducing the health risks associated with prolonged sitting.",
-                "Rest periods lower cortisol levels and reduce the physical symptoms of study-related stress.",
                 "Getting up and doing other activities during breaks can make it difficult to refocus on study.",
-                "Short breaks are easily prolonged by phone or social media use, wasting significant study time."
+                "Study breaks encourage movement, reducing the health risks associated with prolonged sitting.",
+                "Short breaks are easily prolonged by phone or social media use, wasting significant study time.",
+                "Taking a break lowers the body's stress hormones and eases the physical tension that studying can cause."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider the physical health benefits of study breaks (Pros) and the risks of breaks becoming too long (Cons).",
             "explanation": "Breaks reduce the health risks of sedentary study and lower stress levels (Pros), but the transition back to studying is difficult for many students, and phone use during breaks frequently extends them far beyond their intended length (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L38_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Regular rest during study supports students' motivation and enjoyment of learning.",
             "options": [
                 "Breaking study into manageable chunks makes large tasks feel less overwhelming.",
-                "Knowing a break is coming soon motivates students to focus productively in study sessions.",
                 "Some students use planned breaks as an excuse to stop studying and not return to their work.",
-                "Rigid break schedules imposed by parents or teachers may not match individual students' rhythms."
+                "Rigid break schedules imposed by parents or teachers may not match individual students' rhythms.",
+                "Knowing a break is coming soon motivates students to focus productively in study sessions."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about how breaks support study motivation (Pros) and when they become avoidance strategies (Cons).",
             "explanation": "Chunked study reduces overwhelm and motivates focused effort (Pros), but breaks become avoidance strategies for some students, and externally imposed schedules may not align with individual concentration patterns (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L39_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "People should travel by train rather than by plane when possible.",
             "options": [
                 "Train travel produces significantly less carbon dioxide per passenger than air travel.",
-                "Trains take passengers directly between city centres, avoiding lengthy airport procedures.",
                 "Rail journeys are much slower than flying, particularly for long distances across continents.",
+                "Trains take passengers directly between city centres, avoiding lengthy airport procedures.",
                 "In many countries, train tickets are considerably more expensive than comparable budget flights."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about the environmental and convenience benefits of trains (Pros) and their limitations (Cons).",
             "explanation": "Trains are greener and more central than planes (Pros), but they are substantially slower on long journeys and often more expensive than low-cost airlines (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L39_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Rail travel is a more comfortable and enjoyable journey experience than flying.",
             "options": [
                 "Train passengers can move around freely, work, eat properly, and enjoy the passing landscape.",
-                "The stress of airport security, delays, and baggage restrictions makes air travel exhausting.",
                 "For very long distances, trains require multiple connections and overnight journeys.",
+                "The stress of airport security, delays, and baggage restrictions makes air travel exhausting.",
                 "Business travellers need to reach destinations quickly, making flight speed a critical advantage."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider the comfort and experience benefits of train travel (Pros) and when flying is preferable (Cons).",
             "explanation": "Trains offer comfort, freedom of movement, and a less stressful journey (Pros), but very long distances require multiple connections, and when speed is essential for business, flying remains the only viable option (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L39_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Choosing trains over planes sends an important signal about environmental priorities.",
             "options": [
                 "Making sustainable transport choices demonstrates personal commitment to reducing climate impact.",
-                "Wider adoption of train travel over short-haul flights would significantly reduce aviation emissions.",
                 "Individual transport choices have negligible impact without structural policy changes to aviation.",
+                "Wider adoption of train travel over short-haul flights would significantly reduce aviation emissions.",
                 "Until train fares become significantly cheaper, choosing trains feels like a privilege only accessible to the affluent."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about the value of train travel as an environmental statement (Pros) and its structural limitations (Cons).",
             "explanation": "Choosing trains demonstrates environmental commitment and reduces short-haul aviation emissions at scale (Pros), but individual choices are negligible without policy change, and high rail fares make sustainable travel a luxury rather than a universal option (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L40_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Schools should have a working vegetable garden that students help maintain.",
@@ -537,7 +537,7 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L40_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A vegetable garden at school promotes healthier attitudes towards food.",
@@ -556,19 +556,19 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L40_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "School gardens build environmental awareness and responsibility in students.",
             "options": [
-                "Caring for a garden teaches children about ecosystems, soil health, and seasonal change.",
-                "A school garden models sustainable land use and connects learning to real-world environmental issues.",
                 "Environmental education can be delivered effectively through classroom lessons without a physical garden.",
-                "Without proper integration into the curriculum, gardens become peripheral features that most students ignore."
+                "Caring for a garden teaches children about ecosystems, soil health, and seasonal change.",
+                "Without proper integration into the curriculum, gardens become peripheral features that most students ignore.",
+                "A school garden models sustainable land use and connects learning to real-world environmental issues."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about what school gardens teach about the environment (Pros) and when other approaches work just as well (Cons).",
             "explanation": "School gardens contextualise environmental learning in direct hands-on experience (Pros), but classroom-based environmental education can be equally effective, and without curriculum integration gardens risk becoming unused features of the school grounds (Cons)."

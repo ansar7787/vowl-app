@@ -5,7 +5,7 @@
     "quests": [
         {
             "id": "WRT_OPINIONWRITING_L91_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Social media use is causing a serious mental health crisis among teenagers.",
@@ -24,7 +24,7 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L91_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Social media companies should bear legal liability for mental health harms caused to teenage users.",
@@ -43,235 +43,235 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L91_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Digital literacy education is the most effective response to social media's mental health harms.",
             "options": [
                 "Teaching young people to critically evaluate content and manage digital lives is more empowering than restriction.",
-                "Digital literacy creates resilient, discerning social media users rather than restricted dependent consumers.",
                 "Digital literacy education takes years to implement and cannot address harms being experienced right now.",
+                "Digital literacy creates resilient, discerning social media users rather than restricted dependent consumers.",
                 "Education-only responses leave harmful platform design and architecture completely unchallenged."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about digital literacy as the primary response (Pros) and its timeline and scope limitations (Cons).",
             "explanation": "Digital literacy empowers young people as critical users rather than passive consumers (Pros), but its slow implementation cannot address current harms, and education-only responses leave dangerous platform design unchanged (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L92_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Quality online news should be available without charge to all readers.",
             "options": [
+                "Without sustainable revenue, news organisations cannot fund serious investigative journalism.",
                 "Free access to news ensures citizens from all income levels can make informed democratic decisions.",
                 "Public information is a civic good that should not be rationed by the ability to pay.",
-                "Without sustainable revenue, news organisations cannot fund serious investigative journalism.",
                 "Advertising-funded free news models compromise editorial independence and prioritise engagement metrics."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Think about the civic case for free news (Pros) and the journalism funding and independence concerns (Cons).",
             "explanation": "Free news access ensures informed citizenship across income levels (Pros), but advertising-funded free models underfund investigative journalism and compromise editorial independence (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L92_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "News subscription models create more sustainable and higher-quality journalism.",
             "options": [
                 "Subscription revenue enables investment in quality long-form, investigative, and original reporting.",
-                "Readers who pay for journalism are more engaged, critical, and resistant to misinformation.",
                 "Subscriptions entrench established media brands and disadvantage diverse new entrant voices.",
-                "The most critical accountability journalism ends up behind paywalls inaccessible to most citizens."
+                "The most critical accountability journalism ends up behind paywalls inaccessible to most citizens.",
+                "Readers who pay for journalism are more engaged, critical, and resistant to misinformation."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider the quality journalism case for subscriptions (Pros) and the access and power concerns (Cons).",
             "explanation": "Subscriptions fund investigative journalism and create more critically engaged readerships (Pros), but they entrench established brands and place vital accountability reporting beyond the reach of most citizens (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L92_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A publicly funded journalism model best guarantees quality and universally free news.",
             "options": [
-                "Public funding replicates the successful model of institutions like the BBC, producing quality free journalism.",
-                "Publicly funded journalism is accountable to society rather than shareholders or commercial advertisers.",
                 "Government-funded journalism risks editorial capture and is structurally difficult to keep independent.",
-                "Public funding is vulnerable to political opposition and cuts during fiscal austerity."
+                "Public funding replicates the successful model of institutions like the BBC, producing quality free journalism.",
+                "Public funding is vulnerable to political opposition and cuts during fiscal austerity.",
+                "Publicly funded journalism is accountable to society rather than shareholders or commercial advertisers."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about publicly funded journalism as the best free quality news model (Pros) and the independence and funding concerns (Cons).",
             "explanation": "Public funding produces high-quality, freely accessible journalism accountable to citizens (Pros), but government funding creates editorial independence risks and is politically vulnerable to opposition and spending cuts (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L93_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Short-form video content is reducing people's ability to concentrate for extended periods.",
             "options": [
                 "Platforms optimised for short videos condition viewers to expect rapid content transitions.",
-                "Declining reading rates and reduced engagement with long-form content correlate with short video growth.",
                 "Correlation between short video use and attention changes does not establish a causal relationship.",
+                "Declining reading rates and reduced engagement with long-form content correlate with short video growth.",
                 "Short-form content serves a legitimate and distinct entertainment and information purpose."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about the attention span concern with short-form video (Pros) and the causation and legitimacy arguments (Cons).",
             "explanation": "Short video platforms algorithmically condition rapid attention transitions (Pros for concern), but causation is unproven, and short-form content has legitimate and distinct value alongside longer formats (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L93_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Short-form video content limits young people's meaningful engagement with complex ideas.",
             "options": [
                 "Platforms reward emotionally engaging, simple content over nuanced argument and complex reasoning.",
-                "Young people who consume primarily short videos develop less tolerance for ambiguity and complexity.",
                 "Attention capacity varies enormously between individuals and is shaped by many factors.",
-                "High-quality educational shorts and documentary clips demonstrate complexity can be conveyed concisely."
+                "High-quality educational shorts and documentary clips demonstrate complexity can be conveyed concisely.",
+                "Young people who consume primarily short videos develop less tolerance for ambiguity and complexity."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Consider how short video formats shape intellectual engagement (Pros for concern) and the evidence limitations (Cons).",
             "explanation": "Algorithmic rewards for simplicity limit young people's exposure to complex ideas (Pros for concern), but individual variation is large, causation is unproven, and quality educational content shows concise formats can convey genuine complexity (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L93_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Platforms should be redesigned to encourage deeper and more substantive content consumption.",
             "options": [
                 "Autoplay limits, content variety features, and reduced short-clip recommendation can support deeper engagement.",
-                "Platforms investing in long-form premium content demonstrate that audiences can sustain extended attention.",
                 "User demand for short content is genuine and reflects authentic preferences, not just algorithmic manipulation.",
+                "Platforms investing in long-form premium content demonstrate that audiences can sustain extended attention.",
                 "Regulating content format would represent unprecedented government interference in editorial decisions."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about designing platforms for substantive content (Pros) and the demand and regulation concerns (Cons).",
             "explanation": "Platform design modifications and long-form investment can support deeper engagement (Pros), but user demand for short content is genuine, and regulating content format would be unprecedented and unworkable editorial overreach (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L94_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Employees who work from home are more productive than those required to be in the office.",
             "options": [
-                "Home workers report significantly fewer interruptions and can focus on tasks with greater concentration.",
-                "Autonomy over workspace and daily schedule allows employees to structure their work for maximum output.",
                 "Home productivity gains are highly inconsistent and depend heavily on home environment and role type.",
-                "Productivity is genuinely difficult to measure fairly outside the structured observation of the office."
+                "Home workers report significantly fewer interruptions and can focus on tasks with greater concentration.",
+                "Productivity is genuinely difficult to measure fairly outside the structured observation of the office.",
+                "Autonomy over workspace and daily schedule allows employees to structure their work for maximum output."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the productivity benefits of home working (Pros) and the variability and measurement concerns (Cons).",
             "explanation": "Home working reduces interruptions and enables autonomous schedule optimisation (Pros), but gains vary enormously by individual and circumstance, and measuring true remote productivity is methodologically complex (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L94_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Permanent remote working reduces creativity, collaboration, and organisational innovation.",
             "options": [
-                "Spontaneous conversations and chance physical encounters generate ideas that digital channels cannot replicate.",
-                "In-person collaboration produces richer and faster problem-solving than remote digital communication.",
                 "Digital collaboration tools have made remote innovation increasingly effective across many team contexts.",
-                "Some employees are more creative and innovative in the focused environment of their home workspace."
+                "Some employees are more creative and innovative in the focused environment of their home workspace.",
+                "Spontaneous conversations and chance physical encounters generate ideas that digital channels cannot replicate.",
+                "In-person collaboration produces richer and faster problem-solving than remote digital communication."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider the creativity and collaboration argument against permanent home working (Pros) and the technology counter (Cons).",
             "explanation": "Chance physical encounters and in-person collaboration generate ideas remote channels struggle to replicate (Pros), but digital tools increasingly enable effective remote collaboration, and many individuals genuinely innovate better at home (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L94_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Employers should measure performance by output rather than monitoring where employees work.",
             "options": [
-                "Output-based performance management respects employee autonomy and focuses on results that matter.",
-                "Judging by results rather than presence creates fairer conditions for remote and office workers alike.",
                 "Some employees overstate productivity when self-reporting without adequate accountability structures.",
-                "Output measurement requires clear, agreed performance criteria that are challenging to establish consistently."
+                "Output-based performance management respects employee autonomy and focuses on results that matter.",
+                "Output measurement requires clear, agreed performance criteria that are challenging to establish consistently.",
+                "Judging by results rather than presence creates fairer conditions for remote and office workers alike."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about output-based performance management versus location monitoring (Pros for output) and its challenges (Cons).",
             "explanation": "Output measurement respects autonomy and produces fairer performance evaluation (Pros), but some employees over-report productivity without accountability, and establishing clear, fair output metrics is genuinely difficult in many roles (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L95_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Automation should be taxed directly to ensure its benefits are shared across society.",
             "options": [
                 "A robot tax creates revenue to fund retraining, education, and social protection for displaced workers.",
-                "Taxing automation discourages profit-only replacement of workers where human alternatives still exist.",
                 "Automation taxes reduce the competitive advantage of innovation and could slow beneficial technological progress.",
-                "Defining and valuing automated labour for taxation purposes is technically and legally very complex."
+                "Defining and valuing automated labour for taxation purposes is technically and legally very complex.",
+                "Taxing automation discourages profit-only replacement of workers where human alternatives still exist."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about the redistribution case for an automation tax (Pros) and the innovation and definitional concerns (Cons).",
             "explanation": "Automation taxes fund worker protection and discourage pure profit-driven displacement (Pros), but they reduce innovation incentives and automating labour is technically very difficult to define and value for taxation (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L95_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "An automation tax could fund universal retraining programmes for displaced workers.",
             "options": [
+                "Retraining success rates for mid-career workers displaced by technology are historically very low.",
                 "A dedicated fund provides reliable, sustainable financing for adult education and career retraining.",
                 "Workers displaced by automation receive funded pathways to new careers rather than long-term unemployment.",
-                "Retraining success rates for mid-career workers displaced by technology are historically very low.",
                 "Automation tax revenue may be insufficient to fund the scale of retraining AI-driven displacement requires."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Consider the retraining funding case for automation taxes (Pros) and the effectiveness and scale concerns (Cons).",
             "explanation": "Automation taxes create reliable retraining funding and career transition pathways (Pros), but retraining mid-career displaced workers has poor historical success rates, and the scale of AI displacement may far exceed available tax revenues (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L95_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "An automation tax unfairly penalises innovative companies that create genuine economic value.",
@@ -290,7 +290,7 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L96_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Children under twelve should not be permitted to regularly use smartphones.",
@@ -309,45 +309,45 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L96_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Restricting children's smartphone access protects them from online predators and inappropriate content.",
             "options": [
                 "Children without personal smartphones are less vulnerable to online grooming, exploitation, and harmful exposure.",
-                "Delayed smartphone access reduces cyberbullying during socially formative primary school years.",
                 "Children without smartphones may be excluded from peer social groups where phones are now universal.",
+                "Delayed smartphone access reduces cyberbullying during socially formative primary school years.",
                 "Parental controls combined with media literacy education provide more effective and proportionate protection."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider the online safety case for restricting child smartphone access (Pros) and the social exclusion concern (Cons).",
             "explanation": "Restricting early phone access reduces grooming risk and cyberbullying during formative years (Pros), but social exclusion is a real consequence, and parental controls with digital literacy education may protect children more effectively and proportionately (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L96_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Schools should develop clear policies on appropriate smartphone use by younger students.",
             "options": [
                 "Consistent school policies provide clear and predictable digital boundaries supporting parents at home.",
-                "School guidelines that model healthy digital habits extend naturally into children's home lives.",
                 "School policies cannot substitute for parental oversight during the many hours children spend at home.",
+                "School guidelines that model healthy digital habits extend naturally into children's home lives.",
                 "Overly restrictive school smartphone rules create real problems for legitimate emergency communication."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Think about school smartphone policies as a protective tool (Pros) and their scope and practical limitations (Cons).",
             "explanation": "Consistent school policies model healthy digital habits and support parental boundaries at home (Pros), but they cannot govern home use, and overly strict rules create genuine emergency communication difficulties (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L97_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Electric vehicles are the most practical solution to the problem of urban air pollution.",
@@ -366,197 +366,197 @@
         },
         {
             "id": "WRT_OPINIONWRITING_L97_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Investment in cycling and public transport is a better response to urban pollution than EVs.",
             "options": [
                 "Shifting journeys to cycling and public transport eliminates both emissions and congestion simultaneously.",
-                "Public transport investment reduces the total number of private vehicles rather than just changing their fuel.",
                 "Behaviour change towards cycling and transit is slower and more difficult than transitioning to EV fleets.",
+                "Public transport investment reduces the total number of private vehicles rather than just changing their fuel.",
                 "Sustained public transport investment requires political will and funding that many cities cannot guarantee."
             ],
             "correctOrder": [
                 0,
-                1
+                2
             ],
             "hint": "Consider whether active and public transport is preferable to EV adoption (Pros) and the implementation challenges (Cons).",
             "explanation": "Cycling and transit eliminate both emissions and congestion, addressing the whole problem rather than just fuel type (Pros), but mode shift requires difficult behaviour change and sustained funding investment many cities cannot consistently deliver (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L97_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A combined strategy of EVs, cycling, and public transport investment is necessary for urban pollution.",
             "options": [
-                "Different urban contexts require different solutions: EVs for suburban trips, cycling and transit for dense centres.",
-                "Complementary solutions create a more resilient and equitable urban mobility system for all users.",
                 "Pursuing multiple solutions simultaneously risks dispersing insufficient resources across all options.",
-                "Coordinating EV infrastructure, cycle lanes, and transit requires integrated planning most cities currently lack."
+                "Different urban contexts require different solutions: EVs for suburban trips, cycling and transit for dense centres.",
+                "Coordinating EV infrastructure, cycle lanes, and transit requires integrated planning most cities currently lack.",
+                "Complementary solutions create a more resilient and equitable urban mobility system for all users."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about a combined urban transport strategy (Pros) and the coordination and resource challenges (Cons).",
             "explanation": "Complementary strategies address different urban contexts and create resilient, equitable systems (Pros), but dispersed policy focus risks underfunding every option, and coordination requires planning capacity most cities lack (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L98_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Digital libraries should eventually replace all physical library buildings.",
             "options": [
-                "Digital libraries provide around-the-clock access to far larger collections without travel barriers.",
-                "Eliminating costly physical buildings redirects resources towards digital content and improved technology.",
                 "Physical libraries serve as vital community hubs, safe warm spaces, and centres for adult learning.",
-                "Digital libraries exclude citizens without internet access or digital confidence, widening inequality."
+                "Digital libraries exclude citizens without internet access or digital confidence, widening inequality.",
+                "Digital libraries provide around-the-clock access to far larger collections without travel barriers.",
+                "Eliminating costly physical buildings redirects resources towards digital content and improved technology."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about the access and cost case for digital libraries (Pros) and the community and equity concerns (Cons).",
             "explanation": "Digital libraries offer unlimited access without geographic or time barriers (Pros), but physical libraries are irreplaceable community hubs and their digital replacement excludes digitally disadvantaged citizens (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L98_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Physical library buildings provide irreplaceable community and social value.",
             "options": [
-                "Libraries are trusted public spaces for studying, meeting others, and accessing help during difficult times.",
-                "Librarians provide expert research support, digital assistance, and human connection that technology cannot replace.",
                 "Declining in-person library use in the digital age makes maintaining expensive buildings harder to justify.",
-                "Mobile library services and community hubs can partially maintain access at significantly lower cost."
+                "Mobile library services and community hubs can partially maintain access at significantly lower cost.",
+                "Libraries are trusted public spaces for studying, meeting others, and accessing help during difficult times.",
+                "Librarians provide expert research support, digital assistance, and human connection that technology cannot replace."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Consider the community case for keeping physical libraries (Pros) and the usage and cost concerns (Cons).",
             "explanation": "Physical libraries provide trusted community spaces and expert human support irreplaceable by technology (Pros), but declining footfall in the digital age makes the cost of large buildings increasingly difficult to justify to public funders (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L98_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "A hybrid model of digital and physical library services best serves modern communities.",
             "options": [
                 "Physical spaces serve those needing community and expert help while digital platforms serve independent users.",
-                "Hybrid models can be phased in gradually, preserving community value while reducing long-term costs.",
                 "Hybrid models may combine the high costs of both physical and digital without fully achieving either's benefits.",
-                "Constrained library budgets often make genuinely maintaining both physical and digital services unaffordable."
+                "Constrained library budgets often make genuinely maintaining both physical and digital services unaffordable.",
+                "Hybrid models can be phased in gradually, preserving community value while reducing long-term costs."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about a hybrid library model as the optimal modern approach (Pros) and the cost and effectiveness concerns (Cons).",
             "explanation": "Hybrid models preserve community value while extending digital access through gradual implementation (Pros), but they risk combining costs without delivering either format's full benefits, and budget constraints often make true hybrid service unaffordable (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L99_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Online medical consultations are as effective as in-person GP appointments for most conditions.",
             "options": [
-                "Remote consultations enable patients to access healthcare quickly without travel, time off work, or waiting.",
-                "Video and telephone consultations are highly effective for follow-ups, prescription reviews, and non-urgent care.",
                 "Physical examination is essential for accurately diagnosing many common and complex medical presentations.",
-                "Patients with limited digital access or confidence are disadvantaged by models requiring remote consultation."
+                "Remote consultations enable patients to access healthcare quickly without travel, time off work, or waiting.",
+                "Patients with limited digital access or confidence are disadvantaged by models requiring remote consultation.",
+                "Video and telephone consultations are highly effective for follow-ups, prescription reviews, and non-urgent care."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Think about the effectiveness and access case for online consultations (Pros) and the diagnostic and equity concerns (Cons).",
             "explanation": "Remote consultations provide fast access and work well for follow-ups and non-urgent concerns (Pros), but physical examination is essential for many conditions, and digital barriers disadvantage already marginalised patients (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L99_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Expanding online medical consultations helps address access inequality in healthcare.",
             "options": [
-                "Remote appointments allow patients in rural areas with limited local GP provision to access timely care.",
-                "Online appointments make healthcare accessible to patients whose work patterns make in-person visits impossible.",
                 "Telephone and video consultations have lower completion rates among older and less digitally confident patients.",
-                "Healthcare access inequality requires investment in provision and capacity, not digital substitution."
+                "Remote appointments allow patients in rural areas with limited local GP provision to access timely care.",
+                "Healthcare access inequality requires investment in provision and capacity, not digital substitution.",
+                "Online appointments make healthcare accessible to patients whose work patterns make in-person visits impossible."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                3
             ],
             "hint": "Consider remote consultations as an access equity intervention (Pros) and the digital divide and structural concerns (Cons).",
             "explanation": "Online appointments expand rural and work-restricted access to healthcare (Pros), but lower completion rates among older patients perpetuate exclusion, and structural access gaps require genuine service investment rather than digital workarounds (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L99_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "AI-powered symptom checkers can enhance and extend primary care without replacing doctors.",
             "options": [
                 "AI triage tools efficiently direct patients to appropriate care levels, reducing unnecessary GP demand.",
-                "Around-the-clock symptom checkers provide immediate initial guidance during out-of-hours health concerns.",
                 "AI symptom tools show both dangerous over-triage and under-triage errors in real-world deployment.",
-                "Patients may over-rely on AI tools rather than seeking professional care when genuinely necessary."
+                "Patients may over-rely on AI tools rather than seeking professional care when genuinely necessary.",
+                "Around-the-clock symptom checkers provide immediate initial guidance during out-of-hours health concerns."
             ],
             "correctOrder": [
                 0,
-                1
+                3
             ],
             "hint": "Think about AI symptom tools as healthcare enhancers (Pros) and the triage accuracy and over-reliance risks (Cons).",
             "explanation": "AI triage improves care routing and provides out-of-hours initial guidance (Pros), but real-world deployment shows triage errors in both directions, and patient over-reliance on AI risks dangerous delays in seeking professional care (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L100_Q1",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Advancing technology is widening the economic gap between the rich and poor globally.",
             "options": [
-                "Automation disproportionately displaces routine jobs performed predominantly by lower-income workers.",
-                "Access to powerful technology, training, and digital infrastructure remains profoundly unequal.",
                 "Technology has significantly reduced the real cost of communication, education, and healthcare globally.",
-                "Mobile technology and internet access have created economic opportunities in previously excluded regions."
+                "Mobile technology and internet access have created economic opportunities in previously excluded regions.",
+                "Automation disproportionately displaces routine jobs performed predominantly by lower-income workers.",
+                "Access to powerful technology, training, and digital infrastructure remains profoundly unequal."
             ],
             "correctOrder": [
-                0,
-                1
+                2,
+                3
             ],
             "hint": "Think about technology's role in widening inequality (Pros for concern) and its equalising effects (Cons).",
             "explanation": "Automation displaces lower-income workers and digital access remains deeply unequal (Pros), but technology has also dramatically reduced the cost of educational and economic participation globally (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L100_Q2",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Digital skills training is essential to ensure technology reduces rather than increases inequality.",
             "options": [
+                "Digital skills training alone cannot address structural inequalities in education and opportunity.",
                 "Equipping workers with digital skills enables them to participate in and benefit from the technology economy.",
                 "Targeted digital training for lower-income adults can close the skills gap before it becomes permanent.",
-                "Digital skills training alone cannot address structural inequalities in education and opportunity.",
                 "Technology companies whose automation causes displacement should fund worker retraining as a responsibility."
             ],
             "correctOrder": [
-                0,
-                1
+                1,
+                2
             ],
             "hint": "Consider digital skills training as an inequality response (Pros) and the structural and corporate responsibility concerns (Cons).",
             "explanation": "Digital skills training enables lower-income workers to participate in the technology economy (Pros), but training alone cannot address structural inequality, and the cost burden should include technology companies whose automation drives displacement (Cons)."
         },
         {
             "id": "WRT_OPINIONWRITING_L100_Q3",
-            "instruction": "Weigh the arguments as pros (support) or cons (counter).",
+            "instruction": "Decide if each statement is a Pro (it supports the opinion) or a Con (it argues against it).",
             "subtype": "opinionWriting",
             "interactionType": "Balance Scale",
             "prompt": "Governments must regulate technology companies to ensure innovation's benefits are broadly shared.",
