@@ -180,7 +180,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                           (isCompact ? 90.h : 120.h) +
                           100.h +
                           (isCompact ? 130.h : 172.h) +
-                          0;
+                          (_isAnswered ? 180.h : 0);
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -309,7 +309,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                             onSubmitChoice: _submitChoice,
                                             onSliderUpdate: _onSliderUpdate,
                                           ),
-                                    SizedBox(height: gapBottom),
+                                    SizedBox(height: gapBottom + (_isAnswered ? 180.h : 0)),
                                   ],
                                 ),
                               ],
@@ -325,5 +325,6 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
     );
   }
 }
+
 
 

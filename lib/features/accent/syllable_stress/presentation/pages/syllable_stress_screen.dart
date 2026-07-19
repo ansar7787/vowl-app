@@ -153,7 +153,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                           (isCompact ? 90.h : 120.h) +
                           100.h +
                           (isCompact ? 130.h : 172.h) +
-                          0;
+                          (_isAnswered ? 180.h : 0);
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -276,7 +276,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                             selectedIndex: _selectedIndex,
                                             onPadTap: _onPadTap,
                                           ),
-                                    SizedBox(height: gapBottom),
+                                    SizedBox(height: gapBottom + (_isAnswered ? 180.h : 0)),
                                   ],
                                 ),
                               ],
@@ -292,5 +292,6 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
     );
   }
 }
+
 
 

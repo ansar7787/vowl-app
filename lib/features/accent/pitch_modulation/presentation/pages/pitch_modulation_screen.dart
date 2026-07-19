@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -194,7 +194,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                           90.h +
                           80.h +
                           140.h +
-                          0;
+                          (_isAnswered ? 180.h : 0);
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -270,7 +270,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                       onSubmitChoice: _submitChoice,
                                     ),
 
-                                    SizedBox(height: gapBottom),
+                                    SizedBox(height: gapBottom + (_isAnswered ? 180.h : 0)),
                                   ],
                                 ),
                               ],
@@ -286,4 +286,5 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
     );
   }
 }
+
 

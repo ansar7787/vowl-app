@@ -157,7 +157,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                           (isCompact ? 90.h : 120.h) +
                           80.h +
                           (isCompact ? 130.h : 172.h) +
-                          0;
+                          (_isAnswered ? 180.h : 0);
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -277,7 +277,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                                 _selectedNodeIndex,
                                             onNodeTap: _onNodeTap,
                                           ),
-                                    SizedBox(height: gapBottom),
+                                    SizedBox(height: gapBottom + (_isAnswered ? 180.h : 0)),
                                   ],
                                 ),
                               ],
@@ -293,5 +293,6 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
     );
   }
 }
+
 
 

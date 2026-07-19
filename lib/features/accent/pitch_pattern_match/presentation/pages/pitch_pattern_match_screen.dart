@@ -213,7 +213,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                           0 +
                           80.h +
                           140.h +
-                          0;
+                          (_isAnswered ? 180.h : 0);
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -295,7 +295,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                       onSubmitChoice: _submitChoice,
                                       onSliderUpdate: _onSliderUpdate,
                                     ),
-                                    SizedBox(height: gapBottom),
+                                    SizedBox(height: gapBottom + (_isAnswered ? 180.h : 0)),
                                   ],
                                 ),
                               ],
@@ -311,5 +311,6 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
     );
   }
 }
+
 
 

@@ -187,7 +187,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                           90.h +
                           80.h +
                           140.h +
-                          0;
+                          (_isAnswered ? 180.h : 0);
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -260,7 +260,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                                       onDialRelease: _onDialRelease,
                                       onSubmitChoice: _submitChoice,
                                     ),
-                                    SizedBox(height: gapBottom),
+                                    SizedBox(height: gapBottom + (_isAnswered ? 180.h : 0)),
                                   ],
                                 ),
                               ],
@@ -276,5 +276,6 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
     );
   }
 }
+
 
 

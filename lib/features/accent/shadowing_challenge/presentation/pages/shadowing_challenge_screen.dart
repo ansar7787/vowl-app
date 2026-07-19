@@ -161,7 +161,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                           90.h +
                           80.h +
                           140.h +
-                          0;
+                          (_isAnswered ? 180.h : 0);
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -229,7 +229,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                       selectedIndex: _selectedIndex,
                                       onSubmitChoice: _submitChoice,
                                     ),
-                                    SizedBox(height: gapBottom),
+                                    SizedBox(height: gapBottom + (_isAnswered ? 180.h : 0)),
                                   ],
                                 ),
                               ],
@@ -245,5 +245,6 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
     );
   }
 }
+
 
 
