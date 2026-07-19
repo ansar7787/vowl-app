@@ -1087,17 +1087,17 @@ class GameInstructionService {
     ),
     // 7. Accent
     GameSubtype.minimalPairs: GameBriefing(
-      title: "Sound Pairs",
+      title: "Sound Sorter",
       icon: Icons.compare_arrows_rounded,
       objective:
-          "Listen to the sound and choose the correct word between two very similar options.",
+          "Master subtle phonetic differences by selecting the exact word you hear.",
       rules: [
-        "Listen closely",
-        "Compare the sounds",
-        "Select the correct word",
+        "Listen to the speaker",
+        "Identify the subtle sound",
+        "Select the correct option",
       ],
-      actionText: "Match Word",
-      tip: "PRO TIP: Pay attention to how long the vowel sound lasts!",
+      actionText: "Sort Sounds",
+      tip: "PRO TIP: Pay close attention to vowel length and tension!",
     ),
     GameSubtype.intonationMimic: GameBriefing(
       title: "Intonation Mimic",

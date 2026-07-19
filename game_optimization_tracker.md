@@ -89,7 +89,7 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [ ] Contextual Usage (`contextualUsage`)
 
 ## Accent (12)
-- [ ] Minimal Pairs (`minimalPairs`)
+- [x] ✅ Minimal Pairs (`minimalPairs`)
 - [x] ✅ Intonation Mimic (`intonationMimic`)
 - [ ] Syllable Stress (`syllableStress`)
 - [ ] Word Linking (`wordLinking`)

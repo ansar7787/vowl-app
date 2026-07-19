@@ -16,6 +16,7 @@ import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_prompt_card.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_speaker_core.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_drone_option.dart';
+import 'package:vowl/features/accent/presentation/constants/accent_game_constants.dart';
 
 class MinimalPairsScreen extends StatefulWidget {
   final int level;
@@ -35,7 +36,8 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
   final _soundService = di.sl<SoundService>();
 
   int _lastProcessedIndex = -1;
-  int? _lastLives;
+  int _lastLives = AccentGameConstants.maxLives;
+  AccentQuest? _lastQuest;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -89,7 +91,8 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
     return BlocConsumer<AccentBloc, AccentState>(
       listener: (context, state) {
         if (state is AccentLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          _lastQuest = state.currentQuest as AccentQuest?;
+          final livesChanged = (state.livesRemaining > _lastLives);
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
               (state.lastAnswerCorrect == null && _isAnswered)) {
@@ -125,7 +128,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
       builder: (context, state) {
         final AccentQuest? quest = (state is AccentLoaded)
             ? state.currentQuest as AccentQuest?
-            : null;
+            : _lastQuest;
         final mediaQuery = MediaQuery.of(context);
 
         return MediaQuery(
@@ -190,24 +193,10 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     SizedBox(height: gapTop),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 32.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
-                                                child: MinimalPairsInstruction(
-                                                  color: theme.primaryColor,
-                                                  instruction: context.tr('games.minimal_pairs_instruction', fallback: quest.instruction),
-                                                ),
-                                              ),
-                                            ),
-                                          )
-                                        : MinimalPairsInstruction(
-                                            color: theme.primaryColor,
-                                            instruction: context.tr('games.minimal_pairs_instruction', fallback: quest.instruction),
-                                          ),
+                                    MinimalPairsInstruction(
+                                      color: theme.primaryColor,
+                                      instruction: context.tr('games.minimal_pairs_instruction', fallback: quest.instruction),
+                                    ),
                                     SizedBox(height: gapInstruction),
 
                                     isCompact
@@ -220,8 +209,6 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                                 child: MinimalPairsPromptCard(
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
-                                                  vowelTensionRule:
-                                                      quest.vowelTensionRule,
                                                 ),
                                               ),
                                             ),
@@ -229,8 +216,6 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                         : MinimalPairsPromptCard(
                                             color: theme.primaryColor,
                                             isDark: isDark,
-                                            vowelTensionRule:
-                                                quest.vowelTensionRule,
                                           ),
                                     SizedBox(height: gapPrompt),
 
