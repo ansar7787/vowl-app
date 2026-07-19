@@ -13,7 +13,7 @@ import 'package:vowl/features/accent/presentation/layout/accent_base_layout.dart
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_instruction.dart';
-import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_prompt_card.dart';
+// Removed unused MinimalPairsPromptCard import
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_speaker_core.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_drone_option.dart';
 import 'package:vowl/features/accent/presentation/constants/accent_game_constants.dart';
@@ -197,34 +197,12 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                       color: theme.primaryColor,
                                       instruction: context.tr('games.minimal_pairs_instruction', fallback: quest.instruction),
                                     ),
-                                    SizedBox(height: gapInstruction),
-
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 90.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
-                                                child: MinimalPairsPromptCard(
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
-                                                ),
-                                              ),
-                                            ),
-                                          )
-                                        : MinimalPairsPromptCard(
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                          ),
-                                    SizedBox(height: gapPrompt),
-
-                                    MinimalPairsSpeakerCore(
-                                      text: quest.textToSpeak ?? "",
-                                      color: theme.primaryColor,
-                                      onPlayTts: _playTts,
-                                    ),
                                   ],
+                                ),
+                                MinimalPairsSpeakerCore(
+                                  text: quest.textToSpeak ?? "",
+                                  color: theme.primaryColor,
+                                  onPlayTts: _playTts,
                                 ),
                                 Column(
                                   mainAxisSize: MainAxisSize.min,
