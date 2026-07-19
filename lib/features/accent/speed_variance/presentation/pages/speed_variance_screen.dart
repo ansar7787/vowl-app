@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -16,7 +16,7 @@ import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_v
 import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_variance_prompt_card.dart';
 import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_variance_pulse_speaker.dart';
 import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_variance_tempo_dial.dart';
-import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_variance_explanation_card.dart';
+
 
 class SpeedVarianceScreen extends StatefulWidget {
   final int level;
@@ -187,7 +187,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                           90.h +
                           80.h +
                           140.h +
-                          (_isAnswered ? 110.h : 0);
+                          0;
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -262,15 +262,6 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                                       onDialRelease: _onDialRelease,
                                       onSubmitChoice: _submitChoice,
                                     ),
-                                    if (_isAnswered) ...[
-                                      SizedBox(height: gapSlider),
-                                      SpeedVarianceExplanationCard(
-                                        quest: quest,
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                        isCorrect: _isCorrect,
-                                      ),
-                                    ],
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),
@@ -287,3 +278,4 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
     );
   }
 }
+

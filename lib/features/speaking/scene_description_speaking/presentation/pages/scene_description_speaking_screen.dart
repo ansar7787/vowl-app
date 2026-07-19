@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,7 +18,6 @@ import 'package:vowl/features/speaking/scene_description_speaking/presentation/w
 import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/scene_description_active_prompt_card.dart';
 import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/scene_description_explorer_guide_card.dart';
 import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/scene_description_telemetry_card.dart';
-import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/scene_description_explanation_card.dart';
 import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/scene_description_mic_trigger.dart';
 
 class SceneDescriptionScreen extends StatefulWidget {
@@ -469,36 +468,6 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     SizedBox(height: gapTelemetry),
-                                    AnimatedCrossFade(
-                                      firstChild: const SizedBox(),
-                                      secondChild: isCompact
-                                          ? SizedBox(
-                                              height: 100.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width:
-                                                      constraints.maxWidth -
-                                                      16.w,
-                                                  child:
-                                                      SceneDescriptionExplanationCard(
-                                                        quest: quest,
-                                                        isDark: isDark,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : SceneDescriptionExplanationCard(
-                                              quest: quest,
-                                              isDark: isDark,
-                                            ),
-                                      crossFadeState: _isAnswered
-                                          ? CrossFadeState.showSecond
-                                          : CrossFadeState.showFirst,
-                                      duration: const Duration(
-                                        milliseconds: 400,
-                                      ),
-                                    ),
                                     SizedBox(height: gapBottom),
 
                                     if (!_isAnswered)
@@ -554,3 +523,4 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
     );
   }
 }
+

@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,7 +18,6 @@ import 'package:vowl/features/speaking/speak_synonym/presentation/widgets/speak_
 import 'package:vowl/features/speaking/speak_synonym/presentation/widgets/speak_synonym_sentence_panel.dart';
 import 'package:vowl/features/speaking/speak_synonym/presentation/widgets/speak_synonym_garden_panel.dart';
 import 'package:vowl/features/speaking/speak_synonym/presentation/widgets/speak_synonym_telemetry_card.dart';
-import 'package:vowl/features/speaking/speak_synonym/presentation/widgets/speak_synonym_explanation_card.dart';
 import 'package:vowl/features/speaking/speak_synonym/presentation/widgets/speak_synonym_watering_mic_trigger.dart';
 
 class SpeakSynonymScreen extends StatefulWidget {
@@ -437,42 +436,6 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                                               isDark: isDark,
                                             ),
 
-                                    AnimatedCrossFade(
-                                      firstChild: const SizedBox(),
-                                      secondChild: isCompact
-                                          ? SizedBox(
-                                              height: 100.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width:
-                                                      constraints.maxWidth -
-                                                      16.w,
-                                                  child:
-                                                      SpeakSynonymExplanationCard(
-                                                        quest: quest,
-                                                        isCorrect:
-                                                            _isCorrect ?? false,
-                                                        isDark: isDark,
-                                                        acceptedSyns:
-                                                            _acceptedSyns,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : SpeakSynonymExplanationCard(
-                                              quest: quest,
-                                              isCorrect: _isCorrect ?? false,
-                                              isDark: isDark,
-                                              acceptedSyns: _acceptedSyns,
-                                            ),
-                                      crossFadeState: _isAnswered
-                                          ? CrossFadeState.showSecond
-                                          : CrossFadeState.showFirst,
-                                      duration: const Duration(
-                                        milliseconds: 400,
-                                      ),
-                                    ),
                                     SizedBox(height: gapTelemetry),
 
                                     if (!_isAnswered)
@@ -525,3 +488,4 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
     );
   }
 }
+

@@ -33,110 +33,126 @@ class PitchModulationDialControl extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Expanded(
-              child: _buildConnectedSpeechOrb(
-                options[0],
-                0,
-                correctIndex,
-                color,
-                isDark,
-              ),
-            ),
-            SizedBox(width: 12.w),
-            _buildChromeDial(correctIndex, color, isDark),
-            SizedBox(width: 12.w),
-            Expanded(
-              child: _buildConnectedSpeechOrb(
+        Expanded(
+          flex: 1,
+          child: _buildVerticalFader(correctIndex, color, isDark),
+        ),
+        SizedBox(width: 20.w),
+        Expanded(
+          flex: 4,
+          child: Column(
+            children: [
+              _buildOptionCard(
                 options[1],
                 1,
                 correctIndex,
                 color,
                 isDark,
               ),
-            ),
-          ],
-        ),
-        SizedBox(height: 24.h),
-        Text(
-          isDragging ? "MODULATING TONE..." : "ROTATE DIAL OR TAP PREFERENCE",
-          style: TextStyle(
-            fontFamily: 'RobotoMono',
-            fontSize: 10.sp,
-            fontWeight: FontWeight.bold,
-            color: color.withValues(alpha: 0.8),
-            letterSpacing: 1,
+              SizedBox(height: 32.h),
+              _buildOptionCard(
+                options[0],
+                0,
+                correctIndex,
+                color,
+                isDark,
+              ),
+            ],
           ),
         ),
       ],
     );
   }
 
-  Widget _buildChromeDial(int correct, Color color, bool isDark) {
-    return Center(
-      child: GestureDetector(
-        onPanUpdate: (details) => onDialRotate(details, correct),
-        onPanEnd: (_) => onDialRelease(),
-        child: Transform.rotate(
-          angle: dialRotation,
-          child: Container(
-            width: 100.r,
-            height: 100.r,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: RadialGradient(
-                colors: [
-                  isDark ? Colors.grey.shade800 : Colors.grey.shade200,
-                  isDark ? Colors.black : Colors.grey.shade400,
-                ],
-              ),
-              boxShadow: const [
-                BoxShadow(
-                  color: Colors.black54,
-                  blurRadius: 10,
-                  offset: Offset(3, 3),
-                ),
-              ],
-              border: Border.all(color: color.withValues(alpha: 0.3), width: 3),
+  Widget _buildVerticalFader(int correct, Color color, bool isDark) {
+    return GestureDetector(
+      onPanUpdate: (details) => onDialRotate(details, correct),
+      onPanEnd: (_) => onDialRelease(),
+      child: Container(
+        height: 180.h,
+        width: 60.w,
+        decoration: BoxDecoration(
+          color: isDark ? Colors.black45 : Colors.grey.shade200,
+          borderRadius: BorderRadius.circular(30.r),
+          border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.black12,
+              blurRadius: 5,
+              offset: Offset(0, 2),
             ),
-            child: Center(
-              child: Container(
-                width: 50.r,
-                height: 50.r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: isDark
-                      ? Colors.green.withValues(alpha: 0.1)
-                      : Colors.green.withValues(alpha: 0.05),
-                  border: Border.all(
-                    color: Colors.green.withValues(alpha: 0.4),
-                    width: 2,
-                  ),
-                ),
-                child:
-                    Icon(
-                          Icons.show_chart_rounded,
-                          color: Colors.green,
-                          size: 24.r,
-                        )
-                        .animate(onPlay: (c) => c.repeat(reverse: true))
-                        .scale(
-                          begin: const Offset(1, 1),
-                          end: const Offset(1.2, 1.2),
+          ],
+        ),
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            // Center track line
+            Container(
+              width: 4.w,
+              height: 150.h,
+              decoration: BoxDecoration(
+                color: color.withValues(alpha: 0.3),
+                borderRadius: BorderRadius.circular(2.r),
+              ),
+            ),
+            
+            // Fader thumb
+            TweenAnimationBuilder<double>(
+              duration: isDragging ? Duration.zero : const Duration(milliseconds: 300),
+              curve: Curves.easeOutBack,
+              // dialRotation: -1.0 is bottom (Option 0), +1.0 is top (Option 1).
+              // Alignment.y goes from -1.0 (top) to +1.0 (bottom).
+              // Therefore, we negate dialRotation for Alignment.y.
+              tween: Tween<double>(begin: -dialRotation, end: -dialRotation),
+              builder: (context, rotation, child) {
+                return Align(
+                  alignment: Alignment(0, rotation),
+                  child: Container(
+                    width: 48.r,
+                    height: 48.r,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          isDark ? Colors.grey.shade700 : Colors.white,
+                          isDark ? Colors.grey.shade900 : Colors.grey.shade300,
+                        ],
+                      ),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.black45,
+                          blurRadius: 8,
+                          offset: Offset(0, 4),
                         ),
-              ),
+                      ],
+                      border: Border.all(
+                        color: color.withValues(alpha: isDragging ? 0.8 : 0.4),
+                        width: 2,
+                      ),
+                    ),
+                    child: Center(
+                      child: Icon(
+                        Icons.drag_handle_rounded,
+                        color: color,
+                        size: 24.r,
+                      ),
+                    ),
+                  ),
+                );
+              },
             ),
-          ),
+          ],
         ),
       ),
     );
   }
 
-  Widget _buildConnectedSpeechOrb(
+  Widget _buildOptionCard(
     String text,
     int index,
     int correctIndex,
@@ -146,63 +162,86 @@ class PitchModulationDialControl extends StatelessWidget {
     final bool isSelected = selectedIndex == index;
     final bool correct = index == correctIndex;
 
-    Color orbColor = color.withValues(alpha: 0.1);
+    Color cardColor = color.withValues(alpha: 0.05);
+    Color borderColor = color.withValues(alpha: 0.2);
     Color textColor = color;
+
     if (isAnswered && isSelected) {
-      orbColor = correct
-          ? Colors.greenAccent.withValues(alpha: 0.2)
-          : Colors.redAccent.withValues(alpha: 0.2);
+      cardColor = correct
+          ? Colors.greenAccent.withValues(alpha: 0.1)
+          : Colors.redAccent.withValues(alpha: 0.1);
+      borderColor = correct ? Colors.greenAccent : Colors.redAccent;
       textColor = correct ? Colors.greenAccent : Colors.redAccent;
     } else if (isSelected) {
-      orbColor = color;
-      textColor = Colors.white;
+      cardColor = color.withValues(alpha: 0.2);
+      borderColor = color;
+      textColor = isDark ? Colors.white : color;
+    }
+
+    String mainText = text;
+    String subText = "";
+    if (text.contains(" (") && text.endsWith(")")) {
+      final parts = text.split(" (");
+      mainText = parts[0];
+      subText = parts[1].substring(0, parts[1].length - 1);
     }
 
     return ScaleButton(
       onTap: () => onSubmitChoice(index, correctIndex),
-      child:
-          AnimatedContainer(
-                duration: const Duration(milliseconds: 200),
-                alignment: Alignment.center,
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 12.h),
-                decoration: BoxDecoration(
-                  color: orbColor,
-                  borderRadius: BorderRadius.circular(20.r),
-                  border: Border.all(
-                    color: isAnswered && isSelected
-                        ? textColor
-                        : color.withValues(alpha: isSelected ? 1.0 : 0.3),
-                    width: 3,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: isSelected
-                          ? (correct
-                                ? Colors.greenAccent.withValues(alpha: 0.3)
-                                : color.withValues(alpha: 0.3))
-                          : Colors.transparent,
-                      blurRadius: 15,
-                    ),
-                  ],
-                ),
-                child: Text(
-                  text,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'RobotoMono',
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.bold,
-                    color: textColor,
-                    height: 1.2,
-                  ),
-                ),
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .scale(
-                begin: const Offset(1, 1),
-                end: const Offset(1.05, 1.05),
-                duration: (2 + index).seconds,
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        width: double.infinity,
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+        decoration: BoxDecoration(
+          color: cardColor,
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(
+            color: borderColor,
+            width: isSelected ? 3 : 2,
+          ),
+          boxShadow: [
+            if (isSelected)
+              BoxShadow(
+                color: borderColor.withValues(alpha: 0.2),
+                blurRadius: 15,
+                spreadRadius: 2,
               ),
+          ],
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              mainText,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
+                fontWeight: FontWeight.bold,
+                color: textColor,
+                letterSpacing: 1,
+              ),
+            ),
+            if (subText.isNotEmpty) ...[
+              SizedBox(height: 4.h),
+              Text(
+                subText,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w500,
+                  color: isDark ? Colors.grey.shade400 : Colors.grey.shade700,
+                  height: 1.3,
+                ),
+              ),
+            ],
+          ],
+        ),
+      ).animate(target: isSelected ? 1 : 0).scale(
+            begin: const Offset(1, 1),
+            end: const Offset(1.02, 1.02),
+            duration: 150.ms,
+          ),
     );
   }
 }

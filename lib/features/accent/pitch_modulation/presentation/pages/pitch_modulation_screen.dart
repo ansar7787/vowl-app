@@ -16,7 +16,7 @@ import 'package:vowl/features/accent/pitch_modulation/presentation/widgets/pitch
 import 'package:vowl/features/accent/pitch_modulation/presentation/widgets/pitch_modulation_prompt_card.dart';
 import 'package:vowl/features/accent/pitch_modulation/presentation/widgets/pitch_modulation_pulse_speaker.dart';
 import 'package:vowl/features/accent/pitch_modulation/presentation/widgets/pitch_modulation_dial_control.dart';
-import 'package:vowl/features/accent/pitch_modulation/presentation/widgets/pitch_modulation_explanation_card.dart';
+
 
 class PitchModulationScreen extends StatefulWidget {
   final int level;
@@ -43,6 +43,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
   double _dialRotation = 0.0;
   bool _isDragging = false;
   int? _selectedIndex;
+  AccentQuest? _lastQuest;
 
   @override
   void initState() {
@@ -61,17 +62,17 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
     if (_isAnswered) return;
     setState(() {
       _isDragging = true;
-      _dialRotation = (_dialRotation + details.delta.dx / 100.0).clamp(
+      // UP drag = negative delta.dy. We want UP to increase rotation to +1.0.
+      _dialRotation = (_dialRotation - details.delta.dy / 150.0).clamp(
         -1.0,
         1.0,
       );
     });
-    _hapticService.selection();
 
     // Auto-lock when reaching ends
-    if (_dialRotation < -0.6) {
+    if (_dialRotation < -0.8) {
       _submitChoice(0, correct);
-    } else if (_dialRotation > 0.6) {
+    } else if (_dialRotation > 0.8) {
       _submitChoice(1, correct);
     }
   }
@@ -137,6 +138,9 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
             });
             // Proactively auto-play sound on question load
             final quest = state.currentQuest as AccentQuest?;
+            if (quest != null) {
+              _lastQuest = quest;
+            }
             if (quest != null && quest.textToSpeak != null) {
               Future.delayed(500.milliseconds, () {
                 if (mounted) {
@@ -161,9 +165,12 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
       builder: (context, state) {
         final AccentQuest? quest = (state is AccentLoaded)
             ? state.currentQuest as AccentQuest?
-            : null;
+            : _lastQuest;
         final options = quest?.options ?? ["A", "B"];
         final mediaQuery = MediaQuery.of(context);
+        
+        final int lives = state is AccentLoaded ? state.livesRemaining : (_lastLives ?? 3);
+
 
         return MediaQuery(
           data: mediaQuery.copyWith(
@@ -188,7 +195,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                           90.h +
                           80.h +
                           140.h +
-                          (_isAnswered ? 110.h : 0);
+                          0;
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -229,7 +236,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                     SizedBox(height: gapTop),
                                     PitchModulationInstruction(
                                       color: theme.primaryColor,
-                                      instruction: context.tr('games.pitch_modulation_instruction', fallback: quest.instruction),
+                                      instruction: context.tr('games.pitch_modulation_instruction', fallback: "Listen and identify the pitch pattern."),
                                     ),
                                     SizedBox(height: gapInstruction),
 
@@ -265,15 +272,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                       onDialRelease: _onDialRelease,
                                       onSubmitChoice: _submitChoice,
                                     ),
-                                    if (_isAnswered) ...[
-                                      SizedBox(height: gapSlider),
-                                      PitchModulationExplanationCard(
-                                        quest: quest,
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                        isCorrect: _isCorrect,
-                                      ),
-                                    ],
+
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),

@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,7 +19,6 @@ import 'package:vowl/features/speaking/pronunciation_focus/presentation/widgets/
 import 'package:vowl/features/speaking/pronunciation_focus/presentation/widgets/pronunciation_focus_thermal_grid.dart';
 import 'package:vowl/features/speaking/pronunciation_focus/presentation/widgets/pronunciation_focus_highlighted_sentence.dart';
 import 'package:vowl/features/speaking/pronunciation_focus/presentation/widgets/pronunciation_focus_telemetry_card.dart';
-import 'package:vowl/features/speaking/pronunciation_focus/presentation/widgets/pronunciation_focus_explanation_card.dart';
 import 'package:vowl/features/speaking/pronunciation_focus/presentation/widgets/pronunciation_focus_mic_core_button.dart';
 
 class PronunciationFocusScreen extends StatefulWidget {
@@ -437,39 +436,6 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                                               isDark: isDark,
                                             ),
 
-                                    AnimatedCrossFade(
-                                      firstChild: const SizedBox(),
-                                      secondChild: isCompact
-                                          ? SizedBox(
-                                              height: 100.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width:
-                                                      constraints.maxWidth -
-                                                      16.w,
-                                                  child:
-                                                      PronunciationFocusExplanationCard(
-                                                        quest: quest,
-                                                        isCorrect:
-                                                            _isCorrect ?? false,
-                                                        isDark: isDark,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : PronunciationFocusExplanationCard(
-                                              quest: quest,
-                                              isCorrect: _isCorrect ?? false,
-                                              isDark: isDark,
-                                            ),
-                                      crossFadeState: _isAnswered
-                                          ? CrossFadeState.showSecond
-                                          : CrossFadeState.showFirst,
-                                      duration: const Duration(
-                                        milliseconds: 400,
-                                      ),
-                                    ),
                                     SizedBox(height: gapTelemetry),
 
                                     if (!_isAnswered)
@@ -528,3 +494,4 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
     );
   }
 }
+

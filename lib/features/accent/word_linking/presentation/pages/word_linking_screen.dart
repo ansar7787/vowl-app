@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -16,7 +16,6 @@ import 'package:vowl/features/accent/word_linking/presentation/widgets/word_link
 import 'package:vowl/features/accent/word_linking/presentation/widgets/word_linking_prompt_card.dart';
 import 'package:vowl/features/accent/word_linking/presentation/widgets/word_linking_pulse_speaker.dart';
 import 'package:vowl/features/accent/word_linking/presentation/widgets/word_linking_sentence_field.dart';
-import 'package:vowl/features/accent/word_linking/presentation/widgets/word_linking_explanation_card.dart';
 
 class WordLinkingScreen extends StatefulWidget {
   final int level;
@@ -158,7 +157,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                           (isCompact ? 90.h : 120.h) +
                           80.h +
                           (isCompact ? 130.h : 172.h) +
-                          (_isAnswered ? (isCompact ? 110.h : 160.h) : 0);
+                          0;
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -280,33 +279,6 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                                 _selectedNodeIndex,
                                             onNodeTap: _onNodeTap,
                                           ),
-                                    if (_isAnswered) ...[
-                                      SizedBox(height: gapSlider),
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 110.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width: maxWidth - 48.w,
-                                                  child:
-                                                      WordLinkingExplanationCard(
-                                                        quest: quest,
-                                                        color:
-                                                            theme.primaryColor,
-                                                        isDark: isDark,
-                                                        isCorrect: _isCorrect,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : WordLinkingExplanationCard(
-                                              quest: quest,
-                                              color: theme.primaryColor,
-                                              isDark: isDark,
-                                              isCorrect: _isCorrect,
-                                            ),
-                                    ],
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),
@@ -323,3 +295,4 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
     );
   }
 }
+

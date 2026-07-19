@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,7 +18,6 @@ import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pi
 import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pitch_pattern_match_melodic_canvas.dart';
 import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pitch_pattern_match_pulse_speaker.dart';
 import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pitch_pattern_match_vertical_fader.dart';
-import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pitch_pattern_match_explanation_card.dart';
 
 class PitchPatternMatchScreen extends StatefulWidget {
   final int level;
@@ -211,10 +210,10 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                       final double estimatedContentHeight =
                           24.h +
                           70.h +
-                          (_isAnswered ? 80.h : 0) +
+                          0 +
                           80.h +
                           140.h +
-                          (_isAnswered ? 110.h : 0);
+                          0;
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -298,15 +297,6 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                       onSubmitChoice: _submitChoice,
                                       onSliderUpdate: _onSliderUpdate,
                                     ),
-                                    if (_isAnswered) ...[
-                                      SizedBox(height: gapSlider),
-                                      PitchPatternMatchExplanationCard(
-                                        quest: quest,
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                        isCorrect: _isCorrect,
-                                      ),
-                                    ],
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),
@@ -323,3 +313,4 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
     );
   }
 }
+

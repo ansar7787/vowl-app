@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,7 +16,6 @@ import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowe
 import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowel_distinction_prompt_card.dart';
 import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowel_distinction_pulse_speaker.dart';
 import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowel_distinction_spectral_slider.dart';
-import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowel_distinction_explanation_card.dart';
 
 class VowelDistinctionScreen extends StatefulWidget {
   final int level;
@@ -181,7 +180,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                           (isCompact ? 90.h : 120.h) +
                           100.h +
                           (isCompact ? 130.h : 172.h) +
-                          (_isAnswered ? (isCompact ? 110.h : 160.h) : 0);
+                          0;
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -312,33 +311,6 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                             onSubmitChoice: _submitChoice,
                                             onSliderUpdate: _onSliderUpdate,
                                           ),
-                                    if (_isAnswered) ...[
-                                      SizedBox(height: gapSlider),
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 110.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width: maxWidth - 48.w,
-                                                  child:
-                                                      VowelDistinctionExplanationCard(
-                                                        quest: quest,
-                                                        color:
-                                                            theme.primaryColor,
-                                                        isDark: isDark,
-                                                        isCorrect: _isCorrect,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : VowelDistinctionExplanationCard(
-                                              quest: quest,
-                                              color: theme.primaryColor,
-                                              isDark: isDark,
-                                              isCorrect: _isCorrect,
-                                            ),
-                                    ],
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),
@@ -355,3 +327,4 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
     );
   }
 }
+

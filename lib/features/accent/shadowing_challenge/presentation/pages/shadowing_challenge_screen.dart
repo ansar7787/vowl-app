@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,7 +17,6 @@ import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/sh
 
 import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/shadowing_challenge_pulse_speaker.dart';
 import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/shadowing_challenge_dialogue_list.dart';
-import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/shadowing_challenge_explanation_card.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class ShadowingChallengeScreen extends StatefulWidget {
@@ -162,7 +161,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                           90.h +
                           80.h +
                           140.h +
-                          (_isAnswered ? 110.h : 0);
+                          0;
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -232,15 +231,6 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                       selectedIndex: _selectedIndex,
                                       onSubmitChoice: _submitChoice,
                                     ),
-                                    if (_isAnswered) ...[
-                                      SizedBox(height: gapSlider),
-                                      ShadowingChallengeExplanationCard(
-                                        quest: quest,
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                        isCorrect: _isCorrect,
-                                      ),
-                                    ],
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),
@@ -257,3 +247,4 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
     );
   }
 }
+

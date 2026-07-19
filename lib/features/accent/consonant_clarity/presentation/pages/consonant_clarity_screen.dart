@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -15,7 +15,6 @@ import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/cons
 import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/consonant_clarity_prompt_card.dart';
 import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/consonant_clarity_pulse_speaker.dart';
 import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/consonant_clarity_tactile_grid.dart';
-import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/consonant_clarity_explanation_card.dart';
 
 class ConsonantClarityScreen extends StatefulWidget {
   final int level;
@@ -132,7 +131,6 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
             ? state.currentQuest as AccentQuest?
             : _lastQuest;
         final int livesRemaining = (state is AccentLoaded) ? state.livesRemaining : 0;
-        final bool showExplanation = _isCorrect == true || livesRemaining == 0;
         final options = quest?.options ?? ["A", "B"];
         final mediaQuery = MediaQuery.of(context);
 
@@ -161,7 +159,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                           (isCompact ? 90.h : 120.h) +
                           100.h +
                           (isCompact ? 130.h : 172.h) +
-                          (_isAnswered ? (isCompact ? 110.h : 160.h) : 0);
+                          0;
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -290,31 +288,6 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                             selectedIndex: _selectedIndex,
                                             onSubmitChoice: _submitChoice,
                                           ),
-                                    if (_isAnswered && showExplanation) ...[
-                                      SizedBox(height: gapSlider),
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 110.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width: maxWidth - 48.w,
-                                                  child:
-                                                      ConsonantClarityExplanationCard(
-                                                        quest: quest,
-                                                        color:
-                                                            theme.primaryColor,
-                                                        isDark: isDark,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : ConsonantClarityExplanationCard(
-                                              quest: quest,
-                                              color: theme.primaryColor,
-                                              isDark: isDark,
-                                            ),
-                                    ],
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),
@@ -331,3 +304,4 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
     );
   }
 }
+

@@ -1,46 +1,27 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
+import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
+import 'package:vowl/core/presentation/widgets/pedagogical_rule_box.dart';
 
-/// Bottom-sheet style feedback card shown after each answer.
-///
-/// Handles three outcomes:
-///   • Correct answer → green card, context.tr('common.continue_text', fallback: 'Continue').toUpperCase() button.
-///   • First wrong answer → red card, context.tr('games.try_again', fallback: 'Try Again').toUpperCase() button.
-///   • Final failure (2nd wrong or 0 lives) → red card, explanation,
-///     context.tr('common.continue_text', fallback: 'Continue').toUpperCase() or context.tr('common.see_results', fallback: 'See Results').toUpperCase() depending on lives remaining.
-///
-/// All interactive and informational elements carry [Semantics] labels
-/// for full screen-reader compatibility.
 class SpeakingFeedbackCard extends StatelessWidget {
+  final SpeakingLoaded state;
   final bool success;
-  final int livesRemaining;
-  final bool isFinalFailure;
-
-  /// The correct answer explanation shown on final failure. May be null.
-  final String? explanation;
-
   final VoidCallback onContinue;
   final VoidCallback? onTutorPass;
   final bool isDark;
 
   const SpeakingFeedbackCard({
     super.key,
+    required this.state,
     required this.success,
-    required this.livesRemaining,
-    required this.isFinalFailure,
     required this.onContinue,
     this.onTutorPass,
     required this.isDark,
-    this.explanation,
   });
-
-  // ---------------------------------------------------------------------------
-  // Derived values
-  // ---------------------------------------------------------------------------
 
   List<Color> get _gradient => success
       ? [const Color(0xFF2DD4BF), const Color(0xFF10B981)]
@@ -62,8 +43,8 @@ class SpeakingFeedbackCard extends StatelessWidget {
           .tr('common.continue_text', fallback: 'Continue')
           .toUpperCase();
     }
-    if (isFinalFailure) {
-      return livesRemaining == 0
+    if (state.isFinalFailure) {
+      return state.livesRemaining == 0
           ? context.tr('games.see_results', fallback: 'See Results')
           : context
                 .tr('common.continue_text', fallback: 'Continue')
@@ -79,21 +60,15 @@ class SpeakingFeedbackCard extends StatelessWidget {
         fallback: 'Correct. Tap to continue.',
       );
     }
-    if (isFinalFailure) {
-      return livesRemaining == 0
+    if (state.isFinalFailure) {
+      return state.livesRemaining == 0
           ? context.tr(
               'games.semantic_incorrect_explanation',
-              args: [
-                '',
-                context.tr('games.see_results', fallback: 'See Results'),
-              ],
+              args: ['', context.tr('games.see_results', fallback: 'See Results')],
             )
           : context.tr(
               'games.semantic_incorrect_explanation',
-              args: [
-                '',
-                context.tr('common.continue_text', fallback: 'Continue'),
-              ],
+              args: ['', context.tr('common.continue_text', fallback: 'Continue')],
             );
     }
     return context.tr(
@@ -102,12 +77,11 @@ class SpeakingFeedbackCard extends StatelessWidget {
     );
   }
 
-  // ---------------------------------------------------------------------------
-  // Build
-  // ---------------------------------------------------------------------------
-
   @override
   Widget build(BuildContext context) {
+    final showExplanation = success || (!success && state.isFinalFailure);
+    final explanation = showExplanation ? state.currentQuest.explanation : null;
+
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(28.r),
@@ -126,14 +100,84 @@ class SpeakingFeedbackCard extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           _buildResultRow(context),
+          
           if (explanation != null) ...[
             SizedBox(height: 16.h),
             _ExplanationBox(
-              explanation: explanation!,
+              explanation: explanation,
               shadowColor: _shadowColor,
               isDark: isDark,
             ),
           ],
+
+          if (showExplanation) ...[
+            if (state.currentQuest.phoneticHint != null)
+              Padding(
+                padding: EdgeInsets.only(top: 12.h),
+                child: PedagogicalRuleBox(
+                  icon: Icons.psychology_rounded,
+                  capsKey: 'games.phonetic_hint_caps',
+                  capsFallback: 'PHONETIC HINT',
+                  titleKey: 'games.phonetic_hint',
+                  titleFallback: 'Phonetic Hint',
+                  rule: state.currentQuest.phoneticHint!,
+                  shadowColor: _shadowColor,
+                  isDark: isDark,
+                ),
+              ),
+            if (state.currentQuest.meaning != null)
+              Padding(
+                padding: EdgeInsets.only(top: 12.h),
+                child: PedagogicalRuleBox(
+                  icon: Icons.menu_book_rounded,
+                  capsKey: 'games.meaning_caps',
+                  capsFallback: 'MEANING',
+                  titleKey: 'games.meaning',
+                  titleFallback: 'Meaning',
+                  rule: state.currentQuest.meaning!,
+                  shadowColor: _shadowColor,
+                  isDark: isDark,
+                ),
+              ),
+            if (state.currentQuest.sampleUsage != null)
+              Padding(
+                padding: EdgeInsets.only(top: 12.h),
+                child: PedagogicalRuleBox(
+                  icon: Icons.chat_bubble_outline_rounded,
+                  capsKey: 'games.sample_usage_caps',
+                  capsFallback: 'SAMPLE USAGE',
+                  titleKey: 'games.sample_usage',
+                  titleFallback: 'Sample Usage',
+                  rule: state.currentQuest.sampleUsage!,
+                  shadowColor: _shadowColor,
+                  isDark: isDark,
+                ),
+              ),
+            if (state.currentQuest.partnerDialogue != null)
+              Padding(
+                padding: EdgeInsets.only(top: 12.h),
+                child: PedagogicalRuleBox(
+                  icon: Icons.people_outline_rounded,
+                  capsKey: 'games.partner_dialogue_caps',
+                  capsFallback: 'PARTNER DIALOGUE',
+                  titleKey: 'games.partner_dialogue',
+                  titleFallback: 'Partner Dialogue',
+                  rule: state.currentQuest.partnerDialogue!,
+                  shadowColor: _shadowColor,
+                  isDark: isDark,
+                ),
+              ),
+            if (state.currentQuest.acceptedSynonyms != null && state.currentQuest.acceptedSynonyms!.isNotEmpty)
+              Padding(
+                padding: EdgeInsets.only(top: 12.h),
+                child: _AcceptedSynonymsBox(
+                  synonyms: state.currentQuest.acceptedSynonyms!,
+                  shadowColor: _shadowColor,
+                  isDark: isDark,
+                ),
+              ),
+          ],
+
           SizedBox(height: 28.h),
           _buildContinueButton(context),
           if (!success && onTutorPass != null) ...[
@@ -149,10 +193,6 @@ class SpeakingFeedbackCard extends StatelessWidget {
       duration: 500.ms,
     );
   }
-
-  // ---------------------------------------------------------------------------
-  // Result row: icon + title
-  // ---------------------------------------------------------------------------
 
   Widget _buildResultRow(BuildContext context) {
     return Row(
@@ -197,14 +237,6 @@ class SpeakingFeedbackCard extends StatelessWidget {
       ],
     );
   }
-
-  // ---------------------------------------------------------------------------
-  // Explanation box (shown on final failure only)
-  // ---------------------------------------------------------------------------
-
-  // ---------------------------------------------------------------------------
-  // Continue / Try-again button
-  // ---------------------------------------------------------------------------
 
   Widget _buildContinueButton(BuildContext context) {
     return Semantics(
@@ -254,6 +286,77 @@ class SpeakingFeedbackCard extends StatelessWidget {
   }
 }
 
+class _AcceptedSynonymsBox extends StatelessWidget {
+  final List<String> synonyms;
+  final Color shadowColor;
+  final bool isDark;
+
+  const _AcceptedSynonymsBox({
+    required this.synonyms,
+    required this.shadowColor,
+    required this.isDark,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 342.w,
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+      decoration: BoxDecoration(
+        color: shadowColor.withValues(alpha: isDark ? 0.08 : 0.05),
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(
+          color: shadowColor.withValues(alpha: 0.2),
+          width: 1,
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Icon(Icons.auto_awesome_rounded, color: shadowColor, size: 16.r),
+              SizedBox(width: 8.w),
+              Text(
+                context.tr('games.accepted_synonyms_caps', fallback: 'ACCEPTED SYNONYMS'),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 11.sp,
+                  fontWeight: FontWeight.w900,
+                  color: shadowColor,
+                  letterSpacing: 1.2,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 10.h),
+          Wrap(
+            spacing: 8.w,
+            runSpacing: 8.h,
+            children: synonyms.map((s) => Container(
+              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+              decoration: BoxDecoration(
+                color: shadowColor.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(12.r),
+                border: Border.all(color: shadowColor.withValues(alpha: 0.25)),
+              ),
+              child: Text(
+                s,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.w700,
+                  color: isDark ? Colors.white : Colors.black87,
+                ),
+              ),
+            )).toList(),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class _ExplanationBox extends StatefulWidget {
   final String explanation;
   final Color shadowColor;
@@ -283,11 +386,11 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
             width: double.infinity,
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
             decoration: BoxDecoration(
-              color: widget.shadowColor.withValues(alpha: 0.08),
-              borderRadius: BorderRadius.circular(20.r),
+              color: widget.shadowColor.withValues(alpha: widget.isDark ? 0.08 : 0.05),
+              borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
                 color: widget.shadowColor.withValues(alpha: 0.2),
-                width: 1.5,
+                width: 1,
               ),
             ),
             child: Column(
@@ -310,10 +413,10 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
                           ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w800,
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.w900,
                             color: widget.shadowColor,
-                            letterSpacing: 1,
+                            letterSpacing: 1.2,
                           ),
                         ),
                       ),
@@ -329,17 +432,16 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
                     ],
                   ),
                 ),
-                SizedBox(height: 4.h),
+                SizedBox(height: 6.h),
                 ExcludeSemantics(
                   child: Text(
                     displayText,
-                    maxLines: 5,
-                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 18.sp,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.w600,
-                      color: widget.isDark ? Colors.white : Colors.black87,
+                      color: widget.isDark ? Colors.white.withValues(alpha: 0.8) : const Color(0xFF475569),
+                      height: 1.4,
                     ),
                   ),
                 ),
@@ -349,7 +451,7 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
         )
         .animate()
         .fadeIn(delay: 300.ms)
-        .scale(duration: 400.ms, curve: Curves.easeOutBack);
+        .slideY(begin: 0.2, end: 0, duration: 400.ms, curve: Curves.easeOutBack);
   }
 }
 
@@ -400,4 +502,3 @@ class _TutorPassButton extends StatelessWidget {
     );
   }
 }
-

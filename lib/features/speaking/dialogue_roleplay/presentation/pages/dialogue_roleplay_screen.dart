@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,7 +17,6 @@ import 'package:vowl/core/utils/text_similarity_helper.dart';
 import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/dialogue_roleplay_header.dart';
 import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/dialogue_roleplay_exchange_stage.dart';
 import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/dialogue_roleplay_telemetry_card.dart';
-import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/dialogue_roleplay_explanation_card.dart';
 import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/dialogue_roleplay_mic_trigger.dart';
 
 class DialogueRoleplayScreen extends StatefulWidget {
@@ -366,39 +365,6 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     SizedBox(height: gapTelemetry),
-                                    AnimatedCrossFade(
-                                      firstChild: const SizedBox(),
-                                      secondChild: isCompact
-                                          ? SizedBox(
-                                              height: 100.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width:
-                                                      constraints.maxWidth -
-                                                      16.w,
-                                                  child:
-                                                      DialogueRoleplayExplanationCard(
-                                                        quest: quest,
-                                                        isCorrect:
-                                                            _isCorrect ?? false,
-                                                        isDark: isDark,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : DialogueRoleplayExplanationCard(
-                                              quest: quest,
-                                              isCorrect: _isCorrect ?? false,
-                                              isDark: isDark,
-                                            ),
-                                      crossFadeState: _isAnswered
-                                          ? CrossFadeState.showSecond
-                                          : CrossFadeState.showFirst,
-                                      duration: const Duration(
-                                        milliseconds: 400,
-                                      ),
-                                    ),
                                     SizedBox(height: gapMic),
 
                                     if (!_isAnswered)
@@ -449,3 +415,4 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
     );
   }
 }
+

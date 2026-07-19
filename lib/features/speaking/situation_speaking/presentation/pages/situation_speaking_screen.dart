@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,7 +16,6 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/speaking/situation_speaking/presentation/widgets/situation_speaking_header.dart';
 import 'package:vowl/features/speaking/situation_speaking/presentation/widgets/situation_speaking_fog_scrubber_panel.dart';
 import 'package:vowl/features/speaking/situation_speaking/presentation/widgets/situation_speaking_telemetry_card.dart';
-import 'package:vowl/features/speaking/situation_speaking/presentation/widgets/situation_speaking_explanation_card.dart';
 import 'package:vowl/features/speaking/situation_speaking/presentation/widgets/situation_speaking_scrubbed_mic_trigger.dart';
 
 class SituationSpeakingScreen extends StatefulWidget {
@@ -385,39 +384,6 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     SizedBox(height: gapTelemetry),
-                                    AnimatedCrossFade(
-                                      firstChild: const SizedBox(),
-                                      secondChild: isCompact
-                                          ? SizedBox(
-                                              height: 100.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width:
-                                                      constraints.maxWidth -
-                                                      16.w,
-                                                  child:
-                                                      SituationSpeakingExplanationCard(
-                                                        quest: quest,
-                                                        isCorrect:
-                                                            _isCorrect ?? false,
-                                                        isDark: isDark,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : SituationSpeakingExplanationCard(
-                                              quest: quest,
-                                              isCorrect: _isCorrect ?? false,
-                                              isDark: isDark,
-                                            ),
-                                      crossFadeState: _isAnswered
-                                          ? CrossFadeState.showSecond
-                                          : CrossFadeState.showFirst,
-                                      duration: const Duration(
-                                        milliseconds: 400,
-                                      ),
-                                    ),
                                     SizedBox(height: gapMic),
 
                                     if (!_isAnswered)
@@ -473,3 +439,4 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
     );
   }
 }
+

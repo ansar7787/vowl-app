@@ -1,4 +1,4 @@
-import 'dart:math' as math;
+﻿import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,7 +18,6 @@ import 'package:vowl/features/speaking/speak_missing_word/presentation/widgets/s
 import 'package:vowl/features/speaking/speak_missing_word/presentation/widgets/speak_missing_word_magnet_arena.dart';
 import 'package:vowl/features/speaking/speak_missing_word/presentation/widgets/speak_missing_word_telemetry_card.dart';
 import 'package:vowl/features/speaking/speak_missing_word/presentation/widgets/speak_missing_word_tactile_mic.dart';
-import 'package:vowl/features/speaking/speak_missing_word/presentation/widgets/speak_missing_word_explanation_card.dart';
 
 class SpeakMissingWordScreen extends StatefulWidget {
   final int level;
@@ -557,39 +556,6 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
                                               
                                             ),
 
-                                    AnimatedCrossFade(
-                                      firstChild: const SizedBox(),
-                                      secondChild: isCompact
-                                          ? SizedBox(
-                                              height: 100.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width:
-                                                      constraints.maxWidth -
-                                                      16.w,
-                                                  child:
-                                                      SpeakMissingWordExplanationCard(
-                                                        quest: quest,
-                                                        isCorrect:
-                                                            _isCorrect ?? false,
-                                                        isDark: isDark,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : SpeakMissingWordExplanationCard(
-                                              quest: quest,
-                                              isCorrect: _isCorrect ?? false,
-                                              isDark: isDark,
-                                            ),
-                                      crossFadeState: _isAnswered
-                                          ? CrossFadeState.showSecond
-                                          : CrossFadeState.showFirst,
-                                      duration: const Duration(
-                                        milliseconds: 400,
-                                      ),
-                                    ),
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),
@@ -606,3 +572,4 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
     );
   }
 }
+

@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,7 +19,6 @@ import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak
 import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_plasma_conduit_panel.dart';
 import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_negative_pole_panel.dart';
 import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_frequency_telemetry_card.dart';
-import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_explanation_card.dart';
 import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_electromagnetic_trigger.dart';
 
 class SpeakOppositeScreen extends StatefulWidget {
@@ -457,43 +456,6 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                                               isDark: isDark,
                                             ),
 
-                                    AnimatedCrossFade(
-                                      firstChild: const SizedBox(),
-                                      secondChild: isCompact
-                                          ? SizedBox(
-                                              height: 100.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width:
-                                                      constraints.maxWidth -
-                                                      16.w,
-                                                  child:
-                                                      SpeakOppositeExplanationCard(
-                                                        quest: quest,
-                                                        isCorrect:
-                                                            _isCorrect ?? false,
-                                                        isDark: isDark,
-                                                        acceptedAntonyms:
-                                                            _acceptedAntonyms,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : SpeakOppositeExplanationCard(
-                                              quest: quest,
-                                              isCorrect: _isCorrect ?? false,
-                                              isDark: isDark,
-                                              acceptedAntonyms:
-                                                  _acceptedAntonyms,
-                                            ),
-                                      crossFadeState: _isAnswered
-                                          ? CrossFadeState.showSecond
-                                          : CrossFadeState.showFirst,
-                                      duration: const Duration(
-                                        milliseconds: 400,
-                                      ),
-                                    ),
                                     SizedBox(height: gapTelemetry),
 
                                     if (!_isAnswered)
@@ -544,3 +506,4 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
     );
   }
 }
+

@@ -319,13 +319,8 @@ class _SpeakingBaseLayoutState extends State<SpeakingBaseLayout> {
                     left: 0,
                     right: 0,
                     child: SpeakingFeedbackCard(
+                      state: state,
                       success: widget.isCorrect ?? false,
-                      livesRemaining: state.livesRemaining,
-                      isFinalFailure: state.isFinalFailure,
-                      explanation:
-                          (widget.isCorrect == true || state.isFinalFailure)
-                          ? state.currentQuest.explanation
-                          : null,
                       onContinue: widget.onContinue,
                       isDark: isDark,
                       onTutorPass: widget.onTutorPass,

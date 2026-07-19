@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -16,7 +16,6 @@ import 'package:vowl/features/accent/syllable_stress/presentation/widgets/syllab
 import 'package:vowl/features/accent/syllable_stress/presentation/widgets/syllable_stress_prompt_card.dart';
 import 'package:vowl/features/accent/syllable_stress/presentation/widgets/syllable_stress_pulse_speaker.dart';
 import 'package:vowl/features/accent/syllable_stress/presentation/widgets/syllable_stress_drum_console.dart';
-import 'package:vowl/features/accent/syllable_stress/presentation/widgets/syllable_stress_explanation_card.dart';
 
 class SyllableStressScreen extends StatefulWidget {
   final int level;
@@ -154,7 +153,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                           (isCompact ? 90.h : 120.h) +
                           100.h +
                           (isCompact ? 130.h : 172.h) +
-                          (_isAnswered ? (isCompact ? 110.h : 160.h) : 0);
+                          0;
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -279,33 +278,6 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                             selectedIndex: _selectedIndex,
                                             onPadTap: _onPadTap,
                                           ),
-                                    if (_isAnswered) ...[
-                                      SizedBox(height: gapSlider),
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 110.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width: maxWidth - 48.w,
-                                                  child:
-                                                      SyllableStressExplanationCard(
-                                                        quest: quest,
-                                                        color:
-                                                            theme.primaryColor,
-                                                        isDark: isDark,
-                                                        isCorrect: _isCorrect,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : SyllableStressExplanationCard(
-                                              quest: quest,
-                                              color: theme.primaryColor,
-                                              isDark: isDark,
-                                              isCorrect: _isCorrect,
-                                            ),
-                                    ],
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),
@@ -322,3 +294,4 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
     );
   }
 }
+

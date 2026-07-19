@@ -100,7 +100,7 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [ ] Speed Variance (`speedVariance`)
 - [x] ✅ Dialect Drill (`dialectDrill`)
 - [x] ✅ Connected Speech (`connectedSpeech`)
-- [ ] Pitch Modulation (`pitchModulation`)
+- [x] ✅ Pitch Modulation (`pitchModulation`)
 
 ## Roleplay (10)
 - [x] ✅ Branching Dialogue (`branchingDialogue`)

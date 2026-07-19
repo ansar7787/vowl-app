@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,7 +19,6 @@ import 'package:vowl/features/speaking/repeat_sentence/presentation/widgets/repe
 import 'package:vowl/features/speaking/repeat_sentence/presentation/widgets/repeat_sentence_wave_chamber.dart';
 import 'package:vowl/features/speaking/repeat_sentence/presentation/widgets/repeat_sentence_telemetry_card.dart';
 import 'package:vowl/features/speaking/repeat_sentence/presentation/widgets/repeat_sentence_tactile_mic.dart';
-import 'package:vowl/features/speaking/repeat_sentence/presentation/widgets/repeat_sentence_explanation_card.dart';
 
 class RepeatSentenceScreen extends StatefulWidget {
   final int level;
@@ -417,39 +416,6 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                                               
                                             ),
 
-                                    AnimatedCrossFade(
-                                      firstChild: const SizedBox(),
-                                      secondChild: isCompact
-                                          ? SizedBox(
-                                              height: 100.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width:
-                                                      constraints.maxWidth -
-                                                      16.w,
-                                                  child:
-                                                      RepeatSentenceExplanationCard(
-                                                        quest: quest,
-                                                        isCorrect:
-                                                            _isCorrect ?? false,
-                                                        isDark: isDark,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : RepeatSentenceExplanationCard(
-                                              quest: quest,
-                                              isCorrect: _isCorrect ?? false,
-                                              isDark: isDark,
-                                            ),
-                                      crossFadeState: _isAnswered
-                                          ? CrossFadeState.showSecond
-                                          : CrossFadeState.showFirst,
-                                      duration: const Duration(
-                                        milliseconds: 400,
-                                      ),
-                                    ),
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),
@@ -466,3 +432,4 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
     );
   }
 }
+
