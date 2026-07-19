@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -14,7 +14,6 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/writing/sentence_builder/presentation/widgets/sentence_builder_instruction.dart';
 import 'package:vowl/features/writing/sentence_builder/presentation/widgets/sentence_builder_workbench.dart';
 import 'package:vowl/features/writing/sentence_builder/presentation/widgets/sentence_builder_piece_pool.dart';
-import 'package:vowl/features/writing/sentence_builder/presentation/widgets/sentence_builder_explanation_card.dart';
 
 class SentenceBuilderScreen extends StatefulWidget {
   final int level;
@@ -96,7 +95,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
           (curr is WritingLoaded && curr.lastAnswerCorrect == null),
       listener: (context, state) {
         if (state is WritingLoaded && state.lastAnswerCorrect == null) {
-          // New question loaded or retry triggered — clear the selected option.
+          // New question loaded or retry triggered â€” clear the selected option.
           setState(() {
             _assembledPieces.clear();
           });
@@ -224,15 +223,6 @@ class _SentenceBuilderBody extends StatelessWidget {
               onSnap: onSnap,
             ),
 
-            if (isAnswered) ...[
-              SizedBox(height: 30.h),
-              SentenceBuilderExplanationCard(
-                quest: quest,
-                isCorrect: isCorrect == true,
-                primaryColor: theme.primaryColor,
-                isDark: isDark,
-              ),
-            ],
 
             SizedBox(height: 40.h),
             if (!isAnswered) _SubmitButton(theme: theme, onTap: onSubmit),
@@ -245,7 +235,7 @@ class _SentenceBuilderBody extends StatelessWidget {
 }
 
 // ---------------------------------------------------------------------------
-// _SubmitButton — extracted for clarity and Semantics isolation
+// _SubmitButton â€” extracted for clarity and Semantics isolation
 // ---------------------------------------------------------------------------
 class _SubmitButton extends StatelessWidget {
   final dynamic theme;
@@ -290,3 +280,5 @@ class _SubmitButton extends StatelessWidget {
     );
   }
 }
+
+

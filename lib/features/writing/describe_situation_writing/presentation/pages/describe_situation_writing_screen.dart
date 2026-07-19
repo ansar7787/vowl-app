@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -16,7 +16,6 @@ import 'package:vowl/features/writing/describe_situation_writing/presentation/wi
 import 'package:vowl/features/writing/describe_situation_writing/presentation/widgets/describe_situation_prompt_card.dart';
 import 'package:vowl/features/writing/describe_situation_writing/presentation/widgets/describe_situation_writing_area.dart';
 import 'package:vowl/features/writing/describe_situation_writing/presentation/widgets/describe_situation_constellation_map.dart';
-import 'package:vowl/features/writing/describe_situation_writing/presentation/widgets/describe_situation_explanation_card.dart';
 
 class DescribeSituationScreen extends StatefulWidget {
   final int level;
@@ -161,7 +160,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
         final isLoaded = state is WritingLoaded;
         final WritingQuest? quest = isLoaded ? state.currentQuest : null;
 
-        final emojis = quest?.emojis ?? ["🌋", "💧", "🔬", "🐠"];
+        final emojis = quest?.emojis ?? ["ðŸŒ‹", "ðŸ’§", "ðŸ”¬", "ðŸ "];
         final rawKeywords =
             quest?.keywords ??
             {
@@ -269,15 +268,6 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
                             ),
                           ),
 
-                        if (isAnswered) ...[
-                          SizedBox(height: 30.h),
-                          DescribeSituationExplanationCard(
-                            quest: quest,
-                            isCorrect: isCorrect == true,
-                            primaryColor: theme.primaryColor,
-                            isDark: isDark,
-                          ),
-                        ],
                         SizedBox(height: 60.h),
                       ],
                     ),
@@ -288,3 +278,5 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
     );
   }
 }
+
+

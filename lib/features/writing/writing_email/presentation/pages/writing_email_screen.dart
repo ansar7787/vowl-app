@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -16,7 +16,6 @@ import 'package:vowl/features/writing/writing_email/presentation/widgets/writing
 import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_prompt_card.dart';
 import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_hex_slot.dart';
 import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_data_stream.dart';
-import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_explanation_card.dart';
 
 class WritingEmailScreen extends StatefulWidget {
   final int level;
@@ -226,15 +225,6 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                             ),
                           ),
 
-                        if (isAnswered) ...[
-                          SizedBox(height: 30.h),
-                          WritingEmailExplanationCard(
-                            quest: quest,
-                            isCorrect: isCorrect == true,
-                            primaryColor: theme.primaryColor,
-                            isDark: isDark,
-                          ),
-                        ],
                         SizedBox(height: 60.h),
                       ],
                     ),
@@ -245,3 +235,5 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
     );
   }
 }
+
+

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -16,7 +16,7 @@ import 'package:vowl/features/writing/complete_sentence/presentation/widgets/com
 import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_trajectory_painter.dart';
 
 // ---------------------------------------------------------------------------
-// Immutable record for drag state — replaces two nullable Offset fields.
+// Immutable record for drag state â€” replaces two nullable Offset fields.
 // ---------------------------------------------------------------------------
 class _DragState {
   final Offset start;
@@ -41,7 +41,7 @@ class CompleteSentenceScreen extends StatefulWidget {
 class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
   final _hapticService = di.sl<HapticService>();
 
-  // PERF FIX: theme cached — not recomputed on every build().
+  // PERF FIX: theme cached â€” not recomputed on every build().
   late dynamic _theme;
 
   final _stackKey = GlobalKey();
@@ -91,7 +91,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
         _stackKey.currentContext?.findRenderObject() as RenderBox?;
     if (renderBox == null) return;
     final localPos = renderBox.globalToLocal(globalPosition);
-    // No setState — only update the notifier. Only the painter redraws.
+    // No setState â€” only update the notifier. Only the painter redraws.
     _dragNotifier.value = _DragState(start: localPos, current: localPos);
     _hapticService.selection();
   }
@@ -101,7 +101,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
     final renderBox =
         _stackKey.currentContext?.findRenderObject() as RenderBox?;
     if (renderBox == null) return;
-    // PERF FIX: no setState — ValueNotifier update only repaints the CustomPaint.
+    // PERF FIX: no setState â€” ValueNotifier update only repaints the CustomPaint.
     _dragNotifier.value = _DragState(
       start: _dragNotifier.value!.start,
       current: renderBox.globalToLocal(globalPosition),
@@ -122,7 +122,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
     final isCorrect =
         selected.trim().toLowerCase() == correct.trim().toLowerCase();
 
-    // Clear trajectory immediately on fire — no lingering aim line.
+    // Clear trajectory immediately on fire â€” no lingering aim line.
     _dragNotifier.value = null;
 
     // We let the BLoC handle all state now! No local timers hiding the continue button!
@@ -144,7 +144,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
           (curr is WritingLoaded && curr.lastAnswerCorrect == null),
       listener: (context, state) {
         if (state is WritingLoaded && state.lastAnswerCorrect == null) {
-          // New question loaded or retry triggered — clear the selected option.
+          // New question loaded or retry triggered â€” clear the selected option.
           setState(() {
             _selectedProjectile = null;
             _dragNotifier.value = null;
@@ -190,14 +190,14 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
           // FIX: WritingHintUsed is dispatched inside WritingGameHeader.
-          // Passing it here caused a double dispatch — now a no-op.
+          // Passing it here caused a double dispatch â€” now a no-op.
           onHint: () {},
           child: quest == null
               ? const SizedBox.shrink()
               : Stack(
                   key: _stackKey,
                   children: [
-                    // Scrollable body content — extracted to reduce build() size.
+                    // Scrollable body content â€” extracted to reduce build() size.
                     _CompleteSentenceBody(
                       quest: quest,
                       options: options,
@@ -208,7 +208,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
                       isDark: isDark,
                       onBridgeStart: (pos) => _onBridgeStart(pos, isAnswered),
                       onBridgeUpdate: (pos) => _onBridgeUpdate(pos, isAnswered),
-                      // FIX: screen owns correctAnswer — widgets only report selected.
+                      // FIX: screen owns correctAnswer â€” widgets only report selected.
                       onFire: (selected) => _onFire(
                         selected,
                         quest.correctAnswer ?? '',
@@ -313,3 +313,5 @@ class _CompleteSentenceBody extends StatelessWidget {
     );
   }
 }
+
+

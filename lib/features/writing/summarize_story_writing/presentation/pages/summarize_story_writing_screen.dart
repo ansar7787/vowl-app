@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -18,7 +18,6 @@ import 'package:vowl/features/writing/summarize_story_writing/presentation/widge
 import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_film_strip.dart';
 import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_frame_vault.dart';
 import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_projector_crank.dart';
-import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_explanation_card.dart';
 
 class SummarizeStoryWritingScreen extends StatefulWidget {
   final int level;
@@ -215,15 +214,6 @@ class _SummarizeStoryWritingScreenState
                             onCrank: (delta) => _onCrank(delta, isAnswered),
                           ),
 
-                        if (isAnswered) ...[
-                          SizedBox(height: 30.h),
-                          SummarizeStoryExplanationCard(
-                            quest: quest,
-                            isCorrect: isCorrect == true,
-                            primaryColor: theme.primaryColor,
-                            isDark: isDark,
-                          ),
-                        ],
                         SizedBox(height: 60.h),
                       ],
                     ),
@@ -234,3 +224,5 @@ class _SummarizeStoryWritingScreenState
     );
   }
 }
+
+

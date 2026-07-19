@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -14,7 +14,6 @@ import 'package:vowl/features/writing/short_answer_writing/presentation/widgets/
 import 'package:vowl/features/writing/short_answer_writing/presentation/widgets/short_answer_quill_prompt.dart';
 import 'package:vowl/features/writing/short_answer_writing/presentation/widgets/short_answer_booster_tokens.dart';
 import 'package:vowl/features/writing/short_answer_writing/presentation/widgets/short_answer_inkwell.dart';
-import 'package:vowl/features/writing/short_answer_writing/presentation/widgets/short_answer_explanation_card.dart';
 
 class ShortAnswerScreen extends StatefulWidget {
   final int level;
@@ -206,15 +205,6 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                             ),
                           ),
 
-                        if (isAnswered) ...[
-                          SizedBox(height: 30.h),
-                          ShortAnswerExplanationCard(
-                            quest: quest,
-                            isCorrect: isCorrect == true,
-                            primaryColor: theme.primaryColor,
-                            isDark: isDark,
-                          ),
-                        ],
                         SizedBox(height: 60.h),
                       ],
                     ),
@@ -225,3 +215,5 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
     );
   }
 }
+
+

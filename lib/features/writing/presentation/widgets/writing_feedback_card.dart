@@ -1,18 +1,11 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
-
-// ---------------------------------------------------------------------------
-// WritingFeedbackCard
-//
-// Extracted from _buildModernFeedbackCard in WritingBaseLayout.
-// Slides up from the bottom when a question is answered.
-// Self-contained: owns its own gradient, icon, explanation, and CTA button.
-// ---------------------------------------------------------------------------
+import 'package:vowl/core/presentation/widgets/pedagogical_rule_box.dart';
 
 class WritingFeedbackCard extends StatelessWidget {
   final WritingState state;
@@ -32,8 +25,6 @@ class WritingFeedbackCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Guard: card is only meaningful in WritingLoaded.
-    // Any other state returns empty — prevents cast crash on rapid transitions.
     if (state is! WritingLoaded) return const SizedBox.shrink();
 
     final s = state as WritingLoaded;
@@ -57,19 +48,11 @@ class WritingFeedbackCard extends StatelessWidget {
         ? context.tr('common.continue_text', fallback: 'Continue').toUpperCase()
         : (isFinalFailure
               ? (lives == 0
-                    ? context
-                          .tr('common.see_results', fallback: 'See Results')
-                          .toUpperCase()
-                    : context
-                          .tr('common.continue_text', fallback: 'Continue')
-                          .toUpperCase())
-              : context
-                    .tr('games.try_again', fallback: 'Try Again')
-                    .toUpperCase());
+                    ? context.tr('common.see_results', fallback: 'See Results').toUpperCase()
+                    : context.tr('common.continue_text', fallback: 'Continue').toUpperCase())
+              : context.tr('games.try_again', fallback: 'Try Again').toUpperCase());
 
-    final String? explanation = showExplanation
-        ? s.currentQuest.explanation
-        : null;
+    final String? explanation = showExplanation ? s.currentQuest.explanation : null;
 
     return Container(
       width: double.infinity,
@@ -89,6 +72,7 @@ class WritingFeedbackCard extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           _Header(icon: icon, title: title, gradient: primaryGradient),
+          
           if (explanation != null) ...[
             SizedBox(height: 16.h),
             _ExplanationCard(
@@ -97,6 +81,38 @@ class WritingFeedbackCard extends StatelessWidget {
               isDark: isDark,
             ),
           ],
+          
+          if (showExplanation) ...[
+            if (s.currentQuest.sampleAnswer != null)
+              Padding(
+                padding: EdgeInsets.only(top: 12.h),
+                child: PedagogicalRuleBox(
+                  icon: Icons.lightbulb_outline_rounded,
+                  capsKey: 'games.sample_answer_caps',
+                  capsFallback: 'SAMPLE ANSWER',
+                  titleKey: 'games.sample_answer',
+                  titleFallback: 'Sample Answer',
+                  rule: s.currentQuest.sampleAnswer!,
+                  shadowColor: shadowColor,
+                  isDark: isDark,
+                ),
+              ),
+            if (s.currentQuest.requiredPoints != null && s.currentQuest.requiredPoints!.isNotEmpty)
+              Padding(
+                padding: EdgeInsets.only(top: 12.h),
+                child: PedagogicalRuleBox(
+                  icon: Icons.checklist_rounded,
+                  capsKey: 'games.required_points_caps',
+                  capsFallback: 'REQUIRED POINTS',
+                  titleKey: 'games.required_points',
+                  titleFallback: 'Required Points',
+                  rule: s.currentQuest.requiredPoints!.join("\n• "),
+                  shadowColor: shadowColor,
+                  isDark: isDark,
+                ),
+              ),
+          ],
+
           SizedBox(height: 28.h),
           _ContinueButton(
             label: buttonText,
@@ -114,10 +130,6 @@ class WritingFeedbackCard extends StatelessWidget {
     );
   }
 }
-
-// ---------------------------------------------------------------------------
-// Private sub-widgets — not exposed outside this file
-// ---------------------------------------------------------------------------
 
 class _Header extends StatelessWidget {
   final IconData icon;
@@ -140,7 +152,6 @@ class _Header extends StatelessWidget {
             gradient: LinearGradient(colors: gradient),
             shape: BoxShape.circle,
           ),
-          // ACCESSIBILITY: mark icon as decorative; the title text conveys meaning.
           child: ExcludeSemantics(
             child: Icon(icon, color: Colors.white, size: 28.r),
           ),
@@ -193,11 +204,11 @@ class _ExplanationCardState extends State<_ExplanationCard> {
             width: double.infinity,
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
             decoration: BoxDecoration(
-              color: widget.color.withValues(alpha: 0.08),
-              borderRadius: BorderRadius.circular(20.r),
+              color: widget.color.withValues(alpha: widget.isDark ? 0.08 : 0.05),
+              borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
                 color: widget.color.withValues(alpha: 0.2),
-                width: 1.5,
+                width: 1,
               ),
             ),
             child: Column(
@@ -213,31 +224,21 @@ class _ExplanationCardState extends State<_ExplanationCard> {
                       ),
                     ),
                     SizedBox(width: 8.w),
-                    Flexible(
-                      child: MediaQuery(
-                        data: MediaQuery.of(context).copyWith(
-                          textScaler: TextScaler.linear(
-                            MediaQuery.of(
-                              context,
-                            ).textScaler.scale(1).clamp(0.8, 1.3),
-                          ),
+                    Expanded(
+                      child: Text(
+                        context.tr(
+                          'games.explanation_caps',
+                          fallback: 'EXPLANATION',
                         ),
-                        child: Text(
-                          context.tr(
-                            'games.explanation_caps',
-                            fallback: 'EXPLANATION',
-                          ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w800,
-                            color: widget.color,
-                            letterSpacing: 1,
-                          ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w900,
+                          color: widget.color,
+                          letterSpacing: 1.2,
                         ),
                       ),
                     ),
-                    const Spacer(),
                     if (_translatedText == null)
                       TranslateButtonWidget(
                         originalText: widget.explanation,
@@ -249,14 +250,15 @@ class _ExplanationCardState extends State<_ExplanationCard> {
                       ),
                   ],
                 ),
-                SizedBox(height: 4.h),
+                SizedBox(height: 6.h),
                 Text(
                   displayText,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 18.sp,
+                    fontSize: 14.sp,
                     fontWeight: FontWeight.w600,
-                    color: widget.isDark ? Colors.white : Colors.black87,
+                    color: widget.isDark ? Colors.white.withValues(alpha: 0.8) : const Color(0xFF475569),
+                    height: 1.4,
                   ),
                 ),
               ],
@@ -265,7 +267,7 @@ class _ExplanationCardState extends State<_ExplanationCard> {
         )
         .animate()
         .fadeIn(delay: 300.ms)
-        .scale(duration: 400.ms, curve: Curves.easeOutBack);
+        .slideY(begin: 0.2, end: 0, duration: 400.ms, curve: Curves.easeOutBack);
   }
 }
 

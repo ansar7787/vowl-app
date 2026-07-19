@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,8 +15,6 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 import 'package:vowl/features/writing/fix_the_sentence/presentation/widgets/fix_the_sentence_instruction.dart';
 import 'package:vowl/features/writing/fix_the_sentence/presentation/widgets/fix_the_sentence_digital_blackboard.dart';
-import 'package:vowl/features/writing/fix_the_sentence/presentation/widgets/fix_the_sentence_correction_options.dart';
-import 'package:vowl/features/writing/fix_the_sentence/presentation/widgets/fix_the_sentence_explanation_card.dart';
 
 class FixTheSentenceScreen extends StatefulWidget {
   final int level;
@@ -148,33 +146,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
                         ),
                         SizedBox(height: 32.h),
 
-                        if (_isWiped && !isAnswered) ...[
-                          FixTheSentenceWipedAlert(
-                            primaryColor: theme.primaryColor,
-                          ),
-                          SizedBox(height: 20.h),
-                          FixTheSentenceCorrectionOptions(
-                            options: quest.options ?? [],
-                            correct: quest.correctAnswer ?? "",
-                            color: theme.primaryColor,
-                            isDark: isDark,
-                            onSelect: (selected, correct) => _selectReplacement(
-                              selected,
-                              correct,
-                              isAnswered,
-                            ),
-                          ),
-                        ],
 
-                        if (isAnswered) ...[
-                          SizedBox(height: 30.h),
-                          FixTheSentenceExplanationCard(
-                            quest: quest,
-                            isCorrect: isCorrect == true,
-                            primaryColor: theme.primaryColor,
-                            isDark: isDark,
-                          ),
-                        ],
                         SizedBox(height: 60.h),
                       ],
                     ),
@@ -185,3 +157,6 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
     );
   }
 }
+
+
+

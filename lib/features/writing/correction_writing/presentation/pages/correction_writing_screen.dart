@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -16,7 +16,6 @@ import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 import 'package:vowl/features/writing/correction_writing/presentation/widgets/correction_writing_instruction.dart';
 import 'package:vowl/features/writing/correction_writing/presentation/widgets/correction_writing_sentence_card.dart';
 import 'package:vowl/features/writing/correction_writing/presentation/widgets/correction_writing_vault.dart';
-import 'package:vowl/features/writing/correction_writing/presentation/widgets/correction_writing_explanation_card.dart';
 
 class CorrectionWritingScreen extends StatefulWidget {
   final int level;
@@ -190,15 +189,6 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
                             ),
                           ),
 
-                        if (isAnswered) ...[
-                          SizedBox(height: 30.h),
-                          CorrectionWritingExplanationCard(
-                            quest: quest,
-                            isCorrect: isCorrect == true,
-                            primaryColor: theme.primaryColor,
-                            isDark: isDark,
-                          ),
-                        ],
                         SizedBox(height: 60.h),
                       ],
                     ),
@@ -209,3 +199,5 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
     );
   }
 }
+
+

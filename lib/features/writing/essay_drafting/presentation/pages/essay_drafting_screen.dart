@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -16,7 +16,6 @@ import 'package:vowl/features/writing/essay_drafting/presentation/widgets/essay_
 import 'package:vowl/features/writing/essay_drafting/presentation/widgets/essay_drafting_topic_banner.dart';
 import 'package:vowl/features/writing/essay_drafting/presentation/widgets/essay_drafting_hex_slot.dart';
 import 'package:vowl/features/writing/essay_drafting/presentation/widgets/essay_drafting_data_stream.dart';
-import 'package:vowl/features/writing/essay_drafting/presentation/widgets/essay_drafting_explanation_card.dart';
 
 class EssayDraftingScreen extends StatefulWidget {
   final int level;
@@ -230,15 +229,6 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                             ),
                           ),
 
-                        if (isAnswered) ...[
-                          SizedBox(height: 30.h),
-                          EssayDraftingExplanationCard(
-                            quest: quest,
-                            isCorrect: isCorrect == true,
-                            primaryColor: theme.primaryColor,
-                            isDark: isDark,
-                          ),
-                        ],
                         SizedBox(height: 60.h),
                       ],
                     ),
@@ -249,3 +239,5 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
     );
   }
 }
+
+

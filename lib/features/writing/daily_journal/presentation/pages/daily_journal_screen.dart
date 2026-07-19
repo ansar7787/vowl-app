@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -17,7 +17,6 @@ import 'package:vowl/features/writing/daily_journal/presentation/widgets/daily_j
 import 'package:vowl/features/writing/daily_journal/presentation/widgets/daily_journal_prompt.dart';
 import 'package:vowl/features/writing/daily_journal/presentation/widgets/daily_journal_booster_tokens.dart';
 import 'package:vowl/features/writing/daily_journal/presentation/widgets/daily_journal_scratch_area.dart';
-import 'package:vowl/features/writing/daily_journal/presentation/widgets/daily_journal_explanation_card.dart';
 
 class DailyJournalScreen extends StatefulWidget {
   final int level;
@@ -219,15 +218,6 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
                             ),
                           ),
 
-                        if (isAnswered) ...[
-                          SizedBox(height: 30.h),
-                          DailyJournalExplanationCard(
-                            quest: quest,
-                            isCorrect: isCorrect == true,
-                            primaryColor: theme.primaryColor,
-                            isDark: isDark,
-                          ),
-                        ],
                         SizedBox(height: 60.h),
                       ],
                     ),
@@ -238,3 +228,5 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
     );
   }
 }
+
+
