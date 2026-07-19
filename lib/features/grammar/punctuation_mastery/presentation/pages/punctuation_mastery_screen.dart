@@ -122,7 +122,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
             title: 'PUNCTUATION PRO!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;

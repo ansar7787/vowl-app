@@ -106,7 +106,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
             title: 'LOGIC LORD!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final GrammarQuest? quest = (state is GrammarLoaded)

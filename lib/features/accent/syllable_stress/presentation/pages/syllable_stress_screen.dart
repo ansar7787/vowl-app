@@ -7,6 +7,7 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
 import 'package:vowl/features/accent/presentation/layout/accent_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -119,7 +120,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
             title: 'RHYTHM MASTER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final AccentQuest? quest = (state is AccentLoaded)
@@ -202,15 +203,14 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                                 child:
                                                     SyllableStressInstruction(
                                                       color: theme.primaryColor,
-                                                      instruction:
-                                                          quest.instruction,
+                                                      instruction: context.tr('games.syllable_stress_instruction', fallback: quest.instruction),
                                                     ),
                                               ),
                                             ),
                                           )
                                         : SyllableStressInstruction(
                                             color: theme.primaryColor,
-                                            instruction: quest.instruction,
+                                            instruction: context.tr('games.syllable_stress_instruction', fallback: quest.instruction),
                                           ),
                                     SizedBox(height: gapInstruction),
 

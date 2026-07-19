@@ -37,7 +37,7 @@ class ConsonantClarityInstruction extends StatelessWidget {
                 fallback: 'Tap the correct consonant sound.',
               ).toUpperCase(),
               textAlign: TextAlign.center,
-              maxLines: 2,
+              maxLines: null,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,

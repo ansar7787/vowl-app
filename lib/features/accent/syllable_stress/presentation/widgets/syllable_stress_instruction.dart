@@ -31,6 +31,7 @@ class SyllableStressInstruction extends StatelessWidget {
                   ? "TAP THE STRESSED SYLLABLE"
                   : instruction.toUpperCase(),
               textAlign: TextAlign.center,
+              maxLines: null,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,

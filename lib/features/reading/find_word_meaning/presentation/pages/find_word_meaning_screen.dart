@@ -116,7 +116,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
             title: 'LEXICAL MASTER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final ReadingQuest? quest = (state is ReadingLoaded)

@@ -177,7 +177,7 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
             title: 'AUDITORY ACE!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = state is ListeningLoaded ? state.currentQuest : null;

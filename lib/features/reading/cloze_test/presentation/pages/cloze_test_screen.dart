@@ -114,7 +114,7 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
             title: 'SEMANTIC MASTER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final ReadingQuest? quest = (state is ReadingLoaded)

@@ -116,7 +116,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
             title: 'ZEN READER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         // Derive answer state from the BLoC — no local mirrors needed.

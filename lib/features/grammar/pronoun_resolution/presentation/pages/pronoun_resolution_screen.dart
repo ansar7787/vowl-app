@@ -108,7 +108,7 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
             title: 'REFERENT EXPERT!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final GrammarQuest? quest = (state is GrammarLoaded)

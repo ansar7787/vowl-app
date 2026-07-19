@@ -247,7 +247,7 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
             title: 'POLAR ANTIPODE FUSED!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;

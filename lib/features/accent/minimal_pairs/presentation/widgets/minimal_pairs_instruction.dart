@@ -31,6 +31,7 @@ class MinimalPairsInstruction extends StatelessWidget {
                   ? "SELECT THE CORRECT SOUND"
                   : instruction!.toUpperCase(),
               textAlign: TextAlign.center,
+              maxLines: null,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 8.sp,

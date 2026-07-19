@@ -193,7 +193,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
             title: 'DIALOGUE DIRECTOR!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;

@@ -129,7 +129,7 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
             title: 'SENTIMENT PROBER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;

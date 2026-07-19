@@ -129,7 +129,7 @@ class _SentenceOrderReadingScreenState
             title: 'LOGIC FLOW EXPERT!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final ReadingQuest? quest = (state is ReadingLoaded)

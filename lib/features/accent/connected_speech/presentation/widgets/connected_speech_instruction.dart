@@ -40,6 +40,7 @@ class ConnectedSpeechInstruction extends StatelessWidget {
                   ? "SELECT THE CARD THAT LINKS THE WORDS"
                   : instruction.toUpperCase(),
               textAlign: TextAlign.center,
+              maxLines: null,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: isCompact ? 8.sp : 10.sp,

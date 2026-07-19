@@ -159,7 +159,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
             title: 'CULINARY EXPERT!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;

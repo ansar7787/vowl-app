@@ -195,7 +195,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
               }
             });
           }
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is EliteMasteryLoaded) ? state.currentQuest : null;

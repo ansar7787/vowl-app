@@ -121,8 +121,7 @@ class _AccentBaseLayoutState extends State<AccentBaseLayout> {
         if (state is AccentGameOver) {
           GameDialogHelper.showGameOver(
             context,
-            onRetry: () => context.read<AccentBloc>().add(const RestoreLife()),
-            onQuit: () => Navigator.of(context).pop(),
+            onRestore: () => context.read<AccentBloc>().add(const RestoreLife()),
           );
           return;
         }

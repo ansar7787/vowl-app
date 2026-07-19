@@ -120,7 +120,7 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
             title: 'CONTEXT ANCHOR!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;

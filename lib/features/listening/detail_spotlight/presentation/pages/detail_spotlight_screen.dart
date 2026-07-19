@@ -121,7 +121,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
             title: 'SPECIFIC PULSER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;

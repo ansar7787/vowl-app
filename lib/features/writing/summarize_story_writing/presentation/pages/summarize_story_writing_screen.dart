@@ -146,7 +146,7 @@ class _SummarizeStoryWritingScreenState
             title: 'DIGEST MASTER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;

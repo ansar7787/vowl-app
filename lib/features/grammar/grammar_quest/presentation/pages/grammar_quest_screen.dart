@@ -107,7 +107,7 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
             title: 'SENTINEL!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;

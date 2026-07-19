@@ -250,7 +250,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
             title: 'CHIEF BRAND PITCHER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;

@@ -171,7 +171,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
             title: 'RELATIONSHIP MASTER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final ReadingQuest? quest = (state is ReadingLoaded)

@@ -237,7 +237,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
             title: 'CHIEF SURGEON!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;

@@ -116,7 +116,7 @@ class _DirectIndirectSpeechScreenState
             title: 'SHADOW MASTER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final GrammarQuest? quest = (state is GrammarLoaded)

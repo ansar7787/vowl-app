@@ -155,7 +155,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
             title: 'CREATIVE GENIUS!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;

@@ -119,7 +119,7 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
             title: 'TIMELINE RESTORED!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;

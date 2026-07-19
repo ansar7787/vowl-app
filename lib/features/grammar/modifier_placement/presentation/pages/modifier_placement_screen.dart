@@ -120,7 +120,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
             title: 'SYNTAX SHAPER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;

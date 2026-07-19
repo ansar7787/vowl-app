@@ -260,7 +260,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
             title: 'VISUAL MASTERPIECE!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;

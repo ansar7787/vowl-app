@@ -131,7 +131,7 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
             title: 'FACT CHECKER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final ReadingQuest? quest = (state is ReadingLoaded)

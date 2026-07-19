@@ -100,7 +100,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
             title: 'SYNTAX AUDITOR!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;

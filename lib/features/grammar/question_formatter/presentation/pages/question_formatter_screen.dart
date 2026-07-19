@@ -137,7 +137,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
             title: 'QUESTION MASTER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;

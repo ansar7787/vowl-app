@@ -31,6 +31,7 @@ class PitchPatternMatchInstruction extends StatelessWidget {
                   ? "IDENTIFY THE EMPHASIS"
                   : instruction.toUpperCase(),
               textAlign: TextAlign.center,
+              maxLines: null,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 8.sp,

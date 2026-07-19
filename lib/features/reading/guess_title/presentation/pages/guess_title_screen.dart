@@ -106,7 +106,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
             title: 'TITLE EXPERT!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final ReadingQuest? quest = (state is ReadingLoaded)

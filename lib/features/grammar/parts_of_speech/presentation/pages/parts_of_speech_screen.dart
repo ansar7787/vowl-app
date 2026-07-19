@@ -202,8 +202,8 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
         title: 'POS PRO!',
         enableDoubleUp: true,
       );
-    } else 
-  }
+    }
+      }
 }
 
 // =============================================================================

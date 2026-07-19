@@ -10,7 +10,7 @@ import 'package:vowl/features/elite_mastery/domain/entities/elite_mastery_quest.
 
 import '../bloc/elite_mastery_bloc.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
+import 'package:vowl/core/presentation/widgets/pedagogical_rule_box.dart';
 
 /// Bottom-sheet feedback card displayed after the player answers a question.
 ///
@@ -158,50 +158,80 @@ class EliteFeedbackCard extends StatelessWidget {
                   _buildResultRow(context),
                   if (hasRuleTip) ...[
                     SizedBox(height: 16.h),
-                    _RuleTipBox(
-                      text: ruleTip,
-                      accentColor: _shadowColor,
+                    PedagogicalRuleBox(
+                      rule: ruleTip,
+                      shadowColor: _shadowColor,
                       isDark: isDark,
+                      icon: Icons.menu_book_rounded,
+                      capsKey: 'games.pro_tip_caps',
+                      capsFallback: 'PRO TIP',
+                      titleKey: 'games.pro_tip',
+                      titleFallback: 'Pro Tip',
                     ),
                   ],
                   if (correctAnswerText != null) ...[
                     SizedBox(height: 16.h),
-                    _ExplanationBox(
-                      text: correctAnswerText,
-                      accentColor: _shadowColor,
+                    PedagogicalRuleBox(
+                      rule: correctAnswerText,
+                      shadowColor: _shadowColor,
                       isDark: isDark,
+                      icon: Icons.info_outline_rounded,
+                      capsKey: 'games.explanation_caps',
+                      capsFallback: 'EXPLANATION',
+                      titleKey: 'games.explanation',
+                      titleFallback: 'Explanation',
                     ),
                   ],
                   if (hasShadowingFocus) ...[
                     SizedBox(height: 16.h),
-                    _ShadowingFocusBox(
-                      text: shadowingFocus,
-                      accentColor: _shadowColor,
+                    PedagogicalRuleBox(
+                      rule: shadowingFocus,
+                      shadowColor: _shadowColor,
                       isDark: isDark,
+                      icon: Icons.record_voice_over_rounded,
+                      capsKey: 'games.shadowing_focus_caps',
+                      capsFallback: 'SHADOWING FOCUS',
+                      titleKey: 'games.shadowing_focus',
+                      titleFallback: 'Shadowing Focus',
                     ),
                   ],
                   if (hasUsageContext) ...[
                     SizedBox(height: 16.h),
-                    _UsageContextBox(
-                      text: usageContext,
-                      accentColor: _shadowColor,
+                    PedagogicalRuleBox(
+                      rule: usageContext,
+                      shadowColor: _shadowColor,
                       isDark: isDark,
+                      icon: Icons.lightbulb_outline_rounded,
+                      capsKey: 'games.usage_context_caps',
+                      capsFallback: 'USAGE CONTEXT',
+                      titleKey: 'games.usage_context',
+                      titleFallback: 'Usage Context',
                     ),
                   ],
                   if (hasSpellingRule) ...[
                     SizedBox(height: 16.h),
-                    _SpellingRuleBox(
-                      text: spellingRule,
-                      accentColor: _shadowColor,
+                    PedagogicalRuleBox(
+                      rule: spellingRule,
+                      shadowColor: _shadowColor,
                       isDark: isDark,
+                      icon: Icons.spellcheck_rounded,
+                      capsKey: 'games.spelling_pattern_caps',
+                      capsFallback: 'SPELLING PATTERN',
+                      titleKey: 'games.spelling_pattern',
+                      titleFallback: 'Spelling Pattern',
                     ),
                   ],
                   if (hasSequenceLogic) ...[
                     SizedBox(height: 16.h),
-                    _SequenceLogicBox(
-                      text: sequenceLogic,
-                      accentColor: _shadowColor,
+                    PedagogicalRuleBox(
+                      rule: sequenceLogic,
+                      shadowColor: _shadowColor,
                       isDark: isDark,
+                      icon: Icons.account_tree_rounded,
+                      capsKey: 'games.sequence_logic_caps',
+                      capsFallback: 'SEQUENCE LOGIC',
+                      titleKey: 'games.sequence_logic',
+                      titleFallback: 'Sequence Logic',
                     ),
                   ],
                   SizedBox(height: 28.h),
@@ -365,533 +395,6 @@ class EliteFeedbackCard extends StatelessWidget {
     return null;
   }
 }
-
-// ── Private sub-widgets ─────────────────────────────────────────────────────
-
-class _ExplanationBox extends StatefulWidget {
-  final String text;
-  final Color accentColor;
-  final bool isDark;
-
-  const _ExplanationBox({
-    required this.text,
-    required this.accentColor,
-    required this.isDark,
-  });
-
-  @override
-  State<_ExplanationBox> createState() => _ExplanationBoxState();
-}
-
-class _ExplanationBoxState extends State<_ExplanationBox> {
-  String? _translatedText;
-
-  @override
-  Widget build(BuildContext context) {
-    final displayText = _translatedText ?? widget.text;
-
-    return Container(
-          width: double.infinity,
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-          decoration: BoxDecoration(
-            color: widget.accentColor.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(20.r),
-            border: Border.all(
-              color: widget.accentColor.withValues(alpha: 0.2),
-              width: 1.5,
-            ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Icon(
-                    Icons.info_outline_rounded,
-                    color: widget.accentColor,
-                    size: 14.r,
-                  ),
-                  SizedBox(width: 8.w),
-                  Expanded(
-                    child: Text(
-                      context.tr(
-                        'games.explanation_caps',
-                        fallback: 'EXPLANATION',
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        color: widget.accentColor,
-                        letterSpacing: 1,
-                      ),
-                    ),
-                  ),
-                  if (_translatedText == null)
-                    TranslateButtonWidget(
-                      originalText: widget.text,
-                      onTranslationComplete: (translated) {
-                        if (mounted) {
-                          setState(() => _translatedText = translated);
-                        }
-                      },
-                    ),
-                ],
-              ),
-              SizedBox(height: 4.h),
-              Text(
-                displayText,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w600,
-                  color: widget.isDark ? Colors.white : Colors.black87,
-                ),
-              ),
-            ],
-          ),
-        )
-        .animate()
-        .fadeIn(delay: 300.ms)
-        .scale(duration: 400.ms, curve: Curves.easeOutBack);
-  }
-}
-
-/// Displays the curriculum's pedagogical `explanation` (the "why" behind a
-/// hint/pattern) — a previously-unused field. Uses a distinct icon and
-/// caption from [_ExplanationBox] (which reveals the *correct answer*) so
-/// the two boxes are never visually or semantically conflated even though
-/// they share the same accent-color treatment for visual consistency.
-class _RuleTipBox extends StatefulWidget {
-  final String text;
-  final Color accentColor;
-  final bool isDark;
-
-  const _RuleTipBox({
-    required this.text,
-    required this.accentColor,
-    required this.isDark,
-  });
-
-  @override
-  State<_RuleTipBox> createState() => _RuleTipBoxState();
-}
-
-class _RuleTipBoxState extends State<_RuleTipBox> {
-  String? _translatedText;
-
-  @override
-  Widget build(BuildContext context) {
-    final displayText = _translatedText ?? widget.text;
-
-    return Container(
-          width: double.infinity,
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-          decoration: BoxDecoration(
-            color: widget.accentColor.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(20.r),
-            border: Border.all(
-              color: widget.accentColor.withValues(alpha: 0.2),
-              width: 1.5,
-            ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Icon(
-                    Icons.menu_book_rounded,
-                    color: widget.accentColor,
-                    size: 14.r,
-                  ),
-                  SizedBox(width: 8.w),
-                  Expanded(
-                    child: Text(
-                      context.tr('games.pro_tip_caps', fallback: 'PRO TIP'),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        color: widget.accentColor,
-                        letterSpacing: 1,
-                      ),
-                    ),
-                  ),
-                  if (_translatedText == null)
-                    TranslateButtonWidget(
-                      originalText: widget.text,
-                      onTranslationComplete: (translated) {
-                        if (mounted) {
-                          setState(() => _translatedText = translated);
-                        }
-                      },
-                    ),
-                ],
-              ),
-              SizedBox(height: 4.h),
-              Text(
-                displayText,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w600,
-                  color: widget.isDark ? Colors.white : Colors.black87,
-                ),
-              ),
-            ],
-          ),
-        )
-        .animate()
-        .fadeIn(delay: 200.ms)
-        .scale(duration: 400.ms, curve: Curves.easeOutBack);
-  }
-}
-
-class _ShadowingFocusBox extends StatefulWidget {
-  final String text;
-  final Color accentColor;
-  final bool isDark;
-
-  const _ShadowingFocusBox({
-    required this.text,
-    required this.accentColor,
-    required this.isDark,
-  });
-
-  @override
-  State<_ShadowingFocusBox> createState() => _ShadowingFocusBoxState();
-}
-
-class _ShadowingFocusBoxState extends State<_ShadowingFocusBox> {
-  String? _translatedText;
-
-  @override
-  Widget build(BuildContext context) {
-    final displayText = _translatedText ?? widget.text;
-
-    return Container(
-          width: double.infinity,
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-          decoration: BoxDecoration(
-            color: widget.accentColor.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(20.r),
-            border: Border.all(
-              color: widget.accentColor.withValues(alpha: 0.2),
-              width: 1.5,
-            ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Icon(
-                    Icons.record_voice_over_rounded,
-                    color: widget.accentColor,
-                    size: 14.r,
-                  ),
-                  SizedBox(width: 8.w),
-                  Expanded(
-                    child: Text(
-                      "SHADOWING FOCUS",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        color: widget.accentColor,
-                        letterSpacing: 1,
-                      ),
-                    ),
-                  ),
-                  if (_translatedText == null)
-                    TranslateButtonWidget(
-                      originalText: widget.text,
-                      onTranslationComplete: (translated) {
-                        if (mounted) {
-                          setState(() => _translatedText = translated);
-                        }
-                      },
-                    ),
-                ],
-              ),
-              SizedBox(height: 4.h),
-              Text(
-                displayText,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w600,
-                  color: widget.isDark ? Colors.white : Colors.black87,
-                ),
-              ),
-            ],
-          ),
-        )
-        .animate()
-        .fadeIn(delay: 250.ms)
-        .scale(duration: 400.ms, curve: Curves.easeOutBack);
-  }
-}
-
-class _UsageContextBox extends StatefulWidget {
-  final String text;
-  final Color accentColor;
-  final bool isDark;
-
-  const _UsageContextBox({
-    required this.text,
-    required this.accentColor,
-    required this.isDark,
-  });
-
-  @override
-  State<_UsageContextBox> createState() => _UsageContextBoxState();
-}
-
-class _UsageContextBoxState extends State<_UsageContextBox> {
-  String? _translatedText;
-
-  @override
-  Widget build(BuildContext context) {
-    final displayText = _translatedText ?? widget.text;
-
-    return Container(
-          width: double.infinity,
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-          decoration: BoxDecoration(
-            color: widget.accentColor.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(20.r),
-            border: Border.all(
-              color: widget.accentColor.withValues(alpha: 0.2),
-              width: 1.5,
-            ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Icon(
-                    Icons.lightbulb_outline_rounded,
-                    color: widget.accentColor,
-                    size: 14.r,
-                  ),
-                  SizedBox(width: 8.w),
-                  Expanded(
-                    child: Text(
-                      "USAGE CONTEXT",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        color: widget.accentColor,
-                        letterSpacing: 1,
-                      ),
-                    ),
-                  ),
-                  if (_translatedText == null)
-                    TranslateButtonWidget(
-                      originalText: widget.text,
-                      onTranslationComplete: (translated) {
-                        if (mounted) {
-                          setState(() => _translatedText = translated);
-                        }
-                      },
-                    ),
-                ],
-              ),
-              SizedBox(height: 4.h),
-              Text(
-                displayText,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w600,
-                  color: widget.isDark ? Colors.white : Colors.black87,
-                ),
-              ),
-            ],
-          ),
-        )
-        .animate()
-        .fadeIn(delay: 250.ms)
-        .scale(duration: 400.ms, curve: Curves.easeOutBack);
-  }
-}
-
-class _SpellingRuleBox extends StatefulWidget {
-  final String text;
-  final Color accentColor;
-  final bool isDark;
-
-  const _SpellingRuleBox({
-    required this.text,
-    required this.accentColor,
-    required this.isDark,
-  });
-
-  @override
-  State<_SpellingRuleBox> createState() => _SpellingRuleBoxState();
-}
-
-class _SpellingRuleBoxState extends State<_SpellingRuleBox> {
-  String? _translatedText;
-
-  @override
-  Widget build(BuildContext context) {
-    final displayText = _translatedText ?? widget.text;
-
-    return Container(
-          width: double.infinity,
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-          decoration: BoxDecoration(
-            color: widget.accentColor.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(20.r),
-            border: Border.all(
-              color: widget.accentColor.withValues(alpha: 0.2),
-              width: 1.5,
-            ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Icon(
-                    Icons.spellcheck_rounded,
-                    color: widget.accentColor,
-                    size: 14.r,
-                  ),
-                  SizedBox(width: 8.w),
-                  Expanded(
-                    child: Text(
-                      "SPELLING PATTERN",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        color: widget.accentColor,
-                        letterSpacing: 1,
-                      ),
-                    ),
-                  ),
-                  if (_translatedText == null)
-                    TranslateButtonWidget(
-                      originalText: widget.text,
-                      onTranslationComplete: (translated) {
-                        if (mounted) {
-                          setState(() => _translatedText = translated);
-                        }
-                      },
-                    ),
-                ],
-              ),
-              SizedBox(height: 4.h),
-              Text(
-                displayText,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w600,
-                  color: widget.isDark ? Colors.white : Colors.black87,
-                ),
-              ),
-            ],
-          ),
-        )
-        .animate()
-        .fadeIn(delay: 250.ms)
-        .scale(duration: 400.ms, curve: Curves.easeOutBack);
-  }
-}
-
-class _SequenceLogicBox extends StatefulWidget {
-  final String text;
-  final Color accentColor;
-  final bool isDark;
-
-  const _SequenceLogicBox({
-    required this.text,
-    required this.accentColor,
-    required this.isDark,
-  });
-
-  @override
-  State<_SequenceLogicBox> createState() => _SequenceLogicBoxState();
-}
-
-class _SequenceLogicBoxState extends State<_SequenceLogicBox> {
-  String? _translatedText;
-
-  @override
-  Widget build(BuildContext context) {
-    final displayText = _translatedText ?? widget.text;
-
-    return Container(
-          width: double.infinity,
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-          decoration: BoxDecoration(
-            color: widget.accentColor.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(20.r),
-            border: Border.all(
-              color: widget.accentColor.withValues(alpha: 0.2),
-              width: 1.5,
-            ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Icon(
-                    Icons.account_tree_rounded,
-                    color: widget.accentColor,
-                    size: 14.r,
-                  ),
-                  SizedBox(width: 8.w),
-                  Expanded(
-                    child: Text(
-                      "LOGICAL SEQUENCE",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        color: widget.accentColor,
-                        letterSpacing: 1,
-                      ),
-                    ),
-                  ),
-                  if (_translatedText == null)
-                    TranslateButtonWidget(
-                      originalText: widget.text,
-                      onTranslationComplete: (translated) {
-                        if (mounted) {
-                          setState(() => _translatedText = translated);
-                        }
-                      },
-                    ),
-                ],
-              ),
-              SizedBox(height: 4.h),
-              Text(
-                displayText,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w600,
-                  color: widget.isDark ? Colors.white : Colors.black87,
-                ),
-              ),
-            ],
-          ),
-        )
-        .animate()
-        .fadeIn(delay: 250.ms)
-        .scale(duration: 400.ms, curve: Curves.easeOutBack);
-  }
-}
-
 class _ContinueButton extends StatelessWidget {
   final String label;
   final List<Color> gradient;

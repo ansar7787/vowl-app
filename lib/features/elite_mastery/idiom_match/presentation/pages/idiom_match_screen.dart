@@ -209,7 +209,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
               }
             });
           }
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is EliteMasteryLoaded) ? state.currentQuest : null;

@@ -226,7 +226,7 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
             title: 'CRITICAL MASS FUSION!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;

@@ -216,7 +216,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
             title: 'BINARY RESPONDER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;

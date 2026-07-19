@@ -31,6 +31,7 @@ class VowelDistinctionInstruction extends StatelessWidget {
                   ? "SLIDE TO MATCH THE VOWEL SOUND"
                   : instruction.toUpperCase(),
               textAlign: TextAlign.center,
+              maxLines: null,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,

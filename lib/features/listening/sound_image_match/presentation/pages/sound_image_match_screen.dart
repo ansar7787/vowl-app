@@ -118,7 +118,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
             title: 'THEMATIC LINKER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;

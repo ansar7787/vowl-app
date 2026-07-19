@@ -106,7 +106,7 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
             title: 'CLAUSE CATCHER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final GrammarQuest? quest = (state is GrammarLoaded)

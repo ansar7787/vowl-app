@@ -169,7 +169,7 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
             title: 'SPEED DEMON!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final ReadingQuest? quest = (state is ReadingLoaded)

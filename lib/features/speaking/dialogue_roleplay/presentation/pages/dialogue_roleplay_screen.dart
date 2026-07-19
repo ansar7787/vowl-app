@@ -215,7 +215,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
             title: 'DIALOGUE EXPERT!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;

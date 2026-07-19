@@ -219,6 +219,8 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                           hint: isHintUnlocked
                                               ? quest.hint
                                               : null,
+                                          explanation: quest.explanation,
+                                          dialectNote: quest.dialectNote,
                                           isDark: isDark,
                                           isMidnight: false,
                                           onPlayAudio: (text, locale) {

@@ -133,7 +133,7 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
             title: 'SYNTHESIS EXPERT!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final ReadingQuest? quest = (state is ReadingLoaded)

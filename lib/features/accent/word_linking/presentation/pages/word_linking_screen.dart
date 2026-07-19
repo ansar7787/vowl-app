@@ -7,6 +7,7 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
 import 'package:vowl/features/accent/presentation/layout/accent_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -123,7 +124,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
             title: 'LINKAGE MASTER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final AccentQuest? quest = (state is AccentLoaded)
@@ -205,15 +206,14 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                                 width: maxWidth - 48.w,
                                                 child: WordLinkingInstruction(
                                                   color: theme.primaryColor,
-                                                  instruction:
-                                                      quest.instruction,
+                                                  instruction: context.tr('games.word_linking_instruction', fallback: quest.instruction),
                                                 ),
                                               ),
                                             ),
                                           )
                                         : WordLinkingInstruction(
                                             color: theme.primaryColor,
-                                            instruction: quest.instruction,
+                                            instruction: context.tr('games.word_linking_instruction', fallback: quest.instruction),
                                           ),
                                     SizedBox(height: gapInstruction),
 

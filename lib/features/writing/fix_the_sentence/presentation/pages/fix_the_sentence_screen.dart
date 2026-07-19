@@ -105,7 +105,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
             title: 'SYNTAX SURGEON!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;

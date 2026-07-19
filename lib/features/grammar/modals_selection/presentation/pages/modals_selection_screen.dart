@@ -156,7 +156,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
             title: 'MODAL MASTER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;

@@ -159,7 +159,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
             title: 'HERO DISPATCHER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;

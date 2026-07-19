@@ -107,7 +107,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
             title: 'BRIDGE BUILDER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;

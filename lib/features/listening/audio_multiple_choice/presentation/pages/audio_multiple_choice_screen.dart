@@ -119,7 +119,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
             title: 'SONIC RADAR!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;

@@ -110,7 +110,7 @@ class _SubjectVerbAgreementScreenState
             title: 'AGREEMENT MASTER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;

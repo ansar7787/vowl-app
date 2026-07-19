@@ -250,7 +250,7 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
             title: 'LEXICAL PIVOT COMPLETE!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;

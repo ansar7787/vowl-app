@@ -120,7 +120,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
             title: 'REFLECTIVE MASTER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;

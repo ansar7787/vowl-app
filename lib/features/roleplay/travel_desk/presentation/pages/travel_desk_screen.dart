@@ -133,7 +133,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
             title: 'GLOBAL TRAVELER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;

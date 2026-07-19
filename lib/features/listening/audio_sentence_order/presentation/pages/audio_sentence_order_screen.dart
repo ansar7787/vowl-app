@@ -137,7 +137,7 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
             title: 'SEQUENCE MASTER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;

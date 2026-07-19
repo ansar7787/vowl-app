@@ -195,7 +195,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               }
             });
           }
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is EliteMasteryLoaded) ? state.currentQuest : null;

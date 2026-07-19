@@ -125,7 +125,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
             title: 'ENUNCIATION ACE!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final AccentQuest? quest = (state is AccentLoaded)

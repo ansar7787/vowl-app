@@ -158,7 +158,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
             title: 'PEACE RESOLVER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;

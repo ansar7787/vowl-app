@@ -213,7 +213,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
             title: 'SYNTAX SURGEON!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;

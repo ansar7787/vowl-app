@@ -133,7 +133,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
             title: 'CORPORATE LEADER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;

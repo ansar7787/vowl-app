@@ -152,7 +152,7 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
             title: 'FINAL VERDICT DELIVERED!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final ReadingQuest? quest = (state is ReadingLoaded)

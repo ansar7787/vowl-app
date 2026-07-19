@@ -315,7 +315,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
             title: 'VERBAL VORTEX DRIVER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;

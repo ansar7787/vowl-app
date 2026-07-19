@@ -130,7 +130,7 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
             title: 'NUANCE DECODER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;

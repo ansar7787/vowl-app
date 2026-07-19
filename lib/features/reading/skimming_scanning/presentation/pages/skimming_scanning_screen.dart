@@ -126,7 +126,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
             title: 'SCANNING ACE!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final ReadingQuest? quest = (state is ReadingLoaded)

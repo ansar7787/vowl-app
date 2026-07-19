@@ -224,7 +224,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
             title: 'SITUATIONAL EXPERT!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;

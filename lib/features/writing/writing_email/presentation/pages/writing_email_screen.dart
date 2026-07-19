@@ -125,7 +125,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
             title: 'CORRESPONDENCE ACE!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;

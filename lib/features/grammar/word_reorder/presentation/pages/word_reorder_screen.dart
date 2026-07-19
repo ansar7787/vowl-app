@@ -130,7 +130,7 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
             title: 'SYNTAX SHARPSHOOTER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;

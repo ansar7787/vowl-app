@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/presentation/widgets/pedagogical_rule_box.dart';
 
 class DialectFeedbackPanel extends StatelessWidget {
   final bool isCorrect;
@@ -10,6 +11,8 @@ class DialectFeedbackPanel extends StatelessWidget {
   final String britishPronunciation; // "SHED-yool"
   final String americanPronunciation; // "SKED-yool"
   final String? hint;
+  final String? explanation;
+  final String? dialectNote;
   final Function(String text, String locale) onPlayAudio;
   final bool isDark;
   final bool isMidnight;
@@ -21,6 +24,8 @@ class DialectFeedbackPanel extends StatelessWidget {
     required this.britishPronunciation,
     required this.americanPronunciation,
     this.hint,
+    this.explanation,
+    this.dialectNote,
     required this.onPlayAudio,
     required this.isDark,
     required this.isMidnight,
@@ -217,6 +222,32 @@ class DialectFeedbackPanel extends StatelessWidget {
               ),
             ],
           ),
+          if (explanation != null) ...[
+            SizedBox(height: 24.h),
+            PedagogicalRuleBox(
+              icon: Icons.lightbulb_outline_rounded,
+              capsKey: 'games.explanation_caps',
+              capsFallback: 'EXPLANATION',
+              titleKey: 'games.explanation',
+              titleFallback: 'Explanation',
+              rule: explanation!,
+              shadowColor: color,
+              isDark: isDark,
+            ),
+          ],
+          if (dialectNote != null) ...[
+            SizedBox(height: 16.h),
+            PedagogicalRuleBox(
+              icon: Icons.public_rounded,
+              capsKey: 'games.dialect_note_caps',
+              capsFallback: 'DIALECT NOTE',
+              titleKey: 'games.dialect_note',
+              titleFallback: 'Dialect Note',
+              rule: dialectNote!,
+              shadowColor: color,
+              isDark: isDark,
+            ),
+          ],
         ],
       ),
     ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.1);

@@ -155,7 +155,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
             title: 'CONVERSATION STARTER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;

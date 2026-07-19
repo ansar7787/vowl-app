@@ -107,7 +107,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
             title: 'CREATIVE AUTHOR!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;

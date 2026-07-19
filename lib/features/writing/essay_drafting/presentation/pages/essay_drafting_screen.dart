@@ -127,7 +127,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
             title: 'ESSAY ARCHITECT!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;

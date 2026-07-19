@@ -108,7 +108,7 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
             title: 'FACT VERDICTOR!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;

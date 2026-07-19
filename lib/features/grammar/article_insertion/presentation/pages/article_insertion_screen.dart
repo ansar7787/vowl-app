@@ -162,7 +162,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
             title: 'ARTICLE ACE!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;

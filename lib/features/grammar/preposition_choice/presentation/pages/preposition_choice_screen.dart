@@ -160,7 +160,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
             title: 'SPATIAL PRO!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final GrammarQuest? quest = (state is GrammarLoaded)

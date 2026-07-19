@@ -111,7 +111,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
             title: 'SYNAPSE!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final GrammarQuest? quest = (state is GrammarLoaded)

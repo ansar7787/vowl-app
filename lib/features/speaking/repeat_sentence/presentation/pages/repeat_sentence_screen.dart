@@ -203,7 +203,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
             title: 'SOUND WAVE TRANSCRIBER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;

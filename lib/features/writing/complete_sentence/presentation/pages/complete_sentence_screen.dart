@@ -159,7 +159,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
             title: 'COMPLETION MASTER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       // PERF FIX: only rebuild when quest changes, not on hint/wrong-count updates.
       buildWhen: (prev, curr) =>

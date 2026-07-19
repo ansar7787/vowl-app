@@ -134,7 +134,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
             title: 'LOGIC MASTER!',
             enableDoubleUp: true,
           );
-        } else 
+        }
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;

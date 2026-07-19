@@ -31,6 +31,7 @@ class PitchModulationInstruction extends StatelessWidget {
                   ? "IDENTIFY THE PITCH"
                   : instruction.toUpperCase(),
               textAlign: TextAlign.center,
+              maxLines: null,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 8.sp,
