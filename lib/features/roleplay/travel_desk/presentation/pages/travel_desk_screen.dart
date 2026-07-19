@@ -16,7 +16,6 @@ import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_d
 import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_desk_customs_terminal.dart';
 import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_desk_passport_book.dart';
 import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_desk_stamp_station.dart';
-import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_desk_explanation_card.dart';
 
 class TravelDeskScreen extends StatefulWidget {
   final int level;
@@ -207,12 +206,6 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                               onDragEnded: () {
                                 setState(() => _hoveredIndex = null);
                               },
-                            )
-                          else
-                            TravelDeskExplanationCard(
-                              quest: quest,
-                              isDark: isDark,
-                              isCorrect: _isCorrect,
                             ),
 
                           SizedBox(height: isCompact ? 40.h : 80.h),
@@ -226,3 +219,4 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
     );
   }
 }
+

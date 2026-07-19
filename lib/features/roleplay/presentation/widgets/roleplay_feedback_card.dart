@@ -1,18 +1,12 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
+import 'package:vowl/core/presentation/widgets/pedagogical_rule_box.dart';
 
-/// Bottom-sheet card shown when [isAnswered] is true.
-///
-/// Tapping the action button calls [onContinue]; the button label and content
-/// adapt automatically based on [state] and [isCorrect].
-///
-/// Wrapped in [RepaintBoundary] internally so the slide-up animation does not
-/// trigger repaints in parent layers.
 class RoleplayFeedbackCard extends StatelessWidget {
   const RoleplayFeedbackCard({
     super.key,
@@ -33,11 +27,7 @@ class RoleplayFeedbackCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Type-safe access — never force-cast the abstract RoleplayState.
-    final loadedState = state is RoleplayLoaded
-        ? state as RoleplayLoaded
-        : null;
-
+    final loadedState = state is RoleplayLoaded ? state as RoleplayLoaded : null;
     final success = isCorrect ?? false;
     final isFinal = loadedState?.isFinalFailure ?? false;
 
@@ -51,95 +41,129 @@ class RoleplayFeedbackCard extends StatelessWidget {
     final title = success
         ? context.tr('games.excellent', fallback: 'Excellent!')
         : context.tr('games.not_quite', fallback: 'Not Quite');
+    
     final buttonText = success
         ? context.tr('common.continue_text', fallback: 'Continue').toUpperCase()
         : (isFinal
               ? (lives == 0
                     ? context.tr('games.see_results', fallback: 'See Results')
-                    : context
-                          .tr('common.continue_text', fallback: 'Continue')
-                          .toUpperCase())
-              : context
-                    .tr('games.try_again', fallback: 'Try Again')
-                    .toUpperCase());
-    final explanation = (success || isFinal)
-        ? loadedState?.currentQuest.explanation
-        : null;
+                    : context.tr('common.continue_text', fallback: 'Continue').toUpperCase())
+              : context.tr('games.try_again', fallback: 'Try Again').toUpperCase());
+    
+    final showExplanation = success || isFinal;
+    final explanation = showExplanation ? loadedState?.currentQuest.explanation : null;
 
     return RepaintBoundary(
-      child:
-          Container(
-            width: double.infinity,
-            padding: EdgeInsets.all(28.r),
-            decoration: BoxDecoration(
-              color: isDark ? const Color(0xFF0F172A) : Colors.white,
-              borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
-              boxShadow: [
-                BoxShadow(
-                  color: shadowColor.withValues(alpha: 0.2),
-                  blurRadius: 40,
-                  offset: const Offset(0, -10),
-                ),
-              ],
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.all(28.r),
+        decoration: BoxDecoration(
+          color: isDark ? const Color(0xFF0F172A) : Colors.white,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
+          boxShadow: [
+            BoxShadow(
+              color: shadowColor.withValues(alpha: 0.2),
+              blurRadius: 40,
+              offset: const Offset(0, -10),
             ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Semantics(
-                  label: success
-                      ? context.tr('games.correct', fallback: 'Correct')
-                      : (isFinal
-                            ? '${context.tr('games.incorrect', fallback: 'Incorrect')} ${explanation != null ? context.tr('games.explanation', fallback: 'Explanation') : ''}'
-                            : context.tr(
-                                'games.semantic_incorrect_try_again',
-                                fallback: 'Incorrect. Tap to try again.',
-                              )),
-                  child: _ResultHeader(
-                    icon: icon,
-                    title: title,
-                    gradient: gradient,
-                  ),
-                ),
-                if (explanation != null) ...[
-                  SizedBox(height: 16.h),
-                  _ExplanationCard(
-                    explanation: explanation,
+          ],
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Semantics(
+              label: success
+                  ? context.tr('games.correct', fallback: 'Correct')
+                  : (isFinal
+                        ? '${context.tr('games.incorrect', fallback: 'Incorrect')} ${explanation != null ? context.tr('games.explanation', fallback: 'Explanation') : ''}'
+                        : context.tr('games.semantic_incorrect_try_again', fallback: 'Incorrect. Tap to try again.')),
+              child: _ResultHeader(icon: icon, title: title, gradient: gradient),
+            ),
+            
+            if (explanation != null) ...[
+              SizedBox(height: 16.h),
+              _ExplanationCard(
+                explanation: explanation,
+                shadowColor: shadowColor,
+                isDark: isDark,
+              ),
+            ],
+
+            if (showExplanation && loadedState != null) ...[
+              if (loadedState.currentQuest.sampleAnswer != null)
+                Padding(
+                  padding: EdgeInsets.only(top: 12.h),
+                  child: PedagogicalRuleBox(
+                    icon: Icons.lightbulb_outline_rounded,
+                    capsKey: 'games.sample_answer_caps',
+                    capsFallback: 'SAMPLE ANSWER',
+                    titleKey: 'games.sample_answer',
+                    titleFallback: 'Sample Answer',
+                    rule: loadedState.currentQuest.sampleAnswer!,
                     shadowColor: shadowColor,
                     isDark: isDark,
                   ),
-                ],
-                SizedBox(height: 28.h),
-                Semantics(
-                  button: true,
-                  label: buttonText,
-                  hint: 'Double tap to $buttonText',
-                  child: _ActionButton(
-                    text: buttonText,
-                    gradient: gradient,
+                ),
+              if (loadedState.currentQuest.symptoms != null && loadedState.currentQuest.symptoms!.isNotEmpty)
+                Padding(
+                  padding: EdgeInsets.only(top: 12.h),
+                  child: PedagogicalRuleBox(
+                    icon: Icons.medical_services_outlined,
+                    capsKey: 'games.symptoms_caps',
+                    capsFallback: 'SYMPTOMS',
+                    titleKey: 'games.symptoms',
+                    titleFallback: 'Symptoms',
+                    rule: loadedState.currentQuest.symptoms!.join("\n• "),
                     shadowColor: shadowColor,
-                    onTap: onContinue,
+                    isDark: isDark,
                   ),
                 ),
-                if (!success && onTutorPass != null) ...[
-                  SizedBox(height: 12.h),
-                  _TutorPassButton(
-                    onTap: onTutorPass!,
-                    accentColor: shadowColor,
+              if (loadedState.currentQuest.itinerary != null && loadedState.currentQuest.itinerary!.isNotEmpty)
+                Padding(
+                  padding: EdgeInsets.only(top: 12.h),
+                  child: PedagogicalRuleBox(
+                    icon: Icons.map_outlined,
+                    capsKey: 'games.itinerary_caps',
+                    capsFallback: 'ITINERARY',
+                    titleKey: 'games.itinerary',
+                    titleFallback: 'Itinerary',
+                    rule: loadedState.currentQuest.itinerary!.join("\n• "),
+                    shadowColor: shadowColor,
+                    isDark: isDark,
                   ),
-                ],
-              ],
+                ),
+            ],
+
+            SizedBox(height: 28.h),
+            Semantics(
+              button: true,
+              label: buttonText,
+              hint: 'Double tap to $buttonText',
+              child: _ActionButton(
+                text: buttonText,
+                gradient: gradient,
+                shadowColor: shadowColor,
+                onTap: onContinue,
+              ),
             ),
-          ).animate().slideY(
-            begin: 1,
-            end: 0,
-            curve: Curves.easeOutCubic,
-            duration: 500.ms,
-          ),
+            if (!success && onTutorPass != null) ...[
+              SizedBox(height: 12.h),
+              _TutorPassButton(
+                onTap: onTutorPass!,
+                accentColor: shadowColor,
+              ),
+            ],
+          ],
+        ),
+      ).animate().slideY(
+        begin: 1,
+        end: 0,
+        curve: Curves.easeOutCubic,
+        duration: 500.ms,
+      ),
     );
   }
 }
-
-// ── Private sub-widgets ────────────────────────────────────────────────────
 
 class _ResultHeader extends StatelessWidget {
   const _ResultHeader({
@@ -175,7 +199,7 @@ class _ResultHeader extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 24.sp,
                 fontWeight: FontWeight.w900,
-                color: Colors.white, // masked by shader
+                color: Colors.white, 
                 letterSpacing: 1.5,
               ),
             ),
@@ -185,8 +209,6 @@ class _ResultHeader extends StatelessWidget {
     );
   }
 }
-
-// ── ─────────────────────────────────────────────────────────────────────────
 
 class _ExplanationCard extends StatefulWidget {
   const _ExplanationCard({
@@ -211,17 +233,16 @@ class _ExplanationCardState extends State<_ExplanationCard> {
     final displayText = _translatedText ?? widget.explanation;
 
     return Semantics(
-          label:
-              '${context.tr('games.explanation', fallback: 'Explanation')}: $displayText',
+          label: '${context.tr('games.explanation', fallback: 'Explanation')}: $displayText',
           child: Container(
             width: double.infinity,
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
             decoration: BoxDecoration(
-              color: widget.shadowColor.withValues(alpha: 0.08),
-              borderRadius: BorderRadius.circular(20.r),
+              color: widget.shadowColor.withValues(alpha: widget.isDark ? 0.08 : 0.05),
+              borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
                 color: widget.shadowColor.withValues(alpha: 0.2),
-                width: 1.5,
+                width: 1,
               ),
             ),
             child: Column(
@@ -240,16 +261,13 @@ class _ExplanationCardState extends State<_ExplanationCard> {
                     Expanded(
                       child: ExcludeSemantics(
                         child: Text(
-                          context.tr(
-                            'games.explanation_caps',
-                            fallback: 'EXPLANATION',
-                          ),
+                          context.tr('games.explanation_caps', fallback: 'EXPLANATION'),
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w800,
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.w900,
                             color: widget.shadowColor,
-                            letterSpacing: 1,
+                            letterSpacing: 1.2,
                           ),
                         ),
                       ),
@@ -265,14 +283,15 @@ class _ExplanationCardState extends State<_ExplanationCard> {
                       ),
                   ],
                 ),
-                SizedBox(height: 4.h),
+                SizedBox(height: 6.h),
                 Text(
                   displayText,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 18.sp,
+                    fontSize: 14.sp,
                     fontWeight: FontWeight.w600,
-                    color: widget.isDark ? Colors.white : Colors.black87,
+                    color: widget.isDark ? Colors.white.withValues(alpha: 0.8) : const Color(0xFF475569),
+                    height: 1.4,
                   ),
                 ),
               ],
@@ -281,11 +300,9 @@ class _ExplanationCardState extends State<_ExplanationCard> {
         )
         .animate()
         .fadeIn(delay: 300.ms)
-        .scale(duration: 400.ms, curve: Curves.easeOutBack);
+        .slideY(begin: 0.2, end: 0, duration: 400.ms, curve: Curves.easeOutBack);
   }
 }
-
-// ── ─────────────────────────────────────────────────────────────────────────
 
 class _ActionButton extends StatelessWidget {
   const _ActionButton({
@@ -306,7 +323,6 @@ class _ActionButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: double.infinity,
-        // minHeight instead of fixed height supports accessibility text scaling.
         constraints: BoxConstraints(minHeight: 65.h),
         padding: EdgeInsets.symmetric(vertical: 16.h),
         decoration: BoxDecoration(
@@ -365,19 +381,10 @@ class _TutorPassButton extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              Icons.auto_awesome_rounded,
-              color: accentColor,
-              size: 14.r,
-            ),
+            Icon(Icons.auto_awesome_rounded, color: accentColor, size: 14.r),
             SizedBox(width: 8.w),
             Text(
-              context
-                  .tr(
-                    'games.i_spoke_correctly',
-                    fallback: 'I spoke correctly',
-                  )
-                  .toUpperCase(),
+              context.tr('games.i_spoke_correctly', fallback: 'I spoke correctly').toUpperCase(),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,
@@ -392,4 +399,3 @@ class _TutorPassButton extends StatelessWidget {
     );
   }
 }
-

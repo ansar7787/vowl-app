@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -16,7 +16,6 @@ import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_in
 import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_interview_telemetry_dashboard.dart';
 import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_interview_interviewer_panel.dart';
 import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_interview_response_console.dart';
-import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_interview_explanation_card.dart';
 
 class JobInterviewScreen extends StatefulWidget {
   final int level;
@@ -197,18 +196,6 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                           SizedBox(height: isCompact ? 12.h : 20.h),
 
                           // Post-answer review cards
-                          AnimatedCrossFade(
-                            firstChild: const SizedBox(),
-                            secondChild: JobInterviewExplanationCard(
-                              quest: quest,
-                              isDark: isDark,
-                              isCorrect: _isCorrect,
-                            ),
-                            crossFadeState: _isAnswered
-                                ? CrossFadeState.showSecond
-                                : CrossFadeState.showFirst,
-                            duration: const Duration(milliseconds: 400),
-                          ),
                           SizedBox(height: isCompact ? 40.h : 80.h),
                         ],
                       ),
@@ -220,3 +207,4 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
     );
   }
 }
+

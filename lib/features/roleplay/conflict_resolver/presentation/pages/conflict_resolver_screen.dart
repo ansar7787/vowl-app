@@ -1,4 +1,4 @@
-import 'dart:math' as math;
+﻿import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,7 +18,6 @@ import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/conflict_resolver/presentation/widgets/conflict_resolver_instruction.dart';
 import 'package:vowl/features/roleplay/conflict_resolver/presentation/widgets/conflict_resolver_conflict_card.dart';
 import 'package:vowl/features/roleplay/conflict_resolver/presentation/widgets/conflict_resolver_dial_console.dart';
-import 'package:vowl/features/roleplay/conflict_resolver/presentation/widgets/conflict_resolver_explanation_card.dart';
 
 class ConflictResolverScreen extends StatefulWidget {
   final int level;
@@ -260,18 +259,6 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                             ).animate().fadeIn(duration: 300.ms),
 
                           // Post-answer review cards
-                          AnimatedCrossFade(
-                            firstChild: const SizedBox(),
-                            secondChild: ConflictResolverExplanationCard(
-                              quest: quest,
-                              isDark: isDark,
-                              isCorrect: _isCorrect,
-                            ),
-                            crossFadeState: _isAnswered
-                                ? CrossFadeState.showSecond
-                                : CrossFadeState.showFirst,
-                            duration: const Duration(milliseconds: 400),
-                          ),
                           SizedBox(height: isCompact ? 40.h : 80.h),
                         ],
                       ),
@@ -283,3 +270,4 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
     );
   }
 }
+

@@ -1,4 +1,4 @@
-import 'dart:math' as math;
+﻿import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,7 +18,6 @@ import 'package:vowl/features/roleplay/emergency_hub/presentation/widgets/emerge
 import 'package:vowl/features/roleplay/emergency_hub/presentation/widgets/emergency_hub_telex_card.dart';
 import 'package:vowl/features/roleplay/emergency_hub/presentation/widgets/emergency_hub_terminal_input.dart';
 import 'package:vowl/features/roleplay/emergency_hub/presentation/widgets/emergency_hub_valve_chamber.dart';
-import 'package:vowl/features/roleplay/emergency_hub/presentation/widgets/emergency_hub_explanation_card.dart';
 
 class EmergencyHubScreen extends StatefulWidget {
   final int level;
@@ -273,18 +272,6 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                             ).animate().fadeIn(duration: 300.ms),
 
                           // Review details
-                          AnimatedCrossFade(
-                            firstChild: const SizedBox(),
-                            secondChild: EmergencyHubExplanationCard(
-                              quest: quest,
-                              isDark: isDark,
-                              isCorrect: _isCorrect,
-                            ),
-                            crossFadeState: _isAnswered
-                                ? CrossFadeState.showSecond
-                                : CrossFadeState.showFirst,
-                            duration: const Duration(milliseconds: 400),
-                          ),
                           SizedBox(height: isCompact ? 40.h : 80.h),
                         ],
                       ),
@@ -296,3 +283,4 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
     );
   }
 }
+

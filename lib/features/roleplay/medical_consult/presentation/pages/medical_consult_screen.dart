@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -18,7 +18,6 @@ import 'package:vowl/features/roleplay/medical_consult/presentation/widgets/medi
 import 'package:vowl/features/roleplay/medical_consult/presentation/widgets/medical_consult_patient_record.dart';
 import 'package:vowl/features/roleplay/medical_consult/presentation/widgets/medical_consult_scan_bay.dart';
 import 'package:vowl/features/roleplay/medical_consult/presentation/widgets/medical_consult_diagnostic_tray.dart';
-import 'package:vowl/features/roleplay/medical_consult/presentation/widgets/medical_consult_explanation_card.dart';
 
 class MedicalConsultScreen extends StatefulWidget {
   final int level;
@@ -400,18 +399,6 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                             ).animate().fadeIn(duration: 300.ms),
 
                           // Explanations cards post-selection
-                          AnimatedCrossFade(
-                            firstChild: const SizedBox(),
-                            secondChild: MedicalConsultExplanationCard(
-                              quest: quest,
-                              isDark: isDark,
-                              isCorrect: _isCorrect,
-                            ),
-                            crossFadeState: _isAnswered
-                                ? CrossFadeState.showSecond
-                                : CrossFadeState.showFirst,
-                            duration: const Duration(milliseconds: 400),
-                          ),
                           SizedBox(height: isCompact ? 40.h : 80.h),
                         ],
                       ),
@@ -423,3 +410,4 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
     );
   }
 }
+

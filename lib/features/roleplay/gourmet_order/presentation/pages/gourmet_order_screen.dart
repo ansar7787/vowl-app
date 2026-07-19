@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -18,7 +18,6 @@ import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourme
 import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourmet_order_banquet_header.dart';
 import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourmet_order_table_setting.dart';
 import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourmet_order_plate_tray.dart';
-import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourmet_order_explanation_card.dart';
 
 class GourmetOrderScreen extends StatefulWidget {
   final int level;
@@ -325,18 +324,6 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                             ).animate().fadeIn(duration: 300.ms),
 
                           // Explanations cards post-selection
-                          AnimatedCrossFade(
-                            firstChild: const SizedBox(),
-                            secondChild: GourmetOrderExplanationCard(
-                              quest: quest,
-                              isDark: isDark,
-                              isCorrect: _isCorrect,
-                            ),
-                            crossFadeState: _isAnswered
-                                ? CrossFadeState.showSecond
-                                : CrossFadeState.showFirst,
-                            duration: const Duration(milliseconds: 400),
-                          ),
                           SizedBox(height: isCompact ? 40.h : 80.h),
                         ],
                       ),
@@ -348,3 +335,4 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
     );
   }
 }
+

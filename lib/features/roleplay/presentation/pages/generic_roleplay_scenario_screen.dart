@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -23,7 +23,7 @@ import 'package:vowl/features/roleplay/presentation/widgets/roleplay_options_sec
 ///
 /// Responsibilities:
 ///  - Reads [AuthBloc] **once** via `context.select` to extract the mascot ID,
-///    then passes it into [RoleplayBaseLayout] — no cross-feature coupling below.
+///    then passes it into [RoleplayBaseLayout] â€” no cross-feature coupling below.
 ///  - Orchestrates local UI state (selected index, attempts, chat messages).
 ///  - Delegates sound / haptic feedback to [RoleplayBloc].
 class GenericRoleplayScenarioScreen extends StatefulWidget {
@@ -47,12 +47,12 @@ class GenericRoleplayScenarioScreen extends StatefulWidget {
 
 class _GenericRoleplayScenarioScreenState
     extends State<GenericRoleplayScenarioScreen> {
-  // ── Services ──────────────────────────────────────────────────────────────
+  // â”€â”€ Services â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   final _hapticService = di.sl<HapticService>();
   final _ttsService = di.sl<SpeechService>();
   final _chatScrollController = ScrollController();
 
-  // ── Local UI state ────────────────────────────────────────────────────────
+  // â”€â”€ Local UI state â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   bool _showConfetti = false;
   int? _selectedIndex;
   bool _isAnswered = false;
@@ -73,7 +73,7 @@ class _GenericRoleplayScenarioScreenState
 
   final List<ChatMessage> _chatMessages = [];
 
-  // ── Lifecycle ─────────────────────────────────────────────────────────────
+  // â”€â”€ Lifecycle â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   @override
   void initState() {
@@ -90,7 +90,7 @@ class _GenericRoleplayScenarioScreenState
     super.dispose();
   }
 
-  // ── Helpers ───────────────────────────────────────────────────────────────
+  // â”€â”€ Helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   Future<void> _playAudio(String text) async {
     await _ttsService.stop();
@@ -124,7 +124,7 @@ class _GenericRoleplayScenarioScreenState
     _scrollToBottom();
   }
 
-  // ── Answer selection ──────────────────────────────────────────────────────
+  // â”€â”€ Answer selection â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   //
   // Sound and haptic feedback for the *result* are owned exclusively by
   // [RoleplayBloc._onSubmitAnswer]. Only a light tap haptic fires here.
@@ -171,11 +171,11 @@ class _GenericRoleplayScenarioScreenState
     }
   }
 
-  // ── Build ─────────────────────────────────────────────────────────────────
+  // â”€â”€ Build â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
   @override
   Widget build(BuildContext context) {
-    // context.select rebuilds only when the mascot ID field changes —
+    // context.select rebuilds only when the mascot ID field changes â€”
     // not on every auth state emission.
     final mascotId = context.select<AuthBloc, String>(
       (bloc) => bloc.state.user?.vowlMascot ?? kRoleplayDefaultMascotId,
@@ -281,3 +281,4 @@ class _GenericRoleplayScenarioScreenState
     );
   }
 }
+

@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,7 +19,6 @@ import 'package:vowl/features/roleplay/elevator_pitch/presentation/widgets/eleva
 import 'package:vowl/features/roleplay/elevator_pitch/presentation/widgets/elevator_pitch_prompt_card.dart';
 import 'package:vowl/features/roleplay/elevator_pitch/presentation/widgets/elevator_pitch_chamber_console.dart';
 import 'package:vowl/features/roleplay/elevator_pitch/presentation/widgets/elevator_pitch_record_control.dart';
-import 'package:vowl/features/roleplay/elevator_pitch/presentation/widgets/elevator_pitch_explanation_card.dart';
 
 class ElevatorPitchScreen extends StatefulWidget {
   final int level;
@@ -315,20 +314,6 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
                             ),
 
                           // Post-answer explanation cards
-                          AnimatedCrossFade(
-                            firstChild: const SizedBox(),
-                            secondChild: ElevatorPitchExplanationCard(
-                              quest: quest,
-                              isDark: isDark,
-                              isCorrect: _isCorrect,
-                              ticksRecorded: _ticksRecorded,
-                              ticksInAlignment: _ticksInAlignment,
-                            ),
-                            crossFadeState: _isAnswered
-                                ? CrossFadeState.showSecond
-                                : CrossFadeState.showFirst,
-                            duration: const Duration(milliseconds: 400),
-                          ),
                           SizedBox(height: isCompact ? 40.h : 80.h),
                         ],
                       ),
@@ -340,3 +325,4 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
     );
   }
 }
+

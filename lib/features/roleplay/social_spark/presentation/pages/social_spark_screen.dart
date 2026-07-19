@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -17,7 +17,6 @@ import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/social_spark/presentation/widgets/social_spark_instruction.dart';
 import 'package:vowl/features/roleplay/social_spark/presentation/widgets/social_spark_connection_monitor.dart';
 import 'package:vowl/features/roleplay/social_spark/presentation/widgets/social_spark_galaxy_board.dart';
-import 'package:vowl/features/roleplay/social_spark/presentation/widgets/social_spark_explanation_card.dart';
 
 class SocialSparkScreen extends StatefulWidget {
   final int level;
@@ -314,18 +313,6 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                             ).animate().fadeIn(duration: 300.ms),
 
                           // Post-answer review cards
-                          AnimatedCrossFade(
-                            firstChild: const SizedBox(),
-                            secondChild: SocialSparkExplanationCard(
-                              quest: quest,
-                              isDark: isDark,
-                              isCorrect: _isCorrect,
-                            ),
-                            crossFadeState: _isAnswered
-                                ? CrossFadeState.showSecond
-                                : CrossFadeState.showFirst,
-                            duration: const Duration(milliseconds: 400),
-                          ),
                           SizedBox(height: isCompact ? 40.h : 80.h),
                         ],
                       ),
@@ -337,3 +324,4 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
     );
   }
 }
+
