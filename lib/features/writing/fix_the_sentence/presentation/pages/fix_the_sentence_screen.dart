@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -62,18 +62,6 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
     }
   }
 
-  void _selectReplacement(String selected, String correct, bool isAnswered) {
-    if (isAnswered) return;
-
-    bool isCorrect =
-        selected.trim().toLowerCase() == correct.trim().toLowerCase();
-
-    setState(() {
-      _selectedOption = selected;
-    });
-
-    context.read<WritingBloc>().add(SubmitAnswer(isCorrect));
-  }
 
   @override
   Widget build(BuildContext context) {

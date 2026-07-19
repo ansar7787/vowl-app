@@ -169,7 +169,6 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
         final options = quest?.options ?? ["A", "B"];
         final mediaQuery = MediaQuery.of(context);
         
-        final int lives = state is AccentLoaded ? state.livesRemaining : (_lastLives ?? 3);
 
 
         return MediaQuery(
@@ -214,9 +213,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                       final double gapSpeaker = remainingHeight > 0
                           ? (gapUnit * 2).clamp(16.0, 48.0)
                           : 16.0;
-                      final double gapSlider = remainingHeight > 0
-                          ? (gapUnit * 1.5).clamp(12.0, 40.0)
-                          : 12.0;
+                      
                       final double gapBottom = remainingHeight > 0
                           ? (gapUnit * 1).clamp(12.0, 40.0)
                           : 12.0;
@@ -289,3 +286,4 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
     );
   }
 }
+

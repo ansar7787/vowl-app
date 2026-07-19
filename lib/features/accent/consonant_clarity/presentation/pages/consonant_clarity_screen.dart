@@ -130,7 +130,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
         final AccentQuest? quest = (state is AccentLoaded)
             ? state.currentQuest as AccentQuest?
             : _lastQuest;
-        final int livesRemaining = (state is AccentLoaded) ? state.livesRemaining : 0;
+        
         final options = quest?.options ?? ["A", "B"];
         final mediaQuery = MediaQuery.of(context);
 
@@ -178,9 +178,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                       final double gapSpeaker = remainingHeight > 0
                           ? (gapUnit * 2).clamp(16.0, 48.0)
                           : 16.0;
-                      final double gapSlider = remainingHeight > 0
-                          ? (gapUnit * 1.5).clamp(12.0, 40.0)
-                          : 12.0;
+                      
                       final double gapBottom = remainingHeight > 0
                           ? (gapUnit * 1).clamp(12.0, 40.0)
                           : 12.0;
@@ -304,4 +302,5 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
     );
   }
 }
+
 
