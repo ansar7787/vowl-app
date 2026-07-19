@@ -34,6 +34,7 @@ class ShadowingChallengeScreen extends StatefulWidget {
 }
 
 class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
+  final ScrollController _scrollController = ScrollController();
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
@@ -55,7 +56,20 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
 
   @override
   void dispose() {
+    _scrollController.dispose();
     super.dispose();
+  }
+
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 100), () {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOut,
+        );
+      }
+    });
   }
 
   void _playTts(String text) {
@@ -78,6 +92,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
         _isAnswered = true;
         _isCorrect = true;
       });
+      _scrollToBottom();
       context.read<AccentBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
@@ -86,6 +101,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
         _isAnswered = true;
         _isCorrect = false;
       });
+      _scrollToBottom();
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
   }
@@ -184,6 +200,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                           : 12.0;
 
                       return SingleChildScrollView(
+                        controller: _scrollController,
                         physics: const BouncingScrollPhysics(),
                         child: ConstrainedBox(
                           constraints: BoxConstraints(minHeight: maxHeight),
@@ -245,6 +262,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
     );
   }
 }
+
 
 
 

@@ -34,6 +34,7 @@ class PitchPatternMatchScreen extends StatefulWidget {
 }
 
 class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
+  final ScrollController _scrollController = ScrollController();
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
@@ -60,7 +61,20 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
   @override
   void dispose() {
     _previewTimer?.cancel();
+    _scrollController.dispose();
     super.dispose();
+  }
+
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 100), () {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOut,
+        );
+      }
+    });
   }
 
   void _playTts(String text) {
@@ -124,6 +138,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
         _isAnswered = true;
         _isCorrect = true;
       });
+      _scrollToBottom();
       context.read<AccentBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
@@ -132,6 +147,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
         _isAnswered = true;
         _isCorrect = false;
       });
+      _scrollToBottom();
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
   }
@@ -236,6 +252,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                           : 12.0;
 
                       return SingleChildScrollView(
+                        controller: _scrollController,
                         physics: const BouncingScrollPhysics(),
                         child: ConstrainedBox(
                           constraints: BoxConstraints(minHeight: maxHeight),
@@ -311,6 +328,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
     );
   }
 }
+
 
 
 

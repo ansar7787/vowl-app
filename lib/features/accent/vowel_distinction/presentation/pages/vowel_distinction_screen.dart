@@ -31,6 +31,7 @@ class VowelDistinctionScreen extends StatefulWidget {
 }
 
 class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
+  final ScrollController _scrollController = ScrollController();
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
@@ -57,7 +58,20 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
   void dispose() {
     _mismatchResetTimer?.cancel();
     _autoplayTimer?.cancel();
+    _scrollController.dispose();
     super.dispose();
+  }
+
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 100), () {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOut,
+        );
+      }
+    });
   }
 
   void _playTts(String text) {
@@ -93,6 +107,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
         _isAnswered = true;
         _isCorrect = true;
       });
+      _scrollToBottom();
       context.read<AccentBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
@@ -101,6 +116,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
         _isAnswered = true;
         _isCorrect = false;
       });
+      _scrollToBottom();
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
   }
@@ -205,6 +221,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                           : 12.0;
 
                       return SingleChildScrollView(
+                        controller: _scrollController,
                         physics: const BouncingScrollPhysics(),
                         child: ConstrainedBox(
                           constraints: BoxConstraints(minHeight: maxHeight),
@@ -325,6 +342,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
     );
   }
 }
+
 
 
 
