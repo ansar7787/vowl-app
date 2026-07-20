@@ -13,7 +13,6 @@ import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/local_smart_tutor.dart';
 import 'package:vowl/core/utils/ad_service.dart';
-import 'package:vowl/core/utils/iap_service.dart';
 import 'package:vowl/core/utils/payment_service.dart';
 import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
@@ -106,7 +105,6 @@ Future<void> initExternalAndCore(GetIt sl) async {
     () => AdService(),
     dispose: (service) => service.dispose(),
   );
-  sl.registerLazySingleton<IapService>(() => IapService());
   // REMOVED: RewardedAdService registration — the duplicate rewarded-ad
   // subsystem has been consolidated into AdService (see ad_service.dart).
   // The sole call site (profile/rewarded_ad_card.dart) now uses AdService

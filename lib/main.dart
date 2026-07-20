@@ -27,7 +27,6 @@ import 'package:vowl/core/utils/notification_service.dart';
 import 'package:vowl/core/utils/remote_config_service.dart';
 import 'package:vowl/core/utils/security_service.dart';
 import 'package:vowl/core/utils/age_gate_service.dart';
-import 'package:vowl/core/utils/iap_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
@@ -189,7 +188,6 @@ Future<void> _initDeferredServices(FirebaseApp? firebaseApp) async {
     }
   }
 
-  await runSafe('IapService', () => di.sl<IapService>().init());
   await runSafe('AdService', () => di.sl<AdService>().init());
   await runSafe(
     'RemoteConfigService',
