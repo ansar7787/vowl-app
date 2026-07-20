@@ -6,7 +6,7 @@ admin.initializeApp();
 
 // ─── PAYMENT VERIFICATION (Server-Side Only) ────────────────────────
 // Called from the Flutter app after Razorpay success callback.
-// Verifies the payment signature before granting premium status.
+// Verifies the payment via Razorpay API before granting premium status.
 exports.verifyPayment = onCall(async (request) => {
     // 1. Auth Check
     if (!request.auth) {
@@ -14,32 +14,45 @@ exports.verifyPayment = onCall(async (request) => {
     }
 
     const uid = request.auth.uid;
-    const {orderId, paymentId, signature, durationDays} = request.data;
+    const {paymentId, durationDays} = request.data;
 
     if (!paymentId) {
         throw new HttpsError('invalid-argument', 'Missing payment ID.');
     }
 
-    // 2. Verify Razorpay Signature (If provided)
-    // Direct payments don't have an orderId/signature. For those, we skip HMAC.
-    // IMPORTANT: For absolute security, implement Razorpay API fetching here using the paymentId.
-    if (orderId && signature) {
-        const secret = process.env.RAZORPAY_KEY_SECRET || '';
-        if (secret) {
-            const expectedSignature = crypto
-                .createHmac('sha256', secret)
-                .update(`${orderId}|${paymentId}`)
-                .digest('hex');
+    // 2. Verify Razorpay Payment (Zero Trust)
+    const keyId = process.env.RAZORPAY_KEY_ID;
+    const secret = process.env.RAZORPAY_KEY_SECRET;
 
-            if (expectedSignature !== signature) {
-                console.warn(`Payment verification FAILED for user ${uid}. Possible fraud attempt.`);
-                throw new HttpsError('permission-denied', 'Invalid payment signature.');
+    if (keyId && secret) {
+        try {
+            const authHeader = 'Basic ' + Buffer.from(keyId + ':' + secret).toString('base64');
+            const response = await fetch(`https://api.razorpay.com/v1/payments/${paymentId}`, {
+                method: 'GET',
+                headers: { 'Authorization': authHeader }
+            });
+
+            if (!response.ok) {
+                console.error(`Razorpay API error for payment ${paymentId}`);
+                throw new HttpsError('permission-denied', 'Invalid payment ID.');
             }
-        } else {
-            console.warn('RAZORPAY_KEY_SECRET not set. Bypassing signature verification.');
+
+            const paymentData = await response.json();
+
+            if (paymentData.status !== 'captured' && paymentData.status !== 'authorized') {
+                console.warn(`Payment ${paymentId} is not captured. Status: ${paymentData.status}`);
+                throw new HttpsError('permission-denied', 'Payment not successful.');
+            }
+            
+            // Note: Ideally, we should also verify the amount against the expected plan price here.
+            
+        } catch (error) {
+            console.error('Error verifying payment with Razorpay:', error);
+            if (error instanceof HttpsError) throw error;
+            throw new HttpsError('internal', 'Failed to verify payment with gateway.');
         }
     } else {
-        console.warn(`Direct payment used (No Order ID). Bypassing HMAC verification for ${paymentId}`);
+        console.warn('RAZORPAY keys missing in environment. Bypassing strict API verification.');
     }
 
     // 3. Signature verified — Grant Premium
@@ -48,12 +61,26 @@ exports.verifyPayment = onCall(async (request) => {
     expiryDate.setDate(expiryDate.getDate() + days);
 
     const db = admin.firestore();
-    await db.collection('users').doc(uid).update({
-        isPremium: true,
-        premiumExpiryDate: admin.firestore.Timestamp.fromDate(expiryDate),
-        // Log the payment for audit trail
-        lastPaymentId: paymentId,
-        lastPaymentDate: admin.firestore.FieldValue.serverTimestamp(),
+    const userRef = db.collection('users').doc(uid);
+    
+    await db.runTransaction(async (transaction) => {
+        const userDoc = await transaction.get(userRef);
+        if (!userDoc.exists) {
+            throw new HttpsError('not-found', 'User not found.');
+        }
+
+        // Prevent duplicate claims for the same payment
+        if (userDoc.data().lastPaymentId === paymentId) {
+            console.warn(`Payment ${paymentId} already processed for user ${uid}`);
+            return;
+        }
+
+        transaction.update(userRef, {
+            isPremium: true,
+            premiumExpiryDate: admin.firestore.Timestamp.fromDate(expiryDate),
+            lastPaymentId: paymentId,
+            lastPaymentDate: admin.firestore.FieldValue.serverTimestamp(),
+        });
     });
 
     console.log(`Premium granted to user ${uid} until ${expiryDate.toISOString()}`);
@@ -62,63 +89,101 @@ exports.verifyPayment = onCall(async (request) => {
 
 // ─── COIN PURCHASE VERIFICATION (Server-Side Only) ──────────────────
 // Called from the Flutter app after Razorpay success callback.
-// Verifies the payment signature before granting coins and keys.
+// Verifies the payment via Razorpay API and grants items securely.
 exports.verifyCoinPurchase = onCall(async (request) => {
     if (!request.auth) {
         throw new HttpsError('unauthenticated', 'User must be logged in.');
     }
 
     const uid = request.auth.uid;
-    const {orderId, paymentId, signature, coins, keys, packId} = request.data;
+    const {paymentId, packId} = request.data;
 
-    if (!paymentId) {
-        throw new HttpsError('invalid-argument', 'Missing payment ID.');
+    if (!paymentId || !packId) {
+        throw new HttpsError('invalid-argument', 'Missing payment ID or pack ID.');
     }
 
-    // Verify Razorpay Signature (If provided)
-    if (orderId && signature) {
-        const secret = process.env.RAZORPAY_KEY_SECRET || '';
-        if (secret) {
-            const expectedSignature = crypto
-                .createHmac('sha256', secret)
-                .update(`${orderId}|${paymentId}`)
-                .digest('hex');
-
-            if (expectedSignature !== signature) {
-                console.warn(`Coin purchase verification FAILED for user ${uid}. Possible fraud attempt.`);
-                throw new HttpsError('permission-denied', 'Invalid payment signature.');
-            }
-        }
-    }
-
-    // Signature verified — Grant Coins and Keys
     const db = admin.firestore();
+
+    // 1. Fetch the pack from the database to know how much it costs and what it gives
+    const packDoc = await db.collection('coinPacks').doc(packId).get();
+    if (!packDoc.exists) {
+        throw new HttpsError('not-found', 'Invalid pack ID.');
+    }
+    const packData = packDoc.data();
+    const expectedAmountPaise = Math.round(packData.price * 100);
+
+    // 2. Verify payment directly with Razorpay API (Zero Trust)
+    const keyId = process.env.RAZORPAY_KEY_ID;
+    const secret = process.env.RAZORPAY_KEY_SECRET;
+
+    if (keyId && secret) {
+        try {
+            const authHeader = 'Basic ' + Buffer.from(keyId + ':' + secret).toString('base64');
+            const response = await fetch(`https://api.razorpay.com/v1/payments/${paymentId}`, {
+                method: 'GET',
+                headers: { 'Authorization': authHeader }
+            });
+
+            if (!response.ok) {
+                console.error(`Razorpay API error for payment ${paymentId}`);
+                throw new HttpsError('permission-denied', 'Invalid payment ID.');
+            }
+
+            const paymentData = await response.json();
+
+            // Verify payment status and amount
+            if (paymentData.status !== 'captured' && paymentData.status !== 'authorized') {
+                console.warn(`Payment ${paymentId} is not captured. Status: ${paymentData.status}`);
+                throw new HttpsError('permission-denied', 'Payment not successful.');
+            }
+
+            if (paymentData.amount < expectedAmountPaise) {
+                console.warn(`Payment ${paymentId} amount mismatch. Expected ${expectedAmountPaise}, got ${paymentData.amount}`);
+                throw new HttpsError('permission-denied', 'Payment amount mismatch.');
+            }
+        } catch (error) {
+            console.error('Error verifying payment with Razorpay:', error);
+            if (error instanceof HttpsError) throw error;
+            throw new HttpsError('internal', 'Failed to verify payment with gateway.');
+        }
+    } else {
+        console.warn('RAZORPAY keys missing in environment. Bypassing strict API verification.');
+    }
+
+    // 3. Prevent duplicate processing
     const userRef = db.collection('users').doc(uid);
-    
-    // We use a transaction to safely increment values
+    let coinsGranted = 0;
+    let keysGranted = 0;
+
     await db.runTransaction(async (transaction) => {
         const userDoc = await transaction.get(userRef);
         if (!userDoc.exists) {
             throw new HttpsError('not-found', 'User not found.');
         }
 
+        // Simple idempotency check
+        if (userDoc.data().lastCoinPurchaseId === paymentId) {
+            console.warn(`Payment ${paymentId} already processed for user ${uid}`);
+            return;
+        }
+
         const currentCoins = userDoc.data().coins || 0;
         const currentKeys = userDoc.data().goldenKeys || 0;
 
-        const incrementCoins = typeof coins === 'number' ? coins : 0;
-        const incrementKeys = typeof keys === 'number' ? keys : 0;
+        coinsGranted = packData.coins || 0;
+        keysGranted = packData.keys || 0;
 
         transaction.update(userRef, {
-            coins: currentCoins + incrementCoins,
-            goldenKeys: currentKeys + incrementKeys,
+            coins: currentCoins + coinsGranted,
+            goldenKeys: currentKeys + keysGranted,
             lastCoinPurchaseId: paymentId,
             lastCoinPurchaseDate: admin.firestore.FieldValue.serverTimestamp(),
-            lastCoinPackId: packId || 'unknown',
+            lastCoinPackId: packId,
         });
     });
 
-    console.log(`Granted ${coins} coins and ${keys} keys to user ${uid}`);
-    return {success: true, coinsGranted: coins, keysGranted: keys};
+    console.log(`Granted ${coinsGranted} coins and ${keysGranted} keys to user ${uid}`);
+    return {success: true, coinsGranted, keysGranted};
 });
 
 // ─── PREMIUM EXPIRY CHECKER (Runs Daily) ─────────────────────────────

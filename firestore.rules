@@ -14,10 +14,32 @@ service cloud.firestore {
       // UPDATE: Only own document with basic anti-cheat guards
       allow update: if request.auth != null && request.auth.uid == userId
         && !request.resource.data.diff(resource.data).affectedKeys().hasAny(['isAdmin'])
+        // CRITICAL: Prevent users from making themselves premium.
+        // Only Cloud Functions (verifyPayment) run as admin and can bypass this.
+        && (
+          !request.resource.data.diff(resource.data).affectedKeys().hasAny(['isPremium', 'premiumExpiryDate'])
+          || request.resource.data.isPremium == false // Client can only revoke/reset, not grant
+        )
         // Sanity checks for progression (prevent jumping to 1M XP instantly)
         && (
           !request.resource.data.diff(resource.data).affectedKeys().hasAny(['totalExp'])
-          || request.resource.data.totalExp <= resource.data.totalExp + 2000
+          || (request.resource.data.totalExp <= resource.data.totalExp + 2000 
+              && request.resource.data.totalExp >= resource.data.totalExp)
+        )
+        // MONEY SECURITY: Prevent adding huge amounts of coins from the client
+        // Normal game rewards are 10-50. Buying a key subtracts 150.
+        && (
+          !request.resource.data.diff(resource.data).affectedKeys().hasAny(['coins'])
+          || (request.resource.data.coins <= resource.data.coins + 250) // Max 250 earned at once
+        )
+        && (
+          !request.resource.data.diff(resource.data).affectedKeys().hasAny(['kidsCoins'])
+          || (request.resource.data.kidsCoins <= resource.data.kidsCoins + 250) // Max 250 earned at once
+        )
+        // KEY SECURITY: Prevent granting oneself infinite keys
+        && (
+          !request.resource.data.diff(resource.data).affectedKeys().hasAny(['goldenKeys'])
+          || (request.resource.data.goldenKeys <= resource.data.goldenKeys + 1) // Can only gain 1 at a time (ads/store)
         );
 
       // DELETE: Only own document
