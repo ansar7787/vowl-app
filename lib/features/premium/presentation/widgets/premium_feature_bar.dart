@@ -46,6 +46,20 @@ class ModernFeatureBar extends StatelessWidget {
         SizedBox(height: 12.h),
         _buildFeatureCard(
           context,
+          icon: LucideIcons.brain,
+          title: context.tr(
+            'premium.feature_ai_tools',
+            fallback: 'AI Learning Suite',
+          ),
+          subtitle: context.tr(
+            'premium.feature_ai_tools_desc',
+            fallback: 'Unlimited Smart Reply, Photo Vocabulary, Scan & Learn, Entity Highlighter — all ad-free.',
+          ),
+          isDark: isDark,
+        ),
+        SizedBox(height: 12.h),
+        _buildFeatureCard(
+          context,
           icon: LucideIcons.zap,
           title: context.tr(
             'premium.feature_2x_speed',

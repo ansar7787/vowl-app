@@ -311,7 +311,12 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
   @override
   void initState() {
     super.initState();
-    _checkAutoReveal();
+    // Deferred to post-frame because context.read<AuthBloc>() is not safe
+    // inside initState (widget is not yet fully mounted in the element tree).
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      _checkAutoReveal();
+    });
   }
 
   void _checkAutoReveal() {
