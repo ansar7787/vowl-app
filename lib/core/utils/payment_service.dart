@@ -54,6 +54,16 @@ abstract class PaymentService {
     required int days,
   });
 
+  /// Securely verifies a coin pack purchase and grants items via backend.
+  Future<void> verifyCoinPurchase({
+    required String orderId,
+    required String paymentId,
+    required String signature,
+    required int coins,
+    required int keys,
+    required String packId,
+  });
+
   /// Releases resources, event listeners, and pending transactions.
   void dispose();
 }
@@ -211,6 +221,49 @@ class RazorpayPaymentService implements PaymentService {
       }
     } catch (e) {
       if (kDebugMode) debugPrint('Failed to upgrade user subscription: $e');
+      rethrow;
+    }
+  }
+
+  @override
+  Future<void> verifyCoinPurchase({
+    required String orderId,
+    required String paymentId,
+    required String signature,
+    required int coins,
+    required int keys,
+    required String packId,
+  }) async {
+    try {
+      final callable = functions.httpsCallable('verifyCoinPurchase');
+      final response = await callable
+          .call({
+            'orderId': orderId,
+            'paymentId': paymentId,
+            'signature': signature,
+            'coins': coins,
+            'keys': keys,
+            'packId': packId,
+          })
+          .timeout(
+            _verifyPaymentTimeout,
+            onTimeout: () => throw Exception(
+              'Payment verification timed out. If the amount was debited, '
+              'it will be confirmed automatically - please check your '
+              'account status in a few minutes before retrying.',
+            ),
+          );
+
+      final data = response.data as Map<String, dynamic>;
+      if (data['success'] != true) {
+        throw Exception('Server rejected the coin purchase verification.');
+      }
+
+      if (kDebugMode) {
+        debugPrint('Coin purchase verified securely via Cloud Function.');
+      }
+    } catch (e) {
+      if (kDebugMode) debugPrint('Failed to verify coin purchase: $e');
       rethrow;
     }
   }

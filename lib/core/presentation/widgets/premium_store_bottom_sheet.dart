@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:go_router/go_router.dart';
-import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
@@ -12,39 +11,10 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/app_logger.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/features/auth/domain/usecases/add_golden_key.dart';
-
-/// A coin/key pack available for purchase in the Premium Store.
-///
-/// Prices are in INR. Razorpay converts to paise internally.
-class _CoinPack {
-  final String id;
-  final String titleKey;
-  final String titleFallback;
-  final int coins;
-  final int keys;
-  final double price; // INR
-  final IconData icon;
-  final Color color;
-  final bool isBestValue;
-
-  const _CoinPack({
-    required this.id,
-    required this.titleKey,
-    required this.titleFallback,
-    required this.coins,
-    required this.keys,
-    required this.price,
-    required this.icon,
-    required this.color,
-    this.isBestValue = false,
-  });
-
-  String get priceString => '₹${price.toInt()}';
-}
+import 'package:vowl/core/utils/payment_service.dart';
+import 'package:vowl/core/utils/coin_packs_service.dart';
+import 'package:razorpay_flutter/razorpay_flutter.dart';
 
 class PremiumStoreBottomSheet extends StatefulWidget {
   final bool isKidsMode;
@@ -69,64 +39,88 @@ class PremiumStoreBottomSheet extends StatefulWidget {
 }
 
 class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
-  Razorpay? _razorpay;
+  final _paymentService = di.sl<PaymentService>();
   bool _isProcessing = false;
+  CoinPack? _pendingPack;
+  List<CoinPack> _activePacks = [];
+  bool _isLoadingPacks = true;
 
-  // The pack that is currently being purchased — set before opening checkout
-  // so the success handler knows what coins/keys to grant.
-  _CoinPack? _pendingPack;
-
-  static const List<_CoinPack> _packs = [
-    _CoinPack(
+  static const List<CoinPack> _fallbackPacks = [
+    CoinPack(
       id: 'starter_pack',
       titleKey: 'store.starter_pack',
       titleFallback: 'Starter Pack',
       coins: 500,
       keys: 0,
       price: 9,
-      icon: Icons.monetization_on_rounded,
-      color: Colors.amber,
+      iconName: 'monetization_on_rounded',
+      colorHex: '#FFC107',
+      displayOrder: 0,
     ),
-    _CoinPack(
+    CoinPack(
       id: 'explorer_pack',
       titleKey: 'store.explorer_pack',
       titleFallback: 'Explorer Pack',
       coins: 1200,
       keys: 2,
       price: 19,
-      icon: Icons.explore_rounded,
-      color: Color(0xFF3B82F6),
+      iconName: 'explore_rounded',
+      colorHex: '#3B82F6',
+      displayOrder: 1,
     ),
-    _CoinPack(
+    CoinPack(
       id: 'master_pack',
       titleKey: 'store.master_pack',
       titleFallback: 'Master Pack',
       coins: 4000,
       keys: 8,
       price: 29,
-      icon: Icons.diamond_rounded,
-      color: Color(0xFFEC4899),
+      iconName: 'diamond_rounded',
+      colorHex: '#EC4899',
       isBestValue: true,
+      displayOrder: 2,
     ),
   ];
 
   @override
   void initState() {
     super.initState();
-    _initRazorpay();
+    _paymentService.init(
+      onSuccess: _handlePaymentSuccess,
+      onFailure: _handlePaymentFailure,
+      onExternalWallet: _handleExternalWallet,
+    );
+    _loadDynamicPacks();
   }
 
-  void _initRazorpay() {
-    _razorpay = Razorpay();
-    _razorpay!.on(Razorpay.EVENT_PAYMENT_SUCCESS, _handlePaymentSuccess);
-    _razorpay!.on(Razorpay.EVENT_PAYMENT_ERROR, _handlePaymentFailure);
-    _razorpay!.on(Razorpay.EVENT_EXTERNAL_WALLET, _handleExternalWallet);
+  Future<void> _loadDynamicPacks() async {
+    try {
+      final packs = await di.sl<CoinPacksService>().fetchPacks();
+      if (mounted) {
+        setState(() {
+          _activePacks = packs.isNotEmpty ? packs : _fallbackPacks;
+          _isLoadingPacks = false;
+        });
+      }
+    } catch (e) {
+      di.sl<AppLogger>().warning(
+        'Failed to load dynamic coin packs, falling back to local defaults.',
+      );
+      if (mounted) {
+        setState(() {
+          _activePacks = _fallbackPacks;
+          _isLoadingPacks = false;
+        });
+      }
+    }
   }
 
   @override
   void dispose() {
-    _razorpay?.clear();
-    _razorpay = null;
+    // PaymentService manages its own cleanup when dispose is called
+    // We shouldn't dispose it here if it's a singleton, but PaymentService
+    // init/dispose in stateful widgets is the current pattern.
+    _paymentService.dispose();
     super.dispose();
   }
 
@@ -138,34 +132,42 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
 
     di.sl<HapticService>().success();
 
-    // Grant coins
-    if (pack.coins > 0 && mounted) {
-      context.read<EconomyBloc>().add(
-        EconomyAddCoinsRequested(
-          pack.coins,
-          title: 'iap_${pack.id}',
-        ),
+    // Verify payment securely on backend
+    try {
+      await _paymentService.verifyCoinPurchase(
+        orderId: response.orderId ?? '',
+        paymentId: response.paymentId ?? '',
+        signature: response.signature ?? '',
+        coins: pack.coins,
+        keys: pack.keys,
+        packId: pack.id,
       );
-    }
 
-    // Grant keys
-    if (pack.keys > 0) {
-      await di.sl<AddGoldenKey>().call(AddGoldenKeyParams(amount: pack.keys));
+      // Successfully granted by backend! Refresh the user profile to show updated balances
       if (mounted) {
         context.read<AuthBloc>().add(const AuthReloadUser());
+        setState(() => _isProcessing = false);
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr(
+            'store.purchase_success',
+            fallback: 'Purchase successful! Enjoy your items.',
+          ),
+          type: CustomSnackBarType.success,
+        );
       }
-    }
-
-    if (mounted) {
-      setState(() => _isProcessing = false);
-      CustomSnackBar.show(
-        context: context,
-        message: context.tr(
-          'store.purchase_success',
-          fallback: 'Purchase successful! Enjoy your items.',
-        ),
-        type: CustomSnackBarType.success,
-      );
+    } catch (e) {
+      if (mounted) {
+        setState(() => _isProcessing = false);
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr(
+            'store.purchase_verify_failed',
+            fallback: 'Payment verified but failed to grant items. Please contact support.',
+          ),
+          type: CustomSnackBarType.error,
+        );
+      }
     }
 
     _pendingPack = null;
@@ -200,22 +202,8 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
 
   // ─── Purchase Flow ─────────────────────────────────────────────────────────
 
-  void _onPackTap(_CoinPack pack) {
+  void _onPackTap(CoinPack pack) {
     if (_isProcessing) return;
-
-    final razorpayKey = dotenv.env['RAZORPAY_KEY_ID'];
-    if (razorpayKey == null || razorpayKey.isEmpty) {
-      di.sl<AppLogger>().error('PremiumStore: Razorpay key not configured');
-      CustomSnackBar.show(
-        context: context,
-        message: context.tr(
-          'store.payment_not_configured',
-          fallback: 'Payment system is being set up. Please try again later.',
-        ),
-        type: CustomSnackBarType.error,
-      );
-      return;
-    }
 
     final user = context.read<AuthBloc>().state.user;
     if (user == null) return;
@@ -225,23 +213,16 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
     setState(() => _isProcessing = true);
     _pendingPack = pack;
 
-    final amountInPaise = (pack.price * 100).round();
     final packTitle = context.tr(pack.titleKey, fallback: pack.titleFallback);
 
-    final options = {
-      'key': razorpayKey,
-      'amount': amountInPaise,
-      'name': 'Vowl',
-      'description': 'Vowl Store - $packTitle',
-      'prefill': {
-        if (user.email.isNotEmpty) 'email': user.email,
-      },
-    };
+    final success = _paymentService.openCheckout(
+      amount: pack.price,
+      contact: '', // Optional
+      email: user.email,
+      description: 'Vowl Store - $packTitle',
+    );
 
-    try {
-      _razorpay?.open(options);
-    } catch (e) {
-      di.sl<AppLogger>().error('PremiumStore: Failed to open checkout', error: e);
+    if (!success) {
       setState(() => _isProcessing = false);
       _pendingPack = null;
       CustomSnackBar.show(
@@ -253,6 +234,31 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
         type: CustomSnackBarType.error,
       );
     }
+  }
+
+  IconData _getIconFromName(String iconName) {
+    switch (iconName) {
+      case 'monetization_on_rounded':
+        return Icons.monetization_on_rounded;
+      case 'explore_rounded':
+        return Icons.explore_rounded;
+      case 'diamond_rounded':
+        return Icons.diamond_rounded;
+      case 'shopping_bag_rounded':
+        return Icons.shopping_bag_rounded;
+      case 'card_giftcard_rounded':
+        return Icons.card_giftcard_rounded;
+      default:
+        return Icons.monetization_on_rounded;
+    }
+  }
+
+  Color _getColorFromHex(String hexColor) {
+    hexColor = hexColor.toUpperCase().replaceAll("#", "");
+    if (hexColor.length == 6) {
+      hexColor = "FF$hexColor";
+    }
+    return Color(int.tryParse(hexColor, radix: 16) ?? 0xFFFFC107);
   }
 
   // ─── Build ─────────────────────────────────────────────────────────────────
@@ -408,19 +414,27 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
 
                       SizedBox(height: 16.h),
 
-                      // Real coin packs
-                      ...List.generate(_packs.length, (index) {
-                        final pack = _packs[index];
-                        return Padding(
-                          padding: EdgeInsets.only(bottom: 16.h),
-                          child: _buildPackCard(
-                            context: context,
-                            isDark: isDark,
-                            pack: pack,
-                            delay: 300 + (index * 100),
+                      if (_isLoadingPacks)
+                        const Center(
+                          child: Padding(
+                            padding: EdgeInsets.all(32.0),
+                            child: CircularProgressIndicator(),
                           ),
-                        );
-                      }),
+                        )
+                      else
+                        // Real coin packs
+                        ...List.generate(_activePacks.length, (index) {
+                          final pack = _activePacks[index];
+                          return Padding(
+                            padding: EdgeInsets.only(bottom: 16.h),
+                            child: _buildPackCard(
+                              context: context,
+                              isDark: isDark,
+                              pack: pack,
+                              delay: 300 + (index * 100),
+                            ),
+                          );
+                        }),
 
                       SizedBox(height: 40.h),
                     ],
@@ -523,10 +537,11 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
   Widget _buildPackCard({
     required BuildContext context,
     required bool isDark,
-    required _CoinPack pack,
+    required CoinPack pack,
     required int delay,
   }) {
     final title = context.tr(pack.titleKey, fallback: pack.titleFallback);
+    final color = _getColorFromHex(pack.colorHex);
 
     return ScaleButton(
           onTap: _isProcessing ? null : () => _onPackTap(pack),
@@ -540,14 +555,14 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                 borderRadius: BorderRadius.circular(24.r),
                 border: Border.all(
                   color: pack.isBestValue
-                      ? pack.color
+                      ? color
                       : (isDark ? Colors.white10 : Colors.black12),
                   width: pack.isBestValue ? 2.w : 1.w,
                 ),
                 boxShadow: [
                   if (pack.isBestValue)
                     BoxShadow(
-                      color: pack.color.withValues(alpha: 0.2),
+                      color: color.withValues(alpha: 0.2),
                       blurRadius: 20,
                       offset: const Offset(0, 10),
                     )
@@ -569,11 +584,11 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                         width: 60.r,
                         height: 60.r,
                         decoration: BoxDecoration(
-                          color: pack.color.withValues(alpha: 0.15),
+                          color: color.withValues(alpha: 0.15),
                           borderRadius: BorderRadius.circular(16.r),
                         ),
                         child: Center(
-                          child: Icon(pack.icon, color: pack.color, size: 32.r),
+                          child: Icon(_getIconFromName(pack.iconName), color: color, size: 32.r),
                         ),
                       ),
                       SizedBox(width: 16.w),
@@ -647,7 +662,7 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                           vertical: 10.h,
                         ),
                         decoration: BoxDecoration(
-                          color: pack.color,
+                          color: color,
                           borderRadius: BorderRadius.circular(12.r),
                         ),
                         child: Text(

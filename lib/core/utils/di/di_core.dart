@@ -26,6 +26,7 @@ import 'package:vowl/core/utils/remote_config_service.dart';
 import 'package:vowl/core/utils/notification_service.dart';
 import 'package:vowl/core/utils/review_service.dart';
 import 'package:vowl/core/utils/subscription_plans_service.dart';
+import 'package:vowl/core/utils/coin_packs_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 import 'package:vowl/core/utils/ml_services/smart_reply_service.dart';
@@ -122,6 +123,9 @@ Future<void> initExternalAndCore(GetIt sl) async {
   );
   sl.registerLazySingleton<SubscriptionPlansService>(
     () => SubscriptionPlansService(firestore: sl<FirebaseFirestore>()),
+  );
+  sl.registerLazySingleton<CoinPacksService>(
+    () => CoinPacksService(firestore: sl<FirebaseFirestore>()),
   );
   sl.registerLazySingleton<SpeechService>(() => SpeechService());
   sl.registerLazySingleton<KidsTTSService>(() => KidsTTSService());

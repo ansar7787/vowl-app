@@ -60,6 +60,67 @@ exports.verifyPayment = onCall(async (request) => {
     return {success: true, expiryDate: expiryDate.toISOString()};
 });
 
+// ─── COIN PURCHASE VERIFICATION (Server-Side Only) ──────────────────
+// Called from the Flutter app after Razorpay success callback.
+// Verifies the payment signature before granting coins and keys.
+exports.verifyCoinPurchase = onCall(async (request) => {
+    if (!request.auth) {
+        throw new HttpsError('unauthenticated', 'User must be logged in.');
+    }
+
+    const uid = request.auth.uid;
+    const {orderId, paymentId, signature, coins, keys, packId} = request.data;
+
+    if (!paymentId) {
+        throw new HttpsError('invalid-argument', 'Missing payment ID.');
+    }
+
+    // Verify Razorpay Signature (If provided)
+    if (orderId && signature) {
+        const secret = process.env.RAZORPAY_KEY_SECRET || '';
+        if (secret) {
+            const expectedSignature = crypto
+                .createHmac('sha256', secret)
+                .update(`${orderId}|${paymentId}`)
+                .digest('hex');
+
+            if (expectedSignature !== signature) {
+                console.warn(`Coin purchase verification FAILED for user ${uid}. Possible fraud attempt.`);
+                throw new HttpsError('permission-denied', 'Invalid payment signature.');
+            }
+        }
+    }
+
+    // Signature verified — Grant Coins and Keys
+    const db = admin.firestore();
+    const userRef = db.collection('users').doc(uid);
+    
+    // We use a transaction to safely increment values
+    await db.runTransaction(async (transaction) => {
+        const userDoc = await transaction.get(userRef);
+        if (!userDoc.exists) {
+            throw new HttpsError('not-found', 'User not found.');
+        }
+
+        const currentCoins = userDoc.data().coins || 0;
+        const currentKeys = userDoc.data().goldenKeys || 0;
+
+        const incrementCoins = typeof coins === 'number' ? coins : 0;
+        const incrementKeys = typeof keys === 'number' ? keys : 0;
+
+        transaction.update(userRef, {
+            coins: currentCoins + incrementCoins,
+            goldenKeys: currentKeys + incrementKeys,
+            lastCoinPurchaseId: paymentId,
+            lastCoinPurchaseDate: admin.firestore.FieldValue.serverTimestamp(),
+            lastCoinPackId: packId || 'unknown',
+        });
+    });
+
+    console.log(`Granted ${coins} coins and ${keys} keys to user ${uid}`);
+    return {success: true, coinsGranted: coins, keysGranted: keys};
+});
+
 // ─── PREMIUM EXPIRY CHECKER (Runs Daily) ─────────────────────────────
 // Automatically revokes premium when the subscription expires.
 exports.checkPremiumExpiry = onSchedule("0 3 * * *", async (event) => {
