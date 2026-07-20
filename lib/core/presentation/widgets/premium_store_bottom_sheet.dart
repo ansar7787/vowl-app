@@ -3,16 +3,48 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:go_router/go_router.dart';
+import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/iap_service.dart';
-import 'package:purchases_flutter/purchases_flutter.dart';
+import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/app_logger.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/domain/usecases/add_golden_key.dart';
+
+/// A coin/key pack available for purchase in the Premium Store.
+///
+/// Prices are in INR. Razorpay converts to paise internally.
+class _CoinPack {
+  final String id;
+  final String titleKey;
+  final String titleFallback;
+  final int coins;
+  final int keys;
+  final double price; // INR
+  final IconData icon;
+  final Color color;
+  final bool isBestValue;
+
+  const _CoinPack({
+    required this.id,
+    required this.titleKey,
+    required this.titleFallback,
+    required this.coins,
+    required this.keys,
+    required this.price,
+    required this.icon,
+    required this.color,
+    this.isBestValue = false,
+  });
+
+  String get priceString => '₹${price.toInt()}';
+}
 
 class PremiumStoreBottomSheet extends StatefulWidget {
   final bool isKidsMode;
@@ -37,84 +69,193 @@ class PremiumStoreBottomSheet extends StatefulWidget {
 }
 
 class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
-  Offerings? _offerings;
-  bool _isLoading = true;
+  Razorpay? _razorpay;
+  bool _isProcessing = false;
+
+  // The pack that is currently being purchased — set before opening checkout
+  // so the success handler knows what coins/keys to grant.
+  _CoinPack? _pendingPack;
+
+  static const List<_CoinPack> _packs = [
+    _CoinPack(
+      id: 'starter_pack',
+      titleKey: 'store.starter_pack',
+      titleFallback: 'Starter Pack',
+      coins: 500,
+      keys: 0,
+      price: 9,
+      icon: Icons.monetization_on_rounded,
+      color: Colors.amber,
+    ),
+    _CoinPack(
+      id: 'explorer_pack',
+      titleKey: 'store.explorer_pack',
+      titleFallback: 'Explorer Pack',
+      coins: 1200,
+      keys: 2,
+      price: 19,
+      icon: Icons.explore_rounded,
+      color: Color(0xFF3B82F6),
+    ),
+    _CoinPack(
+      id: 'master_pack',
+      titleKey: 'store.master_pack',
+      titleFallback: 'Master Pack',
+      coins: 4000,
+      keys: 8,
+      price: 29,
+      icon: Icons.diamond_rounded,
+      color: Color(0xFFEC4899),
+      isBestValue: true,
+    ),
+  ];
 
   @override
   void initState() {
     super.initState();
-    _fetchOfferings();
+    _initRazorpay();
   }
 
-  Future<void> _fetchOfferings() async {
-    final offerings = await di.sl<IapService>().getOfferings();
-    if (mounted) {
-      setState(() {
-        _offerings = offerings;
-        _isLoading = false;
-      });
+  void _initRazorpay() {
+    _razorpay = Razorpay();
+    _razorpay!.on(Razorpay.EVENT_PAYMENT_SUCCESS, _handlePaymentSuccess);
+    _razorpay!.on(Razorpay.EVENT_PAYMENT_ERROR, _handlePaymentFailure);
+    _razorpay!.on(Razorpay.EVENT_EXTERNAL_WALLET, _handleExternalWallet);
+  }
+
+  @override
+  void dispose() {
+    _razorpay?.clear();
+    _razorpay = null;
+    super.dispose();
+  }
+
+  // ─── Payment Handlers ──────────────────────────────────────────────────────
+
+  void _handlePaymentSuccess(PaymentSuccessResponse response) async {
+    final pack = _pendingPack;
+    if (pack == null || !mounted) return;
+
+    di.sl<HapticService>().success();
+
+    // Grant coins
+    if (pack.coins > 0 && mounted) {
+      context.read<EconomyBloc>().add(
+        EconomyAddCoinsRequested(
+          pack.coins,
+          title: 'iap_${pack.id}',
+        ),
+      );
     }
-  }
 
-  void _handlePurchase(
-    BuildContext context, {
-    Package? package,
-    String? packName,
-    required int coins,
-    required int keys,
-  }) async {
-    if (package != null) {
+    // Grant keys
+    if (pack.keys > 0) {
+      await di.sl<AddGoldenKey>().call(AddGoldenKeyParams(amount: pack.keys));
+      if (mounted) {
+        context.read<AuthBloc>().add(const AuthReloadUser());
+      }
+    }
+
+    if (mounted) {
+      setState(() => _isProcessing = false);
       CustomSnackBar.show(
         context: context,
-        message: 'Processing purchase...',
-        type: CustomSnackBarType.info,
+        message: context.tr(
+          'store.purchase_success',
+          fallback: 'Purchase successful! Enjoy your items.',
+        ),
+        type: CustomSnackBarType.success,
       );
-      final success = await di.sl<IapService>().purchasePackage(package);
-      if (!context.mounted) return;
+    }
 
-      if (success) {
-        // Grant the items!
-        if (coins > 0) {
-          context.read<EconomyBloc>().add(
-            EconomyAddCoinsRequested(
-              coins,
-              title:
-                  'iap_${packName?.replaceAll(' ', '_').toLowerCase() ?? 'store'}',
-            ),
-          );
-        }
-        if (keys > 0) {
-          await di.sl<AddGoldenKey>().call(AddGoldenKeyParams(amount: keys));
-          if (context.mounted) {
-            context.read<AuthBloc>().add(const AuthReloadUser());
-          }
-        }
+    _pendingPack = null;
+  }
 
-        if (context.mounted) {
-          CustomSnackBar.show(
-            context: context,
-            message: 'Purchase successful! Enjoy your items.',
-            type: CustomSnackBarType.success,
-          );
-        }
-      } else {
+  void _handlePaymentFailure(PaymentFailureResponse response) {
+    di.sl<HapticService>().error();
+    _pendingPack = null;
+    if (mounted) {
+      setState(() => _isProcessing = false);
+      // Don't show error for user cancellations
+      if (response.code != Razorpay.PAYMENT_CANCELLED) {
         CustomSnackBar.show(
           context: context,
-          message: 'Purchase failed or was cancelled.',
+          message: response.message ??
+              context.tr(
+                'store.purchase_failed',
+                fallback: 'Purchase failed. Please try again.',
+              ),
           type: CustomSnackBarType.error,
         );
       }
-    } else {
-      // Fallback: RevenueCat isn't configured yet — no real IAP package
-      // available for this card. Direct the user to the Premium screen
-      // (Razorpay-backed) or inform them the coin store is being set up.
+    }
+  }
+
+  void _handleExternalWallet(ExternalWalletResponse response) {
+    _pendingPack = null;
+    if (mounted) {
+      setState(() => _isProcessing = false);
+    }
+  }
+
+  // ─── Purchase Flow ─────────────────────────────────────────────────────────
+
+  void _onPackTap(_CoinPack pack) {
+    if (_isProcessing) return;
+
+    final razorpayKey = dotenv.env['RAZORPAY_KEY_ID'];
+    if (razorpayKey == null || razorpayKey.isEmpty) {
+      di.sl<AppLogger>().error('PremiumStore: Razorpay key not configured');
       CustomSnackBar.show(
         context: context,
-        message: 'Coin packs are being configured. Check back soon!',
-        type: CustomSnackBarType.info,
+        message: context.tr(
+          'store.payment_not_configured',
+          fallback: 'Payment system is being set up. Please try again later.',
+        ),
+        type: CustomSnackBarType.error,
+      );
+      return;
+    }
+
+    final user = context.read<AuthBloc>().state.user;
+    if (user == null) return;
+
+    di.sl<HapticService>().selection();
+
+    setState(() => _isProcessing = true);
+    _pendingPack = pack;
+
+    final amountInPaise = (pack.price * 100).round();
+    final packTitle = context.tr(pack.titleKey, fallback: pack.titleFallback);
+
+    final options = {
+      'key': razorpayKey,
+      'amount': amountInPaise,
+      'name': 'Vowl',
+      'description': 'Vowl Store - $packTitle',
+      'prefill': {
+        if (user.email.isNotEmpty) 'email': user.email,
+      },
+    };
+
+    try {
+      _razorpay?.open(options);
+    } catch (e) {
+      di.sl<AppLogger>().error('PremiumStore: Failed to open checkout', error: e);
+      setState(() => _isProcessing = false);
+      _pendingPack = null;
+      CustomSnackBar.show(
+        context: context,
+        message: context.tr(
+          'store.checkout_error',
+          fallback: 'Could not open payment. Please try again.',
+        ),
+        type: CustomSnackBarType.error,
       );
     }
   }
+
+  // ─── Build ─────────────────────────────────────────────────────────────────
 
   @override
   Widget build(BuildContext context) {
@@ -183,7 +324,10 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'PREMIUM STORE',
+                              context.tr(
+                                'store.premium_store_label',
+                                fallback: 'PREMIUM STORE',
+                              ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 12.sp,
@@ -193,7 +337,10 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                               ),
                             ),
                             Text(
-                              'Stock up on supplies!',
+                              context.tr(
+                                'store.stock_up',
+                                fallback: 'Stock up on supplies!',
+                              ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 22.sp,
@@ -244,7 +391,10 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                       SizedBox(height: 32.h),
 
                       Text(
-                        'COINS & KEYS',
+                        context.tr(
+                          'store.coins_and_keys_label',
+                          fallback: 'COINS & KEYS',
+                        ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 14.sp,
@@ -258,118 +408,19 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
 
                       SizedBox(height: 16.h),
 
-                      if (_isLoading)
-                        Padding(
-                          padding: EdgeInsets.symmetric(vertical: 40.h),
-                          child: const Center(
-                            child: CircularProgressIndicator(),
+                      // Real coin packs
+                      ...List.generate(_packs.length, (index) {
+                        final pack = _packs[index];
+                        return Padding(
+                          padding: EdgeInsets.only(bottom: 16.h),
+                          child: _buildPackCard(
+                            context: context,
+                            isDark: isDark,
+                            pack: pack,
+                            delay: 300 + (index * 100),
                           ),
-                        )
-                      else if (_offerings?.current != null &&
-                          _offerings!.current!.availablePackages.isNotEmpty)
-                        ..._offerings!.current!.availablePackages
-                            .asMap()
-                            .entries
-                            .map((entry) {
-                              final index = entry.key;
-                              final package = entry.value;
-                              // RevenueCat packages have a StoreProduct
-                              final product = package.storeProduct;
-                              final pkgId = package.identifier.toLowerCase();
-
-                              int parsedCoins = 0;
-                              int parsedKeys = 0;
-
-                              if (pkgId.contains('starter') ||
-                                  pkgId.contains('500') ||
-                                  product.title.toLowerCase().contains(
-                                    'starter',
-                                  )) {
-                                parsedCoins = 500;
-                              } else if (pkgId.contains('explorer') ||
-                                  pkgId.contains('1200') ||
-                                  product.title.toLowerCase().contains(
-                                    'explorer',
-                                  )) {
-                                parsedCoins = 1200;
-                                parsedKeys = 2;
-                              } else if (pkgId.contains('master') ||
-                                  pkgId.contains('4000') ||
-                                  product.title.toLowerCase().contains(
-                                    'master',
-                                  )) {
-                                parsedCoins = 4000;
-                                parsedKeys = 8;
-                              }
-
-                              return Padding(
-                                padding: EdgeInsets.only(bottom: 16.h),
-                                child: _buildPackCard(
-                                  context: context,
-                                  isDark: isDark,
-                                  title: product.title.split('(').first.trim(),
-                                  coins: parsedCoins,
-                                  keys: parsedKeys,
-                                  price: product.priceString,
-                                  icon: Icons.shopping_bag_rounded,
-                                  color: Colors.amber,
-                                  isBestValue:
-                                      index ==
-                                      _offerings!
-                                              .current!
-                                              .availablePackages
-                                              .length -
-                                          1, // Make last one best value
-                                  delay: 300 + (index * 100),
-                                  package: package,
-                                ),
-                              );
-                            })
-                      else ...[
-                        // Fallback to placeholder UI if RevenueCat isn't configured yet
-                        _buildPackCard(
-                          context: context,
-                          isDark: isDark,
-                          title: 'Starter Pack',
-                          coins: 500,
-                          keys: 0,
-                          price: '₹9',
-                          icon: Icons.monetization_on_rounded,
-                          color: Colors.amber,
-                          isBestValue: false,
-                          delay: 300,
-                        ),
-
-                        SizedBox(height: 16.h),
-
-                        _buildPackCard(
-                          context: context,
-                          isDark: isDark,
-                          title: 'Explorer Pack',
-                          coins: 1200,
-                          keys: 2,
-                          price: '₹19',
-                          icon: Icons.explore_rounded,
-                          color: const Color(0xFF3B82F6),
-                          isBestValue: false,
-                          delay: 400,
-                        ),
-
-                        SizedBox(height: 16.h),
-
-                        _buildPackCard(
-                          context: context,
-                          isDark: isDark,
-                          title: 'Master Pack',
-                          coins: 4000,
-                          keys: 8,
-                          price: '₹29',
-                          icon: Icons.diamond_rounded,
-                          color: const Color(0xFFEC4899),
-                          isBestValue: true,
-                          delay: 500,
-                        ),
-                      ],
+                        );
+                      }),
 
                       SizedBox(height: 40.h),
                     ],
@@ -430,7 +481,10 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'VOWL PREMIUM',
+                    context.tr(
+                      'store.vowl_premium_label',
+                      fallback: 'VOWL PREMIUM',
+                    ),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 12.sp,
@@ -441,7 +495,10 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                   ),
                   SizedBox(height: 4.h),
                   Text(
-                    'Ad-Free & Unlimited',
+                    context.tr(
+                      'store.ad_free_unlimited',
+                      fallback: 'Ad-Free & Unlimited',
+                    ),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 18.sp,
@@ -466,115 +523,88 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
   Widget _buildPackCard({
     required BuildContext context,
     required bool isDark,
-    required String title,
-    required int coins,
-    required int keys,
-    required String price,
-    required IconData icon,
-    required Color color,
-    required bool isBestValue,
+    required _CoinPack pack,
     required int delay,
-    Package? package,
   }) {
-    return ScaleButton(
-          onTap: () => _handlePurchase(
-            context,
-            packName: title,
-            package: package,
-            coins: coins,
-            keys: keys,
-          ),
-          child: Container(
-            padding: EdgeInsets.all(20.r),
-            decoration: BoxDecoration(
-              color: isDark ? const Color(0xFF1E293B) : Colors.white,
-              borderRadius: BorderRadius.circular(24.r),
-              border: Border.all(
-                color: isBestValue
-                    ? color
-                    : (isDark ? Colors.white10 : Colors.black12),
-                width: isBestValue ? 2.w : 1.w,
-              ),
-              boxShadow: [
-                if (isBestValue)
-                  BoxShadow(
-                    color: color.withValues(alpha: 0.2),
-                    blurRadius: 20,
-                    offset: const Offset(0, 10),
-                  )
-                else
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.05),
-                    blurRadius: 10,
-                    offset: const Offset(0, 5),
-                  ),
-              ],
-            ),
-            child: Stack(
-              clipBehavior: Clip.none,
-              children: [
-                Row(
-                  children: [
-                    // Icon Box
-                    Container(
-                      width: 60.r,
-                      height: 60.r,
-                      decoration: BoxDecoration(
-                        color: color.withValues(alpha: 0.15),
-                        borderRadius: BorderRadius.circular(16.r),
-                      ),
-                      child: Center(
-                        child: Icon(icon, color: color, size: 32.r),
-                      ),
-                    ),
-                    SizedBox(width: 16.w),
+    final title = context.tr(pack.titleKey, fallback: pack.titleFallback);
 
-                    // Details
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            title,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 18.sp,
-                              fontWeight: FontWeight.w800,
-                              color: isDark
-                                  ? Colors.white
-                                  : const Color(0xFF0F172A),
+    return ScaleButton(
+          onTap: _isProcessing ? null : () => _onPackTap(pack),
+          child: AnimatedOpacity(
+            opacity: _isProcessing ? 0.6 : 1.0,
+            duration: const Duration(milliseconds: 200),
+            child: Container(
+              padding: EdgeInsets.all(20.r),
+              decoration: BoxDecoration(
+                color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                borderRadius: BorderRadius.circular(24.r),
+                border: Border.all(
+                  color: pack.isBestValue
+                      ? pack.color
+                      : (isDark ? Colors.white10 : Colors.black12),
+                  width: pack.isBestValue ? 2.w : 1.w,
+                ),
+                boxShadow: [
+                  if (pack.isBestValue)
+                    BoxShadow(
+                      color: pack.color.withValues(alpha: 0.2),
+                      blurRadius: 20,
+                      offset: const Offset(0, 10),
+                    )
+                  else
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.05),
+                      blurRadius: 10,
+                      offset: const Offset(0, 5),
+                    ),
+                ],
+              ),
+              child: Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Row(
+                    children: [
+                      // Icon Box
+                      Container(
+                        width: 60.r,
+                        height: 60.r,
+                        decoration: BoxDecoration(
+                          color: pack.color.withValues(alpha: 0.15),
+                          borderRadius: BorderRadius.circular(16.r),
+                        ),
+                        child: Center(
+                          child: Icon(pack.icon, color: pack.color, size: 32.r),
+                        ),
+                      ),
+                      SizedBox(width: 16.w),
+
+                      // Details
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              title,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 18.sp,
+                                fontWeight: FontWeight.w800,
+                                color: isDark
+                                    ? Colors.white
+                                    : const Color(0xFF0F172A),
+                              ),
                             ),
-                          ),
-                          SizedBox(height: 6.h),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.monetization_on_rounded,
-                                color: Colors.amber,
-                                size: 14.r,
-                              ),
-                              SizedBox(width: 4.w),
-                              Text(
-                                '$coins',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w700,
-                                  color: isDark
-                                      ? Colors.grey.shade300
-                                      : Colors.grey.shade700,
-                                ),
-                              ),
-                              if (keys > 0) ...[
-                                SizedBox(width: 12.w),
+                            SizedBox(height: 6.h),
+                            Row(
+                              children: [
                                 Icon(
-                                  Icons.key_rounded,
-                                  color: Colors.amber.shade700,
+                                  Icons.monetization_on_rounded,
+                                  color: Colors.amber,
                                   size: 14.r,
                                 ),
                                 SizedBox(width: 4.w),
                                 Text(
-                                  '$keys',
+                                  '${pack.coins}',
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 14.sp,
@@ -584,84 +614,107 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                                         : Colors.grey.shade700,
                                   ),
                                 ),
+                                if (pack.keys > 0) ...[
+                                  SizedBox(width: 12.w),
+                                  Icon(
+                                    Icons.key_rounded,
+                                    color: Colors.amber.shade700,
+                                    size: 14.r,
+                                  ),
+                                  SizedBox(width: 4.w),
+                                  Text(
+                                    '${pack.keys}',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w700,
+                                      color: isDark
+                                          ? Colors.grey.shade300
+                                          : Colors.grey.shade700,
+                                    ),
+                                  ),
+                                ],
                               ],
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    // Price Button
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 16.w,
-                        vertical: 10.h,
-                      ),
-                      decoration: BoxDecoration(
-                        color: color,
-                        borderRadius: BorderRadius.circular(12.r),
-                      ),
-                      child: Text(
-                        price,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w800,
-                          color: Colors.white,
+                            ),
+                          ],
                         ),
                       ),
-                    ),
-                  ],
-                ),
 
-                // Best Value Badge
-                if (isBestValue)
-                  Positioned(
-                    top: -30.h,
-                    right: 10.w,
-                    child:
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 12.w,
-                            vertical: 4.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.amber,
-                            borderRadius: BorderRadius.circular(8.r),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.amber.withValues(alpha: 0.4),
-                                blurRadius: 8,
-                                offset: const Offset(0, 4),
-                              ),
-                            ],
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                Icons.local_fire_department_rounded,
-                                color: Colors.white,
-                                size: 12.r,
-                              ),
-                              SizedBox(width: 4.w),
-                              Text(
-                                'BEST VALUE',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ).animate().scale(
-                          delay: (delay + 300).ms,
-                          curve: Curves.elasticOut,
+                      // Price Button
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 16.w,
+                          vertical: 10.h,
                         ),
+                        decoration: BoxDecoration(
+                          color: pack.color,
+                          borderRadius: BorderRadius.circular(12.r),
+                        ),
+                        child: Text(
+                          pack.priceString,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w800,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-              ],
+
+                  // Best Value Badge
+                  if (pack.isBestValue)
+                    Positioned(
+                      top: -30.h,
+                      right: 10.w,
+                      child:
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 12.w,
+                              vertical: 4.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.amber,
+                              borderRadius: BorderRadius.circular(8.r),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.amber.withValues(alpha: 0.4),
+                                  blurRadius: 8,
+                                  offset: const Offset(0, 4),
+                                ),
+                              ],
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  Icons.local_fire_department_rounded,
+                                  color: Colors.white,
+                                  size: 12.r,
+                                ),
+                                SizedBox(width: 4.w),
+                                Text(
+                                  context.tr(
+                                    'store.best_value',
+                                    fallback: 'BEST VALUE',
+                                  ),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ).animate().scale(
+                            delay: (delay + 300).ms,
+                            curve: Curves.elasticOut,
+                          ),
+                    ),
+                ],
+              ),
             ),
           ),
         )
