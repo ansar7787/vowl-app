@@ -106,7 +106,7 @@ class CoinPacksService {
 
       // Auto-seed the database if it's completely empty
       if (packs.isEmpty) {
-        sl<AppLogger>().info('CoinPacksService: No packs found, auto-seeding defaults...');
+        sl<AppLogger>().debug('CoinPacksService: No packs found, auto-seeding defaults...');
         await _seedDefaultPacks();
         
         // Fetch again after seeding
@@ -189,7 +189,7 @@ class CoinPacksService {
 
     try {
       await batch.commit();
-      sl<AppLogger>().info('CoinPacksService: Successfully seeded default packs');
+      sl<AppLogger>().debug('CoinPacksService: Successfully seeded default packs');
     } catch (e) {
       sl<AppLogger>().error('CoinPacksService: Failed to seed default packs', error: e);
     }
