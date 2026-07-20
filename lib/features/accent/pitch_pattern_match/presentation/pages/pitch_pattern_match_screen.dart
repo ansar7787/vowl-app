@@ -1,4 +1,4 @@
-﻿import 'dart:async';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,6 +13,7 @@ import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
 import 'package:vowl/features/accent/presentation/layout/accent_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
+import 'package:vowl/features/accent/presentation/constants/accent_game_constants.dart';
 import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pitch_pattern_match_instruction.dart';
 import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pitch_pattern_match_prompt_card.dart';
 import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pitch_pattern_match_melodic_canvas.dart';
@@ -39,12 +40,13 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
   final _soundService = di.sl<SoundService>();
 
   int _lastProcessedIndex = -1;
-  int? _lastLives;
+  int _lastLives = AccentGameConstants.maxLives;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
   double _sliderValue = 0.5;
   int? _selectedIndex;
+  AccentQuest? _lastQuest;
 
   double _previewProgress = 0.0;
   bool _isPreviewing = false;
@@ -160,7 +162,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
     return BlocConsumer<AccentBloc, AccentState>(
       listener: (context, state) {
         if (state is AccentLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          final livesChanged = (state.livesRemaining > _lastLives);
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
               (state.lastAnswerCorrect == null && _isAnswered)) {
@@ -175,6 +177,9 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
             });
             // Proactively auto-play sound on question load
             final quest = state.currentQuest as AccentQuest?;
+            if (quest != null) {
+              _lastQuest = quest;
+            }
             if (quest != null && quest.textToSpeak != null) {
               Future.delayed(500.milliseconds, () {
                 if (mounted) {
@@ -200,7 +205,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
       builder: (context, state) {
         final AccentQuest? quest = (state is AccentLoaded)
             ? state.currentQuest as AccentQuest?
-            : null;
+            : _lastQuest;
         final options = quest?.options ?? ["A", "B"];
         final pattern = quest?.pitchPatterns ?? [0, 1, 2, 1, 0];
         final mediaQuery = MediaQuery.of(context);
@@ -266,7 +271,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                   children: [
                                     PitchPatternMatchInstruction(
                                       color: theme.primaryColor,
-                                      instruction: context.tr('games.pitch_pattern_match_instruction', fallback: quest.instruction),
+                                      instruction: context.tr('games.pitch_pattern_match_instruction', fallback: 'Identify the pitch pattern'),
                                     ),
                                     SizedBox(height: gapInstruction),
 
