@@ -186,7 +186,10 @@ class TranslationMonetizationController {
                             ),
                             SizedBox(width: 8.w),
                             Text(
-                              "Get Vowl Premium",
+                              ctx.tr(
+                                'translation.get_premium_button',
+                                fallback: 'Get Vowl Premium',
+                              ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontWeight: FontWeight.w900,
@@ -228,7 +231,10 @@ class TranslationMonetizationController {
                             ),
                             SizedBox(width: 8.w),
                             Text(
-                              "Watch Ad (1 Translation)",
+                              ctx.tr(
+                                'translation.watch_ad_button',
+                                fallback: 'Watch Ad (1 Translation)',
+                              ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontWeight: FontWeight.bold,

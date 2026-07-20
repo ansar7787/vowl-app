@@ -122,6 +122,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             SizedBox(height: 12.h),
                             _buildKeyShopBanner(context, user),
 
+                            SizedBox(height: 12.h),
+                            _buildScanAndLearnBanner(context),
+
+                            SizedBox(height: 12.h),
+                            _buildPhotoVocabBanner(context),
+
                             SizedBox(height: 20.h),
                             _buildSectionHeader(
                               context,
@@ -337,6 +343,137 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       color: isDark ? Colors.white60 : Colors.black54,
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Icon(
+              Icons.arrow_forward_ios_rounded,
+              color: isDark ? Colors.white24 : Colors.black12,
+              size: 16.r,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildScanAndLearnBanner(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    
+    return ScaleButton(
+      onTap: () {
+        di.sl<HapticService>().selection();
+        context.push(AppRouter.scanAndLearnRoute);
+      },
+      child: GlassTile(
+        borderRadius: BorderRadius.circular(24.r),
+        padding: EdgeInsets.all(20.w),
+        child: Row(
+          children: [
+            Container(
+              padding: EdgeInsets.all(12.r),
+              decoration: BoxDecoration(
+                color: const Color(0xFF6366F1).withValues(alpha: 0.15),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(
+                Icons.document_scanner_rounded,
+                color: const Color(0xFF6366F1),
+                size: 28.r,
+              ),
+            ),
+            SizedBox(width: 16.w),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    context.tr('translation.scan_learn_title', fallback: 'Scan & Learn'),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 0.5,
+                    ),
+                  ),
+                  SizedBox(height: 4.h),
+                  Text(
+                    context.tr('translation.scan_learn_desc', fallback: 'Extract and translate text from images instantly.'),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: isDark ? Colors.white38 : Colors.black38,
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Icon(
+              Icons.arrow_forward_ios_rounded,
+              color: isDark ? Colors.white24 : Colors.black12,
+              size: 16.r,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildPhotoVocabBanner(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return ScaleButton(
+      onTap: () {
+        di.sl<HapticService>().selection();
+        context.push(AppRouter.photoVocabularyRoute);
+      },
+      child: GlassTile(
+        borderRadius: BorderRadius.circular(24.r),
+        padding: EdgeInsets.all(20.w),
+        child: Row(
+          children: [
+            Container(
+              padding: EdgeInsets.all(12.r),
+              decoration: BoxDecoration(
+                color: const Color(0xFF14B8A6).withValues(alpha: 0.2),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(
+                Icons.camera_alt_rounded,
+                color: const Color(0xFF14B8A6),
+                size: 28.r,
+              ),
+            ),
+            SizedBox(width: 16.w),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    context.tr('vocabulary.photo_vocab_title', fallback: 'Photo Vocabulary'),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 0.5,
+                    ),
+                  ),
+                  SizedBox(height: 4.h),
+                  Text(
+                    context.tr('vocabulary.photo_vocab_desc', fallback: 'Discover words from the world around you!'),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: isDark ? Colors.white38 : Colors.black38,
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w600,
                     ),

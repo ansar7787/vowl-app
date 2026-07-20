@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class TranslationDownloadSheet extends StatefulWidget {
   /// The future that represents the actual download task.
@@ -131,7 +132,9 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
           ),
           SizedBox(height: 24.h),
           Text(
-            _isFinished ? 'Model Optimized!' : 'Initializing AI Engine...',
+            _isFinished
+                ? context.tr('translation.model_optimized', fallback: 'Model Optimized!')
+                : context.tr('translation.initializing_engine', fallback: 'Initializing AI Engine...'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 22.sp,
@@ -142,8 +145,8 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
           SizedBox(height: 12.h),
           Text(
             _isFinished
-                ? 'On-device translation ready forever.'
-                : 'Downloading offline AI language model (~30MB). This happens only once!',
+                ? context.tr('translation.ready_forever', fallback: 'On-device translation ready forever.')
+                : context.tr('translation.download_desc', fallback: 'Downloading offline AI language model (~30MB). This happens only once!'),
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',

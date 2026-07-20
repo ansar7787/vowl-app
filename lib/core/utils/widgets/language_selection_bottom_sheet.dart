@@ -1,11 +1,14 @@
 import 'dart:async';
 import 'dart:ui';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 import 'package:vowl/core/utils/translation_service.dart';
+import 'package:google_mlkit_translation/google_mlkit_translation.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 /// A sleek 2026 glassmorphic bottom sheet for selecting the native translation language.
@@ -32,10 +35,13 @@ class _LanguageSelectionBottomSheetState
   bool _isLoading = false;
   int _downloadProgress = 0;
   Timer? _progressTimer;
+  final TextEditingController _searchController = TextEditingController();
+  String _searchQuery = '';
 
   @override
   void dispose() {
     _progressTimer?.cancel();
+    _searchController.dispose();
     super.dispose();
   }
 
@@ -158,9 +164,118 @@ class _LanguageSelectionBottomSheetState
                   ),
                 ],
               ),
-              SizedBox(height: 24.h),
+              SizedBox(height: 16.h),
 
-              // Searchable-like List (Future proofing for search)
+              // Auto-Detect Feature Button
+              ScaleButton(
+                onTap: () => _showAutoDetectDialog(context, isDark, primaryIndigo),
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 16.w),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [primaryIndigo.withValues(alpha: 0.1), const Color(0xFF8B5CF6).withValues(alpha: 0.1)],
+                    ),
+                    borderRadius: BorderRadius.circular(16.r),
+                    border: Border.all(
+                      color: primaryIndigo.withValues(alpha: 0.3),
+                    ),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(Icons.auto_awesome_rounded, color: primaryIndigo, size: 20.r),
+                      SizedBox(width: 12.w),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              context.tr('translation.auto_detect', fallback: 'Auto-Detect Language'),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.bold,
+                                color: isDark ? Colors.white : Colors.black87,
+                              ),
+                            ),
+                            Text(
+                              context.tr('translation.auto_detect_desc', fallback: 'Type a sentence and we will find your language.'),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.sp,
+                                color: isDark ? Colors.white60 : Colors.black54,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Icon(Icons.chevron_right_rounded, color: isDark ? Colors.white54 : Colors.black45, size: 24.r),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 12.h),
+
+              // Search field
+              Container(
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? Colors.black.withValues(alpha: 0.2)
+                      : Colors.black.withValues(alpha: 0.03),
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.05)
+                        : Colors.black.withValues(alpha: 0.05),
+                  ),
+                ),
+                child: TextField(
+                  controller: _searchController,
+                  onChanged: (val) => setState(() => _searchQuery = val),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 15.sp,
+                    color: isDark ? Colors.white : Colors.black87,
+                  ),
+                  decoration: InputDecoration(
+                    hintText: context.tr(
+                      'language_picker.search_hint',
+                      fallback: 'Search languages...',
+                    ),
+                    hintStyle: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      color: isDark ? Colors.white38 : Colors.black26,
+                    ),
+                    prefixIcon: Icon(
+                      LucideIcons.search,
+                      size: 18.r,
+                      color: isDark ? Colors.white38 : Colors.black26,
+                    ),
+                    suffixIcon: _searchQuery.isNotEmpty
+                        ? GestureDetector(
+                            onTap: () {
+                              _searchController.clear();
+                              setState(() => _searchQuery = '');
+                            },
+                            child: Icon(
+                              Icons.close_rounded,
+                              size: 18.r,
+                              color: isDark ? Colors.white38 : Colors.black38,
+                            ),
+                          )
+                        : null,
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 14.h,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 12.h),
+
+              // Language List
               Expanded(
                 child: Container(
                   decoration: BoxDecoration(
@@ -176,16 +291,37 @@ class _LanguageSelectionBottomSheetState
                   ),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(24.r),
-                    child: ListView.separated(
+                    child: Builder(
+                      builder: (context) {
+                        final filteredEntries = TranslationService
+                            .supportedLanguages
+                            .entries
+                            .where((e) => e.key.toLowerCase().contains(_searchQuery.toLowerCase()))
+                            .toList();
+
+                        if (filteredEntries.isEmpty) {
+                          return Center(
+                            child: Padding(
+                              padding: EdgeInsets.all(32.r),
+                              child: Text(
+                                context.tr('language_picker.no_results', fallback: 'No results found'),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 14.sp,
+                                  color: isDark ? Colors.white38 : Colors.black38,
+                                ),
+                              ),
+                            ),
+                          );
+                        }
+
+                        return ListView.separated(
                       padding: EdgeInsets.all(16.r),
-                      itemCount: TranslationService.supportedLanguages.length,
+                      itemCount: filteredEntries.length,
                       separatorBuilder: (context, index) =>
                           SizedBox(height: 8.h),
                       itemBuilder: (context, index) {
-                        final entry = TranslationService
-                            .supportedLanguages
-                            .entries
-                            .elementAt(index);
+                        final entry = filteredEntries[index];
                         final isSelected = _selectedLanguage == entry.key;
 
                         return Material(
@@ -240,6 +376,8 @@ class _LanguageSelectionBottomSheetState
                             ),
                           ),
                         );
+                      },
+                    );
                       },
                     ),
                   ),
@@ -395,6 +533,149 @@ class _LanguageSelectionBottomSheetState
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  void _showAutoDetectDialog(BuildContext context, bool isDark, Color primaryIndigo) {
+    final TextEditingController typeController = TextEditingController();
+    bool isDetecting = false;
+
+    showDialog(
+      context: context,
+      builder: (dialogCtx) => StatefulBuilder(
+        builder: (ctx, setDialogState) => AlertDialog(
+          backgroundColor: isDark ? const Color(0xFF1E1E2A) : Colors.white,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24.r)),
+          title: Row(
+            children: [
+              Icon(Icons.auto_awesome_rounded, color: primaryIndigo),
+              SizedBox(width: 8.w),
+              Expanded(
+                child: Text(
+                  context.tr('translation.type_sentence', fallback: 'Type a Sentence'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.bold,
+                    color: isDark ? Colors.white : Colors.black87,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                context.tr('translation.type_sentence_desc', fallback: 'Type a short sentence in your native language, and ML Kit will automatically detect it.'),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  color: isDark ? Colors.white70 : Colors.black54,
+                ),
+              ),
+              SizedBox(height: 16.h),
+              TextField(
+                controller: typeController,
+                autofocus: true,
+                style: TextStyle(fontFamily: 'Outfit', color: isDark ? Colors.white : Colors.black87),
+                decoration: InputDecoration(
+                  hintText: 'e.g. Hola, ¿cómo estás?',
+                  hintStyle: TextStyle(color: isDark ? Colors.white38 : Colors.black38),
+                  filled: true,
+                  fillColor: isDark ? Colors.black26 : Colors.black.withValues(alpha: 0.05),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12.r),
+                    borderSide: BorderSide.none,
+                  ),
+                ),
+              ),
+              if (isDetecting) ...[
+                SizedBox(height: 16.h),
+                const CircularProgressIndicator(),
+              ]
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(dialogCtx),
+              child: Text(
+                context.tr('common.cancel', fallback: 'Cancel'),
+                style: TextStyle(fontFamily: 'Outfit', color: isDark ? Colors.white54 : Colors.black54),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: isDetecting ? null : () async {
+                final text = typeController.text.trim();
+                if (text.isEmpty) return;
+
+                setDialogState(() => isDetecting = true);
+                final bcpCode = await di.sl<LanguageIdService>().identifyLanguage(text);
+                
+                if (!mounted) return;
+                
+                String? matchedLanguageName;
+                if (bcpCode != 'und') {
+                  // Find the matching language in our supported list
+                  for (final entry in TranslationService.supportedLanguages.entries) {
+                    if (entry.value.bcpCode.startsWith(bcpCode) || bcpCode.startsWith(entry.value.bcpCode)) {
+                      matchedLanguageName = entry.key;
+                      break;
+                    }
+                  }
+                }
+
+                if (!mounted) return;
+                
+                setDialogState(() => isDetecting = false);
+                if (dialogCtx.mounted) {
+                  Navigator.pop(dialogCtx);
+                }
+
+                if (!mounted) return;
+                if (matchedLanguageName != null) {
+                  setState(() {
+                    _selectedLanguage = matchedLanguageName;
+                  });
+                  if (context.mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          'Detected: $matchedLanguageName',
+                          style: const TextStyle(fontFamily: 'Outfit'),
+                        ),
+                        backgroundColor: primaryIndigo,
+                        behavior: SnackBarBehavior.floating,
+                      ),
+                    );
+                  }
+                } else {
+                  if (context.mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          context.tr('translation.detect_failed', fallback: 'Could not detect language confidently.'),
+                          style: const TextStyle(fontFamily: 'Outfit'),
+                        ),
+                        backgroundColor: Colors.redAccent,
+                        behavior: SnackBarBehavior.floating,
+                      ),
+                    );
+                  }
+                }
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: primaryIndigo,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
+              ),
+              child: Text(
+                context.tr('translation.detect', fallback: 'Detect'),
+                style: const TextStyle(fontFamily: 'Outfit', color: Colors.white, fontWeight: FontWeight.bold),
+              ),
+            ),
+          ],
         ),
       ),
     );

@@ -22,6 +22,14 @@ class KidsCategoryGrid extends StatelessWidget {
         delegate: SliverChildListDelegate([
           _buildCategoryCard(
             context,
+            () => context.push('/kids-handwriting'),
+            'Write & Learn',
+            'Handwriting Fun',
+            const Color(0xFFF43F5E), // Rose
+            Icons.edit_rounded,
+          ),
+          _buildCategoryCard(
+            context,
             () => context.push(
               '/kids/map/alphabet',
               extra: {

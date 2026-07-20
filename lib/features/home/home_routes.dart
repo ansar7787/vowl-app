@@ -14,6 +14,8 @@ import 'package:vowl/features/premium/presentation/pages/premium_screen.dart';
 import 'package:vowl/features/home/presentation/pages/streak_screen.dart';
 import 'package:vowl/features/home/presentation/pages/quest_library_page.dart';
 import 'package:vowl/features/profile/presentation/pages/trophy_room_screen.dart';
+import 'package:vowl/features/scan_and_learn/presentation/pages/scan_and_learn_screen.dart';
+import 'package:vowl/features/photo_vocabulary/presentation/pages/photo_vocabulary_screen.dart';
 
 class HomeRoutes {
   HomeRoutes._(); // Prevent instantiation of utility class
@@ -31,6 +33,8 @@ class HomeRoutes {
   static const String hatchingRoute = '/hatching';
   static const String vowlMascotRoute = '/vowl-mascot';
   static const String trophyRoomRoute = '/trophy-room';
+  static const String scanAndLearnRoute = '/scan-and-learn';
+  static const String photoVocabularyRoute = '/photo-vocabulary';
 
   // Deep links (e.g. /hatching?name=...) carry untrusted, remotely/user
   // suppliable input. Capped length + trim prevents a pathological query
@@ -127,10 +131,25 @@ class HomeRoutes {
           fadeTransitionPage(child: const StreakScreen(), state: state),
     ),
 
+
     GoRoute(
       path: trophyRoomRoute,
       pageBuilder: (context, state) =>
           fadeTransitionPage(child: const TrophyRoomScreen(), state: state),
+    ),
+    GoRoute(
+      path: scanAndLearnRoute,
+      pageBuilder: (context, state) => fadeTransitionPage(
+        child: const ScanAndLearnScreen(),
+        state: state,
+      ),
+    ),
+    GoRoute(
+      path: photoVocabularyRoute,
+      pageBuilder: (context, state) => fadeTransitionPage(
+        child: const PhotoVocabularyScreen(),
+        state: state,
+      ),
     ),
   ];
 }

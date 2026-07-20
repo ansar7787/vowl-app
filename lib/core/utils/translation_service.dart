@@ -155,6 +155,19 @@ class TranslationService {
     }
   }
 
+  /// Returns the display name of the currently configured target language,
+  /// or null if no language has been selected.
+  Future<String?> getConfiguredLanguageName() async {
+    final prefs = await SharedPreferences.getInstance();
+    final bcpCode = prefs.getString(_kTargetLangKey);
+    if (bcpCode == null) return null;
+
+    for (final entry in supportedLanguages.entries) {
+      if (entry.value.bcpCode == bcpCode) return entry.key;
+    }
+    return null;
+  }
+
   Future<void> dispose() async {
     await _translator?.close();
     _translator = null;

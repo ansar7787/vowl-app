@@ -24,7 +24,10 @@
     "go_back": "GO BACK",
     "clear": "Clear",
     "xp_suffix": "XP",
-    "coins_label": "coins"
+    "coins_label": "coins",
+    "camera": "Camera",
+    "gallery": "Gallery",
+    "check": "Check"
   },
   "age_gate": {
     "title": "Before we begin",
@@ -47,7 +50,30 @@
     "language_selection_subtitle": "Select the language you want explanations and hints translated into.",
     "premium_upsell": "Hate ads? Get Premium to translate instantly for free!",
     "downloading": "Downloading language model... Please wait.",
-    "error": "Translation failed. Please try again."
+    "downloading_short": "Downloading...",
+    "error": "Translation failed. Please try again.",
+    "get_premium_button": "Get Vowl Premium",
+    "watch_ad_button": "Watch Ad (1 Translation)",
+    "model_optimized": "Model Optimized!",
+    "initializing_engine": "Initializing AI Engine...",
+    "download_desc": "Downloading offline AI language model (~30MB). This happens only once!",
+    "ready_forever": "On-device translation ready forever.",
+    "auto_detect": "Auto-Detect Language",
+    "auto_detect_desc": "Type a sentence and we will find your language.",
+    "type_sentence": "Type a Sentence",
+    "type_sentence_desc": "Type a short sentence in your native language, and ML Kit will automatically detect it.",
+    "detect_failed": "Could not detect language confidently.",
+    "detect": "Detect",
+    "smart_reply_title": "AI Smart Reply",
+    "smart_reply_desc": "Get AI-powered conversation suggestions",
+    "smart_reply_ad": "Watch Ad (1 Suggestion)",
+    "scan_learn_title": "Scan & Learn",
+    "scan_learn_desc": "Extract and translate text from images instantly.",
+    "scan_learn_ad": "Watch Ad to Scan",
+    "scan_prompt": "Select an image to extract text",
+    "extracting": "Extracting Text...",
+    "no_results": "No text extracted yet.",
+    "translate": "Translate"
   },
   "auth": {
     "signup": "Create Account",
@@ -144,6 +170,27 @@
     "discovery_page_indicator": "Page {0} of {1}",
     "default_seeker_name": "Seeker"
   },
+  "kids_zone": {
+    "handwriting_title": "Write & Learn",
+    "handwriting_desc": "Practice your handwriting!",
+    "handwriting_ad": "Watch Ad to Continue"
+  },
+  "reading": {
+    "reveal_entities_title": "Entity Highlighter",
+    "reveal_entities_desc": "Discover dates, places, and more!",
+    "reveal_entities_ad": "Watch Ad to Reveal",
+    "passage_review": "PASSAGE REVIEW",
+    "reveal": "Reveal Entities",
+    "entities_found": "Tap the highlighted words to see their types!"
+  },
+  "vocabulary": {
+    "photo_vocab_title": "Photo Vocabulary",
+    "photo_vocab_desc": "Discover words from the world around you!",
+    "photo_vocab_ad": "Watch Ad to Analyze",
+    "photo_prompt": "Select an image to find objects",
+    "analyzing": "Analyzing objects...",
+    "no_objects": "No objects analyzed yet."
+  },
   "notification_card": {
     "streak_protect": "Protect your {}-Day Streak!",
     "streak_strong": "{} days strong! Keep it up.",
@@ -188,7 +235,9 @@
     "sound_effects": "Sound Effects",
     "sound_effects_subtitle": "App audio and UI feedback",
     "midnight_mode": "Midnight Mode",
-    "midnight_mode_subtitle": "True black background for OLED screens"
+    "midnight_mode_subtitle": "True black background for OLED screens",
+    "translation_language": "Translation Language",
+    "translation_language_subtitle": "Used for hints and explanations in games"
   },
   "settings_dialogs": {
     "profile_settings": "Profile Settings",

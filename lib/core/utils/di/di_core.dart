@@ -27,6 +27,12 @@ import 'package:vowl/core/utils/notification_service.dart';
 import 'package:vowl/core/utils/review_service.dart';
 import 'package:vowl/core/utils/subscription_plans_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/ml_services/language_id_service.dart';
+import 'package:vowl/core/utils/ml_services/smart_reply_service.dart';
+import 'package:vowl/core/utils/ml_services/text_recognition_service.dart';
+import 'package:vowl/core/utils/ml_services/digital_ink_service.dart';
+import 'package:vowl/core/utils/ml_services/entity_extraction_service.dart';
+import 'package:vowl/core/utils/ml_services/image_labeling_service.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_audio_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
@@ -128,6 +134,30 @@ Future<void> initExternalAndCore(GetIt sl) async {
   sl.registerLazySingleton<AnalyticsService>(() => AnalyticsService());
   sl.registerLazySingleton<ReviewService>(() => ReviewService());
   sl.registerLazySingleton<LocaleService>(() => LocaleService());
+  sl.registerLazySingleton<LanguageIdService>(
+    () => LanguageIdService(),
+    dispose: (service) => service.dispose(),
+  );
+  sl.registerLazySingleton<SmartReplyService>(
+    () => SmartReplyService(),
+    dispose: (service) => service.dispose(),
+  );
+  sl.registerLazySingleton<TextRecognitionService>(
+    () => TextRecognitionService(),
+    dispose: (service) => service.dispose(),
+  );
+  sl.registerLazySingleton<DigitalInkService>(
+    () => DigitalInkService(),
+    dispose: (service) => service.dispose(),
+  );
+  sl.registerLazySingleton<EntityExtractionService>(
+    () => EntityExtractionService(),
+    dispose: (service) => service.dispose(),
+  );
+  sl.registerLazySingleton<ImageLabelingService>(
+    () => ImageLabelingService(),
+    dispose: (service) => service.dispose(),
+  );
 
   // ============================================================
   // NAVIGATION SCROLL CONTROLLERS

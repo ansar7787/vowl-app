@@ -47,6 +47,8 @@ class AppRouter {
   static const String adventureXPRoute = '/xp-details';
   static const String questCoinsRoute = '/coins-details';
   static const String questSequenceRoute = '/quest-sequence';
+  static const String scanAndLearnRoute = '/scan-and-learn';
+  static const String photoVocabularyRoute = '/photo-vocabulary';
 
   // ── Kids Zone routes ──────────────────────────────────────────────────────
 

@@ -11,6 +11,7 @@ import 'package:vowl/features/kids_zone/presentation/pages/kids_level_map.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/unified_kids_game_screen.dart';
 import 'package:vowl/features/kids_zone/presentation/pages/buddy_boutique_screen.dart';
 import 'package:vowl/features/kids_zone/presentation/pages/kids_room_screen.dart';
+import 'package:vowl/features/kids_zone/presentation/pages/kids_handwriting_screen.dart';
 
 class KidsRoutes {
   static const String kidsZoneRoute = '/kids-zone';
@@ -41,6 +42,7 @@ class KidsRoutes {
   static const String kidsClothingRoute = '/kids-clothing';
   static const String kidsBuddyBoutiqueRoute = '/kids-zone/boutique';
   static const String kidsRoomRoute = '/kids-room';
+  static const String kidsHandwritingRoute = '/kids-handwriting';
 
   static String getKidsGameTitle(String gameType) {
     switch (gameType) {
@@ -497,6 +499,11 @@ class KidsRoutes {
       path: kidsRoomRoute,
       pageBuilder: (context, state) =>
           fadeTransitionPage(child: const KidsRoomScreen(), state: state),
+    ),
+    GoRoute(
+      path: kidsHandwritingRoute,
+      pageBuilder: (context, state) =>
+          fadeTransitionPage(child: const KidsHandwritingScreen(), state: state),
     ),
   ];
 }

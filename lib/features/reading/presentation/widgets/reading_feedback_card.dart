@@ -5,6 +5,13 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
+import 'package:vowl/core/utils/widgets/entity_highlighted_text.dart';
+import 'package:google_mlkit_entity_extraction/google_mlkit_entity_extraction.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/ml_services/entity_extraction_service.dart';
+import 'package:vowl/core/utils/ml_monetization_controller.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 /// Bottom-sheet style feedback card shown after the player answers.
 ///
@@ -155,6 +162,7 @@ class ReadingFeedbackCard extends StatelessWidget {
                 shadowColor: _shadowColor,
                 isDark: isDark,
                 reduceMotion: reduceMotion,
+                passage: _success ? currentQuest.passage : null,
               ),
             ],
             SizedBox(height: 28.h),
@@ -280,12 +288,14 @@ class _ExplanationBox extends StatefulWidget {
   final Color shadowColor;
   final bool isDark;
   final bool reduceMotion;
+  final String? passage;
 
   const _ExplanationBox({
     required this.explanation,
     required this.shadowColor,
     required this.isDark,
     required this.reduceMotion,
+    this.passage,
   });
 
   @override
@@ -294,15 +304,189 @@ class _ExplanationBox extends StatefulWidget {
 
 class _ExplanationBoxState extends State<_ExplanationBox> {
   String? _translatedText;
+  List<EntityAnnotation>? _entities;
+  bool _isExtracting = false;
+  bool _entitiesRevealed = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _checkAutoReveal();
+  }
+
+  void _checkAutoReveal() {
+    if (widget.passage != null && widget.passage!.isNotEmpty) {
+      final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+      if (isPremium) {
+        _extractEntities();
+      }
+    }
+  }
+
+  Future<void> _extractEntities() async {
+    if (widget.passage == null || widget.passage!.isEmpty) return;
+    setState(() => _isExtracting = true);
+    
+    final service = di.sl<EntityExtractionService>();
+    await service.downloadModel();
+    final entities = await service.extractEntities(widget.passage!);
+    
+    if (mounted) {
+      setState(() {
+        _entities = entities;
+        _isExtracting = false;
+        _entitiesRevealed = true;
+      });
+    }
+  }
+
+  void _onRevealEntitiesTap() {
+    MlMonetizationController.attemptFeature(
+      context,
+      featureIcon: Icons.search_rounded,
+      featureTitle: context.tr('reading.reveal_entities_title', fallback: 'Entity Highlighter'),
+      featureSubtitle: context.tr('reading.reveal_entities_desc', fallback: 'Discover dates, places, and more!'),
+      adButtonLabel: context.tr('reading.reveal_entities_ad', fallback: 'Watch Ad to Reveal'),
+      onSuccess: () => _extractEntities(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     final displayText = _translatedText ?? widget.explanation;
 
-    Widget card = Container(
-      width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-      decoration: BoxDecoration(
+    Widget card = Column(
+      children: [
+        if (widget.passage != null && widget.passage!.isNotEmpty) ...[
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.all(20.w),
+            decoration: BoxDecoration(
+              color: widget.isDark ? const Color(0xFF1E293B) : Colors.white,
+              borderRadius: BorderRadius.circular(20.r),
+              border: Border.all(
+                color: widget.shadowColor.withValues(alpha: 0.3),
+                width: 1.5,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: widget.shadowColor.withValues(alpha: 0.1),
+                  blurRadius: 10,
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      context.tr('reading.passage_review', fallback: 'PASSAGE REVIEW'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w800,
+                        color: widget.shadowColor,
+                        letterSpacing: 1,
+                      ),
+                    ),
+                    if (!_entitiesRevealed && !_isExtracting)
+                      ScaleButton(
+                        onTap: _onRevealEntitiesTap,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                          decoration: BoxDecoration(
+                            color: Colors.amber.withValues(alpha: 0.15),
+                            borderRadius: BorderRadius.circular(12.r),
+                            border: Border.all(color: Colors.amber),
+                          ),
+                          child: Row(
+                            children: [
+                              Icon(Icons.search_rounded, color: Colors.amber.shade700, size: 14.sp),
+                              SizedBox(width: 4.w),
+                              Text(
+                                context.tr('reading.reveal', fallback: 'Reveal Entities'),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w800,
+                                  color: Colors.amber.shade700,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                  ],
+                ),
+                SizedBox(height: 12.h),
+                if (_isExtracting)
+                  const Center(child: CircularProgressIndicator())
+                else if (_entitiesRevealed && _entities != null)
+                  EntityHighlightedText(
+                    text: widget.passage!,
+                    annotations: _entities!,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w500,
+                      color: widget.isDark ? Colors.white70 : Colors.black87,
+                      height: 1.5,
+                    ),
+                    isDark: widget.isDark,
+                  )
+                else
+                  Text(
+                    widget.passage!,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w500,
+                      color: widget.isDark ? Colors.white70 : Colors.black87,
+                      height: 1.5,
+                    ),
+                  ),
+                if (_entitiesRevealed && _entities != null && _entities!.isNotEmpty) ...[
+                  SizedBox(height: 12.h),
+                  Container(
+                    padding: EdgeInsets.all(8.r),
+                    decoration: BoxDecoration(
+                      color: widget.shadowColor.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(8.r),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.lightbulb_rounded, color: widget.shadowColor, size: 16.sp),
+                        SizedBox(width: 8.w),
+                        Expanded(
+                          child: Text(
+                            context.tr(
+                              'reading.entities_found', 
+                              fallback: 'Tap the highlighted words to see their types!',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w600,
+                              color: widget.shadowColor,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ]
+              ],
+            ),
+          ),
+          SizedBox(height: 16.h),
+        ],
+        Container(
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+          decoration: BoxDecoration(
         color: widget.shadowColor.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
@@ -356,7 +540,9 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
           ),
         ],
       ),
-    );
+    ),
+  ],
+);
 
     if (!widget.reduceMotion) {
       card = card

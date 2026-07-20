@@ -23,6 +23,7 @@ import 'package:vowl/features/kids_zone/presentation/utils/kids_audio_service.da
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/age_gate_service.dart';
+import 'package:vowl/core/utils/translation_service.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -634,6 +635,22 @@ class _SettingsPreferencesGroup extends StatelessWidget {
               icon: Icons.g_translate_rounded,
               color: Colors.amber,
               onTap: () => LanguageSelectionBottomSheet.show(context),
+              trailing: FutureBuilder<String?>(
+                future: TranslationService().getConfiguredLanguageName(),
+                builder: (ctx, snap) {
+                  final langName = snap.data;
+                  if (langName == null) return const SizedBox.shrink();
+                  return Text(
+                    langName,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      color: Colors.amber,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  );
+                },
+              ),
             ),
           ],
         ),

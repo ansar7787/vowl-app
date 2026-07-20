@@ -1,4 +1,4 @@
-﻿import 'dart:async';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,6 +13,11 @@ import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/utils/text_similarity_helper.dart';
+import 'package:vowl/core/utils/ml_services/smart_reply_service.dart';
+import 'package:vowl/core/utils/ml_monetization_controller.dart';
+import 'package:vowl/core/utils/widgets/smart_reply_chip.dart';
+import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/dialogue_roleplay_header.dart';
 import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/dialogue_roleplay_exchange_stage.dart';
@@ -51,6 +56,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
   double _timeVal = 0.0;
   String _spokenText = "";
   List<String> _acceptedSynonyms = [];
+  List<String> _smartReplies = [];
 
   @override
   void initState() {
@@ -75,9 +81,21 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
     super.dispose();
   }
 
-  void _triggerAutoPlay(SpeakingQuest quest) {
+  void _triggerAutoPlay(SpeakingQuest quest) async {
     if (quest.partnerDialogue != null) {
       _soundService.playTts(quest.partnerDialogue!);
+      
+      // Fetch AI Smart Replies based on the NPC's dialogue
+      final smartReplyService = di.sl<SmartReplyService>();
+      smartReplyService.clearConversation();
+      smartReplyService.addMessage(quest.partnerDialogue!, isLocalUser: false);
+      
+      final suggestions = await smartReplyService.getSuggestions();
+      if (mounted) {
+        setState(() {
+          _smartReplies = suggestions;
+        });
+      }
     }
   }
 
@@ -189,6 +207,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
               _attempts = 0;
               _isListening = false;
               _spokenText = "";
+              _smartReplies = [];
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -359,6 +378,40 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                               spokenText: _spokenText,
                                               isDark: isDark,
                                             ),
+                                            
+                                    if (_smartReplies.isNotEmpty && !_isAnswered) ...[
+                                      SizedBox(height: 16.h),
+                                      SizedBox(
+                                        height: 44.h,
+                                        child: ListView.builder(
+                                          scrollDirection: Axis.horizontal,
+                                          itemCount: _smartReplies.length,
+                                          itemBuilder: (context, index) {
+                                            final reply = _smartReplies[index];
+                                            final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+                                            return SmartReplyChip(
+                                              text: reply,
+                                              isPremium: isPremium,
+                                              onTap: () {
+                                                MlMonetizationController.attemptFeature(
+                                                  context,
+                                                  featureIcon: Icons.auto_awesome_rounded,
+                                                  featureTitle: context.tr('translation.smart_reply_title', fallback: 'AI Smart Reply'),
+                                                  featureSubtitle: context.tr('translation.smart_reply_desc', fallback: 'Get AI-powered conversation suggestions'),
+                                                  adButtonLabel: context.tr('translation.smart_reply_ad', fallback: 'Watch Ad (1 Suggestion)'),
+                                                  onSuccess: () {
+                                                    setState(() {
+                                                      _acceptedSynonyms.add(reply);
+                                                      _spokenText = reply; // Display as hint for them to speak
+                                                    });
+                                                  },
+                                                );
+                                              },
+                                            );
+                                          },
+                                        ),
+                                      ),
+                                    ],
                                   ],
                                 ),
                                 Column(
