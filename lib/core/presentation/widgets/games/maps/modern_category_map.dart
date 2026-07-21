@@ -288,12 +288,15 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
           backgroundColor: theme.backgroundColors[1],
           extendBody: true,
           body: _isLoading
-              ? ShimmerMapPlaceholder(
-                  theme: theme,
-                  points: points,
-                  rowSpacing: rowSpacing,
-                  totalHeight: totalContentHeight,
-                  totalLevels: _totalLevels,
+              ? SingleChildScrollView(
+                  physics: const NeverScrollableScrollPhysics(),
+                  child: ShimmerMapPlaceholder(
+                    theme: theme,
+                    points: points,
+                    rowSpacing: rowSpacing,
+                    totalHeight: totalContentHeight,
+                    totalLevels: _totalLevels,
+                  ),
                 )
               : Stack(
                   children: [
@@ -331,9 +334,9 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                     surfaceTintColor: Colors.transparent,
                     elevation: 0,
                     toolbarHeight: 50.h,
-                    centerTitle: false,
-                    title: Align(
-                      alignment: AlignmentDirectional.centerStart,
+                    leadingWidth: 70.r,
+                    leading: Padding(
+                      padding: EdgeInsets.only(left: 16.r),
                       child: Semantics(
                         button: true,
                         label: context.tr('common.back', fallback: 'Back'),
@@ -346,13 +349,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                             }
                           },
                           child: Container(
-                            // Invisible floor guaranteeing the 48dp
-                            // accessible touch target; the visible pill
-                            // below keeps its original 36r size.
-                            constraints: BoxConstraints(
-                              minWidth: 48.r,
-                              minHeight: 48.r,
-                            ),
+                            width: 48.r,
+                            height: 48.r,
                             alignment: Alignment.center,
                             child: ExcludeSemantics(
                               child: Builder(
