@@ -11,7 +11,7 @@ import 'package:vowl/features/kids_zone/presentation/pages/kids_level_map.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/unified_kids_game_screen.dart';
 import 'package:vowl/features/kids_zone/presentation/pages/buddy_boutique_screen.dart';
 import 'package:vowl/features/kids_zone/presentation/pages/kids_room_screen.dart';
-import 'package:vowl/features/kids_zone/presentation/pages/kids_handwriting_screen.dart';
+
 
 class KidsRoutes {
   static const String kidsZoneRoute = '/kids-zone';
@@ -502,8 +502,15 @@ class KidsRoutes {
     ),
     GoRoute(
       path: kidsHandwritingRoute,
-      pageBuilder: (context, state) =>
-          fadeTransitionPage(child: KidsHandwritingScreen(level: state.extra as int? ?? 1), state: state),
+      pageBuilder: (context, state) => fadeTransitionPage(
+        child: _getKidsBlocWrapper(
+          UnifiedKidsGameScreen(
+            gameType: 'handwriting',
+            level: state.extra as int? ?? 1,
+          ),
+        ),
+        state: state,
+      ),
     ),
   ];
 }

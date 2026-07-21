@@ -22,6 +22,7 @@ import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_food_l
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_transport_layout.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_body_parts_layout.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_clothing_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_handwriting_layout.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_picker_template.dart';
 
 class UnifiedKidsGameScreen extends StatelessWidget {
@@ -191,6 +192,13 @@ class UnifiedKidsGameScreen extends StatelessWidget {
         primaryColor: KidsRoutes.getKidsGameColor(gameType),
       );
     }
+    if (gameType == 'handwriting') {
+      return KidsHandwritingLayout(
+        level: level,
+        title: KidsRoutes.getKidsGameTitle(gameType),
+        primaryColor: KidsRoutes.getKidsGameColor(gameType),
+      );
+    }
 
     return KidsPickerTemplate(
       title: KidsRoutes.getKidsGameTitle(gameType),
@@ -249,6 +257,8 @@ class UnifiedKidsGameScreen extends StatelessWidget {
         return Icons.accessibility_new_rounded;
       case 'clothing':
         return Icons.checkroom_rounded;
+      case 'handwriting':
+        return Icons.edit_rounded;
       default:
         return Icons.extension_rounded;
     }
