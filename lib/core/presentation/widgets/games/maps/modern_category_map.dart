@@ -86,7 +86,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     final cachedLevels = CurriculumService.getCachedLevels(widget.gameType);
     if (cachedLevels != null) {
       _totalLevels = cachedLevels;
-      _isLoading = false;
+      // Do NOT set _isLoading = false synchronously here! 
+      // We must wait for the route transition to complete before building 200 nodes.
     }
 
     _loadCurriculum();
@@ -111,12 +112,19 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     }
 
     if (mounted) {
-      if (_totalLevels != levels || _isLoading) {
-        setState(() {
-          _totalLevels = levels;
-          _isLoading = false;
-        });
+      if (_totalLevels != levels) {
+        _totalLevels = levels;
       }
+
+      // 3. Delay the heavy node track rendering until the route transition finishes (350ms).
+      // This prevents extreme frame drops when entering from heavy screens like Quest Library.
+      Future.delayed(const Duration(milliseconds: 350), () {
+        if (mounted && _isLoading) {
+          setState(() {
+            _isLoading = false;
+          });
+        }
+      });
 
       WidgetsBinding.instance.addPostFrameCallback((_) {
         Future.delayed(const Duration(milliseconds: 300), () {
