@@ -358,16 +358,14 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
         ),
       ),
     );
-  }
-
   Widget _buildLibraryStatsDashboard(UserEntity user, bool isDark) {
     final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
 
     // Calculate global stats across all active games (200 levels each)
     int clearedLevels = 0;
     for (final subtype in _allSubtypes) {
-      final level = user.unlockedLevels[subtype.name] ?? 10;
-      clearedLevels += (level - 1).clamp(0, 200);
+      final completed = user.completedLevels[subtype.name]?.length ?? 0;
+      clearedLevels += completed.clamp(0, 200);
     }
     final totalLevels = _allSubtypes.length * 200;
     final progress = totalLevels > 0 ? (clearedLevels / totalLevels) : 0.0;
@@ -798,7 +796,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     bool isDark,
   ) {
     final theme = LevelThemeHelper.getTheme(subtype.name, isDark: isDark);
-    final currentLevel = user.unlockedLevels[subtype.name] ?? 10;
+    final currentLevel = (user.completedLevels[subtype.name]?.length ?? 0) + 1;
     final isNew =
         !user.categoryStats.containsKey(subtype.name) && currentLevel == 1;
     final displayColor = isDark

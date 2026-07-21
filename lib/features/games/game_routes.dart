@@ -136,7 +136,11 @@ class GameRoutes {
             state.uri.queryParameters['gameType'] ?? 'readAndAnswer';
 
         return fadeTransitionPage(
-          child: ModernCategoryMap(gameType: gameType, categoryId: categoryId),
+          child: ModernCategoryMap(
+            key: ValueKey('${categoryId}_$gameType'),
+            gameType: gameType, 
+            categoryId: categoryId,
+          ),
           state: state,
         );
       },
