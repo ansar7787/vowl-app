@@ -45,6 +45,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
   int _lastProcessedIndex = -1;
   bool _isListening = false;
   String _spokenText = "";
+  List<String> _spokenCandidates = [];
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -141,7 +142,10 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
     _startPhysicalEngine();
 
     _speechService.listen(
-      onResult: (text) {
+      onResult: (candidates) {
+          if (candidates.isEmpty) return;
+          _spokenCandidates = candidates;
+          final text = candidates.first;
         setState(() {
           _spokenText = text;
           // Giving small booster lift upon spoken transcript updates
@@ -178,7 +182,14 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
     // Core requirements:
     // 1. alignmentAccuracy >= 40% (stayed inside the drifting green elevator target bounds)
     // 2. Length of spoken text >= 12 chars
-    bool isCorrect = alignmentAccuracy >= 0.40 && _spokenText.length >= 12;
+    bool isCorrect = false;
+    for (var candidate in _spokenCandidates.isEmpty ? [_spokenText] : _spokenCandidates) {
+      if (alignmentAccuracy >= 0.40 && candidate.length >= 12) {
+        isCorrect = true;
+        _spokenText = candidate;
+        break;
+      }
+    }
 
     setState(() {
       _attempts++;

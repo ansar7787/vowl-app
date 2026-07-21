@@ -55,6 +55,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
   late AnimationController _synapticController;
   double _timeVal = 0.0;
   String _spokenText = "";
+  List<String> _spokenCandidates = [];
   List<String> _acceptedSynonyms = [];
   List<String> _smartReplies = [];
 
@@ -109,7 +110,10 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
     });
 
     _speechService.listen(
-      onResult: (text) {
+      onResult: (candidates) {
+          if (candidates.isEmpty) return;
+          _spokenCandidates = candidates;
+          final text = candidates.first;
         setState(() {
           _spokenText = text;
         });

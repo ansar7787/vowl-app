@@ -52,6 +52,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
 
   // Speech states
   String _spokenText = "";
+  List<String> _spokenCandidates = [];
   bool _isSpeechActive = false;
   bool _isAnswered = false;
   bool? _isCorrect;
@@ -180,7 +181,10 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
     });
 
     _speechService.listen(
-      onResult: (text) {
+      onResult: (candidates) {
+          if (candidates.isEmpty) return;
+          _spokenCandidates = candidates;
+          final text = candidates.first;
         setState(() {
           _spokenText = text;
         });

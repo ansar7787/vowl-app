@@ -55,6 +55,7 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
   Timer? _pullTimer;
   double _timeVal = 0.0;
   String _spokenText = "";
+  List<String> _spokenCandidates = [];
   List<String> _acceptedAntonyms = [];
 
   @override
@@ -99,7 +100,10 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
     });
 
     _speechService.listen(
-      onResult: (text) {
+      onResult: (candidates) {
+          if (candidates.isEmpty) return;
+          _spokenCandidates = candidates;
+          final text = candidates.first;
         setState(() {
           _spokenText = text;
         });

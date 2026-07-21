@@ -36,6 +36,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
   bool _showConfetti = false;
   bool _isListening = false;
   String _lastWords = "";
+  List<String> _spokenCandidates = [];
   bool _isAnswered = false;
   bool? _isCorrect;
   int _attempts = 0;
@@ -88,7 +89,10 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
           _lastWords = "";
         });
         _speechService.listen(
-          onResult: (text) {
+          onResult: (candidates) {
+          if (candidates.isEmpty) return;
+          _spokenCandidates = candidates;
+          final text = candidates.first;
             if (mounted) {
               setState(() {
                 _lastWords = text;
@@ -151,11 +155,14 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
 
     // Ultra-lenient threshold for difficult accent games (tongue twisters)
     // Lenient threshold for difficult accent games, balanced with length safety
-    bool isCorrect = TextSimilarityHelper.isMatch(
-      spoken,
-      target,
-      threshold: 0.70,
-    );
+    bool isCorrect = false;
+    for (var candidate in _spokenCandidates.isEmpty ? [spoken] : _spokenCandidates) {
+      if (TextSimilarityHelper.isMatch(candidate, target, threshold: 0.70)) {
+        isCorrect = true;
+        _lastWords = candidate; // Update UI to show the correctly matched string
+        break;
+      }
+    }
 
     // FIX: previously `_attempts++` ran outside any `setState`, and the
     // three state mutations below were split across two separate `setState`

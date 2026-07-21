@@ -42,6 +42,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
   int? _lastLives;
   bool _isListening = false;
   String _spokenText = "";
+  List<String> _spokenCandidates = [];
   double _progress = 0.0; // Vocal trace tracing progress (0.0 to 1.0)
   bool _isAnswered = false;
   bool? _isCorrect;
@@ -93,7 +94,10 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
     });
 
     _speechService.listen(
-      onResult: (text) {
+      onResult: (candidates) {
+          if (candidates.isEmpty) return;
+          _spokenCandidates = candidates;
+          final text = candidates.first;
         setState(() {
           _spokenText = text;
           // Progress tracks similarity length comparison
@@ -121,11 +125,14 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
       return;
     }
 
-    final bool isCorrect = TextSimilarityHelper.isMatch(
-      _spokenText,
-      expected,
-      threshold: 0.70,
-    );
+    bool isCorrect = false;
+    for (var candidate in _spokenCandidates.isEmpty ? [_spokenText] : _spokenCandidates) {
+      if (TextSimilarityHelper.isMatch(candidate, expected, threshold: 0.70)) {
+        isCorrect = true;
+        _spokenText = candidate;
+        break;
+      }
+    }
 
     setState(() {
       _attempts++;

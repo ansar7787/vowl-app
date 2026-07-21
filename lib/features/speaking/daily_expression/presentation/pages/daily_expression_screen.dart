@@ -55,6 +55,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
   Timer? _scratchTimer;
   double _timeVal = 0.0;
   String _spokenText = "";
+  List<String> _spokenCandidates = [];
   String _targetExpression = "";
 
   @override
@@ -91,7 +92,10 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
     });
 
     _speechService.listen(
-      onResult: (text) {
+      onResult: (candidates) {
+          if (candidates.isEmpty) return;
+          _spokenCandidates = candidates;
+          final text = candidates.first;
         setState(() {
           _spokenText = text;
         });
@@ -133,11 +137,14 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
       return;
     }
 
-    bool matchFound = TextSimilarityHelper.isMatch(
-      _spokenText,
-      _targetExpression,
-      threshold: 0.70,
-    );
+    bool matchFound = false;
+    for (var candidate in _spokenCandidates.isEmpty ? [_spokenText] : _spokenCandidates) {
+      if (TextSimilarityHelper.isMatch(candidate, _targetExpression, threshold: 0.70)) {
+        matchFound = true;
+        _spokenText = candidate;
+        break;
+      }
+    }
 
     setState(() {
       _attempts++;

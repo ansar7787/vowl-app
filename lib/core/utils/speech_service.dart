@@ -48,7 +48,7 @@ abstract class SpeechService {
   /// so this only adds capability, in line with the explicit "void async"
   /// production-readiness audit category.
   Future<void> listen({
-    required Function(String) onResult,
+    required Function(List<String>) onResult,
     required VoidCallback onDone,
   });
 }
@@ -212,7 +212,7 @@ class SpeechServiceImpl implements SpeechService {
 
   @override
   Future<void> listen({
-    required Function(String) onResult,
+    required Function(List<String>) onResult,
     required VoidCallback onDone,
   }) async {
     _onDoneCallback = onDone;
@@ -224,7 +224,11 @@ class SpeechServiceImpl implements SpeechService {
     try {
       await _stt.listen(
         onResult: (result) {
-          onResult(result.recognizedWords);
+          final Set<String> candidates = {result.recognizedWords};
+          for (var alternate in result.alternates) {
+            candidates.add(alternate.recognizedWords);
+          }
+          onResult(candidates.toList());
         },
         listenFor: const Duration(seconds: 45),
         pauseFor: const Duration(seconds: 15), // Highly patient for learners
