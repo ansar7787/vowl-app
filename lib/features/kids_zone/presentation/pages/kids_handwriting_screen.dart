@@ -46,7 +46,7 @@ class _KidsHandwritingScreenState extends State<KidsHandwritingScreen> {
         CustomSnackBar.show(
           context: context,
           message: 'Failed to download handwriting model. Please check your connection.',
-          type: SnackBarType.error,
+          type: CustomSnackBarType.error,
         );
       }
     }
@@ -55,23 +55,12 @@ class _KidsHandwritingScreenState extends State<KidsHandwritingScreen> {
   Future<void> _checkHandwriting() async {
     if (_currentInk == null || _currentInk!.strokes.isEmpty) return;
 
-    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
-
-    if (!isPremium && _attemptsCount >= 5) {
-      MlMonetizationController.attemptFeature(
-        context,
-        featureIcon: Icons.edit_rounded,
-        featureTitle: context.tr('kids_zone.handwriting_title', fallback: 'Write & Learn'),
-        featureSubtitle: context.tr('kids_zone.handwriting_desc', fallback: 'Practice your handwriting!'),
-        adButtonLabel: context.tr('kids_zone.handwriting_ad', fallback: 'Watch Ad to Continue'),
-        onSuccess: () {
-          _attemptsCount = 0;
-          _performCheck();
-        },
-      );
-    } else {
-      _performCheck();
-    }
+    // KIDS ZONE EXEMPTION:
+    // Kids games should NEVER show third-party ads (like Google AdMob or rewarded video gates)
+    // to comply with COPPA (Children's Online Privacy Protection Act) and Play Store Family policies.
+    // Handwriting practice is 100% free and unlimited for all users.
+    
+    _performCheck();
   }
 
   Future<void> _performCheck() async {
