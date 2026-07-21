@@ -327,6 +327,20 @@ class KidsCategoryGrid extends StatelessWidget {
             const Color(0xFF8B5CF6),
             Icons.checkroom_rounded,
           ),
+          _buildCategoryCard(
+            context,
+            () => context.push(
+              '/kids/map/handwriting',
+              extra: {
+                'title': 'Handwriting',
+                'primaryColor': const Color(0xFFF43F5E),
+              },
+            ),
+            'Handwriting',
+            'Write & Learn',
+            const Color(0xFFF43F5E),
+            Icons.edit_rounded,
+          ),
         ]),
       ),
     );

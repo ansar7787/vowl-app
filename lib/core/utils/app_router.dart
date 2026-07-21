@@ -78,6 +78,7 @@ class AppRouter {
   static const String kidsTransportRoute = '/kids-transport';
   static const String kidsBodyPartsRoute = '/kids-body-parts';
   static const String kidsClothingRoute = '/kids-clothing';
+  static const String kidsHandwritingRoute = '/kids-handwriting';
   static const String kidsBuddyBoutiqueRoute = '/kids-zone/boutique';
   static const String kidsAdminRoute = '/kids-admin';
   static const String kidsRoomRoute = '/kids-room';

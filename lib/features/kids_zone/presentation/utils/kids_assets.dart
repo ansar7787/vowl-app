@@ -24,6 +24,7 @@ class KidsAssets {
     'transport': ['🚀', '🚁', '🚢', '🛸'],
     'body_parts': ['👀', '👂', '👃', '💪'],
     'clothing': ['👕', '👖', '👟', '🎩'],
+    'handwriting': ['✍️', '✏️', '📝', '✒️'],
   };
 
   static const Map<String, String> accessoryMap = {

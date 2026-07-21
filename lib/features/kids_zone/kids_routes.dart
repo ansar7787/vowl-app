@@ -92,6 +92,8 @@ class KidsRoutes {
         return 'Body Parts';
       case 'clothing':
         return 'Clothing';
+      case 'handwriting':
+        return 'Handwriting';
       default:
         return 'Kids Game';
     }
@@ -145,6 +147,8 @@ class KidsRoutes {
         return const Color(0xFFF43F5E);
       case 'clothing':
         return const Color(0xFF8B5CF6);
+      case 'handwriting':
+        return const Color(0xFFF43F5E); // Rose
       default:
         return Colors.blue;
     }
