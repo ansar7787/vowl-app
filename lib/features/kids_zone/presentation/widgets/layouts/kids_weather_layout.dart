@@ -6,8 +6,6 @@ import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 
 /// Sky Theme for Weather Game
-/// Space Complexity: O(1)
-/// Time Complexity: O(N) where N is the number of options (max 4)
 class KidsWeatherLayout extends StatelessWidget {
   final int level;
   final String title;
@@ -33,28 +31,25 @@ class KidsWeatherLayout extends StatelessWidget {
 
         return Column(
           children: [
-            SizedBox(height: 120.h),
-            // The Artist Easel
-            Expanded(flex: 5, child: Center(child: _buildEasel(quest))),
-            // The Squeezed Paint Tubes
+            SizedBox(height: 60.h),
+            // The Sky Billboard
+            Expanded(flex: 6, child: Center(child: _buildSkyBillboard(quest))),
+            // The Weather Clouds (Options)
             Flexible(
-              flex: 5,
+              flex: 4,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                child: Wrap(
+                  alignment: WrapAlignment.center,
+                  spacing: 16.w,
+                  runSpacing: 16.h,
                   children: List.generate(quest.options?.length ?? 0, (index) {
                     final option = quest.options![index];
-                    return Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 6.w),
-                        child: _buildWeatherCloud(
-                          context,
-                          state,
-                          option,
-                          quest.correctAnswer == option,
-                        ),
-                      ),
+                    return _buildWeatherCloud(
+                      context,
+                      state,
+                      option,
+                      quest.correctAnswer == option,
                     );
                   }),
                 ),
@@ -66,93 +61,87 @@ class KidsWeatherLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildEasel(dynamic quest) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        // Wooden back legs of the easel
-        Positioned(
-          top: -20.h,
-          child: Container(
-            width: 140.w,
-            height: 250.h,
-            decoration: BoxDecoration(
-              border: Border(
-                left: BorderSide(color: const Color(0xFF92400E), width: 12.w),
-                right: BorderSide(color: const Color(0xFF92400E), width: 12.w),
-              ),
+  Widget _buildSkyBillboard(dynamic quest) {
+    return Container(
+      width: 320.w,
+      padding: EdgeInsets.all(24.r),
+      decoration: BoxDecoration(
+        color: const Color(0xFFF0F9FF), // Light sky blue
+        borderRadius: BorderRadius.circular(32.r),
+        border: Border.all(color: const Color(0xFFBAE6FD), width: 4),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFF38BDF8).withValues(alpha: 0.2),
+            blurRadius: 15,
+            offset: const Offset(0, 8),
+          ),
+        ],
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (quest.emoji != null)
+            Text(quest.emoji!, style: TextStyle(fontSize: 64.sp)),
+          SizedBox(height: 8.h),
+          Text(
+            quest.question ?? "?",
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 40.sp,
+              fontWeight: FontWeight.w900,
+              color: const Color(0xFF0369A1), // Dark sky blue
             ),
+            textAlign: TextAlign.center,
           ),
-        ),
-        // The Canvas
-        Container(
-          width: 280.w,
-          height: 200.h,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(4.r),
-            border: Border.all(color: const Color(0xFFD4D4D8), width: 2),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.1),
-                blurRadius: 10,
-                offset: const Offset(0, 8),
+          if (quest.phonetic != null) ...[
+            SizedBox(height: 4.h),
+            Text(
+              quest.phonetic!,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w600,
+                color: const Color(0xFF7DD3FC),
               ),
-            ],
-          ),
-          child: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (quest.emoji != null)
-                  Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
-                Text(
-                  quest.question ?? "?",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 48.sp,
-                    fontWeight: FontWeight.w900,
-                    color: const Color(0xFF3F3F46),
-                  ),
+              textAlign: TextAlign.center,
+            ),
+          ],
+          if (quest.funFact != null) ...[
+            SizedBox(height: 16.h),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(16.r),
+              ),
+              child: Text(
+                "💡 ${quest.funFact!}",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.bold,
+                  color: const Color(0xFF0284C7),
                 ),
-                if (quest.funFact != null) ...[
-                  SizedBox(height: 8.h),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.w),
-                    child: Text(
-                      quest.funFact!,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xFF71717A), // Gray fact text
-                      ),
-                      textAlign: TextAlign.center,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                ],
-              ],
+                textAlign: TextAlign.center,
+              ),
             ),
-          ),
-        ),
-        // Cloud base at the bottom of the sky
-        Positioned(
-          bottom: 0,
-          child: Container(
-            width: 300.w,
-            height: 20.h,
-            decoration: BoxDecoration(
-              color: const Color(0xFFB45309),
-              borderRadius: BorderRadius.circular(4.r),
-              boxShadow: const [
-                BoxShadow(color: Colors.black26, offset: Offset(0, 4)),
-              ],
+          ],
+          if (quest.wordExample != null) ...[
+            SizedBox(height: 12.h),
+            Text(
+              '"${quest.wordExample!}"',
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 15.sp,
+                fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.w500,
+                color: const Color(0xFF0C4A6E),
+              ),
+              textAlign: TextAlign.center,
             ),
-          ),
-        ),
-      ],
+          ],
+        ],
+      ),
     );
   }
 
@@ -162,89 +151,40 @@ class KidsWeatherLayout extends StatelessWidget {
     String text,
     bool isCorrect,
   ) {
-    // Determine color based on text if possible, otherwise fallback to primary
-    Color tubeColor = _getColorFromName(text, primaryColor);
-
     return ScaleButton(
       onTap: () {
         context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
       },
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          // Paint Splatter at the top (simulating squeezed paint)
-          Icon(Icons.water_drop_rounded, color: tubeColor, size: 28.r),
-          // The Tube
-          Container(
-            height: 90.h,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(8.r),
-                topRight: Radius.circular(8.r),
-                bottomLeft: Radius.circular(20.r),
-                bottomRight: Radius.circular(20.r),
-              ),
-              border: Border.all(color: const Color(0xFFE4E4E7), width: 2),
-              boxShadow: [
-                BoxShadow(color: Colors.black12, offset: Offset(0, 6.h)),
-              ],
+      child: Container(
+        width: 140.w,
+        padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 12.w),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(40.r), // Cloud-like pill shape
+          border: Border.all(color: const Color(0xFFE0F2FE), width: 3),
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0xFF7DD3FC).withValues(alpha: 0.3),
+              blurRadius: 8,
+              offset: const Offset(0, 4),
             ),
-            child: Column(
-              children: [
-                // Tube label color strip
-                Container(
-                  height: 30.h,
-                  width: double.infinity,
-                  color: tubeColor,
-                ),
-                Expanded(
-                  child: Center(
-                    child: Text(
-                      text,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w900,
-                        color: const Color(0xFF3F3F46),
-                      ),
-                      textAlign: TextAlign.center,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                ),
-              ],
+          ],
+        ),
+        child: Center(
+          child: Text(
+            text,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w900,
+              color: const Color(0xFF0369A1),
             ),
+            textAlign: TextAlign.center,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
-          // Tube Cap
-          Container(
-            height: 12.h,
-            width: 30.w,
-            decoration: BoxDecoration(
-              color: const Color(0xFF52525B), // Grey cap
-              borderRadius: BorderRadius.vertical(bottom: Radius.circular(4.r)),
-            ),
-          ),
-        ],
+        ),
       ),
     );
-  }
-
-  Color _getColorFromName(String name, Color fallback) {
-    final lower = name.toLowerCase();
-    if (lower.contains('red')) return Colors.red;
-    if (lower.contains('blue')) return Colors.blue;
-    if (lower.contains('green')) return Colors.green;
-    if (lower.contains('yellow')) return Colors.yellow;
-    if (lower.contains('orange')) return Colors.orange;
-    if (lower.contains('purple')) return Colors.purple;
-    if (lower.contains('pink')) return Colors.pink;
-    if (lower.contains('black')) return Colors.black;
-    if (lower.contains('white')) {
-      return const Color(0xFFE4E4E7); // Off-white for visibility
-    }
-    if (lower.contains('brown')) return Colors.brown;
-    return fallback;
   }
 }
