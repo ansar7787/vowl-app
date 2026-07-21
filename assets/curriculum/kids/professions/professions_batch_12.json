@@ -7,35 +7,13 @@
                 "gameType": "professions",
                 "level": 111,
                 "instruction": "Identify the professions!",
-                "question": "Chef",
-                "correctAnswer": "Chef",
-                "hint": "Look closely! What is this?",
-                "emoji": "👨‍🍳",
-                "explanation": "Great job, it's Chef!",
-                "funFact": "Chefs wear a tall white hat called a toque!",
-                "wordExample": "The chef cooked a delicious pizza.",
-                "phonetic": "/ʃef/"
-            },
-            {
-                "id": "KIDS_PROFESSIONS_L111_Q2",
-                "gameType": "professions",
-                "level": 111,
-                "instruction": "Identify the professions!",
-                "question": "Astronaut",
-                "correctAnswer": "Astronaut",
-                "hint": "Look closely! What is this?",
-                "emoji": "👨‍🚀",
-                "explanation": "Great job, it's Astronaut!",
-                "funFact": "Astronauts float in space because there is very little gravity!",
-                "wordExample": "The astronaut flew to the moon in a rocket.",
-                "phonetic": "/ˈæs.trə.nɔːt/"
-            },
-            {
-                "id": "KIDS_PROFESSIONS_L111_Q3",
-                "gameType": "professions",
-                "level": 111,
-                "instruction": "Identify the professions!",
                 "question": "Doctor",
+                "options": [
+                    "Farmer",
+                    "Teacher",
+                    "Doctor",
+                    "Astronaut"
+                ],
                 "correctAnswer": "Doctor",
                 "hint": "Look closely! What is this?",
                 "emoji": "👨‍⚕️",
@@ -43,6 +21,46 @@
                 "funFact": "Doctors use a stethoscope to listen to your heartbeat!",
                 "wordExample": "The doctor helps you when you are sick.",
                 "phonetic": "/ˈdɒk.tər/"
+            },
+            {
+                "id": "KIDS_PROFESSIONS_L111_Q2",
+                "gameType": "professions",
+                "level": 111,
+                "instruction": "Identify the professions!",
+                "question": "Teacher",
+                "options": [
+                    "Firefighter",
+                    "Astronaut",
+                    "Chef",
+                    "Teacher"
+                ],
+                "correctAnswer": "Teacher",
+                "hint": "Look closely! What is this?",
+                "emoji": "👩‍🏫",
+                "explanation": "Great job, it's Teacher!",
+                "funFact": "Teachers help you learn new things every day at school!",
+                "wordExample": "My teacher reads books to the class.",
+                "phonetic": "/ˈtiː.tʃər/"
+            },
+            {
+                "id": "KIDS_PROFESSIONS_L111_Q3",
+                "gameType": "professions",
+                "level": 111,
+                "instruction": "Identify the professions!",
+                "question": "Police",
+                "options": [
+                    "Pilot",
+                    "Chef",
+                    "Doctor",
+                    "Police"
+                ],
+                "correctAnswer": "Police",
+                "hint": "Look closely! What is this?",
+                "emoji": "👮",
+                "explanation": "Great job, it's Police!",
+                "funFact": "Police officers help keep the neighborhood safe!",
+                "wordExample": "The police officer helped us cross the street.",
+                "phonetic": "/pəˈliːs/"
             }
         ]
     },
@@ -54,35 +72,13 @@
                 "gameType": "professions",
                 "level": 112,
                 "instruction": "Identify the professions!",
-                "question": "Astronaut",
-                "correctAnswer": "Astronaut",
-                "hint": "Look closely! What is this?",
-                "emoji": "👨‍🚀",
-                "explanation": "Great job, it's Astronaut!",
-                "funFact": "Astronauts float in space because there is very little gravity!",
-                "wordExample": "The astronaut flew to the moon in a rocket.",
-                "phonetic": "/ˈæs.trə.nɔːt/"
-            },
-            {
-                "id": "KIDS_PROFESSIONS_L112_Q2",
-                "gameType": "professions",
-                "level": 112,
-                "instruction": "Identify the professions!",
-                "question": "Doctor",
-                "correctAnswer": "Doctor",
-                "hint": "Look closely! What is this?",
-                "emoji": "👨‍⚕️",
-                "explanation": "Great job, it's Doctor!",
-                "funFact": "Doctors use a stethoscope to listen to your heartbeat!",
-                "wordExample": "The doctor helps you when you are sick.",
-                "phonetic": "/ˈdɒk.tər/"
-            },
-            {
-                "id": "KIDS_PROFESSIONS_L112_Q3",
-                "gameType": "professions",
-                "level": 112,
-                "instruction": "Identify the professions!",
                 "question": "Teacher",
+                "options": [
+                    "Teacher",
+                    "Police",
+                    "Astronaut",
+                    "Firefighter"
+                ],
                 "correctAnswer": "Teacher",
                 "hint": "Look closely! What is this?",
                 "emoji": "👩‍🏫",
@@ -90,6 +86,46 @@
                 "funFact": "Teachers help you learn new things every day at school!",
                 "wordExample": "My teacher reads books to the class.",
                 "phonetic": "/ˈtiː.tʃər/"
+            },
+            {
+                "id": "KIDS_PROFESSIONS_L112_Q2",
+                "gameType": "professions",
+                "level": 112,
+                "instruction": "Identify the professions!",
+                "question": "Police",
+                "options": [
+                    "Doctor",
+                    "Chef",
+                    "Police",
+                    "Pilot"
+                ],
+                "correctAnswer": "Police",
+                "hint": "Look closely! What is this?",
+                "emoji": "👮",
+                "explanation": "Great job, it's Police!",
+                "funFact": "Police officers help keep the neighborhood safe!",
+                "wordExample": "The police officer helped us cross the street.",
+                "phonetic": "/pəˈliːs/"
+            },
+            {
+                "id": "KIDS_PROFESSIONS_L112_Q3",
+                "gameType": "professions",
+                "level": 112,
+                "instruction": "Identify the professions!",
+                "question": "Firefighter",
+                "options": [
+                    "Teacher",
+                    "Astronaut",
+                    "Doctor",
+                    "Firefighter"
+                ],
+                "correctAnswer": "Firefighter",
+                "hint": "Look closely! What is this?",
+                "emoji": "👨‍🚒",
+                "explanation": "Great job, it's Firefighter!",
+                "funFact": "Firefighters wear special gear that protects them from extreme heat.",
+                "wordExample": "The firefighter drove the big red truck.",
+                "phonetic": "/ˈfaɪərˌfaɪ.tər/"
             }
         ]
     },
@@ -101,35 +137,13 @@
                 "gameType": "professions",
                 "level": 113,
                 "instruction": "Identify the professions!",
-                "question": "Doctor",
-                "correctAnswer": "Doctor",
-                "hint": "Look closely! What is this?",
-                "emoji": "👨‍⚕️",
-                "explanation": "Great job, it's Doctor!",
-                "funFact": "Doctors use a stethoscope to listen to your heartbeat!",
-                "wordExample": "The doctor helps you when you are sick.",
-                "phonetic": "/ˈdɒk.tər/"
-            },
-            {
-                "id": "KIDS_PROFESSIONS_L113_Q2",
-                "gameType": "professions",
-                "level": 113,
-                "instruction": "Identify the professions!",
-                "question": "Teacher",
-                "correctAnswer": "Teacher",
-                "hint": "Look closely! What is this?",
-                "emoji": "👩‍🏫",
-                "explanation": "Great job, it's Teacher!",
-                "funFact": "Teachers help you learn new things every day at school!",
-                "wordExample": "My teacher reads books to the class.",
-                "phonetic": "/ˈtiː.tʃər/"
-            },
-            {
-                "id": "KIDS_PROFESSIONS_L113_Q3",
-                "gameType": "professions",
-                "level": 113,
-                "instruction": "Identify the professions!",
                 "question": "Police",
+                "options": [
+                    "Firefighter",
+                    "Police",
+                    "Teacher",
+                    "Chef"
+                ],
                 "correctAnswer": "Police",
                 "hint": "Look closely! What is this?",
                 "emoji": "👮",
@@ -137,6 +151,46 @@
                 "funFact": "Police officers help keep the neighborhood safe!",
                 "wordExample": "The police officer helped us cross the street.",
                 "phonetic": "/pəˈliːs/"
+            },
+            {
+                "id": "KIDS_PROFESSIONS_L113_Q2",
+                "gameType": "professions",
+                "level": 113,
+                "instruction": "Identify the professions!",
+                "question": "Firefighter",
+                "options": [
+                    "Firefighter",
+                    "Police",
+                    "Chef",
+                    "Astronaut"
+                ],
+                "correctAnswer": "Firefighter",
+                "hint": "Look closely! What is this?",
+                "emoji": "👨‍🚒",
+                "explanation": "Great job, it's Firefighter!",
+                "funFact": "Firefighters wear special gear that protects them from extreme heat.",
+                "wordExample": "The firefighter drove the big red truck.",
+                "phonetic": "/ˈfaɪərˌfaɪ.tər/"
+            },
+            {
+                "id": "KIDS_PROFESSIONS_L113_Q3",
+                "gameType": "professions",
+                "level": 113,
+                "instruction": "Identify the professions!",
+                "question": "Chef",
+                "options": [
+                    "Firefighter",
+                    "Chef",
+                    "Police",
+                    "Doctor"
+                ],
+                "correctAnswer": "Chef",
+                "hint": "Look closely! What is this?",
+                "emoji": "👨‍🍳",
+                "explanation": "Great job, it's Chef!",
+                "funFact": "Chefs wear a tall white hat called a toque!",
+                "wordExample": "The chef cooked a delicious pizza.",
+                "phonetic": "/ʃef/"
             }
         ]
     },
@@ -148,35 +202,13 @@
                 "gameType": "professions",
                 "level": 114,
                 "instruction": "Identify the professions!",
-                "question": "Teacher",
-                "correctAnswer": "Teacher",
-                "hint": "Look closely! What is this?",
-                "emoji": "👩‍🏫",
-                "explanation": "Great job, it's Teacher!",
-                "funFact": "Teachers help you learn new things every day at school!",
-                "wordExample": "My teacher reads books to the class.",
-                "phonetic": "/ˈtiː.tʃər/"
-            },
-            {
-                "id": "KIDS_PROFESSIONS_L114_Q2",
-                "gameType": "professions",
-                "level": 114,
-                "instruction": "Identify the professions!",
-                "question": "Police",
-                "correctAnswer": "Police",
-                "hint": "Look closely! What is this?",
-                "emoji": "👮",
-                "explanation": "Great job, it's Police!",
-                "funFact": "Police officers help keep the neighborhood safe!",
-                "wordExample": "The police officer helped us cross the street.",
-                "phonetic": "/pəˈliːs/"
-            },
-            {
-                "id": "KIDS_PROFESSIONS_L114_Q3",
-                "gameType": "professions",
-                "level": 114,
-                "instruction": "Identify the professions!",
                 "question": "Firefighter",
+                "options": [
+                    "Firefighter",
+                    "Chef",
+                    "Farmer",
+                    "Doctor"
+                ],
                 "correctAnswer": "Firefighter",
                 "hint": "Look closely! What is this?",
                 "emoji": "👨‍🚒",
@@ -184,6 +216,46 @@
                 "funFact": "Firefighters wear special gear that protects them from extreme heat.",
                 "wordExample": "The firefighter drove the big red truck.",
                 "phonetic": "/ˈfaɪərˌfaɪ.tər/"
+            },
+            {
+                "id": "KIDS_PROFESSIONS_L114_Q2",
+                "gameType": "professions",
+                "level": 114,
+                "instruction": "Identify the professions!",
+                "question": "Chef",
+                "options": [
+                    "Chef",
+                    "Firefighter",
+                    "Teacher",
+                    "Farmer"
+                ],
+                "correctAnswer": "Chef",
+                "hint": "Look closely! What is this?",
+                "emoji": "👨‍🍳",
+                "explanation": "Great job, it's Chef!",
+                "funFact": "Chefs wear a tall white hat called a toque!",
+                "wordExample": "The chef cooked a delicious pizza.",
+                "phonetic": "/ʃef/"
+            },
+            {
+                "id": "KIDS_PROFESSIONS_L114_Q3",
+                "gameType": "professions",
+                "level": 114,
+                "instruction": "Identify the professions!",
+                "question": "Astronaut",
+                "options": [
+                    "Astronaut",
+                    "Teacher",
+                    "Farmer",
+                    "Pilot"
+                ],
+                "correctAnswer": "Astronaut",
+                "hint": "Look closely! What is this?",
+                "emoji": "👨‍🚀",
+                "explanation": "Great job, it's Astronaut!",
+                "funFact": "Astronauts float in space because there is very little gravity!",
+                "wordExample": "The astronaut flew to the moon in a rocket.",
+                "phonetic": "/ˈæs.trə.nɔːt/"
             }
         ]
     },
@@ -195,35 +267,13 @@
                 "gameType": "professions",
                 "level": 115,
                 "instruction": "Identify the professions!",
-                "question": "Police",
-                "correctAnswer": "Police",
-                "hint": "Look closely! What is this?",
-                "emoji": "👮",
-                "explanation": "Great job, it's Police!",
-                "funFact": "Police officers help keep the neighborhood safe!",
-                "wordExample": "The police officer helped us cross the street.",
-                "phonetic": "/pəˈliːs/"
-            },
-            {
-                "id": "KIDS_PROFESSIONS_L115_Q2",
-                "gameType": "professions",
-                "level": 115,
-                "instruction": "Identify the professions!",
-                "question": "Firefighter",
-                "correctAnswer": "Firefighter",
-                "hint": "Look closely! What is this?",
-                "emoji": "👨‍🚒",
-                "explanation": "Great job, it's Firefighter!",
-                "funFact": "Firefighters wear special gear that protects them from extreme heat.",
-                "wordExample": "The firefighter drove the big red truck.",
-                "phonetic": "/ˈfaɪərˌfaɪ.tər/"
-            },
-            {
-                "id": "KIDS_PROFESSIONS_L115_Q3",
-                "gameType": "professions",
-                "level": 115,
-                "instruction": "Identify the professions!",
                 "question": "Chef",
+                "options": [
+                    "Pilot",
+                    "Chef",
+                    "Doctor",
+                    "Astronaut"
+                ],
                 "correctAnswer": "Chef",
                 "hint": "Look closely! What is this?",
                 "emoji": "👨‍🍳",
@@ -231,6 +281,46 @@
                 "funFact": "Chefs wear a tall white hat called a toque!",
                 "wordExample": "The chef cooked a delicious pizza.",
                 "phonetic": "/ʃef/"
+            },
+            {
+                "id": "KIDS_PROFESSIONS_L115_Q2",
+                "gameType": "professions",
+                "level": 115,
+                "instruction": "Identify the professions!",
+                "question": "Astronaut",
+                "options": [
+                    "Astronaut",
+                    "Teacher",
+                    "Chef",
+                    "Doctor"
+                ],
+                "correctAnswer": "Astronaut",
+                "hint": "Look closely! What is this?",
+                "emoji": "👨‍🚀",
+                "explanation": "Great job, it's Astronaut!",
+                "funFact": "Astronauts float in space because there is very little gravity!",
+                "wordExample": "The astronaut flew to the moon in a rocket.",
+                "phonetic": "/ˈæs.trə.nɔːt/"
+            },
+            {
+                "id": "KIDS_PROFESSIONS_L115_Q3",
+                "gameType": "professions",
+                "level": 115,
+                "instruction": "Identify the professions!",
+                "question": "Farmer",
+                "options": [
+                    "Firefighter",
+                    "Farmer",
+                    "Astronaut",
+                    "Police"
+                ],
+                "correctAnswer": "Farmer",
+                "hint": "Look closely! What is this?",
+                "emoji": "👨‍🌾",
+                "explanation": "Great job, it's Farmer!",
+                "funFact": "Farmers grow the food that we eat every day!",
+                "wordExample": "The farmer drives a big green tractor.",
+                "phonetic": "/ˈfɑːr.mər/"
             }
         ]
     },
@@ -242,35 +332,13 @@
                 "gameType": "professions",
                 "level": 116,
                 "instruction": "Identify the professions!",
-                "question": "Firefighter",
-                "correctAnswer": "Firefighter",
-                "hint": "Look closely! What is this?",
-                "emoji": "👨‍🚒",
-                "explanation": "Great job, it's Firefighter!",
-                "funFact": "Firefighters wear special gear that protects them from extreme heat.",
-                "wordExample": "The firefighter drove the big red truck.",
-                "phonetic": "/ˈfaɪərˌfaɪ.tər/"
-            },
-            {
-                "id": "KIDS_PROFESSIONS_L116_Q2",
-                "gameType": "professions",
-                "level": 116,
-                "instruction": "Identify the professions!",
-                "question": "Chef",
-                "correctAnswer": "Chef",
-                "hint": "Look closely! What is this?",
-                "emoji": "👨‍🍳",
-                "explanation": "Great job, it's Chef!",
-                "funFact": "Chefs wear a tall white hat called a toque!",
-                "wordExample": "The chef cooked a delicious pizza.",
-                "phonetic": "/ʃef/"
-            },
-            {
-                "id": "KIDS_PROFESSIONS_L116_Q3",
-                "gameType": "professions",
-                "level": 116,
-                "instruction": "Identify the professions!",
                 "question": "Astronaut",
+                "options": [
+                    "Police",
+                    "Astronaut",
+                    "Pilot",
+                    "Chef"
+                ],
                 "correctAnswer": "Astronaut",
                 "hint": "Look closely! What is this?",
                 "emoji": "👨‍🚀",
@@ -278,6 +346,46 @@
                 "funFact": "Astronauts float in space because there is very little gravity!",
                 "wordExample": "The astronaut flew to the moon in a rocket.",
                 "phonetic": "/ˈæs.trə.nɔːt/"
+            },
+            {
+                "id": "KIDS_PROFESSIONS_L116_Q2",
+                "gameType": "professions",
+                "level": 116,
+                "instruction": "Identify the professions!",
+                "question": "Farmer",
+                "options": [
+                    "Astronaut",
+                    "Chef",
+                    "Teacher",
+                    "Farmer"
+                ],
+                "correctAnswer": "Farmer",
+                "hint": "Look closely! What is this?",
+                "emoji": "👨‍🌾",
+                "explanation": "Great job, it's Farmer!",
+                "funFact": "Farmers grow the food that we eat every day!",
+                "wordExample": "The farmer drives a big green tractor.",
+                "phonetic": "/ˈfɑːr.mər/"
+            },
+            {
+                "id": "KIDS_PROFESSIONS_L116_Q3",
+                "gameType": "professions",
+                "level": 116,
+                "instruction": "Identify the professions!",
+                "question": "Pilot",
+                "options": [
+                    "Police",
+                    "Astronaut",
+                    "Pilot",
+                    "Doctor"
+                ],
+                "correctAnswer": "Pilot",
+                "hint": "Look closely! What is this?",
+                "emoji": "👨‍✈️",
+                "explanation": "Great job, it's Pilot!",
+                "funFact": "Pilots fly airplanes high up in the sky above the clouds!",
+                "wordExample": "The pilot landed the airplane smoothly.",
+                "phonetic": "/ˈpaɪ.lət/"
             }
         ]
     },
@@ -289,28 +397,40 @@
                 "gameType": "professions",
                 "level": 117,
                 "instruction": "Identify the professions!",
-                "question": "Chef",
-                "correctAnswer": "Chef",
+                "question": "Farmer",
+                "options": [
+                    "Doctor",
+                    "Firefighter",
+                    "Farmer",
+                    "Police"
+                ],
+                "correctAnswer": "Farmer",
                 "hint": "Look closely! What is this?",
-                "emoji": "👨‍🍳",
-                "explanation": "Great job, it's Chef!",
-                "funFact": "Chefs wear a tall white hat called a toque!",
-                "wordExample": "The chef cooked a delicious pizza.",
-                "phonetic": "/ʃef/"
+                "emoji": "👨‍🌾",
+                "explanation": "Great job, it's Farmer!",
+                "funFact": "Farmers grow the food that we eat every day!",
+                "wordExample": "The farmer drives a big green tractor.",
+                "phonetic": "/ˈfɑːr.mər/"
             },
             {
                 "id": "KIDS_PROFESSIONS_L117_Q2",
                 "gameType": "professions",
                 "level": 117,
                 "instruction": "Identify the professions!",
-                "question": "Astronaut",
-                "correctAnswer": "Astronaut",
+                "question": "Pilot",
+                "options": [
+                    "Teacher",
+                    "Astronaut",
+                    "Firefighter",
+                    "Pilot"
+                ],
+                "correctAnswer": "Pilot",
                 "hint": "Look closely! What is this?",
-                "emoji": "👨‍🚀",
-                "explanation": "Great job, it's Astronaut!",
-                "funFact": "Astronauts float in space because there is very little gravity!",
-                "wordExample": "The astronaut flew to the moon in a rocket.",
-                "phonetic": "/ˈæs.trə.nɔːt/"
+                "emoji": "👨‍✈️",
+                "explanation": "Great job, it's Pilot!",
+                "funFact": "Pilots fly airplanes high up in the sky above the clouds!",
+                "wordExample": "The pilot landed the airplane smoothly.",
+                "phonetic": "/ˈpaɪ.lət/"
             },
             {
                 "id": "KIDS_PROFESSIONS_L117_Q3",
@@ -318,6 +438,12 @@
                 "level": 117,
                 "instruction": "Identify the professions!",
                 "question": "Doctor",
+                "options": [
+                    "Pilot",
+                    "Astronaut",
+                    "Police",
+                    "Doctor"
+                ],
                 "correctAnswer": "Doctor",
                 "hint": "Look closely! What is this?",
                 "emoji": "👨‍⚕️",
@@ -336,14 +462,20 @@
                 "gameType": "professions",
                 "level": 118,
                 "instruction": "Identify the professions!",
-                "question": "Astronaut",
-                "correctAnswer": "Astronaut",
+                "question": "Pilot",
+                "options": [
+                    "Pilot",
+                    "Firefighter",
+                    "Chef",
+                    "Teacher"
+                ],
+                "correctAnswer": "Pilot",
                 "hint": "Look closely! What is this?",
-                "emoji": "👨‍🚀",
-                "explanation": "Great job, it's Astronaut!",
-                "funFact": "Astronauts float in space because there is very little gravity!",
-                "wordExample": "The astronaut flew to the moon in a rocket.",
-                "phonetic": "/ˈæs.trə.nɔːt/"
+                "emoji": "👨‍✈️",
+                "explanation": "Great job, it's Pilot!",
+                "funFact": "Pilots fly airplanes high up in the sky above the clouds!",
+                "wordExample": "The pilot landed the airplane smoothly.",
+                "phonetic": "/ˈpaɪ.lət/"
             },
             {
                 "id": "KIDS_PROFESSIONS_L118_Q2",
@@ -351,6 +483,12 @@
                 "level": 118,
                 "instruction": "Identify the professions!",
                 "question": "Doctor",
+                "options": [
+                    "Police",
+                    "Astronaut",
+                    "Chef",
+                    "Doctor"
+                ],
                 "correctAnswer": "Doctor",
                 "hint": "Look closely! What is this?",
                 "emoji": "👨‍⚕️",
@@ -365,6 +503,12 @@
                 "level": 118,
                 "instruction": "Identify the professions!",
                 "question": "Teacher",
+                "options": [
+                    "Teacher",
+                    "Chef",
+                    "Farmer",
+                    "Pilot"
+                ],
                 "correctAnswer": "Teacher",
                 "hint": "Look closely! What is this?",
                 "emoji": "👩‍🏫",
@@ -384,6 +528,12 @@
                 "level": 119,
                 "instruction": "Identify the professions!",
                 "question": "Doctor",
+                "options": [
+                    "Farmer",
+                    "Doctor",
+                    "Pilot",
+                    "Teacher"
+                ],
                 "correctAnswer": "Doctor",
                 "hint": "Look closely! What is this?",
                 "emoji": "👨‍⚕️",
@@ -398,6 +548,12 @@
                 "level": 119,
                 "instruction": "Identify the professions!",
                 "question": "Teacher",
+                "options": [
+                    "Teacher",
+                    "Firefighter",
+                    "Chef",
+                    "Doctor"
+                ],
                 "correctAnswer": "Teacher",
                 "hint": "Look closely! What is this?",
                 "emoji": "👩‍🏫",
@@ -412,6 +568,12 @@
                 "level": 119,
                 "instruction": "Identify the professions!",
                 "question": "Police",
+                "options": [
+                    "Police",
+                    "Pilot",
+                    "Teacher",
+                    "Farmer"
+                ],
                 "correctAnswer": "Police",
                 "hint": "Look closely! What is this?",
                 "emoji": "👮",
@@ -431,6 +593,12 @@
                 "level": 120,
                 "instruction": "Identify the professions!",
                 "question": "Teacher",
+                "options": [
+                    "Chef",
+                    "Police",
+                    "Astronaut",
+                    "Teacher"
+                ],
                 "correctAnswer": "Teacher",
                 "hint": "Look closely! What is this?",
                 "emoji": "👩‍🏫",
@@ -445,6 +613,12 @@
                 "level": 120,
                 "instruction": "Identify the professions!",
                 "question": "Police",
+                "options": [
+                    "Farmer",
+                    "Pilot",
+                    "Police",
+                    "Teacher"
+                ],
                 "correctAnswer": "Police",
                 "hint": "Look closely! What is this?",
                 "emoji": "👮",
@@ -459,6 +633,12 @@
                 "level": 120,
                 "instruction": "Identify the professions!",
                 "question": "Firefighter",
+                "options": [
+                    "Doctor",
+                    "Chef",
+                    "Firefighter",
+                    "Pilot"
+                ],
                 "correctAnswer": "Firefighter",
                 "hint": "Look closely! What is this?",
                 "emoji": "👨‍🚒",

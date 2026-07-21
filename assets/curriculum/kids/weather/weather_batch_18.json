@@ -8,6 +8,12 @@
                 "level": 171,
                 "instruction": "Identify the weather!",
                 "question": "Windy",
+                "options": [
+                    "Snowy",
+                    "Windy",
+                    "Stormy",
+                    "Sunny"
+                ],
                 "correctAnswer": "Windy",
                 "hint": "Look closely! What is this?",
                 "emoji": "🌬️",
@@ -22,6 +28,12 @@
                 "level": 171,
                 "instruction": "Identify the weather!",
                 "question": "Stormy",
+                "options": [
+                    "Windy",
+                    "Cloudy",
+                    "Foggy",
+                    "Stormy"
+                ],
                 "correctAnswer": "Stormy",
                 "hint": "Look closely! What is this?",
                 "emoji": "🌩️",
@@ -35,14 +47,20 @@
                 "gameType": "weather",
                 "level": 171,
                 "instruction": "Identify the weather!",
-                "question": "Sunny",
-                "correctAnswer": "Sunny",
+                "question": "Foggy",
+                "options": [
+                    "Cloudy",
+                    "Rainy",
+                    "Rainbow",
+                    "Foggy"
+                ],
+                "correctAnswer": "Foggy",
                 "hint": "Look closely! What is this?",
-                "emoji": "☀️",
-                "explanation": "Great job, it's Sunny!",
-                "funFact": "The sun is a star located at the center of our solar system!",
-                "wordExample": "It is a sunny day to play outside.",
-                "phonetic": "/ˈsʌn.i/"
+                "emoji": "🌁",
+                "explanation": "Great job, it's Foggy!",
+                "funFact": "Fog is actually just a cloud that is touching the ground!",
+                "wordExample": "It is hard to see far when it is foggy.",
+                "phonetic": "/ˈfɒɡ.i/"
             }
         ]
     },
@@ -55,6 +73,12 @@
                 "level": 172,
                 "instruction": "Identify the weather!",
                 "question": "Stormy",
+                "options": [
+                    "Rainbow",
+                    "Windy",
+                    "Stormy",
+                    "Rainy"
+                ],
                 "correctAnswer": "Stormy",
                 "hint": "Look closely! What is this?",
                 "emoji": "🌩️",
@@ -68,28 +92,40 @@
                 "gameType": "weather",
                 "level": 172,
                 "instruction": "Identify the weather!",
-                "question": "Sunny",
-                "correctAnswer": "Sunny",
+                "question": "Foggy",
+                "options": [
+                    "Foggy",
+                    "Cloudy",
+                    "Rainy",
+                    "Windy"
+                ],
+                "correctAnswer": "Foggy",
                 "hint": "Look closely! What is this?",
-                "emoji": "☀️",
-                "explanation": "Great job, it's Sunny!",
-                "funFact": "The sun is a star located at the center of our solar system!",
-                "wordExample": "It is a sunny day to play outside.",
-                "phonetic": "/ˈsʌn.i/"
+                "emoji": "🌁",
+                "explanation": "Great job, it's Foggy!",
+                "funFact": "Fog is actually just a cloud that is touching the ground!",
+                "wordExample": "It is hard to see far when it is foggy.",
+                "phonetic": "/ˈfɒɡ.i/"
             },
             {
                 "id": "KIDS_WEATHER_L172_Q3",
                 "gameType": "weather",
                 "level": 172,
                 "instruction": "Identify the weather!",
-                "question": "Rainy",
-                "correctAnswer": "Rainy",
+                "question": "Rainbow",
+                "options": [
+                    "Rainbow",
+                    "Windy",
+                    "Sunny",
+                    "Foggy"
+                ],
+                "correctAnswer": "Rainbow",
                 "hint": "Look closely! What is this?",
-                "emoji": "🌧️",
-                "explanation": "Great job, it's Rainy!",
-                "funFact": "Rain is water that falls from the clouds!",
-                "wordExample": "I need my umbrella because it is rainy.",
-                "phonetic": "/ˈreɪ.ni/"
+                "emoji": "🌈",
+                "explanation": "Great job, it's Rainbow!",
+                "funFact": "Rainbows appear when sunlight shines through raindrops!",
+                "wordExample": "I saw a beautiful rainbow after the rain.",
+                "phonetic": "/ˈreɪn.boʊ/"
             }
         ]
     },
@@ -101,7 +137,53 @@
                 "gameType": "weather",
                 "level": 173,
                 "instruction": "Identify the weather!",
+                "question": "Foggy",
+                "options": [
+                    "Rainbow",
+                    "Windy",
+                    "Cloudy",
+                    "Foggy"
+                ],
+                "correctAnswer": "Foggy",
+                "hint": "Look closely! What is this?",
+                "emoji": "🌁",
+                "explanation": "Great job, it's Foggy!",
+                "funFact": "Fog is actually just a cloud that is touching the ground!",
+                "wordExample": "It is hard to see far when it is foggy.",
+                "phonetic": "/ˈfɒɡ.i/"
+            },
+            {
+                "id": "KIDS_WEATHER_L173_Q2",
+                "gameType": "weather",
+                "level": 173,
+                "instruction": "Identify the weather!",
+                "question": "Rainbow",
+                "options": [
+                    "Foggy",
+                    "Stormy",
+                    "Cloudy",
+                    "Rainbow"
+                ],
+                "correctAnswer": "Rainbow",
+                "hint": "Look closely! What is this?",
+                "emoji": "🌈",
+                "explanation": "Great job, it's Rainbow!",
+                "funFact": "Rainbows appear when sunlight shines through raindrops!",
+                "wordExample": "I saw a beautiful rainbow after the rain.",
+                "phonetic": "/ˈreɪn.boʊ/"
+            },
+            {
+                "id": "KIDS_WEATHER_L173_Q3",
+                "gameType": "weather",
+                "level": 173,
+                "instruction": "Identify the weather!",
                 "question": "Sunny",
+                "options": [
+                    "Rainbow",
+                    "Cloudy",
+                    "Sunny",
+                    "Rainy"
+                ],
                 "correctAnswer": "Sunny",
                 "hint": "Look closely! What is this?",
                 "emoji": "☀️",
@@ -109,34 +191,6 @@
                 "funFact": "The sun is a star located at the center of our solar system!",
                 "wordExample": "It is a sunny day to play outside.",
                 "phonetic": "/ˈsʌn.i/"
-            },
-            {
-                "id": "KIDS_WEATHER_L173_Q2",
-                "gameType": "weather",
-                "level": 173,
-                "instruction": "Identify the weather!",
-                "question": "Rainy",
-                "correctAnswer": "Rainy",
-                "hint": "Look closely! What is this?",
-                "emoji": "🌧️",
-                "explanation": "Great job, it's Rainy!",
-                "funFact": "Rain is water that falls from the clouds!",
-                "wordExample": "I need my umbrella because it is rainy.",
-                "phonetic": "/ˈreɪ.ni/"
-            },
-            {
-                "id": "KIDS_WEATHER_L173_Q3",
-                "gameType": "weather",
-                "level": 173,
-                "instruction": "Identify the weather!",
-                "question": "Snowy",
-                "correctAnswer": "Snowy",
-                "hint": "Look closely! What is this?",
-                "emoji": "❄️",
-                "explanation": "Great job, it's Snowy!",
-                "funFact": "Every single snowflake has a unique shape!",
-                "wordExample": "We can build a snowman on a snowy day.",
-                "phonetic": "/ˈsnoʊ.i/"
             }
         ]
     },
@@ -148,7 +202,53 @@
                 "gameType": "weather",
                 "level": 174,
                 "instruction": "Identify the weather!",
+                "question": "Rainbow",
+                "options": [
+                    "Rainbow",
+                    "Foggy",
+                    "Windy",
+                    "Snowy"
+                ],
+                "correctAnswer": "Rainbow",
+                "hint": "Look closely! What is this?",
+                "emoji": "🌈",
+                "explanation": "Great job, it's Rainbow!",
+                "funFact": "Rainbows appear when sunlight shines through raindrops!",
+                "wordExample": "I saw a beautiful rainbow after the rain.",
+                "phonetic": "/ˈreɪn.boʊ/"
+            },
+            {
+                "id": "KIDS_WEATHER_L174_Q2",
+                "gameType": "weather",
+                "level": 174,
+                "instruction": "Identify the weather!",
+                "question": "Sunny",
+                "options": [
+                    "Cloudy",
+                    "Sunny",
+                    "Rainy",
+                    "Rainbow"
+                ],
+                "correctAnswer": "Sunny",
+                "hint": "Look closely! What is this?",
+                "emoji": "☀️",
+                "explanation": "Great job, it's Sunny!",
+                "funFact": "The sun is a star located at the center of our solar system!",
+                "wordExample": "It is a sunny day to play outside.",
+                "phonetic": "/ˈsʌn.i/"
+            },
+            {
+                "id": "KIDS_WEATHER_L174_Q3",
+                "gameType": "weather",
+                "level": 174,
+                "instruction": "Identify the weather!",
                 "question": "Rainy",
+                "options": [
+                    "Snowy",
+                    "Stormy",
+                    "Windy",
+                    "Rainy"
+                ],
                 "correctAnswer": "Rainy",
                 "hint": "Look closely! What is this?",
                 "emoji": "🌧️",
@@ -156,34 +256,6 @@
                 "funFact": "Rain is water that falls from the clouds!",
                 "wordExample": "I need my umbrella because it is rainy.",
                 "phonetic": "/ˈreɪ.ni/"
-            },
-            {
-                "id": "KIDS_WEATHER_L174_Q2",
-                "gameType": "weather",
-                "level": 174,
-                "instruction": "Identify the weather!",
-                "question": "Snowy",
-                "correctAnswer": "Snowy",
-                "hint": "Look closely! What is this?",
-                "emoji": "❄️",
-                "explanation": "Great job, it's Snowy!",
-                "funFact": "Every single snowflake has a unique shape!",
-                "wordExample": "We can build a snowman on a snowy day.",
-                "phonetic": "/ˈsnoʊ.i/"
-            },
-            {
-                "id": "KIDS_WEATHER_L174_Q3",
-                "gameType": "weather",
-                "level": 174,
-                "instruction": "Identify the weather!",
-                "question": "Cloudy",
-                "correctAnswer": "Cloudy",
-                "hint": "Look closely! What is this?",
-                "emoji": "☁️",
-                "explanation": "Great job, it's Cloudy!",
-                "funFact": "Clouds are made of tiny water droplets floating in the air!",
-                "wordExample": "The sky is cloudy and grey today.",
-                "phonetic": "/ˈklaʊ.di/"
             }
         ]
     },
@@ -195,7 +267,53 @@
                 "gameType": "weather",
                 "level": 175,
                 "instruction": "Identify the weather!",
+                "question": "Sunny",
+                "options": [
+                    "Foggy",
+                    "Cloudy",
+                    "Sunny",
+                    "Snowy"
+                ],
+                "correctAnswer": "Sunny",
+                "hint": "Look closely! What is this?",
+                "emoji": "☀️",
+                "explanation": "Great job, it's Sunny!",
+                "funFact": "The sun is a star located at the center of our solar system!",
+                "wordExample": "It is a sunny day to play outside.",
+                "phonetic": "/ˈsʌn.i/"
+            },
+            {
+                "id": "KIDS_WEATHER_L175_Q2",
+                "gameType": "weather",
+                "level": 175,
+                "instruction": "Identify the weather!",
+                "question": "Rainy",
+                "options": [
+                    "Stormy",
+                    "Windy",
+                    "Rainy",
+                    "Snowy"
+                ],
+                "correctAnswer": "Rainy",
+                "hint": "Look closely! What is this?",
+                "emoji": "🌧️",
+                "explanation": "Great job, it's Rainy!",
+                "funFact": "Rain is water that falls from the clouds!",
+                "wordExample": "I need my umbrella because it is rainy.",
+                "phonetic": "/ˈreɪ.ni/"
+            },
+            {
+                "id": "KIDS_WEATHER_L175_Q3",
+                "gameType": "weather",
+                "level": 175,
+                "instruction": "Identify the weather!",
                 "question": "Snowy",
+                "options": [
+                    "Windy",
+                    "Snowy",
+                    "Foggy",
+                    "Sunny"
+                ],
                 "correctAnswer": "Snowy",
                 "hint": "Look closely! What is this?",
                 "emoji": "❄️",
@@ -203,34 +321,6 @@
                 "funFact": "Every single snowflake has a unique shape!",
                 "wordExample": "We can build a snowman on a snowy day.",
                 "phonetic": "/ˈsnoʊ.i/"
-            },
-            {
-                "id": "KIDS_WEATHER_L175_Q2",
-                "gameType": "weather",
-                "level": 175,
-                "instruction": "Identify the weather!",
-                "question": "Cloudy",
-                "correctAnswer": "Cloudy",
-                "hint": "Look closely! What is this?",
-                "emoji": "☁️",
-                "explanation": "Great job, it's Cloudy!",
-                "funFact": "Clouds are made of tiny water droplets floating in the air!",
-                "wordExample": "The sky is cloudy and grey today.",
-                "phonetic": "/ˈklaʊ.di/"
-            },
-            {
-                "id": "KIDS_WEATHER_L175_Q3",
-                "gameType": "weather",
-                "level": 175,
-                "instruction": "Identify the weather!",
-                "question": "Windy",
-                "correctAnswer": "Windy",
-                "hint": "Look closely! What is this?",
-                "emoji": "🌬️",
-                "explanation": "Great job, it's Windy!",
-                "funFact": "Wind is just moving air caused by the sun heating the Earth.",
-                "wordExample": "Hold your hat on a windy day!",
-                "phonetic": "/ˈwɪn.di/"
             }
         ]
     },
@@ -242,7 +332,53 @@
                 "gameType": "weather",
                 "level": 176,
                 "instruction": "Identify the weather!",
+                "question": "Rainy",
+                "options": [
+                    "Foggy",
+                    "Rainy",
+                    "Sunny",
+                    "Rainbow"
+                ],
+                "correctAnswer": "Rainy",
+                "hint": "Look closely! What is this?",
+                "emoji": "🌧️",
+                "explanation": "Great job, it's Rainy!",
+                "funFact": "Rain is water that falls from the clouds!",
+                "wordExample": "I need my umbrella because it is rainy.",
+                "phonetic": "/ˈreɪ.ni/"
+            },
+            {
+                "id": "KIDS_WEATHER_L176_Q2",
+                "gameType": "weather",
+                "level": 176,
+                "instruction": "Identify the weather!",
+                "question": "Snowy",
+                "options": [
+                    "Cloudy",
+                    "Rainy",
+                    "Rainbow",
+                    "Snowy"
+                ],
+                "correctAnswer": "Snowy",
+                "hint": "Look closely! What is this?",
+                "emoji": "❄️",
+                "explanation": "Great job, it's Snowy!",
+                "funFact": "Every single snowflake has a unique shape!",
+                "wordExample": "We can build a snowman on a snowy day.",
+                "phonetic": "/ˈsnoʊ.i/"
+            },
+            {
+                "id": "KIDS_WEATHER_L176_Q3",
+                "gameType": "weather",
+                "level": 176,
+                "instruction": "Identify the weather!",
                 "question": "Cloudy",
+                "options": [
+                    "Cloudy",
+                    "Rainy",
+                    "Stormy",
+                    "Sunny"
+                ],
                 "correctAnswer": "Cloudy",
                 "hint": "Look closely! What is this?",
                 "emoji": "☁️",
@@ -250,34 +386,6 @@
                 "funFact": "Clouds are made of tiny water droplets floating in the air!",
                 "wordExample": "The sky is cloudy and grey today.",
                 "phonetic": "/ˈklaʊ.di/"
-            },
-            {
-                "id": "KIDS_WEATHER_L176_Q2",
-                "gameType": "weather",
-                "level": 176,
-                "instruction": "Identify the weather!",
-                "question": "Windy",
-                "correctAnswer": "Windy",
-                "hint": "Look closely! What is this?",
-                "emoji": "🌬️",
-                "explanation": "Great job, it's Windy!",
-                "funFact": "Wind is just moving air caused by the sun heating the Earth.",
-                "wordExample": "Hold your hat on a windy day!",
-                "phonetic": "/ˈwɪn.di/"
-            },
-            {
-                "id": "KIDS_WEATHER_L176_Q3",
-                "gameType": "weather",
-                "level": 176,
-                "instruction": "Identify the weather!",
-                "question": "Stormy",
-                "correctAnswer": "Stormy",
-                "hint": "Look closely! What is this?",
-                "emoji": "🌩️",
-                "explanation": "Great job, it's Stormy!",
-                "funFact": "Thunder is the sound made by lightning!",
-                "wordExample": "The sky gets very dark when it is stormy.",
-                "phonetic": "/ˈstɔːr.mi/"
             }
         ]
     },
@@ -289,7 +397,53 @@
                 "gameType": "weather",
                 "level": 177,
                 "instruction": "Identify the weather!",
+                "question": "Snowy",
+                "options": [
+                    "Stormy",
+                    "Snowy",
+                    "Sunny",
+                    "Foggy"
+                ],
+                "correctAnswer": "Snowy",
+                "hint": "Look closely! What is this?",
+                "emoji": "❄️",
+                "explanation": "Great job, it's Snowy!",
+                "funFact": "Every single snowflake has a unique shape!",
+                "wordExample": "We can build a snowman on a snowy day.",
+                "phonetic": "/ˈsnoʊ.i/"
+            },
+            {
+                "id": "KIDS_WEATHER_L177_Q2",
+                "gameType": "weather",
+                "level": 177,
+                "instruction": "Identify the weather!",
+                "question": "Cloudy",
+                "options": [
+                    "Cloudy",
+                    "Snowy",
+                    "Sunny",
+                    "Rainy"
+                ],
+                "correctAnswer": "Cloudy",
+                "hint": "Look closely! What is this?",
+                "emoji": "☁️",
+                "explanation": "Great job, it's Cloudy!",
+                "funFact": "Clouds are made of tiny water droplets floating in the air!",
+                "wordExample": "The sky is cloudy and grey today.",
+                "phonetic": "/ˈklaʊ.di/"
+            },
+            {
+                "id": "KIDS_WEATHER_L177_Q3",
+                "gameType": "weather",
+                "level": 177,
+                "instruction": "Identify the weather!",
                 "question": "Windy",
+                "options": [
+                    "Rainy",
+                    "Windy",
+                    "Foggy",
+                    "Cloudy"
+                ],
                 "correctAnswer": "Windy",
                 "hint": "Look closely! What is this?",
                 "emoji": "🌬️",
@@ -297,34 +451,6 @@
                 "funFact": "Wind is just moving air caused by the sun heating the Earth.",
                 "wordExample": "Hold your hat on a windy day!",
                 "phonetic": "/ˈwɪn.di/"
-            },
-            {
-                "id": "KIDS_WEATHER_L177_Q2",
-                "gameType": "weather",
-                "level": 177,
-                "instruction": "Identify the weather!",
-                "question": "Stormy",
-                "correctAnswer": "Stormy",
-                "hint": "Look closely! What is this?",
-                "emoji": "🌩️",
-                "explanation": "Great job, it's Stormy!",
-                "funFact": "Thunder is the sound made by lightning!",
-                "wordExample": "The sky gets very dark when it is stormy.",
-                "phonetic": "/ˈstɔːr.mi/"
-            },
-            {
-                "id": "KIDS_WEATHER_L177_Q3",
-                "gameType": "weather",
-                "level": 177,
-                "instruction": "Identify the weather!",
-                "question": "Sunny",
-                "correctAnswer": "Sunny",
-                "hint": "Look closely! What is this?",
-                "emoji": "☀️",
-                "explanation": "Great job, it's Sunny!",
-                "funFact": "The sun is a star located at the center of our solar system!",
-                "wordExample": "It is a sunny day to play outside.",
-                "phonetic": "/ˈsʌn.i/"
             }
         ]
     },
@@ -336,7 +462,53 @@
                 "gameType": "weather",
                 "level": 178,
                 "instruction": "Identify the weather!",
+                "question": "Cloudy",
+                "options": [
+                    "Snowy",
+                    "Cloudy",
+                    "Rainy",
+                    "Windy"
+                ],
+                "correctAnswer": "Cloudy",
+                "hint": "Look closely! What is this?",
+                "emoji": "☁️",
+                "explanation": "Great job, it's Cloudy!",
+                "funFact": "Clouds are made of tiny water droplets floating in the air!",
+                "wordExample": "The sky is cloudy and grey today.",
+                "phonetic": "/ˈklaʊ.di/"
+            },
+            {
+                "id": "KIDS_WEATHER_L178_Q2",
+                "gameType": "weather",
+                "level": 178,
+                "instruction": "Identify the weather!",
+                "question": "Windy",
+                "options": [
+                    "Snowy",
+                    "Rainbow",
+                    "Windy",
+                    "Foggy"
+                ],
+                "correctAnswer": "Windy",
+                "hint": "Look closely! What is this?",
+                "emoji": "🌬️",
+                "explanation": "Great job, it's Windy!",
+                "funFact": "Wind is just moving air caused by the sun heating the Earth.",
+                "wordExample": "Hold your hat on a windy day!",
+                "phonetic": "/ˈwɪn.di/"
+            },
+            {
+                "id": "KIDS_WEATHER_L178_Q3",
+                "gameType": "weather",
+                "level": 178,
+                "instruction": "Identify the weather!",
                 "question": "Stormy",
+                "options": [
+                    "Rainy",
+                    "Sunny",
+                    "Windy",
+                    "Stormy"
+                ],
                 "correctAnswer": "Stormy",
                 "hint": "Look closely! What is this?",
                 "emoji": "🌩️",
@@ -344,34 +516,6 @@
                 "funFact": "Thunder is the sound made by lightning!",
                 "wordExample": "The sky gets very dark when it is stormy.",
                 "phonetic": "/ˈstɔːr.mi/"
-            },
-            {
-                "id": "KIDS_WEATHER_L178_Q2",
-                "gameType": "weather",
-                "level": 178,
-                "instruction": "Identify the weather!",
-                "question": "Sunny",
-                "correctAnswer": "Sunny",
-                "hint": "Look closely! What is this?",
-                "emoji": "☀️",
-                "explanation": "Great job, it's Sunny!",
-                "funFact": "The sun is a star located at the center of our solar system!",
-                "wordExample": "It is a sunny day to play outside.",
-                "phonetic": "/ˈsʌn.i/"
-            },
-            {
-                "id": "KIDS_WEATHER_L178_Q3",
-                "gameType": "weather",
-                "level": 178,
-                "instruction": "Identify the weather!",
-                "question": "Rainy",
-                "correctAnswer": "Rainy",
-                "hint": "Look closely! What is this?",
-                "emoji": "🌧️",
-                "explanation": "Great job, it's Rainy!",
-                "funFact": "Rain is water that falls from the clouds!",
-                "wordExample": "I need my umbrella because it is rainy.",
-                "phonetic": "/ˈreɪ.ni/"
             }
         ]
     },
@@ -383,42 +527,60 @@
                 "gameType": "weather",
                 "level": 179,
                 "instruction": "Identify the weather!",
-                "question": "Sunny",
-                "correctAnswer": "Sunny",
+                "question": "Windy",
+                "options": [
+                    "Sunny",
+                    "Rainy",
+                    "Windy",
+                    "Snowy"
+                ],
+                "correctAnswer": "Windy",
                 "hint": "Look closely! What is this?",
-                "emoji": "☀️",
-                "explanation": "Great job, it's Sunny!",
-                "funFact": "The sun is a star located at the center of our solar system!",
-                "wordExample": "It is a sunny day to play outside.",
-                "phonetic": "/ˈsʌn.i/"
+                "emoji": "🌬️",
+                "explanation": "Great job, it's Windy!",
+                "funFact": "Wind is just moving air caused by the sun heating the Earth.",
+                "wordExample": "Hold your hat on a windy day!",
+                "phonetic": "/ˈwɪn.di/"
             },
             {
                 "id": "KIDS_WEATHER_L179_Q2",
                 "gameType": "weather",
                 "level": 179,
                 "instruction": "Identify the weather!",
-                "question": "Rainy",
-                "correctAnswer": "Rainy",
+                "question": "Stormy",
+                "options": [
+                    "Rainy",
+                    "Rainbow",
+                    "Sunny",
+                    "Stormy"
+                ],
+                "correctAnswer": "Stormy",
                 "hint": "Look closely! What is this?",
-                "emoji": "🌧️",
-                "explanation": "Great job, it's Rainy!",
-                "funFact": "Rain is water that falls from the clouds!",
-                "wordExample": "I need my umbrella because it is rainy.",
-                "phonetic": "/ˈreɪ.ni/"
+                "emoji": "🌩️",
+                "explanation": "Great job, it's Stormy!",
+                "funFact": "Thunder is the sound made by lightning!",
+                "wordExample": "The sky gets very dark when it is stormy.",
+                "phonetic": "/ˈstɔːr.mi/"
             },
             {
                 "id": "KIDS_WEATHER_L179_Q3",
                 "gameType": "weather",
                 "level": 179,
                 "instruction": "Identify the weather!",
-                "question": "Snowy",
-                "correctAnswer": "Snowy",
+                "question": "Foggy",
+                "options": [
+                    "Foggy",
+                    "Snowy",
+                    "Windy",
+                    "Rainy"
+                ],
+                "correctAnswer": "Foggy",
                 "hint": "Look closely! What is this?",
-                "emoji": "❄️",
-                "explanation": "Great job, it's Snowy!",
-                "funFact": "Every single snowflake has a unique shape!",
-                "wordExample": "We can build a snowman on a snowy day.",
-                "phonetic": "/ˈsnoʊ.i/"
+                "emoji": "🌁",
+                "explanation": "Great job, it's Foggy!",
+                "funFact": "Fog is actually just a cloud that is touching the ground!",
+                "wordExample": "It is hard to see far when it is foggy.",
+                "phonetic": "/ˈfɒɡ.i/"
             }
         ]
     },
@@ -430,42 +592,60 @@
                 "gameType": "weather",
                 "level": 180,
                 "instruction": "Identify the weather!",
-                "question": "Rainy",
-                "correctAnswer": "Rainy",
+                "question": "Stormy",
+                "options": [
+                    "Stormy",
+                    "Windy",
+                    "Cloudy",
+                    "Foggy"
+                ],
+                "correctAnswer": "Stormy",
                 "hint": "Look closely! What is this?",
-                "emoji": "🌧️",
-                "explanation": "Great job, it's Rainy!",
-                "funFact": "Rain is water that falls from the clouds!",
-                "wordExample": "I need my umbrella because it is rainy.",
-                "phonetic": "/ˈreɪ.ni/"
+                "emoji": "🌩️",
+                "explanation": "Great job, it's Stormy!",
+                "funFact": "Thunder is the sound made by lightning!",
+                "wordExample": "The sky gets very dark when it is stormy.",
+                "phonetic": "/ˈstɔːr.mi/"
             },
             {
                 "id": "KIDS_WEATHER_L180_Q2",
                 "gameType": "weather",
                 "level": 180,
                 "instruction": "Identify the weather!",
-                "question": "Snowy",
-                "correctAnswer": "Snowy",
+                "question": "Foggy",
+                "options": [
+                    "Stormy",
+                    "Rainy",
+                    "Foggy",
+                    "Sunny"
+                ],
+                "correctAnswer": "Foggy",
                 "hint": "Look closely! What is this?",
-                "emoji": "❄️",
-                "explanation": "Great job, it's Snowy!",
-                "funFact": "Every single snowflake has a unique shape!",
-                "wordExample": "We can build a snowman on a snowy day.",
-                "phonetic": "/ˈsnoʊ.i/"
+                "emoji": "🌁",
+                "explanation": "Great job, it's Foggy!",
+                "funFact": "Fog is actually just a cloud that is touching the ground!",
+                "wordExample": "It is hard to see far when it is foggy.",
+                "phonetic": "/ˈfɒɡ.i/"
             },
             {
                 "id": "KIDS_WEATHER_L180_Q3",
                 "gameType": "weather",
                 "level": 180,
                 "instruction": "Identify the weather!",
-                "question": "Cloudy",
-                "correctAnswer": "Cloudy",
+                "question": "Rainbow",
+                "options": [
+                    "Cloudy",
+                    "Windy",
+                    "Rainy",
+                    "Rainbow"
+                ],
+                "correctAnswer": "Rainbow",
                 "hint": "Look closely! What is this?",
-                "emoji": "☁️",
-                "explanation": "Great job, it's Cloudy!",
-                "funFact": "Clouds are made of tiny water droplets floating in the air!",
-                "wordExample": "The sky is cloudy and grey today.",
-                "phonetic": "/ˈklaʊ.di/"
+                "emoji": "🌈",
+                "explanation": "Great job, it's Rainbow!",
+                "funFact": "Rainbows appear when sunlight shines through raindrops!",
+                "wordExample": "I saw a beautiful rainbow after the rain.",
+                "phonetic": "/ˈreɪn.boʊ/"
             }
         ]
     }

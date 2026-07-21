@@ -7,7 +7,9 @@ const weathers = [
     { name: 'Snowy', emoji: '❄️', funFact: 'Every single snowflake has a unique shape!', phonetic: '/ˈsnoʊ.i/', example: 'We can build a snowman on a snowy day.' },
     { name: 'Cloudy', emoji: '☁️', funFact: 'Clouds are made of tiny water droplets floating in the air!', phonetic: '/ˈklaʊ.di/', example: 'The sky is cloudy and grey today.' },
     { name: 'Windy', emoji: '🌬️', funFact: 'Wind is just moving air caused by the sun heating the Earth.', phonetic: '/ˈwɪn.di/', example: 'Hold your hat on a windy day!' },
-    { name: 'Stormy', emoji: '🌩️', funFact: 'Thunder is the sound made by lightning!', phonetic: '/ˈstɔːr.mi/', example: 'The sky gets very dark when it is stormy.' }
+    { name: 'Stormy', emoji: '🌩️', funFact: 'Thunder is the sound made by lightning!', phonetic: '/ˈstɔːr.mi/', example: 'The sky gets very dark when it is stormy.' },
+    { name: 'Foggy', emoji: '🌁', funFact: 'Fog is actually just a cloud that is touching the ground!', phonetic: '/ˈfɒɡ.i/', example: 'It is hard to see far when it is foggy.' },
+    { name: 'Rainbow', emoji: '🌈', funFact: 'Rainbows appear when sunlight shines through raindrops!', phonetic: '/ˈreɪn.boʊ/', example: 'I saw a beautiful rainbow after the rain.' }
 ];
 
 const professions = [
@@ -16,8 +18,22 @@ const professions = [
     { name: 'Police', emoji: '👮', funFact: 'Police officers help keep the neighborhood safe!', phonetic: '/pəˈliːs/', example: 'The police officer helped us cross the street.' },
     { name: 'Firefighter', emoji: '👨‍🚒', funFact: 'Firefighters wear special gear that protects them from extreme heat.', phonetic: '/ˈfaɪərˌfaɪ.tər/', example: 'The firefighter drove the big red truck.' },
     { name: 'Chef', emoji: '👨‍🍳', funFact: 'Chefs wear a tall white hat called a toque!', phonetic: '/ʃef/', example: 'The chef cooked a delicious pizza.' },
-    { name: 'Astronaut', emoji: '👨‍🚀', funFact: 'Astronauts float in space because there is very little gravity!', phonetic: '/ˈæs.trə.nɔːt/', example: 'The astronaut flew to the moon in a rocket.' }
+    { name: 'Astronaut', emoji: '👨‍🚀', funFact: 'Astronauts float in space because there is very little gravity!', phonetic: '/ˈæs.trə.nɔːt/', example: 'The astronaut flew to the moon in a rocket.' },
+    { name: 'Farmer', emoji: '👨‍🌾', funFact: 'Farmers grow the food that we eat every day!', phonetic: '/ˈfɑːr.mər/', example: 'The farmer drives a big green tractor.' },
+    { name: 'Pilot', emoji: '👨‍✈️', funFact: 'Pilots fly airplanes high up in the sky above the clouds!', phonetic: '/ˈpaɪ.lət/', example: 'The pilot landed the airplane smoothly.' }
 ];
+
+function getRandomOptions(dataPool, correctAnswer) {
+    let options = [correctAnswer];
+    while (options.length < 4) {
+        let randomItem = dataPool[Math.floor(Math.random() * dataPool.length)].name;
+        if (!options.includes(randomItem)) {
+            options.push(randomItem);
+        }
+    }
+    // Shuffle the options array
+    return options.sort(() => Math.random() - 0.5);
+}
 
 const generateBatches = (gameType, dataPool) => {
     const dir = path.join('assets/curriculum/kids', gameType);
@@ -38,6 +54,7 @@ const generateBatches = (gameType, dataPool) => {
                     level: level,
                     instruction: `Identify the ${gameType}!`,
                     question: item.name,
+                    options: getRandomOptions(dataPool, item.name),
                     correctAnswer: item.name,
                     hint: `Look closely! What is this?`,
                     emoji: item.emoji,
@@ -58,4 +75,4 @@ const generateBatches = (gameType, dataPool) => {
 
 generateBatches('weather', weathers);
 generateBatches('professions', professions);
-console.log('Regenerated batches with rich educational fields!');
+console.log('Regenerated batches WITH options!');
