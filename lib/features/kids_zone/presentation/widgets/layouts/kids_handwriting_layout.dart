@@ -156,7 +156,17 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const CircularProgressIndicator(color: Color(0xFFF43F5E)),
+                SizedBox(
+                  width: 200.w,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: LinearProgressIndicator(
+                      minHeight: 16.h,
+                      backgroundColor: Colors.white24,
+                      color: const Color(0xFFF43F5E),
+                    ),
+                  ),
+                ),
                 SizedBox(height: 16.h),
                 Text(
                   context.tr('kids_zone.handwriting_downloading', fallback: 'Preparing Magic Pen...'),
@@ -315,7 +325,14 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                     ),
                     child: Center(
                       child: _isChecking
-                          ? const CircularProgressIndicator(color: Colors.white)
+                          ? SizedBox(
+                              height: 24.h,
+                              width: 24.h,
+                              child: const CircularProgressIndicator(
+                                color: Colors.white,
+                                strokeWidth: 3,
+                              ),
+                            )
                           : Text(
                               context.tr('common.check', fallback: 'Check My Answer!'),
                               style: TextStyle(
