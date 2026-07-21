@@ -118,8 +118,7 @@ class HomeRoutes {
     ),
     GoRoute(
       path: libraryRoute,
-      pageBuilder: (context, state) =>
-          fadeTransitionPage(child: const QuestLibraryPage(), state: state),
+      builder: (context, state) => const QuestLibraryPage(),
     ),
     GoRoute(
       path: premiumRoute,
