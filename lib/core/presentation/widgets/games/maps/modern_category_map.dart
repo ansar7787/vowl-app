@@ -24,7 +24,6 @@ import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
 import 'package:vowl/core/presentation/widgets/games/maps/components/star_vault_bottom_sheet.dart';
 import 'package:vowl/core/presentation/painters/category_path_painter.dart';
 import 'package:vowl/core/presentation/widgets/games/maps/components/glass_map_header.dart';
-import 'package:vowl/core/presentation/widgets/games/maps/components/shimmer_map_placeholder.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 
@@ -287,19 +286,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
         child: Scaffold(
           backgroundColor: theme.backgroundColors[1],
           extendBody: true,
-          body: _isLoading
-              ? SingleChildScrollView(
-                  physics: const NeverScrollableScrollPhysics(),
-                  child: ShimmerMapPlaceholder(
-                    theme: theme,
-                    points: points,
-                    rowSpacing: rowSpacing,
-                    totalHeight: totalContentHeight,
-                    totalLevels: _totalLevels,
-                  ),
-                )
-              : Stack(
-                  children: [
+          body: Stack(
+            children: [
               // 1. Clean Minimal Static Background
               _buildBackground(theme, isDark),
 
@@ -404,13 +392,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                   // Track View
                   SliverToBoxAdapter(
                     child: _isLoading
-                        ? ShimmerMapPlaceholder(
-                            theme: theme,
-                            points: points,
-                            rowSpacing: rowSpacing,
-                            totalHeight: totalContentHeight,
-                            totalLevels: _totalLevels,
-                          )
+                        ? SizedBox(height: ScreenUtil().screenHeight)
                         : Stack(
                             children: [
                               // Decoupled Path Line Graphics
