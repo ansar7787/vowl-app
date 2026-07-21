@@ -16,4 +16,5 @@ class LeaderboardResult {
 /// explicit and prevents uncaught exceptions from reaching the BLoC layer.
 abstract class LeaderboardRepository {
   Future<Either<Failure, LeaderboardResult>> getTopUsers({int limit = 50});
+  Future<Either<Failure, LeaderboardResult>> getTopKidsUsers({int limit = 50});
 }

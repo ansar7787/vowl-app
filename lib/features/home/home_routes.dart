@@ -16,6 +16,7 @@ import 'package:vowl/features/home/presentation/pages/quest_library_page.dart';
 import 'package:vowl/features/profile/presentation/pages/trophy_room_screen.dart';
 import 'package:vowl/features/scan_and_learn/presentation/pages/scan_and_learn_screen.dart';
 import 'package:vowl/features/photo_vocabulary/presentation/pages/photo_vocabulary_screen.dart';
+import 'package:vowl/core/utils/app_router.dart';
 
 class HomeRoutes {
   HomeRoutes._(); // Prevent instantiation of utility class
@@ -148,6 +149,13 @@ class HomeRoutes {
       path: photoVocabularyRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
         child: const PhotoVocabularyScreen(),
+        state: state,
+      ),
+    ),
+    GoRoute(
+      path: AppRouter.kidsLeaderboardRoute,
+      pageBuilder: (context, state) => fadeTransitionPage(
+        child: const LeaderboardScreen(isKids: true),
         state: state,
       ),
     ),

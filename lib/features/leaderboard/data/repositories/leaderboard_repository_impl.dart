@@ -112,4 +112,93 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
       );
     }
   }
+
+  @override
+  Future<Either<Failure, LeaderboardResult>> getTopKidsUsers({
+    int limit = 50,
+  }) async {
+    try {
+      final cacheDocRef = firestore
+          .collection('metadata')
+          .doc('kids_leaderboard_cache');
+
+      DocumentSnapshot<Map<String, dynamic>>? cacheSnapshot;
+      try {
+        cacheSnapshot = await cacheDocRef.get().timeout(_kNetworkTimeout);
+      } catch (e) {
+        if (kDebugMode) debugPrint('LeaderboardRepo: Failed to read kids cache: $e');
+      }
+
+      if (cacheSnapshot != null && cacheSnapshot.exists && cacheSnapshot.data() != null) {
+        final data = cacheSnapshot.data()!;
+        final lastUpdated =
+            (data['lastUpdated'] as Timestamp?)?.toDate() ?? DateTime.now();
+
+        final List<dynamic> usersJson = data['users'] ?? [];
+        final users = usersJson
+            .map(
+              (json) =>
+                  UserModel.fromMap(Map<String, dynamic>.from(json as Map)),
+            )
+            .toList();
+
+        return Right(LeaderboardResult(users: users, lastUpdated: lastUpdated));
+      }
+
+      final snapshot = await firestore
+          .collection('users')
+          .orderBy('kidsCoins', descending: true)
+          .limit(limit)
+          .get()
+          .timeout(_kNetworkTimeout);
+
+      final List<Map<String, dynamic>> usersData = [];
+      final List<UserEntity> users = [];
+      final fetchTime = DateTime.now();
+
+      for (final doc in snapshot.docs) {
+        try {
+          final data = Map<String, dynamic>.from(doc.data());
+          data['id'] = (data['id'] as String?) ?? doc.id;
+          users.add(UserModel.fromMap(data));
+          
+          usersData.add({
+            'id': data['id'],
+            'displayName': data['displayName'],
+            'photoUrl': data['photoUrl'],
+            'kidsCoins': data['kidsCoins'] ?? 0,
+            'currentStreak': data['currentStreak'],
+            'completedLevels': data['completedLevels'],
+            'isPremium': data['isPremium'] ?? false,
+          });
+        } catch (e) {
+          if (kDebugMode) debugPrint('LeaderboardRepo: Corrupted user doc: $e');
+        }
+      }
+
+      try {
+        await cacheDocRef
+            .set({
+              'lastUpdated': FieldValue.serverTimestamp(),
+              'users': usersData,
+            }, SetOptions(merge: true))
+            .timeout(_kNetworkTimeout);
+      } catch (e) {
+        if (kDebugMode) {
+          debugPrint('LeaderboardRepo: Failed to seed metadata cache: $e');
+        }
+      }
+
+      return Right(LeaderboardResult(users: users, lastUpdated: fetchTime));
+    } on TimeoutException {
+      return const Left(
+        ServerFailure('Connection timed out. Please check your network.'),
+      );
+    } catch (e) {
+      if (kDebugMode) debugPrint('LeaderboardRepo: Unexpected error: $e');
+      return const Left(
+        ServerFailure('Unable to load kids leaderboard. Please try again.'),
+      );
+    }
+  }
 }

@@ -5,8 +5,9 @@ import 'package:vowl/core/utils/locale_service.dart';
 
 class LeaderboardHeader extends StatelessWidget {
   final DateTime lastUpdated;
+  final bool isKids;
 
-  const LeaderboardHeader({super.key, required this.lastUpdated});
+  const LeaderboardHeader({super.key, required this.lastUpdated, this.isKids = false});
 
   @override
   Widget build(BuildContext context) {
@@ -48,10 +49,9 @@ class LeaderboardHeader extends StatelessWidget {
                       children: [
                         Flexible(
                           child: Text(
-                            context.tr(
-                              'leaderboard.title',
-                              fallback: 'Leaderboard',
-                            ),
+                            isKids
+                                ? context.tr('leaderboard.kids_title', fallback: 'Kids Leaderboard')
+                                : context.tr('leaderboard.title', fallback: 'Leaderboard'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 22.sp,
@@ -74,31 +74,30 @@ class LeaderboardHeader extends StatelessWidget {
                             ),
                             decoration: BoxDecoration(
                               color: isDark
-                                  ? Colors.white10
+                                  ? Colors.white.withValues(alpha: 0.1)
                                   : Colors.black.withValues(alpha: 0.05),
-                              borderRadius: BorderRadius.circular(8.r),
+                              borderRadius: BorderRadius.circular(20.r),
                             ),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Icon(
-                                  Icons.access_time_rounded,
-                                  size: 10.r,
+                                  Icons.update_rounded,
                                   color: isDark
-                                      ? Colors.white38
-                                      : Colors.black38,
+                                      ? Colors.white54
+                                      : const Color(0xFF64748B),
+                                  size: 12.r,
                                 ),
                                 SizedBox(width: 4.w),
                                 Text(
                                   timeAgo,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
-                                    fontSize: 9.sp,
-                                    fontWeight: FontWeight.w800,
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.w700,
                                     color: isDark
-                                        ? Colors.white38
-                                        : Colors.black38,
-                                    letterSpacing: 0.5,
+                                        ? Colors.white54
+                                        : const Color(0xFF64748B),
                                   ),
                                 ),
                               ],
@@ -107,11 +106,11 @@ class LeaderboardHeader extends StatelessWidget {
                         ),
                       ],
                     ),
+                    SizedBox(height: 2.h),
                     Text(
-                      context.tr(
-                        'leaderboard.subtitle',
-                        fallback: 'See how you rank',
-                      ),
+                      isKids
+                          ? context.tr('leaderboard.kids_subtitle', fallback: 'See how your child ranks globally!')
+                          : context.tr('leaderboard.subtitle', fallback: 'See how you rank globally!'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 11.sp,

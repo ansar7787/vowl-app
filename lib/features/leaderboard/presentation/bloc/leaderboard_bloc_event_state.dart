@@ -23,11 +23,12 @@ abstract class LeaderboardEvent extends Equatable {
 /// testing assertions.
 class LoadLeaderboard extends LeaderboardEvent {
   final Completer<void>? completer;
+  final bool isKids;
 
-  const LoadLeaderboard({this.completer});
+  const LoadLeaderboard({this.completer, this.isKids = false});
 
   @override
-  List<Object?> get props => const [];
+  List<Object?> get props => [isKids];
 }
 
 // ---------------------------------------------------------------------------
@@ -52,11 +53,12 @@ class LeaderboardLoading extends LeaderboardState {
 class LeaderboardLoaded extends LeaderboardState {
   final List<UserEntity> users;
   final DateTime lastUpdated;
+  final bool isKids;
 
-  const LeaderboardLoaded(this.users, this.lastUpdated);
+  const LeaderboardLoaded(this.users, this.lastUpdated, {this.isKids = false});
 
   @override
-  List<Object?> get props => [users, lastUpdated];
+  List<Object?> get props => [users, lastUpdated, isKids];
 }
 
 class LeaderboardError extends LeaderboardState {

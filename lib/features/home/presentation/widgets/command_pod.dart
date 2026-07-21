@@ -271,67 +271,68 @@ class CommandPod extends StatelessWidget {
       child: ScaleButton(
         onTap: () => context.push(AppRouter.kidsZoneRoute),
         child: ExcludeSemantics(
-          child: Container(
-            constraints: BoxConstraints(minHeight: 160.h),
-            width: double.infinity,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(32.r),
-              gradient: const LinearGradient(
-                colors: [
-                  Color(0xFF6366F1),
-                  Color(0xFFA855F7),
-                  Color(0xFFEC4899),
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: const Color(0xFFA855F7).withValues(alpha: 0.3),
-                  blurRadius: 30,
-                  offset: const Offset(0, 15),
-                ),
-              ],
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(32.r),
-              child: Stack(
-                children: [
-                  // Decorative background circles
-                  PositionedDirectional(
-                    end: -30.w,
-                    bottom: -30.h,
-                    child: Container(
-                      width: 180.r,
-                      height: 180.r,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.white.withValues(alpha: 0.1),
-                      ),
+          child: Stack(
+            clipBehavior: Clip.none,
+            alignment: Alignment.centerLeft,
+            children: [
+              Container(
+                constraints: BoxConstraints(minHeight: 160.h),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(32.r),
+                  gradient: const LinearGradient(
+                    colors: [
+                      Color(0xFF6366F1),
+                      Color(0xFFA855F7),
+                      Color(0xFFEC4899),
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFFA855F7).withValues(alpha: 0.3),
+                      blurRadius: 30,
+                      offset: const Offset(0, 15),
                     ),
-                  ),
-
-                  // Playful background icons
-                  PositionedDirectional(
-                    start: 20.w,
-                    top: 20.h,
-                    child:
-                        Icon(
-                              Icons.auto_awesome_rounded,
-                              size: 24.r,
-                              color: Colors.white.withValues(alpha: 0.2),
-                            )
-                            .animate(onPlay: (c) => c.repeat(reverse: true))
-                            .scale(
-                              begin: const Offset(1, 1),
-                              end: const Offset(1.3, 1.3),
-                              duration: 3.seconds,
-                            ),
-                  ),
-
-                  // Content Layer
-                  Stack(
+                  ],
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(32.r),
+                  child: Stack(
                     children: [
+                      // Decorative background circles
+                      PositionedDirectional(
+                        end: -30.w,
+                        bottom: -30.h,
+                        child: Container(
+                          width: 180.r,
+                          height: 180.r,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.white.withValues(alpha: 0.1),
+                          ),
+                        ),
+                      ),
+
+                      // Playful background icons
+                      PositionedDirectional(
+                        start: 20.w,
+                        top: 20.h,
+                        child:
+                            Icon(
+                                  Icons.auto_awesome_rounded,
+                                  size: 24.r,
+                                  color: Colors.white.withValues(alpha: 0.2),
+                                )
+                                .animate(onPlay: (c) => c.repeat(reverse: true))
+                                .scale(
+                                  begin: const Offset(1, 1),
+                                  end: const Offset(1.3, 1.3),
+                                  duration: 3.seconds,
+                                ),
+                      ),
+
                       // Text Content (Moved to left side)
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
@@ -406,7 +407,7 @@ class CommandPod extends StatelessWidget {
                             Text(
                               context.tr(
                                 'home.junior_adventure_subtitle',
-                                fallback: 'For younger explorers',
+                                fallback: '25 playful missions for young explorers',
                               ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
@@ -421,139 +422,139 @@ class CommandPod extends StatelessWidget {
                           ],
                         ),
                       ),
-
-                      // Mascot Area (Concentric & Engaging Design)
-                      PositionedDirectional(
-                        end: -10.w,
-                        bottom: 0,
-                        top: 0,
-                        child: SizedBox(
-                          width: 140.w,
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              // 1. Outer Soft Glow
-                              Container(
-                                    width: 140.r,
-                                    height: 140.r,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      gradient: RadialGradient(
-                                        colors: [
-                                          Colors.white.withValues(alpha: 0.1),
-                                          Colors.transparent,
-                                        ],
-                                      ),
-                                    ),
-                                  )
-                                  .animate(
-                                    onPlay: (c) => c.repeat(reverse: true),
-                                  )
-                                  .scale(
-                                    begin: const Offset(0.8, 0.8),
-                                    end: const Offset(1.2, 1.2),
-                                    duration: 4.seconds,
-                                  ),
-
-                              // 2. Secondary Interactive Ring
-                              Container(
-                                    width: 100.r,
-                                    height: 100.r,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      border: Border.all(
-                                        color: Colors.white.withValues(
-                                          alpha: 0.15,
-                                        ),
-                                        width: 1.5,
-                                      ),
-                                    ),
-                                  )
-                                  .animate(onPlay: (c) => c.repeat())
-                                  .rotate(duration: 10.seconds),
-
-                              // 3. Floating Sparkles/Particles
-                              ...List.generate(5, (index) {
-                                final random = math.Random(index + 50);
-                                return Positioned(
-                                  left: 20.w + random.nextDouble() * 100.w,
-                                  top: 20.h + random.nextDouble() * 80.h,
-                                  child:
-                                      Icon(
-                                            Icons.star_rounded,
-                                            color: Colors.white.withValues(
-                                              alpha: 0.3,
-                                            ),
-                                            size: (8 + random.nextInt(8)).r,
-                                          )
-                                          .animate(
-                                            onPlay: (c) =>
-                                                c.repeat(reverse: true),
-                                          )
-                                          .fadeIn(
-                                            duration: (1 + random.nextDouble())
-                                                .seconds,
-                                          )
-                                          .moveY(
-                                            begin: 0,
-                                            end: -20,
-                                            duration: 2.seconds,
-                                          ),
-                                );
-                              }),
-
-                              // 4. The Buddy Icon (Grounded in Center)
-                              Container(
-                                    padding: EdgeInsets.all(18.r),
-                                    decoration: BoxDecoration(
-                                      color: Colors.white.withValues(
-                                        alpha: 0.15,
-                                      ),
-                                      shape: BoxShape.circle,
-                                      border: Border.all(
-                                        color: Colors.white.withValues(
-                                          alpha: 0.25,
-                                        ),
-                                        width: 2.r,
-                                      ),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withValues(
-                                            alpha: 0.1,
-                                          ),
-                                          blurRadius: 25,
-                                          offset: const Offset(0, 12),
-                                        ),
-                                      ],
-                                    ),
-                                    child: Text(
-                                      "🧸",
-                                      style: TextStyle(fontSize: 48.sp),
-                                    ),
-                                  )
-                                  .animate(
-                                    onPlay: (c) => c.repeat(reverse: true),
-                                  )
-                                  .moveY(
-                                    begin: -6,
-                                    end: 6,
-                                    duration: 2.seconds,
-                                    curve: Curves.easeInOut,
-                                  )
-                                  .scale(
-                                    begin: const Offset(1, 1),
-                                    end: const Offset(1.05, 1.05),
-                                    duration: 2.seconds,
-                                  ),
-                            ],
-                          ),
-                        ),
-                      ),
                     ],
                   ),
-                ],
+                ),
               ),
-            ),
+
+              // Mascot Area (Concentric & Engaging Design) OUTSIDE ClipRRect
+              PositionedDirectional(
+                end: -10.w,
+                bottom: 0,
+                top: 0,
+                child: SizedBox(
+                  width: 140.w,
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      // 1. Outer Soft Glow
+                      Container(
+                            width: 140.r,
+                            height: 140.r,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              gradient: RadialGradient(
+                                colors: [
+                                  Colors.white.withValues(alpha: 0.1),
+                                  Colors.transparent,
+                                ],
+                              ),
+                            ),
+                          )
+                          .animate(
+                            onPlay: (c) => c.repeat(reverse: true),
+                          )
+                          .scale(
+                            begin: const Offset(0.8, 0.8),
+                            end: const Offset(1.2, 1.2),
+                            duration: 4.seconds,
+                          ),
+
+                      // 2. Secondary Interactive Ring
+                      Container(
+                            width: 100.r,
+                            height: 100.r,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: Colors.white.withValues(
+                                  alpha: 0.15,
+                                ),
+                                width: 1.5,
+                              ),
+                            ),
+                          )
+                          .animate(onPlay: (c) => c.repeat())
+                          .rotate(duration: 10.seconds),
+
+                      // 3. Floating Sparkles/Particles
+                      ...List.generate(5, (index) {
+                        final random = math.Random(index + 50);
+                        return Positioned(
+                          left: 20.w + random.nextDouble() * 100.w,
+                          top: 20.h + random.nextDouble() * 80.h,
+                          child:
+                              Icon(
+                                    Icons.star_rounded,
+                                    color: Colors.white.withValues(
+                                      alpha: 0.3,
+                                    ),
+                                    size: (8 + random.nextInt(8)).r,
+                                  )
+                                  .animate(
+                                    onPlay: (c) =>
+                                        c.repeat(reverse: true),
+                                  )
+                                  .fadeIn(
+                                    duration: (1 + random.nextDouble())
+                                        .seconds,
+                                  )
+                                  .moveY(
+                                    begin: 0,
+                                    end: -20,
+                                    duration: 2.seconds,
+                                  ),
+                        );
+                      }),
+
+                      // 4. The Buddy Icon (Grounded in Center)
+                      Container(
+                            padding: EdgeInsets.all(18.r),
+                            decoration: BoxDecoration(
+                              color: Colors.white.withValues(
+                                alpha: 0.15,
+                              ),
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: Colors.white.withValues(
+                                  alpha: 0.25,
+                                ),
+                                width: 2.r,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withValues(
+                                    alpha: 0.1,
+                                  ),
+                                  blurRadius: 25,
+                                  offset: const Offset(0, 12),
+                                ),
+                              ],
+                            ),
+                            child: Text(
+                              "🧸",
+                              style: TextStyle(fontSize: 48.sp, height: 1.0),
+                            ),
+                          )
+                          .animate(
+                            onPlay: (c) => c.repeat(reverse: true),
+                          )
+                          .moveY(
+                            begin: -6,
+                            end: 6,
+                            duration: 2.seconds,
+                            curve: Curves.easeInOut,
+                          )
+                          .scale(
+                            begin: const Offset(1, 1),
+                            end: const Offset(1.05, 1.05),
+                            duration: 2.seconds,
+                          ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),

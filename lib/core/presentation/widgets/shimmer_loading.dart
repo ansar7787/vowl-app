@@ -159,7 +159,7 @@ class LeaderboardShimmerLoading extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       child: Column(
         children: [
-          SizedBox(height: 100.h),
+          SizedBox(height: 160.h),
           // Portal podium
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.w),

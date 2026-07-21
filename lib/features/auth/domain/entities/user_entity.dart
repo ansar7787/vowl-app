@@ -164,6 +164,24 @@ class UserEntity {
     return count;
   }
 
+  /// Total number of kids game levels completed.
+  int get kidsTotalLevelsCompleted {
+    final adultCategories = QuestType.values
+        .expand((q) => [q.name, q.serializedName])
+        .toSet();
+    adultCategories.addAll(GameSubtype.values.map((s) => s.name));
+    // Exclude standard non-kids core systems just in case
+    adultCategories.addAll(['diagnostic', 'placement', 'placement_test', 'daily_challenge']);
+
+    var count = 0;
+    for (final entry in completedLevels.entries) {
+      if (!adultCategories.contains(entry.key)) {
+        count += entry.value.length;
+      }
+    }
+    return count;
+  }
+
   /// Whether the Double XP power-up is currently active.
   bool get isDoubleXPActive {
     if (doubleXPExpiry == null) return false;

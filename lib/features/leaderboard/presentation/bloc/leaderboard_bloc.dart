@@ -25,25 +25,40 @@ class LeaderboardBloc extends Bloc<LeaderboardEvent, LeaderboardState> {
     // would leave the completer dangling, freezing the RefreshIndicator
     // spinner indefinitely with no recovery path for the user.
     try {
-      final result = await repository.getTopUsers();
+      final result = event.isKids 
+          ? await repository.getTopKidsUsers() 
+          : await repository.getTopUsers();
 
       result.fold((failure) => emit(LeaderboardError(failure.message)), (data) {
-        // Sort: totalLevelsCompleted ↓ → totalExp ↓ → streak ↓ → coins ↓
+        // Sort
         final sortedUsers = List<UserEntity>.from(data.users)
           ..sort((a, b) {
-            final aLevels = a.totalLevelsCompleted;
-            final bLevels = b.totalLevelsCompleted;
-            if (bLevels != aLevels) return bLevels.compareTo(aLevels);
-            if (b.totalExp != a.totalExp) {
+            if (event.isKids) {
+              final aLevels = a.kidsTotalLevelsCompleted;
+              final bLevels = b.kidsTotalLevelsCompleted;
+              if (bLevels != aLevels) return bLevels.compareTo(aLevels);
+              if (b.kidsCoins != a.kidsCoins) {
+                return b.kidsCoins.compareTo(a.kidsCoins);
+              }
+              if (b.currentStreak != a.currentStreak) {
+                return b.currentStreak.compareTo(a.currentStreak);
+              }
               return b.totalExp.compareTo(a.totalExp);
+            } else {
+              final aLevels = a.totalLevelsCompleted;
+              final bLevels = b.totalLevelsCompleted;
+              if (bLevels != aLevels) return bLevels.compareTo(aLevels);
+              if (b.totalExp != a.totalExp) {
+                return b.totalExp.compareTo(a.totalExp);
+              }
+              if (b.currentStreak != a.currentStreak) {
+                return b.currentStreak.compareTo(a.currentStreak);
+              }
+              return b.coins.compareTo(a.coins);
             }
-            if (b.currentStreak != a.currentStreak) {
-              return b.currentStreak.compareTo(a.currentStreak);
-            }
-            return b.coins.compareTo(a.coins);
           });
 
-        emit(LeaderboardLoaded(sortedUsers, data.lastUpdated));
+        emit(LeaderboardLoaded(sortedUsers, data.lastUpdated, isKids: event.isKids));
       });
     } finally {
       // Always complete — whether the fetch succeeded, failed with a Left,

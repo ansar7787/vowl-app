@@ -22,6 +22,7 @@ import 'package:vowl/features/home/presentation/widgets/daily_motivation_card.da
 import 'package:vowl/features/home/presentation/widgets/mystery_chest_dialog.dart';
 import 'package:vowl/core/presentation/widgets/ad_reward_card.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_reward_ad_card.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_global_progress_card.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/home/presentation/widgets/home_quick_stats.dart';
 import 'package:vowl/features/home/presentation/widgets/home_section_header.dart';
@@ -37,6 +38,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int? _globalRank;
+  int? _kidsGlobalRank;
   bool _hasCheckedDailyChestThisSession = false;
 
   @override
@@ -58,6 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
     try {
       final repo = di.sl<LeaderboardRepository>();
       final result = await repo.getTopUsers(limit: 100);
+      final kidsResult = await repo.getTopKidsUsers(limit: 100);
 
       // CRITICAL: this is an async gap — the widget may have been disposed
       // (e.g. the user logged out / navigated away) while the request was
@@ -81,6 +84,27 @@ class _HomeScreenState extends State<HomeScreen> {
         if (currentUser != null && mounted) {
           final idx = sorted.indexWhere((u) => u.id == currentUser.id);
           setState(() => _globalRank = idx >= 0 ? idx + 1 : null);
+        }
+      });
+      
+      kidsResult.fold((_) {}, (data) {
+        final sorted = List<UserEntity>.from(data.users)
+          ..sort((a, b) {
+            final aL = a.kidsTotalLevelsCompleted;
+            final bL = b.kidsTotalLevelsCompleted;
+            if (bL != aL) return bL.compareTo(aL);
+            if (b.kidsCoins != a.kidsCoins) {
+              return b.kidsCoins.compareTo(a.kidsCoins);
+            }
+            if (b.currentStreak != a.currentStreak) {
+              return b.currentStreak.compareTo(a.currentStreak);
+            }
+            return b.totalExp.compareTo(a.totalExp);
+          });
+        final currentUser = context.read<AuthBloc>().state.user;
+        if (currentUser != null && mounted) {
+          final idx = sorted.indexWhere((u) => u.id == currentUser.id);
+          setState(() => _kidsGlobalRank = idx >= 0 ? idx + 1 : null);
         }
       });
     } catch (e) {
@@ -233,6 +257,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                 user: user,
                                 mode: CommandPodMode.kidsOnly,
                               ),
+                              SizedBox(height: 14.h),
+                              KidsGlobalProgressCard(user: user, globalRank: _kidsGlobalRank),
                             ],
                           ),
                         ),

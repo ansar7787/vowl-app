@@ -8,8 +8,9 @@ import 'package:vowl/core/utils/locale_service.dart';
 
 class LeaderboardPodium extends StatelessWidget {
   final List<UserEntity> top3;
+  final bool isKids;
 
-  const LeaderboardPodium({super.key, required this.top3});
+  const LeaderboardPodium({super.key, required this.top3, this.isKids = false});
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +37,7 @@ class LeaderboardPodium extends StatelessWidget {
                         user: top3[1],
                         rank: 2,
                         maxHeight: maxPodiumHeight,
+                        isKids: isKids,
                       ),
                     )
                   else
@@ -49,6 +51,7 @@ class LeaderboardPodium extends StatelessWidget {
                       user: top3[0],
                       rank: 1,
                       maxHeight: maxPodiumHeight,
+                      isKids: isKids,
                     ),
                   ),
 
@@ -61,6 +64,7 @@ class LeaderboardPodium extends StatelessWidget {
                         user: top3[2],
                         rank: 3,
                         maxHeight: maxPodiumHeight,
+                        isKids: isKids,
                       ),
                     )
                   else
@@ -89,11 +93,13 @@ class _PodiumSlot extends StatelessWidget {
   final UserEntity user;
   final int rank;
   final double maxHeight;
+  final bool isKids;
 
   const _PodiumSlot({
     required this.user,
     required this.rank,
     required this.maxHeight,
+    this.isKids = false,
   });
 
   @override
@@ -105,7 +111,9 @@ class _PodiumSlot extends StatelessWidget {
         ? maxHeight * 0.46
         : (rank == 2 ? maxHeight * 0.36 : maxHeight * 0.30);
     final colors = _rankColors(rank);
-    final levelsCleared = user.totalLevelsCompleted;
+    final levelsCleared = isKids ? user.kidsTotalLevelsCompleted : user.totalLevelsCompleted;
+    final score = isKids ? user.kidsCoins : user.totalExp;
+    final scoreLabel = isKids ? 'Coins' : 'XP';
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Semantics(
@@ -114,7 +122,7 @@ class _PodiumSlot extends StatelessWidget {
       // FIX (HIGH-2): "Player" fallback localised via context.tr().
       label:
           'Rank $rank: ${user.displayName ?? context.tr("leaderboard.player", fallback: 'Player')}. '
-          '$levelsCleared levels cleared. ${user.totalExp} XP.',
+          '$levelsCleared levels cleared. $score $scoreLabel.',
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -299,12 +307,12 @@ class _PodiumSlot extends StatelessWidget {
                   FittedBox(
                     fit: BoxFit.scaleDown,
                     child: Text(
-                      '${user.totalExp} XP',
+                      '$score $scoreLabel',
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: isFirst ? 7.sp : 6.sp,
                         fontWeight: FontWeight.w700,
-                        color: isDark ? Colors.white54 : Colors.black45,
+                        color: isDark ? Colors.white70 : Colors.black54,
                         height: 1.1,
                       ),
                     ),

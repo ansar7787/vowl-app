@@ -18,8 +18,22 @@ import 'package:vowl/features/leaderboard/presentation/widgets/leaderboard_rank_
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
-class LeaderboardScreen extends StatelessWidget {
-  const LeaderboardScreen({super.key});
+class LeaderboardScreen extends StatefulWidget {
+  final bool isKids;
+  const LeaderboardScreen({super.key, this.isKids = false});
+
+  @override
+  State<LeaderboardScreen> createState() => _LeaderboardScreenState();
+}
+
+class _LeaderboardScreenState extends State<LeaderboardScreen> {
+  late bool _isKidsMode;
+
+  @override
+  void initState() {
+    super.initState();
+    _isKidsMode = widget.isKids;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +48,7 @@ class LeaderboardScreen extends StatelessWidget {
         : (isDark ? const Color(0xFF0F172A) : Colors.white);
 
     return BlocProvider(
-      create: (_) => di.sl<LeaderboardBloc>()..add(const LoadLeaderboard()),
+      create: (_) => di.sl<LeaderboardBloc>()..add(LoadLeaderboard(isKids: _isKidsMode)),
       child: Scaffold(
         backgroundColor: bgColor,
         body: BlocBuilder<LeaderboardBloc, LeaderboardState>(
@@ -46,18 +60,42 @@ class LeaderboardScreen extends StatelessWidget {
             return Stack(
               children: [
                 const MeshGradientBackground(showLetters: false),
-                if (state is LeaderboardLoaded)
-                  _LeaderboardContent(state: state, currentUser: currentUser)
-                else if (state is LeaderboardLoading ||
-                    state is LeaderboardInitial)
-                  const LeaderboardShimmerLoading()
-                else if (state is LeaderboardError)
-                  _LeaderboardErrorView(
-                    message: state.message,
-                    onRetry: () => context.read<LeaderboardBloc>().add(
-                      const LoadLeaderboard(),
-                    ),
+                
+                // Content Layer
+                Positioned.fill(
+                  child: Builder(
+                    builder: (context) {
+                      if (state is LeaderboardLoaded) {
+                        return _LeaderboardContent(state: state, currentUser: currentUser);
+                      } else if (state is LeaderboardLoading || state is LeaderboardInitial) {
+                        return const LeaderboardShimmerLoading();
+                      } else if (state is LeaderboardError) {
+                        return _LeaderboardErrorView(
+                          message: state.message,
+                          onRetry: () => context.read<LeaderboardBloc>().add(
+                            LoadLeaderboard(isKids: _isKidsMode),
+                          ),
+                        );
+                      }
+                      return const SizedBox.shrink();
+                    }
                   ),
+                ),
+
+                // Floating Toggle Overlay
+                Positioned(
+                  top: MediaQuery.of(context).padding.top + 10.h,
+                  left: 24.w,
+                  right: 24.w,
+                  child: _LeaderboardToggle(
+                    isKidsMode: _isKidsMode,
+                    onToggle: (bool isKids) {
+                      if (_isKidsMode == isKids) return;
+                      setState(() => _isKidsMode = isKids);
+                      context.read<LeaderboardBloc>().add(LoadLeaderboard(isKids: isKids));
+                    },
+                  ),
+                ),
               ],
             );
           },
@@ -94,16 +132,21 @@ class _LeaderboardContent extends StatelessWidget {
           parent: BouncingScrollPhysics(),
         ),
         slivers: [
-          // Top safe-area padding
+          // Top safe-area padding + Toggle bar space
           SliverToBoxAdapter(
-            child: SizedBox(height: MediaQuery.of(context).padding.top + 10.h),
+            child: SizedBox(
+              height: MediaQuery.of(context).padding.top + 10.h + 60.h,
+            ),
           ),
 
           // Header with last-updated timestamp
           SliverToBoxAdapter(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.w),
-              child: LeaderboardHeader(lastUpdated: state.lastUpdated),
+              child: LeaderboardHeader(
+                lastUpdated: state.lastUpdated,
+                isKids: state.isKids,
+              ),
             ),
           ),
 
@@ -111,7 +154,10 @@ class _LeaderboardContent extends StatelessWidget {
           SliverToBoxAdapter(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w),
-              child: LeaderboardPodium(top3: state.users.take(3).toList()),
+              child: LeaderboardPodium(
+                top3: state.users.take(3).toList(),
+                isKids: state.isKids,
+              ),
             ),
           ),
 
@@ -127,7 +173,10 @@ class _LeaderboardContent extends StatelessWidget {
                 ), // subtle backdrop for when pinned
                 padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
                 alignment: Alignment.center,
-                child: LeaderboardRankCard(allUsers: state.users),
+                child: LeaderboardRankCard(
+                  allUsers: state.users,
+                  isKids: state.isKids,
+                ),
               ),
             ),
           ),
@@ -275,6 +324,109 @@ class _LeaderboardErrorView extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _LeaderboardToggle extends StatelessWidget {
+  final bool isKidsMode;
+  final ValueChanged<bool> onToggle;
+
+  const _LeaderboardToggle({
+    required this.isKidsMode,
+    required this.onToggle,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    
+    return Container(
+      height: 52.h,
+      padding: EdgeInsets.all(4.r),
+      decoration: BoxDecoration(
+        color: isDark ? Colors.black.withValues(alpha: 0.3) : Colors.white.withValues(alpha: 0.5),
+        borderRadius: BorderRadius.circular(26.r),
+        border: Border.all(
+          color: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05),
+          width: 1,
+        ),
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: GestureDetector(
+              onTap: () => onToggle(false),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: !isKidsMode 
+                    ? const Color(0xFF6366F1) 
+                    : Colors.transparent,
+                  borderRadius: BorderRadius.circular(22.r),
+                  boxShadow: !isKidsMode ? [
+                    BoxShadow(
+                      color: const Color(0xFF6366F1).withValues(alpha: 0.4),
+                      blurRadius: 8,
+                      offset: const Offset(0, 2),
+                    )
+                  ] : null,
+                ),
+                alignment: Alignment.center,
+                child: Text(
+                  'Global Ranks',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontWeight: FontWeight.w800,
+                    fontSize: 14.sp,
+                    color: !isKidsMode ? Colors.white : (isDark ? Colors.white54 : Colors.black54),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: GestureDetector(
+              onTap: () => onToggle(true),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: isKidsMode 
+                    ? const Color(0xFFF43F5E) 
+                    : Colors.transparent,
+                  borderRadius: BorderRadius.circular(22.r),
+                  boxShadow: isKidsMode ? [
+                    BoxShadow(
+                      color: const Color(0xFFF43F5E).withValues(alpha: 0.4),
+                      blurRadius: 8,
+                      offset: const Offset(0, 2),
+                    )
+                  ] : null,
+                ),
+                alignment: Alignment.center,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.child_care_rounded,
+                      color: isKidsMode ? Colors.white : (isDark ? Colors.white54 : Colors.black54),
+                      size: 16.r,
+                    ),
+                    SizedBox(width: 6.w),
+                    Text(
+                      'Kids Zone',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontWeight: FontWeight.w800,
+                        fontSize: 14.sp,
+                        color: isKidsMode ? Colors.white : (isDark ? Colors.white54 : Colors.black54),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

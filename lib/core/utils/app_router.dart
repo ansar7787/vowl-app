@@ -35,6 +35,7 @@ class AppRouter {
   static const String adminRoute = '/admin';
   static const String settingsRoute = '/settings';
   static const String leaderboardRoute = '/leaderboard';
+  static const String kidsLeaderboardRoute = '/kids-leaderboard';
   static const String forgotPasswordRoute = '/forgot-password';
   static const String trophyRoomRoute = '/trophy-room';
   static const String verifyEmailRoute = '/verify-email';

@@ -10,18 +10,22 @@ class LeaderboardRankTile extends StatelessWidget {
   final UserEntity user;
   final int rank;
   final bool isMe;
+  final bool isKids;
 
   const LeaderboardRankTile({
     super.key,
     required this.user,
     required this.rank,
     required this.isMe,
+    this.isKids = false,
   });
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final levelsCleared = user.totalLevelsCompleted;
+    final levelsCleared = isKids ? user.kidsTotalLevelsCompleted : user.totalLevelsCompleted;
+    final score = isKids ? user.kidsCoins : user.totalExp;
+    final scoreLabel = isKids ? 'Coins' : 'XP';
     final tierColor = rank <= 10
         ? const Color(0xFF3B82F6)
         : const Color(0xFF94A3B8);
@@ -34,7 +38,7 @@ class LeaderboardRankTile extends StatelessWidget {
       // Includes rank, name, XP, streak, levels, and self-identification.
       label:
           'Rank $rank: $displayName. '
-          '${user.totalExp} XP. '
+          '$score $scoreLabel. '
           '${user.currentStreak}-day streak. '
           '$levelsCleared levels cleared.'
           '${isMe ? " ${context.tr('leaderboard.this_is_you', fallback: 'This is you!')}" : ""}',
@@ -163,7 +167,7 @@ class LeaderboardRankTile extends StatelessWidget {
                     ),
                     SizedBox(height: 2.h),
                     Text(
-                      '${user.totalExp} XP · ${user.currentStreak}🔥',
+                      '$score $scoreLabel · ${user.currentStreak}🔥',
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 10.sp,
