@@ -43,6 +43,8 @@ class KidsRoutes {
   static const String kidsBuddyBoutiqueRoute = '/kids-zone/boutique';
   static const String kidsRoomRoute = '/kids-room';
   static const String kidsHandwritingRoute = '/kids-handwriting';
+  static const String kidsWeatherRoute = '/kids-weather';
+  static const String kidsProfessionsRoute = '/kids-professions';
 
   static String getKidsGameTitle(String gameType) {
     switch (gameType) {
@@ -94,6 +96,10 @@ class KidsRoutes {
         return 'Clothing';
       case 'handwriting':
         return 'Handwriting';
+      case 'weather':
+        return 'Weather';
+      case 'professions':
+        return 'Professions';
       default:
         return 'Kids Game';
     }
@@ -149,6 +155,10 @@ class KidsRoutes {
         return const Color(0xFF8B5CF6);
       case 'handwriting':
         return const Color(0xFFF43F5E); // Rose
+      case 'weather':
+        return const Color(0xFF38BDF8); // Light Blue
+      case 'professions':
+        return const Color(0xFF6366F1); // Indigo
       default:
         return Colors.blue;
     }
@@ -510,6 +520,30 @@ class KidsRoutes {
         child: _getKidsBlocWrapper(
           UnifiedKidsGameScreen(
             gameType: 'handwriting',
+            level: state.extra as int? ?? 1,
+          ),
+        ),
+        state: state,
+      ),
+    ),
+    GoRoute(
+      path: kidsWeatherRoute,
+      pageBuilder: (context, state) => fadeTransitionPage(
+        child: _getKidsBlocWrapper(
+          UnifiedKidsGameScreen(
+            gameType: 'weather',
+            level: state.extra as int? ?? 1,
+          ),
+        ),
+        state: state,
+      ),
+    ),
+    GoRoute(
+      path: kidsProfessionsRoute,
+      pageBuilder: (context, state) => fadeTransitionPage(
+        child: _getKidsBlocWrapper(
+          UnifiedKidsGameScreen(
+            gameType: 'professions',
             level: state.extra as int? ?? 1,
           ),
         ),

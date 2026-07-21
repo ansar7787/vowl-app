@@ -1218,6 +1218,8 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
       'body_parts': AppRouter.kidsBodyPartsRoute,
       'clothing': AppRouter.kidsClothingRoute,
       'handwriting': AppRouter.kidsHandwritingRoute,
+      'weather': AppRouter.kidsWeatherRoute,
+      'professions': AppRouter.kidsProfessionsRoute,
     };
 
     final route = routeMap[widget.gameType];
