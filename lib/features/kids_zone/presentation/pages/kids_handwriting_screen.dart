@@ -11,6 +11,7 @@ import 'package:vowl/core/utils/widgets/handwriting_canvas.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 class KidsHandwritingScreen extends StatefulWidget {
   const KidsHandwritingScreen({super.key});
@@ -42,8 +43,10 @@ class _KidsHandwritingScreenState extends State<KidsHandwritingScreen> {
     if (mounted) {
       setState(() => _isDownloading = false);
       if (!success) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Failed to download handwriting model.')),
+        CustomSnackBar.show(
+          context: context,
+          message: 'Failed to download handwriting model. Please check your connection.',
+          type: SnackBarType.error,
         );
       }
     }
@@ -121,137 +124,233 @@ class _KidsHandwritingScreenState extends State<KidsHandwritingScreen> {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final primaryColor = const Color(0xFFF43F5E); // Rose
+    final frameColor = const Color(0xFF38BDF8); // Fun blue toy frame
 
     return Scaffold(
-      backgroundColor: isDark ? const Color(0xFF1E293B) : const Color(0xFFF0FDF4),
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        centerTitle: true,
-        iconTheme: IconThemeData(color: isDark ? Colors.white : Colors.black87),
-        title: Text(
-          context.tr('kids_zone.handwriting_title', fallback: 'Write & Learn'),
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 24.sp,
-            fontWeight: FontWeight.w900,
-            color: isDark ? Colors.white : Colors.black87,
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: isDark 
+                ? [const Color(0xFF0F172A), const Color(0xFF1E293B)]
+                : [const Color(0xFFFDF4FF), const Color(0xFFE0E7FF)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
           ),
         ),
-      ),
-      body: _isDownloading
-          ? Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const CircularProgressIndicator(color: Color(0xFFF43F5E)),
-                  SizedBox(height: 16.h),
-                  Text(
-                    context.tr('translation.downloading', fallback: 'Downloading language model... Please wait.'),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: isDark ? Colors.white70 : Colors.black54,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
-            )
-          : Padding(
-              padding: EdgeInsets.all(24.w),
-              child: Column(
-                children: [
-                  // Target Word Display
-                  Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.symmetric(vertical: 24.h),
-                    decoration: BoxDecoration(
-                      color: primaryColor.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(32.r),
-                      border: Border.all(color: primaryColor, width: 4.w),
-                    ),
-                    child: Center(
-                      child: Text(
-                        _wordsToPractice[_currentWordIndex],
+        child: SafeArea(
+          child: _isDownloading
+              ? Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const CircularProgressIndicator(color: Color(0xFFF43F5E)),
+                      SizedBox(height: 16.h),
+                      Text(
+                        context.tr('translation.downloading', fallback: 'Getting your classroom ready...'),
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 64.sp,
-                          fontWeight: FontWeight.w900,
-                          color: primaryColor,
-                          letterSpacing: 4,
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.bold,
+                          color: isDark ? Colors.white70 : Colors.black54,
                         ),
+                        textAlign: TextAlign.center,
                       ),
-                    ),
-                  ).animate().scale(delay: 200.ms, curve: Curves.easeOutBack),
-                  
-                  SizedBox(height: 24.h),
-                  
-                  // Handwriting Canvas
-                  Expanded(
-                    child: Stack(
-                      children: [
-                        HandwritingCanvas(
-                          onInkUpdated: (ink) {
-                            _currentInk = ink;
-                          },
-                          onClear: () {
-                            _currentInk = null;
-                            setState(() {
-                              _isCorrect = null;
-                            });
-                          },
-                        ),
-                        if (_isCorrect != null)
-                          Positioned.fill(
-                            child: Center(
+                    ],
+                  ),
+                )
+              : Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+                  child: Column(
+                    children: [
+                      // Custom Cute Header
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          ScaleButton(
+                            onTap: () => Navigator.pop(context),
+                            child: Container(
+                              padding: EdgeInsets.all(12.w),
+                              decoration: BoxDecoration(
+                                color: isDark ? const Color(0xFF334155) : Colors.white,
+                                shape: BoxShape.circle,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withValues(alpha: 0.1),
+                                    blurRadius: 8,
+                                    offset: Offset(0, 4.h),
+                                  )
+                                ],
+                              ),
                               child: Icon(
-                                _isCorrect! ? Icons.check_circle_rounded : Icons.cancel_rounded,
-                                color: _isCorrect! ? Colors.green : Colors.red,
-                                size: 120.r,
-                              ).animate().scale(curve: Curves.easeOutBack).fadeOut(delay: 1500.ms),
+                                Icons.arrow_back_rounded,
+                                color: primaryColor,
+                                size: 28.sp,
+                              ),
                             ),
                           ),
-                      ],
-                    ),
-                  ),
-
-                  SizedBox(height: 24.h),
-                  
-                  // Action Button
-                  ScaleButton(
-                    onTap: _isChecking ? null : _checkHandwriting,
-                    child: Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.symmetric(vertical: 16.h),
-                      decoration: BoxDecoration(
-                        color: _isChecking ? Colors.grey : primaryColor,
-                        borderRadius: BorderRadius.circular(24.r),
-                        boxShadow: [
-                          if (!_isChecking)
-                            BoxShadow(
-                              color: primaryColor.withValues(alpha: 0.5),
-                              offset: Offset(0, 6.h),
+                          Text(
+                            context.tr('kids_zone.handwriting_title', fallback: 'Write & Learn!'),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 28.sp,
+                              fontWeight: FontWeight.w900,
+                              color: isDark ? Colors.white : const Color(0xFF1E293B),
                             ),
+                          ),
+                          SizedBox(width: 52.w), // Balance for centering
                         ],
                       ),
-                      child: Center(
-                        child: _isChecking
-                            ? const CircularProgressIndicator(color: Colors.white)
-                            : Text(
-                                context.tr('common.check', fallback: 'Check'),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 24.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: Colors.white,
-                                ),
+                      
+                      SizedBox(height: 24.h),
+                      
+                      // Flashcard Target Word Display
+                      Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.symmetric(vertical: 20.h),
+                        decoration: BoxDecoration(
+                          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                          borderRadius: BorderRadius.circular(32.r),
+                          border: Border.all(color: primaryColor.withValues(alpha: 0.3), width: 4.w),
+                          boxShadow: [
+                            BoxShadow(
+                              color: primaryColor.withValues(alpha: 0.2),
+                              blurRadius: 16,
+                              offset: Offset(0, 8.h),
+                            ),
+                          ],
+                        ),
+                        child: Column(
+                          children: [
+                            Text(
+                              'Draw this word:',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.grey.shade500,
                               ),
+                            ),
+                            Text(
+                              _wordsToPractice[_currentWordIndex],
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 64.sp,
+                                fontWeight: FontWeight.w900,
+                                color: primaryColor,
+                                letterSpacing: 6,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ).animate().scale(delay: 200.ms, curve: Curves.easeOutBack),
+                      
+                      SizedBox(height: 24.h),
+                      
+                      // Toy Tablet Canvas Frame
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: isDark ? const Color(0xFF0F172A) : Colors.white,
+                            borderRadius: BorderRadius.circular(32.r),
+                            border: Border.all(
+                              color: frameColor,
+                              width: 12.w, // Thick playful border
+                              strokeAlign: BorderSide.strokeAlignOutside,
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: frameColor.withValues(alpha: 0.3),
+                                blurRadius: 16,
+                                offset: Offset(0, 8.h),
+                              ),
+                            ],
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20.r),
+                            child: Stack(
+                              children: [
+                                HandwritingCanvas(
+                                  onInkUpdated: (ink) {
+                                    _currentInk = ink;
+                                  },
+                                  onClear: () {
+                                    _currentInk = null;
+                                    setState(() {
+                                      _isCorrect = null;
+                                    });
+                                  },
+                                ),
+                                if (_isCorrect != null)
+                                  Positioned.fill(
+                                    child: Center(
+                                      child: Container(
+                                        padding: EdgeInsets.all(24.w),
+                                        decoration: BoxDecoration(
+                                          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                                          shape: BoxShape.circle,
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: Colors.black.withValues(alpha: 0.1),
+                                              blurRadius: 12,
+                                              offset: Offset(0, 6.h),
+                                            )
+                                          ]
+                                        ),
+                                        child: Icon(
+                                          _isCorrect! ? Icons.star_rounded : Icons.close_rounded,
+                                          color: _isCorrect! ? const Color(0xFFFBBF24) : Colors.red,
+                                          size: 80.r,
+                                        ),
+                                      ).animate().scale(curve: Curves.elasticOut, duration: 800.ms).fadeOut(delay: 1500.ms),
+                                    ),
+                                  ),
+                              ],
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
+                      
+                      SizedBox(height: 32.h),
+                      
+                      // Action Button (Already playful, just refined)
+                      ScaleButton(
+                        onTap: _isChecking ? null : _checkHandwriting,
+                        child: Container(
+                          width: double.infinity,
+                          padding: EdgeInsets.symmetric(vertical: 20.h),
+                          decoration: BoxDecoration(
+                            color: _isChecking ? Colors.grey : primaryColor,
+                            borderRadius: BorderRadius.circular(32.r),
+                            boxShadow: [
+                              if (!_isChecking)
+                                BoxShadow(
+                                  color: primaryColor.withValues(alpha: 0.5),
+                                  offset: Offset(0, 8.h),
+                                  blurRadius: 12,
+                                ),
+                            ],
+                          ),
+                          child: Center(
+                            child: _isChecking
+                                ? const CircularProgressIndicator(color: Colors.white)
+                                : Text(
+                                    context.tr('common.check', fallback: 'Check My Answer!'),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 26.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 16.h),
+                    ],
                   ),
-                ],
-              ),
-            ),
+                ),
+        ),
+      ),
     );
   }
 }
