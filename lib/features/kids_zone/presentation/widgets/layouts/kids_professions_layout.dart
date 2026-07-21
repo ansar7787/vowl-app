@@ -66,7 +66,14 @@ class KidsProfessionsLayout extends StatelessWidget {
       width: 320.w,
       padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
-        color: const Color(0xFFEEF2FF), // Indigo 50
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Color(0xFFEEF2FF), // Indigo 50
+            Color(0xFFE0E7FF), // Indigo 100
+          ],
+        ),
         borderRadius: BorderRadius.circular(20.r), // Blocky, building shape
         border: Border.all(color: const Color(0xFF818CF8), width: 6),
         boxShadow: [
@@ -160,7 +167,14 @@ class KidsProfessionsLayout extends StatelessWidget {
         width: 140.w,
         padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 12.w),
         decoration: BoxDecoration(
-          color: Colors.white,
+          gradient: const LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Colors.white,
+              Color(0xFFEEF2FF), // Slight indigo tint at the bottom of the badge
+            ],
+          ),
           borderRadius: BorderRadius.circular(12.r),
           border: Border.all(color: const Color(0xFF4F46E5), width: 3), // Indigo 600
           boxShadow: [

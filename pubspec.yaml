@@ -67,6 +67,7 @@ dependencies:
   google_mlkit_digital_ink_recognition: any
   google_mlkit_entity_extraction: any
   google_mlkit_image_labeling: any
+  lottie: ^3.3.3
 
 dev_dependencies:
   flutter_test:
@@ -117,6 +118,7 @@ flutter:
 
   assets:
     - .env
+    - assets/animations/
     - assets/images/
     - assets/icons/
     - assets/sounds/

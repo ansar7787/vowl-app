@@ -66,7 +66,14 @@ class KidsWeatherLayout extends StatelessWidget {
       width: 320.w,
       padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
-        color: const Color(0xFFF0F9FF), // Light sky blue
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Color(0xFFF0F9FF), // Sky 50
+            Color(0xFFE0F2FE), // Sky 100
+          ],
+        ),
         borderRadius: BorderRadius.circular(32.r),
         border: Border.all(color: const Color(0xFFBAE6FD), width: 4),
         boxShadow: [
@@ -159,7 +166,14 @@ class KidsWeatherLayout extends StatelessWidget {
         width: 140.w,
         padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 12.w),
         decoration: BoxDecoration(
-          color: Colors.white,
+          gradient: const LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Colors.white,
+              Color(0xFFF0F9FF), // Very soft blue at bottom of cloud
+            ],
+          ),
           borderRadius: BorderRadius.circular(40.r), // Cloud-like pill shape
           border: Border.all(color: const Color(0xFFE0F2FE), width: 3),
           boxShadow: [

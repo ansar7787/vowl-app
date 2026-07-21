@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:confetti/confetti.dart';
+import 'package:lottie/lottie.dart';
 
 class KidsFeedbackOverlay extends StatelessWidget {
   final bool isCorrect;
@@ -110,7 +111,7 @@ class _KidsFeedbackOverlayContentState
 
   Widget _buildCorrectAnimation() {
     return Container(
-          padding: EdgeInsets.all(32.r),
+          padding: EdgeInsets.all(16.r), // Reduced padding since Lottie has its own whitespace
           decoration: BoxDecoration(
             color: const Color(0xFF10B981), // Emerald 500
             shape: BoxShape.circle,
@@ -122,7 +123,14 @@ class _KidsFeedbackOverlayContentState
               ),
             ],
           ),
-          child: Icon(Icons.star_rounded, color: Colors.white, size: 80.sp),
+          child: Lottie.asset(
+            'assets/animations/success.json',
+            width: 100.sp,
+            height: 100.sp,
+            repeat: false,
+            errorBuilder: (context, error, stackTrace) =>
+                Icon(Icons.star_rounded, color: Colors.white, size: 80.sp),
+          ),
         )
         .animate()
         .scale(curve: Curves.elasticOut, duration: 800.ms)

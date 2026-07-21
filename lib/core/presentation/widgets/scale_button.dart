@@ -1,5 +1,6 @@
 import 'package:clock/clock.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 /// A button that scales down slightly when pressed, providing organic tactile
 /// feedback. Includes a 500 ms debounce guard against accidental double-taps.
@@ -66,6 +67,7 @@ class _ScaleButtonState extends State<ScaleButton>
     if (_lastTapTime == null ||
         now.difference(_lastTapTime!) > const Duration(milliseconds: 500)) {
       _lastTapTime = now;
+      HapticFeedback.lightImpact();
       widget.onTap!();
     }
   }
