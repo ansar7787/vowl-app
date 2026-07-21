@@ -119,8 +119,9 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
         });
       }
 
-      // Allow the native slide transition to finish before building the full 200 nodes
-      Future.delayed(const Duration(milliseconds: 350), () {
+      // Allow the native slide transition AND the initial smooth scroll to finish 
+      // before building the full 200 nodes. (Slide is ~300ms, Scroll is 1200ms)
+      Future.delayed(const Duration(milliseconds: 1600), () {
         if (mounted) {
           setState(() {
             _isRouteTransitioning = false;
@@ -129,9 +130,11 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
       });
 
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (mounted) {
-          _scrollToCurrentLevel(animate: false);
-        }
+        Future.delayed(const Duration(milliseconds: 300), () {
+          if (mounted) {
+            _scrollToCurrentLevel(animate: true);
+          }
+        });
         _checkAndShowStoryBeat();
       });
     }
@@ -459,16 +462,14 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                                               ScreenUtil().screenWidth / 2,
                                           0,
                                         ),
-                                        child: RepaintBoundary(
-                                          child: _buildPathNode(
-                                            context,
-                                            levelNumber,
-                                            unlockedLevels,
-                                            completedLevels,
-                                            isDark,
-                                            theme,
-                                            isPremium,
-                                          ),
+                                        child: _buildPathNode(
+                                          context,
+                                          levelNumber,
+                                          unlockedLevels,
+                                          completedLevels,
+                                          isDark,
+                                          theme,
+                                          isPremium,
                                         ),
                                       ),
                                     );
@@ -923,19 +924,17 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
-                    RepaintBoundary(
-                      child: _buildNodeCircle(
-                        context,
-                        level,
-                        isCurrent,
-                        isCompleted,
-                        isPlayable,
-                        isHalfUnlocked,
-                        isTollGate,
-                        isNextZone,
-                        tierColor,
-                        isDark,
-                      ),
+                    _buildNodeCircle(
+                      context,
+                      level,
+                      isCurrent,
+                      isCompleted,
+                      isPlayable,
+                      isHalfUnlocked,
+                      isTollGate,
+                      isNextZone,
+                      tierColor,
+                      isDark,
                     ),
 
                     PositionedDirectional(
@@ -1118,9 +1117,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                     ],
                   ),
                 ),
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .moveY(begin: -2, end: 2, duration: 2.seconds),
+              ),
     );
   }
 
