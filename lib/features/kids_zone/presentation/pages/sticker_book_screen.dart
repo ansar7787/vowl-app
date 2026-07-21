@@ -57,7 +57,7 @@ class _StickerBookScreenState extends State<StickerBookScreen>
         if (user == null) return const SizedBox.shrink();
 
         final totalEarned = user.kidsStickers.length;
-        const totalMax = 92; // 23 categories * 4 stickers
+        const totalMax = 100; // 25 categories * 4 stickers
         final mascotEmoji = KidsAssets.mascotMap[user.kidsMascot] ?? '🦉';
 
         return Scaffold(

@@ -296,7 +296,7 @@ abstract final class UserGameConstants {
     'accentShadowing': 1,
   };
 
-  // 10. Kids Zone (23 Games)
+  // 10. Kids Zone (25 Games)
   //
   // This is the single source of truth for Kids Zone game identifiers.
   // [kKidsGameTypes] is derived from this map's keys — do not add a kids
@@ -325,6 +325,8 @@ abstract final class UserGameConstants {
     'body_parts': 1,
     'clothing': 1,
     'handwriting': 1,
+    'weather': 1,
+    'professions': 1,
   };
 
   // Meta-categories (9 Categories)
