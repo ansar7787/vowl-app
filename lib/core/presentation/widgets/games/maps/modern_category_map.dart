@@ -54,6 +54,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
   StoryBeat? _activeStoryBeat;
   int _totalLevels = 10;
   bool _isLoading = true;
+  bool _isRouteTransitioning = true;
   bool _showFullBackground = false;
 
   // PERF: point geometry only actually depends on `_totalLevels` and the
@@ -117,6 +118,15 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
           _isLoading = false;
         });
       }
+
+      // Allow the native slide transition to finish before building the full 200 nodes
+      Future.delayed(const Duration(milliseconds: 350), () {
+        if (mounted) {
+          setState(() {
+            _isRouteTransitioning = false;
+          });
+        }
+      });
 
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted) {
@@ -421,11 +431,24 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                               // here: each node's perpetual float animation
                               // no longer forces Flutter to walk/repaint
                               // every sibling node alongside it.
-                              Column(
-                                children: [
-                                  ...List.generate(_totalLevels, (index) {
-                                    final levelNumber = index + 1;
-                                    final point = points[index];
+                                Column(
+                                  children: [
+                                    ...List.generate(_totalLevels, (index) {
+                                      final levelNumber = index + 1;
+                                      
+                                      // SMART PROGRESSIVE RENDERING
+                                      // During the route transition (350ms), we ONLY build the nodes that are 
+                                      // actively visible on the screen (the current level +/- 10). 
+                                      // For all other nodes, we render an empty SizedBox to preserve the exact height 
+                                      // of the Column so that _scrollToCurrentLevel(animate: false) lands perfectly.
+                                      // After 350ms, this guard drops and the rest of the nodes are built silently.
+                                      if (_isRouteTransitioning) {
+                                        if (levelNumber < unlockedLevels - 10 || levelNumber > unlockedLevels + 10) {
+                                          return SizedBox(height: rowSpacing);
+                                        }
+                                      }
+
+                                      final point = points[index];
 
                                     return Container(
                                       height: rowSpacing,
