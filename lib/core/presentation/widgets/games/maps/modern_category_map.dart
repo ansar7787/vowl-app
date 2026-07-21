@@ -53,7 +53,6 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
   late ScrollController _scrollController;
   StoryBeat? _activeStoryBeat;
   int _totalLevels = 10;
-  int _visibleNodesCount = 10;
   bool _isLoading = true;
   bool _showFullBackground = false;
 
@@ -119,22 +118,10 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
         });
       }
 
-      // Delay building the full 200 nodes until the route transition finishes (350ms)
-      // to prevent animation stuttering. The first 10 nodes render instantly.
-      Future.delayed(const Duration(milliseconds: 350), () {
-        if (mounted) {
-          setState(() {
-            _visibleNodesCount = _totalLevels;
-          });
-        }
-      });
-
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        Future.delayed(const Duration(milliseconds: 300), () {
-          if (mounted) {
-            _scrollToCurrentLevel(animate: true);
-          }
-        });
+        if (mounted) {
+          _scrollToCurrentLevel(animate: false);
+        }
         _checkAndShowStoryBeat();
       });
     }
@@ -436,7 +423,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                               // every sibling node alongside it.
                               Column(
                                 children: [
-                                  ...List.generate(math.min(_totalLevels, _visibleNodesCount), (index) {
+                                  ...List.generate(_totalLevels, (index) {
                                     final levelNumber = index + 1;
                                     final point = points[index];
 
