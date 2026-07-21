@@ -358,6 +358,8 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
         ),
       ),
     );
+  }
+
   Widget _buildLibraryStatsDashboard(UserEntity user, bool isDark) {
     final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
 
