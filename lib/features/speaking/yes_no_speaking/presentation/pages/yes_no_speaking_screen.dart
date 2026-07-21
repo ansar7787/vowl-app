@@ -47,7 +47,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
   bool _isSpeechActive = false;
 
   String _spokenText = "";
-  List<String> _spokenCandidates = [];
+  
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -109,7 +109,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
     _speechService.listen(
       onResult: (candidates) {
           if (candidates.isEmpty) return;
-          _spokenCandidates = candidates;
+          
           final text = candidates.first;
         setState(() {
           _spokenText = text;

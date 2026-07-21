@@ -27,7 +27,7 @@ class KidsProfessionsLayout extends StatelessWidget {
       gameType: 'professions',
       level: level,
       primaryColor: primaryColor,
-      backgroundprofessions: const [],
+      backgroundColors: const [],
       buildGameUI: (context, state, onHintTap) {
         final quest = state.currentQuest;
 
@@ -89,12 +89,12 @@ class KidsProfessionsLayout extends StatelessWidget {
           width: 280.w,
           height: 200.h,
           decoration: BoxDecoration(
-            color: professions.white,
+            color: Colors.white,
             borderRadius: BorderRadius.circular(4.r),
             border: Border.all(color: const Color(0xFFD4D4D8), width: 2),
             boxShadow: [
               BoxShadow(
-                color: professions.black.withValues(alpha: 0.1),
+                color: Colors.black.withValues(alpha: 0.1),
                 blurRadius: 10,
                 offset: const Offset(0, 8),
               ),
@@ -147,7 +147,7 @@ class KidsProfessionsLayout extends StatelessWidget {
               color: const Color(0xFFB45309),
               borderRadius: BorderRadius.circular(4.r),
               boxShadow: const [
-                BoxShadow(color: professions.black26, offset: Offset(0, 4)),
+                BoxShadow(color: Colors.black26, offset: Offset(0, 4)),
               ],
             ),
           ),
@@ -178,7 +178,7 @@ class KidsProfessionsLayout extends StatelessWidget {
           Container(
             height: 90.h,
             decoration: BoxDecoration(
-              color: professions.white,
+              color: Colors.white,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(8.r),
                 topRight: Radius.circular(8.r),
@@ -187,7 +187,7 @@ class KidsProfessionsLayout extends StatelessWidget {
               ),
               border: Border.all(color: const Color(0xFFE4E4E7), width: 2),
               boxShadow: [
-                BoxShadow(color: professions.black12, offset: Offset(0, 6.h)),
+                BoxShadow(color: Colors.black12, offset: Offset(0, 6.h)),
               ],
             ),
             child: Column(
@@ -233,18 +233,18 @@ class KidsProfessionsLayout extends StatelessWidget {
 
   Color _getColorFromName(String name, Color fallback) {
     final lower = name.toLowerCase();
-    if (lower.contains('red')) return professions.red;
-    if (lower.contains('blue')) return professions.blue;
-    if (lower.contains('green')) return professions.green;
-    if (lower.contains('yellow')) return professions.yellow;
-    if (lower.contains('orange')) return professions.orange;
-    if (lower.contains('purple')) return professions.purple;
-    if (lower.contains('pink')) return professions.pink;
-    if (lower.contains('black')) return professions.black;
+    if (lower.contains('red')) return Colors.red;
+    if (lower.contains('blue')) return Colors.blue;
+    if (lower.contains('green')) return Colors.green;
+    if (lower.contains('yellow')) return Colors.yellow;
+    if (lower.contains('orange')) return Colors.orange;
+    if (lower.contains('purple')) return Colors.purple;
+    if (lower.contains('pink')) return Colors.pink;
+    if (lower.contains('black')) return Colors.black;
     if (lower.contains('white')) {
       return const Color(0xFFE4E4E7); // Off-white for visibility
     }
-    if (lower.contains('brown')) return professions.brown;
+    if (lower.contains('brown')) return Colors.brown;
     return fallback;
   }
 }

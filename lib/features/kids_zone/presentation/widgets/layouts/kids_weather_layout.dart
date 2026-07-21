@@ -27,7 +27,7 @@ class KidsWeatherLayout extends StatelessWidget {
       gameType: 'weather',
       level: level,
       primaryColor: primaryColor,
-      backgroundweather: const [],
+      backgroundColors: const [],
       buildGameUI: (context, state, onHintTap) {
         final quest = state.currentQuest;
 
@@ -89,12 +89,12 @@ class KidsWeatherLayout extends StatelessWidget {
           width: 280.w,
           height: 200.h,
           decoration: BoxDecoration(
-            color: weather.white,
+            color: Colors.white,
             borderRadius: BorderRadius.circular(4.r),
             border: Border.all(color: const Color(0xFFD4D4D8), width: 2),
             boxShadow: [
               BoxShadow(
-                color: weather.black.withValues(alpha: 0.1),
+                color: Colors.black.withValues(alpha: 0.1),
                 blurRadius: 10,
                 offset: const Offset(0, 8),
               ),
@@ -147,7 +147,7 @@ class KidsWeatherLayout extends StatelessWidget {
               color: const Color(0xFFB45309),
               borderRadius: BorderRadius.circular(4.r),
               boxShadow: const [
-                BoxShadow(color: weather.black26, offset: Offset(0, 4)),
+                BoxShadow(color: Colors.black26, offset: Offset(0, 4)),
               ],
             ),
           ),
@@ -178,7 +178,7 @@ class KidsWeatherLayout extends StatelessWidget {
           Container(
             height: 90.h,
             decoration: BoxDecoration(
-              color: weather.white,
+              color: Colors.white,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(8.r),
                 topRight: Radius.circular(8.r),
@@ -187,7 +187,7 @@ class KidsWeatherLayout extends StatelessWidget {
               ),
               border: Border.all(color: const Color(0xFFE4E4E7), width: 2),
               boxShadow: [
-                BoxShadow(color: weather.black12, offset: Offset(0, 6.h)),
+                BoxShadow(color: Colors.black12, offset: Offset(0, 6.h)),
               ],
             ),
             child: Column(
@@ -233,18 +233,18 @@ class KidsWeatherLayout extends StatelessWidget {
 
   Color _getColorFromName(String name, Color fallback) {
     final lower = name.toLowerCase();
-    if (lower.contains('red')) return weather.red;
-    if (lower.contains('blue')) return weather.blue;
-    if (lower.contains('green')) return weather.green;
-    if (lower.contains('yellow')) return weather.yellow;
-    if (lower.contains('orange')) return weather.orange;
-    if (lower.contains('purple')) return weather.purple;
-    if (lower.contains('pink')) return weather.pink;
-    if (lower.contains('black')) return weather.black;
+    if (lower.contains('red')) return Colors.red;
+    if (lower.contains('blue')) return Colors.blue;
+    if (lower.contains('green')) return Colors.green;
+    if (lower.contains('yellow')) return Colors.yellow;
+    if (lower.contains('orange')) return Colors.orange;
+    if (lower.contains('purple')) return Colors.purple;
+    if (lower.contains('pink')) return Colors.pink;
+    if (lower.contains('black')) return Colors.black;
     if (lower.contains('white')) {
       return const Color(0xFFE4E4E7); // Off-white for visibility
     }
-    if (lower.contains('brown')) return weather.brown;
+    if (lower.contains('brown')) return Colors.brown;
     return fallback;
   }
 }

@@ -52,7 +52,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
 
   late AnimationController _radarController;
   String _spokenText = "";
-  List<String> _spokenCandidates = [];
+  
   List<String> _hotspotLabels = [];
   List<String> _hotspotPrompts = [];
   List<List<String>> _hotspotKeywords = [];
@@ -106,7 +106,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
     _speechService.listen(
       onResult: (candidates) {
           if (candidates.isEmpty) return;
-          _spokenCandidates = candidates;
+          
           final text = candidates.first;
         setState(() {
           _spokenText = text;

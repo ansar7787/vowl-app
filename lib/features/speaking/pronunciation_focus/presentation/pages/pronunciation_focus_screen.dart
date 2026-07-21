@@ -55,7 +55,7 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
   Timer? _heatTimer;
   double _timeVal = 0.0;
   String _spokenText = "";
-  List<String> _spokenCandidates = [];
+  
   bool _showGuide = false;
 
   @override
@@ -101,7 +101,7 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
     _speechService.listen(
       onResult: (candidates) {
           if (candidates.isEmpty) return;
-          _spokenCandidates = candidates;
+          
           final text = candidates.first;
         setState(() {
           _spokenText = text;

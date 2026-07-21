@@ -51,7 +51,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
   late AnimationController _shimmerController;
   double _timeVal = 0.0;
   String _spokenText = "";
-  List<String> _spokenCandidates = [];
+  
   List<String> _acceptedSubstrings = [];
 
   @override
@@ -95,7 +95,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
     _speechService.listen(
       onResult: (candidates) {
           if (candidates.isEmpty) return;
-          _spokenCandidates = candidates;
+          
           final text = candidates.first;
         setState(() {
           _spokenText = text;

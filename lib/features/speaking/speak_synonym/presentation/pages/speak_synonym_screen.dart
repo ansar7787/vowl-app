@@ -54,7 +54,7 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
   Timer? _bloomTimer;
   double _timeVal = 0.0;
   String _spokenText = "";
-  List<String> _spokenCandidates = [];
+  
   List<String> _acceptedSyns = [];
 
   @override
@@ -101,7 +101,7 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
     _speechService.listen(
       onResult: (candidates) {
           if (candidates.isEmpty) return;
-          _spokenCandidates = candidates;
+          
           final text = candidates.first;
         setState(() {
           _spokenText = text;
