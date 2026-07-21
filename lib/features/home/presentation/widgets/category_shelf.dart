@@ -157,7 +157,7 @@ class _GameEntryCard extends StatelessWidget {
   }
 
   Widget _buildCardIndicator(BuildContext context, Color color) {
-    final currentLevel = user.unlockedLevels[subtype.name] ?? 10;
+    final currentLevel = (user.completedLevels[subtype.name]?.length ?? 0) + 1;
     final isNew =
         currentLevel == 1 && !user.categoryStats.containsKey(subtype.name);
 

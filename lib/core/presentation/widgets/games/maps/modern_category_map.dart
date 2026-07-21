@@ -287,8 +287,16 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
         child: Scaffold(
           backgroundColor: theme.backgroundColors[1],
           extendBody: true,
-          body: Stack(
-            children: [
+          body: _isLoading
+              ? ShimmerMapPlaceholder(
+                  theme: theme,
+                  points: points,
+                  rowSpacing: rowSpacing,
+                  totalHeight: totalContentHeight,
+                  totalLevels: _totalLevels,
+                )
+              : Stack(
+                  children: [
               // 1. Clean Minimal Static Background
               _buildBackground(theme, isDark),
 
