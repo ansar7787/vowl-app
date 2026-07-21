@@ -230,12 +230,12 @@ class SpeechServiceImpl implements SpeechService {
           }
           onResult(candidates.toList());
         },
-        listenFor: const Duration(seconds: 45),
-        pauseFor: const Duration(seconds: 15), // Highly patient for learners
-        // ignore: deprecated_member_use
-        partialResults: true,
-        // ignore: deprecated_member_use
-        listenMode: ListenMode.dictation, // Continuous speech shadowing support
+        listenOptions: SpeechListenOptions(
+          listenFor: const Duration(seconds: 45),
+          pauseFor: const Duration(seconds: 15), // Highly patient for learners
+          partialResults: true,
+          listenMode: ListenMode.dictation, // Continuous speech shadowing support
+        ),
       );
     } catch (e) {
       sl<AppLogger>().error('SpeechService: STT listening exception', error: e);
