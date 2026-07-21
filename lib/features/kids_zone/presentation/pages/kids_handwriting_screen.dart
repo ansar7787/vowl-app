@@ -13,7 +13,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 
-import 'package:vowl/features/kids_zone/presentation/utils/handwriting_curriculum.dart';
+import 'dart:convert';
+import 'package:flutter/services.dart';
 
 class KidsHandwritingScreen extends StatefulWidget {
   final int level;
@@ -25,11 +26,12 @@ class KidsHandwritingScreen extends StatefulWidget {
 }
 
 class _KidsHandwritingScreenState extends State<KidsHandwritingScreen> {
-  late final List<String> _wordsToPractice;
+  List<String> _wordsToPractice = [];
   int _currentWordIndex = 0;
   int _attemptsCount = 0;
   
   Ink? _currentInk;
+  bool _isLoadingJson = true;
   bool _isDownloading = false;
   bool _isChecking = false;
   bool? _isCorrect;
@@ -37,8 +39,33 @@ class _KidsHandwritingScreenState extends State<KidsHandwritingScreen> {
   @override
   void initState() {
     super.initState();
-    _wordsToPractice = HandwritingCurriculum.getWordsForLevel(widget.level);
+    _loadWordsFromJson();
     _initModel();
+  }
+
+  Future<void> _loadWordsFromJson() async {
+    try {
+      final batch = ((widget.level - 1) ~/ 10) + 1;
+      final path = 'assets/curriculum/kids/handwriting/handwriting_batch_$batch.json';
+      final String jsonString = await rootBundle.loadString(path);
+      final List<dynamic> data = jsonDecode(jsonString);
+      
+      final levelData = data.firstWhere((element) => element['level'] == widget.level, orElse: () => null);
+      if (levelData != null) {
+        final quests = levelData['quests'] as List<dynamic>;
+        setState(() {
+          _wordsToPractice = quests.map((q) => q['question'].toString()).toList();
+          _isLoadingJson = false;
+        });
+      }
+    } catch (e) {
+      debugPrint("Error loading handwriting JSON: $e");
+      // Fallback
+      setState(() {
+        _wordsToPractice = ['A', 'B', 'C'];
+        _isLoadingJson = false;
+      });
+    }
   }
 
   Future<void> _initModel() async {
@@ -144,26 +171,8 @@ class _KidsHandwritingScreenState extends State<KidsHandwritingScreen> {
           ),
         ),
         child: SafeArea(
-          child: _isDownloading
-              ? Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const CircularProgressIndicator(color: Color(0xFFF43F5E)),
-                      SizedBox(height: 16.h),
-                      Text(
-                        context.tr('translation.downloading', fallback: 'Getting your classroom ready...'),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.bold,
-                          color: isDark ? Colors.white70 : Colors.black54,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
-                )
+          child: _isDownloading || _isLoadingJson
+              ? const Center(child: CircularProgressIndicator(color: Color(0xFFF43F5E)))
               : Padding(
                   padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
                   child: Column(
