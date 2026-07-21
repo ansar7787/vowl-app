@@ -13,6 +13,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 class KidsHandwritingLayout extends StatefulWidget {
   final int level;
@@ -152,34 +153,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
         final targetWord = state.currentQuest.question ?? '';
 
         if (_isDownloading) {
-          return Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  width: 200.w,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: LinearProgressIndicator(
-                      minHeight: 16.h,
-                      backgroundColor: Colors.white24,
-                      color: const Color(0xFFF43F5E),
-                    ),
-                  ),
-                ),
-                SizedBox(height: 16.h),
-                Text(
-                  context.tr('kids_zone.handwriting_downloading', fallback: 'Preparing Magic Pen...'),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w600,
-                    color: isDark ? Colors.white : Colors.black87,
-                  ),
-                ).animate().fadeIn().moveY(begin: 10, duration: 400.ms),
-              ],
-            ),
-          );
+          return GameShimmerLoading(primaryColor: widget.primaryColor);
         }
 
         return Column(
