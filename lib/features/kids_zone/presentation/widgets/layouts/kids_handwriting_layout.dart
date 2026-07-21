@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart' hide Ink;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,7 +14,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+
 
 class KidsHandwritingLayout extends StatefulWidget {
   final int level;
@@ -153,7 +154,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
         final targetWord = state.currentQuest.question ?? '';
 
         if (_isDownloading) {
-          return GameShimmerLoading(primaryColor: widget.primaryColor);
+          return _MockDownloadProgress(primaryColor: widget.primaryColor);
         }
 
         return Column(
@@ -244,30 +245,6 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                           });
                         },
                       ),
-                      if (state.lastAnswerCorrect != null)
-                        Positioned.fill(
-                          child: Center(
-                            child: Container(
-                              padding: EdgeInsets.all(24.w),
-                              decoration: BoxDecoration(
-                                color: isDark ? const Color(0xFF1E293B) : Colors.white,
-                                shape: BoxShape.circle,
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black.withValues(alpha: 0.1),
-                                    blurRadius: 12,
-                                    offset: Offset(0, 6.h),
-                                  )
-                                ]
-                              ),
-                              child: Icon(
-                                state.lastAnswerCorrect! ? Icons.star_rounded : Icons.close_rounded,
-                                color: state.lastAnswerCorrect! ? const Color(0xFFFBBF24) : Colors.red,
-                                size: 80.r,
-                              ),
-                            ).animate().scale(curve: Curves.elasticOut, duration: 800.ms),
-                          ),
-                        ),
                     ],
                   ),
                 ),
@@ -325,6 +302,108 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
           ],
         );
       },
+    );
+  }
+}
+
+class _MockDownloadProgress extends StatefulWidget {
+  final Color primaryColor;
+  const _MockDownloadProgress({required this.primaryColor});
+
+  @override
+  State<_MockDownloadProgress> createState() => _MockDownloadProgressState();
+}
+
+class _MockDownloadProgressState extends State<_MockDownloadProgress> {
+  double _progress = 0.0;
+  Timer? _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    // Simulate download progress up to 95% while waiting for ML model
+    _timer = Timer.periodic(const Duration(milliseconds: 100), (timer) {
+      if (!mounted) {
+        timer.cancel();
+        return;
+      }
+      setState(() {
+        if (_progress < 0.85) {
+          _progress += 0.02; // Fast up to 85%
+        } else if (_progress < 0.95) {
+          _progress += 0.005; // Slow crawl to 95%
+        }
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SizedBox(height: 160.h),
+        Icon(Icons.cloud_download_rounded, size: 80.r, color: widget.primaryColor)
+            .animate(onPlay: (c) => c.repeat(reverse: true))
+            .moveY(begin: -5, end: 5, duration: 1.seconds),
+        SizedBox(height: 24.h),
+        Text(
+          "Downloading Smart Pen...",
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 20.sp,
+            fontWeight: FontWeight.bold,
+            color: widget.primaryColor,
+          ),
+        ),
+        SizedBox(height: 8.h),
+        Text(
+          "This only happens once!",
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 14.sp,
+            color: Colors.grey,
+          ),
+        ),
+        SizedBox(height: 32.h),
+        Container(
+          width: 200.w,
+          height: 20.h,
+          decoration: BoxDecoration(
+            color: widget.primaryColor.withValues(alpha: 0.2),
+            borderRadius: BorderRadius.circular(10.r),
+          ),
+          child: Stack(
+            children: [
+              AnimatedContainer(
+                duration: const Duration(milliseconds: 100),
+                width: 200.w * _progress,
+                height: 20.h,
+                decoration: BoxDecoration(
+                  color: widget.primaryColor,
+                  borderRadius: BorderRadius.circular(10.r),
+                ),
+              ),
+            ],
+          ),
+        ),
+        SizedBox(height: 12.h),
+        Text(
+          "${(_progress * 100).toInt()}%",
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 16.sp,
+            fontWeight: FontWeight.bold,
+            color: widget.primaryColor,
+          ),
+        ),
+      ],
     );
   }
 }

@@ -15,6 +15,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/utils/payment_service.dart';
 import 'package:vowl/core/utils/coin_packs_service.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 class PremiumStoreBottomSheet extends StatefulWidget {
   final bool isKidsMode;
@@ -178,8 +179,13 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
     _pendingPack = null;
     if (mounted) {
       setState(() => _isProcessing = false);
-      // Don't show error for user cancellations
-      if (response.code != Razorpay.PAYMENT_CANCELLED) {
+      if (response.code == Razorpay.PAYMENT_CANCELLED) {
+        CustomSnackBar.show(
+          context: context,
+          message: context.tr('store.purchase_cancelled', fallback: 'Purchase cancelled.'),
+          type: CustomSnackBarType.info,
+        );
+      } else {
         CustomSnackBar.show(
           context: context,
           message: response.message ??
@@ -415,10 +421,17 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                       SizedBox(height: 16.h),
 
                       if (_isLoadingPacks)
-                        const Center(
-                          child: Padding(
-                            padding: EdgeInsets.all(32.0),
-                            child: CircularProgressIndicator(),
+                        Column(
+                          children: List.generate(
+                            3,
+                            (index) => Padding(
+                              padding: EdgeInsets.only(bottom: 16.h),
+                              child: ShimmerLoading.rounded(
+                                width: double.infinity,
+                                height: 100.h,
+                                borderRadius: 24,
+                              ),
+                            ),
                           ),
                         )
                       else
