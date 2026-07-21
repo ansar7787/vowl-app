@@ -5,7 +5,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 
-/// Art Studio Theme for professions Game
+/// City Theme for Professions Game
 /// Space Complexity: O(1)
 /// Time Complexity: O(N) where N is the number of options (max 4)
 class KidsProfessionsLayout extends StatelessWidget {
@@ -48,7 +48,7 @@ class KidsProfessionsLayout extends StatelessWidget {
                     return Expanded(
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 6.w),
-                        child: _buildPaintTube(
+                        child: _buildCityBuilding(
                           context,
                           state,
                           option,
@@ -137,7 +137,7 @@ class KidsProfessionsLayout extends StatelessWidget {
             ),
           ),
         ),
-        // Wooden tray at the bottom of the canvas
+        // City street at the bottom of the town
         Positioned(
           bottom: 0,
           child: Container(
@@ -156,7 +156,7 @@ class KidsProfessionsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildPaintTube(
+  Widget _buildCityBuilding(
     BuildContext context,
     KidsLoaded state,
     String text,

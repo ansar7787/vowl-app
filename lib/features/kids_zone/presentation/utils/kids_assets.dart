@@ -25,6 +25,8 @@ class KidsAssets {
     'body_parts': ['👀', '👂', '👃', '💪'],
     'clothing': ['👕', '👖', '👟', '🎩'],
     'handwriting': ['✍️', '✏️', '📝', '✒️'],
+    'weather': ['☀️', '🌧️', '❄️', '🌩️'],
+    'professions': ['👨‍⚕️', '👩‍🏫', '👮', '👨‍🚒'],
   };
 
   static const Map<String, String> accessoryMap = {

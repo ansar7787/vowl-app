@@ -5,7 +5,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 
-/// Art Studio Theme for weather Game
+/// Sky Theme for Weather Game
 /// Space Complexity: O(1)
 /// Time Complexity: O(N) where N is the number of options (max 4)
 class KidsWeatherLayout extends StatelessWidget {
@@ -48,7 +48,7 @@ class KidsWeatherLayout extends StatelessWidget {
                     return Expanded(
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 6.w),
-                        child: _buildPaintTube(
+                        child: _buildWeatherCloud(
                           context,
                           state,
                           option,
@@ -137,7 +137,7 @@ class KidsWeatherLayout extends StatelessWidget {
             ),
           ),
         ),
-        // Wooden tray at the bottom of the canvas
+        // Cloud base at the bottom of the sky
         Positioned(
           bottom: 0,
           child: Container(
@@ -156,7 +156,7 @@ class KidsWeatherLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildPaintTube(
+  Widget _buildWeatherCloud(
     BuildContext context,
     KidsLoaded state,
     String text,
