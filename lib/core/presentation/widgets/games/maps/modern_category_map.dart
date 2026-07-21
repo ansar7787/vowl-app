@@ -349,18 +349,9 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                                   return Container(
                                     width: 36.r,
                                     height: 36.r,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       color: Colors.white,
                                       shape: BoxShape.circle,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withValues(
-                                            alpha: 0.1,
-                                          ),
-                                          blurRadius: 10,
-                                          offset: const Offset(0, 4),
-                                        ),
-                                      ],
                                     ),
                                     child: Icon(
                                       isRtl
