@@ -13,15 +13,19 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 
+import 'package:vowl/features/kids_zone/presentation/utils/handwriting_curriculum.dart';
+
 class KidsHandwritingScreen extends StatefulWidget {
-  const KidsHandwritingScreen({super.key});
+  final int level;
+  
+  const KidsHandwritingScreen({super.key, this.level = 1});
 
   @override
   State<KidsHandwritingScreen> createState() => _KidsHandwritingScreenState();
 }
 
 class _KidsHandwritingScreenState extends State<KidsHandwritingScreen> {
-  final List<String> _wordsToPractice = ['A', 'B', 'C', 'CAT', 'DOG', 'BIRD'];
+  late final List<String> _wordsToPractice;
   int _currentWordIndex = 0;
   int _attemptsCount = 0;
   
@@ -33,6 +37,7 @@ class _KidsHandwritingScreenState extends State<KidsHandwritingScreen> {
   @override
   void initState() {
     super.initState();
+    _wordsToPractice = HandwritingCurriculum.getWordsForLevel(widget.level);
     _initModel();
   }
 
@@ -190,7 +195,7 @@ class _KidsHandwritingScreenState extends State<KidsHandwritingScreen> {
                             ),
                           ),
                           Text(
-                            context.tr('kids_zone.handwriting_title', fallback: 'Write & Learn!'),
+                            context.tr('kids_zone.handwriting_title', fallback: 'Level ${widget.level}'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 28.sp,

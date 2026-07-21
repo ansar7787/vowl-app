@@ -503,7 +503,7 @@ class KidsRoutes {
     GoRoute(
       path: kidsHandwritingRoute,
       pageBuilder: (context, state) =>
-          fadeTransitionPage(child: const KidsHandwritingScreen(), state: state),
+          fadeTransitionPage(child: KidsHandwritingScreen(level: state.extra as int? ?? 1), state: state),
     ),
   ];
 }
