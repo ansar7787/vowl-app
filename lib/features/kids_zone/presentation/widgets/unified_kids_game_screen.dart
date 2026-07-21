@@ -3,6 +3,8 @@ import 'package:vowl/features/kids_zone/kids_routes.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_alphabet_layout.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_numbers_layout.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_colors_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_weather_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_professions_layout.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_shapes_layout.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_animals_layout.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/layouts/kids_fruits_layout.dart';
@@ -187,6 +189,20 @@ class UnifiedKidsGameScreen extends StatelessWidget {
     }
     if (gameType == 'clothing') {
       return KidsClothingLayout(
+        level: level,
+        title: KidsRoutes.getKidsGameTitle(gameType),
+        primaryColor: KidsRoutes.getKidsGameColor(gameType),
+      );
+    }
+    if (gameType == 'weather') {
+      return KidsWeatherLayout(
+        level: level,
+        title: KidsRoutes.getKidsGameTitle(gameType),
+        primaryColor: KidsRoutes.getKidsGameColor(gameType),
+      );
+    }
+    if (gameType == 'professions') {
+      return KidsProfessionsLayout(
         level: level,
         title: KidsRoutes.getKidsGameTitle(gameType),
         primaryColor: KidsRoutes.getKidsGameColor(gameType),

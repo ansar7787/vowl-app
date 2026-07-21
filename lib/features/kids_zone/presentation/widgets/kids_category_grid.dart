@@ -341,6 +341,34 @@ class KidsCategoryGrid extends StatelessWidget {
             const Color(0xFFF43F5E),
             Icons.edit_rounded,
           ),
+          _buildCategoryCard(
+            context,
+            () => context.push(
+              '/kids/map/weather',
+              extra: {
+                'title': 'Weather',
+                'primaryColor': const Color(0xFF38BDF8),
+              },
+            ),
+            'Weather',
+            'Sun & Rain',
+            const Color(0xFF38BDF8),
+            Icons.cloud_rounded,
+          ),
+          _buildCategoryCard(
+            context,
+            () => context.push(
+              '/kids/map/professions',
+              extra: {
+                'title': 'Professions',
+                'primaryColor': const Color(0xFF6366F1),
+              },
+            ),
+            'Professions',
+            'When I Grow Up',
+            const Color(0xFF6366F1),
+            Icons.work_rounded,
+          ),
         ]),
       ),
     );
