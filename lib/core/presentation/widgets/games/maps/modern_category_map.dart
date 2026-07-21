@@ -54,7 +54,6 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
   StoryBeat? _activeStoryBeat;
   int _totalLevels = 10;
   bool _isLoading = true;
-  bool _isRouteTransitioning = true;
   bool _showFullBackground = false;
 
   // PERF: point geometry only actually depends on `_totalLevels` and the
@@ -92,8 +91,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
 
     _loadCurriculum();
 
-    // 2. Delay background icons to ensure smooth page transition
-    Future.delayed(const Duration(milliseconds: 500), () {
+    // 2. Delay background icons to ensure smooth page transition AND smooth initial scroll
+    Future.delayed(const Duration(milliseconds: 1600), () {
       if (mounted) {
         setState(() => _showFullBackground = true);
       }
@@ -118,16 +117,6 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
           _isLoading = false;
         });
       }
-
-      // Allow the native slide transition AND the initial smooth scroll to finish 
-      // before building the full 200 nodes. (Slide is ~300ms, Scroll is 1200ms)
-      Future.delayed(const Duration(milliseconds: 1600), () {
-        if (mounted) {
-          setState(() {
-            _isRouteTransitioning = false;
-          });
-        }
-      });
 
       WidgetsBinding.instance.addPostFrameCallback((_) {
         Future.delayed(const Duration(milliseconds: 300), () {
@@ -167,7 +156,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
         unlockedLevel,
       );
       if (beat != null) {
-        Future.delayed(const Duration(milliseconds: 300), () {
+        Future.delayed(const Duration(milliseconds: 1600), () {
           if (mounted) {
             setState(() {
               _activeStoryBeat = beat;
@@ -439,18 +428,6 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                                     ...List.generate(_totalLevels, (index) {
                                       final levelNumber = index + 1;
                                       
-                                      // SMART PROGRESSIVE RENDERING
-                                      // During the route transition (350ms), we ONLY build the nodes that are 
-                                      // actively visible on the screen (the current level +/- 10). 
-                                      // For all other nodes, we render an empty SizedBox to preserve the exact height 
-                                      // of the Column so that _scrollToCurrentLevel(animate: false) lands perfectly.
-                                      // After 350ms, this guard drops and the rest of the nodes are built silently.
-                                      if (_isRouteTransitioning) {
-                                        if (levelNumber < unlockedLevels - 10 || levelNumber > unlockedLevels + 10) {
-                                          return SizedBox(height: rowSpacing);
-                                        }
-                                      }
-
                                       final point = points[index];
 
                                     return Container(
