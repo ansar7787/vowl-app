@@ -13,10 +13,10 @@ class HandwritingCanvas extends StatefulWidget {
   });
 
   @override
-  State<HandwritingCanvas> createState() => _HandwritingCanvasState();
+  State<HandwritingCanvas> createState() => HandwritingCanvasState();
 }
 
-class _HandwritingCanvasState extends State<HandwritingCanvas> {
+class HandwritingCanvasState extends State<HandwritingCanvas> {
   final Ink _ink = Ink();
   final List<Stroke> _strokes = [];
   Stroke? _currentStroke;
@@ -26,7 +26,7 @@ class _HandwritingCanvasState extends State<HandwritingCanvas> {
     super.initState();
   }
 
-  void _clearCanvas() {
+  void clearCanvas() {
     setState(() {
       _strokes.clear();
       _ink.strokes.clear();
@@ -61,7 +61,7 @@ class _HandwritingCanvasState extends State<HandwritingCanvas> {
             ),
             IconButton(
               icon: const Icon(LucideIcons.trash2, color: Colors.redAccent),
-              onPressed: _clearCanvas,
+              onPressed: clearCanvas,
             ),
           ],
         ),

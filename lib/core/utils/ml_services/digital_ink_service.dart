@@ -4,10 +4,10 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 
 class DigitalInkService {
   final DigitalInkRecognizer _recognizer;
-  final String _language = 'en-US'; // English model
+  final String _language = 'en'; // English model
 
   DigitalInkService()
-      : _recognizer = DigitalInkRecognizer(languageCode: 'en-US');
+      : _recognizer = DigitalInkRecognizer(languageCode: 'en');
 
   /// Downloads the Digital Ink model for the specified language if it's not already downloaded.
   Future<bool> downloadModel() async {

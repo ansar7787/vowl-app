@@ -307,43 +307,30 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
     int newLives = event.isCorrect ? s.livesRemaining : s.livesRemaining - 1;
     bool isFinal = s.wrongCount >= 1;
 
-    if (newLives <= 0) {
+    if (!event.isCorrect && isFinal) {
+      // RE-QUEUE: Move failed quest to the end of the list for reinforcement
+      final updatedQuests = List<KidsQuest>.from(s.quests);
+      final failedQuest = updatedQuests[s.currentIndex];
+      updatedQuests.add(failedQuest);
+
       emit(
-        KidsGameOver(
-          quests: s.quests,
-          originalTotalQuests: s.originalTotalQuests,
-          currentIndex: s.currentIndex,
-          gameType: s.gameType,
-          level: s.level,
+        s.copyWith(
+          quests: updatedQuests,
+          livesRemaining: newLives,
+          lastAnswerCorrect: false,
+          wrongCount: 0, // Reset wrongCount after re-queue
+          isFinalFailure: true,
         ),
       );
     } else {
-      if (!event.isCorrect && isFinal) {
-        // RE-QUEUE: Move failed quest to the end of the list for reinforcement
-        final updatedQuests = List<KidsQuest>.from(s.quests);
-        final failedQuest = updatedQuests[s.currentIndex];
-        updatedQuests.add(failedQuest);
-
-        emit(
-          s.copyWith(
-            quests: updatedQuests,
-            livesRemaining: newLives,
-            lastAnswerCorrect: false,
-            wrongCount: 0, // Reset wrongCount after re-queue
-            isFinalFailure: true,
-          ),
-        );
-      } else {
-        emit(
-          s.copyWith(
-            livesRemaining: newLives,
-            lastAnswerCorrect: event.isCorrect,
-            wrongCount: event.isCorrect ? 0 : s.wrongCount + 1,
-            isFinalFailure:
-                !event.isCorrect && (s.wrongCount + 1 >= 2), // 2nd strike
-          ),
-        );
-      }
+      emit(
+        s.copyWith(
+          livesRemaining: newLives,
+          lastAnswerCorrect: event.isCorrect,
+          wrongCount: event.isCorrect ? 0 : s.wrongCount + 1,
+          isFinalFailure: !event.isCorrect && (s.wrongCount + 1 >= 2),
+        ),
+      );
     }
   }
 
@@ -353,6 +340,19 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
   ) async {
     if (state is KidsLoaded) {
       final s = state as KidsLoaded;
+      if (s.livesRemaining <= 0) {
+        emit(
+          KidsGameOver(
+            quests: s.quests,
+            originalTotalQuests: s.originalTotalQuests,
+            currentIndex: s.currentIndex,
+            gameType: s.gameType,
+            level: s.level,
+          ),
+        );
+        return;
+      }
+
       int nextIndex = s.currentIndex + 1;
 
       if (nextIndex >= s.quests.length) {

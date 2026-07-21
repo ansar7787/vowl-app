@@ -37,6 +37,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
   bool? _isCorrect;
   int _attemptsCount = 0;
   String? _lastQuestId;
+  final GlobalKey<HandwritingCanvasState> _canvasKey = GlobalKey<HandwritingCanvasState>();
 
   @override
   void initState() {
@@ -130,6 +131,18 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                 _isChecking = false;
                 _lastQuestId = state.currentQuest.id;
               });
+            }
+          });
+        }
+
+        if (state.lastAnswerCorrect == null && _isCorrect != null) {
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (mounted) {
+              setState(() {
+                _isCorrect = null;
+                _isChecking = false;
+              });
+              _canvasKey.currentState?.clearCanvas();
             }
           });
         }
@@ -231,6 +244,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                   child: Stack(
                     children: [
                       HandwritingCanvas(
+                        key: _canvasKey,
                         onInkUpdated: (ink) {
                           if (state.lastAnswerCorrect != null) return; // Disallow writing if already checked
                           _currentInk = ink;
