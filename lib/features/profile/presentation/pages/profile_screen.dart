@@ -122,6 +122,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             SizedBox(height: 12.h),
                             _buildKeyShopBanner(context, user),
 
+                            SizedBox(height: 24.h),
+                            Row(
+                              children: [
+                                Icon(Icons.auto_awesome_rounded, color: const Color(0xFF6366F1), size: 24.r),
+                                SizedBox(width: 8.w),
+                                _buildSectionHeader(
+                                  context,
+                                  context.tr(
+                                    'profile.ai_lab',
+                                    fallback: 'Vowl AI Lab',
+                                  ),
+                                ),
+                              ],
+                            ),
                             SizedBox(height: 12.h),
                             _buildScanAndLearnBanner(context),
 
@@ -403,14 +417,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   SizedBox(height: 4.h),
                   Text(
-                    context.tr('translation.scan_learn_desc', fallback: 'Extract and translate text from images instantly.'),
+                    context.tr('translation.scan_learn_desc', fallback: 'Scan menus, signs, and documents to extract and translate real-world text.'),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      color: isDark ? Colors.white38 : Colors.black38,
+                      color: isDark ? Colors.white70 : Colors.black54,
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w600,
+                      height: 1.3,
                     ),
                   ),
                 ],
@@ -442,12 +457,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Container(
               padding: EdgeInsets.all(12.r),
               decoration: BoxDecoration(
-                color: const Color(0xFF14B8A6).withValues(alpha: 0.2),
+                color: const Color(0xFF6366F1).withValues(alpha: 0.15),
                 shape: BoxShape.circle,
               ),
               child: Icon(
                 Icons.camera_alt_rounded,
-                color: const Color(0xFF14B8A6),
+                color: const Color(0xFF6366F1),
                 size: 28.r,
               ),
             ),
@@ -468,14 +483,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   SizedBox(height: 4.h),
                   Text(
-                    context.tr('vocabulary.photo_vocab_desc', fallback: 'Discover words from the world around you!'),
+                    context.tr('vocabulary.photo_vocab_desc', fallback: 'Point your camera at physical objects to learn their English names.'),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      color: isDark ? Colors.white38 : Colors.black38,
+                      color: isDark ? Colors.white70 : Colors.black54,
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w600,
+                      height: 1.3,
                     ),
                   ),
                 ],
