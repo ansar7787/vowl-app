@@ -7,541 +7,541 @@
             "id": "LIS_DETAILSPOTLIGHT_L91_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to who the sentence is about.",
-            "explanation": "The correct person is student - a person who is learning a subject, especially at a school or university. The sentence tells us the part-time student has just created a better sensor display.",
-            "textToSpeak": "The part-time student has just created a better sensor display.",
-            "targetDetail": "student",
+            "hint": "What role does the sentence give to its subject?",
+            "explanation": "The person in question is negotiator: a person who discusses terms to reach an agreement. To be exact, a calm negotiator has been mediating the dispute for several hours.",
+            "textToSpeak": "A calm negotiator has been mediating the dispute for several hours.",
+            "targetDetail": "negotiator",
             "options": [
-                "robot",
-                "traveler",
-                "hero",
-                "student"
+                "negotiator",
+                "mediator",
+                "consultant",
+                "commuter"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🤝"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L91_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the doing word, not the subject or object.",
-            "explanation": "Creates is the action - to make something new that did not exist before. In the sentence, creates a new sensor program for the shop every season.",
-            "textToSpeak": "She creates a new loyalty sensor program for the shop every season.",
-            "targetDetail": "creates",
+            "hint": "The action word is your target — don't confuse it with the object.",
+            "explanation": "Right answer: mediates, meaning to help settle a disagreement between two sides. That's because she mediates conflicts more patiently than most senior managers.",
+            "textToSpeak": "She mediates conflicts more patiently than most senior managers.",
+            "targetDetail": "mediates",
             "options": [
-                "scans",
-                "creates",
-                "launches",
-                "validates"
+                "certifies",
+                "mediates",
+                "allocates",
+                "consults"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "⚖️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L91_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the specific thing described in the audio.",
-            "explanation": "The thing mentioned is sensor: a device that detects changes such as motion, light, heat, or sound. Here, has just added a new checkout motion sensor.",
-            "textToSpeak": "The shop has just added a new checkout motion sensor.",
-            "targetDetail": "sensor",
+            "hint": "Which word answers 'what is this actually about?'",
+            "explanation": "You heard settlement, an official agreement that ends a disagreement. Notice that he should sign the settlement before the offer expires.",
+            "textToSpeak": "He should sign the settlement before the offer expires.",
+            "targetDetail": "settlement",
             "options": [
-                "circuit",
-                "sensor",
-                "drone",
-                "portal"
+                "settlement",
+                "manuscript",
+                "portfolio",
+                "audit"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "📜"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L92_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the person, not the action or the object they mention.",
-            "explanation": "Hero is correct - a person admired for courage, great achievements, or noble qualities. In the sentence, a consumer hero has already activated a network investigation.",
-            "textToSpeak": "A consumer protection hero has already activated a network investigation.",
-            "targetDetail": "hero",
+            "hint": "Pay attention to who the sentence is about.",
+            "explanation": "Recruiter fits — a person who finds and hires new employees. You can hear that a dedicated recruiter has been interviewing candidates all week.",
+            "textToSpeak": "A dedicated recruiter has been interviewing candidates all week.",
+            "targetDetail": "recruiter",
             "options": [
-                "robot",
-                "hero",
-                "pilot",
-                "droid"
+                "analyst",
+                "inspector",
+                "recruiter",
+                "scientist"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🦸"
+            "emoji": "🧑‍💼"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L92_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for what is happening, not to whom or with what.",
-            "explanation": "Activates is the action - to start or switch something on so it begins to work. In the sentence, activates the loyalty network code at the till.",
-            "textToSpeak": "She activates the loyalty network code at the till.",
-            "targetDetail": "activates",
+            "hint": "The verb carries the key detail — listen for it precisely.",
+            "explanation": "Recruits is the detail — to find and persuade people to join an organization. The audio makes clear that she recruits graduates more carefully since the last bad hire.",
+            "textToSpeak": "She recruits graduates more carefully since the last bad hire.",
+            "targetDetail": "recruits",
             "options": [
-                "activates",
-                "scans",
-                "updates",
-                "deploys"
+                "oversees",
+                "delegates",
+                "recruits",
+                "authorizes"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🔘"
+            "emoji": "🎓"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L92_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "The key word names a thing, not a person or an action.",
-            "explanation": "The thing mentioned is network: a group of connected computers or devices that can share information. Here, has just upgraded its entire payment network.",
-            "textToSpeak": "The store has just upgraded its entire payment network.",
-            "targetDetail": "network",
+            "hint": "Notice which object the sentence is really about.",
+            "explanation": "Resume is the detail — a document listing a person's work history and skills. Specifically, he must update his resume before applying for the role.",
+            "textToSpeak": "He must update his resume before applying for the role.",
+            "targetDetail": "resume",
             "options": [
-                "protocol",
-                "portal",
-                "network",
-                "module"
+                "salary",
+                "resume",
+                "script",
+                "record"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🌐"
+            "emoji": "📄"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L93_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "The key word here is a person's title or role.",
-            "explanation": "Analyst is correct - a person who examines data and information to find patterns or meaning. In the sentence, a nutrition analyst has already secured the delivery network.",
-            "textToSpeak": "A nutrition analyst has already secured the restaurant's delivery network.",
-            "targetDetail": "analyst",
+            "hint": "Listen past the action to find out who's involved.",
+            "explanation": "Listen for curator: a person who manages the items in a museum or gallery. In this case, the museum's curator has been rearranging the exhibit since Tuesday.",
+            "textToSpeak": "The museum's curator has been rearranging the exhibit since Tuesday.",
+            "targetDetail": "curator",
             "options": [
-                "robot",
-                "technician",
-                "researcher",
-                "analyst"
+                "administrator",
+                "curator",
+                "publisher",
+                "biographer"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "📈"
+            "emoji": "🖼️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L93_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "The key word describes an action or activity.",
-            "explanation": "The action is secures, meaning to make something safe or protect it from risk or unauthorized access. Here, secures all customer network details at every checkout.",
-            "textToSpeak": "The system secures all customer network details at every checkout.",
-            "targetDetail": "secures",
+            "hint": "Listen for the action word - what is the person or thing doing?",
+            "explanation": "The doing-word is compiles — to collect information from different sources into one. The sentence confirms she compiles the collection more efficiently than the previous system.",
+            "textToSpeak": "She compiles the collection more efficiently than the previous system.",
+            "targetDetail": "compiles",
             "options": [
-                "secures",
-                "scans",
-                "sends",
-                "transfers"
+                "drafts",
+                "finalizes",
+                "compiles",
+                "sponsors"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🗃️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L93_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the name of the thing or object mentioned.",
-            "explanation": "The correct object is network - a group of connected computers or devices that can share information. In the audio, has just joined a new regional delivery network.",
-            "textToSpeak": "The cafe has just joined a new regional food delivery network.",
-            "targetDetail": "network",
+            "hint": "Listen for the word naming what's being discussed.",
+            "explanation": "Exhibit fits here — a public display of art or objects. You can hear that he should visit the exhibit before it closes next week.",
+            "textToSpeak": "He should visit the exhibit before it closes next week.",
+            "targetDetail": "exhibit",
             "options": [
-                "node",
-                "network",
-                "circuit",
-                "terminal"
+                "exhibit",
+                "review",
+                "performance",
+                "subscription"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🌐"
+            "emoji": "🎨"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L94_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the type of person described in the sentence.",
-            "explanation": "The person mentioned is robot. A machine programmed to carry out tasks automatically. Here, the kitchen robot has just launched a recipe archive.",
-            "textToSpeak": "The kitchen robot has just launched a new recipe archive.",
-            "targetDetail": "robot",
+            "hint": "Home in on the title used for the person.",
+            "explanation": "Volunteer is who's described — a person who works for a cause without being paid. The audio states that a dedicated volunteer has been organizing supplies since the storm hit.",
+            "textToSpeak": "A dedicated volunteer has been organizing supplies since the storm hit.",
+            "targetDetail": "volunteer",
             "options": [
-                "droid",
-                "artist",
-                "scientist",
-                "robot"
+                "journalist",
+                "plumber",
+                "volunteer",
+                "podcaster"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🤖"
+            "emoji": "📦"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L94_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the action word - what is the person or thing doing?",
-            "explanation": "The correct action is launches - to send something into action, space, or public use for the first time. In this sentence, launches a new seasonal recipe archive every quarter.",
-            "textToSpeak": "The app launches a new seasonal recipe archive every quarter.",
-            "targetDetail": "launches",
+            "hint": "Track the verb through the whole sentence.",
+            "explanation": "You heard donates: to give money or goods to help a cause. In this sentence, she donates more supplies than anyone else at the shelter.",
+            "textToSpeak": "She donates more supplies than anyone else at the shelter.",
+            "targetDetail": "donates",
             "options": [
-                "repairs",
-                "launches",
-                "validates",
-                "builds"
+                "donates",
+                "approves",
+                "reports",
+                "reserves"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🥫"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L94_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the item, not the person or action described.",
-            "explanation": "You heard archive - a collection of stored records, files, or documents kept for future reference. The audio describes has already built a huge digital recipe archive.",
-            "textToSpeak": "The chef has already built a huge digital recipe archive.",
-            "targetDetail": "archive",
+            "hint": "Your job: name the object, not the action around it.",
+            "explanation": "Listen for donation: money or goods given to help a person or cause. In this sentence, he should send a donation before the campaign ends tonight.",
+            "textToSpeak": "He should send a donation before the campaign ends tonight.",
+            "targetDetail": "donation",
             "options": [
-                "archive",
-                "software",
-                "protocol",
-                "data"
+                "visa",
+                "vaccine",
+                "meeting",
+                "donation"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🗄️"
+            "emoji": "💝"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L95_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the name or role of the person in the sentence.",
-            "explanation": "Expert is correct - a person with deep knowledge or advanced skill in a particular subject. In the sentence, a cybersecurity expert has just sent a warning.",
-            "textToSpeak": "A cybersecurity expert has just sent a warning about the network.",
-            "targetDetail": "expert",
+            "hint": "Which single word tells you the person's role here?",
+            "explanation": "Diplomat is the detail here — a person who represents their country in relations abroad. As the audio says, the retired diplomat has been advising the ministry since January.",
+            "textToSpeak": "The retired diplomat has been advising the ministry since January.",
+            "targetDetail": "diplomat",
             "options": [
-                "expert",
-                "robot",
-                "teacher",
-                "explorer"
+                "diplomat",
+                "historian",
+                "researcher",
+                "correspondent"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🌍"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L95_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the verb, not the person or the thing they mention.",
-            "explanation": "You heard sends. This verb means to cause something to go or be taken from one place to another. In the audio, sends a security alert as soon as a threat is detected.",
-            "textToSpeak": "She always sends a network security alert as soon as a threat is detected.",
-            "targetDetail": "sends",
+            "hint": "Which word answers 'what exactly is being done?'",
+            "explanation": "The verb here is negotiates, meaning to discuss something in order to reach an agreement. Notice that she negotiates trade terms more patiently than her predecessor did.",
+            "textToSpeak": "She negotiates trade terms more patiently than her predecessor did.",
+            "targetDetail": "negotiates",
             "options": [
-                "sends",
-                "updates",
-                "secures",
-                "encrypts"
+                "operates",
+                "verifies",
+                "negotiates",
+                "analyzes"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🔄"
+            "emoji": "🤝"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L95_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Which object or thing do you hear in the sentence?",
-            "explanation": "The thing mentioned is network: a group of connected computers or devices that can share information. Here, has not yet secured its entire internal network.",
-            "textToSpeak": "The firm has not yet secured its entire internal network.",
-            "targetDetail": "network",
+            "hint": "What object does the sentence describe? Listen for it.",
+            "explanation": "The object described is regulation — an official rule that controls how something is done. As stated, he must review the new regulation before the summit begins.",
+            "textToSpeak": "He must review the new regulation before the summit begins.",
+            "targetDetail": "regulation",
             "options": [
-                "system",
-                "protocol",
-                "network",
-                "device"
+                "regulation",
+                "merger",
+                "drone",
+                "database"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🌐"
+            "emoji": "📜"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L96_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on who is being described, not what they do or use.",
-            "explanation": "The person mentioned is scientist. A person who studies the natural world through observation and experiment. Here, a data scientist has already updated the security protocol.",
-            "textToSpeak": "A data scientist has already updated the entire security protocol.",
-            "targetDetail": "scientist",
+            "hint": "Your job: name the person, not what they did.",
+            "explanation": "You heard host, which means a person who welcomes and entertains guests. Notice that a cheerful host has been welcoming guests since the doors opened.",
+            "textToSpeak": "A cheerful host has been welcoming guests since the doors opened.",
+            "targetDetail": "host",
             "options": [
-                "scientist",
-                "researcher",
-                "analyst",
-                "hacker"
+                "host",
+                "cousin",
+                "neighbor",
+                "aunt"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "👨‍🔬"
+            "emoji": "🎉"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L96_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Which action or activity do you hear in the sentence?",
-            "explanation": "You heard updates. This verb means to make something current by adding new or recent information. In the audio, updates the protocol as soon as new guidance is issued.",
-            "textToSpeak": "He always updates the protocol as soon as new guidance is issued.",
-            "targetDetail": "updates",
+            "hint": "Catch the exact verb, not a similar-sounding one.",
+            "explanation": "The correct action is celebrates — to do something enjoyable to mark a special occasion. Specifically, she celebrates milestones more elaborately than most other planners.",
+            "textToSpeak": "She celebrates milestones more elaborately than most other planners.",
+            "targetDetail": "celebrates",
             "options": [
-                "transfers",
-                "repairs",
-                "activates",
-                "updates"
+                "writes",
+                "lends",
+                "invites",
+                "celebrates"
             ],
             "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🔄"
+            "emoji": "🎂"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L96_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the specific item being used, fixed, or mentioned.",
-            "explanation": "Protocol is correct - a set of official rules that controls how a process should be carried out. In the sentence, has just published a new cybersecurity protocol.",
-            "textToSpeak": "The team has just published a new cybersecurity protocol.",
-            "targetDetail": "protocol",
+            "hint": "Which concrete thing is named in the sentence?",
+            "explanation": "Right answer: invitation, a written or spoken request for someone to attend. That's because he should send the invitation before the venue is fully booked.",
+            "textToSpeak": "He should send the invitation before the venue is fully booked.",
+            "targetDetail": "invitation",
             "options": [
-                "protocol",
-                "terminal",
-                "code",
-                "network"
+                "invitation",
+                "medication",
+                "neighborhood",
+                "dessert"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "📋"
+            "emoji": "💌"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L97_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the person's title or job mentioned in the audio.",
-            "explanation": "The person mentioned is mentor. An experienced person who guides and advises someone less experienced. Here, her health mentor has already scanned the medical system.",
-            "textToSpeak": "Her health mentor has already scanned the entire medical system.",
-            "targetDetail": "mentor",
+            "hint": "Focus on identity: who exactly is being talked about?",
+            "explanation": "That's counselor: a person trained to give guidance on personal problems. The audio confirms it — a thoughtful counselor has been guiding new students since orientation began.",
+            "textToSpeak": "A thoughtful counselor has been guiding new students since orientation began.",
+            "targetDetail": "counselor",
             "options": [
-                "droid",
-                "mentor",
-                "hero",
-                "traveler"
+                "surgeon",
+                "critic",
+                "auditor",
+                "counselor"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "👨‍🏫"
+            "emoji": "🧑‍🏫"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L97_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to what is happening, not who or what is involved.",
-            "explanation": "You heard scans. This verb means to look over something quickly to find specific information or objects. In the audio, scans the full medical system for errors each morning.",
-            "textToSpeak": "He scans the full medical system for errors each morning.",
-            "targetDetail": "scans",
+            "hint": "Notice how the action is described in the sentence.",
+            "explanation": "Trains is correct — to teach a skill through regular practice. Notice how she trains new counselors more thoroughly than the old program did.",
+            "textToSpeak": "She trains new counselors more thoroughly than the old program did.",
+            "targetDetail": "trains",
             "options": [
-                "secures",
-                "measures",
-                "validates",
-                "scans"
+                "translates",
+                "trains",
+                "checks in",
+                "navigates"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "📋"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L97_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to the thing, not who is using it or what they do.",
-            "explanation": "The thing mentioned is system: a set of connected parts that work together to carry out a function. Here, has just updated its electronic patient system.",
-            "textToSpeak": "The hospital has just updated its electronic patient system.",
-            "targetDetail": "system",
+            "hint": "Which item is central to the sentence? Listen closely.",
+            "explanation": "The correct object is curriculum — the subjects taught in a course of study. In the audio, he must complete the curriculum before the term ends.",
+            "textToSpeak": "He must complete the curriculum before the term ends.",
+            "targetDetail": "curriculum",
             "options": [
-                "signal",
-                "terminal",
-                "archive",
-                "system"
+                "lecture",
+                "curriculum",
+                "ceremony",
+                "voucher"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🌐"
+            "emoji": "📚"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L98_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Which person's name or role do you hear in the sentence?",
-            "explanation": "The correct person is researcher - a person who studies a subject carefully to discover new facts or knowledge. The sentence tells us the researcher has already transferred all software data.",
-            "textToSpeak": "The clinical researcher has already transferred all the new software data.",
-            "targetDetail": "researcher",
+            "hint": "Who is the sentence talking about? Listen for their role.",
+            "explanation": "The person mentioned is tour guide: a person who shows visitors around a place. Here, a confident tour guide has been leading groups since sunrise.",
+            "textToSpeak": "A confident tour guide has been leading groups since sunrise.",
+            "targetDetail": "tour guide",
             "options": [
-                "engineer",
-                "researcher",
-                "analyst",
-                "detective"
+                "receptionist",
+                "sculptor",
+                "pharmacist",
+                "tour guide"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "📈"
+            "emoji": "🧭"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L98_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the action being performed in the audio.",
-            "explanation": "The correct action is transfers - to move something from one place, person, or system to another. In this sentence, transfers software updates as soon as they are approved.",
-            "textToSpeak": "She always transfers test software updates as soon as they are approved.",
-            "targetDetail": "transfers",
+            "hint": "Home in on the verb, wherever it falls in the sentence.",
+            "explanation": "Navigates fits the sentence — to find the way to a destination. You can hear that she navigates crowded markets more skillfully than the newer guides.",
+            "textToSpeak": "She navigates crowded markets more skillfully than the newer guides.",
+            "targetDetail": "navigates",
             "options": [
-                "transfers",
-                "repairs",
-                "secures",
-                "sends"
+                "navigates",
+                "requests",
+                "evaluates",
+                "recovers"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🔄"
+            "emoji": "🗺️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L98_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the object or concept named in the sentence.",
-            "explanation": "The thing mentioned is software: the programs and instructions that tell a computer how to operate. Here, has just received new diagnostic software.",
-            "textToSpeak": "The clinic has just received new diagnostic software.",
-            "targetDetail": "software",
+            "hint": "What is the sentence actually about? Listen for that noun.",
+            "explanation": "That's itinerary — a planned route or list of stops for a trip. The audio confirms it: he should check the itinerary before the bus departs.",
+            "textToSpeak": "He should check the itinerary before the bus departs.",
+            "targetDetail": "itinerary",
             "options": [
-                "database",
-                "protocol",
-                "archive",
-                "software"
+                "boarding pass",
+                "itinerary",
+                "playlist",
+                "app"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "💻"
+            "emoji": "🗺️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L99_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to who the sentence is about.",
-            "explanation": "The correct person is mentor - an experienced person who guides and advises someone less experienced. The sentence tells us her broadcasting mentor has just helped repair the satellite.",
-            "textToSpeak": "Her broadcasting mentor has just helped repair the satellite feed.",
-            "targetDetail": "mentor",
+            "hint": "Focus on who is being described, not what they do or use.",
+            "explanation": "executive is correct — a senior person who manages a company. In the audio, a generous executive has been sponsoring the program since it began.",
+            "textToSpeak": "A generous executive has been sponsoring the program since it began.",
+            "targetDetail": "executive",
             "options": [
-                "droid",
-                "technician",
-                "mentor",
-                "artist"
+                "executive",
+                "scientist",
+                "professor",
+                "architect"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "👨‍🏫"
+            "emoji": "🏆"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L99_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the doing word, not the subject or object.",
-            "explanation": "The correct action is repairs - to fix something that is broken or not working correctly. In this sentence, repairs the satellite dish as soon as the signal drops.",
-            "textToSpeak": "He repairs the satellite dish as soon as the signal drops.",
-            "targetDetail": "repairs",
+            "hint": "What's happening in the sentence? Listen for that word.",
+            "explanation": "The action named is sponsors, which means to financially support a person, team, or event. To be exact, she sponsors more young athletes than any other local donor.",
+            "textToSpeak": "She sponsors more young athletes than any other local donor.",
+            "targetDetail": "sponsors",
             "options": [
-                "builds",
-                "repairs",
-                "restores",
-                "analyzes"
+                "supervises",
+                "sponsors",
+                "forecasts",
+                "mediates"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🎗️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L99_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the specific thing described in the audio.",
-            "explanation": "The correct object is satellite - an object sent into space that orbits the Earth to send or receive signals. In the audio, has not yet fixed the damaged satellite receiver.",
-            "textToSpeak": "The studio has not yet fixed the damaged satellite receiver.",
-            "targetDetail": "satellite",
+            "hint": "Track the specific thing referenced in the audio.",
+            "explanation": "The item named is endowment, a gift of money given to provide lasting income. To be exact, he must sign the endowment before the fiscal year closes.",
+            "textToSpeak": "He must sign the endowment before the fiscal year closes.",
+            "targetDetail": "endowment",
             "options": [
-                "drone",
-                "sensor",
-                "satellite",
-                "data"
+                "algorithm",
+                "merger",
+                "endowment",
+                "server"
             ],
             "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🤝"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L100_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the person, not the action or the object they mention.",
-            "explanation": "Hacker is correct - a person who finds and exploits weaknesses in computer systems. In the sentence, a hacker has just created a fake terminal account.",
-            "textToSpeak": "A hacker has just created a fake streaming terminal account.",
-            "targetDetail": "hacker",
+            "hint": "Which role or relationship is named in the sentence?",
+            "explanation": "Right answer: chef, a person who cooks food, especially in a restaurant. That's because the head chef has been training a new team since the reopening.",
+            "textToSpeak": "The head chef has been training a new team since the reopening.",
+            "targetDetail": "chef",
             "options": [
-                "artist",
-                "scout",
-                "explorer",
-                "hacker"
+                "chef",
+                "doctor",
+                "traveler",
+                "babysitter"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🔐"
+            "emoji": "👨‍🍳"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L100_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for what is happening, not to whom or with what.",
-            "explanation": "The correct action is creates - to make something new that did not exist before. In this sentence, creates a new streaming terminal account for each show.",
-            "textToSpeak": "She creates a new streaming terminal account for each show.",
-            "targetDetail": "creates",
+            "hint": "Which word tells you what actually took place?",
+            "explanation": "Listen for seasons: to add salt, spices, or herbs to food. As stated, she seasons every dish more boldly than the previous chef did.",
+            "textToSpeak": "She seasons every dish more boldly than the previous chef did.",
+            "targetDetail": "seasons",
             "options": [
-                "creates",
-                "repairs",
-                "scans",
-                "observes"
+                "recommends",
+                "seasons",
+                "interviews",
+                "updates"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🧂"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L100_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "The key word names a thing, not a person or an action.",
-            "explanation": "You heard terminal - a place where journeys begin or end, or a device used to access a network. The audio describes has just replaced the outdated editing terminal.",
-            "textToSpeak": "The studio has just replaced the outdated editing terminal.",
-            "targetDetail": "terminal",
+            "hint": "Notice the specific item being used, fixed, or mentioned.",
+            "explanation": "Menu is correct — a list of food and drinks available at a restaurant. The sentence tells us he should check the menu before the guests arrive tonight.",
+            "textToSpeak": "He should check the menu before the guests arrive tonight.",
+            "targetDetail": "menu",
             "options": [
-                "network",
-                "terminal",
-                "database",
-                "portal"
+                "costume",
+                "thermometer",
+                "backpack",
+                "menu"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🖥️"
+            "emoji": "📋"
         }
     ]
 }

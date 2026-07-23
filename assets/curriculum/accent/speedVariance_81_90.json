@@ -8,35 +8,35 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "This is, without question, the messiest the kitchen has ever been.",
-            "textToSpeak": "This is, without question, the messiest the kitchen has ever been.",
+            "word": "Hurry up and call her back, she said she's been trying to get hold of you all day.",
+            "textToSpeak": "Hurry up and call her back, she said she's been trying to get hold of you all day.",
             "options": [
-                "Accelerating (in 'This is, without question, the messiest the kitchen has ever been.', the speaker speeds up to move past the claim quickly)",
-                "Decelerating (in 'This is, without question, the messiest the kitchen has ever been.', the pace slows deliberately on the extreme claim, the messiest the kitchen has ever been, to make it land with full seriousness)"
+                "Decelerating (the speaker slows down to guess what she might want to talk about)",
+                "Accelerating (being unreachable all day while someone tries to reach you speeds up the urgent nudge)"
             ],
-            "correctAnswer": "Decelerating (in 'This is, without question, the messiest the kitchen has ever been.', the pace slows deliberately on the extreme claim, the messiest the kitchen has ever been, to make it land with full seriousness)",
+            "correctAnswer": "Accelerating (being unreachable all day while someone tries to reach you speeds up the urgent nudge)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.68,
-            "hint": "Listen to 'This is, without question, the messiest the kitchen has ever been.' Does the pace slow down seriously on the extreme claim?",
-            "explanation": "Serious superlative claims like the messiest the kitchen has ever been are slowed down deliberately, giving the statement extra weight and sincerity.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "targetSpeed": 1.33,
+            "hint": "She's been trying to reach you all day. Urgent nudge, or a slow guessing game?",
+            "explanation": "Hearing that someone has been trying to reach you all day creates urgency, speeding up the reminder to call.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L81_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Oh wonderful, the washing machine broke again.",
-            "textToSpeak": "Oh wonderful, the washing machine broke again.",
+            "word": "Walk me through this slowly, because I still can't quite figure out where things went wrong.",
+            "textToSpeak": "Walk me through this slowly, because I still can't quite figure out where things went wrong.",
             "options": [
-                "Decelerating (in 'Oh wonderful, the washing machine broke again.', the word 'wonderful' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
-                "Accelerating (in 'Oh wonderful, the washing machine broke again.', the speaker rushes through 'wonderful' because they genuinely mean it)"
+                "Decelerating (genuine confusion about a problem slows the pace of the request for help)",
+                "Accelerating (the speaker rushes since the mistake is probably obvious once explained)"
             ],
-            "correctAnswer": "Decelerating (in 'Oh wonderful, the washing machine broke again.', the word 'wonderful' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
+            "correctAnswer": "Decelerating (genuine confusion about a problem slows the pace of the request for help)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.7,
-            "hint": "Listen to 'Oh wonderful, the washing machine broke again.' Is 'wonderful' said warmly and quickly, or slow and pointed, hinting at sarcasm?",
-            "explanation": "Sarcasm is often signaled by deliberately slowing down on a positive word like 'wonderful' while clearly not meaning it sincerely - the exaggerated slowness in 'Oh wonderful, the washing machine broke again.' is the clue.",
+            "targetSpeed": 0.71,
+            "hint": "The speaker is genuinely confused. Would that request come out fast, or slow?",
+            "explanation": "A real request born from confusion is usually spoken slowly, giving the explanation time to make sense.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -44,53 +44,53 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "And the surprise guest at dinner tonight is... my old roommate!",
-            "textToSpeak": "And the surprise guest at dinner tonight is... my old roommate!",
+            "word": "Back up everything right now, the whole system's about to go down for good.",
+            "textToSpeak": "Back up everything right now, the whole system's about to go down for good.",
             "options": [
-                "Accelerating (in 'And the surprise guest at dinner tonight is... my old roommate!', the speaker rushes evenly through the whole sentence with no build-up)",
-                "Decelerating (in 'And the surprise guest at dinner tonight is... my old roommate!', the pace slows right before the reveal, the old roommate, to build suspense)"
+                "Accelerating (a total system failure about to happen speeds up the urgent instruction)",
+                "Decelerating (the speaker slows down to explain what caused the system trouble)"
             ],
-            "correctAnswer": "Decelerating (in 'And the surprise guest at dinner tonight is... my old roommate!', the pace slows right before the reveal, the old roommate, to build suspense)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'And the surprise guest at dinner tonight is... my old roommate!' Does the pace slow right before the reveal?",
-            "explanation": "Right before a reveal like the old roommate, speakers often slow down to build anticipation, making the moment of revelation in 'And the surprise guest at dinner tonight is... my old roommate!' feel bigger.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (a total system failure about to happen speeds up the urgent instruction)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.29,
+            "hint": "The whole system is about to fail. Urgent instruction, or a calm technical explanation?",
+            "explanation": "A system about to fail completely creates real pressure, speeding up the instruction to act now.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L82_Q1",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "This is, without question, the hardest exam I've ever taken.",
-            "textToSpeak": "This is, without question, the hardest exam I've ever taken.",
+            "word": "Get out of the kitchen now, the fire alarm's going off and something's clearly burning.",
+            "textToSpeak": "Get out of the kitchen now, the fire alarm's going off and something's clearly burning.",
             "options": [
-                "Accelerating (in 'This is, without question, the hardest exam I've ever taken.', the speaker speeds up to move past the claim quickly)",
-                "Decelerating (in 'This is, without question, the hardest exam I've ever taken.', the pace slows deliberately on the extreme claim, the hardest exam ever taken, to make it land with full seriousness)"
+                "Accelerating (a sounding alarm plus visible burning is a real emergency that speeds up the warning)",
+                "Decelerating (the speaker slows down to figure out exactly what's burning first)"
             ],
-            "correctAnswer": "Decelerating (in 'This is, without question, the hardest exam I've ever taken.', the pace slows deliberately on the extreme claim, the hardest exam ever taken, to make it land with full seriousness)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.68,
-            "hint": "Listen to 'This is, without question, the hardest exam I've ever taken.' Does the pace slow down seriously on the extreme claim?",
-            "explanation": "Serious superlative claims like the hardest exam ever taken are slowed down deliberately, giving the statement extra weight and sincerity.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (a sounding alarm plus visible burning is a real emergency that speeds up the warning)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.42,
+            "hint": "The alarm's already going off. Urgent warning, or a calm investigation?",
+            "explanation": "A real emergency signal, like a sounding alarm with visible smoke, prompts an instant warning rather than a slow investigation.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L82_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Oh fantastic, another pop quiz today.",
-            "textToSpeak": "Oh fantastic, another pop quiz today.",
+            "word": "Fold it in gently, otherwise you'll knock all the air straight out of the mixture.",
+            "textToSpeak": "Fold it in gently, otherwise you'll knock all the air straight out of the mixture.",
             "options": [
-                "Decelerating (in 'Oh fantastic, another pop quiz today.', the word 'fantastic' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
-                "Accelerating (in 'Oh fantastic, another pop quiz today.', the speaker rushes through 'fantastic' because they genuinely mean it)"
+                "Decelerating (a warning about ruining the texture slows the pace of the cooking instruction)",
+                "Accelerating (the speaker rushes since folding is usually the very last, quick step)"
             ],
-            "correctAnswer": "Decelerating (in 'Oh fantastic, another pop quiz today.', the word 'fantastic' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
+            "correctAnswer": "Decelerating (a warning about ruining the texture slows the pace of the cooking instruction)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.7,
-            "hint": "Listen to 'Oh fantastic, another pop quiz today.' Is 'fantastic' said warmly and quickly, or slow and pointed, hinting at sarcasm?",
-            "explanation": "Sarcasm is often signaled by deliberately slowing down on a positive word like 'fantastic' while clearly not meaning it sincerely - the exaggerated slowness in 'Oh fantastic, another pop quiz today.' is the clue.",
+            "targetSpeed": 0.69,
+            "hint": "Rushing this would ruin the texture. Quick instruction, or a careful one?",
+            "explanation": "Instructions warning against a technique mistake are given slowly so the careful method is actually followed.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -98,17 +98,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "And the student with the highest score is... Maria!",
-            "textToSpeak": "And the student with the highest score is... Maria!",
+            "word": "Take your time deciding, since this is the kind of purchase you shouldn't rush into.",
+            "textToSpeak": "Take your time deciding, since this is the kind of purchase you shouldn't rush into.",
             "options": [
-                "Accelerating (in 'And the student with the highest score is... Maria!', the speaker rushes evenly through the whole sentence with no build-up)",
-                "Decelerating (in 'And the student with the highest score is... Maria!', the pace slows right before the reveal, Maria, to build suspense)"
+                "Accelerating (the speaker rushes since the return policy would cover any mistake anyway)",
+                "Decelerating (advice against rushing a big decision is itself delivered unhurried and slow)"
             ],
-            "correctAnswer": "Decelerating (in 'And the student with the highest score is... Maria!', the pace slows right before the reveal, Maria, to build suspense)",
+            "correctAnswer": "Decelerating (advice against rushing a big decision is itself delivered unhurried and slow)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'And the student with the highest score is... Maria!' Does the pace slow right before the reveal?",
-            "explanation": "Right before a reveal like Maria, speakers often slow down to build anticipation, making the moment of revelation in 'And the student with the highest score is... Maria!' feel bigger.",
+            "targetSpeed": 0.73,
+            "hint": "The advice itself is about not rushing. Would it be spoken quickly, or slowly?",
+            "explanation": "Advice telling someone to slow down is naturally spoken slowly, matching the message itself.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -116,71 +116,71 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "This is, without question, the biggest mistake the team has made.",
-            "textToSpeak": "This is, without question, the biggest mistake the team has made.",
+            "word": "Come quick, they're about to bring the whole cast out for the final bow.",
+            "textToSpeak": "Come quick, they're about to bring the whole cast out for the final bow.",
             "options": [
-                "Accelerating (in 'This is, without question, the biggest mistake the team has made.', the speaker speeds up to move past the claim quickly)",
-                "Decelerating (in 'This is, without question, the biggest mistake the team has made.', the pace slows deliberately on the extreme claim, the biggest mistake the team has made, to make it land with full seriousness)"
+                "Accelerating (a final, unrepeatable moment happening now speeds up the excited call)",
+                "Decelerating (the speaker slows down to name each cast member in turn)"
             ],
-            "correctAnswer": "Decelerating (in 'This is, without question, the biggest mistake the team has made.', the pace slows deliberately on the extreme claim, the biggest mistake the team has made, to make it land with full seriousness)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.68,
-            "hint": "Listen to 'This is, without question, the biggest mistake the team has made.' Does the pace slow down seriously on the extreme claim?",
-            "explanation": "Serious superlative claims like the biggest mistake the team has made are slowed down deliberately, giving the statement extra weight and sincerity.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (a final, unrepeatable moment happening now speeds up the excited call)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.34,
+            "hint": "This moment won't happen again. Urgent call, or a slow introduction of names?",
+            "explanation": "A final, one-time moment like a closing bow creates urgency, speeding up the call to come see it.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L83_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Oh great, another last-minute meeting.",
-            "textToSpeak": "Oh great, another last-minute meeting.",
+            "word": "Pick up the phone, she's called four times already and sounds pretty worked up.",
+            "textToSpeak": "Pick up the phone, she's called four times already and sounds pretty worked up.",
             "options": [
-                "Decelerating (in 'Oh great, another last-minute meeting.', the word 'great' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
-                "Accelerating (in 'Oh great, another last-minute meeting.', the speaker rushes through 'great' because they genuinely mean it)"
+                "Accelerating (repeated calls and visible distress speed up the urgent instruction to answer)",
+                "Decelerating (the speaker slows down to think about why she might be calling)"
             ],
-            "correctAnswer": "Decelerating (in 'Oh great, another last-minute meeting.', the word 'great' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
+            "correctAnswer": "Accelerating (repeated calls and visible distress speed up the urgent instruction to answer)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.7,
-            "hint": "Listen to 'Oh great, another last-minute meeting.' Is 'great' said warmly and quickly, or slow and pointed, hinting at sarcasm?",
-            "explanation": "Sarcasm is often signaled by deliberately slowing down on a positive word like 'great' while clearly not meaning it sincerely - the exaggerated slowness in 'Oh great, another last-minute meeting.' is the clue.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "targetSpeed": 1.31,
+            "hint": "Four calls and clear distress. Urgent instruction, or a slow, thoughtful pause?",
+            "explanation": "Repeated calls paired with obvious distress create urgency, speeding up the instruction to answer right away.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L83_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "And the employee of the month is... David!",
-            "textToSpeak": "And the employee of the month is... David!",
+            "word": "Hand in your papers now, time's actually up and no more writing's allowed.",
+            "textToSpeak": "Hand in your papers now, time's actually up and no more writing's allowed.",
             "options": [
-                "Accelerating (in 'And the employee of the month is... David!', the speaker rushes evenly through the whole sentence with no build-up)",
-                "Decelerating (in 'And the employee of the month is... David!', the pace slows right before the reveal, David, to build suspense)"
+                "Accelerating (a hard time limit that has just ended speeds up the firm instruction)",
+                "Decelerating (the speaker slows down to remind students how the exam will be marked)"
             ],
-            "correctAnswer": "Decelerating (in 'And the employee of the month is... David!', the pace slows right before the reveal, David, to build suspense)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'And the employee of the month is... David!' Does the pace slow right before the reveal?",
-            "explanation": "Right before a reveal like David, speakers often slow down to build anticipation, making the moment of revelation in 'And the employee of the month is... David!' feel bigger.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (a hard time limit that has just ended speeds up the firm instruction)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.36,
+            "hint": "Time is officially up. Firm, fast instruction, or a calm reminder about marking?",
+            "explanation": "A hard deadline that has just passed is announced quickly and firmly, leaving no room for delay.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L84_Q1",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "This is, without question, the longest layover I've ever had.",
-            "textToSpeak": "This is, without question, the longest layover I've ever had.",
+            "word": "Talk me through it slowly, I'm still not sure how this feature is even supposed to work.",
+            "textToSpeak": "Talk me through it slowly, I'm still not sure how this feature is even supposed to work.",
             "options": [
-                "Accelerating (in 'This is, without question, the longest layover I've ever had.', the speaker speeds up to move past the claim quickly)",
-                "Decelerating (in 'This is, without question, the longest layover I've ever had.', the pace slows deliberately on the extreme claim, the longest layover ever, to make it land with full seriousness)"
+                "Decelerating (genuine uncertainty about how something works slows the pace of the request)",
+                "Accelerating (the speaker rushes since the feature is probably simple once you try it)"
             ],
-            "correctAnswer": "Decelerating (in 'This is, without question, the longest layover I've ever had.', the pace slows deliberately on the extreme claim, the longest layover ever, to make it land with full seriousness)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.68,
-            "hint": "Listen to 'This is, without question, the longest layover I've ever had.' Does the pace slow down seriously on the extreme claim?",
-            "explanation": "Serious superlative claims like the longest layover ever are slowed down deliberately, giving the statement extra weight and sincerity.",
+            "correctAnswer": "Decelerating (genuine uncertainty about how something works slows the pace of the request)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.72,
+            "hint": "The speaker is genuinely unsure. Fast request, or a slow, patient one?",
+            "explanation": "A request rooted in real uncertainty is usually spoken slowly, leaving room for a full explanation.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -188,35 +188,35 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Oh perfect, another delayed flight.",
-            "textToSpeak": "Oh perfect, another delayed flight.",
+            "word": "Grab her before she wanders off, she's heading straight for the busy road.",
+            "textToSpeak": "Grab her before she wanders off, she's heading straight for the busy road.",
             "options": [
-                "Decelerating (in 'Oh perfect, another delayed flight.', the word 'perfect' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
-                "Accelerating (in 'Oh perfect, another delayed flight.', the speaker rushes through 'perfect' because they genuinely mean it)"
+                "Accelerating (a child heading toward danger speeds up the urgent instruction)",
+                "Decelerating (the speaker slows down to call out calmly from a distance)"
             ],
-            "correctAnswer": "Decelerating (in 'Oh perfect, another delayed flight.', the word 'perfect' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
+            "correctAnswer": "Accelerating (a child heading toward danger speeds up the urgent instruction)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.7,
-            "hint": "Listen to 'Oh perfect, another delayed flight.' Is 'perfect' said warmly and quickly, or slow and pointed, hinting at sarcasm?",
-            "explanation": "Sarcasm is often signaled by deliberately slowing down on a positive word like 'perfect' while clearly not meaning it sincerely - the exaggerated slowness in 'Oh perfect, another delayed flight.' is the clue.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "targetSpeed": 1.47,
+            "hint": "She's heading toward a busy road. Urgent instruction, or a calm, distant call?",
+            "explanation": "A child heading toward real danger triggers a fast, urgent instruction rather than a calm, distant call.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L84_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "And the mystery destination for this trip is... Iceland!",
-            "textToSpeak": "And the mystery destination for this trip is... Iceland!",
+            "word": "Ease into the exercise slowly, since jumping straight in could easily pull a muscle.",
+            "textToSpeak": "Ease into the exercise slowly, since jumping straight in could easily pull a muscle.",
             "options": [
-                "Accelerating (in 'And the mystery destination for this trip is... Iceland!', the speaker rushes evenly through the whole sentence with no build-up)",
-                "Decelerating (in 'And the mystery destination for this trip is... Iceland!', the pace slows right before the reveal, Iceland, to build suspense)"
+                "Accelerating (the speaker rushes since stretching first is common knowledge anyway)",
+                "Decelerating (a caution about injury slows the pace of the fitness advice)"
             ],
-            "correctAnswer": "Decelerating (in 'And the mystery destination for this trip is... Iceland!', the pace slows right before the reveal, Iceland, to build suspense)",
+            "correctAnswer": "Decelerating (a caution about injury slows the pace of the fitness advice)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'And the mystery destination for this trip is... Iceland!' Does the pace slow right before the reveal?",
-            "explanation": "Right before a reveal like Iceland, speakers often slow down to build anticipation, making the moment of revelation in 'And the mystery destination for this trip is... Iceland!' feel bigger.",
+            "targetSpeed": 0.7,
+            "hint": "Rushing in could cause an injury. Quick advice, or a careful one?",
+            "explanation": "Fitness advice warning against injury is delivered slowly, matching the gradual approach it recommends.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -224,17 +224,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "This is, without question, the loudest the house has ever been.",
-            "textToSpeak": "This is, without question, the loudest the house has ever been.",
+            "word": "Talk me through the recipe slowly, I want to get every single step right this time.",
+            "textToSpeak": "Talk me through the recipe slowly, I want to get every single step right this time.",
             "options": [
-                "Decelerating (in 'This is, without question, the loudest the house has ever been.', the pace slows deliberately on the extreme claim, the loudest the house has ever been, to make it land with full seriousness)",
-                "Accelerating (in 'This is, without question, the loudest the house has ever been.', the speaker speeds up to move past the claim quickly)"
+                "Decelerating (a genuine wish to get every detail right slows the pace of the request)",
+                "Accelerating (the speaker rushes since they've cooked similar dishes many times before)"
             ],
-            "correctAnswer": "Decelerating (in 'This is, without question, the loudest the house has ever been.', the pace slows deliberately on the extreme claim, the loudest the house has ever been, to make it land with full seriousness)",
+            "correctAnswer": "Decelerating (a genuine wish to get every detail right slows the pace of the request)",
             "correctAnswerIndex": 0,
             "targetSpeed": 0.68,
-            "hint": "Listen to 'This is, without question, the loudest the house has ever been.' Does the pace slow down seriously on the extreme claim?",
-            "explanation": "Serious superlative claims like the loudest the house has ever been are slowed down deliberately, giving the statement extra weight and sincerity.",
+            "hint": "The speaker wants every step exact. Fast request, or a slow, careful one?",
+            "explanation": "A request driven by wanting every detail right is naturally spoken slowly and carefully.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -242,53 +242,53 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Oh lovely, another argument about chores.",
-            "textToSpeak": "Oh lovely, another argument about chores.",
+            "word": "Drop everything and pick up, the deal's about to fall through completely.",
+            "textToSpeak": "Drop everything and pick up, the deal's about to fall through completely.",
             "options": [
-                "Accelerating (in 'Oh lovely, another argument about chores.', the speaker rushes through 'lovely' because they genuinely mean it)",
-                "Decelerating (in 'Oh lovely, another argument about chores.', the word 'lovely' is drawn out slowly and pointedly, signaling the speaker means the opposite)"
+                "Decelerating (the speaker slows down to review the deal's terms one more time)",
+                "Accelerating (a major deal collapsing right now speeds up the urgent instruction)"
             ],
-            "correctAnswer": "Decelerating (in 'Oh lovely, another argument about chores.', the word 'lovely' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
+            "correctAnswer": "Accelerating (a major deal collapsing right now speeds up the urgent instruction)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.7,
-            "hint": "Listen to 'Oh lovely, another argument about chores.' Is 'lovely' said warmly and quickly, or slow and pointed, hinting at sarcasm?",
-            "explanation": "Sarcasm is often signaled by deliberately slowing down on a positive word like 'lovely' while clearly not meaning it sincerely - the exaggerated slowness in 'Oh lovely, another argument about chores.' is the clue.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "targetSpeed": 1.32,
+            "hint": "The deal is collapsing right now. Urgent instruction, or a calm review of terms?",
+            "explanation": "News that something important is collapsing right now creates real pressure, speeding up the instruction to respond.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L85_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "And the one who finally fixed the sink is... grandpa!",
-            "textToSpeak": "And the one who finally fixed the sink is... grandpa!",
+            "word": "Move the plants inside now, it's about to pour and they'll be ruined.",
+            "textToSpeak": "Move the plants inside now, it's about to pour and they'll be ruined.",
             "options": [
-                "Decelerating (in 'And the one who finally fixed the sink is... grandpa!', the pace slows right before the reveal, grandpa, to build suspense)",
-                "Accelerating (in 'And the one who finally fixed the sink is... grandpa!', the speaker rushes evenly through the whole sentence with no build-up)"
+                "Accelerating (incoming heavy rain that will cause damage speeds up the practical instruction)",
+                "Decelerating (the speaker slows down to explain which plants need the most care)"
             ],
-            "correctAnswer": "Decelerating (in 'And the one who finally fixed the sink is... grandpa!', the pace slows right before the reveal, grandpa, to build suspense)",
+            "correctAnswer": "Accelerating (incoming heavy rain that will cause damage speeds up the practical instruction)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'And the one who finally fixed the sink is... grandpa!' Does the pace slow right before the reveal?",
-            "explanation": "Right before a reveal like grandpa, speakers often slow down to build anticipation, making the moment of revelation in 'And the one who finally fixed the sink is... grandpa!' feel bigger.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "targetSpeed": 1.3,
+            "hint": "Rain is about to ruin the plants. Urgent instruction, or a calm explanation of care?",
+            "explanation": "A visible, incoming risk like heavy rain prompts a fast, practical instruction rather than a detailed explanation.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L86_Q1",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "This is, without question, the longest line I've ever stood in.",
-            "textToSpeak": "This is, without question, the longest line I've ever stood in.",
+            "word": "Break the news to him gently, since he's been looking forward to this for weeks.",
+            "textToSpeak": "Break the news to him gently, since he's been looking forward to this for weeks.",
             "options": [
-                "Decelerating (in 'This is, without question, the longest line I've ever stood in.', the pace slows deliberately on the extreme claim, the longest line ever, to make it land with full seriousness)",
-                "Accelerating (in 'This is, without question, the longest line I've ever stood in.', the speaker speeds up to move past the claim quickly)"
+                "Accelerating (the speaker rushes since bad news is usually best said and done with quickly)",
+                "Decelerating (sensitivity to someone's disappointment slows the pace of the advice)"
             ],
-            "correctAnswer": "Decelerating (in 'This is, without question, the longest line I've ever stood in.', the pace slows deliberately on the extreme claim, the longest line ever, to make it land with full seriousness)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.68,
-            "hint": "Listen to 'This is, without question, the longest line I've ever stood in.' Does the pace slow down seriously on the extreme claim?",
-            "explanation": "Serious superlative claims like the longest line ever are slowed down deliberately, giving the statement extra weight and sincerity.",
+            "correctAnswer": "Decelerating (sensitivity to someone's disappointment slows the pace of the advice)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.66,
+            "hint": "He's been excited about this for weeks. Quick advice, or a gentle, slow one?",
+            "explanation": "Advice about breaking disappointing news is usually delivered slowly and gently, out of real consideration.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -296,17 +296,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Oh brilliant, the one thing I wanted is sold out.",
-            "textToSpeak": "Oh brilliant, the one thing I wanted is sold out.",
+            "word": "Talk me through your answer slowly, so I can see exactly how you got there.",
+            "textToSpeak": "Talk me through your answer slowly, so I can see exactly how you got there.",
             "options": [
-                "Accelerating (in 'Oh brilliant, the one thing I wanted is sold out.', the speaker rushes through 'brilliant' because they genuinely mean it)",
-                "Decelerating (in 'Oh brilliant, the one thing I wanted is sold out.', the word 'brilliant' is drawn out slowly and pointedly, signaling the speaker means the opposite)"
+                "Accelerating (the speaker rushes since the final answer is usually all that's checked)",
+                "Decelerating (a request to follow full reasoning is delivered at a slow, careful pace)"
             ],
-            "correctAnswer": "Decelerating (in 'Oh brilliant, the one thing I wanted is sold out.', the word 'brilliant' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
+            "correctAnswer": "Decelerating (a request to follow full reasoning is delivered at a slow, careful pace)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.7,
-            "hint": "Listen to 'Oh brilliant, the one thing I wanted is sold out.' Is 'brilliant' said warmly and quickly, or slow and pointed, hinting at sarcasm?",
-            "explanation": "Sarcasm is often signaled by deliberately slowing down on a positive word like 'brilliant' while clearly not meaning it sincerely - the exaggerated slowness in 'Oh brilliant, the one thing I wanted is sold out.' is the clue.",
+            "targetSpeed": 0.69,
+            "hint": "The teacher wants to see every step. Quick request, or a careful one?",
+            "explanation": "Requests to follow someone's full reasoning are given slowly so every step can be understood.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -314,17 +314,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "And the lucky winner of today's raffle is... you!",
-            "textToSpeak": "And the lucky winner of today's raffle is... you!",
+            "word": "Think it over carefully, since this isn't the kind of thing you can easily exchange.",
+            "textToSpeak": "Think it over carefully, since this isn't the kind of thing you can easily exchange.",
             "options": [
-                "Decelerating (in 'And the lucky winner of today's raffle is... you!', the pace slows right before the reveal, you, to build suspense)",
-                "Accelerating (in 'And the lucky winner of today's raffle is... you!', the speaker rushes evenly through the whole sentence with no build-up)"
+                "Accelerating (the speaker rushes since most items can usually be exchanged without any issue)",
+                "Decelerating (a limited exchange option slows the pace of the cautious advice)"
             ],
-            "correctAnswer": "Decelerating (in 'And the lucky winner of today's raffle is... you!', the pace slows right before the reveal, you, to build suspense)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'And the lucky winner of today's raffle is... you!' Does the pace slow right before the reveal?",
-            "explanation": "Right before a reveal like you, speakers often slow down to build anticipation, making the moment of revelation in 'And the lucky winner of today's raffle is... you!' feel bigger.",
+            "correctAnswer": "Decelerating (a limited exchange option slows the pace of the cautious advice)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.71,
+            "hint": "Exchanging this later won't be easy. Quick advice, or a careful one?",
+            "explanation": "Advice about a decision that's hard to undo is usually delivered slowly, giving it proper weight.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -332,17 +332,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "This is, without question, the spiciest dish on the menu.",
-            "textToSpeak": "This is, without question, the spiciest dish on the menu.",
+            "word": "Ease into the story slowly, since it takes a while for everything to click into place.",
+            "textToSpeak": "Ease into the story slowly, since it takes a while for everything to click into place.",
             "options": [
-                "Decelerating (in 'This is, without question, the spiciest dish on the menu.', the pace slows deliberately on the extreme claim, the spiciest dish on the menu, to make it land with full seriousness)",
-                "Accelerating (in 'This is, without question, the spiciest dish on the menu.', the speaker speeds up to move past the claim quickly)"
+                "Accelerating (the speaker rushes since the ending is honestly the only part that matters)",
+                "Decelerating (advice about a slow-building plot matches the speaker's own unhurried pace)"
             ],
-            "correctAnswer": "Decelerating (in 'This is, without question, the spiciest dish on the menu.', the pace slows deliberately on the extreme claim, the spiciest dish on the menu, to make it land with full seriousness)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.68,
-            "hint": "Listen to 'This is, without question, the spiciest dish on the menu.' Does the pace slow down seriously on the extreme claim?",
-            "explanation": "Serious superlative claims like the spiciest dish on the menu are slowed down deliberately, giving the statement extra weight and sincerity.",
+            "correctAnswer": "Decelerating (advice about a slow-building plot matches the speaker's own unhurried pace)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.74,
+            "hint": "The story takes time to click. Quick advice, or a patient one?",
+            "explanation": "Advice about something that unfolds slowly is often delivered at that same unhurried pace.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -350,17 +350,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Oh delightful, they're out of my favorite dish.",
-            "textToSpeak": "Oh delightful, they're out of my favorite dish.",
+            "word": "Set it up carefully, since a wrong setting here could wipe out all your old files.",
+            "textToSpeak": "Set it up carefully, since a wrong setting here could wipe out all your old files.",
             "options": [
-                "Accelerating (in 'Oh delightful, they're out of my favorite dish.', the speaker rushes through 'delightful' because they genuinely mean it)",
-                "Decelerating (in 'Oh delightful, they're out of my favorite dish.', the word 'delightful' is drawn out slowly and pointedly, signaling the speaker means the opposite)"
+                "Accelerating (the speaker rushes since setup wizards usually explain each step already)",
+                "Decelerating (the risk of losing everything slows the pace of the setup instruction)"
             ],
-            "correctAnswer": "Decelerating (in 'Oh delightful, they're out of my favorite dish.', the word 'delightful' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
+            "correctAnswer": "Decelerating (the risk of losing everything slows the pace of the setup instruction)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.7,
-            "hint": "Listen to 'Oh delightful, they're out of my favorite dish.' Is 'delightful' said warmly and quickly, or slow and pointed, hinting at sarcasm?",
-            "explanation": "Sarcasm is often signaled by deliberately slowing down on a positive word like 'delightful' while clearly not meaning it sincerely - the exaggerated slowness in 'Oh delightful, they're out of my favorite dish.' is the clue.",
+            "targetSpeed": 0.67,
+            "hint": "One wrong setting could delete everything. Quick instruction, or a careful one?",
+            "explanation": "Instructions where a mistake could cause real loss are given slowly so each step is done right.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -368,17 +368,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "And the secret ingredient in this dish is... cinnamon!",
-            "textToSpeak": "And the secret ingredient in this dish is... cinnamon!",
+            "word": "Break it to her gently, she's been looking forward to that trip for ages.",
+            "textToSpeak": "Break it to her gently, she's been looking forward to that trip for ages.",
             "options": [
-                "Decelerating (in 'And the secret ingredient in this dish is... cinnamon!', the pace slows right before the reveal, cinnamon, to build suspense)",
-                "Accelerating (in 'And the secret ingredient in this dish is... cinnamon!', the speaker rushes evenly through the whole sentence with no build-up)"
+                "Accelerating (the speaker rushes since plans change all the time anyway)",
+                "Decelerating (consideration for someone's long-held excitement slows the pace of the advice)"
             ],
-            "correctAnswer": "Decelerating (in 'And the secret ingredient in this dish is... cinnamon!', the pace slows right before the reveal, cinnamon, to build suspense)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'And the secret ingredient in this dish is... cinnamon!' Does the pace slow right before the reveal?",
-            "explanation": "Right before a reveal like cinnamon, speakers often slow down to build anticipation, making the moment of revelation in 'And the secret ingredient in this dish is... cinnamon!' feel bigger.",
+            "correctAnswer": "Decelerating (consideration for someone's long-held excitement slows the pace of the advice)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.65,
+            "hint": "She's been excited about this for ages. Quick mention, or a gentle, slow one?",
+            "explanation": "Advice about breaking disappointing news to someone who's excited is usually given slowly and gently.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -386,71 +386,71 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "This is, without question, the slowest the app has ever run.",
-            "textToSpeak": "This is, without question, the slowest the app has ever run.",
+            "word": "Get her to a hospital now, she's been throwing up nonstop and can barely stand.",
+            "textToSpeak": "Get her to a hospital now, she's been throwing up nonstop and can barely stand.",
             "options": [
-                "Decelerating (in 'This is, without question, the slowest the app has ever run.', the pace slows deliberately on the extreme claim, the slowest the app has ever run, to make it land with full seriousness)",
-                "Accelerating (in 'This is, without question, the slowest the app has ever run.', the speaker speeds up to move past the claim quickly)"
+                "Decelerating (the speaker calmly lists everything she ate earlier today)",
+                "Accelerating (worsening, severe symptoms are a real emergency that speeds up the instruction)"
             ],
-            "correctAnswer": "Decelerating (in 'This is, without question, the slowest the app has ever run.', the pace slows deliberately on the extreme claim, the slowest the app has ever run, to make it land with full seriousness)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.68,
-            "hint": "Listen to 'This is, without question, the slowest the app has ever run.' Does the pace slow down seriously on the extreme claim?",
-            "explanation": "Serious superlative claims like the slowest the app has ever run are slowed down deliberately, giving the statement extra weight and sincerity.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (worsening, severe symptoms are a real emergency that speeds up the instruction)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.48,
+            "hint": "These are severe, worsening symptoms. Urgent instruction, or a calm list of what she ate?",
+            "explanation": "Severe, worsening symptoms are treated as a genuine emergency, prompting a fast, direct instruction.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L88_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Oh marvelous, another forced restart.",
-            "textToSpeak": "Oh marvelous, another forced restart.",
+            "word": "Drop what you're doing, the whole deal's falling apart as we speak.",
+            "textToSpeak": "Drop what you're doing, the whole deal's falling apart as we speak.",
             "options": [
-                "Accelerating (in 'Oh marvelous, another forced restart.', the speaker rushes through 'marvelous' because they genuinely mean it)",
-                "Decelerating (in 'Oh marvelous, another forced restart.', the word 'marvelous' is drawn out slowly and pointedly, signaling the speaker means the opposite)"
+                "Decelerating (the speaker slows down to explain calmly what went wrong in the negotiation)",
+                "Accelerating (an important deal collapsing in real time speeds up the urgent instruction)"
             ],
-            "correctAnswer": "Decelerating (in 'Oh marvelous, another forced restart.', the word 'marvelous' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
+            "correctAnswer": "Accelerating (an important deal collapsing in real time speeds up the urgent instruction)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.7,
-            "hint": "Listen to 'Oh marvelous, another forced restart.' Is 'marvelous' said warmly and quickly, or slow and pointed, hinting at sarcasm?",
-            "explanation": "Sarcasm is often signaled by deliberately slowing down on a positive word like 'marvelous' while clearly not meaning it sincerely - the exaggerated slowness in 'Oh marvelous, another forced restart.' is the clue.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "targetSpeed": 1.35,
+            "hint": "This is happening right now. Urgent instruction, or a calm explanation of what went wrong?",
+            "explanation": "Something important collapsing in real time creates real pressure, speeding up the instruction to respond immediately.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L88_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "And the new feature they finally added is... dark mode!",
-            "textToSpeak": "And the new feature they finally added is... dark mode!",
+            "word": "Make a run for it, they've just called final boarding for our flight.",
+            "textToSpeak": "Make a run for it, they've just called final boarding for our flight.",
             "options": [
-                "Decelerating (in 'And the new feature they finally added is... dark mode!', the pace slows right before the reveal, dark mode, to build suspense)",
-                "Accelerating (in 'And the new feature they finally added is... dark mode!', the speaker rushes evenly through the whole sentence with no build-up)"
+                "Decelerating (the speaker slows down to check the gate number one more time)",
+                "Accelerating (a final boarding call speeds up the urgent instruction to move)"
             ],
-            "correctAnswer": "Decelerating (in 'And the new feature they finally added is... dark mode!', the pace slows right before the reveal, dark mode, to build suspense)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'And the new feature they finally added is... dark mode!' Does the pace slow right before the reveal?",
-            "explanation": "Right before a reveal like dark mode, speakers often slow down to build anticipation, making the moment of revelation in 'And the new feature they finally added is... dark mode!' feel bigger.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (a final boarding call speeds up the urgent instruction to move)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.4,
+            "hint": "Final boarding was just called. Urgent instruction, or a calm double-check?",
+            "explanation": "A final boarding call is genuinely urgent, so the instruction to hurry comes out fast and direct.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L89_Q1",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "This is, without question, the worst headache I've ever had.",
-            "textToSpeak": "This is, without question, the worst headache I've ever had.",
+            "word": "Think this through carefully, since upgrading later on will end up costing you a lot more.",
+            "textToSpeak": "Think this through carefully, since upgrading later on will end up costing you a lot more.",
             "options": [
-                "Decelerating (in 'This is, without question, the worst headache I've ever had.', the pace slows deliberately on the extreme claim, the worst headache ever, to make it land with full seriousness)",
-                "Accelerating (in 'This is, without question, the worst headache I've ever had.', the speaker speeds up to move past the claim quickly)"
+                "Decelerating (a future cost consequence slows the pace of the practical advice)",
+                "Accelerating (the speaker rushes since upgrades are usually simple and inexpensive)"
             ],
-            "correctAnswer": "Decelerating (in 'This is, without question, the worst headache I've ever had.', the pace slows deliberately on the extreme claim, the worst headache ever, to make it land with full seriousness)",
+            "correctAnswer": "Decelerating (a future cost consequence slows the pace of the practical advice)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.68,
-            "hint": "Listen to 'This is, without question, the worst headache I've ever had.' Does the pace slow down seriously on the extreme claim?",
-            "explanation": "Serious superlative claims like the worst headache ever are slowed down deliberately, giving the statement extra weight and sincerity.",
+            "targetSpeed": 0.75,
+            "hint": "A wrong choice now gets expensive later. Quick advice, or a careful one?",
+            "explanation": "Advice with a real future cost attached is given slowly so the decision is made with care.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -458,17 +458,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Oh terrific, another early morning appointment.",
-            "textToSpeak": "Oh terrific, another early morning appointment.",
+            "word": "Bring it to a boil slowly, otherwise the sauce will split before it even thickens.",
+            "textToSpeak": "Bring it to a boil slowly, otherwise the sauce will split before it even thickens.",
             "options": [
-                "Accelerating (in 'Oh terrific, another early morning appointment.', the speaker rushes through 'terrific' because they genuinely mean it)",
-                "Decelerating (in 'Oh terrific, another early morning appointment.', the word 'terrific' is drawn out slowly and pointedly, signaling the speaker means the opposite)"
+                "Decelerating (a warning about ruining the sauce slows the pace of the instruction)",
+                "Accelerating (the speaker rushes since bringing something to a boil is usually straightforward)"
             ],
-            "correctAnswer": "Decelerating (in 'Oh terrific, another early morning appointment.', the word 'terrific' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.7,
-            "hint": "Listen to 'Oh terrific, another early morning appointment.' Is 'terrific' said warmly and quickly, or slow and pointed, hinting at sarcasm?",
-            "explanation": "Sarcasm is often signaled by deliberately slowing down on a positive word like 'terrific' while clearly not meaning it sincerely - the exaggerated slowness in 'Oh terrific, another early morning appointment.' is the clue.",
+            "correctAnswer": "Decelerating (a warning about ruining the sauce slows the pace of the instruction)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.68,
+            "hint": "Rushing this would ruin the sauce. Quick instruction, or a careful one?",
+            "explanation": "Cooking instructions warning against a real risk are given slowly so the careful method is followed.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -476,17 +476,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "And the cause of all your symptoms turns out to be... stress!",
-            "textToSpeak": "And the cause of all your symptoms turns out to be... stress!",
+            "word": "Break the essay down carefully, since each section needs to build on the last.",
+            "textToSpeak": "Break the essay down carefully, since each section needs to build on the last.",
             "options": [
-                "Decelerating (in 'And the cause of all your symptoms turns out to be... stress!', the pace slows right before the reveal, stress, to build suspense)",
-                "Accelerating (in 'And the cause of all your symptoms turns out to be... stress!', the speaker rushes evenly through the whole sentence with no build-up)"
+                "Decelerating (advice about structure and logical flow is delivered at a slow, deliberate pace)",
+                "Accelerating (the speaker rushes since most essays follow the exact same basic structure)"
             ],
-            "correctAnswer": "Decelerating (in 'And the cause of all your symptoms turns out to be... stress!', the pace slows right before the reveal, stress, to build suspense)",
+            "correctAnswer": "Decelerating (advice about structure and logical flow is delivered at a slow, deliberate pace)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'And the cause of all your symptoms turns out to be... stress!' Does the pace slow right before the reveal?",
-            "explanation": "Right before a reveal like stress, speakers often slow down to build anticipation, making the moment of revelation in 'And the cause of all your symptoms turns out to be... stress!' feel bigger.",
+            "targetSpeed": 0.7,
+            "hint": "Each part needs to build on the last. Quick advice, or a careful one?",
+            "explanation": "Advice about building a logical structure is usually given slowly, mirroring the careful thinking it asks for.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -494,35 +494,35 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "This is, without question, the saddest ending I've ever seen.",
-            "textToSpeak": "This is, without question, the saddest ending I've ever seen.",
+            "word": "Jump in the car now, traffic's building up fast and we'll miss the start.",
+            "textToSpeak": "Jump in the car now, traffic's building up fast and we'll miss the start.",
             "options": [
-                "Decelerating (in 'This is, without question, the saddest ending I've ever seen.', the pace slows deliberately on the extreme claim, the saddest ending ever, to make it land with full seriousness)",
-                "Accelerating (in 'This is, without question, the saddest ending I've ever seen.', the speaker speeds up to move past the claim quickly)"
+                "Decelerating (the speaker slows down to check an alternate route on the map first)",
+                "Accelerating (worsening traffic threatening to make you late speeds up the urgent instruction)"
             ],
-            "correctAnswer": "Decelerating (in 'This is, without question, the saddest ending I've ever seen.', the pace slows deliberately on the extreme claim, the saddest ending ever, to make it land with full seriousness)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.68,
-            "hint": "Listen to 'This is, without question, the saddest ending I've ever seen.' Does the pace slow down seriously on the extreme claim?",
-            "explanation": "Serious superlative claims like the saddest ending ever are slowed down deliberately, giving the statement extra weight and sincerity.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (worsening traffic threatening to make you late speeds up the urgent instruction)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.33,
+            "hint": "Traffic is getting worse fast. Urgent instruction, or a calm route check?",
+            "explanation": "Traffic building up fast, threatening to make you late, creates urgency that speeds up the instruction to leave.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L90_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Oh splendid, the show got cancelled again.",
-            "textToSpeak": "Oh splendid, the show got cancelled again.",
+            "word": "Ease off the painkillers slowly, rather than stopping them all at once.",
+            "textToSpeak": "Ease off the painkillers slowly, rather than stopping them all at once.",
             "options": [
-                "Accelerating (in 'Oh splendid, the show got cancelled again.', the speaker rushes through 'splendid' because they genuinely mean it)",
-                "Decelerating (in 'Oh splendid, the show got cancelled again.', the word 'splendid' is drawn out slowly and pointedly, signaling the speaker means the opposite)"
+                "Accelerating (the speaker rushes since painkillers are usually stopped whenever the pain is gone)",
+                "Decelerating (a caution about stopping too suddenly slows the pace of the medical advice)"
             ],
-            "correctAnswer": "Decelerating (in 'Oh splendid, the show got cancelled again.', the word 'splendid' is drawn out slowly and pointedly, signaling the speaker means the opposite)",
+            "correctAnswer": "Decelerating (a caution about stopping too suddenly slows the pace of the medical advice)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.7,
-            "hint": "Listen to 'Oh splendid, the show got cancelled again.' Is 'splendid' said warmly and quickly, or slow and pointed, hinting at sarcasm?",
-            "explanation": "Sarcasm is often signaled by deliberately slowing down on a positive word like 'splendid' while clearly not meaning it sincerely - the exaggerated slowness in 'Oh splendid, the show got cancelled again.' is the clue.",
+            "targetSpeed": 0.72,
+            "hint": "Stopping suddenly could be a problem. Quick advice, or a careful one?",
+            "explanation": "Medical advice about tapering off slowly is itself delivered slowly, to match the gradual approach.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -530,18 +530,18 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "And the actor who finally won the award is... Daniel!",
-            "textToSpeak": "And the actor who finally won the award is... Daniel!",
+            "word": "Get back to your seats now, they're bringing the lights down for the second half.",
+            "textToSpeak": "Get back to your seats now, they're bringing the lights down for the second half.",
             "options": [
-                "Decelerating (in 'And the actor who finally won the award is... Daniel!', the pace slows right before the reveal, Daniel, to build suspense)",
-                "Accelerating (in 'And the actor who finally won the award is... Daniel!', the speaker rushes evenly through the whole sentence with no build-up)"
+                "Decelerating (the speaker slows down to recap what happened in the first half)",
+                "Accelerating (the show restarting any second speeds up the instruction to hurry back)"
             ],
-            "correctAnswer": "Decelerating (in 'And the actor who finally won the award is... Daniel!', the pace slows right before the reveal, Daniel, to build suspense)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'And the actor who finally won the award is... Daniel!' Does the pace slow right before the reveal?",
-            "explanation": "Right before a reveal like Daniel, speakers often slow down to build anticipation, making the moment of revelation in 'And the actor who finally won the award is... Daniel!' feel bigger.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (the show restarting any second speeds up the instruction to hurry back)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.29,
+            "hint": "The lights are about to go down. Urgent instruction, or a calm recap?",
+            "explanation": "A show about to restart creates a small deadline, speeding up the instruction to get back quickly.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         }
     ]
 }

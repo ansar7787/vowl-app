@@ -7,407 +7,407 @@
             "id": "LIS_SOUNDIMAGEMATCH_L131_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen for the main object word in the sentence.",
-            "explanation": "Portal is correct. An online gateway used to access certain information or services. Context in the audio: she will order through the online portal.",
-            "textToSpeak": "If the store closes, she will order through the online portal.",
+            "hint": "Listen for the noun connected to the main action of the sentence.",
+            "explanation": "That's node. It refers to a single connection point within a larger network. The line was: replaced a faulty node in the server room.",
+            "textToSpeak": "The technician replaced a faulty node in the server room.",
             "options": [
-                "circuit",
-                "portal",
-                "signal",
+                "node",
+                "cargo",
+                "archive",
                 "protocol"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🚪"
+            "emoji": "📍"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L131_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Focus on the noun, not the action or description.",
-            "explanation": "Listen for protocol: a set of official rules that controls how something is done. Mentioned in the sentence: carefully.",
-            "textToSpeak": "Customers should follow the store's return protocol carefully.",
+            "hint": "All four options are plausible — only one was actually said aloud.",
+            "explanation": "Customs is correct — the airport checkpoint where officials inspect travelers' goods. Reference: searched his bag at the border.",
+            "textToSpeak": "Customs officials searched his bag at the border.",
             "options": [
-                "network",
-                "protocol",
-                "node",
-                "satellite"
+                "itinerary",
+                "runway",
+                "sensor",
+                "customs"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "📋"
+            "emoji": "🛃"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L131_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Notice which thing the sentence is describing.",
-            "explanation": "Satellite is the object in the sentence. It means an object sent into space that orbits the Earth to send or receive signals. From the audio: they might replace the whole satellite setup.",
-            "textToSpeak": "If the dish breaks, they might replace the whole satellite setup.",
+            "hint": "Don't rely on the topic alone — the exact word matters here.",
+            "explanation": "Module means a separate section that is part of a larger system, course, or program. Notice this detail: added a new module on customer service.",
+            "textToSpeak": "The training program added a new module on customer service.",
             "options": [
-                "chip",
+                "archive",
                 "satellite",
-                "drone",
-                "protocol"
+                "module",
+                "visa"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🛰️"
+            "emoji": "🧩"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L132_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Focus on the noun, not the action or description.",
-            "explanation": "Sensor is correct. A device that detects changes, such as light, heat, or movement. Context in the audio: the guard will check the sensor first.",
-            "textToSpeak": "If the alarm beeps, the guard will check the sensor first.",
+            "hint": "Focus on the exact term used, not a related idea.",
+            "explanation": "Terminal fits best here — a screen and keyboard used to type commands into a computer system.",
+            "textToSpeak": "Passengers checked in for their flight at terminal three.",
             "options": [
-                "chip",
-                "sensor",
-                "protocol",
-                "drone"
+                "portal",
+                "terminal",
+                "runway",
+                "circuit"
             ],
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🌡️"
+            "emoji": "⌨️"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L132_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Notice which thing the sentence is describing.",
-            "explanation": "The correct answer is signal - a sound, light, or wave used to send information or a message. Heard in the audio: before paying with your phone.",
-            "textToSpeak": "You should check the signal before paying with your phone.",
+            "hint": "Pay close attention — the options are easy to confuse with each other.",
+            "explanation": "The correct answer is brochure: a small printed booklet that gives information, often about a trip. Specifically: mailed out a new brochure this spring.",
+            "textToSpeak": "The travel agency mailed out a new brochure this spring.",
             "options": [
-                "signal",
-                "software",
-                "database",
-                "satellite"
+                "customs",
+                "brochure",
+                "module",
+                "checkpoint"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "📶"
+            "emoji": "📗"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L132_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Pay attention to the specific item mentioned by name.",
-            "explanation": "Listen for software: the programs and instructions that tell a computer what to do. Mentioned in the sentence: the store might restart the payment software.",
-            "textToSpeak": "If checkout fails, the store might restart the payment software.",
+            "hint": "Listen for what the sentence says was updated, checked, or used.",
+            "explanation": "The sentence points to circuit — a closed path that lets electricity flow to power a device. The audio included: traced the fault back to a broken circuit.",
+            "textToSpeak": "The engineer traced the fault back to a broken circuit.",
             "options": [
+                "checkpoint",
                 "circuit",
-                "software",
-                "network",
-                "data"
+                "module",
+                "archive"
             ],
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "📀"
+            "emoji": "🔌"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L133_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Notice which thing the sentence is describing.",
-            "explanation": "System is the object in the sentence. It means a set of parts that work together as a whole. From the audio: the kitchen will need a new cooling system.",
-            "textToSpeak": "If the fridge breaks, the kitchen will need a new cooling system.",
+            "hint": "The distractors share a category with the answer — listen carefully.",
+            "explanation": "Visa means an official mark in a passport that allows entry to a country. Context: was delayed because of missing documents.",
+            "textToSpeak": "Her visa application was delayed because of missing documents.",
             "options": [
-                "drone",
-                "node",
-                "code",
-                "system"
+                "compass",
+                "customs",
+                "visa",
+                "cargo"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🖥️"
+            "emoji": "📘"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L133_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Pay attention to the specific item mentioned by name.",
-            "explanation": "The correct answer is terminal - a place where journeys begin or end, or a computer used to access a network. Heard in the audio: at the busy terminal.",
-            "textToSpeak": "You should pay quickly at the busy terminal.",
+            "hint": "The right answer is the specific object, system, or document named.",
+            "explanation": "Checkpoint is right. Think of it as a place where travelers or vehicles are stopped and checked. Recall: passed the final checkpoint before the finish line.",
+            "textToSpeak": "The runners passed the final checkpoint before the finish line.",
             "options": [
-                "database",
-                "engine",
-                "system",
-                "terminal"
+                "runway",
+                "protocol",
+                "checkpoint",
+                "compass"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "💻"
+            "emoji": "🚧"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L133_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen for the single key word that names an object.",
-            "explanation": "Archive is correct. A collection of stored records or files kept for future reference. Context in the audio: the restaurant might lose its recipe archive.",
-            "textToSpeak": "If the chef retires, the restaurant might lose its recipe archive.",
+            "hint": "The correct word may be tucked inside a longer clause.",
+            "explanation": "Cargo is right. Think of it as goods that are transported by truck, ship, or plane. You heard: unloaded the cargo onto waiting trucks.",
+            "textToSpeak": "Workers unloaded the cargo onto waiting trucks.",
             "options": [
-                "sensor",
-                "signal",
-                "archive",
-                "data"
+                "protocol",
+                "shipment",
+                "cargo",
+                "warehouse"
             ],
             "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🗄️"
+            "emoji": "🚛"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L134_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Pay attention to the specific item mentioned by name.",
-            "explanation": "Listen for chip: a small electronic part that stores or processes information inside a device. Mentioned in the sentence: the technician will replace the chip inside.",
-            "textToSpeak": "If the oven fails, the technician will replace the chip inside.",
+            "hint": "Listen for the precise term, since the options are closely related.",
+            "explanation": "Sensor is right. Think of it as a device that detects change and sends the information onward. As heard in the audio: kept triggering the car's alarm.",
+            "textToSpeak": "A faulty sensor kept triggering the car's alarm.",
             "options": [
-                "chip",
-                "drone",
-                "circuit",
-                "node"
+                "database",
+                "module",
+                "warehouse",
+                "sensor"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "💾"
+            "emoji": "🌡️"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L134_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen for the single key word that names an object.",
-            "explanation": "Circuit is the object in the sentence. It means a closed path that lets electricity flow to power a device. From the audio: if the circuit overheats.",
-            "textToSpeak": "You should unplug the toaster if the circuit overheats.",
+            "hint": "The correct word fits the sentence exactly, not just loosely.",
+            "explanation": "The sentence points to compass — a tool that shows direction, used for finding your way. Listen again: they nearly walked in circles.",
+            "textToSpeak": "Without a compass, they nearly walked in circles.",
             "options": [
-                "drone",
-                "data",
-                "device",
-                "circuit"
+                "compass",
+                "database",
+                "brochure",
+                "checkpoint"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🔌"
+            "emoji": "🧭"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L134_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Ignore the verb and adjectives; focus on the object itself.",
-            "explanation": "The correct answer is code - a set of written instructions that tells a computer what to do. Heard in the audio: you cannot unlock the vending machine.",
-            "textToSpeak": "If you don't have the code, you cannot unlock the vending machine.",
+            "hint": "The sentence uses formal language — focus on the core noun.",
+            "explanation": "Module is correct. In everyday terms, it's a separate section that is part of a larger system, course, or program. As heard in the audio: tested each module of the spacecraft separately.",
+            "textToSpeak": "Engineers tested each module of the spacecraft separately.",
             "options": [
-                "engine",
-                "code",
                 "archive",
-                "network"
+                "shipment",
+                "module",
+                "terminal"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "💻"
+            "emoji": "🧩"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L135_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen for the single key word that names an object.",
-            "explanation": "Data is correct. Information that is collected, stored, or processed, often by a computer. Context in the audio: the company will lose important data.",
-            "textToSpeak": "If the server fails, the company will lose important data.",
+            "hint": "All four options are plausible — only one was actually said aloud.",
+            "explanation": "The sentence points to customs — the airport checkpoint where officials inspect travelers' goods. That part goes: declared the gifts she was carrying at customs.",
+            "textToSpeak": "She declared the gifts she was carrying at customs.",
             "options": [
-                "terminal",
-                "portal",
-                "device",
-                "data"
+                "sensor",
+                "brochure",
+                "customs",
+                "visa"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "📊"
+            "emoji": "🛃"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L135_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Ignore the verb and adjectives; focus on the object itself.",
-            "explanation": "Database is the object in the sentence. It means an organized collection of information stored electronically for easy access. From the audio: every night.",
-            "textToSpeak": "Developers should back up the database every night.",
+            "hint": "Don't rely on the topic alone — the exact word matters here.",
+            "explanation": "Satellite is correct. In everyday terms, it's a device sent into space to orbit the earth and relay signals.",
+            "textToSpeak": "Engineers launched a new satellite to improve phone coverage.",
             "options": [
-                "data",
+                "protocol",
+                "runway",
+                "satellite",
+                "module"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "soundImageMatch",
+            "emoji": "🛰️"
+        },
+        {
+            "id": "LIS_SOUNDIMAGEMATCH_L135_Q3",
+            "interactionType": "Visual Correlator",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "The distractors share a category with the answer — listen carefully.",
+            "explanation": "The sentence points to warehouse — a large building used to store goods before they are sold. The audio included: went off inside the warehouse.",
+            "textToSpeak": "A fire alarm went off inside the warehouse.",
+            "options": [
+                "warehouse",
+                "shipment",
+                "cargo",
+                "itinerary"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "soundImageMatch",
+            "emoji": "🏭"
+        },
+        {
+            "id": "LIS_SOUNDIMAGEMATCH_L136_Q1",
+            "interactionType": "Visual Correlator",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Listen for the noun connected to the main action of the sentence.",
+            "explanation": "Portal means an online gateway used to access a website or service. You heard: reset her password to get back into the portal.",
+            "textToSpeak": "She reset her password to get back into the portal.",
+            "options": [
+                "satellite",
+                "shipment",
+                "portal",
+                "node"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "soundImageMatch",
+            "emoji": "🚪"
+        },
+        {
+            "id": "LIS_SOUNDIMAGEMATCH_L136_Q2",
+            "interactionType": "Visual Correlator",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "The right answer is the specific object, system, or document named.",
+            "explanation": "The sentence points to archive — a collection of stored records or files kept for future reference.",
+            "textToSpeak": "The company moved its old files into a digital archive.",
+            "options": [
+                "compass",
+                "archive",
+                "protocol",
+                "node"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "soundImageMatch",
+            "emoji": "🗄️"
+        },
+        {
+            "id": "LIS_SOUNDIMAGEMATCH_L136_Q3",
+            "interactionType": "Visual Correlator",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "The correct word may be tucked inside a longer clause.",
+            "explanation": "Checkpoint is the key word here. It means a place where travelers or vehicles are stopped and checked. The clue: approached the checkpoint.",
+            "textToSpeak": "Drivers slowed down as they approached the checkpoint.",
+            "options": [
+                "itinerary",
+                "customs",
+                "sensor",
+                "checkpoint"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "soundImageMatch",
+            "emoji": "🚧"
+        },
+        {
+            "id": "LIS_SOUNDIMAGEMATCH_L137_Q1",
+            "interactionType": "Visual Correlator",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Pay close attention — the options are easy to confuse with each other.",
+            "explanation": "The correct answer is protocol: a set of official rules for how something should be done. The line was: must be trained on the fire evacuation protocol.",
+            "textToSpeak": "New staff must be trained on the fire evacuation protocol.",
+            "options": [
+                "archive",
+                "satellite",
+                "protocol",
+                "visa"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "soundImageMatch",
+            "emoji": "📋"
+        },
+        {
+            "id": "LIS_SOUNDIMAGEMATCH_L137_Q2",
+            "interactionType": "Visual Correlator",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Listen for the precise term, since the options are closely related.",
+            "explanation": "That's visa. It refers to an official mark in a passport that allows entry to a country. In the sentence: needed a visa to work in the country legally.",
+            "textToSpeak": "They needed a visa to work in the country legally.",
+            "options": [
                 "database",
-                "device",
-                "software"
+                "visa",
+                "customs",
+                "runway"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "soundImageMatch",
+            "emoji": "📘"
+        },
+        {
+            "id": "LIS_SOUNDIMAGEMATCH_L137_Q3",
+            "interactionType": "Visual Correlator",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "The sentence gives one precise clue among several similar options.",
+            "explanation": "You were listening for database: an organized collection of information stored electronically for easy access. Notice this detail: lists every book by author and title.",
+            "textToSpeak": "The library's database lists every book by author and title.",
+            "options": [
+                "satellite",
+                "database",
+                "circuit",
+                "customs"
             ],
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
             "emoji": "🗃️"
         },
         {
-            "id": "LIS_SOUNDIMAGEMATCH_L135_Q3",
-            "interactionType": "Visual Correlator",
-            "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Notice the noun that the sentence centers around.",
-            "explanation": "Device is correct. A small machine or tool designed to do a specific job. Context in the audio: the device might stop working completely.",
-            "textToSpeak": "If the battery dies, the device might stop working completely.",
-            "options": [
-                "sensor",
-                "circuit",
-                "code",
-                "device"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "soundImageMatch",
-            "emoji": "📱"
-        },
-        {
-            "id": "LIS_SOUNDIMAGEMATCH_L136_Q1",
-            "interactionType": "Visual Correlator",
-            "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Ignore the verb and adjectives; focus on the object itself.",
-            "explanation": "Drone is the object in the sentence. It means an aircraft that flies without a pilot on board, often controlled remotely. From the audio: the team will ground the drone immediately.",
-            "textToSpeak": "If the weather worsens, the team will ground the drone immediately.",
-            "options": [
-                "device",
-                "archive",
-                "circuit",
-                "drone"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "soundImageMatch",
-            "emoji": "🚁"
-        },
-        {
-            "id": "LIS_SOUNDIMAGEMATCH_L136_Q2",
-            "interactionType": "Visual Correlator",
-            "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Notice the noun that the sentence centers around.",
-            "explanation": "Listen for engine: the part of a vehicle or machine that produces power to make it move. Mentioned in the sentence: before release.",
-            "textToSpeak": "Engineers should test the new engine before release.",
-            "options": [
-                "protocol",
-                "device",
-                "engine",
-                "sensor"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "soundImageMatch",
-            "emoji": "⚙️"
-        },
-        {
-            "id": "LIS_SOUNDIMAGEMATCH_L136_Q3",
-            "interactionType": "Visual Correlator",
-            "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen closely for the object's name, not who or how.",
-            "explanation": "The correct answer is module - a separate section that is part of a larger system, course, or program. Heard in the audio: they might rebuild the entire module.",
-            "textToSpeak": "If the demo fails, they might rebuild the entire module.",
-            "options": [
-                "portal",
-                "module",
-                "protocol",
-                "drone"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "soundImageMatch",
-            "emoji": "🧩"
-        },
-        {
-            "id": "LIS_SOUNDIMAGEMATCH_L137_Q1",
-            "interactionType": "Visual Correlator",
-            "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Notice the noun that the sentence centers around.",
-            "explanation": "Network is correct. A group of connected computers or devices that share information. Context in the audio: doctors will join a larger network.",
-            "textToSpeak": "If the clinic expands, doctors will join a larger network.",
-            "options": [
-                "network",
-                "signal",
-                "circuit",
-                "code"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "soundImageMatch",
-            "emoji": "🌐"
-        },
-        {
-            "id": "LIS_SOUNDIMAGEMATCH_L137_Q2",
-            "interactionType": "Visual Correlator",
-            "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen closely for the object's name, not who or how.",
-            "explanation": "Node is correct. A single connection point within a larger network. Context in the audio: during the next visit.",
-            "textToSpeak": "The doctor should examine that node during the next visit.",
-            "options": [
-                "network",
-                "portal",
-                "node",
-                "sensor"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "soundImageMatch",
-            "emoji": "📍"
-        },
-        {
-            "id": "LIS_SOUNDIMAGEMATCH_L137_Q3",
-            "interactionType": "Visual Correlator",
-            "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Pick out the specific item described in the audio.",
-            "explanation": "Portal is the object in the sentence. It means an online gateway used to access certain information or services. From the audio: you might lose access to the patient portal.",
-            "textToSpeak": "If you forget your password, you might lose access to the patient portal.",
-            "options": [
-                "protocol",
-                "portal",
-                "system",
-                "engine"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "soundImageMatch",
-            "emoji": "🚪"
-        },
-        {
             "id": "LIS_SOUNDIMAGEMATCH_L138_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen closely for the object's name, not who or how.",
-            "explanation": "Protocol is correct. A set of official rules that controls how something is done. Context in the audio: the hospital will update its treatment protocol.",
-            "textToSpeak": "If symptoms worsen, the hospital will update its treatment protocol.",
+            "hint": "Listen for what the sentence says was updated, checked, or used.",
+            "explanation": "Cargo means goods that are transported by truck, ship, or plane. As heard in the audio: charges extra for oversized cargo.",
+            "textToSpeak": "The airline charges extra for oversized cargo.",
             "options": [
-                "chip",
-                "portal",
-                "code",
-                "protocol"
+                "cargo",
+                "warehouse",
+                "satellite",
+                "shipment"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "📋"
+            "emoji": "🚛"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L138_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Pick out the specific item described in the audio.",
-            "explanation": "Satellite is correct. An object sent into space that orbits the Earth to send or receive signals. Context in the audio: during storms.",
-            "textToSpeak": "Remote clinics should rely on satellite links during storms.",
+            "hint": "Listen past the introduction for the specific detail.",
+            "explanation": "Runway is the answer — the long strip an airplane uses to take off and land. Context: cleared snow from the runway before dawn.",
+            "textToSpeak": "Crews cleared snow from the runway before dawn.",
             "options": [
-                "code",
-                "sensor",
-                "satellite",
-                "drone"
+                "runway",
+                "brochure",
+                "portal",
+                "itinerary"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🛰️"
+            "emoji": "🛫"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L138_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Focus on the thing being used, fixed, or mentioned.",
-            "explanation": "The correct answer is sensor - a device that detects changes, such as light, heat, or movement. Heard in the audio: the nurse might replace the sensor.",
-            "textToSpeak": "If readings look wrong, the nurse might replace the sensor.",
+            "hint": "Focus on the exact term used, not a related idea.",
+            "explanation": "The correct answer is sensor: a device that detects change and sends the information onward. Straight from the audio: installed a sensor to detect gas leaks early.",
+            "textToSpeak": "The factory installed a sensor to detect gas leaks early.",
             "options": [
-                "circuit",
                 "sensor",
-                "device",
-                "module"
+                "satellite",
+                "module",
+                "checkpoint"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
             "emoji": "🌡️"
         },
@@ -415,103 +415,103 @@
             "id": "LIS_SOUNDIMAGEMATCH_L139_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Pick out the specific item described in the audio.",
-            "explanation": "Listen for signal: a sound, light, or wave used to send information or a message. Mentioned in the sentence: the studio will check the signal first.",
-            "textToSpeak": "If the broadcast fails, the studio will check the signal first.",
+            "hint": "The correct word fits the sentence exactly, not just loosely.",
+            "explanation": "Brochure is the word actually spoken — a small printed booklet that gives information, often about a trip. Recall: listed prices for every package.",
+            "textToSpeak": "His brochure listed prices for every package.",
             "options": [
-                "node",
-                "terminal",
-                "signal",
-                "satellite"
+                "itinerary",
+                "brochure",
+                "module",
+                "visa"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "📶"
+            "emoji": "📗"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L139_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Focus on the thing being used, fixed, or mentioned.",
-            "explanation": "Software is the object in the sentence. It means the programs and instructions that tell a computer what to do. From the audio: before launch.",
-            "textToSpeak": "Developers should test the game's software before launch.",
+            "hint": "The distractors share a category with the answer — listen carefully.",
+            "explanation": "Itinerary is correct. In everyday terms, it's a planned schedule of a trip. You heard: changed the itinerary after the flight was cancelled.",
+            "textToSpeak": "He changed the itinerary after the flight was cancelled.",
             "options": [
-                "data",
-                "device",
-                "archive",
-                "software"
+                "satellite",
+                "itinerary",
+                "customs",
+                "visa"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "📀"
+            "emoji": "🗺️"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L139_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen for the keyword that matches one of the pictures.",
-            "explanation": "Listen for system: a set of parts that work together as a whole. Mentioned in the sentence: they might lower the sound system.",
-            "textToSpeak": "If the show is too loud, they might lower the sound system.",
+            "hint": "The sentence uses formal language — focus on the core noun.",
+            "explanation": "Shipment is correct. In everyday terms, it's a batch of goods sent to a customer or another location. That part goes: was returned to the supplier.",
+            "textToSpeak": "A damaged shipment was returned to the supplier.",
             "options": [
-                "system",
-                "circuit",
-                "database",
-                "signal"
+                "shipment",
+                "cargo",
+                "warehouse",
+                "circuit"
             ],
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🖥️"
+            "emoji": "🚢"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L140_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Focus on the thing being used, fixed, or mentioned.",
-            "explanation": "Terminal is the object in the sentence. It means a place where journeys begin or end, or a computer used to access a network. From the audio: the arcade will open a second terminal.",
-            "textToSpeak": "If the line grows, the arcade will open a second terminal.",
+            "hint": "The sentence gives one precise clue among several similar options.",
+            "explanation": "Circuit is the key word here. It means a closed path that lets electricity flow to power a device. From the audio: solved the flickering problem.",
+            "textToSpeak": "Rewiring the circuit solved the flickering problem.",
             "options": [
-                "network",
-                "device",
-                "terminal",
-                "data"
+                "circuit",
+                "node",
+                "portal",
+                "shipment"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "💻"
+            "emoji": "🔌"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L140_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen for the keyword that matches one of the pictures.",
-            "explanation": "Archive is the object in the sentence. It means a collection of stored records or files kept for future reference. From the audio: the band's online music archive.",
-            "textToSpeak": "Fans should explore the band's online music archive.",
+            "hint": "The correct word may be tucked inside a longer clause.",
+            "explanation": "That's terminal. It refers to a screen and keyboard used to type commands into a computer system. In the sentence: opened a terminal window to run the program.",
+            "textToSpeak": "She opened a terminal window to run the program.",
             "options": [
-                "device",
+                "portal",
                 "archive",
-                "module",
-                "code"
+                "itinerary",
+                "terminal"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🗄️"
+            "emoji": "⌨️"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L140_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Tune in to the exact object named in the sentence.",
-            "explanation": "Chip is the object in the sentence. It means a small electronic part that stores or processes information inside a device. From the audio: they might replace the graphics chip.",
-            "textToSpeak": "If the console overheats, they might replace the graphics chip.",
+            "hint": "Listen for the precise term, since the options are closely related.",
+            "explanation": "That's node. It refers to a single connection point within a larger network. Listen again: tracks its own data usage.",
+            "textToSpeak": "Each node in the system tracks its own data usage.",
             "options": [
-                "circuit",
-                "terminal",
-                "chip",
-                "drone"
+                "database",
+                "checkpoint",
+                "sensor",
+                "node"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "💾"
+            "emoji": "📍"
         }
     ]
 }

@@ -7,541 +7,541 @@
             "id": "LIS_DETAILSPOTLIGHT_L121_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the person's title or job mentioned in the audio.",
-            "explanation": "You heard analyst: a person who examines data and information to find patterns or meaning. The audio shows if the analyst finishes early, the project could go live today.",
-            "textToSpeak": "If the data analyst finishes early, the whole software project could go live today.",
-            "targetDetail": "analyst",
+            "hint": "Zero in on the person's identity, not their action.",
+            "explanation": "That's historian: a person who studies and writes about the past. The audio confirms it — the retired historian was interviewed about the museum's newest exhibit.",
+            "textToSpeak": "The retired historian was interviewed about the museum's newest exhibit.",
+            "targetDetail": "historian",
             "options": [
-                "scientist",
-                "researcher",
-                "hero",
-                "analyst"
+                "administrator",
+                "analyst",
+                "historian",
+                "mediator"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "📈"
+            "emoji": "📜"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L121_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to what is happening, not who or what is involved.",
-            "explanation": "The action is repairs, meaning to fix something that is broken or not working correctly. Here, repairs the bug so all users can log in without issues.",
-            "textToSpeak": "She repairs the software bug so that all users can log in without issues.",
-            "targetDetail": "repairs",
+            "hint": "Listen for the word that names the action taking place.",
+            "explanation": "Interviews is correct — to ask someone questions, often for a job or article. Notice how she interviews local elders more patiently than the younger reporters.",
+            "textToSpeak": "She interviews local elders more patiently than the younger reporters.",
+            "targetDetail": "interviews",
             "options": [
-                "restores",
-                "measures",
-                "locates",
+                "interviews",
+                "describes",
+                "performs",
                 "repairs"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🎙️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L121_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to the thing, not who is using it or what they do.",
-            "explanation": "The correct object is software - the programs and instructions that tell a computer how to operate. In the audio, if the software crashes, the team will restart from backup.",
-            "textToSpeak": "If the software crashes again, the whole team will need to restart from the backup.",
-            "targetDetail": "software",
+            "hint": "The object, not the person or action, is the target here.",
+            "explanation": "The item named is archive, a collection of stored records or documents kept for reference. To be exact, if the archive is digitized, researchers worldwide will finally access it.",
+            "textToSpeak": "If the archive is digitized, researchers worldwide will finally access it.",
+            "targetDetail": "archive",
             "options": [
+                "drone",
                 "archive",
-                "protocol",
-                "software",
-                "database"
+                "circuit",
+                "sensor"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "💻"
+            "emoji": "🗄️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L122_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Which person's name or role do you hear in the sentence?",
-            "explanation": "Explorer is correct - a person who travels to new or unknown places to discover and investigate. In the sentence, if the explorer updates the app, the group will navigate more easily.",
-            "textToSpeak": "If the explorer updates the map app, the whole group will navigate far more easily.",
-            "targetDetail": "explorer",
+            "hint": "Focus on the word that tells you who did this.",
+            "explanation": "The person mentioned is lawyer: a person qualified to give legal advice and represent clients. Here, the defense lawyer argued that the evidence had been misread.",
+            "textToSpeak": "The defense lawyer argued that the evidence had been misread.",
+            "targetDetail": "lawyer",
             "options": [
-                "explorer",
-                "detective",
-                "expert",
-                "scout"
+                "critic",
+                "biographer",
+                "counselor",
+                "lawyer"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🔭"
+            "emoji": "⚖️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L122_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the action being performed in the audio.",
-            "explanation": "You heard updates. This verb means to make something current by adding new or recent information. In the audio, updates device settings so everything runs smoothly each morning.",
-            "textToSpeak": "She updates the device settings so that everything runs smoothly each morning.",
-            "targetDetail": "updates",
+            "hint": "Pay attention to what is happening, not who or what is involved.",
+            "explanation": "Presents fits the sentence — to show or explain something to an audience. You can hear that she presents closing arguments more persuasively than most junior lawyers.",
+            "textToSpeak": "She presents closing arguments more persuasively than most junior lawyers.",
+            "targetDetail": "presents",
             "options": [
-                "updates",
-                "observes",
-                "deploys",
-                "activates"
+                "reviews",
+                "explores",
+                "presents",
+                "explains"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🔄"
+            "emoji": "🎤"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L122_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
             "hint": "Focus on the object or concept named in the sentence.",
-            "explanation": "The thing mentioned is device: a small machine or tool designed to perform a specific job. Here, if the device runs out of battery, she won't be able to call.",
-            "textToSpeak": "If the device runs low on battery, she will not be able to call for help.",
-            "targetDetail": "device",
+            "explanation": "Settlement is correct — an official agreement that ends a disagreement. The sentence tells us if the judge approves the settlement, the case will finally close.",
+            "textToSpeak": "If the judge approves the settlement, the case will finally close.",
+            "targetDetail": "settlement",
             "options": [
-                "protocol",
-                "satellite",
-                "drone",
-                "device"
+                "audit",
+                "merger",
+                "portfolio",
+                "settlement"
             ],
             "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🔌"
+            "emoji": "📜"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L123_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to who the sentence is about.",
-            "explanation": "The correct person is commander - a person who leads others and gives instructions or orders. The sentence tells us if the commander creates a plan, everyone will stay focused.",
-            "textToSpeak": "If the team commander creates a study plan, everyone will stay focused before exams.",
-            "targetDetail": "commander",
+            "hint": "The sentence names a person — catch exactly who.",
+            "explanation": "critic is correct — a person who gives judgments about the quality of art or writing. In the audio, a respected film critic praised the cinematography more than the plot.",
+            "textToSpeak": "A respected film critic praised the cinematography more than the plot.",
+            "targetDetail": "critic",
             "options": [
-                "commander",
-                "expert",
-                "hacker",
-                "detective"
+                "commuter",
+                "scientist",
+                "economist",
+                "critic"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "👨‍✈️"
+            "emoji": "🎬"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L123_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the doing word, not the subject or object.",
-            "explanation": "The correct action is creates - to make something new that did not exist before. In this sentence, creates a shared database so all teachers can access progress.",
-            "textToSpeak": "She creates a shared database so that all teachers can access student progress.",
-            "targetDetail": "creates",
+            "hint": "Focus on the verb that drives the sentence.",
+            "explanation": "The action named is reviews, which means to examine something again to check or judge it. To be exact, she reviews independent films more generously than the major studios' releases.",
+            "textToSpeak": "She reviews independent films more generously than the major studios' releases.",
+            "targetDetail": "reviews",
             "options": [
-                "creates",
-                "scans",
-                "monitors",
-                "updates"
+                "treats",
+                "schedules",
+                "evaluates",
+                "reviews"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "📝"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L123_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the specific thing described in the audio.",
-            "explanation": "The thing mentioned is database: an organized collection of information stored electronically for easy access. Here, if the database goes offline, teachers cannot access records.",
-            "textToSpeak": "If the school database goes offline, teachers will be unable to access student records.",
-            "targetDetail": "database",
+            "hint": "The object word is hiding in the sentence — find it.",
+            "explanation": "The thing mentioned is script: the written text of a play, film, or speech. Here, because the script was rewritten twice by the studio, the release date slipped.",
+            "textToSpeak": "Because the script was rewritten twice by the studio, the release date slipped.",
+            "targetDetail": "script",
             "options": [
-                "database",
-                "software",
-                "module",
-                "protocol"
+                "script",
+                "proposal",
+                "salary",
+                "budget"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🗄️"
+            "emoji": "📃"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L124_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the person, not the action or the object they mention.",
-            "explanation": "Commander is correct - a person who leads others and gives instructions or orders. In the sentence, if the commander locates the circuit diagram, the experiment can continue.",
-            "textToSpeak": "If the commander locates the missing circuit diagram, the experiment can finally continue.",
-            "targetDetail": "commander",
+            "hint": "Listen closely for how the person is identified.",
+            "explanation": "Right answer: author, a person who writes books. That's because an award-winning author was invited to open the book festival.",
+            "textToSpeak": "An award-winning author was invited to open the book festival.",
+            "targetDetail": "author",
             "options": [
-                "hacker",
-                "researcher",
-                "commander",
-                "pilot"
+                "author",
+                "paramedic",
+                "carpenter",
+                "landlord"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "👨‍✈️"
+            "emoji": "📖"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L124_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
             "hint": "Listen for what is happening, not to whom or with what.",
-            "explanation": "Locates is the action - to find the exact position or place of something. In the sentence, locates the correct circuit file so the lab class can begin.",
-            "textToSpeak": "She locates the correct circuit file so that the lab class can begin.",
-            "targetDetail": "locates",
+            "explanation": "Listen for publishes: to prepare and issue a book, article, or report. As stated, she publishes a new novel more often than most contemporary writers.",
+            "textToSpeak": "She publishes a new novel more often than most contemporary writers.",
+            "targetDetail": "publishes",
             "options": [
-                "monitors",
-                "deploys",
-                "updates",
-                "locates"
+                "publishes",
+                "approves",
+                "requests",
+                "checks out"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "📚"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L124_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "The key word names a thing, not a person or an action.",
-            "explanation": "Circuit is correct - a closed path that lets electricity flow through to power a device. In the sentence, if the circuit board fails, the lab will need a complete refit.",
-            "textToSpeak": "If the circuit board fails again, the whole science lab will need a complete refit.",
-            "targetDetail": "circuit",
+            "hint": "Notice the specific term used for the item.",
+            "explanation": "You heard novel, a long written story in book form. Notice that if the novel sells well, a sequel will likely follow.",
+            "textToSpeak": "If the novel sells well, a sequel will likely follow.",
+            "targetDetail": "novel",
             "options": [
-                "circuit",
-                "network",
-                "device",
-                "drone"
+                "novel",
+                "app",
+                "ceremony",
+                "checkup"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🔌"
+            "emoji": "📕"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L125_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "The key word here is a person's title or role.",
-            "explanation": "You heard expert: a person with deep knowledge or advanced skill in a particular subject. The audio shows if the expert transfers the data, no file will be lost.",
-            "textToSpeak": "If the cybersecurity expert transfers the data, no important file will be permanently lost.",
-            "targetDetail": "expert",
+            "hint": "Catch the specific role or job title in the sentence.",
+            "explanation": "The role named is instructor, a person who teaches a practical skill, such as driving or fitness. Specifically, a cheerful driving instructor was praised for her endless patience.",
+            "textToSpeak": "A cheerful driving instructor was praised for her endless patience.",
+            "targetDetail": "instructor",
             "options": [
-                "expert",
-                "student",
-                "artist",
-                "analyst"
+                "roommate",
+                "supervisor",
+                "instructor",
+                "translator"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🚗"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L125_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "The key word describes an action or activity.",
-            "explanation": "The action is transfers, meaning to move something from one place, person, or system to another. Here, transfers data to a terminal so it cannot be intercepted.",
-            "textToSpeak": "She transfers the data to a secure terminal so that it cannot be intercepted.",
-            "targetDetail": "transfers",
+            "hint": "Focus on the verb, not the person or the thing they mention.",
+            "explanation": "That's the verb explains: to make something clear by describing it. Here, she explains difficult maneuvers more clearly than the manual does.",
+            "textToSpeak": "She explains difficult maneuvers more clearly than the manual does.",
+            "targetDetail": "explains",
             "options": [
-                "sends",
-                "encrypts",
-                "transfers",
-                "analyzes"
+                "explains",
+                "exercises",
+                "seasons",
+                "reserves"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🔄"
+            "emoji": "📘"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L125_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the name of the thing or object mentioned.",
-            "explanation": "You heard terminal - a place where journeys begin or end, or a device used to access a network. The audio describes if the server terminal goes down, the company loses cloud access.",
-            "textToSpeak": "If the server terminal goes down, the company will lose access to all cloud files.",
-            "targetDetail": "terminal",
+            "hint": "Which object or thing do you hear in the sentence?",
+            "explanation": "Exam is the detail — a formal test of knowledge or skill. Specifically, if the exam is passed, a full license will be issued.",
+            "textToSpeak": "If the exam is passed, a full license will be issued.",
+            "targetDetail": "exam",
             "options": [
-                "satellite",
-                "node",
-                "terminal",
-                "protocol"
+                "assignment",
+                "concert",
+                "exam",
+                "device"
             ],
             "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🖥️"
+            "emoji": "📝"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L126_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the type of person described in the sentence.",
-            "explanation": "The person mentioned is hero. A person admired for courage, great achievements, or noble qualities. Here, if the hero deploys the fix, the outage will last under one hour.",
-            "textToSpeak": "If the network hero deploys the fix in time, the outage will last under one hour.",
-            "targetDetail": "hero",
+            "hint": "Catch the specific title used to describe someone.",
+            "explanation": "The correct person is intern — a person gaining work experience, often for little or no pay. The sentence tells us an eager intern was assigned to the marketing team last week.",
+            "textToSpeak": "An eager intern was assigned to the marketing team last week.",
+            "targetDetail": "intern",
             "options": [
-                "droid",
-                "hero",
-                "commander",
-                "mentor"
+                "podcaster",
+                "dentist",
+                "intern",
+                "photographer"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🦸"
+            "emoji": "🧑‍💼"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L126_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the action word - what is the person or thing doing?",
-            "explanation": "Deploys is the action - to put something or someone into use for a specific purpose. In the sentence, deploys the network patch so all branches stay connected.",
-            "textToSpeak": "She deploys the new network patch so that all branches stay securely connected.",
-            "targetDetail": "deploys",
+            "hint": "Listen for the specific verb tying the sentence together.",
+            "explanation": "presents is the action — to show or explain something to an audience. In the audio, she presents weekly updates more confidently since joining the team.",
+            "textToSpeak": "She presents weekly updates more confidently since joining the team.",
+            "targetDetail": "presents",
             "options": [
-                "evaluates",
                 "restores",
-                "builds",
-                "deploys"
+                "presents",
+                "reports",
+                "checks out"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "📊"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L126_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the item, not the person or action described.",
-            "explanation": "The thing mentioned is network: a group of connected computers or devices that can share information. Here, if the network fails, hundreds of workers will be disconnected.",
-            "textToSpeak": "If the main network fails, hundreds of remote workers will be instantly disconnected.",
-            "targetDetail": "network",
+            "hint": "Which single word identifies the object in question?",
+            "explanation": "Presentation fits here — a talk that explains information to an audience. You can hear that because the presentation ran long, the meeting ended after six.",
+            "textToSpeak": "Because the presentation ran long, the meeting ended after six.",
+            "targetDetail": "presentation",
             "options": [
-                "node",
-                "network",
-                "data",
-                "protocol"
+                "presentation",
+                "review",
+                "curriculum",
+                "discount"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🌐"
+            "emoji": "📽️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L127_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the name or role of the person in the sentence.",
-            "explanation": "You heard mentor: an experienced person who guides and advises someone less experienced. The audio shows if the mentor builds the itinerary carefully, the group will feel confident.",
-            "textToSpeak": "If the travel mentor builds the itinerary carefully, the whole group will feel confident.",
-            "targetDetail": "mentor",
+            "hint": "The person's identity is hiding in plain sight — listen for it.",
+            "explanation": "The person in question is landlord: a person who rents out property to tenants. To be exact, a landlord was contacted about the leaking roof last Tuesday.",
+            "textToSpeak": "A landlord was contacted about the leaking roof last Tuesday.",
+            "targetDetail": "landlord",
             "options": [
-                "teacher",
-                "mentor",
-                "scientist",
-                "hero"
+                "editor",
+                "tailor",
+                "landlord",
+                "carpenter"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "👨‍🏫"
+            "emoji": "🏠"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L127_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the verb, not the person or the thing they mention.",
-            "explanation": "Builds is the action - to construct or create something by putting parts together. In the sentence, builds the journey plan around the engine schedule.",
-            "textToSpeak": "She builds the journey plan around the engine schedule so that no connection is missed.",
-            "targetDetail": "builds",
+            "hint": "Set aside who and what; focus only on the doing.",
+            "explanation": "Right answer: approves, meaning to officially agree that something is acceptable. That's because she approves repair requests more quickly than the previous landlord did.",
+            "textToSpeak": "She approves repair requests more quickly than the previous landlord did.",
+            "targetDetail": "approves",
             "options": [
-                "restores",
-                "builds",
-                "analyzes",
-                "activates"
+                "treats",
+                "grades",
+                "approves",
+                "manages"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🔧"
+            "emoji": "✅"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L127_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Which object or thing do you hear in the sentence?",
-            "explanation": "You heard engine - the part of a vehicle or machine that produces power to make it move. The audio describes if the engine develops a fault, passengers could face serious delays.",
-            "textToSpeak": "If the engine develops a fault mid-journey, passengers could face serious delays.",
-            "targetDetail": "engine",
+            "hint": "Focus on the thing mentioned, not who mentions it.",
+            "explanation": "Listen for contract: a written legal agreement between two or more people. In this sentence, if the lease is renewed for another year, a new contract will be signed.",
+            "textToSpeak": "If the lease is renewed for another year, a new contract will be signed.",
+            "targetDetail": "contract",
             "options": [
-                "system",
-                "engine",
-                "device",
-                "drone"
+                "reservation",
+                "contract",
+                "subscription",
+                "diagnosis"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "⚙️"
+            "emoji": "📝"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L128_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on who is being described, not what they do or use.",
-            "explanation": "Hero is correct - a person admired for courage, great achievements, or noble qualities. In the sentence, if the hero restores access to the portal, travelers can book tickets.",
-            "textToSpeak": "If the local hero restores access to the portal, stranded travelers can book new tickets.",
-            "targetDetail": "hero",
+            "hint": "Track the person's role as the audio plays.",
+            "explanation": "Sculptor fits — a person who creates statues and sculptures. You can hear that a promising sculptor was commissioned for the new city plaza.",
+            "textToSpeak": "A promising sculptor was commissioned for the new city plaza.",
+            "targetDetail": "sculptor",
             "options": [
-                "robot",
-                "technician",
-                "teacher",
-                "hero"
+                "translator",
+                "security guard",
+                "sculptor",
+                "tenant"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🦸"
+            "emoji": "🗿"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L128_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Which action or activity do you hear in the sentence?",
-            "explanation": "The correct action is restores - to bring something back to its original or working condition. In this sentence, restores the booking portal so passengers can check in.",
-            "textToSpeak": "She restores the booking portal so that passengers can check in online.",
-            "targetDetail": "restores",
+            "hint": "Pinpoint the exact action mentioned in the audio.",
+            "explanation": "Photographs is the detail — to take a picture of someone or something. The audio makes clear that she photographs finished sculptures more artistically than most catalog shoots.",
+            "textToSpeak": "She photographs finished sculptures more artistically than most catalog shoots.",
+            "targetDetail": "photographs",
             "options": [
-                "evaluates",
+                "photographs",
                 "updates",
-                "restores",
-                "builds"
+                "departs",
+                "examines"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🔧"
+            "emoji": "📸"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L128_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the specific item being used, fixed, or mentioned.",
-            "explanation": "The thing mentioned is portal: an online gateway that allows access to specific services or information. Here, if the portal goes down, passengers cannot manage their bookings.",
-            "textToSpeak": "If the airline portal goes down, no passenger will be able to manage their booking.",
-            "targetDetail": "portal",
+            "hint": "Which word answers 'what is this actually about?'",
+            "explanation": "The object described is ceremony — a formal event held to mark an important occasion. As stated, because the sculpture arrived late, the unveiling ceremony was postponed.",
+            "textToSpeak": "Because the sculpture arrived late, the unveiling ceremony was postponed.",
+            "targetDetail": "ceremony",
             "options": [
-                "device",
-                "signal",
-                "portal",
-                "system"
+                "bandage",
+                "ceremony",
+                "performance",
+                "scholarship"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🌐"
+            "emoji": "🎊"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L129_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the person's title or job mentioned in the audio.",
-            "explanation": "The correct person is commander - a person who leads others and gives instructions or orders. The sentence tells us if the commander transfers the files tonight, everyone will have them.",
-            "textToSpeak": "If the family commander transfers the files tonight, everyone will have them by morning.",
-            "targetDetail": "commander",
+            "hint": "Pay attention to the word describing the subject's role.",
+            "explanation": "Listen for podcaster: a person who creates and shares audio episodes online. In this case, an enthusiastic podcaster was praised for her thoughtful interview questions.",
+            "textToSpeak": "An enthusiastic podcaster was praised for her thoughtful interview questions.",
+            "targetDetail": "podcaster",
             "options": [
-                "scientist",
-                "hacker",
-                "commander",
-                "detective"
+                "podcaster",
+                "florist",
+                "hiker",
+                "author"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "👨‍✈️"
+            "emoji": "🎙️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L129_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to what is happening, not who or what is involved.",
-            "explanation": "You heard transfers. This verb means to move something from one place, person, or system to another. In the audio, transfers family documents so that nobody loses any files.",
-            "textToSpeak": "She transfers family documents to a secure folder so that nobody loses any files.",
-            "targetDetail": "transfers",
+            "hint": "The action word is your target — don't confuse it with the object.",
+            "explanation": "The doing-word is records — to store sound, video, or data for later use. The sentence confirms she records new episodes more consistently than most independent podcasters.",
+            "textToSpeak": "She records new episodes more consistently than most independent podcasters.",
+            "targetDetail": "records",
             "options": [
-                "secures",
-                "validates",
-                "transfers",
-                "encrypts"
+                "recommends",
+                "measures",
+                "books",
+                "records"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🔄"
+            "emoji": "🎧"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L129_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to the thing, not who is using it or what they do.",
-            "explanation": "You heard software - the programs and instructions that tell a computer how to operate. The audio describes if the parental software fails, children will access anything.",
-            "textToSpeak": "If the parental control software fails, the children will be able to access anything.",
-            "targetDetail": "software",
+            "hint": "Notice which object the sentence is really about.",
+            "explanation": "Right answer: subscription, a regular payment made to receive a service. That's because if the subscription grows, a second weekly episode will launch.",
+            "textToSpeak": "If the subscription grows, a second weekly episode will launch.",
+            "targetDetail": "subscription",
             "options": [
-                "module",
-                "protocol",
-                "code",
-                "software"
+                "playlist",
+                "subscription",
+                "album",
+                "itinerary"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "💻"
+            "emoji": "📲"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L130_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Which person's name or role do you hear in the sentence?",
-            "explanation": "You heard engineer: a person who designs, builds, or maintains machines or technical systems. The audio shows if the engineer scans the room, we'll know where to put the router.",
-            "textToSpeak": "If my engineer brother scans the room first, we will know exactly where to put the router.",
-            "targetDetail": "engineer",
+            "hint": "The person's role is the detail to spot here.",
+            "explanation": "Translator is who's described — a person who changes speech or text into another language. The audio states that a dedicated translator was hired for the big international conference.",
+            "textToSpeak": "A dedicated translator was hired for the big international conference.",
+            "targetDetail": "translator",
             "options": [
-                "technician",
-                "researcher",
-                "engineer",
-                "teacher"
+                "butcher",
+                "receptionist",
+                "referee",
+                "translator"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "👨‍🔧"
+            "emoji": "🌐"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L130_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the action being performed in the audio.",
-            "explanation": "The correct action is scans - to look over something quickly to find specific information or objects. In this sentence, scans the house for interference so the signal stays strong all day.",
-            "textToSpeak": "He scans the house for interference so that the signal will stay strong all day.",
-            "targetDetail": "scans",
+            "hint": "The verb carries the key detail — listen for it precisely.",
+            "explanation": "You heard translates: to change speech or text into another language. In this sentence, she translates technical documents more accurately than the automated tool.",
+            "textToSpeak": "She translates technical documents more accurately than the automated tool.",
+            "targetDetail": "translates",
             "options": [
-                "builds",
-                "observes",
-                "analyzes",
-                "scans"
+                "evaluates",
+                "translates",
+                "repairs",
+                "performs"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "📄"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L130_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the object or concept named in the sentence.",
-            "explanation": "The thing mentioned is signal: a sound, light, or wave used to send information or a message. Here, if the home signal drops, no smart devices can connect.",
-            "textToSpeak": "If the home signal drops, none of the smart devices will be able to connect.",
-            "targetDetail": "signal",
+            "hint": "Listen for the word naming what's being discussed.",
+            "explanation": "The correct object is meeting — a gathering of people to discuss something. In the audio, because the meeting was translated live, no delegate felt excluded.",
+            "textToSpeak": "Because the meeting was translated live, no delegate felt excluded.",
+            "targetDetail": "meeting",
             "options": [
-                "node",
-                "network",
-                "signal",
-                "module"
+                "charity",
+                "visa",
+                "agenda",
+                "meeting"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "📡"
+            "emoji": "🗣️"
         }
     ]
 }

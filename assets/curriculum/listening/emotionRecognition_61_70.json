@@ -8,15 +8,15 @@
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Think about what it means to clear out someone's room and keep only three objects.",
-            "explanation": "Reducing a person's entire life to three kept objects reflects a quiet, private process of grief and sadness.",
+            "explanation": "Reducing a person's whole study to three kept objects is a quiet, private sign of grief.",
             "textToSpeak": "She cleared out his study last weekend. She said she kept only three things.",
             "options": [
-                "bored 🥱",
+                "sad 😢",
+                "angry 😠",
                 "curious 🤔",
-                "neutral 😐",
-                "sad 😢"
+                "neutral 😐"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
             "emoji": "😢"
         },
@@ -24,14 +24,14 @@
             "id": "LIS_EMOTIONRECOGNITION_L61_Q2",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Re-reading your name in a scholarship list three times — what does that need to verify suggest?",
-            "explanation": "Re-reading your own name three times to confirm you won is a response of joyful, disbelieving excitement.",
+            "hint": "Rereading your own name three times before believing it points to a strong, positive feeling.",
+            "explanation": "Rereading your own name to confirm a win is a joyful, almost disbelieving excitement.",
             "textToSpeak": "My name is the first one listed under the scholarship recipients. I had to read it three times.",
             "options": [
-                "confident 😎",
+                "nervous 😬",
                 "excited 🤩",
-                "bored 🥱",
-                "nervous 😬"
+                "sad 😢",
+                "bored 🥱"
             ],
             "correctAnswerIndex": 1,
             "subtype": "emotionRecognition",
@@ -41,16 +41,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L61_Q3",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Is there any emotion in this sentence, or only information?",
-            "explanation": "A plain statement of opening hours with no personal view or feeling is a neutral statement of fact.",
+            "hint": "Is there any personal feeling in this sentence, or only information?",
+            "explanation": "A plain statement of opening hours, with no personal feeling attached, is a clear example of a neutral tone.",
             "textToSpeak": "The library opens at nine and closes at five, Monday through Saturday.",
             "options": [
-                "curious 🤔",
-                "sad 😢",
+                "happy 😊",
                 "bored 🥱",
-                "neutral 😐"
+                "neutral 😐",
+                "curious 🤔"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition",
             "emoji": "😐"
         },
@@ -58,33 +58,33 @@
             "id": "LIS_EMOTIONRECOGNITION_L62_Q1",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Notes distributed to those who weren't present but not to those who were — what does the speaker feel?",
-            "explanation": "An unexplained distribution pattern that excludes participants produces curiosity about the reason.",
-            "textToSpeak": "The meeting notes were circulated to everyone except the people in the room.",
+            "hint": "An anonymous act of kindness that you can't repay directly leaves a specific, warm feeling.",
+            "explanation": "A kind stranger's gesture you can't even thank in person is a simple, direct cause of gratitude.",
+            "textToSpeak": "A stranger paid for my coffee this morning and left before I could even say thank you.",
             "options": [
+                "surprised 😲",
                 "curious 🤔",
-                "sad 😢",
-                "angry 😠",
-                "bored 🥱"
+                "happy 😊",
+                "grateful 🙏"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition",
-            "emoji": "🤔"
+            "emoji": "🙏"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L62_Q2",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Mental rehearsal not matching the reality of the moment — what gap does this create emotionally?",
-            "explanation": "When reality doesn't match rehearsal, the gap between preparation and the live moment produces nervousness.",
-            "textToSpeak": "I've rehearsed this moment a hundred times in my head. Standing here, it doesn't feel like I imagined.",
+            "hint": "A big moment feeling different from how you pictured it points to a familiar unease.",
+            "explanation": "Reality not matching a hundred mental rehearsals is a common cause of nervousness.",
+            "textToSpeak": "I've rehearsed this moment a hundred times in my head. Standing here now, it doesn't feel like I imagined.",
             "options": [
-                "happy 😊",
+                "nervous 😬",
                 "confident 😎",
-                "excited 🤩",
-                "nervous 😬"
+                "bored 🥱",
+                "happy 😊"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
             "emoji": "😬"
         },
@@ -92,33 +92,33 @@
             "id": "LIS_EMOTIONRECOGNITION_L62_Q3",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Three failures and then being required to explain the outcome — what emotion does that expectation create?",
-            "explanation": "Being asked to explain a failure caused entirely by others' poor decisions produces indignation and anger.",
-            "textToSpeak": "The system upgrade wasn't communicated, wasn't tested, and took our service down for six hours. And I'm being asked to explain it.",
+            "hint": "A small technical problem repeating at the worst possible moment brings a light but real irritation.",
+            "explanation": "A connection dropping at exactly the wrong moment, more than once, is a very relatable form of annoyance.",
+            "textToSpeak": "The wifi has dropped three times during this call already, and it's always right when it's my turn to speak.",
             "options": [
                 "sad 😢",
-                "surprised 😲",
-                "bored 🥱",
-                "angry 😠"
+                "annoyed 🙄",
+                "curious 🤔",
+                "excited 🤩"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition",
-            "emoji": "😠"
+            "emoji": "🙄"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L63_Q1",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Silence after one bite followed by a request to learn — what does that reaction tell you about the food?",
-            "explanation": "Going quiet, then asking to be taught how to cook something, is a high compliment that signals happiness.",
+            "hint": "Going silent after one bite, then asking to learn the recipe, tells you a lot about the reaction.",
+            "explanation": "Going quiet, then asking to be taught how to cook something, is a high compliment that shows real happiness.",
             "textToSpeak": "She took one bite and went completely quiet. Then she got up, came to the kitchen, and asked me to teach her.",
             "options": [
-                "neutral 😐",
-                "happy 😊",
                 "bored 🥱",
-                "surprised 😲"
+                "curious 🤔",
+                "happy 😊",
+                "nervous 😬"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition",
             "emoji": "😊"
         },
@@ -126,16 +126,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L63_Q2",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "A named, unchanged locker that everyone avoids months later — what event does this silently describe?",
-            "explanation": "A decorated locker left untouched for months suggests someone who is gone, evoking collective sadness.",
-            "textToSpeak": "The locker is still decorated with her name. Nobody has touched it since September.",
+            "hint": "A promise to stay close that quietly never happened points to a gentle, familiar feeling.",
+            "explanation": "Watching a close friendship fade after a promise to keep it up is a quiet, common form of sadness.",
+            "textToSpeak": "My best friend from school moved to another country last year. We said we'd video call every week. We haven't, not once.",
             "options": [
-                "sad 😢",
-                "bored 🥱",
+                "angry 😠",
                 "curious 🤔",
-                "angry 😠"
+                "bored 🥱",
+                "sad 😢"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition",
             "emoji": "😢"
         },
@@ -143,31 +143,31 @@
             "id": "LIS_EMOTIONRECOGNITION_L63_Q3",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "People openly not pretending by the third exercise — what emotion have they collectively reached?",
-            "explanation": "Stopping the effort of pretending to participate is a sign that boredom has become undeniable.",
-            "textToSpeak": "By the third team-building exercise today, people had stopped even pretending to engage.",
+            "hint": "Words that stop making sense after several rereads point to a physical and mental state.",
+            "explanation": "Rereading the same lines without absorbing anything is a common sign of mental tiredness.",
+            "textToSpeak": "I've read the same paragraph in this textbook four times tonight, and none of it is going in anymore.",
             "options": [
-                "sad 😢",
-                "angry 😠",
+                "tired 😴",
                 "bored 🥱",
-                "surprised 😲"
+                "angry 😠",
+                "sad 😢"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
-            "emoji": "🥱"
+            "emoji": "😴"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L64_Q1",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Discovering after twenty conversations that a contact holds a title you never knew about — what is this?",
-            "explanation": "Learning a major, relevant fact about a contact after twenty interactions produces genuine surprise.",
-            "textToSpeak": "I've spoken to this client twenty times and had no idea she was the CEO until she introduced herself at lunch.",
+            "hint": "Learning a major fact about someone after twenty conversations tends to bring a strong reaction.",
+            "explanation": "Discovering an important fact about someone only after many conversations is a natural cause of surprise.",
+            "textToSpeak": "I've spoken to this client twenty times, and I had no idea she was the CEO until she introduced herself at lunch.",
             "options": [
                 "curious 🤔",
                 "surprised 😲",
                 "bored 🥱",
-                "neutral 😐"
+                "nervous 😬"
             ],
             "correctAnswerIndex": 1,
             "subtype": "emotionRecognition",
@@ -177,33 +177,33 @@
             "id": "LIS_EMOTIONRECOGNITION_L64_Q2",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "'If anyone wants to challenge that, I'm ready' after citing supporting data — what does this project?",
-            "explanation": "Inviting challenge while citing full data support is a clear projection of professional confidence.",
-            "textToSpeak": "The data backs every decision I made this quarter. If anyone wants to challenge that, I'm ready.",
+            "hint": "A sudden break in someone's usual habit tends to bring on a specific, uneasy feeling.",
+            "explanation": "A loved one suddenly going quiet, against their usual habits, is a natural cause of worry.",
+            "textToSpeak": "My daughter hasn't answered any of my texts since this morning, and she always replies within minutes.",
             "options": [
-                "nervous 😬",
-                "sad 😢",
                 "angry 😠",
-                "confident 😎"
+                "bored 🥱",
+                "worried 😟",
+                "curious 🤔"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition",
-            "emoji": "😎"
+            "emoji": "😟"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L64_Q3",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "A heartbeat felt in the ears at the moment of lights going on — what does this physical response signal?",
-            "explanation": "Feeling your heartbeat in your ears as a performance begins is a physical sign of acute nervousness.",
+            "hint": "Feeling your own heartbeat as a performance is about to begin points to a familiar physical sign.",
+            "explanation": "Feeling your heartbeat in your ears as the lights go up is a physical sign of nervousness.",
             "textToSpeak": "I can feel my heartbeat in my ears. The lights just went on in the auditorium.",
             "options": [
                 "excited 🤩",
-                "nervous 😬",
+                "happy 😊",
                 "bored 🥱",
-                "happy 😊"
+                "nervous 😬"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition",
             "emoji": "😬"
         },
@@ -211,16 +211,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L65_Q1",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "'Feels like everything' about a small patch of garden — what emotion is driving that sense of scale?",
-            "explanation": "A small thing feeling enormous because of its personal meaning is a clear sign of happiness.",
+            "hint": "A small thing feeling enormous because of what it means to you points to a particular feeling.",
+            "explanation": "A small plot of land feeling like 'everything' because of its personal meaning is a clear sign of happiness.",
             "textToSpeak": "We got the keys to the allotment and haven't stopped planning. It's only a small patch, but it feels like everything.",
             "options": [
-                "curious 🤔",
-                "sad 😢",
                 "happy 😊",
-                "bored 🥱"
+                "nervous 😬",
+                "bored 🥱",
+                "curious 🤔"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
             "emoji": "😊"
         },
@@ -228,33 +228,33 @@
             "id": "LIS_EMOTIONRECOGNITION_L65_Q2",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "'There has to be a story' about an unknown charitable bequest — what is the speaker experiencing?",
-            "explanation": "An unexplained personal bequest that nobody knew about naturally makes the observer curious.",
-            "textToSpeak": "He left half his estate to a charity that nobody around him had ever heard of. There has to be a story.",
+            "hint": "A small, exact, repeating disturbance tends to bring a familiar, low-level irritation.",
+            "explanation": "The same disruptive habit repeating every single morning, without exception, is a classic source of annoyance.",
+            "textToSpeak": "The upstairs neighbor starts vacuuming at exactly six every single morning, weekends included.",
             "options": [
-                "neutral 😐",
-                "surprised 😲",
                 "sad 😢",
-                "curious 🤔"
+                "annoyed 🙄",
+                "curious 🤔",
+                "happy 😊"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition",
-            "emoji": "🤔"
+            "emoji": "🙄"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L65_Q3",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Seven messages requesting something that the sender was supposed to provide — what is the speaker feeling?",
-            "explanation": "Being chased for something the other party was responsible for providing is a cause of anger.",
-            "textToSpeak": "I have seven unread messages from them asking for the file. The file they were supposed to send me.",
+            "hint": "A repeated small theft, plus denying it happened, tends to build a stronger reaction than the act alone.",
+            "explanation": "Being lied to repeatedly about something as small as labeled food is a common, relatable cause of anger.",
+            "textToSpeak": "My roommate keeps eating my labeled food from the fridge and denying it every single time.",
             "options": [
-                "sad 😢",
-                "bored 🥱",
                 "curious 🤔",
-                "angry 😠"
+                "bored 🥱",
+                "angry 😠",
+                "sad 😢"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition",
             "emoji": "😠"
         },
@@ -262,16 +262,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L66_Q1",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Returning to a place and finding even its sensory character has changed — what does this evoke?",
-            "explanation": "Finding that even the sensory memory of a place has disappeared reflects a deep sense of loss and sadness.",
-            "textToSpeak": "I drove back through my old town and everything was different. Even the smell of the place was gone.",
+            "hint": "Returning somewhere and finding even its small, sensory details have changed points to a quiet feeling.",
+            "explanation": "Finding that even the small, remembered details of a place have vanished reflects a gentle sadness.",
+            "textToSpeak": "I drove back through my old town, and everything was different. Even the smell of the place was gone.",
             "options": [
                 "curious 🤔",
-                "sad 😢",
-                "neutral 😐",
-                "surprised 😲"
+                "angry 😠",
+                "nervous 😬",
+                "sad 😢"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition",
             "emoji": "😢"
         },
@@ -279,33 +279,33 @@
             "id": "LIS_EMOTIONRECOGNITION_L66_Q2",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "'Life is remarkable' said about a total reversal of early difficulty — what emotion drives that phrase?",
-            "explanation": "Describing a complete turnaround from early struggle to elite academic success as 'remarkable' expresses surprise.",
-            "textToSpeak": "The child who couldn't read at seven was accepted to study literature at Oxford at eighteen. Life is remarkable.",
+            "hint": "Repeated, unexplained delays during something already a little tense tend to build a specific unease.",
+            "explanation": "An unexplained delay repeating for the third time, mid-flight, is a natural cause of worry.",
+            "textToSpeak": "The pilot has announced we're circling the airport for the third time now and still hasn't explained why.",
             "options": [
+                "worried 😟",
+                "bored 🥱",
                 "curious 🤔",
-                "surprised 😲",
-                "happy 😊",
-                "bored 🥱"
+                "angry 😠"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
-            "emoji": "😲"
+            "emoji": "😟"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L66_Q3",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Forty minutes staring at an email without opening it — what fear is driving the hesitation?",
-            "explanation": "Inability to open an important email for forty minutes is a classic expression of nervous anticipation.",
+            "hint": "Forty minutes of staring at something important without opening it points to a familiar unease.",
+            "explanation": "Being unable to open an important email for forty minutes is a classic sign of nervous anticipation.",
             "textToSpeak": "She's been staring at the unopened results email for forty minutes without clicking on it.",
             "options": [
                 "bored 🥱",
-                "excited 🤩",
                 "nervous 😬",
-                "confident 😎"
+                "happy 😊",
+                "curious 🤔"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition",
             "emoji": "😬"
         },
@@ -313,14 +313,14 @@
             "id": "LIS_EMOTIONRECOGNITION_L67_Q1",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "A promised transformative experience delivering interpretive dance — what has replaced initial hope?",
-            "explanation": "Expecting transformation and receiving interpretive dance exercises is a cause of deflated boredom.",
+            "hint": "A big promise replaced by something this unexpected tends to deflate the mood into one particular feeling.",
+            "explanation": "Expecting something meaningful and getting interpretive dance instead is a cause of restless boredom.",
             "textToSpeak": "The retreat was billed as transformative. On day two, we were asked to find our spirit animal through interpretive dance.",
             "options": [
-                "curious 🤔",
                 "angry 😠",
+                "curious 🤔",
                 "bored 🥱",
-                "surprised 😲"
+                "happy 😊"
             ],
             "correctAnswerIndex": 2,
             "subtype": "emotionRecognition",
@@ -330,16 +330,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L67_Q2",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "'Finally going to happen' after three years of proposals — what emotion marks this breakthrough?",
-            "explanation": "An approved project after three years of proposals is a cause of genuine, long-deferred excitement.",
-            "textToSpeak": "We got the green light for the project. Three years of proposals and it's finally going to happen.",
+            "hint": "'Finally going to happen' after three years of waiting points to a strong, positive feeling.",
+            "explanation": "An approved project after three years of proposals is a cause of genuine, long-awaited excitement.",
+            "textToSpeak": "We got the green light for the project. Three years of proposals, and it's finally going to happen.",
             "options": [
-                "excited 🤩",
-                "bored 🥱",
+                "nervous 😬",
                 "sad 😢",
-                "nervous 😬"
+                "bored 🥱",
+                "excited 🤩"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition",
             "emoji": "🤩"
         },
@@ -347,16 +347,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L67_Q3",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "'Everything just works' — what emotional state does a day of effortless small wins describe?",
-            "explanation": "A day when everything falls into place without effort is described with quiet, contented happiness.",
-            "textToSpeak": "I found exactly what I was looking for in a shop I'd never been in before. Some days everything just works.",
+            "hint": "A string of small, easy wins in one day points to a light, contented feeling.",
+            "explanation": "A day when small things fall into place without effort is a quiet, contented kind of happiness.",
+            "textToSpeak": "I found exactly what I was looking for in a shop I'd never even been in before. Some days everything just works.",
             "options": [
-                "curious 🤔",
                 "happy 😊",
-                "surprised 😲",
-                "bored 🥱"
+                "bored 🥱",
+                "nervous 😬",
+                "curious 🤔"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
             "emoji": "😊"
         },
@@ -364,33 +364,33 @@
             "id": "LIS_EMOTIONRECOGNITION_L68_Q1",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "The missing page is the most critical one. What does the speaker feel about this specific omission?",
-            "explanation": "A specific critical page missing from an otherwise complete report raises suspicion and curiosity.",
-            "textToSpeak": "The report was submitted with one page missing — specifically the page with the financial summary.",
+            "hint": "A physical symptom behaving differently than it normally would points to a specific, uneasy feeling.",
+            "explanation": "A symptom that doesn't respond the way it usually does is a natural, common cause of worry.",
+            "textToSpeak": "My chest has felt tight since yesterday, and it hasn't gone away with rest like it usually does.",
             "options": [
                 "bored 🥱",
-                "neutral 😐",
-                "angry 😠",
-                "curious 🤔"
+                "worried 😟",
+                "curious 🤔",
+                "angry 😠"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition",
-            "emoji": "🤔"
+            "emoji": "😟"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L68_Q2",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "A parent who used to engage completely now asking nothing — what does that change suggest?",
-            "explanation": "A once-engaged parent becoming silent and uninterested suggests deterioration that causes sadness.",
+            "hint": "A parent who used to engage fully now asking nothing at all points to a quiet, specific feeling.",
+            "explanation": "A once-engaged parent slowly asking less and less is a gentle but real cause of sadness.",
             "textToSpeak": "My father doesn't ask about my work anymore. He used to have an opinion about everything.",
             "options": [
+                "angry 😠",
                 "curious 🤔",
                 "sad 😢",
-                "neutral 😐",
-                "angry 😠"
+                "bored 🥱"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition",
             "emoji": "😢"
         },
@@ -398,16 +398,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L68_Q3",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "A fee increase plus a service reduction, wrapped in a loyalty thank-you — what does this combination produce?",
-            "explanation": "Being thanked for loyalty while receiving a worse service at a higher price produces contempt and anger.",
-            "textToSpeak": "They raised the service fee, reduced the service, and sent us a newsletter to thank us for our loyalty.",
+            "hint": "Being thanked for loyalty while getting less for more money tends to build a strong reaction.",
+            "explanation": "Paying more for less, then being thanked for it, is a common and fair cause of anger.",
+            "textToSpeak": "They raised the service fee, cut the actual service, and sent a newsletter thanking us for our loyalty.",
             "options": [
-                "surprised 😲",
+                "sad 😢",
                 "curious 🤔",
-                "angry 😠",
-                "bored 🥱"
+                "surprised 😲",
+                "angry 😠"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition",
             "emoji": "😠"
         },
@@ -415,33 +415,33 @@
             "id": "LIS_EMOTIONRECOGNITION_L69_Q1",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "'I've done the work' before an exam where every question is familiar — what mindset does this reflect?",
-            "explanation": "Claiming every possible exam question has been covered in practice is a direct statement of confidence.",
-            "textToSpeak": "There isn't a question on this exam I haven't already answered in practice. I've done the work.",
+            "hint": "Practical help from a whole group of people, freely given, points to a warm, specific feeling.",
+            "explanation": "A community rallying to help during a hard time is a clear, heartfelt cause of gratitude.",
+            "textToSpeak": "My neighbors organized a meal rotation for us during the surgery recovery. I still don't know how to thank them all.",
             "options": [
-                "confident 😎",
+                "grateful 🙏",
                 "nervous 😬",
-                "excited 🤩",
-                "bored 🥱"
+                "curious 🤔",
+                "tired 😴"
             ],
             "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
-            "emoji": "😎"
+            "emoji": "🙏"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L69_Q2",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Visibly shaking hands before entering a room — what emotion must be controlled here?",
-            "explanation": "Visible, uncontrolled shaking before entering a room is an acute physical sign of nervousness.",
+            "hint": "Visibly shaking hands right before an important moment point to a familiar physical sign.",
+            "explanation": "Visibly shaking hands before walking through a door is a strong, physical sign of nervousness.",
             "textToSpeak": "I can see my hands visibly shaking. I need to get this under control before I walk through that door.",
             "options": [
-                "excited 🤩",
-                "happy 😊",
-                "angry 😠",
-                "nervous 😬"
+                "confident 😎",
+                "nervous 😬",
+                "bored 🥱",
+                "happy 😊"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition",
             "emoji": "😬"
         },
@@ -449,16 +449,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L69_Q3",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Assuming a call must be intended for someone else because the content is so unexpected — what is this?",
-            "explanation": "Assuming a mistake because the news is so positive and unexpected is a reaction of genuine surprise.",
-            "textToSpeak": "My landlord called to say he was lowering the rent. I asked if he'd meant to dial someone else.",
+            "hint": "Assuming good news must be a mistake tends to point to one particular reaction.",
+            "explanation": "Assuming unexpectedly good news must be a mistake is a natural reaction of surprise.",
+            "textToSpeak": "My landlord called to say he was lowering the rent. I actually asked if he'd meant to call someone else.",
             "options": [
-                "happy 😊",
-                "curious 🤔",
-                "neutral 😐",
-                "surprised 😲"
+                "angry 😠",
+                "sad 😢",
+                "surprised 😲",
+                "bored 🥱"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition",
             "emoji": "😲"
         },
@@ -466,11 +466,11 @@
             "id": "LIS_EMOTIONRECOGNITION_L70_Q1",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "A whole neighborhood joining tables in the road — what communal emotion does this scene reflect?",
-            "explanation": "A neighborhood coming together in the road for a shared celebration describes collective happiness.",
+            "hint": "A whole street coming together to share one long table points to a warm, shared feeling.",
+            "explanation": "A neighborhood joining tables in the middle of the road for a shared celebration is a picture of collective happiness.",
             "textToSpeak": "The whole neighborhood gathered for the street party. Tables were joined together down the middle of the road.",
             "options": [
-                "neutral 😐",
+                "nervous 😬",
                 "bored 🥱",
                 "curious 🤔",
                 "happy 😊"
@@ -483,33 +483,33 @@
             "id": "LIS_EMOTIONRECOGNITION_L70_Q2",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Four weeks of agenda presence with no clear decision — what has replaced the initial purpose?",
-            "explanation": "A recurring meeting that has failed to produce a decision after four weeks breeds boredom.",
-            "textToSpeak": "We've had this meeting on the agenda for four weeks and we're still not sure what we're deciding.",
+            "hint": "A small, repeating technical hold-up with no end in sight brings a familiar, mild irritation.",
+            "explanation": "A machine repeatedly asking for help that never arrives is a very ordinary source of annoyance.",
+            "textToSpeak": "The self-checkout machine has asked me to wait for assistance three times now, and there's still nobody coming.",
             "options": [
-                "angry 😠",
+                "annoyed 🙄",
                 "sad 😢",
                 "curious 🤔",
-                "bored 🥱"
+                "excited 🤩"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
-            "emoji": "🥱"
+            "emoji": "🙄"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L70_Q3",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Opening a contact just to see a name without calling — what does this private act reveal?",
-            "explanation": "Looking at a name in your phone without dialing is a quiet, private expression of grief and sadness.",
-            "textToSpeak": "I open his contact on my phone sometimes, just to see his name. I never dial.",
+            "hint": "Keeping a way to reach someone but never using it points to a quiet, complicated feeling.",
+            "explanation": "Holding onto a contact you never actually use is a quiet, private sign of sadness about a friendship that faded.",
+            "textToSpeak": "I still have my old friend's number saved. I open the contact sometimes just to look at it. I never call.",
             "options": [
-                "neutral 😐",
-                "curious 🤔",
+                "angry 😠",
                 "sad 😢",
-                "bored 🥱"
+                "curious 🤔",
+                "nervous 😬"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition",
             "emoji": "😢"
         }

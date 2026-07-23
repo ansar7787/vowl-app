@@ -8,35 +8,35 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Get out of the building immediately!",
-            "textToSpeak": "Get out of the building immediately!",
+            "word": "Please read this report very carefully.",
+            "textToSpeak": "Please read this report very carefully.",
             "options": [
-                "Accelerating (the immediate evacuation command requires urgent, rapid delivery)",
-                "Decelerating (the speaker slows down to make sure everyone understands the instruction)"
+                "Decelerating (the request for careful reading is matched by a slow, deliberate pace)",
+                "Accelerating (the speaker rushes since the report is short and simple)"
             ],
-            "correctAnswer": "Accelerating (the immediate evacuation command requires urgent, rapid delivery)",
+            "correctAnswer": "Decelerating (the request for careful reading is matched by a slow, deliberate pace)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.5,
-            "hint": "Listen to 'Get out of the building immediately!' Is the pace rushed or calm?",
-            "explanation": "Evacuation commands accelerate sharply because every second counts - a calm, slow delivery would undercut the urgency.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "targetSpeed": 0.65,
+            "hint": "Listen to 'very carefully'. Slow and deliberate, or quick and casual?",
+            "explanation": "Requests for careful attention are said slowly, reinforcing how seriously the task should be taken.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L11_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Please drive slowly near the school.",
-            "textToSpeak": "Please drive slowly near the school.",
+            "word": "Take one tablet every eight hours.",
+            "textToSpeak": "Take one tablet every eight hours.",
             "options": [
-                "Accelerating (the speaker speeds up to finish the polite request quickly)",
-                "Decelerating (the instruction itself describes slowness, so the speaker mirrors it by decelerating)"
+                "Accelerating (the speaker rushes since the instructions are printed on the label too)",
+                "Decelerating (precise medical dosing instructions are slowed down to avoid any mistake)"
             ],
-            "correctAnswer": "Decelerating (the instruction itself describes slowness, so the speaker mirrors it by decelerating)",
+            "correctAnswer": "Decelerating (precise medical dosing instructions are slowed down to avoid any mistake)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.7,
-            "hint": "Listen to 'Please drive slowly near the school.' Does the speaker's own pace match the word 'slowly'?",
-            "explanation": "When an instruction tells someone to slow down, speakers often mirror that meaning by decelerating their own speech on the key word.",
+            "targetSpeed": 0.58,
+            "hint": "Listen to 'every eight hours'. Rushed, or given extra clarity?",
+            "explanation": "Medical dosing instructions are said slowly because a misheard detail could affect someone's health.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -44,35 +44,35 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We searched and searched and finally found it!",
-            "textToSpeak": "We searched and searched and finally found it!",
+            "word": "Your exam is on the ninth of March.",
+            "textToSpeak": "Your exam is on the ninth of March.",
             "options": [
-                "Accelerating (the pace builds with excitement toward the triumphant discovery)",
-                "Decelerating (the speaker slows down to savor the moment of discovery)"
+                "Decelerating (the exact exam date is slowed down so it isn't misheard)",
+                "Accelerating (the speaker rushes the date since it's also posted on the noticeboard)"
             ],
-            "correctAnswer": "Accelerating (the pace builds with excitement toward the triumphant discovery)",
+            "correctAnswer": "Decelerating (the exact exam date is slowed down so it isn't misheard)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.35,
-            "hint": "Listen to how the pace changes as the sentence builds toward 'finally found it!'",
-            "explanation": "Sentences describing a satisfying discovery often speed up toward the climax, mirroring the excitement of finally succeeding.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "targetSpeed": 0.61,
+            "hint": "Listen to 'the ninth of March' at the end. Rushed, or given extra clarity?",
+            "explanation": "Exam dates are said slowly and clearly because a misheard date could mean missing the test.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L12_Q1",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry, the library closes in five minutes!",
-            "textToSpeak": "Hurry, the library closes in five minutes!",
+            "word": "Run, they're calling our flight now!",
+            "textToSpeak": "Run, they're calling our flight now!",
             "options": [
-                "Accelerating (the closing deadline creates urgency that speeds up the warning)",
-                "Decelerating (the speaker calmly slows down since there's still time left)"
+                "Accelerating (the final boarding call creates urgency that speeds up the shout)",
+                "Decelerating (the speaker slows down to check the gate number again)"
             ],
-            "correctAnswer": "Accelerating (the closing deadline creates urgency that speeds up the warning)",
+            "correctAnswer": "Accelerating (the final boarding call creates urgency that speeds up the shout)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.45,
-            "hint": "Listen to 'the library closes in five minutes!' Does the pace rush or relax?",
-            "explanation": "A closing deadline creates time pressure, so the warning accelerates to push the listener into action.",
+            "targetSpeed": 1.54,
+            "hint": "Listen to 'run' and 'now!' Rushed panic, or calm and steady?",
+            "explanation": "A final boarding call is genuinely urgent, so the announcement is said quickly to prompt action.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -80,35 +80,35 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Double-check your answers before submitting.",
-            "textToSpeak": "Double-check your answers before submitting.",
+            "word": "The smoke alarm is going off, move!",
+            "textToSpeak": "The smoke alarm is going off, move!",
             "options": [
-                "Accelerating (the teacher speeds up because the exam is almost over)",
-                "Decelerating (the caution to double-check is given slowly for emphasis)"
+                "Accelerating (a sounding smoke alarm is a real emergency that speeds up the warning)",
+                "Decelerating (the speaker slows down to check if it's a false alarm first)"
             ],
-            "correctAnswer": "Decelerating (the caution to double-check is given slowly for emphasis)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.7,
-            "hint": "Listen to 'Double-check your answers before submitting.' Is the advice rushed or deliberate?",
-            "explanation": "Reminders that ask for careful review are delivered slowly to match the careful behavior being requested.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (a sounding smoke alarm is a real emergency that speeds up the warning)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.59,
+            "hint": "Listen to 'move!' Rushed and urgent, or calm and unhurried?",
+            "explanation": "A smoke alarm going off is treated as a real emergency, so the warning is fast and direct.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L12_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "She studied and studied until she finally understood it!",
-            "textToSpeak": "She studied and studied until she finally understood it!",
+            "word": "They're cutting the cake, hurry over here!",
+            "textToSpeak": "They're cutting the cake, hurry over here!",
             "options": [
-                "Accelerating (the pace builds with excitement toward the breakthrough moment of understanding)",
-                "Decelerating (the speaker slows down to emphasize how long the studying took)"
+                "Decelerating (the speaker slows down to describe how the cake looks)",
+                "Accelerating (not wanting to miss a fun moment speeds up the friendly call)"
             ],
-            "correctAnswer": "Accelerating (the pace builds with excitement toward the breakthrough moment of understanding)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to how the pace changes as the sentence builds toward 'finally understood it!'",
-            "explanation": "Describing a breakthrough after effort often speeds up toward the payoff, mirroring the excitement of finally succeeding.",
+            "correctAnswer": "Accelerating (not wanting to miss a fun moment speeds up the friendly call)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.42,
+            "hint": "Listen to 'hurry over here!' Quick and excited, or slow and descriptive?",
+            "explanation": "Not wanting a friend to miss a fun moment creates light urgency, speeding up the invitation.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -116,71 +116,71 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We need this report finished before the call starts!",
-            "textToSpeak": "We need this report finished before the call starts!",
+            "word": "Hold the baby's hand carefully near the road.",
+            "textToSpeak": "Hold the baby's hand carefully near the road.",
             "options": [
-                "Accelerating (the looming deadline before the call creates urgent acceleration)",
-                "Decelerating (the speaker decelerates to sound more authoritative)"
+                "Decelerating (a safety instruction near traffic is slowed down for emphasis)",
+                "Accelerating (the speaker rushes since they cross this road every day)"
             ],
-            "correctAnswer": "Accelerating (the looming deadline before the call creates urgent acceleration)",
+            "correctAnswer": "Decelerating (a safety instruction near traffic is slowed down for emphasis)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.48,
-            "hint": "Listen to 'before the call starts!' Rushed pressure, or calm authority?",
-            "explanation": "A hard deadline just minutes away pushes the pace faster, reflecting real time pressure.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "targetSpeed": 0.6,
+            "hint": "Listen to 'carefully' and 'the road'. Slow and cautious, or quick and casual?",
+            "explanation": "Safety instructions near real danger, like traffic, are said slowly so they're taken seriously.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L13_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Take your time and proofread this properly.",
-            "textToSpeak": "Take your time and proofread this properly.",
+            "word": "Save your work now, it's about to shut down!",
+            "textToSpeak": "Save your work now, it's about to shut down!",
             "options": [
-                "Accelerating (the manager speeds up since the task seems simple)",
-                "Decelerating (the instruction to take time is matched by a genuinely slower pace)"
+                "Decelerating (the speaker slows down to explain why the computer is shutting down)",
+                "Accelerating (the risk of losing unsaved work creates urgency that speeds up the warning)"
             ],
-            "correctAnswer": "Decelerating (the instruction to take time is matched by a genuinely slower pace)",
+            "correctAnswer": "Accelerating (the risk of losing unsaved work creates urgency that speeds up the warning)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.68,
-            "hint": "Listen to 'Take your time and proofread this properly.' Does the pace match the advice to slow down?",
-            "explanation": "When someone is told to take their time, the speaker often slows their own delivery to model that same patience.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "targetSpeed": 1.48,
+            "hint": "Listen to 'now!' Rushed urgency, or calm explanation?",
+            "explanation": "A warning about losing work is urgent, so it's said quickly to prompt immediate action.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L13_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We pitched and pitched until we finally won the contract!",
-            "textToSpeak": "We pitched and pitched until we finally won the contract!",
+            "word": "Your total today comes to thirty-two dollars.",
+            "textToSpeak": "Your total today comes to thirty-two dollars.",
             "options": [
-                "Accelerating (the pace accelerates with excitement toward the winning outcome)",
-                "Decelerating (the speaker slows down to emphasize the long struggle)"
+                "Decelerating (the final price is slowed down so the customer hears it correctly)",
+                "Accelerating (the speaker rushes the total to serve the next customer sooner)"
             ],
-            "correctAnswer": "Accelerating (the pace accelerates with excitement toward the winning outcome)",
+            "correctAnswer": "Decelerating (the final price is slowed down so the customer hears it correctly)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.32,
-            "hint": "Listen to how the pace builds toward 'finally won the contract!'",
-            "explanation": "Describing a hard-won success often speeds up toward the victory, mirroring the excitement of the achievement.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "targetSpeed": 0.64,
+            "hint": "Listen to 'thirty-two dollars' at the end. Rushed, or given extra clarity?",
+            "explanation": "Totals and prices are said slowly because a misheard number could cause a payment mistake.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L14_Q1",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Quick, we're going to miss the connecting flight!",
-            "textToSpeak": "Quick, we're going to miss the connecting flight!",
+            "word": "She's fainted, someone bring water quickly!",
+            "textToSpeak": "She's fainted, someone bring water quickly!",
             "options": [
-                "Accelerating (the risk of missing the connection accelerates the warning)",
-                "Decelerating (the speaker decelerates to calmly check the departure board)"
+                "Decelerating (the speaker calmly explains the possible causes of fainting)",
+                "Accelerating (a medical emergency happening right now speeds up the call for help)"
             ],
-            "correctAnswer": "Accelerating (the risk of missing the connection accelerates the warning)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.5,
-            "hint": "Listen to 'we're going to miss the connecting flight!' Panicked rush, or calm check?",
-            "explanation": "A genuine risk of missing a connection pushes speakers to speed up, reflecting real urgency.",
+            "correctAnswer": "Accelerating (a medical emergency happening right now speeds up the call for help)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.56,
+            "hint": "Listen to 'quickly!' Rushed and urgent, or calm and explanatory?",
+            "explanation": "A real emergency like fainting triggers a fast call for help instead of a calm explanation.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -188,35 +188,35 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Take it slow, the road ahead is icy.",
-            "textToSpeak": "Take it slow, the road ahead is icy.",
+            "word": "The client is calling right now, pick up!",
+            "textToSpeak": "The client is calling right now, pick up!",
             "options": [
-                "Accelerating (the speaker speeds up because the destination is close)",
-                "Decelerating (the warning about ice matches a genuinely slower pace)"
+                "Decelerating (the speaker slows down to check who the client is first)",
+                "Accelerating (an important call happening at this exact moment speeds up the request)"
             ],
-            "correctAnswer": "Decelerating (the warning about ice matches a genuinely slower pace)",
+            "correctAnswer": "Accelerating (an important call happening at this exact moment speeds up the request)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.65,
-            "hint": "Listen to 'Take it slow, the road ahead is icy.' Does the pace mirror the advice to slow down?",
-            "explanation": "Warnings about hazardous conditions are delivered slowly, mirroring the cautious driving being recommended.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "targetSpeed": 1.43,
+            "hint": "Listen to 'right now' and 'pick up!' Rushed, or calm and unhurried?",
+            "explanation": "An important call happening immediately creates urgency, speeding up the request to answer.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L14_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We drove and drove until we finally saw the coast!",
-            "textToSpeak": "We drove and drove until we finally saw the coast!",
+            "word": "Run, the movie's about to start!",
+            "textToSpeak": "Run, the movie's about to start!",
             "options": [
-                "Accelerating (the pace builds toward the excitement of finally arriving)",
-                "Decelerating (the speaker slows down to emphasize how long the drive felt)"
+                "Accelerating (the movie starting any second creates urgency that speeds up the warning)",
+                "Decelerating (the speaker slows down to talk about the movie's plot first)"
             ],
-            "correctAnswer": "Accelerating (the pace builds toward the excitement of finally arriving)",
+            "correctAnswer": "Accelerating (the movie starting any second creates urgency that speeds up the warning)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.3,
-            "hint": "Listen to how the pace changes as the sentence builds toward 'finally saw the coast!'",
-            "explanation": "Describing a long-awaited arrival often speeds up toward the moment of arrival, mirroring genuine excitement.",
+            "targetSpeed": 1.45,
+            "hint": "Listen to 'run!' Rushed excitement, or slow and descriptive?",
+            "explanation": "A movie about to start creates a small deadline, speeding up the warning to hurry inside.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -224,17 +224,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry, your brother's bus is leaving without him!",
-            "textToSpeak": "Hurry, your brother's bus is leaving without him!",
+            "word": "The milk's boiling over, turn it off!",
+            "textToSpeak": "The milk's boiling over, turn it off!",
             "options": [
-                "Decelerating (the speaker decelerates to calmly wave at the bus driver)",
-                "Accelerating (the risk of the bus leaving without him accelerates the warning)"
+                "Decelerating (the speaker slows down to explain how to heat milk properly)",
+                "Accelerating (a kitchen mishap in progress speeds up the urgent instruction)"
             ],
-            "correctAnswer": "Accelerating (the risk of the bus leaving without him accelerates the warning)",
+            "correctAnswer": "Accelerating (a kitchen mishap in progress speeds up the urgent instruction)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 1.48,
-            "hint": "Listen to 'leaving without him!' Urgent rush, or calm wave?",
-            "explanation": "A real risk of missing the bus pushes the pace faster, matching the urgency of the moment.",
+            "targetSpeed": 1.51,
+            "hint": "Listen to 'turn it off!' Rushed and urgent, or calm and instructional?",
+            "explanation": "A small kitchen emergency like this triggers a fast instruction rather than a calm explanation.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -242,17 +242,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Walk slowly with grandpa on the stairs.",
-            "textToSpeak": "Walk slowly with grandpa on the stairs.",
+            "word": "Cut the vegetables slowly into even pieces.",
+            "textToSpeak": "Cut the vegetables slowly into even pieces.",
             "options": [
-                "Decelerating (the request to walk slowly is mirrored by the speaker's own slower pace)",
-                "Accelerating (the speaker speeds up since the stairs are short)"
+                "Decelerating (the instruction for even, careful cutting matches a slow, controlled pace)",
+                "Accelerating (the speaker rushes since cutting vegetables is a simple daily task)"
             ],
-            "correctAnswer": "Decelerating (the request to walk slowly is mirrored by the speaker's own slower pace)",
+            "correctAnswer": "Decelerating (the instruction for even, careful cutting matches a slow, controlled pace)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'Walk slowly with grandpa on the stairs.' Does the pace match the word 'slowly'?",
-            "explanation": "When the instruction itself means 'slow down,' speakers often decelerate their own speech to mirror that meaning.",
+            "targetSpeed": 0.62,
+            "hint": "Does the pace match 'slowly', or rush past the instruction?",
+            "explanation": "Instructions that ask for careful, even results are usually spoken slowly to model that care.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -260,53 +260,53 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We waited and waited until we finally heard the good news!",
-            "textToSpeak": "We waited and waited until we finally heard the good news!",
+            "word": "Our hotel room number is one one four.",
+            "textToSpeak": "Our hotel room number is one one four.",
             "options": [
-                "Decelerating (the speaker slows down to emphasize how long the wait felt)",
-                "Accelerating (the pace builds with excitement toward the long-awaited good news)"
+                "Decelerating (the room number is slowed down so it isn't confused with another room)",
+                "Accelerating (the speaker rushes the number since it's written on the key card too)"
             ],
-            "correctAnswer": "Accelerating (the pace builds with excitement toward the long-awaited good news)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 1.3,
-            "hint": "Listen to how the pace changes as the sentence builds toward 'finally heard the good news!'",
-            "explanation": "Describing the end of a long wait often speeds up toward the relief and excitement of the resolution.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "correctAnswer": "Decelerating (the room number is slowed down so it isn't confused with another room)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.61,
+            "hint": "Listen to 'one one four' at the end. Rushed, or given extra clarity?",
+            "explanation": "Room numbers are said slowly because a misheard number could send someone to the wrong door.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L16_Q1",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Quick, they're almost out of stock!",
-            "textToSpeak": "Quick, they're almost out of stock!",
+            "word": "Listen carefully to today's instructions.",
+            "textToSpeak": "Listen carefully to today's instructions.",
             "options": [
-                "Decelerating (the speaker decelerates to calmly compare prices)",
-                "Accelerating (the risk of the item selling out accelerates the warning)"
+                "Decelerating (the request for careful listening is matched by a slow, deliberate pace)",
+                "Accelerating (the speaker rushes since the instructions are the same as always)"
             ],
-            "correctAnswer": "Accelerating (the risk of the item selling out accelerates the warning)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 1.45,
-            "hint": "Listen to 'they're almost out of stock!' Urgent rush, or calm comparison?",
-            "explanation": "A real risk of missing out on a limited item pushes the pace faster, matching genuine urgency.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "correctAnswer": "Decelerating (the request for careful listening is matched by a slow, deliberate pace)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.63,
+            "hint": "Listen to 'carefully'. Slow and deliberate, or quick and routine?",
+            "explanation": "A request to listen carefully is usually delivered slowly, modeling the attention being asked for.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L16_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Check the return policy slowly before you decide.",
-            "textToSpeak": "Check the return policy slowly before you decide.",
+            "word": "Rest quietly and drink plenty of water.",
+            "textToSpeak": "Rest quietly and drink plenty of water.",
             "options": [
-                "Decelerating (the advice to slow down and check is matched by a genuinely slower pace)",
-                "Accelerating (the speaker speeds up since the decision seems easy)"
+                "Decelerating (gentle recovery advice is delivered in a slow, soothing tone)",
+                "Accelerating (the speaker rushes through since this advice is very common)"
             ],
-            "correctAnswer": "Decelerating (the advice to slow down and check is matched by a genuinely slower pace)",
+            "correctAnswer": "Decelerating (gentle recovery advice is delivered in a slow, soothing tone)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.68,
-            "hint": "Listen to 'Check the return policy slowly before you decide.' Does the pace mirror the word 'slowly'?",
-            "explanation": "When advice tells someone to slow down and check carefully, the speaker's own pace often slows to match.",
+            "targetSpeed": 0.6,
+            "hint": "Does the pace sound calm and gentle, matching 'rest quietly'?",
+            "explanation": "Gentle recovery advice like this is said slowly, matching the calm tone of the message.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -314,17 +314,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We compared and compared until we finally found the perfect gift!",
-            "textToSpeak": "We compared and compared until we finally found the perfect gift!",
+            "word": "The baby's near the stairs, go now!",
+            "textToSpeak": "The baby's near the stairs, go now!",
             "options": [
-                "Decelerating (the speaker slows down to emphasize how long the search took)",
-                "Accelerating (the pace builds with excitement toward finding the perfect gift)"
+                "Decelerating (the speaker slows down to calmly describe the baby's location)",
+                "Accelerating (an immediate safety risk to a child speeds up the urgent warning)"
             ],
-            "correctAnswer": "Accelerating (the pace builds with excitement toward finding the perfect gift)",
+            "correctAnswer": "Accelerating (an immediate safety risk to a child speeds up the urgent warning)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 1.3,
-            "hint": "Listen to how the pace changes as the sentence builds toward 'finally found the perfect gift!'",
-            "explanation": "Describing a satisfying find after searching often speeds up toward the happy ending, mirroring real excitement.",
+            "targetSpeed": 1.58,
+            "hint": "Listen to 'go now!' Panicked and fast, or calm and descriptive?",
+            "explanation": "A real safety risk to a child triggers a fast, urgent warning rather than a calm description.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -332,17 +332,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry, the oven timer is about to go off!",
-            "textToSpeak": "Hurry, the oven timer is about to go off!",
+            "word": "The boss needs this file immediately, hurry!",
+            "textToSpeak": "The boss needs this file immediately, hurry!",
             "options": [
-                "Decelerating (the speaker decelerates to check the recipe card again)",
-                "Accelerating (the imminent timer creates urgency that accelerates the warning)"
+                "Decelerating (the speaker slows down to sound extra polite and formal)",
+                "Accelerating (an immediate demand from a boss speeds up the urgent instruction)"
             ],
-            "correctAnswer": "Accelerating (the imminent timer creates urgency that accelerates the warning)",
+            "correctAnswer": "Accelerating (an immediate demand from a boss speeds up the urgent instruction)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 1.46,
-            "hint": "Listen to 'the oven timer is about to go off!' Rushed urgency, or calm check?",
-            "explanation": "An imminent kitchen timer creates real time pressure, accelerating the warning to prompt quick action.",
+            "targetSpeed": 1.44,
+            "hint": "Listen to 'immediately' and 'hurry!' Rushed, or calm and formal?",
+            "explanation": "An urgent demand like this from a boss speeds up the delivery to match the pressure.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -350,17 +350,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Stir the sauce gently and slowly.",
-            "textToSpeak": "Stir the sauce gently and slowly.",
+            "word": "Fold these clothes gently, they're quite delicate.",
+            "textToSpeak": "Fold these clothes gently, they're quite delicate.",
             "options": [
-                "Decelerating (the instruction for gentle stirring is matched by a genuinely slower pace)",
-                "Accelerating (the chef speeds up since the sauce is simple)"
+                "Decelerating (the caution about delicate fabric slows the pace for careful handling)",
+                "Accelerating (the speaker rushes since folding clothes is an everyday chore)"
             ],
-            "correctAnswer": "Decelerating (the instruction for gentle stirring is matched by a genuinely slower pace)",
+            "correctAnswer": "Decelerating (the caution about delicate fabric slows the pace for careful handling)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.62,
-            "hint": "Listen to 'Stir the sauce gently and slowly.' Slow and careful, or quick and casual?",
-            "explanation": "Delicate cooking techniques are described slowly, mirroring the gentle, careful action being requested.",
+            "targetSpeed": 0.61,
+            "hint": "Listen to 'gently' and 'delicate'. Slow and careful, or quick and casual?",
+            "explanation": "Warnings about delicate items are said slowly, matching the gentle handling being asked for.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -368,53 +368,53 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We tasted and tasted until we finally got the recipe right!",
-            "textToSpeak": "We tasted and tasted until we finally got the recipe right!",
+            "word": "The show begins at seven fifteen.",
+            "textToSpeak": "The show begins at seven fifteen.",
             "options": [
-                "Decelerating (the speaker slows down to emphasize how many attempts it took)",
-                "Accelerating (the pace builds with excitement toward finally perfecting the recipe)"
+                "Accelerating (the speaker rushes the time since doors open earlier anyway)",
+                "Decelerating (the exact start time is slowed down so it isn't misheard)"
             ],
-            "correctAnswer": "Accelerating (the pace builds with excitement toward finally perfecting the recipe)",
+            "correctAnswer": "Decelerating (the exact start time is slowed down so it isn't misheard)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 1.3,
-            "hint": "Listen to how the pace changes as the sentence builds toward 'finally got the recipe right!'",
-            "explanation": "Describing a successful result after many attempts often speeds up toward the payoff, mirroring real excitement.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "targetSpeed": 0.64,
+            "hint": "Listen to 'seven fifteen' at the end. Rushed, or given extra clarity?",
+            "explanation": "Start times are said slowly and clearly because a misheard time could mean arriving late.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L18_Q1",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The download's about to time out, save it now!",
-            "textToSpeak": "The download's about to time out, save it now!",
+            "word": "Please fasten your seatbelt before we leave.",
+            "textToSpeak": "Please fasten your seatbelt before we leave.",
             "options": [
-                "Decelerating (the speaker decelerates to explain why downloads can be slow)",
-                "Accelerating (the timing-out risk accelerates the warning)"
+                "Accelerating (the speaker rushes through since it's said on every trip)",
+                "Decelerating (a standard safety instruction is delivered in a calm, measured pace)"
             ],
-            "correctAnswer": "Accelerating (the timing-out risk accelerates the warning)",
+            "correctAnswer": "Decelerating (a standard safety instruction is delivered in a calm, measured pace)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 1.46,
-            "hint": "Listen to 'the download is about to time out!' Rushed urgency, or calm explanation?",
-            "explanation": "A download about to fail creates real time pressure, accelerating the warning to prompt quick action.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "targetSpeed": 0.66,
+            "hint": "Listen to the whole sentence. Calm and measured, or rushed and casual?",
+            "explanation": "Safety instructions like this are given at a steady, unhurried pace to sound clear and serious.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L18_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Read the privacy settings slowly before agreeing.",
-            "textToSpeak": "Read the privacy settings slowly before agreeing.",
+            "word": "Breathe in slowly, then breathe all the way out.",
+            "textToSpeak": "Breathe in slowly, then breathe all the way out.",
             "options": [
-                "Decelerating (the advice to slow down and read is matched by a genuinely slower pace)",
-                "Accelerating (the speaker speeds up since most people skip this step)"
+                "Accelerating (the speaker rushes through since breathing needs no real instruction)",
+                "Decelerating (a calming breathing exercise is delivered at a slow, steady pace)"
             ],
-            "correctAnswer": "Decelerating (the advice to slow down and read is matched by a genuinely slower pace)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.68,
-            "hint": "Listen to 'Read the privacy settings slowly before agreeing.' Does the pace mirror the word 'slowly'?",
-            "explanation": "Advice urging careful reading is itself delivered slowly, modeling the careful behavior being recommended.",
+            "correctAnswer": "Decelerating (a calming breathing exercise is delivered at a slow, steady pace)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.59,
+            "hint": "Does the pace itself feel slow and calm, matching the instruction?",
+            "explanation": "Calming instructions like this breathing exercise are said slowly to help the listener relax.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -422,89 +422,89 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We tried and tried until we finally fixed the bug!",
-            "textToSpeak": "We tried and tried until we finally fixed the bug!",
+            "word": "Our office number is two zero six.",
+            "textToSpeak": "Our office number is two zero six.",
             "options": [
-                "Decelerating (the speaker slows down to emphasize how long the debugging took)",
-                "Accelerating (the pace builds with excitement toward finally solving the problem)"
+                "Decelerating (the office number is slowed down so visitors find the right room)",
+                "Accelerating (the speaker rushes the number since it's also on the door sign)"
             ],
-            "correctAnswer": "Accelerating (the pace builds with excitement toward finally solving the problem)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 1.32,
-            "hint": "Listen to how the pace changes as the sentence builds toward 'finally fixed the bug!'",
-            "explanation": "Describing a hard-won technical fix often speeds up toward the success, mirroring genuine relief and excitement.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "correctAnswer": "Decelerating (the office number is slowed down so visitors find the right room)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.62,
+            "hint": "Listen to 'two zero six' at the end. Rushed, or given extra clarity?",
+            "explanation": "Room and office numbers are said slowly because a misheard number leads visitors astray.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L19_Q1",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Hurry, he's allergic, get the medicine now!",
-            "textToSpeak": "Hurry, he's allergic, get the medicine now!",
+            "word": "Speak softly, the baby just fell asleep.",
+            "textToSpeak": "Speak softly, the baby just fell asleep.",
             "options": [
-                "Decelerating (the speaker decelerates to read the medicine label first)",
-                "Accelerating (the allergic reaction emergency accelerates the urgent command)"
+                "Accelerating (the speaker rushes since the message is short and simple)",
+                "Decelerating (the request for quiet is matched by the speaker's own softer, slower pace)"
             ],
-            "correctAnswer": "Accelerating (the allergic reaction emergency accelerates the urgent command)",
+            "correctAnswer": "Decelerating (the request for quiet is matched by the speaker's own softer, slower pace)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 1.5,
-            "hint": "Listen to 'get the medicine now!' Urgent rush, or calm reading?",
-            "explanation": "An allergic reaction is a genuine emergency, so the command accelerates sharply to demand immediate action.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "targetSpeed": 0.58,
+            "hint": "Does the pace feel soft and slow, matching 'speak softly'?",
+            "explanation": "A request for quiet around a sleeping baby is usually said softly and slowly to match.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L19_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Breathe slowly and try to relax.",
-            "textToSpeak": "Breathe slowly and try to relax.",
+            "word": "It's starting to pour, run for cover!",
+            "textToSpeak": "It's starting to pour, run for cover!",
             "options": [
-                "Decelerating (the calming instruction to breathe slowly is mirrored by the speaker's own pace)",
-                "Accelerating (the speaker rushes to finish the instruction quickly)"
+                "Accelerating (sudden heavy rain creates urgency that speeds up the warning)",
+                "Decelerating (the speaker slows down to check the weather forecast first)"
             ],
-            "correctAnswer": "Decelerating (the calming instruction to breathe slowly is mirrored by the speaker's own pace)",
+            "correctAnswer": "Accelerating (sudden heavy rain creates urgency that speeds up the warning)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.6,
-            "hint": "Listen to 'Breathe slowly and try to relax.' Does the pace match the calming advice?",
-            "explanation": "Calming instructions are delivered slowly, mirroring and reinforcing the relaxed state being encouraged.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "targetSpeed": 1.49,
+            "hint": "Listen to 'run for cover!' Rushed and urgent, or calm and unhurried?",
+            "explanation": "Sudden bad weather creates real urgency, speeding up the warning to seek shelter.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L19_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We worried and worried until we finally heard she was okay!",
-            "textToSpeak": "We worried and worried until we finally heard she was okay!",
+            "word": "Your order number is five eight two.",
+            "textToSpeak": "Your order number is five eight two.",
             "options": [
-                "Decelerating (the speaker slows down to emphasize how worried everyone was)",
-                "Accelerating (the pace builds with relief toward finally hearing good news)"
+                "Decelerating (the order number is slowed down so each digit is heard correctly)",
+                "Accelerating (the speaker rushes the number since it's also emailed as confirmation)"
             ],
-            "correctAnswer": "Accelerating (the pace builds with relief toward finally hearing good news)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 1.3,
-            "hint": "Listen to how the pace changes as the sentence builds toward 'finally heard she was okay!'",
-            "explanation": "Describing the end of a worrying wait often speeds up toward the relief, mirroring genuine emotional release.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "correctAnswer": "Decelerating (the order number is slowed down so each digit is heard correctly)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.63,
+            "hint": "Listen to 'five eight two' at the end. Rushed, or given extra clarity?",
+            "explanation": "Order numbers are read slowly because a misheard digit could cause a mix-up later.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L20_Q1",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The encore's starting, get back to your seats!",
-            "textToSpeak": "The encore's starting, get back to your seats!",
+            "word": "We need a nurse over here, now!",
+            "textToSpeak": "We need a nurse over here, now!",
             "options": [
-                "Decelerating (the speaker decelerates to calmly describe the setlist)",
-                "Accelerating (the imminent encore creates excited urgency in the announcement)"
+                "Decelerating (the speaker calmly explains the patient's condition in detail)",
+                "Accelerating (an urgent medical need speeds up the call for help)"
             ],
-            "correctAnswer": "Accelerating (the imminent encore creates excited urgency in the announcement)",
+            "correctAnswer": "Accelerating (an urgent medical need speeds up the call for help)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 1.45,
-            "hint": "Listen to 'the encore's starting, get back to your seats!' Excited rush, or calm description?",
-            "explanation": "An imminent encore creates excited urgency, accelerating the announcement to build anticipation.",
+            "targetSpeed": 1.55,
+            "hint": "Listen to 'now!' Rushed and urgent, or calm and detailed?",
+            "explanation": "A pressing medical need triggers a fast, direct call for help rather than a calm report.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -512,36 +512,36 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Watch this scene slowly, it's important.",
-            "textToSpeak": "Watch this scene slowly, it's important.",
+            "word": "The doors are closing, get on now!",
+            "textToSpeak": "The doors are closing, get on now!",
             "options": [
-                "Decelerating (the instruction to watch slowly is matched by a genuinely slower pace)",
-                "Accelerating (the speaker speeds up since the scene is short)"
+                "Decelerating (the speaker slows down to check the destination sign first)",
+                "Accelerating (closing doors create an immediate deadline that speeds up the warning)"
             ],
-            "correctAnswer": "Decelerating (the instruction to watch slowly is matched by a genuinely slower pace)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'Watch this scene slowly, it's important.' Does the pace mirror the word 'slowly'?",
-            "explanation": "When viewers are told to slow down and pay attention, the speaker's own pace often slows to match that focus.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (closing doors create an immediate deadline that speeds up the warning)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.5,
+            "hint": "Listen to 'get on now!' Rushed panic, or calm and steady?",
+            "explanation": "Doors closing right now is a real, immediate deadline, so the warning speeds up to match.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L20_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "We watched and watched until we finally understood the ending!",
-            "textToSpeak": "We watched and watched until we finally understood the ending!",
+            "word": "The party starts at six o'clock.",
+            "textToSpeak": "The party starts at six o'clock.",
             "options": [
-                "Decelerating (the speaker slows down to emphasize how confusing the ending was)",
-                "Accelerating (the pace builds with excitement toward finally understanding the twist)"
+                "Decelerating (the exact start time is slowed down so guests don't arrive at the wrong time)",
+                "Accelerating (the speaker rushes the time since it's also on the invitation)"
             ],
-            "correctAnswer": "Accelerating (the pace builds with excitement toward finally understanding the twist)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 1.3,
-            "hint": "Listen to how the pace changes as the sentence builds toward 'finally understood the ending!'",
-            "explanation": "Describing a satisfying realization often speeds up toward the moment of understanding, mirroring genuine excitement.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "correctAnswer": "Decelerating (the exact start time is slowed down so guests don't arrive at the wrong time)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.65,
+            "hint": "Listen to 'six o'clock' at the end. Rushed, or given extra clarity?",
+            "explanation": "Event times are said slowly and clearly so guests hear the correct time to arrive.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         }
     ]
 }

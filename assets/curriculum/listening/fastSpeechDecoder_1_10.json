@@ -7,16 +7,16 @@
             "id": "LIS_FASTSPEECHDECODER_L1_Q1",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Listen for the subject and the family members - is it 'he' or 'she', and what comes first?",
-            "explanation": "In fast speech, 'she has' blends into 'sheez'. The key detail is the order: 'brothers' first, then 'a sister'. Distractors swap 'he/she' or reverse 'brothers/sisters' - common mishearing traps.",
-            "textToSpeak": "She has two brothers and a sister.",
+            "hint": "Listen for who's good at maths, and whether it's now or before.",
+            "explanation": "'Sister's' is the natural, fast way of saying 'sister is' - the 'is' shrinks to just an 's' stuck onto the word before it. Miss that tiny 's' and 'is' (now) is easy to confuse with 'was' (before).",
+            "textToSpeak": "My sister's really good at maths.",
             "options": [
-                "She has three brothers and a sister.",
-                "She has two sisters and a brother.",
-                "He has two brothers and a sister.",
-                "She has two brothers and a sister."
+                "My brother's really good at maths.",
+                "My sister's really good at maths.",
+                "My sister's really bad at maths.",
+                "My sister was really good at maths."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -24,16 +24,16 @@
             "id": "LIS_FASTSPEECHDECODER_L1_Q2",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Focus on two things: whose dad is it ('his' or 'her'), and where does he work?",
-            "explanation": "'His' and 'her' are both short unstressed words - easy to mishear. In rapid speech, the key is catching both the possessive AND the place. 'Hospital' and 'school' sound very different, but learners often miss the subject word.",
-            "textToSpeak": "His dad works at a hospital.",
+            "hint": "Catch two things: who's doing the job, and what they're working on.",
+            "explanation": "'Dad's fixing' packs 'dad is fixing' into one quick beat, so the 's' for 'is' almost disappears. 'Mum's' sounds close if you're not listening for the vowel, so catch the exact word.",
+            "textToSpeak": "Our dad's fixing the car this weekend.",
             "options": [
-                "Her dad works at a hospital.",
-                "His mum works at a hospital.",
-                "His dad works at a hospital.",
-                "His dad works at a school."
+                "Our dad's fixing the car this weekend.",
+                "Our mum's fixing the car this weekend.",
+                "Our dad's fixing the bike this weekend.",
+                "Our dad's washing the car this weekend."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -41,16 +41,16 @@
             "id": "LIS_FASTSPEECHDECODER_L1_Q3",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Listen for the subject ('they' or 'we') and the adjective - is the apartment small or large?",
-            "explanation": "In connected speech, 'they live in a' runs together as 'theylivina'. The adjective 'small' vs 'large' is the main difference. 'They' and 'we' sound similar when unstressed. Always catch the key content word - here, the size of the apartment.",
-            "textToSpeak": "They live in a small apartment.",
+            "hint": "Notice what the baby is doing, and exactly where.",
+            "explanation": "'Baby's sleeping' means 'baby is sleeping' - only a quick 's' is left of 'is'. 'Babies are' sounds different once you catch the plural, so don't let that fast 's' slip past you.",
+            "textToSpeak": "The baby's sleeping in the next room.",
             "options": [
-                "They live in a small apartment.",
-                "They work in a small apartment.",
-                "They live in a large apartment.",
-                "We live in a small apartment."
+                "The baby's crying in the next room.",
+                "The baby's sleeping in the same room.",
+                "The baby's sleeping in the next room.",
+                "The babies are sleeping in the next room."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -58,16 +58,16 @@
             "id": "LIS_FASTSPEECHDECODER_L2_Q1",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Listen for the color AND the object AND the location - all three must match.",
-            "explanation": "Beginners often catch the color ('red') but miss the object ('bag' vs 'box') or the preposition ('on' vs 'under'). In fast speech, short prepositions like 'on' and 'under' are spoken very quickly - train your ear for these small but important words.",
-            "textToSpeak": "The red bag is on the table.",
+            "hint": "Focus on who's leaving, and the exact time.",
+            "explanation": "'We're' squeezes 'we are' into one syllable, and it can sound close to 'they're' at natural speed. Catch the vowel to tell them apart, then lock in the time.",
+            "textToSpeak": "We're leaving for work at eight.",
             "options": [
-                "The red box is on the table.",
-                "The blue bag is on the table.",
-                "The red bag is under the table.",
-                "The red bag is on the table."
+                "We're leaving for work at eight.",
+                "They're leaving for work at eight.",
+                "We're leaving for work at nine.",
+                "We're arriving at work at eight."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -75,16 +75,16 @@
             "id": "LIS_FASTSPEECHDECODER_L2_Q2",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Listen carefully for the subject ('she' or 'he') and the clothing item.",
-            "explanation": "'Green' and 'grey' are easily confused - both start with 'gr'. 'Coat' and 'hat' are different but easy to mishear at speed. Notice 'she bought' - the past tense '-ed' ending in 'bought' sounds like 'bawt' in fast speech.",
-            "textToSpeak": "She bought a green coat yesterday.",
+            "hint": "Notice who's being praised, and how well they're doing.",
+            "explanation": "'You're' compresses 'you are' into a single beat and can blur into 'he's' at speed. Also catch 'great' versus 'okay' - the actual praise word changes the whole meaning.",
+            "textToSpeak": "You're doing a great job so far.",
             "options": [
-                "She bought a green coat yesterday.",
-                "He bought a green coat yesterday.",
-                "She bought a grey coat yesterday.",
-                "She bought a green hat yesterday."
+                "He's doing a great job so far.",
+                "You're doing a great job today.",
+                "You're doing a great job so far.",
+                "You're doing an okay job so far."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -92,16 +92,16 @@
             "id": "LIS_FASTSPEECHDECODER_L2_Q3",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Focus on the number and the location - and listen for 'are' vs 'were'.",
-            "explanation": "'Five' and 'four' sound very different, but many learners mishear numbers at speed. 'There are' (present) vs 'there were' (past) - the tense marker is one small word. 'Shelf' vs 'desk' are the location options. Catch all three details.",
-            "textToSpeak": "There are five books on the shelf.",
+            "hint": "Catch who's outside, and exactly which door.",
+            "explanation": "'They're' and 'we're' both reduce to a fast, light sound, so the difference is subtle. Also listen for 'front' versus 'back' - one word that changes the whole picture.",
+            "textToSpeak": "They're waiting outside the front door.",
             "options": [
-                "There were five books on the shelf.",
-                "There are four books on the shelf.",
-                "There are five books on the desk.",
-                "There are five books on the shelf."
+                "We're waiting outside the front door.",
+                "They're waiting outside the front door.",
+                "They're waiting outside the back door.",
+                "They're standing outside the front door."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -109,16 +109,16 @@
             "id": "LIS_FASTSPEECHDECODER_L3_Q1",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Listen for the subject ('he'/'she') and the time - and notice whether it's past or present tense.",
-            "explanation": "'Seven' and 'eleven' both end in '-even' and are frequently confused at speed. 'He gets' (present habit) vs 'he got' (past) - the tense difference is in one short word. Daily routine vocabulary is essential for everyday listening comprehension.",
-            "textToSpeak": "He gets up at seven every morning.",
+            "hint": "Listen for 'am' hidden inside 'I'm', then catch when and for what.",
+            "explanation": "'I'm' packs 'I am' into a single short sound. Notice too how 'an exam' links together in fast speech - the 'n' slides onto the next word, almost like 'a-nexam'.",
+            "textToSpeak": "I'm studying for an exam tonight.",
             "options": [
-                "She gets up at seven every morning.",
-                "He gets up at seven every morning.",
-                "He gets up at eleven every morning.",
-                "He got up at seven every morning."
+                "I'm studying for an exam tonight.",
+                "I'm studying for an exam tomorrow.",
+                "I'm preparing for an exam tonight.",
+                "I'm studying for a class tonight."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -126,16 +126,16 @@
             "id": "LIS_FASTSPEECHDECODER_L3_Q2",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Three things to catch: the subject, the meal, and 'before' or 'after'.",
-            "explanation": "Meal words ('breakfast', 'lunch', 'dinner') are frequently confused at speed. 'Before' and 'after' are opposite in meaning but similar in length - a one-word difference that completely changes the sentence. Notice how 'before going' links into 'beforegoing' in fast speech.",
-            "textToSpeak": "They have breakfast before going to work.",
+            "hint": "Catch how you're getting to school, and when.",
+            "explanation": "'I'm' is the reduced form of 'I am', barely a full syllable at natural speed. 'To school' and 'from school' sound similar in a rush, but they mean opposite directions.",
+            "textToSpeak": "I'm walking to school today.",
             "options": [
-                "They have breakfast before going to work.",
-                "They have lunch before going to work.",
-                "She has breakfast before going to work.",
-                "They have breakfast after going to work."
+                "I'm walking to school tomorrow.",
+                "I'm driving to school today.",
+                "I'm walking to school today.",
+                "I'm walking home from school today."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -143,14 +143,14 @@
             "id": "LIS_FASTSPEECHDECODER_L3_Q3",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Listen for who takes what transport and where they go.",
-            "explanation": "'Bus' and 'train' are both common transport words. 'School' and 'work' are the two most common destinations in everyday English. In rapid speech, 'takes the' links into 'takesthe'. The subject 'she'/'he' is the first word - catch it immediately.",
-            "textToSpeak": "She takes the bus to school.",
+            "hint": "Listen closely for the word 'not' - is it there or missing?",
+            "explanation": "Adding just 'not' completely reverses the meaning, and in fast speech it can slip by almost unnoticed. Always train your ear to catch that small negative word.",
+            "textToSpeak": "I'm not allowed to stay up late.",
             "options": [
-                "She takes the bus to school.",
-                "She takes the train to school.",
-                "She takes the bus to work.",
-                "He takes the bus to school."
+                "I'm not allowed to stay up late.",
+                "I'm allowed to stay up late.",
+                "I'm not allowed to wake up late.",
+                "I'm not allowed to stay out late."
             ],
             "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
@@ -160,16 +160,16 @@
             "id": "LIS_FASTSPEECHDECODER_L4_Q1",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Listen for the adjective (cold/hot) and whether it's inside or outside.",
-            "explanation": "'Cold' and 'hot' are opposite but both one syllable - easy to mishear. 'It's' (present) vs 'it was' (past) is a tense shift. 'Outside' vs 'inside' - the prefix 'out-' vs 'in-' is the only difference. All four are common beginner listening challenges.",
-            "textToSpeak": "It's very cold outside today.",
+            "hint": "Listen for the weather word, and whether it's 'is' or 'was'.",
+            "explanation": "'Isn't' packs 'is' plus 'not' into one beat, and swapping it for 'wasn't' shifts present to past. That final 't' sound is easy to miss entirely at speed.",
+            "textToSpeak": "It isn't raining outside anymore.",
             "options": [
-                "It's very hot outside today.",
-                "It was very cold outside today.",
-                "It's very cold outside today.",
-                "It's very cold inside today."
+                "It isn't snowing outside anymore.",
+                "It isn't raining outside anymore.",
+                "It wasn't raining outside anymore.",
+                "It isn't raining outside today."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -177,16 +177,16 @@
             "id": "LIS_FASTSPEECHDECODER_L4_Q2",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch the subject and the item needed, plus the weather condition.",
-            "explanation": "Weather vocabulary ('rain', 'snow') sounds similar at speed - both are short, one-syllable words. 'Umbrella' and 'jacket' are very different, but fast speech can make unfamiliar words hard to catch. 'We' vs 'they' - both unstressed subject pronouns.",
-            "textToSpeak": "We need an umbrella in the rain.",
+            "hint": "The whole meaning depends on one small sound - is it 'can' or 'can't'?",
+            "explanation": "'Can't' and 'can' sound almost identical in quick speech - really just that final 't', often barely released. Miss it, and the sentence means the exact opposite.",
+            "textToSpeak": "We can't find the car keys anywhere.",
             "options": [
-                "We need a jacket in the rain.",
-                "They need an umbrella in the rain.",
-                "We need an umbrella in the rain.",
-                "We need an umbrella in the snow."
+                "We can't find the car keys anywhere.",
+                "We can't find the house keys anywhere.",
+                "We can find the car keys anywhere.",
+                "We can't find the car keys upstairs."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -194,16 +194,16 @@
             "id": "LIS_FASTSPEECHDECODER_L4_Q3",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Identify the season, the possessive ('my'/'her'), and the tense ('is'/'was').",
-            "explanation": "Season names ('Spring', 'Summer', 'Autumn', 'Winter') are important vocabulary. 'Is' vs 'was' shifts from present to past - a tiny but meaningful word. 'My' vs 'her' - possessive pronouns are often unstressed and hard to catch in fast speech.",
-            "textToSpeak": "Spring is my favourite time of year.",
+            "hint": "Check for the negative first, then where they're talking about.",
+            "explanation": "'Don't' versus 'do' hinges on that quick 'n't' sound at the end - small, but it flips the whole sentence. Train your ear to catch it every time.",
+            "textToSpeak": "They don't live near the station.",
             "options": [
-                "Summer is my favourite time of year.",
-                "Spring was my favourite time of year.",
-                "Spring is her favourite time of year.",
-                "Spring is my favourite time of year."
+                "They don't live near the station.",
+                "They don't live near the school.",
+                "They do live near the station.",
+                "They don't work near the station."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -211,16 +211,16 @@
             "id": "LIS_FASTSPEECHDECODER_L5_Q1",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Listen for the drink, the food item, and who is speaking ('I'd' or 'she'd').",
-            "explanation": "'Coffee' and 'tea' are the two most common hot drinks - both frequently ordered. 'I'd like' (contraction of 'I would like') - this is very common in polite requests. In fast speech, 'I'd like some' runs together quickly. Catch each food word clearly.",
-            "textToSpeak": "I'd like some coffee and toast, please.",
+            "hint": "Catch who's speaking, and whether they have or haven't done this before.",
+            "explanation": "'I've' means 'I have' pressed together, and it can sound like 'she's' if the vowel slips by fast. Also 'never' versus 'already' tells a completely different story.",
+            "textToSpeak": "I've never tried sushi before.",
             "options": [
-                "I'd like some tea and toast, please.",
-                "I'd like some coffee and eggs, please.",
-                "She'd like some coffee and toast, please.",
-                "I'd like some coffee and toast, please."
+                "I've never tried curry before.",
+                "I've already tried sushi before.",
+                "I've never tried sushi before.",
+                "She's never tried sushi before."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -228,16 +228,16 @@
             "id": "LIS_FASTSPEECHDECODER_L5_Q2",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Focus on the day of the week, and whether it opens or closes.",
-            "explanation": "'Sundays' and 'Saturdays' both end in '-days' - very easy to confuse at speed. 'Opens' vs 'closes' - opposite verbs but both start with a vowel sound. 'Opened' (past) vs 'opens' (present habit) - tense in just one letter. Restaurant vocabulary is essential daily English.",
-            "textToSpeak": "The restaurant opens at noon on Sundays.",
+            "hint": "Notice what's run out, and who's telling you.",
+            "explanation": "'We've' and 'they've' both reduce to a fast sound plus the pronoun, so listen for the vowel to tell them apart. Then catch exactly which food ran out.",
+            "textToSpeak": "We've run out of milk again.",
             "options": [
-                "The restaurant opens at noon on Saturdays.",
-                "The restaurant opens at noon on Sundays.",
-                "The restaurant closes at noon on Sundays.",
-                "The restaurant opened at noon on Sundays."
+                "We've run out of bread again.",
+                "We've run out of milk today.",
+                "They've run out of milk again.",
+                "We've run out of milk again."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -245,16 +245,16 @@
             "id": "LIS_FASTSPEECHDECODER_L5_Q3",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch the subject ('he'/'she') and both food items in the order.",
-            "explanation": "'Salad' and 'sandwich' both start with 'sa-' - a classic minimal pair confusion. 'Soup' and 'juice' are both drinks/sides. 'He' vs 'she' - the very first word is the key. In a fast food order, missing one word means missing the whole item.",
-            "textToSpeak": "He ordered a salad and a soup.",
+            "hint": "Listen for the meal, and exactly how much was or wasn't eaten.",
+            "explanation": "'Hardly touched' means you ate a little; 'haven't touched' means none at all - a big difference hiding in a small phrase. Catch 'you've' too, since it's just 'you have' pressed into one quick sound.",
+            "textToSpeak": "You've hardly touched your dinner.",
             "options": [
-                "She ordered a salad and a soup.",
-                "He ordered a sandwich and a soup.",
-                "He ordered a salad and a soup.",
-                "He ordered a salad and a juice."
+                "You've hardly touched your dinner.",
+                "You've hardly touched your breakfast.",
+                "You've barely touched your dinner.",
+                "You haven't touched your dinner."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -262,16 +262,16 @@
             "id": "LIS_FASTSPEECHDECODER_L6_Q1",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Listen for whose class, when it starts (or ends), and the time.",
-            "explanation": "'Starts' vs 'ends' - opposite verbs that sound quite different, but at speed you might catch only the first syllable. 'Eight' and 'nine' are often confused - both are one syllable. 'Our' vs 'her' - possessive pronouns before 'class'. School time vocabulary is everyday English.",
-            "textToSpeak": "Our class starts at eight in the morning.",
+            "hint": "Listen closely to 'pick up an' - the words run together. Then catch the item.",
+            "explanation": "In fast speech, 'pick up an' links into almost one word as the final consonants slide onto the next vowel. Also notice 'a jacket' versus 'an umbrella' - the little article itself hints at what's coming.",
+            "textToSpeak": "I need to pick up an umbrella.",
             "options": [
-                "Our class ends at eight in the morning.",
-                "Our class starts at eight in the morning.",
-                "Her class starts at eight in the morning.",
-                "Our class starts at nine in the morning."
+                "I need to pick up an umbrella.",
+                "I need to pick out an umbrella.",
+                "I need to pick up a jacket.",
+                "I needed to pick up an umbrella."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -279,16 +279,16 @@
             "id": "LIS_FASTSPEECHDECODER_L6_Q2",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Notice the subject, the item forgotten, and the verb - 'forgot' or 'lost'?",
-            "explanation": "'Forgot' and 'lost' are both irregular past tense verbs describing similar situations, but 'forgot' means you didn't bring it, while 'lost' means you can't find it. 'Homework' vs 'notebook' - both school items. This is very common real-world English for students.",
-            "textToSpeak": "She forgot her homework at home again.",
+            "hint": "Catch who's shopping, and whether they want bigger or smaller.",
+            "explanation": "'She's' and 'he's' reduce almost identically at speed, so only the vowel gives it away. 'Bigger' versus 'smaller' are opposites, so that one word carries the whole meaning.",
+            "textToSpeak": "He's looking for a bigger size.",
             "options": [
-                "He forgot his homework at home again.",
-                "She forgot her notebook at home again.",
-                "She lost her homework at home again.",
-                "She forgot her homework at home again."
+                "She's looking for a smaller size.",
+                "She's looking for a bigger size.",
+                "He's looking for a bigger size.",
+                "She's asking for a bigger size."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -296,16 +296,16 @@
             "id": "LIS_FASTSPEECHDECODER_L6_Q3",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Listen for the place, the floor number, and whether it's present or past tense.",
-            "explanation": "Ordinal numbers ('second', 'third') are frequently confused at speed. 'Library' vs 'office' - both institutional locations. 'Is' vs 'was' - present vs past tense. When getting directions, catching the correct floor number is absolutely critical.",
-            "textToSpeak": "The library is on the second floor.",
+            "hint": "Notice the exact reason given, and where the shopping happens.",
+            "explanation": "'Buy it' links smoothly together, almost sounding like one word, 'buyit'. Swap 'online' for 'in store' and the advice flips completely, so catch that last detail.",
+            "textToSpeak": "It's cheaper to buy it online.",
             "options": [
-                "The library is on the third floor.",
-                "The office is on the second floor.",
-                "The library is on the second floor.",
-                "The library was on the second floor."
+                "It's easier to buy it online.",
+                "It's cheaper to order it online.",
+                "It's cheaper to buy it in store.",
+                "It's cheaper to buy it online."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -313,16 +313,16 @@
             "id": "LIS_FASTSPEECHDECODER_L7_Q1",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Focus on the transport, the direction verb ('leaves'/'arrives'), and the platform number.",
-            "explanation": "'Leaves' and 'arrives' are directional opposites - critical at a bus or train station. 'Three' and 'four' sound similar and are often confused by listeners. 'Bus' vs 'train' - both common public transport. This sentence type is vital for real travel situations.",
-            "textToSpeak": "The bus leaves from platform three.",
+            "hint": "Catch how bad it is, and exactly what hurts.",
+            "explanation": "The word 'a' is said so lightly here, just a quick 'uh' sound, that all the meaning rides on the words around it. 'Slight' versus 'bad' tells you how serious it really is.",
+            "textToSpeak": "I've got a slight headache.",
             "options": [
-                "The bus leaves from platform three.",
-                "The train leaves from platform three.",
-                "The bus leaves from platform four.",
-                "The bus arrives at platform three."
+                "I've got a slight fever.",
+                "I've got a bad headache.",
+                "I've got a slight headache.",
+                "I've got a slight earache."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -330,16 +330,16 @@
             "id": "LIS_FASTSPEECHDECODER_L7_Q2",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Listen for the question word - 'how long', 'how much', or 'how soon'?",
-            "explanation": "'How long' (asks about time), 'how much' (asks about price), 'how soon' (asks about timing) - three different question types! 'Does it take' (present) vs 'did it take' (past) changes the tense. These question phrases are among the most common in everyday English conversation.",
-            "textToSpeak": "How long does it take to get there?",
+            "hint": "Listen for the exact advice word, and which professional.",
+            "explanation": "'Should' (strong advice) and 'could' (just a possibility) are both short, quick words - mixing them up changes how urgent the advice really sounds.",
+            "textToSpeak": "He should see a doctor soon.",
             "options": [
-                "How long does it take to get there?",
-                "How much does it cost to get there?",
-                "How long did it take to get there?",
-                "How soon does it take to get there?"
+                "He should see a dentist soon.",
+                "He should see a doctor soon.",
+                "He should see a doctor today.",
+                "He could see a doctor soon."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -347,16 +347,16 @@
             "id": "LIS_FASTSPEECHDECODER_L7_Q3",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Direction vocabulary: listen for 'left'/'right', and the exact landmark.",
-            "explanation": "'Left' and 'right' are opposites - getting them wrong means going the wrong way! 'At' vs 'before' - the preposition changes when you turn. 'Traffic lights' vs 'roundabout' - different road features. Giving and following directions is one of the most practical listening skills.",
-            "textToSpeak": "Turn left at the traffic lights.",
+            "hint": "Notice the small joining word - is it 'and' or 'or'? Also catch the advice itself.",
+            "explanation": "'And' means do both things; 'or' means pick one - a tiny, unstressed word with a big effect on the advice. Listen hard for it, since it barely gets any stress at all.",
+            "textToSpeak": "Drink plenty of water and get some rest.",
             "options": [
-                "Turn left at the traffic lights.",
-                "Turn left before the traffic lights.",
-                "Turn left at the roundabout.",
-                "Turn right at the traffic lights."
+                "Drink plenty of water and get some sleep.",
+                "Eat plenty of fruit and get some rest.",
+                "Drink plenty of water or get some rest.",
+                "Drink plenty of water and get some rest."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -364,16 +364,16 @@
             "id": "LIS_FASTSPEECHDECODER_L8_Q1",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Listen for who is speaking, the type of pain, and the tense.",
-            "explanation": "Health vocabulary: 'headache' and 'stomachache' both describe pain but in different places. 'I have' (present) vs 'I had' (past) - the tense tells us if it's happening now or before. 'Feel tired' is a very common phrase for expressing how you feel at the doctor's or with friends.",
-            "textToSpeak": "I have a headache and feel tired.",
+            "hint": "Catch who's watching, and roughly when.",
+            "explanation": "'I'll' packs 'I will' into one quick syllable, and it can sound like 'she'll' if you're not tracking the vowel. Then catch 'tomorrow' versus 'later' - different timeframes.",
+            "textToSpeak": "I'll watch that film tomorrow.",
             "options": [
-                "He has a headache and feels tired.",
-                "I have a headache and feel tired.",
-                "I had a headache and felt tired.",
-                "I have a stomachache and feel tired."
+                "I'll watch that film tomorrow.",
+                "I'll watch that film later.",
+                "I'll watch that show tomorrow.",
+                "She'll watch that film tomorrow."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -381,16 +381,16 @@
             "id": "LIS_FASTSPEECHDECODER_L8_Q2",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Focus on who needs to rest, what they need to do, and for how long.",
-            "explanation": "'Days' and 'weeks' sound similar but mean very different recovery times. 'Rest' vs 'eat more' are different medical advice. 'She' vs 'he' - subject pronoun at the start. Medical English like this is essential for doctor's visits and everyday health conversations.",
-            "textToSpeak": "She needs to rest for a few days.",
+            "hint": "Listen for how certain they sound, and where they're headed.",
+            "explanation": "'Probably' and 'definitely' both express likelihood but at very different strengths. Catching the right one tells you how sure the speaker actually is.",
+            "textToSpeak": "We'll probably go to the concert.",
             "options": [
-                "He needs to rest for a few days.",
-                "She needs to eat more for a few days.",
-                "She needs to rest for a few days.",
-                "She needs to rest for a few weeks."
+                "We'll definitely go to the concert.",
+                "We'll probably go to the cinema.",
+                "They'll probably go to the concert.",
+                "We'll probably go to the concert."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -398,16 +398,16 @@
             "id": "LIS_FASTSPEECHDECODER_L8_Q3",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Listen for who gave the advice and what they said to do.",
-            "explanation": "'Doctor' and 'nurse' are both medical professionals. 'Drink plenty of water', 'eat plenty of food', 'get plenty of rest' - three common pieces of medical advice. 'Said to drink/eat/get' - notice how all three use the same structure. This is reported speech - essential English grammar.",
-            "textToSpeak": "The doctor said to drink plenty of water.",
+            "hint": "Catch the exact number, and 'here' versus 'there'.",
+            "explanation": "'Ten' and 'twenty' can blur together at speed, and 'here' versus 'there' is a single sound that changes the whole meeting point. Both details need your full attention.",
+            "textToSpeak": "He'll be there in ten minutes.",
             "options": [
-                "The doctor said to drink plenty of water.",
-                "The doctor said to eat plenty of food.",
-                "The doctor said to get plenty of rest.",
-                "The nurse said to drink plenty of water."
+                "He'll be there in twenty minutes.",
+                "He'll be there in ten minutes.",
+                "He'll be here in ten minutes.",
+                "He'll be late by ten minutes."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -415,16 +415,16 @@
             "id": "LIS_FASTSPEECHDECODER_L9_Q1",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Catch the question word phrase and what item is being asked about.",
-            "explanation": "'How much does' (present) vs 'how much did' (past) - one word changes the tense. 'Jacket' and 'sweater' are both clothing items - easy to confuse. 'Cost' and 'last' ask about completely different things (price vs durability). Shopping English is one of the most practical areas for learners.",
-            "textToSpeak": "How much does this jacket cost?",
+            "hint": "Catch the exact seat request, and the polite word at the end.",
+            "explanation": "'I'd' packs 'I would' into a single beat - that quiet 'd' is what makes this a polite request instead of a flat statement. Then catch the seat type itself: window or aisle.",
+            "textToSpeak": "I'd like a window seat, please.",
             "options": [
-                "How much did this jacket cost?",
-                "How much does this jacket cost?",
-                "How long does this jacket last?",
-                "How much does this sweater cost?"
+                "I'd like a window seat, please.",
+                "I'd like an aisle seat, please.",
+                "I'd like a window seat, thanks.",
+                "I'd prefer a window seat, please."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -432,16 +432,16 @@
             "id": "LIS_FASTSPEECHDECODER_L9_Q2",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Listen for who is looking, what size, and what clothing item.",
-            "explanation": "Clothing sizes ('medium', 'large', 'small') are important shopping vocabulary. 'Shirt' vs 'coat' - both clothing items. 'I'm looking' vs 'he's looking' - subject change. In a real shop, this phrase is used constantly. The contraction 'I'm' sounds like 'aim' at normal speed.",
-            "textToSpeak": "I'm looking for a size medium shirt.",
+            "hint": "Listen for which transport wins, and whether it's 'rather' or 'better'.",
+            "explanation": "'I'd rather' expresses a preference; 'I'd better' expresses a warning to yourself - two different 'I'd' phrases that sound almost identical at speed. Also confirm which transport comes first.",
+            "textToSpeak": "I'd rather take the train than fly.",
             "options": [
-                "He's looking for a size medium shirt.",
-                "I'm looking for a size medium shirt.",
-                "I'm looking for a size medium coat.",
-                "I'm looking for a size large shirt."
+                "I'd rather take the train than fly.",
+                "I'd rather take the bus than fly.",
+                "I'd rather fly than take the train.",
+                "I'd better take the train than fly."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -449,14 +449,14 @@
             "id": "LIS_FASTSPEECHDECODER_L9_Q3",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Focus on the item, the tense ('are'/'were'), and the time ('this'/'next' week).",
-            "explanation": "'This week' vs 'next week' - a one-word difference that's crucial if you want to catch the sale. 'Are on sale' (now) vs 'were on sale' (past) - the verb tense. 'Shoes' and 'bags' - different product categories. Sale announcements use this exact structure in real stores.",
-            "textToSpeak": "The shoes are on sale this week.",
+            "hint": "Catch the destination, and how strongly they feel about it.",
+            "explanation": "'We'd love to' and 'we'd like to' both use the reduced 'we would', but 'love' shows much stronger enthusiasm than 'like'. That one word changes the whole tone.",
+            "textToSpeak": "We'd love to visit Japan someday.",
             "options": [
-                "The bags are on sale this week.",
-                "The shoes are on sale this week.",
-                "The shoes are on sale next week.",
-                "The shoes were on sale this week."
+                "We'd love to visit Korea someday.",
+                "We'd love to visit Japan someday.",
+                "We'd love to visit Japan next year.",
+                "We'd like to visit Japan someday."
             ],
             "correctAnswerIndex": 1,
             "subtype": "fastSpeechDecoder",
@@ -466,14 +466,14 @@
             "id": "LIS_FASTSPEECHDECODER_L10_Q1",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Notice the subject, the hobby verb, and the tense - 'loves' or 'loved'?",
-            "explanation": "'Read' and 'write' are both literacy activities but completely different hobbies. 'Loves' (present habit) vs 'loved' (past - perhaps she no longer does it). 'She' vs 'he' - the subject pronoun. Talking about hobbies and free time is essential conversational English.",
-            "textToSpeak": "She loves to read books in her free time.",
+            "hint": "Notice which device, and what it's running out of.",
+            "explanation": "'Phone's' is 'phone is' shrunk down to almost nothing. Swap the device or the tense and the message changes completely, even though the sentence barely sounds different.",
+            "textToSpeak": "My phone's almost out of battery.",
             "options": [
-                "He loves to read books in his free time.",
-                "She loves to write books in her free time.",
-                "She loved to read books in her free time.",
-                "She loves to read books in her free time."
+                "My phone's almost out of storage.",
+                "My laptop's almost out of battery.",
+                "My phone was almost out of battery.",
+                "My phone's almost out of battery."
             ],
             "correctAnswerIndex": 3,
             "subtype": "fastSpeechDecoder",
@@ -483,16 +483,16 @@
             "id": "LIS_FASTSPEECHDECODER_L10_Q2",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Listen for who plays, what sport, and which day of the week.",
-            "explanation": "'Tennis' and 'football' are both sports but very different. 'Saturday' and 'Sunday' are adjacent days and easily confused. 'We' vs 'they' - a small but important difference. Sports and leisure vocabulary is central to everyday social English conversation.",
-            "textToSpeak": "We play tennis every Saturday afternoon.",
+            "hint": "Listen for the small 've before 'just', and what happened to the app.",
+            "explanation": "'I've just' and 'I just' sound almost the same, but that tiny 've' connects the action to right now rather than some point in the past. Also catch 'updated' versus 'deleted' - opposite actions.",
+            "textToSpeak": "I've just updated the app.",
             "options": [
-                "They play tennis every Saturday afternoon.",
-                "We play football every Saturday afternoon.",
-                "We play tennis every Saturday afternoon.",
-                "We play tennis every Sunday afternoon."
+                "I've just updated the app.",
+                "I've just deleted the app.",
+                "I've already updated the app.",
+                "I just updated the app."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         },
@@ -500,16 +500,16 @@
             "id": "LIS_FASTSPEECHDECODER_L10_Q3",
             "interactionType": "Rapid Decoder",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
-            "hint": "Three details to catch: who, which instrument, and how long ago.",
-            "explanation": "'Guitar' and 'piano' - both instruments but completely different sounds. 'Months' vs 'years' - a massive time difference in one word. 'He' vs 'she' - the subject. 'Six months ago' is a very common time expression in English. Past tense with 'ago' tells us when something started.",
-            "textToSpeak": "He started learning guitar six months ago.",
+            "hint": "Check for 'not' first, then what they're unsure about.",
+            "explanation": "Losing that quiet 'not' flips 'not sure' into 'sure' - the exact opposite meaning. Small, unstressed words like this are exactly what fast speech loves to hide.",
+            "textToSpeak": "They're not sure if it'll work.",
             "options": [
-                "He started learning guitar six months ago.",
-                "He started learning piano six months ago.",
-                "He started learning guitar six years ago.",
-                "She started learning guitar six months ago."
+                "They're sure if it'll work.",
+                "They're not sure if it'll charge.",
+                "They're not sure if it'll work.",
+                "They weren't sure if it'll work."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "fastSpeechDecoder",
             "emoji": "⚡"
         }

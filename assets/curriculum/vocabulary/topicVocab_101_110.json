@@ -225,11 +225,11 @@
             "options": [
                 "Hooting",
                 "Wailing",
-                "Howling-with-laughter",
+                "Tittering",
                 "Whimpering",
-                "Roaring-with-laughter"
+                "Braying"
             ],
-            "correctAnswer": "Laughter:Hooting, Tears:Wailing, Laughter:Howling-with-laughter, Tears:Whimpering, Laughter:Roaring-with-laughter"
+            "correctAnswer": "Laughter:Hooting, Tears:Wailing, Laughter:Tittering, Tears:Whimpering, Laughter:Braying"
         },
         {
             "id": "VOC_TOPICVOCAB_L105_Q1",
@@ -281,12 +281,12 @@
             "explanation": "Harmony describes peaceful agreement (concord, unity); Discord describes conflict and disagreement (friction, strife).",
             "options": [
                 "Synchrony",
-                "Discord-tension",
+                "Dissonance",
                 "Rapport",
                 "Quarrel",
                 "Balance"
             ],
-            "correctAnswer": "Harmony:Synchrony, Discord:Discord-tension, Harmony:Rapport, Discord:Quarrel, Harmony:Balance"
+            "correctAnswer": "Harmony:Synchrony, Discord:Dissonance, Harmony:Rapport, Discord:Quarrel, Harmony:Balance"
         },
         {
             "id": "VOC_TOPICVOCAB_L106_Q1",
@@ -407,57 +407,57 @@
             "interactionType": "Category Climb",
             "instruction": "Sort the words into their correct categories.",
             "topicBuckets": [
-                "Fact",
-                "Myth"
+                "Amateur",
+                "Professional"
             ],
-            "hint": "A fact is something proven true; a myth is a traditional story that may not be true.",
-            "explanation": "Fact describes a verified, proven statement (data, evidence); Myth describes a traditional legend or false belief (legend, folklore).",
+            "hint": "An amateur does something for fun without pay; a professional does it as a skilled, paid career.",
+            "explanation": "Amateur describes someone who does an activity for enjoyment rather than payment (hobbyist, non-expert); Professional describes someone skilled who is paid for their work (expert, career-practitioner).",
             "options": [
-                "Data",
-                "Legend",
-                "Evidence",
-                "Folklore",
-                "Statistic"
+                "Hobbyist",
+                "Expert",
+                "Non-expert",
+                "Specialist",
+                "Recreational"
             ],
-            "correctAnswer": "Fact:Data, Myth:Legend, Fact:Evidence, Myth:Folklore, Fact:Statistic"
+            "correctAnswer": "Amateur:Hobbyist, Professional:Expert, Amateur:Non-expert, Professional:Specialist, Amateur:Recreational"
         },
         {
             "id": "VOC_TOPICVOCAB_L108_Q2",
             "interactionType": "Category Climb",
             "instruction": "Sort the words into their correct categories.",
             "topicBuckets": [
-                "Fact",
-                "Myth"
+                "Amateur",
+                "Professional"
             ],
-            "hint": "A fact is something proven true; a myth is a traditional story that may not be true.",
-            "explanation": "Fact describes a verified, proven statement (data, evidence); Myth describes a traditional legend or false belief (legend, folklore).",
+            "hint": "An amateur does something for fun without pay; a professional does it as a skilled, paid career.",
+            "explanation": "Amateur describes someone who does an activity for enjoyment rather than payment (hobbyist, non-expert); Professional describes someone skilled who is paid for their work (expert, career-practitioner).",
             "options": [
-                "Proof",
-                "Legendary-tale",
-                "Finding",
-                "Superstition",
-                "Verified-detail"
+                "Weekend-player",
+                "Paid-expert",
+                "Enthusiast",
+                "Career-athlete",
+                "Unpaid-player"
             ],
-            "correctAnswer": "Fact:Proof, Myth:Legendary-tale, Fact:Finding, Myth:Superstition, Fact:Verified-detail"
+            "correctAnswer": "Amateur:Weekend-player, Professional:Paid-expert, Amateur:Enthusiast, Professional:Career-athlete, Amateur:Unpaid-player"
         },
         {
             "id": "VOC_TOPICVOCAB_L108_Q3",
             "interactionType": "Category Climb",
             "instruction": "Sort the words into their correct categories.",
             "topicBuckets": [
-                "Fact",
-                "Myth"
+                "Amateur",
+                "Professional"
             ],
-            "hint": "A fact is something proven true; a myth is a traditional story that may not be true.",
-            "explanation": "Fact describes a verified, proven statement (data, evidence); Myth describes a traditional legend or false belief (legend, folklore).",
+            "hint": "An amateur does something for fun without pay; a professional does it as a skilled, paid career.",
+            "explanation": "Amateur describes someone who does an activity for enjoyment rather than payment (hobbyist, non-expert); Professional describes someone skilled who is paid for their work (expert, career-practitioner).",
             "options": [
-                "Confirmed-info",
-                "Old-wives-tale",
-                "Documented-truth",
-                "Fairy-tale",
-                "Record"
+                "Novice-hobbyist",
+                "Trained-specialist",
+                "Casual-player",
+                "Full-time-expert",
+                "Qualified-practitioner"
             ],
-            "correctAnswer": "Fact:Confirmed-info, Myth:Old-wives-tale, Fact:Documented-truth, Myth:Fairy-tale, Fact:Record"
+            "correctAnswer": "Amateur:Novice-hobbyist, Professional:Trained-specialist, Amateur:Casual-player, Professional:Full-time-expert, Professional:Qualified-practitioner"
         },
         {
             "id": "VOC_TOPICVOCAB_L109_Q1",
@@ -569,9 +569,9 @@
                 "Molecule",
                 "Voltage",
                 "Solid-object",
-                "Thermal-energy"
+                "Radiation"
             ],
-            "correctAnswer": "Energy:Momentum, Matter:Molecule, Energy:Voltage, Matter:Solid-object, Energy:Thermal-energy"
+            "correctAnswer": "Energy:Momentum, Matter:Molecule, Energy:Voltage, Matter:Solid-object, Energy:Radiation"
         }
     ]
 }

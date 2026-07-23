@@ -7,16 +7,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L11_Q1",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Notice 'finally' and the immediate, enthusiastic planning that follows the news.",
-            "explanation": "Starting to plan decoration immediately after getting house keys shows the speaker's excitement.",
+            "hint": "Notice 'finally' and the enthusiastic planning that follows right away.",
+            "explanation": "Starting to plan every room the moment you get new house keys is a clear sign of excitement.",
             "textToSpeak": "We finally got the keys to our new house. I've already started planning how to decorate every room.",
             "options": [
-                "excited 🤩",
                 "bored 🥱",
                 "nervous 😬",
+                "excited 🤩",
                 "sad 😢"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition",
             "emoji": "🤩"
         },
@@ -24,16 +24,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L11_Q2",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Listen for the reason behind the self-blame and what the speaker missed.",
-            "explanation": "Missing a loved one's funeral due to circumstances beyond your control causes deep sadness and guilt.",
+            "hint": "Listen for what the speaker missed and how they're judging themselves for it.",
+            "explanation": "Missing a loved one's funeral through no fault of your own, and blaming yourself anyway, is a deep and specific kind of sadness.",
             "textToSpeak": "The flight was cancelled and I couldn't make it to my grandmother's funeral. I'll never forgive myself.",
             "options": [
-                "sad 😢",
                 "surprised 😲",
                 "nervous 😬",
-                "angry 😠"
+                "angry 😠",
+                "sad 😢"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition",
             "emoji": "😢"
         },
@@ -41,16 +41,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L11_Q3",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Notice 'I know exactly' — the speaker has no doubt about their preparation.",
-            "explanation": "'Know exactly what to say' after thorough preparation is a clear expression of confidence.",
+            "hint": "Notice 'I know exactly' — the speaker has no doubt left about their preparation.",
+            "explanation": "Saying you know exactly what to say, after a full week of preparation, is a straightforward sign of confidence.",
             "textToSpeak": "I've prepared for this presentation all week. I know exactly what to say and when to say it.",
             "options": [
+                "confident 😎",
                 "nervous 😬",
                 "bored 🥱",
-                "sad 😢",
-                "confident 😎"
+                "sad 😢"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
             "emoji": "😎"
         },
@@ -58,16 +58,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L12_Q1",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Notice the gap between what was promised and what actually happened, and the speaker's reaction.",
-            "explanation": "A broken promise and the label 'ridiculous' show the speaker's frustration has turned to anger.",
+            "hint": "Notice the gap between the promise and what actually happened.",
+            "explanation": "A promised one-hour callback that turns into three days, called 'ridiculous,' is a clear sign of anger.",
             "textToSpeak": "They promised to call back within an hour, and that was three days ago. This is ridiculous.",
             "options": [
                 "happy 😊",
+                "angry 😠",
                 "surprised 😲",
-                "curious 🤔",
-                "angry 😠"
+                "curious 🤔"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition",
             "emoji": "😠"
         },
@@ -75,16 +75,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L12_Q2",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "'I can't believe it' is a direct signal. Think about why this news was so unexpected.",
-            "explanation": "A person acting completely out of character producing shocking results is a surprise-inducing event.",
+            "hint": "'I can't believe it' is a direct signal — think about why this news didn't fit expectations.",
+            "explanation": "News that contradicts everything you expected from someone, like a quiet neighbor winning a national contest, is a clear cause of surprise.",
             "textToSpeak": "My quiet neighbor, who never talks to anyone, just won the national singing competition. I can't believe it.",
             "options": [
                 "curious 🤔",
                 "angry 😠",
-                "bored 🥱",
-                "surprised 😲"
+                "surprised 😲",
+                "bored 🥱"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition",
             "emoji": "😲"
         },
@@ -92,16 +92,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L12_Q3",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Triple-checking and still feeling uneasy suggests which emotional state?",
-            "explanation": "Checking repeatedly and still feeling uneasy is a hallmark of anxiety and nervousness.",
+            "hint": "Checking something three times and still feeling uneasy points to a particular state of mind.",
+            "explanation": "Triple-checking and still feeling uneasy afterward is a familiar sign of nervousness.",
             "textToSpeak": "I've triple-checked everything but I still feel like I've forgotten something important.",
             "options": [
                 "happy 😊",
                 "excited 🤩",
-                "nervous 😬",
-                "curious 🤔"
+                "curious 🤔",
+                "nervous 😬"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition",
             "emoji": "😬"
         },
@@ -109,16 +109,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L13_Q1",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Think about the feeling of being surrounded by family in a warm, relaxed atmosphere.",
-            "explanation": "Staying at the table for hours, talking and laughing with family, is a classic description of happiness.",
+            "hint": "Think about the mood of an evening spent laughing with people you love.",
+            "explanation": "Hours spent talking and laughing with family over dinner is a warm, simple picture of happiness.",
             "textToSpeak": "My whole family came for dinner last night. We sat at the table for hours just talking and laughing.",
             "options": [
+                "happy 😊",
                 "neutral 😐",
                 "sad 😢",
-                "curious 🤔",
-                "happy 😊"
+                "curious 🤔"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
             "emoji": "😊"
         },
@@ -126,16 +126,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L13_Q2",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "'Always wanted to know' tells you how the speaker relates to this unexplained thing.",
-            "explanation": "'Always wanted to know what's inside' is a direct statement of long-held curiosity.",
+            "hint": "'Always wanted to know' tells you exactly how the speaker feels about this mystery.",
+            "explanation": "'Always wanted to know what's inside' is a direct, simple statement of curiosity.",
             "textToSpeak": "There's a locked door at the end of the hallway that nobody ever opens. I've always wanted to know what's inside.",
             "options": [
                 "bored 🥱",
-                "nervous 😬",
                 "curious 🤔",
+                "nervous 😬",
                 "angry 😠"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition",
             "emoji": "🤔"
         },
@@ -143,16 +143,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L13_Q3",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Think about what it means to stop listening because the content is too repetitive.",
-            "explanation": "Stopping listening after forty minutes on the same topic is a clear sign of boredom.",
+            "hint": "Think about what it means when someone stops listening because a topic drags on.",
+            "explanation": "Tuning out after forty minutes on the same topic is a clear, relatable sign of boredom.",
             "textToSpeak": "He's been talking about the same topic for forty minutes. I've completely stopped listening.",
             "options": [
                 "surprised 😲",
                 "happy 😊",
-                "sad 😢",
-                "bored 🥱"
+                "bored 🥱",
+                "sad 😢"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition",
             "emoji": "🥱"
         },
@@ -160,16 +160,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L14_Q1",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Think about what finding old letters from someone might suggest about the speaker's feelings.",
-            "explanation": "Sitting on the floor to read all of someone's old letters suggests a moment of quiet, personal sadness.",
+            "hint": "Think about what finding someone's old letters might stir up.",
+            "explanation": "Sitting on the floor to read every one of someone's old letters suggests a quiet, personal sadness.",
             "textToSpeak": "I found her old letters while cleaning the house. I sat on the floor and read every single one.",
             "options": [
-                "sad 😢",
                 "happy 😊",
                 "bored 🥱",
-                "curious 🤔"
+                "curious 🤔",
+                "sad 😢"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition",
             "emoji": "😢"
         },
@@ -177,8 +177,8 @@
             "id": "LIS_EMOTIONRECOGNITION_L14_Q2",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Listen for the result and how the speaker reacts to such an unexpected personal victory.",
-            "explanation": "Winning first place against a large field of competitors naturally produces excitement and elation.",
+            "hint": "Listen for the result and how the speaker reacts to this personal win.",
+            "explanation": "Winning first place out of two hundred entries is exactly the kind of news that produces real excitement.",
             "textToSpeak": "The competition results just came in — and I won! First place out of over two hundred entries!",
             "options": [
                 "excited 🤩",
@@ -194,16 +194,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L14_Q3",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "The word 'furious' is used. What emotion does 'absolutely furious' represent?",
-            "explanation": "'Absolutely furious' is a strong, direct word that clearly expresses intense anger.",
+            "hint": "The word 'furious' is a direct label — what emotion does it name?",
+            "explanation": "'Absolutely furious' is a strong, direct word choice that clearly names intense anger.",
             "textToSpeak": "Someone walked into my office and moved all my things without permission. I was absolutely furious.",
             "options": [
                 "happy 😊",
-                "curious 🤔",
                 "angry 😠",
+                "curious 🤔",
                 "surprised 😲"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition",
             "emoji": "😠"
         },
@@ -211,16 +211,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L15_Q1",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "This sentence gives information only. Does the speaker express any personal feeling?",
-            "explanation": "Plain factual information about opening times with no emotional words reflects a neutral tone.",
+            "hint": "This sentence is giving information only — does the speaker share any personal feeling?",
+            "explanation": "Plain opening-hours information, with no emotional language attached, is a good example of a neutral tone.",
             "textToSpeak": "The store closes at nine on Thursdays and stays open until ten on Fridays.",
             "options": [
                 "happy 😊",
                 "bored 🥱",
-                "curious 🤔",
-                "neutral 😐"
+                "neutral 😐",
+                "curious 🤔"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition",
             "emoji": "😐"
         },
@@ -228,16 +228,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L15_Q2",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "What is the contrast between what she first said and what she then revealed?",
-            "explanation": "The contradiction between 'never visited another country' and 'lived in Tokyo for eight years' causes surprise.",
+            "hint": "Compare what she said first with what she then revealed.",
+            "explanation": "A flat contradiction like 'never visited another country' followed by 'lived in Tokyo for eight years' is a natural cause of surprise.",
             "textToSpeak": "She said she'd never visited another country, then casually mentioned she'd lived in Tokyo for eight years.",
             "options": [
-                "surprised 😲",
                 "sad 😢",
                 "bored 🥱",
-                "neutral 😐"
+                "neutral 😐",
+                "surprised 😲"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition",
             "emoji": "😲"
         },
@@ -245,16 +245,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L15_Q3",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "What does rereading something you have already sent suggest about the speaker's state of mind?",
-            "explanation": "Rereading a submitted form out of worry about mistakes signals anxiety and nervousness.",
+            "hint": "Think about why someone would reread something they've already sent.",
+            "explanation": "Rereading a form you've already submitted, out of worry about mistakes, is a common sign of nervousness.",
             "textToSpeak": "I keep rereading my application. I've submitted it, but I'm not sure if everything was filled in correctly.",
             "options": [
-                "confident 😎",
                 "nervous 😬",
+                "confident 😎",
                 "angry 😠",
                 "excited 🤩"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
             "emoji": "😬"
         },
@@ -262,8 +262,8 @@
             "id": "LIS_EMOTIONRECOGNITION_L16_Q1",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "'My heart felt full' is a phrase that signals a particular warm feeling. What is it?",
-            "explanation": "'Heart felt full' is an idiomatic phrase expressing a deep sense of warmth and happiness.",
+            "hint": "'My heart felt full' describes a warm feeling — what emotion is that?",
+            "explanation": "'Heart felt full' is a common idiom for a deep, warm sense of happiness.",
             "textToSpeak": "My daughter called from the other side of the world just to say she was thinking of me. My heart felt full.",
             "options": [
                 "surprised 😲",
@@ -279,16 +279,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L16_Q2",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "'Intrigued' is a synonym for which emotion in the options?",
-            "explanation": "'Intrigued' and 'no idea what I'll get' show openness and interest in the unknown — that is curiosity.",
+            "hint": "'Intrigued' is a synonym hiding in plain sight — which option means the same thing?",
+            "explanation": "'Intrigued' by not knowing what's coming is simply another word for curiosity.",
             "textToSpeak": "The restaurant has no menu and the chef decides what you eat. I have no idea what I'll get, but I'm intrigued.",
             "options": [
                 "bored 🥱",
                 "angry 😠",
-                "nervous 😬",
-                "curious 🤔"
+                "curious 🤔",
+                "nervous 😬"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition",
             "emoji": "🤔"
         },
@@ -296,16 +296,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L16_Q3",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Notice the comparison the speaker makes. What does 'I have everything I need' suggest?",
-            "explanation": "Comparing to a harder past experience and stating readiness expresses clear confidence.",
-            "textToSpeak": "I've done this project before under worse conditions. This time I have everything I need to succeed.",
+            "hint": "Notice the comparison the speaker makes to a harder situation in the past.",
+            "explanation": "Comparing tonight to a tougher past experience, and expecting no trouble, is a clear expression of confidence.",
+            "textToSpeak": "I've driven this route in far worse weather than this. Tonight's drive will be no problem at all.",
             "options": [
-                "bored 🥱",
-                "confident 😎",
                 "nervous 😬",
-                "excited 🤩"
+                "bored 🥱",
+                "excited 🤩",
+                "confident 😎"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition",
             "emoji": "😎"
         },
@@ -313,16 +313,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L17_Q1",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Think about what a routine shared with someone feels like when you do it alone for the first time.",
-            "explanation": "Doing a shared routine alone 'for the first time' signals that someone is no longer there — a cause of sadness.",
+            "hint": "Think about what a shared routine feels like the first time you do it alone.",
+            "explanation": "Doing a routine you once shared, alone for the first time, points to someone missing — a natural cause of sadness.",
             "textToSpeak": "We used to walk this path together every Sunday. I walked it alone today for the first time.",
             "options": [
-                "bored 🥱",
                 "sad 😢",
+                "bored 🥱",
                 "angry 😠",
                 "curious 🤔"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
             "emoji": "😢"
         },
@@ -330,8 +330,8 @@
             "id": "LIS_EMOTIONRECOGNITION_L17_Q2",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Notice the repeated request and the speaker's reaction to it being ignored.",
-            "explanation": "Asking twice and still being ignored makes 'Unbelievable!' an expression of exasperation and anger.",
+            "hint": "Notice the repeated request and how the speaker reacts to it being ignored.",
+            "explanation": "Asking twice and still being ignored, then saying 'unbelievable,' is a familiar way to express anger.",
             "textToSpeak": "I specifically asked for no onions — twice! And they put onions on it anyway. Unbelievable!",
             "options": [
                 "sad 😢",
@@ -347,16 +347,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L17_Q3",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "What emotion goes with a countdown moment that makes someone unable to breathe with anticipation?",
-            "explanation": "Unable to breathe during a historic countdown moment is a vivid description of intense excitement.",
+            "hint": "Think about the kind of anticipation that makes someone say they can barely breathe.",
+            "explanation": "Being unable to breathe during a rocket launch countdown is a vivid way to describe intense excitement.",
             "textToSpeak": "The countdown is at five seconds. I can barely breathe — this rocket is about to launch!",
             "options": [
-                "excited 🤩",
                 "bored 🥱",
                 "nervous 😬",
+                "excited 🤩",
                 "angry 😠"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition",
             "emoji": "🤩"
         },
@@ -364,16 +364,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L18_Q1",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Think about how someone feels when they have run out of fresh content.",
-            "explanation": "Having watched everything twice and finding nothing new is a classic expression of boredom.",
+            "hint": "Think about how it feels to run out of anything fresh to watch.",
+            "explanation": "Having watched everything twice, with nothing new left, is a classic description of boredom.",
             "textToSpeak": "I've watched everything on this streaming service twice already. There's nothing new here.",
             "options": [
                 "curious 🤔",
                 "sad 😢",
-                "bored 🥱",
-                "angry 😠"
+                "angry 😠",
+                "bored 🥱"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition",
             "emoji": "🥱"
         },
@@ -381,16 +381,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L18_Q2",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "What emotion is caused by an event that was completely unexpected and hidden from the speaker?",
-            "explanation": "Walking into an unexpected surprise party is the most direct example of being surprised.",
+            "hint": "Think about what happens when an event is completely hidden from the person it's for.",
+            "explanation": "Walking into a room full of people you didn't expect is one of the clearest everyday examples of surprise.",
             "textToSpeak": "I thought I was meeting one friend for coffee. I walked in and twenty people jumped up and yelled happy birthday.",
             "options": [
+                "surprised 😲",
                 "bored 🥱",
                 "neutral 😐",
-                "excited 🤩",
-                "surprised 😲"
+                "excited 🤩"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
             "emoji": "😲"
         },
@@ -398,16 +398,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L18_Q3",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "'Stage fright' is described. What emotion does this physical description point to?",
-            "explanation": "Sweating palms and inability to eat are physical symptoms the speaker associates with stage fright — nervousness.",
+            "hint": "'Stage fright' is named directly — what physical signs go along with it here?",
+            "explanation": "Sweating palms and no appetite are physical symptoms the speaker links to stage fright, which is a form of nervousness.",
             "textToSpeak": "My palms are sweating and I can't eat anything. I wonder if this is what stage fright feels like.",
             "options": [
                 "happy 😊",
-                "curious 🤔",
                 "nervous 😬",
+                "curious 🤔",
                 "confident 😎"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition",
             "emoji": "😬"
         },
@@ -415,8 +415,8 @@
             "id": "LIS_EMOTIONRECOGNITION_L19_Q1",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "'Heart is soaring' despite physical tiredness signals what emotional state?",
-            "explanation": "'Heart is soaring' is an idiomatic phrase for a feeling of great joy despite physical difficulty.",
+            "hint": "'Heart is soaring' despite tired legs signals a particular feeling.",
+            "explanation": "'Heart is soaring' is an idiom for great joy, even when the body is worn out from effort.",
             "textToSpeak": "I ran my first marathon today. My legs are exhausted, but my heart is absolutely soaring.",
             "options": [
                 "bored 🥱",
@@ -432,16 +432,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L19_Q2",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "'Keep wondering' is the key phrase. What does it tell you about the speaker's interest?",
-            "explanation": "'Keep wondering' about someone else's thoughts is a direct expression of ongoing curiosity.",
+            "hint": "'Keep wondering' is the key phrase — what does it tell you about the speaker's interest?",
+            "explanation": "'Keep wondering' about someone else's thoughts is a simple, ongoing expression of curiosity.",
             "textToSpeak": "The old man sits at the same bench every morning and stares at the fountain. I keep wondering what he's thinking about.",
             "options": [
                 "sad 😢",
-                "curious 🤔",
                 "bored 🥱",
-                "happy 😊"
+                "happy 😊",
+                "curious 🤔"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition",
             "emoji": "🤔"
         },
@@ -450,15 +450,15 @@
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Think about the feeling of seeing strangers in a place full of personal memories.",
-            "explanation": "Seeing strangers in a meaningful personal space brings a sense of loss that reflects sadness.",
+            "explanation": "Seeing strangers in a garden full of childhood memories brings a quiet sense of loss and sadness.",
             "textToSpeak": "The house sold yesterday. I drove past and saw strangers in the garden where we used to play.",
             "options": [
-                "surprised 😲",
                 "sad 😢",
+                "surprised 😲",
                 "angry 😠",
                 "excited 🤩"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
             "emoji": "😢"
         },
@@ -466,16 +466,16 @@
             "id": "LIS_EMOTIONRECOGNITION_L20_Q1",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "One hour of waiting followed by being sent away entirely — what emotion does that produce?",
-            "explanation": "Waiting an hour and then being turned away without a solution produces frustration and anger.",
+            "hint": "Think about how an hour of waiting, followed by being turned away, would make you feel.",
+            "explanation": "An hour of waiting followed by being sent away with no solution is a common trigger for anger.",
             "textToSpeak": "I've been waiting in line for an hour, and now they're telling me the system is down and I have to come back tomorrow!",
             "options": [
                 "happy 😊",
+                "angry 😠",
                 "curious 🤔",
-                "sad 😢",
-                "angry 😠"
+                "sad 😢"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition",
             "emoji": "😠"
         },
@@ -483,8 +483,8 @@
             "id": "LIS_EMOTIONRECOGNITION_L20_Q2",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "'Ready for whatever they throw at me' signals what about the speaker's mental state?",
-            "explanation": "Declaring readiness for any question after ten years of study is a direct expression of confidence.",
+            "hint": "'Ready for whatever they throw at me' signals a particular attitude toward a challenge.",
+            "explanation": "Inviting any question after ten years of study is a direct, natural way to express confidence.",
             "textToSpeak": "I've studied this subject for ten years. Ask me anything — I'm ready for whatever they throw at me.",
             "options": [
                 "nervous 😬",
@@ -501,7 +501,7 @@
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Notice the complete contrast between what the speaker expected and what actually happened.",
-            "explanation": "Expecting bad news and receiving the opposite result produces strong surprise.",
+            "explanation": "Expecting bad news and getting the opposite instead is a strong, clear setup for surprise.",
             "textToSpeak": "My boss called me into her office. I thought I was in trouble. She gave me a raise and a promotion.",
             "options": [
                 "bored 🥱",

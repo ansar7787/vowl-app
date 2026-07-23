@@ -8,540 +8,540 @@
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
             "hint": "The key word here is a person's title or role.",
-            "explanation": "The person mentioned is artist. A person who creates paintings, music, or other forms of creative work. Here, the artist activates new projects each month but still struggles to reach a wider audience.",
-            "textToSpeak": "Although the street artist activates a new network project each month, she still struggles to reach a wider audience.",
-            "targetDetail": "artist",
+            "explanation": "That's economist: a person who studies how money and markets work. The audio confirms it — the visiting economist, whose earlier predictions had proven remarkably accurate, warned of a slower recovery.",
+            "textToSpeak": "The visiting economist, whose earlier predictions had proven remarkably accurate, warned of a slower recovery.",
+            "targetDetail": "economist",
             "options": [
-                "droid",
-                "robot",
-                "artist",
-                "expert"
+                "counselor",
+                "judge",
+                "correspondent",
+                "economist"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🎨"
+            "emoji": "📉"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L181_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "The key word describes an action or activity.",
-            "explanation": "Activates is the action - to start or switch something on so it begins to work. In the sentence, activates a stronger network even though the infrastructure is outdated.",
-            "textToSpeak": "The smart home system activates a stronger network connection automatically, even though the underlying infrastructure is outdated.",
-            "targetDetail": "activates",
+            "hint": "Isolate the activity word from the rest of the sentence.",
+            "explanation": "Forecasts is correct — to predict what will happen based on current information. Notice how she forecasts downturns with far greater precision than the analysts who trained her originally did.",
+            "textToSpeak": "She forecasts downturns with far greater precision than the analysts who trained her originally did.",
+            "targetDetail": "forecasts",
             "options": [
-                "deploys",
-                "restores",
-                "launches",
-                "activates"
+                "forecasts",
+                "allocates",
+                "finalizes",
+                "verifies"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🔘"
+            "emoji": "📊"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L181_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the name of the thing or object mentioned.",
-            "explanation": "You heard network - a group of connected computers or devices that can share information. The audio describes despite the faster network, the studio still suffers from regular signal drops.",
-            "textToSpeak": "Despite the city's investment in a faster network, the artist's home studio still suffers from regular signal drops.",
-            "targetDetail": "network",
+            "hint": "Zero in on the noun naming the item or concept.",
+            "explanation": "Report fits here — a document that gives information or an account of something. You can hear that the report, which had circulated privately for weeks before release, ultimately confirmed the worst projections.",
+            "textToSpeak": "The report, which had circulated privately for weeks before release, ultimately confirmed the worst projections.",
+            "targetDetail": "report",
             "options": [
+                "checkup",
                 "network",
-                "portal",
-                "protocol",
-                "node"
+                "report",
+                "album"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🌐"
+            "emoji": "📑"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L182_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the type of person described in the sentence.",
-            "explanation": "The correct person is hacker - a person who finds and exploits weaknesses in computer systems. The sentence tells us even though the hacker repairs flaws for free, companies refuse to act.",
-            "textToSpeak": "Even though the ethical hacker repairs security flaws for free, many companies still refuse to implement his recommendations.",
-            "targetDetail": "hacker",
+            "hint": "Which word tells you the person's identity?",
+            "explanation": "The person mentioned is diplomat: a person who represents their country in relations abroad. Here, the retired diplomat, who had negotiated three separate ceasefires during her long career, mediated the talks.",
+            "textToSpeak": "The retired diplomat, who had negotiated three separate ceasefires during her long career, mediated the talks.",
+            "targetDetail": "diplomat",
             "options": [
-                "traveler",
-                "hacker",
-                "pilot",
-                "detective"
+                "diplomat",
+                "consultant",
+                "entrepreneur",
+                "biographer"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🔐"
+            "emoji": "🌍"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L182_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the action word - what is the person or thing doing?",
-            "explanation": "The correct action is repairs - to fix something that is broken or not working correctly. In this sentence, repairs the household module every weekend although the landlord promised to hire someone.",
-            "textToSpeak": "She repairs the household module every weekend, although the landlord has promised to hire a professional for months.",
-            "targetDetail": "repairs",
+            "hint": "Focus on the doing word, not the subject or object.",
+            "explanation": "Negotiates fits the sentence — to discuss something in order to reach an agreement. You can hear that she negotiates fragile agreements with considerably more patience than most senior officials twice her age.",
+            "textToSpeak": "She negotiates fragile agreements with considerably more patience than most senior officials twice her age.",
+            "targetDetail": "negotiates",
             "options": [
-                "repairs",
-                "restores",
-                "locates",
-                "activates"
+                "oversees",
+                "certifies",
+                "negotiates",
+                "sponsors"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🤝"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L182_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the item, not the person or action described.",
-            "explanation": "You heard module - a separate unit that is part of a larger system, course, or program. The audio describes despite the module's useful features, most residents still prefer to manage things manually.",
-            "textToSpeak": "Despite the module's many useful features, most residents in the building still prefer to manage tasks manually.",
-            "targetDetail": "module",
+            "hint": "Listen for the name of the thing or object mentioned.",
+            "explanation": "Listen for settlement: an official agreement that ends a disagreement. In this sentence, the settlement, which had taken almost a decade to negotiate, was finally signed by both governments.",
+            "textToSpeak": "The settlement, which had taken almost a decade to negotiate, was finally signed by both governments.",
+            "targetDetail": "settlement",
             "options": [
-                "code",
-                "database",
-                "module",
-                "software"
+                "settlement",
+                "server",
+                "clause",
+                "merger"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "📜"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L183_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the name or role of the person in the sentence.",
-            "explanation": "Robot is correct - a machine programmed to carry out tasks automatically. In the sentence, the classroom robot analyzes data accurately, although teachers still find the output difficult to interpret.",
-            "textToSpeak": "Although the classroom robot analyzes data very accurately, some teachers still find it difficult to interpret the output.",
-            "targetDetail": "robot",
+            "hint": "Track the noun that identifies the human subject.",
+            "explanation": "curator is correct — a person who manages the items in a museum or gallery. In the audio, the museum's curator, whose controversial acquisitions had drawn criticism for years, defended the new exhibit.",
+            "textToSpeak": "The museum's curator, whose controversial acquisitions had drawn criticism for years, defended the new exhibit.",
+            "targetDetail": "curator",
             "options": [
-                "student",
-                "expert",
-                "robot",
-                "artist"
+                "lawyer",
+                "curator",
+                "commuter",
+                "therapist"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🤖"
+            "emoji": "🖼️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L183_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the verb, not the person or the thing they mention.",
-            "explanation": "The correct action is analyzes - to examine something carefully in detail to understand its parts or meaning. In this sentence, analyzes student data even though teachers have raised concerns about its consistency.",
-            "textToSpeak": "The grading tool analyzes student data continuously, even though several teachers have raised concerns about its consistency.",
-            "targetDetail": "analyzes",
+            "hint": "Focus on the activity, not who does it or what it involves.",
+            "explanation": "The action named is compiles, which means to collect information from different sources into one. To be exact, she compiles provenance records with far more rigor than the institution previously required of anyone.",
+            "textToSpeak": "She compiles provenance records with far more rigor than the institution previously required of anyone.",
+            "targetDetail": "compiles",
             "options": [
-                "scans",
-                "analyzes",
-                "creates",
-                "validates"
+                "compiles",
+                "supervises",
+                "drafts",
+                "diagnoses"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🔍"
+            "emoji": "📋"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L183_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Which object or thing do you hear in the sentence?",
-            "explanation": "You heard data - information that is collected, stored, or processed, often by a computer. The audio describes despite the improved data system, student records were lost during migration.",
-            "textToSpeak": "Despite the school's improved data storage system, key student records were still lost during the recent server migration.",
-            "targetDetail": "data",
+            "hint": "Home in on the specific item described.",
+            "explanation": "The object described is manuscript — the original written or typed version of a text. As stated, the manuscript, whose authenticity had been questioned for decades, was finally verified by independent scholars.",
+            "textToSpeak": "The manuscript, whose authenticity had been questioned for decades, was finally verified by independent scholars.",
+            "targetDetail": "manuscript",
             "options": [
-                "data",
-                "database",
-                "software",
-                "archive"
+                "forecast",
+                "endowment",
+                "manuscript",
+                "algorithm"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🗄️"
+            "emoji": "📜"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L184_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on who is being described, not what they do or use.",
-            "explanation": "The person mentioned is teacher. A person who helps others learn a subject or develop a skill. Here, even though the teacher observes every student, the terminal facilities limit assessment.",
-            "textToSpeak": "Even though the dedicated teacher observes every student individually, the school's terminal facilities still limit effective assessment.",
-            "targetDetail": "teacher",
+            "hint": "Notice the person's title or job mentioned in the audio.",
+            "explanation": "Right answer: architect, a person who designs buildings. That's because the senior architect, whose earlier designs had been criticized as impractical, redeemed herself with this project.",
+            "textToSpeak": "The senior architect, whose earlier designs had been criticized as impractical, redeemed herself with this project.",
+            "targetDetail": "architect",
             "options": [
-                "teacher",
-                "robot",
-                "student",
-                "droid"
+                "architect",
+                "therapist",
+                "negotiator",
+                "professor"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "👨‍🏫"
+            "emoji": "📐"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L184_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
             "hint": "Which action or activity do you hear in the sentence?",
-            "explanation": "The correct action is observes - to watch something carefully and attentively. In this sentence, observes each terminal session in real time although privacy concerns remain.",
-            "textToSpeak": "The assessment software observes each student's terminal session in real time, although privacy concerns have not yet been resolved.",
-            "targetDetail": "observes",
+            "explanation": "Listen for oversees: to supervise a task or a group of people. As stated, she oversees construction timelines with considerably more discipline than the firm's previous project leads ever did.",
+            "textToSpeak": "She oversees construction timelines with considerably more discipline than the firm's previous project leads ever did.",
+            "targetDetail": "oversees",
             "options": [
-                "monitors",
-                "scans",
-                "observes",
-                "validates"
+                "oversees",
+                "diagnoses",
+                "audits",
+                "delegates"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🏗️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L184_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the specific item being used, fixed, or mentioned.",
-            "explanation": "You heard terminal - a place where journeys begin or end, or a device used to access a network. The audio describes despite the new terminal, students in remote areas still struggle to access lessons.",
-            "textToSpeak": "Despite the school's new interactive terminal, students in remote areas still struggle to access lessons reliably.",
-            "targetDetail": "terminal",
+            "hint": "Catch the word that names the object precisely.",
+            "explanation": "Right answer: proposal, a formal plan or suggestion put forward for consideration. That's because the proposal, which had been rejected twice before, was ultimately approved without a single amendment.",
+            "textToSpeak": "The proposal, which had been rejected twice before, was ultimately approved without a single amendment.",
+            "targetDetail": "proposal",
             "options": [
-                "network",
-                "protocol",
-                "terminal",
-                "portal"
+                "contract",
+                "budget",
+                "assignment",
+                "proposal"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🖥️"
+            "emoji": "📋"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L185_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the person's title or job mentioned in the audio.",
-            "explanation": "The correct person is explorer - a person who travels to new or unknown places to discover and investigate. The sentence tells us the market explorer launches research every quarter, although findings are rarely acted on in time.",
-            "textToSpeak": "Although the market explorer launches detailed competitor research every quarter, the findings are rarely acted on in time.",
-            "targetDetail": "explorer",
+            "hint": "Pinpoint the person's job or family connection.",
+            "explanation": "The role named is judge, a person who presides over a court of law. Specifically, the retired judge, whose rulings had shaped local policy for a generation, published a candid memoir.",
+            "textToSpeak": "The retired judge, whose rulings had shaped local policy for a generation, published a candid memoir.",
+            "targetDetail": "judge",
             "options": [
-                "detective",
-                "explorer",
-                "hacker",
-                "scout"
+                "judge",
+                "researcher",
+                "negotiator",
+                "historian"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🔭"
+            "emoji": "⚖️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L185_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to what is happening, not who or what is involved.",
-            "explanation": "You heard launches. This verb means to send something into action, space, or public use for the first time. In the audio, launches a new sensor report every month even though old data is rarely fully analyzed.",
-            "textToSpeak": "The analytics team launches a new sensor monitoring report every month, even though the old data is rarely fully analyzed.",
-            "targetDetail": "launches",
+            "hint": "Your job: name the action, nothing else.",
+            "explanation": "That's the verb authorizes: to give official permission for something. Here, she authorizes appeals with noticeably more caution than the magistrates who preceded her in the role.",
+            "textToSpeak": "She authorizes appeals with noticeably more caution than the magistrates who preceded her in the role.",
+            "targetDetail": "authorizes",
             "options": [
-                "launches",
-                "deploys",
-                "activates",
-                "updates"
+                "recruits",
+                "analyzes",
+                "authorizes",
+                "mediates"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "📜"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L185_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to the thing, not who is using it or what they do.",
-            "explanation": "The correct object is sensor - a device that detects changes such as motion, light, heat, or sound. In the audio, despite replacing the sensor twice, the system still fails to detect movement in the blind spot.",
-            "textToSpeak": "Despite replacing the motion sensor twice, the warehouse security system still fails to detect movement in the blind spot.",
-            "targetDetail": "sensor",
+            "hint": "Isolate the noun that names the thing itself.",
+            "explanation": "The correct object is settlement — an official agreement that ends a disagreement. In the audio, the settlement, which both sides had quietly resisted for months, was eventually finalized under new pressure.",
+            "textToSpeak": "The settlement, which both sides had quietly resisted for months, was eventually finalized under new pressure.",
+            "targetDetail": "settlement",
             "options": [
-                "sensor",
+                "portfolio",
                 "satellite",
-                "chip",
-                "engine"
+                "clause",
+                "settlement"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "📜"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L186_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Which person's name or role do you hear in the sentence?",
-            "explanation": "The person mentioned is droid. A robot designed to perform tasks automatically, often resembling a human. Here, even though the droid evaluates stock automatically, staff still manually check for chip defects.",
-            "textToSpeak": "Even though the warehouse droid evaluates incoming stock automatically, staff still spend hours manually checking for chip defects.",
-            "targetDetail": "droid",
+            "hint": "Notice which person is named — not what happens.",
+            "explanation": "The correct person is surgeon — a doctor who performs operations. The sentence tells us the lead surgeon, whose steady hands had saved countless patients over the years, retired this spring.",
+            "textToSpeak": "The lead surgeon, whose steady hands had saved countless patients over the years, retired this spring.",
+            "targetDetail": "surgeon",
             "options": [
-                "droid",
-                "expert",
-                "robot",
-                "artist"
+                "surgeon",
+                "commuter",
+                "critic",
+                "consultant"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🤖"
+            "emoji": "🏥"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L186_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the action being performed in the audio.",
-            "explanation": "The correct action is evaluates - to judge the value, quality, or performance of something. In this sentence, evaluates each chip shipment although minor faults still occasionally pass undetected.",
-            "textToSpeak": "The supply chain system evaluates each chip shipment carefully, although minor faults still occasionally pass through undetected.",
-            "targetDetail": "evaluates",
+            "hint": "What is being done? Listen for the verb.",
+            "explanation": "supervises is the action — to oversee and direct the work of others. In the audio, she supervises junior surgeons with considerably more patience than the department has typically shown before.",
+            "textToSpeak": "She supervises junior surgeons with considerably more patience than the department has typically shown before.",
+            "targetDetail": "supervises",
             "options": [
-                "scans",
-                "analyzes",
-                "creates",
-                "evaluates"
+                "sponsors",
+                "operates",
+                "supervises",
+                "certifies"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🩺"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L186_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the object or concept named in the sentence.",
-            "explanation": "The thing mentioned is chip: a small electronic part that stores or processes information inside a device. Here, despite the faster chip, the billing software still crashes under heavy load.",
-            "textToSpeak": "Despite the upgrade to a faster processing chip, the company's core billing software still crashes under heavy load.",
-            "targetDetail": "chip",
+            "hint": "Focus on the item, not the person or action described.",
+            "explanation": "That's diagnosis — a doctor's identification of an illness. The audio confirms it: the diagnosis, which several specialists had initially disputed, was ultimately confirmed by further extensive testing.",
+            "textToSpeak": "The diagnosis, which several specialists had initially disputed, was ultimately confirmed by further extensive testing.",
+            "targetDetail": "diagnosis",
             "options": [
-                "satellite",
-                "device",
-                "chip",
-                "circuit"
+                "diagnosis",
+                "ceremony",
+                "lecture",
+                "exam"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🔌"
+            "emoji": "📋"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L187_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to who the sentence is about.",
-            "explanation": "Traveler is correct - a person who moves between places, often over long distances. In the sentence, the traveler validates her node pass at every checkpoint, although delays still occur.",
-            "textToSpeak": "Although the solo traveler validates her node access pass at every checkpoint, delays at the border still occur regularly.",
-            "targetDetail": "traveler",
+            "hint": "Notice the exact word that names who is involved.",
+            "explanation": "The person in question is volunteer: a person who works for a cause without being paid. To be exact, the community organizer, whose tireless volunteer work had gone largely unrecognized for years, finally received an award.",
+            "textToSpeak": "The community organizer, whose tireless volunteer work had gone largely unrecognized for years, finally received an award.",
+            "targetDetail": "volunteer",
             "options": [
-                "traveler",
-                "detective",
-                "hacker",
-                "explorer"
+                "dentist",
+                "veterinarian",
+                "butcher",
+                "volunteer"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🎉"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L187_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the doing word, not the subject or object.",
-            "explanation": "The correct action is validates - to confirm that something is correct, genuine, or acceptable. In this sentence, validates each entry node automatically even though the process still takes several minutes.",
-            "textToSpeak": "The customs platform validates each passenger's entry node details automatically, even though the process can still take several minutes.",
-            "targetDetail": "validates",
+            "hint": "Listen closely for the doing-word in the sentence.",
+            "explanation": "Right answer: coordinates, meaning to organize people or things to work well together. That's because she coordinates neighborhood initiatives with far more transparency than the committee had ever previously allowed.",
+            "textToSpeak": "She coordinates neighborhood initiatives with far more transparency than the committee had ever previously allowed.",
+            "targetDetail": "coordinates",
             "options": [
-                "evaluates",
-                "creates",
-                "observes",
-                "validates"
+                "returns",
+                "explains",
+                "coordinates",
+                "recovers"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🗓️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L187_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
             "hint": "Listen for the specific thing described in the audio.",
-            "explanation": "The thing mentioned is node: a single connection point within a larger network or system. Here, despite a validated node, several passengers were still stopped at security.",
-            "textToSpeak": "Despite having a validated entry node, several passengers were still stopped and questioned at the airport security checkpoint.",
-            "targetDetail": "node",
+            "explanation": "The item named is charity, an organization that helps people in need. To be exact, the charity, which had struggled financially for several years, unexpectedly received a substantial private donation.",
+            "textToSpeak": "The charity, which had struggled financially for several years, unexpectedly received a substantial private donation.",
+            "targetDetail": "charity",
             "options": [
-                "system",
-                "portal",
-                "node",
-                "terminal"
+                "charity",
+                "script",
+                "presentation",
+                "voucher"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🌐"
+            "emoji": "🎗️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L188_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
             "hint": "Focus on the person, not the action or the object they mention.",
-            "explanation": "The person mentioned is teacher. A person who helps others learn a subject or develop a skill. Here, even though the teacher encrypts network resources, data leaks still occur on shared connections.",
-            "textToSpeak": "Even though the experienced travel teacher encrypts all student network resources, data leaks have still occurred on shared connections.",
-            "targetDetail": "teacher",
+            "explanation": "Professor fits — a senior teacher at a university. You can hear that the visiting professor, whose controversial theories had divided the department for years, finally presented conclusive evidence.",
+            "textToSpeak": "The visiting professor, whose controversial theories had divided the department for years, finally presented conclusive evidence.",
+            "targetDetail": "professor",
             "options": [
-                "robot",
-                "hero",
-                "artist",
-                "teacher"
+                "counselor",
+                "professor",
+                "biographer",
+                "auditor"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "👨‍🏫"
+            "emoji": "🎓"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L188_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for what is happening, not to whom or with what.",
-            "explanation": "The correct action is encrypts - to convert data into a code to protect it from unauthorized access. In this sentence, encrypts data on the shared network although some older devices remain vulnerable.",
-            "textToSpeak": "The travel security tool encrypts all data on the shared network automatically, although some older devices still remain vulnerable.",
-            "targetDetail": "encrypts",
+            "hint": "Listen for the word describing the ongoing task.",
+            "explanation": "Grades is the detail — to give a mark or score to a piece of work. The audio makes clear that she grades doctoral theses with considerably more rigor than most senior faculty members ever have.",
+            "textToSpeak": "She grades doctoral theses with considerably more rigor than most senior faculty members ever have.",
+            "targetDetail": "grades",
             "options": [
-                "secures",
-                "encrypts",
-                "sends",
-                "transfers"
+                "publishes",
+                "prescribes",
+                "approves",
+                "grades"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight",
+            "emoji": "📄"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L188_Q3",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "The item's name is the target — set aside who and what happened.",
+            "explanation": "Curriculum is correct — the subjects taught in a course of study. The sentence tells us the curriculum, which had remained largely unchanged for over a decade, was finally overhauled this term.",
+            "textToSpeak": "The curriculum, which had remained largely unchanged for over a decade, was finally overhauled this term.",
+            "targetDetail": "curriculum",
+            "options": [
+                "discount",
+                "curriculum",
+                "warranty",
+                "assignment"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "detailSpotlight",
+            "emoji": "📚"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L189_Q1",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "What title or relationship word describes the subject?",
+            "explanation": "Listen for architect: a person who designs buildings. In this case, the software architect, whose earlier system had famously collapsed under pressure, redesigned it from the ground up.",
+            "textToSpeak": "The software architect, whose earlier system had famously collapsed under pressure, redesigned it from the ground up.",
+            "targetDetail": "architect",
+            "options": [
+                "inspector",
+                "recruiter",
+                "architect",
+                "executive"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight",
+            "emoji": "💻"
+        },
+        {
+            "id": "LIS_DETAILSPOTLIGHT_L189_Q2",
+            "interactionType": "Flashlight Search",
+            "instruction": "Listen to the audio and select the correct detail.",
+            "hint": "The action, not the person or item, is the target here.",
+            "explanation": "The doing-word is authorizes — to give official permission for something. The sentence confirms she authorizes critical deployments with far more caution than the engineering team once considered necessary.",
+            "textToSpeak": "She authorizes critical deployments with far more caution than the engineering team once considered necessary.",
+            "targetDetail": "authorizes",
+            "options": [
+                "drafts",
+                "authorizes",
+                "finalizes",
+                "audits"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
             "emoji": "🔐"
         },
         {
-            "id": "LIS_DETAILSPOTLIGHT_L188_Q3",
-            "interactionType": "Flashlight Search",
-            "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "The key word names a thing, not a person or an action.",
-            "explanation": "The correct object is network - a group of connected computers or devices that can share information. In the audio, despite encrypting the hotel network, guests still reported their devices were compromised.",
-            "textToSpeak": "Despite encrypting the hotel network, several guests still reported that their devices had been compromised during their stay.",
-            "targetDetail": "network",
-            "options": [
-                "node",
-                "network",
-                "portal",
-                "terminal"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "detailSpotlight",
-            "emoji": "🌐"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L189_Q1",
-            "interactionType": "Flashlight Search",
-            "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "The key word here is a person's title or role.",
-            "explanation": "Mentor is correct - an experienced person who guides and advises someone less experienced. In the sentence, her mentor evaluates every device option, although he still recommends the most basic model.",
-            "textToSpeak": "Although her career mentor evaluates every new device option available, he still recommends starting with the most basic model.",
-            "targetDetail": "mentor",
-            "options": [
-                "student",
-                "mentor",
-                "robot",
-                "teacher"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "detailSpotlight",
-            "emoji": "👨‍🏫"
-        },
-        {
-            "id": "LIS_DETAILSPOTLIGHT_L189_Q2",
-            "interactionType": "Flashlight Search",
-            "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "The key word describes an action or activity.",
-            "explanation": "The action is evaluates, meaning to judge the value, quality, or performance of something. Here, evaluates each new device even though the family rarely upgrades more than once a year.",
-            "textToSpeak": "The family tech advisor evaluates each new device on the market, even though the family rarely upgrades more than once a year.",
-            "targetDetail": "evaluates",
-            "options": [
-                "validates",
-                "measures",
-                "analyzes",
-                "evaluates"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "detailSpotlight",
-            "emoji": "✨"
-        },
-        {
             "id": "LIS_DETAILSPOTLIGHT_L189_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the name of the thing or object mentioned.",
-            "explanation": "The correct object is device - a small machine or tool designed to perform a specific job. In the audio, despite buying the highest-rated device, the family still experienced connection problems.",
-            "textToSpeak": "Despite buying the most highly rated device on the market, the family still experienced persistent connection problems at home.",
-            "targetDetail": "device",
+            "hint": "Don't get distracted by the person; focus on the thing.",
+            "explanation": "The thing mentioned is algorithm: a set of steps a computer follows to solve a problem. Here, the algorithm, which had produced biased results for months without detection, was eventually rewritten entirely.",
+            "textToSpeak": "The algorithm, which had produced biased results for months without detection, was eventually rewritten entirely.",
+            "targetDetail": "algorithm",
             "options": [
-                "satellite",
-                "drone",
-                "device",
-                "circuit"
+                "circuit",
+                "algorithm",
+                "merger",
+                "software"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🔌"
+            "emoji": "🧮"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L190_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the type of person described in the sentence.",
-            "explanation": "You heard scout: a person who goes ahead to gather information or find the best option. The audio shows even though the scout activates the module each evening, not all members check it.",
-            "textToSpeak": "Even though the family scout activates the shared module every evening, not all family members remember to check it.",
-            "targetDetail": "scout",
+            "hint": "The role word is the target — everything else is context.",
+            "explanation": "Scientist is who's described — a person who studies the natural world through experiments. The audio states that the data scientist, whose early warnings about the breach had initially been dismissed, was finally vindicated.",
+            "textToSpeak": "The data scientist, whose early warnings about the breach had initially been dismissed, was finally vindicated.",
+            "targetDetail": "scientist",
             "options": [
-                "hacker",
-                "explorer",
-                "commander",
-                "scout"
+                "administrator",
+                "correspondent",
+                "scientist",
+                "publisher"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🔭"
+            "emoji": "🔬"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L190_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the action word - what is the person or thing doing?",
-            "explanation": "Activates is the action - to start or switch something on so it begins to work. In the sentence, activates the household module each morning although teenagers rarely engage with it.",
-            "textToSpeak": "She activates the household sharing module each morning, although her teenage children rarely engage with the shared content.",
-            "targetDetail": "activates",
+            "hint": "What action connects the subject to the rest of the sentence?",
+            "explanation": "You heard monitors: to watch and check something regularly. In this sentence, she monitors user credentials with considerably more vigilance since the incident nearly ended her career.",
+            "textToSpeak": "She monitors user credentials with considerably more vigilance since the incident nearly ended her career.",
+            "targetDetail": "monitors",
             "options": [
-                "repairs",
-                "locates",
-                "updates",
-                "activates"
+                "performs",
+                "arrives",
+                "checks out",
+                "monitors"
             ],
             "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🔘"
+            "emoji": "🔐"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L190_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the item, not the person or action described.",
-            "explanation": "The thing mentioned is module: a separate unit that is part of a larger system, course, or program. Here, despite the shared module being available, most members still prefer text messages.",
-            "textToSpeak": "Despite the family's shared learning module being widely available, most members still prefer to organize tasks through text messages.",
-            "targetDetail": "module",
+            "hint": "Focus on the noun that identifies the object.",
+            "explanation": "You heard database, an organized collection of information stored on a computer. Notice that the credential database, which had never been properly encrypted, was finally secured after the scandal.",
+            "textToSpeak": "The credential database, which had never been properly encrypted, was finally secured after the scandal.",
+            "targetDetail": "database",
             "options": [
-                "module",
                 "database",
-                "code",
-                "data"
+                "signal",
+                "audit",
+                "credential"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🗄️"
         }
     ]
 }

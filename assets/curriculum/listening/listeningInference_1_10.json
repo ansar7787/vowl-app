@@ -7,541 +7,541 @@
             "id": "LIS_LISTENINGINFERENCE_L1_Q1",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for the family member mentioned at the start.",
-            "explanation": "'My sister made pancakes' - the subject of the sentence is 'my sister'. In English, the subject usually comes before the verb. Here, 'my sister' = the person doing the action.",
-            "textToSpeak": "My sister made pancakes this morning.",
-            "question": "Who made pancakes this morning?",
+            "hint": "Think about what laughing and clapping usually show.",
+            "explanation": "Laughing and clapping are things people do when they're happy or excited. Nothing in the sentence says 'happy' directly — you have to read her actions to know her feeling.",
+            "textToSpeak": "She was laughing and clapping her hands.",
+            "question": "How does she feel?",
             "options": [
-                "My mother",
-                "My brother",
-                "A friend",
-                "My sister"
+                "Angry",
+                "Happy",
+                "Tired",
+                "Sad"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "👩‍👧‍👦"
+            "emoji": "😊"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L1_Q2",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Focus on who is giving the instruction.",
-            "explanation": "The bus driver asked everyone to move. 'The bus driver' is the subject performing the action of asking. Passengers are the people being asked, not the ones asking.",
-            "textToSpeak": "The bus driver asked everyone to move to the back.",
-            "question": "Who asked people to move?",
+            "hint": "Think about why someone would wear all three of those things together.",
+            "explanation": "A coat, hat, and gloves are all worn to stay warm. Putting on all three at once is a strong clue that it's cold outside, even though the word 'cold' is never said.",
+            "textToSpeak": "He put on his coat, his hat, and his gloves before going outside.",
+            "question": "What is the weather probably like?",
             "options": [
-                "The passengers",
-                "A police officer",
-                "The bus driver",
-                "The conductor"
+                "Hot",
+                "Sunny and warm",
+                "Cold",
+                "Mild"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference",
-            "emoji": "🚌"
+            "emoji": "🌦️"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L1_Q3",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for the activity mentioned after 'is'.",
-            "explanation": "'Is watching the news' - the present continuous tense ('is + -ing') tells us the action happening right now. Dad's activity is watching the news, not cooking or reading.",
-            "textToSpeak": "Dad is watching the news in the living room.",
-            "question": "What is Dad doing?",
+            "hint": "Think about what a wagging tail usually means.",
+            "explanation": "A wagging tail and running to the door are signs of excitement, not fear or tiredness. Dogs often react this way when they know a walk or their owner's return is coming.",
+            "textToSpeak": "The dog wagged its tail and ran straight to the door when it heard the keys.",
+            "question": "How does the dog feel?",
             "options": [
-                "Watching the news",
-                "Cooking dinner",
-                "Reading a book",
-                "Sleeping on the sofa"
+                "Sick",
+                "Scared",
+                "Sleepy",
+                "Excited"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference",
-            "emoji": "📺"
+            "emoji": "🐾"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L2_Q1",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for the drink mentioned alongside the food.",
-            "explanation": "She ordered 'a glass of water' to drink. 'A glass of' tells you it's a drink, not food. The sandwich is the food item. Listening for drink vocabulary helps: glass, cup, bottle.",
-            "textToSpeak": "She ordered a chicken sandwich and a glass of water.",
-            "question": "What did she order to drink?",
+            "hint": "Think about who gives instructions about books and pages.",
+            "explanation": "A teacher giving an instruction about a book and a page number is something that happens in a classroom. No other place fits a teacher and a textbook together.",
+            "textToSpeak": "The teacher told everyone to open their books to page ten.",
+            "question": "Where is this most likely happening?",
             "options": [
-                "Orange juice",
-                "Tea",
-                "Coffee",
-                "Water"
+                "In a kitchen",
+                "At a train station",
+                "In a classroom",
+                "In a hospital"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference",
-            "emoji": "💧"
+            "emoji": "🏫"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L2_Q2",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for the activity after 'are'.",
-            "explanation": "'Are playing football' - present continuous for an action in progress. The location is 'in the park', which confirms an outdoor physical activity. Football is the sport they're playing.",
-            "textToSpeak": "The children are playing football in the park.",
-            "question": "What are the children doing?",
+            "hint": "Think about what causes steam and the smell of eggs.",
+            "explanation": "Steam from a pan and the smell of eggs both point to cooking. Eggs are a common breakfast food, so cooking breakfast is the best explanation for both clues together.",
+            "textToSpeak": "Steam rose from the pan, and the smell of eggs filled the kitchen.",
+            "question": "What is most likely happening?",
             "options": [
-                "Sleeping",
-                "Reading books",
-                "Playing football",
-                "Watching TV"
+                "Someone is cooking breakfast",
+                "Someone is watching television",
+                "Someone is cleaning the floor",
+                "Someone is doing homework"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "⚽"
+            "emoji": "🍳"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L2_Q3",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for the location mentioned after 'put his phone'.",
-            "explanation": "'Put his phone on the table' - 'on' is the preposition indicating position. 'Table' is the surface. He did two things: put his phone down, then went to bed. These happened in that order.",
-            "textToSpeak": "He put his phone on the table and went to bed.",
-            "question": "Where did he put his phone?",
+            "hint": "Think about who usually tucks a child into bed at night.",
+            "explanation": "Tucking a child into bed and kissing them goodnight is a caring, parental action. While it could be another close relative, a mother is the most natural fit for this bedtime routine.",
+            "textToSpeak": "She tucked the little boy into bed and kissed him goodnight.",
+            "question": "What is her relationship to the boy?",
             "options": [
-                "On the chair",
-                "On the table",
-                "In his bag",
-                "Under his pillow"
+                "She is his doctor",
+                "She is his teacher",
+                "She is a stranger",
+                "She is likely his mother"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference",
-            "emoji": "🪑"
+            "emoji": "🛏️"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L3_Q1",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for the location word after 'at'.",
-            "explanation": "'At the front door' - 'front' distinguishes this from the back door. The preposition 'at' is used for specific points. Knowing front/back, inside/outside helps you catch location details quickly.",
-            "textToSpeak": "She's waiting for you at the front door.",
-            "question": "Where is she waiting?",
+            "hint": "Think about why someone would check the time again and again.",
+            "explanation": "Checking a watch repeatedly and staring down an empty road are signs that someone is waiting for something that hasn't arrived yet — a clear sign of impatience.",
+            "textToSpeak": "He kept checking his watch and looking down the empty road.",
+            "question": "How does he feel?",
             "options": [
-                "At the back door",
-                "In the kitchen",
-                "In the garden",
-                "At the front door"
+                "Bored",
+                "Proud",
+                "Impatient",
+                "Relaxed"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference",
-            "emoji": "🪑"
+            "emoji": "⌚"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L3_Q2",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Focus on the preposition describing the pharmacy's position.",
-            "explanation": "'Next to' means immediately beside something. 'On the high street' gives the street location. 'Next to' is different from 'inside', 'opposite', or 'behind'. These spatial prepositions are essential for understanding directions.",
-            "textToSpeak": "The pharmacy is next to the supermarket on the high street.",
-            "question": "Where is the pharmacy?",
+            "hint": "Think about what leaves the ground wet with puddles.",
+            "explanation": "Wet ground and puddles are typical after rain. Snow would leave the ground white and cold, not simply wet, so rain is the better explanation.",
+            "textToSpeak": "The ground was wet and there were puddles all along the path.",
+            "question": "What probably happened earlier?",
             "options": [
-                "Inside the supermarket",
-                "Next to the supermarket",
-                "Opposite the supermarket",
-                "Behind the supermarket"
+                "It snowed",
+                "The sun was very hot",
+                "It rained",
+                "Someone was cleaning"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference",
-            "emoji": "🏪"
+            "emoji": "🌧️"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L3_Q3",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for which seat is mentioned.",
-            "explanation": "'Back seat' refers to the rear passenger area of a car. Key vocabulary: boot (UK: trunk), passenger seat (front), back seat (rear). 'On' indicates it's resting on the surface of the seat.",
-            "textToSpeak": "I left my jacket on the back seat of the car.",
-            "question": "Where is the jacket?",
+            "hint": "Think about when you usually see balloons and a big cake together.",
+            "explanation": "Balloons and a cake together are classic signs of a celebration, most often a birthday party. Neither item fits a meeting, an appointment, or an exam.",
+            "textToSpeak": "Balloons hung from the ceiling and a big cake sat in the middle of the table.",
+            "question": "What is most likely happening?",
             "options": [
-                "In the boot",
-                "On the passenger seat",
-                "On the back seat",
-                "Under the seat"
+                "A birthday party",
+                "A business meeting",
+                "A doctor's appointment",
+                "A school exam"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🪑"
+            "emoji": "🍰"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L4_Q1",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen carefully for the time phrase - which half past?",
-            "explanation": "'Half past seven' = 7:30. 'Half past' means 30 minutes after the hour. Common confusion: 'half past six' (6:30) vs 'half past seven' (7:30). The hour mentioned is the key word to catch.",
-            "textToSpeak": "The match starts at half past seven.",
-            "question": "When does the match start?",
+            "hint": "Think about what rubbing your eyes and yawning usually mean.",
+            "explanation": "Rubbing the eyes and yawning are common signs of tiredness. People don't usually do these things when they feel excited or angry.",
+            "textToSpeak": "She rubbed her eyes and yawned during the meeting.",
+            "question": "How does she feel?",
             "options": [
-                "Seven o'clock",
-                "Quarter past seven",
-                "Half past seven",
-                "Half past six"
+                "Angry",
+                "Excited",
+                "Tired",
+                "Nervous"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference",
-            "emoji": "⏱️"
+            "emoji": "😴"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L4_Q2",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for both the time and the days mentioned.",
-            "explanation": "'Six every weekday' - she wakes at six (6:00 AM) and specifically on weekdays (Monday–Friday), not weekends. Two details matter: the time (six) and the frequency (every weekday).",
-            "textToSpeak": "She wakes up at six every weekday.",
-            "question": "When does she wake up?",
+            "hint": "Think about where you find sand and waves together.",
+            "explanation": "Sand and waves together point clearly to the beach. No other listed place has both of these features.",
+            "textToSpeak": "The kids ran onto the sand and straight into the waves.",
+            "question": "Where are the kids?",
             "options": [
-                "At six on weekdays",
-                "At seven every day",
-                "At six on weekends",
-                "At five in the morning"
+                "At the dentist",
+                "At school",
+                "At the beach",
+                "In a supermarket"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference",
-            "emoji": "⏱️"
+            "emoji": "🏖️"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L4_Q3",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for the closing time and whether it's morning or night.",
-            "explanation": "'Ten at night' = 10 PM. 'At night' distinguishes this from 10 AM. In spoken English, 'at night' or 'in the morning' clarifies the AM/PM difference. The verb 'closes' tells you this is the closing time.",
-            "textToSpeak": "The café closes at ten at night.",
-            "question": "When does the café close?",
+            "hint": "Think about what holding your stomach and making a face after a bite usually shows.",
+            "explanation": "Making a face and reacting badly right after tasting something usually means the food isn't pleasant to that person. Someone who loved it wouldn't react this way.",
+            "textToSpeak": "He held his stomach and made a face after taking a bite.",
+            "question": "What does he probably think of the food?",
             "options": [
-                "Eight in the morning",
-                "Ten at night",
-                "Eight at night",
-                "Ten in the morning"
+                "He isn't hungry",
+                "He wants more",
+                "He doesn't like it",
+                "He loves it"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference",
-            "emoji": "⏱️"
+            "emoji": "🧭"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L5_Q1",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for the colour and the object the speaker asks for.",
-            "explanation": "The speaker asks for 'my red scarf' and says it's on the sofa. Two details: the object (scarf) and its colour (red). The location (sofa) confirms where to find it. 'Can you pass me' = a polite request.",
-            "textToSpeak": "Can you pass me my red scarf? It's on the sofa.",
-            "question": "What does the speaker want?",
+            "hint": "Think about what a long line outside a shop usually means.",
+            "explanation": "A line stretching out of the door and around the corner shows that many people are waiting to get in — a clear sign that the shop is busy, not empty or closed.",
+            "textToSpeak": "The line of people stretched out of the door and around the corner.",
+            "question": "What can you infer about the shop?",
             "options": [
-                "A red scarf from the sofa",
-                "A blue jacket",
-                "Something from the kitchen",
-                "Their bag"
+                "It is very busy",
+                "It is empty",
+                "It is very small",
+                "It is closed"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "🪑"
+            "emoji": "🛍️"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L5_Q2",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for the colour word the speaker uses to identify their bag.",
-            "explanation": "'My bag is the black one' - the speaker is correcting a mistake and identifying their bag by colour. 'The black one' uses the adjective as a noun, a common pattern when the noun is already known from context.",
-            "textToSpeak": "That's not mine - my bag is the black one.",
-            "question": "What colour is the speaker's bag?",
+            "hint": "Think about when someone would need a swimsuit and a towel together.",
+            "explanation": "A swimsuit, sunglasses, and a towel are exactly what someone packs for swimming, most likely at a beach or pool. None of these items belong in an office or classroom bag.",
+            "textToSpeak": "He packed his swimsuit, sunglasses, and a big towel into his bag.",
+            "question": "Where is he probably going?",
             "options": [
-                "Red",
-                "White",
-                "Black",
-                "Blue"
+                "To the office",
+                "To school",
+                "To the dentist",
+                "To the beach or a pool"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference",
-            "emoji": "🎨"
+            "emoji": "🏖️"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L5_Q3",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for the object they left behind.",
-            "explanation": "'Left our umbrella at the restaurant' - 'left' here means forgot/left behind accidentally. The location is 'at the restaurant'. The object is 'umbrella'. 'Our' tells you it belongs to two or more people.",
-            "textToSpeak": "We left our umbrella at the restaurant.",
-            "question": "What did they forget at the restaurant?",
+            "hint": "Think about why someone would make a nursery dark and quiet.",
+            "explanation": "Turning off the TV and dimming the lights in a nursery are both things a parent does to create a calm, sleepy environment, not to wake a baby or clean a room.",
+            "textToSpeak": "She turned off the television and dimmed the lights in the nursery.",
+            "question": "What is she probably trying to do?",
             "options": [
-                "Their umbrella",
-                "Their phone",
-                "Their coats",
-                "Their keys"
+                "Clean the room",
+                "Help the baby fall asleep",
+                "Watch a movie quietly",
+                "Wake the baby up"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🧣"
+            "emoji": "🍼"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L6_Q1",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for the number that comes before 'eggs'.",
-            "explanation": "'Three eggs' - the number comes directly before the noun. 'A cup of milk' tells you the quantity of milk (one cup). In recipes, listening for numbers and containers (cup, litre, tablespoon) is very important.",
-            "textToSpeak": "I need three eggs and a cup of milk for this recipe.",
-            "question": "How many eggs are needed?",
+            "hint": "Think about what a red face and clenched fists usually show.",
+            "explanation": "A red face and clenched fists are physical signs the body shows when someone is angry. Calm or happy people don't usually react this way.",
+            "textToSpeak": "His face turned red and his hands became fists.",
+            "question": "How does he feel?",
             "options": [
-                "One",
-                "Two",
-                "Four",
-                "Three"
+                "Calm",
+                "Sleepy",
+                "Angry",
+                "Happy"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference",
-            "emoji": "⏱️"
+            "emoji": "😠"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L6_Q2",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for the number between 'are' and 'students'.",
-            "explanation": "'Fifteen students' - note: fifteen (15) and fifty (50) sound similar in fast speech. Fifteen has stress on the second syllable: fif-TEEN. Fifty has stress on the first: FIF-ty. Today's count is specifically mentioned.",
-            "textToSpeak": "There are fifteen students in the class today.",
-            "question": "How many students are there?",
+            "hint": "Think about what the sign in the window tells you.",
+            "explanation": "A 'Closed for the day' sign directly tells us the shop isn't open, and the empty shelves support the idea that no customers are currently being served.",
+            "textToSpeak": "The shelves were empty and a sign in the window said 'Closed for the day'.",
+            "question": "What can you infer about the shop?",
             "options": [
-                "Five",
-                "Ten",
-                "Twenty",
-                "Fifteen"
+                "It is extremely busy",
+                "It just opened",
+                "It is having a big sale",
+                "It isn't open for customers right now"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference",
-            "emoji": "⏱️"
+            "emoji": "📝"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L6_Q3",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for the time duration mentioned.",
-            "explanation": "'About forty minutes' - 'about' signals an approximate time. Forty minutes = 40 minutes. 'We've been waiting' uses the present perfect continuous to show an action that started in the past and is still going on.",
-            "textToSpeak": "We've been waiting for about forty minutes.",
-            "question": "How long have they been waiting?",
+            "hint": "Think about what dark windows and a missing car usually mean.",
+            "explanation": "Lights off and no car in the driveway are both clues that the people who live there are out. If someone were home, at least one light would likely be on.",
+            "textToSpeak": "Every light in the house was off and the car wasn't in the driveway.",
+            "question": "What can you infer?",
             "options": [
-                "Twenty minutes",
-                "Half an hour",
-                "Forty minutes",
-                "An hour"
+                "A party is happening",
+                "Someone is cooking dinner",
+                "Nobody is home",
+                "Someone is sleeping"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference",
-            "emoji": "⏱️"
+            "emoji": "🚗"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L7_Q1",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for two physical details: hair and eyewear.",
-            "explanation": "Two details: 'shoulder-length brown hair' (medium-length, brown colour) and 'wears glasses'. Both must match. 'Shoulder-length' means hair that reaches the shoulders. This kind of multi-detail description requires catching all parts.",
-            "textToSpeak": "She has shoulder-length brown hair and wears glasses.",
-            "question": "What does she look like?",
+            "hint": "Think about why someone would watch the clock and pack early.",
+            "explanation": "Watching the clock and packing up early are both signs that someone is ready to go and looking forward to leaving, not planning to stay.",
+            "textToSpeak": "She kept glancing at the clock and packing her bag early.",
+            "question": "What can you infer about her?",
             "options": [
-                "Shoulder-length brown hair and glasses",
-                "Short black hair and glasses",
-                "Long blonde hair, no glasses",
-                "Brown hair in a ponytail"
+                "She wants to stay longer",
+                "She is eager to leave",
+                "She has forgotten something",
+                "She is very relaxed"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🧣"
+            "emoji": "⏰"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L7_Q2",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for the adjectives used to describe the garden.",
-            "explanation": "'Lovely big garden' - two adjectives: lovely (beautiful) and big (large). Note the contrast: 'small' describes the house, 'big' describes the garden. The word 'but' signals a contrast between the house and garden.",
-            "textToSpeak": "The house is small but has a lovely big garden.",
-            "question": "How is the garden described?",
+            "hint": "Think about what thunder and dark skies usually come before.",
+            "explanation": "Thunder and dark grey skies are classic warning signs of an approaching storm. Sunny weather doesn't come with thunder.",
+            "textToSpeak": "Thunder rumbled in the distance and the sky turned dark grey.",
+            "question": "What is about to happen?",
             "options": [
-                "Large and lovely",
-                "Small and neat",
-                "Overgrown and wild",
-                "Tiny and paved"
+                "A snowstorm in summer",
+                "Nothing unusual",
+                "A storm",
+                "A sunny afternoon"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference",
-            "emoji": "🏡"
+            "emoji": "⛈️"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L7_Q3",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for the compound colour adjective before 'car'.",
-            "explanation": "'Dark blue' is a compound colour - two adjectives together. 'Dark' modifies 'blue' to make it a deeper shade. Common compound colours: light blue, dark green, bright red. Both words together form the complete colour description.",
-            "textToSpeak": "He drives a dark blue car.",
-            "question": "What colour is his car?",
+            "hint": "Think about what sniffling and sneezing usually mean.",
+            "explanation": "Sniffling, sneezing, and needing a tissue are classic signs of a cold. None of these are linked to happiness, hunger, or boredom.",
+            "textToSpeak": "He sniffled, sneezed twice, and reached for a tissue.",
+            "question": "What is probably wrong with him?",
             "options": [
-                "Light blue",
-                "Black",
-                "Dark blue",
-                "Navy grey"
+                "He is bored",
+                "He has a cold",
+                "He is very happy",
+                "He is hungry"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🎨"
+            "emoji": "🤧"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L8_Q1",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for what he always has, not what he never drinks.",
-            "explanation": "'Never drinks coffee' = he avoids coffee. 'Always has tea' = his preference. The contrast between 'never' (zero times) and 'always' (every time) makes his preference very clear. Focus on the positive preference, not the negative.",
-            "textToSpeak": "He never drinks coffee - he always has tea.",
-            "question": "What does he prefer to drink?",
+            "hint": "Think about why a teacher gives out a gold star.",
+            "explanation": "A gold star from a teacher is a reward for good work. Teachers don't give stars for incorrect, late, or missing work.",
+            "textToSpeak": "The teacher smiled and put a gold star on top of his paper.",
+            "question": "What can you infer about his work?",
             "options": [
-                "Tea",
-                "Water",
-                "Coffee",
-                "Juice"
+                "It was very good",
+                "It was incorrect",
+                "It was missing",
+                "It was late"
             ],
             "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "💧"
+            "emoji": "🏫"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L8_Q2",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "'She'd rather... than...' - which option does she choose?",
-            "explanation": "'Would rather A than B' means preferring A over B. 'Rather walk' = she prefers walking. 'Than take the bus' = the thing she's comparing to and rejecting. 'On foot' = by walking. This structure is very common for expressing preferences.",
-            "textToSpeak": "She'd rather walk than take the bus.",
-            "question": "How does she prefer to travel?",
+            "hint": "Think about why someone would cover their ears.",
+            "explanation": "Covering your ears is a natural reaction to a sound that feels too loud or uncomfortable, not something you'd do if you were enjoying the volume.",
+            "textToSpeak": "She covered her ears as the music grew louder and louder.",
+            "question": "How does she feel about the music?",
             "options": [
-                "By bus",
-                "By car",
-                "By train",
-                "On foot"
+                "She cannot hear it at all",
+                "She loves the volume",
+                "She wants it louder",
+                "She finds it too loud"
             ],
             "correctAnswerIndex": 3,
             "subtype": "listeningInference",
-            "emoji": "🚶"
+            "emoji": "🎵"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L8_Q3",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for where they choose to sit.",
-            "explanation": "'Always sit by the window' - 'always' shows a habitual preference. 'By the window' = next to the window (the preposition 'by' means next to/beside). Habitual preferences are often expressed with frequency adverbs like always, usually, often.",
-            "textToSpeak": "They always sit by the window at the restaurant.",
-            "question": "Where do they like to sit?",
+            "hint": "Think about why someone would move so carefully and slowly.",
+            "explanation": "Tiptoeing and turning a handle slowly are both careful, quiet actions. Someone moving this carefully is almost always trying not to disturb a person who might be sleeping nearby.",
+            "textToSpeak": "He tiptoed past the bedroom door and turned the handle very slowly.",
+            "question": "What can you infer he is trying to do?",
             "options": [
-                "Near the kitchen",
-                "At the bar",
-                "By the window",
-                "At a corner table"
+                "Slam the door shut",
+                "Enter quietly without waking someone",
+                "Lock the door from outside",
+                "Make as much noise as possible"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🪑"
+            "emoji": "🛏️"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L9_Q1",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for the negative construction that describes the problem.",
-            "explanation": "'Isn't working' = is not functioning. 'Freezing' describes the result of the broken heating. The problem is the heating failure, not any external cause like a broken window. 'Isn't working' is a very common spoken way to report a malfunction.",
-            "textToSpeak": "The heating isn't working and it's freezing in here.",
-            "question": "What is the problem?",
+            "hint": "Think about what would make shoes and coats wet enough to drip.",
+            "explanation": "Dripping shoes and coats suggest the children were recently outside in wet weather. Indoor activities like sleeping or watching a movie wouldn't leave clothes dripping wet.",
+            "textToSpeak": "The children's shoes and coats were scattered by the front door, still dripping.",
+            "question": "What had the children probably been doing?",
             "options": [
-                "The heating is too hot",
-                "A window is broken",
-                "The heating isn't working",
-                "The door won't close"
+                "Watching a movie",
+                "Sleeping in their beds",
+                "Playing outside in the rain",
+                "Doing a quiet indoor puzzle"
             ],
             "correctAnswerIndex": 2,
             "subtype": "listeningInference",
-            "emoji": "🔧"
+            "emoji": "🧠"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L9_Q2",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for what the speaker can't find.",
-            "explanation": "'Can't find my glasses' is the core problem. 'Anywhere' and 'everywhere' emphasise the thorough search. This is different from needing new glasses (which implies the glasses exist and work, just aren't stylish). The speaker simply cannot locate their glasses.",
-            "textToSpeak": "I can't find my glasses anywhere - I've looked everywhere.",
-            "question": "What is the speaker's problem?",
+            "hint": "Think about why counting coins would lead to putting an item back.",
+            "explanation": "Counting coins carefully and then returning the toy suggests he checked his money and found he couldn't afford it. If he disliked the toy, he wouldn't have counted his coins for it at all.",
+            "textToSpeak": "He counted his coins twice, then put the toy back on the shelf.",
+            "question": "What can you infer?",
             "options": [
-                "Their phone is missing",
-                "They need new glasses",
-                "They can't find their glasses",
-                "Their eyes are hurting"
+                "He already owns the toy",
+                "He didn't have enough money for it",
+                "He didn't like the toy",
+                "The shop was closed"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "🧣"
+            "emoji": "🧭"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L9_Q3",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for which ingredient has run out.",
-            "explanation": "'No milk left' - 'no... left' means the supply has been exhausted. The speaker needs milk specifically for the recipe. Other ingredients (eggs, sugar, flour) aren't mentioned as missing. 'Left' here means 'remaining', not a direction.",
-            "textToSpeak": "There's no milk left and we need it for the recipe.",
-            "question": "What is missing?",
+            "hint": "Think about why someone would keep checking behind them while speeding up.",
+            "explanation": "Looking over your shoulder while walking faster is a common sign of feeling nervous or uneasy, as if you think something might be behind you.",
+            "textToSpeak": "She kept looking over her shoulder as she walked faster down the street.",
+            "question": "How does she feel?",
             "options": [
-                "Eggs",
-                "Sugar",
-                "Flour",
-                "Milk"
+                "Nervous",
+                "Cheerful",
+                "Bored",
+                "Sleepy"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "listeningInference",
-            "emoji": "💧"
+            "emoji": "😬"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L10_Q1",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Think about what emotion makes someone unable to stop smiling.",
-            "explanation": "Smiling = a sign of happiness. 'Couldn't stop smiling' means she was very happy. Upset and angry people don't usually smile. This is a basic emotion-behaviour link: smiling → happy. Body language and facial expressions help infer feelings.",
-            "textToSpeak": "She couldn't stop smiling when she heard the news.",
-            "question": "How did she feel?",
+            "hint": "Think about what a beeping smoke alarm usually means, and why people would rush outside.",
+            "explanation": "A beeping smoke alarm followed by everyone hurrying outside points directly to the alarm being triggered by something like smoke or heat, not a happy or routine event.",
+            "textToSpeak": "The smoke alarm beeped and everyone hurried outside onto the lawn.",
+            "question": "What most likely triggered this?",
             "options": [
-                "Upset",
-                "Happy",
-                "Confused",
-                "Angry"
+                "A delivery arriving",
+                "A birthday surprise",
+                "A phone call",
+                "Something set off the smoke alarm"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "listeningInference",
-            "emoji": "😊"
+            "emoji": "🚨"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L10_Q2",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Think about which emotion causes restless behaviour like clock-watching and foot-tapping.",
-            "explanation": "Both checking the clock and tapping his foot are signs of nervousness or impatience. Tired people rest; relaxed people are still; bored people might also watch the clock but wouldn't typically tap their foot. Together, these suggest anxiety or nervousness.",
-            "textToSpeak": "He kept checking the clock and tapping his foot.",
-            "question": "How did he feel?",
+            "hint": "Think about what finishing food quickly and asking for more usually shows.",
+            "explanation": "Eating quickly and then asking for a second helping are strong signs of hunger. Someone who disliked the food or felt full wouldn't ask for more.",
+            "textToSpeak": "Her plate was empty in minutes and she asked for a second helping.",
+            "question": "What can you infer about her?",
             "options": [
-                "Tired",
-                "Nervous",
-                "Bored",
-                "Relaxed"
+                "She didn't like the food",
+                "She was full already",
+                "She was very hungry",
+                "She wasn't hungry at all"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "listeningInference",
-            "emoji": "😬"
+            "emoji": "⏰"
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L10_Q3",
             "interactionType": "Inference Engine",
             "instruction": "Listen to the audio and answer the question.",
-            "hint": "Listen for the verb phrase describing their reaction.",
-            "explanation": "'Burst out laughing' means to suddenly start laughing - a strong, spontaneous reaction. 'Burst out' + an activity indicates a sudden start to that activity (also: burst out crying, burst out singing). They reacted with laughter, not tears or anger.",
-            "textToSpeak": "They burst out laughing when they heard the joke.",
-            "question": "What did they do when they heard the joke?",
+            "hint": "Think about what makes someone sweaty and very thirsty.",
+            "explanation": "A wiped forehead and gulping down water suggest physical effort that caused sweating and thirst, like exercise. Quiet activities like reading don't usually cause this.",
+            "textToSpeak": "He wiped his forehead and drank his whole bottle of water in one go.",
+            "question": "What had he probably just been doing?",
             "options": [
-                "They cried",
-                "They laughed",
-                "They left the room",
-                "They got angry"
+                "Reading quietly",
+                "Exercising hard",
+                "Watching television",
+                "Sleeping"
             ],
             "correctAnswerIndex": 1,
             "subtype": "listeningInference",
-            "emoji": "😊"
+            "emoji": "💧"
         }
     ]
 }

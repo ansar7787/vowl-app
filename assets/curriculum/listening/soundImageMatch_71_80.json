@@ -7,285 +7,268 @@
             "id": "LIS_SOUNDIMAGEMATCH_L71_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen for the main object word in the sentence.",
-            "explanation": "Node is the object in the sentence. It means a single connection point within a larger network. From the audio: than before.",
-            "textToSpeak": "The store is testing a payment node faster than before.",
+            "hint": "Listen for the exact object mentioned, even inside a longer sentence.",
+            "explanation": "Chip is the answer — a small electronic part that stores or processes information inside a device. That part goes: stores her payment details.",
+            "textToSpeak": "A tiny chip inside the card stores her payment details.",
             "options": [
-                "satellite",
-                "code",
-                "drone",
-                "node"
+                "chip",
+                "calendar",
+                "device",
+                "badge"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "📍"
+            "emoji": "💾"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L71_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Focus on the noun, not the action or description.",
-            "explanation": "The correct answer is portal - an online gateway used to access certain information or services. Heard in the audio: than usual today.",
-            "textToSpeak": "She is browsing a portal busier than usual today.",
+            "hint": "Notice which option the speaker actually names, not just implies.",
+            "explanation": "Subway is the answer — an underground train system in a city. Specifically: was delayed because of a signal problem.",
+            "textToSpeak": "The subway was delayed because of a signal problem.",
             "options": [
-                "drone",
-                "chip",
-                "archive",
-                "portal"
+                "subway",
+                "software",
+                "printer",
+                "ticket"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🚪"
+            "emoji": "🚇"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L71_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Notice which thing the sentence is describing.",
-            "explanation": "Protocol is correct. A set of official rules that controls how something is done. Context in the audio: updating a return protocol.",
-            "textToSpeak": "They are updating a return protocol stricter than before.",
-            "options": [
-                "database",
-                "protocol",
-                "sensor",
-                "circuit"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "soundImageMatch",
-            "emoji": "📋"
-        },
-        {
-            "id": "LIS_SOUNDIMAGEMATCH_L72_Q1",
-            "interactionType": "Visual Correlator",
-            "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Focus on the noun, not the action or description.",
-            "explanation": "Listen for satellite: an object sent into space that orbits the Earth to send or receive signals. Mentioned in the sentence: than last year's model.",
-            "textToSpeak": "The shop is selling a satellite dish bigger than last year's model.",
-            "options": [
-                "engine",
-                "satellite",
-                "signal",
-                "module"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "soundImageMatch",
-            "emoji": "🛰️"
-        },
-        {
-            "id": "LIS_SOUNDIMAGEMATCH_L72_Q2",
-            "interactionType": "Visual Correlator",
-            "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Notice which thing the sentence is describing.",
-            "explanation": "Sensor is correct. A device that detects changes, such as light, heat, or movement. Context in the audio: than the old one.",
-            "textToSpeak": "He is testing a sensor more sensitive than the old one.",
-            "options": [
-                "chip",
-                "terminal",
-                "sensor",
-                "module"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "soundImageMatch",
-            "emoji": "🌡️"
-        },
-        {
-            "id": "LIS_SOUNDIMAGEMATCH_L72_Q3",
-            "interactionType": "Visual Correlator",
-            "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Pay attention to the specific item mentioned by name.",
-            "explanation": "Signal is the object in the sentence. It means a sound, light, or wave used to send information or a message. From the audio: than near the entrance.",
-            "textToSpeak": "She is checking a signal weaker than near the entrance.",
-            "options": [
-                "signal",
-                "engine",
-                "node",
-                "satellite"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "soundImageMatch",
-            "emoji": "📶"
-        },
-        {
-            "id": "LIS_SOUNDIMAGEMATCH_L73_Q1",
-            "interactionType": "Visual Correlator",
-            "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Notice which thing the sentence is describing.",
-            "explanation": "Listen for software: the programs and instructions that tell a computer what to do. Mentioned in the sentence: than before.",
-            "textToSpeak": "The cafe is updating software smoother than before.",
-            "options": [
-                "sensor",
-                "device",
-                "software",
-                "network"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "soundImageMatch",
-            "emoji": "📀"
-        },
-        {
-            "id": "LIS_SOUNDIMAGEMATCH_L73_Q2",
-            "interactionType": "Visual Correlator",
-            "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Pay attention to the specific item mentioned by name.",
-            "explanation": "The correct answer is system - a set of parts that work together as a whole. Heard in the audio: than the old fridge.",
-            "textToSpeak": "They are installing a system quieter than the old fridge.",
+            "hint": "Don't choose based on the topic alone — listen for the exact word.",
+            "explanation": "That's system. It refers to a set of parts that work together as a whole. The line was: went off in the middle of the night.",
+            "textToSpeak": "Their alarm system went off in the middle of the night.",
             "options": [
                 "system",
-                "drone",
-                "module",
-                "device"
+                "code",
+                "subway",
+                "badge"
             ],
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
             "emoji": "🖥️"
         },
         {
-            "id": "LIS_SOUNDIMAGEMATCH_L73_Q3",
+            "id": "LIS_SOUNDIMAGEMATCH_L72_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen for the single key word that names an object.",
-            "explanation": "Terminal is the object in the sentence. It means a place where journeys begin or end, or a computer used to access a network. From the audio: than the old register.",
-            "textToSpeak": "She is using a terminal faster than the old register.",
+            "hint": "Focus on the noun the sentence is built around.",
+            "explanation": "Code is the word actually spoken — a set of written instructions that tells a computer what to do. You heard: fixing a bug in the code.",
+            "textToSpeak": "He spent the weekend fixing a bug in the code.",
             "options": [
-                "terminal",
-                "database",
-                "drone",
-                "sensor"
+                "folder",
+                "badge",
+                "engine",
+                "code"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "soundImageMatch",
+            "emoji": "💻"
+        },
+        {
+            "id": "LIS_SOUNDIMAGEMATCH_L72_Q2",
+            "interactionType": "Visual Correlator",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "The key word usually appears after the subject and verb.",
+            "explanation": "The right choice is signal, meaning a sound, light, or radio wave that carries information. Here's the detail: sent a signal warning the ships nearby.",
+            "textToSpeak": "The captain sent a signal warning the ships nearby.",
+            "options": [
+                "code",
+                "office",
+                "hotel",
+                "signal"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "soundImageMatch",
+            "emoji": "📶"
+        },
+        {
+            "id": "LIS_SOUNDIMAGEMATCH_L72_Q3",
+            "interactionType": "Visual Correlator",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "The distractors are related ideas — only one was actually spoken.",
+            "explanation": "Nice work if you chose folder — a cover used to hold and organize loose papers. Listen again: handed the client a folder full of documents.",
+            "textToSpeak": "He handed the client a folder full of documents.",
+            "options": [
+                "engine",
+                "folder",
+                "network",
+                "calendar"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "soundImageMatch",
+            "emoji": "📁"
+        },
+        {
+            "id": "LIS_SOUNDIMAGEMATCH_L73_Q1",
+            "interactionType": "Visual Correlator",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Listen carefully near the middle of the sentence for the target word.",
+            "explanation": "Ticket means a piece of paper that lets you travel or enter an event. The audio included: lost her ticket right before boarding.",
+            "textToSpeak": "She lost her ticket right before boarding.",
+            "options": [
+                "ticket",
+                "engine",
+                "airport",
+                "code"
             ],
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "💻"
+            "emoji": "🎫"
+        },
+        {
+            "id": "LIS_SOUNDIMAGEMATCH_L73_Q2",
+            "interactionType": "Visual Correlator",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "The sentence gives one clear, specific detail — catch it.",
+            "explanation": "Listen for software — the programs that tell a computer what to do. Notice this detail: forgot to update the software before the meeting.",
+            "textToSpeak": "He forgot to update the software before the meeting.",
+            "options": [
+                "office",
+                "software",
+                "system",
+                "ticket"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "soundImageMatch",
+            "emoji": "📀"
+        },
+        {
+            "id": "LIS_SOUNDIMAGEMATCH_L73_Q3",
+            "interactionType": "Visual Correlator",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Listen through the whole sentence before choosing your answer.",
+            "explanation": "Data is the word actually spoken — information that is collected, stored, or processed, often by a computer. Context: backed up her data before updating her phone.",
+            "textToSpeak": "She backed up her data before updating her phone.",
+            "options": [
+                "ticket",
+                "printer",
+                "data",
+                "drone"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "soundImageMatch",
+            "emoji": "📊"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L74_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Pay attention to the specific item mentioned by name.",
-            "explanation": "The correct answer is archive - a collection of stored records or files kept for future reference. Heard in the audio: than last year's.",
-            "textToSpeak": "The chef is building a recipe archive bigger than last year's.",
+            "hint": "Listen for the object being used, fixed, or checked.",
+            "explanation": "Airport: a place where airplanes take off and land. Notice this detail: was packed during the holiday season.",
+            "textToSpeak": "The airport was packed during the holiday season.",
             "options": [
-                "archive",
-                "chip",
-                "satellite",
-                "protocol"
+                "subway",
+                "drone",
+                "airport",
+                "device"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🗄️"
+            "emoji": "✈️"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L74_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen for the single key word that names an object.",
-            "explanation": "Chip is correct. A small electronic part that stores or processes information inside a device. Context in the audio: than the one in the old oven.",
-            "textToSpeak": "He is testing a chip smaller than the one in the old oven.",
+            "hint": "Notice which option the speaker actually names, not just implies.",
+            "explanation": "Network fits best here — a group of connected computers or devices that share information.",
+            "textToSpeak": "The company built a network connecting all five branches.",
             "options": [
-                "software",
-                "chip",
-                "terminal",
-                "drone"
+                "passport",
+                "folder",
+                "network",
+                "data"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "💾"
+            "emoji": "🌐"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L74_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Ignore the verb and adjectives; focus on the object itself.",
-            "explanation": "Circuit is the object in the sentence. It means a closed path that lets electricity flow to power a device. From the audio: than the kitchen itself.",
-            "textToSpeak": "She is fixing a circuit older than the kitchen itself.",
+            "hint": "The distractors are related ideas — only one was actually spoken.",
+            "explanation": "Engine: the part of a vehicle or machine that produces power to make it move. You heard: roared as it prepared for takeoff.",
+            "textToSpeak": "The plane's engine roared as it prepared for takeoff.",
             "options": [
-                "node",
-                "software",
-                "circuit",
-                "satellite"
+                "engine",
+                "ticket",
+                "printer",
+                "data"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🔌"
+            "emoji": "⚙️"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L75_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen for the single key word that names an object.",
-            "explanation": "Listen for code: a set of written instructions that tells a computer what to do. Mentioned in the sentence: than his last project.",
-            "textToSpeak": "He is writing code cleaner than his last project.",
+            "hint": "Focus on what the sentence says happened, not what you'd expect.",
+            "explanation": "That's software. It refers to the programs that tell a computer what to do. The audio included: helps small shops track their sales.",
+            "textToSpeak": "This software helps small shops track their sales.",
             "options": [
+                "software",
+                "ticket",
                 "network",
-                "code",
-                "chip",
-                "device"
+                "calendar"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "💻"
+            "emoji": "📀"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L75_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Ignore the verb and adjectives; focus on the object itself.",
-            "explanation": "Listen for data: information that is collected, stored, or processed, often by a computer. Mentioned in the sentence: than last month's set.",
-            "textToSpeak": "She is analyzing data larger than last month's set.",
+            "hint": "Focus on the noun the sentence is built around.",
+            "explanation": "Code is correct — a set of written instructions that tells a computer what to do. Reference: need a four-digit code to unlock the safe.",
+            "textToSpeak": "You need a four-digit code to unlock the safe.",
             "options": [
-                "data",
-                "node",
-                "sensor",
-                "device"
+                "signal",
+                "folder",
+                "printer",
+                "code"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "📊"
+            "emoji": "💻"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L75_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Notice the noun that the sentence centers around.",
-            "explanation": "Database is correct. An organized collection of information stored electronically for easy access. Context in the audio: than the old system.",
-            "textToSpeak": "They are building a database faster than the old system.",
+            "hint": "Picture the workplace or travel scene as you listen.",
+            "explanation": "Data is the key word here. It means information that is collected, stored, or processed, often by a computer. You heard: collects data to improve its service.",
+            "textToSpeak": "The company collects data to improve its service.",
             "options": [
-                "database",
-                "circuit",
-                "archive",
-                "device"
+                "folder",
+                "data",
+                "subway",
+                "engine"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🗃️"
+            "emoji": "📊"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L76_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Ignore the verb and adjectives; focus on the object itself.",
-            "explanation": "Device is correct. A small machine or tool designed to do a specific job. Context in the audio: than the previous model.",
-            "textToSpeak": "He is testing a device lighter than the previous model.",
+            "hint": "Listen for the exact object mentioned, even inside a longer sentence.",
+            "explanation": "Drone is correct. In everyday terms, it's an aircraft that flies without a pilot on board, often controlled remotely.",
+            "textToSpeak": "A drone delivered the package to their front porch.",
             "options": [
-                "circuit",
-                "device",
-                "code",
-                "node"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "soundImageMatch",
-            "emoji": "📱"
-        },
-        {
-            "id": "LIS_SOUNDIMAGEMATCH_L76_Q2",
-            "interactionType": "Visual Correlator",
-            "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Notice the noun that the sentence centers around.",
-            "explanation": "Drone is correct. An aircraft that flies without a pilot on board, often controlled remotely. Context in the audio: than her first one.",
-            "textToSpeak": "She is flying a drone steadier than her first one.",
-            "options": [
-                "archive",
-                "terminal",
-                "satellite",
+                "office",
+                "calendar",
+                "chip",
                 "drone"
             ],
             "correctAnswerIndex": 3,
@@ -293,225 +276,242 @@
             "emoji": "🚁"
         },
         {
+            "id": "LIS_SOUNDIMAGEMATCH_L76_Q2",
+            "interactionType": "Visual Correlator",
+            "instruction": "Listen to the audio and select the matching image.",
+            "hint": "Don't choose based on the topic alone — listen for the exact word.",
+            "explanation": "Listen for passport — an official document you need to travel to another country. That part goes: checked his passport at the border.",
+            "textToSpeak": "The officer checked his passport at the border.",
+            "options": [
+                "passport",
+                "system",
+                "chip",
+                "ticket"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "soundImageMatch",
+            "emoji": "🛂"
+        },
+        {
             "id": "LIS_SOUNDIMAGEMATCH_L76_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen closely for the object's name, not who or how.",
-            "explanation": "Listen for engine: the part of a vehicle or machine that produces power to make it move. Mentioned in the sentence: than older models.",
-            "textToSpeak": "They are building an engine quieter than older models.",
+            "hint": "The correct word is concrete — something with a clear function.",
+            "explanation": "Subway is the answer — an underground train system in a city. Context: ran to catch the last subway home.",
+            "textToSpeak": "He ran to catch the last subway home.",
             "options": [
-                "system",
-                "database",
-                "engine",
-                "sensor"
+                "subway",
+                "folder",
+                "hotel",
+                "data"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "⚙️"
+            "emoji": "🚇"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L77_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Notice the noun that the sentence centers around.",
-            "explanation": "The correct answer is module - a separate section that is part of a larger system, course, or program. Heard in the audio: than before.",
-            "textToSpeak": "The hospital is adding a module more advanced than before.",
+            "hint": "The sentence gives one clear, specific detail — catch it.",
+            "explanation": "The word you needed was office — a building or room where people do office work.",
+            "textToSpeak": "He set up his laptop in a quiet corner of the office.",
             "options": [
-                "satellite",
-                "signal",
                 "engine",
-                "module"
+                "office",
+                "network",
+                "calendar"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🧩"
+            "emoji": "🏢"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L77_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen closely for the object's name, not who or how.",
-            "explanation": "Network is the object in the sentence. It means a group of connected computers or devices that share information. From the audio: than last year's.",
-            "textToSpeak": "Doctors are using a network faster than last year's.",
+            "hint": "The right answer is named directly, not just suggested.",
+            "explanation": "System fits best here — a set of parts that work together as a whole.",
+            "textToSpeak": "The airport's check-in system crashed during the holidays.",
             "options": [
-                "satellite",
-                "portal",
-                "network",
-                "chip"
+                "system",
+                "office",
+                "software",
+                "folder"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🌐"
+            "emoji": "🖥️"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L77_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Pick out the specific item described in the audio.",
-            "explanation": "The correct answer is node - a single connection point within a larger network. Heard in the audio: than last month's.",
-            "textToSpeak": "The scan is showing a node smaller than last month's.",
+            "hint": "Listen through the whole sentence before choosing your answer.",
+            "explanation": "The correct answer is badge: a card that shows a person's name and identity at work. Specifically: must wear a badge while inside the office.",
+            "textToSpeak": "Visitors must wear a badge while inside the office.",
             "options": [
-                "terminal",
-                "drone",
-                "node",
-                "sensor"
+                "software",
+                "data",
+                "calendar",
+                "badge"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "📍"
+            "emoji": "🪪"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L78_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen closely for the object's name, not who or how.",
-            "explanation": "Portal is correct. An online gateway used to access certain information or services. Context in the audio: than the hospital's.",
-            "textToSpeak": "She is using a clinic portal simpler than the hospital's.",
+            "hint": "The key word usually appears after the subject and verb.",
+            "explanation": "You were listening for signal: a sound, light, or radio wave that carries information. The line was: made the video call keep freezing.",
+            "textToSpeak": "The weak signal made the video call keep freezing.",
             "options": [
-                "software",
-                "drone",
-                "portal",
-                "engine"
+                "data",
+                "folder",
+                "passport",
+                "signal"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🚪"
+            "emoji": "📶"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L78_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Pick out the specific item described in the audio.",
-            "explanation": "The correct answer is protocol - a set of official rules that controls how something is done. Heard in the audio: Nurses are following a protocol.",
-            "textToSpeak": "Nurses are following a protocol stricter than before.",
+            "hint": "Picture the workplace or travel scene as you listen.",
+            "explanation": "Printer is the key word here. It means a machine that produces paper copies of documents.",
+            "textToSpeak": "He fixed the paper jam in the printer.",
             "options": [
-                "module",
-                "device",
-                "protocol",
-                "circuit"
+                "printer",
+                "hotel",
+                "drone",
+                "office"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "📋"
+            "emoji": "🖨️"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L78_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Focus on the thing being used, fixed, or mentioned.",
-            "explanation": "Satellite is the object in the sentence. It means an object sent into space that orbits the Earth to send or receive signals. From the audio: than before.",
-            "textToSpeak": "The remote clinic is relying on a satellite link stronger than before.",
+            "hint": "Listen carefully near the middle of the sentence for the target word.",
+            "explanation": "Nice work if you chose chip — a small electronic part that stores or processes information inside a device.",
+            "textToSpeak": "Engineers redesigned the chip to use less battery power.",
             "options": [
+                "calendar",
+                "drone",
                 "chip",
-                "protocol",
-                "satellite",
-                "node"
+                "subway"
             ],
             "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🛰️"
+            "emoji": "💾"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L79_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Pick out the specific item described in the audio.",
-            "explanation": "Sensor is the object in the sentence. It means a device that detects changes, such as light, heat, or movement. From the audio: than the last model.",
-            "textToSpeak": "The console is using a sensor more accurate than the last model.",
+            "hint": "The sentence gives one clear, specific detail — catch it.",
+            "explanation": "Airport: a place where airplanes take off and land. Straight from the audio: waited for her cousin outside the airport.",
+            "textToSpeak": "She waited for her cousin outside the airport.",
             "options": [
-                "protocol",
-                "node",
-                "sensor",
-                "satellite"
+                "office",
+                "ticket",
+                "airport",
+                "calendar"
             ],
             "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🌡️"
+            "emoji": "✈️"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L79_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Focus on the thing being used, fixed, or mentioned.",
-            "explanation": "Signal is correct. A sound, light, or wave used to send information or a message. Context in the audio: than before.",
-            "textToSpeak": "The stadium is boosting a signal stronger than before.",
+            "hint": "Focus on what the sentence says happened, not what you'd expect.",
+            "explanation": "Listen for device — a small machine or tool designed to do a specific job.",
+            "textToSpeak": "This device can track your steps and heart rate.",
             "options": [
-                "drone",
-                "signal",
-                "chip",
-                "code"
+                "engine",
+                "device",
+                "ticket",
+                "folder"
             ],
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "📶"
+            "emoji": "📱"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L79_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen for the keyword that matches one of the pictures.",
-            "explanation": "Software is correct. The programs and instructions that tell a computer what to do. Context in the audio: than the last version.",
-            "textToSpeak": "The studio is testing software smoother than the last version.",
+            "hint": "Don't choose based on the topic alone — listen for the exact word.",
+            "explanation": "You were listening for folder: a cover used to hold and organize loose papers.",
+            "textToSpeak": "The folder on his desk was labeled 'urgent'.",
             "options": [
-                "sensor",
-                "software",
-                "circuit",
+                "signal",
+                "badge",
+                "folder",
                 "code"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "📀"
+            "emoji": "📁"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L80_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Focus on the thing being used, fixed, or mentioned.",
-            "explanation": "System is the object in the sentence. It means a set of parts that work together as a whole. From the audio: a sound system louder than before.",
-            "textToSpeak": "The theater is upgrading a sound system louder than before.",
+            "hint": "Focus on the noun the sentence is built around.",
+            "explanation": "Listen for calendar — a chart that shows the days, weeks, and months of the year. You heard: checked the calendar before planning the trip.",
+            "textToSpeak": "They checked the calendar before planning the trip.",
             "options": [
-                "circuit",
-                "system",
-                "engine",
-                "terminal"
+                "passport",
+                "drone",
+                "printer",
+                "calendar"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🖥️"
+            "emoji": "📅"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L80_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen for the keyword that matches one of the pictures.",
-            "explanation": "Listen for terminal: a place where journeys begin or end, or a computer used to access a network. Mentioned in the sentence: than the mall itself.",
-            "textToSpeak": "He is fixing an arcade terminal older than the mall itself.",
+            "hint": "The correct word is concrete — something with a clear function.",
+            "explanation": "Listen for hotel — a building where travelers pay to sleep for the night. Reference: booked a hotel near the train station.",
+            "textToSpeak": "She booked a hotel near the train station.",
             "options": [
-                "node",
-                "terminal",
-                "engine",
-                "chip"
+                "calendar",
+                "hotel",
+                "ticket",
+                "device"
             ],
             "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "💻"
+            "emoji": "🏨"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L80_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Tune in to the exact object named in the sentence.",
-            "explanation": "The correct answer is archive - a collection of stored records or files kept for future reference. Heard in the audio: browsing a music archive.",
-            "textToSpeak": "She is browsing a music archive bigger than last year's.",
+            "hint": "The right answer is named directly, not just suggested.",
+            "explanation": "Listen for ticket — a piece of paper that lets you travel or enter an event. Here's the detail: included entry to both museums.",
+            "textToSpeak": "The ticket included entry to both museums.",
             "options": [
-                "engine",
-                "drone",
-                "portal",
-                "archive"
+                "airport",
+                "signal",
+                "ticket",
+                "system"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🗄️"
+            "emoji": "🎫"
         }
     ]
 }

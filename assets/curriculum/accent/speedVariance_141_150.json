@@ -8,35 +8,35 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Did you know the average person checks their phone ninety-six times a day?",
-            "textToSpeak": "Did you know the average person checks their phone ninety-six times a day?",
+            "word": "Whoever left the stove on needs to come back right now, because the kitchen's already filling with smoke.",
+            "textToSpeak": "Whoever left the stove on needs to come back right now, because the kitchen's already filling with smoke.",
             "options": [
-                "Decelerating (in 'Did you know the average person checks their phone ninety-six times a day?', the pace slows deliberately on the key statistic, ninety-six times a day, to let it sink in)",
-                "Accelerating (in 'Did you know the average person checks their phone ninety-six times a day?', the speaker rushes past the statistic to move to the next point)"
+                "Decelerating (the speaker slows down to figure out who was cooking last)",
+                "Accelerating (visible smoke from an unattended stove is a real emergency that speeds up the call)"
             ],
-            "correctAnswer": "Decelerating (in 'Did you know the average person checks their phone ninety-six times a day?', the pace slows deliberately on the key statistic, ninety-six times a day, to let it sink in)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'Did you know the average person checks their phone ninety-six times a day?' Does the pace slow down on the key number to let it sink in?",
-            "explanation": "Skilled speakers slow down on persuasive statistics like ninety-six times a day so the audience has time to absorb the impact of the number, as in 'Did you know the average person checks their phone ninety-six times a day?'.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (visible smoke from an unattended stove is a real emergency that speeds up the call)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.24,
+            "hint": "Smoke is already filling the room. Urgent call, or a slow search for who's responsible?",
+            "explanation": "Visible smoke from something left unattended is a genuine emergency, prompting an instant, urgent call.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L141_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Aside from the obvious convenience, this habit also affects our sleep quality.",
-            "textToSpeak": "Aside from the obvious convenience, this habit also affects our sleep quality.",
+            "word": "Unless you call her back within the hour, she'll almost certainly assume something's seriously wrong.",
+            "textToSpeak": "Unless you call her back within the hour, she'll almost certainly assume something's seriously wrong.",
             "options": [
-                "Decelerating (in 'Aside from the obvious convenience, this habit also affects our sleep quality.', the speaker slows down on the supporting detail to emphasize it)",
-                "Accelerating (in 'Aside from the obvious convenience, this habit also affects our sleep quality.', the supporting detail, the convenience aside, is delivered quickly since it isn't the main point)"
+                "Accelerating (a conditional consequence involving real worry speeds up the urgent reminder)",
+                "Decelerating (the speaker slows down to think about what excuse to give for the delay)"
             ],
-            "correctAnswer": "Accelerating (in 'Aside from the obvious convenience, this habit also affects our sleep quality.', the supporting detail, the convenience aside, is delivered quickly since it isn't the main point)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 1.34,
-            "hint": "Listen to 'Aside from the obvious convenience, this habit also affects our sleep quality.' Is the supporting detail rushed through quickly, or given heavy emphasis?",
-            "explanation": "Secondary supporting details like the convenience aside are often delivered quickly in 'Aside from the obvious convenience, this habit also affects our sleep quality.', keeping the focus on the speaker's main argument rather than minor background information.",
+            "correctAnswer": "Accelerating (a conditional consequence involving real worry speeds up the urgent reminder)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.21,
+            "hint": "Not calling back has a real consequence attached. Urgent reminder, or a slow search for excuses?",
+            "explanation": "A conditional warning about causing real worry speeds up the reminder to act before time runs out.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -44,53 +44,53 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "So tonight, put your phone away one hour before bed.",
-            "textToSpeak": "So tonight, put your phone away one hour before bed.",
+            "word": "The delivery driver's parked outside right now, and from the sound of it, the food's already going cold.",
+            "textToSpeak": "The delivery driver's parked outside right now, and from the sound of it, the food's already going cold.",
             "options": [
-                "Decelerating (in 'So tonight, put your phone away one hour before bed.', the pace slows on the call to action, putting the phone away an hour before bed, to make the instruction memorable)",
-                "Accelerating (in 'So tonight, put your phone away one hour before bed.', the speaker rushes through the call to action to end on time)"
+                "Decelerating (the speaker slows down to double check the order details first)",
+                "Accelerating (food cooling right now while the driver waits speeds up the practical instruction)"
             ],
-            "correctAnswer": "Decelerating (in 'So tonight, put your phone away one hour before bed.', the pace slows on the call to action, putting the phone away an hour before bed, to make the instruction memorable)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.64,
-            "hint": "Listen to 'So tonight, put your phone away one hour before bed.' Does the pace slow down on the final instruction to the audience?",
-            "explanation": "A persuasive call to action like putting the phone away an hour before bed is often delivered slowly and clearly in 'So tonight, put your phone away one hour before bed.', so it's the last, most memorable thing the audience hears.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (food cooling right now while the driver waits speeds up the practical instruction)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.26,
+            "hint": "This is happening right now. Urgent instruction, or a slow order check?",
+            "explanation": "Something happening right now, like food going cold, prompts a quick instruction rather than a slow check.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L142_Q1",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Did you know students who read daily score forty percent higher on tests?",
-            "textToSpeak": "Did you know students who read daily score forty percent higher on tests?",
+            "word": "The system that was flagged yesterday has just gone down completely, and every department's affected.",
+            "textToSpeak": "The system that was flagged yesterday has just gone down completely, and every department's affected.",
             "options": [
-                "Decelerating (in 'Did you know students who read daily score forty percent higher on tests?', the pace slows deliberately on the key statistic, forty percent higher, to let it sink in)",
-                "Accelerating (in 'Did you know students who read daily score forty percent higher on tests?', the speaker rushes past the statistic to move to the next point)"
+                "Decelerating (the speaker slows down to review yesterday's warning signs in detail)",
+                "Accelerating (a widespread, active failure speeds up the urgent alert)"
             ],
-            "correctAnswer": "Decelerating (in 'Did you know students who read daily score forty percent higher on tests?', the pace slows deliberately on the key statistic, forty percent higher, to let it sink in)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'Did you know students who read daily score forty percent higher on tests?' Does the pace slow down on the key number to let it sink in?",
-            "explanation": "Skilled speakers slow down on persuasive statistics like forty percent higher so the audience has time to absorb the impact of the number, as in 'Did you know students who read daily score forty percent higher on tests?'.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (a widespread, active failure speeds up the urgent alert)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.23,
+            "hint": "Every department is affected right now. Urgent alert, or a slow review of yesterday's warnings?",
+            "explanation": "A failure that's now affecting every department demands an immediate alert rather than a slow review.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L142_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Aside from reading speed, vocabulary also naturally improves over time.",
-            "textToSpeak": "Aside from reading speed, vocabulary also naturally improves over time.",
+            "word": "The queue for will-call tickets has suddenly grown out the door, so get to the counter immediately.",
+            "textToSpeak": "The queue for will-call tickets has suddenly grown out the door, so get to the counter immediately.",
             "options": [
-                "Decelerating (in 'Aside from reading speed, vocabulary also naturally improves over time.', the speaker slows down on the supporting detail to emphasize it)",
-                "Accelerating (in 'Aside from reading speed, vocabulary also naturally improves over time.', the supporting detail, vocabulary improvement aside, is delivered quickly since it isn't the main point)"
+                "Decelerating (the speaker slows down to explain how will-call usually works)",
+                "Accelerating (a rapidly growing queue speeds up the practical instruction to act now)"
             ],
-            "correctAnswer": "Accelerating (in 'Aside from reading speed, vocabulary also naturally improves over time.', the supporting detail, vocabulary improvement aside, is delivered quickly since it isn't the main point)",
+            "correctAnswer": "Accelerating (a rapidly growing queue speeds up the practical instruction to act now)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 1.34,
-            "hint": "Listen to 'Aside from reading speed, vocabulary also naturally improves over time.' Is the supporting detail rushed through quickly, or given heavy emphasis?",
-            "explanation": "Secondary supporting details like vocabulary improvement aside are often delivered quickly in 'Aside from reading speed, vocabulary also naturally improves over time.', keeping the focus on the speaker's main argument rather than minor background information.",
+            "targetSpeed": 1.28,
+            "hint": "The queue is growing fast right now. Urgent instruction, or a calm explanation of the process?",
+            "explanation": "A queue that's visibly growing fast prompts an urgent instruction to act before it gets any longer.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -98,89 +98,89 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "So starting today, read for just twenty minutes every evening.",
-            "textToSpeak": "So starting today, read for just twenty minutes every evening.",
+            "word": "The pilot's just announced that we'll be diverting immediately because of the storm ahead.",
+            "textToSpeak": "The pilot's just announced that we'll be diverting immediately because of the storm ahead.",
             "options": [
-                "Decelerating (in 'So starting today, read for just twenty minutes every evening.', the pace slows on the call to action, reading twenty minutes every evening, to make the instruction memorable)",
-                "Accelerating (in 'So starting today, read for just twenty minutes every evening.', the speaker rushes through the call to action to end on time)"
+                "Accelerating (an announced, immediate diversion speeds up the urgent relay of information)",
+                "Decelerating (the speaker slows down to describe exactly how bad the storm looks)"
             ],
-            "correctAnswer": "Decelerating (in 'So starting today, read for just twenty minutes every evening.', the pace slows on the call to action, reading twenty minutes every evening, to make the instruction memorable)",
+            "correctAnswer": "Accelerating (an announced, immediate diversion speeds up the urgent relay of information)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.64,
-            "hint": "Listen to 'So starting today, read for just twenty minutes every evening.' Does the pace slow down on the final instruction to the audience?",
-            "explanation": "A persuasive call to action like reading twenty minutes every evening is often delivered slowly and clearly in 'So starting today, read for just twenty minutes every evening.', so it's the last, most memorable thing the audience hears.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "targetSpeed": 1.25,
+            "hint": "This diversion is happening immediately. Urgent relay, or a slow, detailed description of the storm?",
+            "explanation": "An announcement about an immediate change of plans is relayed quickly, matching the pilot's own urgency.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L143_Q1",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Did you know companies with clear goals are seventy percent more productive?",
-            "textToSpeak": "Did you know companies with clear goals are seventy percent more productive?",
+            "word": "Should his temperature climb any higher, we'll need to get him seen without any further delay.",
+            "textToSpeak": "Should his temperature climb any higher, we'll need to get him seen without any further delay.",
             "options": [
-                "Decelerating (in 'Did you know companies with clear goals are seventy percent more productive?', the pace slows deliberately on the key statistic, seventy percent more productive, to let it sink in)",
-                "Accelerating (in 'Did you know companies with clear goals are seventy percent more productive?', the speaker rushes past the statistic to move to the next point)"
+                "Decelerating (the speaker slows down to explain what a normal temperature range looks like)",
+                "Accelerating (a conditional tied to a worsening fever speeds up the urgent instruction)"
             ],
-            "correctAnswer": "Decelerating (in 'Did you know companies with clear goals are seventy percent more productive?', the pace slows deliberately on the key statistic, seventy percent more productive, to let it sink in)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'Did you know companies with clear goals are seventy percent more productive?' Does the pace slow down on the key number to let it sink in?",
-            "explanation": "Skilled speakers slow down on persuasive statistics like seventy percent more productive so the audience has time to absorb the impact of the number, as in 'Did you know companies with clear goals are seventy percent more productive?'.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (a conditional tied to a worsening fever speeds up the urgent instruction)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.22,
+            "hint": "This depends on his temperature rising further. Urgent instruction, or a calm explanation of normal ranges?",
+            "explanation": "A conditional warning tied to a worsening symptom speeds up the instruction to act quickly if it happens.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L143_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Aside from productivity, employee morale also improves significantly.",
-            "textToSpeak": "Aside from productivity, employee morale also improves significantly.",
+            "word": "Whatever argument you choose for next week's essay deserves to be drafted with real patience.",
+            "textToSpeak": "Whatever argument you choose for next week's essay deserves to be drafted with real patience.",
             "options": [
-                "Decelerating (in 'Aside from productivity, employee morale also improves significantly.', the speaker slows down on the supporting detail to emphasize it)",
-                "Accelerating (in 'Aside from productivity, employee morale also improves significantly.', the supporting detail, morale improvement aside, is delivered quickly since it isn't the main point)"
+                "Accelerating (the speaker rushes since first drafts rarely need much real thought)",
+                "Decelerating (advice about giving an argument patient development slows the pace of the suggestion)"
             ],
-            "correctAnswer": "Accelerating (in 'Aside from productivity, employee morale also improves significantly.', the supporting detail, morale improvement aside, is delivered quickly since it isn't the main point)",
+            "correctAnswer": "Decelerating (advice about giving an argument patient development slows the pace of the suggestion)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 1.34,
-            "hint": "Listen to 'Aside from productivity, employee morale also improves significantly.' Is the supporting detail rushed through quickly, or given heavy emphasis?",
-            "explanation": "Secondary supporting details like morale improvement aside are often delivered quickly in 'Aside from productivity, employee morale also improves significantly.', keeping the focus on the speaker's main argument rather than minor background information.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "targetSpeed": 0.75,
+            "hint": "This argument deserves patience. Quick suggestion, or a slow, considered one?",
+            "explanation": "Advice about developing an argument patiently is delivered slowly, matching the care it recommends.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L143_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "So this week, set one clear goal for your team.",
-            "textToSpeak": "So this week, set one clear goal for your team.",
+            "word": "Someone's been knocking at the door for a good while now, so go let them in right away.",
+            "textToSpeak": "Someone's been knocking at the door for a good while now, so go let them in right away.",
             "options": [
-                "Decelerating (in 'So this week, set one clear goal for your team.', the pace slows on the call to action, setting one clear goal, to make the instruction memorable)",
-                "Accelerating (in 'So this week, set one clear goal for your team.', the speaker rushes through the call to action to end on time)"
+                "Accelerating (prolonged knocking suggests someone waiting, speeding up the practical instruction)",
+                "Decelerating (the speaker slows down to finish the task they were already in the middle of)"
             ],
-            "correctAnswer": "Decelerating (in 'So this week, set one clear goal for your team.', the pace slows on the call to action, setting one clear goal, to make the instruction memorable)",
+            "correctAnswer": "Accelerating (prolonged knocking suggests someone waiting, speeding up the practical instruction)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.64,
-            "hint": "Listen to 'So this week, set one clear goal for your team.' Does the pace slow down on the final instruction to the audience?",
-            "explanation": "A persuasive call to action like setting one clear goal is often delivered slowly and clearly in 'So this week, set one clear goal for your team.', so it's the last, most memorable thing the audience hears.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "targetSpeed": 1.2,
+            "hint": "The knocking has gone on for a while. Urgent instruction, or a slow guessing game?",
+            "explanation": "Someone waiting a long time at the door creates a small urgency, speeding up the instruction to answer.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L144_Q1",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Did you know travelers who plan ahead save thirty percent on average?",
-            "textToSpeak": "Did you know travelers who plan ahead save thirty percent on average?",
+            "word": "Should the conversation turn difficult, it's probably best handled without either of you raising your voice.",
+            "textToSpeak": "Should the conversation turn difficult, it's probably best handled without either of you raising your voice.",
             "options": [
-                "Decelerating (in 'Did you know travelers who plan ahead save thirty percent on average?', the pace slows deliberately on the key statistic, thirty percent on average, to let it sink in)",
-                "Accelerating (in 'Did you know travelers who plan ahead save thirty percent on average?', the speaker rushes past the statistic to move to the next point)"
+                "Decelerating (conditional advice about staying calm is itself delivered calmly and slowly)",
+                "Accelerating (the speaker rushes since difficult conversations are usually better resolved quickly)"
             ],
-            "correctAnswer": "Decelerating (in 'Did you know travelers who plan ahead save thirty percent on average?', the pace slows deliberately on the key statistic, thirty percent on average, to let it sink in)",
+            "correctAnswer": "Decelerating (conditional advice about staying calm is itself delivered calmly and slowly)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'Did you know travelers who plan ahead save thirty percent on average?' Does the pace slow down on the key number to let it sink in?",
-            "explanation": "Skilled speakers slow down on persuasive statistics like thirty percent on average so the audience has time to absorb the impact of the number, as in 'Did you know travelers who plan ahead save thirty percent on average?'.",
+            "targetSpeed": 0.73,
+            "hint": "This advice is about staying calm if things get hard. Quick delivery, or a slow, measured one?",
+            "explanation": "Conditional advice about handling something calmly is delivered in that same calm, unhurried way.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -188,17 +188,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Aside from the savings, planning also reduces stress significantly.",
-            "textToSpeak": "Aside from the savings, planning also reduces stress significantly.",
+            "word": "The pipe that burst upstairs is apparently flooding the hallway, so the water needs to be shut off now.",
+            "textToSpeak": "The pipe that burst upstairs is apparently flooding the hallway, so the water needs to be shut off now.",
             "options": [
-                "Decelerating (in 'Aside from the savings, planning also reduces stress significantly.', the speaker slows down on the supporting detail to emphasize it)",
-                "Accelerating (in 'Aside from the savings, planning also reduces stress significantly.', the supporting detail, the stress reduction aside, is delivered quickly since it isn't the main point)"
+                "Decelerating (the speaker slows down to explain which pipe is likely responsible)",
+                "Accelerating (active flooding happening right now speeds up the urgent instruction)"
             ],
-            "correctAnswer": "Accelerating (in 'Aside from the savings, planning also reduces stress significantly.', the supporting detail, the stress reduction aside, is delivered quickly since it isn't the main point)",
+            "correctAnswer": "Accelerating (active flooding happening right now speeds up the urgent instruction)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 1.34,
-            "hint": "Listen to 'Aside from the savings, planning also reduces stress significantly.' Is the supporting detail rushed through quickly, or given heavy emphasis?",
-            "explanation": "Secondary supporting details like the stress reduction aside are often delivered quickly in 'Aside from the savings, planning also reduces stress significantly.', keeping the focus on the speaker's main argument rather than minor background information.",
+            "targetSpeed": 1.27,
+            "hint": "Flooding is happening right now. Urgent instruction, or a slow investigation into the cause?",
+            "explanation": "Active flooding happening right now is a genuine emergency, prompting an instant instruction to shut off the water.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -206,17 +206,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "So before your next trip, book your flights at least a month early.",
-            "textToSpeak": "So before your next trip, book your flights at least a month early.",
+            "word": "Whatever model you're leaning toward should be measured against the space slowly, since returns aren't accepted once it's installed.",
+            "textToSpeak": "Whatever model you're leaning toward should be measured against the space slowly, since returns aren't accepted once it's installed.",
             "options": [
-                "Decelerating (in 'So before your next trip, book your flights at least a month early.', the pace slows on the call to action, booking flights a month early, to make the instruction memorable)",
-                "Accelerating (in 'So before your next trip, book your flights at least a month early.', the speaker rushes through the call to action to end on time)"
+                "Decelerating (an irreversible installation makes the speaker slow down and stress the measuring step)",
+                "Accelerating (the speaker rushes since most appliances fit standard spaces without any issue)"
             ],
-            "correctAnswer": "Decelerating (in 'So before your next trip, book your flights at least a month early.', the pace slows on the call to action, booking flights a month early, to make the instruction memorable)",
+            "correctAnswer": "Decelerating (an irreversible installation makes the speaker slow down and stress the measuring step)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.64,
-            "hint": "Listen to 'So before your next trip, book your flights at least a month early.' Does the pace slow down on the final instruction to the audience?",
-            "explanation": "A persuasive call to action like booking flights a month early is often delivered slowly and clearly in 'So before your next trip, book your flights at least a month early.', so it's the last, most memorable thing the audience hears.",
+            "targetSpeed": 0.71,
+            "hint": "There's no return after installation. Quick advice, or a careful one?",
+            "explanation": "Advice tied to a strict, unchangeable policy is given slowly so the measurement is done properly first.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -224,35 +224,35 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Did you know families who eat dinner together talk fifty percent more?",
-            "textToSpeak": "Did you know families who eat dinner together talk fifty percent more?",
+            "word": "Whoever's managing the account needs to be told immediately, since the client's threatening to cancel today.",
+            "textToSpeak": "Whoever's managing the account needs to be told immediately, since the client's threatening to cancel today.",
             "options": [
-                "Accelerating (in 'Did you know families who eat dinner together talk fifty percent more?', the speaker rushes past the statistic to move to the next point)",
-                "Decelerating (in 'Did you know families who eat dinner together talk fifty percent more?', the pace slows deliberately on the key statistic, fifty percent more, to let it sink in)"
+                "Decelerating (the speaker slows down to review the account's history with the client)",
+                "Accelerating (a same-day cancellation threat speeds up the urgent alert)"
             ],
-            "correctAnswer": "Decelerating (in 'Did you know families who eat dinner together talk fifty percent more?', the pace slows deliberately on the key statistic, fifty percent more, to let it sink in)",
+            "correctAnswer": "Accelerating (a same-day cancellation threat speeds up the urgent alert)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'Did you know families who eat dinner together talk fifty percent more?' Does the pace slow down on the key number to let it sink in?",
-            "explanation": "Skilled speakers slow down on persuasive statistics like fifty percent more so the audience has time to absorb the impact of the number, as in 'Did you know families who eat dinner together talk fifty percent more?'.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "targetSpeed": 1.26,
+            "hint": "This threat is for today. Urgent alert, or a slow history review?",
+            "explanation": "A cancellation threatened for today creates real pressure, speeding up the alert to the account manager.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L145_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Aside from conversation, shared meals also improve overall wellbeing.",
-            "textToSpeak": "Aside from conversation, shared meals also improve overall wellbeing.",
+            "word": "The band that was scheduled to close has apparently been moved up, so get to the stage area now.",
+            "textToSpeak": "The band that was scheduled to close has apparently been moved up, so get to the stage area now.",
             "options": [
-                "Accelerating (in 'Aside from conversation, shared meals also improve overall wellbeing.', the supporting detail, wellbeing improvement aside, is delivered quickly since it isn't the main point)",
-                "Decelerating (in 'Aside from conversation, shared meals also improve overall wellbeing.', the speaker slows down on the supporting detail to emphasize it)"
+                "Decelerating (the speaker slows down to explain why the schedule was changed)",
+                "Accelerating (an unexpectedly earlier performance speeds up the urgent instruction)"
             ],
-            "correctAnswer": "Accelerating (in 'Aside from conversation, shared meals also improve overall wellbeing.', the supporting detail, wellbeing improvement aside, is delivered quickly since it isn't the main point)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.34,
-            "hint": "Listen to 'Aside from conversation, shared meals also improve overall wellbeing.' Is the supporting detail rushed through quickly, or given heavy emphasis?",
-            "explanation": "Secondary supporting details like wellbeing improvement aside are often delivered quickly in 'Aside from conversation, shared meals also improve overall wellbeing.', keeping the focus on the speaker's main argument rather than minor background information.",
+            "correctAnswer": "Accelerating (an unexpectedly earlier performance speeds up the urgent instruction)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.24,
+            "hint": "This was moved up unexpectedly. Urgent instruction, or a calm explanation of the change?",
+            "explanation": "A performance moved earlier than expected creates a small deadline, speeding up the instruction to hurry over.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -260,17 +260,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "So this week, schedule one dinner together with no phones.",
-            "textToSpeak": "So this week, schedule one dinner together with no phones.",
+            "word": "Whatever medication gets prescribed should be introduced slowly, since side effects can build up gradually.",
+            "textToSpeak": "Whatever medication gets prescribed should be introduced slowly, since side effects can build up gradually.",
             "options": [
-                "Accelerating (in 'So this week, schedule one dinner together with no phones.', the speaker rushes through the call to action to end on time)",
-                "Decelerating (in 'So this week, schedule one dinner together with no phones.', the pace slows on the call to action, scheduling one phone-free dinner, to make the instruction memorable)"
+                "Decelerating (a caution about gradual side effects slows the pace of the medical advice)",
+                "Accelerating (the speaker rushes since side effects usually show up right away if they're going to happen)"
             ],
-            "correctAnswer": "Decelerating (in 'So this week, schedule one dinner together with no phones.', the pace slows on the call to action, scheduling one phone-free dinner, to make the instruction memorable)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.64,
-            "hint": "Listen to 'So this week, schedule one dinner together with no phones.' Does the pace slow down on the final instruction to the audience?",
-            "explanation": "A persuasive call to action like scheduling one phone-free dinner is often delivered slowly and clearly in 'So this week, schedule one dinner together with no phones.', so it's the last, most memorable thing the audience hears.",
+            "correctAnswer": "Decelerating (a caution about gradual side effects slows the pace of the medical advice)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.74,
+            "hint": "Side effects can build up gradually here. Quick advice, or a careful one?",
+            "explanation": "Medical advice warning about gradually building side effects is given slowly so the caution is taken seriously.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -278,35 +278,35 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Did you know shoppers with a list spend twenty percent less?",
-            "textToSpeak": "Did you know shoppers with a list spend twenty percent less?",
+            "word": "Everyone still inside needs to leave immediately, since the alarm that's sounding isn't a drill this time.",
+            "textToSpeak": "Everyone still inside needs to leave immediately, since the alarm that's sounding isn't a drill this time.",
             "options": [
-                "Accelerating (in 'Did you know shoppers with a list spend twenty percent less?', the speaker rushes past the statistic to move to the next point)",
-                "Decelerating (in 'Did you know shoppers with a list spend twenty percent less?', the pace slows deliberately on the key statistic, twenty percent less, to let it sink in)"
+                "Accelerating (an alarm confirmed as real, not a drill, speeds up the urgent instruction)",
+                "Decelerating (the speaker slows down to explain how the alarm system usually gets tested)"
             ],
-            "correctAnswer": "Decelerating (in 'Did you know shoppers with a list spend twenty percent less?', the pace slows deliberately on the key statistic, twenty percent less, to let it sink in)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'Did you know shoppers with a list spend twenty percent less?' Does the pace slow down on the key number to let it sink in?",
-            "explanation": "Skilled speakers slow down on persuasive statistics like twenty percent less so the audience has time to absorb the impact of the number, as in 'Did you know shoppers with a list spend twenty percent less?'.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (an alarm confirmed as real, not a drill, speeds up the urgent instruction)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.29,
+            "hint": "This alarm isn't a drill. Urgent instruction, or a calm explanation of testing procedures?",
+            "explanation": "An alarm confirmed as genuine rather than a drill prompts an instant, urgent instruction to leave.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L146_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Aside from saving money, planning also saves valuable time.",
-            "textToSpeak": "Aside from saving money, planning also saves valuable time.",
+            "word": "The order that was placed an hour ago still hasn't arrived, and the kitchen's apparently swamped tonight.",
+            "textToSpeak": "The order that was placed an hour ago still hasn't arrived, and the kitchen's apparently swamped tonight.",
             "options": [
-                "Accelerating (in 'Aside from saving money, planning also saves valuable time.', the supporting detail, the time savings aside, is delivered quickly since it isn't the main point)",
-                "Decelerating (in 'Aside from saving money, planning also saves valuable time.', the speaker slows down on the supporting detail to emphasize it)"
+                "Accelerating (a significant, ongoing delay speeds up the frustrated, urgent update)",
+                "Decelerating (the speaker slows down to describe what was ordered in detail)"
             ],
-            "correctAnswer": "Accelerating (in 'Aside from saving money, planning also saves valuable time.', the supporting detail, the time savings aside, is delivered quickly since it isn't the main point)",
+            "correctAnswer": "Accelerating (a significant, ongoing delay speeds up the frustrated, urgent update)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.34,
-            "hint": "Listen to 'Aside from saving money, planning also saves valuable time.' Is the supporting detail rushed through quickly, or given heavy emphasis?",
-            "explanation": "Secondary supporting details like the time savings aside are often delivered quickly in 'Aside from saving money, planning also saves valuable time.', keeping the focus on the speaker's main argument rather than minor background information.",
+            "targetSpeed": 1.22,
+            "hint": "This has been an hour already. Urgent update, or a slow description of the order?",
+            "explanation": "A significant delay that's still ongoing prompts a fast, frustrated update rather than a calm description.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -314,35 +314,35 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "So next time, write your shopping list before you leave home.",
-            "textToSpeak": "So next time, write your shopping list before you leave home.",
+            "word": "The neighbor who's usually so quiet is banging on the door right now, so something must be wrong.",
+            "textToSpeak": "The neighbor who's usually so quiet is banging on the door right now, so something must be wrong.",
             "options": [
-                "Accelerating (in 'So next time, write your shopping list before you leave home.', the speaker rushes through the call to action to end on time)",
-                "Decelerating (in 'So next time, write your shopping list before you leave home.', the pace slows on the call to action, writing the list before leaving, to make the instruction memorable)"
+                "Decelerating (the speaker slows down to think about what might have upset the neighbor)",
+                "Accelerating (unusual, urgent behavior from a normally quiet person speeds up the alarmed reaction)"
             ],
-            "correctAnswer": "Decelerating (in 'So next time, write your shopping list before you leave home.', the pace slows on the call to action, writing the list before leaving, to make the instruction memorable)",
+            "correctAnswer": "Accelerating (unusual, urgent behavior from a normally quiet person speeds up the alarmed reaction)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.64,
-            "hint": "Listen to 'So next time, write your shopping list before you leave home.' Does the pace slow down on the final instruction to the audience?",
-            "explanation": "A persuasive call to action like writing the list before leaving is often delivered slowly and clearly in 'So next time, write your shopping list before you leave home.', so it's the last, most memorable thing the audience hears.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "targetSpeed": 1.25,
+            "hint": "This is very unusual behavior for this neighbor. Alarmed reaction, or a slow, thoughtful guess?",
+            "explanation": "Unusual, urgent behavior from someone normally calm prompts an alarmed, fast reaction rather than a slow guess.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L147_Q1",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Did you know home-cooked meals cost sixty percent less than takeout?",
-            "textToSpeak": "Did you know home-cooked meals cost sixty percent less than takeout?",
+            "word": "The feedback that was given last week deserves a slow rereading, since it applies to this next assignment too.",
+            "textToSpeak": "The feedback that was given last week deserves a slow rereading, since it applies to this next assignment too.",
             "options": [
-                "Accelerating (in 'Did you know home-cooked meals cost sixty percent less than takeout?', the speaker rushes past the statistic to move to the next point)",
-                "Decelerating (in 'Did you know home-cooked meals cost sixty percent less than takeout?', the pace slows deliberately on the key statistic, sixty percent less, to let it sink in)"
+                "Decelerating (feedback relevant to future work slows the pace of the advice)",
+                "Accelerating (the speaker rushes since feedback on past work rarely applies to what comes next)"
             ],
-            "correctAnswer": "Decelerating (in 'Did you know home-cooked meals cost sixty percent less than takeout?', the pace slows deliberately on the key statistic, sixty percent less, to let it sink in)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'Did you know home-cooked meals cost sixty percent less than takeout?' Does the pace slow down on the key number to let it sink in?",
-            "explanation": "Skilled speakers slow down on persuasive statistics like sixty percent less so the audience has time to absorb the impact of the number, as in 'Did you know home-cooked meals cost sixty percent less than takeout?'.",
+            "correctAnswer": "Decelerating (feedback relevant to future work slows the pace of the advice)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.72,
+            "hint": "This feedback applies to the next assignment too. Quick advice, or a careful rereading?",
+            "explanation": "Feedback that carries forward to future work is treated slowly and carefully, since it still matters.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -350,71 +350,71 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Aside from the cost, cooking at home is often healthier too.",
-            "textToSpeak": "Aside from the cost, cooking at home is often healthier too.",
+            "word": "Whatever was discussed last night needs to be explained slowly, since it changes quite a lot for the kids.",
+            "textToSpeak": "Whatever was discussed last night needs to be explained slowly, since it changes quite a lot for the kids.",
             "options": [
-                "Accelerating (in 'Aside from the cost, cooking at home is often healthier too.', the supporting detail, the health benefit aside, is delivered quickly since it isn't the main point)",
-                "Decelerating (in 'Aside from the cost, cooking at home is often healthier too.', the speaker slows down on the supporting detail to emphasize it)"
+                "Accelerating (the speaker rushes since kids usually adapt to change without much explanation needed)",
+                "Decelerating (a change affecting children significantly slows the pace of the explanation)"
             ],
-            "correctAnswer": "Accelerating (in 'Aside from the cost, cooking at home is often healthier too.', the supporting detail, the health benefit aside, is delivered quickly since it isn't the main point)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.34,
-            "hint": "Listen to 'Aside from the cost, cooking at home is often healthier too.' Is the supporting detail rushed through quickly, or given heavy emphasis?",
-            "explanation": "Secondary supporting details like the health benefit aside are often delivered quickly in 'Aside from the cost, cooking at home is often healthier too.', keeping the focus on the speaker's main argument rather than minor background information.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "correctAnswer": "Decelerating (a change affecting children significantly slows the pace of the explanation)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.7,
+            "hint": "This changes a lot for the kids. Quick mention, or a careful explanation?",
+            "explanation": "Changes that significantly affect children are explained slowly and carefully, out of real consideration.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L147_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "So this week, try cooking just one extra meal at home.",
-            "textToSpeak": "So this week, try cooking just one extra meal at home.",
+            "word": "Whoever set up the firewall needs to be contacted immediately, since something's actively getting through it.",
+            "textToSpeak": "Whoever set up the firewall needs to be contacted immediately, since something's actively getting through it.",
             "options": [
-                "Accelerating (in 'So this week, try cooking just one extra meal at home.', the speaker rushes through the call to action to end on time)",
-                "Decelerating (in 'So this week, try cooking just one extra meal at home.', the pace slows on the call to action, cooking one extra meal at home, to make the instruction memorable)"
+                "Decelerating (the speaker slows down to review the firewall's original configuration)",
+                "Accelerating (an active security breach speeds up the urgent contact request)"
             ],
-            "correctAnswer": "Decelerating (in 'So this week, try cooking just one extra meal at home.', the pace slows on the call to action, cooking one extra meal at home, to make the instruction memorable)",
+            "correctAnswer": "Accelerating (an active security breach speeds up the urgent contact request)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.64,
-            "hint": "Listen to 'So this week, try cooking just one extra meal at home.' Does the pace slow down on the final instruction to the audience?",
-            "explanation": "A persuasive call to action like cooking one extra meal at home is often delivered slowly and clearly in 'So this week, try cooking just one extra meal at home.', so it's the last, most memorable thing the audience hears.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "targetSpeed": 1.27,
+            "hint": "Something is getting through right now. Urgent request, or a slow configuration review?",
+            "explanation": "An active breach happening right now demands an immediate response, speeding up the request to contact the right person.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L148_Q1",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Did you know regular backups prevent ninety percent of data loss?",
-            "textToSpeak": "Did you know regular backups prevent ninety percent of data loss?",
+            "word": "The flight that was due to leave on time has apparently been moved up, so we need to board now.",
+            "textToSpeak": "The flight that was due to leave on time has apparently been moved up, so we need to board now.",
             "options": [
-                "Accelerating (in 'Did you know regular backups prevent ninety percent of data loss?', the speaker rushes past the statistic to move to the next point)",
-                "Decelerating (in 'Did you know regular backups prevent ninety percent of data loss?', the pace slows deliberately on the key statistic, ninety percent of data loss, to let it sink in)"
+                "Accelerating (an earlier-than-expected boarding time speeds up the urgent instruction)",
+                "Decelerating (the speaker slows down to check the new departure time on the board)"
             ],
-            "correctAnswer": "Decelerating (in 'Did you know regular backups prevent ninety percent of data loss?', the pace slows deliberately on the key statistic, ninety percent of data loss, to let it sink in)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'Did you know regular backups prevent ninety percent of data loss?' Does the pace slow down on the key number to let it sink in?",
-            "explanation": "Skilled speakers slow down on persuasive statistics like ninety percent of data loss so the audience has time to absorb the impact of the number, as in 'Did you know regular backups prevent ninety percent of data loss?'.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (an earlier-than-expected boarding time speeds up the urgent instruction)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.28,
+            "hint": "This was moved up unexpectedly. Urgent instruction, or a slow check of the departure board?",
+            "explanation": "A flight moved earlier than expected creates real time pressure, speeding up the instruction to board now.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L148_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Aside from safety, backups also make switching devices much easier.",
-            "textToSpeak": "Aside from safety, backups also make switching devices much easier.",
+            "word": "The man who just collapsed still hasn't woken up, so anyone trained in first aid needs to come immediately.",
+            "textToSpeak": "The man who just collapsed still hasn't woken up, so anyone trained in first aid needs to come immediately.",
             "options": [
-                "Accelerating (in 'Aside from safety, backups also make switching devices much easier.', the supporting detail, the easier device switching aside, is delivered quickly since it isn't the main point)",
-                "Decelerating (in 'Aside from safety, backups also make switching devices much easier.', the speaker slows down on the supporting detail to emphasize it)"
+                "Decelerating (the speaker calmly explains what might have caused the collapse)",
+                "Accelerating (an unresponsive collapsed person is a real emergency that speeds up the call)"
             ],
-            "correctAnswer": "Accelerating (in 'Aside from safety, backups also make switching devices much easier.', the supporting detail, the easier device switching aside, is delivered quickly since it isn't the main point)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.34,
-            "hint": "Listen to 'Aside from safety, backups also make switching devices much easier.' Is the supporting detail rushed through quickly, or given heavy emphasis?",
-            "explanation": "Secondary supporting details like the easier device switching aside are often delivered quickly in 'Aside from safety, backups also make switching devices much easier.', keeping the focus on the speaker's main argument rather than minor background information.",
+            "correctAnswer": "Accelerating (an unresponsive collapsed person is a real emergency that speeds up the call)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.32,
+            "hint": "He still hasn't woken up. Urgent call, or a calm explanation of the cause?",
+            "explanation": "Someone unresponsive after collapsing is treated as a genuine emergency, prompting an instant call for help.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -422,17 +422,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "So today, set up an automatic backup for your files.",
-            "textToSpeak": "So today, set up an automatic backup for your files.",
+            "word": "The warranty that comes with this appliance deserves a slow read, since it doesn't cover everything you'd expect.",
+            "textToSpeak": "The warranty that comes with this appliance deserves a slow read, since it doesn't cover everything you'd expect.",
             "options": [
-                "Accelerating (in 'So today, set up an automatic backup for your files.', the speaker rushes through the call to action to end on time)",
-                "Decelerating (in 'So today, set up an automatic backup for your files.', the pace slows on the call to action, setting up automatic backups, to make the instruction memorable)"
+                "Accelerating (the speaker rushes since warranties are usually fairly standard across brands)",
+                "Decelerating (a warranty with unexpected gaps slows the pace of the practical advice)"
             ],
-            "correctAnswer": "Decelerating (in 'So today, set up an automatic backup for your files.', the pace slows on the call to action, setting up automatic backups, to make the instruction memorable)",
+            "correctAnswer": "Decelerating (a warranty with unexpected gaps slows the pace of the practical advice)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.64,
-            "hint": "Listen to 'So today, set up an automatic backup for your files.' Does the pace slow down on the final instruction to the audience?",
-            "explanation": "A persuasive call to action like setting up automatic backups is often delivered slowly and clearly in 'So today, set up an automatic backup for your files.', so it's the last, most memorable thing the audience hears.",
+            "targetSpeed": 0.73,
+            "hint": "This doesn't cover everything you'd expect. Quick mention, or a careful read?",
+            "explanation": "Advice about a warranty with unexpected gaps is given slowly so the customer notices what's missing.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -440,89 +440,89 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Did you know just thirty minutes of walking cuts health risks by forty percent?",
-            "textToSpeak": "Did you know just thirty minutes of walking cuts health risks by forty percent?",
+            "word": "If she finds out from someone else first, she's going to be far more upset than if we tell her now.",
+            "textToSpeak": "If she finds out from someone else first, she's going to be far more upset than if we tell her now.",
             "options": [
-                "Accelerating (in 'Did you know just thirty minutes of walking cuts health risks by forty percent?', the speaker rushes past the statistic to move to the next point)",
-                "Decelerating (in 'Did you know just thirty minutes of walking cuts health risks by forty percent?', the pace slows deliberately on the key statistic, forty percent, to let it sink in)"
+                "Accelerating (a conditional comparison favoring immediate honesty speeds up the urgent suggestion)",
+                "Decelerating (the speaker slows down to plan out exactly how to phrase the news)"
             ],
-            "correctAnswer": "Decelerating (in 'Did you know just thirty minutes of walking cuts health risks by forty percent?', the pace slows deliberately on the key statistic, forty percent, to let it sink in)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'Did you know just thirty minutes of walking cuts health risks by forty percent?' Does the pace slow down on the key number to let it sink in?",
-            "explanation": "Skilled speakers slow down on persuasive statistics like forty percent so the audience has time to absorb the impact of the number, as in 'Did you know just thirty minutes of walking cuts health risks by forty percent?'.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (a conditional comparison favoring immediate honesty speeds up the urgent suggestion)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.23,
+            "hint": "Waiting makes this worse. Urgent suggestion, or a slow planning session?",
+            "explanation": "A conditional comparison showing that waiting makes things worse speeds up the suggestion to act now.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L149_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Aside from physical health, walking also improves mental wellbeing.",
-            "textToSpeak": "Aside from physical health, walking also improves mental wellbeing.",
+            "word": "The sauce that's been simmering deserves a slow taste test, since the balance changes right at the very end.",
+            "textToSpeak": "The sauce that's been simmering deserves a slow taste test, since the balance changes right at the very end.",
             "options": [
-                "Accelerating (in 'Aside from physical health, walking also improves mental wellbeing.', the supporting detail, mental wellbeing aside, is delivered quickly since it isn't the main point)",
-                "Decelerating (in 'Aside from physical health, walking also improves mental wellbeing.', the speaker slows down on the supporting detail to emphasize it)"
+                "Decelerating (a technique detail about late-stage changes slows the pace of the instruction)",
+                "Accelerating (the speaker rushes since sauces usually taste the same throughout cooking)"
             ],
-            "correctAnswer": "Accelerating (in 'Aside from physical health, walking also improves mental wellbeing.', the supporting detail, mental wellbeing aside, is delivered quickly since it isn't the main point)",
+            "correctAnswer": "Decelerating (a technique detail about late-stage changes slows the pace of the instruction)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.34,
-            "hint": "Listen to 'Aside from physical health, walking also improves mental wellbeing.' Is the supporting detail rushed through quickly, or given heavy emphasis?",
-            "explanation": "Secondary supporting details like mental wellbeing aside are often delivered quickly in 'Aside from physical health, walking also improves mental wellbeing.', keeping the focus on the speaker's main argument rather than minor background information.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "targetSpeed": 0.72,
+            "hint": "The balance changes right at the end. Quick instruction, or a careful one?",
+            "explanation": "Instructions about a subtle, late-stage change in flavor are given slowly so the timing is right.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L149_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "So starting today, walk for just thirty minutes.",
-            "textToSpeak": "So starting today, walk for just thirty minutes.",
+            "word": "The car that's parked in front of the fire hydrant needs to be moved immediately, since a truck's trying to get through.",
+            "textToSpeak": "The car that's parked in front of the fire hydrant needs to be moved immediately, since a truck's trying to get through.",
             "options": [
-                "Accelerating (in 'So starting today, walk for just thirty minutes.', the speaker rushes through the call to action to end on time)",
-                "Decelerating (in 'So starting today, walk for just thirty minutes.', the pace slows on the call to action, walking for thirty minutes, to make the instruction memorable)"
+                "Accelerating (an emergency vehicle blocked right now speeds up the urgent instruction)",
+                "Decelerating (the speaker slows down to note down the car's license plate first)"
             ],
-            "correctAnswer": "Decelerating (in 'So starting today, walk for just thirty minutes.', the pace slows on the call to action, walking for thirty minutes, to make the instruction memorable)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.64,
-            "hint": "Listen to 'So starting today, walk for just thirty minutes.' Does the pace slow down on the final instruction to the audience?",
-            "explanation": "A persuasive call to action like walking for thirty minutes is often delivered slowly and clearly in 'So starting today, walk for just thirty minutes.', so it's the last, most memorable thing the audience hears.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (an emergency vehicle blocked right now speeds up the urgent instruction)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.3,
+            "hint": "A truck is trying to get through right now. Urgent instruction, or a slow note of the plate?",
+            "explanation": "An emergency vehicle blocked right now creates real urgency, speeding up the instruction to move the car.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L150_Q1",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Did you know live performances boost audience happiness by sixty percent?",
-            "textToSpeak": "Did you know live performances boost audience happiness by sixty percent?",
+            "word": "The numbers that went out this morning need to be corrected immediately, since they've already reached several clients.",
+            "textToSpeak": "The numbers that went out this morning need to be corrected immediately, since they've already reached several clients.",
             "options": [
-                "Accelerating (in 'Did you know live performances boost audience happiness by sixty percent?', the speaker rushes past the statistic to move to the next point)",
-                "Decelerating (in 'Did you know live performances boost audience happiness by sixty percent?', the pace slows deliberately on the key statistic, sixty percent, to let it sink in)"
+                "Decelerating (the speaker slows down to figure out exactly who made the mistake)",
+                "Accelerating (an error already sent to clients speeds up the urgent correction)"
             ],
-            "correctAnswer": "Decelerating (in 'Did you know live performances boost audience happiness by sixty percent?', the pace slows deliberately on the key statistic, sixty percent, to let it sink in)",
+            "correctAnswer": "Accelerating (an error already sent to clients speeds up the urgent correction)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'Did you know live performances boost audience happiness by sixty percent?' Does the pace slow down on the key number to let it sink in?",
-            "explanation": "Skilled speakers slow down on persuasive statistics like sixty percent so the audience has time to absorb the impact of the number, as in 'Did you know live performances boost audience happiness by sixty percent?'.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "targetSpeed": 1.25,
+            "hint": "This has already reached clients. Urgent correction, or a slow search for blame?",
+            "explanation": "An error that's already reached clients creates real pressure, speeding up the request to correct it now.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L150_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Aside from happiness, live shows also strengthen community connections.",
-            "textToSpeak": "Aside from happiness, live shows also strengthen community connections.",
+            "word": "Whoever's still in the lobby needs to head in now, since the doors are apparently about to close.",
+            "textToSpeak": "Whoever's still in the lobby needs to head in now, since the doors are apparently about to close.",
             "options": [
-                "Accelerating (in 'Aside from happiness, live shows also strengthen community connections.', the supporting detail, community connection aside, is delivered quickly since it isn't the main point)",
-                "Decelerating (in 'Aside from happiness, live shows also strengthen community connections.', the speaker slows down on the supporting detail to emphasize it)"
+                "Decelerating (the speaker slows down to describe what's happening inside already)",
+                "Accelerating (doors about to close speed up the urgent instruction to move)"
             ],
-            "correctAnswer": "Accelerating (in 'Aside from happiness, live shows also strengthen community connections.', the supporting detail, community connection aside, is delivered quickly since it isn't the main point)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.34,
-            "hint": "Listen to 'Aside from happiness, live shows also strengthen community connections.' Is the supporting detail rushed through quickly, or given heavy emphasis?",
-            "explanation": "Secondary supporting details like community connection aside are often delivered quickly in 'Aside from happiness, live shows also strengthen community connections.', keeping the focus on the speaker's main argument rather than minor background information.",
+            "correctAnswer": "Accelerating (doors about to close speed up the urgent instruction to move)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.27,
+            "hint": "The doors are about to close. Urgent instruction, or a slow description of what's inside?",
+            "explanation": "Doors about to close create a real, immediate deadline, speeding up the instruction to hurry in.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -530,17 +530,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "So this month, go see one live performance near you.",
-            "textToSpeak": "So this month, go see one live performance near you.",
+            "word": "The rubric that was handed out deserves a slow, careful study, since it explains exactly how marks are awarded.",
+            "textToSpeak": "The rubric that was handed out deserves a slow, careful study, since it explains exactly how marks are awarded.",
             "options": [
-                "Accelerating (in 'So this month, go see one live performance near you.', the speaker rushes through the call to action to end on time)",
-                "Decelerating (in 'So this month, go see one live performance near you.', the pace slows on the call to action, seeing one live performance, to make the instruction memorable)"
+                "Accelerating (the speaker rushes since rubrics are usually just a rough guide anyway)",
+                "Decelerating (a document tied directly to grading slows the pace of the advice)"
             ],
-            "correctAnswer": "Decelerating (in 'So this month, go see one live performance near you.', the pace slows on the call to action, seeing one live performance, to make the instruction memorable)",
+            "correctAnswer": "Decelerating (a document tied directly to grading slows the pace of the advice)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.64,
-            "hint": "Listen to 'So this month, go see one live performance near you.' Does the pace slow down on the final instruction to the audience?",
-            "explanation": "A persuasive call to action like seeing one live performance is often delivered slowly and clearly in 'So this month, go see one live performance near you.', so it's the last, most memorable thing the audience hears.",
+            "targetSpeed": 0.71,
+            "hint": "This explains exactly how marks are given. Quick glance, or a careful study?",
+            "explanation": "Advice about studying something tied directly to grading is given slowly so nothing important is missed.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         }
     ]

@@ -7,521 +7,521 @@
             "id": "LIS_DETAILSPOTLIGHT_L1_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the person's title or job mentioned in the audio.",
-            "explanation": "The correct person is detective - a person who investigates crimes, mysteries, or hidden information. The sentence tells us she works as a part-time detective.",
-            "textToSpeak": "She works as a part-time detective.",
-            "targetDetail": "detective",
+            "hint": "Zero in on the person's identity, not their action.",
+            "explanation": "That's teacher: a person who helps students learn at a school. The audio confirms it — the teacher arrives at school every morning.",
+            "textToSpeak": "Our teacher arrives at school every morning.",
+            "targetDetail": "teacher",
             "options": [
-                "robot",
-                "researcher",
-                "technician",
-                "detective"
+                "teacher",
+                "grandmother",
+                "aunt",
+                "chef"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🕵️"
+            "emoji": "👩‍🏫"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L1_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to what is happening, not who or what is involved.",
-            "explanation": "You heard restores. This verb means to bring something back to its original or working condition. In the audio, he restores old photos on his computer.",
-            "textToSpeak": "He restores old photos on his computer.",
-            "targetDetail": "restores",
+            "hint": "Notice the action being performed in the audio.",
+            "explanation": "Waters is correct — to pour water on plants to help them grow. Notice how she waters the flowers every single day.",
+            "textToSpeak": "She waters the flowers every single day.",
+            "targetDetail": "waters",
             "options": [
-                "restores",
-                "measures",
-                "scans",
-                "secures"
+                "waters",
+                "bakes",
+                "lends",
+                "writes"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🔧"
+            "emoji": "🪴"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L1_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to the thing, not who is using it or what they do.",
-            "explanation": "The correct object is archive - a collection of stored records, files, or documents kept for future reference. In the audio, she keeps an archive of family pictures.",
-            "textToSpeak": "She keeps an archive of family pictures.",
-            "targetDetail": "archive",
+            "hint": "Focus on the item, not the person or action described.",
+            "explanation": "Phone is correct — a device used to make calls and send messages. The sentence tells us he keeps the phone in his front pocket.",
+            "textToSpeak": "He keeps his phone in his front pocket.",
+            "targetDetail": "phone",
             "options": [
-                "archive",
-                "engine",
-                "sensor",
-                "terminal"
+                "phone",
+                "gift",
+                "notebook",
+                "textbook"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🗄️"
+            "emoji": "📱"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L2_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Which person's name or role do you hear in the sentence?",
-            "explanation": "Scout is correct - a person who goes ahead to gather information or find the best option. In the sentence, my neighbor works as a talent scout.",
-            "textToSpeak": "My neighbor works as a talent scout.",
-            "targetDetail": "scout",
+            "hint": "Focus on the word that tells you who did this.",
+            "explanation": "The person mentioned is uncle: the brother of someone's mother or father. Here, the uncle works as a friendly bus driver.",
+            "textToSpeak": "My uncle works as a friendly bus driver.",
+            "targetDetail": "uncle",
             "options": [
-                "scout",
-                "droid",
-                "mentor",
-                "teacher"
+                "uncle",
+                "babysitter",
+                "tourist",
+                "singer"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🔭"
+            "emoji": "🚌"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L2_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the action being performed in the audio.",
-            "explanation": "Analyzes is the action - to examine something carefully in detail to understand its parts or meaning. In the sentence, she analyzes the weather report every morning.",
-            "textToSpeak": "She analyzes the weather report every morning.",
-            "targetDetail": "analyzes",
+            "hint": "Which verb captures the main activity here?",
+            "explanation": "Cleans fits the sentence — to remove dirt from something. You can hear that the sister cleans her room every Saturday.",
+            "textToSpeak": "My sister cleans her room every Saturday.",
+            "targetDetail": "cleans",
             "options": [
-                "encrypts",
-                "activates",
-                "deploys",
-                "analyzes"
+                "buys",
+                "teaches",
+                "greets",
+                "cleans"
             ],
             "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🔍"
+            "emoji": "🧹"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L2_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the object or concept named in the sentence.",
-            "explanation": "Circuit is correct - a closed path that lets electricity flow through to power a device. In the sentence, the lamp has a broken circuit inside.",
-            "textToSpeak": "The lamp has a broken circuit inside.",
-            "targetDetail": "circuit",
+            "hint": "Listen for the specific thing described in the audio.",
+            "explanation": "The thing mentioned is umbrella: an object used to protect against rain. Here, the family keeps a big umbrella by the door.",
+            "textToSpeak": "We keep a big umbrella by the door.",
+            "targetDetail": "umbrella",
             "options": [
-                "circuit",
-                "module",
-                "code",
-                "terminal"
+                "key",
+                "umbrella",
+                "ticket",
+                "invitation"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🔌"
+            "emoji": "☂️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L3_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to who the sentence is about.",
-            "explanation": "You heard technician: a person skilled in the practical use of technology or machinery. The audio shows the school has a new IT technician.",
-            "textToSpeak": "The school has a new IT technician.",
-            "targetDetail": "technician",
+            "hint": "The sentence names a person — catch exactly who.",
+            "explanation": "nurse is correct — a person who cares for patients, often in a hospital. In the audio, a kind nurse works at the small clinic.",
+            "textToSpeak": "A kind nurse works at the small clinic.",
+            "targetDetail": "nurse",
             "options": [
-                "hero",
-                "commander",
-                "artist",
-                "technician"
+                "classmate",
+                "nurse",
+                "mechanic",
+                "passenger"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "👨‍🔧"
+            "emoji": "👩‍⚕️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L3_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the doing word, not the subject or object.",
-            "explanation": "Measures is the action - to determine the size, amount, or degree of something. In the sentence, he measures the classroom door carefully.",
-            "textToSpeak": "He measures the classroom door carefully.",
-            "targetDetail": "measures",
+            "hint": "The key word describes an action or activity.",
+            "explanation": "The action named is cooks, which means to prepare food by heating it. To be exact, the dad cooks dinner every night.",
+            "textToSpeak": "My dad cooks dinner for us every night.",
+            "targetDetail": "cooks",
             "options": [
-                "encrypts",
                 "builds",
-                "measures",
-                "deploys"
+                "cooks",
+                "borrows",
+                "plants"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "📏"
+            "emoji": "🍳"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L3_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the specific thing described in the audio.",
-            "explanation": "You heard device - a small machine or tool designed to perform a specific job. The audio describes the teacher uses a device in class.",
-            "textToSpeak": "The teacher uses a device in class.",
-            "targetDetail": "device",
+            "hint": "The item's name is the target — set aside who and what happened.",
+            "explanation": "You heard key, a small metal object used to lock or unlock something. Notice that she lost her house key at the park.",
+            "textToSpeak": "She lost her house key at the park.",
+            "targetDetail": "key",
             "options": [
-                "signal",
-                "software",
-                "device",
-                "data"
+                "cart",
+                "key",
+                "blanket",
+                "map"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🔌"
+            "emoji": "🔑"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L4_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the person, not the action or the object they mention.",
-            "explanation": "The correct person is technician - a person skilled in the practical use of technology or machinery. The sentence tells us the technician fixes computers at our school.",
-            "textToSpeak": "The technician fixes computers at our school.",
-            "targetDetail": "technician",
+            "hint": "Listen closely for how the person is identified.",
+            "explanation": "Right answer: farmer, a person who grows crops or raises animals for a living. That's because the young farmer grows corn on his land.",
+            "textToSpeak": "The young farmer grows corn on his land.",
+            "targetDetail": "farmer",
             "options": [
-                "hacker",
-                "droid",
-                "technician",
-                "explorer"
+                "traveler",
+                "athlete",
+                "neighbor",
+                "farmer"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "👨‍🔧"
+            "emoji": "🌾"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L4_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for what is happening, not to whom or with what.",
-            "explanation": "The action is restores, meaning to bring something back to its original or working condition. Here, she restores deleted files on the laptop.",
-            "textToSpeak": "She restores deleted files on the laptop.",
-            "targetDetail": "restores",
+            "hint": "Catch the word that tells you what takes place.",
+            "explanation": "Listen for reads: to look at and understand written words. As stated, the brother reads comic books before bedtime.",
+            "textToSpeak": "My brother reads comic books before bedtime.",
+            "targetDetail": "reads",
             "options": [
-                "creates",
-                "restores",
-                "transfers",
-                "analyzes"
+                "reads",
+                "fixes",
+                "invites",
+                "washes"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🔧"
+            "emoji": "📖"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L4_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "The key word names a thing, not a person or an action.",
-            "explanation": "You heard software - the programs and instructions that tell a computer how to operate. The audio describes we use learning software in every lesson.",
-            "textToSpeak": "We use learning software in every lesson.",
-            "targetDetail": "software",
+            "hint": "Don't get distracted by the person; focus on the thing.",
+            "explanation": "Gift is the detail — something given to someone, often to celebrate an occasion. Specifically, they packed a small gift for grandma.",
+            "textToSpeak": "They packed a small gift for grandma.",
+            "targetDetail": "gift",
             "options": [
-                "chip",
-                "signal",
-                "software",
-                "engine"
+                "receipt",
+                "gift",
+                "letter",
+                "schedule"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "💻"
+            "emoji": "🎁"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L5_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "The key word here is a person's title or role.",
-            "explanation": "You heard engineer: a person who designs, builds, or maintains machines or technical systems. The audio shows our company hires a skilled software engineer.",
-            "textToSpeak": "Our company hires a skilled software engineer.",
-            "targetDetail": "engineer",
+            "hint": "Catch the specific role or job title in the sentence.",
+            "explanation": "The role named is waiter, a person who serves food to customers in a restaurant. Specifically, a friendly waiter brought warm bread.",
+            "textToSpeak": "A friendly waiter brought us warm bread.",
+            "targetDetail": "waiter",
             "options": [
-                "engineer",
-                "mentor",
-                "droid",
-                "teacher"
+                "waiter",
+                "cook",
+                "host",
+                "customer"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "👨‍🔧"
+            "emoji": "🍞"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L5_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "The key word describes an action or activity.",
-            "explanation": "You heard activates. This verb means to start or switch something on so it begins to work. In the audio, he activates the security system each evening.",
-            "textToSpeak": "He activates the security system each evening.",
-            "targetDetail": "activates",
+            "hint": "Catch the verb that tells you what's happening.",
+            "explanation": "That's the verb walks: to move on foot at a normal pace. Here, he walks his dog around the block.",
+            "textToSpeak": "He walks his dog around the block.",
+            "targetDetail": "walks",
             "options": [
-                "measures",
-                "secures",
-                "analyzes",
-                "activates"
+                "paints",
+                "packs",
+                "walks",
+                "visits"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🔘"
+            "emoji": "🐕"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L5_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the name of the thing or object mentioned.",
-            "explanation": "You heard circuit - a closed path that lets electricity flow through to power a device. The audio describes the engineer tests the main circuit daily.",
-            "textToSpeak": "The engineer tests the main circuit daily.",
-            "targetDetail": "circuit",
+            "hint": "Focus on the noun that identifies the object.",
+            "explanation": "Letter fits here — a written message sent to someone, often by post. You can hear that she wrote a long letter to her cousin.",
+            "textToSpeak": "She wrote a long letter to her cousin.",
+            "targetDetail": "letter",
             "options": [
-                "signal",
-                "database",
-                "portal",
-                "circuit"
+                "passport",
+                "letter",
+                "thermometer",
+                "menu"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🔌"
+            "emoji": "✉️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L6_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the type of person described in the sentence.",
-            "explanation": "Technician is correct - a person skilled in the practical use of technology or machinery. In the sentence, the technician checks the servers every day.",
-            "textToSpeak": "The technician checks the servers every day.",
-            "targetDetail": "technician",
+            "hint": "Catch the specific title used to describe someone.",
+            "explanation": "The correct person is neighbor — a person who lives next door or nearby. The sentence tells us the neighbor feeds the birds every morning.",
+            "textToSpeak": "Our neighbor feeds the birds every morning.",
+            "targetDetail": "neighbor",
             "options": [
-                "hero",
-                "mentor",
-                "technician",
-                "detective"
+                "neighbor",
+                "cashier",
+                "guest",
+                "grandfather"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "👨‍🔧"
+            "emoji": "🐦"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L6_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the action word - what is the person or thing doing?",
-            "explanation": "You heard updates. This verb means to make something current by adding new or recent information. In the audio, she updates the company website each morning.",
-            "textToSpeak": "She updates the company website each morning.",
-            "targetDetail": "updates",
+            "hint": "The detail to catch is the specific verb used.",
+            "explanation": "bakes is the action — to cook food, such as bread, using dry heat. In the audio, the baker bakes fresh bread at dawn.",
+            "textToSpeak": "The baker bakes fresh bread at dawn.",
+            "targetDetail": "bakes",
             "options": [
-                "sends",
-                "creates",
-                "updates",
-                "encrypts"
+                "apologizes",
+                "bakes",
+                "celebrates",
+                "drives"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🔄"
+            "emoji": "🥖"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L6_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the item, not the person or action described.",
-            "explanation": "Circuit is correct - a closed path that lets electricity flow through to power a device. In the sentence, he replaces a damaged circuit in the machine.",
-            "textToSpeak": "He replaces a damaged circuit in the machine.",
-            "targetDetail": "circuit",
+            "hint": "What single word best names the thing described?",
+            "explanation": "Listen for map: a drawing that shows the layout of an area. In this sentence, he checked the map before the trip.",
+            "textToSpeak": "He checked the map before the trip.",
+            "targetDetail": "map",
             "options": [
-                "circuit",
-                "portal",
-                "terminal",
-                "module"
+                "photo",
+                "reunion",
+                "neighborhood",
+                "map"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🔌"
+            "emoji": "🗺️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L7_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the name or role of the person in the sentence.",
-            "explanation": "The person mentioned is detective. A person who investigates crimes, mysteries, or hidden information. Here, a detective travels for work each week.",
-            "textToSpeak": "A detective travels for work each week.",
-            "targetDetail": "detective",
+            "hint": "The person's identity is hiding in plain sight — listen for it.",
+            "explanation": "The person in question is baker: a person who makes and sells bread and cakes. To be exact, the tired baker rested after a long shift.",
+            "textToSpeak": "The tired baker rested after a long shift.",
+            "targetDetail": "baker",
             "options": [
-                "scientist",
-                "detective",
-                "robot",
-                "hero"
+                "baker",
+                "driver",
+                "pilot",
+                "gardener"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🕵️"
+            "emoji": "🥐"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L7_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the verb, not the person or the thing they mention.",
-            "explanation": "Sends is the action - to cause something to go or be taken from one place to another. In the sentence, the agent sends booking details by email.",
-            "textToSpeak": "The agent sends travel booking details by email.",
-            "targetDetail": "sends",
+            "hint": "Listen for the word that names the action taking place.",
+            "explanation": "Right answer: buys, meaning to get something by paying money for it. That's because the mom buys fruit at the market.",
+            "textToSpeak": "My mom buys fruit at the market.",
+            "targetDetail": "buys",
             "options": [
-                "builds",
-                "monitors",
-                "sends",
-                "restores"
+                "thanks",
+                "chops",
+                "buys",
+                "orders"
             ],
             "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🔄"
+            "emoji": "🍎"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L7_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Which object or thing do you hear in the sentence?",
-            "explanation": "You heard system - a set of connected parts that work together to carry out a function. The audio describes the airport uses a modern check-in system.",
-            "textToSpeak": "The airport uses a modern check-in system.",
-            "targetDetail": "system",
+            "hint": "Catch the noun that names the object in the sentence.",
+            "explanation": "The object described is recipe — a set of instructions for cooking a dish. As stated, the family found the recipe in an old book.",
+            "textToSpeak": "We found the recipe in an old book.",
+            "targetDetail": "recipe",
             "options": [
-                "chip",
-                "data",
-                "engine",
-                "system"
+                "recipe",
+                "garden",
+                "wallet",
+                "instrument"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🌐"
+            "emoji": "📝"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L8_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on who is being described, not what they do or use.",
-            "explanation": "You heard hacker: a person who finds and exploits weaknesses in computer systems. The audio shows the airport caught a hacker last summer.",
-            "textToSpeak": "The airport caught a hacker last summer.",
-            "targetDetail": "hacker",
+            "hint": "Track the person's role as the audio plays.",
+            "explanation": "Student fits — a person who is learning at a school or college. You can hear that a young student studies hard for exams.",
+            "textToSpeak": "A young student studies hard for exams.",
+            "targetDetail": "student",
             "options": [
-                "hero",
-                "robot",
-                "researcher",
-                "hacker"
+                "librarian",
+                "dancer",
+                "cousin",
+                "student"
             ],
             "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🔐"
+            "emoji": "📚"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L8_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Which action or activity do you hear in the sentence?",
-            "explanation": "You heard transfers. This verb means to move something from one place, person, or system to another. In the audio, she transfers money before every trip abroad.",
-            "textToSpeak": "She transfers money before every trip abroad.",
-            "targetDetail": "transfers",
+            "hint": "Pay attention to what is happening, not who or what is involved.",
+            "explanation": "Fixes is the detail — to repair something that is broken. The audio makes clear that she fixes broken toys for the children.",
+            "textToSpeak": "She fixes broken toys for the children.",
+            "targetDetail": "fixes",
             "options": [
-                "restores",
-                "transfers",
-                "deploys",
-                "locates"
+                "fixes",
+                "grills",
+                "calls",
+                "sells"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🔄"
+            "emoji": "🧸"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L8_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the specific item being used, fixed, or mentioned.",
-            "explanation": "The thing mentioned is node: a single connection point within a larger network or system. Here, a weak network node at the hotel.",
-            "textToSpeak": "He found a weak network node at the hotel.",
-            "targetDetail": "node",
+            "hint": "Listen for the noun tying the sentence's detail together.",
+            "explanation": "Right answer: suitcase, a case used for carrying clothes while traveling. That's because he carried a heavy suitcase up the stairs.",
+            "textToSpeak": "He carried a heavy suitcase up the stairs.",
+            "targetDetail": "suitcase",
             "options": [
-                "chip",
-                "drone",
-                "node",
-                "software"
+                "appointment",
+                "ladder",
+                "spice",
+                "suitcase"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🌐"
+            "emoji": "🧳"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L9_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the person's title or job mentioned in the audio.",
-            "explanation": "The correct person is analyst - a person who examines data and information to find patterns or meaning. The sentence tells us my aunt works as a data analyst.",
-            "textToSpeak": "My aunt works as a data analyst.",
-            "targetDetail": "analyst",
+            "hint": "Pay attention to the word describing the subject's role.",
+            "explanation": "Listen for babysitter: a person who looks after children for a short time. In this case, the kind babysitter reads stories every night.",
+            "textToSpeak": "The kind babysitter reads stories every night.",
+            "targetDetail": "babysitter",
             "options": [
-                "commander",
-                "detective",
-                "analyst",
-                "pilot"
+                "swimmer",
+                "doctor",
+                "coach",
+                "babysitter"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "📈"
+            "emoji": "🧸"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L9_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to what is happening, not who or what is involved.",
-            "explanation": "Encrypts is the action - to convert data into a code to protect it from unauthorized access. In the sentence, she encrypts her personal files every night.",
-            "textToSpeak": "She encrypts her personal files every night.",
-            "targetDetail": "encrypts",
+            "hint": "Focus on the verb that drives the sentence.",
+            "explanation": "The doing-word is plants — to put a seed or plant in the ground to grow. The sentence confirms she plants flowers along the front path every spring.",
+            "textToSpeak": "She plants flowers along the front path every spring.",
+            "targetDetail": "plants",
             "options": [
-                "measures",
-                "scans",
-                "encrypts",
-                "monitors"
+                "plants",
+                "shops",
+                "helps",
+                "grows"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🔐"
+            "emoji": "🌷"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L9_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to the thing, not who is using it or what they do.",
-            "explanation": "The thing mentioned is protocol: a set of official rules that controls how a process should be carried out. Here, a strict morning protocol.",
-            "textToSpeak": "Our family follows a strict morning protocol.",
-            "targetDetail": "protocol",
+            "hint": "Catch the exact word naming the thing involved.",
+            "explanation": "The correct object is wallet — a small case for carrying money and cards. In the audio, he forgot his wallet at the office.",
+            "textToSpeak": "He forgot his wallet at the office.",
+            "targetDetail": "wallet",
             "options": [
-                "database",
-                "module",
-                "protocol",
-                "drone"
+                "uniform",
+                "wallet",
+                "delivery",
+                "costume"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "📋"
+            "emoji": "👛"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L10_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Which person's name or role do you hear in the sentence?",
-            "explanation": "The correct person is hacker - a person who finds and exploits weaknesses in computer systems. The sentence tells us my cousin trained as an ethical hacker.",
-            "textToSpeak": "My cousin trained as an ethical hacker.",
-            "targetDetail": "hacker",
+            "hint": "The person's role is the detail to spot here.",
+            "explanation": "Cashier is who's described — a person who takes payments at a shop or till. The audio states that the cousin works part-time as a cashier.",
+            "textToSpeak": "My cousin works part-time as a cashier.",
+            "targetDetail": "cashier",
             "options": [
-                "hacker",
-                "scientist",
-                "engineer",
-                "robot"
+                "artist",
+                "cashier",
+                "barista",
+                "actor"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🔐"
+            "emoji": "🧾"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L10_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the action being performed in the audio.",
-            "explanation": "Builds is the action - to construct or create something by putting parts together. In the sentence, he builds useful gadgets for the whole family.",
-            "textToSpeak": "He builds useful gadgets for the whole family.",
-            "targetDetail": "builds",
+            "hint": "Listen for what is happening, not to whom or with what.",
+            "explanation": "You heard repairs: to fix something that is broken or damaged. In this sentence, the mechanic repairs cars at the small garage.",
+            "textToSpeak": "The mechanic repairs cars at the small garage.",
+            "targetDetail": "repairs",
             "options": [
-                "transfers",
-                "builds",
-                "encrypts",
-                "sends"
+                "explores",
+                "approves",
+                "replies",
+                "repairs"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
             "emoji": "🔧"
         },
@@ -529,19 +529,19 @@
             "id": "LIS_DETAILSPOTLIGHT_L10_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the object or concept named in the sentence.",
-            "explanation": "You heard data - information that is collected, stored, or processed, often by a computer. The audio describes my dad saves all family data online.",
-            "textToSpeak": "My dad saves all family data online.",
-            "targetDetail": "data",
+            "hint": "The object, not the person or action, is the target here.",
+            "explanation": "That's passport — an official document needed to travel to other countries. The audio confirms it: she keeps her passport in a safe place.",
+            "textToSpeak": "She keeps her passport in a safe place.",
+            "targetDetail": "passport",
             "options": [
-                "data",
-                "signal",
-                "terminal",
-                "portal"
+                "medication",
+                "package",
+                "passport",
+                "dessert"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🗄️"
+            "emoji": "🛂"
         }
     ]
 }

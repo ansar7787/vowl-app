@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_SHADOWINGCHALLENGE_L181_Q1",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify the natural speech pattern",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "I'm gonna check it out later.",
-            "textToSpeak": "I'm gonna check it out later.",
+            "word": "I'm gonna call him after lunch.",
+            "textToSpeak": "I'm gonna call him after lunch.",
             "options": [
-                "Both happen here: 'gonna' reduces to /ˈɡənə/, AND 'check' links into 'it' as /tʃek‿ɪt/.",
-                "Only one of these is accurate here: only the 'gonna' reduction happens; 'check it' is pronounced as two separate, unlinked words."
+                "'gonna' is reduced and the 'h' in 'him' is dropped.",
+                "'gonna' is reduced but the 'h' in 'him' is fully pronounced."
             ],
-            "correctAnswer": "Both happen here: 'gonna' reduces to /ˈɡənə/, AND 'check' links into 'it' as /tʃek‿ɪt/.",
+            "correctAnswer": "'gonna' is reduced and the 'h' in 'him' is dropped.",
             "correctAnswerIndex": 0,
-            "ipa": "/aɪm ˈɡənə tʃek‿ɪt aʊt ˈleɪtə/",
-            "hint": "Listen carefully to all of 'I'm gonna check it out later.' Can you catch both connected-speech features happening together?",
-            "explanation": "Fluent speech often stacks multiple features in the same sentence. In 'I'm gonna check it out later.', 'gonna' reduces to /ˈɡənə/, AND 'check' links into 'it' as /tʃek‿ɪt/, which is what makes it sound natural and fast rather than careful and separated.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/aɪm ˈgənə kɔːl ɪm ˈɑːftər lʌntʃ/",
+            "hint": "This sentence has two things happening at once — a casual reduction AND another connected-speech feature. Check that both parts of the description match.",
+            "explanation": "Both parts of this description are accurate: casual speech reduces the modal phrase, and the connected-speech feature named alongside it happens exactly as described.",
+            "flowRule": "Combined Features: fluent, natural speech regularly stacks multiple connected-speech features — reductions, links, and dropped sounds — together in the same sentence."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L181_Q2",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify the natural speech pattern",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "The old clock on the wall keeps ticking.",
-            "textToSpeak": "The old clock on the wall keeps ticking.",
+            "word": "Lemme think about it for a second.",
+            "textToSpeak": "Lemme think about it for a second.",
             "options": [
-                "In 'The old clock on the wall keeps ticking.', the sounds '/kiːps ˈtɪkɪŋ/' would instead mean 'keep sticking'.",
-                "In 'The old clock on the wall keeps ticking.', the sounds '/kiːps ˈtɪkɪŋ/' mean 'keeps ticking' - the context makes this the only sensible reading."
+                "'Lemme' = 'let me'",
+                "'Lemme' = 'let's'"
             ],
-            "correctAnswer": "In 'The old clock on the wall keeps ticking.', the sounds '/kiːps ˈtɪkɪŋ/' mean 'keeps ticking' - the context makes this the only sensible reading.",
-            "correctAnswerIndex": 1,
-            "ipa": "/ði əʊld klɒk ɒn ðə wɔːl kiːps ˈtɪkɪŋ/",
-            "hint": "The sounds '/kiːps ˈtɪkɪŋ/' in 'The old clock on the wall keeps ticking.' could be split two ways. Which one actually makes sense given the rest of the sentence?",
-            "explanation": "'/kiːps ˈtɪkɪŋ/' is genuinely ambiguous in fast speech - it could be heard as 'keeps ticking' or 'keep sticking'. Only the full context of 'The old clock on the wall keeps ticking.' tells you it means 'keeps ticking' here.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'Lemme' = 'let me'",
+            "correctAnswerIndex": 0,
+            "ipa": "/ˈlemi θɪŋk əˈbaʊt ɪt fər ə ˈsekənd/",
+            "hint": "Sound this word out slowly. What two or more full words is it blending together?",
+            "explanation": "'Lemme' is a casual spelling of the fast-speech version of 'let me' — that's the phrase it actually represents in natural speech.",
+            "flowRule": "Fast-Speech Spellings: casual writing sometimes spells out how phrases actually sound when reduced in natural speech (like 'gonna' for 'going to'); recognizing these helps you understand fast, casual speech."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L181_Q3",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "I want to go out for a walk.",
-            "textToSpeak": "I want to go out for a walk.",
+            "word": "Once the meeting ends, I'm gonna call him right away.",
+            "textToSpeak": "Once the meeting ends, I'm gonna call him right away.",
             "options": [
-                "Natural fluent speech: 'I want to go out for a walk.' said as /aɪ ˈwɒnə ɡəʊ aʊt fərə wɔːk/ - the words blend together with normal linking, weak forms, and rhythm.",
-                "Overly careful speech: 'I want to go out for a walk.' said as /aɪ wɒnt tuː ɡəʊ aʊt fɔːr ə wɔːk/ - each word is pronounced separately and fully, with no natural reduction."
+                "The natural pause falls after 'ends', and 'gonna' is reduced.",
+                "The natural pause falls after 'I'm', and 'gonna' is reduced."
             ],
-            "correctAnswer": "Natural fluent speech: 'I want to go out for a walk.' said as /aɪ ˈwɒnə ɡəʊ aʊt fərə wɔːk/ - the words blend together with normal linking, weak forms, and rhythm.",
+            "correctAnswer": "The natural pause falls after 'ends', and 'gonna' is reduced.",
             "correctAnswerIndex": 0,
-            "ipa": "/aɪ ˈwɒnə ɡəʊ aʊt fərə wɔːk/",
-            "hint": "Listen to 'I want to go out for a walk.' Does it flow as one smooth, blended phrase, or does it sound like separate, fully pronounced words?",
-            "explanation": "Fluent native speech reduces and links words naturally, so 'I want to go out for a walk.' is normally said as /aɪ ˈwɒnə ɡəʊ aʊt fərə wɔːk/. Pronouncing every word fully and separately, as in /aɪ wɒnt tuː ɡəʊ aʊt fɔːr ə wɔːk/, is technically correct but sounds robotic and overly formal.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/wʌns ðə ˈmiːtɪŋ endz aɪm ˈgənə kɔːl ɪm raɪt əˈweɪ/",
+            "hint": "Check two things here: where the natural pause falls, and whether the reduced form is described correctly.",
+            "explanation": "The pause genuinely falls right after 'ends', at the end of the opening phrase, not after 'I'm' mid-clause; and 'gonna' is reduced exactly as described.",
+            "flowRule": "Mastery Integration: real fluent speech combines thought-group pausing with casual reductions and linking all at once — shadowing well means tracking all of these together."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L182_Q1",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify the natural speech pattern",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "She's gotta hand it in today.",
-            "textToSpeak": "She's gotta hand it in today.",
+            "word": "She's gotta pick up her sister at noon.",
+            "textToSpeak": "She's gotta pick up her sister at noon.",
             "options": [
-                "Both happen here: 'gotta' reduces to /ˈɡɒtə/, AND 'hand' links into 'it' as /hænd‿ɪt/.",
-                "Only one of these is accurate here: only 'gotta' reduces; 'hand it' is pronounced as two fully separate words."
+                "'gotta' is reduced but 'pick up' stays as two separate sounds.",
+                "'gotta' is reduced and 'pick up' links smoothly."
             ],
-            "correctAnswer": "Both happen here: 'gotta' reduces to /ˈɡɒtə/, AND 'hand' links into 'it' as /hænd‿ɪt/.",
-            "correctAnswerIndex": 0,
-            "ipa": "/ʃiːz ˈɡɒtə hænd‿ɪt ɪn təˈdeɪ/",
-            "hint": "Listen carefully to all of 'She's gotta hand it in today.' Can you catch both connected-speech features happening together?",
-            "explanation": "Fluent speech often stacks multiple features in the same sentence. In 'She's gotta hand it in today.', 'gotta' reduces to /ˈɡɒtə/, AND 'hand' links into 'it' as /hænd‿ɪt/, which is what makes it sound natural and fast rather than careful and separated.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'gotta' is reduced and 'pick up' links smoothly.",
+            "correctAnswerIndex": 1,
+            "ipa": "/ʃiz ˈgɒtə pɪk‿ʌp hə ˈsɪstər ət nuːn/",
+            "hint": "Read the sentence at natural, fast speed. Does every part of this description match what you'd actually hear?",
+            "explanation": "This sentence genuinely shows both features together — the casual reduction and the linking or dropped sound both occur exactly as this option states.",
+            "flowRule": "Combined Features: fluent, natural speech regularly stacks multiple connected-speech features — reductions, links, and dropped sounds — together in the same sentence."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L182_Q2",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify the natural speech pattern",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "The teacher gave the project a name.",
-            "textToSpeak": "The teacher gave the project a name.",
+            "word": "I dunno what time the store closes.",
+            "textToSpeak": "I dunno what time the store closes.",
             "options": [
-                "In 'The teacher gave the project a name.', the sounds '/əˈneɪm/' would instead mean 'an aim'.",
-                "In 'The teacher gave the project a name.', the sounds '/əˈneɪm/' mean 'a name' - the context makes this the only sensible reading."
+                "'dunno' = 'didn't know'",
+                "'dunno' = 'don't know'"
             ],
-            "correctAnswer": "In 'The teacher gave the project a name.', the sounds '/əˈneɪm/' mean 'a name' - the context makes this the only sensible reading.",
+            "correctAnswer": "'dunno' = 'don't know'",
             "correctAnswerIndex": 1,
-            "ipa": "/ðə ˈtiːtʃə ɡeɪv ðə ˈprɒdʒekt əˈneɪm/",
-            "hint": "The sounds '/əˈneɪm/' in 'The teacher gave the project a name.' could be split two ways. Which one actually makes sense given the rest of the sentence?",
-            "explanation": "'/əˈneɪm/' is genuinely ambiguous in fast speech - it could be heard as 'a name' or 'an aim'. Only the full context of 'The teacher gave the project a name.' tells you it means 'a name' here.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/aɪ dəˈnəʊ wɒt taɪm ðə stɔː ˈkləʊzɪz/",
+            "hint": "This is a fast-speech spelling of a common phrase. Say it slowly to unpack what it really stands for.",
+            "explanation": "'dunno' is a casual spelling of the fast-speech version of 'don't know' — that's the phrase it actually represents in natural speech.",
+            "flowRule": "Fast-Speech Spellings: casual writing sometimes spells out how phrases actually sound when reduced in natural speech (like 'gonna' for 'going to'); recognizing these helps you understand fast, casual speech."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L182_Q3",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "Did you do your homework?",
-            "textToSpeak": "Did you do your homework?",
+            "word": "Before the interview starts, you oughta review your notes.",
+            "textToSpeak": "Before the interview starts, you oughta review your notes.",
             "options": [
-                "Natural fluent speech: 'Did you do your homework?' said as /ˈdɪdjə duː jə ˈhəʊmwɜːk/ - the words blend together with normal linking, weak forms, and rhythm.",
-                "Overly careful speech: 'Did you do your homework?' said as /dɪd juː duː jɔː ˈhəʊmwɜːk/ - each word is pronounced separately and fully, with no natural reduction."
+                "The natural pause falls after 'you', and 'oughta' means 'ought to'.",
+                "The natural pause falls after 'starts', and 'oughta' means 'ought to'."
             ],
-            "correctAnswer": "Natural fluent speech: 'Did you do your homework?' said as /ˈdɪdjə duː jə ˈhəʊmwɜːk/ - the words blend together with normal linking, weak forms, and rhythm.",
-            "correctAnswerIndex": 0,
-            "ipa": "/ˈdɪdjə duː jə ˈhəʊmwɜːk/",
-            "hint": "Listen to 'Did you do your homework?' Does it flow as one smooth, blended phrase, or does it sound like separate, fully pronounced words?",
-            "explanation": "Fluent native speech reduces and links words naturally, so 'Did you do your homework?' is normally said as /ˈdɪdjə duː jə ˈhəʊmwɜːk/. Pronouncing every word fully and separately, as in /dɪd juː duː jɔː ˈhəʊmwɜːk/, is technically correct but sounds robotic and overly formal.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "The natural pause falls after 'starts', and 'oughta' means 'ought to'.",
+            "correctAnswerIndex": 1,
+            "ipa": "/bɪˈfɔː ði ˈɪntəvjuː stɑːts juː ˈɔːtə rɪˈvjuː jə nəʊts/",
+            "hint": "The pause should fall at the end of the introductory phrase, not in the middle of the main clause — check both halves of each option.",
+            "explanation": "The pause genuinely falls right after 'starts', at the end of the opening phrase, not after 'you' mid-clause; and 'oughta' means 'ought to' exactly as described.",
+            "flowRule": "Mastery Integration: real fluent speech combines thought-group pausing with casual reductions and linking all at once — shadowing well means tracking all of these together."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L183_Q1",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify the natural speech pattern",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "I should've sent it earlier.",
-            "textToSpeak": "I should've sent it earlier.",
+            "word": "We should've told him about the change.",
+            "textToSpeak": "We should've told him about the change.",
             "options": [
-                "Both happen here: 'should've' blends into /ˈʃʊdəv/, AND 'sent' links into 'it' as /sent‿ɪt/.",
-                "Only one of these is accurate here: only 'should've' blends together; 'sent it' stays as two separate, unlinked words."
+                "'should've' blends into one sound and the 'h' in 'him' drops.",
+                "'should've' blends into one sound but the 'h' in 'him' stays."
             ],
-            "correctAnswer": "Both happen here: 'should've' blends into /ˈʃʊdəv/, AND 'sent' links into 'it' as /sent‿ɪt/.",
+            "correctAnswer": "'should've' blends into one sound and the 'h' in 'him' drops.",
             "correctAnswerIndex": 0,
-            "ipa": "/aɪ ˈʃʊdəv sent‿ɪt ˈɜːliə/",
-            "hint": "Listen carefully to all of 'I should've sent it earlier.' Can you catch both connected-speech features happening together?",
-            "explanation": "Fluent speech often stacks multiple features in the same sentence. In 'I should've sent it earlier.', 'should've' blends into /ˈʃʊdəv/, AND 'sent' links into 'it' as /sent‿ɪt/, which is what makes it sound natural and fast rather than careful and separated.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/wiː ˈʃʊdəv təʊld ɪm əˈbaʊt ðə tʃeɪndʒ/",
+            "hint": "One part of each option is always true here — the trick is checking whether the second part is also accurate.",
+            "explanation": "Fluent speech often stacks multiple features in one sentence, and both named here are correct for this specific sentence.",
+            "flowRule": "Combined Features: fluent, natural speech regularly stacks multiple connected-speech features — reductions, links, and dropped sounds — together in the same sentence."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L183_Q2",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify the natural speech pattern",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "Please write your name at the top of the form.",
-            "textToSpeak": "Please write your name at the top of the form.",
+            "word": "Gimme a minute to finish this.",
+            "textToSpeak": "Gimme a minute to finish this.",
             "options": [
-                "In 'Please write your name at the top of the form.', the sounds '/raɪt/' would instead mean 'right'.",
-                "In 'Please write your name at the top of the form.', the sounds '/raɪt/' mean 'write' - the context makes this the only sensible reading."
+                "'Gimme' = 'give me'",
+                "'Gimme' = 'give it'"
             ],
-            "correctAnswer": "In 'Please write your name at the top of the form.', the sounds '/raɪt/' mean 'write' - the context makes this the only sensible reading.",
-            "correctAnswerIndex": 1,
-            "ipa": "/pliːz raɪt jɔː neɪm ət ðə tɒp əv ðə fɔːm/",
-            "hint": "The sounds '/raɪt/' in 'Please write your name at the top of the form.' could be split two ways. Which one actually makes sense given the rest of the sentence?",
-            "explanation": "'/raɪt/' is genuinely ambiguous in fast speech - it could be heard as 'write' or 'right'. Only the full context of 'Please write your name at the top of the form.' tells you it means 'write' here.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'Gimme' = 'give me'",
+            "correctAnswerIndex": 0,
+            "ipa": "/ˈgɪmi ə ˈmɪnɪt tə ˈfɪnɪʃ ðɪs/",
+            "hint": "Casual writing sometimes spells out how words actually sound in fast speech — reverse-engineer the original words.",
+            "explanation": "'Gimme' is a casual spelling of the fast-speech version of 'give me' — that's the phrase it actually represents in natural speech.",
+            "flowRule": "Fast-Speech Spellings: casual writing sometimes spells out how phrases actually sound when reduced in natural speech (like 'gonna' for 'going to'); recognizing these helps you understand fast, casual speech."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L183_Q3",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "What do you think about it?",
-            "textToSpeak": "What do you think about it?",
+            "word": "After the flight lands, we're gonna grab our bags quickly.",
+            "textToSpeak": "After the flight lands, we're gonna grab our bags quickly.",
             "options": [
-                "Natural fluent speech: 'What do you think about it?' said as /wɒdjə ˈθɪŋk əˈbaʊt ɪt/ - the words blend together with normal linking, weak forms, and rhythm.",
-                "Overly careful speech: 'What do you think about it?' said as /wɒt duː juː θɪŋk əˈbaʊt ɪt/ - each word is pronounced separately and fully, with no natural reduction."
+                "The natural pause falls after 'lands', and 'gonna' is reduced.",
+                "The natural pause falls after 'we're', and 'gonna' is reduced."
             ],
-            "correctAnswer": "Natural fluent speech: 'What do you think about it?' said as /wɒdjə ˈθɪŋk əˈbaʊt ɪt/ - the words blend together with normal linking, weak forms, and rhythm.",
+            "correctAnswer": "The natural pause falls after 'lands', and 'gonna' is reduced.",
             "correctAnswerIndex": 0,
-            "ipa": "/wɒdjə ˈθɪŋk əˈbaʊt ɪt/",
-            "hint": "Listen to 'What do you think about it?' Does it flow as one smooth, blended phrase, or does it sound like separate, fully pronounced words?",
-            "explanation": "Fluent native speech reduces and links words naturally, so 'What do you think about it?' is normally said as /wɒdjə ˈθɪŋk əˈbaʊt ɪt/. Pronouncing every word fully and separately, as in /wɒt duː juː θɪŋk əˈbaʊt ɪt/, is technically correct but sounds robotic and overly formal.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/ˈɑːftə ðə flaɪt lændz wɪə ˈgənə græb ˈaʊə bægz ˈkwɪkli/",
+            "hint": "One half of each option describes the pause location; the other half describes a speech reduction. Verify both are accurate together.",
+            "explanation": "The pause genuinely falls right after 'lands', at the end of the opening phrase, not after 'we're' mid-clause; and 'gonna' is reduced exactly as described.",
+            "flowRule": "Mastery Integration: real fluent speech combines thought-group pausing with casual reductions and linking all at once — shadowing well means tracking all of these together."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L184_Q1",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify the natural speech pattern",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "We're gonna miss it if we're late.",
-            "textToSpeak": "We're gonna miss it if we're late.",
+            "word": "I wanna check in early tomorrow.",
+            "textToSpeak": "I wanna check in early tomorrow.",
             "options": [
-                "Both happen here: 'gonna' reduces to /ˈɡənə/, AND 'miss' links into 'it' as /mɪs‿ɪt/.",
-                "Only one of these is accurate here: only 'gonna' reduces; 'miss it' is pronounced as two fully separate words."
+                "'wanna' is reduced but 'check in' stays separate.",
+                "'wanna' is reduced and 'check in' links smoothly."
             ],
-            "correctAnswer": "Both happen here: 'gonna' reduces to /ˈɡənə/, AND 'miss' links into 'it' as /mɪs‿ɪt/.",
-            "correctAnswerIndex": 0,
-            "ipa": "/wɪə ˈɡənə mɪs‿ɪt ɪf wɪə leɪt/",
-            "hint": "Listen carefully to all of 'We're gonna miss it if we're late.' Can you catch both connected-speech features happening together?",
-            "explanation": "Fluent speech often stacks multiple features in the same sentence. In 'We're gonna miss it if we're late.', 'gonna' reduces to /ˈɡənə/, AND 'miss' links into 'it' as /mɪs‿ɪt/, which is what makes it sound natural and fast rather than careful and separated.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'wanna' is reduced and 'check in' links smoothly.",
+            "correctAnswerIndex": 1,
+            "ipa": "/aɪ ˈwɒnə tʃek‿ɪn ˈɜːli təˈmɒrəʊ/",
+            "hint": "Don't just check the reduction — verify the other feature named alongside it too.",
+            "explanation": "Every part of the correct option matches natural speech here; the other option gets one of the two features wrong.",
+            "flowRule": "Combined Features: fluent, natural speech regularly stacks multiple connected-speech features — reductions, links, and dropped sounds — together in the same sentence."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L184_Q2",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify the natural speech pattern",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "From the hotel, you can see an ocean view.",
-            "textToSpeak": "From the hotel, you can see an ocean view.",
+            "word": "It's kinda cold outside today.",
+            "textToSpeak": "It's kinda cold outside today.",
             "options": [
-                "In 'From the hotel, you can see an ocean view.', the sounds '/ən ˈəʊʃn/' would instead mean 'a notion'.",
-                "In 'From the hotel, you can see an ocean view.', the sounds '/ən ˈəʊʃn/' mean 'an ocean' - the context makes this the only sensible reading."
+                "'kinda' = 'kindly'",
+                "'kinda' = 'kind of'"
             ],
-            "correctAnswer": "In 'From the hotel, you can see an ocean view.', the sounds '/ən ˈəʊʃn/' mean 'an ocean' - the context makes this the only sensible reading.",
+            "correctAnswer": "'kinda' = 'kind of'",
             "correctAnswerIndex": 1,
-            "ipa": "/frəm ðə həʊˈtel juː kən siː ən ˈəʊʃn vjuː/",
-            "hint": "The sounds '/ən ˈəʊʃn/' in 'From the hotel, you can see an ocean view.' could be split two ways. Which one actually makes sense given the rest of the sentence?",
-            "explanation": "'/ən ˈəʊʃn/' is genuinely ambiguous in fast speech - it could be heard as 'an ocean' or 'a notion'. Only the full context of 'From the hotel, you can see an ocean view.' tells you it means 'an ocean' here.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/ɪts ˈkaɪndə kəʊld ˌaʊtˈsaɪd təˈdeɪ/",
+            "hint": "Think about what phrase, said quickly and casually, would naturally come out sounding like this.",
+            "explanation": "'kinda' is a casual spelling of the fast-speech version of 'kind of' — that's the phrase it actually represents in natural speech.",
+            "flowRule": "Fast-Speech Spellings: casual writing sometimes spells out how phrases actually sound when reduced in natural speech (like 'gonna' for 'going to'); recognizing these helps you understand fast, casual speech."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L184_Q3",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "We have to check in soon.",
-            "textToSpeak": "We have to check in soon.",
+            "word": "Once you finish the form, you gotta submit it online.",
+            "textToSpeak": "Once you finish the form, you gotta submit it online.",
             "options": [
-                "Natural fluent speech: 'We have to check in soon.' said as /wiː hæftə tʃek‿ɪn suːn/ - the words blend together with normal linking, weak forms, and rhythm.",
-                "Overly careful speech: 'We have to check in soon.' said as /wiː hæv tuː tʃek ɪn suːn/ - each word is pronounced separately and fully, with no natural reduction."
+                "The natural pause falls after 'you', and 'gotta' means 'got to'.",
+                "The natural pause falls after 'form', and 'gotta' means 'got to'."
             ],
-            "correctAnswer": "Natural fluent speech: 'We have to check in soon.' said as /wiː hæftə tʃek‿ɪn suːn/ - the words blend together with normal linking, weak forms, and rhythm.",
-            "correctAnswerIndex": 0,
-            "ipa": "/wiː hæftə tʃek‿ɪn suːn/",
-            "hint": "Listen to 'We have to check in soon.' Does it flow as one smooth, blended phrase, or does it sound like separate, fully pronounced words?",
-            "explanation": "Fluent native speech reduces and links words naturally, so 'We have to check in soon.' is normally said as /wiː hæftə tʃek‿ɪn suːn/. Pronouncing every word fully and separately, as in /wiː hæv tuː tʃek ɪn suːn/, is technically correct but sounds robotic and overly formal.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "The natural pause falls after 'form', and 'gotta' means 'got to'.",
+            "correctAnswerIndex": 1,
+            "ipa": "/wʌns juː ˈfɪnɪʃ ðə fɔːm juː ˈgɒtə səbˈmɪt ɪt ˌɒnˈlaɪn/",
+            "hint": "Read the whole sentence naturally first, then check that the described pause point matches where you actually paused.",
+            "explanation": "The pause genuinely falls right after 'form', at the end of the opening phrase, not after 'you' mid-clause; and 'gotta' means 'got to' exactly as described.",
+            "flowRule": "Mastery Integration: real fluent speech combines thought-group pausing with casual reductions and linking all at once — shadowing well means tracking all of these together."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L185_Q1",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify the natural speech pattern",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "I'm gonna call her about it.",
-            "textToSpeak": "I'm gonna call her about it.",
+            "word": "He could've picked up an extra shift.",
+            "textToSpeak": "He could've picked up an extra shift.",
             "options": [
-                "Only one of these is accurate here: only 'gonna' reduces; 'her' keeps its full 'h' sound.",
-                "Both happen here: 'gonna' reduces to /ˈɡənə/, AND 'her' loses its 'h', reducing to /ə/."
+                "'could've' blends together and 'picked up' links smoothly.",
+                "'could've' blends together but 'picked up' stays separate."
             ],
-            "correctAnswer": "Both happen here: 'gonna' reduces to /ˈɡənə/, AND 'her' loses its 'h', reducing to /ə/.",
-            "correctAnswerIndex": 1,
-            "ipa": "/aɪm ˈɡənə kɔːl‿ə əˈbaʊt ɪt/",
-            "hint": "Listen carefully to all of 'I'm gonna call her about it.' Can you catch both connected-speech features happening together?",
-            "explanation": "Fluent speech often stacks multiple features in the same sentence. In 'I'm gonna call her about it.', 'gonna' reduces to /ˈɡənə/, AND 'her' loses its 'h', reducing to /ə/, which is what makes it sound natural and fast rather than careful and separated.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'could've' blends together and 'picked up' links smoothly.",
+            "correctAnswerIndex": 0,
+            "ipa": "/hi ˈkʊdəv pɪkt‿ʌp ən ˈekstrə ʃɪft/",
+            "hint": "This sentence has two things happening at once — a casual reduction AND another connected-speech feature. Check that both parts of the description match.",
+            "explanation": "Both parts of this description are accurate: casual speech reduces the modal phrase, and the connected-speech feature named alongside it happens exactly as described.",
+            "flowRule": "Combined Features: fluent, natural speech regularly stacks multiple connected-speech features — reductions, links, and dropped sounds — together in the same sentence."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L185_Q2",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify the natural speech pattern",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "After moving away, she sometimes feels alone.",
-            "textToSpeak": "After moving away, she sometimes feels alone.",
+            "word": "That sounds sorta complicated to me.",
+            "textToSpeak": "That sounds sorta complicated to me.",
             "options": [
-                "In 'After moving away, she sometimes feels alone.', the sounds '/əˈləʊn/' mean 'alone' - the context makes this the only sensible reading.",
-                "In 'After moving away, she sometimes feels alone.', the sounds '/əˈləʊn/' would instead mean 'a loan'."
+                "'sorta' = 'sort of'",
+                "'sorta' = 'certainly'"
             ],
-            "correctAnswer": "In 'After moving away, she sometimes feels alone.', the sounds '/əˈləʊn/' mean 'alone' - the context makes this the only sensible reading.",
+            "correctAnswer": "'sorta' = 'sort of'",
             "correctAnswerIndex": 0,
-            "ipa": "/ˈɑːftə ˈmuːvɪŋ əˈweɪ, ʃiː ˈsʌmtaɪmz fiːlz əˈləʊn/",
-            "hint": "The sounds '/əˈləʊn/' in 'After moving away, she sometimes feels alone.' could be split two ways. Which one actually makes sense given the rest of the sentence?",
-            "explanation": "'/əˈləʊn/' is genuinely ambiguous in fast speech - it could be heard as 'alone' or 'a loan'. Only the full context of 'After moving away, she sometimes feels alone.' tells you it means 'alone' here.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/ðæt saʊndz ˈsɔːtə ˈkɒmplɪkeɪtɪd tə miː/",
+            "hint": "Sound this word out slowly. What two or more full words is it blending together?",
+            "explanation": "'sorta' is a casual spelling of the fast-speech version of 'sort of' — that's the phrase it actually represents in natural speech.",
+            "flowRule": "Fast-Speech Spellings: casual writing sometimes spells out how phrases actually sound when reduced in natural speech (like 'gonna' for 'going to'); recognizing these helps you understand fast, casual speech."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L185_Q3",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "What did you tell her?",
-            "textToSpeak": "What did you tell her?",
+            "word": "When the alarm rings, I should've already left the house.",
+            "textToSpeak": "When the alarm rings, I should've already left the house.",
             "options": [
-                "Overly careful speech: 'What did you tell her?' said as /wɒt dɪd juː tel hɜː/ - each word is pronounced separately and fully, with no natural reduction.",
-                "Natural fluent speech: 'What did you tell her?' said as /wɒtʃə tel ə/ - the words blend together with normal linking, weak forms, and rhythm."
+                "The natural pause falls after 'rings', and 'should've' blends together.",
+                "The natural pause falls after 'I', and 'should've' blends together."
             ],
-            "correctAnswer": "Natural fluent speech: 'What did you tell her?' said as /wɒtʃə tel ə/ - the words blend together with normal linking, weak forms, and rhythm.",
-            "correctAnswerIndex": 1,
-            "ipa": "/wɒtʃə tel ə/",
-            "hint": "Listen to 'What did you tell her?' Does it flow as one smooth, blended phrase, or does it sound like separate, fully pronounced words?",
-            "explanation": "Fluent native speech reduces and links words naturally, so 'What did you tell her?' is normally said as /wɒtʃə tel ə/. Pronouncing every word fully and separately, as in /wɒt dɪd juː tel hɜː/, is technically correct but sounds robotic and overly formal.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "The natural pause falls after 'rings', and 'should've' blends together.",
+            "correctAnswerIndex": 0,
+            "ipa": "/wen ði əˈlɑːm rɪŋz aɪ ˈʃʊdəv ɔːlˈredi left ðə haʊs/",
+            "hint": "Check two things here: where the natural pause falls, and whether the reduced form is described correctly.",
+            "explanation": "The pause genuinely falls right after 'rings', at the end of the opening phrase, not after 'I' mid-clause; and 'should've' blends together exactly as described.",
+            "flowRule": "Mastery Integration: real fluent speech combines thought-group pausing with casual reductions and linking all at once — shadowing well means tracking all of these together."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L186_Q1",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify the natural speech pattern",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "I've gotta pick it up today.",
-            "textToSpeak": "I've gotta pick it up today.",
+            "word": "They're gonna ask her for advice.",
+            "textToSpeak": "They're gonna ask her for advice.",
             "options": [
-                "Only one of these is accurate here: only 'gotta' reduces; 'pick it' is pronounced as two fully separate words.",
-                "Both happen here: 'gotta' reduces to /ˈɡɒtə/, AND 'pick' links into 'it' as /pɪk‿ɪt/."
+                "'gonna' is reduced but the 'h' in 'her' is fully pronounced.",
+                "'gonna' is reduced and the 'h' in 'her' is dropped."
             ],
-            "correctAnswer": "Both happen here: 'gotta' reduces to /ˈɡɒtə/, AND 'pick' links into 'it' as /pɪk‿ɪt/.",
+            "correctAnswer": "'gonna' is reduced and the 'h' in 'her' is dropped.",
             "correctAnswerIndex": 1,
-            "ipa": "/aɪv ˈɡɒtə pɪk‿ɪt ʌp təˈdeɪ/",
-            "hint": "Listen carefully to all of 'I've gotta pick it up today.' Can you catch both connected-speech features happening together?",
-            "explanation": "Fluent speech often stacks multiple features in the same sentence. In 'I've gotta pick it up today.', 'gotta' reduces to /ˈɡɒtə/, AND 'pick' links into 'it' as /pɪk‿ɪt/, which is what makes it sound natural and fast rather than careful and separated.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/ðeə ˈgənə ɑːsk ə fər ədˈvaɪs/",
+            "hint": "Read the sentence at natural, fast speed. Does every part of this description match what you'd actually hear?",
+            "explanation": "This sentence genuinely shows both features together — the casual reduction and the linking or dropped sound both occur exactly as this option states.",
+            "flowRule": "Combined Features: fluent, natural speech regularly stacks multiple connected-speech features — reductions, links, and dropped sounds — together in the same sentence."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L186_Q2",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify the natural speech pattern",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "She tried on a pair of white shoes.",
-            "textToSpeak": "She tried on a pair of white shoes.",
+            "word": "You oughta call him back soon.",
+            "textToSpeak": "You oughta call him back soon.",
             "options": [
-                "In 'She tried on a pair of white shoes.', the sounds '/waɪt ʃuːz/' mean 'white shoes' - the context makes this the only sensible reading.",
-                "In 'She tried on a pair of white shoes.', the sounds '/waɪt ʃuːz/' would instead mean 'why choose'."
+                "'oughta' = 'auto'",
+                "'oughta' = 'ought to'"
             ],
-            "correctAnswer": "In 'She tried on a pair of white shoes.', the sounds '/waɪt ʃuːz/' mean 'white shoes' - the context makes this the only sensible reading.",
-            "correctAnswerIndex": 0,
-            "ipa": "/ʃiː traɪd ɒn ə peər əv waɪt ʃuːz/",
-            "hint": "The sounds '/waɪt ʃuːz/' in 'She tried on a pair of white shoes.' could be split two ways. Which one actually makes sense given the rest of the sentence?",
-            "explanation": "'/waɪt ʃuːz/' is genuinely ambiguous in fast speech - it could be heard as 'white shoes' or 'why choose'. Only the full context of 'She tried on a pair of white shoes.' tells you it means 'white shoes' here.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'oughta' = 'ought to'",
+            "correctAnswerIndex": 1,
+            "ipa": "/juː ˈɔːtə kɔːl ɪm bæk suːn/",
+            "hint": "This is a fast-speech spelling of a common phrase. Say it slowly to unpack what it really stands for.",
+            "explanation": "'oughta' is a casual spelling of the fast-speech version of 'ought to' — that's the phrase it actually represents in natural speech.",
+            "flowRule": "Fast-Speech Spellings: casual writing sometimes spells out how phrases actually sound when reduced in natural speech (like 'gonna' for 'going to'); recognizing these helps you understand fast, casual speech."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L186_Q3",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "Do you want to try it on?",
-            "textToSpeak": "Do you want to try it on?",
+            "word": "Since you asked so nicely, I wanna help you move.",
+            "textToSpeak": "Since you asked so nicely, I wanna help you move.",
             "options": [
-                "Overly careful speech: 'Do you want to try it on?' said as /duː juː wɒnt tuː traɪ ɪt ɒn/ - each word is pronounced separately and fully, with no natural reduction.",
-                "Natural fluent speech: 'Do you want to try it on?' said as /dʒə ˈwɒnə traɪ‿ɪt ɒn/ - the words blend together with normal linking, weak forms, and rhythm."
+                "The natural pause falls after 'I', and 'wanna' means 'want to'.",
+                "The natural pause falls after 'nicely', and 'wanna' means 'want to'."
             ],
-            "correctAnswer": "Natural fluent speech: 'Do you want to try it on?' said as /dʒə ˈwɒnə traɪ‿ɪt ɒn/ - the words blend together with normal linking, weak forms, and rhythm.",
+            "correctAnswer": "The natural pause falls after 'nicely', and 'wanna' means 'want to'.",
             "correctAnswerIndex": 1,
-            "ipa": "/dʒə ˈwɒnə traɪ‿ɪt ɒn/",
-            "hint": "Listen to 'Do you want to try it on?' Does it flow as one smooth, blended phrase, or does it sound like separate, fully pronounced words?",
-            "explanation": "Fluent native speech reduces and links words naturally, so 'Do you want to try it on?' is normally said as /dʒə ˈwɒnə traɪ‿ɪt ɒn/. Pronouncing every word fully and separately, as in /duː juː wɒnt tuː traɪ ɪt ɒn/, is technically correct but sounds robotic and overly formal.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/sɪns juː ɑːskt səʊ ˈnaɪsli aɪ ˈwɒnə help juː muːv/",
+            "hint": "The pause should fall at the end of the introductory phrase, not in the middle of the main clause — check both halves of each option.",
+            "explanation": "The pause genuinely falls right after 'nicely', at the end of the opening phrase, not after 'I' mid-clause; and 'wanna' means 'want to' exactly as described.",
+            "flowRule": "Mastery Integration: real fluent speech combines thought-group pausing with casual reductions and linking all at once — shadowing well means tracking all of these together."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L187_Q1",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify the natural speech pattern",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "He's gonna taste it first.",
-            "textToSpeak": "He's gonna taste it first.",
+            "word": "I might've called him this morning.",
+            "textToSpeak": "I might've called him this morning.",
             "options": [
-                "Only one of these is accurate here: only 'gonna' reduces; 'taste it' is pronounced as two fully separate words.",
-                "Both happen here: 'gonna' reduces to /ˈɡənə/, AND 'taste' links into 'it' as /teɪst‿ɪt/."
+                "'might've' blends into one sound and the 'h' in 'him' drops.",
+                "'might've' blends into one sound but the 'h' in 'him' stays."
             ],
-            "correctAnswer": "Both happen here: 'gonna' reduces to /ˈɡənə/, AND 'taste' links into 'it' as /teɪst‿ɪt/.",
-            "correctAnswerIndex": 1,
-            "ipa": "/hiːz ˈɡənə teɪst‿ɪt fɜːst/",
-            "hint": "Listen carefully to all of 'He's gonna taste it first.' Can you catch both connected-speech features happening together?",
-            "explanation": "Fluent speech often stacks multiple features in the same sentence. In 'He's gonna taste it first.', 'gonna' reduces to /ˈɡənə/, AND 'taste' links into 'it' as /teɪst‿ɪt/, which is what makes it sound natural and fast rather than careful and separated.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'might've' blends into one sound and the 'h' in 'him' drops.",
+            "correctAnswerIndex": 0,
+            "ipa": "/aɪ ˈmaɪtəv kɔːld ɪm ðɪs ˈmɔːnɪŋ/",
+            "hint": "One part of each option is always true here — the trick is checking whether the second part is also accurate.",
+            "explanation": "Fluent speech often stacks multiple features in one sentence, and both named here are correct for this specific sentence.",
+            "flowRule": "Combined Features: fluent, natural speech regularly stacks multiple connected-speech features — reductions, links, and dropped sounds — together in the same sentence."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L187_Q2",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify the natural speech pattern",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "After dinner, we had ice cream for dessert.",
-            "textToSpeak": "After dinner, we had ice cream for dessert.",
+            "word": "I hafta finish this report tonight.",
+            "textToSpeak": "I hafta finish this report tonight.",
             "options": [
-                "In 'After dinner, we had ice cream for dessert.', the sounds '/aɪs kriːm/' mean 'ice cream' - the context makes this the only sensible reading.",
-                "In 'After dinner, we had ice cream for dessert.', the sounds '/aɪs kriːm/' would instead mean 'I scream'."
+                "'hafta' = 'have to'",
+                "'hafta' = 'half a'"
             ],
-            "correctAnswer": "In 'After dinner, we had ice cream for dessert.', the sounds '/aɪs kriːm/' mean 'ice cream' - the context makes this the only sensible reading.",
+            "correctAnswer": "'hafta' = 'have to'",
             "correctAnswerIndex": 0,
-            "ipa": "/ˈɑːftə ˈdɪnə, wiː həd aɪs kriːm fə dɪˈzɜːt/",
-            "hint": "The sounds '/aɪs kriːm/' in 'After dinner, we had ice cream for dessert.' could be split two ways. Which one actually makes sense given the rest of the sentence?",
-            "explanation": "'/aɪs kriːm/' is genuinely ambiguous in fast speech - it could be heard as 'ice cream' or 'I scream'. Only the full context of 'After dinner, we had ice cream for dessert.' tells you it means 'ice cream' here.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/aɪ ˈhæftə ˈfɪnɪʃ ðɪs rɪˈpɔːt təˈnaɪt/",
+            "hint": "Casual writing sometimes spells out how words actually sound in fast speech — reverse-engineer the original words.",
+            "explanation": "'hafta' is a casual spelling of the fast-speech version of 'have to' — that's the phrase it actually represents in natural speech.",
+            "flowRule": "Fast-Speech Spellings: casual writing sometimes spells out how phrases actually sound when reduced in natural speech (like 'gonna' for 'going to'); recognizing these helps you understand fast, casual speech."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L187_Q3",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "What do you want to eat?",
-            "textToSpeak": "What do you want to eat?",
+            "word": "Before the show starts, we're gonna find our seats.",
+            "textToSpeak": "Before the show starts, we're gonna find our seats.",
             "options": [
-                "Overly careful speech: 'What do you want to eat?' said as /wɒt duː juː wɒnt tuː iːt/ - each word is pronounced separately and fully, with no natural reduction.",
-                "Natural fluent speech: 'What do you want to eat?' said as /wɒdjə ˈwɒnə iːt/ - the words blend together with normal linking, weak forms, and rhythm."
+                "The natural pause falls after 'starts', and 'gonna' is reduced.",
+                "The natural pause falls after 'we're', and 'gonna' is reduced."
             ],
-            "correctAnswer": "Natural fluent speech: 'What do you want to eat?' said as /wɒdjə ˈwɒnə iːt/ - the words blend together with normal linking, weak forms, and rhythm.",
-            "correctAnswerIndex": 1,
-            "ipa": "/wɒdjə ˈwɒnə iːt/",
-            "hint": "Listen to 'What do you want to eat?' Does it flow as one smooth, blended phrase, or does it sound like separate, fully pronounced words?",
-            "explanation": "Fluent native speech reduces and links words naturally, so 'What do you want to eat?' is normally said as /wɒdjə ˈwɒnə iːt/. Pronouncing every word fully and separately, as in /wɒt duː juː wɒnt tuː iːt/, is technically correct but sounds robotic and overly formal.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "The natural pause falls after 'starts', and 'gonna' is reduced.",
+            "correctAnswerIndex": 0,
+            "ipa": "/bɪˈfɔː ðə ʃəʊ stɑːts wɪə ˈgənə faɪnd ˈaʊə siːts/",
+            "hint": "One half of each option describes the pause location; the other half describes a speech reduction. Verify both are accurate together.",
+            "explanation": "The pause genuinely falls right after 'starts', at the end of the opening phrase, not after 'we're' mid-clause; and 'gonna' is reduced exactly as described.",
+            "flowRule": "Mastery Integration: real fluent speech combines thought-group pausing with casual reductions and linking all at once — shadowing well means tracking all of these together."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L188_Q1",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify the natural speech pattern",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "She's gonna fix it tonight.",
-            "textToSpeak": "She's gonna fix it tonight.",
+            "word": "We're gonna look into an issue.",
+            "textToSpeak": "We're gonna look into an issue.",
             "options": [
-                "Only one of these is accurate here: only 'gonna' reduces; 'fix it' is pronounced as two fully separate words.",
-                "Both happen here: 'gonna' reduces to /ˈɡənə/, AND 'fix' links into 'it' as /fɪks‿ɪt/."
+                "'gonna' is reduced but 'look into' stays separate.",
+                "'gonna' is reduced and 'look into' links smoothly."
             ],
-            "correctAnswer": "Both happen here: 'gonna' reduces to /ˈɡənə/, AND 'fix' links into 'it' as /fɪks‿ɪt/.",
+            "correctAnswer": "'gonna' is reduced and 'look into' links smoothly.",
             "correctAnswerIndex": 1,
-            "ipa": "/ʃiːz ˈɡənə fɪks‿ɪt təˈnaɪt/",
-            "hint": "Listen carefully to all of 'She's gonna fix it tonight.' Can you catch both connected-speech features happening together?",
-            "explanation": "Fluent speech often stacks multiple features in the same sentence. In 'She's gonna fix it tonight.', 'gonna' reduces to /ˈɡənə/, AND 'fix' links into 'it' as /fɪks‿ɪt/, which is what makes it sound natural and fast rather than careful and separated.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/wɪə ˈgənə lʊk‿ˈɪntə ən ˈɪʃuː/",
+            "hint": "Don't just check the reduction — verify the other feature named alongside it too.",
+            "explanation": "Every part of the correct option matches natural speech here; the other option gets one of the two features wrong.",
+            "flowRule": "Combined Features: fluent, natural speech regularly stacks multiple connected-speech features — reductions, links, and dropped sounds — together in the same sentence."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L188_Q2",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify the natural speech pattern",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "Check the current version of the software.",
-            "textToSpeak": "Check the current version of the software.",
+            "word": "I coulda sworn I locked the door.",
+            "textToSpeak": "I coulda sworn I locked the door.",
             "options": [
-                "In 'Check the current version of the software.', the sounds '/ˈkʌrənt/' mean 'current' - the context makes this the only sensible reading.",
-                "In 'Check the current version of the software.', the sounds '/ˈkʌrənt/' would instead mean 'currant'."
+                "'coulda' = 'could not'",
+                "'coulda' = 'could have'"
             ],
-            "correctAnswer": "In 'Check the current version of the software.', the sounds '/ˈkʌrənt/' mean 'current' - the context makes this the only sensible reading.",
-            "correctAnswerIndex": 0,
-            "ipa": "/tʃek ðə ˈkʌrənt ˈvɜːʒn əv ðə ˈsɒftweə/",
-            "hint": "The sounds '/ˈkʌrənt/' in 'Check the current version of the software.' could be split two ways. Which one actually makes sense given the rest of the sentence?",
-            "explanation": "'/ˈkʌrənt/' is genuinely ambiguous in fast speech - it could be heard as 'current' or 'currant'. Only the full context of 'Check the current version of the software.' tells you it means 'current' here.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'coulda' = 'could have'",
+            "correctAnswerIndex": 1,
+            "ipa": "/aɪ ˈkʊdə swɔːn aɪ lɒkt ðə dɔː/",
+            "hint": "Think about what phrase, said quickly and casually, would naturally come out sounding like this.",
+            "explanation": "'coulda' is a casual spelling of the fast-speech version of 'could have' — that's the phrase it actually represents in natural speech.",
+            "flowRule": "Fast-Speech Spellings: casual writing sometimes spells out how phrases actually sound when reduced in natural speech (like 'gonna' for 'going to'); recognizing these helps you understand fast, casual speech."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L188_Q3",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "What do you think of it?",
-            "textToSpeak": "What do you think of it?",
+            "word": "Once the rain stops, I'm gonna walk to the store.",
+            "textToSpeak": "Once the rain stops, I'm gonna walk to the store.",
             "options": [
-                "Overly careful speech: 'What do you think of it?' said as /wɒt duː juː θɪŋk ɒv ɪt/ - each word is pronounced separately and fully, with no natural reduction.",
-                "Natural fluent speech: 'What do you think of it?' said as /wɒdjə ˈθɪŋk əv ɪt/ - the words blend together with normal linking, weak forms, and rhythm."
+                "The natural pause falls after 'I'm', and 'gonna' is reduced.",
+                "The natural pause falls after 'stops', and 'gonna' is reduced."
             ],
-            "correctAnswer": "Natural fluent speech: 'What do you think of it?' said as /wɒdjə ˈθɪŋk əv ɪt/ - the words blend together with normal linking, weak forms, and rhythm.",
+            "correctAnswer": "The natural pause falls after 'stops', and 'gonna' is reduced.",
             "correctAnswerIndex": 1,
-            "ipa": "/wɒdjə ˈθɪŋk əv ɪt/",
-            "hint": "Listen to 'What do you think of it?' Does it flow as one smooth, blended phrase, or does it sound like separate, fully pronounced words?",
-            "explanation": "Fluent native speech reduces and links words naturally, so 'What do you think of it?' is normally said as /wɒdjə ˈθɪŋk əv ɪt/. Pronouncing every word fully and separately, as in /wɒt duː juː θɪŋk ɒv ɪt/, is technically correct but sounds robotic and overly formal.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/wʌns ðə reɪn stɒps aɪm ˈgənə wɔːk tə ðə stɔː/",
+            "hint": "Read the whole sentence naturally first, then check that the described pause point matches where you actually paused.",
+            "explanation": "The pause genuinely falls right after 'stops', at the end of the opening phrase, not after 'I'm' mid-clause; and 'gonna' is reduced exactly as described.",
+            "flowRule": "Mastery Integration: real fluent speech combines thought-group pausing with casual reductions and linking all at once — shadowing well means tracking all of these together."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L189_Q1",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify the natural speech pattern",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "She's gonna treat it carefully.",
-            "textToSpeak": "She's gonna treat it carefully.",
+            "word": "She would've thanked him properly.",
+            "textToSpeak": "She would've thanked him properly.",
             "options": [
-                "Only one of these is accurate here: only 'gonna' reduces; 'treat it' is pronounced as two fully separate words.",
-                "Both happen here: 'gonna' reduces to /ˈɡənə/, AND 'treat' links into 'it' as /triːt‿ɪt/."
+                "'would've' blends together and the 'h' in 'him' drops.",
+                "'would've' blends together but the 'h' in 'him' stays."
             ],
-            "correctAnswer": "Both happen here: 'gonna' reduces to /ˈɡənə/, AND 'treat' links into 'it' as /triːt‿ɪt/.",
-            "correctAnswerIndex": 1,
-            "ipa": "/ʃiːz ˈɡənə triːt‿ɪt ˈkeəfəli/",
-            "hint": "Listen carefully to all of 'She's gonna treat it carefully.' Can you catch both connected-speech features happening together?",
-            "explanation": "Fluent speech often stacks multiple features in the same sentence. In 'She's gonna treat it carefully.', 'gonna' reduces to /ˈɡənə/, AND 'treat' links into 'it' as /triːt‿ɪt/, which is what makes it sound natural and fast rather than careful and separated.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'would've' blends together and the 'h' in 'him' drops.",
+            "correctAnswerIndex": 0,
+            "ipa": "/ʃiː ˈwʊdəv θæŋkt ɪm ˈprɒpəli/",
+            "hint": "This sentence has two things happening at once — a casual reduction AND another connected-speech feature. Check that both parts of the description match.",
+            "explanation": "Both parts of this description are accurate: casual speech reduces the modal phrase, and the connected-speech feature named alongside it happens exactly as described.",
+            "flowRule": "Combined Features: fluent, natural speech regularly stacks multiple connected-speech features — reductions, links, and dropped sounds — together in the same sentence."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L189_Q2",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify the natural speech pattern",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "Good doctors need a lot of patience.",
-            "textToSpeak": "Good doctors need a lot of patience.",
+            "word": "She shoulda told us earlier.",
+            "textToSpeak": "She shoulda told us earlier.",
             "options": [
-                "In 'Good doctors need a lot of patience.', the sounds '/ˈpeɪʃns/' mean 'patience' - the context makes this the only sensible reading.",
-                "In 'Good doctors need a lot of patience.', the sounds '/ˈpeɪʃns/' would instead mean 'patients'."
+                "'shoulda' = 'should have'",
+                "'shoulda' = 'should not'"
             ],
-            "correctAnswer": "In 'Good doctors need a lot of patience.', the sounds '/ˈpeɪʃns/' mean 'patience' - the context makes this the only sensible reading.",
+            "correctAnswer": "'shoulda' = 'should have'",
             "correctAnswerIndex": 0,
-            "ipa": "/ɡʊd ˈdɒktəz niːd ə lɒt əv ˈpeɪʃns/",
-            "hint": "The sounds '/ˈpeɪʃns/' in 'Good doctors need a lot of patience.' could be split two ways. Which one actually makes sense given the rest of the sentence?",
-            "explanation": "'/ˈpeɪʃns/' is genuinely ambiguous in fast speech - it could be heard as 'patience' or 'patients'. Only the full context of 'Good doctors need a lot of patience.' tells you it means 'patience' here.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/ʃiː ˈʃʊdə təʊld ʌs ˈɜːliə/",
+            "hint": "Sound this word out slowly. What two or more full words is it blending together?",
+            "explanation": "'shoulda' is a casual spelling of the fast-speech version of 'should have' — that's the phrase it actually represents in natural speech.",
+            "flowRule": "Fast-Speech Spellings: casual writing sometimes spells out how phrases actually sound when reduced in natural speech (like 'gonna' for 'going to'); recognizing these helps you understand fast, casual speech."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L189_Q3",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "What did the doctor tell you?",
-            "textToSpeak": "What did the doctor tell you?",
+            "word": "After the meeting ends, I should've already sent the email.",
+            "textToSpeak": "After the meeting ends, I should've already sent the email.",
             "options": [
-                "Overly careful speech: 'What did the doctor tell you?' said as /wɒt dɪd ðə ˈdɒktə tel juː/ - each word is pronounced separately and fully, with no natural reduction.",
-                "Natural fluent speech: 'What did the doctor tell you?' said as /wɒt dɪd ðə ˈdɒktə tel jə/ - the words blend together with normal linking, weak forms, and rhythm."
+                "The natural pause falls after 'ends', and 'should've' blends together.",
+                "The natural pause falls after 'I', and 'should've' blends together."
             ],
-            "correctAnswer": "Natural fluent speech: 'What did the doctor tell you?' said as /wɒt dɪd ðə ˈdɒktə tel jə/ - the words blend together with normal linking, weak forms, and rhythm.",
-            "correctAnswerIndex": 1,
-            "ipa": "/wɒt dɪd ðə ˈdɒktə tel jə/",
-            "hint": "Listen to 'What did the doctor tell you?' Does it flow as one smooth, blended phrase, or does it sound like separate, fully pronounced words?",
-            "explanation": "Fluent native speech reduces and links words naturally, so 'What did the doctor tell you?' is normally said as /wɒt dɪd ðə ˈdɒktə tel jə/. Pronouncing every word fully and separately, as in /wɒt dɪd ðə ˈdɒktə tel juː/, is technically correct but sounds robotic and overly formal.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "The natural pause falls after 'ends', and 'should've' blends together.",
+            "correctAnswerIndex": 0,
+            "ipa": "/ˈɑːftə ðə ˈmiːtɪŋ endz aɪ ˈʃʊdəv ɔːlˈredi sent ði ˈiːmeɪl/",
+            "hint": "Check two things here: where the natural pause falls, and whether the reduced form is described correctly.",
+            "explanation": "The pause genuinely falls right after 'ends', at the end of the opening phrase, not after 'I' mid-clause; and 'should've' blends together exactly as described.",
+            "flowRule": "Mastery Integration: real fluent speech combines thought-group pausing with casual reductions and linking all at once — shadowing well means tracking all of these together."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L190_Q1",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify the natural speech pattern",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "They're gonna watch it tonight.",
-            "textToSpeak": "They're gonna watch it tonight.",
+            "word": "I'm gonna sign up for the class.",
+            "textToSpeak": "I'm gonna sign up for the class.",
             "options": [
-                "Only one of these is accurate here: only 'gonna' reduces; 'watch it' is pronounced as two fully separate words.",
-                "Both happen here: 'gonna' reduces to /ˈɡənə/, AND 'watch' links into 'it' as /wɒtʃ‿ɪt/."
+                "'gonna' is reduced but 'sign up' stays separate.",
+                "'gonna' is reduced and 'sign up' links smoothly."
             ],
-            "correctAnswer": "Both happen here: 'gonna' reduces to /ˈɡənə/, AND 'watch' links into 'it' as /wɒtʃ‿ɪt/.",
+            "correctAnswer": "'gonna' is reduced and 'sign up' links smoothly.",
             "correctAnswerIndex": 1,
-            "ipa": "/ðeə ˈɡənə wɒtʃ‿ɪt təˈnaɪt/",
-            "hint": "Listen carefully to all of 'They're gonna watch it tonight.' Can you catch both connected-speech features happening together?",
-            "explanation": "Fluent speech often stacks multiple features in the same sentence. In 'They're gonna watch it tonight.', 'gonna' reduces to /ˈɡənə/, AND 'watch' links into 'it' as /wɒtʃ‿ɪt/, which is what makes it sound natural and fast rather than careful and separated.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/aɪm ˈgənə saɪn‿ʌp fə ðə klɑːs/",
+            "hint": "Read the sentence at natural, fast speed. Does every part of this description match what you'd actually hear?",
+            "explanation": "This sentence genuinely shows both features together — the casual reduction and the linking or dropped sound both occur exactly as this option states.",
+            "flowRule": "Combined Features: fluent, natural speech regularly stacks multiple connected-speech features — reductions, links, and dropped sounds — together in the same sentence."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L190_Q2",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify the natural speech pattern",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "That movie scene felt very real.",
-            "textToSpeak": "That movie scene felt very real.",
+            "word": "We woulda helped if we'd known.",
+            "textToSpeak": "We woulda helped if we'd known.",
             "options": [
-                "In 'That movie scene felt very real.', the sounds '/siːn/' mean 'scene' - the context makes this the only sensible reading.",
-                "In 'That movie scene felt very real.', the sounds '/siːn/' would instead mean 'seen'."
+                "'woulda' = 'would not'",
+                "'woulda' = 'would have'"
             ],
-            "correctAnswer": "In 'That movie scene felt very real.', the sounds '/siːn/' mean 'scene' - the context makes this the only sensible reading.",
-            "correctAnswerIndex": 0,
-            "ipa": "/ðæt ˈmuːvi siːn felt ˈveri rɪəl/",
-            "hint": "The sounds '/siːn/' in 'That movie scene felt very real.' could be split two ways. Which one actually makes sense given the rest of the sentence?",
-            "explanation": "'/siːn/' is genuinely ambiguous in fast speech - it could be heard as 'scene' or 'seen'. Only the full context of 'That movie scene felt very real.' tells you it means 'scene' here.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'woulda' = 'would have'",
+            "correctAnswerIndex": 1,
+            "ipa": "/wiː ˈwʊdə helpt ɪf wiːd nəʊn/",
+            "hint": "This is a fast-speech spelling of a common phrase. Say it slowly to unpack what it really stands for.",
+            "explanation": "'woulda' is a casual spelling of the fast-speech version of 'would have' — that's the phrase it actually represents in natural speech.",
+            "flowRule": "Fast-Speech Spellings: casual writing sometimes spells out how phrases actually sound when reduced in natural speech (like 'gonna' for 'going to'); recognizing these helps you understand fast, casual speech."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L190_Q3",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "What do you want to watch?",
-            "textToSpeak": "What do you want to watch?",
+            "word": "Once the store closes, I gotta find another option.",
+            "textToSpeak": "Once the store closes, I gotta find another option.",
             "options": [
-                "Overly careful speech: 'What do you want to watch?' said as /wɒt duː juː wɒnt tuː wɒtʃ/ - each word is pronounced separately and fully, with no natural reduction.",
-                "Natural fluent speech: 'What do you want to watch?' said as /wɒdjə ˈwɒnə wɒtʃ/ - the words blend together with normal linking, weak forms, and rhythm."
+                "The natural pause falls after 'I', and 'gotta' means 'got to'.",
+                "The natural pause falls after 'closes', and 'gotta' means 'got to'."
             ],
-            "correctAnswer": "Natural fluent speech: 'What do you want to watch?' said as /wɒdjə ˈwɒnə wɒtʃ/ - the words blend together with normal linking, weak forms, and rhythm.",
+            "correctAnswer": "The natural pause falls after 'closes', and 'gotta' means 'got to'.",
             "correctAnswerIndex": 1,
-            "ipa": "/wɒdjə ˈwɒnə wɒtʃ/",
-            "hint": "Listen to 'What do you want to watch?' Does it flow as one smooth, blended phrase, or does it sound like separate, fully pronounced words?",
-            "explanation": "Fluent native speech reduces and links words naturally, so 'What do you want to watch?' is normally said as /wɒdjə ˈwɒnə wɒtʃ/. Pronouncing every word fully and separately, as in /wɒt duː juː wɒnt tuː wɒtʃ/, is technically correct but sounds robotic and overly formal.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/wʌns ðə stɔː ˈkləʊzɪz aɪ ˈgɒtə faɪnd əˈnʌðər ˈɒpʃən/",
+            "hint": "The pause should fall at the end of the introductory phrase, not in the middle of the main clause — check both halves of each option.",
+            "explanation": "The pause genuinely falls right after 'closes', at the end of the opening phrase, not after 'I' mid-clause; and 'gotta' means 'got to' exactly as described.",
+            "flowRule": "Mastery Integration: real fluent speech combines thought-group pausing with casual reductions and linking all at once — shadowing well means tracking all of these together."
         }
     ]
 }

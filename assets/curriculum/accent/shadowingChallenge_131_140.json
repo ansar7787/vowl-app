@@ -5,543 +5,543 @@
     "quests": [
         {
             "id": "ACC_SHADOWINGCHALLENGE_L131_Q1",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "What time did you wake up?",
-            "textToSpeak": "What time did you wake up?",
+            "word": "During the storm, the power went out twice.",
+            "textToSpeak": "During the storm, the power went out twice.",
             "options": [
-                "Rising intonation ↗: in 'What time did you wake up?', the pitch would climb higher at the end, as in yes/no questions.",
-                "Falling intonation ↘: in 'What time did you wake up?', the pitch drops at the end, typical of statements and wh-questions."
+                "The natural pause falls right after 'storm', separating one complete phrase from the next.",
+                "The natural pause falls right after 'the' instead, splitting the sentence at that point."
             ],
-            "correctAnswer": "Falling intonation ↘: in 'What time did you wake up?', the pitch drops at the end, typical of statements and wh-questions.",
-            "correctAnswerIndex": 1,
-            "ipa": "/wɒt taɪm dɪd juː weɪk ʌp/ ↘",
-            "hint": "Say 'What time did you wake up?' out loud. Does your voice rise at the very end, or fall?",
-            "explanation": "'What time did you wake up?' is a wh-question, so in natural speech the pitch falls at the end.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "The natural pause falls right after 'storm', separating one complete phrase from the next.",
+            "correctAnswerIndex": 0,
+            "ipa": "/ˈdjʊərɪŋ ðə stɔːm | ðə ˈpaʊə went aʊt twaɪs/",
+            "hint": "Read the sentence in natural phrases, the way you'd actually say it aloud. Where does your voice naturally pause to take a small breath?",
+            "explanation": "The natural breath group ends right after 'storm'; splitting the sentence at 'the' instead would cut a phrase apart awkwardly.",
+            "flowRule": "Thought Groups: long sentences break into smaller chunks of meaning at natural grammatical boundaries, not randomly or mid-phrase."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L131_Q2",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "She cleaned the kitchen, the bathroom, and the bedroom.",
-            "textToSpeak": "She cleaned the kitchen, the bathroom, and the bedroom.",
+            "word": "The doctor, who specializes in children, is fully booked.",
+            "textToSpeak": "The doctor, who specializes in children, is fully booked.",
             "options": [
-                "List intonation: the pitch rises slightly after each earlier item ('the kitchen', 'the bathroom') and only falls on the final item, 'the bedroom'.",
-                "Flat intonation: every item in the list, including 'the bedroom', is said with the same falling pitch."
+                "The natural pause falls right after 'doctor', separating one complete phrase from the next.",
+                "The natural pause falls right after 'specializes' instead, splitting the sentence at that point."
             ],
-            "correctAnswer": "List intonation: the pitch rises slightly after each earlier item ('the kitchen', 'the bathroom') and only falls on the final item, 'the bedroom'.",
+            "correctAnswer": "The natural pause falls right after 'doctor', separating one complete phrase from the next.",
             "correctAnswerIndex": 0,
-            "ipa": "/ʃiː kliːnd ðə ˈkɪtʃɪn, ðə ˈbɑːθruːm, ən ðə ˈbedruːm/",
-            "hint": "Listen to the list: the kitchen, the bathroom, the bedroom. Does the pitch stay up until the very last item, then drop?",
-            "explanation": "When listing items in English, speakers use a small rising pitch after each item except the last, signalling 'there's more to come.' The pitch only falls on 'the bedroom', showing the list is complete.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/ðə ˈdɒktə | huː ˈspeʃəlaɪzɪz ɪn ˈtʃɪldrən | ɪz ˈfʊli bʊkt/",
+            "hint": "A natural pause falls at the boundary between grammatical units, never in the middle of a tightly bound pair like an article and its noun.",
+            "explanation": "'doctor' marks the end of a complete thought group, so the natural pause falls there — pausing after 'specializes' would awkwardly split a tightly bound phrase.",
+            "flowRule": "Thought Groups: long sentences break into smaller chunks of meaning at natural grammatical boundaries, not randomly or mid-phrase."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L131_Q3",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "You haven't seen my keys, have you?",
-            "textToSpeak": "You haven't seen my keys, have you?",
+            "word": "I packed my suitcase, printed my ticket, and called a taxi.",
+            "textToSpeak": "I packed my suitcase, printed my ticket, and called a taxi.",
             "options": [
-                "Falling intonation ↘ on 'have you' here: the speaker would be confident and simply inviting agreement.",
-                "Rising intonation ↗ on 'have you' here: the speaker genuinely isn't sure, turning 'You haven't seen my keys, have you?' into a real question."
+                "The natural pause falls right after 'suitcase', separating one complete phrase from the next.",
+                "The natural pause falls right after 'printed' instead, splitting the sentence at that point."
             ],
-            "correctAnswer": "Rising intonation ↗ on 'have you' here: the speaker genuinely isn't sure, turning 'You haven't seen my keys, have you?' into a real question.",
-            "correctAnswerIndex": 1,
-            "ipa": "/juː ˈhævnt siːn maɪ kiːz, həv juː/ ↗",
-            "hint": "Listen to 'You haven't seen my keys, have you?' Does the tag 'have you' sound like genuine doubt, or like the speaker already expects agreement?",
-            "explanation": "Tag questions like 'have you' can rise or fall depending on meaning. A rising tag shows real uncertainty, which is the case in 'You haven't seen my keys, have you?'.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "The natural pause falls right after 'suitcase', separating one complete phrase from the next.",
+            "correctAnswerIndex": 0,
+            "ipa": "/aɪ pækt maɪ ˈsuːtkeɪs | ˈprɪntɪd maɪ ˈtɪkɪt | ən kɔːld ə ˈtæksi/",
+            "hint": "Look for where one complete chunk of meaning ends and a new one begins — that's where fluent speakers naturally pause.",
+            "explanation": "The natural breath group ends right after 'suitcase'; splitting the sentence at 'printed' instead would cut a phrase apart awkwardly.",
+            "flowRule": "Thought Groups: long sentences break into smaller chunks of meaning at natural grammatical boundaries, not randomly or mid-phrase."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L132_Q1",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "Why was the test so difficult?",
-            "textToSpeak": "Why was the test so difficult?",
+            "word": "After finishing her homework, she watched a movie.",
+            "textToSpeak": "After finishing her homework, she watched a movie.",
             "options": [
-                "Rising intonation ↗: in 'Why was the test so difficult?', the pitch would climb higher at the end, as in yes/no questions.",
-                "Falling intonation ↘: in 'Why was the test so difficult?', the pitch drops at the end, typical of statements and wh-questions."
+                "The natural pause falls right after 'she' instead, splitting the sentence at that point.",
+                "The natural pause falls right after 'homework', separating one complete phrase from the next."
             ],
-            "correctAnswer": "Falling intonation ↘: in 'Why was the test so difficult?', the pitch drops at the end, typical of statements and wh-questions.",
+            "correctAnswer": "The natural pause falls right after 'homework', separating one complete phrase from the next.",
             "correctAnswerIndex": 1,
-            "ipa": "/waɪ wəz ðə test səʊ ˈdɪfɪkəlt/ ↘",
-            "hint": "Say 'Why was the test so difficult?' out loud. Does your voice rise at the very end, or fall?",
-            "explanation": "'Why was the test so difficult?' is a wh-question, so in natural speech the pitch falls at the end.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/ˈɑːftə ˈfɪnɪʃɪŋ hə ˈhəʊmwɜːk | ʃiː wɒtʃt ə ˈmuːvi/",
+            "hint": "Long sentences break into smaller chunks of meaning. Find the edge between one complete idea and the next.",
+            "explanation": "Because 'homework' completes a full grammatical unit, that's where the pause naturally falls, rather than the mid-phrase break at 'she'.",
+            "flowRule": "Chunking for Shadowing: fluent speech pauses at the edges of complete grammatical units, never inside a tightly bound pair like an article and its noun."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L132_Q2",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "Bring a pen, a notebook, and a calculator.",
-            "textToSpeak": "Bring a pen, a notebook, and a calculator.",
+            "word": "Our flight, which was already delayed, got canceled entirely.",
+            "textToSpeak": "Our flight, which was already delayed, got canceled entirely.",
             "options": [
-                "List intonation: the pitch rises slightly after each earlier item ('a pen', 'a notebook') and only falls on the final item, 'a calculator'.",
-                "Flat intonation: every item in the list, including 'a calculator', is said with the same falling pitch."
+                "The natural pause falls right after 'was' instead, splitting the sentence at that point.",
+                "The natural pause falls right after 'flight', separating one complete phrase from the next."
             ],
-            "correctAnswer": "List intonation: the pitch rises slightly after each earlier item ('a pen', 'a notebook') and only falls on the final item, 'a calculator'.",
-            "correctAnswerIndex": 0,
-            "ipa": "/brɪŋ ə pen, ə ˈnəʊtbʊk, ən ə ˈkælkjʊleɪtə/",
-            "hint": "Listen to the list: a pen, a notebook, a calculator. Does the pitch stay up until the very last item, then drop?",
-            "explanation": "When listing items in English, speakers use a small rising pitch after each item except the last, signalling 'there's more to come.' The pitch only falls on 'a calculator', showing the list is complete.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "The natural pause falls right after 'flight', separating one complete phrase from the next.",
+            "correctAnswerIndex": 1,
+            "ipa": "/ˈaʊə flaɪt | wɪtʃ wəz ɔːlˈredi dɪˈleɪd | gɒt ˈkænsld ɪnˈtaɪəli/",
+            "hint": "Try reading both options aloud. One will feel like a natural breath group; the other will feel like it cuts a phrase in half.",
+            "explanation": "Fluent speakers break sentences into chunks of meaning, and one chunk genuinely ends at 'flight', not mid-phrase at 'was'.",
+            "flowRule": "Chunking for Shadowing: fluent speech pauses at the edges of complete grammatical units, never inside a tightly bound pair like an article and its noun."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L132_Q3",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "You didn't finish the essay, did you?",
-            "textToSpeak": "You didn't finish the essay, did you?",
+            "word": "She graded the tests, wrote comments, and returned them the next day.",
+            "textToSpeak": "She graded the tests, wrote comments, and returned them the next day.",
             "options": [
-                "Falling intonation ↘ on 'did you' here: the speaker would be confident and simply inviting agreement.",
-                "Rising intonation ↗ on 'did you' here: the speaker genuinely isn't sure, turning 'You didn't finish the essay, did you?' into a real question."
+                "The natural pause falls right after 'wrote' instead, splitting the sentence at that point.",
+                "The natural pause falls right after 'tests', separating one complete phrase from the next."
             ],
-            "correctAnswer": "Rising intonation ↗ on 'did you' here: the speaker genuinely isn't sure, turning 'You didn't finish the essay, did you?' into a real question.",
+            "correctAnswer": "The natural pause falls right after 'tests', separating one complete phrase from the next.",
             "correctAnswerIndex": 1,
-            "ipa": "/juː ˈdɪdnt ˈfɪnɪʃ ðiː ˈeseɪ, dɪd juː/ ↗",
-            "hint": "Listen to 'You didn't finish the essay, did you?' Does the tag 'did you' sound like genuine doubt, or like the speaker already expects agreement?",
-            "explanation": "Tag questions like 'did you' can rise or fall depending on meaning. A rising tag shows real uncertainty, which is the case in 'You didn't finish the essay, did you?'.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/ʃiː ˈgreɪdɪd ðə tests | rəʊt ˈkɒments | ən rɪˈtɜːnd ðəm ðə nekst deɪ/",
+            "hint": "Read the sentence in natural phrases, the way you'd actually say it aloud. Where does your voice naturally pause to take a small breath?",
+            "explanation": "Because 'tests' completes a full grammatical unit, that's where the pause naturally falls, rather than the mid-phrase break at 'wrote'.",
+            "flowRule": "Chunking for Shadowing: fluent speech pauses at the edges of complete grammatical units, never inside a tightly bound pair like an article and its noun."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L133_Q1",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "When is the meeting scheduled?",
-            "textToSpeak": "When is the meeting scheduled?",
+            "word": "Despite the traffic, we arrived right on time.",
+            "textToSpeak": "Despite the traffic, we arrived right on time.",
             "options": [
-                "Rising intonation ↗: in 'When is the meeting scheduled?', the pitch would climb higher at the end, as in yes/no questions.",
-                "Falling intonation ↘: in 'When is the meeting scheduled?', the pitch drops at the end, typical of statements and wh-questions."
+                "The natural pause falls right after 'traffic', separating one complete phrase from the next.",
+                "The natural pause falls right after 'we' instead, splitting the sentence at that point."
             ],
-            "correctAnswer": "Falling intonation ↘: in 'When is the meeting scheduled?', the pitch drops at the end, typical of statements and wh-questions.",
-            "correctAnswerIndex": 1,
-            "ipa": "/wen ɪz ðə ˈmiːtɪŋ ˈʃedjuːld/ ↘",
-            "hint": "Say 'When is the meeting scheduled?' out loud. Does your voice rise at the very end, or fall?",
-            "explanation": "'When is the meeting scheduled?' is a wh-question, so in natural speech the pitch falls at the end.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "The natural pause falls right after 'traffic', separating one complete phrase from the next.",
+            "correctAnswerIndex": 0,
+            "ipa": "/dɪˈspaɪt ðə ˈtræfɪk | wiː əˈraɪvd raɪt ɒn taɪm/",
+            "hint": "A natural pause falls at the boundary between grammatical units, never in the middle of a tightly bound pair like an article and its noun.",
+            "explanation": "'traffic' marks the end of a complete thought group, so the natural pause falls there — pausing after 'we' would awkwardly split a tightly bound phrase.",
+            "flowRule": "Thought Groups: long sentences break into smaller chunks of meaning at natural grammatical boundaries, not randomly or mid-phrase."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L133_Q2",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "We need a budget, a timeline, and a plan.",
-            "textToSpeak": "We need a budget, a timeline, and a plan.",
+            "word": "The singer, who trained for years, finally won an award.",
+            "textToSpeak": "The singer, who trained for years, finally won an award.",
             "options": [
-                "List intonation: the pitch rises slightly after each earlier item ('a budget', 'a timeline') and only falls on the final item, 'a plan'.",
-                "Flat intonation: every item in the list, including 'a plan', is said with the same falling pitch."
+                "The natural pause falls right after 'singer', separating one complete phrase from the next.",
+                "The natural pause falls right after 'trained' instead, splitting the sentence at that point."
             ],
-            "correctAnswer": "List intonation: the pitch rises slightly after each earlier item ('a budget', 'a timeline') and only falls on the final item, 'a plan'.",
+            "correctAnswer": "The natural pause falls right after 'singer', separating one complete phrase from the next.",
             "correctAnswerIndex": 0,
-            "ipa": "/wiː niːd ə ˈbʌdʒɪt, ə ˈtaɪmlaɪn, ən ə plæn/",
-            "hint": "Listen to the list: a budget, a timeline, a plan. Does the pitch stay up until the very last item, then drop?",
-            "explanation": "When listing items in English, speakers use a small rising pitch after each item except the last, signalling 'there's more to come.' The pitch only falls on 'a plan', showing the list is complete.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/ðə ˈsɪŋə | huː treɪnd fə jɪəz | ˈfaɪnəli wʌn ən əˈwɔːd/",
+            "hint": "Look for where one complete chunk of meaning ends and a new one begins — that's where fluent speakers naturally pause.",
+            "explanation": "The natural breath group ends right after 'singer'; splitting the sentence at 'trained' instead would cut a phrase apart awkwardly.",
+            "flowRule": "Thought Groups: long sentences break into smaller chunks of meaning at natural grammatical boundaries, not randomly or mid-phrase."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L133_Q3",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "You haven't sent the email yet, have you?",
-            "textToSpeak": "You haven't sent the email yet, have you?",
+            "word": "We hiked the trail, took photos, and had a picnic.",
+            "textToSpeak": "We hiked the trail, took photos, and had a picnic.",
             "options": [
-                "Falling intonation ↘ on 'have you' here: the speaker would be confident and simply inviting agreement.",
-                "Rising intonation ↗ on 'have you' here: the speaker genuinely isn't sure, turning 'You haven't sent the email yet, have you?' into a real question."
+                "The natural pause falls right after 'trail', separating one complete phrase from the next.",
+                "The natural pause falls right after 'took' instead, splitting the sentence at that point."
             ],
-            "correctAnswer": "Rising intonation ↗ on 'have you' here: the speaker genuinely isn't sure, turning 'You haven't sent the email yet, have you?' into a real question.",
-            "correctAnswerIndex": 1,
-            "ipa": "/juː ˈhævnt sent ðiː ˈiːmeɪl jet, həv juː/ ↗",
-            "hint": "Listen to 'You haven't sent the email yet, have you?' Does the tag 'have you' sound like genuine doubt, or like the speaker already expects agreement?",
-            "explanation": "Tag questions like 'have you' can rise or fall depending on meaning. A rising tag shows real uncertainty, which is the case in 'You haven't sent the email yet, have you?'.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "The natural pause falls right after 'trail', separating one complete phrase from the next.",
+            "correctAnswerIndex": 0,
+            "ipa": "/wiː haɪkt ðə treɪl | tʊk ˈfəʊtəʊz | ən həd ə ˈpɪknɪk/",
+            "hint": "Long sentences break into smaller chunks of meaning. Find the edge between one complete idea and the next.",
+            "explanation": "'trail' marks the end of a complete thought group, so the natural pause falls there — pausing after 'took' would awkwardly split a tightly bound phrase.",
+            "flowRule": "Thought Groups: long sentences break into smaller chunks of meaning at natural grammatical boundaries, not randomly or mid-phrase."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L134_Q1",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "Where is the nearest train station?",
-            "textToSpeak": "Where is the nearest train station?",
+            "word": "Right before the interview, she felt very nervous.",
+            "textToSpeak": "Right before the interview, she felt very nervous.",
             "options": [
-                "Rising intonation ↗: in 'Where is the nearest train station?', the pitch would climb higher at the end, as in yes/no questions.",
-                "Falling intonation ↘: in 'Where is the nearest train station?', the pitch drops at the end, typical of statements and wh-questions."
+                "The natural pause falls right after 'she' instead, splitting the sentence at that point.",
+                "The natural pause falls right after 'interview', separating one complete phrase from the next."
             ],
-            "correctAnswer": "Falling intonation ↘: in 'Where is the nearest train station?', the pitch drops at the end, typical of statements and wh-questions.",
+            "correctAnswer": "The natural pause falls right after 'interview', separating one complete phrase from the next.",
             "correctAnswerIndex": 1,
-            "ipa": "/weər ɪz ðə ˈnɪərɪst treɪn ˈsteɪʃn/ ↘",
-            "hint": "Say 'Where is the nearest train station?' out loud. Does your voice rise at the very end, or fall?",
-            "explanation": "'Where is the nearest train station?' is a wh-question, so in natural speech the pitch falls at the end.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/raɪt bɪˈfɔː ði ˈɪntəvjuː | ʃiː felt ˈveri ˈnɜːvəs/",
+            "hint": "Try reading both options aloud. One will feel like a natural breath group; the other will feel like it cuts a phrase in half.",
+            "explanation": "Fluent speakers break sentences into chunks of meaning, and one chunk genuinely ends at 'interview', not mid-phrase at 'she'.",
+            "flowRule": "Chunking for Shadowing: fluent speech pauses at the edges of complete grammatical units, never inside a tightly bound pair like an article and its noun."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L134_Q2",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "Pack your passport, tickets, and money.",
-            "textToSpeak": "Pack your passport, tickets, and money.",
+            "word": "My cousin, who just graduated, is looking for work.",
+            "textToSpeak": "My cousin, who just graduated, is looking for work.",
             "options": [
-                "List intonation: the pitch rises slightly after each earlier item ('your passport', 'tickets') and only falls on the final item, 'money'.",
-                "Flat intonation: every item in the list, including 'money', is said with the same falling pitch."
+                "The natural pause falls right after 'just' instead, splitting the sentence at that point.",
+                "The natural pause falls right after 'cousin', separating one complete phrase from the next."
             ],
-            "correctAnswer": "List intonation: the pitch rises slightly after each earlier item ('your passport', 'tickets') and only falls on the final item, 'money'.",
-            "correctAnswerIndex": 0,
-            "ipa": "/pæk jɔː ˈpɑːspɔːt, ˈtɪkɪts, ən ˈmʌni/",
-            "hint": "Listen to the list: your passport, tickets, money. Does the pitch stay up until the very last item, then drop?",
-            "explanation": "When listing items in English, speakers use a small rising pitch after each item except the last, signalling 'there's more to come.' The pitch only falls on 'money', showing the list is complete.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "The natural pause falls right after 'cousin', separating one complete phrase from the next.",
+            "correctAnswerIndex": 1,
+            "ipa": "/maɪ ˈkʌzn | huː dʒʌst ˈgrædʒueɪtɪd | ɪz ˈlʊkɪŋ fə wɜːk/",
+            "hint": "Read the sentence in natural phrases, the way you'd actually say it aloud. Where does your voice naturally pause to take a small breath?",
+            "explanation": "Because 'cousin' completes a full grammatical unit, that's where the pause naturally falls, rather than the mid-phrase break at 'just'.",
+            "flowRule": "Chunking for Shadowing: fluent speech pauses at the edges of complete grammatical units, never inside a tightly bound pair like an article and its noun."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L134_Q3",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "We haven't missed the train, have we?",
-            "textToSpeak": "We haven't missed the train, have we?",
+            "word": "He fixed the sink, replaced a light bulb, and mowed the lawn.",
+            "textToSpeak": "He fixed the sink, replaced a light bulb, and mowed the lawn.",
             "options": [
-                "Falling intonation ↘ on 'have we' here: the speaker would be confident and simply inviting agreement.",
-                "Rising intonation ↗ on 'have we' here: the speaker genuinely isn't sure, turning 'We haven't missed the train, have we?' into a real question."
+                "The natural pause falls right after 'replaced' instead, splitting the sentence at that point.",
+                "The natural pause falls right after 'sink', separating one complete phrase from the next."
             ],
-            "correctAnswer": "Rising intonation ↗ on 'have we' here: the speaker genuinely isn't sure, turning 'We haven't missed the train, have we?' into a real question.",
+            "correctAnswer": "The natural pause falls right after 'sink', separating one complete phrase from the next.",
             "correctAnswerIndex": 1,
-            "ipa": "/wiː ˈhævnt mɪst ðə treɪn, həv wiː/ ↗",
-            "hint": "Listen to 'We haven't missed the train, have we?' Does the tag 'have we' sound like genuine doubt, or like the speaker already expects agreement?",
-            "explanation": "Tag questions like 'have we' can rise or fall depending on meaning. A rising tag shows real uncertainty, which is the case in 'We haven't missed the train, have we?'.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/hi fɪkst ðə sɪŋk | rɪˈpleɪst ə laɪt bʌlb | ən məʊd ðə lɔːn/",
+            "hint": "A natural pause falls at the boundary between grammatical units, never in the middle of a tightly bound pair like an article and its noun.",
+            "explanation": "Fluent speakers break sentences into chunks of meaning, and one chunk genuinely ends at 'sink', not mid-phrase at 'replaced'.",
+            "flowRule": "Chunking for Shadowing: fluent speech pauses at the edges of complete grammatical units, never inside a tightly bound pair like an article and its noun."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L135_Q1",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "How old is your grandfather?",
-            "textToSpeak": "How old is your grandfather?",
+            "word": "Even though it rained, the game continued.",
+            "textToSpeak": "Even though it rained, the game continued.",
             "options": [
-                "Falling intonation ↘: in 'How old is your grandfather?', the pitch drops at the end, typical of statements and wh-questions.",
-                "Rising intonation ↗: in 'How old is your grandfather?', the pitch would climb higher at the end, as in yes/no questions."
+                "The natural pause falls right after 'rained', separating one complete phrase from the next.",
+                "The natural pause falls right after 'the' instead, splitting the sentence at that point."
             ],
-            "correctAnswer": "Falling intonation ↘: in 'How old is your grandfather?', the pitch drops at the end, typical of statements and wh-questions.",
+            "correctAnswer": "The natural pause falls right after 'rained', separating one complete phrase from the next.",
             "correctAnswerIndex": 0,
-            "ipa": "/haʊ əʊld ɪz jɔː ˈɡrænfɑːðə/ ↘",
-            "hint": "Say 'How old is your grandfather?' out loud. Does your voice rise at the very end, or fall?",
-            "explanation": "'How old is your grandfather?' is a wh-question, so in natural speech the pitch falls at the end.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/ˈiːvən ðəʊ ɪt reɪnd | ðə geɪm kənˈtɪnjuːd/",
+            "hint": "Look for where one complete chunk of meaning ends and a new one begins — that's where fluent speakers naturally pause.",
+            "explanation": "The natural breath group ends right after 'rained'; splitting the sentence at 'the' instead would cut a phrase apart awkwardly.",
+            "flowRule": "Thought Groups: long sentences break into smaller chunks of meaning at natural grammatical boundaries, not randomly or mid-phrase."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L135_Q2",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "He helps with cooking, cleaning, and shopping.",
-            "textToSpeak": "He helps with cooking, cleaning, and shopping.",
+            "word": "The museum, which reopened last month, added a new wing.",
+            "textToSpeak": "The museum, which reopened last month, added a new wing.",
             "options": [
-                "Flat intonation: every item in the list, including 'shopping', is said with the same falling pitch.",
-                "List intonation: the pitch rises slightly after each earlier item ('cooking', 'cleaning') and only falls on the final item, 'shopping'."
+                "The natural pause falls right after 'museum', separating one complete phrase from the next.",
+                "The natural pause falls right after 'reopened' instead, splitting the sentence at that point."
             ],
-            "correctAnswer": "List intonation: the pitch rises slightly after each earlier item ('cooking', 'cleaning') and only falls on the final item, 'shopping'.",
-            "correctAnswerIndex": 1,
-            "ipa": "/hi helps wɪð ˈkʊkɪŋ, ˈkliːnɪŋ, ən ˈʃɒpɪŋ/",
-            "hint": "Listen to the list: cooking, cleaning, shopping. Does the pitch stay up until the very last item, then drop?",
-            "explanation": "When listing items in English, speakers use a small rising pitch after each item except the last, signalling 'there's more to come.' The pitch only falls on 'shopping', showing the list is complete.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "The natural pause falls right after 'museum', separating one complete phrase from the next.",
+            "correctAnswerIndex": 0,
+            "ipa": "/ðə mjuˈziːəm | wɪtʃ riːˈəʊpənd lɑːst mʌnθ | ˈædɪd ə njuː wɪŋ/",
+            "hint": "Long sentences break into smaller chunks of meaning. Find the edge between one complete idea and the next.",
+            "explanation": "'museum' marks the end of a complete thought group, so the natural pause falls there — pausing after 'reopened' would awkwardly split a tightly bound phrase.",
+            "flowRule": "Thought Groups: long sentences break into smaller chunks of meaning at natural grammatical boundaries, not randomly or mid-phrase."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L135_Q3",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "You haven't met my cousin, have you?",
-            "textToSpeak": "You haven't met my cousin, have you?",
+            "word": "The team reviewed the data, discussed the results, and planned next steps.",
+            "textToSpeak": "The team reviewed the data, discussed the results, and planned next steps.",
             "options": [
-                "Rising intonation ↗ on 'have you' here: the speaker genuinely isn't sure, turning 'You haven't met my cousin, have you?' into a real question.",
-                "Falling intonation ↘ on 'have you' here: the speaker would be confident and simply inviting agreement."
+                "The natural pause falls right after 'data', separating one complete phrase from the next.",
+                "The natural pause falls right after 'discussed' instead, splitting the sentence at that point."
             ],
-            "correctAnswer": "Rising intonation ↗ on 'have you' here: the speaker genuinely isn't sure, turning 'You haven't met my cousin, have you?' into a real question.",
+            "correctAnswer": "The natural pause falls right after 'data', separating one complete phrase from the next.",
             "correctAnswerIndex": 0,
-            "ipa": "/juː ˈhævnt met maɪ ˈkʌzn, həv juː/ ↗",
-            "hint": "Listen to 'You haven't met my cousin, have you?' Does the tag 'have you' sound like genuine doubt, or like the speaker already expects agreement?",
-            "explanation": "Tag questions like 'have you' can rise or fall depending on meaning. A rising tag shows real uncertainty, which is the case in 'You haven't met my cousin, have you?'.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/ðə tiːm rɪˈvjuːd ðə ˈdeɪtə | dɪˈskʌst ðə rɪˈzʌlts | ən plænd nekst steps/",
+            "hint": "Try reading both options aloud. One will feel like a natural breath group; the other will feel like it cuts a phrase in half.",
+            "explanation": "The natural breath group ends right after 'data'; splitting the sentence at 'discussed' instead would cut a phrase apart awkwardly.",
+            "flowRule": "Thought Groups: long sentences break into smaller chunks of meaning at natural grammatical boundaries, not randomly or mid-phrase."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L136_Q1",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "How much does this jacket cost?",
-            "textToSpeak": "How much does this jacket cost?",
+            "word": "Once you finish the form, submit it online.",
+            "textToSpeak": "Once you finish the form, submit it online.",
             "options": [
-                "Falling intonation ↘: in 'How much does this jacket cost?', the pitch drops at the end, typical of statements and wh-questions.",
-                "Rising intonation ↗: in 'How much does this jacket cost?', the pitch would climb higher at the end, as in yes/no questions."
+                "The natural pause falls right after 'submit' instead, splitting the sentence at that point.",
+                "The natural pause falls right after 'form', separating one complete phrase from the next."
             ],
-            "correctAnswer": "Falling intonation ↘: in 'How much does this jacket cost?', the pitch drops at the end, typical of statements and wh-questions.",
-            "correctAnswerIndex": 0,
-            "ipa": "/haʊ mʌtʃ dʌz ðɪs ˈdʒækɪt kɒst/ ↘",
-            "hint": "Say 'How much does this jacket cost?' out loud. Does your voice rise at the very end, or fall?",
-            "explanation": "'How much does this jacket cost?' is a wh-question, so in natural speech the pitch falls at the end.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "The natural pause falls right after 'form', separating one complete phrase from the next.",
+            "correctAnswerIndex": 1,
+            "ipa": "/wʌns juː ˈfɪnɪʃ ðə fɔːm | səbˈmɪt ɪt ˌɒnˈlaɪn/",
+            "hint": "Read the sentence in natural phrases, the way you'd actually say it aloud. Where does your voice naturally pause to take a small breath?",
+            "explanation": "Because 'form' completes a full grammatical unit, that's where the pause naturally falls, rather than the mid-phrase break at 'submit'.",
+            "flowRule": "Chunking for Shadowing: fluent speech pauses at the edges of complete grammatical units, never inside a tightly bound pair like an article and its noun."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L136_Q2",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "The store sells clothes, shoes, and accessories.",
-            "textToSpeak": "The store sells clothes, shoes, and accessories.",
+            "word": "Her manager, who rarely praises anyone, thanked her publicly.",
+            "textToSpeak": "Her manager, who rarely praises anyone, thanked her publicly.",
             "options": [
-                "Flat intonation: every item in the list, including 'accessories', is said with the same falling pitch.",
-                "List intonation: the pitch rises slightly after each earlier item ('clothes', 'shoes') and only falls on the final item, 'accessories'."
+                "The natural pause falls right after 'rarely' instead, splitting the sentence at that point.",
+                "The natural pause falls right after 'manager', separating one complete phrase from the next."
             ],
-            "correctAnswer": "List intonation: the pitch rises slightly after each earlier item ('clothes', 'shoes') and only falls on the final item, 'accessories'.",
+            "correctAnswer": "The natural pause falls right after 'manager', separating one complete phrase from the next.",
             "correctAnswerIndex": 1,
-            "ipa": "/ðə stɔː selz kləʊðz, ʃuːz, ən əkˈsesəriz/",
-            "hint": "Listen to the list: clothes, shoes, accessories. Does the pitch stay up until the very last item, then drop?",
-            "explanation": "When listing items in English, speakers use a small rising pitch after each item except the last, signalling 'there's more to come.' The pitch only falls on 'accessories', showing the list is complete.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/hə ˈmænɪdʒə | huː ˈreəli ˈpreɪzɪz ˈeniwʌn | θæŋkt hə ˈpʌblɪkli/",
+            "hint": "A natural pause falls at the boundary between grammatical units, never in the middle of a tightly bound pair like an article and its noun.",
+            "explanation": "Fluent speakers break sentences into chunks of meaning, and one chunk genuinely ends at 'manager', not mid-phrase at 'rarely'.",
+            "flowRule": "Chunking for Shadowing: fluent speech pauses at the edges of complete grammatical units, never inside a tightly bound pair like an article and its noun."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L136_Q3",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "They don't have my size, do they?",
-            "textToSpeak": "They don't have my size, do they?",
+            "word": "I brushed my teeth, changed into pajamas, and went to sleep.",
+            "textToSpeak": "I brushed my teeth, changed into pajamas, and went to sleep.",
             "options": [
-                "Rising intonation ↗ on 'do they' here: the speaker genuinely isn't sure, turning 'They don't have my size, do they?' into a real question.",
-                "Falling intonation ↘ on 'do they' here: the speaker would be confident and simply inviting agreement."
+                "The natural pause falls right after 'changed' instead, splitting the sentence at that point.",
+                "The natural pause falls right after 'teeth', separating one complete phrase from the next."
             ],
-            "correctAnswer": "Rising intonation ↗ on 'do they' here: the speaker genuinely isn't sure, turning 'They don't have my size, do they?' into a real question.",
-            "correctAnswerIndex": 0,
-            "ipa": "/ðeɪ dəʊnt hæv maɪ saɪz, duː ðeɪ/ ↗",
-            "hint": "Listen to 'They don't have my size, do they?' Does the tag 'do they' sound like genuine doubt, or like the speaker already expects agreement?",
-            "explanation": "Tag questions like 'do they' can rise or fall depending on meaning. A rising tag shows real uncertainty, which is the case in 'They don't have my size, do they?'.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "The natural pause falls right after 'teeth', separating one complete phrase from the next.",
+            "correctAnswerIndex": 1,
+            "ipa": "/aɪ brʌʃt maɪ tiːθ | tʃeɪndʒd ˈɪntə pəˈdʒɑːməz | ən went tə sliːp/",
+            "hint": "Look for where one complete chunk of meaning ends and a new one begins — that's where fluent speakers naturally pause.",
+            "explanation": "Because 'teeth' completes a full grammatical unit, that's where the pause naturally falls, rather than the mid-phrase break at 'changed'.",
+            "flowRule": "Chunking for Shadowing: fluent speech pauses at the edges of complete grammatical units, never inside a tightly bound pair like an article and its noun."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L137_Q1",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "What did the chef recommend?",
-            "textToSpeak": "What did the chef recommend?",
+            "word": "As the sun set, the temperature dropped quickly.",
+            "textToSpeak": "As the sun set, the temperature dropped quickly.",
             "options": [
-                "Falling intonation ↘: in 'What did the chef recommend?', the pitch drops at the end, typical of statements and wh-questions.",
-                "Rising intonation ↗: in 'What did the chef recommend?', the pitch would climb higher at the end, as in yes/no questions."
+                "The natural pause falls right after 'set', separating one complete phrase from the next.",
+                "The natural pause falls right after 'the' instead, splitting the sentence at that point."
             ],
-            "correctAnswer": "Falling intonation ↘: in 'What did the chef recommend?', the pitch drops at the end, typical of statements and wh-questions.",
+            "correctAnswer": "The natural pause falls right after 'set', separating one complete phrase from the next.",
             "correctAnswerIndex": 0,
-            "ipa": "/wɒt dɪd ðə ʃef ˌrekəˈmend/ ↘",
-            "hint": "Say 'What did the chef recommend?' out loud. Does your voice rise at the very end, or fall?",
-            "explanation": "'What did the chef recommend?' is a wh-question, so in natural speech the pitch falls at the end.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/əz ðə sʌn set | ðə ˈtemprətʃə drɒpt ˈkwɪkli/",
+            "hint": "Long sentences break into smaller chunks of meaning. Find the edge between one complete idea and the next.",
+            "explanation": "'set' marks the end of a complete thought group, so the natural pause falls there — pausing after 'the' would awkwardly split a tightly bound phrase.",
+            "flowRule": "Thought Groups: long sentences break into smaller chunks of meaning at natural grammatical boundaries, not randomly or mid-phrase."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L137_Q2",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "Add salt, pepper, and a little oil.",
-            "textToSpeak": "Add salt, pepper, and a little oil.",
+            "word": "The bakery, which closes early, still had fresh bread.",
+            "textToSpeak": "The bakery, which closes early, still had fresh bread.",
             "options": [
-                "Flat intonation: every item in the list, including 'a little oil', is said with the same falling pitch.",
-                "List intonation: the pitch rises slightly after each earlier item ('salt', 'pepper') and only falls on the final item, 'a little oil'."
+                "The natural pause falls right after 'bakery', separating one complete phrase from the next.",
+                "The natural pause falls right after 'closes' instead, splitting the sentence at that point."
             ],
-            "correctAnswer": "List intonation: the pitch rises slightly after each earlier item ('salt', 'pepper') and only falls on the final item, 'a little oil'.",
-            "correctAnswerIndex": 1,
-            "ipa": "/æd sɒlt, ˈpepə, ən ə ˈlɪtl ɔɪl/",
-            "hint": "Listen to the list: salt, pepper, a little oil. Does the pitch stay up until the very last item, then drop?",
-            "explanation": "When listing items in English, speakers use a small rising pitch after each item except the last, signalling 'there's more to come.' The pitch only falls on 'a little oil', showing the list is complete.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "The natural pause falls right after 'bakery', separating one complete phrase from the next.",
+            "correctAnswerIndex": 0,
+            "ipa": "/ðə ˈbeɪkəri | wɪtʃ ˈkləʊzɪz ˈɜːli | stɪl həd freʃ bred/",
+            "hint": "Try reading both options aloud. One will feel like a natural breath group; the other will feel like it cuts a phrase in half.",
+            "explanation": "The natural breath group ends right after 'bakery'; splitting the sentence at 'closes' instead would cut a phrase apart awkwardly.",
+            "flowRule": "Thought Groups: long sentences break into smaller chunks of meaning at natural grammatical boundaries, not randomly or mid-phrase."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L137_Q3",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "You haven't tried this dish, have you?",
-            "textToSpeak": "You haven't tried this dish, have you?",
+            "word": "She signed the contract, paid the deposit, and picked up the keys.",
+            "textToSpeak": "She signed the contract, paid the deposit, and picked up the keys.",
             "options": [
-                "Rising intonation ↗ on 'have you' here: the speaker genuinely isn't sure, turning 'You haven't tried this dish, have you?' into a real question.",
-                "Falling intonation ↘ on 'have you' here: the speaker would be confident and simply inviting agreement."
+                "The natural pause falls right after 'contract', separating one complete phrase from the next.",
+                "The natural pause falls right after 'paid' instead, splitting the sentence at that point."
             ],
-            "correctAnswer": "Rising intonation ↗ on 'have you' here: the speaker genuinely isn't sure, turning 'You haven't tried this dish, have you?' into a real question.",
+            "correctAnswer": "The natural pause falls right after 'contract', separating one complete phrase from the next.",
             "correctAnswerIndex": 0,
-            "ipa": "/juː ˈhævnt traɪd ðɪs dɪʃ, həv juː/ ↗",
-            "hint": "Listen to 'You haven't tried this dish, have you?' Does the tag 'have you' sound like genuine doubt, or like the speaker already expects agreement?",
-            "explanation": "Tag questions like 'have you' can rise or fall depending on meaning. A rising tag shows real uncertainty, which is the case in 'You haven't tried this dish, have you?'.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/ʃiː saɪnd ðə ˈkɒntrækt | peɪd ðə dɪˈpɒzɪt | ən pɪkt‿ʌp ðə kiːz/",
+            "hint": "Read the sentence in natural phrases, the way you'd actually say it aloud. Where does your voice naturally pause to take a small breath?",
+            "explanation": "'contract' marks the end of a complete thought group, so the natural pause falls there — pausing after 'paid' would awkwardly split a tightly bound phrase.",
+            "flowRule": "Thought Groups: long sentences break into smaller chunks of meaning at natural grammatical boundaries, not randomly or mid-phrase."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L138_Q1",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "Why is the screen frozen?",
-            "textToSpeak": "Why is the screen frozen?",
+            "word": "By the time we arrived, the show had started.",
+            "textToSpeak": "By the time we arrived, the show had started.",
             "options": [
-                "Falling intonation ↘: in 'Why is the screen frozen?', the pitch drops at the end, typical of statements and wh-questions.",
-                "Rising intonation ↗: in 'Why is the screen frozen?', the pitch would climb higher at the end, as in yes/no questions."
+                "The natural pause falls right after 'the' instead, splitting the sentence at that point.",
+                "The natural pause falls right after 'arrived', separating one complete phrase from the next."
             ],
-            "correctAnswer": "Falling intonation ↘: in 'Why is the screen frozen?', the pitch drops at the end, typical of statements and wh-questions.",
-            "correctAnswerIndex": 0,
-            "ipa": "/waɪ ɪz ðə skriːn ˈfrəʊzn/ ↘",
-            "hint": "Say 'Why is the screen frozen?' out loud. Does your voice rise at the very end, or fall?",
-            "explanation": "'Why is the screen frozen?' is a wh-question, so in natural speech the pitch falls at the end.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "The natural pause falls right after 'arrived', separating one complete phrase from the next.",
+            "correctAnswerIndex": 1,
+            "ipa": "/baɪ ðə taɪm wiː əˈraɪvd | ðə ʃəʊ həd ˈstɑːtɪd/",
+            "hint": "A natural pause falls at the boundary between grammatical units, never in the middle of a tightly bound pair like an article and its noun.",
+            "explanation": "Fluent speakers break sentences into chunks of meaning, and one chunk genuinely ends at 'arrived', not mid-phrase at 'the'.",
+            "flowRule": "Chunking for Shadowing: fluent speech pauses at the edges of complete grammatical units, never inside a tightly bound pair like an article and its noun."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L138_Q2",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "Check the battery, the screen, and the camera.",
-            "textToSpeak": "Check the battery, the screen, and the camera.",
+            "word": "My uncle, who lived abroad for years, finally moved back.",
+            "textToSpeak": "My uncle, who lived abroad for years, finally moved back.",
             "options": [
-                "Flat intonation: every item in the list, including 'the camera', is said with the same falling pitch.",
-                "List intonation: the pitch rises slightly after each earlier item ('the battery', 'the screen') and only falls on the final item, 'the camera'."
+                "The natural pause falls right after 'lived' instead, splitting the sentence at that point.",
+                "The natural pause falls right after 'uncle', separating one complete phrase from the next."
             ],
-            "correctAnswer": "List intonation: the pitch rises slightly after each earlier item ('the battery', 'the screen') and only falls on the final item, 'the camera'.",
+            "correctAnswer": "The natural pause falls right after 'uncle', separating one complete phrase from the next.",
             "correctAnswerIndex": 1,
-            "ipa": "/tʃek ðə ˈbætri, ðə skriːn, ən ðə ˈkæmrə/",
-            "hint": "Listen to the list: the battery, the screen, the camera. Does the pitch stay up until the very last item, then drop?",
-            "explanation": "When listing items in English, speakers use a small rising pitch after each item except the last, signalling 'there's more to come.' The pitch only falls on 'the camera', showing the list is complete.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/maɪ ˈʌŋkl | huː lɪvd əˈbrɔːd fə jɪəz | ˈfaɪnəli muːvd bæk/",
+            "hint": "Look for where one complete chunk of meaning ends and a new one begins — that's where fluent speakers naturally pause.",
+            "explanation": "Because 'uncle' completes a full grammatical unit, that's where the pause naturally falls, rather than the mid-phrase break at 'lived'.",
+            "flowRule": "Chunking for Shadowing: fluent speech pauses at the edges of complete grammatical units, never inside a tightly bound pair like an article and its noun."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L138_Q3",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "You haven't backed up your files, have you?",
-            "textToSpeak": "You haven't backed up your files, have you?",
+            "word": "We loaded the car, said goodbye, and drove off.",
+            "textToSpeak": "We loaded the car, said goodbye, and drove off.",
             "options": [
-                "Rising intonation ↗ on 'have you' here: the speaker genuinely isn't sure, turning 'You haven't backed up your files, have you?' into a real question.",
-                "Falling intonation ↘ on 'have you' here: the speaker would be confident and simply inviting agreement."
+                "The natural pause falls right after 'said' instead, splitting the sentence at that point.",
+                "The natural pause falls right after 'car', separating one complete phrase from the next."
             ],
-            "correctAnswer": "Rising intonation ↗ on 'have you' here: the speaker genuinely isn't sure, turning 'You haven't backed up your files, have you?' into a real question.",
-            "correctAnswerIndex": 0,
-            "ipa": "/juː ˈhævnt bækt ʌp jɔː faɪlz, həv juː/ ↗",
-            "hint": "Listen to 'You haven't backed up your files, have you?' Does the tag 'have you' sound like genuine doubt, or like the speaker already expects agreement?",
-            "explanation": "Tag questions like 'have you' can rise or fall depending on meaning. A rising tag shows real uncertainty, which is the case in 'You haven't backed up your files, have you?'.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "The natural pause falls right after 'car', separating one complete phrase from the next.",
+            "correctAnswerIndex": 1,
+            "ipa": "/wiː ˈləʊdɪd ðə kɑː | sed ˌgʊdˈbaɪ | ən drəʊv ɒf/",
+            "hint": "Long sentences break into smaller chunks of meaning. Find the edge between one complete idea and the next.",
+            "explanation": "Fluent speakers break sentences into chunks of meaning, and one chunk genuinely ends at 'car', not mid-phrase at 'said'.",
+            "flowRule": "Chunking for Shadowing: fluent speech pauses at the edges of complete grammatical units, never inside a tightly bound pair like an article and its noun."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L139_Q1",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "What did the doctor say?",
-            "textToSpeak": "What did the doctor say?",
+            "word": "Right after breakfast, we packed the car.",
+            "textToSpeak": "Right after breakfast, we packed the car.",
             "options": [
-                "Falling intonation ↘: in 'What did the doctor say?', the pitch drops at the end, typical of statements and wh-questions.",
-                "Rising intonation ↗: in 'What did the doctor say?', the pitch would climb higher at the end, as in yes/no questions."
+                "The natural pause falls right after 'breakfast', separating one complete phrase from the next.",
+                "The natural pause falls right after 'we' instead, splitting the sentence at that point."
             ],
-            "correctAnswer": "Falling intonation ↘: in 'What did the doctor say?', the pitch drops at the end, typical of statements and wh-questions.",
+            "correctAnswer": "The natural pause falls right after 'breakfast', separating one complete phrase from the next.",
             "correctAnswerIndex": 0,
-            "ipa": "/wɒt dɪd ðə ˈdɒktə seɪ/ ↘",
-            "hint": "Say 'What did the doctor say?' out loud. Does your voice rise at the very end, or fall?",
-            "explanation": "'What did the doctor say?' is a wh-question, so in natural speech the pitch falls at the end.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/raɪt ˈɑːftə ˈbrekfəst | wiː pækt ðə kɑː/",
+            "hint": "Try reading both options aloud. One will feel like a natural breath group; the other will feel like it cuts a phrase in half.",
+            "explanation": "The natural breath group ends right after 'breakfast'; splitting the sentence at 'we' instead would cut a phrase apart awkwardly.",
+            "flowRule": "Thought Groups: long sentences break into smaller chunks of meaning at natural grammatical boundaries, not randomly or mid-phrase."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L139_Q2",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "Drink water, rest well, and eat healthy food.",
-            "textToSpeak": "Drink water, rest well, and eat healthy food.",
+            "word": "The article, which went viral overnight, sparked a debate.",
+            "textToSpeak": "The article, which went viral overnight, sparked a debate.",
             "options": [
-                "Flat intonation: every item in the list, including 'eat healthy food', is said with the same falling pitch.",
-                "List intonation: the pitch rises slightly after each earlier item ('water', 'rest well') and only falls on the final item, 'eat healthy food'."
+                "The natural pause falls right after 'article', separating one complete phrase from the next.",
+                "The natural pause falls right after 'went' instead, splitting the sentence at that point."
             ],
-            "correctAnswer": "List intonation: the pitch rises slightly after each earlier item ('water', 'rest well') and only falls on the final item, 'eat healthy food'.",
-            "correctAnswerIndex": 1,
-            "ipa": "/drɪŋk ˈwɔːtə, rest wel, ən iːt ˈhelθi fuːd/",
-            "hint": "Listen to the list: water, rest well, eat healthy food. Does the pitch stay up until the very last item, then drop?",
-            "explanation": "When listing items in English, speakers use a small rising pitch after each item except the last, signalling 'there's more to come.' The pitch only falls on 'eat healthy food', showing the list is complete.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "The natural pause falls right after 'article', separating one complete phrase from the next.",
+            "correctAnswerIndex": 0,
+            "ipa": "/ði ˈɑːtɪkl | wɪtʃ went ˈvaɪərəl ˈəʊvənaɪt | spɑːkt ə dɪˈbeɪt/",
+            "hint": "Read the sentence in natural phrases, the way you'd actually say it aloud. Where does your voice naturally pause to take a small breath?",
+            "explanation": "'article' marks the end of a complete thought group, so the natural pause falls there — pausing after 'went' would awkwardly split a tightly bound phrase.",
+            "flowRule": "Thought Groups: long sentences break into smaller chunks of meaning at natural grammatical boundaries, not randomly or mid-phrase."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L139_Q3",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "You haven't taken your medicine, have you?",
-            "textToSpeak": "You haven't taken your medicine, have you?",
+            "word": "He answered the questions, submitted the form, and waited for a reply.",
+            "textToSpeak": "He answered the questions, submitted the form, and waited for a reply.",
             "options": [
-                "Rising intonation ↗ on 'have you' here: the speaker genuinely isn't sure, turning 'You haven't taken your medicine, have you?' into a real question.",
-                "Falling intonation ↘ on 'have you' here: the speaker would be confident and simply inviting agreement."
+                "The natural pause falls right after 'questions', separating one complete phrase from the next.",
+                "The natural pause falls right after 'submitted' instead, splitting the sentence at that point."
             ],
-            "correctAnswer": "Rising intonation ↗ on 'have you' here: the speaker genuinely isn't sure, turning 'You haven't taken your medicine, have you?' into a real question.",
+            "correctAnswer": "The natural pause falls right after 'questions', separating one complete phrase from the next.",
             "correctAnswerIndex": 0,
-            "ipa": "/juː ˈhævnt ˈteɪkən jɔː ˈmedsɪn, həv juː/ ↗",
-            "hint": "Listen to 'You haven't taken your medicine, have you?' Does the tag 'have you' sound like genuine doubt, or like the speaker already expects agreement?",
-            "explanation": "Tag questions like 'have you' can rise or fall depending on meaning. A rising tag shows real uncertainty, which is the case in 'You haven't taken your medicine, have you?'.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/hi ˈɑːnsəd ðə ˈkwestʃənz | səbˈmɪtɪd ðə fɔːm | ən ˈweɪtɪd fər ə rɪˈplaɪ/",
+            "hint": "A natural pause falls at the boundary between grammatical units, never in the middle of a tightly bound pair like an article and its noun.",
+            "explanation": "The natural breath group ends right after 'questions'; splitting the sentence at 'submitted' instead would cut a phrase apart awkwardly.",
+            "flowRule": "Thought Groups: long sentences break into smaller chunks of meaning at natural grammatical boundaries, not randomly or mid-phrase."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L140_Q1",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "Who directed this film?",
-            "textToSpeak": "Who directed this film?",
+            "word": "Until the results come in, we can't be sure.",
+            "textToSpeak": "Until the results come in, we can't be sure.",
             "options": [
-                "Falling intonation ↘: in 'Who directed this film?', the pitch drops at the end, typical of statements and wh-questions.",
-                "Rising intonation ↗: in 'Who directed this film?', the pitch would climb higher at the end, as in yes/no questions."
+                "The natural pause falls right after 'we' instead, splitting the sentence at that point.",
+                "The natural pause falls right after 'in', separating one complete phrase from the next."
             ],
-            "correctAnswer": "Falling intonation ↘: in 'Who directed this film?', the pitch drops at the end, typical of statements and wh-questions.",
-            "correctAnswerIndex": 0,
-            "ipa": "/huː dɪˈrektɪd ðɪs fɪlm/ ↘",
-            "hint": "Say 'Who directed this film?' out loud. Does your voice rise at the very end, or fall?",
-            "explanation": "'Who directed this film?' is a wh-question, so in natural speech the pitch falls at the end.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "The natural pause falls right after 'in', separating one complete phrase from the next.",
+            "correctAnswerIndex": 1,
+            "ipa": "/ənˈtɪl ðə rɪˈzʌlts kʌm ɪn | wiː kɑːnt bi ʃʊə/",
+            "hint": "Look for where one complete chunk of meaning ends and a new one begins — that's where fluent speakers naturally pause.",
+            "explanation": "Because 'in' completes a full grammatical unit, that's where the pause naturally falls, rather than the mid-phrase break at 'we'.",
+            "flowRule": "Chunking for Shadowing: fluent speech pauses at the edges of complete grammatical units, never inside a tightly bound pair like an article and its noun."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L140_Q2",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "We watched the actors, the singers, and the dancers.",
-            "textToSpeak": "We watched the actors, the singers, and the dancers.",
+            "word": "Our coach, who never accepts excuses, was surprisingly understanding.",
+            "textToSpeak": "Our coach, who never accepts excuses, was surprisingly understanding.",
             "options": [
-                "Flat intonation: every item in the list, including 'the dancers', is said with the same falling pitch.",
-                "List intonation: the pitch rises slightly after each earlier item ('the actors', 'the singers') and only falls on the final item, 'the dancers'."
+                "The natural pause falls right after 'never' instead, splitting the sentence at that point.",
+                "The natural pause falls right after 'coach', separating one complete phrase from the next."
             ],
-            "correctAnswer": "List intonation: the pitch rises slightly after each earlier item ('the actors', 'the singers') and only falls on the final item, 'the dancers'.",
+            "correctAnswer": "The natural pause falls right after 'coach', separating one complete phrase from the next.",
             "correctAnswerIndex": 1,
-            "ipa": "/wiː wɒtʃt ðiː ˈæktəz, ðə ˈsɪŋəz, ən ðə ˈdɑːnsəz/",
-            "hint": "Listen to the list: the actors, the singers, the dancers. Does the pitch stay up until the very last item, then drop?",
-            "explanation": "When listing items in English, speakers use a small rising pitch after each item except the last, signalling 'there's more to come.' The pitch only falls on 'the dancers', showing the list is complete.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/ˈaʊə kəʊtʃ | huː ˈnevər əkˈsepts ɪkˈskjuːzɪz | wəz səˈpraɪzɪŋli ˌʌndəˈstændɪŋ/",
+            "hint": "Long sentences break into smaller chunks of meaning. Find the edge between one complete idea and the next.",
+            "explanation": "Fluent speakers break sentences into chunks of meaning, and one chunk genuinely ends at 'coach', not mid-phrase at 'never'.",
+            "flowRule": "Chunking for Shadowing: fluent speech pauses at the edges of complete grammatical units, never inside a tightly bound pair like an article and its noun."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L140_Q3",
-            "instruction": "Identify the pronunciation",
+            "instruction": "Identify where the pause falls",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "You haven't watched the new episode, have you?",
-            "textToSpeak": "You haven't watched the new episode, have you?",
+            "word": "They toured the campus, met the professors, and applied the same week.",
+            "textToSpeak": "They toured the campus, met the professors, and applied the same week.",
             "options": [
-                "Rising intonation ↗ on 'have you' here: the speaker genuinely isn't sure, turning 'You haven't watched the new episode, have you?' into a real question.",
-                "Falling intonation ↘ on 'have you' here: the speaker would be confident and simply inviting agreement."
+                "The natural pause falls right after 'met' instead, splitting the sentence at that point.",
+                "The natural pause falls right after 'campus', separating one complete phrase from the next."
             ],
-            "correctAnswer": "Rising intonation ↗ on 'have you' here: the speaker genuinely isn't sure, turning 'You haven't watched the new episode, have you?' into a real question.",
-            "correctAnswerIndex": 0,
-            "ipa": "/juː ˈhævnt wɒtʃt ðə njuː ˈepɪsəʊd, həv juː/ ↗",
-            "hint": "Listen to 'You haven't watched the new episode, have you?' Does the tag 'have you' sound like genuine doubt, or like the speaker already expects agreement?",
-            "explanation": "Tag questions like 'have you' can rise or fall depending on meaning. A rising tag shows real uncertainty, which is the case in 'You haven't watched the new episode, have you?'.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "The natural pause falls right after 'campus', separating one complete phrase from the next.",
+            "correctAnswerIndex": 1,
+            "ipa": "/ðeɪ tʊəd ðə ˈkæmpəs | met ðə prəˈfesəz | ən əˈplaɪd ðə seɪm wiːk/",
+            "hint": "Try reading both options aloud. One will feel like a natural breath group; the other will feel like it cuts a phrase in half.",
+            "explanation": "Because 'campus' completes a full grammatical unit, that's where the pause naturally falls, rather than the mid-phrase break at 'met'.",
+            "flowRule": "Chunking for Shadowing: fluent speech pauses at the edges of complete grammatical units, never inside a tightly bound pair like an article and its noun."
         }
     ]
 }

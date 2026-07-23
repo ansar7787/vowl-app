@@ -8,540 +8,540 @@
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
             "hint": "The key word here is a person's title or role.",
-            "explanation": "The correct person is student - a person who is learning a subject, especially at a school or university. The sentence tells us the student repairs his own phone more often now.",
-            "textToSpeak": "The student repairs his own phone more often now than before.",
-            "targetDetail": "student",
+            "explanation": "That's supervisor: a person who oversees the work of others. The audio confirms it — the new supervisor has already approved next month's schedule.",
+            "textToSpeak": "The new supervisor has already approved next month's schedule.",
+            "targetDetail": "supervisor",
             "options": [
-                "artist",
-                "student",
-                "technician",
-                "hacker"
+                "supervisor",
+                "comedian",
+                "podcaster",
+                "tenant"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🗓️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L61_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "The key word describes an action or activity.",
-            "explanation": "The action is repairs, meaning to fix something that is broken or not working correctly. Here, repairs her home appliances faster than a professional.",
-            "textToSpeak": "She repairs her home appliances faster than a professional technician.",
-            "targetDetail": "repairs",
+            "hint": "What's happening in the sentence? Listen for that word.",
+            "explanation": "Updates is correct — to make something more current or accurate. Notice how she updates the client database more often than her colleagues.",
+            "textToSpeak": "She updates the client database more often than her colleagues.",
+            "targetDetail": "updates",
             "options": [
-                "validates",
-                "repairs",
-                "locates",
-                "evaluates"
+                "updates",
+                "publishes",
+                "returns",
+                "departs"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🗃️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L61_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the name of the thing or object mentioned.",
-            "explanation": "The correct object is chip - a small electronic part that stores or processes information inside a device. In the audio, a much smaller security chip than the old one.",
-            "textToSpeak": "The new payment card has a much smaller security chip.",
-            "targetDetail": "chip",
+            "hint": "What is the sentence actually about? Listen for that noun.",
+            "explanation": "Listen for contract: a written legal agreement between two or more people. In this sentence, he was reviewing the contract when the call came in.",
+            "textToSpeak": "He was reviewing the contract when the call came in.",
+            "targetDetail": "contract",
             "options": [
-                "engine",
-                "code",
-                "data",
-                "chip"
+                "contract",
+                "tradition",
+                "reservation",
+                "itinerary"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🔌"
+            "emoji": "📝"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L62_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the type of person described in the sentence.",
-            "explanation": "The correct person is researcher - a person who studies a subject carefully to discover new facts or knowledge. The sentence tells us transfers more data to the cloud than before.",
-            "textToSpeak": "The researcher transfers more data to the cloud than she used to.",
-            "targetDetail": "researcher",
+            "hint": "Which word tells you the person's identity?",
+            "explanation": "The person mentioned is pilot: a person who flies an airplane. Here, a cautious pilot was checking the instruments before takeoff.",
+            "textToSpeak": "A cautious pilot was checking the instruments before takeoff.",
+            "targetDetail": "pilot",
             "options": [
-                "technician",
-                "researcher",
-                "pilot",
-                "traveler"
+                "barber",
+                "swimmer",
+                "waiter",
+                "pilot"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "📈"
+            "emoji": "✈️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L62_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the action word - what is the person or thing doing?",
-            "explanation": "The action is transfers, meaning to move something from one place, person, or system to another. Here, transfers money far more often than last year.",
-            "textToSpeak": "She transfers money between accounts far more often than last year.",
-            "targetDetail": "transfers",
+            "hint": "Which word tells you what actually took place?",
+            "explanation": "Navigates fits the sentence — to find the way to a destination. You can hear that she navigates busy airports more calmly than most travelers.",
+            "textToSpeak": "She navigates busy airports more calmly than most travelers.",
+            "targetDetail": "navigates",
             "options": [
-                "encrypts",
-                "analyzes",
-                "restores",
-                "transfers"
+                "books",
+                "commutes",
+                "delivers",
+                "navigates"
             ],
             "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🔄"
+            "emoji": "🧭"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L62_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the item, not the person or action described.",
-            "explanation": "The thing mentioned is code: a set of written instructions that tells a computer what to do. Here, a more complex door code than his old one.",
-            "textToSpeak": "He is using a more complex door code than his old one.",
-            "targetDetail": "code",
+            "hint": "Track the specific thing referenced in the audio.",
+            "explanation": "The object described is boarding pass — a document that allows a passenger onto a flight. As stated, he has kept every boarding pass since his first trip.",
+            "textToSpeak": "He has kept every boarding pass since his first trip.",
+            "targetDetail": "boarding pass",
             "options": [
-                "device",
-                "code",
-                "node",
-                "data"
+                "review",
+                "app",
+                "playlist",
+                "boarding pass"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "💻"
+            "emoji": "🎫"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L63_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the name or role of the person in the sentence.",
-            "explanation": "Student is correct - a person who is learning a subject, especially at a school or university. In the sentence, repairs classroom computers more quickly than last term.",
-            "textToSpeak": "The student repairs classroom computers more quickly than last term.",
-            "targetDetail": "student",
+            "hint": "Track the noun that identifies the human subject.",
+            "explanation": "surgeon is correct — a doctor who performs operations. In the audio, the visiting surgeon was explaining the procedure to the family.",
+            "textToSpeak": "The visiting surgeon was explaining the procedure to the family.",
+            "targetDetail": "surgeon",
             "options": [
-                "student",
-                "hacker",
-                "robot",
-                "explorer"
+                "commuter",
+                "lawyer",
+                "publisher",
+                "surgeon"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🏥"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L63_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the verb, not the person or the thing they mention.",
-            "explanation": "The correct action is repairs - to fix something that is broken or not working correctly. In this sentence, repairs lab equipment much faster than her predecessor.",
-            "textToSpeak": "She repairs broken lab equipment much faster than her predecessor.",
-            "targetDetail": "repairs",
+            "hint": "Notice the specific activity being carried out.",
+            "explanation": "The action named is treats, which means to give medical care to a patient. To be exact, she treats more patients than any other doctor at the clinic.",
+            "textToSpeak": "She treats more patients than any other doctor at the clinic.",
+            "targetDetail": "treats",
             "options": [
-                "secures",
-                "evaluates",
-                "repairs",
-                "restores"
+                "prescribes",
+                "requests",
+                "boards",
+                "treats"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🩺"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L63_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Which object or thing do you hear in the sentence?",
-            "explanation": "The thing mentioned is software: the programs and instructions that tell a computer how to operate. Here, using better learning software than before.",
-            "textToSpeak": "The school is now using better learning software than before.",
-            "targetDetail": "software",
+            "hint": "Notice the specific item being used, fixed, or mentioned.",
+            "explanation": "Right answer: diagnosis, a doctor's identification of an illness. That's because he has read the diagnosis three times since yesterday.",
+            "textToSpeak": "He has read the diagnosis three times since yesterday.",
+            "targetDetail": "diagnosis",
             "options": [
-                "network",
-                "software",
-                "code",
-                "chip"
+                "record",
+                "scholarship",
+                "voucher",
+                "diagnosis"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "💻"
+            "emoji": "📋"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L64_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on who is being described, not what they do or use.",
-            "explanation": "The person mentioned is mentor. An experienced person who guides and advises someone less experienced. Here, locates more useful study resources than before.",
-            "textToSpeak": "The mentor locates more useful study resources than the old system.",
-            "targetDetail": "mentor",
+            "hint": "Notice the person's title or job mentioned in the audio.",
+            "explanation": "Right answer: comedian, a person who performs to make audiences laugh. That's because the famous touring comedian was rehearsing new jokes backstage tonight.",
+            "textToSpeak": "The famous touring comedian was rehearsing new jokes backstage tonight.",
+            "targetDetail": "comedian",
             "options": [
-                "mentor",
-                "scout",
-                "analyst",
-                "artist"
+                "veterinarian",
+                "comedian",
+                "receptionist",
+                "captain"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "👨‍🏫"
+            "emoji": "😂"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L64_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Which action or activity do you hear in the sentence?",
-            "explanation": "You heard locates. This verb means to find the exact position or place of something. In the audio, locates revision materials far more easily than last year.",
-            "textToSpeak": "She locates revision materials far more easily than last year.",
-            "targetDetail": "locates",
+            "hint": "Zero in on what the subject is doing.",
+            "explanation": "Listen for performs: to act, sing, or play music in front of an audience. As stated, she performs at bigger venues than she did last year.",
+            "textToSpeak": "She performs at bigger venues than she did last year.",
+            "targetDetail": "performs",
             "options": [
-                "measures",
-                "activates",
-                "observes",
-                "locates"
+                "restores",
+                "performs",
+                "tastes",
+                "exercises"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🎤"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L64_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the specific item being used, fixed, or mentioned.",
-            "explanation": "The correct object is data - information that is collected, stored, or processed, often by a computer. In the audio, storing more student data than ever before.",
-            "textToSpeak": "The school is storing more student data than ever before.",
-            "targetDetail": "data",
+            "hint": "Pinpoint the specific object mentioned.",
+            "explanation": "The correct object is festival — an event held to celebrate something, often with music or food. In the audio, he has bought tickets to every festival this season.",
+            "textToSpeak": "He has bought tickets to every festival this season.",
+            "targetDetail": "festival",
             "options": [
-                "node",
-                "software",
-                "data",
-                "system"
+                "festival",
+                "review",
+                "visa",
+                "script"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🗄️"
+            "emoji": "🎪"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L65_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the person's title or job mentioned in the audio.",
-            "explanation": "Scientist is correct - a person who studies the natural world through observation and experiment. In the sentence, deploys her research portal more regularly than before.",
-            "textToSpeak": "The scientist deploys her research portal more regularly than before.",
-            "targetDetail": "scientist",
+            "hint": "Pinpoint the person's job or family connection.",
+            "explanation": "The role named is tour guide, a person who shows visitors around a place. Specifically, an experienced tour guide was leading a group through the ruins.",
+            "textToSpeak": "An experienced tour guide was leading a group through the ruins.",
+            "targetDetail": "tour guide",
             "options": [
-                "scientist",
-                "analyst",
-                "pilot",
-                "teacher"
+                "engineer",
+                "painter",
+                "tour guide",
+                "colleague"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "👨‍🔬"
+            "emoji": "🏛️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L65_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to what is happening, not who or what is involved.",
-            "explanation": "The action is deploys, meaning to put something or someone into use for a specific purpose. Here, deploys updates much more often than her predecessor.",
-            "textToSpeak": "She deploys system updates much more often than her predecessor.",
-            "targetDetail": "deploys",
+            "hint": "Track the action word as the sentence unfolds.",
+            "explanation": "That's the verb explores: to travel through a place to learn about it. Here, she explores remote regions more often than most guides.",
+            "textToSpeak": "She explores remote regions more often than most guides.",
+            "targetDetail": "explores",
             "options": [
-                "builds",
-                "secures",
-                "sends",
-                "deploys"
+                "explores",
+                "presents",
+                "photographs",
+                "prescribes"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🗺️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L65_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to the thing, not who is using it or what they do.",
-            "explanation": "You heard portal - an online gateway that allows access to specific services or information. The audio describes far more user-friendly than the old portal.",
-            "textToSpeak": "The new employee portal is far more user-friendly than the old one.",
-            "targetDetail": "portal",
+            "hint": "The key word names a thing, not a person or an action.",
+            "explanation": "That's visa — an official document allowing entry into another country. The audio confirms it: he has renewed his visa earlier than he did last time.",
+            "textToSpeak": "He has renewed his visa earlier than he did last time.",
+            "targetDetail": "visa",
             "options": [
-                "node",
-                "module",
-                "portal",
-                "drone"
+                "password",
+                "novel",
+                "ceremony",
+                "visa"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🌐"
+            "emoji": "🛂"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L66_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Which person's name or role do you hear in the sentence?",
-            "explanation": "The person mentioned is detective. A person who investigates crimes, mysteries, or hidden information. Here, restores more deleted evidence than any previous investigator.",
-            "textToSpeak": "The detective restores more deleted evidence than any previous investigator.",
-            "targetDetail": "detective",
+            "hint": "Notice which person is named — not what happens.",
+            "explanation": "The correct person is recruiter — a person who finds and hires new employees. The sentence tells us the company's new recruiter has interviewed dozens of candidates.",
+            "textToSpeak": "The company's new recruiter has interviewed dozens of candidates.",
+            "targetDetail": "recruiter",
             "options": [
-                "mentor",
-                "detective",
-                "expert",
-                "scout"
+                "mediator",
+                "recruiter",
+                "critic",
+                "therapist"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🕵️"
+            "emoji": "🧑‍💼"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L66_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the action being performed in the audio.",
-            "explanation": "The action is restores, meaning to bring something back to its original or working condition. Here, restores deleted files much faster than the old system.",
-            "textToSpeak": "She restores deleted project files much faster than the old system.",
-            "targetDetail": "restores",
+            "hint": "What single word best describes what's happening here?",
+            "explanation": "recruits is the action — to find and persuade people to join an organization. In the audio, she recruits graduates more actively than the previous manager.",
+            "textToSpeak": "She recruits graduates more actively than the previous manager.",
+            "targetDetail": "recruits",
             "options": [
-                "launches",
-                "analyzes",
-                "restores",
-                "creates"
+                "oversees",
+                "delegates",
+                "recruits",
+                "negotiates"
             ],
             "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🔧"
+            "emoji": "🎓"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L66_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the object or concept named in the sentence.",
-            "explanation": "The correct object is device - a small machine or tool designed to perform a specific job. In the audio, smaller and faster than the previous model.",
-            "textToSpeak": "The new scanning device is smaller and faster than the previous model.",
-            "targetDetail": "device",
+            "hint": "Which word names the exact object involved?",
+            "explanation": "The item named is resume, a document listing a person's work history and skills. To be exact, he has updated his resume since losing his last job.",
+            "textToSpeak": "He has updated his resume since losing his last job.",
+            "targetDetail": "resume",
             "options": [
-                "code",
-                "signal",
-                "drone",
-                "device"
+                "itinerary",
+                "warranty",
+                "resume",
+                "curriculum"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🔌"
+            "emoji": "📄"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L67_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to who the sentence is about.",
-            "explanation": "You heard robot: a machine programmed to carry out tasks automatically. The audio shows measures passenger luggage more accurately than before.",
-            "textToSpeak": "The airport robot measures passenger luggage more accurately than before.",
-            "targetDetail": "robot",
+            "hint": "Notice the exact word that names who is involved.",
+            "explanation": "The person in question is supervisor: a person who oversees the work of others. To be exact, a dedicated supervisor was organizing donations at the shelter.",
+            "textToSpeak": "A dedicated supervisor was organizing donations at the shelter.",
+            "targetDetail": "supervisor",
             "options": [
-                "student",
-                "scout",
-                "detective",
-                "robot"
+                "paramedic",
+                "supervisor",
+                "sculptor",
+                "tailor"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🤖"
+            "emoji": "📦"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L67_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the doing word, not the subject or object.",
-            "explanation": "The correct action is measures - to determine the size, amount, or degree of something. In this sentence, measures weight more accurately than a manual scale.",
-            "textToSpeak": "The app measures baggage weight more accurately than a manual scale.",
-            "targetDetail": "measures",
+            "hint": "Isolate the activity word from the rest of the sentence.",
+            "explanation": "Right answer: helps, meaning to make a task easier for someone. That's because she helps sort more clothing than any other volunteer at the shelter.",
+            "textToSpeak": "She helps sort more clothing than any other volunteer at the shelter.",
+            "targetDetail": "helps",
             "options": [
-                "monitors",
-                "measures",
-                "encrypts",
-                "builds"
+                "packs",
+                "grows",
+                "waters",
+                "helps"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "📏"
+            "emoji": "👕"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L67_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the specific thing described in the audio.",
-            "explanation": "The correct object is module - a separate unit that is part of a larger system, course, or program. In the audio, a more advanced safety module than before.",
-            "textToSpeak": "The airline has a more advanced safety module than before.",
-            "targetDetail": "module",
+            "hint": "Track the noun that answers 'what exactly?'",
+            "explanation": "Donation is correct — money or goods given to help a person or cause. The sentence tells us he has collected donations for the shelter since spring.",
+            "textToSpeak": "He has collected donations for the shelter since spring.",
+            "targetDetail": "donation",
             "options": [
-                "network",
-                "portal",
-                "software",
-                "module"
+                "donation",
+                "proposal",
+                "subscription",
+                "lecture"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "💝"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L68_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
             "hint": "Focus on the person, not the action or the object they mention.",
-            "explanation": "Detective is correct - a person who investigates crimes, mysteries, or hidden information. In the sentence, restores more passport records than the old system.",
-            "textToSpeak": "The border detective restores more deleted passport records than the old system.",
-            "targetDetail": "detective",
+            "explanation": "Curator fits — a person who manages the items in a museum or gallery. You can hear that the museum's curator has rearranged the exhibit for the third time.",
+            "textToSpeak": "The museum's curator has rearranged the exhibit for the third time.",
+            "targetDetail": "curator",
             "options": [
-                "detective",
-                "hero",
-                "teacher",
-                "commander"
+                "mediator",
+                "administrator",
+                "therapist",
+                "curator"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🕵️"
+            "emoji": "🖼️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L68_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for what is happening, not to whom or with what.",
-            "explanation": "The action is restores, meaning to bring something back to its original or working condition. Here, restores lost booking records faster than before.",
-            "textToSpeak": "The customs system restores lost booking records faster than before.",
-            "targetDetail": "restores",
+            "hint": "Focus on the doing word, not the subject or object.",
+            "explanation": "Compiles is the detail — to collect information from different sources into one. The audio makes clear that she compiles new collections more carefully than her predecessor did.",
+            "textToSpeak": "She compiles new collections more carefully than her predecessor did.",
+            "targetDetail": "compiles",
             "options": [
-                "restores",
-                "validates",
-                "evaluates",
-                "activates"
+                "finalizes",
+                "compiles",
+                "consults",
+                "diagnoses"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🔧"
+            "emoji": "🗃️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L68_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "The key word names a thing, not a person or an action.",
-            "explanation": "You heard database - an organized collection of information stored electronically for easy access. The audio describes a far larger guest database than last year.",
-            "textToSpeak": "The hotel has a far larger guest database than last year.",
-            "targetDetail": "database",
+            "hint": "Pay attention to the thing, not who is using it or what they do.",
+            "explanation": "The thing mentioned is exhibit: a public display of art or objects. Here, he has visited the exhibit twice since it opened.",
+            "textToSpeak": "He has visited the exhibit twice since it opened.",
+            "targetDetail": "exhibit",
             "options": [
-                "system",
-                "database",
-                "archive",
-                "chip"
+                "salary",
+                "exhibit",
+                "charity",
+                "performance"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🗄️"
+            "emoji": "🎨"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L69_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "The key word here is a person's title or role.",
-            "explanation": "The person mentioned is engineer. A person who designs, builds, or maintains machines or technical systems. Here, updates the smart home portal more often now.",
-            "textToSpeak": "My uncle the engineer updates the smart home portal more often than before.",
-            "targetDetail": "engineer",
+            "hint": "What title or relationship word describes the subject?",
+            "explanation": "Listen for inspector: a person who checks that rules or standards are met. In this case, the building inspector was examining the wiring more closely than usual.",
+            "textToSpeak": "The building inspector was examining the wiring more closely than usual.",
+            "targetDetail": "inspector",
             "options": [
-                "technician",
-                "commander",
-                "detective",
-                "engineer"
+                "analyst",
+                "inspector",
+                "commuter",
+                "correspondent"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "👨‍🔧"
+            "emoji": "🔍"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L69_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "The key word describes an action or activity.",
-            "explanation": "The correct action is updates - to make something current by adding new or recent information. In this sentence, updates the family portal more regularly than before.",
-            "textToSpeak": "She updates the family calendar portal more regularly than before.",
-            "targetDetail": "updates",
+            "hint": "Focus on the activity, not who does it or what it involves.",
+            "explanation": "The doing-word is verifies — to check that something is true or accurate. The sentence confirms she verifies safety standards more strictly since the last incident.",
+            "textToSpeak": "She verifies safety standards more strictly since the last incident.",
+            "targetDetail": "verifies",
             "options": [
-                "locates",
-                "updates",
-                "transfers",
-                "analyzes"
+                "verifies",
+                "authorizes",
+                "allocates",
+                "operates"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🔄"
+            "emoji": "✅"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L69_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the name of the thing or object mentioned.",
-            "explanation": "You heard portal - an online gateway that allows access to specific services or information. The audio describes far easier to use than the old one.",
-            "textToSpeak": "Our new family portal is far easier to use than the old one.",
-            "targetDetail": "portal",
+            "hint": "The detail to catch is the object's exact name.",
+            "explanation": "You heard report, a document that gives information or an account of something. Notice that he has read the report twice since the meeting.",
+            "textToSpeak": "He has read the report twice since the meeting.",
+            "targetDetail": "report",
             "options": [
-                "portal",
-                "code",
+                "report",
                 "network",
-                "module"
+                "deadline",
+                "reservation"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🌐"
+            "emoji": "📑"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L70_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the type of person described in the sentence.",
-            "explanation": "The correct person is commander - a person who leads others and gives instructions or orders. The sentence tells us locates places much faster than my brother.",
-            "textToSpeak": "My dad the commander locates places much faster than my brother does.",
-            "targetDetail": "commander",
+            "hint": "The role word is the target — everything else is context.",
+            "explanation": "Entrepreneur is who's described — a person who starts and runs a business. The audio states that an ambitious entrepreneur has opened a second store downtown.",
+            "textToSpeak": "An ambitious entrepreneur has opened a second store downtown.",
+            "targetDetail": "entrepreneur",
             "options": [
-                "expert",
-                "researcher",
-                "commander",
-                "pilot"
+                "entrepreneur",
+                "judge",
+                "publisher",
+                "auditor"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "👨‍✈️"
+            "emoji": "🏪"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L70_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the action word - what is the person or thing doing?",
-            "explanation": "Locates is the action - to find the exact position or place of something. In the sentence, locates lost items more quickly with the new software.",
-            "textToSpeak": "She locates lost items at home more quickly using the new software.",
-            "targetDetail": "locates",
+            "hint": "Which action or activity do you hear in the sentence?",
+            "explanation": "You heard promotes: to raise someone to a higher position, or to advertise something. In this sentence, she promotes the new store far more heavily than the original one.",
+            "textToSpeak": "She promotes the new store far more heavily than the original one.",
+            "targetDetail": "promotes",
             "options": [
-                "encrypts",
-                "locates",
-                "creates",
-                "launches"
+                "promotes",
+                "installs",
+                "monitors",
+                "announces"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "📣"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L70_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the item, not the person or action described.",
-            "explanation": "You heard software - the programs and instructions that tell a computer how to operate. The audio describes more reliable than the old app.",
-            "textToSpeak": "The new family tracking software is more reliable than the old app.",
-            "targetDetail": "software",
+            "hint": "Zero in on the noun naming the item or concept.",
+            "explanation": "Discount is the detail — a reduction in the usual price of something. Specifically, he has offered a bigger discount than he did last spring.",
+            "textToSpeak": "He has offered a bigger discount than he did last spring.",
+            "targetDetail": "discount",
             "options": [
-                "network",
-                "code",
-                "device",
-                "software"
+                "invoice",
+                "album",
+                "record",
+                "discount"
             ],
             "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "💻"
+            "emoji": "🏷️"
         }
     ]
 }

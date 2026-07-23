@@ -7,438 +7,64 @@
             "id": "LIS_EMOTIONRECOGNITION_L121_Q1",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Sensing that others have information you lack before a meeting even begins — what does this perception create?",
-            "explanation": "The feeling that others are better informed before a meeting begins creates pre-emptive nervousness.",
-            "textToSpeak": "Everyone in the room seems to know something I don't, and the meeting hasn't started yet.",
+            "hint": "Being truly happy for someone while privately measuring yourself against them points to a specific, uncomfortable feeling.",
+            "explanation": "Feeling real happiness for someone while quietly comparing your own life to theirs is the essence of jealousy.",
+            "textToSpeak": "My sister posts about her new house every week. I'm genuinely happy for her, but I've started checking listing prices in my own neighborhood more than I'd like to admit.",
             "options": [
-                "confident 😎",
-                "sad 😢",
-                "excited 🤩",
-                "nervous 😬"
+                "jealous 😒",
+                "happy 😊",
+                "disappointed 😞",
+                "surprised 😲"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
-            "emoji": "😬"
+            "emoji": "😒"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L121_Q2",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Tense corrections from present to past — what transition of understanding do these corrections reveal?",
-            "explanation": "Catching yourself using present tense for someone now gone and correcting it is a sign of unprocessed grief.",
-            "textToSpeak": "He kept correcting his tenses when talking about her. Present to past. He hadn't fully made the switch yet.",
+            "hint": "Checking for something you know isn't coming yet, again and again, points to an ongoing, restless unease.",
+            "explanation": "Repeatedly checking for news you know isn't ready yet is a clear sign of anxiety, a more restless cousin of nervousness.",
+            "textToSpeak": "The results aren't posted until Friday. I know that. I've still checked the portal eleven times since breakfast.",
             "options": [
-                "angry 😠",
-                "sad 😢",
+                "nervous 😬",
+                "anxious 😰",
                 "curious 🤔",
-                "neutral 😐"
+                "bored 🥱"
             ],
             "correctAnswerIndex": 1,
             "subtype": "emotionRecognition",
-            "emoji": "😢"
+            "emoji": "😰"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L121_Q3",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Unusual behavior from your most predictable contact — what does this deviation produce?",
-            "explanation": "Atypical behavior from your most consistent contact with no explanation produces business curiosity.",
-            "textToSpeak": "Our most loyal customer placed an unusually large order, paid immediately, and has gone completely quiet since.",
+            "hint": "A reward that requires sensitive information up front tends to raise a particular kind of doubt.",
+            "explanation": "Doubting an offer that seems too good to be true, especially one asking for private details, is healthy skepticism.",
+            "textToSpeak": "The email says I've won a prize from a competition I don't remember entering, and all they need is my bank details to release it.",
             "options": [
-                "bored 🥱",
                 "curious 🤔",
-                "sad 😢",
-                "neutral 😐"
+                "excited 🤩",
+                "skeptical 🤨",
+                "annoyed 🙄"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "emotionRecognition",
-            "emoji": "🤔"
+            "emoji": "🤨"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L122_Q1",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "'That might be why' about an unplanned best evening — what role does the absence of planning play here?",
-            "explanation": "An unplanned evening being the best in years suggests that removing expectation produced genuine happiness.",
-            "textToSpeak": "I didn't plan the evening, and neither did she. That might be why it's the best one we've had in years.",
+            "hint": "A plain, quiet evening described as exactly enough points to a warm, settled feeling.",
+            "explanation": "An ordinary quiet evening described as 'all I want' reflects a simple, settled happiness.",
+            "textToSpeak": "The kids are finally asleep, the kitchen's clean, and I'm sitting here with tea doing absolutely nothing. Some evenings, this is all I want.",
             "options": [
-                "happy 😊",
-                "curious 🤔",
-                "nervous 😬",
-                "bored 🥱"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "emotionRecognition",
-            "emoji": "😊"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L122_Q2",
-            "interactionType": "Tone Analyzer",
-            "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "A clause you identified as unworkable becoming the core of the new agreement — what does this produce?",
-            "explanation": "Being ignored, then seeing your rejected concern become the central flaw of the outcome, produces anger.",
-            "textToSpeak": "It appears the clause I raised as unworkable has become the entire foundation of the revised agreement.",
-            "options": [
-                "sad 😢",
-                "angry 😠",
-                "neutral 😐",
-                "curious 🤔"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "emotionRecognition",
-            "emoji": "😠"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L122_Q3",
-            "interactionType": "Tone Analyzer",
-            "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "A written-off project reappearing as a cited success three years later — what does this reversal produce?",
-            "explanation": "A project abandoned as a loss reappearing as a success story is a cause of genuine professional surprise.",
-            "textToSpeak": "The project we wrote off as a sunk cost came back as a case study in the industry report three years later.",
-            "options": [
-                "neutral 😐",
-                "happy 😊",
-                "curious 🤔",
-                "surprised 😲"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "emotionRecognition",
-            "emoji": "😲"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L123_Q1",
-            "interactionType": "Tone Analyzer",
-            "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Identical notes in identical meetings on the same agenda across an entire year — what state has this created?",
-            "explanation": "Year-long repetition of identical content in recurring meetings is a cause of deep, structural boredom.",
-            "textToSpeak": "I've been taking the same notes in the same meeting for the same recurring agenda since the beginning of the year.",
-            "options": [
-                "bored 🥱",
-                "angry 😠",
-                "sad 😢",
-                "curious 🤔"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "emotionRecognition",
-            "emoji": "🥱"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L123_Q2",
-            "interactionType": "Tone Analyzer",
-            "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "A forty-three-word statement as the only public explanation for a significant departure — what does its brevity signal?",
-            "explanation": "An unusually brief, opaque statement following a significant departure produces curiosity about what's behind it.",
-            "textToSpeak": "She resigned, referred questions to a statement, and has not been reachable since. The statement was forty-three words.",
-            "options": [
-                "bored 🥱",
-                "neutral 😐",
-                "curious 🤔",
-                "angry 😠"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "emotionRecognition",
-            "emoji": "🤔"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L123_Q3",
-            "interactionType": "Tone Analyzer",
-            "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "'The results already made the argument' — what posture is the speaker taking toward defending their work?",
-            "explanation": "Letting a track record stand as its own argument without needing to make the case expresses total confidence.",
-            "textToSpeak": "My record on this speaks for itself. I don't need to make the argument — the results already made it.",
-            "options": [
-                "excited 🤩",
-                "nervous 😬",
-                "confident 😎",
-                "sad 😢"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "emotionRecognition",
-            "emoji": "😎"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L124_Q1",
-            "interactionType": "Tone Analyzer",
-            "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "A yearly ritual of holding but not reading a letter — what does knowing it by heart from holding suggest?",
-            "explanation": "A letter held but not re-read because it's already internalized describes a grief maintained across years.",
-            "textToSpeak": "Every year on this day I open the same drawer and hold the letter. I never read it again. I don't need to.",
-            "options": [
-                "neutral 😐",
-                "bored 🥱",
-                "curious 🤔",
-                "sad 😢"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "emotionRecognition",
-            "emoji": "😢"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L124_Q2",
-            "interactionType": "Tone Analyzer",
-            "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "'Finally building the thing we promised' after fourteen months — what moment does this final approval mark?",
-            "explanation": "Fourteen months of preparation collapsing into a single approval moment produces a surge of excitement.",
-            "textToSpeak": "The board approved the final proposal. Fourteen months of work and we're finally building the thing we promised.",
-            "options": [
-                "bored 🥱",
-                "sad 😢",
-                "nervous 😬",
-                "excited 🤩"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "emotionRecognition",
-            "emoji": "🤩"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L124_Q3",
-            "interactionType": "Tone Analyzer",
-            "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Being asked to present unfamiliar findings with twenty minutes' notice — what does this situation produce?",
-            "explanation": "Presenting someone else's work you haven't read with minimal warning is an acute cause of nervousness.",
-            "textToSpeak": "I've been asked to present findings I didn't write. Nobody told me this until twenty minutes ago.",
-            "options": [
-                "excited 🤩",
-                "angry 😠",
-                "nervous 😬",
-                "confident 😎"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "emotionRecognition",
-            "emoji": "😬"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L125_Q1",
-            "interactionType": "Tone Analyzer",
-            "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Ignored data being retrospectively cited as the reason for the failure it predicted — what is this dynamic?",
-            "explanation": "Being told to ignore evidence that then becomes the official cause of the resulting problem produces anger.",
-            "textToSpeak": "The data was clear. The decision was made anyway. Now the data we were told to ignore is being cited as the cause.",
-            "options": [
-                "sad 😢",
-                "angry 😠",
-                "curious 🤔",
-                "neutral 😐"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "emotionRecognition",
-            "emoji": "😠"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L125_Q2",
-            "interactionType": "Tone Analyzer",
-            "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Three departures coinciding with an unannounced restructuring and no public comment — what does this suggest?",
-            "explanation": "Three simultaneous senior departures with no public statement around a private restructuring is a surprising pattern.",
-            "textToSpeak": "Three senior leaders left the same week the quiet restructuring plan was circulated. Nobody commented publicly.",
-            "options": [
-                "bored 🥱",
-                "surprised 😲",
-                "curious 🤔",
-                "neutral 😐"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "emotionRecognition",
-            "emoji": "😲"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L125_Q3",
-            "interactionType": "Tone Analyzer",
-            "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Crying during good news on a call — what does the involuntary physical response to good news tell you?",
-            "explanation": "Crying while receiving good news, unable to function, is a description of happiness too large to contain.",
-            "textToSpeak": "I got the call while I was cooking dinner. I had to turn the gas off because I couldn't hold the pan and cry at the same time.",
-            "options": [
-                "sad 😢",
-                "surprised 😲",
-                "happy 😊",
-                "nervous 😬"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "emotionRecognition",
-            "emoji": "😊"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L126_Q1",
-            "interactionType": "Tone Analyzer",
-            "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "One abstention, an immediate departure, and a subsequent absence from all meetings — what pattern is this?",
-            "explanation": "A single dissent followed by departure and absence suggests a story behind the abstention that invites curiosity.",
-            "textToSpeak": "The vote was unanimous except for one abstention, from a member who left immediately after and hasn't attended since.",
-            "options": [
-                "neutral 😐",
-                "angry 😠",
-                "curious 🤔",
-                "bored 🥱"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "emotionRecognition",
-            "emoji": "🤔"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L126_Q2",
-            "interactionType": "Tone Analyzer",
-            "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "An hour on two sentences you still haven't sent — what makes such a short message so difficult?",
-            "explanation": "An hour spent on two sentences that still may not be sent reveals the nervousness of high-stakes communication.",
-            "textToSpeak": "It took me an hour to write a two-sentence text. And I still haven't decided if I'll actually send it.",
-            "options": [
-                "confident 😎",
-                "nervous 😬",
-                "excited 🤩",
-                "sad 😢"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "emotionRecognition",
-            "emoji": "😬"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L126_Q3",
-            "interactionType": "Tone Analyzer",
-            "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "A kept, unwashed jumper from someone's cleared room — what does refusing to wash it preserve?",
-            "explanation": "Keeping a garment unwashed to preserve a person's scent is a quiet act of grief and sadness.",
-            "textToSpeak": "I cleared his room this spring. I kept one jumper. It still smells right. I don't wash it.",
-            "options": [
-                "angry 😠",
-                "sad 😢",
-                "curious 🤔",
-                "neutral 😐"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "emotionRecognition",
-            "emoji": "😢"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L127_Q1",
-            "interactionType": "Tone Analyzer",
-            "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Describing the presentation as unnecessary because the results have already done the work — what is this?",
-            "explanation": "Treating a presentation as a formality because your track record has already made the case is pure confidence.",
-            "textToSpeak": "I don't need the presentation to persuade them. The past three years of results already persuaded them.",
-            "options": [
-                "excited 🤩",
-                "confident 😎",
-                "nervous 😬",
-                "bored 🥱"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "emotionRecognition",
-            "emoji": "😎"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L127_Q2",
-            "interactionType": "Tone Analyzer",
-            "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "A retrospective that starts slowly and ends by recommending the status quo — what has it actually produced?",
-            "explanation": "A retrospective that ends by recommending no change after a slow start is a description of wasted time — boredom.",
-            "textToSpeak": "Our team retrospective began with a thirty-minute icebreaker and ended with a commitment to 'keep doing what we're doing.'",
-            "options": [
-                "bored 🥱",
-                "sad 😢",
-                "curious 🤔",
-                "angry 😠"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "emotionRecognition",
-            "emoji": "🥱"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L127_Q3",
-            "interactionType": "Tone Analyzer",
-            "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "A month-long review finished in one afternoon with no published conclusions — what does this produce?",
-            "explanation": "A process that ends far faster than expected with no stated outcome is a cause of genuine surprise.",
-            "textToSpeak": "The internal review expected to last a month concluded in a single afternoon with no stated findings.",
-            "options": [
-                "bored 🥱",
-                "neutral 😐",
-                "curious 🤔",
-                "surprised 😲"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "emotionRecognition",
-            "emoji": "😲"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L128_Q1",
-            "interactionType": "Tone Analyzer",
-            "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "'It's done' after fourteen months of work the field said was impossible — what milestone is this?",
-            "explanation": "Completing research described as impossible and seeing your name in the published paper is pure excitement.",
-            "textToSpeak": "My name is in the published paper. Fourteen months of research the field said couldn't be done. It's done.",
-            "options": [
-                "sad 😢",
-                "nervous 😬",
-                "excited 🤩",
-                "bored 🥱"
-            ],
-            "correctAnswerIndex": 2,
-            "subtype": "emotionRecognition",
-            "emoji": "🤩"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L128_Q2",
-            "interactionType": "Tone Analyzer",
-            "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Being required to use an unconsulted, inferior replacement — what does forced substitution without input produce?",
-            "explanation": "Being compelled to use a worse tool built without your input to replace a working one produces anger.",
-            "textToSpeak": "The tool was built without consulting the team that uses it. Now we're required to use it instead of the one that worked.",
-            "options": [
-                "bored 🥱",
-                "sad 😢",
-                "curious 🤔",
-                "angry 😠"
-            ],
-            "correctAnswerIndex": 3,
-            "subtype": "emotionRecognition",
-            "emoji": "😠"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L128_Q3",
-            "interactionType": "Tone Analyzer",
-            "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "The same question producing a different answer from every senior leader — what does this inconsistency raise?",
-            "explanation": "No consistent answer from leadership to the same strategic question produces organizational curiosity.",
-            "textToSpeak": "Every senior leader in the company uses a different phrase to answer the same question about their five-year plan.",
-            "options": [
-                "angry 😠",
-                "curious 🤔",
-                "bored 🥱",
-                "neutral 😐"
-            ],
-            "correctAnswerIndex": 1,
-            "subtype": "emotionRecognition",
-            "emoji": "🤔"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L129_Q1",
-            "interactionType": "Tone Analyzer",
-            "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Saved messages read for the specific quality of how someone wrote — what attachment does this habit reveal?",
-            "explanation": "Reading saved messages to remember someone's writing style is a quiet, sustained expression of grief.",
-            "textToSpeak": "He still has the messages from before she died. He told me he reads them sometimes to remember how she wrote.",
-            "options": [
-                "sad 😢",
-                "angry 😠",
-                "curious 🤔",
-                "neutral 😐"
-            ],
-            "correctAnswerIndex": 0,
-            "subtype": "emotionRecognition",
-            "emoji": "😢"
-        },
-        {
-            "id": "LIS_EMOTIONRECOGNITION_L129_Q2",
-            "interactionType": "Tone Analyzer",
-            "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "A failure location revisited and found to be ordinary — what does finding it 'fine' measure?",
-            "explanation": "Returning to a place of failure and finding it ordinary measures the distance you've traveled since — happiness.",
-            "textToSpeak": "I went back to the place where my worst professional failure happened and ordered the same coffee. It tasted fine.",
-            "options": [
-                "nervous 😬",
-                "bored 🥱",
-                "sad 😢",
+                "relieved 😮‍💨",
+                "tired 😴",
+                "content 🙂",
                 "happy 😊"
             ],
             "correctAnswerIndex": 3,
@@ -446,72 +72,446 @@
             "emoji": "😊"
         },
         {
-            "id": "LIS_EMOTIONRECOGNITION_L129_Q3",
+            "id": "LIS_EMOTIONRECOGNITION_L122_Q2",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Being responsible for explaining a decision that will affect half your audience — what does this position create?",
-            "explanation": "Being the person required to explain a decision that hurts half the room produces acute nervousness.",
-            "textToSpeak": "The announcement will affect half the people in this room and I'm the one who has to stand up and explain why.",
+            "hint": "A confident bet on a better outcome that leaves you with nothing at all points to a deflated feeling.",
+            "explanation": "Confidently giving up a sure thing for a bigger one that falls through is a sharp, specific disappointment.",
+            "textToSpeak": "I turned down the smaller offer because I was sure the bigger one would come through. It didn't, and now I have neither.",
             "options": [
-                "excited 🤩",
-                "confident 😎",
+                "disappointed 😞",
                 "sad 😢",
-                "nervous 😬"
+                "angry 😠",
+                "worried 😟"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "emotionRecognition",
+            "emoji": "😞"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L122_Q3",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "An unexplained request to talk, with no hint of the reason, points to a specific unease.",
+            "explanation": "Being asked to discuss something in person with no explanation given is a natural cause of worry.",
+            "textToSpeak": "My son's teacher asked to speak with us after school, but wouldn't say what it was about over the phone.",
+            "options": [
+                "anxious 😰",
+                "worried 😟",
+                "sad 😢",
+                "curious 🤔"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "emotionRecognition",
+            "emoji": "😟"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L123_Q1",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Sending genuine-sounding congratulations while privately hoping for the opposite result points to a mixed, uncomfortable feeling.",
+            "explanation": "Congratulating someone while privately wishing the outcome had gone differently is a common, honest form of jealousy.",
+            "textToSpeak": "My old classmate just got the promotion I quietly hoped would be mine one day. I sent a nice message. I meant maybe half of it.",
+            "options": [
+                "proud 🙌",
+                "happy 😊",
+                "jealous 😒",
+                "disappointed 😞"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "emotionRecognition",
+            "emoji": "😒"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L123_Q2",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Understanding a decision logically while still needing a private moment to process it points to a quiet feeling.",
+            "explanation": "Needing a private moment to sit with a loss, even one you understand and agree with, is a real sadness.",
+            "textToSpeak": "My parents finally sold the house I grew up in. I understand why. I still sat in the car outside for a while before driving off.",
+            "options": [
+                "lonely 🥺",
+                "tired 😴",
+                "disappointed 😞",
+                "sad 😢"
             ],
             "correctAnswerIndex": 3,
             "subtype": "emotionRecognition",
-            "emoji": "😬"
+            "emoji": "😢"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L123_Q3",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Deep familiarity with a repeating situation, down to predicting the next question, points to a settled mindset.",
+            "explanation": "Predicting exactly what comes next, from sheer repeated experience, is a clear expression of confidence.",
+            "textToSpeak": "I've walked prospective buyers through this house forty times. I already know exactly which question this couple is about to ask.",
+            "options": [
+                "confident 😎",
+                "nervous 😬",
+                "anxious 😰",
+                "proud 🙌"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "emotionRecognition",
+            "emoji": "😎"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L124_Q1",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Unease with no specific cause, just a persistent sense that something's coming, points to a particular, ongoing feeling.",
+            "explanation": "A persistent, unfocused unease with no specific trigger is the clearest definition of anxiety.",
+            "textToSpeak": "Nothing is actually wrong right now. I just can't shake the feeling that something is about to go wrong, and I couldn't tell you why.",
+            "options": [
+                "worried 😟",
+                "anxious 😰",
+                "nervous 😬",
+                "excited 🤩"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "emotionRecognition",
+            "emoji": "😰"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L124_Q2",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Someone remembering a small, personal detail you barely mentioned points to a warm feeling.",
+            "explanation": "Someone remembering a small personal detail, unprompted, weeks later, is a quiet cause of gratitude.",
+            "textToSpeak": "My physiotherapist remembered, three appointments later, a small detail about my father I'd mentioned only once in passing.",
+            "options": [
+                "happy 😊",
+                "surprised 😲",
+                "grateful 🙏",
+                "relieved 😮‍💨"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "emotionRecognition",
+            "emoji": "🙏"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L124_Q3",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "A small, surprising detail casually dropped into conversation, then never mentioned again, draws out one particular feeling.",
+            "explanation": "A brief, unexplained glimpse into someone's past that's never mentioned again naturally sparks curiosity.",
+            "textToSpeak": "My quiet uncle mentioned, almost as an aside, that he'd once turned down a job because it would have meant moving to another country. He's never brought it up since.",
+            "options": [
+                "skeptical 🤨",
+                "worried 😟",
+                "bored 🥱",
+                "curious 🤔"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "emotionRecognition",
+            "emoji": "🤔"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L125_Q1",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "A single product promising to solve several unrelated problems at once tends to raise a particular doubt.",
+            "explanation": "Doubting a product that claims to solve too many different problems at once is a reasonable skepticism.",
+            "textToSpeak": "The new supplement claims to fix sleep, focus, and joint pain, all with one capsule a day. My cousin swears by it.",
+            "options": [
+                "skeptical 🤨",
+                "curious 🤔",
+                "annoyed 🙄",
+                "worried 😟"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "emotionRecognition",
+            "emoji": "🤨"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L125_Q2",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Discovering an unplanned, joyful moment captured by someone else points to a warm feeling.",
+            "explanation": "Discovering an unexpected, joyful moment captured on film is a simple and warm happiness.",
+            "textToSpeak": "We got back the photos from the wedding today. There's one of my grandmother laughing that I didn't even know had been taken.",
+            "options": [
+                "relieved 😮‍💨",
+                "happy 😊",
+                "proud 🙌",
+                "excited 🤩"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "emotionRecognition",
+            "emoji": "😊"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L125_Q3",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Careful, repeated effort to understand something that keeps working against itself points to a stuck feeling.",
+            "explanation": "A document that contradicts itself no matter how carefully you read it is a clear source of frustration.",
+            "textToSpeak": "I've read the tenancy agreement four times now, and the clause about the deposit still contradicts itself depending on which page you're on.",
+            "options": [
+                "angry 😠",
+                "anxious 😰",
+                "frustrated 😤",
+                "tired 😴"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "emotionRecognition",
+            "emoji": "😤"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L126_Q1",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Comparing your own effortful reality to someone else's curated outside view points to a specific, uncomfortable feeling.",
+            "explanation": "Comparing the hard parts of your own life to the easy-looking parts of someone else's is a common, human jealousy.",
+            "textToSpeak": "My best friend's relationship looks effortless from the outside. Mine takes so much work lately. I know that's not the whole picture, but some days it's hard to remember that.",
+            "options": [
+                "happy 😊",
+                "impressed 😮",
+                "disappointed 😞",
+                "jealous 😒"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "emotionRecognition",
+            "emoji": "😒"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L126_Q2",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "A child choosing honesty over an easy, undeserved credit points to a warm feeling.",
+            "explanation": "Watching a child choose honesty over an easy advantage is a quiet, meaningful source of pride.",
+            "textToSpeak": "My daughter told her teacher, without being asked, that the answer she'd been given credit for was actually her classmate's idea.",
+            "options": [
+                "proud 🙌",
+                "happy 😊",
+                "relieved 😮‍💨",
+                "impressed 😮"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "emotionRecognition",
+            "emoji": "🙌"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L126_Q3",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Actively avoiding thinking about something upcoming points to an ongoing, low-level unease.",
+            "explanation": "Actively avoiding your own thoughts about something upcoming is a quiet but clear sign of anxiety.",
+            "textToSpeak": "The scan is booked for next month. I've noticed I've started avoiding the topic entirely, even in my own head.",
+            "options": [
+                "nervous 😬",
+                "anxious 😰",
+                "curious 🤔",
+                "excited 🤩"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "emotionRecognition",
+            "emoji": "😰"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L127_Q1",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Being honest with one group and not applying the same honesty elsewhere points to an uncomfortable feeling.",
+            "explanation": "Giving one excuse to one group while acting differently elsewhere is a clear cause of guilt.",
+            "textToSpeak": "I told my team I couldn't take on the extra project because I was stretched too thin. Then I said yes to a friend's favor that took just as long.",
+            "options": [
+                "sad 😢",
+                "embarrassed 😳",
+                "guilty 😔",
+                "tired 😴"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "emotionRecognition",
+            "emoji": "😔"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L127_Q2",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "A claim that directly contradicts a written record from just months earlier tends to raise real doubt.",
+            "explanation": "A claim that contradicts a recent written record is a reasonable basis for skepticism.",
+            "textToSpeak": "The landlord says the water damage was 'already there' when we moved in, despite the inspection report showing no such thing three months ago.",
+            "options": [
+                "curious 🤔",
+                "worried 😟",
+                "annoyed 🙄",
+                "skeptical 🤨"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "emotionRecognition",
+            "emoji": "🤨"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L127_Q3",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Letting yourself imagine a future you're not sure will happen points to a forward-looking feeling.",
+            "explanation": "Letting yourself imagine an uncertain but appealing future is a natural, grounded form of hope.",
+            "textToSpeak": "The new manager mentioned, just once, that flexible hours might become policy next quarter. I've already started imagining what I'd do with the extra time.",
+            "options": [
+                "hopeful 🤞",
+                "anxious 😰",
+                "excited 🤩",
+                "nervous 😬"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "emotionRecognition",
+            "emoji": "🤞"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L128_Q1",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Adjusting to a lasting absence by replacing it with something that fills the silence points to a quiet feeling.",
+            "explanation": "Quietly adjusting to a missing daily presence, by filling the silence some other way, is a familiar loneliness.",
+            "textToSpeak": "My partner works nights now. I've gotten used to eating dinner with a podcast instead of a person.",
+            "options": [
+                "sad 😢",
+                "lonely 🥺",
+                "anxious 😰",
+                "tired 😴"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "emotionRecognition",
+            "emoji": "🥺"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L128_Q2",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Someone completing a difficult, self-directed project late in life points to admiration.",
+            "explanation": "Completing an ambitious, self-directed project at any age is a genuine cause of being impressed.",
+            "textToSpeak": "My father-in-law, at seventy-four, just finished building a boat in the garage from a design he adapted himself.",
+            "options": [
+                "surprised 😲",
+                "grateful 🙏",
+                "impressed 😮",
+                "proud 🙌"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "emotionRecognition",
+            "emoji": "😮"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L128_Q3",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "A small, specific, repeating disturbance right where you least want it brings a familiar irritation.",
+            "explanation": "A small, specific disturbance repeating for two weeks straight is a very relatable annoyance.",
+            "textToSpeak": "The upstairs apartment has had the same dripping tap sound for two weeks, right through the wall behind our bed.",
+            "options": [
+                "angry 😠",
+                "tired 😴",
+                "bored 🥱",
+                "annoyed 🙄"
+            ],
+            "correctAnswerIndex": 3,
+            "subtype": "emotionRecognition",
+            "emoji": "🙄"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L129_Q1",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Doing unrelated tasks to distract yourself while waiting for news points to a restless, ongoing feeling.",
+            "explanation": "Distracting yourself with unrelated tasks while waiting on uncertain news is a common form of anxiety.",
+            "textToSpeak": "The offer letter should arrive today. I've reorganized my desk twice this morning for no real reason.",
+            "options": [
+                "anxious 😰",
+                "excited 🤩",
+                "nervous 😬",
+                "hopeful 🤞"
+            ],
+            "correctAnswerIndex": 0,
+            "subtype": "emotionRecognition",
+            "emoji": "😰"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L129_Q2",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Choosing to repeat something simple, on purpose, rather than wanting more, points to a calm, settled feeling.",
+            "explanation": "Deliberately choosing simplicity over something bigger, and meaning it, reflects quiet contentment.",
+            "textToSpeak": "We didn't do anything for our anniversary this year. Just the two of us and the same takeaway we always get. I wouldn't change it.",
+            "options": [
+                "happy 😊",
+                "content 🙂",
+                "tired 😴",
+                "bored 🥱"
+            ],
+            "correctAnswerIndex": 1,
+            "subtype": "emotionRecognition",
+            "emoji": "🙂"
+        },
+        {
+            "id": "LIS_EMOTIONRECOGNITION_L129_Q3",
+            "interactionType": "Tone Analyzer",
+            "instruction": "Listen to the audio and select the matching emotion.",
+            "hint": "Careful preparation for a specific version of something that changes right before it matters points to a deflated feeling.",
+            "explanation": "Preparing carefully for something that changes right before it counts is a sharp, specific disappointment.",
+            "textToSpeak": "I trained for eight months for this interview format specifically. They changed the format the week before mine.",
+            "options": [
+                "sad 😢",
+                "angry 😠",
+                "disappointed 😞",
+                "frustrated 😤"
+            ],
+            "correctAnswerIndex": 2,
+            "subtype": "emotionRecognition",
+            "emoji": "😞"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L130_Q1",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "A behavioral change by an algorithm coinciding with six new contacts on the same day — what does this raise?",
-            "explanation": "A platform behavior change coinciding precisely with a network expansion raises questions of curiosity.",
-            "textToSpeak": "The algorithm changed its recommendation for me on the same day six people from very different networks became my contacts.",
+            "hint": "A glowing description that doesn't quite match the basic facts tends to raise a particular doubt.",
+            "explanation": "A description that doesn't match the plain facts in front of you is a reasonable basis for skepticism.",
+            "textToSpeak": "The review says the hotel has 'stunning ocean views.' The map shows it's four streets back from the coast.",
             "options": [
-                "neutral 😐",
                 "curious 🤔",
-                "angry 😠",
-                "bored 🥱"
+                "worried 😟",
+                "annoyed 🙄",
+                "skeptical 🤨"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "emotionRecognition",
-            "emoji": "🤔"
+            "emoji": "🤨"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L130_Q2",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "Positive feedback paired with rejection, with no explanation offered — what does this combination produce?",
-            "explanation": "Positive assessment followed by rejection with no reason given produces a specific kind of anger.",
-            "textToSpeak": "The feedback was positive. The opportunity was given to someone else. No explanation was offered or considered necessary.",
+            "hint": "Someone addressing a problem you never even said out loud, with real discretion, points to a warm feeling.",
+            "explanation": "Someone quietly solving a problem you never spoke about, without ever making it awkward, is a deep cause of gratitude.",
+            "textToSpeak": "My daughter's swim coach quietly waived the fee for the season without either of us ever bringing up that we couldn't afford it.",
             "options": [
-                "curious 🤔",
-                "angry 😠",
-                "neutral 😐",
-                "sad 😢"
+                "grateful 🙏",
+                "happy 😊",
+                "surprised 😲",
+                "relieved 😮‍💨"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "emotionRecognition",
-            "emoji": "😠"
+            "emoji": "🙏"
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L130_Q3",
             "interactionType": "Tone Analyzer",
             "instruction": "Listen to the audio and select the matching emotion.",
-            "hint": "The loudest defender of a practice revealing themselves as its whistle-blower — what does this reversal produce?",
-            "explanation": "The chief defender of something revealing themselves as its reporter is a cause of genuine surprise.",
-            "textToSpeak": "The whistleblower turned out to be the person who had been most visible in defending the very practices they reported.",
+            "hint": "Two true, opposite reactions to the same news happening within the same hour points to a specific, layered feeling.",
+            "explanation": "Feeling genuine warmth toward someone and private envy at the very same time is an honest description of jealousy.",
+            "textToSpeak": "My cousin got into the university I was rejected from twice. I hugged her at the party. I also went home and cried in the car.",
             "options": [
-                "bored 🥱",
-                "curious 🤔",
-                "surprised 😲",
-                "neutral 😐"
+                "happy 😊",
+                "jealous 😒",
+                "proud 🙌",
+                "surprised 😲"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "emotionRecognition",
-            "emoji": "😲"
+            "emoji": "😒"
         }
     ]
 }

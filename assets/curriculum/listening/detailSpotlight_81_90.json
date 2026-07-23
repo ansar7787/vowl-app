@@ -7,431 +7,431 @@
             "id": "LIS_DETAILSPOTLIGHT_L81_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the person's title or job mentioned in the audio.",
-            "explanation": "Scientist is correct - a person who studies the natural world through observation and experiment. In the sentence, a data scientist has just moved in.",
-            "textToSpeak": "A data scientist has just moved into our neighborhood.",
-            "targetDetail": "scientist",
+            "hint": "Zero in on the person's identity, not their action.",
+            "explanation": "Listen for therapist: a person trained to help with emotional or physical problems. In this case, the new therapist has been counseling the family since March.",
+            "textToSpeak": "The new therapist has been counseling the family since March.",
+            "targetDetail": "therapist",
             "options": [
-                "researcher",
-                "mentor",
-                "analyst",
-                "scientist"
+                "scientist",
+                "administrator",
+                "auditor",
+                "therapist"
             ],
             "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "👨‍🔬"
+            "emoji": "🛋️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L81_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to what is happening, not who or what is involved.",
-            "explanation": "You heard scans. This verb means to look over something quickly to find specific information or objects. In the audio, scans her inbox as soon as the signal arrives.",
-            "textToSpeak": "She always scans her inbox as soon as the signal arrives.",
-            "targetDetail": "scans",
+            "hint": "Catch the verb that tells you what's happening.",
+            "explanation": "The doing-word is consults — to seek advice or information from someone. The sentence confirms she consults a specialist whenever the symptoms seem unusual.",
+            "textToSpeak": "She consults a specialist whenever the symptoms seem unusual.",
+            "targetDetail": "consults",
             "options": [
-                "measures",
-                "scans",
-                "analyzes",
-                "sends"
+                "consults",
+                "recruits",
+                "diagnoses",
+                "compiles"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🧑‍⚕️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L81_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to the thing, not who is using it or what they do.",
-            "explanation": "Signal is correct - a sound, light, or wave used to send information or a message. In the sentence, has just noticed the Wi-Fi signal dropping again.",
-            "textToSpeak": "She has just noticed the Wi-Fi signal dropping again.",
-            "targetDetail": "signal",
+            "hint": "Catch the noun that names the object in the sentence.",
+            "explanation": "Diagnosis is the detail — a doctor's identification of an illness. Specifically, he has been reading the diagnosis over and over since Monday.",
+            "textToSpeak": "He has been reading the diagnosis over and over since Monday.",
+            "targetDetail": "diagnosis",
             "options": [
-                "protocol",
-                "software",
-                "system",
-                "signal"
+                "diagnosis",
+                "meeting",
+                "tradition",
+                "scholarship"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "📡"
+            "emoji": "📋"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L82_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Which person's name or role do you hear in the sentence?",
-            "explanation": "The person mentioned is hero. A person admired for courage, great achievements, or noble qualities. Here, has always been her hero since childhood.",
-            "textToSpeak": "He has always been her hero since childhood.",
-            "targetDetail": "hero",
+            "hint": "Focus on the word that tells you who did this.",
+            "explanation": "Surgeon is who's described — a doctor who performs operations. The audio states that a skilled surgeon has been operating since early this morning.",
+            "textToSpeak": "A skilled surgeon has been operating since early this morning.",
+            "targetDetail": "surgeon",
             "options": [
-                "hero",
-                "expert",
-                "student",
-                "researcher"
+                "surgeon",
+                "consultant",
+                "economist",
+                "recruiter"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🦸"
+            "emoji": "🏥"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L82_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the action being performed in the audio.",
-            "explanation": "The correct action is repairs - to fix something that is broken or not working correctly. In this sentence, repairs appliances as soon as they break down.",
-            "textToSpeak": "She repairs household appliances as soon as they break down.",
-            "targetDetail": "repairs",
+            "hint": "The detail to catch is the specific verb used.",
+            "explanation": "You heard diagnoses: to identify a disease from its symptoms. In this sentence, she diagnoses complicated cases faster than most of her colleagues.",
+            "textToSpeak": "She diagnoses complicated cases faster than most of her colleagues.",
+            "targetDetail": "diagnoses",
             "options": [
-                "updates",
-                "repairs",
-                "monitors",
-                "deploys"
+                "supervises",
+                "analyzes",
+                "diagnoses",
+                "authorizes"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🩺"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L82_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the object or concept named in the sentence.",
-            "explanation": "You heard sensor - a device that detects changes such as motion, light, heat, or sound. The audio describes has just replaced the broken sensor in the doorbell.",
-            "textToSpeak": "She has just replaced the broken sensor in the doorbell.",
-            "targetDetail": "sensor",
+            "hint": "Listen for the noun tying the sentence's detail together.",
+            "explanation": "Prescription fits here — a doctor's written order for medicine. You can hear that he must pick up his prescription before the pharmacy closes.",
+            "textToSpeak": "He must pick up his prescription before the pharmacy closes.",
+            "targetDetail": "prescription",
             "options": [
-                "database",
-                "sensor",
-                "satellite",
-                "device"
+                "prescription",
+                "device",
+                "deadline",
+                "review"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "💊"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L83_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to who the sentence is about.",
-            "explanation": "The correct person is expert - a person with deep knowledge or advanced skill in a particular subject. The sentence tells us an educational expert has already reviewed the curriculum.",
-            "textToSpeak": "An educational expert has already reviewed the new curriculum.",
-            "targetDetail": "expert",
+            "hint": "The sentence names a person — catch exactly who.",
+            "explanation": "Musician is the detail here — a person who plays or writes music. As the audio says, the touring band's lead musician has performed in five cities this month.",
+            "textToSpeak": "The touring band's lead musician has performed in five cities this month.",
+            "targetDetail": "musician",
             "options": [
-                "expert",
-                "pilot",
-                "teacher",
-                "droid"
+                "musician",
+                "plumber",
+                "butcher",
+                "instructor"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🎸"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L83_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the doing word, not the subject or object.",
-            "explanation": "The correct action is measures - to determine the size, amount, or degree of something. In this sentence, measures air quality for the network report.",
-            "textToSpeak": "The lab system measures air quality for the network report.",
-            "targetDetail": "measures",
+            "hint": "Listen for the word that names the action taking place.",
+            "explanation": "The verb here is rehearses, meaning to practice a performance before doing it in public. Notice that she rehearses the new setlist more carefully than the last tour.",
+            "textToSpeak": "She rehearses the new setlist more carefully than the last tour.",
+            "targetDetail": "rehearses",
             "options": [
-                "observes",
-                "validates",
-                "measures",
-                "secures"
+                "rehearses",
+                "boards",
+                "explains",
+                "interviews"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "📏"
+            "emoji": "🎵"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L83_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the specific thing described in the audio.",
-            "explanation": "The correct object is network - a group of connected computers or devices that can share information. In the audio, has not yet upgraded its wireless network.",
-            "textToSpeak": "The school has not yet upgraded its aging wireless network.",
-            "targetDetail": "network",
+            "hint": "Catch the exact word naming the thing involved.",
+            "explanation": "Listen for concert: a live performance of music. In this sentence, he should book concert tickets before they sell out.",
+            "textToSpeak": "He should book concert tickets before they sell out.",
+            "targetDetail": "concert",
             "options": [
-                "node",
-                "terminal",
-                "network",
-                "data"
+                "exam",
+                "password",
+                "concert",
+                "assignment"
             ],
             "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "🌐"
+            "emoji": "🎟️"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L84_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the person, not the action or the object they mention.",
-            "explanation": "The correct person is technician - a person skilled in the practical use of technology or machinery. The sentence tells us the IT technician has just launched a new system.",
-            "textToSpeak": "The school IT technician has just launched a new system.",
-            "targetDetail": "technician",
+            "hint": "Listen closely for how the person is identified.",
+            "explanation": "You heard inspector, which means a person who checks that rules or standards are met. Notice that the building inspector has been checking wiring since early morning.",
+            "textToSpeak": "The building inspector has been checking wiring since early morning.",
+            "targetDetail": "inspector",
             "options": [
-                "researcher",
-                "technician",
-                "pilot",
-                "analyst"
+                "executive",
+                "inspector",
+                "correspondent",
+                "judge"
             ],
             "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "👨‍🔧"
+            "emoji": "🔍"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L84_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for what is happening, not to whom or with what.",
-            "explanation": "You heard launches. This verb means to send something into action, space, or public use for the first time. In the audio, launches a new learning sensor program every term.",
-            "textToSpeak": "The school launches a new learning sensor program every term.",
-            "targetDetail": "launches",
+            "hint": "Pay attention to what is happening, not who or what is involved.",
+            "explanation": "The correct action is verifies — to check that something is true or accurate. Specifically, she verifies each report more carefully since the last complaint.",
+            "textToSpeak": "She verifies each report more carefully since the last complaint.",
+            "targetDetail": "verifies",
             "options": [
-                "encrypts",
-                "launches",
-                "repairs",
-                "updates"
+                "verifies",
+                "finalizes",
+                "forecasts",
+                "audits"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "✅"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L84_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "The key word names a thing, not a person or an action.",
-            "explanation": "Sensor is correct - a device that detects changes such as motion, light, heat, or sound. In the sentence, has just installed a new air quality sensor.",
-            "textToSpeak": "The lab has just installed a new air quality sensor.",
-            "targetDetail": "sensor",
+            "hint": "The object, not the person or action, is the target here.",
+            "explanation": "The object described is credential — a document or qualification proving a person's identity or skill. As stated, he should review the credential before the inspection begins.",
+            "textToSpeak": "He should review the credential before the inspection begins.",
+            "targetDetail": "credential",
             "options": [
-                "sensor",
-                "device",
-                "protocol",
-                "drone"
+                "archive",
+                "software",
+                "credential",
+                "satellite"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "📜"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L85_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "The key word here is a person's title or role.",
-            "explanation": "You heard artist: a person who creates paintings, music, or other forms of creative work. The audio shows the graphic artist has already located a new portal.",
-            "textToSpeak": "The graphic artist has already located a new design portal.",
-            "targetDetail": "artist",
+            "hint": "Catch the specific role or job title in the sentence.",
+            "explanation": "That's entrepreneur: a person who starts and runs a business. The audio confirms it — an ambitious entrepreneur has been expanding the business since spring.",
+            "textToSpeak": "An ambitious entrepreneur has been expanding the business since spring.",
+            "targetDetail": "entrepreneur",
             "options": [
-                "expert",
-                "artist",
-                "hero",
-                "traveler"
+                "entrepreneur",
+                "commuter",
+                "analyst",
+                "critic"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🎨"
+            "emoji": "🏪"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L85_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "The key word describes an action or activity.",
-            "explanation": "You heard locates. This verb means to find the exact position or place of something. In the audio, locates the most reliable art supply portal online.",
-            "textToSpeak": "She always locates the most reliable art supply portal online.",
-            "targetDetail": "locates",
+            "hint": "Focus on the verb that drives the sentence.",
+            "explanation": "Promotes is correct — to raise someone to a higher position, or to advertise something. Notice how she promotes the brand more aggressively than most local owners.",
+            "textToSpeak": "She promotes the brand more aggressively than most local owners.",
+            "targetDetail": "promotes",
             "options": [
-                "launches",
-                "analyzes",
-                "deploys",
-                "locates"
+                "reviews",
+                "repairs",
+                "promotes",
+                "arrives"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "📣"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L85_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the name of the thing or object mentioned.",
-            "explanation": "The thing mentioned is portal: an online gateway that allows access to specific services or information. Here, has just launched a brand-new employee portal.",
-            "textToSpeak": "The company has just launched a brand-new employee portal.",
-            "targetDetail": "portal",
+            "hint": "Focus on the object or concept named in the sentence.",
+            "explanation": "Right answer: invoice, a document that lists goods or services and their price. That's because he must approve the invoice before the shipment can leave.",
+            "textToSpeak": "He must approve the invoice before the shipment can leave.",
+            "targetDetail": "invoice",
             "options": [
-                "portal",
-                "network",
-                "signal",
-                "data"
+                "voucher",
+                "invoice",
+                "boarding pass",
+                "bandage"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "🌐"
+            "emoji": "🧾"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L86_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the type of person described in the sentence.",
-            "explanation": "Engineer is correct - a person who designs, builds, or maintains machines or technical systems. In the sentence, a systems engineer has already created a faster terminal.",
-            "textToSpeak": "A systems engineer has already created a faster terminal interface.",
-            "targetDetail": "engineer",
+            "hint": "Catch the specific title used to describe someone.",
+            "explanation": "The person mentioned is economist: a person who studies how money and markets work. Here, the visiting economist has been forecasting a slower recovery for weeks.",
+            "textToSpeak": "The visiting economist has been forecasting a slower recovery for weeks.",
+            "targetDetail": "economist",
             "options": [
-                "technician",
-                "traveler",
-                "engineer",
-                "researcher"
+                "researcher",
+                "publisher",
+                "mediator",
+                "economist"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "👨‍🔧"
+            "emoji": "📉"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L86_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the action word - what is the person or thing doing?",
-            "explanation": "Creates is the action - to make something new that did not exist before. In the sentence, creates a detailed terminal report every week.",
-            "textToSpeak": "He creates a detailed system terminal report every single week.",
-            "targetDetail": "creates",
+            "hint": "Listen for what is happening, not to whom or with what.",
+            "explanation": "Forecasts fits the sentence — to predict what will happen based on current information. You can hear that she forecasts economic trends more cautiously than her predecessor did.",
+            "textToSpeak": "She forecasts economic trends more cautiously than her predecessor did.",
+            "targetDetail": "forecasts",
             "options": [
-                "validates",
-                "encrypts",
-                "creates",
-                "scans"
+                "sponsors",
+                "forecasts",
+                "operates",
+                "oversees"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "📊"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L86_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the item, not the person or action described.",
-            "explanation": "The thing mentioned is terminal: a place where journeys begin or end, or a device used to access a network. Here, has just installed a new server terminal.",
-            "textToSpeak": "The IT team has just installed a new server terminal.",
-            "targetDetail": "terminal",
+            "hint": "The object word is hiding in the sentence — find it.",
+            "explanation": "The correct object is report — a document that gives information or an account of something. In the audio, he must submit the report before the board meeting starts.",
+            "textToSpeak": "He must submit the report before the board meeting starts.",
+            "targetDetail": "report",
             "options": [
-                "portal",
-                "signal",
-                "engine",
-                "terminal"
+                "report",
+                "novel",
+                "proposal",
+                "vaccine"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🖥️"
+            "emoji": "📑"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L87_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Listen for the name or role of the person in the sentence.",
-            "explanation": "The person mentioned is student. A person who is learning a subject, especially at a school or university. Here, a study-abroad student has already analyzed the visa process.",
-            "textToSpeak": "A study-abroad student has already analyzed the visa node process.",
-            "targetDetail": "student",
+            "hint": "The person's identity is hiding in plain sight — listen for it.",
+            "explanation": "professor is correct — a senior teacher at a university. In the audio, a retired professor has been tutoring students since the semester began.",
+            "textToSpeak": "A retired professor has been tutoring students since the semester began.",
+            "targetDetail": "professor",
             "options": [
-                "artist",
-                "droid",
-                "commander",
-                "student"
+                "curator",
+                "professor",
+                "biographer",
+                "counselor"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🎓"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L87_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
             "hint": "Focus on the verb, not the person or the thing they mention.",
-            "explanation": "The action is analyzes, meaning to examine something carefully in detail to understand its parts or meaning. Here, analyzes the traffic node data before every journey.",
-            "textToSpeak": "She analyzes the traffic node data before every journey.",
-            "targetDetail": "analyzes",
+            "explanation": "The action named is grades, which means to give a mark or score to a piece of work. To be exact, she grades essays more thoroughly than most other teachers do.",
+            "textToSpeak": "She grades essays more thoroughly than most other teachers do.",
+            "targetDetail": "grades",
             "options": [
-                "creates",
-                "deploys",
-                "scans",
-                "analyzes"
+                "records",
+                "measures",
+                "coordinates",
+                "grades"
             ],
             "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🔍"
+            "emoji": "📄"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L87_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Which object or thing do you hear in the sentence?",
-            "explanation": "You heard node - a single connection point within a larger network or system. The audio describes has just added a new connection node.",
-            "textToSpeak": "The travel app has just added a new connection node.",
-            "targetDetail": "node",
+            "hint": "Notice the specific term used for the item.",
+            "explanation": "That's assignment — a piece of work given to a student. The audio confirms it: he should submit the assignment before the extended deadline passes.",
+            "textToSpeak": "He should submit the assignment before the extended deadline passes.",
+            "targetDetail": "assignment",
             "options": [
-                "protocol",
-                "portal",
-                "node",
-                "sensor"
+                "app",
+                "contract",
+                "network",
+                "assignment"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🌐"
+            "emoji": "📝"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L88_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on who is being described, not what they do or use.",
-            "explanation": "You heard teacher: a person who helps others learn a subject or develop a skill. The audio shows a retired teacher has just sent a protocol update.",
-            "textToSpeak": "A retired teacher has just sent a protocol update to the group.",
-            "targetDetail": "teacher",
+            "hint": "Track the person's role as the audio plays.",
+            "explanation": "Right answer: architect, a person who designs buildings. That's because the senior architect has been redesigning the lobby for two months.",
+            "textToSpeak": "The senior architect has been redesigning the lobby for two months.",
+            "targetDetail": "architect",
             "options": [
-                "hero",
-                "student",
-                "detective",
-                "teacher"
+                "lawyer",
+                "judge",
+                "counselor",
+                "architect"
             ],
             "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "👨‍🏫"
+            "emoji": "📐"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L88_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Which action or activity do you hear in the sentence?",
-            "explanation": "The action is sends, meaning to cause something to go or be taken from one place to another. Here, sends the safety protocol document before every flight.",
-            "textToSpeak": "The airline sends the safety protocol document before every flight.",
-            "targetDetail": "sends",
+            "hint": "Listen for the specific verb tying the sentence together.",
+            "explanation": "Listen for drafts: to write a first version of a document. As stated, she drafts blueprints more precisely than the rest of the team.",
+            "textToSpeak": "She drafts blueprints more precisely than the rest of the team.",
+            "targetDetail": "drafts",
             "options": [
-                "secures",
-                "transfers",
-                "deploys",
-                "sends"
+                "recruits",
+                "certifies",
+                "allocates",
+                "drafts"
             ],
             "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🔄"
+            "emoji": "📏"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L88_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the specific item being used, fixed, or mentioned.",
-            "explanation": "The correct object is protocol - a set of official rules that controls how a process should be carried out. In the audio, has just updated its emergency safety protocol.",
-            "textToSpeak": "The travel team has just updated its emergency safety protocol.",
-            "targetDetail": "protocol",
+            "hint": "Which object or thing do you hear in the sentence?",
+            "explanation": "The item named is proposal, a formal plan or suggestion put forward for consideration. To be exact, he must approve the proposal before construction can begin.",
+            "textToSpeak": "He must approve the proposal before construction can begin.",
+            "targetDetail": "proposal",
             "options": [
-                "system",
-                "terminal",
-                "protocol",
-                "circuit"
+                "proposal",
+                "performance",
+                "playlist",
+                "curriculum"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
             "emoji": "📋"
         },
@@ -439,109 +439,109 @@
             "id": "LIS_DETAILSPOTLIGHT_L89_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the person's title or job mentioned in the audio.",
-            "explanation": "The person mentioned is explorer. A person who travels to new or unknown places to discover and investigate. Here, my explorer uncle has already analyzed the drone footage.",
-            "textToSpeak": "My adventurous explorer uncle has already analyzed the new drone footage.",
-            "targetDetail": "explorer",
+            "hint": "Pay attention to the word describing the subject's role.",
+            "explanation": "The role named is veterinarian, a person who treats sick or injured animals. Specifically, a patient veterinarian has been treating the injured bird for days.",
+            "textToSpeak": "A patient veterinarian has been treating the injured bird for days.",
+            "targetDetail": "veterinarian",
             "options": [
-                "explorer",
-                "expert",
-                "pilot",
-                "detective"
+                "veterinarian",
+                "electrician",
+                "butcher",
+                "optician"
             ],
             "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "🔭"
+            "emoji": "🐦"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L89_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to what is happening, not who or what is involved.",
-            "explanation": "The correct action is analyzes - to examine something carefully in detail to understand its parts or meaning. In this sentence, analyzes every drone clip before sharing it with family.",
-            "textToSpeak": "He analyzes every drone clip before sharing it with the family.",
-            "targetDetail": "analyzes",
+            "hint": "Set aside who and what; focus only on the doing.",
+            "explanation": "That's the verb examines: to look at something closely and carefully. Here, she examines nervous animals more gently than the previous vet did.",
+            "textToSpeak": "She examines nervous animals more gently than the previous vet did.",
+            "targetDetail": "examines",
             "options": [
-                "monitors",
-                "transfers",
-                "analyzes",
-                "evaluates"
+                "manages",
+                "warns",
+                "books",
+                "examines"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🔍"
+            "emoji": "🐾"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L89_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Pay attention to the thing, not who is using it or what they do.",
-            "explanation": "The thing mentioned is drone: an aircraft that flies without a pilot on board, often controlled remotely. Here, has just bought a new photography drone.",
-            "textToSpeak": "My brother has just bought a new photography drone.",
-            "targetDetail": "drone",
+            "hint": "Which single word identifies the object in question?",
+            "explanation": "Checkup is correct — a medical examination to check general health. The sentence tells us he should schedule a checkup before the trip begins.",
+            "textToSpeak": "He should schedule a checkup before the trip begins.",
+            "targetDetail": "checkup",
             "options": [
-                "drone",
-                "chip",
-                "engine",
-                "database"
+                "reservation",
+                "salary",
+                "subscription",
+                "checkup"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🩺"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L90_Q1",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Which person's name or role do you hear in the sentence?",
-            "explanation": "Artist is correct - a person who creates paintings, music, or other forms of creative work. In the sentence, my sister the artist has just created a new module.",
-            "textToSpeak": "My sister the artist has just created a new module for her course.",
-            "targetDetail": "artist",
+            "hint": "The person's role is the detail to spot here.",
+            "explanation": "The correct person is accountant — a person who manages and checks financial records. The sentence tells us the new accountant has been reviewing invoices since the audit started.",
+            "textToSpeak": "The new accountant has been reviewing invoices since the audit started.",
+            "targetDetail": "accountant",
             "options": [
-                "student",
-                "artist",
-                "explorer",
-                "hero"
+                "hiker",
+                "manager",
+                "optician",
+                "accountant"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "subtype": "detailSpotlight",
-            "emoji": "🎨"
+            "emoji": "🧮"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L90_Q2",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Notice the action being performed in the audio.",
-            "explanation": "Creates is the action - to make something new that did not exist before. In the sentence, creates a new online module whenever she starts a project.",
-            "textToSpeak": "She creates a new online module whenever she starts a project.",
-            "targetDetail": "creates",
+            "hint": "Pinpoint the exact action mentioned in the audio.",
+            "explanation": "audits is the action — to officially examine financial accounts. In the audio, she audits the accounts more carefully since the earlier mistake.",
+            "textToSpeak": "She audits the accounts more carefully since the earlier mistake.",
+            "targetDetail": "audits",
             "options": [
-                "transfers",
-                "evaluates",
-                "validates",
-                "creates"
+                "audits",
+                "compiles",
+                "diagnoses",
+                "delegates"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "🔍"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L90_Q3",
             "interactionType": "Flashlight Search",
             "instruction": "Listen to the audio and select the correct detail.",
-            "hint": "Focus on the object or concept named in the sentence.",
-            "explanation": "You heard module - a separate unit that is part of a larger system, course, or program. The audio describes has just finished the online art module.",
-            "textToSpeak": "My sister has just finished the online art module.",
-            "targetDetail": "module",
+            "hint": "Focus on the thing mentioned, not who mentions it.",
+            "explanation": "The thing mentioned is budget: a plan for how money will be spent. Here, he must finalize the budget before the fiscal year ends.",
+            "textToSpeak": "He must finalize the budget before the fiscal year ends.",
+            "targetDetail": "budget",
             "options": [
-                "software",
-                "engine",
-                "code",
-                "module"
+                "festival",
+                "lecture",
+                "budget",
+                "warranty"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "detailSpotlight",
-            "emoji": "✨"
+            "emoji": "💰"
         }
     ]
 }

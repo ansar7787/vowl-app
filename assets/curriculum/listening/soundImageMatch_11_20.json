@@ -7,511 +7,511 @@
             "id": "LIS_SOUNDIMAGEMATCH_L11_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen for the main object word in the sentence.",
-            "explanation": "Network is correct. A group of connected computers or devices that share information. Context in the audio: the store's Wi-Fi network was down today.",
-            "textToSpeak": "The store's Wi-Fi network was down today.",
+            "hint": "Listen for the word that names who or what the sentence describes.",
+            "explanation": "Chair is the answer — a piece of furniture you sit on.",
+            "textToSpeak": "The old chair creaked when she sat down.",
             "options": [
-                "circuit",
-                "engine",
-                "satellite",
-                "network"
+                "milk",
+                "chair",
+                "hat",
+                "ball"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🌐"
+            "emoji": "🪑"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L11_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Focus on the noun, not the action or description.",
-            "explanation": "Node is the object in the sentence. It means a single connection point within a larger network. From the audio: a security node blinked above the door.",
-            "textToSpeak": "A security node blinked above the door.",
+            "hint": "The correct picture matches exactly one word in the sentence.",
+            "explanation": "The word you needed was bird — a small animal with feathers that can fly. Recall: fed the bird some seeds.",
+            "textToSpeak": "The children fed the bird some seeds.",
             "options": [
-                "drone",
-                "sensor",
-                "node",
-                "chip"
+                "banana",
+                "book",
+                "milk",
+                "bird"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "📍"
+            "emoji": "🐦"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L11_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Notice which thing the sentence is describing.",
-            "explanation": "Portal is correct. An online gateway used to access certain information or services. Context in the audio: paid through the store's online portal.",
-            "textToSpeak": "She paid through the store's online portal.",
+            "hint": "Listen closely to the middle of the sentence for the key word.",
+            "explanation": "The correct answer is shoe: something you wear to cover your foot. Listen again: lost a shoe at the party.",
+            "textToSpeak": "She lost a shoe at the party.",
             "options": [
-                "portal",
-                "circuit",
-                "sensor",
-                "device"
+                "dog",
+                "book",
+                "chair",
+                "shoe"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🚪"
+            "emoji": "👟"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L12_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Focus on the noun, not the action or description.",
-            "explanation": "Protocol is the object in the sentence. It means a set of official rules that controls how something is done. From the audio: followed the store's return protocol.",
-            "textToSpeak": "The cashier followed the store's return protocol.",
+            "hint": "Pay attention to the noun — the person, animal, or thing.",
+            "explanation": "Egg is the key word here. It means an oval food that comes from a chicken. Context: laid an egg this morning.",
+            "textToSpeak": "The hen laid an egg this morning.",
             "options": [
-                "engine",
-                "device",
-                "chip",
-                "protocol"
+                "bird",
+                "brother",
+                "egg",
+                "cat"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "📋"
+            "emoji": "🥚"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L12_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Notice which thing the sentence is describing.",
-            "explanation": "Satellite is the object in the sentence. It means an object sent into space that orbits the Earth to send or receive signals. From the audio: sells satellite dishes for TVs.",
-            "textToSpeak": "The shop sells satellite dishes for TVs.",
+            "hint": "The answer names the thing the sentence is talking about.",
+            "explanation": "Dog fits best here — a common pet animal that barks. From the audio: walks her dog every evening.",
+            "textToSpeak": "She walks her dog every evening.",
             "options": [
-                "satellite",
-                "protocol",
-                "data",
-                "node"
+                "shoe",
+                "apple",
+                "dog",
+                "pencil"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🛰️"
+            "emoji": "🐶"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L12_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Pay attention to the specific item mentioned by name.",
-            "explanation": "Listen for sensor: a device that detects changes, such as light, heat, or movement. Mentioned in the sentence: beeped when he left the store.",
-            "textToSpeak": "A sensor beeped when he left the store.",
+            "hint": "Listen for a simple, everyday word you already know.",
+            "explanation": "The right choice is sister, meaning a girl who has the same parents as you. Specifically: is younger than him.",
+            "textToSpeak": "His sister is younger than him.",
             "options": [
-                "portal",
-                "system",
-                "software",
-                "sensor"
+                "pencil",
+                "apple",
+                "sister",
+                "bread"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🌡️"
+            "emoji": "👧"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L13_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Notice which thing the sentence is describing.",
-            "explanation": "Signal is correct. A sound, light, or wave used to send information or a message. Context in the audio: gave a signal when it finished.",
-            "textToSpeak": "The microwave gave a signal when it finished.",
+            "hint": "The answer is something you could point to in a picture.",
+            "explanation": "Listen for hat — something you wear to cover your head. Context: blew his hat off.",
+            "textToSpeak": "The wind blew his hat off.",
             "options": [
-                "signal",
-                "chip",
-                "satellite",
-                "circuit"
+                "cat",
+                "banana",
+                "hat",
+                "sister"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "📶"
+            "emoji": "🎩"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L13_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Pay attention to the specific item mentioned by name.",
-            "explanation": "Software is correct. The programs and instructions that tell a computer what to do. Context in the audio: uses software to take orders.",
-            "textToSpeak": "The restaurant uses software to take orders.",
+            "hint": "The key word is easy to picture in your mind.",
+            "explanation": "The audio names milk, which means a white drink that comes from cows. That part goes: out of milk again.",
+            "textToSpeak": "We are out of milk again.",
             "options": [
-                "engine",
-                "satellite",
-                "software",
-                "drone"
+                "father",
+                "bird",
+                "milk",
+                "hat"
             ],
             "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "📀"
+            "emoji": "🥛"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L13_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen for the single key word that names an object.",
-            "explanation": "System is the object in the sentence. It means a set of parts that work together as a whole. From the audio: has a new cooling system.",
-            "textToSpeak": "The kitchen has a new cooling system.",
+            "hint": "One word matches a picture you can see clearly — listen for it.",
+            "explanation": "The audio names apple, which means a round fruit that is often red or green. The line was: picked an apple from the tree.",
+            "textToSpeak": "He picked an apple from the tree.",
             "options": [
-                "drone",
-                "circuit",
-                "system",
-                "satellite"
+                "dog",
+                "mother",
+                "apple",
+                "cat"
             ],
             "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🖥️"
+            "emoji": "🍎"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L14_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Pay attention to the specific item mentioned by name.",
-            "explanation": "The correct answer is terminal - a place where journeys begin or end, or a computer used to access a network. Heard in the audio: paid at the terminal near the register.",
-            "textToSpeak": "She paid at the terminal near the register.",
+            "hint": "Focus on what the sentence is really about.",
+            "explanation": "Father fits best here — a man who has a child. You heard: reads the news every morning.",
+            "textToSpeak": "Her father reads the news every morning.",
             "options": [
-                "satellite",
-                "device",
-                "chip",
-                "terminal"
+                "hat",
+                "father",
+                "dog",
+                "banana"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "💻"
+            "emoji": "👨"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L14_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen for the single key word that names an object.",
-            "explanation": "The correct answer is archive - a collection of stored records or files kept for future reference. Heard in the audio: keeps an archive of old recipes.",
-            "textToSpeak": "The chef keeps an archive of old recipes.",
+            "hint": "One of the four options is said out loud. Listen carefully.",
+            "explanation": "You were listening for bread: a common food made from baked flour. Reference: smells great.",
+            "textToSpeak": "The bread on the table smells great.",
             "options": [
-                "chip",
-                "drone",
-                "archive",
-                "sensor"
+                "father",
+                "sister",
+                "bread",
+                "hat"
             ],
             "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🗄️"
+            "emoji": "🍞"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L14_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Ignore the verb and adjectives; focus on the object itself.",
-            "explanation": "Chip is correct. A small electronic part that stores or processes information inside a device. Context in the audio: controls the coffee machine.",
-            "textToSpeak": "A tiny chip controls the coffee machine.",
+            "hint": "Listen for a simple, everyday word you already know.",
+            "explanation": "Hat is correct. In everyday terms, it's something you wear to cover your head. From the audio: bought a new hat for the trip.",
+            "textToSpeak": "He bought a new hat for the trip.",
             "options": [
-                "chip",
-                "module",
-                "terminal",
-                "system"
+                "brother",
+                "book",
+                "hat",
+                "sister"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "💾"
+            "emoji": "🎩"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L15_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen for the single key word that names an object.",
-            "explanation": "The correct answer is circuit - a closed path that lets electricity flow to power a device. Heard in the audio: tested the circuit twice.",
-            "textToSpeak": "The engineer tested the circuit twice.",
+            "hint": "Listen for the name of the person or thing in the sentence.",
+            "explanation": "Ball is right. Think of it as a round object used in many games. From the audio: chased the ball across the park.",
+            "textToSpeak": "The dog chased the ball across the park.",
             "options": [
-                "module",
-                "code",
-                "circuit",
-                "signal"
+                "mother",
+                "ball",
+                "father",
+                "banana"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🔌"
+            "emoji": "⚽"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L15_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Ignore the verb and adjectives; focus on the object itself.",
-            "explanation": "Listen for code: a set of written instructions that tells a computer what to do. Mentioned in the sentence: wrote the code for a new app.",
-            "textToSpeak": "She wrote the code for a new app.",
+            "hint": "The answer is the main person, animal, or object in the sentence.",
+            "explanation": "Milk means a white drink that comes from cows. Reference: drank a bottle of milk.",
+            "textToSpeak": "The baby drank a bottle of milk.",
             "options": [
-                "drone",
-                "engine",
-                "satellite",
-                "code"
+                "milk",
+                "cat",
+                "book",
+                "pencil"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "💻"
+            "emoji": "🥛"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L15_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Notice the noun that the sentence centers around.",
-            "explanation": "Data is correct. Information that is collected, stored, or processed, often by a computer. Context in the audio: collects data about your steps.",
-            "textToSpeak": "The app collects data about your steps.",
+            "hint": "The answer names the thing the sentence is talking about.",
+            "explanation": "The correct answer is bird: a small animal with feathers that can fly.",
+            "textToSpeak": "We heard a bird singing outside.",
             "options": [
-                "drone",
-                "device",
-                "data",
-                "sensor"
+                "bird",
+                "mother",
+                "bread",
+                "banana"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "📊"
+            "emoji": "🐦"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L16_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Ignore the verb and adjectives; focus on the object itself.",
-            "explanation": "Listen for database: an organized collection of information stored electronically for easy access. Mentioned in the sentence: stores files in a cloud database.",
-            "textToSpeak": "The company stores files in a cloud database.",
+            "hint": "Listen for the word that names who or what the sentence describes.",
+            "explanation": "You were listening for cat: a common pet animal that says meow. Reference: jumped onto the kitchen table.",
+            "textToSpeak": "A cat jumped onto the kitchen table.",
             "options": [
-                "satellite",
-                "database",
-                "chip",
-                "engine"
+                "cat",
+                "chair",
+                "baby",
+                "spoon"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "🗃️"
+            "emoji": "🐱"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L16_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Notice the noun that the sentence centers around.",
-            "explanation": "Device is correct. A small machine or tool designed to do a specific job. Context in the audio: tracks your heart rate.",
-            "textToSpeak": "This device tracks your heart rate.",
+            "hint": "The correct picture matches exactly one word in the sentence.",
+            "explanation": "The audio names sister, which means a girl who has the same parents as you. Listen again: called my sister last night.",
+            "textToSpeak": "I called my sister last night.",
             "options": [
-                "device",
-                "system",
-                "code",
-                "module"
+                "sister",
+                "spoon",
+                "milk",
+                "hat"
             ],
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "📱"
+            "emoji": "👧"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L16_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen closely for the object's name, not who or how.",
-            "explanation": "Listen for drone: an aircraft that flies without a pilot on board, often controlled remotely. Mentioned in the sentence: took photos from above the city.",
-            "textToSpeak": "The drone took photos from above the city.",
+            "hint": "Listen closely to the middle of the sentence for the key word.",
+            "explanation": "The right choice is shoe, meaning something you wear to cover your foot. That part goes: chewed on my shoe.",
+            "textToSpeak": "The dog chewed on my shoe.",
             "options": [
-                "data",
-                "database",
-                "drone",
-                "node"
+                "ball",
+                "shoe",
+                "father",
+                "bird"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🚁"
+            "emoji": "👟"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L17_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Notice the noun that the sentence centers around.",
-            "explanation": "Engine is correct. The part of a vehicle or machine that produces power to make it move. Context in the audio: started right away.",
-            "textToSpeak": "The ambulance engine started right away.",
+            "hint": "Try picturing the sentence as you listen.",
+            "explanation": "Egg is the key word here. It means an oval food that comes from a chicken. Specifically: cracked an egg into the bowl.",
+            "textToSpeak": "She cracked an egg into the bowl.",
             "options": [
-                "signal",
-                "data",
-                "network",
-                "engine"
+                "egg",
+                "ball",
+                "brother",
+                "father"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "⚙️"
+            "emoji": "🥚"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L17_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen closely for the object's name, not who or how.",
-            "explanation": "Listen for module: a separate section that is part of a larger system, course, or program. Mentioned in the sentence: added a new training module.",
-            "textToSpeak": "The hospital added a new training module.",
+            "hint": "One word matches a picture you can see clearly — listen for it.",
+            "explanation": "The audio names dog, which means a common pet animal that barks. That part goes: ran across the yard.",
+            "textToSpeak": "A small dog ran across the yard.",
             "options": [
-                "module",
-                "circuit",
-                "engine",
-                "sensor"
+                "shoe",
+                "dog",
+                "spoon",
+                "milk"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🧩"
+            "emoji": "🐶"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L17_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Pick out the specific item described in the audio.",
-            "explanation": "The correct answer is network - a group of connected computers or devices that share information. Heard in the audio: share notes through a private network.",
-            "textToSpeak": "Doctors share notes through a private network.",
+            "hint": "Focus on what the sentence is really about.",
+            "explanation": "Chair: a piece of furniture you sit on. Notice this detail: only one chair in this room.",
+            "textToSpeak": "There is only one chair in this room.",
             "options": [
-                "network",
-                "drone",
-                "circuit",
-                "chip"
+                "book",
+                "chair",
+                "hat",
+                "shoe"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🌐"
+            "emoji": "🪑"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L18_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen closely for the object's name, not who or how.",
-            "explanation": "Listen for node: a single connection point within a larger network. Mentioned in the sentence: showed a small node near her lung.",
-            "textToSpeak": "The scan showed a small node near her lung.",
+            "hint": "Pay attention to the noun — the person, animal, or thing.",
+            "explanation": "Listen for mother — a woman who has a child. From the audio: hugged her mother.",
+            "textToSpeak": "The little girl hugged her mother.",
             "options": [
-                "node",
-                "device",
-                "sensor",
-                "chip"
+                "mother",
+                "milk",
+                "ball",
+                "spoon"
             ],
             "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "📍"
+            "emoji": "👩"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L18_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Pick out the specific item described in the audio.",
-            "explanation": "Portal is the object in the sentence. It means an online gateway used to access certain information or services. From the audio: book visits through the clinic portal.",
-            "textToSpeak": "Patients can book visits through the clinic portal.",
+            "hint": "Listen for a simple, everyday word you already know.",
+            "explanation": "Book is the word actually spoken — a set of printed pages you read. Straight from the audio: borrowed a book from my friend.",
+            "textToSpeak": "I borrowed a book from my friend.",
             "options": [
-                "drone",
-                "engine",
-                "portal",
-                "circuit"
+                "banana",
+                "book",
+                "milk",
+                "father"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🚪"
+            "emoji": "📖"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L18_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Focus on the thing being used, fixed, or mentioned.",
-            "explanation": "Protocol is correct. A set of official rules that controls how something is done. Context in the audio: followed a strict safety protocol.",
-            "textToSpeak": "The nurse followed a strict safety protocol.",
+            "hint": "The answer is the main person, animal, or object in the sentence.",
+            "explanation": "The right choice is pencil, meaning a tool used for writing or drawing. Context: need a pencil to finish this.",
+            "textToSpeak": "I need a pencil to finish this.",
             "options": [
-                "protocol",
-                "device",
-                "satellite",
-                "sensor"
+                "brother",
+                "mother",
+                "pencil",
+                "apple"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "📋"
+            "emoji": "✏️"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L19_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Pick out the specific item described in the audio.",
-            "explanation": "Listen for satellite: an object sent into space that orbits the Earth to send or receive signals. Mentioned in the sentence: watch movies through satellite TV.",
-            "textToSpeak": "We watch movies through satellite TV.",
+            "hint": "The answer names the thing the sentence is talking about.",
+            "explanation": "Apple is the answer — a round fruit that is often red or green. Listen again: an apple in my bag.",
+            "textToSpeak": "There is an apple in my bag.",
             "options": [
-                "network",
-                "module",
-                "satellite",
-                "data"
+                "shoe",
+                "apple",
+                "brother",
+                "dog"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "subtype": "soundImageMatch",
-            "emoji": "🛰️"
+            "emoji": "🍎"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L19_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Focus on the thing being used, fixed, or mentioned.",
-            "explanation": "The correct answer is sensor - a device that detects changes, such as light, heat, or movement. Heard in the audio: uses a motion sensor.",
-            "textToSpeak": "The game console uses a motion sensor.",
+            "hint": "Listen for the name of the person or thing in the sentence.",
+            "explanation": "Listen for baby — a very young child.",
+            "textToSpeak": "Our neighbor has a new baby.",
             "options": [
-                "archive",
-                "portal",
-                "software",
-                "sensor"
+                "ball",
+                "cat",
+                "hat",
+                "baby"
             ],
             "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "🌡️"
+            "emoji": "👶"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L19_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen for the keyword that matches one of the pictures.",
-            "explanation": "Listen for signal: a sound, light, or wave used to send information or a message. Mentioned in the sentence: got weaker in the tunnel.",
-            "textToSpeak": "The radio signal got weaker in the tunnel.",
+            "hint": "The answer is something you could point to in a picture.",
+            "explanation": "The sentence points to brother — a boy who has the same parents as you. Recall: helped their brother stand up.",
+            "textToSpeak": "The kids helped their brother stand up.",
             "options": [
-                "chip",
-                "drone",
-                "signal",
-                "engine"
+                "brother",
+                "cat",
+                "apple",
+                "book"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "subtype": "soundImageMatch",
-            "emoji": "📶"
+            "emoji": "👦"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L20_Q1",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Focus on the thing being used, fixed, or mentioned.",
-            "explanation": "Listen for software: the programs and instructions that tell a computer what to do. Mentioned in the sentence: used new software for the film.",
-            "textToSpeak": "The studio used new software for the film.",
+            "hint": "Pay attention to the noun — the person, animal, or thing.",
+            "explanation": "Father is the answer — a man who has a child. Reference: waved at his father.",
+            "textToSpeak": "The boy waved at his father.",
             "options": [
-                "circuit",
-                "sensor",
-                "device",
-                "software"
+                "cat",
+                "ball",
+                "hat",
+                "father"
             ],
             "correctAnswerIndex": 3,
             "subtype": "soundImageMatch",
-            "emoji": "📀"
+            "emoji": "👨"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L20_Q2",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Listen for the keyword that matches one of the pictures.",
-            "explanation": "Listen for system: a set of parts that work together as a whole. Mentioned in the sentence: has a powerful sound system.",
-            "textToSpeak": "The theater has a powerful sound system.",
+            "hint": "The key word is easy to picture in your mind.",
+            "explanation": "The word you needed was spoon — a small tool used for eating soup or cereal. Context: needs a spoon for his soup.",
+            "textToSpeak": "He needs a spoon for his soup.",
             "options": [
-                "drone",
-                "sensor",
-                "satellite",
-                "system"
+                "baby",
+                "banana",
+                "spoon",
+                "apple"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "🖥️"
+            "emoji": "🥄"
         },
         {
             "id": "LIS_SOUNDIMAGEMATCH_L20_Q3",
             "interactionType": "Visual Correlator",
             "instruction": "Listen to the audio and select the matching image.",
-            "hint": "Tune in to the exact object named in the sentence.",
-            "explanation": "Terminal is the object in the sentence. It means a place where journeys begin or end, or a computer used to access a network. From the audio: has an old game terminal.",
-            "textToSpeak": "The arcade has an old game terminal.",
+            "hint": "One of the four options is said out loud. Listen carefully.",
+            "explanation": "Banana: a long yellow fruit. From the audio: sliced a banana onto her cereal.",
+            "textToSpeak": "She sliced a banana onto her cereal.",
             "options": [
-                "drone",
-                "terminal",
-                "device",
-                "satellite"
+                "father",
+                "bird",
+                "banana",
+                "brother"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "subtype": "soundImageMatch",
-            "emoji": "💻"
+            "emoji": "🍌"
         }
     ]
 }

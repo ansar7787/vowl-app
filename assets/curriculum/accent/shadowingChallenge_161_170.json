@@ -8,540 +8,540 @@
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "She drank a glass of water.",
-            "textToSpeak": "She drank a glass of water.",
+            "word": "After the long flight landed, we picked up our bags and left.",
+            "textToSpeak": "After the long flight landed, we picked up our bags and left.",
             "options": [
-                "This is the American pronunciation of 'water' in 'She drank a glass of water.': the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'.",
-                "This would be the British pronunciation of 'water' instead: the /t/ stays a clear, crisp consonant sound."
+                "'picked up' links smoothly here, with a consonant sound flowing straight into the vowel that follows.",
+                "'flight landed' links smoothly here, with a consonant sound flowing straight into the vowel that follows."
             ],
-            "correctAnswer": "This is the American pronunciation of 'water' in 'She drank a glass of water.': the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'.",
+            "correctAnswer": "'picked up' links smoothly here, with a consonant sound flowing straight into the vowel that follows.",
             "correctAnswerIndex": 0,
-            "ipa": "/ʃiː dræŋk ə ɡlæs əv ˈwɑːɾɚ/",
-            "hint": "Listen to 'water' in 'She drank a glass of water.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'water' is pronounced differently depending on accent. In American English, the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'. In British English, the /t/ stays a clear, crisp consonant sound. 'She drank a glass of water.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/ˈɑːftə ðə lɒŋ flaɪt lændɪd wiː pɪkt‿ʌp ˈaʊə bægz ənd left/",
+            "hint": "Check both word pairs. Only one ends in a consonant sound immediately before a vowel sound — that's the one that links.",
+            "explanation": "'picked up' genuinely links because it ends in a consonant sound right before the vowel sound that opens the next word; 'flight landed' doesn't, since both sounds there are consonants.",
+            "flowRule": "Consonant-to-Vowel Linking: only a word ending in a consonant sound immediately before a word starting with a vowel sound truly links; two consonants in a row don't."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L161_Q2",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "She likes to dance every weekend.",
-            "textToSpeak": "She likes to dance every weekend.",
+            "word": "Who is that at the door right now?",
+            "textToSpeak": "Who is that at the door right now?",
             "options": [
-                "This would be the British pronunciation of 'dance' instead: it uses the long back vowel /ɑː/, as in 'father'.",
-                "This is the American pronunciation of 'dance' in 'She likes to dance every weekend.': it uses the short front vowel /æ/, as in 'cat'."
+                "'who is' needs an intrusive glide here, since two vowel sounds meet directly with nothing between them.",
+                "'right now' is a plain consonant-to-vowel link here, with no glide needed."
             ],
-            "correctAnswer": "This is the American pronunciation of 'dance' in 'She likes to dance every weekend.': it uses the short front vowel /æ/, as in 'cat'.",
-            "correctAnswerIndex": 1,
-            "ipa": "/ʃiː laɪks tə dæns ˈevri ˈwiːkend/",
-            "hint": "Listen to 'dance' in 'She likes to dance every weekend.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'dance' is pronounced differently depending on accent. In American English, it uses the short front vowel /æ/, as in 'cat'. In British English, it uses the long back vowel /ɑː/, as in 'father'. 'She likes to dance every weekend.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'who is' needs an intrusive glide here, since two vowel sounds meet directly with nothing between them.",
+            "correctAnswerIndex": 0,
+            "ipa": "/huːw ɪz ðæt ət ðə dɔː raɪt naʊ/",
+            "hint": "Both pairs sound smooth, but only one connects two vowel sounds directly — that's the one needing a glide.",
+            "explanation": "'who is' needs an intrusive glide because both words meet vowel-to-vowel, with nothing to naturally connect them; 'right now' is a plain consonant-to-vowel link instead, which doesn't need a glide.",
+            "flowRule": "Intrusive Glides: when a word ending in a vowel sound meets another word starting with a vowel sound, English speakers insert a light /w/ or /j/ glide to bridge them — a different phenomenon from a plain consonant-to-vowel link."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L161_Q3",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "She closed the door quietly.",
-            "textToSpeak": "She closed the door quietly.",
+            "word": "After the meeting ended, I opened it immediately.",
+            "textToSpeak": "After the meeting ended, I opened it immediately.",
             "options": [
-                "This is the American pronunciation of 'door' in 'She closed the door quietly.': the 'r' at the end is fully pronounced.",
-                "This would be the British pronunciation of 'door' instead: the 'r' at the end is silent, leaving just a vowel."
+                "'opened it' links smoothly here, with nothing separating the sounds.",
+                "'ended, I' links smoothly here, with nothing separating the sounds."
             ],
-            "correctAnswer": "This is the American pronunciation of 'door' in 'She closed the door quietly.': the 'r' at the end is fully pronounced.",
+            "correctAnswer": "'opened it' links smoothly here, with nothing separating the sounds.",
             "correctAnswerIndex": 0,
-            "ipa": "/ʃi kloʊzd ðə dɔːr ˈkwaɪətli/",
-            "hint": "Listen to 'door' in 'She closed the door quietly.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'door' is pronounced differently depending on accent. In American English, the 'r' at the end is fully pronounced. In British English, the 'r' at the end is silent, leaving just a vowel. 'She closed the door quietly.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/ˈɑːftə ðə ˈmiːtɪŋ endɪd aɪ ˈəʊpənd‿ɪt ɪˈmiːdiətli/",
+            "hint": "Both pairs might sound like they could connect, but a comma between two clauses usually blocks that, even for matching sounds.",
+            "explanation": "'opened it' links because both words sit inside the same clause with nothing separating them; 'ended, I' sits right at a clause boundary, which blocks the connection even though the sounds could otherwise link.",
+            "flowRule": "Boundaries Block Linking: a consonant-to-vowel pair that would normally link stays separate when a clause or phrase boundary falls between the two words."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L162_Q1",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "She wrote a letter to her teacher.",
-            "textToSpeak": "She wrote a letter to her teacher.",
+            "word": "The manager finally called off the meeting this morning.",
+            "textToSpeak": "The manager finally called off the meeting this morning.",
             "options": [
-                "This is the American pronunciation of 'letter' in 'She wrote a letter to her teacher.': the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'.",
-                "This would be the British pronunciation of 'letter' instead: the /t/ stays a clear, crisp consonant sound."
+                "'meeting this' links smoothly here, with a consonant sound flowing straight into the vowel that follows.",
+                "'called off' links smoothly here, with a consonant sound flowing straight into the vowel that follows."
             ],
-            "correctAnswer": "This is the American pronunciation of 'letter' in 'She wrote a letter to her teacher.': the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'.",
-            "correctAnswerIndex": 0,
-            "ipa": "/ʃiː rəʊt ə ˈleɾɚ tə hər ˈtiːtʃər/",
-            "hint": "Listen to 'letter' in 'She wrote a letter to her teacher.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'letter' is pronounced differently depending on accent. In American English, the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'. In British English, the /t/ stays a clear, crisp consonant sound. 'She wrote a letter to her teacher.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'called off' links smoothly here, with a consonant sound flowing straight into the vowel that follows.",
+            "correctAnswerIndex": 1,
+            "ipa": "/ðə ˈmænɪdʒə ˈfaɪnəli kɔːld‿ɒf ðə ˈmiːtɪŋ ðɪs ˈmɔːnɪŋ/",
+            "hint": "Say both pairs at natural speed. Only one should blend smoothly into a single connected sound.",
+            "explanation": "'called off' genuinely links because it ends in a consonant sound right before the vowel sound that opens the next word; 'meeting this' doesn't, since both sounds there are consonants.",
+            "flowRule": "Consonant-to-Vowel Linking: only a word ending in a consonant sound immediately before a word starting with a vowel sound truly links; two consonants in a row don't."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L162_Q2",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "She can't finish the homework tonight.",
-            "textToSpeak": "She can't finish the homework tonight.",
+            "word": "I need to go inside before the rain starts.",
+            "textToSpeak": "I need to go inside before the rain starts.",
             "options": [
-                "This would be the British pronunciation of 'can't' instead: it uses the long back vowel /ɑː/, as in 'father'.",
-                "This is the American pronunciation of 'can't' in 'She can't finish the homework tonight.': it uses the short front vowel /æ/, as in 'cat'."
+                "'rain starts' is a plain consonant-to-vowel link here, with no glide needed.",
+                "'go inside' needs an intrusive glide here, since two vowel sounds meet directly with nothing between them."
             ],
-            "correctAnswer": "This is the American pronunciation of 'can't' in 'She can't finish the homework tonight.': it uses the short front vowel /æ/, as in 'cat'.",
+            "correctAnswer": "'go inside' needs an intrusive glide here, since two vowel sounds meet directly with nothing between them.",
             "correctAnswerIndex": 1,
-            "ipa": "/ʃiː kænt ˈfɪnɪʃ ðə ˈhoʊmwɝːk təˈnaɪt/",
-            "hint": "Listen to 'can't' in 'She can't finish the homework tonight.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'can't' is pronounced differently depending on accent. In American English, it uses the short front vowel /æ/, as in 'cat'. In British English, it uses the long back vowel /ɑː/, as in 'father'. 'She can't finish the homework tonight.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/aɪ niːd tə gəʊw ɪnˈsaɪd bɪˈfɔː ðə reɪn stɑːts/",
+            "hint": "Check what sound opens the second word in each pair. If it's a vowel and the first word also ends in a vowel, that's your glide pair.",
+            "explanation": "'go inside' needs an intrusive glide because both words meet vowel-to-vowel, with nothing to naturally connect them; 'rain starts' is a plain consonant-to-vowel link instead, which doesn't need a glide.",
+            "flowRule": "Intrusive Glides: when a word ending in a vowel sound meets another word starting with a vowel sound, English speakers insert a light /w/ or /j/ glide to bridge them — a different phenomenon from a plain consonant-to-vowel link."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L162_Q3",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "She started this year.",
-            "textToSpeak": "She started this year.",
+            "word": "Once the show ended, we ordered a taxi.",
+            "textToSpeak": "Once the show ended, we ordered a taxi.",
             "options": [
-                "This is the American pronunciation of 'year' in 'She started this year.': the 'r' at the end is fully pronounced.",
-                "This would be the British pronunciation of 'year' instead: the 'r' at the end is silent, leaving just a vowel."
+                "'ended, we' links smoothly here, with nothing separating the sounds.",
+                "'ordered a' links smoothly here, with nothing separating the sounds."
             ],
-            "correctAnswer": "This is the American pronunciation of 'year' in 'She started this year.': the 'r' at the end is fully pronounced.",
-            "correctAnswerIndex": 0,
-            "ipa": "/ʃi ˈstɑːrtəd ðɪs jɪr/",
-            "hint": "Listen to 'year' in 'She started this year.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'year' is pronounced differently depending on accent. In American English, the 'r' at the end is fully pronounced. In British English, the 'r' at the end is silent, leaving just a vowel. 'She started this year.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'ordered a' links smoothly here, with nothing separating the sounds.",
+            "correctAnswerIndex": 1,
+            "ipa": "/wʌns ðə ʃəʊ endɪd wiː ˈɔːdəd ə ˈtæksi/",
+            "hint": "Check whether each pair sits inside one clause or straddles a clause boundary — boundaries block the connection even when the sounds would allow it.",
+            "explanation": "'ordered a' links because both words sit inside the same clause with nothing separating them; 'ended, we' sits right at a clause boundary, which blocks the connection even though the sounds could otherwise link.",
+            "flowRule": "Boundaries Block Linking: a consonant-to-vowel pair that would normally link stays separate when a clause or phrase boundary falls between the two words."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L163_Q1",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "We have a meeting today.",
-            "textToSpeak": "We have a meeting today.",
+            "word": "We packed up early and left the hotel before noon.",
+            "textToSpeak": "We packed up early and left the hotel before noon.",
             "options": [
-                "This is the American pronunciation of 'meeting' in 'We have a meeting today.': the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'.",
-                "This would be the British pronunciation of 'meeting' instead: the /t/ stays a clear, crisp consonant sound."
+                "'packed up' links smoothly here, with a consonant sound flowing straight into the vowel that follows.",
+                "'hotel before' links smoothly here, with a consonant sound flowing straight into the vowel that follows."
             ],
-            "correctAnswer": "This is the American pronunciation of 'meeting' in 'We have a meeting today.': the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'.",
+            "correctAnswer": "'packed up' links smoothly here, with a consonant sound flowing straight into the vowel that follows.",
             "correctAnswerIndex": 0,
-            "ipa": "/wiː hæv ə ˈmiːɾɪŋ təˈdeɪ/",
-            "hint": "Listen to 'meeting' in 'We have a meeting today.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'meeting' is pronounced differently depending on accent. In American English, the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'. In British English, the /t/ stays a clear, crisp consonant sound. 'We have a meeting today.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/wiː pækt‿ʌp ˈɜːli ənd left ðə həʊˈtel bɪˈfɔː nuːn/",
+            "hint": "One pair here is consonant-final followed by consonant-initial — that one won't link. Find the pair that's genuinely consonant-to-vowel.",
+            "explanation": "'packed up' genuinely links because it ends in a consonant sound right before the vowel sound that opens the next word; 'hotel before' doesn't, since both sounds there are consonants.",
+            "flowRule": "Consonant-to-Vowel Linking: only a word ending in a consonant sound immediately before a word starting with a vowel sound truly links; two consonants in a row don't."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L163_Q2",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "Check the schedule before the meeting.",
-            "textToSpeak": "Check the schedule before the meeting.",
+            "word": "How old is the house on the corner?",
+            "textToSpeak": "How old is the house on the corner?",
             "options": [
-                "This would be the American pronunciation of 'schedule' instead: it starts with a /sk/ sound, like 'sked-yool'.",
-                "This is the British pronunciation of 'schedule' in 'Check the schedule before the meeting.': it starts with a /ʃ/ sound, like 'shed-yool'."
+                "'how old' needs an intrusive glide here, since two vowel sounds meet directly with nothing between them.",
+                "'house on' is a plain consonant-to-vowel link here, with no glide needed."
             ],
-            "correctAnswer": "This is the British pronunciation of 'schedule' in 'Check the schedule before the meeting.': it starts with a /ʃ/ sound, like 'shed-yool'.",
-            "correctAnswerIndex": 1,
-            "ipa": "/tʃek ðə ˈʃedjuːl bɪˈfɔː ðə ˈmiːtɪŋ/",
-            "hint": "Listen to 'schedule' in 'Check the schedule before the meeting.'. Does it match the British pattern or the American pattern?",
-            "explanation": "'schedule' is pronounced differently depending on accent. In British English, it starts with a /ʃ/ sound, like 'shed-yool'. In American English, it starts with a /sk/ sound, like 'sked-yool'. 'Check the schedule before the meeting.' uses the British form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'how old' needs an intrusive glide here, since two vowel sounds meet directly with nothing between them.",
+            "correctAnswerIndex": 0,
+            "ipa": "/haʊw əʊld ɪz ðə haʊs‿ɒn ðə ˈkɔːnə/",
+            "hint": "One of these pairs is consonant-to-vowel (a plain link); the other is vowel-to-vowel (a glide). Find the vowel-to-vowel one.",
+            "explanation": "'how old' needs an intrusive glide because both words meet vowel-to-vowel, with nothing to naturally connect them; 'house on' is a plain consonant-to-vowel link instead, which doesn't need a glide.",
+            "flowRule": "Intrusive Glides: when a word ending in a vowel sound meets another word starting with a vowel sound, English speakers insert a light /w/ or /j/ glide to bridge them — a different phenomenon from a plain consonant-to-vowel link."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L163_Q3",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "Her manager called this morning.",
-            "textToSpeak": "Her manager called this morning.",
+            "word": "Before the exam started, she reviewed everything again.",
+            "textToSpeak": "Before the exam started, she reviewed everything again.",
             "options": [
-                "This is the American pronunciation of 'manager' in 'Her manager called this morning.': the 'r' at the end is fully pronounced.",
-                "This would be the British pronunciation of 'manager' instead: the 'r' at the end is silent, leaving just a vowel."
+                "'reviewed everything' links smoothly here, with nothing separating the sounds.",
+                "'started, she' links smoothly here, with nothing separating the sounds."
             ],
-            "correctAnswer": "This is the American pronunciation of 'manager' in 'Her manager called this morning.': the 'r' at the end is fully pronounced.",
+            "correctAnswer": "'reviewed everything' links smoothly here, with nothing separating the sounds.",
             "correctAnswerIndex": 0,
-            "ipa": "/hər ˈmænɪdʒɚ kɑːld ðɪs ˈmɔːrnɪŋ/",
-            "hint": "Listen to 'manager' in 'Her manager called this morning.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'manager' is pronounced differently depending on accent. In American English, the 'r' at the end is fully pronounced. In British English, the 'r' at the end is silent, leaving just a vowel. 'Her manager called this morning.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/bɪˈfɔː ði ɪgˈzæm stɑːtɪd ʃiː rɪˈvjuːd ˈevriθɪŋ əˈgen/",
+            "hint": "One of these pairs crosses a natural pause between two separate ideas. That one doesn't link, regardless of the sounds involved.",
+            "explanation": "'reviewed everything' links because both words sit inside the same clause with nothing separating them; 'started, she' sits right at a clause boundary, which blocks the connection even though the sounds could otherwise link.",
+            "flowRule": "Boundaries Block Linking: a consonant-to-vowel pair that would normally link stays separate when a clause or phrase boundary falls between the two words."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L164_Q1",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "We'll meet later at the gate.",
-            "textToSpeak": "We'll meet later at the gate.",
+            "word": "She signed up immediately after seeing the advertisement.",
+            "textToSpeak": "She signed up immediately after seeing the advertisement.",
             "options": [
-                "This is the American pronunciation of 'later' in 'We'll meet later at the gate.': the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'.",
-                "This would be the British pronunciation of 'later' instead: the /t/ stays a clear, crisp consonant sound."
+                "'seeing the' links smoothly here, with a consonant sound flowing straight into the vowel that follows.",
+                "'signed up' links smoothly here, with a consonant sound flowing straight into the vowel that follows."
             ],
-            "correctAnswer": "This is the American pronunciation of 'later' in 'We'll meet later at the gate.': the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'.",
-            "correctAnswerIndex": 0,
-            "ipa": "/wil miːt ˈleɪɾɚ ət ðə ɡeɪt/",
-            "hint": "Listen to 'later' in 'We'll meet later at the gate.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'later' is pronounced differently depending on accent. In American English, the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'. In British English, the /t/ stays a clear, crisp consonant sound. 'We'll meet later at the gate.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'signed up' links smoothly here, with a consonant sound flowing straight into the vowel that follows.",
+            "correctAnswerIndex": 1,
+            "ipa": "/ʃiː saɪnd‿ʌp ɪˈmiːdiətli ˈɑːftə ˈsiːɪŋ ði ədˈvɜːtɪsmənt/",
+            "hint": "Sound out the ending of the first word and the beginning of the second word in both pairs — only one combination truly connects.",
+            "explanation": "'signed up' genuinely links because it ends in a consonant sound right before the vowel sound that opens the next word; 'seeing the' doesn't, since both sounds there are consonants.",
+            "flowRule": "Consonant-to-Vowel Linking: only a word ending in a consonant sound immediately before a word starting with a vowel sound truly links; two consonants in a row don't."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L164_Q2",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "We took a different route.",
-            "textToSpeak": "We took a different route.",
+            "word": "The sky is blue and orange over there.",
+            "textToSpeak": "The sky is blue and orange over there.",
             "options": [
-                "This would be the British pronunciation of 'route' instead: it rhymes with 'boot', as /ruːt/.",
-                "This is the American pronunciation of 'route' in 'We took a different route.': it rhymes with 'out', as /raʊt/."
+                "'orange over' is a plain consonant-to-vowel link here, with no glide needed.",
+                "'blue and' needs an intrusive glide here, since two vowel sounds meet directly with nothing between them."
             ],
-            "correctAnswer": "This is the American pronunciation of 'route' in 'We took a different route.': it rhymes with 'out', as /raʊt/.",
+            "correctAnswer": "'blue and' needs an intrusive glide here, since two vowel sounds meet directly with nothing between them.",
             "correctAnswerIndex": 1,
-            "ipa": "/wiː tʊk ə ˈdɪfərənt raʊt/",
-            "hint": "Listen to 'route' in 'We took a different route.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'route' is pronounced differently depending on accent. In American English, it rhymes with 'out', as /raʊt/. In British English, it rhymes with 'boot', as /ruːt/. 'We took a different route.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/ðə skaɪ ɪz bluːw ənd ˈɒrɪndʒ‿ˈəʊvə ðeə/",
+            "hint": "Say both pairs slowly. The glide pair will have a light /w/ or /j/ sound sneaking in between two vowels.",
+            "explanation": "'blue and' needs an intrusive glide because both words meet vowel-to-vowel, with nothing to naturally connect them; 'orange over' is a plain consonant-to-vowel link instead, which doesn't need a glide.",
+            "flowRule": "Intrusive Glides: when a word ending in a vowel sound meets another word starting with a vowel sound, English speakers insert a light /w/ or /j/ glide to bridge them — a different phenomenon from a plain consonant-to-vowel link."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L164_Q3",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "We rented a car for the trip.",
-            "textToSpeak": "We rented a car for the trip.",
+            "word": "When the alarm rang, everyone rushed outside.",
+            "textToSpeak": "When the alarm rang, everyone rushed outside.",
             "options": [
-                "This is the American pronunciation of 'car' in 'We rented a car for the trip.': the 'r' at the end is fully pronounced.",
-                "This would be the British pronunciation of 'car' instead: the 'r' at the end is silent, leaving just a vowel."
+                "'rang, everyone' links smoothly here, with nothing separating the sounds.",
+                "'rushed outside' links smoothly here, with nothing separating the sounds."
             ],
-            "correctAnswer": "This is the American pronunciation of 'car' in 'We rented a car for the trip.': the 'r' at the end is fully pronounced.",
-            "correctAnswerIndex": 0,
-            "ipa": "/wi ˈrɛntəd ə kɑːr fɔːr ðə trɪp/",
-            "hint": "Listen to 'car' in 'We rented a car for the trip.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'car' is pronounced differently depending on accent. In American English, the 'r' at the end is fully pronounced. In British English, the 'r' at the end is silent, leaving just a vowel. 'We rented a car for the trip.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'rushed outside' links smoothly here, with nothing separating the sounds.",
+            "correctAnswerIndex": 1,
+            "ipa": "/wen ði əˈlɑːm ræŋ ˈevriwʌn rʌʃt‿aʊtˈsaɪd/",
+            "hint": "Find the pair that sits comfortably inside a single clause, with nothing separating the two words grammatically.",
+            "explanation": "'rushed outside' links because both words sit inside the same clause with nothing separating them; 'rang, everyone' sits right at a clause boundary, which blocks the connection even though the sounds could otherwise link.",
+            "flowRule": "Boundaries Block Linking: a consonant-to-vowel pair that would normally link stays separate when a clause or phrase boundary falls between the two words."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L165_Q1",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "My grandmother bakes with butter.",
-            "textToSpeak": "My grandmother bakes with butter.",
+            "word": "He backed away slowly and quietly left the room.",
+            "textToSpeak": "He backed away slowly and quietly left the room.",
             "options": [
-                "This would be the British pronunciation of 'butter' instead: the /t/ stays a clear, crisp consonant sound.",
-                "This is the American pronunciation of 'butter' in 'My grandmother bakes with butter.': the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'."
+                "'backed away' links smoothly here, with a consonant sound flowing straight into the vowel that follows.",
+                "'quietly left' links smoothly here, with a consonant sound flowing straight into the vowel that follows."
             ],
-            "correctAnswer": "This is the American pronunciation of 'butter' in 'My grandmother bakes with butter.': the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'.",
-            "correctAnswerIndex": 1,
-            "ipa": "/maɪ ˈɡrænmʌðər beɪks wɪð ˈbʌɾɚ/",
-            "hint": "Listen to 'butter' in 'My grandmother bakes with butter.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'butter' is pronounced differently depending on accent. In American English, the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'. In British English, the /t/ stays a clear, crisp consonant sound. 'My grandmother bakes with butter.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'backed away' links smoothly here, with a consonant sound flowing straight into the vowel that follows.",
+            "correctAnswerIndex": 0,
+            "ipa": "/hi bækt‿əˈweɪ ˈsləʊli ənd ˈkwaɪətli left ðə ruːm/",
+            "hint": "Check both word pairs. Only one ends in a consonant sound immediately before a vowel sound — that's the one that links.",
+            "explanation": "'backed away' genuinely links because it ends in a consonant sound right before the vowel sound that opens the next word; 'quietly left' doesn't, since both sounds there are consonants.",
+            "flowRule": "Consonant-to-Vowel Linking: only a word ending in a consonant sound immediately before a word starting with a vowel sound truly links; two consonants in a row don't."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L165_Q2",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "My aunt visits every summer.",
-            "textToSpeak": "My aunt visits every summer.",
+            "word": "It's too easy for him to understand it now.",
+            "textToSpeak": "It's too easy for him to understand it now.",
             "options": [
-                "This is the American pronunciation of 'aunt' in 'My aunt visits every summer.': it uses the short front vowel /æ/, as in 'cat'.",
-                "This would be the British pronunciation of 'aunt' instead: it uses the long back vowel /ɑː/, as in 'father'."
+                "'too easy' needs an intrusive glide here, since two vowel sounds meet directly with nothing between them.",
+                "'understand it' is a plain consonant-to-vowel link here, with no glide needed."
             ],
-            "correctAnswer": "This is the American pronunciation of 'aunt' in 'My aunt visits every summer.': it uses the short front vowel /æ/, as in 'cat'.",
+            "correctAnswer": "'too easy' needs an intrusive glide here, since two vowel sounds meet directly with nothing between them.",
             "correctAnswerIndex": 0,
-            "ipa": "/maɪ ænt ˈvɪzɪts ˈevri ˈsʌmər/",
-            "hint": "Listen to 'aunt' in 'My aunt visits every summer.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'aunt' is pronounced differently depending on accent. In American English, it uses the short front vowel /æ/, as in 'cat'. In British English, it uses the long back vowel /ɑː/, as in 'father'. 'My aunt visits every summer.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/ɪts tuːw ˈiːzi fə hɪm tə ˌʌndəˈstænd‿ɪt naʊ/",
+            "hint": "Both pairs sound smooth, but only one connects two vowel sounds directly — that's the one needing a glide.",
+            "explanation": "'too easy' needs an intrusive glide because both words meet vowel-to-vowel, with nothing to naturally connect them; 'understand it' is a plain consonant-to-vowel link instead, which doesn't need a glide.",
+            "flowRule": "Intrusive Glides: when a word ending in a vowel sound meets another word starting with a vowel sound, English speakers insert a light /w/ or /j/ glide to bridge them — a different phenomenon from a plain consonant-to-vowel link."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L165_Q3",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "My sister lives far away.",
-            "textToSpeak": "My sister lives far away.",
+            "word": "Once class ended, an announcement surprised everyone.",
+            "textToSpeak": "Once class ended, an announcement surprised everyone.",
             "options": [
-                "This would be the British pronunciation of 'sister' instead: the 'r' at the end is silent, leaving just a vowel.",
-                "This is the American pronunciation of 'sister' in 'My sister lives far away.': the 'r' at the end is fully pronounced."
+                "'an announcement' links smoothly here, with nothing separating the sounds.",
+                "'ended, an' links smoothly here, with nothing separating the sounds."
             ],
-            "correctAnswer": "This is the American pronunciation of 'sister' in 'My sister lives far away.': the 'r' at the end is fully pronounced.",
-            "correctAnswerIndex": 1,
-            "ipa": "/maɪ ˈsɪstɚ lɪvz fɑːr əˈweɪ/",
-            "hint": "Listen to 'sister' in 'My sister lives far away.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'sister' is pronounced differently depending on accent. In American English, the 'r' at the end is fully pronounced. In British English, the 'r' at the end is silent, leaving just a vowel. 'My sister lives far away.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'an announcement' links smoothly here, with nothing separating the sounds.",
+            "correctAnswerIndex": 0,
+            "ipa": "/wʌns klɑːs endɪd ən əˈnaʊnsmənt səˈpraɪzd ˈevriwʌn/",
+            "hint": "Both pairs might sound like they could connect, but a comma between two clauses usually blocks that, even for matching sounds.",
+            "explanation": "'an announcement' links because both words sit inside the same clause with nothing separating them; 'ended, an' sits right at a clause boundary, which blocks the connection even though the sounds could otherwise link.",
+            "flowRule": "Boundaries Block Linking: a consonant-to-vowel pair that would normally link stays separate when a clause or phrase boundary falls between the two words."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L166_Q1",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "The shirt costs thirty dollars.",
-            "textToSpeak": "The shirt costs thirty dollars.",
+            "word": "The nurse checked on him twice during the night.",
+            "textToSpeak": "The nurse checked on him twice during the night.",
             "options": [
-                "This would be the British pronunciation of 'thirty' instead: the /t/ stays a clear, crisp consonant sound.",
-                "This is the American pronunciation of 'thirty' in 'The shirt costs thirty dollars.': the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'."
+                "'twice during' links smoothly here, with a consonant sound flowing straight into the vowel that follows.",
+                "'checked on' links smoothly here, with a consonant sound flowing straight into the vowel that follows."
             ],
-            "correctAnswer": "This is the American pronunciation of 'thirty' in 'The shirt costs thirty dollars.': the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'.",
+            "correctAnswer": "'checked on' links smoothly here, with a consonant sound flowing straight into the vowel that follows.",
             "correctAnswerIndex": 1,
-            "ipa": "/ðə ʃɜːrt kɒsts ˈθɜːɾi ˈdɑːlərz/",
-            "hint": "Listen to 'thirty' in 'The shirt costs thirty dollars.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'thirty' is pronounced differently depending on accent. In American English, the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'. In British English, the /t/ stays a clear, crisp consonant sound. 'The shirt costs thirty dollars.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/ðə nɜːs tʃekt‿ɒn hɪm twaɪs ˈdjʊərɪŋ ðə naɪt/",
+            "hint": "Say both pairs at natural speed. Only one should blend smoothly into a single connected sound.",
+            "explanation": "'checked on' genuinely links because it ends in a consonant sound right before the vowel sound that opens the next word; 'twice during' doesn't, since both sounds there are consonants.",
+            "flowRule": "Consonant-to-Vowel Linking: only a word ending in a consonant sound immediately before a word starting with a vowel sound truly links; two consonants in a row don't."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L166_Q2",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "It costs half the price now.",
-            "textToSpeak": "It costs half the price now.",
+            "word": "Do it again before you forget completely.",
+            "textToSpeak": "Do it again before you forget completely.",
             "options": [
-                "This is the American pronunciation of 'half' in 'It costs half the price now.': it uses the short front vowel /æ/, as in 'cat'.",
-                "This would be the British pronunciation of 'half' instead: it uses the long back vowel /ɑː/, as in 'father'."
+                "'forget completely' is a plain consonant-to-vowel link here, with no glide needed.",
+                "'do it' needs an intrusive glide here, since two vowel sounds meet directly with nothing between them."
             ],
-            "correctAnswer": "This is the American pronunciation of 'half' in 'It costs half the price now.': it uses the short front vowel /æ/, as in 'cat'.",
-            "correctAnswerIndex": 0,
-            "ipa": "/ɪt kɒsts hæf ðə praɪs naʊ/",
-            "hint": "Listen to 'half' in 'It costs half the price now.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'half' is pronounced differently depending on accent. In American English, it uses the short front vowel /æ/, as in 'cat'. In British English, it uses the long back vowel /ɑː/, as in 'father'. 'It costs half the price now.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'do it' needs an intrusive glide here, since two vowel sounds meet directly with nothing between them.",
+            "correctAnswerIndex": 1,
+            "ipa": "/duːw ɪt əˈgen bɪˈfɔː juː fəˈget kəmˈpliːtli/",
+            "hint": "Check what sound opens the second word in each pair. If it's a vowel and the first word also ends in a vowel, that's your glide pair.",
+            "explanation": "'do it' needs an intrusive glide because both words meet vowel-to-vowel, with nothing to naturally connect them; 'forget completely' is a plain consonant-to-vowel link instead, which doesn't need a glide.",
+            "flowRule": "Intrusive Glides: when a word ending in a vowel sound meets another word starting with a vowel sound, English speakers insert a light /w/ or /j/ glide to bridge them — a different phenomenon from a plain consonant-to-vowel link."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L166_Q3",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "The store closes early.",
-            "textToSpeak": "The store closes early.",
+            "word": "After the storm passed, an eerie silence followed.",
+            "textToSpeak": "After the storm passed, an eerie silence followed.",
             "options": [
-                "This would be the British pronunciation of 'store' instead: the 'r' at the end is silent, leaving just a vowel.",
-                "This is the American pronunciation of 'store' in 'The store closes early.': the 'r' at the end is fully pronounced."
+                "'passed, an' links smoothly here, with nothing separating the sounds.",
+                "'an eerie' links smoothly here, with nothing separating the sounds."
             ],
-            "correctAnswer": "This is the American pronunciation of 'store' in 'The store closes early.': the 'r' at the end is fully pronounced.",
+            "correctAnswer": "'an eerie' links smoothly here, with nothing separating the sounds.",
             "correctAnswerIndex": 1,
-            "ipa": "/ðə stɔːr ˈkloʊzəz ˈɝːli/",
-            "hint": "Listen to 'store' in 'The store closes early.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'store' is pronounced differently depending on accent. In American English, the 'r' at the end is fully pronounced. In British English, the 'r' at the end is silent, leaving just a vowel. 'The store closes early.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/ˈɑːftə ðə stɔːm pɑːst ən ˈɪəri ˈsaɪləns ˈfɒləʊd/",
+            "hint": "Check whether each pair sits inside one clause or straddles a clause boundary — boundaries block the connection even when the sounds would allow it.",
+            "explanation": "'an eerie' links because both words sit inside the same clause with nothing separating them; 'passed, an' sits right at a clause boundary, which blocks the connection even though the sounds could otherwise link.",
+            "flowRule": "Boundaries Block Linking: a consonant-to-vowel pair that would normally link stays separate when a clause or phrase boundary falls between the two words."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L167_Q1",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "He ordered mashed potato.",
-            "textToSpeak": "He ordered mashed potato.",
+            "word": "We set out at dawn before the traffic started.",
+            "textToSpeak": "We set out at dawn before the traffic started.",
             "options": [
-                "This would be the British pronunciation of 'potato' instead: the /t/ stays a clear, crisp consonant sound.",
-                "This is the American pronunciation of 'potato' in 'He ordered mashed potato.': the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'."
+                "'set out' links smoothly here, with a consonant sound flowing straight into the vowel that follows.",
+                "'dawn before' links smoothly here, with a consonant sound flowing straight into the vowel that follows."
             ],
-            "correctAnswer": "This is the American pronunciation of 'potato' in 'He ordered mashed potato.': the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'.",
-            "correctAnswerIndex": 1,
-            "ipa": "/hi ˈɔːrdərd mæʃt pəˈteɪɾoʊ/",
-            "hint": "Listen to 'potato' in 'He ordered mashed potato.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'potato' is pronounced differently depending on accent. In American English, the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'. In British English, the /t/ stays a clear, crisp consonant sound. 'He ordered mashed potato.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'set out' links smoothly here, with a consonant sound flowing straight into the vowel that follows.",
+            "correctAnswerIndex": 0,
+            "ipa": "/wiː set‿aʊt ət dɔːn bɪˈfɔː ðə ˈtræfɪk ˈstɑːtɪd/",
+            "hint": "One pair here is consonant-final followed by consonant-initial — that one won't link. Find the pair that's genuinely consonant-to-vowel.",
+            "explanation": "'set out' genuinely links because it ends in a consonant sound right before the vowel sound that opens the next word; 'dawn before' doesn't, since both sounds there are consonants.",
+            "flowRule": "Consonant-to-Vowel Linking: only a word ending in a consonant sound immediately before a word starting with a vowel sound truly links; two consonants in a row don't."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L167_Q2",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "Add fresh tomato to the salad.",
-            "textToSpeak": "Add fresh tomato to the salad.",
+            "word": "We arrived so early that no one else was there.",
+            "textToSpeak": "We arrived so early that no one else was there.",
             "options": [
-                "This is the American pronunciation of 'tomato' in 'Add fresh tomato to the salad.': the middle vowel is /eɪ/, as in 'late'.",
-                "This would be the British pronunciation of 'tomato' instead: the middle vowel is /ɑː/, as in 'father'."
+                "'so early' needs an intrusive glide here, since two vowel sounds meet directly with nothing between them.",
+                "'else was' is a plain consonant-to-vowel link here, with no glide needed."
             ],
-            "correctAnswer": "This is the American pronunciation of 'tomato' in 'Add fresh tomato to the salad.': the middle vowel is /eɪ/, as in 'late'.",
+            "correctAnswer": "'so early' needs an intrusive glide here, since two vowel sounds meet directly with nothing between them.",
             "correctAnswerIndex": 0,
-            "ipa": "/æd freʃ təˈmeɪɾoʊ tə ðə ˈsæləd/",
-            "hint": "Listen to 'tomato' in 'Add fresh tomato to the salad.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'tomato' is pronounced differently depending on accent. In American English, the middle vowel is /eɪ/, as in 'late'. In British English, the middle vowel is /ɑː/, as in 'father'. 'Add fresh tomato to the salad.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/wiː əˈraɪvd səʊw ˈɜːli ðət nəʊ wʌn els wəz ðeə/",
+            "hint": "One of these pairs is consonant-to-vowel (a plain link); the other is vowel-to-vowel (a glide). Find the vowel-to-vowel one.",
+            "explanation": "'so early' needs an intrusive glide because both words meet vowel-to-vowel, with nothing to naturally connect them; 'else was' is a plain consonant-to-vowel link instead, which doesn't need a glide.",
+            "flowRule": "Intrusive Glides: when a word ending in a vowel sound meets another word starting with a vowel sound, English speakers insert a light /w/ or /j/ glide to bridge them — a different phenomenon from a plain consonant-to-vowel link."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L167_Q3",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "Dinner is ready soon.",
-            "textToSpeak": "Dinner is ready soon.",
+            "word": "Before the guests arrived, everyone set out the plates.",
+            "textToSpeak": "Before the guests arrived, everyone set out the plates.",
             "options": [
-                "This would be the British pronunciation of 'dinner' instead: the 'r' at the end is silent, leaving just a vowel.",
-                "This is the American pronunciation of 'dinner' in 'Dinner is ready soon.': the 'r' at the end is fully pronounced."
+                "'set out' links smoothly here, with nothing separating the sounds.",
+                "'arrived, everyone' links smoothly here, with nothing separating the sounds."
             ],
-            "correctAnswer": "This is the American pronunciation of 'dinner' in 'Dinner is ready soon.': the 'r' at the end is fully pronounced.",
-            "correctAnswerIndex": 1,
-            "ipa": "/ˈdɪnɚr ɪz ˈrɛdi suːn/",
-            "hint": "Listen to 'dinner' in 'Dinner is ready soon.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'dinner' is pronounced differently depending on accent. In American English, the 'r' at the end is fully pronounced. In British English, the 'r' at the end is silent, leaving just a vowel. 'Dinner is ready soon.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'set out' links smoothly here, with nothing separating the sounds.",
+            "correctAnswerIndex": 0,
+            "ipa": "/bɪˈfɔː ðə gests əˈraɪvd ˈevriwʌn set‿aʊt ðə pleɪts/",
+            "hint": "One of these pairs crosses a natural pause between two separate ideas. That one doesn't link, regardless of the sounds involved.",
+            "explanation": "'set out' links because both words sit inside the same clause with nothing separating them; 'arrived, everyone' sits right at a clause boundary, which blocks the connection even though the sounds could otherwise link.",
+            "flowRule": "Boundaries Block Linking: a consonant-to-vowel pair that would normally link stays separate when a clause or phrase boundary falls between the two words."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L168_Q1",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "The data updates instantly.",
-            "textToSpeak": "The data updates instantly.",
+            "word": "They handed in the forms before the deadline passed.",
+            "textToSpeak": "They handed in the forms before the deadline passed.",
             "options": [
-                "This would be the British pronunciation of 'data' instead: the /t/ stays a clear, crisp consonant sound.",
-                "This is the American pronunciation of 'data' in 'The data updates instantly.': the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'."
+                "'forms before' links smoothly here, with a consonant sound flowing straight into the vowel that follows.",
+                "'handed in' links smoothly here, with a consonant sound flowing straight into the vowel that follows."
             ],
-            "correctAnswer": "This is the American pronunciation of 'data' in 'The data updates instantly.': the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'.",
+            "correctAnswer": "'handed in' links smoothly here, with a consonant sound flowing straight into the vowel that follows.",
             "correctAnswerIndex": 1,
-            "ipa": "/ðə ˈdeɪɾə ˈʌpdeɪts ˈɪnstəntli/",
-            "hint": "Listen to 'data' in 'The data updates instantly.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'data' is pronounced differently depending on accent. In American English, the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'. In British English, the /t/ stays a clear, crisp consonant sound. 'The data updates instantly.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/ðeɪ ˈhændɪd‿ɪn ðə fɔːmz bɪˈfɔː ðə ˈdedlaɪn pɑːst/",
+            "hint": "Sound out the ending of the first word and the beginning of the second word in both pairs — only one combination truly connects.",
+            "explanation": "'handed in' genuinely links because it ends in a consonant sound right before the vowel sound that opens the next word; 'forms before' doesn't, since both sounds there are consonants.",
+            "flowRule": "Consonant-to-Vowel Linking: only a word ending in a consonant sound immediately before a word starting with a vowel sound truly links; two consonants in a row don't."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L168_Q2",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "Save this as a draft version.",
-            "textToSpeak": "Save this as a draft version.",
+            "word": "I know his answer will disappoint everyone eventually.",
+            "textToSpeak": "I know his answer will disappoint everyone eventually.",
             "options": [
-                "This is the American pronunciation of 'draft' in 'Save this as a draft version.': it uses the short front vowel /æ/, as in 'cat'.",
-                "This would be the British pronunciation of 'draft' instead: it uses the long back vowel /ɑː/, as in 'father'."
+                "'disappoint everyone' is a plain consonant-to-vowel link here, with no glide needed.",
+                "'know his' needs an intrusive glide here, since two vowel sounds meet directly with nothing between them."
             ],
-            "correctAnswer": "This is the American pronunciation of 'draft' in 'Save this as a draft version.': it uses the short front vowel /æ/, as in 'cat'.",
-            "correctAnswerIndex": 0,
-            "ipa": "/seɪv ðɪs æz ə dræft ˈvɝːʒən/",
-            "hint": "Listen to 'draft' in 'Save this as a draft version.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'draft' is pronounced differently depending on accent. In American English, it uses the short front vowel /æ/, as in 'cat'. In British English, it uses the long back vowel /ɑː/, as in 'father'. 'Save this as a draft version.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'know his' needs an intrusive glide here, since two vowel sounds meet directly with nothing between them.",
+            "correctAnswerIndex": 1,
+            "ipa": "/aɪ nəʊw ɪz ˈɑːnsə wɪl ˌdɪsəˈpɔɪnt‿ˈevriwʌn ɪˈventʃuəli/",
+            "hint": "Say both pairs slowly. The glide pair will have a light /w/ or /j/ sound sneaking in between two vowels.",
+            "explanation": "'know his' needs an intrusive glide because both words meet vowel-to-vowel, with nothing to naturally connect them; 'disappoint everyone' is a plain consonant-to-vowel link instead, which doesn't need a glide.",
+            "flowRule": "Intrusive Glides: when a word ending in a vowel sound meets another word starting with a vowel sound, English speakers insert a light /w/ or /j/ glide to bridge them — a different phenomenon from a plain consonant-to-vowel link."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L168_Q3",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "The server is down again.",
-            "textToSpeak": "The server is down again.",
+            "word": "Once the movie ended, everyone applauded loudly.",
+            "textToSpeak": "Once the movie ended, everyone applauded loudly.",
             "options": [
-                "This would be the British pronunciation of 'server' instead: the 'r' at the end is silent, leaving just a vowel.",
-                "This is the American pronunciation of 'server' in 'The server is down again.': the 'r' at the end is fully pronounced."
+                "'ended, everyone' links smoothly here, with nothing separating the sounds.",
+                "'everyone applauded' links smoothly here, with nothing separating the sounds."
             ],
-            "correctAnswer": "This is the American pronunciation of 'server' in 'The server is down again.': the 'r' at the end is fully pronounced.",
+            "correctAnswer": "'everyone applauded' links smoothly here, with nothing separating the sounds.",
             "correctAnswerIndex": 1,
-            "ipa": "/ðə ˈsɝːvɚr ɪz daʊn əˈɡen/",
-            "hint": "Listen to 'server' in 'The server is down again.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'server' is pronounced differently depending on accent. In American English, the 'r' at the end is fully pronounced. In British English, the 'r' at the end is silent, leaving just a vowel. 'The server is down again.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/wʌns ðə ˈmuːvi endɪd ˈevriwʌn ˌæplɔːdɪd ˈlaʊdli/",
+            "hint": "Find the pair that sits comfortably inside a single clause, with nothing separating the two words grammatically.",
+            "explanation": "'everyone applauded' links because both words sit inside the same clause with nothing separating them; 'ended, everyone' sits right at a clause boundary, which blocks the connection even though the sounds could otherwise link.",
+            "flowRule": "Boundaries Block Linking: a consonant-to-vowel pair that would normally link stays separate when a clause or phrase boundary falls between the two words."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L169_Q1",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "She takes a vitamin every day.",
-            "textToSpeak": "She takes a vitamin every day.",
+            "word": "I looked into the issue and found the answer.",
+            "textToSpeak": "I looked into the issue and found the answer.",
             "options": [
-                "This would be the British pronunciation of 'vitamin' instead: the /t/ stays a clear, crisp consonant sound.",
-                "This is the American pronunciation of 'vitamin' in 'She takes a vitamin every day.': the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'."
+                "'looked into' links smoothly here, with a consonant sound flowing straight into the vowel that follows.",
+                "'found the' links smoothly here, with a consonant sound flowing straight into the vowel that follows."
             ],
-            "correctAnswer": "This is the American pronunciation of 'vitamin' in 'She takes a vitamin every day.': the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'.",
-            "correctAnswerIndex": 1,
-            "ipa": "/ʃiː teɪks ə ˈvaɪɾəmɪn ˈevri deɪ/",
-            "hint": "Listen to 'vitamin' in 'She takes a vitamin every day.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'vitamin' is pronounced differently depending on accent. In American English, the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'. In British English, the /t/ stays a clear, crisp consonant sound. 'She takes a vitamin every day.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'looked into' links smoothly here, with a consonant sound flowing straight into the vowel that follows.",
+            "correctAnswerIndex": 0,
+            "ipa": "/aɪ lʊkt‿ˈɪntə ði ˈɪʃuː ənd faʊnd ði ˈɑːnsə/",
+            "hint": "Check both word pairs. Only one ends in a consonant sound immediately before a vowel sound — that's the one that links.",
+            "explanation": "'looked into' genuinely links because it ends in a consonant sound right before the vowel sound that opens the next word; 'found the' doesn't, since both sounds there are consonants.",
+            "flowRule": "Consonant-to-Vowel Linking: only a word ending in a consonant sound immediately before a word starting with a vowel sound truly links; two consonants in a row don't."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L169_Q2",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "Always ask your doctor first.",
-            "textToSpeak": "Always ask your doctor first.",
+            "word": "You always arrive before the meeting starts officially.",
+            "textToSpeak": "You always arrive before the meeting starts officially.",
             "options": [
-                "This is the American pronunciation of 'ask' in 'Always ask your doctor first.': it uses the short front vowel /æ/, as in 'cat'.",
-                "This would be the British pronunciation of 'ask' instead: it uses the long back vowel /ɑː/, as in 'father'."
+                "'you always' needs an intrusive glide here, since two vowel sounds meet directly with nothing between them.",
+                "'meeting starts' is a plain consonant-to-vowel link here, with no glide needed."
             ],
-            "correctAnswer": "This is the American pronunciation of 'ask' in 'Always ask your doctor first.': it uses the short front vowel /æ/, as in 'cat'.",
+            "correctAnswer": "'you always' needs an intrusive glide here, since two vowel sounds meet directly with nothing between them.",
             "correctAnswerIndex": 0,
-            "ipa": "/ˈɒlweɪz æsk jʊr ˈdɑːktər fɝːst/",
-            "hint": "Listen to 'ask' in 'Always ask your doctor first.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'ask' is pronounced differently depending on accent. In American English, it uses the short front vowel /æ/, as in 'cat'. In British English, it uses the long back vowel /ɑː/, as in 'father'. 'Always ask your doctor first.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/juːw ˈɔːlweɪz əˈraɪv bɪˈfɔː ðə ˈmiːtɪŋ stɑːts əˈfɪʃəli/",
+            "hint": "Both pairs sound smooth, but only one connects two vowel sounds directly — that's the one needing a glide.",
+            "explanation": "'you always' needs an intrusive glide because both words meet vowel-to-vowel, with nothing to naturally connect them; 'meeting starts' is a plain consonant-to-vowel link instead, which doesn't need a glide.",
+            "flowRule": "Intrusive Glides: when a word ending in a vowel sound meets another word starting with a vowel sound, English speakers insert a light /w/ or /j/ glide to bridge them — a different phenomenon from a plain consonant-to-vowel link."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L169_Q3",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "Her doctor seems confident.",
-            "textToSpeak": "Her doctor seems confident.",
+            "word": "When the bell rang, an assistant collected the papers.",
+            "textToSpeak": "When the bell rang, an assistant collected the papers.",
             "options": [
-                "This would be the British pronunciation of 'doctor' instead: the 'r' at the end is silent, leaving just a vowel.",
-                "This is the American pronunciation of 'doctor' in 'Her doctor seems confident.': the 'r' at the end is fully pronounced."
+                "'an assistant' links smoothly here, with nothing separating the sounds.",
+                "'rang, an' links smoothly here, with nothing separating the sounds."
             ],
-            "correctAnswer": "This is the American pronunciation of 'doctor' in 'Her doctor seems confident.': the 'r' at the end is fully pronounced.",
-            "correctAnswerIndex": 1,
-            "ipa": "/hər ˈdɑːktɚr siːmz ˈkɑːnfɪdənt/",
-            "hint": "Listen to 'doctor' in 'Her doctor seems confident.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'doctor' is pronounced differently depending on accent. In American English, the 'r' at the end is fully pronounced. In British English, the 'r' at the end is silent, leaving just a vowel. 'Her doctor seems confident.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'an assistant' links smoothly here, with nothing separating the sounds.",
+            "correctAnswerIndex": 0,
+            "ipa": "/wen ðə bel ræŋ ən əˈsɪstənt kəˈlektɪd ðə ˈpeɪpəz/",
+            "hint": "Both pairs might sound like they could connect, but a comma between two clauses usually blocks that, even for matching sounds.",
+            "explanation": "'an assistant' links because both words sit inside the same clause with nothing separating them; 'rang, an' sits right at a clause boundary, which blocks the connection even though the sounds could otherwise link.",
+            "flowRule": "Boundaries Block Linking: a consonant-to-vowel pair that would normally link stays separate when a clause or phrase boundary falls between the two words."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L170_Q1",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "They watched a show at the theater.",
-            "textToSpeak": "They watched a show at the theater.",
+            "word": "We turned off the lights before locking the door.",
+            "textToSpeak": "We turned off the lights before locking the door.",
             "options": [
-                "This would be the British pronunciation of 'theater' instead: the /t/ stays a clear, crisp consonant sound.",
-                "This is the American pronunciation of 'theater' in 'They watched a show at the theater.': the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'."
+                "'lights before' links smoothly here, with a consonant sound flowing straight into the vowel that follows.",
+                "'turned off' links smoothly here, with a consonant sound flowing straight into the vowel that follows."
             ],
-            "correctAnswer": "This is the American pronunciation of 'theater' in 'They watched a show at the theater.': the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'.",
+            "correctAnswer": "'turned off' links smoothly here, with a consonant sound flowing straight into the vowel that follows.",
             "correctAnswerIndex": 1,
-            "ipa": "/ðeɪ wɑːtʃt ə ʃoʊ ət ðə ˈθiːəɾɚ/",
-            "hint": "Listen to 'theater' in 'They watched a show at the theater.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'theater' is pronounced differently depending on accent. In American English, the middle /t/ becomes a quick, voiced flap [ɾ], so it sounds closer to a fast 'd'. In British English, the /t/ stays a clear, crisp consonant sound. 'They watched a show at the theater.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/wiː tɜːnd‿ɒf ðə laɪts bɪˈfɔː ˈlɒkɪŋ ðə dɔː/",
+            "hint": "Say both pairs at natural speed. Only one should blend smoothly into a single connected sound.",
+            "explanation": "'turned off' genuinely links because it ends in a consonant sound right before the vowel sound that opens the next word; 'lights before' doesn't, since both sounds there are consonants.",
+            "flowRule": "Consonant-to-Vowel Linking: only a word ending in a consonant sound immediately before a word starting with a vowel sound truly links; two consonants in a row don't."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L170_Q2",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "The show is a great drama.",
-            "textToSpeak": "The show is a great drama.",
+            "word": "Now everyone understands the updated policy completely.",
+            "textToSpeak": "Now everyone understands the updated policy completely.",
             "options": [
-                "This is the British pronunciation of 'drama' in 'The show is a great drama.': the middle vowel is /ɑː/, as in 'father'.",
-                "This would be the American pronunciation of 'drama' instead: the middle vowel is closer to /æ/, as in 'cat'."
+                "'updated policy' is a plain consonant-to-vowel link here, with no glide needed.",
+                "'now everyone' needs an intrusive glide here, since two vowel sounds meet directly with nothing between them."
             ],
-            "correctAnswer": "This is the British pronunciation of 'drama' in 'The show is a great drama.': the middle vowel is /ɑː/, as in 'father'.",
-            "correctAnswerIndex": 0,
-            "ipa": "/ðə ʃəʊ ɪz ə ɡreɪt ˈdrɑːmə/",
-            "hint": "Listen to 'drama' in 'The show is a great drama.'. Does it match the British pattern or the American pattern?",
-            "explanation": "'drama' is pronounced differently depending on accent. In British English, the middle vowel is /ɑː/, as in 'father'. In American English, the middle vowel is closer to /æ/, as in 'cat'. 'The show is a great drama.' uses the British form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "correctAnswer": "'now everyone' needs an intrusive glide here, since two vowel sounds meet directly with nothing between them.",
+            "correctAnswerIndex": 1,
+            "ipa": "/naʊw ˈevriwʌn ˌʌndəˈstændz ði ˈʌpdeɪtɪd ˈpɒləsi kəmˈpliːtli/",
+            "hint": "Check what sound opens the second word in each pair. If it's a vowel and the first word also ends in a vowel, that's your glide pair.",
+            "explanation": "'now everyone' needs an intrusive glide because both words meet vowel-to-vowel, with nothing to naturally connect them; 'updated policy' is a plain consonant-to-vowel link instead, which doesn't need a glide.",
+            "flowRule": "Intrusive Glides: when a word ending in a vowel sound meets another word starting with a vowel sound, English speakers insert a light /w/ or /j/ glide to bridge them — a different phenomenon from a plain consonant-to-vowel link."
         },
         {
             "id": "ACC_SHADOWINGCHALLENGE_L170_Q3",
             "instruction": "Identify the pronunciation",
             "subtype": "shadowingChallenge",
             "interactionType": "choice",
-            "word": "The performer impressed everyone.",
-            "textToSpeak": "The performer impressed everyone.",
+            "word": "Before the flight departed, an announcement echoed twice.",
+            "textToSpeak": "Before the flight departed, an announcement echoed twice.",
             "options": [
-                "This would be the British pronunciation of 'performer' instead: the 'r' at the end is silent, leaving just a vowel.",
-                "This is the American pronunciation of 'performer' in 'The performer impressed everyone.': the 'r' at the end is fully pronounced."
+                "'departed, an' links smoothly here, with nothing separating the sounds.",
+                "'an announcement' links smoothly here, with nothing separating the sounds."
             ],
-            "correctAnswer": "This is the American pronunciation of 'performer' in 'The performer impressed everyone.': the 'r' at the end is fully pronounced.",
+            "correctAnswer": "'an announcement' links smoothly here, with nothing separating the sounds.",
             "correctAnswerIndex": 1,
-            "ipa": "/ðə pərˈfɔːrmɚr ɪmˈprɛst ˈɛvriwʌn/",
-            "hint": "Listen to 'performer' in 'The performer impressed everyone.'. Does it match the American pattern or the British pattern?",
-            "explanation": "'performer' is pronounced differently depending on accent. In American English, the 'r' at the end is fully pronounced. In British English, the 'r' at the end is silent, leaving just a vowel. 'The performer impressed everyone.' uses the American form.",
-            "flowRule": "Connected speech ensures natural sentence flow."
+            "ipa": "/bɪˈfɔː ðə flaɪt dɪˈpɑːtɪd ən əˈnaʊnsmənt ˈekəʊd twaɪs/",
+            "hint": "Check whether each pair sits inside one clause or straddles a clause boundary — boundaries block the connection even when the sounds would allow it.",
+            "explanation": "'an announcement' links because both words sit inside the same clause with nothing separating them; 'departed, an' sits right at a clause boundary, which blocks the connection even though the sounds could otherwise link.",
+            "flowRule": "Boundaries Block Linking: a consonant-to-vowel pair that would normally link stays separate when a clause or phrase boundary falls between the two words."
         }
     ]
 }

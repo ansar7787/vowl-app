@@ -8,17 +8,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Ready, set, go, get moving!",
-            "textToSpeak": "Ready, set, go, get moving!",
+            "word": "Someone just realized the invoice went out with last year's prices instead of the updated ones!",
+            "textToSpeak": "Someone just realized the invoice went out with last year's prices instead of the updated ones!",
             "options": [
-                "Decelerating (in 'Ready, set, go, get moving!', the speaker slows down to carefully announce each number)",
-                "Accelerating (in 'Ready, set, go, get moving!', the countdown speeds up toward getting moving, building momentum)"
+                "Decelerating (the speaker slows down to work out exactly how much money is affected)",
+                "Accelerating (a costly, just-discovered billing error speeds up the urgent alert)"
             ],
-            "correctAnswer": "Accelerating (in 'Ready, set, go, get moving!', the countdown speeds up toward getting moving, building momentum)",
+            "correctAnswer": "Accelerating (a costly, just-discovered billing error speeds up the urgent alert)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 1.48,
-            "hint": "Listen to 'Ready, set, go, get moving!' Does the countdown speed up as it nears the end?",
-            "explanation": "Countdowns like this one accelerate toward getting moving, building momentum and excitement as the final moment approaches.",
+            "targetSpeed": 1.28,
+            "hint": "This mistake was just discovered. Urgent alert, or a slow calculation?",
+            "explanation": "A costly error discovered just now creates real pressure, speeding up the alert rather than a slow calculation.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -26,53 +26,53 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Pack your shoes, your jacket, your charger, and especially your passport.",
-            "textToSpeak": "Pack your shoes, your jacket, your charger, and especially your passport.",
+            "word": "Oh, and they've apparently changed the venue again, at this point it's basically expected.",
+            "textToSpeak": "Oh, and they've apparently changed the venue again, at this point it's basically expected.",
             "options": [
-                "Decelerating (in 'Pack your shoes, your jacket, your charger, and especially your passport.', the pace slows on the final item, the passport, since it's being saved for emphasis)",
-                "Accelerating (in 'Pack your shoes, your jacket, your charger, and especially your passport.', the speaker rushes through the final item just like the others)"
+                "Accelerating (the speaker frames repeated venue changes as routine and unremarkable, said quickly)",
+                "Decelerating (the speaker slows down since a venue change affects everyone's travel plans)"
             ],
-            "correctAnswer": "Decelerating (in 'Pack your shoes, your jacket, your charger, and especially your passport.', the pace slows on the final item, the passport, since it's being saved for emphasis)",
+            "correctAnswer": "Accelerating (the speaker frames repeated venue changes as routine and unremarkable, said quickly)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'Pack your shoes, your jacket, your charger, and especially your passport.' Does the pace slow down specifically on the last item in the list?",
-            "explanation": "When the most important item in a list comes last, like the passport, the pace often slows down there to give it special emphasis.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "targetSpeed": 1.2,
+            "hint": "The speaker calls this basically expected. Quick, casual mention, or a careful one?",
+            "explanation": "Something described as routine and expected, even if technically a change, is mentioned quickly and lightly.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L111_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "I folded laundry, swept the floor, wiped the counters, and watered the plants.",
-            "textToSpeak": "I folded laundry, swept the floor, wiped the counters, and watered the plants.",
+            "word": "The manual says to update the firmware carefully, since interrupting it halfway can damage the device.",
+            "textToSpeak": "The manual says to update the firmware carefully, since interrupting it halfway can damage the device.",
             "options": [
-                "Decelerating (in 'I folded laundry, swept the floor, wiped the counters, and watered the plants.', the speaker slows down on each item to give it individual attention)",
-                "Accelerating (in 'I folded laundry, swept the floor, wiped the counters, and watered the plants.', the routine items (laundry, sweeping, wiping counters, and watering plants) are rushed through quickly since none of them stands out)"
+                "Accelerating (the speaker rushes since firmware updates are usually quick and automatic)",
+                "Decelerating (a warning about permanent damage slows the pace of the technical instruction)"
             ],
-            "correctAnswer": "Accelerating (in 'I folded laundry, swept the floor, wiped the counters, and watered the plants.', the routine items (laundry, sweeping, wiping counters, and watering plants) are rushed through quickly since none of them stands out)",
+            "correctAnswer": "Decelerating (a warning about permanent damage slows the pace of the technical instruction)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 1.36,
-            "hint": "Listen to 'I folded laundry, swept the floor, wiped the counters, and watered the plants.' Are the listed items rushed through quickly, or given individual attention?",
-            "explanation": "Routine, unremarkable items in a list, like laundry, sweeping, wiping counters, and watering plants, are usually rushed through quickly because none of them needs individual emphasis.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "targetSpeed": 0.72,
+            "hint": "Interrupting this could damage the device. Quick instruction, or a careful one?",
+            "explanation": "Technical instructions warning against permanent damage are given slowly so the careful process is actually followed.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L112_Q1",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Ready, set, go, papers down!",
-            "textToSpeak": "Ready, set, go, papers down!",
+            "word": "The smoke detector's beeping non-stop and I genuinely can't tell where the sound's coming from!",
+            "textToSpeak": "The smoke detector's beeping non-stop and I genuinely can't tell where the sound's coming from!",
             "options": [
-                "Decelerating (in 'Ready, set, go, papers down!', the speaker slows down to carefully announce each number)",
-                "Accelerating (in 'Ready, set, go, papers down!', the countdown speeds up toward papers going down, building momentum)"
+                "Decelerating (the speaker slows down to methodically check each room one at a time)",
+                "Accelerating (an ongoing, unresolved alarm creates urgency that speeds up the description)"
             ],
-            "correctAnswer": "Accelerating (in 'Ready, set, go, papers down!', the countdown speeds up toward papers going down, building momentum)",
+            "correctAnswer": "Accelerating (an ongoing, unresolved alarm creates urgency that speeds up the description)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 1.48,
-            "hint": "Listen to 'Ready, set, go, papers down!' Does the countdown speed up as it nears the end?",
-            "explanation": "Countdowns like this one accelerate toward papers going down, building momentum and excitement as the final moment approaches.",
+            "targetSpeed": 1.31,
+            "hint": "The alarm keeps going and the source is unclear. Urgent tone, or a calm, methodical check?",
+            "explanation": "An ongoing alarm with an unknown cause creates real tension, speeding up how the situation is described.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -80,17 +80,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Study your notes, the textbook, old quizzes, and especially last year's exam.",
-            "textToSpeak": "Study your notes, the textbook, old quizzes, and especially last year's exam.",
+            "word": "The consultant wants to go through your family history slowly, since a few details really matter here.",
+            "textToSpeak": "The consultant wants to go through your family history slowly, since a few details really matter here.",
             "options": [
-                "Decelerating (in 'Study your notes, the textbook, old quizzes, and especially last year's exam.', the pace slows on the final item, last year's exam, since it's being saved for emphasis)",
-                "Accelerating (in 'Study your notes, the textbook, old quizzes, and especially last year's exam.', the speaker rushes through the final item just like the others)"
+                "Accelerating (the speaker rushes since family history questions are usually just a formality)",
+                "Decelerating (a request framed as detail-sensitive slows the pace of the medical discussion)"
             ],
-            "correctAnswer": "Decelerating (in 'Study your notes, the textbook, old quizzes, and especially last year's exam.', the pace slows on the final item, last year's exam, since it's being saved for emphasis)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'Study your notes, the textbook, old quizzes, and especially last year's exam.' Does the pace slow down specifically on the last item in the list?",
-            "explanation": "When the most important item in a list comes last, like last year's exam, the pace often slows down there to give it special emphasis.",
+            "correctAnswer": "Decelerating (a request framed as detail-sensitive slows the pace of the medical discussion)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.74,
+            "hint": "A few details here really matter. Quick questions, or a careful discussion?",
+            "explanation": "A request explicitly described as detail-sensitive is carried out slowly so nothing important is missed.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -98,17 +98,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "I sharpened pencils, organized folders, labeled notebooks, and packed my bag.",
-            "textToSpeak": "I sharpened pencils, organized folders, labeled notebooks, and packed my bag.",
+            "word": "Someone just told me they saw your ex at the party, thought you'd want to know right away!",
+            "textToSpeak": "Someone just told me they saw your ex at the party, thought you'd want to know right away!",
             "options": [
-                "Decelerating (in 'I sharpened pencils, organized folders, labeled notebooks, and packed my bag.', the speaker slows down on each item to give it individual attention)",
-                "Accelerating (in 'I sharpened pencils, organized folders, labeled notebooks, and packed my bag.', the routine items (pencils, folders, notebooks, and packing) are rushed through quickly since none of them stands out)"
+                "Accelerating (news the speaker frames as urgent and personal speeds up the delivery)",
+                "Decelerating (the speaker slows down to describe exactly what the ex was wearing)"
             ],
-            "correctAnswer": "Accelerating (in 'I sharpened pencils, organized folders, labeled notebooks, and packed my bag.', the routine items (pencils, folders, notebooks, and packing) are rushed through quickly since none of them stands out)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 1.36,
-            "hint": "Listen to 'I sharpened pencils, organized folders, labeled notebooks, and packed my bag.' Are the listed items rushed through quickly, or given individual attention?",
-            "explanation": "Routine, unremarkable items in a list, like pencils, folders, notebooks, and packing, are usually rushed through quickly because none of them needs individual emphasis.",
+            "correctAnswer": "Accelerating (news the speaker frames as urgent and personal speeds up the delivery)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.26,
+            "hint": "The speaker wanted you to know 'right away'. Urgent delivery, or a slow, detailed description?",
+            "explanation": "News explicitly passed on as something you'd want to know right away is delivered quickly, matching that urgency.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -116,17 +116,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Ready, set, go, send the proposal!",
-            "textToSpeak": "Ready, set, go, send the proposal!",
+            "word": "Our bags didn't make it onto the connecting flight and we need to file a report before we leave the airport!",
+            "textToSpeak": "Our bags didn't make it onto the connecting flight and we need to file a report before we leave the airport!",
             "options": [
-                "Decelerating (in 'Ready, set, go, send the proposal!', the speaker slows down to carefully announce each number)",
-                "Accelerating (in 'Ready, set, go, send the proposal!', the countdown speeds up toward sending the proposal, building momentum)"
+                "Decelerating (the speaker slows down to explain exactly how the bags might have been missed)",
+                "Accelerating (a problem with a real deadline attached speeds up the urgent instruction)"
             ],
-            "correctAnswer": "Accelerating (in 'Ready, set, go, send the proposal!', the countdown speeds up toward sending the proposal, building momentum)",
+            "correctAnswer": "Accelerating (a problem with a real deadline attached speeds up the urgent instruction)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 1.48,
-            "hint": "Listen to 'Ready, set, go, send the proposal!' Does the countdown speed up as it nears the end?",
-            "explanation": "Countdowns like this one accelerate toward sending the proposal, building momentum and excitement as the final moment approaches.",
+            "targetSpeed": 1.29,
+            "hint": "This report must be filed before leaving. Urgent instruction, or a slow explanation of the mix-up?",
+            "explanation": "A problem with a real, immediate deadline attached speeds up the instruction to act before it's too late.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -134,35 +134,35 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Check the figures, the formatting, the typos, and especially the final total.",
-            "textToSpeak": "Check the figures, the formatting, the typos, and especially the final total.",
+            "word": "Someone accidentally sent that internal email to the entire client list instead of just the team!",
+            "textToSpeak": "Someone accidentally sent that internal email to the entire client list instead of just the team!",
             "options": [
-                "Decelerating (in 'Check the figures, the formatting, the typos, and especially the final total.', the pace slows on the final item, the final total, since it's being saved for emphasis)",
-                "Accelerating (in 'Check the figures, the formatting, the typos, and especially the final total.', the speaker rushes through the final item just like the others)"
+                "Decelerating (the speaker slows down to figure out exactly who clicked send)",
+                "Accelerating (a serious, spreading mistake speeds up the urgent alert)"
             ],
-            "correctAnswer": "Decelerating (in 'Check the figures, the formatting, the typos, and especially the final total.', the pace slows on the final item, the final total, since it's being saved for emphasis)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'Check the figures, the formatting, the typos, and especially the final total.' Does the pace slow down specifically on the last item in the list?",
-            "explanation": "When the most important item in a list comes last, like the final total, the pace often slows down there to give it special emphasis.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (a serious, spreading mistake speeds up the urgent alert)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.34,
+            "hint": "This mistake is already spreading. Urgent alert, or a slow search for who's responsible?",
+            "explanation": "A mistake that's already reached the wrong audience creates real urgency, speeding up the alert to respond fast.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L113_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "I answered emails, filed reports, updated the spreadsheet, and tidied my desk.",
-            "textToSpeak": "I answered emails, filed reports, updated the spreadsheet, and tidied my desk.",
+            "word": "Apparently they've moved tomorrow's assembly to first thing, nobody really knows why, but that's the update.",
+            "textToSpeak": "Apparently they've moved tomorrow's assembly to first thing, nobody really knows why, but that's the update.",
             "options": [
-                "Decelerating (in 'I answered emails, filed reports, updated the spreadsheet, and tidied my desk.', the speaker slows down on each item to give it individual attention)",
-                "Accelerating (in 'I answered emails, filed reports, updated the spreadsheet, and tidied my desk.', the routine items (emails, reports, the spreadsheet, and tidying) are rushed through quickly since none of them stands out)"
+                "Accelerating (a same-day schedule change is passed along quickly so people can adjust in time)",
+                "Decelerating (the speaker slows down to investigate exactly why the assembly was moved)"
             ],
-            "correctAnswer": "Accelerating (in 'I answered emails, filed reports, updated the spreadsheet, and tidied my desk.', the routine items (emails, reports, the spreadsheet, and tidying) are rushed through quickly since none of them stands out)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 1.36,
-            "hint": "Listen to 'I answered emails, filed reports, updated the spreadsheet, and tidied my desk.' Are the listed items rushed through quickly, or given individual attention?",
-            "explanation": "Routine, unremarkable items in a list, like emails, reports, the spreadsheet, and tidying, are usually rushed through quickly because none of them needs individual emphasis.",
+            "correctAnswer": "Accelerating (a same-day schedule change is passed along quickly so people can adjust in time)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.22,
+            "hint": "This changes tomorrow's plans and needs to reach people fast. Quick update, or a slow investigation?",
+            "explanation": "A schedule change that affects tomorrow is passed along quickly so everyone has time to adjust.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -170,17 +170,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Ready, set, go, the taxi's here!",
-            "textToSpeak": "Ready, set, go, the taxi's here!",
+            "word": "He mentioned some chest tightness and now he's gone quiet and a bit pale, something's not right!",
+            "textToSpeak": "He mentioned some chest tightness and now he's gone quiet and a bit pale, something's not right!",
             "options": [
-                "Decelerating (in 'Ready, set, go, the taxi's here!', the speaker slows down to carefully announce each number)",
-                "Accelerating (in 'Ready, set, go, the taxi's here!', the countdown speeds up toward the taxi arriving, building momentum)"
+                "Accelerating (worsening, concerning symptoms speed up the urgent alert)",
+                "Decelerating (the speaker calmly lists everything he's eaten or done today)"
             ],
-            "correctAnswer": "Accelerating (in 'Ready, set, go, the taxi's here!', the countdown speeds up toward the taxi arriving, building momentum)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 1.48,
-            "hint": "Listen to 'Ready, set, go, the taxi's here!' Does the countdown speed up as it nears the end?",
-            "explanation": "Countdowns like this one accelerate toward the taxi arriving, building momentum and excitement as the final moment approaches.",
+            "correctAnswer": "Accelerating (worsening, concerning symptoms speed up the urgent alert)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.4,
+            "hint": "His symptoms are changing for the worse. Urgent alert, or a calm list of his day?",
+            "explanation": "Symptoms that are visibly worsening prompt an urgent alert rather than a calm rundown of the day.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -188,17 +188,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Check your ticket, your seat number, your gate, and especially your boarding time.",
-            "textToSpeak": "Check your ticket, your seat number, your gate, and especially your boarding time.",
+            "word": "The assistant recommended trying the item on slowly under proper lighting, since online photos can be misleading.",
+            "textToSpeak": "The assistant recommended trying the item on slowly under proper lighting, since online photos can be misleading.",
             "options": [
-                "Decelerating (in 'Check your ticket, your seat number, your gate, and especially your boarding time.', the pace slows on the final item, the boarding time, since it's being saved for emphasis)",
-                "Accelerating (in 'Check your ticket, your seat number, your gate, and especially your boarding time.', the speaker rushes through the final item just like the others)"
+                "Accelerating (the speaker rushes since trying something on takes only a moment either way)",
+                "Decelerating (practical advice about avoiding a mismatch is delivered at a slow, careful pace)"
             ],
-            "correctAnswer": "Decelerating (in 'Check your ticket, your seat number, your gate, and especially your boarding time.', the pace slows on the final item, the boarding time, since it's being saved for emphasis)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'Check your ticket, your seat number, your gate, and especially your boarding time.' Does the pace slow down specifically on the last item in the list?",
-            "explanation": "When the most important item in a list comes last, like the boarding time, the pace often slows down there to give it special emphasis.",
+            "correctAnswer": "Decelerating (practical advice about avoiding a mismatch is delivered at a slow, careful pace)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.71,
+            "hint": "This advice is about avoiding a costly mismatch. Quick mention, or a careful one?",
+            "explanation": "Practical advice aimed at avoiding a mistake is delivered slowly, giving the caution its proper weight.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -206,71 +206,71 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "I checked the weather, packed my bag, printed the itinerary, and locked the house.",
-            "textToSpeak": "I checked the weather, packed my bag, printed the itinerary, and locked the house.",
+            "word": "The mediator suggested writing it down slowly first, rather than saying it in the heat of the moment.",
+            "textToSpeak": "The mediator suggested writing it down slowly first, rather than saying it in the heat of the moment.",
             "options": [
-                "Decelerating (in 'I checked the weather, packed my bag, printed the itinerary, and locked the house.', the speaker slows down on each item to give it individual attention)",
-                "Accelerating (in 'I checked the weather, packed my bag, printed the itinerary, and locked the house.', the routine items (weather, packing, the itinerary, and locking up) are rushed through quickly since none of them stands out)"
+                "Decelerating (advice about pausing before an emotional reaction is itself delivered slowly)",
+                "Accelerating (the speaker rushes since writing things down is usually just a quick note)"
             ],
-            "correctAnswer": "Accelerating (in 'I checked the weather, packed my bag, printed the itinerary, and locked the house.', the routine items (weather, packing, the itinerary, and locking up) are rushed through quickly since none of them stands out)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 1.36,
-            "hint": "Listen to 'I checked the weather, packed my bag, printed the itinerary, and locked the house.' Are the listed items rushed through quickly, or given individual attention?",
-            "explanation": "Routine, unremarkable items in a list, like weather, packing, the itinerary, and locking up, are usually rushed through quickly because none of them needs individual emphasis.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "correctAnswer": "Decelerating (advice about pausing before an emotional reaction is itself delivered slowly)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.73,
+            "hint": "This advice is literally about slowing down first. Quick delivery, or a slow, considered one?",
+            "explanation": "Advice about pausing before reacting emotionally is delivered in that same slow, considered way.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L115_Q1",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Ready, set, go, race to the car!",
-            "textToSpeak": "Ready, set, go, race to the car!",
+            "word": "HR needs the exact start date for your leave, since it affects how your pay is calculated.",
+            "textToSpeak": "HR needs the exact start date for your leave, since it affects how your pay is calculated.",
             "options": [
-                "Accelerating (in 'Ready, set, go, race to the car!', the countdown speeds up toward racing to the car, building momentum)",
-                "Decelerating (in 'Ready, set, go, race to the car!', the speaker slows down to carefully announce each number)"
+                "Decelerating (a detail tied directly to pay slows the pace so it's given correctly)",
+                "Accelerating (the speaker rushes since start dates are usually flexible and easy to change later)"
             ],
-            "correctAnswer": "Accelerating (in 'Ready, set, go, race to the car!', the countdown speeds up toward racing to the car, building momentum)",
+            "correctAnswer": "Decelerating (a detail tied directly to pay slows the pace so it's given correctly)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.48,
-            "hint": "Listen to 'Ready, set, go, race to the car!' Does the countdown speed up as it nears the end?",
-            "explanation": "Countdowns like this one accelerate toward racing to the car, building momentum and excitement as the final moment approaches.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "targetSpeed": 0.7,
+            "hint": "This date affects your actual pay. Quick mention, or a careful one?",
+            "explanation": "Details that directly affect someone's pay are given slowly and clearly to avoid a real mistake.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L115_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Bring drinks, snacks, games, and especially the birthday gift.",
-            "textToSpeak": "Bring drinks, snacks, games, and especially the birthday gift.",
+            "word": "Someone just noticed the whole database went offline, and support still hasn't replied to the ticket!",
+            "textToSpeak": "Someone just noticed the whole database went offline, and support still hasn't replied to the ticket!",
             "options": [
-                "Accelerating (in 'Bring drinks, snacks, games, and especially the birthday gift.', the speaker rushes through the final item just like the others)",
-                "Decelerating (in 'Bring drinks, snacks, games, and especially the birthday gift.', the pace slows on the final item, the birthday gift, since it's being saved for emphasis)"
+                "Accelerating (a major outage with no response yet speeds up the urgent alert)",
+                "Decelerating (the speaker slows down to explain how the support ticket system works)"
             ],
-            "correctAnswer": "Decelerating (in 'Bring drinks, snacks, games, and especially the birthday gift.', the pace slows on the final item, the birthday gift, since it's being saved for emphasis)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'Bring drinks, snacks, games, and especially the birthday gift.' Does the pace slow down specifically on the last item in the list?",
-            "explanation": "When the most important item in a list comes last, like the birthday gift, the pace often slows down there to give it special emphasis.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (a major outage with no response yet speeds up the urgent alert)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.31,
+            "hint": "The database is down and no one's responded yet. Urgent alert, or a calm technical explanation?",
+            "explanation": "A major outage that's still unresolved creates real pressure, speeding up the alert to push for a response.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L115_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "I set the table, lit candles, poured drinks, and called everyone in.",
-            "textToSpeak": "I set the table, lit candles, poured drinks, and called everyone in.",
+            "word": "Oh, and apparently there's a surprise guest performer tonight, everyone's rushing to get a spot near the front!",
+            "textToSpeak": "Oh, and apparently there's a surprise guest performer tonight, everyone's rushing to get a spot near the front!",
             "options": [
-                "Accelerating (in 'I set the table, lit candles, poured drinks, and called everyone in.', the routine items (setting the table, candles, drinks, and calling everyone) are rushed through quickly since none of them stands out)",
-                "Decelerating (in 'I set the table, lit candles, poured drinks, and called everyone in.', the speaker slows down on each item to give it individual attention)"
+                "Decelerating (the speaker slows down to guess who the surprise performer might be)",
+                "Accelerating (an exciting, time-sensitive opportunity speeds up the excited alert)"
             ],
-            "correctAnswer": "Accelerating (in 'I set the table, lit candles, poured drinks, and called everyone in.', the routine items (setting the table, candles, drinks, and calling everyone) are rushed through quickly since none of them stands out)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.36,
-            "hint": "Listen to 'I set the table, lit candles, poured drinks, and called everyone in.' Are the listed items rushed through quickly, or given individual attention?",
-            "explanation": "Routine, unremarkable items in a list, like setting the table, candles, drinks, and calling everyone, are usually rushed through quickly because none of them needs individual emphasis.",
+            "correctAnswer": "Accelerating (an exciting, time-sensitive opportunity speeds up the excited alert)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.25,
+            "hint": "People are already rushing for spots. Fast, excited alert, or a slow guessing game?",
+            "explanation": "An exciting opportunity that people are already rushing for is shared quickly to help others catch up.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -278,17 +278,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Ready, set, go, the sale just started!",
-            "textToSpeak": "Ready, set, go, the sale just started!",
+            "word": "The upstairs neighbor's bathtub is overflowing and it's already dripping through our light fixture!",
+            "textToSpeak": "The upstairs neighbor's bathtub is overflowing and it's already dripping through our light fixture!",
             "options": [
-                "Accelerating (in 'Ready, set, go, the sale just started!', the countdown speeds up toward the sale starting, building momentum)",
-                "Decelerating (in 'Ready, set, go, the sale just started!', the speaker slows down to carefully announce each number)"
+                "Accelerating (visible, spreading water damage speeds up the urgent warning)",
+                "Decelerating (the speaker slows down to guess how long the tub's been overflowing)"
             ],
-            "correctAnswer": "Accelerating (in 'Ready, set, go, the sale just started!', the countdown speeds up toward the sale starting, building momentum)",
+            "correctAnswer": "Accelerating (visible, spreading water damage speeds up the urgent warning)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.48,
-            "hint": "Listen to 'Ready, set, go, the sale just started!' Does the countdown speed up as it nears the end?",
-            "explanation": "Countdowns like this one accelerate toward the sale starting, building momentum and excitement as the final moment approaches.",
+            "targetSpeed": 1.37,
+            "hint": "Water is already coming through the light fixture. Urgent warning, or a slow guess at timing?",
+            "explanation": "Visible damage spreading in real time is a genuine emergency, prompting an instant warning.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -296,35 +296,35 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Compare the price, the quality, the reviews, and especially the return policy.",
-            "textToSpeak": "Compare the price, the quality, the reviews, and especially the return policy.",
+            "word": "Someone just told me they're already engaged, after only knowing each other for two months!",
+            "textToSpeak": "Someone just told me they're already engaged, after only knowing each other for two months!",
             "options": [
-                "Accelerating (in 'Compare the price, the quality, the reviews, and especially the return policy.', the speaker rushes through the final item just like the others)",
-                "Decelerating (in 'Compare the price, the quality, the reviews, and especially the return policy.', the pace slows on the final item, the return policy, since it's being saved for emphasis)"
+                "Decelerating (the speaker slows down to calmly consider whether the relationship will actually last)",
+                "Accelerating (surprising, exciting news speeds up the delivery out of genuine excitement)"
             ],
-            "correctAnswer": "Decelerating (in 'Compare the price, the quality, the reviews, and especially the return policy.', the pace slows on the final item, the return policy, since it's being saved for emphasis)",
+            "correctAnswer": "Accelerating (surprising, exciting news speeds up the delivery out of genuine excitement)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'Compare the price, the quality, the reviews, and especially the return policy.' Does the pace slow down specifically on the last item in the list?",
-            "explanation": "When the most important item in a list comes last, like the return policy, the pace often slows down there to give it special emphasis.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "targetSpeed": 1.28,
+            "hint": "This news is surprising and exciting. Fast, excited delivery, or a slow, considered opinion?",
+            "explanation": "Surprising, exciting news like this is typically shared quickly, carried along by genuine excitement.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L116_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "I grabbed a basket, walked the aisles, checked my list, and paid at the till.",
-            "textToSpeak": "I grabbed a basket, walked the aisles, checked my list, and paid at the till.",
+            "word": "Our shuttle driver just said there's been a schedule mix-up and we need to switch buses right now!",
+            "textToSpeak": "Our shuttle driver just said there's been a schedule mix-up and we need to switch buses right now!",
             "options": [
-                "Accelerating (in 'I grabbed a basket, walked the aisles, checked my list, and paid at the till.', the routine items (the basket, the aisles, the list, and paying) are rushed through quickly since none of them stands out)",
-                "Decelerating (in 'I grabbed a basket, walked the aisles, checked my list, and paid at the till.', the speaker slows down on each item to give it individual attention)"
+                "Accelerating (an immediate instruction to switch buses speeds up the urgent relay)",
+                "Decelerating (the speaker slows down to ask the driver exactly what caused the mix-up)"
             ],
-            "correctAnswer": "Accelerating (in 'I grabbed a basket, walked the aisles, checked my list, and paid at the till.', the routine items (the basket, the aisles, the list, and paying) are rushed through quickly since none of them stands out)",
+            "correctAnswer": "Accelerating (an immediate instruction to switch buses speeds up the urgent relay)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.36,
-            "hint": "Listen to 'I grabbed a basket, walked the aisles, checked my list, and paid at the till.' Are the listed items rushed through quickly, or given individual attention?",
-            "explanation": "Routine, unremarkable items in a list, like the basket, the aisles, the list, and paying, are usually rushed through quickly because none of them needs individual emphasis.",
+            "targetSpeed": 1.32,
+            "hint": "This needs to happen right now. Urgent relay, or a slow, curious question?",
+            "explanation": "An instruction that needs immediate action is relayed quickly, without pausing to ask why.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -332,35 +332,35 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Ready, set, go, serve it up!",
-            "textToSpeak": "Ready, set, go, serve it up!",
+            "word": "The doctor wants to explain the test results slowly, since there are a few things worth understanding properly.",
+            "textToSpeak": "The doctor wants to explain the test results slowly, since there are a few things worth understanding properly.",
             "options": [
-                "Accelerating (in 'Ready, set, go, serve it up!', the countdown speeds up toward serving it up, building momentum)",
-                "Decelerating (in 'Ready, set, go, serve it up!', the speaker slows down to carefully announce each number)"
+                "Accelerating (the speaker rushes since test results are usually just a simple yes or no)",
+                "Decelerating (a considered, detailed explanation is delivered at a slow, careful pace)"
             ],
-            "correctAnswer": "Accelerating (in 'Ready, set, go, serve it up!', the countdown speeds up toward serving it up, building momentum)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.48,
-            "hint": "Listen to 'Ready, set, go, serve it up!' Does the countdown speed up as it nears the end?",
-            "explanation": "Countdowns like this one accelerate toward serving it up, building momentum and excitement as the final moment approaches.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "correctAnswer": "Decelerating (a considered, detailed explanation is delivered at a slow, careful pace)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.71,
+            "hint": "A few details here are worth understanding properly. Quick summary, or a careful explanation?",
+            "explanation": "Explanations described as needing proper understanding are delivered slowly, giving the details room to land.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L117_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Check the heat, the timing, the seasoning, and especially the final taste.",
-            "textToSpeak": "Check the heat, the timing, the seasoning, and especially the final taste.",
+            "word": "Legal asked us to go through this clause slowly, since it changes who's actually liable if something goes wrong.",
+            "textToSpeak": "Legal asked us to go through this clause slowly, since it changes who's actually liable if something goes wrong.",
             "options": [
-                "Accelerating (in 'Check the heat, the timing, the seasoning, and especially the final taste.', the speaker rushes through the final item just like the others)",
-                "Decelerating (in 'Check the heat, the timing, the seasoning, and especially the final taste.', the pace slows on the final item, the final taste, since it's being saved for emphasis)"
+                "Accelerating (the speaker rushes since most clauses are just standard legal language)",
+                "Decelerating (a clause affecting legal responsibility slows the pace of the review)"
             ],
-            "correctAnswer": "Decelerating (in 'Check the heat, the timing, the seasoning, and especially the final taste.', the pace slows on the final item, the final taste, since it's being saved for emphasis)",
+            "correctAnswer": "Decelerating (a clause affecting legal responsibility slows the pace of the review)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'Check the heat, the timing, the seasoning, and especially the final taste.' Does the pace slow down specifically on the last item in the list?",
-            "explanation": "When the most important item in a list comes last, like the final taste, the pace often slows down there to give it special emphasis.",
+            "targetSpeed": 0.68,
+            "hint": "This clause changes who's responsible. Quick review, or a careful one?",
+            "explanation": "Clauses that affect legal responsibility are reviewed slowly and carefully, given what's at stake.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -368,71 +368,71 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "I chopped the onions, diced the peppers, sliced the meat, and heated the pan.",
-            "textToSpeak": "I chopped the onions, diced the peppers, sliced the meat, and heated the pan.",
+            "word": "Take some time to explain the divorce slowly, rather than rushing through it in one conversation.",
+            "textToSpeak": "Take some time to explain the divorce slowly, rather than rushing through it in one conversation.",
             "options": [
-                "Accelerating (in 'I chopped the onions, diced the peppers, sliced the meat, and heated the pan.', the routine items (onions, peppers, meat, and heating the pan) are rushed through quickly since none of them stands out)",
-                "Decelerating (in 'I chopped the onions, diced the peppers, sliced the meat, and heated the pan.', the speaker slows down on each item to give it individual attention)"
+                "Decelerating (advice about a major, sensitive family change is itself delivered slowly)",
+                "Accelerating (the speaker rushes since it's better to just get difficult news over with quickly)"
             ],
-            "correctAnswer": "Accelerating (in 'I chopped the onions, diced the peppers, sliced the meat, and heated the pan.', the routine items (onions, peppers, meat, and heating the pan) are rushed through quickly since none of them stands out)",
+            "correctAnswer": "Decelerating (advice about a major, sensitive family change is itself delivered slowly)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.36,
-            "hint": "Listen to 'I chopped the onions, diced the peppers, sliced the meat, and heated the pan.' Are the listed items rushed through quickly, or given individual attention?",
-            "explanation": "Routine, unremarkable items in a list, like onions, peppers, meat, and heating the pan, are usually rushed through quickly because none of them needs individual emphasis.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "targetSpeed": 0.74,
+            "hint": "This advice is literally about not rushing. Quick delivery, or a slow, careful one?",
+            "explanation": "Advice about handling a major family change slowly is delivered in that same unhurried, careful way.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L118_Q1",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Ready, set, go, hit deploy!",
-            "textToSpeak": "Ready, set, go, hit deploy!",
+            "word": "The counselor wants to go through your options slowly, since this choice affects your next three years.",
+            "textToSpeak": "The counselor wants to go through your options slowly, since this choice affects your next three years.",
             "options": [
-                "Accelerating (in 'Ready, set, go, hit deploy!', the countdown speeds up toward hitting deploy, building momentum)",
-                "Decelerating (in 'Ready, set, go, hit deploy!', the speaker slows down to carefully announce each number)"
+                "Accelerating (the speaker rushes since most students already know which option they'll pick)",
+                "Decelerating (a decision with long-term consequences slows the pace of the discussion)"
             ],
-            "correctAnswer": "Accelerating (in 'Ready, set, go, hit deploy!', the countdown speeds up toward hitting deploy, building momentum)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.48,
-            "hint": "Listen to 'Ready, set, go, hit deploy!' Does the countdown speed up as it nears the end?",
-            "explanation": "Countdowns like this one accelerate toward hitting deploy, building momentum and excitement as the final moment approaches.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "correctAnswer": "Decelerating (a decision with long-term consequences slows the pace of the discussion)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.72,
+            "hint": "This choice affects the next three years. Quick chat, or a careful discussion?",
+            "explanation": "Decisions with real, long-term consequences are discussed slowly so they're given proper thought.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L118_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Check the code, the tests, the logs, and especially the final output.",
-            "textToSpeak": "Check the code, the tests, the logs, and especially the final output.",
+            "word": "Someone just spotted a charge on the account that nobody in the family actually recognizes!",
+            "textToSpeak": "Someone just spotted a charge on the account that nobody in the family actually recognizes!",
             "options": [
-                "Accelerating (in 'Check the code, the tests, the logs, and especially the final output.', the speaker rushes through the final item just like the others)",
-                "Decelerating (in 'Check the code, the tests, the logs, and especially the final output.', the pace slows on the final item, the final output, since it's being saved for emphasis)"
+                "Decelerating (the speaker slows down to review the entire month's spending history)",
+                "Accelerating (a suspicious, unexplained charge speeds up the urgent alert)"
             ],
-            "correctAnswer": "Decelerating (in 'Check the code, the tests, the logs, and especially the final output.', the pace slows on the final item, the final output, since it's being saved for emphasis)",
+            "correctAnswer": "Accelerating (a suspicious, unexplained charge speeds up the urgent alert)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'Check the code, the tests, the logs, and especially the final output.' Does the pace slow down specifically on the last item in the list?",
-            "explanation": "When the most important item in a list comes last, like the final output, the pace often slows down there to give it special emphasis.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "targetSpeed": 1.3,
+            "hint": "Nobody recognizes this charge. Urgent alert, or a slow review of spending?",
+            "explanation": "An unexplained charge that could signal fraud is flagged quickly rather than buried in a slow review.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L118_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "I opened the laptop, logged in, checked emails, and opened the report.",
-            "textToSpeak": "I opened the laptop, logged in, checked emails, and opened the report.",
+            "word": "Oh, and apparently they've restocked that jacket everyone wanted, it'll probably sell out again within the hour!",
+            "textToSpeak": "Oh, and apparently they've restocked that jacket everyone wanted, it'll probably sell out again within the hour!",
             "options": [
-                "Accelerating (in 'I opened the laptop, logged in, checked emails, and opened the report.', the routine items (the laptop, logging in, emails, and the report) are rushed through quickly since none of them stands out)",
-                "Decelerating (in 'I opened the laptop, logged in, checked emails, and opened the report.', the speaker slows down on each item to give it individual attention)"
+                "Accelerating (limited stock disappearing fast speeds up the urgent, excited alert)",
+                "Decelerating (the speaker slows down to compare it with similar jackets first)"
             ],
-            "correctAnswer": "Accelerating (in 'I opened the laptop, logged in, checked emails, and opened the report.', the routine items (the laptop, logging in, emails, and the report) are rushed through quickly since none of them stands out)",
+            "correctAnswer": "Accelerating (limited stock disappearing fast speeds up the urgent, excited alert)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.36,
-            "hint": "Listen to 'I opened the laptop, logged in, checked emails, and opened the report.' Are the listed items rushed through quickly, or given individual attention?",
-            "explanation": "Routine, unremarkable items in a list, like the laptop, logging in, emails, and the report, are usually rushed through quickly because none of them needs individual emphasis.",
+            "targetSpeed": 1.27,
+            "hint": "This will probably sell out within the hour. Urgent alert, or a slow comparison?",
+            "explanation": "A limited restock that's likely to disappear fast is shared quickly to help others act in time.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -440,71 +440,71 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Ready, set, go, start the treadmill!",
-            "textToSpeak": "Ready, set, go, start the treadmill!",
+            "word": "Immigration wants the exact address of where you're staying, not just the name of the city.",
+            "textToSpeak": "Immigration wants the exact address of where you're staying, not just the name of the city.",
             "options": [
-                "Accelerating (in 'Ready, set, go, start the treadmill!', the countdown speeds up toward starting the treadmill, building momentum)",
-                "Decelerating (in 'Ready, set, go, start the treadmill!', the speaker slows down to carefully announce each number)"
+                "Decelerating (a precise official requirement slows the pace so it's given correctly)",
+                "Accelerating (the speaker rushes since city names are usually accepted as a general answer)"
             ],
-            "correctAnswer": "Accelerating (in 'Ready, set, go, start the treadmill!', the countdown speeds up toward starting the treadmill, building momentum)",
+            "correctAnswer": "Decelerating (a precise official requirement slows the pace so it's given correctly)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.48,
-            "hint": "Listen to 'Ready, set, go, start the treadmill!' Does the countdown speed up as it nears the end?",
-            "explanation": "Countdowns like this one accelerate toward starting the treadmill, building momentum and excitement as the final moment approaches.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "targetSpeed": 0.69,
+            "hint": "A general answer isn't enough here. Quick mention, or a careful one?",
+            "explanation": "Precise requirements from an official body are given slowly and clearly to avoid a real problem.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L119_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Note the symptoms, the duration, the severity, and especially any allergies.",
-            "textToSpeak": "Note the symptoms, the duration, the severity, and especially any allergies.",
+            "word": "Someone just noticed smoke coming from the neighbor's garage and nobody seems to be home!",
+            "textToSpeak": "Someone just noticed smoke coming from the neighbor's garage and nobody seems to be home!",
             "options": [
-                "Accelerating (in 'Note the symptoms, the duration, the severity, and especially any allergies.', the speaker rushes through the final item just like the others)",
-                "Decelerating (in 'Note the symptoms, the duration, the severity, and especially any allergies.', the pace slows on the final item, any allergies, since it's being saved for emphasis)"
+                "Accelerating (a visible fire risk with no one around to respond speeds up the urgent alert)",
+                "Decelerating (the speaker slows down to guess what might be stored in the garage)"
             ],
-            "correctAnswer": "Decelerating (in 'Note the symptoms, the duration, the severity, and especially any allergies.', the pace slows on the final item, any allergies, since it's being saved for emphasis)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'Note the symptoms, the duration, the severity, and especially any allergies.' Does the pace slow down specifically on the last item in the list?",
-            "explanation": "When the most important item in a list comes last, like any allergies, the pace often slows down there to give it special emphasis.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (a visible fire risk with no one around to respond speeds up the urgent alert)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.39,
+            "hint": "Smoke is visible and no one's home. Urgent alert, or a slow guessing game?",
+            "explanation": "A visible fire risk with nobody around to respond is a genuine emergency, prompting an instant alert.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L119_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "I checked his temperature, his pulse, his breathing, and wrote it all down.",
-            "textToSpeak": "I checked his temperature, his pulse, his breathing, and wrote it all down.",
+            "word": "The dentist wants to explain the procedure slowly, since a few patients find this particular step uncomfortable.",
+            "textToSpeak": "The dentist wants to explain the procedure slowly, since a few patients find this particular step uncomfortable.",
             "options": [
-                "Accelerating (in 'I checked his temperature, his pulse, his breathing, and wrote it all down.', the routine items (temperature, pulse, breathing, and writing it down) are rushed through quickly since none of them stands out)",
-                "Decelerating (in 'I checked his temperature, his pulse, his breathing, and wrote it all down.', the speaker slows down on each item to give it individual attention)"
+                "Accelerating (the speaker rushes since most dental procedures are actually quite routine)",
+                "Decelerating (a warning about possible discomfort slows the pace of the explanation)"
             ],
-            "correctAnswer": "Accelerating (in 'I checked his temperature, his pulse, his breathing, and wrote it all down.', the routine items (temperature, pulse, breathing, and writing it down) are rushed through quickly since none of them stands out)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.36,
-            "hint": "Listen to 'I checked his temperature, his pulse, his breathing, and wrote it all down.' Are the listed items rushed through quickly, or given individual attention?",
-            "explanation": "Routine, unremarkable items in a list, like temperature, pulse, breathing, and writing it down, are usually rushed through quickly because none of them needs individual emphasis.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "correctAnswer": "Decelerating (a warning about possible discomfort slows the pace of the explanation)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.73,
+            "hint": "Some patients find this step uncomfortable. Quick mention, or a careful explanation?",
+            "explanation": "Explanations that include a warning about discomfort are delivered slowly to properly prepare the patient.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L120_Q1",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Ready, set, go, curtains up!",
-            "textToSpeak": "Ready, set, go, curtains up!",
+            "word": "Someone just found a serious error in the numbers we already sent to the investors!",
+            "textToSpeak": "Someone just found a serious error in the numbers we already sent to the investors!",
             "options": [
-                "Accelerating (in 'Ready, set, go, curtains up!', the countdown speeds up toward the curtains going up, building momentum)",
-                "Decelerating (in 'Ready, set, go, curtains up!', the speaker slows down to carefully announce each number)"
+                "Accelerating (a serious error already sent to important people speeds up the urgent alert)",
+                "Decelerating (the speaker slows down to work out exactly how the error was made)"
             ],
-            "correctAnswer": "Accelerating (in 'Ready, set, go, curtains up!', the countdown speeds up toward the curtains going up, building momentum)",
+            "correctAnswer": "Accelerating (a serious error already sent to important people speeds up the urgent alert)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.48,
-            "hint": "Listen to 'Ready, set, go, curtains up!' Does the countdown speed up as it nears the end?",
-            "explanation": "Countdowns like this one accelerate toward the curtains going up, building momentum and excitement as the final moment approaches.",
+            "targetSpeed": 1.31,
+            "hint": "This has already reached the investors. Urgent alert, or a slow investigation?",
+            "explanation": "An error that's already reached important people creates real pressure, speeding up the alert to fix it.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -512,17 +512,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Check the lighting, the sound, the seating, and especially the final scene.",
-            "textToSpeak": "Check the lighting, the sound, the seating, and especially the final scene.",
+            "word": "The social worker suggested explaining it slowly, in words that actually match her age.",
+            "textToSpeak": "The social worker suggested explaining it slowly, in words that actually match her age.",
             "options": [
-                "Accelerating (in 'Check the lighting, the sound, the seating, and especially the final scene.', the speaker rushes through the final item just like the others)",
-                "Decelerating (in 'Check the lighting, the sound, the seating, and especially the final scene.', the pace slows on the final item, the final scene, since it's being saved for emphasis)"
+                "Accelerating (the speaker rushes since kids usually understand more than adults expect)",
+                "Decelerating (advice about age-appropriate, careful explanation is itself delivered slowly)"
             ],
-            "correctAnswer": "Decelerating (in 'Check the lighting, the sound, the seating, and especially the final scene.', the pace slows on the final item, the final scene, since it's being saved for emphasis)",
+            "correctAnswer": "Decelerating (advice about age-appropriate, careful explanation is itself delivered slowly)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.66,
-            "hint": "Listen to 'Check the lighting, the sound, the seating, and especially the final scene.' Does the pace slow down specifically on the last item in the list?",
-            "explanation": "When the most important item in a list comes last, like the final scene, the pace often slows down there to give it special emphasis.",
+            "targetSpeed": 0.72,
+            "hint": "This advice is about matching her age and going slowly. Quick delivery, or a careful one?",
+            "explanation": "Advice about explaining something carefully to a child is delivered in that same careful, unhurried way.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -530,17 +530,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "I bought popcorn, found a seat, silenced my phone, and settled in.",
-            "textToSpeak": "I bought popcorn, found a seat, silenced my phone, and settled in.",
+            "word": "Oh, and apparently they've added a midnight screening, tickets are already going fast!",
+            "textToSpeak": "Oh, and apparently they've added a midnight screening, tickets are already going fast!",
             "options": [
-                "Accelerating (in 'I bought popcorn, found a seat, silenced my phone, and settled in.', the routine items (popcorn, finding a seat, the phone, and settling in) are rushed through quickly since none of them stands out)",
-                "Decelerating (in 'I bought popcorn, found a seat, silenced my phone, and settled in.', the speaker slows down on each item to give it individual attention)"
+                "Accelerating (fast-selling, limited tickets speed up the urgent, excited alert)",
+                "Decelerating (the speaker slows down to describe what the midnight screening will include)"
             ],
-            "correctAnswer": "Accelerating (in 'I bought popcorn, found a seat, silenced my phone, and settled in.', the routine items (popcorn, finding a seat, the phone, and settling in) are rushed through quickly since none of them stands out)",
+            "correctAnswer": "Accelerating (fast-selling, limited tickets speed up the urgent, excited alert)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.36,
-            "hint": "Listen to 'I bought popcorn, found a seat, silenced my phone, and settled in.' Are the listed items rushed through quickly, or given individual attention?",
-            "explanation": "Routine, unremarkable items in a list, like popcorn, finding a seat, the phone, and settling in, are usually rushed through quickly because none of them needs individual emphasis.",
+            "targetSpeed": 1.26,
+            "hint": "Tickets are already going fast. Urgent alert, or a slow description?",
+            "explanation": "News about tickets that are already selling fast is shared quickly to help others act before they're gone.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         }
     ]

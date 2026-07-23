@@ -8,53 +8,53 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "I was calm at first, then the smoke detector blared, then everything went quiet again once I found it was just toast.",
-            "textToSpeak": "I was calm at first, then the smoke detector blared, then everything went quiet again once I found it was just toast.",
+            "word": "The fryer just started smoking more heavily than usual and the extractor fan clearly isn't keeping up, so someone needs to shut it down before it becomes a real problem.",
+            "textToSpeak": "The fryer just started smoking more heavily than usual and the extractor fan clearly isn't keeping up, so someone needs to shut it down before it becomes a real problem.",
             "options": [
-                "Decelerating (in 'I was calm at first, then the smoke detector blared, then everything went quiet again once I found it was just toast.', the pace starts calm, accelerates sharply at the blaring alarm, then decelerates back to calm once the false alarm is resolved)",
-                "Accelerating (in 'I was calm at first, then the smoke detector blared, then everything went quiet again once I found it was just toast.', the pace simply accelerates once and stays fast for the rest of the sentence)"
+                "Decelerating (the speaker slows down to figure out exactly what's causing the extra smoke)",
+                "Accelerating (worsening smoke from equipment is a real hazard that speeds up the urgent instruction)"
             ],
-            "correctAnswer": "Decelerating (in 'I was calm at first, then the smoke detector blared, then everything went quiet again once I found it was just toast.', the pace starts calm, accelerates sharply at the blaring alarm, then decelerates back to calm once the false alarm is resolved)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.72,
-            "hint": "Listen to the full contour of 'I was calm at first, then the smoke detector blared, then everything went quiet again once I found it was just toast.' How many separate pacing shifts can you track?",
-            "explanation": "This sentence has a complex pacing contour: the pace starts calm, accelerates sharply at the blaring alarm, then decelerates back to calm once the false alarm is resolved. Expert listening means tracking every shift, not just forming one overall impression.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (worsening smoke from equipment is a real hazard that speeds up the urgent instruction)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.21,
+            "hint": "This is worsening right now. Urgent instruction, or a slow investigation into the cause?",
+            "explanation": "Worsening smoke from kitchen equipment is treated as a genuine hazard, prompting an instant instruction to act.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L191_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "I'll just grab a quick snack, and then, well, maybe sit down for a bit.",
-            "textToSpeak": "I'll just grab a quick snack, and then, well, maybe sit down for a bit.",
+            "word": "The neighbor who never so much as raises his voice was just heard shouting through the wall, which is usually the point where checking in stops being optional.",
+            "textToSpeak": "The neighbor who never so much as raises his voice was just heard shouting through the wall, which is usually the point where checking in stops being optional.",
             "options": [
-                "Accelerating (in 'I'll just grab a quick snack, and then, well, maybe sit down for a bit.', every word is given exactly the same length and stress, producing a flat, robotic delivery)",
-                "Decelerating (in 'I'll just grab a quick snack, and then, well, maybe sit down for a bit.', 'just grab a quick snack' moves briskly, while the hesitant 'well, maybe' noticeably slows the pace, creating natural, varied pacing)"
+                "Decelerating (the speaker slows down to consider whether it's really any of their business)",
+                "Accelerating (wildly out-of-character behavior speeds up the urgent instinct to check in)"
             ],
-            "correctAnswer": "Decelerating (in 'I'll just grab a quick snack, and then, well, maybe sit down for a bit.', 'just grab a quick snack' moves briskly, while the hesitant 'well, maybe' noticeably slows the pace, creating natural, varied pacing)",
+            "correctAnswer": "Accelerating (wildly out-of-character behavior speeds up the urgent instinct to check in)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to 'I'll just grab a quick snack, and then, well, maybe sit down for a bit.' Does the pace vary naturally, or stay perfectly flat and robotic?",
-            "explanation": "Natural speech varies its pace constantly - 'just grab a quick snack' moves briskly, while the hesitant 'well, maybe' noticeably slows the pace - rather than keeping every word at the same robotic length, as a flat reading of 'I'll just grab a quick snack, and then, well, maybe sit down for a bit.' would.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "targetSpeed": 1.17,
+            "hint": "This is wildly out of character for him. Urgent instinct, or a slow, hesitant consideration?",
+            "explanation": "Behavior that's wildly out of character for someone prompts an instant, urgent instinct to check in.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L191_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Honestly, it was a bit more tiring than I expected.",
-            "textToSpeak": "Honestly, it was a bit more tiring than I expected.",
+            "word": "The comment left at the very end of the essay isn't a throwaway remark, since it's quietly suggesting the whole argument needs to be rebuilt from a different angle.",
+            "textToSpeak": "The comment left at the very end of the essay isn't a throwaway remark, since it's quietly suggesting the whole argument needs to be rebuilt from a different angle.",
             "options": [
-                "Decelerating (in 'Honestly, it was a bit more tiring than I expected.', the pace eases back slightly on 'a bit more tiring', a mild, understated emphasis - a small but genuine shift)",
-                "Accelerating (in 'Honestly, it was a bit more tiring than I expected.', the pace slows to a dramatic crawl on 'a bit more tiring' as if announcing exhausting news)"
+                "Accelerating (the speaker rushes since closing comments are usually just a brief, polite sign-off)",
+                "Decelerating (a comment with major implications slows the pace of the advice to consider it seriously)"
             ],
-            "correctAnswer": "Decelerating (in 'Honestly, it was a bit more tiring than I expected.', the pace eases back slightly on 'a bit more tiring', a mild, understated emphasis - a small but genuine shift)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.94,
-            "hint": "Listen very closely to 'Honestly, it was a bit more tiring than I expected.' This is a subtle shift - can you catch the small change in pace?",
-            "explanation": "This is a subtle, expert-level distinction in 'Honestly, it was a bit more tiring than I expected.': the pace eases back slightly on 'a bit more tiring', a mild, understated emphasis. The change is real but small, unlike a dramatic, obvious shift.",
+            "correctAnswer": "Decelerating (a comment with major implications slows the pace of the advice to consider it seriously)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.8,
+            "hint": "This quietly suggests a major rebuild. Quick sign-off, or a slow, serious consideration?",
+            "explanation": "A comment with major implications for the whole piece is considered slowly and seriously, not brushed past.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -62,17 +62,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The room was quiet, then the bell suddenly rang, and now everyone's racing to grab their bags before the rush!",
-            "textToSpeak": "The room was quiet, then the bell suddenly rang, and now everyone's racing to grab their bags before the rush!",
+            "word": "The number of failed logins jumped from a handful to several hundred in under a minute, which rarely resolves itself while people debate what to do.",
+            "textToSpeak": "The number of failed logins jumped from a handful to several hundred in under a minute, which rarely resolves itself while people debate what to do.",
             "options": [
-                "Accelerating (in 'The room was quiet, then the bell suddenly rang, and now everyone's racing to grab their bags before the rush!', the pace starts quiet, accelerates sharply at the sudden bell, and stays fast through the race to grab bags)",
-                "Decelerating (in 'The room was quiet, then the bell suddenly rang, and now everyone's racing to grab their bags before the rush!', the pace simply decelerates once into surprise and stays slow through gathering bags)"
+                "Decelerating (the speaker slows down to discuss the best long-term approach to login security)",
+                "Accelerating (a rapid, dramatic spike in a security metric speeds up the urgent alert)"
             ],
-            "correctAnswer": "Accelerating (in 'The room was quiet, then the bell suddenly rang, and now everyone's racing to grab their bags before the rush!', the pace starts quiet, accelerates sharply at the sudden bell, and stays fast through the race to grab bags)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.34,
-            "hint": "Listen to the full contour of 'The room was quiet, then the bell suddenly rang, and now everyone's racing to grab their bags before the rush!' How many separate pacing shifts can you track?",
-            "explanation": "This sentence has a complex pacing contour: the pace starts quiet, accelerates sharply at the sudden bell, and stays fast through the race to grab bags. Expert listening means tracking every shift, not just forming one overall impression.",
+            "correctAnswer": "Accelerating (a rapid, dramatic spike in a security metric speeds up the urgent alert)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.21,
+            "hint": "This jumped dramatically in under a minute. Urgent alert, or a slow, long-term discussion?",
+            "explanation": "A rapid, dramatic spike in a security metric demands an urgent alert rather than a slow, long-term discussion.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -80,71 +80,71 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "I'll just check my bag here, and then, actually, really hustle to catch the bus home.",
-            "textToSpeak": "I'll just check my bag here, and then, actually, really hustle to catch the bus home.",
+            "word": "The clause tucked into the final page isn't the sort of detail most people notice on a first read, which is exactly why it's worth reading twice before agreeing to anything.",
+            "textToSpeak": "The clause tucked into the final page isn't the sort of detail most people notice on a first read, which is exactly why it's worth reading twice before agreeing to anything.",
             "options": [
-                "Decelerating (in 'I'll just check my bag here, and then, actually, really hustle to catch the bus home.', every word is given exactly the same length and stress, producing a flat, robotic delivery)",
-                "Accelerating (in 'I'll just check my bag here, and then, actually, really hustle to catch the bus home.', 'check my bag' moves at a normal pace, while 'really hustle to catch the bus' accelerates with urgency, creating natural, varied pacing)"
+                "Accelerating (the speaker rushes since final-page clauses are usually just standard closing language)",
+                "Decelerating (a clause most people miss slows the pace of the advice to reread it)"
             ],
-            "correctAnswer": "Accelerating (in 'I'll just check my bag here, and then, actually, really hustle to catch the bus home.', 'check my bag' moves at a normal pace, while 'really hustle to catch the bus' accelerates with urgency, creating natural, varied pacing)",
+            "correctAnswer": "Decelerating (a clause most people miss slows the pace of the advice to reread it)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 1.28,
-            "hint": "Listen to 'I'll just check my bag here, and then, actually, really hustle to catch the bus home.' Does the pace vary naturally, or stay perfectly flat and robotic?",
-            "explanation": "Natural speech varies its pace constantly - 'check my bag' moves at a normal pace, while 'really hustle to catch the bus' accelerates with urgency - rather than keeping every word at the same robotic length, as a flat reading of 'I'll just check my bag here, and then, actually, really hustle to catch the bus home.' would.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "targetSpeed": 0.82,
+            "hint": "Most people miss this on a first read. Quick agreement, or a slow, second read?",
+            "explanation": "A clause that's easy to miss on a first read is treated slowly, with advice to read it twice.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L192_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Honestly, it took a bit more effort than I thought it would.",
-            "textToSpeak": "Honestly, it took a bit more effort than I thought it would.",
+            "word": "The performer who was scheduled for last just walked out ten minutes early, which usually means the running order's about to be rearranged on the spot.",
+            "textToSpeak": "The performer who was scheduled for last just walked out ten minutes early, which usually means the running order's about to be rearranged on the spot.",
             "options": [
-                "Decelerating (in 'Honestly, it took a bit more effort than I thought it would.', the pace eases back slightly on 'a bit more effort', a mild, understated emphasis - a small but genuine shift)",
-                "Accelerating (in 'Honestly, it took a bit more effort than I thought it would.', the pace slows to a dramatic crawl on 'a bit more effort' as if announcing a huge struggle)"
+                "Decelerating (the speaker slows down to explain the original running order in full)",
+                "Accelerating (an unexpected early appearance speeds up the observation that things are changing right now)"
             ],
-            "correctAnswer": "Decelerating (in 'Honestly, it took a bit more effort than I thought it would.', the pace eases back slightly on 'a bit more effort', a mild, understated emphasis - a small but genuine shift)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.95,
-            "hint": "Listen very closely to 'Honestly, it took a bit more effort than I thought it would.' This is a subtle shift - can you catch the small change in pace?",
-            "explanation": "This is a subtle, expert-level distinction in 'Honestly, it took a bit more effort than I thought it would.': the pace eases back slightly on 'a bit more effort', a mild, understated emphasis. The change is real but small, unlike a dramatic, obvious shift.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (an unexpected early appearance speeds up the observation that things are changing right now)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.19,
+            "hint": "This performer came out early, unexpectedly. Urgent observation, or a slow explanation of the original plan?",
+            "explanation": "An unexpected, early change to a schedule speeds up the observation that something's being rearranged live.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L193_Q1",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The office was calm, then the fire alarm suddenly blared, and now everyone's rushing to the nearest exit!",
-            "textToSpeak": "The office was calm, then the fire alarm suddenly blared, and now everyone's rushing to the nearest exit!",
+            "word": "This particular story isn't the kind grandma tells to fill silence, so it's probably worth putting the phone down while she gets to the point.",
+            "textToSpeak": "This particular story isn't the kind grandma tells to fill silence, so it's probably worth putting the phone down while she gets to the point.",
             "options": [
-                "Accelerating (in 'The office was calm, then the fire alarm suddenly blared, and now everyone's rushing to the nearest exit!', the pace starts calm, accelerates sharply at the alarm, and stays fast through the rush to the exit)",
-                "Decelerating (in 'The office was calm, then the fire alarm suddenly blared, and now everyone's rushing to the nearest exit!', the pace simply stays at one calm, steady pace throughout the evacuation)"
+                "Decelerating (a story framed as meaningful, not filler, slows the pace of the advice to listen properly)",
+                "Accelerating (the speaker rushes since grandma's stories are usually just casual, rambling chat)"
             ],
-            "correctAnswer": "Accelerating (in 'The office was calm, then the fire alarm suddenly blared, and now everyone's rushing to the nearest exit!', the pace starts calm, accelerates sharply at the alarm, and stays fast through the rush to the exit)",
+            "correctAnswer": "Decelerating (a story framed as meaningful, not filler, slows the pace of the advice to listen properly)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.36,
-            "hint": "Listen to the full contour of 'The office was calm, then the fire alarm suddenly blared, and now everyone's rushing to the nearest exit!' How many separate pacing shifts can you track?",
-            "explanation": "This sentence has a complex pacing contour: the pace starts calm, accelerates sharply at the alarm, and stays fast through the rush to the exit. Expert listening means tracking every shift, not just forming one overall impression.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "targetSpeed": 0.79,
+            "hint": "This isn't just filler chat this time. Quick half-listen, or full, slow attention?",
+            "explanation": "A story explicitly framed as meaningful, not filler, is given slow, full attention rather than a half-listen.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L193_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "I'll just save this file here, and then, actually, really hurry to make the train home.",
-            "textToSpeak": "I'll just save this file here, and then, actually, really hurry to make the train home.",
+            "word": "He went quiet mid-sentence and hasn't said anything since, which is a bigger change than it might sound like from the way this is being described right now.",
+            "textToSpeak": "He went quiet mid-sentence and hasn't said anything since, which is a bigger change than it might sound like from the way this is being described right now.",
             "options": [
-                "Decelerating (in 'I'll just save this file here, and then, actually, really hurry to make the train home.', every word is given exactly the same length and stress, producing a flat, robotic delivery)",
-                "Accelerating (in 'I'll just save this file here, and then, actually, really hurry to make the train home.', 'save this file' moves at a normal pace, while 'really hurry to make the train' accelerates with urgency, creating natural, varied pacing)"
+                "Decelerating (the speaker calmly waits a while longer to see if he starts talking again)",
+                "Accelerating (a sudden, unresolved silence mid-conversation is a real warning sign that speeds up the alert)"
             ],
-            "correctAnswer": "Accelerating (in 'I'll just save this file here, and then, actually, really hurry to make the train home.', 'save this file' moves at a normal pace, while 'really hurry to make the train' accelerates with urgency, creating natural, varied pacing)",
+            "correctAnswer": "Accelerating (a sudden, unresolved silence mid-conversation is a real warning sign that speeds up the alert)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 1.28,
-            "hint": "Listen to 'I'll just save this file here, and then, actually, really hurry to make the train home.' Does the pace vary naturally, or stay perfectly flat and robotic?",
-            "explanation": "Natural speech varies its pace constantly - 'save this file' moves at a normal pace, while 'really hurry to make the train' accelerates with urgency - rather than keeping every word at the same robotic length, as a flat reading of 'I'll just save this file here, and then, actually, really hurry to make the train home.' would.",
+            "targetSpeed": 1.16,
+            "hint": "This is more alarming than the calm description suggests. Urgent alert, or a slow wait-and-see?",
+            "explanation": "A sudden, unresolved silence during conversation is a real warning sign, prompting an urgent alert despite how it's phrased.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -152,53 +152,53 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Honestly, the meeting ran a bit longer than expected.",
-            "textToSpeak": "Honestly, the meeting ran a bit longer than expected.",
+            "word": "The number that just came back from finance doesn't match anything sent out this quarter, which is the kind of discrepancy that tends to get noticed by someone else first.",
+            "textToSpeak": "The number that just came back from finance doesn't match anything sent out this quarter, which is the kind of discrepancy that tends to get noticed by someone else first.",
             "options": [
-                "Decelerating (in 'Honestly, the meeting ran a bit longer than expected.', the pace eases back slightly on 'a bit longer', a mild, professional observation - a small but genuine shift)",
-                "Accelerating (in 'Honestly, the meeting ran a bit longer than expected.', the pace slows to a dramatic crawl on 'a bit longer' as if announcing a disaster)"
+                "Accelerating (an unexplained discrepancy that could be caught by someone else speeds up the urgent alert)",
+                "Decelerating (the speaker slows down to recheck every figure sent out this quarter one by one)"
             ],
-            "correctAnswer": "Decelerating (in 'Honestly, the meeting ran a bit longer than expected.', the pace eases back slightly on 'a bit longer', a mild, professional observation - a small but genuine shift)",
+            "correctAnswer": "Accelerating (an unexplained discrepancy that could be caught by someone else speeds up the urgent alert)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.94,
-            "hint": "Listen very closely to 'Honestly, the meeting ran a bit longer than expected.' This is a subtle shift - can you catch the small change in pace?",
-            "explanation": "This is a subtle, expert-level distinction in 'Honestly, the meeting ran a bit longer than expected.': the pace eases back slightly on 'a bit longer', a mild, professional observation. The change is real but small, unlike a dramatic, obvious shift.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "targetSpeed": 1.18,
+            "hint": "Someone else might catch this first. Urgent alert, or a slow, one-by-one recheck?",
+            "explanation": "An unexplained discrepancy that risks being caught by someone else first speeds up the alert to flag it now.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L194_Q1",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The flight was smooth, then turbulence suddenly hit, then the cabin calmly settled once it passed.",
-            "textToSpeak": "The flight was smooth, then turbulence suddenly hit, then the cabin calmly settled once it passed.",
+            "word": "The group chat that's usually silent for days suddenly had a dozen messages in the space of a minute, which is rarely about nothing in particular.",
+            "textToSpeak": "The group chat that's usually silent for days suddenly had a dozen messages in the space of a minute, which is rarely about nothing in particular.",
             "options": [
-                "Decelerating (in 'The flight was smooth, then turbulence suddenly hit, then the cabin calmly settled once it passed.', the pace starts smooth and steady, accelerates sharply at the sudden turbulence, then decelerates back to a calm pace once it passes)",
-                "Accelerating (in 'The flight was smooth, then turbulence suddenly hit, then the cabin calmly settled once it passed.', the pace simply accelerates once at the turbulence and stays fast for the rest of the flight)"
+                "Accelerating (a sudden burst of activity from a normally quiet source speeds up the curious, urgent reaction)",
+                "Decelerating (the speaker slows down to scroll back and read every message calmly in order)"
             ],
-            "correctAnswer": "Decelerating (in 'The flight was smooth, then turbulence suddenly hit, then the cabin calmly settled once it passed.', the pace starts smooth and steady, accelerates sharply at the sudden turbulence, then decelerates back to a calm pace once it passes)",
+            "correctAnswer": "Accelerating (a sudden burst of activity from a normally quiet source speeds up the curious, urgent reaction)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 0.74,
-            "hint": "Listen to the full contour of 'The flight was smooth, then turbulence suddenly hit, then the cabin calmly settled once it passed.' How many separate pacing shifts can you track?",
-            "explanation": "This sentence has a complex pacing contour: the pace starts smooth and steady, accelerates sharply at the sudden turbulence, then decelerates back to a calm pace once it passes. Expert listening means tracking every shift, not just forming one overall impression.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "targetSpeed": 1.17,
+            "hint": "This chat is normally silent for days. Urgent reaction, or a slow, calm scroll-back?",
+            "explanation": "A sudden burst of activity from a normally quiet source speeds up the instinct to check what's happening.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L194_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "I'll just check the departure board quickly, and then, actually, slow down to read the fine print on the ticket.",
-            "textToSpeak": "I'll just check the departure board quickly, and then, actually, slow down to read the fine print on the ticket.",
+            "word": "How this next stage of treatment gets introduced matters more than covering it in the time left in today's appointment, given how much adjustment it's going to require.",
+            "textToSpeak": "How this next stage of treatment gets introduced matters more than covering it in the time left in today's appointment, given how much adjustment it's going to require.",
             "options": [
-                "Accelerating (in 'I'll just check the departure board quickly, and then, actually, slow down to read the fine print on the ticket.', every word is given exactly the same length and stress, producing a flat, robotic delivery)",
-                "Decelerating (in 'I'll just check the departure board quickly, and then, actually, slow down to read the fine print on the ticket.', 'check the board quickly' moves briskly, while 'slow down to read the fine print' genuinely decelerates for careful reading, creating natural, varied pacing)"
+                "Decelerating (a stage requiring significant adjustment slows the pace of the introduction)",
+                "Accelerating (the speaker rushes since treatment stages are usually explained the same brief way every time)"
             ],
-            "correctAnswer": "Decelerating (in 'I'll just check the departure board quickly, and then, actually, slow down to read the fine print on the ticket.', 'check the board quickly' moves briskly, while 'slow down to read the fine print' genuinely decelerates for careful reading, creating natural, varied pacing)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.8,
-            "hint": "Listen to 'I'll just check the departure board quickly, and then, actually, slow down to read the fine print on the ticket.' Does the pace vary naturally, or stay perfectly flat and robotic?",
-            "explanation": "Natural speech varies its pace constantly - 'check the board quickly' moves briskly, while 'slow down to read the fine print' genuinely decelerates for careful reading - rather than keeping every word at the same robotic length, as a flat reading of 'I'll just check the departure board quickly, and then, actually, slow down to read the fine print on the ticket.' would.",
+            "correctAnswer": "Decelerating (a stage requiring significant adjustment slows the pace of the introduction)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.82,
+            "hint": "This requires a lot of adjustment ahead. Quick coverage, or a slow, careful introduction?",
+            "explanation": "A treatment stage that requires significant adjustment is introduced slowly, rather than squeezed into limited time.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -206,17 +206,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Honestly, the queue moved a bit slower than usual.",
-            "textToSpeak": "Honestly, the queue moved a bit slower than usual.",
+            "word": "The distinction between these two theories isn't something that clicks on a first pass, which is exactly why it's worth returning to slowly rather than moving straight on.",
+            "textToSpeak": "The distinction between these two theories isn't something that clicks on a first pass, which is exactly why it's worth returning to slowly rather than moving straight on.",
             "options": [
-                "Decelerating (in 'Honestly, the queue moved a bit slower than usual.', the pace eases back slightly on 'a bit slower', a mild, understated observation - a small but genuine shift)",
-                "Accelerating (in 'Honestly, the queue moved a bit slower than usual.', the pace slows to a dramatic crawl on 'a bit slower' as if announcing a huge delay)"
+                "Accelerating (the speaker rushes since most theories are pretty easy to tell apart once named)",
+                "Decelerating (a distinction that takes real time to understand slows the pace of the advice)"
             ],
-            "correctAnswer": "Decelerating (in 'Honestly, the queue moved a bit slower than usual.', the pace eases back slightly on 'a bit slower', a mild, understated observation - a small but genuine shift)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 0.94,
-            "hint": "Listen very closely to 'Honestly, the queue moved a bit slower than usual.' This is a subtle shift - can you catch the small change in pace?",
-            "explanation": "This is a subtle, expert-level distinction in 'Honestly, the queue moved a bit slower than usual.': the pace eases back slightly on 'a bit slower', a mild, understated observation. The change is real but small, unlike a dramatic, obvious shift.",
+            "correctAnswer": "Decelerating (a distinction that takes real time to understand slows the pace of the advice)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 0.8,
+            "hint": "This distinction doesn't click on a first pass. Quick move-on, or a slow return to it?",
+            "explanation": "A distinction that takes real time to understand is revisited slowly, rather than rushed past.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -224,53 +224,53 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The house was quiet, then grandma's car suddenly pulled up early, and now everyone's racing to tidy up!",
-            "textToSpeak": "The house was quiet, then grandma's car suddenly pulled up early, and now everyone's racing to tidy up!",
+            "word": "How this particular lease clause actually gets worded matters more than getting the landlord off the phone quickly, since it's the one line the deposit dispute will come down to.",
+            "textToSpeak": "How this particular lease clause actually gets worded matters more than getting the landlord off the phone quickly, since it's the one line the deposit dispute will come down to.",
             "options": [
-                "Decelerating (in 'The house was quiet, then grandma's car suddenly pulled up early, and now everyone's racing to tidy up!', the pace simply decelerates once into surprise and stays slow through the tidying)",
-                "Accelerating (in 'The house was quiet, then grandma's car suddenly pulled up early, and now everyone's racing to tidy up!', the pace starts quiet, accelerates sharply at grandma's early arrival, and stays fast through the rush to tidy up)"
+                "Decelerating (a clause the whole dispute depends on slows the pace of the advice)",
+                "Accelerating (the speaker rushes since lease clauses are usually just standard, repeated language)"
             ],
-            "correctAnswer": "Accelerating (in 'The house was quiet, then grandma's car suddenly pulled up early, and now everyone's racing to tidy up!', the pace starts quiet, accelerates sharply at grandma's early arrival, and stays fast through the rush to tidy up)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 1.34,
-            "hint": "Listen to the full contour of 'The house was quiet, then grandma's car suddenly pulled up early, and now everyone's racing to tidy up!' How many separate pacing shifts can you track?",
-            "explanation": "This sentence has a complex pacing contour: the pace starts quiet, accelerates sharply at grandma's early arrival, and stays fast through the rush to tidy up. Expert listening means tracking every shift, not just forming one overall impression.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "correctAnswer": "Decelerating (a clause the whole dispute depends on slows the pace of the advice)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 0.8,
+            "hint": "The whole dispute comes down to this wording. Quick call, or a slow, careful one?",
+            "explanation": "Advice about a clause that an entire dispute depends on is delivered slowly and carefully, not rushed.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L195_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "I'll just set the table here, and then, actually, really hurry with the last few dishes.",
-            "textToSpeak": "I'll just set the table here, and then, actually, really hurry with the last few dishes.",
+            "word": "The difference between these two travel insurance policies isn't obvious from the summary alone, which is exactly why it's worth reading the actual coverage slowly before you fly.",
+            "textToSpeak": "The difference between these two travel insurance policies isn't obvious from the summary alone, which is exactly why it's worth reading the actual coverage slowly before you fly.",
             "options": [
-                "Accelerating (in 'I'll just set the table here, and then, actually, really hurry with the last few dishes.', 'set the table' moves at a normal pace, while 'really hurry with the last few dishes' accelerates as time runs short, creating natural, varied pacing)",
-                "Decelerating (in 'I'll just set the table here, and then, actually, really hurry with the last few dishes.', every word is given exactly the same length and stress, producing a flat, robotic delivery)"
+                "Decelerating (a difference hidden beneath a summary slows the pace of the advice to look closer)",
+                "Accelerating (the speaker rushes since travel insurance policies are all essentially the same in practice)"
             ],
-            "correctAnswer": "Accelerating (in 'I'll just set the table here, and then, actually, really hurry with the last few dishes.', 'set the table' moves at a normal pace, while 'really hurry with the last few dishes' accelerates as time runs short, creating natural, varied pacing)",
+            "correctAnswer": "Decelerating (a difference hidden beneath a summary slows the pace of the advice to look closer)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.28,
-            "hint": "Listen to 'I'll just set the table here, and then, actually, really hurry with the last few dishes.' Does the pace vary naturally, or stay perfectly flat and robotic?",
-            "explanation": "Natural speech varies its pace constantly - 'set the table' moves at a normal pace, while 'really hurry with the last few dishes' accelerates as time runs short - rather than keeping every word at the same robotic length, as a flat reading of 'I'll just set the table here, and then, actually, really hurry with the last few dishes.' would.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "targetSpeed": 0.79,
+            "hint": "The real difference isn't in the summary. Quick glance, or a slow, careful read?",
+            "explanation": "A difference that isn't visible in a summary is examined slowly, through the actual coverage details.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L195_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Honestly, the kids were a bit louder than usual tonight.",
-            "textToSpeak": "Honestly, the kids were a bit louder than usual tonight.",
+            "word": "How the seasoning gets layered into this particular dish isn't something to eyeball at the last second, since the balance is much harder to correct once it's already in.",
+            "textToSpeak": "How the seasoning gets layered into this particular dish isn't something to eyeball at the last second, since the balance is much harder to correct once it's already in.",
             "options": [
-                "Accelerating (in 'Honestly, the kids were a bit louder than usual tonight.', the pace slows to a dramatic crawl on 'a bit louder' as if describing a disaster)",
-                "Decelerating (in 'Honestly, the kids were a bit louder than usual tonight.', the pace eases back slightly on 'a bit louder', a mild, understated observation - a small but genuine shift)"
+                "Accelerating (the speaker rushes since seasoning can usually be adjusted easily at any point)",
+                "Decelerating (a step that's hard to correct afterward slows the pace of the cooking advice)"
             ],
-            "correctAnswer": "Decelerating (in 'Honestly, the kids were a bit louder than usual tonight.', the pace eases back slightly on 'a bit louder', a mild, understated observation - a small but genuine shift)",
+            "correctAnswer": "Decelerating (a step that's hard to correct afterward slows the pace of the cooking advice)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.94,
-            "hint": "Listen very closely to 'Honestly, the kids were a bit louder than usual tonight.' This is a subtle shift - can you catch the small change in pace?",
-            "explanation": "This is a subtle, expert-level distinction in 'Honestly, the kids were a bit louder than usual tonight.': the pace eases back slightly on 'a bit louder', a mild, understated observation. The change is real but small, unlike a dramatic, obvious shift.",
+            "targetSpeed": 0.81,
+            "hint": "This is hard to correct once it's in. Quick eyeball, or a slow, careful layering?",
+            "explanation": "A cooking step that's hard to correct afterward is treated slowly and carefully, not eyeballed at the last second.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -278,35 +278,35 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The line was steady, then an announcement promised a flash discount, and now everyone's rushing to grab more!",
-            "textToSpeak": "The line was steady, then an announcement promised a flash discount, and now everyone's rushing to grab more!",
+            "word": "The line item flagged by finance isn't the kind of thing that resolves itself with a quick reply, given how many other figures actually depend on it being right.",
+            "textToSpeak": "The line item flagged by finance isn't the kind of thing that resolves itself with a quick reply, given how many other figures actually depend on it being right.",
             "options": [
-                "Decelerating (in 'The line was steady, then an announcement promised a flash discount, and now everyone's rushing to grab more!', the pace simply decelerates once into surprise and stays slow through the rush)",
-                "Accelerating (in 'The line was steady, then an announcement promised a flash discount, and now everyone's rushing to grab more!', the pace starts steady, accelerates sharply at the surprise discount announcement, and stays fast through the rush to grab more)"
+                "Accelerating (the speaker rushes since flagged line items are usually simple typos to fix)",
+                "Decelerating (a figure that many others depend on slows the pace of the advice to resolve it carefully)"
             ],
-            "correctAnswer": "Accelerating (in 'The line was steady, then an announcement promised a flash discount, and now everyone's rushing to grab more!', the pace starts steady, accelerates sharply at the surprise discount announcement, and stays fast through the rush to grab more)",
+            "correctAnswer": "Decelerating (a figure that many others depend on slows the pace of the advice to resolve it carefully)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 1.36,
-            "hint": "Listen to the full contour of 'The line was steady, then an announcement promised a flash discount, and now everyone's rushing to grab more!' How many separate pacing shifts can you track?",
-            "explanation": "This sentence has a complex pacing contour: the pace starts steady, accelerates sharply at the surprise discount announcement, and stays fast through the rush to grab more. Expert listening means tracking every shift, not just forming one overall impression.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "targetSpeed": 0.79,
+            "hint": "Many other figures depend on this being right. Quick reply, or a slow, careful resolution?",
+            "explanation": "A figure that many other numbers depend on is resolved slowly and carefully, not with a quick reply.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L196_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "I'll just pay for this here, and then, actually, really hustle to catch the next bus.",
-            "textToSpeak": "I'll just pay for this here, and then, actually, really hustle to catch the next bus.",
+            "word": "The same error has now shown up on three unrelated systems within the hour, which usually means the actual cause is something shared, not something isolated.",
+            "textToSpeak": "The same error has now shown up on three unrelated systems within the hour, which usually means the actual cause is something shared, not something isolated.",
             "options": [
-                "Accelerating (in 'I'll just pay for this here, and then, actually, really hustle to catch the next bus.', 'pay for this' moves at a normal pace, while 'really hustle to catch the next bus' accelerates with urgency, creating natural, varied pacing)",
-                "Decelerating (in 'I'll just pay for this here, and then, actually, really hustle to catch the next bus.', every word is given exactly the same length and stress, producing a flat, robotic delivery)"
+                "Accelerating (the same error spreading across unrelated systems speeds up the urgent alert)",
+                "Decelerating (the speaker slows down to investigate each system's error log individually)"
             ],
-            "correctAnswer": "Accelerating (in 'I'll just pay for this here, and then, actually, really hustle to catch the next bus.', 'pay for this' moves at a normal pace, while 'really hustle to catch the next bus' accelerates with urgency, creating natural, varied pacing)",
+            "correctAnswer": "Accelerating (the same error spreading across unrelated systems speeds up the urgent alert)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.28,
-            "hint": "Listen to 'I'll just pay for this here, and then, actually, really hustle to catch the next bus.' Does the pace vary naturally, or stay perfectly flat and robotic?",
-            "explanation": "Natural speech varies its pace constantly - 'pay for this' moves at a normal pace, while 'really hustle to catch the next bus' accelerates with urgency - rather than keeping every word at the same robotic length, as a flat reading of 'I'll just pay for this here, and then, actually, really hustle to catch the next bus.' would.",
+            "targetSpeed": 1.2,
+            "hint": "This error is spreading across unrelated systems. Urgent alert, or a slow, individual investigation?",
+            "explanation": "The same error appearing across unrelated systems signals a shared cause, speeding up the alert to investigate.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -314,17 +314,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Honestly, the queue was a bit longer than expected.",
-            "textToSpeak": "Honestly, the queue was a bit longer than expected.",
+            "word": "How this gets explained to him tonight will likely shape how he feels about the whole situation for a lot longer than the conversation itself will last.",
+            "textToSpeak": "How this gets explained to him tonight will likely shape how he feels about the whole situation for a lot longer than the conversation itself will last.",
             "options": [
-                "Accelerating (in 'Honestly, the queue was a bit longer than expected.', the pace slows to a dramatic crawl on 'a bit longer' as if describing an enormous wait)",
-                "Decelerating (in 'Honestly, the queue was a bit longer than expected.', the pace eases back slightly on 'a bit longer', a mild, understated observation - a small but genuine shift)"
+                "Accelerating (the speaker rushes since children's feelings about things like this usually change quickly anyway)",
+                "Decelerating (an explanation with lasting emotional impact slows the pace of the advice)"
             ],
-            "correctAnswer": "Decelerating (in 'Honestly, the queue was a bit longer than expected.', the pace eases back slightly on 'a bit longer', a mild, understated observation - a small but genuine shift)",
+            "correctAnswer": "Decelerating (an explanation with lasting emotional impact slows the pace of the advice)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.94,
-            "hint": "Listen very closely to 'Honestly, the queue was a bit longer than expected.' This is a subtle shift - can you catch the small change in pace?",
-            "explanation": "This is a subtle, expert-level distinction in 'Honestly, the queue was a bit longer than expected.': the pace eases back slightly on 'a bit longer', a mild, understated observation. The change is real but small, unlike a dramatic, obvious shift.",
+            "targetSpeed": 0.82,
+            "hint": "This shapes his feelings long after tonight. Quick delivery, or a slow, careful one?",
+            "explanation": "Advice about an explanation with lasting emotional impact is delivered slowly, matching the weight it carries.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -332,17 +332,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The kitchen was calm, then the timer suddenly buzzed for two dishes at once, and now everyone's rushing to plate them!",
-            "textToSpeak": "The kitchen was calm, then the timer suddenly buzzed for two dishes at once, and now everyone's rushing to plate them!",
+            "word": "The lighting cues just changed twice within a few seconds of each other, which is usually the crew's way of signaling that something's about to happen early.",
+            "textToSpeak": "The lighting cues just changed twice within a few seconds of each other, which is usually the crew's way of signaling that something's about to happen early.",
             "options": [
-                "Decelerating (in 'The kitchen was calm, then the timer suddenly buzzed for two dishes at once, and now everyone's rushing to plate them!', the pace simply decelerates once into confusion and stays slow through plating)",
-                "Accelerating (in 'The kitchen was calm, then the timer suddenly buzzed for two dishes at once, and now everyone's rushing to plate them!', the pace starts calm, accelerates sharply at the double timer buzz, and stays fast through plating both dishes)"
+                "Accelerating (rapid, back-to-back technical cues signal an imminent change, speeding up the observation)",
+                "Decelerating (the speaker slows down to explain how lighting cues are normally programmed)"
             ],
-            "correctAnswer": "Accelerating (in 'The kitchen was calm, then the timer suddenly buzzed for two dishes at once, and now everyone's rushing to plate them!', the pace starts calm, accelerates sharply at the double timer buzz, and stays fast through plating both dishes)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 1.36,
-            "hint": "Listen to the full contour of 'The kitchen was calm, then the timer suddenly buzzed for two dishes at once, and now everyone's rushing to plate them!' How many separate pacing shifts can you track?",
-            "explanation": "This sentence has a complex pacing contour: the pace starts calm, accelerates sharply at the double timer buzz, and stays fast through plating both dishes. Expert listening means tracking every shift, not just forming one overall impression.",
+            "correctAnswer": "Accelerating (rapid, back-to-back technical cues signal an imminent change, speeding up the observation)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.18,
+            "hint": "These cues changed twice in seconds. Urgent observation, or a calm technical explanation?",
+            "explanation": "Rapid, back-to-back technical cues signal something imminent, speeding up the observation that things are changing.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -350,35 +350,35 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "I'll just taste this here, and then, actually, really hurry to get it to the table hot.",
-            "textToSpeak": "I'll just taste this here, and then, actually, really hurry to get it to the table hot.",
+            "word": "The overlap between these two arguments isn't obvious unless you trace how each one builds on evidence introduced several pages earlier in the essay.",
+            "textToSpeak": "The overlap between these two arguments isn't obvious unless you trace how each one builds on evidence introduced several pages earlier in the essay.",
             "options": [
-                "Accelerating (in 'I'll just taste this here, and then, actually, really hurry to get it to the table hot.', 'taste this' moves at a normal pace, while 'really hurry to get it to the table hot' accelerates with urgency, creating natural, varied pacing)",
-                "Decelerating (in 'I'll just taste this here, and then, actually, really hurry to get it to the table hot.', every word is given exactly the same length and stress, producing a flat, robotic delivery)"
+                "Decelerating (a connection requiring careful tracing slows the pace of the analytical advice)",
+                "Accelerating (the speaker rushes since arguments in an essay are usually independent of each other)"
             ],
-            "correctAnswer": "Accelerating (in 'I'll just taste this here, and then, actually, really hurry to get it to the table hot.', 'taste this' moves at a normal pace, while 'really hurry to get it to the table hot' accelerates with urgency, creating natural, varied pacing)",
+            "correctAnswer": "Decelerating (a connection requiring careful tracing slows the pace of the analytical advice)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.28,
-            "hint": "Listen to 'I'll just taste this here, and then, actually, really hurry to get it to the table hot.' Does the pace vary naturally, or stay perfectly flat and robotic?",
-            "explanation": "Natural speech varies its pace constantly - 'taste this' moves at a normal pace, while 'really hurry to get it to the table hot' accelerates with urgency - rather than keeping every word at the same robotic length, as a flat reading of 'I'll just taste this here, and then, actually, really hurry to get it to the table hot.' would.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "targetSpeed": 0.8,
+            "hint": "This overlap takes real tracing to see. Quick read, or a slow, careful analysis?",
+            "explanation": "A connection between arguments that requires careful tracing is examined slowly, not assumed to be obvious.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L197_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Honestly, the sauce needed a bit more salt than usual.",
-            "textToSpeak": "Honestly, the sauce needed a bit more salt than usual.",
+            "word": "How this apology actually gets worded matters more than sending it the moment you think of it, since the wrong phrase here could easily make things worse, not better.",
+            "textToSpeak": "How this apology actually gets worded matters more than sending it the moment you think of it, since the wrong phrase here could easily make things worse, not better.",
             "options": [
-                "Accelerating (in 'Honestly, the sauce needed a bit more salt than usual.', the pace slows to a dramatic crawl on 'a bit more salt' as if describing a major recipe failure)",
-                "Decelerating (in 'Honestly, the sauce needed a bit more salt than usual.', the pace eases back slightly on 'a bit more salt', a mild, understated observation - a small but genuine shift)"
+                "Accelerating (the speaker rushes since apologies are usually best sent as soon as possible)",
+                "Decelerating (an outcome that depends on careful wording slows the pace of the advice)"
             ],
-            "correctAnswer": "Decelerating (in 'Honestly, the sauce needed a bit more salt than usual.', the pace eases back slightly on 'a bit more salt', a mild, understated observation - a small but genuine shift)",
+            "correctAnswer": "Decelerating (an outcome that depends on careful wording slows the pace of the advice)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.94,
-            "hint": "Listen very closely to 'Honestly, the sauce needed a bit more salt than usual.' This is a subtle shift - can you catch the small change in pace?",
-            "explanation": "This is a subtle, expert-level distinction in 'Honestly, the sauce needed a bit more salt than usual.': the pace eases back slightly on 'a bit more salt', a mild, understated observation. The change is real but small, unlike a dramatic, obvious shift.",
+            "targetSpeed": 0.81,
+            "hint": "The wrong phrase here could make things worse. Quick send, or a slow, careful wording?",
+            "explanation": "Advice about something whose outcome depends on careful wording is itself delivered slowly and thoughtfully.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -386,17 +386,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The build was clean, then a sudden error flooded the console, and now the whole team's rushing to find the cause!",
-            "textToSpeak": "The build was clean, then a sudden error flooded the console, and now the whole team's rushing to find the cause!",
+            "word": "The website just flashed a message saying only two are left in stock, and the counter's dropping while you're still deciding, so it's worth acting fast, not later tonight.",
+            "textToSpeak": "The website just flashed a message saying only two are left in stock, and the counter's dropping while you're still deciding, so it's worth acting fast, not later tonight.",
             "options": [
-                "Decelerating (in 'The build was clean, then a sudden error flooded the console, and now the whole team's rushing to find the cause!', the pace simply decelerates once into confusion and stays slow through the investigation)",
-                "Accelerating (in 'The build was clean, then a sudden error flooded the console, and now the whole team's rushing to find the cause!', the pace starts clean, accelerates sharply at the flood of errors, and stays fast through the rush to find the cause)"
+                "Decelerating (the speaker slows down to compare this item with a few similar options first)",
+                "Accelerating (a fast-dropping stock counter speeds up the urgent instruction to decide now)"
             ],
-            "correctAnswer": "Accelerating (in 'The build was clean, then a sudden error flooded the console, and now the whole team's rushing to find the cause!', the pace starts clean, accelerates sharply at the flood of errors, and stays fast through the rush to find the cause)",
+            "correctAnswer": "Accelerating (a fast-dropping stock counter speeds up the urgent instruction to decide now)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 1.36,
-            "hint": "Listen to the full contour of 'The build was clean, then a sudden error flooded the console, and now the whole team's rushing to find the cause!' How many separate pacing shifts can you track?",
-            "explanation": "This sentence has a complex pacing contour: the pace starts clean, accelerates sharply at the flood of errors, and stays fast through the rush to find the cause. Expert listening means tracking every shift, not just forming one overall impression.",
+            "targetSpeed": 1.2,
+            "hint": "The counter is dropping right now. Urgent instruction, or a slow comparison with alternatives?",
+            "explanation": "Stock disappearing visibly in real time creates urgency, speeding up the instruction to decide now rather than later.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -404,17 +404,17 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "I'll just review this code here, and then, actually, really hustle to ship the fix tonight.",
-            "textToSpeak": "I'll just review this code here, and then, actually, really hustle to ship the fix tonight.",
+            "word": "The monitor's alarm has changed pattern twice in the last few minutes, which is usually the kind of shift a nurse would want to know about immediately.",
+            "textToSpeak": "The monitor's alarm has changed pattern twice in the last few minutes, which is usually the kind of shift a nurse would want to know about immediately.",
             "options": [
-                "Accelerating (in 'I'll just review this code here, and then, actually, really hustle to ship the fix tonight.', 'review this code' moves at a normal pace, while 'really hustle to ship the fix' accelerates with urgency, creating natural, varied pacing)",
-                "Decelerating (in 'I'll just review this code here, and then, actually, really hustle to ship the fix tonight.', every word is given exactly the same length and stress, producing a flat, robotic delivery)"
+                "Decelerating (the speaker slows down to explain what each alarm pattern usually indicates)",
+                "Accelerating (a changing alarm pattern signals a real shift in condition, speeding up the alert)"
             ],
-            "correctAnswer": "Accelerating (in 'I'll just review this code here, and then, actually, really hustle to ship the fix tonight.', 'review this code' moves at a normal pace, while 'really hustle to ship the fix' accelerates with urgency, creating natural, varied pacing)",
-            "correctAnswerIndex": 0,
-            "targetSpeed": 1.28,
-            "hint": "Listen to 'I'll just review this code here, and then, actually, really hustle to ship the fix tonight.' Does the pace vary naturally, or stay perfectly flat and robotic?",
-            "explanation": "Natural speech varies its pace constantly - 'review this code' moves at a normal pace, while 'really hustle to ship the fix' accelerates with urgency - rather than keeping every word at the same robotic length, as a flat reading of 'I'll just review this code here, and then, actually, really hustle to ship the fix tonight.' would.",
+            "correctAnswer": "Accelerating (a changing alarm pattern signals a real shift in condition, speeding up the alert)",
+            "correctAnswerIndex": 1,
+            "targetSpeed": 1.19,
+            "hint": "This pattern changed twice just now. Urgent alert, or a calm explanation of what patterns mean?",
+            "explanation": "A monitor's alarm pattern changing repeatedly signals a real shift, speeding up the alert to act on it now.",
             "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
@@ -422,71 +422,71 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Honestly, the app ran a bit slower than usual today.",
-            "textToSpeak": "Honestly, the app ran a bit slower than usual today.",
+            "word": "The fire alarm on this floor just started going off for real this time, not a drill, so everyone needs to head for the stairwell right now.",
+            "textToSpeak": "The fire alarm on this floor just started going off for real this time, not a drill, so everyone needs to head for the stairwell right now.",
             "options": [
-                "Accelerating (in 'Honestly, the app ran a bit slower than usual today.', the pace slows to a dramatic crawl on 'a bit slower' as if describing a complete crash)",
-                "Decelerating (in 'Honestly, the app ran a bit slower than usual today.', the pace eases back slightly on 'a bit slower', a mild, understated observation - a small but genuine shift)"
+                "Accelerating (a confirmed, real fire alarm is a genuine emergency that speeds up the urgent instruction)",
+                "Decelerating (the speaker slows down to explain the building's usual fire drill procedure)"
             ],
-            "correctAnswer": "Decelerating (in 'Honestly, the app ran a bit slower than usual today.', the pace eases back slightly on 'a bit slower', a mild, understated observation - a small but genuine shift)",
-            "correctAnswerIndex": 1,
-            "targetSpeed": 0.94,
-            "hint": "Listen very closely to 'Honestly, the app ran a bit slower than usual today.' This is a subtle shift - can you catch the small change in pace?",
-            "explanation": "This is a subtle, expert-level distinction in 'Honestly, the app ran a bit slower than usual today.': the pace eases back slightly on 'a bit slower', a mild, understated observation. The change is real but small, unlike a dramatic, obvious shift.",
-            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
+            "correctAnswer": "Accelerating (a confirmed, real fire alarm is a genuine emergency that speeds up the urgent instruction)",
+            "correctAnswerIndex": 0,
+            "targetSpeed": 1.21,
+            "hint": "This is confirmed as real, not a drill. Urgent instruction, or a calm explanation of drill procedure?",
+            "explanation": "A fire alarm confirmed as real rather than a drill prompts an instant, urgent instruction to evacuate.",
+            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L199_Q1",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The waiting room was calm, then his name was suddenly called early, and now we're rushing to gather everything!",
-            "textToSpeak": "The waiting room was calm, then his name was suddenly called early, and now we're rushing to gather everything!",
+            "word": "Comparing what these two moving companies actually charge for isn't as simple as looking at the final quote, so it's worth going through both estimates slowly before booking either one.",
+            "textToSpeak": "Comparing what these two moving companies actually charge for isn't as simple as looking at the final quote, so it's worth going through both estimates slowly before booking either one.",
             "options": [
-                "Decelerating (in 'The waiting room was calm, then his name was suddenly called early, and now we're rushing to gather everything!', the pace simply decelerates once into surprise and stays slow through gathering things)",
-                "Accelerating (in 'The waiting room was calm, then his name was suddenly called early, and now we're rushing to gather everything!', the pace starts calm, accelerates sharply at the early, unexpected call, and stays fast through gathering everything)"
+                "Accelerating (the speaker rushes since the cheaper quote is usually the better deal regardless)",
+                "Decelerating (a comparison that's more complex than it first appears slows the pace of the advice)"
             ],
-            "correctAnswer": "Accelerating (in 'The waiting room was calm, then his name was suddenly called early, and now we're rushing to gather everything!', the pace starts calm, accelerates sharply at the early, unexpected call, and stays fast through gathering everything)",
+            "correctAnswer": "Decelerating (a comparison that's more complex than it first appears slows the pace of the advice)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 1.36,
-            "hint": "Listen to the full contour of 'The waiting room was calm, then his name was suddenly called early, and now we're rushing to gather everything!' How many separate pacing shifts can you track?",
-            "explanation": "This sentence has a complex pacing contour: the pace starts calm, accelerates sharply at the early, unexpected call, and stays fast through gathering everything. Expert listening means tracking every shift, not just forming one overall impression.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "targetSpeed": 0.82,
+            "hint": "This comparison isn't as simple as the final number. Quick booking, or a slow, careful comparison?",
+            "explanation": "Advice about a comparison that's more complex than it first appears is delivered slowly, encouraging real scrutiny.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L199_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "I'll just grab his file here, and then, actually, really hustle so we're not late.",
-            "textToSpeak": "I'll just grab his file here, and then, actually, really hustle so we're not late.",
+            "word": "What actually matters in this conversation isn't finishing it before dinner, it's making sure she doesn't walk away thinking any of this is somehow her fault.",
+            "textToSpeak": "What actually matters in this conversation isn't finishing it before dinner, it's making sure she doesn't walk away thinking any of this is somehow her fault.",
             "options": [
-                "Accelerating (in 'I'll just grab his file here, and then, actually, really hustle so we're not late.', 'grab his file' moves at a normal pace, while 'really hustle so we're not late' accelerates with urgency, creating natural, varied pacing)",
-                "Decelerating (in 'I'll just grab his file here, and then, actually, really hustle so we're not late.', every word is given exactly the same length and stress, producing a flat, robotic delivery)"
+                "Decelerating (a priority on emotional clarity over speed slows the pace of the advice)",
+                "Accelerating (the speaker rushes since dinner plans usually take priority over longer conversations)"
             ],
-            "correctAnswer": "Accelerating (in 'I'll just grab his file here, and then, actually, really hustle so we're not late.', 'grab his file' moves at a normal pace, while 'really hustle so we're not late' accelerates with urgency, creating natural, varied pacing)",
+            "correctAnswer": "Decelerating (a priority on emotional clarity over speed slows the pace of the advice)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.28,
-            "hint": "Listen to 'I'll just grab his file here, and then, actually, really hustle so we're not late.' Does the pace vary naturally, or stay perfectly flat and robotic?",
-            "explanation": "Natural speech varies its pace constantly - 'grab his file' moves at a normal pace, while 'really hustle so we're not late' accelerates with urgency - rather than keeping every word at the same robotic length, as a flat reading of 'I'll just grab his file here, and then, actually, really hustle so we're not late.' would.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "targetSpeed": 0.8,
+            "hint": "Her understanding matters more than finishing before dinner. Quick wrap-up, or a slow, careful one?",
+            "explanation": "Advice that prioritizes emotional clarity over finishing quickly is itself delivered slowly and carefully.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L199_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Honestly, the recovery is going a bit slower than we hoped.",
-            "textToSpeak": "Honestly, the recovery is going a bit slower than we hoped.",
+            "word": "Whether this subscription is actually worth the upgrade depends on details buried well past the pricing page, so it's worth reading through the plan slowly before committing.",
+            "textToSpeak": "Whether this subscription is actually worth the upgrade depends on details buried well past the pricing page, so it's worth reading through the plan slowly before committing.",
             "options": [
-                "Accelerating (in 'Honestly, the recovery is going a bit slower than we hoped.', the pace slows to a dramatic crawl on 'a bit slower' as if describing a serious setback)",
-                "Decelerating (in 'Honestly, the recovery is going a bit slower than we hoped.', the pace eases back slightly on 'a bit slower', a mild, understated clinical observation - a small but genuine shift)"
+                "Accelerating (the speaker rushes since pricing pages usually show everything that actually matters)",
+                "Decelerating (a decision resting on hidden details slows the pace of the advice)"
             ],
-            "correctAnswer": "Decelerating (in 'Honestly, the recovery is going a bit slower than we hoped.', the pace eases back slightly on 'a bit slower', a mild, understated clinical observation - a small but genuine shift)",
+            "correctAnswer": "Decelerating (a decision resting on hidden details slows the pace of the advice)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.94,
-            "hint": "Listen very closely to 'Honestly, the recovery is going a bit slower than we hoped.' This is a subtle shift - can you catch the small change in pace?",
-            "explanation": "This is a subtle, expert-level distinction in 'Honestly, the recovery is going a bit slower than we hoped.': the pace eases back slightly on 'a bit slower', a mild, understated clinical observation. The change is real but small, unlike a dramatic, obvious shift.",
+            "targetSpeed": 0.78,
+            "hint": "The real details are buried past the pricing page. Quick upgrade, or a slow, careful read?",
+            "explanation": "Advice about a decision resting on hidden details is delivered slowly, encouraging a closer look before committing.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
@@ -494,53 +494,53 @@
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "The concert was steady, then the crowd suddenly surged toward the stage, and now security's rushing to manage it!",
-            "textToSpeak": "The concert was steady, then the crowd suddenly surged toward the stage, and now security's rushing to manage it!",
+            "word": "The choice being laid out here isn't one to settle on the spot, given how differently each path plays out over the months that follow, not just the days right after.",
+            "textToSpeak": "The choice being laid out here isn't one to settle on the spot, given how differently each path plays out over the months that follow, not just the days right after.",
             "options": [
-                "Decelerating (in 'The concert was steady, then the crowd suddenly surged toward the stage, and now security's rushing to manage it!', the pace simply decelerates once into concern and stays slow through managing the crowd)",
-                "Accelerating (in 'The concert was steady, then the crowd suddenly surged toward the stage, and now security's rushing to manage it!', the pace starts steady, accelerates sharply at the sudden crowd surge, and stays fast through security rushing to manage it)"
+                "Accelerating (the speaker rushes since most treatment choices lead to fairly similar outcomes either way)",
+                "Decelerating (a decision with long-term, diverging consequences slows the pace of the advice against settling quickly)"
             ],
-            "correctAnswer": "Accelerating (in 'The concert was steady, then the crowd suddenly surged toward the stage, and now security's rushing to manage it!', the pace starts steady, accelerates sharply at the sudden crowd surge, and stays fast through security rushing to manage it)",
+            "correctAnswer": "Decelerating (a decision with long-term, diverging consequences slows the pace of the advice against settling quickly)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 1.36,
-            "hint": "Listen to the full contour of 'The concert was steady, then the crowd suddenly surged toward the stage, and now security's rushing to manage it!' How many separate pacing shifts can you track?",
-            "explanation": "This sentence has a complex pacing contour: the pace starts steady, accelerates sharply at the sudden crowd surge, and stays fast through security rushing to manage it. Expert listening means tracking every shift, not just forming one overall impression.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "targetSpeed": 0.82,
+            "hint": "These paths diverge over months, not days. Quick decision, or a slow, considered one?",
+            "explanation": "A decision with genuinely different long-term outcomes is presented slowly, resisting any pressure to settle it on the spot.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L200_Q2",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "I'll just check the setlist here, and then, actually, really hustle backstage before the encore.",
-            "textToSpeak": "I'll just check the setlist here, and then, actually, really hustle backstage before the encore.",
+            "word": "The real test of a friendship like this isn't how quickly someone replies to a text, it's whether they actually show up in person when it matters.",
+            "textToSpeak": "The real test of a friendship like this isn't how quickly someone replies to a text, it's whether they actually show up in person when it matters.",
             "options": [
-                "Accelerating (in 'I'll just check the setlist here, and then, actually, really hustle backstage before the encore.', 'check the setlist' moves at a normal pace, while 'really hustle backstage before the encore' accelerates with urgency, creating natural, varied pacing)",
-                "Decelerating (in 'I'll just check the setlist here, and then, actually, really hustle backstage before the encore.', every word is given exactly the same length and stress, producing a flat, robotic delivery)"
+                "Decelerating (a reflection contrasting speed with genuine presence slows the pace of the advice)",
+                "Accelerating (the speaker rushes since quick replies are usually seen as the clearest sign of a good friend)"
             ],
-            "correctAnswer": "Accelerating (in 'I'll just check the setlist here, and then, actually, really hustle backstage before the encore.', 'check the setlist' moves at a normal pace, while 'really hustle backstage before the encore' accelerates with urgency, creating natural, varied pacing)",
+            "correctAnswer": "Decelerating (a reflection contrasting speed with genuine presence slows the pace of the advice)",
             "correctAnswerIndex": 0,
-            "targetSpeed": 1.28,
-            "hint": "Listen to 'I'll just check the setlist here, and then, actually, really hustle backstage before the encore.' Does the pace vary naturally, or stay perfectly flat and robotic?",
-            "explanation": "Natural speech varies its pace constantly - 'check the setlist' moves at a normal pace, while 'really hustle backstage before the encore' accelerates with urgency - rather than keeping every word at the same robotic length, as a flat reading of 'I'll just check the setlist here, and then, actually, really hustle backstage before the encore.' would.",
-            "pacingRule": "Accelerated Pacing: Speakers speed up to convey urgency, excitement, panic, or when delivering routine, low-importance information quickly."
+            "targetSpeed": 0.79,
+            "hint": "This values showing up over reply speed. Quick reflection, or a slow, considered one?",
+            "explanation": "A reflection that values genuine presence over a quick reply is itself delivered slowly and thoughtfully.",
+            "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         },
         {
             "id": "ACC_SPEEDVARIANCE_L200_Q3",
             "instruction": "Adjust the speed",
             "subtype": "speedVariance",
             "interactionType": "slider",
-            "word": "Honestly, the show started a bit later than scheduled.",
-            "textToSpeak": "Honestly, the show started a bit later than scheduled.",
+            "word": "What actually gets remembered from tonight probably won't be how quickly this got explained, but whether he felt like the people telling him truly meant every word.",
+            "textToSpeak": "What actually gets remembered from tonight probably won't be how quickly this got explained, but whether he felt like the people telling him truly meant every word.",
             "options": [
-                "Accelerating (in 'Honestly, the show started a bit later than scheduled.', the pace slows to a dramatic crawl on 'a bit later' as if describing a huge delay)",
-                "Decelerating (in 'Honestly, the show started a bit later than scheduled.', the pace eases back slightly on 'a bit later', a mild, understated observation - a small but genuine shift)"
+                "Accelerating (the speaker rushes since children usually remember events more than the exact words used)",
+                "Decelerating (an emphasis on sincerity over speed, as the lasting takeaway, slows the pace of the reflection)"
             ],
-            "correctAnswer": "Decelerating (in 'Honestly, the show started a bit later than scheduled.', the pace eases back slightly on 'a bit later', a mild, understated observation - a small but genuine shift)",
+            "correctAnswer": "Decelerating (an emphasis on sincerity over speed, as the lasting takeaway, slows the pace of the reflection)",
             "correctAnswerIndex": 1,
-            "targetSpeed": 0.94,
-            "hint": "Listen very closely to 'Honestly, the show started a bit later than scheduled.' This is a subtle shift - can you catch the small change in pace?",
-            "explanation": "This is a subtle, expert-level distinction in 'Honestly, the show started a bit later than scheduled.': the pace eases back slightly on 'a bit later', a mild, understated observation. The change is real but small, unlike a dramatic, obvious shift.",
+            "targetSpeed": 0.8,
+            "hint": "Sincerity, not speed, is what will be remembered. Quick delivery, or a slow, sincere one?",
+            "explanation": "A reflection that values sincerity over speed as the true takeaway is itself delivered slowly and thoughtfully.",
             "pacingRule": "Decelerated Pacing: Speakers slow down to ensure clarity for important details (numbers, times), to convey caution, or to express gentleness and care."
         }
     ]
