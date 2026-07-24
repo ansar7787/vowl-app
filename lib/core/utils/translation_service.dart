@@ -89,7 +89,9 @@ class TranslationService {
     final prefs = await SharedPreferences.getInstance();
     final bcpCode = prefs.getString(_kTargetLangKey);
     if (bcpCode == null) return false;
-    return await _modelManager.isModelDownloaded(bcpCode);
+    final targetDownloaded = await _modelManager.isModelDownloaded(bcpCode);
+    final englishDownloaded = await _modelManager.isModelDownloaded(TranslateLanguage.english.bcpCode);
+    return targetDownloaded && englishDownloaded;
   }
 
   /// Sets the user's preferred target language. This triggers the 30MB model download.
@@ -105,8 +107,17 @@ class TranslationService {
 
     _currentTargetLanguage = target;
 
-    // Trigger download in background
-    await _modelManager.downloadModel(target.bcpCode);
+    // Ensure English base model is downloaded
+    final isEnDownloaded = await _modelManager.isModelDownloaded(TranslateLanguage.english.bcpCode);
+    if (!isEnDownloaded) {
+      await _modelManager.downloadModel(TranslateLanguage.english.bcpCode);
+    }
+
+    // Trigger download for target language
+    final isTargetDownloaded = await _modelManager.isModelDownloaded(target.bcpCode);
+    if (!isTargetDownloaded) {
+      await _modelManager.downloadModel(target.bcpCode);
+    }
   }
 
   /// Translates the given English text to the user's saved target language.
@@ -135,7 +146,11 @@ class TranslationService {
       _currentTargetLanguage = target;
     }
 
-    // Ensure model is fully downloaded before translating
+    // Ensure models are fully downloaded before translating
+    final isEnDownloaded = await _modelManager.isModelDownloaded(TranslateLanguage.english.bcpCode);
+    if (!isEnDownloaded) {
+      await _modelManager.downloadModel(TranslateLanguage.english.bcpCode);
+    }
     final isDownloaded = await _modelManager.isModelDownloaded(target.bcpCode);
     if (!isDownloaded) {
       await _modelManager.downloadModel(target.bcpCode);
@@ -149,6 +164,10 @@ class TranslationService {
     final prefs = await SharedPreferences.getInstance();
     final bcpCode = prefs.getString(_kTargetLangKey);
     if (bcpCode == null) return;
+    final isEnDownloaded = await _modelManager.isModelDownloaded(TranslateLanguage.english.bcpCode);
+    if (!isEnDownloaded) {
+      await _modelManager.downloadModel(TranslateLanguage.english.bcpCode);
+    }
     final isDownloaded = await _modelManager.isModelDownloaded(bcpCode);
     if (!isDownloaded) {
       await _modelManager.downloadModel(bcpCode);
