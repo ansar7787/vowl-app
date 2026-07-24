@@ -245,17 +245,15 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen> with SingleTick
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return PopScope(
-      canPop: _imagePath == null,
+      canPop: false,
       onPopInvokedWithResult: (didPop, result) {
         if (didPop) return;
-        if (_imagePath != null) {
-          GameDialogHelper.showExitConfirmation(
-            context,
-            title: context.tr('translation.quit_scan_title', fallback: 'QUIT SCANNING?'),
-            description: context.tr('translation.quit_scan_desc', fallback: 'Your scanned text will be lost. Are you sure you want to quit?'),
-            onQuit: () => context.pop(),
-          );
-        }
+        GameDialogHelper.showExitConfirmation(
+          context,
+          title: context.tr('translation.quit_scan_title', fallback: 'QUIT SCANNING?'),
+          description: context.tr('translation.quit_scan_desc', fallback: 'Your scanned text will be lost. Are you sure you want to quit?'),
+          onQuit: () => context.pop(),
+        );
       },
       child: Scaffold(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -345,16 +343,12 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen> with SingleTick
       leading: IconButton(
          icon: Icon(Icons.arrow_back_ios_new_rounded, color: _imagePath != null || isDark ? Colors.white : Colors.black87),
          onPressed: () {
-           if (_imagePath != null) {
-             GameDialogHelper.showExitConfirmation(
-               context,
-               title: context.tr('translation.quit_scan_title', fallback: 'QUIT SCANNING?'),
-               description: context.tr('translation.quit_scan_desc', fallback: 'Your scanned text will be lost. Are you sure you want to quit?'),
-               onQuit: () => context.pop(),
-             );
-           } else {
-             context.pop();
-           }
+           GameDialogHelper.showExitConfirmation(
+             context,
+             title: context.tr('translation.quit_scan_title', fallback: 'QUIT SCANNING?'),
+             description: context.tr('translation.quit_scan_desc', fallback: 'Your scanned text will be lost. Are you sure you want to quit?'),
+             onQuit: () => context.pop(),
+           );
          },
       ),
       title: Text(
