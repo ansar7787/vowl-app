@@ -23,7 +23,7 @@ class ProfileStickersProgress extends StatelessWidget {
     // sync. Out of scope to fix here since `KidsAssets` isn't part of
     // this reviewed slice, but consider exposing
     // `KidsAssets.totalStickerCount` and reading it from there instead.
-    const totalPossible = 88; // 22 categories * 4 stickers
+    const totalPossible = 100; // Total 100 stickers
 
     return GlassTile(
       borderRadius: BorderRadius.circular(32.r),

@@ -25,7 +25,7 @@ class ModernFeatureBar extends StatelessWidget {
           ),
           subtitle: context.tr(
             'premium.feature_photo_vocab_desc',
-            fallback: 'Snap any object and learn its English name instantly using offline AI.',
+            fallback: 'Snap any object and learn its English name instantly using AI.',
           ),
           isDark: isDark,
           customColor: const Color(0xFF14B8A6), // Teal
@@ -55,7 +55,7 @@ class ModernFeatureBar extends StatelessWidget {
           ),
           subtitle: context.tr(
             'premium.feature_translations_desc',
-            fallback: 'Ad-free, real-time native hints powered by local AI.',
+            fallback: 'Ad-free, real-time native hints powered by AI.',
           ),
           isDark: isDark,
         ),
