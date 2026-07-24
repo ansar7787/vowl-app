@@ -18,6 +18,36 @@ class ModernFeatureBar extends StatelessWidget {
       children: [
         _buildFeatureCard(
           context,
+          icon: LucideIcons.camera,
+          title: context.tr(
+            'premium.feature_photo_vocab',
+            fallback: 'Photo Vocabulary',
+          ),
+          subtitle: context.tr(
+            'premium.feature_photo_vocab_desc',
+            fallback: 'Snap any object and learn its English name instantly using offline AI.',
+          ),
+          isDark: isDark,
+          customColor: const Color(0xFF14B8A6), // Teal
+        ),
+        SizedBox(height: 12.h),
+        _buildFeatureCard(
+          context,
+          icon: LucideIcons.scan,
+          title: context.tr(
+            'premium.feature_scan_learn',
+            fallback: 'Scan & Learn',
+          ),
+          subtitle: context.tr(
+            'premium.feature_scan_learn_desc',
+            fallback: 'Extract text from books or documents and get instant, real-time AI translations.',
+          ),
+          isDark: isDark,
+          customColor: const Color(0xFF6366F1), // Indigo
+        ),
+        SizedBox(height: 12.h),
+        _buildFeatureCard(
+          context,
           icon: LucideIcons.sparkles,
           title: context.tr(
             'premium.feature_translations',
@@ -139,8 +169,9 @@ class ModernFeatureBar extends StatelessWidget {
     required String title,
     required String subtitle,
     required bool isDark,
+    Color? customColor,
   }) {
-    final primaryColor = const Color(0xFF6366F1); // Indigo
+    final primaryColor = customColor ?? const Color(0xFF6366F1); // Default to Indigo
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(20.r),
