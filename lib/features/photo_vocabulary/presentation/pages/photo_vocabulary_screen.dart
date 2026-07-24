@@ -156,11 +156,15 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen> with Sing
 
          if (count < 3) {
            await prefs.setInt('photo_bounty_count', count + 1);
+           int total = prefs.getInt('photo_total_bounties') ?? 0;
+           total++;
+           await prefs.setInt('photo_total_bounties', total);
+
            await di.sl<UpdateUserRewards>()(
-             const UpdateUserRewardsParams(
+             UpdateUserRewardsParams(
                xpIncrease: 5,
                coinIncrease: 5,
-               level: 1,
+               level: total,
                gameType: 'PhotoVocabulary',
              ),
            );
@@ -250,15 +254,17 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen> with Sing
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return PopScope(
-      canPop: false,
+      canPop: _imagePath == null,
       onPopInvokedWithResult: (didPop, result) {
         if (didPop) return;
-        GameDialogHelper.showExitConfirmation(
-          context,
-          title: context.tr('vocabulary.quit_photo_title', fallback: 'QUIT EXPLORING?'),
-          description: context.tr('vocabulary.quit_photo_desc', fallback: 'Your current photo will be lost. Are you sure you want to quit?'),
-          onQuit: () => context.pop(),
-        );
+        if (_imagePath != null) {
+          GameDialogHelper.showExitConfirmation(
+            context,
+            title: context.tr('vocabulary.quit_photo_title', fallback: 'QUIT EXPLORING?'),
+            description: context.tr('vocabulary.quit_photo_desc', fallback: 'Your current photo will be lost. Are you sure you want to quit?'),
+            onQuit: () => context.pop(),
+          );
+        }
       },
       child: Scaffold(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor, 
@@ -349,12 +355,16 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen> with Sing
       leading: IconButton(
          icon: Icon(Icons.arrow_back_ios_new_rounded, color: _imagePath != null || isDark ? Colors.white : Colors.black87),
          onPressed: () {
-           GameDialogHelper.showExitConfirmation(
-             context,
-             title: context.tr('vocabulary.quit_photo_title', fallback: 'QUIT EXPLORING?'),
-             description: context.tr('vocabulary.quit_photo_desc', fallback: 'Your current photo will be lost. Are you sure you want to quit?'),
-             onQuit: () => context.pop(),
-           );
+           if (_imagePath != null) {
+             GameDialogHelper.showExitConfirmation(
+               context,
+               title: context.tr('vocabulary.quit_photo_title', fallback: 'QUIT EXPLORING?'),
+               description: context.tr('vocabulary.quit_photo_desc', fallback: 'Your current photo will be lost. Are you sure you want to quit?'),
+               onQuit: () => context.pop(),
+             );
+           } else {
+             context.pop();
+           }
          },
       ),
       title: Text(

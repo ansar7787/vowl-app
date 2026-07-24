@@ -151,11 +151,15 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen> with SingleTick
 
          if (count < 3) {
            await prefs.setInt('scan_bounty_count', count + 1);
+           int total = prefs.getInt('scan_total_bounties') ?? 0;
+           total++;
+           await prefs.setInt('scan_total_bounties', total);
+
            await di.sl<UpdateUserRewards>()(
-             const UpdateUserRewardsParams(
+             UpdateUserRewardsParams(
                xpIncrease: 5,
                coinIncrease: 5,
-               level: 1,
+               level: total,
                gameType: 'ScanAndLearn',
              ),
            );
@@ -241,15 +245,17 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen> with SingleTick
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return PopScope(
-      canPop: false,
+      canPop: _imagePath == null,
       onPopInvokedWithResult: (didPop, result) {
         if (didPop) return;
-        GameDialogHelper.showExitConfirmation(
-          context,
-          title: context.tr('translation.quit_scan_title', fallback: 'QUIT SCANNING?'),
-          description: context.tr('translation.quit_scan_desc', fallback: 'Your scanned text will be lost. Are you sure you want to quit?'),
-          onQuit: () => context.pop(),
-        );
+        if (_imagePath != null) {
+          GameDialogHelper.showExitConfirmation(
+            context,
+            title: context.tr('translation.quit_scan_title', fallback: 'QUIT SCANNING?'),
+            description: context.tr('translation.quit_scan_desc', fallback: 'Your scanned text will be lost. Are you sure you want to quit?'),
+            onQuit: () => context.pop(),
+          );
+        }
       },
       child: Scaffold(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -339,12 +345,16 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen> with SingleTick
       leading: IconButton(
          icon: Icon(Icons.arrow_back_ios_new_rounded, color: _imagePath != null || isDark ? Colors.white : Colors.black87),
          onPressed: () {
-           GameDialogHelper.showExitConfirmation(
-             context,
-             title: context.tr('translation.quit_scan_title', fallback: 'QUIT SCANNING?'),
-             description: context.tr('translation.quit_scan_desc', fallback: 'Your scanned text will be lost. Are you sure you want to quit?'),
-             onQuit: () => context.pop(),
-           );
+           if (_imagePath != null) {
+             GameDialogHelper.showExitConfirmation(
+               context,
+               title: context.tr('translation.quit_scan_title', fallback: 'QUIT SCANNING?'),
+               description: context.tr('translation.quit_scan_desc', fallback: 'Your scanned text will be lost. Are you sure you want to quit?'),
+               onQuit: () => context.pop(),
+             );
+           } else {
+             context.pop();
+           }
          },
       ),
       title: Text(
@@ -440,7 +450,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen> with SingleTick
                           Icon(LucideIcons.camera, color: Colors.white, size: 22.r),
                           SizedBox(width: 12.w),
                           Text(
-                             context.tr('vocabulary.retake', fallback: 'Take Another Photo'),
+                             context.tr('translation.retake', fallback: 'Scan Another Page'),
                              style: TextStyle(fontFamily: 'Outfit', fontSize: 18.sp, fontWeight: FontWeight.w800, color: Colors.white),
                           ),
                        ],
