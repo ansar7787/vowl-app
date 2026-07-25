@@ -189,6 +189,14 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen> with SingleTick
   }
 
   Future<void> _translateBlock(int index, String text) async {
+    final isConfigured = await di.sl<TranslationService>().isLanguageConfigured();
+    if (!isConfigured) {
+      if (mounted) {
+        LanguageSelectionBottomSheet.show(context);
+      }
+      return;
+    }
+
     MlMonetizationController.attemptFeature(
       context,
       featureIcon: Icons.g_translate_rounded,
@@ -201,18 +209,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen> with SingleTick
         });
 
         try {
-          final isConfigured = await di.sl<TranslationService>().isLanguageConfigured();
           final isDownloaded = await di.sl<TranslationService>().isTargetModelDownloaded();
-          
-          if (!isConfigured) {
-            if (mounted) {
-              setState(() {
-                _isTranslating[index] = false;
-              });
-              LanguageSelectionBottomSheet.show(context);
-            }
-            return;
-          }
 
           if (!isDownloaded) {
             if (mounted) {
