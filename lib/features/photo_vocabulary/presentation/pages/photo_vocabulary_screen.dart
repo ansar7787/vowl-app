@@ -26,7 +26,8 @@ import 'package:vowl/features/photo_vocabulary/presentation/widgets/photo_bounty
 import 'package:vowl/features/photo_vocabulary/presentation/widgets/photo_empty_state.dart';
 import 'package:vowl/features/photo_vocabulary/presentation/widgets/photo_result_chip.dart';
 import 'package:vowl/core/utils/widgets/language_selection_bottom_sheet.dart';
-import 'package:confetti/confetti.dart';
+import 'package:vowl/core/utils/widgets/translation_download_dialog.dart';
+import 'package:vowl/core/presentation/widgets/custom_snackbar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 
@@ -207,7 +208,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen> with Sing
         final isConfigured = await di.sl<TranslationService>().isLanguageConfigured();
         final isDownloaded = await di.sl<TranslationService>().isTargetModelDownloaded();
         
-        if (!isConfigured || !isDownloaded) {
+        if (!isConfigured) {
           if (mounted) {
             setState(() {
               _isTranslating[index] = false;
@@ -215,6 +216,17 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen> with Sing
             LanguageSelectionBottomSheet.show(context);
           }
           return;
+        }
+
+        if (!isDownloaded) {
+          if (mounted) {
+            await TranslationDownloadDialog.show(context);
+          }
+          final isDownloadedNow = await di.sl<TranslationService>().isTargetModelDownloaded();
+          if (!isDownloadedNow) {
+            if (mounted) setState(() { _isTranslating[index] = false; });
+            return;
+          }
         }
 
         try {

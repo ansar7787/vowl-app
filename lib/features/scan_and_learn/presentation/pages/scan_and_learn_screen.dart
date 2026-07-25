@@ -26,6 +26,8 @@ import 'package:vowl/features/scan_and_learn/presentation/widgets/scan_bounty_ta
 import 'package:vowl/features/scan_and_learn/presentation/widgets/scan_empty_state.dart';
 import 'package:vowl/features/scan_and_learn/presentation/widgets/scan_result_block.dart';
 import 'package:vowl/core/utils/widgets/language_selection_bottom_sheet.dart';
+import 'package:vowl/core/utils/widgets/translation_download_dialog.dart';
+import 'package:vowl/core/presentation/widgets/custom_snackbar.dart';
 import 'package:confetti/confetti.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -202,7 +204,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen> with SingleTick
         final isConfigured = await di.sl<TranslationService>().isLanguageConfigured();
         final isDownloaded = await di.sl<TranslationService>().isTargetModelDownloaded();
         
-        if (!isConfigured || !isDownloaded) {
+        if (!isConfigured) {
           if (mounted) {
             setState(() {
               _isTranslating[index] = false;
@@ -210,6 +212,17 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen> with SingleTick
             LanguageSelectionBottomSheet.show(context);
           }
           return;
+        }
+
+        if (!isDownloaded) {
+          if (mounted) {
+            await TranslationDownloadDialog.show(context);
+          }
+          final isDownloadedNow = await di.sl<TranslationService>().isTargetModelDownloaded();
+          if (!isDownloadedNow) {
+            if (mounted) setState(() { _isTranslating[index] = false; });
+            return;
+          }
         }
 
         try {
