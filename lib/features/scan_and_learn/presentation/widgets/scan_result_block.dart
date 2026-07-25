@@ -21,6 +21,20 @@ class ScanResultBlock extends StatelessWidget {
     required this.onTranslate,
   });
 
+  String _generateReadingTip(String text) {
+    if (text.contains('?')) {
+      return 'Tip: Questions usually end with a rising intonation.';
+    } else if (text.contains('!')) {
+      return 'Tip: Exclamation marks indicate strong emotion or volume.';
+    } else if (text.contains('"') || text.contains("'")) {
+      return 'Tip: Quotes indicate someone is speaking. Read with character!';
+    } else if (text.trim().split(' ').length > 15) {
+      return 'Tip: Long text! Remember to pause briefly at punctuation marks.';
+    } else {
+      return 'Tip: Read clearly and focus on pronouncing every syllable.';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -78,6 +92,32 @@ class ScanResultBlock extends StatelessWidget {
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w500,
                   color: textColor,
+                ),
+              ),
+              SizedBox(height: 12.h),
+              Container(
+                padding: EdgeInsets.all(10.r),
+                decoration: BoxDecoration(
+                  color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                  borderRadius: BorderRadius.circular(8.r),
+                ),
+                child: Row(
+                  children: [
+                    Icon(Icons.tips_and_updates_rounded, size: 14.r, color: Colors.amber),
+                    SizedBox(width: 8.w),
+                    Expanded(
+                      child: Text(
+                        _generateReadingTip(block.text),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w500,
+                          color: isDark ? Colors.white70 : Colors.black87,
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               if (translatedText != null) ...[

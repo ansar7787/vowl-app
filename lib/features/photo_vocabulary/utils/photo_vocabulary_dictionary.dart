@@ -260,13 +260,30 @@ class PhotoVocabularyDictionary {
     final startsWithVowel = ['a', 'e', 'i', 'o', 'u'].contains(key[0]);
     final article = startsWithVowel ? 'an' : 'a';
     
+    // Analyze word structure for dynamic grammar tips
+    String generatedGrammarTip = '';
+    
+    if (key.contains(' ')) {
+      generatedGrammarTip = 'Grammar: This is a compound noun (made of two words).';
+    } else if (key.endsWith('s') && key.length > 3) {
+      generatedGrammarTip = 'Grammar: Words ending in "s" are often plural nouns.';
+    } else if (key.endsWith('ing')) {
+      generatedGrammarTip = 'Grammar: Words ending in "-ing" can be gerunds (nouns acting like verbs).';
+    } else if (key.endsWith('y')) {
+      generatedGrammarTip = 'Grammar: To make this plural, change the "y" to "ies" (e.g., "${key.substring(0, key.length - 1)}ies").';
+    } else if (key.length >= 8) {
+      generatedGrammarTip = 'Grammar: This is a complex noun. Try to break it down by syllables.';
+    } else {
+      generatedGrammarTip = startsWithVowel 
+          ? 'Grammar: Use "an" before a vowel sound.'
+          : 'Grammar: Use "a" before a consonant sound.';
+    }
+    
     return PhotoDictionaryEntry(
       ipa: 'Noun',
       definition: 'An object identified in your environment.',
       example: 'I can see $article $key in this image.',
-      grammarTip: startsWithVowel 
-          ? 'Grammar: Use "an" before a vowel sound.'
-          : 'Grammar: Use "a" before a consonant sound.',
+      grammarTip: generatedGrammarTip,
     );
   }
 }
