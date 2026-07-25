@@ -226,7 +226,9 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen> with SingleTick
             }
           }
 
-          final translated = await di.sl<TranslationService>().translate(text);
+          final tip = ScanResultBlock.generateReadingTip(text);
+          final textToTranslate = '$text\n\n$tip';
+          final translated = await di.sl<TranslationService>().translate(textToTranslate);
           if (mounted) {
             setState(() {
               _translations[index] = translated;

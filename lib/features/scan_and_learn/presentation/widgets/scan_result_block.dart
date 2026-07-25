@@ -21,7 +21,7 @@ class ScanResultBlock extends StatelessWidget {
     required this.onTranslate,
   });
 
-  String _generateReadingTip(String text) {
+  static String generateReadingTip(String text) {
     final lowerText = text.toLowerCase();
     final words = text.trim().split(RegExp(r'\s+'));
     final wordCount = words.length;
@@ -56,6 +56,10 @@ class ScanResultBlock extends StatelessWidget {
     final textColor = isDark ? Colors.white : Colors.black87;
     final borderColor = isDark ? Colors.white.withValues(alpha: 0.15) : Colors.black.withValues(alpha: 0.1);
     final bgColor = isDark ? Colors.black.withValues(alpha: 0.4) : Colors.white.withValues(alpha: 0.7);
+
+    final translationParts = translatedText?.split('\n\n') ?? [];
+    final translatedBlockText = translationParts.isNotEmpty ? translationParts[0] : null;
+    final translatedTip = translationParts.length > 1 ? translationParts[1] : null;
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(16.r), // Sharper, document-like corners
@@ -115,26 +119,51 @@ class ScanResultBlock extends StatelessWidget {
                   color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
                   borderRadius: BorderRadius.circular(8.r),
                 ),
-                child: Row(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Icon(Icons.tips_and_updates_rounded, size: 14.r, color: Colors.amber),
-                    SizedBox(width: 8.w),
-                    Expanded(
-                      child: Text(
-                        _generateReadingTip(block.text),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w500,
-                          color: isDark ? Colors.white70 : Colors.black87,
-                          fontStyle: FontStyle.italic,
+                    Row(
+                      children: [
+                        Icon(Icons.tips_and_updates_rounded, size: 14.r, color: Colors.amber),
+                        SizedBox(width: 8.w),
+                        Expanded(
+                          child: Text(
+                            generateReadingTip(block.text),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w500,
+                              color: isDark ? Colors.white70 : Colors.black87,
+                              fontStyle: FontStyle.italic,
+                            ),
+                          ),
                         ),
-                      ),
+                      ],
                     ),
+                    if (translatedTip != null) ...[
+                      SizedBox(height: 4.h),
+                      Row(
+                        children: [
+                          SizedBox(width: 22.w),
+                          Expanded(
+                            child: Text(
+                              translatedTip,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w600,
+                                color: primaryIndigo,
+                                fontStyle: FontStyle.italic,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ],
                 ),
               ),
-              if (translatedText != null) ...[
+              if (translatedBlockText != null) ...[
                 SizedBox(height: 12.h),
                 Container(
                   padding: EdgeInsets.all(12.r),
@@ -149,7 +178,7 @@ class ScanResultBlock extends StatelessWidget {
                       SizedBox(width: 8.w),
                       Expanded(
                         child: Text(
-                          translatedText!,
+                          translatedBlockText,
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 16.sp,
