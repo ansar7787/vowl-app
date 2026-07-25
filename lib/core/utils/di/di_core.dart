@@ -27,6 +27,7 @@ import 'package:vowl/core/utils/review_service.dart';
 import 'package:vowl/core/utils/subscription_plans_service.dart';
 import 'package:vowl/core/utils/coin_packs_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/translation_service.dart';
 import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 import 'package:vowl/core/utils/ml_services/smart_reply_service.dart';
 import 'package:vowl/core/utils/ml_services/text_recognition_service.dart';
@@ -158,6 +159,10 @@ Future<void> initExternalAndCore(GetIt sl) async {
   );
   sl.registerLazySingleton<ImageLabelingService>(
     () => ImageLabelingService(),
+    dispose: (service) => service.dispose(),
+  );
+  sl.registerLazySingleton<TranslationService>(
+    () => TranslationService(),
     dispose: (service) => service.dispose(),
   );
 
