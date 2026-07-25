@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_mlkit_image_labeling/google_mlkit_image_labeling.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/photo_vocabulary/utils/photo_vocabulary_dictionary.dart';
 
 class PhotoResultChip extends StatelessWidget {
   final ImageLabel label;
@@ -30,6 +31,7 @@ class PhotoResultChip extends StatelessWidget {
     final textColor = isDark ? Colors.white : Colors.black87;
     final borderColor = isDark ? Colors.white.withValues(alpha: 0.15) : Colors.black.withValues(alpha: 0.1);
     final bgColor = isDark ? Colors.black.withValues(alpha: 0.35) : Colors.white.withValues(alpha: 0.75);
+    final entry = PhotoVocabularyDictionary.getEntry(label.label);
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(24.r), // Playful bubbly corners
@@ -52,15 +54,32 @@ class PhotoResultChip extends StatelessWidget {
                     Row(
                       children: [
                         Expanded(
-                          child: Text(
-                            label.label,
-                            style: TextStyle(
-                              fontFamily: 'Outfit', 
-                              fontSize: 22.sp, 
-                              fontWeight: FontWeight.w900, 
-                              color: textColor,
-                            ),
-                            overflow: TextOverflow.ellipsis,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                label.label,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit', 
+                                  fontSize: 22.sp, 
+                                  fontWeight: FontWeight.w900, 
+                                  color: textColor,
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              if (entry.ipa != 'Noun') ...[
+                                SizedBox(height: 2.h),
+                                Text(
+                                  entry.ipa,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit', 
+                                    fontSize: 14.sp, 
+                                    fontWeight: FontWeight.w500, 
+                                    color: isDark ? Colors.white54 : Colors.black54,
+                                  ),
+                                ),
+                              ],
+                            ],
                           ),
                         ),
                         SizedBox(width: 12.w),
@@ -93,26 +112,36 @@ class PhotoResultChip extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          Text(
+                            entry.definition,
+                            style: TextStyle(
+                              fontFamily: 'Outfit', 
+                              fontSize: 13.sp, 
+                              fontWeight: FontWeight.w500, 
+                              color: isDark ? Colors.white70 : Colors.black87,
+                            ),
+                          ),
+                          SizedBox(height: 8.h),
                           Row(
                             children: [
                               Icon(Icons.lightbulb_outline_rounded, size: 14.r, color: Colors.amber),
                               SizedBox(width: 6.w),
-                              Text(
-                                ['a', 'e', 'i', 'o', 'u'].contains(label.label.toLowerCase()[0])
-                                    ? 'Grammar: Use "an" before a vowel sound.'
-                                    : 'Grammar: Use "a" before a consonant sound.',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit', 
-                                  fontSize: 12.sp, 
-                                  fontWeight: FontWeight.w600, 
-                                  color: Colors.amber.shade700,
+                              Expanded(
+                                child: Text(
+                                  entry.grammarTip,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit', 
+                                    fontSize: 12.sp, 
+                                    fontWeight: FontWeight.w600, 
+                                    color: Colors.amber.shade700,
+                                  ),
                                 ),
                               ),
                             ],
                           ),
                           SizedBox(height: 6.h),
                           Text(
-                            'Example: "I see ${['a', 'e', 'i', 'o', 'u'].contains(label.label.toLowerCase()[0]) ? 'an' : 'a'} ${label.label.toLowerCase()} here."',
+                            'Example: "${entry.example}"',
                             style: TextStyle(
                               fontFamily: 'Outfit', 
                               fontSize: 13.sp, 
