@@ -43,6 +43,34 @@ class ScanResultBlock extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Row(
+                children: [
+                  Icon(Icons.text_format_rounded, size: 14.r, color: primaryIndigo),
+                  SizedBox(width: 4.w),
+                  Text(
+                    '${block.text.trim().split(' ').length} words',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w600,
+                      color: primaryIndigo,
+                    ),
+                  ),
+                  SizedBox(width: 12.w),
+                  Icon(Icons.auto_stories_rounded, size: 14.r, color: primaryIndigo),
+                  SizedBox(width: 4.w),
+                  Text(
+                    'Reading Practice',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w600,
+                      color: primaryIndigo,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 12.h),
               Text(
                 block.text,
                 style: TextStyle(

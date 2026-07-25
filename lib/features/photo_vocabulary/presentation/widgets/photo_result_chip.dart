@@ -83,14 +83,45 @@ class PhotoResultChip extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 6.h),
-                    Text(
-                      'Great! You found a ${label.label.toLowerCase()}.',
-                      style: TextStyle(
-                        fontFamily: 'Outfit', 
-                        fontSize: 13.sp, 
-                        fontWeight: FontWeight.w500, 
-                        color: isDark ? Colors.white60 : Colors.black54,
+                    SizedBox(height: 12.h),
+                    Container(
+                      padding: EdgeInsets.all(12.r),
+                      decoration: BoxDecoration(
+                        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                        borderRadius: BorderRadius.circular(8.r),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(Icons.lightbulb_outline_rounded, size: 14.r, color: Colors.amber),
+                              SizedBox(width: 6.w),
+                              Text(
+                                ['a', 'e', 'i', 'o', 'u'].contains(label.label.toLowerCase()[0])
+                                    ? 'Grammar: Use "an" before a vowel sound.'
+                                    : 'Grammar: Use "a" before a consonant sound.',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit', 
+                                  fontSize: 12.sp, 
+                                  fontWeight: FontWeight.w600, 
+                                  color: Colors.amber.shade700,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 6.h),
+                          Text(
+                            'Example: "I see ${['a', 'e', 'i', 'o', 'u'].contains(label.label.toLowerCase()[0]) ? 'an' : 'a'} ${label.label.toLowerCase()} here."',
+                            style: TextStyle(
+                              fontFamily: 'Outfit', 
+                              fontSize: 13.sp, 
+                              fontWeight: FontWeight.w500, 
+                              color: isDark ? Colors.white70 : Colors.black87,
+                              fontStyle: FontStyle.italic,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     if (translatedText != null) ...[
