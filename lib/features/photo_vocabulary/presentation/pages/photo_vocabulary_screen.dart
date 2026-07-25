@@ -199,8 +199,10 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen> with Sing
     if (!mounted) return;
 
     if (!isConfigured) {
-      LanguageSelectionBottomSheet.show(context);
-      return;
+      await LanguageSelectionBottomSheet.show(context);
+      if (!mounted) return;
+      final configuredNow = await di.sl<TranslationService>().isLanguageConfigured();
+      if (!configuredNow) return; // User closed sheet without selecting a language
     }
 
     MlMonetizationController.attemptFeature(
