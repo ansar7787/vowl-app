@@ -167,7 +167,15 @@ class TranslationService {
         targetLanguage: target,
       );
       _currentTargetLanguage = target;
-      return await _translator!.translateText(englishText);
+      
+      try {
+        return await _translator!.translateText(englishText);
+      } catch (e2) {
+        // If it STILL fails, the downloaded model is likely corrupted on disk.
+        // Delete it so the app is forced to redownload a clean copy next time.
+        await _modelManager.deleteModel(target.bcpCode);
+        throw Exception("Corrupted model deleted. Please try translating again to redownload.");
+      }
     }
   }
 

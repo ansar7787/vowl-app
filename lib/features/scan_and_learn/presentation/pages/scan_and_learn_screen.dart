@@ -239,7 +239,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen> with SingleTick
             });
             CustomSnackBar.show(
               context: context,
-              message: context.tr('translation.translate_fail', fallback: 'Failed to translate.'),
+              message: e.toString().replaceAll('Exception: ', ''),
               type: CustomSnackBarType.error,
             );
           }

@@ -244,7 +244,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen> with Sing
             });
             CustomSnackBar.show(
               context: context,
-              message: context.tr('vocabulary.translate_fail', fallback: 'Failed to translate.'),
+              message: e.toString().replaceAll('Exception: ', ''),
               type: CustomSnackBarType.error,
             );
           }
