@@ -200,31 +200,31 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen> with SingleTick
           _isTranslating[index] = true;
         });
 
-        final isConfigured = await di.sl<TranslationService>().isLanguageConfigured();
-        final isDownloaded = await di.sl<TranslationService>().isTargetModelDownloaded();
-        
-        if (!isConfigured) {
-          if (mounted) {
-            setState(() {
-              _isTranslating[index] = false;
-            });
-            LanguageSelectionBottomSheet.show(context);
-          }
-          return;
-        }
-
-        if (!isDownloaded) {
-          if (mounted) {
-            await TranslationDownloadDialog.show(context);
-          }
-          final isDownloadedNow = await di.sl<TranslationService>().isTargetModelDownloaded();
-          if (!isDownloadedNow) {
-            if (mounted) setState(() { _isTranslating[index] = false; });
+        try {
+          final isConfigured = await di.sl<TranslationService>().isLanguageConfigured();
+          final isDownloaded = await di.sl<TranslationService>().isTargetModelDownloaded();
+          
+          if (!isConfigured) {
+            if (mounted) {
+              setState(() {
+                _isTranslating[index] = false;
+              });
+              LanguageSelectionBottomSheet.show(context);
+            }
             return;
           }
-        }
 
-        try {
+          if (!isDownloaded) {
+            if (mounted) {
+              await TranslationDownloadDialog.show(context);
+            }
+            final isDownloadedNow = await di.sl<TranslationService>().isTargetModelDownloaded();
+            if (!isDownloadedNow) {
+              if (mounted) setState(() { _isTranslating[index] = false; });
+              return;
+            }
+          }
+
           final translated = await di.sl<TranslationService>().translate(text);
           if (mounted) {
             setState(() {
@@ -239,7 +239,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen> with SingleTick
             });
             CustomSnackBar.show(
               context: context,
-              message: context.tr('vocabulary.translate_fail', fallback: 'Failed to translate.'),
+              message: context.tr('translation.translate_fail', fallback: 'Failed to translate.'),
               type: CustomSnackBarType.error,
             );
           }

@@ -205,31 +205,31 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen> with Sing
           _isTranslating[index] = true;
         });
 
-        final isConfigured = await di.sl<TranslationService>().isLanguageConfigured();
-        final isDownloaded = await di.sl<TranslationService>().isTargetModelDownloaded();
-        
-        if (!isConfigured) {
-          if (mounted) {
-            setState(() {
-              _isTranslating[index] = false;
-            });
-            LanguageSelectionBottomSheet.show(context);
-          }
-          return;
-        }
-
-        if (!isDownloaded) {
-          if (mounted) {
-            await TranslationDownloadDialog.show(context);
-          }
-          final isDownloadedNow = await di.sl<TranslationService>().isTargetModelDownloaded();
-          if (!isDownloadedNow) {
-            if (mounted) setState(() { _isTranslating[index] = false; });
+        try {
+          final isConfigured = await di.sl<TranslationService>().isLanguageConfigured();
+          final isDownloaded = await di.sl<TranslationService>().isTargetModelDownloaded();
+          
+          if (!isConfigured) {
+            if (mounted) {
+              setState(() {
+                _isTranslating[index] = false;
+              });
+              LanguageSelectionBottomSheet.show(context);
+            }
             return;
           }
-        }
 
-        try {
+          if (!isDownloaded) {
+            if (mounted) {
+              await TranslationDownloadDialog.show(context);
+            }
+            final isDownloadedNow = await di.sl<TranslationService>().isTargetModelDownloaded();
+            if (!isDownloadedNow) {
+              if (mounted) setState(() { _isTranslating[index] = false; });
+              return;
+            }
+          }
+
           final translated = await di.sl<TranslationService>().translate(text);
           if (mounted) {
             setState(() {
