@@ -256,6 +256,15 @@ class PhotoVocabularyDictionary {
       return dictionary[key]!;
     }
     
+    if (key.isEmpty) {
+      return const PhotoDictionaryEntry(
+        ipa: 'Noun',
+        definition: 'An object identified in your environment.',
+        example: 'I can see an object in this image.',
+        grammarTip: 'Grammar: Nouns represent people, places, or things.',
+      );
+    }
+    
     // Smart fallback for unknown words
     final startsWithVowel = ['a', 'e', 'i', 'o', 'u'].contains(key[0]);
     final article = startsWithVowel ? 'an' : 'a';

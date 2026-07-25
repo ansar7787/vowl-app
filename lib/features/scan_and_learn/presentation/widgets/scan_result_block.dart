@@ -28,7 +28,7 @@ class ScanResultBlock extends StatelessWidget {
       return 'Tip: Exclamation marks indicate strong emotion or volume.';
     } else if (text.contains('"') || text.contains("'")) {
       return 'Tip: Quotes indicate someone is speaking. Read with character!';
-    } else if (text.trim().split(' ').length > 15) {
+    } else if (text.trim().split(RegExp(r'\s+')).length > 15) {
       return 'Tip: Long text! Remember to pause briefly at punctuation marks.';
     } else {
       return 'Tip: Read clearly and focus on pronouncing every syllable.';
@@ -62,7 +62,7 @@ class ScanResultBlock extends StatelessWidget {
                   Icon(Icons.text_format_rounded, size: 14.r, color: primaryIndigo),
                   SizedBox(width: 4.w),
                   Text(
-                    '${block.text.trim().split(' ').length} words',
+                    '${block.text.trim().split(RegExp(r'\s+')).length} words',
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 12.sp,
