@@ -157,7 +157,14 @@ class TranslationService {
     }
 
     try {
-      return await _translator!.translateText(englishText);
+      var result = await _translator!.translateText(englishText);
+      // ML Kit bug: sometimes first translation after initialization silently fails
+      // and returns the english text because native models are still warming up.
+      if (result == englishText && target != TranslateLanguage.english) {
+        await Future.delayed(const Duration(milliseconds: 600));
+        result = await _translator!.translateText(englishText);
+      }
+      return result;
     } catch (e) {
       // Native engine might have been killed by OS memory pressure.
       // Re-initialize and retry once.
@@ -169,7 +176,12 @@ class TranslationService {
       _currentTargetLanguage = target;
       
       try {
-        return await _translator!.translateText(englishText);
+        var result2 = await _translator!.translateText(englishText);
+        if (result2 == englishText && target != TranslateLanguage.english) {
+          await Future.delayed(const Duration(milliseconds: 600));
+          result2 = await _translator!.translateText(englishText);
+        }
+        return result2;
       } catch (e2) {
         // If it STILL fails, the downloaded model is likely corrupted on disk.
         // Delete it so the app is forced to redownload a clean copy next time.
