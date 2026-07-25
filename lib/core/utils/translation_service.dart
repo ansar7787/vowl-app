@@ -156,8 +156,21 @@ class TranslationService {
       await _modelManager.downloadModel(target.bcpCode);
     }
 
-    return await _translator!.translateText(englishText);
+    try {
+      return await _translator!.translateText(englishText);
+    } catch (e) {
+      // Native engine might have been killed by OS memory pressure.
+      // Re-initialize and retry once.
+      await _translator?.close();
+      _translator = OnDeviceTranslator(
+        sourceLanguage: TranslateLanguage.english,
+        targetLanguage: target,
+      );
+      _currentTargetLanguage = target;
+      return await _translator!.translateText(englishText);
+    }
   }
+
 
   /// Explicitly starts the model download for the configured language and waits for completion.
   Future<void> ensureModelDownloaded() async {
