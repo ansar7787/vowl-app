@@ -404,7 +404,7 @@ class _LanguageSelectionBottomSheetState
                                 .supportedLanguages[_selectedLanguage]!;
 
                             try {
-                              await TranslationService().setTargetLanguage(
+                              await di.sl<TranslationService>().setTargetLanguage(
                                 target,
                               );
                               _progressTimer?.cancel();
