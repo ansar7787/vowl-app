@@ -15,6 +15,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/ml_monetization_controller.dart';
 import 'package:vowl/core/utils/ml_services/image_labeling_service.dart';
 import 'package:vowl/core/utils/translation_service.dart';
+import 'package:vowl/features/photo_vocabulary/utils/photo_vocabulary_dictionary.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
 import 'package:flutter/services.dart';
@@ -231,7 +232,9 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen> with Sing
             }
           }
 
-          final translated = await di.sl<TranslationService>().translate(text);
+          final entry = PhotoVocabularyDictionary.getEntry(text);
+          final textToTranslate = '$text\n\n${entry.example}';
+          final translated = await di.sl<TranslationService>().translate(textToTranslate);
           if (mounted) {
             setState(() {
               _translations[index] = translated;

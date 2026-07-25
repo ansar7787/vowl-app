@@ -32,6 +32,10 @@ class PhotoResultChip extends StatelessWidget {
     final borderColor = isDark ? Colors.white.withValues(alpha: 0.15) : Colors.black.withValues(alpha: 0.1);
     final bgColor = isDark ? Colors.black.withValues(alpha: 0.35) : Colors.white.withValues(alpha: 0.75);
     final entry = PhotoVocabularyDictionary.getEntry(label.label);
+    
+    final translationParts = translatedText?.split('\n\n') ?? [];
+    final translatedWord = translationParts.isNotEmpty ? translationParts[0] : null;
+    final translatedExample = translationParts.length > 1 ? translationParts[1] : null;
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(24.r), // Playful bubbly corners
@@ -150,13 +154,26 @@ class PhotoResultChip extends StatelessWidget {
                               fontStyle: FontStyle.italic,
                             ),
                           ),
+                          if (translatedExample != null) ...[
+                            SizedBox(height: 4.h),
+                            Text(
+                              'Example: "$translatedExample"',
+                              style: TextStyle(
+                                fontFamily: 'Outfit', 
+                                fontSize: 13.sp, 
+                                fontWeight: FontWeight.w600, 
+                                color: primaryTeal,
+                                fontStyle: FontStyle.italic,
+                              ),
+                            ),
+                          ],
                         ],
                       ),
                     ),
-                    if (translatedText != null) ...[
+                    if (translatedWord != null) ...[
                       SizedBox(height: 8.h),
                       Text(
-                        translatedText!,
+                        translatedWord,
                         style: TextStyle(
                           fontFamily: 'Outfit', 
                           fontSize: 18.sp, 
