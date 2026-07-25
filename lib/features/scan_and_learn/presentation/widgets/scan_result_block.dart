@@ -22,16 +22,30 @@ class ScanResultBlock extends StatelessWidget {
   });
 
   String _generateReadingTip(String text) {
-    if (text.contains('?')) {
-      return 'Tip: Questions usually end with a rising intonation.';
+    final lowerText = text.toLowerCase();
+    final words = text.trim().split(RegExp(r'\s+'));
+    final wordCount = words.length;
+
+    if (RegExp(r'\b\w+ed\b').hasMatch(lowerText)) {
+      return 'Phonics Tip: Words ending in "-ed" can sound like /t/, /d/, or /id/ depending on the root word.';
+    } else if (lowerText.contains('th')) {
+      return 'Phonics Tip: Watch your "th" sounds! Remember to place your tongue slightly between your teeth.';
+    } else if (RegExp(r'\b(can|could|should|would|will|must)\b').hasMatch(lowerText)) {
+      return 'Grammar Tip: Modal verbs (like can/should) are usually unstressed in natural spoken English.';
+    } else if (RegExp(r"\b\w+'\w+\b").hasMatch(lowerText)) {
+      return 'Fluency Tip: This text contains contractions (e.g., don\'t). Pronounce them smoothly as a single sound.';
+    } else if (text.contains('?')) {
+      return 'Intonation Tip: Questions usually end with a rising voice intonation.';
     } else if (text.contains('!')) {
-      return 'Tip: Exclamation marks indicate strong emotion or volume.';
+      return 'Expression Tip: Exclamation marks indicate strong emotion. Read with emphasis!';
     } else if (text.contains('"') || text.contains("'")) {
-      return 'Tip: Quotes indicate someone is speaking. Read with character!';
-    } else if (text.trim().split(RegExp(r'\s+')).length > 15) {
-      return 'Tip: Long text! Remember to pause briefly at punctuation marks.';
+      return 'Expression Tip: Quotes indicate someone is speaking. Try to read with character!';
+    } else if (wordCount > 15) {
+      return 'Pacing Tip: Long text! Remember to breathe and pause briefly at commas and periods.';
+    } else if (RegExp(r'\b(and|but|or|because)\b').hasMatch(lowerText)) {
+      return 'Fluency Tip: Use conjunctions to smoothly link your thoughts together without pausing.';
     } else {
-      return 'Tip: Read clearly and focus on pronouncing every syllable.';
+      return 'Pronunciation Tip: Focus on clearly articulating the final consonant of each word.';
     }
   }
 
