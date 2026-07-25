@@ -145,6 +145,6 @@ class PhotoResultChip extends StatelessWidget {
           ),
         ),
       ),
-    ).animate().fadeIn(delay: (index * 100).ms).slideX(begin: 0.2);
+    );
   }
 }

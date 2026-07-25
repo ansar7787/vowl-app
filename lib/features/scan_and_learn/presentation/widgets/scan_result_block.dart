@@ -124,6 +124,6 @@ class ScanResultBlock extends StatelessWidget {
           ),
         ),
       ),
-    ).animate().fadeIn(delay: (index * 50).ms).slideX(begin: 0.05);
+    );
   }
 }
