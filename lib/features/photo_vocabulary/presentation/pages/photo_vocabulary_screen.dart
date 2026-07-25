@@ -27,7 +27,7 @@ import 'package:vowl/features/photo_vocabulary/presentation/widgets/photo_empty_
 import 'package:vowl/features/photo_vocabulary/presentation/widgets/photo_result_chip.dart';
 import 'package:vowl/core/utils/widgets/language_selection_bottom_sheet.dart';
 import 'package:vowl/core/utils/widgets/translation_download_dialog.dart';
-import 'package:vowl/core/presentation/widgets/custom_snackbar.dart';
+import 'package:confetti/confetti.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 
