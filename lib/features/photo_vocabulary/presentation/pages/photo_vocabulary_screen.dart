@@ -195,10 +195,11 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen> with Sing
 
   Future<void> _translateLabel(int index, String text) async {
     final isConfigured = await di.sl<TranslationService>().isLanguageConfigured();
+    
+    if (!mounted) return;
+
     if (!isConfigured) {
-      if (mounted) {
-        LanguageSelectionBottomSheet.show(context);
-      }
+      LanguageSelectionBottomSheet.show(context);
       return;
     }
 

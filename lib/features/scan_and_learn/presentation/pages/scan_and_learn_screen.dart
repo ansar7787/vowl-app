@@ -190,10 +190,11 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen> with SingleTick
 
   Future<void> _translateBlock(int index, String text) async {
     final isConfigured = await di.sl<TranslationService>().isLanguageConfigured();
+    
+    if (!mounted) return;
+
     if (!isConfigured) {
-      if (mounted) {
-        LanguageSelectionBottomSheet.show(context);
-      }
+      LanguageSelectionBottomSheet.show(context);
       return;
     }
 
