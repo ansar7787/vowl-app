@@ -104,7 +104,7 @@ class PhotoResultChip extends StatelessWidget {
                           fontWeight: FontWeight.w700, 
                           color: isDark ? const Color(0xFF2DD4BF) : primaryTeal,
                         ),
-                      ).animate().fadeIn().slideY(begin: 0.2),
+                      ),
                     ] else if (isTranslating) ...[
                       SizedBox(height: 12.h),
                       SizedBox(

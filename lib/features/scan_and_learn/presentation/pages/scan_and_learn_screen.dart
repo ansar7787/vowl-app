@@ -197,6 +197,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen> with SingleTick
       await LanguageSelectionBottomSheet.show(context);
       if (!mounted) return;
       final configuredNow = await di.sl<TranslationService>().isLanguageConfigured();
+      if (!mounted) return;
       if (!configuredNow) return; // User closed sheet without selecting a language
     }
 

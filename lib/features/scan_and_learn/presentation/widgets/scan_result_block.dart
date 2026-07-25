@@ -79,7 +79,7 @@ class ScanResultBlock extends StatelessWidget {
                       ),
                     ],
                   ),
-                ).animate().fadeIn().slideY(begin: 0.2),
+                ),
               ] else if (isTranslating) ...[
                 SizedBox(height: 12.h),
                 SizedBox(
