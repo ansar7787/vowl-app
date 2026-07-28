@@ -158,11 +158,26 @@ void main() async {
     }
   }
 
+  // 5. CRITICAL FIX: NotificationService MUST initialize before the router
+  //    evaluates its first redirect. Previously this was deferred by 1.5s in
+  //    _initDeferredServices, which meant getInitialMessage() and the
+  //    SharedPreferences pending-route check ran AFTER the router had already
+  //    consumed pendingDeepLink as null — notification taps from a terminated
+  //    state were silently lost.
+  try {
+    await di.sl<NotificationService>().init();
+    await di.sl<NotificationService>().scheduleWeeklyMotivation();
+  } catch (e) {
+    if (kDebugMode) {
+      debugPrint('Warning: NotificationService initialization failed: $e');
+    }
+  }
+
   runApp(const MyApp());
 
   // Native splash will be removed dynamically in SplashPage once the image is decoded!
 
-  // 5. Defer heavy SDKs until UI is stable
+  // 6. Defer heavy SDKs until UI is stable
   WidgetsBinding.instance.addPostFrameCallback((_) {
     Future.delayed(const Duration(milliseconds: 1500), () async {
       await _initDeferredServices(firebaseApp);
@@ -206,10 +221,9 @@ Future<void> _initDeferredServices(FirebaseApp? firebaseApp) async {
           : AndroidProvider.playIntegrity,
     ),
   );
-  await runSafe('NotificationService', () async {
-    await di.sl<NotificationService>().init();
-    await di.sl<NotificationService>().scheduleWeeklyMotivation();
-  });
+  // NotificationService is now initialized in main() before runApp() to
+  // ensure pendingDeepLink is set before the router's first redirect.
+  // See the CRITICAL FIX comment in main() for details.
 }
 
 // ============================================================================

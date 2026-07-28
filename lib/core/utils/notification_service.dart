@@ -73,6 +73,8 @@ class NotificationService {
 
   static const int streakReminderNotificationId = 101;
   static const int weeklyMotivationNotificationId = 202;
+  static const int leaderboardNotificationId = 303;
+  static const int milestoneNotificationId = 404;
   static const int maxLocalNotificationModulo = 100000;
 
   final FirebaseMessaging _fcm = FirebaseMessaging.instance;
@@ -324,15 +326,38 @@ class NotificationService {
   }
 
   void _handleNotificationTap(String? path) {
-    if (path != null && path.isNotEmpty && _isSafeInternalPath(path)) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        AppRouter.router.go(path);
-      });
-    } else if (path != null && kDebugMode) {
-      debugPrint(
-        'NotificationService: ignored unsafe notification path: $path',
-      );
+    if (path == null || path.isEmpty || !_isSafeInternalPath(path)) {
+      if (path != null && kDebugMode) {
+        debugPrint(
+          'NotificationService: ignored unsafe notification path: $path',
+        );
+      }
+      // Even with no specific deep link, ensure the app comes to foreground.
+      // On Android, the tap itself brings the activity to front (via the
+      // FLUTTER_NOTIFICATION_CLICK intent-filter); on iOS, the OS does it
+      // automatically. No extra code needed here for that.
+      return;
     }
+
+    // ROBUST FIX: Try immediate navigation, but if the router context isn't
+    // ready yet (cold-start race), fall back to pendingDeepLink so the
+    // router's redirect logic picks it up on its next evaluation cycle.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      try {
+        AppRouter.router.go(path);
+        if (kDebugMode) {
+          debugPrint('NotificationService: navigated to $path');
+        }
+      } catch (e) {
+        // Router not ready — set pending deep link as fallback
+        AppRouter.pendingDeepLink = path;
+        if (kDebugMode) {
+          debugPrint(
+            'NotificationService: router not ready, set pendingDeepLink: $path ($e)',
+          );
+        }
+      }
+    });
   }
 
   /// Saves the current FCM token to the authenticated user's Firestore document.
@@ -487,6 +512,11 @@ class NotificationService {
       _idRandom.nextInt(maxLocalNotificationModulo);
 
   /// SCHEDULES A STREAK REMINDER
+  ///
+  /// Timing: 8:30 PM local time — optimal for both Indian (IST) and global
+  /// users. This is the post-dinner, pre-bedtime window when users are most
+  /// likely to be relaxing with their phone. 9 PM+ risks being too late
+  /// (sleep disruption), while 7 PM is dinner time in most cultures.
   Future<void> scheduleStreakReminder(int currentStreak) async {
     final enabled = await _areNotificationsEnabled;
     if (!enabled) {
@@ -538,35 +568,32 @@ class NotificationService {
 
     final location = _currentLocation;
     final now = tz.TZDateTime.now(location);
-    // Anchor to exactly 9:15 PM local time
+    // Anchor to 8:30 PM local time — post-dinner learning window
     var scheduledDate = tz.TZDateTime(
       location,
       now.year,
       now.month,
       now.day,
-      21, // 9 PM
-      15, // 15 mins
+      20, // 8 PM
+      30, // 30 mins
     );
 
-    // If it's already past 9:15 PM today, schedule for tomorrow
+    // If it's already past 8:30 PM today, schedule for tomorrow
     if (scheduledDate.isBefore(now)) {
       scheduledDate = scheduledDate.add(const Duration(days: 1));
     }
 
-    final titles = [
-      'You\'re on a roll 🔥',
-      'Don\'t break the chain ⚡',
-      'Your streak misses you 🎯',
-    ];
-    final title = titles[_idRandom.nextInt(titles.length)];
+    // Streak-aware notification copy — personalised, encouraging, never annoying.
+    // Messages adapt based on streak milestones to feel like genuine progress.
+    final streakMessages = _getStreakNotificationCopy(currentStreak);
 
     await _localNotifications.zonedSchedule(
       streakReminderNotificationId,
-      _t('notifications.streak_reminder_title', fallback: title),
+      _t('notifications.streak_reminder_title', fallback: streakMessages.title),
       _t(
         'notifications.streak_reminder_body',
         args: [currentStreak.toString()],
-        fallback: '$currentStreak days strong. One quick round keeps it going.',
+        fallback: streakMessages.body,
       ),
       scheduledDate,
       platformDetails,
@@ -581,12 +608,108 @@ class NotificationService {
 
     if (kDebugMode) {
       debugPrint(
-        'Scheduled streak reminder for $currentStreak days at 9:15 PM local time',
+        'Scheduled streak reminder for $currentStreak days at 8:30 PM local time',
       );
     }
   }
 
+  /// Returns personalised, premium notification copy based on streak count.
+  /// Messages feel like a supportive coach, not a nagging alarm.
+  ({String title, String body}) _getStreakNotificationCopy(int streak) {
+    if (streak >= 30) {
+      // Legendary status — celebrate mastery
+      final options = [
+        (
+          title: '$streak days — you\'re legendary \u{1F451}',
+          body: 'Most people quit by day 7. You\'re built different.',
+        ),
+        (
+          title: 'One month strong \u{1F3C6}',
+          body: 'Your consistency is paying off. Keep that crown.',
+        ),
+        (
+          title: '$streak-day streak \u{1F525}',
+          body: 'You\'re in the top 1% of learners. Quick round tonight?',
+        ),
+      ];
+      return options[_idRandom.nextInt(options.length)];
+    } else if (streak >= 14) {
+      // Strong habit — reinforce confidence
+      final options = [
+        (
+          title: 'Two weeks and counting \u{2728}',
+          body: '$streak days of growth. Tonight\'s round takes 2 minutes.',
+        ),
+        (
+          title: 'You\'ve built a real habit \u{1F4AA}',
+          body: '$streak days in. Don\'t let tomorrow be day zero.',
+        ),
+        (
+          title: 'Halfway to legendary \u{1F680}',
+          body: '$streak consecutive days — you\'re almost there.',
+        ),
+      ];
+      return options[_idRandom.nextInt(options.length)];
+    } else if (streak >= 7) {
+      // One week — first major milestone
+      final options = [
+        (
+          title: 'A full week \u{1F3AF}',
+          body: '$streak days! Most people never make it this far.',
+        ),
+        (
+          title: 'Week ${ streak ~/ 7} complete \u{1F389}',
+          body: 'Your future self will thank you. 2-minute round?',
+        ),
+        (
+          title: 'Building momentum \u{26A1}',
+          body: '$streak days of practice. Keep the rhythm going tonight.',
+        ),
+      ];
+      return options[_idRandom.nextInt(options.length)];
+    } else if (streak >= 3) {
+      // Early commitment — encourage consistency
+      final options = [
+        (
+          title: '$streak days in a row \u{1F525}',
+          body: 'You\'re building something great. Quick round tonight?',
+        ),
+        (
+          title: 'Streak protected so far \u{1F6E1}\u{FE0F}',
+          body: 'Don\'t let $streak days of effort go to waste.',
+        ),
+        (
+          title: 'Your streak is growing \u{1F331}',
+          body: '$streak days! Just one more round to keep it alive.',
+        ),
+      ];
+      return options[_idRandom.nextInt(options.length)];
+    } else {
+      // Just starting — gentle, inviting
+      final options = [
+        (
+          title: 'Your evening learning window \u{1F319}',
+          body: 'A quick 2-minute round before bed makes all the difference.',
+        ),
+        (
+          title: 'Ready for tonight\'s round? \u{1F3AE}',
+          body: 'Small steps, big results. Let\'s keep the streak alive.',
+        ),
+        (
+          title: 'Winding down? Perfect time to learn \u{1F4D6}',
+          body: 'One round takes less time than scrolling. Give it a try.',
+        ),
+      ];
+      return options[_idRandom.nextInt(options.length)];
+    }
+  }
+
   /// SCHEDULES WEEKLY MOTIVATION
+  ///
+  /// Timing: Sunday 10:30 AM local time — the ideal "fresh start" moment.
+  /// Sunday evening (previous 6:30 PM) competes with family time and
+  /// entertainment. Sunday morning gives users a motivational nudge when
+  /// they're planning their week ahead.
   Future<void> scheduleWeeklyMotivation() async {
     final enabled = await _areNotificationsEnabled;
     if (!enabled) {
@@ -598,7 +721,7 @@ class NotificationService {
         AndroidNotificationDetails(
           weeklyChannelId,
           'Weekly Goals',
-          channelDescription: 'Sunday morning motivation!',
+          channelDescription: 'Sunday motivation!',
           importance: Importance.high,
           priority: Priority.high,
         );
@@ -621,17 +744,28 @@ class NotificationService {
 
     final location = _currentLocation;
 
+    // Rotating weekly messages — keeps the notification feeling fresh
+    final weeklyMessages = [
+      (
+        title: 'New week, new words \u{1F4DA}',
+        body: 'Start your week with a quick learning session.',
+      ),
+      (
+        title: 'Sunday Reset \u{2728}',
+        body: 'Top learners practice on weekends. A 3-minute round?',
+      ),
+      (
+        title: 'Your weekly head start \u{1F680}',
+        body: 'Get ahead this week — one round sets the tone.',
+      ),
+    ];
+    final msg = weeklyMessages[_idRandom.nextInt(weeklyMessages.length)];
+
     await _localNotifications.zonedSchedule(
       weeklyMotivationNotificationId,
-      _t(
-        'notifications.weekly_motivation_title',
-        fallback: 'Sunday wind-down 🎧',
-      ),
-      _t(
-        'notifications.weekly_motivation_body',
-        fallback: 'Relax with a few rounds before the week begins.',
-      ),
-      _nextInstanceOfSundaySixThirtyPM(location),
+      _t('notifications.weekly_motivation_title', fallback: msg.title),
+      _t('notifications.weekly_motivation_body', fallback: msg.body),
+      _nextInstanceOfSundayMorning(location),
       platformDetails,
       androidScheduleMode: useExact
           ? AndroidScheduleMode.exactAllowWhileIdle
@@ -643,18 +777,19 @@ class NotificationService {
     );
 
     if (kDebugMode) {
-      debugPrint('Scheduled weekly motivation for Sundays at 6:30 PM');
+      debugPrint('Scheduled weekly motivation for Sundays at 10:30 AM');
     }
   }
 
-  tz.TZDateTime _nextInstanceOfSundaySixThirtyPM(tz.Location location) {
+  /// Returns the next Sunday at 10:30 AM local time.
+  tz.TZDateTime _nextInstanceOfSundayMorning(tz.Location location) {
     final tz.TZDateTime now = tz.TZDateTime.now(location);
     tz.TZDateTime scheduledDate = tz.TZDateTime(
       location,
       now.year,
       now.month,
       now.day,
-      18, // 6 PM
+      10, // 10 AM
       30, // 30 mins
     );
     while (scheduledDate.weekday != DateTime.sunday) {
@@ -664,6 +799,134 @@ class NotificationService {
       scheduledDate = scheduledDate.add(const Duration(days: 7));
     }
     return scheduledDate;
+  }
+
+  /// SCHEDULES A LEADERBOARD CHALLENGE NOTIFICATION
+  ///
+  /// Called after a game session completes to encourage competitive play.
+  /// Timing: Next day at 12:30 PM (lunch break — high engagement window).
+  Future<void> scheduleLeaderboardChallenge() async {
+    final enabled = await _areNotificationsEnabled;
+    if (!enabled) {
+      await _localNotifications.cancel(leaderboardNotificationId);
+      return;
+    }
+
+    // Cancel existing to avoid stacking
+    await _localNotifications.cancel(leaderboardNotificationId);
+
+    const AndroidNotificationDetails androidDetails =
+        AndroidNotificationDetails(
+          mainChannelId,
+          'Main Notifications',
+          channelDescription: 'Game updates and challenges',
+          importance: Importance.high,
+          priority: Priority.high,
+        );
+
+    const DarwinNotificationDetails iosDetails = DarwinNotificationDetails(
+      presentAlert: true,
+      presentBadge: true,
+      presentSound: true,
+    );
+
+    const NotificationDetails platformDetails = NotificationDetails(
+      android: androidDetails,
+      iOS: iosDetails,
+    );
+
+    bool useExact = true;
+    if (Platform.isAndroid) {
+      useExact = await Permission.scheduleExactAlarm.isGranted;
+    }
+
+    final location = _currentLocation;
+    final now = tz.TZDateTime.now(location);
+    // Tomorrow at 12:30 PM — lunch break learning window
+    var scheduledDate = tz.TZDateTime(
+      location,
+      now.year,
+      now.month,
+      now.day + 1,
+      12, // 12 PM
+      30, // 30 mins
+    );
+
+    final leaderboardMessages = [
+      (
+        title: 'Climb the leaderboard \u{1F3C6}',
+        body: 'Other learners are gaining XP. Defend your rank!',
+      ),
+      (
+        title: 'Lunchtime challenge \u{26A1}',
+        body: 'One quick round could push you up the rankings.',
+      ),
+      (
+        title: 'Your rivals are practicing \u{1F440}',
+        body: 'Stay competitive — a 2-minute session keeps you in the game.',
+      ),
+    ];
+    final msg =
+        leaderboardMessages[_idRandom.nextInt(leaderboardMessages.length)];
+
+    await _localNotifications.zonedSchedule(
+      leaderboardNotificationId,
+      _t('notifications.leaderboard_title', fallback: msg.title),
+      _t('notifications.leaderboard_body', fallback: msg.body),
+      scheduledDate,
+      platformDetails,
+      androidScheduleMode: useExact
+          ? AndroidScheduleMode.exactAllowWhileIdle
+          : AndroidScheduleMode.inexactAllowWhileIdle,
+      uiLocalNotificationDateInterpretation:
+          UILocalNotificationDateInterpretation.absoluteTime,
+      payload: AppRouter.leaderboardRoute,
+    );
+
+    if (kDebugMode) {
+      debugPrint('Scheduled leaderboard challenge for tomorrow at 12:30 PM');
+    }
+  }
+
+  /// Shows an immediate milestone celebration notification.
+  ///
+  /// Called when the user reaches a significant achievement (level up,
+  /// streak milestone, etc.). These are shown immediately, not scheduled.
+  Future<void> showMilestoneNotification({
+    required String milestoneName,
+    required String description,
+  }) async {
+    final enabled = await _areNotificationsEnabled;
+    if (!enabled) return;
+
+    const AndroidNotificationDetails androidDetails =
+        AndroidNotificationDetails(
+          mainChannelId,
+          'Main Notifications',
+          channelDescription: 'Achievement celebrations',
+          importance: Importance.max,
+          priority: Priority.high,
+          showWhen: true,
+        );
+
+    const DarwinNotificationDetails iosDetails = DarwinNotificationDetails(
+      presentAlert: true,
+      presentBadge: true,
+      presentSound: true,
+    );
+
+    const NotificationDetails platformDetails = NotificationDetails(
+      android: androidDetails,
+      iOS: iosDetails,
+    );
+
+    await _localNotifications.show(
+      milestoneNotificationId,
+      milestoneName,
+      description,
+      platformDetails,
+      payload: AppRouter.streakRoute,
+    );
   }
 
   /// GETS THE UNIQUE FCM TOKEN FOR THIS DEVICE

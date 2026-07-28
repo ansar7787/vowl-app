@@ -38,6 +38,15 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+            <!-- CRITICAL FIX: Without this intent-filter, tapping an FCM push
+                 notification does NOTHING — Android has no target activity to
+                 launch. This is the standard action that firebase_messaging
+                 uses to route notification taps back to Flutter via
+                 onMessageOpenedApp / getInitialMessage(). -->
+            <intent-filter>
+                <action android:name="FLUTTER_NOTIFICATION_CLICK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
         </activity>
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
