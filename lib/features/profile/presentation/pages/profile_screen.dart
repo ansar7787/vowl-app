@@ -123,27 +123,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             _buildKeyShopBanner(context, user),
 
                             SizedBox(height: 24.h),
-                            Row(
-                              children: [
-                                Icon(Icons.auto_awesome_rounded, color: const Color(0xFF6366F1), size: 24.r),
-                                SizedBox(width: 8.w),
-                                _buildSectionHeader(
-                                  context,
-                                  context.tr(
-                                    'profile.ai_lab',
-                                    fallback: 'Vowl AI Lab',
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 12.h),
-                            _buildScanAndLearnBanner(context),
-
-                            SizedBox(height: 12.h),
-                            _buildPhotoVocabBanner(context),
-
-                            SizedBox(height: 16.h),
-                            _buildAiEnginesShowcase(context),
+                            _buildInteractiveAILab(context),
 
                             SizedBox(height: 20.h),
                             _buildSectionHeader(
@@ -378,239 +358,286 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  Widget _buildScanAndLearnBanner(BuildContext context) {
+  Widget _buildInteractiveAILab(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
-    return ScaleButton(
-      onTap: () {
-        di.sl<HapticService>().selection();
-        context.push(AppRouter.scanAndLearnRoute);
-      },
-      child: GlassTile(
-        borderRadius: BorderRadius.circular(24.r),
-        padding: EdgeInsets.all(20.w),
-        child: Row(
-          children: [
-            Container(
-              padding: EdgeInsets.all(12.r),
-              decoration: BoxDecoration(
-                color: const Color(0xFF6366F1).withValues(alpha: 0.15),
-                shape: BoxShape.circle,
-              ),
-              child: Icon(
-                Icons.document_scanner_rounded,
-                color: const Color(0xFF6366F1),
-                size: 28.r,
-              ),
-            ),
-            SizedBox(width: 16.w),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    context.tr('translation.scan_learn_title', fallback: 'Scan & Learn'),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: 0.5,
-                    ),
-                  ),
-                  SizedBox(height: 4.h),
-                  Text(
-                    context.tr('translation.scan_learn_desc', fallback: 'Scan menus, signs, and documents to extract and translate real-world text.'),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: isDark ? Colors.white70 : Colors.black54,
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w600,
-                      height: 1.3,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Icon(
-              Icons.arrow_forward_ios_rounded,
-              color: isDark ? Colors.white24 : Colors.black12,
-              size: 16.r,
-            ),
-          ],
+
+    final features = [
+      (
+        icon: Icons.document_scanner_rounded,
+        title: context.tr('translation.scan_learn_title', fallback: 'Scan & Learn'),
+        subtitle: context.tr('translation.scan_learn_desc', fallback: 'Extract & translate real-world text.'),
+        color: const Color(0xFF6366F1),
+        onTap: () {
+          di.sl<HapticService>().selection();
+          context.push(AppRouter.scanAndLearnRoute);
+        },
+      ),
+      (
+        icon: Icons.camera_alt_rounded,
+        title: context.tr('vocabulary.photo_vocab_title', fallback: 'Photo Vocab'),
+        subtitle: context.tr('vocabulary.photo_vocab_desc', fallback: 'Point camera to learn object names.'),
+        color: const Color(0xFF14B8A6),
+        onTap: () {
+          di.sl<HapticService>().selection();
+          context.push(AppRouter.photoVocabularyRoute);
+        },
+      ),
+      (
+        icon: Icons.translate_rounded,
+        title: 'Translation',
+        subtitle: 'Real-time native hints.',
+        color: const Color(0xFFF43F5E),
+        onTap: () => _showEngineInfoSheet(
+          context,
+          icon: Icons.translate_rounded,
+          color: const Color(0xFFF43F5E),
+          title: 'Instant Translation',
+          desc: 'Runs directly on your device to provide real-time translations during reading and speaking games without needing internet.',
         ),
       ),
-    );
-  }
-
-  Widget _buildPhotoVocabBanner(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return ScaleButton(
-      onTap: () {
-        di.sl<HapticService>().selection();
-        context.push(AppRouter.photoVocabularyRoute);
-      },
-      child: GlassTile(
-        borderRadius: BorderRadius.circular(24.r),
-        padding: EdgeInsets.all(20.w),
-        child: Row(
-          children: [
-            Container(
-              padding: EdgeInsets.all(12.r),
-              decoration: BoxDecoration(
-                color: const Color(0xFF6366F1).withValues(alpha: 0.15),
-                shape: BoxShape.circle,
-              ),
-              child: Icon(
-                Icons.camera_alt_rounded,
-                color: const Color(0xFF6366F1),
-                size: 28.r,
-              ),
-            ),
-            SizedBox(width: 16.w),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    context.tr('vocabulary.photo_vocab_title', fallback: 'Photo Vocabulary'),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: 0.5,
-                    ),
-                  ),
-                  SizedBox(height: 4.h),
-                  Text(
-                    context.tr('vocabulary.photo_vocab_desc', fallback: 'Point your camera at physical objects to learn their English names.'),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: isDark ? Colors.white70 : Colors.black54,
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w600,
-                      height: 1.3,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Icon(
-              Icons.arrow_forward_ios_rounded,
-              color: isDark ? Colors.white24 : Colors.black12,
-              size: 16.r,
-            ),
-          ],
+      (
+        icon: Icons.auto_awesome_rounded,
+        title: 'Smart Reply',
+        subtitle: 'AI conversation suggestions.',
+        color: const Color(0xFF8B5CF6),
+        onTap: () => _showEngineInfoSheet(
+          context,
+          icon: Icons.auto_awesome_rounded,
+          color: const Color(0xFF8B5CF6),
+          title: 'AI Smart Reply',
+          desc: 'Generates context-aware conversation replies during the Dialogue Roleplay modules to keep the chat flowing naturally.',
         ),
       ),
-    );
-  }
-
-  Widget _buildAiEnginesShowcase(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
-    const engines = <({IconData icon, String label, Color color})>[
-      (icon: Icons.translate_rounded, label: 'Translation', color: Color(0xFF6366F1)),
-      (icon: Icons.draw_rounded, label: 'Digital Ink', color: Color(0xFFF43F5E)),
-      (icon: Icons.image_search_rounded, label: 'Image Labeling', color: Color(0xFF14B8A6)),
-      (icon: Icons.auto_awesome_rounded, label: 'Smart Reply', color: Color(0xFF8B5CF6)),
-      (icon: Icons.document_scanner_rounded, label: 'Text OCR', color: Color(0xFF3B82F6)),
-      (icon: Icons.language_rounded, label: 'Language ID', color: Color(0xFFF59E0B)),
-      (icon: Icons.search_rounded, label: 'Entity Extract', color: Color(0xFF10B981)),
+      (
+        icon: Icons.search_rounded,
+        title: 'Entity Extract',
+        subtitle: 'Finds dates & places.',
+        color: const Color(0xFF10B981),
+        onTap: () => _showEngineInfoSheet(
+          context,
+          icon: Icons.search_rounded,
+          color: const Color(0xFF10B981),
+          title: 'Entity Extraction',
+          desc: 'Automatically scans reading passages to highlight important entities like dates, times, money, and locations.',
+        ),
+      ),
+      (
+        icon: Icons.language_rounded,
+        title: 'Language ID',
+        subtitle: 'Detects native language.',
+        color: const Color(0xFFF59E0B),
+        onTap: () => _showEngineInfoSheet(
+          context,
+          icon: Icons.language_rounded,
+          color: const Color(0xFFF59E0B),
+          title: 'Language ID',
+          desc: 'Runs silently during speaking exercises to detect if you accidentally spoke in your native language instead of English.',
+        ),
+      ),
+      (
+        icon: Icons.draw_rounded,
+        title: 'Digital Ink',
+        subtitle: 'Handwriting recognition.',
+        color: const Color(0xFFEC4899),
+        onTap: () => _showEngineInfoSheet(
+          context,
+          icon: Icons.draw_rounded,
+          color: const Color(0xFFEC4899),
+          title: 'Digital Ink',
+          desc: 'Powers the handwriting canvas in the Kids Zone, translating drawn strokes into digital text instantly.',
+        ),
+      ),
     ];
 
-    return GlassTile(
-      borderRadius: BorderRadius.circular(24.r),
-      padding: EdgeInsets.all(20.w),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Container(
-                padding: EdgeInsets.all(8.r),
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
-                  ),
-                  borderRadius: BorderRadius.circular(12.r),
-                ),
-                child: Icon(Icons.memory_rounded, color: Colors.white, size: 18.r),
-              ),
-              SizedBox(width: 12.w),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      context.tr(
-                        'profile.ai_engines_title',
-                        fallback: 'Powered by 7 AI Engines',
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        color: isDark ? Colors.white : const Color(0xFF0F172A),
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w900,
-                        letterSpacing: 0.5,
-                      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            Icon(Icons.auto_awesome_rounded, color: const Color(0xFF6366F1), size: 24.r),
+            SizedBox(width: 8.w),
+            _buildSectionHeader(
+              context,
+              context.tr('profile.ai_lab', fallback: 'Vowl AI Lab'),
+            ),
+          ],
+        ),
+        SizedBox(height: 4.h),
+        Text(
+          context.tr('profile.ai_lab_desc', fallback: '7 powerful AI engines running 100% offline.'),
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            color: isDark ? Colors.white54 : Colors.black54,
+            fontSize: 13.sp,
+          ),
+        ),
+        SizedBox(height: 16.h),
+        SizedBox(
+          height: 170.h,
+          child: ListView.separated(
+            scrollDirection: Axis.horizontal,
+            itemCount: features.length,
+            separatorBuilder: (context, index) => SizedBox(width: 12.w),
+            itemBuilder: (context, index) {
+              final f = features[index];
+              return ScaleButton(
+                onTap: f.onTap,
+                child: Container(
+                  width: 145.w,
+                  padding: EdgeInsets.all(16.w),
+                  decoration: BoxDecoration(
+                    color: f.color.withValues(alpha: isDark ? 0.15 : 0.08),
+                    borderRadius: BorderRadius.circular(24.r),
+                    border: Border.all(
+                      color: f.color.withValues(alpha: 0.3),
+                      width: 1.5,
                     ),
-                    SizedBox(height: 2.h),
-                    Text(
-                      context.tr(
-                        'profile.ai_engines_subtitle',
-                        fallback: 'All on-device · Zero API cost · 100% offline',
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(10.r),
+                        decoration: BoxDecoration(
+                          color: f.color.withValues(alpha: 0.2),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(f.icon, color: f.color, size: 24.r),
                       ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        color: isDark ? Colors.white38 : Colors.black38,
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w600,
+                      const Spacer(),
+                      Text(
+                        f.title,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          color: isDark ? Colors.white : Colors.black87,
+                          fontSize: 15.sp,
+                          fontWeight: FontWeight.w900,
+                          letterSpacing: 0.5,
+                        ),
                       ),
+                      SizedBox(height: 4.h),
+                      Text(
+                        f.subtitle,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          color: isDark ? Colors.white70 : Colors.black54,
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w600,
+                          height: 1.2,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
+      ],
+    );
+  }
+
+  void _showEngineInfoSheet(
+    BuildContext context, {
+    required IconData icon,
+    required Color color,
+    required String title,
+    required String desc,
+  }) {
+    di.sl<HapticService>().selection();
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      builder: (context) => Container(
+        padding: EdgeInsets.fromLTRB(24.w, 24.h, 24.w, 40.h),
+        decoration: BoxDecoration(
+          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+          border: Border.all(
+            color: color.withValues(alpha: 0.3),
+            width: 1.5,
+          ),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              width: 40.w,
+              height: 4.h,
+              decoration: BoxDecoration(
+                color: isDark ? Colors.white24 : Colors.black12,
+                borderRadius: BorderRadius.circular(2.r),
+              ),
+            ),
+            SizedBox(height: 24.h),
+            Container(
+              padding: EdgeInsets.all(16.r),
+              decoration: BoxDecoration(
+                color: color.withValues(alpha: 0.15),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(icon, color: color, size: 32.r),
+            ),
+            SizedBox(height: 20.h),
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 22.sp,
+                fontWeight: FontWeight.w900,
+                color: isDark ? Colors.white : Colors.black87,
+              ),
+            ),
+            SizedBox(height: 12.h),
+            Text(
+              desc,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 15.sp,
+                fontWeight: FontWeight.w500,
+                color: isDark ? Colors.white70 : Colors.black54,
+                height: 1.5,
+              ),
+            ),
+            SizedBox(height: 32.h),
+            ScaleButton(
+              onTap: () => Navigator.pop(context),
+              child: Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(vertical: 16.h),
+                decoration: BoxDecoration(
+                  color: color,
+                  borderRadius: BorderRadius.circular(16.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: color.withValues(alpha: 0.3),
+                      blurRadius: 12,
+                      offset: const Offset(0, 6),
                     ),
                   ],
                 ),
-              ),
-            ],
-          ),
-          SizedBox(height: 16.h),
-          Wrap(
-            spacing: 8.w,
-            runSpacing: 8.h,
-            children: engines.map((e) => Container(
-              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
-              decoration: BoxDecoration(
-                color: e.color.withValues(alpha: isDark ? 0.15 : 0.08),
-                borderRadius: BorderRadius.circular(12.r),
-                border: Border.all(
-                  color: e.color.withValues(alpha: 0.3),
-                  width: 1,
-                ),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(e.icon, color: e.color, size: 14.r),
-                  SizedBox(width: 6.w),
-                  Text(
-                    e.label,
+                child: Center(
+                  child: Text(
+                    context.tr('common.got_it', fallback: 'Got it!'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.w700,
-                      color: isDark ? Colors.white70 : Colors.black54,
+                      fontWeight: FontWeight.w900,
+                      fontSize: 16.sp,
+                      color: Colors.white,
+                      letterSpacing: 1,
                     ),
                   ),
-                ],
+                ),
               ),
-            )).toList(),
-          ),
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }
