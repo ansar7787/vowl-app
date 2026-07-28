@@ -16,6 +16,7 @@ import '../../../presentation/widgets/elite_hint_card.dart';
 import '../widgets/accent_shadowing_target_panel.dart';
 import '../widgets/accent_shadowing_mic_trigger.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 
 class AccentShadowingScreen extends StatefulWidget {
   final int level;
@@ -150,7 +151,57 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
     }
   }
 
-  void _checkResult(String spoken, String target) {
+  void _checkResult(String spoken, String target) async {
+    final langService = di.sl<LanguageIdService>();
+    final langCode = await langService.identifyLanguage(spoken);
+    if (langCode != 'en' && langCode != 'und') {
+      if (!mounted) return;
+      
+      String langName = 'another language';
+      switch (langCode) {
+        case 'es': langName = 'Spanish'; break;
+        case 'fr': langName = 'French'; break;
+        case 'de': langName = 'German'; break;
+        case 'zh': langName = 'Chinese'; break;
+        case 'ja': langName = 'Japanese'; break;
+        case 'ko': langName = 'Korean'; break;
+        case 'it': langName = 'Italian'; break;
+        case 'pt': langName = 'Portuguese'; break;
+        case 'ru': langName = 'Russian'; break;
+        case 'ar': langName = 'Arabic'; break;
+        case 'hi': langName = 'Hindi'; break;
+      }
+      
+      showDialog(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
+          title: Row(
+            children: [
+              Icon(Icons.language_rounded, color: Colors.blueAccent),
+              SizedBox(width: 8.w),
+              Text("Language Detected", style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.bold, fontSize: 18.sp)),
+            ],
+          ),
+          content: Text(
+            "Oops! It sounds like you spoke in $langName. Try saying it in English!",
+            style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(ctx).pop(),
+              child: Text("TRY AGAIN", style: TextStyle(fontWeight: FontWeight.bold)),
+            ),
+          ],
+        ),
+      );
+      setState(() {
+        _isProcessing = false;
+        _isListening = false;
+        _lastWords = "";
+      });
+      return;
+    }
     if (_isAnswered) return;
 
     // Ultra-lenient threshold for difficult accent games (tongue twisters)
@@ -177,6 +228,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
       _isCorrect = isCorrect;
       _isProcessing = false;
     });
+    if (!mounted) return;
     context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(isCorrect));
   }
 

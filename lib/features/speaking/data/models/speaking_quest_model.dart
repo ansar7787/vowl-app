@@ -36,6 +36,7 @@ class SpeakingQuestModel extends SpeakingQuest {
     super.partnerDialogue,
     super.targetPhoneme,
     super.expression,
+    super.smartReplies,
   });
 
   factory SpeakingQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -103,6 +104,7 @@ class SpeakingQuestModel extends SpeakingQuest {
       targetPhoneme: map['targetPhoneme'] as String?,
       expression: map['expression'] as String?,
       explanation: map['explanation'] as String?,
+      smartReplies: getList(map['smartReplies']),
     );
   }
 
@@ -139,6 +141,7 @@ class SpeakingQuestModel extends SpeakingQuest {
       'prompt': prompt,
       'sampleAnswer': sampleAnswer,
       'translation': translation,
+      'smartReplies': smartReplies,
     };
   }
 
@@ -176,6 +179,7 @@ class SpeakingQuestModel extends SpeakingQuest {
     String? partnerDialogue,
     String? targetPhoneme,
     String? expression,
+    List<String>? smartReplies,
   }) {
     return SpeakingQuestModel(
       id: id ?? this.id,
@@ -212,6 +216,7 @@ class SpeakingQuestModel extends SpeakingQuest {
       partnerDialogue: partnerDialogue ?? this.partnerDialogue,
       targetPhoneme: targetPhoneme ?? this.targetPhoneme,
       expression: expression ?? this.expression,
+      smartReplies: smartReplies ?? this.smartReplies,
     );
   }
 }

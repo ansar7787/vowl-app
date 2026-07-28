@@ -321,10 +321,7 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
 
   void _checkAutoReveal() {
     if (widget.passage != null && widget.passage!.isNotEmpty) {
-      final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
-      if (isPremium) {
-        _extractEntities();
-      }
+      _extractEntities();
     }
   }
 

@@ -16,6 +16,7 @@ class SpeakingQuest extends GameQuest {
   final String? partnerDialogue;
   final String? targetPhoneme;
   final String? expression;
+  final List<String>? smartReplies;
 
   const SpeakingQuest({
     required super.id,
@@ -51,6 +52,7 @@ class SpeakingQuest extends GameQuest {
     this.partnerDialogue,
     this.targetPhoneme,
     this.expression,
+    this.smartReplies,
   });
 
   @override
@@ -69,5 +71,6 @@ class SpeakingQuest extends GameQuest {
     partnerDialogue,
     targetPhoneme,
     expression,
+    smartReplies,
   ];
 }

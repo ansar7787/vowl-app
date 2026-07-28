@@ -88,13 +88,24 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
       
       // Fetch AI Smart Replies based on the NPC's dialogue
       final smartReplyService = di.sl<SmartReplyService>();
-      smartReplyService.clearConversation();
+      // smartReplyService.clearConversation();
       smartReplyService.addMessage(quest.partnerDialogue!, isLocalUser: false);
       
       final suggestions = await smartReplyService.getSuggestions();
       if (mounted) {
         setState(() {
-          _smartReplies = suggestions;
+          _smartReplies = suggestions.where((s) => s.trim().length > 1 && RegExp(r'[a-zA-Z]').hasMatch(s)).toList();
+          final fallbackOptions = quest.smartReplies ?? quest.acceptedSynonyms;
+          if (fallbackOptions != null) {
+            final List<String> availableSynonyms = List.from(fallbackOptions)..shuffle();
+            
+            for (var synonym in availableSynonyms) {
+              if (_smartReplies.length >= 3) break;
+              if (!_smartReplies.contains(synonym)) {
+                _smartReplies.add(synonym);
+              }
+            }
+          }
         });
       }
     }
@@ -174,6 +185,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
     if (matchFound) {
       _hapticService.success();
       _soundService.playCorrect();
+      di.sl<SmartReplyService>().addMessage(cleanSpeech, isLocalUser: true);
       context.read<SpeakingBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
@@ -213,6 +225,9 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
               _spokenText = "";
               _smartReplies = [];
             });
+            if (state.currentIndex == 0) {
+              di.sl<SmartReplyService>().clearConversation();
+            }
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
             });
@@ -408,6 +423,9 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                                       _acceptedSynonyms.add(reply);
                                                       _spokenText = reply; // Display as hint for them to speak
                                                     });
+                                                    _verifyResponseSpoken();
+
+
                                                   },
                                                 );
                                               },
