@@ -130,15 +130,18 @@ class GameRoutes {
 
     GoRoute(
       path: '/levels',
-      builder: (context, state) {
+      pageBuilder: (context, state) {
         final categoryId = state.uri.queryParameters['category'] ?? 'reading';
         final gameType =
             state.uri.queryParameters['gameType'] ?? 'readAndAnswer';
 
-        return ModernCategoryMap(
-          key: ValueKey('${categoryId}_$gameType'),
-          gameType: gameType, 
-          categoryId: categoryId,
+        return fadeTransitionPage(
+          child: ModernCategoryMap(
+            key: ValueKey('${categoryId}_$gameType'),
+            gameType: gameType, 
+            categoryId: categoryId,
+          ),
+          state: state,
         );
       },
     ),

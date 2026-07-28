@@ -15,6 +15,7 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/curriculum_service.dart';
 
 class QuestLibraryPage extends StatefulWidget {
   const QuestLibraryPage({super.key});
@@ -51,6 +52,15 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     ];
     _allSubtypes = GameSubtype.values.where((s) => !s.isLegacy).toList();
     _searchController.addListener(_onSearchChanged);
+
+    // FIX: Prewarm the curriculum cache for ALL game subtypes so that when the
+    // user taps any quest card, ModernCategoryMap can read the level count
+    // synchronously from cache instead of doing a cold async asset probe.
+    // This is exactly what CategoryGamesPage does for its subset of games —
+    // without it, the Quest Library path skipped the cache warm-up entirely,
+    // causing the map to show a blank loading state on entry (the "stuck/laggy"
+    // transition bug).
+    CurriculumService.prewarmCache(_allSubtypes.map((s) => s.name).toList());
   }
 
   void _onSearchChanged() {
