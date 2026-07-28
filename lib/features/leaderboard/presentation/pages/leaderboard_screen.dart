@@ -121,7 +121,7 @@ class _LeaderboardContent extends StatelessWidget {
       onRefresh: () async {
         final completer = Completer<void>();
         context.read<LeaderboardBloc>().add(
-          LoadLeaderboard(completer: completer),
+          LoadLeaderboard(completer: completer, isKids: state.isKids),
         );
         await completer.future;
       },

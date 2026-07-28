@@ -388,6 +388,37 @@ exports.updateLeaderboardCache = onSchedule("0 */4 * * *", async (event) => {
       }, { merge: true });
 
       console.log(`Successfully updated leaderboard cache with top ${usersData.length} users.`);
+
+      // Also update kids leaderboard cache
+      const kidsSnapshot = await db.collection('users')
+        .orderBy('kidsCoins', 'desc')
+        .limit(50)
+        .get();
+
+      const kidsData = [];
+
+      kidsSnapshot.forEach(doc => {
+        const data = doc.data();
+        kidsData.push({
+          id: doc.id,
+          displayName: data.displayName || 'Unknown User',
+          photoUrl: data.photoUrl || null,
+          kidsCoins: data.kidsCoins || 0,
+          currentStreak: data.currentStreak || 0,
+          completedLevels: data.completedLevels || {},
+          isPremium: data.isPremium || false,
+        });
+      });
+
+      const kidsCacheRef = db.collection('metadata').doc('kids_leaderboard_cache');
+      
+      await kidsCacheRef.set({
+        lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+        users: kidsData,
+      }, { merge: true });
+
+      console.log(`Successfully updated kids leaderboard cache with top ${kidsData.length} users.`);
+
     } catch (error) {
       console.error('Error updating leaderboard cache:', error);
     }
