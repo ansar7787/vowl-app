@@ -58,6 +58,7 @@ class ModernFeatureBar extends StatelessWidget {
             fallback: 'Ad-free, real-time native hints powered by AI.',
           ),
           isDark: isDark,
+          customColor: const Color(0xFFF43F5E), // Rose
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(
@@ -72,6 +73,7 @@ class ModernFeatureBar extends StatelessWidget {
             fallback: 'A completely pure, ad-free learning experience.',
           ),
           isDark: isDark,
+          customColor: const Color(0xFF10B981), // Emerald
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(
@@ -86,6 +88,7 @@ class ModernFeatureBar extends StatelessWidget {
             fallback: 'Unlimited Smart Reply, Photo Vocabulary, Scan & Learn, Entity Highlighter — all ad-free.',
           ),
           isDark: isDark,
+          customColor: const Color(0xFF8B5CF6), // Violet
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(
@@ -101,6 +104,7 @@ class ModernFeatureBar extends StatelessWidget {
                 'Master concepts twice as fast with advanced XP tracking.',
           ),
           isDark: isDark,
+          customColor: const Color(0xFFF59E0B), // Amber
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(
@@ -115,6 +119,7 @@ class ModernFeatureBar extends StatelessWidget {
             fallback: 'Download curriculum and learn off the grid.',
           ),
           isDark: isDark,
+          customColor: const Color(0xFF64748B), // Slate
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(
@@ -129,6 +134,7 @@ class ModernFeatureBar extends StatelessWidget {
             fallback: 'Claim 100 free bonus coins every single day.',
           ),
           isDark: isDark,
+          customColor: const Color(0xFFEC4899), // Pink
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(
@@ -143,6 +149,7 @@ class ModernFeatureBar extends StatelessWidget {
             fallback: 'Instantly unlock all elite and master difficulty tiers.',
           ),
           isDark: isDark,
+          customColor: const Color(0xFF06B6D4), // Cyan
         ),
         SizedBox(height: 12.h),
         _buildFeatureCard(
@@ -158,6 +165,7 @@ class ModernFeatureBar extends StatelessWidget {
                 'Flaunt your exclusive elite status on the global leaderboards.',
           ),
           isDark: isDark,
+          customColor: const Color(0xFFEAB308), // Yellow
         ),
       ],
     );

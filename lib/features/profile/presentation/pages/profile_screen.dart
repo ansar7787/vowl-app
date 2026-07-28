@@ -142,6 +142,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             SizedBox(height: 12.h),
                             _buildPhotoVocabBanner(context),
 
+                            SizedBox(height: 16.h),
+                            _buildAiEnginesShowcase(context),
+
                             SizedBox(height: 20.h),
                             _buildSectionHeader(
                               context,
@@ -504,6 +507,110 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildAiEnginesShowcase(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    const engines = <({IconData icon, String label, Color color})>[
+      (icon: Icons.translate_rounded, label: 'Translation', color: Color(0xFF6366F1)),
+      (icon: Icons.draw_rounded, label: 'Digital Ink', color: Color(0xFFF43F5E)),
+      (icon: Icons.image_search_rounded, label: 'Image Labeling', color: Color(0xFF14B8A6)),
+      (icon: Icons.auto_awesome_rounded, label: 'Smart Reply', color: Color(0xFF8B5CF6)),
+      (icon: Icons.document_scanner_rounded, label: 'Text OCR', color: Color(0xFF3B82F6)),
+      (icon: Icons.language_rounded, label: 'Language ID', color: Color(0xFFF59E0B)),
+      (icon: Icons.search_rounded, label: 'Entity Extract', color: Color(0xFF10B981)),
+    ];
+
+    return GlassTile(
+      borderRadius: BorderRadius.circular(24.r),
+      padding: EdgeInsets.all(20.w),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                padding: EdgeInsets.all(8.r),
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+                  ),
+                  borderRadius: BorderRadius.circular(12.r),
+                ),
+                child: Icon(Icons.memory_rounded, color: Colors.white, size: 18.r),
+              ),
+              SizedBox(width: 12.w),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      context.tr(
+                        'profile.ai_engines_title',
+                        fallback: 'Powered by 7 AI Engines',
+                      ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: isDark ? Colors.white : const Color(0xFF0F172A),
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w900,
+                        letterSpacing: 0.5,
+                      ),
+                    ),
+                    SizedBox(height: 2.h),
+                    Text(
+                      context.tr(
+                        'profile.ai_engines_subtitle',
+                        fallback: 'All on-device · Zero API cost · 100% offline',
+                      ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: isDark ? Colors.white38 : Colors.black38,
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 16.h),
+          Wrap(
+            spacing: 8.w,
+            runSpacing: 8.h,
+            children: engines.map((e) => Container(
+              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+              decoration: BoxDecoration(
+                color: e.color.withValues(alpha: isDark ? 0.15 : 0.08),
+                borderRadius: BorderRadius.circular(12.r),
+                border: Border.all(
+                  color: e.color.withValues(alpha: 0.3),
+                  width: 1,
+                ),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(e.icon, color: e.color, size: 14.r),
+                  SizedBox(width: 6.w),
+                  Text(
+                    e.label,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w700,
+                      color: isDark ? Colors.white70 : Colors.black54,
+                    ),
+                  ),
+                ],
+              ),
+            )).toList(),
+          ),
+        ],
       ),
     );
   }
