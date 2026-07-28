@@ -12,6 +12,7 @@ import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 import 'package:vowl/core/utils/text_similarity_helper.dart';
 
 import 'package:vowl/features/speaking/repeat_sentence/presentation/widgets/repeat_sentence_instruction.dart';
@@ -113,10 +114,10 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
   void _stopSpeechListening(String expectedAnswer) async {
     await _speechService.stop();
     setState(() => _isListening = false);
-    _verifySpeech(expectedAnswer);
+    await _verifySpeech(expectedAnswer);
   }
 
-  void _verifySpeech(String expected) {
+  Future<void> _verifySpeech(String expected) async {
     if (_spokenText.isEmpty || _spokenText.startsWith("Deciphering")) {
       setState(() {
         _spokenText = "No audible vocal input recorded.";
@@ -124,6 +125,26 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
       });
       return;
     }
+    // Language ID interception
+    final languageIdService = di.sl<LanguageIdService>();
+    final detectedLang = await languageIdService.identifyLanguage(_spokenText);
+
+    if (detectedLang != 'en' && detectedLang != 'und') {
+      _hapticService.error();
+      if (!mounted) return;
+      GameDialogHelper.showPremiumSnackBar(
+        context,
+        "Oops! It sounds like you spoke in a different language (\$detectedLang). Try saying it in English!",
+        icon: Icons.language_rounded,
+        color: Colors.orange,
+      );
+      setState(() {
+        _isAnswered = false;
+        _spokenText = "";
+      });
+      return;
+    }
+
 
     bool isCorrect = false;
     for (var candidate in _spokenCandidates.isEmpty ? [_spokenText] : _spokenCandidates) {
@@ -140,6 +161,8 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
       _isAnswered = true;
       _isCorrect = isCorrect;
     });
+
+    if (!mounted) return;
 
     if (isCorrect) {
       _hapticService.success();

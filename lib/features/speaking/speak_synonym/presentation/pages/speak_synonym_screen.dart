@@ -12,6 +12,7 @@ import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 import 'package:vowl/core/utils/text_similarity_helper.dart';
 
 import 'package:vowl/features/speaking/speak_synonym/presentation/widgets/speak_synonym_header.dart';
@@ -135,10 +136,10 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
       _isListening = false;
     });
 
-    _verifySynonymSpoken();
+    await _verifySynonymSpoken();
   }
 
-  void _verifySynonymSpoken() {
+  Future<void> _verifySynonymSpoken() async {
     if (_spokenText.isEmpty || _spokenText.startsWith("Gathering")) {
       setState(() {
         _spokenText = "No audible voice input recorded.";
@@ -147,6 +148,26 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
       _hapticService.error();
       return;
     }
+    // Language ID interception
+    final languageIdService = di.sl<LanguageIdService>();
+    final detectedLang = await languageIdService.identifyLanguage(_spokenText);
+
+    if (detectedLang != 'en' && detectedLang != 'und') {
+      _hapticService.error();
+      if (!mounted) return;
+      GameDialogHelper.showPremiumSnackBar(
+        context,
+        "Oops! It sounds like you spoke in a different language (\$detectedLang). Try saying it in English!",
+        icon: Icons.language_rounded,
+        color: Colors.orange,
+      );
+      setState(() {
+        _isAnswered = false;
+        _spokenText = "";
+      });
+      return;
+    }
+
 
     final String cleanSpeech = _spokenText.trim().toLowerCase().replaceAll(
       RegExp(r'[^\w\s]'),
@@ -181,6 +202,8 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
       _isCorrect = matchFound;
       _bloomProgress = matchFound ? 1.0 : 0.0;
     });
+
+    if (!mounted) return;
 
     if (matchFound) {
       _hapticService.success();

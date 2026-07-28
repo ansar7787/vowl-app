@@ -17,6 +17,7 @@ import 'package:vowl/core/utils/ml_services/smart_reply_service.dart';
 import 'package:vowl/core/utils/ml_monetization_controller.dart';
 import 'package:vowl/core/utils/widgets/smart_reply_chip.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/dialogue_roleplay_header.dart';
@@ -142,15 +143,35 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
       _isListening = false;
     });
 
-    _verifyResponseSpoken();
+    await _verifyResponseSpoken();
   }
 
-  void _verifyResponseSpoken() {
+  Future<void> _verifyResponseSpoken() async {
     if (_spokenText.isEmpty || _spokenText.startsWith("Awaiting")) {
       setState(() {
         _spokenText = "No vocal signals transcribed.";
       });
       _hapticService.error();
+      return;
+    }
+
+    // Language ID interception
+    final languageIdService = di.sl<LanguageIdService>();
+    final detectedLang = await languageIdService.identifyLanguage(_spokenText);
+
+    if (detectedLang != 'en' && detectedLang != 'und') {
+      _hapticService.error();
+      if (!mounted) return;
+      GameDialogHelper.showPremiumSnackBar(
+        context,
+        "Oops! It sounds like you spoke in a different language ($detectedLang). Try saying it in English!",
+        icon: Icons.language_rounded,
+        color: Colors.orange,
+      );
+      setState(() {
+        _isAnswered = false;
+        _spokenText = "";
+      });
       return;
     }
 
@@ -181,6 +202,8 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
       _isAnswered = true;
       _isCorrect = matchFound;
     });
+
+    if (!mounted) return;
 
     if (matchFound) {
       _hapticService.success();

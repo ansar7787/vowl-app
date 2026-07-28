@@ -10,8 +10,7 @@ import 'package:google_mlkit_entity_extraction/google_mlkit_entity_extraction.da
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/ml_services/entity_extraction_service.dart';
 import 'package:vowl/core/utils/ml_monetization_controller.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+
 
 /// Bottom-sheet style feedback card shown after the player answers.
 ///
@@ -425,7 +424,19 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
                 ),
                 SizedBox(height: 12.h),
                 if (_isExtracting)
-                  const Center(child: CircularProgressIndicator())
+                  Text(
+                    widget.passage!,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w500,
+                      color: widget.isDark ? Colors.white70 : Colors.black87,
+                      height: 1.5,
+                    ),
+                  ).animate(onPlay: (controller) => controller.repeat()).shimmer(
+                    duration: 1500.ms,
+                    color: widget.shadowColor.withValues(alpha: 0.3),
+                  )
                 else if (_entitiesRevealed && _entities != null)
                   EntityHighlightedText(
                     text: widget.passage!,

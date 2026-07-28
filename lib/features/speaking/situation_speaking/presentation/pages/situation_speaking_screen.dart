@@ -12,6 +12,7 @@ import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 
 import 'package:vowl/features/speaking/situation_speaking/presentation/widgets/situation_speaking_header.dart';
 import 'package:vowl/features/speaking/situation_speaking/presentation/widgets/situation_speaking_fog_scrubber_panel.dart';
@@ -114,10 +115,10 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
       _isListening = false;
     });
 
-    _verifyResponseSpoken();
+    await _verifyResponseSpoken();
   }
 
-  void _verifyResponseSpoken() {
+  Future<void> _verifyResponseSpoken() async {
     if (_spokenText.isEmpty || _spokenText.startsWith("Calibrating")) {
       setState(() {
         _spokenText = "No voice frequency signature detected.";
@@ -125,6 +126,26 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
       _hapticService.error();
       return;
     }
+    // Language ID interception
+    final languageIdService = di.sl<LanguageIdService>();
+    final detectedLang = await languageIdService.identifyLanguage(_spokenText);
+
+    if (detectedLang != 'en' && detectedLang != 'und') {
+      _hapticService.error();
+      if (!mounted) return;
+      GameDialogHelper.showPremiumSnackBar(
+        context,
+        "Oops! It sounds like you spoke in a different language (\$detectedLang). Try saying it in English!",
+        icon: Icons.language_rounded,
+        color: Colors.orange,
+      );
+      setState(() {
+        _isAnswered = false;
+        _spokenText = "";
+      });
+      return;
+    }
+
 
     final String cleanSpeech = _spokenText.trim().toLowerCase().replaceAll(
       RegExp(r'[^\w\s]'),
@@ -148,6 +169,8 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
       _isAnswered = true;
       _isCorrect = matchFound;
     });
+
+    if (!mounted) return;
 
     if (matchFound) {
       _hapticService.success();

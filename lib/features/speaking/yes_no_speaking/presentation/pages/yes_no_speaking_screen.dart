@@ -12,6 +12,7 @@ import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 import 'package:vowl/core/utils/text_similarity_helper.dart';
 
 import 'package:vowl/features/speaking/yes_no_speaking/presentation/widgets/yes_no_speaking_header_instruction.dart';
@@ -124,16 +125,36 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
   void _stopSpeechListening(String expectedText, bool expectedMatch) async {
     await _speechService.stop();
     setState(() => _isSpeechActive = false);
-    _verifyBinaryResponse(expectedText, expectedMatch);
+    await _verifyBinaryResponse(expectedText, expectedMatch);
   }
 
-  void _verifyBinaryResponse(String expectedText, bool expectedMatch) {
+  Future<void> _verifyBinaryResponse(String expectedText, bool expectedMatch) async {
     if (_spokenText.isEmpty || _spokenText.startsWith("Voice capturing")) {
       setState(() {
         _spokenText = "No audible voice input recorded.";
       });
       return;
     }
+    // Language ID interception
+    final languageIdService = di.sl<LanguageIdService>();
+    final detectedLang = await languageIdService.identifyLanguage(_spokenText);
+
+    if (detectedLang != 'en' && detectedLang != 'und') {
+      _hapticService.error();
+      if (!mounted) return;
+      GameDialogHelper.showPremiumSnackBar(
+        context,
+        "Oops! It sounds like you spoke in a different language (\$detectedLang). Try saying it in English!",
+        icon: Icons.language_rounded,
+        color: Colors.orange,
+      );
+      setState(() {
+        _isAnswered = false;
+        _spokenText = "";
+      });
+      return;
+    }
+
 
     final bool chosenMatch = _tiltValue > 0;
     final bool binaryIsCorrect = chosenMatch == expectedMatch;
@@ -151,6 +172,8 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
       _isAnswered = true;
       _isCorrect = isCorrect;
     });
+
+    if (!mounted) return;
 
     if (isCorrect) {
       _hapticService.success();
