@@ -107,75 +107,105 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
 
                     SliverToBoxAdapter(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            if (!user.isPremium) ...[
-                              _buildPremiumBanner(context),
-                            ],
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          if (!user.isPremium) ...[
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: _buildPremiumBanner(context),
+                            ),
+                          ],
 
-                            SizedBox(height: 12.h),
-                            const AdRewardCard(margin: EdgeInsets.zero),
+                          SizedBox(height: 12.h),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: const AdRewardCard(margin: EdgeInsets.zero),
+                          ),
 
-                            SizedBox(height: 12.h),
-                            _buildKeyShopBanner(context, user),
+                          SizedBox(height: 12.h),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: _buildKeyShopBanner(context, user),
+                          ),
 
-                            SizedBox(height: 24.h),
-                            _buildInteractiveAILab(context),
+                          SizedBox(height: 24.h),
+                          _buildInteractiveAILab(context),
 
-                            SizedBox(height: 20.h),
-                            _buildSectionHeader(
+                          SizedBox(height: 20.h),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: _buildSectionHeader(
                               context,
                               context.tr(
                                 'profile.adventure_stats',
                                 fallback: 'Adventure Stats',
                               ),
                             ),
-                            SizedBox(height: 12.h),
-                            ProfileBentoStats(user: user),
+                          ),
+                          SizedBox(height: 12.h),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: ProfileBentoStats(user: user),
+                          ),
 
-                            SizedBox(height: 40.h),
-                            _buildSectionHeader(
+                          SizedBox(height: 40.h),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: _buildSectionHeader(
                               context,
                               context.tr(
                                 'profile.hall_of_fame',
                                 fallback: 'Hall of Fame',
                               ),
                             ),
-                            SizedBox(height: 20.h),
-                            ProfileBadgesList(user: user),
+                          ),
+                          SizedBox(height: 20.h),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: ProfileBadgesList(user: user),
+                          ),
 
-                            SizedBox(height: 40.h),
-                            _buildSectionHeader(
+                          SizedBox(height: 40.h),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: _buildSectionHeader(
                               context,
                               context.tr(
                                 'profile.kids_stickers',
                                 fallback: 'Sticker Book',
                               ),
                             ),
-                            SizedBox(height: 20.h),
-                            ProfileStickersProgress(user: user),
+                          ),
+                          SizedBox(height: 20.h),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: ProfileStickersProgress(user: user),
+                          ),
 
-                            SizedBox(height: 40.h),
-                            _buildSectionHeader(
+                          SizedBox(height: 40.h),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: _buildSectionHeader(
                               context,
                               context.tr(
                                 'settings.app_preferences',
                                 fallback: 'App Preferences',
                               ),
                             ),
-                            SizedBox(height: 20.h),
-                            ProfilePreferencesList(
+                          ),
+                          SizedBox(height: 20.h),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: ProfilePreferencesList(
                               user: user,
                               soundEnabled: false,
                               onSoundToggle: (_) {},
                             ),
+                          ),
 
-                            SizedBox(height: 140.h),
-                          ],
-                        ),
+                          SizedBox(height: 140.h),
+                        ],
                       ),
                     ),
                   ],
@@ -452,29 +482,37 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          children: [
-            Icon(Icons.auto_awesome_rounded, color: const Color(0xFF6366F1), size: 24.r),
-            SizedBox(width: 8.w),
-            _buildSectionHeader(
-              context,
-              context.tr('profile.ai_lab', fallback: 'Vowl AI Lab'),
-            ),
-          ],
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: Row(
+            children: [
+              Icon(Icons.auto_awesome_rounded, color: const Color(0xFF6366F1), size: 24.r),
+              SizedBox(width: 8.w),
+              _buildSectionHeader(
+                context,
+                context.tr('profile.ai_lab', fallback: 'Vowl AI Lab'),
+              ),
+            ],
+          ),
         ),
         SizedBox(height: 4.h),
-        Text(
-          context.tr('profile.ai_lab_desc', fallback: '7 powerful AI engines running 100% offline.'),
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            color: isDark ? Colors.white54 : Colors.black54,
-            fontSize: 13.sp,
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: Text(
+            context.tr('profile.ai_lab_desc', fallback: '7 powerful AI engines running 100% offline.'),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              color: isDark ? Colors.white54 : Colors.black54,
+              fontSize: 13.sp,
+            ),
           ),
         ),
         SizedBox(height: 16.h),
         SizedBox(
           height: 170.h,
           child: ListView.separated(
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            clipBehavior: Clip.none,
             scrollDirection: Axis.horizontal,
             itemCount: features.length,
             separatorBuilder: (context, index) => SizedBox(width: 12.w),
@@ -552,6 +590,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
+      useRootNavigator: true,
       builder: (context) => Container(
         padding: EdgeInsets.fromLTRB(24.w, 24.h, 24.w, 40.h),
         decoration: BoxDecoration(

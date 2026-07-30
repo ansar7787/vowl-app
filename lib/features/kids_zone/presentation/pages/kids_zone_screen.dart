@@ -433,11 +433,10 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
     String message, {
     bool isError = false,
   }) {
-    // final messenger = ScaffoldMessenger.of(context);
     CustomSnackBar.show(
       context: context,
       message: message,
-      type: CustomSnackBarType.error,
+      type: isError ? CustomSnackBarType.error : CustomSnackBarType.success,
     );
   }
 }
