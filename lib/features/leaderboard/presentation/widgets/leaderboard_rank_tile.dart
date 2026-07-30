@@ -42,11 +42,15 @@ class LeaderboardRankTile extends StatelessWidget {
           '${user.currentStreak}-day streak. '
           '$levelsCleared levels cleared.'
           '${isMe ? " ${context.tr('leaderboard.this_is_you', fallback: 'This is you!')}" : ""}',
-      child: Container(
-        margin: EdgeInsets.only(bottom: 10.h),
-        child: GlassTile(
+      child: GlassTile(
           padding: EdgeInsets.symmetric(horizontal: 14.r, vertical: 12.r),
           borderRadius: BorderRadius.circular(18.r),
+          // PERF: blur: 0 disables BackdropFilter in the scroll list.
+          // With 50+ tiles, each BackdropFilter creates an offscreen render
+          // target — catastrophic on low-end devices. The glass overlay
+          // gradient still provides the frosted visual.
+          blur: 0,
+          showShadow: false,
           borderColor: isMe
               ? (isDark
                     ? const Color(0xFF3B82F6).withValues(alpha: 0.4)
@@ -203,7 +207,6 @@ class LeaderboardRankTile extends StatelessWidget {
             ],
           ),
         ),
-      ),
     );
   }
 }

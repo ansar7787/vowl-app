@@ -224,7 +224,7 @@ class LeaderboardRankCard extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 12.h),
-              // Progress bar
+              // Progress bar with animated fill
               Stack(
                 children: [
                   Container(
@@ -237,17 +237,24 @@ class LeaderboardRankCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(3.r),
                     ),
                   ),
-                  FractionallySizedBox(
-                    widthFactor: progress.clamp(0.02, 1.0),
-                    child: Container(
-                      height: 6.h,
-                      decoration: BoxDecoration(
-                        gradient: const LinearGradient(
-                          colors: [Color(0xFF3B82F6), Color(0xFF60A5FA)],
+                  TweenAnimationBuilder<double>(
+                    tween: Tween(begin: 0.0, end: progress.clamp(0.02, 1.0)),
+                    duration: const Duration(milliseconds: 800),
+                    curve: Curves.easeOutCubic,
+                    builder: (context, value, _) {
+                      return FractionallySizedBox(
+                        widthFactor: value,
+                        child: Container(
+                          height: 6.h,
+                          decoration: BoxDecoration(
+                            gradient: const LinearGradient(
+                              colors: [Color(0xFF3B82F6), Color(0xFF60A5FA)],
+                            ),
+                            borderRadius: BorderRadius.circular(3.r),
+                          ),
                         ),
-                        borderRadius: BorderRadius.circular(3.r),
-                      ),
-                    ),
+                      );
+                    },
                   ),
                 ],
               ),

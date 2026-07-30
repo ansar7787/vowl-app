@@ -292,7 +292,11 @@ class _PodiumSlot extends StatelessWidget {
                         borderRadius: BorderRadius.circular(6.r),
                       ),
                       child: Text(
-                        '$levelsCleared LVS',
+                        context.tr(
+                          'leaderboard.lvs',
+                          fallback: 'Lvs',
+                          args: [levelsCleared.toString()],
+                        ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: isFirst ? 8.sp : 7.sp,

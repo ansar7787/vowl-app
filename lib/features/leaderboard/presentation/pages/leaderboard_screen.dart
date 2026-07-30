@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:math' as math;
+import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -84,16 +85,35 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
 
                 // Floating Toggle Overlay
                 Positioned(
-                  top: MediaQuery.of(context).padding.top + 10.h,
-                  left: 24.w,
+                  top: MediaQuery.of(context).padding.top + 6.h,
+                  left: 0,
                   right: 24.w,
-                  child: _LeaderboardToggle(
-                    isKidsMode: _isKidsMode,
-                    onToggle: (bool isKids) {
-                      if (_isKidsMode == isKids) return;
-                      setState(() => _isKidsMode = isKids);
-                      context.read<LeaderboardBloc>().add(LoadLeaderboard(isKids: isKids));
-                    },
+                  child: Row(
+                    children: [
+                      // Back button
+                      SizedBox(
+                        width: 56.w,
+                        child: IconButton(
+                          onPressed: () => Navigator.of(context).maybePop(),
+                          icon: Icon(
+                            Icons.arrow_back_ios_new_rounded,
+                            size: 18.r,
+                            color: isDark ? Colors.white70 : Colors.black54,
+                          ),
+                          tooltip: 'Back',
+                        ),
+                      ),
+                      Expanded(
+                        child: _LeaderboardToggle(
+                          isKidsMode: _isKidsMode,
+                          onToggle: (bool isKids) {
+                            if (_isKidsMode == isKids) return;
+                            setState(() => _isKidsMode = isKids);
+                            context.read<LeaderboardBloc>().add(LoadLeaderboard(isKids: isKids));
+                          },
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -167,16 +187,9 @@ class _LeaderboardContent extends StatelessWidget {
             delegate: _StickyRankCardDelegate(
               minHeight: 140.h,
               maxHeight: 140.h,
-              child: Container(
-                color: Theme.of(context).scaffoldBackgroundColor.withValues(
-                  alpha: 0.8,
-                ), // subtle backdrop for when pinned
-                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
-                alignment: Alignment.center,
-                child: LeaderboardRankCard(
-                  allUsers: state.users,
-                  isKids: state.isKids,
-                ),
+              child: LeaderboardRankCard(
+                allUsers: state.users,
+                isKids: state.isKids,
               ),
             ),
           ),
@@ -204,31 +217,72 @@ class _LeaderboardContent extends StatelessWidget {
           ),
 
           // Rank 4-N list
-          SliverPadding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
-            sliver: SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (context, index) {
-                  final userIndex = index + 3;
-                  if (userIndex >= state.users.length) {
-                    return const SizedBox.shrink();
-                  }
-                  final user = state.users[userIndex];
-                  final rank = userIndex + 1;
-                  final isMe = currentUser?.id == user.id;
+          if (state.users.length > 3)
+            SliverPadding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              sliver: SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  (context, index) {
+                    final userIndex = index + 3;
+                    if (userIndex >= state.users.length) {
+                      return const SizedBox.shrink();
+                    }
+                    final user = state.users[userIndex];
+                    final rank = userIndex + 1;
+                    final isMe = currentUser?.id == user.id;
+                    final isLast = userIndex == state.users.length - 1;
 
-                  return RepaintBoundary(
-                    child:
-                        LeaderboardRankTile(user: user, rank: rank, isMe: isMe)
-                            .animate()
-                            .fadeIn(duration: 250.ms, curve: Curves.easeOut)
-                            .slideX(begin: 0.05, end: 0, curve: Curves.easeOut),
-                  );
-                },
-                childCount: state.users.length > 3 ? state.users.length - 3 : 0,
+                    return RepaintBoundary(
+                      // ValueKey prevents animation replay when tiles
+                      // are recycled by the SliverChildBuilderDelegate.
+                      key: ValueKey('rank_tile_${user.id}'),
+                      child: Padding(
+                        padding: EdgeInsets.only(bottom: isLast ? 0 : 10.h),
+                        child:
+                            LeaderboardRankTile(user: user, rank: rank, isMe: isMe)
+                                .animate()
+                                .fadeIn(duration: 250.ms, curve: Curves.easeOut)
+                                .slideX(begin: 0.05, end: 0, curve: Curves.easeOut),
+                      ),
+                    );
+                  },
+                  childCount: state.users.length - 3,
+                ),
+              ),
+            )
+          else
+            // Empty state when no users beyond top 3 (e.g. Kids Zone)
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 40.h, horizontal: 32.w),
+                child: Column(
+                  children: [
+                    Icon(
+                      state.isKids ? Icons.child_care_rounded : Icons.emoji_events_outlined,
+                      size: 48.r,
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white24
+                          : Colors.black26,
+                    ),
+                    SizedBox(height: 12.h),
+                    Text(
+                      state.isKids
+                          ? context.tr('leaderboard.kids_empty', fallback: 'Be the first kid on the leaderboard!')
+                          : context.tr('leaderboard.empty', fallback: 'Complete more quests to climb the ranks!'),
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w600,
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? Colors.white38
+                            : Colors.black38,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
 
           SliverToBoxAdapter(child: SizedBox(height: 120.h)),
         ],
@@ -264,7 +318,57 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
     double shrinkOffset,
     bool overlapsContent,
   ) {
-    return SizedBox.expand(child: child);
+    // When pinned (shrinkOffset > 0), content scrolls beneath this header.
+    // A solid frosted backdrop + bottom shadow prevents the "ghost card"
+    // overlap where glassmorphic tiles bleed through.
+    final isPinned = shrinkOffset > 0 || overlapsContent;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    return ClipRect(
+      child: Stack(
+        children: [
+          // Frosted backdrop that fully occludes content beneath
+          Positioned.fill(
+            child: BackdropFilter(
+              filter: ui.ImageFilter.blur(
+                sigmaX: isPinned ? 24 : 8,
+                sigmaY: isPinned ? 24 : 8,
+              ),
+              child: Container(
+                color: (isDark ? const Color(0xFF0F172A) : Colors.white)
+                    .withValues(alpha: isPinned ? 0.92 : 0.7),
+              ),
+            ),
+          ),
+          // Rank card content
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
+            child: Center(child: child),
+          ),
+          // Bottom shadow/divider — only visible when pinned
+          if (isPinned)
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: Container(
+                height: 1,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Colors.transparent,
+                      (isDark ? Colors.white : Colors.black).withValues(alpha: 0.08),
+                      (isDark ? Colors.white : Colors.black).withValues(alpha: 0.08),
+                      Colors.transparent,
+                    ],
+                    stops: const [0.0, 0.2, 0.8, 1.0],
+                  ),
+                ),
+              ),
+            ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -343,11 +447,11 @@ class _LeaderboardToggle extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     
     return Container(
-      height: 52.h,
-      padding: EdgeInsets.all(4.r),
+      height: 48.h,
+      padding: EdgeInsets.all(3.r),
       decoration: BoxDecoration(
-        color: isDark ? Colors.black.withValues(alpha: 0.3) : Colors.white.withValues(alpha: 0.5),
-        borderRadius: BorderRadius.circular(26.r),
+        color: isDark ? Colors.black.withValues(alpha: 0.4) : Colors.white.withValues(alpha: 0.6),
+        borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
           color: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05),
           width: 1,
@@ -358,12 +462,14 @@ class _LeaderboardToggle extends StatelessWidget {
           Expanded(
             child: GestureDetector(
               onTap: () => onToggle(false),
-              child: Container(
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 250),
+                curve: Curves.easeOutCubic,
                 decoration: BoxDecoration(
                   color: !isKidsMode 
                     ? const Color(0xFF6366F1) 
                     : Colors.transparent,
-                  borderRadius: BorderRadius.circular(22.r),
+                  borderRadius: BorderRadius.circular(21.r),
                   boxShadow: !isKidsMode ? [
                     BoxShadow(
                       color: const Color(0xFF6366F1).withValues(alpha: 0.4),
@@ -373,14 +479,25 @@ class _LeaderboardToggle extends StatelessWidget {
                   ] : null,
                 ),
                 alignment: Alignment.center,
-                child: Text(
-                  'Global Ranks',
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontWeight: FontWeight.w800,
-                    fontSize: 14.sp,
-                    color: !isKidsMode ? Colors.white : (isDark ? Colors.white54 : Colors.black54),
-                  ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.public_rounded,
+                      color: !isKidsMode ? Colors.white : (isDark ? Colors.white54 : Colors.black54),
+                      size: 15.r,
+                    ),
+                    SizedBox(width: 5.w),
+                    Text(
+                      'Global Ranks',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontWeight: FontWeight.w800,
+                        fontSize: 13.sp,
+                        color: !isKidsMode ? Colors.white : (isDark ? Colors.white54 : Colors.black54),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -388,12 +505,14 @@ class _LeaderboardToggle extends StatelessWidget {
           Expanded(
             child: GestureDetector(
               onTap: () => onToggle(true),
-              child: Container(
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 250),
+                curve: Curves.easeOutCubic,
                 decoration: BoxDecoration(
                   color: isKidsMode 
                     ? const Color(0xFFF43F5E) 
                     : Colors.transparent,
-                  borderRadius: BorderRadius.circular(22.r),
+                  borderRadius: BorderRadius.circular(21.r),
                   boxShadow: isKidsMode ? [
                     BoxShadow(
                       color: const Color(0xFFF43F5E).withValues(alpha: 0.4),
@@ -409,15 +528,15 @@ class _LeaderboardToggle extends StatelessWidget {
                     Icon(
                       Icons.child_care_rounded,
                       color: isKidsMode ? Colors.white : (isDark ? Colors.white54 : Colors.black54),
-                      size: 16.r,
+                      size: 15.r,
                     ),
-                    SizedBox(width: 6.w),
+                    SizedBox(width: 5.w),
                     Text(
                       'Kids Zone',
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontWeight: FontWeight.w800,
-                        fontSize: 14.sp,
+                        fontSize: 13.sp,
                         color: isKidsMode ? Colors.white : (isDark ? Colors.white54 : Colors.black54),
                       ),
                     ),
