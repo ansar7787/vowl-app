@@ -893,16 +893,26 @@ class _EditNameSheetContent extends StatefulWidget {
 
 class _EditNameSheetContentState extends State<_EditNameSheetContent> {
   late final TextEditingController _nameController;
+  late final FocusNode _focusNode;
 
   @override
   void initState() {
     super.initState();
     _nameController = TextEditingController(text: widget.currentName);
+    _focusNode = FocusNode();
+    
+    // Delay focus request until bottom sheet animation completes
+    Future.delayed(const Duration(milliseconds: 300), () {
+      if (mounted) {
+        _focusNode.requestFocus();
+      }
+    });
   }
 
   @override
   void dispose() {
     _nameController.dispose();
+    _focusNode.dispose();
     super.dispose();
   }
 
@@ -910,24 +920,20 @@ class _EditNameSheetContentState extends State<_EditNameSheetContent> {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return BackdropFilter(
-      filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-      child: Container(
-        padding: EdgeInsets.only(
-          bottom: MediaQuery.viewInsetsOf(context).bottom,
-        ),
-        decoration: BoxDecoration(
+    return Container(
+      padding: EdgeInsets.only(
+        bottom: MediaQuery.viewInsetsOf(context).bottom,
+      ),
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
+        border: Border.all(
           color: isDark
-              ? const Color(0xFF1E293B).withValues(alpha: 0.8)
-              : Colors.white.withValues(alpha: 0.8),
-          borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
-          border: Border.all(
-            color: isDark
-                ? Colors.white.withValues(alpha: 0.1)
-                : Colors.black.withValues(alpha: 0.05),
-          ),
+              ? Colors.white.withValues(alpha: 0.1)
+              : Colors.black.withValues(alpha: 0.05),
         ),
-        child: Column(
+      ),
+      child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             SizedBox(height: 12.h),
@@ -984,7 +990,7 @@ class _EditNameSheetContentState extends State<_EditNameSheetContent> {
                     ),
                     child: TextField(
                       controller: _nameController,
-                      autofocus: true,
+                      focusNode: _focusNode,
                       maxLength: 40,
                       style: TextStyle(
                         fontFamily: 'Outfit',
