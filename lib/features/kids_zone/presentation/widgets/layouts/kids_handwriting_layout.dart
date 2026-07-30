@@ -354,7 +354,10 @@ class _MockDownloadProgressState extends State<_MockDownloadProgress> {
             .moveY(begin: -5, end: 5, duration: 1.seconds),
         SizedBox(height: 24.h),
         Text(
-          "Downloading Smart Pen...",
+          context.tr(
+            'kids_zone.downloading_smart_pen',
+            fallback: 'Downloading Smart Pen...',
+          ),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 20.sp,
@@ -364,7 +367,10 @@ class _MockDownloadProgressState extends State<_MockDownloadProgress> {
         ),
         SizedBox(height: 8.h),
         Text(
-          "This only happens once!",
+          context.tr(
+            'kids_zone.download_once_note',
+            fallback: 'This only happens once!',
+          ),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 14.sp,
