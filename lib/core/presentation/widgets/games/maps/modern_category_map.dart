@@ -92,7 +92,10 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     _loadCurriculum();
 
     // 2. Delay background icons to ensure smooth page transition AND smooth initial scroll
-    Future.delayed(const Duration(milliseconds: 1600), () {
+    // PERF: reduced from 1600ms → 600ms — 1600ms was unnecessarily long;
+    // the route fade transition completes in 250ms, so 600ms is generous
+    // enough to avoid jank while making the map feel alive faster.
+    Future.delayed(const Duration(milliseconds: 600), () {
       if (mounted) {
         setState(() => _showFullBackground = true);
       }
@@ -156,7 +159,13 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
         unlockedLevel,
       );
       if (beat != null) {
-        Future.delayed(const Duration(milliseconds: 1600), () {
+        // PERF: reduced from 1600ms → 400ms. The previous 1600ms delay
+        // stacked on top of the async curriculum load time, making the
+        // story card feel sluggish (appearing 2-3s after the map was
+        // already fully visible). 400ms is enough for the route fade
+        // transition (250ms) to finish cleanly, so the card entrance
+        // animation plays on a settled frame.
+        Future.delayed(const Duration(milliseconds: 400), () {
           if (mounted) {
             setState(() {
               _activeStoryBeat = beat;
@@ -164,7 +173,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
           }
         });
       } else if (unlockedLevel == 1) {
-        Future.delayed(const Duration(seconds: 2), () {
+        // PERF: reduced from 2000ms → 800ms for the same reason.
+        Future.delayed(const Duration(milliseconds: 800), () {
           if (mounted && _buddyMessage == null) {
             final mascotName = _formatMascotName(
               user.vowlMascot ?? 'vowl_prime',

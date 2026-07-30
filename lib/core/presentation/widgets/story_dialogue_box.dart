@@ -38,7 +38,11 @@ class StoryDialogueBox extends StatelessWidget {
               ClipRRect(
                     borderRadius: BorderRadius.circular(32.r),
                     child: BackdropFilter(
-                      filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+                      // PERF: reduced from sigma 15 → 8. Sigma 15 is
+                      // expensive during the entry scale/fade animation
+                      // (GPU must re-blur every frame). 8 provides the
+                      // same glassmorphic effect at lower cost.
+                      filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
@@ -71,8 +75,8 @@ class StoryDialogueBox extends StatelessWidget {
                     ),
                   )
                   .animate()
-                  .scale(duration: 600.ms, curve: Curves.easeOutBack)
-                  .fadeIn(duration: 400.ms),
+                  .scale(duration: 400.ms, curve: Curves.easeOutBack)
+                  .fadeIn(duration: 300.ms),
         ),
       ),
     );
@@ -182,8 +186,8 @@ class StoryDialogueBox extends StatelessWidget {
                 ),
               )
               .animate()
-              .fadeIn(delay: 300.ms)
-              .slideY(begin: 0.1, duration: 400.ms),
+              .fadeIn(delay: 150.ms)
+              .slideY(begin: 0.1, duration: 300.ms),
         ],
       ),
     );
@@ -236,6 +240,6 @@ class StoryDialogueBox extends StatelessWidget {
           ),
         ),
       ),
-    ).animate().fadeIn(delay: 500.ms).moveY(begin: 20, end: 0);
+    ).animate().fadeIn(delay: 250.ms).moveY(begin: 20, end: 0);
   }
 }
