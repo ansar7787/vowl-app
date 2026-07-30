@@ -4,7 +4,7 @@
     "levels": "1-10",
     "quests": [
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
             "prompt": "I'll have the coffee and the toast, please.",
@@ -15,111 +15,111 @@
                 "Muffin"
             ],
             "correctAnswer": "Coffee, Toast",
-            "hint": "Listen for the two items after 'I'll have'.",
-            "explanation": "'I'll have...' is the most common way to order in English. Two items are joined by 'and' - select both.",
+            "hint": "Listen for the two food and drink words that come after ‘I’ll have the… and the…’.",
+            "explanation": "‘I’ll have…’ is one of the most common ways to order food in English. When two items are joined by ‘and,’ both belong in the order.",
             "id": "go_l1_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the orange juice and the scrambled eggs.",
+            "prompt": "I'd like the tea and the muffin, please.",
             "options": [
-                "Orange Juice",
-                "Scrambled Eggs",
-                "Apple Juice",
-                "Pancakes"
+                "Tea",
+                "Muffin",
+                "Coffee",
+                "Croissant"
             ],
-            "correctAnswer": "Orange Juice, Scrambled Eggs",
-            "hint": "The two items are connected by 'and'.",
-            "explanation": "'I'll have' followed by two items with 'and' is a classic ordering pattern. Both items must be selected.",
+            "correctAnswer": "Tea, Muffin",
+            "hint": "‘I’d like’ is short for ‘I would like’ — a simple, polite way to order.",
+            "explanation": "‘I’d like’ is just as common as ‘I’ll have’ for ordering food, and sounds a little more polite. Both named items belong in the order.",
             "id": "go_l1_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the tea and the croissant, please.",
+            "prompt": "Can I have the orange juice and the pancakes?",
             "options": [
-                "Tea",
-                "Croissant",
-                "Coffee",
-                "Muffin"
+                "Orange Juice",
+                "Pancakes",
+                "Apple Juice",
+                "Waffles"
             ],
-            "correctAnswer": "Tea, Croissant",
-            "hint": "Find the two items mentioned by name.",
-            "explanation": "A croissant is a buttery French pastry. 'Please' at the end is a politeness marker - it doesn't change the order.",
+            "correctAnswer": "Orange Juice, Pancakes",
+            "hint": "This sentence is a question, but it still means the customer wants both items.",
+            "explanation": "‘Can I have…?’ looks like a yes/no question, but in a restaurant it's really a polite request — the customer expects to receive both items, not just a yes or no.",
             "id": "go_l1_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the pancakes and a coffee, please.",
+            "prompt": "I'll have the scrambled eggs and the bacon, please.",
             "options": [
-                "Pancakes",
-                "Coffee",
-                "Waffles",
-                "Tea"
+                "Scrambled Eggs",
+                "Bacon",
+                "Fried Eggs",
+                "Sausage"
             ],
-            "correctAnswer": "Pancakes, Coffee",
-            "hint": "The customer orders something to eat and something to drink.",
-            "explanation": "'A coffee' means one cup of coffee. Using 'a' before a drink is natural when ordering in English.",
+            "correctAnswer": "Scrambled Eggs, Bacon",
+            "hint": "Listen for the two breakfast foods, not just similar-sounding options.",
+            "explanation": "‘Scrambled’ tells you exactly how the eggs are cooked. Picking a different cooking style, like ‘fried,’ would be the wrong order.",
             "id": "go_l2_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the yogurt and the apple juice.",
+            "prompt": "I'd like the yogurt and the granola, please.",
             "options": [
                 "Yogurt",
-                "Apple Juice",
+                "Granola",
                 "Oatmeal",
-                "Orange Juice"
+                "Cereal"
             ],
-            "correctAnswer": "Yogurt, Apple Juice",
-            "hint": "'I'd like' is a polite way to order - listen for the two items named.",
-            "explanation": "'I'd like' is short for 'I would like' - more polite than 'I want'. It is widely used when ordering food.",
+            "correctAnswer": "Yogurt, Granola",
+            "hint": "Both items are light breakfast choices — one is creamy, one is crunchy.",
+            "explanation": "Yogurt and granola are often eaten together for a light breakfast. ‘Oatmeal’ and ‘cereal’ are similar but different foods, so don't mix them up.",
             "id": "go_l2_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the muffin and a hot chocolate, please.",
+            "prompt": "Could I get a coffee and a croissant?",
             "options": [
-                "Muffin",
-                "Hot Chocolate",
+                "Coffee",
                 "Croissant",
-                "Coffee"
+                "Tea",
+                "Muffin"
             ],
-            "correctAnswer": "Muffin, Hot Chocolate",
-            "hint": "One item is a baked good; the other is a warm drink.",
-            "explanation": "Hot chocolate is a popular café drink ordered alongside pastries. Note how 'a hot chocolate' uses the indefinite article.",
+            "correctAnswer": "Coffee, Croissant",
+            "hint": "‘A’ is used here because the customer means one of each, not a specific one.",
+            "explanation": "‘Could I get…?’ is a friendly, everyday way to order in a café. Using ‘a’ before both items shows the customer wants one coffee and one croissant.",
             "id": "go_l2_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
             "prompt": "I'll have the tomato soup and a bread roll.",
             "options": [
                 "Tomato Soup",
                 "Bread Roll",
-                "Onion Soup",
+                "Vegetable Soup",
                 "Crackers"
             ],
             "correctAnswer": "Tomato Soup, Bread Roll",
-            "hint": "Soup and bread are a classic lunch combination.",
-            "explanation": "The adjective 'tomato' tells you which soup. Bread rolls are a common accompaniment to soup in English-speaking countries.",
+            "hint": "The word right before ‘soup’ tells you exactly which one to pick.",
+            "explanation": "‘Tomato’ describes the soup, so ‘vegetable soup’ would be the wrong choice even though it's also a soup. Bread rolls are a common side order with soup.",
             "id": "go_l3_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the cheese sandwich and a water, please.",
+            "prompt": "I'd like the cheese sandwich and a glass of water.",
             "options": [
                 "Cheese Sandwich",
                 "Water",
@@ -127,15 +127,15 @@
                 "Juice"
             ],
             "correctAnswer": "Cheese Sandwich, Water",
-            "hint": "The customer orders a light lunch - one sandwich and a drink.",
-            "explanation": "'A water' is an informal but natural way to order a glass of water. The adjective 'cheese' tells you the sandwich filling.",
+            "hint": "One item is the sandwich filling; the other is a simple drink.",
+            "explanation": "‘Cheese’ tells you what's inside the sandwich. ‘A glass of water’ is a very natural way to ask for water in a restaurant.",
             "id": "go_l3_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the garden salad and a lemonade.",
+            "prompt": "Can I have the garden salad and a lemonade, please?",
             "options": [
                 "Garden Salad",
                 "Lemonade",
@@ -143,15 +143,15 @@
                 "Iced Tea"
             ],
             "correctAnswer": "Garden Salad, Lemonade",
-            "hint": "One is a salad and the other is a cold drink.",
-            "explanation": "A 'garden salad' contains fresh mixed vegetables. Lemonade is a cold sweet-citrus drink - different from iced tea.",
+            "hint": "Two kinds of salad appear in the options — only one matches the order.",
+            "explanation": "A ‘garden salad’ is a simple mixed salad, different from a ‘Caesar salad.’ Lemonade is a cold, sweet drink made from lemons.",
             "id": "go_l3_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the burger and the fries, please.",
+            "prompt": "I'll take the burger and the fries, please.",
             "options": [
                 "Burger",
                 "Fries",
@@ -159,47 +159,47 @@
                 "Onion Rings"
             ],
             "correctAnswer": "Burger, Fries",
-            "hint": "This is a classic fast-food combination.",
-            "explanation": "'Fries' is American English for fried potato strips (called 'chips' in British English). Burgers and fries are a popular pair.",
+            "hint": "This is a classic fast-food pairing.",
+            "explanation": "‘I’ll take…’ works just like ‘I’ll have…’ when ordering. Burgers and fries are one of the most common combinations in casual dining.",
             "id": "go_l4_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the pasta and a water.",
+            "prompt": "I'd like the pasta and a side salad.",
             "options": [
                 "Pasta",
-                "Water",
+                "Side Salad",
                 "Pizza",
-                "Soda"
+                "Garlic Bread"
             ],
-            "correctAnswer": "Pasta, Water",
-            "hint": "The customer ordered an Italian dish and a simple drink.",
-            "explanation": "'Pasta' refers to any Italian noodle dish. 'A water' is a very common way to order a glass or bottle of water.",
+            "correctAnswer": "Pasta, Side Salad",
+            "hint": "One item is the main dish; the other is a smaller side dish.",
+            "explanation": "A ‘side salad’ is a small salad ordered alongside a main dish. Pasta and pizza are both Italian dishes, so read carefully to choose the right one.",
             "id": "go_l4_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the grilled chicken and the rice.",
+            "prompt": "Could I have the grilled chicken and the rice?",
             "options": [
                 "Grilled Chicken",
                 "Rice",
                 "Fried Chicken",
-                "Potatoes"
+                "Noodles"
             ],
             "correctAnswer": "Grilled Chicken, Rice",
-            "hint": "The cooking method 'grilled' is important - it changes the dish.",
-            "explanation": "'Grilled' means cooked on a grill without added fat - healthier than 'fried'. The adjective before the noun gives key information.",
+            "hint": "The cooking method — grilled or fried — makes a big difference here.",
+            "explanation": "‘Grilled’ means cooked over direct heat, while ‘fried’ means cooked in oil. These two words often appear together as options, so listen carefully.",
             "id": "go_l4_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the slice of cake and a coffee.",
+            "prompt": "I'll have a slice of cake and a coffee.",
             "options": [
                 "Slice of Cake",
                 "Coffee",
@@ -207,15 +207,15 @@
                 "Tea"
             ],
             "correctAnswer": "Slice of Cake, Coffee",
-            "hint": "The customer wants a sweet treat with a hot drink.",
-            "explanation": "'A slice of cake' means one portion. 'A slice of' is more precise than just saying 'cake' - useful in café ordering.",
+            "hint": "‘A slice of’ means just one piece, not the whole cake.",
+            "explanation": "‘A slice of cake’ is a precise, natural way to order one portion. This phrase is useful anywhere desserts are sold by the piece.",
             "id": "go_l5_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the ice cream and an orange juice.",
+            "prompt": "I'd like the ice cream and an orange juice.",
             "options": [
                 "Ice Cream",
                 "Orange Juice",
@@ -223,15 +223,15 @@
                 "Apple Juice"
             ],
             "correctAnswer": "Ice Cream, Orange Juice",
-            "hint": "Notice how 'an' is used before 'orange juice' because it starts with a vowel sound.",
-            "explanation": "In English, use 'an' before words starting with a vowel sound - 'an orange juice', not 'a orange juice'. This grammar rule applies throughout menu ordering.",
+            "hint": "Notice the small word right before ‘orange juice’ — it's a useful clue.",
+            "explanation": "We use ‘an’ before words that start with a vowel sound, like ‘orange.’ Saying ‘a orange juice’ would be a grammar mistake.",
             "id": "go_l5_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the cookie and a glass of milk.",
+            "prompt": "Can I get a cookie and a glass of milk?",
             "options": [
                 "Cookie",
                 "Milk",
@@ -239,12 +239,12 @@
                 "Water"
             ],
             "correctAnswer": "Cookie, Milk",
-            "hint": "Cookies and milk are a classic American combination.",
-            "explanation": "'A glass of milk' is more specific than just 'milk'. In ordering, adding 'a glass of' or 'a cup of' makes the quantity clear.",
+            "hint": "Cookies and milk are a familiar pairing in English-speaking countries.",
+            "explanation": "‘A glass of milk’ is clearer than just saying ‘milk,’ since it shows exactly how much the customer wants.",
             "id": "go_l5_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
             "prompt": "I'd like the vegetable soup and some bread, please.",
@@ -255,15 +255,15 @@
                 "Crackers"
             ],
             "correctAnswer": "Vegetable Soup, Bread",
-            "hint": "'Some bread' means bread in general - it could be a roll, slice, or piece.",
-            "explanation": "'Some' is used with uncountable nouns like bread - you cannot say 'a bread'. 'I'd like' is polite and widely used in restaurants.",
+            "hint": "‘Some’ is used here instead of ‘a’ because this food can't be counted as one single item.",
+            "explanation": "Bread is an uncountable noun in English, so we say ‘some bread,’ never ‘a bread.’ This is a useful rule to remember when ordering.",
             "id": "go_l6_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the orange juice and the toast, please.",
+            "prompt": "Could I get the orange juice and some toast?",
             "options": [
                 "Orange Juice",
                 "Toast",
@@ -271,15 +271,15 @@
                 "Muffin"
             ],
             "correctAnswer": "Orange Juice, Toast",
-            "hint": "'Toast' is uncountable - we say 'the toast' or 'some toast', never 'a toast'.",
-            "explanation": "Toast is an uncountable noun in English - one of many important grammar points for ordering breakfast correctly.",
+            "hint": "Like bread, this breakfast food is uncountable — we don't say ‘a toast.’",
+            "explanation": "‘Could I get…?’ is a friendly, everyday way to order. ‘Toast’ is uncountable in English, so we ask for ‘some toast’ or ‘the toast,’ never ‘a toast.’",
             "id": "go_l6_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the tea and the biscuits, please.",
+            "prompt": "Can I have the tea and some biscuits, please?",
             "options": [
                 "Tea",
                 "Biscuits",
@@ -287,12 +287,12 @@
                 "Cookies"
             ],
             "correctAnswer": "Tea, Biscuits",
-            "hint": "In British English, 'biscuits' are sweet crisp items served with tea.",
-            "explanation": "In British English, 'biscuits' are what Americans call 'cookies'. Tea and biscuits is a classic British custom - important cultural vocabulary.",
+            "hint": "In British English, this sweet snack has a different name than in American English.",
+            "explanation": "‘Can I have…?’ is simple and direct, but still polite. In British English, ‘biscuits’ are small, sweet snacks — what Americans call ‘cookies.’",
             "id": "go_l6_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
             "prompt": "Could I get the burger and a lemonade, please?",
@@ -303,31 +303,31 @@
                 "Iced Tea"
             ],
             "correctAnswer": "Burger, Lemonade",
-            "hint": "'Could I get...' is a casual but polite ordering phrase common in American English.",
-            "explanation": "'Could I get...' is widely used in American restaurants - it is a polite question form. The customer is asking permission to receive items.",
+            "hint": "‘Could I get…?’ is casual and polite — very common in American restaurants.",
+            "explanation": "‘Could I get…?’ is used constantly in everyday American English. It sounds like a question, but it's really a polite way to order.",
             "id": "go_l7_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the fries and the milkshake?",
+            "prompt": "I'll have the fries and a milkshake, please.",
             "options": [
                 "Fries",
                 "Milkshake",
                 "Onion Rings",
-                "Juice"
+                "Soda"
             ],
             "correctAnswer": "Fries, Milkshake",
-            "hint": "A milkshake is a cold blended dairy drink - don't confuse it with juice.",
-            "explanation": "A 'milkshake' is thick and creamy, made by blending milk and ice cream. 'Could I get' is common in fast-food and casual dining.",
+            "hint": "A milkshake is thick and made with ice cream — different from a soda.",
+            "explanation": "‘I’ll have…’ works with any two items joined by ‘and.’ A milkshake is made by blending milk and ice cream, so it's much thicker than a soda.",
             "id": "go_l7_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the pizza and a soda, please?",
+            "prompt": "Can I have the pizza and a soda, please?",
             "options": [
                 "Pizza",
                 "Soda",
@@ -335,12 +335,12 @@
                 "Water"
             ],
             "correctAnswer": "Pizza, Soda",
-            "hint": "'Soda' is American English for a fizzy drink.",
-            "explanation": "'Soda' (American English) = 'fizzy drink' or 'pop' in other varieties of English. Essential vocabulary for ordering drinks in US restaurants.",
+            "hint": "‘Soda’ is the American English word for a fizzy drink.",
+            "explanation": "‘Can I have…?’ is another everyday way to order politely. ‘Soda’ means a fizzy drink in American English — elsewhere, people might say ‘pop’ or ‘fizzy drink.’",
             "id": "go_l7_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
             "prompt": "Can I have the tuna sandwich and a coffee?",
@@ -351,15 +351,15 @@
                 "Tea"
             ],
             "correctAnswer": "Tuna Sandwich, Coffee",
-            "hint": "'Can I have' is a direct, informal way to order - very natural in everyday English.",
-            "explanation": "'Can I have...' is common in British English cafés. While grammatically informal, it is perfectly normal and widely accepted.",
+            "hint": "‘Can I have…?’ is direct but still polite in everyday English.",
+            "explanation": "‘Can I have…?’ is grammatically informal, but it's completely normal and polite when ordering food.",
             "id": "go_l8_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Can I have the soup of the day and some bread?",
+            "prompt": "I'd like the soup of the day and some bread, please.",
             "options": [
                 "Soup of the Day",
                 "Bread",
@@ -367,15 +367,15 @@
                 "Crackers"
             ],
             "correctAnswer": "Soup of the Day, Bread",
-            "hint": "'Soup of the day' refers to a different soup on each day - a rotating special.",
-            "explanation": "Restaurants often offer a 'soup of the day' that changes daily. It is a common menu phrase worth knowing - the soup variety is not specified.",
+            "hint": "‘Soup of the day’ doesn't name a flavor — it means whatever soup the kitchen made today.",
+            "explanation": "‘I’d like…’ is a slightly more formal way to order. ‘Soup of the day’ is a common restaurant phrase for a soup that changes daily, so just select it as a whole.",
             "id": "go_l8_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Can I have the apple pie and a glass of milk?",
+            "prompt": "Could I get the apple pie and a glass of milk?",
             "options": [
                 "Apple Pie",
                 "Milk",
@@ -383,12 +383,12 @@
                 "Juice"
             ],
             "correctAnswer": "Apple Pie, Milk",
-            "hint": "'A glass of milk' specifies the drink is served in a glass.",
-            "explanation": "Apple pie is a classic dessert, especially in American cuisine. 'Can I have' combined with 'a glass of' is natural everyday ordering English.",
+            "hint": "One is a warm, fruity dessert; the other is a simple drink served in a glass.",
+            "explanation": "‘Could I get…?’ is friendly and polite, similar to ‘Could I have…?’ ‘A glass of milk’ shows the natural way to specify a drink amount.",
             "id": "go_l8_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
             "prompt": "I'll take the garden salad and a sparkling water.",
@@ -399,12 +399,12 @@
                 "Still Water"
             ],
             "correctAnswer": "Garden Salad, Sparkling Water",
-            "hint": "'Sparkling water' has bubbles - different from 'still water', which has none.",
-            "explanation": "'I'll take...' is another natural ordering phrase. 'Sparkling water' (carbonated) and 'still water' (flat) - restaurants always ask which you prefer.",
+            "hint": "‘Sparkling’ means the water has bubbles.",
+            "explanation": "‘Sparkling water’ is carbonated, while ‘still water’ has no bubbles. Restaurants often ask which one a customer prefers.",
             "id": "go_l9_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
             "prompt": "I'd like the chicken wrap and an iced tea.",
@@ -415,15 +415,15 @@
                 "Lemonade"
             ],
             "correctAnswer": "Chicken Wrap, Iced Tea",
-            "hint": "A 'wrap' is a sandwich made with flatbread rolled around a filling.",
-            "explanation": "A 'wrap' uses flatbread instead of sliced bread. 'Iced tea' is cold tea over ice - very popular in the US and increasingly in the UK.",
+            "hint": "A ‘wrap’ uses soft flatbread instead of sliced bread.",
+            "explanation": "A ‘wrap’ is a sandwich rolled in flatbread. ‘Iced tea’ means cold tea served over ice — a very popular drink in the US.",
             "id": "go_l9_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the oatmeal and the apple juice.",
+            "prompt": "Could I have the oatmeal and the apple juice?",
             "options": [
                 "Oatmeal",
                 "Apple Juice",
@@ -431,12 +431,12 @@
                 "Orange Juice"
             ],
             "correctAnswer": "Oatmeal, Apple Juice",
-            "hint": "Oatmeal is a hot breakfast cereal - don't confuse it with pancakes.",
-            "explanation": "'Oatmeal' (US) or 'porridge' (UK) is a breakfast dish made from oats cooked in water or milk. Notice 'the' is used before both items.",
+            "hint": "Listen for the warm breakfast dish made from oats, and the drink that follows it.",
+            "explanation": "‘Could I have…?’ is another polite request form. ‘Oatmeal’ is a hot breakfast made from oats cooked in water or milk — in British English, it's usually called ‘porridge.’",
             "id": "go_l9_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
             "prompt": "I'll have the cheesecake and a hot chocolate.",
@@ -447,12 +447,12 @@
                 "Coffee"
             ],
             "correctAnswer": "Cheesecake, Hot Chocolate",
-            "hint": "Cheesecake and apple pie are both desserts - listen carefully for which one.",
-            "explanation": "Cheesecake is made with cream cheese on a biscuit base. 'Hot chocolate' is made from chocolate - completely different from coffee.",
+            "hint": "Both desserts on the option list are popular, but only one was actually named.",
+            "explanation": "Cheesecake is made with cream cheese on a biscuit base. ‘Hot chocolate’ is made from chocolate, not coffee beans, so it tastes completely different from coffee.",
             "id": "go_l10_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
             "prompt": "Can I get the grilled cheese and a soda?",
@@ -463,15 +463,15 @@
                 "Juice"
             ],
             "correctAnswer": "Grilled Cheese, Soda",
-            "hint": "A 'grilled cheese' is a toasted sandwich with melted cheese - a classic American dish.",
-            "explanation": "A grilled cheese sandwich is toasted bread with melted cheese inside. A 'tuna melt' also has melted cheese but adds tuna - be careful not to mix these up.",
+            "hint": "This toasted sandwich is named after its main ingredient and cooking method.",
+            "explanation": "A ‘grilled cheese’ is toasted bread with melted cheese inside. A ‘tuna melt’ looks similar but adds tuna, so check the wording carefully.",
             "id": "go_l10_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the mashed potatoes and the grilled chicken.",
+            "prompt": "I'd like the mashed potatoes and the grilled chicken, please.",
             "options": [
                 "Mashed Potatoes",
                 "Grilled Chicken",
@@ -479,8 +479,8 @@
                 "Fried Chicken"
             ],
             "correctAnswer": "Mashed Potatoes, Grilled Chicken",
-            "hint": "Pay attention to the cooking method - 'grilled' versus 'fried' makes a significant difference.",
-            "explanation": "The cooking method adjective ('grilled' vs 'fried') changes the dish entirely. 'Mashed potatoes' are cooked and mashed - different from roasted or fried potatoes.",
+            "hint": "Pay attention to both the side dish and the cooking method of the chicken.",
+            "explanation": "‘Mashed’ potatoes are cooked and mashed until smooth — very different from rice. And remember, ‘grilled’ is not the same as ‘fried.’",
             "id": "go_l10_q3"
         }
     ]

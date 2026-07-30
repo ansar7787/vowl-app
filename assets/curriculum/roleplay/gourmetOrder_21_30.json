@@ -4,26 +4,26 @@
     "levels": "21-30",
     "quests": [
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the pancake stack with maple syrup and a black coffee.",
+            "prompt": "I was thinking about the pancake stack... I'll add a coffee, too.",
             "options": [
                 "Pancake Stack",
-                "Black Coffee",
+                "Coffee",
                 "Waffle Stack",
-                "Latte"
+                "Tea"
             ],
-            "correctAnswer": "Pancake Stack, Black Coffee",
-            "hint": "'Black coffee' means coffee served without milk or sugar.",
-            "explanation": "'Black coffee' is coffee without any milk or cream. The modifier 'black' changes what is served. 'Maple syrup' tells us how the pancakes come - the stack is one menu item.",
+            "correctAnswer": "Pancake Stack, Coffee",
+            "hint": "The customer pauses to think, then finishes the order with a drink.",
+            "explanation": "The pause (shown by ‘…’) is natural in spoken English when someone is deciding. ‘Pancake stack’ and ‘waffle stack’ look similar on a menu, so read carefully.",
             "id": "go_l21_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the club sandwich and a side of coleslaw.",
+            "prompt": "Do you have club sandwiches? I'll take one, with a side of coleslaw.",
             "options": [
                 "Club Sandwich",
                 "Coleslaw",
@@ -31,15 +31,15 @@
                 "Side Salad"
             ],
             "correctAnswer": "Club Sandwich, Coleslaw",
-            "hint": "'A side of...' means a small portion served alongside the main item.",
-            "explanation": "A 'side of coleslaw' means a portion of coleslaw served on the side. A 'club sandwich' is a triple-decker sandwich with chicken, bacon, lettuce, tomato, and mayo.",
+            "hint": "The customer first asks a question, then places the actual order.",
+            "explanation": "Asking ‘Do you have…?’ first is common before ordering something you're not sure is on the menu. ‘I’ll take one’ then confirms the order.",
             "id": "go_l21_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the beef chili and some cornbread?",
+            "prompt": "For here, I'll have the beef chili and some cornbread.",
             "options": [
                 "Beef Chili",
                 "Cornbread",
@@ -47,399 +47,399 @@
                 "Dinner Roll"
             ],
             "correctAnswer": "Beef Chili, Cornbread",
-            "hint": "Cornbread is a traditional American bread made from cornmeal.",
-            "explanation": "'Cornbread' is traditional American bread made from cornmeal, often served with chili. 'Beef chili' is a spiced stew with beans and ground beef - a Southern US favourite.",
+            "hint": "‘For here’ tells the staff the customer is eating in the restaurant, not taking food away.",
+            "explanation": "‘For here’ and ‘to go’ are two essential phrases for ordering in the US. ‘Beef chili’ and ‘cornbread’ are a classic pairing.",
             "id": "go_l21_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like two fried eggs on toast and a glass of orange juice.",
+            "prompt": "To go, could I get the turkey club and a bottle of water?",
             "options": [
-                "Fried Eggs on Toast",
-                "Orange Juice",
-                "Scrambled Eggs on Toast",
-                "Apple Juice"
+                "Turkey Club",
+                "Water",
+                "Chicken Club",
+                "Soda"
             ],
-            "correctAnswer": "Fried Eggs on Toast, Orange Juice",
-            "hint": "Listen for the cooking method: 'fried' not 'scrambled'.",
-            "explanation": "When ordering eggs, the cooking method is crucial: fried, scrambled, poached, or boiled. Each produces a completely different result - essential vocabulary in any English-speaking café.",
+            "correctAnswer": "Turkey Club, Water",
+            "hint": "‘To go’ means the customer will take the food with them, not eat it at the restaurant.",
+            "explanation": "‘To go’ (called ‘takeaway’ in British English) tells the staff to pack the order. ‘Turkey’ and ‘chicken’ clubs are both common, so the meat word matters.",
             "id": "go_l22_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the smoked salmon bagel and a flat white?",
+            "prompt": "I'll do the mushroom omelet and some hash browns.",
             "options": [
-                "Smoked Salmon Bagel",
-                "Flat White",
-                "Cream Cheese Bagel",
-                "Latte"
+                "Mushroom Omelet",
+                "Hash Browns",
+                "Cheese Omelet",
+                "Home Fries"
             ],
-            "correctAnswer": "Smoked Salmon Bagel, Flat White",
-            "hint": "A flat white is espresso with microfoam milk - smaller and stronger than a latte.",
-            "explanation": "A flat white is an Australian and New Zealand coffee drink - espresso with microfoamed milk, smaller and stronger than a latte. 'Smoked salmon' is salmon preserved by smoking.",
+            "correctAnswer": "Mushroom Omelet, Hash Browns",
+            "hint": "‘I’ll do…’ is a casual, modern way to place an order.",
+            "explanation": "‘I’ll do…’ is heard often in casual restaurants, meaning the same as ‘I’ll have…’ Hash browns are shredded and fried, while home fries are cut into cubes.",
             "id": "go_l22_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Can I get the Belgian waffles and a hot chocolate?",
+            "prompt": "Give me the fish and chips and a side of tartar sauce, please.",
             "options": [
-                "Belgian Waffles",
-                "Hot Chocolate",
-                "Pancakes",
-                "Coffee"
+                "Fish and Chips",
+                "Tartar Sauce",
+                "Fried Shrimp",
+                "Cocktail Sauce"
             ],
-            "correctAnswer": "Belgian Waffles, Hot Chocolate",
-            "hint": "Belgian waffles are thicker and crisper than regular waffles.",
-            "explanation": "Belgian waffles have deeper pockets and a crispier texture. The nationality adjective 'Belgian' indicates the style - as in French toast, Greek salad, or Italian dressing.",
+            "correctAnswer": "Fish and Chips, Tartar Sauce",
+            "hint": "One item is a classic British dish; the other is its traditional dipping sauce.",
+            "explanation": "‘Give me…’ is direct, so adding ‘please’ keeps it polite. Tartar sauce is the traditional partner for fish and chips, while cocktail sauce usually goes with shrimp.",
             "id": "go_l22_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the salmon sashimi and a sake, please.",
+            "prompt": "One iced latte and one blueberry muffin, please.",
             "options": [
-                "Salmon Sashimi",
-                "Sake",
-                "Tuna Sashimi",
-                "Green Tea"
+                "Iced Latte",
+                "Blueberry Muffin",
+                "Hot Latte",
+                "Bran Muffin"
             ],
-            "correctAnswer": "Salmon Sashimi, Sake",
-            "hint": "Sashimi is raw fish without rice - specify the fish type: salmon or tuna?",
-            "explanation": "'Sashimi' is thinly sliced raw fish served without rice. 'Sake' (SAH-keh) is Japanese rice wine. Specifying the fish type is essential - salmon and tuna are both common but different.",
+            "correctAnswer": "Iced Latte, Blueberry Muffin",
+            "hint": "This order sounds like the customer is listing items one by one.",
+            "explanation": "‘One… and one…’ is a simple, clear way to list items, often used when ordering quickly. ‘Iced’ and ‘hot’ describe temperature, not flavor.",
             "id": "go_l23_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the gyoza and the miso ramen.",
+            "prompt": "I'll have the Cobb salad, and could I also get a lemonade?",
             "options": [
-                "Gyoza",
-                "Miso Ramen",
-                "Spring Rolls",
-                "Udon Noodles"
+                "Cobb Salad",
+                "Lemonade",
+                "Chef Salad",
+                "Iced Tea"
             ],
-            "correctAnswer": "Gyoza, Miso Ramen",
-            "hint": "Gyoza are Japanese dumplings - different from Chinese spring rolls.",
-            "explanation": "Gyoza are Japanese pan-fried or steamed dumplings. 'Miso ramen' is noodle soup with a miso broth - there are different ramen types (miso, soy, pork), and the type matters when ordering.",
+            "correctAnswer": "Cobb Salad, Lemonade",
+            "hint": "The customer adds a second request after starting the order.",
+            "explanation": "‘And could I also get…?’ is a natural way to add a second item after the first. A ‘Cobb salad’ traditionally includes egg, bacon, and blue cheese.",
             "id": "go_l23_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the edamame and the dragon roll?",
+            "prompt": "Actually, I'll have the grilled salmon and some steamed vegetables.",
             "options": [
-                "Edamame",
-                "Dragon Roll",
-                "Miso Soup",
-                "California Roll"
+                "Grilled Salmon",
+                "Steamed Vegetables",
+                "Grilled Trout",
+                "Roasted Vegetables"
             ],
-            "correctAnswer": "Edamame, Dragon Roll",
-            "hint": "A dragon roll is a type of sushi roll - different from a California roll.",
-            "explanation": "Edamame are young soybeans in their pods - a popular Japanese snack. A 'dragon roll' is typically topped with avocado. A 'California roll' uses crab, avocado, and cucumber - they look similar but are different.",
+            "correctAnswer": "Grilled Salmon, Steamed Vegetables",
+            "hint": "‘Actually’ often signals the customer has just made a final decision.",
+            "explanation": "‘Actually…’ is used when someone changes their mind or confirms a decision. ‘Steamed’ and ‘roasted’ are different cooking methods, so listen closely.",
             "id": "go_l23_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the tom yum soup and the green curry.",
+            "prompt": "Let's go with the beef burrito and a horchata.",
             "options": [
-                "Tom Yum Soup",
-                "Green Curry",
-                "Tom Kha Soup",
-                "Red Curry"
+                "Beef Burrito",
+                "Horchata",
+                "Chicken Burrito",
+                "Agua Fresca"
             ],
-            "correctAnswer": "Tom Yum Soup, Green Curry",
-            "hint": "Tom yum is hot and sour; tom kha is coconut-based. Green and red curry differ in spice.",
-            "explanation": "Tom yum is a hot and sour soup; tom kha uses coconut milk. Green curry is made with green chillies - typically spicier than red curry, which uses dried red chillies.",
+            "correctAnswer": "Beef Burrito, Horchata",
+            "hint": "‘Let’s go with…’ sounds like the customer is finally settling on a choice.",
+            "explanation": "‘Let’s go with…’ is a relaxed way to confirm a decision, often after considering other options. ‘Horchata’ is a sweet, cinnamon-flavored rice drink.",
             "id": "go_l24_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the chicken satay and the pad see ew.",
+            "prompt": "I was thinking about the shrimp curry... I'll have it with some rice.",
             "options": [
-                "Chicken Satay",
-                "Pad See Ew",
-                "Pork Satay",
-                "Pad Thai"
+                "Shrimp Curry",
+                "Rice",
+                "Chicken Curry",
+                "Naan"
             ],
-            "correctAnswer": "Chicken Satay, Pad See Ew",
-            "hint": "Both pad see ew and pad thai are noodle dishes - listen for the specific name.",
-            "explanation": "'Pad see ew' uses wide flat rice noodles with Chinese broccoli. 'Pad thai' uses thinner rice noodles. 'Satay' is grilled meat on skewers - listen for the protein type: chicken or pork.",
+            "correctAnswer": "Shrimp Curry, Rice",
+            "hint": "The customer thinks out loud before finishing the order with a side dish.",
+            "explanation": "The pause shows natural hesitation while deciding. ‘Shrimp’ and ‘chicken’ curry often sit next to each other on a menu, so the protein word is the key detail.",
             "id": "go_l24_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the spring rolls and a Thai iced tea?",
+            "prompt": "Do you have veggie burgers? I'll take one, with a side salad.",
             "options": [
-                "Spring Rolls",
-                "Thai Iced Tea",
-                "Dumplings",
-                "Mango Juice"
+                "Veggie Burger",
+                "Side Salad",
+                "Beef Burger",
+                "Fries"
             ],
-            "correctAnswer": "Spring Rolls, Thai Iced Tea",
-            "hint": "Thai iced tea is distinctively orange, made with condensed milk.",
-            "explanation": "Thai iced tea is strongly brewed tea with condensed milk, giving it an orange colour. It is very different from regular iced tea. Cultural drink names are important restaurant vocabulary.",
+            "correctAnswer": "Veggie Burger, Side Salad",
+            "hint": "The customer checks if the item is available before confirming the order.",
+            "explanation": "‘Do you have…?’ is useful when a customer isn't sure a dish is on the menu. Once confirmed, ‘I’ll take one’ completes the order.",
             "id": "go_l24_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the chicken tacos and the guacamole.",
+            "prompt": "For here, I'd like the eggs benedict and a fresh orange juice.",
             "options": [
-                "Chicken Tacos",
-                "Guacamole",
-                "Beef Tacos",
-                "Salsa"
+                "Eggs Benedict",
+                "Orange Juice",
+                "Eggs Florentine",
+                "Apple Juice"
             ],
-            "correctAnswer": "Chicken Tacos, Guacamole",
-            "hint": "Guacamole is a dip made from mashed avocado - a side dish, not a main.",
-            "explanation": "Guacamole is made from mashed avocados with lime, onion, and cilantro - a side dish or dip. Chicken vs beef tacos shows how the protein adjective changes the order.",
+            "correctAnswer": "Eggs Benedict, Orange Juice",
+            "hint": "Two egg dishes with similar names appear here — check which one was ordered.",
+            "explanation": "‘Eggs Benedict’ uses ham and hollandaise sauce, while ‘Eggs Florentine’ replaces the ham with spinach. ‘Fresh’ simply describes the juice, not a new item.",
             "id": "go_l25_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the beef burrito and a margarita.",
+            "prompt": "To go, could I get the chicken shawarma and some hummus?",
             "options": [
-                "Beef Burrito",
-                "Margarita",
-                "Chicken Burrito",
-                "Mojito"
+                "Chicken Shawarma",
+                "Hummus",
+                "Beef Shawarma",
+                "Baba Ganoush"
             ],
-            "correctAnswer": "Beef Burrito, Margarita",
-            "hint": "A margarita is a Mexican cocktail - don't confuse it with a mojito, which is Cuban.",
-            "explanation": "A margarita is made with tequila, lime juice, and triple sec - Mexican in origin. A mojito uses rum - it is Cuban. Knowing cocktail origins helps in ordering at world cuisine restaurants.",
+            "correctAnswer": "Chicken Shawarma, Hummus",
+            "hint": "This Middle Eastern order names a wrap and a creamy chickpea dip.",
+            "explanation": "‘Shawarma’ is meat cooked on a rotating spit, often served in a wrap. ‘Hummus’ is made from chickpeas, while ‘baba ganoush’ is made from eggplant.",
             "id": "go_l25_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the nachos and the enchiladas?",
+            "prompt": "I'll do the Korean fried chicken and some pickled radish.",
             "options": [
-                "Nachos",
-                "Enchiladas",
-                "Quesadilla",
-                "Fajitas"
+                "Korean Fried Chicken",
+                "Pickled Radish",
+                "Buffalo Wings",
+                "Coleslaw"
             ],
-            "correctAnswer": "Nachos, Enchiladas",
-            "hint": "Enchiladas are corn tortillas rolled around filling and covered in sauce.",
-            "explanation": "Enchiladas are corn tortillas rolled around filling and smothered in chilli sauce. Quesadillas are grilled tortillas with cheese. Fajitas are grilled meat strips served with tortillas and toppings.",
+            "correctAnswer": "Korean Fried Chicken, Pickled Radish",
+            "hint": "This dish is fried twice for extra crispiness and often served with a tangy side.",
+            "explanation": "Korean fried chicken is known for its extra-crispy texture, often coated in a sweet and spicy glaze. Pickled radish is a common side that cuts through the richness.",
             "id": "go_l25_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the butter chicken and the naan bread.",
+            "prompt": "Give me the jerk chicken and some rice and peas, please.",
             "options": [
-                "Butter Chicken",
-                "Naan Bread",
-                "Chicken Tikka Masala",
-                "Chapati"
+                "Jerk Chicken",
+                "Rice and Peas",
+                "BBQ Chicken",
+                "Mashed Potatoes"
             ],
-            "correctAnswer": "Butter Chicken, Naan Bread",
-            "hint": "Butter chicken and chicken tikka masala look similar but have different sauces.",
-            "explanation": "Butter chicken has a mild, creamy tomato-butter sauce. Chicken tikka masala has a slightly different spice blend. Naan is leavened flatbread; chapati is unleavened - both are common bread sides.",
+            "correctAnswer": "Jerk Chicken, Rice and Peas",
+            "hint": "This spicy dish comes from the Caribbean, along with its traditional side.",
+            "explanation": "‘Jerk chicken’ is a Caribbean dish made with a spicy marinade. ‘Rice and peas’ is its classic side dish in Jamaican cooking.",
             "id": "go_l26_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the vegetable samosas and the mango lassi.",
+            "prompt": "One falafel wrap and one mint lemonade, please.",
             "options": [
-                "Vegetable Samosas",
-                "Mango Lassi",
-                "Onion Bhaji",
-                "Masala Chai"
+                "Falafel Wrap",
+                "Mint Lemonade",
+                "Chicken Wrap",
+                "Plain Lemonade"
             ],
-            "correctAnswer": "Vegetable Samosas, Mango Lassi",
-            "hint": "A mango lassi is a yogurt drink with mango - cooling alongside spicy food.",
-            "explanation": "Samosas are fried pastry triangles filled with vegetables or meat. A mango lassi is a yogurt and mango blended drink - a popular Indian restaurant beverage, especially with spicy food.",
+            "correctAnswer": "Falafel Wrap, Mint Lemonade",
+            "hint": "One item is made from chickpeas; the other has a cooling herb added.",
+            "explanation": "‘Falafel’ is made from ground chickpeas, shaped into balls, and fried. ‘Mint’ tells you the lemonade has fresh mint added.",
             "id": "go_l26_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the lamb rogan josh and the pilau rice?",
+            "prompt": "I'll have the poke bowl, and could I also get a side of edamame?",
             "options": [
-                "Lamb Rogan Josh",
-                "Pilau Rice",
-                "Lamb Vindaloo",
-                "Basmati Rice"
+                "Poke Bowl",
+                "Edamame",
+                "Sushi Bowl",
+                "Seaweed Salad"
             ],
-            "correctAnswer": "Lamb Rogan Josh, Pilau Rice",
-            "hint": "Rogan josh is moderately spiced; vindaloo is very hot. Pilau rice is flavoured; basmati is plain.",
-            "explanation": "Rogan josh is a Kashmiri curry with moderate heat. Vindaloo is much hotter. Pilau rice (pilaf) is cooked with spices and sometimes vegetables - more flavourful than plain basmati rice.",
+            "correctAnswer": "Poke Bowl, Edamame",
+            "hint": "The main dish is a Hawaiian rice bowl; the side is a simple steamed bean.",
+            "explanation": "A ‘poke bowl’ typically features raw fish over rice with vegetables. ‘Edamame’ are steamed and salted soybeans, a popular starter.",
             "id": "go_l26_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the hummus and the pita bread.",
+            "prompt": "Actually, I'll have the shrimp tacos instead of the fish tacos, with a side of rice.",
             "options": [
-                "Hummus",
-                "Pita Bread",
-                "Tzatziki",
-                "Flatbread"
+                "Shrimp Tacos",
+                "Rice",
+                "Fish Tacos",
+                "Beans"
             ],
-            "correctAnswer": "Hummus, Pita Bread",
-            "hint": "Hummus and tzatziki are both dips but made from very different ingredients.",
-            "explanation": "Hummus is a dip made from chickpeas, tahini, lemon, and garlic. Tzatziki is a Greek yogurt and cucumber dip. Both are common Mediterranean starters served with bread.",
+            "correctAnswer": "Shrimp Tacos, Rice",
+            "hint": "The customer changes their mind — listen for which taco they actually order.",
+            "explanation": "‘Instead of…’ shows the customer switching from one choice to another. Only the final choice — shrimp tacos — should be selected, not the one mentioned first.",
             "id": "go_l27_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the grilled halloumi and the Greek salad.",
+            "prompt": "Let's go with the pesto pasta and some garlic bread.",
             "options": [
-                "Grilled Halloumi",
-                "Greek Salad",
-                "Feta Cheese",
-                "House Salad"
+                "Pesto Pasta",
+                "Garlic Bread",
+                "Tomato Pasta",
+                "Breadsticks"
             ],
-            "correctAnswer": "Grilled Halloumi, Greek Salad",
-            "hint": "Halloumi is a firm Cypriot cheese that can be grilled without melting.",
-            "explanation": "Halloumi is a firm, salty cheese from Cyprus with a high melting point - perfect for grilling or frying. It has a distinctive squeaky texture. Grilled halloumi is a popular Mediterranean starter.",
+            "correctAnswer": "Pesto Pasta, Garlic Bread",
+            "hint": "The pasta sauce and the type of bread both matter here.",
+            "explanation": "‘Pesto’ is a green sauce made from basil, pine nuts, and cheese, quite different from a tomato sauce. Garlic bread and breadsticks are both common, so check the exact word.",
             "id": "go_l27_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the lamb kebab and the tabbouleh?",
+            "prompt": "I was thinking about the Cuban sandwich... I'll have it with a side of plantains.",
             "options": [
-                "Lamb Kebab",
-                "Tabbouleh",
-                "Chicken Kebab",
-                "Couscous"
+                "Cuban Sandwich",
+                "Plantains",
+                "Cubano Melt",
+                "French Fries"
             ],
-            "correctAnswer": "Lamb Kebab, Tabbouleh",
-            "hint": "Tabbouleh is a herb-heavy salad with parsley, tomatoes, and bulgur wheat.",
-            "explanation": "Tabbouleh is a Levantine salad made mostly from finely chopped parsley, tomatoes, mint, onion, and bulgur wheat - dressed with lemon juice and olive oil. Different from couscous, which is a grain side dish.",
+            "correctAnswer": "Cuban Sandwich, Plantains",
+            "hint": "The customer pauses before finishing the order with a Caribbean-style side.",
+            "explanation": "A ‘Cuban sandwich’ is pressed and filled with roast pork, ham, and cheese. Plantains are a starchy fruit, often fried and served as a side.",
             "id": "go_l27_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the ribeye steak and the creamed spinach.",
+            "prompt": "Do you have breakfast burritos? I'll take one, with a black coffee.",
             "options": [
-                "Ribeye Steak",
-                "Creamed Spinach",
-                "Sirloin Steak",
-                "Wilted Spinach"
+                "Breakfast Burrito",
+                "Black Coffee",
+                "Breakfast Bowl",
+                "Latte"
             ],
-            "correctAnswer": "Ribeye Steak, Creamed Spinach",
-            "hint": "The cut of steak matters: ribeye has more marbling (fat) than sirloin.",
-            "explanation": "A ribeye steak comes from the rib section and is known for its marbling, making it juicy and flavourful. Sirloin is leaner. 'Creamed spinach' is in cream sauce; 'wilted spinach' is simply cooked.",
+            "correctAnswer": "Breakfast Burrito, Black Coffee",
+            "hint": "The customer checks the menu item exists, then adds a simple drink.",
+            "explanation": "‘Black coffee’ means coffee with nothing added — no milk or sugar. This is different from a latte, which is mostly steamed milk.",
             "id": "go_l28_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the T-bone steak and the mac and cheese.",
+            "prompt": "For here, I'd like the eggplant parmesan and a side salad.",
             "options": [
-                "T-Bone Steak",
-                "Mac and Cheese",
-                "Porterhouse Steak",
-                "Baked Potato"
+                "Eggplant Parmesan",
+                "Side Salad",
+                "Chicken Parmesan",
+                "Caesar Salad"
             ],
-            "correctAnswer": "T-Bone Steak, Mac and Cheese",
-            "hint": "A T-bone has a T-shaped bone containing both sirloin and tenderloin.",
-            "explanation": "A T-bone steak has a distinctive T-shaped bone with both sirloin and tenderloin sections. 'Mac and cheese' (macaroni and cheese) is a classic American comfort food of pasta in cheese sauce.",
+            "correctAnswer": "Eggplant Parmesan, Side Salad",
+            "hint": "The main ingredient of the parmesan dish is the key detail — it isn't meat this time.",
+            "explanation": "‘Eggplant parmesan’ replaces the usual chicken with breaded, fried eggplant. Both parmesan dishes are common, so the first word decides the answer.",
             "id": "go_l28_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the shrimp cocktail and the New York strip?",
+            "prompt": "To go, could I get the banh mi and a Vietnamese iced coffee?",
             "options": [
-                "Shrimp Cocktail",
-                "New York Strip",
-                "Lobster Bisque",
-                "Sirloin Steak"
+                "Banh Mi",
+                "Vietnamese Iced Coffee",
+                "Spring Roll Wrap",
+                "Regular Iced Coffee"
             ],
-            "correctAnswer": "Shrimp Cocktail, New York Strip",
-            "hint": "A New York strip is a specific steak cut from the short loin - firmer than ribeye.",
-            "explanation": "A New York strip is a cut from the short loin - firmer texture than ribeye. Shrimp cocktail is chilled prawns with cocktail sauce - a classic American steakhouse starter.",
+            "correctAnswer": "Banh Mi, Vietnamese Iced Coffee",
+            "hint": "The sandwich and the sweetened, strong coffee are both named specifically.",
+            "explanation": "‘Banh mi’ is a Vietnamese sandwich served on a crispy baguette. Vietnamese iced coffee is made with sweetened condensed milk, giving it a distinct taste.",
             "id": "go_l28_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have a glass of the house red and the cheese board.",
+            "prompt": "I'll do the Greek gyro and some tzatziki on the side.",
             "options": [
-                "House Red",
-                "Cheese Board",
-                "House White",
-                "Charcuterie Board"
+                "Greek Gyro",
+                "Tzatziki",
+                "Chicken Kebab",
+                "Hummus"
             ],
-            "correctAnswer": "House Red, Cheese Board",
-            "hint": "The 'house wine' is the restaurant's own or selected wine - available in red or white.",
-            "explanation": "'House red' is the restaurant's selected red wine - usually the most affordable option. A 'cheese board' offers assorted cheeses. A 'charcuterie board' features cured meats - they are different.",
+            "correctAnswer": "Greek Gyro, Tzatziki",
+            "hint": "The wrap and its cool, yogurt-based sauce are both mentioned.",
+            "explanation": "A ‘gyro’ is meat cooked on a spit and wrapped in flatbread. ‘Tzatziki’ is a yogurt sauce with cucumber and garlic, different from hummus.",
             "id": "go_l29_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the sparkling wine and the bruschetta.",
+            "prompt": "Give me the ramen with pork belly and a soft-boiled egg on top, please.",
             "options": [
-                "Sparkling Wine",
-                "Bruschetta",
-                "Prosecco",
-                "Garlic Bread"
+                "Ramen with Pork Belly",
+                "Soft-Boiled Egg",
+                "Ramen with Chicken",
+                "Hard-Boiled Egg"
             ],
-            "correctAnswer": "Sparkling Wine, Bruschetta",
-            "hint": "'Sparkling wine' is the general category; 'Prosecco' is a specific Italian variety.",
-            "explanation": "'Sparkling wine' covers all wines with bubbles. 'Prosecco' is a specific Italian sparkling wine from the Veneto region. Using the general term is correct - a specific brand would also be accepted.",
+            "correctAnswer": "Ramen with Pork Belly, Soft-Boiled Egg",
+            "hint": "The protein in the ramen and the way the egg is cooked both need attention.",
+            "explanation": "‘Pork belly’ and ‘chicken’ are common ramen toppings, so check which was named. ‘Soft-boiled’ eggs have a runny center, unlike ‘hard-boiled’ eggs.",
             "id": "go_l29_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get a craft beer and some mixed olives?",
+            "prompt": "One margherita flatbread and one sparkling lemonade, please.",
             "options": [
-                "Craft Beer",
-                "Mixed Olives",
-                "House Wine",
-                "Mixed Nuts"
+                "Margherita Flatbread",
+                "Sparkling Lemonade",
+                "Pepperoni Flatbread",
+                "Still Lemonade"
             ],
-            "correctAnswer": "Craft Beer, Mixed Olives",
-            "hint": "'Craft beer' comes from a small independent brewery - not mass-produced.",
-            "explanation": "Craft beer is brewed by small independent breweries and typically has more complex flavours. Mixed olives - marinated with herbs and citrus - are a popular wine bar snack.",
+            "correctAnswer": "Margherita Flatbread, Sparkling Lemonade",
+            "hint": "The flatbread topping and the type of lemonade both matter.",
+            "explanation": "‘Margherita’ describes a simple tomato, cheese, and basil topping. ‘Sparkling’ tells you the lemonade has bubbles, unlike a ‘still’ one.",
             "id": "go_l29_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have a double espresso and the almond croissant.",
+            "prompt": "I'll have a double espresso, and could I also get the almond croissant?",
             "options": [
                 "Double Espresso",
                 "Almond Croissant",
@@ -447,15 +447,15 @@
                 "Plain Croissant"
             ],
             "correctAnswer": "Double Espresso, Almond Croissant",
-            "hint": "'Double' espresso has two shots - twice as strong as a single shot.",
-            "explanation": "A double espresso (also called a 'doppio') contains two shots of espresso. An almond croissant is filled with almond cream - very different from a plain croissant.",
+            "hint": "The strength of the coffee and the croissant filling both need attention.",
+            "explanation": "A ‘double espresso’ uses twice the coffee of a single shot. ‘Almond’ tells you the croissant has an almond filling, unlike a plain one.",
             "id": "go_l30_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the oat milk latte and the avocado toast.",
+            "prompt": "Actually, I'll have the oat milk latte instead of the regular one, with an avocado toast.",
             "options": [
                 "Oat Milk Latte",
                 "Avocado Toast",
@@ -463,15 +463,15 @@
                 "Sourdough Toast"
             ],
             "correctAnswer": "Oat Milk Latte, Avocado Toast",
-            "hint": "'Oat milk' is a plant-based milk alternative - increasingly popular in modern cafés.",
-            "explanation": "Oat milk is a dairy-free milk made from oats that froths well for lattes. Milk alternatives - oat, soy, almond - are important modern café vocabulary.",
+            "hint": "The customer changes the type of milk in their coffee order — listen for the final choice.",
+            "explanation": "‘Instead of…’ signals a switch from one choice to another. Only the final drink — the oat milk latte — should be selected.",
             "id": "go_l30_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the cold brew and the banana bread?",
+            "prompt": "Let's go with the cold brew and some banana bread.",
             "options": [
                 "Cold Brew",
                 "Banana Bread",
@@ -479,8 +479,8 @@
                 "Blueberry Muffin"
             ],
             "correctAnswer": "Cold Brew, Banana Bread",
-            "hint": "'Cold brew' is coffee steeped in cold water for hours - smoother than regular iced coffee.",
-            "explanation": "Cold brew coffee is steeped in cold water for 12-24 hours - smoother and less acidic than hot coffee poured over ice. Banana bread is a moist cake-like bread made with ripe bananas.",
+            "hint": "This coffee style is brewed slowly with cold water, not hot.",
+            "explanation": "‘Cold brew’ is steeped in cold water for many hours, giving it a smoother taste than regular iced coffee. Banana bread is a common café treat.",
             "id": "go_l30_q3"
         }
     ]

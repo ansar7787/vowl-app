@@ -4,483 +4,483 @@
     "levels": "71-80",
     "quests": [
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the ribeye, medium-rare please, with the fries and the house salad.",
+            "prompt": "I was going to get the French onion soup, but I'll have the Caesar salad instead. For my main, the grilled chicken. And the cheesecake to finish.",
             "options": [
-                "Ribeye (Medium-Rare)",
-                "Fries",
-                "House Salad",
-                "Mashed Potatoes"
+                "Caesar Salad",
+                "Grilled Chicken",
+                "Cheesecake",
+                "French Onion Soup"
             ],
-            "correctAnswer": "Ribeye (Medium-Rare), Fries, House Salad",
-            "hint": "The cooking degree 'medium-rare' is part of the steak order - it must be captured.",
-            "explanation": "Steak cooking degrees are essential vocabulary: rare (cool red centre), medium-rare (warm red), medium (pink), medium-well (slightly pink), well-done (no pink). 'Medium-rare' is considered optimal for ribeye by many chefs.",
+            "correctAnswer": "Caesar Salad, Grilled Chicken, Cheesecake",
+            "hint": "The customer mentions two possible starters — only the second one, after ‘instead,’ is the real order.",
+            "explanation": "‘I was going to get X, but I’ll have Y instead’ is a common way to show a change of mind. The first item mentioned (the soup) was rejected, so it should not be selected.",
             "id": "go_l71_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the sirloin steak, well-done, with the grilled vegetables and no sauce.",
+            "prompt": "Waiter: Would you like soup or salad to start? Customer: I'll have the soup, please. Then the salmon, and the crème brûlée for dessert.",
             "options": [
-                "Sirloin (Well-Done)",
-                "Grilled Vegetables",
-                "No Sauce",
-                "Peppercorn Sauce"
+                "Soup",
+                "Salmon",
+                "Crème Brûlée",
+                "Salad"
             ],
-            "correctAnswer": "Sirloin (Well-Done), Grilled Vegetables, No Sauce",
-            "hint": "'No sauce' is a negative request - the customer wants the sauce removed from the standard serving.",
-            "explanation": "Saying 'no sauce' is a specific request to omit something from the standard dish. 'Well-done' means the steak is cooked through with no pink remaining. Both modifications must be captured in the order.",
+            "correctAnswer": "Soup, Salmon, Crème Brûlée",
+            "hint": "This is a short back-and-forth between waiter and customer — listen for the customer's actual choice.",
+            "explanation": "The waiter offers two options, but only the one the customer picks (‘the soup’) should be selected — the other option (‘salad’) was never ordered.",
             "id": "go_l71_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the fillet, cooked medium, with the dauphinoise potatoes and the béarnaise sauce?",
+            "prompt": "I almost ordered the ribeye, but I think I'll go with the salmon for my main. For my starter, the bruschetta, and the panna cotta after.",
             "options": [
-                "Fillet (Medium)",
-                "Dauphinoise Potatoes",
-                "Béarnaise Sauce",
-                "Peppercorn Sauce"
+                "Salmon",
+                "Bruschetta",
+                "Panna Cotta",
+                "Ribeye"
             ],
-            "correctAnswer": "Fillet (Medium), Dauphinoise Potatoes, Béarnaise Sauce",
-            "hint": "Dauphinoise potatoes are a French gratin - thinly sliced potatoes baked in cream.",
-            "explanation": "Dauphinoise potatoes (potatoes au gratin) are thinly sliced potatoes baked in cream and garlic. Béarnaise sauce is a classic French sauce for steak made from butter, tarragon, and egg yolks - different from peppercorn sauce.",
+            "correctAnswer": "Salmon, Bruschetta, Panna Cotta",
+            "hint": "An almost-ordered item is mentioned first — only the final choice should be selected.",
+            "explanation": "‘I almost ordered X, but I think I’ll go with Y’ shows the customer considered one option before choosing another. Only ‘salmon’ was actually ordered.",
             "id": "go_l71_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I have a nut allergy, so I'll have the grilled chicken, the plain salad without nuts, and a sparkling water.",
+            "prompt": "Everyone at the table is having the calamari to start. I'll have the swordfish for my main, and the tiramisu for dessert.",
             "options": [
-                "Grilled Chicken",
-                "Plain Salad (No Nuts)",
-                "Sparkling Water",
-                "Still Water"
+                "Calamari",
+                "Swordfish",
+                "Tiramisu",
+                "Panna Cotta"
             ],
-            "correctAnswer": "Grilled Chicken, Plain Salad (No Nuts), Sparkling Water",
-            "hint": "The allergy request modifies the salad - 'without nuts' is part of the item description.",
-            "explanation": "Allergen modifications change how a dish is prepared. 'Plain salad without nuts' is a modified item. In English restaurants, stating allergies clearly is essential for safety - staff are trained to flag these.",
+            "correctAnswer": "Calamari, Swordfish, Tiramisu",
+            "hint": "‘Everyone’ shows the starter is shared by the whole group, while the main and dessert belong to just this speaker.",
+            "explanation": "‘Everyone at the table is having…’ describes a group decision for the starter, while ‘I’ll have…’ shows this speaker's personal choices for the rest of the meal.",
             "id": "go_l72_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'm lactose intolerant, so I'd like the pasta marinara with no cheese and an oat milk flat white.",
+            "prompt": "Let me change my mind — instead of the pasta, I'll take the risotto. Then the panna cotta, and the espresso to finish.",
             "options": [
-                "Pasta Marinara (No Cheese)",
-                "Oat Milk Flat White",
-                "Pasta Carbonara",
-                "Regular Flat White"
+                "Risotto",
+                "Panna Cotta",
+                "Espresso",
+                "Pasta"
             ],
-            "correctAnswer": "Pasta Marinara (No Cheese), Oat Milk Flat White",
-            "hint": "Two items are ordered with specific lactose-free modifications.",
-            "explanation": "Pasta marinara is a tomato-based sauce - naturally dairy-free if the cheese is omitted. Oat milk flat white replaces dairy milk. These modifications show how dietary needs are communicated in English restaurant settings.",
+            "correctAnswer": "Risotto, Panna Cotta, Espresso",
+            "hint": "‘Let me change my mind’ clearly signals the first item mentioned is being replaced.",
+            "explanation": "‘Let me change my mind’ is a very direct way to signal a switch. ‘Instead of the pasta’ tells you pasta is rejected in favor of risotto.",
             "id": "go_l72_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I have a shellfish allergy, so could I have the chicken Caesar salad without anchovies and the steak?",
+            "prompt": "I'll have the burrata. Oh, and for my main, the osso buco. I nearly forgot the affogato for dessert.",
             "options": [
-                "Chicken Caesar (No Anchovies)",
-                "Steak",
-                "Regular Caesar Salad",
-                "Prawn Salad"
+                "Burrata",
+                "Osso Buco",
+                "Affogato",
+                "Tiramisu"
             ],
-            "correctAnswer": "Chicken Caesar (No Anchovies), Steak",
-            "hint": "Two items - one with a modification to avoid shellfish, and a plain steak.",
-            "explanation": "Anchovies in Caesar dressing are a shellfish allergen issue for some customers. 'Without anchovies' removes them from the salad. Shellfish allergies include crustaceans (shrimp, lobster) and molluscs (anchovies) - this is important safety vocabulary.",
+            "correctAnswer": "Burrata, Osso Buco, Affogato",
+            "hint": "The customer adds each course almost as an afterthought, but all three still belong to the order.",
+            "explanation": "‘Oh, and…’ and ‘I nearly forgot…’ are natural ways speakers add items when thinking aloud — the whole sentence is still one complete order.",
             "id": "go_l72_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'm vegan, so I'll have the roasted vegetable tart, the lentil salad, and a coconut milk latte.",
+            "prompt": "The kids will share the mozzarella sticks. My husband's having the burger, and I'll have the grilled chicken salad.",
             "options": [
-                "Roasted Vegetable Tart",
-                "Lentil Salad",
-                "Coconut Milk Latte",
-                "Regular Latte"
+                "Mozzarella Sticks",
+                "Burger",
+                "Grilled Chicken Salad",
+                "Caesar Salad"
             ],
-            "correctAnswer": "Roasted Vegetable Tart, Lentil Salad, Coconut Milk Latte",
-            "hint": "Three vegan items - coconut milk replaces dairy in the latte.",
-            "explanation": "Vegan customers avoid all animal products including dairy. Coconut milk is a plant-based latte option. A regular latte uses cow's milk. 'I'm vegan, so...' establishes the dietary context before listing three vegan choices.",
+            "correctAnswer": "Mozzarella Sticks, Burger, Grilled Chicken Salad",
+            "hint": "Three different people are ordering three different things — listen for who orders what.",
+            "explanation": "This sentence describes a family order: a shared starter for the kids, one main for the husband, and one main for the speaker.",
             "id": "go_l73_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'm on a low-carb diet, so I'd like the grilled salmon, the asparagus, and the arugula salad.",
+            "prompt": "Sorry, could I change my order? I'll have the chicken parmesan instead of what I said before, then the garlic bread and the tiramisu.",
             "options": [
-                "Grilled Salmon",
-                "Asparagus",
-                "Arugula Salad",
-                "Roasted Potatoes"
+                "Chicken Parmesan",
+                "Garlic Bread",
+                "Tiramisu",
+                "Eggplant Parmesan"
             ],
-            "correctAnswer": "Grilled Salmon, Asparagus, Arugula Salad",
-            "hint": "Three low-carb items - potatoes are avoided in favour of vegetables.",
-            "explanation": "Low-carb diets avoid starchy foods like potatoes, pasta, and bread. Salmon, asparagus, and arugula (rocket) salad are all low-carb choices. The customer explicitly avoids the roasted potatoes - dietary context explains the choices.",
+            "correctAnswer": "Chicken Parmesan, Garlic Bread, Tiramisu",
+            "hint": "The customer politely asks to correct an earlier order, and only the new choice counts.",
+            "explanation": "‘Instead of what I said before’ clearly shows the customer is replacing an earlier choice, even though that earlier choice isn't directly named.",
             "id": "go_l73_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'm keeping it Keto tonight - could I get the ribeye, the buttered spinach, and the avocado salad?",
+            "prompt": "We're celebrating tonight, so I'll splurge on the oysters, the lobster, and the chocolate soufflé.",
             "options": [
-                "Ribeye",
-                "Buttered Spinach",
-                "Avocado Salad",
-                "Sweet Potato Mash"
+                "Oysters",
+                "Lobster",
+                "Chocolate Soufflé",
+                "Chocolate Mousse"
             ],
-            "correctAnswer": "Ribeye, Buttered Spinach, Avocado Salad",
-            "hint": "Keto diets are high-fat, low-carb - the choices reflect this.",
-            "explanation": "The Ketogenic diet emphasises high fat and very low carbohydrates. Ribeye, buttered spinach, and avocado are high-fat, low-carb choices. Sweet potato mash would not be suitable for Keto - the customer avoids it.",
+            "correctAnswer": "Oysters, Lobster, Chocolate Soufflé",
+            "hint": "‘Splurge’ tells you the customer is treating themselves to something special.",
+            "explanation": "‘Splurge’ means to spend more than usual on something enjoyable, often used for special occasions like celebrations.",
             "id": "go_l73_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I swap the chips for a side salad and get the fish with lemon butter instead of tartar sauce?",
+            "prompt": "I'll have the bruschetta for the table to start. For mains, I'll have the seafood linguine. And we'll finish with the tiramisu.",
             "options": [
-                "Fish",
-                "Side Salad",
-                "Lemon Butter Sauce",
-                "Tartar Sauce"
+                "Bruschetta",
+                "Seafood Linguine",
+                "Tiramisu",
+                "Panna Cotta"
             ],
-            "correctAnswer": "Fish, Side Salad, Lemon Butter Sauce",
-            "hint": "The customer is substituting two items - chips → side salad, tartar sauce → lemon butter.",
-            "explanation": "Substitution requests are very common in English restaurants. 'Instead of' replaces one item with another. The customer wants the fish, a side salad (instead of chips), and lemon butter sauce (instead of tartar sauce).",
+            "correctAnswer": "Bruschetta, Seafood Linguine, Tiramisu",
+            "hint": "‘For the table’ and ‘we’ll finish’ both suggest this order is meant to be shared.",
+            "explanation": "‘For the table’ and ‘we’ll finish with’ both signal shared items, even though ‘for mains, I’ll have’ shows the main course is personal.",
             "id": "go_l74_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like to substitute the risotto with pasta and have the lamb with the rosemary jus on the side.",
+            "prompt": "The children are having the mac and cheese. My wife would like the seared tuna, and I'll go with the ribeye.",
             "options": [
-                "Pasta",
-                "Lamb",
-                "Rosemary Jus on the Side",
-                "Risotto"
+                "Mac and Cheese",
+                "Seared Tuna",
+                "Ribeye",
+                "Salmon"
             ],
-            "correctAnswer": "Pasta, Lamb, Rosemary Jus on the Side",
-            "hint": "'On the side' means served separately - not on the plate with the food.",
-            "explanation": "'On the side' is essential ordering vocabulary - it means an accompaniment is served in a separate dish. The customer substituted risotto for pasta and wants the sauce separate. Rosemary jus is a gravy-like sauce made from lamb cooking juices.",
+            "correctAnswer": "Mac and Cheese, Seared Tuna, Ribeye",
+            "hint": "Three different orders for three different people are named in this sentence.",
+            "explanation": "This is a common way for one parent to order for the entire family at once, naming what each person will have.",
             "id": "go_l74_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Can I get the chicken instead of the beef, with the dauphinoise potatoes, and no sauce at all?",
+            "prompt": "Actually, could we change the appetizer? We'll have the spring rolls instead, plus the pad thai and the mango sticky rice.",
             "options": [
-                "Chicken",
-                "Dauphinoise Potatoes",
-                "No Sauce",
-                "Gravy"
+                "Spring Rolls",
+                "Pad Thai",
+                "Mango Sticky Rice",
+                "Dumplings"
             ],
-            "correctAnswer": "Chicken, Dauphinoise Potatoes, No Sauce",
-            "hint": "The customer makes a protein substitution and requests that sauce be completely omitted.",
-            "explanation": "'Instead of' signals a direct protein swap - chicken replaces beef. 'No sauce at all' emphasises the customer wants absolutely no sauce - stronger than just 'no sauce'. Dauphinoise potatoes are a rich French gratin.",
+            "correctAnswer": "Spring Rolls, Pad Thai, Mango Sticky Rice",
+            "hint": "The group asks to swap the starter, and only the replacement should be selected.",
+            "explanation": "‘Could we change the appetizer? We’ll have X instead’ shows a group decision to switch starters, similar to an individual changing their mind.",
             "id": "go_l74_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "We'll share the charcuterie board, and then I'll have the sea bream while my partner has the venison.",
+            "prompt": "I was going to get the mussels, but I'll have the oysters instead. For my main, the halibut. And the crème brûlée to finish.",
             "options": [
-                "Charcuterie Board",
-                "Sea Bream",
-                "Venison",
-                "Salmon"
+                "Oysters",
+                "Halibut",
+                "Crème Brûlée",
+                "Mussels"
             ],
-            "correctAnswer": "Charcuterie Board, Sea Bream, Venison",
-            "hint": "One shared starter and two different individual mains - three items total.",
-            "explanation": "Sea bream is a white, delicate Mediterranean fish. Venison is deer meat. The couple shares the starter then orders different mains. All three items must be selected - charcuterie (shared), sea bream (customer), venison (partner).",
+            "correctAnswer": "Oysters, Halibut, Crème Brûlée",
+            "hint": "Two shellfish starters are mentioned — only the final choice belongs in the order.",
+            "explanation": "The pattern ‘I was going to get X, but I’ll have Y instead’ continues to signal that X should not be selected, no matter how clearly it's named.",
             "id": "go_l75_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could we have the antipasto to share? Then I'll have the tagliata di manzo and my wife will have the branzino.",
+            "prompt": "Waiter: Sparkling or still water? Customer: Sparkling's fine, thanks. I'll have the steak tartare to start, the duck breast for my main, and the crème caramel for dessert.",
             "options": [
-                "Antipasto",
-                "Tagliata di Manzo",
-                "Branzino",
-                "Sea Bass"
+                "Steak Tartare",
+                "Duck Breast",
+                "Crème Caramel",
+                "Chocolate Torte"
             ],
-            "correctAnswer": "Antipasto, Tagliata di Manzo, Branzino",
-            "hint": "One shared Italian starter and two different Italian mains.",
-            "explanation": "Tagliata di manzo is sliced Italian grilled beef, typically served on a bed of rocket. Branzino is the Italian name for European sea bass - note that 'branzino' and 'sea bass' are the same fish but listed differently on Italian menus.",
+            "correctAnswer": "Steak Tartare, Duck Breast, Crème Caramel",
+            "hint": "The water question is small talk before the real order — listen for the three food items.",
+            "explanation": "Small exchanges about water or bread often happen before the main order. Only the starter, main, and dessert actually named should be selected.",
             "id": "go_l75_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "We'll share the cheese fondue, then I'll take the veal schnitzel and my friend will have the rösti.",
+            "prompt": "I almost ordered the fish, but I think I'll go with the beef instead. For my starter, the calamari, and the profiteroles after.",
             "options": [
-                "Cheese Fondue",
-                "Veal Schnitzel",
-                "Rösti",
-                "Zürcher Geschnetzeltes"
+                "Beef",
+                "Calamari",
+                "Profiteroles",
+                "Fish"
             ],
-            "correctAnswer": "Cheese Fondue, Veal Schnitzel, Rösti",
-            "hint": "Three Swiss dishes - one shared, two individual mains.",
-            "explanation": "Cheese fondue is a Swiss dish of melted cheese shared from a communal pot. Veal schnitzel is a breaded, pan-fried veal cutlet. Rösti is a Swiss potato cake. Zürcher Geschnetzeltes is creamed veal - not ordered here.",
+            "correctAnswer": "Beef, Calamari, Profiteroles",
+            "hint": "The rejected item this time comes before the final choice, not after.",
+            "explanation": "Whether the rejected item comes first or the chosen item comes first, ‘instead’ or ‘but I think I’ll go with’ always marks the true, final decision.",
             "id": "go_l75_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "To start, I'll have the burrata, and for my main I'd like the turbot.",
+            "prompt": "I'll have the calamari. Oh, and for my main, the branzino. I nearly forgot the panna cotta for dessert.",
             "options": [
-                "Burrata",
-                "Turbot",
-                "Beef Tartare",
-                "Sea Bass"
+                "Calamari",
+                "Branzino",
+                "Panna Cotta",
+                "Tiramisu"
             ],
-            "correctAnswer": "Burrata, Turbot",
-            "hint": "Course labels 'to start' and 'for my main' signal a two-item two-course order.",
-            "explanation": "Burrata is a creamy Italian cheese starter. Turbot is a prized flatfish. Only two items are ordered here - not three. 'To start' and 'for my main' are elegant course labels used in fine dining ordering.",
+            "correctAnswer": "Calamari, Branzino, Panna Cotta",
+            "hint": "Each course is added almost as an afterthought, but all three make up the full order.",
+            "explanation": "‘Oh, and…’ and ‘I nearly forgot…’ show natural, unplanned speech, but the full order still includes all three named items.",
             "id": "go_l76_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "First I'd like the crispy duck spring rolls, and then for my main the beef rendang with jasmine rice.",
+            "prompt": "Our son wants the chicken tenders, our daughter wants the fish tacos, and I'll have the steak salad.",
             "options": [
-                "Crispy Duck Spring Rolls",
-                "Beef Rendang",
-                "Jasmine Rice",
-                "Chicken Spring Rolls"
+                "Chicken Tenders",
+                "Fish Tacos",
+                "Steak Salad",
+                "Caesar Salad"
             ],
-            "correctAnswer": "Crispy Duck Spring Rolls, Beef Rendang, Jasmine Rice",
-            "hint": "Three items: starter rolls, main curry, and rice accompaniment.",
-            "explanation": "Crispy duck spring rolls are a popular Asian starter. Beef rendang is an intensely flavoured Malaysian/Indonesian dry curry. Jasmine rice is the natural accompaniment. All three items together form a complete Asian meal.",
+            "correctAnswer": "Chicken Tenders, Fish Tacos, Steak Salad",
+            "hint": "Three different family members are ordering three different dishes.",
+            "explanation": "‘Our son wants… our daughter wants… I’ll have…’ is another natural way to report a family's full order at once, using a different subject for each item.",
             "id": "go_l76_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "As my starter I'll take the seared scallops, and for my main the osso buco with saffron risotto.",
+            "prompt": "Sorry, could I change my order? I'll have the salmon instead of what I said before, then the wild rice and the lemon tart.",
             "options": [
-                "Seared Scallops",
-                "Osso Buco",
-                "Saffron Risotto",
-                "Gnocchi"
+                "Salmon",
+                "Wild Rice",
+                "Lemon Tart",
+                "Grilled Chicken"
             ],
-            "correctAnswer": "Seared Scallops, Osso Buco, Saffron Risotto",
-            "hint": "Three items across two courses: seafood starter, meat main, and its classic accompaniment.",
-            "explanation": "Seared scallops are a popular fine dining starter. Osso buco (braised veal shank) is traditionally served with saffron risotto - they are a classic Milanese pairing. Gnocchi is a different Italian side dish.",
+            "correctAnswer": "Salmon, Wild Rice, Lemon Tart",
+            "hint": "The customer corrects an earlier choice — only the new order counts.",
+            "explanation": "‘Instead of what I said before’ is a polite, common way to correct an order without needing to repeat the original mistake out loud.",
             "id": "go_l76_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll skip the starter and just have the sea bass and the glazed carrots.",
+            "prompt": "We're celebrating tonight, so I'll splurge on the caviar, the wagyu steak, and the chocolate soufflé.",
             "options": [
-                "Sea Bass",
-                "Glazed Carrots",
-                "Starter Salad",
-                "Steamed Broccoli"
+                "Caviar",
+                "Wagyu Steak",
+                "Chocolate Soufflé",
+                "Chocolate Mousse"
             ],
-            "correctAnswer": "Sea Bass, Glazed Carrots",
-            "hint": "The customer explicitly skips the starter - only two items are ordered.",
-            "explanation": "Saying 'I'll skip the starter' means the customer does not want a first course. Only two items are ordered - the main (sea bass) and a side (glazed carrots). Glazed carrots are cooked with butter and sugar; steamed broccoli is plainer.",
+            "correctAnswer": "Caviar, Wagyu Steak, Chocolate Soufflé",
+            "hint": "‘Splurge’ signals a special, more expensive order than usual.",
+            "explanation": "‘Wagyu’ is a prized type of beef known for its rich marbling and tenderness, often reserved for special celebrations.",
             "id": "go_l77_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I won't need dessert, but I'll have the duck confit and the pomme purée, and an espresso at the end.",
+            "prompt": "I'll have the burrata for the table to start. For mains, I'll have the osso buco. And we'll finish with the affogato.",
             "options": [
-                "Duck Confit",
-                "Pomme Purée",
-                "Espresso",
-                "Crème Brûlée"
+                "Burrata",
+                "Osso Buco",
+                "Affogato",
+                "Tiramisu"
             ],
-            "correctAnswer": "Duck Confit, Pomme Purée, Espresso",
-            "hint": "The customer skips dessert but orders a main, a side, and a post-meal coffee.",
-            "explanation": "Duck confit is duck legs slow-cooked and preserved in duck fat - tender and richly flavoured. Pomme purée is a silky French mashed potato. An espresso 'at the end' replaces dessert here. Crème brûlée is not ordered.",
+            "correctAnswer": "Burrata, Osso Buco, Affogato",
+            "hint": "The starter and dessert are shared, but the main course belongs to just one person.",
+            "explanation": "‘For the table’ and ‘we’ll finish with’ mark shared items, while ‘for mains, I’ll have’ shows a personal choice within a group order.",
             "id": "go_l77_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Nothing to start, thank you - I'll just take the grilled halibut, the asparagus, and a Sauvignon Blanc.",
+            "prompt": "Our little ones just want plain pasta with butter. My wife would like the branzino, and I'll go with the veal chop.",
             "options": [
-                "Grilled Halibut",
-                "Asparagus",
-                "Sauvignon Blanc",
-                "Pinot Grigio"
+                "Pasta with Butter",
+                "Branzino",
+                "Veal Chop",
+                "Salmon"
             ],
-            "correctAnswer": "Grilled Halibut, Asparagus, Sauvignon Blanc",
-            "hint": "The customer declines a starter with 'nothing to start, thank you' - three items follow.",
-            "explanation": "Politely declining a course is common in restaurants: 'nothing to start, thank you'. Halibut is a large flatfish. Sauvignon Blanc is a crisp, aromatic white wine - excellent with fish. Pinot Grigio is lighter and was not requested.",
+            "correctAnswer": "Pasta with Butter, Branzino, Veal Chop",
+            "hint": "The children's order is described casually, but all three dishes for three people still need to be tracked.",
+            "explanation": "‘Our little ones just want…’ is a warm, informal way parents often describe a simple children's order before naming their own choices.",
             "id": "go_l77_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "What do you recommend? I'll go with the tasting menu, the wine pairing, and a still water.",
+            "prompt": "I was going to get the risotto, but I'll have the ravioli instead. For my starter, the burrata. And the tiramisu to finish.",
             "options": [
-                "Tasting Menu",
-                "Wine Pairing",
-                "Still Water",
-                "Sparkling Water"
+                "Ravioli",
+                "Burrata",
+                "Tiramisu",
+                "Risotto"
             ],
-            "correctAnswer": "Tasting Menu, Wine Pairing, Still Water",
-            "hint": "The customer asks for a recommendation first, then orders three items.",
-            "explanation": "Asking for a recommendation before ordering is very common in restaurants. The customer then follows up with a specific order. Still water (not sparkling) was requested. A wine pairing is specifically different from ordering a single bottle.",
+            "correctAnswer": "Ravioli, Burrata, Tiramisu",
+            "hint": "A rejected main course appears before the customer's real choice.",
+            "explanation": "‘I was going to get X, but I’ll have Y instead’ always signals the same thing: X is not part of the final order.",
             "id": "go_l78_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll follow your suggestion - the catch of the day, the seasonal salad, and the recommended dessert.",
+            "prompt": "Waiter: Any starters for the table? Customer: We'll share the flatbread. I'll have the lamb chops for my main, and the pear tart for dessert.",
             "options": [
-                "Catch of the Day",
-                "Seasonal Salad",
-                "Recommended Dessert",
-                "Cheese Board"
+                "Flatbread",
+                "Lamb Chops",
+                "Pear Tart",
+                "Bruschetta"
             ],
-            "correctAnswer": "Catch of the Day, Seasonal Salad, Recommended Dessert",
-            "hint": "The customer accepts the waiter's recommendation for all three courses.",
-            "explanation": "Following a server's recommendation is a common interaction. 'Catch of the day' is the freshest fish available that day. 'Seasonal salad' uses whatever vegetables are currently in season. 'Recommended dessert' defers the choice to the server.",
+            "correctAnswer": "Flatbread, Lamb Chops, Pear Tart",
+            "hint": "The waiter's question is answered with a shared starter, followed by a personal main and dessert.",
+            "explanation": "This dialogue format — a question from staff, then the customer's answer — is common in real restaurants and doesn't change how the order should be selected.",
             "id": "go_l78_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Based on what you've suggested, I'll take the prime beef, the truffle mashed potatoes, and a Barolo.",
+            "prompt": "Actually, could we change the main? We'll have the branzino instead, plus the beet salad and the olive oil cake.",
             "options": [
-                "Prime Beef",
-                "Truffle Mashed Potatoes",
-                "Barolo",
-                "Cabernet Sauvignon"
+                "Branzino",
+                "Beet Salad",
+                "Olive Oil Cake",
+                "Halibut"
             ],
-            "correctAnswer": "Prime Beef, Truffle Mashed Potatoes, Barolo",
-            "hint": "Barolo is an Italian red wine - a classic pairing with beef.",
-            "explanation": "Prime beef refers to the highest grade of beef with excellent marbling. Truffle mashed potatoes are a luxury version with truffle oil or fresh truffle. Barolo is a prestigious Italian red wine from Piedmont - excellent with red meat.",
+            "correctAnswer": "Branzino, Beet Salad, Olive Oil Cake",
+            "hint": "The group asks to swap the main course, so only the new choice belongs in the order.",
+            "explanation": "‘Could we change the main? We’ll have X instead’ mirrors the earlier pattern for changing a starter, just applied to the main course this time.",
             "id": "go_l78_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I noticed the lobster special on the board - I'll take that with the herb salad and a glass of white Burgundy.",
+            "prompt": "I almost ordered the burger, but I think I'll go with the steak salad instead. For my starter, the soup, and the cheesecake after.",
             "options": [
-                "Lobster Special",
-                "Herb Salad",
-                "White Burgundy",
-                "Chablis"
+                "Steak Salad",
+                "Soup",
+                "Cheesecake",
+                "Burger"
             ],
-            "correctAnswer": "Lobster Special, Herb Salad, White Burgundy",
-            "hint": "The customer references the specials board, then orders three items including a specific wine.",
-            "explanation": "Daily specials written on a board are a common feature in restaurants. White Burgundy is a Chardonnay from the Burgundy region of France - different from Chablis, which is also from Burgundy but has a more mineral, leaner style.",
+            "correctAnswer": "Steak Salad, Soup, Cheesecake",
+            "hint": "The almost-chosen item is named first, but the final decision comes right after.",
+            "explanation": "‘But I think I’ll go with… instead’ confirms the true final choice, no matter which item was mentioned first in the sentence.",
             "id": "go_l79_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I saw the truffle menu on your specials board - I'll have the truffle soup, the truffle risotto, and the truffle honey dessert.",
+            "prompt": "For the little ones, we'll get the garlic knots to share. My husband's having the ribeye, and I'll have the seared scallops.",
             "options": [
-                "Truffle Soup",
-                "Truffle Risotto",
-                "Truffle Honey Dessert",
-                "Truffle Butter"
+                "Garlic Knots",
+                "Ribeye",
+                "Seared Scallops",
+                "Filet Mignon"
             ],
-            "correctAnswer": "Truffle Soup, Truffle Risotto, Truffle Honey Dessert",
-            "hint": "All three courses feature truffle - a luxury ingredient used throughout the meal.",
-            "explanation": "Truffle is a rare and expensive subterranean fungus - one of the most prized ingredients in fine dining. Restaurants sometimes offer a themed truffle menu in season. Truffle honey is a sweet condiment made with truffle - used as a dessert element.",
+            "correctAnswer": "Garlic Knots, Ribeye, Seared Scallops",
+            "hint": "A shared starter for the children is described a little differently here, but the meaning is the same.",
+            "explanation": "‘For the little ones…’ is another warm, natural way to refer to children when explaining part of a family order.",
             "id": "go_l79_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I was intrigued by the seasonal tasting menu - I'll take the full menu with the non-alcoholic pairing, please.",
+            "prompt": "Sorry, could I change my order? I'll have the duck instead of what I said before, then the wild mushroom risotto and the pavlova.",
             "options": [
-                "Seasonal Tasting Menu",
-                "Non-Alcoholic Pairing",
-                "Wine Pairing",
-                "Cocktail Pairing"
+                "Duck",
+                "Wild Mushroom Risotto",
+                "Pavlova",
+                "Lamb Chops"
             ],
-            "correctAnswer": "Seasonal Tasting Menu, Non-Alcoholic Pairing",
-            "hint": "Two items: the menu and the non-alcoholic drink pairing.",
-            "explanation": "A non-alcoholic pairing uses juices, shrubs, kombuchas, or teas matched to each course - increasingly popular in fine dining. The customer specifically chose this over the wine or cocktail pairing. Two items only are ordered here.",
+            "correctAnswer": "Duck, Wild Mushroom Risotto, Pavlova",
+            "hint": "The customer corrects an earlier choice before naming the rest of the order.",
+            "explanation": "Even though the original order isn't repeated, ‘instead of what I said before’ makes it clear that only the new items should count.",
             "id": "go_l79_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Before we order food, could we have the bread service? Then I'll have the lobster bisque, the côte de boeuf, and the soufflé.",
+            "prompt": "We're celebrating tonight, so I'll splurge on the foie gras, the lobster thermidor, and the chocolate torte.",
             "options": [
-                "Lobster Bisque",
-                "Côte de Boeuf",
-                "Soufflé",
-                "Bread Service"
+                "Foie Gras",
+                "Lobster Thermidor",
+                "Chocolate Torte",
+                "Chocolate Mousse"
             ],
-            "correctAnswer": "Lobster Bisque, Côte de Boeuf, Soufflé",
-            "hint": "The bread service is requested first but is not one of the three ordered courses.",
-            "explanation": "Côte de boeuf is a large French-style bone-in ribeye steak - typically for two. A soufflé must be pre-ordered as it takes 20 minutes. The bread service was requested separately and is not a course - only the three named dishes are the order.",
+            "correctAnswer": "Foie Gras, Lobster Thermidor, Chocolate Torte",
+            "hint": "All three items reflect a special, indulgent celebration meal.",
+            "explanation": "‘Lobster thermidor’ is lobster meat mixed with a rich sauce and served in the shell — a classic special-occasion dish.",
             "id": "go_l80_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "For our table of four, we'll need the bread basket, four portions of the set menu, and two bottles of the house red.",
+            "prompt": "I'll have the oysters for the table to start. For mains, I'll have the venison. And we'll finish with the chocolate soufflé, which takes twenty minutes, so we'll order it now.",
             "options": [
-                "Bread Basket",
-                "Set Menu",
-                "House Red",
-                "House White"
+                "Oysters",
+                "Venison",
+                "Chocolate Soufflé",
+                "Chocolate Mousse"
             ],
-            "correctAnswer": "Bread Basket, Set Menu, House Red",
-            "hint": "The customer orders for the whole table - note the specific wine colour requested.",
-            "explanation": "Ordering for a group: quantities indicate the number of people but the menu items are what matter. Two bottles of house red (not white) were requested. The set menu is one item regardless of how many portions are ordered.",
+            "correctAnswer": "Oysters, Venison, Chocolate Soufflé",
+            "hint": "The reason for ordering dessert early is explained, but it's still just the third item in the order.",
+            "explanation": "Soufflés must be baked to order and take time, so restaurants often ask guests to order dessert early. This detail doesn't add a fourth item.",
             "id": "go_l80_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like to pre-order the cheese soufflé as a starter - it takes 20 minutes - then the duck and the Paris-Brest.",
+            "prompt": "Our kids are set with the fish fingers. My partner's going for the wagyu, and I'll try the sea bass.",
             "options": [
-                "Cheese Soufflé",
-                "Duck",
-                "Paris-Brest",
-                "Crème Brûlée"
+                "Fish Fingers",
+                "Wagyu",
+                "Sea Bass",
+                "Ribeye"
             ],
-            "correctAnswer": "Cheese Soufflé, Duck, Paris-Brest",
-            "hint": "The customer mentions the cooking time for the soufflé - all three courses are still ordered.",
-            "explanation": "A Paris-Brest is a French choux pastry filled with praline cream - shaped like a wheel. Pre-ordering a soufflé is common because it cannot be rushed. The 20-minute mention is information, not an item - three dishes are ordered.",
+            "correctAnswer": "Fish Fingers, Wagyu, Sea Bass",
+            "hint": "Different wording, same idea — three family members, three different dishes.",
+            "explanation": "‘Fish fingers’ is the British English term for what Americans usually call ‘fish sticks’ — a common children's menu item.",
             "id": "go_l80_q3"
         }
     ]

@@ -4,10 +4,10 @@
     "levels": "41-50",
     "quests": [
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the soup of the day, the baguette, and a glass of wine.",
+            "prompt": "I'll start with the soup of the day, then I'll have the baguette, and I'll finish with a glass of wine.",
             "options": [
                 "Soup of the Day",
                 "Baguette",
@@ -15,472 +15,472 @@
                 "Side Salad"
             ],
             "correctAnswer": "Soup of the Day, Baguette, Glass of Wine",
-            "hint": "Three items are ordered - one starter, one bread side, one drink.",
-            "explanation": "When ordering three items, all three must be selected. 'Soup of the day' is a rotating menu item. A baguette is a long French bread loaf - commonly served alongside soup in French bistros.",
+            "hint": "Three items are named in sequence — a starter, a bread side, and a drink.",
+            "explanation": "‘I’ll start with… then… and I’ll finish with…’ is a clear way to order three items in order. ‘Soup of the day’ changes daily, so it's selected as a whole phrase.",
             "id": "go_l41_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the salmon, the roasted potatoes, and the green beans.",
+            "prompt": "For my starter, the garden salad. For my main, the roast chicken. And for dessert, the apple crumble.",
             "options": [
-                "Salmon",
-                "Roasted Potatoes",
-                "Green Beans",
-                "Asparagus"
+                "Garden Salad",
+                "Roast Chicken",
+                "Apple Crumble",
+                "Fruit Tart"
             ],
-            "correctAnswer": "Salmon, Roasted Potatoes, Green Beans",
-            "hint": "Three components: a protein, a starch, and a vegetable.",
-            "explanation": "Many main course orders include three elements: protein (salmon), starch (roasted potatoes), and vegetable (green beans). Green beans and asparagus are both green vegetables - listen carefully.",
+            "correctAnswer": "Garden Salad, Roast Chicken, Apple Crumble",
+            "hint": "The words ‘starter,’ ‘main,’ and ‘dessert’ label exactly which course each item belongs to.",
+            "explanation": "This is a classic three-course structure used in many sit-down restaurants: starter, main course, and dessert. Each label makes the order easy to follow.",
             "id": "go_l41_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the starter salad, the steak, and a sparkling water?",
+            "prompt": "Could I get the mushroom soup to start, the grilled salmon for the main course, and the chocolate cake to finish?",
             "options": [
-                "Starter Salad",
-                "Steak",
-                "Sparkling Water",
-                "Still Water"
+                "Mushroom Soup",
+                "Grilled Salmon",
+                "Chocolate Cake",
+                "Lemon Tart"
             ],
-            "correctAnswer": "Starter Salad, Steak, Sparkling Water",
-            "hint": "Three items: one starter, one main, one drink - all must be selected.",
-            "explanation": "When a customer orders multiple courses at once, listen for each separate item. 'Sparkling water' has bubbles; 'still water' does not - this distinction is asked in virtually every English restaurant.",
+            "correctAnswer": "Mushroom Soup, Grilled Salmon, Chocolate Cake",
+            "hint": "‘To start’ and ‘to finish’ mark the first and last items in the order.",
+            "explanation": "‘To start’ and ‘to finish’ are natural ways to mark the beginning and end of a three-course order, even without using the words ‘starter’ and ‘dessert’ directly.",
             "id": "go_l41_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the bruschetta, the tagliatelle, and the tiramisu.",
+            "prompt": "I'll have the Caesar salad, the grilled steak, and the cheesecake, please.",
             "options": [
-                "Bruschetta",
-                "Tagliatelle",
-                "Tiramisu",
-                "Panna Cotta"
+                "Caesar Salad",
+                "Grilled Steak",
+                "Cheesecake",
+                "Tiramisu"
             ],
-            "correctAnswer": "Bruschetta, Tagliatelle, Tiramisu",
-            "hint": "Three Italian courses: starter, main pasta, and dessert.",
-            "explanation": "Tagliatelle is a long, flat Italian pasta ribbon. Both tiramisu and panna cotta are Italian desserts - listen for which one is ordered. Together these form a complete three-course Italian meal.",
+            "correctAnswer": "Caesar Salad, Grilled Steak, Cheesecake",
+            "hint": "All three items are simply listed together with commas, without extra sequencing words.",
+            "explanation": "When items are listed with commas and ‘and,’ each one is still a separate part of the order — a starter, a main, and a dessert.",
             "id": "go_l42_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the antipasto, the pizza margherita, and a glass of Chianti.",
+            "prompt": "We'd like the bruschetta, the chicken parmesan, and the tiramisu.",
             "options": [
-                "Antipasto",
-                "Pizza Margherita",
-                "Chianti",
-                "Prosecco"
+                "Bruschetta",
+                "Chicken Parmesan",
+                "Tiramisu",
+                "Cheesecake"
             ],
-            "correctAnswer": "Antipasto, Pizza Margherita, Chianti",
-            "hint": "Chianti is a Tuscan red wine - Prosecco is a sparkling wine.",
-            "explanation": "Antipasto means 'before the meal' - an Italian starter platter of meats, cheeses, and olives. Chianti is a dry Italian red wine from Tuscany, the classic accompaniment to pizza and pasta.",
+            "correctAnswer": "Bruschetta, Chicken Parmesan, Tiramisu",
+            "hint": "‘We’d like’ shows this three-course order is for more than one person, or one person ordering formally.",
+            "explanation": "‘We’d like…’ works the same way with three items as it does with two — every item named should be selected.",
             "id": "go_l42_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the minestrone, the veal piccata, and the cannoli?",
+            "prompt": "To begin, I'll have the shrimp cocktail. Then the grilled chicken. And to finish, the key lime pie.",
             "options": [
-                "Minestrone",
-                "Veal Piccata",
-                "Cannoli",
-                "Tortellini"
+                "Shrimp Cocktail",
+                "Grilled Chicken",
+                "Key Lime Pie",
+                "Chocolate Mousse"
             ],
-            "correctAnswer": "Minestrone, Veal Piccata, Cannoli",
-            "hint": "Veal piccata is veal in a lemon-caper sauce. Cannoli are Sicilian pastry rolls.",
-            "explanation": "Veal piccata uses thin slices of veal in a lemon and caper sauce. Cannoli are Sicilian pastry tubes filled with sweet ricotta cream. Tortellini is a ring-shaped pasta - not ordered here.",
+            "correctAnswer": "Shrimp Cocktail, Grilled Chicken, Key Lime Pie",
+            "hint": "Each course is introduced with its own short sentence.",
+            "explanation": "Breaking the order into three short sentences — one per course — is a natural way to speak slowly and clearly when ordering a full meal.",
             "id": "go_l42_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the miso soup, the sashimi platter, and a green tea.",
+            "prompt": "I'll try the French onion soup, followed by the beef stew, and the bread pudding for dessert.",
             "options": [
-                "Miso Soup",
-                "Sashimi Platter",
-                "Green Tea",
-                "Sake"
+                "French Onion Soup",
+                "Beef Stew",
+                "Bread Pudding",
+                "Apple Pie"
             ],
-            "correctAnswer": "Miso Soup, Sashimi Platter, Green Tea",
-            "hint": "Three items: soup, main seafood course, and a hot drink.",
-            "explanation": "Miso soup is traditionally served alongside Japanese meals. A sashimi platter is an assortment of raw fish. Green tea is the traditional non-alcoholic Japanese accompaniment - sake is alcoholic.",
+            "correctAnswer": "French Onion Soup, Beef Stew, Bread Pudding",
+            "hint": "‘Followed by’ connects the first two courses; ‘for dessert’ introduces the last.",
+            "explanation": "‘Followed by’ is another way to show the order of courses, similar to ‘then.’ It's common in more formal restaurant settings.",
             "id": "go_l43_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the gyoza, the ramen, and the matcha ice cream.",
+            "prompt": "Let's do the calamari as a starter, the seafood linguine as the main, and the panna cotta after.",
             "options": [
-                "Gyoza",
-                "Ramen",
-                "Matcha Ice Cream",
-                "Mochi"
+                "Calamari",
+                "Seafood Linguine",
+                "Panna Cotta",
+                "Tiramisu"
             ],
-            "correctAnswer": "Gyoza, Ramen, Matcha Ice Cream",
-            "hint": "Three courses: starter dumplings, main noodle soup, dessert ice cream.",
-            "explanation": "Gyoza, ramen, and matcha ice cream cover starter, main, and dessert in a Japanese meal. Matcha is ground green tea powder - matcha ice cream has a distinctive earthy, slightly bitter flavour.",
+            "correctAnswer": "Calamari, Seafood Linguine, Panna Cotta",
+            "hint": "Each course is labeled directly: starter, main, and ‘after’ (meaning dessert).",
+            "explanation": "‘Let’s do…’ is a relaxed way to plan out a full meal. Labeling each course clearly — starter, main, and dessert — makes the order easy to follow, even when the last one just says ‘after.’",
             "id": "go_l43_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the edamame, the teriyaki chicken, and the rice?",
+            "prompt": "I'll go with the minestrone, the eggplant parmesan, and then the gelato.",
             "options": [
-                "Edamame",
-                "Teriyaki Chicken",
-                "Rice",
-                "Noodles"
+                "Minestrone",
+                "Eggplant Parmesan",
+                "Gelato",
+                "Sorbet"
             ],
-            "correctAnswer": "Edamame, Teriyaki Chicken, Rice",
-            "hint": "Edamame are green soybean pods - a popular Japanese snack and starter.",
-            "explanation": "'Teriyaki' refers to a cooking method: grilling with a sweet soy sauce glaze. The customer chose rice over noodles - both are common sides but distinct menu items.",
+            "correctAnswer": "Minestrone, Eggplant Parmesan, Gelato",
+            "hint": "‘And then’ shows the dessert comes last, after the main course.",
+            "explanation": "‘I’ll go with…’ can introduce a full three-course order, not just one item. ‘And then’ signals that the gelato is the final course.",
             "id": "go_l43_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the samosas, the chicken tikka masala, and the garlic naan.",
+            "prompt": "Can I have the house salad, the pork chops, and a slice of pie to finish the meal?",
             "options": [
-                "Samosas",
-                "Chicken Tikka Masala",
-                "Garlic Naan",
-                "Onion Bhaji"
+                "House Salad",
+                "Pork Chops",
+                "Pie",
+                "Cake"
             ],
-            "correctAnswer": "Samosas, Chicken Tikka Masala, Garlic Naan",
-            "hint": "Samosas are the starter, tikka masala the main, garlic naan the bread.",
-            "explanation": "Chicken tikka masala is marinated chicken in a creamy tomato-spiced sauce. The meal structure: samosas (starter), tikka masala (main), garlic naan (bread). Onion bhaji is a different fried onion starter.",
+            "correctAnswer": "House Salad, Pork Chops, Pie",
+            "hint": "‘To finish the meal’ tells you the pie is the dessert, completing all three courses.",
+            "explanation": "‘To finish the meal’ is another way to introduce dessert. ‘House salad’ simply means the restaurant's standard mixed salad.",
             "id": "go_l44_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the raita, the lamb biryani, and the mango chutney.",
+            "prompt": "I'll start with the clam chowder, then I'll have the fish and chips, and I'll finish with the sticky toffee pudding.",
             "options": [
-                "Raita",
-                "Lamb Biryani",
-                "Mango Chutney",
-                "Pilau Rice"
-            ],
-            "correctAnswer": "Raita, Lamb Biryani, Mango Chutney",
-            "hint": "Raita is a yogurt condiment; biryani is a rice dish; chutney is a fruit condiment.",
-            "explanation": "Raita is a cooling yogurt condiment with cucumber. Biryani is fragrant rice cooked with meat. Mango chutney is a sweet-sour condiment. All three are separate items that complement the same meal.",
-            "id": "go_l44_q2"
-        },
-        {
-            "instruction": "Tap the items to fulfill the client's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "selection",
-            "prompt": "Could I get the daal soup, the saag paneer, and a mango lassi?",
-            "options": [
-                "Daal Soup",
-                "Saag Paneer",
-                "Mango Lassi",
-                "Masala Chai"
-            ],
-            "correctAnswer": "Daal Soup, Saag Paneer, Mango Lassi",
-            "hint": "Saag paneer is spinach with Indian cheese - 'saag' means spinach.",
-            "explanation": "Saag paneer is a vegetarian dish of spinach cooked with paneer cheese. 'Saag' means spinach in Punjabi. Daal soup is lentil-based. Mango lassi is a yogurt drink - all three form a complete vegetarian Indian meal.",
-            "id": "go_l44_q3"
-        },
-        {
-            "instruction": "Tap the items to fulfill the client's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "selection",
-            "prompt": "I'll have the tzatziki, the moussaka, and the baklava.",
-            "options": [
-                "Tzatziki",
-                "Moussaka",
-                "Baklava",
-                "Galaktoboureko"
-            ],
-            "correctAnswer": "Tzatziki, Moussaka, Baklava",
-            "hint": "Three classic Greek dishes: yogurt dip, main casserole, and honey-nut pastry.",
-            "explanation": "Moussaka is a Greek casserole with aubergine, minced meat, and béchamel - similar to lasagne. Baklava is sweet pastry with nuts and honey. Galaktoboureko is a custard pastry - also Greek but not ordered.",
-            "id": "go_l45_q1"
-        },
-        {
-            "instruction": "Tap the items to fulfill the client's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "selection",
-            "prompt": "I'd like the spanakopita, the grilled lamb chops, and a glass of ouzo.",
-            "options": [
-                "Spanakopita",
-                "Grilled Lamb Chops",
-                "Ouzo",
-                "Retsina"
-            ],
-            "correctAnswer": "Spanakopita, Grilled Lamb Chops, Ouzo",
-            "hint": "Ouzo and retsina are both Greek alcoholic drinks but very different types.",
-            "explanation": "Spanakopita is a Greek spinach and feta pie in filo pastry. Ouzo is a Greek anise-flavoured spirit. Retsina is a Greek white wine with pine resin flavouring. Both are Greek but categorically different drinks.",
-            "id": "go_l45_q2"
-        },
-        {
-            "instruction": "Tap the items to fulfill the client's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "selection",
-            "prompt": "Could I get the horiatiki salad, the souvlaki, and the loukoumades?",
-            "options": [
-                "Horiatiki Salad",
-                "Souvlaki",
-                "Loukoumades",
-                "Kleftiko"
-            ],
-            "correctAnswer": "Horiatiki Salad, Souvlaki, Loukoumades",
-            "hint": "Loukoumades are Greek honey doughnuts - a traditional sweet street food dessert.",
-            "explanation": "Horiatiki is the authentic Greek salad. Souvlaki is grilled meat on skewers. Loukoumades are fried dough balls drizzled with honey - a Greek dessert. Kleftiko is a slow-roasted lamb dish - not ordered here.",
-            "id": "go_l45_q3"
-        },
-        {
-            "instruction": "Tap the items to fulfill the client's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "selection",
-            "prompt": "I'll have the soup of the day, the roast beef, and the sticky toffee pudding.",
-            "options": [
-                "Soup of the Day",
-                "Roast Beef",
+                "Clam Chowder",
+                "Fish and Chips",
                 "Sticky Toffee Pudding",
                 "Apple Crumble"
             ],
-            "correctAnswer": "Soup of the Day, Roast Beef, Sticky Toffee Pudding",
-            "hint": "Three pub courses: starter soup, main roast, and classic British dessert.",
-            "explanation": "Sticky toffee pudding is a classic British dessert - a moist sponge cake covered in toffee sauce. Apple crumble is also British but different. Roast beef on Sundays is a beloved British pub tradition.",
+            "correctAnswer": "Clam Chowder, Fish and Chips, Sticky Toffee Pudding",
+            "hint": "A soup starter, a classic main, and a warm British dessert are named in order.",
+            "explanation": "‘Sticky toffee pudding’ is a warm British dessert made with dates and covered in toffee sauce — one of the most popular dessert orders in the UK.",
+            "id": "go_l44_q2"
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "selection",
+            "prompt": "For my starter, the tomato bruschetta. For my main, the chicken piccata. And for dessert, the lemon tart.",
+            "options": [
+                "Tomato Bruschetta",
+                "Chicken Piccata",
+                "Lemon Tart",
+                "Cheesecake"
+            ],
+            "correctAnswer": "Tomato Bruschetta, Chicken Piccata, Lemon Tart",
+            "hint": "Three courses are clearly labeled — starter, main, and dessert.",
+            "explanation": "‘Chicken piccata’ is a dish made with a lemon and caper sauce, which pairs nicely with the lemon tart for dessert.",
+            "id": "go_l44_q3"
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "selection",
+            "prompt": "Could I get the spring rolls to start, the pad thai for the main course, and mango sticky rice to finish?",
+            "options": [
+                "Spring Rolls",
+                "Pad Thai",
+                "Mango Sticky Rice",
+                "Coconut Ice Cream"
+            ],
+            "correctAnswer": "Spring Rolls, Pad Thai, Mango Sticky Rice",
+            "hint": "All three courses come from Thai cuisine, so listen for the exact dish names.",
+            "explanation": "‘Mango sticky rice’ is a beloved Thai dessert made with sweet coconut sauce. All three courses were clearly labeled with ‘to start,’ ‘for the main course,’ and ‘to finish.’",
+            "id": "go_l45_q1"
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "selection",
+            "prompt": "I'll have the miso soup, the teriyaki salmon, and the mochi, please.",
+            "options": [
+                "Miso Soup",
+                "Teriyaki Salmon",
+                "Mochi",
+                "Green Tea Ice Cream"
+            ],
+            "correctAnswer": "Miso Soup, Teriyaki Salmon, Mochi",
+            "hint": "A Japanese-style three-course meal is ordered as a simple list.",
+            "explanation": "‘Mochi’ is a soft, chewy Japanese dessert made from pounded rice, often filled with sweet bean paste or ice cream.",
+            "id": "go_l45_q2"
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "selection",
+            "prompt": "We'd like the samosas, the chicken korma, and the gulab jamun.",
+            "options": [
+                "Samosas",
+                "Chicken Korma",
+                "Gulab Jamun",
+                "Rice Pudding"
+            ],
+            "correctAnswer": "Samosas, Chicken Korma, Gulab Jamun",
+            "hint": "The starter, main, and dessert all come from Indian cuisine.",
+            "explanation": "‘Gulab jamun’ is a popular Indian dessert made of fried dough balls soaked in sweet syrup — a classic way to end an Indian meal.",
+            "id": "go_l45_q3"
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "selection",
+            "prompt": "I'll start with the shrimp bisque, then I'll have the roasted duck, and I'll finish with the crème brûlée.",
+            "options": [
+                "Shrimp Bisque",
+                "Roasted Duck",
+                "Crème Brûlée",
+                "Chocolate Mousse"
+            ],
+            "correctAnswer": "Shrimp Bisque, Roasted Duck, Crème Brûlée",
+            "hint": "A creamy soup, a main course, and a classic French dessert are named in order.",
+            "explanation": "‘Crème brûlée’ is a French custard dessert with a crisp, caramelized sugar top — one of the most widely recognized dessert names on English menus.",
             "id": "go_l46_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the prawn cocktail and the beef stew.",
+            "prompt": "To begin, I'll have the goat cheese salad. Then the lamb chops. And to finish, the chocolate fondant.",
             "options": [
-                "Prawn Cocktail",
-                "Beef Stew",
-                "Smoked Mackerel",
-                "Lamb Casserole"
+                "Goat Cheese Salad",
+                "Lamb Chops",
+                "Chocolate Fondant",
+                "Cheesecake"
             ],
-            "correctAnswer": "Prawn Cocktail, Beef Stew",
-            "hint": "Only two items are ordered this time - a classic starter and a warming stew.",
-            "explanation": "Prawn cocktail was Britain's most popular starter in the 1970s - cold prawns with Marie Rose sauce. Beef stew is slow-cooked beef in gravy. Note: only two items are ordered this time.",
+            "correctAnswer": "Goat Cheese Salad, Lamb Chops, Chocolate Fondant",
+            "hint": "Each course gets its own short sentence, ending with a warm chocolate dessert.",
+            "explanation": "A ‘chocolate fondant’ has a soft, melted center, different from a firmer chocolate cake. Breaking the order into short sentences keeps each course clear.",
             "id": "go_l46_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the scotch egg, the pork pie, and a pint of ale?",
+            "prompt": "I'll try the beet salad, followed by the roast lamb, and the pavlova for dessert.",
             "options": [
-                "Scotch Egg",
-                "Pork Pie",
-                "Pint of Ale",
-                "Sausage Roll"
+                "Beet Salad",
+                "Roast Lamb",
+                "Pavlova",
+                "Tiramisu"
             ],
-            "correctAnswer": "Scotch Egg, Pork Pie, Pint of Ale",
-            "hint": "Scotch eggs, pork pies, and sausage rolls are all British snacks - listen for which two food items plus the drink.",
-            "explanation": "A Scotch egg is a hard-boiled egg wrapped in sausage meat and deep-fried. A pork pie is cold pork in pastry. Both are traditional British pub snacks. Ale is a type of British beer brewed differently from lager.",
+            "correctAnswer": "Beet Salad, Roast Lamb, Pavlova",
+            "hint": "This dessert is a meringue-based treat topped with fruit and cream.",
+            "explanation": "A ‘pavlova’ is a light, crisp meringue dessert topped with whipped cream and fresh fruit — popular on Australian and British menus.",
             "id": "go_l46_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the smoked salmon, the eggs royale, and a Bloody Mary.",
+            "prompt": "Let's do the stuffed mushrooms as a starter, the beef bourguignon as the main, and the crêpes suzette after.",
             "options": [
-                "Smoked Salmon",
-                "Eggs Royale",
-                "Bloody Mary",
-                "Eggs Benedict"
+                "Stuffed Mushrooms",
+                "Beef Bourguignon",
+                "Crêpes Suzette",
+                "Apple Tart"
             ],
-            "correctAnswer": "Smoked Salmon, Eggs Royale, Bloody Mary",
-            "hint": "Eggs royale uses smoked salmon - different from eggs Benedict, which has bacon.",
-            "explanation": "Eggs royale is eggs Benedict but with smoked salmon instead of Canadian bacon. A Bloody Mary is a vodka and tomato juice cocktail - a popular brunch drink. Eggs royale and Benedict look similar but differ in the protein.",
+            "correctAnswer": "Stuffed Mushrooms, Beef Bourguignon, Crêpes Suzette",
+            "hint": "All three courses are French dishes — a starter, a hearty stew, and a flaming dessert.",
+            "explanation": "‘Beef bourguignon’ is a French beef stew cooked in red wine. ‘Crêpes suzette’ are thin pancakes served in a sweet orange sauce.",
             "id": "go_l47_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the granola parfait, the fresh fruit bowl, and a green smoothie.",
+            "prompt": "I'll go with the leek soup, the chicken chasseur, and then the profiteroles.",
             "options": [
-                "Granola Parfait",
-                "Fresh Fruit Bowl",
-                "Green Smoothie",
-                "Protein Shake"
+                "Leek Soup",
+                "Chicken Chasseur",
+                "Profiteroles",
+                "Éclair"
             ],
-            "correctAnswer": "Granola Parfait, Fresh Fruit Bowl, Green Smoothie",
-            "hint": "A parfait is a layered dish - granola, yogurt, and fruit in alternating layers.",
-            "explanation": "'Parfait' comes from the French word for 'perfect'. A granola parfait layers yogurt, granola, and fruit. A 'green smoothie' blends leafy greens with fruit. These health café items are essential modern vocabulary.",
+            "correctAnswer": "Leek Soup, Chicken Chasseur, Profiteroles",
+            "hint": "Two French mains sound alike here — check which chicken dish was actually named.",
+            "explanation": "‘Chicken chasseur’ is cooked in a mushroom and wine sauce. ‘Profiteroles’ are small pastry balls filled with cream and topped with chocolate sauce.",
             "id": "go_l47_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the acai bowl, the sourdough toast, and a flat white?",
+            "prompt": "Can I have the pâté, the duck confit, and a chocolate soufflé to finish the meal?",
             "options": [
-                "Acai Bowl",
-                "Sourdough Toast",
-                "Flat White",
-                "Latte"
+                "Pâté",
+                "Duck Confit",
+                "Chocolate Soufflé",
+                "Crème Caramel"
             ],
-            "correctAnswer": "Acai Bowl, Sourdough Toast, Flat White",
-            "hint": "Acai (pronounced 'ah-sigh-EE') is a Brazilian superfood berry used in smoothie bowls.",
-            "explanation": "An acai bowl is a smoothie of frozen acai berries topped with granola and fruit. Acai (ah-sigh-EE) is a Brazilian purple berry. Sourdough toast has a distinctive tangy flavour from the natural fermented starter.",
+            "correctAnswer": "Pâté, Duck Confit, Chocolate Soufflé",
+            "hint": "All three French classics are named clearly in this formal-sounding order.",
+            "explanation": "‘Duck confit’ is duck slowly cooked in its own fat until tender. A ‘soufflé’ rises in the oven, so it must be ordered in advance and served immediately.",
             "id": "go_l47_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the clam chowder, the grilled lobster, and the key lime pie.",
+            "prompt": "I'll start with the prawn cocktail, then I'll have the roast beef, and I'll finish with the trifle.",
             "options": [
-                "Clam Chowder",
-                "Grilled Lobster",
-                "Key Lime Pie",
-                "Lemon Tart"
+                "Prawn Cocktail",
+                "Roast Beef",
+                "Trifle",
+                "Bread Pudding"
             ],
-            "correctAnswer": "Clam Chowder, Grilled Lobster, Key Lime Pie",
-            "hint": "Key lime pie is a classic American dessert from Florida - tangier and different from lemon tart.",
-            "explanation": "Clam chowder is a creamy American soup with clams and potatoes. Key lime pie is made with Key lime juice from Florida - it has a distinctive tartness. Both are iconic American coastal dishes.",
+            "correctAnswer": "Prawn Cocktail, Roast Beef, Trifle",
+            "hint": "This is a classic British three-course meal, ending with a layered dessert.",
+            "explanation": "A ‘trifle’ is a British dessert made of layers of cake, custard, fruit, and cream. ‘Prawn cocktail’ was a hugely popular British starter for decades.",
             "id": "go_l48_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the calamari, the fish tacos, and a margarita.",
+            "prompt": "For my starter, the pea soup. For my main, the fish pie. And for dessert, the treacle tart.",
             "options": [
-                "Calamari",
-                "Fish Tacos",
-                "Margarita",
-                "Ceviche"
+                "Pea Soup",
+                "Fish Pie",
+                "Treacle Tart",
+                "Sticky Toffee Pudding"
             ],
-            "correctAnswer": "Calamari, Fish Tacos, Margarita",
-            "hint": "Calamari is the culinary name for squid when used as food.",
-            "explanation": "Calamari is the Italian/Spanish culinary name for squid - typically battered and fried. Fish tacos are a popular coastal Mexican dish with battered or grilled fish in corn tortillas. Common in Mexican-American coastal restaurants.",
+            "correctAnswer": "Pea Soup, Fish Pie, Treacle Tart",
+            "hint": "All three courses are traditional British comfort foods.",
+            "explanation": "‘Treacle tart’ is made with a sweet, sticky syrup filling — a traditional British dessert. Each course here is clearly labeled with ‘starter,’ ‘main,’ and ‘dessert.’",
             "id": "go_l48_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the prawn tempura, the miso-glazed cod, and a sake?",
+            "prompt": "Could I get the Scotch egg to start, the shepherd's pie for the main course, and the Eton mess to finish?",
             "options": [
-                "Prawn Tempura",
-                "Miso-Glazed Cod",
-                "Sake",
-                "Green Tea"
+                "Scotch Egg",
+                "Shepherd's Pie",
+                "Eton Mess",
+                "Trifle"
             ],
-            "correctAnswer": "Prawn Tempura, Miso-Glazed Cod, Sake",
-            "hint": "'Tempura' refers to a Japanese light batter-frying technique.",
-            "explanation": "Tempura is a Japanese technique of lightly battering and quickly deep-frying ingredients. 'Miso-glazed' means the cod is brushed with sweet white miso paste. Sake is Japanese rice wine, appropriate with Japanese cuisine.",
+            "correctAnswer": "Scotch Egg, Shepherd's Pie, Eton Mess",
+            "hint": "A boiled egg wrapped in sausage meat, a baked meat pie, and a fruity dessert are named in order.",
+            "explanation": "‘Eton mess’ combines broken meringue, whipped cream, and berries — a simple but beloved British dessert.",
             "id": "go_l48_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the wedge salad, the prime rib, and the baked potato.",
+            "prompt": "I'll have the spinach salad, the grilled trout, and the peach cobbler, please.",
             "options": [
-                "Wedge Salad",
-                "Prime Rib",
-                "Baked Potato",
-                "Mashed Potatoes"
+                "Spinach Salad",
+                "Grilled Trout",
+                "Peach Cobbler",
+                "Apple Crumble"
             ],
-            "correctAnswer": "Wedge Salad, Prime Rib, Baked Potato",
-            "hint": "A wedge salad is a quarter head of iceberg lettuce - different from mixed greens.",
-            "explanation": "Prime rib is a premium cut from the rib section, slow-roasted and served with its juices. A wedge salad is a quarter of iceberg lettuce. A baked potato comes whole in its skin - different from mashed.",
+            "correctAnswer": "Spinach Salad, Grilled Trout, Peach Cobbler",
+            "hint": "A green salad, a fish main, and a fruity baked dessert are listed together.",
+            "explanation": "A ‘cobbler’ is a baked fruit dessert topped with a biscuit-like crust, popular in American Southern cooking.",
             "id": "go_l49_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the shrimp cocktail, the filet mignon, and the creamed spinach.",
+            "prompt": "We'd like the deviled eggs, the pulled pork sandwich, and the pecan pie.",
             "options": [
-                "Shrimp Cocktail",
-                "Filet Mignon",
-                "Creamed Spinach",
-                "Steamed Broccoli"
+                "Deviled Eggs",
+                "Pulled Pork Sandwich",
+                "Pecan Pie",
+                "Apple Pie"
             ],
-            "correctAnswer": "Shrimp Cocktail, Filet Mignon, Creamed Spinach",
-            "hint": "Filet mignon is the most tender cut of beef - very lean and delicate.",
-            "explanation": "Filet mignon is cut from the tenderloin - the most tender but least fatty steak. Creamed spinach is spinach in a rich cream sauce - a classic American steakhouse side, different from steamed broccoli.",
+            "correctAnswer": "Deviled Eggs, Pulled Pork Sandwich, Pecan Pie",
+            "hint": "All three dishes are classic Southern American comfort food.",
+            "explanation": "‘Pecan pie’ is a rich, sweet pie made with pecans, especially popular in the American South, alongside slow-cooked pulled pork.",
             "id": "go_l49_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the Caesar salad, the New York strip, and a glass of Cabernet?",
+            "prompt": "To begin, I'll have the cornbread. Then the fried catfish. And to finish, the banana pudding.",
             "options": [
-                "Caesar Salad",
-                "New York Strip",
-                "Cabernet Sauvignon",
-                "Merlot"
+                "Cornbread",
+                "Fried Catfish",
+                "Banana Pudding",
+                "Bread Pudding"
             ],
-            "correctAnswer": "Caesar Salad, New York Strip, Cabernet Sauvignon",
-            "hint": "Cabernet Sauvignon is a full-bodied red wine - the classic pairing with red meat.",
-            "explanation": "Cabernet Sauvignon is bold and tannic, making it ideal for pairing with red meat. Merlot is softer and fruitier. Wine vocabulary is essential for restaurant dining throughout the English-speaking world.",
+            "correctAnswer": "Cornbread, Fried Catfish, Banana Pudding",
+            "hint": "A cornmeal side, a fried fish main, and a creamy Southern dessert are named in order.",
+            "explanation": "‘Banana pudding’ layers vanilla wafers, bananas, and custard — a classic Southern American dessert, distinct from bread pudding.",
             "id": "go_l49_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the guacamole, the chicken fajitas, and the churros.",
+            "prompt": "I'll try the crab cakes, followed by the grilled swordfish, and the key lime pie for dessert.",
             "options": [
-                "Guacamole",
-                "Chicken Fajitas",
-                "Churros",
-                "Tres Leches Cake"
+                "Crab Cakes",
+                "Grilled Swordfish",
+                "Key Lime Pie",
+                "Cheesecake"
             ],
-            "correctAnswer": "Guacamole, Chicken Fajitas, Churros",
-            "hint": "Churros are fried dough pastries dusted with cinnamon sugar.",
-            "explanation": "Chicken fajitas are grilled strips served sizzling with tortillas and toppings. Churros are fried dough fingers dusted with cinnamon sugar - popular Mexican street food. Tres leches is a different Mexican dessert.",
+            "correctAnswer": "Crab Cakes, Grilled Swordfish, Key Lime Pie",
+            "hint": "A seafood starter, a grilled fish main, and a tangy citrus dessert complete this order.",
+            "explanation": "‘Key lime pie’ is made with the juice of small, tart key limes — different from a regular lime or lemon pie, and a specialty of the Florida Keys.",
             "id": "go_l50_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the corn tortilla soup, the beef tacos, and a margarita.",
+            "prompt": "Let's do the shrimp gumbo as a starter, the jambalaya as the main, and the beignets after.",
             "options": [
-                "Corn Tortilla Soup",
-                "Beef Tacos",
-                "Margarita",
-                "Horchata"
+                "Shrimp Gumbo",
+                "Jambalaya",
+                "Beignets",
+                "Bread Pudding"
             ],
-            "correctAnswer": "Corn Tortilla Soup, Beef Tacos, Margarita",
-            "hint": "Horchata is a sweet rice milk drink - non-alcoholic, unlike a margarita.",
-            "explanation": "Tortilla soup is made with chicken broth and fried tortilla strips. Horchata is a traditional Mexican drink made from rice, cinnamon, and sugar - non-alcoholic and refreshing. The margarita is the alcoholic choice here.",
+            "correctAnswer": "Shrimp Gumbo, Jambalaya, Beignets",
+            "hint": "All three dishes come from Louisiana Creole and Cajun cooking traditions.",
+            "explanation": "‘Beignets’ are square, deep-fried pastries dusted with powdered sugar, a famous New Orleans treat often served after a spicy meal like jambalaya.",
             "id": "go_l50_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the elote, the pork carnitas, and a michelada?",
+            "prompt": "Can I have the she-crab soup, the blackened salmon, and a slice of Mississippi mud pie to finish the meal?",
             "options": [
-                "Elote",
-                "Pork Carnitas",
-                "Michelada",
-                "Agua Fresca"
+                "She-Crab Soup",
+                "Blackened Salmon",
+                "Mississippi Mud Pie",
+                "Pecan Pie"
             ],
-            "correctAnswer": "Elote, Pork Carnitas, Michelada",
-            "hint": "Elote is Mexican street corn - grilled corn with cheese, chilli, and lime.",
-            "explanation": "Elote is grilled corn topped with butter, chilli powder, lime, and cotija cheese. Carnitas are slow-braised, crispy pork. Michelada is a Mexican beer cocktail with lime and spices. Agua fresca is a non-alcoholic fruit water drink.",
+            "correctAnswer": "She-Crab Soup, Blackened Salmon, Mississippi Mud Pie",
+            "hint": "A creamy seafood soup, a spiced fish main, and a chocolate dessert are all named clearly.",
+            "explanation": "‘Blackened’ describes a cooking method using a very hot pan and a spice crust. ‘Mississippi mud pie’ is a rich chocolate dessert named for its dark, dense texture.",
             "id": "go_l50_q3"
         }
     ]

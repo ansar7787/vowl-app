@@ -9,30 +9,30 @@
             "interactionType": "bubbles",
             "scene": "Your colleague accidentally sends you an email clearly meant for someone else.",
             "options": [
-                "Share it with the whole team!",
-                "Hi I think this was meant for someone else.",
-                "Save it for later.",
-                "Read it carefully and say nothing."
+                "This really isn't any of my business.",
+                "I'll just pretend I never saw this.",
+                "You should really be more careful.",
+                "I think this email was meant for someone else."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "The polite and honest thing is to let the sender know immediately.",
-            "explanation": "Telling the sender I think this was meant for someone else is honest and respectful.",
+            "correctAnswerIndex": 3,
+            "hint": "Politely flagging the mistake helps your colleague fix it fast.",
+            "explanation": "Politely pointing out the mix-up is the most helpful, natural response to a misdirected email.",
             "id": "sr_l51_q1"
         },
         {
             "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "In a job interview the interviewer asks: What is your greatest weakness?",
+            "scene": "In a job interview, the interviewer asks: 'What is your greatest weakness?'",
             "options": [
-                "I have absolutely no weaknesses.",
-                "I can sometimes be too hardworking.",
-                "I sometimes struggle with time management and I'm actively working on better planning habits.",
-                "I'd rather not answer that."
+                "Honestly, I don't really have any.",
+                "That's a bit of an unfair question.",
+                "I sometimes take on too many tasks at once.",
+                "I'd rather not answer that one."
             ],
             "correctAnswerIndex": 2,
-            "hint": "Be genuinely honest but always show self-awareness and a plan to improve.",
-            "explanation": "Naming a real weakness and explaining what you are doing about it shows self-awareness and a growth mindset.",
+            "hint": "A specific, honest example works better than a vague dodge.",
+            "explanation": "Naming a real, specific weakness is the natural, professional way to answer this common question.",
             "id": "sr_l51_q2"
         },
         {
@@ -41,78 +41,78 @@
             "interactionType": "bubbles",
             "scene": "You accidentally bump into someone and knock their coffee out of their hand.",
             "options": [
-                "Watch where you're going!",
-                "I'm so sorry! Are you all right? Can I get you another one?",
-                "That was an accident.",
-                "You shouldn't have been standing there."
+                "You really should watch where you're going.",
+                "It was barely even a bump, honestly.",
+                "That's what you get for standing there.",
+                "I'm so sorry, let me get you another one."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "When you cause an accident take responsibility immediately and offer to help.",
-            "explanation": "Apologising immediately and offering a replacement shows good character.",
+            "correctAnswerIndex": 3,
+            "hint": "Taking responsibility and offering to fix it is the right move.",
+            "explanation": "Apologizing and offering to make it right is the natural response after an accident you caused.",
             "id": "sr_l51_q3"
         },
         {
             "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Your friend says: I've been feeling really low lately.",
+            "scene": "Your friend says: 'I've been feeling really low lately.'",
             "options": [
-                "Just cheer up.",
-                "That's tough. Do you want to talk about it?",
-                "Everyone feels like that.",
-                "You'll be fine."
+                "Everyone feels that way sometimes, honestly.",
+                "I'm sorry to hear that - want to talk about it?",
+                "You should really try to think positive.",
+                "That's rough - anyway, what's new with you?"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Show genuine empathy first then offer to listen without judgment.",
-            "explanation": "That's tough. Do you want to talk about it? validates your friend's feelings without dismissing them.",
+            "hint": "Show care and open the door for them to share more.",
+            "explanation": "Expressing concern and inviting them to talk is the caring, natural response to a friend in low spirits.",
             "id": "sr_l52_q1"
         },
         {
             "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A street performer finishes their act and looks hopefully at the crowd. You enjoyed it.",
+            "scene": "A street performer finishes their act and looks hopefully at the crowd.",
             "options": [
-                "Ignore them and walk away.",
-                "Clap and drop a coin in their hat.",
-                "Say nice job and walk on.",
-                "Whistle very loudly."
+                "I don't carry cash anymore, sorry.",
+                "It was fine, I suppose, nothing special.",
+                "That was great - here you go.",
+                "Someone else will probably pay you."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Show appreciation for the performer's talent and effort in the appropriate way.",
-            "explanation": "Clapping and giving a small tip is the socially appropriate response to enjoying a street performance.",
+            "correctAnswerIndex": 2,
+            "hint": "A small gesture of appreciation is a warm, natural response.",
+            "explanation": "Offering a small tip with a kind word is the natural way to show appreciation to a street performer.",
             "id": "sr_l52_q2"
         },
         {
             "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "During a meeting someone starts talking at exactly the same time as you.",
+            "scene": "During a meeting, someone starts talking at exactly the same time as you.",
             "options": [
-                "Keep talking as loudly as you can.",
-                "Stop and say: Sorry please go ahead.",
-                "Ignore them completely.",
-                "Say I was speaking first."
+                "Sorry, go ahead - you first.",
+                "I was actually talking first, though.",
+                "Let's both just talk at once then.",
+                "Never mind, forget what I said."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Yielding the floor shows social grace and good manners.",
-            "explanation": "Saying Sorry please go ahead when you accidentally interrupt someone shows excellent manners.",
+            "correctAnswerIndex": 0,
+            "hint": "Politely yielding the floor keeps the meeting running smoothly.",
+            "explanation": "Politely letting the other person continue is the natural, courteous response when you speak over each other.",
             "id": "sr_l52_q3"
         },
         {
             "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A neighbour knocks on your door late at night to say the noise is disturbing them.",
+            "scene": "A neighbor knocks on your door late at night to say the noise is disturbing them.",
             "options": [
-                "Tell them to go away.",
-                "I'm so sorry I didn't realise. I'll keep it down straight away.",
-                "You can't tell me what to do.",
-                "I wasn't being loud at all."
+                "It's really not that loud, honestly.",
+                "It's not even that late, come on.",
+                "You could try wearing earplugs instead.",
+                "I'm sorry, I'll turn it down right away."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "A neighbour's complaint deserves respect and a quick solution.",
-            "explanation": "Apologising and agreeing to lower the noise is the respectful considerate response.",
+            "correctAnswerIndex": 3,
+            "hint": "A quick apology and fix is the most considerate response.",
+            "explanation": "Apologizing and immediately fixing the noise is the natural, considerate response to a neighbor's complaint.",
             "id": "sr_l53_q1"
         },
         {
@@ -121,14 +121,14 @@
             "interactionType": "bubbles",
             "scene": "You overhear a coworker giving a client incorrect information about your product.",
             "options": [
-                "Tell the client the truth afterward without the coworker present.",
-                "Say nothing - it's not your problem.",
-                "Politely step in: Excuse me I think I can add something useful here.",
-                "Report your coworker to management immediately."
+                "That's honestly not really my problem.",
+                "Sorry to jump in - I think that detail's changed.",
+                "I'll mention it to them later somehow.",
+                "They'll probably figure it out eventually."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Correct the information without embarrassing your colleague.",
-            "explanation": "Excuse me I think I can add something here is tactful - it corrects the error while preserving dignity.",
+            "correctAnswerIndex": 1,
+            "hint": "A polite, timely correction protects the client and the company.",
+            "explanation": "Politely correcting the information in the moment is the natural, helpful response here.",
             "id": "sr_l53_q2"
         },
         {
@@ -137,14 +137,14 @@
             "interactionType": "bubbles",
             "scene": "You are about to board your flight and cannot find your boarding pass anywhere.",
             "options": [
-                "Wait quietly and hope it turns up.",
-                "Tell the airline staff immediately and explain the situation calmly.",
-                "Try to walk through without it.",
-                "Go back home."
+                "Excuse me, could you help me locate my boarding pass?",
+                "This airport is honestly so disorganized.",
+                "I guess I'll just miss this flight then.",
+                "It has to be here somewhere, probably."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Act quickly and tell the right people when a travel problem arises.",
-            "explanation": "Telling the airline staff immediately is the only practical response.",
+            "correctAnswerIndex": 0,
+            "hint": "Asking staff for help quickly solves the problem.",
+            "explanation": "Calmly asking staff for help is the most natural, practical response to a lost boarding pass.",
             "id": "sr_l53_q3"
         },
         {
@@ -153,14 +153,14 @@
             "interactionType": "bubbles",
             "scene": "A new employee asks you to explain something you know very well.",
             "options": [
-                "Do it yourself.",
-                "I don't have time to explain everything.",
-                "Of course - let me walk you through it step by step.",
-                "Ask the manager."
+                "It's pretty obvious, honestly.",
+                "You'll pick it up eventually, probably.",
+                "Sure, happy to walk you through it.",
+                "I don't really have time right now."
             ],
             "correctAnswerIndex": 2,
-            "hint": "Sharing knowledge generously is a sign of a great team member.",
-            "explanation": "Offering to explain something step by step shows patience generosity and strong communication skills.",
+            "hint": "A generous, patient offer helps a newcomer feel supported.",
+            "explanation": "Offering a patient explanation is the natural, supportive response to a new colleague's question.",
             "id": "sr_l54_q1"
         },
         {
@@ -169,14 +169,14 @@
             "interactionType": "bubbles",
             "scene": "A customer is upset about a long wait. You are the shop assistant.",
             "options": [
-                "It's not my fault.",
-                "I understand the wait has been frustrating. I'll look into this right away.",
-                "Come back another day.",
-                "Everyone is waiting not just you."
+                "We've been really busy today, honestly.",
+                "I'm sorry for the wait - how can I help now?",
+                "It hasn't actually been that long.",
+                "There's not much I can do, sorry."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Acknowledge the customer's frustration first then take action.",
-            "explanation": "Validating the customer's frustration and committing to action is the professional empathetic response.",
+            "hint": "Acknowledge the wait and move straight to helping.",
+            "explanation": "Acknowledging the delay and offering help is the natural, professional response to an upset customer.",
             "id": "sr_l54_q2"
         },
         {
@@ -185,14 +185,14 @@
             "interactionType": "bubbles",
             "scene": "Your friend is moving house this weekend and asks for your help. You are already busy.",
             "options": [
-                "I can't help sorry.",
-                "I'm not really into that kind of thing.",
-                "I'm quite busy this weekend - could I help you with the unpacking during the week instead?",
-                "Hire someone."
+                "Moving is really not my kind of thing.",
+                "I'll try to stop by if I can, maybe.",
+                "I can't Saturday, but I'm free Sunday morning.",
+                "You should really hire some movers."
             ],
             "correctAnswerIndex": 2,
-            "hint": "Offer a genuine alternative rather than giving a flat refusal.",
-            "explanation": "Offering to help at a different time shows you care while being honest about your availability.",
+            "hint": "Offering a specific alternative is more helpful than a vague no.",
+            "explanation": "Being honest and offering a specific alternative is the natural way to decline while staying helpful.",
             "id": "sr_l54_q3"
         },
         {
@@ -201,30 +201,30 @@
             "interactionType": "bubbles",
             "scene": "Your boss asks you to take on another project when you are already at full capacity.",
             "options": [
-                "Sure no problem at all.",
-                "No I'm too busy.",
-                "I'm currently working on X and Y. Could we discuss priorities before I take this on?",
-                "Give it to someone else."
+                "I'm at capacity - can we prioritize together?",
+                "Sure, I'll just squeeze it in somehow.",
+                "That's honestly too much, forget it.",
+                "Give it to someone else, please."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Be honest about your workload without simply refusing.",
-            "explanation": "Naming your current commitments and asking to discuss priorities is professionally assertive.",
+            "correctAnswerIndex": 0,
+            "hint": "Being honest while offering to problem-solve keeps things professional.",
+            "explanation": "Explaining your workload and proposing to prioritize together is the natural, professional response.",
             "id": "sr_l55_q1"
         },
         {
             "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Your meal at a restaurant arrives and it is not what you ordered.",
+            "scene": "Your meal at a restaurant arrives, and it is not what you ordered.",
             "options": [
-                "Eat it to avoid a fuss.",
-                "Demand to speak to the manager immediately.",
-                "Excuse me I think there's been a mix-up - I ordered the pasta not the risotto.",
-                "Say nothing but leave a very bad review later."
+                "This kitchen clearly can't get anything right.",
+                "I'll just eat it, I suppose, it's fine.",
+                "You people never get orders right.",
+                "Sorry, I think this isn't what I ordered."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Address the mistake directly and politely so it can be fixed.",
-            "explanation": "Pointing out the error calmly and specifically allows the waiter to correct it without confrontation.",
+            "correctAnswerIndex": 3,
+            "hint": "A calm, polite correction is the most effective response.",
+            "explanation": "Calmly and politely pointing out the mistake is the natural way to get your order corrected.",
             "id": "sr_l55_q2"
         },
         {
@@ -233,14 +233,14 @@
             "interactionType": "bubbles",
             "scene": "You need to leave a voicemail for a business contact who did not answer.",
             "options": [
-                "Just hang up.",
-                "Say Hi call me back and hang up.",
-                "Hi this is [name] calling about our meeting on Friday. Could you call me back at [number]? Thank you.",
-                "Leave a very long extremely detailed message."
+                "Hey, um, so, yeah, call me sometime.",
+                "Hi, it's Alex calling - please call me back.",
+                "It's me again, still waiting to hear back.",
+                "Not sure if you'll even get this, but hi."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "A good voicemail is brief informative and includes a call-back number.",
-            "explanation": "A complete professional voicemail includes your name the reason for calling and your number.",
+            "correctAnswerIndex": 1,
+            "hint": "A clear name and a clear request make a voicemail useful.",
+            "explanation": "Stating your name clearly and what you need is the natural, effective way to leave a voicemail.",
             "id": "sr_l55_q3"
         },
         {
@@ -249,94 +249,94 @@
             "interactionType": "bubbles",
             "scene": "You are meeting your partner's parents for the very first time.",
             "options": [
-                "Say nothing and look at your phone.",
-                "Nice to meet you both! I've heard so much about you.",
-                "Hello.",
-                "Don't worry I'll relax once I know you better."
+                "It's so lovely to finally meet you both.",
+                "I've heard a lot about you, apparently.",
+                "Sorry, I'm a little nervous, actually.",
+                "This is a bit awkward, isn't it?"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Make a warm enthusiastic and genuine first impression.",
-            "explanation": "Nice to meet you both! I've heard so much about you. is warm and engaging.",
+            "correctAnswerIndex": 0,
+            "hint": "A warm, simple greeting makes the best first impression.",
+            "explanation": "A warm, simple greeting is the natural way to make a good first impression.",
             "id": "sr_l56_q1"
         },
         {
             "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You need to ask your neighbour to water your plants while you are away travelling.",
+            "scene": "You need to ask your neighbor to water your plants while you are away.",
             "options": [
-                "Leave a note on their door.",
-                "Hi would you mind watering my plants while I'm away? I'd really appreciate it.",
-                "Just leave and hope for the best.",
-                "Ask a friend who lives further away."
+                "My plants might die without help, probably.",
+                "I hate leaving my plants alone, honestly.",
+                "Someone needs to check on my place.",
+                "Could you water my plants while I'm away?"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Ask directly politely and with genuine appreciation.",
-            "explanation": "Making the request in person with appreciation is more personal and effective than a note.",
+            "correctAnswerIndex": 3,
+            "hint": "A direct, specific request is the clearest way to ask a favor.",
+            "explanation": "Making a direct, specific request is the clearest, most natural way to ask a favor.",
             "id": "sr_l56_q2"
         },
         {
             "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "At a conference you want to speak to a well-known expert. You approach them.",
+            "scene": "At a conference, you want to speak to a well-known expert. You approach them.",
             "options": [
-                "You are very famous. I love you!",
-                "Excuse me I really enjoyed your talk. May I ask you a question?",
-                "Just stand near them and wait.",
-                "Hi. Can I talk to you?"
+                "You probably get this a lot, but hi.",
+                "I doubt you have time for me, but hi.",
+                "Excuse me, I really admire your work.",
+                "Sorry to bother someone so important."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Lead with a genuine compliment and then make a specific polite request.",
-            "explanation": "Complimenting the talk creates a natural positive opening. Asking permission shows respect for their time.",
+            "correctAnswerIndex": 2,
+            "hint": "A genuine, brief compliment is a natural conversation opener.",
+            "explanation": "A genuine, brief compliment is a natural, confident way to start a conversation with someone you admire.",
             "id": "sr_l56_q3"
         },
         {
             "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You notice a colleague's presentation contains several factual errors before they present it to the client.",
+            "scene": "You notice a colleague's presentation contains several factual errors before it goes live.",
             "options": [
-                "Your presentation is full of mistakes.",
-                "It's probably fine.",
-                "I noticed a few things that might need checking - would you like me to go through them with you?",
-                "Say nothing and let them present it incorrectly."
+                "That's really not my job to check.",
+                "I'll let them find out themselves.",
+                "Everyone makes mistakes, I suppose.",
+                "Quick heads up - a few numbers look off."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Offer feedback as help and support not as direct criticism.",
-            "explanation": "Framing your input as helping to check is constructive and kind.",
+            "correctAnswerIndex": 3,
+            "hint": "A quick, kind heads-up helps prevent a bigger problem.",
+            "explanation": "A quick, kind heads-up is the most helpful, natural response before a mistake becomes public.",
             "id": "sr_l57_q1"
         },
         {
             "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A child is crying loudly in a cafe. The parent looks very stressed and embarrassed.",
+            "scene": "A child is crying loudly in a cafe, and the parent looks very stressed and embarrassed.",
             "options": [
-                "Stare at them.",
-                "Ask the staff to remove them.",
-                "Smile at the parent warmly and say: It's OK - all kids do this sometimes!",
-                "Complain to the manager."
+                "Could you maybe keep them quieter?",
+                "No worries at all, kids have big feelings.",
+                "This is meant to be a relaxing cafe.",
+                "I'll just find somewhere else to sit."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Show empathy and kindness to a stressed parent in a public place.",
-            "explanation": "A small act of reassurance costs nothing but can significantly comfort a stressed parent.",
+            "correctAnswerIndex": 1,
+            "hint": "A kind, reassuring comment helps a stressed parent feel supported.",
+            "explanation": "A kind, reassuring comment is the most considerate, natural response to a stressed parent.",
             "id": "sr_l57_q2"
         },
         {
             "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You need more time to finish a work assignment and must email your manager to explain.",
+            "scene": "You need more time to finish a work assignment and must email your manager.",
             "options": [
-                "I need more time.",
-                "I'm making good progress but need a few extra days. Could we extend the deadline to Friday?",
-                "The deadline is completely unrealistic.",
-                "I'll just submit whatever I have."
+                "This deadline was honestly unrealistic.",
+                "I'm not sure I'll make it, sorry.",
+                "Could I have two extra days to finish this?",
+                "Things have been pretty hectic lately."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Update your manager on your progress AND make a specific reasonable request.",
-            "explanation": "Updating your manager on progress and asking for a specific deadline is the professional approach.",
+            "correctAnswerIndex": 2,
+            "hint": "A clear, specific request is easier for a manager to approve.",
+            "explanation": "Making a clear, specific request is the most professional, natural way to ask for more time.",
             "id": "sr_l57_q3"
         },
         {
@@ -345,62 +345,62 @@
             "interactionType": "bubbles",
             "scene": "A cashier gives you too much change by mistake.",
             "options": [
-                "Keep it - lucky day!",
-                "Say nothing and leave quickly.",
-                "Excuse me I think you've given me too much change.",
-                "Put the extra in the tip jar."
+                "Excuse me, I think you gave me too much.",
+                "Lucky me, I suppose, honestly.",
+                "I'll just keep it, they won't notice.",
+                "That's their mistake, not mine, really."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Honesty is always the right choice even when no one would know.",
-            "explanation": "Pointing out the cashier's mistake is both honest and the morally correct action.",
+            "correctAnswerIndex": 0,
+            "hint": "Pointing out the mistake honestly is the right thing to do.",
+            "explanation": "Honestly pointing out the extra change is the natural, honest response to a cashier's mistake.",
             "id": "sr_l58_q1"
         },
         {
             "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A client has asked for a document by 5pm and you see it is 4:45pm.",
+            "scene": "A client has asked for a document by 5pm, and you see it is 4:45pm.",
             "options": [
-                "Send whatever you have without checking it.",
-                "I'll send it tomorrow instead.",
-                "Please find the document attached. Apologies if it feels slightly rushed - please let me know if anything needs adjustment.",
-                "Ignore the email and hope they forget."
+                "I completely forgot about that, sorry.",
+                "That deadline is coming up really fast.",
+                "It'll be with you in the next ten minutes.",
+                "I'm not sure I'll make it in time."
             ],
             "correctAnswerIndex": 2,
-            "hint": "Deliver what you can and be transparent about the circumstances.",
-            "explanation": "Sending the document with a transparent note is professional.",
+            "hint": "A confident, specific update reassures the client.",
+            "explanation": "Giving a confident, specific update is the natural, professional way to reassure a client near a deadline.",
             "id": "sr_l58_q2"
         },
         {
             "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A colleague says: I don't think your idea will work.",
+            "scene": "A colleague says: 'I don't think your idea will work.'",
             "options": [
-                "You're completely wrong.",
-                "I appreciate your honesty. Could you tell me why you think that?",
-                "Fine forget it then.",
-                "Let's take a vote on it."
+                "You're honestly entitled to your opinion.",
+                "That's a bit harsh, don't you think?",
+                "Well, I still think that it will.",
+                "Okay, what makes you say that?"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Use disagreement as an opportunity to learn and improve your idea.",
-            "explanation": "Asking Why do you think that? turns a challenge into a productive exchange.",
+            "correctAnswerIndex": 3,
+            "hint": "Asking for their reasoning turns disagreement into a useful discussion.",
+            "explanation": "Calmly asking for their reasoning is the natural, constructive response to hearing disagreement.",
             "id": "sr_l58_q3"
         },
         {
             "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A host asks you at a dinner party: Did you enjoy the food?",
+            "scene": "A host asks you at a dinner party: 'Did you enjoy the food?'",
             "options": [
-                "It was OK I suppose.",
-                "It was absolutely delicious! Thank you so much for cooking.",
-                "I've had better honestly.",
-                "Tell me what it was first."
+                "I really did, especially the dessert.",
+                "It was fine, I suppose, overall.",
+                "I've honestly had better, to be fair.",
+                "Sure, it was food, I guess."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Be generous and sincere with praise when someone has cooked for you.",
-            "explanation": "It was absolutely delicious! Thank you so much for cooking. is warm and sincere.",
+            "correctAnswerIndex": 0,
+            "hint": "A specific, genuine compliment is the warmest response to a host.",
+            "explanation": "A specific, genuine compliment is the warm, natural way to answer a host's question.",
             "id": "sr_l59_q1"
         },
         {
@@ -409,30 +409,30 @@
             "interactionType": "bubbles",
             "scene": "You board a crowded bus with heavy bags. Another passenger stands up and offers you their seat.",
             "options": [
-                "Just take it without saying anything.",
-                "I don't need charity.",
-                "Oh that's so kind of you! Thank you very much.",
-                "No thank you I prefer to stand."
+                "I'm honestly fine standing, but thanks.",
+                "Thank you so much, that's very kind.",
+                "You really didn't have to do that.",
+                "Are you sure you don't need it?"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Accept a generous gesture graciously and express genuine gratitude.",
-            "explanation": "Oh that's so kind of you! Thank you very much. accepts the offer with genuine warmth.",
+            "correctAnswerIndex": 1,
+            "hint": "A warm, grateful acceptance is the natural response to kindness.",
+            "explanation": "Warmly accepting and thanking them is the natural response to a kind gesture like this.",
             "id": "sr_l59_q2"
         },
         {
             "instruction": "Choose the most natural response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Your child's teacher calls and says: I'm a little concerned about your child's progress in class.",
+            "scene": "Your child's teacher calls and says: 'I'm a little concerned about your child's homework lately.'",
             "options": [
-                "They're fine - don't worry about it.",
-                "What have they done now?",
-                "Thank you for letting me know. Could we arrange a time to discuss this in more detail?",
-                "That's your job to fix."
+                "That's strange, they seem fine at home.",
+                "I'll have a talk with them tonight.",
+                "Homework really isn't that important, honestly.",
+                "Thanks for calling - can you tell me more?"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Engage with the teacher as a partner in your child's education.",
-            "explanation": "Thanking the teacher and asking to meet shows you take their concern seriously.",
+            "correctAnswerIndex": 3,
+            "hint": "Asking for more detail helps you understand the real issue.",
+            "explanation": "Thanking the teacher and asking for more detail is the natural, engaged response to this kind of call.",
             "id": "sr_l59_q3"
         },
         {
@@ -441,14 +441,14 @@
             "interactionType": "bubbles",
             "scene": "You accidentally call someone by the wrong name in the middle of a team meeting.",
             "options": [
-                "Pretend nothing happened.",
-                "I'm so incredibly sorry for calling you the wrong name.",
-                "Sorry - Sarah I meant.",
-                "Just keep going and hope they didn't hear."
+                "Sorry, I meant to say Priya - my mistake.",
+                "Names are honestly hard, aren't they?",
+                "I knew that, I just misspoke, that's all.",
+                "Everyone makes that mistake sometimes."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "A quick light correction is much better than over-apologising or ignoring it.",
-            "explanation": "A brief natural correction fixes the mistake immediately without drawing more attention to it.",
+            "correctAnswerIndex": 0,
+            "hint": "A quick, specific correction is the most graceful fix.",
+            "explanation": "Quickly correcting yourself by name is the natural, graceful way to fix this kind of slip.",
             "id": "sr_l60_q1"
         },
         {
@@ -457,14 +457,14 @@
             "interactionType": "bubbles",
             "scene": "A team meeting ends without clearly assigned next steps. What should you do?",
             "options": [
-                "Forget about it until the next meeting.",
-                "Send a quick follow-up email summarising the agreed actions and owners.",
-                "Wait for someone else to send the summary.",
-                "Ask someone else to handle the follow-up."
+                "I guess we'll figure it out later.",
+                "That meeting felt pretty unproductive.",
+                "Could we quickly confirm who's doing what?",
+                "Someone should really take better notes."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Good professionals proactively follow up after meetings.",
-            "explanation": "Sending a follow-up summary shows initiative and ensures everyone has clarity on who owns what.",
+            "correctAnswerIndex": 2,
+            "hint": "A brief clarifying question prevents confusion later.",
+            "explanation": "Asking a brief clarifying question is the natural, proactive way to prevent confusion after a meeting.",
             "id": "sr_l60_q2"
         },
         {
@@ -473,14 +473,14 @@
             "interactionType": "bubbles",
             "scene": "Your doctor recommends a treatment that you feel uncomfortable about.",
             "options": [
-                "I'm not doing that - end of discussion.",
-                "Just do whatever you think is best.",
-                "I'm not entirely comfortable with that - could we explore other options together?",
-                "Write me a completely different prescription."
+                "I'll just go along with it, I suppose.",
+                "Could we talk through some other options?",
+                "That doesn't sound right to me, honestly.",
+                "I'd rather not do anything at all."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Be honest with your doctor about your concerns - this is your right.",
-            "explanation": "Expressing discomfort and asking about alternatives is assertive and appropriate.",
+            "correctAnswerIndex": 1,
+            "hint": "Voicing your concern and asking for alternatives is the constructive response.",
+            "explanation": "Calmly asking about alternatives is the natural, constructive way to voice discomfort with medical advice.",
             "id": "sr_l60_q3"
         }
     ]

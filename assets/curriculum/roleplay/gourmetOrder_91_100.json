@@ -4,483 +4,483 @@
     "levels": "91-100",
     "quests": [
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll start with the bastilla, then have the lamb tagine, and finish with the mint tea.",
+            "prompt": "Could you tell me more about the catch of the day? That sounds great — I'll have that, the roasted vegetables, and the lemon tart.",
             "options": [
-                "Bastilla",
-                "Lamb Tagine",
-                "Mint Tea",
-                "Harira"
+                "Catch of the Day",
+                "Roasted Vegetables",
+                "Lemon Tart",
+                "Steamed Vegetables"
             ],
-            "correctAnswer": "Bastilla, Lamb Tagine, Mint Tea",
-            "hint": "Three Moroccan courses - pigeon pastry starter, slow-cooked stew, and traditional tea.",
-            "explanation": "Bastilla is a Moroccan pie made from thin pastry, pigeon (or chicken), almonds, and spices - a unique sweet-savoury dish. Tagine is a slow-cooked Moroccan stew. Mint tea is the traditional Moroccan digestif served ceremonially at the end of a meal.",
+            "correctAnswer": "Catch of the Day, Roasted Vegetables, Lemon Tart",
+            "hint": "The customer asks a question first, then confirms their choice based on the answer.",
+            "explanation": "‘Could you tell me more about…?’ is a useful way to ask for details before deciding. ‘Catch of the day’ refers to the freshest fish available that day, without naming a specific type.",
             "id": "go_l91_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the harira soup, the chicken couscous, and the honey pastilla for dessert.",
+            "prompt": "This is a business lunch, so I'll keep it simple: the Caesar salad, the grilled chicken, and an iced tea.",
             "options": [
-                "Harira Soup",
-                "Chicken Couscous",
-                "Honey Pastilla",
-                "Dates"
+                "Caesar Salad",
+                "Grilled Chicken",
+                "Iced Tea",
+                "Chicken Sandwich"
             ],
-            "correctAnswer": "Harira Soup, Chicken Couscous, Honey Pastilla",
-            "hint": "Harira is a Moroccan tomato and lentil soup - often eaten to break the Ramadan fast.",
-            "explanation": "Harira is a thick Moroccan soup with tomatoes, lentils, chickpeas, and herbs. Couscous with chicken and vegetables is a Moroccan Friday tradition. Honey pastilla is a sweet version of the pastry - filled with almonds and cinnamon, dusted with icing sugar.",
+            "correctAnswer": "Caesar Salad, Grilled Chicken, Iced Tea",
+            "hint": "The customer explains why they're choosing simple, familiar dishes.",
+            "explanation": "‘I’ll keep it simple’ often applies to business meals, where the focus is on conversation rather than adventurous eating.",
             "id": "go_l91_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the kefta mechoui, the rfissa, and a glass of Moroccan rosé?",
+            "prompt": "I'll have whatever you're having — so the burrata, the branzino, and the tiramisu, then?",
             "options": [
-                "Kefta Mechoui",
-                "Rfissa",
-                "Moroccan Rosé",
-                "Mint Tea"
+                "Burrata",
+                "Branzino",
+                "Tiramisu",
+                "Panna Cotta"
             ],
-            "correctAnswer": "Kefta Mechoui, Rfissa, Moroccan Rosé",
-            "hint": "Kefta mechoui is grilled spiced minced lamb - a popular Moroccan BBQ dish.",
-            "explanation": "Kefta mechoui is spiced minced lamb shaped around a skewer and grilled over charcoal. Rfissa is a traditional Moroccan dish of shredded msemen flatbread with lentils and fenugreek. Morocco produces wine - Moroccan rosé is a local wine choice alongside the local cuisine.",
+            "correctAnswer": "Burrata, Branzino, Tiramisu",
+            "hint": "The customer agrees to match someone else's order, then confirms the specific items.",
+            "explanation": "‘I’ll have whatever you’re having’ shows the customer trusts a dining companion's choice, then repeats it back to confirm.",
             "id": "go_l91_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the meze selection, the adana kebab, and a glass of raki.",
+            "prompt": "Between the salmon and the halibut, I'll go with the salmon. Then the wild rice and the crème brûlée.",
             "options": [
-                "Meze Selection",
-                "Adana Kebab",
-                "Raki",
-                "Ayran"
+                "Salmon",
+                "Wild Rice",
+                "Crème Brûlée",
+                "Halibut"
             ],
-            "correctAnswer": "Meze Selection, Adana Kebab, Raki",
-            "hint": "Adana kebab is a spicy minced meat kebab from the Turkish city of Adana.",
-            "explanation": "Adana kebab is named after the Turkish city - spiced minced lamb and beef on a wide skewer. Raki is Turkey's national spirit - an anise-flavoured grape brandy, typically diluted with water. Ayran is a chilled yogurt drink - non-alcoholic.",
+            "correctAnswer": "Salmon, Wild Rice, Crème Brûlée",
+            "hint": "The customer compares two fish options before choosing one.",
+            "explanation": "‘Between X and Y, I’ll go with X’ is a natural way to show a decision after comparing two similar choices — only the chosen one should be selected.",
             "id": "go_l92_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the lahmacun, the İskender kebab, and an Efes beer.",
+            "prompt": "I'm celebrating a promotion, so let's do the oysters, the filet mignon, and the chocolate soufflé.",
             "options": [
-                "Lahmacun",
-                "İskender Kebab",
-                "Efes Beer",
-                "Raki"
+                "Oysters",
+                "Filet Mignon",
+                "Chocolate Soufflé",
+                "Chocolate Mousse"
             ],
-            "correctAnswer": "Lahmacun, İskender Kebab, Efes Beer",
-            "hint": "Lahmacun is Turkish flatbread with minced meat - sometimes called Turkish pizza.",
-            "explanation": "Lahmacun is a thin flatbread topped with spiced minced meat, onion, and tomato. İskender kebab is sliced döner meat served over bread with tomato sauce and yogurt. Efes is a popular Turkish lager beer. Raki is a spirit - categorically different from beer.",
+            "correctAnswer": "Oysters, Filet Mignon, Chocolate Soufflé",
+            "hint": "The occasion explains why the customer is ordering something special.",
+            "explanation": "Mentioning the reason for celebrating helps explain a more indulgent order, similar to earlier ‘splurge’ examples.",
             "id": "go_l92_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the pide, the lamb güveç, and a Turkish tea?",
+            "prompt": "We have a flight to catch, so let's keep it quick — the soup, the club sandwich, and a coffee to go, please.",
             "options": [
-                "Pide",
-                "Lamb Güveç",
-                "Turkish Tea",
-                "Ayran"
+                "Soup",
+                "Club Sandwich",
+                "Coffee",
+                "Salad"
             ],
-            "correctAnswer": "Pide, Lamb Güveç, Turkish Tea",
-            "hint": "Pide is Turkish flatbread baked in a wood-fired oven - similar to pizza in shape.",
-            "explanation": "Pide is a boat-shaped Turkish flatbread with various toppings, baked in a wood-fired oven. Güveç is a slow-cooked Turkish clay pot stew - 'lamb güveç' tells you the protein. Turkish tea (çay) is a strong black tea served in a small tulip-shaped glass.",
+            "correctAnswer": "Soup, Club Sandwich, Coffee",
+            "hint": "Time pressure explains why the customer wants a fast, simple order.",
+            "explanation": "‘We have a flight to catch’ explains the urgency, and ‘to go’ tells the staff the coffee should be prepared for travel.",
             "id": "go_l92_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the potted shrimp, the lamb rump with wild garlic, and the treacle tart.",
+            "prompt": "I'll have the tasting portion of the risotto, then the veal, and the panna cotta to finish.",
             "options": [
-                "Potted Shrimp",
-                "Lamb Rump with Wild Garlic",
-                "Treacle Tart",
-                "Spotted Dick"
+                "Risotto",
+                "Veal",
+                "Panna Cotta",
+                "Tiramisu"
             ],
-            "correctAnswer": "Potted Shrimp, Lamb Rump with Wild Garlic, Treacle Tart",
-            "hint": "Three courses of classic British cooking - buttered shrimp starter, spring lamb main, and golden syrup tart.",
-            "explanation": "Potted shrimp are brown shrimp preserved in spiced butter - a British classic. Wild garlic (ramsons) is a spring ingredient foraged in British woodlands. Treacle tart is a golden syrup and breadcrumb tart - a traditional British dessert.",
+            "correctAnswer": "Risotto, Veal, Panna Cotta",
+            "hint": "‘Tasting portion’ means a smaller serving size, but the item name stays the same.",
+            "explanation": "A ‘tasting portion’ is a smaller-than-normal serving, often available so guests can sample more dishes without ordering full plates of each.",
             "id": "go_l93_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the kipper pâté, the beef dripping roast, and the rhubarb fool.",
+            "prompt": "Take your time — actually, I'll go with the beet salad, the pork chop, and the apple tart.",
             "options": [
-                "Kipper Pâté",
-                "Beef Dripping Roast",
-                "Rhubarb Fool",
-                "Gooseberry Crumble"
+                "Beet Salad",
+                "Pork Chop",
+                "Apple Tart",
+                "Pear Tart"
             ],
-            "correctAnswer": "Kipper Pâté, Beef Dripping Roast, Rhubarb Fool",
-            "hint": "A rhubarb fool is a British dessert of cooked rhubarb folded into cream.",
-            "explanation": "Kipper pâté is smoked herring blended into a smooth spread - a British starter. Beef dripping roast potatoes are roasted in rendered beef fat - a traditional British technique. Rhubarb fool is tart rhubarb purée folded into whipped cream - different from crumble.",
+            "correctAnswer": "Beet Salad, Pork Chop, Apple Tart",
+            "hint": "The customer pauses to think, encouraged by the server, before naming their final order.",
+            "explanation": "‘Take your time’ is something a server might say, and ‘actually, I’ll go with…’ shows the customer using that time to settle on an answer.",
             "id": "go_l93_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the devilled whitebait, the venison steak with celeriac, and the burnt cream?",
+            "prompt": "My colleague recommended this place. I'll have the burrata, the seafood pasta, and the affogato.",
             "options": [
-                "Devilled Whitebait",
-                "Venison Steak with Celeriac",
-                "Burnt Cream",
-                "Syllabub"
+                "Burrata",
+                "Seafood Pasta",
+                "Affogato",
+                "Tiramisu"
             ],
-            "correctAnswer": "Devilled Whitebait, Venison Steak with Celeriac, Burnt Cream",
-            "hint": "'Burnt cream' is the original English name for what the French called crème brûlée.",
-            "explanation": "Devilled whitebait are tiny deep-fried whole fish seasoned with cayenne - a British pub classic. Celeriac is a knobbly root vegetable with a mild celery flavour - often paired with game. 'Burnt cream' is the historical English predecessor to crème brûlée.",
+            "correctAnswer": "Burrata, Seafood Pasta, Affogato",
+            "hint": "A recommendation from a colleague explains why the customer chose this restaurant.",
+            "explanation": "‘My colleague recommended this place’ gives context for the order without changing what needs to be selected — just the reason behind the visit.",
             "id": "go_l93_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the pho bo, the bánh xèo, and a coconut water.",
+            "prompt": "To celebrate closing the deal, let's order the champagne, the surf and turf, and the chocolate torte.",
             "options": [
-                "Pho Bo",
-                "Bánh Xèo",
-                "Coconut Water",
-                "Vietnamese Iced Coffee"
+                "Champagne",
+                "Surf and Turf",
+                "Chocolate Torte",
+                "Chocolate Mousse"
             ],
-            "correctAnswer": "Pho Bo, Bánh Xèo, Coconut Water",
-            "hint": "Pho bo is Vietnamese beef noodle soup - 'bo' means beef in Vietnamese.",
-            "explanation": "Pho bo (beef pho) is Vietnam's most famous dish - a rich beef broth with rice noodles and herbs. Bánh xèo is a crispy Vietnamese sizzling rice crêpe filled with pork and shrimp. Coconut water is natural, lightly sweet - different from iced coffee.",
+            "correctAnswer": "Champagne, Surf and Turf, Chocolate Torte",
+            "hint": "A successful business event is the reason for this celebratory order.",
+            "explanation": "‘Closing the deal’ is a business expression meaning an agreement was successfully completed — a natural reason to celebrate with a nicer meal.",
             "id": "go_l94_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the gỏi cuốn, the bún bò Huế, and a sugar cane juice.",
+            "prompt": "Could you tell me more about the wild mushroom risotto? That sounds perfect — I'll have that, the burrata, and the panna cotta.",
             "options": [
-                "Gỏi Cuốn",
-                "Bún Bò Huế",
-                "Sugar Cane Juice",
-                "Coconut Water"
+                "Wild Mushroom Risotto",
+                "Burrata",
+                "Panna Cotta",
+                "Affogato"
             ],
-            "correctAnswer": "Gỏi Cuốn, Bún Bò Huế, Sugar Cane Juice",
-            "hint": "Gỏi cuốn are Vietnamese fresh spring rolls - not fried.",
-            "explanation": "Gỏi cuốn are fresh (unfried) Vietnamese spring rolls wrapped in rice paper with shrimp, pork, and herbs. Bún bò Huế is a spicy beef and pork noodle soup from the city of Huế - more robust than pho. Sugar cane juice is freshly pressed from sugar cane stalks.",
+            "correctAnswer": "Wild Mushroom Risotto, Burrata, Panna Cotta",
+            "hint": "A question about the main course comes before the full order is confirmed, out of order from the usual starter-first pattern.",
+            "explanation": "Customers don't always ask about dishes in the order they'll eat them — here, the main course question comes before naming the starter and dessert.",
             "id": "go_l94_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the chả giò, the cơm tấm, and a Vietnamese iced coffee?",
+            "prompt": "This is a business lunch, so I'll keep it simple: the soup, the grilled salmon, and a sparkling water.",
             "options": [
-                "Chả Giò",
-                "Cơm Tấm",
-                "Vietnamese Iced Coffee",
-                "Coconut Water"
+                "Soup",
+                "Grilled Salmon",
+                "Sparkling Water",
+                "Still Water"
             ],
-            "correctAnswer": "Chả Giò, Cơm Tấm, Vietnamese Iced Coffee",
-            "hint": "Chả giò are fried Vietnamese spring rolls - unlike the fresh gỏi cuốn.",
-            "explanation": "Chả giò are deep-fried Vietnamese spring rolls - crispy outside, unlike the fresh gỏi cuốn. Cơm tấm is broken rice topped with grilled pork chop, egg meatloaf, and pickled vegetables - a beloved Southern Vietnamese street meal.",
+            "correctAnswer": "Soup, Grilled Salmon, Sparkling Water",
+            "hint": "Once again, simplicity is chosen deliberately for a professional setting.",
+            "explanation": "Choosing simple, easy-to-eat dishes is common at business lunches, where neat presentation and easy conversation matter more than elaborate food.",
             "id": "go_l94_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the arancini al ragù, the spaghetti alle vongole, and the cassata.",
+            "prompt": "Between the ribeye and the porterhouse, I'll go with the porterhouse. Then the creamed spinach and the cheesecake.",
             "options": [
-                "Arancini al Ragù",
-                "Spaghetti alle Vongole",
-                "Cassata",
-                "Cannoli"
+                "Porterhouse",
+                "Creamed Spinach",
+                "Cheesecake",
+                "Ribeye"
             ],
-            "correctAnswer": "Arancini al Ragù, Spaghetti alle Vongole, Cassata",
-            "hint": "Three classic Sicilian dishes - rice balls, clam pasta, and a ricotta cake.",
-            "explanation": "Arancini al ragù are rice balls filled with meat ragù. Spaghetti alle vongole is pasta with clams in white wine and garlic. Cassata is a Sicilian cake of sponge, sweet ricotta, candied fruit, and marzipan - different from the tube-shaped cannoli.",
+            "correctAnswer": "Porterhouse, Creamed Spinach, Cheesecake",
+            "hint": "This time, the second option mentioned is the one the customer actually chooses.",
+            "explanation": "Whether the chosen item is named first or second in the comparison, the words ‘I’ll go with…’ always mark the true final decision.",
             "id": "go_l95_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the caponata, the pesce spada alla messinese, and the granita.",
+            "prompt": "I'm celebrating a promotion, so let's do the caviar, the wagyu, and the crème brûlée.",
             "options": [
-                "Caponata",
-                "Pesce Spada alla Messinese",
-                "Granita",
-                "Cannoli"
+                "Caviar",
+                "Wagyu",
+                "Crème Brûlée",
+                "Panna Cotta"
             ],
-            "correctAnswer": "Caponata, Pesce Spada alla Messinese, Granita",
-            "hint": "Granita is a Sicilian semi-frozen dessert - granular and refreshing.",
-            "explanation": "Caponata is a Sicilian sweet-and-sour aubergine relish - served cold as a starter. Pesce spada alla messinese is swordfish Messina-style with capers, olives, and tomatoes. Granita is a semi-frozen granular dessert made from sugar, water, and flavouring - lighter than gelato.",
+            "correctAnswer": "Caviar, Wagyu, Crème Brûlée",
+            "hint": "A significant career achievement explains this especially indulgent order.",
+            "explanation": "The reason for celebrating can change from order to order, but the sentence pattern for expressing it stays useful and repeatable.",
             "id": "go_l95_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the pasta alla Norma, the falsomagro, and a glass of Nero d'Avola?",
+            "prompt": "We have a flight to catch, so let's keep it quick — the wrap, the fruit cup, and a bottled water, please.",
             "options": [
-                "Pasta alla Norma",
-                "Falsomagro",
-                "Nero d'Avola",
-                "Marsala"
+                "Wrap",
+                "Fruit Cup",
+                "Bottled Water",
+                "Sparkling Water"
             ],
-            "correctAnswer": "Pasta alla Norma, Falsomagro, Nero d'Avola",
-            "hint": "Nero d'Avola is Sicily's most important red wine grape variety.",
-            "explanation": "Pasta alla Norma is a Sicilian pasta with aubergine, tomato sauce, basil, and ricotta salata - named after Bellini's opera. Falsomagro is a Sicilian stuffed beef roll. Nero d'Avola is Sicily's flagship red wine. Marsala is a Sicilian fortified wine - different style.",
+            "correctAnswer": "Wrap, Fruit Cup, Bottled Water",
+            "hint": "Once again, time pressure leads to a fast, simple order.",
+            "explanation": "‘Bottled water’ is easy to carry through an airport, unlike a drink that needs a glass — a practical detail for a traveler in a hurry.",
             "id": "go_l95_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the seven-course tasting menu with the wine flight, and could I have the vegetarian option for the fish course?",
+            "prompt": "I'll have the tasting portion of the duck, then the halibut, and the lemon tart to finish.",
             "options": [
-                "Seven-Course Tasting Menu",
-                "Wine Flight",
-                "Vegetarian Fish Course",
-                "Cheese Course"
+                "Duck",
+                "Halibut",
+                "Lemon Tart",
+                "Chocolate Tart"
             ],
-            "correctAnswer": "Seven-Course Tasting Menu, Wine Flight, Vegetarian Fish Course",
-            "hint": "The customer orders a tasting menu with a substitution for one specific course.",
-            "explanation": "In fine dining, substituting a single course (the fish course for a vegetarian option) while keeping the rest of the menu is a common request. The wine flight is a curated matching of wines to each course - a separate supplement.",
+            "correctAnswer": "Duck, Halibut, Lemon Tart",
+            "hint": "This time, the tasting portion applies to the first course rather than a main.",
+            "explanation": "Ordering a tasting portion of an early course allows a guest to try something rich, like duck, without feeling too full for the rest of the meal.",
             "id": "go_l96_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I take the full tasting experience with the sommelier's wine pairing, and add the coffee service at the end?",
+            "prompt": "Take your time — actually, I'll go with the calamari, the swordfish, and the coconut cream pie.",
             "options": [
-                "Full Tasting Experience",
-                "Sommelier's Wine Pairing",
-                "Coffee Service",
-                "Cheese Course"
+                "Calamari",
+                "Swordfish",
+                "Coconut Cream Pie",
+                "Key Lime Pie"
             ],
-            "correctAnswer": "Full Tasting Experience, Sommelier's Wine Pairing, Coffee Service",
-            "hint": "Three elements of a complete fine dining experience - the menu, the wine, and coffee.",
-            "explanation": "A sommelier (wine specialist) personally selects wines matched to each course. Adding 'coffee service at the end' means coffee with petit fours is served as a post-dessert stage. The cheese course was not ordered - listen carefully.",
+            "correctAnswer": "Calamari, Swordfish, Coconut Cream Pie",
+            "hint": "Another pause for thought comes before a final, confident order.",
+            "explanation": "This structure — an invitation to think, then a decision — is common whenever a customer needs a moment before choosing from a full menu.",
             "id": "go_l96_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll take the tasting menu, the amuse-bouche supplement, and the pre-dessert champagne pairing.",
+            "prompt": "My colleague recommended this place. I'll have the shrimp bisque, the filet mignon, and the profiteroles.",
             "options": [
-                "Tasting Menu",
-                "Amuse-Bouche Supplement",
-                "Pre-Dessert Champagne Pairing",
-                "Cheese Course Supplement"
+                "Shrimp Bisque",
+                "Filet Mignon",
+                "Profiteroles",
+                "Éclair"
             ],
-            "correctAnswer": "Tasting Menu, Amuse-Bouche Supplement, Pre-Dessert Champagne Pairing",
-            "hint": "An amuse-bouche supplement adds an extra pre-starter tasting item.",
-            "explanation": "An amuse-bouche is a tiny single-bite appetiser sent by the chef before the meal begins. A 'supplement' means an additional charge. Pre-dessert champagne pairing matches a glass of champagne to the palate-cleansing course before the main dessert.",
+            "correctAnswer": "Shrimp Bisque, Filet Mignon, Profiteroles",
+            "hint": "The same recommendation phrase reappears, now attached to a different meal.",
+            "explanation": "Useful phrases like ‘my colleague recommended this place’ can be reused across many different situations and orders.",
             "id": "go_l96_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the charcuterie selection, the artisan cheese board, and a glass of port.",
+            "prompt": "To celebrate closing the deal, let's order the oysters, the lobster, and the chocolate lava cake.",
             "options": [
-                "Charcuterie Selection",
-                "Artisan Cheese Board",
-                "Port",
-                "Sauternes"
+                "Oysters",
+                "Lobster",
+                "Chocolate Lava Cake",
+                "Chocolate Mousse"
             ],
-            "correctAnswer": "Charcuterie Selection, Artisan Cheese Board, Port",
-            "hint": "Port is a fortified Portuguese wine - a classic match with cheese.",
-            "explanation": "Port wine is a fortified Portuguese wine from the Douro Valley - traditionally served with cheese. Sauternes is a sweet French dessert wine - also served with cheese but a different style. A charcuterie selection and a cheese board together make a classic French-inspired evening.",
+            "correctAnswer": "Oysters, Lobster, Chocolate Lava Cake",
+            "hint": "This celebratory order once again marks a successful business outcome.",
+            "explanation": "Repeating a useful structure with new vocabulary — like ‘lobster’ and ‘chocolate lava cake’ — helps reinforce the pattern while expanding menu knowledge.",
             "id": "go_l97_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the cheese and charcuterie platter to share, with the quince jelly, and a glass of Riesling.",
+            "prompt": "Could you tell me more about the osso buco? That sounds wonderful — I'll have that, the burrata, and the tiramisu.",
             "options": [
-                "Cheese and Charcuterie Platter",
-                "Quince Jelly",
-                "Riesling",
-                "Sauternes"
+                "Osso Buco",
+                "Burrata",
+                "Tiramisu",
+                "Affogato"
             ],
-            "correctAnswer": "Cheese and Charcuterie Platter, Quince Jelly, Riesling",
-            "hint": "Quince jelly is a sweet fruit preserve - a traditional accompaniment to cheese.",
-            "explanation": "Quince jelly is made from quince fruit - its sweet, floral flavour complements salty cheeses perfectly. Riesling is a fragrant, high-acid white wine that cuts through the richness of cheese and charcuterie. It can range from dry to sweet.",
+            "correctAnswer": "Osso Buco, Burrata, Tiramisu",
+            "hint": "A question about an unfamiliar dish leads to a confident final order.",
+            "explanation": "‘Osso buco’ is a braised veal shank, a dish some diners might not recognize by name, making a clarifying question especially useful.",
             "id": "go_l97_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the aged Comté, the jambon de Bayonne, and a glass of Côtes du Rhône?",
+            "prompt": "This is a business lunch, so I'll keep it simple: the salad, the turkey sandwich, and an unsweetened iced tea.",
             "options": [
-                "Aged Comté",
-                "Jambon de Bayonne",
-                "Côtes du Rhône",
-                "Bordeaux"
+                "Salad",
+                "Turkey Sandwich",
+                "Unsweetened Iced Tea",
+                "Sweet Tea"
             ],
-            "correctAnswer": "Aged Comté, Jambon de Bayonne, Côtes du Rhône",
-            "hint": "Comté is a French mountain cheese aged for months - nutty and complex.",
-            "explanation": "Comté is a French Alpine cheese made from raw cow's milk and aged for at least four months. Jambon de Bayonne is a French cured ham from the Basque region - similar to Parma ham. Côtes du Rhône is a reliable red Rhône wine; Bordeaux is a different region.",
+            "correctAnswer": "Salad, Turkey Sandwich, Unsweetened Iced Tea",
+            "hint": "The now-familiar ‘keep it simple’ phrase appears again with new menu items.",
+            "explanation": "Business lunch orders often repeat similar patterns — simple food, easy drinks — no matter which specific restaurant is chosen.",
             "id": "go_l97_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "For the fish course I'd like the sea trout, for the meat course the Hereford beef, and for dessert the chocolate delice.",
+            "prompt": "Between the halibut and the sea bass, I'll go with the sea bass. Then the risotto and the panna cotta.",
             "options": [
-                "Sea Trout",
-                "Hereford Beef",
-                "Chocolate Delice",
-                "Lemon Tart"
+                "Sea Bass",
+                "Risotto",
+                "Panna Cotta",
+                "Halibut"
             ],
-            "correctAnswer": "Sea Trout, Hereford Beef, Chocolate Delice",
-            "hint": "The customer names three courses explicitly - fish, meat, and dessert.",
-            "explanation": "Sea trout is a sea-run form of brown trout - with pink flesh like salmon. Hereford beef refers to cattle from the Herefordshire breed - named for provenance. A chocolate delice is a smooth, rich, dense chocolate tart - different from a lemon tart.",
+            "correctAnswer": "Sea Bass, Risotto, Panna Cotta",
+            "hint": "A comparison between two fish is resolved, followed by two more courses.",
+            "explanation": "This comparison structure works with any two similar menu items, always ending in one clear, selected choice.",
             "id": "go_l98_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll substitute the duck for chicken in the second course, keep the fish course as it is, and add the cheese course at the end.",
+            "prompt": "I'm celebrating a promotion, so let's do the tuna tartare, the venison, and the dark chocolate mousse.",
             "options": [
-                "Chicken (Second Course)",
-                "Fish Course",
-                "Cheese Course",
-                "Duck"
+                "Tuna Tartare",
+                "Venison",
+                "Dark Chocolate Mousse",
+                "Chocolate Torte"
             ],
-            "correctAnswer": "Chicken (Second Course), Fish Course, Cheese Course",
-            "hint": "Two items are kept as-is, one is substituted, and one new course is added.",
-            "explanation": "This complex order involves substitution and addition. The customer swaps duck for chicken in course two, keeps the fish course unchanged, and adds a cheese course at the end. Duck is the distractor - it is being replaced, not ordered.",
+            "correctAnswer": "Tuna Tartare, Venison, Dark Chocolate Mousse",
+            "hint": "New vocabulary appears, but the celebratory sentence structure stays familiar.",
+            "explanation": "Recognizing a familiar sentence pattern makes it easier to understand new vocabulary within it, even words like ‘venison’ that may be unfamiliar.",
             "id": "go_l98_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll take the full menu but replace the foie gras with the burrata - otherwise the same.",
+            "prompt": "We have a flight to catch, so let's keep it quick — the bagel, the yogurt, and an orange juice, please.",
             "options": [
-                "Full Menu",
-                "Burrata (Instead of Foie Gras)",
-                "Foie Gras",
-                "Standard Course"
+                "Bagel",
+                "Yogurt",
+                "Orange Juice",
+                "Apple Juice"
             ],
-            "correctAnswer": "Full Menu, Burrata (Instead of Foie Gras)",
-            "hint": "Two items: the complete menu, and a single dish substitution.",
-            "explanation": "Foie gras is fattened duck or goose liver - some diners prefer to substitute it for ethical reasons. 'Otherwise the same' means all other courses stay identical. Only two items are ordered here - the menu and the substitution. Foie gras is the distractor - it is being replaced.",
+            "correctAnswer": "Bagel, Yogurt, Orange Juice",
+            "hint": "A simple, portable breakfast order fits the time pressure of travel.",
+            "explanation": "Bagels and yogurt are easy to eat quickly, making them popular choices for travelers who need to catch a flight soon.",
             "id": "go_l98_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "It's quite late, so I'll just have the charcuterie, the cheese, and a glass of Sauternes.",
+            "prompt": "I'll have the tasting portion of the foie gras, then the lamb rack, and the crème caramel to finish.",
             "options": [
-                "Charcuterie",
-                "Cheese",
-                "Sauternes",
-                "Port"
+                "Foie Gras",
+                "Lamb Rack",
+                "Crème Caramel",
+                "Panna Cotta"
             ],
-            "correctAnswer": "Charcuterie, Cheese, Sauternes",
-            "hint": "Sauternes is a sweet French white wine - traditionally served with foie gras or cheese.",
-            "explanation": "Sauternes is a lusciously sweet white wine from the Graves region of Bordeaux - made from botrytised grapes. It pairs superbly with both foie gras and cheese. Port is also served with cheese but is red and fortified - a different experience.",
+            "correctAnswer": "Foie Gras, Lamb Rack, Crème Caramel",
+            "hint": "A rich, expensive starter is requested in a smaller portion.",
+            "explanation": "Foie gras is often rich and filling, so a tasting portion lets a guest enjoy it without overdoing the first course.",
             "id": "go_l99_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like something light - the soup of the day, the baguette, and a glass of house white.",
+            "prompt": "Take your time — actually, I'll go with the endive salad, the veal chop, and the almond cake.",
             "options": [
-                "Soup of the Day",
-                "Baguette",
-                "House White",
-                "House Red"
+                "Endive Salad",
+                "Veal Chop",
+                "Almond Cake",
+                "Olive Oil Cake"
             ],
-            "correctAnswer": "Soup of the Day, Baguette, House White",
-            "hint": "A simple, light late-evening order - soup, bread, and a white wine.",
-            "explanation": "House white is a lighter wine choice than house red - appropriate with a light soup dinner. The customer specifically says 'house white', not red. 'Something light' signals they want a simple, less heavy meal.",
+            "correctAnswer": "Endive Salad, Veal Chop, Almond Cake",
+            "hint": "The familiar ‘take your time’ pause returns once more with new dishes.",
+            "explanation": "By now, this pattern should feel familiar: a pause for thought, followed by a confident final decision.",
             "id": "go_l99_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "After the theatre, I'll just have the Welsh rarebit, a glass of port, and the crème caramel.",
+            "prompt": "My colleague recommended this place. I'll have the crab cakes, the swordfish, and the key lime pie.",
             "options": [
-                "Welsh Rarebit",
-                "Port",
-                "Crème Caramel",
-                "Eton Mess"
+                "Crab Cakes",
+                "Swordfish",
+                "Key Lime Pie",
+                "Coconut Cream Pie"
             ],
-            "correctAnswer": "Welsh Rarebit, Port, Crème Caramel",
-            "hint": "Welsh rarebit is melted cheese sauce on toast - a classic British savoury.",
-            "explanation": "Welsh rarebit is toasted bread covered in a rich melted cheese sauce - often with mustard and Worcestershire sauce. It is a satisfying savoury snack. Crème caramel is a custard set in caramel - different from Eton mess, which uses meringue and strawberries.",
+            "correctAnswer": "Crab Cakes, Swordfish, Key Lime Pie",
+            "hint": "The same trusted recommendation phrase appears again, tied to yet another meal.",
+            "explanation": "This phrase works equally well whether the recommendation is for a casual lunch spot or a special-occasion restaurant.",
             "id": "go_l99_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll take the tasting menu, the sommelier's wine pairing, and the truffle supplement added to the risotto course.",
+            "prompt": "To celebrate closing the deal, let's order the champagne, the wagyu steak, and the chocolate soufflé.",
             "options": [
-                "Tasting Menu",
-                "Sommelier's Wine Pairing",
-                "Truffle Supplement",
-                "Cheese Course"
+                "Champagne",
+                "Wagyu Steak",
+                "Chocolate Soufflé",
+                "Chocolate Mousse"
             ],
-            "correctAnswer": "Tasting Menu, Sommelier's Wine Pairing, Truffle Supplement",
-            "hint": "Three fine dining elements - a full menu, a wine pairing, and a luxury supplement.",
-            "explanation": "This order combines three premium dining elements. The truffle supplement adds fresh truffle to a specific course for an extra charge. The cheese course was not ordered - only the three specified items. This is a signature fine dining experience.",
+            "correctAnswer": "Champagne, Wagyu Steak, Chocolate Soufflé",
+            "hint": "This final celebratory order in the set marks an especially significant achievement.",
+            "explanation": "‘Wagyu steak’ and ‘chocolate soufflé’ both represent higher-end menu choices, matching the importance of the occasion.",
             "id": "go_l100_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "We'll share a bottle of Barolo, and for me the game terrine to start and the venison for my main.",
+            "prompt": "Could you tell me more about the tasting menu? That sounds wonderful — I'll have that, paired with the wine flight, and I'll add the cheese course at the end.",
             "options": [
-                "Barolo",
-                "Game Terrine",
-                "Venison",
-                "Duck Breast"
+                "Tasting Menu",
+                "Wine Flight",
+                "Cheese Course",
+                "Chef's Recommendation"
             ],
-            "correctAnswer": "Barolo, Game Terrine, Venison",
-            "hint": "Three items: shared wine, customer's starter, and customer's main.",
-            "explanation": "Game terrine is a cold pressed preparation of game meats like rabbit, pheasant, or hare. Venison (deer) is a game meat that pairs classically with Barolo. Duck breast would also pair well but was not ordered - listen carefully.",
+            "correctAnswer": "Tasting Menu, Wine Flight, Cheese Course",
+            "hint": "This order introduces a full tasting menu experience, a concept that will appear more often at higher levels.",
+            "explanation": "A ‘tasting menu’ offers several small courses chosen by the chef, often paired with a ‘wine flight’ — a selection of small wine pours meant to complement each course.",
             "id": "go_l100_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "For my last meal here, I'd like the signature tartare, the Wagyu fillet, and the Grand Marnier soufflé.",
+            "prompt": "This is a business lunch, so I'll keep it simple: the soup, the roasted chicken, and a sparkling water.",
             "options": [
-                "Signature Tartare",
-                "Wagyu Fillet",
-                "Grand Marnier Soufflé",
-                "Chocolate Fondant"
+                "Soup",
+                "Roasted Chicken",
+                "Sparkling Water",
+                "Still Water"
             ],
-            "correctAnswer": "Signature Tartare, Wagyu Fillet, Grand Marnier Soufflé",
-            "hint": "A celebratory final meal - three signature dishes from the restaurant's menu.",
-            "explanation": "Wagyu is a Japanese cattle breed producing beef with exceptional marbling - one of the world's most prized meats. A Grand Marnier soufflé is a light, airy baked dessert flavoured with orange liqueur - it must be pre-ordered as it cannot be rushed.",
+            "correctAnswer": "Soup, Roasted Chicken, Sparkling Water",
+            "hint": "A familiar, simple order returns to close out this set of levels.",
+            "explanation": "Ending on a comfortable, familiar structure — soup, a simple main, and water — reinforces the patterns learned throughout this tier before the vocabulary grows more advanced.",
             "id": "go_l100_q3"
         }
     ]

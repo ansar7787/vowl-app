@@ -4,483 +4,483 @@
     "levels": "51-60",
     "quests": [
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll start with the burrata, then have the sea bass, and finish with the panna cotta.",
+            "prompt": "I'll have the quiche Lorraine for my starter, the eggs benedict for my main, and a mimosa to drink.",
             "options": [
-                "Burrata",
-                "Sea Bass",
-                "Panna Cotta",
-                "Crème Brûlée"
-            ],
-            "correctAnswer": "Burrata, Sea Bass, Panna Cotta",
-            "hint": "Temporal words - 'start with', 'then', 'finish with' - tell you the course order.",
-            "explanation": "Using 'start with... then... finish with' describes a three-course meal in sequence. Panna cotta is Italian sweetened cream set with gelatin. Crème brûlée is a French dessert with a caramelised sugar top - both are creamy but different.",
-            "id": "go_l51_q1"
-        },
-        {
-            "instruction": "Tap the items to fulfill the client's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "selection",
-            "prompt": "I'd like the charcuterie board to start, the braised lamb shank for main, and the chocolate tart for dessert.",
-            "options": [
-                "Charcuterie Board",
-                "Braised Lamb Shank",
-                "Chocolate Tart",
-                "Cheese Board"
-            ],
-            "correctAnswer": "Charcuterie Board, Braised Lamb Shank, Chocolate Tart",
-            "hint": "Course labels - 'to start', 'for main', 'for dessert' - identify each item's place in the meal.",
-            "explanation": "This order uses clear course labels. A lamb shank is the lower leg of the animal, slow-braised until tender. A charcuterie board features cured meats - different from a cheese board.",
-            "id": "go_l51_q2"
-        },
-        {
-            "instruction": "Tap the items to fulfill the client's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "selection",
-            "prompt": "Could I have the Caesar salad, the duck breast, and a glass of Pinot Noir?",
-            "options": [
-                "Caesar Salad",
-                "Duck Breast",
-                "Pinot Noir",
-                "Merlot"
-            ],
-            "correctAnswer": "Caesar Salad, Duck Breast, Pinot Noir",
-            "hint": "Pinot Noir is a lighter red wine - the classic pairing with duck.",
-            "explanation": "Duck breast is rich and often served medium-rare like steak. Pinot Noir is a lighter-bodied red wine with earthy notes - the classic pairing with duck. Merlot would also work but was not ordered here.",
-            "id": "go_l51_q3"
-        },
-        {
-            "instruction": "Tap the items to fulfill the client's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "selection",
-            "prompt": "I'll have the antipasto platter, the osso buco, and a bottle of Barolo.",
-            "options": [
-                "Antipasto Platter",
-                "Osso Buco",
-                "Barolo",
-                "Brunello"
-            ],
-            "correctAnswer": "Antipasto Platter, Osso Buco, Barolo",
-            "hint": "Osso buco means 'hollow bone' in Italian - it is braised veal shank.",
-            "explanation": "Osso buco is a Milanese dish of braised veal shanks. Barolo is a prestigious Italian red wine from Piedmont - known as the King of Italian wines. Brunello is another prestigious Italian wine but from a different region.",
-            "id": "go_l52_q1"
-        },
-        {
-            "instruction": "Tap the items to fulfill the client's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "selection",
-            "prompt": "I'd like the French onion soup, the steak au poivre, and a crème brûlée.",
-            "options": [
-                "French Onion Soup",
-                "Steak au Poivre",
-                "Crème Brûlée",
-                "Tarte Tatin"
-            ],
-            "correctAnswer": "French Onion Soup, Steak au Poivre, Crème Brûlée",
-            "hint": "'Au poivre' means 'with pepper' in French - steak au poivre has a peppercorn crust.",
-            "explanation": "Steak au poivre features a peppercorn crust and cognac cream sauce. Crème brûlée has a hard caramelised sugar top. Tarte Tatin is a French upside-down caramelised apple tart - both are French desserts but very different.",
-            "id": "go_l52_q2"
-        },
-        {
-            "instruction": "Tap the items to fulfill the client's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "selection",
-            "prompt": "Could I get the beef tartare, the lamb rack, and a glass of Syrah?",
-            "options": [
-                "Beef Tartare",
-                "Lamb Rack",
-                "Syrah",
-                "Grenache"
-            ],
-            "correctAnswer": "Beef Tartare, Lamb Rack, Syrah",
-            "hint": "Syrah (also called Shiraz) is a bold red wine - well-suited to lamb.",
-            "explanation": "Beef tartare is seasoned raw minced beef served cold. A rack of lamb is the rib section with bones protruding - an elegant presentation. Syrah/Shiraz is a full-bodied red wine excellent with lamb. Grenache is softer and fruitier.",
-            "id": "go_l52_q3"
-        },
-        {
-            "instruction": "Tap the items to fulfill the client's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "selection",
-            "prompt": "I'll have the seared scallops, the venison loin, and the chocolate fondant.",
-            "options": [
-                "Seared Scallops",
-                "Venison Loin",
-                "Chocolate Fondant",
-                "Lemon Posset"
-            ],
-            "correctAnswer": "Seared Scallops, Venison Loin, Chocolate Fondant",
-            "hint": "Venison is deer meat - a lean red game meat.",
-            "explanation": "Venison is deer meat - lean and gamey. Seared scallops are quickly cooked in a very hot pan to create a golden crust. A chocolate fondant (lava cake) has a warm molten chocolate centre - different from a cold lemon posset.",
-            "id": "go_l53_q1"
-        },
-        {
-            "instruction": "Tap the items to fulfill the client's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "selection",
-            "prompt": "I'd like the crayfish bisque, the roasted duck, and the tarte tatin.",
-            "options": [
-                "Crayfish Bisque",
-                "Roasted Duck",
-                "Tarte Tatin",
-                "Crème Brûlée"
-            ],
-            "correctAnswer": "Crayfish Bisque, Roasted Duck, Tarte Tatin",
-            "hint": "Crayfish are freshwater crustaceans - smaller than lobster.",
-            "explanation": "Crayfish (also crawfish) are freshwater crustaceans more delicate than lobster. A bisque made from crayfish is a rich, smooth soup. Tarte Tatin is a French upside-down caramelised apple tart - different from crème brûlée.",
-            "id": "go_l53_q2"
-        },
-        {
-            "instruction": "Tap the items to fulfill the client's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "selection",
-            "prompt": "Could I have the smoked mackerel, the beef fillet, and the sticky toffee pudding?",
-            "options": [
-                "Smoked Mackerel",
-                "Beef Fillet",
-                "Sticky Toffee Pudding",
-                "Eton Mess"
-            ],
-            "correctAnswer": "Smoked Mackerel, Beef Fillet, Sticky Toffee Pudding",
-            "hint": "Mackerel is a strong-flavoured oily fish - distinct from salmon or sea bass.",
-            "explanation": "Smoked mackerel is an oily fish with a rich, robust flavour - often served as a starter pâté. Beef fillet is the most tender steak cut. Eton Mess is a British dessert of meringue, cream, and strawberries - different from sticky toffee pudding.",
-            "id": "go_l53_q3"
-        },
-        {
-            "instruction": "Tap the items to fulfill the client's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "selection",
-            "prompt": "I'll have the tuna tartare, the black cod miso, and the mochi ice cream.",
-            "options": [
-                "Tuna Tartare",
-                "Black Cod Miso",
-                "Mochi Ice Cream",
-                "Yuzu Sorbet"
-            ],
-            "correctAnswer": "Tuna Tartare, Black Cod Miso, Mochi Ice Cream",
-            "hint": "Black cod miso is a signature dish - black cod marinated in sweet miso paste.",
-            "explanation": "Black cod (sablefish) with miso is a famous dish by chef Nobu Matsuhisa - marinated in sweet white miso for days. Mochi ice cream is Japanese rice cake wrapped around ice cream. Yuzu sorbet uses a Japanese citrus fruit.",
-            "id": "go_l54_q1"
-        },
-        {
-            "instruction": "Tap the items to fulfill the client's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "selection",
-            "prompt": "I'd like the dim sum basket, the Peking duck pancakes, and a jasmine tea.",
-            "options": [
-                "Dim Sum Basket",
-                "Peking Duck Pancakes",
-                "Jasmine Tea",
-                "Oolong Tea"
-            ],
-            "correctAnswer": "Dim Sum Basket, Peking Duck Pancakes, Jasmine Tea",
-            "hint": "Peking duck is served in thin pancakes with hoisin sauce and spring onions.",
-            "explanation": "Peking duck is a famous Chinese dish - the crispy skin and meat are wrapped in thin pancakes with hoisin sauce. Dim sum refers to small dumplings and snacks. Jasmine and oolong are both Chinese teas but with distinct flavours.",
-            "id": "go_l54_q2"
-        },
-        {
-            "instruction": "Tap the items to fulfill the client's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "selection",
-            "prompt": "Could I get the prawn har gow, the char siu bao, and the egg tarts?",
-            "options": [
-                "Prawn Har Gow",
-                "Char Siu Bao",
-                "Egg Tarts",
-                "Sesame Balls"
-            ],
-            "correctAnswer": "Prawn Har Gow, Char Siu Bao, Egg Tarts",
-            "hint": "These are all Cantonese dim sum dishes - listen for each specific name.",
-            "explanation": "Har gow are steamed prawn dumplings in translucent wrappers. Char siu bao are fluffy buns filled with barbecued pork. Egg tarts are custard-filled pastry cups - a Hong Kong classic. Sesame balls are a different dim sum dessert.",
-            "id": "go_l54_q3"
-        },
-        {
-            "instruction": "Tap the items to fulfill the client's order.",
-            "subtype": "gourmetOrder",
-            "interactionType": "selection",
-            "prompt": "I'll have the smoked salmon eggs Benedict, the truffle fries, and a mimosa.",
-            "options": [
-                "Smoked Salmon Eggs Benedict",
-                "Truffle Fries",
+                "Quiche Lorraine",
+                "Eggs Benedict",
                 "Mimosa",
                 "Bloody Mary"
             ],
-            "correctAnswer": "Smoked Salmon Eggs Benedict, Truffle Fries, Mimosa",
-            "hint": "Truffle fries are seasoned with truffle oil - an upscale twist on a simple side.",
-            "explanation": "Truffle fries are fries seasoned with truffle oil or shaved truffles - a luxury upgrade. A mimosa is champagne with orange juice. Smoked salmon eggs Benedict is the 'royale' version using smoked salmon instead of ham.",
+            "correctAnswer": "Quiche Lorraine, Eggs Benedict, Mimosa",
+            "hint": "A savory tart starter, an egg dish main, and a brunch cocktail complete this order.",
+            "explanation": "A ‘mimosa’ is a classic brunch drink made with champagne and orange juice. ‘Quiche Lorraine’ is a savory tart filled with eggs, cream, and bacon.",
+            "id": "go_l51_q1"
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "selection",
+            "prompt": "Can we start with the pastry basket, move on to the shakshuka, and end with a cold brew?",
+            "options": [
+                "Pastry Basket",
+                "Shakshuka",
+                "Cold Brew",
+                "Iced Latte"
+            ],
+            "correctAnswer": "Pastry Basket, Shakshuka, Cold Brew",
+            "hint": "A basket of baked goods, a spiced egg dish, and a coffee drink are named in order.",
+            "explanation": "‘Shakshuka’ is eggs poached in a spiced tomato sauce, a popular modern brunch dish. ‘Cold brew’ is coffee steeped slowly in cold water.",
+            "id": "go_l51_q2"
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "selection",
+            "prompt": "I'd like the granola parfait, then the smoked salmon bagel, and finally an orange juice.",
+            "options": [
+                "Granola Parfait",
+                "Smoked Salmon Bagel",
+                "Orange Juice",
+                "Apple Juice"
+            ],
+            "correctAnswer": "Granola Parfait, Smoked Salmon Bagel, Orange Juice",
+            "hint": "A layered yogurt dish, a bagel topped with fish, and a breakfast drink are all named in sequence.",
+            "explanation": "A ‘parfait’ is served in layers, usually yogurt, granola, and fruit. ‘Smoked salmon’ is a classic bagel topping at brunch.",
+            "id": "go_l51_q3"
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "selection",
+            "prompt": "First the shrimp cocktail, then the ribeye steak, and last the creamed spinach, please.",
+            "options": [
+                "Shrimp Cocktail",
+                "Ribeye Steak",
+                "Creamed Spinach",
+                "Mashed Potatoes"
+            ],
+            "correctAnswer": "Shrimp Cocktail, Ribeye Steak, Creamed Spinach",
+            "hint": "A chilled seafood starter, a specific cut of steak, and a rich side dish are named in order.",
+            "explanation": "‘Ribeye’ is a specific cut of steak known for its marbling and flavor. ‘Creamed spinach’ is a classic steakhouse side made with spinach in a rich cream sauce.",
+            "id": "go_l52_q1"
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "selection",
+            "prompt": "I'll begin with the wedge salad, continue with the filet mignon, and end with the loaded baked potato.",
+            "options": [
+                "Wedge Salad",
+                "Filet Mignon",
+                "Loaded Baked Potato",
+                "Sweet Potato Fries"
+            ],
+            "correctAnswer": "Wedge Salad, Filet Mignon, Loaded Baked Potato",
+            "hint": "A crisp lettuce salad, a tender cut of steak, and a topped potato side are named in order.",
+            "explanation": "‘Filet mignon’ is a tender, lean cut of steak from the smaller end of the tenderloin. A ‘wedge salad’ is a quarter head of lettuce served with dressing and toppings.",
+            "id": "go_l52_q2"
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "selection",
+            "prompt": "Could I have the onion soup, followed by the New York strip, and mashed potatoes to top it off?",
+            "options": [
+                "Onion Soup",
+                "New York Strip",
+                "Mashed Potatoes",
+                "Baked Potato"
+            ],
+            "correctAnswer": "Onion Soup, New York Strip, Mashed Potatoes",
+            "hint": "A classic soup starter, a specific cut of steak, and a smooth potato side are named clearly.",
+            "explanation": "‘New York strip’ is a firm, flavorful cut of steak from the short loin. ‘Mashed’ potatoes are cooked and blended smooth, unlike a whole baked potato.",
+            "id": "go_l52_q3"
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "selection",
+            "prompt": "We're going to start with the oysters, share the seafood platter, and finish with the key lime pie.",
+            "options": [
+                "Oysters",
+                "Seafood Platter",
+                "Key Lime Pie",
+                "Cheesecake"
+            ],
+            "correctAnswer": "Oysters, Seafood Platter, Key Lime Pie",
+            "hint": "Raw shellfish, a shared main dish, and a tangy dessert are all named.",
+            "explanation": "‘Share’ tells you the seafood platter is meant for the whole table, unlike the individual starter and dessert.",
+            "id": "go_l53_q1"
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "selection",
+            "prompt": "I'll go for the calamari, the grilled lobster, and the chocolate lava cake.",
+            "options": [
+                "Calamari",
+                "Grilled Lobster",
+                "Chocolate Lava Cake",
+                "Chocolate Mousse"
+            ],
+            "correctAnswer": "Calamari, Grilled Lobster, Chocolate Lava Cake",
+            "hint": "A fried starter, a grilled shellfish main, and a warm chocolate dessert are listed together.",
+            "explanation": "A ‘lava cake’ has a soft, warm chocolate center that flows out when cut open — different from a firmer chocolate mousse.",
+            "id": "go_l53_q2"
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "selection",
+            "prompt": "Let's begin with the crab cakes. Next, the grilled halibut. And to finish, the coconut cream pie.",
+            "options": [
+                "Crab Cakes",
+                "Grilled Halibut",
+                "Coconut Cream Pie",
+                "Key Lime Pie"
+            ],
+            "correctAnswer": "Crab Cakes, Grilled Halibut, Coconut Cream Pie",
+            "hint": "A pan-fried starter, a mild white fish, and a tropical cream dessert are named in order.",
+            "explanation": "‘Halibut’ is a firm, mild white fish, popular grilled or pan-seared. ‘Coconut cream pie’ is filled with a sweet coconut custard, unlike a citrus-based key lime pie.",
+            "id": "go_l53_q3"
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "selection",
+            "prompt": "I'll take the hummus plate first, the vegetable curry second, and the mango sorbet last.",
+            "options": [
+                "Hummus Plate",
+                "Vegetable Curry",
+                "Mango Sorbet",
+                "Coconut Ice Cream"
+            ],
+            "correctAnswer": "Hummus Plate, Vegetable Curry, Mango Sorbet",
+            "hint": "A dip starter, a plant-based main, and a fruity frozen dessert are named in order.",
+            "explanation": "‘Sorbet’ is made from fruit and water, with no dairy, unlike ice cream. This order is entirely plant-based, from starter to dessert.",
+            "id": "go_l54_q1"
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "selection",
+            "prompt": "For my starter, the roasted beet salad. For my main, the wild mushroom risotto. And for dessert, the vegan chocolate cake.",
+            "options": [
+                "Roasted Beet Salad",
+                "Wild Mushroom Risotto",
+                "Vegan Chocolate Cake",
+                "Cheesecake"
+            ],
+            "correctAnswer": "Roasted Beet Salad, Wild Mushroom Risotto, Vegan Chocolate Cake",
+            "hint": "All three courses avoid meat, though only one dessert option is fully plant-based.",
+            "explanation": "‘Vegan’ means a dish contains no animal products at all, including dairy and eggs — unlike a standard cheesecake, which contains both.",
+            "id": "go_l54_q2"
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "selection",
+            "prompt": "Can we start with the stuffed peppers, move on to the lentil shepherd's pie, and end with a fruit tart?",
+            "options": [
+                "Stuffed Peppers",
+                "Lentil Shepherd's Pie",
+                "Fruit Tart",
+                "Apple Crumble"
+            ],
+            "correctAnswer": "Stuffed Peppers, Lentil Shepherd's Pie, Fruit Tart",
+            "hint": "A vegetable-based starter, a plant-based twist on a classic dish, and a fruity dessert are all named.",
+            "explanation": "A traditional shepherd's pie uses lamb, but this version replaces it with lentils for a vegetarian main course.",
+            "id": "go_l54_q3"
+        },
+        {
+            "instruction": "Tap the items to fulfill the customer's order.",
+            "subtype": "gourmetOrder",
+            "interactionType": "selection",
+            "prompt": "I'd like the pumpkin soup, then the roast turkey, and finally the pumpkin pie.",
+            "options": [
+                "Pumpkin Soup",
+                "Roast Turkey",
+                "Pumpkin Pie",
+                "Apple Pie"
+            ],
+            "correctAnswer": "Pumpkin Soup, Roast Turkey, Pumpkin Pie",
+            "hint": "This entire order follows a classic North American holiday theme.",
+            "explanation": "‘Roast turkey’ and ‘pumpkin pie’ are the two most traditional dishes at an American Thanksgiving dinner, alongside a warm starter soup.",
             "id": "go_l55_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the shakshuka, the sourdough toast, and a fresh-pressed juice.",
+            "prompt": "I'll have the stuffing for my starter, the honey-glazed ham for my main, and the pecan pie for dessert.",
             "options": [
-                "Shakshuka",
-                "Sourdough Toast",
-                "Fresh-Pressed Juice",
-                "Green Smoothie"
+                "Stuffing",
+                "Honey-Glazed Ham",
+                "Pecan Pie",
+                "Mashed Potatoes"
             ],
-            "correctAnswer": "Shakshuka, Sourdough Toast, Fresh-Pressed Juice",
-            "hint": "Shakshuka is eggs poached in a spiced tomato sauce - a Middle Eastern brunch dish.",
-            "explanation": "Shakshuka is from North Africa and the Middle East - eggs poached in a tomato and pepper sauce. It has become a popular worldwide brunch dish. 'Fresh-pressed juice' means extracted to order.",
+            "correctAnswer": "Stuffing, Honey-Glazed Ham, Pecan Pie",
+            "hint": "A savory bread side, a sweet and salty main, and a rich nutty dessert are named in order.",
+            "explanation": "‘Honey-glazed’ describes a sweet, sticky coating brushed onto the ham before roasting. Stuffing is a bread-based side dish often served at holiday meals.",
             "id": "go_l55_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the huevos rancheros, the refried beans, and a café de olla?",
+            "prompt": "First the cranberry salad, then the roast goose, and last the Christmas pudding, please.",
             "options": [
-                "Huevos Rancheros",
-                "Refried Beans",
-                "Café de Olla",
-                "Mexican Hot Chocolate"
+                "Cranberry Salad",
+                "Roast Goose",
+                "Christmas Pudding",
+                "Trifle"
             ],
-            "correctAnswer": "Huevos Rancheros, Refried Beans, Café de Olla",
-            "hint": "Café de olla is traditional Mexican coffee brewed with cinnamon in a clay pot.",
-            "explanation": "Huevos rancheros are fried eggs on a tortilla with salsa ranchera - a Mexican breakfast classic. Café de olla is brewed with cinnamon and piloncillo (brown sugar) in a clay pot, giving it a unique warming flavour.",
+            "correctAnswer": "Cranberry Salad, Roast Goose, Christmas Pudding",
+            "hint": "This order reflects a traditional British Christmas dinner.",
+            "explanation": "‘Christmas pudding’ is a dense, dark, steamed dessert traditionally served at the end of a British Christmas meal, often set alight before serving.",
             "id": "go_l55_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the wild mushroom arancini, the slow-braised short rib, and the chocolate brownie sundae.",
+            "prompt": "I'll begin with the leek and potato soup, continue with the Sunday roast, and end with the sticky toffee pudding.",
             "options": [
-                "Wild Mushroom Arancini",
-                "Slow-Braised Short Rib",
-                "Chocolate Brownie Sundae",
-                "Sticky Toffee Pudding"
+                "Leek and Potato Soup",
+                "Sunday Roast",
+                "Sticky Toffee Pudding",
+                "Apple Crumble"
             ],
-            "correctAnswer": "Wild Mushroom Arancini, Slow-Braised Short Rib, Chocolate Brownie Sundae",
-            "hint": "Arancini are fried Italian rice balls - 'wild mushroom' tells you the flavour.",
-            "explanation": "Arancini are fried Sicilian rice balls - 'wild mushroom' indicates foraged mushroom filling. Short rib is beef from the rib section, slow-braised until tender. A brownie sundae is a warm brownie with ice cream - different from sticky toffee pudding.",
+            "correctAnswer": "Leek and Potato Soup, Sunday Roast, Sticky Toffee Pudding",
+            "hint": "A creamy soup, a classic British roast dinner, and a warm dessert are all named.",
+            "explanation": "A ‘Sunday roast’ traditionally includes roasted meat, potatoes, vegetables, and gravy — a beloved weekly tradition in the UK.",
             "id": "go_l56_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the crispy calamari, the beer-battered cod, and the mushy peas.",
+            "prompt": "Could I have the pork scratchings, followed by the bangers and mash, and the spotted dick to top it off?",
             "options": [
-                "Crispy Calamari",
-                "Beer-Battered Cod",
-                "Mushy Peas",
-                "Tartare Sauce"
+                "Pork Scratchings",
+                "Bangers and Mash",
+                "Spotted Dick",
+                "Trifle"
             ],
-            "correctAnswer": "Crispy Calamari, Beer-Battered Cod, Mushy Peas",
-            "hint": "Mushy peas are a traditional British accompaniment to fried fish - soft cooked green peas.",
-            "explanation": "Beer-battered cod is coated in batter made with beer before frying, giving a crispier texture. Mushy peas are marrowfat peas cooked until soft - a classic British accompaniment to fish and chips. Tartare sauce is a condiment, not a food item.",
+            "correctAnswer": "Pork Scratchings, Bangers and Mash, Spotted Dick",
+            "hint": "A crunchy pub snack, a sausage dish, and a traditional steamed dessert complete the order.",
+            "explanation": "‘Bangers and mash’ means sausages served with mashed potatoes. ‘Spotted dick’ is a steamed sponge pudding filled with dried fruit.",
             "id": "go_l56_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the devilled kidneys on toast, the beef Wellington, and a glass of port?",
+            "prompt": "We're going to start with the whitebait, share the fish pie, and finish with the apple crumble.",
             "options": [
-                "Devilled Kidneys on Toast",
-                "Beef Wellington",
-                "Port",
-                "Cognac"
+                "Whitebait",
+                "Fish Pie",
+                "Apple Crumble",
+                "Bread Pudding"
             ],
-            "correctAnswer": "Devilled Kidneys on Toast, Beef Wellington, Port",
-            "hint": "Beef Wellington is beef fillet wrapped in pâté and puff pastry - a British classic.",
-            "explanation": "Beef Wellington is a spectacular dish - beef fillet coated in mushroom duxelles and wrapped in puff pastry. Devilled kidneys are lamb kidneys in a spicy sauce on toast - a Victorian classic. Port is a fortified Portuguese wine, different from cognac.",
+            "correctAnswer": "Whitebait, Fish Pie, Apple Crumble",
+            "hint": "A small fried fish starter, a shared main, and a warm fruit dessert are all named.",
+            "explanation": "‘Whitebait’ are tiny fish, usually deep-fried whole and eaten as a starter. ‘Share’ shows the fish pie is meant for the whole table.",
             "id": "go_l56_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the roasted pepper soup, the wild mushroom Wellington, and the lemon posset.",
+            "prompt": "I'll go for the burrata, the truffle risotto, and the birthday chocolate cake.",
             "options": [
-                "Roasted Pepper Soup",
-                "Wild Mushroom Wellington",
-                "Lemon Posset",
-                "Vanilla Cheesecake"
+                "Burrata",
+                "Truffle Risotto",
+                "Birthday Chocolate Cake",
+                "Cheesecake"
             ],
-            "correctAnswer": "Roasted Pepper Soup, Wild Mushroom Wellington, Lemon Posset",
-            "hint": "A vegetarian Wellington uses a mushroom filling instead of beef.",
-            "explanation": "A wild mushroom Wellington is a vegetarian version - mushroom and nut filling wrapped in puff pastry instead of beef. Lemon posset is a simple British dessert of cream set with lemon juice - lighter than cheesecake.",
+            "correctAnswer": "Burrata, Truffle Risotto, Birthday Chocolate Cake",
+            "hint": "A creamy cheese starter, a rich rice main, and a special celebration dessert are named.",
+            "explanation": "‘Burrata’ is a soft, creamy cheese with a liquid center, often served with tomatoes or bread. The occasion — a birthday — is reflected in the special cake.",
             "id": "go_l57_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the beet carpaccio, the truffle pasta, and the lavender crème brûlée.",
+            "prompt": "Let's begin with the champagne. Next, the surf and turf. And to finish, the anniversary tart.",
             "options": [
-                "Beet Carpaccio",
-                "Truffle Pasta",
-                "Lavender Crème Brûlée",
-                "Chocolate Fondant"
+                "Champagne",
+                "Surf and Turf",
+                "Anniversary Tart",
+                "Cheesecake"
             ],
-            "correctAnswer": "Beet Carpaccio, Truffle Pasta, Lavender Crème Brûlée",
-            "hint": "'Beet carpaccio' uses thinly sliced roasted beetroot instead of raw beef.",
-            "explanation": "Beet carpaccio is a vegetarian take - thinly sliced roasted beetroot instead of raw beef. Truffle pasta is intensely aromatic. Lavender crème brûlée adds floral lavender flavour to the classic French dessert.",
+            "correctAnswer": "Champagne, Surf and Turf, Anniversary Tart",
+            "hint": "A celebratory drink, a dish combining meat and seafood, and a special dessert complete this order.",
+            "explanation": "‘Surf and turf’ combines a seafood item, like lobster, with a meat item, like steak, on one plate — a popular choice for special occasions.",
             "id": "go_l57_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the squash velouté, the goat cheese tart, and the rhubarb sorbet?",
+            "prompt": "I'll take the oysters first, the lobster tail second, and the celebration cake last.",
             "options": [
-                "Squash Velouté",
-                "Goat Cheese Tart",
-                "Rhubarb Sorbet",
-                "Strawberry Ice Cream"
+                "Oysters",
+                "Lobster Tail",
+                "Celebration Cake",
+                "Chocolate Mousse"
             ],
-            "correctAnswer": "Squash Velouté, Goat Cheese Tart, Rhubarb Sorbet",
-            "hint": "A velouté is a smooth, velvety cream soup - thicker and silkier than regular soup.",
-            "explanation": "A velouté (French for 'velvety') is a rich, smooth cream soup. Goat cheese tart uses creamy goat's cheese in a pastry shell. Rhubarb sorbet is a tart, refreshing frozen dessert - categorically different from ice cream.",
+            "correctAnswer": "Oysters, Lobster Tail, Celebration Cake",
+            "hint": "A raw shellfish starter, a prized seafood main, and a special-occasion dessert are all named.",
+            "explanation": "‘Lobster tail’ refers to just the tail portion of the lobster, often grilled or broiled and served on its own for a special meal.",
             "id": "go_l57_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the smoked duck salad, the lobster thermidor, and the Grand Marnier soufflé.",
+            "prompt": "I'd like the corn on the cob, then the pulled pork ribs, and finally the peach cobbler.",
             "options": [
-                "Smoked Duck Salad",
-                "Lobster Thermidor",
-                "Grand Marnier Soufflé",
-                "Chocolate Fondant"
+                "Corn on the Cob",
+                "Pulled Pork Ribs",
+                "Peach Cobbler",
+                "Apple Crumble"
             ],
-            "correctAnswer": "Smoked Duck Salad, Lobster Thermidor, Grand Marnier Soufflé",
-            "hint": "Lobster thermidor and a soufflé are high-end restaurant classics requiring advance notice.",
-            "explanation": "Lobster thermidor is a French dish of lobster in a rich cream and brandy sauce, served in the shell. A Grand Marnier soufflé is baked with an orange liqueur - it must often be pre-ordered as it takes 20 minutes.",
+            "correctAnswer": "Corn on the Cob, Pulled Pork Ribs, Peach Cobbler",
+            "hint": "A grilled vegetable side, a smoky slow-cooked main, and a warm fruit dessert are all named.",
+            "explanation": "‘Pulled pork ribs’ are slow-cooked until the meat easily pulls apart. Corn on the cob is a classic side at any American barbecue.",
             "id": "go_l58_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the foie gras parfait, the turbot with champagne sauce, and the passion fruit tart.",
+            "prompt": "Can we start with the coleslaw, move on to the smoked brisket, and end with the s'mores?",
             "options": [
-                "Foie Gras Parfait",
-                "Turbot with Champagne Sauce",
-                "Passion Fruit Tart",
-                "Lemon Tart"
+                "Coleslaw",
+                "Smoked Brisket",
+                "S'mores",
+                "Chocolate Cake"
             ],
-            "correctAnswer": "Foie Gras Parfait, Turbot with Champagne Sauce, Passion Fruit Tart",
-            "hint": "Turbot is one of the most prized flatfish - used in upscale restaurants.",
-            "explanation": "Turbot is a large flatfish considered one of the finest eating fish. Foie gras parfait is a smooth, rich pâté of fattened duck or goose liver. Passion fruit tart has a tropical, tangy filling - different from lemon tart.",
+            "correctAnswer": "Coleslaw, Smoked Brisket, S'mores",
+            "hint": "A cold cabbage salad, a slow-smoked beef main, and a campfire-style dessert are all named.",
+            "explanation": "‘Brisket’ is a tough cut of beef that becomes tender after hours of slow smoking. ‘S’mores’ are made by melting marshmallow and chocolate between crackers, traditionally over a fire.",
             "id": "go_l58_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the langoustine tartare, the châteaubriand for two, and the cheeseboard?",
+            "prompt": "First the potato salad, then the grilled sausages, and last the watermelon, please.",
             "options": [
-                "Langoustine Tartare",
-                "Châteaubriand for Two",
-                "Cheeseboard",
-                "Chocolate Fondant"
+                "Potato Salad",
+                "Grilled Sausages",
+                "Watermelon",
+                "Fruit Salad"
             ],
-            "correctAnswer": "Langoustine Tartare, Châteaubriand for Two, Cheeseboard",
-            "hint": "Châteaubriand is a thick beef fillet traditionally served for two people.",
-            "explanation": "Châteaubriand is a thick cut from the centre of the beef tenderloin - traditionally served for two. Langoustines (also Norway lobsters) are small lobster-like shellfish. A cheeseboard offers a selection of aged and soft cheeses.",
+            "correctAnswer": "Potato Salad, Grilled Sausages, Watermelon",
+            "hint": "A cold side dish, a grilled main, and a refreshing fruit dessert complete this simple picnic order.",
+            "explanation": "Watermelon is a classic light dessert at summer picnics and barbecues, valued for its refreshing, juicy taste.",
             "id": "go_l58_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the Iberian ham croquettes, the roasted suckling pig, and the crema catalana.",
+            "prompt": "I'll have the tzatziki for my starter, the moussaka for my main, and the baklava for dessert.",
             "options": [
-                "Iberian Ham Croquettes",
-                "Roasted Suckling Pig",
-                "Crema Catalana",
-                "Tarta de Santiago"
+                "Tzatziki",
+                "Moussaka",
+                "Baklava",
+                "Rice Pudding"
             ],
-            "correctAnswer": "Iberian Ham Croquettes, Roasted Suckling Pig, Crema Catalana",
-            "hint": "Crema catalana is the Spanish version of crème brûlée - flavoured with orange and cinnamon.",
-            "explanation": "Suckling pig (cochinillo) is a Castilian delicacy - roasted whole when very young. Crema catalana is Spain's answer to crème brûlée, flavoured with orange zest and cinnamon. Tarta de Santiago is a Galician almond cake - a different Spanish dessert.",
+            "correctAnswer": "Tzatziki, Moussaka, Baklava",
+            "hint": "A cool yogurt dip, a layered Greek casserole, and a sweet, flaky pastry are named in order.",
+            "explanation": "‘Moussaka’ layers eggplant, potato, and spiced meat under a creamy topping. ‘Baklava’ is a sweet pastry made of layered filo dough, nuts, and honey.",
             "id": "go_l59_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the pulpo a la gallega, the cochinillo, and the tarta de queso.",
+            "prompt": "Could I have the dolmas, followed by the grilled octopus, and the yogurt cake to top it off?",
             "options": [
-                "Pulpo a la Gallega",
-                "Cochinillo",
-                "Tarta de Queso",
-                "Flan de Huevo"
+                "Dolmas",
+                "Grilled Octopus",
+                "Yogurt Cake",
+                "Baklava"
             ],
-            "correctAnswer": "Pulpo a la Gallega, Cochinillo, Tarta de Queso",
-            "hint": "Pulpo a la gallega is Galician-style octopus with paprika and olive oil.",
-            "explanation": "Pulpo a la gallega is tender boiled octopus dressed with olive oil, paprika, and sea salt. Tarta de queso is Spanish cheesecake. Flan de huevo is Spanish custard - different desserts sharing similar ingredients.",
+            "correctAnswer": "Dolmas, Grilled Octopus, Yogurt Cake",
+            "hint": "Stuffed grape leaves, a grilled seafood main, and a moist cake are all named clearly.",
+            "explanation": "‘Dolmas’ are grape leaves stuffed with rice and herbs. A ‘yogurt cake’ is a light, moist cake made with yogurt instead of extra butter.",
             "id": "go_l59_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the pimientos de padrón, the arroz negro, and a glass of cava?",
+            "prompt": "We're going to start with the spanakopita, share the lamb souvlaki, and finish with the galaktoboureko.",
             "options": [
-                "Pimientos de Padrón",
-                "Arroz Negro",
-                "Cava",
-                "Albariño"
+                "Spanakopita",
+                "Lamb Souvlaki",
+                "Galaktoboureko",
+                "Baklava"
             ],
-            "correctAnswer": "Pimientos de Padrón, Arroz Negro, Cava",
-            "hint": "Arroz negro is black rice coloured with squid ink - a Valencian seafood dish.",
-            "explanation": "Pimientos de padrón are small green peppers from Galicia - most are mild but some are spicy. Arroz negro is Valencian rice cooked with squid ink, striking and deeply flavoured. Cava is Spanish sparkling wine; Albariño is a white still wine from Galicia.",
+            "correctAnswer": "Spanakopita, Lamb Souvlaki, Galaktoboureko",
+            "hint": "A spinach pastry starter, a grilled skewered meat main, and a creamy custard dessert are all named.",
+            "explanation": "‘Spanakopita’ is a savory pie filled with spinach and feta cheese wrapped in filo. ‘Galaktoboureko’ is a custard-filled pastry soaked in syrup.",
             "id": "go_l59_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the gravlax, the reindeer fillet, and the cloudberry parfait.",
+            "prompt": "I'll go for the patatas bravas, the paella, and the churros.",
             "options": [
-                "Gravlax",
-                "Reindeer Fillet",
-                "Cloudberry Parfait",
-                "Lingonberry Sorbet"
+                "Patatas Bravas",
+                "Paella",
+                "Churros",
+                "Flan"
             ],
-            "correctAnswer": "Gravlax, Reindeer Fillet, Cloudberry Parfait",
-            "hint": "Gravlax is Scandinavian salt-and-dill cured salmon - different from smoked salmon.",
-            "explanation": "Gravlax is salmon cured with salt, sugar, and dill - a Scandinavian speciality. Reindeer meat is a lean, flavourful game meat from northern Scandinavia. Cloudberries are golden arctic berries with a tart-sweet flavour, different from lingonberries.",
+            "correctAnswer": "Patatas Bravas, Paella, Churros",
+            "hint": "A spicy potato starter, a famous rice dish, and a fried sweet treat are all named.",
+            "explanation": "‘Patatas bravas’ are fried potatoes served with a spicy tomato sauce. ‘Churros’ are fried dough pastries, often dusted with sugar and dipped in chocolate.",
             "id": "go_l60_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the pickled herring, the dill-cured salmon, and the rye bread.",
+            "prompt": "Let's begin with the gazpacho. Next, the grilled octopus. And to finish, the flan.",
             "options": [
-                "Pickled Herring",
-                "Dill-Cured Salmon",
-                "Rye Bread",
-                "Sourdough Bread"
+                "Gazpacho",
+                "Grilled Octopus",
+                "Flan",
+                "Churros"
             ],
-            "correctAnswer": "Pickled Herring, Dill-Cured Salmon, Rye Bread",
-            "hint": "Rye bread is denser and darker than wheat bread - a Scandinavian staple.",
-            "explanation": "Pickled herring is a Scandinavian classic preserved in brine with onions. Rye bread is denser and more nutritious than wheat bread - a staple across Scandinavia. Sourdough is a different bread style, made with a fermented wheat starter.",
+            "correctAnswer": "Gazpacho, Grilled Octopus, Flan",
+            "hint": "A cold soup starter, a grilled seafood main, and a creamy caramel dessert complete this order.",
+            "explanation": "‘Gazpacho’ is a cold Spanish soup made from raw blended vegetables, typically tomatoes. ‘Flan’ is a custard dessert topped with caramel sauce.",
             "id": "go_l60_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the smørrebrød, the open-faced shrimp sandwich, and an aquavit?",
+            "prompt": "I'll take the jamón first, the seafood paella second, and the crema catalana last.",
             "options": [
-                "Smørrebrød",
-                "Open-Faced Shrimp Sandwich",
-                "Aquavit",
-                "Schnapps"
+                "Jamón",
+                "Seafood Paella",
+                "Crema Catalana",
+                "Flan"
             ],
-            "correctAnswer": "Smørrebrød, Open-Faced Shrimp Sandwich, Aquavit",
-            "hint": "Smørrebrød is a Danish open-faced sandwich on buttered rye bread.",
-            "explanation": "Smørrebrød is a traditional Danish open-faced sandwich on buttered rye bread with various toppings - different from the open-faced shrimp sandwich. Aquavit is a Scandinavian spirit flavoured with caraway or dill - different from German schnapps.",
+            "correctAnswer": "Jamón, Seafood Paella, Crema Catalana",
+            "hint": "Cured ham, a rice dish loaded with seafood, and a Spanish custard dessert are named in order.",
+            "explanation": "‘Jamón’ is Spanish cured ham, often thinly sliced and served on its own. ‘Crema catalana’ is similar to crème brûlée but flavored with citrus and cinnamon.",
             "id": "go_l60_q3"
         }
     ]

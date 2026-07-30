@@ -1,307 +1,307 @@
 {
-    "gameType": "emergencyHub",
-    "batchIndex": 9,
-    "levels": "81-90",
-    "quests": [
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Suspected nerve agent release detected in the central train station. Input code!",
-            "correctAnswer": "NERVE AGENT PROTOCOL",
-            "hint": "Activate nerve agent response protocol.",
-            "explanation": "Nerve agent protocols deploy specialist CBRN units trained in atropine administration and chemical antidote protocols.",
-            "id": "eh_l81_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Over 50 casualties showing pinpoint pupils and seizure symptoms at the scene. Input code!",
-            "correctAnswer": "ANTIDOTE PUSH SITE",
-            "hint": "Push antidote stockpiles to the site.",
-            "explanation": "Rapid antidote deployment is critical for nerve agent exposure because neurological damage progresses within minutes.",
-            "id": "eh_l81_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Site must be locked down to contain secondary agent exposure risk. Input code!",
-            "correctAnswer": "EXCLUSION FIVE HUNDRED",
-            "hint": "Establish a 500-meter exclusion zone.",
-            "explanation": "A 500-meter exclusion zone prevents first responders and bystanders from entering areas with residual nerve agent vapor.",
-            "id": "eh_l81_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Powdery substance released from a package at a mail sorting facility. Input code!",
-            "correctAnswer": "BSL RESPONSE MAIL",
-            "hint": "Dispatch BSL response to the mail facility.",
-            "explanation": "Biosafety Level response teams collect samples under containment and initiate anthrax rule-out testing immediately.",
-            "id": "eh_l82_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Forty workers potentially exposed to the unidentified biological substance. Input code!",
-            "correctAnswer": "PROPHYLAXIS TEAM NOW",
-            "hint": "Deploy a prophylaxis team to the facility.",
-            "explanation": "Prophylactic antibiotics given within 24 hours of anthrax exposure significantly reduce the risk of disease progression.",
-            "id": "eh_l82_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Building ventilation must be shut down to prevent aerosolized agent spread. Input code!",
-            "correctAnswer": "VENTILATION STOP ALL",
-            "hint": "Stop all building ventilation systems.",
-            "explanation": "Shutting down ventilation prevents aerosolized particles from being distributed through ductwork to unaffected areas.",
-            "id": "eh_l82_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Simultaneous collapse of three apartment towers in the city center. Input code!",
-            "correctAnswer": "MULTI SITE USAR NOW",
-            "hint": "Activate multi-site USAR operations.",
-            "explanation": "Multi-site USAR operations require pre-assigned sector commanders to manage simultaneous complex rescue operations.",
-            "id": "eh_l83_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Rescue operations requiring 24-hour continuous staffing across all three sites. Input code!",
-            "correctAnswer": "SHIFT ROTATE RESCUE",
-            "hint": "Implement a rotating rescue shift system.",
-            "explanation": "Rotating rescue shifts prevent fatal errors caused by fatigue while maintaining continuous extraction operations.",
-            "id": "eh_l83_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "International rescue resources arriving and requiring immediate site assignment. Input code!",
-            "correctAnswer": "ASSIGN SECTOR ROMEO",
-            "hint": "Assign incoming teams to sector Romeo.",
-            "explanation": "Sector assignment for international teams provides clear geographic boundaries and prevents duplication of search areas.",
-            "id": "eh_l83_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Municipal water treatment plant experiencing pump failure affecting 500,000 people. Input code!",
-            "correctAnswer": "EMERGENCY PUMP UNIT",
-            "hint": "Deploy the emergency pump unit.",
-            "explanation": "Emergency pump units restore treatment plant throughput while permanent repairs are arranged, preventing supply failure.",
-            "id": "eh_l84_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Chemical dosing system offline and water leaving the plant without disinfection. Input code!",
-            "correctAnswer": "CHLORINE DOSE MANUAL",
-            "hint": "Switch to manual chlorine dosing.",
-            "explanation": "Manual chlorine dosing maintains disinfection standards during automated system failures to keep water safe to drink.",
-            "id": "eh_l84_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Secondary treatment plant being brought online to supplement primary capacity. Input code!",
-            "correctAnswer": "SECONDARY PLANT LIVE",
-            "hint": "Bring the secondary treatment plant online.",
-            "explanation": "Secondary plant activation doubles treatment capacity and ensures continuity of safe water supply during primary failures.",
-            "id": "eh_l84_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "International disaster response coordinator receiving aid from five countries. Input code!",
-            "correctAnswer": "AID COORD CENTER",
-            "hint": "Open the international aid coordination center.",
-            "explanation": "Aid coordination centers prevent duplication and gaps in international relief by assigning each team specific roles.",
-            "id": "eh_l85_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Customs clearance for incoming medical aid aircraft being delayed at the border. Input code!",
-            "correctAnswer": "AID CLEARANCE CODE",
-            "hint": "Issue the emergency aid clearance code.",
-            "explanation": "Emergency customs codes pre-authorize life-saving medical supplies to bypass standard procedures at the border.",
-            "id": "eh_l85_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Language barriers slowing coordination between foreign rescue teams on site. Input code!",
-            "correctAnswer": "INTERPRETER ASSIGN",
-            "hint": "Assign interpreters to all foreign teams.",
-            "explanation": "Embedded interpreters eliminate language barriers and allow foreign teams to operate at the same efficiency as domestic units.",
-            "id": "eh_l85_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Tsunami warning issued for the entire coastal region with a 20-minute lead time. Input code!",
-            "correctAnswer": "TSUNAMI EVAC NOW",
-            "hint": "Issue tsunami evacuation order now.",
-            "explanation": "Tsunami evacuation orders must activate the moment a warning is issued since wave arrival time may be under 20 minutes.",
-            "id": "eh_l86_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Low-lying coastal roads submerging before the evacuation is fully complete. Input code!",
-            "correctAnswer": "HIGH GROUND ROUTE",
-            "hint": "Redirect all traffic to high ground routes.",
-            "explanation": "High ground routes direct evacuating traffic away from sea level as flooding begins, preventing road entrapment.",
-            "id": "eh_l86_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Rescue helicopters required for residents who could not evacuate in time. Input code!",
-            "correctAnswer": "HELI RESCUE COAST",
-            "hint": "Deploy helicopter rescue along the coast.",
-            "explanation": "Post-wave helicopter rescue is the primary method for reaching survivors stranded on rooftops after tsunami inundation.",
-            "id": "eh_l86_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Deepwater oil well experiencing uncontrolled blowout at 1,500 meters depth. Input code!",
-            "correctAnswer": "BLOWOUT RESPONSE NOW",
-            "hint": "Activate the deepwater blowout response.",
-            "explanation": "Deepwater blowout responses require specialized subsea equipment including remotely activated blowout preventers.",
-            "id": "eh_l87_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Blowout preventer ram has failed to seal the well during the emergency. Input code!",
-            "correctAnswer": "RELIEF WELL DRILL",
-            "hint": "Order emergency relief well drilling.",
-            "explanation": "Relief well drilling intercepts the blowout well at depth and pumps heavy mud to control the uncontrolled flow.",
-            "id": "eh_l87_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Surface oil slick growing at two square kilometers per hour in the ocean. Input code!",
-            "correctAnswer": "DISPERSANT DEPLOY",
-            "hint": "Deploy chemical dispersants on the slick.",
-            "explanation": "Chemical dispersants break oil into small droplets, accelerating natural biodegradation and protecting surface wildlife.",
-            "id": "eh_l87_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Major airline crash on approach to the international airport with 300 passengers onboard. Input code!",
-            "correctAnswer": "MAJOR CRASH ALPHA",
-            "hint": "Declare a major aircraft crash Alpha response.",
-            "explanation": "Alpha crash declarations activate all airport emergency services and release mutual aid agreements with surrounding services.",
-            "id": "eh_l88_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Fuselage separated from wings with casualties across a 400-meter scatter zone. Input code!",
-            "correctAnswer": "SCATTER ZONE TRIAGE",
-            "hint": "Establish triage across the scatter zone.",
-            "explanation": "Scatter zone triage deploys teams in parallel across the debris field to rapidly identify and treat survivors.",
-            "id": "eh_l88_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Flight data recorder located and must be secured for accident investigation. Input code!",
-            "correctAnswer": "FDR SECURE EVIDENCE",
-            "hint": "Secure the flight data recorder as evidence.",
-            "explanation": "Securing the FDR immediately prevents handling damage and preserves critical data needed for accident investigation.",
-            "id": "eh_l88_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Dirty bomb detonated in the central business district releasing radioactive material. Input code!",
-            "correctAnswer": "RADIOLOGICAL ALERT",
-            "hint": "Issue a radiological emergency alert.",
-            "explanation": "Radiological alerts instruct the public to shelter in place, move indoors, and cover exposed skin immediately.",
-            "id": "eh_l89_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Radiation monitoring stations detecting elevated readings across four city zones. Input code!",
-            "correctAnswer": "MONITOR GRID ACTIVE",
-            "hint": "Activate the radiation monitoring grid.",
-            "explanation": "Monitoring grids map contamination spread in real time, enabling emergency managers to define precise evacuation boundaries.",
-            "id": "eh_l89_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Decontamination corridors needed for people evacuating from the hot zone. Input code!",
-            "correctAnswer": "DECON CORRIDOR SET",
-            "hint": "Establish the decontamination corridors.",
-            "explanation": "Decontamination corridors allow people to be screened and cleaned while exiting contaminated zones in an organized way.",
-            "id": "eh_l89_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Simultaneous earthquake and chemical plant rupture creating a combined hazard zone. Input code!",
-            "correctAnswer": "COMBINED HAZARD CODE",
-            "hint": "Issue the combined hazard emergency code.",
-            "explanation": "Combined hazard codes simultaneously activate earthquake rescue and hazmat protocols without conflicting command structures.",
-            "id": "eh_l90_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Fire services unable to approach the chemical plant due to seismic-damaged roads. Input code!",
-            "correctAnswer": "ALTERNATE ACCESS NOW",
-            "hint": "Establish alternate access to the plant.",
-            "explanation": "Pre-planned alternate access routes allow emergency services to bypass seismically damaged road segments.",
-            "id": "eh_l90_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Chemical cloud and structural collapse hazards overlapping rescue zones. Input code!",
-            "correctAnswer": "RISK ZONE MATRIX",
-            "hint": "Activate the combined risk zone matrix.",
-            "explanation": "Risk zone matrices map overlapping hazards and define safe corridors for rescue operations in combined emergencies.",
-            "id": "eh_l90_q3"
-        }
-    ]
+  "gameType": "emergencyHub",
+  "batchIndex": 9,
+  "levels": "81-90",
+  "quests": [
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A university lecture hall's fire alarm sounds during a packed exam with two hundred students. Input code!",
+      "correctAnswer": "EVACUATE THE HALL CALMLY",
+      "hint": "Say how the large group should leave.",
+      "explanation": "Naming 'calmly' matters when moving two hundred people, since a rushed exit risks a crush at the doors.",
+      "id": "eh_l81_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Staff confirm it was a false alarm triggered by dust from nearby building work. Input code!",
+      "correctAnswer": "ALLOW STUDENTS BACK IN",
+      "hint": "Say what can happen once the alarm is confirmed false.",
+      "explanation": "Confirming the cause first avoids sending students back into a hall that might still be unsafe.",
+      "id": "eh_l81_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Several students lost exam time during the evacuation and are asking what happens now. Input code!",
+      "correctAnswer": "GRANT EXTRA EXAM TIME",
+      "hint": "Say what fair accommodation should be offered.",
+      "explanation": "Extra time fairly makes up for the minutes lost through no fault of the students.",
+      "id": "eh_l81_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A care home reports several residents with vomiting and diarrhea within the same day. Input code!",
+      "correctAnswer": "ISOLATE AFFECTED RESIDENTS",
+      "hint": "Say what should be done with those already sick.",
+      "explanation": "Isolating sick residents early is the most effective way to stop an outbreak spreading through a care home.",
+      "id": "eh_l82_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Health officials need to confirm whether this is a contagious infection or food-related. Input code!",
+      "correctAnswer": "CALL A HEALTH INSPECTOR",
+      "hint": "Name the official trained to investigate this.",
+      "explanation": "An inspector can test both the food supply and the illness itself to find the real cause.",
+      "id": "eh_l82_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Tests confirm a contagious stomach bug, and staff need strict hygiene rules in place. Input code!",
+      "correctAnswer": "ENFORCE STRICT HAND HYGIENE",
+      "hint": "Say the specific hygiene rule that should be enforced.",
+      "explanation": "Strict hand hygiene is the single most effective way to stop this kind of infection spreading further.",
+      "id": "eh_l82_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A tractor has overturned on a slope, trapping the farmer underneath. Input rescue code!",
+      "correctAnswer": "DEPLOY THE RESCUE TEAM",
+      "hint": "Say which trained specialists should respond.",
+      "explanation": "A trained team can safely lift the tractor using proper equipment without causing further injury to him.",
+      "id": "eh_l83_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "The farmer is conscious but reports he cannot feel his legs. Input medical code!",
+      "correctAnswer": "DO NOT MOVE HIM",
+      "hint": "Say the most important thing bystanders should avoid doing.",
+      "explanation": "Not feeling his legs may signal a spinal injury, so moving him could cause permanent harm.",
+      "id": "eh_l83_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Paramedics have arrived and fitted a spinal board before lifting him carefully. Input code!",
+      "correctAnswer": "TRANSPORT TO HOSPITAL",
+      "hint": "Say the final step once he is safely secured.",
+      "explanation": "Getting him to hospital quickly, now that he's safely secured, gives doctors the best chance to help him.",
+      "id": "eh_l83_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A theme park ride has stopped suddenly with twelve passengers stuck forty feet up. Input code!",
+      "correctAnswer": "SEND A RESCUE TEAM",
+      "hint": "Ask for the team trained in this kind of rescue.",
+      "explanation": "A trained rescue team has the harnesses and training needed to bring passengers down safely from height.",
+      "id": "eh_l84_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Engineers confirm the ride's brake system failed and needs a full mechanical check. Input code!",
+      "correctAnswer": "SHUT THE RIDE DOWN",
+      "hint": "Say what should happen to the ride itself.",
+      "explanation": "Shutting the ride down fully prevents it from being used again until the fault is properly fixed.",
+      "id": "eh_l84_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "All twelve passengers have been safely lowered and are being checked for shock. Input code!",
+      "correctAnswer": "CALL FOR FIRST AID STAFF",
+      "hint": "Ask for staff trained to treat minor injuries.",
+      "explanation": "First aid staff can calmly check everyone for shock or minor injury after a frightening experience.",
+      "id": "eh_l84_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A zoo keeper reports a large enclosure gate was left unlatched and an animal is loose. Input code!",
+      "correctAnswer": "CLEAR VISITORS FROM AREA",
+      "hint": "Say what should be done with the public first.",
+      "explanation": "Moving visitors away from the area is the priority before anyone attempts to deal with the animal itself.",
+      "id": "eh_l85_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Zoo staff have located the animal calmly grazing near the perimeter fence. Input code!",
+      "correctAnswer": "SEND THE CAPTURE TEAM",
+      "hint": "Ask for the trained team that handles this safely.",
+      "explanation": "A trained capture team can return the animal to its enclosure without frightening or harming it.",
+      "id": "eh_l85_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "The animal is safely back in its enclosure and the gate has been double-checked. Input code!",
+      "correctAnswer": "REOPEN THE ZOO AREA",
+      "hint": "Say what can happen once the area is confirmed safe.",
+      "explanation": "Reopening only after a double-check ensures visitors aren't let back before the enclosure is truly secure.",
+      "id": "eh_l85_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A swimmer has gone missing under the waves at a busy beach with a strong current. Input code!",
+      "correctAnswer": "SEND THE LIFEGUARD TEAM",
+      "hint": "Ask for the trained team already watching the water.",
+      "explanation": "Lifeguards can respond within seconds and are trained specifically for water rescues in strong currents.",
+      "id": "eh_l86_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "The current is too strong for a swimming rescue, and a boat is needed. Input code!",
+      "correctAnswer": "LAUNCH THE RESCUE BOAT",
+      "hint": "Say what vehicle should be used instead of swimming out.",
+      "explanation": "A boat can reach him safely and quickly without a rescuer being pulled under by the same current.",
+      "id": "eh_l86_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "The swimmer has been found and pulled from the water, coughing but breathing. Input code!",
+      "correctAnswer": "GET PARAMEDICS THERE FAST",
+      "hint": "Stress both the team needed and the urgency.",
+      "explanation": "Even a swimmer who seems fine after a near-drowning needs a paramedic check for water in the lungs.",
+      "id": "eh_l86_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A subway train has stopped in a tunnel with smoke reported in one carriage. Input code!",
+      "correctAnswer": "EVACUATE THAT CARRIAGE",
+      "hint": "Say exactly which part of the train must be cleared.",
+      "explanation": "Naming the specific carriage means passengers move to safety fast without needless panic in unaffected cars.",
+      "id": "eh_l87_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Passengers need to be guided safely along the dark tunnel to the nearest station. Input code!",
+      "correctAnswer": "GUIDE THEM TO PLATFORM",
+      "hint": "Say where staff should lead the passengers.",
+      "explanation": "Leading passengers directly to the nearest platform gets them out of the tunnel by the shortest safe route.",
+      "id": "eh_l87_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "All passengers are now safely on the platform and the smoke has cleared. Input code!",
+      "correctAnswer": "INSPECT THE TRAIN NOW",
+      "hint": "Say what should happen to the train itself next.",
+      "explanation": "Inspecting the train confirms exactly what caused the smoke before it's allowed to run again.",
+      "id": "eh_l87_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A large crane has begun to lean dangerously on a busy construction site downtown. Input code!",
+      "correctAnswer": "CLEAR THE STREET BELOW",
+      "hint": "Say what should be done with the area beneath it.",
+      "explanation": "Clearing the street below removes people from the path of anything that could fall from the crane.",
+      "id": "eh_l88_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Engineers confirm the crane's base has shifted and could fully topple at any moment. Input code!",
+      "correctAnswer": "EVACUATE NEARBY BUILDINGS",
+      "hint": "Say what should be done with buildings close to the crane.",
+      "explanation": "Evacuating nearby buildings protects people from harm if the crane does fall in their direction.",
+      "id": "eh_l88_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Specialist riggers have secured the crane and confirmed the danger has passed. Input code!",
+      "correctAnswer": "REOPEN THE STREET",
+      "hint": "Say what can happen once the crane is confirmed secure.",
+      "explanation": "Reopening the street only after official confirmation avoids any risk from a crane that only looks stable.",
+      "id": "eh_l88_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A daycare reports a child has a suspected broken arm after falling from play equipment. Input code!",
+      "correctAnswer": "SEND AN AMBULANCE",
+      "hint": "Name the vehicle that carries paramedics.",
+      "explanation": "A suspected fracture in a young child should always be checked and treated by trained paramedics.",
+      "id": "eh_l89_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Staff need to know how to keep the arm still until paramedics arrive. Input code!",
+      "correctAnswer": "SUPPORT THE ARM GENTLY",
+      "hint": "Say what staff should do without moving the arm itself.",
+      "explanation": "Gently supporting rather than moving the arm prevents a possible fracture from being made worse.",
+      "id": "eh_l89_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "The child's parents have been contacted and are on their way to the daycare. Input code!",
+      "correctAnswer": "KEEP THE PARENTS UPDATED",
+      "hint": "Say what staff should continue doing until parents arrive.",
+      "explanation": "Keeping parents informed as things develop reduces their worry on the way and builds trust in the staff.",
+      "id": "eh_l89_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A wildfire on a dry hillside has jumped a firebreak and is now nearing a housing estate. Input code!",
+      "correctAnswer": "EVACUATE THE ESTATE NOW",
+      "hint": "Say what should happen to residents right away.",
+      "explanation": "Evacuating immediately gives residents time to leave safely before the fire can reach the first homes.",
+      "id": "eh_l90_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Firefighters need water bombing from the air to slow the fire's advance. Input code!",
+      "correctAnswer": "REQUEST AIR SUPPORT",
+      "hint": "Ask for help from above, not just from the ground.",
+      "explanation": "Aircraft can drop water directly onto the fire's edge, slowing it faster than ground crews alone.",
+      "id": "eh_l90_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "The wind has changed direction, pushing the fire safely away from the homes. Input code!",
+      "correctAnswer": "STAND DOWN THE EVACUATION",
+      "hint": "Say what can happen to the earlier evacuation order.",
+      "explanation": "Standing the evacuation down once the immediate threat has passed lets residents safely return home.",
+      "id": "eh_l90_q3"
+    }
+  ]
 }

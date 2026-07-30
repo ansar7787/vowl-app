@@ -4,483 +4,483 @@
     "levels": "151-160",
     "quests": [
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"I've had this persistent ache along my inner elbow that's worse after my weekend climbing sessions, and I've noticed my grip gives out sooner than it used to on longer routes.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Wrist Pain",
+                "Cramp",
+                "Muscle Soreness",
+                "Weakness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Muscle Soreness, Weakness",
+            "hint": "One symptom is soreness after activity, and the other is about grip strength over time.",
+            "explanation": "Soreness after climbing is Muscle Soreness, and a grip that gives out sooner is Weakness.",
             "id": "mc_l151_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"I've had this persistent low-grade nausea most mornings for the past two weeks, and I've also noticed some new sensitivity to smells that never bothered me before.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Nausea",
+                "Bloating",
+                "Loss of Appetite",
+                "Loss of Smell"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Nausea, Loss of Smell",
+            "hint": "One symptom is feeling sick, and the other is a change specifically related to smell.",
+            "explanation": "Two weeks of morning nausea is Nausea, and a new reaction to smells relates to Loss of Smell.",
             "id": "mc_l151_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"I've had this persistent tightness across my chest that's become more frequent over the past month, and I've noticed I avoid stairs now out of a quiet worry about triggering it.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Shortness of Breath",
+                "Chest Pain",
+                "Racing Heartbeat",
+                "Anxiety"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Chest Pain, Anxiety",
+            "hint": "One symptom is physical, and the other is the behavior change driven by worry.",
+            "explanation": "More frequent chest tightness is Chest Pain, and avoiding stairs from worry points to Anxiety.",
             "id": "mc_l151_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "In the exam room, the patient says: \"I've had this persistent soreness in my hip that's started disrupting my sleep whenever I roll onto that side, and I've noticed it takes noticeably longer to loosen up each morning now.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Hip Pain",
+                "Joint Stiffness",
+                "Leg Pain",
+                "Insomnia"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Hip Pain, Joint Stiffness",
+            "hint": "The sleep disruption is a direct effect of the hip pain, not a separate complaint on its own.",
+            "explanation": "Soreness disrupting sleep is Hip Pain, and slower morning loosening is Joint Stiffness.",
             "id": "mc_l152_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "The nurse's intake note reads: \"Patient reports a four-month history of gradual weight-bearing discomfort in the right foot, now with visible swelling along the arch.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Foot Pain",
+                "Ankle Pain",
+                "Swelling",
+                "Bruise"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Foot Pain, Swelling",
+            "hint": "The note names discomfort with weight-bearing and a visible sign along the arch.",
+            "explanation": "Four months of weight-bearing discomfort is Foot Pain, and visible puffiness along the arch is Swelling.",
             "id": "mc_l152_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"I've had this persistent low hum of dread before client calls that's new for me, and I've noticed my hands go cold and a bit shaky right before I dial in,\" the patient tells the doctor.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Cold Hands and Feet",
+                "Anxiety",
+                "Trembling",
+                "Racing Heartbeat"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Anxiety, Trembling",
+            "hint": "One symptom is the emotional state itself, and the other is a shaking movement in the hands.",
+            "explanation": "A new sense of dread before calls is Anxiety, and shaky hands beforehand are Trembling.",
             "id": "mc_l152_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"I've had this persistent discomfort low in my right side that's been building gradually over the past two days, worse with movement, and I've had a noticeable drop in my appetite since it started.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Side Pain",
+                "Loss of Appetite",
+                "Stomach Ache",
+                "Nausea"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Side Pain, Loss of Appetite",
+            "hint": "One symptom is discomfort on a specific side, and the other is about eating since it began.",
+            "explanation": "Building discomfort on the right side is Side Pain, and reduced appetite since then is Loss of Appetite.",
             "id": "mc_l153_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"I've had this persistent buzzing sound that's become louder in the evenings specifically, and I've started finding restaurant conversations nearly impossible to follow.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Ear Fullness",
+                "Ringing in the Ears",
+                "Hearing Loss",
+                "Sensitivity to Sound"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Ringing in the Ears, Hearing Loss",
+            "hint": "One symptom is a sound the patient hears, and the other is difficulty following speech in noise.",
+            "explanation": "An evening buzzing sound is Ringing in the Ears, and struggling in noisy settings points to Hearing Loss.",
             "id": "mc_l153_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"I've had this persistent soreness through both wrists that's worse after long days at the keyboard, and I've noticed the numbness in my fingertips is now present even first thing in the morning.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Wrist Pain",
+                "Pins and Needles",
+                "Joint Stiffness",
+                "Numbness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Wrist Pain, Numbness",
+            "hint": "One symptom is soreness from typing, and the other is now present even before any activity.",
+            "explanation": "Soreness from the keyboard is Wrist Pain, and morning numbness in the fingertips is Numbness.",
             "id": "mc_l153_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "In the exam room, the patient says: \"I've had this persistent heaviness in my chest that seems worse after rich meals, along with a sour taste that lingers for an hour or more afterward.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Heartburn",
+                "Acid Reflux",
+                "Nausea",
+                "Chest Pain"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Acid Reflux, Chest Pain",
+            "hint": "A sour taste that lingers well past the meal points to a more precise term than plain heartburn.",
+            "explanation": "A lingering sour taste after rich meals is Acid Reflux, alongside the resulting Chest Pain.",
             "id": "mc_l154_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "The nurse's intake note reads: \"Patient reports eight weeks of persistent fatigue and generalized weakness affecting daily activities, no fever reported.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Brain Fog",
+                "Fever",
+                "Fatigue",
+                "Weakness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Fatigue, Weakness",
+            "hint": "The note explicitly says no fever was reported - that rules out one tempting option.",
+            "explanation": "Eight weeks of low energy is Fatigue, and generalized Weakness completes the picture.",
             "id": "mc_l154_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"I've had this persistent low mood that's lingered well past my usual rough patches, and I've noticed I'm sleeping far more than I used to, sometimes ten or eleven hours a night,\" the patient tells the doctor.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Low Mood",
+                "Fatigue",
+                "Oversleeping",
+                "Insomnia"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Low Mood, Oversleeping",
+            "hint": "One symptom is emotional, and the other is the opposite of trouble falling asleep.",
+            "explanation": "A lingering low mood is Low Mood, and sleeping ten or eleven hours points to Oversleeping.",
             "id": "mc_l154_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"I've had this persistent dull ache deep in my shoulder that's made overhead reaching genuinely difficult, and I've noticed a distinct clicking sensation whenever I rotate my arm fully.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Neck Pain",
+                "Muscle Soreness",
+                "Shoulder Pain",
+                "Joint Stiffness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Shoulder Pain, Joint Stiffness",
+            "hint": "One symptom is pain limiting overhead reach, and the other is a clicking feeling in the joint.",
+            "explanation": "Difficulty reaching overhead is Shoulder Pain, and clicking on full rotation is Joint Stiffness.",
             "id": "mc_l155_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"I've had this persistent tightness in my throat that seems tied specifically to moments of stress at work, and I've noticed my voice trembles slightly during those same moments.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Throat Tightness",
+                "Trembling",
+                "Anxiety",
+                "Hoarse Voice"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Throat Tightness, Trembling",
+            "hint": "One symptom is in the throat, and the other is a shaking quality in the voice.",
+            "explanation": "Stress-linked throat tightness is Throat Tightness, and a trembling voice is Trembling.",
             "id": "mc_l155_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"I've had this persistent soreness across my lower back that radiates down through both legs now, and I've noticed the tingling in my toes is present on most days.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Back Pain",
+                "Leg Pain",
+                "Pins and Needles",
+                "Numbness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Back Pain, Pins and Needles",
+            "hint": "One symptom is the original back soreness, and the other is a specific tingling in the toes.",
+            "explanation": "Soreness radiating down both legs is Back Pain, and tingling toes are Pins and Needles.",
             "id": "mc_l155_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "In the exam room, the patient says: \"I've had this persistent low-grade fever that's lingered for over a week now, and I've noticed some tender swelling just under my jaw on the left side.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Fever",
+                "Chills",
+                "Jaw Pain",
+                "Swollen Glands"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Fever, Swollen Glands",
+            "hint": "One symptom is about temperature, and the other is a tender lump specifically under the jaw.",
+            "explanation": "A week of low-grade fever is Fever, and tender puffiness under the jaw is Swollen Glands.",
             "id": "mc_l156_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "The nurse's intake note reads: \"Patient reports three weeks of persistent fatigue and difficulty concentrating at work, with no reported changes in sleep duration.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Insomnia",
+                "Fatigue",
+                "Brain Fog",
+                "Low Mood"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Fatigue, Brain Fog",
+            "hint": "The note explicitly rules out any change in sleep duration - that rules out one option.",
+            "explanation": "Three weeks of low energy and poor concentration are Fatigue and Brain Fog; sleep duration was unchanged, ruling out Insomnia.",
             "id": "mc_l156_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"I've had this persistent heaviness in both legs by mid-afternoon that's new for me, and I've noticed some visible swelling around my ankles that doesn't fully resolve overnight anymore,\" the patient tells the doctor.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Cramp",
+                "Leg Pain",
+                "Fatigue",
+                "Swollen Ankles"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Leg Pain, Swollen Ankles",
+            "hint": "One symptom is heaviness during the day, and the other is puffiness that persists overnight.",
+            "explanation": "New mid-afternoon heaviness is Leg Pain, and overnight-persisting puffiness is Swollen Ankles.",
             "id": "mc_l156_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"I've had this persistent soreness in my Achilles that's limited my training for nearly a month now, and I've noticed some mild swelling that's become more visible over the past week.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Ankle Pain",
+                "Leg Pain",
+                "Swelling",
+                "Cramp"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Leg Pain, Swelling",
+            "hint": "One symptom is soreness limiting training, and the other is puffiness that has become more noticeable.",
+            "explanation": "A month of soreness limiting training is Leg Pain, and increasingly visible puffiness is Swelling.",
             "id": "mc_l157_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"I've had this persistent discomfort behind my breastbone that's worse lying flat at night, and I've noticed I'm propping myself up with extra pillows just to get comfortable enough to sleep.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Acid Reflux",
+                "Heartburn",
+                "Insomnia",
+                "Chest Pain"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Acid Reflux, Insomnia",
+            "hint": "Discomfort specifically worse lying flat, needing extra pillows, points to a more precise term.",
+            "explanation": "Discomfort worse lying flat, needing extra pillows, is Acid Reflux, plus the resulting Insomnia.",
             "id": "mc_l157_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"I've had this persistent low-grade headache that's present most afternoons now, and I've noticed I'm gritting my teeth without realizing it during stressful calls.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Headache",
+                "Tension Headache",
+                "Anxiety",
+                "Jaw Pain"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Tension Headache, Jaw Pain",
+            "hint": "A near-daily headache linked to jaw clenching has a more specific name than a plain headache.",
+            "explanation": "A near-daily afternoon headache linked to clenching is a Tension Headache, plus resulting Jaw Pain.",
             "id": "mc_l157_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "In the exam room, the patient says: \"I've had this persistent soreness through both hands that's made gripping a steering wheel genuinely uncomfortable, and I've noticed visible swelling in several knuckles that's worse by evening.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Joint Pain",
+                "Swelling",
+                "Joint Stiffness",
+                "Numbness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Joint Pain, Swelling",
+            "hint": "One symptom is pain affecting daily grip, and the other is visible puffiness worse in the evening.",
+            "explanation": "Pain affecting steering wheel grip is Joint Pain, and evening knuckle puffiness is Swelling.",
             "id": "mc_l158_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "The nurse's intake note reads: \"Patient reports two months of intermittent dizziness on standing, now with one witnessed episode of brief loss of consciousness.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Vertigo",
+                "Weakness",
+                "Dizziness",
+                "Fainting"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Dizziness, Fainting",
+            "hint": "The note names an ongoing balance symptom and one distinct, more serious witnessed episode.",
+            "explanation": "Two months of Dizziness on standing is paired with one witnessed episode of Fainting.",
             "id": "mc_l158_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"I've had this persistent itching across my scalp that's worse after washing, and I've noticed distinct patches where the hair seems thinner than the rest,\" the patient tells the doctor.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Scalp Itching",
+                "Dry Skin",
+                "Rash",
+                "Hair Loss"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Scalp Itching, Hair Loss",
+            "hint": "One symptom is a feeling on the scalp, and the other is a visible, patchy change in the hair.",
+            "explanation": "Itching worse after washing is Scalp Itching, and patchy thinning is Hair Loss.",
             "id": "mc_l158_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"I've had this persistent low-grade anxiety around mealtimes that's new for me, and I've noticed my appetite has dropped noticeably since it started.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Nausea",
+                "Anxiety",
+                "Low Mood",
+                "Loss of Appetite"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Anxiety, Loss of Appetite",
+            "hint": "One symptom is the emotional state itself, and the other is its effect on eating.",
+            "explanation": "New anxiety around mealtimes is Anxiety, and eating less because of it is Loss of Appetite.",
             "id": "mc_l159_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"I've had this persistent soreness in my lower back that's become a near-constant presence over the past six weeks, and I've noticed a dull ache extending into my hip on the same side.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Leg Pain",
+                "Joint Stiffness",
+                "Back Pain",
+                "Hip Pain"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Back Pain, Hip Pain",
+            "hint": "One symptom starts in the back, and the other is where it now extends to.",
+            "explanation": "Six weeks of near-constant soreness is Back Pain, and the extension into the hip is Hip Pain.",
             "id": "mc_l159_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"I've had this persistent congestion that's lingered for nearly a month past my last cold, and I've noticed a heavy pressure across my cheeks that's worse when I lean forward.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Stuffy Nose",
+                "Runny Nose",
+                "Sinus Pressure",
+                "Headache"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Stuffy Nose, Sinus Pressure",
+            "hint": "One symptom is blockage that has lingered, and the other is heaviness specifically across the cheeks.",
+            "explanation": "A month of lingering congestion is a Stuffy Nose, and heaviness across the cheeks is Sinus Pressure.",
             "id": "mc_l159_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "In the exam room, the patient says: \"I've had this persistent tightness across my chest that now happens even at rest, which is new, and I've noticed I get winded doing things that never used to bother me at all.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Racing Heartbeat",
+                "Chest Pain",
+                "Shortness of Breath",
+                "Fatigue"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Chest Pain, Shortness of Breath",
+            "hint": "One symptom is chest tightness now occurring at rest, and the other is breathlessness during easy tasks.",
+            "explanation": "Chest tightness now at rest is Chest Pain, and breathlessness during easy tasks is Shortness of Breath.",
             "id": "mc_l160_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "The nurse's intake note reads: \"Patient reports a five-month history of gradual, symmetric joint pain in the hands and feet, with morning stiffness now lasting over ninety minutes.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Joint Pain",
+                "Swelling",
+                "Numbness",
+                "Joint Stiffness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Joint Pain, Joint Stiffness",
+            "hint": "The note names ongoing pain across several joints and a specific, extended morning duration.",
+            "explanation": "Five months of symmetric joint pain is Joint Pain, and ninety minutes of morning stiffness is Joint Stiffness.",
             "id": "mc_l160_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"I've had this persistent low mood that's lasted well over a month now, and I've noticed I've lost interest in things I used to genuinely look forward to, like my weekend hikes,\" the patient tells the doctor.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Low Mood",
+                "Fatigue",
+                "Insomnia",
+                "Brain Fog"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Low Mood, Fatigue",
+            "hint": "One symptom is the mood itself, and the other is the low energy behind losing interest in hikes.",
+            "explanation": "Over a month of low mood is Low Mood, and losing interest in enjoyed activities often reflects underlying Fatigue.",
             "id": "mc_l160_q3"
         }
     ]

@@ -4,483 +4,483 @@
     "levels": "131-140",
     "quests": [
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll take the Cornish oysters with mignonette and grilled chorizo, the halibut with brown shrimp and coastal herbs, and the treacle and ginger tart with oat ice cream.",
+            "prompt": "Having sampled the endive salad on a previous visit, I'll have it again, along with the duck breast and the crema catalana.",
             "options": [
-                "Cornish Oysters with Mignonette and Grilled Chorizo",
-                "Halibut with Brown Shrimp and Coastal Herbs",
-                "Treacle and Ginger Tart with Oat Ice Cream",
-                "Sticky Toffee Pudding"
+                "Endive Salad",
+                "Duck Breast",
+                "Crema Catalana",
+                "Flan"
             ],
-            "correctAnswer": "Cornish Oysters with Mignonette and Grilled Chorizo, Halibut with Brown Shrimp and Coastal Herbs, Treacle and Ginger Tart with Oat Ice Cream",
-            "hint": "Mignonette is a classic French oyster condiment - cracked black pepper with shallots in red wine vinegar.",
-            "explanation": "Mignonette sauce (shallot and vinegar) is the traditional French accompaniment to raw oysters. Brown shrimp are tiny, sweet English Channel shrimp - a different species from king prawns. Oat ice cream is a rustic northern European dessert element - unusual but harmonious with treacle tart.",
+            "correctAnswer": "Endive Salad, Duck Breast, Crema Catalana",
+            "hint": "The customer is a returning guest choosing a dish they already know and love.",
+            "explanation": "‘Having sampled X on a previous visit’ shows the customer is a repeat guest, confidently reordering a dish they've already tried and enjoyed.",
             "id": "go_l131_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the heritage potato and smoked herring salade tiède, the Orkney diver scallop with pickled girolles, and the dark chocolate and malt whisky tart.",
+            "prompt": "The maître d' recommended the octopus carpaccio personally — I'll take it, with the lamb rack and the panna cotta.",
             "options": [
-                "Heritage Potato and Smoked Herring Salade Tiède",
-                "Orkney Diver Scallop with Pickled Girolles",
-                "Dark Chocolate and Malt Whisky Tart",
-                "Chocolate Fondant"
+                "Octopus Carpaccio",
+                "Lamb Rack",
+                "Panna Cotta",
+                "Tiramisu"
             ],
-            "correctAnswer": "Heritage Potato and Smoked Herring Salade Tiède, Orkney Diver Scallop with Pickled Girolles, Dark Chocolate and Malt Whisky Tart",
-            "hint": "Salade tiède means a warm salad - the dressing or ingredients are served at a gentle heat.",
-            "explanation": "Salade tiède (warm salad) is a French bistro concept - combining warm and room-temperature components. Pickled girolles add acidity to the rich scallop. Malt whisky in a chocolate tart is a specifically Scottish touch - the peaty, smoky notes complement dark chocolate.",
+            "correctAnswer": "Octopus Carpaccio, Lamb Rack, Panna Cotta",
+            "hint": "A specific staff member — not just any server — offers this recommendation.",
+            "explanation": "A ‘maître d’’ oversees the dining room and often greets guests personally, so a recommendation from them carries particular weight.",
             "id": "go_l131_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the cep and Gruyère tart with walnut vinaigrette, the wild mallard with medlar jelly and game chips, and the brown sugar meringue with damson ice cream?",
+            "prompt": "We're hosting out-of-town guests, so let's order the seared scallops, the branzino, and the chocolate lava cake to showcase the best of the menu.",
             "options": [
-                "Cep and Gruyère Tart with Walnut Vinaigrette",
-                "Wild Mallard with Medlar Jelly and Game Chips",
-                "Brown Sugar Meringue with Damson Ice Cream",
-                "Eton Mess"
+                "Seared Scallops",
+                "Branzino",
+                "Chocolate Lava Cake",
+                "Chocolate Mousse"
             ],
-            "correctAnswer": "Cep and Gruyère Tart with Walnut Vinaigrette, Wild Mallard with Medlar Jelly and Game Chips, Brown Sugar Meringue with Damson Ice Cream",
-            "hint": "Ceps (porcini) are the king of edible mushrooms - intensely earthy and robust.",
-            "explanation": "Ceps (porcini) are prized autumn wild mushrooms with a meaty, earthy flavour. Medlar is an ancient British fruit - astringent when raw but uniquely spiced when bletted (softened). Damson is a small, tart British plum - damson ice cream has a deep purple colour and complex flavour.",
+            "correctAnswer": "Seared Scallops, Branzino, Chocolate Lava Cake",
+            "hint": "The occasion — impressing visiting guests — explains this especially impressive order.",
+            "explanation": "‘To showcase the best of the menu’ means choosing dishes specifically meant to impress, a common goal when entertaining visitors.",
             "id": "go_l131_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the boudin noir with apple and cider vinegar, the guineafowl with lentilles du Puy and mustard cream, and the feuilletine and praline millefeuille.",
+            "prompt": "I'd like the burrata, if the kitchen can accommodate a small modification, then the branzino, and the olive oil cake.",
             "options": [
-                "Boudin Noir with Apple and Cider Vinegar",
-                "Guineafowl with Lentilles du Puy and Mustard Cream",
-                "Feuilletine and Praline Millefeuille",
-                "Paris-Brest"
+                "Burrata",
+                "Branzino",
+                "Olive Oil Cake",
+                "Almond Cake"
             ],
-            "correctAnswer": "Boudin Noir with Apple and Cider Vinegar, Guineafowl with Lentilles du Puy and Mustard Cream, Feuilletine and Praline Millefeuille",
-            "hint": "Boudin noir is French black pudding - blood sausage enriched with fat.",
-            "explanation": "Boudin noir is a French blood sausage - richer and smoother than British black pudding. Apple and vinegar cut its richness. Guineafowl is a gamey poultry between chicken and pheasant. Feuilletine are tiny shards of crushed crêpe dentelle - adding crunch to praline millefeuille.",
+            "correctAnswer": "Burrata, Branzino, Olive Oil Cake",
+            "hint": "A polite note about a possible small change comes before the rest of the order.",
+            "explanation": "‘If the kitchen can accommodate a small modification’ politely signals a minor request, like removing an ingredient, without stating exactly what it is.",
             "id": "go_l132_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the potage Saint-Germain with Bayonne ham, the filet de sole bonne femme, and the profiteroles au chocolat.",
+            "prompt": "Seeing as we have the private room booked, we'll have the tuna tartare, the pork chop, and the sticky toffee pudding brought out together.",
             "options": [
-                "Potage Saint-Germain with Bayonne Ham",
-                "Filet de Sole Bonne Femme",
-                "Profiteroles au Chocolat",
-                "Paris-Brest"
+                "Tuna Tartare",
+                "Pork Chop",
+                "Sticky Toffee Pudding",
+                "Sticky Date Pudding"
             ],
-            "correctAnswer": "Potage Saint-Germain with Bayonne Ham, Filet de Sole Bonne Femme, Profiteroles au Chocolat",
-            "hint": "Potage Saint-Germain is a classic French green pea soup - elegant and vivid.",
-            "explanation": "Potage Saint-Germain is a velvety French pea soup - named after the Parisian suburb. Sole bonne femme is sole poached in white wine with mushrooms and cream. Profiteroles are choux pastry balls filled with cream and drizzled with hot chocolate sauce - a perennial classic.",
+            "correctAnswer": "Tuna Tartare, Pork Chop, Sticky Toffee Pudding",
+            "hint": "A booked private space explains why all three courses will arrive at once, rather than separately.",
+            "explanation": "‘Seeing as…’ means ‘since’ or ‘because,’ introducing a reason. In private dining, courses are sometimes served together rather than one at a time.",
             "id": "go_l132_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the tête de veau gribiche, the blanquette de veau à l'ancienne, and the charlotte aux marrons?",
+            "prompt": "The board is joining us tonight, so I'll keep to the beet salad, the branzino, and the panna cotta — nothing too adventurous.",
             "options": [
-                "Tête de Veau Gribiche",
-                "Blanquette de Veau à l'Ancienne",
-                "Charlotte aux Marrons",
-                "Mont Blanc"
+                "Beet Salad",
+                "Branzino",
+                "Panna Cotta",
+                "Tiramisu"
             ],
-            "correctAnswer": "Tête de Veau Gribiche, Blanquette de Veau à l'Ancienne, Charlotte aux Marrons",
-            "hint": "Blanquette de veau is a white veal stew - one of the founding dishes of classic French cooking.",
-            "explanation": "Tête de veau (calf's head) is a traditional French delicacy - served with gribiche sauce (a hard-boiled egg and pickle vinaigrette). Blanquette de veau is a gentle white stew in cream sauce - considered a cornerstone of bourgeois French cooking. Charlotte aux marrons uses chestnut cream - different from Mont Blanc, also a chestnut dessert.",
+            "correctAnswer": "Beet Salad, Branzino, Panna Cotta",
+            "hint": "A professional gathering explains why the customer is choosing safe, familiar dishes.",
+            "explanation": "‘Nothing too adventurous’ shows the customer deliberately avoiding unusual dishes, likely to keep the focus on business rather than food.",
             "id": "go_l132_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll take the steak and kidney pudding, the roast rib of beef with Yorkshire pudding and all the trimmings, and the bread and butter pudding with crème anglaise.",
+            "prompt": "I've heard the truffle risotto sells out quickly, so let's start there, then the veal chop, and the tiramisu.",
             "options": [
-                "Steak and Kidney Pudding",
-                "Roast Rib of Beef with Yorkshire Pudding and All the Trimmings",
-                "Bread and Butter Pudding with Crème Anglaise",
-                "Treacle Tart"
+                "Truffle Risotto",
+                "Veal Chop",
+                "Tiramisu",
+                "Affogato"
             ],
-            "correctAnswer": "Steak and Kidney Pudding, Roast Rib of Beef with Yorkshire Pudding and All the Trimmings, Bread and Butter Pudding with Crème Anglaise",
-            "hint": "'All the trimmings' with a roast means vegetables, gravy, and all the classic accompaniments.",
-            "explanation": "'All the trimmings' is a British phrase meaning all the traditional accompaniments - roast potatoes, carrots, greens, gravy, and horseradish. Bread and butter pudding is made from stale bread soaked in custard - a quintessential British kitchen classic.",
+            "correctAnswer": "Truffle Risotto, Veal Chop, Tiramisu",
+            "hint": "A dish's popularity and limited availability explains why it's ordered first.",
+            "explanation": "‘Sells out quickly’ warns that a dish may run out, a good reason to order it early rather than risk missing it.",
             "id": "go_l133_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the cockle and laverbread fritters, the cawl cennin, and the Welsh rarebit soufflé.",
+            "prompt": "For the retirement dinner, the honoree requested the escargot, the lamb rack, and the crema catalana.",
             "options": [
-                "Cockle and Laverbread Fritters",
-                "Cawl Cennin",
-                "Welsh Rarebit Soufflé",
-                "Bara Brith"
+                "Escargot",
+                "Lamb Rack",
+                "Crema Catalana",
+                "Flan"
             ],
-            "correctAnswer": "Cockle and Laverbread Fritters, Cawl Cennin, Welsh Rarebit Soufflé",
-            "hint": "Laverbread is a Welsh delicacy made from cooked seaweed - rich in iodine.",
-            "explanation": "Laverbread is cooked seaweed (laver) purée - a traditional Welsh breakfast ingredient. Cockles and laverbread together are a beloved Welsh combination. Cawl cennin is a Welsh leek soup/broth. Welsh rarebit soufflé takes the classic cheese sauce to new heights. Bara brith is a Welsh spiced fruit loaf.",
+            "correctAnswer": "Escargot, Lamb Rack, Crema Catalana",
+            "hint": "A specific person's request is described from someone else's point of view.",
+            "explanation": "‘The honoree’ is the person being celebrated at an event, like a retirement dinner — their personal requests often shape the whole meal.",
             "id": "go_l133_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the Cullen skink, the haggis bon bons with neeps and tatties, and the cranachan with fresh raspberries?",
+            "prompt": "I'll match whatever wine you suggest with the burrata, the lamb shank, and the sticky toffee pudding.",
             "options": [
-                "Cullen Skink",
-                "Haggis Bon Bons with Neeps and Tatties",
-                "Cranachan with Fresh Raspberries",
-                "Tipsy Laird"
+                "Burrata",
+                "Lamb Shank",
+                "Sticky Toffee Pudding",
+                "Sticky Date Pudding"
             ],
-            "correctAnswer": "Cullen Skink, Haggis Bon Bons with Neeps and Tatties, Cranachan with Fresh Raspberries",
-            "hint": "Cullen skink is a Scottish smoked haddock and potato soup - from the fishing village of Cullen.",
-            "explanation": "Cullen skink originates from the village of Cullen on the Moray Firth - it is a thick, creamy smoked haddock soup. Haggis bon bons are a modern presentation of the traditional Scottish dish - rolled into balls and deep-fried. Neeps and tatties are turnip and potato. Tipsy Laird is a Scottish sherry trifle.",
+            "correctAnswer": "Burrata, Lamb Shank, Sticky Toffee Pudding",
+            "hint": "The customer commits to any wine pairing before naming all three food courses.",
+            "explanation": "‘I’ll match whatever wine you suggest’ shows complete openness to a wine recommendation, similar to earlier phrases about trusting the sommelier.",
             "id": "go_l133_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll take the soft-shell crab with Old Bay and pickled green tomato, the Maryland crab cake with remoulade and succotash, and the Key lime pie.",
+            "prompt": "As a token of appreciation, the host has arranged the caviar, the wagyu, and the chocolate lava cake for the entire party.",
             "options": [
-                "Soft-Shell Crab with Old Bay and Pickled Green Tomato",
-                "Maryland Crab Cake with Remoulade and Succotash",
-                "Key Lime Pie",
-                "Pecan Pie"
+                "Caviar",
+                "Wagyu",
+                "Chocolate Lava Cake",
+                "Chocolate Mousse"
             ],
-            "correctAnswer": "Soft-Shell Crab with Old Bay and Pickled Green Tomato, Maryland Crab Cake with Remoulade and Succotash, Key Lime Pie",
-            "hint": "Old Bay is a Baltimore spice blend - the classic seasoning for Maryland crab.",
-            "explanation": "Old Bay is an iconic spice blend from Baltimore containing celery salt, paprika, and black pepper - synonymous with Maryland seafood. Soft-shell crabs have just moulted and the entire crab is edible. Succotash is a Native American dish of corn and beans. Key lime pie originates in the Florida Keys.",
+            "correctAnswer": "Caviar, Wagyu, Chocolate Lava Cake",
+            "hint": "A generous gesture from the host explains this elaborate order for the whole group.",
+            "explanation": "‘As a token of appreciation’ means as a way of showing thanks, often explaining why a host is treating guests to something special.",
             "id": "go_l134_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the Gulf shrimp and grits, the crawfish étouffée, and the beignets with café au lait.",
+            "prompt": "Having sampled the octopus carpaccio on a previous visit, I'll have it again, along with the duck breast and the affogato.",
             "options": [
-                "Gulf Shrimp and Grits",
-                "Crawfish Étouffée",
-                "Beignets with Café au Lait",
-                "Pecan Praline"
+                "Octopus Carpaccio",
+                "Duck Breast",
+                "Affogato",
+                "Tiramisu"
             ],
-            "correctAnswer": "Gulf Shrimp and Grits, Crawfish Étouffée, Beignets with Café au Lait",
-            "hint": "Beignets with café au lait are the iconic New Orleans street food combination.",
-            "explanation": "Shrimp and grits is a South Carolina Low Country classic. Étouffée (smothered) is a Cajun and Creole dish of shellfish in a rich butter and onion sauce. Beignets are deep-fried choux dough squares covered in powdered sugar - Café Du Monde in New Orleans is their spiritual home.",
+            "correctAnswer": "Octopus Carpaccio, Duck Breast, Affogato",
+            "hint": "This returning-guest structure reappears with a new starter.",
+            "explanation": "This sentence follows the same shape seen earlier — a confident reorder of a dish already known and enjoyed.",
             "id": "go_l134_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the lobster bisque with sherry and cream, the prime Kansas City strip with twice-baked potato, and the New York cheesecake?",
+            "prompt": "The maître d' recommended the beet carpaccio personally — I'll take it, with the halibut and the lemon posset.",
             "options": [
-                "Lobster Bisque with Sherry and Cream",
-                "Prime Kansas City Strip with Twice-Baked Potato",
-                "New York Cheesecake",
-                "Boston Cream Pie"
+                "Beet Carpaccio",
+                "Halibut",
+                "Lemon Posset",
+                "Panna Cotta"
             ],
-            "correctAnswer": "Lobster Bisque with Sherry and Cream, Prime Kansas City Strip with Twice-Baked Potato, New York Cheesecake",
-            "hint": "A Kansas City strip and New York strip are the same cut - named after both cities' steakhouses.",
-            "explanation": "Sherry adds nutty depth to lobster bisque. A twice-baked potato is baked, scooped, mixed with cheese and sour cream, and baked again. New York cheesecake is dense and creamy with a graham cracker base - very different from a Boston cream pie, which is actually a layer cake.",
+            "correctAnswer": "Beet Carpaccio, Halibut, Lemon Posset",
+            "hint": "The same trusted staff member's recommendation reappears here.",
+            "explanation": "This structure continues to highlight a specific, respected recommendation, rather than a general server suggestion.",
             "id": "go_l134_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the Dungeness crab louie, the cioppino with sourdough, and the Meyer lemon semifreddo.",
+            "prompt": "We're hosting out-of-town guests, so let's order the burrata, the branzino, and the tiramisu to showcase the best of the menu.",
             "options": [
-                "Dungeness Crab Louie",
-                "Cioppino with Sourdough",
-                "Meyer Lemon Semifreddo",
-                "Lemon Tart"
+                "Burrata",
+                "Branzino",
+                "Tiramisu",
+                "Affogato"
             ],
-            "correctAnswer": "Dungeness Crab Louie, Cioppino with Sourdough, Meyer Lemon Semifreddo",
-            "hint": "Cioppino is a San Francisco fisherman's stew - created by Italian immigrant fishermen.",
-            "explanation": "Dungeness crab is a Pacific Northwest delicacy - sweet and abundant. Crab Louie is a West Coast salad with crab, avocado, and Louie dressing (similar to Thousand Island). Cioppino is a tomato-based seafood stew invented by Italian fishermen in San Francisco. Meyer lemon is sweeter and more aromatic than regular lemon.",
+            "correctAnswer": "Burrata, Branzino, Tiramisu",
+            "hint": "This ‘impressing visitors’ structure returns with a slightly lighter three-course meal.",
+            "explanation": "Even a simpler set of dishes can ‘showcase the best of the menu,’ depending on what a restaurant is known for.",
             "id": "go_l135_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the abalone chowder, the grilled Chinook salmon with wild berry sauce, and the Dungeness crab and avocado tostada.",
+            "prompt": "I'd like the beet carpaccio, if the kitchen can accommodate a small modification, then the duck breast, and the affogato.",
             "options": [
-                "Abalone Chowder",
-                "Grilled Chinook Salmon with Wild Berry Sauce",
-                "Dungeness Crab and Avocado Tostada",
-                "Clam Chowder"
+                "Beet Carpaccio",
+                "Duck Breast",
+                "Affogato",
+                "Tiramisu"
             ],
-            "correctAnswer": "Abalone Chowder, Grilled Chinook Salmon with Wild Berry Sauce, Dungeness Crab and Avocado Tostada",
-            "hint": "Chinook (King) salmon is the largest Pacific salmon - prized for its high fat content.",
-            "explanation": "Abalone is a large sea snail - a luxury ingredient especially valued in California and Asia. Chinook (also called King) salmon is the largest and most prized Pacific salmon - incredibly rich and fatty. Wild berries with salmon reflect Pacific Northwest cuisine that pairs Indigenous ingredients with fish.",
+            "correctAnswer": "Beet Carpaccio, Duck Breast, Affogato",
+            "hint": "The polite modification note returns here with a new starter.",
+            "explanation": "This phrase remains a graceful way to hint at a small special request without over-explaining it.",
             "id": "go_l135_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the poke bowl with Ahi tuna and ponzu, the kahlua pig with taro and poi, and the haupia?",
+            "prompt": "Seeing as we have the private room booked, we'll have the beet salad, the veal chop, and the olive oil cake brought out together.",
             "options": [
-                "Poke Bowl with Ahi Tuna and Ponzu",
-                "Kahlua Pig with Taro and Poi",
-                "Haupia",
-                "Malasadas"
+                "Beet Salad",
+                "Veal Chop",
+                "Olive Oil Cake",
+                "Almond Cake"
             ],
-            "correctAnswer": "Poke Bowl with Ahi Tuna and Ponzu, Kahlua Pig with Taro and Poi, Haupia",
-            "hint": "Haupia is a traditional Hawaiian coconut pudding - served at luaus.",
-            "explanation": "Poke (POH-keh) is a Hawaiian dish of diced raw fish seasoned with soy sauce and sesame. Ahi is Hawaiian for yellowfin tuna. Kahlua pig is traditionally cooked in an underground imu (oven). Poi is a Hawaiian staple made from pounded taro root. Haupia is a coconut milk jelly dessert. Malasadas are Portuguese doughnuts - different.",
+            "correctAnswer": "Beet Salad, Veal Chop, Olive Oil Cake",
+            "hint": "The private room explanation returns, again describing courses served all at once.",
+            "explanation": "This structure remains useful for describing any private event where the usual course-by-course timing might be adjusted.",
             "id": "go_l135_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll take the dashi with seasonal garnishes, the wagyu shabu-shabu, and the matcha roll cake.",
+            "prompt": "The board is joining us tonight, so I'll keep to the burrata, the sea bass, and the panna cotta — nothing too adventurous.",
             "options": [
-                "Dashi with Seasonal Garnishes",
-                "Wagyu Shabu-Shabu",
-                "Matcha Roll Cake",
-                "Mochi Ice Cream"
+                "Burrata",
+                "Sea Bass",
+                "Panna Cotta",
+                "Tiramisu"
             ],
-            "correctAnswer": "Dashi with Seasonal Garnishes, Wagyu Shabu-Shabu, Matcha Roll Cake",
-            "hint": "Dashi is the fundamental Japanese stock - made from kombu and bonito flakes.",
-            "explanation": "Dashi is the foundational stock of Japanese cuisine - made from kombu (kelp) and katsuobushi (dried bonito flakes). Shabu-shabu is a Japanese hot pot - thin slices of beef swished in boiling broth. Matcha roll cake is Swiss roll-style with matcha cream - different from mochi ice cream.",
+            "correctAnswer": "Burrata, Sea Bass, Panna Cotta",
+            "hint": "This cautious, professional-dinner structure returns once more.",
+            "explanation": "This phrase continues to show a deliberate, safe choice made for a formal business setting.",
             "id": "go_l136_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the kaiseki appetiser selection, the kappo-style grilled Matsusaka beef with ponzu, and the matcha chocolate opera cake.",
+            "prompt": "I've heard the octopus sells out quickly, so let's start there, then the wagyu, and the chocolate fondant.",
             "options": [
-                "Kaiseki Appetiser Selection",
-                "Kappo-Style Grilled Matsusaka Beef with Ponzu",
-                "Matcha Chocolate Opera Cake",
-                "Bûche de Noël"
+                "Octopus",
+                "Wagyu",
+                "Chocolate Fondant",
+                "Chocolate Torte"
             ],
-            "correctAnswer": "Kaiseki Appetiser Selection, Kappo-Style Grilled Matsusaka Beef with Ponzu, Matcha Chocolate Opera Cake",
-            "hint": "Matsusaka beef is one of Japan's three great wagyu brands - from Mie Prefecture.",
-            "explanation": "Matsusaka beef (alongside Kobe and Omi) is one of Japan's most prestigious wagyu brands - the cattle are fed beer and sake and given massages. Kappo is an intimate Tokyo counter dining style. Matcha chocolate opera cake fuses the French opera layer cake with Japanese matcha - a creative East-West fusion.",
+            "correctAnswer": "Octopus, Wagyu, Chocolate Fondant",
+            "hint": "This popularity-driven ordering logic returns with new dishes.",
+            "explanation": "This structure continues to explain a practical reason — limited availability — for ordering a specific starter first.",
             "id": "go_l136_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the kegani with tosazu jelly, the nodoguro no shioyaki, and the azuki and kuromitsu anmitsu?",
+            "prompt": "For the retirement dinner, the honoree requested the octopus, the lamb shank, and the sticky toffee pudding.",
             "options": [
-                "Kegani with Tosazu Jelly",
-                "Nodoguro no Shioyaki",
-                "Azuki and Kuromitsu Anmitsu",
-                "Dorayaki"
+                "Octopus",
+                "Lamb Shank",
+                "Sticky Toffee Pudding",
+                "Sticky Date Pudding"
             ],
-            "correctAnswer": "Kegani with Tosazu Jelly, Nodoguro no Shioyaki, Azuki and Kuromitsu Anmitsu",
-            "hint": "Kegani is Hokkaido hairy crab - one of Japan's most prized winter crustaceans.",
-            "explanation": "Kegani (Hokkaido hairy crab) is a premium seasonal crab. Tosazu is a Japanese dressing of dashi and rice vinegar. Nodoguro (blackthroat seaperch) no shioyaki is a simply salt-grilled fatty fish. Anmitsu is a traditional Japanese dessert of agar jelly, azuki beans, and kuromitsu (black sugar syrup). Dorayaki is a sweet pancake sandwich - different.",
+            "correctAnswer": "Octopus, Lamb Shank, Sticky Toffee Pudding",
+            "hint": "A named event and a specific honoree's requests return once more.",
+            "explanation": "This structure remains useful for describing any special meal centered around one particular guest's wishes.",
             "id": "go_l136_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the chapli kebab with raita and paratha, the nihari with bone marrow, and the rabri with pistachio kulfi.",
+            "prompt": "I'll match whatever wine you suggest with the beet carpaccio, the duck breast, and the affogato.",
             "options": [
-                "Chapli Kebab with Raita and Paratha",
-                "Nihari with Bone Marrow",
-                "Rabri with Pistachio Kulfi",
-                "Kheer"
+                "Beet Carpaccio",
+                "Duck Breast",
+                "Affogato",
+                "Tiramisu"
             ],
-            "correctAnswer": "Chapli Kebab with Raita and Paratha, Nihari with Bone Marrow, Rabri with Pistachio Kulfi",
-            "hint": "Nihari is a slow-cooked spiced beef stew - traditionally a breakfast dish for Mughal emperors.",
-            "explanation": "Chapli kebab is a Pashtun flat minced meat patty spiced with pomegranate seeds. Nihari is a rich slow-cooked beef stew with bone marrow, traditionally cooked overnight. Rabri is sweetened condensed milk with cardamom. Kulfi is a dense South Asian frozen dessert. Kheer is rice pudding - different.",
+            "correctAnswer": "Beet Carpaccio, Duck Breast, Affogato",
+            "hint": "This full trust in wine pairing returns with a new three-course meal.",
+            "explanation": "This structure continues to show complete confidence in the sommelier's expertise, regardless of the specific food ordered.",
             "id": "go_l137_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the papdi chaat, the lamb raan with pilau, and the gulab jamun with vanilla ice cream.",
+            "prompt": "As a token of appreciation, the host has arranged the beet salad, the halibut, and the sorbet for the entire party.",
             "options": [
-                "Papdi Chaat",
-                "Lamb Raan with Pilau",
-                "Gulab Jamun with Vanilla Ice Cream",
-                "Kheer"
+                "Beet Salad",
+                "Halibut",
+                "Sorbet",
+                "Panna Cotta"
             ],
-            "correctAnswer": "Papdi Chaat, Lamb Raan with Pilau, Gulab Jamun with Vanilla Ice Cream",
-            "hint": "Chaat is a category of tangy, spicy street snacks - papdi chaat uses crispy wafers.",
-            "explanation": "Chaat is a category of spiced snacks with contrasting flavours and textures - sweet, sour, spicy, and crunchy together. Lamb raan is a whole slow-cooked marinated leg of lamb. Gulab jamun are deep-fried milk solid dumplings soaked in rose water syrup - one of South Asia's most beloved sweets.",
+            "correctAnswer": "Beet Salad, Halibut, Sorbet",
+            "hint": "A generous host's gesture returns once more, explaining a shared group order.",
+            "explanation": "This phrase remains a graceful way to describe a host treating an entire group to a thoughtfully chosen meal.",
             "id": "go_l137_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the Hyderabadi haleem, the dum biryani with saffron and kewra, and the double ka meetha?",
+            "prompt": "Having sampled the burrata on a previous visit, I'll have it again, along with the veal chop and the crema catalana.",
             "options": [
-                "Hyderabadi Haleem",
-                "Dum Biryani with Saffron and Kewra",
-                "Double Ka Meetha",
-                "Shahi Tukda"
+                "Burrata",
+                "Veal Chop",
+                "Crema Catalana",
+                "Flan"
             ],
-            "correctAnswer": "Hyderabadi Haleem, Dum Biryani with Saffron and Kewra, Double Ka Meetha",
-            "hint": "Dum cooking seals the pot and slow-cooks in steam - an ancient Mughal technique.",
-            "explanation": "Haleem is a thick stew of meat and lentils cooked until silky - from Hyderabad. Dum biryani uses the dum technique - sealed with dough and steamed, locking in the saffron and kewra (pandanus water) aroma. Double ka meetha is Hyderabadi bread pudding - different from shahi tukda, which is similar but from Lucknow.",
+            "correctAnswer": "Burrata, Veal Chop, Crema Catalana",
+            "hint": "The returning-guest structure appears once more with a new main course.",
+            "explanation": "This sentence pattern continues to express loyalty to a dish already tried and trusted on an earlier visit.",
             "id": "go_l137_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll take the yassa au poulet, the thiéboudienne, and the bissap sorbet.",
+            "prompt": "The maître d' recommended the tuna tartare personally — I'll take it, with the branzino and the olive oil cake.",
             "options": [
-                "Yassa au Poulet",
-                "Thiéboudienne",
-                "Bissap Sorbet",
-                "Chin Chin"
+                "Tuna Tartare",
+                "Branzino",
+                "Olive Oil Cake",
+                "Almond Cake"
             ],
-            "correctAnswer": "Yassa au Poulet, Thiéboudienne, Bissap Sorbet",
-            "hint": "Thiéboudienne is Senegal's national dish - rice cooked in tomato and fish stock.",
-            "explanation": "Thiéboudienne (or ceebu jën) is the Senegalese national dish of broken rice cooked in a tomato and dried fish broth with vegetables. Yassa au poulet is marinated grilled chicken in a caramelised onion and mustard sauce. Bissap sorbet uses hibiscus flowers - vivid red and tangy. Chin chin is a Nigerian fried snack.",
+            "correctAnswer": "Tuna Tartare, Branzino, Olive Oil Cake",
+            "hint": "The trusted staff recommendation returns with a fish main course this time.",
+            "explanation": "This structure continues to highlight the special weight of a personal recommendation from senior restaurant staff.",
             "id": "go_l138_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the suya with groundnut dipping sauce, the egusi soup with fufu, and the puff-puff.",
+            "prompt": "We're hosting out-of-town guests, so let's order the caviar, the lamb rack, and the chocolate soufflé to showcase the best of the menu.",
             "options": [
-                "Suya with Groundnut Dipping Sauce",
-                "Egusi Soup with Fufu",
-                "Puff-Puff",
-                "Jollof Rice"
+                "Caviar",
+                "Lamb Rack",
+                "Chocolate Soufflé",
+                "Chocolate Mousse"
             ],
-            "correctAnswer": "Suya with Groundnut Dipping Sauce, Egusi Soup with Fufu, Puff-Puff",
-            "hint": "Suya is West African spiced grilled beef skewers - the spice rub includes groundnuts.",
-            "explanation": "Suya is a West African street food of grilled meat skewers coated in a spice mixture that includes roasted groundnut powder. Egusi soup uses ground melon seeds. Fufu is a starchy ball made from pounded yam, cassava, or plantain - used to scoop soup. Puff-puff are sweet fried dough balls. Jollof rice is a main dish.",
+            "correctAnswer": "Caviar, Lamb Rack, Chocolate Soufflé",
+            "hint": "This impressive-guest structure appears once more with a new set of standout dishes.",
+            "explanation": "This phrase remains a natural way to explain an elevated order made specifically to impress visiting guests.",
             "id": "go_l138_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the kelewele, the groundnut soup with rice balls, and the ofam?",
+            "prompt": "I'd like the burrata, if the kitchen can accommodate a small modification, then the halibut, and the lemon posset.",
             "options": [
-                "Kelewele",
-                "Groundnut Soup with Rice Balls",
-                "Ofam",
-                "Fufu"
+                "Burrata",
+                "Halibut",
+                "Lemon Posset",
+                "Panna Cotta"
             ],
-            "correctAnswer": "Kelewele, Groundnut Soup with Rice Balls, Ofam",
-            "hint": "Kelewele is Ghanaian spiced fried ripe plantain - a popular street food.",
-            "explanation": "Kelewele is ripe plantain cubed, coated in a spice mixture of ginger, chilli, and spices, and deep-fried. Groundnut (peanut) soup with rice balls is a Ghanaian staple. Ofam is a Ghanaian steamed or fried sweet cake made from overripe plantain. Fufu is a different starchy dish.",
+            "correctAnswer": "Burrata, Halibut, Lemon Posset",
+            "hint": "The polite modification phrase returns once more with a light fish main.",
+            "explanation": "This gentle, indirect way of hinting at a special request continues to work smoothly across many different dishes.",
             "id": "go_l138_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the mole negro with turkey, the tlayuda with black beans and tasajo, and the tejate.",
+            "prompt": "Seeing as we have the private room booked, we'll have the octopus carpaccio, the wagyu, and the tiramisu brought out together.",
             "options": [
-                "Mole Negro with Turkey",
-                "Tlayuda with Black Beans and Tasajo",
-                "Tejate",
-                "Horchata"
+                "Octopus Carpaccio",
+                "Wagyu",
+                "Tiramisu",
+                "Affogato"
             ],
-            "correctAnswer": "Mole Negro with Turkey, Tlayuda with Black Beans and Tasajo, Tejate",
-            "hint": "Mole negro is the most complex of Oaxacan moles - containing over 30 ingredients including chocolate and chillies.",
-            "explanation": "Mole negro from Oaxaca is extraordinarily complex - over 30 ingredients including multiple chilli varieties, dark chocolate, and charred vegetables, slow-cooked for days. Tlayuda is an Oaxacan flatbread topped with beans. Tejate is a pre-Columbian cold drink of maize and cacao - predating chocolate as we know it.",
+            "correctAnswer": "Octopus Carpaccio, Wagyu, Tiramisu",
+            "hint": "The private-room explanation returns once more, describing a shared, simultaneous course delivery.",
+            "explanation": "This structure continues to be useful for private events where guests may prefer all their courses served closely together.",
             "id": "go_l139_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the memelas with frijoles negros and salsa roja, the chileajo de cerdo, and the nicuatole.",
+            "prompt": "The board is joining us tonight, so I'll keep to the beet salad, the branzino, and the sorbet — nothing too adventurous.",
             "options": [
-                "Memelas with Frijoles Negros and Salsa Roja",
-                "Chileajo de Cerdo",
-                "Nicuatole",
-                "Pan de Yema"
+                "Beet Salad",
+                "Branzino",
+                "Sorbet",
+                "Panna Cotta"
             ],
-            "correctAnswer": "Memelas with Frijoles Negros and Salsa Roja, Chileajo de Cerdo, Nicuatole",
-            "hint": "Nicuatole is a traditional Oaxacan corn pudding - similar to polenta but sweet.",
-            "explanation": "Memelas are thick oval corn tortillas. Chileajo de cerdo is a pork stew with dried chillies and garlic. Nicuatole is an ancient Oaxacan dessert of fresh corn cooked with sugar until set - creamy and mild. Pan de yema is an egg bread - a different Oaxacan speciality.",
+            "correctAnswer": "Beet Salad, Branzino, Sorbet",
+            "hint": "This cautious business-dinner phrase makes its final appearance in this set of levels.",
+            "explanation": "This sentence closes out a recurring theme in this level range: choosing safe, familiar dishes for a professional setting.",
             "id": "go_l139_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the enfrijoladas de pollo, the tasajo negro with chapulines, and the champurrado?",
+            "prompt": "I've heard the burrata sells out quickly, so let's start there, then the veal chop, and the crema catalana.",
             "options": [
-                "Enfrijoladas de Pollo",
-                "Tasajo Negro with Chapulines",
-                "Champurrado",
-                "Atole"
+                "Burrata",
+                "Veal Chop",
+                "Crema Catalana",
+                "Flan"
             ],
-            "correctAnswer": "Enfrijoladas de Pollo, Tasajo Negro with Chapulines, Champurrado",
-            "hint": "Chapulines are toasted grasshoppers - a traditional Oaxacan protein and delicacy.",
-            "explanation": "Enfrijoladas are tortillas dipped in a black bean sauce - similar to enchiladas but using bean sauce. Chapulines (toasted grasshoppers) are a traditional Oaxacan ingredient - crunchy and protein-rich. Champurrado is a thick hot chocolate thickened with masa (corn dough) - different from atole, which is plain corn-based.",
+            "correctAnswer": "Burrata, Veal Chop, Crema Catalana",
+            "hint": "The popularity-driven starter logic returns once more.",
+            "explanation": "This structure remains a natural, practical way to explain ordering something quickly before it runs out.",
             "id": "go_l139_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll take the pho ga with fresh herbs, bean sprouts, and hoisin, the bun cha with rice vermicelli and herbs, and the che ba mau.",
+            "prompt": "For the retirement dinner, the honoree requested the seared scallops, the lamb shank, and the panna cotta.",
             "options": [
-                "Pho Ga with Fresh Herbs Bean Sprouts and Hoisin",
-                "Bun Cha with Rice Vermicelli and Herbs",
-                "Che Ba Mau",
-                "Banh Flan"
+                "Seared Scallops",
+                "Lamb Shank",
+                "Panna Cotta",
+                "Sticky Toffee Pudding"
             ],
-            "correctAnswer": "Pho Ga with Fresh Herbs Bean Sprouts and Hoisin, Bun Cha with Rice Vermicelli and Herbs, Che Ba Mau",
-            "hint": "Bun cha is Hanoi's most famous dish - grilled pork patties in a dipping broth with noodles.",
-            "explanation": "Pho ga is chicken pho - a lighter broth than beef pho. Bun cha is a Hanoi speciality - grilled pork patties and sliced pork belly in a sweetened dipping broth with rice noodles and herbs. Che ba mau is a Vietnamese three-colour dessert of beans, jelly, and coconut milk. Banh flan is Vietnamese crème caramel.",
+            "correctAnswer": "Seared Scallops, Lamb Shank, Panna Cotta",
+            "hint": "This named-event structure makes its final appearance in this set of levels.",
+            "explanation": "This sentence closes out this tier using the same clear structure for describing a special guest's personal requests at a celebratory meal.",
             "id": "go_l140_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the goi ngo sen with tom, the ca kho to, and the banh da lon.",
+            "prompt": "I'll match whatever wine you suggest with the burrata, the sea bass, and the panna cotta.",
             "options": [
-                "Goi Ngo Sen with Tom",
-                "Ca Kho To",
-                "Banh Da Lon",
-                "Banh Cuon"
+                "Burrata",
+                "Sea Bass",
+                "Panna Cotta",
+                "Tiramisu"
             ],
-            "correctAnswer": "Goi Ngo Sen with Tom, Ca Kho To, Banh Da Lon",
-            "hint": "Ca kho to is caramelised fish braised in a clay pot - a Vietnamese comfort food.",
-            "explanation": "Goi ngo sen is a lotus stem salad with shrimp (tom). Ca kho to is fish braised in a clay pot (to) with caramel and fish sauce - a Southern Vietnamese comfort dish. Banh da lon is a layered steamed rice cake dessert. Banh cuon are steamed rice rolls - a different dish.",
+            "correctAnswer": "Burrata, Sea Bass, Panna Cotta",
+            "hint": "This full trust in wine pairing appears one final time to close out this tier.",
+            "explanation": "Throughout this level range, this phrase has consistently shown complete confidence in expert wine recommendations.",
             "id": "go_l140_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the bun bo Hue with rau song, the mi Quang with turmeric noodles, and the banh mi thit?",
+            "prompt": "As a token of appreciation, the host has arranged the crab cakes, the veal chop, and the chocolate lava cake for the entire party.",
             "options": [
-                "Bun Bo Hue with Rau Song",
-                "Mi Quang with Turmeric Noodles",
-                "Banh Mi Thit",
-                "Com Tam"
+                "Crab Cakes",
+                "Veal Chop",
+                "Chocolate Lava Cake",
+                "Chocolate Mousse"
             ],
-            "correctAnswer": "Bun Bo Hue with Rau Song, Mi Quang with Turmeric Noodles, Banh Mi Thit",
-            "hint": "Mi Quang is a Central Vietnamese noodle dish - served with only a little broth.",
-            "explanation": "Bun bo Hue is a spicy beef and pork noodle soup from Hue - with rau song (fresh herb plate). Mi Quang (from Quang Nam province) uses turmeric-yellow noodles with very little broth - garnished with rice crackers. Banh mi thit is a Vietnamese pork baguette sandwich. Com tam is broken rice - a different dish.",
+            "correctAnswer": "Crab Cakes, Veal Chop, Chocolate Lava Cake",
+            "hint": "This generous host structure returns one final time to close out this set of levels.",
+            "explanation": "This phrase has repeated throughout this level range as a graceful way to describe a host's generosity toward an entire group of guests.",
             "id": "go_l140_q3"
         }
     ]

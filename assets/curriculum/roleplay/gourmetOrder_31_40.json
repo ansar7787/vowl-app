@@ -4,483 +4,483 @@
     "levels": "31-40",
     "quests": [
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll start with the gambas al ajillo and a glass of Rioja.",
+            "prompt": "I'll take the burger, no onions, and a lemonade.",
             "options": [
-                "Gambas al Ajillo",
-                "Rioja",
-                "Patatas Bravas",
-                "Sangria"
+                "Burger",
+                "Lemonade",
+                "Cheeseburger",
+                "Iced Tea"
             ],
-            "correctAnswer": "Gambas al Ajillo, Rioja",
-            "hint": "Gambas al ajillo are garlic prawns - a popular Spanish tapa.",
-            "explanation": "Gambas al ajillo are prawns sautéed in olive oil with garlic and chilli - a classic Spanish tapa. Rioja is a renowned Spanish red wine. 'I'll start with' indicates a first course.",
+            "correctAnswer": "Burger, Lemonade",
+            "hint": "‘No onions’ is a request about the burger, not a separate item to select.",
+            "explanation": "‘No onions’ tells the kitchen to leave something out — it's a modification, not a new food item. Only ‘burger’ and ‘lemonade’ need to be selected.",
             "id": "go_l31_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the croquetas and the pan con tomate.",
+            "prompt": "Could I have the salad without croutons, and an iced tea?",
             "options": [
-                "Croquetas",
-                "Pan con Tomate",
-                "Padron Peppers",
-                "Garlic Bread"
+                "Salad",
+                "Iced Tea",
+                "Soup",
+                "Lemonade"
             ],
-            "correctAnswer": "Croquetas, Pan con Tomate",
-            "hint": "'Pan con tomate' is bread rubbed with tomato - different from garlic bread.",
-            "explanation": "Croquetas are creamy béchamel-filled fried balls. 'Pan con tomate' (bread with tomato) is bread rubbed with ripe tomato and olive oil - a Catalan classic. Both are tapas dishes.",
+            "correctAnswer": "Salad, Iced Tea",
+            "hint": "‘Without’ works the same way as ‘no’ — it removes something from the dish.",
+            "explanation": "‘Without croutons’ means the salad should be served minus the croutons. This doesn't change which two items to tap — just how the food is prepared.",
             "id": "go_l31_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the albondigas and a sparkling water?",
+            "prompt": "I'd like the sandwich, but could you leave out the mayo? And a coffee, please.",
             "options": [
-                "Albondigas",
-                "Sparkling Water",
-                "Chorizo",
-                "Still Water"
+                "Sandwich",
+                "Coffee",
+                "Wrap",
+                "Tea"
             ],
-            "correctAnswer": "Albondigas, Sparkling Water",
-            "hint": "Albondigas are Spanish meatballs in tomato sauce.",
-            "explanation": "Albondigas are Spanish meatballs typically served in tomato or almond sauce. This question practises recognising Spanish food names commonly found in English menus worldwide.",
+            "correctAnswer": "Sandwich, Coffee",
+            "hint": "The customer asks for a small change to the sandwich before naming the drink.",
+            "explanation": "‘Could you leave out…?’ is a polite way to request that an ingredient be removed. It doesn't create a new menu item — the order is still just the sandwich and the coffee.",
             "id": "go_l31_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the grilled sea bass and the roasted vegetables.",
+            "prompt": "The grilled cheese sounds good — I'll have that with a tomato soup.",
             "options": [
-                "Grilled Sea Bass",
-                "Roasted Vegetables",
-                "Pan-Fried Salmon",
-                "Steamed Broccoli"
+                "Grilled Cheese",
+                "Tomato Soup",
+                "Turkey Melt",
+                "Vegetable Soup"
             ],
-            "correctAnswer": "Grilled Sea Bass, Roasted Vegetables",
-            "hint": "Both the fish type ('sea bass' vs 'salmon') and cooking method matter here.",
-            "explanation": "Sea bass is a firm, delicate white fish - different from salmon, which is pink and oilier. 'Grilled' (on a grill) differs from 'pan-fried' (in a pan with oil). Both method and ingredient are key.",
+            "correctAnswer": "Grilled Cheese, Tomato Soup",
+            "hint": "The customer reacts to the menu before confirming their choice.",
+            "explanation": "‘That sounds good — I’ll have that’ is a natural way to decide after reading a menu. Grilled cheese and tomato soup is a classic combination.",
             "id": "go_l32_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the lobster bisque and the shrimp linguine.",
+            "prompt": "I'll order the steak sandwich and a side salad on the side.",
             "options": [
-                "Lobster Bisque",
-                "Shrimp Linguine",
-                "Clam Chowder",
-                "Crab Pasta"
+                "Steak Sandwich",
+                "Side Salad",
+                "Chicken Sandwich",
+                "Fries"
             ],
-            "correctAnswer": "Lobster Bisque, Shrimp Linguine",
-            "hint": "A bisque is a smooth, creamy shellfish soup - richer than chowder.",
-            "explanation": "A bisque is a rich, smooth cream soup from shellfish. Lobster bisque and clam chowder are both seafood soups but different styles. Linguine is a flat pasta - wider than spaghetti but similar.",
+            "correctAnswer": "Steak Sandwich, Side Salad",
+            "hint": "‘On the side’ tells you the salad comes separately, not mixed into the sandwich.",
+            "explanation": "‘On the side’ means an item is served in a separate dish rather than on the main plate. It's a useful phrase for describing how food should be served.",
             "id": "go_l32_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the oysters and a glass of Chablis?",
+            "prompt": "Can we get the nachos and a pitcher of lemonade to share?",
             "options": [
-                "Oysters",
-                "Chablis",
-                "Clams",
-                "Champagne"
+                "Nachos",
+                "Lemonade",
+                "Loaded Fries",
+                "Pitcher of Soda"
             ],
-            "correctAnswer": "Oysters, Chablis",
-            "hint": "Chablis is a dry white wine from Burgundy - the classic pairing with oysters.",
-            "explanation": "Oysters are live molluscs served raw on the half shell. Chablis is a mineral, dry white wine from northern Burgundy - the definitive pairing with raw oysters. Wine pairing vocabulary is important in fine dining.",
+            "correctAnswer": "Nachos, Lemonade",
+            "hint": "‘To share’ shows this order is meant for the whole table, not one person.",
+            "explanation": "‘Can we get… to share?’ is common when a group orders appetizers together. A ‘pitcher’ is a large container used to serve drinks for several people.",
             "id": "go_l32_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the French onion soup and the croque monsieur.",
+            "prompt": "I'll stick with the chicken caesar salad and a sparkling water.",
             "options": [
-                "French Onion Soup",
-                "Croque Monsieur",
-                "Vichyssoise",
-                "Croque Madame"
+                "Chicken Caesar Salad",
+                "Sparkling Water",
+                "Cobb Salad",
+                "Still Water"
             ],
-            "correctAnswer": "French Onion Soup, Croque Monsieur",
-            "hint": "Croque monsieur and croque madame are similar - but croque madame has a fried egg on top.",
-            "explanation": "French onion soup is topped with bread and melted cheese. A croque monsieur is a grilled ham and cheese sandwich. A croque madame is identical but topped with a fried egg - the egg is key.",
+            "correctAnswer": "Chicken Caesar Salad, Sparkling Water",
+            "hint": "‘I’ll stick with…’ shows the customer is choosing a familiar, safe option.",
+            "explanation": "‘I’ll stick with…’ means the customer is choosing something familiar rather than trying something new. It's a natural phrase after considering other options.",
             "id": "go_l33_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the escargot and the duck confit.",
+            "prompt": "Excuse me, could I get the veggie omelet and some rye toast?",
             "options": [
-                "Escargot",
-                "Duck Confit",
-                "Foie Gras",
-                "Coq au Vin"
+                "Veggie Omelet",
+                "Rye Toast",
+                "Denver Omelet",
+                "White Toast"
             ],
-            "correctAnswer": "Escargot, Duck Confit",
-            "hint": "Escargot means snails in French - a classic French delicacy.",
-            "explanation": "Escargot (French for snails) are cooked in garlic butter - a classic French starter. Duck confit is duck legs slow-cooked preserved in duck fat - tender and richly flavoured. French culinary terms appear on menus worldwide.",
+            "correctAnswer": "Veggie Omelet, Rye Toast",
+            "hint": "‘Excuse me’ politely gets the server's attention before the order begins.",
+            "explanation": "‘Excuse me’ is a polite way to start a request, especially to get someone's attention first. ‘Rye’ and ‘white’ are both types of bread, so the word before ‘toast’ matters.",
             "id": "go_l33_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the ratatouille and a glass of Bordeaux?",
+            "prompt": "I'm in the mood for the spicy ramen and a side of gyoza.",
             "options": [
-                "Ratatouille",
-                "Bordeaux",
-                "Bouillabaisse",
-                "Burgundy"
+                "Spicy Ramen",
+                "Gyoza",
+                "Miso Ramen",
+                "Spring Rolls"
             ],
-            "correctAnswer": "Ratatouille, Bordeaux",
-            "hint": "Ratatouille is a Provençal vegetable stew - Bordeaux is a French wine region.",
-            "explanation": "Ratatouille is a stewed vegetable dish from Provence in southern France. 'Bordeaux' refers to wine from the Bordeaux region of France. 'Burgundy' is a different French wine region - both appear on wine lists.",
+            "correctAnswer": "Spicy Ramen, Gyoza",
+            "hint": "‘I’m in the mood for…’ shows a personal craving, not just a random choice.",
+            "explanation": "‘I’m in the mood for…’ is a natural way to express a craving. ‘Gyoza’ are Japanese pan-fried dumplings, different from spring rolls.",
             "id": "go_l33_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the eggs florentine and a Bloody Mary.",
+            "prompt": "Same as always — the black coffee and a bagel with cream cheese.",
             "options": [
-                "Eggs Florentine",
-                "Bloody Mary",
-                "Eggs Benedict",
-                "Mimosa"
+                "Black Coffee",
+                "Bagel with Cream Cheese",
+                "Latte",
+                "Plain Bagel"
             ],
-            "correctAnswer": "Eggs Florentine, Bloody Mary",
-            "hint": "Eggs florentine has spinach; eggs Benedict has Canadian bacon - different toppings.",
-            "explanation": "Eggs florentine replaces ham with spinach compared to eggs Benedict. A Bloody Mary is a vodka and tomato juice cocktail - popular at brunch. A mimosa uses champagne with orange juice.",
+            "correctAnswer": "Black Coffee, Bagel with Cream Cheese",
+            "hint": "‘Same as always’ suggests this customer is a regular who orders the same thing often.",
+            "explanation": "‘Same as always’ is a phrase regular customers often use with staff who already know their usual order. ‘Black coffee’ has nothing added, unlike a latte.",
             "id": "go_l34_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the avocado toast with poached eggs and a cold brew.",
+            "prompt": "I'll take the roast beef sandwich, no mustard, and a bag of chips.",
             "options": [
-                "Avocado Toast with Poached Eggs",
-                "Cold Brew",
-                "Plain Avocado Toast",
-                "Iced Coffee"
+                "Roast Beef Sandwich",
+                "Bag of Chips",
+                "Ham Sandwich",
+                "Pretzels"
             ],
-            "correctAnswer": "Avocado Toast with Poached Eggs, Cold Brew",
-            "hint": "The full name 'avocado toast with poached eggs' is a distinct menu item.",
-            "explanation": "When extra items are added to a dish, the full name reflects this. This shows how English menu descriptions layer ingredients. Cold brew is smoother and less acidic than regular iced coffee.",
+            "correctAnswer": "Roast Beef Sandwich, Bag of Chips",
+            "hint": "The customer removes one ingredient but still orders two full items.",
+            "explanation": "‘No mustard’ is a small change to the sandwich, not a separate item. The two things to select are the sandwich itself and the chips.",
             "id": "go_l34_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the smoked salmon platter and a glass of champagne?",
+            "prompt": "Could I have the chicken tikka masala without cilantro, and some rice?",
             "options": [
-                "Smoked Salmon Platter",
-                "Champagne",
-                "Lox Bagel",
-                "Prosecco"
+                "Chicken Tikka Masala",
+                "Rice",
+                "Butter Chicken",
+                "Naan"
             ],
-            "correctAnswer": "Smoked Salmon Platter, Champagne",
-            "hint": "'Lox' is an American deli word for smoked salmon - usually served on a bagel.",
-            "explanation": "'Lox' is used in American Jewish deli culture for smoked salmon. A 'platter' presents items decoratively. Champagne is French sparkling wine - Prosecco is Italian. They are not interchangeable.",
+            "correctAnswer": "Chicken Tikka Masala, Rice",
+            "hint": "The customer asks to remove an herb, but the main dish and side stay the same.",
+            "explanation": "Some people dislike the taste of cilantro, so asking to remove it is a common request. ‘Without cilantro’ doesn't change which dish or side to select.",
             "id": "go_l34_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the fish and chips and a pint of lager.",
+            "prompt": "I'd like the Philly cheesesteak, but could you leave out the peppers? And a root beer, please.",
             "options": [
-                "Fish and Chips",
-                "Pint of Lager",
-                "Scampi and Chips",
-                "Pint of Bitter"
+                "Philly Cheesesteak",
+                "Root Beer",
+                "Italian Beef",
+                "Cream Soda"
             ],
-            "correctAnswer": "Fish and Chips, Pint of Lager",
-            "hint": "Fish and chips is Britain's most iconic dish - chips are thick-cut fried potatoes.",
-            "explanation": "Fish and chips uses battered fish with thick-cut chips (not thin fries). A pint is a UK measure - 568ml. Scampi uses battered prawns instead of fish. Lager and bitter are different beer styles.",
+            "correctAnswer": "Philly Cheesesteak, Root Beer",
+            "hint": "One ingredient is removed from the sandwich, but the full order still has two items.",
+            "explanation": "‘Could you leave out…?’ is polite and specific. ‘Root beer’ and ‘cream soda’ are both classic American sodas, so the exact name matters.",
             "id": "go_l35_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the ploughman's lunch and a glass of cider.",
+            "prompt": "The Buddha bowl sounds good — I'll have that with a kombucha.",
             "options": [
-                "Ploughman's Lunch",
-                "Cider",
-                "Scotch Egg",
-                "Ale"
+                "Buddha Bowl",
+                "Kombucha",
+                "Grain Bowl",
+                "Iced Tea"
             ],
-            "correctAnswer": "Ploughman's Lunch, Cider",
-            "hint": "A ploughman's lunch is a traditional British pub meal of bread, cheese, and pickle.",
-            "explanation": "A ploughman's lunch is a classic British pub plate: bread, cheese, pickled onions, chutney, and sometimes ham. Cider is an alcoholic drink made from fermented apples - very popular in the UK.",
+            "correctAnswer": "Buddha Bowl, Kombucha",
+            "hint": "The main dish is a mix of vegetables and grains; the drink is a fermented tea.",
+            "explanation": "A ‘Buddha bowl’ typically combines grains, vegetables, and a plant-based protein. ‘Kombucha’ is a fizzy, fermented tea drink.",
             "id": "go_l35_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the bangers and mash and a pint of bitter?",
+            "prompt": "I'll order the lobster roll and a cup of clam chowder on the side.",
             "options": [
-                "Bangers and Mash",
-                "Pint of Bitter",
-                "Shepherd's Pie",
-                "Pint of Lager"
+                "Lobster Roll",
+                "Clam Chowder",
+                "Shrimp Roll",
+                "Corn Chowder"
             ],
-            "correctAnswer": "Bangers and Mash, Pint of Bitter",
-            "hint": "'Bangers' is British slang for sausages.",
-            "explanation": "'Bangers and mash' is British comfort food - pork sausages with mashed potatoes and onion gravy. 'Bitter' is an English ale with a slightly bitter hop taste - distinctly different from lager.",
+            "correctAnswer": "Lobster Roll, Clam Chowder",
+            "hint": "The seafood in the roll and the soup both need careful attention.",
+            "explanation": "‘Lobster roll’ and ‘shrimp roll’ look similar on a menu, so the seafood word matters. ‘Clam’ and ‘corn’ chowder are both thick soups, but with very different ingredients.",
             "id": "go_l35_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the mushroom risotto and the roasted beetroot salad.",
+            "prompt": "Can we get the calamari and a bruschetta to share?",
             "options": [
-                "Mushroom Risotto",
-                "Roasted Beetroot Salad",
-                "Pumpkin Risotto",
-                "Rocket Salad"
+                "Calamari",
+                "Bruschetta",
+                "Fried Shrimp",
+                "Garlic Knots"
             ],
-            "correctAnswer": "Mushroom Risotto, Roasted Beetroot Salad",
-            "hint": "Both mushroom and pumpkin risotto exist - listen for which vegetable is named.",
-            "explanation": "Risotto is an Italian rice dish cooked slowly with stock. 'Mushroom' or 'pumpkin' tells you the flavour. 'Beetroot' (British English) = 'beet' (American English) - a purple root vegetable.",
+            "correctAnswer": "Calamari, Bruschetta",
+            "hint": "Both items are appetizers meant to be shared before the main course.",
+            "explanation": "‘Calamari’ is fried squid, a popular starter. ‘Bruschetta’ is toasted bread topped with tomato and basil — both are common shared starters in Italian restaurants.",
             "id": "go_l36_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the lentil dahl and the garlic naan.",
+            "prompt": "I'll stick with the pepperoni pizza and a caesar salad.",
             "options": [
-                "Lentil Dahl",
-                "Garlic Naan",
-                "Chickpea Curry",
-                "Plain Naan"
+                "Pepperoni Pizza",
+                "Caesar Salad",
+                "Margherita Pizza",
+                "Garden Salad"
             ],
-            "correctAnswer": "Lentil Dahl, Garlic Naan",
-            "hint": "'Garlic naan' has garlic flavouring - different from plain naan.",
-            "explanation": "Dahl (also dal) is a spiced lentil dish from South Asia. Garlic naan is flatbread brushed with garlic butter - the adjective 'garlic' adds flavour. Plain naan has no additional seasoning.",
+            "correctAnswer": "Pepperoni Pizza, Caesar Salad",
+            "hint": "The pizza topping and the salad name both need attention.",
+            "explanation": "‘Pepperoni’ and ‘margherita’ are common pizza choices, so the topping word decides the answer. ‘Caesar’ salad includes parmesan and croutons, unlike a garden salad.",
             "id": "go_l36_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the cauliflower steak and the quinoa salad?",
+            "prompt": "Excuse me, could I get the seafood pasta and a glass of white wine?",
             "options": [
-                "Cauliflower Steak",
-                "Quinoa Salad",
-                "Portobello Mushroom",
-                "Grain Bowl"
+                "Seafood Pasta",
+                "White Wine",
+                "Chicken Pasta",
+                "Red Wine"
             ],
-            "correctAnswer": "Cauliflower Steak, Quinoa Salad",
-            "hint": "A 'cauliflower steak' is a thick slice of cauliflower cooked like a steak - a modern vegetarian dish.",
-            "explanation": "A cauliflower steak is a whole thick slice of cauliflower grilled as a main dish. The word 'steak' indicates how it is prepared, not that it contains meat - modern vegetarian cuisine uses meat terms for plant-based dishes.",
+            "correctAnswer": "Seafood Pasta, White Wine",
+            "hint": "The pasta filling and the wine color both matter here.",
+            "explanation": "‘Seafood’ and ‘chicken’ pasta are both common, so the first word is essential. ‘White’ and ‘red’ wine are chosen based on the dish, so the color word matters too.",
             "id": "go_l36_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the continental breakfast and a pot of tea.",
+            "prompt": "I'm in the mood for the buffalo wings and some celery sticks.",
             "options": [
-                "Continental Breakfast",
-                "Pot of Tea",
-                "Full Cooked Breakfast",
-                "Coffee"
+                "Buffalo Wings",
+                "Celery Sticks",
+                "BBQ Wings",
+                "Carrot Sticks"
             ],
-            "correctAnswer": "Continental Breakfast, Pot of Tea",
-            "hint": "A 'pot of tea' means a whole teapot - enough for multiple cups.",
-            "explanation": "A continental breakfast features pastries, bread, jam, and cold items - no hot cooked food. A 'pot of tea' means a teapot with enough for 2-3 cups. This vocabulary is essential for hotel travellers.",
+            "correctAnswer": "Buffalo Wings, Celery Sticks",
+            "hint": "The wing sauce and the crunchy vegetable side both need attention.",
+            "explanation": "‘Buffalo’ wings are spicy and tangy, different from ‘BBQ’ wings. Celery sticks are the traditional side for buffalo wings, meant to cool the spice.",
             "id": "go_l37_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the fresh fruit platter and a glass of freshly squeezed juice.",
+            "prompt": "Same as always — the turkey avocado wrap and an unsweetened iced tea.",
             "options": [
-                "Fresh Fruit Platter",
-                "Freshly Squeezed Juice",
-                "Fruit Salad",
-                "Packaged Juice"
+                "Turkey Avocado Wrap",
+                "Unsweetened Iced Tea",
+                "Chicken Caesar Wrap",
+                "Sweet Tea"
             ],
-            "correctAnswer": "Fresh Fruit Platter, Freshly Squeezed Juice",
-            "hint": "'Freshly squeezed' means the juice was just pressed - more flavourful than carton juice.",
-            "explanation": "'Freshly squeezed juice' is pressed to order with no preservatives. 'Packaged juice' comes from a carton. A 'fresh fruit platter' is whole or sliced fruits arranged on a plate - different from a fruit salad.",
+            "correctAnswer": "Turkey Avocado Wrap, Unsweetened Iced Tea",
+            "hint": "This regular customer's usual order includes a specific wrap and a specific type of iced tea.",
+            "explanation": "‘Unsweetened’ and ‘sweet’ describe how much sugar is added to iced tea, so the word matters. The wrap filling — turkey and avocado — is also specific.",
             "id": "go_l37_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the smoked salmon and cream cheese bagel and a flat white?",
+            "prompt": "I'll take the chicken quesadilla, no sour cream, and a horchata.",
             "options": [
-                "Smoked Salmon and Cream Cheese Bagel",
-                "Flat White",
-                "Lox Bagel",
-                "Latte"
+                "Chicken Quesadilla",
+                "Horchata",
+                "Beef Quesadilla",
+                "Agua Fresca"
             ],
-            "correctAnswer": "Smoked Salmon and Cream Cheese Bagel, Flat White",
-            "hint": "This is one menu item with multiple ingredients in its name.",
-            "explanation": "Some menu items have long names describing all their components - 'smoked salmon and cream cheese bagel' is one complete item. A flat white is smaller and stronger than a latte.",
+            "correctAnswer": "Chicken Quesadilla, Horchata",
+            "hint": "One topping is removed, but the quesadilla and drink still need to be selected.",
+            "explanation": "‘No sour cream’ is a small change to how the dish is served. It doesn't remove the quesadilla itself from the order.",
             "id": "go_l37_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the buffalo wings and a pitcher of beer.",
+            "prompt": "Could I have the pad see ew without egg, and a Thai iced tea?",
             "options": [
-                "Buffalo Wings",
-                "Pitcher of Beer",
-                "Chicken Strips",
-                "Pint of Beer"
+                "Pad See Ew",
+                "Thai Iced Tea",
+                "Pad Thai",
+                "Iced Coffee"
             ],
-            "correctAnswer": "Buffalo Wings, Pitcher of Beer",
-            "hint": "A 'pitcher' is a large jug of beer to share - much more than a single pint.",
-            "explanation": "Buffalo wings are chicken wings in spicy sauce, originating from Buffalo, New York. A pitcher of beer is a large container (typically around 1.5 litres) to share - different from a single pint.",
+            "correctAnswer": "Pad See Ew, Thai Iced Tea",
+            "hint": "The dish name and the specific type of iced tea both need attention.",
+            "explanation": "‘Pad See Ew’ and ‘Pad Thai’ are both popular Thai noodle dishes with similar-sounding names. ‘Thai iced tea’ has a distinct orange color and sweet, creamy taste.",
             "id": "go_l38_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the loaded nachos and a margarita.",
+            "prompt": "I'd like the vegetable pad thai, but could you leave out the peanuts? And a lemonade, please.",
             "options": [
-                "Loaded Nachos",
-                "Margarita",
-                "Plain Nachos",
-                "Mojito"
+                "Vegetable Pad Thai",
+                "Lemonade",
+                "Chicken Pad Thai",
+                "Iced Tea"
             ],
-            "correctAnswer": "Loaded Nachos, Margarita",
-            "hint": "'Loaded' means the nachos have lots of toppings - cheese, jalapeños, sour cream.",
-            "explanation": "'Loaded nachos' are tortilla chips piled with many toppings. 'Loaded' is a common English modifier meaning 'with everything on top'. Plain nachos would have minimal toppings - the difference is significant.",
+            "correctAnswer": "Vegetable Pad Thai, Lemonade",
+            "hint": "An allergy-friendly change is requested, but the dish and drink still form the order.",
+            "explanation": "Removing peanuts is a common request for people with allergies. ‘Vegetable’ and ‘chicken’ pad thai are both common, so the first word decides the answer.",
             "id": "go_l38_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the BBQ ribs and a side of coleslaw?",
+            "prompt": "The Korean bibimbap sounds good — I'll have that with a side of kimchi.",
             "options": [
-                "BBQ Ribs",
-                "Coleslaw",
-                "Pulled Pork",
-                "Side Salad"
+                "Bibimbap",
+                "Kimchi",
+                "Bulgogi Bowl",
+                "Pickled Radish"
             ],
-            "correctAnswer": "BBQ Ribs, Coleslaw",
-            "hint": "BBQ ribs and pulled pork are both barbecued pork - but very different preparations.",
-            "explanation": "BBQ ribs are pork ribs slow-cooked in barbecue sauce. Pulled pork is slow-cooked pork that is shredded. Coleslaw is a creamy salad of shredded cabbage and carrot - a classic BBQ side.",
+            "correctAnswer": "Bibimbap, Kimchi",
+            "hint": "The main rice dish and its classic spicy, fermented side are both named.",
+            "explanation": "‘Bibimbap’ is a Korean rice bowl mixed with vegetables and a fried egg. ‘Kimchi’ is spicy, fermented cabbage — one of Korea's most famous side dishes.",
             "id": "go_l38_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the burrata with heirloom tomatoes and the pan-seared chicken.",
+            "prompt": "I'll order the club sandwich and a cup of soup on the side.",
             "options": [
-                "Burrata with Heirloom Tomatoes",
-                "Pan-Seared Chicken",
-                "Mozzarella Caprese",
-                "Roasted Chicken"
+                "Club Sandwich",
+                "Soup",
+                "BLT",
+                "Salad"
             ],
-            "correctAnswer": "Burrata with Heirloom Tomatoes, Pan-Seared Chicken",
-            "hint": "Burrata and mozzarella are both Italian cheeses - burrata is creamier and softer inside.",
-            "explanation": "Burrata is a fresh Italian cheese - creamy on the inside with a mozzarella shell. 'Heirloom tomatoes' are traditional varieties with different colours. 'Pan-seared' means quickly cooked in a very hot pan.",
+            "correctAnswer": "Club Sandwich, Soup",
+            "hint": "‘On the side’ tells you the soup is a separate dish, served alongside the sandwich.",
+            "explanation": "‘On the side’ shows the soup isn't part of the sandwich — it's a separate item served together. This phrase is useful whenever two dishes are ordered as one meal.",
             "id": "go_l39_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the beef carpaccio and the risotto of the day.",
+            "prompt": "Can we get the spring rolls and a plate of dumplings to share?",
             "options": [
-                "Beef Carpaccio",
-                "Risotto of the Day",
-                "Steak Tartare",
-                "Pasta of the Day"
+                "Spring Rolls",
+                "Dumplings",
+                "Egg Rolls",
+                "Wontons"
             ],
-            "correctAnswer": "Beef Carpaccio, Risotto of the Day",
-            "hint": "Carpaccio and tartare are both raw beef dishes but prepared very differently.",
-            "explanation": "Beef carpaccio is thinly sliced raw beef dressed with olive oil and lemon. Steak tartare is finely chopped raw beef mixed with seasonings. 'Risotto of the day' changes daily - different from a fixed menu item.",
+            "correctAnswer": "Spring Rolls, Dumplings",
+            "hint": "Two appetizers with similar-sounding relatives appear as options — read carefully.",
+            "explanation": "‘Spring rolls’ and ‘egg rolls’ look alike but are made differently, and the same is true for ‘dumplings’ and ‘wontons.’ Only the exact words used in the order should be selected.",
             "id": "go_l39_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the Caesar salad and the grilled swordfish?",
+            "prompt": "I'll stick with the classic burger and a chocolate milkshake.",
             "options": [
-                "Caesar Salad",
-                "Grilled Swordfish",
-                "Rocket Salad",
-                "Pan-Fried Halibut"
+                "Classic Burger",
+                "Chocolate Milkshake",
+                "Bacon Burger",
+                "Vanilla Milkshake"
             ],
-            "correctAnswer": "Caesar Salad, Grilled Swordfish",
-            "hint": "Swordfish and halibut are both firm white fish - listen for which one was specified.",
-            "explanation": "Swordfish is a large, firm fish great for grilling. Halibut is a large flatfish - both are white fish but different species. A Caesar salad contains romaine lettuce, Caesar dressing, croutons, and Parmesan.",
+            "correctAnswer": "Classic Burger, Chocolate Milkshake",
+            "hint": "‘Classic’ and ‘chocolate’ both describe exactly which version of each item was ordered.",
+            "explanation": "‘Classic’ burger usually means a plain, traditional recipe. The milkshake flavor — chocolate, not vanilla — is the detail that decides the correct answer.",
             "id": "go_l39_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll take the croque madame and a glass of white wine.",
+            "prompt": "Excuse me, could I get the eggs benedict without ham, and an orange juice?",
             "options": [
-                "Croque Madame",
-                "White Wine",
-                "Croque Monsieur",
-                "Rosé"
+                "Eggs Benedict",
+                "Orange Juice",
+                "Eggs Florentine",
+                "Apple Juice"
             ],
-            "correctAnswer": "Croque Madame, White Wine",
-            "hint": "Croque madame has a fried egg on top - croque monsieur doesn't.",
-            "explanation": "The key difference: a croque madame has a fried egg on top; a croque monsieur doesn't. 'White wine' and 'rosé' are both lighter wines but different colours and flavour profiles.",
+            "correctAnswer": "Eggs Benedict, Orange Juice",
+            "hint": "One ingredient is removed from the egg dish, but the order still has two items to select.",
+            "explanation": "‘Without ham’ changes how the eggs benedict is prepared, but the dish name stays the same. ‘Eggs Florentine’ already comes without ham, so it wouldn't be the correct choice here.",
             "id": "go_l40_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the tomato basil soup and the sourdough bread.",
+            "prompt": "I'm in the mood for the chicken tinga tacos and a horchata.",
             "options": [
-                "Tomato Basil Soup",
-                "Sourdough Bread",
-                "Minestrone Soup",
-                "Baguette"
+                "Chicken Tinga Tacos",
+                "Horchata",
+                "Carnitas Tacos",
+                "Agua Fresca"
             ],
-            "correctAnswer": "Tomato Basil Soup, Sourdough Bread",
-            "hint": "Tomato basil soup is smooth; minestrone is a chunky Italian vegetable soup.",
-            "explanation": "Tomato basil soup is a smooth purée. Minestrone is an Italian soup with chunks of vegetables and pasta. 'Sourdough' is bread made with a natural fermented starter - slightly tangy and chewy.",
+            "correctAnswer": "Chicken Tinga Tacos, Horchata",
+            "hint": "The type of chicken preparation in the taco filling is the key detail.",
+            "explanation": "‘Tinga’ is chicken cooked in a smoky tomato and chipotle sauce, different from ‘carnitas,’ which is slow-cooked pork. Horchata remains the sweet rice drink from earlier levels.",
             "id": "go_l40_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the chicken Caesar wrap and a lemonade, please?",
+            "prompt": "Same as always — the Cobb salad, dressing on the side, and an unsweetened tea.",
             "options": [
-                "Chicken Caesar Wrap",
-                "Lemonade",
-                "Tuna Wrap",
-                "Iced Tea"
+                "Cobb Salad",
+                "Unsweetened Tea",
+                "Chef Salad",
+                "Sweet Tea"
             ],
-            "correctAnswer": "Chicken Caesar Wrap, Lemonade",
-            "hint": "A Caesar wrap takes Caesar salad ingredients and rolls them in a tortilla.",
-            "explanation": "A chicken Caesar wrap contains romaine lettuce, Caesar dressing, Parmesan, croutons, and grilled chicken inside a tortilla. English compound food names layer multiple ingredients into one item.",
+            "correctAnswer": "Cobb Salad, Unsweetened Tea",
+            "hint": "‘Dressing on the side’ is a serving instruction, not a separate item to tap.",
+            "explanation": "‘Dressing on the side’ means the dressing is served in a small cup instead of poured over the salad — it's a preparation detail, not a new item. The salad and the tea are the only two items to select.",
             "id": "go_l40_q3"
         }
     ]

@@ -1,667 +1,667 @@
 {
-    "gameType": "travelDesk",
-    "batchIndex": 20,
-    "levels": "191-200",
-    "quests": [
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to drop off old bottles as soon as possible.",
-            "itinerary": [
-                "Neighborhood Barber Shop",
-                "Neighborhood Notary Office",
-                "Neighborhood Recycling Center",
-                "Neighborhood City Hall"
-            ],
-            "options": [
-                "Barber Shop",
-                "Notary Office",
-                "Recycling Center",
-                "City Hall"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "The correct option is the venue most closely associated with the ability to drop off old bottles.",
-            "explanation": "The phrase 'drop off old bottles' points directly to a recycling center, since that is the service or activity it specializes in.",
-            "id": "td_l191_q1"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to let some children meet the animals as soon as possible.",
-            "itinerary": [
-                "Family Toy Store",
-                "Family Babysitting Agency",
-                "Family Family Game Center",
-                "Family Petting Zoo"
-            ],
-            "options": [
-                "Toy Store",
-                "Babysitting Agency",
-                "Family Game Center",
-                "Petting Zoo"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "The correct option is the venue most closely associated with the ability to let some children meet the animals.",
-            "explanation": "The phrase 'let some children meet the animals' points directly to a petting zoo, since that is the service or activity it specializes in.",
-            "id": "td_l191_q2"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to buy some plants as soon as possible.",
-            "itinerary": [
-                "Marketplace Garden Center",
-                "Marketplace Farmers Market",
-                "Marketplace Gift Shop",
-                "Marketplace Pet Store"
-            ],
-            "options": [
-                "Garden Center",
-                "Farmers Market",
-                "Gift Shop",
-                "Pet Store"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "The correct option is the venue most closely associated with the ability to buy some plants.",
-            "explanation": "The phrase 'buy some plants' points directly to a garden center, since that is the service or activity it specializes in.",
-            "id": "td_l191_q3"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to order a large pizza as soon as possible.",
-            "itinerary": [
-                "Gourmet Food Truck",
-                "Gourmet Pizzeria",
-                "Gourmet Seafood Market",
-                "Gourmet Noodle Shop"
-            ],
-            "options": [
-                "Food Truck",
-                "Pizzeria",
-                "Seafood Market",
-                "Noodle Shop"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "The correct option is the venue most closely associated with the ability to order a large pizza.",
-            "explanation": "The phrase 'order a large pizza' points directly to a pizzeria, since that is the service or activity it specializes in.",
-            "id": "td_l192_q1"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to practice pronunciation as soon as possible.",
-            "itinerary": [
-                "Scholars' School Cafeteria",
-                "Scholars' Admissions Office",
-                "Scholars' Language Lab",
-                "Scholars' Exam Hall"
-            ],
-            "options": [
-                "School Cafeteria",
-                "Admissions Office",
-                "Language Lab",
-                "Exam Hall"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "The correct option is the venue most closely associated with the ability to practice pronunciation.",
-            "explanation": "The phrase 'practice pronunciation' points directly to a language lab, since that is the service or activity it specializes in.",
-            "id": "td_l192_q2"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to meet with the director as soon as possible.",
-            "itinerary": [
-                "Corporate Human Resources Office",
-                "Corporate Staff Lounge",
-                "Corporate Call Center",
-                "Corporate Executive Suite"
-            ],
-            "options": [
-                "Human Resources Office",
-                "Staff Lounge",
-                "Call Center",
-                "Executive Suite"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "The correct option is the venue most closely associated with the ability to meet with the director.",
-            "explanation": "The phrase 'meet with the director' points directly to a executive suite, since that is the service or activity it specializes in.",
-            "id": "td_l192_q3"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to wait for a flight as soon as possible.",
-            "itinerary": [
-                "Wanderer's Boarding Gate",
-                "Wanderer's Tour Agency",
-                "Wanderer's Tourist Information Center",
-                "Wanderer's Baggage Claim"
-            ],
-            "options": [
-                "Boarding Gate",
-                "Tour Agency",
-                "Tourist Information Center",
-                "Baggage Claim"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "The correct option is the venue most closely associated with the ability to wait for a flight.",
-            "explanation": "The phrase 'wait for a flight' points directly to a boarding gate, since that is the service or activity it specializes in.",
-            "id": "td_l193_q1"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to print a small model as soon as possible.",
-            "itinerary": [
-                "Digital Software Office",
-                "Digital 3D Printing Studio",
-                "Digital Internet Cafe",
-                "Digital Cybersecurity Office"
-            ],
-            "options": [
-                "Software Office",
-                "3D Printing Studio",
-                "Internet Cafe",
-                "Cybersecurity Office"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "The correct option is the venue most closely associated with the ability to print a small model.",
-            "explanation": "The phrase 'print a small model' points directly to a 3D printing studio, since that is the service or activity it specializes in.",
-            "id": "td_l193_q2"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to get an X-ray as soon as possible.",
-            "itinerary": [
-                "Wellness Physiotherapy Center",
-                "Wellness Nutrition Clinic",
-                "Wellness Radiology Center",
-                "Wellness Health Insurance Office"
-            ],
-            "options": [
-                "Physiotherapy Center",
-                "Nutrition Clinic",
-                "Radiology Center",
-                "Health Insurance Office"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "The correct option is the venue most closely associated with the ability to get an X-ray.",
-            "explanation": "The phrase 'get an X-ray' points directly to a radiology center, since that is the service or activity it specializes in.",
-            "id": "td_l193_q3"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to take a dance class as soon as possible.",
-            "itinerary": [
-                "Spotlight Amusement Park",
-                "Spotlight Bowling Alley",
-                "Spotlight Board Game Cafe",
-                "Spotlight Dance Studio"
-            ],
-            "options": [
-                "Amusement Park",
-                "Bowling Alley",
-                "Board Game Cafe",
-                "Dance Studio"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "The correct option is the venue most closely associated with the ability to take a dance class.",
-            "explanation": "The phrase 'take a dance class' points directly to a dance studio, since that is the service or activity it specializes in.",
-            "id": "td_l194_q1"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to register a new address as soon as possible.",
-            "itinerary": [
-                "Neighborhood City Hall",
-                "Neighborhood Notary Office",
-                "Neighborhood Recycling Center",
-                "Neighborhood Bank"
-            ],
-            "options": [
-                "City Hall",
-                "Notary Office",
-                "Recycling Center",
-                "Bank"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "The correct option is the venue most closely associated with the ability to register a new address.",
-            "explanation": "The phrase 'register a new address' points directly to a city hall, since that is the service or activity it specializes in.",
-            "id": "td_l194_q2"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to play games with the whole family as soon as possible.",
-            "itinerary": [
-                "Family Babysitting Agency",
-                "Family Family Game Center",
-                "Family Petting Zoo",
-                "Family Family Counseling Office"
-            ],
-            "options": [
-                "Babysitting Agency",
-                "Family Game Center",
-                "Petting Zoo",
-                "Family Counseling Office"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "The correct option is the venue most closely associated with the ability to play games with the whole family.",
-            "explanation": "The phrase 'play games with the whole family' points directly to a family game center, since that is the service or activity it specializes in.",
-            "id": "td_l194_q3"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to buy food for a pet cat as soon as possible.",
-            "itinerary": [
-                "Marketplace Gift Shop",
-                "Marketplace Garden Center",
-                "Marketplace Pet Store",
-                "Marketplace Jewelry Shop"
-            ],
-            "options": [
-                "Gift Shop",
-                "Garden Center",
-                "Pet Store",
-                "Jewelry Shop"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "The correct option is the venue most closely associated with the ability to buy food for a pet cat.",
-            "explanation": "The phrase 'buy food for a pet cat' points directly to a pet store, since that is the service or activity it specializes in.",
-            "id": "td_l195_q1"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to have a bowl of noodles as soon as possible.",
-            "itinerary": [
-                "Gourmet Seafood Market",
-                "Gourmet Pizzeria",
-                "Gourmet Ice Cream Parlor",
-                "Gourmet Noodle Shop"
-            ],
-            "options": [
-                "Seafood Market",
-                "Pizzeria",
-                "Ice Cream Parlor",
-                "Noodle Shop"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "The correct option is the venue most closely associated with the ability to have a bowl of noodles.",
-            "explanation": "The phrase 'have a bowl of noodles' points directly to a noodle shop, since that is the service or activity it specializes in.",
-            "id": "td_l195_q2"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to take a final exam as soon as possible.",
-            "itinerary": [
-                "Scholars' Exam Hall",
-                "Scholars' Admissions Office",
-                "Scholars' Language Lab",
-                "Scholars' Principal's Office"
-            ],
-            "options": [
-                "Exam Hall",
-                "Admissions Office",
-                "Language Lab",
-                "Principal's Office"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "The correct option is the venue most closely associated with the ability to take a final exam.",
-            "explanation": "The phrase 'take a final exam' points directly to a exam hall, since that is the service or activity it specializes in.",
-            "id": "td_l195_q3"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to handle customer complaints as soon as possible.",
-            "itinerary": [
-                "Corporate Staff Lounge",
-                "Corporate Call Center",
-                "Corporate Executive Suite",
-                "Corporate Reception Desk"
-            ],
-            "options": [
-                "Staff Lounge",
-                "Call Center",
-                "Executive Suite",
-                "Reception Desk"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "The correct option is the venue most closely associated with the ability to handle customer complaints.",
-            "explanation": "The phrase 'handle customer complaints' points directly to a call center, since that is the service or activity it specializes in.",
-            "id": "td_l196_q1"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to collect some luggage as soon as possible.",
-            "itinerary": [
-                "Wanderer's Tourist Information Center",
-                "Wanderer's Boarding Gate",
-                "Wanderer's Baggage Claim",
-                "Wanderer's Currency Exchange Booth"
-            ],
-            "options": [
-                "Tourist Information Center",
-                "Boarding Gate",
-                "Baggage Claim",
-                "Currency Exchange Booth"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "The correct option is the venue most closely associated with the ability to collect some luggage.",
-            "explanation": "The phrase 'collect some luggage' points directly to a baggage claim, since that is the service or activity it specializes in.",
-            "id": "td_l196_q2"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to report a security issue as soon as possible.",
-            "itinerary": [
-                "Digital Internet Cafe",
-                "Digital 3D Printing Studio",
-                "Digital Computer Lab",
-                "Digital Cybersecurity Office"
-            ],
-            "options": [
-                "Internet Cafe",
-                "3D Printing Studio",
-                "Computer Lab",
-                "Cybersecurity Office"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "The correct option is the venue most closely associated with the ability to report a security issue.",
-            "explanation": "The phrase 'report a security issue' points directly to a cybersecurity office, since that is the service or activity it specializes in.",
-            "id": "td_l196_q3"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to ask about insurance coverage as soon as possible.",
-            "itinerary": [
-                "Wellness Health Insurance Office",
-                "Wellness Nutrition Clinic",
-                "Wellness Radiology Center",
-                "Wellness Wellness Spa"
-            ],
-            "options": [
-                "Health Insurance Office",
-                "Nutrition Clinic",
-                "Radiology Center",
-                "Wellness Spa"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "The correct option is the venue most closely associated with the ability to ask about insurance coverage.",
-            "explanation": "The phrase 'ask about insurance coverage' points directly to a health insurance office, since that is the service or activity it specializes in.",
-            "id": "td_l197_q1"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to play some board games as soon as possible.",
-            "itinerary": [
-                "Spotlight Bowling Alley",
-                "Spotlight Board Game Cafe",
-                "Spotlight Dance Studio",
-                "Spotlight Art Gallery"
-            ],
-            "options": [
-                "Bowling Alley",
-                "Board Game Cafe",
-                "Dance Studio",
-                "Art Gallery"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "The correct option is the venue most closely associated with the ability to play some board games.",
-            "explanation": "The phrase 'play some board games' points directly to a board game cafe, since that is the service or activity it specializes in.",
-            "id": "td_l197_q2"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to join a local class as soon as possible.",
-            "itinerary": [
-                "Neighborhood Recycling Center",
-                "Neighborhood Bank",
-                "Neighborhood Community Center",
-                "Neighborhood Hair Salon"
-            ],
-            "options": [
-                "Recycling Center",
-                "Bank",
-                "Community Center",
-                "Hair Salon"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "The correct option is the venue most closely associated with the ability to join a local class.",
-            "explanation": "The phrase 'join a local class' points directly to a community center, since that is the service or activity it specializes in.",
-            "id": "td_l197_q3"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to spend time with elderly grandparents as soon as possible.",
-            "itinerary": [
-                "Family Petting Zoo",
-                "Family Family Counseling Office",
-                "Family Maternity Ward",
-                "Family Grandparents' Home"
-            ],
-            "options": [
-                "Petting Zoo",
-                "Family Counseling Office",
-                "Maternity Ward",
-                "Grandparents' Home"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "The correct option is the venue most closely associated with the ability to spend time with elderly grandparents.",
-            "explanation": "The phrase 'spend time with elderly grandparents' points directly to a grandparents' home, since that is the service or activity it specializes in.",
-            "id": "td_l198_q1"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to buy some notebooks as soon as possible.",
-            "itinerary": [
-                "Marketplace Stationery Shop",
-                "Marketplace Garden Center",
-                "Marketplace Jewelry Shop",
-                "Marketplace Furniture Store"
-            ],
-            "options": [
-                "Stationery Shop",
-                "Garden Center",
-                "Jewelry Shop",
-                "Furniture Store"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "The correct option is the venue most closely associated with the ability to buy some notebooks.",
-            "explanation": "The phrase 'buy some notebooks' points directly to a stationery shop, since that is the service or activity it specializes in.",
-            "id": "td_l198_q2"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to try some local beer as soon as possible.",
-            "itinerary": [
-                "Gourmet Pizzeria",
-                "Gourmet Brewery",
-                "Gourmet Ice Cream Parlor",
-                "Gourmet Tea House"
-            ],
-            "options": [
-                "Pizzeria",
-                "Brewery",
-                "Ice Cream Parlor",
-                "Tea House"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "The correct option is the venue most closely associated with the ability to try some local beer.",
-            "explanation": "The phrase 'try some local beer' points directly to a brewery, since that is the service or activity it specializes in.",
-            "id": "td_l198_q3"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to join a student club as soon as possible.",
-            "itinerary": [
-                "Scholars' Language Lab",
-                "Scholars' Principal's Office",
-                "Scholars' Student Union",
-                "Scholars' Lecture Hall"
-            ],
-            "options": [
-                "Language Lab",
-                "Principal's Office",
-                "Student Union",
-                "Lecture Hall"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "The correct option is the venue most closely associated with the ability to join a student club.",
-            "explanation": "The phrase 'join a student club' points directly to a student union, since that is the service or activity it specializes in.",
-            "id": "td_l199_q1"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to review the project timeline as soon as possible.",
-            "itinerary": [
-                "Corporate Executive Suite",
-                "Corporate Reception Desk",
-                "Corporate Payroll Office",
-                "Corporate Project Office"
-            ],
-            "options": [
-                "Executive Suite",
-                "Reception Desk",
-                "Payroll Office",
-                "Project Office"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "The correct option is the venue most closely associated with the ability to review the project timeline.",
-            "explanation": "The phrase 'review the project timeline' points directly to a project office, since that is the service or activity it specializes in.",
-            "id": "td_l199_q2"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to get travel vaccinations as soon as possible.",
-            "itinerary": [
-                "Wanderer's Travel Clinic",
-                "Wanderer's Boarding Gate",
-                "Wanderer's Currency Exchange Booth",
-                "Wanderer's Bus Terminal"
-            ],
-            "options": [
-                "Travel Clinic",
-                "Boarding Gate",
-                "Currency Exchange Booth",
-                "Bus Terminal"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "The correct option is the venue most closely associated with the ability to get travel vaccinations.",
-            "explanation": "The phrase 'get travel vaccinations' points directly to a travel clinic, since that is the service or activity it specializes in.",
-            "id": "td_l199_q3"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to test a new invention as soon as possible.",
-            "itinerary": [
-                "Digital 3D Printing Studio",
-                "Digital Innovation Lab",
-                "Digital Computer Lab",
-                "Digital Server Room"
-            ],
-            "options": [
-                "3D Printing Studio",
-                "Innovation Lab",
-                "Computer Lab",
-                "Server Room"
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "The correct option is the venue most closely associated with the ability to test a new invention.",
-            "explanation": "The phrase 'test a new invention' points directly to a innovation lab, since that is the service or activity it specializes in.",
-            "id": "td_l200_q1"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to unwind for the weekend as soon as possible.",
-            "itinerary": [
-                "Wellness Radiology Center",
-                "Wellness Wellness Spa",
-                "Wellness Wellness Retreat",
-                "Wellness Maternity Clinic"
-            ],
-            "options": [
-                "Radiology Center",
-                "Wellness Spa",
-                "Wellness Retreat",
-                "Maternity Clinic"
-            ],
-            "correctAnswerIndex": 2,
-            "hint": "The correct option is the venue most closely associated with the ability to unwind for the weekend.",
-            "explanation": "The phrase 'unwind for the weekend' points directly to a wellness retreat, since that is the service or activity it specializes in.",
-            "id": "td_l200_q2"
-        },
-        {
-            "instruction": "Match the destination to the client's request.",
-            "subtype": "travelDesk",
-            "interactionType": "match",
-            "prompt": "Given my schedule, I need to identify the most suitable place to watch a movie from a car as soon as possible.",
-            "itinerary": [
-                "Spotlight Dance Studio",
-                "Spotlight Art Gallery",
-                "Spotlight Aquarium",
-                "Spotlight Drive-In Theater"
-            ],
-            "options": [
-                "Dance Studio",
-                "Art Gallery",
-                "Aquarium",
-                "Drive-In Theater"
-            ],
-            "correctAnswerIndex": 3,
-            "hint": "The correct option is the venue most closely associated with the ability to watch a movie from a car.",
-            "explanation": "The phrase 'watch a movie from a car' points directly to a drive-in theater, since that is the service or activity it specializes in.",
-            "id": "td_l200_q3"
-        }
-    ]
+  "gameType": "travelDesk",
+  "batchIndex": 20,
+  "levels": "191-200",
+  "quests": [
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "Time is tight, so I'd like the most direct option for where to get a new prescription fitted after losing a pair on a hike.",
+      "itinerary": [
+        "Neighborhood Shoe Repair Shop",
+        "Neighborhood Watch Repair Shop",
+        "Neighborhood Passport Photo Shop",
+        "Neighborhood Optician"
+      ],
+      "options": [
+        "Shoe Repair Shop",
+        "Watch Repair Shop",
+        "Passport Photo Shop",
+        "Optician"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Not all four fit. Focus on the one place designed to let someone get a new prescription fitted after losing a pair on a hike.",
+      "explanation": "Optician is the answer, because everything in the request points to needing to get a new prescription fitted after losing a pair on a hike.",
+      "id": "td_l191_q1"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "I need to make the most of a narrow window of time to replace a stroller part that broke on the cobblestones.",
+      "itinerary": [
+        "Family Playroom",
+        "Family Kids' Club",
+        "Family Pediatric Clinic",
+        "Family Baby Supplies Store"
+      ],
+      "options": [
+        "Playroom",
+        "Kids' Club",
+        "Pediatric Clinic",
+        "Baby Supplies Store"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "One of these four exists specifically to help people replace a stroller part that broke on the cobblestones — look for it.",
+      "explanation": "Baby Supplies Store is correct — the other options sound similar but won't actually let you replace a stroller part that broke on the cobblestones.",
+      "id": "td_l191_q2"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "Could you advise on the most appropriate venue to source enough of one fabric pattern for a full outfit, given the constraints I'm working with?",
+      "itinerary": [
+        "Marketplace Ceramics Shop",
+        "Marketplace Leather Goods Shop",
+        "Marketplace Boutique",
+        "Marketplace Textile Shop"
+      ],
+      "options": [
+        "Ceramics Shop",
+        "Leather Goods Shop",
+        "Boutique",
+        "Textile Shop"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Ask yourself which of the four options is built for one specific purpose: to source enough of one fabric pattern for a full outfit.",
+      "explanation": "The best match is Textile Shop; it's the one option truly built around helping people source enough of one fabric pattern for a full outfit.",
+      "id": "td_l191_q3"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "All things considered, where would you say is the ideal place to rebook a vineyard tour that was cancelled due to weather?",
+      "itinerary": [
+        "Gourmet Brewery",
+        "Gourmet Vineyard Tour",
+        "Gourmet Wine Cellar",
+        "Gourmet Coffee Roastery"
+      ],
+      "options": [
+        "Brewery",
+        "Vineyard Tour",
+        "Wine Cellar",
+        "Coffee Roastery"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Focus on the verb in the request: the traveler needs to rebook a vineyard tour that was cancelled due to weather.",
+      "explanation": "Right — Vineyard Tour is where this kind of request always leads, since you need to rebook a vineyard tour that was cancelled due to weather.",
+      "id": "td_l192_q1"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "Given my schedule, I need to identify the most suitable place to arrange a meeting with a visiting research fellow as soon as possible.",
+      "itinerary": [
+        "Scholars' Cultural Center",
+        "Scholars' Language Exchange Café",
+        "Scholars' University Campus Tour",
+        "Scholars' Heritage Walking Tour Office"
+      ],
+      "options": [
+        "Cultural Center",
+        "Language Exchange Café",
+        "University Campus Tour",
+        "Heritage Walking Tour Office"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Some options belong to the same general category, but only one is the exact place to arrange a meeting with a visiting research fellow.",
+      "explanation": "This matches because University Campus Tour is the standard place to arrange a meeting with a visiting research fellow.",
+      "id": "td_l192_q2"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "I'd be grateful for a recommendation on where best to resolve a booth placement dispute ahead of opening hours before my plans shift again.",
+      "itinerary": [
+        "Corporate Networking Reception",
+        "Corporate Convention Center",
+        "Corporate Trade Show Hall",
+        "Corporate Exhibition Booth"
+      ],
+      "options": [
+        "Networking Reception",
+        "Convention Center",
+        "Trade Show Hall",
+        "Exhibition Booth"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Match the purpose, not just the wording — where does someone actually go to resolve a booth placement dispute ahead of opening hours?",
+      "explanation": "The request points directly to the Trade Show Hall, since that's where you'd resolve a booth placement dispute ahead of opening hours.",
+      "id": "td_l192_q3"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "Time is tight, so I'd like the most direct option for where to file a damage report on a bag collected an hour ago.",
+      "itinerary": [
+        "Wanderer's Baggage Claim",
+        "Wanderer's Luggage Storage",
+        "Wanderer's Arrival Hall",
+        "Wanderer's Customs Office"
+      ],
+      "options": [
+        "Baggage Claim",
+        "Luggage Storage",
+        "Arrival Hall",
+        "Customs Office"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Consider the precise nature of the request, not just its general category, to work out where to file a damage report on a bag collected an hour ago.",
+      "explanation": "Baggage Claim is the best fit — it exists specifically to help people file a damage report on a bag collected an hour ago.",
+      "id": "td_l193_q1"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "I need to make the most of a narrow window of time to reprint a photo batch that came out with the wrong colors.",
+      "itinerary": [
+        "Digital Camera Rental Shop",
+        "Digital Gadget Store",
+        "Digital 3D Printing Studio",
+        "Digital Photo Printing Kiosk"
+      ],
+      "options": [
+        "Camera Rental Shop",
+        "Gadget Store",
+        "3D Printing Studio",
+        "Photo Printing Kiosk"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Read the request closely: the key detail is that this person needs to reprint a photo batch that came out with the wrong colors.",
+      "explanation": "Photo Printing Kiosk makes sense here because that's precisely where people go to reprint a photo batch that came out with the wrong colors.",
+      "id": "td_l193_q2"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "Could you advise on the most appropriate venue to continue a physiotherapy plan that was started back home, given the constraints I'm working with?",
+      "itinerary": [
+        "Wellness Sports Medicine Clinic",
+        "Wellness Physiotherapy Center",
+        "Wellness Massage Therapy Center",
+        "Wellness Rehabilitation Center"
+      ],
+      "options": [
+        "Sports Medicine Clinic",
+        "Physiotherapy Center",
+        "Massage Therapy Center",
+        "Rehabilitation Center"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Rule out the options that don't fit someone trying to continue a physiotherapy plan that was started back home.",
+      "explanation": "When someone needs to continue a physiotherapy plan that was started back home, Physiotherapy Center is the natural choice.",
+      "id": "td_l193_q3"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "All things considered, where would you say is the ideal place to move a rooftop reservation indoors after a sudden weather change?",
+      "itinerary": [
+        "Spotlight Music Festival Grounds",
+        "Spotlight Jazz Club",
+        "Spotlight Rooftop Bar",
+        "Spotlight Drive-In Theater"
+      ],
+      "options": [
+        "Music Festival Grounds",
+        "Jazz Club",
+        "Rooftop Bar",
+        "Drive-In Theater"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "The right answer is the place whose main job is to help people move a rooftop reservation indoors after a sudden weather change.",
+      "explanation": "Rooftop Bar is the answer, because everything in the request points to needing to move a rooftop reservation indoors after a sudden weather change.",
+      "id": "td_l194_q1"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "Given my schedule, I need to identify the most suitable place to retrieve a passport that was logged under someone else's name as soon as possible.",
+      "itinerary": [
+        "Neighborhood Lost-and-Found Office",
+        "Neighborhood City Hall",
+        "Neighborhood Post Office",
+        "Neighborhood Community Center"
+      ],
+      "options": [
+        "Lost-and-Found Office",
+        "City Hall",
+        "Post Office",
+        "Community Center"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Think about which kind of place specializes in helping people retrieve a passport that was logged under someone else's name.",
+      "explanation": "Lost-and-Found Office is correct — the other options sound similar but won't actually let you retrieve a passport that was logged under someone else's name.",
+      "id": "td_l194_q2"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "I'd be grateful for a recommendation on where best to get travel vaccinations approved for an infant before my plans shift again.",
+      "itinerary": [
+        "Family Kids' Club",
+        "Family Babysitting Agency",
+        "Family Pediatric Clinic",
+        "Family Baby Supplies Store"
+      ],
+      "options": [
+        "Kids' Club",
+        "Babysitting Agency",
+        "Pediatric Clinic",
+        "Baby Supplies Store"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Picture exactly where a traveler would go to get travel vaccinations approved for an infant.",
+      "explanation": "The best match is Pediatric Clinic; it's the one option truly built around helping people get travel vaccinations approved for an infant.",
+      "id": "td_l194_q3"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "Time is tight, so I'd like the most direct option for where to replace a charger that stopped working overnight.",
+      "itinerary": [
+        "Marketplace Luggage Shop",
+        "Marketplace Discount Store",
+        "Marketplace Electronics Store",
+        "Marketplace Craft Store"
+      ],
+      "options": [
+        "Luggage Shop",
+        "Discount Store",
+        "Electronics Store",
+        "Craft Store"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Ask yourself which of the four options is built for one specific purpose: to replace a charger that stopped working overnight.",
+      "explanation": "Right — Electronics Store is where this kind of request always leads, since you need to replace a charger that stopped working overnight.",
+      "id": "td_l195_q1"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "I need to make the most of a narrow window of time to find out which farm supplied this morning's batch.",
+      "itinerary": [
+        "Gourmet Cafe",
+        "Gourmet Chocolate Shop",
+        "Gourmet Coffee Roastery",
+        "Gourmet Tea House"
+      ],
+      "options": [
+        "Cafe",
+        "Chocolate Shop",
+        "Coffee Roastery",
+        "Tea House"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Not all four fit. Focus on the one place designed to let someone find out which farm supplied this morning's batch.",
+      "explanation": "Coffee Roastery is correct because that's exactly where travelers go to find out which farm supplied this morning's batch.",
+      "id": "td_l195_q2"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "Could you advise on the most appropriate venue to find a language partner who specializes in business vocabulary, given the constraints I'm working with?",
+      "itinerary": [
+        "Scholars' University Campus Tour",
+        "Scholars' Language Exchange Café",
+        "Scholars' Cultural Center",
+        "Scholars' Calligraphy Workshop"
+      ],
+      "options": [
+        "University Campus Tour",
+        "Language Exchange Café",
+        "Cultural Center",
+        "Calligraphy Workshop"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Match the purpose, not just the wording — where does someone actually go to find a language partner who specializes in business vocabulary?",
+      "explanation": "Since the traveler wants to find a language partner who specializes in business vocabulary, Language Exchange Café is the logical destination.",
+      "id": "td_l195_q3"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "All things considered, where would you say is the ideal place to host an informal debrief after a long client meeting?",
+      "itinerary": [
+        "Corporate Shared Office Lounge",
+        "Corporate Client Meeting Lounge",
+        "Corporate Executive Lounge",
+        "Corporate Airport Business Lounge"
+      ],
+      "options": [
+        "Shared Office Lounge",
+        "Client Meeting Lounge",
+        "Executive Lounge",
+        "Airport Business Lounge"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Think practically: if you needed to host an informal debrief after a long client meeting right now, where would you head?",
+      "explanation": "Travelers head to the Executive Lounge whenever they need to host an informal debrief after a long client meeting.",
+      "id": "td_l196_q1"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "Given my schedule, I need to identify the most suitable place to exchange leftover currency from two earlier stops on the trip as soon as possible.",
+      "itinerary": [
+        "Wanderer's Currency Exchange Booth",
+        "Wanderer's Tourist Information Center",
+        "Wanderer's Travel Agency",
+        "Wanderer's Duty-Free Shop"
+      ],
+      "options": [
+        "Currency Exchange Booth",
+        "Tourist Information Center",
+        "Travel Agency",
+        "Duty-Free Shop"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Narrow it down by asking where, specifically, people go to exchange leftover currency from two earlier stops on the trip.",
+      "explanation": "Currency Exchange Booth fits perfectly here, as it's set up for people who need to exchange leftover currency from two earlier stops on the trip.",
+      "id": "td_l196_q2"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "I'd be grateful for a recommendation on where best to restore access after a guest network password change before my plans shift again.",
+      "itinerary": [
+        "Digital Repair Shop",
+        "Digital Tech Support Center",
+        "Digital IT Help Desk",
+        "Digital Internet Cafe"
+      ],
+      "options": [
+        "Repair Shop",
+        "Tech Support Center",
+        "IT Help Desk",
+        "Internet Cafe"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Some options belong to the same general category, but only one is the exact place to restore access after a guest network password change.",
+      "explanation": "The request points directly to the IT Help Desk, since that's where you'd restore access after a guest network password change.",
+      "id": "td_l196_q3"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "Time is tight, so I'd like the most direct option for where to get a second opinion before a scheduled procedure abroad.",
+      "itinerary": [
+        "Wellness Urgent Care Center",
+        "Wellness Hospital",
+        "Wellness Radiology Center",
+        "Wellness Emergency Room"
+      ],
+      "options": [
+        "Urgent Care Center",
+        "Hospital",
+        "Radiology Center",
+        "Emergency Room"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Look past any similar-sounding options — only one place truly lets you get a second opinion before a scheduled procedure abroad.",
+      "explanation": "Hospital is the answer, because everything in the request points to needing to get a second opinion before a scheduled procedure abroad.",
+      "id": "td_l197_q1"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "I need to make the most of a narrow window of time to find the re-entry gate after stepping out of the festival briefly.",
+      "itinerary": [
+        "Spotlight Circus Tent",
+        "Spotlight Concert Hall",
+        "Spotlight Music Festival Grounds",
+        "Spotlight Jazz Club"
+      ],
+      "options": [
+        "Circus Tent",
+        "Concert Hall",
+        "Music Festival Grounds",
+        "Jazz Club"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "The other three options sound plausible, but only one is made for this: to find the re-entry gate after stepping out of the festival briefly.",
+      "explanation": "Music Festival Grounds is correct — the other options sound similar but won't actually let you find the re-entry gate after stepping out of the festival briefly.",
+      "id": "td_l197_q2"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "Could you advise on the most appropriate venue to convert leftover currency from three different countries at once, given the constraints I'm working with?",
+      "itinerary": [
+        "Neighborhood Currency Exchange",
+        "Neighborhood Notary Office",
+        "Neighborhood Bank",
+        "Neighborhood Money Transfer Office"
+      ],
+      "options": [
+        "Currency Exchange",
+        "Notary Office",
+        "Bank",
+        "Money Transfer Office"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "One of these four exists specifically to help people convert leftover currency from three different countries at once — look for it.",
+      "explanation": "The best match is Currency Exchange; it's the one option truly built around helping people convert leftover currency from three different countries at once.",
+      "id": "td_l197_q3"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "All things considered, where would you say is the ideal place to book the hall for a milestone anniversary celebration?",
+      "itinerary": [
+        "Family Picnic Area",
+        "Family Wedding Planner's Office",
+        "Family Relative's Home",
+        "Family Reunion Hall"
+      ],
+      "options": [
+        "Picnic Area",
+        "Wedding Planner's Office",
+        "Relative's Home",
+        "Reunion Hall"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Trust the specific wording of the request when deciding where someone would go to book the hall for a milestone anniversary celebration.",
+      "explanation": "Right — Reunion Hall is where this kind of request always leads, since you need to book the hall for a milestone anniversary celebration.",
+      "id": "td_l198_q1"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "Given my schedule, I need to identify the most suitable place to match a scent from an unlabeled sample vial as soon as possible.",
+      "itinerary": [
+        "Marketplace Jewelry Shop",
+        "Marketplace Department Store",
+        "Marketplace Perfume Shop",
+        "Marketplace Boutique"
+      ],
+      "options": [
+        "Jewelry Shop",
+        "Department Store",
+        "Perfume Shop",
+        "Boutique"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Watch for choices that sound related but serve a slightly different purpose than helping someone match a scent from an unlabeled sample vial.",
+      "explanation": "This matches because Perfume Shop is the standard place to match a scent from an unlabeled sample vial.",
+      "id": "td_l198_q2"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "I'd be grateful for a recommendation on where best to find a specific shellfish that's only in season briefly before my plans shift again.",
+      "itinerary": [
+        "Gourmet Butcher Shop",
+        "Gourmet Seafood Market",
+        "Gourmet Sushi Bar",
+        "Gourmet Deli"
+      ],
+      "options": [
+        "Butcher Shop",
+        "Seafood Market",
+        "Sushi Bar",
+        "Deli"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Focus on the verb in the request: the traveler needs to find a specific shellfish that's only in season briefly.",
+      "explanation": "Seafood Market is correct because that's exactly where travelers go to find a specific shellfish that's only in season briefly.",
+      "id": "td_l198_q3"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "Time is tight, so I'd like the most direct option for where to confirm whether a family heirloom matches a museum record.",
+      "itinerary": [
+        "Scholars' History Museum",
+        "Scholars' Art Museum",
+        "Scholars' Maritime Museum",
+        "Scholars' Natural History Museum"
+      ],
+      "options": [
+        "History Museum",
+        "Art Museum",
+        "Maritime Museum",
+        "Natural History Museum"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "The right answer is the place whose main job is to help people confirm whether a family heirloom matches a museum record.",
+      "explanation": "Of the four options, only History Museum is designed to let someone confirm whether a family heirloom matches a museum record.",
+      "id": "td_l199_q1"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "I need to make the most of a narrow window of time to verify accessibility arrangements for a visiting delegate.",
+      "itinerary": [
+        "Corporate Conference Center",
+        "Corporate Convention Center",
+        "Corporate Trade Show Hall",
+        "Corporate Seminar Hall"
+      ],
+      "options": [
+        "Conference Center",
+        "Convention Center",
+        "Trade Show Hall",
+        "Seminar Hall"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Rule out the options that don't fit someone trying to verify accessibility arrangements for a visiting delegate.",
+      "explanation": "The clearest match is Convention Center, since that's exactly its purpose: to verify accessibility arrangements for a visiting delegate.",
+      "id": "td_l199_q2"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "Could you advise on the most appropriate venue to rework an itinerary after one leg of the trip was cancelled, given the constraints I'm working with?",
+      "itinerary": [
+        "Wanderer's Travel Agency",
+        "Wanderer's Car Rental Office",
+        "Wanderer's Tour Agency",
+        "Wanderer's Tourist Information Center"
+      ],
+      "options": [
+        "Travel Agency",
+        "Car Rental Office",
+        "Tour Agency",
+        "Tourist Information Center"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Think about which kind of place specializes in helping people rework an itinerary after one leg of the trip was cancelled.",
+      "explanation": "Travel Agency makes sense here because that's precisely where people go to rework an itinerary after one leg of the trip was cancelled.",
+      "id": "td_l199_q3"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "All things considered, where would you say is the ideal place to replace a charging cable that frayed on the last leg of the trip?",
+      "itinerary": [
+        "Digital SIM Card Kiosk",
+        "Digital Repair Shop",
+        "Digital Gadget Store",
+        "Digital Data Top-Up Counter"
+      ],
+      "options": [
+        "SIM Card Kiosk",
+        "Repair Shop",
+        "Gadget Store",
+        "Data Top-Up Counter"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Look past any similar-sounding options — only one place truly lets you replace a charging cable that frayed on the last leg of the trip.",
+      "explanation": "Gadget Store is the answer, because everything in the request points to needing to replace a charging cable that frayed on the last leg of the trip.",
+      "id": "td_l200_q1"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "Given my schedule, I need to identify the most suitable place to extend a wellness booking after deciding to stay a few extra days as soon as possible.",
+      "itinerary": [
+        "Wellness Massage Therapy Center",
+        "Wellness Wellness Spa",
+        "Wellness Acupuncture Clinic",
+        "Wellness Wellness Retreat"
+      ],
+      "options": [
+        "Massage Therapy Center",
+        "Wellness Spa",
+        "Acupuncture Clinic",
+        "Wellness Retreat"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Some options belong to the same general category, but only one is the exact place to extend a wellness booking after deciding to stay a few extra days.",
+      "explanation": "Wellness Retreat is correct — the other options sound similar but won't actually let you extend a wellness booking after deciding to stay a few extra days.",
+      "id": "td_l200_q2"
+    },
+    {
+      "instruction": "Match the destination to the traveler's request.",
+      "subtype": "travelDesk",
+      "interactionType": "match",
+      "prompt": "I'd be grateful for a recommendation on where best to check whether tonight's screening was moved indoors for weather before my plans shift again.",
+      "itinerary": [
+        "Spotlight Drive-In Theater",
+        "Spotlight Rooftop Bar",
+        "Spotlight Cinema",
+        "Spotlight Music Festival Grounds"
+      ],
+      "options": [
+        "Drive-In Theater",
+        "Rooftop Bar",
+        "Cinema",
+        "Music Festival Grounds"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "One of these four exists specifically to help people check whether tonight's screening was moved indoors for weather — look for it.",
+      "explanation": "The best match is Drive-In Theater; it's the one option truly built around helping people check whether tonight's screening was moved indoors for weather.",
+      "id": "td_l200_q3"
+    }
+  ]
 }

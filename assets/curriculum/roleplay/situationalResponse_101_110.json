@@ -7,480 +7,480 @@
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You are asked to chair a panel of three expert speakers who hold conflicting views.",
+            "scene": "A board member questions your strategy in a public forum, using a slightly condescending tone.",
             "options": [
-                "Avoid asking any genuinely difficult or challenging questions.",
-                "Try to steer everyone toward reaching agreement by the end.",
-                "Set clear ground rules invite each speaker's core position then facilitate structured debate that generates insight without unnecessary conflict.",
-                "Let them debate freely without any intervention from you."
+                "I understand the skepticism, but the data holds up.",
+                "I'd be glad to walk you through our thinking.",
+                "That's a fair question - here's the reasoning.",
+                "Let me address that concern directly for you."
             ],
             "correctAnswerIndex": 2,
-            "hint": "Expert chairing requires structure and guides productive intellectual tension.",
-            "explanation": "Setting ground rules establishing each speaker's position clearly then guiding structured debate is expert-level facilitation.",
+            "hint": "Staying composed and substantive defuses condescension better than matching it.",
+            "explanation": "Responding to the substance calmly, without matching the tone, is the most composed and persuasive way to handle public skepticism.",
             "id": "sr_l101_q1"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A client accuses your company of breaching a contractual clause. You believe the interpretation is genuinely debatable.",
+            "scene": "During a long-term lease negotiation, the landlord insists on a clause you find unreasonable.",
             "options": [
-                "Admit full fault immediately to preserve the relationship.",
-                "Deny all responsibility entirely.",
-                "We take this very seriously. Could we review the specific clause together? I'd like to fully understand your interpretation before we respond formally.",
-                "Escalate immediately to your legal team without engaging the client at all."
+                "I'd like to propose an alternative to this clause.",
+                "This clause seems fairly one-sided, honestly.",
+                "Could we revisit the terms of this clause?",
+                "I'm not comfortable signing this as written."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Engage the specific issue carefully and calmly before defending or escalating.",
-            "explanation": "Asking to review the clause together is measured professional and avoids both premature admission and unhelpful escalation.",
+            "correctAnswerIndex": 0,
+            "hint": "Offering an alternative moves the negotiation forward rather than just objecting.",
+            "explanation": "Proposing a concrete alternative is the most constructive way to negotiate a clause you find unreasonable.",
             "id": "sr_l101_q2"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You believe your company is about to launch a campaign that is culturally insensitive.",
+            "scene": "A close friend confides that their marriage is quietly falling apart.",
             "options": [
-                "Launch it and see what public reaction materialises.",
-                "Say nothing - it is not ultimately your decision to make.",
-                "Raise your concern in writing to the relevant decision-maker citing specific cultural concerns and proposing concrete alternative approaches.",
-                "Leak the campaign to the press before it launches."
+                "I had a feeling something wasn't quite right.",
+                "That sounds incredibly hard - I'm here to listen.",
+                "Have you two thought about counselling?",
+                "Marriages go through hard patches sometimes."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Raise specific evidenced concerns through proper internal channels - with solutions.",
-            "explanation": "A written concern with specific cultural reasoning and proposed alternatives gives decision-makers something actionable.",
+            "correctAnswerIndex": 1,
+            "hint": "Being present and listening matters more than offering solutions right away.",
+            "explanation": "Offering presence and a willingness to listen is the most supportive first response to news this personal and painful.",
             "id": "sr_l101_q3"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You are asked to deliver a difficult announcement to your entire company on behalf of leadership.",
+            "scene": "During a live TV interview, the host asks you a question designed to provoke a defensive reaction.",
             "options": [
-                "Read from a script without adding any personal acknowledgment.",
-                "Decline to deliver the message.",
-                "Deliver the message clearly acknowledge how it will land emotionally invite questions and be transparent about what you know and do not yet know.",
-                "Soften the message so much that the real meaning is lost."
+                "I wouldn't quite put it that way, actually.",
+                "That's not entirely fair, if I'm honest.",
+                "Let me offer some context on that first.",
+                "That's an interesting framing - here's how I see it."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Authentic delivery of difficult messages requires empathy clarity and genuine openness.",
-            "explanation": "Acknowledging the human impact being transparent about uncertainty and opening for questions transforms a difficult announcement into a trust-building moment.",
+            "correctAnswerIndex": 3,
+            "hint": "Reframing calmly avoids taking the interviewer's bait.",
+            "explanation": "Calmly reframing the question is the most composed, media-savvy way to handle a provocative interview question.",
             "id": "sr_l102_q1"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You are coaching a high-performer who is showing clear signs of serious burnout.",
+            "scene": "While settling into a new country, an immigration officer asks detailed questions about your finances.",
             "options": [
-                "Tell them to push through - high performers are capable of recovering.",
-                "Ignore the signs - they will self-correct eventually.",
-                "Have a genuinely private and compassionate conversation: I've noticed some changes in how you seem lately. I care about you as a person and as a professional. How are you really doing?",
-                "Reduce their workload quietly without any discussion."
+                "I wasn't expecting quite so many questions.",
+                "Of course - I have all my documents here.",
+                "Everything should be in order, I believe.",
+                "I can provide whatever you need to see."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Start with the human reality - never with the performance data.",
-            "explanation": "A compassionate check-in opens a real conversation. Addressing burnout always starts with genuinely listening not with imposing a solution.",
+            "correctAnswerIndex": 1,
+            "hint": "Cooperative confidence with documents ready is the smoothest approach.",
+            "explanation": "Responding cooperatively and confidently, with documentation ready, is the most effective way to handle detailed questions.",
             "id": "sr_l102_q2"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You are in a salary negotiation and the employer says: This is genuinely the best we can offer on salary.",
+            "scene": "A colleague you mentor makes the same mistake for the third time despite your guidance.",
             "options": [
-                "Accept immediately and move forward.",
-                "Walk away from the offer.",
-                "I understand - could I ask whether there is any flexibility on other aspects of the package such as a performance bonus remote working days or a professional development budget?",
-                "Continue to push on salary regardless."
+                "This is the third time this has happened now.",
+                "I think we need a different approach here.",
+                "Let's figure out what's getting in the way here.",
+                "What's making this particular part so tricky?"
             ],
             "correctAnswerIndex": 2,
-            "hint": "When the salary ceiling is genuine negotiate the full compensation package strategically.",
-            "explanation": "If salary is truly at its limit exploring the full benefits package is smart negotiation.",
+            "hint": "Diagnosing the root cause helps more than noting the repetition.",
+            "explanation": "Diagnosing the underlying obstacle is the most constructive, patient response to a repeated mistake from a mentee.",
             "id": "sr_l102_q3"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A long-serving employee who has been passed over for promotion asks for a genuinely frank career conversation.",
+            "scene": "A colleague retiring after decades at the company has asked you to give a toast.",
             "options": [
-                "Tell them to simply keep performing and be patient.",
-                "Give them vague and generic encouragement.",
-                "Be genuinely honest: share your authentic assessment of their specific strengths and gaps and work together on a concrete development plan.",
-                "Suggest they might want to explore opportunities at a different company."
+                "Few people leave the mark on a place that you have.",
+                "It's hard to imagine this place without you.",
+                "Thirty years of dedication deserves real recognition.",
+                "You've shaped this company more than you know."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Honest assessment combined with a clear development plan is what real support looks like.",
-            "explanation": "A frank specific conversation naming both authentic strengths and specific development gaps followed by a jointly-owned plan is what loyalty and professionalism look like from a manager.",
+            "correctAnswerIndex": 0,
+            "hint": "The strongest toast lines are specific and slightly unexpected, not generic praise.",
+            "explanation": "A specific, memorable line about their unique impact makes a retirement toast land far better than generic praise.",
             "id": "sr_l103_q1"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You are editing a colleague's written report which needs significant structural work.",
+            "scene": "A doctor delivers a diagnosis that requires you to make major lifestyle changes.",
             "options": [
-                "Rewrite it entirely and send it back without comment.",
-                "Tell them simply that the structure does not work.",
-                "The content is strong - here is what I think would make it land better structurally. I have left tracked changes with specific suggestions on each section.",
-                "Approve it as submitted to avoid any potential conflict."
+                "This is a lot to take in right now, honestly.",
+                "I wasn't expecting to hear that today.",
+                "I'll need some time to process this news.",
+                "Okay - where would you suggest I start?"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Editorial feedback should lead with genuine strength and be specific and structural.",
-            "explanation": "Acknowledging the strong content framing structural improvements as making it land better and using tracked changes is all specific actionable and respectful.",
+            "correctAnswerIndex": 3,
+            "hint": "Moving toward action helps you regain a sense of control.",
+            "explanation": "Asking where to start is the most proactive, appropriate way to respond once you're ready to move toward action.",
             "id": "sr_l103_q2"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You are shortlisted for two leadership roles. One pays more but the organisational culture is a poor fit.",
+            "scene": "While moderating a panel, two experts begin openly contradicting each other on stage.",
             "options": [
-                "Always choose whichever role pays more.",
-                "Choose the culture-fit role - compensation is secondary.",
-                "Reflect deeply on both: which role genuinely aligns with your core values your growth goals and your long-term career direction?",
-                "Ask both organisations to bid competitively against each other."
+                "Let's agree to disagree on this one, perhaps.",
+                "That's a genuine difference of opinion, isn't it?",
+                "It sounds like there's real nuance here - can you both unpack that?",
+                "Interesting - the audience would love to hear more."
             ],
             "correctAnswerIndex": 2,
-            "hint": "Career decisions require far more than a simple financial comparison.",
-            "explanation": "Evaluating alignment with core values growth potential and long-term direction rather than salary alone consistently leads to greater professional satisfaction.",
+            "hint": "Treating the disagreement as valuable content keeps the panel engaging rather than awkward.",
+            "explanation": "Framing the disagreement as worth exploring further is the most skillful way to moderate a lively panel.",
             "id": "sr_l103_q3"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You are presenting research findings that directly challenge a belief widely held by your audience.",
+            "scene": "A job interviewer asks you to describe a significant professional failure.",
             "options": [
-                "Soften the findings significantly to avoid any conflict.",
-                "Lead confidently: Our findings challenge a widely-held assumption about X. Here is what the data actually shows.",
-                "Apologise before sharing the challenging data.",
-                "Avoid presenting the most challenging findings at all."
+                "I try not to dwell too much on past mistakes.",
+                "I once missed a deadline that taught me to plan buffers.",
+                "Everyone fails sometimes, it's part of growth.",
+                "I've made my share of mistakes, like anyone."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Bold findings deserve direct confident presentation - not apology.",
-            "explanation": "Leading with the implication signals confidence in the data's integrity. Apologising or softening fundamentally undermines your credibility.",
+            "hint": "A specific story with a lesson attached is far more convincing than a general statement.",
+            "explanation": "A specific failure paired with a concrete lesson learned is the most compelling way to answer this interview question.",
             "id": "sr_l104_q1"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Your company's strategy shifts and your team's project is suddenly deprioritised.",
+            "scene": "A close friend asks to borrow a significant sum of money, and you are hesitant.",
             "options": [
-                "Continue the project as if nothing has changed.",
-                "Abandon all previous work and start everything from scratch.",
-                "Communicate clearly to the team: what is changing why what this means for their current work and what support is available to them.",
-                "Pretend the change in priority has not happened yet."
+                "I care about you, but I'm not able to lend that.",
+                "I'd rather not mix money and friendship, honestly.",
+                "That's a lot more than I'm comfortable lending.",
+                "Let me think about it and get back to you."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Strategic pivots require clear timely and empathetic communication to those affected.",
-            "explanation": "Explaining the what why and impact with available support gives your team the context they need to adapt effectively.",
+            "correctAnswerIndex": 0,
+            "hint": "Naming the friendship alongside the honest limit softens a difficult no.",
+            "explanation": "Affirming the friendship while being honest about your limit is the most caring, appropriate way to decline this request.",
             "id": "sr_l104_q2"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A job candidate directly asks you: Would you personally recommend I take this offer?",
+            "scene": "Hosting international guests, you notice one politely decline a dish for cultural or religious reasons.",
             "options": [
-                "Of course - it's a genuinely great opportunity!",
-                "That decision is entirely yours to make.",
-                "Be honest and balanced: share what makes the role genuinely rewarding and what the real challenges are and encourage them to weigh both against their own priorities.",
-                "Tell them that other strong candidates are also considering the role."
+                "I completely understand, no problem at all.",
+                "I should have asked about that beforehand.",
+                "There are plenty of other things to try here.",
+                "Of course, let me find you something else."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Authentic honesty about both the opportunity and the challenges builds genuine trust.",
-            "explanation": "Sharing both the rewards and the genuine challenges and encouraging reflection is respectful of the candidate's decision-making.",
+            "correctAnswerIndex": 3,
+            "hint": "Moving straight to a solution is more gracious than dwelling on the oversight.",
+            "explanation": "Responding with an immediate, practical solution is the most gracious way to handle a declined dish as a host.",
             "id": "sr_l104_q3"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You are managing a remote team across multiple time zones and one team member consistently misses scheduled calls.",
+            "scene": "A junior colleague asks you directly whether they are likely to be promoted this year.",
             "options": [
-                "Exclude them from all future team calls.",
-                "Issue a formal warning immediately.",
-                "Schedule a private one-to-one: I know our time zones create genuine challenges. Let's find a call time that actually works better for you.",
-                "Start sending them recorded call notes without any conversation."
+                "Let's talk about what would strengthen your case.",
+                "That's honestly not really my decision to make.",
+                "I'd say your chances are looking pretty good.",
+                "I can't make any promises, but you're doing well."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Systemic scheduling problems require human solutions before any disciplinary ones.",
-            "explanation": "Finding out whether a timezone conflict is the actual root cause and adjusting together addresses the real problem.",
+            "correctAnswerIndex": 0,
+            "hint": "Focusing on what they can influence is more useful than a yes-or-no guess.",
+            "explanation": "Focusing the conversation on what would strengthen their case is the most useful, appropriate response to this question.",
             "id": "sr_l105_q1"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You are unexpectedly called on to give a toast for someone you barely know at a dinner.",
+            "scene": "Family members have asked you to give a eulogy for someone who touched many lives in quiet, unnoticed ways.",
             "options": [
-                "Decline to give the toast.",
-                "Say something completely generic: What a wonderful person they are!",
-                "Ask someone nearby who knows them well for one genuine detail or story then build a brief warm toast around that specific detail.",
-                "Talk mostly about yourself and mention the person briefly at the end."
+                "They were the kind of person everyone remembers.",
+                "Their quiet generosity touched more people than they knew.",
+                "The world is a little dimmer without them in it.",
+                "Their kindness rarely made headlines, but it changed lives."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Even with limited knowledge one specific genuine detail makes a toast feel authentic.",
-            "explanation": "Gathering one real specific detail and building the toast around it creates warmth and authenticity that generic toasts never achieve.",
+            "correctAnswerIndex": 3,
+            "hint": "Contrasting the quiet nature of their kindness with its real impact makes the tribute land.",
+            "explanation": "Contrasting their understated nature with their real impact is the most moving, appropriate way to honor this kind of life.",
             "id": "sr_l105_q2"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You need to professionally and tactfully disagree with the CEO's proposal in a board meeting.",
+            "scene": "A colleague from another department asks you to bend a rule as a personal favor.",
             "options": [
-                "Agree publicly and then complain privately afterward.",
-                "Stay completely quiet and say nothing.",
-                "I want to build on your thinking here - before we commit could I share one concern I believe warrants careful consideration?",
-                "Disagree directly and forcefully from the very start."
+                "That's really not something I'm able to do.",
+                "I wish I could, but I can't make exceptions.",
+                "I'd get in real trouble if I did that, sorry.",
+                "Rules are rules, unfortunately, in this case."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Frame genuine disagreement as additive and collaborative - not oppositional.",
-            "explanation": "Build on your thinking is an expert framing - it signals complete respect and collaborative intent before introducing a challenge.",
+            "correctAnswerIndex": 1,
+            "hint": "Expressing genuine goodwill alongside a firm boundary keeps the relationship intact.",
+            "explanation": "Expressing genuine regret alongside a firm boundary is the most tactful way to decline bending a rule.",
             "id": "sr_l105_q3"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A team member cites serious personal difficulties as the primary reason for recent poor performance.",
+            "scene": "A job interviewer asks how you typically handle receiving criticism.",
             "options": [
-                "Tell them that personal problems have no place in a professional work environment.",
-                "Accept any level of output from them indefinitely out of compassion.",
-                "Express genuine empathy clarify what specific support is available to them and also explain what minimum performance expectations remain.",
-                "Quietly redistribute their work to others without any conversation."
+                "I try to take it professionally and not personally.",
+                "I've learned to see it as a chance to improve.",
+                "I look for what's useful in it, even when it stings.",
+                "I listen carefully and reflect before responding."
             ],
             "correctAnswerIndex": 2,
-            "hint": "Genuine empathy and clear professional expectations are not mutually exclusive.",
-            "explanation": "Expressing real empathy while being clear about minimum expectations and naming the specific support available keeps both the person's dignity and the team's standards intact.",
+            "hint": "Acknowledging that criticism can genuinely sting, while still valuing it, sounds most authentic.",
+            "explanation": "Acknowledging the discomfort while showing you extract value from it is the most authentic, compelling answer here.",
             "id": "sr_l106_q1"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A job candidate's CV looks exceptional but their interview performance is noticeably weak.",
+            "scene": "A family member makes a comment about your career choice that feels subtly dismissive.",
             "options": [
-                "Hire them primarily based on their strong CV - interviews are inherently unreliable.",
-                "Reject them immediately based on the interview alone.",
-                "Ensure you used well-structured and fair questions throughout. If performance is genuinely weak do not rely solely on the CV - interview performance matters for role-relevant reasons.",
-                "Ask more questions specifically about their CV history."
+                "It's actually been really fulfilling for me.",
+                "I know it's not the path you'd have chosen.",
+                "I get that a lot, but I really love it.",
+                "It works well for the life I want, honestly."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Structured interview processes lead to consistently better hiring decisions.",
-            "explanation": "A fair structured process values interview performance alongside CV evidence.",
+            "correctAnswerIndex": 0,
+            "hint": "Calmly affirming your own experience is stronger than defending or explaining yourself at length.",
+            "explanation": "Calmly affirming your own genuine experience is the most confident, appropriate response to a subtly dismissive comment.",
             "id": "sr_l106_q2"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You have spent months building a relationship with a key client contact who is suddenly replaced.",
+            "scene": "While checking out of a hotel, you notice the bill includes several charges you do not recognize.",
             "options": [
-                "Start the relationship from scratch as if the previous one never happened.",
-                "Complain about the change to the new contact.",
-                "Reach out proactively: Welcome - I wanted to introduce myself and ensure a completely smooth transition. I'm very happy to bring you fully up to speed on everything.",
-                "Simply wait and hope the new contact reaches out to you first."
+                "A few of these charges look unfamiliar to me.",
+                "Could you walk me through these charges?",
+                "I don't remember ordering these, to be honest.",
+                "Something on this bill doesn't look right."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Proactive generous onboarding of new client contacts is relationship management at its best.",
-            "explanation": "Reaching out first welcoming them warmly and offering to ensure continuity is client relationship management at its best and most professional.",
+            "correctAnswerIndex": 1,
+            "hint": "Asking them to walk through it invites a full explanation, not just a reaction.",
+            "explanation": "Asking them to walk through each charge is the most efficient, appropriate way to resolve an unclear hotel bill.",
             "id": "sr_l106_q3"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "In a cross-cultural team a colleague's very different communication style is causing repeated misunderstandings.",
+            "scene": "Someone you need to give difficult feedback to is clearly emotionally fragile today.",
             "options": [
-                "Tell them directly that their style is wrong and needs to change.",
-                "Adapt everything entirely to your own preferred style.",
-                "Acknowledge the difference privately: I think we may process things somewhat differently. Could we compare notes and find a better way to work together?",
-                "Raise it as a problem in the next team meeting."
+                "I'll keep this brief and gentle, if that helps.",
+                "This can wait if today isn't a good day.",
+                "Is now a good time, or should we talk later?",
+                "I want to share something, when you're ready."
             ],
             "correctAnswerIndex": 2,
-            "hint": "Cross-cultural misunderstandings are best resolved privately and collaboratively.",
-            "explanation": "I think we may process things differently - can we compare notes? is open and genuinely curious avoiding all blame.",
+            "hint": "Checking timing first respects their emotional state before delivering hard news.",
+            "explanation": "Checking whether the timing works is the most emotionally intelligent first step before difficult feedback.",
             "id": "sr_l107_q1"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You are writing a business proposal for a competitive client opportunity. How do you stand out?",
+            "scene": "A cancelled connecting flight strands you overnight in an unfamiliar city.",
             "options": [
-                "Use a sophisticated and visually impressive template.",
-                "Include the maximum amount of technical detail possible.",
-                "Open with a precise and specific articulation of the client's own problem before offering your solution - show that you have truly listened.",
-                "Keep it as short and concise as possible regardless of complexity."
+                "This is going to disrupt my whole schedule now.",
+                "I really need to get to my destination somehow.",
+                "Is there anything at all you can do for me?",
+                "What are my options for rebooking and accommodation?"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Proposals that start with the client's specific problem stand out because most start with the seller.",
-            "explanation": "Opening with a precise articulation of the client's challenge before any mention of your solution demonstrates genuine insight and builds immediate trust.",
+            "correctAnswerIndex": 3,
+            "hint": "Asking about concrete options moves you toward a solution fastest.",
+            "explanation": "Directly asking about concrete rebooking and accommodation options is the most efficient response to a cancelled flight.",
             "id": "sr_l107_q2"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A senior leader regularly takes public credit for ideas that originated with members of your team.",
+            "scene": "A colleague quietly tells you they suspect they are being paid less than others in the same role.",
             "options": [
-                "Let it go every single time - they are senior.",
-                "Call them out publicly in front of others.",
-                "Document your team's contributions carefully and find a professional private moment to raise it: I want to make sure the team's contributions are properly visible - could we talk about that?",
-                "Tell the team to simply stop sharing their ideas."
+                "That does happen more than people realize.",
+                "You should probably raise that with HR directly.",
+                "That's worth looking into - want to compare notes?",
+                "I'd feel the same way if that were me."
             ],
             "correctAnswerIndex": 2,
-            "hint": "Document first then raise calmly specifically and in private.",
-            "explanation": "Documentation gives you credible evidence. Raising it professionally framing it as visibility for the team is more effective and significantly less risky than public confrontation.",
+            "hint": "Offering to look into it together is more supportive than general sympathy or advice.",
+            "explanation": "Offering to look into the issue together is the most supportive, actionable response to this kind of concern.",
             "id": "sr_l107_q3"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You are appointed to lead a team that does not yet respect you or trust your leadership.",
+            "scene": "A talented but overconfident junior colleague is waiting for your feedback.",
             "options": [
-                "Demand their respect immediately and assert your authority.",
-                "Lead purely by formal authority and title alone.",
-                "Spend the first weeks genuinely listening understanding the team's work and real challenges and demonstrating competence before asserting any significant changes.",
-                "Implement major changes immediately in the first week to show you are in charge."
+                "You've got real talent, but watch the details.",
+                "There's a lot to like here, with room to grow.",
+                "You're clearly skilled, just stay a bit humble.",
+                "Your instincts are strong - let's sharpen the details."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Earn genuine respect before asserting authority - listening builds the foundation.",
-            "explanation": "Listening and demonstrating competence before asserting changes creates genuine respect rather than mere compliance born of fear.",
+            "correctAnswerIndex": 3,
+            "hint": "Naming the strength specifically before the growth area lands best with confident people.",
+            "explanation": "Specifically naming their real strength before the growth area is the most effective way to reach an overconfident but talented person.",
             "id": "sr_l108_q1"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "One colleague consistently makes every team meeting run significantly over time with unfocused updates.",
+            "scene": "At a dinner party, someone brings up a widely publicized mistake your company recently made.",
             "options": [
-                "Tell them directly and publicly to be shorter.",
-                "Cut them off abruptly mid-sentence.",
-                "As chair introduce clear time-boxing: We have three minutes per update - let's keep that structure consistently to get through the full agenda.",
-                "Simply allow the meetings to run over indefinitely."
+                "We've owned it and made real changes since.",
+                "It's been a difficult few weeks, honestly.",
+                "We're working hard to make things right.",
+                "I'd rather not dwell on that tonight, if that's okay."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Structural time management is always more professional than personal criticism.",
-            "explanation": "Setting clear time limits as a consistent structural norm is professional and applies equally to everyone.",
+            "correctAnswerIndex": 0,
+            "hint": "A confident, brief acknowledgment moves past the topic more gracefully than deflecting.",
+            "explanation": "Briefly and confidently acknowledging accountability is more graceful small talk than deflecting the question.",
             "id": "sr_l108_q2"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You are in a shop and a salesperson becomes very pushy about a major purchase.",
+            "scene": "Your elderly parent insists on continuing to drive despite clear safety concerns you have noticed.",
             "options": [
-                "Give in immediately to avoid any conflict.",
-                "Walk out angrily without a word.",
-                "Say calmly: I genuinely appreciate your enthusiasm but I need some time to consider this carefully. Please allow me to make this decision at my own pace.",
-                "Agree to buy and then cancel immediately afterward."
+                "I've noticed a few things that concern me lately.",
+                "I love you, and I'm genuinely worried about your safety.",
+                "Have you thought about whether driving still feels safe?",
+                "I think it might be time to consider some options."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Asserting your right to decide in your own time is completely professional.",
-            "explanation": "Acknowledging their effort while clearly claiming your right to decide in your own time is assertive without being hostile.",
+            "correctAnswerIndex": 1,
+            "hint": "Leading with love makes a hard safety conversation land as care, not control.",
+            "explanation": "Leading with love before the concern is the most compassionate, appropriate way to open this difficult family conversation.",
             "id": "sr_l108_q3"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You are in a meeting that has overrun by thirty minutes with no clear end in sight.",
+            "scene": "An interviewer asks you to describe a time you disagreed with a superior.",
             "options": [
-                "Stay indefinitely out of politeness.",
-                "Walk out without saying anything.",
-                "We're running considerably over time - may I suggest we note the outstanding items and schedule a brief follow-up? I need to be elsewhere at [time].",
-                "Check your phone repeatedly and obviously."
+                "I try to pick my battles carefully, generally.",
+                "I once pushed back on a decision I felt was wrong.",
+                "I believe in respectfully voicing disagreement.",
+                "I raised it privately, with data to support my view."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Asserting a time constraint with a clear practical solution is professional.",
-            "explanation": "Naming the overrun proposing a solution and giving your reason respects everyone's time and responsibilities.",
+            "correctAnswerIndex": 3,
+            "hint": "A specific, well-handled example is more convincing than a general philosophy.",
+            "explanation": "Describing a specific, well-handled instance is the most convincing way to answer this common interview question.",
             "id": "sr_l109_q1"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You are asked to describe your management approach and philosophy in a leadership interview.",
+            "scene": "A close friend's new partner makes a comment at dinner that quietly troubles you.",
             "options": [
-                "I adapt to whatever the situation requires.",
-                "I am quite collaborative by nature.",
-                "I believe in situational leadership - adapting my approach based on each team member's competence and level of confidence. I can share a specific example of how I have applied this.",
-                "I am very strongly results-driven."
+                "It's probably nothing, I'm likely overthinking it.",
+                "I'll keep an eye on it before saying anything.",
+                "I'll mention it to my friend privately, later.",
+                "That comment felt a little off to me, honestly."
             ],
             "correctAnswerIndex": 2,
-            "hint": "Name a specific leadership philosophy and offer concrete evidence of applying it.",
-            "explanation": "Naming a specific philosophy and offering a real example is far more credible than vague statements.",
+            "hint": "Raising it privately with your friend, later, respects everyone involved.",
+            "explanation": "Raising the concern privately with your friend afterward is the most appropriate, respectful way to handle this.",
             "id": "sr_l109_q2"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You receive an email copied to your entire team that unfairly blames your department for a project problem.",
+            "scene": "An international colleague asks you to translate a joke, but it does not work in their language.",
             "options": [
-                "Reply to all immediately with your full defence.",
-                "Forward it to your manager with your own commentary.",
-                "Reply only to the sender: I'd like to understand this more fully before involving others - could we discuss this privately first?",
-                "Ignore it and carry on."
+                "That one doesn't quite translate - let me explain why it's funny.",
+                "It's a bit of a play on words, honestly.",
+                "I'm not sure that one crosses languages well.",
+                "That's a tricky one to explain, actually."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Remove the issue from the group email chain before addressing its content.",
-            "explanation": "Responding only to the sender and requesting a private discussion prevents escalation.",
+            "correctAnswerIndex": 0,
+            "hint": "Explaining the humor itself teaches more than simply naming the difficulty.",
+            "explanation": "Explaining why the joke is funny is the most generous, appropriate way to bridge a joke that doesn't translate directly.",
             "id": "sr_l109_q3"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A business partner wants to renegotiate and redefine the terms of your existing agreement midway through a project.",
+            "scene": "Mid-merger negotiation, the other side makes a final offer with a tight deadline attached.",
             "options": [
-                "Accept all proposed changes to maintain the relationship.",
-                "Refuse every proposed change categorically.",
-                "I'm open to a discussion. Let's start by reviewing exactly what is currently in scope under our agreement then identify what any changes would actually require.",
-                "Send a strongly worded formal letter immediately."
+                "This deadline feels a bit artificial, honestly.",
+                "I need until tomorrow to review this properly.",
+                "That's a tight window for a decision this size.",
+                "Let me discuss this with my team first."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Revisit the existing agreement clearly before committing to anything new.",
-            "explanation": "Reviewing the existing scope together before negotiating changes is the professional baseline.",
+            "correctAnswerIndex": 1,
+            "hint": "Asking for a specific, reasonable amount of time is stronger than commenting on the pressure tactic.",
+            "explanation": "Requesting a specific, reasonable amount of time is the most composed, effective response to deadline pressure.",
             "id": "sr_l110_q1"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "An audience member asks a clearly hostile question immediately after your presentation.",
+            "scene": "A friend asks for feedback on creative work that you think is genuinely not very good.",
             "options": [
-                "Respond with equal hostility.",
-                "Ignore the question entirely.",
-                "Thank you for raising that challenge - let me address it directly. Then answer with specific evidence.",
-                "Ask them to speak to you privately afterward instead."
+                "It's got potential, though it needs some work.",
+                "I have a few honest thoughts, if you want them.",
+                "The concept is strong - here's what could sharpen it.",
+                "There's a good idea in here somewhere."
             ],
             "correctAnswerIndex": 2,
-            "hint": "Hostile questions deserve confident evidence-based responses - not defensiveness.",
-            "explanation": "Thanking them defuses the hostility while positioning your response as confident and well-prepared.",
+            "hint": "Naming a genuine strength specifically, then offering concrete direction, feels most honest and useful.",
+            "explanation": "Naming a specific genuine strength before offering concrete direction is the most honest, useful feedback for creative work.",
             "id": "sr_l110_q2"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You are about to retire after a long career. How do you leave the best professional legacy?",
+            "scene": "You realize partway through a video call that your microphone was on during a private side comment.",
             "options": [
-                "Organise a farewell party for yourself.",
-                "Simply clear your desk and leave quietly.",
-                "Document your key knowledge and processes thoroughly offer comprehensive handover support to your successor and write a genuine personal message to the team you are leaving behind.",
-                "Leave as quickly as possible and move on."
+                "I'm so sorry, that wasn't meant for the group.",
+                "That comment wasn't meant to go out loud, sorry.",
+                "Apologies, my microphone must have been on.",
+                "I should clarify what you just heard me say."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "A real professional legacy is built through knowledge transfer and honouring relationships.",
-            "explanation": "Thorough documentation genuine handover support and a heartfelt team message creates a lasting positive legacy.",
+            "correctAnswerIndex": 3,
+            "hint": "Addressing the content directly matters more than just apologizing for the mic.",
+            "explanation": "Directly clarifying what was overheard addresses the real issue, not just the technical mistake of the open microphone.",
             "id": "sr_l110_q3"
         }
     ]

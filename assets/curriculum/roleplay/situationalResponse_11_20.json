@@ -7,16 +7,16 @@
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You forgot to do your homework and your teacher is asking for it now.",
+            "scene": "You forgot to bring your permission slip, and your teacher is asking for it now.",
             "options": [
                 "Excited",
                 "Relieved",
-                "Guilty",
-                "Happy"
+                "Happy",
+                "Guilty"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "You knew you were supposed to do something and you did not.",
-            "explanation": "When you forget to do something you were responsible for you feel guilty.",
+            "correctAnswerIndex": 3,
+            "hint": "You know you were responsible for something, and you did not do it.",
+            "explanation": "Forgetting something you were responsible for often makes you feel guilty.",
             "id": "sr_l11_q1"
         },
         {
@@ -31,56 +31,56 @@
                 "Full"
             ],
             "correctAnswerIndex": 0,
-            "hint": "This is a new experience high above the ground!",
-            "explanation": "Flying for the first time makes most people feel nervous.",
+            "hint": "This is a brand-new experience high above the ground.",
+            "explanation": "Trying something completely new, like flying for the first time, often makes people feel nervous.",
             "id": "sr_l11_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Your favorite toy breaks and cannot be fixed.",
+            "scene": "Your favorite pair of headphones stops working and cannot be fixed.",
             "options": [
-                "Happy",
                 "Relieved",
-                "Upset",
-                "Excited"
+                "Happy",
+                "Excited",
+                "Upset"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Something you loved is gone forever.",
-            "explanation": "When something you care about is broken and cannot be fixed you feel upset.",
+            "correctAnswerIndex": 3,
+            "hint": "Something you use and love every day is now gone for good.",
+            "explanation": "Losing something you use and enjoy every day, with no way to fix it, makes you feel upset.",
             "id": "sr_l11_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You see a small child crying because he is lost in a shop.",
+            "scene": "You see a small child crying because he cannot find his parents in the shop.",
             "options": [
+                "Concerned",
                 "Amused",
                 "Bored",
-                "Concerned",
                 "Angry"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "A small child needs help and is clearly very upset.",
-            "explanation": "Seeing a lost crying child makes you feel concerned.",
+            "correctAnswerIndex": 0,
+            "hint": "A small child needs help and is clearly frightened.",
+            "explanation": "Seeing a lost, frightened child naturally makes you feel concerned.",
             "id": "sr_l12_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You walk in the door and your friends all shout Surprise!",
+            "scene": "You open the door and your friends all shout 'Surprise!'",
             "options": [
-                "Surprised",
                 "Bored",
+                "Surprised",
                 "Angry",
                 "Tired"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "You had absolutely no idea this was going to happen!",
-            "explanation": "When something completely unexpected happens you feel surprised.",
+            "correctAnswerIndex": 1,
+            "hint": "You had no idea this was about to happen.",
+            "explanation": "When something completely unexpected happens, you feel surprised.",
             "id": "sr_l12_q2"
         },
         {
@@ -90,59 +90,59 @@
             "scene": "You finally finish a big school project you worked on for two weeks.",
             "options": [
                 "Upset",
-                "Relieved",
                 "Scared",
+                "Relieved",
                 "Bored"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "A long stressful task is finally done!",
-            "explanation": "Completing a big project after hard work makes you feel relieved.",
+            "correctAnswerIndex": 2,
+            "hint": "A long, stressful task is finally done.",
+            "explanation": "Completing a big project after a lot of hard work makes you feel relieved.",
             "id": "sr_l12_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You have to wait in a very long slow-moving queue at the supermarket.",
+            "scene": "You wait in a very long, slow-moving line at the supermarket.",
             "options": [
-                "Excited",
                 "Impatient",
+                "Excited",
                 "Proud",
                 "Hungry"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "You want to leave but you cannot go yet.",
-            "explanation": "Standing in a long slow queue makes you feel impatient.",
+            "correctAnswerIndex": 0,
+            "hint": "You want to leave, but you cannot go yet.",
+            "explanation": "Standing in a long, slow line makes you feel impatient.",
             "id": "sr_l13_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Your friend says That was a really great idea you had!",
+            "scene": "Your friend tells you, 'That was such a great idea you had!'",
             "options": [
                 "Embarrassed",
                 "Sad",
-                "Happy",
+                "Pleased",
                 "Angry"
             ],
             "correctAnswerIndex": 2,
-            "hint": "Someone said something kind and positive about you.",
-            "explanation": "Receiving a compliment from a friend makes you feel happy.",
+            "hint": "Someone just said something kind and positive about you.",
+            "explanation": "Receiving a compliment from a friend makes you feel pleased.",
             "id": "sr_l13_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A large spider suddenly runs across the floor in your bedroom.",
+            "scene": "A large spider suddenly runs across the floor of your bedroom.",
             "options": [
                 "Relaxed",
                 "Delighted",
-                "Terrified",
-                "Proud"
+                "Proud",
+                "Terrified"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "hint": "Many people have a strong fear of spiders.",
             "explanation": "Seeing a large spider unexpectedly makes many people feel terrified.",
             "id": "sr_l13_q3"
@@ -159,7 +159,7 @@
                 "Excited"
             ],
             "correctAnswerIndex": 1,
-            "hint": "The loud noise made everyone in the library look at you.",
+            "hint": "A loud noise just made everyone in the room look at you.",
             "explanation": "Making a loud noise in a quiet place makes you feel embarrassed.",
             "id": "sr_l14_q1"
         },
@@ -167,23 +167,23 @@
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Your school team wins the regional championship!",
+            "scene": "Your school team wins the regional championship after a very close match.",
             "options": [
                 "Disappointed",
                 "Bored",
-                "Sad",
-                "Thrilled"
+                "Thrilled",
+                "Sad"
             ],
-            "correctAnswerIndex": 3,
-            "hint": "Your team worked so hard and won the top prize!",
-            "explanation": "Winning a championship after hard work makes you feel thrilled.",
+            "correctAnswerIndex": 2,
+            "hint": "Your team worked so hard, and it just paid off.",
+            "explanation": "Winning a championship after hard work makes you feel thrilled - extremely excited and happy.",
             "id": "sr_l14_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You accidentally bite into a whole lemon thinking it was an orange.",
+            "scene": "You bite into what you think is an orange, but it turns out to be a whole lemon.",
             "options": [
                 "Happy",
                 "Shocked",
@@ -191,143 +191,143 @@
                 "Relieved"
             ],
             "correctAnswerIndex": 1,
-            "hint": "The taste is very strong sour and unexpected!",
-            "explanation": "Biting into something extremely sour by accident makes you feel shocked.",
+            "hint": "The taste is much stronger and more sour than you expected.",
+            "explanation": "Biting into something unexpectedly sour makes you feel shocked.",
             "id": "sr_l14_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Your alarm clock rings at 6 AM for an early morning class.",
+            "scene": "Your alarm goes off at 6 AM for an early class you almost forgot about.",
             "options": [
-                "Energized",
-                "Excited",
                 "Sleepy",
-                "Proud"
+                "Excited",
+                "Proud",
+                "Angry"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "It is very early and you were fast asleep just a moment ago.",
-            "explanation": "Waking up very early when you are still tired makes you feel sleepy.",
+            "correctAnswerIndex": 0,
+            "hint": "It is very early, and your body wants more rest.",
+            "explanation": "Waking up much earlier than usual naturally makes you feel sleepy.",
             "id": "sr_l15_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A classmate invites you to sit together at lunchtime.",
+            "scene": "A classmate you barely know invites you to join their study group.",
             "options": [
+                "Bored",
                 "Angry",
-                "Relieved",
-                "Happy",
-                "Worried"
+                "Tired",
+                "Grateful"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Someone wants to be friendly and spend time with you.",
-            "explanation": "Being invited to sit with someone is a friendly gesture that makes you feel happy.",
+            "correctAnswerIndex": 3,
+            "hint": "Someone included you when they did not have to.",
+            "explanation": "When someone kindly includes you, you usually feel grateful.",
             "id": "sr_l15_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You watch a film where the main character dies at the very end.",
+            "scene": "You watch a movie where the main character dies at the very end.",
             "options": [
+                "Sad",
                 "Excited",
-                "Amused",
-                "Moved",
-                "Bored"
+                "Proud",
+                "Amused"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Something very sad and emotional just happened in the story.",
-            "explanation": "When a character you care about dies in a film you feel moved.",
+            "correctAnswerIndex": 0,
+            "hint": "A character you cared about is gone.",
+            "explanation": "Watching a sad ending for a character you liked naturally makes you feel sad.",
             "id": "sr_l15_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "The electricity goes out suddenly in the middle of the night.",
+            "scene": "The electricity suddenly goes out in the middle of the night.",
             "options": [
-                "Delighted",
-                "Calm",
-                "Unsettled",
+                "Relaxed",
+                "Startled",
+                "Bored",
                 "Proud"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Everything is dark and quiet and you do not know why.",
-            "explanation": "A sudden power cut at night makes you feel unsettled.",
+            "correctAnswerIndex": 1,
+            "hint": "Everything goes dark without any warning.",
+            "explanation": "A sudden, unexpected change like the power going out makes you feel startled.",
             "id": "sr_l16_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You cook a simple meal completely by yourself for the first time.",
+            "scene": "You cook a full meal completely by yourself for the very first time.",
             "options": [
-                "Sad",
-                "Bored",
-                "Scared",
-                "Accomplished"
+                "Sleepy",
+                "Angry",
+                "Sick",
+                "Proud"
             ],
             "correctAnswerIndex": 3,
-            "hint": "You did something new and useful completely on your own!",
-            "explanation": "Successfully doing something for the first time like cooking makes you feel accomplished.",
+            "hint": "You tried something new, and it turned out well.",
+            "explanation": "Successfully doing something new and difficult by yourself makes you feel proud.",
             "id": "sr_l16_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You bump into an old friend on the street who you have not seen for five years.",
+            "scene": "You bump into an old friend on the street whom you have not seen in five years.",
             "options": [
-                "Bored",
-                "Surprised",
                 "Angry",
+                "Bored",
+                "Delighted",
                 "Sleepy"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "You did not expect to see this person here at all!",
-            "explanation": "Unexpectedly meeting an old friend makes you feel pleasantly surprised.",
+            "correctAnswerIndex": 2,
+            "hint": "You did not expect to see this person again, and here they are.",
+            "explanation": "Unexpectedly meeting an old friend again usually makes you feel delighted.",
             "id": "sr_l16_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You get a haircut and you really do not like the way it looks.",
+            "scene": "You get a haircut, and you really do not like how it turned out.",
             "options": [
                 "Pleased",
-                "Embarrassed",
                 "Excited",
-                "Calm"
+                "Calm",
+                "Embarrassed"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "hint": "You have to show everyone a style you do not like.",
-            "explanation": "Getting a haircut you dislike makes you feel embarrassed.",
+            "explanation": "Getting a haircut you dislike often makes you feel embarrassed.",
             "id": "sr_l17_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Your family sets off on a long road trip to the mountains.",
+            "scene": "Your family sets off on a long road trip to the mountains for the weekend.",
             "options": [
                 "Bored",
-                "Sad",
                 "Excited",
+                "Sad",
                 "Angry"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Adventure and beautiful scenery are waiting for you!",
-            "explanation": "Starting a trip to a beautiful place with your family makes you feel excited.",
+            "correctAnswerIndex": 1,
+            "hint": "Adventure and beautiful scenery are waiting for you.",
+            "explanation": "Starting a trip to a beautiful new place with your family usually makes you feel excited.",
             "id": "sr_l17_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Your neighbour leaves a handwritten thank-you card in your letterbox.",
+            "scene": "Your neighbor leaves a handwritten thank-you card in your mailbox.",
             "options": [
                 "Confused",
                 "Annoyed",
@@ -343,15 +343,15 @@
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You accidentally knock your drink off the table at a restaurant.",
+            "scene": "You accidentally knock your drink off the table at a busy restaurant.",
             "options": [
-                "Happy",
                 "Flustered",
+                "Happy",
                 "Proud",
                 "Excited"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "An accident happened in a public place and everyone noticed.",
+            "correctAnswerIndex": 0,
+            "hint": "An accident just happened in public, and people noticed.",
             "explanation": "Accidentally making a mess in public makes you feel flustered.",
             "id": "sr_l18_q1"
         },
@@ -359,39 +359,39 @@
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You sit and watch the sun set slowly over the ocean.",
+            "scene": "You sit on the beach and watch the sun slowly set over the ocean.",
             "options": [
                 "Bored",
                 "Angry",
-                "Fearful",
-                "Peaceful"
+                "Peaceful",
+                "Fearful"
             ],
-            "correctAnswerIndex": 3,
-            "hint": "Beautiful natural scenery can calm your mind and body.",
-            "explanation": "Watching a beautiful sunset over the water creates a feeling of peace.",
+            "correctAnswerIndex": 2,
+            "hint": "Beautiful, calm scenery can settle your mind.",
+            "explanation": "Watching a beautiful sunset like this often creates a feeling of peace.",
             "id": "sr_l18_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You apply to join a school club but you are not selected.",
+            "scene": "You apply to join a school club, but you are not chosen this time.",
             "options": [
                 "Proud",
                 "Relieved",
-                "Discouraged",
-                "Excited"
+                "Excited",
+                "Discouraged"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "You tried hard but you were not chosen this time.",
-            "explanation": "Being rejected from something you applied for makes you feel discouraged.",
+            "correctAnswerIndex": 3,
+            "hint": "You tried, but you were not picked this time.",
+            "explanation": "Being turned down for something you applied for often makes you feel discouraged.",
             "id": "sr_l18_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A stranger picks up your wallet when you drop it and returns it.",
+            "scene": "A stranger picks up the wallet you dropped and hands it back to you.",
             "options": [
                 "Angry",
                 "Grateful",
@@ -399,31 +399,31 @@
                 "Scared"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Someone helped you without expecting anything in return.",
-            "explanation": "When a stranger helps you you feel grateful.",
+            "hint": "Someone helped you without expecting anything back.",
+            "explanation": "When a stranger kindly helps you, you feel grateful.",
             "id": "sr_l19_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Today is your first day at a new part-time job.",
+            "scene": "Today is your very first day at a new part-time job.",
             "options": [
-                "Confident",
                 "Nervous",
+                "Confident",
                 "Bored",
                 "Angry"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "You do not know anyone and everything is brand new.",
-            "explanation": "Starting a new job makes most people feel nervous.",
+            "correctAnswerIndex": 0,
+            "hint": "You do not know anyone yet, and everything is brand new.",
+            "explanation": "Starting a new job usually makes people feel a little nervous at first.",
             "id": "sr_l19_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "After heavy rain a rainbow appears in the sky.",
+            "scene": "After heavy rain, a bright rainbow suddenly appears across the sky.",
             "options": [
                 "Afraid",
                 "Annoyed",
@@ -431,15 +431,15 @@
                 "Impatient"
             ],
             "correctAnswerIndex": 2,
-            "hint": "A beautiful colourful natural wonder has appeared!",
-            "explanation": "Seeing a rainbow makes most people feel delighted.",
+            "hint": "A beautiful, colorful natural sight has just appeared.",
+            "explanation": "Seeing a rainbow appear unexpectedly makes most people feel delighted.",
             "id": "sr_l19_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You say something by mistake that hurts your friend's feelings.",
+            "scene": "You say something without thinking, and it accidentally hurts your friend's feelings.",
             "options": [
                 "Happy",
                 "Guilty",
@@ -447,7 +447,7 @@
                 "Relieved"
             ],
             "correctAnswerIndex": 1,
-            "hint": "You did not mean to hurt anyone but you did.",
+            "hint": "You did not mean to hurt anyone, but you did.",
             "explanation": "Accidentally hurting someone's feelings makes you feel guilty.",
             "id": "sr_l20_q1"
         },
@@ -455,32 +455,32 @@
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You sit in the dentist's waiting room for 45 minutes.",
+            "scene": "You sit in the dentist's waiting room 45 minutes past your appointment time.",
             "options": [
                 "Excited",
-                "Impatient",
                 "Proud",
-                "Happy"
+                "Happy",
+                "Impatient"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Time is passing very slowly and you want to leave.",
-            "explanation": "Waiting for a long time especially at the dentist makes you feel impatient.",
+            "correctAnswerIndex": 3,
+            "hint": "Time is passing slowly, and you just want it to be your turn.",
+            "explanation": "Waiting much longer than expected makes you feel impatient.",
             "id": "sr_l20_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You pass a very difficult exam after studying extremely hard.",
+            "scene": "You pass a very difficult exam after weeks of hard studying.",
             "options": [
-                "Disappointed",
                 "Relieved",
+                "Disappointed",
                 "Angry",
                 "Scared"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "The stress and hard work have finally paid off!",
-            "explanation": "Passing a difficult exam after lots of studying makes you feel relieved.",
+            "correctAnswerIndex": 0,
+            "hint": "The stress and hard work have finally paid off.",
+            "explanation": "Passing a difficult exam after a lot of studying makes you feel relieved.",
             "id": "sr_l20_q3"
         }
     ]

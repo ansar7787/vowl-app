@@ -1,307 +1,307 @@
 {
-    "gameType": "emergencyHub",
-    "batchIndex": 6,
-    "levels": "51-60",
-    "quests": [
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Armed robbery in progress at the city bank with multiple hostages taken. Input code!",
-            "correctAnswer": "TACTICAL UNIT BANK",
-            "hint": "Deploy the tactical response unit to the bank.",
-            "explanation": "Tactical units establish a command perimeter and open negotiation channels without provoking the armed suspect.",
-            "id": "eh_l51_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Negotiator is establishing contact with the suspect inside the bank. Input comms code!",
-            "correctAnswer": "COMMS CHANNEL OPEN",
-            "hint": "Open the direct communications channel.",
-            "explanation": "Direct phone contact between the negotiator and suspect is the primary tool for resolving hostage situations peacefully.",
-            "id": "eh_l51_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Suspect released two hostages but remains armed inside the building. Input code!",
-            "correctAnswer": "PERIMETER HOLD FIRM",
-            "hint": "Hold the perimeter firmly in position.",
-            "explanation": "A firm but non-aggressive perimeter sustains pressure while signaling de-escalation intent to the suspect.",
-            "id": "eh_l51_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Bomb threat called into the metro transit station during peak rush hour. Input code!",
-            "correctAnswer": "METRO EVACUATION NOW",
-            "hint": "Evacuate the metro station immediately.",
-            "explanation": "Immediate evacuation removes thousands of civilians from potential blast range while EOD teams sweep for devices.",
-            "id": "eh_l52_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Suspicious device located in the main concourse of the transit station. Input code!",
-            "correctAnswer": "EOD RESPOND CONCOURSE",
-            "hint": "Deploy EOD to the main concourse.",
-            "explanation": "Explosive Ordnance Disposal teams use robots and protective suits to safely assess and neutralize suspicious devices.",
-            "id": "eh_l52_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "EOD team has cleared the device and station is confirmed safe for reopening. Input code!",
-            "correctAnswer": "STATION REOPEN SAFE",
-            "hint": "Authorize safe station reopening.",
-            "explanation": "Formal EOD clearance must precede any station reopening to ensure no secondary devices remain undetected.",
-            "id": "eh_l52_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "E. coli detected at levels forty times above the safe limit in the reservoir. Input code!",
-            "correctAnswer": "RESERVOIR CLOSED NOW",
-            "hint": "Close the reservoir immediately.",
-            "explanation": "Closing the contaminated reservoir stops the distribution of bacteria-laden water to connected households.",
-            "id": "eh_l53_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Affected distribution zones cover four residential districts in the city. Input code!",
-            "correctAnswer": "BOIL WATER ORDER 4",
-            "hint": "Issue a boil water order for zone 4.",
-            "explanation": "Boiling water above 100 degrees Celsius kills E. coli and other harmful bacteria completely.",
-            "id": "eh_l53_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Emergency drinking water supply needed for the entire affected area. Input code!",
-            "correctAnswer": "WATER TANKER POINT 2",
-            "hint": "Establish emergency water tanker point 2.",
-            "explanation": "Distribution tankers provide safe drinking water to households where boiling is not feasible due to power outages.",
-            "id": "eh_l53_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Critical bearing failure detected on the central bridge support column. Input code!",
-            "correctAnswer": "BRIDGE WEIGHT LIMIT",
-            "hint": "Impose an immediate bridge weight restriction.",
-            "explanation": "Weight restrictions reduce stress on damaged support structures while engineers assess the safe load capacity.",
-            "id": "eh_l54_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Structural engineers confirm partial bridge collapse is likely within hours. Input code!",
-            "correctAnswer": "CLOSE BRIDGE URGENT",
-            "hint": "Close the bridge to all traffic urgently.",
-            "explanation": "Full bridge closure prevents any vehicle from being on the structure if collapse occurs during the failure period.",
-            "id": "eh_l54_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "River traffic must be diverted away from the unsafe bridge zone. Input code!",
-            "correctAnswer": "MARITIME NOTICE BRAVO",
-            "hint": "Issue maritime navigation notice Bravo.",
-            "explanation": "Maritime notices alert river operators to temporary restrictions, keeping vessels clear of a potential collapse zone.",
-            "id": "eh_l54_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Dangerous crowd crush at the outdoor concert with unconscious fans on the ground. Input code!",
-            "correctAnswer": "MCI CONCERT TRIAGE",
-            "hint": "Declare mass casualty incident for concert triage.",
-            "explanation": "MCI declarations trigger field triage protocols that sort casualties by severity to maximize overall survival rates.",
-            "id": "eh_l55_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Ambulance access to the concert venue is blocked by parked vehicles. Input code!",
-            "correctAnswer": "CLEAR ROUTE STAGE 1",
-            "hint": "Clear the emergency route to stage 1.",
-            "explanation": "Emergency vehicle access routes must be cleared within minutes during mass casualty events to prevent ambulance delays.",
-            "id": "eh_l55_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Hospital emergency departments being notified and extra beds allocated. Input code!",
-            "correctAnswer": "SURGE ALERT REGION",
-            "hint": "Issue the regional hospital surge alert.",
-            "explanation": "Regional surge alerts instruct hospitals to activate extra capacity and recall off-duty trauma staff immediately.",
-            "id": "eh_l55_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Hospital computer systems have been locked by a ransomware attack. Input code!",
-            "correctAnswer": "SYSTEMS ISOLATE NOW",
-            "hint": "Isolate all hospital systems now.",
-            "explanation": "Network isolation stops ransomware spreading to medical devices including infusion pumps and monitoring systems.",
-            "id": "eh_l56_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Critical care records inaccessible and staff are reverting to paper forms. Input code!",
-            "correctAnswer": "PAPER PROTOCOL ACTIVE",
-            "hint": "Activate the paper emergency protocol.",
-            "explanation": "Paper-based protocols maintain patient safety during system outages by providing standardized manual recording procedures.",
-            "id": "eh_l56_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Cyber response team working to restore data from the offline secure backup. Input code!",
-            "correctAnswer": "RESTORE CLEAN BACKUP",
-            "hint": "Restore systems from the clean offline backup.",
-            "explanation": "Clean offline backups cannot be encrypted by ransomware and allow full system restoration without paying attackers.",
-            "id": "eh_l56_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Fire outbreak reported on the oil platform drilling deck. Input suppression code!",
-            "correctAnswer": "SUPPRESS DRILL DECK",
-            "hint": "Activate suppression on the drill deck.",
-            "explanation": "Drill deck deluge systems use water curtains to cool steel and prevent fire spreading to critical wellhead equipment.",
-            "id": "eh_l57_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Platform crew ordered to muster stations pending possible evacuation. Input code!",
-            "correctAnswer": "MUSTER STATION ALPHA",
-            "hint": "All crew to muster station Alpha.",
-            "explanation": "Muster station procedures account for every crew member before lifeboat deployment, ensuring no one is left behind.",
-            "id": "eh_l57_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Rescue helicopter approaching the platform in high-wind conditions. Input code!",
-            "correctAnswer": "HELI DECK CLEARED NOW",
-            "hint": "Clear the helicopter landing deck now.",
-            "explanation": "Helideck clearance ensures no personnel or equipment obstruct the landing zone during reduced visibility rescues.",
-            "id": "eh_l57_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Two climbers stranded on the north face in rapidly deteriorating weather. Input code!",
-            "correctAnswer": "HELICOPTER NORTH FACE",
-            "hint": "Deploy helicopter to the north face.",
-            "explanation": "Helicopter extraction is the only viable option when deteriorating mountain weather makes ground rescue too slow.",
-            "id": "eh_l58_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "One climber injured with a suspected broken leg and unable to move. Input code!",
-            "correctAnswer": "WINCH MEDIC DEPLOY",
-            "hint": "Deploy a winch medic to the location.",
-            "explanation": "Winch medics reach cliff faces inaccessible to helicopters landing on the ground and stabilize injuries before extraction.",
-            "id": "eh_l58_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Worsening storm is grounding the helicopter and a ground team is now required. Input code!",
-            "correctAnswer": "MOUNTAIN TEAM ADVANCE",
-            "hint": "Advance the mountain rescue ground team.",
-            "explanation": "Trained mountain rescue teams carry bivouac equipment and splints to reach stranded climbers when air rescue is impossible.",
-            "id": "eh_l58_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Novel virus cluster identified in the airport international transit lounge. Input code!",
-            "correctAnswer": "TRANSIT ZONE SEALED",
-            "hint": "Seal the transit zone immediately.",
-            "explanation": "Sealing transit zones prevents undetected carriers from boarding onward flights and spreading the virus internationally.",
-            "id": "eh_l59_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Rapid testing confirms 12 positive cases and contact tracing is underway. Input code!",
-            "correctAnswer": "CONTACT TRACING TEAM",
-            "hint": "Deploy the contact tracing team.",
-            "explanation": "Contact tracing identifies secondary exposures before symptoms appear, enabling quarantine before further transmission occurs.",
-            "id": "eh_l59_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Regional health authority declaring a public health emergency. Input code!",
-            "correctAnswer": "PUBLIC HEALTH ALERT",
-            "hint": "Issue the public health emergency alert.",
-            "explanation": "Public health alerts trigger coordinated government responses including border screening and facility preparation.",
-            "id": "eh_l59_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Loss of coolant accident reported at reactor unit 3. Input emergency core code!",
-            "correctAnswer": "ECCS ACTIVATED UNIT 3",
-            "hint": "Activate the ECCS for reactor unit 3.",
-            "explanation": "Emergency Core Cooling Systems inject high volumes of water to prevent nuclear fuel from overheating toward meltdown.",
-            "id": "eh_l60_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Reactor fuel temperature rising toward the critical safety threshold. Input code!",
-            "correctAnswer": "BORATE INJECTION NOW",
-            "hint": "Inject borated water into the reactor now.",
-            "explanation": "Borated water absorbs neutrons, slowing the chain reaction and reducing the heat generated in the reactor core.",
-            "id": "eh_l60_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Offsite grid power now available to support emergency cooling operations. Input code!",
-            "correctAnswer": "GRID POWER CONNECTED",
-            "hint": "Connect the external grid power supply.",
-            "explanation": "External grid power supports electric coolant pumps when onsite generators alone are insufficient for safe cooling.",
-            "id": "eh_l60_q3"
-        }
-    ]
+  "gameType": "emergencyHub",
+  "batchIndex": 6,
+  "levels": "51-60",
+  "quests": [
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A robbery suspect is holding two shop staff inside a locked store after police arrived. Input code!",
+      "correctAnswer": "OPEN THE PHONE LINE",
+      "hint": "Say what needs to be connected first.",
+      "explanation": "A calm, direct phone line lets a trained negotiator talk with the suspect without putting anyone else at risk.",
+      "id": "eh_l51_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A crowd has gathered outside the store, blocking officers' view of the entrance. Input safety code!",
+      "correctAnswer": "CLEAR THE CROWD BACK",
+      "hint": "Say what should be done with the onlookers.",
+      "explanation": "Moving the crowd back gives officers a clear, safe view of the entrance and keeps bystanders out of danger.",
+      "id": "eh_l51_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "The suspect has agreed to release the staff unharmed and leave the store peacefully. Input code!",
+      "correctAnswer": "BRING THEM TO SAFETY",
+      "hint": "Say the final, careful action once everyone is released.",
+      "explanation": "Guiding everyone to safety calmly completes the response once the suspect has agreed to cooperate.",
+      "id": "eh_l51_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A bag has been left unattended on a busy train platform for over an hour. Input security code!",
+      "correctAnswer": "CLEAR THE PLATFORM",
+      "hint": "Say what should be done with the people nearby.",
+      "explanation": "Clearing the platform keeps people safe at a distance while the bag is properly checked.",
+      "id": "eh_l52_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Security staff have checked the bag and found only clothes and a book inside. Input code!",
+      "correctAnswer": "REOPEN THE PLATFORM",
+      "hint": "Say what can happen once the bag is cleared.",
+      "explanation": "Once the bag is confirmed safe, the platform can reopen and trains can run as normal.",
+      "id": "eh_l52_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A different unattended bag is reported at the same station an hour later. Input code!",
+      "correctAnswer": "CALL BOMB SQUAD",
+      "hint": "Ask for the specialist team trained for this.",
+      "explanation": "A second unattended bag needs specialist checking, since staff should not handle a suspicious item themselves.",
+      "id": "eh_l52_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Local water tests show bacteria far above the safe limit for a whole town. Input code!",
+      "correctAnswer": "ISSUE BOIL WATER NOTICE",
+      "hint": "Say the public instruction that must be issued.",
+      "explanation": "A boil water notice tells residents how to make their water safe until the supply is fixed.",
+      "id": "eh_l53_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Several families in the affected area have no way to boil water during a power cut. Input code!",
+      "correctAnswer": "DELIVER BOTTLED WATER",
+      "hint": "Say what should be brought to them instead.",
+      "explanation": "Bottled water gives an immediate safe supply to households who cannot boil their own.",
+      "id": "eh_l53_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Engineers confirm the water supply is now clean and safe to drink again. Input code!",
+      "correctAnswer": "LIFT THE WATER NOTICE",
+      "hint": "Say what should happen to the earlier notice.",
+      "explanation": "Lifting the notice tells residents clearly that they can safely use tap water again.",
+      "id": "eh_l53_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Engineers detect a crack in the main support beam of a footbridge over a river. Input code!",
+      "correctAnswer": "CLOSE THE FOOTBRIDGE",
+      "hint": "Say what should happen to the bridge right away.",
+      "explanation": "Closing the bridge immediately keeps anyone from being on it if the crack worsens.",
+      "id": "eh_l54_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A queue of pedestrians has formed and some are trying to cross the closed footbridge anyway. Input code!",
+      "correctAnswer": "POST A GUARD THERE",
+      "hint": "Say what should be placed to stop people crossing.",
+      "explanation": "A visible guard stops people ignoring the closure and putting themselves at risk.",
+      "id": "eh_l54_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Engineers finish emergency repairs and confirm the footbridge is now safe to use. Input code!",
+      "correctAnswer": "REOPEN THE FOOTBRIDGE",
+      "hint": "Say what should happen once repairs are confirmed.",
+      "explanation": "Reopening only after formal confirmation ensures the public is never at risk from an unfinished repair.",
+      "id": "eh_l54_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A crush of fans near the stage has left several people struggling to breathe. Input medical code!",
+      "correctAnswer": "SEND MULTIPLE AMBULANCES",
+      "hint": "Say what's needed given more than one person is hurt.",
+      "explanation": "With several people affected at once, more than one ambulance is needed to treat everyone quickly.",
+      "id": "eh_l55_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Parked cars are blocking the route ambulances need to reach the crowded festival stage. Input code!",
+      "correctAnswer": "CLEAR THE ACCESS ROUTE",
+      "hint": "Say what must happen to the blocked path.",
+      "explanation": "A clear route lets ambulances reach patients within minutes instead of being stuck in traffic.",
+      "id": "eh_l55_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "The local hospital needs advance warning that many patients may arrive at once. Input code!",
+      "correctAnswer": "WARN THE HOSPITAL NOW",
+      "hint": "Say who needs to be told, and stress urgency.",
+      "explanation": "Early warning lets the hospital prepare extra staff and beds before patients start arriving.",
+      "id": "eh_l55_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A hospital's computer system has suddenly locked staff out of patient records. Input code!",
+      "correctAnswer": "SWITCH TO PAPER RECORDS",
+      "hint": "Say the backup method staff should use instead.",
+      "explanation": "Paper records let staff keep treating patients safely while the computer problem is fixed.",
+      "id": "eh_l56_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "IT staff confirm the computer lockout was caused by a hacking attempt. Input safety code!",
+      "correctAnswer": "DISCONNECT THE NETWORK",
+      "hint": "Say what must be cut off to stop it spreading.",
+      "explanation": "Disconnecting the network stops the attack from reaching other hospital computers and equipment.",
+      "id": "eh_l56_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "IT staff have a safe, saved copy of the hospital's records from yesterday. Input code!",
+      "correctAnswer": "RESTORE FROM BACKUP",
+      "hint": "Say what should be used to bring records back.",
+      "explanation": "A safe backup copy lets the hospital restore its systems without paying any ransom.",
+      "id": "eh_l56_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A fire has broken out in the kitchen of a busy hotel restaurant. Input fire code!",
+      "correctAnswer": "SEND A FIRE ENGINE",
+      "hint": "Name the vehicle firefighters arrive in.",
+      "explanation": "A hotel kitchen fire needs a full crew, since it can spread quickly through vents into guest rooms.",
+      "id": "eh_l57_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Hotel guests are being told to gather at a safe meeting point outside. Input code!",
+      "correctAnswer": "DIRECT GUESTS OUTSIDE",
+      "hint": "Say what staff should do with the guests.",
+      "explanation": "Calm, clear direction gets guests to safety quickly without anyone panicking in the smoke-filled corridors.",
+      "id": "eh_l57_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Staff are counting guests against the hotel's check-in list at the meeting point. Input code!",
+      "correctAnswer": "CONFIRM EVERYONE IS OUT",
+      "hint": "Say what the count is trying to prove.",
+      "explanation": "Confirming the count against the guest list tells firefighters whether anyone may still be inside.",
+      "id": "eh_l57_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Two hikers are stranded on a mountainside as fog rolls in and visibility drops. Input rescue code!",
+      "correctAnswer": "SEND MOUNTAIN RESCUE",
+      "hint": "Ask for the team trained for this kind of terrain.",
+      "explanation": "Mountain rescue teams carry the right gear and training for reaching stranded hikers safely.",
+      "id": "eh_l58_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "One hiker has a suspected broken leg and cannot walk down. Input medical code!",
+      "correctAnswer": "SEND A STRETCHER TEAM",
+      "hint": "Say what's needed to move someone who can't walk.",
+      "explanation": "A stretcher team can carry him down safely without him putting weight on the injured leg.",
+      "id": "eh_l58_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Thick fog has made it too dangerous for the rescue helicopter to fly. Input code!",
+      "correctAnswer": "SEND THE GROUND TEAM",
+      "hint": "Say who should go instead of the helicopter.",
+      "explanation": "A ground team can reach the hikers on foot when poor visibility grounds the helicopter.",
+      "id": "eh_l58_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Several travelers at an airport have developed the same fever and cough within hours. Input code!",
+      "correctAnswer": "ISOLATE THE TRAVELERS",
+      "hint": "Say what should be done with the sick group.",
+      "explanation": "Isolating them quickly stops the illness from spreading to other passengers before it's understood.",
+      "id": "eh_l59_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Health staff need to identify who else may have sat near the sick travelers. Input code!",
+      "correctAnswer": "TRACE NEARBY PASSENGERS",
+      "hint": "Say what should be done to find others at risk.",
+      "explanation": "Tracing nearby passengers lets health staff warn and check on people before symptoms even start.",
+      "id": "eh_l59_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Test results confirm the illness is a common flu strain, not anything more serious. Input code!",
+      "correctAnswer": "END THE ISOLATION",
+      "hint": "Say what can now be lifted, given the good news.",
+      "explanation": "Ending the isolation once test results are clear avoids holding healthy travelers longer than needed.",
+      "id": "eh_l59_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A small industrial boiler has begun overheating at a laundry facility. Input safety code!",
+      "correctAnswer": "SHUT DOWN THE BOILER",
+      "hint": "Say the first action to stop the overheating.",
+      "explanation": "Shutting the boiler down removes the heat source before pressure can build to a dangerous level.",
+      "id": "eh_l60_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Pressure inside the boiler is still rising even after the shutdown. Input code!",
+      "correctAnswer": "OPEN THE RELIEF VALVE",
+      "hint": "Say what lets built-up pressure safely escape.",
+      "explanation": "The relief valve releases pressure safely, exactly as it's designed to do in this situation.",
+      "id": "eh_l60_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Engineers confirm the boiler has cooled and pressure is back to a safe level. Input code!",
+      "correctAnswer": "CLEAR THE FACILITY SAFE",
+      "hint": "Say what should be confirmed once pressure is normal.",
+      "explanation": "A formal all-clear lets workers return once engineers confirm the boiler is genuinely safe again.",
+      "id": "eh_l60_q3"
+    }
+  ]
 }

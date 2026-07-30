@@ -4,10 +4,10 @@
     "levels": "11-20",
     "quests": [
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the avocado toast and a latte, please.",
+            "prompt": "I'll try the avocado toast and a latte, please.",
             "options": [
                 "Avocado Toast",
                 "Latte",
@@ -15,12 +15,12 @@
                 "Cappuccino"
             ],
             "correctAnswer": "Avocado Toast, Latte",
-            "hint": "Avocado toast is a popular café dish - distinguish it from regular sourdough toast.",
-            "explanation": "Avocado toast is crushed avocado spread on toasted bread - a modern café staple. A 'latte' is espresso with steamed milk, creamier than a cappuccino.",
+            "hint": "The customer names a popular modern breakfast dish and a coffee drink.",
+            "explanation": "‘I’ll try…’ is a relaxed way to order, often used when something on the menu sounds appealing. A ‘latte’ has more steamed milk than a ‘cappuccino,’ so listen for the exact word.",
             "id": "go_l11_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
             "prompt": "I'd like the fruit salad and a green tea.",
@@ -31,12 +31,12 @@
                 "Black Tea"
             ],
             "correctAnswer": "Fruit Salad, Green Tea",
-            "hint": "Green tea and black tea are both teas - listen for the colour adjective.",
-            "explanation": "'Green tea' has a lighter, grassy flavour than 'black tea'. Colour adjectives like green, black, and white distinguish tea varieties - essential café vocabulary.",
+            "hint": "Both items are light, healthy choices — one is chopped fruit, one is a hot drink.",
+            "explanation": "‘Green tea’ and ‘black tea’ are both common menu choices, so the color word matters. Fruit salad is simply a mix of chopped fruit.",
             "id": "go_l11_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
             "prompt": "Can I have the granola bowl and an orange juice?",
@@ -47,440 +47,440 @@
                 "Apple Juice"
             ],
             "correctAnswer": "Granola Bowl, Orange Juice",
-            "hint": "A granola bowl contains granola, yogurt, and fruit topped together.",
-            "explanation": "A granola bowl is a healthy breakfast of rolled oats, yogurt, and fruit. Remember: 'an orange juice' uses 'an' because 'orange' starts with a vowel sound.",
+            "hint": "Notice ‘an’ before orange juice again — the vowel-sound rule still applies.",
+            "explanation": "A ‘granola bowl’ and an ‘acai bowl’ look similar on a menu, so always check the exact name. ‘An’ is used before ‘orange’ because it starts with a vowel sound.",
             "id": "go_l11_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the turkey sandwich and a coffee, please.",
+            "prompt": "Let me get the turkey sandwich and a bag of chips.",
             "options": [
                 "Turkey Sandwich",
-                "Coffee",
+                "Bag of Chips",
                 "Ham Sandwich",
-                "Tea"
+                "Bag of Pretzels"
             ],
-            "correctAnswer": "Turkey Sandwich, Coffee",
-            "hint": "Listen for 'turkey' - don't confuse it with 'ham'.",
-            "explanation": "Turkey and ham are both meat sandwich fillings but from different animals. Knowing meat vocabulary is essential in cafés and delis.",
+            "correctAnswer": "Turkey Sandwich, Bag of Chips",
+            "hint": "‘Let me get…’ is a casual, friendly way to order.",
+            "explanation": "‘Let me get…’ sounds relaxed and is common in fast, casual restaurants. The sandwich filling — turkey, not ham — is the key detail here.",
             "id": "go_l12_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the chicken salad and a sparkling water.",
+            "prompt": "I'd like the chicken noodle soup and some crackers.",
             "options": [
-                "Chicken Salad",
-                "Sparkling Water",
-                "Tuna Salad",
-                "Still Water"
+                "Chicken Noodle Soup",
+                "Crackers",
+                "Vegetable Soup",
+                "Bread Roll"
             ],
-            "correctAnswer": "Chicken Salad, Sparkling Water",
-            "hint": "'Chicken salad' and 'tuna salad' are both protein salads - listen for which protein.",
-            "explanation": "When a waiter asks 'still or sparkling?', they mean water without bubbles or water with bubbles. This question is asked in almost every restaurant.",
+            "correctAnswer": "Chicken Noodle Soup, Crackers",
+            "hint": "This soup is named after two ingredients — listen for both.",
+            "explanation": "‘Chicken noodle soup’ needs both words to name it correctly. Crackers are a common light side for soup, different from a bread roll.",
             "id": "go_l12_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Can I get the BLT and an iced tea?",
+            "prompt": "How about the veggie burger and some fries?",
             "options": [
-                "BLT",
-                "Iced Tea",
-                "Club Sandwich",
-                "Lemonade"
+                "Veggie Burger",
+                "Fries",
+                "Beef Burger",
+                "Onion Rings"
             ],
-            "correctAnswer": "BLT, Iced Tea",
-            "hint": "BLT stands for Bacon, Lettuce, and Tomato - a classic American sandwich.",
-            "explanation": "A BLT is one of the most popular sandwiches in English-speaking countries. Learning sandwich abbreviations and acronyms like BLT is useful cultural knowledge.",
+            "correctAnswer": "Veggie Burger, Fries",
+            "hint": "‘How about…?’ is a casual suggestion, but it still works as an order.",
+            "explanation": "‘How about…?’ can sound like a suggestion, but here the customer is choosing their own order. ‘Veggie’ tells you this burger has no meat.",
             "id": "go_l12_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the margherita pizza and a soda.",
+            "prompt": "I guess I'll have the caprese salad and a sparkling water.",
             "options": [
-                "Margherita Pizza",
-                "Soda",
-                "Pepperoni Pizza",
-                "Juice"
+                "Caprese Salad",
+                "Sparkling Water",
+                "Greek Salad",
+                "Still Water"
             ],
-            "correctAnswer": "Margherita Pizza, Soda",
-            "hint": "Margherita pizza has tomato and mozzarella - no meat toppings.",
-            "explanation": "A margherita pizza is a classic Italian pizza with tomato sauce, mozzarella, and basil - no meat. It differs from pepperoni pizza, which has cured meat.",
+            "correctAnswer": "Caprese Salad, Sparkling Water",
+            "hint": "‘I guess I’ll have…’ shows the customer deciding out loud.",
+            "explanation": "‘I guess I’ll have…’ sounds natural when someone is thinking as they speak. A caprese salad contains tomato, mozzarella, and basil — different from a Greek salad, which usually includes olives and feta.",
             "id": "go_l13_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the garlic bread and a beer.",
+            "prompt": "I'll have the club sandwich and an iced coffee.",
             "options": [
-                "Garlic Bread",
-                "Beer",
-                "Bruschetta",
-                "Wine"
+                "Club Sandwich",
+                "Iced Coffee",
+                "BLT",
+                "Hot Coffee"
             ],
-            "correctAnswer": "Garlic Bread, Beer",
-            "hint": "Garlic bread and bruschetta are both bread-based but very different dishes.",
-            "explanation": "Garlic bread is baked bread with garlic butter. Bruschetta is an Italian starter of grilled bread with fresh tomatoes. Both use bread but are distinct dishes.",
+            "correctAnswer": "Club Sandwich, Iced Coffee",
+            "hint": "Two sandwiches sound similar here — check which one was actually named.",
+            "explanation": "A ‘club sandwich’ usually has three layers of bread, while a ‘BLT’ is a simpler bacon, lettuce, and tomato sandwich. ‘Iced’ tells you the coffee is cold.",
             "id": "go_l13_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Can I have the pepperoni pizza and a lemonade?",
+            "prompt": "We'd like the nachos and two lemonades, please.",
             "options": [
-                "Pepperoni Pizza",
+                "Nachos",
                 "Lemonade",
-                "Margherita Pizza",
-                "Soda"
+                "Loaded Fries",
+                "Iced Tea"
             ],
-            "correctAnswer": "Pepperoni Pizza, Lemonade",
-            "hint": "Pepperoni is a spicy Italian-American sausage used as a pizza topping.",
-            "explanation": "'Pepperoni' is a spiced salami - a popular American pizza topping. Do not confuse it with 'peperoni', the Italian word for bell peppers.",
+            "correctAnswer": "Nachos, Lemonade",
+            "hint": "‘We’d like’ shows more than one person is ordering, and a number appears before one item.",
+            "explanation": "‘We’d like…’ is used when ordering for a group. The word ‘two’ tells you the quantity, but the drink itself is still just ‘lemonade’ — the same word whether you order one or several.",
             "id": "go_l13_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the cheeseburger and the onion rings.",
+            "prompt": "I'll go with the margherita pizza and a side salad.",
             "options": [
-                "Cheeseburger",
-                "Onion Rings",
-                "Veggie Burger",
-                "Fries"
+                "Margherita Pizza",
+                "Side Salad",
+                "Pepperoni Pizza",
+                "Garlic Bread"
             ],
-            "correctAnswer": "Cheeseburger, Onion Rings",
-            "hint": "Onion rings are a side dish - circular fried onion slices in batter.",
-            "explanation": "A cheeseburger is a burger with a cheese slice added. Onion rings are sliced onions coated in batter and deep-fried - a classic American side dish.",
+            "correctAnswer": "Margherita Pizza, Side Salad",
+            "hint": "This pizza is named after a simple topping combination — tomato, cheese, and basil.",
+            "explanation": "‘I’ll go with…’ is a relaxed way to state a final choice. ‘Margherita’ describes the classic pizza topping, different from ‘pepperoni.’",
             "id": "go_l14_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the veggie burger and the sweet potato fries.",
+            "prompt": "Just the chicken caesar wrap for me, please, with a lemonade.",
             "options": [
-                "Veggie Burger",
-                "Sweet Potato Fries",
-                "Cheeseburger",
-                "Regular Fries"
+                "Chicken Caesar Wrap",
+                "Lemonade",
+                "Turkey Club Wrap",
+                "Iced Tea"
             ],
-            "correctAnswer": "Veggie Burger, Sweet Potato Fries",
-            "hint": "Sweet potato fries are orange and slightly sweet - different from regular potato fries.",
-            "explanation": "A veggie burger uses a plant-based patty. Sweet potato fries are made from sweet potatoes - they are orange and slightly sweet, unlike regular fries.",
+            "correctAnswer": "Chicken Caesar Wrap, Lemonade",
+            "hint": "‘Just… for me’ shows the customer is ordering only for themselves.",
+            "explanation": "‘Just… for me, please’ is a clear, polite way to state a personal order, often used when others at the table have already ordered.",
             "id": "go_l14_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Can I get the chicken burger and a milkshake?",
+            "prompt": "I think I'll have the mushroom risotto and some bread.",
             "options": [
-                "Chicken Burger",
-                "Milkshake",
-                "Beef Burger",
-                "Soda"
+                "Mushroom Risotto",
+                "Bread",
+                "Seafood Risotto",
+                "Crackers"
             ],
-            "correctAnswer": "Chicken Burger, Milkshake",
-            "hint": "The key adjective is 'chicken' - the customer specifically wants chicken, not beef.",
-            "explanation": "When ordering burgers, the adjective before 'burger' tells the kitchen the protein needed. Chicken, beef, and veggie are the most common types.",
+            "correctAnswer": "Mushroom Risotto, Bread",
+            "hint": "‘I think I’ll have…’ shows the customer deciding between similar dishes.",
+            "explanation": "‘I think I’ll have…’ is natural when choosing between similar options, like two kinds of risotto. Remember that bread is uncountable, so we say ‘some bread.’",
             "id": "go_l14_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the spring rolls and the fried rice.",
+            "prompt": "I want the double cheeseburger and a large soda.",
             "options": [
-                "Spring Rolls",
-                "Fried Rice",
-                "Dumplings",
-                "Steamed Rice"
+                "Double Cheeseburger",
+                "Soda",
+                "Single Cheeseburger",
+                "Small Soda"
             ],
-            "correctAnswer": "Spring Rolls, Fried Rice",
-            "hint": "'Fried rice' and 'steamed rice' are different cooking methods - listen for the adjective.",
-            "explanation": "'Fried rice' is cooked rice stir-fried with vegetables, egg, or meat. 'Steamed rice' is plain boiled rice. The cooking method adjective is crucial.",
+            "correctAnswer": "Double Cheeseburger, Soda",
+            "hint": "‘I want’ is more direct than ‘I’d like’ — it still works, but sounds less formal.",
+            "explanation": "‘I want…’ is grammatically correct but can sound a little blunt. ‘I’d like…’ or ‘Could I have…?’ often sound more polite in a restaurant.",
             "id": "go_l15_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the miso soup and the sushi platter.",
+            "prompt": "Could I please have the shrimp tacos and a side of guacamole?",
             "options": [
-                "Miso Soup",
-                "Sushi Platter",
-                "Edamame",
-                "Sashimi"
+                "Shrimp Tacos",
+                "Guacamole",
+                "Fish Tacos",
+                "Salsa"
             ],
-            "correctAnswer": "Miso Soup, Sushi Platter",
-            "hint": "A 'platter' means a selection of multiple pieces arranged on one plate.",
-            "explanation": "Miso soup is a traditional Japanese fermented soybean soup. A 'sushi platter' contains an assortment of sushi pieces - 'platter' always indicates a variety selection.",
+            "correctAnswer": "Shrimp Tacos, Guacamole",
+            "hint": "Adding ‘please’ in the middle of a request makes it sound extra polite.",
+            "explanation": "‘Could I please have…?’ is one of the most polite ways to order. The type of taco filling — shrimp, not fish — is the key detail.",
             "id": "go_l15_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Can I have the pad thai and a jasmine tea?",
+            "prompt": "I'd like the vegetable stir-fry and some steamed rice.",
             "options": [
-                "Pad Thai",
-                "Jasmine Tea",
-                "Fried Noodles",
-                "Green Tea"
+                "Vegetable Stir-Fry",
+                "Steamed Rice",
+                "Chicken Stir-Fry",
+                "Fried Rice"
             ],
-            "correctAnswer": "Pad Thai, Jasmine Tea",
-            "hint": "'Pad Thai' is a specific Thai noodle dish - not the same as general 'fried noodles'.",
-            "explanation": "Pad Thai is Thailand's national noodle dish made with rice noodles, bean sprouts, and eggs. 'Jasmine tea' is a specific fragrant Chinese tea variety.",
+            "correctAnswer": "Vegetable Stir-Fry, Steamed Rice",
+            "hint": "The cooking method for the rice matters just as much as the rice itself.",
+            "explanation": "‘Steamed’ rice is plain and simple, while ‘fried rice’ is cooked with oil and other ingredients — two very different side dishes.",
             "id": "go_l15_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the spaghetti bolognese and a sparkling water.",
+            "prompt": "We'd like the spring rolls and two waters, please.",
             "options": [
-                "Spaghetti Bolognese",
-                "Sparkling Water",
-                "Fettuccine Alfredo",
-                "Still Water"
+                "Spring Rolls",
+                "Water",
+                "Dumplings",
+                "Soda"
             ],
-            "correctAnswer": "Spaghetti Bolognese, Sparkling Water",
-            "hint": "Bolognese is a meat sauce from Bologna, Italy - different from Alfredo cream sauce.",
-            "explanation": "Spaghetti bolognese (informally 'spag bol') uses a meat sauce from the Italian city of Bologna. Fettuccine alfredo uses a creamy butter sauce - very different.",
+            "correctAnswer": "Spring Rolls, Water",
+            "hint": "Look for the appetizer and the drink — the number just tells you the quantity.",
+            "explanation": "‘Spring rolls’ and ‘dumplings’ are both common appetizers, so check which one is named. The word ‘two’ only tells you the quantity of water, not a new item.",
             "id": "go_l16_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the bruschetta and the house salad.",
+            "prompt": "We'll have the mixed platter and some naan.",
             "options": [
-                "Bruschetta",
-                "House Salad",
-                "Garlic Bread",
-                "Caesar Salad"
+                "Mixed Platter",
+                "Naan",
+                "Vegetable Platter",
+                "Pita"
             ],
-            "correctAnswer": "Bruschetta, House Salad",
-            "hint": "The 'house salad' is the restaurant's own standard salad - unique to each restaurant.",
-            "explanation": "The 'house salad' varies by restaurant - usually mixed greens with house dressing. 'Bruschetta' (pronounced 'broo-SKET-ah') is grilled bread with tomatoes - a useful pronunciation to know.",
+            "correctAnswer": "Mixed Platter, Naan",
+            "hint": "‘We’ll have…’ works the same way as ‘I’ll have…’ but for a group.",
+            "explanation": "‘We’ll have…’ shows the whole table is sharing these items. ‘Naan’ is a soft flatbread often served with Indian dishes, different from ‘pita.’",
             "id": "go_l16_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Can I get the tiramisu and a cappuccino?",
+            "prompt": "My friend and I would like the dumplings and a pot of tea.",
             "options": [
-                "Tiramisu",
-                "Cappuccino",
-                "Panna Cotta",
-                "Latte"
+                "Dumplings",
+                "Tea",
+                "Spring Rolls",
+                "Coffee"
             ],
-            "correctAnswer": "Tiramisu, Cappuccino",
-            "hint": "Tiramisu and panna cotta are both Italian desserts but very different textures.",
-            "explanation": "Tiramisu is made with espresso-soaked ladyfinger biscuits and mascarpone cream. A cappuccino is espresso with equal parts steamed and foamed milk - the classic after-dinner Italian coffee.",
+            "correctAnswer": "Dumplings, Tea",
+            "hint": "‘My friend and I’ is another way to show two people are ordering together.",
+            "explanation": "‘My friend and I would like…’ names exactly who is ordering. ‘A pot of tea’ is a natural way to order tea for more than one person to share.",
             "id": "go_l16_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the chocolate cake and a coffee.",
+            "prompt": "I'll have the beef tacos and a side of rice, please.",
             "options": [
-                "Chocolate Cake",
-                "Coffee",
-                "Carrot Cake",
-                "Tea"
+                "Beef Tacos",
+                "Rice",
+                "Chicken Tacos",
+                "Beans"
             ],
-            "correctAnswer": "Chocolate Cake, Coffee",
-            "hint": "Both are café classics - listen for 'chocolate' versus 'carrot'.",
-            "explanation": "Chocolate cake is a rich cocoa-based cake; carrot cake includes grated carrots and often has cream cheese frosting. They might sound similar but are completely different.",
+            "correctAnswer": "Beef Tacos, Rice",
+            "hint": "The type of meat inside the taco is the detail to catch here.",
+            "explanation": "‘Beef’ and ‘chicken’ tacos often appear together on a menu, so the meat word is essential. Rice and beans are both common taco sides, but only one was ordered.",
             "id": "go_l17_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the fruit tart and a green tea.",
+            "prompt": "Could I get the miso soup and a california roll?",
             "options": [
-                "Fruit Tart",
-                "Green Tea",
-                "Cheesecake",
-                "Black Tea"
+                "Miso Soup",
+                "California Roll",
+                "Egg Drop Soup",
+                "Spicy Tuna Roll"
             ],
-            "correctAnswer": "Fruit Tart, Green Tea",
-            "hint": "A fruit tart has a pastry base topped with cream and fresh fruit.",
-            "explanation": "A fruit tart is a pastry shell filled with custard cream and topped with glazed fruit. It is different from cheesecake, which has a cream cheese filling.",
+            "correctAnswer": "Miso Soup, California Roll",
+            "hint": "Two familiar dishes are named here — a soup and a type of sushi roll.",
+            "explanation": "‘Miso soup’ is a savory Japanese soup made from fermented soybean paste. A ‘California roll’ is a common sushi roll with crab, avocado, and cucumber.",
             "id": "go_l17_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Can I have the blueberry muffin and a latte?",
+            "prompt": "I'd like the pad thai and a spring roll.",
             "options": [
-                "Blueberry Muffin",
-                "Latte",
-                "Chocolate Muffin",
-                "Cappuccino"
+                "Pad Thai",
+                "Spring Roll",
+                "Pad See Ew",
+                "Dumpling"
             ],
-            "correctAnswer": "Blueberry Muffin, Latte",
-            "hint": "Listen for the flavour adjective before 'muffin' - blueberry or chocolate?",
-            "explanation": "Flavour adjectives - blueberry, chocolate, lemon, bran - are essential for ordering the correct baked good. A 'latte' has more milk than a cappuccino.",
+            "correctAnswer": "Pad Thai, Spring Roll",
+            "hint": "Both dish names come from Thai cuisine and start with similar sounds — read carefully.",
+            "explanation": "‘Pad Thai’ and ‘Pad See Ew’ are both popular Thai noodle dishes with similar names, so check the exact wording. A ‘spring roll’ is a crispy rolled appetizer.",
             "id": "go_l17_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the eggs Benedict and a fresh juice.",
+            "prompt": "Just the chicken quesadilla and a lemonade for me, please.",
             "options": [
-                "Eggs Benedict",
-                "Fresh Juice",
-                "French Toast",
-                "Coffee"
+                "Chicken Quesadilla",
+                "Lemonade",
+                "Cheese Quesadilla",
+                "Iced Tea"
             ],
-            "correctAnswer": "Eggs Benedict, Fresh Juice",
-            "hint": "Eggs Benedict is a brunch classic - don't confuse it with French toast.",
-            "explanation": "Eggs Benedict consists of English muffins, Canadian bacon, poached eggs, and hollandaise sauce. 'Fresh juice' means just-squeezed juice, not from a carton.",
+            "correctAnswer": "Chicken Quesadilla, Lemonade",
+            "hint": "The filling inside the quesadilla is the detail that decides the right answer.",
+            "explanation": "‘Chicken’ and ‘cheese’ quesadillas are both common, so the filling word changes the correct choice. ‘Just… for me’ shows this is a single, personal order.",
             "id": "go_l18_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the full English breakfast and a tea.",
+            "prompt": "I'll try the vegetable dumplings and some rice.",
             "options": [
-                "Full English Breakfast",
-                "Tea",
-                "Continental Breakfast",
-                "Coffee"
+                "Vegetable Dumplings",
+                "Rice",
+                "Pork Dumplings",
+                "Noodles"
             ],
-            "correctAnswer": "Full English Breakfast, Tea",
-            "hint": "A 'full English' includes many cooked items - much larger than a continental breakfast.",
-            "explanation": "A full English breakfast includes eggs, bacon, sausages, baked beans, toast, and grilled tomato. A continental breakfast is pastries and cold items - much lighter.",
+            "correctAnswer": "Vegetable Dumplings, Rice",
+            "hint": "The dumpling filling and the side dish both need close attention.",
+            "explanation": "‘Vegetable’ and ‘pork’ dumplings are both common menu items, so the filling word decides the answer. Rice and noodles are both popular sides, but only one was ordered.",
             "id": "go_l18_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Can I get the French toast and a cappuccino?",
+            "prompt": "We'd like the spring rolls and some sweet chili sauce.",
             "options": [
-                "French Toast",
-                "Cappuccino",
-                "Pancakes",
-                "Latte"
+                "Spring Rolls",
+                "Sweet Chili Sauce",
+                "Dumplings",
+                "Soy Sauce"
             ],
-            "correctAnswer": "French Toast, Cappuccino",
-            "hint": "French toast is bread dipped in egg and fried - different from pancakes.",
-            "explanation": "French toast (pain perdu in French) is bread soaked in egg and milk, then fried until golden. Pancakes are made from batter - they are different dishes entirely.",
+            "correctAnswer": "Spring Rolls, Sweet Chili Sauce",
+            "hint": "One item is a crispy appetizer, the other is a dipping sauce.",
+            "explanation": "Spring rolls are often served with a dipping sauce on the side. ‘Sweet chili sauce’ and ‘soy sauce’ are both common choices, so the exact name matters.",
             "id": "go_l18_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the quinoa bowl and a green smoothie.",
+            "prompt": "I think I'll have the beef pho and some spring rolls.",
             "options": [
-                "Quinoa Bowl",
-                "Green Smoothie",
-                "Rice Bowl",
-                "Protein Shake"
+                "Beef Pho",
+                "Spring Rolls",
+                "Chicken Pho",
+                "Dumplings"
             ],
-            "correctAnswer": "Quinoa Bowl, Green Smoothie",
-            "hint": "Quinoa (pronounced 'KEEN-wah') is a protein-rich grain popular in health cafés.",
-            "explanation": "Quinoa (pronounced 'KEEN-wah') is a nutritious grain high in protein. A 'green smoothie' blends leafy vegetables with fruit - a staple of health cafés.",
+            "correctAnswer": "Beef Pho, Spring Rolls",
+            "hint": "‘Pho’ is a Vietnamese noodle soup — the meat inside changes the name.",
+            "explanation": "‘Pho’ is pronounced like ‘fuh’ and is a popular Vietnamese noodle soup. ‘Beef’ and ‘chicken’ pho are both common, so the meat word matters.",
             "id": "go_l19_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the lentil soup and the whole grain bread.",
+            "prompt": "Could I have the chicken burrito bowl and a lemonade?",
             "options": [
-                "Lentil Soup",
-                "Whole Grain Bread",
-                "Tomato Soup",
-                "White Bread"
+                "Chicken Burrito Bowl",
+                "Lemonade",
+                "Beef Burrito Bowl",
+                "Iced Tea"
             ],
-            "correctAnswer": "Lentil Soup, Whole Grain Bread",
-            "hint": "'Whole grain' means the bread uses the whole seed - more nutritious than white bread.",
-            "explanation": "'Whole grain bread' uses the entire grain kernel, making it more nutritious than white bread. 'Lentil soup' is a hearty protein-rich soup popular in healthy cafés.",
+            "correctAnswer": "Chicken Burrito Bowl, Lemonade",
+            "hint": "A ‘bowl’ version of this dish skips the tortilla wrap, but the filling word still matters.",
+            "explanation": "A ‘burrito bowl’ has the same fillings as a burrito, just served without the tortilla. ‘Chicken’ and ‘beef’ are both common choices, so listen for the right one.",
             "id": "go_l19_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Can I have the Greek salad and a sparkling water?",
+            "prompt": "I'd like the butter chicken and some garlic naan.",
             "options": [
-                "Greek Salad",
-                "Sparkling Water",
-                "Caesar Salad",
-                "Still Water"
+                "Butter Chicken",
+                "Garlic Naan",
+                "Chicken Tikka Masala",
+                "Plain Naan"
             ],
-            "correctAnswer": "Greek Salad, Sparkling Water",
-            "hint": "A Greek salad contains tomatoes, cucumber, olives, and feta - no lettuce.",
-            "explanation": "A Greek salad (horiatiki) contains tomatoes, cucumber, olives, and feta cheese - but no lettuce. A Caesar salad uses romaine lettuce and Caesar dressing - completely different.",
+            "correctAnswer": "Butter Chicken, Garlic Naan",
+            "hint": "Two similar Indian chicken dishes are listed — only one matches exactly.",
+            "explanation": "‘Butter chicken’ and ‘chicken tikka masala’ are both popular Indian curries with a similar creamy tomato sauce, so listen for the exact name. ‘Garlic naan’ has garlic mixed into the bread.",
             "id": "go_l19_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the patatas bravas and the chorizo.",
+            "prompt": "Can I get the chicken burrito and a side of guacamole?",
             "options": [
-                "Patatas Bravas",
-                "Chorizo",
-                "Tortilla Española",
-                "Jamón"
+                "Chicken Burrito",
+                "Guacamole",
+                "Beef Burrito",
+                "Sour Cream"
             ],
-            "correctAnswer": "Patatas Bravas, Chorizo",
-            "hint": "Patatas bravas are fried potato cubes with spicy sauce - a popular Spanish tapas dish.",
-            "explanation": "Patatas bravas are fried potatoes with spicy tomato sauce. Chorizo is a seasoned Spanish sausage. These are foundational Spanish tapas vocabulary words.",
+            "correctAnswer": "Chicken Burrito, Guacamole",
+            "hint": "The filling and the extra side are both named clearly in the sentence.",
+            "explanation": "‘Chicken’ and ‘beef’ burritos are both common, so the filling word is key. Guacamole is a dip made from mashed avocado.",
             "id": "go_l20_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the tortilla española and a glass of sangria.",
+            "prompt": "I'd like the caprese sandwich and an iced lemon tea.",
             "options": [
-                "Tortilla Española",
-                "Sangria",
-                "Patatas Bravas",
-                "Red Wine"
+                "Caprese Sandwich",
+                "Iced Lemon Tea",
+                "Turkey Sandwich",
+                "Iced Peach Tea"
             ],
-            "correctAnswer": "Tortilla Española, Sangria",
-            "hint": "Spanish tortilla is a thick omelette - not the same as a Mexican flour tortilla.",
-            "explanation": "Spanish 'tortilla' (tortilla española) is a thick potato omelette - completely different from Mexican flatbread tortilla. Context matters hugely in menu vocabulary.",
+            "correctAnswer": "Caprese Sandwich, Iced Lemon Tea",
+            "hint": "The sandwich filling and the tea flavor both need careful attention.",
+            "explanation": "A ‘caprese’ sandwich contains tomato, mozzarella, and basil. ‘Lemon’ and ‘peach’ are both common iced tea flavors, so the flavor word decides the answer.",
             "id": "go_l20_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Can I get the jamón ibérico and a glass of white wine?",
+            "prompt": "We'll have the vegetable dumplings and two green teas, please.",
             "options": [
-                "Jamón Ibérico",
-                "White Wine",
-                "Chorizo",
-                "Red Wine"
+                "Vegetable Dumplings",
+                "Green Tea",
+                "Pork Dumplings",
+                "Black Tea"
             ],
-            "correctAnswer": "Jamón Ibérico, White Wine",
-            "hint": "Jamón ibérico is premium cured ham from Spain - a celebrated luxury product.",
-            "explanation": "Jamón ibérico is cured ham from Iberian black pigs in Spain - one of the most prized foods in Spanish cuisine. White wine pairs classically with cured ham.",
+            "correctAnswer": "Vegetable Dumplings, Green Tea",
+            "hint": "The dumpling filling and the tea color both matter here.",
+            "explanation": "‘Vegetable’ and ‘pork’ dumplings are both common menu items, so check the filling carefully. The number ‘two’ only affects quantity, not the item name itself.",
             "id": "go_l20_q3"
         }
     ]

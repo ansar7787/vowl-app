@@ -7,48 +7,48 @@
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Your manager praises your work in front of the whole team.",
+            "scene": "Your manager praises your work in front of the entire team during a meeting.",
             "options": [
-                "Proud",
+                "Embarrassed",
                 "Bored",
                 "Angry",
-                "Scared"
+                "Proud"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Your hard work has been noticed by someone in authority.",
-            "explanation": "Being praised in front of colleagues makes you feel proud.",
+            "correctAnswerIndex": 3,
+            "hint": "Your hard work has just been recognized in front of others.",
+            "explanation": "Being praised for good work, especially publicly, usually makes you feel proud.",
             "id": "sr_l21_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You find out that a close friend lied to you about something important.",
+            "scene": "You discover that a close friend was not honest with you about something important.",
             "options": [
-                "Grateful",
+                "Hurt",
                 "Amused",
-                "Betrayed",
-                "Excited"
+                "Bored",
+                "Sleepy"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Trust is the most important part of a friendship.",
-            "explanation": "Discovering that a friend lied to you makes you feel betrayed.",
+            "correctAnswerIndex": 0,
+            "hint": "Someone you trust let you down.",
+            "explanation": "Discovering that someone you trust was not honest with you makes you feel hurt.",
             "id": "sr_l21_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "The waiter brings you the wrong dish at the restaurant.",
+            "scene": "The waiter brings you a completely different dish from the one you ordered.",
             "options": [
-                "Content",
-                "Frustrated",
+                "Delighted",
                 "Proud",
-                "Relieved"
+                "Annoyed",
+                "Sleepy"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "The food on your plate is not what you wanted.",
-            "explanation": "Getting the wrong food at a restaurant is frustrating.",
+            "correctAnswerIndex": 2,
+            "hint": "This is not what you asked for, and now you have to sort it out.",
+            "explanation": "Receiving the wrong order at a restaurant typically makes you feel annoyed.",
             "id": "sr_l21_q3"
         },
         {
@@ -57,430 +57,430 @@
             "interactionType": "bubbles",
             "scene": "Your phone rings with an unknown number at midnight.",
             "options": [
-                "Calm",
-                "Alarmed",
+                "Delighted",
+                "Uneasy",
                 "Bored",
                 "Proud"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Something unusual is happening very late at night.",
-            "explanation": "A midnight phone call from an unknown number makes you feel alarmed.",
+            "hint": "A call at this hour is unusual, and you do not know who it is.",
+            "explanation": "An unexpected late-night call from an unknown number often makes you feel uneasy.",
             "id": "sr_l22_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "The bus arrives exactly when you need it and you are already running late.",
+            "scene": "The bus arrives at the exact moment you reach the stop, even though you are running late.",
             "options": [
-                "Disappointed",
-                "Relieved",
+                "Annoyed",
                 "Bored",
+                "Relieved",
                 "Sad"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Something worked out perfectly just when you needed it.",
-            "explanation": "When transport arrives at exactly the right moment you feel relieved.",
+            "correctAnswerIndex": 2,
+            "hint": "Something worked out perfectly at just the right time.",
+            "explanation": "Good timing that saves you from a problem makes you feel relieved.",
             "id": "sr_l22_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Your boss cancels an important meeting without explanation five minutes before it starts.",
+            "scene": "Your manager cancels an important meeting five minutes before it starts, with no explanation.",
             "options": [
-                "Confused",
+                "Delighted",
                 "Proud",
-                "Excited",
-                "Tired"
+                "Calm",
+                "Confused"
             ],
-            "correctAnswerIndex": 0,
-            "hint": "You prepared carefully for this but the plan has changed.",
-            "explanation": "When a meeting you prepared for is cancelled without explanation you feel confused.",
+            "correctAnswerIndex": 3,
+            "hint": "Something changed suddenly, and you do not know why.",
+            "explanation": "An unexplained last-minute change like this usually leaves you feeling confused.",
             "id": "sr_l22_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You walk into a room full of people and they all go completely quiet.",
+            "scene": "You walk into a room full of people, and they all suddenly go quiet.",
             "options": [
-                "Comfortable",
+                "Delighted",
                 "Self-conscious",
-                "Excited",
-                "Relieved"
+                "Bored",
+                "Sleepy"
             ],
             "correctAnswerIndex": 1,
-            "hint": "Everyone's eyes are suddenly focused on you.",
-            "explanation": "When a room goes silent as you enter you become self-conscious.",
+            "hint": "You suddenly feel like everyone might be looking at you.",
+            "explanation": "When a room goes quiet as you enter, you often feel self-conscious - unusually aware of yourself.",
             "id": "sr_l23_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You try a new hobby for the first time and immediately love it.",
+            "scene": "You try a new hobby for the first time and enjoy it much more than you expected.",
             "options": [
-                "Indifferent",
-                "Sad",
                 "Enthusiastic",
-                "Annoyed"
+                "Bored",
+                "Annoyed",
+                "Tired"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "You discovered something wonderful and new about yourself.",
-            "explanation": "When you try something new and enjoy it you feel enthusiastic.",
+            "correctAnswerIndex": 0,
+            "hint": "You have just discovered something you might want to keep doing.",
+            "explanation": "Unexpectedly loving a new activity makes you feel enthusiastic about continuing it.",
             "id": "sr_l23_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Someone has taken your reserved seat on the train.",
+            "scene": "Someone is sitting in your reserved seat on the train, and they refuse to move.",
             "options": [
-                "Happy",
-                "Annoyed",
+                "Relieved",
+                "Irritated",
                 "Proud",
-                "Grateful"
+                "Sleepy"
             ],
             "correctAnswerIndex": 1,
-            "hint": "You had a seat reserved but someone else is sitting there.",
-            "explanation": "When someone takes your seat you feel annoyed.",
+            "hint": "Something that belongs to you is being taken, and the person will not cooperate.",
+            "explanation": "Having your reserved seat taken with no cooperation makes you feel irritated.",
             "id": "sr_l23_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You receive a message saying your flight is delayed by three hours.",
+            "scene": "You get a message saying your flight has been delayed by three hours.",
             "options": [
-                "Excited",
-                "Relieved",
+                "Delighted",
+                "Proud",
                 "Frustrated",
-                "Proud"
+                "Calm"
             ],
             "correctAnswerIndex": 2,
-            "hint": "Your travel plans have been disrupted and you will arrive late.",
-            "explanation": "A flight delay means waiting longer and arriving late which causes frustration.",
+            "hint": "Your plans just got a lot longer with no warning.",
+            "explanation": "An unexpected long delay to your travel plans naturally makes you feel frustrated.",
             "id": "sr_l24_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A stranger smiles at you warmly as you pass on the street.",
+            "scene": "A stranger smiles warmly at you as you pass each other on the street.",
             "options": [
-                "Alarmed",
-                "Warmhearted",
+                "Annoyed",
                 "Bored",
-                "Angry"
+                "Sleepy",
+                "Uplifted"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Someone shared a simple friendly unexpected moment.",
-            "explanation": "An unexpected smile from a stranger makes you feel warmhearted.",
+            "correctAnswerIndex": 3,
+            "hint": "A small, kind gesture from someone you do not even know.",
+            "explanation": "A warm smile from a stranger, even a brief one, can leave you feeling uplifted.",
             "id": "sr_l24_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You cannot remember something very important that someone told you yesterday.",
+            "scene": "You cannot remember something important that a colleague told you just yesterday.",
             "options": [
-                "Relieved",
-                "Excited",
-                "Frustrated",
-                "Proud"
+                "Flustered",
+                "Proud",
+                "Delighted",
+                "Calm"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "You know the information is somewhere in your memory but you cannot reach it.",
-            "explanation": "Forgetting something important makes you feel frustrated.",
+            "correctAnswerIndex": 0,
+            "hint": "The information is gone, and you know you will need it again soon.",
+            "explanation": "Forgetting something you were told recently can leave you feeling flustered.",
             "id": "sr_l24_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You finally finish reading a very long and boring work report.",
+            "scene": "You finally finish reading a long, dull report for work.",
             "options": [
                 "Excited",
-                "Relieved",
-                "Proud",
-                "Scared"
+                "Nervous",
+                "Sad",
+                "Relieved"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "A long and tedious task is finally completely done.",
-            "explanation": "Finishing a long dull task makes you feel relieved.",
+            "correctAnswerIndex": 3,
+            "hint": "A task you did not enjoy is finally over.",
+            "explanation": "Finishing a task you found boring or difficult usually brings a feeling of relief.",
             "id": "sr_l25_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Your phone battery dies at the exact moment you need it most.",
+            "scene": "Your phone battery dies at the exact moment you need directions most.",
             "options": [
-                "Happy",
-                "Content",
+                "Relieved",
+                "Proud",
                 "Panicked",
-                "Proud"
+                "Calm"
             ],
             "correctAnswerIndex": 2,
-            "hint": "An essential tool has stopped working at a critical moment.",
-            "explanation": "Losing your phone battery at a critical moment makes you feel panicked.",
+            "hint": "You suddenly have no way to find your way, right when you needed it.",
+            "explanation": "Losing something essential exactly when you need it most can make you feel panicked.",
             "id": "sr_l25_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You tell a joke and the whole group laughs together.",
+            "scene": "You tell a joke at dinner, and the whole table bursts out laughing.",
             "options": [
                 "Embarrassed",
-                "Amused",
-                "Satisfied",
-                "Worried"
+                "Delighted",
+                "Bored",
+                "Sad"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Your sense of humor worked and people responded!",
-            "explanation": "Making others laugh with your joke makes you feel satisfied.",
+            "correctAnswerIndex": 1,
+            "hint": "Something you said landed perfectly with everyone.",
+            "explanation": "Making a group of people laugh together usually makes you feel delighted.",
             "id": "sr_l25_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Your city is featured positively on a national news programme.",
+            "scene": "Your hometown is featured in a positive story on the national news.",
             "options": [
-                "Indifferent",
                 "Proud",
-                "Scared",
-                "Worried"
+                "Ashamed",
+                "Bored",
+                "Sleepy"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Your hometown is being praised and recognized nationally.",
-            "explanation": "Seeing your city celebrated on the news fills you with civic pride.",
+            "correctAnswerIndex": 0,
+            "hint": "Somewhere you belong to is being recognized in a good way.",
+            "explanation": "Seeing your hometown praised publicly usually makes you feel proud.",
             "id": "sr_l26_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You have to give a short speech in front of one hundred people.",
+            "scene": "You are asked to give a short speech in front of one hundred people with no warning.",
             "options": [
-                "Relaxed",
-                "Confident",
-                "Nervous",
-                "Bored"
+                "Relieved",
+                "Proud",
+                "Bored",
+                "Anxious"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "All eyes and ears will be focused on you.",
-            "explanation": "Public speaking in front of a large audience makes most people feel nervous.",
+            "correctAnswerIndex": 3,
+            "hint": "A big audience and no time to prepare.",
+            "explanation": "Speaking to a large audience with no preparation time often makes people feel anxious.",
             "id": "sr_l26_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You find twenty pounds in the pocket of an old jacket.",
+            "scene": "You find twenty pounds inside the pocket of a jacket you have not worn in months.",
             "options": [
-                "Sad",
+                "Angry",
                 "Delighted",
-                "Worried",
-                "Bored"
+                "Sad",
+                "Sleepy"
             ],
             "correctAnswerIndex": 1,
-            "hint": "An unexpected and pleasant surprise just happened!",
-            "explanation": "Finding money you had forgotten about makes you feel delighted.",
+            "hint": "You just gained money you had completely forgotten about.",
+            "explanation": "Unexpectedly finding money makes most people feel delighted.",
             "id": "sr_l26_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Your neighbour plays loud music at midnight every night.",
+            "scene": "Your neighbor plays loud music well past midnight, night after night.",
             "options": [
-                "Pleased",
-                "Grateful",
-                "Annoyed",
-                "Proud"
+                "Exasperated",
+                "Delighted",
+                "Calm",
+                "Sleepy"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Someone is disturbing your peace and preventing you from sleeping.",
-            "explanation": "Loud noise late at night when you need to sleep is very annoying.",
+            "correctAnswerIndex": 0,
+            "hint": "This keeps happening, and you have had enough of it.",
+            "explanation": "A problem that keeps repeating with no change often leaves you feeling exasperated.",
             "id": "sr_l27_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Your doctor tells you that all your test results are completely clear.",
+            "scene": "Your doctor tells you that every one of your test results came back completely clear.",
             "options": [
                 "Disappointed",
-                "Relieved",
                 "Bored",
-                "Impatient"
+                "Relieved",
+                "Angry"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Your health worry is now completely gone.",
-            "explanation": "Hearing that your health is fine after worrying about test results makes you feel deeply relieved.",
+            "correctAnswerIndex": 2,
+            "hint": "You were waiting anxiously, and the news is good.",
+            "explanation": "Hearing that test results are clear after a period of worry brings relief.",
             "id": "sr_l27_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You try to pay at the supermarket checkout and your card is declined.",
+            "scene": "Your card is declined at the supermarket checkout with a long queue behind you.",
             "options": [
-                "Happy",
-                "Confident",
-                "Mortified",
-                "Excited"
+                "Proud",
+                "Delighted",
+                "Calm",
+                "Embarrassed"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "This is happening in front of other shoppers in the queue.",
-            "explanation": "Having your card declined in public is a mortifying experience.",
+            "correctAnswerIndex": 3,
+            "hint": "Something is going wrong, and other people are waiting and watching.",
+            "explanation": "Having a payment problem in front of a queue of people often makes you feel embarrassed.",
             "id": "sr_l27_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You are asked to work overtime for the third evening this week.",
+            "scene": "You are asked to work late for the third evening this week.",
             "options": [
-                "Enthusiastic",
-                "Resentful",
+                "Delighted",
+                "Exhausted",
                 "Proud",
-                "Relieved"
+                "Calm"
             ],
             "correctAnswerIndex": 1,
-            "hint": "You feel this situation is becoming unfair and one-sided.",
-            "explanation": "Being repeatedly asked to work extra hours can make you feel resentful.",
+            "hint": "Your energy has been running low for days.",
+            "explanation": "Working extra hours repeatedly without rest usually leaves you feeling exhausted.",
             "id": "sr_l28_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You accidentally send a personal message to your manager instead of your friend.",
+            "scene": "You accidentally send a private message meant for a friend to your manager instead.",
             "options": [
-                "Amused",
+                "Mortified",
                 "Proud",
-                "Horrified",
-                "Calm"
+                "Calm",
+                "Delighted"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "A private message was sent to completely the wrong person.",
-            "explanation": "Sending a personal message to your manager by mistake is horrifying.",
+            "correctAnswerIndex": 0,
+            "hint": "Something private just went to completely the wrong person.",
+            "explanation": "Accidentally sending something private to the wrong person can leave you feeling mortified - extremely embarrassed.",
             "id": "sr_l28_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You receive a full refund for a faulty product you bought last week.",
+            "scene": "You receive a full refund for a faulty product without even having to ask twice.",
             "options": [
-                "Angry",
+                "Annoyed",
+                "Sad",
                 "Satisfied",
-                "Scared",
-                "Bored"
+                "Sleepy"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "The problem was resolved fairly and to your benefit.",
-            "explanation": "When a complaint is resolved fairly you feel satisfied.",
+            "correctAnswerIndex": 2,
+            "hint": "A problem was fixed more easily than you expected.",
+            "explanation": "Getting a problem resolved smoothly and fairly leaves you feeling satisfied.",
             "id": "sr_l28_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A project you worked on for several months does not succeed.",
+            "scene": "A project you spent several months working on ultimately does not succeed.",
             "options": [
+                "Delighted",
+                "Disheartened",
                 "Proud",
-                "Relieved",
-                "Devastated",
-                "Happy"
+                "Calm"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Something you invested a great deal of time and effort in has failed.",
-            "explanation": "When a long important project fails you feel devastated.",
+            "correctAnswerIndex": 1,
+            "hint": "A lot of effort did not lead to the result you hoped for.",
+            "explanation": "Putting months of effort into something that fails can leave you feeling disheartened.",
             "id": "sr_l29_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A colleague you greatly respect gives you a personal compliment.",
+            "scene": "A colleague you deeply respect gives you a genuine, specific compliment.",
             "options": [
-                "Indifferent",
-                "Flattered",
                 "Bored",
-                "Scared"
+                "Annoyed",
+                "Sleepy",
+                "Honored"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Someone whose opinion matters deeply to you has praised you.",
-            "explanation": "Being praised by someone you respect makes you feel flattered.",
+            "correctAnswerIndex": 3,
+            "hint": "This praise means more because of who it came from.",
+            "explanation": "A sincere compliment from someone you admire often makes you feel honored.",
             "id": "sr_l29_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Your internet connection drops during an important video call at work.",
+            "scene": "Your internet connection drops in the middle of an important video call at work.",
             "options": [
-                "Relieved",
-                "Amused",
-                "Flustered",
+                "Delighted",
+                "Calm",
+                "Frustrated",
                 "Proud"
             ],
             "correctAnswerIndex": 2,
-            "hint": "Technology has failed at the worst possible moment.",
-            "explanation": "Losing your connection during an important call makes you feel flustered.",
+            "hint": "Technology fails you at a critical moment.",
+            "explanation": "Losing your connection during something important typically makes you feel frustrated.",
             "id": "sr_l29_q3"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You unexpectedly meet your favourite author at a bookshop event.",
+            "scene": "You unexpectedly meet your favorite author while browsing at a small bookshop.",
             "options": [
-                "Bored",
-                "Indifferent",
                 "Starstruck",
-                "Annoyed"
+                "Bored",
+                "Annoyed",
+                "Sleepy"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "You admire this person's work enormously.",
-            "explanation": "Meeting someone you truly admire makes you feel starstruck.",
+            "correctAnswerIndex": 0,
+            "hint": "Someone you admire from a distance is suddenly right in front of you.",
+            "explanation": "Unexpectedly meeting someone you admire can leave you feeling starstruck.",
             "id": "sr_l30_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "The restaurant brings you the wrong bill with someone else's food on it.",
+            "scene": "The restaurant brings you someone else's bill, listing food you never ordered.",
             "options": [
                 "Delighted",
-                "Confused",
                 "Proud",
-                "Excited"
+                "Confused",
+                "Calm"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "The information in front of you does not match what you ordered.",
-            "explanation": "Receiving an incorrect bill at a restaurant makes you feel confused.",
+            "correctAnswerIndex": 2,
+            "hint": "The numbers in front of you do not match what actually happened.",
+            "explanation": "Receiving a bill that does not match your order naturally leaves you feeling confused.",
             "id": "sr_l30_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You wake up an hour before your alarm and cannot fall back to sleep.",
+            "scene": "You wake up a full hour before your alarm and cannot fall back asleep.",
             "options": [
-                "Relaxed",
-                "Annoyed",
-                "Excited",
-                "Proud"
+                "Delighted",
+                "Proud",
+                "Relieved",
+                "Irritated"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "You have lost extra sleep time for absolutely no reason.",
-            "explanation": "Waking up early when you do not need to and cannot sleep is annoying.",
+            "correctAnswerIndex": 3,
+            "hint": "You wanted more rest, but your body had other plans.",
+            "explanation": "Losing extra sleep you were counting on often leaves you feeling irritated.",
             "id": "sr_l30_q3"
         }
     ]

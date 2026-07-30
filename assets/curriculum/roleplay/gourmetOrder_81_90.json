@@ -4,483 +4,483 @@
     "levels": "81-90",
     "quests": [
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the short rib, the truffle mac and cheese, and a craft IPA if you have it.",
+            "prompt": "What do you recommend? I'll trust you — I'll have the guacamole, the mole poblano, and the flan.",
             "options": [
-                "Short Rib",
-                "Truffle Mac and Cheese",
-                "IPA Beer",
-                "Lager"
+                "Guacamole",
+                "Mole Poblano",
+                "Flan",
+                "Churros"
             ],
-            "correctAnswer": "Short Rib, Truffle Mac and Cheese, IPA Beer",
-            "hint": "IPA stands for India Pale Ale - a hoppy, bitter style of craft beer.",
-            "explanation": "IPA (India Pale Ale) is a hoppy style of craft beer. 'If you have it' is a polite qualifier but the customer is still ordering it. Truffle mac and cheese is a luxury upgrade of macaroni and cheese with truffle oil.",
+            "correctAnswer": "Guacamole, Mole Poblano, Flan",
+            "hint": "The customer asks for a recommendation, then accepts three suggested dishes.",
+            "explanation": "‘I’ll trust you’ shows the customer is relying on the server's judgment. ‘Mole poblano’ is a rich Mexican sauce made with chocolate and chili peppers.",
             "id": "go_l81_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the lobster roll, the sweet potato fries, and a frozen margarita.",
+            "prompt": "Is the tom yum soup spicy? Not too spicy, good, I'll have that, the pad krapow, and the mango sticky rice.",
             "options": [
-                "Lobster Roll",
-                "Sweet Potato Fries",
-                "Frozen Margarita",
-                "Regular Margarita"
+                "Tom Yum Soup",
+                "Pad Krapow",
+                "Mango Sticky Rice",
+                "Tom Kha Soup"
             ],
-            "correctAnswer": "Lobster Roll, Sweet Potato Fries, Frozen Margarita",
-            "hint": "A frozen margarita is blended with ice - different from a regular margarita served on the rocks.",
-            "explanation": "A lobster roll is a New England classic - chilled lobster meat in a toasted hot dog bun. A frozen margarita is blended smooth with ice; a regular margarita is mixed with ice cubes. Both contain the same ingredients but different textures.",
+            "correctAnswer": "Tom Yum Soup, Pad Krapow, Mango Sticky Rice",
+            "hint": "The customer checks on spice level first, then confirms the full order.",
+            "explanation": "‘Tom yum’ is a hot and sour soup, so checking the spice level first is a natural, practical question. ‘Pad krapow’ is a stir-fried dish with Thai basil.",
             "id": "go_l81_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the crab cake, the clam chowder bread bowl, and a glass of Chardonnay?",
+            "prompt": "We'll do family style — the samosas, the chicken korma, and the naan for the table.",
             "options": [
-                "Crab Cake",
-                "Clam Chowder Bread Bowl",
-                "Chardonnay",
-                "Pinot Grigio"
+                "Samosas",
+                "Chicken Korma",
+                "Naan",
+                "Butter Chicken"
             ],
-            "correctAnswer": "Crab Cake, Clam Chowder Bread Bowl, Chardonnay",
-            "hint": "A bread bowl is a hollowed-out sourdough loaf used as a bowl for soup.",
-            "explanation": "A clam chowder bread bowl is soup served inside a hollowed sourdough loaf - an American classic. Crab cakes are pan-fried patties of crab meat. Chardonnay is full-bodied and pairs well with creamy shellfish dishes.",
+            "correctAnswer": "Samosas, Chicken Korma, Naan",
+            "hint": "‘Family style’ means the dishes will be placed in the middle for everyone to share.",
+            "explanation": "‘Family style’ is a way of eating where shared dishes are placed in the center of the table for everyone to serve themselves, common in Indian and Chinese dining.",
             "id": "go_l81_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll start with the yakitori, then the sashimi sharing platter, and a round of beers for the table.",
+            "prompt": "I'll have the hummus to start, and could you pair it with a wine? For my main, the lamb tagine, and the baklava for dessert.",
             "options": [
-                "Yakitori",
-                "Sashimi Sharing Platter",
-                "Beers",
-                "Sake"
+                "Hummus",
+                "Lamb Tagine",
+                "Baklava",
+                "Falafel"
             ],
-            "correctAnswer": "Yakitori, Sashimi Sharing Platter, Beers",
-            "hint": "Three items for the table: grilled skewers, raw fish selection, and beers.",
-            "explanation": "Yakitori is Japanese grilled chicken skewers glazed with tare sauce. A sashimi sharing platter contains an assortment of raw fish for the table. The customer chose beers over sake - both are common at Japanese izakayas.",
+            "correctAnswer": "Hummus, Lamb Tagine, Baklava",
+            "hint": "A wine pairing is requested, but it doesn't change the three food items ordered.",
+            "explanation": "‘Could you pair it with a wine?’ asks the server for a wine suggestion — a common request in restaurants with a wine list, but not a food item itself.",
             "id": "go_l82_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the karaage chicken, the agedashi tofu, and a cold Asahi.",
+            "prompt": "Just so I know, does the pad thai have peanuts? No? Great, I'll have that, the spring rolls, and the Thai iced tea.",
             "options": [
-                "Karaage Chicken",
-                "Agedashi Tofu",
-                "Cold Asahi",
-                "Sake"
+                "Pad Thai",
+                "Spring Rolls",
+                "Thai Iced Tea",
+                "Satay"
             ],
-            "correctAnswer": "Karaage Chicken, Agedashi Tofu, Cold Asahi",
-            "hint": "Karaage is Japanese fried chicken - crispy, juicy, and marinated.",
-            "explanation": "Karaage is Japanese fried chicken marinated in soy and ginger - lighter and crispier than Western fried chicken. Agedashi tofu is lightly battered and deep-fried tofu in a dashi broth. Asahi is a popular Japanese lager beer.",
+            "correctAnswer": "Pad Thai, Spring Rolls, Thai Iced Tea",
+            "hint": "An allergy-related question comes first, then the customer confirms their order.",
+            "explanation": "‘Just so I know…’ is a polite way to ask an important question, like checking for allergens, before finalizing an order.",
             "id": "go_l82_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could we get the takoyaki, the chicken tsukune, and the house sake carafe?",
+            "prompt": "I've never had shakshuka before — I'll give it a try, along with the pita and the mint tea.",
             "options": [
-                "Takoyaki",
-                "Chicken Tsukune",
-                "House Sake Carafe",
-                "Shochu"
+                "Shakshuka",
+                "Pita",
+                "Mint Tea",
+                "Falafel"
             ],
-            "correctAnswer": "Takoyaki, Chicken Tsukune, House Sake Carafe",
-            "hint": "Takoyaki are octopus balls - a popular Japanese street food.",
-            "explanation": "Takoyaki are ball-shaped wheat batter snacks filled with octopus - originally from Osaka. Chicken tsukune are Japanese chicken meatball skewers glazed with sauce. A sake carafe is a serving vessel for Japanese rice wine - different from shochu, a distilled spirit.",
+            "correctAnswer": "Shakshuka, Pita, Mint Tea",
+            "hint": "The customer is trying something new for the first time.",
+            "explanation": "‘I’ve never had X before — I’ll give it a try’ is a natural way to express curiosity about an unfamiliar dish.",
             "id": "go_l82_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the ceviche clásico, the lomo saltado, and a Pisco Sour.",
+            "prompt": "Can we get the empanadas as an appetizer for the table, the churrasco for me, and the tres leches cake to share after?",
             "options": [
-                "Ceviche Clásico",
-                "Lomo Saltado",
-                "Pisco Sour",
-                "Chicha Morada"
+                "Empanadas",
+                "Churrasco",
+                "Tres Leches Cake",
+                "Flan"
             ],
-            "correctAnswer": "Ceviche Clásico, Lomo Saltado, Pisco Sour",
-            "hint": "Three classic Peruvian dishes - starter, main, and national cocktail.",
-            "explanation": "Ceviche clásico is raw fish marinated in lime juice with chilli and onion - Peru's national dish. Lomo saltado is stir-fried beef with chips and rice. Pisco Sour is Peru's national cocktail made from pisco brandy, lime, and egg white.",
+            "correctAnswer": "Empanadas, Churrasco, Tres Leches Cake",
+            "hint": "One item is shared at the start, one is personal, and the last is shared again at the end.",
+            "explanation": "‘Churrasco’ refers to grilled meat, popular in South American cooking. ‘Tres leches cake’ is soaked in three types of milk, making it extra moist.",
             "id": "go_l83_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the tiradito, the ají de gallina, and the lucuma ice cream.",
+            "prompt": "I keep hearing good things about the bibimbap. I'll try it, with the kimchi pancake and the sikhye.",
             "options": [
-                "Tiradito",
-                "Ají de Gallina",
-                "Lucuma Ice Cream",
-                "Mazamorra Morada"
+                "Bibimbap",
+                "Kimchi Pancake",
+                "Sikhye",
+                "Japchae"
             ],
-            "correctAnswer": "Tiradito, Ají de Gallina, Lucuma Ice Cream",
-            "hint": "Tiradito is similar to ceviche but cut differently and without onion.",
-            "explanation": "Tiradito is Peruvian raw fish sliced thin like sashimi, dressed with ají amarillo sauce. Ají de gallina is shredded chicken in a creamy yellow pepper sauce. Lucuma is a Peruvian orange fruit - lucuma ice cream has a maple-like flavour.",
+            "correctAnswer": "Bibimbap, Kimchi Pancake, Sikhye",
+            "hint": "The customer decides to try a popular dish based on recommendations from others.",
+            "explanation": "‘I keep hearing good things about…’ shows the customer's decision is based on outside recommendations, not the menu alone. ‘Sikhye’ is a sweet, traditional Korean rice drink.",
             "id": "go_l83_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the causa rellena, the anticuchos, and a glass of chicha morada?",
+            "prompt": "Let's order a bunch of small plates — the patatas bravas, the croquetas, and the pan con tomate.",
             "options": [
-                "Causa Rellena",
-                "Anticuchos",
-                "Chicha Morada",
-                "Pisco Sour"
+                "Patatas Bravas",
+                "Croquetas",
+                "Pan con Tomate",
+                "Gazpacho"
             ],
-            "correctAnswer": "Causa Rellena, Anticuchos, Chicha Morada",
-            "hint": "Anticuchos are Peruvian grilled beef heart skewers - a popular street food.",
-            "explanation": "Causa rellena is a chilled Peruvian potato terrine layered with fillings like tuna. Anticuchos are grilled beef heart skewers - a beloved Peruvian street food. Chicha morada is a non-alcoholic purple corn drink - different from Pisco Sour.",
+            "correctAnswer": "Patatas Bravas, Croquetas, Pan con Tomate",
+            "hint": "All three dishes are classic Spanish tapas meant for sharing.",
+            "explanation": "‘Croquetas’ are small, breaded, and fried rolls usually filled with ham or cheese. ‘Pan con tomate’ is simply bread rubbed with fresh tomato and olive oil.",
             "id": "go_l83_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll start with the mezze selection, then have the mixed grill, and finish with the knafeh.",
+            "prompt": "I'll defer to the chef's recommendation for the appetizer, then the duck breast, and the crème brûlée to finish.",
             "options": [
-                "Mezze Selection",
-                "Mixed Grill",
-                "Knafeh",
-                "Baklava"
+                "Chef's Recommendation",
+                "Duck Breast",
+                "Crème Brûlée",
+                "Foie Gras"
             ],
-            "correctAnswer": "Mezze Selection, Mixed Grill, Knafeh",
-            "hint": "Three courses of Lebanese cuisine - starter mezze, grilled meats, and a cheese pastry dessert.",
-            "explanation": "Mezze is an array of small dishes served as starters in Lebanese cuisine. Mixed grill includes various meats like kafta, shish taouk, and shish kebab. Knafeh is a cheese-filled pastry soaked in syrup - different from baklava, which is nut-filled.",
+            "correctAnswer": "Chef's Recommendation, Duck Breast, Crème Brûlée",
+            "hint": "The customer lets the chef choose the first course instead of picking it themselves.",
+            "explanation": "‘I’ll defer to…’ means letting someone else make the decision. ‘The chef’s recommendation’ is selected as its own item since the exact dish isn't named.",
             "id": "go_l84_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the fattoush salad, the lamb shawarma, and a glass of arak.",
+            "prompt": "What do you recommend for someone who loves spicy food? I'll go with the vindaloo, the garlic naan, and the mango lassi.",
             "options": [
-                "Fattoush Salad",
-                "Lamb Shawarma",
-                "Arak",
-                "Ayran"
+                "Vindaloo",
+                "Garlic Naan",
+                "Mango Lassi",
+                "Korma"
             ],
-            "correctAnswer": "Fattoush Salad, Lamb Shawarma, Arak",
-            "hint": "Arak is an anise-flavoured Lebanese spirit - different from ayran, a yogurt drink.",
-            "explanation": "Fattoush is a Lebanese bread salad with toasted pita and mixed vegetables. Lamb shawarma is spiced lamb slow-roasted on a vertical spit. Arak is anise-flavoured Lebanese spirit served with water. Ayran is a chilled yogurt drink - non-alcoholic.",
+            "correctAnswer": "Vindaloo, Garlic Naan, Mango Lassi",
+            "hint": "The customer describes their taste preference before receiving and accepting a recommendation.",
+            "explanation": "‘Vindaloo’ is one of the spiciest curries on a typical Indian menu, fitting the customer's request for something spicy. ‘Mango lassi’ is a cooling, yogurt-based drink that pairs well with spicy food.",
             "id": "go_l84_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the kibbeh, the stuffed vine leaves, and the labneh?",
+            "prompt": "Is the som tum very sour? A little, that's fine, I'll have it, the larb, and the sticky rice.",
             "options": [
-                "Kibbeh",
-                "Stuffed Vine Leaves",
-                "Labneh",
-                "Hummus"
+                "Som Tum",
+                "Larb",
+                "Sticky Rice",
+                "Pad Thai"
             ],
-            "correctAnswer": "Kibbeh, Stuffed Vine Leaves, Labneh",
-            "hint": "Three Middle Eastern dishes - a meatball dish, rice-filled leaves, and strained yogurt.",
-            "explanation": "Kibbeh is minced lamb mixed with bulgur wheat - fried or baked. Stuffed vine leaves (warak dawali) are filled with rice and herbs. Labneh is strained yogurt - thick and creamy, often served as a dip. Hummus is a different chickpea-based dip.",
+            "correctAnswer": "Som Tum, Larb, Sticky Rice",
+            "hint": "The customer checks on flavor intensity before confirming all three dishes.",
+            "explanation": "‘Som tum’ is a spicy green papaya salad known for its sour, tangy flavor. ‘Larb’ is a minced meat salad, another popular Thai and Laotian dish.",
             "id": "go_l84_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "We'll take the samgyeopsal, the bulgogi, and the japchae for the table.",
+            "prompt": "Just so I know, does the pho have fish sauce in it? Yes? That's fine, I'll have that, the spring rolls, and a Vietnamese coffee.",
             "options": [
-                "Samgyeopsal",
-                "Bulgogi",
-                "Japchae",
-                "Galbi"
+                "Pho",
+                "Spring Rolls",
+                "Vietnamese Coffee",
+                "Bun Cha"
             ],
-            "correctAnswer": "Samgyeopsal, Bulgogi, Japchae",
-            "hint": "Three classic Korean dishes - pork belly, marinated beef, and glass noodles.",
-            "explanation": "Samgyeopsal is thick slices of pork belly grilled at the table. Bulgogi is thinly sliced marinated beef, also grilled. Japchae is sweet potato glass noodles stir-fried with vegetables. Galbi is marinated short ribs - not ordered here.",
+            "correctAnswer": "Pho, Spring Rolls, Vietnamese Coffee",
+            "hint": "An ingredient question comes first, but it doesn't change the customer's mind.",
+            "explanation": "Confirming an ingredient, like fish sauce, helps a customer decide with confidence — here, the answer doesn't stop them from ordering.",
             "id": "go_l85_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the bibimbap, the kimchi jjigae, and a cold Cass beer.",
+            "prompt": "I've never had bibimbap before — I'll give it a try, along with the mandu and the barley tea.",
             "options": [
                 "Bibimbap",
-                "Kimchi Jjigae",
-                "Cass Beer",
-                "Soju"
+                "Mandu",
+                "Barley Tea",
+                "Japchae"
             ],
-            "correctAnswer": "Bibimbap, Kimchi Jjigae, Cass Beer",
-            "hint": "Bibimbap is mixed rice; kimchi jjigae is kimchi stew - both Korean staples.",
-            "explanation": "Bibimbap is rice topped with vegetables, meat, and a fried egg, mixed together with gochujang sauce. Kimchi jjigae is a spicy kimchi stew. Cass is a popular Korean lager; soju is Korea's national distilled spirit - different categories.",
+            "correctAnswer": "Bibimbap, Mandu, Barley Tea",
+            "hint": "The customer is curious about an unfamiliar Korean dish and its typical sides.",
+            "explanation": "‘Mandu’ are Korean dumplings, often filled with meat and vegetables. Barley tea is a common, mild drink served in many Korean restaurants.",
             "id": "go_l85_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the haemul pajeon, the tteokbokki, and the barley tea?",
+            "prompt": "Can we get the hummus as an appetizer for the table, the shawarma for me, and the baklava to share after?",
             "options": [
-                "Haemul Pajeon",
-                "Tteokbokki",
-                "Barley Tea",
-                "Makgeolli"
+                "Hummus",
+                "Shawarma",
+                "Baklava",
+                "Falafel"
             ],
-            "correctAnswer": "Haemul Pajeon, Tteokbokki, Barley Tea",
-            "hint": "Haemul pajeon is a Korean seafood pancake - a popular savoury snack.",
-            "explanation": "Haemul pajeon is a thick Korean pancake with seafood and spring onions. Tteokbokki are chewy rice cakes in a spicy gochujang sauce. Barley tea (boricha) is a non-caffeinated roasted grain tea served cold in Korean restaurants. Makgeolli is a milky Korean rice wine.",
+            "correctAnswer": "Hummus, Shawarma, Baklava",
+            "hint": "A shared starter and dessert bookend one personal main course.",
+            "explanation": "This sentence uses the same shared-personal-shared pattern from earlier levels, just with Middle Eastern dishes this time.",
             "id": "go_l85_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like to order the mezze platter, the mixed grill plate, and the knafeh pastry, please.",
+            "prompt": "I keep hearing good things about the birria tacos. I'll try them, with the elote and the agua de jamaica.",
             "options": [
-                "Mezze Platter",
-                "Mixed Grill Plate",
-                "Knafeh Pastry",
-                "Baklava Box"
+                "Birria Tacos",
+                "Elote",
+                "Agua de Jamaica",
+                "Al Pastor Tacos"
             ],
-            "correctAnswer": "Mezze Platter, Mixed Grill Plate, Knafeh Pastry",
-            "hint": "Full menu names often include a descriptor word - listen for both the dish name and its descriptor.",
-            "explanation": "Restaurant menus often use longer item names that include descriptors like 'platter', 'plate', or 'pastry'. These are part of the full item name as listed on the menu - accuracy matters when tapping items in this game.",
+            "correctAnswer": "Birria Tacos, Elote, Agua de Jamaica",
+            "hint": "The customer chooses a specific, trendy taco style along with two classic Mexican sides.",
+            "explanation": "‘Birria tacos’ are made with slow-braised meat and often served with a rich dipping broth. ‘Agua de jamaica’ is a refreshing drink made from hibiscus flowers.",
             "id": "go_l86_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the fattoush, the lamb kofta, and a glass of pomegranate juice.",
+            "prompt": "Let's order a bunch of small plates — the dumplings, the scallion pancakes, and the hot and sour soup.",
             "options": [
-                "Fattoush",
-                "Lamb Kofta",
-                "Pomegranate Juice",
-                "Grape Juice"
+                "Dumplings",
+                "Scallion Pancakes",
+                "Hot and Sour Soup",
+                "Spring Rolls"
             ],
-            "correctAnswer": "Fattoush, Lamb Kofta, Pomegranate Juice",
-            "hint": "Pomegranate juice is a popular Middle Eastern drink - different from grape juice.",
-            "explanation": "Lamb kofta are spiced minced lamb patties, often grilled on skewers. Fattoush is a Lebanese bread salad. Pomegranate juice is a popular drink in Lebanese and Middle Eastern cuisine - tangy and ruby-red.",
+            "correctAnswer": "Dumplings, Scallion Pancakes, Hot and Sour Soup",
+            "hint": "Three shareable Chinese dishes are named together.",
+            "explanation": "‘Scallion pancakes’ are savory, flaky pancakes made with green onions, a popular starter alongside dumplings.",
             "id": "go_l86_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the manakeesh, the shish taouk, and an ayran?",
+            "prompt": "I'll defer to the chef's recommendation for the soup, then the Peking duck, and the almond cookies to finish.",
             "options": [
-                "Manakeesh",
-                "Shish Taouk",
-                "Ayran",
-                "Arak"
+                "Chef's Recommendation",
+                "Peking Duck",
+                "Almond Cookies",
+                "Hot and Sour Soup"
             ],
-            "correctAnswer": "Manakeesh, Shish Taouk, Ayran",
-            "hint": "Manakeesh is a Lebanese flatbread baked with toppings.",
-            "explanation": "Manakeesh is a Lebanese flatbread baked with za'atar (thyme and sesame), cheese, or meat. Shish taouk is marinated chicken on skewers. Ayran is a chilled yogurt drink - refreshing and non-alcoholic. Arak is alcoholic - not ordered here.",
+            "correctAnswer": "Chef's Recommendation, Peking Duck, Almond Cookies",
+            "hint": "Again, the first course is left up to the chef instead of being named directly.",
+            "explanation": "‘Peking duck’ is a famous Chinese dish known for its thin, crispy skin, traditionally carved and served with pancakes at the table.",
             "id": "go_l86_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "We'll do the churrasco, add the caipirinha for everyone, and the feijoada for the table.",
+            "prompt": "What do you recommend for two people who want to share everything? I'll go with the sushi platter, the miso soup, and the mochi.",
             "options": [
-                "Churrasco",
-                "Caipirinha",
-                "Feijoada",
-                "Pão de Queijo"
+                "Sushi Platter",
+                "Miso Soup",
+                "Mochi",
+                "Edamame"
             ],
-            "correctAnswer": "Churrasco, Caipirinha, Feijoada",
-            "hint": "Three Brazilian dining elements - grilled meats, national cocktail, and bean stew.",
-            "explanation": "Churrasco is Brazilian BBQ - various meats grilled over charcoal. Caipirinha is Brazil's national cocktail, made with cachaça, lime, and sugar. Feijoada is a rich black bean and pork stew - Brazil's national dish. Pão de queijo is cheese bread, not ordered here.",
+            "correctAnswer": "Sushi Platter, Miso Soup, Mochi",
+            "hint": "The customer explains their sharing plan before getting a recommendation.",
+            "explanation": "Describing your situation (‘for two people who want to share’) helps the server give a more useful recommendation.",
             "id": "go_l87_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the picanha, the pão de queijo, and a caipirosca.",
+            "prompt": "Is the jerk chicken very hot? Medium hot, got it, I'll have it, the festival, and the rum cake.",
             "options": [
-                "Picanha",
-                "Pão de Queijo",
-                "Caipirosca",
-                "Caipirinha"
+                "Jerk Chicken",
+                "Festival",
+                "Rum Cake",
+                "Curry Goat"
             ],
-            "correctAnswer": "Picanha, Pão de Queijo, Caipirosca",
-            "hint": "A caipirosca uses vodka instead of cachaça - different from a caipirinha.",
-            "explanation": "Picanha is Brazil's most popular cut of beef - a rump cap with a thick fat cap. Pão de queijo are warm, chewy cheese bread rolls made from tapioca flour. A caipirosca uses vodka; a caipirinha uses cachaça - similar cocktails, different spirits.",
+            "correctAnswer": "Jerk Chicken, Festival, Rum Cake",
+            "hint": "The spice check comes first again, followed by two classic Caribbean sides.",
+            "explanation": "‘Festival’ is a slightly sweet, fried Jamaican dumpling, often served alongside jerk chicken. ‘Rum cake’ is a rich, moist cake soaked in rum syrup.",
             "id": "go_l87_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the alcatra, the farofa, and a guaraná to drink?",
+            "prompt": "We'll do family style — the injera, the doro wat, and the misir wot for the table.",
             "options": [
-                "Alcatra",
-                "Farofa",
-                "Guaraná",
-                "Caipirosca"
+                "Injera",
+                "Doro Wat",
+                "Misir Wot",
+                "Kitfo"
             ],
-            "correctAnswer": "Alcatra, Farofa, Guaraná",
-            "hint": "Guaraná is a popular Brazilian soft drink made from the guaraná berry.",
-            "explanation": "Alcatra is a slow-cooked beef stew from the Azores. Farofa is toasted cassava flour - a classic Brazilian side dish served with meat. Guaraná is a fizzy soft drink made from the guaraná berry - Brazil's most consumed soft drink.",
+            "correctAnswer": "Injera, Doro Wat, Misir Wot",
+            "hint": "Three Ethiopian dishes are shared together in the family-style tradition.",
+            "explanation": "‘Injera’ is a spongy flatbread used to scoop up other dishes, like the spiced chicken stew ‘doro wat’ and the lentil dish ‘misir wot.’",
             "id": "go_l87_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll take the Korean fried chicken tacos, the elote fries, and a craft soda.",
+            "prompt": "I've never had poutine before — I'll give it a try, along with the peameal bacon sandwich and the butter tart.",
             "options": [
-                "Korean Fried Chicken Tacos",
-                "Elote Fries",
-                "Craft Soda",
-                "Regular Soda"
+                "Poutine",
+                "Peameal Bacon Sandwich",
+                "Butter Tart",
+                "Nanaimo Bar"
             ],
-            "correctAnswer": "Korean Fried Chicken Tacos, Elote Fries, Craft Soda",
-            "hint": "Craft soda uses natural ingredients - different from mass-produced regular soda.",
-            "explanation": "Korean fried chicken tacos are a fusion dish combining Korean fried chicken with taco ingredients. Elote fries are fries topped with corn-elote toppings. Craft soda uses natural flavourings - more complex than regular mass-produced soda.",
+            "correctAnswer": "Poutine, Peameal Bacon Sandwich, Butter Tart",
+            "hint": "All three dishes are classic Canadian comfort foods, and the customer is trying them for the first time.",
+            "explanation": "‘Poutine’ is fries topped with cheese curds and gravy. A ‘butter tart’ is a small, sweet pastry filled with a buttery, syrupy filling.",
             "id": "go_l88_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the bánh mì, the summer rolls, and a Vietnamese iced coffee.",
+            "prompt": "Just so I know, does the laksa contain shrimp paste? Yes? Perfect, I'll have that, the roti canai, and the teh tarik.",
             "options": [
-                "Bánh Mì",
-                "Summer Rolls",
-                "Vietnamese Iced Coffee",
-                "Thai Iced Tea"
+                "Laksa",
+                "Roti Canai",
+                "Teh Tarik",
+                "Nasi Lemak"
             ],
-            "correctAnswer": "Bánh Mì, Summer Rolls, Vietnamese Iced Coffee",
-            "hint": "Vietnamese iced coffee is brewed with a phin filter over sweetened condensed milk.",
-            "explanation": "Bánh mì is a Vietnamese baguette sandwich with pâté, meat, pickled vegetables, and herbs. Summer rolls are fresh (not fried) rice paper rolls with shrimp and vegetables. Vietnamese iced coffee is brewed dark and poured over condensed milk and ice - very sweet.",
+            "correctAnswer": "Laksa, Roti Canai, Teh Tarik",
+            "hint": "An ingredient question is confirmed positively before the full order is placed.",
+            "explanation": "‘Laksa’ is a spicy noodle soup from Malaysia and Singapore. ‘Teh tarik’ means ‘pulled tea’ in Malay, referring to how the tea is stretched between two cups while pouring.",
             "id": "go_l88_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the smash burger, the animal fries, and a chocolate shake?",
+            "prompt": "Can we get the spanakopita as an appetizer for the table, the moussaka for me, and the loukoumades to share after?",
             "options": [
-                "Smash Burger",
-                "Animal Fries",
-                "Chocolate Shake",
-                "Vanilla Shake"
+                "Spanakopita",
+                "Moussaka",
+                "Loukoumades",
+                "Baklava"
             ],
-            "correctAnswer": "Smash Burger, Animal Fries, Chocolate Shake",
-            "hint": "Animal fries are loaded fries with burger toppings - popular in California-style diners.",
-            "explanation": "A smash burger is a beef patty pressed flat on a hot griddle to create crispy edges. Animal fries are fries topped with melted cheese, special sauce, and caramelised onions - popularised by In-N-Out Burger in California. Chocolate shake, not vanilla, was ordered.",
+            "correctAnswer": "Spanakopita, Moussaka, Loukoumades",
+            "hint": "A shared starter and shared dessert surround one personal main.",
+            "explanation": "‘Loukoumades’ are small, fried Greek doughnuts drizzled with honey — a lighter, shareable alternative to baklava.",
             "id": "go_l88_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the truffle grilled cheese, the duck fat fries, and an Old Fashioned.",
+            "prompt": "I keep hearing good things about the feijoada. I'll try it, with the pão de queijo and the brigadeiro.",
             "options": [
-                "Truffle Grilled Cheese",
-                "Duck Fat Fries",
-                "Old Fashioned",
-                "Manhattan"
+                "Feijoada",
+                "Pão de Queijo",
+                "Brigadeiro",
+                "Coxinha"
             ],
-            "correctAnswer": "Truffle Grilled Cheese, Duck Fat Fries, Old Fashioned",
-            "hint": "An Old Fashioned is a classic whiskey cocktail - different from a Manhattan.",
-            "explanation": "Duck fat fries are cooked in rendered duck fat - richer and crispier than regular fries. An Old Fashioned is made with whiskey, bitters, and sugar. A Manhattan also uses whiskey but adds sweet vermouth - both are classic cocktails but different.",
+            "correctAnswer": "Feijoada, Pão de Queijo, Brigadeiro",
+            "hint": "A famous Brazilian stew is paired with a cheesy bread and a chocolate dessert.",
+            "explanation": "‘Feijoada’ is a hearty black bean and pork stew, considered Brazil's national dish. ‘Brigadeiro’ is a small, fudgy chocolate truffle rolled in sprinkles.",
             "id": "go_l89_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the burrata bruschetta, the crispy squid, and a Negroni.",
+            "prompt": "Let's order a bunch of small plates — the vine leaves, the halloumi, and the taramasalata.",
             "options": [
-                "Burrata Bruschetta",
-                "Crispy Squid",
-                "Negroni",
-                "Aperol Spritz"
+                "Vine Leaves",
+                "Halloumi",
+                "Taramasalata",
+                "Spanakopita"
             ],
-            "correctAnswer": "Burrata Bruschetta, Crispy Squid, Negroni",
-            "hint": "A Negroni is equal parts gin, vermouth, and Campari - bold and bitter.",
-            "explanation": "A Negroni is a classic Italian cocktail - gin, sweet vermouth, and Campari - equal parts. An Aperol Spritz uses Aperol, prosecco, and soda - sweeter and lighter. Burrata bruschetta combines two Italian ingredients on grilled bread.",
+            "correctAnswer": "Vine Leaves, Halloumi, Taramasalata",
+            "hint": "Three shareable Greek starters are named together.",
+            "explanation": "‘Halloumi’ is a firm cheese that holds its shape when grilled or fried. ‘Taramasalata’ is a creamy dip made from fish roe.",
             "id": "go_l89_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the wagyu beef sliders, the parmesan frites, and a Dry Martini?",
+            "prompt": "I'll defer to the chef's recommendation for the starter, then the paella, and the crema catalana to finish.",
             "options": [
-                "Wagyu Beef Sliders",
-                "Parmesan Frites",
-                "Dry Martini",
-                "Gin and Tonic"
+                "Chef's Recommendation",
+                "Paella",
+                "Crema Catalana",
+                "Gazpacho"
             ],
-            "correctAnswer": "Wagyu Beef Sliders, Parmesan Frites, Dry Martini",
-            "hint": "A Dry Martini is gin and a very small amount of dry vermouth - different from a Gin and Tonic.",
-            "explanation": "Wagyu is a prized Japanese beef breed known for extreme marbling. Sliders are mini burgers. Parmesan frites are fries tossed with grated Parmesan. A Dry Martini uses dry vermouth and gin - different from a Gin and Tonic, which adds tonic water.",
+            "correctAnswer": "Chef's Recommendation, Paella, Crema Catalana",
+            "hint": "The starter is again left to the chef's choice, while the main and dessert are named directly.",
+            "explanation": "Letting the chef choose a starter shows trust in the kitchen — a phrase useful at any restaurant with a tasting or recommendation option.",
             "id": "go_l89_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the black truffle burger, the skin-on fries, and a craft IPA.",
+            "prompt": "What do you recommend for a first-time visit? I'll have the tonkotsu ramen, the gyoza, and the matcha ice cream.",
             "options": [
-                "Black Truffle Burger",
-                "Skin-On Fries",
-                "Craft IPA",
-                "Lager"
+                "Tonkotsu Ramen",
+                "Gyoza",
+                "Matcha Ice Cream",
+                "Miso Ramen"
             ],
-            "correctAnswer": "Black Truffle Burger, Skin-On Fries, Craft IPA",
-            "hint": "Skin-on fries retain their potato skin - different from peeled, standard fries.",
-            "explanation": "Skin-on fries are made with unpeeled potatoes - more rustic and flavourful than peeled fries. A black truffle burger features shaved truffle on the patty. Craft IPA is a hoppy, bitter beer - distinct from a standard lager.",
+            "correctAnswer": "Tonkotsu Ramen, Gyoza, Matcha Ice Cream",
+            "hint": "The customer mentions this is their first visit, then accepts a recommended combination.",
+            "explanation": "‘Tonkotsu’ refers to a rich, creamy broth made from simmered pork bones — a specific style, different from miso ramen.",
             "id": "go_l90_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the double wagyu patty melt, the onion ring tower, and a vanilla bourbon milkshake.",
+            "prompt": "Is the harissa very strong? A little, I like that, I'll have it with the couscous, and the mint tea.",
             "options": [
-                "Double Wagyu Patty Melt",
-                "Onion Ring Tower",
-                "Vanilla Bourbon Milkshake",
-                "Chocolate Milkshake"
+                "Harissa",
+                "Couscous",
+                "Mint Tea",
+                "Tagine"
             ],
-            "correctAnswer": "Double Wagyu Patty Melt, Onion Ring Tower, Vanilla Bourbon Milkshake",
-            "hint": "A patty melt is a burger on toasted rye bread - different from a standard bun burger.",
-            "explanation": "A patty melt is a burger pressed between slices of rye bread with caramelised onions. An onion ring tower is a stack of onion rings presented upright. A vanilla bourbon milkshake adds bourbon whiskey to vanilla ice cream - an adult version.",
+            "correctAnswer": "Harissa, Couscous, Mint Tea",
+            "hint": "The customer asks about a spicy condiment's strength before confirming the rest of the order.",
+            "explanation": "‘Harissa’ is a spicy North African chili paste, often served alongside couscous to add heat to the meal.",
             "id": "go_l90_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the pulled pork double smash, the loaded cheese fries, and a root beer float?",
+            "prompt": "We'll do family style — the dim sum, the char siu, and the egg tarts for the table.",
             "options": [
-                "Pulled Pork Double Smash",
-                "Loaded Cheese Fries",
-                "Root Beer Float",
-                "Regular Root Beer"
+                "Dim Sum",
+                "Char Siu",
+                "Egg Tarts",
+                "Congee"
             ],
-            "correctAnswer": "Pulled Pork Double Smash, Loaded Cheese Fries, Root Beer Float",
-            "hint": "A root beer float is root beer with a scoop of vanilla ice cream - different from plain root beer.",
-            "explanation": "A root beer float (also called an ice cream soda) is root beer poured over vanilla ice cream. Loaded cheese fries have melted cheese, jalapeños, and sauce piled on top. 'Pulled pork double smash' describes the topping and the cooking method in one compound name.",
+            "correctAnswer": "Dim Sum, Char Siu, Egg Tarts",
+            "hint": "Three classic Cantonese dishes are shared for the whole table.",
+            "explanation": "‘Char siu’ is a sweet, barbecued pork, often bright red in color. Egg tarts, with their flaky crust and creamy custard, are a beloved dim sum dessert.",
             "id": "go_l90_q3"
         }
     ]

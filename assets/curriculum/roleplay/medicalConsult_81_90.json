@@ -4,483 +4,483 @@
     "levels": "81-90",
     "quests": [
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"I've been having these episodes of my vision going spotty, and I feel faint right before it happens.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Blurred Vision",
+                "Headache",
+                "Light Sensitivity",
+                "Dizziness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Blurred Vision, Dizziness",
+            "hint": "One symptom affects sight, and the other is a faint, unsteady feeling.",
+            "explanation": "Vision going spotty fits Blurred Vision, and feeling faint fits Dizziness.",
             "id": "mc_l81_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"My hands have felt shaky before I've eaten breakfast lately, and I've felt a bit lightheaded some mornings too,\" the patient says.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Weakness",
+                "Trembling",
+                "Dizziness",
+                "Fatigue"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Trembling, Dizziness",
+            "hint": "One symptom is a shaking movement, and the other is a lightheaded feeling.",
+            "explanation": "Shaky hands before eating is Trembling, and the lightheaded feeling is Dizziness.",
             "id": "mc_l81_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"I've noticed my resting heart rate creeping up on my fitness tracker, and I get short of breath just climbing a single flight now,\" the patient tells the doctor.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Heart Palpitations",
+                "Chest Pain",
+                "Racing Heartbeat",
+                "Shortness of Breath"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Racing Heartbeat, Shortness of Breath",
+            "hint": "One symptom is about the heart's overall speed, and the other is about breathing during activity.",
+            "explanation": "A rising resting heart rate is a Racing Heartbeat, and struggling on one flight of stairs is Shortness of Breath.",
             "id": "mc_l81_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"I get this searing pain between my shoulder blades after long drives, and my fingers tingle down to the tips.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Back Pain",
+                "Numbness",
+                "Pins and Needles",
+                "Shoulder Pain"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Back Pain, Pins and Needles",
+            "hint": "One symptom is pain from a position, and the other is a specific tingling sensation.",
+            "explanation": "Pain between the shoulder blades is Back Pain, and tingling fingertips are Pins and Needles.",
             "id": "mc_l82_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"My appetite's been fine, but I've had this constant low hum of nausea since starting the new prescription, and I've noticed my skin's a bit itchy in patches too,\" the patient says.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Nausea",
+                "Itching",
+                "Rash",
+                "Loss of Appetite"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Nausea, Itching",
+            "hint": "The patient specifically says appetite is fine - that rules out one tempting option.",
+            "explanation": "The patient names Nausea and Itching; appetite was explicitly said to be fine, ruling out Loss of Appetite.",
             "id": "mc_l82_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "In the exam room, the patient says: \"I've had this persistent ringing that won't quit, and sounds at normal volume now make me wince.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Hearing Loss",
+                "Ringing in the Ears",
+                "Earache",
+                "Sensitivity to Sound"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Ringing in the Ears, Sensitivity to Sound",
+            "hint": "One symptom is a sound the patient hears, and the other is a reaction to sound.",
+            "explanation": "Constant ringing is Ringing in the Ears, and wincing at normal volume is Sensitivity to Sound.",
             "id": "mc_l82_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"My joints ache in a way that moves around - my knee one day, my wrist the next - and I've been more tired than usual this week too.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Joint Stiffness",
+                "Joint Pain",
+                "Fatigue",
+                "Weakness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Joint Pain, Fatigue",
+            "hint": "The pain itself is the symptom here, not difficulty moving the joints.",
+            "explanation": "Aching that shifts between joints is Joint Pain, plus the separate symptom Fatigue.",
             "id": "mc_l83_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"I've had this dull throb behind one eye, worse with any movement, and bright light is truly unbearable,\" the patient says.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Migraine",
+                "Headache",
+                "Light Sensitivity",
+                "Nausea"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Migraine, Light Sensitivity",
+            "hint": "The throbbing behind one eye, worse with movement, points to a specific type of headache.",
+            "explanation": "A one-sided throbbing headache worse with movement is a Migraine, reported here alongside severe Light Sensitivity.",
             "id": "mc_l83_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"The side of my toenail has gone red and it's tender when I press on it, and I've also had some swelling around my ankle from the tight shoes,\" the patient tells the doctor.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Ingrown Nail",
+                "Bruise",
+                "Ankle Pain",
+                "Swelling"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Ingrown Nail, Swelling",
+            "hint": "One symptom is at the edge of the nail, and the other is around the ankle.",
+            "explanation": "Redness at the nail's edge is an Ingrown Nail, and puffiness from tight shoes is Swelling.",
             "id": "mc_l83_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"My throat feels like sandpaper every morning, easing up by lunchtime, and I've noticed I'm snoring more, according to my partner.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Sore Throat",
+                "Snoring",
+                "Hoarse Voice",
+                "Insomnia"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Sore Throat, Snoring",
+            "hint": "One symptom eases during the day, and the other happens only at night.",
+            "explanation": "A sandpaper feeling each morning is a Sore Throat, and the nighttime sound is Snoring.",
             "id": "mc_l84_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"I've had this nagging soreness in my Achilles after ramping up my mileage, and my calf cramps at night.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Ankle Pain",
+                "Leg Pain",
+                "Muscle Soreness",
+                "Cramp"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Leg Pain, Cramp",
+            "hint": "One symptom is ongoing soreness, and the other is a sudden, tight feeling at night.",
+            "explanation": "Soreness from more mileage is Leg Pain, and the nighttime tightness is a Cramp.",
             "id": "mc_l84_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "In the exam room, the patient says: \"I've been more anxious than usual and my chest tightens when it hits me.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Racing Heartbeat",
+                "Shortness of Breath",
+                "Anxiety",
+                "Chest Pain"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Anxiety, Chest Pain",
+            "hint": "One symptom is emotional, and the other is a physical feeling in the chest.",
+            "explanation": "Feeling anxious is Anxiety, and the tightening in the chest is Chest Pain.",
             "id": "mc_l84_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"I get this wave of dizziness whenever I go from sitting to standing too fast, and my vision goes dark for a second.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Headache",
+                "Dizziness",
+                "Fatigue",
+                "Blurred Vision"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Dizziness, Blurred Vision",
+            "hint": "One symptom is about balance, and the other is a brief change in sight.",
+            "explanation": "A wave of dizziness on standing is Dizziness, and vision going dark briefly is Blurred Vision.",
             "id": "mc_l85_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"My skin's been unusually pale, and I get winded doing the simplest chores now,\" the patient says.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Paleness",
+                "Fatigue",
+                "Shortness of Breath",
+                "Weakness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Paleness, Shortness of Breath",
+            "hint": "One symptom is about appearance, and the other is about breathing during light activity.",
+            "explanation": "Unusually pale skin is Paleness, and getting winded easily is Shortness of Breath.",
             "id": "mc_l85_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"I've had this deep ache in my hip that radiates into my thigh when I walk, and my lower back has been stiff too,\" the patient tells the doctor.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Leg Pain",
+                "Hip Pain",
+                "Back Pain",
+                "Joint Stiffness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Hip Pain, Back Pain",
+            "hint": "One symptom is centered in the hip, and the other is separately in the lower back.",
+            "explanation": "A deep ache in the hip is Hip Pain, and stiffness lower down is Back Pain.",
             "id": "mc_l85_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"I've had this crawling, itchy feeling under my skin that I can't explain, worse at night, and I've had trouble sleeping because of it.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Itching",
+                "Rash",
+                "Fatigue",
+                "Insomnia"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Itching, Insomnia",
+            "hint": "One symptom is the feeling itself, and the other is what it's causing at night.",
+            "explanation": "A crawling, itchy feeling is Itching, and the resulting sleep trouble is Insomnia.",
             "id": "mc_l86_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"I've been getting these sudden urges to use the bathroom, and I've had some cramping beforehand.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Diarrhea",
+                "Stomach Ache",
+                "Bloating",
+                "Constipation"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Diarrhea, Stomach Ache",
+            "hint": "One symptom is urgency toward the bathroom, and the other is cramping pain.",
+            "explanation": "Sudden urges point to Diarrhea, and cramping beforehand is a Stomach Ache.",
             "id": "mc_l86_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "In the exam room, the patient says: \"My father's had this hacking cough for two weeks now, and he's been short of breath just getting up from his chair.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Wheezing",
+                "Fatigue",
+                "Persistent Cough",
+                "Shortness of Breath"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Persistent Cough, Shortness of Breath",
+            "hint": "One symptom has lasted two weeks, and the other happens with very light movement.",
+            "explanation": "A two-week cough is a Persistent Cough, and breathlessness standing up is Shortness of Breath.",
             "id": "mc_l86_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"I've had this odd fluttering feeling in my chest after my afternoon coffee, and my hands get the shakes too.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Heart Palpitations",
+                "Trembling",
+                "Racing Heartbeat",
+                "Chest Pain"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Heart Palpitations, Trembling",
+            "hint": "One symptom is an irregular chest feeling, and the other is a shaking movement.",
+            "explanation": "A fluttering feeling is Heart Palpitations, and shaky hands are Trembling.",
             "id": "mc_l87_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"My gums have gotten really tender and they bleed even when I floss gently, and I've noticed some bad breath I can't seem to fix,\" the patient says.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Toothache",
+                "Bleeding Gums",
+                "Bad Breath",
+                "Dry Mouth"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Bleeding Gums, Bad Breath",
+            "hint": "One symptom involves blood, and the other is a smell.",
+            "explanation": "Bleeding while flossing gently is Bleeding Gums, and a smell that won't go away is Bad Breath.",
             "id": "mc_l87_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"I've had this heavy, congested feeling in my face for over a week, and my sense of taste has really dulled,\" the patient tells the doctor.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Stuffy Nose",
+                "Sinus Pressure",
+                "Headache",
+                "Loss of Smell"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Sinus Pressure, Loss of Smell",
+            "hint": "One symptom is heaviness in the face, and the other affects taste through smell.",
+            "explanation": "Heaviness in the face is Sinus Pressure; taste is closely linked to smell, so this points to Loss of Smell.",
             "id": "mc_l87_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"My daughter's been scratching her scalp constantly, and I found some small red bumps when I looked closely.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Hair Loss",
+                "Dry Skin",
+                "Scalp Itching",
+                "Rash"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Scalp Itching, Rash",
+            "hint": "One symptom is a feeling, and the other is what the parent actually saw.",
+            "explanation": "Constant scratching is Scalp Itching, and the visible red bumps are a Rash.",
             "id": "mc_l88_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"I get this searing pain when I first step out of bed each morning, right in my heel, and it eases up once I've walked around a bit, though my ankle still feels stiff.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Foot Pain",
+                "Ankle Pain",
+                "Cramp",
+                "Joint Stiffness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Foot Pain, Joint Stiffness",
+            "hint": "One symptom is in the heel specifically, and the other is difficulty moving the ankle.",
+            "explanation": "Heel pain in the morning is Foot Pain, and the lingering tightness is Joint Stiffness.",
             "id": "mc_l88_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "In the exam room, the patient says: \"I've felt unusually cold all the time lately, even in a warm room, and my hair's been coming out more than usual.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Chills",
+                "Fatigue",
+                "Hair Loss",
+                "Cold Hands and Feet"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Chills, Hair Loss",
+            "hint": "One symptom is a whole-body feeling of cold, and the other is about hair.",
+            "explanation": "Feeling cold even in a warm room is Chills, and shedding more hair is Hair Loss.",
             "id": "mc_l88_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"I've had this red patch of skin on my arm that won't heal, and I've also had a mild fever the past two days.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Rash",
+                "Itching",
+                "Swelling",
+                "Fever"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Rash, Fever",
+            "hint": "One symptom is visible on the skin, and the other is about body temperature.",
+            "explanation": "A red patch that won't heal is a Rash, and a mild temperature rise is Fever.",
             "id": "mc_l89_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"I've noticed I bruise if I even bump into furniture lightly, and my nose has bled twice this week for no reason,\" the patient says.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Bruise",
+                "Easy Bruising",
+                "Nosebleed",
+                "Fatigue"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Easy Bruising, Nosebleed",
+            "hint": "One symptom is a pattern over time, and the other is blood from the nose.",
+            "explanation": "Bruising from very light contact is Easy Bruising, and unexplained bleeding is a Nosebleed.",
             "id": "mc_l89_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"I get this stabbing pain in my ear when I chew, and it feels blocked on that side,\" the patient tells the doctor.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Earache",
+                "Ear Fullness",
+                "Jaw Pain",
+                "Toothache"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Earache, Ear Fullness",
+            "hint": "One symptom is sharp pain, and the other is a blocked feeling.",
+            "explanation": "Stabbing pain while chewing is an Earache, and the blocked feeling is Ear Fullness.",
             "id": "mc_l89_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"I've had this persistent lightheadedness when I skip meals, and my hands tremble if I wait too long to eat.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Fatigue",
+                "Dizziness",
+                "Weakness",
+                "Trembling"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Dizziness, Trembling",
+            "hint": "One symptom is about balance, and the other is a shaking movement.",
+            "explanation": "Lightheadedness is Dizziness, and shaky hands from skipping meals are Trembling.",
             "id": "mc_l90_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"My mood's taken a dip since the time change, and my sleep has been all over the place.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Low Mood",
+                "Fatigue",
+                "Insomnia",
+                "Brain Fog"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Low Mood, Insomnia",
+            "hint": "One symptom is emotional, and the other is about sleep patterns.",
+            "explanation": "A dip in mood is Low Mood, and disrupted sleep patterns point to Insomnia.",
             "id": "mc_l90_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the two symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "In the exam room, the patient says: \"I've had this tight band-like feeling around my head most afternoons, and my shoulders feel knotted by the end of the day.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Headache",
+                "Muscle Soreness",
+                "Tension Headache",
+                "Shoulder Pain"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Tension Headache, Shoulder Pain",
+            "hint": "A tight, band-like feeling around the head has a more specific name than a plain headache.",
+            "explanation": "A band-like tightness around the head is a Tension Headache, plus the separate symptom Shoulder Pain.",
             "id": "mc_l90_q3"
         }
     ]

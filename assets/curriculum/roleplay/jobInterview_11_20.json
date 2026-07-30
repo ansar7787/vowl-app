@@ -4,483 +4,483 @@
     "levels": "11-20",
     "quests": [
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "How would you describe your personality?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "I don't really think about my personality.",
+                "I'm complicated, it's hard to explain.",
+                "I'm outgoing, dependable, and enjoy solving problems."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "A few clear, positive personality traits work best.",
+            "explanation": "Naming a few clear, positive traits gives the interviewer a quick, useful picture of who you are.",
             "id": "ji_l11_q1"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "What three words would you use to describe yourself?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "I can't pick just three words.",
+                "Organized, reliable, and enthusiastic.",
+                "Normal, average, and quiet."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "Choose specific, positive words rather than vague ones.",
+            "explanation": "Specific, positive words are more memorable and useful to an interviewer than vague or unenthusiastic ones.",
             "id": "ji_l11_q2"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "How do others usually describe your personality?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "People often say I'm easy to work with and good at staying positive.",
+                "I'm not sure what others think of me.",
+                "People say I can be a bit difficult sometimes."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "Positive feedback from others adds credibility to your answer.",
+            "explanation": "Sharing positive feedback from others adds credibility, since it's not just your own opinion of yourself.",
             "id": "ji_l11_q3"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "What do you know about our company?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "Not much, honestly, I didn't have time to look it up.",
+                "I know you're a growing company known for excellent customer service in this industry.",
+                "I know you're a company, and you're hiring."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "Employers expect candidates to have researched the company beforehand.",
+            "explanation": "Showing you've researched the company demonstrates genuine interest and preparation, both important qualities.",
             "id": "ji_l12_q1"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "What made you interested in our company specifically?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "It was just one of many companies I applied to.",
+                "I don't know much about the company, but the job sounded fine.",
+                "I admire your reputation for innovation and would love to contribute to that."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "A specific reason connected to the company shows genuine interest.",
+            "explanation": "A specific reason tied to the company's reputation or values shows real interest, not just a general job search.",
             "id": "ji_l12_q2"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "How familiar are you with what we do here?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "I've read about your recent projects and I'm impressed by your growth in the industry.",
+                "I haven't really looked into it that much.",
+                "I know you sell things, but not much more."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "Mentioning something specific you learned shows genuine preparation.",
+            "explanation": "Mentioning something specific, like recent projects, proves you did real research rather than a quick guess.",
             "id": "ji_l12_q3"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "How do you handle deadlines?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "I plan ahead and break large tasks into smaller steps to stay on track.",
+                "I usually finish things at the last minute.",
+                "Deadlines stress me out a lot."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "A planning strategy shows you can manage time effectively.",
+            "explanation": "Describing a planning strategy shows you can manage time effectively and consistently meet deadlines.",
             "id": "ji_l13_q1"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "What do you do when a deadline feels tight?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "I just work faster and hope it's enough.",
+                "I usually miss it and explain later.",
+                "I prioritize the most important tasks and ask for help if I need it."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "Prioritizing tasks and being willing to ask for help are strong strategies.",
+            "explanation": "Prioritizing tasks and being willing to ask for help shows both organization and good judgment under pressure.",
             "id": "ji_l13_q2"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "Have you ever had to manage multiple deadlines at once?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "No, I've never had more than one thing to do at a time.",
+                "Yes, I made a schedule and focused on the highest-priority tasks first.",
+                "Yes, and it was a mess, but I got through it somehow."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "A specific method for managing multiple deadlines shows real experience.",
+            "explanation": "Describing a specific method, like making a schedule, shows real experience handling competing priorities.",
             "id": "ji_l13_q3"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "What do you like to do outside of work?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "I enjoy hiking and reading, which help me recharge and stay focused.",
+                "I don't really do anything interesting.",
+                "That's kind of personal, isn't it?"
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "A simple, genuine answer helps build rapport with the interviewer.",
+            "explanation": "A simple, genuine answer helps build rapport and shows you have a healthy, well-rounded life outside of work.",
             "id": "ji_l14_q1"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "Do you have any hobbies?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "Not really, I mostly just relax at home.",
+                "I play the guitar and volunteer at a local community center on weekends.",
+                "Why does that matter for this job?"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "Hobbies that show initiative or community involvement can leave a good impression.",
+            "explanation": "Hobbies that show initiative, like volunteering, can leave a great impression beyond just your work skills.",
             "id": "ji_l14_q2"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "How do you like to spend your free time?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "I usually just watch TV and don't do much else.",
+                "I'd rather not talk about my personal life.",
+                "I like cooking new recipes and spending time with family."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "A warm, simple answer works well for this kind of rapport-building question.",
+            "explanation": "A warm, simple answer helps the interviewer connect with you as a person, building rapport early in the conversation.",
             "id": "ji_l14_q3"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "What would your ideal workday look like?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "Honestly, as little work as possible.",
+                "A mix of focused individual work and time collaborating with my team.",
+                "I don't really think about that."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "A balanced answer that includes both focus and teamwork works well.",
+            "explanation": "Describing a balanced mix of focus and teamwork shows you understand how real workplaces function.",
             "id": "ji_l15_q1"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "How do you like to structure your day at work?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "I start with my most important tasks in the morning when I'm most focused.",
+                "I don't really plan, I just go with the flow.",
+                "I do the easy tasks first and save the hard ones for later."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "Starting with priorities shows strong time management.",
+            "explanation": "Starting with your most important tasks shows strong time management and self-awareness about your own energy levels.",
             "id": "ji_l15_q2"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "What does a productive day look like to you?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "A day where nothing goes wrong, I guess.",
+                "A day where I don't have too much to do.",
+                "A day where I complete my key tasks and help move a project forward."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "Connect productivity to concrete outcomes, not just avoiding problems.",
+            "explanation": "Connecting productivity to concrete outcomes shows you think in terms of results, which employers value.",
             "id": "ji_l15_q3"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "What do you think makes a good employee?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "Someone who never makes mistakes.",
+                "Someone who is reliable, communicates well, and takes ownership of their work.",
+                "Someone who just does what they're told."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "Reliability, communication, and ownership are core workplace qualities.",
+            "explanation": "Reliability, communication, and ownership are core qualities every employer looks for in a strong employee.",
             "id": "ji_l16_q1"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "What qualities do you think are important in this role?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "Attention to detail and the ability to work well with a team.",
+                "I'm not sure, I haven't thought about it.",
+                "Just showing up on time, really."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "Think about qualities directly relevant to the job you're applying for.",
+            "explanation": "Naming qualities directly relevant to the job shows you understand what the role actually requires.",
             "id": "ji_l16_q2"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "What separates a good employee from an average one?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "I don't think there's much difference, honestly.",
+                "A good employee just works longer hours.",
+                "A good employee takes initiative instead of waiting to be told what to do."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "Initiative is a quality that stands out to employers.",
+            "explanation": "Initiative is a quality that consistently stands out to employers, since it shows independent thinking and motivation.",
             "id": "ji_l16_q3"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "How do you handle making a mistake at work?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "I take responsibility, fix the issue, and learn from it for next time.",
+                "I try not to bring attention to it.",
+                "I usually blame the situation or bad luck."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "Taking responsibility and learning from mistakes shows maturity.",
+            "explanation": "Taking responsibility and learning from a mistake shows maturity and a growth mindset, which employers respect.",
             "id": "ji_l17_q1"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "What do you do after you realize you've made an error?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "I wait to see if anyone notices first.",
+                "I let the right people know quickly and work on a solution.",
+                "I try to fix it quietly without telling anyone."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "Communicating errors quickly is more professional than hiding them.",
+            "explanation": "Communicating a mistake quickly and honestly is far more professional than trying to hide it, which can make things worse.",
             "id": "ji_l17_q2"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "Tell me how you've grown from a past mistake.",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "I don't really remember making any big mistakes.",
+                "I try not to think about my past mistakes.",
+                "I once missed a detail on a report, so now I always double-check my work before submitting it."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "A specific example plus a lasting change shows real growth.",
+            "explanation": "A specific example paired with a lasting change in behavior shows genuine growth, not just an apology.",
             "id": "ji_l17_q3"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "What is your dream job?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "Honestly, not having to work at all.",
+                "I haven't really thought about it.",
+                "A role where I can keep growing my skills while making a real impact, much like this one."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "Connecting your dream job to the role you're interviewing for is a smart move.",
+            "explanation": "Connecting your dream job to the actual role shows genuine enthusiasm for the position you're applying to.",
             "id": "ji_l18_q1"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "If you could have any job, what would it be?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "Something similar to this role, where I can use my skills to solve real problems.",
+                "Something completely different from this field.",
+                "I'd probably just travel instead of working."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "It's best to keep your answer relevant to the job you're applying for.",
+            "explanation": "Keeping your answer relevant to the job you're applying for shows the interviewer you're genuinely invested in this path.",
             "id": "ji_l18_q2"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "Where would you like your career to eventually lead?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "I don't really plan that far ahead.",
+                "I'd like to grow into a role with more responsibility in this field over time.",
+                "Somewhere with much less work, ideally."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "A goal that shows ambition within the same field works well.",
+            "explanation": "A goal that shows ambition within the same field reassures the employer that you're building a real career, not just passing through.",
             "id": "ji_l18_q3"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "How would your friends describe you?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "I'm not sure, you'd have to ask them.",
+                "They'd say I'm dependable and always willing to help when needed.",
+                "Probably that I'm a bit lazy sometimes."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "Positive traits from others' perspective add credibility.",
+            "explanation": "Sharing positive traits from a friend's perspective adds credibility, since it's an outside view of your character.",
             "id": "ji_l19_q1"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "What would your best friend say is your best quality?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "They'd probably say I'm a great listener and always keep my word.",
+                "I honestly don't know.",
+                "They'd probably say I talk too much."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "Choose a quality that's also valuable in a workplace.",
+            "explanation": "Choosing a quality that's also valuable at work, like being a great listener, connects your personal life to professional skills.",
             "id": "ji_l19_q2"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "How do people who know you well describe your work ethic?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "I've never really asked anyone about that.",
+                "They'd probably say I procrastinate a lot.",
+                "They'd say I always follow through on what I commit to."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "Following through on commitments is a strong, specific trait to highlight.",
+            "explanation": "Following through on commitments is a strong, specific trait that directly reassures an employer about your reliability.",
             "id": "ji_l19_q3"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "What are your salary expectations?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "I'll take whatever you're willing to pay.",
+                "I'm looking for a fair salary based on my experience and the market rate for this role.",
+                "I need at least double what I made before, no matter what."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "A reasonable, research-based answer works better than an extreme one.",
+            "explanation": "A reasonable, research-based answer shows you understand your value without seeming unwilling to discuss it or overly demanding.",
             "id": "ji_l20_q1"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "Do you have a specific salary range in mind?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "I haven't really thought about a number.",
+                "Just give me your highest offer.",
+                "Based on my research, I'd expect a range that reflects the responsibilities of this role."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 2,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "Mentioning research shows you've prepared for this common question.",
+            "explanation": "Mentioning research shows you've prepared thoughtfully for a question that many candidates find difficult.",
             "id": "ji_l20_q2"
         },
         {
-            "instruction": "Answer to maximize your professionalism score.",
+            "instruction": "Choose the response that shows the most professionalism.",
             "subtype": "jobInterview",
             "interactionType": "rating",
-            "interviewerQuestion": "Where do you see yourself in 5 solar cycles?",
+            "interviewerQuestion": "How much are you hoping to earn in this role?",
             "options": [
-                "Leading the fleet",
-                "In the Void",
-                "I don't know"
+                "I'd like a salary that reflects both my experience and the value I can bring to the team.",
+                "I really don't have a number in mind at all.",
+                "As much as possible, obviously."
             ],
             "correctAnswerIndex": 0,
             "professionalismRating": 5,
-            "hint": "Ambition is valued here.",
-            "explanation": "First impressions are vital.",
+            "hint": "Framing salary around the value you bring sounds professional and confident.",
+            "explanation": "Framing your salary expectations around the value you bring sounds professional and shows confidence without being unreasonable.",
             "id": "ji_l20_q3"
         }
     ]

@@ -4,483 +4,483 @@
     "levels": "61-70",
     "quests": [
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "For my starter I think I'll go with the scallops, and for my main the venison.",
+            "prompt": "For my starter I think I'll go with the shrimp cocktail, and for my main, the ribeye, cooked medium-rare. And the tiramisu to finish.",
             "options": [
-                "Scallops",
-                "Venison",
-                "Foie Gras",
-                "Duck Breast"
+                "Shrimp Cocktail",
+                "Ribeye",
+                "Tiramisu",
+                "Cheesecake"
             ],
-            "correctAnswer": "Scallops, Venison",
-            "hint": "The customer uses the course structure - 'for my starter' and 'for my main'.",
-            "explanation": "'For my starter... for my main' is a natural indirect way to place a restaurant order. The customer does not say 'I'll have' directly but the meaning is clear from context.",
+            "correctAnswer": "Shrimp Cocktail, Ribeye, Tiramisu",
+            "hint": "The steak's cooking temperature is mentioned, but it's just a detail about the main course, not a separate item.",
+            "explanation": "‘Medium-rare’ describes how the steak should be cooked — it doesn't change which three items to select. ‘I think I’ll go with…’ shows natural hesitation while deciding.",
             "id": "go_l61_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "We'd like to share the seafood tower, and then I'll have the lamb while my partner has the turbot.",
+            "prompt": "I'll have the calamari, and could you make the salmon well-done? I'll finish with the chocolate cake.",
             "options": [
-                "Seafood Tower",
-                "Lamb",
-                "Turbot",
-                "Salmon"
+                "Calamari",
+                "Salmon",
+                "Chocolate Cake",
+                "Cheesecake"
             ],
-            "correctAnswer": "Seafood Tower, Lamb, Turbot",
-            "hint": "The customer orders one shared item and two individual mains - three items total.",
-            "explanation": "When two people order together, listen for the shared item and both individual choices. 'While my partner has...' introduces the second person's main - all three items are being ordered.",
+            "correctAnswer": "Calamari, Salmon, Chocolate Cake",
+            "hint": "‘Well-done’ is a cooking instruction for the fish, not an extra course.",
+            "explanation": "Asking for fish to be ‘well-done’ means fully cooked through, with no translucent center. This request doesn't add a fourth item to the order.",
             "id": "go_l61_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I think I'll start with the soup and then the sea bass, followed by the cheese selection.",
+            "prompt": "My partner will have the goat cheese salad, and I'll have the lamb chops, with the crème brûlée to share.",
             "options": [
-                "Soup of the Day",
-                "Sea Bass",
-                "Cheese Selection",
-                "Crème Brûlée"
+                "Goat Cheese Salad",
+                "Lamb Chops",
+                "Crème Brûlée",
+                "Chocolate Mousse"
             ],
-            "correctAnswer": "Soup of the Day, Sea Bass, Cheese Selection",
-            "hint": "Three courses: starter soup, fish main, and cheese in place of dessert.",
-            "explanation": "In fine dining, a cheese course can replace dessert. 'Start with... then... followed by' is a sophisticated ordering sequence. The customer orders a complete three-course meal using varied transitional language.",
+            "correctAnswer": "Goat Cheese Salad, Lamb Chops, Crème Brûlée",
+            "hint": "Two different starters or mains might be expected, but read carefully — only one starter is named here.",
+            "explanation": "‘My partner will have…’ shows two people are ordering different mains, but this sentence only names one starter, one main, and one shared dessert.",
             "id": "go_l61_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'm vegetarian, so I'll have the garden risotto, the truffle arancini, and the green salad.",
+            "prompt": "I have a shellfish allergy, so I'll go with the beet salad. For my main, the roast chicken. And the apple tart for dessert.",
             "options": [
-                "Garden Risotto",
-                "Truffle Arancini",
-                "Green Salad",
-                "Caesar Salad"
+                "Beet Salad",
+                "Roast Chicken",
+                "Apple Tart",
+                "Fruit Tart"
             ],
-            "correctAnswer": "Garden Risotto, Truffle Arancini, Green Salad",
-            "hint": "The customer identifies a dietary preference before ordering - all three items must be selected.",
-            "explanation": "Customers often state dietary preferences before ordering: 'I'm vegetarian, so...' This context does not reduce the items ordered - all three must still be selected. Green salad and Caesar salad are both salads but different.",
+            "correctAnswer": "Beet Salad, Roast Chicken, Apple Tart",
+            "hint": "The allergy explains the customer's choice, but doesn't change what needs to be selected.",
+            "explanation": "Mentioning an allergy helps explain why a customer avoids certain dishes, but the actual order is still just the three named items.",
             "id": "go_l62_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'm gluten-free, so I'll take the grilled salmon, the roasted vegetables, and a sparkling water.",
+            "prompt": "Could I get the French onion soup? And for my main, the filet mignon — medium-rare, please. Then the panna cotta.",
             "options": [
-                "Grilled Salmon",
-                "Roasted Vegetables",
-                "Sparkling Water",
-                "Still Water"
+                "French Onion Soup",
+                "Filet Mignon",
+                "Panna Cotta",
+                "Crème Caramel"
             ],
-            "correctAnswer": "Grilled Salmon, Roasted Vegetables, Sparkling Water",
-            "hint": "The dietary mention ('I'm gluten-free') is a context clue, not an item to select.",
-            "explanation": "'I'm gluten-free' explains the ordering choices but is not itself an item. The customer still orders three items. Sparkling and still water are distinct - 'sparkling' has been specifically requested.",
+            "correctAnswer": "French Onion Soup, Filet Mignon, Panna Cotta",
+            "hint": "The steak's temperature is a cooking detail woven into the middle of the order.",
+            "explanation": "This sentence places the cooking instruction mid-order rather than at the end, but it's still just extra detail about the filet mignon, not a separate item.",
             "id": "go_l62_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Since I don't eat red meat, I'll have the chicken breast, the ratatouille, and the lemon tart.",
+            "prompt": "I'll start with the bruschetta. For my main, could you cook the duck breast medium? And I'll finish with the lemon tart.",
             "options": [
-                "Chicken Breast",
-                "Ratatouille",
+                "Bruschetta",
+                "Duck Breast",
                 "Lemon Tart",
                 "Chocolate Tart"
             ],
-            "correctAnswer": "Chicken Breast, Ratatouille, Lemon Tart",
-            "hint": "Three items from a customer who avoids red meat - listen for each item.",
-            "explanation": "The phrase 'since I don't eat red meat' explains the choice of chicken. Ratatouille is a Provençal stewed vegetable dish. Lemon tart and chocolate tart are both tarts - listen carefully for the flavour adjective.",
+            "correctAnswer": "Bruschetta, Duck Breast, Lemon Tart",
+            "hint": "The question about cooking temperature is part of the main course request, not a fourth item.",
+            "explanation": "‘Could you cook the duck breast medium?’ is a polite way to specify doneness for meats other than steak, like duck.",
             "id": "go_l62_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "For our table, I'll order the sharing board, three portions of the market fish, and a bottle of still water.",
+            "prompt": "One of us will have the mushroom soup, and the other will have the seared scallops. We'll share the sticky toffee pudding.",
             "options": [
-                "Sharing Board",
-                "Market Fish",
-                "Still Water",
-                "Sparkling Water"
+                "Mushroom Soup",
+                "Seared Scallops",
+                "Sticky Toffee Pudding",
+                "Chocolate Fondant"
             ],
-            "correctAnswer": "Sharing Board, Market Fish, Still Water",
-            "hint": "The customer orders for a group - listen for the key menu items, not the quantities.",
-            "explanation": "When ordering for a group, quantities (three portions, a bottle) are specified but the menu items themselves are what matter. 'Market fish' refers to the freshest fish available that day.",
+            "correctAnswer": "Mushroom Soup, Seared Scallops, Sticky Toffee Pudding",
+            "hint": "Two different starters could appear, but here only one starter and one main are named for two people, plus a shared dessert.",
+            "explanation": "‘One of us… the other…’ is a natural way to describe two people ordering different dishes at the same table, while sharing dessert.",
             "id": "go_l63_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "We'll all take the set lunch menu, and could you also bring us the bread basket and the wine list?",
+            "prompt": "I'll go with the calamari to start. As for the main, I'll take the swordfish, and I'll finish with the coconut cream pie.",
             "options": [
-                "Set Lunch Menu",
-                "Bread Basket",
-                "Wine List",
-                "Dessert Menu"
+                "Calamari",
+                "Swordfish",
+                "Coconut Cream Pie",
+                "Key Lime Pie"
             ],
-            "correctAnswer": "Set Lunch Menu, Bread Basket, Wine List",
-            "hint": "Three things are requested: a menu type, a bread service, and the wine list.",
-            "explanation": "A 'set lunch menu' is a fixed-price menu with limited choices. Requesting the wine list is a standard restaurant interaction - the customer wants to choose wine separately. The bread basket is a side service.",
+            "correctAnswer": "Calamari, Swordfish, Coconut Cream Pie",
+            "hint": "‘As for the main’ signals the customer is now moving on to their second course.",
+            "explanation": "‘As for…’ is a natural way to shift from one course to the next while ordering, similar to ‘for my main.’",
             "id": "go_l63_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the niçoise salad and my colleague will have the club sandwich - we'll share a sparkling water.",
+            "prompt": "For the table, we'll start with the garlic bread. I'll have the seafood risotto for my main, and the panna cotta for dessert.",
             "options": [
-                "Niçoise Salad",
-                "Club Sandwich",
-                "Sparkling Water",
-                "Still Water"
+                "Garlic Bread",
+                "Seafood Risotto",
+                "Panna Cotta",
+                "Tiramisu"
             ],
-            "correctAnswer": "Niçoise Salad, Club Sandwich, Sparkling Water",
-            "hint": "The customer orders for both themselves and a colleague - all three items are being ordered.",
-            "explanation": "A niçoise salad is a French salad with tuna, green beans, olives, and hard-boiled eggs. Two people ordering together - listen for both meals plus the shared drink. 'Sparkling' is specifically requested here.",
+            "correctAnswer": "Garlic Bread, Seafood Risotto, Panna Cotta",
+            "hint": "‘For the table’ shows the starter will be shared, even though the main and dessert belong to just one person.",
+            "explanation": "‘For the table’ signals a shared starter, which is common when a group orders together, even if the rest of the order is personal.",
             "id": "go_l63_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "We're celebrating tonight - could we have the Krug Champagne, the tasting menu for two, and the birthday dessert?",
+            "prompt": "I'll have the pâté, then the pork tenderloin — cooked through, please — and the crème caramel to finish.",
             "options": [
-                "Krug Champagne",
-                "Tasting Menu for Two",
-                "Birthday Dessert",
-                "Champagne Toast"
+                "Pâté",
+                "Pork Tenderloin",
+                "Crème Caramel",
+                "Panna Cotta"
             ],
-            "correctAnswer": "Krug Champagne, Tasting Menu for Two, Birthday Dessert",
-            "hint": "The celebration context tells you this is a special occasion order - three premium items.",
-            "explanation": "Krug is a prestigious Champagne house. 'Tasting menu for two' is a fixed multi-course meal for two people. The birthday dessert is a separate item that must be pre-arranged. A champagne toast is a service, not a separate menu item.",
+            "correctAnswer": "Pâté, Pork Tenderloin, Crème Caramel",
+            "hint": "‘Cooked through’ is a common request for pork, meaning no pink should remain.",
+            "explanation": "Unlike beef, pork is traditionally requested ‘cooked through’ for food safety, even though modern pork can safely be served slightly pink. This is just a cooking detail, not a new item.",
             "id": "go_l64_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "For our anniversary, I'd like the champagne, the five-course menu, and could you arrange the rose petals on the table?",
+            "prompt": "For my starter, the wedge salad. For my main, could you make the burger medium? And for dessert, the s'mores.",
             "options": [
-                "Champagne",
-                "Five-Course Menu",
-                "Rose Petals",
-                "Chocolates"
+                "Wedge Salad",
+                "Burger",
+                "S'mores",
+                "Chocolate Cake"
             ],
-            "correctAnswer": "Champagne, Five-Course Menu, Rose Petals",
-            "hint": "Even non-food requests like 'rose petals' are items to fulfil in this special occasion order.",
-            "explanation": "In fine dining, special occasion requests include table decoration like rose petals. The customer orders three distinct things - a drink, a meal structure, and a decoration. All three must be fulfilled.",
+            "correctAnswer": "Wedge Salad, Burger, S'mores",
+            "hint": "The cooking instruction for the burger patty sits in the middle of the order.",
+            "explanation": "Burgers, like steaks, can be cooked to different levels of doneness. ‘Medium’ here describes how the patty should be cooked.",
             "id": "go_l64_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could you bring out the birthday cake, a bottle of sparkling wine, and the dessert tasting plate?",
+            "prompt": "I'll start with the shrimp bisque. My main will be the veal chop, rare if possible. And I'll finish with the profiteroles.",
             "options": [
-                "Birthday Cake",
-                "Sparkling Wine",
-                "Dessert Tasting Plate",
-                "Cheese Board"
+                "Shrimp Bisque",
+                "Veal Chop",
+                "Profiteroles",
+                "Éclair"
             ],
-            "correctAnswer": "Birthday Cake, Sparkling Wine, Dessert Tasting Plate",
-            "hint": "Three items for a birthday celebration - cake, wine, and a dessert selection.",
-            "explanation": "A 'dessert tasting plate' features small portions of several desserts - different from a single dessert. Distinguishing 'sparkling wine' from 'cheese board' requires careful listening to both items in context.",
+            "correctAnswer": "Shrimp Bisque, Veal Chop, Profiteroles",
+            "hint": "‘Rare if possible’ is a polite way to request a specific cooking temperature.",
+            "explanation": "‘If possible’ softens the request, making it sound more like a preference than a demand — a useful, polite phrase for any special request.",
             "id": "go_l64_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like to order room service - the club sandwich, a bottle of still water, and the Caesar salad, please.",
+            "prompt": "We'd like the calamari for the table, my partner's having the pork belly, and I'll have the sea bass.",
             "options": [
-                "Club Sandwich",
-                "Still Water",
-                "Caesar Salad",
-                "Sparkling Water"
+                "Calamari",
+                "Pork Belly",
+                "Sea Bass",
+                "Salmon"
             ],
-            "correctAnswer": "Club Sandwich, Still Water, Caesar Salad",
-            "hint": "Room service orders follow the same pattern - listen for the three menu items.",
-            "explanation": "Room service ordering uses identical language to restaurant ordering. A club sandwich is a triple-decker with chicken, bacon, lettuce, and tomato. Still water (no bubbles) was specifically requested - not sparkling.",
+            "correctAnswer": "Calamari, Pork Belly, Sea Bass",
+            "hint": "This sentence names a shared starter and two different mains for two people.",
+            "explanation": "‘My partner’s having…’ is a short way of saying ‘my partner is having…’ This structure is common when two people at a table order different mains.",
             "id": "go_l65_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the continental breakfast, a pot of English breakfast tea, and the morning newspaper?",
+            "prompt": "Could I get the onion soup? For my main, I'll have the strip steak, cooked medium, with the chocolate soufflé after.",
             "options": [
-                "Continental Breakfast",
-                "English Breakfast Tea",
-                "Morning Newspaper",
-                "Coffee"
+                "Onion Soup",
+                "Strip Steak",
+                "Chocolate Soufflé",
+                "Chocolate Mousse"
             ],
-            "correctAnswer": "Continental Breakfast, English Breakfast Tea, Morning Newspaper",
-            "hint": "The morning newspaper is also an item to fulfil in this hotel room service order.",
-            "explanation": "Hotel room service can include non-food items like newspapers. English breakfast tea is a specific strong black tea blend. Continental breakfast includes pastries and cold items - no cooked food.",
+            "correctAnswer": "Onion Soup, Strip Steak, Chocolate Soufflé",
+            "hint": "All the usual course markers are here, but listen closely for the exact steak cut named.",
+            "explanation": "‘Strip steak’ is a specific cut, different from a ribeye or filet. Always listen for the exact cut named, since menus often list several.",
             "id": "go_l65_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the cheeseburger, the truffle fries, and a chocolate milkshake, please.",
+            "prompt": "I'll have the burrata to start, the branzino for my main — please don't overcook it — and the affogato to finish.",
             "options": [
-                "Cheeseburger",
-                "Truffle Fries",
-                "Chocolate Milkshake",
-                "Vanilla Milkshake"
+                "Burrata",
+                "Branzino",
+                "Affogato",
+                "Tiramisu"
             ],
-            "correctAnswer": "Cheeseburger, Truffle Fries, Chocolate Milkshake",
-            "hint": "Three classic items - listen carefully for 'chocolate' versus 'vanilla' milkshake.",
-            "explanation": "The flavour adjective distinguishes identical products: chocolate milkshake versus vanilla milkshake. Truffle fries are an upgraded version of fries with truffle oil. All three items form a classic (but upscale) burger meal.",
+            "correctAnswer": "Burrata, Branzino, Affogato",
+            "hint": "A polite request about cooking is tucked into the main course description.",
+            "explanation": "‘Please don’t overcook it’ is a polite way to ask for careful preparation, especially for delicate fish like branzino. ‘Affogato’ is a scoop of ice cream with a shot of hot espresso poured over it.",
             "id": "go_l65_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "For my business lunch, I'll have the Caesar salad, the grilled sea bass, and a still water.",
+            "prompt": "I'm allergic to shellfish, so I'll skip the seafood starter and have the garden salad instead. For my main, the roast chicken, and the apple crumble to finish.",
             "options": [
-                "Caesar Salad",
-                "Grilled Sea Bass",
-                "Still Water",
-                "Sparkling Water"
+                "Garden Salad",
+                "Roast Chicken",
+                "Apple Crumble",
+                "Fruit Tart"
             ],
-            "correctAnswer": "Caesar Salad, Grilled Sea Bass, Still Water",
-            "hint": "A business lunch order - professional language, three standard items.",
-            "explanation": "Business lunches typically involve lighter, professional choices. The customer specifies 'still' water - this distinction is important in a restaurant setting. Sea bass and Caesar salad are both classic business lunch choices.",
+            "correctAnswer": "Garden Salad, Roast Chicken, Apple Crumble",
+            "hint": "The customer explains why they're avoiding one dish, then names their actual order.",
+            "explanation": "‘I’ll skip… and have… instead’ clearly shows a substitution. The seafood starter mentioned is not part of the final order — only the garden salad is.",
             "id": "go_l66_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "My colleague will have the soup of the day, the risotto, and a glass of white wine.",
+            "prompt": "For my starter, the beet and goat cheese salad. My main will be the halibut, and could you cook it just until it flakes? Then the lemon tart.",
             "options": [
-                "Soup of the Day",
-                "Risotto",
-                "White Wine",
-                "Red Wine"
+                "Beet and Goat Cheese Salad",
+                "Halibut",
+                "Lemon Tart",
+                "Chocolate Tart"
             ],
-            "correctAnswer": "Soup of the Day, Risotto, White Wine",
-            "hint": "The customer is ordering on behalf of a colleague - all three items are still ordered.",
-            "explanation": "When ordering for someone else, the language changes to 'my colleague will have'. The items ordered are identical in nature to ordering for yourself. White wine was specifically requested - not red.",
+            "correctAnswer": "Beet and Goat Cheese Salad, Halibut, Lemon Tart",
+            "hint": "‘Until it flakes’ describes exactly how the fish should be cooked, not a separate request.",
+            "explanation": "Fish is often described as done when it ‘flakes easily’ with a fork. This is simply a more descriptive way of requesting well-cooked fish.",
             "id": "go_l66_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the smoked salmon starter, the chicken supreme, and an espresso to finish?",
+            "prompt": "My partner will have the mussels, and I'll have the steak frites, medium, with the crème brûlée to share.",
             "options": [
-                "Smoked Salmon",
-                "Chicken Supreme",
-                "Espresso",
-                "Cappuccino"
+                "Mussels",
+                "Steak Frites",
+                "Crème Brûlée",
+                "Panna Cotta"
             ],
-            "correctAnswer": "Smoked Salmon, Chicken Supreme, Espresso",
-            "hint": "Three courses with 'to finish' indicating the espresso comes last.",
-            "explanation": "Chicken supreme is a classic French dish - a skin-on chicken breast in a cream sauce. 'To finish' indicates the espresso is the final course. Espresso and cappuccino are both coffee but espresso is pure and black - cappuccino has milk foam.",
+            "correctAnswer": "Mussels, Steak Frites, Crème Brûlée",
+            "hint": "One starter, one main with a cooking instruction, and a shared dessert make up this order.",
+            "explanation": "‘Steak frites’ is steak served with French fries — a classic bistro dish. The cooking word ‘medium’ applies only to the steak.",
             "id": "go_l66_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "For the pairing dinner, I'll have the oysters, the Chablis, and the duck breast.",
+            "prompt": "I'll start with the French onion soup. For my main, I'd like the lamb rack, pink in the middle, please. And I'll finish with the chocolate torte.",
             "options": [
-                "Oysters",
-                "Chablis",
-                "Duck Breast",
-                "Burgundy"
+                "French Onion Soup",
+                "Lamb Rack",
+                "Chocolate Torte",
+                "Chocolate Mousse"
             ],
-            "correctAnswer": "Oysters, Chablis, Duck Breast",
-            "hint": "A pairing dinner combines food and wine - listen for both the food items and the wine.",
-            "explanation": "A 'pairing dinner' matches specific wines with food courses. Oysters are classically paired with Chablis. Duck breast is ordered as a second course. Burgundy is another wine region - not ordered here.",
+            "correctAnswer": "French Onion Soup, Lamb Rack, Chocolate Torte",
+            "hint": "‘Pink in the middle’ is another way to describe a cooking temperature, similar to ‘medium-rare.’",
+            "explanation": "‘Pink in the middle’ is a natural, descriptive way to request a cooking temperature without using the words ‘medium-rare’ directly.",
             "id": "go_l67_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the salmon with the Chardonnay, and the risotto as a side.",
+            "prompt": "Could I get the escargot? And for my main, the duck confit — extra crispy skin, if you can. Then the crème caramel.",
             "options": [
-                "Salmon",
-                "Chardonnay",
-                "Risotto",
-                "Pinot Grigio"
+                "Escargot",
+                "Duck Confit",
+                "Crème Caramel",
+                "Panna Cotta"
             ],
-            "correctAnswer": "Salmon, Chardonnay, Risotto",
-            "hint": "Three items: fish main, white wine pairing, and a side dish.",
-            "explanation": "Chardonnay is a full-bodied white wine that pairs classically with salmon. Pinot Grigio is a lighter alternative. 'As a side' means the risotto accompanies the main - it is still an item to be ordered.",
+            "correctAnswer": "Escargot, Duck Confit, Crème Caramel",
+            "hint": "A request about texture, not temperature, appears in the middle of this order.",
+            "explanation": "‘Extra crispy skin’ is a texture request rather than a temperature request, but it works the same way — it's a detail about the main course, not a new item.",
             "id": "go_l67_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I get the duck pâté, the Sancerre, and the cheese board?",
+            "prompt": "One of us will have the burrata, and the other will have the octopus. We'll share the olive oil cake.",
             "options": [
-                "Duck Pâté",
-                "Sancerre",
-                "Cheese Board",
-                "Bordeaux"
+                "Burrata",
+                "Octopus",
+                "Olive Oil Cake",
+                "Cheesecake"
             ],
-            "correctAnswer": "Duck Pâté, Sancerre, Cheese Board",
-            "hint": "Sancerre is a crisp white wine from the Loire Valley - different from Bordeaux (red).",
-            "explanation": "Sancerre is a crisp, dry white wine from the Loire Valley - excellent with pâté. Bordeaux is predominantly red wine from southwest France. Duck pâté is a smooth, rich liver preparation served as a starter.",
+            "correctAnswer": "Burrata, Octopus, Olive Oil Cake",
+            "hint": "Two different starters are named for two people, followed by one shared dessert.",
+            "explanation": "This is the same pattern as before, but now it's the starters that differ between the two diners, rather than the mains.",
             "id": "go_l67_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the finger sandwiches, the scones with clotted cream, and an Earl Grey tea.",
+            "prompt": "I'll go with the tuna tartare to start. As for the main, I'll take the venison, medium-rare, and I'll finish with the dark chocolate mousse.",
             "options": [
-                "Finger Sandwiches",
-                "Scones with Clotted Cream",
-                "Earl Grey Tea",
-                "Darjeeling Tea"
+                "Tuna Tartare",
+                "Venison",
+                "Dark Chocolate Mousse",
+                "Chocolate Torte"
             ],
-            "correctAnswer": "Finger Sandwiches, Scones with Clotted Cream, Earl Grey Tea",
-            "hint": "Three classic afternoon tea items - sandwich course, scone course, and a specific tea.",
-            "explanation": "Afternoon tea follows a specific structure: small sandwiches first, then scones with clotted cream and jam, then pastries. Earl Grey is a black tea with bergamot oil - different from Darjeeling, which is a floral tea from India.",
+            "correctAnswer": "Tuna Tartare, Venison, Dark Chocolate Mousse",
+            "hint": "This entire order follows the familiar starter, main with temperature, dessert structure.",
+            "explanation": "‘Venison’ is deer meat, often served medium-rare like a fine cut of beef. The structure here should feel familiar from earlier levels, just with richer vocabulary.",
             "id": "go_l68_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the pastry selection, the miniature cakes, and a pot of Darjeeling.",
+            "prompt": "For the table, we'll start with the flatbread. I'll have the short rib for my main — falling off the bone, please — and the bread pudding for dessert.",
             "options": [
-                "Pastry Selection",
-                "Miniature Cakes",
-                "Darjeeling",
-                "Assam Tea"
+                "Flatbread",
+                "Short Rib",
+                "Bread Pudding",
+                "Sticky Toffee Pudding"
             ],
-            "correctAnswer": "Pastry Selection, Miniature Cakes, Darjeeling",
-            "hint": "Three afternoon tea items - two food courses and a specific tea variety.",
-            "explanation": "Darjeeling is a delicate, floral tea from the Darjeeling region of India - often called the 'champagne of teas'. Assam is a bolder, maltier Indian tea. A pastry selection includes multiple items; miniature cakes are the sweet finale.",
+            "correctAnswer": "Flatbread, Short Rib, Bread Pudding",
+            "hint": "‘Falling off the bone’ describes how tender the meat should be after slow cooking.",
+            "explanation": "‘Falling off the bone’ is a common way to describe perfectly slow-cooked meat, so tender it separates from the bone with almost no effort.",
             "id": "go_l68_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the cucumber sandwiches, the Victoria sponge, and the Lapsang Souchong tea?",
+            "prompt": "I'll have the beet carpaccio, then the rack of pork — cooked through but still juicy — and the pear tart to finish.",
             "options": [
-                "Cucumber Sandwiches",
-                "Victoria Sponge",
-                "Lapsang Souchong",
-                "Chamomile Tea"
+                "Beet Carpaccio",
+                "Rack of Pork",
+                "Pear Tart",
+                "Apple Tart"
             ],
-            "correctAnswer": "Cucumber Sandwiches, Victoria Sponge, Lapsang Souchong",
-            "hint": "Lapsang Souchong is a smoky Chinese tea - very different from chamomile.",
-            "explanation": "Cucumber sandwiches are a classic British afternoon tea item - delicate white bread with butter and cucumber. Victoria sponge is a British classic with jam and cream. Lapsang Souchong is a distinctive smoky tea from Fujian, China.",
+            "correctAnswer": "Beet Carpaccio, Rack of Pork, Pear Tart",
+            "hint": "The request balances two things — full cooking and juiciness — but it's still just detail about the pork.",
+            "explanation": "‘Cooked through but still juicy’ shows a customer being specific about both safety and quality. This detail doesn't change which three items to select.",
             "id": "go_l68_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "We'll take the full omakase, the sake pairing, and the extra nigiri course, please.",
+            "prompt": "I have a gluten sensitivity, so I'll start with the tomato soup. For my main, the grilled sea bream, and the flourless chocolate cake for dessert.",
             "options": [
-                "Omakase Menu",
-                "Sake Pairing",
-                "Extra Nigiri Course",
-                "Wagyu Course"
+                "Tomato Soup",
+                "Grilled Sea Bream",
+                "Flourless Chocolate Cake",
+                "Chocolate Torte"
             ],
-            "correctAnswer": "Omakase Menu, Sake Pairing, Extra Nigiri Course",
-            "hint": "'Omakase' means 'I'll leave it to you' in Japanese - the chef chooses each course.",
-            "explanation": "Omakase (I'll leave it to you) is a Japanese dining style where the chef selects each course based on seasonal ingredients. A sake pairing matches different sake varieties to each dish. The extra nigiri course is a supplement.",
+            "correctAnswer": "Tomato Soup, Grilled Sea Bream, Flourless Chocolate Cake",
+            "hint": "The dietary need explains the customer's dessert choice, without adding an extra item.",
+            "explanation": "‘Flourless’ tells you the cake contains no wheat flour, making it suitable for someone avoiding gluten. The dietary note is context, not a separate selection.",
             "id": "go_l69_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the seven-course tasting menu, the wine flight, and the cheese course supplement.",
+            "prompt": "Could I get the endive salad? For my main, the bone-in ribeye, cooked medium, and the crema catalana after.",
             "options": [
-                "Seven-Course Tasting Menu",
-                "Wine Flight",
-                "Cheese Course Supplement",
-                "Amuse-Bouche Supplement"
+                "Endive Salad",
+                "Bone-In Ribeye",
+                "Crema Catalana",
+                "Flan"
             ],
-            "correctAnswer": "Seven-Course Tasting Menu, Wine Flight, Cheese Course Supplement",
-            "hint": "A wine flight is a curated selection of wines matched to each course.",
-            "explanation": "A wine flight is a curated selection of different wines paired with each course - different from ordering a single bottle. A cheese course supplement is an optional extra added to a fixed tasting menu.",
+            "correctAnswer": "Endive Salad, Bone-In Ribeye, Crema Catalana",
+            "hint": "‘Bone-in’ describes the cut of steak, while ‘medium’ describes how it's cooked — two details about one item.",
+            "explanation": "‘Bone-in ribeye’ is a specific style of steak cut that includes the rib bone, often prized for extra flavor. Both details belong to the same main course.",
             "id": "go_l69_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I take the chef's menu, the truffle supplement, and the wine pairing, please?",
+            "prompt": "My partner will have the clams, and I'll have the pork chop, well-done, with the almond cake to share.",
             "options": [
-                "Chef's Menu",
-                "Truffle Supplement",
-                "Wine Pairing",
-                "Non-Alcoholic Pairing"
+                "Clams",
+                "Pork Chop",
+                "Almond Cake",
+                "Olive Oil Cake"
             ],
-            "correctAnswer": "Chef's Menu, Truffle Supplement, Wine Pairing",
-            "hint": "A truffle supplement adds fresh truffle shavings to specific courses for an extra charge.",
-            "explanation": "Premium ingredients like truffles are often offered as a supplement - an optional extra for an additional charge. The customer chose the wine pairing over the non-alcoholic pairing - the distinction matters.",
+            "correctAnswer": "Clams, Pork Chop, Almond Cake",
+            "hint": "Two different starters or mains might be expected — read carefully to see which item belongs to which diner and course.",
+            "explanation": "This sentence gives each diner a different starter/main pairing — clams for one, pork chop for the other — with one shared dessert at the end.",
             "id": "go_l69_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "For our private dinner, we'd like the pre-set menu, the cocktail reception, and the champagne on arrival.",
+            "prompt": "I'll start with the burrata, then the lamb shank — falling apart tender, if possible — and the tiramisu to finish.",
             "options": [
-                "Pre-Set Menu",
-                "Cocktail Reception",
-                "Champagne on Arrival",
-                "Wine Service"
+                "Burrata",
+                "Lamb Shank",
+                "Tiramisu",
+                "Panna Cotta"
             ],
-            "correctAnswer": "Pre-Set Menu, Cocktail Reception, Champagne on Arrival",
-            "hint": "Private dining orders often include reception drinks and pre-arranged menus.",
-            "explanation": "Private dining events are pre-arranged in advance. A cocktail reception is a drinks service before the meal. Champagne on arrival is served when guests enter - different from general wine service during dinner.",
+            "correctAnswer": "Burrata, Lamb Shank, Tiramisu",
+            "hint": "‘Falling apart tender’ describes the ideal texture after slow braising.",
+            "explanation": "‘Falling apart tender’ is another way to describe meat that has been slow-cooked until extremely soft, similar to ‘falling off the bone.’",
             "id": "go_l70_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the canapés, the five-course meal, and the after-dinner liqueurs for our party.",
+            "prompt": "For my starter, the seared tuna. My main will be the porterhouse, medium-rare, and for dessert, the crème brûlée.",
             "options": [
-                "Canapés",
-                "Five-Course Meal",
-                "After-Dinner Liqueurs",
-                "Digestif Board"
+                "Seared Tuna",
+                "Porterhouse",
+                "Crème Brûlée",
+                "Panna Cotta"
             ],
-            "correctAnswer": "Canapés, Five-Course Meal, After-Dinner Liqueurs",
-            "hint": "Three elements of a private dining experience - pre-dinner snacks, the meal, and post-dinner drinks.",
-            "explanation": "Canapés are small, elegant pre-dinner snacks. A five-course meal has five distinct courses. After-dinner liqueurs are spirits served at the end of the meal - different from a digestif board, which might include port or brandy only.",
+            "correctAnswer": "Seared Tuna, Porterhouse, Crème Brûlée",
+            "hint": "‘Porterhouse’ is a large, specific cut of steak — listen carefully for the exact name.",
+            "explanation": "A ‘porterhouse’ steak combines two cuts in one — a strip steak and a filet — separated by a T-shaped bone, making it one of the largest steak cuts.",
             "id": "go_l70_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could we arrange the welcome drinks, the sharing starters, and the dessert buffet for the guests?",
+            "prompt": "We're going to start with the calamari for the table, my partner's having the risotto, and I'll have the swordfish.",
             "options": [
-                "Welcome Drinks",
-                "Sharing Starters",
-                "Dessert Buffet",
-                "Cheese Course"
+                "Calamari",
+                "Risotto",
+                "Swordfish",
+                "Sea Bass"
             ],
-            "correctAnswer": "Welcome Drinks, Sharing Starters, Dessert Buffet",
-            "hint": "Three event catering elements - arrival drinks, shared starters, and a dessert station.",
-            "explanation": "Welcome drinks are served as guests arrive. Sharing starters are placed in the centre of the table for everyone. A dessert buffet allows guests to choose freely - different from a single cheese course at the end.",
+            "correctAnswer": "Calamari, Risotto, Swordfish",
+            "hint": "A shared starter is followed by two different mains for two different people.",
+            "explanation": "This combines a shared starter (‘for the table’) with two separate main courses — one for each diner — a common structure in real restaurant conversations.",
             "id": "go_l70_q3"
         }
     ]

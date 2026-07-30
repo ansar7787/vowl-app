@@ -1,580 +1,554 @@
 {
-    "gameType": "socialSpark",
-    "batchIndex": 3,
-    "levels": "21-30",
-    "quests": [
-        {
-            "instruction": "Arrange the words to find the fitting room in a shop.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "the",
-                "Excuse",
-                "fitting",
-                "is",
-                "?",
-                "where",
-                "room",
-                "me"
-            ],
-            "correctAnswer": "Excuse me where is the fitting room ?",
-            "hint": "Start with 'Excuse me'.",
-            "explanation": "'Excuse me' is polite when approaching a shop assistant.",
-            "id": "ss_l21_q1"
-        },
-        {
-            "instruction": "Order the words to ask about clothing sizes.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "you",
-                "have",
-                "?",
-                "this",
-                "Do",
-                "size",
-                "in",
-                "my"
-            ],
-            "correctAnswer": "Do you have this in my size ?",
-            "hint": "Start with 'Do you have'.",
-            "explanation": "This is the natural phrase to use when your size is not on the shelf.",
-            "id": "ss_l21_q2"
-        },
-        {
-            "instruction": "Put the words in order to ask to try clothing on.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "to",
-                "like",
-                "would",
-                "jacket",
-                "this",
-                "I",
-                "on",
-                "try",
-                "."
-            ],
-            "correctAnswer": "I would like to try this jacket on .",
-            "hint": "Start with 'I would like'.",
-            "explanation": "'Would like to try on' is a polite way to request a fitting room.",
-            "id": "ss_l21_q3"
-        },
-        {
-            "instruction": "Arrange the words to ask for a price.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "?",
-                "much",
-                "How",
-                "cost",
-                "this",
-                "coat",
-                "does"
-            ],
-            "correctAnswer": "How much does this coat cost ?",
-            "hint": "Start with 'How much does'.",
-            "explanation": "'How much does ... cost?' is the standard way to ask the price of something.",
-            "id": "ss_l22_q1"
-        },
-        {
-            "instruction": "Order the words to ask about a sale price.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "on",
-                "a",
-                "there",
-                "shoes",
-                "?",
-                "these",
-                "Is",
-                "discount"
-            ],
-            "correctAnswer": "Is there a discount on these shoes ?",
-            "hint": "Start with 'Is there a discount'.",
-            "explanation": "'Is there a discount on ...?' asks about reduced prices.",
-            "id": "ss_l22_q2"
-        },
-        {
-            "instruction": "Put the words in order to ask about payment method.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "pay",
-                "I",
-                "?",
-                "this",
-                "cash",
-                "for",
-                "in",
-                "Can"
-            ],
-            "correctAnswer": "Can I pay for this in cash ?",
-            "hint": "Start with 'Can I pay'.",
-            "explanation": "Ask about payment methods before reaching the checkout.",
-            "id": "ss_l22_q3"
-        },
-        {
-            "instruction": "Arrange the words for a waiter's question.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "you",
-                "today",
-                "like",
-                "What",
-                "to",
-                "?",
-                "would",
-                "order"
-            ],
-            "correctAnswer": "What would you like to order today ?",
-            "hint": "Start with 'What would'.",
-            "explanation": "This is how waiters ask customers what they want to eat or drink.",
-            "id": "ss_l23_q1"
-        },
-        {
-            "instruction": "Order the words to place a food order.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "I",
-                ".",
-                "soup",
-                "please",
-                "have",
-                "will",
-                "the",
-                "chicken"
-            ],
-            "correctAnswer": "I will have the chicken soup please .",
-            "hint": "Start with 'I will have'.",
-            "explanation": "'I will have the ...' is a standard way to order food at a restaurant.",
-            "id": "ss_l23_q2"
-        },
-        {
-            "instruction": "Put the words in order to ask about ingredients.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "any",
-                "dish",
-                "dairy",
-                "this",
-                "products",
-                "Does",
-                "?",
-                "contain"
-            ],
-            "correctAnswer": "Does this dish contain any dairy products ?",
-            "hint": "Start with 'Does this dish'.",
-            "explanation": "This question is important for people with food allergies or intolerances.",
-            "id": "ss_l23_q3"
-        },
-        {
-            "instruction": "Arrange the words to ask for directions.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "get",
-                "How",
-                "do",
-                "to",
-                "the",
-                "I",
-                "?",
-                "station"
-            ],
-            "correctAnswer": "How do I get to the station ?",
-            "hint": "Start with 'How do I'.",
-            "explanation": "'How do I get to...?' is a natural way to ask for directions.",
-            "id": "ss_l24_q1"
-        },
-        {
-            "instruction": "Order the words to give directions.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "second",
-                ".",
-                "left",
-                "the",
-                "turning",
-                "the",
-                "on",
-                "Take"
-            ],
-            "correctAnswer": "Take the second turning on the left .",
-            "hint": "Start with 'Take'.",
-            "explanation": "Direction instructions use the imperative form.",
-            "id": "ss_l24_q2"
-        },
-        {
-            "instruction": "Put the words in order to describe a location.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "office",
-                "is",
-                "from",
-                "post",
-                "across",
-                ".",
-                "The",
-                "bank",
-                "the"
-            ],
-            "correctAnswer": "The post office is across from the bank .",
-            "hint": "Start with 'The post office'.",
-            "explanation": "'Across from' means on the opposite side of the street.",
-            "id": "ss_l24_q3"
-        },
-        {
-            "instruction": "Arrange the words to ask about bus times.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "does",
-                "leave",
-                "?",
-                "to",
-                "bus",
-                "the",
-                "When",
-                "last",
-                "town"
-            ],
-            "correctAnswer": "When does the last bus to town leave ?",
-            "hint": "Start with 'When does the last'.",
-            "explanation": "'When does the last ...?' asks about the final scheduled service.",
-            "id": "ss_l25_q1"
-        },
-        {
-            "instruction": "Order the words to buy a train ticket.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "to",
-                "a",
-                "need",
-                "I",
-                "single",
-                ".",
-                "ticket",
-                "Cambridge"
-            ],
-            "correctAnswer": "I need a single ticket to Cambridge .",
-            "hint": "Start with 'I need'.",
-            "explanation": "A 'single' ticket is for one journey only.",
-            "id": "ss_l25_q2"
-        },
-        {
-            "instruction": "Put the words in order to ask about a seat.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "by",
-                "Is",
-                "someone",
-                "this",
-                "seat",
-                "?",
-                "taken"
-            ],
-            "correctAnswer": "Is this seat taken by someone ?",
-            "hint": "Start with 'Is this seat'.",
-            "explanation": "Ask this before sitting next to a stranger in a public place.",
-            "id": "ss_l25_q3"
-        },
-        {
-            "instruction": "Arrange the words to check in at a hotel.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                ".",
-                "reservation",
-                "I",
-                "Johnson",
-                "under",
-                "have",
-                "a"
-            ],
-            "correctAnswer": "I have a reservation under Johnson .",
-            "hint": "Start with 'I have a reservation'.",
-            "explanation": "When checking in, state your name to confirm the booking.",
-            "id": "ss_l26_q1"
-        },
-        {
-            "instruction": "Order the words to make a hotel room request.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "?",
-                "with",
-                "have",
-                "a",
-                "room",
-                "view",
-                "Could",
-                "I",
-                "a"
-            ],
-            "correctAnswer": "Could I have a room with a view ?",
-            "hint": "Start with 'Could I have'.",
-            "explanation": "'Could I have a...' is a polite way to request something at a hotel.",
-            "id": "ss_l26_q2"
-        },
-        {
-            "instruction": "Put the words in order to ask about checkout.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "checkout",
-                "?",
-                "is",
-                "What",
-                "time",
-                "morning",
-                "in",
-                "the"
-            ],
-            "correctAnswer": "What time is checkout in the morning ?",
-            "hint": "Start with 'What time'.",
-            "explanation": "Always confirm the checkout time when you arrive at a hotel.",
-            "id": "ss_l26_q3"
-        },
-        {
-            "instruction": "Arrange the words to ask about a deadline.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "?",
-                "due",
-                "week",
-                "this",
-                "is",
-                "When",
-                "assignment",
-                "the"
-            ],
-            "correctAnswer": "When is the assignment due this week ?",
-            "hint": "Start with 'When is the assignment due'.",
-            "explanation": "Asking about deadlines early shows good planning.",
-            "id": "ss_l27_q1"
-        },
-        {
-            "instruction": "Order the words to explain an absence.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "missed",
-                "class",
-                "I",
-                ".",
-                "yesterday",
-                "the",
-                "unfortunately"
-            ],
-            "correctAnswer": "I missed the class yesterday unfortunately .",
-            "hint": "Start with 'I missed'.",
-            "explanation": "Adding 'unfortunately' shows you are sorry about missing the class.",
-            "id": "ss_l27_q2"
-        },
-        {
-            "instruction": "Put the words in order to ask a classmate for notes.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "I",
-                "today",
-                "notes",
-                "from",
-                "your",
-                "?",
-                "borrow",
-                "Can"
-            ],
-            "correctAnswer": "Can I borrow your notes from today ?",
-            "hint": "Start with 'Can I borrow'.",
-            "explanation": "Borrowing notes is a natural way to catch up after missing a class.",
-            "id": "ss_l27_q3"
-        },
-        {
-            "instruction": "Arrange the words about a schedule change.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "moved",
-                "Thursday",
-                "The",
-                "to",
-                "has",
-                "been",
-                ".",
-                "meeting"
-            ],
-            "correctAnswer": "The meeting has been moved to Thursday .",
-            "hint": "Start with 'The meeting has been moved'.",
-            "explanation": "Passive voice 'has been moved' is used when reporting a schedule change.",
-            "id": "ss_l28_q1"
-        },
-        {
-            "instruction": "Order the words to ask a colleague for a file.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "report",
-                "the",
-                "me",
-                "send",
-                "?",
-                "please",
-                "Could",
-                "you"
-            ],
-            "correctAnswer": "Could you please send me the report ?",
-            "hint": "Start with 'Could you please'.",
-            "explanation": "'Could you please' makes a workplace request polite and professional.",
-            "id": "ss_l28_q2"
-        },
-        {
-            "instruction": "Put the words in order to confirm a work deadline.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "done",
-                "the",
-                "noon",
-                ".",
-                "have",
-                "I",
-                "will",
-                "by",
-                "project"
-            ],
-            "correctAnswer": "I will have the project done by noon .",
-            "hint": "Start with 'I will have'.",
-            "explanation": "'Have something done by + time' means you commit to finishing by that time.",
-            "id": "ss_l28_q3"
-        },
-        {
-            "instruction": "Arrange the words to describe a health symptom.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "week",
-                "had",
-                "I",
-                "all",
-                ".",
-                "have",
-                "a",
-                "sore",
-                "throat"
-            ],
-            "correctAnswer": "I have had a sore throat all week .",
-            "hint": "Start with 'I have had'.",
-            "explanation": "Present perfect 'have had' describes a condition that started and continues.",
-            "id": "ss_l29_q1"
-        },
-        {
-            "instruction": "Order the words to seek health advice.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "Should",
-                "appointment",
-                "with",
-                "an",
-                "?",
-                "make",
-                "doctor",
-                "a",
-                "I"
-            ],
-            "correctAnswer": "Should I make an appointment with a doctor ?",
-            "hint": "Start with 'Should I'.",
-            "explanation": "'Should I...?' asks for advice about the best course of action.",
-            "id": "ss_l29_q2"
-        },
-        {
-            "instruction": "Put the words in order to give health advice.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "should",
-                ".",
-                "rest",
-                "to",
-                "You",
-                "get",
-                "try",
-                "more"
-            ],
-            "correctAnswer": "You should try to get more rest .",
-            "hint": "Start with 'You should'.",
-            "explanation": "'Should' is used to give friendly, informal advice.",
-            "id": "ss_l29_q3"
-        },
-        {
-            "instruction": "Arrange the words to close a conversation warmly.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "today",
-                "It",
-                "to",
-                "so",
-                "meet",
-                "nice",
-                "was",
-                ".",
-                "you"
-            ],
-            "correctAnswer": "It was so nice to meet you today .",
-            "hint": "Start with 'It was so nice'.",
-            "explanation": "This warm phrase closes a conversation on a very positive note.",
-            "id": "ss_l30_q1"
-        },
-        {
-            "instruction": "Order the words to suggest meeting again.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "definitely",
-                ".",
-                "should",
-                "again",
-                "this",
-                "sometime",
-                "We",
-                "do"
-            ],
-            "correctAnswer": "We should definitely do this again sometime .",
-            "hint": "Start with 'We should definitely'.",
-            "explanation": "'Definitely' adds enthusiasm to a suggestion to meet again.",
-            "id": "ss_l30_q2"
-        },
-        {
-            "instruction": "Put the words in order to express enjoyment of talking.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "really",
-                "today",
-                "our",
-                "enjoyed",
-                ".",
-                "conversation",
-                "I"
-            ],
-            "correctAnswer": "I really enjoyed our conversation today .",
-            "hint": "Start with 'I really enjoyed'.",
-            "explanation": "'Enjoyed + noun' in simple past expresses a positive completed experience.",
-            "id": "ss_l30_q3"
-        }
-    ]
+  "gameType": "socialSpark",
+  "batchIndex": 3,
+  "levels": "21-30",
+  "quests": [
+    {
+      "instruction": "Arrange the words to ask about weekend plans.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "?",
+        "are",
+        "weekend",
+        "doing",
+        "you",
+        "this",
+        "What"
+      ],
+      "correctAnswer": "What are you doing this weekend ?",
+      "hint": "The first word is 'What', out of 7 words total.",
+      "explanation": "The present continuous can describe future plans, not just actions happening right now.",
+      "id": "ss_l21_q1"
+    },
+    {
+      "instruction": "Order the words to invite someone to join you.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "join",
+        "to",
+        "you",
+        "?",
+        "Would",
+        "us",
+        "like"
+      ],
+      "correctAnswer": "Would you like to join us ?",
+      "hint": "The sentence ends with 'us', right before the question mark.",
+      "explanation": "'Would you like to' is a warm, polite way to invite someone along.",
+      "id": "ss_l21_q2"
+    },
+    {
+      "instruction": "Put the words in order to ask about a store's return policy.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "?",
+        "What's",
+        "returns",
+        "your",
+        "policy",
+        "on"
+      ],
+      "correctAnswer": "What's your policy on returns ?",
+      "hint": "Once you place 'What's' first, the other 5 words should start falling into place.",
+      "explanation": "'What's' is the contraction of 'What is', common in everyday questions.",
+      "id": "ss_l21_q3"
+    },
+    {
+      "instruction": "Arrange the words to say a restaurant was really busy.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "busy",
+        "restaurant",
+        ".",
+        "That",
+        "tonight",
+        "was",
+        "really"
+      ],
+      "correctAnswer": "That restaurant was really busy tonight .",
+      "hint": "This 7-word sentence begins with 'That'.",
+      "explanation": "'Tonight' places this observation on the current evening.",
+      "id": "ss_l22_q1"
+    },
+    {
+      "instruction": "Order the words to ask if someone joined a club.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "you",
+        "year",
+        "clubs",
+        "Did",
+        "join",
+        "?",
+        "this",
+        "any"
+      ],
+      "correctAnswer": "Did you join any clubs this year ?",
+      "hint": "Look at how it starts -- 'Did' comes first.",
+      "explanation": "'Any' is used in questions and negatives instead of 'some'.",
+      "id": "ss_l22_q2"
+    },
+    {
+      "instruction": "Put the words in order to ask if someone finished a project.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "finish",
+        "project",
+        "that",
+        "you",
+        "yet",
+        "Did",
+        "?"
+      ],
+      "correctAnswer": "Did you finish that project yet ?",
+      "hint": "The second word is 'you', right after 'Did'.",
+      "explanation": "'Yet' is used in questions to ask if something has happened up to now.",
+      "id": "ss_l22_q3"
+    },
+    {
+      "instruction": "Arrange the words to say you're planning a trip.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "for",
+        "a",
+        "planning",
+        ".",
+        "trip",
+        "I'm",
+        "spring"
+      ],
+      "correctAnswer": "I'm planning a trip for spring .",
+      "hint": "There are 7 words in total -- start by placing 'I'm' first.",
+      "explanation": "'For spring' shows the trip is planned for a future season.",
+      "id": "ss_l23_q1"
+    },
+    {
+      "instruction": "Order the words to ask if someone watched a show.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "show",
+        "?",
+        "night",
+        "last",
+        "watch",
+        "you",
+        "Did",
+        "that"
+      ],
+      "correctAnswer": "Did you watch that show last night ?",
+      "hint": "This one's 8 words long, ending in 'night' -- read the meaning first, then decide what comes first.",
+      "explanation": "'That show' refers to something both speakers already know about.",
+      "id": "ss_l23_q2"
+    },
+    {
+      "instruction": "Put the words in order to say you started exercising more.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "exercising",
+        "month",
+        ".",
+        "started",
+        "I",
+        "more",
+        "this"
+      ],
+      "correctAnswer": "I started exercising more this month .",
+      "hint": "This sentence has 7 words -- spot 'I' and 'month' first, then fill in the middle.",
+      "explanation": "'Started' plus an '-ing' verb describes the beginning of a new habit.",
+      "id": "ss_l23_q3"
+    },
+    {
+      "instruction": "Arrange the words to ask what book someone is reading.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "?",
+        "you",
+        "reading",
+        "now",
+        "book",
+        "What",
+        "are"
+      ],
+      "correctAnswer": "What book are you reading now ?",
+      "hint": "Start with 'What'.",
+      "explanation": "'Now' emphasizes that this is happening in the present.",
+      "id": "ss_l24_q1"
+    },
+    {
+      "instruction": "Order the words to say you're staying home this weekend.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "staying",
+        "I'm",
+        "home",
+        ".",
+        "this",
+        "weekend"
+      ],
+      "correctAnswer": "I'm staying home this weekend .",
+      "hint": "This is a 6-word statement ending in 'weekend' -- find the subject first, then the verb.",
+      "explanation": "'This weekend' tells us the plan is for the near future.",
+      "id": "ss_l24_q2"
+    },
+    {
+      "instruction": "Put the words in order to ask about a friend's parents.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "parents",
+        "doing",
+        "?",
+        "How",
+        "your",
+        "days",
+        "are",
+        "these"
+      ],
+      "correctAnswer": "How are your parents doing these days ?",
+      "hint": "Work backward: 'days' is the last word before the question mark.",
+      "explanation": "'These days' softens the question into casual, general small talk.",
+      "id": "ss_l24_q3"
+    },
+    {
+      "instruction": "Arrange the words to say you found a good deal.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "really",
+        "found",
+        "I",
+        "deal",
+        ".",
+        "good",
+        "a"
+      ],
+      "correctAnswer": "I found a really good deal .",
+      "hint": "Once you place 'I' first, the other 6 words should start falling into place.",
+      "explanation": "'Found' is the irregular past tense of 'find'.",
+      "id": "ss_l25_q1"
+    },
+    {
+      "instruction": "Order the words to ask what someone usually orders.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "you",
+        "What",
+        "do",
+        "here",
+        "?",
+        "order",
+        "usually"
+      ],
+      "correctAnswer": "What do you usually order here ?",
+      "hint": "The first word is 'What', out of 7 words total.",
+      "explanation": "'Usually' asks about a habit rather than a single choice.",
+      "id": "ss_l25_q2"
+    },
+    {
+      "instruction": "Put the words in order to say you're behind on reading.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "bit",
+        "on",
+        ".",
+        "behind",
+        "a",
+        "my",
+        "I'm",
+        "reading"
+      ],
+      "correctAnswer": "I'm a bit behind on my reading .",
+      "hint": "Look at how it starts -- 'I'm' comes first.",
+      "explanation": "'A bit' softens the admission, making it sound casual rather than alarming.",
+      "id": "ss_l25_q3"
+    },
+    {
+      "instruction": "Arrange the words to say you have a meeting later.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        ".",
+        "have",
+        "afternoon",
+        "a",
+        "meeting",
+        "I",
+        "later",
+        "this"
+      ],
+      "correctAnswer": "I have a meeting later this afternoon .",
+      "hint": "This 8-word sentence begins with 'I'.",
+      "explanation": "'Later this afternoon' gives a general rather than exact time.",
+      "id": "ss_l26_q1"
+    },
+    {
+      "instruction": "Order the words to ask if someone went somewhere last year.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "Did",
+        "you",
+        "?",
+        "year",
+        "anywhere",
+        "go",
+        "last"
+      ],
+      "correctAnswer": "Did you go anywhere last year ?",
+      "hint": "This one's 7 words long, ending in 'year' -- read the meaning first, then decide what comes first.",
+      "explanation": "'Anywhere' replaces 'somewhere' in this kind of general question.",
+      "id": "ss_l26_q2"
+    },
+    {
+      "instruction": "Put the words in order to say your laptop is really slow.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "is",
+        "laptop",
+        "slow",
+        "My",
+        "running",
+        "really",
+        "."
+      ],
+      "correctAnswer": "My laptop is running really slow .",
+      "hint": "The sentence ends with 'slow', right before the period.",
+      "explanation": "'Running slow' is a common, informal way to describe a sluggish device.",
+      "id": "ss_l26_q3"
+    },
+    {
+      "instruction": "Arrange the words to ask if someone is drinking enough water.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "today",
+        "enough",
+        "you",
+        "drinking",
+        "water",
+        "Are",
+        "?"
+      ],
+      "correctAnswer": "Are you drinking enough water today ?",
+      "hint": "Start with 'Are'.",
+      "explanation": "The present continuous checks in on an ongoing daily habit.",
+      "id": "ss_l27_q1"
+    },
+    {
+      "instruction": "Order the words to say a show was really good.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "show",
+        "really",
+        ".",
+        "That",
+        "actually",
+        "good",
+        "was"
+      ],
+      "correctAnswer": "That show was really good actually .",
+      "hint": "This sentence has 7 words -- spot 'That' and 'actually' first, then fill in the middle.",
+      "explanation": "'Actually' can add a light note of surprise, as if better than expected.",
+      "id": "ss_l27_q2"
+    },
+    {
+      "instruction": "Put the words in order to suggest meeting up soon.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "soon",
+        "should",
+        "out",
+        "We",
+        ".",
+        "hang",
+        "sometime"
+      ],
+      "correctAnswer": "We should hang out sometime soon .",
+      "hint": "There are 7 words in total -- start by placing 'We' first.",
+      "explanation": "'Hang out' is a common, relaxed phrase for spending casual time with friends.",
+      "id": "ss_l27_q3"
+    },
+    {
+      "instruction": "Arrange the words to say your brother is coming to visit.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        ".",
+        "My",
+        "to",
+        "visit",
+        "week",
+        "next",
+        "coming",
+        "is",
+        "brother"
+      ],
+      "correctAnswer": "My brother is coming to visit next week .",
+      "hint": "Work backward: 'week' is the last word before the period.",
+      "explanation": "'Next week' places this planned visit clearly in the future.",
+      "id": "ss_l28_q1"
+    },
+    {
+      "instruction": "Order the words to ask if a jacket is on sale.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "Is",
+        "currently",
+        "this",
+        "sale",
+        "on",
+        "?",
+        "jacket"
+      ],
+      "correctAnswer": "Is this jacket currently on sale ?",
+      "hint": "This is a question -- it starts with 'Is'.",
+      "explanation": "'Currently' adds a slightly more precise, present-focused tone to the question.",
+      "id": "ss_l28_q2"
+    },
+    {
+      "instruction": "Put the words in order to say you're craving pizza.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "really",
+        "pizza",
+        "now",
+        "craving",
+        "I'm",
+        "right",
+        "."
+      ],
+      "correctAnswer": "I'm really craving pizza right now .",
+      "hint": "The second word is 'really', right after 'I'm'.",
+      "explanation": "'Craving' expresses a strong, immediate desire for a specific food.",
+      "id": "ss_l28_q3"
+    },
+    {
+      "instruction": "Arrange the words to ask if someone studied for a quiz.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "the",
+        "Did",
+        "quiz",
+        "you",
+        "for",
+        "?",
+        "study"
+      ],
+      "correctAnswer": "Did you study for the quiz ?",
+      "hint": "Look at how it starts -- 'Did' comes first.",
+      "explanation": "'Did you' forms a simple past question about a completed action.",
+      "id": "ss_l29_q1"
+    },
+    {
+      "instruction": "Order the words to ask if someone likes their new job.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "you",
+        "Do",
+        "far",
+        "?",
+        "like",
+        "your",
+        "new",
+        "so",
+        "job"
+      ],
+      "correctAnswer": "Do you like your new job so far ?",
+      "hint": "This 9-word sentence begins with 'Do'.",
+      "explanation": "'So far' is used to ask about an experience that's still ongoing.",
+      "id": "ss_l29_q2"
+    },
+    {
+      "instruction": "Put the words in order to say you booked a flight.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "just",
+        "I",
+        ".",
+        "yesterday",
+        "flight",
+        "booked",
+        "my"
+      ],
+      "correctAnswer": "I just booked my flight yesterday .",
+      "hint": "The first word is 'I', out of 7 words total.",
+      "explanation": "'Just' plus a past time word like 'yesterday' emphasizes how recent the action was.",
+      "id": "ss_l29_q3"
+    },
+    {
+      "instruction": "Arrange the words to ask what podcast someone is listening to.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "podcast",
+        "you",
+        "to",
+        "listening",
+        "?",
+        "are",
+        "What"
+      ],
+      "correctAnswer": "What podcast are you listening to ?",
+      "hint": "Once you place 'What' first, the other 6 words should start falling into place.",
+      "explanation": "This question ends with 'to', matching the phrasal verb 'listen to'.",
+      "id": "ss_l30_q1"
+    },
+    {
+      "instruction": "Order the words to say you have a doctor's appointment.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "have",
+        "appointment",
+        "a",
+        "I",
+        "tomorrow",
+        "doctor's",
+        "."
+      ],
+      "correctAnswer": "I have a doctor's appointment tomorrow .",
+      "hint": "This sentence has 7 words -- spot 'I' and 'tomorrow' first, then fill in the middle.",
+      "explanation": "'Doctor's' uses a possessive 's to show the appointment belongs to the doctor's schedule.",
+      "id": "ss_l30_q2"
+    },
+    {
+      "instruction": "Put the words in order to ask if someone plays video games.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "you",
+        "video",
+        "games",
+        "play",
+        "Do",
+        "often",
+        "?"
+      ],
+      "correctAnswer": "Do you play video games often ?",
+      "hint": "This one's 7 words long, ending in 'often' -- read the meaning first, then decide what comes first.",
+      "explanation": "'Often' at the end asks about frequency, not a single occasion.",
+      "id": "ss_l30_q3"
+    }
+  ]
 }

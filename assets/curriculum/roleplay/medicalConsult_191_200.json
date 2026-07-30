@@ -4,483 +4,483 @@
     "levels": "191-200",
     "quests": [
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"My mood has stayed low for weeks now, and an underlying worry seems to sit under everything I do, leaving me pretty exhausted by the end of most days.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Insomnia",
+                "Low Mood",
+                "Anxiety",
+                "Fatigue"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Low Mood, Anxiety, Fatigue",
+            "hint": "Three symptoms: an emotional shift, an underlying worry, and overall tiredness.",
+            "explanation": "The patient describes Low Mood, underlying Anxiety, and resulting Fatigue.",
             "id": "mc_l191_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"My focus has really slipped these past few weeks, and my mood has dipped right along with it, with falling asleep becoming genuinely difficult most nights.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Brain Fog",
+                "Insomnia",
+                "Anxiety",
+                "Low Mood"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Brain Fog, Insomnia, Low Mood",
+            "hint": "Three symptoms: a focus problem, trouble sleeping, and an emotional shift.",
+            "explanation": "The patient reports Brain Fog, resulting Insomnia, and a dip in Low Mood.",
             "id": "mc_l191_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"My heart seems to race for no clear reason some days, and an underlying worry has been hard to shake, with falling asleep becoming a real struggle.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Racing Heartbeat",
+                "Anxiety",
+                "Insomnia",
+                "Chest Pain"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Racing Heartbeat, Anxiety, Insomnia",
+            "hint": "Three symptoms: heart speed, an ongoing worry, and trouble sleeping.",
+            "explanation": "The patient describes a Racing Heartbeat, underlying Anxiety, and resulting Insomnia.",
             "id": "mc_l191_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "In the exam room, the patient says: \"My heart flutters unexpectedly some days, and I've felt more tired than usual throughout, with an underlying worry sitting under most of it.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Heart Palpitations",
+                "Fatigue",
+                "Dizziness",
+                "Anxiety"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Heart Palpitations, Fatigue, Anxiety",
+            "hint": "Three symptoms: an irregular heart feeling, overall tiredness, and an emotional undercurrent.",
+            "explanation": "The patient reports Heart Palpitations, resulting Fatigue, and underlying Anxiety.",
             "id": "mc_l192_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "The doctor asks about the symptoms, and the patient says: \"I've had this metallic taste lingering for days now, and my appetite has dropped off since it started, with a queasy feeling that comes and goes.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Metallic Taste",
+                "Dry Mouth",
+                "Loss of Appetite",
+                "Nausea"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Metallic Taste, Loss of Appetite, Nausea",
+            "hint": "Three symptoms: an unusual taste, reduced eating, and a queasy feeling.",
+            "explanation": "The patient describes a Metallic Taste, resulting Loss of Appetite, and Nausea.",
             "id": "mc_l192_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "The patient tells the nurse: \"Swallowing has felt genuinely difficult for a week now, and there's this constant lump-like feeling in my throat, keeping me up some nights worrying about it.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Sore Throat",
+                "Difficulty Swallowing",
+                "Lump in Throat",
+                "Insomnia"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Difficulty Swallowing, Lump in Throat, Insomnia",
+            "hint": "Three symptoms: trouble swallowing, a sensation in the throat, and its effect on sleep.",
+            "explanation": "The patient reports Difficulty Swallowing, a Lump in Throat, and resulting Insomnia.",
             "id": "mc_l192_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"My voice has sounded rough for nearly a week, and my throat still feels sore underneath it, leaving me pretty tired from how much effort talking takes now.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Hoarse Voice",
+                "Sore Throat",
+                "Fatigue",
+                "Cough"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Hoarse Voice, Sore Throat, Fatigue",
+            "hint": "Three symptoms: a voice change, throat pain, and resulting tiredness.",
+            "explanation": "The patient describes a Hoarse Voice, an underlying Sore Throat, and resulting Fatigue.",
             "id": "mc_l193_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"I've had a painful little bump on my eyelid for a few days now, and that eye keeps watering because of it, leaving me pretty tired from the discomfort.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Stye",
+                "Watery Eyes",
+                "Puffy Eyes",
+                "Fatigue"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Stye, Watery Eyes, Fatigue",
+            "hint": "Three symptoms: a bump on the eyelid, the resulting watering, and overall tiredness.",
+            "explanation": "The patient reports a Stye, resulting Watery Eyes, and Fatigue.",
             "id": "mc_l193_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"My vision has blurred on and off for a couple of weeks now, and a dull headache tends to follow soon after, leaving me pretty drained by evening.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Blurred Vision",
+                "Dizziness",
+                "Headache",
+                "Fatigue"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Blurred Vision, Headache, Fatigue",
+            "hint": "Three symptoms: unclear sight, a resulting headache, and overall tiredness.",
+            "explanation": "The patient describes Blurred Vision, a resulting Headache, and Fatigue.",
             "id": "mc_l193_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "In the exam room, the patient says: \"My fingertips have gone numb on and off for a couple of weeks now, and my grip has felt noticeably weaker as a result, keeping me up some nights from the discomfort.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Wrist Pain",
+                "Numbness in Fingers",
+                "Weakness",
+                "Insomnia"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Numbness in Fingers, Weakness, Insomnia",
+            "hint": "Three symptoms: a loss of feeling in the fingers, reduced grip strength, and trouble sleeping.",
+            "explanation": "The patient reports Numbness in Fingers, resulting Weakness, and Insomnia.",
             "id": "mc_l194_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "The doctor asks about the symptoms, and the patient says: \"My hands and feet have stayed cold for weeks regardless of the weather, and my fingers have felt stiff most mornings, leaving me pretty tired throughout.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Cold Hands and Feet",
+                "Numbness",
+                "Joint Stiffness",
+                "Fatigue"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Cold Hands and Feet, Joint Stiffness, Fatigue",
+            "hint": "Three symptoms: cold extremities, morning stiffness, and overall tiredness.",
+            "explanation": "The patient describes Cold Hands and Feet, Joint Stiffness, and Fatigue.",
             "id": "mc_l194_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "The patient tells the nurse: \"I've been sweating far more than usual for a couple of weeks now, and I've felt worn out throughout, with falling asleep becoming genuinely difficult from the discomfort.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Chills",
+                "Excessive Sweating",
+                "Fatigue",
+                "Insomnia"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Excessive Sweating, Fatigue, Insomnia",
+            "hint": "Three symptoms: sweating more than usual, overall tiredness, and trouble sleeping.",
+            "explanation": "The patient reports Excessive Sweating, resulting Fatigue, and Insomnia.",
             "id": "mc_l194_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"I've needed the bathroom far more often than usual these past couple of weeks, and I've felt thirstier than normal throughout, leaving me pretty worn out from it all.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Frequent Urination",
+                "Excessive Thirst",
+                "Fatigue",
+                "Dry Mouth"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Frequent Urination, Excessive Thirst, Fatigue",
+            "hint": "Three symptoms: bathroom frequency, constant thirst, and overall tiredness.",
+            "explanation": "The patient describes Frequent Urination, Excessive Thirst, and resulting Fatigue.",
             "id": "mc_l195_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"My whole body has ached for a couple of days now, and a low fever has come with it, leaving me pretty exhausted through the whole thing.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Body Aches",
+                "Fever",
+                "Chills",
+                "Fatigue"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Body Aches, Fever, Fatigue",
+            "hint": "Three symptoms: aching across the body, temperature, and overall tiredness.",
+            "explanation": "The patient reports Body Aches, a low Fever, and resulting Fatigue.",
             "id": "mc_l195_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"I've felt unusually cold for a couple of days now, and I've been worn out the whole time, with a dull ache settling into most of my joints.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Fever",
+                "Chills",
+                "Fatigue",
+                "Joint Pain"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Chills, Fatigue, Joint Pain",
+            "hint": "Three symptoms: feeling cold, overall tiredness, and aching joints.",
+            "explanation": "The patient describes Chills, ongoing Fatigue, and Joint Pain.",
             "id": "mc_l195_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "In the exam room, the patient says: \"My muscles have felt sore all over for days now, and my strength hasn't felt right since, with falling asleep becoming genuinely difficult from the discomfort.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Muscle Soreness",
+                "Weakness",
+                "Insomnia",
+                "Cramp"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Muscle Soreness, Weakness, Insomnia",
+            "hint": "Three symptoms: general soreness, reduced strength, and trouble sleeping.",
+            "explanation": "The patient reports Muscle Soreness, resulting Weakness, and Insomnia.",
             "id": "mc_l196_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "The doctor asks about the symptoms, and the patient says: \"My calf seizes up suddenly some nights, and my legs have had this restless urge to move whenever I try to settle down, keeping sleep out of reach most nights.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Cramp",
+                "Leg Pain",
+                "Restless Legs",
+                "Insomnia"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Cramp, Restless Legs, Insomnia",
+            "hint": "Three symptoms: a sudden tight muscle feeling, an urge to move, and trouble sleeping.",
+            "explanation": "The patient describes a Cramp, Restless Legs, and resulting Insomnia.",
             "id": "mc_l196_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "The patient tells the nurse: \"My neck has felt tight for weeks now, and a band-like headache tends to follow most afternoons, leaving me pretty worn out by the end of each day.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Neck Pain",
+                "Tension Headache",
+                "Jaw Pain",
+                "Fatigue"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Neck Pain, Tension Headache, Fatigue",
+            "hint": "Three symptoms: neck tightness, a band-like headache, and overall tiredness.",
+            "explanation": "The patient reports Neck Pain, a resulting Tension Headache, and Fatigue.",
             "id": "mc_l196_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"My back tooth has ached for over a week now, and I've noticed a smell to my breath that brushing doesn't fix, keeping me up some nights from the discomfort.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Toothache",
+                "Jaw Pain",
+                "Bad Breath",
+                "Insomnia"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Toothache, Bad Breath, Insomnia",
+            "hint": "Three symptoms: pain in a specific tooth, a smell, and trouble sleeping.",
+            "explanation": "The patient describes a Toothache, Bad Breath, and resulting Insomnia.",
             "id": "mc_l197_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"I can't stop sneezing since the pollen count spiked, and my eyes have been intensely itchy right along with it, leaving me pretty worn out by midday.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Sneezing",
+                "Itchy Eyes",
+                "Fatigue",
+                "Runny Nose"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Sneezing, Itchy Eyes, Fatigue",
+            "hint": "Three symptoms: repeated sneezing, itchy eyes, and overall tiredness.",
+            "explanation": "The patient reports Sneezing, Itchy Eyes, and resulting Fatigue.",
             "id": "mc_l197_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"My eyes have watered constantly for days now, and there's a heavy pressure building across my cheeks, leaving me pretty drained by the end of it.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Watery Eyes",
+                "Sinus Pressure",
+                "Headache",
+                "Fatigue"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Watery Eyes, Sinus Pressure, Fatigue",
+            "hint": "Three symptoms: watering eyes, facial pressure, and overall tiredness.",
+            "explanation": "The patient describes Watery Eyes, Sinus Pressure, and resulting Fatigue.",
             "id": "mc_l197_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "In the exam room, the patient says: \"My voice disappeared completely two days ago, and my throat still feels raw underneath it, leaving me pretty worn out from how much it's taken to communicate at all.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Cough",
+                "Loss of Voice",
+                "Sore Throat",
+                "Fatigue"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Loss of Voice, Sore Throat, Fatigue",
+            "hint": "Three symptoms: a voice that has fully gone, throat pain, and overall tiredness.",
+            "explanation": "The patient reports a Loss of Voice, an underlying Sore Throat, and Fatigue.",
             "id": "mc_l198_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "The doctor asks about the symptoms, and the patient says: \"My grandmother fainted briefly this morning, and she's felt dizzy off and on since, looking noticeably pale the whole time.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Fainting",
+                "Dizziness",
+                "Weakness",
+                "Paleness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Fainting, Dizziness, Paleness",
+            "hint": "Three symptoms: a fainting episode, ongoing dizziness, and appearance.",
+            "explanation": "The family member describes Fainting, ongoing Dizziness, and Paleness.",
             "id": "mc_l198_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "The patient tells the nurse: \"I've felt weak through my whole body for a couple of weeks now, and I've looked noticeably pale throughout, leaving me pretty worn out even doing very little.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Weakness",
+                "Dizziness",
+                "Paleness",
+                "Fatigue"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Weakness, Paleness, Fatigue",
+            "hint": "Three symptoms: reduced strength, appearance, and overall tiredness.",
+            "explanation": "The patient reports Weakness, Paleness, and resulting Fatigue.",
             "id": "mc_l198_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"The skin on my arm has been peeling since my sunburn healed, and it's itched more each day since, leaving me pretty worn out from the constant discomfort at night.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Skin Peeling",
+                "Itching",
+                "Fatigue",
+                "Rash"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Skin Peeling, Itching, Fatigue",
+            "hint": "Three symptoms: skin coming away, an itching feeling, and resulting tiredness.",
+            "explanation": "The patient describes Skin Peeling, Itching, and resulting Fatigue.",
             "id": "mc_l199_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"My lip puffed up not long after dinner last night, and a cluster of raised welts spread across both forearms, leaving me feeling drained for the rest of the evening.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Itching",
+                "Hives",
+                "Swelling",
+                "Fatigue"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Hives, Swelling, Fatigue",
+            "hint": "Three symptoms: raised welts, puffiness, and overall tiredness - itching isn't actually mentioned here.",
+            "explanation": "The patient reports Hives, Swelling, and resulting Fatigue.",
             "id": "mc_l199_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"The skin on my heels has been so dry it's started cracking, and it's itched constantly since, leaving me pretty worn out from the discomfort at night.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Cracked Skin",
+                "Itching",
+                "Fatigue",
+                "Dry Skin"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Cracked Skin, Itching, Fatigue",
+            "hint": "Three symptoms: splitting skin, an itching feeling, and resulting tiredness.",
+            "explanation": "The patient describes Cracked Skin, Itching, and resulting Fatigue.",
             "id": "mc_l199_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "In the exam room, the patient says: \"There's been a strange loss of feeling in both hands this month, and lifting anything heavier than a mug has grown surprisingly hard, plus most nights it takes ages to finally drift off.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Pins and Needles",
+                "Numbness",
+                "Weakness",
+                "Insomnia"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Numbness, Weakness, Insomnia",
+            "hint": "Three symptoms: a loss of feeling, reduced strength, and trouble sleeping.",
+            "explanation": "The patient reports Numbness, resulting Weakness, and Insomnia.",
             "id": "mc_l200_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "The doctor asks about the symptoms, and the patient says: \"My fingertips have tingled on and off for weeks now, and my hands and feet have stayed cold regardless of the weather, keeping sleep out of reach some nights.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Pins and Needles",
+                "Cold Hands and Feet",
+                "Numbness",
+                "Insomnia"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Pins and Needles, Cold Hands and Feet, Insomnia",
+            "hint": "Three symptoms: a tingling sensation, cold extremities, and trouble sleeping.",
+            "explanation": "The patient describes Pins and Needles, Cold Hands and Feet, and resulting Insomnia.",
             "id": "mc_l200_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "The patient tells the nurse: \"My ankles have looked visibly puffy by the end of most days this month, and I've felt worn out the whole time, with falling asleep becoming genuinely difficult most nights.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Swollen Ankles",
+                "Leg Pain",
+                "Fatigue",
+                "Insomnia"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Swollen Ankles, Fatigue, Insomnia",
+            "hint": "Three symptoms bring this journey to a close: visible puffiness, overall tiredness, and trouble sleeping.",
+            "explanation": "The patient reports Swollen Ankles, ongoing Fatigue, and Insomnia - three symptoms worth naming clearly to any doctor.",
             "id": "mc_l200_q3"
         }
     ]

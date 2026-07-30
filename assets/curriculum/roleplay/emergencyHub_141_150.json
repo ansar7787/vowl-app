@@ -1,307 +1,307 @@
 {
-    "gameType": "emergencyHub",
-    "batchIndex": 15,
-    "levels": "141-150",
-    "quests": [
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Chemical weapons synthesis route detected in intercepted intelligence data. Input code!",
-            "correctAnswer": "CW INTEL INTERCEPT",
-            "hint": "Intercept and report the CW intelligence immediately.",
-            "explanation": "Chemical weapons intelligence intercepts trigger non-proliferation treaty verification protocols and allied notification.",
-            "id": "eh_l141_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Source laboratory in a non-treaty nation requires coordinated international action. Input code!",
-            "correctAnswer": "SOURCE IDENTIFY NOW",
-            "hint": "Identify and report on the source laboratory.",
-            "explanation": "Source laboratory identification enables diplomatic pressure, sanctions, or OPCW inspection requests before production escalates.",
-            "id": "eh_l141_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "International treaty organization requiring formal notification of the identified threat. Input code!",
-            "correctAnswer": "OPCW FORMAL NOTIFY",
-            "hint": "Issue formal OPCW notification.",
-            "explanation": "OPCW formal notifications initiate treaty verification procedures that bring international authority to bear on the situation.",
-            "id": "eh_l141_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Radiological accident in a major hospital requiring a full facility response. Input code!",
-            "correctAnswer": "HOSPITAL RADIO CODE",
-            "hint": "Issue the hospital radiological emergency code.",
-            "explanation": "Hospital radiological codes direct nuclear medicine staff to isolate sources and escort radiation-naive staff to safe areas.",
-            "id": "eh_l142_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Unsealed radioactive source in contact with ten patients requiring dose assessment. Input code!",
-            "correctAnswer": "DOSE ASSESS ALL TEN",
-            "hint": "Assess radiation doses for all ten patients.",
-            "explanation": "Individual dose assessment guides treatment decisions, as high doses require specific medical interventions like bone marrow support.",
-            "id": "eh_l142_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Hospital decontamination needed before normal clinical operations can resume. Input code!",
-            "correctAnswer": "HOSPITAL DECON NOW",
-            "hint": "Begin hospital decontamination operations.",
-            "explanation": "Hospital decontamination surveys and cleans all surfaces, ensuring residual contamination does not affect future patients.",
-            "id": "eh_l142_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Engineered pathogen with aerosol transmission detected in a bioterror threat report. Input code!",
-            "correctAnswer": "BIO THREAT ALPHA",
-            "hint": "Activate alpha level bioterror threat response.",
-            "explanation": "Alpha level bioterror responses deploy specialist CBRN teams with agent-specific protective equipment and treatment protocols.",
-            "id": "eh_l143_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Aerosolized pathogen potentially dispersed in the public transport network. Input code!",
-            "correctAnswer": "TRANSIT BIO LOCK",
-            "hint": "Lock down the biological transit threat.",
-            "explanation": "Transit network lockdowns prevent ongoing dispersal and allow systematic decontamination of all affected vehicles and stations.",
-            "id": "eh_l143_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Medical research community worldwide alerted to begin developing a targeted treatment. Input code!",
-            "correctAnswer": "GLOBAL TREATMENT",
-            "hint": "Alert the global medical research community.",
-            "explanation": "Global medical alerts accelerate parallel development of treatments by sharing genome sequences, clinical data, and trial results.",
-            "id": "eh_l143_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Container ship losing stability in a storm with 32 crew members missing overboard. Input code!",
-            "correctAnswer": "MARITIME OVERBOARD",
-            "hint": "Initiate the maritime mass overboard response.",
-            "explanation": "Mass overboard responses coordinate multiple surface vessels and aircraft in pattern searches covering the drift area.",
-            "id": "eh_l144_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Multiple distress beacon signals detected across a 50-mile ocean sector. Input code!",
-            "correctAnswer": "BEACON GRID SEARCH",
-            "hint": "Activate the beacon grid search pattern.",
-            "explanation": "Grid search patterns guided by beacon signals maximize the probability of locating distributed survivors quickly.",
-            "id": "eh_l144_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Severe weather preventing helicopter operations in the search zone. Input code!",
-            "correctAnswer": "SAR VESSEL ONLY",
-            "hint": "Restrict search operations to SAR vessels only.",
-            "explanation": "Surface-only SAR in severe weather uses vessels with radar and thermal imaging to continue the search safely.",
-            "id": "eh_l144_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "National critical infrastructure protection plan being activated for the first time. Input code!",
-            "correctAnswer": "INFRA PROTECT PLAN",
-            "hint": "Activate the national infrastructure protection plan.",
-            "explanation": "Infrastructure protection plans distribute hardened security to power, water, financial, and communications sectors simultaneously.",
-            "id": "eh_l145_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Both cyber and physical threat vectors are active against the infrastructure. Input code!",
-            "correctAnswer": "HYBRID THREAT NOW",
-            "hint": "Activate the hybrid threat defense protocol.",
-            "explanation": "Hybrid threat protocols counter simultaneous cyber and physical attacks by coordinating digital and physical security teams.",
-            "id": "eh_l145_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Emergency security legislation needed to authorize full protective measures. Input code!",
-            "correctAnswer": "EMERGENCY POWERS",
-            "hint": "Invoke the emergency legislative powers.",
-            "explanation": "Emergency powers provide legal authority for extraordinary protective measures that peacetime law does not permit.",
-            "id": "eh_l145_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Space debris confirmed on an impact trajectory with a densely populated area. Input code!",
-            "correctAnswer": "IMPACT PREDICT NOW",
-            "hint": "Activate the impact prediction system.",
-            "explanation": "Impact prediction systems refine trajectory and landing zone estimates to within kilometers as debris approaches.",
-            "id": "eh_l146_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Evacuate the predicted impact zone with a five-hour warning before entry. Input code!",
-            "correctAnswer": "IMPACT ZONE EVAC",
-            "hint": "Evacuate the predicted impact zone.",
-            "explanation": "Impact zone evacuations use predicted footprint models to define the minimum area needing clearance for resident safety.",
-            "id": "eh_l146_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "International space agencies coordinating public information on the impact event. Input code!",
-            "correctAnswer": "SPACE AGENCY BRIEF",
-            "hint": "Issue the coordinated space agency media briefing.",
-            "explanation": "Coordinated space agency briefings prevent contradictory public guidance and reduce panic during debris impact events.",
-            "id": "eh_l146_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Nuclear criticality accident occurring at a fuel processing facility. Input code!",
-            "correctAnswer": "CRITICALITY STOP",
-            "hint": "Execute the criticality stop procedure.",
-            "explanation": "Criticality stop procedures add neutron-absorbing materials and disperse the fissile configuration to halt the chain reaction.",
-            "id": "eh_l147_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Lethal radiation doses being received by workers in the immediate accident area. Input code!",
-            "correctAnswer": "EVACU LETHAL ZONE",
-            "hint": "Evacuate all workers from the lethal radiation zone.",
-            "explanation": "Lethal zone evacuations are executed in under 60 seconds; every additional second increases irreversible radiation injury.",
-            "id": "eh_l147_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Medical physicists needed immediately to assess the worker radiation doses received. Input code!",
-            "correctAnswer": "MEDICAL PHYS NOW",
-            "hint": "Deploy medical physicists to the scene.",
-            "explanation": "Medical physicists perform accurate dose reconstruction to guide treatment decisions for radiation-exposed workers.",
-            "id": "eh_l147_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Coordinated cyber-physical attack affecting power and water utilities simultaneously. Input code!",
-            "correctAnswer": "CYBER PHYS DEFENSE",
-            "hint": "Activate the cyber-physical infrastructure defense.",
-            "explanation": "Cyber-physical defense teams address digital intrusion and physical sabotage simultaneously using integrated response protocols.",
-            "id": "eh_l148_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Incident crosses three state jurisdictions requiring federal intervention. Input code!",
-            "correctAnswer": "FEDERAL ENGAGE NOW",
-            "hint": "Engage federal emergency authorities immediately.",
-            "explanation": "Federal engagement provides resources and legal authority beyond any single state and coordinates multi-jurisdictional response.",
-            "id": "eh_l148_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Classified attack attribution data being shared with allied security agencies. Input code!",
-            "correctAnswer": "ALLIED INTEL SHARE",
-            "hint": "Share attack attribution intelligence with allies.",
-            "explanation": "Allied intelligence sharing provides additional analysis capabilities and enables coordinated diplomatic or military response.",
-            "id": "eh_l148_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Highly transmissible pathogen crossing international borders via air travel. Input code!",
-            "correctAnswer": "BORDER HEALTH CODE",
-            "hint": "Activate international border health screening.",
-            "explanation": "Border health screening intercepts travelers with symptoms and prevents infected individuals from seeding new disease clusters.",
-            "id": "eh_l149_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "International airport operations modified to support universal passenger screening. Input code!",
-            "correctAnswer": "AIRPORT HEALTH SCAN",
-            "hint": "Implement universal airport health scanning.",
-            "explanation": "Universal health scanning prevents any infected traveler from passing through without detection and quarantine.",
-            "id": "eh_l149_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Bilateral health treaties being invoked for cross-border treatment and isolation. Input code!",
-            "correctAnswer": "BILATERAL HEALTH",
-            "hint": "Invoke bilateral health emergency treaties.",
-            "explanation": "Bilateral health treaties provide legal frameworks for cross-border patient treatment and quarantine enforcement.",
-            "id": "eh_l149_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "National-level mass evacuation order required for 2 million residents. Input code!",
-            "correctAnswer": "NATIONAL MASS EVAC",
-            "hint": "Issue the national mass evacuation order.",
-            "explanation": "National mass evacuation orders coordinate transport, shelter, and resource allocation for population movements measured in millions.",
-            "id": "eh_l150_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Transportation infrastructure approaching saturation under evacuation demand. Input code!",
-            "correctAnswer": "TRANSPORT COORD NOW",
-            "hint": "Activate the transportation coordination authority.",
-            "explanation": "Transportation coordination authority commandeers additional vehicles, opens contra-flow lanes, and manages fuel supply.",
-            "id": "eh_l150_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Reception areas must be prepared before the evacuating population wave arrives. Input code!",
-            "correctAnswer": "RECEPTION READY",
-            "hint": "Prepare reception areas for the evacuating population.",
-            "explanation": "Reception area preparation ensures food, water, medical care, and registration systems are ready before residents arrive.",
-            "id": "eh_l150_q3"
-        }
-    ]
+  "gameType": "emergencyHub",
+  "batchIndex": 15,
+  "levels": "141-150",
+  "quests": [
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A sudden, unforecast snowstorm has stranded over two hundred drivers overnight on a rural highway. Input code!",
+      "correctAnswer": "SEND SNOWPLOWS ALONG THE ROUTE",
+      "hint": "Say what heavy equipment needs to clear a path first.",
+      "explanation": "Snowplows must clear a path before any rescue vehicle can reach the stranded drivers at all.",
+      "id": "eh_l141_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Drivers near the front of the queue are running low on fuel to keep their heaters running. Input code!",
+      "correctAnswer": "DELIVER FUEL AND BLANKETS",
+      "hint": "Say the two supplies drivers need most right now.",
+      "explanation": "Fuel keeps heaters running while blankets add warmth, together preventing hypothermia until the road can be cleared.",
+      "id": "eh_l141_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "The road is cleared and all two hundred drivers have safely continued their journeys. Input code!",
+      "correctAnswer": "STAND DOWN THE RESPONSE",
+      "hint": "Say what happens to the emergency operation now.",
+      "explanation": "Standing the response down once every driver is confirmed safe closes out a long overnight operation.",
+      "id": "eh_l141_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Construction workers have unearthed an unexploded World War Two bomb on a city building site. Input code!",
+      "correctAnswer": "EVACUATE A HALF-MILE RADIUS",
+      "hint": "Say the size of the safety zone needed around it.",
+      "explanation": "A half-mile radius gives enough distance to protect residents if the specialist team needs to detonate it safely.",
+      "id": "eh_l142_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "The bomb disposal team needs the exact area kept completely clear while they work. Input code!",
+      "correctAnswer": "MAINTAIN A STRICT CORDON",
+      "hint": "Say what boundary must be enforced around the site.",
+      "explanation": "A strict cordon stops anyone from re-entering the area while specialists carefully assess and disarm the device.",
+      "id": "eh_l142_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "The device has been safely removed and transported for controlled disposal elsewhere. Input code!",
+      "correctAnswer": "LIFT THE EVACUATION ZONE",
+      "hint": "Say what can happen once the bomb is safely removed.",
+      "explanation": "Lifting the zone once the device is fully gone lets thousands of residents return home the same day.",
+      "id": "eh_l142_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A gas explosion has damaged three adjoining buildings on a city block, with reports of people trapped. Input code!",
+      "correctAnswer": "SEND MULTIPLE RESCUE TEAMS",
+      "hint": "Say what's needed given three separate buildings are affected.",
+      "explanation": "Sending a team to each affected building means search efforts happen everywhere at once, not one building at a time.",
+      "id": "eh_l143_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Gas is still leaking somewhere in the block, and crews cannot locate the exact source. Input code!",
+      "correctAnswer": "SHUT OFF THE BLOCK'S SUPPLY",
+      "hint": "Say the wider action needed until the exact source is found.",
+      "explanation": "Cutting supply to the whole block removes the risk of a second explosion while the leak is traced.",
+      "id": "eh_l143_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "All residents have been accounted for and the gas supply has been safely isolated. Input code!",
+      "correctAnswer": "BEGIN THE STRUCTURAL ASSESSMENT",
+      "hint": "Say what process should start on the damaged buildings.",
+      "explanation": "An assessment tells engineers which buildings are safe to re-enter and which need further work.",
+      "id": "eh_l143_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A large religious festival with an estimated three hundred thousand attendees reports dangerous crowd density near the main shrine. Input code!",
+      "correctAnswer": "IMPLEMENT ONE-WAY CROWD FLOW",
+      "hint": "Say the crowd management technique that prevents people colliding.",
+      "explanation": "A one-way flow stops people moving in opposite directions from colliding, which is what usually causes a crowd crush.",
+      "id": "eh_l144_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Several attendees have fainted in the heat and dense crowd near the shrine entrance. Input code!",
+      "correctAnswer": "OPEN A FIRST AID TENT",
+      "hint": "Say what facility should be set up nearby.",
+      "explanation": "A dedicated tent nearby means affected attendees can be treated quickly without being carried far through the crowd.",
+      "id": "eh_l144_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Crowd density has eased as the peak arrival period passes into the evening. Input code!",
+      "correctAnswer": "RETURN TO NORMAL MONITORING",
+      "hint": "Say what level of oversight is now appropriate.",
+      "explanation": "Returning to normal monitoring once the peak has passed frees extra staff while still watching for any change.",
+      "id": "eh_l144_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A wildfire burning across dry hill country has split into three separate fronts threatening two rural towns. Input code!",
+      "correctAnswer": "ASSIGN CREWS TO EACH FRONT",
+      "hint": "Say how firefighting resources should be divided.",
+      "explanation": "Dividing crews across all three fronts prevents any single one from growing unchecked while the others are fought.",
+      "id": "eh_l145_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "One front is advancing faster than expected toward the smaller of the two towns. Input code!",
+      "correctAnswer": "EVACUATE THE SMALLER TOWN",
+      "hint": "Say which town needs to leave first, and why.",
+      "explanation": "Evacuating the town facing the faster-moving front first gives residents there the most possible time to leave safely.",
+      "id": "eh_l145_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Overnight rain has slowed all three fronts, and firefighters report the fire is now contained. Input code!",
+      "correctAnswer": "DOWNGRADE TO A WATCH",
+      "hint": "Say what level of alert now fits the improved conditions.",
+      "explanation": "Downgrading to a watch reflects the real, improved risk while still keeping residents alert to any change.",
+      "id": "eh_l145_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A ferry with two hundred passengers reports taking on water after striking a submerged object. Input code!",
+      "correctAnswer": "SEND THE COAST GUARD IMMEDIATELY",
+      "hint": "Ask for the service that responds to emergencies at sea.",
+      "explanation": "The coast guard can reach a taking-on-water vessel fastest and coordinate a full passenger rescue if needed.",
+      "id": "eh_l146_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "The captain reports pumps are managing the water and the ferry can reach port under its own power. Input code!",
+      "correctAnswer": "ESCORT THE FERRY TO PORT",
+      "hint": "Say what support vessels should provide during the journey.",
+      "explanation": "An escort stays close in case the situation worsens, while letting the ferry make its own way to safety.",
+      "id": "eh_l146_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "The ferry has docked safely and engineers confirm the hull damage was minor. Input code!",
+      "correctAnswer": "CONFIRM ALL PASSENGERS SAFE",
+      "hint": "Say what should be confirmed to close out the call.",
+      "explanation": "A final passenger count confirms the incident is fully resolved before crews stand down.",
+      "id": "eh_l146_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "An elderly man with dementia has been missing from his care home for six hours as temperatures drop overnight. Input code!",
+      "correctAnswer": "COORDINATE A COMMUNITY SEARCH",
+      "hint": "Say what kind of wide search should now begin.",
+      "explanation": "A coordinated search brings in enough people to cover the wide area he may have wandered into in six hours.",
+      "id": "eh_l147_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Search teams need to know his last known direction to focus their efforts efficiently. Input code!",
+      "correctAnswer": "REVIEW NEARBY SECURITY FOOTAGE",
+      "hint": "Say what evidence can help narrow down the search area.",
+      "explanation": "Footage from nearby cameras can show which direction he walked, letting the search focus where it matters most.",
+      "id": "eh_l147_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "He is found safe and warm at a bus shelter a mile from the care home. Input code!",
+      "correctAnswer": "SEND AN AMBULANCE FOR CHECKS",
+      "hint": "Say what should happen even though he appears unharmed.",
+      "explanation": "A check-up confirms he wasn't affected by the cold overnight, even though he appears fine on the surface.",
+      "id": "eh_l147_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A barge has struck the support pillar of a major highway bridge, and engineers fear structural damage. Input code!",
+      "correctAnswer": "CLOSE THE BRIDGE IMMEDIATELY",
+      "hint": "Say what must happen to the bridge right away.",
+      "explanation": "Closing the bridge immediately protects every driver on it until the true extent of the damage is known.",
+      "id": "eh_l148_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Thousands of commuters now need an alternative route while the bridge remains closed. Input code!",
+      "correctAnswer": "OPEN AN ALTERNATE ROUTE",
+      "hint": "Say what should be provided for stranded commuters.",
+      "explanation": "A clearly signed alternate route keeps traffic moving through the city while the main bridge is assessed.",
+      "id": "eh_l148_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Engineers complete a full assessment and confirm the pillar can safely support traffic again. Input code!",
+      "correctAnswer": "REOPEN THE BRIDGE",
+      "hint": "Say what can happen once the bridge is confirmed safe.",
+      "explanation": "Reopening only after full engineering confirmation ensures commuters return to a bridge that's genuinely sound.",
+      "id": "eh_l148_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A severe flu outbreak has filled every hospital in the region to capacity within the same week. Input code!",
+      "correctAnswer": "ACTIVATE THE REGIONAL SURGE PLAN",
+      "hint": "Say the pre-prepared plan hospitals use for exactly this.",
+      "explanation": "A surge plan coordinates beds, staff, and supplies across every hospital in the region at once, rather than each acting alone.",
+      "id": "eh_l149_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "One smaller hospital has more spare capacity than the others and can take extra patients. Input code!",
+      "correctAnswer": "REDIRECT PATIENTS TO IT",
+      "hint": "Say what should happen given the spare capacity found.",
+      "explanation": "Redirecting patients to the hospital with spare capacity balances the load across the whole region fairly.",
+      "id": "eh_l149_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "New flu cases have started to fall and all regional hospitals report manageable numbers again. Input code!",
+      "correctAnswer": "STAND DOWN THE SURGE PLAN",
+      "hint": "Say what should happen to the emergency plan now.",
+      "explanation": "Standing the plan down once numbers are manageable returns hospitals to their normal way of working.",
+      "id": "eh_l149_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A temporary stage at an outdoor festival has partially collapsed under high winds during a performance. Input code!",
+      "correctAnswer": "CLEAR THE AREA IMMEDIATELY",
+      "hint": "Say what should happen to people near the stage.",
+      "explanation": "Clearing the area protects both performers and crowd from any further part of the structure coming down.",
+      "id": "eh_l150_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Structural engineers need to check whether the rest of the scaffolding is safe before anyone approaches. Input code!",
+      "correctAnswer": "SEND A STRUCTURAL ENGINEER",
+      "hint": "Ask for the specialist trained to judge this.",
+      "explanation": "Only a structural engineer can properly judge whether the remaining scaffolding is safe to work near.",
+      "id": "eh_l150_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Two crew members with minor injuries have been treated, and no one else was hurt. Input code!",
+      "correctAnswer": "CALL FOR FIRST AID STAFF",
+      "hint": "Ask for staff trained to treat minor injuries.",
+      "explanation": "On-site first aid staff can treat minor injuries quickly without needing a full ambulance response.",
+      "id": "eh_l150_q3"
+    }
+  ]
 }

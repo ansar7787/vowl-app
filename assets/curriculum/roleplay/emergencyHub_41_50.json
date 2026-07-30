@@ -1,307 +1,307 @@
 {
-    "gameType": "emergencyHub",
-    "batchIndex": 5,
-    "levels": "41-50",
-    "quests": [
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Reactor coolant temperature rising abnormally in nuclear building 2. Input code!",
-            "correctAnswer": "COOLANT BOOST REACTOR",
-            "hint": "Activate the reactor coolant boost.",
-            "explanation": "Supplemental coolant injection keeps nuclear fuel below critical temperature thresholds during anomalous heat events.",
-            "id": "eh_l41_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Emergency diesel generator failing during a mandatory test cycle. Input code!",
-            "correctAnswer": "BACKUP POWER RESTORE",
-            "hint": "Restore backup power systems now.",
-            "explanation": "Nuclear plant emergency generators must restore power within 10 seconds to prevent instrumentation and cooling blackouts.",
-            "id": "eh_l41_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Containment building pressure gauge reading outside normal parameters. Input code!",
-            "correctAnswer": "CONTAINMENT CHECK NOW",
-            "hint": "Initiate an immediate containment check.",
-            "explanation": "Pressure anomalies in containment buildings require urgent inspection to rule out internal steam leaks or wall defects.",
-            "id": "eh_l41_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Dam water level exceeding spillway capacity after continuous heavy rainfall. Input code!",
-            "correctAnswer": "SPILLWAY GATES OPEN",
-            "hint": "Open the spillway gates immediately.",
-            "explanation": "Opening spillway gates releases controlled water flow to prevent the dam wall from being overtopped and failing.",
-            "id": "eh_l42_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Structural crack detected in the dam face at the current water level. Input code!",
-            "correctAnswer": "DOWNSTREAM WARN NOW",
-            "hint": "Warn all downstream communities now.",
-            "explanation": "Downstream warnings give residents the critical lead time needed to evacuate before a potential dam failure wave.",
-            "id": "eh_l42_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Emergency pumping needed to reduce the reservoir water level quickly. Input code!",
-            "correctAnswer": "PUMP OUTFLOW MAX 3",
-            "hint": "Set outflow pump 3 to maximum capacity.",
-            "explanation": "Emergency pumping at maximum capacity reduces reservoir pressure and buys engineers time for structural repairs.",
-            "id": "eh_l42_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Cargo vessel ran aground on a reef two miles offshore. Input tow code!",
-            "correctAnswer": "TUG BOAT DEPLOYED NOW",
-            "hint": "Deploy the tugboat immediately.",
-            "explanation": "Tugboats can free grounded vessels before hull stress fractures form, preventing total loss and environmental damage.",
-            "id": "eh_l43_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Grounded ship reporting hull breach in cargo hold 3. Input inspection code!",
-            "correctAnswer": "COAST GUARD HULL 3",
-            "hint": "Dispatch coast guard to cargo hold 3.",
-            "explanation": "Coast guard marine engineers assess hull breach severity to determine whether patching or cargo transfer is the priority.",
-            "id": "eh_l43_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Fuel oil leaking from the damaged ship hull into surrounding waters. Input code!",
-            "correctAnswer": "POLLUTION CONTROL NOW",
-            "hint": "Activate pollution control immediately.",
-            "explanation": "Rapid oil containment prevents coastal and reef contamination that can take decades to recover ecologically.",
-            "id": "eh_l43_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Six-vehicle pileup blocking all motorway lanes at junction 7. Input code!",
-            "correctAnswer": "MOTORWAY CLOSE J7",
-            "hint": "Close the motorway at junction 7.",
-            "explanation": "Full motorway closure gives rescue and fire crews safe working space around a major multi-vehicle incident.",
-            "id": "eh_l44_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Trapped casualties in crushed vehicles requiring specialized cutting equipment. Input code!",
-            "correctAnswer": "HEAVY RESCUE J7 NOW",
-            "hint": "Send heavy rescue to junction 7 now.",
-            "explanation": "Heavy rescue units carry hydraulic cutters and spreaders designed to open vehicle bodies for safe passenger extraction.",
-            "id": "eh_l44_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Fuel tanker involved in the crash is leaking diesel with explosion risk. Input code!",
-            "correctAnswer": "FOAM UNIT TANKER NOW",
-            "hint": "Deploy the foam unit to the tanker.",
-            "explanation": "Foam blankets over diesel spills suppress vapors and reduce ignition risk near hot engine components.",
-            "id": "eh_l44_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Explosion in the solvent storage section of the chemical plant. Input code!",
-            "correctAnswer": "CHEMICAL SECTOR LOCK",
-            "hint": "Lock down the chemical sector now.",
-            "explanation": "Sector lockdowns keep unauthorized personnel out and allow hazmat teams to work safely within the blast zone.",
-            "id": "eh_l45_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Multiple workers have burns and chemical exposure injuries on site. Input code!",
-            "correctAnswer": "MASS CASUALTY SITE A",
-            "hint": "Declare a mass casualty incident at site A.",
-            "explanation": "MCI declarations release additional resources including specialist burn treatment teams and extra ambulances.",
-            "id": "eh_l45_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Secondary explosion risk from unstable material remaining in storage tank 6. Input code!",
-            "correctAnswer": "EVACUATE 500 METER",
-            "hint": "Evacuate within a 500-meter radius.",
-            "explanation": "A 500-meter evacuation zone provides a safety buffer from shrapnel and blast overpressure if a second explosion occurs.",
-            "id": "eh_l45_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Unauthorized person reported on school grounds near the main entrance. Input code!",
-            "correctAnswer": "LOCKDOWN SCHOOL NOW",
-            "hint": "Initiate school lockdown immediately.",
-            "explanation": "Lockdown procedures secure all classrooms and account for students while police respond to the intruder report.",
-            "id": "eh_l46_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Intruder confirmed on school property with police en route to the scene. Input code!",
-            "correctAnswer": "HOLD ROOMS IN PLACE",
-            "hint": "Keep all rooms locked and occupants in place.",
-            "explanation": "Room-in-place procedures keep students secured, reducing exposure and helping police contain the individual.",
-            "id": "eh_l46_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "All students accounted for and intruder has been detained outside the school. Input code!",
-            "correctAnswer": "ALL CLEAR SCHOOL NOW",
-            "hint": "Issue the all-clear for the school.",
-            "explanation": "A formal all-clear from law enforcement must precede any movement to ensure the threat is fully resolved.",
-            "id": "eh_l46_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Complete power failure affecting the entire hospital main building. Input code!",
-            "correctAnswer": "GENERATOR START NOW",
-            "hint": "Start the emergency generator immediately.",
-            "explanation": "Hospital generators must restore power to surgical theatres and ICUs within 10 seconds to protect critical patients.",
-            "id": "eh_l47_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Generator running but the intensive care ward is not receiving power. Input code!",
-            "correctAnswer": "SWITCH ICU PANEL NOW",
-            "hint": "Switch the ICU to the backup distribution panel.",
-            "explanation": "ICU backup panel switching routes generator power directly to life-support equipment, bypassing failed boards.",
-            "id": "eh_l47_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Power restoration delayed over 60 minutes with blood bank refrigeration at risk. Input code!",
-            "correctAnswer": "PORTABLE COOL UNIT",
-            "hint": "Deploy the portable cooling unit.",
-            "explanation": "Portable refrigeration units maintain blood products between 2 and 6 degrees Celsius until mains power is restored.",
-            "id": "eh_l47_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Pilot declaring emergency after single engine failure over the ocean. Input vectoring code!",
-            "correctAnswer": "EMERGENCY VECTOR NOW",
-            "hint": "Issue emergency vectoring to the nearest airport now.",
-            "explanation": "Emergency vectoring provides the most direct route to a suitable runway, maximizing fuel margins for a safe landing.",
-            "id": "eh_l48_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Passenger in cardiac arrest onboard the aircraft at cruising altitude. Input code!",
-            "correctAnswer": "DEFIBRILLATE ONBOARD",
-            "hint": "Use the onboard automated defibrillator.",
-            "explanation": "Aviation defibrillators have voice-guided instructions that allow cabin crew without medical training to use them correctly.",
-            "id": "eh_l48_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Fuel imbalance between wing tanks causing the aircraft to roll to one side. Input code!",
-            "correctAnswer": "CROSSFEED VALVE OPEN",
-            "hint": "Open the fuel crossfeed valve.",
-            "explanation": "Opening the crossfeed valve equalizes fuel load between wing tanks, restoring level flight and normal controllability.",
-            "id": "eh_l48_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Vehicle trapped inside a flooded underpass with driver still inside. Input code!",
-            "correctAnswer": "DIVE TEAM UNDERPASS",
-            "hint": "Deploy the dive team to the underpass.",
-            "explanation": "Swift water dive teams are trained to locate and extract passengers from vehicles submerged in rapidly rising water.",
-            "id": "eh_l49_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Drainage system overwhelmed, flooding basement apartments in the block. Input code!",
-            "correctAnswer": "PUMP BASEMENT BLOCK",
-            "hint": "Deploy pumps to the flooded basement block.",
-            "explanation": "High-capacity trailer-mounted pumps clear basement flooding before electrical systems are damaged by water contact.",
-            "id": "eh_l49_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Pedestrian swept into a storm drain by fast-moving floodwater. Input rescue code!",
-            "correctAnswer": "SWIFT RESCUE DRAIN 4",
-            "hint": "Deploy swift water rescue to drain 4.",
-            "explanation": "Swift water rescuers use throw bags and rope systems to retrieve people swept into stormwater drainage channels.",
-            "id": "eh_l49_q3"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Ammonia refrigerant leak detected in the industrial chiller room. Input code!",
-            "correctAnswer": "CHILLER ROOM EVACUATE",
-            "hint": "Evacuate the chiller room immediately.",
-            "explanation": "Ammonia is acutely toxic; even low concentrations cause severe respiratory damage, requiring immediate evacuation.",
-            "id": "eh_l50_q1"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Ammonia cloud forming outside the plant with wind direction toward the town. Input code!",
-            "correctAnswer": "SHELTER NORTH QUARTER",
-            "hint": "Issue shelter advice for the north quarter.",
-            "explanation": "Sheltering in sealed upper-floor rooms keeps residents above ground-level ammonia concentration until the cloud disperses.",
-            "id": "eh_l50_q2"
-        },
-        {
-            "instruction": "Dispatch the response unit immediately!",
-            "subtype": "emergencyHub",
-            "interactionType": "typing",
-            "dispatcherQuestion": "Emergency repair team requires entry to the ammonia ruptured pipe zone. Input code!",
-            "correctAnswer": "SCBA SUITS REQUIRED",
-            "hint": "Require full SCBA suits for all entry personnel.",
-            "explanation": "Self-contained breathing apparatus provides the only safe respiratory protection in ammonia-saturated atmospheres.",
-            "id": "eh_l50_q3"
-        }
-    ]
+  "gameType": "emergencyHub",
+  "batchIndex": 5,
+  "levels": "41-50",
+  "quests": [
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A warehouse worker's foot is trapped under a fallen pallet of boxes. Input rescue code!",
+      "correctAnswer": "LIFT THE PALLET CAREFULLY",
+      "hint": "Say what must be done to free his foot.",
+      "explanation": "Lifting the load slowly and carefully frees him without causing further injury to the trapped foot.",
+      "id": "eh_l41_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Storm winds have blown a large tree branch onto a parked school bus. Input safety code!",
+      "correctAnswer": "CHECK FOR INJURIES",
+      "hint": "Say what must happen before anything else.",
+      "explanation": "Checking everyone on board for injuries comes first, before dealing with the branch itself.",
+      "id": "eh_l41_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A passenger has collapsed on a crowded train between stations. Input medical code!",
+      "correctAnswer": "STOP AT NEXT STATION",
+      "hint": "Say where the train should stop for help to board.",
+      "explanation": "Getting to the next station quickly lets paramedics board and treat him without delay.",
+      "id": "eh_l41_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A camper's tent has caught fire from a portable stove. Input fire code!",
+      "correctAnswer": "MOVE EVERYONE AWAY",
+      "hint": "Say the first safety step before fighting the fire.",
+      "explanation": "Getting everyone clear of the flames comes before any attempt to put the fire out.",
+      "id": "eh_l42_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A woman with diabetes is shaking, sweating, and cannot speak clearly. Input medical code!",
+      "correctAnswer": "CALL FOR AN AMBULANCE",
+      "hint": "Ask for the vehicle that can treat him on the way to hospital.",
+      "explanation": "These are signs of dangerously low blood sugar, which paramedics can treat within minutes of arriving.",
+      "id": "eh_l42_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Two men are seen loading electronics from a warehouse into an unmarked van. Input police code!",
+      "correctAnswer": "GET POLICE TO THE SCENE",
+      "hint": "Say who's needed, and where.",
+      "explanation": "A patrol car can respond fast enough to check whether the men have permission to be there.",
+      "id": "eh_l42_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A power cut has stopped a man's home oxygen machine from working. Input medical code!",
+      "correctAnswer": "GET PARAMEDICS THERE FAST",
+      "hint": "Stress both the team needed and the urgency.",
+      "explanation": "Paramedics carry portable oxygen and can support him safely until his power supply is restored.",
+      "id": "eh_l43_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Heavy rain has flooded a underpass with a car stuck inside it. Input rescue code!",
+      "correctAnswer": "SEND IN THE RESCUE TEAM",
+      "hint": "Ask for the specialists trained for this exact rescue.",
+      "explanation": "Floodwater can rise fast in a low underpass, so a trained rescue team must reach the car quickly.",
+      "id": "eh_l43_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A fire alarm is sounding in a crowded shopping center on a Saturday. Input fire code!",
+      "correctAnswer": "EVACUATE THE CENTER",
+      "hint": "Get everyone out before checking anything else.",
+      "explanation": "With a crowd this size, getting everyone out calmly and quickly is always the first priority.",
+      "id": "eh_l43_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A man has mixed bleach and ammonia while cleaning and is coughing badly. Input medical code!",
+      "correctAnswer": "GET HIM OUTSIDE",
+      "hint": "Say the first step, before any medical treatment.",
+      "explanation": "Fresh air away from the fumes is the first step before anything else can help him.",
+      "id": "eh_l44_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A cricket ball has struck a spectator hard on the side of the head. Input medical code!",
+      "correctAnswer": "SEND AN AMBULANCE",
+      "hint": "Name the vehicle that carries paramedics.",
+      "explanation": "Any hard blow to the head needs a paramedic assessment, even if he seems fine at first.",
+      "id": "eh_l44_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A man is seen breaking a car window with a hammer in a parking garage. Input police code!",
+      "correctAnswer": "CALL FOR POLICE BACKUP",
+      "hint": "Ask for the extra support officers need.",
+      "explanation": "A break-in like this needs a fast police response before the man can take anything and leave.",
+      "id": "eh_l44_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A woman has gone into labor early on a long-distance bus. Input medical code!",
+      "correctAnswer": "CALL AN AMBULANCE NOW",
+      "hint": "Ask for help urgently, using the word 'now'.",
+      "explanation": "Paramedics are trained to assist a birth safely and can meet the bus at the nearest stop.",
+      "id": "eh_l45_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A faulty vending machine has given a customer an electric shock. Input safety code!",
+      "correctAnswer": "UNPLUG THE MACHINE",
+      "hint": "Say what must be cut off first.",
+      "explanation": "Cutting the machine's power removes the shock risk before anyone checks on the customer.",
+      "id": "eh_l45_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A group of boys is throwing bottles from a footbridge onto the road below. Input police code!",
+      "correctAnswer": "SEND THE POLICE",
+      "hint": "Name the service that responds to crime.",
+      "explanation": "This puts drivers in real danger, so a patrol car should respond before someone is hurt.",
+      "id": "eh_l45_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A man has chest pain and pain running down his left arm at work. Input medical code!",
+      "correctAnswer": "REQUEST MEDICAL HELP",
+      "hint": "Ask plainly for someone trained to treat them.",
+      "explanation": "Pain spreading down the arm is a classic heart attack sign, so help must be sent immediately.",
+      "id": "eh_l46_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A faulty heater has filled a caravan with smoke overnight. Input fire code!",
+      "correctAnswer": "GET EVERYONE OUTSIDE",
+      "hint": "Say the first thing that must happen to the occupants.",
+      "explanation": "Getting everyone into fresh air is the priority before checking what caused the smoke.",
+      "id": "eh_l46_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A woman reports her car has been keyed along the entire side. Input police code!",
+      "correctAnswer": "TAKE A THEFT REPORT",
+      "hint": "Say what the officer should do first, even without theft.",
+      "explanation": "A written report of the damage is needed for her insurance claim, even though nothing was taken.",
+      "id": "eh_l46_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A swimmer has been pulled from a lake and is not breathing. Input medical code!",
+      "correctAnswer": "START CPR NOW",
+      "hint": "Say the life-saving action to begin immediately.",
+      "explanation": "Starting CPR right away keeps blood moving to the brain until paramedics can take over.",
+      "id": "eh_l47_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A faulty scoreboard has short-circuited and is smoking above a football pitch. Input fire code!",
+      "correctAnswer": "CLEAR THE PITCH",
+      "hint": "Say the first safety step for the players and crowd.",
+      "explanation": "Clearing people from underneath removes the risk of sparks or falling debris hurting anyone.",
+      "id": "eh_l47_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A man's phone was snatched from his hand while he waited at a crosswalk. Input police code!",
+      "correctAnswer": "SEND A PATROL CAR",
+      "hint": "Ask for a police vehicle already on the road.",
+      "explanation": "A quick response gives police the best chance of finding the phone or the person nearby.",
+      "id": "eh_l47_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A worker has inhaled fumes from a freshly painted storeroom and feels dizzy. Input medical code!",
+      "correctAnswer": "GET HIM OUTSIDE",
+      "hint": "Say the first step, before any medical treatment.",
+      "explanation": "Fresh air away from the fumes is the first step before treating any remaining symptoms.",
+      "id": "eh_l48_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A small fire has started in a recycling bin behind a supermarket. Input fire code!",
+      "correctAnswer": "CALL THE FIRE BRIGADE",
+      "hint": "Name the service that puts out fires.",
+      "explanation": "Bin fires can spread to nearby walls or bins, so a properly equipped crew should attend.",
+      "id": "eh_l48_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A driver reports a car overtaking dangerously and forcing others off the road. Input police code!",
+      "correctAnswer": "ALERT THE POLICE",
+      "hint": "Let the police know what you're seeing.",
+      "explanation": "Reporting dangerous driving while it's happening helps police locate and stop the vehicle quickly.",
+      "id": "eh_l48_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A child has a severe nut allergy and just ate food from an unlabeled dish. Input medical code!",
+      "correctAnswer": "CALL FOR PARAMEDICS",
+      "hint": "Ask for the medical team by name.",
+      "explanation": "Without knowing what's in the food, paramedics should be sent in case a reaction begins quickly.",
+      "id": "eh_l49_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A burst water main is flooding a residential street and rising fast. Input safety code!",
+      "correctAnswer": "EVACUATE LOW HOMES",
+      "hint": "Say who needs to leave first.",
+      "explanation": "Homes at the lowest point of the street are at greatest risk, so they should be evacuated first.",
+      "id": "eh_l49_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A woman reports a man exposing himself to passersby in a park. Input police code!",
+      "correctAnswer": "DISPATCH THE POLICE",
+      "hint": "Send the service that handles this kind of incident.",
+      "explanation": "A quick police response can stop the behavior and keep other park visitors safe.",
+      "id": "eh_l49_q3"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A man has a fish bone stuck in his throat at a seafood restaurant. Input medical code!",
+      "correctAnswer": "SEND PARAMEDICS NOW",
+      "hint": "Ask for the medical team, and add urgency.",
+      "explanation": "Paramedics have the tools to remove a stuck object safely without pushing it in further.",
+      "id": "eh_l50_q1"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "Faulty Christmas lights have sparked and caught a dry tree alight indoors. Input fire code!",
+      "correctAnswer": "UNPLUG THE LIGHTS",
+      "hint": "Say the first thing that must be cut off.",
+      "explanation": "Cutting the power source first stops the fire from being fed while help is called.",
+      "id": "eh_l50_q2"
+    },
+    {
+      "instruction": "Dispatch the response unit immediately!",
+      "subtype": "emergencyHub",
+      "interactionType": "typing",
+      "dispatcherQuestion": "A resident reports a man peering through windows along their street at night. Input police code!",
+      "correctAnswer": "DISPATCH A POLICE UNIT",
+      "hint": "Send an official police vehicle to the scene.",
+      "explanation": "A patrol car can check the area and reassure residents that someone is looking into it.",
+      "id": "eh_l50_q3"
+    }
+  ]
 }

@@ -1,601 +1,547 @@
 {
-    "gameType": "sentenceOrderReading",
-    "batchIndex": 1,
-    "levels": "1-10",
-    "quests": [
-        {
-            "id": "RDG_SENTENCEORDERREADING_L1_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 1-1-1] They lowered the robotic submersible into the dark, crushing abyss.",
-                "[Index 1-1-2] The cameras finally captured the glowing hydrothermal vents on the seafloor.",
-                "[Index 1-1-0] Deep-sea explorers carefully calibrated their specialized sonar array."
-            ],
-            "correctOrder": [
-                2,
-                0,
-                1
-            ],
-            "hint": "Identify chronological steps: sonar check, descending, and viewing results. (Diving calibration index 1-1)",
-            "explanation": "The logical order follows preparations, dive execution, and final discovery. [Verified by Abyssal Chronology Unit 1]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L1_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 1-2-0] An underwater volcanic eruption released superheated chemical minerals.",
-                "[Index 1-2-2] Anglerfish and crabs gathered around the vents to feed on the bacterial mats.",
-                "[Index 1-2-1] Chemosynthetic bacteria absorbed the hydrogen sulfide to produce energy."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                1
-            ],
-            "hint": "Map the energy flow: mineral emission, microbial production, and animal grazing. (Diving calibration index 1-2)",
-            "explanation": "Hydrothermal ecosystems thrive in complete darkness powered entirely by bacteria. [Verified by Abyssal Chronology Unit 1]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L1_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 1-3-2] Otters and small fish find food and shelter inside the thick green layers.",
-                "[Index 1-3-1] They grow rapidly upward to reach the sunlit canopy of the ocean surface.",
-                "[Index 1-3-0] Giant kelp forests anchor their sturdy holdfasts to the rocky seafloor."
-            ],
-            "correctOrder": [
-                2,
-                1,
-                0
-            ],
-            "hint": "Focus on the physical structure: anchoring first, vertical growth next, and habitat use last. (Diving calibration index 1-3)",
-            "explanation": "Kelps must anchor and grow before marine creatures can utilize them for shelter. [Verified by Abyssal Chronology Unit 1]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L2_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 2-1-2] The trapped krill are then swallowed whole into its colossal stomach.",
-                "[Index 2-1-1] It pushes the water out through its comb-like baleen plates.",
-                "[Index 2-1-0] The blue whale opens its massive mouth to engulf a dense swarm of krill."
-            ],
-            "correctOrder": [
-                2,
-                1,
-                0
-            ],
-            "hint": "Observe the biological feeding steps: engulfing, filtering, and swallowing. (Diving calibration index 2-1)",
-            "explanation": "Baleen whales sieve food by trapping prey inside their filtering plates before swallowing. [Verified by Abyssal Chronology Unit 2]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L2_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 2-2-2] The pilot switches on the powerful external LED floodlights.",
-                "[Index 2-2-0] A deep-sea submersible begins its slow descent into the twilight zone.",
-                "[Index 2-2-1] Sunlight rapidly fades until absolute blackness envelops the vessel.",
-                "[Index 2-2-3] Bizarre glowing siphonophores suddenly become visible in the beam."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                0,
-                3
-            ],
-            "hint": "Sequence the dive stages: beginning descent, entering darkness, turning on lights, and spotting organisms. (Diving calibration index 2-2)",
-            "explanation": "Exploring the deep ocean requires transitioning through layers of decreasing light into complete darkness. [Verified by Abyssal Chronology Unit 2]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L2_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 2-3-3] A new submarine volcano erupts, creating fresh volcanic basalt rock.",
-                "[Index 2-3-1] The extreme heat melts the crust into high-pressure liquid magma.",
-                "[Index 2-3-2] The magma rises upward through cracks in the seafloor crust.",
-                "[Index 2-3-0] Subduction zones force ocean tectonic plates deep into the Earth's hot mantle."
-            ],
-            "correctOrder": [
-                3,
-                1,
-                2,
-                0
-            ],
-            "hint": "Follow the geological cycle: subduction, melting, rising magma, and underwater eruption. (Diving calibration index 2-3)",
-            "explanation": "Tectonic movements drive underwater volcanism by generating and venting magma. [Verified by Abyssal Chronology Unit 2]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L3_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 3-1-2] These skeletons gradually fuse to form massive deep-sea coral reefs.",
-                "[Index 3-1-1] They deposit hard skeleton structures over centuries of slow growth.",
-                "[Index 3-1-0] Deep-sea coral polyps extract calcium carbonate from the cold seawater.",
-                "[Index 3-1-3] Dozens of rare invertebrate species move in to form a highly diverse community."
-            ],
-            "correctOrder": [
-                2,
-                1,
-                0,
-                3
-            ],
-            "hint": "Order the growth stages: extraction, skeleton deposit, reef formation, and species colonization. (Diving calibration index 3-1)",
-            "explanation": "Corals must build their physical skeletons over centuries before they can support rich biodiversity. [Verified by Abyssal Chronology Unit 3]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L3_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 3-2-3] Specialized bone-eating worms colonize the remaining skeletal frame.",
-                "[Index 3-2-0] A dead whale carcass sinks slowly through miles of open ocean water.",
-                "[Index 3-2-4] Finally, microbial mats digest the remaining fats inside the bones over decades.",
-                "[Index 3-2-2] Scavengers like hagfish quickly clean off the soft flesh and tissues.",
-                "[Index 3-2-1] It eventually settles on the barren, muddy seafloor of the abyssal plain."
-            ],
-            "correctOrder": [
-                1,
-                4,
-                3,
-                0,
-                2
-            ],
-            "hint": "Sequence the decay timeline: sinking, settling, scavenger feeding, bone worms, and microbial digestion. (Diving calibration index 3-2)",
-            "explanation": "A whale fall provides a rich, progressive oasis of nutrients to deep-sea creatures over decades. [Verified by Abyssal Chronology Unit 3]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L3_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 3-3-2] Cold, nutrient-rich water rises from the deep ocean to fill the void.",
-                "[Index 3-3-0] Severe atmospheric winds blow surface waters away from the coast.",
-                "[Index 3-3-1] This creates a low-pressure void near the shoreline.",
-                "[Index 3-3-3] Phytoplankton bloom massively due to the sudden abundance of nutrients.",
-                "[Index 3-3-4] Large schools of fish and marine birds gather to feast on the plankton."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                0,
-                3,
-                4
-            ],
-            "hint": "Order the coastal upwelling process: wind blowing, void creation, deep water rising, plankton bloom, and predator gathering. (Diving calibration index 3-3)",
-            "explanation": "Wind-driven upwelling transports deep nutrients to the surface, sparking immense marine productivity. [Verified by Abyssal Chronology Unit 3]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L4_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 4-1-3] Water is violently expelled through the siphon to generate rocket propulsion.",
-                "[Index 4-1-4] The squid successfully escapes the jaws of a diving sperm whale.",
-                "[Index 4-1-1] These giant axons allow electrical signals to travel at extreme velocities.",
-                "[Index 4-1-2] The rapid signals trigger instantaneous muscle contractions in the mantle.",
-                "[Index 4-1-0] Deep-sea squids possess giant axon nerves that run through their bodies."
-            ],
-            "correctOrder": [
-                4,
-                2,
-                3,
-                0,
-                1
-            ],
-            "hint": "Map the anatomical escape reflex: nerve setup, signal travel, muscle contraction, siphon jetting, and escaping predators. (Diving calibration index 4-1)",
-            "explanation": "Specialized giant axons facilitate ultra-fast neural transmissions for sudden, life-saving jet propulsion. [Verified by Abyssal Chronology Unit 4]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L4_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 4-2-2] The cameras finally captured the glowing hydrothermal vents on the seafloor.",
-                "[Index 4-2-1] They lowered the robotic submersible into the dark, crushing abyss.",
-                "[Index 4-2-0] Deep-sea explorers carefully calibrated their specialized sonar array."
-            ],
-            "correctOrder": [
-                2,
-                1,
-                0
-            ],
-            "hint": "Identify chronological steps: sonar check, descending, and viewing results. (Diving calibration index 4-2)",
-            "explanation": "The logical order follows preparations, dive execution, and final discovery. [Verified by Abyssal Chronology Unit 4]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L4_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 4-3-2] Anglerfish and crabs gathered around the vents to feed on the bacterial mats.",
-                "[Index 4-3-0] An underwater volcanic eruption released superheated chemical minerals.",
-                "[Index 4-3-1] Chemosynthetic bacteria absorbed the hydrogen sulfide to produce energy."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                0
-            ],
-            "hint": "Map the energy flow: mineral emission, microbial production, and animal grazing. (Diving calibration index 4-3)",
-            "explanation": "Hydrothermal ecosystems thrive in complete darkness powered entirely by bacteria. [Verified by Abyssal Chronology Unit 4]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L5_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 5-1-1] They grow rapidly upward to reach the sunlit canopy of the ocean surface.",
-                "[Index 5-1-2] Otters and small fish find food and shelter inside the thick green layers.",
-                "[Index 5-1-0] Giant kelp forests anchor their sturdy holdfasts to the rocky seafloor."
-            ],
-            "correctOrder": [
-                2,
-                0,
-                1
-            ],
-            "hint": "Focus on the physical structure: anchoring first, vertical growth next, and habitat use last. (Diving calibration index 5-1)",
-            "explanation": "Kelps must anchor and grow before marine creatures can utilize them for shelter. [Verified by Abyssal Chronology Unit 5]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L5_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 5-2-2] The trapped krill are then swallowed whole into its colossal stomach.",
-                "[Index 5-2-0] The blue whale opens its massive mouth to engulf a dense swarm of krill.",
-                "[Index 5-2-1] It pushes the water out through its comb-like baleen plates."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                0
-            ],
-            "hint": "Observe the biological feeding steps: engulfing, filtering, and swallowing. (Diving calibration index 5-2)",
-            "explanation": "Baleen whales sieve food by trapping prey inside their filtering plates before swallowing. [Verified by Abyssal Chronology Unit 5]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L5_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 5-3-1] Sunlight rapidly fades until absolute blackness envelops the vessel.",
-                "[Index 5-3-0] A deep-sea submersible begins its slow descent into the twilight zone.",
-                "[Index 5-3-2] The pilot switches on the powerful external LED floodlights.",
-                "[Index 5-3-3] Bizarre glowing siphonophores suddenly become visible in the beam."
-            ],
-            "correctOrder": [
-                1,
-                0,
-                2,
-                3
-            ],
-            "hint": "Sequence the dive stages: beginning descent, entering darkness, turning on lights, and spotting organisms. (Diving calibration index 5-3)",
-            "explanation": "Exploring the deep ocean requires transitioning through layers of decreasing light into complete darkness. [Verified by Abyssal Chronology Unit 5]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L6_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 6-1-3] A new submarine volcano erupts, creating fresh volcanic basalt rock.",
-                "[Index 6-1-0] Subduction zones force ocean tectonic plates deep into the Earth's hot mantle.",
-                "[Index 6-1-1] The extreme heat melts the crust into high-pressure liquid magma.",
-                "[Index 6-1-2] The magma rises upward through cracks in the seafloor crust."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3,
-                0
-            ],
-            "hint": "Follow the geological cycle: subduction, melting, rising magma, and underwater eruption. (Diving calibration index 6-1)",
-            "explanation": "Tectonic movements drive underwater volcanism by generating and venting magma. [Verified by Abyssal Chronology Unit 6]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L6_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 6-2-1] They deposit hard skeleton structures over centuries of slow growth.",
-                "[Index 6-2-2] These skeletons gradually fuse to form massive deep-sea coral reefs.",
-                "[Index 6-2-3] Dozens of rare invertebrate species move in to form a highly diverse community.",
-                "[Index 6-2-0] Deep-sea coral polyps extract calcium carbonate from the cold seawater."
-            ],
-            "correctOrder": [
-                3,
-                0,
-                1,
-                2
-            ],
-            "hint": "Order the growth stages: extraction, skeleton deposit, reef formation, and species colonization. (Diving calibration index 6-2)",
-            "explanation": "Corals must build their physical skeletons over centuries before they can support rich biodiversity. [Verified by Abyssal Chronology Unit 6]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L6_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 6-3-0] A dead whale carcass sinks slowly through miles of open ocean water.",
-                "[Index 6-3-3] Specialized bone-eating worms colonize the remaining skeletal frame.",
-                "[Index 6-3-4] Finally, microbial mats digest the remaining fats inside the bones over decades.",
-                "[Index 6-3-2] Scavengers like hagfish quickly clean off the soft flesh and tissues.",
-                "[Index 6-3-1] It eventually settles on the barren, muddy seafloor of the abyssal plain."
-            ],
-            "correctOrder": [
-                0,
-                4,
-                3,
-                1,
-                2
-            ],
-            "hint": "Sequence the decay timeline: sinking, settling, scavenger feeding, bone worms, and microbial digestion. (Diving calibration index 6-3)",
-            "explanation": "A whale fall provides a rich, progressive oasis of nutrients to deep-sea creatures over decades. [Verified by Abyssal Chronology Unit 6]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L7_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 7-1-2] Cold, nutrient-rich water rises from the deep ocean to fill the void.",
-                "[Index 7-1-1] This creates a low-pressure void near the shoreline.",
-                "[Index 7-1-4] Large schools of fish and marine birds gather to feast on the plankton.",
-                "[Index 7-1-3] Phytoplankton bloom massively due to the sudden abundance of nutrients.",
-                "[Index 7-1-0] Severe atmospheric winds blow surface waters away from the coast."
-            ],
-            "correctOrder": [
-                4,
-                1,
-                0,
-                3,
-                2
-            ],
-            "hint": "Order the coastal upwelling process: wind blowing, void creation, deep water rising, plankton bloom, and predator gathering. (Diving calibration index 7-1)",
-            "explanation": "Wind-driven upwelling transports deep nutrients to the surface, sparking immense marine productivity. [Verified by Abyssal Chronology Unit 7]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L7_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 7-2-1] These giant axons allow electrical signals to travel at extreme velocities.",
-                "[Index 7-2-3] Water is violently expelled through the siphon to generate rocket propulsion.",
-                "[Index 7-2-4] The squid successfully escapes the jaws of a diving sperm whale.",
-                "[Index 7-2-0] Deep-sea squids possess giant axon nerves that run through their bodies.",
-                "[Index 7-2-2] The rapid signals trigger instantaneous muscle contractions in the mantle."
-            ],
-            "correctOrder": [
-                3,
-                0,
-                4,
-                1,
-                2
-            ],
-            "hint": "Map the anatomical escape reflex: nerve setup, signal travel, muscle contraction, siphon jetting, and escaping predators. (Diving calibration index 7-2)",
-            "explanation": "Specialized giant axons facilitate ultra-fast neural transmissions for sudden, life-saving jet propulsion. [Verified by Abyssal Chronology Unit 7]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L7_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 7-3-1] They lowered the robotic submersible into the dark, crushing abyss.",
-                "[Index 7-3-2] The cameras finally captured the glowing hydrothermal vents on the seafloor.",
-                "[Index 7-3-0] Deep-sea explorers carefully calibrated their specialized sonar array."
-            ],
-            "correctOrder": [
-                2,
-                0,
-                1
-            ],
-            "hint": "Identify chronological steps: sonar check, descending, and viewing results. (Diving calibration index 7-3)",
-            "explanation": "The logical order follows preparations, dive execution, and final discovery. [Verified by Abyssal Chronology Unit 7]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L8_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 8-1-0] An underwater volcanic eruption released superheated chemical minerals.",
-                "[Index 8-1-2] Anglerfish and crabs gathered around the vents to feed on the bacterial mats.",
-                "[Index 8-1-1] Chemosynthetic bacteria absorbed the hydrogen sulfide to produce energy."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                1
-            ],
-            "hint": "Map the energy flow: mineral emission, microbial production, and animal grazing. (Diving calibration index 8-1)",
-            "explanation": "Hydrothermal ecosystems thrive in complete darkness powered entirely by bacteria. [Verified by Abyssal Chronology Unit 8]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L8_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 8-2-2] Otters and small fish find food and shelter inside the thick green layers.",
-                "[Index 8-2-1] They grow rapidly upward to reach the sunlit canopy of the ocean surface.",
-                "[Index 8-2-0] Giant kelp forests anchor their sturdy holdfasts to the rocky seafloor."
-            ],
-            "correctOrder": [
-                2,
-                1,
-                0
-            ],
-            "hint": "Focus on the physical structure: anchoring first, vertical growth next, and habitat use last. (Diving calibration index 8-2)",
-            "explanation": "Kelps must anchor and grow before marine creatures can utilize them for shelter. [Verified by Abyssal Chronology Unit 8]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L8_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 8-3-2] The trapped krill are then swallowed whole into its colossal stomach.",
-                "[Index 8-3-0] The blue whale opens its massive mouth to engulf a dense swarm of krill.",
-                "[Index 8-3-1] It pushes the water out through its comb-like baleen plates."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                0
-            ],
-            "hint": "Observe the biological feeding steps: engulfing, filtering, and swallowing. (Diving calibration index 8-3)",
-            "explanation": "Baleen whales sieve food by trapping prey inside their filtering plates before swallowing. [Verified by Abyssal Chronology Unit 8]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L9_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 9-1-2] The pilot switches on the powerful external LED floodlights.",
-                "[Index 9-1-3] Bizarre glowing siphonophores suddenly become visible in the beam.",
-                "[Index 9-1-1] Sunlight rapidly fades until absolute blackness envelops the vessel.",
-                "[Index 9-1-0] A deep-sea submersible begins its slow descent into the twilight zone."
-            ],
-            "correctOrder": [
-                3,
-                2,
-                0,
-                1
-            ],
-            "hint": "Sequence the dive stages: beginning descent, entering darkness, turning on lights, and spotting organisms. (Diving calibration index 9-1)",
-            "explanation": "Exploring the deep ocean requires transitioning through layers of decreasing light into complete darkness. [Verified by Abyssal Chronology Unit 9]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L9_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 9-2-0] Subduction zones force ocean tectonic plates deep into the Earth's hot mantle.",
-                "[Index 9-2-1] The extreme heat melts the crust into high-pressure liquid magma.",
-                "[Index 9-2-3] A new submarine volcano erupts, creating fresh volcanic basalt rock.",
-                "[Index 9-2-2] The magma rises upward through cracks in the seafloor crust."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3,
-                2
-            ],
-            "hint": "Follow the geological cycle: subduction, melting, rising magma, and underwater eruption. (Diving calibration index 9-2)",
-            "explanation": "Tectonic movements drive underwater volcanism by generating and venting magma. [Verified by Abyssal Chronology Unit 9]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L9_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 9-3-3] Dozens of rare invertebrate species move in to form a highly diverse community.",
-                "[Index 9-3-2] These skeletons gradually fuse to form massive deep-sea coral reefs.",
-                "[Index 9-3-1] They deposit hard skeleton structures over centuries of slow growth.",
-                "[Index 9-3-0] Deep-sea coral polyps extract calcium carbonate from the cold seawater."
-            ],
-            "correctOrder": [
-                3,
-                2,
-                1,
-                0
-            ],
-            "hint": "Order the growth stages: extraction, skeleton deposit, reef formation, and species colonization. (Diving calibration index 9-3)",
-            "explanation": "Corals must build their physical skeletons over centuries before they can support rich biodiversity. [Verified by Abyssal Chronology Unit 9]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L10_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 10-1-2] Scavengers like hagfish quickly clean off the soft flesh and tissues.",
-                "[Index 10-1-0] A dead whale carcass sinks slowly through miles of open ocean water.",
-                "[Index 10-1-3] Specialized bone-eating worms colonize the remaining skeletal frame.",
-                "[Index 10-1-1] It eventually settles on the barren, muddy seafloor of the abyssal plain.",
-                "[Index 10-1-4] Finally, microbial mats digest the remaining fats inside the bones over decades."
-            ],
-            "correctOrder": [
-                1,
-                3,
-                0,
-                2,
-                4
-            ],
-            "hint": "Sequence the decay timeline: sinking, settling, scavenger feeding, bone worms, and microbial digestion. (Diving calibration index 10-1)",
-            "explanation": "A whale fall provides a rich, progressive oasis of nutrients to deep-sea creatures over decades. [Verified by Abyssal Chronology Unit 10]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L10_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 10-2-4] Large schools of fish and marine birds gather to feast on the plankton.",
-                "[Index 10-2-3] Phytoplankton bloom massively due to the sudden abundance of nutrients.",
-                "[Index 10-2-0] Severe atmospheric winds blow surface waters away from the coast.",
-                "[Index 10-2-2] Cold, nutrient-rich water rises from the deep ocean to fill the void.",
-                "[Index 10-2-1] This creates a low-pressure void near the shoreline."
-            ],
-            "correctOrder": [
-                2,
-                4,
-                3,
-                1,
-                0
-            ],
-            "hint": "Order the coastal upwelling process: wind blowing, void creation, deep water rising, plankton bloom, and predator gathering. (Diving calibration index 10-2)",
-            "explanation": "Wind-driven upwelling transports deep nutrients to the surface, sparking immense marine productivity. [Verified by Abyssal Chronology Unit 10]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L10_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 10-3-1] These giant axons allow electrical signals to travel at extreme velocities.",
-                "[Index 10-3-3] Water is violently expelled through the siphon to generate rocket propulsion.",
-                "[Index 10-3-0] Deep-sea squids possess giant axon nerves that run through their bodies.",
-                "[Index 10-3-4] The squid successfully escapes the jaws of a diving sperm whale.",
-                "[Index 10-3-2] The rapid signals trigger instantaneous muscle contractions in the mantle."
-            ],
-            "correctOrder": [
-                2,
-                0,
-                4,
-                1,
-                3
-            ],
-            "hint": "Map the anatomical escape reflex: nerve setup, signal travel, muscle contraction, siphon jetting, and escaping predators. (Diving calibration index 10-3)",
-            "explanation": "Specialized giant axons facilitate ultra-fast neural transmissions for sudden, life-saving jet propulsion. [Verified by Abyssal Chronology Unit 10]."
-        }
-    ]
+  "gameType": "sentenceOrderReading",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "RDG_SENTENCEORDERREADING_L1_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "He got out of bed and took a warm shower.",
+        "After that, he put on his uniform and ate breakfast.",
+        "Ben's alarm clock rang at six thirty in the morning."
+      ],
+      "correctOrder": [
+        2,
+        0,
+        1
+      ],
+      "hint": "Think about what someone usually does right after waking up, before getting dressed for the day.",
+      "explanation": "The paragraph follows Ben's morning in time order: the alarm wakes him first, the shower comes next, and getting dressed and eating happen last."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L1_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "At the store, she picked out fresh vegetables and bread.",
+        "Ana made a shopping list before leaving the house.",
+        "She paid at the checkout and carried her bags home."
+      ],
+      "correctOrder": [
+        1,
+        0,
+        2
+      ],
+      "hint": "Notice what usually happens before someone can shop — good planning often comes first.",
+      "explanation": "Ana plans first, then shops for items, and finally pays and heads home — the natural order of any shopping trip."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L1_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Heavy rain finally poured down onto the streets.",
+        "Dark clouds gathered slowly over the quiet town.",
+        "A strong wind began to shake the trees."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0
+      ],
+      "hint": "Picture how a storm usually builds — what appears in the sky before the rain starts falling?",
+      "explanation": "Storms build in stages: clouds form first, the wind picks up as the storm nears, and rain falls last."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L2_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Grandma called to say she was coming for a visit.",
+        "They welcomed her with warm hugs at the front door.",
+        "The children quickly tidied up the living room."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        1
+      ],
+      "hint": "Think about what a family usually does to prepare before a guest actually arrives.",
+      "explanation": "The news of the visit comes first, tidying up follows, and the warm welcome happens only once Grandma arrives."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L2_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Students raised their hands to share their answers.",
+        "The teacher wrote a math problem on the whiteboard.",
+        "She checked their work and praised their effort."
+      ],
+      "correctOrder": [
+        1,
+        0,
+        2
+      ],
+      "hint": "A lesson usually starts with a question before anyone is able to answer it.",
+      "explanation": "A classroom exchange starts with the teacher's question, continues with student answers, and ends with her feedback."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L2_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Leo noticed his dog's food bowl was completely empty.",
+        "The dog happily wagged its tail and began eating.",
+        "He poured fresh kibble into the bowl."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        1
+      ],
+      "hint": "A problem is usually noticed before anyone can fix it.",
+      "explanation": "Leo first notices the empty bowl, then solves the problem by filling it, and the dog's happy reaction comes last."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L3_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "He poured the mixture into a hot, buttered pan.",
+        "He whisked the eggs with a pinch of salt.",
+        "Sam cracked two eggs into a mixing bowl."
+      ],
+      "correctOrder": [
+        2,
+        1,
+        0
+      ],
+      "hint": "In cooking, ingredients are usually combined in a bowl before they ever reach the pan.",
+      "explanation": "Cooking follows a clear order: the eggs go into the bowl first, get mixed next, and are cooked last."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L3_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "The family packed their suitcases the night before the trip.",
+        "Their plane took off smoothly into the clear sky.",
+        "They arrived at the airport two hours early."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        1
+      ],
+      "hint": "Think about what needs to be ready at home before anyone can even leave for the airport.",
+      "explanation": "Packing happens before departure, arriving at the airport comes next, and takeoff is the final step of the journey."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L3_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "The doctor gave her medicine and advice to rest.",
+        "Her mother took her to see the doctor.",
+        "Mia felt a sore throat and a mild fever."
+      ],
+      "correctOrder": [
+        2,
+        1,
+        0
+      ],
+      "hint": "A visit to the doctor usually happens only after someone first notices they feel unwell.",
+      "explanation": "Feeling sick comes first, seeking help follows, and treatment is given last, once the doctor has examined the patient."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L4_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "He found his seat and settled in with some popcorn.",
+        "Jack bought two tickets for the new action movie.",
+        "The lights dimmed as the film finally began."
+      ],
+      "correctOrder": [
+        1,
+        0,
+        2
+      ],
+      "hint": "You need a ticket in hand before you can go find a seat in the theater.",
+      "explanation": "A trip to the cinema starts with buying a ticket, continues with finding a seat, and the movie begins last."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L4_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "He started the washing machine and set the timer.",
+        "Dad sorted the clothes into light and dark piles.",
+        "The laundry basket was overflowing with dirty clothes."
+      ],
+      "correctOrder": [
+        2,
+        1,
+        0
+      ],
+      "hint": "Clothes are usually sorted into piles before they ever go into the machine.",
+      "explanation": "Noticing the full basket comes first, sorting follows, and starting the machine is the final step in doing laundry."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L4_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Firefighters arrived and put out the flames safely.",
+        "A small fire broke out in the kitchen trash can.",
+        "Someone quickly called the local fire department."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0
+      ],
+      "hint": "Help must be called before it is able to arrive at the scene.",
+      "explanation": "The fire starts the sequence, the call for help follows, and the firefighters' response comes last."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L5_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "They decorated the room with balloons and a banner.",
+        "Noah's friends secretly planned a surprise birthday party.",
+        "Everyone shouted 'surprise!' when Noah walked through the door."
+      ],
+      "correctOrder": [
+        1,
+        0,
+        2
+      ],
+      "hint": "A party must be planned and set up before the guest of honor can walk in.",
+      "explanation": "Planning comes first, decorating the room follows, and the surprise itself happens only when Noah appears."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L5_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Within an hour, the phone was fully charged again.",
+        "Emma's phone battery dropped to just two percent.",
+        "She plugged the charging cable into the wall socket."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0
+      ],
+      "hint": "A phone needs to be plugged in before its battery level can start going up.",
+      "explanation": "The low battery is the starting problem, plugging in the charger is the solution, and a full charge is the result."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L5_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Both teams took their positions on the field.",
+        "The referee blew the whistle to start the game.",
+        "The players stretched carefully before the football match."
+      ],
+      "correctOrder": [
+        2,
+        0,
+        1
+      ],
+      "hint": "Think about what happens right before a match is officially allowed to begin.",
+      "explanation": "Players stretch first, then take their positions, and the game starts only after the referee's whistle."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L6_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "They discussed the options and chose their favorite dishes.",
+        "The waiter handed the couple two menus at their table.",
+        "The waiter wrote down their order and walked to the kitchen."
+      ],
+      "correctOrder": [
+        1,
+        0,
+        2
+      ],
+      "hint": "You need to see a menu before you're able to decide what to order.",
+      "explanation": "Receiving the menu comes first, choosing dishes follows, and the order is taken last, right before it's prepared."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L6_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Sunlight and water helped a tiny green sprout appear.",
+        "A small seed was planted in the soft garden soil.",
+        "Weeks later, a tall sunflower bloomed in the garden."
+      ],
+      "correctOrder": [
+        1,
+        0,
+        2
+      ],
+      "hint": "A plant cannot grow tall until it has first sprouted from its seed.",
+      "explanation": "Growth happens in stages: the seed is planted first, a sprout appears next, and a full-grown flower blooms last."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L6_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "He dropped the envelope into the mailbox on the corner.",
+        "He put the card into an envelope and added a stamp.",
+        "Liam wrote a birthday card for his best friend."
+      ],
+      "correctOrder": [
+        2,
+        1,
+        0
+      ],
+      "hint": "A card needs to be written and sealed before it's ready to be mailed.",
+      "explanation": "Writing the card is the first step, preparing the envelope follows, and mailing it is the final action."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L7_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "She climbed into bed and quickly fell asleep.",
+        "She brushed her teeth and changed into her pajamas.",
+        "Sophie turned off the television after her favorite show ended."
+      ],
+      "correctOrder": [
+        2,
+        1,
+        0
+      ],
+      "hint": "Getting ready for bed usually begins right after screen time ends, not before.",
+      "explanation": "The evening winds down step by step: the TV goes off first, the bedtime routine follows, and sleep comes last."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L7_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "The librarian scanned the book and stamped the return date.",
+        "He carried the book to the front desk to check it out.",
+        "James searched the library shelves for a mystery novel."
+      ],
+      "correctOrder": [
+        2,
+        1,
+        0
+      ],
+      "hint": "A book has to be found on the shelf before it can be checked out at the desk.",
+      "explanation": "Finding the book comes first, bringing it to the desk follows, and the librarian's check-out process happens last."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L7_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "The first leaves started falling gently onto the sidewalk.",
+        "A cool breeze began to blow through the quiet streets.",
+        "The leaves on the trees slowly turned orange and red."
+      ],
+      "correctOrder": [
+        2,
+        1,
+        0
+      ],
+      "hint": "Trees usually change color well before their leaves actually begin to fall.",
+      "explanation": "Autumn unfolds gradually: the leaves change color first, the air turns cooler, and finally the leaves start to fall."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L8_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "She entered her address and completed the payment.",
+        "Rita searched an online store for a new pair of shoes.",
+        "She added her favorite pair to the shopping cart."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0
+      ],
+      "hint": "An item needs to be found and added to the cart before you're able to pay for it.",
+      "explanation": "Online shopping follows a clear sequence: searching first, adding to the cart next, and paying last."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L8_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "David noticed a sharp pain in one of his back teeth.",
+        "The dentist examined the tooth and fixed the problem.",
+        "He booked an appointment with his family dentist."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        1
+      ],
+      "hint": "A dental visit is usually booked only after someone first notices a problem.",
+      "explanation": "Noticing the pain starts the story, booking the appointment follows, and the treatment happens last."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L8_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "They all sat together for a picnic under a shady tree.",
+        "The Chen family drove to the park early on Saturday.",
+        "The kids ran straight to the swings and slides."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0
+      ],
+      "hint": "A family usually needs to arrive at the park before the children can start playing there.",
+      "explanation": "Arriving at the park comes first, playing on the equipment follows, and the picnic happens once everyone is ready to rest."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L9_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Mom asked the children to clean their rooms before dinner.",
+        "Mom checked their rooms and thanked them for their hard work.",
+        "They picked up their toys and made their beds."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        1
+      ],
+      "hint": "A request usually comes before the task is actually carried out.",
+      "explanation": "Mom's request starts the sequence, the cleaning happens next, and her approval comes only after the work is finished."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L9_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Oliver checked the departure board for his train's platform.",
+        "He found an empty seat by the window and sat down.",
+        "He walked quickly to platform four and boarded the train."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        1
+      ],
+      "hint": "You need to know which platform to head to before you can actually board a train.",
+      "explanation": "Checking the board comes first, boarding follows, and finding a seat is the last step before the journey begins."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L9_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Grace pointed her camera at the beautiful sunset.",
+        "She saved the photo and shared it with her friends.",
+        "She pressed the button to take the picture."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        1
+      ],
+      "hint": "A photo must exist before it's possible to share it with anyone.",
+      "explanation": "Framing the shot comes first, taking the picture follows, and sharing it is the final step."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L10_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "The Martins put up a tall Christmas tree in the living room.",
+        "On Christmas morning, they opened their presents together.",
+        "They decorated it with colorful lights and ornaments."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        1
+      ],
+      "hint": "A tree has to be set up in the room before anyone can start decorating it.",
+      "explanation": "Holiday preparations happen step by step: the tree goes up first, decorations follow, and the celebration happens last."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L10_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "He walked to the supply closet to get a new pack.",
+        "Mr. Kim's printer ran out of paper during a busy morning.",
+        "He refilled the tray and continued printing his documents."
+      ],
+      "correctOrder": [
+        1,
+        0,
+        2
+      ],
+      "hint": "A problem is usually noticed before someone goes looking for a way to solve it.",
+      "explanation": "The empty printer is the problem, getting more paper is the solution, and finishing the print job is the result."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L10_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Mrs. Lopez signed for the package and carried it inside.",
+        "The mail carrier rang the doorbell to announce the delivery.",
+        "A heavy package arrived at the front gate of the house."
+      ],
+      "correctOrder": [
+        2,
+        1,
+        0
+      ],
+      "hint": "A delivery person has to arrive and announce themselves before anyone can sign for a package.",
+      "explanation": "The package arrives first, the doorbell announces it, and signing for it happens last, once the door is answered."
+    }
+  ]
 }

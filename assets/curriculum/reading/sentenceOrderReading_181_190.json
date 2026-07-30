@@ -1,601 +1,787 @@
 {
-    "gameType": "sentenceOrderReading",
-    "batchIndex": 19,
-    "levels": "181-190",
-    "quests": [
-        {
-            "id": "RDG_SENTENCEORDERREADING_L181_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 181-1-0] Deep-sea explorers carefully calibrated their specialized sonar array.",
-                "[Index 181-1-2] The cameras finally captured the glowing hydrothermal vents on the seafloor.",
-                "[Index 181-1-1] They lowered the robotic submersible into the dark, crushing abyss."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                1
-            ],
-            "hint": "Identify chronological steps: sonar check, descending, and viewing results. (Diving calibration index 181-1)",
-            "explanation": "The logical order follows preparations, dive execution, and final discovery. [Verified by Abyssal Chronology Unit 181]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L181_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 181-2-0] An underwater volcanic eruption released superheated chemical minerals.",
-                "[Index 181-2-2] Anglerfish and crabs gathered around the vents to feed on the bacterial mats.",
-                "[Index 181-2-1] Chemosynthetic bacteria absorbed the hydrogen sulfide to produce energy."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                1
-            ],
-            "hint": "Map the energy flow: mineral emission, microbial production, and animal grazing. (Diving calibration index 181-2)",
-            "explanation": "Hydrothermal ecosystems thrive in complete darkness powered entirely by bacteria. [Verified by Abyssal Chronology Unit 181]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L181_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 181-3-1] They grow rapidly upward to reach the sunlit canopy of the ocean surface.",
-                "[Index 181-3-0] Giant kelp forests anchor their sturdy holdfasts to the rocky seafloor.",
-                "[Index 181-3-2] Otters and small fish find food and shelter inside the thick green layers."
-            ],
-            "correctOrder": [
-                1,
-                0,
-                2
-            ],
-            "hint": "Focus on the physical structure: anchoring first, vertical growth next, and habitat use last. (Diving calibration index 181-3)",
-            "explanation": "Kelps must anchor and grow before marine creatures can utilize them for shelter. [Verified by Abyssal Chronology Unit 181]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L182_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 182-1-1] It pushes the water out through its comb-like baleen plates.",
-                "[Index 182-1-2] The trapped krill are then swallowed whole into its colossal stomach.",
-                "[Index 182-1-0] The blue whale opens its massive mouth to engulf a dense swarm of krill."
-            ],
-            "correctOrder": [
-                2,
-                0,
-                1
-            ],
-            "hint": "Observe the biological feeding steps: engulfing, filtering, and swallowing. (Diving calibration index 182-1)",
-            "explanation": "Baleen whales sieve food by trapping prey inside their filtering plates before swallowing. [Verified by Abyssal Chronology Unit 182]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L182_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 182-2-1] Sunlight rapidly fades until absolute blackness envelops the vessel.",
-                "[Index 182-2-0] A deep-sea submersible begins its slow descent into the twilight zone.",
-                "[Index 182-2-3] Bizarre glowing siphonophores suddenly become visible in the beam.",
-                "[Index 182-2-2] The pilot switches on the powerful external LED floodlights."
-            ],
-            "correctOrder": [
-                1,
-                0,
-                3,
-                2
-            ],
-            "hint": "Sequence the dive stages: beginning descent, entering darkness, turning on lights, and spotting organisms. (Diving calibration index 182-2)",
-            "explanation": "Exploring the deep ocean requires transitioning through layers of decreasing light into complete darkness. [Verified by Abyssal Chronology Unit 182]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L182_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 182-3-1] The extreme heat melts the crust into high-pressure liquid magma.",
-                "[Index 182-3-3] A new submarine volcano erupts, creating fresh volcanic basalt rock.",
-                "[Index 182-3-2] The magma rises upward through cracks in the seafloor crust.",
-                "[Index 182-3-0] Subduction zones force ocean tectonic plates deep into the Earth's hot mantle."
-            ],
-            "correctOrder": [
-                3,
-                0,
-                2,
-                1
-            ],
-            "hint": "Follow the geological cycle: subduction, melting, rising magma, and underwater eruption. (Diving calibration index 182-3)",
-            "explanation": "Tectonic movements drive underwater volcanism by generating and venting magma. [Verified by Abyssal Chronology Unit 182]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L183_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 183-1-3] Dozens of rare invertebrate species move in to form a highly diverse community.",
-                "[Index 183-1-2] These skeletons gradually fuse to form massive deep-sea coral reefs.",
-                "[Index 183-1-0] Deep-sea coral polyps extract calcium carbonate from the cold seawater.",
-                "[Index 183-1-1] They deposit hard skeleton structures over centuries of slow growth."
-            ],
-            "correctOrder": [
-                2,
-                3,
-                1,
-                0
-            ],
-            "hint": "Order the growth stages: extraction, skeleton deposit, reef formation, and species colonization. (Diving calibration index 183-1)",
-            "explanation": "Corals must build their physical skeletons over centuries before they can support rich biodiversity. [Verified by Abyssal Chronology Unit 183]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L183_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 183-2-3] Specialized bone-eating worms colonize the remaining skeletal frame.",
-                "[Index 183-2-0] A dead whale carcass sinks slowly through miles of open ocean water.",
-                "[Index 183-2-4] Finally, microbial mats digest the remaining fats inside the bones over decades.",
-                "[Index 183-2-1] It eventually settles on the barren, muddy seafloor of the abyssal plain.",
-                "[Index 183-2-2] Scavengers like hagfish quickly clean off the soft flesh and tissues."
-            ],
-            "correctOrder": [
-                1,
-                3,
-                4,
-                0,
-                2
-            ],
-            "hint": "Sequence the decay timeline: sinking, settling, scavenger feeding, bone worms, and microbial digestion. (Diving calibration index 183-2)",
-            "explanation": "A whale fall provides a rich, progressive oasis of nutrients to deep-sea creatures over decades. [Verified by Abyssal Chronology Unit 183]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L183_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 183-3-3] Phytoplankton bloom massively due to the sudden abundance of nutrients.",
-                "[Index 183-3-0] Severe atmospheric winds blow surface waters away from the coast.",
-                "[Index 183-3-4] Large schools of fish and marine birds gather to feast on the plankton.",
-                "[Index 183-3-2] Cold, nutrient-rich water rises from the deep ocean to fill the void.",
-                "[Index 183-3-1] This creates a low-pressure void near the shoreline."
-            ],
-            "correctOrder": [
-                1,
-                4,
-                3,
-                0,
-                2
-            ],
-            "hint": "Order the coastal upwelling process: wind blowing, void creation, deep water rising, plankton bloom, and predator gathering. (Diving calibration index 183-3)",
-            "explanation": "Wind-driven upwelling transports deep nutrients to the surface, sparking immense marine productivity. [Verified by Abyssal Chronology Unit 183]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L184_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 184-1-4] The squid successfully escapes the jaws of a diving sperm whale.",
-                "[Index 184-1-3] Water is violently expelled through the siphon to generate rocket propulsion.",
-                "[Index 184-1-0] Deep-sea squids possess giant axon nerves that run through their bodies.",
-                "[Index 184-1-2] The rapid signals trigger instantaneous muscle contractions in the mantle.",
-                "[Index 184-1-1] These giant axons allow electrical signals to travel at extreme velocities."
-            ],
-            "correctOrder": [
-                2,
-                4,
-                3,
-                1,
-                0
-            ],
-            "hint": "Map the anatomical escape reflex: nerve setup, signal travel, muscle contraction, siphon jetting, and escaping predators. (Diving calibration index 184-1)",
-            "explanation": "Specialized giant axons facilitate ultra-fast neural transmissions for sudden, life-saving jet propulsion. [Verified by Abyssal Chronology Unit 184]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L184_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 184-2-1] They lowered the robotic submersible into the dark, crushing abyss.",
-                "[Index 184-2-2] The cameras finally captured the glowing hydrothermal vents on the seafloor.",
-                "[Index 184-2-0] Deep-sea explorers carefully calibrated their specialized sonar array."
-            ],
-            "correctOrder": [
-                2,
-                0,
-                1
-            ],
-            "hint": "Identify chronological steps: sonar check, descending, and viewing results. (Diving calibration index 184-2)",
-            "explanation": "The logical order follows preparations, dive execution, and final discovery. [Verified by Abyssal Chronology Unit 184]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L184_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 184-3-0] An underwater volcanic eruption released superheated chemical minerals.",
-                "[Index 184-3-2] Anglerfish and crabs gathered around the vents to feed on the bacterial mats.",
-                "[Index 184-3-1] Chemosynthetic bacteria absorbed the hydrogen sulfide to produce energy."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                1
-            ],
-            "hint": "Map the energy flow: mineral emission, microbial production, and animal grazing. (Diving calibration index 184-3)",
-            "explanation": "Hydrothermal ecosystems thrive in complete darkness powered entirely by bacteria. [Verified by Abyssal Chronology Unit 184]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L185_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 185-1-0] Giant kelp forests anchor their sturdy holdfasts to the rocky seafloor.",
-                "[Index 185-1-2] Otters and small fish find food and shelter inside the thick green layers.",
-                "[Index 185-1-1] They grow rapidly upward to reach the sunlit canopy of the ocean surface."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                1
-            ],
-            "hint": "Focus on the physical structure: anchoring first, vertical growth next, and habitat use last. (Diving calibration index 185-1)",
-            "explanation": "Kelps must anchor and grow before marine creatures can utilize them for shelter. [Verified by Abyssal Chronology Unit 185]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L185_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 185-2-2] The trapped krill are then swallowed whole into its colossal stomach.",
-                "[Index 185-2-1] It pushes the water out through its comb-like baleen plates.",
-                "[Index 185-2-0] The blue whale opens its massive mouth to engulf a dense swarm of krill."
-            ],
-            "correctOrder": [
-                2,
-                1,
-                0
-            ],
-            "hint": "Observe the biological feeding steps: engulfing, filtering, and swallowing. (Diving calibration index 185-2)",
-            "explanation": "Baleen whales sieve food by trapping prey inside their filtering plates before swallowing. [Verified by Abyssal Chronology Unit 185]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L185_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 185-3-3] Bizarre glowing siphonophores suddenly become visible in the beam.",
-                "[Index 185-3-2] The pilot switches on the powerful external LED floodlights.",
-                "[Index 185-3-1] Sunlight rapidly fades until absolute blackness envelops the vessel.",
-                "[Index 185-3-0] A deep-sea submersible begins its slow descent into the twilight zone."
-            ],
-            "correctOrder": [
-                3,
-                2,
-                1,
-                0
-            ],
-            "hint": "Sequence the dive stages: beginning descent, entering darkness, turning on lights, and spotting organisms. (Diving calibration index 185-3)",
-            "explanation": "Exploring the deep ocean requires transitioning through layers of decreasing light into complete darkness. [Verified by Abyssal Chronology Unit 185]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L186_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 186-1-2] The magma rises upward through cracks in the seafloor crust.",
-                "[Index 186-1-3] A new submarine volcano erupts, creating fresh volcanic basalt rock.",
-                "[Index 186-1-0] Subduction zones force ocean tectonic plates deep into the Earth's hot mantle.",
-                "[Index 186-1-1] The extreme heat melts the crust into high-pressure liquid magma."
-            ],
-            "correctOrder": [
-                2,
-                3,
-                0,
-                1
-            ],
-            "hint": "Follow the geological cycle: subduction, melting, rising magma, and underwater eruption. (Diving calibration index 186-1)",
-            "explanation": "Tectonic movements drive underwater volcanism by generating and venting magma. [Verified by Abyssal Chronology Unit 186]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L186_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 186-2-1] They deposit hard skeleton structures over centuries of slow growth.",
-                "[Index 186-2-3] Dozens of rare invertebrate species move in to form a highly diverse community.",
-                "[Index 186-2-0] Deep-sea coral polyps extract calcium carbonate from the cold seawater.",
-                "[Index 186-2-2] These skeletons gradually fuse to form massive deep-sea coral reefs."
-            ],
-            "correctOrder": [
-                2,
-                0,
-                3,
-                1
-            ],
-            "hint": "Order the growth stages: extraction, skeleton deposit, reef formation, and species colonization. (Diving calibration index 186-2)",
-            "explanation": "Corals must build their physical skeletons over centuries before they can support rich biodiversity. [Verified by Abyssal Chronology Unit 186]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L186_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 186-3-4] Finally, microbial mats digest the remaining fats inside the bones over decades.",
-                "[Index 186-3-0] A dead whale carcass sinks slowly through miles of open ocean water.",
-                "[Index 186-3-1] It eventually settles on the barren, muddy seafloor of the abyssal plain.",
-                "[Index 186-3-2] Scavengers like hagfish quickly clean off the soft flesh and tissues.",
-                "[Index 186-3-3] Specialized bone-eating worms colonize the remaining skeletal frame."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3,
-                4,
-                0
-            ],
-            "hint": "Sequence the decay timeline: sinking, settling, scavenger feeding, bone worms, and microbial digestion. (Diving calibration index 186-3)",
-            "explanation": "A whale fall provides a rich, progressive oasis of nutrients to deep-sea creatures over decades. [Verified by Abyssal Chronology Unit 186]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L187_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 187-1-0] Severe atmospheric winds blow surface waters away from the coast.",
-                "[Index 187-1-1] This creates a low-pressure void near the shoreline.",
-                "[Index 187-1-3] Phytoplankton bloom massively due to the sudden abundance of nutrients.",
-                "[Index 187-1-2] Cold, nutrient-rich water rises from the deep ocean to fill the void.",
-                "[Index 187-1-4] Large schools of fish and marine birds gather to feast on the plankton."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3,
-                2,
-                4
-            ],
-            "hint": "Order the coastal upwelling process: wind blowing, void creation, deep water rising, plankton bloom, and predator gathering. (Diving calibration index 187-1)",
-            "explanation": "Wind-driven upwelling transports deep nutrients to the surface, sparking immense marine productivity. [Verified by Abyssal Chronology Unit 187]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L187_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 187-2-1] These giant axons allow electrical signals to travel at extreme velocities.",
-                "[Index 187-2-2] The rapid signals trigger instantaneous muscle contractions in the mantle.",
-                "[Index 187-2-3] Water is violently expelled through the siphon to generate rocket propulsion.",
-                "[Index 187-2-0] Deep-sea squids possess giant axon nerves that run through their bodies.",
-                "[Index 187-2-4] The squid successfully escapes the jaws of a diving sperm whale."
-            ],
-            "correctOrder": [
-                3,
-                0,
-                1,
-                2,
-                4
-            ],
-            "hint": "Map the anatomical escape reflex: nerve setup, signal travel, muscle contraction, siphon jetting, and escaping predators. (Diving calibration index 187-2)",
-            "explanation": "Specialized giant axons facilitate ultra-fast neural transmissions for sudden, life-saving jet propulsion. [Verified by Abyssal Chronology Unit 187]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L187_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 187-3-2] The cameras finally captured the glowing hydrothermal vents on the seafloor.",
-                "[Index 187-3-1] They lowered the robotic submersible into the dark, crushing abyss.",
-                "[Index 187-3-0] Deep-sea explorers carefully calibrated their specialized sonar array."
-            ],
-            "correctOrder": [
-                2,
-                1,
-                0
-            ],
-            "hint": "Identify chronological steps: sonar check, descending, and viewing results. (Diving calibration index 187-3)",
-            "explanation": "The logical order follows preparations, dive execution, and final discovery. [Verified by Abyssal Chronology Unit 187]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L188_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 188-1-1] Chemosynthetic bacteria absorbed the hydrogen sulfide to produce energy.",
-                "[Index 188-1-0] An underwater volcanic eruption released superheated chemical minerals.",
-                "[Index 188-1-2] Anglerfish and crabs gathered around the vents to feed on the bacterial mats."
-            ],
-            "correctOrder": [
-                1,
-                0,
-                2
-            ],
-            "hint": "Map the energy flow: mineral emission, microbial production, and animal grazing. (Diving calibration index 188-1)",
-            "explanation": "Hydrothermal ecosystems thrive in complete darkness powered entirely by bacteria. [Verified by Abyssal Chronology Unit 188]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L188_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 188-2-0] Giant kelp forests anchor their sturdy holdfasts to the rocky seafloor.",
-                "[Index 188-2-1] They grow rapidly upward to reach the sunlit canopy of the ocean surface.",
-                "[Index 188-2-2] Otters and small fish find food and shelter inside the thick green layers."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Focus on the physical structure: anchoring first, vertical growth next, and habitat use last. (Diving calibration index 188-2)",
-            "explanation": "Kelps must anchor and grow before marine creatures can utilize them for shelter. [Verified by Abyssal Chronology Unit 188]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L188_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 188-3-0] The blue whale opens its massive mouth to engulf a dense swarm of krill.",
-                "[Index 188-3-1] It pushes the water out through its comb-like baleen plates.",
-                "[Index 188-3-2] The trapped krill are then swallowed whole into its colossal stomach."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Observe the biological feeding steps: engulfing, filtering, and swallowing. (Diving calibration index 188-3)",
-            "explanation": "Baleen whales sieve food by trapping prey inside their filtering plates before swallowing. [Verified by Abyssal Chronology Unit 188]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L189_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 189-1-2] The pilot switches on the powerful external LED floodlights.",
-                "[Index 189-1-3] Bizarre glowing siphonophores suddenly become visible in the beam.",
-                "[Index 189-1-1] Sunlight rapidly fades until absolute blackness envelops the vessel.",
-                "[Index 189-1-0] A deep-sea submersible begins its slow descent into the twilight zone."
-            ],
-            "correctOrder": [
-                3,
-                2,
-                0,
-                1
-            ],
-            "hint": "Sequence the dive stages: beginning descent, entering darkness, turning on lights, and spotting organisms. (Diving calibration index 189-1)",
-            "explanation": "Exploring the deep ocean requires transitioning through layers of decreasing light into complete darkness. [Verified by Abyssal Chronology Unit 189]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L189_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 189-2-0] Subduction zones force ocean tectonic plates deep into the Earth's hot mantle.",
-                "[Index 189-2-2] The magma rises upward through cracks in the seafloor crust.",
-                "[Index 189-2-3] A new submarine volcano erupts, creating fresh volcanic basalt rock.",
-                "[Index 189-2-1] The extreme heat melts the crust into high-pressure liquid magma."
-            ],
-            "correctOrder": [
-                0,
-                3,
-                1,
-                2
-            ],
-            "hint": "Follow the geological cycle: subduction, melting, rising magma, and underwater eruption. (Diving calibration index 189-2)",
-            "explanation": "Tectonic movements drive underwater volcanism by generating and venting magma. [Verified by Abyssal Chronology Unit 189]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L189_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 189-3-3] Dozens of rare invertebrate species move in to form a highly diverse community.",
-                "[Index 189-3-0] Deep-sea coral polyps extract calcium carbonate from the cold seawater.",
-                "[Index 189-3-2] These skeletons gradually fuse to form massive deep-sea coral reefs.",
-                "[Index 189-3-1] They deposit hard skeleton structures over centuries of slow growth."
-            ],
-            "correctOrder": [
-                1,
-                3,
-                2,
-                0
-            ],
-            "hint": "Order the growth stages: extraction, skeleton deposit, reef formation, and species colonization. (Diving calibration index 189-3)",
-            "explanation": "Corals must build their physical skeletons over centuries before they can support rich biodiversity. [Verified by Abyssal Chronology Unit 189]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L190_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 190-1-1] It eventually settles on the barren, muddy seafloor of the abyssal plain.",
-                "[Index 190-1-3] Specialized bone-eating worms colonize the remaining skeletal frame.",
-                "[Index 190-1-0] A dead whale carcass sinks slowly through miles of open ocean water.",
-                "[Index 190-1-2] Scavengers like hagfish quickly clean off the soft flesh and tissues.",
-                "[Index 190-1-4] Finally, microbial mats digest the remaining fats inside the bones over decades."
-            ],
-            "correctOrder": [
-                2,
-                0,
-                3,
-                1,
-                4
-            ],
-            "hint": "Sequence the decay timeline: sinking, settling, scavenger feeding, bone worms, and microbial digestion. (Diving calibration index 190-1)",
-            "explanation": "A whale fall provides a rich, progressive oasis of nutrients to deep-sea creatures over decades. [Verified by Abyssal Chronology Unit 190]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L190_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 190-2-2] Cold, nutrient-rich water rises from the deep ocean to fill the void.",
-                "[Index 190-2-0] Severe atmospheric winds blow surface waters away from the coast.",
-                "[Index 190-2-3] Phytoplankton bloom massively due to the sudden abundance of nutrients.",
-                "[Index 190-2-4] Large schools of fish and marine birds gather to feast on the plankton.",
-                "[Index 190-2-1] This creates a low-pressure void near the shoreline."
-            ],
-            "correctOrder": [
-                1,
-                4,
-                0,
-                2,
-                3
-            ],
-            "hint": "Order the coastal upwelling process: wind blowing, void creation, deep water rising, plankton bloom, and predator gathering. (Diving calibration index 190-2)",
-            "explanation": "Wind-driven upwelling transports deep nutrients to the surface, sparking immense marine productivity. [Verified by Abyssal Chronology Unit 190]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L190_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 190-3-2] The rapid signals trigger instantaneous muscle contractions in the mantle.",
-                "[Index 190-3-4] The squid successfully escapes the jaws of a diving sperm whale.",
-                "[Index 190-3-0] Deep-sea squids possess giant axon nerves that run through their bodies.",
-                "[Index 190-3-1] These giant axons allow electrical signals to travel at extreme velocities.",
-                "[Index 190-3-3] Water is violently expelled through the siphon to generate rocket propulsion."
-            ],
-            "correctOrder": [
-                2,
-                3,
-                0,
-                4,
-                1
-            ],
-            "hint": "Map the anatomical escape reflex: nerve setup, signal travel, muscle contraction, siphon jetting, and escaping predators. (Diving calibration index 190-3)",
-            "explanation": "Specialized giant axons facilitate ultra-fast neural transmissions for sudden, life-saving jet propulsion. [Verified by Abyssal Chronology Unit 190]."
-        }
-    ]
+  "gameType": "sentenceOrderReading",
+  "batchIndex": 19,
+  "levels": "181-190",
+  "quests": [
+    {
+      "id": "RDG_SENTENCEORDERREADING_L181_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "As industries evolve technologically, however, the assumptions underlying decades-old regulations can become increasingly mismatched with current market realities.",
+        "Successful reforms in this area have typically required building coalitions that include smaller competitors and consumer advocates rather than relying on regulators alone.",
+        "Even where reform succeeds, economists caution that newly rewritten rules can eventually become outdated themselves, restarting the same underlying cycle.",
+        "This dynamic can paradoxically entrench the very market concentration that regulation was originally intended to prevent.",
+        "Reform efforts attempting to modernize such frameworks frequently encounter resistance from the incumbents who benefit most from the regulatory status quo.",
+        "Some economists have argued that outdated regulatory frameworks inadvertently favor large incumbents capable of absorbing compliance costs that smaller competitors cannot.",
+        "Regulatory frameworks governing a given industry are often established in response to specific abuses or failures visible at the time of their creation."
+      ],
+      "correctOrder": [
+        6,
+        0,
+        5,
+        3,
+        4,
+        1,
+        2
+      ],
+      "hint": "This explanation traces how a well-intentioned system can quietly work against its own original purpose, then follows the difficult effort to correct it.",
+      "explanation": "This paragraph explains a recurring pattern in regulatory economics: the original purpose, the mismatch that develops over time, its unintended consequence, that consequence's paradox, the resistance reform faces, what successful reform requires, and a caution about the cycle repeating."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L181_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Scientists caution that each new application still requires its own extensive testing, since the platform's speed applies to development, not to safety verification.",
+        "The immune system then recognizes this protein as foreign and develops the same protective response as it would to an actual infection.",
+        "Researchers are now investigating whether the same platform could be adapted to address other infectious diseases, and even certain cancers.",
+        "Researchers instead developed a platform delivering genetic instructions that prompt a person's own cells to briefly produce a harmless viral protein.",
+        "Because this platform does not require growing the pathogen itself, new vaccines can, in principle, be designed and manufactured considerably faster than through traditional methods.",
+        "Traditional vaccine development historically required growing weakened or inactivated pathogens, a process that could take years to refine and scale for mass production.",
+        "This underlying technology had been in development for decades before a global health emergency provided both funding and urgency for its rapid clinical validation."
+      ],
+      "correctOrder": [
+        5,
+        3,
+        1,
+        4,
+        6,
+        2,
+        0
+      ],
+      "hint": "This explanation contrasts an older, slower method with the newer platform before tracing how that platform came to be validated and where it may go next.",
+      "explanation": "This paragraph explains a scientific breakthrough through contrast and consequence: the older method's limitation, the new platform's mechanism, how it triggers immunity, its resulting speed advantage, its long developmental history before rapid validation, its potential future applications, and an important caveat about safety testing."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L181_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Debates emerged within the originating community over whether such adaptations represented appreciation, dilution, or something occupying a more complicated space between the two.",
+        "Food historians now cite the episode as a case study in how communities can assert ownership over a tradition even as that tradition inevitably continues to spread.",
+        "A regional dish, once prepared almost exclusively within a specific community using techniques passed down informally across generations, gradually attracted attention from food writers documenting regional cuisines.",
+        "Some originating cooks began offering formal classes specifically to ensure that traditional techniques remained documented and accessible on their own terms.",
+        "This response reframed the dish's global spread as something the community could actively shape rather than simply observe from a distance.",
+        "As documentation and photography of the dish spread through print and digital media, cooks entirely outside the original community began attempting their own versions.",
+        "These adaptations frequently substituted ingredients unavailable elsewhere, producing versions that longtime practitioners considered recognizable but meaningfully different from the original."
+      ],
+      "correctOrder": [
+        2,
+        5,
+        6,
+        0,
+        3,
+        4,
+        1
+      ],
+      "hint": "This paragraph traces a tradition's spread, the tension that spread created, and the community's own response to reclaim some measure of control over it.",
+      "explanation": "This paragraph traces a cultural diffusion process and a community's response to it: the tradition's origin, its documentation and spread, resulting adaptations, the debate those adaptations sparked, the community's own initiative, what that initiative achieved, and its recognized significance as an example."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L182_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Startups in their earliest stages typically benefit enormously from a founder's direct, hands-on involvement in nearly every significant decision.",
+        "Many founders recognize this challenge intellectually well before they are genuinely prepared to relinquish direct control in practice.",
+        "Companies that instead delay this transition indefinitely often find that decision-making bottlenecks eventually constrain growth more severely than the risk they were originally trying to avoid.",
+        "As a company scales, this same concentrated decision-making can become an operational bottleneck, since a single individual cannot indefinitely evaluate every choice personally.",
+        "Companies that navigate this transition successfully typically do so gradually, delegating specific decision domains to trusted executives one at a time rather than all at once.",
+        "This gradual approach allows a founder to build confidence in their leadership team's judgment while still retaining meaningful oversight during the transition.",
+        "Business researchers studying this pattern generally regard the timing and pace of this transition as one of the more reliable predictors of a company's long-term trajectory."
+      ],
+      "correctOrder": [
+        0,
+        3,
+        1,
+        4,
+        5,
+        2,
+        6
+      ],
+      "hint": "This explanation contrasts what serves a company early on with what begins working against it later, then traces the gradual process successful companies use to manage that shift.",
+      "explanation": "This paragraph explains an organizational leadership pattern: the early benefit, its later cost, the gap between recognizing and acting on that cost, the gradual approach that works, why gradualism helps, the risk of delaying it entirely, and its recognized predictive significance."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L182_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Microorganisms within the newly thawed soil begin decomposing the long-trapped organic material, releasing greenhouse gases that had remained locked away for millennia.",
+        "Some scientists argue that current international climate targets may need meaningful revision once this feedback loop is more fully and precisely understood.",
+        "Researchers are working to refine climate models to better account for this feedback loop's contribution to overall projected warming.",
+        "Scientists refer to this self-reinforcing pattern as a feedback loop, distinguishing it from warming caused directly by human emissions alone.",
+        "Vast stretches of Arctic soil have remained permanently frozen for thousands of years, trapping large quantities of ancient organic material within their frozen layers.",
+        "These released gases contribute to further atmospheric warming, which in turn accelerates the thawing of additional previously frozen ground nearby.",
+        "As regional temperatures rise, some of this previously frozen ground has begun thawing at rates considerably faster than earlier scientific models had predicted."
+      ],
+      "correctOrder": [
+        4,
+        6,
+        0,
+        5,
+        3,
+        2,
+        1
+      ],
+      "hint": "This explanation traces a chain where each stage causes the next, eventually looping back to accelerate the very process that started it.",
+      "explanation": "This paragraph explains an environmental feedback mechanism: the starting condition, the initial change, its immediate biological consequence, how that consequence reinforces the original cause, the mechanism's formal name, current scientific efforts to model it, and its potential implication for policy."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L182_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Researchers proposed that evaluating numerous options requires cognitive effort that some consumers find sufficiently unpleasant to avoid entirely by simply not choosing.",
+        "A series of behavioral studies instead found that consumers presented with an especially large number of options were sometimes less likely to make any purchase at all.",
+        "This finding, often summarized as choice overload, complicated the straightforward assumption that more options reliably benefit consumers.",
+        "Classical economic theory generally assumes that providing consumers with a greater number of options should improve their ability to find a genuinely satisfying choice.",
+        "Critics of the original studies note that later attempts to replicate the core finding have produced results considerably more mixed than the original research suggested.",
+        "Businesses in some industries have since deliberately curated smaller, simpler selections specifically in response to this body of research.",
+        "Subsequent research suggested the effect depends considerably on context, appearing more reliably when options are complex or difficult to meaningfully compare."
+      ],
+      "correctOrder": [
+        3,
+        1,
+        0,
+        2,
+        6,
+        5,
+        4
+      ],
+      "hint": "An assumption is usually presented before the research complicating it, and a finding's context-dependence usually precedes the practical response and its own limits.",
+      "explanation": "This paragraph traces a psychological finding's evolving nuance: the initial assumption, the contradicting research, a proposed explanation, the finding's name and significance, an important contextual qualification, a resulting business practice, and a note on the finding's contested replication."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L183_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Policy researchers now debate how quickly broader healthcare systems can realistically be expected to adopt a model requiring this degree of structural change.",
+        "Traditional healthcare payment systems typically compensate providers based on the volume of individual services performed, regardless of whether those services actually improve a patient's health.",
+        "Critics have long argued that this arrangement can inadvertently incentivize unnecessary procedures while providing little direct reward for successful prevention.",
+        "Early adopters of outcome-based models reported that this tracking infrastructure was often more costly and complex to build than initial proposals had anticipated.",
+        "Alternative payment models have emerged that instead compensate providers based on measured patient health outcomes over time.",
+        "Despite these implementation challenges, several health systems that persisted through the transition reported both improved patient outcomes and reduced long-term costs.",
+        "Transitioning to these outcome-based models requires substantial new infrastructure for tracking and verifying long-term patient outcomes accurately."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        4,
+        6,
+        3,
+        5,
+        0
+      ],
+      "hint": "A described incentive problem usually precedes the alternative model proposed to fix it, and that alternative's implementation challenge usually precedes its eventual payoff.",
+      "explanation": "This paragraph traces a healthcare policy shift from problem to open question: the traditional incentive structure, its criticized flaw, the alternative model, its infrastructure requirement, an implementation challenge, the eventual payoff for those who persisted, and the resulting debate about broader feasibility."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L183_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Researchers examining these tools found that historical data can itself reflect and perpetuate patterns of bias present in the broader criminal justice system.",
+        "Several jurisdictions have adopted algorithmic risk-assessment tools intended to help judges make more consistent decisions regarding pretrial detention.",
+        "Other jurisdictions, citing this same concern, opted to abandon algorithmic risk assessment entirely in favor of more traditional judicial discretion.",
+        "This finding raised a fundamental complication, since a tool designed to reduce human bias could inadvertently reproduce a more subtle, statistically obscured version of that same bias.",
+        "These tools generate a numerical risk score by analyzing patterns drawn from historical data on prior defendants' case outcomes.",
+        "Legal scholars remain divided over whether audited algorithmic tools or traditional human judgment ultimately produce more genuinely equitable outcomes.",
+        "Some jurisdictions responded by requiring regular independent audits examining whether a given tool's risk scores meaningfully differed across demographic groups facing similar underlying circumstances."
+      ],
+      "correctOrder": [
+        1,
+        4,
+        0,
+        3,
+        6,
+        2,
+        5
+      ],
+      "hint": "A described tool's purpose usually precedes the flaw discovered within it, and that discovered flaw usually precedes the differing responses jurisdictions eventually chose.",
+      "explanation": "This paragraph traces a technology ethics controversy without a tidy resolution: the tool's purpose, its mechanism, the discovered flaw in its data, why that flaw was significant, one jurisdiction's remedy, an alternative jurisdiction's different response, and the unresolved scholarly disagreement that remains."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L183_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "This finding has renewed broader debate over whether a four-year degree should remain the default credential employers rely on when evaluating candidates.",
+        "Some labor economists argue this shift reflects employers using degree requirements as an imperfect but convenient proxy for a broader set of desired soft skills.",
+        "Early data from these employers suggests that candidates hired without a formal degree performed comparably to their degree-holding peers in most measured respects.",
+        "Skeptics caution that dismantling degree requirements too broadly, without a reliable alternative method of skill verification, could simply reintroduce different, less transparent forms of hiring bias.",
+        "This practice has had the effect of excluding many otherwise capable candidates who lack a degree but possess the relevant underlying skills through other means.",
+        "Several employers, facing persistent hiring shortages, have since begun explicitly removing degree requirements from job postings where the underlying skills can be demonstrated differently.",
+        "Employers seeking to fill entry-level positions have, over recent decades, increasingly required a four-year degree even for roles that historically did not demand one."
+      ],
+      "correctOrder": [
+        6,
+        1,
+        4,
+        5,
+        2,
+        0,
+        3
+      ],
+      "hint": "A described requirement usually precedes the explanation for why it emerged, and removing that requirement usually precedes both its measured effect and a caution about doing so carelessly.",
+      "explanation": "This paragraph traces a labor-market trend and its reconsideration: the requirement's rise, a proposed explanation for it, its exclusionary effect, the employer response reversing it, the measured result of that reversal, the resulting broader debate, and a final caution about the reversal's own risks."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L184_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Investors generally demand a higher interest rate when lending to governments perceived as more likely to eventually default on their obligations.",
+        "Such measures frequently prove deeply unpopular domestically, since the resulting spending cuts fall disproportionately on citizens rather than on the investors ultimately being reassured.",
+        "A government's perceived credibility, built through a consistent history of honoring its debt obligations, can therefore directly influence its future borrowing costs.",
+        "Economists continue to debate whether preserving investor credibility in this manner justifies the genuine short-term hardship such austerity measures impose.",
+        "Governments facing budget shortfalls can choose to borrow money by issuing bonds purchased by domestic and international investors.",
+        "Some governments facing acute short-term fiscal pressure have nonetheless chosen austerity measures specifically intended to preserve this longer-term credibility.",
+        "This tension between long-term fiscal credibility and short-term social cost recurs across strikingly different economies facing otherwise very different circumstances."
+      ],
+      "correctOrder": [
+        4,
+        0,
+        2,
+        5,
+        1,
+        3,
+        6
+      ],
+      "hint": "This explanation traces how a government's past behavior shapes investor expectations, then follows the difficult trade-off that expectation creates for present-day policy.",
+      "explanation": "This paragraph explains a recurring tension in public finance: the borrowing mechanism, the credibility factor investors weigh, its consequence for costs, one policy response to protect credibility, that response's social cost, the resulting economic debate, and the pattern's persistence across differing economies."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L184_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Regulators have also had to develop entirely new frameworks for evaluating treatments that permanently alter a patient's own genetic material.",
+        "Extending this approach to conditions involving multiple interacting genes has proven considerably more technically challenging than single-mutation cases.",
+        "Early therapeutic applications focused on conditions caused by a single, well-understood genetic mutation, since these represented the most technically tractable targets.",
+        "A technique allowing scientists to make precise, targeted edits to specific sequences within an organism's genetic code was adapted from a naturally occurring bacterial immune mechanism.",
+        "Researchers generally expect the technique's therapeutic scope to expand gradually as both the underlying science and its regulatory oversight continue maturing together.",
+        "Researchers recognized that this same targeting mechanism could, in principle, be redirected to correct disease-causing mutations within human cells.",
+        "Clinical trials for several such conditions have since reported that edited cells successfully corrected the underlying mutation in a meaningful proportion of treated patients."
+      ],
+      "correctOrder": [
+        3,
+        5,
+        2,
+        6,
+        1,
+        0,
+        4
+      ],
+      "hint": "This explanation traces a technique's biological origin through its adaptation, early success, remaining technical challenge, and the institutional response that success required.",
+      "explanation": "This paragraph traces a scientific breakthrough's development and its limits: the technique's origin, its recognized therapeutic potential, an early practical focus, the resulting clinical success, a harder remaining challenge, the regulatory response required, and the field's anticipated gradual expansion."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L184_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Governments in several industrializing nations began establishing publicly funded schools intended to make basic education more broadly accessible.",
+        "Reformers eventually succeeded in most industrialized nations, though compulsory education laws were typically phased in gradually rather than adopted all at once.",
+        "Making education compulsory, rather than merely available, proved considerably more contentious, since it required removing children from a labor force many families still depended upon economically.",
+        "Industrialization gradually created growing demand for a workforce possessing basic literacy and numeracy skills beyond what informal home instruction typically provided.",
+        "Literacy rates across these nations rose substantially within a generation of compulsory education becoming widely enforced.",
+        "Formal schooling was, for much of history, available primarily to children from families wealthy enough to forgo their labor and afford tuition directly.",
+        "Historians frequently cite this expansion as a foundational precondition for the broader social and economic mobility that followed in subsequent generations."
+      ],
+      "correctOrder": [
+        5,
+        3,
+        0,
+        2,
+        1,
+        4,
+        6
+      ],
+      "hint": "A described limitation usually precedes the economic pressure that challenged it, and a resulting policy usually precedes the harder debate over making that policy mandatory.",
+      "explanation": "This paragraph traces a major historical social change and its long-term consequence: the prior limitation, the economic pressure against it, the initial policy response, the harder debate over compulsion, its gradual adoption, its measured effect, and its recognized broader historical significance."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L185_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Building internally typically preserves greater long-term control but can take considerably longer than the pace at which an emerging market segment is evolving.",
+        "This preserved independence, while reducing certain integration efficiencies in the short term, appears to meaningfully improve the odds of retaining the acquisition's most valuable talent.",
+        "Acquiring an existing smaller company offers faster entry but introduces the considerable challenge of integrating a fundamentally different organizational culture.",
+        "Large, established companies seeking to enter an emerging market segment face a choice between building new capabilities internally or acquiring a smaller company that has already developed them.",
+        "Business researchers studying acquisition outcomes generally regard this deliberate trade-off between integration speed and cultural preservation as decisive to long-term success.",
+        "Many such acquisitions fail specifically because the acquired company's most valuable asset, its distinctive culture and talent, does not survive integration into the larger organization intact.",
+        "Acquirers that succeed in this regard typically preserve considerable operational independence for the acquired team, at least during an extended initial transition period."
+      ],
+      "correctOrder": [
+        3,
+        0,
+        2,
+        5,
+        6,
+        1,
+        4
+      ],
+      "hint": "This explanation weighs two general approaches, then traces the specific failure mode of one approach and the deliberate trade-off that avoids it.",
+      "explanation": "This paragraph explains a recurring strategic tension through cause and consequence: the two general approaches, one's trade-off, the other's trade-off, the common failure mode, the successful alternative approach, its own cost, and its recognized importance to outcomes."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L185_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "The development of simultaneous interpretation, delivered through headsets in real time as a speaker continued talking, dramatically reduced this time burden.",
+        "For this reason, professional interpreters typically work in rotating pairs, alternating in relatively short intervals to preserve accuracy throughout lengthy proceedings.",
+        "This technique demands that interpreters process, translate, and speak nearly concurrently, a cognitive task widely regarded as among the most demanding in professional linguistics.",
+        "This underlying interpretive infrastructure now operates so seamlessly during major international proceedings that delegates frequently forget the intensive skilled labor sustaining their mutual understanding in real time.",
+        "International organizations bringing together representatives speaking dozens of different native languages required a practical mechanism for real-time mutual understanding.",
+        "Early solutions relied on consecutive interpretation, in which a speaker paused periodically to allow an interpreter to relay their remarks, considerably lengthening every proceeding.",
+        "Studies of interpreter cognition have found that sustained simultaneous interpretation induces measurable mental fatigue considerably faster than most other comparably skilled professional tasks."
+      ],
+      "correctOrder": [
+        4,
+        5,
+        0,
+        2,
+        6,
+        1,
+        3
+      ],
+      "hint": "This explanation contrasts an older, slower method with a faster one, then traces the considerable human cost that speed actually demands behind the scenes.",
+      "explanation": "This paragraph explains a communication technology and the labor behind it: the underlying need, the older, slower method, the faster innovation, its cognitive demand, the measured cost of that demand, the practical accommodation made for it, and how invisible that accommodation has become to observers."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L185_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "As certain climate impacts became increasingly unavoidable regardless of future emissions trajectories, this early reluctance toward adaptation funding gradually diminished.",
+        "Some advocates worried, at the time, that emphasizing adaptation too heavily might reduce the political urgency needed to pursue meaningful emissions reductions.",
+        "Researchers studying this shift note that framing adaptation as an admission of mitigation's failure was, in retrospect, a somewhat unhelpful oversimplification of a genuinely complex relationship.",
+        "For much of the early climate policy debate, mitigation received considerably greater attention and funding than adaptation efforts.",
+        "Strategies for addressing climate change are commonly divided into mitigation, which aims to reduce the emissions driving the problem, and adaptation, which aims to reduce the harm caused by warming already underway.",
+        "Current policy frameworks in many regions now explicitly pursue both approaches simultaneously, treating them as complementary rather than competing priorities.",
+        "Both approaches, most current climate policy experts now argue, remain necessary regardless of how successfully future emissions reductions ultimately unfold."
+      ],
+      "correctOrder": [
+        4,
+        3,
+        1,
+        0,
+        5,
+        2,
+        6
+      ],
+      "hint": "This explanation defines two related concepts, then traces how the balance of attention between them shifted over time and why.",
+      "explanation": "This paragraph explains an evolving policy debate: the two concepts defined, an early imbalance between them, a concern behind that imbalance, what changed the imbalance, the resulting current framework, a retrospective judgment on the earlier framing, and the current expert consensus."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L186_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Researchers studying prescribing patterns found considerable inconsistency between physicians treating clinically similar cases, with some prescribing broader-spectrum antibiotics than a case actually required.",
+        "Hospitals that framed stewardship recommendations as collaborative clinical support, rather than top-down oversight, reported considerably smoother physician acceptance.",
+        "This inconsistency was significant not merely for individual patient outcomes but because unnecessary broad-spectrum use accelerates the development of antibiotic-resistant bacteria more broadly.",
+        "Reductions in unnecessary broad-spectrum prescribing following successful stewardship implementation have been consistently linked to measurably lower rates of resistant infections within those same hospitals.",
+        "Hospitals historically left decisions about antibiotic prescribing largely to individual physicians' clinical judgment on a case-by-case basis.",
+        "Hospitals began establishing antimicrobial stewardship programs, in which specialist teams review and, where appropriate, recommend adjustments to prescribing decisions.",
+        "Physicians in early stewardship programs sometimes reported feeling that their clinical autonomy was being second-guessed by colleagues without full context of a case."
+      ],
+      "correctOrder": [
+        4,
+        0,
+        2,
+        5,
+        6,
+        1,
+        3
+      ],
+      "hint": "A described inconsistency usually precedes why that inconsistency mattered beyond the individual case, and an institutional response usually precedes how it was received and refined.",
+      "explanation": "This paragraph traces a healthcare quality initiative's implementation challenge and success: the prior practice, the discovered inconsistency, its broader significance, the institutional response, an initial friction point, the more successful framing, and the resulting measured outcome."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L186_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Several jurisdictions have since proposed extending existing likeness protections explicitly to include a person's synthesized voice.",
+        "The same underlying technology can also be used to generate audio a person never actually recorded, without their knowledge or consent.",
+        "Technology companies developing voice synthesis tools have introduced varying levels of built-in safeguards, ranging from consent verification to embedded audio watermarking.",
+        "Legal scholars note that the effectiveness of any such safeguard depends heavily on enforcement mechanisms that, in most jurisdictions, remain considerably underdeveloped relative to the technology itself.",
+        "This capability has legitimate applications, including restoring speech for individuals who have lost their own voice due to illness or injury.",
+        "Advances in voice synthesis technology now allow a relatively small sample of someone's recorded speech to generate convincing new audio in that same person's voice.",
+        "Legal frameworks governing unauthorized use of a person's likeness had generally developed around visual imagery and had not clearly anticipated synthesized voice as a comparable category."
+      ],
+      "correctOrder": [
+        5,
+        4,
+        1,
+        6,
+        0,
+        2,
+        3
+      ],
+      "hint": "This explanation presents a technology's legitimate use before its potential misuse, then traces the legal and technical response each has prompted.",
+      "explanation": "This paragraph explains a technology ethics issue in balanced order: the capability, its legitimate application, its potential misuse, a gap in existing legal frameworks, the proposed legal remedy, industry-level safeguards, and a caution about how effectively those safeguards are currently enforced."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L186_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Some traditional institutions have responded by developing their own shorter credential offerings, blurring a distinction that once separated formal higher education from more specialized professional training.",
+        "Technical skills within rapidly evolving fields such as software development have historically remained professionally relevant for a shrinking number of years before requiring significant updating.",
+        "Labor economists studying this shift generally agree that adaptability itself, rather than any single specific technical skill, has become the more durable professional asset.",
+        "This trend has complicated traditional models of education, which generally assume that intensive front-loaded learning early in a career will remain broadly applicable for decades afterward.",
+        "This shift has correspondingly increased demand for shorter, more targeted educational formats capable of updating a specific skill without requiring a multi-year commitment.",
+        "Some employers have responded by treating ongoing professional education as a continuous, built-in expectation rather than an occasional, optional supplement.",
+        "Traditional degree-granting institutions have found themselves competing directly with newer, more specialized providers built specifically around this shorter, targeted format."
+      ],
+      "correctOrder": [
+        1,
+        3,
+        5,
+        4,
+        6,
+        0,
+        2
+      ],
+      "hint": "A described trend usually precedes the assumption it complicates, and a resulting competitive pressure usually precedes the broader lesson drawn from it.",
+      "explanation": "This paragraph traces a shift in professional education and its broader lesson: the trend, the assumption it complicates, one institutional response, the resulting shift in format demand, the competitive pressure this created, how traditional institutions responded, and the broader conclusion economists now draw from the whole pattern."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L187_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "One explanation notes that resource wealth can inflate a nation's currency, making other export industries comparatively less competitive on international markets.",
+        "Economists studying these funds note that their long-term success depends heavily on political institutions resisting the temptation to weaken withdrawal rules during periods of genuine fiscal pressure.",
+        "Such funds are typically designed with strict rules limiting withdrawals, insulating national spending somewhat from short-term fluctuations in resource prices.",
+        "Economists have proposed several overlapping explanations for this counterintuitive pattern, often collectively termed the resource curse.",
+        "Another explanation observes that resource revenue can reduce a government's practical need to develop broader, more diversified systems of taxation and public accountability.",
+        "Nations that have avoided this pattern have generally done so by deliberately channeling resource revenue into sovereign wealth funds rather than immediate government spending.",
+        "Some nations possessing abundant natural resources, such as oil or valuable minerals, have paradoxically experienced slower long-term economic growth than resource-poor neighbors facing otherwise comparable circumstances."
+      ],
+      "correctOrder": [
+        6,
+        3,
+        0,
+        4,
+        5,
+        2,
+        1
+      ],
+      "hint": "A counterintuitive pattern is usually presented before the competing explanations offered for it, and those explanations usually precede the specific remedy some nations have adopted.",
+      "explanation": "This paragraph explains an economic puzzle and a partial solution: the paradox, its collective name, one explanation, a second explanation, the remedy some nations adopted, how that remedy typically works, and what its long-term success actually depends on."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L187_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Researchers emphasize that this technology currently supplements rather than replaces traditional testing methods, given how much remains to be validated about the systems' broader reliability.",
+        "Animal physiology, however, does not always accurately predict how a given drug will behave within human biology specifically.",
+        "Testing whether a new drug is both safe and effective has traditionally relied heavily on animal studies before any human clinical trials could begin.",
+        "Researchers have developed small devices containing living human cells arranged to mimic the basic function of specific human organs, such as the lung or liver.",
+        "Regulatory agencies have begun cautiously incorporating chip-based data as supplementary evidence within the broader drug approval process.",
+        "These devices, often called organ-on-a-chip systems, allow researchers to observe a drug's effects on actual human tissue before any human trial begins.",
+        "Early validation studies found that predictions from these chip-based systems corresponded to actual human clinical outcomes more closely than corresponding animal studies had."
+      ],
+      "correctOrder": [
+        2,
+        1,
+        3,
+        5,
+        6,
+        4,
+        0
+      ],
+      "hint": "A limitation of an older method is usually presented before the newer technology addressing it, and validation of that newer technology usually precedes its cautious institutional adoption.",
+      "explanation": "This paragraph explains a biomedical innovation and its careful adoption: the older method's limitation, the specific reason for that limitation, the new technology, what it enables, its favorable early validation, its resulting regulatory adoption, and an important caveat about its current, still-limited role."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L187_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Countries that adopted the standard early reported measurably faster customs processing times compared to countries still relying on their own previous formats.",
+        "Trade historians generally regard this documentation standardization as an understated but genuinely significant contributor to the overall expansion of global trade.",
+        "This efficiency advantage created growing pressure on remaining holdout countries to adopt the standard simply to remain commercially competitive.",
+        "This lack of standardization created considerable friction, since customs officials in each country needed to interpret unfamiliar formats from every different trading partner.",
+        "An international body eventually developed a standardized set of shipping documents intended to be recognized consistently across participating countries.",
+        "Adoption of this standard was gradual, since it required individual countries to update their own customs procedures and staff training to match the new format.",
+        "International trade historically required each shipment to be accompanied by paperwork formatted differently depending on the exporting and importing countries involved."
+      ],
+      "correctOrder": [
+        6,
+        3,
+        4,
+        5,
+        0,
+        2,
+        1
+      ],
+      "hint": "A described inefficiency usually precedes the standardizing solution, and early adopters' advantage usually precedes the pressure that advantage placed on everyone else.",
+      "explanation": "This paragraph traces a bureaucratic innovation's outsized economic effect: the original inefficiency, its specific consequence, the standardizing solution, its gradual adoption, an early adopter's advantage, the resulting competitive pressure, and its recognized historical significance."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L188_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Companies that successfully build this confidence generally report faster organizational response times, particularly in fast-moving competitive situations demanding rapid action.",
+        "Employees operating under this model report needing time to build genuine confidence making decisions that would previously have required explicit senior approval.",
+        "Companies adopting this model typically invest considerably more upfront effort in documenting decision-making principles than more centralized organizations require.",
+        "This approach requires clearly articulated organizational principles capable of guiding consistent decisions even without direct case-by-case senior oversight.",
+        "Critics of this approach note it can produce meaningfully inconsistent outcomes across different teams unless the underlying guiding principles are unusually clear and consistently reinforced.",
+        "Rapidly growing companies often find that decisions requiring approval from senior leadership create bottlenecks that slow the pace of the entire organization.",
+        "Some companies have responded by deliberately pushing specific categories of decisions down to employees closest to the relevant information, rather than upward through management layers."
+      ],
+      "correctOrder": [
+        5,
+        6,
+        3,
+        2,
+        1,
+        0,
+        4
+      ],
+      "hint": "A described bottleneck usually precedes the decentralized alternative, and that alternative's upfront requirement usually precedes both its benefit and its acknowledged risk.",
+      "explanation": "This paragraph explains an organizational design choice and its trade-offs: the bottleneck problem, the decentralized response, its structural requirement, its upfront cost, an adjustment period for employees, the resulting benefit, and a critical limitation that remains."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L188_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Teams using this deliberately forward-looking reassessment method report reaching decisions to abandon failing projects meaningfully earlier than teams relying on standard review processes.",
+        "Behavioral economists note that this earlier decision-making, while still difficult, often reduces total resources ultimately wasted on the failing project overall.",
+        "Organizations, unlike individuals acting alone, face an additional complication, since abandoning a project can implicate multiple people's earlier judgment simultaneously.",
+        "Some organizations have attempted to counter this dynamic by periodically reassessing ongoing projects using criteria that deliberately exclude any reference to prior spending.",
+        "Individuals and organizations alike have been repeatedly shown to continue investing in a failing project specifically because of resources already committed to it.",
+        "Researchers have proposed that this pattern persists partly because abandoning a project can feel like publicly admitting the original investment decision was mistaken.",
+        "Economists consider this pattern irrational, since resources already spent cannot be recovered regardless of whether the project is continued or abandoned."
+      ],
+      "correctOrder": [
+        4,
+        6,
+        5,
+        2,
+        3,
+        0,
+        1
+      ],
+      "hint": "A described irrational pattern usually precedes a proposed explanation, and an organizational complication usually precedes the specific remedy designed around it.",
+      "explanation": "This paragraph explains a well-known cognitive bias in institutional contexts: the pattern, why economists consider it irrational, a proposed psychological explanation, an added organizational complication, the remedy some organizations use, its measured benefit, and its ultimate practical payoff."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L188_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Regions facing increasingly frequent extreme weather events have seen a growing number of residents relocate permanently to less exposed areas.",
+        "Urban planning researchers argue that this proactive, if imperfect, approach represents a meaningful departure from planning models built for a more climatically stable era.",
+        "Cities receiving these relocating residents have, in some cases, experienced housing and infrastructure strain considerably faster than typical urban planning timelines anticipate.",
+        "Some urban planners have begun incorporating climate migration projections directly into long-term infrastructure and housing planning, rather than treating population growth as driven solely by economic factors.",
+        "Some receiving regions have also begun proactively investing in affordable housing specifically anticipating future arrivals, rather than waiting for housing shortages to become acute first.",
+        "This shift requires planners to work with climate scientists whose projections carry meaningfully greater uncertainty than the economic data planners have traditionally relied upon.",
+        "Cities that have incorporated this uncertain data regardless report that even imperfect projections meaningfully improved their infrastructure planning compared to ignoring the trend entirely."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        3,
+        5,
+        6,
+        4,
+        1
+      ],
+      "hint": "A described migration trend usually precedes the strain it places on receiving cities, and that strain usually precedes the planning adaptation some cities have made in response.",
+      "explanation": "This paragraph traces an emerging urban planning challenge and an adaptive response: the migration trend, its strain on receiving cities, the planning adaptation, its added complexity, the adaptation's practical payoff despite uncertainty, a related proactive measure, and its recognized significance as a departure from older planning models."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L189_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Some health systems have experimented with multi-year budgeting specifically designed to make these longer-term preventive savings visible within institutional financial planning.",
+        "Early results from these longer-budgeting experiments suggest preventive programs are more likely to receive sustained funding once their savings become visible on this extended timeframe.",
+        "Comparatively little funding, by contrast, has traditionally been directed toward preventing illness from developing in the first place.",
+        "Healthcare systems in many countries have historically allocated the overwhelming majority of total spending toward treating illness after it has already developed.",
+        "Health policy researchers argue that this budgeting mismatch, rather than any disagreement over prevention's actual value, may be the primary obstacle limiting broader preventive investment.",
+        "This mismatched timeframe can make preventive investment appear financially unattractive within any single budget cycle, even when it demonstrably reduces total costs over a longer horizon.",
+        "Economists studying this imbalance note that preventive interventions often produce savings only years later, well beyond the timeframe most budget cycles are structured to measure."
+      ],
+      "correctOrder": [
+        3,
+        2,
+        6,
+        5,
+        0,
+        1,
+        4
+      ],
+      "hint": "A described funding imbalance usually precedes the structural explanation for why it persists, and that explanation usually precedes the specific fix some systems have tried.",
+      "explanation": "This paragraph explains a healthcare economics problem and a structural fix: the imbalance, its scale, why preventive investment doesn't show clear short-term returns, the resulting disincentive, the budgeting fix attempted, its measured effect, and the researchers' broader conclusion about what's really limiting prevention."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L189_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Proponents argue this practice can benefit price-sensitive customers by offering them lower prices than a single fixed price would provide.",
+        "Regulators in several jurisdictions are now considering disclosure requirements that would require retailers to indicate clearly when a displayed price has been personalized for that particular customer.",
+        "Some consumer protection researchers have developed methods to indirectly detect personalized pricing by comparing prices shown to differently profiled test accounts.",
+        "Critics counter that the same technology could just as easily charge a customer more, based on data suggesting that customer would tolerate a higher price without abandoning the purchase.",
+        "These studies have found evidence of both effects occurring simultaneously, varying considerably by retailer, product category, and region.",
+        "Determining which of these two effects actually predominates in practice has proven difficult, since pricing algorithms and the data driving them are rarely made publicly transparent.",
+        "Online retailers have increasingly used algorithms capable of adjusting prices for individual customers based on data about that customer's browsing and purchase history."
+      ],
+      "correctOrder": [
+        6,
+        0,
+        3,
+        5,
+        2,
+        4,
+        1
+      ],
+      "hint": "A described capability usually precedes the arguments both for and against it, and a described difficulty in evaluating those arguments usually precedes the research method developed to overcome it.",
+      "explanation": "This paragraph presents a technology ethics issue in balanced, evidence-based order: the capability, the argument in its favor, the counterargument, the difficulty in resolving the disagreement, a research method developed to address that difficulty, what that research found, and the resulting regulatory response under consideration."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L189_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "This uneven adoption occasionally produced serious practical errors, including at least one well-documented case where mismatched units contributed directly to the loss of an expensive spacecraft.",
+        "Adoption of this unified system proceeded unevenly across different countries, with some adopting it swiftly and others retaining older systems for generations longer.",
+        "Standards organizations continue working to further harmonize remaining regional measurement inconsistencies, particularly within specialized industries that adopted the unified system only partially.",
+        "Trade and scientific collaboration between different regions historically required constant, often error-prone conversion between locally established systems of measurement.",
+        "Scientific and engineering fields adopted the unified system considerably faster than everyday commercial and domestic life did in most adopting countries.",
+        "A unified decimal-based system of measurement was developed specifically to replace this patchwork of inconsistent regional standards with a single coherent framework.",
+        "Such high-profile errors have since been cited as cautionary examples reinforcing the practical, rather than merely theoretical, importance of consistent measurement standards."
+      ],
+      "correctOrder": [
+        3,
+        5,
+        1,
+        4,
+        0,
+        6,
+        2
+      ],
+      "hint": "A described inconsistency usually precedes the unifying solution, and uneven adoption of that solution usually precedes the real-world consequence such unevenness eventually produced.",
+      "explanation": "This paragraph traces a standardization effort and its cautionary lesson: the original inconsistency, the unifying solution developed, its uneven adoption, a specific unevenness within that adoption, the resulting real consequence, how that consequence is now used as a lesson, and the ongoing effort to close remaining gaps."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L190_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Historically, some governments directly controlled monetary policy decisions, including the ability to lower interest rates or increase the money supply during politically inconvenient periods, such as shortly before an election.",
+        "Critics of this arrangement argue that insulating monetary policy from direct democratic accountability raises legitimate questions about who ultimately bears responsibility when policy decisions prove genuinely unpopular.",
+        "Empirical studies comparing countries with varying degrees of central bank independence have generally found independence associated with more stable long-term inflation outcomes.",
+        "Many countries subsequently restructured their central banks to operate with formal independence from direct political control over specific monetary policy decisions.",
+        "Economists observed that this direct political control could create an incentive to prioritize short-term economic stimulus over long-term price stability.",
+        "This independence is typically balanced by requiring central banks to operate transparently and remain accountable to legislative oversight through other, less direct mechanisms.",
+        "This tension between technical policy stability and democratic accountability remains a genuinely unresolved question within monetary economics, rather than one considered settled by the empirical evidence alone."
+      ],
+      "correctOrder": [
+        0,
+        4,
+        3,
+        5,
+        2,
+        1,
+        6
+      ],
+      "hint": "A described political risk usually precedes the institutional reform addressing it, and that reform's empirical benefit usually precedes the legitimate criticism that remains despite it.",
+      "explanation": "This paragraph explains an institutional design choice and its unresolved tension: the original risk, the economists' concern about it, the reform adopted, how that reform is balanced, its empirical benefit, a legitimate criticism of it, and an honest acknowledgment that the underlying tension remains unresolved."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L190_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Researchers discovered that tumors shed small fragments of genetic material into the bloodstream well before a tumor becomes large enough for conventional detection methods to identify.",
+        "Clinical trials evaluating these refined tests as a general screening tool for currently healthy populations are still underway and have not yet been fully completed.",
+        "This discovery led to the development of blood tests, known as liquid biopsies, designed specifically to detect these circulating genetic fragments.",
+        "Detecting cancer at its earliest, most treatable stages has traditionally relied on imaging technology or physical symptoms, both of which often only become apparent after a tumor has grown considerably.",
+        "Researchers caution that even a highly sensitive test must also avoid excessive false positives, since unnecessary follow-up procedures carry their own genuine medical and psychological costs.",
+        "Researchers have since refined the tests' sensitivity considerably, improving their ability to detect the very small quantities of genetic material present at earlier disease stages.",
+        "Early versions of these tests showed promise for cancers already diagnosed through other means but struggled to reliably detect genuinely early-stage, previously undetected cancers."
+      ],
+      "correctOrder": [
+        3,
+        0,
+        2,
+        6,
+        5,
+        1,
+        4
+      ],
+      "hint": "A limitation of older detection methods usually precedes the discovery enabling a new method, and that new method's early limitation usually precedes its refinement and remaining open questions.",
+      "explanation": "This paragraph traces a medical innovation's development and its remaining open questions: the older method's limitation, the underlying discovery, the resulting test, its early limitation, its subsequent refinement, its current unfinished evaluation, and an important caution about a different kind of error the test must still avoid."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L190_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Linguists studying this system note that it functions more as a flexible contact language than as a fully developed language with the grammatical complexity of any individual national sign language.",
+        "Deaf communities in different countries historically developed their own distinct sign languages, shaped by each community's particular history and cultural context.",
+        "This diversity meant that deaf individuals from different countries meeting at international gatherings often could not communicate directly with one another.",
+        "Delegates at early international deaf gatherings began developing an improvised, simplified communication system drawing on gestures shared or easily understood across multiple sign languages.",
+        "This informal system gradually evolved into a more consistent set of conventions used specifically for international deaf gatherings and events.",
+        "Organizers of major international deaf events now generally provide both the simplified international system and dedicated interpretation into individual national sign languages, attempting to balance both practical need and cultural respect.",
+        "Some deaf advocates have raised concern that overreliance on this simplified system at international events could inadvertently diminish attention to individual national sign languages' full linguistic richness."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        3,
+        4,
+        0,
+        6,
+        5
+      ],
+      "hint": "A described diversity usually precedes the communication problem it created, and an improvised solution usually precedes both its formal linguistic evaluation and the concern it eventually raised.",
+      "explanation": "This paragraph traces a communication system's grassroots emergence and its careful current balance: the original diversity, the resulting problem, the improvised solution, its gradual formalization, its linguistic classification, a raised cultural concern, and the practical compromise organizers now use to address that concern."
+    }
+  ]
 }

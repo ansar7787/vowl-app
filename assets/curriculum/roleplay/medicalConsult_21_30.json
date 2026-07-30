@@ -4,483 +4,483 @@
     "levels": "21-30",
     "quests": [
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"I got an itchy red rash after being in the heat all afternoon.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Sunburn",
+                "Allergic Rash",
+                "Heat Rash",
+                "Insect Bite"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Heat Rash",
+            "hint": "The cause the patient gives is heat, not sun exposure or an allergy.",
+            "explanation": "A rash caused by heat and sweat, not sun, is called Heat Rash.",
             "id": "mc_l21_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"I get carsick every time I read in the back seat,\" the patient says.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Motion Sickness",
+                "Dizziness",
+                "Nausea",
+                "Headache"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Motion Sickness",
+            "hint": "There is one precise term for feeling sick specifically from movement.",
+            "explanation": "Feeling sick from the movement of a car, boat, or plane has its own name: Motion Sickness.",
             "id": "mc_l21_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"My hand feels like pins and needles after I sleep on it,\" the patient tells the doctor.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Numbness",
+                "Pins and Needles",
+                "Cramp",
+                "Swelling"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Pins and Needles",
+            "hint": "The patient uses a specific, common expression - listen for it directly.",
+            "explanation": "A prickling, tingling feeling, often after a body part 'falls asleep,' is called Pins and Needles.",
             "id": "mc_l21_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"My nose feels completely blocked, but nothing comes out.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Runny Nose",
+                "Sinus Pressure",
+                "Nosebleed",
+                "Stuffy Nose"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Stuffy Nose",
+            "hint": "Notice the patient says nothing is coming out - that rules out a 'runny' nose.",
+            "explanation": "A nose that feels blocked with no liquid draining is a Stuffy Nose, not a Runny Nose.",
             "id": "mc_l22_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"Bright lights have been giving me a headache lately.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Light Sensitivity",
+                "Headache",
+                "Blurred Vision",
+                "Watery Eyes"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Light Sensitivity",
+            "hint": "The headache is the result - what's actually triggering it?",
+            "explanation": "Discomfort or pain caused specifically by bright light is called Light Sensitivity.",
             "id": "mc_l22_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "In the exam room, the patient says: \"My jaw clicks and aches when I chew.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Toothache",
+                "Earache",
+                "Headache",
+                "Jaw Pain"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Jaw Pain",
+            "hint": "The patient names the exact joint involved.",
+            "explanation": "Pain or clicking in the jaw, especially while chewing, is called Jaw Pain.",
             "id": "mc_l22_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"I felt my heart racing for a few minutes after climbing the stairs.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Chest Pain",
+                "Shortness of Breath",
+                "Racing Heartbeat",
+                "Dizziness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Racing Heartbeat",
+            "hint": "The patient describes their heart's speed, not pain or breathing.",
+            "explanation": "A heartbeat that suddenly feels fast is called a Racing Heartbeat.",
             "id": "mc_l23_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"I keep waking up in a sweat, even when the room is cool,\" the patient says.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Excessive Sweating",
+                "Night Sweats",
+                "Fever",
+                "Chills"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Night Sweats",
+            "hint": "The timing detail - waking up - points to a specific term.",
+            "explanation": "Sweating heavily during sleep, even in a cool room, is called Night Sweats.",
             "id": "mc_l23_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"My legs feel like they need to move all the time when I try to rest,\" the patient tells the doctor.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Restless Legs",
+                "Cramp",
+                "Leg Pain",
+                "Numbness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Restless Legs",
+            "hint": "The patient describes an urge to move, not pain.",
+            "explanation": "An uncomfortable urge to move the legs, especially when resting, is called Restless Legs.",
             "id": "mc_l23_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"I can't seem to focus or think clearly these days.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Fatigue",
+                "Brain Fog",
+                "Insomnia",
+                "Dizziness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Brain Fog",
+            "hint": "The patient describes their thinking, not their energy or sleep.",
+            "explanation": "Difficulty focusing or thinking clearly is commonly called Brain Fog.",
             "id": "mc_l24_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"That burning feeling in my chest comes right back up my throat sometimes.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Heartburn",
+                "Chest Pain",
+                "Nausea",
+                "Acid Reflux"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Acid Reflux",
+            "hint": "The key detail is that the feeling rises up toward the throat.",
+            "explanation": "Burning that rises from the chest up into the throat is called Acid Reflux, a step beyond simple Heartburn.",
             "id": "mc_l24_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "In the exam room, the patient says: \"My ankles puff up by the end of every day.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Swelling",
+                "Leg Pain",
+                "Swollen Ankles",
+                "Cramp"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Swollen Ankles",
+            "hint": "The patient names the exact body part that puffs up.",
+            "explanation": "Ankles that visibly puff up is specifically called Swollen Ankles.",
             "id": "mc_l24_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"My lips keep splitting, especially in this cold weather.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Cracked Lips",
+                "Dry Mouth",
+                "Mouth Ulcer",
+                "Sunburn"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Cracked Lips",
+            "hint": "The patient describes the outside of the mouth, not the inside.",
+            "explanation": "Lips that split or crack, often from cold or dry weather, are called Cracked Lips.",
             "id": "mc_l25_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"I get this tingly, itchy spot on my lip right before a blister shows up,\" the patient says.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Mouth Ulcer",
+                "Cold Sore",
+                "Rash",
+                "Cracked Lips"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Cold Sore",
+            "hint": "The patient describes a very specific early warning feeling before a blister.",
+            "explanation": "A tingling spot on the lip that becomes a small blister is a classic sign of a Cold Sore.",
             "id": "mc_l25_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"The side of my toenail is red and painful,\" the patient tells the doctor.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Bruise",
+                "Swelling",
+                "Cut",
+                "Ingrown Nail"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Ingrown Nail",
+            "hint": "The patient points to the edge of the nail specifically.",
+            "explanation": "A nail that grows into the skin, causing redness and pain at the edge, is called an Ingrown Nail.",
             "id": "mc_l25_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"A new pair of shoes gave me a painful bubble of skin on my heel.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Cut",
+                "Bruise",
+                "Blister",
+                "Rash"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Blister",
+            "hint": "The patient describes a raised bubble, not a wound or a color change.",
+            "explanation": "A small, fluid-filled bubble on the skin, often from friction, is called a Blister.",
             "id": "mc_l26_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"Loud noises at work have started to bother me a lot.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Ringing in the Ears",
+                "Sensitivity to Sound",
+                "Hearing Loss",
+                "Headache"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Sensitivity to Sound",
+            "hint": "This is the opposite of hearing loss - sound is bothering, not missing.",
+            "explanation": "Discomfort caused by normal or loud sounds is called Sensitivity to Sound.",
             "id": "mc_l26_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "In the exam room, the patient says: \"I woke up with my eyes all puffed up.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Puffy Eyes",
+                "Watery Eyes",
+                "Itchy Eyes",
+                "Blurred Vision"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Puffy Eyes",
+            "hint": "The patient describes the appearance of the eyes, not a feeling.",
+            "explanation": "Eyes that look swollen, especially after sleep, are called Puffy Eyes.",
             "id": "mc_l26_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"The skin on my heels is so dry it's starting to crack.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Dry Skin",
+                "Blister",
+                "Itching",
+                "Cracked Skin"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Cracked Skin",
+            "hint": "The patient describes a step beyond simply feeling dry - the skin is splitting.",
+            "explanation": "Skin that becomes so dry it splits open is called Cracked Skin.",
             "id": "mc_l27_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"My hands get so chapped from the cold that they sting,\" the patient says.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Dry Skin",
+                "Cracked Skin",
+                "Chapped Hands",
+                "Rash"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Chapped Hands",
+            "hint": "The patient names the exact body part and the common word for this.",
+            "explanation": "Rough, sore, cold-damaged skin on the hands is called Chapped Hands.",
             "id": "mc_l27_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"My ear feels blocked, like it's underwater,\" the patient tells the doctor.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Earache",
+                "Hearing Loss",
+                "Ringing in the Ears",
+                "Ear Fullness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Ear Fullness",
+            "hint": "The patient compares the feeling to being underwater, not to pain.",
+            "explanation": "A blocked, pressure-like feeling in the ear is called Ear Fullness.",
             "id": "mc_l27_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"My face feels heavy and achy right behind my cheekbones.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Headache",
+                "Sinus Pressure",
+                "Toothache",
+                "Earache"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Sinus Pressure",
+            "hint": "The patient points to a specific area near the nose and cheeks.",
+            "explanation": "Heaviness or aching around the cheekbones and nose is called Sinus Pressure.",
             "id": "mc_l28_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"The skin on my arm is peeling after my sunburn healed.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Sunburn",
+                "Dry Skin",
+                "Skin Peeling",
+                "Rash"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Skin Peeling",
+            "hint": "This happens after the sunburn - it is a separate, later stage.",
+            "explanation": "Skin coming off in thin layers, often after sun damage, is called Skin Peeling.",
             "id": "mc_l28_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "In the exam room, the patient says: \"My cough won't go away, even after two weeks.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Persistent Cough",
+                "Sore Throat",
+                "Shortness of Breath",
+                "Chest Pain"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Persistent Cough",
+            "hint": "The key detail is how long the cough has lasted.",
+            "explanation": "A cough that lasts much longer than expected is called a Persistent Cough.",
             "id": "mc_l28_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"My whole body feels weak, like I have no strength at all.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Fatigue",
+                "Numbness",
+                "Weakness",
+                "Dizziness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Weakness",
+            "hint": "The patient describes strength, which is different from feeling sleepy.",
+            "explanation": "A lack of physical strength is called Weakness, distinct from Fatigue, which is about tiredness.",
             "id": "mc_l29_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"My throat feels tight and it's hard to get air in,\" the patient says.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Shortness of Breath",
+                "Sore Throat",
+                "Chest Pain",
+                "Hoarse Voice"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Shortness of Breath",
+            "hint": "The patient describes trouble breathing, not pain when swallowing.",
+            "explanation": "Difficulty getting enough air is called Shortness of Breath.",
             "id": "mc_l29_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"I keep getting a sharp, stabbing pain in my side,\" the patient tells the doctor.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Back Pain",
+                "Stomach Ache",
+                "Chest Pain",
+                "Side Pain"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Side Pain",
+            "hint": "The patient names the exact location: the side of the body.",
+            "explanation": "Pain specifically on the side of the torso is called Side Pain.",
             "id": "mc_l29_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"My scalp has been really itchy and flaky.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Hair Loss",
+                "Scalp Itching",
+                "Dry Skin",
+                "Rash"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Scalp Itching",
+            "hint": "The patient names the exact area: the scalp, not the hair itself.",
+            "explanation": "An itchy, flaky scalp is called Scalp Itching.",
             "id": "mc_l30_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"My vision goes blurry for a moment before a headache starts.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Light Sensitivity",
+                "Dizziness",
+                "Blurred Vision",
+                "Headache"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Blurred Vision",
+            "hint": "The patient describes a change in sight that happens before the headache.",
+            "explanation": "Sight that becomes unclear or fuzzy is called Blurred Vision.",
             "id": "mc_l30_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "In the exam room, the patient says: \"My gums bleed a little every time I brush my teeth.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Bleeding Gums",
+                "Toothache",
+                "Mouth Ulcer",
+                "Bad Breath"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Bleeding Gums",
+            "hint": "The patient describes blood, not pain or smell.",
+            "explanation": "Gums that bleed during brushing are called Bleeding Gums.",
             "id": "mc_l30_q3"
         }
     ]

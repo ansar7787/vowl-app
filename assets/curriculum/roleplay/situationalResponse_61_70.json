@@ -7,16 +7,16 @@
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "An employer offers you a salary that is below your expectations during a negotiation.",
+            "scene": "An employer offers you a salary below your expectations during a negotiation.",
             "options": [
-                "I expected more - raise it immediately.",
-                "Thank you for the offer. Based on my experience and market research I was hoping for something closer to my target figure. Is there flexibility?",
-                "Fine I'll take it.",
-                "I resign."
+                "That's insulting, honestly, I expected better.",
+                "Fine, I suppose I'll just accept that.",
+                "I need to think about this offer more.",
+                "I was hoping for a bit more - can we discuss?"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Open with gratitude then state your position with clear reasoning.",
-            "explanation": "Thanking them before countering is confident and professional.",
+            "correctAnswerIndex": 3,
+            "hint": "Naming your expectation while staying open invites real negotiation.",
+            "explanation": "Calmly stating your expectation and inviting discussion is the most effective, professional negotiation response.",
             "id": "sr_l61_q1"
         },
         {
@@ -25,30 +25,30 @@
             "interactionType": "bubbles",
             "scene": "A respected colleague publicly disagrees with your proposal in a team meeting.",
             "options": [
-                "You are wrong and I'll prove it.",
-                "I see your point. Perhaps we could discuss this further after the meeting?",
-                "Fine - we'll do everything your way.",
-                "Why are you doing this to me?"
+                "That's fair - can you say more about your concern?",
+                "I really don't think that's accurate, actually.",
+                "We can discuss that after the meeting, maybe.",
+                "I'd rather not debate this in front of everyone."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Acknowledge their view and de-escalate without backing down entirely.",
-            "explanation": "I see your point - could we discuss this after the meeting? preserves the relationship and avoids public conflict.",
+            "correctAnswerIndex": 0,
+            "hint": "Staying curious about their concern keeps the discussion productive.",
+            "explanation": "Responding with curiosity rather than defensiveness is the most professional way to handle public disagreement.",
             "id": "sr_l61_q2"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You accidentally overhear confidential company information that you were not meant to hear.",
+            "scene": "You accidentally overhear confidential company information you were not meant to hear.",
             "options": [
-                "Share it immediately with your team.",
-                "Tell your manager what happened and ask how to proceed.",
-                "Forget you heard it and say nothing.",
-                "Use it to your advantage discreetly."
+                "This could actually be pretty useful to know.",
+                "I'll keep this to myself and forget I heard it.",
+                "I should probably tell someone about this.",
+                "It's not really my responsibility to manage this."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Transparency with your manager is the only ethical path here.",
-            "explanation": "Telling your manager you accidentally heard something confidential is transparent and ethical.",
+            "hint": "Discretion is the safest, most professional choice here.",
+            "explanation": "Choosing discretion and confidentiality is the appropriate, professional response to overheard information.",
             "id": "sr_l61_q3"
         },
         {
@@ -57,62 +57,62 @@
             "interactionType": "bubbles",
             "scene": "Someone interrupts you mid-sentence in an important meeting.",
             "options": [
-                "Stop talking and let them speak.",
-                "Raise your voice to continue speaking over them.",
-                "Say calmly: Sorry - could I just finish my point?",
-                "Give them a sharp look."
+                "Please don't interrupt me like that again.",
+                "Sorry, go ahead, it's fine, really.",
+                "Let me just finish this one point first.",
+                "That's actually quite rude of you."
             ],
             "correctAnswerIndex": 2,
-            "hint": "Politely reclaim your speaking time without aggression.",
-            "explanation": "Sorry - could I just finish my point? is politely assertive.",
+            "hint": "A calm, firm request to finish your point keeps you in control.",
+            "explanation": "Calmly and firmly asking to finish your point is the appropriate way to hold your ground without conflict.",
             "id": "sr_l62_q1"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A client requests a discount that is well beyond your company's standard policy.",
+            "scene": "A client requests a discount well beyond your company's standard policy.",
             "options": [
-                "I can offer you our loyalty discount - ten percent on your next order. That is the most I'm authorised to offer.",
-                "No that is absolutely impossible.",
-                "All right I'll make an exception this once.",
-                "Let me ask my manager while you sit here waiting."
+                "That's simply against our policy, sorry.",
+                "I'll have to check with my manager first.",
+                "That's a very unusual request, honestly.",
+                "I can't go that far, but here's what I can offer."
             ],
-            "correctAnswerIndex": 0,
-            "hint": "Offer what you can and be clear and honest about your limits.",
-            "explanation": "Offering the maximum within your authority is honest helpful and professional.",
+            "correctAnswerIndex": 3,
+            "hint": "Offering an alternative keeps the conversation moving forward.",
+            "explanation": "Declining clearly while offering an alternative is the most appropriate, solution-focused response.",
             "id": "sr_l62_q2"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A colleague asks your honest opinion about their new business idea and you have serious reservations.",
+            "scene": "A colleague asks your honest opinion about their new business idea, and you have real doubts.",
             "options": [
-                "It sounds absolutely amazing!",
-                "Honestly it's not very good at all.",
-                "I think there's something interesting here. I do have a few concerns - would you like to hear them?",
-                "I need more time to think about it."
+                "Honestly, I don't think this will work at all.",
+                "It sounds interesting, I suppose, overall.",
+                "I see potential, but I'd want to address the costs.",
+                "I'd rather not give my opinion on this."
             ],
             "correctAnswerIndex": 2,
-            "hint": "Lead with something genuine and offer critique as support not judgment.",
-            "explanation": "Acknowledging potential while offering to share concerns keeps the conversation collaborative.",
+            "hint": "Balancing honesty with encouragement keeps trust intact.",
+            "explanation": "Balancing genuine encouragement with an honest concern is the most appropriate way to give difficult feedback.",
             "id": "sr_l62_q3"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You are presenting a project and someone asks a technical question you cannot answer.",
+            "scene": "During a project presentation, someone asks a technical question you cannot answer.",
             "options": [
-                "Make something up quickly so you don't look bad.",
-                "That's a great question. I don't have that data with me right now - I'll find out and get back to you.",
-                "Why are you asking that?",
-                "Skip the question and move on."
+                "I'm not really sure, to be honest.",
+                "Good question - let me confirm and follow up.",
+                "That wasn't really part of my research.",
+                "I'll just make an educated guess here."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Admitting you don't know and promising to follow up is more credible than guessing.",
-            "explanation": "Saying I don't have that data right now - I'll get back to you shows intellectual honesty.",
+            "hint": "Admitting the gap and promising a follow-up keeps your credibility intact.",
+            "explanation": "Acknowledging the gap honestly and promising to follow up is the most professional response to an unexpected question.",
             "id": "sr_l63_q1"
         },
         {
@@ -121,46 +121,46 @@
             "interactionType": "bubbles",
             "scene": "A new client keeps calling you outside of your normal working hours.",
             "options": [
-                "Ignore all calls received outside working hours.",
-                "Answer at any hour to keep the client happy.",
-                "At your next interaction say: To give you the best support could we agree to keep calls within business hours?",
-                "Block their number immediately."
+                "I'd love to help - let's set regular call times.",
+                "You really shouldn't call me this late.",
+                "I'll just keep answering, I suppose.",
+                "That's honestly not part of my job."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Set professional boundaries in a way that frames them as being in the client's interest.",
-            "explanation": "Framing the boundary as being about service quality is a professional and non-confrontational way to establish working hour expectations.",
+            "correctAnswerIndex": 0,
+            "hint": "Setting a clear structure solves this kindly and professionally.",
+            "explanation": "Proposing a clear structure is the most professional way to set a boundary while staying helpful.",
             "id": "sr_l63_q2"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Your team misses an important deadline because of poor planning. Your manager asks what went wrong.",
+            "scene": "Your team misses an important deadline because of poor planning, and your manager wants an explanation.",
             "options": [
-                "It wasn't my fault at all.",
-                "Blame the team member who caused the delay.",
-                "I take responsibility - we underestimated the timeline. Here is what we learned and how we will prevent this in future.",
-                "We simply had too much work."
+                "It really wasn't my fault, to be honest.",
+                "These things happen sometimes, unfortunately.",
+                "The timeline was unrealistic from the start.",
+                "Here's what happened, and how we'll fix it."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Leaders accept responsibility and immediately offer solutions and learning.",
-            "explanation": "Accepting responsibility naming the lesson and presenting a concrete plan shows genuine leadership maturity.",
+            "correctAnswerIndex": 3,
+            "hint": "Taking ownership and offering a fix builds more trust than excuses.",
+            "explanation": "Explaining honestly and proposing a fix is the most appropriate way to handle accountability with a manager.",
             "id": "sr_l63_q3"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You are asked to do something at work that conflicts with your personal values.",
+            "scene": "Your manager asks you to do something at work that conflicts with your personal values.",
             "options": [
-                "Just do it - it's only work.",
-                "I am afraid this isn't something I can do in good conscience. Could I speak with you privately about this?",
-                "Quit on the spot immediately.",
-                "Do it but complain loudly afterward."
+                "I'll just do it, since it's my job, I suppose.",
+                "That's honestly not something I'll do.",
+                "I'm not comfortable with this - can we discuss it?",
+                "Someone else should probably handle this instead."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Raise ethical concerns privately and calmly through the right channels.",
-            "explanation": "Asking to speak privately shows you take the issue seriously without creating a public incident.",
+            "correctAnswerIndex": 2,
+            "hint": "Raising the concern directly opens a real conversation.",
+            "explanation": "Voicing your discomfort directly and inviting discussion is the most constructive, appropriate response here.",
             "id": "sr_l64_q1"
         },
         {
@@ -169,14 +169,14 @@
             "interactionType": "bubbles",
             "scene": "A customer becomes verbally aggressive toward you on the phone.",
             "options": [
-                "Shout back at them.",
-                "Hang up immediately.",
-                "I understand you're frustrated but we both need to be respectful to resolve this. Can we continue on that basis?",
-                "Apologise profusely for everything."
+                "I understand you're upset - let's find a solution.",
+                "There's no need to speak to me that way.",
+                "I'm going to have to end this call now.",
+                "Let me transfer you to someone else."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Acknowledge the emotion set a clear standard and keep the door open.",
-            "explanation": "Validating the frustration setting a clear expectation and giving them the choice to continue is how professionals handle difficult customers.",
+            "correctAnswerIndex": 0,
+            "hint": "Staying calm and solution-focused often de-escalates anger.",
+            "explanation": "Staying calm and focusing on a solution is the most effective, professional way to handle an angry caller.",
             "id": "sr_l64_q2"
         },
         {
@@ -185,30 +185,30 @@
             "interactionType": "bubbles",
             "scene": "You immediately forget someone's name right after being formally introduced.",
             "options": [
-                "Avoid using their name for the rest of the event.",
-                "I'm so sorry - I didn't quite catch your name?",
-                "Call them you throughout the evening.",
-                "Quietly ask someone else nearby."
+                "Names always just slip my mind, honestly.",
+                "Sorry, could you remind me of your name?",
+                "I'll remember it in a minute, probably.",
+                "I'm terrible with names, always have been."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Asking again immediately is far more gracious than avoiding the name all night.",
-            "explanation": "I'm so sorry - I didn't quite catch your name? is natural and polite.",
+            "hint": "Asking directly is more graceful than pretending to remember.",
+            "explanation": "Simply and politely asking again is the most natural, graceful way to handle forgetting a name.",
             "id": "sr_l64_q3"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You need to exit a long and boring conversation at a networking event.",
+            "scene": "You need to exit a long, boring conversation at a networking event.",
             "options": [
-                "Just walk away without warning.",
-                "This has been lovely - I want to let you mingle. Thank you so much for the conversation!",
-                "Look at your phone to signal you want to leave.",
-                "Tell them honestly that you are bored."
+                "This has been really nice, anyway, bye.",
+                "I should probably talk to other people too.",
+                "It was great chatting - I'll let you mingle.",
+                "Well, I don't want to keep you, so..."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Exit graciously while making the other person feel good about the interaction.",
-            "explanation": "This exit validates the conversation and frames leaving as giving them the freedom to network.",
+            "correctAnswerIndex": 2,
+            "hint": "A warm, specific exit line feels polite rather than abrupt.",
+            "explanation": "Ending warmly with a specific reason is the most polite, natural way to exit a conversation.",
             "id": "sr_l65_q1"
         },
         {
@@ -217,14 +217,14 @@
             "interactionType": "bubbles",
             "scene": "A team member consistently contributes far less than everyone else on the team.",
             "options": [
-                "Complain to your manager without speaking to them first.",
-                "Just do their work for them to keep the project moving.",
-                "Say privately: I've noticed you seem less engaged lately. Is everything OK? I want us to work well as a team.",
-                "Ignore it and let it continue."
+                "You need to start pulling your weight.",
+                "Can we talk about how the workload is split?",
+                "I'll just cover the extra work myself.",
+                "Everyone's noticed you're not doing much."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Address the behaviour directly and privately before considering escalation.",
-            "explanation": "Checking in first treats the colleague as a person not just a problem.",
+            "correctAnswerIndex": 1,
+            "hint": "A calm conversation about workload is more constructive than confrontation.",
+            "explanation": "Opening a calm conversation about the workload is the most constructive, appropriate response.",
             "id": "sr_l65_q2"
         },
         {
@@ -233,30 +233,30 @@
             "interactionType": "bubbles",
             "scene": "You realize mid-project that you have fundamentally misunderstood the brief.",
             "options": [
-                "Finish it incorrectly and hope no one notices.",
-                "Start completely over without telling the client anything.",
-                "Contact the client immediately: I want to flag a concern about scope - could we have a quick call to clarify?",
-                "Blame the original brief."
+                "This is going to be a real problem now.",
+                "I'll just try to fix it quietly myself.",
+                "Nobody explained the brief clearly enough.",
+                "I need to flag a misunderstanding on my end."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Flag problems early - early discovery of a misunderstanding is far easier to fix.",
-            "explanation": "Raising the concern promptly and asking for a clarifying call is professional.",
+            "correctAnswerIndex": 3,
+            "hint": "Flagging it early prevents a much bigger problem later.",
+            "explanation": "Flagging the misunderstanding early and honestly is the most professional way to handle this kind of mistake.",
             "id": "sr_l65_q3"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You are interviewing a job candidate who is clearly very nervous. How do you open?",
+            "scene": "A job candidate you are interviewing is clearly very nervous.",
             "options": [
-                "Let's begin. First question.",
-                "Don't worry about the nerves - let's just have a good conversation.",
-                "You seem nervous. Are you all right?",
-                "We have thirty minutes. Let's not waste any of it."
+                "Take your time - there's no rush at all.",
+                "You seem pretty nervous, is everything okay?",
+                "Let's just get started with the questions.",
+                "Try to relax, it's really not a big deal."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Put a nervous candidate at ease without drawing too much attention to the nerves.",
-            "explanation": "Let's just have a conversation reframes the interview as dialogue rather than examination.",
+            "correctAnswerIndex": 0,
+            "hint": "Reassurance without naming the nervousness feels most respectful.",
+            "explanation": "Offering calm reassurance is the most appropriate, respectful way to put a nervous candidate at ease.",
             "id": "sr_l66_q1"
         },
         {
@@ -265,158 +265,158 @@
             "interactionType": "bubbles",
             "scene": "You need to decline an invitation to an optional work social event.",
             "options": [
-                "I'll definitely be there!",
-                "I'm afraid I have a prior commitment that evening but thank you for the invitation.",
-                "I'm not going to that kind of thing.",
-                "Work events are not really for me."
+                "Social events really aren't my thing, sorry.",
+                "Thanks for the invite - I can't make it this time.",
+                "I'll see if I'm free, maybe, closer to the day.",
+                "I don't really enjoy these kinds of events."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Decline graciously with a brief and courteous reason.",
-            "explanation": "A polite decline with a brief reason is socially smooth and professional.",
+            "hint": "A warm, clear decline is better than a vague maybe.",
+            "explanation": "A warm, clear decline is the most appropriate way to turn down an optional invitation.",
             "id": "sr_l66_q2"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A client tells you: I feel like I'm not getting enough value from this service.",
+            "scene": "A client tells you: 'I feel like I'm not getting enough value from this service.'",
             "options": [
-                "That's not a fair assessment at all.",
-                "I'm sorry to hear that. Could you tell me more about what's missing? I want to make sure we get this right.",
-                "We provide excellent value to all our clients.",
-                "Other clients are very satisfied."
+                "We offer a lot more value than most, honestly.",
+                "I'm sorry you feel that way about it.",
+                "Can you tell me more about that, please?",
+                "I hear you - let's review what's included together."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Treat a value concern as an invitation to understand and genuinely improve.",
-            "explanation": "Apologising asking clarifying questions and expressing commitment shows you take their concern seriously.",
+            "correctAnswerIndex": 3,
+            "hint": "Acknowledge the concern, then move to a concrete next step.",
+            "explanation": "Acknowledging the concern and moving to a concrete review is the most complete, appropriate response.",
             "id": "sr_l66_q3"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You are at a networking dinner and are seated next to someone you do not know at all.",
+            "scene": "At a networking dinner, you are seated next to someone you do not know.",
             "options": [
-                "Look at your phone and wait for them to speak first.",
-                "Ask immediately: What do you do?",
-                "Hi I'm [name]. Have you been to one of these events before?",
-                "Eat silently and wait for the meal to end."
+                "I don't really know anyone here, honestly.",
+                "These dinners are always a bit awkward.",
+                "Hi, I'm Sam - what brings you here tonight?",
+                "Nice to meet you, I suppose, randomly."
             ],
             "correctAnswerIndex": 2,
-            "hint": "Break the ice with a warm introduction and an easy low-pressure opening question.",
-            "explanation": "Introducing yourself and asking a light easy question is natural and low-pressure.",
+            "hint": "A friendly self-introduction with a question opens things naturally.",
+            "explanation": "Introducing yourself and asking an open question is the natural way to start a conversation with a stranger.",
             "id": "sr_l67_q1"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You receive a work email - copied to everyone on the team - that unfairly criticises your work.",
+            "scene": "You receive a work email, copied to your whole team, that unfairly criticizes your work.",
             "options": [
-                "Reply to all immediately with your full defence.",
-                "Reply only to the sender and request a private meeting.",
-                "Forward it directly to HR.",
-                "Ignore it and carry on."
+                "I'd like to discuss this feedback directly with you.",
+                "This really wasn't fair to send to everyone.",
+                "I disagree with most of what's written here.",
+                "I'll reply to the whole team about this."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Keep sensitive professional disagreements private - never escalate in a group email.",
-            "explanation": "Replying only to the sender prevents escalation and allows for a proper conversation.",
+            "correctAnswerIndex": 0,
+            "hint": "Moving the conversation to a private, direct channel is the most professional step.",
+            "explanation": "Requesting a direct, private conversation is the most professional way to handle unfair public criticism.",
             "id": "sr_l67_q2"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You have been asked to mentor a junior colleague who seems resistant to any advice.",
+            "scene": "A junior colleague you've been asked to mentor seems resistant to any advice.",
             "options": [
-                "Give up - they clearly don't want help.",
-                "Impose your preferred approach on them regardless.",
-                "Ask: What kind of support would actually be most useful to you right now?",
-                "Report their resistance to management."
+                "You really do need to listen more, honestly.",
+                "What kind of support would actually help you?",
+                "I'll just let you find your own way, then.",
+                "My advice has helped plenty of people before."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Ask what the mentee needs instead of assuming you know.",
-            "explanation": "Asking what kind of support they want shifts the dynamic to collaborative partnership.",
+            "correctAnswerIndex": 1,
+            "hint": "Asking what they actually want builds trust faster than pushing advice.",
+            "explanation": "Asking what kind of support they want is the most effective, appropriate way to reach a resistant mentee.",
             "id": "sr_l67_q3"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You are running fifteen minutes late for an important meeting. What do you do?",
+            "scene": "An important meeting has already started by the time you arrive, fifteen minutes late.",
             "options": [
-                "Arrive late and apologise when you get there.",
-                "Text immediately: Running 15 mins late - so sorry. Please start without me.",
-                "Send a vague message: on my way.",
-                "Cancel the entire meeting."
+                "Traffic was honestly just impossible today.",
+                "Sorry, sorry, sorry, I know I'm late.",
+                "I hope I haven't missed too much, sorry.",
+                "Sorry I'm late - please catch me up quickly."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Give a specific honest and considerate advance warning.",
-            "explanation": "A timely specific message with an apology and permission to start respects everyone's time.",
+            "correctAnswerIndex": 3,
+            "hint": "A brief apology plus a request to catch up is the most efficient response.",
+            "explanation": "A brief apology followed by asking to catch up is the most efficient, appropriate way to rejoin a meeting.",
             "id": "sr_l68_q1"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A colleague shares wonderful personal news - they are expecting their first baby.",
+            "scene": "A colleague shares wonderful personal news - they are expecting their first child.",
             "options": [
-                "Is it planned?",
-                "Congratulations! That's absolutely wonderful news!",
-                "Are you planning to take a long maternity leave?",
-                "Nod politely and return to your work."
+                "Wow, that's going to change everything, huh?",
+                "Get ready to say goodbye to sleep, honestly.",
+                "That's wonderful news - congratulations to you both!",
+                "That's great, anyway, back to the report."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Respond to significant personal news with genuine and appropriate warmth.",
-            "explanation": "Congratulations! That's absolutely wonderful news! is the appropriate warm response.",
+            "correctAnswerIndex": 2,
+            "hint": "A warm, genuine congratulation matches the moment.",
+            "explanation": "A warm, genuine congratulation is the most appropriate response to happy personal news.",
             "id": "sr_l68_q2"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You are about to leave a company and want to maintain your relationship with your manager.",
+            "scene": "Before leaving a company for good, you want to maintain your relationship with your manager.",
             "options": [
-                "Never contact them again once you leave.",
-                "Add them instantly to every social media platform.",
-                "Send a thoughtful thank-you note recognising their specific support and mentorship.",
-                "Leave quietly without saying a proper goodbye."
+                "I'd love to stay in touch after I leave.",
+                "It's been an interesting few years, honestly.",
+                "I've learned a lot here, I suppose.",
+                "I hope things go well here after I'm gone."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "A genuine farewell creates a lasting positive professional impression.",
-            "explanation": "A sincere thank-you note upon leaving a company is gracious and professional.",
+            "correctAnswerIndex": 0,
+            "hint": "Explicitly proposing to stay connected keeps the door open.",
+            "explanation": "Explicitly proposing to stay in touch is the most appropriate way to preserve a professional relationship.",
             "id": "sr_l68_q3"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You are about to enter a salary negotiation. What is the ideal mindset to bring?",
+            "scene": "Right before a salary negotiation begins, what is the ideal mindset to bring?",
             "options": [
-                "Win at all costs no matter what.",
-                "Confident but open to finding a genuinely good outcome for both sides.",
-                "Be prepared to give everything away to reach agreement.",
-                "Let the other side lead and react to everything they say."
+                "Firm, since I deserve more, honestly.",
+                "Cautious, since this could go badly.",
+                "Confident, well-prepared, and open to discussion.",
+                "Flexible, I'll accept whatever they offer."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Good negotiators seek mutual benefit not just their own win.",
-            "explanation": "Entering a negotiation with confidence combined with openness to collaboration produces better more durable agreements.",
+            "correctAnswerIndex": 2,
+            "hint": "The best mindset balances confidence with genuine openness.",
+            "explanation": "Being confident, prepared, and open to discussion is the most effective mindset for a successful negotiation.",
             "id": "sr_l69_q1"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A former colleague asks you to write them a reference but you found them genuinely difficult to work with.",
+            "scene": "A former colleague asks you to write them a reference, but you found them genuinely difficult to work with.",
             "options": [
-                "Write a glowing reference - be a good friend.",
-                "Decline and explain you're not the right person to reference them well.",
-                "Write a critical reference.",
-                "Let the call ring out and hope they forget."
+                "I don't think I'm the best person to ask.",
+                "I'll write something, I suppose, if needed.",
+                "Honestly, I'd rather not get into why.",
+                "You should really ask someone else instead."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "It is better to decline honestly than to provide an inaccurate reference.",
-            "explanation": "If you cannot provide a strong honest reference declining and suggesting someone better placed is the ethical choice.",
+            "correctAnswerIndex": 0,
+            "hint": "A polite decline protects your honesty without being unkind.",
+            "explanation": "Politely declining without detailing the reasons is the most tactful, appropriate response here.",
             "id": "sr_l69_q2"
         },
         {
@@ -425,62 +425,62 @@
             "interactionType": "bubbles",
             "scene": "A customer directly asks you what you think of a competitor's product.",
             "options": [
-                "Their product is honestly terrible.",
-                "I can't really compare directly but I can tell you exactly what makes our product the right choice for your specific needs.",
-                "I genuinely have no opinion on them.",
-                "Buy ours not theirs - obviously."
+                "Honestly, ours is better in every way.",
+                "I'm really not familiar with their product.",
+                "That's not something I can comment on.",
+                "I can't speak to theirs, but here's what ours offers."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Stay professional and focus on your product's genuine strengths not competitors' weaknesses.",
-            "explanation": "Avoiding direct criticism of competitors and refocusing on your own product's value is professional and effective.",
+            "correctAnswerIndex": 3,
+            "hint": "Redirecting to your own strengths avoids an awkward comparison.",
+            "explanation": "Redirecting confidently to your own product's strengths is the most professional way to handle this question.",
             "id": "sr_l69_q3"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You find a significant error in a report just before it is sent to a senior board.",
+            "scene": "You find a significant error in a report just before it is sent to a senior director.",
             "options": [
-                "Let it go - it's probably not critical.",
-                "Correct it and inform the responsible person about what you found.",
-                "Tell the board directly without speaking to the author first.",
-                "Delete the report."
+                "It's probably too late to change anything now.",
+                "Please hold it - I've spotted an error to fix.",
+                "I'll mention it after it's already sent.",
+                "It's a small mistake, it should be fine."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Fix the error and communicate with the right person - in that order.",
-            "explanation": "Correcting the error and telling the responsible person is the right sequence.",
+            "hint": "Speaking up immediately prevents a bigger problem later.",
+            "explanation": "Immediately flagging the error before it's sent is the most responsible, appropriate response.",
             "id": "sr_l70_q1"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A colleague vents to you about another team member. You are friendly with both people.",
+            "scene": "A colleague vents to you about another team member. You are friendly with both of them.",
             "options": [
-                "Agree with everything they say to be supportive.",
-                "Share what you know about the other person from private conversations.",
-                "Listen validate their feelings but avoid taking sides or sharing information.",
-                "Immediately tell the other colleague what was said."
+                "That sounds frustrating - have you spoken to them?",
+                "I really don't want to get in the middle.",
+                "They can be difficult sometimes, honestly.",
+                "I've noticed that about them too, actually."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Be a supportive listener without becoming a messenger or taking sides.",
-            "explanation": "Listening and validating feelings without sharing information is the diplomatically safe and emotionally intelligent response.",
+            "correctAnswerIndex": 0,
+            "hint": "Listening and encouraging direct communication keeps you neutral.",
+            "explanation": "Listening supportively while encouraging direct communication is the most appropriate way to stay neutral.",
             "id": "sr_l70_q2"
         },
         {
             "instruction": "Choose the most appropriate response.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "An interviewer asks: Where do you see yourself in five years?",
+            "scene": "An interviewer asks: 'Where do you see yourself in five years?'",
             "options": [
-                "In your job if all goes well.",
-                "Honestly I haven't really thought about it very much.",
-                "I'm looking to grow into a leadership role in this field and I believe this company is the right environment to build that path.",
-                "Retired hopefully!"
+                "Hopefully still employed, honestly, somewhere.",
+                "That's honestly quite hard to predict.",
+                "I try not to plan that far ahead.",
+                "Growing into a leadership role in this field."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Show genuine ambition and connect it to this specific company.",
-            "explanation": "Expressing a desire for leadership growth and connecting it to the company shows both genuine ambition and specific interest.",
+            "correctAnswerIndex": 3,
+            "hint": "A concrete, ambitious answer shows direction and commitment.",
+            "explanation": "A concrete, ambitious answer shows direction, which is the most effective response to this classic question.",
             "id": "sr_l70_q3"
         }
     ]

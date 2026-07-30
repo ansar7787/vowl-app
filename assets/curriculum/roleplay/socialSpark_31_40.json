@@ -1,600 +1,555 @@
 {
-    "gameType": "socialSpark",
-    "batchIndex": 4,
-    "levels": "31-40",
-    "quests": [
-        {
-            "instruction": "Arrange the words to ask a waiter for a suggestion.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "recommend",
-                "you",
-                "menu",
-                "on",
-                "?",
-                "What",
-                "the",
-                "would"
-            ],
-            "correctAnswer": "What would you recommend on the menu ?",
-            "hint": "Start with 'What would you'.",
-            "explanation": "Asking for recommendations ensures you order the best dish.",
-            "id": "ss_l31_q1"
-        },
-        {
-            "instruction": "Order the words to state a food allergy.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "to",
-                "allergic",
-                "and",
-                ".",
-                "am",
-                "shellfish",
-                "I",
-                "nuts"
-            ],
-            "correctAnswer": "I am allergic to nuts and shellfish .",
-            "hint": "Start with 'I am allergic to'.",
-            "explanation": "'Allergic to' describes a medical reaction to certain foods.",
-            "id": "ss_l31_q2"
-        },
-        {
-            "instruction": "Put the words in order to request a preferred table.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "Could",
-                "the",
-                "?",
-                "a",
-                "table",
-                "we",
-                "window",
-                "near",
-                "have"
-            ],
-            "correctAnswer": "Could we have a table near the window ?",
-            "hint": "Start with 'Could we have a table'.",
-            "explanation": "'Near the window' is a common seating preference in restaurants.",
-            "id": "ss_l31_q3"
-        },
-        {
-            "instruction": "Arrange the words to ask about internet access.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "Wi-Fi",
-                "available",
-                "you",
-                "cafe",
-                "this",
-                "Do",
-                "in",
-                "have",
-                "?"
-            ],
-            "correctAnswer": "Do you have Wi-Fi available in this cafe ?",
-            "hint": "Start with 'Do you have'.",
-            "explanation": "'Do you have Wi-Fi?' is common when settling into a cafe to work.",
-            "id": "ss_l32_q1"
-        },
-        {
-            "instruction": "Order the words to ask for the Wi-Fi password.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "me",
-                "the",
-                "?",
-                "please",
-                "give",
-                "Can",
-                "password",
-                "you"
-            ],
-            "correctAnswer": "Can you give me the password please ?",
-            "hint": "Start with 'Can you give me'.",
-            "explanation": "After confirming Wi-Fi is available, always ask for the password.",
-            "id": "ss_l32_q2"
-        },
-        {
-            "instruction": "Put the words in order to recommend something.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "really",
-                "worth",
-                "trying",
-                "coffee",
-                "here",
-                ".",
-                "is",
-                "The"
-            ],
-            "correctAnswer": "The coffee here is really worth trying .",
-            "hint": "Start with 'The coffee here is'.",
-            "explanation": "'Worth + trying' means it is good enough to make the effort.",
-            "id": "ss_l32_q3"
-        },
-        {
-            "instruction": "Arrange the words to find a pharmacy.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "this",
-                "pharmacy",
-                "?",
-                "hotel",
-                "near",
-                "Is",
-                "a",
-                "there"
-            ],
-            "correctAnswer": "Is there a pharmacy near this hotel ?",
-            "hint": "Start with 'Is there a pharmacy'.",
-            "explanation": "'Is there a + place + near...?' asks about nearby services.",
-            "id": "ss_l33_q1"
-        },
-        {
-            "instruction": "Order the words to ask about currency exchange.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "can",
-                "I",
-                "currency",
-                "?",
-                "here",
-                "foreign",
-                "exchange",
-                "Where"
-            ],
-            "correctAnswer": "Where can I exchange foreign currency here ?",
-            "hint": "Start with 'Where can I exchange'.",
-            "explanation": "Currency exchange is available at airports, banks, and many hotels.",
-            "id": "ss_l33_q2"
-        },
-        {
-            "instruction": "Put the words in order to direct someone to a cash machine.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "the",
-                "The",
-                ".",
-                "on",
-                "nearest",
-                "street",
-                "high",
-                "machine",
-                "cash",
-                "is"
-            ],
-            "correctAnswer": "The nearest cash machine is on the high street .",
-            "hint": "Start with 'The nearest'.",
-            "explanation": "'High street' means the main shopping street in a town.",
-            "id": "ss_l33_q3"
-        },
-        {
-            "instruction": "Arrange the words to ask about opening times.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "weekends",
-                "?",
-                "What",
-                "the",
-                "opening",
-                "hours",
-                "are",
-                "on"
-            ],
-            "correctAnswer": "What are the opening hours on weekends ?",
-            "hint": "Start with 'What are the opening hours'.",
-            "explanation": "Always check opening hours before visiting a shop or museum.",
-            "id": "ss_l34_q1"
-        },
-        {
-            "instruction": "Order the words to ask about admission costs.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "to",
-                "an",
-                "get",
-                "Is",
-                "there",
-                "fee",
-                "entrance",
-                "in",
-                "?"
-            ],
-            "correctAnswer": "Is there an entrance fee to get in ?",
-            "hint": "Start with 'Is there an entrance fee'.",
-            "explanation": "An 'entrance fee' is money paid to enter a venue.",
-            "id": "ss_l34_q2"
-        },
-        {
-            "instruction": "Put the words in order to ask about tours.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "in",
-                "tours",
-                "here",
-                "available",
-                "Are",
-                "guided",
-                "?",
-                "English"
-            ],
-            "correctAnswer": "Are guided tours available in English here ?",
-            "hint": "Start with 'Are guided tours'.",
-            "explanation": "Guided tours in your own language make sightseeing much more enjoyable.",
-            "id": "ss_l34_q3"
-        },
-        {
-            "instruction": "Arrange the words to report a lost item.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "like",
-                "to",
-                "a",
-                "lost",
-                "would",
-                ".",
-                "wallet",
-                "report",
-                "I"
-            ],
-            "correctAnswer": "I would like to report a lost wallet .",
-            "hint": "Start with 'I would like to report'.",
-            "explanation": "'Report a lost item' means to officially inform someone it is missing.",
-            "id": "ss_l35_q1"
-        },
-        {
-            "instruction": "Order the words to ask about a lost item.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "?",
-                "if",
-                "handed",
-                "check",
-                "has",
-                "Could",
-                "in",
-                "anyone",
-                "you",
-                "it"
-            ],
-            "correctAnswer": "Could you check if anyone has handed it in ?",
-            "hint": "Start with 'Could you check'.",
-            "explanation": "Items that are found are 'handed in' to a lost-and-found office.",
-            "id": "ss_l35_q2"
-        },
-        {
-            "instruction": "Put the words in order to describe what was lost.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "My",
-                "it",
-                "were",
-                "in",
-                "pass",
-                ".",
-                "boarding",
-                "passport",
-                "and"
-            ],
-            "correctAnswer": "My passport and boarding pass were in it .",
-            "hint": "Start with 'My passport'.",
-            "explanation": "A boarding pass is the document that allows you to board a flight.",
-            "id": "ss_l35_q3"
-        },
-        {
-            "instruction": "Arrange the words to cancel a booking.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "reservation",
-                "would",
-                "please",
-                "I",
-                "to",
-                "cancel",
-                ".",
-                "like",
-                "my"
-            ],
-            "correctAnswer": "I would like to cancel my reservation please .",
-            "hint": "Start with 'I would like to cancel'.",
-            "explanation": "Always confirm a cancellation in writing to avoid being charged.",
-            "id": "ss_l36_q1"
-        },
-        {
-            "instruction": "Order the words to ask about a cancellation charge.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "there",
-                "a",
-                "fee",
-                "Is",
-                "booking",
-                "cancellation",
-                "this",
-                "?",
-                "for"
-            ],
-            "correctAnswer": "Is there a cancellation fee for this booking ?",
-            "hint": "Start with 'Is there a cancellation fee'.",
-            "explanation": "Always ask about fees before cancelling to avoid surprises.",
-            "id": "ss_l36_q2"
-        },
-        {
-            "instruction": "Put the words in order to ask for a new booking.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "you",
-                "on",
-                "available",
-                "Could",
-                "the",
-                "next",
-                "?",
-                "flight",
-                "me",
-                "rebook"
-            ],
-            "correctAnswer": "Could you rebook me on the next available flight ?",
-            "hint": "Start with 'Could you rebook me'.",
-            "explanation": "'Rebook' means to arrange a new reservation after a cancellation.",
-            "id": "ss_l36_q3"
-        },
-        {
-            "instruction": "Arrange the words to ask about baggage claim.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "to",
-                "Where",
-                "I",
-                "go",
-                "collect",
-                "my",
-                "do",
-                "luggage",
-                "?"
-            ],
-            "correctAnswer": "Where do I go to collect my luggage ?",
-            "hint": "Start with 'Where do I go to'.",
-            "explanation": "Luggage is collected from the baggage carousel at an airport.",
-            "id": "ss_l37_q1"
-        },
-        {
-            "instruction": "Order the words to report missing luggage.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "flight",
-                "on",
-                "did",
-                ".",
-                "bag",
-                "not",
-                "this",
-                "arrive",
-                "My"
-            ],
-            "correctAnswer": "My bag did not arrive on this flight .",
-            "hint": "Start with 'My bag did not arrive'.",
-            "explanation": "If your bag is missing, report it immediately at the baggage desk.",
-            "id": "ss_l37_q2"
-        },
-        {
-            "instruction": "Put the words in order to ask for help with lost baggage.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "you",
-                "Can",
-                "a",
-                "me",
-                "?",
-                "file",
-                "report",
-                "lost",
-                "luggage",
-                "for"
-            ],
-            "correctAnswer": "Can you file a lost luggage report for me ?",
-            "hint": "Start with 'Can you file'.",
-            "explanation": "Filing a report is the first step in recovering lost luggage.",
-            "id": "ss_l37_q3"
-        },
-        {
-            "instruction": "Arrange the words to ask for a manager.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                ".",
-                "to",
-                "the",
-                "speak",
-                "I",
-                "need",
-                "to",
-                "please",
-                "manager"
-            ],
-            "correctAnswer": "I need to speak to the manager please .",
-            "hint": "Start with 'I need to speak to'.",
-            "explanation": "Request a manager when a problem cannot be resolved by other staff.",
-            "id": "ss_l38_q1"
-        },
-        {
-            "instruction": "Order the words to make a complaint.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "was",
-                ".",
-                "received",
-                "service",
-                "The",
-                "quite",
-                "I",
-                "disappointing"
-            ],
-            "correctAnswer": "The service I received was quite disappointing .",
-            "hint": "Start with 'The service I received'.",
-            "explanation": "Be specific but polite when making a formal complaint.",
-            "id": "ss_l38_q2"
-        },
-        {
-            "instruction": "Put the words in order to ask for a replacement.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "replacement",
-                "me",
-                "Could",
-                "a",
-                "?",
-                "arrange",
-                "please",
-                "you",
-                "for"
-            ],
-            "correctAnswer": "Could you please arrange a replacement for me ?",
-            "hint": "Start with 'Could you please arrange'.",
-            "explanation": "Asking for a replacement is reasonable when a product or service fails.",
-            "id": "ss_l38_q3"
-        },
-        {
-            "instruction": "Arrange the words to describe work history.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                ".",
-                "three",
-                "been",
-                "for",
-                "here",
-                "years",
-                "I",
-                "have",
-                "working"
-            ],
-            "correctAnswer": "I have been working here for three years .",
-            "hint": "Start with 'I have been working'.",
-            "explanation": "Present perfect continuous with 'for' describes an ongoing situation.",
-            "id": "ss_l39_q1"
-        },
-        {
-            "instruction": "Order the words to describe a professional strength.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "strength",
-                "biggest",
-                "under",
-                "working",
-                "well",
-                ".",
-                "My",
-                "pressure",
-                "is"
-            ],
-            "correctAnswer": "My biggest strength is working well under pressure .",
-            "hint": "Start with 'My biggest strength is'.",
-            "explanation": "This is a common and effective answer to an interview question.",
-            "id": "ss_l39_q2"
-        },
-        {
-            "instruction": "Put the words in order to express career goals.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "for",
-                "to",
-                ".",
-                "looking",
-                "grow",
-                "am",
-                "I",
-                "opportunities",
-                "professionally"
-            ],
-            "correctAnswer": "I am looking for opportunities to grow professionally .",
-            "hint": "Start with 'I am looking for'.",
-            "explanation": "Expressing a desire for professional growth impresses interviewers.",
-            "id": "ss_l39_q3"
-        },
-        {
-            "instruction": "Arrange the words to ask about work experience.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "previous",
-                "was",
-                "?",
-                "at",
-                "role",
-                "your",
-                "company",
-                "the",
-                "What"
-            ],
-            "correctAnswer": "What was your previous role at the company ?",
-            "hint": "Start with 'What was your previous role'.",
-            "explanation": "This interview question asks about a candidate's previous job title.",
-            "id": "ss_l40_q1"
-        },
-        {
-            "instruction": "Order the words to describe management experience.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "I",
-                "people",
-                "ten",
-                "of",
-                "managed",
-                "a",
-                "team",
-                "."
-            ],
-            "correctAnswer": "I managed a team of ten people .",
-            "hint": "Start with 'I managed a team of'.",
-            "explanation": "Quantifying experience makes answers more convincing in interviews.",
-            "id": "ss_l40_q2"
-        },
-        {
-            "instruction": "Put the words in order to describe teamwork.",
-            "subtype": "socialSpark",
-            "interactionType": "reorder",
-            "shuffledWords": [
-                "tight",
-                "We",
-                ".",
-                "deadlines",
-                "to",
-                "worked",
-                "meet",
-                "together"
-            ],
-            "correctAnswer": "We worked together to meet tight deadlines .",
-            "hint": "Start with 'We worked together'.",
-            "explanation": "Mentioning teamwork shows collaboration skills valued by all employers.",
-            "id": "ss_l40_q3"
-        }
-    ]
+  "gameType": "socialSpark",
+  "batchIndex": 4,
+  "levels": "31-40",
+  "quests": [
+    {
+      "instruction": "Arrange the words to ask if someone is free later.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "?",
+        "Are",
+        "free",
+        "afternoon",
+        "later",
+        "this",
+        "you"
+      ],
+      "correctAnswer": "Are you free later this afternoon ?",
+      "hint": "Work backward: 'afternoon' is the last word before the question mark.",
+      "explanation": "'Are you free' is the go-to casual phrase for checking someone's availability.",
+      "id": "ss_l31_q1"
+    },
+    {
+      "instruction": "Order the words to ask if someone has plans with family.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "your",
+        "?",
+        "weekend",
+        "this",
+        "Are",
+        "family",
+        "seeing",
+        "you"
+      ],
+      "correctAnswer": "Are you seeing your family this weekend ?",
+      "hint": "Start with 'Are'.",
+      "explanation": "'Seeing' here means 'meeting', a common casual use of the verb.",
+      "id": "ss_l31_q2"
+    },
+    {
+      "instruction": "Put the words in order to say you're going shopping later.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        ".",
+        "later",
+        "going",
+        "afternoon",
+        "shopping",
+        "this",
+        "I'm"
+      ],
+      "correctAnswer": "I'm going shopping later this afternoon .",
+      "hint": "The second word is 'going', right after 'I'm'.",
+      "explanation": "'Going shopping' uses 'go' plus an '-ing' activity, a common casual pattern.",
+      "id": "ss_l31_q3"
+    },
+    {
+      "instruction": "Arrange the words to suggest trying a new restaurant.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "Let's",
+        "restaurant",
+        "try",
+        "that",
+        ".",
+        "downtown",
+        "new"
+      ],
+      "correctAnswer": "Let's try that new restaurant downtown .",
+      "hint": "This is a 7-word statement ending in 'downtown' -- find the subject first, then the verb.",
+      "explanation": "'Let's' (let us) is the standard way to suggest doing something together.",
+      "id": "ss_l32_q1"
+    },
+    {
+      "instruction": "Order the words to say you're meeting a classmate later.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "classmate",
+        "meeting",
+        "I'm",
+        "later",
+        "a",
+        "today",
+        "."
+      ],
+      "correctAnswer": "I'm meeting a classmate later today .",
+      "hint": "The sentence ends with 'today', right before the period.",
+      "explanation": "The present continuous again shows a planned, arranged meeting.",
+      "id": "ss_l32_q2"
+    },
+    {
+      "instruction": "Put the words in order to say you're working from home today.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "today",
+        "I'm",
+        "working",
+        ".",
+        "from",
+        "home"
+      ],
+      "correctAnswer": "I'm working from home today .",
+      "hint": "There are 6 words in total -- start by placing 'I'm' first.",
+      "explanation": "'Working from home' is now a very common everyday phrase.",
+      "id": "ss_l32_q3"
+    },
+    {
+      "instruction": "Arrange the words to ask what someone packed.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "?",
+        "What",
+        "you",
+        "did",
+        "the",
+        "pack",
+        "trip",
+        "for"
+      ],
+      "correctAnswer": "What did you pack for the trip ?",
+      "hint": "Look at how it starts -- 'What' comes first.",
+      "explanation": "'Pack' refers to preparing a suitcase or bag before traveling.",
+      "id": "ss_l33_q1"
+    },
+    {
+      "instruction": "Order the words to say you posted a new photo.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "posted",
+        ".",
+        "I",
+        "new",
+        "just",
+        "a",
+        "photo"
+      ],
+      "correctAnswer": "I just posted a new photo .",
+      "hint": "This 7-word sentence begins with 'I'.",
+      "explanation": "'Just' shows the post happened only moments ago.",
+      "id": "ss_l33_q2"
+    },
+    {
+      "instruction": "Put the words in order to ask if a cold is improving.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "getting",
+        "?",
+        "your",
+        "cold",
+        "better",
+        "any",
+        "Is"
+      ],
+      "correctAnswer": "Is your cold getting any better ?",
+      "hint": "The first word is 'Is', out of 7 words total.",
+      "explanation": "'Getting better' is the natural phrase for describing gradual recovery.",
+      "id": "ss_l33_q3"
+    },
+    {
+      "instruction": "Arrange the words to suggest watching a movie tonight.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        ".",
+        "movie",
+        "watch",
+        "a",
+        "Let's",
+        "tonight"
+      ],
+      "correctAnswer": "Let's watch a movie tonight .",
+      "hint": "Work backward: 'tonight' is the last word before the period.",
+      "explanation": "'Let's' is used to propose an activity that includes both speakers.",
+      "id": "ss_l34_q1"
+    },
+    {
+      "instruction": "Order the words to say you had a busy day.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "busy",
+        "had",
+        "day",
+        "I",
+        "today",
+        "really",
+        "a",
+        "."
+      ],
+      "correctAnswer": "I had a really busy day today .",
+      "hint": "Once you place 'I' first, the other 7 words should start falling into place.",
+      "explanation": "'Had' is the simple past of 'have', used for describing how your day went.",
+      "id": "ss_l34_q2"
+    },
+    {
+      "instruction": "Put the words in order to say you talked to your cousin.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "my",
+        ".",
+        "yesterday",
+        "talked",
+        "cousin",
+        "to",
+        "I"
+      ],
+      "correctAnswer": "I talked to my cousin yesterday .",
+      "hint": "The second word is 'talked', right after 'I'.",
+      "explanation": "'Yesterday' confirms this conversation is a completed past event.",
+      "id": "ss_l34_q3"
+    },
+    {
+      "instruction": "Arrange the words to ask if a store has something in a color.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "in",
+        "?",
+        "blue",
+        "this",
+        "Do",
+        "have",
+        "you"
+      ],
+      "correctAnswer": "Do you have this in blue ?",
+      "hint": "This one's 7 words long, ending in 'blue' -- read the meaning first, then decide what comes first.",
+      "explanation": "'In blue' is the natural way to ask about a color option while shopping.",
+      "id": "ss_l35_q1"
+    },
+    {
+      "instruction": "Order the words to say you already ate breakfast.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "breakfast",
+        "ate",
+        "already",
+        "morning",
+        "this",
+        "I",
+        "."
+      ],
+      "correctAnswer": "I already ate breakfast this morning .",
+      "hint": "The sentence ends with 'morning', right before the period.",
+      "explanation": "'Already' shows the action was completed before now.",
+      "id": "ss_l35_q2"
+    },
+    {
+      "instruction": "Put the words in order to ask about someone's favorite subject.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "year",
+        "your",
+        "?",
+        "subject",
+        "this",
+        "What's",
+        "favorite"
+      ],
+      "correctAnswer": "What's your favorite subject this year ?",
+      "hint": "This sentence has 7 words -- spot 'What's' and 'year' first, then fill in the middle.",
+      "explanation": "'This year' narrows the question to a specific, current period.",
+      "id": "ss_l35_q3"
+    },
+    {
+      "instruction": "Arrange the words to ask about a colleague's weekend.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "?",
+        "your",
+        "by",
+        "way",
+        "How",
+        "the",
+        "weekend",
+        "was"
+      ],
+      "correctAnswer": "How was your weekend by the way ?",
+      "hint": "Start with 'How'.",
+      "explanation": "'By the way' casually introduces a new, unrelated topic into conversation.",
+      "id": "ss_l36_q1"
+    },
+    {
+      "instruction": "Order the words to say a hotel was really nice.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "nice",
+        "hotel",
+        "was",
+        "actually",
+        ".",
+        "really",
+        "That"
+      ],
+      "correctAnswer": "That hotel was really nice actually .",
+      "hint": "There are 7 words in total -- start by placing 'That' first.",
+      "explanation": "'Actually' adds a note of mild surprise or correction to the comment.",
+      "id": "ss_l36_q2"
+    },
+    {
+      "instruction": "Put the words in order to ask if someone saw a video.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "?",
+        "that",
+        "video",
+        "see",
+        "you",
+        "yet",
+        "Did"
+      ],
+      "correctAnswer": "Did you see that video yet ?",
+      "hint": "This is a question -- it starts with 'Did'.",
+      "explanation": "'Yet' at the end asks whether something has happened up to this point.",
+      "id": "ss_l36_q3"
+    },
+    {
+      "instruction": "Arrange the words to say you're feeling a bit sick.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "I'm",
+        "feeling",
+        ".",
+        "sick",
+        "a",
+        "today",
+        "bit"
+      ],
+      "correctAnswer": "I'm feeling a bit sick today .",
+      "hint": "The first word is 'I'm', out of 7 words total.",
+      "explanation": "'A bit' softens 'sick', making the statement sound casual, not alarming.",
+      "id": "ss_l37_q1"
+    },
+    {
+      "instruction": "Order the words to ask if someone went to a concert.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "concert",
+        "?",
+        "you",
+        "Did",
+        "the",
+        "go",
+        "to"
+      ],
+      "correctAnswer": "Did you go to the concert ?",
+      "hint": "This 7-word sentence begins with 'Did'.",
+      "explanation": "'Go to' is the standard phrase for attending an event.",
+      "id": "ss_l37_q2"
+    },
+    {
+      "instruction": "Put the words in order to ask about someone's morning routine.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "up",
+        "do",
+        "?",
+        "usually",
+        "time",
+        "wake",
+        "What",
+        "you"
+      ],
+      "correctAnswer": "What time do you usually wake up ?",
+      "hint": "Once you place 'What' first, the other 7 words should start falling into place.",
+      "explanation": "'Usually' signals we're asking about a habit, not a one-time event.",
+      "id": "ss_l37_q3"
+    },
+    {
+      "instruction": "Arrange the words to say you're visiting a relative.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "visiting",
+        "Saturday",
+        "aunt",
+        "I'm",
+        "my",
+        "on",
+        "."
+      ],
+      "correctAnswer": "I'm visiting my aunt on Saturday .",
+      "hint": "The second word is 'visiting', right after 'I'm'.",
+      "explanation": "The present continuous with a day ('on Saturday') describes a fixed future plan.",
+      "id": "ss_l38_q1"
+    },
+    {
+      "instruction": "Order the words to say you need to return something.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "to",
+        "later",
+        "I",
+        "this",
+        "need",
+        "return",
+        ".",
+        "today"
+      ],
+      "correctAnswer": "I need to return this later today .",
+      "hint": "Work backward: 'today' is the last word before the period.",
+      "explanation": "'Need to' expresses a personal obligation or plan.",
+      "id": "ss_l38_q2"
+    },
+    {
+      "instruction": "Put the words in order to ask if someone wants to grab lunch.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "Do",
+        "grab",
+        "want",
+        "?",
+        "to",
+        "lunch",
+        "you"
+      ],
+      "correctAnswer": "Do you want to grab lunch ?",
+      "hint": "This sentence has 7 words -- spot 'Do' and 'lunch' first, then fill in the middle.",
+      "explanation": "'Grab lunch' is a casual way of saying 'get something quick to eat'.",
+      "id": "ss_l38_q3"
+    },
+    {
+      "instruction": "Arrange the words to say a lecture ran long.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "lecture",
+        "today",
+        "long",
+        ".",
+        "really",
+        "ran",
+        "That"
+      ],
+      "correctAnswer": "That lecture ran really long today .",
+      "hint": "The sentence ends with 'today', right before the period.",
+      "explanation": "'Ran long' is a common casual way to say something took more time than expected.",
+      "id": "ss_l39_q1"
+    },
+    {
+      "instruction": "Order the words to say your boss is out this week.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "boss",
+        "this",
+        "out",
+        "town",
+        "of",
+        "week",
+        "My",
+        ".",
+        "is"
+      ],
+      "correctAnswer": "My boss is out of town this week .",
+      "hint": "This one's 9 words long, ending in 'week' -- read the meaning first, then decide what comes first.",
+      "explanation": "'Out of town' means someone has traveled away temporarily.",
+      "id": "ss_l39_q2"
+    },
+    {
+      "instruction": "Put the words in order to ask if someone is traveling alone.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "yourself",
+        "traveling",
+        "this",
+        "you",
+        "time",
+        "by",
+        "?",
+        "Are"
+      ],
+      "correctAnswer": "Are you traveling by yourself this time ?",
+      "hint": "Start with 'Are'.",
+      "explanation": "'By yourself' is the everyday way to say 'alone'.",
+      "id": "ss_l39_q3"
+    },
+    {
+      "instruction": "Arrange the words to say you downloaded a new app.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "a",
+        "new",
+        "app",
+        "I",
+        ".",
+        "yesterday",
+        "downloaded"
+      ],
+      "correctAnswer": "I downloaded a new app yesterday .",
+      "hint": "There are 7 words in total -- start by placing 'I' first.",
+      "explanation": "'Downloaded' is the regular past tense, formed by adding '-ed'.",
+      "id": "ss_l40_q1"
+    },
+    {
+      "instruction": "Order the words to ask if someone slept enough.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "Did",
+        "?",
+        "sleep",
+        "last",
+        "night",
+        "enough",
+        "you",
+        "get"
+      ],
+      "correctAnswer": "Did you get enough sleep last night ?",
+      "hint": "This is a question -- it starts with 'Did'.",
+      "explanation": "'Enough' comes before the noun 'sleep' that it describes.",
+      "id": "ss_l40_q2"
+    },
+    {
+      "instruction": "Put the words in order to say you started a new hobby.",
+      "subtype": "socialSpark",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "I",
+        "started",
+        ".",
+        "a",
+        "hobby",
+        "new",
+        "recently"
+      ],
+      "correctAnswer": "I started a new hobby recently .",
+      "hint": "Look at how it starts -- 'I' comes first.",
+      "explanation": "'Recently' shows the hobby began not long ago.",
+      "id": "ss_l40_q3"
+    }
+  ]
 }

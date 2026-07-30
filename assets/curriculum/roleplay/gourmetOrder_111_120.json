@@ -4,483 +4,483 @@
     "levels": "111-120",
     "quests": [
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll take the potato and black truffle gnocchi, the whole roasted Dover sole with caper butter, and the Valrhona 70% chocolate soufflé.",
+            "prompt": "The burrata, which I understand is the chef's signature dish, sounds wonderful. I'll also have the lamb rack and the panna cotta.",
             "options": [
-                "Potato and Black Truffle Gnocchi",
-                "Whole Roasted Dover Sole with Caper Butter",
-                "Valrhona 70% Chocolate Soufflé",
-                "Chocolate Fondant"
+                "Burrata",
+                "Lamb Rack",
+                "Panna Cotta",
+                "Tiramisu"
             ],
-            "correctAnswer": "Potato and Black Truffle Gnocchi, Whole Roasted Dover Sole with Caper Butter, Valrhona 70% Chocolate Soufflé",
-            "hint": "Dover sole is considered the finest of all flatfish - mild, sweet, and delicate.",
-            "explanation": "Dover sole is the most prized flatfish - meunière or roasted whole are the classic preparations. Caper butter sauce provides acidity to balance the richness. The 70% indicates the cocoa content of the chocolate - higher percentage means more intense, less sweet.",
+            "correctAnswer": "Burrata, Lamb Rack, Panna Cotta",
+            "hint": "A comment about the dish's reputation as a ‘signature’ doesn't add a new item — it's still just the starter.",
+            "explanation": "A ‘signature dish’ is a restaurant's most famous or defining item, often recommended by staff. This detail explains the choice without changing the order.",
             "id": "go_l111_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the hand-rolled pasta with white truffle, the pan-fried veal liver alla veneziana, and the tiramisù della casa.",
+            "prompt": "Between the two soups, I'll take the lighter one, the consommé. Then the branzino, and the lemon tart.",
             "options": [
-                "Hand-Rolled Pasta with White Truffle",
-                "Pan-Fried Veal Liver alla Veneziana",
-                "Tiramisù della Casa",
-                "Sbrisolona"
+                "Consommé",
+                "Branzino",
+                "Lemon Tart",
+                "Bisque"
             ],
-            "correctAnswer": "Hand-Rolled Pasta with White Truffle, Pan-Fried Veal Liver alla Veneziana, Tiramisù della Casa",
-            "hint": "White truffles from Alba are the most expensive food in the world by weight.",
-            "explanation": "White truffles (tartufo bianco) from Alba, Piedmont are shaved raw over pasta - their scent is incomparable. Veal liver alla veneziana is Venetian-style calf's liver with onions. 'Della casa' means 'of the house' - the restaurant's own signature version.",
+            "correctAnswer": "Consommé, Branzino, Lemon Tart",
+            "hint": "The customer compares two soups by weight, then names their final choice directly.",
+            "explanation": "A ‘consommé’ is a clear, light broth, much thinner than a rich, creamy bisque — a useful comparison when two soups are offered.",
             "id": "go_l111_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the raw Orkney scallop with sea herbs, the slow-cooked ox cheek with bone marrow mash, and the Champagne granita?",
+            "prompt": "I'll let you surprise me with the wine pairing. For my main, the venison, and the dark chocolate tart to close.",
             "options": [
-                "Raw Orkney Scallop with Sea Herbs",
-                "Slow-Cooked Ox Cheek with Bone Marrow Mash",
-                "Champagne Granita",
-                "Lemon Sorbet"
+                "Wine Pairing",
+                "Venison",
+                "Dark Chocolate Tart",
+                "Chocolate Torte"
             ],
-            "correctAnswer": "Raw Orkney Scallop with Sea Herbs, Slow-Cooked Ox Cheek with Bone Marrow Mash, Champagne Granita",
-            "hint": "Ox cheek is an inexpensive cut that becomes remarkably tender with long, slow cooking.",
-            "explanation": "Orkney (Scottish islands) produces some of the world's finest scallops - served raw with sea herbs they showcase pure ocean flavour. Ox cheek is a working muscle - slow-cooked for 24+ hours until silky. Champagne granita is a sophisticated palate-cleanser.",
+            "correctAnswer": "Wine Pairing, Venison, Dark Chocolate Tart",
+            "hint": "The customer hands over the wine decision entirely, but still names the food themselves.",
+            "explanation": "‘I’ll let you surprise me’ means trusting the sommelier or server completely with a choice, often used specifically for wine pairings.",
             "id": "go_l111_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "For the table, we'll have the sommelier's selection of seasonal amuse-bouches, the chef's surprise eight-course menu, and the premium Cognac digestif pairing.",
+            "prompt": "Provided it's not overly rich, I'll have the foie gras. Then the halibut, and the sorbet to finish.",
             "options": [
-                "Seasonal Amuse-Bouches",
-                "Eight-Course Chef's Menu",
-                "Premium Cognac Digestif Pairing",
-                "Wine Flight"
+                "Foie Gras",
+                "Halibut",
+                "Sorbet",
+                "Panna Cotta"
             ],
-            "correctAnswer": "Seasonal Amuse-Bouches, Eight-Course Chef's Menu, Premium Cognac Digestif Pairing",
-            "hint": "Ordering an eight-course chef's surprise menu means the customer trusts the chef completely.",
-            "explanation": "A chef's surprise menu (menu surprise) gives the kitchen complete creative freedom - no specific dishes are chosen. A digestif is an after-dinner drink to aid digestion - Cognac is a classic choice. The wine flight is not ordered - Cognac pairing is chosen instead.",
+            "correctAnswer": "Foie Gras, Halibut, Sorbet",
+            "hint": "‘Provided’ introduces a condition, but the customer still confirms their order.",
+            "explanation": "‘Provided that…’ means ‘as long as…’ — it introduces a condition, similar to ‘if,’ but sounds more formal.",
             "id": "go_l112_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "We'd like the full à la carte menu with the Krug Grande Cuvée by the glass, and could we also arrange for the cheese trolley service?",
+            "prompt": "I'll have whatever's freshest today — so if that's the sea bream, I'll take it, along with the wild rice and the crème caramel.",
             "options": [
-                "À La Carte Menu",
-                "Krug Grande Cuvée",
-                "Cheese Trolley Service",
-                "Wine Flight"
+                "Sea Bream",
+                "Wild Rice",
+                "Crème Caramel",
+                "Panna Cotta"
             ],
-            "correctAnswer": "À La Carte Menu, Krug Grande Cuvée, Cheese Trolley Service",
-            "hint": "À la carte means ordering individual dishes from the menu - not a fixed set menu.",
-            "explanation": "À la carte (French for 'from the menu') means each dish is ordered and priced individually - different from a set or tasting menu. Krug Grande Cuvée is a prestigious non-vintage Champagne. Cheese trolley service brings a cart of cheeses to the table for selection.",
+            "correctAnswer": "Sea Bream, Wild Rice, Crème Caramel",
+            "hint": "The customer defers to freshness rather than naming a specific fish outright.",
+            "explanation": "‘Whatever’s freshest’ is a flexible way to order fish, trusting the kitchen to suggest the best catch of the day.",
             "id": "go_l112_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the pressed duck liver with brioche toast, the côte de veau Rossini, and the cherry clafoutis.",
+            "prompt": "The burrata, if it's still available, would be lovely. Then the duck breast, and the olive oil cake to conclude.",
             "options": [
-                "Pressed Duck Liver with Brioche Toast",
-                "Côte de Veau Rossini",
-                "Cherry Clafoutis",
-                "Tarte Tatin"
+                "Burrata",
+                "Duck Breast",
+                "Olive Oil Cake",
+                "Almond Cake"
             ],
-            "correctAnswer": "Pressed Duck Liver with Brioche Toast, Côte de Veau Rossini, Cherry Clafoutis",
-            "hint": "'Rossini' garnish means topped with foie gras and truffle - named after the opera composer.",
-            "explanation": "The Rossini garnish (foie gras and truffle on top of meat) was supposedly created for the Italian opera composer Gioachino Rossini who was a famous food lover. Cherry clafoutis is a French baked custard pudding with whole cherries - different from a tarte tatin.",
+            "correctAnswer": "Burrata, Duck Breast, Olive Oil Cake",
+            "hint": "The customer checks availability first, using conditional, polite language.",
+            "explanation": "‘If it's still available’ shows awareness that a popular dish might have sold out — a thoughtful, realistic detail in a busy restaurant.",
             "id": "go_l112_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll take the coquilles Saint-Jacques with cauliflower velouté, the rack of lamb persillé with dauphinoise, and the Paris-Brest au praliné.",
+            "prompt": "Rather than the usual starter, I'll try the octopus carpaccio. For my main, the lamb shank, and the sticky toffee pudding for dessert.",
             "options": [
-                "Coquilles Saint-Jacques with Cauliflower Velouté",
-                "Rack of Lamb Persillé with Dauphinoise",
-                "Paris-Brest au Praliné",
-                "Mille-Feuille"
+                "Octopus Carpaccio",
+                "Lamb Shank",
+                "Sticky Toffee Pudding",
+                "Sticky Date Pudding"
             ],
-            "correctAnswer": "Coquilles Saint-Jacques with Cauliflower Velouté, Rack of Lamb Persillé with Dauphinoise, Paris-Brest au Praliné",
-            "hint": "Persillé means coated with a herb and breadcrumb crust - parsley is the main herb.",
-            "explanation": "Coquilles Saint-Jacques is the French name for scallops - often presented in the shell. Persillé refers to a green herb crust (persillade) pressed onto the lamb rack. Paris-Brest au praliné fills the choux ring with praline (caramelised hazelnut) cream - the classic filling.",
+            "correctAnswer": "Octopus Carpaccio, Lamb Shank, Sticky Toffee Pudding",
+            "hint": "‘Rather than the usual’ shows the customer choosing something less typical for them.",
+            "explanation": "‘Rather than…’ introduces an alternative choice, showing the customer is stepping outside their normal order.",
             "id": "go_l113_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the soufflé de fromage en entrée, the lièvre à la royale, and the bombe glacée au café.",
+            "prompt": "I understand the tableside guacamole is prepared right at the table — I'd like that, then the ribeye, and the churros.",
             "options": [
-                "Soufflé de Fromage",
-                "Lièvre à la Royale",
-                "Bombe Glacée au Café",
-                "Crème Caramel"
+                "Tableside Guacamole",
+                "Ribeye",
+                "Churros",
+                "Flan"
             ],
-            "correctAnswer": "Soufflé de Fromage, Lièvre à la Royale, Bombe Glacée au Café",
-            "hint": "Lièvre à la royale is hare prepared in a complex, ancient French recipe - extremely labour-intensive.",
-            "explanation": "Lièvre à la royale is one of the most demanding recipes in classical French cuisine - whole hare stuffed and braised for hours in a rich blood sauce. A bombe glacée is a dome-shaped ice cream dessert. 'Soufflé de fromage en entrée' means cheese soufflé as a starter.",
+            "correctAnswer": "Tableside Guacamole, Ribeye, Churros",
+            "hint": "A preparation detail explains why the customer is especially interested in the starter.",
+            "explanation": "‘Prepared table-side’ means the dish is made in front of the guest at their table — a memorable presentation offered at some restaurants.",
             "id": "go_l113_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the terrine de volaille aux pistaches, the sole Véronique, and the savarin au rhum?",
+            "prompt": "Given the choice, I'll take the risotto over the alternative. Then the branzino, and the panna cotta to finish.",
             "options": [
-                "Terrine de Volaille aux Pistaches",
-                "Sole Véronique",
-                "Savarin au Rhum",
-                "Baba au Rhum"
+                "Risotto",
+                "Branzino",
+                "Panna Cotta",
+                "Tagliatelle"
             ],
-            "correctAnswer": "Terrine de Volaille aux Pistaches, Sole Véronique, Savarin au Rhum",
-            "hint": "Sole Véronique is poached sole with white grapes in a cream sauce - a classic French dish.",
-            "explanation": "Terrine de volaille aux pistaches is a chicken and pistachio terrine - the pistachios add colour and texture. Sole Véronique is poached Dover sole with white grapes in a velouté cream sauce. A savarin is a ring-shaped yeast cake soaked in rum - different from a baba, which is dome-shaped.",
+            "correctAnswer": "Risotto, Branzino, Panna Cotta",
+            "hint": "The customer compares two options but only names the one they finally chose.",
+            "explanation": "‘Given the choice, I’ll take X over the alternative’ confirms a decision without needing to repeat the rejected option by name.",
             "id": "go_l113_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the smoked butter popcorn amuse-bouche, the lobster with bisque foam and tarragon oil, and the black forest in reinterpretation.",
+            "prompt": "As this is a special evening, I'll have the caviar, the wagyu, and the chocolate soufflé, exactly as the chef recommends.",
             "options": [
-                "Smoked Butter Popcorn Amuse-Bouche",
-                "Lobster with Bisque Foam and Tarragon Oil",
-                "Black Forest in Reinterpretation",
-                "Chocolate Fondant"
+                "Caviar",
+                "Wagyu",
+                "Chocolate Soufflé",
+                "Chocolate Mousse"
             ],
-            "correctAnswer": "Smoked Butter Popcorn Amuse-Bouche, Lobster with Bisque Foam and Tarragon Oil, Black Forest in Reinterpretation",
-            "hint": "'In reinterpretation' means a classic dish reimagined in a modern style.",
-            "explanation": "Modern fine dining often 'reinterprets' classic desserts - Black Forest (Schwarzwälder Kirschtorte) becomes a deconstructed or modernised version. Bisque foam is classic bisque sauce transformed into a light foam using a siphon. Tarragon oil is an aromatic herb oil drizzled for flavour.",
+            "correctAnswer": "Caviar, Wagyu, Chocolate Soufflé",
+            "hint": "The occasion is named directly, and the customer defers entirely to the chef's suggestions.",
+            "explanation": "‘Exactly as the chef recommends’ shows complete trust in the kitchen's judgment, often reserved for special celebrations.",
             "id": "go_l114_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the charcoal-grilled oyster with ponzu granita, the wagyu bavette with black garlic purée, and the sake ice cream.",
+            "prompt": "The tuna tartare, which I understand is the chef's signature dish, sounds wonderful. I'll also have the duck breast and the panna cotta.",
             "options": [
-                "Charcoal-Grilled Oyster with Ponzu Granita",
-                "Wagyu Bavette with Black Garlic Purée",
-                "Sake Ice Cream",
-                "Matcha Ice Cream"
+                "Tuna Tartare",
+                "Duck Breast",
+                "Panna Cotta",
+                "Beef Tartare"
             ],
-            "correctAnswer": "Charcoal-Grilled Oyster with Ponzu Granita, Wagyu Bavette with Black Garlic Purée, Sake Ice Cream",
-            "hint": "Bavette is a loose, flavourful cut of beef - also called flank steak.",
-            "explanation": "Bavette (or flank steak) is a loose-textured, intensely flavoured cut - best grilled hot and quickly. Ponzu is a Japanese citrus-soy condiment. Charcoal grilling adds a smoky dimension to oysters. Sake ice cream uses fermented rice wine - very different in flavour from matcha ice cream.",
+            "correctAnswer": "Tuna Tartare, Duck Breast, Panna Cotta",
+            "hint": "This familiar structure returns, praising a starter's reputation before naming the rest of the order.",
+            "explanation": "This sentence follows the same shape seen earlier in this level range, reinforcing the pattern with a new main course.",
             "id": "go_l114_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the burrata with compressed watermelon and basil oil, the whole Brixham lobster thermidor, and the Champagne jelly with raspberry?",
+            "prompt": "Between the two salads, I'll take the lighter one, the arugula salad. Then the halibut, and the lemon posset.",
             "options": [
-                "Burrata with Compressed Watermelon and Basil Oil",
-                "Whole Brixham Lobster Thermidor",
-                "Champagne Jelly with Raspberry",
-                "Panna Cotta"
+                "Arugula Salad",
+                "Halibut",
+                "Lemon Posset",
+                "Caesar Salad"
             ],
-            "correctAnswer": "Burrata with Compressed Watermelon and Basil Oil, Whole Brixham Lobster Thermidor, Champagne Jelly with Raspberry",
-            "hint": "Compressed watermelon is vacuum-compressed to intensify its flavour and change its texture.",
-            "explanation": "Compression uses a vacuum chamber to remove air and intensify the flavour and colour of fruit. Brixham is a Devon fishing port famous for its lobster. Champagne jelly is a set gelée made from Champagne - elegant and celebratory. Panna cotta is a different Italian dessert.",
+            "correctAnswer": "Arugula Salad, Halibut, Lemon Posset",
+            "hint": "A comparison between two salads leads to one clear final choice.",
+            "explanation": "‘Arugula’ is a peppery, leafy green often used in lighter salads, in contrast to a heavier salad like a Caesar with croutons and dressing.",
             "id": "go_l114_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the ham hock terrine with pickled vegetables, the line-caught sea trout with coastal herbs, and the blood orange sorbet.",
+            "prompt": "I'll let you surprise me with the tasting menu. For my main course within it, I'd especially enjoy the duck, and I'll savor the cheese course too.",
             "options": [
-                "Ham Hock Terrine with Pickled Vegetables",
-                "Line-Caught Sea Trout with Coastal Herbs",
-                "Blood Orange Sorbet",
-                "Lemon Posset"
+                "Tasting Menu",
+                "Duck",
+                "Cheese Course",
+                "Chef's Recommendation"
             ],
-            "correctAnswer": "Ham Hock Terrine with Pickled Vegetables, Line-Caught Sea Trout with Coastal Herbs, Blood Orange Sorbet",
-            "hint": "Blood oranges have a distinctive crimson flesh and berry-like flavour.",
-            "explanation": "Ham hock is the lower leg joint - slowly braised and pressed into a terrine. Pickled vegetables (escabeche) add acidity. Line-caught fish is more sustainable. Blood oranges are Sicilian citrus with deep red flesh and a slightly berry-like flavour - very different from regular orange.",
+            "correctAnswer": "Tasting Menu, Duck, Cheese Course",
+            "hint": "The customer trusts the whole tasting menu, but still highlights two specific favorite courses.",
+            "explanation": "Even within a tasting menu where the chef decides most of the courses, a guest might mention a couple of favorites they're especially looking forward to.",
             "id": "go_l115_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the cured chalk stream trout with dill cream, the partridge en salmis with winter truffle, and the quince Tatin.",
+            "prompt": "Provided it's not too spicy, I'll have the harissa-rubbed lamb. Then the couscous, and the orange blossom cake to finish.",
             "options": [
-                "Cured Chalk Stream Trout with Dill Cream",
-                "Partridge en Salmis with Winter Truffle",
-                "Quince Tatin",
-                "Apple Tatin"
+                "Harissa-Rubbed Lamb",
+                "Couscous",
+                "Orange Blossom Cake",
+                "Almond Cake"
             ],
-            "correctAnswer": "Cured Chalk Stream Trout with Dill Cream, Partridge en Salmis with Winter Truffle, Quince Tatin",
-            "hint": "En salmis is a French method of finishing a roasted game bird in a rich sauce.",
-            "explanation": "Chalk stream trout from Hampshire chalk streams is prized for its clean, sweet flavour. En salmis is a classical French technique - the game bird is roasted then finished in a wine and stock sauce. Quince Tatin uses quince instead of apple - similar preparation but very different flavour.",
+            "correctAnswer": "Harissa-Rubbed Lamb, Couscous, Orange Blossom Cake",
+            "hint": "A spice-level condition is checked before the customer confirms their full order.",
+            "explanation": "‘Provided it's not too spicy’ sets a condition based on personal spice tolerance, similar to earlier questions about how hot a dish is.",
             "id": "go_l115_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the pressed pork cheek with apple gel, the Cornish cod with sea vegetables, and the warm gingerbread with honeycomb ice cream?",
+            "prompt": "I'll have whatever's freshest today — so if that's the oysters, I'll take them, along with the sea bass and the sorbet.",
             "options": [
-                "Pressed Pork Cheek with Apple Gel",
-                "Cornish Cod with Sea Vegetables",
-                "Warm Gingerbread with Honeycomb Ice Cream",
-                "Sticky Toffee Pudding"
+                "Oysters",
+                "Sea Bass",
+                "Sorbet",
+                "Panna Cotta"
             ],
-            "correctAnswer": "Pressed Pork Cheek with Apple Gel, Cornish Cod with Sea Vegetables, Warm Gingerbread with Honeycomb Ice Cream",
-            "hint": "Sea vegetables (sea purslane, sea beets) are foraged coastal plants with a briny flavour.",
-            "explanation": "Pressed pork cheek is slow-cooked and then pressed to create a neat terrine-like starter. Sea vegetables are coastal plants foraged from shorelines - their marine flavour pairs perfectly with white fish. Honeycomb ice cream features the candy known as honeycomb, cinder toffee, or sea foam.",
+            "correctAnswer": "Oysters, Sea Bass, Sorbet",
+            "hint": "The customer again defers to freshness, this time naming shellfish as a possibility.",
+            "explanation": "This flexible ordering style works for starters as well as mains, always trusting the kitchen's knowledge of what's best that day.",
             "id": "go_l115_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the gazpacho of heirloom tomatoes with olive oil caviar, the John Dory with saffron bouillabaisse, and the coconut and lime vacherin.",
+            "prompt": "The truffle risotto, if it's still available, would be lovely. Then the veal chop, and the tiramisu to conclude.",
             "options": [
-                "Gazpacho of Heirloom Tomatoes with Olive Oil Caviar",
-                "John Dory with Saffron Bouillabaisse",
-                "Coconut and Lime Vacherin",
-                "Lemon Tart"
+                "Truffle Risotto",
+                "Veal Chop",
+                "Tiramisu",
+                "Affogato"
             ],
-            "correctAnswer": "Gazpacho of Heirloom Tomatoes with Olive Oil Caviar, John Dory with Saffron Bouillabaisse, Coconut and Lime Vacherin",
-            "hint": "Olive oil caviar is spherified olive oil resembling caviar pearls.",
-            "explanation": "Olive oil caviar uses spherification to create tiny balls of olive oil that resemble caviar - a molecular gastronomy technique. John Dory is a distinctive-looking flat fish with firm, white, sweet flesh. A vacherin is a dessert of meringue and ice cream - different from a lemon tart.",
+            "correctAnswer": "Truffle Risotto, Veal Chop, Tiramisu",
+            "hint": "Checking availability again shows a thoughtful, realistic approach to ordering a popular dish.",
+            "explanation": "Truffle dishes are often seasonal and limited, so checking availability before committing is a sensible, practical habit.",
             "id": "go_l116_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the smoked salmon and avocado pressing, the pan-roasted halibut with shellfish nage, and the champagne and strawberry millefeuille.",
+            "prompt": "Rather than the usual dessert, I'll try the cheese course. I'll start with the burrata, and the branzino for my main.",
             "options": [
-                "Smoked Salmon and Avocado Pressing",
-                "Pan-Roasted Halibut with Shellfish Nage",
-                "Champagne and Strawberry Millefeuille",
-                "Paris-Brest"
+                "Cheese Course",
+                "Burrata",
+                "Branzino",
+                "Tiramisu"
             ],
-            "correctAnswer": "Smoked Salmon and Avocado Pressing, Pan-Roasted Halibut with Shellfish Nage, Champagne and Strawberry Millefeuille",
-            "hint": "A 'nage' is a fragrant court-bouillon used as a cooking and serving liquid for fish.",
-            "explanation": "A pressing is a terrine-style preparation - layered and pressed into a neat block. A nage (fragrant stock with white wine, vegetables, and herbs) serves as both cooking liquid and sauce for the fish. Champagne and strawberry millefeuille is layered puff pastry with Champagne cream.",
+            "correctAnswer": "Cheese Course, Burrata, Branzino",
+            "hint": "The dessert is mentioned first this time, even though it will be eaten last — listen for all three items regardless of order.",
+            "explanation": "‘Rather than the usual dessert’ leads the sentence, followed by the starter and main — a reminder that course order in speech doesn't always match the order dishes are served.",
             "id": "go_l116_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the rabbit saddle with mustard and tarragon, the Dover sole meunière, and the soufflé glacé au Grand Marnier?",
+            "prompt": "I understand the sea bass is prepared table-side — I'd like that, then the burrata, and the chocolate fondant.",
             "options": [
-                "Rabbit Saddle with Mustard and Tarragon",
-                "Dover Sole Meunière",
-                "Soufflé Glacé au Grand Marnier",
-                "Crêpe Suzette"
+                "Sea Bass",
+                "Burrata",
+                "Chocolate Fondant",
+                "Chocolate Torte"
             ],
-            "correctAnswer": "Rabbit Saddle with Mustard and Tarragon, Dover Sole Meunière, Soufflé Glacé au Grand Marnier",
-            "hint": "Dover sole meunière is one of the simplest and most revered French fish preparations.",
-            "explanation": "Sole meunière is Dover sole dusted with flour, pan-fried in butter with lemon and parsley - Escoffier called it one of the greatest dishes. A soufflé glacé is a frozen soufflé - actually ice cream moulded to look like a risen soufflé. Grand Marnier is an orange liqueur.",
+            "correctAnswer": "Sea Bass, Burrata, Chocolate Fondant",
+            "hint": "The main course is named before the starter this time — track the order they're spoken, not the order they'll be served.",
+            "explanation": "‘Prepared table-side’ describes a special presentation for the sea bass, mentioned first even though it will arrive after the starter — a good test of careful listening.",
             "id": "go_l116_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll take the chestnut and wild mushroom consommé, the roasted grouse with bread sauce and game chips, and the bitter chocolate and sea salt tart.",
+            "prompt": "Given the choice, I'll take the duck over the alternative. Then the burrata to start, and the panna cotta to finish.",
             "options": [
-                "Chestnut and Wild Mushroom Consommé",
-                "Roasted Grouse with Bread Sauce and Game Chips",
-                "Bitter Chocolate and Sea Salt Tart",
-                "Sticky Toffee Pudding"
+                "Duck",
+                "Burrata",
+                "Panna Cotta",
+                "Chicken"
             ],
-            "correctAnswer": "Chestnut and Wild Mushroom Consommé, Roasted Grouse with Bread Sauce and Game Chips, Bitter Chocolate and Sea Salt Tart",
-            "hint": "Consommé is a perfectly clear, intensely flavoured broth - very difficult to make well.",
-            "explanation": "Consommé is clarified through the rafting process (adding minced meat and egg whites that absorb impurities) - the result is crystal-clear and intensely flavoured. Grouse with bread sauce and game chips is a quintessential British game dish from the August season.",
+            "correctAnswer": "Duck, Burrata, Panna Cotta",
+            "hint": "The main course is mentioned first here — the starter and dessert follow after, out of their usual order.",
+            "explanation": "‘Given the choice, I’ll take X over the alternative’ leads the sentence with the main course this time, followed by the starter and dessert — listen for all three regardless of the order mentioned.",
             "id": "go_l117_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the hand-dived Orkney scallop with cauliflower, the aged duck with turnip and woad jus, and the apple and calvados soufflé.",
+            "prompt": "As this is a special evening, I'll have the tasting menu, the wine pairing, and the cheese course, exactly as the chef recommends.",
             "options": [
-                "Hand-Dived Orkney Scallop with Cauliflower",
-                "Aged Duck with Turnip and Woad Jus",
-                "Apple and Calvados Soufflé",
-                "Rum Baba"
+                "Tasting Menu",
+                "Wine Pairing",
+                "Cheese Course",
+                "Chef's Recommendation"
             ],
-            "correctAnswer": "Hand-Dived Orkney Scallop with Cauliflower, Aged Duck with Turnip and Woad Jus, Apple and Calvados Soufflé",
-            "hint": "Woad is a plant historically used as blue dye - its young leaves are edible.",
-            "explanation": "Woad is an ancient plant used as blue dye - young woad leaves can be cooked and used in modern British cooking. Calvados is apple brandy from Normandy. An apple and calvados soufflé uses both fresh apple and calvados spirit - a sophisticated Norman dessert combination.",
+            "correctAnswer": "Tasting Menu, Wine Pairing, Cheese Course",
+            "hint": "The full tasting experience is embraced for this special occasion.",
+            "explanation": "Ordering the tasting menu along with its wine pairing and a cheese course represents a complete, immersive fine dining experience, ideal for marking a special evening.",
             "id": "go_l117_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the native oyster with cucumber granita, the Balmoral Estate venison haunch with bramble jus, and the cranachan trifle?",
+            "prompt": "The lamb rack, which I understand is the chef's signature dish, sounds wonderful. I'll also have the burrata and the affogato.",
             "options": [
-                "Native Oyster with Cucumber Granita",
-                "Balmoral Estate Venison Haunch with Bramble Jus",
-                "Cranachan Trifle",
-                "Eton Mess"
+                "Lamb Rack",
+                "Burrata",
+                "Affogato",
+                "Tiramisu"
             ],
-            "correctAnswer": "Native Oyster with Cucumber Granita, Balmoral Estate Venison Haunch with Bramble Jus, Cranachan Trifle",
-            "hint": "Balmoral Estate in the Scottish Highlands is famous for its wild red deer venison.",
-            "explanation": "Native flat oysters (Ostrea edulis) are rarer and more complex than Pacific rock oysters. Balmoral is the Royal Family's Scottish estate - its venison is prized for provenance. Cranachan trifle fuses the Scottish cranachan with the English trifle - a creative hybrid dessert.",
+            "correctAnswer": "Lamb Rack, Burrata, Affogato",
+            "hint": "This time, the ‘signature dish’ mentioned first is the main course, not the starter — the other two items still follow.",
+            "explanation": "A restaurant's signature dish can be any course, not just a starter — here it's the main course, mentioned first before the rest of the order.",
             "id": "go_l117_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the crab and avocado with grapefruit and wasabi, the black truffle stuffed leg of rabbit, and the golden pineapple with chilli caramel.",
+            "prompt": "I understand the flambéed bananas are prepared table-side — I'd like that, then I'll start with the burrata, and the branzino for my main.",
             "options": [
-                "Crab and Avocado with Grapefruit and Wasabi",
-                "Black Truffle Stuffed Leg of Rabbit",
-                "Golden Pineapple with Chilli Caramel",
-                "Coconut Panna Cotta"
+                "Flambéed Bananas",
+                "Burrata",
+                "Branzino",
+                "Tiramisu"
             ],
-            "correctAnswer": "Crab and Avocado with Grapefruit and Wasabi, Black Truffle Stuffed Leg of Rabbit, Golden Pineapple with Chilli Caramel",
-            "hint": "Wasabi provides a sharp, clean heat - very different from chilli.",
-            "explanation": "Wasabi is Japanese horseradish - providing a sharp, nasal heat that clears instantly. Chilli caramel with pineapple provides a lingering sweet heat. Black truffle inside rabbit leg infuses the mild meat with its extraordinary aroma during cooking.",
+            "correctAnswer": "Flambéed Bananas, Burrata, Branzino",
+            "hint": "Dessert leads this sentence again, followed by the starter and main in that order.",
+            "explanation": "‘Flambéed’ describes a dish that's set briefly alight with liquor for a dramatic table-side presentation — a memorable dessert experience.",
             "id": "go_l118_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the terrine of foie gras with Sauternes jelly and brioche, the whole roasted pigeon with girolles, and the tarte fine aux pommes.",
+            "prompt": "Given the choice, I'll take the halibut over the alternative. I'll start with the tuna tartare, and finish with the lemon tart.",
             "options": [
-                "Terrine of Foie Gras with Sauternes Jelly and Brioche",
-                "Whole Roasted Pigeon with Girolles",
-                "Tarte Fine aux Pommes",
-                "Tarte Tatin"
+                "Halibut",
+                "Tuna Tartare",
+                "Lemon Tart",
+                "Branzino"
             ],
-            "correctAnswer": "Terrine of Foie Gras with Sauternes Jelly and Brioche, Whole Roasted Pigeon with Girolles, Tarte Fine aux Pommes",
-            "hint": "Girolles are golden chanterelle mushrooms - one of the finest wild mushrooms.",
-            "explanation": "Girolles (chanterelles) are golden-yellow wild mushrooms with a fruity, peppery flavour - a seasonal French delicacy. Tarte fine aux pommes is a very thin, elegant French apple tart - completely different from the upside-down Tarte Tatin, though both use apples.",
+            "correctAnswer": "Halibut, Tuna Tartare, Lemon Tart",
+            "hint": "Once more, the main course is named first, followed by the starter and dessert.",
+            "explanation": "This reordering pattern has now appeared several times in this level range — always listen for all three items no matter which course is mentioned first.",
             "id": "go_l118_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the spiced duck rillettes with cornichons, the turbot with langoustine and bisque, and the financiers with lavender ice cream?",
+            "prompt": "As this is a special evening, I'll have the oysters, the wagyu, and the chocolate lava cake, exactly as the chef recommends.",
             "options": [
-                "Spiced Duck Rillettes with Cornichons",
-                "Turbot with Langoustine and Bisque",
-                "Financiers with Lavender Ice Cream",
-                "Madeleine"
+                "Oysters",
+                "Wagyu",
+                "Chocolate Lava Cake",
+                "Chocolate Mousse"
             ],
-            "correctAnswer": "Spiced Duck Rillettes with Cornichons, Turbot with Langoustine and Bisque, Financiers with Lavender Ice Cream",
-            "hint": "Rillettes are shredded slow-cooked meat preserved in fat - served at room temperature.",
-            "explanation": "Rillettes are a French charcuterie preparation - meat is slowly cooked in fat until it falls apart, then shredded and preserved in its own fat. Cornichons (small sharp gherkins) cut through the richness. Financiers are small French almond butter cakes - different from madeleines, which are shell-shaped.",
+            "correctAnswer": "Oysters, Wagyu, Chocolate Lava Cake",
+            "hint": "This time, the order returns to the familiar starter-main-dessert sequence.",
+            "explanation": "Not every sentence reorders the courses — this one follows the expected sequence, so read carefully rather than assuming based on recent levels.",
             "id": "go_l118_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll have the smoked butternut squash velouté with crispy pancetta, the turbot with sea kale and cockle cream, and the clementine soufflé with crème fraîche ice cream.",
+            "prompt": "The seared scallops, if they're still available, would be lovely. Then the veal chop, and the crema catalana to conclude.",
             "options": [
-                "Smoked Butternut Squash Velouté with Crispy Pancetta",
-                "Turbot with Sea Kale and Cockle Cream",
-                "Clementine Soufflé with Crème Fraîche Ice Cream",
-                "Vanilla Panna Cotta"
+                "Seared Scallops",
+                "Veal Chop",
+                "Crema Catalana",
+                "Flan"
             ],
-            "correctAnswer": "Smoked Butternut Squash Velouté with Crispy Pancetta, Turbot with Sea Kale and Cockle Cream, Clementine Soufflé with Crème Fraîche Ice Cream",
-            "hint": "Sea kale is a coastal plant with a mild, nutty flavour - delicate and seasonal.",
-            "explanation": "Sea kale is a British coastal plant - tender shoots are briefly blanched and served like asparagus. Cockles are small bivalve molluscs - their briny flavour makes a natural cream sauce for turbot. Clementine soufflé uses the citrus that signals winter - served with tangy crème fraîche ice cream.",
+            "correctAnswer": "Seared Scallops, Veal Chop, Crema Catalana",
+            "hint": "This sentence returns to the standard starter-main-dessert order.",
+            "explanation": "Checking availability continues to be a realistic, useful habit, and here the courses appear in their expected order.",
             "id": "go_l119_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the hand-chopped beef tartare royale with caviar, the aged côte de boeuf for two with truffle béarnaise, and the praline Paris-Brest.",
+            "prompt": "Rather than the usual starter, I'll try the beet carpaccio. For my main, the duck breast, and the olive oil cake for dessert.",
             "options": [
-                "Hand-Chopped Beef Tartare Royale with Caviar",
-                "Aged Côte de Boeuf for Two with Truffle Béarnaise",
-                "Praline Paris-Brest",
-                "Chocolate Fondant"
+                "Beet Carpaccio",
+                "Duck Breast",
+                "Olive Oil Cake",
+                "Almond Cake"
             ],
-            "correctAnswer": "Hand-Chopped Beef Tartare Royale with Caviar, Aged Côte de Boeuf for Two with Truffle Béarnaise, Praline Paris-Brest",
-            "hint": "Tartare 'royale' adds caviar as the luxury garnish - elevating the classic dish.",
-            "explanation": "'Royale' in cooking denotes a royal or luxury preparation - adding caviar to tartare elevates it. Truffle béarnaise adds white or black truffle to the classic butter and tarragon sauce. Paris-Brest filled with praline cream is a rich, nutty, cycle-wheel shaped choux.",
+            "correctAnswer": "Beet Carpaccio, Duck Breast, Olive Oil Cake",
+            "hint": "The standard order returns once again — starter, then main, then dessert.",
+            "explanation": "This level range mixes both standard and reordered sentences, so success depends on listening carefully every time, not memorizing a fixed pattern.",
             "id": "go_l119_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the crayfish and samphire salad, the salt marsh lamb with olive oil mash, and the brown butter and almond tart with vanilla ice cream?",
+            "prompt": "I'll let you surprise me with the appetizer pairing. For my main, the branzino, and the panna cotta to close.",
             "options": [
-                "Crayfish and Samphire Salad",
-                "Salt Marsh Lamb with Olive Oil Mash",
-                "Brown Butter and Almond Tart with Vanilla Ice Cream",
-                "Lemon Tart"
+                "Appetizer Pairing",
+                "Branzino",
+                "Panna Cotta",
+                "Wine Pairing"
             ],
-            "correctAnswer": "Crayfish and Samphire Salad, Salt Marsh Lamb with Olive Oil Mash, Brown Butter and Almond Tart with Vanilla Ice Cream",
-            "hint": "Salt marsh lamb grazes on coastal marshes - the meat absorbs minerals and herbs from the grass.",
-            "explanation": "Salt marsh lamb (pré-salé) grazes on coastal marshes - the salty herbs give the meat a unique, naturally seasoned flavour. Brown butter (beurre noisette) has a toasted, nutty flavour - very different from regular melted butter. Olive oil mash is a Mediterranean twist on mashed potatoes.",
+            "correctAnswer": "Appetizer Pairing, Branzino, Panna Cotta",
+            "hint": "The customer trusts the chef with just the starter this time, then names the rest directly.",
+            "explanation": "‘I’ll let you surprise me’ can apply to just one course, like the starter, rather than the whole meal — read carefully to see exactly what's being left to the chef.",
             "id": "go_l119_q3"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'll take the seasonal amuse-bouche selection, the eight-course chef's vision menu with wine flight, and the petit fours with coffee service.",
+            "prompt": "As this is a special evening, I'll have the seared scallops, the wagyu, and the salted caramel tart, exactly as the chef recommends.",
             "options": [
-                "Seasonal Amuse-Bouche Selection",
-                "Eight-Course Chef's Vision Menu with Wine Flight",
-                "Petit Fours with Coffee Service",
-                "Cheese Trolley"
+                "Seared Scallops",
+                "Wagyu",
+                "Salted Caramel Tart",
+                "Chocolate Torte"
             ],
-            "correctAnswer": "Seasonal Amuse-Bouche Selection, Eight-Course Chef's Vision Menu with Wine Flight, Petit Fours with Coffee Service",
-            "hint": "A 'chef's vision menu' gives the kitchen complete creative freedom with seasonal ingredients.",
-            "explanation": "A chef's vision menu is the ultimate expression of the restaurant's philosophy - the customer surrenders all choice to the kitchen. Petit fours are tiny sweet confections served with coffee at the end of a meal. The wine flight is included within the menu package.",
+            "correctAnswer": "Seared Scallops, Wagyu, Salted Caramel Tart",
+            "hint": "This final level in the set follows the standard starter-main-dessert order.",
+            "explanation": "This sentence closes out the tier with the familiar structure, using rich, formal vocabulary built up throughout this level range.",
             "id": "go_l120_q1"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "I'd like the compressed melon with Ibérico ham and mint, the turbot with mussel and saffron velouté, and the strawberry and rose water savarin.",
+            "prompt": "Given the choice, I'll take the wild mushroom risotto over the alternative. I'll start with the burrata, and finish with the affogato.",
             "options": [
-                "Compressed Melon with Ibérico Ham and Mint",
-                "Turbot with Mussel and Saffron Velouté",
-                "Strawberry and Rose Water Savarin",
-                "Panna Cotta"
+                "Wild Mushroom Risotto",
+                "Burrata",
+                "Affogato",
+                "Tagliatelle"
             ],
-            "correctAnswer": "Compressed Melon with Ibérico Ham and Mint, Turbot with Mussel and Saffron Velouté, Strawberry and Rose Water Savarin",
-            "hint": "Compressed melon intensifies sweetness - it pairs classically with salty Ibérico ham.",
-            "explanation": "The sweet-salty combination of melon and ham is a Italian antipasto classic elevated here with compression. Mussels and saffron make a classic pairing - used as a sauce for the turbot. A savarin is a ring-shaped yeast cake soaked in syrup - here with rose water and strawberries.",
+            "correctAnswer": "Wild Mushroom Risotto, Burrata, Affogato",
+            "hint": "The main course leads the sentence one final time, followed by the starter and dessert.",
+            "explanation": "This reordering pattern — main course first — has been an important skill throughout this level range, testing careful listening over assumptions.",
             "id": "go_l120_q2"
         },
         {
-            "instruction": "Tap the items to fulfill the client's order.",
+            "instruction": "Tap the items to fulfill the customer's order.",
             "subtype": "gourmetOrder",
             "interactionType": "selection",
-            "prompt": "Could I have the native lobster with Oscietra caviar and cauliflower, the wagyu beef fillet with bone marrow and truffle, and the chocolate, coffee and cardamom composition?",
+            "prompt": "I understand the cherries jubilee are prepared table-side — I'd like that, then I'll start with the octopus, and the lamb rack for my main.",
             "options": [
-                "Native Lobster with Oscietra Caviar and Cauliflower",
-                "Wagyu Beef Fillet with Bone Marrow and Truffle",
-                "Chocolate Coffee and Cardamom Composition",
-                "Dark Chocolate Tart"
+                "Cherries Jubilee",
+                "Octopus",
+                "Lamb Rack",
+                "Flambéed Bananas"
             ],
-            "correctAnswer": "Native Lobster with Oscietra Caviar and Cauliflower, Wagyu Beef Fillet with Bone Marrow and Truffle, Chocolate Coffee and Cardamom Composition",
-            "hint": "Oscietra caviar is a prized Russian-style sturgeon caviar - smaller and nuttier than Beluga.",
-            "explanation": "Oscietra (Osetra) caviar comes from Russian and Iranian sturgeon - its flavour is nutty and complex. A 'composition' in fine dining denotes multiple components presented as one cohesive dessert - chocolate, coffee, and cardamom are presented in various textures and temperatures.",
+            "correctAnswer": "Cherries Jubilee, Octopus, Lamb Rack",
+            "hint": "Dessert is named first one last time, followed by the starter and main.",
+            "explanation": "‘Cherries jubilee’ is a dessert of cherries flambéed in liqueur, often poured over ice cream — a dramatic table-side finish to a fine dining meal.",
             "id": "go_l120_q3"
         }
     ]

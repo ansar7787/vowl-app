@@ -1,457 +1,457 @@
 {
-    "gameType": "trueFalseReading",
-    "batchIndex": 11,
-    "levels": "101-110",
-    "quests": [
-        {
-            "id": "RDG_TRUEFALSEREADING_L101_Q1",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Abyss Vent 101-1] Water near hydrothermal vents can reach temperatures of 350 degrees Celsius, which is high enough to melt lead. However, the extreme hydrostatic pressure at the bottom of the ocean prevents the water from boiling.",
-            "question": "The water near deep-sea hydrothermal vents remains liquid due to the extreme pressure, despite being hot enough to melt lead.",
-            "correctAnswer": "true",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Check the last sentence discussing boiling and pressure conditions. (Diving calibration index 101-1)",
-            "explanation": "At great oceanic depths, immense pressure raises the water's boiling point, allowing it to reach superheated states while remaining liquid. [Validated by Fact Check Unit 101]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L101_Q2",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Coral Zone 101-2] Although coral reefs cover less than 0.1% of the world's ocean surface, they host and nurture over 25% of all marine life, earning them the nickname 'rainforests of the sea'.",
-            "question": "Coral reefs occupy more than 10% of the Earth's total ocean surface area.",
-            "correctAnswer": "false",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Review the exact percentage of ocean surface area covered by reefs in the first sentence. (Diving calibration index 101-2)",
-            "explanation": "Coral reefs cover a tiny fraction (less than 0.1%) of the ocean surface, but concentrate an immense proportion of biodiversity. [Validated by Fact Check Unit 101]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L101_Q3",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Biolum Lab 101-3] Bioluminescence is cold light produced chemically by deep-sea organisms. Unlike artificial lightbulbs, this biological light generates zero heat, allowing creatures to conserve vital energy.",
-            "question": "Bioluminescence produces a significant amount of heat energy alongside light.",
-            "correctAnswer": "false",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Compare biological light emission to artificial light sources described in the text. (Diving calibration index 101-3)",
-            "explanation": "Bioluminescent light is known as 'cold light' because nearly 100% of the energy is emitted as light, generating no heat. [Validated by Fact Check Unit 101]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L102_Q1",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Whale Pod 102-1] Blue whales are filter feeders that consume up to four tons of tiny krill every day. They do not possess teeth; instead, they have baleen plates that act as a giant sieve to trap food.",
-            "question": "Blue whales use razor-sharp teeth to capture and chew large fish.",
-            "correctAnswer": "false",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Find the anatomical description of how blue whales filter their food. (Diving calibration index 102-1)",
-            "explanation": "Blue whales are toothless baleen whales; they filter massive swarms of tiny krill through fiber-like baleen plates. [Validated by Fact Check Unit 102]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L102_Q2",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Wave Pulse 102-2] In the open ocean, tsunami waves travel at speeds exceeding 800 kilometers per hour. As they approach shallow coastal waters, they slow down significantly but grow taller.",
-            "question": "Tsunami waves increase in speed as they approach shallow coastal beaches.",
-            "correctAnswer": "false",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Look at the second sentence outlining speed and wave height shifts near coasts. (Diving calibration index 102-2)",
-            "explanation": "Tsunamis slow down due to friction in shallow waters, causing the energy to compress and build tall, destructive wave heights. [Validated by Fact Check Unit 102]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L102_Q3",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Vent Hub 102-3] Undersea hydrothermal vent ecosystems are unique because they do not rely on sunlight. Instead, specialized bacteria perform chemosynthesis to convert toxic vent hydrogen sulfide into energy.",
-            "question": "Hydrothermal vent food chains rely directly on solar energy and plant photosynthesis.",
-            "correctAnswer": "false",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Identify the primary source of chemical energy detailed in the first sentence. (Diving calibration index 102-3)",
-            "explanation": "These vent ecosystems thrive in complete darkness, driven entirely by chemosynthesis rather than solar-based photosynthesis. [Validated by Fact Check Unit 102]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L103_Q1",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Kelp Forest 103-1] Giant kelp grows in cool, nutrient-dense ocean waters. Under optimal conditions, these massive marine algae can grow at an astonishing rate of up to 60 centimeters per day.",
-            "question": "Giant kelp can grow up to 60 centimeters in a single day under optimal conditions.",
-            "correctAnswer": "true",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Locate the growth rate metric stated in the last sentence. (Diving calibration index 103-1)",
-            "explanation": "Under ideal light and nutrient levels, giant kelp is one of the fastest-growing autotrophs on Earth, growing up to 60cm daily. [Validated by Fact Check Unit 103]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L103_Q2",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Angler Deep 103-2] Female anglerfish carry a bioluminescent dorsal lure filled with glowing symbiotic bacteria, which they use to attract prey in the pitch-black bathypelagic zone.",
-            "question": "The anglerfish's glowing lure is powered by symbiotic bacteria living inside the modified spine.",
-            "correctAnswer": "true",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Review the second sentence regarding the source of bioluminescence in the lure. (Diving calibration index 103-2)",
-            "explanation": "The glowing lure hosts glowing photobacterium species in a highly evolved, mutually beneficial relationship. [Validated by Fact Check Unit 103]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L103_Q3",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Shark Reef 103-3] Great white sharks possess specialized sensory organs called ampullae of Lorenzini, allowing them to detect weak electromagnetic fields generated by moving fish.",
-            "question": "Great white sharks can sense the weak electromagnetic fields produced by the muscles of swimming prey.",
-            "correctAnswer": "true",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Examine the role of the specialized sensory organs described at the end. (Diving calibration index 103-3)",
-            "explanation": "Sharks utilize their electroreception system to find prey that is otherwise hidden under sand or in absolute darkness. [Validated by Fact Check Unit 103]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L104_Q1",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Global Flow 104-1] Ocean currents, such as the warm Gulf Stream, act as massive climate regulators by transporting absorbed equatorial solar heat towards the cooler polar hemispheres.",
-            "question": "The Gulf Stream current helps distribute heat around the globe by moving warm water towards the polar regions.",
-            "correctAnswer": "true",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Review the role of the Gulf Stream current outlined in the text. (Diving calibration index 104-1)",
-            "explanation": "Ocean currents act as a global conveyor system, moving tropical heat to higher latitudes to keep global climates moderate. [Validated by Fact Check Unit 104]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L104_Q2",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Abyss Vent 104-2] Water near hydrothermal vents can reach temperatures of 350 degrees Celsius, which is high enough to melt lead. However, the extreme hydrostatic pressure at the bottom of the ocean prevents the water from boiling.",
-            "question": "The water near deep-sea hydrothermal vents remains liquid due to the extreme pressure, despite being hot enough to melt lead.",
-            "correctAnswer": "true",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Check the last sentence discussing boiling and pressure conditions. (Diving calibration index 104-2)",
-            "explanation": "At great oceanic depths, immense pressure raises the water's boiling point, allowing it to reach superheated states while remaining liquid. [Validated by Fact Check Unit 104]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L104_Q3",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Coral Zone 104-3] Although coral reefs cover less than 0.1% of the world's ocean surface, they host and nurture over 25% of all marine life, earning them the nickname 'rainforests of the sea'.",
-            "question": "Coral reefs occupy more than 10% of the Earth's total ocean surface area.",
-            "correctAnswer": "false",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Review the exact percentage of ocean surface area covered by reefs in the first sentence. (Diving calibration index 104-3)",
-            "explanation": "Coral reefs cover a tiny fraction (less than 0.1%) of the ocean surface, but concentrate an immense proportion of biodiversity. [Validated by Fact Check Unit 104]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L105_Q1",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Biolum Lab 105-1] Bioluminescence is cold light produced chemically by deep-sea organisms. Unlike artificial lightbulbs, this biological light generates zero heat, allowing creatures to conserve vital energy.",
-            "question": "Bioluminescence produces a significant amount of heat energy alongside light.",
-            "correctAnswer": "false",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Compare biological light emission to artificial light sources described in the text. (Diving calibration index 105-1)",
-            "explanation": "Bioluminescent light is known as 'cold light' because nearly 100% of the energy is emitted as light, generating no heat. [Validated by Fact Check Unit 105]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L105_Q2",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Whale Pod 105-2] Blue whales are filter feeders that consume up to four tons of tiny krill every day. They do not possess teeth; instead, they have baleen plates that act as a giant sieve to trap food.",
-            "question": "Blue whales use razor-sharp teeth to capture and chew large fish.",
-            "correctAnswer": "false",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Find the anatomical description of how blue whales filter their food. (Diving calibration index 105-2)",
-            "explanation": "Blue whales are toothless baleen whales; they filter massive swarms of tiny krill through fiber-like baleen plates. [Validated by Fact Check Unit 105]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L105_Q3",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Wave Pulse 105-3] In the open ocean, tsunami waves travel at speeds exceeding 800 kilometers per hour. As they approach shallow coastal waters, they slow down significantly but grow taller.",
-            "question": "Tsunami waves increase in speed as they approach shallow coastal beaches.",
-            "correctAnswer": "false",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Look at the second sentence outlining speed and wave height shifts near coasts. (Diving calibration index 105-3)",
-            "explanation": "Tsunamis slow down due to friction in shallow waters, causing the energy to compress and build tall, destructive wave heights. [Validated by Fact Check Unit 105]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L106_Q1",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Vent Hub 106-1] Undersea hydrothermal vent ecosystems are unique because they do not rely on sunlight. Instead, specialized bacteria perform chemosynthesis to convert toxic vent hydrogen sulfide into energy.",
-            "question": "Hydrothermal vent food chains rely directly on solar energy and plant photosynthesis.",
-            "correctAnswer": "false",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Identify the primary source of chemical energy detailed in the first sentence. (Diving calibration index 106-1)",
-            "explanation": "These vent ecosystems thrive in complete darkness, driven entirely by chemosynthesis rather than solar-based photosynthesis. [Validated by Fact Check Unit 106]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L106_Q2",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Kelp Forest 106-2] Giant kelp grows in cool, nutrient-dense ocean waters. Under optimal conditions, these massive marine algae can grow at an astonishing rate of up to 60 centimeters per day.",
-            "question": "Giant kelp can grow up to 60 centimeters in a single day under optimal conditions.",
-            "correctAnswer": "true",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Locate the growth rate metric stated in the last sentence. (Diving calibration index 106-2)",
-            "explanation": "Under ideal light and nutrient levels, giant kelp is one of the fastest-growing autotrophs on Earth, growing up to 60cm daily. [Validated by Fact Check Unit 106]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L106_Q3",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Angler Deep 106-3] Female anglerfish carry a bioluminescent dorsal lure filled with glowing symbiotic bacteria, which they use to attract prey in the pitch-black bathypelagic zone.",
-            "question": "The anglerfish's glowing lure is powered by symbiotic bacteria living inside the modified spine.",
-            "correctAnswer": "true",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Review the second sentence regarding the source of bioluminescence in the lure. (Diving calibration index 106-3)",
-            "explanation": "The glowing lure hosts glowing photobacterium species in a highly evolved, mutually beneficial relationship. [Validated by Fact Check Unit 106]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L107_Q1",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Shark Reef 107-1] Great white sharks possess specialized sensory organs called ampullae of Lorenzini, allowing them to detect weak electromagnetic fields generated by moving fish.",
-            "question": "Great white sharks can sense the weak electromagnetic fields produced by the muscles of swimming prey.",
-            "correctAnswer": "true",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Examine the role of the specialized sensory organs described at the end. (Diving calibration index 107-1)",
-            "explanation": "Sharks utilize their electroreception system to find prey that is otherwise hidden under sand or in absolute darkness. [Validated by Fact Check Unit 107]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L107_Q2",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Global Flow 107-2] Ocean currents, such as the warm Gulf Stream, act as massive climate regulators by transporting absorbed equatorial solar heat towards the cooler polar hemispheres.",
-            "question": "The Gulf Stream current helps distribute heat around the globe by moving warm water towards the polar regions.",
-            "correctAnswer": "true",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Review the role of the Gulf Stream current outlined in the text. (Diving calibration index 107-2)",
-            "explanation": "Ocean currents act as a global conveyor system, moving tropical heat to higher latitudes to keep global climates moderate. [Validated by Fact Check Unit 107]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L107_Q3",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Abyss Vent 107-3] Water near hydrothermal vents can reach temperatures of 350 degrees Celsius, which is high enough to melt lead. However, the extreme hydrostatic pressure at the bottom of the ocean prevents the water from boiling.",
-            "question": "The water near deep-sea hydrothermal vents remains liquid due to the extreme pressure, despite being hot enough to melt lead.",
-            "correctAnswer": "true",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Check the last sentence discussing boiling and pressure conditions. (Diving calibration index 107-3)",
-            "explanation": "At great oceanic depths, immense pressure raises the water's boiling point, allowing it to reach superheated states while remaining liquid. [Validated by Fact Check Unit 107]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L108_Q1",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Coral Zone 108-1] Although coral reefs cover less than 0.1% of the world's ocean surface, they host and nurture over 25% of all marine life, earning them the nickname 'rainforests of the sea'.",
-            "question": "Coral reefs occupy more than 10% of the Earth's total ocean surface area.",
-            "correctAnswer": "false",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Review the exact percentage of ocean surface area covered by reefs in the first sentence. (Diving calibration index 108-1)",
-            "explanation": "Coral reefs cover a tiny fraction (less than 0.1%) of the ocean surface, but concentrate an immense proportion of biodiversity. [Validated by Fact Check Unit 108]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L108_Q2",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Biolum Lab 108-2] Bioluminescence is cold light produced chemically by deep-sea organisms. Unlike artificial lightbulbs, this biological light generates zero heat, allowing creatures to conserve vital energy.",
-            "question": "Bioluminescence produces a significant amount of heat energy alongside light.",
-            "correctAnswer": "false",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Compare biological light emission to artificial light sources described in the text. (Diving calibration index 108-2)",
-            "explanation": "Bioluminescent light is known as 'cold light' because nearly 100% of the energy is emitted as light, generating no heat. [Validated by Fact Check Unit 108]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L108_Q3",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Whale Pod 108-3] Blue whales are filter feeders that consume up to four tons of tiny krill every day. They do not possess teeth; instead, they have baleen plates that act as a giant sieve to trap food.",
-            "question": "Blue whales use razor-sharp teeth to capture and chew large fish.",
-            "correctAnswer": "false",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Find the anatomical description of how blue whales filter their food. (Diving calibration index 108-3)",
-            "explanation": "Blue whales are toothless baleen whales; they filter massive swarms of tiny krill through fiber-like baleen plates. [Validated by Fact Check Unit 108]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L109_Q1",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Wave Pulse 109-1] In the open ocean, tsunami waves travel at speeds exceeding 800 kilometers per hour. As they approach shallow coastal waters, they slow down significantly but grow taller.",
-            "question": "Tsunami waves increase in speed as they approach shallow coastal beaches.",
-            "correctAnswer": "false",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Look at the second sentence outlining speed and wave height shifts near coasts. (Diving calibration index 109-1)",
-            "explanation": "Tsunamis slow down due to friction in shallow waters, causing the energy to compress and build tall, destructive wave heights. [Validated by Fact Check Unit 109]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L109_Q2",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Vent Hub 109-2] Undersea hydrothermal vent ecosystems are unique because they do not rely on sunlight. Instead, specialized bacteria perform chemosynthesis to convert toxic vent hydrogen sulfide into energy.",
-            "question": "Hydrothermal vent food chains rely directly on solar energy and plant photosynthesis.",
-            "correctAnswer": "false",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Identify the primary source of chemical energy detailed in the first sentence. (Diving calibration index 109-2)",
-            "explanation": "These vent ecosystems thrive in complete darkness, driven entirely by chemosynthesis rather than solar-based photosynthesis. [Validated by Fact Check Unit 109]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L109_Q3",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Kelp Forest 109-3] Giant kelp grows in cool, nutrient-dense ocean waters. Under optimal conditions, these massive marine algae can grow at an astonishing rate of up to 60 centimeters per day.",
-            "question": "Giant kelp can grow up to 60 centimeters in a single day under optimal conditions.",
-            "correctAnswer": "true",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Locate the growth rate metric stated in the last sentence. (Diving calibration index 109-3)",
-            "explanation": "Under ideal light and nutrient levels, giant kelp is one of the fastest-growing autotrophs on Earth, growing up to 60cm daily. [Validated by Fact Check Unit 109]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L110_Q1",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Angler Deep 110-1] Female anglerfish carry a bioluminescent dorsal lure filled with glowing symbiotic bacteria, which they use to attract prey in the pitch-black bathypelagic zone.",
-            "question": "The anglerfish's glowing lure is powered by symbiotic bacteria living inside the modified spine.",
-            "correctAnswer": "true",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Review the second sentence regarding the source of bioluminescence in the lure. (Diving calibration index 110-1)",
-            "explanation": "The glowing lure hosts glowing photobacterium species in a highly evolved, mutually beneficial relationship. [Validated by Fact Check Unit 110]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L110_Q2",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Shark Reef 110-2] Great white sharks possess specialized sensory organs called ampullae of Lorenzini, allowing them to detect weak electromagnetic fields generated by moving fish.",
-            "question": "Great white sharks can sense the weak electromagnetic fields produced by the muscles of swimming prey.",
-            "correctAnswer": "true",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Examine the role of the specialized sensory organs described at the end. (Diving calibration index 110-2)",
-            "explanation": "Sharks utilize their electroreception system to find prey that is otherwise hidden under sand or in absolute darkness. [Validated by Fact Check Unit 110]."
-        },
-        {
-            "id": "RDG_TRUEFALSEREADING_L110_Q3",
-            "instruction": "Read the passage and determine if the statement is true or false.",
-            "subtype": "trueFalseReading",
-            "interactionType": "Coin Flip",
-            "passage": "[Global Flow 110-3] Ocean currents, such as the warm Gulf Stream, act as massive climate regulators by transporting absorbed equatorial solar heat towards the cooler polar hemispheres.",
-            "question": "The Gulf Stream current helps distribute heat around the globe by moving warm water towards the polar regions.",
-            "correctAnswer": "true",
-            "options": [
-                "true",
-                "false"
-            ],
-            "hint": "Review the role of the Gulf Stream current outlined in the text. (Diving calibration index 110-3)",
-            "explanation": "Ocean currents act as a global conveyor system, moving tropical heat to higher latitudes to keep global climates moderate. [Validated by Fact Check Unit 110]."
-        }
-    ]
+  "gameType": "trueFalseReading",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "id": "RDG_TRUEFALSEREADING_L101_Q1",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "After nearly six months of resisting the idea, Tobias finally agreed to try meal prepping on Sundays, largely because his weekday evenings had become too rushed to cook properly. What started as a reluctant experiment has since become something he looks forward to, since it frees up almost an hour each weeknight that he now spends with his family instead.",
+      "question": "Tobias now has more free time on weeknights because of meal prepping.",
+      "correctAnswer": "true",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check what meal prepping has freed up for Tobias.",
+      "explanation": "The passage says it frees up almost an hour each weeknight, so this is true."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L101_Q2",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Although the certification board had long required candidates to take the exam in person at a designated testing center, a policy update introduced last year now permits remote proctored exams for candidates who live more than one hundred miles from the nearest center. Uptake of the remote option has been modest so far, largely due to unfamiliarity with the process.",
+      "question": "The certification board still requires every candidate to test in person.",
+      "correctAnswer": "false",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check what exception the board introduced last year.",
+      "explanation": "The passage says remote exams are now permitted for some candidates, so requiring everyone in person is false."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L101_Q3",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Given the difficulty of retaining junior staff in a competitive market, the firm introduced a structured mentorship track pairing each new analyst with a senior colleague for their first year, a program that has already reduced first-year attrition by a noticeable margin. Several participants have since been promoted ahead of their original timeline.",
+      "question": "The mentorship program has reduced first-year attrition at the firm.",
+      "correctAnswer": "true",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check what effect the mentorship program has had on attrition.",
+      "explanation": "The passage confirms attrition has been reduced, so this statement is true."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L102_Q1",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Although the budget airline had built its reputation on ultra-low base fares, passengers who fail to account for the additional charges for seat selection, checked luggage, and even printed boarding passes often find that their total cost ends up comparable to a full-service competitor. Petra learned this the hard way after underestimating her final bill by nearly sixty dollars.",
+      "question": "Petra's final cost with the budget airline was lower than she had planned for.",
+      "correctAnswer": "false",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check how Petra's actual bill compared to what she expected.",
+      "explanation": "The passage says her bill was nearly sixty dollars higher than expected, so lower is false."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L102_Q2",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Given that her son had been struggling to make friends after their recent move, Renata enrolled him in a weekend youth sports league specifically hoping it would help him build a social circle more naturally than school alone seemed to allow. Within a couple of months, he had already been invited to two teammates' birthday parties.",
+      "question": "Renata enrolled her son in a weekend sports league to help him make friends.",
+      "correctAnswer": "true",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check why Renata signed her son up for the league.",
+      "explanation": "The passage confirms this was her reason for enrolling him, so this is true."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L102_Q3",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Although the retailer's membership program advertises free shipping on all orders, the fine print reveals that this benefit applies only to orders shipped within the same country, leaving international members to pay standard shipping rates regardless of their membership status. Several customers have complained that this distinction was not made clear during sign-up.",
+      "question": "Membership guarantees free shipping regardless of the customer's country.",
+      "correctAnswer": "false",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check whether the free shipping benefit applies internationally.",
+      "explanation": "The passage says international members still pay standard rates, so regardless of country is false."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L103_Q1",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Given the rising cost of dining out, Camille and her roommates instituted a rotating cooking schedule in which each person prepares a large batch meal once a week that the others can portion out as needed, a system that has cut their combined grocery and takeout spending nearly in half.",
+      "question": "Camille's household spending on food has decreased since starting the rotating schedule.",
+      "correctAnswer": "true",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check what happened to the household's combined food spending.",
+      "explanation": "The passage says spending was cut nearly in half, so a decrease is true."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L103_Q2",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Although the manufacturer marketed the fitness tracker as fully waterproof, a wave of customer complaints about malfunctioning devices after swimming led the company to quietly revise its marketing language to water-resistant instead, along with issuing replacement units to affected customers.",
+      "question": "The fitness tracker continues to be marketed as fully waterproof with no changes.",
+      "correctAnswer": "false",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check whether the marketing language changed after the complaints.",
+      "explanation": "The passage says the language was revised to water-resistant, so no changes is false."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L103_Q3",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Given her family's history of diabetes, Sofia began scheduling annual blood sugar screenings in her early thirties rather than waiting until the typically recommended age, a decision her doctor fully supported given the added risk factor. So far, all of her results have remained within a normal range.",
+      "question": "Sofia began blood sugar screenings earlier than typically recommended due to family history.",
+      "correctAnswer": "true",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check why Sofia started screenings earlier than usual.",
+      "explanation": "The passage confirms this was due to her family history, so this is true."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L104_Q1",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Although critics had largely dismissed the low-budget independent film upon its limited release, it steadily gained a devoted following through word of mouth and streaming recommendations, eventually earning a sequel that received a significantly larger production budget than the original.",
+      "question": "The independent film failed to gain any following and was quickly forgotten.",
+      "correctAnswer": "false",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check what actually happened to the film after its release.",
+      "explanation": "The passage says it steadily gained a devoted following, so being quickly forgotten is false."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L104_Q2",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Given that certain fungi form vast underground networks connecting the root systems of multiple trees across a forest, researchers have found that trees can, in effect, share nutrients and warning signals with neighboring trees of different species, not just their own. This discovery has reshaped how scientists understand forest ecosystems as interconnected communities rather than collections of individual competitors.",
+      "question": "Trees can share nutrients with neighboring trees of different species through fungal networks.",
+      "correctAnswer": "true",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check what kind of trees can share nutrients through these networks.",
+      "explanation": "The passage confirms sharing occurs even between different species, so this is true."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L104_Q3",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Although the city initially planned to fund the new community health clinic entirely through a one-time grant, unexpected budget shortfalls the following year forced officials to seek additional private donations to keep the clinic operating at full capacity.",
+      "question": "The community health clinic has remained funded entirely through the original one-time grant.",
+      "correctAnswer": "false",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check whether additional funding was needed beyond the original grant.",
+      "explanation": "The passage says officials had to seek private donations, so relying entirely on the original grant is false."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L105_Q1",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Because she used to feel groggy no matter how early she went to bed, Naila assumed she simply needed more sleep, until a doctor suggested she track her actual sleep quality using a wearable device. The data revealed that she was waking up briefly dozens of times each night without remembering it, a pattern her doctor linked to the room's temperature rather than the total hours she slept.",
+      "question": "Naila's doctor determined that she simply was not sleeping enough hours.",
+      "correctAnswer": "false",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check what the doctor actually identified as the cause.",
+      "explanation": "The passage says the cause was linked to room temperature and frequent waking, not total hours, so this is false."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L105_Q2",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "The vocational program's waiting list had grown to nearly a year, so the school board approved funding for a second campus specifically to expand capacity in high-demand trades such as plumbing and electrical work. The new campus is expected to accept its first cohort of students within the next twelve months.",
+      "question": "The school board approved funding to expand the vocational program's capacity.",
+      "correctAnswer": "true",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check what the school board approved funding for.",
+      "explanation": "The passage confirms funding was approved to expand capacity, so this is true."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L105_Q3",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Even though the manufacturing plant had operated on a single shift for over a decade, rising demand forced management to introduce a second overnight shift last year, a change that initially met resistance from workers accustomed to daytime hours. Within a few months, however, most concerns had been addressed through revised scheduling and additional pay incentives.",
+      "question": "The plant reduced from two shifts down to a single shift last year.",
+      "correctAnswer": "false",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check whether the plant added or removed a shift last year.",
+      "explanation": "The passage says a second shift was added, not removed, so this is false."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L106_Q1",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Because the historic city center bans private vehicles during daytime hours to reduce congestion and preserve the cobblestone streets, visitors are encouraged to rely on the extensive tram network or simply walk between attractions. Tour operators have adapted by scheduling most excursions to begin and end just outside the restricted zone.",
+      "question": "The historic city center restricts private vehicles during daytime hours.",
+      "correctAnswer": "true",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check what restriction applies to the historic city center.",
+      "explanation": "The passage confirms this restriction, so the statement is true."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L106_Q2",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Although Hassan and his brother had barely spoken for nearly three years following a disagreement over their late father's business, a chance meeting at a cousin's wedding led to a lengthy conversation that ultimately repaired much of the rift between them. They now speak on the phone at least once a month.",
+      "question": "Hassan and his brother have remained completely estranged with no contact since the wedding.",
+      "correctAnswer": "false",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check what happened between Hassan and his brother after the wedding.",
+      "explanation": "The passage says they now speak monthly, so remaining completely estranged is false."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L106_Q3",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Given that counterfeit electronics have become increasingly difficult to distinguish from genuine products in online marketplaces, Kenji now buys exclusively from either the manufacturer's official website or a small list of verified retailers, even when this means paying somewhat more than the lowest listed price elsewhere.",
+      "question": "Kenji now avoids buying electronics from unverified sellers even if prices are higher elsewhere.",
+      "correctAnswer": "true",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check where Kenji now chooses to buy electronics.",
+      "explanation": "The passage confirms he buys only from verified sources despite higher prices, so this is true."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L107_Q1",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Although the imported cheese was significantly more expensive than the domestic alternative, a blind taste test conducted among the restaurant's staff found that most could not reliably tell the two apart, prompting the head chef to quietly switch to the cheaper option for most dishes on the menu.",
+      "question": "The staff could easily and reliably distinguish the imported cheese from the domestic alternative.",
+      "correctAnswer": "false",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check what the blind taste test actually revealed.",
+      "explanation": "The passage says most staff could not reliably tell them apart, so easily distinguishing them is false."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L107_Q2",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Given how frequently her laptop overheated during video calls, Naomi eventually traced the issue to a buildup of dust inside the cooling fan rather than any software problem, something a technician confirmed after opening the case and cleaning the components thoroughly.",
+      "question": "Naomi's laptop overheating was ultimately traced to dust in the cooling fan.",
+      "correctAnswer": "true",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check what the technician found to be the actual cause.",
+      "explanation": "The passage confirms dust buildup was the cause, so this is true."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L107_Q3",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Although the physical therapist initially recommended a conservative six-week recovery plan following Hugo's shoulder surgery, complications during his recovery ultimately required him to extend the plan to nearly four months before he regained full range of motion.",
+      "question": "Hugo's shoulder recovery took exactly the originally planned six weeks.",
+      "correctAnswer": "false",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check how long Hugo's recovery actually took compared to the original plan.",
+      "explanation": "The passage says the recovery extended to nearly four months, so exactly six weeks is false."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L108_Q1",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Given the overwhelming demand following its surprise debut, the mobile game's developers had to temporarily disable new account registrations for several days while they scaled up their servers, a rare problem that ultimately generated even more publicity for the title.",
+      "question": "The developers temporarily disabled new account registrations due to overwhelming demand.",
+      "correctAnswer": "true",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check why the developers disabled new registrations.",
+      "explanation": "The passage confirms this was due to overwhelming demand, so this is true."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L108_Q2",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Although migratory birds are often assumed to navigate purely by instinct without any need to learn from others, research on several species has shown that young birds making their first migration alongside experienced adults tend to follow far more accurate routes than those migrating entirely alone.",
+      "question": "Migratory birds navigate purely by instinct and never benefit from experienced guidance.",
+      "correctAnswer": "false",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check what research on young birds actually found.",
+      "explanation": "The passage says young birds benefit from following experienced adults, so never benefiting is false."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L108_Q3",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Given the steady increase in reported bicycle thefts near the downtown transit station, the city partnered with a local nonprofit to install a monitored, covered bike parking facility, a project that has already reduced theft reports in the surrounding blocks by a significant margin.",
+      "question": "Bicycle theft reports have decreased near the transit station since the new facility opened.",
+      "correctAnswer": "true",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check what has happened to theft reports since the new facility opened.",
+      "explanation": "The passage confirms a significant reduction in theft reports, so this is true."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L109_Q1",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Ever since transitioning to working from home permanently, Farid has made a point of changing out of pajamas and into regular clothes before starting his workday, a small ritual he credits with helping him mentally separate work time from personal time. Colleagues who work fully remote themselves have told him they intend to try the same approach.",
+      "question": "Farid changes into regular clothes before starting his workday.",
+      "correctAnswer": "true",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check what ritual Farid follows before starting work.",
+      "explanation": "The passage confirms this habit, so the statement is true."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L109_Q2",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Despite years of avoiding anything related to numbers, Dara enrolled in an introductory statistics course as a requirement for her new degree, expecting to struggle throughout the term. To her surprise, she not only passed comfortably but went on to request a more advanced course the following semester.",
+      "question": "Dara found the statistics course so difficult that she avoided further math courses.",
+      "correctAnswer": "false",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check what Dara did after finishing the statistics course.",
+      "explanation": "The passage says she requested a more advanced course next, so avoiding further math is false."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L109_Q3",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Because remote work had blurred the boundaries between office hours and personal time for many employees, the company introduced a policy discouraging emails after six in the evening except in genuine emergencies. Early feedback suggests the policy has meaningfully improved how employees describe their work-life balance in internal surveys.",
+      "question": "The company introduced a policy discouraging emails after six in the evening.",
+      "correctAnswer": "true",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check what policy the company introduced.",
+      "explanation": "The passage confirms this exact policy, so the statement is true."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L110_Q1",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Even though the resort advertised an all-inclusive package covering meals and drinks, Devon discovered upon arrival that the premium restaurant on-site required an additional fee not mentioned in the original booking details. After raising the issue with the front desk, he was eventually granted a partial refund for the discrepancy.",
+      "question": "Every restaurant at the resort was covered under the all-inclusive package with no extra fees.",
+      "correctAnswer": "false",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check whether all restaurants were truly included in the package.",
+      "explanation": "The passage says the premium restaurant required an extra fee, so no extra fees anywhere is false."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L110_Q2",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Because both of Elena's aging parents now require regular assistance with daily tasks, she and her two siblings have arranged a rotating schedule so that no single family member bears the entire caregiving burden alone. The arrangement, while not perfect, has noticeably reduced the stress each of them previously felt individually.",
+      "question": "Elena and her siblings share caregiving responsibilities through a rotating schedule.",
+      "correctAnswer": "true",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check how Elena and her siblings have arranged caregiving.",
+      "explanation": "The passage confirms a rotating shared schedule, so this is true."
+    },
+    {
+      "id": "RDG_TRUEFALSEREADING_L110_Q3",
+      "instruction": "Read the passage and determine if the statement is true or false.",
+      "subtype": "trueFalseReading",
+      "interactionType": "Coin Flip",
+      "passage": "Despite the store's advertised thirty-day return window, Malia discovered upon attempting to return a defective appliance that opened electronics were subject to a separate, much shorter fourteen-day policy buried in a different section of the receipt. She ultimately had to negotiate directly with the manufacturer instead.",
+      "question": "Malia was able to return the defective appliance easily under the thirty-day policy.",
+      "correctAnswer": "false",
+      "options": [
+        "true",
+        "false"
+      ],
+      "hint": "Check whether the standard thirty-day policy applied to Malia's situation.",
+      "explanation": "The passage says a shorter policy applied instead, so an easy thirty-day return is false."
+    }
+  ]
 }

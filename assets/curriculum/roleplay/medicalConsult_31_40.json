@@ -4,483 +4,483 @@
     "levels": "31-40",
     "quests": [
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"The room feels like it's spinning even when I'm sitting still.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Dizziness",
+                "Vertigo",
+                "Nausea",
+                "Headache"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Vertigo",
+            "hint": "The patient describes actual spinning, which is more specific than general dizziness.",
+            "explanation": "A false sense that the room is spinning is called Vertigo, a specific type of Dizziness.",
             "id": "mc_l31_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"After the picnic, my stomach started cramping and I couldn't stop being sick,\" the patient says.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Stomach Ache",
+                "Nausea",
+                "Diarrhea",
+                "Food Poisoning"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Food Poisoning",
+            "hint": "Look at the cause and the sudden timing, not just the stomach symptom alone.",
+            "explanation": "Sudden stomach illness linked to eating something is called Food Poisoning.",
             "id": "mc_l31_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"My eye has been red, itchy, and a bit crusty this morning,\" the patient tells the doctor.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Itchy Eyes",
+                "Watery Eyes",
+                "Pink Eye",
+                "Puffy Eyes"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Pink Eye",
+            "hint": "Three details together - red, itchy, and crusty - point to one specific condition.",
+            "explanation": "Redness with itching and crusting is the classic description of Pink Eye.",
             "id": "mc_l31_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"Between my toes, the skin is peeling and it itches like crazy.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Dry Skin",
+                "Athlete's Foot",
+                "Itching",
+                "Skin Peeling"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Athlete's Foot",
+            "hint": "The exact location - between the toes - is the key clue.",
+            "explanation": "Itchy, peeling skin specifically between the toes is called Athlete's Foot.",
             "id": "mc_l32_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"This headache is so bad I have to lie down in a dark room.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Headache",
+                "Light Sensitivity",
+                "Dizziness",
+                "Migraine"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Migraine",
+            "hint": "The severity and the need for darkness point to something stronger than an ordinary headache.",
+            "explanation": "A severe headache that forces someone to avoid light is usually called a Migraine.",
             "id": "mc_l32_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"Pain shoots down the back of my leg whenever I sit for too long,\" the patient says.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Sciatica",
+                "Leg Pain",
+                "Back Pain",
+                "Numbness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Sciatica",
+            "hint": "The pain travels from one area down the leg - that pattern has its own name.",
+            "explanation": "Shooting pain that runs down the leg, often from sitting, is called Sciatica.",
             "id": "mc_l32_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"My elbow has been sore ever since I started playing tennis again.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Joint Stiffness",
+                "Wrist Pain",
+                "Tennis Elbow",
+                "Muscle Soreness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Tennis Elbow",
+            "hint": "The patient names both the body part and the activity that caused it.",
+            "explanation": "Elbow pain linked to repeated arm movement, like in tennis, is called Tennis Elbow.",
             "id": "mc_l33_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"My fingers feel numb, especially after typing for a while,\" the patient says.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Wrist Pain",
+                "Numbness in Fingers",
+                "Cramp",
+                "Weakness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Numbness in Fingers",
+            "hint": "The patient names the exact body part that has lost feeling.",
+            "explanation": "A loss of feeling in the fingers, often from repeated movement, is called Numbness in Fingers.",
             "id": "mc_l33_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"I woke up and I couldn't turn my neck without sharp pain,\" the patient tells the doctor.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Stiff Neck",
+                "Shoulder Pain",
+                "Headache",
+                "Neck Pain"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Neck Pain",
+            "hint": "The patient describes sharp pain, which is different from simple stiffness.",
+            "explanation": "Sharp pain in the neck is called Neck Pain, distinct from a Stiff Neck, which is mainly about difficulty moving.",
             "id": "mc_l33_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"My shin has been hurting along the bone since I started running again.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Shin Splints",
+                "Leg Pain",
+                "Muscle Soreness",
+                "Cramp"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Shin Splints",
+            "hint": "The patient names the exact bone area and the activity that caused it.",
+            "explanation": "Pain along the shin bone, common in new runners, is called Shin Splints.",
             "id": "mc_l34_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"There's a painful red bump right on my eyelid.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Puffy Eyes",
+                "Stye",
+                "Itchy Eyes",
+                "Watery Eyes"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Stye",
+            "hint": "The patient describes one specific bump, not the whole eye area.",
+            "explanation": "A small, painful red bump on the eyelid is called a Stye.",
             "id": "mc_l34_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"My hands turn pale and freezing cold whenever the temperature drops,\" the patient says.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Numbness",
+                "Chills",
+                "Cold Hands and Feet",
+                "Swelling"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Cold Hands and Feet",
+            "hint": "The patient describes their hands' temperature and color, not the whole body.",
+            "explanation": "Hands that turn cold and pale in cold weather fit the term Cold Hands and Feet.",
             "id": "mc_l34_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"I got a mild allergic rash after trying a new lotion.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Allergic Reaction",
+                "Rash",
+                "Heat Rash",
+                "Sunburn"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Allergic Reaction",
+            "hint": "The patient names the cause directly - listen for that word.",
+            "explanation": "When a rash is clearly linked to a triggering product, it is described as an Allergic Reaction.",
             "id": "mc_l35_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"My whole body broke out in itchy welts after I ate shellfish,\" the patient says.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Rash",
+                "Allergic Reaction",
+                "Itching",
+                "Hives"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Hives",
+            "hint": "The specific word 'welts' describes a particular type of raised skin mark.",
+            "explanation": "Raised, itchy welts on the skin, often from food, are specifically called Hives.",
             "id": "mc_l35_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"My throat feels a little tight when I have bad allergies in the spring,\" the patient tells the doctor.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Throat Tightness",
+                "Sore Throat",
+                "Hoarse Voice",
+                "Sinus Pressure"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Throat Tightness",
+            "hint": "The patient describes tightness, not pain when swallowing.",
+            "explanation": "A tight feeling in the throat, separate from pain, is called Throat Tightness.",
             "id": "mc_l35_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"My skin gets these raised, itchy bumps whenever I'm stressed.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Rash",
+                "Itching",
+                "Allergic Reaction",
+                "Hives"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Hives",
+            "hint": "The patient describes raised bumps, which is more specific than a flat rash.",
+            "explanation": "Raised, itchy bumps on the skin are called Hives, even when stress is the trigger.",
             "id": "mc_l36_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"My eyes have dark circles under them and look tired all the time.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Puffy Eyes",
+                "Dark Circles",
+                "Fatigue",
+                "Watery Eyes"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Dark Circles",
+            "hint": "The patient describes color under the eyes, not swelling or wetness.",
+            "explanation": "Darkened skin under the eyes is called Dark Circles.",
             "id": "mc_l36_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "In the exam room, the patient says: \"My voice disappeared completely this morning.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Hoarse Voice",
+                "Sore Throat",
+                "Loss of Voice",
+                "Cough"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Loss of Voice",
+            "hint": "The patient says the voice is gone completely, not just rough-sounding.",
+            "explanation": "A voice that disappears entirely is called Loss of Voice, more severe than a Hoarse Voice.",
             "id": "mc_l36_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"My lower back has been stiff and sore since I moved those boxes.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Back Pain",
+                "Muscle Soreness",
+                "Joint Stiffness",
+                "Cramp"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Back Pain",
+            "hint": "The patient names the exact area affected: the back.",
+            "explanation": "Soreness and stiffness in the back after lifting is described as Back Pain.",
             "id": "mc_l37_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"I feel a strange fluttering in my chest every so often,\" the patient says.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Racing Heartbeat",
+                "Heart Palpitations",
+                "Chest Pain",
+                "Shortness of Breath"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Heart Palpitations",
+            "hint": "The word 'fluttering' describes an irregular feeling, not simply a fast one.",
+            "explanation": "An irregular, fluttering feeling in the chest is called Heart Palpitations.",
             "id": "mc_l37_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"My throat feels like something is stuck in it, but nothing is there,\" the patient tells the doctor.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Sore Throat",
+                "Difficulty Swallowing",
+                "Throat Tightness",
+                "Lump in Throat"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Lump in Throat",
+            "hint": "The patient describes a sensation of something being there, not pain or difficulty.",
+            "explanation": "The sensation of a lump in the throat, with nothing actually there, is called Lump in Throat.",
             "id": "mc_l37_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"It's hard to swallow food lately, like it gets stuck.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Sore Throat",
+                "Lump in Throat",
+                "Difficulty Swallowing",
+                "Dry Mouth"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Difficulty Swallowing",
+            "hint": "The patient describes trouble with the act of swallowing itself.",
+            "explanation": "Trouble getting food down when swallowing is called Difficulty Swallowing.",
             "id": "mc_l38_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"My face looks pale and I feel washed out.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Paleness",
+                "Fatigue",
+                "Weakness",
+                "Dizziness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Paleness",
+            "hint": "The patient describes their appearance, not their energy or strength.",
+            "explanation": "Skin that looks unusually light or washed out is called Paleness.",
             "id": "mc_l38_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "In the exam room, the patient says: \"I get a metallic taste in my mouth sometimes.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Dry Mouth",
+                "Metallic Taste",
+                "Bad Breath",
+                "Nausea"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Metallic Taste",
+            "hint": "The patient describes a specific taste, not dryness or smell.",
+            "explanation": "An unusual metal-like taste in the mouth is called a Metallic Taste.",
             "id": "mc_l38_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "Patient says: \"My fingernails have started looking pale and brittle.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Dry Skin",
+                "Numbness",
+                "Ingrown Nail",
+                "Brittle Nails"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Brittle Nails",
+            "hint": "The patient describes the nails themselves, not the skin or fingers.",
+            "explanation": "Nails that break or chip easily are called Brittle Nails.",
             "id": "mc_l39_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"I get out of breath just walking to the mailbox now,\" the patient says.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Fatigue",
+                "Chest Pain",
+                "Shortness of Breath",
+                "Weakness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Shortness of Breath",
+            "hint": "The patient describes breathing difficulty during a small amount of activity.",
+            "explanation": "Getting out of breath during light activity is called Shortness of Breath.",
             "id": "mc_l39_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "\"My skin bruises so easily lately, even from a light bump,\" the patient tells the doctor.",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Bruise",
+                "Swelling",
+                "Rash",
+                "Easy Bruising"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Easy Bruising",
+            "hint": "The patient describes a pattern over time, not one single mark.",
+            "explanation": "A tendency to bruise from very light contact is called Easy Bruising.",
             "id": "mc_l39_q3"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "At the clinic, the patient says: \"My feet swell up by the end of a long day at work.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Swollen Ankles",
+                "Swollen Feet",
+                "Leg Pain",
+                "Cramp"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Swollen Feet",
+            "hint": "The patient names the feet specifically, not the ankles.",
+            "explanation": "Feet that puff up, especially after standing, are called Swollen Feet.",
             "id": "mc_l40_q1"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "During the check-up, the patient explains: \"I feel thirsty all the time, no matter how much I drink.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Excessive Thirst",
+                "Dry Mouth",
+                "Fatigue",
+                "Weakness"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Excessive Thirst",
+            "hint": "The patient describes constant thirst, not just a dry feeling.",
+            "explanation": "Feeling thirsty far more than usual, even after drinking, is called Excessive Thirst.",
             "id": "mc_l40_q2"
         },
         {
-            "instruction": "Identify the biological glitch locations.",
+            "instruction": "Select the symptom that best matches what the patient says.",
             "subtype": "medicalConsult",
             "interactionType": "mapping",
-            "prompt": "Patient reports pain in the left limb and central core.",
+            "prompt": "In the exam room, the patient says: \"I need to use the bathroom much more often than usual.\"",
             "symptoms": [
-                "Left Limb",
-                "Central Core",
-                "Right Wing",
-                "Head Sensor"
+                "Bloating",
+                "Excessive Thirst",
+                "Frequent Urination",
+                "Fatigue"
             ],
-            "correctAnswer": "Left Limb, Central Core",
-            "hint": "Check the limb first.",
-            "explanation": "Diagnosis requires precision.",
+            "correctAnswer": "Frequent Urination",
+            "hint": "The patient describes how often they need the bathroom.",
+            "explanation": "Needing to urinate much more often than usual is called Frequent Urination.",
             "id": "mc_l40_q3"
         }
     ]

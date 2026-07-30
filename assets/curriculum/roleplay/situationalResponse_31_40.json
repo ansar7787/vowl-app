@@ -4,20 +4,36 @@
     "levels": "31-40",
     "quests": [
         {
+            "instruction": "Choose the bubble that fits the mood.",
+            "subtype": "situationalResponse",
+            "interactionType": "bubbles",
+            "scene": "You get promoted to a role you have wanted for a long time.",
+            "options": [
+                "Proud",
+                "Bored",
+                "Angry",
+                "Sleepy"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Something you worked toward for a long time has finally happened.",
+            "explanation": "Achieving a goal you worked hard for makes you feel proud.",
+            "id": "sr_l31_q1"
+        },
+        {
             "instruction": "Choose the most natural reply.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A colleague says: Thank you so much for helping me yesterday!",
+            "scene": "A colleague says to you: 'Thank you so much for helping me yesterday!'",
             "options": [
-                "Whatever.",
-                "You are welcome!",
-                "I do not care.",
-                "Stop talking."
+                "I know, I'm the best.",
+                "You're welcome, happy to help.",
+                "Don't thank me, thank yourself.",
+                "So, what are you doing later?"
             ],
             "correctAnswerIndex": 1,
-            "hint": "This is a polite exchange between two friendly colleagues.",
-            "explanation": "You are welcome! is the natural warm response to a thank you.",
-            "id": "sr_l31_q1"
+            "hint": "A simple, warm response works best when someone thanks you.",
+            "explanation": "'You're welcome, happy to help' is warm and natural - the standard polite way to respond to thanks.",
+            "id": "sr_l31_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
@@ -25,142 +41,126 @@
             "interactionType": "bubbles",
             "scene": "You have been waiting at the airport for six hours because your flight was cancelled.",
             "options": [
-                "Excited",
-                "Exhausted",
-                "Proud",
-                "Amused"
+                "Delighted",
+                "Calm",
+                "Exasperated",
+                "Proud"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Long unexpected waits drain your physical and mental energy.",
-            "explanation": "After six hours of waiting you feel exhausted.",
-            "id": "sr_l31_q2"
-        },
-        {
-            "instruction": "Choose the most natural reply.",
-            "subtype": "situationalResponse",
-            "interactionType": "bubbles",
-            "scene": "A shop assistant says: Have a nice day!",
-            "options": [
-                "Why?",
-                "You too!",
-                "I do not need that.",
-                "Never mind."
-            ],
-            "correctAnswerIndex": 1,
-            "hint": "This is a friendly standard closing phrase in everyday interactions.",
-            "explanation": "You too! is the natural friendly way to respond when someone wishes you well.",
+            "correctAnswerIndex": 2,
+            "hint": "A long wait with no end in sight, and none of it is your fault.",
+            "explanation": "A long, unwanted delay like this typically makes you feel exasperated.",
             "id": "sr_l31_q3"
         },
         {
             "instruction": "Choose the most natural reply.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Your friend calls and says: I have some really exciting news!",
+            "scene": "Your friend calls and says: 'I have some really exciting news!'",
             "options": [
-                "So what?",
-                "Tell me!",
-                "I am busy.",
-                "That is boring."
+                "Ooh, tell me everything!",
+                "That's nice, I guess.",
+                "Can it wait till tomorrow?",
+                "I already heard, actually."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Show genuine interest in what your friend wants to share.",
-            "explanation": "Tell me! is the enthusiastic natural response that shows you are interested and ready to listen.",
+            "correctAnswerIndex": 0,
+            "hint": "Show genuine interest when a friend is excited to share something.",
+            "explanation": "'Tell me everything!' shows enthusiasm - the natural way to respond to a friend's exciting news.",
             "id": "sr_l32_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You watch the baggage carousel at the airport and your bag never arrives.",
+            "scene": "You watch the baggage carousel go around and around, but your suitcase never appears.",
             "options": [
-                "Relieved",
-                "Amused",
-                "Anxious",
-                "Happy"
+                "Delighted",
+                "Worried",
+                "Proud",
+                "Calm"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Your belongings may have been lost.",
-            "explanation": "Watching the carousel without seeing your bag makes you feel anxious.",
+            "correctAnswerIndex": 1,
+            "hint": "Something you need has not arrived, and you do not know why.",
+            "explanation": "Watching your luggage fail to appear naturally makes you feel worried.",
             "id": "sr_l32_q2"
         },
         {
             "instruction": "Choose the most natural reply.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A stranger asks you: Excuse me do you know what time it is?",
+            "scene": "A stranger asks you: 'Excuse me, do you know what time it is?'",
             "options": [
-                "Why do you want to know?",
-                "I do not speak to strangers.",
-                "Sorry I do not have a watch.",
-                "None of your business."
+                "No idea, sorry.",
+                "Why do you need to know?",
+                "I don't wear a watch anymore.",
+                "Sure, it's about three thirty."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "You genuinely do not know the time but want to be helpful.",
-            "explanation": "Sorry I do not have a watch is honest and polite.",
+            "correctAnswerIndex": 3,
+            "hint": "A quick, polite answer is all that is needed here.",
+            "explanation": "Giving a direct, friendly answer is the natural response to a simple question from a stranger.",
             "id": "sr_l32_q3"
-        },
-        {
-            "instruction": "Choose the bubble that fits the mood.",
-            "subtype": "situationalResponse",
-            "interactionType": "bubbles",
-            "scene": "After one year living abroad you think back on all the people and moments you experienced.",
-            "options": [
-                "Nostalgic",
-                "Bored",
-                "Indifferent",
-                "Angry"
-            ],
-            "correctAnswerIndex": 0,
-            "hint": "Thinking about happy times that are now in the past creates a particular feeling.",
-            "explanation": "Looking back on meaningful experiences brings a feeling of nostalgia.",
-            "id": "sr_l33_q1"
         },
         {
             "instruction": "Choose the most natural reply.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Your teacher says: Excellent work on your essay!",
+            "scene": "Your teacher says: 'Excellent work on your essay!'",
             "options": [
-                "I know.",
-                "What essay?",
-                "Thank you I worked really hard on it.",
-                "Who cares?"
+                "It was easy, honestly.",
+                "Thank you, I worked hard on it.",
+                "Really? I thought it was bad.",
+                "I know, right?"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Accept the praise with genuine gratitude and humility.",
-            "explanation": "Thank you I worked really hard on it accepts the compliment graciously.",
-            "id": "sr_l33_q2"
+            "correctAnswerIndex": 1,
+            "hint": "Accept a compliment graciously instead of brushing it off.",
+            "explanation": "Thanking someone and briefly acknowledging your effort is a gracious way to accept praise.",
+            "id": "sr_l33_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You notice that your neighbour has a garden filled with beautiful colorful flowers.",
+            "scene": "After a year of living abroad, you look back on all the people and places you experienced.",
             "options": [
-                "Envious",
-                "Angry",
                 "Bored",
-                "Scared"
+                "Angry",
+                "Sleepy",
+                "Nostalgic"
+            ],
+            "correctAnswerIndex": 3,
+            "hint": "You are thinking fondly about a meaningful time that has now passed.",
+            "explanation": "Looking back warmly on a meaningful period of your life is called feeling nostalgic.",
+            "id": "sr_l33_q2"
+        },
+        {
+            "instruction": "Choose the most natural reply.",
+            "subtype": "situationalResponse",
+            "interactionType": "bubbles",
+            "scene": "Your neighbor says: 'I noticed you have such a beautiful garden this year!'",
+            "options": [
+                "Thank you, I've worked on it all spring.",
+                "Oh, it's really nothing special.",
+                "You should really see the weeds though.",
+                "I don't actually enjoy gardening."
             ],
             "correctAnswerIndex": 0,
-            "hint": "You admire what they have and wish you had something similar.",
-            "explanation": "Seeing something beautiful that you wish were yours can make you feel envious.",
+            "hint": "Accept the compliment and add a small, friendly detail.",
+            "explanation": "Thanking your neighbor and adding a small detail keeps the exchange warm and natural.",
             "id": "sr_l33_q3"
         },
         {
             "instruction": "Choose the most natural reply.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A hotel receptionist asks: Do you have a reservation?",
+            "scene": "A hotel receptionist asks: 'Do you have a reservation?'",
             "options": [
-                "What does that mean?",
-                "Yes the name is Johnson.",
-                "That is not your business.",
-                "I do not know."
+                "No, why would I?",
+                "I'm not sure, maybe.",
+                "Yes, it's under the name Martinez.",
+                "Is that really necessary?"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Provide the specific information the receptionist needs.",
-            "explanation": "When a receptionist asks about your reservation giving your name is the most efficient response.",
+            "correctAnswerIndex": 2,
+            "hint": "Give the clear information the receptionist needs to help you.",
+            "explanation": "Confirming your reservation and giving your name is the clear, efficient way to answer.",
             "id": "sr_l34_q1"
         },
         {
@@ -170,29 +170,29 @@
             "scene": "You and your partner find out you are expecting a baby for the very first time.",
             "options": [
                 "Bored",
-                "Indifferent",
-                "Overwhelmed",
-                "Tired"
+                "Angry",
+                "Sleepy",
+                "Overjoyed"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "This is life-changing news that brings enormous responsibility and joy.",
-            "explanation": "Finding out you are expecting a baby for the first time brings a mix of joy and responsibility.",
+            "correctAnswerIndex": 3,
+            "hint": "Life-changing, wonderful news has just arrived.",
+            "explanation": "Learning news this significant and joyful usually makes you feel overjoyed.",
             "id": "sr_l34_q2"
         },
         {
             "instruction": "Choose the most natural reply.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Your friend asks: Would you like to grab a coffee later today?",
+            "scene": "Your friend asks: 'Would you like to grab a coffee later today?'",
             "options": [
-                "Leave me alone.",
-                "I'd love to! What time?",
-                "Coffee is bad for you.",
-                "Maybe never."
+                "Maybe, I don't know yet.",
+                "I don't really drink coffee, sorry.",
+                "Sure, how about four o'clock?",
+                "Coffee sounds boring today."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Your friend wants to spend time with you.",
-            "explanation": "I'd love to! What time? is a warm enthusiastic acceptance.",
+            "correctAnswerIndex": 2,
+            "hint": "Accept and suggest a specific time to make the plan concrete.",
+            "explanation": "Accepting and proposing a time is a natural, practical way to confirm plans with a friend.",
             "id": "sr_l34_q3"
         },
         {
@@ -201,62 +201,62 @@
             "interactionType": "bubbles",
             "scene": "You arrive at a party where you do not know a single person.",
             "options": [
-                "Comfortable",
-                "Self-conscious",
+                "Delighted",
+                "Out of place",
                 "Proud",
-                "Excited"
+                "Calm"
             ],
             "correctAnswerIndex": 1,
-            "hint": "All the faces around you are completely unfamiliar.",
-            "explanation": "Being at a social event where you know nobody makes you feel self-conscious.",
+            "hint": "Everyone else already seems to know each other.",
+            "explanation": "Being somewhere unfamiliar with no familiar faces often makes you feel out of place.",
             "id": "sr_l35_q1"
         },
         {
             "instruction": "Choose the most natural reply.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A waiter comes to your table and asks: Is everything all right with your meal?",
+            "scene": "A waiter comes to your table and asks: 'Is everything all right with your meal?'",
             "options": [
-                "Mind your own business.",
-                "Who asked you?",
-                "Yes it's delicious thank you!",
-                "The food exists."
+                "Yes, it's delicious, thank you.",
+                "It's fine, I suppose.",
+                "Not really, actually.",
+                "Why do you ask?"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "Give honest positive feedback if the food and service are good.",
-            "explanation": "Yes it's delicious thank you! is the friendly natural reply when you are happy with your meal.",
+            "correctAnswerIndex": 0,
+            "hint": "A short, friendly answer is what the waiter expects here.",
+            "explanation": "A brief, positive answer is the natural response when a waiter checks on your meal.",
             "id": "sr_l35_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You read a news report that pollution levels in your city are getting worse every year.",
+            "scene": "You read a report saying pollution levels in your city are rising every year.",
             "options": [
-                "Amused",
-                "Excited",
+                "Delighted",
                 "Concerned",
-                "Bored"
+                "Proud",
+                "Sleepy"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "The health and environment of your community are at risk.",
-            "explanation": "Reading about environmental problems in your city makes you feel concerned.",
+            "correctAnswerIndex": 1,
+            "hint": "Something affecting everyone's health is getting worse.",
+            "explanation": "Learning about a growing problem that affects you and others makes you feel concerned.",
             "id": "sr_l35_q3"
         },
         {
             "instruction": "Choose the most natural reply.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Your boss emails you: Please have next week's report ready by Friday.",
+            "scene": "Your boss emails you: 'Please have next week's report ready by Friday.'",
             "options": [
-                "Why Friday?",
-                "I'll have it ready by Friday. Thank you.",
-                "What report?",
-                "Send it yourself."
+                "That seems impossible honestly.",
+                "I might get to it eventually.",
+                "Why does it need to be Friday?",
+                "Understood, I'll have it ready by then."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Acknowledge the instruction and confirm you will complete it.",
-            "explanation": "I'll have it ready by Friday. Thank you. is the professional response.",
+            "correctAnswerIndex": 3,
+            "hint": "Confirm clearly that you understand and will meet the deadline.",
+            "explanation": "A short, clear confirmation is the professional way to respond to a work request.",
             "id": "sr_l36_q1"
         },
         {
@@ -265,222 +265,222 @@
             "interactionType": "bubbles",
             "scene": "You score the winning goal in the final second of the match.",
             "options": [
-                "Embarrassed",
+                "Elated",
                 "Bored",
-                "Euphoric",
-                "Scared"
+                "Sad",
+                "Sleepy"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "The best possible thing has happened at the most dramatic moment!",
-            "explanation": "Scoring the winning goal at the last second creates euphoria.",
+            "correctAnswerIndex": 0,
+            "hint": "The whole game came down to one perfect moment, and you delivered.",
+            "explanation": "Scoring a winning goal at the last second makes you feel elated - extremely happy and excited.",
             "id": "sr_l36_q2"
         },
         {
             "instruction": "Choose the most natural reply.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A pharmacist says: Take these tablets twice a day always with food.",
+            "scene": "A pharmacist says: 'Take these tablets twice a day, always with food.'",
             "options": [
-                "Why would I do that?",
-                "Understood twice a day with food.",
-                "Give me more.",
-                "I do not like tablets."
+                "I'll probably just guess.",
+                "Do I really need food with it?",
+                "Got it, twice a day with food.",
+                "That sounds complicated."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Repeat the key instruction back to confirm you understood.",
-            "explanation": "Saying Understood twice a day with food confirms you understood the prescription.",
+            "correctAnswerIndex": 2,
+            "hint": "Repeat the key instructions back to show you understood them.",
+            "explanation": "Repeating instructions back is a clear, natural way to confirm you understood medical advice.",
             "id": "sr_l36_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
+            "instruction": "Choose the most natural reply.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You receive a letter saying your rent is being increased by thirty percent.",
+            "scene": "Your landlord tells you: 'I'm afraid your rent is going up by thirty percent next month.'",
             "options": [
-                "Delighted",
-                "Indifferent",
-                "Outraged",
-                "Proud"
+                "Sure, whatever you say.",
+                "That seems totally fine.",
+                "I never even read letters.",
+                "That's a big jump - can we discuss it?"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "A large and unfair financial demand has been placed on you without warning.",
-            "explanation": "A sudden large rent increase causes outrage.",
+            "correctAnswerIndex": 3,
+            "hint": "A big, unexpected increase is worth calmly questioning.",
+            "explanation": "Calmly asking to discuss a big change is a reasonable, natural response to unwelcome news like this.",
             "id": "sr_l37_q1"
         },
         {
             "instruction": "Choose the most natural reply.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A friend calls to say: I'm sorry I'm going to be about twenty minutes late.",
+            "scene": "A friend calls to say: 'I'm sorry, I'm going to be about twenty minutes late.'",
             "options": [
-                "That is unacceptable.",
-                "No problem! I'll wait here.",
-                "I am going home.",
-                "You always do this."
+                "That's really not okay.",
+                "No worries, take your time.",
+                "You said that last time too.",
+                "I guess I'll just wait then."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Your friend has communicated early and apologized which is considerate.",
-            "explanation": "No problem! I'll wait here is the relaxed understanding response.",
+            "hint": "A relaxed, understanding response keeps things friendly.",
+            "explanation": "'No worries, take your time' is a warm, natural way to respond to someone running a little late.",
             "id": "sr_l37_q2"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You find out you are the only person who wore formal clothes to the office on a casual Friday.",
+            "scene": "You realize you are the only person who wore formal clothes to a casual office party.",
             "options": [
-                "Comfortable",
-                "Mortified",
+                "Self-conscious",
+                "Delighted",
                 "Proud",
-                "Excited"
+                "Calm"
             ],
-            "correctAnswerIndex": 1,
-            "hint": "Everyone else in the office is dressed very differently from you.",
-            "explanation": "Being clearly overdressed for an occasion makes you feel mortified.",
+            "correctAnswerIndex": 0,
+            "hint": "You suddenly stand out from everyone else in the room.",
+            "explanation": "Realizing you do not match everyone else around you often makes you feel self-conscious.",
             "id": "sr_l37_q3"
         },
         {
             "instruction": "Choose the most natural reply.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A receptionist says: Please take a seat. Someone will be with you shortly.",
+            "scene": "A receptionist says: 'Please take a seat. Someone will be with you shortly.'",
             "options": [
-                "How long is shortly?",
-                "I prefer to stand.",
-                "Thank you.",
-                "This is inefficient."
+                "How long exactly is shortly?",
+                "I don't have time to wait.",
+                "Thank you, I'll wait right here.",
+                "Fine, but I'm in a rush."
             ],
             "correctAnswerIndex": 2,
-            "hint": "This is completely standard and polite waiting room language.",
-            "explanation": "Thank you is the polite and natural acknowledgment.",
+            "hint": "A simple, polite acknowledgment is all this moment needs.",
+            "explanation": "A short, polite acknowledgment is the natural way to respond when asked to wait.",
             "id": "sr_l38_q1"
         },
         {
             "instruction": "Choose the bubble that fits the mood.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You watch your toddler take their very first steps across the room.",
+            "scene": "You watch your toddler take their very first steps across the living room.",
             "options": [
-                "Indifferent",
+                "Overjoyed",
                 "Bored",
-                "Emotional",
-                "Annoyed"
+                "Angry",
+                "Sleepy"
             ],
-            "correctAnswerIndex": 2,
-            "hint": "This is a milestone moment in your child's development.",
-            "explanation": "Watching your child walk for the first time is a deeply emotional experience.",
+            "correctAnswerIndex": 0,
+            "hint": "A huge milestone is happening right in front of you.",
+            "explanation": "Watching a major milestone like this happen makes you feel overjoyed.",
             "id": "sr_l38_q2"
         },
         {
             "instruction": "Choose the most natural reply.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A taxi driver asks: Where to?",
+            "scene": "A taxi driver asks: 'Where to?'",
             "options": [
-                "I do not know yet.",
-                "None of your business.",
-                "To the airport please.",
-                "Drive and I'll tell you."
+                "Somewhere nice, surprise me.",
+                "Central Station, please.",
+                "I haven't decided yet.",
+                "Just drive, I'll tell you later."
             ],
-            "correctAnswerIndex": 2,
-            "hint": "The driver needs to know your destination immediately.",
-            "explanation": "To the airport please is the direct polite way to tell a taxi driver your destination.",
+            "correctAnswerIndex": 1,
+            "hint": "Give a clear, specific destination.",
+            "explanation": "Giving a clear, specific destination is the natural, efficient way to answer a taxi driver.",
             "id": "sr_l38_q3"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
+            "instruction": "Choose the most natural reply.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You successfully negotiate a lower price for a car after some firm but polite discussion.",
+            "scene": "A car salesperson says: 'That's honestly the lowest I can go on this price.'",
             "options": [
-                "Disappointed",
-                "Defeated",
-                "Triumphant",
-                "Scared"
+                "I doubt that's really final.",
+                "I'll need a few more days.",
+                "That works for me, let's do it.",
+                "Can you go any lower still?"
             ],
             "correctAnswerIndex": 2,
-            "hint": "You achieved a better deal than the original asking price.",
-            "explanation": "Successfully negotiating a better price makes you feel triumphant.",
+            "hint": "You have reached a fair deal, so it is time to agree.",
+            "explanation": "Clearly confirming the agreement is the natural next step once a fair price has been reached.",
             "id": "sr_l39_q1"
         },
         {
             "instruction": "Choose the most natural reply.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A colleague says: I think I made a mistake in the report. Could you check it?",
+            "scene": "A colleague says: 'I think I made a mistake in the report. Could you check it?'",
             "options": [
-                "That is your problem.",
-                "Of course I'll take a look.",
-                "I already told you.",
-                "I do not have time."
+                "That sounds like your problem.",
+                "I'm sure it's fine, don't worry.",
+                "Why didn't you check it yourself?",
+                "Of course, send it over and I'll take a look."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "A colleague is asking for teamwork and professional support.",
-            "explanation": "Of course I'll take a look shows willingness to help.",
+            "correctAnswerIndex": 3,
+            "hint": "Offer clear, willing help with a next step.",
+            "explanation": "Offering to help and naming a next step is the natural, supportive response to a colleague's request.",
             "id": "sr_l39_q2"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
+            "instruction": "Choose the most natural reply.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You open your work email to find two hundred unread messages.",
+            "scene": "Your colleague asks: 'How was your inbox after being away all week?'",
             "options": [
-                "Energized",
-                "Delighted",
-                "Overwhelmed",
-                "Proud"
+                "It was actually completely empty.",
+                "I didn't check it at all.",
+                "Honestly, completely overwhelming.",
+                "About the same as always."
             ],
             "correctAnswerIndex": 2,
-            "hint": "There is far far too much to deal with all at once.",
-            "explanation": "Seeing a massive inbox full of unread emails makes you feel overwhelmed.",
+            "hint": "Be honest about how a huge pile of unread messages actually feels.",
+            "explanation": "A genuine, direct answer is the most natural way to respond to a casual question like this.",
             "id": "sr_l39_q3"
         },
         {
             "instruction": "Choose the most natural reply.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "A shop assistant says: I'm sorry we're completely out of stock of that item.",
+            "scene": "A shop assistant says: 'I'm sorry, we're completely out of stock of that item.'",
             "options": [
-                "How dare you!",
-                "Oh that's a shame. Do you know when it will be back?",
-                "This shop is terrible.",
-                "I'll sue you."
+                "That's a shame - let me know when it's back.",
+                "That's honestly completely unacceptable.",
+                "You should really order a lot more then.",
+                "Fine, I'll just never shop here again."
             ],
-            "correctAnswerIndex": 1,
-            "hint": "The assistant has delivered this news politely and helpfully.",
-            "explanation": "Oh that's a shame. Do you know when it will be back? is the mature helpful response.",
+            "correctAnswerIndex": 0,
+            "hint": "Stay polite and ask about a simple next step.",
+            "explanation": "Staying polite and asking a practical follow-up question is the most natural response here.",
             "id": "sr_l40_q1"
         },
         {
-            "instruction": "Choose the bubble that fits the mood.",
+            "instruction": "Choose the most natural reply.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "You spend a relaxing afternoon reading your favorite book by the window on a quiet day.",
+            "scene": "You are relaxing with a book by the window when a friend texts: 'What are you up to?'",
             "options": [
-                "Bored",
-                "Stressed",
-                "Tense",
-                "Peaceful"
+                "Nothing, I'm completely bored.",
+                "Working, unfortunately.",
+                "I don't really know, actually.",
+                "Just relaxing with a good book."
             ],
             "correctAnswerIndex": 3,
-            "hint": "Everything around you is calm comfortable and pleasant.",
-            "explanation": "A quiet afternoon with your favorite book creates a feeling of peace.",
+            "hint": "A short, honest answer about your afternoon works well here.",
+            "explanation": "A simple, honest answer is the natural way to respond to a casual 'what are you up to' text.",
             "id": "sr_l40_q2"
         },
         {
             "instruction": "Choose the most natural reply.",
             "subtype": "situationalResponse",
             "interactionType": "bubbles",
-            "scene": "Your doctor says: You need to reduce your daily sugar intake.",
+            "scene": "Your doctor says: 'You need to reduce your daily sugar intake.'",
             "options": [
-                "I do not care.",
-                "Thank you I'll do my best to change my diet.",
-                "That's impossible.",
-                "No I won't."
+                "I don't really eat much sugar anyway.",
+                "Okay, do you have any tips for cutting back?",
+                "That sounds hard to do.",
+                "I'll think about it sometime."
             ],
             "correctAnswerIndex": 1,
-            "hint": "Your doctor is giving you important health advice.",
-            "explanation": "Thank you I'll do my best shows you take the medical advice seriously.",
+            "hint": "Show that you are taking the advice seriously and ask something useful.",
+            "explanation": "Asking a practical follow-up question shows you are engaging seriously with your doctor's advice.",
             "id": "sr_l40_q3"
         }
     ]

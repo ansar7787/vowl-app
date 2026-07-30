@@ -1,601 +1,727 @@
 {
-    "gameType": "sentenceOrderReading",
-    "batchIndex": 16,
-    "levels": "151-160",
-    "quests": [
-        {
-            "id": "RDG_SENTENCEORDERREADING_L151_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 151-1-2] The cameras finally captured the glowing hydrothermal vents on the seafloor.",
-                "[Index 151-1-0] Deep-sea explorers carefully calibrated their specialized sonar array.",
-                "[Index 151-1-1] They lowered the robotic submersible into the dark, crushing abyss."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                0
-            ],
-            "hint": "Identify chronological steps: sonar check, descending, and viewing results. (Diving calibration index 151-1)",
-            "explanation": "The logical order follows preparations, dive execution, and final discovery. [Verified by Abyssal Chronology Unit 151]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L151_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 151-2-1] Chemosynthetic bacteria absorbed the hydrogen sulfide to produce energy.",
-                "[Index 151-2-2] Anglerfish and crabs gathered around the vents to feed on the bacterial mats.",
-                "[Index 151-2-0] An underwater volcanic eruption released superheated chemical minerals."
-            ],
-            "correctOrder": [
-                2,
-                0,
-                1
-            ],
-            "hint": "Map the energy flow: mineral emission, microbial production, and animal grazing. (Diving calibration index 151-2)",
-            "explanation": "Hydrothermal ecosystems thrive in complete darkness powered entirely by bacteria. [Verified by Abyssal Chronology Unit 151]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L151_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 151-3-0] Giant kelp forests anchor their sturdy holdfasts to the rocky seafloor.",
-                "[Index 151-3-1] They grow rapidly upward to reach the sunlit canopy of the ocean surface.",
-                "[Index 151-3-2] Otters and small fish find food and shelter inside the thick green layers."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Focus on the physical structure: anchoring first, vertical growth next, and habitat use last. (Diving calibration index 151-3)",
-            "explanation": "Kelps must anchor and grow before marine creatures can utilize them for shelter. [Verified by Abyssal Chronology Unit 151]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L152_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 152-1-1] It pushes the water out through its comb-like baleen plates.",
-                "[Index 152-1-0] The blue whale opens its massive mouth to engulf a dense swarm of krill.",
-                "[Index 152-1-2] The trapped krill are then swallowed whole into its colossal stomach."
-            ],
-            "correctOrder": [
-                1,
-                0,
-                2
-            ],
-            "hint": "Observe the biological feeding steps: engulfing, filtering, and swallowing. (Diving calibration index 152-1)",
-            "explanation": "Baleen whales sieve food by trapping prey inside their filtering plates before swallowing. [Verified by Abyssal Chronology Unit 152]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L152_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 152-2-0] A deep-sea submersible begins its slow descent into the twilight zone.",
-                "[Index 152-2-3] Bizarre glowing siphonophores suddenly become visible in the beam.",
-                "[Index 152-2-1] Sunlight rapidly fades until absolute blackness envelops the vessel.",
-                "[Index 152-2-2] The pilot switches on the powerful external LED floodlights."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3,
-                1
-            ],
-            "hint": "Sequence the dive stages: beginning descent, entering darkness, turning on lights, and spotting organisms. (Diving calibration index 152-2)",
-            "explanation": "Exploring the deep ocean requires transitioning through layers of decreasing light into complete darkness. [Verified by Abyssal Chronology Unit 152]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L152_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 152-3-0] Subduction zones force ocean tectonic plates deep into the Earth's hot mantle.",
-                "[Index 152-3-1] The extreme heat melts the crust into high-pressure liquid magma.",
-                "[Index 152-3-3] A new submarine volcano erupts, creating fresh volcanic basalt rock.",
-                "[Index 152-3-2] The magma rises upward through cracks in the seafloor crust."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3,
-                2
-            ],
-            "hint": "Follow the geological cycle: subduction, melting, rising magma, and underwater eruption. (Diving calibration index 152-3)",
-            "explanation": "Tectonic movements drive underwater volcanism by generating and venting magma. [Verified by Abyssal Chronology Unit 152]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L153_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 153-1-3] Dozens of rare invertebrate species move in to form a highly diverse community.",
-                "[Index 153-1-1] They deposit hard skeleton structures over centuries of slow growth.",
-                "[Index 153-1-2] These skeletons gradually fuse to form massive deep-sea coral reefs.",
-                "[Index 153-1-0] Deep-sea coral polyps extract calcium carbonate from the cold seawater."
-            ],
-            "correctOrder": [
-                3,
-                1,
-                2,
-                0
-            ],
-            "hint": "Order the growth stages: extraction, skeleton deposit, reef formation, and species colonization. (Diving calibration index 153-1)",
-            "explanation": "Corals must build their physical skeletons over centuries before they can support rich biodiversity. [Verified by Abyssal Chronology Unit 153]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L153_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 153-2-1] It eventually settles on the barren, muddy seafloor of the abyssal plain.",
-                "[Index 153-2-0] A dead whale carcass sinks slowly through miles of open ocean water.",
-                "[Index 153-2-2] Scavengers like hagfish quickly clean off the soft flesh and tissues.",
-                "[Index 153-2-3] Specialized bone-eating worms colonize the remaining skeletal frame.",
-                "[Index 153-2-4] Finally, microbial mats digest the remaining fats inside the bones over decades."
-            ],
-            "correctOrder": [
-                1,
-                0,
-                2,
-                3,
-                4
-            ],
-            "hint": "Sequence the decay timeline: sinking, settling, scavenger feeding, bone worms, and microbial digestion. (Diving calibration index 153-2)",
-            "explanation": "A whale fall provides a rich, progressive oasis of nutrients to deep-sea creatures over decades. [Verified by Abyssal Chronology Unit 153]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L153_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 153-3-0] Severe atmospheric winds blow surface waters away from the coast.",
-                "[Index 153-3-2] Cold, nutrient-rich water rises from the deep ocean to fill the void.",
-                "[Index 153-3-1] This creates a low-pressure void near the shoreline.",
-                "[Index 153-3-3] Phytoplankton bloom massively due to the sudden abundance of nutrients.",
-                "[Index 153-3-4] Large schools of fish and marine birds gather to feast on the plankton."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                1,
-                3,
-                4
-            ],
-            "hint": "Order the coastal upwelling process: wind blowing, void creation, deep water rising, plankton bloom, and predator gathering. (Diving calibration index 153-3)",
-            "explanation": "Wind-driven upwelling transports deep nutrients to the surface, sparking immense marine productivity. [Verified by Abyssal Chronology Unit 153]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L154_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 154-1-1] These giant axons allow electrical signals to travel at extreme velocities.",
-                "[Index 154-1-3] Water is violently expelled through the siphon to generate rocket propulsion.",
-                "[Index 154-1-4] The squid successfully escapes the jaws of a diving sperm whale.",
-                "[Index 154-1-0] Deep-sea squids possess giant axon nerves that run through their bodies.",
-                "[Index 154-1-2] The rapid signals trigger instantaneous muscle contractions in the mantle."
-            ],
-            "correctOrder": [
-                3,
-                0,
-                4,
-                1,
-                2
-            ],
-            "hint": "Map the anatomical escape reflex: nerve setup, signal travel, muscle contraction, siphon jetting, and escaping predators. (Diving calibration index 154-1)",
-            "explanation": "Specialized giant axons facilitate ultra-fast neural transmissions for sudden, life-saving jet propulsion. [Verified by Abyssal Chronology Unit 154]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L154_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 154-2-0] Deep-sea explorers carefully calibrated their specialized sonar array.",
-                "[Index 154-2-2] The cameras finally captured the glowing hydrothermal vents on the seafloor.",
-                "[Index 154-2-1] They lowered the robotic submersible into the dark, crushing abyss."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                1
-            ],
-            "hint": "Identify chronological steps: sonar check, descending, and viewing results. (Diving calibration index 154-2)",
-            "explanation": "The logical order follows preparations, dive execution, and final discovery. [Verified by Abyssal Chronology Unit 154]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L154_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 154-3-0] An underwater volcanic eruption released superheated chemical minerals.",
-                "[Index 154-3-2] Anglerfish and crabs gathered around the vents to feed on the bacterial mats.",
-                "[Index 154-3-1] Chemosynthetic bacteria absorbed the hydrogen sulfide to produce energy."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                1
-            ],
-            "hint": "Map the energy flow: mineral emission, microbial production, and animal grazing. (Diving calibration index 154-3)",
-            "explanation": "Hydrothermal ecosystems thrive in complete darkness powered entirely by bacteria. [Verified by Abyssal Chronology Unit 154]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L155_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 155-1-2] Otters and small fish find food and shelter inside the thick green layers.",
-                "[Index 155-1-1] They grow rapidly upward to reach the sunlit canopy of the ocean surface.",
-                "[Index 155-1-0] Giant kelp forests anchor their sturdy holdfasts to the rocky seafloor."
-            ],
-            "correctOrder": [
-                2,
-                1,
-                0
-            ],
-            "hint": "Focus on the physical structure: anchoring first, vertical growth next, and habitat use last. (Diving calibration index 155-1)",
-            "explanation": "Kelps must anchor and grow before marine creatures can utilize them for shelter. [Verified by Abyssal Chronology Unit 155]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L155_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 155-2-0] The blue whale opens its massive mouth to engulf a dense swarm of krill.",
-                "[Index 155-2-2] The trapped krill are then swallowed whole into its colossal stomach.",
-                "[Index 155-2-1] It pushes the water out through its comb-like baleen plates."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                1
-            ],
-            "hint": "Observe the biological feeding steps: engulfing, filtering, and swallowing. (Diving calibration index 155-2)",
-            "explanation": "Baleen whales sieve food by trapping prey inside their filtering plates before swallowing. [Verified by Abyssal Chronology Unit 155]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L155_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 155-3-3] Bizarre glowing siphonophores suddenly become visible in the beam.",
-                "[Index 155-3-1] Sunlight rapidly fades until absolute blackness envelops the vessel.",
-                "[Index 155-3-2] The pilot switches on the powerful external LED floodlights.",
-                "[Index 155-3-0] A deep-sea submersible begins its slow descent into the twilight zone."
-            ],
-            "correctOrder": [
-                3,
-                1,
-                2,
-                0
-            ],
-            "hint": "Sequence the dive stages: beginning descent, entering darkness, turning on lights, and spotting organisms. (Diving calibration index 155-3)",
-            "explanation": "Exploring the deep ocean requires transitioning through layers of decreasing light into complete darkness. [Verified by Abyssal Chronology Unit 155]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L156_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 156-1-3] A new submarine volcano erupts, creating fresh volcanic basalt rock.",
-                "[Index 156-1-0] Subduction zones force ocean tectonic plates deep into the Earth's hot mantle.",
-                "[Index 156-1-1] The extreme heat melts the crust into high-pressure liquid magma.",
-                "[Index 156-1-2] The magma rises upward through cracks in the seafloor crust."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3,
-                0
-            ],
-            "hint": "Follow the geological cycle: subduction, melting, rising magma, and underwater eruption. (Diving calibration index 156-1)",
-            "explanation": "Tectonic movements drive underwater volcanism by generating and venting magma. [Verified by Abyssal Chronology Unit 156]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L156_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 156-2-3] Dozens of rare invertebrate species move in to form a highly diverse community.",
-                "[Index 156-2-1] They deposit hard skeleton structures over centuries of slow growth.",
-                "[Index 156-2-0] Deep-sea coral polyps extract calcium carbonate from the cold seawater.",
-                "[Index 156-2-2] These skeletons gradually fuse to form massive deep-sea coral reefs."
-            ],
-            "correctOrder": [
-                2,
-                1,
-                3,
-                0
-            ],
-            "hint": "Order the growth stages: extraction, skeleton deposit, reef formation, and species colonization. (Diving calibration index 156-2)",
-            "explanation": "Corals must build their physical skeletons over centuries before they can support rich biodiversity. [Verified by Abyssal Chronology Unit 156]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L156_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 156-3-2] Scavengers like hagfish quickly clean off the soft flesh and tissues.",
-                "[Index 156-3-4] Finally, microbial mats digest the remaining fats inside the bones over decades.",
-                "[Index 156-3-1] It eventually settles on the barren, muddy seafloor of the abyssal plain.",
-                "[Index 156-3-0] A dead whale carcass sinks slowly through miles of open ocean water.",
-                "[Index 156-3-3] Specialized bone-eating worms colonize the remaining skeletal frame."
-            ],
-            "correctOrder": [
-                3,
-                2,
-                0,
-                4,
-                1
-            ],
-            "hint": "Sequence the decay timeline: sinking, settling, scavenger feeding, bone worms, and microbial digestion. (Diving calibration index 156-3)",
-            "explanation": "A whale fall provides a rich, progressive oasis of nutrients to deep-sea creatures over decades. [Verified by Abyssal Chronology Unit 156]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L157_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 157-1-4] Large schools of fish and marine birds gather to feast on the plankton.",
-                "[Index 157-1-3] Phytoplankton bloom massively due to the sudden abundance of nutrients.",
-                "[Index 157-1-2] Cold, nutrient-rich water rises from the deep ocean to fill the void.",
-                "[Index 157-1-0] Severe atmospheric winds blow surface waters away from the coast.",
-                "[Index 157-1-1] This creates a low-pressure void near the shoreline."
-            ],
-            "correctOrder": [
-                3,
-                4,
-                2,
-                1,
-                0
-            ],
-            "hint": "Order the coastal upwelling process: wind blowing, void creation, deep water rising, plankton bloom, and predator gathering. (Diving calibration index 157-1)",
-            "explanation": "Wind-driven upwelling transports deep nutrients to the surface, sparking immense marine productivity. [Verified by Abyssal Chronology Unit 157]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L157_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 157-2-3] Water is violently expelled through the siphon to generate rocket propulsion.",
-                "[Index 157-2-0] Deep-sea squids possess giant axon nerves that run through their bodies.",
-                "[Index 157-2-2] The rapid signals trigger instantaneous muscle contractions in the mantle.",
-                "[Index 157-2-1] These giant axons allow electrical signals to travel at extreme velocities.",
-                "[Index 157-2-4] The squid successfully escapes the jaws of a diving sperm whale."
-            ],
-            "correctOrder": [
-                1,
-                3,
-                2,
-                0,
-                4
-            ],
-            "hint": "Map the anatomical escape reflex: nerve setup, signal travel, muscle contraction, siphon jetting, and escaping predators. (Diving calibration index 157-2)",
-            "explanation": "Specialized giant axons facilitate ultra-fast neural transmissions for sudden, life-saving jet propulsion. [Verified by Abyssal Chronology Unit 157]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L157_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 157-3-0] Deep-sea explorers carefully calibrated their specialized sonar array.",
-                "[Index 157-3-2] The cameras finally captured the glowing hydrothermal vents on the seafloor.",
-                "[Index 157-3-1] They lowered the robotic submersible into the dark, crushing abyss."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                1
-            ],
-            "hint": "Identify chronological steps: sonar check, descending, and viewing results. (Diving calibration index 157-3)",
-            "explanation": "The logical order follows preparations, dive execution, and final discovery. [Verified by Abyssal Chronology Unit 157]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L158_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 158-1-1] Chemosynthetic bacteria absorbed the hydrogen sulfide to produce energy.",
-                "[Index 158-1-2] Anglerfish and crabs gathered around the vents to feed on the bacterial mats.",
-                "[Index 158-1-0] An underwater volcanic eruption released superheated chemical minerals."
-            ],
-            "correctOrder": [
-                2,
-                0,
-                1
-            ],
-            "hint": "Map the energy flow: mineral emission, microbial production, and animal grazing. (Diving calibration index 158-1)",
-            "explanation": "Hydrothermal ecosystems thrive in complete darkness powered entirely by bacteria. [Verified by Abyssal Chronology Unit 158]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L158_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 158-2-0] Giant kelp forests anchor their sturdy holdfasts to the rocky seafloor.",
-                "[Index 158-2-1] They grow rapidly upward to reach the sunlit canopy of the ocean surface.",
-                "[Index 158-2-2] Otters and small fish find food and shelter inside the thick green layers."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                2
-            ],
-            "hint": "Focus on the physical structure: anchoring first, vertical growth next, and habitat use last. (Diving calibration index 158-2)",
-            "explanation": "Kelps must anchor and grow before marine creatures can utilize them for shelter. [Verified by Abyssal Chronology Unit 158]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L158_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 158-3-2] The trapped krill are then swallowed whole into its colossal stomach.",
-                "[Index 158-3-1] It pushes the water out through its comb-like baleen plates.",
-                "[Index 158-3-0] The blue whale opens its massive mouth to engulf a dense swarm of krill."
-            ],
-            "correctOrder": [
-                2,
-                1,
-                0
-            ],
-            "hint": "Observe the biological feeding steps: engulfing, filtering, and swallowing. (Diving calibration index 158-3)",
-            "explanation": "Baleen whales sieve food by trapping prey inside their filtering plates before swallowing. [Verified by Abyssal Chronology Unit 158]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L159_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 159-1-1] Sunlight rapidly fades until absolute blackness envelops the vessel.",
-                "[Index 159-1-2] The pilot switches on the powerful external LED floodlights.",
-                "[Index 159-1-0] A deep-sea submersible begins its slow descent into the twilight zone.",
-                "[Index 159-1-3] Bizarre glowing siphonophores suddenly become visible in the beam."
-            ],
-            "correctOrder": [
-                2,
-                0,
-                1,
-                3
-            ],
-            "hint": "Sequence the dive stages: beginning descent, entering darkness, turning on lights, and spotting organisms. (Diving calibration index 159-1)",
-            "explanation": "Exploring the deep ocean requires transitioning through layers of decreasing light into complete darkness. [Verified by Abyssal Chronology Unit 159]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L159_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 159-2-3] A new submarine volcano erupts, creating fresh volcanic basalt rock.",
-                "[Index 159-2-1] The extreme heat melts the crust into high-pressure liquid magma.",
-                "[Index 159-2-2] The magma rises upward through cracks in the seafloor crust.",
-                "[Index 159-2-0] Subduction zones force ocean tectonic plates deep into the Earth's hot mantle."
-            ],
-            "correctOrder": [
-                3,
-                1,
-                2,
-                0
-            ],
-            "hint": "Follow the geological cycle: subduction, melting, rising magma, and underwater eruption. (Diving calibration index 159-2)",
-            "explanation": "Tectonic movements drive underwater volcanism by generating and venting magma. [Verified by Abyssal Chronology Unit 159]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L159_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 159-3-0] Deep-sea coral polyps extract calcium carbonate from the cold seawater.",
-                "[Index 159-3-2] These skeletons gradually fuse to form massive deep-sea coral reefs.",
-                "[Index 159-3-3] Dozens of rare invertebrate species move in to form a highly diverse community.",
-                "[Index 159-3-1] They deposit hard skeleton structures over centuries of slow growth."
-            ],
-            "correctOrder": [
-                0,
-                3,
-                1,
-                2
-            ],
-            "hint": "Order the growth stages: extraction, skeleton deposit, reef formation, and species colonization. (Diving calibration index 159-3)",
-            "explanation": "Corals must build their physical skeletons over centuries before they can support rich biodiversity. [Verified by Abyssal Chronology Unit 159]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L160_Q1",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 160-1-2] Scavengers like hagfish quickly clean off the soft flesh and tissues.",
-                "[Index 160-1-1] It eventually settles on the barren, muddy seafloor of the abyssal plain.",
-                "[Index 160-1-4] Finally, microbial mats digest the remaining fats inside the bones over decades.",
-                "[Index 160-1-3] Specialized bone-eating worms colonize the remaining skeletal frame.",
-                "[Index 160-1-0] A dead whale carcass sinks slowly through miles of open ocean water."
-            ],
-            "correctOrder": [
-                4,
-                1,
-                0,
-                3,
-                2
-            ],
-            "hint": "Sequence the decay timeline: sinking, settling, scavenger feeding, bone worms, and microbial digestion. (Diving calibration index 160-1)",
-            "explanation": "A whale fall provides a rich, progressive oasis of nutrients to deep-sea creatures over decades. [Verified by Abyssal Chronology Unit 160]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L160_Q2",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 160-2-2] Cold, nutrient-rich water rises from the deep ocean to fill the void.",
-                "[Index 160-2-1] This creates a low-pressure void near the shoreline.",
-                "[Index 160-2-4] Large schools of fish and marine birds gather to feast on the plankton.",
-                "[Index 160-2-3] Phytoplankton bloom massively due to the sudden abundance of nutrients.",
-                "[Index 160-2-0] Severe atmospheric winds blow surface waters away from the coast."
-            ],
-            "correctOrder": [
-                4,
-                1,
-                0,
-                3,
-                2
-            ],
-            "hint": "Order the coastal upwelling process: wind blowing, void creation, deep water rising, plankton bloom, and predator gathering. (Diving calibration index 160-2)",
-            "explanation": "Wind-driven upwelling transports deep nutrients to the surface, sparking immense marine productivity. [Verified by Abyssal Chronology Unit 160]."
-        },
-        {
-            "id": "RDG_SENTENCEORDERREADING_L160_Q3",
-            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-            "subtype": "sentenceOrderReading",
-            "interactionType": "Block Stack",
-            "shuffledSentences": [
-                "[Index 160-3-4] The squid successfully escapes the jaws of a diving sperm whale.",
-                "[Index 160-3-3] Water is violently expelled through the siphon to generate rocket propulsion.",
-                "[Index 160-3-2] The rapid signals trigger instantaneous muscle contractions in the mantle.",
-                "[Index 160-3-0] Deep-sea squids possess giant axon nerves that run through their bodies.",
-                "[Index 160-3-1] These giant axons allow electrical signals to travel at extreme velocities."
-            ],
-            "correctOrder": [
-                3,
-                4,
-                2,
-                1,
-                0
-            ],
-            "hint": "Map the anatomical escape reflex: nerve setup, signal travel, muscle contraction, siphon jetting, and escaping predators. (Diving calibration index 160-3)",
-            "explanation": "Specialized giant axons facilitate ultra-fast neural transmissions for sudden, life-saving jet propulsion. [Verified by Abyssal Chronology Unit 160]."
-        }
-    ]
+  "gameType": "sentenceOrderReading",
+  "batchIndex": 16,
+  "levels": "151-160",
+  "quests": [
+    {
+      "id": "RDG_SENTENCEORDERREADING_L151_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "A fast-growing technology company struggled to retain skilled engineers being aggressively recruited by larger competitors.",
+        "Some investors expressed concern that the increased equity allocation would dilute their own ownership stakes.",
+        "The company countered that losing experienced engineers would likely cost the business more in the long run.",
+        "Voluntary turnover among engineering staff dropped substantially within two quarters of the new policy taking effect.",
+        "Investors who had initially objected later acknowledged the retention gains had justified the dilution.",
+        "Leadership introduced a revised compensation package that included a meaningfully larger equity stake for early employees."
+      ],
+      "correctOrder": [
+        0,
+        5,
+        1,
+        2,
+        3,
+        4
+      ],
+      "hint": "A concern raised by one group usually appears before the counterargument offered in response to it.",
+      "explanation": "This paragraph follows an internal business disagreement resolved by results: the problem, the policy response, a stakeholder concern, the company's counterargument, the measured outcome, and the eventual agreement it produced."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L151_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Several major insurers proactively revised their coverage policies before facing any formal audit.",
+        "Regulations requiring insurers to cover mental health treatment on par with physical health treatment had existed for years but were inconsistently enforced.",
+        "Patients reported easier access to ongoing mental health care within the following two years.",
+        "Regulators announced stronger audits and meaningful financial penalties for insurers found in violation.",
+        "Advocates note that enforcement, not just the original law, ultimately proved decisive in producing real change.",
+        "Investigators found that many insurers still imposed stricter limits on mental health visits than the law technically allowed."
+      ],
+      "correctOrder": [
+        1,
+        5,
+        3,
+        0,
+        2,
+        4
+      ],
+      "hint": "A law existing on paper usually precedes evidence that it wasn't being properly followed, which then precedes stronger enforcement.",
+      "explanation": "This paragraph follows a policy becoming effective through enforcement: the existing but weak law, the violation uncovered, the stronger enforcement announced, a proactive industry response, the improved outcome, and the lesson drawn about enforcement's role."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L151_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Companies were also required to relocate improperly parked scooters within a set number of hours.",
+        "The regulatory framework is now referenced by other cities introducing similar micromobility programs of their own.",
+        "Electric scooters became widely available in one city almost overnight, with minimal existing regulation in place.",
+        "Sidewalk obstruction complaints declined substantially once the new requirements took effect.",
+        "Pedestrians and city officials raised concerns about scooters left haphazardly blocking sidewalks and building entrances.",
+        "The city introduced permit requirements limiting the total number of scooters any single company could operate."
+      ],
+      "correctOrder": [
+        2,
+        4,
+        5,
+        0,
+        3,
+        1
+      ],
+      "hint": "A described problem usually has to be raised before regulators respond with a specific requirement.",
+      "explanation": "This paragraph follows a city regulating a new technology responsively: the sudden arrival, the problem it caused, the regulatory response, an additional requirement, the measured improvement, and its influence elsewhere."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L152_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "A country facing a persistent trade imbalance allowed its currency's value to decline relative to other major currencies.",
+        "Policymakers faced pressure to balance the benefits to exporters against the burden placed on everyday consumers.",
+        "The weaker currency made the country's exported goods considerably cheaper for foreign buyers.",
+        "Imported goods, meanwhile, became more expensive for domestic consumers, contributing to rising local prices.",
+        "The government ultimately paired the currency policy with targeted subsidies on a small number of essential imported goods.",
+        "Export volumes rose noticeably over the following year as international demand increased."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        5,
+        3,
+        1,
+        4
+      ],
+      "hint": "A policy usually precedes its intended effect, and an intended effect on one group usually comes with a side effect on another.",
+      "explanation": "This paragraph explains an economic policy and its trade-offs: the decision, its intended benefit, the resulting export growth, an unintended cost, the resulting pressure, and the compromise policymakers ultimately adopted."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L152_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Citizens without reliable internet access or digital literacy skills found themselves newly excluded from services they previously accessed easily.",
+        "Service processing times improved overall, though officials acknowledge the transition revealed gaps the initial plan hadn't anticipated.",
+        "Officials argued the system would reduce fraud and significantly speed up processing times for citizens.",
+        "Advocacy groups pressed the government to maintain accessible non-digital alternatives alongside the new system.",
+        "The government agreed to fund community centers offering assisted digital access for residents who needed it.",
+        "Government agencies in one country moved many essential services onto a unified digital identity platform."
+      ],
+      "correctOrder": [
+        5,
+        2,
+        0,
+        3,
+        4,
+        1
+      ],
+      "hint": "A benefit is usually described before the unintended consequence that complicates it, and advocacy typically follows a revealed problem.",
+      "explanation": "This paragraph follows a digital policy through its unintended consequences: the change, its intended benefit, the exclusion it caused, the resulting advocacy, the government's response, and an honest acknowledgment of what the plan had missed."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L152_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "A powerful earthquake struck a densely populated region, overwhelming local emergency services within hours.",
+        "Rescue teams from multiple nations coordinated their efforts through a shared international relief framework.",
+        "Personal accounts from responders on the ground later described a sense of shared purpose that transcended political tension.",
+        "Neighboring countries, despite years of strained diplomatic relations, offered emergency search-and-rescue assistance.",
+        "Analysts continue to study the episode as an example of how humanitarian cooperation can shift long-standing political relationships.",
+        "Diplomatic relations between several of the involved countries measurably improved in the years following the disaster."
+      ],
+      "correctOrder": [
+        0,
+        3,
+        1,
+        2,
+        5,
+        4
+      ],
+      "hint": "A disaster usually precedes any offer of assistance, and that assistance usually precedes any longer-term political effect it might have.",
+      "explanation": "This paragraph follows a disaster response with unexpected diplomatic consequences: the disaster, the assistance offered, the coordinated response, a personal reflection on it, the resulting improved relations, and its broader significance to analysts."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L153_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "A software company that had traditionally sold one-time licenses considered shifting to a recurring subscription model instead.",
+        "The transition, initially controversial among the company's most loyal customers, is now considered essential to its long-term survival.",
+        "Revenue stability improved considerably once subscription income became predictable rather than dependent on new one-time sales.",
+        "Existing customers who had purchased lifetime licenses expressed frustration at being asked to pay repeatedly going forward.",
+        "The company addressed this by grandfathering existing license holders into free, ongoing access under the old terms.",
+        "New customers under the subscription model gained access to continuous updates that license holders did not receive."
+      ],
+      "correctOrder": [
+        0,
+        3,
+        4,
+        5,
+        2,
+        1
+      ],
+      "hint": "A described frustration usually precedes the specific accommodation made to address it.",
+      "explanation": "This paragraph follows a difficult business model transition managed carefully: the proposed change, customer frustration, the accommodation made, a resulting distinction between customer groups, the financial benefit, and the retrospective judgment of the change's necessity."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L153_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Participants who multitasked between the two activities made significantly more errors on both tasks combined.",
+        "Researchers asked participants to complete a focused task either without interruption or while switching between two tasks.",
+        "Some organizations have introduced designated interruption-free periods based directly on this body of research.",
+        "This gap between perceived and actual performance surprised even the researchers conducting the study.",
+        "Notably, most multitasking participants believed they had performed just as well as those working without interruption.",
+        "The findings have since informed workplace guidance discouraging task-switching during activities requiring sustained precision."
+      ],
+      "correctOrder": [
+        1,
+        0,
+        4,
+        3,
+        5,
+        2
+      ],
+      "hint": "A described experimental result usually precedes a further, related finding, which then precedes its practical application.",
+      "explanation": "This paragraph follows a research study to its practical influence: the method, the primary result, a surprising secondary finding, its significance, the resulting guidance, and its adoption in real workplaces."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L153_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Developers countered that the city's severe housing shortage justified denser construction even near historic areas.",
+        "The building has since been completed, and public reaction has grown considerably more favorable than either side initially expected.",
+        "Both preservationists and developers expressed only partial satisfaction with the resulting compromise.",
+        "A proposal to build a modern high-rise adjacent to a historic downtown district sparked significant public debate.",
+        "A city planning committee eventually approved a modified design with a reduced height and materials matching nearby buildings.",
+        "Preservationists argued the building's height and style would clash sharply with the district's architectural character."
+      ],
+      "correctOrder": [
+        3,
+        5,
+        0,
+        4,
+        2,
+        1
+      ],
+      "hint": "Two opposing arguments are usually presented in full before the compromise that eventually resolves them.",
+      "explanation": "This paragraph follows a zoning dispute resolved by compromise: the proposal, one side's objection, the other side's justification, the modified approval, mixed initial reactions, and the more favorable reception that followed completion."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L154_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Commercial property owners saw vacancy rates climb to levels not seen in decades.",
+        "Outdated plumbing and window configurations made many buildings more costly to convert than initial estimates suggested.",
+        "Cities facing housing shortages nonetheless began offering tax incentives to offset these conversion costs.",
+        "Early completed conversions have renewed interest in the strategy as a partial solution to two separate urban problems at once.",
+        "The sustained rise in remote and hybrid work arrangements left many downtown office buildings significantly underused.",
+        "Some owners began converting portions of underused office buildings into residential apartments instead."
+      ],
+      "correctOrder": [
+        4,
+        0,
+        5,
+        1,
+        2,
+        3
+      ],
+      "hint": "A described trend usually precedes its consequence, and a consequence usually precedes the attempted solution addressing it.",
+      "explanation": "This paragraph follows an economic trend generating an unexpected solution: the trend, its consequence, an initial response, an unexpected obstacle, the incentive introduced to overcome it, and the renewed interest that followed."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L154_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Lawmakers proposed legislation setting a maximum number of patients any single nurse could be assigned at once.",
+        "Nurse turnover rates declined measurably within two years of the law's implementation.",
+        "The final legislation included an exception allowing temporary ratio adjustments during officially declared emergencies.",
+        "Hospital administrators warned that strict ratios could force reduced admissions during periods of high demand.",
+        "Nurses in one state reported that persistently high patient-to-nurse ratios were compromising both care quality and their own wellbeing.",
+        "Researchers are still studying whether patient outcomes improved as significantly as the law's supporters had originally predicted."
+      ],
+      "correctOrder": [
+        4,
+        0,
+        3,
+        2,
+        1,
+        5
+      ],
+      "hint": "A described problem usually precedes the proposed legislation, and industry concern about that legislation usually precedes any compromise added to it.",
+      "explanation": "This paragraph follows healthcare legislation from problem to open question: the reported problem, the proposal, industry concern, the compromise included, one measured outcome, and a question researchers are still examining."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L154_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Media literacy educators now emphasize teaching people to recognize personalization as a first step toward addressing the issue.",
+        "Researchers have described this phenomenon as a potential contributor to increasingly polarized public discourse.",
+        "Some platforms introduced optional settings allowing users to view a less personalized, more neutral version of results.",
+        "Search engines and social platforms often personalize results based on a user's previous browsing behavior.",
+        "Uptake of these optional settings remained low, since most users were unaware the feature existed.",
+        "Over time, this personalization can mean that two people searching the same topic see meaningfully different results."
+      ],
+      "correctOrder": [
+        3,
+        5,
+        1,
+        2,
+        4,
+        0
+      ],
+      "hint": "A described mechanism usually precedes its consequence, and a proposed fix usually precedes an assessment of how well it actually worked.",
+      "explanation": "This paragraph explains a technological phenomenon and its imperfect remedy: the mechanism, its consequence, the concern it raised, the remedy offered, its limited adoption, and the educational response that followed."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L155_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Early market research revealed that local consumers strongly preferred noticeably different design aesthetics and functionality.",
+        "The company now conducts extensive local market research before every subsequent international expansion.",
+        "The company redesigned select product features specifically to align with the preferences uncovered in that research.",
+        "Sales in the redesigned market ultimately outperformed the company's initial projections by a wide margin.",
+        "This localization effort required delaying the market entry by nearly a full year beyond the original timeline.",
+        "A consumer electronics company preparing to enter a new international market assumed its existing product lineup would translate directly."
+      ],
+      "correctOrder": [
+        5,
+        0,
+        2,
+        4,
+        3,
+        1
+      ],
+      "hint": "An initial assumption usually precedes the research that challenges it, and research findings usually precede the redesign built around them.",
+      "explanation": "This paragraph follows a company learning to localize successfully: the assumption, the research that challenged it, the redesign, its cost in time, the resulting success, and the lasting change to company practice."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L155_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Residents with regular access to nearby parks reported measurably lower average stress levels than those without.",
+        "Researchers caution that access alone may matter less than how safe and welcoming that green space actually feels.",
+        "Researchers compared self-reported stress levels among urban residents living near varying amounts of accessible green space.",
+        "The association held even after researchers statistically accounted for differences in income and housing type.",
+        "This suggested the relationship was not simply explained by wealthier residents living near nicer parks.",
+        "City planners in several regions have since prioritized green space development in historically underserved neighborhoods."
+      ],
+      "correctOrder": [
+        2,
+        0,
+        3,
+        4,
+        5,
+        1
+      ],
+      "hint": "A general finding usually precedes the more rigorous check that confirms it wasn't just a coincidence.",
+      "explanation": "This paragraph follows a research finding toward a nuanced application: the comparison, the finding, a rigorous check on that finding, what the check confirmed, the resulting policy, and an important qualification researchers still emphasize."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L155_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Engineers proposed a large seawall as the most straightforward way to hold back rising water.",
+        "Environmental scientists countered that a seawall alone might simply redirect flooding toward neighboring, unprotected areas.",
+        "Coastal cities facing similar threats have since sent delegations to study the city's combined approach directly.",
+        "Rising sea levels increasingly threatened a coastal city's low-lying waterfront neighborhoods.",
+        "The city instead adopted a combined approach using wetland restoration alongside more limited barrier construction.",
+        "The restored wetlands absorbed floodwater during a major storm the following year, reducing damage significantly."
+      ],
+      "correctOrder": [
+        3,
+        0,
+        1,
+        4,
+        5,
+        2
+      ],
+      "hint": "One proposed solution usually precedes a counterargument, which then usually precedes the more balanced approach that follows.",
+      "explanation": "This paragraph follows an environmental engineering decision shaped by debate: the threat, one proposed solution, a counterargument, the balanced approach chosen, its real-world test, and the interest it has since generated elsewhere."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L156_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "The review ultimately identified specific gaps that had allowed complaints to go unaddressed for far too long.",
+        "The company implemented every recommendation from the review within the following six months.",
+        "They announced the executive's immediate departure along with an independent review of the company's internal reporting systems.",
+        "A senior executive's personal misconduct became public, threatening to damage the company's broader reputation.",
+        "Employee trust surveys conducted a year later showed measurable improvement compared to before the scandal broke.",
+        "The board faced pressure to respond quickly, before public criticism intensified further."
+      ],
+      "correctOrder": [
+        3,
+        5,
+        2,
+        0,
+        1,
+        4
+      ],
+      "hint": "Public pressure usually precedes an official response, and a review's findings usually precede the specific changes made because of them.",
+      "explanation": "This paragraph follows a corporate crisis managed through structural accountability: the scandal, the pressure it created, the response announced, the review's findings, the resulting changes, and the measured recovery in trust."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L156_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Public health researchers credit the increased testing with earlier detection of several preventable hereditary conditions.",
+        "Lawmakers in several countries passed legislation explicitly prohibiting insurers from using genetic test results in coverage decisions.",
+        "Testing rates rose noticeably in the years following these legal protections.",
+        "Some gaps in the legal protections remain, particularly regarding long-term care and life insurance policies.",
+        "Advances in genetic testing made it increasingly affordable for individuals to learn about inherited health risks.",
+        "Some patients hesitated to pursue testing, worried the results might affect their future insurance eligibility."
+      ],
+      "correctOrder": [
+        4,
+        5,
+        1,
+        2,
+        0,
+        3
+      ],
+      "hint": "A described hesitation usually precedes the legal protection introduced to address it, which then precedes a measurable change in behavior.",
+      "explanation": "This paragraph follows a policy removing a barrier to healthcare: the advance, the hesitation it caused, the legal protection, the resulting behavior change, its public health benefit, and a remaining gap still under discussion."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L156_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Early contributions varied widely in quality, with some notes themselves containing inaccurate information.",
+        "A collaborative online platform allowed volunteer contributors to add context to potentially misleading posts.",
+        "Platform designers introduced a rating system requiring agreement from contributors with historically differing viewpoints.",
+        "This design change significantly reduced the frequency of one-sided or inaccurate context being published.",
+        "Other platforms have since studied this cross-viewpoint agreement model as a possible approach of their own.",
+        "Independent researchers found the surviving notes were, on average, rated as highly trustworthy by readers."
+      ],
+      "correctOrder": [
+        1,
+        0,
+        2,
+        3,
+        5,
+        4
+      ],
+      "hint": "An early quality problem usually precedes the specific design change made to address it.",
+      "explanation": "This paragraph follows a content-moderation system improving through design: the platform's purpose, an early flaw, the design fix, its effect, the resulting quality, and the interest it generated elsewhere."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L157_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Employers in one industry reported a growing shortage of workers with specific advanced technical skills.",
+        "Completion rates for the apprenticeship program significantly exceeded those of comparable traditional degree programs.",
+        "Early apprentices split their time between paid on-the-job training and closely related classroom instruction.",
+        "Other industries facing similar skills shortages have since begun exploring comparable apprenticeship partnerships.",
+        "A coalition of employers partnered with community colleges to revive a structured, paid apprenticeship model.",
+        "Traditional four-year degree programs had not kept pace with the industry's rapidly evolving technical requirements."
+      ],
+      "correctOrder": [
+        0,
+        5,
+        4,
+        2,
+        1,
+        3
+      ],
+      "hint": "A described shortage usually precedes the explanation for why existing systems failed to address it.",
+      "explanation": "This paragraph follows a labor-market problem solved through an alternative model: the shortage, why traditional education fell short, the partnership formed, the program's structure, its measured success, and its influence on other industries."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L157_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Certain workplace and study-space designers have since begun incorporating moderate ambient sound intentionally.",
+        "Complete silence and very loud noise both correlated with measurably worse performance than a moderate level of background sound.",
+        "The researchers proposed that moderate noise might provide just enough stimulation to sustain focus without becoming distracting.",
+        "Researchers caution that individual tolerance for background noise still varies considerably from person to person.",
+        "Researchers tested how different levels of ambient background noise affected participants' performance on complex cognitive tasks.",
+        "This finding echoed some earlier, smaller studies that had reached similar but less conclusive results."
+      ],
+      "correctOrder": [
+        4,
+        1,
+        2,
+        5,
+        0,
+        3
+      ],
+      "hint": "A described experimental result usually precedes the researchers' proposed explanation for why that result occurred.",
+      "explanation": "This paragraph follows a counterintuitive research finding to its practical application: the experiment, the result, the proposed explanation, supporting context from prior research, its design application, and an important caveat about individual variation."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L157_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Wildlife officials from all three countries negotiated a coordinated conservation agreement covering the animal's entire migratory range.",
+        "A shared monitoring database allowed officials to track the population's recovery using consistent data across all three countries.",
+        "The species' population has grown steadily since the agreement took full effect, encouraging similar efforts elsewhere.",
+        "Conservation efforts in any single country alone proved insufficient to reverse the species' declining population.",
+        "A migratory animal species relied on habitats spanning the borders of three separate countries.",
+        "Enforcing consistent protections across three different legal systems presented significant ongoing logistical challenges."
+      ],
+      "correctOrder": [
+        4,
+        3,
+        0,
+        5,
+        1,
+        2
+      ],
+      "hint": "A described limitation of isolated efforts usually precedes the coordinated agreement designed to overcome it.",
+      "explanation": "This paragraph follows international conservation cooperation succeeding despite complexity: the shared habitat, the limitation of solo efforts, the coordinated agreement, a resulting challenge, the tool used to manage it, and the eventual measurable recovery."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L158_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Legal analysts later cited the case as an example of licensing offering a pragmatic alternative to costly courtroom battles.",
+        "The larger competitor, wary of the cost and uncertainty of prolonged litigation, agreed to the licensing terms.",
+        "A small technology startup received a legal notice claiming its core product infringed on a larger competitor's patent.",
+        "Legal costs to fight the claim in court risked consuming a significant share of the startup's limited funding.",
+        "The startup's founders instead proposed a licensing agreement allowing continued use of the disputed technology for an ongoing fee.",
+        "The startup redirected the funds it would have spent on litigation toward accelerating its product development instead."
+      ],
+      "correctOrder": [
+        2,
+        3,
+        4,
+        1,
+        5,
+        0
+      ],
+      "hint": "A legal threat usually precedes the strategic choice made in response to it, weighing cost against alternatives.",
+      "explanation": "This paragraph follows a legal dispute resolved pragmatically: the claim, its financial risk, the alternative proposed, the other side's acceptance, the resulting benefit, and its broader significance as an example."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L158_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Some public health officials argue the model should be expanded further despite its inherently limited scope of care.",
+        "These facilities could stabilize patients and arrange transport but lacked capacity for more complex procedures.",
+        "Residents in affected areas reported significantly longer travel times to reach the nearest remaining hospital.",
+        "State officials introduced funding specifically to support smaller, limited-service emergency facilities in the most isolated communities.",
+        "A wave of rural hospital closures left some communities without any nearby emergency medical care.",
+        "Survival rates for time-sensitive emergencies in supported communities improved measurably compared to communities without any such facility."
+      ],
+      "correctOrder": [
+        4,
+        2,
+        3,
+        1,
+        5,
+        0
+      ],
+      "hint": "A described gap usually precedes the funding introduced to partially address it, and a partial solution's limits usually precede any debate about expanding it.",
+      "explanation": "This paragraph follows a healthcare access problem addressed through compromise: the closures, their consequence, the targeted response, its limitations, its measured benefit, and the ongoing debate about expanding it further."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L158_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Local business owners worried initially that losing parking spots might reduce customer visits to their stores.",
+        "A dense neighborhood with very little available land had almost no public green space for residents to gather.",
+        "City planners identified several small, underused parking spaces that could potentially be repurposed.",
+        "They converted a handful of these spaces into tiny public parks furnished with seating and modest landscaping.",
+        "The city has since expanded the program based directly on the initial parks' unexpectedly positive reception.",
+        "Foot traffic and time spent in the neighborhood actually increased once the small parks opened."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        3,
+        0,
+        5,
+        4
+      ],
+      "hint": "A raised concern usually precedes the actual outcome that either confirms or challenges it.",
+      "explanation": "This paragraph follows a small-scale urban experiment succeeding: the shortage, the identified opportunity, the conversion, a raised concern, the actual positive outcome, and the resulting program expansion."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L159_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Smaller member economies worried that larger neighbors would disproportionately benefit from the arrangement.",
+        "The final agreement included provisions granting smaller economies additional transition time before removing all tariffs.",
+        "Economists continue to debate how evenly the resulting economic benefits have actually been distributed among member countries.",
+        "Proponents argued that reduced trade barriers would boost overall regional economic growth considerably.",
+        "Regional trade volume grew substantially in the years immediately following the bloc's formation.",
+        "Several neighboring countries with historically separate economies debated forming a unified regional trade bloc."
+      ],
+      "correctOrder": [
+        5,
+        3,
+        0,
+        1,
+        4,
+        2
+      ],
+      "hint": "A debate is usually described before the agreement that resolves it, with concerns typically addressed through specific provisions.",
+      "explanation": "This paragraph follows an economic agreement from debate to lasting question: the debate, one side's argument, another's concern, the provision addressing it, the measured growth, and the ongoing question about how that growth was shared."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L159_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "The episode is now sometimes cited as a caution against directly applying laboratory findings to real-world settings.",
+        "Researchers attributed the difference to natural air exchange already diluting pollutants in real buildings.",
+        "Researchers tested whether common houseplants meaningfully improved indoor air quality in sealed office environments.",
+        "Follow-up studies in real, ventilated offices found the effect was far smaller than the laboratory results had suggested.",
+        "Laboratory conditions showed plants removing measurable amounts of certain airborne pollutants over time.",
+        "This distinction did not stop many offices from continuing to add plants for other established psychological benefits."
+      ],
+      "correctOrder": [
+        2,
+        4,
+        3,
+        1,
+        5,
+        0
+      ],
+      "hint": "A laboratory result usually precedes the real-world test that either confirms or complicates it.",
+      "explanation": "This paragraph follows a scientific finding being appropriately qualified: the initial question, the lab result, the real-world test, the explanation for the discrepancy, the practice that continued anyway, and the broader lesson drawn from the episode."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L159_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Surveys conducted after the campaign showed modest improvement in the public's ability to correctly interpret common statistics.",
+        "Public confusion over how to interpret statistics in news reporting became increasingly apparent during a period of rapidly changing public data.",
+        "Several news organizations launched a joint campaign explaining basic statistical concepts in accessible, everyday language.",
+        "Misinterpreted figures spread widely, occasionally shaping public opinion in ways the underlying data didn't actually support.",
+        "Journalists themselves reported the campaign also improved the clarity of their own subsequent data reporting.",
+        "Media educators have since incorporated similar statistical literacy materials into broader media literacy curricula."
+      ],
+      "correctOrder": [
+        1,
+        3,
+        2,
+        4,
+        0,
+        5
+      ],
+      "hint": "A described problem usually precedes the response designed to address it, and a response's effect on the public usually appears before its effect on journalists themselves.",
+      "explanation": "This paragraph follows a media literacy initiative and its dual impact: the problem, its consequence, the campaign launched, its unexpected effect on journalists, its measured public benefit, and its lasting influence on education."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L160_Q1",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "The company stabilized within two years, ultimately serving a market considerably larger than its original one.",
+        "Revenue declined sharply during the difficult transition period that followed the decision.",
+        "A company's original product succeeded in its early years but gradually became a poor match for its evolving core market.",
+        "The founders eventually agreed to a significant pivot toward a related but distinctly different market segment.",
+        "A newly hired executive presented market data making the misalignment difficult to continue ignoring.",
+        "The founding team, deeply attached to the original vision, resisted acknowledging the shift for some time."
+      ],
+      "correctOrder": [
+        2,
+        5,
+        4,
+        3,
+        1,
+        0
+      ],
+      "hint": "Resistance to change usually precedes the specific evidence that eventually overcomes it.",
+      "explanation": "This paragraph follows an organization overcoming internal resistance to necessary change: the misalignment, the resistance to acknowledging it, the evidence presented, the resulting pivot, its difficult short-term cost, and the larger long-term outcome."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L160_Q2",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Debate continues over precisely where that dividing line between the two categories should be drawn.",
+        "As that flexibility approached its scheduled expiration, patient advocacy groups pushed to make the arrangement permanent.",
+        "Patients in the most rural, underserved areas reported the greatest ongoing benefit from the resulting compromise.",
+        "Some medical associations cautioned that certain medications still warranted an in-person evaluation before prescribing.",
+        "Regulators ultimately proposed a permanent policy distinguishing between medications suitable for telehealth and those requiring an in-person visit.",
+        "Temporary regulatory flexibility had allowed physicians to prescribe certain medications through telehealth consultations alone."
+      ],
+      "correctOrder": [
+        5,
+        1,
+        3,
+        4,
+        2,
+        0
+      ],
+      "hint": "A temporary policy usually precedes the debate over whether it should become permanent, and a debate usually precedes any compromise.",
+      "explanation": "This paragraph follows a healthcare policy debate toward compromise: the temporary policy, the push to keep it, a caution raised against doing so fully, the resulting compromise, its greatest beneficiaries, and the debate still ongoing about its details."
+    },
+    {
+      "id": "RDG_SENTENCEORDERREADING_L160_Q3",
+      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+      "subtype": "sentenceOrderReading",
+      "interactionType": "Block Stack",
+      "shuffledSentences": [
+        "Traffic engineers proposed removing traditional sidewalks and curbs in favor of a shared, undivided street surface.",
+        "Measured vehicle speeds dropped considerably, as drivers naturally proceeded more cautiously through the ambiguous shared space.",
+        "A narrow residential street had long struggled with speeding traffic despite posted speed limit signs.",
+        "Some residents worried the unconventional design would actually make the street feel less safe, not more.",
+        "The city implemented the redesign as a temporary trial using low-cost, easily removable materials.",
+        "Residents voted overwhelmingly to make the trial redesign permanent once the trial period concluded."
+      ],
+      "correctOrder": [
+        2,
+        0,
+        3,
+        4,
+        1,
+        5
+      ],
+      "hint": "A raised concern usually precedes the trial that tests whether the concern turns out to be justified.",
+      "explanation": "This paragraph follows an unconventional urban design proving itself through trial: the problem, the proposed redesign, a raised concern, the trial approach taken, its measured effect, and the resulting permanent adoption."
+    }
+  ]
 }
