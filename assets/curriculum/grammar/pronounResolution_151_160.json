@@ -1,577 +1,577 @@
 {
-    "gameType": "pronounResolution",
-    "batchIndex": 16,
-    "levels": "151-160",
-    "quests": [
-        {
-            "id": "pr_l151_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The captain, for whom safety always came first, postponed departure due to fog.\nWho or what does 'whom' refer to?",
-            "targetWord": "whom",
-            "sentence": "The captain, for whom safety always came first, postponed departure due to fog.",
-            "options": [
-                "The captain",
-                "safety",
-                "fog"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The captain",
-            "hint": "For whom did safety come first?",
-            "explanation": "'whom' follows the preposition 'for,' referring to 'the captain' who made the call.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l151_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The director announced that her team had exceeded every quarterly goal.\nWho or what does 'her' refer to?",
-            "targetWord": "her",
-            "sentence": "The director announced that her team had exceeded every quarterly goal.",
-            "options": [
-                "The director",
-                "team",
-                "goal"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The director",
-            "hint": "Whose team exceeded the goals?",
-            "explanation": "'her' refers back to 'the director,' the speaker announcing her team's success.",
-            "grammarRule": "Possessive Adjectives"
-        },
-        {
-            "id": "pr_l151_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The clinics within the network kept their own patient records separately.\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The clinics within the network kept their own patient records separately.",
-            "options": [
-                "The clinics",
-                "records",
-                "network"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The clinics",
-            "hint": "Whose records stayed separate?",
-            "explanation": "'their own' shows each clinic maintained an independent set of records.",
-            "grammarRule": "Possessive Adjectives"
-        },
-        {
-            "id": "pr_l152_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The vintner, whose family has farmed this land for generations, harvested an exceptional crop.\nWho or what does 'whose' refer to?",
-            "targetWord": "whose",
-            "sentence": "The vintner, whose family has farmed this land for generations, harvested an exceptional crop.",
-            "options": [
-                "The vintner",
-                "family",
-                "crop"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The vintner",
-            "hint": "Whose family farmed this land?",
-            "explanation": "'whose' shows possession - the family belongs to 'the vintner.'",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l152_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The negotiator secured a final agreement after weeks of talks. This ended months of uncertainty.\nWho or what does 'This' refer to?",
-            "targetWord": "This",
-            "sentence": "The negotiator secured a final agreement after weeks of talks. This ended months of uncertainty.",
-            "options": [
-                "The agreement",
-                "negotiator",
-                "uncertainty"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The agreement",
-            "hint": "What ended months of uncertainty?",
-            "explanation": "'This' refers back to the agreement just secured.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l152_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The divisions developed their own software instead of using a shared platform.\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The divisions developed their own software instead of using a shared platform.",
-            "options": [
-                "The divisions",
-                "software",
-                "platform"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The divisions",
-            "hint": "Whose software was custom-built?",
-            "explanation": "'their own' shows each division built independent software.",
-            "grammarRule": "Possessive Adjectives"
-        },
-        {
-            "id": "pr_l153_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The critic, whose review sparked a heated debate, stood by every word.\nWho or what does 'whose' refer to?",
-            "targetWord": "whose",
-            "sentence": "The critic, whose review sparked a heated debate, stood by every word.",
-            "options": [
-                "The critic",
-                "review",
-                "debate"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The critic",
-            "hint": "Whose review sparked debate?",
-            "explanation": "'whose' shows possession - the review belongs to 'the critic.'",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l153_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The coach acknowledged that her strategy had failed against the stronger team.\nWho or what does 'her' refer to?",
-            "targetWord": "her",
-            "sentence": "The coach acknowledged that her strategy had failed against the stronger team.",
-            "options": [
-                "The coach",
-                "strategy",
-                "team"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The coach",
-            "hint": "Whose strategy failed?",
-            "explanation": "'her' refers back to 'the coach,' the speaker reflecting on her own decisions.",
-            "grammarRule": "Possessive Adjectives"
-        },
-        {
-            "id": "pr_l153_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Because the junior associate questioned the strategy the partner proposed, he suggested a competing plan at the meeting.\nWho or what does 'he' refer to?",
-            "targetWord": "he",
-            "sentence": "Because the junior associate questioned the strategy the partner proposed, he suggested a competing plan at the meeting.",
-            "options": [
-                "The junior associate",
-                "partner",
-                "plan"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The junior associate",
-            "hint": "Who proposed the competing plan?",
-            "explanation": "'he' refers to 'the junior associate' - he's the one questioning and offering an alternative.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l154_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The donor, whose generosity funded the entire wing, asked to remain anonymous.\nWho or what does 'whose' refer to?",
-            "targetWord": "whose",
-            "sentence": "The donor, whose generosity funded the entire wing, asked to remain anonymous.",
-            "options": [
-                "The donor",
-                "generosity",
-                "wing"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The donor",
-            "hint": "Whose generosity funded the wing?",
-            "explanation": "'whose' shows possession - the generosity belongs to 'the donor.'",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l154_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The pilot reported that his instruments had briefly malfunctioned during descent.\nWho or what does 'his' refer to?",
-            "targetWord": "his",
-            "sentence": "The pilot reported that his instruments had briefly malfunctioned during descent.",
-            "options": [
-                "The pilot",
-                "instruments",
-                "descent"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The pilot",
-            "hint": "Whose instruments malfunctioned?",
-            "explanation": "'his' refers back to 'the pilot,' the speaker reporting on his own cockpit equipment.",
-            "grammarRule": "Possessive Adjectives"
-        },
-        {
-            "id": "pr_l154_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The outlets ran their own promotions independent of the central marketing team.\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The outlets ran their own promotions independent of the central marketing team.",
-            "options": [
-                "The outlets",
-                "promotions",
-                "team"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The outlets",
-            "hint": "Whose promotions were independent?",
-            "explanation": "'their own' shows each outlet ran a separate promotion.",
-            "grammarRule": "Possessive Adjectives"
-        },
-        {
-            "id": "pr_l155_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The whistleblower, whose testimony exposed the fraud, faced significant professional risk.\nWho or what does 'whose' refer to?",
-            "targetWord": "whose",
-            "sentence": "The whistleblower, whose testimony exposed the fraud, faced significant professional risk.",
-            "options": [
-                "The whistleblower",
-                "testimony",
-                "risk"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The whistleblower",
-            "hint": "Whose testimony exposed the fraud?",
-            "explanation": "'whose' shows possession - the testimony belongs to 'the whistleblower.'",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l155_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Because the older daughter noticed how exhausted her father looked, she offered to cook dinner that night.\nWho or what does 'she' refer to?",
-            "targetWord": "she",
-            "sentence": "Because the older daughter noticed how exhausted her father looked, she offered to cook dinner that night.",
-            "options": [
-                "The older daughter",
-                "father",
-                "dinner"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The older daughter",
-            "hint": "Who offered to cook?",
-            "explanation": "'she' refers to 'the older daughter' - she's the one who noticed and responded.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l155_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The embassies coordinated their own evacuation plans during the crisis.\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The embassies coordinated their own evacuation plans during the crisis.",
-            "options": [
-                "The embassies",
-                "plans",
-                "crisis"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The embassies",
-            "hint": "Whose evacuation plans were separate?",
-            "explanation": "'their own' shows each embassy organized an independent plan.",
-            "grammarRule": "Possessive Adjectives"
-        },
-        {
-            "id": "pr_l156_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The curator, whose vision shaped the entire exhibit, gave a rare interview.\nWho or what does 'whose' refer to?",
-            "targetWord": "whose",
-            "sentence": "The curator, whose vision shaped the entire exhibit, gave a rare interview.",
-            "options": [
-                "The curator",
-                "vision",
-                "interview"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The curator",
-            "hint": "Whose vision shaped the exhibit?",
-            "explanation": "'whose' shows possession - the vision belongs to 'the curator.'",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l156_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The paramedic recalled that his training had kicked in instantly during the emergency.\nWho or what does 'his' refer to?",
-            "targetWord": "his",
-            "sentence": "The paramedic recalled that his training had kicked in instantly during the emergency.",
-            "options": [
-                "The paramedic",
-                "training",
-                "emergency"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The paramedic",
-            "hint": "Whose training kicked in?",
-            "explanation": "'his' refers back to 'the paramedic,' the speaker describing his own instinctive response.",
-            "grammarRule": "Possessive Adjectives"
-        },
-        {
-            "id": "pr_l156_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The school introduced a new peer-tutoring system last month. This helped struggling students catch up quickly.\nWho or what does 'This' refer to?",
-            "targetWord": "This",
-            "sentence": "The school introduced a new peer-tutoring system last month. This helped struggling students catch up quickly.",
-            "options": [
-                "The peer-tutoring system",
-                "school",
-                "students"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The peer-tutoring system",
-            "hint": "What helped struggling students?",
-            "explanation": "'This' refers back to the peer-tutoring system just introduced.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l157_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The arbitrator, whose ruling ended the dispute, had reviewed thousands of pages of evidence.\nWho or what does 'whose' refer to?",
-            "targetWord": "whose",
-            "sentence": "The arbitrator, whose ruling ended the dispute, had reviewed thousands of pages of evidence.",
-            "options": [
-                "The arbitrator",
-                "ruling",
-                "evidence"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The arbitrator",
-            "hint": "Whose ruling ended the dispute?",
-            "explanation": "'whose' shows possession - the ruling belongs to 'the arbitrator.'",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l157_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The hacker admitted that his methods had exploited a known vulnerability.\nWho or what does 'his' refer to?",
-            "targetWord": "his",
-            "sentence": "The hacker admitted that his methods had exploited a known vulnerability.",
-            "options": [
-                "The hacker",
-                "methods",
-                "vulnerability"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The hacker",
-            "hint": "Whose methods exploited the flaw?",
-            "explanation": "'his' refers back to 'the hacker,' the speaker admitting his own technique.",
-            "grammarRule": "Possessive Adjectives"
-        },
-        {
-            "id": "pr_l157_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The vineyards bottled their own labels rather than selling grapes wholesale.\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The vineyards bottled their own labels rather than selling grapes wholesale.",
-            "options": [
-                "The vineyards",
-                "labels",
-                "grapes"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The vineyards",
-            "hint": "Whose labels were self-produced?",
-            "explanation": "'their own' shows each vineyard bottled independently.",
-            "grammarRule": "Possessive Adjectives"
-        },
-        {
-            "id": "pr_l158_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The mediator, whose patience never wavered, guided both families to an agreement.\nWho or what does 'whose' refer to?",
-            "targetWord": "whose",
-            "sentence": "The mediator, whose patience never wavered, guided both families to an agreement.",
-            "options": [
-                "The mediator",
-                "patience",
-                "agreement"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The mediator",
-            "hint": "Whose patience never wavered?",
-            "explanation": "'whose' shows possession - the patience belongs to 'the mediator.'",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l158_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The conductor introduced a bold new arrangement for the finale. This surprised longtime fans of the piece.\nWho or what does 'This' refer to?",
-            "targetWord": "This",
-            "sentence": "The conductor introduced a bold new arrangement for the finale. This surprised longtime fans of the piece.",
-            "options": [
-                "The arrangement",
-                "conductor",
-                "fans"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The arrangement",
-            "hint": "What surprised longtime fans?",
-            "explanation": "'This' refers back to the new arrangement just introduced.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l158_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The branches set their own targets aligned loosely with company strategy.\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The branches set their own targets aligned loosely with company strategy.",
-            "options": [
-                "The branches",
-                "targets",
-                "strategy"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The branches",
-            "hint": "Whose targets were set independently?",
-            "explanation": "'their own' shows each branch defined separate targets.",
-            "grammarRule": "Possessive Adjectives"
-        },
-        {
-            "id": "pr_l159_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The epidemiologist, whose models predicted the outbreak, briefed national officials.\nWho or what does 'whose' refer to?",
-            "targetWord": "whose",
-            "sentence": "The epidemiologist, whose models predicted the outbreak, briefed national officials.",
-            "options": [
-                "The epidemiologist",
-                "models",
-                "officials"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The epidemiologist",
-            "hint": "Whose models predicted the outbreak?",
-            "explanation": "'whose' shows possession - the models belong to 'the epidemiologist.'",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l159_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The headmaster conceded that his policy had created unintended problems.\nWho or what does 'his' refer to?",
-            "targetWord": "his",
-            "sentence": "The headmaster conceded that his policy had created unintended problems.",
-            "options": [
-                "The headmaster",
-                "policy",
-                "problems"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The headmaster",
-            "hint": "Whose policy caused problems?",
-            "explanation": "'his' refers back to 'the headmaster,' the speaker admitting his own policy's flaws.",
-            "grammarRule": "Possessive Adjectives"
-        },
-        {
-            "id": "pr_l159_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Because the senior guide knew the trail well, she led the group through the shortcut safely.\nWho or what does 'she' refer to?",
-            "targetWord": "she",
-            "sentence": "Because the senior guide knew the trail well, she led the group through the shortcut safely.",
-            "options": [
-                "The senior guide",
-                "group",
-                "shortcut"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The senior guide",
-            "hint": "Who led the group safely?",
-            "explanation": "'she' refers to 'the senior guide' - she's the one with the trail knowledge leading the way.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l160_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The economist, whose forecast proved remarkably accurate, was invited to testify before lawmakers.\nWho or what does 'whose' refer to?",
-            "targetWord": "whose",
-            "sentence": "The economist, whose forecast proved remarkably accurate, was invited to testify before lawmakers.",
-            "options": [
-                "The economist",
-                "forecast",
-                "lawmakers"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The economist",
-            "hint": "Whose forecast proved accurate?",
-            "explanation": "'whose' shows possession - the forecast belongs to 'the economist.'",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l160_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The electrician explained that his diagnosis had identified a wiring fault.\nWho or what does 'his' refer to?",
-            "targetWord": "his",
-            "sentence": "The electrician explained that his diagnosis had identified a wiring fault.",
-            "options": [
-                "The electrician",
-                "diagnosis",
-                "fault"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The electrician",
-            "hint": "Whose diagnosis found the fault?",
-            "explanation": "'his' refers back to 'the electrician,' the speaker explaining his own findings.",
-            "grammarRule": "Possessive Adjectives"
-        },
-        {
-            "id": "pr_l160_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The chains priced their own products differently across regions.\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "The chains priced their own products differently across regions.",
-            "options": [
-                "The chains",
-                "products",
-                "regions"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The chains",
-            "hint": "Whose pricing varied by region?",
-            "explanation": "'their own' shows each chain set independent regional pricing.",
-            "grammarRule": "Possessive Adjectives"
-        }
-    ]
+  "gameType": "pronounResolution",
+  "batchIndex": 16,
+  "levels": "151-160",
+  "quests": [
+    {
+      "id": "pr_l151_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The scholar, whom few had heard of before the discovery, became instantly famous.\nWho or what does 'whom' refer to?",
+      "targetWord": "whom",
+      "sentence": "The scholar, whom few had heard of before the discovery, became instantly famous.",
+      "options": [
+        "The scholar",
+        "The discovery",
+        "few"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The scholar",
+      "hint": "Who was unknown before the big moment?",
+      "explanation": "'whom' is the object form referring to 'the scholar,' the person few had heard of.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l151_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Anybody caught without their badge will be asked to leave.\nWho or what does 'their' refer to?",
+      "targetWord": "their",
+      "sentence": "Anybody caught without their badge will be asked to leave.",
+      "options": [
+        "leave",
+        "Anybody",
+        "The badge"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Anybody",
+      "hint": "Whose badge is required?",
+      "explanation": "'their' agrees with 'anybody,' a singular indefinite pronoun.",
+      "grammarRule": "Indefinite Pronouns"
+    },
+    {
+      "id": "pr_l151_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The owner himself trained every new employee for the first month.\nWho or what does 'himself' refer to?",
+      "targetWord": "himself",
+      "sentence": "The owner himself trained every new employee for the first month.",
+      "options": [
+        "month",
+        "employee",
+        "The owner"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The owner",
+      "hint": "Who personally handled the training?",
+      "explanation": "'himself' emphasizes the owner did the training personally, not a manager.",
+      "grammarRule": "Reflexive Pronouns"
+    },
+    {
+      "id": "pr_l152_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The theory, whose predictions were confirmed decades later, is now widely accepted.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "The theory, whose predictions were confirmed decades later, is now widely accepted.",
+      "options": [
+        "predictions",
+        "decades",
+        "The theory"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The theory",
+      "hint": "Whose predictions came true?",
+      "explanation": "'whose' refers to 'the theory,' showing the predictions belong to it.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l152_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Every driver must renew their license every five years.\nWho or what does 'their' refer to?",
+      "targetWord": "their",
+      "sentence": "Every driver must renew their license every five years.",
+      "options": [
+        "Every driver",
+        "years",
+        "The license"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Every driver",
+      "hint": "Whose license needs renewing?",
+      "explanation": "'their' agrees with 'every driver,' a singular indefinite phrase.",
+      "grammarRule": "Indefinite Pronouns"
+    },
+    {
+      "id": "pr_l152_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The orchestra tuned its instruments before the performance began.\nWho or what does 'its' refer to?",
+      "targetWord": "its",
+      "sentence": "The orchestra tuned its instruments before the performance began.",
+      "options": [
+        "performance",
+        "instruments",
+        "The orchestra"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The orchestra",
+      "hint": "Whose instruments were being tuned, as one group?",
+      "explanation": "'its' treats 'the orchestra' as a single unit preparing together.",
+      "grammarRule": "Possessive Adjectives"
+    },
+    {
+      "id": "pr_l153_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The founder, whom investors once doubted, is now celebrated across the industry.\nWho or what does 'whom' refer to?",
+      "targetWord": "whom",
+      "sentence": "The founder, whom investors once doubted, is now celebrated across the industry.",
+      "options": [
+        "industry",
+        "The founder",
+        "investors"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The founder",
+      "hint": "Who faced early doubt?",
+      "explanation": "'whom' is the object form referring to 'the founder,' the person investors once doubted.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l153_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Whoever finishes their shift last should lock up the store.\nWho or what does 'their' refer to?",
+      "targetWord": "their",
+      "sentence": "Whoever finishes their shift last should lock up the store.",
+      "options": [
+        "The store",
+        "Whoever",
+        "shift"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Whoever",
+      "hint": "Whose shift determines who locks up?",
+      "explanation": "'their' agrees with 'whoever,' an indefinite pronoun.",
+      "grammarRule": "Indefinite Pronouns"
+    },
+    {
+      "id": "pr_l153_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The landlord replaced the old carpet with tile because it was easier to clean.\nWho or what does 'it' refer to?",
+      "targetWord": "it",
+      "sentence": "The landlord replaced the old carpet with tile because it was easier to clean.",
+      "options": [
+        "tile",
+        "carpet",
+        "The landlord"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "tile",
+      "hint": "What is simpler to maintain - carpet or tile?",
+      "explanation": "'it' refers to tile - the reason for choosing a new material is usually a quality of that material.",
+      "grammarRule": "Subject Pronouns"
+    },
+    {
+      "id": "pr_l154_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The vaccine, whose development took only a year, was considered a scientific triumph.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "The vaccine, whose development took only a year, was considered a scientific triumph.",
+      "options": [
+        "development",
+        "The vaccine",
+        "triumph"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The vaccine",
+      "hint": "Whose fast development impressed everyone?",
+      "explanation": "'whose' refers to 'the vaccine,' showing the year-long development belongs to it.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l154_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Each passenger is responsible for their own carry-on luggage.\nWho or what does 'their' refer to?",
+      "targetWord": "their",
+      "sentence": "Each passenger is responsible for their own carry-on luggage.",
+      "options": [
+        "The luggage",
+        "Each passenger",
+        "carry-on"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Each passenger",
+      "hint": "Whose luggage is each person responsible for?",
+      "explanation": "'their' agrees with 'each passenger,' a singular indefinite phrase.",
+      "grammarRule": "Indefinite Pronouns"
+    },
+    {
+      "id": "pr_l154_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The captain herself carried the final crate onto the ship.\nWho or what does 'herself' refer to?",
+      "targetWord": "herself",
+      "sentence": "The captain herself carried the final crate onto the ship.",
+      "options": [
+        "crate",
+        "ship",
+        "The captain"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The captain",
+      "hint": "Who did the final task personally, instead of the crew?",
+      "explanation": "'herself' emphasizes the captain personally carried it, not the crew.",
+      "grammarRule": "Reflexive Pronouns"
+    },
+    {
+      "id": "pr_l155_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The whistleblower, whom the company tried to silence, later testified before Congress.\nWho or what does 'whom' refer to?",
+      "targetWord": "whom",
+      "sentence": "The whistleblower, whom the company tried to silence, later testified before Congress.",
+      "options": [
+        "The whistleblower",
+        "The company",
+        "Congress"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The whistleblower",
+      "hint": "Who was pressured to stay quiet?",
+      "explanation": "'whom' is the object form referring to 'the whistleblower,' the person the company tried to silence.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l155_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "If anyone loses their badge, a replacement costs twenty dollars.\nWho or what does 'their' refer to?",
+      "targetWord": "their",
+      "sentence": "If anyone loses their badge, a replacement costs twenty dollars.",
+      "options": [
+        "The badge",
+        "anyone",
+        "dollars"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "anyone",
+      "hint": "Whose lost badge triggers the fee?",
+      "explanation": "'their' pairs with 'anyone,' the same unspecified person mentioned earlier in the sentence.",
+      "grammarRule": "Indefinite Pronouns"
+    },
+    {
+      "id": "pr_l155_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The audience gave its full attention once the lights dimmed.\nWho or what does 'its' refer to?",
+      "targetWord": "its",
+      "sentence": "The audience gave its full attention once the lights dimmed.",
+      "options": [
+        "attention",
+        "The audience",
+        "lights"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The audience",
+      "hint": "Whose attention was captured, treated as one group?",
+      "explanation": "'its' treats 'the audience' as a single unit reacting together.",
+      "grammarRule": "Possessive Adjectives"
+    },
+    {
+      "id": "pr_l156_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The startup, whose valuation tripled in a year, attracted major investors.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "The startup, whose valuation tripled in a year, attracted major investors.",
+      "options": [
+        "valuation",
+        "investors",
+        "The startup"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The startup",
+      "hint": "Whose value grew so fast?",
+      "explanation": "'whose' refers to 'the startup,' showing the rising valuation belongs to it.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l156_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Somebody in the office keeps leaving their mug in the sink.\nWho or what does 'their' refer to?",
+      "targetWord": "their",
+      "sentence": "Somebody in the office keeps leaving their mug in the sink.",
+      "options": [
+        "The office",
+        "Somebody",
+        "The mug"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Somebody",
+      "hint": "Whose mug keeps turning up in the sink?",
+      "explanation": "'their' agrees with 'somebody,' a singular indefinite pronoun.",
+      "grammarRule": "Indefinite Pronouns"
+    },
+    {
+      "id": "pr_l156_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The judge dismissed the earlier ruling because it ignored key evidence.\nWho or what does 'it' refer to?",
+      "targetWord": "it",
+      "sentence": "The judge dismissed the earlier ruling because it ignored key evidence.",
+      "options": [
+        "The judge",
+        "the earlier ruling",
+        "evidence"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the earlier ruling",
+      "hint": "What had the flaw - the judge's decision to dismiss, or the ruling itself?",
+      "explanation": "'it' refers to the earlier ruling - the reason for dismissing a decision is usually a flaw in that decision.",
+      "grammarRule": "Subject Pronouns"
+    },
+    {
+      "id": "pr_l157_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The translator, whom the publisher praised repeatedly, finished the manuscript in record time.\nWho or what does 'whom' refer to?",
+      "targetWord": "whom",
+      "sentence": "The translator, whom the publisher praised repeatedly, finished the manuscript in record time.",
+      "options": [
+        "The translator",
+        "manuscript",
+        "The publisher"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The translator",
+      "hint": "Who received the praise?",
+      "explanation": "'whom' is the object form referring to 'the translator,' the person the publisher praised.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l157_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "No one wants their flight delayed on a holiday weekend.\nWho or what does 'their' refer to?",
+      "targetWord": "their",
+      "sentence": "No one wants their flight delayed on a holiday weekend.",
+      "options": [
+        "weekend",
+        "No one",
+        "The flight"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "No one",
+      "hint": "Whose flight might be delayed?",
+      "explanation": "'their' agrees with 'no one,' a singular indefinite pronoun.",
+      "grammarRule": "Indefinite Pronouns"
+    },
+    {
+      "id": "pr_l157_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The judge herself questioned the final witness.\nWho or what does 'herself' refer to?",
+      "targetWord": "herself",
+      "sentence": "The judge herself questioned the final witness.",
+      "options": [
+        "witness",
+        "The judge",
+        "final"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The judge",
+      "hint": "Who personally asked the questions, instead of the lawyers?",
+      "explanation": "'herself' emphasizes the judge personally did the questioning.",
+      "grammarRule": "Reflexive Pronouns"
+    },
+    {
+      "id": "pr_l158_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The novel, whose ending was rewritten three times, finally satisfied the author.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "The novel, whose ending was rewritten three times, finally satisfied the author.",
+      "options": [
+        "ending",
+        "author",
+        "The novel"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The novel",
+      "hint": "Whose ending caused so much trouble?",
+      "explanation": "'whose' refers to 'the novel,' showing the rewritten ending belongs to it.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l158_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Every resident must submit their renewal form by the fifteenth.\nWho or what does 'their' refer to?",
+      "targetWord": "their",
+      "sentence": "Every resident must submit their renewal form by the fifteenth.",
+      "options": [
+        "Every resident",
+        "fifteenth",
+        "The form"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Every resident",
+      "hint": "Whose renewal form is due?",
+      "explanation": "'their' agrees with 'every resident,' a singular indefinite phrase.",
+      "grammarRule": "Indefinite Pronouns"
+    },
+    {
+      "id": "pr_l158_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The crew finished its inspection just before the storm hit.\nWho or what does 'its' refer to?",
+      "targetWord": "its",
+      "sentence": "The crew finished its inspection just before the storm hit.",
+      "options": [
+        "The crew",
+        "storm",
+        "inspection"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The crew",
+      "hint": "Whose inspection wrapped up in time, treated as one unit?",
+      "explanation": "'its' treats 'the crew' as a single unit completing one task.",
+      "grammarRule": "Possessive Adjectives"
+    },
+    {
+      "id": "pr_l159_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The illustrator, whom the studio hired at the last minute, saved the entire release schedule.\nWho or what does 'whom' refer to?",
+      "targetWord": "whom",
+      "sentence": "The illustrator, whom the studio hired at the last minute, saved the entire release schedule.",
+      "options": [
+        "The illustrator",
+        "The studio",
+        "schedule"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The illustrator",
+      "hint": "Who was brought on board late?",
+      "explanation": "'whom' is the object form referring to 'the illustrator,' the person the studio hired.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l159_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Whoever parks in the wrong spot will find their car towed.\nWho or what does 'their' refer to?",
+      "targetWord": "their",
+      "sentence": "Whoever parks in the wrong spot will find their car towed.",
+      "options": [
+        "The spot",
+        "Whoever",
+        "The car"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Whoever",
+      "hint": "Whose car risks getting towed?",
+      "explanation": "'their' pairs with 'whoever,' referring back to that same unspecified driver.",
+      "grammarRule": "Indefinite Pronouns"
+    },
+    {
+      "id": "pr_l159_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The airline upgraded the older jets instead of the newer ones because they were less fuel-efficient.\nWho or what does 'they' refer to?",
+      "targetWord": "they",
+      "sentence": "The airline upgraded the older jets instead of the newer ones because they were less fuel-efficient.",
+      "options": [
+        "the older jets",
+        "the newer ones",
+        "The airline"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the older jets",
+      "hint": "Which jets guzzled more fuel - the older or newer ones?",
+      "explanation": "'they' refers to the older jets - the reason for upgrading a group is usually a shortcoming in that group.",
+      "grammarRule": "Subject Pronouns"
+    },
+    {
+      "id": "pr_l160_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The bill, whose full cost was hidden in fine print, sparked outrage when it passed.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "The bill, whose full cost was hidden in fine print, sparked outrage when it passed.",
+      "options": [
+        "outrage",
+        "The bill",
+        "cost"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The bill",
+      "hint": "Whose true cost was hidden?",
+      "explanation": "'whose' refers to 'the bill,' showing the hidden cost belongs to it.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l160_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Anyone who finds a wallet should hand it to their nearest staff member.\nWho or what does 'their' refer to?",
+      "targetWord": "their",
+      "sentence": "Anyone who finds a wallet should hand it to their nearest staff member.",
+      "options": [
+        "Anyone",
+        "The wallet",
+        "member"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Anyone",
+      "hint": "Whose nearest staff member should get the wallet?",
+      "explanation": "'their' agrees with 'anyone,' the person who found the wallet.",
+      "grammarRule": "Indefinite Pronouns"
+    },
+    {
+      "id": "pr_l160_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The architect himself walked the site before construction began.\nWho or what does 'himself' refer to?",
+      "targetWord": "himself",
+      "sentence": "The architect himself walked the site before construction began.",
+      "options": [
+        "site",
+        "The architect",
+        "construction"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The architect",
+      "hint": "Who did the walkthrough personally?",
+      "explanation": "'himself' emphasizes the architect went in person, not a representative.",
+      "grammarRule": "Reflexive Pronouns"
+    }
+  ]
 }

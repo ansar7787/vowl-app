@@ -1,577 +1,577 @@
 {
-    "gameType": "questionFormatter",
-    "batchIndex": 12,
-    "levels": "111-120",
-    "quests": [
-        {
-            "id": "qf_l111_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "_____ the bad weather, we enjoyed the trip.",
-            "sentence": "_____ the bad weather, we enjoyed the trip.",
-            "options": [
-                "Despite",
-                "Although",
-                "Even though",
-                "However"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Despite",
-            "hint": "'Despite' = preposition + noun/gerund. 'Although/even though' = conjunction + full clause.",
-            "explanation": "'Despite' takes a noun phrase ('despite the bad weather'). 'Although' and 'even though' need a full clause ('although the weather was bad'). 'However' connects two sentences and cannot start a clause like this.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l111_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "_____ he is young, he has a lot of experience.",
-            "sentence": "_____ he is young, he has a lot of experience.",
-            "options": [
-                "Although",
-                "Despite",
-                "In spite",
-                "However"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Although",
-            "hint": "'Although/even though' = subordinating conjunction introducing a contrast clause.",
-            "explanation": "'Although' and 'even though' introduce a subordinate clause. 'Despite' must be followed by a noun or gerund ('despite his youth'). 'In spite' is incomplete - it needs 'of': 'in spite of his youth'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l111_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The meeting ran over by an hour. _____, all key decisions were made.",
-            "sentence": "The meeting ran over by an hour. _____, all key decisions were made.",
-            "options": [
-                "Even so",
-                "Despite this",
-                "Although",
-                "In spite"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Even so",
-            "hint": "'Even so' = a sentence connector meaning 'despite that'. 'Although' must introduce a clause.",
-            "explanation": "'Even so' connects two sentences and means 'despite what was just said'. 'Despite this' is also grammatically correct here. 'Although' cannot start the second sentence here without forming a subordinate clause. 'In spite' alone is incomplete.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l112_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The project was _____ difficult _____ we had expected.",
-            "sentence": "The project was _____ difficult _____ we had expected.",
-            "options": [
-                "more / than",
-                "as / as",
-                "more / as",
-                "so / as"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "more / than",
-            "hint": "'More...than' for inequality; 'as...as' for equality.",
-            "explanation": "'More + adjective + than' expresses that something exceeds the comparison point: 'more difficult than expected'. 'As...as' expresses equality. The sentence implies it exceeded expectations, so 'more...than' is correct.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l112_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "_____ you practice, _____ you become.",
-            "sentence": "_____ you practice, _____ you become.",
-            "options": [
-                "The more / the better",
-                "More / more better",
-                "The more / better",
-                "More / the better"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The more / the better",
-            "hint": "'The more...the better/faster...' - both halves need 'the' before the comparative.",
-            "explanation": "'The + comparative + the + comparative' expresses proportion. Both halves need 'the'. 'More...more' (without 'the') is incorrect in standard English. 'The more faster' double-marks the comparative.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l112_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She is not _____ experienced _____ her colleague.",
-            "sentence": "She is not _____ experienced _____ her colleague.",
-            "options": [
-                "as / as",
-                "more / than",
-                "so / as",
-                "as / than"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as / as",
-            "hint": "'Not as...as' = comparison of inequality (the second person has more experience).",
-            "explanation": "'Not as + adjective + as' means the first is less than the second. 'So...as' is used in formal/literary negative contexts but is less common than 'as...as'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l113_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She is _____ tired _____ walk home.",
-            "sentence": "She is _____ tired _____ walk home.",
-            "options": [
-                "too / to",
-                "so / that",
-                "enough / to",
-                "very / to"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "too / to",
-            "hint": "'Too + adjective + to + base verb' = excessively (prevents action).",
-            "explanation": "'Too + adjective + to + base verb': 'too tired to walk' = so tired she cannot walk. 'So tired that...' also works but needs 'that + clause'. 'Enough' follows the adjective and enables action: 'tired enough to collapse'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l113_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She isn't tall _____ to reach the top shelf.",
-            "sentence": "She isn't tall _____ to reach the top shelf.",
-            "options": [
-                "enough",
-                "too",
-                "so",
-                "very"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "enough",
-            "hint": "'Adjective + enough + to + base verb' = sufficient degree to enable the action.",
-            "explanation": "'Enough' follows the adjective and is followed by 'to + infinitive': 'tall enough to reach'. 'Too tall to reach' would mean excessively tall - the opposite problem. Note: 'enough' comes after adjectives but before nouns ('enough time').",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l113_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "It was _____ a difficult situation that no one knew what to do.",
-            "sentence": "It was _____ a difficult situation that no one knew what to do.",
-            "options": [
-                "such",
-                "so",
-                "very",
-                "too"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "such",
-            "hint": "'Such + a + adjective + noun' for emphasis; 'so + adjective' (no noun).",
-            "explanation": "'Such + a/an + adjective + noun' emphasises the noun: 'such a difficult situation'. 'So + adjective' works without a noun: 'It was so difficult that...'. 'So a difficult situation' is wrong - 'so' cannot precede an article.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l114_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "_____ you call ahead, they won't hold a table for you.",
-            "sentence": "_____ you call ahead, they won't hold a table for you.",
-            "options": [
-                "Unless",
-                "If",
-                "Even if",
-                "As long as"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Unless",
-            "hint": "'Unless' = 'if...not'. The result happens if the condition is NOT met.",
-            "explanation": "'Unless you call ahead' = 'if you don't call ahead'. 'Unless' is a negative condition - the negative meaning is built in. 'As long as' = 'provided that', which is positive.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l114_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "You can borrow my car _____ you bring it back by six.",
-            "sentence": "You can borrow my car _____ you bring it back by six.",
-            "options": [
-                "as long as",
-                "unless",
-                "even though",
-                "despite"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "as long as",
-            "hint": "'As long as' = 'provided that/on condition that' - introduces a positive condition.",
-            "explanation": "'As long as' gives permission provided a condition is met. 'Unless' would be negative and reverse the meaning. 'Even though' and 'despite' express concession, not condition.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l114_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The investment will proceed _____ all parties sign the agreement.",
-            "sentence": "The investment will proceed _____ all parties sign the agreement.",
-            "options": [
-                "provided that",
-                "unless",
-                "although",
-                "despite"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "provided that",
-            "hint": "'Provided that' = formal 'as long as' - introduces a required condition.",
-            "explanation": "'Provided that' (or 'providing that') is a formal alternative to 'as long as'. The investment happens only if everyone signs. 'Unless' would be the negative equivalent. Common in legal and business English.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l115_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "So difficult _____ the problem that no one could solve it.",
-            "sentence": "So difficult _____ the problem that no one could solve it.",
-            "options": [
-                "was",
-                "is",
-                "it was",
-                "had been"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "hint": "'So + adjective + was + subject' - inversion after a fronted 'so + adjective' phrase.",
-            "explanation": "When 'so + adjective' is fronted for emphasis, the subject and be-verb invert: 'So difficult was the problem...' This is a formal, literary structure. 'So difficult it was' is wrong word order.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l115_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Not since 1990 _____ the city seen such heavy snowfall.",
-            "sentence": "Not since 1990 _____ the city seen such heavy snowfall.",
-            "options": [
-                "has",
-                "had",
-                "have",
-                "was"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "has",
-            "hint": "Negative fronting ('Not since...') + present perfect → inversion: 'has the city seen'.",
-            "explanation": "'Not since 1990' triggers inversion. Present perfect is needed for a span continuing to the present. 'Has the city seen' = correct inverted present perfect. 'Had' would be past perfect; 'was' would be past simple.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l115_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "No sooner _____ sat down than the phone rang.",
-            "sentence": "No sooner _____ sat down than the phone rang.",
-            "options": [
-                "had she",
-                "she had",
-                "did she",
-                "has she"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "had she",
-            "hint": "'No sooner + past perfect inversion': 'No sooner had she...'",
-            "explanation": "'No sooner...than' requires inversion with the past perfect: 'No sooner had she sat down than the phone rang.' 'She had' (no inversion) is the non-emphatic version. 'No sooner did she sit down than...' (simple past inversion) is also correct.",
-            "grammarRule": "Past Perfect Questions"
-        },
-        {
-            "id": "qf_l116_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Formal: 'People buy more online now' → 'There has been an increase _____ online purchasing.'",
-            "sentence": "Formal: 'People buy more online now' → 'There has been an increase _____ online purchasing.'",
-            "options": [
-                "in",
-                "of",
-                "on",
-                "with"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "in",
-            "hint": "'An increase in something' - 'in' is the fixed preposition after 'increase'.",
-            "explanation": "'An increase in' is the correct collocation: increase in sales, increase in temperature, increase in online purchasing. 'An increase of' is used with a specific number: 'an increase of 10%'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l116_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "'Scientists discovered the drug works.' → 'The scientists made _____ discovery that the drug works.'",
-            "sentence": "'Scientists discovered the drug works.' → 'The scientists made _____ discovery that the drug works.'",
-            "options": [
-                "a",
-                "the",
-                "an",
-                "-"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "a",
-            "hint": "First mention of a newly introduced noun takes 'a' (indefinite).",
-            "explanation": "The first mention of a discovery not previously specified uses 'a'. 'The discovery' would refer back to a previously mentioned specific discovery. 'An' would require a vowel sound - 'discovery' starts with /d/.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l116_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Formal version of: 'How we fund this matters most.'",
-            "sentence": "Formal version of: 'How we fund this matters most.'",
-            "options": [
-                "The question of how we fund this is paramount.",
-                "The funding question how we fund is most paramount.",
-                "Most paramount is how the question of funding is.",
-                "The question how funding will is the paramount."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The question of how we fund this is paramount.",
-            "hint": "Nominalisation: 'how we fund this' becomes 'the question of how we fund this'.",
-            "explanation": "Nominalisation adds a head noun ('the question of') before the wh-clause. 'Paramount' already means 'most important' - 'most paramount' is redundant. The other options contain grammatical errors.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l117_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "_____ tigers are endangered. _____ tiger in this zoo was born in captivity.",
-            "sentence": "_____ tigers are endangered. _____ tiger in this zoo was born in captivity.",
-            "options": [
-                "- / The",
-                "The / A",
-                "A / The",
-                "The / -"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "- / The",
-            "hint": "Generic species = zero article (plural). Specific individual = 'the'.",
-            "explanation": "When referring to a species in general, use the zero article with a plural: '(-) Tigers are endangered.' For a specific individual: 'The tiger in this zoo.' 'The tigers' would mean specific known tigers.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l117_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She plays _____ piano in _____ orchestra downtown.",
-            "sentence": "She plays _____ piano in _____ orchestra downtown.",
-            "options": [
-                "the / an",
-                "- / the",
-                "the / the",
-                "a / an"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the / an",
-            "hint": "'Play the piano' (instrument); 'an orchestra' (first mention, vowel sound /ɒ/).",
-            "explanation": "'Play the piano/guitar/violin' is a fixed phrase using 'the'. 'An orchestra' uses 'an' because 'orchestra' starts with a vowel sound /ɒ/, and this is the first (indefinite) mention. 'The orchestra' would imply a specific previously identified one.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l117_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She went to _____ bed early because she had _____ headache.",
-            "sentence": "She went to _____ bed early because she had _____ headache.",
-            "options": [
-                "- / a",
-                "the / a",
-                "a / the",
-                "- / the"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "- / a",
-            "hint": "'Go to bed' (zero article, institution); 'a headache' (indefinite, first mention).",
-            "explanation": "'Go to bed' uses the zero article - like 'go to school/work/church' - referring to the activity rather than the building. 'A headache' is indefinite ('one headache'), not 'the headache' which would refer to a specific, previously mentioned one.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l118_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The research _____ conducted by a team of international scientists.",
-            "sentence": "The research _____ conducted by a team of international scientists.",
-            "options": [
-                "was",
-                "is",
-                "has been",
-                "had been"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "was",
-            "hint": "Past simple passive for a specific completed past event.",
-            "explanation": "Past simple passive ('was conducted') is used for a specific completed past event. 'Is conducted' (present) is wrong for past research. 'Has been conducted' (present perfect) implies recent relevance but past simple is more natural for a specific completed study.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l118_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "It _____ that the new policy will reduce costs.",
-            "sentence": "It _____ that the new policy will reduce costs.",
-            "options": [
-                "is anticipated",
-                "anticipates",
-                "is expecting",
-                "has expected"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is anticipated",
-            "hint": "Impersonal passive: 'It is anticipated/expected/reported + that clause' - formal reporting structure.",
-            "explanation": "'It is anticipated/expected/believed/reported + that' is a formal impersonal passive used in official and academic writing. 'Anticipates' (active) needs a subject. 'Is expecting' is active continuous and informal.",
-            "grammarRule": "Verb 'To Be' Questions"
-        },
-        {
-            "id": "qf_l118_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "More passive voice is typically used in _____ writing.",
-            "sentence": "More passive voice is typically used in _____ writing.",
-            "options": [
-                "academic",
-                "academy",
-                "academics",
-                "academical"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "academic",
-            "hint": "The adjective 'academic' modifies the noun 'writing'. 'Academy' is a noun; 'academics' means scholars.",
-            "explanation": "'Academic writing' uses the adjective 'academic'. 'Academy writing' (noun modifier) is non-standard here. 'Academics' (plural noun) cannot directly modify 'writing' without a preposition ('writing by academics').",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l119_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The woman _____ at the table is my professor.",
-            "sentence": "The woman _____ at the table is my professor.",
-            "options": [
-                "sitting",
-                "who is sitting",
-                "sat",
-                "sits"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "sitting",
-            "hint": "Reduced relative clause: 'sitting' replaces 'who is sitting'.",
-            "explanation": "Present-participle clauses reduce defining relative clauses: 'the woman sitting at the table' = 'who is sitting at the table'. 'Sat' would suggest a passive/completed state. 'Sits' is a finite verb and cannot function as a reduced relative.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l119_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "_____ the report, she discovered several errors.",
-            "sentence": "_____ the report, she discovered several errors.",
-            "options": [
-                "Reading",
-                "Having read",
-                "Read",
-                "While she read"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Reading",
-            "hint": "'Reading the report' = simultaneous with discovering. 'Having read' = completed before discovering.",
-            "explanation": "A present participle clause indicates simultaneous actions: reading and discovering happened at the same time. 'Having read' (perfect participle) would mean she finished reading before discovering the errors - a different sequence. Both are grammatically correct but convey different timings.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l119_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "_____ in 1889, the tower has become a global symbol.",
-            "sentence": "_____ in 1889, the tower has become a global symbol.",
-            "options": [
-                "Built",
-                "Building",
-                "Having built",
-                "Being built"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Built",
-            "hint": "Past participle clause = passive reduced relative: 'Built in 1889' = 'which was built in 1889'.",
-            "explanation": "A past participle clause reduces a passive relative clause: 'Built in 1889, the tower...' = 'The tower, which was built in 1889, has become...' 'Building' would imply the tower was actively building something. 'Having built' would mean the tower itself built something.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l120_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "I suggest _____ the meeting until everyone is available.",
-            "sentence": "I suggest _____ the meeting until everyone is available.",
-            "options": [
-                "postponing",
-                "to postpone",
-                "postpone",
-                "we postpone"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "postponing",
-            "hint": "'Suggest + gerund' is the correct structure (not 'suggest + infinitive').",
-            "explanation": "'Suggest + gerund' is correct: 'suggest postponing'. 'Suggest + infinitive' is wrong in standard English. 'Suggest that we postpone' (with 'that') is also grammatically correct - a subjunctive alternative.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l120_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "No sooner had she arrived _____ the argument broke out.",
-            "sentence": "No sooner had she arrived _____ the argument broke out.",
-            "options": [
-                "than",
-                "when",
-                "then",
-                "but"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "than",
-            "hint": "'No sooner ... than' is the fixed connector - not 'when' or 'then'.",
-            "explanation": "'No sooner...than' is the fixed pair for this inversion structure. 'Hardly/scarcely...when' are alternatives, but 'No sooner...when' is not standard. 'No sooner...then' is a common spelling confusion - always use 'than' (comparative).",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l120_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "It's vital that every citizen _____ their right to vote.",
-            "sentence": "It's vital that every citizen _____ their right to vote.",
-            "options": [
-                "exercise",
-                "exercises",
-                "should exercise",
-                "to exercise"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "exercise",
-            "hint": "Formal subjunctive after 'it is vital that': bare infinitive, no -s for third person.",
-            "explanation": "'It is vital that' triggers the present subjunctive, using the base verb for all subjects including third-person singular. 'Exercises' incorrectly adds -s. 'Should exercise' is the informal equivalent but not the pure subjunctive.",
-            "grammarRule": "Question Formation"
-        }
-    ]
+  "gameType": "questionFormatter",
+  "batchIndex": 12,
+  "levels": "111-120",
+  "quests": [
+    {
+      "id": "qf_l111_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "She wants to leave the meeting a few minutes early.",
+      "sentence": "She wants to leave the meeting a few minutes early.",
+      "options": [
+        "May she leave the meeting a few minutes early?",
+        "Does she may leave the meeting a few minutes early?",
+        "May she leaves the meeting a few minutes early?",
+        "She wants to leave the meeting a few minutes early?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "May she leave the meeting a few minutes early?",
+      "hint": "'May' moves to the front on its own to ask for permission.",
+      "explanation": "'May' is a modal used to ask permission. It moves to the front of the question, and the main verb stays in its base form.",
+      "grammarRule": "Modal Questions: Permission"
+    },
+    {
+      "id": "qf_l111_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "He would like to borrow your charger for a moment.",
+      "sentence": "He would like to borrow your charger for a moment.",
+      "options": [
+        "Does he could borrow your charger for a moment?",
+        "Could he borrows your charger for a moment?",
+        "He would like to borrow your charger for a moment?",
+        "Could he borrow your charger for a moment?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Could he borrow your charger for a moment?",
+      "hint": "'Could' is a polite way to ask permission - move it to the front.",
+      "explanation": "'Could' is used here to politely ask permission. It moves to the front, and the verb 'borrow' stays in its base form.",
+      "grammarRule": "Modal Questions: Permission"
+    },
+    {
+      "id": "qf_l111_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I want to ask you something personal.",
+      "sentence": "I want to ask you something personal.",
+      "options": [
+        "Do I can ask you something personal?",
+        "Can I asks you something personal?",
+        "Can I ask you something personal?",
+        "I want to ask you something personal?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Can I ask you something personal?",
+      "hint": "'Can' moves to the front to ask for permission.",
+      "explanation": "'Can' moves to the front of the sentence to form this permission question, and the verb 'ask' stays in its base form.",
+      "grammarRule": "Modal Questions: Permission"
+    },
+    {
+      "id": "qf_l112_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Visitors need to show identification at the front desk.",
+      "sentence": "Visitors need to show identification at the front desk.",
+      "options": [
+        "Have visitors to show identification at the front desk?",
+        "Do visitors has to show identification at the front desk?",
+        "Visitors need to show identification at the front desk?",
+        "Do visitors have to show identification at the front desk?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Do visitors have to show identification at the front desk?",
+      "hint": "'Have to' behaves like a regular verb, so use 'do/does' to form the question.",
+      "explanation": "Unlike true modals, 'have to' needs 'do/does' to form a question. Since 'visitors' is plural, 'do' is correct.",
+      "grammarRule": "Modal Questions: Obligation (Have To)"
+    },
+    {
+      "id": "qf_l112_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "She must renew her license before the end of the month.",
+      "sentence": "She must renew her license before the end of the month.",
+      "options": [
+        "Must she renew her license before the end of the month?",
+        "Does she must renew her license before the end of the month?",
+        "Must she renews her license before the end of the month?",
+        "She must renew her license before the end of the month?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Must she renew her license before the end of the month?",
+      "hint": "'Must' moves to the front on its own, like other modals.",
+      "explanation": "'Must' is a true modal, so it moves to the front without 'do/does', and the verb stays in its base form.",
+      "grammarRule": "Modal Questions: Obligation (Have To)"
+    },
+    {
+      "id": "qf_l112_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Employees have to complete the training by Friday.",
+      "sentence": "Employees have to complete the training by Friday.",
+      "options": [
+        "Do employees have to complete the training by Friday?",
+        "Have employees to complete the training by Friday?",
+        "Does employees have to complete the training by Friday?",
+        "Employees have to complete the training by Friday?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Do employees have to complete the training by Friday?",
+      "hint": "'Have to' needs 'do/does' to form a question, unlike true modals.",
+      "explanation": "Since 'employees' is plural, the question uses 'do' before 'have to' - 'have to' is not a true modal.",
+      "grammarRule": "Modal Questions: Obligation (Have To)"
+    },
+    {
+      "id": "qf_l113_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I'm thinking we could start the presentation now.",
+      "sentence": "I'm thinking we could start the presentation now.",
+      "options": [
+        "Do we shall start the presentation now?",
+        "Shall we starts the presentation now?",
+        "I'm thinking we could start the presentation now?",
+        "Shall we start the presentation now?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Shall we start the presentation now?",
+      "hint": "'Shall we...?' is a common way to suggest doing something together.",
+      "explanation": "'Shall we...?' is a standard pattern for suggestions. 'Shall' moves to the front, and the verb stays in its base form.",
+      "grammarRule": "Modal Questions: Suggestions"
+    },
+    {
+      "id": "qf_l113_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I think he ought to see a doctor about that cough.",
+      "sentence": "I think he ought to see a doctor about that cough.",
+      "options": [
+        "Does he should see a doctor about that cough?",
+        "Should he see a doctor about that cough?",
+        "Should he sees a doctor about that cough?",
+        "I think he ought to see a doctor about that cough?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Should he see a doctor about that cough?",
+      "hint": "'Should' moves to the front, just like other modals.",
+      "explanation": "'Should' moves to the front to form the question, and the verb 'see' stays in its base form.",
+      "grammarRule": "Modal Questions: Suggestions"
+    },
+    {
+      "id": "qf_l113_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Maybe I could open a window to let some air in.",
+      "sentence": "Maybe I could open a window to let some air in.",
+      "options": [
+        "Shall I open a window to let some air in?",
+        "Do I shall open a window to let some air in?",
+        "Shall I opens a window to let some air in?",
+        "Maybe I could open a window to let some air in?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Shall I open a window to let some air in?",
+      "hint": "'Shall I...?' is the standard way to offer to do something.",
+      "explanation": "'Shall I...?' is used to offer or suggest an action. 'Shall' moves to the front, and the verb stays in its base form.",
+      "grammarRule": "Modal Questions: Suggestions"
+    },
+    {
+      "id": "qf_l114_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "It's possible that this old key opens the garden shed.",
+      "sentence": "It's possible that this old key opens the garden shed.",
+      "options": [
+        "Does this old key could open the garden shed?",
+        "Could this old key open the garden shed?",
+        "Could this old key opens the garden shed?",
+        "It's possible that this old key opens the garden shed?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Could this old key open the garden shed?",
+      "hint": "'Could' expresses possibility here - move it to the front.",
+      "explanation": "'Could' expresses a present possibility. It moves to the front of the question, and the verb stays in its base form.",
+      "grammarRule": "Modal Questions: Present Deduction"
+    },
+    {
+      "id": "qf_l114_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "It seems very likely that he already knows about the surprise.",
+      "sentence": "It seems very likely that he already knows about the surprise.",
+      "options": [
+        "Does he must already know about the surprise?",
+        "Must he already knows about the surprise?",
+        "Must he already know about the surprise?",
+        "It seems very likely that he already knows about the surprise?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Must he already know about the surprise?",
+      "hint": "'Must' expresses strong certainty here - move it to the front.",
+      "explanation": "'Must' expresses near-certainty in this context. It moves to the front, and the verb 'know' stays in its base form.",
+      "grammarRule": "Modal Questions: Present Deduction"
+    },
+    {
+      "id": "qf_l114_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Perhaps this strange noise means the engine needs repairs.",
+      "sentence": "Perhaps this strange noise means the engine needs repairs.",
+      "options": [
+        "Might this strange noise mean the engine needs repairs?",
+        "Does this strange noise might mean the engine needs repairs?",
+        "Might this strange noise means the engine needs repairs?",
+        "Perhaps this strange noise means the engine needs repairs?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Might this strange noise mean the engine needs repairs?",
+      "hint": "'Might' expresses a weaker possibility here - move it to the front.",
+      "explanation": "'Might' expresses a tentative possibility. It moves to the front of the question, and the verb stays in its base form.",
+      "grammarRule": "Modal Questions: Present Deduction"
+    },
+    {
+      "id": "qf_l115_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I imagine you would prefer tea over coffee.",
+      "sentence": "I imagine you would prefer tea over coffee.",
+      "options": [
+        "Do you would prefer tea over coffee?",
+        "Would you prefers tea over coffee?",
+        "I imagine you would prefer tea over coffee?",
+        "Would you prefer tea over coffee?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Would you prefer tea over coffee?",
+      "hint": "'Would' moves to the front on its own, like other modals.",
+      "explanation": "'Would' moves to the front to ask about a preference, and the main verb stays in its base form, 'prefer'.",
+      "grammarRule": "Modal Questions: Willingness & Offers"
+    },
+    {
+      "id": "qf_l115_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Perhaps you would be willing to help carry these boxes.",
+      "sentence": "Perhaps you would be willing to help carry these boxes.",
+      "options": [
+        "Do you would be willing to help carry these boxes?",
+        "Would you being willing to help carry these boxes?",
+        "Perhaps you would be willing to help carry these boxes?",
+        "Would you be willing to help carry these boxes?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Would you be willing to help carry these boxes?",
+      "hint": "Move 'would' to the front, keeping 'be' in its base form.",
+      "explanation": "'Would' moves to the front, and the verb 'be' stays in its base form throughout the question.",
+      "grammarRule": "Modal Questions: Willingness & Offers"
+    },
+    {
+      "id": "qf_l115_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I wonder if they would consider a later deadline.",
+      "sentence": "I wonder if they would consider a later deadline.",
+      "options": [
+        "Do they would consider a later deadline?",
+        "Would they considers a later deadline?",
+        "Would they consider a later deadline?",
+        "I wonder if they would consider a later deadline?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Would they consider a later deadline?",
+      "hint": "Move 'would' to the front, keeping the base verb form.",
+      "explanation": "'Would' moves to the front of the question, and the main verb, 'consider', stays in its base form.",
+      "grammarRule": "Modal Questions: Willingness & Offers"
+    },
+    {
+      "id": "qf_l116_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "She wonders how she can improve her writing skills.",
+      "sentence": "She wonders how she can improve her writing skills.",
+      "options": [
+        "How can she improve her writing skills?",
+        "How does she can improve her writing skills?",
+        "How can she improves her writing skills?",
+        "How she can improve her writing skills?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "How can she improve her writing skills?",
+      "hint": "Move 'can' after the question word, keeping the base verb.",
+      "explanation": "'Can' moves after the question word, and the main verb 'improve' stays in its base form throughout the question.",
+      "grammarRule": "Modal Wh-Questions: Permission & Ability"
+    },
+    {
+      "id": "qf_l116_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "He isn't sure why he must submit the form twice.",
+      "sentence": "He isn't sure why he must submit the form twice.",
+      "options": [
+        "Why does he must submit the form twice?",
+        "Why must he submit the form twice?",
+        "Why must he submits the form twice?",
+        "Why he must submit the form twice?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Why must he submit the form twice?",
+      "hint": "Move 'must' after the question word, keeping the base verb.",
+      "explanation": "'Must' moves after the question word, and the verb 'submit' stays in its base form, as with all modal questions.",
+      "grammarRule": "Modal Wh-Questions: Permission & Ability"
+    },
+    {
+      "id": "qf_l116_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "They're not sure where they should park during the festival.",
+      "sentence": "They're not sure where they should park during the festival.",
+      "options": [
+        "Where do they should park during the festival?",
+        "Where should they park during the festival?",
+        "Where should they parks during the festival?",
+        "Where they should park during the festival?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Where should they park during the festival?",
+      "hint": "Move 'should' after the question word, keeping the base verb.",
+      "explanation": "'Should' moves after the question word, and the verb 'park' stays in its base form, following the standard modal pattern.",
+      "grammarRule": "Modal Wh-Questions: Permission & Ability"
+    },
+    {
+      "id": "qf_l117_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Guests are allowed to bring pets to this hotel.",
+      "sentence": "Guests are allowed to bring pets to this hotel.",
+      "options": [
+        "Are guests allowed to bring pets to this hotel?",
+        "Do guests allowed to bring pets to this hotel?",
+        "Are guests allow to bring pets to this hotel?",
+        "Guests are allowed to bring pets to this hotel?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Are guests allowed to bring pets to this hotel?",
+      "hint": "'Allowed to' uses 'be', so simply move 'are' to the front.",
+      "explanation": "'Allowed to' is built on the verb 'be', so the question moves 'are' to the front - no 'do' is needed.",
+      "grammarRule": "Modal Questions: Rules & Permission (Be + Adjective + To)"
+    },
+    {
+      "id": "qf_l117_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Employees are supposed to badge in before nine.",
+      "sentence": "Employees are supposed to badge in before nine.",
+      "options": [
+        "Do employees supposed to badge in before nine?",
+        "Are employees supposed to badge in before nine?",
+        "Are employees suppose to badge in before nine?",
+        "Employees are supposed to badge in before nine?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Are employees supposed to badge in before nine?",
+      "hint": "'Supposed to' uses 'be', so move 'are' to the front.",
+      "explanation": "Since 'supposed to' is built on 'be', the question moves 'are' to the front rather than adding 'do'.",
+      "grammarRule": "Modal Questions: Rules & Permission (Be + Adjective + To)"
+    },
+    {
+      "id": "qf_l117_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Students are permitted to use calculators during the exam.",
+      "sentence": "Students are permitted to use calculators during the exam.",
+      "options": [
+        "Do students permitted to use calculators during the exam?",
+        "Are students permitted to use calculators during the exam?",
+        "Are students permit to use calculators during the exam?",
+        "Students are permitted to use calculators during the exam?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Are students permitted to use calculators during the exam?",
+      "hint": "'Permitted to' uses 'be', so move 'are' to the front.",
+      "explanation": "'Permitted to' is a 'be' structure, so the question moves 'are' to the front, and 'permitted' stays unchanged.",
+      "grammarRule": "Modal Questions: Rules & Permission (Be + Adjective + To)"
+    },
+    {
+      "id": "qf_l118_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I imagine you would rather walk than take the bus.",
+      "sentence": "I imagine you would rather walk than take the bus.",
+      "options": [
+        "Do you would rather walk than take the bus?",
+        "Would you rather walk than take the bus?",
+        "Would you rather walks than take the bus?",
+        "I imagine you would rather walk than take the bus?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Would you rather walk than take the bus?",
+      "hint": "'Would rather' moves 'would' to the front, keeping 'rather walk' unchanged.",
+      "explanation": "'Would' moves to the front of the question, and 'rather walk' stays exactly the same, following the standard modal pattern.",
+      "grammarRule": "Modal Questions: 'Would Rather'"
+    },
+    {
+      "id": "qf_l118_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "She would rather eat at home tonight.",
+      "sentence": "She would rather eat at home tonight.",
+      "options": [
+        "Would she rather eat at home tonight?",
+        "Does she would rather eat at home tonight?",
+        "Would she rather eats at home tonight?",
+        "She would rather eat at home tonight?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Would she rather eat at home tonight?",
+      "hint": "Move 'would' to the front, keeping 'rather eat' unchanged.",
+      "explanation": "'Would' moves to the front, and 'rather eat' remains unchanged, as with all modal question formations.",
+      "grammarRule": "Modal Questions: 'Would Rather'"
+    },
+    {
+      "id": "qf_l118_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "They would rather postpone the trip until summer.",
+      "sentence": "They would rather postpone the trip until summer.",
+      "options": [
+        "Do they would rather postpone the trip until summer?",
+        "Would they rather postpones the trip until summer?",
+        "Would they rather postpone the trip until summer?",
+        "They would rather postpone the trip until summer?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Would they rather postpone the trip until summer?",
+      "hint": "Move 'would' to the front, keeping the rest of the phrase unchanged.",
+      "explanation": "'Would' moves to the front of the question, and 'rather postpone' stays exactly as it was in the statement.",
+      "grammarRule": "Modal Questions: 'Would Rather'"
+    },
+    {
+      "id": "qf_l119_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I wonder whether I might borrow your notes from yesterday's class.",
+      "sentence": "I wonder whether I might borrow your notes from yesterday's class.",
+      "options": [
+        "Do I might borrow your notes from yesterday's class?",
+        "Might I borrows your notes from yesterday's class?",
+        "Might I borrow your notes from yesterday's class?",
+        "I wonder whether I might borrow your notes from yesterday's class?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Might I borrow your notes from yesterday's class?",
+      "hint": "'Might' moves to the front on its own, like other modals.",
+      "explanation": "'Might' moves to the front to politely ask permission, and the verb 'borrow' stays in its base form.",
+      "grammarRule": "Modal Questions: Mixed Practice"
+    },
+    {
+      "id": "qf_l119_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Tenants are required to give thirty days' notice before moving out.",
+      "sentence": "Tenants are required to give thirty days' notice before moving out.",
+      "options": [
+        "Do tenants required to give thirty days' notice before moving out?",
+        "Are tenants require to give thirty days' notice before moving out?",
+        "Tenants are required to give thirty days' notice before moving out?",
+        "Are tenants required to give thirty days' notice before moving out?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Are tenants required to give thirty days' notice before moving out?",
+      "hint": "'Required to' uses 'be', so move 'are' to the front.",
+      "explanation": "'Required to' is built on 'be', so the question moves 'are' to the front rather than adding 'do'.",
+      "grammarRule": "Modal Questions: Mixed Practice"
+    },
+    {
+      "id": "qf_l119_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "It's very possible that this recipe needs more salt.",
+      "sentence": "It's very possible that this recipe needs more salt.",
+      "options": [
+        "Does this recipe could need more salt?",
+        "Could this recipe needs more salt?",
+        "Could this recipe need more salt?",
+        "It's very possible that this recipe needs more salt?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Could this recipe need more salt?",
+      "hint": "'Could' expresses possibility here - move it to the front.",
+      "explanation": "'Could' expresses a present possibility, moving to the front of the question while the verb 'need' stays in its base form.",
+      "grammarRule": "Modal Questions: Mixed Practice"
+    },
+    {
+      "id": "qf_l120_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I'd like to ask whether I may reschedule my appointment.",
+      "sentence": "I'd like to ask whether I may reschedule my appointment.",
+      "options": [
+        "May I reschedule my appointment?",
+        "Do I may reschedule my appointment?",
+        "May I reschedules my appointment?",
+        "I'd like to ask whether I may reschedule my appointment?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "May I reschedule my appointment?",
+      "hint": "'May' moves to the front on its own to ask for permission.",
+      "explanation": "'May' is used to ask permission, moving to the front of the question while the verb stays in its base form.",
+      "grammarRule": "Modal Questions: Mixed Review"
+    },
+    {
+      "id": "qf_l120_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Contractors have to submit a safety report every month.",
+      "sentence": "Contractors have to submit a safety report every month.",
+      "options": [
+        "Have contractors to submit a safety report every month?",
+        "Does contractors have to submit a safety report every month?",
+        "Contractors have to submit a safety report every month?",
+        "Do contractors have to submit a safety report every month?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Do contractors have to submit a safety report every month?",
+      "hint": "'Have to' needs 'do/does' to form a question, unlike true modals.",
+      "explanation": "Since 'contractors' is plural, 'do' is used before 'have to' - 'have to' behaves like a regular verb, not a true modal.",
+      "grammarRule": "Modal Questions: Mixed Review"
+    },
+    {
+      "id": "qf_l120_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I suspect this quiet hum might mean the fridge needs servicing.",
+      "sentence": "I suspect this quiet hum might mean the fridge needs servicing.",
+      "options": [
+        "Might this quiet hum mean the fridge needs servicing?",
+        "Does this quiet hum might mean the fridge needs servicing?",
+        "Might this quiet hum means the fridge needs servicing?",
+        "I suspect this quiet hum might mean the fridge needs servicing?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Might this quiet hum mean the fridge needs servicing?",
+      "hint": "'Might' expresses a tentative possibility - move it to the front.",
+      "explanation": "'Might' moves to the front of the question to express a tentative possibility, and the verb stays in its base form.",
+      "grammarRule": "Modal Questions: Mixed Review"
+    }
+  ]
 }

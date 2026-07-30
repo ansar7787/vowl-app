@@ -8,540 +8,540 @@
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The auditors said, 'It has come to our attention that the accounts have been falsified.'",
+            "question": "Convert to reported speech: The spokesperson acknowledged, 'Mistakes were made during the rollout.'",
             "options": [
-                "The auditors reported that it had come to their attention that the accounts had been falsified.",
-                "The auditors reported that it has come to their attention that the accounts have been falsified.",
-                "The auditors reported that it came to their attention that the accounts had been falsified."
+                "The spokesperson acknowledged that mistakes had been made during the rollout.",
+                "The spokesperson acknowledged that mistakes have been made during the rollout.",
+                "The spokesperson acknowledged that mistakes were made during the rollout."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The auditors reported that it had come to their attention that the accounts had been falsified.",
-            "sentence": "The auditors said, 'It has come to our attention that the accounts have been falsified.'",
-            "hint": "Both present perfects → past perfect. 'Our' → 'their'. Both clauses must shift.",
-            "explanation": "Two shifts: 'has come to their attention' → 'had come to their attention' and 'have been falsified' → 'had been falsified'. Both present perfect verbs shift.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The spokesperson acknowledged that mistakes had been made during the rollout.",
+            "sentence": "The spokesperson acknowledged, 'Mistakes were made during the rollout.'",
+            "hint": "An already-past passive form like this shifts an extra step to past perfect passive.",
+            "explanation": "'Were made' (past simple passive) shifts to 'had been made' (past perfect passive).",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l131_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The board asked, 'What steps have been taken to prevent a recurrence of this incident?'",
+            "question": "Convert to reported speech: The board urged executives, 'Cut unnecessary spending.'",
             "options": [
-                "The board asked what steps had been taken to prevent a recurrence of that incident.",
-                "The board asked what steps have been taken to prevent a recurrence of this incident.",
-                "The board asked what steps had been taken to prevent a recurrence of this incident."
+                "The board urged executives to cut unnecessary spending.",
+                "The board urged executives that they cut unnecessary spending.",
+                "The board urged executives cut unnecessary spending."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The board asked what steps had been taken to prevent a recurrence of that incident.",
-            "sentence": "The board asked, 'What steps have been taken to prevent a recurrence of this incident?'",
-            "hint": "'Have been taken' → 'had been taken'. 'This incident' → 'that incident'.",
-            "explanation": "'Have been taken' (present perfect passive) → 'had been taken' (past perfect passive). 'This incident' → 'that incident'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The board urged executives to cut unnecessary spending.",
+            "sentence": "The board urged executives, 'Cut unnecessary spending.'",
+            "hint": "'Urged' works like 'told' — a command shifts to 'urged + people + to + verb'.",
+            "explanation": "Commands are reported with 'urged + object + to-infinitive'. 'Cut unnecessary spending' becomes 'to cut unnecessary spending'.",
+            "grammarRule": "Reported Commands & Requests"
         },
         {
             "id": "dis_l131_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The HR director said, 'Treat all personnel information with the strictest confidentiality.'",
+            "question": "Convert to reported speech: He asked, 'Do you remember why the vote was delayed?'",
             "options": [
-                "The HR director told all managers to treat all personnel information with the strictest confidentiality.",
-                "The HR director told all managers treating all personnel information with the strictest confidentiality.",
-                "The HR director said all personnel information should be treating with the strictest confidentiality."
+                "He asked whether I remembered why the vote had been delayed.",
+                "He asked whether I remembered why the vote was delayed.",
+                "He asked if I remember why the vote was delayed."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The HR director told all managers to treat all personnel information with the strictest confidentiality.",
-            "sentence": "The HR director said, 'Treat all personnel information with the strictest confidentiality.'",
-            "hint": "Imperative: 'told + managers + to + treat'.",
-            "explanation": "'Treat' is an imperative → 'told all managers to treat all personnel information with the strictest confidentiality'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "He asked whether I remembered why the vote had been delayed.",
+            "sentence": "He asked, 'Do you remember why the vote was delayed?'",
+            "hint": "This has two layers: a yes/no question about remembering, and a wh-question inside it — both shift.",
+            "explanation": "'Remember' shifts to 'remembered' (whether-question), and 'was delayed' (already past) shifts back further to 'had been delayed' (embedded wh-question).",
+            "grammarRule": "Mixed/Complex Transformation"
         },
         {
             "id": "dis_l132_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: They said, 'We are deeply concerned about the direction the negotiations are taking.'",
+            "question": "Convert to reported speech: The article said, 'The bridge is inspected annually.'",
             "options": [
-                "They said they were deeply concerned about the direction the negotiations were taking.",
-                "They said they are deeply concerned about the direction the negotiations are taking.",
-                "They said they had been deeply concerned about the direction the negotiations were taking."
+                "The article said that the bridge was inspected annually.",
+                "The article said that the bridge had been inspected annually.",
+                "The article said that the bridge is inspected annually."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "They said they were deeply concerned about the direction the negotiations were taking.",
-            "sentence": "They said, 'We are deeply concerned about the direction the negotiations are taking.'",
-            "hint": "'Are concerned' → 'were concerned'. 'Are taking' → 'were taking'. 'We' → 'they'.",
-            "explanation": "Two shifts: 'are deeply concerned' → 'were deeply concerned' and 'are taking' → 'were taking'. 'We' → 'they'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The article said that the bridge was inspected annually.",
+            "sentence": "The article said, 'The bridge is inspected annually.'",
+            "hint": "This is a passive sentence; shift the verb back one simple step.",
+            "explanation": "'Is inspected' (present simple passive) shifts to 'was inspected' (past simple passive) — one step back.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l132_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The finance director asked, 'How significant were the discrepancies found during the audit?'",
+            "question": "Convert to reported speech: The lawyer contended, 'The evidence was obtained improperly.'",
             "options": [
-                "The finance director asked how significant the discrepancies found during the audit had been.",
-                "The finance director asked how significant were the discrepancies found during the audit.",
-                "The finance director asked how significant the discrepancies found during the audit were."
+                "The lawyer contended that the evidence has been obtained improperly.",
+                "The lawyer contended that the evidence was obtained improperly.",
+                "The lawyer contended that the evidence had been obtained improperly."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The finance director asked how significant the discrepancies found during the audit had been.",
-            "sentence": "The finance director asked, 'How significant were the discrepancies found during the audit?'",
-            "hint": "'Were significant' → 'had been'. Statement order: subject before verb.",
-            "explanation": "Past simple 'were significant' → past perfect 'had been'. Statement word order: 'how significant the discrepancies had been', not 'how significant were the discrepancies'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The lawyer contended that the evidence had been obtained improperly.",
+            "sentence": "The lawyer contended, 'The evidence was obtained improperly.'",
+            "hint": "This past passive shifts even further back, to past perfect passive.",
+            "explanation": "'Was obtained' (past simple passive) shifts to 'had been obtained' (past perfect passive).",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l132_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The complaints policy said, 'Submit all complaints in writing within 30 days of the incident.'",
+            "question": "Convert to reported speech: The negotiators said, 'We shall reconvene tomorrow.'",
             "options": [
-                "The complaints policy told customers to submit all complaints in writing within 30 days of the incident.",
-                "The complaints policy told customers submit all complaints in writing within 30 days of the incident.",
-                "The complaints policy said submit all complaints in writing within 30 days of the incident."
+                "The negotiators said that they should reconvene tomorrow.",
+                "The negotiators said that they should reconvene the next day.",
+                "The negotiators said that they shall reconvene the next day."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The complaints policy told customers to submit all complaints in writing within 30 days of the incident.",
-            "sentence": "The complaints policy said, 'Submit all complaints in writing within 30 days of the incident.'",
-            "hint": "Imperative: 'told + customers + to + submit'.",
-            "explanation": "'Submit' is an imperative → 'told customers to submit all complaints in writing within 30 days of the incident'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The negotiators said that they should reconvene the next day.",
+            "sentence": "The negotiators said, 'We shall reconvene tomorrow.'",
+            "hint": "Both 'shall' and 'tomorrow' shift together here.",
+            "explanation": "'Shall' shifts to 'should', and 'tomorrow' shifts to 'the next day'.",
+            "grammarRule": "Modal Verb Backshift"
         },
         {
             "id": "dis_l133_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: They said, 'We're prepared to offer compensation, provided the claim is genuine.'",
+            "question": "Convert to reported speech: The manufacturer conceded, 'The defect affects a small number of units.'",
             "options": [
-                "They said they were prepared to offer compensation, provided the claim was genuine.",
-                "They said they're prepared to offer compensation, provided the claim is genuine.",
-                "They said they were prepared to offer compensation, provided the claim had been genuine."
+                "The manufacturer conceded that the defect had affected a small number of units.",
+                "The manufacturer conceded that the defect affects a small number of units.",
+                "The manufacturer conceded that the defect affected a small number of units."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They said they were prepared to offer compensation, provided the claim was genuine.",
-            "sentence": "They said, 'We're prepared to offer compensation, provided the claim is genuine.'",
-            "hint": "'Are prepared' → 'were prepared'. 'Is genuine' → 'was genuine'. 'We' → 'they'.",
-            "explanation": "Two shifts: 'are prepared' → 'were prepared' and 'is genuine' → 'was genuine'. 'Had been genuine' would be an over-shift.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The manufacturer conceded that the defect affected a small number of units.",
+            "sentence": "The manufacturer conceded, 'The defect affects a small number of units.'",
+            "hint": "This only needs a single step back in time, not two.",
+            "explanation": "Present simple 'affects' shifts to past simple 'affected' — one step back, not to past perfect.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l133_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The client asked, 'What assurances can you give us that this won't happen again?'",
+            "question": "Convert to reported speech: She said, 'The data has been anonymized.'",
             "options": [
-                "The client demanded what assurances they could give that it wouldn't happen again.",
-                "The client demanded what assurances can you give that this won't happen again.",
-                "The client demanded what assurances could you give that it won't happen again."
+                "She said that the data was anonymized.",
+                "She said that the data has been anonymized.",
+                "She said that the data had been anonymized."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The client demanded what assurances they could give that it wouldn't happen again.",
-            "sentence": "The client asked, 'What assurances can you give us that this won't happen again?'",
-            "hint": "'Can' → 'could'. 'You' → 'they'. 'This' → 'it'. 'Won't' → 'wouldn't'. Statement order.",
-            "explanation": "Multiple shifts: 'can' → 'could', 'you' → 'they', 'this' → 'it', 'won't' → 'wouldn't'. Statement word order required.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "She said that the data had been anonymized.",
+            "sentence": "She said, 'The data has been anonymized.'",
+            "hint": "Present perfect passive shifts to past perfect passive, not to simple past.",
+            "explanation": "'Has been anonymized' (present perfect passive) shifts to 'had been anonymized' (past perfect passive).",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l133_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: Legal counsel said, 'Review the terms and conditions before accepting the agreement.'",
+            "question": "Convert to reported speech: The physicist said, 'Energy cannot be created or destroyed.'",
             "options": [
-                "Legal counsel advised the client to review the terms and conditions before accepting the agreement.",
-                "Legal counsel advised the client reviewing the terms and conditions before accepting the agreement.",
-                "Legal counsel said review the terms and conditions before accepting the agreement."
+                "The physicist said that energy cannot be created or destroyed.",
+                "The physicist said that energy could not be created or destroyed.",
+                "The physicist said that energy had not been created or destroyed."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Legal counsel advised the client to review the terms and conditions before accepting the agreement.",
-            "sentence": "Legal counsel said, 'Review the terms and conditions before accepting the agreement.'",
-            "hint": "Imperative: 'advised + client + to + review'.",
-            "explanation": "'Review' is an imperative → 'advised the client to review the terms and conditions before accepting the agreement'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The physicist said that energy cannot be created or destroyed.",
+            "sentence": "The physicist said, 'Energy cannot be created or destroyed.'",
+            "hint": "This is a scientific law that's always true — it doesn't need to shift tense.",
+            "explanation": "Universal scientific laws stay in the present tense in reported speech, since they're always true.",
+            "grammarRule": "No-Shift Exceptions"
         },
         {
             "id": "dis_l134_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The CEO said, 'The merger has created significant synergies that we hadn't anticipated.'",
+            "question": "Convert to reported speech: He said, 'I predict that the vote will be close.'",
             "options": [
-                "The CEO said the merger had created significant synergies that they hadn't anticipated.",
-                "The CEO said the merger has created significant synergies that they hadn't anticipated.",
-                "The CEO said the merger had created significant synergies that they didn't anticipate."
+                "He said that he predicted that the vote would be close.",
+                "He said that he predicts that the vote would be close.",
+                "He said that he predicted that the vote will be close."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The CEO said the merger had created significant synergies that they hadn't anticipated.",
-            "sentence": "The CEO said, 'The merger has created significant synergies that we hadn't anticipated.'",
-            "hint": "'Has created' → 'had created'. 'Hadn't anticipated' stays (already past perfect). 'We' → 'they'.",
-            "explanation": "'Has created' → 'had created'. 'Hadn't anticipated' is already past perfect - it stays. 'We' → 'they'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "He said that he predicted that the vote would be close.",
+            "sentence": "He said, 'I predict that the vote will be close.'",
+            "hint": "Both the main verb and the verb inside the embedded clause need to shift here.",
+            "explanation": "'Predict' shifts to 'predicted', and 'will' shifts to 'would' — both clauses backshift together.",
+            "grammarRule": "Mixed/Complex Transformation"
         },
         {
             "id": "dis_l134_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The shareholder asked, 'Why wasn't the board informed before the decision was made?'",
+            "question": "Convert to reported speech: Investors speculated, 'The stock will rebound quickly.'",
             "options": [
-                "The shareholder asked why the board hadn't been informed before the decision had been made.",
-                "The shareholder asked why the board wasn't informed before the decision was made.",
-                "The shareholder asked why wasn't the board informed before the decision was made."
+                "Investors speculated that the stock would rebound quickly.",
+                "Investors speculated that the stock had rebounded quickly.",
+                "Investors speculated that the stock will rebound quickly."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The shareholder asked why the board hadn't been informed before the decision had been made.",
-            "sentence": "The shareholder asked, 'Why wasn't the board informed before the decision was made?'",
-            "hint": "Both passive verbs shift back. 'Wasn't informed' → 'hadn't been informed'. 'Was made' → 'had been made'.",
-            "explanation": "Both passive verbs shift: 'wasn't informed' → 'hadn't been informed' and 'was made' → 'had been made'. Statement word order required.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "Investors speculated that the stock would rebound quickly.",
+            "sentence": "Investors speculated, 'The stock will rebound quickly.'",
+            "hint": "'Will' shifts to 'would', not further, in reported speech.",
+            "explanation": "'Will' shifts to 'would' — a modal shift, not a full past-perfect shift.",
+            "grammarRule": "Modal Verb Backshift"
         },
         {
             "id": "dis_l134_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The COO said, 'Consult all relevant departments before implementing major changes.'",
+            "question": "Convert to reported speech: He asked, 'Has the vaccine been approved?'",
             "options": [
-                "The COO instructed managers to consult all relevant departments before implementing major changes.",
-                "The COO instructed managers consulting all relevant departments before implementing major changes.",
-                "The COO said consult all relevant departments before implementing major changes."
+                "He asked whether the vaccine has been approved.",
+                "He asked whether the vaccine had been approved.",
+                "He asked has the vaccine been approved."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The COO instructed managers to consult all relevant departments before implementing major changes.",
-            "sentence": "The COO said, 'Consult all relevant departments before implementing major changes.'",
-            "hint": "Imperative: 'instructed + managers + to + consult'.",
-            "explanation": "'Consult' is an imperative → 'instructed managers to consult all relevant departments before implementing major changes'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "He asked whether the vaccine had been approved.",
+            "sentence": "He asked, 'Has the vaccine been approved?'",
+            "hint": "'Whether' reports the question, with statement word order and shifted tense.",
+            "explanation": "'Whether' introduces the question, word order becomes statement order, and 'has been approved' shifts to 'had been approved'.",
+            "grammarRule": "Reported Yes/No Questions"
         },
         {
             "id": "dis_l135_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'I can assure you this matter is being taken very seriously.'",
+            "question": "Convert to reported speech: The report said, 'Water quality is tested weekly.'",
             "options": [
-                "She assured me that matter was being taken very seriously.",
-                "She assured me that matter is being taken very seriously.",
-                "She assured me this matter was being taken very seriously."
+                "The report said that water quality is tested weekly.",
+                "The report said that water quality was tested weekly.",
+                "The report said that water quality had been tested weekly."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She assured me that matter was being taken very seriously.",
-            "sentence": "She said, 'I can assure you this matter is being taken very seriously.'",
-            "hint": "'This' → 'that'. 'Is being taken' → 'was being taken'. Reporting verb: 'assured me'.",
-            "explanation": "'I can assure you' becomes 'she assured me'. 'This' → 'that'. Present continuous passive 'is being taken' → past continuous passive 'was being taken'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The report said that water quality was tested weekly.",
+            "sentence": "The report said, 'Water quality is tested weekly.'",
+            "hint": "A passive verb still follows the normal one-step backshift rule here.",
+            "explanation": "'Is tested' (present simple passive) shifts to 'was tested' (past simple passive) — one step back.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l135_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The ethics committee asked, 'Have all potential conflicts of interest been disclosed?'",
+            "question": "Convert to reported speech: The scientist acknowledged, 'My earlier estimate was wrong.'",
             "options": [
-                "The ethics committee asked whether all potential conflicts of interest had been disclosed.",
-                "The ethics committee asked whether all potential conflicts of interest have been disclosed.",
-                "The ethics committee asked have all potential conflicts of interest been disclosed."
+                "The scientist acknowledged that her earlier estimate was wrong.",
+                "The scientist acknowledged that my earlier estimate had been wrong.",
+                "The scientist acknowledged that her earlier estimate had been wrong."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The ethics committee asked whether all potential conflicts of interest had been disclosed.",
-            "sentence": "The ethics committee asked, 'Have all potential conflicts of interest been disclosed?'",
-            "hint": "'Have been disclosed' → 'had been disclosed'. Use 'whether' and statement order.",
-            "explanation": "Present perfect passive 'have been disclosed' → past perfect passive 'had been disclosed'. Use 'whether'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The scientist acknowledged that her earlier estimate had been wrong.",
+            "sentence": "The scientist acknowledged, 'My earlier estimate was wrong.'",
+            "hint": "Both the possessive word and the tense shift here.",
+            "explanation": "'My' shifts to 'her', and 'was' (already past) shifts back further to 'had been'.",
+            "grammarRule": "Pronoun & Possessive Shift"
         },
         {
             "id": "dis_l135_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The risk management framework said, 'Identify and manage risks proactively rather than reactively.'",
+            "question": "Convert to reported speech: Regulators warned banks, 'Don't ignore these risk factors.'",
             "options": [
-                "The risk management framework urged all departments to identify and manage risks proactively rather than reactively.",
-                "The risk management framework urged all departments identifying and managing risks proactively rather than reactively.",
-                "The risk management framework said identify and manage risks proactively rather than reactively."
+                "Regulators warned banks not to ignore these risk factors.",
+                "Regulators warned banks don't ignore those risk factors.",
+                "Regulators warned banks not to ignore those risk factors."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The risk management framework urged all departments to identify and manage risks proactively rather than reactively.",
-            "sentence": "The risk management framework said, 'Identify and manage risks proactively rather than reactively.'",
-            "hint": "Double imperative: 'urged + departments + to + identify and manage'.",
-            "explanation": "Two parallel imperatives → 'urged all departments to identify and manage risks proactively rather than reactively'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Regulators warned banks not to ignore those risk factors.",
+            "sentence": "Regulators warned banks, 'Don't ignore these risk factors.'",
+            "hint": "Negative commands shift to 'not to + verb', and 'these' shifts too.",
+            "explanation": "'Don't ignore' becomes 'not to ignore', and 'these' shifts to 'those'.",
+            "grammarRule": "Reported Commands & Requests"
         },
         {
             "id": "dis_l136_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The analyst noted, 'The sales forecast appears to have been overly optimistic.'",
+            "question": "Convert to reported speech: The historian contended, 'The records were deliberately falsified.'",
             "options": [
-                "The analyst noted that the sales forecast appeared to have been overly optimistic.",
-                "The analyst noted that the sales forecast appears to have been overly optimistic.",
-                "The analyst noted that the sales forecast appeared to be overly optimistic."
+                "The historian contended that the records were deliberately falsified.",
+                "The historian contended that the records had been deliberately falsified.",
+                "The historian contended that the records have been deliberately falsified."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The analyst noted that the sales forecast appeared to have been overly optimistic.",
-            "sentence": "The analyst noted, 'The sales forecast appears to have been overly optimistic.'",
-            "hint": "'Appears' → 'appeared'. The perfect infinitive 'to have been' stays - it indicates anteriority.",
-            "explanation": "'Appears' → 'appeared'. The perfect infinitive 'to have been overly optimistic' is retained because it signals a time before the appearing. 'To be' loses this prior-time meaning.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The historian contended that the records had been deliberately falsified.",
+            "sentence": "The historian contended, 'The records were deliberately falsified.'",
+            "hint": "Since this passive verb was already past, it moves one more step back, to past perfect passive.",
+            "explanation": "'Were falsified' (past simple passive) shifts to 'had been falsified' (past perfect passive).",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l136_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The economist was asked, 'What prompted the sudden shift in market conditions?'",
+            "question": "Convert to reported speech: She asked, 'Do you know when the results will be published?'",
             "options": [
-                "The economist was asked what had prompted the sudden shift in market conditions.",
-                "The economist was asked what prompted the sudden shift in market conditions.",
-                "The economist was asked what has prompted the sudden shift in market conditions."
+                "She asked whether I knew when the results will be published.",
+                "She asked if I know when the results would be published.",
+                "She asked whether I knew when the results would be published."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The economist was asked what had prompted the sudden shift in market conditions.",
-            "sentence": "The economist was asked, 'What prompted the sudden shift in market conditions?'",
-            "hint": "'Prompted' → 'had prompted'. Statement order.",
-            "explanation": "Past simple 'prompted' → past perfect 'had prompted'. Use statement word order.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "She asked whether I knew when the results would be published.",
+            "sentence": "She asked, 'Do you know when the results will be published?'",
+            "hint": "This has two layers: a yes/no question about knowing, and a wh-question inside it — both shift.",
+            "explanation": "'Know' shifts to 'knew' (whether-question), and 'will' shifts to 'would' (embedded wh-question).",
+            "grammarRule": "Mixed/Complex Transformation"
         },
         {
             "id": "dis_l136_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The board directed, 'Align all departmental objectives with the company's overall strategy.'",
+            "question": "Convert to reported speech: The engineers said, 'We shall test the prototype again.'",
             "options": [
-                "The board directed department heads to align all departmental objectives with the company's overall strategy.",
-                "The board directed department heads align all departmental objectives with the company's overall strategy.",
-                "The board directed department heads to aligning all departmental objectives with the company's overall strategy."
+                "The engineers said that they should test the prototype again.",
+                "The engineers said that they shall test the prototype again.",
+                "The engineers said that we should test the prototype again."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The board directed department heads to align all departmental objectives with the company's overall strategy.",
-            "sentence": "The board directed, 'Align all departmental objectives with the company's overall strategy.'",
-            "hint": "Imperative: 'directed + heads + to + align'. 'To aligning' is incorrect - infinitive form required.",
-            "explanation": "'Align' is an imperative → 'directed department heads to align'. 'To aligning' is ungrammatical - use the bare infinitive after 'to'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The engineers said that they should test the prototype again.",
+            "sentence": "The engineers said, 'We shall test the prototype again.'",
+            "hint": "'Shall' shifts to 'should', and the pronoun shifts too.",
+            "explanation": "'Shall' shifts to 'should', and 'we' shifts to 'they'.",
+            "grammarRule": "Modal Verb Backshift"
         },
         {
             "id": "dis_l137_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The spokesperson said, 'We acknowledge that mistakes were made and processes were not followed.'",
+            "question": "Convert to reported speech: He said, 'The contract is renewed automatically each year.'",
             "options": [
-                "The spokesperson admitted that mistakes had been made and processes had not been followed.",
-                "The spokesperson admitted that mistakes were made and processes were not followed.",
-                "The spokesperson admitted that mistakes had been made and processes were not followed."
+                "He said that the contract is renewed automatically each year.",
+                "He said that the contract was renewed automatically each year.",
+                "He said that the contract had been renewed automatically each year."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The spokesperson admitted that mistakes had been made and processes had not been followed.",
-            "sentence": "The spokesperson said, 'We acknowledge that mistakes were made and processes were not followed.'",
-            "hint": "Both passives shift: 'were made' → 'had been made', 'were not followed' → 'had not been followed'. Reporting verb: 'admitted'.",
-            "explanation": "Both passive verbs shift to past perfect passive. 'Admitted' suits the context of acknowledging wrongdoing. Both clauses must shift uniformly.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "He said that the contract was renewed automatically each year.",
+            "sentence": "He said, 'The contract is renewed automatically each year.'",
+            "hint": "This sentence is passive; the verb just needs one simple step back.",
+            "explanation": "'Is renewed' (present simple passive) shifts to 'was renewed' (past simple passive) — one step back.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l137_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The panel moderator asked, 'In what ways has digitalization changed your industry?'",
+            "question": "Convert to reported speech: The spokesperson conceded, 'We have been slow to respond.'",
             "options": [
-                "The panel moderator asked in what ways digitalization had changed their industry.",
-                "The panel moderator asked in what ways has digitalization changed their industry.",
-                "The panel moderator asked in what ways digitalization has changed their industry."
+                "The spokesperson conceded that they have been slow to respond.",
+                "The spokesperson conceded that we had been slow to respond.",
+                "The spokesperson conceded that they had been slow to respond."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The panel moderator asked in what ways digitalization had changed their industry.",
-            "sentence": "The panel moderator asked, 'In what ways has digitalization changed your industry?'",
-            "hint": "'Has changed' → 'had changed'. 'Your industry' → 'their industry'. Statement order.",
-            "explanation": "'Has changed' → 'had changed'. 'Your industry' → 'their industry'. Statement word order: 'in what ways digitalization had changed'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The spokesperson conceded that they had been slow to respond.",
+            "sentence": "The spokesperson conceded, 'We have been slow to respond.'",
+            "hint": "Notice both changes here: the backshifted tense and the adjusted pronoun.",
+            "explanation": "'Have been' shifts to 'had been', and 'we' shifts to 'they'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l137_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The management consultant said, 'Benchmark your performance against industry standards regularly.'",
+            "question": "Convert to reported speech: The teacher said, 'Practice makes perfect.'",
             "options": [
-                "The management consultant told clients to benchmark their performance against industry standards regularly.",
-                "The management consultant told clients to benchmark your performance against industry standards regularly.",
-                "The management consultant said benchmark your performance against industry standards regularly."
+                "The teacher said that practice made perfect.",
+                "The teacher said that practice makes perfect.",
+                "The teacher said that practice had made perfect."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The management consultant told clients to benchmark their performance against industry standards regularly.",
-            "sentence": "The management consultant said, 'Benchmark your performance against industry standards regularly.'",
-            "hint": "Imperative: 'told + clients + to + benchmark'. 'Your' → 'their'.",
-            "explanation": "'Benchmark' is an imperative → 'told clients to benchmark their performance against industry standards regularly'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The teacher said that practice makes perfect.",
+            "sentence": "The teacher said, 'Practice makes perfect.'",
+            "hint": "This is a well-known saying that's still valid — it doesn't need to shift tense.",
+            "explanation": "Well-known sayings and general truths often stay in the present tense in reported speech.",
+            "grammarRule": "No-Shift Exceptions"
         },
         {
             "id": "dis_l138_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'I would like to apologize on behalf of the entire team.'",
+            "question": "Convert to reported speech: They said, 'We conclude that the results are reliable.'",
             "options": [
-                "She said she would like to apologize on behalf of the entire team.",
-                "She said she would have liked to apologize on behalf of the entire team.",
-                "She said she will like to apologize on behalf of the entire team."
+                "They said that they conclude that the results were reliable.",
+                "They said that they concluded that the results were reliable.",
+                "They said that they concluded that the results are reliable."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said she would like to apologize on behalf of the entire team.",
-            "sentence": "She said, 'I would like to apologize on behalf of the entire team.'",
-            "hint": "'Would like' stays unchanged - 'would' is already past form. 'I' → 'she'.",
-            "explanation": "'Would like' does not shift further - it is already in the past modal form. 'Would have liked' is an over-shift. 'I' → 'she'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "They said that they concluded that the results were reliable.",
+            "sentence": "They said, 'We conclude that the results are reliable.'",
+            "hint": "This sentence has a clause inside a clause — both verbs backshift together.",
+            "explanation": "'Conclude' shifts to 'concluded', and 'are' shifts to 'were' — both clauses backshift together.",
+            "grammarRule": "Mixed/Complex Transformation"
         },
         {
             "id": "dis_l138_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The organizational psychologist asked, 'How effectively has the leadership team communicated the changes?'",
+            "question": "Convert to reported speech: Economists speculated, 'Unemployment may rise next quarter.'",
             "options": [
-                "The organizational psychologist asked how effectively the leadership team had communicated the changes.",
-                "The organizational psychologist asked how effectively has the leadership team communicated the changes.",
-                "The organizational psychologist asked how effectively the leadership team has communicated the changes."
+                "Economists speculated that unemployment might rise the following quarter.",
+                "Economists speculated that unemployment may rise the following quarter.",
+                "Economists speculated that unemployment might rise next quarter."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The organizational psychologist asked how effectively the leadership team had communicated the changes.",
-            "sentence": "The organizational psychologist asked, 'How effectively has the leadership team communicated the changes?'",
-            "hint": "'Has communicated' → 'had communicated'. Statement order.",
-            "explanation": "'Has communicated' → 'had communicated'. Use statement word order: 'how effectively the leadership team had communicated'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "Economists speculated that unemployment might rise the following quarter.",
+            "sentence": "Economists speculated, 'Unemployment may rise next quarter.'",
+            "hint": "Both 'may' and 'next quarter' shift together here.",
+            "explanation": "'May' shifts to 'might', and 'next quarter' shifts to 'the following quarter'.",
+            "grammarRule": "Modal Verb Backshift"
         },
         {
             "id": "dis_l138_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The career guide said, 'Seek out mentors who have expertise in areas where you are developing.'",
+            "question": "Convert to reported speech: He asked, 'Has the shipment been delivered?'",
             "options": [
-                "The career guide advised young professionals to seek out mentors who had expertise in areas where they were developing.",
-                "The career guide advised young professionals to seek out mentors who have expertise in areas where you are developing.",
-                "The career guide said seek out mentors who have expertise in areas where you are developing."
+                "He asked had the shipment been delivered.",
+                "He asked if the shipment has been delivered.",
+                "He asked if the shipment had been delivered."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The career guide advised young professionals to seek out mentors who had expertise in areas where they were developing.",
-            "sentence": "The career guide said, 'Seek out mentors who have expertise in areas where you are developing.'",
-            "hint": "Imperative with two embedded clauses. 'Have' → 'had'. 'You are developing' → 'they were developing'.",
-            "explanation": "'Seek out' → 'to seek out'. In relative clauses: 'have expertise' → 'had expertise' and 'you are developing' → 'they were developing'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "He asked if the shipment had been delivered.",
+            "sentence": "He asked, 'Has the shipment been delivered?'",
+            "hint": "Yes/No questions use 'if', with statement word order and shifted tense.",
+            "explanation": "'If' introduces the question, word order becomes statement order, and 'has been delivered' shifts to 'had been delivered'.",
+            "grammarRule": "Reported Yes/No Questions"
         },
         {
             "id": "dis_l139_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: Reports said, 'The negotiations have stalled because neither side is willing to compromise.'",
+            "question": "Convert to reported speech: The council said, 'Permits are issued within thirty days.'",
             "options": [
-                "Reports said the negotiations had stalled because neither side was willing to compromise.",
-                "Reports said the negotiations have stalled because neither side is willing to compromise.",
-                "Reports said the negotiations had stalled because neither side had been willing to compromise."
+                "The council said that permits were issued within thirty days.",
+                "The council said that permits had been issued within thirty days.",
+                "The council said that permits are issued within thirty days."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Reports said the negotiations had stalled because neither side was willing to compromise.",
-            "sentence": "Reports said, 'The negotiations have stalled because neither side is willing to compromise.'",
-            "hint": "'Have stalled' → 'had stalled'. 'Is willing' → 'was willing'. No over-shift in the reason clause.",
-            "explanation": "Two shifts: 'have stalled' → 'had stalled' and 'is willing' → 'was willing'. 'Had been willing' is an over-shift.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The council said that permits were issued within thirty days.",
+            "sentence": "The council said, 'Permits are issued within thirty days.'",
+            "hint": "Notice the passive form here — it shifts back exactly one tense, like any other present-tense verb.",
+            "explanation": "'Are issued' (present simple passive) shifts to 'were issued' (past simple passive) — one step back.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l139_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The client asked, 'What guarantees can be given that the data will remain secure?'",
+            "question": "Convert to reported speech: The chairman acknowledged, 'Our forecasts were too optimistic.'",
             "options": [
-                "The client asked what guarantees could be given that the data would remain secure.",
-                "The client asked what guarantees can be given that the data will remain secure.",
-                "The client asked what guarantees could be given that the data would have remained secure."
+                "The chairman acknowledged that our forecasts had been too optimistic.",
+                "The chairman acknowledged that their forecasts were too optimistic.",
+                "The chairman acknowledged that their forecasts had been too optimistic."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The client asked what guarantees could be given that the data would remain secure.",
-            "sentence": "The client asked, 'What guarantees can be given that the data will remain secure?'",
-            "hint": "'Can be given' → 'could be given'. 'Will remain' → 'would remain'. Statement order.",
-            "explanation": "Two shifts: 'can be given' → 'could be given' and 'will remain' → 'would remain'. 'Would have remained' is an over-shift.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The chairman acknowledged that their forecasts had been too optimistic.",
+            "sentence": "The chairman acknowledged, 'Our forecasts were too optimistic.'",
+            "hint": "Both the tense and the possessive word shift here.",
+            "explanation": "'Were' (already past) shifts back further to 'had been', and 'our' shifts to 'their'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l139_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The governance framework said, 'Establish clear lines of accountability within your team structure.'",
+            "question": "Convert to reported speech: The instructor urged trainees, 'Ask questions whenever you're unsure.'",
             "options": [
-                "The governance framework instructed leaders to establish clear lines of accountability within their team structure.",
-                "The governance framework instructed leaders to establish clear lines of accountability within your team structure.",
-                "The governance framework said establish clear lines of accountability within your team structure."
+                "The instructor urged trainees that they ask questions whenever they were unsure.",
+                "The instructor urged trainees to ask questions whenever you're unsure.",
+                "The instructor urged trainees to ask questions whenever they were unsure."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The governance framework instructed leaders to establish clear lines of accountability within their team structure.",
-            "sentence": "The governance framework said, 'Establish clear lines of accountability within your team structure.'",
-            "hint": "Imperative: 'instructed + leaders + to + establish'. 'Your' → 'their'.",
-            "explanation": "'Establish' is an imperative → 'instructed leaders to establish clear lines of accountability within their team structure'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The instructor urged trainees to ask questions whenever they were unsure.",
+            "sentence": "The instructor urged trainees, 'Ask questions whenever you're unsure.'",
+            "hint": "'Urged' works like 'told', and the pronoun shifts too.",
+            "explanation": "Commands are reported with 'urged + object + to-infinitive'. 'You're' shifts to 'they were'.",
+            "grammarRule": "Reported Commands & Requests"
         },
         {
             "id": "dis_l140_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The CEO said, 'I am pleased to announce that we have exceeded our annual targets.'",
+            "question": "Convert to reported speech: The economist contended, 'The forecast has underestimated demand.'",
             "options": [
-                "The CEO said she was pleased to announce they had exceeded their annual targets.",
-                "The CEO said she is pleased to announce they have exceeded their annual targets.",
-                "The CEO said she was pleased to announce that they exceeded their annual targets."
+                "The economist contended that the forecast underestimated demand.",
+                "The economist contended that the forecast has underestimated demand.",
+                "The economist contended that the forecast had underestimated demand."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The CEO said she was pleased to announce they had exceeded their annual targets.",
-            "sentence": "The CEO said, 'I am pleased to announce that we have exceeded our annual targets.'",
-            "hint": "'Am pleased' → 'was pleased'. 'Have exceeded' → 'had exceeded'. 'We' → 'they'. 'Our' → 'their'.",
-            "explanation": "Three shifts: 'am pleased' → 'was pleased', 'have exceeded' → 'had exceeded', 'we/our' → 'they/their'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The economist contended that the forecast had underestimated demand.",
+            "sentence": "The economist contended, 'The forecast has underestimated demand.'",
+            "hint": "Present perfect shifts to past perfect, not to simple past.",
+            "explanation": "'Has underestimated' (present perfect) shifts to 'had underestimated' (past perfect).",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l140_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The new employee asked, 'To whom should concerns about governance be reported?'",
+            "question": "Convert to reported speech: The audit said, 'Records are kept for seven years.'",
             "options": [
-                "The new employee asked to whom concerns about governance should be reported.",
-                "The new employee asked to whom should concerns about governance be reported.",
-                "The new employee asked to whom concerns about governance should reported."
+                "The audit said that records are kept for seven years.",
+                "The audit said that records had been kept for seven years.",
+                "The audit said that records were kept for seven years."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The new employee asked to whom concerns about governance should be reported.",
-            "sentence": "The new employee asked, 'To whom should concerns about governance be reported?'",
-            "hint": "'Should be reported' stays (modal passive with no shift needed for 'should'). Statement order. 'Be' must not be omitted.",
-            "explanation": "'Should' does not shift. Use statement word order: 'to whom concerns... should be reported'. 'Should reported' is wrong - 'be' is essential in the passive.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The audit said that records were kept for seven years.",
+            "sentence": "The audit said, 'Records are kept for seven years.'",
+            "hint": "This is a passive sentence; shift the verb back one simple step.",
+            "explanation": "'Are kept' (present simple passive) shifts to 'were kept' (past simple passive) — one step back.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l140_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The financial regulator said, 'Disclose all material information to investors before the IPO.'",
+            "question": "Convert to reported speech: She said, 'I acknowledge that the schedule will slip.'",
             "options": [
-                "The financial regulator required companies to disclose all material information to investors before the IPO.",
-                "The financial regulator required companies disclosing all material information to investors before the IPO.",
-                "The financial regulator said disclose all material information to investors before the IPO."
+                "She said that she acknowledged that the schedule will slip.",
+                "She said that she acknowledges that the schedule would slip.",
+                "She said that she acknowledged that the schedule would slip."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The financial regulator required companies to disclose all material information to investors before the IPO.",
-            "sentence": "The financial regulator said, 'Disclose all material information to investors before the IPO.'",
-            "hint": "Imperative: 'required + companies + to + disclose'.",
-            "explanation": "'Disclose' is an imperative → 'required companies to disclose all material information to investors before the IPO'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "She said that she acknowledged that the schedule would slip.",
+            "sentence": "She said, 'I acknowledge that the schedule will slip.'",
+            "hint": "Two verbs need to shift: the main verb and the verb inside the embedded clause.",
+            "explanation": "'Acknowledge' shifts to 'acknowledged', and 'will' shifts to 'would' — both clauses backshift together.",
+            "grammarRule": "Mixed/Complex Transformation"
         }
     ]
 }

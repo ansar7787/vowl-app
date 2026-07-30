@@ -1,577 +1,577 @@
 {
-    "gameType": "pronounResolution",
-    "batchIndex": 13,
-    "levels": "121-130",
-    "quests": [
-        {
-            "id": "pr_l121_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Although the CEO favored expansion, the CFO warned that she expected losses next quarter.\nWho or what does 'she' refer to?",
-            "targetWord": "she",
-            "sentence": "Although the CEO favored expansion, the CFO warned that she expected losses next quarter.",
-            "options": [
-                "The CFO",
-                "The CEO",
-                "expansion"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The CFO",
-            "hint": "Who issued the warning about losses?",
-            "explanation": "'she' refers to 'the CFO' - logically, the one issuing the warning is the one who 'expected losses,' not the CEO who favored expansion.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l121_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The board approved an elimination of funding for the arts program. This outraged parents at the meeting.\nWho or what does 'This' refer to?",
-            "targetWord": "This",
-            "sentence": "The board approved an elimination of funding for the arts program. This outraged parents at the meeting.",
-            "options": [
-                "The elimination",
-                "board",
-                "parents"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The elimination",
-            "hint": "What outraged the parents?",
-            "explanation": "'This' refers back to the elimination just approved, not to the board or the parents themselves.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l121_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The airline introduced a new boarding system, which reduced wait times significantly.\nWho or what does 'which' refer to?",
-            "targetWord": "which",
-            "sentence": "The airline introduced a new boarding system, which reduced wait times significantly.",
-            "options": [
-                "The boarding system",
-                "airline",
-                "times"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The boarding system",
-            "hint": "What cut boarding wait times?",
-            "explanation": "'which' adds extra detail about the boarding system, set off by a comma since the information isn't essential to identify it.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l122_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Although the lead developer mentored the new hire patiently, she still struggled with the legacy code.\nWho or what does 'she' refer to?",
-            "targetWord": "she",
-            "sentence": "Although the lead developer mentored the new hire patiently, she still struggled with the legacy code.",
-            "options": [
-                "The new hire",
-                "lead developer",
-                "code"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The new hire",
-            "hint": "Who kept struggling despite the mentoring?",
-            "explanation": "'she' refers to 'the new hire' - 'still struggled' signals a contrast with the mentoring, pointing to the person being helped, not the mentor.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l122_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The grandmother made a surprise announcement about her secret recipe. This delighted the whole family.\nWho or what does 'This' refer to?",
-            "targetWord": "This",
-            "sentence": "The grandmother made a surprise announcement about her secret recipe. This delighted the whole family.",
-            "options": [
-                "The announcement",
-                "grandmother",
-                "family"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The announcement",
-            "hint": "What delighted the family?",
-            "explanation": "'This' refers back to the announcement just made, not to the grandmother or the family.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l122_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Because the director disagreed with the producer, she pushed back the release date.\nWho or what does 'she' refer to?",
-            "targetWord": "she",
-            "sentence": "Because the director disagreed with the producer, she pushed back the release date.",
-            "options": [
-                "The director",
-                "producer",
-                "date"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The director",
-            "hint": "Who pushed back the release date?",
-            "explanation": "'she' refers to 'the director' - the sentence opens by identifying her disagreement, making her the subject carried into the main clause.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l123_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The specialist recommended physical therapy, which the patient began the following week.\nWho or what does 'which' refer to?",
-            "targetWord": "which",
-            "sentence": "The specialist recommended physical therapy, which the patient began the following week.",
-            "options": [
-                "The physical therapy",
-                "specialist",
-                "patient"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The physical therapy",
-            "hint": "What did the patient begin?",
-            "explanation": "'which' refers back to the physical therapy just recommended, the thing the patient started.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l123_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Although the manager doubted the pricing strategy the intern proposed, she let it run for a trial week.\nWho or what does 'she' refer to?",
-            "targetWord": "she",
-            "sentence": "Although the manager doubted the pricing strategy the intern proposed, she let it run for a trial week.",
-            "options": [
-                "The manager",
-                "intern",
-                "strategy"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The manager",
-            "hint": "Who allowed the trial to happen?",
-            "explanation": "'she' refers to 'the manager' - she's the one with authority to approve the trial, despite her doubts.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l123_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Headquarters issued a directive banning personal calls during shifts. This frustrated the staff.\nWho or what does 'This' refer to?",
-            "targetWord": "This",
-            "sentence": "Headquarters issued a directive banning personal calls during shifts. This frustrated the staff.",
-            "options": [
-                "The directive",
-                "Headquarters",
-                "staff"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The directive",
-            "hint": "What frustrated the staff?",
-            "explanation": "'This' refers back to the directive just issued.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l124_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The agency booked the clients a suite, which overlooked the entire harbor.\nWho or what does 'which' refer to?",
-            "targetWord": "which",
-            "sentence": "The agency booked the clients a suite, which overlooked the entire harbor.",
-            "options": [
-                "The suite",
-                "agency",
-                "clients"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The suite",
-            "hint": "What overlooked the harbor?",
-            "explanation": "'which' adds detail about the suite, the thing with the harbor view.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l124_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Because the tutor noticed frustration building in the student, she suggested a short break.\nWho or what does 'she' refer to?",
-            "targetWord": "she",
-            "sentence": "Because the tutor noticed frustration building in the student, she suggested a short break.",
-            "options": [
-                "The tutor",
-                "student",
-                "break"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The tutor",
-            "hint": "Who suggested the break?",
-            "explanation": "'she' refers to 'the tutor' - she's the one observing and responding to the student's frustration.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l124_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The committee delayed its vote on the new bylaws until next month. This frustrated several members.\nWho or what does 'This' refer to?",
-            "targetWord": "This",
-            "sentence": "The committee delayed its vote on the new bylaws until next month. This frustrated several members.",
-            "options": [
-                "The delay",
-                "committee",
-                "members"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The delay",
-            "hint": "What frustrated several members?",
-            "explanation": "'This' refers back to the delay itself, not to the committee or the members.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l125_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The critic praised the dessert, which used an unexpected combination of spices.\nWho or what does 'which' refer to?",
-            "targetWord": "which",
-            "sentence": "The critic praised the dessert, which used an unexpected combination of spices.",
-            "options": [
-                "The dessert",
-                "critic",
-                "spices"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The dessert",
-            "hint": "What used an unexpected spice combination?",
-            "explanation": "'which' adds detail about the dessert being reviewed.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l125_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Although the client questioned the cost estimate the engineer gave, she stood firmly behind her numbers.\nWho or what does 'she' refer to?",
-            "targetWord": "she",
-            "sentence": "Although the client questioned the cost estimate the engineer gave, she stood firmly behind her numbers.",
-            "options": [
-                "The engineer",
-                "client",
-                "estimate"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The engineer",
-            "hint": "Who defended the numbers?",
-            "explanation": "'she' refers to 'the engineer' - she's the one who produced the estimate and is defending it.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l125_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The board postponed the merger vote indefinitely. This alarmed major shareholders.\nWho or what does 'This' refer to?",
-            "targetWord": "This",
-            "sentence": "The board postponed the merger vote indefinitely. This alarmed major shareholders.",
-            "options": [
-                "The postponement",
-                "board",
-                "shareholders"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The postponement",
-            "hint": "What alarmed the shareholders?",
-            "explanation": "'This' refers back to the postponement itself.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l126_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The label signed the band, whose demo had gone viral online.\nWho or what does 'whose' refer to?",
-            "targetWord": "whose",
-            "sentence": "The label signed the band, whose demo had gone viral online.",
-            "options": [
-                "The band",
-                "label",
-                "demo"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The band",
-            "hint": "Whose demo went viral?",
-            "explanation": "'whose' shows possession - the demo belongs to 'the band.'",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l126_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Because the patient distrusted the diagnosis, she requested a second opinion.\nWho or what does 'she' refer to?",
-            "targetWord": "she",
-            "sentence": "Because the patient distrusted the diagnosis, she requested a second opinion.",
-            "options": [
-                "The patient",
-                "diagnosis",
-                "opinion"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The patient",
-            "hint": "Who requested a second opinion?",
-            "explanation": "'she' refers to 'the patient' - she's the one distrusting the diagnosis and seeking reassurance.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l126_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The city banned overnight parking on the avenue. This angered local residents.\nWho or what does 'This' refer to?",
-            "targetWord": "This",
-            "sentence": "The city banned overnight parking on the avenue. This angered local residents.",
-            "options": [
-                "The ban",
-                "city",
-                "residents"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The ban",
-            "hint": "What angered local residents?",
-            "explanation": "'This' refers back to the ban itself.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l127_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The brand released a limited collection, which sold out within hours.\nWho or what does 'which' refer to?",
-            "targetWord": "which",
-            "sentence": "The brand released a limited collection, which sold out within hours.",
-            "options": [
-                "The collection",
-                "brand",
-                "hours"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The collection",
-            "hint": "What sold out within hours?",
-            "explanation": "'which' adds detail about the collection, the thing that sold out.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l127_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Because the older brother resented the favoritism, he confronted their parents directly.\nWho or what does 'he' refer to?",
-            "targetWord": "he",
-            "sentence": "Because the older brother resented the favoritism, he confronted their parents directly.",
-            "options": [
-                "The older brother",
-                "parents",
-                "favoritism"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The older brother",
-            "hint": "Who confronted the parents?",
-            "explanation": "'he' refers to 'the older brother' - he's the one resenting the favoritism and acting on it.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l127_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The port authority suspended ferry service due to high winds. This stranded hundreds of passengers.\nWho or what does 'This' refer to?",
-            "targetWord": "This",
-            "sentence": "The port authority suspended ferry service due to high winds. This stranded hundreds of passengers.",
-            "options": [
-                "The suspension",
-                "authority",
-                "passengers"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The suspension",
-            "hint": "What stranded hundreds of passengers?",
-            "explanation": "'This' refers back to the suspension itself.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l128_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The firm hired the candidate, whose portfolio impressed every partner.\nWho or what does 'whose' refer to?",
-            "targetWord": "whose",
-            "sentence": "The firm hired the candidate, whose portfolio impressed every partner.",
-            "options": [
-                "The candidate",
-                "firm",
-                "partner"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The candidate",
-            "hint": "Whose portfolio impressed everyone?",
-            "explanation": "'whose' shows possession - the portfolio belongs to 'the candidate.'",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l128_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Although the senior researcher trained the graduate student carefully, he still misread the data.\nWho or what does 'he' refer to?",
-            "targetWord": "he",
-            "sentence": "Although the senior researcher trained the graduate student carefully, he still misread the data.",
-            "options": [
-                "The graduate student",
-                "researcher",
-                "data"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The graduate student",
-            "hint": "Who misread the data?",
-            "explanation": "'he' refers to 'the graduate student' - the contrast with 'trained carefully' points to the trainee, not the trainer.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l128_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The company recalled every unit due to a battery defect. This cost millions in losses.\nWho or what does 'This' refer to?",
-            "targetWord": "This",
-            "sentence": "The company recalled every unit due to a battery defect. This cost millions in losses.",
-            "options": [
-                "The recall",
-                "company",
-                "losses"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The recall",
-            "hint": "What cost millions?",
-            "explanation": "'This' refers back to the recall itself.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l129_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The market introduced a delivery service, which doubled their customer base.\nWho or what does 'which' refer to?",
-            "targetWord": "which",
-            "sentence": "The market introduced a delivery service, which doubled their customer base.",
-            "options": [
-                "The delivery service",
-                "market",
-                "base"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The delivery service",
-            "hint": "What doubled the customer base?",
-            "explanation": "'which' adds detail about the delivery service, the thing that drove growth.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l129_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Because the senior nurse trusted the new resident, she let him handle the procedure alone.\nWho or what does 'him' refer to?",
-            "targetWord": "him",
-            "sentence": "Because the senior nurse trusted the new resident, she let him handle the procedure alone.",
-            "options": [
-                "The new resident",
-                "nurse",
-                "procedure"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The new resident",
-            "hint": "Who handled the procedure alone?",
-            "explanation": "'him' refers to 'the new resident' - the nurse ('she') is the one trusting; the resident ('him') is the one being trusted with the task.",
-            "grammarRule": "Object Pronouns"
-        },
-        {
-            "id": "pr_l129_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The venue announced a steep increase in ticket prices for the reunion show. This angered longtime fans.\nWho or what does 'This' refer to?",
-            "targetWord": "This",
-            "sentence": "The venue announced a steep increase in ticket prices for the reunion show. This angered longtime fans.",
-            "options": [
-                "The increase",
-                "venue",
-                "fans"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The increase",
-            "hint": "What angered longtime fans?",
-            "explanation": "'This' refers back to the price increase just announced.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l130_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The host welcomed the guest, whose flight had been delayed twice.\nWho or what does 'whose' refer to?",
-            "targetWord": "whose",
-            "sentence": "The host welcomed the guest, whose flight had been delayed twice.",
-            "options": [
-                "The guest",
-                "host",
-                "flight"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The guest",
-            "hint": "Whose flight was delayed twice?",
-            "explanation": "'whose' shows possession - the flight belongs to 'the guest.'",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l130_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Because the senior partner doubted the argument the associate presented, she requested additional evidence.\nWho or what does 'she' refer to?",
-            "targetWord": "she",
-            "sentence": "Because the senior partner doubted the argument the associate presented, she requested additional evidence.",
-            "options": [
-                "The senior partner",
-                "associate",
-                "evidence"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The senior partner",
-            "hint": "Who requested more evidence?",
-            "explanation": "'she' refers to 'the senior partner' - she's the one expressing doubt and demanding more proof.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l130_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The association approved an increase in monthly dues for every homeowner. This sparked immediate complaints.\nWho or what does 'This' refer to?",
-            "targetWord": "This",
-            "sentence": "The association approved an increase in monthly dues for every homeowner. This sparked immediate complaints.",
-            "options": [
-                "The increase",
-                "association",
-                "homeowner"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The increase",
-            "hint": "What sparked the complaints?",
-            "explanation": "'This' refers back to the dues increase just approved.",
-            "grammarRule": "Pronouns"
-        }
-    ]
+  "gameType": "pronounResolution",
+  "batchIndex": 13,
+  "levels": "121-130",
+  "quests": [
+    {
+      "id": "pr_l121_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The colleague whom I trained last year now manages the whole department.\nWho or what does 'whom' refer to?",
+      "targetWord": "whom",
+      "sentence": "The colleague whom I trained last year now manages the whole department.",
+      "options": [
+        "I",
+        "The department",
+        "The colleague"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The colleague",
+      "hint": "Who received the training?",
+      "explanation": "'whom' is the object form - it refers to 'the colleague,' the person who was trained.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l121_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Although the CEO favored the expansion plan, the CFO warned that she expected heavy losses.\nWho or what does 'she' refer to?",
+      "targetWord": "she",
+      "sentence": "Although the CEO favored the expansion plan, the CFO warned that she expected heavy losses.",
+      "options": [
+        "The CEO",
+        "The plan",
+        "The CFO"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The CFO",
+      "hint": "Who issued the warning about losses?",
+      "explanation": "'she' refers to the CFO, the one who gave the warning - 'although' signals the CFO disagreed with the CEO.",
+      "grammarRule": "Subject Pronouns"
+    },
+    {
+      "id": "pr_l121_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The city delayed the new tax by a full year after residents protested loudly. This gave officials time to reconsider the plan.\nWho or what does 'This' refer to?",
+      "targetWord": "This",
+      "sentence": "The city delayed the new tax by a full year after residents protested loudly. This gave officials time to reconsider the plan.",
+      "options": [
+        "officials",
+        "The residents",
+        "The delay"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The delay",
+      "hint": "What gave officials extra time?",
+      "explanation": "'This' refers back to the delay just described, the decision that created the extra time.",
+      "grammarRule": "Demonstrative Pronouns"
+    },
+    {
+      "id": "pr_l122_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The mentor to whom she owes her early success recently retired.\nWho or what does 'whom' refer to?",
+      "targetWord": "whom",
+      "sentence": "The mentor to whom she owes her early success recently retired.",
+      "options": [
+        "she",
+        "success",
+        "The mentor"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The mentor",
+      "hint": "Who gets the credit for her early success?",
+      "explanation": "'whom' follows the preposition 'to' and refers to 'the mentor,' the person she owes credit to.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l122_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The teacher scolded the student because he had copied the answers.\nWho or what does 'he' refer to?",
+      "targetWord": "he",
+      "sentence": "The teacher scolded the student because he had copied the answers.",
+      "options": [
+        "The teacher",
+        "answers",
+        "the student"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the student",
+      "hint": "Who did the copying that caused the trouble?",
+      "explanation": "'he' refers to the student - the reason for scolding is the same person receiving it, who copied the answers.",
+      "grammarRule": "Subject Pronouns"
+    },
+    {
+      "id": "pr_l122_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The airline slashed its winter schedule by nearly a third. That left many small towns without regular flights.\nWho or what does 'That' refer to?",
+      "targetWord": "That",
+      "sentence": "The airline slashed its winter schedule by nearly a third. That left many small towns without regular flights.",
+      "options": [
+        "The schedule cut",
+        "towns",
+        "The airline"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The schedule cut",
+      "hint": "What left towns without service?",
+      "explanation": "'That' refers back to the schedule cut just described, the change that affected the towns.",
+      "grammarRule": "Demonstrative Pronouns"
+    },
+    {
+      "id": "pr_l123_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The witness whom the lawyer cross-examined for hours never changed her story.\nWho or what does 'whom' refer to?",
+      "targetWord": "whom",
+      "sentence": "The witness whom the lawyer cross-examined for hours never changed her story.",
+      "options": [
+        "story",
+        "The witness",
+        "The lawyer"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The witness",
+      "hint": "Who was being questioned?",
+      "explanation": "'whom' is the object form - it refers to 'the witness,' the person being cross-examined.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l123_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The trophy didn't fit in the suitcase because it was too big.\nWho or what does 'it' refer to?",
+      "targetWord": "it",
+      "sentence": "The trophy didn't fit in the suitcase because it was too big.",
+      "options": [
+        "The suitcase",
+        "The trophy",
+        "fit"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The trophy",
+      "hint": "What was oversized - the trophy or the suitcase?",
+      "explanation": "'it' refers to the trophy - something 'too big' is what fails to fit inside a container.",
+      "grammarRule": "Subject Pronouns"
+    },
+    {
+      "id": "pr_l123_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The factory switched to a four-day workweek without cutting anyone's pay. This boosted morale almost overnight.\nWho or what does 'This' refer to?",
+      "targetWord": "This",
+      "sentence": "The factory switched to a four-day workweek without cutting anyone's pay. This boosted morale almost overnight.",
+      "options": [
+        "pay",
+        "The factory",
+        "The schedule change"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The schedule change",
+      "hint": "What lifted everyone's spirits?",
+      "explanation": "'This' refers back to the schedule change just described, the decision that boosted morale.",
+      "grammarRule": "Demonstrative Pronouns"
+    },
+    {
+      "id": "pr_l124_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The donor from whom the museum received the painting wished to remain anonymous.\nWho or what does 'whom' refer to?",
+      "targetWord": "whom",
+      "sentence": "The donor from whom the museum received the painting wished to remain anonymous.",
+      "options": [
+        "painting",
+        "The museum",
+        "The donor"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The donor",
+      "hint": "Who gave the artwork?",
+      "explanation": "'whom' follows the preposition 'from' and refers to 'the donor,' the person who gave the painting.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l124_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The trophy didn't fit in the suitcase because it was too small.\nWho or what does 'it' refer to?",
+      "targetWord": "it",
+      "sentence": "The trophy didn't fit in the suitcase because it was too small.",
+      "options": [
+        "fit",
+        "The trophy",
+        "The suitcase"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The suitcase",
+      "hint": "What was undersized this time - the trophy or the suitcase?",
+      "explanation": "'it' refers to the suitcase - something 'too small' is the container that can't hold the item.",
+      "grammarRule": "Subject Pronouns"
+    },
+    {
+      "id": "pr_l124_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The hospital opened a new wing dedicated entirely to pediatric care. This allowed doctors to treat far more children each year.\nWho or what does 'This' refer to?",
+      "targetWord": "This",
+      "sentence": "The hospital opened a new wing dedicated entirely to pediatric care. This allowed doctors to treat far more children each year.",
+      "options": [
+        "The hospital",
+        "doctors",
+        "The new wing"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The new wing",
+      "hint": "What allowed doctors to see more patients?",
+      "explanation": "'This' refers back to the new wing just described, the addition that increased capacity.",
+      "grammarRule": "Demonstrative Pronouns"
+    },
+    {
+      "id": "pr_l125_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The architect whom the city hired for the project has designed several award-winning buildings.\nWho or what does 'whom' refer to?",
+      "targetWord": "whom",
+      "sentence": "The architect whom the city hired for the project has designed several award-winning buildings.",
+      "options": [
+        "The architect",
+        "buildings",
+        "The city"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The architect",
+      "hint": "Who got hired?",
+      "explanation": "'whom' is the object form - it refers to 'the architect,' the person the city hired.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l125_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The employee thanked the supervisor because she had approved the transfer request.\nWho or what does 'she' refer to?",
+      "targetWord": "she",
+      "sentence": "The employee thanked the supervisor because she had approved the transfer request.",
+      "options": [
+        "request",
+        "the supervisor",
+        "The employee"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the supervisor",
+      "hint": "Who had the authority to approve the request?",
+      "explanation": "'she' refers to the supervisor - the reason for the thanks is the approval only a supervisor could grant.",
+      "grammarRule": "Subject Pronouns"
+    },
+    {
+      "id": "pr_l125_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The company quietly raised its subscription price for the third time this year. This drove many long-time users to cancel.\nWho or what does 'This' refer to?",
+      "targetWord": "This",
+      "sentence": "The company quietly raised its subscription price for the third time this year. This drove many long-time users to cancel.",
+      "options": [
+        "The price increase",
+        "The company",
+        "users"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The price increase",
+      "hint": "What pushed users to cancel?",
+      "explanation": "'This' refers back to the price increase just described, the change that drove people away.",
+      "grammarRule": "Demonstrative Pronouns"
+    },
+    {
+      "id": "pr_l126_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The client with whom we signed the contract requested a few small changes.\nWho or what does 'whom' refer to?",
+      "targetWord": "whom",
+      "sentence": "The client with whom we signed the contract requested a few small changes.",
+      "options": [
+        "The client",
+        "we",
+        "changes"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The client",
+      "hint": "Who is the contract with?",
+      "explanation": "'whom' follows the preposition 'with' and refers to 'the client,' the other party in the contract.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l126_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Sara warned her sister about the icy sidewalk, but she slipped anyway.\nWho or what does 'she' refer to?",
+      "targetWord": "she",
+      "sentence": "Sara warned her sister about the icy sidewalk, but she slipped anyway.",
+      "options": [
+        "The sidewalk",
+        "her sister",
+        "Sara"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "her sister",
+      "hint": "Who ignored the warning and got hurt?",
+      "explanation": "'she' refers to the sister - Sara gave the warning, so it's logical that the person who didn't heed it is the one who slipped.",
+      "grammarRule": "Subject Pronouns"
+    },
+    {
+      "id": "pr_l126_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The theater cut ticket prices in half for the entire month of January. This brought in record crowds.\nWho or what does 'This' refer to?",
+      "targetWord": "This",
+      "sentence": "The theater cut ticket prices in half for the entire month of January. This brought in record crowds.",
+      "options": [
+        "crowds",
+        "The theater",
+        "The price cut"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The price cut",
+      "hint": "What drew in so many people?",
+      "explanation": "'This' refers back to the price cut just described, the change that brought in crowds.",
+      "grammarRule": "Demonstrative Pronouns"
+    },
+    {
+      "id": "pr_l127_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The candidate whom the committee ultimately selected had the least experience on paper.\nWho or what does 'whom' refer to?",
+      "targetWord": "whom",
+      "sentence": "The candidate whom the committee ultimately selected had the least experience on paper.",
+      "options": [
+        "experience",
+        "The candidate",
+        "The committee"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The candidate",
+      "hint": "Who got chosen?",
+      "explanation": "'whom' is the object form - it refers to 'the candidate,' the person selected.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l127_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The city council rejected the developer's proposal because it was too expensive.\nWho or what does 'it' refer to?",
+      "targetWord": "it",
+      "sentence": "The city council rejected the developer's proposal because it was too expensive.",
+      "options": [
+        "The proposal",
+        "The city council",
+        "The developer"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The proposal",
+      "hint": "What cost too much?",
+      "explanation": "'it' refers to the proposal - the reason for rejecting a plan is usually a quality of the plan itself.",
+      "grammarRule": "Subject Pronouns"
+    },
+    {
+      "id": "pr_l127_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The airline added three new direct routes to Asia this spring. This made the airline far more competitive with rivals.\nWho or what does 'This' refer to?",
+      "targetWord": "This",
+      "sentence": "The airline added three new direct routes to Asia this spring. This made the airline far more competitive with rivals.",
+      "options": [
+        "The new routes",
+        "rivals",
+        "Asia"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The new routes",
+      "hint": "What boosted the airline's competitiveness?",
+      "explanation": "'This' refers back to the new routes just described, the change that helped the airline compete.",
+      "grammarRule": "Demonstrative Pronouns"
+    },
+    {
+      "id": "pr_l128_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The investor to whom the founders pitched their idea offered funding on the spot.\nWho or what does 'whom' refer to?",
+      "targetWord": "whom",
+      "sentence": "The investor to whom the founders pitched their idea offered funding on the spot.",
+      "options": [
+        "founders",
+        "funding",
+        "The investor"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The investor",
+      "hint": "Who heard the pitch?",
+      "explanation": "'whom' follows the preposition 'to' and refers to 'the investor,' the person who heard the idea.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l128_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The nurse handed the chart to the doctor because she wanted a second opinion on the diagnosis.\nWho or what does 'she' refer to?",
+      "targetWord": "she",
+      "sentence": "The nurse handed the chart to the doctor because she wanted a second opinion on the diagnosis.",
+      "options": [
+        "The diagnosis",
+        "The nurse",
+        "The doctor"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The nurse",
+      "hint": "Who wanted another opinion, and who was asked to give one?",
+      "explanation": "'she' refers to the nurse - she sought the doctor's help because she needed that second opinion herself.",
+      "grammarRule": "Subject Pronouns"
+    },
+    {
+      "id": "pr_l128_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The government cut funding for the youth center by sixty percent. This forced the center to lay off half its staff.\nWho or what does 'This' refer to?",
+      "targetWord": "This",
+      "sentence": "The government cut funding for the youth center by sixty percent. This forced the center to lay off half its staff.",
+      "options": [
+        "staff",
+        "The government",
+        "The funding cut"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The funding cut",
+      "hint": "What caused the layoffs?",
+      "explanation": "'This' refers back to the funding cut just described, the decision that forced the layoffs.",
+      "grammarRule": "Demonstrative Pronouns"
+    },
+    {
+      "id": "pr_l129_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The applicant whom the panel interviewed twice eventually withdrew from consideration.\nWho or what does 'whom' refer to?",
+      "targetWord": "whom",
+      "sentence": "The applicant whom the panel interviewed twice eventually withdrew from consideration.",
+      "options": [
+        "The panel",
+        "consideration",
+        "The applicant"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The applicant",
+      "hint": "Who went through two interviews?",
+      "explanation": "'whom' is the object form - it refers to 'the applicant,' the person interviewed.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l129_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Emma asked Julia to move because she couldn't see the stage.\nWho or what does 'she' refer to?",
+      "targetWord": "she",
+      "sentence": "Emma asked Julia to move because she couldn't see the stage.",
+      "options": [
+        "Julia",
+        "The stage",
+        "Emma"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Emma",
+      "hint": "Who had the view problem?",
+      "explanation": "'she' refers to Emma - she's the one who couldn't see, which is why she made the request.",
+      "grammarRule": "Subject Pronouns"
+    },
+    {
+      "id": "pr_l129_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The store began offering free returns on all online orders. This significantly increased online sales.\nWho or what does 'This' refer to?",
+      "targetWord": "This",
+      "sentence": "The store began offering free returns on all online orders. This significantly increased online sales.",
+      "options": [
+        "sales",
+        "The free-returns policy",
+        "The store"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The free-returns policy",
+      "hint": "What led to more online sales?",
+      "explanation": "'This' refers back to the free-returns policy just described, the change that boosted sales.",
+      "grammarRule": "Demonstrative Pronouns"
+    },
+    {
+      "id": "pr_l130_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The professor for whom I worked as a research assistant just published a new book.\nWho or what does 'whom' refer to?",
+      "targetWord": "whom",
+      "sentence": "The professor for whom I worked as a research assistant just published a new book.",
+      "options": [
+        "I",
+        "book",
+        "The professor"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The professor",
+      "hint": "Who did the speaker work for?",
+      "explanation": "'whom' follows the preposition 'for' and refers to 'the professor,' the person being worked for.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l130_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The manager criticized the intern in front of the whole team because he had missed the deadline.\nWho or what does 'he' refer to?",
+      "targetWord": "he",
+      "sentence": "The manager criticized the intern in front of the whole team because he had missed the deadline.",
+      "options": [
+        "the intern",
+        "team",
+        "The manager"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "the intern",
+      "hint": "Who missed the deadline that caused the criticism?",
+      "explanation": "'he' refers to the intern - the reason for the criticism is the same person receiving it, who missed the deadline.",
+      "grammarRule": "Subject Pronouns"
+    },
+    {
+      "id": "pr_l130_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The bakery started using a local flour supplier instead of a national one. This improved both the taste and the price of their bread.\nWho or what does 'This' refer to?",
+      "targetWord": "This",
+      "sentence": "The bakery started using a local flour supplier instead of a national one. This improved both the taste and the price of their bread.",
+      "options": [
+        "The bakery",
+        "bread",
+        "The supplier switch"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The supplier switch",
+      "hint": "What improved both taste and price?",
+      "explanation": "'This' refers back to the supplier switch just described, the decision behind both improvements.",
+      "grammarRule": "Demonstrative Pronouns"
+    }
+  ]
 }

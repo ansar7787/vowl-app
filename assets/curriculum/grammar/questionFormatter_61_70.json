@@ -1,577 +1,577 @@
 {
-    "gameType": "questionFormatter",
-    "batchIndex": 7,
-    "levels": "61-70",
-    "quests": [
-        {
-            "id": "qf_l61_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Direct: \"I work at the hospital.\" She said that she _____.",
-            "sentence": "Direct: \"I work at the hospital.\" She said that she _____.",
-            "options": [
-                "worked at the hospital",
-                "works at the hospital",
-                "work at the hospital",
-                "is working at the hospital"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "worked at the hospital",
-            "hint": "In reported speech, present simple ('work') shifts back to past simple ('worked').",
-            "explanation": "When reporting past speech, present simple shifts to past simple. 'I work' becomes 'she worked' - the reporting verb 'said' triggers the tense backshift.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l61_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Direct: \"We are leaving tomorrow.\" They said that they _____.",
-            "sentence": "Direct: \"We are leaving tomorrow.\" They said that they _____.",
-            "options": [
-                "were leaving the next day",
-                "are leaving tomorrow",
-                "were leaving tomorrow",
-                "would leave tomorrow"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "were leaving the next day",
-            "hint": "Present continuous shifts to past continuous; 'tomorrow' becomes 'the next day'.",
-            "explanation": "Reported speech requires two changes: 'are leaving' (present continuous) shifts to 'were leaving' (past continuous), and 'tomorrow' becomes 'the next day' since the reporting happens later.",
-            "grammarRule": "Verb 'To Be' Questions"
-        },
-        {
-            "id": "qf_l61_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Direct: \"She has finished the report.\" He said that she _____.",
-            "sentence": "Direct: \"She has finished the report.\" He said that she _____.",
-            "options": [
-                "had finished the report",
-                "has finished the report",
-                "finished the report",
-                "was finishing the report"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "had finished the report",
-            "hint": "Present perfect ('has finished') shifts back to past perfect ('had finished') in reported speech.",
-            "explanation": "In reported speech, the present perfect ('has finished') shifts back to the past perfect ('had finished'). The event is now reported as having already been completed at the time of speaking.",
-            "grammarRule": "Past Perfect Questions"
-        },
-        {
-            "id": "qf_l62_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Direct: \"They bought a new house.\" She told me that they _____.",
-            "sentence": "Direct: \"They bought a new house.\" She told me that they _____.",
-            "options": [
-                "had bought a new house",
-                "bought a new house",
-                "have bought a new house",
-                "were buying a new house"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "had bought a new house",
-            "hint": "Past simple ('bought') shifts to past perfect ('had bought') in reported speech.",
-            "explanation": "When the reporting verb is past ('told'), the direct speech's past simple ('bought') shifts to past perfect ('had bought'). This shows the buying happened even further back in time.",
-            "grammarRule": "Past Perfect Questions"
-        },
-        {
-            "id": "qf_l62_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Direct: \"I saw her at the market.\" He said that he _____ at the market.",
-            "sentence": "Direct: \"I saw her at the market.\" He said that he _____ at the market.",
-            "options": [
-                "had seen her",
-                "saw her",
-                "has seen her",
-                "would see her"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "had seen her",
-            "hint": "Past simple ('saw') shifts to past perfect ('had seen') in reported speech.",
-            "explanation": "Past simple in direct speech shifts to past perfect in reported speech. 'I saw' becomes 'he had seen', placing the event further in the past relative to the reporting moment.",
-            "grammarRule": "Past Perfect Questions"
-        },
-        {
-            "id": "qf_l62_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Direct: \"We were watching TV.\" She said that they _____.",
-            "sentence": "Direct: \"We were watching TV.\" She said that they _____.",
-            "options": [
-                "had been watching TV",
-                "were watching TV",
-                "have been watching TV",
-                "watched TV"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "had been watching TV",
-            "hint": "Past continuous ('were watching') shifts to past perfect continuous ('had been watching').",
-            "explanation": "Past continuous in direct speech shifts to past perfect continuous in reported speech. 'Were watching' becomes 'had been watching', keeping the continuous nature while moving the event back in time.",
-            "grammarRule": "Past Perfect Questions"
-        },
-        {
-            "id": "qf_l63_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Direct: \"You should rest.\" The doctor said that I _____ rest.",
-            "sentence": "Direct: \"You should rest.\" The doctor said that I _____ rest.",
-            "options": [
-                "should",
-                "would",
-                "might",
-                "could"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "should",
-            "hint": "'Should' does not change in reported speech.",
-            "explanation": "'Should' is one of the modals that stays the same in reported speech - it does not shift to another form. 'Must', 'might', 'could', and 'would' also remain unchanged.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l63_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Direct: \"I can help you.\" She said that she _____ help me.",
-            "sentence": "Direct: \"I can help you.\" She said that she _____ help me.",
-            "options": [
-                "could",
-                "can",
-                "would",
-                "might"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "could",
-            "hint": "'Can' shifts to 'could' in reported speech.",
-            "explanation": "'Can' is one of the modals that does shift in reported speech: 'can' → 'could'. This is different from 'should', 'might', 'could', and 'would', which stay the same.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l63_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Direct: \"They will arrive at noon.\" She said that they _____ arrive at noon.",
-            "sentence": "Direct: \"They will arrive at noon.\" She said that they _____ arrive at noon.",
-            "options": [
-                "would",
-                "will",
-                "should",
-                "could"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "would",
-            "hint": "'Will' shifts to 'would' in reported speech.",
-            "explanation": "'Will' shifts to 'would' in reported speech - this is one of the most important modal backshifts to remember. 'Will → would' parallels the same relationship as the second conditional.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l64_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Direct: \"Are you coming?\" He asked me _____.",
-            "sentence": "Direct: \"Are you coming?\" He asked me _____.",
-            "options": [
-                "if I was coming",
-                "if I am coming",
-                "whether I was coming or not",
-                "am I coming"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "if I was coming",
-            "hint": "Reported yes/no questions use 'if/whether' + subject + verb (no inversion, tense shifted).",
-            "explanation": "Reported yes/no questions use 'if' or 'whether' and remove the inversion. 'Are you coming?' → 'if I was coming'. The question mark is also dropped because it is now a statement structure.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l64_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Direct: \"Did she pass the exam?\" He asked me _____.",
-            "sentence": "Direct: \"Did she pass the exam?\" He asked me _____.",
-            "options": [
-                "if she had passed the exam",
-                "if she passed the exam",
-                "if she has passed the exam",
-                "did she pass the exam"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "if she had passed the exam",
-            "hint": "Past simple → past perfect; use 'if' + statement word order (no inversion).",
-            "explanation": "Reported questions never use question word order. 'Did she pass?' → 'if she had passed' - past simple becomes past perfect, and the auxiliary 'did' disappears entirely.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l64_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Direct: \"Have they finished?\" She wanted to know _____.",
-            "sentence": "Direct: \"Have they finished?\" She wanted to know _____.",
-            "options": [
-                "whether they had finished",
-                "if they have finished",
-                "whether had they finished",
-                "they have finished"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "whether they had finished",
-            "hint": "Use 'whether/if' + subject + verb (no inversion); present perfect shifts to past perfect.",
-            "explanation": "'Whether' (or 'if') introduces reported yes/no questions. 'Have they finished?' → 'whether they had finished' - inversion disappears, and the present perfect shifts to past perfect.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l65_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Direct: \"Where do you live?\" She asked me _____.",
-            "sentence": "Direct: \"Where do you live?\" She asked me _____.",
-            "options": [
-                "where I lived",
-                "where do I live",
-                "where I live",
-                "where did I live"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "where I lived",
-            "hint": "Reported wh-questions keep the question word but remove inversion and shift the tense.",
-            "explanation": "Reported wh-questions keep 'where' but switch to statement word order and shift the tense. 'Where do you live?' → 'where I lived'. 'Do' disappears; 'live' shifts to 'lived'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l65_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Direct: \"What time will the train leave?\" He asked _____.",
-            "sentence": "Direct: \"What time will the train leave?\" He asked _____.",
-            "options": [
-                "what time the train would leave",
-                "what time will the train leave",
-                "what time the train leaves",
-                "when the train would leave"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "what time the train would leave",
-            "hint": "Keep 'what time', remove inversion, shift 'will' → 'would'.",
-            "explanation": "The wh-phrase 'what time' stays, but the question inversion disappears and 'will' shifts to 'would'. 'What time will the train leave?' → 'what time the train would leave'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l65_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Direct: \"Why didn't you call me?\" She asked him _____.",
-            "sentence": "Direct: \"Why didn't you call me?\" She asked him _____.",
-            "options": [
-                "why he hadn't called her",
-                "why didn't he call her",
-                "why he didn't call her",
-                "why he hasn't called her"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "why he hadn't called her",
-            "hint": "'Why' stays; statement word order; 'didn't' → 'hadn't' (past perfect); pronoun shifts.",
-            "explanation": "Reported wh-question: 'why' stays, inversion disappears, 'didn't call' shifts to 'hadn't called' (past perfect), and pronouns shift from 'you → he' and 'me → her'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l66_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Direct: \"Open the window.\" He told me _____.",
-            "sentence": "Direct: \"Open the window.\" He told me _____.",
-            "options": [
-                "to open the window",
-                "open the window",
-                "that I open the window",
-                "I should open the window"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "to open the window",
-            "hint": "Reported commands use 'tell/ask + object + to + base verb'.",
-            "explanation": "Commands in reported speech use 'tell/ask + person + to + base verb'. 'Open' becomes 'to open'. There is no 'that', no tense shift needed, and no question structure.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l66_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Direct: \"Don't touch that.\" She told me _____ that.",
-            "sentence": "Direct: \"Don't touch that.\" She told me _____ that.",
-            "options": [
-                "not to touch",
-                "to not touch",
-                "don't touch",
-                "that I shouldn't touch"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "not to touch",
-            "hint": "Negative reported commands: 'tell + person + not to + base verb'.",
-            "explanation": "Negative reported commands use 'not to + base verb'. 'Don't touch that' → 'not to touch that'. 'To not touch' is less standard, though sometimes acceptable; 'not to touch' is the preferred form.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l66_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Direct: \"Please be quiet.\" The teacher asked us _____.",
-            "sentence": "Direct: \"Please be quiet.\" The teacher asked us _____.",
-            "options": [
-                "to be quiet",
-                "be quiet",
-                "that we be quiet",
-                "that we should be quiet"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "to be quiet",
-            "hint": "'Please' is dropped; command becomes 'ask + us + to be quiet'.",
-            "explanation": "When reporting polite commands with 'please', the word 'please' is dropped. The structure becomes 'ask + object + to + base verb': 'asked us to be quiet'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l67_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "He said, \"I'll see you tomorrow.\" He said he would see me _____.",
-            "sentence": "He said, \"I'll see you tomorrow.\" He said he would see me _____.",
-            "options": [
-                "the next day",
-                "tomorrow",
-                "the following day",
-                "the day after"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the next day",
-            "hint": "In reported speech, 'tomorrow' shifts to 'the next day' or 'the following day' - not 'tomorrow'.",
-            "explanation": "'Tomorrow' in direct speech must change in reported speech because it refers to a time relative to when it was spoken. 'The next day' is the standard shift. 'The following day' is also correct.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l67_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She said, \"I was here yesterday.\" She said she had been there _____.",
-            "sentence": "She said, \"I was here yesterday.\" She said she had been there _____.",
-            "options": [
-                "the day before",
-                "yesterday",
-                "the previous day",
-                "the day earlier"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the day before",
-            "hint": "'Yesterday' shifts to 'the day before' or 'the previous day' in reported speech.",
-            "explanation": "'Yesterday' shifts to 'the day before' (or 'the previous day') when reported later. Also note that 'here' shifts to 'there' because the place reference changes too.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l67_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "He said, \"I saw her last week.\" He said he had seen her _____.",
-            "sentence": "He said, \"I saw her last week.\" He said he had seen her _____.",
-            "options": [
-                "the week before",
-                "last week",
-                "the previous week",
-                "a week ago"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the week before",
-            "hint": "'Last week' shifts to 'the week before' or 'the previous week'.",
-            "explanation": "'Last week' in direct speech becomes 'the week before' or 'the previous week' in reported speech. 'A week ago' could work in some contexts but is less standard for reported speech.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l68_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "\"I'm going to quit my job,\" she told her friend.",
-            "sentence": "\"I'm going to quit my job,\" she told her friend.",
-            "options": [
-                "She told her friend that she was going to quit her job.",
-                "She told her friend that she is going to quit her job.",
-                "She said her friend that she was going to quit her job.",
-                "She told to her friend that she was going to quit her job."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She told her friend that she was going to quit her job.",
-            "hint": "Use 'tell + object' (not 'tell to'); shift 'am going' → 'was going'; shift 'my' → 'her'.",
-            "explanation": "'Tell' takes a direct object: 'told her friend', not 'told to her friend'. 'I'm going' shifts to 'she was going', and 'my job' shifts to 'her job'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l68_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "\"Don't worry about me,\" he said to her.",
-            "sentence": "\"Don't worry about me,\" he said to her.",
-            "options": [
-                "He told her not to worry about him.",
-                "He said her not to worry about him.",
-                "He told her don't worry about him.",
-                "He said to her not to worry about her."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He told her not to worry about him.",
-            "hint": "Negative command: 'told her not to worry'; pronouns shift 'me' → 'him'.",
-            "explanation": "'Tell + object + not to + base verb' reports negative commands. 'Say' cannot take a direct person object ('say her' is wrong). Pronouns shift: 'me' becomes 'him' when referring to the speaker.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l68_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "\"Have you ever been to Japan?\" she asked him.",
-            "sentence": "\"Have you ever been to Japan?\" she asked him.",
-            "options": [
-                "She asked him if he had ever been to Japan.",
-                "She asked him have you ever been to Japan.",
-                "She asked him if he has ever been to Japan.",
-                "She asked him if had he ever been to Japan."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She asked him if he had ever been to Japan.",
-            "hint": "Reported yes/no question: 'if' + statement order + past perfect; pronoun 'you → he'.",
-            "explanation": "Reported yes/no questions use 'if/whether' + statement word order. Present perfect shifts to past perfect: 'have you been' → 'if he had been'. No inversion ('if had he' is wrong).",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l69_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Choose the correct sentence:",
-            "sentence": "Choose the correct sentence:",
-            "options": [
-                "She told me that the meeting was cancelled.",
-                "She said me that the meeting was cancelled.",
-                "She told that the meeting was cancelled.",
-                "She said to me that the meeting was cancelled."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She told me that the meeting was cancelled.",
-            "hint": "'Tell' must have a person object directly after it: 'told me'; 'said' uses 'said to me' or 'said that'.",
-            "explanation": "'Tell' always takes a direct object: 'told me / told him / told us'. You cannot say 'told that'. 'Say' never takes a direct person object - use 'said to me' or 'said that'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l69_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "He _____ us not to use our phones in class.",
-            "sentence": "He _____ us not to use our phones in class.",
-            "options": [
-                "told",
-                "said",
-                "spoke",
-                "talked"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "told",
-            "hint": "'Tell + object + not to + verb' - 'say' can't take a direct person object.",
-            "explanation": "Reported negative commands require 'tell + person + not to + base verb'. 'Say' cannot directly precede a person object, so 'said us' is wrong. 'Spoke/talked' don't fit this structure at all.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l69_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She _____ that she would be late.",
-            "sentence": "She _____ that she would be late.",
-            "options": [
-                "said",
-                "told",
-                "spoke",
-                "informed"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "said",
-            "hint": "'Said that ...' without a person object - 'told' must always have a person object.",
-            "explanation": "When there is no person object ('told me/him/her'), use 'said'. 'Said that she would be late' is correct. 'Told that ...' (without a person object) is grammatically wrong in standard English.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l70_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Direct: \"I must submit the form today.\" She said she _____ the form that day.",
-            "sentence": "Direct: \"I must submit the form today.\" She said she _____ the form that day.",
-            "options": [
-                "had to submit",
-                "must submit",
-                "would submit",
-                "should submit"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "had to submit",
-            "hint": "'Must' shifts to 'had to' in reported speech.",
-            "explanation": "'Must' is an exception: it shifts to 'had to' (not 'musted') in reported speech. 'Would' and 'should' don't capture the obligation meaning of 'must'.",
-            "grammarRule": "Past Perfect Questions"
-        },
-        {
-            "id": "qf_l70_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Direct: \"We might go camping.\" They said they _____ camping.",
-            "sentence": "Direct: \"We might go camping.\" They said they _____ camping.",
-            "options": [
-                "might go",
-                "may go",
-                "could go",
-                "would go"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "might go",
-            "hint": "'Might' does not change in reported speech - it stays as 'might'.",
-            "explanation": "'Might' is one of the modals that stays the same when reported. 'May' also sometimes shifts to 'might', but 'might' itself never changes.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l70_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Direct: \"Come back tomorrow.\" She told him to _____.",
-            "sentence": "Direct: \"Come back tomorrow.\" She told him to _____.",
-            "options": [
-                "come back the next day",
-                "come back tomorrow",
-                "come back the following day",
-                "to come back the next day"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "come back the next day",
-            "hint": "Reported command = 'told him to + base verb'; 'tomorrow' shifts to 'the next day'.",
-            "explanation": "Reported commands use 'to + base verb'. The time adverb 'tomorrow' shifts to 'the next day'. 'To come back the next day' has a redundant 'to' before it - the 'to' is already included in 'told him to come back'.",
-            "grammarRule": "Question Formation"
-        }
-    ]
+  "gameType": "questionFormatter",
+  "batchIndex": 7,
+  "levels": "61-70",
+  "quests": [
+    {
+      "id": "qf_l61_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Sarah organizes the weekly team meeting.",
+      "sentence": "Sarah organizes the weekly team meeting.",
+      "options": [
+        "Who does organize the weekly team meeting?",
+        "Who does Sarah organize the weekly team meeting?",
+        "Who organizes the weekly team meeting?",
+        "Whom organizes the weekly team meeting?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Who organizes the weekly team meeting?",
+      "hint": "When 'who' asks about the subject, no auxiliary like 'does' is needed - keep the word order like a statement.",
+      "explanation": "Since 'Sarah' is the subject doing the action, 'Who' simply replaces her - no 'does' is added, and the verb keeps its -s: 'organizes'.",
+      "grammarRule": "Subject Questions: Present Simple"
+    },
+    {
+      "id": "qf_l61_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "My neighbor waters the plants when I'm away.",
+      "sentence": "My neighbor waters the plants when I'm away.",
+      "options": [
+        "Who waters the plants when I'm away?",
+        "Who does water the plants when I'm away?",
+        "Who does my neighbor water the plants when I'm away?",
+        "Whom waters the plants when I'm away?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Who waters the plants when I'm away?",
+      "hint": "The subject is being asked about, so don't add 'does' - keep the verb exactly as it is.",
+      "explanation": "Because 'my neighbor' is the subject, 'Who' simply takes its place with no auxiliary added, and the verb stays as 'waters'.",
+      "grammarRule": "Subject Questions: Present Simple"
+    },
+    {
+      "id": "qf_l61_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The manager approves all overtime requests.",
+      "sentence": "The manager approves all overtime requests.",
+      "options": [
+        "Who does approve all overtime requests?",
+        "Who does the manager approve all overtime requests?",
+        "Whom approves all overtime requests?",
+        "Who approves all overtime requests?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Who approves all overtime requests?",
+      "hint": "No 'does' is needed - the question word simply replaces the subject.",
+      "explanation": "'Who' replaces the subject 'the manager' directly, so no auxiliary is added and the verb keeps its -s: 'approves'.",
+      "grammarRule": "Subject Questions: Present Simple"
+    },
+    {
+      "id": "qf_l62_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Someone left this jacket on the chair.",
+      "sentence": "Someone left this jacket on the chair.",
+      "options": [
+        "Who did leave this jacket on the chair?",
+        "Who left this jacket on the chair?",
+        "Who did someone leave this jacket on the chair?",
+        "Whom left this jacket on the chair?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Who left this jacket on the chair?",
+      "hint": "No 'did' is needed here - the verb stays in its past form.",
+      "explanation": "Since the question asks about the subject, 'who' simply replaces it, and the verb stays in the past tense, 'left', with no 'did' added.",
+      "grammarRule": "Subject Questions: Past Simple"
+    },
+    {
+      "id": "qf_l62_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "A stranger paid for my coffee this morning.",
+      "sentence": "A stranger paid for my coffee this morning.",
+      "options": [
+        "Who paid for my coffee this morning?",
+        "Who did pay for my coffee this morning?",
+        "Who did a stranger pay for my coffee this morning?",
+        "Whom paid for my coffee this morning?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Who paid for my coffee this morning?",
+      "hint": "Keep the verb in the past tense - no 'did' is added for subject questions.",
+      "explanation": "'Who' takes the place of the subject 'a stranger', so the verb remains in the past tense, 'paid', without any auxiliary.",
+      "grammarRule": "Subject Questions: Past Simple"
+    },
+    {
+      "id": "qf_l62_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The new employee solved the technical issue.",
+      "sentence": "The new employee solved the technical issue.",
+      "options": [
+        "Who solved the technical issue?",
+        "Who did solve the technical issue?",
+        "Who did the new employee solve the technical issue?",
+        "Whom solved the technical issue?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Who solved the technical issue?",
+      "hint": "The subject is what's being asked about, so keep the verb in its past form with no 'did'.",
+      "explanation": "Because 'who' replaces the subject, the verb keeps its past tense form, 'solved', and no auxiliary 'did' is needed.",
+      "grammarRule": "Subject Questions: Past Simple"
+    },
+    {
+      "id": "qf_l63_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The committee selected Ahmed for the scholarship.",
+      "sentence": "The committee selected Ahmed for the scholarship.",
+      "options": [
+        "Who selected the committee for the scholarship?",
+        "Who the committee selected for the scholarship?",
+        "Whom did the committee selected for the scholarship?",
+        "Who did the committee select for the scholarship?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Who did the committee select for the scholarship?",
+      "hint": "Ahmed is the object here, so you need 'did' plus the subject before the base verb.",
+      "explanation": "Since 'Ahmed' is the object receiving the action, the question needs 'did' + the subject + the base verb: 'did the committee select'.",
+      "grammarRule": "Object Questions: Past Simple"
+    },
+    {
+      "id": "qf_l63_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The teacher praised Elena for her essay.",
+      "sentence": "The teacher praised Elena for her essay.",
+      "options": [
+        "Who praised the teacher for her essay?",
+        "Who the teacher praised for her essay?",
+        "Whom did the teacher praised for her essay?",
+        "Who did the teacher praise for her essay?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Who did the teacher praise for her essay?",
+      "hint": "'Elena' is the object, so use 'did' + subject + base verb.",
+      "explanation": "Because 'Elena' is the object of the sentence, the question needs 'did' before the subject, and the verb returns to its base form, 'praise'.",
+      "grammarRule": "Object Questions: Past Simple"
+    },
+    {
+      "id": "qf_l63_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The company hired two new designers last week.",
+      "sentence": "The company hired two new designers last week.",
+      "options": [
+        "Who hired the company last week?",
+        "Who the company hired last week?",
+        "Who did the company hire last week?",
+        "Whom did the company hired last week?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Who did the company hire last week?",
+      "hint": "'Two new designers' is the object, so use 'did' before the subject.",
+      "explanation": "The object here is 'two new designers', so the question uses 'did' + subject + the base verb, 'hire'.",
+      "grammarRule": "Object Questions: Past Simple"
+    },
+    {
+      "id": "qf_l64_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Her boss reviews every report personally.",
+      "sentence": "Her boss reviews every report personally.",
+      "options": [
+        "What reviews her boss personally?",
+        "What her boss reviews personally?",
+        "What does her boss review personally?",
+        "What does her boss reviews personally?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "What does her boss review personally?",
+      "hint": "'Every report' is the object, so use 'does' before the subject.",
+      "explanation": "'Every report' is the object here, so the question needs 'does' before the subject 'her boss', and the verb returns to its base form, 'review'.",
+      "grammarRule": "Object Questions: Present Simple"
+    },
+    {
+      "id": "qf_l64_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The chef prepares a special dish every Friday.",
+      "sentence": "The chef prepares a special dish every Friday.",
+      "options": [
+        "What prepares the chef every Friday?",
+        "What does the chef prepare every Friday?",
+        "What the chef prepares every Friday?",
+        "What does the chef prepares every Friday?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "What does the chef prepare every Friday?",
+      "hint": "'A special dish' is the object, so use 'does' before the subject.",
+      "explanation": "Since 'a special dish' is the object, the question needs 'does' before the subject, and 'prepare' returns to its base form.",
+      "grammarRule": "Object Questions: Present Simple"
+    },
+    {
+      "id": "qf_l64_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The professor grades each essay carefully.",
+      "sentence": "The professor grades each essay carefully.",
+      "options": [
+        "What grades the professor carefully?",
+        "What the professor grades carefully?",
+        "What does the professor grades carefully?",
+        "What does the professor grade carefully?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "What does the professor grade carefully?",
+      "hint": "'Each essay' is the object, so 'does' goes before the subject.",
+      "explanation": "'Each essay' is the object of the sentence, so the question requires 'does' before the subject, with the verb in its base form, 'grade'.",
+      "grammarRule": "Object Questions: Present Simple"
+    },
+    {
+      "id": "qf_l65_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "A loud noise woke up the entire building.",
+      "sentence": "A loud noise woke up the entire building.",
+      "options": [
+        "What did wake up the entire building?",
+        "What did a loud noise wake up the entire building?",
+        "What does wake up the entire building?",
+        "What woke up the entire building?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "What woke up the entire building?",
+      "hint": "'What' is asking about the subject here, so no 'did' is needed.",
+      "explanation": "'What' replaces the subject 'a loud noise', so the verb stays in its past form, 'woke', with no auxiliary added.",
+      "grammarRule": "Subject Questions with 'What'"
+    },
+    {
+      "id": "qf_l65_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "A software glitch delayed the entire launch.",
+      "sentence": "A software glitch delayed the entire launch.",
+      "options": [
+        "What did delay the entire launch?",
+        "What did a software glitch delay the entire launch?",
+        "What delayed the entire launch?",
+        "What does delay the entire launch?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "What delayed the entire launch?",
+      "hint": "The subject is being asked about, so keep the verb in the past tense with no 'did'.",
+      "explanation": "Since 'what' replaces the subject, 'a software glitch', the verb 'delayed' stays exactly as it is, without any added auxiliary.",
+      "grammarRule": "Subject Questions with 'What'"
+    },
+    {
+      "id": "qf_l65_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Heavy rain caused the flight delay.",
+      "sentence": "Heavy rain caused the flight delay.",
+      "options": [
+        "What did cause the flight delay?",
+        "What did heavy rain cause the flight delay?",
+        "What caused the flight delay?",
+        "What does cause the flight delay?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "What caused the flight delay?",
+      "hint": "No 'did' is needed - 'what' simply takes the place of the subject.",
+      "explanation": "'What' takes the place of the subject 'heavy rain', so the verb remains in the past tense, 'caused', without 'did'.",
+      "grammarRule": "Subject Questions with 'What'"
+    },
+    {
+      "id": "qf_l66_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The storm damaged several houses on the coast.",
+      "sentence": "The storm damaged several houses on the coast.",
+      "options": [
+        "What did the storm damage on the coast?",
+        "What damaged the storm on the coast?",
+        "What the storm damaged on the coast?",
+        "What did the storm damaged on the coast?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "What did the storm damage on the coast?",
+      "hint": "'Several houses' is the object, so use 'did' before the subject.",
+      "explanation": "'Several houses' is the object here, so the question needs 'did' before the subject, and the verb returns to its base form, 'damage'.",
+      "grammarRule": "Object Questions with 'What'"
+    },
+    {
+      "id": "qf_l66_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The mechanic replaced the broken part.",
+      "sentence": "The mechanic replaced the broken part.",
+      "options": [
+        "What replaced the mechanic?",
+        "What did the mechanic replace?",
+        "What the mechanic replaced?",
+        "What did the mechanic replaced?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "What did the mechanic replace?",
+      "hint": "'The broken part' is the object, so 'did' goes before the subject.",
+      "explanation": "Since 'the broken part' is the object, the question requires 'did' before the subject, and 'replace' returns to its base form.",
+      "grammarRule": "Object Questions with 'What'"
+    },
+    {
+      "id": "qf_l66_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The scientist discovered a new species of frog.",
+      "sentence": "The scientist discovered a new species of frog.",
+      "options": [
+        "What discovered the scientist?",
+        "What the scientist discovered?",
+        "What did the scientist discovered?",
+        "What did the scientist discover?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "What did the scientist discover?",
+      "hint": "'A new species of frog' is the object, so use 'did' before the subject.",
+      "explanation": "'A new species of frog' is the object of the sentence, so the question needs 'did' before the subject, with the base verb 'discover'.",
+      "grammarRule": "Object Questions with 'What'"
+    },
+    {
+      "id": "qf_l67_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The alarm wakes everyone up at six.",
+      "sentence": "The alarm wakes everyone up at six.",
+      "options": [
+        "What does wake everyone up at six?",
+        "What does the alarm wake everyone up at six?",
+        "What wake everyone up at six?",
+        "What wakes everyone up at six?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "What wakes everyone up at six?",
+      "hint": "Since 'what' asks about the subject, don't add 'does'.",
+      "explanation": "'What' replaces the subject 'the alarm', so no auxiliary is added, and the verb keeps its -s: 'wakes'.",
+      "grammarRule": "Subject vs Object Questions: Present Practice"
+    },
+    {
+      "id": "qf_l67_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The assistant answers all customer calls.",
+      "sentence": "The assistant answers all customer calls.",
+      "options": [
+        "Who does answer all customer calls?",
+        "Who answers all customer calls?",
+        "Who does the assistant answer all customer calls?",
+        "Whom answers all customer calls?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Who answers all customer calls?",
+      "hint": "'Who' is asking about the subject, so no 'does' is needed.",
+      "explanation": "'Who' replaces the subject 'the assistant', so the verb keeps its -s, 'answers', with no auxiliary added.",
+      "grammarRule": "Subject vs Object Questions: Present Practice"
+    },
+    {
+      "id": "qf_l67_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The company sponsors two local charities.",
+      "sentence": "The company sponsors two local charities.",
+      "options": [
+        "What does the company sponsor?",
+        "What sponsors the company?",
+        "What the company sponsors?",
+        "What does the company sponsors?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "What does the company sponsor?",
+      "hint": "'Two local charities' is the object, so use 'does' before the subject.",
+      "explanation": "'Two local charities' is the object, so the question needs 'does' before the subject, with the base verb 'sponsor'.",
+      "grammarRule": "Subject vs Object Questions: Present Practice"
+    },
+    {
+      "id": "qf_l68_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "A small mistake ruined the whole presentation.",
+      "sentence": "A small mistake ruined the whole presentation.",
+      "options": [
+        "What did ruin the whole presentation?",
+        "What did a small mistake ruin the whole presentation?",
+        "What does ruin the whole presentation?",
+        "What ruined the whole presentation?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "What ruined the whole presentation?",
+      "hint": "'What' is asking about the subject, so no 'did' is needed.",
+      "explanation": "'What' replaces the subject 'a small mistake', so the verb stays in the past tense, 'ruined', with no auxiliary.",
+      "grammarRule": "Subject vs Object Questions: Past Practice"
+    },
+    {
+      "id": "qf_l68_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The witness identified the suspect immediately.",
+      "sentence": "The witness identified the suspect immediately.",
+      "options": [
+        "Who did the witness identify?",
+        "Who identified the witness?",
+        "Who the witness identified?",
+        "Who did the witness identified?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Who did the witness identify?",
+      "hint": "'The suspect' is the object, so use 'did' before the subject.",
+      "explanation": "'The suspect' is the object here, so the question needs 'did' before the subject, and the verb returns to its base form, 'identify'.",
+      "grammarRule": "Subject vs Object Questions: Past Practice"
+    },
+    {
+      "id": "qf_l68_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "An old friend recognized her at the airport.",
+      "sentence": "An old friend recognized her at the airport.",
+      "options": [
+        "Who did recognize her at the airport?",
+        "Who recognized her at the airport?",
+        "Who did an old friend recognize her at the airport?",
+        "Whom recognized her at the airport?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Who recognized her at the airport?",
+      "hint": "The subject is being asked about here, so no 'did' is added.",
+      "explanation": "'Who' replaces the subject 'an old friend', so the verb keeps its past form, 'recognized', without any auxiliary.",
+      "grammarRule": "Subject vs Object Questions: Past Practice"
+    },
+    {
+      "id": "qf_l69_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Of the two candidates, Priya has more experience.",
+      "sentence": "Of the two candidates, Priya has more experience.",
+      "options": [
+        "Which candidate does have more experience?",
+        "Which candidate does Priya have more experience?",
+        "Which candidate has more experiences?",
+        "Which candidate has more experience?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Which candidate has more experience?",
+      "hint": "'Which' is asking about the subject here, so no 'does' is added.",
+      "explanation": "'Which candidate' replaces the subject, so the verb keeps its -s, 'has', with no auxiliary added.",
+      "grammarRule": "Subject Questions with 'Which'"
+    },
+    {
+      "id": "qf_l69_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Of the three routes, the coastal road takes longer.",
+      "sentence": "Of the three routes, the coastal road takes longer.",
+      "options": [
+        "Which route does take longer?",
+        "Which route takes longer?",
+        "Which route does the coastal road take longer?",
+        "Which route take longer?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Which route takes longer?",
+      "hint": "No 'does' is needed - 'which route' takes the place of the subject.",
+      "explanation": "'Which route' replaces the subject, so no auxiliary is used, and the verb keeps its -s, 'takes'.",
+      "grammarRule": "Subject Questions with 'Which'"
+    },
+    {
+      "id": "qf_l69_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Among the applicants, one team stood out during the interview.",
+      "sentence": "Among the applicants, one team stood out during the interview.",
+      "options": [
+        "Which team did stand out during the interview?",
+        "Which team did one team stand out during the interview?",
+        "Which team does stand out during the interview?",
+        "Which team stood out during the interview?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Which team stood out during the interview?",
+      "hint": "'Which team' asks about the subject, so keep the verb in its past form with no 'did'.",
+      "explanation": "'Which team' replaces the subject, so the verb stays in the past tense, 'stood out', without any auxiliary added.",
+      "grammarRule": "Subject Questions with 'Which'"
+    },
+    {
+      "id": "qf_l70_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The delivery driver dropped off three packages this morning.",
+      "sentence": "The delivery driver dropped off three packages this morning.",
+      "options": [
+        "Who did drop off three packages this morning?",
+        "Who did the delivery driver drop off three packages this morning?",
+        "Whom dropped off three packages this morning?",
+        "Who dropped off three packages this morning?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Who dropped off three packages this morning?",
+      "hint": "The subject is being asked about, so no 'did' is needed.",
+      "explanation": "'Who' replaces the subject 'the delivery driver', so the verb stays in the past tense, 'dropped off', with no auxiliary.",
+      "grammarRule": "Subject vs Object Questions: Mixed Review"
+    },
+    {
+      "id": "qf_l70_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The interviewer asked her three difficult questions.",
+      "sentence": "The interviewer asked her three difficult questions.",
+      "options": [
+        "Who did the interviewer ask?",
+        "Who asked the interviewer?",
+        "Who the interviewer asked?",
+        "Who did the interviewer asked?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Who did the interviewer ask?",
+      "hint": "'Her' is the object here, so use 'did' before the subject.",
+      "explanation": "The object here is 'her', so the question needs 'did' before the subject, and the verb returns to its base form, 'ask'.",
+      "grammarRule": "Subject vs Object Questions: Mixed Review"
+    },
+    {
+      "id": "qf_l70_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "A generous donor funded the entire scholarship program.",
+      "sentence": "A generous donor funded the entire scholarship program.",
+      "options": [
+        "What funded a generous donor?",
+        "What did a generous donor fund?",
+        "What a generous donor funded?",
+        "What did a generous donor funded?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "What did a generous donor fund?",
+      "hint": "'The entire scholarship program' is the object, so use 'did' before the subject.",
+      "explanation": "'The entire scholarship program' is the object, so the question requires 'did' before the subject, with the base verb 'fund'.",
+      "grammarRule": "Subject vs Object Questions: Mixed Review"
+    }
+  ]
 }

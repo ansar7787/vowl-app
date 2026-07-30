@@ -1,547 +1,547 @@
 {
-    "gameType": "relativeClauses",
-    "batchIndex": 1,
-    "levels": "1-10",
-    "quests": [
-        {
-            "id": "rc_l1_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The woman ___ lives next door is a teacher.",
-            "hint": "Ask: is the missing word the subject of 'lives', and does it stand for a person?",
-            "explanation": "Who is the subject relative pronoun for people. Here it is the subject of 'lives', so 'who' is correct - 'which' is never used for people.",
-            "options": [
-                "who",
-                "which",
-                "whom",
-                "whose"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l1_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The student ___ answered first is very smart.",
-            "hint": "The missing word performs the action 'answered' - what pronoun introduces a person doing an action?",
-            "explanation": "Because the student (a person) is doing the action 'answered', the clause needs the subject pronoun 'who', not a pronoun for things or places.",
-            "options": [
-                "which",
-                "who",
-                "whose",
-                "where"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l1_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The manager ___ leads our team is fair.",
-            "hint": "Find the verb right after the gap. Who or what 'leads'?",
-            "explanation": "The manager is the one who leads, so 'who' is needed as the subject of the verb 'leads'. 'Whom' is only used as an object, never as a subject.",
-            "options": [
-                "which",
-                "whom",
-                "who",
-                "when"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l2_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The guide ___ showed us the city was friendly.",
-            "hint": "The blank is followed directly by a verb (showed) - that signals a subject pronoun.",
-            "explanation": "A verb comes immediately after the gap, so the missing word must be the subject of that verb. Since a guide is a person, 'who' is the only fit.",
-            "options": [
-                "which",
-                "whom",
-                "where",
-                "who"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l2_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The uncle ___ visits every summer brought gifts.",
-            "hint": "Picture the sentence as two parts: 'The uncle visits every summer' + 'The uncle brought gifts.' What links them?",
-            "explanation": "The relative pronoun replaces 'the uncle' as the subject of 'visits'. Since the uncle is a person, 'who' connects the two ideas correctly.",
-            "options": [
-                "who",
-                "which",
-                "whose",
-                "when"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l2_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The cashier ___ helped me was polite.",
-            "hint": "Who or what 'helped' you? The pronoun must match that subject.",
-            "explanation": "'Helped' needs a subject, and that subject is the cashier - a person - so the subject pronoun 'who' is required.",
-            "options": [
-                "which",
-                "who",
-                "whom",
-                "whose"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l3_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The chef ___ cooked this soup is famous.",
-            "hint": "Check what comes right after the gap: a verb (cooked) means you need a subject pronoun for a person.",
-            "explanation": "Since the chef performs the action 'cooked', 'who' is the subject pronoun. 'Which' would be wrong because it never refers to people.",
-            "options": [
-                "which",
-                "whom",
-                "who",
-                "where"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l3_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The engineer ___ built this app works at Google.",
-            "hint": "Two verbs appear: 'built' and 'works'. The relative pronoun controls the first one - who built it?",
-            "explanation": "The engineer is the subject of 'built', and people are always referred to with 'who' in a defining relative clause, never 'which'.",
-            "options": [
-                "which",
-                "whose",
-                "when",
-                "who"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l3_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The doctor ___ treated me was very gentle.",
-            "hint": "The doctor did the treating, so the pronoun must work as a subject, not a possessive.",
-            "explanation": "Because the doctor is the one doing the treating, the clause needs the subject pronoun 'who'. 'Whose' would only fit before a noun showing possession.",
-            "options": [
-                "who",
-                "which",
-                "whom",
-                "whose"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l4_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The singer ___ performed last night has a beautiful voice.",
-            "hint": "Look for the verb tied to the gap: 'performed'. Who performed?",
-            "explanation": "The singer is a person and is the subject of 'performed', so the sentence needs 'who', the subject pronoun used for people.",
-            "options": [
-                "which",
-                "who",
-                "whom",
-                "where"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l4_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The man ___ called you this morning left a message.",
-            "hint": "Two actions happen: calling and leaving a message. The pronoun introduces the first action - who did the calling?",
-            "explanation": "The man is the subject of 'called', and subject relative clauses about people always use 'who', not a time word like 'when'.",
-            "options": [
-                "which",
-                "whose",
-                "who",
-                "when"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l4_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The neighbor ___ waters my plants is very kind.",
-            "hint": "Is the missing word doing the watering, or is it showing ownership of something?",
-            "explanation": "The neighbor performs the action 'waters', making this a subject relative clause about a person, so 'who' is correct.",
-            "options": [
-                "which",
-                "whom",
-                "whose",
-                "who"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l5_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The teacher ___ explains grammar clearly is popular.",
-            "hint": "The teacher is doing something - explaining. That means you need a subject pronoun.",
-            "explanation": "'Explains' needs a subject, and since a teacher is a person performing the action, 'who' is the correct subject pronoun.",
-            "options": [
-                "who",
-                "which",
-                "whom",
-                "where"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l5_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The employee ___ finished the report early got praised.",
-            "hint": "Find who finished the report - that person is the subject of the relative clause.",
-            "explanation": "The employee finished the report, so the employee is the subject of 'finished'. People acting as subjects always take 'who'.",
-            "options": [
-                "which",
-                "who",
-                "whose",
-                "when"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l5_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The pilot ___ flew the plane was experienced.",
-            "hint": "The pilot is the one flying - is that a subject role or an object role?",
-            "explanation": "Since the pilot performs the action 'flew', this is a subject relative clause referring to a person, so 'who' is required.",
-            "options": [
-                "which",
-                "whom",
-                "who",
-                "whose"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l6_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The photo ___ hangs in the hallway shows my grandparents.",
-            "hint": "A photo is a thing, not a person - which pronoun is reserved for things?",
-            "explanation": "'Which' is the subject relative pronoun for things. A photo cannot be described with 'who', since that word is only for people.",
-            "options": [
-                "who",
-                "whom",
-                "whose",
-                "which"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l6_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The jacket ___ is in the window costs a lot.",
-            "hint": "The jacket 'is' in the window - what subject pronoun fits before a verb when talking about an object?",
-            "explanation": "Because a jacket is an object, the subject pronoun must be 'which'. 'Whose' would only work before a noun showing possession.",
-            "options": [
-                "which",
-                "who",
-                "whose",
-                "when"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l6_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The bakery ___ sells fresh bread opens at six.",
-            "hint": "A bakery is a place that sells things, but here it is acting as the subject of 'sells' - so think 'thing', not 'place word'.",
-            "explanation": "The bakery is the subject of 'sells', and as a business (not a person), it takes 'which'. 'Where' cannot act as the subject of a verb.",
-            "options": [
-                "who",
-                "which",
-                "whom",
-                "where"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l7_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The laptop ___ runs fastest is the newest model.",
-            "hint": "A laptop can't be a 'who' - what's the equivalent subject pronoun for objects?",
-            "explanation": "Laptops are things, so the subject pronoun 'which' is required. 'Who' and 'whom' only refer to people.",
-            "options": [
-                "who",
-                "whom",
-                "which",
-                "whose"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l7_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The medicine ___ stops the pain works in an hour.",
-            "hint": "The medicine performs the action 'stops' - what pronoun introduces a thing doing something?",
-            "explanation": "Since the medicine is the subject of 'stops', and medicine is not a person, 'which' is the only correct choice here.",
-            "options": [
-                "who",
-                "whose",
-                "when",
-                "which"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l7_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The film ___ won the award is two hours long.",
-            "hint": "Films don't have a 'who' - find the pronoun used for things acting as the subject.",
-            "explanation": "A film is a thing, so 'which' introduces the clause. 'Where' cannot be the subject of 'won' because it isn't a noun-replacing pronoun.",
-            "options": [
-                "which",
-                "who",
-                "whom",
-                "where"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l8_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The email ___ arrived this morning needs a reply.",
-            "hint": "What arrived? An email - a thing. Match the pronoun to that category.",
-            "explanation": "'Which' is used because an email is a thing acting as the subject of 'arrived'. 'Who' and 'whom' would wrongly suggest a person.",
-            "options": [
-                "who",
-                "which",
-                "whom",
-                "whose"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l8_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The bus ___ stops here goes downtown.",
-            "hint": "Buses are things, and the missing word is the subject of 'stops'.",
-            "explanation": "Since a bus is not a person, the subject pronoun must be 'which', not 'who' or a time word like 'when'.",
-            "options": [
-                "who",
-                "whose",
-                "which",
-                "when"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l8_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The textbook ___ covers grammar is on my desk.",
-            "hint": "The textbook 'covers' grammar - that's the verb tied to the missing subject.",
-            "explanation": "The textbook is the subject of 'covers', and books take 'which' as their subject relative pronoun, never 'where'.",
-            "options": [
-                "who",
-                "whom",
-                "where",
-                "which"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l9_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The printer ___ is in the corner is broken.",
-            "hint": "A printer is an object - which subject pronoun matches objects?",
-            "explanation": "Because a printer is a thing, 'which' is the correct subject pronoun. 'Whom' is never used as a subject in modern English.",
-            "options": [
-                "which",
-                "who",
-                "whom",
-                "whose"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l9_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The train ___ leaves at noon is always full.",
-            "hint": "The train 'leaves' - find the subject pronoun that fits before this verb.",
-            "explanation": "The train is the subject of 'leaves', so 'which' is required since trains are things, not people.",
-            "options": [
-                "who",
-                "which",
-                "whose",
-                "when"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l9_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The recipe ___ came from my mother is my favorite.",
-            "hint": "A recipe can't 'come from' someone using a person-pronoun. What's left?",
-            "explanation": "Since a recipe is a thing and is the subject of 'came', the clause needs 'which', not a pronoun reserved for people or places.",
-            "options": [
-                "who",
-                "whom",
-                "which",
-                "where"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l10_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The store ___ sells shoes is closing early today.",
-            "hint": "The store performs the action 'sells' - is a store a person or a thing?",
-            "explanation": "A store is a thing, so the subject relative pronoun is 'which'. 'Whose' would require a noun directly after it, not a verb.",
-            "options": [
-                "who",
-                "whom",
-                "whose",
-                "which"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l10_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The restaurant ___ serves pizza is around the corner.",
-            "hint": "Restaurants are places that function grammatically like things here - pick the thing-pronoun.",
-            "explanation": "The restaurant is the subject of 'serves', and since it is not a person, 'which' is the correct subject pronoun.",
-            "options": [
-                "which",
-                "who",
-                "whose",
-                "when"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l10_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The app ___ tracks my steps updated last week.",
-            "hint": "An app tracks something - what subject pronoun goes with a non-human subject?",
-            "explanation": "Because the app is the thing performing the action 'tracks', 'which' is needed. 'Where' cannot serve as a subject pronoun.",
-            "options": [
-                "who",
-                "which",
-                "whom",
-                "where"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        }
-    ]
+  "gameType": "relativeClauses",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "rc_l1_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "My neighbor is a woman ___ works at the hospital.",
+      "hint": "The missing word is the subject of 'works.' Is the neighbor a person or a thing?",
+      "explanation": "'Who' introduces a relative clause about a person and acts as the subject of 'works.'",
+      "options": [
+        "who",
+        "which",
+        "whose",
+        "where"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "who",
+      "grammarRule": "Relative Pronoun 'who'"
+    },
+    {
+      "id": "rc_l1_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "I have a laptop ___ overheats after an hour.",
+      "hint": "The missing word is the subject of 'overheats.' Is a laptop a person or a thing?",
+      "explanation": "'Which' introduces a relative clause about a thing (the laptop) and acts as the subject of 'overheats.'",
+      "options": [
+        "which",
+        "who",
+        "whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "which",
+      "grammarRule": "Relative Pronoun 'which'"
+    },
+    {
+      "id": "rc_l1_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "This is the student ___ answered every question correctly.",
+      "hint": "Check what comes right after the gap: a verb. Who or what 'answered'?",
+      "explanation": "Because the student is a person performing the action 'answered,' the subject pronoun 'who' is required.",
+      "options": [
+        "which",
+        "who",
+        "whose",
+        "when"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "who",
+      "grammarRule": "Relative Pronoun 'who'"
+    },
+    {
+      "id": "rc_l2_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "We adopted a dog ___ loves long walks.",
+      "hint": "A dog is an animal, not a person - which relative pronoun fits animals and things?",
+      "explanation": "'Which' is used for animals and things, so it correctly introduces the clause about the dog.",
+      "options": [
+        "which",
+        "who",
+        "whom",
+        "where"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "which",
+      "grammarRule": "Relative Pronoun 'which'"
+    },
+    {
+      "id": "rc_l2_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "Our manager ___ leads our team is very fair.",
+      "hint": "Find the verb right after the gap: 'leads.' Who or what leads a team?",
+      "explanation": "The manager is a person doing the action 'leads,' so the subject pronoun 'who' is needed here.",
+      "options": [
+        "which",
+        "whom",
+        "who",
+        "when"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "who",
+      "grammarRule": "Relative Pronoun 'who'"
+    },
+    {
+      "id": "rc_l2_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "She bought a jacket ___ matches her shoes perfectly.",
+      "hint": "A jacket cannot be a person - which pronoun introduces clauses about things?",
+      "explanation": "'Which' refers to things, so it is the correct subject pronoun for the clause about the jacket.",
+      "options": [
+        "which",
+        "who",
+        "whose",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "which",
+      "grammarRule": "Relative Pronoun 'which'"
+    },
+    {
+      "id": "rc_l3_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "A chef ___ cooked this soup used to work in Paris.",
+      "hint": "Someone cooked the soup - is that someone a person or a thing?",
+      "explanation": "A chef is a person, and the pronoun is the subject of 'cooked,' so 'who' is correct.",
+      "options": [
+        "which",
+        "whom",
+        "who",
+        "where"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "who",
+      "grammarRule": "Relative Pronoun 'who'"
+    },
+    {
+      "id": "rc_l3_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "I finally fixed the printer ___ kept jamming every morning.",
+      "hint": "A printer is a machine - what subject pronoun introduces clauses about machines?",
+      "explanation": "'Which' is the correct subject pronoun because a printer is a thing, not a person.",
+      "options": [
+        "which",
+        "who",
+        "whose",
+        "when"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "which",
+      "grammarRule": "Relative Pronoun 'which'"
+    },
+    {
+      "id": "rc_l3_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "My nurse ___ checked my blood pressure was very gentle.",
+      "hint": "'Checked' needs a subject - who performed that action?",
+      "explanation": "The nurse is a person acting as the subject of 'checked,' so 'who' is the correct choice.",
+      "options": [
+        "which",
+        "who",
+        "whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "who",
+      "grammarRule": "Relative Pronoun 'who'"
+    },
+    {
+      "id": "rc_l4_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "Our cat ___ sleeps all day suddenly became very energetic.",
+      "hint": "A cat is an animal - which pronoun is used for animals acting as the subject?",
+      "explanation": "'Which' is used for animals as the subject of the verb 'sleeps.'",
+      "options": [
+        "which",
+        "who",
+        "whom",
+        "where"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "which",
+      "grammarRule": "Relative Pronoun 'which'"
+    },
+    {
+      "id": "rc_l4_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "Our pilot ___ flew our plane made a very smooth landing.",
+      "hint": "Someone flew the plane - a person or a thing?",
+      "explanation": "A pilot is a person and the subject of 'flew,' so the pronoun 'who' is correct.",
+      "options": [
+        "which",
+        "who",
+        "whose",
+        "when"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "who",
+      "grammarRule": "Relative Pronoun 'who'"
+    },
+    {
+      "id": "rc_l4_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "I read a book ___ completely changed how I think about money.",
+      "hint": "A book cannot be a person - which pronoun fits things as the subject?",
+      "explanation": "'Which' introduces the clause because a book is a thing acting as the subject of 'changed.'",
+      "options": [
+        "which",
+        "who",
+        "whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "which",
+      "grammarRule": "Relative Pronoun 'which'"
+    },
+    {
+      "id": "rc_l5_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "Our waiter ___ served our table forgot our drinks twice.",
+      "hint": "A waiter served the table - person or thing?",
+      "explanation": "A waiter is a person performing the action 'served,' so the subject pronoun 'who' is correct.",
+      "options": [
+        "which",
+        "whom",
+        "who",
+        "where"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "who",
+      "grammarRule": "Relative Pronoun 'who'"
+    },
+    {
+      "id": "rc_l5_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "This bus ___ goes downtown was completely full this morning.",
+      "hint": "A bus is a vehicle - what pronoun introduces the subject clause for vehicles?",
+      "explanation": "'Which' is correct because a bus is a thing, and it is the subject of the verb 'goes.'",
+      "options": [
+        "which",
+        "who",
+        "whose",
+        "when"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "which",
+      "grammarRule": "Relative Pronoun 'which'"
+    },
+    {
+      "id": "rc_l5_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "My cousin, ___ works as a firefighter, visited us last weekend.",
+      "hint": "A cousin is a person performing the action 'works.'",
+      "explanation": "'Who' is the subject relative pronoun for people, matching 'my cousin' as the one who 'works.'",
+      "options": [
+        "which",
+        "who",
+        "whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "who",
+      "grammarRule": "Relative Pronoun 'who'"
+    },
+    {
+      "id": "rc_l6_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The airline lost a suitcase ___ contained all my medicine.",
+      "hint": "A suitcase is an object - which subject pronoun matches things?",
+      "explanation": "'Which' is used because a suitcase is a thing acting as the subject of 'contained.'",
+      "options": [
+        "which",
+        "who",
+        "whom",
+        "where"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "which",
+      "grammarRule": "Relative Pronoun 'which'"
+    },
+    {
+      "id": "rc_l6_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "A tourist ___ asked for directions seemed completely lost.",
+      "hint": "Someone asked for directions - the subject pronoun for a person doing an action.",
+      "explanation": "A tourist is a person and the subject of 'asked,' so 'who' is the correct pronoun.",
+      "options": [
+        "which",
+        "who",
+        "whose",
+        "when"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "who",
+      "grammarRule": "Relative Pronoun 'who'"
+    },
+    {
+      "id": "rc_l6_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "This app has a feature ___ tracks your daily water intake.",
+      "hint": "A feature is part of an app, not a person - what pronoun fits?",
+      "explanation": "'Which' introduces the clause because a feature is a thing acting as the subject of 'tracks.'",
+      "options": [
+        "which",
+        "who",
+        "whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "which",
+      "grammarRule": "Relative Pronoun 'which'"
+    },
+    {
+      "id": "rc_l7_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "A scientist ___ discovered the vaccine won a major award.",
+      "hint": "A scientist discovered something - is a scientist a person or a thing?",
+      "explanation": "A scientist is a person performing the action 'discovered,' so 'who' is correct.",
+      "options": [
+        "which",
+        "whom",
+        "who",
+        "where"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "who",
+      "grammarRule": "Relative Pronoun 'who'"
+    },
+    {
+      "id": "rc_l7_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "This medicine ___ the doctor prescribed made me feel drowsy.",
+      "hint": "Medicine is a thing, not a person - which relative pronoun fits?",
+      "explanation": "'Which' refers to the medicine, a thing, and connects it to the rest of the sentence.",
+      "options": [
+        "which",
+        "who",
+        "whose",
+        "when"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "which",
+      "grammarRule": "Relative Pronoun 'which'"
+    },
+    {
+      "id": "rc_l7_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The children ___ live next door are always laughing outside.",
+      "hint": "Children are people performing the action 'live.'",
+      "explanation": "'Who' is correct because children are people acting as the subject of 'live.'",
+      "options": [
+        "which",
+        "who",
+        "whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "who",
+      "grammarRule": "Relative Pronoun 'who'"
+    },
+    {
+      "id": "rc_l8_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "Our company launched a product ___ instantly sold out online.",
+      "hint": "A product is a thing - what subject pronoun matches things?",
+      "explanation": "'Which' is correct because a product is a thing acting as the subject of 'sold out.'",
+      "options": [
+        "which",
+        "who",
+        "whom",
+        "where"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "which",
+      "grammarRule": "Relative Pronoun 'which'"
+    },
+    {
+      "id": "rc_l8_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "An electrician ___ rewired our kitchen finished in one afternoon.",
+      "hint": "An electrician performed an action - a person or a thing?",
+      "explanation": "An electrician is a person and the subject of 'rewired,' so 'who' fits.",
+      "options": [
+        "which",
+        "who",
+        "whose",
+        "when"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "who",
+      "grammarRule": "Relative Pronoun 'who'"
+    },
+    {
+      "id": "rc_l8_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "This recipe ___ she shared online has over a thousand comments.",
+      "hint": "A recipe is a thing - which pronoun introduces the subject clause?",
+      "explanation": "'Which' is used because a recipe is a thing that is the subject of the clause.",
+      "options": [
+        "which",
+        "who",
+        "whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "which",
+      "grammarRule": "Relative Pronoun 'which'"
+    },
+    {
+      "id": "rc_l9_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "An athlete ___ broke the record trained for six years.",
+      "hint": "An athlete broke a record - a person or a thing acting as subject?",
+      "explanation": "An athlete is a person and the subject of 'broke,' so the correct pronoun is 'who.'",
+      "options": [
+        "which",
+        "whom",
+        "who",
+        "where"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "who",
+      "grammarRule": "Relative Pronoun 'who'"
+    },
+    {
+      "id": "rc_l9_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "That storm ___ hit the coast last night knocked out the power.",
+      "hint": "A storm is a weather event, not a person - which pronoun fits?",
+      "explanation": "'Which' is correct since a storm is a thing acting as the subject of 'hit.'",
+      "options": [
+        "which",
+        "who",
+        "whose",
+        "when"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "which",
+      "grammarRule": "Relative Pronoun 'which'"
+    },
+    {
+      "id": "rc_l9_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "Our babysitter ___ watched the kids read them three stories.",
+      "hint": "A babysitter performed the action 'watched' - a person, not a thing.",
+      "explanation": "'Who' is correct because a babysitter is a person acting as the subject of 'watched.'",
+      "options": [
+        "which",
+        "who",
+        "whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "who",
+      "grammarRule": "Relative Pronoun 'who'"
+    },
+    {
+      "id": "rc_l10_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "This bakery sells bread ___ stays fresh for an entire week.",
+      "hint": "Bread is a thing - what subject pronoun matches things?",
+      "explanation": "'Which' correctly refers to the bread, a thing, as the subject of 'stays.'",
+      "options": [
+        "which",
+        "who",
+        "whom",
+        "where"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "which",
+      "grammarRule": "Relative Pronoun 'which'"
+    },
+    {
+      "id": "rc_l10_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "My trainer ___ designed my workout plan used to be a gymnast.",
+      "hint": "A trainer designed something - a person performing an action.",
+      "explanation": "A trainer is a person and the subject of 'designed,' so 'who' is correct.",
+      "options": [
+        "which",
+        "who",
+        "whose",
+        "when"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "who",
+      "grammarRule": "Relative Pronoun 'who'"
+    },
+    {
+      "id": "rc_l10_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "I still remember the teacher ___ first taught me to read.",
+      "hint": "A teacher taught someone - a person performing the action.",
+      "explanation": "'Who' is correct because a teacher is a person acting as the subject of 'taught.'",
+      "options": [
+        "which",
+        "who",
+        "whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "who",
+      "grammarRule": "Relative Pronoun 'who'"
+    }
+  ]
 }

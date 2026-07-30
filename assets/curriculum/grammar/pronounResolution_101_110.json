@@ -1,577 +1,577 @@
 {
-    "gameType": "pronounResolution",
-    "batchIndex": 11,
-    "levels": "101-110",
-    "quests": [
-        {
-            "id": "pr_l101_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The award was presented to the analyst who solved the data error.\nWho or what does 'who' refer to?",
-            "targetWord": "who",
-            "sentence": "The award was presented to the analyst who solved the data error.",
-            "options": [
-                "The analyst",
-                "award",
-                "error"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The analyst",
-            "hint": "Who solved the error?",
-            "explanation": "'who' introduces a clause describing 'the analyst,' the person being honored.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l101_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Two students caused a cheating incident during the exam. That broke the honor code immediately.\nWho or what does 'That' refer to?",
-            "targetWord": "That",
-            "sentence": "Two students caused a cheating incident during the exam. That broke the honor code immediately.",
-            "options": [
-                "The incident",
-                "students",
-                "code"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The incident",
-            "hint": "What broke the honor code?",
-            "explanation": "'That' refers back to the incident just described, not to the students themselves.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l101_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Because the tour guide spoke five languages, she translated for every confused visitor.\nWho or what does 'she' refer to?",
-            "targetWord": "she",
-            "sentence": "Because the tour guide spoke five languages, she translated for every confused visitor.",
-            "options": [
-                "The tour guide",
-                "visitor",
-                "languages"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The tour guide",
-            "hint": "Who did the translating?",
-            "explanation": "'she' refers to 'the tour guide' - the one introduced as speaking five languages is the one doing the translating.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l102_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The vulnerability was discovered by a researcher who reported it immediately.\nWho or what does 'who' refer to?",
-            "targetWord": "who",
-            "sentence": "The vulnerability was discovered by a researcher who reported it immediately.",
-            "options": [
-                "The researcher",
-                "vulnerability",
-                "immediately"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The researcher",
-            "hint": "Who reported the issue?",
-            "explanation": "'who' introduces a clause describing 'the researcher,' the person who found and reported it.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l102_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The grandparents made an offer to babysit every weekend. That delighted the busy parents.\nWho or what does 'That' refer to?",
-            "targetWord": "That",
-            "sentence": "The grandparents made an offer to babysit every weekend. That delighted the busy parents.",
-            "options": [
-                "The offer",
-                "grandparents",
-                "parents"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The offer",
-            "hint": "What delighted the parents?",
-            "explanation": "'That' refers back to the offer just made, not to the grandparents or the parents themselves.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l102_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The hospital introduced a new triage system. This reduced emergency room wait times.\nWho or what does 'This' refer to?",
-            "targetWord": "This",
-            "sentence": "The hospital introduced a new triage system. This reduced emergency room wait times.",
-            "options": [
-                "The triage system",
-                "hospital",
-                "times"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The triage system",
-            "hint": "What reduced wait times?",
-            "explanation": "'This' refers back to the triage system just introduced, the cause of the improvement.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l103_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Because the microphone failed during the song, the sound engineer fixed it right away.\nWho or what does 'it' refer to?",
-            "targetWord": "it",
-            "sentence": "Because the microphone failed during the song, the sound engineer fixed it right away.",
-            "options": [
-                "The microphone",
-                "engineer",
-                "song"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The microphone",
-            "hint": "What stopped working mid-song?",
-            "explanation": "'it' refers to 'the microphone' - the thing that failed, not the engineer or the song.",
-            "grammarRule": "Object Pronouns"
-        },
-        {
-            "id": "pr_l103_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The proposal was rejected by executives who doubted its long-term value.\nWho or what does 'who' refer to?",
-            "targetWord": "who",
-            "sentence": "The proposal was rejected by executives who doubted its long-term value.",
-            "options": [
-                "The executives",
-                "proposal",
-                "value"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The executives",
-            "hint": "Who doubted the proposal's value?",
-            "explanation": "'who' introduces a clause describing 'the executives,' the people who rejected it.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l103_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The school extended the application deadline by two weeks. This relieved anxious applicants.\nWho or what does 'This' refer to?",
-            "targetWord": "This",
-            "sentence": "The school extended the application deadline by two weeks. This relieved anxious applicants.",
-            "options": [
-                "The extension",
-                "school",
-                "applicants"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The extension",
-            "hint": "What relieved the applicants?",
-            "explanation": "'This' refers back to the deadline extension, the event that eased the stress.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l104_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Although it needed new tires, the old car still passed inspection easily.\nWho or what does 'it' refer to?",
-            "targetWord": "it",
-            "sentence": "Although it needed new tires, the old car still passed inspection easily.",
-            "options": [
-                "The old car",
-                "inspection",
-                "tires"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The old car",
-            "hint": "What passed inspection?",
-            "explanation": "'it' appears before its antecedent; the sentence later names it as 'the old car.'",
-            "grammarRule": "Object Pronouns"
-        },
-        {
-            "id": "pr_l104_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The cruise line, whose ships sail to forty countries, announced new destinations.\nWho or what does 'whose' refer to?",
-            "targetWord": "whose",
-            "sentence": "The cruise line, whose ships sail to forty countries, announced new destinations.",
-            "options": [
-                "The cruise line",
-                "ships",
-                "destinations"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The cruise line",
-            "hint": "Whose ships sail everywhere?",
-            "explanation": "'whose' shows possession - the ships belong to 'the cruise line.'",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l104_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The supplier delayed the seafood delivery by a full day. This forced a menu change.\nWho or what does 'This' refer to?",
-            "targetWord": "This",
-            "sentence": "The supplier delayed the seafood delivery by a full day. This forced a menu change.",
-            "options": [
-                "The delay",
-                "supplier",
-                "menu"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The delay",
-            "hint": "What forced the menu change?",
-            "explanation": "'This' refers back to the delay itself, the cause of the change.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l105_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Because the patient seemed confused, the nurse repeated the instructions slowly for him.\nWho or what does 'him' refer to?",
-            "targetWord": "him",
-            "sentence": "Because the patient seemed confused, the nurse repeated the instructions slowly for him.",
-            "options": [
-                "The patient",
-                "nurse",
-                "instructions"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The patient",
-            "hint": "Who needed the instructions repeated?",
-            "explanation": "'him' refers to 'the patient' - logically, the confused person is the one needing clarity, not the nurse.",
-            "grammarRule": "Object Pronouns"
-        },
-        {
-            "id": "pr_l105_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The merger was finalized by lawyers who worked through the entire weekend.\nWho or what does 'who' refer to?",
-            "targetWord": "who",
-            "sentence": "The merger was finalized by lawyers who worked through the entire weekend.",
-            "options": [
-                "The lawyers",
-                "merger",
-                "weekend"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The lawyers",
-            "hint": "Who worked all weekend?",
-            "explanation": "'who' introduces a clause describing 'the lawyers,' the people who finalized it.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l105_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The network made a sudden cancellation after one season. That outraged loyal fans.\nWho or what does 'That' refer to?",
-            "targetWord": "That",
-            "sentence": "The network made a sudden cancellation after one season. That outraged loyal fans.",
-            "options": [
-                "The cancellation",
-                "network",
-                "fans"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The cancellation",
-            "hint": "What outraged the fans?",
-            "explanation": "'That' refers back to the cancellation itself, not to the network or the fans.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l106_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The lecture hall, whose acoustics were recently upgraded, hosted the symposium.\nWho or what does 'whose' refer to?",
-            "targetWord": "whose",
-            "sentence": "The lecture hall, whose acoustics were recently upgraded, hosted the symposium.",
-            "options": [
-                "The lecture hall",
-                "acoustics",
-                "symposium"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The lecture hall",
-            "hint": "Whose acoustics were upgraded?",
-            "explanation": "'whose' shows possession - the acoustics belong to 'the lecture hall.'",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l106_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Even though it seemed pricey, the jacket lasted Aiko for over a decade.\nWho or what does 'it' refer to?",
-            "targetWord": "it",
-            "sentence": "Even though it seemed pricey, the jacket lasted Aiko for over a decade.",
-            "options": [
-                "The jacket",
-                "Aiko",
-                "decade"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The jacket",
-            "hint": "What lasted over a decade?",
-            "explanation": "'it' appears before its antecedent; the sentence later reveals 'the jacket.'",
-            "grammarRule": "Object Pronouns"
-        },
-        {
-            "id": "pr_l106_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The committee issued a public apology for the delay. This calmed frustrated customers.\nWho or what does 'This' refer to?",
-            "targetWord": "This",
-            "sentence": "The committee issued a public apology for the delay. This calmed frustrated customers.",
-            "options": [
-                "The apology",
-                "committee",
-                "customers"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The apology",
-            "hint": "What calmed the customers?",
-            "explanation": "'This' refers back to the apology itself, the action that eased the frustration.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l107_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Because the firmware update broke the camera, support replaced it free of charge.\nWho or what does 'it' refer to?",
-            "targetWord": "it",
-            "sentence": "Because the firmware update broke the camera, support replaced it free of charge.",
-            "options": [
-                "The camera",
-                "update",
-                "support"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The camera",
-            "hint": "What got replaced for free?",
-            "explanation": "'it' refers to 'the camera' - the broken device, not the update or the support team.",
-            "grammarRule": "Object Pronouns"
-        },
-        {
-            "id": "pr_l107_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The cousins, whose visit was a complete surprise, stayed for the entire week.\nWho or what does 'whose' refer to?",
-            "targetWord": "whose",
-            "sentence": "The cousins, whose visit was a complete surprise, stayed for the entire week.",
-            "options": [
-                "The cousins",
-                "visit",
-                "week"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The cousins",
-            "hint": "Whose visit was a surprise?",
-            "explanation": "'whose' shows possession - the visit belongs to 'the cousins.'",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l107_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Headquarters approved a four-day work week as a trial. This excited every employee.\nWho or what does 'This' refer to?",
-            "targetWord": "This",
-            "sentence": "Headquarters approved a four-day work week as a trial. This excited every employee.",
-            "options": [
-                "The trial",
-                "Headquarters",
-                "employee"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The trial",
-            "hint": "What excited the employees?",
-            "explanation": "'This' refers back to the trial just approved, the event behind the excitement.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l108_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The clinic, whose founder still sees patients daily, marked its fiftieth year.\nWho or what does 'whose' refer to?",
-            "targetWord": "whose",
-            "sentence": "The clinic, whose founder still sees patients daily, marked its fiftieth year.",
-            "options": [
-                "The clinic",
-                "founder",
-                "year"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The clinic",
-            "hint": "Whose founder still works daily?",
-            "explanation": "'whose' shows possession - the founder belongs to 'the clinic.'",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l108_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Although it sold out instantly, the concert added a second date.\nWho or what does 'it' refer to?",
-            "targetWord": "it",
-            "sentence": "Although it sold out instantly, the concert added a second date.",
-            "options": [
-                "The concert",
-                "date",
-                "instantly"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The concert",
-            "hint": "What sold out instantly?",
-            "explanation": "'it' appears before its antecedent; reading on reveals 'the concert.'",
-            "grammarRule": "Object Pronouns"
-        },
-        {
-            "id": "pr_l108_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The city installed new streetlights along the avenue. This improved safety at night.\nWho or what does 'This' refer to?",
-            "targetWord": "This",
-            "sentence": "The city installed new streetlights along the avenue. This improved safety at night.",
-            "options": [
-                "The streetlights",
-                "city",
-                "night"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The streetlights",
-            "hint": "What improved nighttime safety?",
-            "explanation": "'This' points back to the new streetlights just installed.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l109_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The outlet, whose inventory changes weekly, rewards early shoppers.\nWho or what does 'whose' refer to?",
-            "targetWord": "whose",
-            "sentence": "The outlet, whose inventory changes weekly, rewards early shoppers.",
-            "options": [
-                "The outlet",
-                "inventory",
-                "shoppers"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The outlet",
-            "hint": "Whose inventory changes weekly?",
-            "explanation": "'whose' shows possession - the inventory belongs to 'the outlet.'",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l109_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Because the co-pilot felt unwell, the captain handled the landing without him.\nWho or what does 'him' refer to?",
-            "targetWord": "him",
-            "sentence": "Because the co-pilot felt unwell, the captain handled the landing without him.",
-            "options": [
-                "The co-pilot",
-                "captain",
-                "landing"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The co-pilot",
-            "hint": "Who felt too unwell to help?",
-            "explanation": "'him' refers to 'the co-pilot' - the captain is the one acting alone, so the pronoun points to the other person.",
-            "grammarRule": "Object Pronouns"
-        },
-        {
-            "id": "pr_l109_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The district approved funding for new science labs. This benefited every middle school.\nWho or what does 'This' refer to?",
-            "targetWord": "This",
-            "sentence": "The district approved funding for new science labs. This benefited every middle school.",
-            "options": [
-                "The funding",
-                "district",
-                "school"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The funding",
-            "hint": "What benefited the schools?",
-            "explanation": "'This' refers back to the funding just approved.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l110_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The startup, whose founders met in college, secured major funding.\nWho or what does 'whose' refer to?",
-            "targetWord": "whose",
-            "sentence": "The startup, whose founders met in college, secured major funding.",
-            "options": [
-                "The startup",
-                "founders",
-                "funding"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The startup",
-            "hint": "Whose founders met in college?",
-            "explanation": "'whose' shows possession - the founders belong to 'the startup.'",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l110_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Even though it looked plain, the dessert impressed every judge at the contest.\nWho or what does 'it' refer to?",
-            "targetWord": "it",
-            "sentence": "Even though it looked plain, the dessert impressed every judge at the contest.",
-            "options": [
-                "The dessert",
-                "judge",
-                "contest"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The dessert",
-            "hint": "What looked plain but impressed everyone?",
-            "explanation": "'it' appears before its antecedent; the sentence later reveals 'the dessert.'",
-            "grammarRule": "Object Pronouns"
-        },
-        {
-            "id": "pr_l110_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The agency issued a clarification after public confusion over its earlier statement. This restored some trust.\nWho or what does 'This' refer to?",
-            "targetWord": "This",
-            "sentence": "The agency issued a clarification after public confusion over its earlier statement. This restored some trust.",
-            "options": [
-                "The clarification",
-                "agency",
-                "trust"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The clarification",
-            "hint": "What restored some trust?",
-            "explanation": "'This' refers back to the clarification just issued.",
-            "grammarRule": "Pronouns"
-        }
-    ]
+  "gameType": "pronounResolution",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "id": "pr_l101_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The man whose car was stolen called the police.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "The man whose car was stolen called the police.",
+      "options": [
+        "The police",
+        "The car",
+        "The man"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The man",
+      "hint": "Whose car went missing?",
+      "explanation": "'whose' shows possession - the car belongs to the man.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l101_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The store cut its opening hours. This upset regular customers.\nWho or what does 'This' refer to?",
+      "targetWord": "This",
+      "sentence": "The store cut its opening hours. This upset regular customers.",
+      "options": [
+        "The store",
+        "The shorter hours",
+        "customers"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The shorter hours",
+      "hint": "What upset the regular customers?",
+      "explanation": "'This' refers back to the change in hours just described, not the store or the customers themselves.",
+      "grammarRule": "Demonstrative Pronouns"
+    },
+    {
+      "id": "pr_l101_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The scientist whose research won the grant will present her findings next week.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "The scientist whose research won the grant will present her findings next week.",
+      "options": [
+        "research",
+        "The scientist",
+        "findings"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The scientist",
+      "hint": "Whose research earned the funding?",
+      "explanation": "'whose' shows possession - the research belongs to the scientist.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l102_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Neighbors rushed to help the family whose house had flooded.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "Neighbors rushed to help the family whose house had flooded.",
+      "options": [
+        "Neighbors",
+        "house",
+        "The family"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The family",
+      "hint": "Whose house was damaged?",
+      "explanation": "'whose' shows possession - the house belongs to the family.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l102_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The airline lost hundreds of pieces of luggage last weekend. That frustrated many travelers.\nWho or what does 'That' refer to?",
+      "targetWord": "That",
+      "sentence": "The airline lost hundreds of pieces of luggage last weekend. That frustrated many travelers.",
+      "options": [
+        "travelers",
+        "The airline",
+        "The lost luggage"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The lost luggage",
+      "hint": "What frustrated the travelers?",
+      "explanation": "'That' refers back to the lost luggage just described, the problem causing frustration.",
+      "grammarRule": "Demonstrative Pronouns"
+    },
+    {
+      "id": "pr_l102_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The team whose proposal was rejected asked for feedback.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "The team whose proposal was rejected asked for feedback.",
+      "options": [
+        "proposal",
+        "feedback",
+        "The team"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The team",
+      "hint": "Whose proposal got turned down?",
+      "explanation": "'whose' shows possession - the proposal belongs to the team.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l103_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The author whose book became a bestseller declined every interview.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "The author whose book became a bestseller declined every interview.",
+      "options": [
+        "interview",
+        "book",
+        "The author"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The author",
+      "hint": "Whose book topped the charts?",
+      "explanation": "'whose' shows possession - the book belongs to the author.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l103_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The bridge closed for emergency repairs without warning. This caused hours of traffic delays.\nWho or what does 'This' refer to?",
+      "targetWord": "This",
+      "sentence": "The bridge closed for emergency repairs without warning. This caused hours of traffic delays.",
+      "options": [
+        "The bridge",
+        "The sudden closure",
+        "delays"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The sudden closure",
+      "hint": "What caused the long delays?",
+      "explanation": "'This' refers back to the sudden closure just described, the event that caused delays.",
+      "grammarRule": "Demonstrative Pronouns"
+    },
+    {
+      "id": "pr_l103_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The company whose stock fell sharply announced a new CEO.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "The company whose stock fell sharply announced a new CEO.",
+      "options": [
+        "CEO",
+        "The company",
+        "stock"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The company",
+      "hint": "Whose stock price dropped?",
+      "explanation": "'whose' shows possession - the stock belongs to the company.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l104_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "After months of complaints, the neighbor whose dog barks all night finally installed a fence.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "After months of complaints, the neighbor whose dog barks all night finally installed a fence.",
+      "options": [
+        "The neighbor",
+        "fence",
+        "complaints"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The neighbor",
+      "hint": "Whose dog is so loud?",
+      "explanation": "'whose' shows possession - the dog belongs to the neighbor.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l104_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The kitchen flooded overnight because a pipe burst. That damaged the new flooring.\nWho or what does 'That' refer to?",
+      "targetWord": "That",
+      "sentence": "The kitchen flooded overnight because a pipe burst. That damaged the new flooring.",
+      "options": [
+        "The pipe",
+        "flooring",
+        "The flood"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The flood",
+      "hint": "What ruined the new flooring?",
+      "explanation": "'That' refers back to the flood just described, the event that caused the damage.",
+      "grammarRule": "Demonstrative Pronouns"
+    },
+    {
+      "id": "pr_l104_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The passengers whose flight was cancelled were rebooked for the morning.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "The passengers whose flight was cancelled were rebooked for the morning.",
+      "options": [
+        "morning",
+        "flight",
+        "The passengers"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The passengers",
+      "hint": "Whose flight got cancelled?",
+      "explanation": "'whose' shows possession - the flight belongs to the passengers.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l105_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The student whose essay won first place read it aloud at the ceremony.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "The student whose essay won first place read it aloud at the ceremony.",
+      "options": [
+        "The student",
+        "essay",
+        "ceremony"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The student",
+      "hint": "Whose essay took first place?",
+      "explanation": "'whose' shows possession - the essay belongs to the student.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l105_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Sales dropped nearly forty percent after the price increase. This alarmed the board.\nWho or what does 'This' refer to?",
+      "targetWord": "This",
+      "sentence": "Sales dropped nearly forty percent after the price increase. This alarmed the board.",
+      "options": [
+        "The sales drop",
+        "The increase",
+        "board"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The sales drop",
+      "hint": "What alarmed the board?",
+      "explanation": "'This' refers back to the drop in sales just described, the trend that worried the board.",
+      "grammarRule": "Demonstrative Pronouns"
+    },
+    {
+      "id": "pr_l105_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The artist whose mural covers the whole wall finished it in a single week.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "The artist whose mural covers the whole wall finished it in a single week.",
+      "options": [
+        "week",
+        "The artist",
+        "mural"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The artist",
+      "hint": "Whose artwork covers the wall?",
+      "explanation": "'whose' shows possession - the mural belongs to the artist.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l106_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The workers whose shifts were cut protested outside the office.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "The workers whose shifts were cut protested outside the office.",
+      "options": [
+        "The workers",
+        "office",
+        "shifts"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The workers",
+      "hint": "Whose hours were reduced?",
+      "explanation": "'whose' shows possession - the shifts belong to the workers.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l106_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The internet went down across the whole building for six hours. That halted every meeting.\nWho or what does 'That' refer to?",
+      "targetWord": "That",
+      "sentence": "The internet went down across the whole building for six hours. That halted every meeting.",
+      "options": [
+        "meeting",
+        "The building",
+        "The outage"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The outage",
+      "hint": "What stopped every meeting?",
+      "explanation": "'That' refers back to the internet outage just described, the event that halted work.",
+      "grammarRule": "Demonstrative Pronouns"
+    },
+    {
+      "id": "pr_l106_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The homeowner whose roof collapsed filed an insurance claim.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "The homeowner whose roof collapsed filed an insurance claim.",
+      "options": [
+        "claim",
+        "roof",
+        "The homeowner"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The homeowner",
+      "hint": "Whose roof gave way?",
+      "explanation": "'whose' shows possession - the roof belongs to the homeowner.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l107_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "A small bonus went to the players whose performance improved the most.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "A small bonus went to the players whose performance improved the most.",
+      "options": [
+        "bonus",
+        "performance",
+        "The players"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The players",
+      "hint": "Whose play got noticeably better?",
+      "explanation": "'whose' shows possession - the performance belongs to the players.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l107_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The main road was closed for a parade all afternoon. This delayed deliveries across downtown.\nWho or what does 'This' refer to?",
+      "targetWord": "This",
+      "sentence": "The main road was closed for a parade all afternoon. This delayed deliveries across downtown.",
+      "options": [
+        "The road closure",
+        "deliveries",
+        "The parade"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The road closure",
+      "hint": "What delayed all the deliveries?",
+      "explanation": "'This' refers back to the road closure just described, the cause of the delays.",
+      "grammarRule": "Demonstrative Pronouns"
+    },
+    {
+      "id": "pr_l107_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The tenant whose lease expires next month wants to renew early.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "The tenant whose lease expires next month wants to renew early.",
+      "options": [
+        "lease",
+        "The tenant",
+        "month"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The tenant",
+      "hint": "Whose lease is ending soon?",
+      "explanation": "'whose' shows possession - the lease belongs to the tenant.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l108_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The driver whose license was suspended took the bus instead.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "The driver whose license was suspended took the bus instead.",
+      "options": [
+        "license",
+        "bus",
+        "The driver"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The driver",
+      "hint": "Whose license got taken away?",
+      "explanation": "'whose' shows possession - the license belongs to the driver.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l108_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Two of the biggest suppliers merged into a single company. That worried smaller competitors.\nWho or what does 'That' refer to?",
+      "targetWord": "That",
+      "sentence": "Two of the biggest suppliers merged into a single company. That worried smaller competitors.",
+      "options": [
+        "The company",
+        "The merger",
+        "competitors"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The merger",
+      "hint": "What worried the smaller businesses?",
+      "explanation": "'That' refers back to the merger just described, the event causing concern.",
+      "grammarRule": "Demonstrative Pronouns"
+    },
+    {
+      "id": "pr_l108_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The runner whose time broke the record celebrated with her coach.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "The runner whose time broke the record celebrated with her coach.",
+      "options": [
+        "coach",
+        "time",
+        "The runner"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The runner",
+      "hint": "Whose time set a new record?",
+      "explanation": "'whose' shows possession - the time belongs to the runner.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l109_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The patient whose surgery went smoothly was discharged early.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "The patient whose surgery went smoothly was discharged early.",
+      "options": [
+        "early",
+        "The patient",
+        "surgery"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The patient",
+      "hint": "Whose operation went well?",
+      "explanation": "'whose' shows possession - the surgery belongs to the patient.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l109_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The city council voted to raise parking fees downtown. This angered small business owners.\nWho or what does 'This' refer to?",
+      "targetWord": "This",
+      "sentence": "The city council voted to raise parking fees downtown. This angered small business owners.",
+      "options": [
+        "The fee increase",
+        "The council",
+        "owners"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The fee increase",
+      "hint": "What made business owners angry?",
+      "explanation": "'This' refers back to the fee increase just described, the decision causing anger.",
+      "grammarRule": "Demonstrative Pronouns"
+    },
+    {
+      "id": "pr_l109_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The photographer whose photo went viral gained thousands of new followers.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "The photographer whose photo went viral gained thousands of new followers.",
+      "options": [
+        "photo",
+        "followers",
+        "The photographer"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The photographer",
+      "hint": "Whose picture spread online?",
+      "explanation": "'whose' shows possession - the photo belongs to the photographer.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l110_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Recruiters immediately called back the applicant whose resume stood out.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "Recruiters immediately called back the applicant whose resume stood out.",
+      "options": [
+        "Recruiters",
+        "resume",
+        "The applicant"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The applicant",
+      "hint": "Whose resume caught the recruiter's eye?",
+      "explanation": "'whose' shows possession - the resume belongs to the applicant.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l110_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The factory released dark smoke into the air for hours. That triggered several complaints.\nWho or what does 'That' refer to?",
+      "targetWord": "That",
+      "sentence": "The factory released dark smoke into the air for hours. That triggered several complaints.",
+      "options": [
+        "The smoke",
+        "complaints",
+        "The factory"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The smoke",
+      "hint": "What led to complaints?",
+      "explanation": "'That' refers back to the smoke just described, the cause of the complaints.",
+      "grammarRule": "Demonstrative Pronouns"
+    },
+    {
+      "id": "pr_l110_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The couple whose wedding was postponed finally set a new date.\nWho or what does 'whose' refer to?",
+      "targetWord": "whose",
+      "sentence": "The couple whose wedding was postponed finally set a new date.",
+      "options": [
+        "date",
+        "wedding",
+        "The couple"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The couple",
+      "hint": "Whose big day got pushed back?",
+      "explanation": "'whose' shows possession - the wedding belongs to the couple.",
+      "grammarRule": "Relative Pronouns"
+    }
+  ]
 }

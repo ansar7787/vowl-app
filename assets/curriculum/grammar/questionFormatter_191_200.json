@@ -1,577 +1,577 @@
 {
-    "gameType": "questionFormatter",
-    "batchIndex": 20,
-    "levels": "191-200",
-    "quests": [
-        {
-            "id": "qf_l191_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence uses 'scarcely...when' correctly?",
-            "sentence": "Which sentence uses 'scarcely...when' correctly?",
-            "options": [
-                "Scarcely had the ceremony begun when it started to rain.",
-                "Scarcely had the ceremony begun than it started to rain.",
-                "Scarcely did the ceremony begin when it started to rain.",
-                "Scarcely the ceremony had begun when it started to rain."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Scarcely had the ceremony begun when it started to rain.",
-            "hint": "'Scarcely had + subject + past participle + when + past simple' - inversion + 'when'.",
-            "explanation": "'Scarcely' (like 'hardly', 'barely') uses past-perfect inversion and pairs with 'when': 'Scarcely had she left when the phone rang.' 'No sooner' is the only negative adverbial that pairs with 'than'. 'Scarcely did the ceremony begin' uses simple past inversion - less standard. 'Scarcely the ceremony had' (no inversion) is non-standard.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l191_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Identify the most precise description of the passive in: 'Mistakes were made.'",
-            "sentence": "Identify the most precise description of the passive in: 'Mistakes were made.'",
-            "options": [
-                "It is an agentless passive used to deflect responsibility.",
-                "It is a past continuous passive expressing an ongoing action.",
-                "It is an impersonal passive with an unspecified agent for academic objectivity.",
-                "It is a stative passive expressing a state rather than an action."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "It is an agentless passive used to deflect responsibility.",
-            "hint": "Agentless passive ('Mistakes were made') deliberately omits the agent - often used to avoid blame.",
-            "explanation": "'Mistakes were made' is an agentless passive - the agent (who made the mistakes) is not mentioned. This is deliberately used in political language to acknowledge error without assigning responsibility. While agentless passives can be used for academic objectivity, in this case the brevity and context suggest deliberate avoidance of accountability.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l191_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which identifies a genuine semantic difference?",
-            "sentence": "Which identifies a genuine semantic difference?",
-            "options": [
-                "'He didn't manage to solve it' vs 'He managed not to solve it'.",
-                "Both sentences mean the same - he failed to solve it.",
-                "'Managed not to' is ungrammatical.",
-                "Both sentences mean he succeeded in his aim."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "'He didn't manage to solve it' vs 'He managed not to solve it'.",
-            "hint": "'Not manage to = fail' vs 'manage not to = succeed in avoiding' - opposite meanings.",
-            "explanation": "'He didn't manage to solve it' = he tried but failed. 'He managed not to solve it' = he succeeded in not solving it (deliberately avoided solving). These are semantically opposite. 'Manage' can be modified by 'not' in either position, but the position changes the meaning entirely.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l192_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which correctly uses a nominal relative clause as the object?",
-            "sentence": "Which correctly uses a nominal relative clause as the object?",
-            "options": [
-                "Tell me what you need.",
-                "Tell me that you need.",
-                "Tell me which you need.",
-                "Tell me what do you need."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Tell me what you need.",
-            "hint": "'What you need' = free relative clause functioning as direct object ('the thing(s) you need').",
-            "explanation": "'What you need' is a free relative clause (nominal relative clause) acting as the object. 'What' means 'the thing(s) that'. 'That you need' would be a that-clause but sounds incomplete as a direct object of 'tell'. 'Which you need' would need a referent ('tell me which one you need'). 'What do you need' inverts for a direct question - wrong here.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l192_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which identifies the most subtle error in complex tense use?",
-            "sentence": "Which identifies the most subtle error in complex tense use?",
-            "options": [
-                "'If I would have known, I would have helped.' - 'would have known' should be 'had known'.",
-                "'If I would have known' is correct third conditional.",
-                "'I would have helped' should be 'I will have helped'.",
-                "The sentence should use 'could' instead of 'would' throughout."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "'If I would have known, I would have helped.' - 'would have known' should be 'had known'.",
-            "hint": "'Would' cannot appear in the 'if' clause of third conditional - use 'had + past participle'.",
-            "explanation": "In the third conditional, the 'if' clause uses the past perfect ('had known'), never 'would have'. 'If I would have known' is a very common learner error, often influenced by other languages. The result clause correctly uses 'would have helped'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l192_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence correctly uses 'either...or' with subject-verb agreement?",
-            "sentence": "Which sentence correctly uses 'either...or' with subject-verb agreement?",
-            "options": [
-                "Either the manager or the assistants are responsible.",
-                "Either the manager or the assistants is responsible.",
-                "Either the manager or the assistants were responsible.",
-                "Either the managers or the assistant is responsible."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Either the manager or the assistants are responsible.",
-            "hint": "With 'either...or', the verb agrees with the nearest subject ('the assistants' - plural).",
-            "explanation": "With 'either...or', the verb agrees with the subject nearest to it. 'The assistants' (plural) is nearest, so 'are' is correct. If the order were reversed ('either the assistants or the manager'), 'is' would be correct. This is the same rule as for 'neither...nor'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l193_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence most precisely uses 'the fact that' vs 'that'?",
-            "sentence": "Which sentence most precisely uses 'the fact that' vs 'that'?",
-            "options": [
-                "The fact that she succeeded surprised everyone.",
-                "That she succeeded surprised everyone.",
-                "The fact she succeeded surprised everyone.",
-                "The fact which she succeeded surprised everyone."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The fact that she succeeded surprised everyone.",
-            "hint": "'The fact that' is more explicit than a bare 'that-clause' as subject; 'that' alone is also grammatically correct.",
-            "explanation": "Both 'That she succeeded surprised everyone' (nominal that-clause as subject) and 'The fact that she succeeded surprised everyone' are grammatically correct. 'The fact that' makes the nominative clause more explicit by using a head noun. 'The fact she succeeded' (without 'that') omits the complementizer, which is less standard in formal writing.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l193_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which best explains 'mitigated assertion' in the sentence: 'It would appear that there may be some inconsistencies.'?",
-            "sentence": "Which best explains 'mitigated assertion' in the sentence: 'It would appear that there may be some inconsistencies.'?",
-            "options": [
-                "Multiple hedges ('would appear', 'may be', 'some') are stacked to express maximum epistemic caution.",
-                "The sentence is ungrammatical because too many hedges cannot be stacked.",
-                "'Would appear' implies the speaker is lying or uncertain.",
-                "'May be' is redundant since 'would appear' already expresses uncertainty."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Multiple hedges ('would appear', 'may be', 'some') are stacked to express maximum epistemic caution.",
-            "hint": "Stacking hedges ('would appear', 'may', 'some') is a legitimate and sophisticated academic device.",
-            "explanation": "Stacking multiple hedging devices ('would appear', 'may be', 'some inconsistencies') is an advanced academic writing technique that maximises epistemic caution - appropriate when the evidence is tentative. It is grammatically correct and common in careful academic writing. The hedges are not redundant - each targets a different aspect of the claim.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l193_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence uses a 'verbless clause' correctly?",
-            "sentence": "Which sentence uses a 'verbless clause' correctly?",
-            "options": [
-                "Though exhausted, she continued working.",
-                "Though she was exhausted but continued working.",
-                "Though exhausted but, she continued working.",
-                "Exhausted though but, she continued working."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Though exhausted, she continued working.",
-            "hint": "Verbless clause: 'Though + adjective' = a reduced concessive clause omitting subject and verb.",
-            "explanation": "'Though exhausted' is a verbless concessive clause = 'though she was exhausted'. The subject and auxiliary are omitted. 'Though...but' mixes two connectors. 'Exhausted though but' is ungrammatical. The full version ('though she was exhausted') and the inverted version ('exhausted though she was') are both also correct.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l194_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence contains a 'transferred epithet' (hypallage)?",
-            "sentence": "Which sentence contains a 'transferred epithet' (hypallage)?",
-            "options": [
-                "She had a restless night.",
-                "She had a night of restlessness.",
-                "She was restless throughout the night.",
-                "The restless night kept her awake."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She had a restless night.",
-            "hint": "A transferred epithet shifts the adjective from the noun it logically modifies to an associated noun.",
-            "explanation": "'A restless night' is a transferred epithet - 'restless' logically describes the person (she was restless), not the night. The adjective has been transferred to the noun it is associated with. This is a common stylistic device in English. 'A night of restlessness' or 'she was restless throughout the night' express the same idea without the transfer.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l194_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which correctly uses 'if only' for past regret?",
-            "sentence": "Which correctly uses 'if only' for past regret?",
-            "options": [
-                "If only I had taken that job offer ten years ago!",
-                "If only I took that job offer ten years ago!",
-                "If only I would have taken that job offer ten years ago!",
-                "If only I had been taking that job offer ten years ago!"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "If only I had taken that job offer ten years ago!",
-            "hint": "'If only + past perfect' expresses strong regret about a past situation.",
-            "explanation": "'If only + past perfect' (had taken) expresses intense regret about a past event that didn't happen. 'If only I took' uses past simple - appropriate for present wishes, not past regrets. 'Would have taken' cannot follow 'if only' (same rule as third conditional). 'Had been taking' (continuous) is less natural for a single past decision.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l194_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence most precisely uses 'regardless' vs 'irrespective'?",
-            "sentence": "Which sentence most precisely uses 'regardless' vs 'irrespective'?",
-            "options": [
-                "Regardless of the cost, we will proceed.",
-                "Irrespective of the cost, we will proceed.",
-                "Regardless the cost, we will proceed.",
-                "Irrespective the cost, we will proceed."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Regardless of the cost, we will proceed.",
-            "hint": "Both 'regardless of' and 'irrespective of' are correct. 'Regardless of' is more common in informal contexts; 'irrespective of' is more formal.",
-            "explanation": "Both 'regardless of' and 'irrespective of' + noun phrase are grammatically correct and mean the same thing. 'Irrespective of' is typically more formal. 'Regardless' and 'irrespective' always take 'of' - 'regardless the cost' and 'irrespective the cost' are both wrong.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l195_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which correctly uses 'have yet to' in a formal negative statement?",
-            "sentence": "Which correctly uses 'have yet to' in a formal negative statement?",
-            "options": [
-                "The committee has yet to respond to our request.",
-                "The committee yet has to respond to our request.",
-                "The committee has to yet respond to our request.",
-                "The committee has yet respond to our request."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The committee has yet to respond to our request.",
-            "hint": "'Have yet to + base verb' = still hasn't done X. 'Yet' is positioned between 'have' and 'to'.",
-            "explanation": "'Has yet to respond' = hasn't responded yet (formal). 'Yet' must be between 'have' and 'to': 'has yet to'. 'Yet has to' sounds awkward. 'Has to yet respond' is wrong word order. 'Has yet respond' (without 'to') is ungrammatical.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l195_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence correctly combines two past perfect constructions for a complex narrative?",
-            "sentence": "Which sentence correctly combines two past perfect constructions for a complex narrative?",
-            "options": [
-                "After she had reviewed the data and had drafted the summary, she submitted the report.",
-                "After she had reviewed the data and drafted the summary, she submitted the report.",
-                "After reviewing the data and drafting the summary, she submitted the report.",
-                "After she had reviewed the data and she had drafted the summary, she submitted the report."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "After she had reviewed the data and had drafted the summary, she submitted the report.",
-            "hint": "When two completed past actions precede the main past event, both may use past perfect (or the second can omit 'had').",
-            "explanation": "When a list of prior actions is introduced by 'after', it is acceptable to use the past perfect for the first and omit 'had' for subsequent parallel verbs ('had reviewed and drafted'). Both 'had reviewed and had drafted' (explicit) and 'had reviewed and drafted' (ellipsis of second 'had') are correct. The participial clause 'After reviewing and drafting' is also correct and more concise.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l195_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence demonstrates the most sophisticated use of apposition?",
-            "sentence": "Which sentence demonstrates the most sophisticated use of apposition?",
-            "options": [
-                "Professor Chen, a pioneer in quantum computing, delivered the keynote address.",
-                "Professor Chen who is a pioneer in quantum computing delivered the keynote address.",
-                "Professor Chen, who is a pioneer in quantum computing, delivered the keynote address.",
-                "Professor Chen is a pioneer in quantum computing, and she delivered the keynote address."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Professor Chen, a pioneer in quantum computing, delivered the keynote address.",
-            "hint": "A noun phrase appositive (no verb) is more concise than a relative clause with 'who is'.",
-            "explanation": "A noun phrase appositive ('a pioneer in quantum computing') is elegant and concise - it renames the subject without an additional verb or pronoun. The non-defining relative clause ('who is a pioneer') is also correct but wordier. The coordinated clause ('and she delivered') separates ideas that are more naturally integrated.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l196_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence uses 'what' in a 'pseudo-cleft' correctly?",
-            "sentence": "Which sentence uses 'what' in a 'pseudo-cleft' correctly?",
-            "options": [
-                "What she needs most is encouragement.",
-                "What she needs most is encouraging.",
-                "What she mostly needs is encouragement.",
-                "What she needs more is encouragement."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "What she needs most is encouragement.",
-            "hint": "Pseudo-cleft: 'What + subject + verb + is + noun phrase' - 'what' introduces the focus element.",
-            "explanation": "A pseudo-cleft (wh-cleft) is formed with 'What + subject + verb + is/was + focus element'. 'What she needs most is encouragement' correctly focuses on 'encouragement'. 'Most' goes directly after 'needs': 'needs most' (not 'mostly needs'). 'Needs more' would be a comparison, not a superlative.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l196_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence most precisely uses 'tend to' for a general pattern?",
-            "sentence": "Which sentence most precisely uses 'tend to' for a general pattern?",
-            "options": [
-                "Research findings tend to reflect the assumptions of their methodology.",
-                "Research findings tend to be reflected by their methodology.",
-                "Research findings tend reflecting the assumptions of their methodology.",
-                "Research findings tend in reflecting the assumptions of their methodology."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Research findings tend to reflect the assumptions of their methodology.",
-            "hint": "'Tend to + base verb' expresses a general tendency or pattern.",
-            "explanation": "'Tend to + base verb' is the standard structure: 'tend to reflect'. 'Tend to be reflected' (passive) is grammatically correct but changes the meaning. 'Tend reflecting' (gerund) is wrong - 'tend' always takes 'to + base verb'. 'Tend in reflecting' is not standard.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l196_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which correctly uses 'on account of' as a formal causal preposition?",
-            "sentence": "Which correctly uses 'on account of' as a formal causal preposition?",
-            "options": [
-                "The match was postponed on account of heavy rain.",
-                "The match was postponed on account of it rained heavily.",
-                "The match was postponed on account heavy rain.",
-                "On account of, the match was postponed by heavy rain."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The match was postponed on account of heavy rain.",
-            "hint": "'On account of + noun phrase/gerund' - never followed directly by a full clause.",
-            "explanation": "'On account of + noun phrase/gerund' is a formal causal preposition: 'on account of heavy rain'. It cannot be followed by a full clause ('on account of it rained'). 'On account' alone (without 'of') is non-standard. 'On account of, the match...' incorrectly uses a comma after 'of'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l197_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence uses 'rather than' correctly as a coordinator?",
-            "sentence": "Which sentence uses 'rather than' correctly as a coordinator?",
-            "options": [
-                "She decided to resign rather than accept the demotion.",
-                "She decided to resign rather than accepting the demotion.",
-                "She decided to resign rather than she would accept the demotion.",
-                "Rather than accepting the demotion, she has decided to resign."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She decided to resign rather than accept the demotion.",
-            "hint": "'Rather than + bare infinitive' when the preceding verb is an infinitive (parallel structure).",
-            "explanation": "When 'rather than' follows an infinitive ('to resign'), it takes a bare infinitive ('rather than accept') for strict parallelism. 'Rather than accepting' (gerund) is also widely accepted and is becoming the standard. 'Rather than she would accept' uses a full clause, which is non-standard in this position. Option 4 uses a fronted 'rather than + gerund' which is common and acceptable.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l197_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence correctly uses 'to' after 'be' as a prepositional verb?",
-            "sentence": "Which sentence correctly uses 'to' after 'be' as a prepositional verb?",
-            "options": [
-                "This phenomenon is key to understanding climate change.",
-                "This phenomenon is key to understand climate change.",
-                "This phenomenon is key for understanding climate change.",
-                "This phenomenon is key in understanding climate change."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "This phenomenon is key to understanding climate change.",
-            "hint": "'Key to + gerund' - 'to' here is a preposition, not part of an infinitive.",
-            "explanation": "'Key to + gerund' is the correct structure: 'key to understanding'. 'To' here is a preposition (not part of an infinitive), so it must be followed by a noun/gerund. 'Key to understand' uses an infinitive after a preposition - wrong. 'Key for' and 'key in' are not the standard collocations with 'key'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l197_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which best describes the function of the subjunctive in: 'I move that the meeting be adjourned.'?",
-            "sentence": "Which best describes the function of the subjunctive in: 'I move that the meeting be adjourned.'?",
-            "options": [
-                "It is a formal subjunctive expressing a procedural motion - the base verb 'be' is used for all subjects.",
-                "'Be adjourned' is a passive infinitive, not a subjunctive.",
-                "'Move that' takes an indicative, not a subjunctive, clause.",
-                "The subjunctive requires 'should be adjourned' in formal English."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "It is a formal subjunctive expressing a procedural motion - the base verb 'be' is used for all subjects.",
-            "hint": "'Move/propose/request that + subject + base verb' (subjunctive) is the formal parliamentary/procedural usage.",
-            "explanation": "'I move that the meeting be adjourned' uses the present subjunctive ('be' instead of 'is') in a formal procedural context - common in parliamentary and formal meeting language. This is the same subjunctive pattern used after 'insist/suggest/demand that'. 'Should be adjourned' is an acceptable informal alternative.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l198_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence uses 'far from' correctly as a negative emphasiser?",
-            "sentence": "Which sentence uses 'far from' correctly as a negative emphasiser?",
-            "options": [
-                "Far from being a problem, the new policy has improved efficiency.",
-                "Far from a problem, the new policy has improved efficiency.",
-                "Far from being a problem but the new policy has improved efficiency.",
-                "Far from is a problem, the new policy has improved efficiency."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Far from being a problem, the new policy has improved efficiency.",
-            "hint": "'Far from + gerund/noun' = the opposite of what might be expected - negative emphasiser.",
-            "explanation": "'Far from + gerund/noun phrase' emphasises the opposite: 'far from being a problem' = it is not a problem at all - in fact the opposite. 'Far from a problem' (without gerund) is also grammatically possible but 'far from being' is more standard. 'Far from...but' mixes two connectors.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l198_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence most accurately uses an 'existential' vs 'predicative' construction?",
-            "sentence": "Which sentence most accurately uses an 'existential' vs 'predicative' construction?",
-            "options": [
-                "There is a chance of success (existential) vs The chance is real (predicative).",
-                "Both sentences use predicative constructions.",
-                "'There is a chance' uses 'there' as a personal pronoun.",
-                "'Existential there' and 'predicative there' are the same grammatical structure."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "There is a chance of success (existential) vs The chance is real (predicative).",
-            "hint": "'There is + noun' (existential) introduces a new referent; predicative uses 'be' to describe a quality.",
-            "explanation": "Existential 'there' ('there is a chance') introduces a new, previously unknown referent into the discourse. Predicative constructions ('the chance is real') use 'be' to link a subject with a description/complement. They are distinct grammatical structures. 'There' in existential constructions is a dummy subject with no referential meaning.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l198_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence uses 'the more...the more' with the most precise parallel structure?",
-            "sentence": "Which sentence uses 'the more...the more' with the most precise parallel structure?",
-            "options": [
-                "The clearer the explanation, the more quickly students grasp the concept.",
-                "The clearer the explanation is, the more students grasp quickly the concept.",
-                "The more clear the explanation, the more quickly students grasp the concept.",
-                "The clearer is the explanation, the more quickly students grasp the concept."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The clearer the explanation, the more quickly students grasp the concept.",
-            "hint": "'The + comparative adj + noun, the more + adverb + subject + verb' - ellipsis of verb in first clause.",
-            "explanation": "'The clearer the explanation, the more quickly students grasp the concept' is correct. The first clause ellipses the verb ('the clearer the explanation [is]'). 'The more clear' is wrong - 'clearer' is the regular comparative of 'clear'. 'The more quickly' correctly uses the comparative adverb. 'The clearer is the explanation' inverts unnecessarily.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l199_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence demonstrates the most sophisticated use of inversion for formal style?",
-            "sentence": "Which sentence demonstrates the most sophisticated use of inversion for formal style?",
-            "options": [
-                "Not until the final chapter does the author reveal the solution.",
-                "The author doesn't reveal the solution until the final chapter.",
-                "The author reveals the solution not until the final chapter.",
-                "The solution is not revealed until the final chapter by the author."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Not until the final chapter does the author reveal the solution.",
-            "hint": "'Not until + noun phrase + does + subject + verb' - fronted negative adverbial with inversion.",
-            "explanation": "Fronting 'not until the final chapter' triggers subject-auxiliary inversion in the main clause: 'does the author reveal'. This is a highly formal and emphatic literary structure. The plain version ('the author doesn't reveal') and the passive ('the solution is not revealed') are also correct but less rhetorically sophisticated.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l199_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which correctly identifies a 'garden-path sentence' and its resolution?",
-            "sentence": "Which correctly identifies a 'garden-path sentence' and its resolution?",
-            "options": [
-                "'The horse raced past the barn fell.' - Misparse: 'raced' is initially read as main verb; it is actually a passive relative clause.",
-                "'The horse raced past the barn fell.' - 'raced' is the main verb; 'fell' is a past participle.",
-                "'The horse raced past the barn fell.' - The sentence is ungrammatical.",
-                "'The horse raced past the barn fell.' - 'raced' and 'fell' are two main verbs connected by ellipsis."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "'The horse raced past the barn fell.' - Misparse: 'raced' is initially read as main verb; it is actually a passive relative clause.",
-            "hint": "Garden-path sentences are grammatically correct but initially misprocessed. 'Raced' = reduced passive relative clause.",
-            "explanation": "'The horse raced past the barn fell' is a famous garden-path sentence. It is grammatically correct: 'The horse [that was] raced past the barn fell [down]'. 'Raced' is a reduced passive relative clause ('that was raced'). Readers initially parse 'raced' as the main verb, leading to a processing dead end when 'fell' is encountered.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l199_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence best uses 'so much so that' for gradation of consequence?",
-            "sentence": "Which sentence best uses 'so much so that' for gradation of consequence?",
-            "options": [
-                "She was dedicated to her work, so much so that she rarely took holidays.",
-                "She was dedicated to her work, so much that she rarely took holidays.",
-                "She was so dedicated to her work, she rarely took holidays.",
-                "She was dedicated to her work, so so much that she rarely took holidays."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She was dedicated to her work, so much so that she rarely took holidays.",
-            "hint": "'So much so that' intensifies a quality already described and introduces its consequence.",
-            "explanation": "'So much so that' is a fixed phrase meaning 'to such an extent that' - it follows and amplifies the previous statement. 'So much that' (without the second 'so') is non-standard. 'She was so dedicated...she rarely took holidays' (without 'so much so that') is also correct and natural but less formal. 'So so much' is a redundant repetition.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l200_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence best demonstrates mastery of the English article system?",
-            "sentence": "Which sentence best demonstrates mastery of the English article system?",
-            "options": [
-                "An unprecedented number of the world's leading scientists have endorsed the findings.",
-                "A unprecedented number of the world's leading scientists have endorsed the findings.",
-                "An unprecedented number of world's leading scientists have endorsed the findings.",
-                "An unprecedented number of the world's leading scientists has endorsed the findings."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "An unprecedented number of the world's leading scientists have endorsed the findings.",
-            "hint": "'An' before vowel sound; 'the world's' = unique referent; 'have' agrees with plural 'number' in 'a number of'.",
-            "explanation": "'An unprecedented' - 'unprecedented' starts with /ʌn/ (vowel sound). 'The world's leading scientists' - 'the world' is unique. 'An unprecedented number of + plural noun + have' - 'a number of' takes a plural verb. All three article/agreement features are correct only in the first option.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l200_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence most precisely expresses an unverified claim using passive reporting?",
-            "sentence": "Which sentence most precisely expresses an unverified claim using passive reporting?",
-            "options": [
-                "He is alleged to have embezzled funds from the charity.",
-                "He is accused to have embezzled funds from the charity.",
-                "He allegedly embezzled funds from the charity.",
-                "It is alleged that he embezzled funds from the charity."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He is alleged to have embezzled funds from the charity.",
-            "hint": "Both 'is alleged to have' and 'it is alleged that' are correct legal passive reporting structures.",
-            "explanation": "'Is alleged to have + past infinitive' (passive reporting with perfect infinitive) and 'It is alleged that + past simple' are both standard legal/journalistic passive structures. Both are correct. 'Is accused to have' is non-standard - 'accuse' takes 'of + gerund' or 'that + clause', not 'to + infinitive'. 'Allegedly + past simple' is also correct but active rather than passive.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l200_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence demonstrates the highest level of grammatical sophistication while remaining perfectly natural?",
-            "sentence": "Which sentence demonstrates the highest level of grammatical sophistication while remaining perfectly natural?",
-            "options": [
-                "Compelling as the evidence may be, we must guard against drawing premature conclusions.",
-                "Although the evidence is compelling, we must guard against drawing premature conclusions.",
-                "Despite the compelling evidence, we must guard against drawing premature conclusions.",
-                "The evidence is compelling; however, we must guard against drawing premature conclusions."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Compelling as the evidence may be, we must guard against drawing premature conclusions.",
-            "hint": "'Adjective + as + subject + modal + be' = inverted concessive clause - the most sophisticated structure here.",
-            "explanation": "'Compelling as the evidence may be' uses the formal inverted concessive structure ('Adjective + as + subject + modal/verb'). All four options are grammatically correct. The inverted structure is the most sophisticated while remaining perfectly natural in formal academic or professional writing. It demonstrates mastery of English's full range of concessive structures.",
-            "grammarRule": "Question Formation"
-        }
-    ]
+  "gameType": "questionFormatter",
+  "batchIndex": 20,
+  "levels": "191-200",
+  "quests": [
+    {
+      "id": "qf_l191_q1",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The new proposal has already been rejected twice.",
+      "sentence": "The new proposal has already been rejected twice.",
+      "options": [
+        "The new proposal has already been rejected twice, has it?",
+        "The new proposal has already been rejected twice, hasn't it?",
+        "The new proposal has already been rejected twice, doesn't it?",
+        "The new proposal has already been rejected twice, isn't it?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The new proposal has already been rejected twice, hasn't it?",
+      "hint": "The tag reuses 'has' in its negative form, since this is a passive present perfect statement.",
+      "explanation": "This combines the passive with the present perfect: since the statement is positive, the tag reuses 'has' in its negative form: 'hasn't it'.",
+      "grammarRule": "Final Mastery: Tag, Passive & Perfect Questions"
+    },
+    {
+      "id": "qf_l191_q2",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "These particular symptoms haven't been fully explained by doctors.",
+      "sentence": "These particular symptoms haven't been fully explained by doctors.",
+      "options": [
+        "These particular symptoms haven't been fully explained by doctors, haven't they?",
+        "These particular symptoms haven't been fully explained by doctors, don't they?",
+        "These particular symptoms haven't been fully explained by doctors, aren't they?",
+        "These particular symptoms haven't been fully explained by doctors, have they?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "These particular symptoms haven't been fully explained by doctors, have they?",
+      "hint": "The statement is negative, so use the positive tag 'have they?'",
+      "explanation": "A negative passive present perfect statement takes a positive tag: 'have they', reusing the same auxiliary.",
+      "grammarRule": "Final Mastery: Tag, Passive & Perfect Questions"
+    },
+    {
+      "id": "qf_l191_q3",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The final numbers should have been double-checked before publishing.",
+      "sentence": "The final numbers should have been double-checked before publishing.",
+      "options": [
+        "The final numbers should have been double-checked before publishing, shouldn't they?",
+        "The final numbers should have been double-checked before publishing, should they?",
+        "The final numbers should have been double-checked before publishing, hadn't they?",
+        "The final numbers should have been double-checked before publishing, weren't they?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The final numbers should have been double-checked before publishing, shouldn't they?",
+      "hint": "The tag reuses the modal 'should' in its negative form.",
+      "explanation": "With modal perfect passive statements, the tag reuses the modal itself. Since positive, the tag is negative: 'shouldn't they'.",
+      "grammarRule": "Final Mastery: Tag, Passive & Perfect Questions"
+    },
+    {
+      "id": "qf_l192_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Could the missing shipment have been rerouted to a different warehouse?",
+      "sentence": "Could the missing shipment have been rerouted to a different warehouse?",
+      "options": [
+        "Do you have any idea whether could the missing shipment have been rerouted to a different warehouse?",
+        "Do you have any idea the missing shipment whether could have been rerouted to a different warehouse?",
+        "Do you have any idea that could the missing shipment have been rerouted to a different warehouse?",
+        "Do you have any idea whether the missing shipment could have been rerouted to a different warehouse?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Do you have any idea whether the missing shipment could have been rerouted to a different warehouse?",
+      "hint": "Use 'whether', and move 'could' back after the subject.",
+      "explanation": "'Whether' introduces the embedded question, with statement word order: 'the shipment could have been rerouted'.",
+      "grammarRule": "Final Mastery: Embedded, Modal Perfect & Passive Questions"
+    },
+    {
+      "id": "qf_l192_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Why must the results have been miscalculated somewhere in the process?",
+      "sentence": "Why must the results have been miscalculated somewhere in the process?",
+      "options": [
+        "Can you explain why the results must have been miscalculated somewhere in the process?",
+        "Can you explain why must the results have been miscalculated somewhere in the process?",
+        "Can you explain why the results have must been miscalculated somewhere in the process?",
+        "Can you explain that why the results must have been miscalculated somewhere in the process?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Can you explain why the results must have been miscalculated somewhere in the process?",
+      "hint": "Move 'must' back after the subject, keeping 'have been miscalculated' together.",
+      "explanation": "The embedded clause keeps statement word order: 'the results must have been miscalculated', not 'must the results have been'.",
+      "grammarRule": "Final Mastery: Embedded, Modal Perfect & Passive Questions"
+    },
+    {
+      "id": "qf_l192_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "What could have triggered such a significant delay in production?",
+      "sentence": "What could have triggered such a significant delay in production?",
+      "options": [
+        "Do you know what could have trigger such a significant delay in production?",
+        "Do you know what have could triggered such a significant delay in production?",
+        "Do you know what could have triggered such a significant delay in production?",
+        "Do you know that what could have triggered such a significant delay in production?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Do you know what could have triggered such a significant delay in production?",
+      "hint": "Since 'what' is the subject here, simply keep 'could have triggered' together.",
+      "explanation": "Because 'what' replaces the subject, the word order stays the same: 'what could have triggered'.",
+      "grammarRule": "Final Mastery: Embedded, Modal Perfect & Passive Questions"
+    },
+    {
+      "id": "qf_l193_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I was sure the inspector would have flagged this problem earlier, given how obvious it seems now.",
+      "sentence": "I was sure the inspector would have flagged this problem earlier, given how obvious it seems now.",
+      "options": [
+        "Wouldn't the inspector have flagged this problem earlier?",
+        "The inspector wouldn't have flagged this problem earlier?",
+        "Won't the inspector have flagged this problem earlier?",
+        "Wouldn't the inspector have flag this problem earlier?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Wouldn't the inspector have flagged this problem earlier?",
+      "hint": "Move 'wouldn't' to the front, keeping 'have flagged' together.",
+      "explanation": "'Wouldn't have' questions an assumption about the past. It moves to the front, and 'have flagged' stays together.",
+      "grammarRule": "Final Mastery: Negative & Modal Perfect Questions"
+    },
+    {
+      "id": "qf_l193_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I was confident the team would have caught this error during testing.",
+      "sentence": "I was confident the team would have caught this error during testing.",
+      "options": [
+        "The team wouldn't have caught this error during testing?",
+        "Wouldn't the team have caught this error during testing?",
+        "Won't the team have caught this error during testing?",
+        "Wouldn't the team have catch this error during testing?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Wouldn't the team have caught this error during testing?",
+      "hint": "Move 'wouldn't' to the front, keeping 'have caught' together.",
+      "explanation": "'Wouldn't have' questions an assumption about the past. It moves to the front, and 'have caught' stays together.",
+      "grammarRule": "Final Mastery: Negative & Modal Perfect Questions"
+    },
+    {
+      "id": "qf_l193_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I assumed someone should have informed the client about the change by now.",
+      "sentence": "I assumed someone should have informed the client about the change by now.",
+      "options": [
+        "Someone shouldn't have informed the client about the change by now?",
+        "Mustn't someone have informed the client about the change by now?",
+        "Shouldn't someone have informed the client about the change by now?",
+        "Shouldn't someone have inform the client about the change by now?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Shouldn't someone have informed the client about the change by now?",
+      "hint": "Move 'shouldn't' to the front, keeping 'have informed' together.",
+      "explanation": "'Shouldn't have' questions an expectation about the past. It moves to the front, and 'have informed' stays together.",
+      "grammarRule": "Final Mastery: Negative & Modal Perfect Questions"
+    },
+    {
+      "id": "qf_l194_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Someone has been leaving anonymous notes on employees' desks all week.",
+      "sentence": "Someone has been leaving anonymous notes on employees' desks all week.",
+      "options": [
+        "Who has been leave anonymous notes on employees' desks all week?",
+        "Who does have been leaving anonymous notes on employees' desks all week?",
+        "Who has been leaving anonymous notes on employees' desks all week?",
+        "Who did been leaving anonymous notes on employees' desks all week?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Who has been leaving anonymous notes on employees' desks all week?",
+      "hint": "Since 'who' is the subject here, no extra auxiliary is added - keep 'has been leaving' as is.",
+      "explanation": "Because 'who' replaces the subject, the verb phrase stays exactly as it is: 'has been leaving', with no extra auxiliary.",
+      "grammarRule": "Final Mastery: Subject Questions & Perfect Continuous"
+    },
+    {
+      "id": "qf_l194_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Something has been draining the car battery overnight.",
+      "sentence": "Something has been draining the car battery overnight.",
+      "options": [
+        "What has been drain the car battery overnight?",
+        "What does have been draining the car battery overnight?",
+        "What did been draining the car battery overnight?",
+        "What has been draining the car battery overnight?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "What has been draining the car battery overnight?",
+      "hint": "Since 'what' is the subject here, no extra auxiliary is added.",
+      "explanation": "Because 'what' replaces the subject, the verb phrase 'has been draining' stays exactly as it is, with no extra auxiliary.",
+      "grammarRule": "Final Mastery: Subject Questions & Perfect Continuous"
+    },
+    {
+      "id": "qf_l194_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "A rival company has been poaching our best engineers for months.",
+      "sentence": "A rival company has been poaching our best engineers for months.",
+      "options": [
+        "Who has been poaching our best engineers for months?",
+        "Who does have been poaching our best engineers for months?",
+        "Who has been poach our best engineers for months?",
+        "Who did been poaching our best engineers for months?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Who has been poaching our best engineers for months?",
+      "hint": "Since 'who' is the subject here, no extra auxiliary is added.",
+      "explanation": "Because 'who' replaces the subject 'a rival company', the verb phrase 'has been poaching' stays exactly as it is.",
+      "grammarRule": "Final Mastery: Subject Questions & Perfect Continuous"
+    },
+    {
+      "id": "qf_l195_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The entire archive has apparently vanished, and IT can't explain how.",
+      "sentence": "The entire archive has apparently vanished, and IT can't explain how.",
+      "options": [
+        "How on earth the entire archive has vanished?",
+        "How has on earth the entire archive vanished?",
+        "How on earth has the entire archive vanished?",
+        "How on earth has the entire archive vanish?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "How on earth has the entire archive vanished?",
+      "hint": "'On earth' slots in right after the question word, before the normal inversion, and 'has' carries the perfect tense.",
+      "explanation": "'On earth' adds emphasis after the question word, and the rest of the question follows normal inversion: 'has the archive vanished'.",
+      "grammarRule": "Final Mastery: Emphatic & Perfect Questions"
+    },
+    {
+      "id": "qf_l195_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Every document in the folder has been renamed, and nobody knows why.",
+      "sentence": "Every document in the folder has been renamed, and nobody knows why.",
+      "options": [
+        "Why on earth every document in the folder has been renamed?",
+        "Why on earth has every document in the folder been renamed?",
+        "Why has on earth every document in the folder been renamed?",
+        "Why on earth has every document in the folder being renamed?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Why on earth has every document in the folder been renamed?",
+      "hint": "'On earth' slots in right after the question word, before the normal inversion.",
+      "explanation": "'On earth' adds emphasis after the question word, and the rest of the question keeps normal inversion: 'has every document been renamed'.",
+      "grammarRule": "Final Mastery: Emphatic & Perfect Questions"
+    },
+    {
+      "id": "qf_l195_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "This tiny startup has outperformed every major competitor this year.",
+      "sentence": "This tiny startup has outperformed every major competitor this year.",
+      "options": [
+        "How on earth this tiny startup has outperformed every major competitor this year?",
+        "How on earth has this tiny startup outperformed every major competitor this year?",
+        "How has on earth this tiny startup outperformed every major competitor this year?",
+        "How on earth has this tiny startup outperform every major competitor this year?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "How on earth has this tiny startup outperformed every major competitor this year?",
+      "hint": "'On earth' attaches immediately after the question word, then normal inversion continues.",
+      "explanation": "'On earth' adds emphasis after the question word, and the rest keeps normal inversion: 'has this startup outperformed'.",
+      "grammarRule": "Final Mastery: Emphatic & Perfect Questions"
+    },
+    {
+      "id": "qf_l196_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The whole team must have been counting on that contract to hit their targets.",
+      "sentence": "The whole team must have been counting on that contract to hit their targets.",
+      "options": [
+        "What must the whole team have been counting on to hit their targets?",
+        "What must have the whole team been counting on to hit their targets?",
+        "What the whole team must have been counting on to hit their targets?",
+        "What must the whole team have being counting on to hit their targets?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "What must the whole team have been counting on to hit their targets?",
+      "hint": "Keep 'have been counting on' together, moving 'must' right after the subject.",
+      "explanation": "'Must' moves right after the subject, and 'have been counting on' stays together, with the preposition 'on' kept at the end.",
+      "grammarRule": "Final Mastery: Prepositional & Modal Perfect Questions"
+    },
+    {
+      "id": "qf_l196_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "She could have been waiting for a callback for hours before giving up.",
+      "sentence": "She could have been waiting for a callback for hours before giving up.",
+      "options": [
+        "What could she have been waiting for before giving up?",
+        "What could have she been waiting for before giving up?",
+        "What she could have been waiting for before giving up?",
+        "What could she have being waiting for before giving up?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "What could she have been waiting for before giving up?",
+      "hint": "Keep 'have been waiting for' together, moving 'could' right after the question word.",
+      "explanation": "'Could' moves after the question word, and 'have been waiting for' stays together, with 'for' kept at the end.",
+      "grammarRule": "Final Mastery: Prepositional & Modal Perfect Questions"
+    },
+    {
+      "id": "qf_l196_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The board should have consulted with several outside experts before the merger.",
+      "sentence": "The board should have consulted with several outside experts before the merger.",
+      "options": [
+        "Who should the board have consulted with before the merger?",
+        "Who should have the board consulted with before the merger?",
+        "Who the board should have consulted with before the merger?",
+        "Who should the board have consult with before the merger?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Who should the board have consulted with before the merger?",
+      "hint": "Keep 'have consulted with' together, moving 'should' right after the question word.",
+      "explanation": "'Should' moves after the question word, and 'have consulted with' stays together, with 'with' kept at the end.",
+      "grammarRule": "Final Mastery: Prepositional & Modal Perfect Questions"
+    },
+    {
+      "id": "qf_l197_q1",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "There couldn't have been a simpler explanation for the whole mess.",
+      "sentence": "There couldn't have been a simpler explanation for the whole mess.",
+      "options": [
+        "There couldn't have been a simpler explanation for the whole mess, couldn't there?",
+        "There couldn't have been a simpler explanation for the whole mess, was there?",
+        "There couldn't have been a simpler explanation for the whole mess, could there?",
+        "There couldn't have been a simpler explanation for the whole mess, hadn't there?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "There couldn't have been a simpler explanation for the whole mess, could there?",
+      "hint": "The statement is negative, so use the positive tag 'could there?'",
+      "explanation": "A negative modal perfect statement with 'there' takes a positive tag using the same modal: 'could there'.",
+      "grammarRule": "Final Mastery: Tag & Complex Statements"
+    },
+    {
+      "id": "qf_l197_q2",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Neither of the witnesses could have seen the accident clearly from that angle.",
+      "sentence": "Neither of the witnesses could have seen the accident clearly from that angle.",
+      "options": [
+        "Neither of the witnesses could have seen the accident clearly from that angle, could they?",
+        "Neither of the witnesses could have seen the accident clearly from that angle, couldn't they?",
+        "Neither of the witnesses could have seen the accident clearly from that angle, did they?",
+        "Neither of the witnesses could have seen the accident clearly from that angle, has he?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Neither of the witnesses could have seen the accident clearly from that angle, could they?",
+      "hint": "'Neither' has negative meaning, so use a positive tag with the neutral pronoun 'they'.",
+      "explanation": "'Neither' is negative in meaning, so the tag is positive, and it takes the neutral pronoun: 'could they'.",
+      "grammarRule": "Final Mastery: Tag & Complex Statements"
+    },
+    {
+      "id": "qf_l197_q3",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "This particular clause shouldn't have been included without legal review.",
+      "sentence": "This particular clause shouldn't have been included without legal review.",
+      "options": [
+        "This particular clause shouldn't have been included without legal review, should it?",
+        "This particular clause shouldn't have been included without legal review, shouldn't it?",
+        "This particular clause shouldn't have been included without legal review, hadn't it?",
+        "This particular clause shouldn't have been included without legal review, wasn't it?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "This particular clause shouldn't have been included without legal review, should it?",
+      "hint": "The statement is negative, so use the positive tag 'should it?'",
+      "explanation": "A negative modal perfect passive statement takes a positive tag using the same modal: 'should it'.",
+      "grammarRule": "Final Mastery: Tag & Complex Statements"
+    },
+    {
+      "id": "qf_l198_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Should the funds have been reallocated before the fiscal year ended?",
+      "sentence": "Should the funds have been reallocated before the fiscal year ended?",
+      "options": [
+        "Would it be possible to find out whether the funds should have been reallocated before the fiscal year ended?",
+        "Would it be possible to find out whether should the funds have been reallocated before the fiscal year ended?",
+        "Would it be possible to find out the funds whether should have been reallocated before the fiscal year ended?",
+        "Would it be possible to find out that should the funds have been reallocated before the fiscal year ended?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Would it be possible to find out whether the funds should have been reallocated before the fiscal year ended?",
+      "hint": "Use 'whether', and move 'should' back after the subject.",
+      "explanation": "'Whether' introduces the embedded question, with statement word order: 'the funds should have been reallocated'.",
+      "grammarRule": "Final Mastery: Formal Embedded & Complex Auxiliary Questions"
+    },
+    {
+      "id": "qf_l198_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "How many complaints must have been filed before the company responded?",
+      "sentence": "How many complaints must have been filed before the company responded?",
+      "options": [
+        "Do you have any idea how many complaints must have been filed before the company responded?",
+        "Do you have any idea how many complaints must have been file before the company responded?",
+        "Do you have any idea how many complaints have must been filed before the company responded?",
+        "Do you have any idea that how many complaints must have been filed before the company responded?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Do you have any idea how many complaints must have been filed before the company responded?",
+      "hint": "Keep 'must have been filed' together, right after the question phrase.",
+      "explanation": "The embedded question keeps the fixed order 'must have been filed' together, right after the question phrase, unchanged.",
+      "grammarRule": "Final Mastery: Formal Embedded & Complex Auxiliary Questions"
+    },
+    {
+      "id": "qf_l198_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Why should the samples have been retested before publication?",
+      "sentence": "Why should the samples have been retested before publication?",
+      "options": [
+        "Might I ask why should the samples have been retested before publication?",
+        "Might I ask why the samples should have been retested before publication?",
+        "Might I ask why the samples have should been retested before publication?",
+        "Might I ask that why the samples should have been retested before publication?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Might I ask why the samples should have been retested before publication?",
+      "hint": "Move 'should' back after the subject, keeping 'have been retested' together.",
+      "explanation": "The embedded clause keeps statement word order: 'the samples should have been retested', not 'should the samples have been'.",
+      "grammarRule": "Final Mastery: Formal Embedded & Complex Auxiliary Questions"
+    },
+    {
+      "id": "qf_l199_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "It's inexcusable that this data wasn't backed up before the system crash.",
+      "sentence": "It's inexcusable that this data wasn't backed up before the system crash.",
+      "options": [
+        "It isn't inexcusable that this data wasn't backed up before the system crash?",
+        "Doesn't it inexcusable that this data wasn't backed up before the system crash?",
+        "Isn't it inexcusable that this data wasn't backed up before the system crash?",
+        "Isn't inexcusable it that this data wasn't backed up before the system crash?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Isn't it inexcusable that this data wasn't backed up before the system crash?",
+      "hint": "Slide 'isn't' to the front of the sentence, right ahead of 'it'.",
+      "explanation": "'Isn't' moves to the very front, right before 'it', framing this as a rhetorical negative question.",
+      "grammarRule": "Final Mastery: Rhetorical & Complex Auxiliary Questions"
+    },
+    {
+      "id": "qf_l199_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I think the warning signs should have been taken more seriously from the start.",
+      "sentence": "I think the warning signs should have been taken more seriously from the start.",
+      "options": [
+        "You wouldn't say the warning signs should have been taken more seriously from the start?",
+        "Doesn't you say the warning signs should have been taken more seriously from the start?",
+        "Wouldn't you say the warning signs should have been taken more seriously from the start?",
+        "Wouldn't you say the warning signs should have being taken more seriously from the start?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Wouldn't you say the warning signs should have been taken more seriously from the start?",
+      "hint": "'Wouldn't' moves to the front, keeping 'you say' unchanged, and 'have been taken' stays together.",
+      "explanation": "'Wouldn't' moves to the front, 'you say' stays in normal order, and 'should have been taken' remains fixed in that exact sequence.",
+      "grammarRule": "Final Mastery: Rhetorical & Complex Auxiliary Questions"
+    },
+    {
+      "id": "qf_l199_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "This entire situation could have been avoided with one honest conversation.",
+      "sentence": "This entire situation could have been avoided with one honest conversation.",
+      "options": [
+        "How on earth this entire situation could have been avoided?",
+        "How could on earth this entire situation have been avoided?",
+        "How on earth could this entire situation have been avoided?",
+        "How on earth could this entire situation have being avoided?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "How on earth could this entire situation have been avoided?",
+      "hint": "'On earth' slots in right after the question word, and 'have been avoided' stays together after 'could'.",
+      "explanation": "'On earth' adds emphasis after the question word, and 'could...have been avoided' keeps its fixed internal order.",
+      "grammarRule": "Final Mastery: Rhetorical & Complex Auxiliary Questions"
+    },
+    {
+      "id": "qf_l200_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I was absolutely certain the manuscript would have been reviewed by at least three editors before publication.",
+      "sentence": "I was absolutely certain the manuscript would have been reviewed by at least three editors before publication.",
+      "options": [
+        "The manuscript wouldn't have been reviewed by at least three editors before publication?",
+        "Won't the manuscript have been reviewed by at least three editors before publication?",
+        "Wouldn't the manuscript have been reviewed by at least three editors before publication?",
+        "Wouldn't the manuscript have being reviewed by at least three editors before publication?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Wouldn't the manuscript have been reviewed by at least three editors before publication?",
+      "hint": "Move 'wouldn't' to the front, keeping 'have been reviewed' together.",
+      "explanation": "'Wouldn't have' questions an assumption about the past. It moves to the front, and 'have been reviewed' stays together in its fixed order.",
+      "grammarRule": "Final Mastery: Ultimate Mixed Review"
+    },
+    {
+      "id": "qf_l200_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Will the final agreement have been signed by both sides before the summit begins?",
+      "sentence": "Will the final agreement have been signed by both sides before the summit begins?",
+      "options": [
+        "Do you know if will the final agreement have been signed by both sides before the summit begins?",
+        "Do you know the final agreement if will have been signed by both sides before the summit begins?",
+        "Do you know that will the final agreement have been signed by both sides before the summit begins?",
+        "Do you know if the final agreement will have been signed by both sides before the summit begins?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Do you know if the final agreement will have been signed by both sides before the summit begins?",
+      "hint": "Use 'if', and move 'will' back after the subject, keeping 'have been signed' together.",
+      "explanation": "'If' introduces the embedded question, keeping statement word order throughout: 'the agreement will have been signed'.",
+      "grammarRule": "Final Mastery: Ultimate Mixed Review"
+    },
+    {
+      "id": "qf_l200_q3",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "This remarkable discovery couldn't have come at a better time for the whole research team.",
+      "sentence": "This remarkable discovery couldn't have come at a better time for the whole research team.",
+      "options": [
+        "This remarkable discovery couldn't have come at a better time for the whole research team, could it?",
+        "This remarkable discovery couldn't have come at a better time for the whole research team, couldn't it?",
+        "This remarkable discovery couldn't have come at a better time for the whole research team, did it?",
+        "This remarkable discovery couldn't have come at a better time for the whole research team, hasn't it?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "This remarkable discovery couldn't have come at a better time for the whole research team, could it?",
+      "hint": "The statement is negative, so use the positive tag 'could it?'",
+      "explanation": "A negative modal perfect statement takes a positive tag using the same modal: 'could it' - a fitting final flourish for this mastery journey.",
+      "grammarRule": "Final Mastery: Ultimate Mixed Review"
+    }
+  ]
 }

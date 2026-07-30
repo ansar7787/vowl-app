@@ -1,547 +1,547 @@
 {
-    "gameType": "prepositionChoice",
-    "batchIndex": 1,
-    "levels": "1-10",
-    "quests": [
-        {
-            "id": "pc_l1_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "I am interested ___ learning new languages.",
-            "options": [
-                "in",
-                "on",
-                "of",
-                "at"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "in",
-            "hint": "We say 'interested in'.",
-            "explanation": "The dependent preposition for 'interested' is always 'in'.",
-            "grammarRule": "Prepositions"
-        },
-        {
-            "id": "pc_l1_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "Translate this ___ English.",
-            "options": [
-                "through",
-                "between",
-                "in",
-                "into"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "into",
-            "hint": "Change of state.",
-            "explanation": "'Into' is used to represent transition or translation.",
-            "grammarRule": "Prepositions of Movement"
-        },
-        {
-            "id": "pc_l1_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "They swam ___ the wide river.",
-            "options": [
-                "across",
-                "into",
-                "at",
-                "on"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "across",
-            "hint": "From one side to the other.",
-            "explanation": "'Across' represents motion from one side of a line or river to the other.",
-            "grammarRule": "Prepositions of Movement"
-        },
-        {
-            "id": "pc_l2_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "The keys are ___ the table.",
-            "options": [
-                "at",
-                "through",
-                "to",
-                "on"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "on",
-            "hint": "Surface location.",
-            "explanation": "'On' designates location resting on top of a physical surface.",
-            "grammarRule": "Prepositions"
-        },
-        {
-            "id": "pc_l2_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "The plane flew ___ the clouds.",
-            "options": [
-                "above",
-                "of",
-                "to",
-                "through"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "above",
-            "hint": "Higher relative position.",
-            "explanation": "'Above' signifies a position higher than something else.",
-            "grammarRule": "Prepositions of Place"
-        },
-        {
-            "id": "pc_l2_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "The phone is hidden ___ the couch.",
-            "options": [
-                "under",
-                "between",
-                "on",
-                "above"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "under",
-            "hint": "Directly below.",
-            "explanation": "'Under' denotes a position directly beneath an object.",
-            "grammarRule": "Prepositions of Place"
-        },
-        {
-            "id": "pc_l3_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "She is good ___ solving puzzles.",
-            "options": [
-                "at",
-                "between",
-                "on",
-                "in"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "at",
-            "hint": "Ability preposition.",
-            "explanation": "'Good at' indicates proficiency in a specific skill or subject.",
-            "grammarRule": "Prepositions"
-        },
-        {
-            "id": "pc_l3_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "We walked ___ the dark tunnel.",
-            "options": [
-                "through",
-                "on",
-                "above",
-                "for"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "through",
-            "hint": "Movement across an interior space.",
-            "explanation": "'Through' is correct for passing inside a three-dimensional passage.",
-            "grammarRule": "Prepositions of Movement"
-        },
-        {
-            "id": "pc_l3_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "He is famous ___ his novels.",
-            "options": [
-                "for",
-                "to",
-                "in",
-                "at"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "for",
-            "hint": "Reason for fame.",
-            "explanation": "'Famous for' is the proper dependent preposition.",
-            "grammarRule": "Prepositions"
-        },
-        {
-            "id": "pc_l4_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "We arrived ___ the airport early.",
-            "options": [
-                "at",
-                "on",
-                "for",
-                "to"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "at",
-            "hint": "Specific point-like location.",
-            "explanation": "'At' is used for a precise location like an airport or building.",
-            "grammarRule": "Prepositions"
-        },
-        {
-            "id": "pc_l4_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "It's a secret ___ you and me.",
-            "options": [
-                "to",
-                "at",
-                "for",
-                "between"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "between",
-            "hint": "Two specific parties.",
-            "explanation": "'Between' is correct when referring to two distinct items or people.",
-            "grammarRule": "Prepositions of Place"
-        },
-        {
-            "id": "pc_l4_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "I agree ___ your proposal.",
-            "options": [
-                "with",
-                "to",
-                "on",
-                "for"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "with",
-            "hint": "Concurring with a person/idea.",
-            "explanation": "'Agree with' is correct when aligning with an opinion or person.",
-            "grammarRule": "Prepositions"
-        },
-        {
-            "id": "pc_l5_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "He is afraid ___ spiders.",
-            "options": [
-                "to",
-                "of",
-                "above",
-                "in"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "of",
-            "hint": "Fear preposition.",
-            "explanation": "'Afraid of' is the correct dependent preposition form.",
-            "grammarRule": "Prepositions"
-        },
-        {
-            "id": "pc_l5_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "I am fond ___ classical music.",
-            "options": [
-                "of",
-                "in",
-                "on",
-                "from"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "of",
-            "hint": "Liking or affection.",
-            "explanation": "'Fond of' is the standard dependent prepositional formula.",
-            "grammarRule": "Prepositions"
-        },
-        {
-            "id": "pc_l5_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "Please listen ___ the instructor.",
-            "options": [
-                "to",
-                "at",
-                "on",
-                "of"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "to",
-            "hint": "Directing attention.",
-            "explanation": "'Listen to' is the standard dependent prepositional construct.",
-            "grammarRule": "Prepositions"
-        },
-        {
-            "id": "pc_l6_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "I'll see you ___ Monday.",
-            "options": [
-                "above",
-                "in",
-                "from",
-                "on"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "on",
-            "hint": "Days of the week.",
-            "explanation": "'On' is always paired with days of the week.",
-            "grammarRule": "Prepositions"
-        },
-        {
-            "id": "pc_l6_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "This notebook belongs ___ me.",
-            "options": [
-                "to",
-                "at",
-                "in",
-                "from"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "to",
-            "hint": "Possession preposition.",
-            "explanation": "'Belong to' indicates possession or membership.",
-            "grammarRule": "Prepositions"
-        },
-        {
-            "id": "pc_l6_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "She succeeded ___ passing the test.",
-            "options": [
-                "in",
-                "on",
-                "at",
-                "to"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "in",
-            "hint": "Achieving success.",
-            "explanation": "'Succeed in' is the standard verb-preposition pair.",
-            "grammarRule": "Prepositions"
-        },
-        {
-            "id": "pc_l7_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "She lives ___ London.",
-            "options": [
-                "from",
-                "in",
-                "above",
-                "to"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "in",
-            "hint": "Large area (cities/countries).",
-            "explanation": "'In' is standard for cities, countries, and large geographical areas.",
-            "grammarRule": "Prepositions"
-        },
-        {
-            "id": "pc_l7_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "She apologized ___ arriving late.",
-            "options": [
-                "for",
-                "to",
-                "at",
-                "on"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "for",
-            "hint": "Reason for apology.",
-            "explanation": "'Apologize for' is the dependent verb-preposition construct.",
-            "grammarRule": "Prepositions"
-        },
-        {
-            "id": "pc_l7_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "They arrived ___ the station on time.",
-            "options": [
-                "at",
-                "in",
-                "to",
-                "for"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "at",
-            "hint": "Specific point destination.",
-            "explanation": "'At' is correct for point locations like stations.",
-            "grammarRule": "Prepositions"
-        },
-        {
-            "id": "pc_l8_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "The meeting is ___ 10 AM.",
-            "options": [
-                "on",
-                "at",
-                "of",
-                "above"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "at",
-            "hint": "Specific clock time.",
-            "explanation": "'At' represents exact clock points.",
-            "grammarRule": "Prepositions"
-        },
-        {
-            "id": "pc_l8_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "We depend ___ your guidance.",
-            "options": [
-                "on",
-                "in",
-                "to",
-                "at"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "on",
-            "hint": "Reliance or trust.",
-            "explanation": "'Depend on' is correct for indicating reliance.",
-            "grammarRule": "Prepositions"
-        },
-        {
-            "id": "pc_l8_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "The cup fell ___ the table.",
-            "options": [
-                "off",
-                "out",
-                "in",
-                "on"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "off",
-            "hint": "Separation from a surface.",
-            "explanation": "'Off' is used for movement away from a surface.",
-            "grammarRule": "Prepositions of Movement"
-        },
-        {
-            "id": "pc_l9_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "I'm looking ___ my lost keys.",
-            "options": [
-                "on",
-                "to",
-                "at",
-                "for"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "for",
-            "hint": "Phrasal verb: search.",
-            "explanation": "'Look for' is a phrasal verb meaning to search.",
-            "grammarRule": "Prepositions"
-        },
-        {
-            "id": "pc_l9_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "The cat jumped ___ the counter.",
-            "options": [
-                "onto",
-                "in",
-                "of",
-                "through"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "onto",
-            "hint": "Movement to a surface.",
-            "explanation": "'Onto' describes movement ending on top of a surface.",
-            "grammarRule": "Prepositions of Movement"
-        },
-        {
-            "id": "pc_l9_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "He is married ___ a doctor.",
-            "options": [
-                "to",
-                "with",
-                "at",
-                "in"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "to",
-            "hint": "Marital connection.",
-            "explanation": "In standard English grammar, one is 'married to' someone, not 'with'.",
-            "grammarRule": "Prepositions"
-        },
-        {
-            "id": "pc_l10_q1",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "He is proud ___ his achievements.",
-            "options": [
-                "of",
-                "through",
-                "in",
-                "between"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "of",
-            "hint": "Pride preposition.",
-            "explanation": "'Proud of' is the correct dependent prepositional pairing.",
-            "grammarRule": "Prepositions"
-        },
-        {
-            "id": "pc_l10_q2",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "He walked ___ the door slowly.",
-            "options": [
-                "toward",
-                "at",
-                "on",
-                "of"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "toward",
-            "hint": "In the direction of.",
-            "explanation": "'Toward' describes motion in a specific direction.",
-            "grammarRule": "Prepositions of Movement"
-        },
-        {
-            "id": "pc_l10_q3",
-            "instruction": "CHOOSE THE POSITION",
-            "subtype": "prepositionChoice",
-            "interactionType": "Spatial Path",
-            "question": "I bought this ___ ten dollars.",
-            "options": [
-                "for",
-                "at",
-                "in",
-                "with"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "for",
-            "hint": "Price paid.",
-            "explanation": "'For' is used to show the cost or price of an exchange.",
-            "grammarRule": "Prepositions"
-        }
-    ]
+  "gameType": "prepositionChoice",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "pc_l1_q1",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "The milk is ___ the fridge.",
+      "options": [
+        "under",
+        "on",
+        "in",
+        "at"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "in",
+      "hint": "Use this when something is enclosed inside a space.",
+      "explanation": "'In' is used for something enclosed within a space, like a fridge, a box, or a room.",
+      "grammarRule": "Prepositions of Place"
+    },
+    {
+      "id": "pc_l1_q2",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "Your phone is ___ the desk.",
+      "options": [
+        "at",
+        "under",
+        "on",
+        "in"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "on",
+      "hint": "Use this for something resting on a flat surface.",
+      "explanation": "'On' shows contact with a surface: on the desk, on the wall, on the floor.",
+      "grammarRule": "Prepositions of Place"
+    },
+    {
+      "id": "pc_l1_q3",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "Meet me ___ the bus stop.",
+      "options": [
+        "in",
+        "at",
+        "under",
+        "on"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "at",
+      "hint": "Use this for an exact point, not a large area.",
+      "explanation": "'At' marks a specific point, like a bus stop, a door, or a corner.",
+      "grammarRule": "Prepositions of Place"
+    },
+    {
+      "id": "pc_l2_q1",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "The cat is sleeping ___ the chair.",
+      "options": [
+        "above",
+        "on",
+        "under",
+        "between"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "under",
+      "hint": "Think of the opposite of 'above'.",
+      "explanation": "'Under' means in a lower position, directly beneath something else.",
+      "grammarRule": "Prepositions of Place"
+    },
+    {
+      "id": "pc_l2_q2",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "The clock hangs ___ the fireplace.",
+      "options": [
+        "under",
+        "above",
+        "into",
+        "at"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "above",
+      "hint": "Use this for a higher position, usually without touching.",
+      "explanation": "'Above' describes a higher position, often without contact, unlike 'on'.",
+      "grammarRule": "Prepositions of Place"
+    },
+    {
+      "id": "pc_l2_q3",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "The garden is ___ the two houses.",
+      "options": [
+        "between",
+        "behind",
+        "near",
+        "next to"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "between",
+      "hint": "Use this when talking about exactly two things.",
+      "explanation": "'Between' shows something in the middle of two people or objects: between the houses, between us.",
+      "grammarRule": "Prepositions of Place"
+    },
+    {
+      "id": "pc_l3_q1",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "The bakery is ___ the bank.",
+      "options": [
+        "next to",
+        "into",
+        "from",
+        "above"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "next to",
+      "hint": "Right beside, with no space between.",
+      "explanation": "'Next to' means directly beside something, with nothing in between.",
+      "grammarRule": "Prepositions of Place"
+    },
+    {
+      "id": "pc_l3_q2",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "A tall tree grows ___ our house.",
+      "options": [
+        "behind",
+        "into",
+        "above",
+        "through"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "behind",
+      "hint": "Think of the opposite of 'in front of'.",
+      "explanation": "'Behind' shows a position at the back of something.",
+      "grammarRule": "Prepositions of Place"
+    },
+    {
+      "id": "pc_l3_q3",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "The teacher stood ___ the class.",
+      "options": [
+        "in front of",
+        "under",
+        "behind",
+        "between"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "in front of",
+      "hint": "Facing the group, at the front.",
+      "explanation": "'In front of' means positioned before or facing something, the opposite of 'behind'.",
+      "grammarRule": "Prepositions of Place"
+    },
+    {
+      "id": "pc_l4_q1",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "There is a small cafe ___ the park.",
+      "options": [
+        "above",
+        "into",
+        "near",
+        "through"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "near",
+      "hint": "Close by, but not touching.",
+      "explanation": "'Near' means close to something in distance, without necessarily touching it.",
+      "grammarRule": "Prepositions of Place"
+    },
+    {
+      "id": "pc_l4_q2",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "She sat ___ her best friend at the concert.",
+      "options": [
+        "beside",
+        "into",
+        "from",
+        "above"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "beside",
+      "hint": "Right at the side of a person.",
+      "explanation": "'Beside' means at the side of someone or something, similar to 'next to'.",
+      "grammarRule": "Prepositions of Place"
+    },
+    {
+      "id": "pc_l4_q3",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "Every morning, I walk ___ school.",
+      "options": [
+        "in",
+        "to",
+        "from",
+        "at"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "to",
+      "hint": "Shows the destination of a movement.",
+      "explanation": "'To' points toward a destination: walk to school, drive to work.",
+      "grammarRule": "Prepositions of Movement"
+    },
+    {
+      "id": "pc_l5_q1",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "The children ran ___ the swimming pool.",
+      "options": [
+        "into",
+        "in",
+        "at",
+        "to"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "into",
+      "hint": "Movement that ends inside something.",
+      "explanation": "'Into' shows movement toward the inside of a place, not just being there.",
+      "grammarRule": "Prepositions of Movement"
+    },
+    {
+      "id": "pc_l5_q2",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "This train comes ___ Chicago.",
+      "options": [
+        "of",
+        "from",
+        "since",
+        "at"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "from",
+      "hint": "Shows the starting point of something.",
+      "explanation": "'From' marks the origin or starting point of something.",
+      "grammarRule": "Prepositions of Movement"
+    },
+    {
+      "id": "pc_l5_q3",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "My brother is really interested ___ video games.",
+      "options": [
+        "on",
+        "in",
+        "for",
+        "at"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "in",
+      "hint": "This adjective always pairs with the same short word for a hobby.",
+      "explanation": "'Interested in' is a fixed pair: we say interested in a subject, never interested at or for.",
+      "grammarRule": "Dependent Prepositions: Adjectives"
+    },
+    {
+      "id": "pc_l6_q1",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "My sister is very good ___ chess.",
+      "options": [
+        "for",
+        "at",
+        "with",
+        "in"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "at",
+      "hint": "Use this to talk about a skill or ability.",
+      "explanation": "'Good at' describes skill in an activity: good at cooking, good at sports.",
+      "grammarRule": "Dependent Prepositions: Adjectives"
+    },
+    {
+      "id": "pc_l6_q2",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "Many people are afraid ___ the dark.",
+      "options": [
+        "of",
+        "at",
+        "from",
+        "to"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "of",
+      "hint": "This word links a feeling of fear to its cause.",
+      "explanation": "'Afraid of' connects the feeling of fear to what causes it.",
+      "grammarRule": "Dependent Prepositions: Adjectives"
+    },
+    {
+      "id": "pc_l6_q3",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "Please listen ___ the safety instructions.",
+      "options": [
+        "to",
+        "for",
+        "at",
+        "on"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "to",
+      "hint": "Use this after this verb when paying attention with your ears.",
+      "explanation": "'Listen to' is the standard pairing: we listen to music, listen to advice, listen to a teacher.",
+      "grammarRule": "Dependent Prepositions: Verbs"
+    },
+    {
+      "id": "pc_l7_q1",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "Look ___ that beautiful sunset!",
+      "options": [
+        "to",
+        "in",
+        "for",
+        "at"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "at",
+      "hint": "Use this to direct someone's eyes toward something.",
+      "explanation": "'Look at' directs attention to something visible right now.",
+      "grammarRule": "Dependent Prepositions: Verbs"
+    },
+    {
+      "id": "pc_l7_q2",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "We waited ___ the bus for twenty minutes.",
+      "options": [
+        "to",
+        "at",
+        "on",
+        "for"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "for",
+      "hint": "Use this when something hasn't arrived yet.",
+      "explanation": "'Wait for' shows you are expecting someone or something to arrive.",
+      "grammarRule": "Dependent Prepositions: Verbs"
+    },
+    {
+      "id": "pc_l7_q3",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "My birthday is ___ July.",
+      "options": [
+        "on",
+        "in",
+        "since",
+        "at"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "in",
+      "hint": "Use this for months and years.",
+      "explanation": "'In' is used for longer time periods like months, years, and seasons.",
+      "grammarRule": "Prepositions of Time"
+    },
+    {
+      "id": "pc_l8_q1",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "The party starts ___ Saturday evening.",
+      "options": [
+        "on",
+        "since",
+        "in",
+        "at"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "on",
+      "hint": "Use this for days of the week.",
+      "explanation": "'On' is used with specific days: on Monday, on Saturday, on my birthday.",
+      "grammarRule": "Prepositions of Time"
+    },
+    {
+      "id": "pc_l8_q2",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "The movie begins ___ 7:30 sharp.",
+      "options": [
+        "at",
+        "by",
+        "in",
+        "on"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "at",
+      "hint": "Use this for an exact clock time.",
+      "explanation": "'At' is used for precise times: at 7:30, at noon, at midnight.",
+      "grammarRule": "Prepositions of Time"
+    },
+    {
+      "id": "pc_l8_q3",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "This old guitar belongs ___ my grandfather.",
+      "options": [
+        "of",
+        "for",
+        "with",
+        "to"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "to",
+      "hint": "Shows who owns something.",
+      "explanation": "'Belong to' shows ownership: this belongs to me, that belongs to her.",
+      "grammarRule": "Dependent Prepositions: Verbs"
+    },
+    {
+      "id": "pc_l9_q1",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "My aunt has been married ___ an engineer for ten years.",
+      "options": [
+        "to",
+        "with",
+        "of",
+        "for"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "to",
+      "hint": "Not the word you'd expect -- this one pairs differently in English.",
+      "explanation": "In English, we say married to someone, never married with someone.",
+      "grammarRule": "Dependent Prepositions: Adjectives"
+    },
+    {
+      "id": "pc_l9_q2",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "This bracelet is made ___ pure silver.",
+      "options": [
+        "with",
+        "of",
+        "from",
+        "by"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "of",
+      "hint": "Use this when the original material is still visible in the final object.",
+      "explanation": "'Made of' is used when the material is clearly recognizable in the finished item, like silver in a bracelet.",
+      "grammarRule": "Dependent Prepositions: Adjectives"
+    },
+    {
+      "id": "pc_l9_q3",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "The basket was full ___ fresh strawberries.",
+      "options": [
+        "of",
+        "with",
+        "for",
+        "in"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "of",
+      "hint": "Use this to describe a container holding a lot of one thing.",
+      "explanation": "'Full of' shows a container or space holding a large amount of something.",
+      "grammarRule": "Dependent Prepositions: Adjectives"
+    },
+    {
+      "id": "pc_l10_q1",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "Her parents are so proud ___ her graduation.",
+      "options": [
+        "with",
+        "for",
+        "about",
+        "of"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "of",
+      "hint": "This links a feeling of satisfaction to its cause.",
+      "explanation": "'Proud of' connects a feeling of pride to its cause, like an achievement.",
+      "grammarRule": "Dependent Prepositions: Adjectives"
+    },
+    {
+      "id": "pc_l10_q2",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "I'm getting tired ___ this rainy weather.",
+      "options": [
+        "at",
+        "with",
+        "from",
+        "of"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "of",
+      "hint": "Use this when you've had enough of something.",
+      "explanation": "'Tired of' shows annoyance after too much of something, unlike 'tired from', which shows physical exhaustion.",
+      "grammarRule": "Dependent Prepositions: Adjectives"
+    },
+    {
+      "id": "pc_l10_q3",
+      "instruction": "CHOOSE THE POSITION",
+      "subtype": "prepositionChoice",
+      "interactionType": "Spatial Path",
+      "question": "This small town is famous ___ its cheese.",
+      "options": [
+        "about",
+        "for",
+        "of",
+        "with"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "for",
+      "hint": "This shows the reason something is well known.",
+      "explanation": "'Famous for' introduces the reason for someone or something's fame.",
+      "grammarRule": "Dependent Prepositions: Adjectives"
+    }
+  ]
 }

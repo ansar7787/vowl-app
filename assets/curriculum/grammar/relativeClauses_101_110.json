@@ -1,547 +1,547 @@
 {
-    "gameType": "relativeClauses",
-    "batchIndex": 11,
-    "levels": "101-110",
-    "quests": [
-        {
-            "id": "rc_l101_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "She received many job offers, most of ___ came from abroad.",
-            "hint": "The blank fills the slot after 'most of ___' - is the thing being referred to a group of people or a group of offers?",
-            "explanation": "Here 'most of ___' refers back to 'many job offers' (things), so 'which' is correct. 'Whom' would only work if referring back to a group of people.",
-            "options": [
-                "which",
-                "who",
-                "whom",
-                "that"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l101_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "He interviewed twenty candidates, only two of ___ were shortlisted.",
-            "hint": "The blank follows 'of ___' - and the candidates are people. Which pronoun follows 'of' when referring to people?",
-            "explanation": "After 'of', when referring to people, 'whom' is required. 'Who' cannot follow a preposition; 'which' would be wrong because candidates are people.",
-            "options": [
-                "which",
-                "whom",
-                "that",
-                "who"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "whom",
-            "grammarRule": "Relative Pronoun 'whom'"
-        },
-        {
-            "id": "rc_l101_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "She read fifty articles, none of ___ mentioned the side effects.",
-            "hint": "The blank follows 'none of ___' - the articles are things, so which pronoun belongs after 'of' for things?",
-            "explanation": "After 'of', things take 'which'. The articles are not people, so 'whom' is incorrect; 'that' can never follow a preposition.",
-            "options": [
-                "who",
-                "whom",
-                "which",
-                "that"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l102_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The team had twelve members, three of ___ had worked together before.",
-            "hint": "After 'of' the blank refers back to the twelve members - people. Which form follows 'of' for people?",
-            "explanation": "After the preposition 'of', people require 'whom'. 'Who' cannot directly follow a preposition, and 'which' would wrongly treat the members as things.",
-            "options": [
-                "which",
-                "that",
-                "who",
-                "whom"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "whom",
-            "grammarRule": "Relative Pronoun 'whom'"
-        },
-        {
-            "id": "rc_l102_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The company launched six products, two of ___ failed within a year.",
-            "hint": "After 'of' the blank refers back to products - things. Choose accordingly.",
-            "explanation": "After 'of', things take 'which'. Products are not people, so 'whom' is incorrect; 'that' cannot follow a preposition.",
-            "options": [
-                "which",
-                "who",
-                "whom",
-                "that"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l102_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "There were ten speakers at the conference, most of ___ were experts.",
-            "hint": "The speakers are people, and the blank follows 'of' - apply the same rule.",
-            "explanation": "After the preposition 'of', people require 'whom'. 'Who' cannot follow a preposition, and 'which' would treat the speakers as things.",
-            "options": [
-                "which",
-                "whom",
-                "that",
-                "who"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "whom",
-            "grammarRule": "Relative Pronoun 'whom'"
-        },
-        {
-            "id": "rc_l103_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "We visited four museums, each of ___ had a different theme.",
-            "hint": "'Each of ___' - the blank refers back to museums. Are museums people or things?",
-            "explanation": "Museums are things, so 'which' is required after 'of'. 'Whom' only applies to people after a preposition.",
-            "options": [
-                "who",
-                "whom",
-                "which",
-                "that"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l103_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The report named five suspects, all of ___ denied involvement.",
-            "hint": "'All of ___' - the suspects are people. What form goes after 'of' for people?",
-            "explanation": "After 'of', when referring to people, 'whom' is required. 'Which' would wrongly treat the suspects as things.",
-            "options": [
-                "which",
-                "that",
-                "who",
-                "whom"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "whom",
-            "grammarRule": "Relative Pronoun 'whom'"
-        },
-        {
-            "id": "rc_l103_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The store sells three coffee blends, the best of ___ comes from Ethiopia.",
-            "hint": "'The best of ___' - coffee blends are things, so choose the form for things after 'of'.",
-            "explanation": "Coffee blends are things, so 'which' is correct after 'of'. 'That' cannot follow a preposition under any circumstances.",
-            "options": [
-                "which",
-                "who",
-                "whom",
-                "that"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l104_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "I applied to eight universities, only one of ___ offered me a scholarship.",
-            "hint": "'One of ___' - universities are institutions treated as things. Which pronoun follows 'of' for things?",
-            "explanation": "Universities are treated as things here, so 'which' follows 'of'. 'Whom' would only apply if referring back to people.",
-            "options": [
-                "who",
-                "which",
-                "whom",
-                "that"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l104_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The hospital employed thirty nurses, several of ___ had overseas training.",
-            "hint": "'Several of ___' - nurses are people. Apply the 'of' + people rule.",
-            "explanation": "Nurses are people, so 'whom' is required after 'of'. 'Which' would wrongly treat the nurses as objects.",
-            "options": [
-                "which",
-                "that",
-                "whom",
-                "who"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "whom",
-            "grammarRule": "Relative Pronoun 'whom'"
-        },
-        {
-            "id": "rc_l104_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The country has five major rivers, the longest of ___ flows to the sea.",
-            "hint": "'The longest of ___' - rivers are things. Choose the form for things after a preposition.",
-            "explanation": "Rivers are things, so 'which' follows 'of'. 'That' is permanently barred from following a preposition.",
-            "options": [
-                "who",
-                "whom",
-                "that",
-                "which"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l105_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "She bought several scarves, one of ___ she gave to her mother.",
-            "hint": "'One of ___' - the scarves are things. What form follows 'of' for things?",
-            "explanation": "Scarves are things, so 'which' is correct after 'of'. 'Whom' only applies when referring to people.",
-            "options": [
-                "which",
-                "who",
-                "whom",
-                "that"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l105_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The agency hired five translators, each of ___ spoke at least three languages.",
-            "hint": "'Each of ___' - translators are people. Apply the rule for people after a preposition.",
-            "explanation": "Translators are people, so 'whom' follows 'of'. 'Which' treats them as things; 'who' cannot follow a preposition.",
-            "options": [
-                "which",
-                "whom",
-                "that",
-                "who"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "whom",
-            "grammarRule": "Relative Pronoun 'whom'"
-        },
-        {
-            "id": "rc_l105_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "We sampled eight dishes, most of ___ were too spicy for me.",
-            "hint": "'Most of ___' - dishes are things. Choose accordingly.",
-            "explanation": "Dishes are things, so 'which' is correct after 'of'. 'That' cannot follow a preposition.",
-            "options": [
-                "who",
-                "whom",
-                "which",
-                "that"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l106_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "He forgot his keys, ___ meant he was locked out for an hour.",
-            "hint": "The blank doesn't refer to a specific noun - it refers back to the whole idea of forgetting his keys.",
-            "explanation": "When 'which' introduces a non-defining clause that comments on a whole previous idea (not just a single noun), it is called a 'comment clause'. 'That' is barred in non-defining clauses; 'what' cannot introduce this type of clause.",
-            "options": [
-                "that",
-                "what",
-                "it",
-                "which"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l106_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The train was cancelled, ___ caused everyone to miss their connections.",
-            "hint": "Again, the blank refers to the entire situation described in the first clause.",
-            "explanation": "A comment 'which'-clause refers back to a complete idea ('the train was cancelled'). 'That' is banned in non-defining clauses; 'it' is a pronoun, not a relative connector.",
-            "options": [
-                "which",
-                "that",
-                "what",
-                "it"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l106_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "She passed her bar exam on the first attempt, ___ surprised her professors.",
-            "hint": "The blank points back to the whole achievement, not to a specific noun.",
-            "explanation": "This comment clause uses 'which' to refer to the entire preceding idea. 'That' cannot introduce a non-defining clause; 'what' would change the grammar of the sentence entirely.",
-            "options": [
-                "that",
-                "which",
-                "what",
-                "it"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l107_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "He refused to apologize, ___ made the situation much worse.",
-            "hint": "The blank connects back to his refusal as a whole - a comment on an entire action.",
-            "explanation": "Comment clauses use 'which' to refer to a complete idea from the previous clause. 'That' is barred in non-defining clauses, and 'this' is a demonstrative pronoun, not a relative connector.",
-            "options": [
-                "that",
-                "what",
-                "which",
-                "this"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l107_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The medicine was free of charge, ___ was a huge relief.",
-            "hint": "The blank follows a comma and refers back to the entire situation of the medicine being free.",
-            "explanation": "This comment 'which' refers to the whole previous idea ('the medicine was free of charge'). 'That' cannot appear in non-defining clauses; 'it' is not a relative connector.",
-            "options": [
-                "that",
-                "what",
-                "it",
-                "which"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l107_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "They arrived three hours early, ___ turned out to be very lucky.",
-            "hint": "Their early arrival (the whole event) is what 'turned out to be lucky' - the blank connects to that complete idea.",
-            "explanation": "Comment clauses use 'which' to refer to a complete preceding idea. 'That' is barred in non-defining clauses, and 'this' is a demonstrative, not a relative pronoun.",
-            "options": [
-                "which",
-                "that",
-                "what",
-                "this"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l108_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The power cut lasted eight hours, ___ meant the food in the fridge spoiled.",
-            "hint": "The whole eight-hour power cut is what caused the food to spoil - not a single noun.",
-            "explanation": "'Which' in a comment clause refers back to the complete preceding idea. 'That' cannot introduce this type of clause; 'it' is a personal pronoun, not a connector.",
-            "options": [
-                "that",
-                "which",
-                "what",
-                "it"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l108_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The prize goes to ___ wins the tournament.",
-            "hint": "The blank starts the subject of the sentence and refers to a person who might win - any person.",
-            "explanation": "'Whoever' means 'any person who' and acts as the subject of 'wins'. 'Whatever' and 'whichever' refer to things, not people.",
-            "options": [
-                "Whatever",
-                "Whichever",
-                "whoever",
-                "However"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "whoever",
-            "grammarRule": "Relative Clauses"
-        },
-        {
-            "id": "rc_l108_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "You must live with ___ you decide to do.",
-            "hint": "The blank refers to a thing - any option or decision chosen - not a specific person or time.",
-            "explanation": "'Whatever' means 'anything that' and introduces a free relative clause about a choice (a thing). 'Whoever' would refer to a person, and 'whenever'/'wherever' refer to times and places.",
-            "options": [
-                "Whoever",
-                "Whenever",
-                "Wherever",
-                "whatever"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "whatever",
-            "grammarRule": "Relative Clauses"
-        },
-        {
-            "id": "rc_l109_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "She donates to ___ charity needs the most support.",
-            "hint": "The blank introduces a selection among multiple charities (things) - any one of them.",
-            "explanation": "'Whichever' means 'any one of (these things) that' and is used when selecting from a defined set of options. 'Whoever' would only work if a person were being selected.",
-            "options": [
-                "whichever",
-                "whatever",
-                "whoever",
-                "however"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "whichever",
-            "grammarRule": "Relative Clauses"
-        },
-        {
-            "id": "rc_l109_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "You are welcome here, ___ you come from.",
-            "hint": "The blank introduces a place - any country or background.",
-            "explanation": "'Wherever' means 'no matter where' and refers to a location. 'Whatever' refers to things; 'however' introduces manner; 'whenever' introduces time.",
-            "options": [
-                "Whatever",
-                "wherever",
-                "However",
-                "Whenever"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "wherever",
-            "grammarRule": "Relative Clauses"
-        },
-        {
-            "id": "rc_l109_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "She consistently achieves ___ she sets her mind to.",
-            "hint": "The blank introduces a thing - any goal or task she chooses to pursue.",
-            "explanation": "'Whatever' means 'anything that' and here introduces a thing she sets her mind to. 'Whoever' would wrongly refer to a person.",
-            "options": [
-                "Whoever",
-                "Whenever",
-                "whatever",
-                "Wherever"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "whatever",
-            "grammarRule": "Relative Clauses"
-        },
-        {
-            "id": "rc_l110_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "You can start the presentation ___ you feel ready.",
-            "hint": "The blank introduces a time - any moment she feels ready.",
-            "explanation": "'Whenever' means 'at any time that' and introduces a free relative clause about time. 'Wherever' refers to place; 'whatever' refers to things.",
-            "options": [
-                "Wherever",
-                "Whatever",
-                "Whoever",
-                "whenever"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "whenever",
-            "grammarRule": "Relative Clauses"
-        },
-        {
-            "id": "rc_l110_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The person ___ told you that information was completely wrong.",
-            "hint": "The blank is the subject of 'told' and refers to an unknown person.",
-            "explanation": "'Whoever' means 'any person who' and here acts as the subject of 'told'. 'Whatever' refers to things; 'however' introduces manner.",
-            "options": [
-                "who",
-                "Whatever",
-                "However",
-                "Wherever"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l110_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "Some people will still misunderstand, ___ carefully you explain it.",
-            "hint": "The blank modifies an adjective ('carefully') - it introduces a degree or manner.",
-            "explanation": "'However' means 'no matter how' when it introduces an adjective or adverb. 'Whatever' refers to things; 'whoever' refers to people.",
-            "options": [
-                "Whatever",
-                "however",
-                "Whoever",
-                "Whenever"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "however",
-            "grammarRule": "Relative Clauses"
-        }
-    ]
+  "gameType": "relativeClauses",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "id": "rc_l101_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The manager ___ I report has been incredibly supportive.",
+      "hint": "You report TO the manager - after a preposition placed before the pronoun, which form is required for a person?",
+      "explanation": "When a preposition comes directly before the pronoun, the object form 'whom' is required, not 'who.'",
+      "options": [
+        "to whom",
+        "to who",
+        "with which",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "to whom",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l101_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The topic ___ we argued for hours turned out to be a simple misunderstanding.",
+      "hint": "You argued ABOUT the topic - which pronoun follows this preposition for a thing?",
+      "explanation": "'About which' is correct because the topic is a thing, and 'which' follows a preposition, never 'who.'",
+      "options": [
+        "about which",
+        "about who",
+        "to whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "about which",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l101_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The project ___ she is currently working requires a lot of research.",
+      "hint": "She is working ON the project - which pronoun follows this preposition for a thing?",
+      "explanation": "'On which' is correct because the project is a thing, following the preposition 'on.'",
+      "options": [
+        "on which",
+        "on who",
+        "to whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "on which",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l102_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The mentor ___ I owe my entire career gave me my first job.",
+      "hint": "You owe your career TO the mentor - which pronoun form follows a preposition for a person?",
+      "explanation": "'To whom' is correct because a preposition directly precedes the pronoun, requiring the object form 'whom.'",
+      "options": [
+        "to whom",
+        "to who",
+        "with which",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "to whom",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l102_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The issue ___ the committee is focused affects the whole department.",
+      "hint": "The committee is focused ON the issue - which pronoun follows this preposition for a thing?",
+      "explanation": "'On which' is correct because the issue is a thing, following the preposition 'on.'",
+      "options": [
+        "on which",
+        "on who",
+        "to whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "on which",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l102_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The client ___ we worked closely trusted our advice completely.",
+      "hint": "You worked WITH the client - which pronoun form follows this preposition for a person?",
+      "explanation": "'With whom' is correct because a preposition directly precedes the pronoun, requiring 'whom.'",
+      "options": [
+        "with whom",
+        "with who",
+        "on which",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "with whom",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l103_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The charity ___ she volunteers helps struggling families.",
+      "hint": "She volunteers FOR the charity - which pronoun follows this preposition for a thing?",
+      "explanation": "'For which' is correct because the charity is a thing, following the preposition 'for.'",
+      "options": [
+        "for which",
+        "for who",
+        "to whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "for which",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l103_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The colleague ___ I disagreed later admitted I was right.",
+      "hint": "You disagreed WITH the colleague - which pronoun form follows this preposition for a person?",
+      "explanation": "'With whom' is correct because a preposition directly precedes the pronoun, requiring 'whom.'",
+      "options": [
+        "with whom",
+        "with who",
+        "about which",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "with whom",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l103_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The device ___ we rely most often breaks down at the worst moment.",
+      "hint": "You rely ON the device - which pronoun follows this preposition for a thing?",
+      "explanation": "'On which' is correct because the device is a thing, following the preposition 'on.'",
+      "options": [
+        "on which",
+        "on who",
+        "with whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "on which",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l104_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The award ___ she was nominated recognizes outstanding teaching.",
+      "hint": "She was nominated FOR the award - which pronoun follows this preposition for a thing?",
+      "explanation": "'For which' is correct because the award is a thing, following the preposition 'for.'",
+      "options": [
+        "for which",
+        "for who",
+        "to whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "for which",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l104_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The friend ___ I confided never told a soul.",
+      "hint": "You confided IN the friend - which pronoun form follows this preposition for a person?",
+      "explanation": "'In whom' is correct because a preposition directly precedes the pronoun, requiring 'whom.'",
+      "options": [
+        "in whom",
+        "in who",
+        "with which",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "in whom",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l104_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The meeting ___ the decision was made lasted over three hours.",
+      "hint": "The decision was made AT the meeting - which pronoun follows this preposition for a thing?",
+      "explanation": "'At which' is correct because the meeting is a thing (an event), following the preposition 'at.'",
+      "options": [
+        "at which",
+        "at who",
+        "to whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "at which",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l105_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The doctor ___ I was referred specializes in sports injuries.",
+      "hint": "You were referred TO the doctor - which pronoun form follows this preposition for a person?",
+      "explanation": "'To whom' is correct because a preposition directly precedes the pronoun, requiring 'whom.'",
+      "options": [
+        "to whom",
+        "to who",
+        "from which",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "to whom",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l105_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The condition ___ she suffers has finally been properly diagnosed.",
+      "hint": "She suffers FROM the condition - which pronoun follows this preposition for a thing?",
+      "explanation": "'From which' is correct because the condition is a thing, following the preposition 'from.'",
+      "options": [
+        "from which",
+        "from who",
+        "to whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "from which",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l105_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The support group ___ I found comfort met every Tuesday evening.",
+      "hint": "You found comfort IN the group - which pronoun follows this preposition for a thing?",
+      "explanation": "'In which' is correct because the support group is a thing, following the preposition 'in.'",
+      "options": [
+        "in which",
+        "in who",
+        "to whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "in which",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l106_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The equipment ___ we depend most often needs maintenance.",
+      "hint": "You depend ON the equipment - which pronoun follows this preposition for a thing?",
+      "explanation": "'On which' is correct because the equipment is a thing, following the preposition 'on.'",
+      "options": [
+        "on which",
+        "on who",
+        "to whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "on which",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l106_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The nurse ___ I am most grateful checked on me every single hour.",
+      "hint": "You are grateful TO the nurse - which pronoun form follows this preposition for a person?",
+      "explanation": "'To whom' is correct because a preposition directly precedes the pronoun, requiring 'whom.'",
+      "options": [
+        "to whom",
+        "to who",
+        "on which",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "to whom",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l106_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The clinic ___ I was treated has since added a new wing.",
+      "hint": "You were treated AT the clinic - which pronoun follows this preposition for a thing?",
+      "explanation": "'At which' is correct because the clinic is a thing (a place), following the preposition 'at.'",
+      "options": [
+        "at which",
+        "at who",
+        "to whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "at which",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l107_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The director ___ I answer reviewed my proposal personally.",
+      "hint": "You answer TO the director - which pronoun form follows this preposition for a person?",
+      "explanation": "'To whom' is correct because a preposition directly precedes the pronoun, requiring 'whom.'",
+      "options": [
+        "to whom",
+        "to who",
+        "about which",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "to whom",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l107_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The film ___ critics disagreed most sharply eventually won several awards.",
+      "hint": "Critics disagreed ABOUT the film - which pronoun follows this preposition for a thing?",
+      "explanation": "'About which' is correct because the film is a thing, following the preposition 'about.'",
+      "options": [
+        "about which",
+        "about who",
+        "to whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "about which",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l107_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The festival ___ the band performed drew a massive crowd.",
+      "hint": "The band performed AT the festival - which pronoun follows this preposition for a thing?",
+      "explanation": "'At which' is correct because the festival is a thing (an event), following the preposition 'at.'",
+      "options": [
+        "at which",
+        "at who",
+        "to whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "at which",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l108_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The audience ___ she performed gave her a standing ovation.",
+      "hint": "She performed FOR the audience - which pronoun follows this preposition for a thing?",
+      "explanation": "'For which' is correct because 'audience' is treated as a thing here, following the preposition 'for.'",
+      "options": [
+        "for which",
+        "for who",
+        "to whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "for which",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l108_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The actor ___ I am most impressed rarely gives interviews.",
+      "hint": "You are impressed BY the actor - which pronoun form follows this preposition for a person?",
+      "explanation": "'By whom' is correct because a preposition directly precedes the pronoun, requiring 'whom.'",
+      "options": [
+        "by whom",
+        "by who",
+        "with which",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "by whom",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l108_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The scene ___ the actors first appear together took twelve takes to film.",
+      "hint": "The actors appear IN the scene - which pronoun follows this preposition for a thing?",
+      "explanation": "'In which' is correct because the scene is a thing, following the preposition 'in.'",
+      "options": [
+        "in which",
+        "in who",
+        "to whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "in which",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l109_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The neighbor ___ I rely during emergencies always answers right away.",
+      "hint": "You rely ON the neighbor - which pronoun form follows this preposition for a person?",
+      "explanation": "'On whom' is correct because a preposition directly precedes the pronoun, requiring 'whom.'",
+      "options": [
+        "on whom",
+        "on who",
+        "to which",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "on whom",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l109_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The community garden ___ we all contribute has doubled in size.",
+      "hint": "You contribute TO the garden - which pronoun follows this preposition for a thing?",
+      "explanation": "'To which' is correct because the garden is a thing, following the preposition 'to.'",
+      "options": [
+        "to which",
+        "to who",
+        "on whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "to which",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l109_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The event ___ the whole street was invited raised money for the local school.",
+      "hint": "The street was invited TO the event - which pronoun follows this preposition for a thing?",
+      "explanation": "'To which' is correct because the event is a thing, following the preposition 'to.'",
+      "options": [
+        "to which",
+        "to who",
+        "on whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "to which",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l110_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The relative ___ I am closest lives just two hours away.",
+      "hint": "You are closest TO the relative - which pronoun form follows this preposition for a person?",
+      "explanation": "'To whom' is correct because a preposition directly precedes the pronoun, requiring 'whom.'",
+      "options": [
+        "to whom",
+        "to who",
+        "with which",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "to whom",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l110_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The tradition ___ our whole family is devoted started with my grandmother.",
+      "hint": "The family is devoted TO the tradition - which pronoun follows this preposition for a thing?",
+      "explanation": "'To which' is correct because the tradition is a thing, following the preposition 'to.'",
+      "options": [
+        "to which",
+        "to who",
+        "with whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "to which",
+      "grammarRule": "Relative Pronoun with Preposition"
+    },
+    {
+      "id": "rc_l110_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The reunion ___ my whole extended family gathered was the biggest one yet.",
+      "hint": "The family gathered AT the reunion - which pronoun follows this preposition for a thing?",
+      "explanation": "'At which' is correct because the reunion is a thing (an event), following the preposition 'at.'",
+      "options": [
+        "at which",
+        "at who",
+        "to whom",
+        "whose"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "at which",
+      "grammarRule": "Relative Pronoun with Preposition"
+    }
+  ]
 }

@@ -8,540 +8,540 @@
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The coach said, 'If she had practised more, she would have performed better.'",
+            "question": "Convert to reported speech: She asked, 'Have you finished the report?'",
             "options": [
-                "The coach said that if she had practised more, she would have performed better.",
-                "The coach said that if she practised more, she would perform better.",
-                "The coach said that if she had practised more, she would perform better."
+                "She asked whether have I finished the report.",
+                "She asked whether I have finished the report.",
+                "She asked whether I had finished the report."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The coach said that if she had practised more, she would have performed better.",
-            "sentence": "The coach said, 'If she had practised more, she would have performed better.'",
-            "hint": "Third conditional: 'had practised' and 'would have performed' are already past perfect and conditional perfect. They stay unchanged.",
-            "explanation": "Third conditional structures ('had practised / would have performed') cannot shift further back and remain unchanged in reported speech.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "She asked whether I had finished the report.",
+            "sentence": "She asked, 'Have you finished the report?'",
+            "hint": "Yes/No questions can use 'whether', and the tense shifts too.",
+            "explanation": "'Whether' introduces the question, 'have' moves after the subject, and 'have finished' shifts to 'had finished'.",
+            "grammarRule": "Reported Yes/No Questions"
         },
         {
             "id": "dis_l81_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She asked, 'Do you ever wish you had made different choices?'",
+            "question": "Convert to reported speech: She said, 'I have been feeling tired.'",
             "options": [
-                "She asked if I ever wished I had made different choices.",
-                "She asked do I ever wish I had made different choices.",
-                "She asked if I ever wished I would have made different choices."
+                "She said that she had been feel tired.",
+                "She said that she has been feeling tired.",
+                "She said that she had been feeling tired."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She asked if I ever wished I had made different choices.",
-            "sentence": "She asked, 'Do you ever wish you had made different choices?'",
-            "hint": "'Wish' → 'wished'. 'Had made' stays (already past perfect). 'You' → 'I'. Use 'if'.",
-            "explanation": "'Wish' → 'wished'. 'Had made' is already past perfect - it stays. 'You' → 'I'. Use 'if' and statement word order.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "She said that she had been feeling tired.",
+            "sentence": "She said, 'I have been feeling tired.'",
+            "hint": "Present perfect continuous shifts one step back to past perfect continuous.",
+            "explanation": "'Have been feeling' (present perfect continuous) shifts to 'had been feeling' (past perfect continuous).",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l81_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The tech guide said, 'Back up your data automatically to avoid losing important files.'",
+            "question": "Convert to reported speech: The teacher said, 'Water boils at 100 degrees Celsius.'",
             "options": [
-                "The tech guide advised users to back up their data automatically to avoid losing important files.",
-                "The tech guide advised users to back up your data automatically to avoid losing important files.",
-                "The tech guide told users backing up their data automatically to avoid losing important files."
+                "The teacher said that water had boiled at 100 degrees Celsius.",
+                "The teacher said that water boils at 100 degrees Celsius.",
+                "The teacher said that water boiled at 100 degrees Celsius."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The tech guide advised users to back up their data automatically to avoid losing important files.",
-            "sentence": "The tech guide said, 'Back up your data automatically to avoid losing important files.'",
-            "hint": "Imperative: 'advised + users + to + back up'. 'Your' → 'their'.",
-            "explanation": "'Back up' is an imperative → 'advised users to back up'. 'Your data' → 'their data'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The teacher said that water boils at 100 degrees Celsius.",
+            "sentence": "The teacher said, 'Water boils at 100 degrees Celsius.'",
+            "hint": "This is a scientific fact that's still true — some statements don't need to shift tense at all.",
+            "explanation": "Universal truths and facts often stay in the present tense in reported speech, since they're still true now.",
+            "grammarRule": "No-Shift Exceptions"
         },
         {
             "id": "dis_l82_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'I needn't have worried - everything turned out fine.'",
+            "question": "Convert to reported speech: The doctor asked, 'Are you allergic to anything?'",
             "options": [
-                "She said she needn't have worried, as everything had turned out fine.",
-                "She said she didn't need to have worried, as everything had turned out fine.",
-                "She said she hadn't needed to worry, as everything turned out fine."
+                "The doctor asked if I am allergic to anything.",
+                "The doctor asked if I was allergic to anything.",
+                "The doctor asked am I allergic to anything."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said she needn't have worried, as everything had turned out fine.",
-            "sentence": "She said, 'I needn't have worried - everything turned out fine.'",
-            "hint": "'Needn't have worried' stays (past modal perfect). 'Turned out' → 'had turned out'.",
-            "explanation": "'Needn't have worried' is a past modal perfect - it stays unchanged. 'Turned out' shifts to 'had turned out'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The doctor asked if I was allergic to anything.",
+            "sentence": "The doctor asked, 'Are you allergic to anything?'",
+            "hint": "Yes/No questions use 'if', with statement word order.",
+            "explanation": "'If' introduces the question, word order becomes statement order, and 'are' shifts to 'was'.",
+            "grammarRule": "Reported Yes/No Questions"
         },
         {
             "id": "dis_l82_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: He asked, 'What would have happened if we hadn't intervened?'",
+            "question": "Convert to reported speech: He insisted, 'I did nothing wrong.'",
             "options": [
-                "He asked what would have happened if they hadn't intervened.",
-                "He asked what would happen if they hadn't intervened.",
-                "He asked what had happened if they hadn't intervened."
+                "He insisted that he had done nothing wrong.",
+                "He insisted that I had done nothing wrong.",
+                "He insisted that he did nothing wrong."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He asked what would have happened if they hadn't intervened.",
-            "sentence": "He asked, 'What would have happened if we hadn't intervened?'",
-            "hint": "Third conditional question: 'would have happened' and 'hadn't intervened' stay. 'We' → 'they'.",
-            "explanation": "Third conditional: both 'would have happened' and 'hadn't intervened' are already past - they stay unchanged. 'We' → 'they'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "He insisted that he had done nothing wrong.",
+            "sentence": "He insisted, 'I did nothing wrong.'",
+            "hint": "Both the tense and the pronoun shift here; 'insisted' works like 'said' but shows strong conviction.",
+            "explanation": "'Did' (past simple) shifts to 'had done' (past perfect), and 'I' becomes 'he'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l82_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The committee said, 'Submit a detailed report outlining your findings.'",
+            "question": "Convert to reported speech: They said, 'We have been working on this for months.'",
             "options": [
-                "The committee asked researchers to submit a detailed report outlining their findings.",
-                "The committee asked researchers to submit a detailed report outlining your findings.",
-                "The committee said submit a detailed report outlining your findings."
+                "They said that they had been working on that for months.",
+                "They said that we had been working on this for months.",
+                "They said that they have been working on that for months."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The committee asked researchers to submit a detailed report outlining their findings.",
-            "sentence": "The committee said, 'Submit a detailed report outlining your findings.'",
-            "hint": "Imperative: 'asked + researchers + to + submit'. 'Your' → 'their'.",
-            "explanation": "'Submit' is an imperative → 'asked researchers to submit'. 'Your findings' → 'their findings'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "They said that they had been working on that for months.",
+            "sentence": "They said, 'We have been working on this for months.'",
+            "hint": "Both the tense and 'this' shift here.",
+            "explanation": "'Have been working' shifts to 'had been working', and 'this' shifts to 'that'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l83_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: They said, 'We couldn't have succeeded without your support.'",
+            "question": "Convert to reported speech: He denied, 'I broke the vase.'",
             "options": [
-                "They said they couldn't have succeeded without my support.",
-                "They said they can't have succeeded without my support.",
-                "They said they hadn't succeeded without my support."
+                "He denied that I had broken the vase.",
+                "He denied that he broke the vase.",
+                "He denied that he had broken the vase."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They said they couldn't have succeeded without my support.",
-            "sentence": "They said, 'We couldn't have succeeded without your support.'",
-            "hint": "'Couldn't have succeeded' stays (past modal perfect). 'We' → 'they'. 'Your' → 'my'.",
-            "explanation": "'Couldn't have succeeded' is a past modal perfect - it stays unchanged. 'We' → 'they', 'your' → 'my'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "He denied that he had broken the vase.",
+            "sentence": "He denied, 'I broke the vase.'",
+            "hint": "Both the tense and the pronoun shift; 'denied' reports someone rejecting a claim.",
+            "explanation": "'Broke' (past simple) shifts to 'had broken' (past perfect), and 'I' becomes 'he'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l83_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She asked, 'Has the situation changed since we last spoke?'",
+            "question": "Convert to reported speech: She asked, 'Is the flight delayed or on time?'",
             "options": [
-                "She asked if the situation had changed since they had last spoken.",
-                "She asked if the situation changed since they last spoke.",
-                "She asked has the situation changed since they last spoke."
+                "She asked whether the flight was delayed or on time.",
+                "She asked whether the flight is delayed or on time.",
+                "She asked was the flight delayed or on time."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She asked if the situation had changed since they had last spoken.",
-            "sentence": "She asked, 'Has the situation changed since we last spoke?'",
-            "hint": "'Has changed' → 'had changed'. 'Spoke' → 'had spoken'. 'We' → 'they'. Use 'if'.",
-            "explanation": "Both present perfect and past simple shift: 'has changed' → 'had changed', 'spoke' → 'had spoken'. 'We' → 'they'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "She asked whether the flight was delayed or on time.",
+            "sentence": "She asked, 'Is the flight delayed or on time?'",
+            "hint": "'Whether...or' reports a choice question, and the tense shifts too.",
+            "explanation": "'Whether' introduces the choice, word order becomes statement order, and 'is' shifts to 'was'.",
+            "grammarRule": "Reported Yes/No Questions"
         },
         {
             "id": "dis_l83_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The manager said, 'Be prepared to justify your decisions with data.'",
+            "question": "Convert to reported speech: The guide said, 'Paris is the capital of France.'",
             "options": [
-                "The manager told the team to be prepared to justify their decisions with data.",
-                "The manager told the team to be prepared to justify your decisions with data.",
-                "The manager said be prepared to justify your decisions with data."
+                "The guide said that Paris had been the capital of France.",
+                "The guide said that Paris was the capital of France.",
+                "The guide said that Paris is the capital of France."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The manager told the team to be prepared to justify their decisions with data.",
-            "sentence": "The manager said, 'Be prepared to justify your decisions with data.'",
-            "hint": "Imperative: 'told + team + to + be prepared'. 'Your' → 'their'.",
-            "explanation": "'Be prepared' is an imperative → 'told the team to be prepared to justify their decisions with data'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The guide said that Paris is the capital of France.",
+            "sentence": "The guide said, 'Paris is the capital of France.'",
+            "hint": "This is a fact that's still true — it doesn't need to shift tense.",
+            "explanation": "Facts that remain true stay in the present tense in reported speech.",
+            "grammarRule": "No-Shift Exceptions"
         },
         {
             "id": "dis_l84_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The teacher said, 'Water boils at 100 degrees Celsius.'",
+            "question": "Convert to reported speech: She agreed, 'I will help with the presentation.'",
             "options": [
-                "The teacher said that water boils at 100 degrees Celsius.",
-                "The teacher said that water boiled at 100 degrees Celsius.",
-                "The teacher told that water boils at 100 degrees Celsius."
+                "She agreed that she would help with the presentation.",
+                "She agreed that I would help with the presentation.",
+                "She agreed that she will help with the presentation."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The teacher said that water boils at 100 degrees Celsius.",
-            "sentence": "The teacher said, 'Water boils at 100 degrees Celsius.'",
-            "hint": "Universal scientific truth: the present tense is retained in reported speech.",
-            "explanation": "Scientific and universal truths are reported without tense shift. 'Boils' stays as 'boils'. Note: 'told' requires an object - 'said' is correct.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "She agreed that she would help with the presentation.",
+            "sentence": "She agreed, 'I will help with the presentation.'",
+            "hint": "Both the modal and the pronoun shift; 'agreed' shows she accepted something.",
+            "explanation": "'Will' shifts to 'would', and 'I' becomes 'she'.",
+            "grammarRule": "Modal Verb Backshift"
         },
         {
             "id": "dis_l84_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The admissions officer asked, 'Why did you choose this university over others?'",
+            "question": "Convert to reported speech: He said, 'I have been binge-watching that show.'",
             "options": [
-                "The admissions officer asked why I had chosen that university over others.",
-                "The admissions officer asked why I chose this university over others.",
-                "The admissions officer asked why did I choose that university over others."
+                "He said that he had been binge-watching that show.",
+                "He said that he had binge-watched that show.",
+                "He said that he has been binge-watching that show."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The admissions officer asked why I had chosen that university over others.",
-            "sentence": "The admissions officer asked, 'Why did you choose this university over others?'",
-            "hint": "'Did choose' → 'had chosen'. 'You' → 'I'. 'This' → 'that'. Statement order.",
-            "explanation": "Drop 'did'. 'Choose' → 'had chosen'. 'You' → 'I'. 'This university' → 'that university'. Use statement word order.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "He said that he had been binge-watching that show.",
+            "sentence": "He said, 'I have been binge-watching that show.'",
+            "hint": "Present perfect continuous shifts to past perfect continuous, not to a different tense.",
+            "explanation": "'Have been binge-watching' shifts to 'had been binge-watching' — the continuous form is kept.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l84_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The life coach said, 'Challenge yourself to step outside your comfort zone every day.'",
+            "question": "Convert to reported speech: The advisor warned investors, 'Don't panic about the market.'",
             "options": [
-                "The life coach urged us to challenge ourselves to step outside our comfort zones every day.",
-                "The life coach urged us to challenge yourself to step outside your comfort zone every day.",
-                "The life coach said challenge yourself to step outside your comfort zone every day."
+                "The advisor warned investors to not panic about the market.",
+                "The advisor warned investors not to panic about the market.",
+                "The advisor warned investors don't panic about the market."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The life coach urged us to challenge ourselves to step outside our comfort zones every day.",
-            "sentence": "The life coach said, 'Challenge yourself to step outside your comfort zone every day.'",
-            "hint": "Reflexive imperative: 'urged + us + to + challenge ourselves'. Pronouns shift throughout.",
-            "explanation": "'Challenge yourself' → 'to challenge ourselves'. 'Your comfort zone' → 'our comfort zones'. Reflexive pronoun 'yourself' → 'ourselves'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The advisor warned investors not to panic about the market.",
+            "sentence": "The advisor warned investors, 'Don't panic about the market.'",
+            "hint": "Negative commands shift to 'warned + people + not to + verb'.",
+            "explanation": "Negative commands use 'warned + object + not to + infinitive'. 'Don't panic' becomes 'not to panic'.",
+            "grammarRule": "Reported Commands & Requests"
         },
         {
             "id": "dis_l85_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'I've been promoted to Regional Manager!'",
+            "question": "Convert to reported speech: She complained, 'The room is too cold.'",
             "options": [
-                "She announced that she had been promoted to Regional Manager.",
-                "She announced that she was promoted to Regional Manager.",
-                "She announced that she has been promoted to Regional Manager."
+                "She complained that the room had been too cold.",
+                "She complained that the room is too cold.",
+                "She complained that the room was too cold."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She announced that she had been promoted to Regional Manager.",
-            "sentence": "She said, 'I've been promoted to Regional Manager!'",
-            "hint": "Present perfect passive → past perfect passive. Reporting verb: 'announced'.",
-            "explanation": "'Have been promoted' (present perfect passive) → 'had been promoted' (past perfect passive). 'Announced' suits good news.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "She complained that the room was too cold.",
+            "sentence": "She complained, 'The room is too cold.'",
+            "hint": "Shift the verb back in time; 'complained' reports someone expressing dissatisfaction.",
+            "explanation": "'Is' shifts to 'was' — a simple one-step backshift, even though the reporting verb shows a complaint.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l85_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The researcher asked, 'How has remote working affected your productivity?'",
+            "question": "Convert to reported speech: The nurse asked, 'Have you eaten anything today?'",
             "options": [
-                "The researcher asked how remote working had affected my productivity.",
-                "The researcher asked how remote working has affected my productivity.",
-                "The researcher asked how had remote working affected my productivity."
+                "The nurse asked had I eaten anything that day.",
+                "The nurse asked whether I had eaten anything that day.",
+                "The nurse asked whether I have eaten anything today."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The researcher asked how remote working had affected my productivity.",
-            "sentence": "The researcher asked, 'How has remote working affected your productivity?'",
-            "hint": "'Has affected' → 'had affected'. 'Your' → 'my'. Statement order.",
-            "explanation": "'Has affected' → 'had affected'. 'Your productivity' → 'my productivity'. Statement word order: 'how remote working had affected'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The nurse asked whether I had eaten anything that day.",
+            "sentence": "The nurse asked, 'Have you eaten anything today?'",
+            "hint": "'Whether' reports the question, and 'today' shifts along with the tense.",
+            "explanation": "'Whether' introduces the question, statement word order is used, 'have eaten' shifts to 'had eaten', and 'today' shifts to 'that day'.",
+            "grammarRule": "Reported Yes/No Questions"
         },
         {
             "id": "dis_l85_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The mentor said, 'Take responsibility for your mistakes and learn from them.'",
+            "question": "Convert to reported speech: The professor said, 'A triangle has three sides.'",
             "options": [
-                "The mentor advised him to take responsibility for his mistakes and learn from them.",
-                "The mentor advised him to take responsibility for your mistakes and learn from them.",
-                "The mentor said take responsibility for your mistakes and learn from them."
+                "The professor said that a triangle has three sides.",
+                "The professor said that a triangle had three sides.",
+                "The professor said that a triangle would have three sides."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The mentor advised him to take responsibility for his mistakes and learn from them.",
-            "sentence": "The mentor said, 'Take responsibility for your mistakes and learn from them.'",
-            "hint": "Double imperative: 'advised + him + to + take... and learn'. 'Your' → 'his'.",
-            "explanation": "Two imperatives → 'advised him to take responsibility for his mistakes and learn from them'. 'Your' → 'his'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The professor said that a triangle has three sides.",
+            "sentence": "The professor said, 'A triangle has three sides.'",
+            "hint": "This is a mathematical fact that's always true — it doesn't need to shift tense.",
+            "explanation": "Facts that are always true stay in the present tense in reported speech.",
+            "grammarRule": "No-Shift Exceptions"
         },
         {
             "id": "dis_l86_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'I'd rather not discuss this right now.'",
+            "question": "Convert to reported speech: The CEO announced, 'Our profits have doubled.'",
             "options": [
-                "She said she'd rather not discuss that right then.",
-                "She said she'd rather not discuss this right now.",
-                "She said she would not rather discuss that right then."
+                "The CEO announced that our profits had doubled.",
+                "The CEO announced that their profits have doubled.",
+                "The CEO announced that their profits had doubled."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said she'd rather not discuss that right then.",
-            "sentence": "She said, 'I'd rather not discuss this right now.'",
-            "hint": "'Would rather not' stays. 'This' → 'that'. 'Now' → 'then'.",
-            "explanation": "'Would rather not' stays unchanged. 'This' shifts to 'that'. 'Now' shifts to 'then'. Word order in 'would rather not' must be preserved.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The CEO announced that their profits had doubled.",
+            "sentence": "The CEO announced, 'Our profits have doubled.'",
+            "hint": "Both the tense and the possessive word shift here.",
+            "explanation": "'Have doubled' shifts to 'had doubled', and 'our' shifts to 'their'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l86_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The expert was asked, 'What are the long-term implications of this policy?'",
+            "question": "Convert to reported speech: She said, 'I have been leading this team since March.'",
             "options": [
-                "The expert was asked what the long-term implications of that policy were.",
-                "The expert was asked what are the long-term implications of this policy.",
-                "The expert was asked what were the long-term implications of that policy."
+                "She said that she had been leading that team since March.",
+                "She said that she had led that team since March.",
+                "She said that she has been leading that team since March."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The expert was asked what the long-term implications of that policy were.",
-            "sentence": "The expert was asked, 'What are the long-term implications of this policy?'",
-            "hint": "'Are' → 'were'. 'This' → 'that'. Statement order: the verb goes after the subject.",
-            "explanation": "'Are' → 'were'. 'This' → 'that'. Statement word order: 'what the implications... were', not 'what were the implications'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "She said that she had been leading that team since March.",
+            "sentence": "She said, 'I have been leading this team since March.'",
+            "hint": "Present perfect continuous shifts to past perfect continuous, and 'this' shifts too.",
+            "explanation": "'Have been leading' shifts to 'had been leading', and 'this' shifts to 'that'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l86_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The career guide said, 'Invest in your professional development every year.'",
+            "question": "Convert to reported speech: The dietitian told him, 'Reduce your sugar intake.'",
             "options": [
-                "The career guide advised readers to invest in their professional development every year.",
-                "The career guide advised readers to invest in your professional development every year.",
-                "The career guide told invest in your professional development every year."
+                "The dietitian told him that he reduce his sugar intake.",
+                "The dietitian told him reduce his sugar intake.",
+                "The dietitian told him to reduce his sugar intake."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The career guide advised readers to invest in their professional development every year.",
-            "sentence": "The career guide said, 'Invest in your professional development every year.'",
-            "hint": "Imperative: 'advised + readers + to + invest'. 'Your' → 'their'.",
-            "explanation": "'Invest' is an imperative → 'advised readers to invest in their professional development every year'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The dietitian told him to reduce his sugar intake.",
+            "sentence": "The dietitian told him, 'Reduce your sugar intake.'",
+            "hint": "A command shifts to 'told + person + to + verb', and 'your' shifts too.",
+            "explanation": "Commands are reported with 'told + object + to-infinitive'. 'Reduce your sugar intake' becomes 'to reduce his sugar intake'.",
+            "grammarRule": "Reported Commands & Requests"
         },
         {
             "id": "dis_l87_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: He said, 'I didn't break the window!'",
+            "question": "Convert to reported speech: The agent confirmed, 'Your seat is booked.'",
             "options": [
-                "He denied breaking the window.",
-                "He denied to break the window.",
-                "He denied that he didn't break the window."
+                "The agent confirmed that my seat was booked.",
+                "The agent confirmed that my seat is booked.",
+                "The agent confirmed that your seat was booked."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He denied breaking the window.",
-            "sentence": "He said, 'I didn't break the window!'",
-            "hint": "'Deny' is followed by a gerund (-ing form), not an infinitive.",
-            "explanation": "'Deny' must be followed by the gerund form: 'denied breaking'. 'Denied to break' is grammatically incorrect. Option C creates a double negative.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The agent confirmed that my seat was booked.",
+            "sentence": "The agent confirmed, 'Your seat is booked.'",
+            "hint": "'Your' shifts to match who is being spoken to, and the tense shifts too.",
+            "explanation": "'Your' shifts to 'my', and 'is' shifts to 'was'.",
+            "grammarRule": "Pronoun & Possessive Shift"
         },
         {
             "id": "dis_l87_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She asked, 'Have you considered switching to renewable energy sources?'",
+            "question": "Convert to reported speech: The interviewer asked, 'Have you managed a team before?'",
             "options": [
-                "She asked if I had considered switching to renewable energy sources.",
-                "She asked if I have considered switching to renewable energy sources.",
-                "She asked have I considered switching to renewable energy sources."
+                "The interviewer asked if I had managed a team before.",
+                "The interviewer asked have I managed a team before.",
+                "The interviewer asked if I have managed a team before."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She asked if I had considered switching to renewable energy sources.",
-            "sentence": "She asked, 'Have you considered switching to renewable energy sources?'",
-            "hint": "'Have considered' → 'had considered'. 'You' → 'I'. Use 'if'.",
-            "explanation": "'Have considered' → 'had considered'. 'You' → 'I'. Use 'if' for yes/no questions and statement word order.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The interviewer asked if I had managed a team before.",
+            "sentence": "The interviewer asked, 'Have you managed a team before?'",
+            "hint": "Yes/No questions use 'if', with statement word order.",
+            "explanation": "'If' introduces the question, word order becomes statement order, and 'have managed' shifts to 'had managed'.",
+            "grammarRule": "Reported Yes/No Questions"
         },
         {
             "id": "dis_l87_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The management book said, 'Establish clear expectations with your team from day one.'",
+            "question": "Convert to reported speech: The instructor said, 'Ice melts at zero degrees Celsius.'",
             "options": [
-                "The management book recommended that managers establish clear expectations with their teams from day one.",
-                "The management book recommended managers to establish clear expectations from day one.",
-                "The management book recommended managers establishing clear expectations from day one."
+                "The instructor said that ice melts at zero degrees Celsius.",
+                "The instructor said that ice had melted at zero degrees Celsius.",
+                "The instructor said that ice melted at zero degrees Celsius."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The management book recommended that managers establish clear expectations with their teams from day one.",
-            "sentence": "The management book said, 'Establish clear expectations with your team from day one.'",
-            "hint": "'Recommend + that + subject + base verb' is the correct structure for reporting this imperative.",
-            "explanation": "'Recommend' takes a 'that-clause' with the base verb: 'recommended that managers establish'. 'Recommended to establish' is incorrect in this pattern.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The instructor said that ice melts at zero degrees Celsius.",
+            "sentence": "The instructor said, 'Ice melts at zero degrees Celsius.'",
+            "hint": "This is a scientific fact that's still true — it doesn't need to shift tense.",
+            "explanation": "Facts that remain true stay in the present tense in reported speech.",
+            "grammarRule": "No-Shift Exceptions"
         },
         {
             "id": "dis_l88_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'I can't believe how much things have changed.'",
+            "question": "Convert to reported speech: He admitted, 'I forgot the deadline.'",
             "options": [
-                "She said she couldn't believe how much things had changed.",
-                "She said she can't believe how much things have changed.",
-                "She said she couldn't believe how much things changed."
+                "He admitted that he had forgotten the deadline.",
+                "He admitted that I had forgotten the deadline.",
+                "He admitted that he forgot the deadline."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She said she couldn't believe how much things had changed.",
-            "sentence": "She said, 'I can't believe how much things have changed.'",
-            "hint": "'Can't believe' → 'couldn't believe'. 'Have changed' → 'had changed'.",
-            "explanation": "Two shifts: 'can't believe' → 'couldn't believe' and 'have changed' → 'had changed'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "He admitted that he had forgotten the deadline.",
+            "sentence": "He admitted, 'I forgot the deadline.'",
+            "hint": "Both the tense and the pronoun shift; 'admitted' reports someone confessing something.",
+            "explanation": "'Forgot' (past simple) shifts to 'had forgotten' (past perfect), and 'I' becomes 'he'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l88_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The director asked, 'What improvements were made following the audit?'",
+            "question": "Convert to reported speech: They said, 'We have been planning this trip for months.'",
             "options": [
-                "The director asked what improvements had been made following the audit.",
-                "The director asked what improvements were made following the audit.",
-                "The director asked what improvements have been made following the audit."
+                "They said that they have been planning that trip for months.",
+                "They said that we had been planning this trip for months.",
+                "They said that they had been planning that trip for months."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The director asked what improvements had been made following the audit.",
-            "sentence": "The director asked, 'What improvements were made following the audit?'",
-            "hint": "'Were made' (past passive) → 'had been made' (past perfect passive). Statement order.",
-            "explanation": "Past simple passive 'were made' shifts to past perfect passive 'had been made'. Use statement word order.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "They said that they had been planning that trip for months.",
+            "sentence": "They said, 'We have been planning this trip for months.'",
+            "hint": "Both the tense and 'this' shift here.",
+            "explanation": "'Have been planning' shifts to 'had been planning', and 'this' shifts to 'that'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l88_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The performance coach said, 'Set clear goals and review your progress monthly.'",
+            "question": "Convert to reported speech: HR warned staff, 'Don't share confidential data.'",
             "options": [
-                "The performance coach told employees to set clear goals and review their progress monthly.",
-                "The performance coach told employees to set clear goals and review your progress monthly.",
-                "The performance coach said set clear goals and review your progress monthly."
+                "HR warned staff to not share confidential data.",
+                "HR warned staff don't share confidential data.",
+                "HR warned staff not to share confidential data."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The performance coach told employees to set clear goals and review their progress monthly.",
-            "sentence": "The performance coach said, 'Set clear goals and review your progress monthly.'",
-            "hint": "Double imperative: 'told + employees + to + set... and review'. 'Your' → 'their'.",
-            "explanation": "Two imperatives → 'told employees to set clear goals and review their progress monthly'. 'Your' → 'their'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "HR warned staff not to share confidential data.",
+            "sentence": "HR warned staff, 'Don't share confidential data.'",
+            "hint": "Negative commands shift to 'warned + people + not to + verb'.",
+            "explanation": "Negative commands use 'warned + object + not to + infinitive'. 'Don't share' becomes 'not to share'.",
+            "grammarRule": "Reported Commands & Requests"
         },
         {
             "id": "dis_l89_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'I suggest we take a different route to avoid the traffic.'",
+            "question": "Convert to reported speech: She suggested, 'You should drink more water.'",
             "options": [
-                "She suggested taking a different route to avoid the traffic.",
-                "She suggested to take a different route to avoid the traffic.",
-                "She suggested us to take a different route to avoid the traffic."
+                "She suggested that I drink more water.",
+                "She suggested that you should drink more water.",
+                "She suggested that I should drink more water."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She suggested taking a different route to avoid the traffic.",
-            "sentence": "She said, 'I suggest we take a different route to avoid the traffic.'",
-            "hint": "'Suggest + -ing' or 'suggest + that'. 'Suggest to' and 'suggest + object + to' are both incorrect.",
-            "explanation": "'Suggest' takes the gerund (-ing) or a 'that-clause'. 'Suggested to take' and 'suggested us to take' are both grammatically incorrect.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "She suggested that I should drink more water.",
+            "sentence": "She suggested, 'You should drink more water.'",
+            "hint": "'You' shifts to match who is being spoken to; 'suggested' introduces advice.",
+            "explanation": "'You' shifts to 'I', and 'should' — already a backshifted modal — stays the same.",
+            "grammarRule": "No-Shift Exceptions"
         },
         {
             "id": "dis_l89_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The CEO asked, 'Why is the production running below capacity?'",
+            "question": "Convert to reported speech: He asked, 'Does the update fix the bug or not?'",
             "options": [
-                "The CEO asked why production was running below capacity.",
-                "The CEO asked why is the production running below capacity.",
-                "The CEO asked why the production had been running below capacity."
+                "He asked did the update fix the bug or not.",
+                "He asked whether the update fixes the bug or not.",
+                "He asked whether the update fixed the bug or not."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The CEO asked why production was running below capacity.",
-            "sentence": "The CEO asked, 'Why is the production running below capacity?'",
-            "hint": "'Is running' → 'was running'. Statement order. No over-shift to past perfect continuous.",
-            "explanation": "'Is running' → 'was running'. Statement word order is required. 'Had been running' would be an over-shift here.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "He asked whether the update fixed the bug or not.",
+            "sentence": "He asked, 'Does the update fix the bug or not?'",
+            "hint": "'Whether...or' reports a choice question, and the tense shifts too.",
+            "explanation": "'Whether' introduces the choice, 'does' is dropped, and 'fixes' shifts to 'fixed'.",
+            "grammarRule": "Reported Yes/No Questions"
         },
         {
             "id": "dis_l89_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'Don't make promises you can't keep.'",
+            "question": "Convert to reported speech: He said, 'I have been learning the guitar.'",
             "options": [
-                "She advised him not to make promises he couldn't keep.",
-                "She advised him not to make promises he can't keep.",
-                "She told him not making promises he couldn't keep."
+                "He said that he had learned the guitar.",
+                "He said that he has been learning the guitar.",
+                "He said that he had been learning the guitar."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She advised him not to make promises he couldn't keep.",
-            "sentence": "She said, 'Don't make promises you can't keep.'",
-            "hint": "Negative imperative: 'advised + him + not to + make'. 'Can't' → 'couldn't' in the relative clause.",
-            "explanation": "'Don't make' → 'not to make'. In the relative clause, 'can't keep' → 'couldn't keep'. 'Couldn't' is the shifted form of 'can't'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "He said that he had been learning the guitar.",
+            "sentence": "He said, 'I have been learning the guitar.'",
+            "hint": "Present perfect continuous shifts to past perfect continuous, not to a different tense.",
+            "explanation": "'Have been learning' shifts to 'had been learning' — the continuous form is kept.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l90_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The scientist said, 'The Earth orbits the Sun.'",
+            "question": "Convert to reported speech: The pilot said, 'Light travels faster than sound.'",
             "options": [
-                "The scientist confirmed that the Earth orbits the Sun.",
-                "The scientist confirmed that the Earth orbited the Sun.",
-                "The scientist confirmed that the Earth would orbit the Sun."
+                "The pilot said that light travelled faster than sound.",
+                "The pilot said that light had traveled faster than sound.",
+                "The pilot said that light travels faster than sound."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The scientist confirmed that the Earth orbits the Sun.",
-            "sentence": "The scientist said, 'The Earth orbits the Sun.'",
-            "hint": "Universal scientific truth: the present tense 'orbits' is retained in reported speech.",
-            "explanation": "Established scientific facts do not require tense backshift. 'Orbits' stays as 'orbits' because it is a permanent, universal truth.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The pilot said that light travels faster than sound.",
+            "sentence": "The pilot said, 'Light travels faster than sound.'",
+            "hint": "This is a scientific fact that's still true — it doesn't need to shift tense.",
+            "explanation": "Facts that remain true stay in the present tense in reported speech.",
+            "grammarRule": "No-Shift Exceptions"
         },
         {
             "id": "dis_l90_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The auditor asked, 'What percentage of the budget was allocated to marketing?'",
+            "question": "Convert to reported speech: She denied, 'I leaked the information.'",
             "options": [
-                "The auditor asked what percentage of the budget had been allocated to marketing.",
-                "The auditor asked what percentage of the budget was allocated to marketing.",
-                "The auditor asked what percentage was the budget allocated to marketing."
+                "She denied that she had leaked the information.",
+                "She denied that I had leaked the information.",
+                "She denied that she leaked the information."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The auditor asked what percentage of the budget had been allocated to marketing.",
-            "sentence": "The auditor asked, 'What percentage of the budget was allocated to marketing?'",
-            "hint": "'Was allocated' → 'had been allocated'. Statement order.",
-            "explanation": "Past simple passive 'was allocated' shifts to past perfect passive 'had been allocated'. Use statement word order.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "She denied that she had leaked the information.",
+            "sentence": "She denied, 'I leaked the information.'",
+            "hint": "Notice both changes here: the backshifted tense and the adjusted pronoun.",
+            "explanation": "'Leaked' (past simple) shifts to 'had leaked' (past perfect), and 'I' becomes 'she'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l90_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The company's communication policy said, 'Respond to all messages within one business day.'",
+            "question": "Convert to reported speech: The officer asked, 'Do you have any identification?'",
             "options": [
-                "The company's communication policy required all staff to respond to messages within one business day.",
-                "The company's communication policy required all staff respond to messages within one business day.",
-                "The company's communication policy said respond to all messages within one business day."
+                "The officer asked if I had any identification.",
+                "The officer asked do I have any identification.",
+                "The officer asked if I have any identification."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The company's communication policy required all staff to respond to messages within one business day.",
-            "sentence": "The company's communication policy said, 'Respond to all messages within one business day.'",
-            "hint": "Imperative: 'required + staff + to + respond'. 'Required' signals a formal obligation.",
-            "explanation": "'Respond' is an imperative → 'required all staff to respond'. 'Required' conveys the mandatory nature of a company policy.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The officer asked if I had any identification.",
+            "sentence": "The officer asked, 'Do you have any identification?'",
+            "hint": "Yes/No questions use 'if', and 'do' disappears.",
+            "explanation": "Yes/No questions use 'if'. The auxiliary 'do' is dropped, and 'have' shifts to 'had'.",
+            "grammarRule": "Reported Yes/No Questions"
         }
     ]
 }

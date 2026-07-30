@@ -73,31 +73,31 @@
             "interactionType": "Marriage Ring",
             "subtype": "subjectVerbAgreement",
             "question": "A vast array of factors ___ contributed to the outcome.",
-            "hint": "Is the head noun 'array' (singular) or 'factors' (plural)?",
-            "explanation": "'A vast array of factors' has 'array' as its head noun, which is singular - so 'has contributed' is the formally correct choice. However, 'have contributed' is widely accepted in practice. This is a genuine borderline case.",
+            "hint": "Like 'a number of' and 'a variety of', 'an array of' takes its number from the plural noun that follows.",
+            "explanation": "'An array of' functions like 'a number of' and 'a variety of' - it takes a plural verb when followed by a plural noun. 'A vast array of factors have contributed' is correct.",
             "options": [
                 "has",
                 "have"
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "has",
-            "grammarRule": "Subject-Verb Agreement (Singular)"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "have",
+            "grammarRule": "Subject-Verb Agreement (Plural)"
         },
         {
             "id": "sva_l192_q3",
             "instruction": "SYNC THE AGREEMENT",
             "interactionType": "Marriage Ring",
             "subtype": "subjectVerbAgreement",
-            "question": "The wide range of skills ___ required for this role makes it difficult to fill.",
-            "hint": "Inside the relative clause (reduced), 'required' is the past participle modifying 'skills' - passive, not active.",
-            "explanation": "The reduced relative clause 'required for this role' uses the past participle to mean 'that are required'. 'Skills required' = 'skills that are required'. The main verb 'makes' agrees with 'the wide range' (singular).",
+            "question": "Each of the skills listed in the job posting ___ essential for success in this role.",
+            "hint": "'Each of' is always singular, no matter how many items follow.",
+            "explanation": "'Each of' is always singular, even when followed by a plural noun. 'Each of the skills is essential' - not 'are'.",
             "options": [
-                "requiring",
-                "required"
+                "is",
+                "are"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "required",
-            "grammarRule": "Subject-Verb Agreement (Plural)"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "grammarRule": "Subject-Verb Agreement (Singular)"
         },
         {
             "id": "sva_l193_q1",
@@ -481,7 +481,7 @@
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "has been",
-            "grammarRule": "Subject-Verb Agreement (Plural)"
+            "grammarRule": "Subject-Verb Agreement (Singular)"
         }
     ]
 }

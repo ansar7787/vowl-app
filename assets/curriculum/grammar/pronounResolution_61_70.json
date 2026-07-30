@@ -1,577 +1,577 @@
 {
-    "gameType": "pronounResolution",
-    "batchIndex": 7,
-    "levels": "61-70",
-    "quests": [
-        {
-            "id": "pr_l61_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Everyone at the office received their year-end bonus.\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "Everyone at the office received their year-end bonus.",
-            "options": [
-                "Everyone",
-                "office",
-                "bonus"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Everyone",
-            "hint": "Whose bonus is this?",
-            "explanation": "'their' is the modern, gender-neutral way to refer back to 'everyone,' even though 'everyone' is grammatically singular.",
-            "grammarRule": "Possessive Adjectives"
-        },
-        {
-            "id": "pr_l61_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Although she was exhausted, the flight attendant kept smiling at every passenger.\nWho or what does 'she' refer to?",
-            "targetWord": "she",
-            "sentence": "Although she was exhausted, the flight attendant kept smiling at every passenger.",
-            "options": [
-                "The flight attendant",
-                "passenger",
-                "exhausted"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The flight attendant",
-            "hint": "Who kept smiling despite being tired?",
-            "explanation": "'she' appears before its antecedent here - reading ahead to 'the flight attendant' reveals who the pronoun describes.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l61_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Someone in the meeting left their laptop charger behind.\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "Someone in the meeting left their laptop charger behind.",
-            "options": [
-                "Someone",
-                "meeting",
-                "charger"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Someone",
-            "hint": "Whose charger was forgotten?",
-            "explanation": "'their' refers back to 'someone' - since the person's identity is unknown, English uses 'their' rather than guessing a gender.",
-            "grammarRule": "Possessive Adjectives"
-        },
-        {
-            "id": "pr_l62_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Nobody in the class admitted that they had broken the window.\nWho or what does 'they' refer to?",
-            "targetWord": "they",
-            "sentence": "Nobody in the class admitted that they had broken the window.",
-            "options": [
-                "Nobody",
-                "class",
-                "window"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Nobody",
-            "hint": "Who is being referred to here?",
-            "explanation": "'they' refers back to 'nobody' - English uses this plural-looking pronoun even for one unidentified person.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l62_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The dish, which contained shellfish, surprised several guests.\nWho or what does 'which' refer to?",
-            "targetWord": "which",
-            "sentence": "The dish, which contained shellfish, surprised several guests.",
-            "options": [
-                "The dish",
-                "shellfish",
-                "guests"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The dish",
-            "hint": "What surprised the guests?",
-            "explanation": "'which' introduces extra information about 'the dish' - used for things, not people.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l62_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Although he seemed calm, the surgeon double-checked every instrument before starting.\nWho or what does 'he' refer to?",
-            "targetWord": "he",
-            "sentence": "Although he seemed calm, the surgeon double-checked every instrument before starting.",
-            "options": [
-                "The surgeon",
-                "instrument",
-                "calm"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The surgeon",
-            "hint": "Who double-checked the instruments?",
-            "explanation": "'he' comes before its antecedent here; the rest of the sentence reveals it points to 'the surgeon.'",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l63_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Anyone who pays before Friday gets a five percent discount.\nWho or what does 'who' refer to?",
-            "targetWord": "who",
-            "sentence": "Anyone who pays before Friday gets a five percent discount.",
-            "options": [
-                "Anyone",
-                "Friday",
-                "discount"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Anyone",
-            "hint": "Who qualifies for the discount?",
-            "explanation": "'who' introduces a clause describing 'anyone,' the unspecified customer.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l63_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The script, which the studio rejected twice, finally became a hit film.\nWho or what does 'which' refer to?",
-            "targetWord": "which",
-            "sentence": "The script, which the studio rejected twice, finally became a hit film.",
-            "options": [
-                "The script",
-                "studio",
-                "film"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The script",
-            "hint": "What got rejected twice?",
-            "explanation": "'which' introduces extra detail about 'the script,' since scripts are things, not people.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l63_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Everybody at the reunion shared their favorite childhood memory.\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "Everybody at the reunion shared their favorite childhood memory.",
-            "options": [
-                "Everybody",
-                "reunion",
-                "memory"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Everybody",
-            "hint": "Whose memory was shared?",
-            "explanation": "'their' refers back to 'everybody' - although it looks plural, 'everybody' is grammatically singular and commonly paired with 'their.'",
-            "grammarRule": "Possessive Adjectives"
-        },
-        {
-            "id": "pr_l64_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The landlord, whom tenants rarely see, finally visited the building.\nWho or what does 'whom' refer to?",
-            "targetWord": "whom",
-            "sentence": "The landlord, whom tenants rarely see, finally visited the building.",
-            "options": [
-                "The landlord",
-                "tenants",
-                "building"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The landlord",
-            "hint": "Who rarely shows up?",
-            "explanation": "'whom' is the object form of 'who' - here it refers to 'the landlord,' the person tenants rarely see.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l64_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Although it lagged at first, the app eventually loaded every photo.\nWho or what does 'it' refer to?",
-            "targetWord": "it",
-            "sentence": "Although it lagged at first, the app eventually loaded every photo.",
-            "options": [
-                "The app",
-                "photo",
-                "first"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The app",
-            "hint": "What loaded the photos?",
-            "explanation": "'it' appears before its antecedent; reading on reveals it points to 'the app.'",
-            "grammarRule": "Object Pronouns"
-        },
-        {
-            "id": "pr_l64_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Someone on the team forgot to lock their computer screen.\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "Someone on the team forgot to lock their computer screen.",
-            "options": [
-                "Someone",
-                "team",
-                "screen"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Someone",
-            "hint": "Whose screen stayed unlocked?",
-            "explanation": "'their' refers back to the unspecified 'someone' on the team.",
-            "grammarRule": "Possessive Adjectives"
-        },
-        {
-            "id": "pr_l65_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The therapist, whom many patients recommend, has a long waiting list.\nWho or what does 'whom' refer to?",
-            "targetWord": "whom",
-            "sentence": "The therapist, whom many patients recommend, has a long waiting list.",
-            "options": [
-                "The therapist",
-                "patients",
-                "list"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The therapist",
-            "hint": "Who do patients recommend?",
-            "explanation": "'whom' refers to 'the therapist' - the object of the verb 'recommend.'",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l65_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The hotel, which overlooks the harbor, raised its rates this season.\nWho or what does 'its' refer to?",
-            "targetWord": "its",
-            "sentence": "The hotel, which overlooks the harbor, raised its rates this season.",
-            "options": [
-                "The hotel",
-                "harbor",
-                "season"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The hotel",
-            "hint": "Whose rates went up?",
-            "explanation": "'its' shows the rates belong to 'the hotel,' even though 'which overlooks the harbor' sits right before it.",
-            "grammarRule": "Possessive Adjectives"
-        },
-        {
-            "id": "pr_l65_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Everyone in the lab wore their safety goggles during the experiment.\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "Everyone in the lab wore their safety goggles during the experiment.",
-            "options": [
-                "Everyone",
-                "lab",
-                "experiment"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Everyone",
-            "hint": "Whose goggles?",
-            "explanation": "'their' refers back to 'everyone,' used here for a group of unspecified individuals.",
-            "grammarRule": "Possessive Adjectives"
-        },
-        {
-            "id": "pr_l66_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Although she sounded nervous, the new host introduced every guest smoothly.\nWho or what does 'she' refer to?",
-            "targetWord": "she",
-            "sentence": "Although she sounded nervous, the new host introduced every guest smoothly.",
-            "options": [
-                "The new host",
-                "guest",
-                "nervous"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The new host",
-            "hint": "Who introduced the guests?",
-            "explanation": "'she' precedes its antecedent; reading ahead shows it refers to 'the new host.'",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l66_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The market, which sells only organic produce, opens at dawn.\nWho or what does 'which' refer to?",
-            "targetWord": "which",
-            "sentence": "The market, which sells only organic produce, opens at dawn.",
-            "options": [
-                "The market",
-                "produce",
-                "dawn"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The market",
-            "hint": "What opens at dawn?",
-            "explanation": "'which' introduces extra detail about 'the market,' a place, not a person.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l66_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Nobody in the audience expected that they would be chosen on stage.\nWho or what does 'they' refer to?",
-            "targetWord": "they",
-            "sentence": "Nobody in the audience expected that they would be chosen on stage.",
-            "options": [
-                "Nobody",
-                "audience",
-                "stage"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Nobody",
-            "hint": "Who got picked, against expectations?",
-            "explanation": "'they' refers back to 'nobody,' the unspecified person who ended up being selected.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l67_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The uncle, whom the children adore, visits every summer.\nWho or what does 'whom' refer to?",
-            "targetWord": "whom",
-            "sentence": "The uncle, whom the children adore, visits every summer.",
-            "options": [
-                "The uncle",
-                "children",
-                "summer"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The uncle",
-            "hint": "Who do the children adore?",
-            "explanation": "'whom' refers to 'the uncle' - he's the object of the verb 'adore.'",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l67_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Although it seemed risky, the proposal earned approval from every director.\nWho or what does 'it' refer to?",
-            "targetWord": "it",
-            "sentence": "Although it seemed risky, the proposal earned approval from every director.",
-            "options": [
-                "The proposal",
-                "director",
-                "risky"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The proposal",
-            "hint": "What earned approval?",
-            "explanation": "'it' appears early in the sentence, but its antecedent, 'the proposal,' is named afterward.",
-            "grammarRule": "Object Pronouns"
-        },
-        {
-            "id": "pr_l67_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Anybody who returns the item within thirty days gets a full refund.\nWho or what does 'who' refer to?",
-            "targetWord": "who",
-            "sentence": "Anybody who returns the item within thirty days gets a full refund.",
-            "options": [
-                "Anybody",
-                "item",
-                "refund"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Anybody",
-            "hint": "Who qualifies for a refund?",
-            "explanation": "'who' introduces a clause describing 'anybody,' the unspecified customer.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l68_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The building, whose elevator broke twice this month, needs repairs.\nWho or what does 'whose' refer to?",
-            "targetWord": "whose",
-            "sentence": "The building, whose elevator broke twice this month, needs repairs.",
-            "options": [
-                "The building",
-                "elevator",
-                "month"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The building",
-            "hint": "Whose elevator keeps breaking?",
-            "explanation": "'whose' shows possession - the elevator belongs to 'the building.'",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l68_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Someone in the waiting room left their prescription on the chair.\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "Someone in the waiting room left their prescription on the chair.",
-            "options": [
-                "Someone",
-                "room",
-                "chair"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Someone",
-            "hint": "Whose prescription was left behind?",
-            "explanation": "'their' refers back to the unidentified 'someone' in the waiting room.",
-            "grammarRule": "Possessive Adjectives"
-        },
-        {
-            "id": "pr_l68_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The server, which crashed during the sale, has since been upgraded.\nWho or what does 'which' refer to?",
-            "targetWord": "which",
-            "sentence": "The server, which crashed during the sale, has since been upgraded.",
-            "options": [
-                "The server",
-                "sale",
-                "upgraded"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The server",
-            "hint": "What crashed during the sale?",
-            "explanation": "'which' introduces extra detail about 'the server,' a machine, not a person.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l69_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Although he looked confident, the rookie actor forgot his only line.\nWho or what does 'he' refer to?",
-            "targetWord": "he",
-            "sentence": "Although he looked confident, the rookie actor forgot his only line.",
-            "options": [
-                "The rookie actor",
-                "line",
-                "confident"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The rookie actor",
-            "hint": "Who forgot his line?",
-            "explanation": "'he' comes first here, but the noun it describes, 'the rookie actor,' appears right after.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l69_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Everybody in the dormitory agreed to share their notes before exams.\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "Everybody in the dormitory agreed to share their notes before exams.",
-            "options": [
-                "Everybody",
-                "dormitory",
-                "exams"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Everybody",
-            "hint": "Whose notes will be shared?",
-            "explanation": "'their' refers back to 'everybody,' the whole group of students.",
-            "grammarRule": "Possessive Adjectives"
-        },
-        {
-            "id": "pr_l69_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The driver, whom the company just hired, knows the city well.\nWho or what does 'whom' refer to?",
-            "targetWord": "whom",
-            "sentence": "The driver, whom the company just hired, knows the city well.",
-            "options": [
-                "The driver",
-                "company",
-                "city"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The driver",
-            "hint": "Who did the company hire?",
-            "explanation": "'whom' refers to 'the driver' - the person the company hired.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l70_q1",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "The recipe, which my grandmother wrote by hand, still works perfectly.\nWho or what does 'which' refer to?",
-            "targetWord": "which",
-            "sentence": "The recipe, which my grandmother wrote by hand, still works perfectly.",
-            "options": [
-                "The recipe",
-                "grandmother",
-                "hand"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The recipe",
-            "hint": "What still works perfectly?",
-            "explanation": "'which' introduces extra detail about 'the recipe,' an object passed down.",
-            "grammarRule": "Pronouns"
-        },
-        {
-            "id": "pr_l70_q2",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Nobody on the thread realized that their reply had been deleted.\nWho or what does 'their' refer to?",
-            "targetWord": "their",
-            "sentence": "Nobody on the thread realized that their reply had been deleted.",
-            "options": [
-                "Nobody",
-                "thread",
-                "reply"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Nobody",
-            "hint": "Whose reply disappeared?",
-            "explanation": "'their' refers back to 'nobody,' the unspecified person whose message vanished.",
-            "grammarRule": "Possessive Adjectives"
-        },
-        {
-            "id": "pr_l70_q3",
-            "instruction": "Resolve the pronoun.",
-            "subtype": "pronounResolution",
-            "interactionType": "Laser Aim",
-            "question": "Although it ran long, the presentation answered every question clearly.\nWho or what does 'it' refer to?",
-            "targetWord": "it",
-            "sentence": "Although it ran long, the presentation answered every question clearly.",
-            "options": [
-                "The presentation",
-                "question",
-                "long"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The presentation",
-            "hint": "What answered every question?",
-            "explanation": "'it' appears before its antecedent; the rest of the sentence reveals 'the presentation.'",
-            "grammarRule": "Object Pronouns"
-        }
-    ]
+  "gameType": "pronounResolution",
+  "batchIndex": 7,
+  "levels": "61-70",
+  "quests": [
+    {
+      "id": "pr_l61_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The scientist who discovered the vaccine won a major award.\nWho or what does 'who' refer to?",
+      "targetWord": "who",
+      "sentence": "The scientist who discovered the vaccine won a major award.",
+      "options": [
+        "The award",
+        "The scientist",
+        "The vaccine"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The scientist",
+      "hint": "Who made the discovery?",
+      "explanation": "'who' introduces a clause describing 'the scientist,' the person who discovered it - not the vaccine or the award.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l61_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "We finally read the novel that won the national prize.\nWho or what does 'that' refer to?",
+      "targetWord": "that",
+      "sentence": "We finally read the novel that won the national prize.",
+      "options": [
+        "The novel",
+        "The prize",
+        "We"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The novel",
+      "hint": "What won the prize?",
+      "explanation": "'that' introduces a clause describing 'the novel,' the thing that won - not the readers or the prize itself.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l61_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The manager of the bakery who greeted every customer retired last month.\nWho or what does 'who' refer to?",
+      "targetWord": "who",
+      "sentence": "The manager of the bakery who greeted every customer retired last month.",
+      "options": [
+        "The bakery",
+        "customer",
+        "The manager"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The manager",
+      "hint": "Who did the greeting - a person or a place?",
+      "explanation": "'who' must refer to a person, so it points to 'the manager,' not 'the bakery.'",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l62_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Several guests were surprised by the dish that contained shellfish.\nWho or what does 'that' refer to?",
+      "targetWord": "that",
+      "sentence": "Several guests were surprised by the dish that contained shellfish.",
+      "options": [
+        "shellfish",
+        "guests",
+        "The dish"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The dish",
+      "hint": "What surprised the guests?",
+      "explanation": "'that' introduces a clause describing 'the dish,' the food that had shellfish in it.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l62_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The teacher who assigned extra homework apologized the next day.\nWho or what does 'who' refer to?",
+      "targetWord": "who",
+      "sentence": "The teacher who assigned extra homework apologized the next day.",
+      "options": [
+        "The homework",
+        "The day",
+        "The teacher"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The teacher",
+      "hint": "Who gave the assignment?",
+      "explanation": "'who' refers to 'the teacher,' the person who assigned the work.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l62_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Yesterday we called the mechanic who fixed our brakes last winter.\nWho or what does 'who' refer to?",
+      "targetWord": "who",
+      "sentence": "Yesterday we called the mechanic who fixed our brakes last winter.",
+      "options": [
+        "The brakes",
+        "The mechanic",
+        "we"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The mechanic",
+      "hint": "Who did the repair work?",
+      "explanation": "'who' must refer to a person, so it points to 'the mechanic,' not the brakes.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l63_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Built in 1950, the bridge that connects the two towns is a local landmark.\nWho or what does 'that' refer to?",
+      "targetWord": "that",
+      "sentence": "Built in 1950, the bridge that connects the two towns is a local landmark.",
+      "options": [
+        "The towns",
+        "The bridge",
+        "The landmark"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The bridge",
+      "hint": "What links the two towns?",
+      "explanation": "'that' introduces a clause describing 'the bridge,' the structure joining the towns.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l63_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Everyone was impressed by the assistant who organized the files.\nWho or what does 'who' refer to?",
+      "targetWord": "who",
+      "sentence": "Everyone was impressed by the assistant who organized the files.",
+      "options": [
+        "The assistant",
+        "The files",
+        "everyone"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The assistant",
+      "hint": "Who did the organizing?",
+      "explanation": "'who' refers to 'the assistant,' the person praised for the work.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l63_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The recipe that my grandmother wrote by hand still works perfectly.\nWho or what does 'that' refer to?",
+      "targetWord": "that",
+      "sentence": "The recipe that my grandmother wrote by hand still works perfectly.",
+      "options": [
+        "hand",
+        "My grandmother",
+        "The recipe"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The recipe",
+      "hint": "What still works well today?",
+      "explanation": "'that' introduces a clause describing 'the recipe,' the thing being praised for working.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l64_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The city honored the engineer who designed the new bridge.\nWho or what does 'who' refer to?",
+      "targetWord": "who",
+      "sentence": "The city honored the engineer who designed the new bridge.",
+      "options": [
+        "The bridge",
+        "The engineer",
+        "The city"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The engineer",
+      "hint": "Who created the design?",
+      "explanation": "'who' refers to 'the engineer,' the person who did the designing.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l64_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The market that sells only organic produce opens at dawn.\nWho or what does 'that' refer to?",
+      "targetWord": "that",
+      "sentence": "The market that sells only organic produce opens at dawn.",
+      "options": [
+        "The market",
+        "The produce",
+        "dawn"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The market",
+      "hint": "What opens early?",
+      "explanation": "'that' introduces a clause describing 'the market,' the place that sells organic goods.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l64_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "A thank-you card went to the nurse who calmed the frightened child.\nWho or what does 'who' refer to?",
+      "targetWord": "who",
+      "sentence": "A thank-you card went to the nurse who calmed the frightened child.",
+      "options": [
+        "The child",
+        "The nurse",
+        "The card"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The nurse",
+      "hint": "Who provided the comfort?",
+      "explanation": "'who' refers to 'the nurse,' the person who calmed the child.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l65_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Rarely seen in public, the author who wrote the bestselling thriller avoids interviews.\nWho or what does 'who' refer to?",
+      "targetWord": "who",
+      "sentence": "Rarely seen in public, the author who wrote the bestselling thriller avoids interviews.",
+      "options": [
+        "The author",
+        "The thriller",
+        "interviews"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The author",
+      "hint": "Who wrote the book?",
+      "explanation": "'who' refers to 'the author,' the person who wrote it.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l65_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Downtown, the new bakery that just opened sells only sourdough.\nWho or what does 'that' refer to?",
+      "targetWord": "that",
+      "sentence": "Downtown, the new bakery that just opened sells only sourdough.",
+      "options": [
+        "The new bakery",
+        "Downtown",
+        "sourdough"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The new bakery",
+      "hint": "What place specializes in sourdough?",
+      "explanation": "'that' introduces a clause describing 'the bakery,' the business that sells sourdough.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l65_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The family hired the lawyer who had won several similar cases.\nWho or what does 'who' refer to?",
+      "targetWord": "who",
+      "sentence": "The family hired the lawyer who had won several similar cases.",
+      "options": [
+        "cases",
+        "The lawyer",
+        "The family"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The lawyer",
+      "hint": "Who had the winning track record?",
+      "explanation": "'who' refers to 'the lawyer,' the person hired for their case record.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l66_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Thousands of runners use the app that tracks daily steps.\nWho or what does 'that' refer to?",
+      "targetWord": "that",
+      "sentence": "Thousands of runners use the app that tracks daily steps.",
+      "options": [
+        "runners",
+        "The app",
+        "steps"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The app",
+      "hint": "What tool logs the daily activity?",
+      "explanation": "'that' introduces a clause describing 'the app,' the program that tracks steps.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l66_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The whole crew praised the pilot who landed the plane safely.\nWho or what does 'who' refer to?",
+      "targetWord": "who",
+      "sentence": "The whole crew praised the pilot who landed the plane safely.",
+      "options": [
+        "The crew",
+        "The pilot",
+        "The plane"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The pilot",
+      "hint": "Who handled the landing?",
+      "explanation": "'who' refers to 'the pilot,' the person who landed the plane.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l66_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The company that makes these shoes just opened a factory nearby.\nWho or what does 'that' refer to?",
+      "targetWord": "that",
+      "sentence": "The company that makes these shoes just opened a factory nearby.",
+      "options": [
+        "The factory",
+        "The company",
+        "shoes"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The company",
+      "hint": "What business opened the new factory?",
+      "explanation": "'that' introduces a clause describing 'the company,' the business making shoes.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l67_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "A thank-you note is owed to the neighbor who watered our plants while we traveled.\nWho or what does 'who' refer to?",
+      "targetWord": "who",
+      "sentence": "A thank-you note is owed to the neighbor who watered our plants while we traveled.",
+      "options": [
+        "The plants",
+        "we",
+        "The neighbor"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The neighbor",
+      "hint": "Who took care of the plants?",
+      "explanation": "'who' refers to 'the neighbor,' the person who did the watering.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l67_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Twice rejected by the studio, the script that finally became a hit film surprised everyone.\nWho or what does 'that' refer to?",
+      "targetWord": "that",
+      "sentence": "Twice rejected by the studio, the script that finally became a hit film surprised everyone.",
+      "options": [
+        "The studio",
+        "The script",
+        "everyone"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The script",
+      "hint": "What eventually succeeded despite the rejections?",
+      "explanation": "'that' introduces a clause describing 'the script,' the thing the studio rejected twice.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l67_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Every summer, gifts arrive with the uncle who never misses a visit.\nWho or what does 'who' refer to?",
+      "targetWord": "who",
+      "sentence": "Every summer, gifts arrive with the uncle who never misses a visit.",
+      "options": [
+        "gifts",
+        "summer",
+        "The uncle"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The uncle",
+      "hint": "Who makes the yearly visit?",
+      "explanation": "'who' refers to 'the uncle,' the person who visits.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l68_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "IT has since upgraded the server that crashed during the sale.\nWho or what does 'that' refer to?",
+      "targetWord": "that",
+      "sentence": "IT has since upgraded the server that crashed during the sale.",
+      "options": [
+        "IT",
+        "The server",
+        "The sale"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The server",
+      "hint": "What broke down during the busy sale?",
+      "explanation": "'that' introduces a clause describing 'the server,' the system that crashed.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l68_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "A small bonus went to the colleague who covered my shift.\nWho or what does 'who' refer to?",
+      "targetWord": "who",
+      "sentence": "A small bonus went to the colleague who covered my shift.",
+      "options": [
+        "The colleague",
+        "The bonus",
+        "shift"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The colleague",
+      "hint": "Who worked the extra hours?",
+      "explanation": "'who' refers to 'the colleague,' the person who covered the shift.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l68_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "My favorite spot in the whole park is the bench that overlooks the harbor.\nWho or what does 'that' refer to?",
+      "targetWord": "that",
+      "sentence": "My favorite spot in the whole park is the bench that overlooks the harbor.",
+      "options": [
+        "The park",
+        "The bench",
+        "The harbor"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The bench",
+      "hint": "What has the nice view?",
+      "explanation": "'that' introduces a clause describing 'the bench,' the seat overlooking the harbor.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l69_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Because traffic was heavy, we relied on the driver who knows the city well.\nWho or what does 'who' refer to?",
+      "targetWord": "who",
+      "sentence": "Because traffic was heavy, we relied on the driver who knows the city well.",
+      "options": [
+        "traffic",
+        "The city",
+        "The driver"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The driver",
+      "hint": "Who has the local knowledge?",
+      "explanation": "'who' refers to 'the driver,' the person who knows the routes.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l69_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "The job went to the candidate who answered every question with confidence.\nWho or what does 'who' refer to?",
+      "targetWord": "who",
+      "sentence": "The job went to the candidate who answered every question with confidence.",
+      "options": [
+        "question",
+        "The candidate",
+        "The job"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The candidate",
+      "hint": "Who impressed the interviewers?",
+      "explanation": "'who' refers to 'the candidate,' the person answering the questions.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l69_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Closed for repairs, the trail that winds through the forest reopens next spring.\nWho or what does 'that' refer to?",
+      "targetWord": "that",
+      "sentence": "Closed for repairs, the trail that winds through the forest reopens next spring.",
+      "options": [
+        "The forest",
+        "The trail",
+        "The repairs"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The trail",
+      "hint": "What path is currently closed?",
+      "explanation": "'that' introduces a clause describing 'the trail,' the path through the forest.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l70_q1",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Online, thousands liked the photo shared by the photographer who captured the sunset.\nWho or what does 'who' refer to?",
+      "targetWord": "who",
+      "sentence": "Online, thousands liked the photo shared by the photographer who captured the sunset.",
+      "options": [
+        "The photographer",
+        "thousands",
+        "The sunset"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The photographer",
+      "hint": "Who took the picture?",
+      "explanation": "'who' refers to 'the photographer,' the person who took the shot.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l70_q2",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Booked for weeks, the clinic that treats sports injuries just hired another doctor.\nWho or what does 'that' refer to?",
+      "targetWord": "that",
+      "sentence": "Booked for weeks, the clinic that treats sports injuries just hired another doctor.",
+      "options": [
+        "weeks",
+        "injuries",
+        "The clinic"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The clinic",
+      "hint": "What place is fully booked?",
+      "explanation": "'that' introduces a clause describing 'the clinic,' the place treating injuries.",
+      "grammarRule": "Relative Pronouns"
+    },
+    {
+      "id": "pr_l70_q3",
+      "instruction": "Resolve the pronoun.",
+      "subtype": "pronounResolution",
+      "interactionType": "Laser Aim",
+      "question": "Fresh peonies were used by the florist who arranged the wedding bouquet.\nWho or what does 'who' refer to?",
+      "targetWord": "who",
+      "sentence": "Fresh peonies were used by the florist who arranged the wedding bouquet.",
+      "options": [
+        "peonies",
+        "The florist",
+        "The bouquet"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The florist",
+      "hint": "Who made the arrangement?",
+      "explanation": "'who' refers to 'the florist,' the person who arranged the flowers.",
+      "grammarRule": "Relative Pronouns"
+    }
+  ]
 }

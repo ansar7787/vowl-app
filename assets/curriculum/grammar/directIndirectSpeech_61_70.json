@@ -8,540 +8,540 @@
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'By the time we arrived, they had already left.'",
+            "question": "Convert to reported speech: He asked, 'Where do you live?'",
             "options": [
-                "She said that by the time they had arrived, the others had already left.",
-                "She said that by the time they arrived, they had already left.",
-                "She said that by the time they had arrived, they had already been leaving."
+                "He asked where do I live.",
+                "He asked where I lived.",
+                "He asked where I live."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said that by the time they had arrived, the others had already left.",
-            "sentence": "She said, 'By the time we arrived, they had already left.'",
-            "hint": "'Arrived' → 'had arrived'. 'Had left' stays (already past perfect). Pronoun 'we' → 'they'.",
-            "explanation": "'Arrived' (past simple) shifts to 'had arrived' (past perfect). 'Had already left' is already past perfect - it stays unchanged.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "He asked where I lived.",
+            "sentence": "He asked, 'Where do you live?'",
+            "hint": "Wh-questions use statement word order, and the helper verb 'do' disappears.",
+            "explanation": "The wh-word stays, but the order becomes subject-then-verb, 'do' is dropped, and 'live' shifts to 'lived'.",
+            "grammarRule": "Reported Wh-Questions"
         },
         {
             "id": "dis_l61_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She asked, 'What would you recommend for a first-time visitor?'",
+            "question": "Convert to reported speech: She said, 'This park needs more benches.'",
             "options": [
-                "She asked what I would recommend for a first-time visitor.",
-                "She asked what would I recommend for a first-time visitor.",
-                "She asked what I should recommend for a first-time visitor."
+                "She said that that park needed more benches.",
+                "She said that this park needed more benches.",
+                "She said that that park needs more benches."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She asked what I would recommend for a first-time visitor.",
-            "sentence": "She asked, 'What would you recommend for a first-time visitor?'",
-            "hint": "'Would' stays. 'You' → 'I'. Statement order.",
-            "explanation": "'Would' does not shift further. 'You' → 'I'. Use statement word order with the wh-word first.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "She said that that park needed more benches.",
+            "sentence": "She said, 'This park needs more benches.'",
+            "hint": "'This' shifts to 'that', and the tense shifts too.",
+            "explanation": "'This' shifts to 'that', and 'needs' shifts to 'needed'.",
+            "grammarRule": "Time & Place Reference Shift"
         },
         {
             "id": "dis_l61_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The announcement said, 'Never leave your luggage unattended in the airport.'",
+            "question": "Convert to reported speech: She said, 'I could finish by Friday.'",
             "options": [
-                "The announcement reminded passengers never to leave their luggage unattended in the airport.",
-                "The announcement reminded passengers to never leave your luggage unattended in the airport.",
-                "The announcement reminded passengers not leave their luggage unattended in the airport."
+                "She said that she can finish by Friday.",
+                "She said that she could finish by Friday.",
+                "She said that she had could finish by Friday."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The announcement reminded passengers never to leave their luggage unattended in the airport.",
-            "sentence": "The announcement said, 'Never leave your luggage unattended in the airport.'",
-            "hint": "'Never leave' → 'never to leave'. 'Your' → 'their'.",
-            "explanation": "'Never leave' becomes 'never to leave'. 'Your luggage' → 'their luggage'. 'Reminded' fits the public announcement context.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "She said that she could finish by Friday.",
+            "sentence": "She said, 'I could finish by Friday.'",
+            "hint": "This modal is already in its 'reported speech' form — it doesn't shift any further.",
+            "explanation": "'Could' is already a backshifted modal, so it stays the same in reported speech; only the pronoun changes.",
+            "grammarRule": "No-Shift Exceptions"
         },
         {
             "id": "dis_l62_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: He said, 'I used to enjoy chess, but I haven't played in years.'",
+            "question": "Convert to reported speech: She asked, 'What time does the meeting start?'",
             "options": [
-                "He said he used to enjoy chess, but he hadn't played in years.",
-                "He said he used to enjoy chess, but he hasn't played in years.",
-                "He said he would enjoy chess, but he hadn't played in years."
+                "She asked what time does the meeting start.",
+                "She asked what time the meeting started.",
+                "She asked what time the meeting starts."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He said he used to enjoy chess, but he hadn't played in years.",
-            "sentence": "He said, 'I used to enjoy chess, but I haven't played in years.'",
-            "hint": "'Used to' stays. 'Haven't played' → 'hadn't played'. 'I' → 'he'.",
-            "explanation": "'Used to' remains unchanged. 'Haven't played' shifts to 'hadn't played'. Only the second clause requires a tense shift.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "She asked what time the meeting started.",
+            "sentence": "She asked, 'What time does the meeting start?'",
+            "hint": "Wh-questions use statement word order — no 'does', and the tense shifts.",
+            "explanation": "'Does' is dropped, word order becomes statement order, and 'starts' shifts to 'started'.",
+            "grammarRule": "Reported Wh-Questions"
         },
         {
             "id": "dis_l62_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She asked, 'Is it possible that the figures are incorrect?'",
+            "question": "Convert to reported speech: The council said, 'We shall review the proposal.'",
             "options": [
-                "She asked if it was possible that the figures were incorrect.",
-                "She asked if it is possible that the figures are incorrect.",
-                "She asked if it was possible that the figures had been incorrect."
+                "The council said that they shall review the proposal.",
+                "The council said that we should review the proposal.",
+                "The council said that they should review the proposal."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She asked if it was possible that the figures were incorrect.",
-            "sentence": "She asked, 'Is it possible that the figures are incorrect?'",
-            "hint": "'Is' → 'was'. 'Are' → 'were'. Both verbs shift.",
-            "explanation": "Both verbs shift: 'is possible' → 'was possible' and 'are incorrect' → 'were incorrect'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The council said that they should review the proposal.",
+            "sentence": "The council said, 'We shall review the proposal.'",
+            "hint": "'Shall' shifts to 'should' in reported speech, and the pronoun shifts too.",
+            "explanation": "'Shall' shifts to 'should', and 'we' shifts to 'they'.",
+            "grammarRule": "Modal Verb Backshift"
         },
         {
             "id": "dis_l62_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The researcher said, 'Ensure all participants have signed the consent form.'",
+            "question": "Convert to reported speech: He said, 'I upgraded the system.'",
             "options": [
-                "The researcher instructed the team to ensure all participants had signed the consent form.",
-                "The researcher instructed the team to ensure all participants have signed the consent form.",
-                "The researcher said ensure all participants had signed the consent form."
+                "He said that he upgraded the system.",
+                "He said that he had upgraded the system.",
+                "He said that he has upgraded the system."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The researcher instructed the team to ensure all participants had signed the consent form.",
-            "sentence": "The researcher said, 'Ensure all participants have signed the consent form.'",
-            "hint": "Imperative with embedded present perfect. 'Ensure' → 'to ensure'. 'Have signed' → 'had signed'.",
-            "explanation": "'Ensure' is an imperative → 'instructed the team to ensure'. 'Have signed' in the embedded clause → 'had signed'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "He said that he had upgraded the system.",
+            "sentence": "He said, 'I upgraded the system.'",
+            "hint": "The past simple verb shifts even further back, to past perfect.",
+            "explanation": "'Upgraded' (past simple) shifts to 'had upgraded' (past perfect).",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l63_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: He said, 'I didn't steal anything!'",
+            "question": "Convert to reported speech: She asked, 'Why did the river flood?'",
             "options": [
-                "He claimed he hadn't stolen anything.",
-                "He claimed he didn't steal anything.",
-                "He claimed he hadn't been stealing anything."
+                "She asked why the river flooded.",
+                "She asked why did the river flood.",
+                "She asked why the river had flooded."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He claimed he hadn't stolen anything.",
-            "sentence": "He said, 'I didn't steal anything!'",
-            "hint": "'Didn't steal' → 'hadn't stolen'. The reporting verb 'claimed' suits a denial.",
-            "explanation": "'Didn't steal' (past simple) shifts to 'hadn't stolen' (past perfect). 'Claimed' suits a strong denial.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "She asked why the river had flooded.",
+            "sentence": "She asked, 'Why did the river flood?'",
+            "hint": "Wh-questions use statement word order, and 'did' disappears — but watch the tense carefully.",
+            "explanation": "'Did' is dropped, word order becomes statement order, and 'flooded' (already past) shifts back further to 'had flooded'.",
+            "grammarRule": "Reported Wh-Questions"
         },
         {
             "id": "dis_l63_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She asked, 'How are you planning to fund the research?'",
+            "question": "Convert to reported speech: He said, 'I should see a doctor.'",
             "options": [
-                "She asked how I was planning to fund the research.",
-                "She asked how are you planning to fund the research.",
-                "She asked how I had been planning to fund the research."
+                "He said that I should see a doctor.",
+                "He said that he should see a doctor.",
+                "He said that he shall see a doctor."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She asked how I was planning to fund the research.",
-            "sentence": "She asked, 'How are you planning to fund the research?'",
-            "hint": "'Are planning' → 'was planning'. 'You' → 'I'. Statement order.",
-            "explanation": "'Are planning' shifts to 'was planning'. 'You' → 'I'. Use statement word order.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "He said that he should see a doctor.",
+            "sentence": "He said, 'I should see a doctor.'",
+            "hint": "This modal is already in its 'reported speech' form.",
+            "explanation": "'Should' is already backshifted, so it stays the same; only the pronoun changes.",
+            "grammarRule": "No-Shift Exceptions"
         },
         {
             "id": "dis_l63_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The manual said, 'Read the instructions twice before assembling the furniture.'",
+            "question": "Convert to reported speech: He said, 'This offer ends today.'",
             "options": [
-                "The manual told buyers to read the instructions twice before assembling the furniture.",
-                "The manual told buyers reading the instructions twice before assembling the furniture.",
-                "The manual said readers should read the instructions twice before assembling."
+                "He said that that offer ends that day.",
+                "He said that this offer ended today.",
+                "He said that that offer ended that day."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The manual told buyers to read the instructions twice before assembling the furniture.",
-            "sentence": "The manual said, 'Read the instructions twice before assembling the furniture.'",
-            "hint": "Imperative: 'told + buyers + to + read'.",
-            "explanation": "'Read' is an imperative → 'told buyers to read the instructions twice before assembling the furniture'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "He said that that offer ended that day.",
+            "sentence": "He said, 'This offer ends today.'",
+            "hint": "Both 'this' and 'today' shift, along with the verb.",
+            "explanation": "'This' shifts to 'that', 'ends' shifts to 'ended', and 'today' shifts to 'that day'.",
+            "grammarRule": "Time & Place Reference Shift"
         },
         {
             "id": "dis_l64_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The manager said, 'She has consistently outperformed her colleagues this year.'",
+            "question": "Convert to reported speech: He asked, 'How does this app work?'",
             "options": [
-                "The manager said she had consistently outperformed her colleagues that year.",
-                "The manager said she has consistently outperformed her colleagues this year.",
-                "The manager said she had consistently been outperforming her colleagues that year."
+                "He asked how that app worked.",
+                "He asked how does this app work.",
+                "He asked how this app works."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The manager said she had consistently outperformed her colleagues that year.",
-            "sentence": "The manager said, 'She has consistently outperformed her colleagues this year.'",
-            "hint": "'Has outperformed' → 'had outperformed'. 'This year' → 'that year'.",
-            "explanation": "'Has outperformed' (present perfect) shifts to 'had outperformed' (past perfect). 'This year' → 'that year'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "He asked how that app worked.",
+            "sentence": "He asked, 'How does this app work?'",
+            "hint": "Wh-questions use statement word order, 'does' disappears, and 'this' shifts too.",
+            "explanation": "'Does' is dropped, 'this' shifts to 'that', and 'works' shifts to 'worked'.",
+            "grammarRule": "Reported Wh-Questions"
         },
         {
             "id": "dis_l64_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The CEO asked, 'Whose idea was it to change the strategy?'",
+            "question": "Convert to reported speech: The team said, 'We shall present the results.'",
             "options": [
-                "The CEO asked whose idea it had been to change the strategy.",
-                "The CEO asked whose idea it was to change the strategy.",
-                "The CEO asked whose idea was it to change the strategy."
+                "The team said that we should present the results.",
+                "The team said that they shall present the results.",
+                "The team said that they should present the results."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The CEO asked whose idea it had been to change the strategy.",
-            "sentence": "The CEO asked, 'Whose idea was it to change the strategy?'",
-            "hint": "'Was' → 'had been'. Statement order used.",
-            "explanation": "Past simple 'was' shifts to past perfect 'had been'. Statement word order: 'whose idea it had been'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The team said that they should present the results.",
+            "sentence": "The team said, 'We shall present the results.'",
+            "hint": "'Shall' shifts to 'should', and the pronoun shifts too.",
+            "explanation": "'Shall' shifts to 'should', and 'we' shifts to 'they'.",
+            "grammarRule": "Modal Verb Backshift"
         },
         {
             "id": "dis_l64_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The language coach said, 'Practise speaking English with native speakers whenever you can.'",
+            "question": "Convert to reported speech: The ranger warned us, 'Don't light fires here.'",
             "options": [
-                "The language coach encouraged students to practise speaking English with native speakers whenever they could.",
-                "The language coach encouraged students to practice speaking English with native speakers whenever you can.",
-                "The language coach said practise speaking English whenever you can."
+                "The ranger warned us not to light fires there.",
+                "The ranger warned us not to light fires here.",
+                "The ranger warned us don't light fires there."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The language coach encouraged students to practise speaking English with native speakers whenever they could.",
-            "sentence": "The language coach said, 'Practise speaking English with native speakers whenever you can.'",
-            "hint": "Imperative: 'encouraged + students + to + practise'. 'You' → 'they'. 'Can' → 'could'.",
-            "explanation": "'Practise' is an imperative → 'encouraged students to practise'. 'You' → 'they'. 'Can' shifts to 'could' in the subordinate clause.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The ranger warned us not to light fires there.",
+            "sentence": "The ranger warned us, 'Don't light fires here.'",
+            "hint": "Negative commands shift to 'not to + verb', and 'here' shifts too.",
+            "explanation": "'Don't light' becomes 'not to light', and 'here' shifts to 'there'.",
+            "grammarRule": "Reported Commands & Requests"
         },
         {
             "id": "dis_l65_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'They were still negotiating when the deadline passed.'",
+            "question": "Convert to reported speech: She asked, 'When will the results be announced?'",
             "options": [
-                "She said they had still been negotiating when the deadline passed.",
-                "She said they were still negotiating when the deadline passed.",
-                "She said they had still been negotiating when the deadline had passed."
+                "She asked when the results will be announced.",
+                "She asked when will the results be announced.",
+                "She asked when the results would be announced."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said they had still been negotiating when the deadline passed.",
-            "sentence": "She said, 'They were still negotiating when the deadline passed.'",
-            "hint": "'Were negotiating' → 'had been negotiating'. 'Passed' stays (interrupting past event).",
-            "explanation": "'Were negotiating' (past continuous) shifts to 'had been negotiating' (past perfect continuous). 'Passed' stays as past simple.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "She asked when the results would be announced.",
+            "sentence": "She asked, 'When will the results be announced?'",
+            "hint": "Wh-questions use statement word order, and the modal shifts too.",
+            "explanation": "Word order becomes statement order, and 'will' shifts to 'would'.",
+            "grammarRule": "Reported Wh-Questions"
         },
         {
             "id": "dis_l65_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The employee asked, 'Does this rule apply to part-time staff too?'",
+            "question": "Convert to reported speech: She said, 'I would love to visit Kyoto.'",
             "options": [
-                "The employee asked whether that rule applied to part-time staff too.",
-                "The employee asked does this rule apply to part-time staff too.",
-                "The employee asked whether that rule applied for part-time staff too."
+                "She said that she will love to visit Kyoto.",
+                "She said that I would love to visit Kyoto.",
+                "She said that she would love to visit Kyoto."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The employee asked whether that rule applied to part-time staff too.",
-            "sentence": "The employee asked, 'Does this rule apply to part-time staff too?'",
-            "hint": "'Does apply' → 'applied'. 'This' → 'that'. Use 'whether'. Note: 'apply to' not 'apply for'.",
-            "explanation": "'Does apply' → 'applied'. 'This' → 'that'. Use 'whether'. The correct preposition is 'apply to', not 'apply for'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "She said that she would love to visit Kyoto.",
+            "sentence": "She said, 'I would love to visit Kyoto.'",
+            "hint": "This modal is already in its 'reported speech' form.",
+            "explanation": "'Would' is already backshifted, so it stays the same; only the pronoun changes.",
+            "grammarRule": "No-Shift Exceptions"
         },
         {
             "id": "dis_l65_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The legal advisor said, 'Obtain written consent before recording any conversation.'",
+            "question": "Convert to reported speech: He said, 'I recovered quickly.'",
             "options": [
-                "The legal advisor told us to obtain written consent before recording any conversation.",
-                "The legal advisor told us obtaining written consent before recording any conversation.",
-                "The legal advisor said to obtain written consent before recording conversations."
+                "He said that he recovered quickly.",
+                "He said that he had recovered quickly.",
+                "He said that he has recovered quickly."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The legal advisor told us to obtain written consent before recording any conversation.",
-            "sentence": "The legal advisor said, 'Obtain written consent before recording any conversation.'",
-            "hint": "Imperative: 'told + us + to + obtain'.",
-            "explanation": "'Obtain' is an imperative → 'told us to obtain written consent before recording any conversation'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "He said that he had recovered quickly.",
+            "sentence": "He said, 'I recovered quickly.'",
+            "hint": "This verb is already past simple, so in reported speech it moves one more step back.",
+            "explanation": "'Recovered' (past simple) shifts to 'had recovered' (past perfect).",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l66_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: He said, 'I've just realized I've made a terrible mistake.'",
+            "question": "Convert to reported speech: He asked, 'Which restaurant do you recommend?'",
             "options": [
-                "He said he had just realized he had made a terrible mistake.",
-                "He said he has just realized he has made a terrible mistake.",
-                "He said he had just realized he made a terrible mistake."
+                "He asked which restaurant do I recommend.",
+                "He asked which restaurant I recommended.",
+                "He asked which restaurant I recommend."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He said he had just realized he had made a terrible mistake.",
-            "sentence": "He said, 'I've just realized I've made a terrible mistake.'",
-            "hint": "Both present perfect verbs shift to past perfect. 'Have realized' → 'had realized', 'have made' → 'had made'.",
-            "explanation": "Both 'have realized' and 'have made' shift to 'had realized' and 'had made'. Both tense shifts are required.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "He asked which restaurant I recommended.",
+            "sentence": "He asked, 'Which restaurant do you recommend?'",
+            "hint": "Wh-questions use statement word order, and 'do' disappears.",
+            "explanation": "'Do' is dropped, word order becomes statement order, and 'recommend' shifts to 'recommended'.",
+            "grammarRule": "Reported Wh-Questions"
         },
         {
             "id": "dis_l66_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She asked, 'Which issues are you still working to resolve?'",
+            "question": "Convert to reported speech: She said, 'I am watching this show tonight.'",
             "options": [
-                "She asked which issues I was still working to resolve.",
-                "She asked which issues are you still working to resolve.",
-                "She asked which issues were I still working to resolve."
+                "She said that she was watching this show tonight.",
+                "She said that she was watching that show that night.",
+                "She said that she is watching that show that night."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She asked which issues I was still working to resolve.",
-            "sentence": "She asked, 'Which issues are you still working to resolve?'",
-            "hint": "'Are working' → 'was working'. 'You' → 'I'. Statement order.",
-            "explanation": "'Are working' → 'was working'. 'You' → 'I'. Use statement word order (no inversion).",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "She said that she was watching that show that night.",
+            "sentence": "She said, 'I am watching this show tonight.'",
+            "hint": "Both 'this' and 'tonight' shift, and the tense shifts too.",
+            "explanation": "'Am watching' shifts to 'was watching', 'this' shifts to 'that', and 'tonight' shifts to 'that night'.",
+            "grammarRule": "Time & Place Reference Shift"
         },
         {
             "id": "dis_l66_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The campaign said, 'Vote for the candidate who best represents your values.'",
+            "question": "Convert to reported speech: The organizer told us, 'Arrive early.'",
             "options": [
-                "The campaign encouraged voters to vote for the candidate who best represented their values.",
-                "The campaign encouraged voters to vote for the candidate who best represents your values.",
-                "The campaign said vote for the candidate who best represents your values."
+                "The organizer told us arrive early.",
+                "The organizer told us to arrive early.",
+                "The organizer told us that we arrive early."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The campaign encouraged voters to vote for the candidate who best represented their values.",
-            "sentence": "The campaign said, 'Vote for the candidate who best represents your values.'",
-            "hint": "Imperative with relative clause: 'encouraged + voters + to + vote'. 'Represents' → 'represented'. 'Your' → 'their'.",
-            "explanation": "'Vote' is an imperative → 'encouraged voters to vote'. 'Represents' → 'represented'. 'Your values' → 'their values'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The organizer told us to arrive early.",
+            "sentence": "The organizer told us, 'Arrive early.'",
+            "hint": "A command shifts to 'told + people + to + verb'.",
+            "explanation": "Commands are reported with 'told + object + to-infinitive'. 'Arrive early' becomes 'to arrive early'.",
+            "grammarRule": "Reported Commands & Requests"
         },
         {
             "id": "dis_l67_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'The presentation had gone well, but the Q&A was difficult.'",
+            "question": "Convert to reported speech: She asked, 'Who is leading the project?'",
             "options": [
-                "She said the presentation had gone well, but the Q&A had been difficult.",
-                "She said the presentation had gone well, but the Q&A was difficult.",
-                "She said the presentation went well, but the Q&A had been difficult."
+                "She asked who was leading the project.",
+                "She asked who leads the project.",
+                "She asked who is leading the project."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She said the presentation had gone well, but the Q&A had been difficult.",
-            "sentence": "She said, 'The presentation had gone well, but the Q&A was difficult.'",
-            "hint": "'Had gone' stays. 'Was' → 'had been'. Both clauses need checking.",
-            "explanation": "'Had gone' (already past perfect) stays. 'Was difficult' shifts to 'had been difficult'. Both clauses must be addressed.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "She asked who was leading the project.",
+            "sentence": "She asked, 'Who is leading the project?'",
+            "hint": "'Who' as the subject keeps the same word order — only the tense shifts.",
+            "explanation": "'Who' is the subject here, so word order doesn't change; only 'is leading' shifts to 'was leading'.",
+            "grammarRule": "Reported Wh-Questions"
         },
         {
             "id": "dis_l67_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The senior partner asked, 'Are you certain this is the right approach?'",
+            "question": "Convert to reported speech: The committee said, 'We shall vote next week.'",
             "options": [
-                "The senior partner asked if I was certain that was the right approach.",
-                "The senior partner asked if I am certain this is the right approach.",
-                "The senior partner asked if I was certain this was the right approach."
+                "The committee said that they should vote the following week.",
+                "The committee said that they should vote next week.",
+                "The committee said that they shall vote the following week."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The senior partner asked if I was certain that was the right approach.",
-            "sentence": "The senior partner asked, 'Are you certain this is the right approach?'",
-            "hint": "'Are' → 'was'. 'This' → 'that'. 'Is' → 'was'. Use 'if'.",
-            "explanation": "Three shifts: 'are' → 'was', 'this' → 'that', 'is' → 'was'. Use 'if' for yes/no questions.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The committee said that they should vote the following week.",
+            "sentence": "The committee said, 'We shall vote next week.'",
+            "hint": "Both 'shall' and 'next week' shift together here.",
+            "explanation": "'Shall' shifts to 'should', and 'next week' shifts to 'the following week'.",
+            "grammarRule": "Modal Verb Backshift"
         },
         {
             "id": "dis_l67_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The customer service manual said, 'Treat every complaint as an opportunity to improve.'",
+            "question": "Convert to reported speech: He said, 'I might join the call late.'",
             "options": [
-                "The customer service manual told staff to treat every complaint as an opportunity to improve.",
-                "The customer service manual said every complaint was an opportunity to improve.",
-                "The customer service manual told staff treating every complaint as an opportunity to improve."
+                "He said that he may join the call late.",
+                "He said that I might join the call late.",
+                "He said that he might join the call late."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The customer service manual told staff to treat every complaint as an opportunity to improve.",
-            "sentence": "The customer service manual said, 'Treat every complaint as an opportunity to improve.'",
-            "hint": "Imperative: 'told + staff + to + treat'.",
-            "explanation": "'Treat' is an imperative → 'told staff to treat every complaint as an opportunity to improve'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "He said that he might join the call late.",
+            "sentence": "He said, 'I might join the call late.'",
+            "hint": "This modal is already in its 'reported speech' form.",
+            "explanation": "'Might' is already backshifted, so it stays the same; only the pronoun changes.",
+            "grammarRule": "No-Shift Exceptions"
         },
         {
             "id": "dis_l68_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'I should have prepared for the interview better.'",
+            "question": "Convert to reported speech: He asked, 'How long have you had this pain?'",
             "options": [
-                "She said she should have prepared for the interview better.",
-                "She said she should prepare for the interview better.",
-                "She said she had better prepared for the interview."
+                "He asked how long I had that pain.",
+                "He asked how long have I had this pain.",
+                "He asked how long I had had that pain."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said she should have prepared for the interview better.",
-            "sentence": "She said, 'I should have prepared for the interview better.'",
-            "hint": "'Should have prepared' stays - past modal perfect does not shift further.",
-            "explanation": "'Should have prepared' is a past modal perfect. It cannot shift further in reported speech and remains unchanged.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "He asked how long I had had that pain.",
+            "sentence": "He asked, 'How long have you had this pain?'",
+            "hint": "Wh-questions use statement word order; present perfect shifts to past perfect ('had had').",
+            "explanation": "Word order becomes statement order, 'this' shifts to 'that', and 'have had' shifts to 'had had' (the past perfect of 'have').",
+            "grammarRule": "Reported Wh-Questions"
         },
         {
             "id": "dis_l68_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The interviewer asked, 'What do you find most challenging about the role?'",
+            "question": "Convert to reported speech: They said, 'We explored the old town.'",
             "options": [
-                "The interviewer asked what I found most challenging about the role.",
-                "The interviewer asked what do I find most challenging about the role.",
-                "The interviewer asked what I had found most challenging about the role."
+                "They said that they explored the old town.",
+                "They said that they had explored the old town.",
+                "They said that we had explored the old town."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The interviewer asked what I found most challenging about the role.",
-            "sentence": "The interviewer asked, 'What do you find most challenging about the role?'",
-            "hint": "'Do find' → 'found'. 'You' → 'I'. Statement order.",
-            "explanation": "Drop 'do', shift 'find' to 'found', and use statement word order. 'You' → 'I'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "They said that they had explored the old town.",
+            "sentence": "They said, 'We explored the old town.'",
+            "hint": "Two things move together in this one: the verb tense and the pronoun.",
+            "explanation": "'Explored' shifts to 'had explored', and 'we' shifts to 'they'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l68_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The supervisor said, 'Check that all safety equipment is in working order before each shift.'",
+            "question": "Convert to reported speech: The IT team warned us, 'Don't click suspicious links.'",
             "options": [
-                "The supervisor told workers to check that all safety equipment was in working order before each shift.",
-                "The supervisor told workers to check that all safety equipment is in working order before each shift.",
-                "The supervisor told workers checking that all safety equipment was in working order before each shift."
+                "The IT team warned us not to click suspicious links.",
+                "The IT team warned us to not click suspicious links.",
+                "The IT team warned us don't click suspicious links."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The supervisor told workers to check that all safety equipment was in working order before each shift.",
-            "sentence": "The supervisor said, 'Check that all safety equipment is in working order before each shift.'",
-            "hint": "Imperative: 'told + workers + to + check'. 'Is' in the subordinate clause → 'was'.",
-            "explanation": "'Check' → 'to check'. In the embedded clause, 'is in working order' → 'was in working order'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The IT team warned us not to click suspicious links.",
+            "sentence": "The IT team warned us, 'Don't click suspicious links.'",
+            "hint": "Negative commands shift to 'warned + people + not to + verb'.",
+            "explanation": "Negative commands use 'warned + object + not to + infinitive'. 'Don't click' becomes 'not to click'.",
+            "grammarRule": "Reported Commands & Requests"
         },
         {
             "id": "dis_l69_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'I wasn't expecting such a large turnout.'",
+            "question": "Convert to reported speech: She asked, 'What kind of music do you like?'",
             "options": [
-                "She said she hadn't been expecting such a large turnout.",
-                "She said she wasn't expecting such a large turnout.",
-                "She said she hadn't expected such a large turnout."
+                "She asked what kind of music I liked.",
+                "She asked what kind of music I like.",
+                "She asked what kind of music do I like."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She said she hadn't been expecting such a large turnout.",
-            "sentence": "She said, 'I wasn't expecting such a large turnout.'",
-            "hint": "'Was not expecting' (past continuous) → 'had not been expecting' (past perfect continuous).",
-            "explanation": "'Wasn't expecting' (past continuous negative) shifts to 'hadn't been expecting' (past perfect continuous negative).",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "She asked what kind of music I liked.",
+            "sentence": "She asked, 'What kind of music do you like?'",
+            "hint": "Wh-questions use statement word order, and 'do' disappears.",
+            "explanation": "'Do' is dropped, word order becomes statement order, and 'like' shifts to 'liked'.",
+            "grammarRule": "Reported Wh-Questions"
         },
         {
             "id": "dis_l69_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She asked, 'What kind of feedback did you receive from the clients?'",
+            "question": "Convert to reported speech: She said, 'I ought to apologize.'",
             "options": [
-                "She asked what kind of feedback I had received from the clients.",
-                "She asked what kind of feedback did I receive from the clients.",
-                "She asked what kind of feedback I received from the clients."
+                "She said that she ought to apologized.",
+                "She said that I ought to apologize.",
+                "She said that she ought to apologize."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She asked what kind of feedback I had received from the clients.",
-            "sentence": "She asked, 'What kind of feedback did you receive from the clients?'",
-            "hint": "Drop 'did'. 'Receive' → 'had received'. 'You' → 'I'. Statement order.",
-            "explanation": "Drop 'did'. 'Receive' shifts to 'had received'. 'You' → 'I'. Use statement word order.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "She said that she ought to apologize.",
+            "sentence": "She said, 'I ought to apologize.'",
+            "hint": "This modal is already in its 'reported speech' form.",
+            "explanation": "'Ought to' doesn't shift further in reported speech; only the pronoun changes.",
+            "grammarRule": "No-Shift Exceptions"
         },
         {
             "id": "dis_l69_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The travel blog said, 'Make an effort to learn at least a few words of the local language.'",
+            "question": "Convert to reported speech: He said, 'I am staying here until Sunday.'",
             "options": [
-                "The travel blog encouraged visitors to make an effort to learn at least a few words of the local language.",
-                "The travel blog said make an effort to learn at least a few words of the local language.",
-                "The travel blog told visitors making an effort to learn at least a few words of the local language."
+                "He said that he is staying there until Sunday.",
+                "He said that he was staying here until Sunday.",
+                "He said that he was staying there until Sunday."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The travel blog encouraged visitors to make an effort to learn at least a few words of the local language.",
-            "sentence": "The travel blog said, 'Make an effort to learn at least a few words of the local language.'",
-            "hint": "Imperative: 'encouraged + visitors + to + make an effort'.",
-            "explanation": "'Make an effort' is an imperative → 'encouraged visitors to make an effort to learn at least a few words of the local language'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "He said that he was staying there until Sunday.",
+            "sentence": "He said, 'I am staying here until Sunday.'",
+            "hint": "'Here' shifts to 'there', and the tense shifts too.",
+            "explanation": "'Here' shifts to 'there', and 'am staying' shifts to 'was staying'.",
+            "grammarRule": "Time & Place Reference Shift"
         },
         {
             "id": "dis_l70_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The manager said, 'Your performance has improved significantly this quarter.'",
+            "question": "Convert to reported speech: He asked, 'Where did you park the car?'",
             "options": [
-                "The manager told me my performance had improved significantly that quarter.",
-                "The manager told me my performance has improved significantly this quarter.",
-                "The manager told me that I improved significantly that quarter."
+                "He asked where I parked the car.",
+                "He asked where did I park the car.",
+                "He asked where I had parked the car."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The manager told me my performance had improved significantly that quarter.",
-            "sentence": "The manager said, 'Your performance has improved significantly this quarter.'",
-            "hint": "'Has improved' → 'had improved'. 'This quarter' → 'that quarter'. 'Your' → 'my'.",
-            "explanation": "'Has improved' → 'had improved'. 'This quarter' → 'that quarter'. 'Your performance' → 'my performance'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "He asked where I had parked the car.",
+            "sentence": "He asked, 'Where did you park the car?'",
+            "hint": "Wh-questions use statement word order; watch how far back the tense shifts.",
+            "explanation": "Word order becomes statement order, and 'parked' (already past) shifts back further to 'had parked'.",
+            "grammarRule": "Reported Wh-Questions"
         },
         {
             "id": "dis_l70_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She asked, 'How confident are you that the strategy will succeed?'",
+            "question": "Convert to reported speech: The board said, 'We shall announce the decision tomorrow.'",
             "options": [
-                "She asked how confident I was that the strategy would succeed.",
-                "She asked how confident are I that the strategy will succeed.",
-                "She asked how confident I was that the strategy would have succeeded."
+                "The board said that they shall announce the decision the next day.",
+                "The board said that they should announce the decision tomorrow.",
+                "The board said that they should announce the decision the next day."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She asked how confident I was that the strategy would succeed.",
-            "sentence": "She asked, 'How confident are you that the strategy will succeed?'",
-            "hint": "'Are' → 'was'. 'Will succeed' → 'would succeed'. Statement order.",
-            "explanation": "'Are confident' → 'was confident'. 'Will succeed' → 'would succeed'. Use statement word order.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The board said that they should announce the decision the next day.",
+            "sentence": "The board said, 'We shall announce the decision tomorrow.'",
+            "hint": "Both 'shall' and 'tomorrow' shift together here.",
+            "explanation": "'Shall' shifts to 'should', and 'tomorrow' shifts to 'the next day'.",
+            "grammarRule": "Modal Verb Backshift"
         },
         {
             "id": "dis_l70_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The training manual said, 'Maintain a professional attitude when dealing with difficult customers.'",
+            "question": "Convert to reported speech: They said, 'We would rather wait.'",
             "options": [
-                "The training manual instructed employees to maintain a professional attitude when dealing with difficult customers.",
-                "The training manual instructed employees maintain a professional attitude when dealing with difficult customers.",
-                "The training manual said employees should remaining calm when dealing with difficult customers."
+                "They said that they will rather wait.",
+                "They said that they would rather wait.",
+                "They said that we would rather wait."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The training manual instructed employees to maintain a professional attitude when dealing with difficult customers.",
-            "sentence": "The training manual said, 'Maintain a professional attitude when dealing with difficult customers.'",
-            "hint": "Imperative: 'instructed + employees + to + maintain'.",
-            "explanation": "'Maintain' is an imperative → 'instructed employees to maintain a professional attitude when dealing with difficult customers'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "They said that they would rather wait.",
+            "sentence": "They said, 'We would rather wait.'",
+            "hint": "This modal is already in its 'reported speech' form.",
+            "explanation": "'Would' is already backshifted, so it stays the same; only the pronoun changes.",
+            "grammarRule": "No-Shift Exceptions"
         }
     ]
 }

@@ -1,577 +1,577 @@
 {
-    "gameType": "questionFormatter",
-    "batchIndex": 9,
-    "levels": "81-90",
-    "quests": [
-        {
-            "id": "qf_l81_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She plays _____ violin in an orchestra.",
-            "sentence": "She plays _____ violin in an orchestra.",
-            "options": [
-                "the",
-                "a",
-                "an",
-                "-"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the",
-            "hint": "Musical instruments use 'the' when referring to playing the instrument (not just any instrument).",
-            "explanation": "'The' is used with musical instruments in the context of playing: 'play the violin/piano/guitar'. This is a fixed rule in English, unlike many other languages.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l81_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She is _____ engineer working on renewable energy.",
-            "sentence": "She is _____ engineer working on renewable energy.",
-            "options": [
-                "an",
-                "a",
-                "the",
-                "-"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "an",
-            "hint": "Use 'an' before a vowel sound - 'engineer' starts with the vowel sound /ɛ/.",
-            "explanation": "'An' is used before words beginning with a vowel sound. 'Engineer' starts with /ɛ/ (a vowel sound), so 'an engineer' is correct, not 'a engineer'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l81_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "He has breakfast at _____ seven every morning.",
-            "sentence": "He has breakfast at _____ seven every morning.",
-            "options": [
-                "-",
-                "a",
-                "the",
-                "an"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "-",
-            "hint": "No article with meals ('breakfast') and no article with clock times using 'at'.",
-            "explanation": "Meals do not take an article in English: 'have breakfast/lunch/dinner'. Times also don't need an article: 'at seven'. Both use the zero article here.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l82_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "_____ Nile is the longest river in Africa.",
-            "sentence": "_____ Nile is the longest river in Africa.",
-            "options": [
-                "The",
-                "A",
-                "An",
-                "-"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The",
-            "hint": "Rivers, mountain ranges, oceans, and seas always take 'the'.",
-            "explanation": "Geographical features such as rivers ('the Nile'), mountain ranges ('the Alps'), and oceans ('the Pacific') always use 'the'. Individual mountains ('Mount Everest') and lakes ('Lake Victoria') do not.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l82_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She went to _____ hospital to visit her friend.",
-            "sentence": "She went to _____ hospital to visit her friend.",
-            "options": [
-                "the",
-                "a",
-                "an",
-                "-"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "the",
-            "hint": "'The hospital' = a specific place (as a building/location). 'Hospital' without 'the' = as an institution (being admitted as a patient).",
-            "explanation": "In British English, 'go to hospital' (zero article) means being admitted as a patient. 'Go to the hospital' (with 'the') means visiting the building as a specific place. Since she is visiting (not a patient herself), 'the' is correct.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l82_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "They are looking for _____ experienced project manager.",
-            "sentence": "They are looking for _____ experienced project manager.",
-            "options": [
-                "an",
-                "a",
-                "the",
-                "-"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "an",
-            "hint": "Use 'an' before a vowel sound - 'experienced' starts with /ɪk/ (vowel sound).",
-            "explanation": "'Experienced' begins with a vowel sound /ɪk/, so 'an experienced' is correct. The article choice depends on the sound of the next word, not just the first letter ('a university' uses 'a' because /juː/ is a consonant sound).",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l83_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She doesn't have _____ free time these days.",
-            "sentence": "She doesn't have _____ free time these days.",
-            "options": [
-                "much",
-                "many",
-                "a lot",
-                "few"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "much",
-            "hint": "'Free time' is uncountable - use 'much' (not 'many') in questions and negatives.",
-            "explanation": "'Time' is uncountable, so it takes 'much' (not 'many', which is for countable nouns). In positive sentences, 'a lot of' is more natural than 'much', but 'much' is correct in negatives.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l83_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "There were _____ people at the concert - barely fifty.",
-            "sentence": "There were _____ people at the concert - barely fifty.",
-            "options": [
-                "few",
-                "little",
-                "a few",
-                "many"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "few",
-            "hint": "'Few' (without 'a') emphasizes an insufficient number - closer to 'almost none'.",
-            "explanation": "'Few' (without 'a') has a negative connotation: 'barely any, not enough'. 'A few' has a positive connotation: 'some, enough'. Here, 'barely fifty' signals disappointment, so 'few' is correct. 'Little' is for uncountable nouns.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l83_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Could you give me _____ advice on this?",
-            "sentence": "Could you give me _____ advice on this?",
-            "options": [
-                "some",
-                "any",
-                "a few",
-                "many"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "some",
-            "hint": "'Advice' is uncountable - use 'some' in affirmative requests, 'any' in negatives/yes-no questions.",
-            "explanation": "'Advice' is an uncountable noun, so it cannot take 'a few' or 'many'. 'Some' is used in polite requests and affirmative statements; 'any' is more typical in direct questions and negatives.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l84_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She arrived _____ 7 o'clock _____ the morning.",
-            "sentence": "She arrived _____ 7 o'clock _____ the morning.",
-            "options": [
-                "at / in",
-                "in / at",
-                "on / in",
-                "at / on"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "at / in",
-            "hint": "'At' + clock time; 'in' + morning/afternoon/evening.",
-            "explanation": "'At' is used with specific clock times. 'In' is used with parts of the day (morning, afternoon, evening, night). 'On' is for days and dates.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l84_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The class is _____ Monday _____ 9 AM.",
-            "sentence": "The class is _____ Monday _____ 9 AM.",
-            "options": [
-                "on / at",
-                "at / on",
-                "in / at",
-                "on / in"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "on / at",
-            "hint": "'On' + day of the week; 'at' + clock time.",
-            "explanation": "'On' is used with days of the week: 'on Monday', 'on Friday'. 'At' is used with clock times: 'at 9 AM'. Never 'in Monday' or 'in 9 AM'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l84_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "He has been working here _____ 2019.",
-            "sentence": "He has been working here _____ 2019.",
-            "options": [
-                "since",
-                "for",
-                "from",
-                "during"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "since",
-            "hint": "'Since' + a point in time; 'for' + a duration.",
-            "explanation": "'Since' is used with a specific point in time ('since 2019', 'since Monday'). 'For' is used with a duration ('for five years', 'for two hours'). 'From' needs 'to': 'from 2019 to 2025'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l85_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She walked _____ the bridge and _____ the hill.",
-            "sentence": "She walked _____ the bridge and _____ the hill.",
-            "options": [
-                "across / up",
-                "through / over",
-                "over / up",
-                "across / over"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "across / up",
-            "hint": "'Across' = from one side to the other (horizontal surface); 'up' = movement to a higher position.",
-            "explanation": "'Across' means from one side to the other on a flat surface ('across the bridge'). 'Up' means moving to a higher position ('up the hill'). 'Over' can sometimes replace 'across', but 'over the hill' has an idiomatic meaning (past one's prime).",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l85_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The cat jumped _____ the fence and ran _____ the garden.",
-            "sentence": "The cat jumped _____ the fence and ran _____ the garden.",
-            "options": [
-                "over / through",
-                "above / across",
-                "across / through",
-                "over / across"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "over / through",
-            "hint": "'Over' = clearing an obstacle (vertical movement); 'through' = from one end to the other (inside a space).",
-            "explanation": "'Over' means clearing something by going above it ('over the fence'). 'Through' means moving inside a space from one end to the other ('through the garden'). 'Across' would imply the garden is a flat surface being crossed, which changes the visual.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l85_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The company is located _____ the corner of Park Street and Fifth Avenue.",
-            "sentence": "The company is located _____ the corner of Park Street and Fifth Avenue.",
-            "options": [
-                "on",
-                "at",
-                "in",
-                "by"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "on",
-            "hint": "Streets and corners use 'on' in American English; 'at' can be used but is more common for the number address.",
-            "explanation": "'On the corner of ...' is the standard expression in American English. 'At' is typically used for a specific address number ('at 25 Park Street'). 'In' is for areas/districts/countries, not streets.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l86_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "I've been waiting here _____ two hours.",
-            "sentence": "I've been waiting here _____ two hours.",
-            "options": [
-                "for",
-                "since",
-                "during",
-                "while"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "for",
-            "hint": "'For' + duration of time; 'since' + point in time.",
-            "explanation": "'For' is used with a time period/duration: 'for two hours, for a week'. 'Since' is used with a starting point: 'since Monday, since 2020'. 'Two hours' is a duration, so 'for' is correct.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l86_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "_____ the meeting, she took careful notes.",
-            "sentence": "_____ the meeting, she took careful notes.",
-            "options": [
-                "During",
-                "While",
-                "For",
-                "In"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "During",
-            "hint": "'During' + noun phrase; 'while' + clause with a verb.",
-            "explanation": "'During' is a preposition followed by a noun: 'during the meeting, during lunch'. 'While' is a conjunction followed by a clause: 'while she was in the meeting'. 'During the meeting' = prepositional phrase; 'while the meeting' is ungrammatical.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l86_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She finished _____ the deadline.",
-            "sentence": "She finished _____ the deadline.",
-            "options": [
-                "before",
-                "until",
-                "by",
-                "within"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "before",
-            "hint": "'By' = not later than; 'before' = at any point earlier than; 'until' = up to and including that moment.",
-            "explanation": "All three can appear here with slightly different nuances. 'By the deadline' = no later than (most standard). 'Before the deadline' = at some point earlier. 'Within the deadline' is not natural English. Both 'by' and 'before' are correct here; 'by' is the most conventional business expression.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l87_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "There is _____ milk left. We need to buy more.",
-            "sentence": "There is _____ milk left. We need to buy more.",
-            "options": [
-                "little",
-                "few",
-                "a little",
-                "a few"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "little",
-            "hint": "'Little' (without 'a') = almost none (negative connotation); 'milk' is uncountable.",
-            "explanation": "'Little' with a negative connotation ('hardly any') is used with uncountable nouns like 'milk'. 'Few' is for countable nouns. 'A little' means 'some, a small amount' (positive connotation), which contradicts 'we need to buy more'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l87_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "_____ student in the class passed the test.",
-            "sentence": "_____ student in the class passed the test.",
-            "options": [
-                "Every",
-                "Each",
-                "All",
-                "Both"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Every",
-            "hint": "'Every student' (singular) = all members of a group considered together; 'each' focuses on individuals one by one.",
-            "explanation": "'Every' is used with singular nouns and a singular verb to mean 'all members of a group'. 'Each' also takes singular nouns but emphasizes individual members. 'Every student passed' is slightly more natural as a general statement than 'Each student passed'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l87_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "I don't have _____ money on me right now.",
-            "sentence": "I don't have _____ money on me right now.",
-            "options": [
-                "any",
-                "some",
-                "no",
-                "few"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "any",
-            "hint": "'Any' in negative sentences with uncountable nouns.",
-            "explanation": "'Any' is used in negative sentences and questions with both countable and uncountable nouns. 'Some' is for positive sentences. 'No money' (with 'no' directly before the noun) is also grammatically correct and adds emphasis.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l88_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "He is _____ the phone with his manager.",
-            "sentence": "He is _____ the phone with his manager.",
-            "options": [
-                "on",
-                "at",
-                "in",
-                "by"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "on",
-            "hint": "'On the phone' = talking by telephone - fixed prepositional phrase.",
-            "explanation": "'On the phone' is a fixed phrase meaning talking via telephone. You are 'on the phone', not 'at the phone' or 'in the phone'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l88_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She is interested _____ learning new languages.",
-            "sentence": "She is interested _____ learning new languages.",
-            "options": [
-                "in",
-                "on",
-                "at",
-                "about"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "in",
-            "hint": "'Interested in' is the fixed preposition - not 'interested on/at/about'.",
-            "explanation": "'Interested in' is a fixed adjective + preposition combination. After 'interested in', use a gerund: 'interested in learning'. 'Interested about' is a common error but not standard English.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l88_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "They apologized _____ being late.",
-            "sentence": "They apologized _____ being late.",
-            "options": [
-                "for",
-                "of",
-                "about",
-                "to"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "for",
-            "hint": "'Apologize for' + gerund is the fixed verb + preposition pattern.",
-            "explanation": "'Apologize for' is the correct prepositional verb. 'Apologize for something' or 'apologize for doing something' - always 'for'. 'Apologize about' is not standard.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l89_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She depends _____ her colleagues for support.",
-            "sentence": "She depends _____ her colleagues for support.",
-            "options": [
-                "on",
-                "from",
-                "at",
-                "about"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "on",
-            "hint": "'Depend on' = rely on - fixed preposition.",
-            "explanation": "'Depend on' is a fixed collocation: you depend 'on' someone or something. 'Depend from' is not English; 'depend about' is also wrong.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l89_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The children are afraid _____ the dark.",
-            "sentence": "The children are afraid _____ the dark.",
-            "options": [
-                "of",
-                "from",
-                "about",
-                "at"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "of",
-            "hint": "'Afraid of' is the fixed adjective-preposition pair.",
-            "explanation": "'Afraid of' is always the correct preposition with 'afraid'. 'Afraid of the dark, afraid of spiders, afraid of failing' - always 'of'. 'Afraid from' is a common translation error.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l89_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She succeeded _____ passing all her exams.",
-            "sentence": "She succeeded _____ passing all her exams.",
-            "options": [
-                "in",
-                "at",
-                "to",
-                "on"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "in",
-            "hint": "'Succeed in + gerund' is the correct structure.",
-            "explanation": "'Succeed in doing something' is the fixed structure. 'Succeed at' is sometimes used informally, but 'in + gerund' is the standard grammar pattern. Never 'succeed to' - confuse with 'manage to' which does take an infinitive.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l90_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "He has been _____ a diet since January.",
-            "sentence": "He has been _____ a diet since January.",
-            "options": [
-                "on",
-                "in",
-                "at",
-                "with"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "on",
-            "hint": "'On a diet' = following a restricted eating plan - fixed prepositional phrase.",
-            "explanation": "'On a diet' is the correct fixed phrase. Similarly: 'on a budget', 'on a break', 'on a trip'. These take 'on', not 'in', 'at', or 'with'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l90_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "They are looking forward _____ the holiday.",
-            "sentence": "They are looking forward _____ the holiday.",
-            "options": [
-                "to",
-                "for",
-                "at",
-                "about"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "to",
-            "hint": "'Look forward to' + noun or gerund - 'to' is a preposition here, not part of an infinitive.",
-            "explanation": "'Look forward to' is a phrasal verb where 'to' is a preposition, not part of an infinitive. After 'to' (preposition), use a noun or gerund: 'look forward to the holiday', 'look forward to going'. Never 'look forward to go'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l90_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "We need to focus _____ the most important tasks first.",
-            "sentence": "We need to focus _____ the most important tasks first.",
-            "options": [
-                "on",
-                "at",
-                "about",
-                "in"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "on",
-            "hint": "'Focus on' = direct your attention to - fixed prepositional verb.",
-            "explanation": "'Focus on' is the correct prepositional verb. 'Focus at' is not standard. 'Focus on the task, focus on the problem, focus on improving' - always 'on'.",
-            "grammarRule": "Question Formation"
-        }
-    ]
+  "gameType": "questionFormatter",
+  "batchIndex": 9,
+  "levels": "81-90",
+  "quests": [
+    {
+      "id": "qf_l81_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The train was supposed to leave at noon, but it's still at the platform.",
+      "sentence": "The train was supposed to leave at noon, but it's still at the platform.",
+      "options": [
+        "The train wasn't supposed to leave at noon?",
+        "Didn't the train supposed to leave at noon?",
+        "Wasn't the train supposed to leave at noon?",
+        "Wasn't the train suppose to leave at noon?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Wasn't the train supposed to leave at noon?",
+      "hint": "'Supposed to' uses the verb 'be', so use 'Wasn't', moved to the front.",
+      "explanation": "'Supposed to' is built on the verb 'be', so the negative question uses 'wasn't', not 'didn't', moved to the front of the sentence.",
+      "grammarRule": "Negative Questions: 'Supposed To'"
+    },
+    {
+      "id": "qf_l81_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "You were supposed to call me back yesterday.",
+      "sentence": "You were supposed to call me back yesterday.",
+      "options": [
+        "You weren't supposed to call me back yesterday?",
+        "Weren't you supposed to call me back yesterday?",
+        "Didn't you supposed to call me back yesterday?",
+        "Weren't you suppose to call me back yesterday?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Weren't you supposed to call me back yesterday?",
+      "hint": "Use 'Weren't' since 'supposed to' pairs with 'be', not 'do'.",
+      "explanation": "Since 'supposed to' is a 'be' structure, the negative question uses 'weren't', moved to the front - not 'didn't'.",
+      "grammarRule": "Negative Questions: 'Supposed To'"
+    },
+    {
+      "id": "qf_l81_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The store is supposed to open at nine on weekdays.",
+      "sentence": "The store is supposed to open at nine on weekdays.",
+      "options": [
+        "Isn't the store supposed to open at nine on weekdays?",
+        "The store isn't supposed to open at nine on weekdays?",
+        "Doesn't the store supposed to open at nine on weekdays?",
+        "Isn't the store suppose to open at nine on weekdays?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Isn't the store supposed to open at nine on weekdays?",
+      "hint": "Use 'Isn't' since 'supposed to' is built on 'be'.",
+      "explanation": "Because 'supposed to' uses the verb 'be', the negative question needs 'isn't', not 'doesn't'.",
+      "grammarRule": "Negative Questions: 'Supposed To'"
+    },
+    {
+      "id": "qf_l82_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I assumed the report had been submitted, but I don't see it in the system yet.",
+      "sentence": "I assumed the report had been submitted, but I don't see it in the system yet.",
+      "options": [
+        "The report hasn't been submitted yet?",
+        "Didn't the report been submitted yet?",
+        "Hasn't the report been submitted yet?",
+        "Hasn't the report be submitted yet?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Hasn't the report been submitted yet?",
+      "hint": "Use the present perfect negative 'hasn't', moved to the front.",
+      "explanation": "Since this links a past action to the present result, 'hasn't...been submitted yet' is the correct negative present perfect form.",
+      "grammarRule": "Negative Questions: Present Perfect with 'Yet'"
+    },
+    {
+      "id": "qf_l82_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I was sure they had replied to the invitation, but their name isn't on the list yet.",
+      "sentence": "I was sure they had replied to the invitation, but their name isn't on the list yet.",
+      "options": [
+        "They haven't replied to the invitation yet?",
+        "Haven't they replied to the invitation yet?",
+        "Didn't they replied to the invitation yet?",
+        "Haven't they reply to the invitation yet?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Haven't they replied to the invitation yet?",
+      "hint": "Move 'haven't' to the front, and keep the participle 'replied' unchanged.",
+      "explanation": "'Haven't' moves to the front for this present perfect negative question, and the participle 'replied' does not change.",
+      "grammarRule": "Negative Questions: Present Perfect with 'Yet'"
+    },
+    {
+      "id": "qf_l82_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I expected you had finished the paperwork, but it's still on your desk.",
+      "sentence": "I expected you had finished the paperwork, but it's still on your desk.",
+      "options": [
+        "You haven't finished the paperwork yet?",
+        "Haven't you finished the paperwork yet?",
+        "Didn't you finished the paperwork yet?",
+        "Haven't you finish the paperwork yet?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Haven't you finished the paperwork yet?",
+      "hint": "'Haven't' moves to the front, and 'finished' stays unchanged.",
+      "explanation": "Since this connects a past action to a present result, the present perfect negative 'haven't finished' fits best.",
+      "grammarRule": "Negative Questions: Present Perfect with 'Yet'"
+    },
+    {
+      "id": "qf_l83_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I assumed the shop still delivered groceries, but the driver said they stopped.",
+      "sentence": "I assumed the shop still delivered groceries, but the driver said they stopped.",
+      "options": [
+        "The shop doesn't deliver groceries any more?",
+        "Isn't the shop deliver groceries any more?",
+        "Doesn't the shop delivers groceries any more?",
+        "Doesn't the shop deliver groceries any more?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Doesn't the shop deliver groceries any more?",
+      "hint": "This is a routine present habit, so use 'doesn't' with the base verb.",
+      "explanation": "Since this describes a regular habit that may have changed, the present simple negative 'doesn't deliver' is correct here.",
+      "grammarRule": "Negative Questions: 'Any More'"
+    },
+    {
+      "id": "qf_l83_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I thought he still worked at the bank, but his old office has a new name on the door.",
+      "sentence": "I thought he still worked at the bank, but his old office has a new name on the door.",
+      "options": [
+        "He doesn't work at the bank any more?",
+        "Doesn't he work at the bank any more?",
+        "Isn't he working at the bank any more?",
+        "Doesn't he works at the bank any more?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Doesn't he work at the bank any more?",
+      "hint": "Use 'doesn't' with the base verb for this present habit.",
+      "explanation": "This describes a present routine, so 'doesn't work' is correct, with the verb returning to its base form.",
+      "grammarRule": "Negative Questions: 'Any More'"
+    },
+    {
+      "id": "qf_l83_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I assumed the two companies still competed for the same clients.",
+      "sentence": "I assumed the two companies still competed for the same clients.",
+      "options": [
+        "Don't the two companies compete for the same clients any more?",
+        "The two companies don't compete for the same clients any more?",
+        "Doesn't the two companies compete for the same clients any more?",
+        "Don't the two companies competes for the same clients any more?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Don't the two companies compete for the same clients any more?",
+      "hint": "'Companies' is plural, so use 'Don't', moved to the front.",
+      "explanation": "Plural subjects take 'don't' in the negative question form, moved to the front, with the base verb 'compete'.",
+      "grammarRule": "Negative Questions: 'Any More'"
+    },
+    {
+      "id": "qf_l84_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I was told the workers were still repairing the road, but traffic is moving normally.",
+      "sentence": "I was told the workers were still repairing the road, but traffic is moving normally.",
+      "options": [
+        "Aren't the workers still repairing the road?",
+        "The workers aren't still repairing the road?",
+        "Don't the workers still repairing the road?",
+        "Aren't the workers still repair the road?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Aren't the workers still repairing the road?",
+      "hint": "Move 'aren't' to the front, and keep the verb in its '-ing' form.",
+      "explanation": "Negative present continuous questions move 'aren't' to the front, and the verb keeps its '-ing' ending, 'repairing'.",
+      "grammarRule": "Negative Questions: 'Still' (Present Continuous)"
+    },
+    {
+      "id": "qf_l84_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I assumed she was still recovering from the surgery.",
+      "sentence": "I assumed she was still recovering from the surgery.",
+      "options": [
+        "She isn't still recovering from the surgery?",
+        "Doesn't she still recovering from the surgery?",
+        "Isn't she still recover from the surgery?",
+        "Isn't she still recovering from the surgery?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Isn't she still recovering from the surgery?",
+      "hint": "Move 'isn't' to the front, keeping the verb in its '-ing' form.",
+      "explanation": "'Isn't' moves to the front in this negative continuous question, and the verb 'recovering' keeps its '-ing' ending.",
+      "grammarRule": "Negative Questions: 'Still' (Present Continuous)"
+    },
+    {
+      "id": "qf_l84_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I heard the two teams were still negotiating the contract terms.",
+      "sentence": "I heard the two teams were still negotiating the contract terms.",
+      "options": [
+        "The two teams aren't still negotiating the contract terms?",
+        "Aren't the two teams still negotiating the contract terms?",
+        "Don't the two teams still negotiating the contract terms?",
+        "Aren't the two teams still negotiate the contract terms?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Aren't the two teams still negotiating the contract terms?",
+      "hint": "'Teams' is plural, so use 'Aren't', moved to the front.",
+      "explanation": "Plural subjects take 'aren't' in this negative continuous question, and 'negotiating' keeps its '-ing' ending.",
+      "grammarRule": "Negative Questions: 'Still' (Present Continuous)"
+    },
+    {
+      "id": "qf_l85_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I think a short walk would help clear your head.",
+      "sentence": "I think a short walk would help clear your head.",
+      "options": [
+        "Don't you why take a short walk?",
+        "Why don't you take a short walk?",
+        "Why you don't take a short walk?",
+        "Why doesn't you take a short walk?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Why don't you take a short walk?",
+      "hint": "'Why don't you...?' is a common way to make a friendly suggestion.",
+      "explanation": "'Why don't you...?' is a fixed pattern for offering a suggestion. 'Don't' follows 'why' and comes before the subject, 'you'.",
+      "grammarRule": "Negative Questions: Polite Suggestions"
+    },
+    {
+      "id": "qf_l85_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I think the team should try a different approach to the problem.",
+      "sentence": "I think the team should try a different approach to the problem.",
+      "options": [
+        "Doesn't why the team try a different approach?",
+        "Why doesn't the team try a different approach?",
+        "Why the team doesn't try a different approach?",
+        "Why don't the team try a different approach?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Why doesn't the team try a different approach?",
+      "hint": "'The team' is singular here, so use 'doesn't' after 'why'.",
+      "explanation": "Since 'the team' is treated as a singular subject, the suggestion pattern uses 'doesn't', placed right after 'why'.",
+      "grammarRule": "Negative Questions: Polite Suggestions"
+    },
+    {
+      "id": "qf_l85_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I think we should ask the hotel for a late checkout.",
+      "sentence": "I think we should ask the hotel for a late checkout.",
+      "options": [
+        "Don't why we ask the hotel for a late checkout?",
+        "Why we don't ask the hotel for a late checkout?",
+        "Why doesn't we ask the hotel for a late checkout?",
+        "Why don't we ask the hotel for a late checkout?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Why don't we ask the hotel for a late checkout?",
+      "hint": "'We' pairs with 'don't' in this suggestion pattern.",
+      "explanation": "'Why don't we...?' is the standard way to suggest an action together, with 'don't' placed right after 'why'.",
+      "grammarRule": "Negative Questions: Polite Suggestions"
+    },
+    {
+      "id": "qf_l86_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I assumed the invoice hadn't been paid, since the account still shows a balance.",
+      "sentence": "I assumed the invoice hadn't been paid, since the account still shows a balance.",
+      "options": [
+        "The invoice hasn't been paid?",
+        "Didn't the invoice been paid?",
+        "Hasn't the invoice been paid?",
+        "Hasn't the invoice be paid?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Hasn't the invoice been paid?",
+      "hint": "Move 'hasn't' to the front, keeping 'been paid' together.",
+      "explanation": "This negative present perfect passive question moves 'hasn't' to the front, and 'been paid' stays together as one unit.",
+      "grammarRule": "Negative Questions: Obligation & Necessity"
+    },
+    {
+      "id": "qf_l86_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I thought passengers needed to check in two hours early, but the airline changed the rule.",
+      "sentence": "I thought passengers needed to check in two hours early, but the airline changed the rule.",
+      "options": [
+        "Passengers don't need to check in two hours early?",
+        "Don't passengers need to check in two hours early?",
+        "Doesn't passengers need to check in two hours early?",
+        "Don't passengers needs to check in two hours early?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Don't passengers need to check in two hours early?",
+      "hint": "'Passengers' is plural, so use 'Don't', moved to the front.",
+      "explanation": "Plural subjects take 'don't' in the negative question, moved to the front, with the base verb 'need'.",
+      "grammarRule": "Negative Questions: Obligation & Necessity"
+    },
+    {
+      "id": "qf_l86_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I assumed guests had to pay a deposit at check-in.",
+      "sentence": "I assumed guests had to pay a deposit at check-in.",
+      "options": [
+        "Guests don't have to pay a deposit at check-in?",
+        "Doesn't guests have to pay a deposit at check-in?",
+        "Don't guests has to pay a deposit at check-in?",
+        "Don't guests have to pay a deposit at check-in?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Don't guests have to pay a deposit at check-in?",
+      "hint": "'Guests' is plural, so use 'Don't', moved to the front.",
+      "explanation": "Plural subjects take 'don't' in this negative question, moved to the front, with 'have to pay' kept together.",
+      "grammarRule": "Negative Questions: Obligation & Necessity"
+    },
+    {
+      "id": "qf_l87_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "This view from the rooftop is absolutely stunning.",
+      "sentence": "This view from the rooftop is absolutely stunning.",
+      "options": [
+        "This view isn't stunning?",
+        "Isn't this view stunning?",
+        "Doesn't this view stunning?",
+        "Isn't this view stun?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Isn't this view stunning?",
+      "hint": "'Be' questions move 'isn't' to the front - no 'does' needed.",
+      "explanation": "Since 'stunning' follows the verb 'be', the negative question moves 'isn't' to the front without adding 'does'.",
+      "grammarRule": "Negative Questions: Rhetorical Confirmation"
+    },
+    {
+      "id": "qf_l87_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "It seems unfair that only one team gets extra funding.",
+      "sentence": "It seems unfair that only one team gets extra funding.",
+      "options": [
+        "It isn't unfair that only one team gets extra funding?",
+        "Doesn't it unfair that only one team gets extra funding?",
+        "Isn't unfair it that only one team gets extra funding?",
+        "Isn't it unfair that only one team gets extra funding?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Isn't it unfair that only one team gets extra funding?",
+      "hint": "Move 'isn't' to the front, right before 'it'.",
+      "explanation": "'Isn't' moves to the front of the sentence, right before 'it', to form this rhetorical negative question.",
+      "grammarRule": "Negative Questions: Rhetorical Confirmation"
+    },
+    {
+      "id": "qf_l87_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "These directions seem confusing to a first-time visitor.",
+      "sentence": "These directions seem confusing to a first-time visitor.",
+      "options": [
+        "These directions aren't confusing to a first-time visitor?",
+        "Aren't these directions confusing to a first-time visitor?",
+        "Don't these directions confusing to a first-time visitor?",
+        "Aren't these directions confuse to a first-time visitor?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Aren't these directions confusing to a first-time visitor?",
+      "hint": "'Directions' is plural, so use 'Aren't', moved to the front.",
+      "explanation": "Plural subjects take 'aren't', moved to the front, since 'confusing' follows the verb 'be' rather than a separate action verb.",
+      "grammarRule": "Negative Questions: Rhetorical Confirmation"
+    },
+    {
+      "id": "qf_l88_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I remember this street used to have a lot more trees.",
+      "sentence": "I remember this street used to have a lot more trees.",
+      "options": [
+        "This street didn't use to have a lot more trees?",
+        "Usedn't this street to have a lot more trees?",
+        "Didn't this street use to have a lot more trees?",
+        "Didn't this street used to have a lot more trees?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Didn't this street use to have a lot more trees?",
+      "hint": "'Used to' takes 'did' in questions, and 'used' returns to 'use'.",
+      "explanation": "In questions, 'used to' becomes 'did...use to', with the verb returning to its base form, 'use', once 'did' carries the tense.",
+      "grammarRule": "Negative Questions: 'Used To'"
+    },
+    {
+      "id": "qf_l88_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I thought your family used to live near the coast.",
+      "sentence": "I thought your family used to live near the coast.",
+      "options": [
+        "Your family didn't use to live near the coast?",
+        "Usedn't your family to live near the coast?",
+        "Didn't your family used to live near the coast?",
+        "Didn't your family use to live near the coast?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Didn't your family use to live near the coast?",
+      "hint": "Use 'did' + 'use to', not 'used to', in the question form.",
+      "explanation": "Negative questions with 'used to' need 'did' plus the base form 'use to' - 'used' only appears in statements, not after 'did'.",
+      "grammarRule": "Negative Questions: 'Used To'"
+    },
+    {
+      "id": "qf_l88_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I remember he used to play the guitar every weekend.",
+      "sentence": "I remember he used to play the guitar every weekend.",
+      "options": [
+        "He didn't use to play the guitar every weekend?",
+        "Didn't he use to play the guitar every weekend?",
+        "Usedn't he to play the guitar every weekend?",
+        "Didn't he used to play the guitar every weekend?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Didn't he use to play the guitar every weekend?",
+      "hint": "Keep 'use to' (not 'used to') once 'did' is added.",
+      "explanation": "Once 'did' is added to carry the past tense, 'used to' becomes 'use to' - this is a common point of confusion in negative questions.",
+      "grammarRule": "Negative Questions: 'Used To'"
+    },
+    {
+      "id": "qf_l89_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I assumed you could help me move this weekend.",
+      "sentence": "I assumed you could help me move this weekend.",
+      "options": [
+        "You couldn't help me move this weekend?",
+        "Doesn't you could help me move this weekend?",
+        "Couldn't you help me move this weekend?",
+        "Couldn't you helped me move this weekend?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Couldn't you help me move this weekend?",
+      "hint": "'Couldn't' moves to the front on its own, like other modals.",
+      "explanation": "Negative modal questions move 'couldn't' to the front without any extra auxiliary, and the verb stays in its base form.",
+      "grammarRule": "Negative Questions: Modals (Could / Would)"
+    },
+    {
+      "id": "qf_l89_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I figured it would be easier to meet at the office instead.",
+      "sentence": "I figured it would be easier to meet at the office instead.",
+      "options": [
+        "It wouldn't be easier to meet at the office?",
+        "Doesn't it would be easier to meet at the office?",
+        "Wouldn't it be easier to meet at the office?",
+        "Wouldn't it being easier to meet at the office?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Wouldn't it be easier to meet at the office?",
+      "hint": "'Wouldn't' moves to the front, and the verb 'be' stays in its base form.",
+      "explanation": "'Wouldn't' moves to the front for this negative modal question, and the verb after it, 'be', stays in its base form.",
+      "grammarRule": "Negative Questions: Modals (Could / Would)"
+    },
+    {
+      "id": "qf_l89_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I thought we could reschedule the appointment for next week.",
+      "sentence": "I thought we could reschedule the appointment for next week.",
+      "options": [
+        "Couldn't we reschedule the appointment for next week?",
+        "We couldn't reschedule the appointment for next week?",
+        "Doesn't we could reschedule the appointment for next week?",
+        "Couldn't we rescheduled the appointment for next week?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Couldn't we reschedule the appointment for next week?",
+      "hint": "Move 'couldn't' to the front, keeping the base verb form.",
+      "explanation": "As with all modal negatives, 'couldn't' moves to the front, and the main verb 'reschedule' stays in its base form.",
+      "grammarRule": "Negative Questions: Modals (Could / Would)"
+    },
+    {
+      "id": "qf_l90_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I assumed the museum was supposed to be free for students.",
+      "sentence": "I assumed the museum was supposed to be free for students.",
+      "options": [
+        "Isn't the museum supposed to be free for students?",
+        "The museum isn't supposed to be free for students?",
+        "Doesn't the museum supposed to be free for students?",
+        "Isn't the museum suppose to be free for students?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Isn't the museum supposed to be free for students?",
+      "hint": "'Supposed to' pairs with 'be', so use 'Isn't', moved to the front.",
+      "explanation": "Since 'supposed to' is built on 'be', the negative question uses 'isn't', not 'doesn't', moved to the front.",
+      "grammarRule": "Negative Questions: Mixed Review"
+    },
+    {
+      "id": "qf_l90_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I thought the two departments no longer shared a budget.",
+      "sentence": "I thought the two departments no longer shared a budget.",
+      "options": [
+        "The two departments don't share a budget any more?",
+        "Doesn't the two departments share a budget any more?",
+        "Don't the two departments shares a budget any more?",
+        "Don't the two departments share a budget any more?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Don't the two departments share a budget any more?",
+      "hint": "'Departments' is plural, so use 'Don't', moved to the front.",
+      "explanation": "Plural subjects take 'don't', moved to the front of the negative question, with the base verb 'share'.",
+      "grammarRule": "Negative Questions: Mixed Review"
+    },
+    {
+      "id": "qf_l90_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I think you should ask for a refund instead of a replacement.",
+      "sentence": "I think you should ask for a refund instead of a replacement.",
+      "options": [
+        "Don't why you ask for a refund instead of a replacement?",
+        "Why don't you ask for a refund instead of a replacement?",
+        "Why you don't ask for a refund instead of a replacement?",
+        "Why doesn't you ask for a refund instead of a replacement?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Why don't you ask for a refund instead of a replacement?",
+      "hint": "'Why don't you...?' is the standard pattern for a friendly suggestion.",
+      "explanation": "'Why don't you...?' is a fixed suggestion pattern, with 'don't' placed right after 'why' and before the subject.",
+      "grammarRule": "Negative Questions: Mixed Review"
+    }
+  ]
 }

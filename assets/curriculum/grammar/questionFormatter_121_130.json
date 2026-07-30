@@ -1,577 +1,577 @@
 {
-    "gameType": "questionFormatter",
-    "batchIndex": 13,
-    "levels": "121-130",
-    "quests": [
-        {
-            "id": "qf_l121_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "_____ she passed the bar exam surprised everyone.",
-            "sentence": "_____ she passed the bar exam surprised everyone.",
-            "options": [
-                "That",
-                "What",
-                "The fact",
-                "It"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "That",
-            "hint": "'That she passed' is a nominal 'that-clause' functioning as the subject of the sentence.",
-            "explanation": "A 'that-clause' can function as the sentence subject. 'What she passed' would create a different wh-clause. 'The fact' needs 'that' after it: 'The fact that she passed'. 'It...that' is the extraposition pattern with a dummy subject.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l121_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The fact _____ he lied was deeply troubling.",
-            "sentence": "The fact _____ he lied was deeply troubling.",
-            "options": [
-                "that",
-                "which",
-                "of",
-                "what"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "that",
-            "hint": "'The fact + that' introduces a noun complement clause - 'that' is the complementizer.",
-            "explanation": "'The fact that + clause' is the correct noun complement structure. 'Which' introduces a relative clause differently. 'The fact of' would need a gerund: 'the fact of his lying'. 'What he lied' is not a complement clause.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l121_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Whether she will accept the offer _____ unclear.",
-            "sentence": "Whether she will accept the offer _____ unclear.",
-            "options": [
-                "is",
-                "are",
-                "remains to be",
-                "it is"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "is",
-            "hint": "The nominal 'whether' clause is a singular subject - takes singular 'is'.",
-            "explanation": "A 'whether' clause as subject is treated as singular: 'Whether she will accept is unclear.' 'Are' is wrong. 'Remains to be' needs 'seen' to complete it. 'It is' would need the extraposition pattern with a dummy 'it' at the front.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l122_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "_____ I could never forgive.",
-            "sentence": "_____ I could never forgive.",
-            "options": [
-                "That",
-                "This",
-                "It",
-                "What"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "That",
-            "hint": "Fronted object: 'That' (= that thing) is moved to the front for emphasis.",
-            "explanation": "Fronting moves the object to the beginning for emphasis. 'That I could never forgive' means 'I could never forgive that thing'. 'What I could never forgive' creates a wh-clause - a different emphatic structure (wh-cleft).",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l122_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "_____ she is - patient, resourceful, and determined.",
-            "sentence": "_____ she is - patient, resourceful, and determined.",
-            "options": [
-                "What a leader",
-                "How a leader",
-                "Such a leader",
-                "What leader"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "What a leader",
-            "hint": "'What + a/an + noun (+ subject + verb)' = exclamative structure.",
-            "explanation": "'What + a/an + noun + subject + verb' forms exclamatives: 'What a leader she is!' 'How' is used with adjectives/adverbs: 'How patient she is!' 'Such' is also emphatic: 'Such a leader she is' - also correct. 'What leader' without the article is wrong.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l122_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "His dedication to the cause - _____ truly remarkable.",
-            "sentence": "His dedication to the cause - _____ truly remarkable.",
-            "options": [
-                "that was",
-                "this is",
-                "it is",
-                "that is"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "that was",
-            "hint": "Fronted noun phrase + dash, then a referring comment clause with 'that was'.",
-            "explanation": "When a noun phrase is fronted and followed by a dash, the comment clause refers back with a demonstrative: 'His dedication - that was truly remarkable.' 'That is' (present) is possible. 'It is' is more neutral. 'This is' implies something currently present rather than the specific thing just named.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l123_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Most of _____ came to the event were volunteers.",
-            "sentence": "Most of _____ came to the event were volunteers.",
-            "options": [
-                "those who",
-                "them who",
-                "who",
-                "the ones which"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "those who",
-            "hint": "'Most of those who...' = 'most of the people who...' - 'those' is the required antecedent.",
-            "explanation": "'Those who' = 'the people who'. 'Most of them who' is not standard - use 'those', not 'them', before a relative clause. 'Most of who' skips the antecedent. 'The ones which' uses 'which' for people, which is wrong.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l123_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She received several job offers, two _____ she declined.",
-            "sentence": "She received several job offers, two _____ she declined.",
-            "options": [
-                "of which",
-                "of them",
-                "which",
-                "that"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "of which",
-            "hint": "'Quantifier + of which' creates a quantifying relative clause after the antecedent.",
-            "explanation": "'Two of which she declined' = 'she declined two of the offers'. 'Of them' is not a relative pronoun and would need a separate sentence. 'Two which' and 'two that' are grammatically incorrect as quantifying relative clauses.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l123_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She was promoted, _____ made her colleagues jealous.",
-            "sentence": "She was promoted, _____ made her colleagues jealous.",
-            "options": [
-                "which",
-                "that",
-                "what",
-                "this"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "which",
-            "hint": "'Which' can refer to the entire previous clause in a non-defining relative clause.",
-            "explanation": "'Which' in a non-defining relative clause can refer to the whole preceding clause ('she was promoted'). 'That' cannot begin a non-defining relative clause. 'What' is used in free relative clauses, not clause-referential relatives. 'This' would require a new sentence.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l124_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "_____ strange that she didn't mention this.",
-            "sentence": "_____ strange that she didn't mention this.",
-            "options": [
-                "It seems",
-                "It appears",
-                "That seems",
-                "It is"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "It seems",
-            "hint": "'It seems/appears + that' - both use dummy 'it' extraposition.",
-            "explanation": "'It seems that + clause' places the heavy clause at the end with a dummy 'it' as subject. Both 'It seems' and 'It appears' are correct. 'It is strange' is also valid but changes the nuance slightly. 'That seems strange' is grammatical but different in focus.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l124_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "It is _____ that the new regulations will affect small businesses.",
-            "sentence": "It is _____ that the new regulations will affect small businesses.",
-            "options": [
-                "likely",
-                "probably",
-                "possible that",
-                "expected of"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "likely",
-            "hint": "'It is + adjective + that + clause' - 'likely/expected/possible' are adjectives here.",
-            "explanation": "'It is + adjective + that' uses a dummy 'it' in subject position (extraposition). Adjectives work here. 'Probably' is an adverb and cannot follow 'is' as a predicative adjective. 'Possible that' would make 'it is possible that' - double 'that' is redundant.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l124_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "It was _____ to complete the project in one week.",
-            "sentence": "It was _____ to complete the project in one week.",
-            "options": [
-                "impossible",
-                "impossibly",
-                "an impossibility",
-                "not possible of"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "impossible",
-            "hint": "'It + was + adjective + to + infinitive' - predicate adjective structure.",
-            "explanation": "'It was impossible to complete' uses the dummy 'it' + adjective + infinitive. 'Impossibly' is an adverb and cannot be predicative. 'An impossibility to complete' is not standard. 'Not possible of' is not English.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l125_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She _____ her hair cut at a salon downtown.",
-            "sentence": "She _____ her hair cut at a salon downtown.",
-            "options": [
-                "had",
-                "got",
-                "made",
-                "did"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "had",
-            "hint": "'Have + object + past participle' - causative 'have'. 'Got' is also correct; 'made' changes meaning.",
-            "explanation": "'Have something done' means to arrange for someone else to do it. 'Got' is also a valid causative. 'Made her hair cut' is incorrect - 'make' takes a bare infinitive: 'made the stylist cut her hair' (compulsion, not arrangement). 'Did her hair cut' is ungrammatical.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l125_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "He needs to _____ his car serviced before the long trip.",
-            "sentence": "He needs to _____ his car serviced before the long trip.",
-            "options": [
-                "have",
-                "get",
-                "make",
-                "do"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "have",
-            "hint": "'Have/get + object + past participle' - causative construction for arranged services.",
-            "explanation": "'Have something done' or 'get something done' both express causative meaning. 'Make something done' is not a valid causative structure. 'Do his car serviced' is ungrammatical.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l125_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "They _____ their house painted last summer.",
-            "sentence": "They _____ their house painted last summer.",
-            "options": [
-                "had",
-                "made",
-                "wanted",
-                "let"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "had",
-            "hint": "'Had their house painted' = arranged for someone to paint it (causative have).",
-            "explanation": "Causative 'had + object + past participle' means they arranged the painting. 'Made their house painted' is wrong - 'make' takes a bare infinitive ('made someone paint'). 'Let their house painted' is wrong - 'let' takes a bare infinitive.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l126_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She spoke quietly _____ not to disturb anyone.",
-            "sentence": "She spoke quietly _____ not to disturb anyone.",
-            "options": [
-                "so as",
-                "in order",
-                "so that",
-                "as if"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so as",
-            "hint": "'So as not to + infinitive' = purpose (negative). 'In order not to' is also correct.",
-            "explanation": "'So as not to + base verb' and 'in order not to + base verb' both express negative purpose. 'In order' alone (without 'to') is incomplete. 'So that not to' is not a valid structure.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l126_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The contract was _____ detailed that it took weeks to review.",
-            "sentence": "The contract was _____ detailed that it took weeks to review.",
-            "options": [
-                "so",
-                "such",
-                "very",
-                "too"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "'So + adjective + that' (result clause). 'Such' needs a noun ('such a detailed contract that...').",
-            "explanation": "'So + adjective/adverb + that + clause' expresses result: 'so detailed that it took weeks'. 'Such + a/an + noun + that' also works but needs a noun. 'Very' doesn't combine with 'that' in result clauses. 'Too' implies prevention: 'too detailed to review quickly'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l126_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "_____ be right or wrong, she always stands by her decisions.",
-            "sentence": "_____ be right or wrong, she always stands by her decisions.",
-            "options": [
-                "Whether she may",
-                "Whether to",
-                "Although",
-                "Be she"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Whether she may",
-            "hint": "'Whether...or...' concessive clause acknowledges both possibilities.",
-            "explanation": "'Whether she may be right or wrong, she...' is a formal concessive clause. The full version is 'whether she is right or wrong'. 'Although' introduces a regular contrast clause. 'Be she' is archaic subjunctive - 'whether she may be' is the modern equivalent.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l127_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The manager reviewed all the proposals. The _____ she liked best was James's.",
-            "sentence": "The manager reviewed all the proposals. The _____ she liked best was James's.",
-            "options": [
-                "one",
-                "ones",
-                "one which",
-                "proposal"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "one",
-            "hint": "'The one' substitutes for the singular countable noun 'proposal' to avoid repetition.",
-            "explanation": "'One/ones' substitutes for a countable noun. Since 'proposal' is singular, 'the one she liked best' is correct. 'Ones' would be plural. 'One which' adds an unnecessary relative pronoun - 'she liked best' is already a reduced relative.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l127_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "A: 'Are you coming to the meeting?' B: 'I hope _____.'",
-            "sentence": "A: 'Are you coming to the meeting?' B: 'I hope _____.'",
-            "options": [
-                "so",
-                "it",
-                "to",
-                "yes"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "'Hope so' substitutes for the full clause: 'I hope (that I am coming)'.",
-            "explanation": "'So' substitutes for an entire positive clause: 'I hope so' = 'I hope I am coming'. 'I hope to' works in a different context ('I hope to come'). 'I hope it' is not standard substitution. 'I hope yes' is not English.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l127_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She wanted to call him, but decided _____ in the end.",
-            "sentence": "She wanted to call him, but decided _____ in the end.",
-            "options": [
-                "not to",
-                "not",
-                "to not",
-                "not doing so"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "not to",
-            "hint": "Infinitive ellipsis: 'decided not to (call him)' - the main verb is omitted but understood.",
-            "explanation": "'Decided not to' is infinitive ellipsis - 'call him' is omitted but understood. 'Decided not' (without 'to') is incomplete. 'To not' (split infinitive for negation) is less standard here than 'not to'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l128_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Formal equivalent of: 'We need to look into this issue more.'",
-            "sentence": "Formal equivalent of: 'We need to look into this issue more.'",
-            "options": [
-                "This issue warrants further investigation.",
-                "This issue needs looking at more.",
-                "We've got to dig deeper into this issue.",
-                "More investigation of this issue should happen."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "This issue warrants further investigation.",
-            "hint": "Nominalisation + formal vocabulary ('warrants', 'investigation') elevates register.",
-            "explanation": "Formal academic/business writing uses nominalisation ('investigation' not 'investigate'), passive or impersonal constructions, and formal vocabulary ('warrants' not 'needs'). 'Dig deeper' and 'looking at more' are informal/idiomatic.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l128_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Informal equivalent of: 'The proposal was subsequently withdrawn.'",
-            "sentence": "Informal equivalent of: 'The proposal was subsequently withdrawn.'",
-            "options": [
-                "They ended up taking the proposal back.",
-                "The proposal was later taken back.",
-                "Subsequently, the proposal was withdrawn.",
-                "The proposal then got withdrawn."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They ended up taking the proposal back.",
-            "hint": "Informal English uses phrasal verbs ('take back') and active voice ('they ended up').",
-            "explanation": "Informal English typically uses active voice, phrasal verbs ('take back' instead of 'withdraw'), and colloquial expressions ('ended up'). 'Got withdrawn' is semi-informal but still passive. 'Later taken back' keeps a formal structure.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l128_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence is most appropriate for a formal report?",
-            "sentence": "Which sentence is most appropriate for a formal report?",
-            "options": [
-                "The data indicates a significant correlation between diet and mental health.",
-                "The numbers show diet and mental health are linked.",
-                "It looks like diet affects how healthy your mind is.",
-                "Diet and mental health? Turns out they're connected."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The data indicates a significant correlation between diet and mental health.",
-            "hint": "Formal reports use precise vocabulary, complex noun phrases, and impersonal constructions.",
-            "explanation": "Formal reports require precise vocabulary ('indicates', 'significant correlation'), technical terms, and impersonal structures. The other options use colloquial vocabulary ('numbers', 'looks like'), contractions, and conversational structure.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l129_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The new system enables employees _____ their schedules remotely.",
-            "sentence": "The new system enables employees _____ their schedules remotely.",
-            "options": [
-                "to manage",
-                "managing",
-                "manage",
-                "the management of"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "to manage",
-            "hint": "'Enable + object + to + base verb' - infinitive construction.",
-            "explanation": "'Enable + object + to + base verb': 'enables employees to manage'. Gerund ('managing') would need a preposition. 'The management of' nominalises but changes the syntactic relationship.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l129_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The policy prevents workers _____ overtime without prior approval.",
-            "sentence": "The policy prevents workers _____ overtime without prior approval.",
-            "options": [
-                "from working",
-                "to work",
-                "working",
-                "of working"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "from working",
-            "hint": "'Prevent + object + from + gerund' is the only standard pattern.",
-            "explanation": "'Prevent + object + from + gerund' is fixed: 'prevents workers from working'. 'Prevent + object + to + verb' is a common learner error. 'Prevent + object + gerund' (without 'from') is non-standard.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l129_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The crisis forced the government _____ drastic measures.",
-            "sentence": "The crisis forced the government _____ drastic measures.",
-            "options": [
-                "to take",
-                "taking",
-                "take",
-                "into taking"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "to take",
-            "hint": "'Force + object + to + base verb' - infinitive construction.",
-            "explanation": "'Force + object + to + base verb': 'forced the government to take'. This pattern is shared by 'allow', 'enable', 'require', 'compel'. 'Taking' (gerund) and 'take' (bare infinitive) require different verbs.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l130_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence places maximum focus on 'the letter'?",
-            "sentence": "Which sentence places maximum focus on 'the letter'?",
-            "options": [
-                "It was the letter that she never sent.",
-                "She never sent the letter.",
-                "What she never sent was the letter.",
-                "The letter she never sent."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "It was the letter that she never sent.",
-            "hint": "It-cleft places maximum focus on the highlighted element by isolating it.",
-            "explanation": "It-cleft sentences ('It was X that...') place the strongest focus on the highlighted element. 'What she never sent was the letter' (wh-cleft) focuses similarly from the other direction. The it-cleft is the most emphatic. 'The letter she never sent' is a noun phrase, not a sentence.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l130_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "In academic writing, new information typically goes _____ the sentence.",
-            "sentence": "In academic writing, new information typically goes _____ the sentence.",
-            "options": [
-                "at the end of",
-                "at the start of",
-                "in the middle of",
-                "before the verb in"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "at the end of",
-            "hint": "End-focus: new and important information goes at the end of a sentence in English.",
-            "explanation": "English sentences follow the 'end-focus' principle: given (old) information comes early, new or important information comes at the end. Academic writing carefully orders information according to this principle to guide the reader's attention.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l130_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The results were _____, to say the least.",
-            "sentence": "The results were _____, to say the least.",
-            "options": [
-                "disappointing",
-                "disappointed",
-                "disappoint",
-                "disappointingly"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "disappointing",
-            "hint": "Predicative adjective ('disappointing') after the linking verb 'were'.",
-            "explanation": "After linking verbs ('are', 'were', 'seem', 'feel'), use a predicative adjective: 'were disappointing'. 'Disappointed' describes a person's feeling. 'Disappoint' is a verb. 'Disappointingly' is an adverb - wrong after 'were'.",
-            "grammarRule": "Question Formation"
-        }
-    ]
+  "gameType": "questionFormatter",
+  "batchIndex": 13,
+  "levels": "121-130",
+  "quests": [
+    {
+      "id": "qf_l121_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Where is the nearest pharmacy?",
+      "sentence": "Where is the nearest pharmacy?",
+      "options": [
+        "Could you tell me where is the nearest pharmacy?",
+        "Could you tell me where the nearest pharmacy?",
+        "Could you tell me the nearest pharmacy where is?",
+        "Could you tell me where the nearest pharmacy is?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Could you tell me where the nearest pharmacy is?",
+      "hint": "Inside the embedded question, word order goes back to statement order: 'where it is', not 'where is it'.",
+      "explanation": "In embedded questions, the inverted word order disappears. It becomes 'where the nearest pharmacy is', just like a statement.",
+      "grammarRule": "Embedded Questions: 'Could You Tell Me...?' (Where)"
+    },
+    {
+      "id": "qf_l121_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Where did she put the keys?",
+      "sentence": "Where did she put the keys?",
+      "options": [
+        "Could you tell me where did she put the keys?",
+        "Could you tell me where she did put the keys?",
+        "Could you tell me where she put the keys?",
+        "Could you tell me where put she the keys?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Could you tell me where she put the keys?",
+      "hint": "Drop 'did' inside the embedded clause, and let the verb carry the past tense.",
+      "explanation": "Embedded questions drop 'did' and place the verb directly in the past tense: 'where she put the keys', not 'where did she put'.",
+      "grammarRule": "Embedded Questions: 'Could You Tell Me...?' (Where)"
+    },
+    {
+      "id": "qf_l121_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Where does the manager usually park?",
+      "sentence": "Where does the manager usually park?",
+      "options": [
+        "Could you tell me where does the manager usually park?",
+        "Could you tell me where the manager usually park?",
+        "Could you tell me where the manager usually parks?",
+        "Could you tell me where does the manager usually parks?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Could you tell me where the manager usually parks?",
+      "hint": "Drop 'does' inside the embedded clause, and let the verb take its -s again.",
+      "explanation": "Embedded questions drop 'does' and the verb returns to agreeing with the subject directly: 'the manager usually parks'.",
+      "grammarRule": "Embedded Questions: 'Could You Tell Me...?' (Where)"
+    },
+    {
+      "id": "qf_l122_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "What time does the train leave?",
+      "sentence": "What time does the train leave?",
+      "options": [
+        "Do you know what time does the train leave?",
+        "Do you know what time the train leave?",
+        "Do you know what time the train leaves?",
+        "Do you know what time leaves the train?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Do you know what time the train leaves?",
+      "hint": "Drop 'does' inside the clause, and let the verb take its -s.",
+      "explanation": "Inside an embedded question, 'does' disappears and the verb takes its normal present-tense form: 'the train leaves'.",
+      "grammarRule": "Embedded Questions: 'Do You Know...?' (What)"
+    },
+    {
+      "id": "qf_l122_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "What did he say during the interview?",
+      "sentence": "What did he say during the interview?",
+      "options": [
+        "Do you know what did he say during the interview?",
+        "Do you know what he said during the interview?",
+        "Do you know what he did say during the interview?",
+        "Do you know what said he during the interview?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Do you know what he said during the interview?",
+      "hint": "Drop 'did', and let the verb carry the past tense directly.",
+      "explanation": "Embedded questions drop 'did', and the verb itself carries the past tense: 'what he said', not 'what did he say'.",
+      "grammarRule": "Embedded Questions: 'Do You Know...?' (What)"
+    },
+    {
+      "id": "qf_l122_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "What does this word mean?",
+      "sentence": "What does this word mean?",
+      "options": [
+        "Do you know what does this word mean?",
+        "Do you know what this word means?",
+        "Do you know what this word mean?",
+        "Do you know what means this word?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Do you know what this word means?",
+      "hint": "Drop 'does', and let the verb take its -s again.",
+      "explanation": "Inside the embedded question, 'does' disappears, and the verb agrees directly with the subject: 'this word means'.",
+      "grammarRule": "Embedded Questions: 'Do You Know...?' (What)"
+    },
+    {
+      "id": "qf_l123_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Why did the flight get delayed?",
+      "sentence": "Why did the flight get delayed?",
+      "options": [
+        "Can you explain why did the flight get delayed?",
+        "Can you explain why the flight did get delayed?",
+        "Can you explain why the flight got delayed?",
+        "Can you explain why got the flight delayed?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Can you explain why the flight got delayed?",
+      "hint": "Drop 'did', and let the verb carry the past tense directly.",
+      "explanation": "Embedded questions use statement word order: 'why the flight got delayed', with no 'did' inside the clause.",
+      "grammarRule": "Embedded Questions: 'Can You Explain...?' (Why / How)"
+    },
+    {
+      "id": "qf_l123_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "How does this machine work?",
+      "sentence": "How does this machine work?",
+      "options": [
+        "Can you explain how does this machine work?",
+        "Can you explain how this machine work?",
+        "Can you explain how works this machine?",
+        "Can you explain how this machine works?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Can you explain how this machine works?",
+      "hint": "Drop 'does', and let the verb take its -s again.",
+      "explanation": "'Can you explain...?' takes statement word order in the embedded clause: 'how this machine works', without 'does'.",
+      "grammarRule": "Embedded Questions: 'Can You Explain...?' (Why / How)"
+    },
+    {
+      "id": "qf_l123_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Why is the printer not working?",
+      "sentence": "Why is the printer not working?",
+      "options": [
+        "Can you explain why is the printer not working?",
+        "Can you explain why not is the printer working?",
+        "Can you explain why the printer is not working?",
+        "Can you explain why the printer not is working?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Can you explain why the printer is not working?",
+      "hint": "Move 'is' back after the subject, as in a normal statement.",
+      "explanation": "Even with 'be', embedded questions use statement word order: 'the printer is not working', not 'is the printer'.",
+      "grammarRule": "Embedded Questions: 'Can You Explain...?' (Why / How)"
+    },
+    {
+      "id": "qf_l124_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Who did she invite to the party?",
+      "sentence": "Who did she invite to the party?",
+      "options": [
+        "Do you have any idea who did she invite to the party?",
+        "Do you have any idea who she did invite to the party?",
+        "Do you have any idea who invited she to the party?",
+        "Do you have any idea who she invited to the party?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Do you have any idea who she invited to the party?",
+      "hint": "Take out 'did' - the verb carries the past tense by itself in the embedded clause.",
+      "explanation": "Embedded questions drop 'did': 'who she invited to the party', with statement word order throughout.",
+      "grammarRule": "Embedded Questions: 'Do You Have Any Idea...?' (Who / How Much)"
+    },
+    {
+      "id": "qf_l124_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "How much does this repair usually cost?",
+      "sentence": "How much does this repair usually cost?",
+      "options": [
+        "Do you have any idea how much this repair usually costs?",
+        "Do you have any idea how much does this repair usually cost?",
+        "Do you have any idea how much this repair usually cost?",
+        "Do you have any idea how much cost this repair usually?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Do you have any idea how much this repair usually costs?",
+      "hint": "Remove 'does' - the verb regains its -s ending on its own.",
+      "explanation": "Inside the embedded clause, 'does' disappears, and the verb agrees directly with the subject: 'this repair usually costs'.",
+      "grammarRule": "Embedded Questions: 'Do You Have Any Idea...?' (Who / How Much)"
+    },
+    {
+      "id": "qf_l124_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Who is responsible for the mistake?",
+      "sentence": "Who is responsible for the mistake?",
+      "options": [
+        "Do you have any idea who's responsible is for the mistake?",
+        "Do you have any idea who is responsible for the mistake?",
+        "Do you have any idea who responsible is for the mistake?",
+        "Do you have any idea is who responsible for the mistake?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Do you have any idea who is responsible for the mistake?",
+      "hint": "Since 'who' is the subject here, the word order doesn't change at all.",
+      "explanation": "Because 'who' is already the subject of the original question, embedding it keeps the exact same word order: 'who is responsible'.",
+      "grammarRule": "Embedded Questions: 'Do You Have Any Idea...?' (Who / How Much)"
+    },
+    {
+      "id": "qf_l125_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "When does the next bus arrive?",
+      "sentence": "When does the next bus arrive?",
+      "options": [
+        "Could you tell me when does the next bus arrive?",
+        "Could you tell me when the next bus arrives?",
+        "Could you tell me when the next bus arrive?",
+        "Could you tell me when arrives the next bus?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Could you tell me when the next bus arrives?",
+      "hint": "Drop 'does', and let the verb take its -s again.",
+      "explanation": "Embedded questions drop 'does', and the verb takes its normal present-tense form: 'the next bus arrives'.",
+      "grammarRule": "Embedded Questions: Mixed Practice"
+    },
+    {
+      "id": "qf_l125_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "How long will the delay last?",
+      "sentence": "How long will the delay last?",
+      "options": [
+        "Do you know how long the delay will last?",
+        "Do you know how long will the delay last?",
+        "Do you know how long the delay last will?",
+        "Do you know how long the delay will lasts?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Do you know how long the delay will last?",
+      "hint": "Move 'will' back after the subject, as in a normal statement.",
+      "explanation": "Embedded questions use statement word order: 'the delay will last', not 'will the delay last'.",
+      "grammarRule": "Embedded Questions: Mixed Practice"
+    },
+    {
+      "id": "qf_l125_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Where can I find the nearest exit?",
+      "sentence": "Where can I find the nearest exit?",
+      "options": [
+        "Can you tell me where can I find the nearest exit?",
+        "Can you tell me where I find can the nearest exit?",
+        "Can you tell me where I can find the nearest exit?",
+        "Can you tell me where can find I the nearest exit?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Can you tell me where I can find the nearest exit?",
+      "hint": "Move 'can' back after the subject, as in a normal statement.",
+      "explanation": "Embedded questions use statement word order: 'I can find', not 'can I find'.",
+      "grammarRule": "Embedded Questions: Mixed Practice"
+    },
+    {
+      "id": "qf_l126_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "How much has the price increased this year?",
+      "sentence": "How much has the price increased this year?",
+      "options": [
+        "Have you found out how much the price has increased this year?",
+        "Have you found out how much has the price increased this year?",
+        "Have you found out how much the price increased this year has?",
+        "Have you found out how much the price have increased this year?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Have you found out how much the price has increased this year?",
+      "hint": "Move 'has' back after the subject, as in a normal statement.",
+      "explanation": "Embedded questions keep statement word order: 'the price has increased', not 'has the price increased'.",
+      "grammarRule": "Embedded Questions: 'Have You Found Out...?' (Perfect Tenses)"
+    },
+    {
+      "id": "qf_l126_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Why has the shipment been delayed?",
+      "sentence": "Why has the shipment been delayed?",
+      "options": [
+        "Have you found out why has the shipment been delayed?",
+        "Have you found out why the shipment been has delayed?",
+        "Have you found out why the shipment has been delayed?",
+        "Have you found out why has the shipment be delayed?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Have you found out why the shipment has been delayed?",
+      "hint": "Move 'has' back after the subject, keeping 'been delayed' together.",
+      "explanation": "Embedded questions use statement word order: 'the shipment has been delayed', not 'has the shipment been delayed'.",
+      "grammarRule": "Embedded Questions: 'Have You Found Out...?' (Perfect Tenses)"
+    },
+    {
+      "id": "qf_l126_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "What has changed since the last meeting?",
+      "sentence": "What has changed since the last meeting?",
+      "options": [
+        "Have you found out what has changed since the last meeting?",
+        "Have you found out what changed has since the last meeting?",
+        "Have you found out what has change since the last meeting?",
+        "Have you found out has what changed since the last meeting?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Have you found out what has changed since the last meeting?",
+      "hint": "Since 'what' is the subject here, the word order stays the same.",
+      "explanation": "Because 'what' is already the subject of the original question, the embedded form keeps the same word order: 'what has changed'.",
+      "grammarRule": "Embedded Questions: 'Have You Found Out...?' (Perfect Tenses)"
+    },
+    {
+      "id": "qf_l127_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Where should I sign this form?",
+      "sentence": "Where should I sign this form?",
+      "options": [
+        "Would you mind telling me where should I sign this form?",
+        "Would you mind telling me where I sign should this form?",
+        "Would you mind telling me where should sign I this form?",
+        "Would you mind telling me where I should sign this form?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Would you mind telling me where I should sign this form?",
+      "hint": "Move 'should' back after the subject, as in a normal statement.",
+      "explanation": "Embedded questions use statement word order: 'I should sign', not 'should I sign'.",
+      "grammarRule": "Embedded Questions: 'Would You Mind Telling Me...?'"
+    },
+    {
+      "id": "qf_l127_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "What can we do to fix this issue?",
+      "sentence": "What can we do to fix this issue?",
+      "options": [
+        "Would you mind telling me what can we do to fix this issue?",
+        "Would you mind telling me what we do can to fix this issue?",
+        "Would you mind telling me what we can do to fix this issue?",
+        "Would you mind telling me what can do we to fix this issue?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Would you mind telling me what we can do to fix this issue?",
+      "hint": "Move 'can' back after the subject, as in a normal statement.",
+      "explanation": "Embedded questions use statement word order: 'we can do', not 'can we do'.",
+      "grammarRule": "Embedded Questions: 'Would You Mind Telling Me...?'"
+    },
+    {
+      "id": "qf_l127_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "How do I reset my password?",
+      "sentence": "How do I reset my password?",
+      "options": [
+        "Would you mind telling me how I reset my password?",
+        "Would you mind telling me how do I reset my password?",
+        "Would you mind telling me how I do reset my password?",
+        "Would you mind telling me how reset I my password?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Would you mind telling me how I reset my password?",
+      "hint": "Drop 'do', and let the verb stay in its base form since 'I' doesn't take -s anyway.",
+      "explanation": "Embedded questions drop 'do': 'how I reset my password', with statement word order throughout.",
+      "grammarRule": "Embedded Questions: 'Would You Mind Telling Me...?'"
+    },
+    {
+      "id": "qf_l128_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Why did the company change its policy?",
+      "sentence": "Why did the company change its policy?",
+      "options": [
+        "Do you happen to know why did the company change its policy?",
+        "Do you happen to know why the company did change its policy?",
+        "Do you happen to know why changed the company its policy?",
+        "Do you happen to know why the company changed its policy?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Do you happen to know why the company changed its policy?",
+      "hint": "Drop 'did', and let the verb carry the past tense directly.",
+      "explanation": "Embedded questions drop 'did': 'why the company changed its policy', with statement word order throughout.",
+      "grammarRule": "Embedded Questions: 'Do You Happen To Know...?'"
+    },
+    {
+      "id": "qf_l128_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "What does this symbol represent?",
+      "sentence": "What does this symbol represent?",
+      "options": [
+        "Do you happen to know what does this symbol represent?",
+        "Do you happen to know what this symbol represent?",
+        "Do you happen to know what this symbol represents?",
+        "Do you happen to know what represents this symbol?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Do you happen to know what this symbol represents?",
+      "hint": "Drop 'does', and let the verb take its -s again.",
+      "explanation": "Inside the embedded clause, 'does' disappears, and the verb agrees directly with the subject: 'this symbol represents'.",
+      "grammarRule": "Embedded Questions: 'Do You Happen To Know...?'"
+    },
+    {
+      "id": "qf_l128_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "When will the renovations be finished?",
+      "sentence": "When will the renovations be finished?",
+      "options": [
+        "Do you happen to know when the renovations will be finished?",
+        "Do you happen to know when will the renovations be finished?",
+        "Do you happen to know when the renovations be will finished?",
+        "Do you happen to know when will the renovations finished be?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Do you happen to know when the renovations will be finished?",
+      "hint": "Move 'will' back after the subject, as in a normal statement.",
+      "explanation": "Embedded questions use statement word order: 'the renovations will be finished', not 'will the renovations be'.",
+      "grammarRule": "Embedded Questions: 'Do You Happen To Know...?'"
+    },
+    {
+      "id": "qf_l129_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "What time do the shops close on Sundays?",
+      "sentence": "What time do the shops close on Sundays?",
+      "options": [
+        "Could you tell me what time do the shops close on Sundays?",
+        "Could you tell me what time the shops close on Sundays?",
+        "Could you tell me what time the shops close do on Sundays?",
+        "Could you tell me what time do the shops closes on Sundays?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Could you tell me what time the shops close on Sundays?",
+      "hint": "Drop 'do', and let the verb take its normal plural form.",
+      "explanation": "Embedded questions drop 'do': 'the shops close', with statement word order and no auxiliary.",
+      "grammarRule": "Embedded Questions: Reinforcement Practice"
+    },
+    {
+      "id": "qf_l129_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Where were you living before you moved here?",
+      "sentence": "Where were you living before you moved here?",
+      "options": [
+        "Can you tell me where were you living before you moved here?",
+        "Can you tell me where you living were before you moved here?",
+        "Can you tell me where you were live before you moved here?",
+        "Can you tell me where you were living before you moved here?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Can you tell me where you were living before you moved here?",
+      "hint": "Move 'were' back after the subject, as in a normal statement.",
+      "explanation": "Embedded questions use statement word order: 'you were living', not 'were you living'.",
+      "grammarRule": "Embedded Questions: Reinforcement Practice"
+    },
+    {
+      "id": "qf_l129_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "How many people applied for the position?",
+      "sentence": "How many people applied for the position?",
+      "options": [
+        "Do you know how many people applied for the position?",
+        "Do you know how many people did apply for the position?",
+        "Do you know how many people apply did for the position?",
+        "Do you know how many applied people for the position?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Do you know how many people applied for the position?",
+      "hint": "Since 'how many people' is the subject here, the word order doesn't change at all.",
+      "explanation": "Because 'how many people' is already the subject of the original question, the embedded form keeps the same word order: 'people applied'.",
+      "grammarRule": "Embedded Questions: Reinforcement Practice"
+    },
+    {
+      "id": "qf_l130_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Why does the app keep crashing?",
+      "sentence": "Why does the app keep crashing?",
+      "options": [
+        "Do you know why does the app keep crashing?",
+        "Do you know why the app keep crashing?",
+        "Do you know why the app keeps crashing?",
+        "Do you know why crashing the app keeps?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Do you know why the app keeps crashing?",
+      "hint": "'Does' disappears here, so the verb takes back its -s.",
+      "explanation": "Embedded questions drop 'does', and the verb agrees directly with the subject: 'the app keeps crashing'.",
+      "grammarRule": "Embedded Questions: Mixed Review"
+    },
+    {
+      "id": "qf_l130_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "What should we bring to the potluck?",
+      "sentence": "What should we bring to the potluck?",
+      "options": [
+        "Could you tell me what should we bring to the potluck?",
+        "Could you tell me what we should bring to the potluck?",
+        "Could you tell me what we bring should to the potluck?",
+        "Could you tell me what should bring we to the potluck?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Could you tell me what we should bring to the potluck?",
+      "hint": "Move 'should' back after the subject, as in a normal statement.",
+      "explanation": "Embedded questions use statement word order: 'we should bring', not 'should we bring'.",
+      "grammarRule": "Embedded Questions: Mixed Review"
+    },
+    {
+      "id": "qf_l130_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "How did they solve the shipping delay?",
+      "sentence": "How did they solve the shipping delay?",
+      "options": [
+        "Do you have any idea how did they solve the shipping delay?",
+        "Do you have any idea how they did solve the shipping delay?",
+        "Do you have any idea how solved they the shipping delay?",
+        "Do you have any idea how they solved the shipping delay?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Do you have any idea how they solved the shipping delay?",
+      "hint": "Drop 'did', and let the verb carry the past tense directly.",
+      "explanation": "Embedded questions drop 'did': 'how they solved the shipping delay', with statement word order throughout.",
+      "grammarRule": "Embedded Questions: Mixed Review"
+    }
+  ]
 }

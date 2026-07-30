@@ -1,577 +1,577 @@
 {
-    "gameType": "questionFormatter",
-    "batchIndex": 19,
-    "levels": "181-190",
-    "quests": [
-        {
-            "id": "qf_l181_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence correctly uses 'would' for past conditionality in narrative?",
-            "sentence": "Which sentence correctly uses 'would' for past conditionality in narrative?",
-            "options": [
-                "He knew that if he pushed the button, the alarm would sound.",
-                "He knew that if he pushes the button, the alarm would sound.",
-                "He knew that if he had pushed the button, the alarm would have sounded.",
-                "He knew that if he pushed the button, the alarm will sound."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He knew that if he pushed the button, the alarm would sound.",
-            "hint": "Backshifted conditional in reported thought: 'if he pushed...would sound' = reported first conditional.",
-            "explanation": "In reported speech and narrative, the first conditional backshifts: 'if it rains, I will come' → 'he knew that if it rained, he would come'. The version 'if he pushed...would sound' correctly represents this backshifted open conditional. 'If he pushes...would sound' mixes tenses. 'Will sound' doesn't backshift.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l181_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence most accurately uses 'the' with a unique referent?",
-            "sentence": "Which sentence most accurately uses 'the' with a unique referent?",
-            "options": [
-                "The Prime Minister will address the nation tonight.",
-                "A Prime Minister will address a nation tonight.",
-                "The Prime Minister will address a nation tonight.",
-                "Prime Minister will address the nation tonight."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The Prime Minister will address the nation tonight.",
-            "hint": "Both 'the Prime Minister' and 'the nation' are unique referents in context - both take 'the'.",
-            "explanation": "'The Prime Minister' refers to a specific, unique role-holder in context. 'The nation' refers to the specific country whose PM is speaking - also unique in context. 'A Prime Minister' would imply any prime minister, not the current one. Omitting 'the' before 'Prime Minister' is a common error in some learner varieties of English.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l181_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "What is the grammatical function of 'to' in 'He was the last person to arrive'?",
-            "sentence": "What is the grammatical function of 'to' in 'He was the last person to arrive'?",
-            "options": [
-                "'To arrive' is a postmodifying infinitive, equivalent to a defining relative clause: 'who arrived'.",
-                "'To arrive' is the purpose of his being last.",
-                "'To arrive' is the subject complement after 'was'.",
-                "'To arrive' is a participle clause modifying 'last'."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "'To arrive' is a postmodifying infinitive, equivalent to a defining relative clause: 'who arrived'.",
-            "hint": "'The last person to arrive' = 'the last person who arrived' - postmodifying infinitive in superlative context.",
-            "explanation": "In superlative and ordinal expressions ('the first, the last, the only, the next'), an infinitive can postmodify the noun and acts like a defining relative clause. 'The last person to arrive' = 'the last person who arrived'. This is a postmodifying infinitive, not a purpose clause.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l182_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which is a correct example of an 'existential there' construction?",
-            "sentence": "Which is a correct example of an 'existential there' construction?",
-            "options": [
-                "There appears to be a problem with the data.",
-                "It appears to be a problem with the data.",
-                "A problem with the data appears to be there.",
-                "There is appearing a problem with the data."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "There appears to be a problem with the data.",
-            "hint": "Existential 'there' + complex verb phrase ('appears to be') introduces a new referent.",
-            "explanation": "Existential 'there' introduces a new, previously unknown referent into discourse. It can combine with complex verb phrases: 'There appears to be', 'There tends to be', 'There seems to be'. 'It appears to be a problem' uses a different structure (anticipatory 'it' for evaluation). 'There is appearing' is non-standard.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l182_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Identify the most precise word for the blank: 'The government _____ the opposition's proposal without debate.'",
-            "sentence": "Identify the most precise word for the blank: 'The government _____ the opposition's proposal without debate.'",
-            "options": [
-                "rejected",
-                "refused",
-                "denied",
-                "declined"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "rejected",
-            "hint": "'Reject a proposal' = formally turn it down. 'Refuse' = decline to do something (verb + infinitive/noun).",
-            "explanation": "'Reject a proposal' is the precise collocation - the government formally turns down the proposal. 'Refuse a proposal' is less standard; 'refuse' typically takes a verbal complement ('refuse to do'). 'Deny a proposal' means to say it doesn't exist. 'Decline a proposal' is also possible but 'reject' is strongest for outright dismissal.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l182_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which correctly uses an 'infinitive of result' (too...to/enough...to)?",
-            "sentence": "Which correctly uses an 'infinitive of result' (too...to/enough...to)?",
-            "options": [
-                "The film was engaging enough to hold my attention for three hours.",
-                "The film was too engaging to hold my attention for three hours.",
-                "The film was so engaging enough to hold my attention for three hours.",
-                "The film was engaging enough so to hold my attention for three hours."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The film was engaging enough to hold my attention for three hours.",
-            "hint": "'Adjective + enough + to + base verb' = the quality was sufficient to enable the result.",
-            "explanation": "'Engaging enough to hold' = the engagement was sufficient to keep attention. 'Too engaging to hold' would imply the film was excessively engaging in a way that prevented holding attention - logically contradictory. 'So engaging enough' doubles the intensifier. 'Enough so to' is not standard word order.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l183_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence demonstrates the 'have + object + bare infinitive' (causative) correctly?",
-            "sentence": "Which sentence demonstrates the 'have + object + bare infinitive' (causative) correctly?",
-            "options": [
-                "The manager had her team revise the entire report.",
-                "The manager had her team to revise the entire report.",
-                "The manager had her team revised the entire report.",
-                "The manager had revised the entire report by her team."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The manager had her team revise the entire report.",
-            "hint": "Causative 'have' for people: have + person + bare infinitive (no 'to').",
-            "explanation": "Causative 'have' with a person object: 'had her team revise' = arranged for the team to revise. No 'to' is used. 'Had her team revised' = causative with a thing object (past participle), but 'her team' is a person. 'Had revised... by her team' creates an odd passive-like structure.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l183_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence correctly uses 'can' for theoretical possibility (not ability)?",
-            "sentence": "Which sentence correctly uses 'can' for theoretical possibility (not ability)?",
-            "options": [
-                "Mistakes can be made even by experts.",
-                "Mistakes are able to be made even by experts.",
-                "Mistakes could be made even by experts.",
-                "Mistakes may be made even by experts."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Mistakes can be made even by experts.",
-            "hint": "'Can' in passive constructions expresses theoretical possibility in general statements.",
-            "explanation": "'Mistakes can be made' uses 'can' for theoretical/general possibility: it is possible for mistakes to happen. This is different from ability ('she can swim'). 'Could be made' would suggest a specific conditional possibility. 'May be made' suggests permission or uncertain future possibility.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l183_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence correctly uses 'whose' with a non-human antecedent?",
-            "sentence": "Which sentence correctly uses 'whose' with a non-human antecedent?",
-            "options": [
-                "The company whose product was recalled has issued an apology.",
-                "The company which product was recalled has issued an apology.",
-                "The company that product was recalled has issued an apology.",
-                "The company who product was recalled has issued an apology."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The company whose product was recalled has issued an apology.",
-            "hint": "'Whose' can refer to non-human nouns (organisations, things) as a possessive relative pronoun.",
-            "explanation": "'Whose' can function as a possessive relative pronoun for non-human antecedents in formal English: 'the company whose product'. 'Which product' is non-standard as a possessive relative (use 'of which': 'the company the product of which...'). 'That product' is ungrammatical as a possessive relative.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l184_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which correctly uses 'as if' / 'as though' with the subjunctive?",
-            "sentence": "Which correctly uses 'as if' / 'as though' with the subjunctive?",
-            "options": [
-                "She spoke as if she were the only expert in the room.",
-                "She spoke as if she was the only expert in the room.",
-                "She spoke as if she is the only expert in the room.",
-                "She spoke as though she had been the only expert in the room."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She spoke as if she were the only expert in the room.",
-            "hint": "'As if/as though + past subjunctive (were)' = hypothetical comparison not matching reality.",
-            "explanation": "'As if/as though + past subjunctive (were)' expresses a hypothetical: she isn't actually the only expert. In formal English, 'were' is preferred for all subjects. 'Was' is widely used informally. 'As though she had been' would imply she was previously the only expert but no longer is - a different meaning.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l184_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence most precisely uses 'might as well'?",
-            "sentence": "Which sentence most precisely uses 'might as well'?",
-            "options": [
-                "We might as well take the scenic route since there's a traffic jam.",
-                "We might take the scenic route since there's a traffic jam.",
-                "We may as well have taken the scenic route since there's a traffic jam.",
-                "We could as well take the scenic route since there's a traffic jam."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "We might as well take the scenic route since there's a traffic jam.",
-            "hint": "'Might as well + base verb' = there's no particular reason not to do it; one option is as good as another.",
-            "explanation": "'Might as well' expresses that an alternative is equally good or that there's no real reason not to choose it. 'May as well have taken' would be for a past missed opportunity. 'Could as well' is not a standard expression. 'Might take' expresses possibility without the 'no reason not to' implication.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l184_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence uses an 'unattached participle' that is grammatically acceptable?",
-            "sentence": "Which sentence uses an 'unattached participle' that is grammatically acceptable?",
-            "options": [
-                "Strictly speaking, this rule has a few exceptions.",
-                "Speaking strictly, this rule has a few exceptions.",
-                "Speaking, this rule strictly has a few exceptions.",
-                "To strictly speak, this rule has a few exceptions."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Strictly speaking, this rule has a few exceptions.",
-            "hint": "Some participial phrases are 'conventionally unattached' - they don't refer to the sentence subject.",
-            "explanation": "'Strictly speaking', 'generally speaking', 'broadly speaking', 'frankly speaking', 'considering the evidence' - these are conventional, accepted 'absolute' or 'unattached' participial expressions that do not need to refer to the grammatical subject. They are fixed discourse markers, unlike true dangling modifiers.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l185_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which identifies the correct term for 'he' in: 'The CEO announced his resignation'?",
-            "sentence": "Which identifies the correct term for 'he' in: 'The CEO announced his resignation'?",
-            "options": [
-                "'His' is a possessive adjective (determiner) co-referential with 'the CEO'.",
-                "'His' is a personal pronoun substituting for 'the CEO'.",
-                "'His' is a reflexive pronoun emphasising the CEO.",
-                "'His' is a relative pronoun introducing a relative clause."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "'His' is a possessive adjective (determiner) co-referential with 'the CEO'.",
-            "hint": "'His' is a possessive determiner (adjective) modifying 'resignation', co-referential with 'the CEO'.",
-            "explanation": "'His' functions as a possessive adjective (or possessive determiner), modifying the noun 'resignation'. It co-refers with 'the CEO' in the same sentence - an anaphoric reference. It is not a personal pronoun (he/him), a reflexive pronoun (himself), or a relative pronoun (who/which/that).",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l185_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence correctly uses 'lest' in a formal subordinate clause?",
-            "sentence": "Which sentence correctly uses 'lest' in a formal subordinate clause?",
-            "options": [
-                "She left early lest she miss the last train.",
-                "She left early lest she misses the last train.",
-                "She left early lest she missed the last train.",
-                "She left early lest she should miss the last train."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She left early lest she miss the last train.",
-            "hint": "'Lest' = 'for fear that' - takes the subjunctive (base verb) or 'should + base verb'.",
-            "explanation": "'Lest' is a formal/literary conjunction meaning 'for fear that'. It takes either the subjunctive (base verb: 'she miss') or 'should + base verb' ('she should miss'). Both are grammatically correct. 'Lest she misses' (indicative with -s) and 'lest she missed' (past simple) are both wrong after 'lest'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l185_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence most precisely expresses 'near certainty' about a past event?",
-            "sentence": "Which sentence most precisely expresses 'near certainty' about a past event?",
-            "options": [
-                "She must have already left - her coat is gone.",
-                "She should have already left - her coat is gone.",
-                "She would have already left - her coat is gone.",
-                "She might have already left - her coat is gone."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She must have already left - her coat is gone.",
-            "hint": "'Must have + past participle' = near-certain past deduction based on present evidence.",
-            "explanation": "'Must have left' expresses a near-certain past deduction from present evidence (her coat is gone). 'Should have left' = it was the expected thing to do. 'Would have left' = in a hypothetical conditional context. 'Might have left' = a much less certain possibility.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l186_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence best demonstrates epistemic vs deontic modality?",
-            "sentence": "Which sentence best demonstrates epistemic vs deontic modality?",
-            "options": [
-                "You must be exhausted (epistemic) vs You must submit the form (deontic).",
-                "'Must' always expresses obligation (deontic).",
-                "'Must' always expresses deduction (epistemic).",
-                "'Must' expresses the same meaning in both cases - only context creates the distinction."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "You must be exhausted (epistemic) vs You must submit the form (deontic).",
-            "hint": "'Must' has two distinct meanings: epistemic (deduction/certainty) and deontic (obligation/necessity).",
-            "explanation": "'Must' can express: (1) epistemic modality - certainty or deduction from evidence ('you must be tired'); (2) deontic modality - obligation or necessity ('you must submit the form'). Context determines which reading is active. These are genuinely different meanings of the same modal.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l186_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence uses 'would' for a past repeated action (habitual past) correctly?",
-            "sentence": "Which sentence uses 'would' for a past repeated action (habitual past) correctly?",
-            "options": [
-                "As a child, he would spend hours reading in the garden.",
-                "As a child, he spent hours reading in the garden (equally correct with habitual meaning).",
-                "As a child, he would have spent hours reading in the garden.",
-                "As a child, he used to spend hours reading in the garden (less correct)."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "As a child, he would spend hours reading in the garden.",
-            "hint": "Both 'would' and 'used to' express habitual past; 'would' cannot express past states (only actions).",
-            "explanation": "'Would + base verb' expresses habitual past actions: 'he would spend hours'. This is equivalent to 'used to spend'. Crucially, 'would' cannot be used for past states: 'he would know her' (state) is wrong; use 'used to know'. 'Both A and B' - simple past ('spent') also expresses habitual past in context. 'Would have spent' = third conditional (hypothetical past).",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l186_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Identify the most sophisticated error in: 'Being that she was late, the meeting started without her.'",
-            "sentence": "Identify the most sophisticated error in: 'Being that she was late, the meeting started without her.'",
-            "options": [
-                "'Being that' is non-standard; use 'Because' or 'Since'.",
-                "'She was late' should be in the past perfect.",
-                "'Meeting started' should be passive.",
-                "'Without her' should be 'without her being there'."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "'Being that' is non-standard; use 'Because' or 'Since'.",
-            "hint": "'Being that' is a non-standard conjunction; it should be replaced by 'Because/Since' in formal writing.",
-            "explanation": "'Being that' as a causal conjunction is non-standard in formal English. The correct formal alternatives are 'because', 'since', or 'as': 'Since she was late, the meeting started without her.' 'Being that' is occasionally heard in informal American English but is avoided in writing.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l187_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence contains a subtle subject-verb agreement error?",
-            "sentence": "Which sentence contains a subtle subject-verb agreement error?",
-            "options": [
-                "One of the recommendations that was made proves controversial.",
-                "One of the recommendations that were made proves controversial.",
-                "One of the recommendations that were made prove controversial.",
-                "One of the recommendations that was made prove controversial."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "One of the recommendations that was made proves controversial.",
-            "hint": "'One of the N that/which + plural verb': the relative clause verb agrees with the plural noun, not 'one'.",
-            "explanation": "In 'one of the [plural noun] that [verb]', the verb in the relative clause agrees with the plural noun (not 'one'): 'one of the recommendations that WERE made'. The main clause verb agrees with 'one' (singular): 'proves'. So the correct version is 'One of the recommendations that were made proves controversial'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l187_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which correctly captures the difference between 'I don't think she knows' and 'I think she doesn't know'?",
-            "sentence": "Which correctly captures the difference between 'I don't think she knows' and 'I think she doesn't know'?",
-            "options": [
-                "'I don't think she knows' = standard negation transfer; both mean the same but the first is more natural.",
-                "They have different logical meanings - the first is epistemic, the second is deontic.",
-                "'I don't think she knows' denies my thinking; 'I think she doesn't know' asserts my belief.",
-                "Only 'I think she doesn't know' is grammatically correct."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "'I don't think she knows' = standard negation transfer; both mean the same but the first is more natural.",
-            "hint": "Negation transfer: 'I don't think + positive clause' is idiomatic for 'I think + negative clause'.",
-            "explanation": "In English, negation is often 'transferred' from the subordinate clause to the main verb: 'I don't think she knows' = 'I think she doesn't know'. This is idiomatic and natural. Both are grammatically correct and mean the same thing in practice, though the logical scope of negation technically differs.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l187_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence demonstrates the correct use of 'barely' in an inverted structure?",
-            "sentence": "Which sentence demonstrates the correct use of 'barely' in an inverted structure?",
-            "options": [
-                "Barely had she entered the room when the lights went out.",
-                "Barely she had entered the room when the lights went out.",
-                "Barely did she enter the room when the lights went out.",
-                "Barely had she entered the room than the lights went out."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Barely had she entered the room when the lights went out.",
-            "hint": "'Barely had + subject + past participle + when + simple past' - inversion + correct connector.",
-            "explanation": "'Barely' (like 'hardly' and 'scarcely') triggers past-perfect inversion: 'Barely had she entered'. The connector is 'when', not 'than' (which is used with 'no sooner'). 'Barely did she enter' (simple past inversion) is less standard with 'barely'. 'Barely she had entered' (no inversion) is non-standard.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l188_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which uses 'it' correctly as a preparatory object?",
-            "sentence": "Which uses 'it' correctly as a preparatory object?",
-            "options": [
-                "I find it difficult to work in a noisy environment.",
-                "I find it difficult working in a noisy environment.",
-                "I find working in a noisy environment difficult.",
-                "I find difficult to work in a noisy environment."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "I find it difficult to work in a noisy environment.",
-            "hint": "'Find it + adjective + to-infinitive' - 'it' is the anticipatory/preparatory object.",
-            "explanation": "'Find it + adjective + to-infinitive' uses 'it' as a preparatory object, placing the heavy infinitive at the end. 'Find it difficult working' is non-standard after 'find' (though 'find' + gerund is possible: 'I find working difficult'). 'Find working in a noisy environment difficult' is also grammatically correct but more awkward. 'Find difficult to work' (without 'it') is ungrammatical.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l188_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which correctly uses 'the' before a noun modified by a superlative relative clause?",
-            "sentence": "Which correctly uses 'the' before a noun modified by a superlative relative clause?",
-            "options": [
-                "She is one of the most articulate speakers I have ever heard.",
-                "She is one of most articulate speakers I have ever heard.",
-                "She is the most articulate one of the speakers I have ever heard.",
-                "She is one of the most articulate speakers I have ever heard of."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She is one of the most articulate speakers I have ever heard.",
-            "hint": "'One of the + superlative + plural noun' - 'the' is essential before the superlative.",
-            "explanation": "'One of the most + adjective + plural noun' is the standard pattern. 'The' is essential before the superlative. 'One of most articulate' (no 'the') is wrong. 'The most articulate one of the speakers' is grammatically valid but focuses differently. 'Have ever heard of' changes the meaning ('of' would mean 'I've heard of her existence', not 'I've heard her speak').",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l188_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence correctly uses 'the more...the more' for a causal proportion?",
-            "sentence": "Which sentence correctly uses 'the more...the more' for a causal proportion?",
-            "options": [
-                "The longer the delay, the greater the cost becomes.",
-                "The longer the delay, the greater cost becomes.",
-                "Longer the delay, the greater the cost becomes.",
-                "The longer delay, the greater the cost."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The longer the delay, the greater the cost becomes.",
-            "hint": "Both halves: 'the + comparative adjective/adverb + subject + verb'.",
-            "explanation": "'The longer the delay, the greater the cost becomes' is correct. Both halves need 'the' before the comparative. The second half optionally includes a verb ('becomes'). 'The greater cost' (no 'the' before 'greater') is wrong. 'Longer the delay' (no 'the' before 'longer') is also wrong. 'The greater the cost' (without a verb) is also standard and acceptable.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l189_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence most accurately uses 'cannot but'?",
-            "sentence": "Which sentence most accurately uses 'cannot but'?",
-            "options": [
-                "I cannot but admire her persistence.",
-                "I cannot but admiring her persistence.",
-                "I cannot but to admire her persistence.",
-                "I cannot but admired her persistence."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "I cannot but admire her persistence.",
-            "hint": "'Cannot but + bare infinitive' = cannot help/avoid doing - formal/literary expression.",
-            "explanation": "'Cannot but + bare infinitive' is a formal/literary expression meaning 'cannot avoid or help doing something': 'I cannot but admire' = 'I cannot help admiring'. The bare infinitive (no 'to') follows 'cannot but'. 'Cannot but admiring' (gerund) and 'cannot but to admire' (with 'to') are both wrong.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l189_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which correctly identifies the clause type in: 'However you look at the problem, the answer remains the same.'?",
-            "sentence": "Which correctly identifies the clause type in: 'However you look at the problem, the answer remains the same.'?",
-            "options": [
-                "'However you look at the problem' is an adverbial concessive clause.",
-                "It is a relative clause modifying 'problem'.",
-                "It is a nominal clause functioning as the subject.",
-                "It is a conditional clause equivalent to 'if you look at the problem'."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "'However you look at the problem' is an adverbial concessive clause.",
-            "hint": "'However + subject + verb' introduces a concessive adverbial clause ('no matter how').",
-            "explanation": "'However you look at the problem' = 'no matter how you look at the problem' - it is a concessive adverbial clause. It is not a relative clause (no antecedent noun to modify), not a nominal clause (it doesn't function as a noun), and not a conditional ('if' would suggest a specific scenario).",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l189_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which most accurately explains the difference between 'since' (temporal) and 'since' (causal)?",
-            "sentence": "Which most accurately explains the difference between 'since' (temporal) and 'since' (causal)?",
-            "options": [
-                "'Since I left' (temporal: from the time I left) vs 'Since you're here' (causal: because you're here).",
-                "'Since' is only temporal - causal use is non-standard.",
-                "'Since' is only causal - temporal use is non-standard.",
-                "'Since' always expresses both time and cause simultaneously."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "'Since I left' (temporal: from the time I left) vs 'Since you're here' (causal: because you're here).",
-            "hint": "'Since' is polysemous: it expresses both time (from a point) and cause (because), depending on context.",
-            "explanation": "'Since' has two distinct uses: (1) temporal - 'since I left' = from the time I left; (2) causal - 'since you're here' = because you're here. Context usually disambiguates. Temporal 'since' typically collocates with perfect tenses; causal 'since' typically introduces clauses with present/past simple.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l190_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence correctly uses a 'double genitive'?",
-            "sentence": "Which sentence correctly uses a 'double genitive'?",
-            "options": [
-                "She is a friend of my sister's.",
-                "She is a friend of my sister.",
-                "She is a friend my sister's.",
-                "She is my sister's friend of."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She is a friend of my sister's.",
-            "hint": "Double genitive: 'of + noun + 's' - used for human possessors with indefinite reference.",
-            "explanation": "The double genitive ('of + possessive 's') is used for human possessors, especially with indefinite articles: 'a friend of my sister's'. 'A friend of my sister' is also accepted by many grammarians, but the double genitive is traditional. The double genitive often implies a choice from a set ('one of my sister's friends').",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l190_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence uses 'such' as a predeterminer correctly?",
-            "sentence": "Which sentence uses 'such' as a predeterminer correctly?",
-            "options": [
-                "Such dedication is rarely seen in someone so young.",
-                "Such a dedication is rarely seen in someone so young.",
-                "A such dedication is rarely seen in someone so young.",
-                "Such dedication it is rarely seen in someone so young."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Such dedication is rarely seen in someone so young.",
-            "hint": "'Such + uncountable noun' (no article) for emphasis. 'Such + a/an + countable noun' for single countable nouns.",
-            "explanation": "'Dedication' is uncountable, so 'such dedication' (no article) is correct. 'Such a dedication' would be used with a countable noun: 'such a performance'. 'A such dedication' is wrong - 'such' comes before the article, not after. 'Such dedication it is' adds a redundant pronoun.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l190_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence uses 'no matter' correctly?",
-            "sentence": "Which sentence uses 'no matter' correctly?",
-            "options": [
-                "No matter how busy she is, she always makes time for her family.",
-                "No matter how much busy she is, she always makes time for her family.",
-                "No matter she is busy, she always makes time for her family.",
-                "No matter busy she is, she always makes time for her family."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "No matter how busy she is, she always makes time for her family.",
-            "hint": "'No matter how + adjective/adverb + subject + verb' - the structure requires 'how' before the adjective.",
-            "explanation": "'No matter how + adjective + subject + verb' is the correct structure: 'No matter how busy she is'. 'No matter how much busy' is wrong - 'much' is not used before adjectives (use 'how much' with nouns: 'no matter how much money'). 'No matter she is busy' drops 'how'. 'No matter busy she is' also drops 'how'.",
-            "grammarRule": "Question Formation"
-        }
-    ]
+  "gameType": "questionFormatter",
+  "batchIndex": 19,
+  "levels": "181-190",
+  "quests": [
+    {
+      "id": "qf_l181_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The consultant recommended this particular software to our finance team.",
+      "sentence": "The consultant recommended this particular software to our finance team.",
+      "options": [
+        "Who recommended the consultant this particular software to?",
+        "Who the consultant recommended this particular software to?",
+        "Who did the consultant recommend this particular software to?",
+        "Who did the consultant recommended this particular software to?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Who did the consultant recommend this particular software to?",
+      "hint": "'Our finance team' is the object of 'to', so use 'did' and keep the preposition at the end.",
+      "explanation": "Since 'our finance team' is the object of the preposition 'to', the question needs 'did' plus the base verb, with 'to' kept at the end.",
+      "grammarRule": "Mastery Review: Subject/Object & Prepositional Questions"
+    },
+    {
+      "id": "qf_l181_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "A former employee tipped off the journalist about the scandal.",
+      "sentence": "A former employee tipped off the journalist about the scandal.",
+      "options": [
+        "Who did tip off the journalist about the scandal?",
+        "Who did a former employee tip off the journalist about the scandal?",
+        "Who tipped off the journalist about the scandal?",
+        "Whom tipped off the journalist about the scandal?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Who tipped off the journalist about the scandal?",
+      "hint": "The subject is being asked about here, so no 'did' is added.",
+      "explanation": "'Who' replaces the subject 'a former employee', so the verb stays in the past tense, 'tipped off', with no auxiliary.",
+      "grammarRule": "Mastery Review: Subject/Object & Prepositional Questions"
+    },
+    {
+      "id": "qf_l181_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "She's been counting on her sister for emotional support all year.",
+      "sentence": "She's been counting on her sister for emotional support all year.",
+      "options": [
+        "Who has been she counting on for emotional support all year?",
+        "Who does she have been counting on for emotional support all year?",
+        "Who she has been counting on for emotional support all year?",
+        "Who has she been counting on for emotional support all year?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Who has she been counting on for emotional support all year?",
+      "hint": "Move 'has' after the question word, keeping 'been counting on' together and 'on' at the end.",
+      "explanation": "'Has' moves after the question word, and the phrase 'been counting on' stays together, with the preposition 'on' at the end.",
+      "grammarRule": "Mastery Review: Subject/Object & Prepositional Questions"
+    },
+    {
+      "id": "qf_l182_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I assumed the new packaging was much lighter, but this box still feels quite heavy.",
+      "sentence": "I assumed the new packaging was much lighter, but this box still feels quite heavy.",
+      "options": [
+        "The new packaging isn't supposed to be lighter?",
+        "Isn't the new packaging supposed to be lighter?",
+        "Doesn't the new packaging supposed to be lighter?",
+        "Isn't the new packaging suppose to be lighter?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Isn't the new packaging supposed to be lighter?",
+      "hint": "'Supposed to' pairs with 'be', so use 'Isn't', moved to the front.",
+      "explanation": "Since 'supposed to' is built on 'be', the negative question uses 'isn't', not 'doesn't', moved to the front.",
+      "grammarRule": "Mastery Review: Negative & Degree Questions"
+    },
+    {
+      "id": "qf_l182_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "This bridge looks incredibly long from here.",
+      "sentence": "This bridge looks incredibly long from here.",
+      "options": [
+        "How long is this bridge?",
+        "How long does this bridge?",
+        "How long this bridge is?",
+        "How long is this bridge long?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "How long is this bridge?",
+      "hint": "'How long' asks about length - move 'is' to the front.",
+      "explanation": "'How long' is a fixed phrase for asking about length or duration, and 'is' simply moves to the front.",
+      "grammarRule": "Mastery Review: Negative & Degree Questions"
+    },
+    {
+      "id": "qf_l182_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I assumed the workshop would be fairly quick, but it's already been three hours.",
+      "sentence": "I assumed the workshop would be fairly quick, but it's already been three hours.",
+      "options": [
+        "The workshop wasn't supposed to be quick?",
+        "Didn't the workshop supposed to be quick?",
+        "Wasn't the workshop suppose to be quick?",
+        "Wasn't the workshop supposed to be quick?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Wasn't the workshop supposed to be quick?",
+      "hint": "'Supposed to' pairs with 'be', so use 'Wasn't', moved to the front.",
+      "explanation": "Since 'supposed to' is a 'be' structure, the negative question uses 'wasn't', not 'didn't', moved to the front.",
+      "grammarRule": "Mastery Review: Negative & Degree Questions"
+    },
+    {
+      "id": "qf_l183_q1",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The shipment couldn't have arrived before Tuesday.",
+      "sentence": "The shipment couldn't have arrived before Tuesday.",
+      "options": [
+        "The shipment couldn't have arrived before Tuesday, couldn't it?",
+        "The shipment couldn't have arrived before Tuesday, did it?",
+        "The shipment couldn't have arrived before Tuesday, hasn't it?",
+        "The shipment couldn't have arrived before Tuesday, could it?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The shipment couldn't have arrived before Tuesday, could it?",
+      "hint": "The statement is negative, so use the positive tag 'could it?'",
+      "explanation": "A negative modal perfect statement takes a positive tag using the same modal: 'could it'.",
+      "grammarRule": "Mastery Review: Tag & Modal Perfect Questions"
+    },
+    {
+      "id": "qf_l183_q2",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "You must have been exhausted after that flight.",
+      "sentence": "You must have been exhausted after that flight.",
+      "options": [
+        "You must have been exhausted after that flight, must you?",
+        "You must have been exhausted after that flight, weren't you?",
+        "You must have been exhausted after that flight, hadn't you?",
+        "You must have been exhausted after that flight, mustn't you?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "You must have been exhausted after that flight, mustn't you?",
+      "hint": "The tag reuses the modal 'must' in its negative form.",
+      "explanation": "The tag for a modal perfect statement reuses the same modal. Since this is positive, the tag is negative: 'mustn't you'.",
+      "grammarRule": "Mastery Review: Tag & Modal Perfect Questions"
+    },
+    {
+      "id": "qf_l183_q3",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "They shouldn't have waited so long to ask for help.",
+      "sentence": "They shouldn't have waited so long to ask for help.",
+      "options": [
+        "They shouldn't have waited so long to ask for help, should they?",
+        "They shouldn't have waited so long to ask for help, shouldn't they?",
+        "They shouldn't have waited so long to ask for help, hadn't they?",
+        "They shouldn't have waited so long to ask for help, did they?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "They shouldn't have waited so long to ask for help, should they?",
+      "hint": "The statement is negative, so use the positive tag 'should they?'",
+      "explanation": "A negative modal perfect statement takes a positive tag using the same modal: 'should they'.",
+      "grammarRule": "Mastery Review: Tag & Modal Perfect Questions"
+    },
+    {
+      "id": "qf_l184_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Could the missing funds have been transferred to an offshore account?",
+      "sentence": "Could the missing funds have been transferred to an offshore account?",
+      "options": [
+        "Do you have any idea whether could the missing funds have been transferred to an offshore account?",
+        "Do you have any idea the missing funds whether could have been transferred to an offshore account?",
+        "Do you have any idea whether the missing funds could have been transferred to an offshore account?",
+        "Do you have any idea that could the missing funds have been transferred to an offshore account?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Do you have any idea whether the missing funds could have been transferred to an offshore account?",
+      "hint": "Use 'whether', and move 'could' back after the subject.",
+      "explanation": "'Whether' introduces the embedded question, with statement word order: 'the funds could have been transferred'.",
+      "grammarRule": "Mastery Review: Embedded & Modal Perfect Questions"
+    },
+    {
+      "id": "qf_l184_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Why might the results have been reported incorrectly?",
+      "sentence": "Why might the results have been reported incorrectly?",
+      "options": [
+        "Can you explain why might the results have been reported incorrectly?",
+        "Can you explain why the results have might been reported incorrectly?",
+        "Can you explain that why the results might have been reported incorrectly?",
+        "Can you explain why the results might have been reported incorrectly?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Can you explain why the results might have been reported incorrectly?",
+      "hint": "Move 'might' back after the subject, keeping 'have been reported' together.",
+      "explanation": "The embedded clause keeps statement word order: 'the results might have been reported', not 'might the results have been'.",
+      "grammarRule": "Mastery Review: Embedded & Modal Perfect Questions"
+    },
+    {
+      "id": "qf_l184_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "What could have caused the sudden drop in sales?",
+      "sentence": "What could have caused the sudden drop in sales?",
+      "options": [
+        "Do you know what could have cause the sudden drop in sales?",
+        "Do you know what have could caused the sudden drop in sales?",
+        "Do you know that what could have caused the sudden drop in sales?",
+        "Do you know what could have caused the sudden drop in sales?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Do you know what could have caused the sudden drop in sales?",
+      "hint": "Since 'what' is the subject here, simply keep 'could have caused' together.",
+      "explanation": "Because 'what' replaces the subject, the word order stays the same: 'what could have caused'.",
+      "grammarRule": "Mastery Review: Embedded & Modal Perfect Questions"
+    },
+    {
+      "id": "qf_l185_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "It's ridiculous that the shipment got lost twice in one month.",
+      "sentence": "It's ridiculous that the shipment got lost twice in one month.",
+      "options": [
+        "It isn't ridiculous that the shipment got lost twice in one month?",
+        "Doesn't it ridiculous that the shipment got lost twice in one month?",
+        "Isn't it ridiculous that the shipment got lost twice in one month?",
+        "Isn't ridiculous it that the shipment got lost twice in one month?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Isn't it ridiculous that the shipment got lost twice in one month?",
+      "hint": "'Isn't' goes first in the sentence, immediately before 'it'.",
+      "explanation": "'Isn't' shifts to the front, right ahead of 'it', to form this rhetorical negative question.",
+      "grammarRule": "Mastery Review: Rhetorical & Emphatic Questions"
+    },
+    {
+      "id": "qf_l185_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The whole database disappeared overnight, and IT has no explanation.",
+      "sentence": "The whole database disappeared overnight, and IT has no explanation.",
+      "options": [
+        "How on earth did the whole database disappear overnight?",
+        "How on earth the whole database did disappear overnight?",
+        "How did on earth the whole database disappear overnight?",
+        "How on earth did the whole database disappeared overnight?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "How on earth did the whole database disappear overnight?",
+      "hint": "Right after the question word is where 'on earth' goes, before the inversion.",
+      "explanation": "'On earth' adds emphasis after the question word, and the rest of the question follows normal inversion: 'did the database disappear'.",
+      "grammarRule": "Mastery Review: Rhetorical & Emphatic Questions"
+    },
+    {
+      "id": "qf_l185_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I think we should have consulted the whole team before deciding.",
+      "sentence": "I think we should have consulted the whole team before deciding.",
+      "options": [
+        "You wouldn't agree we should have consulted the whole team before deciding?",
+        "Doesn't you agree we should have consulted the whole team before deciding?",
+        "Wouldn't you agree we should have consulted the whole team before deciding?",
+        "Wouldn't you agreeing we should have consulted the whole team before deciding?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Wouldn't you agree we should have consulted the whole team before deciding?",
+      "hint": "'Wouldn't' moves to the front, keeping 'you agree' unchanged.",
+      "explanation": "'Wouldn't' moves to the front, and 'you agree' stays in normal statement word order, followed by the rest of the clause unchanged.",
+      "grammarRule": "Mastery Review: Rhetorical & Emphatic Questions"
+    },
+    {
+      "id": "qf_l186_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The vaccine must have been distributed to thousands of clinics by now.",
+      "sentence": "The vaccine must have been distributed to thousands of clinics by now.",
+      "options": [
+        "How many clinics must the vaccine have been distributed to by now?",
+        "How many clinics must have the vaccine been distributed to by now?",
+        "How many clinics the vaccine must have been distributed to by now?",
+        "How many clinics must the vaccine have being distributed to by now?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "How many clinics must the vaccine have been distributed to by now?",
+      "hint": "Keep 'have been distributed' together, moving 'must' right after the subject, with 'to' at the end.",
+      "explanation": "'Must' moves right after the subject, and 'have been distributed' stays together, with the preposition 'to' kept at the end.",
+      "grammarRule": "Mastery Review: Complex Auxiliary & Wh-Questions"
+    },
+    {
+      "id": "qf_l186_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The bridge should have been inspected several times since it was built.",
+      "sentence": "The bridge should have been inspected several times since it was built.",
+      "options": [
+        "How many times should have the bridge been inspected since it was built?",
+        "How many times the bridge should have been inspected since it was built?",
+        "How many times should the bridge have being inspected since it was built?",
+        "How many times should the bridge have been inspected since it was built?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "How many times should the bridge have been inspected since it was built?",
+      "hint": "Keep 'have been inspected' together, moving 'should' right after the question phrase.",
+      "explanation": "'Should' moves after the question phrase, and 'have been inspected' remains together in its fixed order.",
+      "grammarRule": "Mastery Review: Complex Auxiliary & Wh-Questions"
+    },
+    {
+      "id": "qf_l186_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "This particular rumor could have been started by anyone in the office.",
+      "sentence": "This particular rumor could have been started by anyone in the office.",
+      "options": [
+        "Who could started have this particular rumor?",
+        "Who have could started this particular rumor?",
+        "Who could have start this particular rumor?",
+        "Who could have started this particular rumor?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Who could have started this particular rumor?",
+      "hint": "Move 'could' after 'who', keeping 'have started' together.",
+      "explanation": "'Could' moves after the question word, and 'have started' stays together as the modal perfect verb phrase.",
+      "grammarRule": "Mastery Review: Complex Auxiliary & Wh-Questions"
+    },
+    {
+      "id": "qf_l187_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I assumed the landlord had fixed the broken heater, but tenants are still complaining.",
+      "sentence": "I assumed the landlord had fixed the broken heater, but tenants are still complaining.",
+      "options": [
+        "Hasn't the landlord fixed the broken heater?",
+        "The landlord hasn't fixed the broken heater?",
+        "Didn't the landlord fixed the broken heater?",
+        "Hasn't the landlord fix the broken heater?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Hasn't the landlord fixed the broken heater?",
+      "hint": "Move 'hasn't' to the front, keeping 'fixed' unchanged.",
+      "explanation": "'Hasn't' moves to the front for this negative present perfect question, and the participle 'fixed' stays exactly the same.",
+      "grammarRule": "Mastery Review: Subject/Object & Negative Questions"
+    },
+    {
+      "id": "qf_l187_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "A last-minute donor covered the rest of the charity's expenses.",
+      "sentence": "A last-minute donor covered the rest of the charity's expenses.",
+      "options": [
+        "Who did cover the rest of the charity's expenses?",
+        "Who did a last-minute donor cover the rest of the charity's expenses?",
+        "Whom covered the rest of the charity's expenses?",
+        "Who covered the rest of the charity's expenses?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Who covered the rest of the charity's expenses?",
+      "hint": "The subject is being asked about, so no 'did' is needed.",
+      "explanation": "'Who' replaces the subject 'a last-minute donor', so the verb stays in the past tense, 'covered', with no auxiliary.",
+      "grammarRule": "Mastery Review: Subject/Object & Negative Questions"
+    },
+    {
+      "id": "qf_l187_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The board didn't approve the budget everyone expected them to pass.",
+      "sentence": "The board didn't approve the budget everyone expected them to pass.",
+      "options": [
+        "Didn't the board approve the budget everyone expected them to pass?",
+        "The board didn't approve the budget everyone expected them to pass?",
+        "Doesn't the board approve the budget everyone expected them to pass?",
+        "Didn't the board approved the budget everyone expected them to pass?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Didn't the board approve the budget everyone expected them to pass?",
+      "hint": "Move 'didn't' to the front, and keep the verb in its base form.",
+      "explanation": "'Didn't' moves to the front for negative past questions, and the verb 'approve' stays in its base form rather than the past tense.",
+      "grammarRule": "Mastery Review: Subject/Object & Negative Questions"
+    },
+    {
+      "id": "qf_l188_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Has the vendor already been paid for the last shipment?",
+      "sentence": "Has the vendor already been paid for the last shipment?",
+      "options": [
+        "Could you confirm whether has the vendor already been paid for the last shipment?",
+        "Could you confirm the vendor whether has already been paid for the last shipment?",
+        "Could you confirm that has the vendor already been paid for the last shipment?",
+        "Could you confirm whether the vendor has already been paid for the last shipment?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Could you confirm whether the vendor has already been paid for the last shipment?",
+      "hint": "Use 'whether', and move 'has' back after the subject.",
+      "explanation": "'Whether' introduces the embedded question, with statement word order: 'the vendor has already been paid'.",
+      "grammarRule": "Mastery Review: Embedded Yes/No & Perfect Questions"
+    },
+    {
+      "id": "qf_l188_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Will the committee have reached a decision by Friday?",
+      "sentence": "Will the committee have reached a decision by Friday?",
+      "options": [
+        "Do you know if will the committee have reached a decision by Friday?",
+        "Do you know the committee if will have reached a decision by Friday?",
+        "Do you know if the committee will have reached a decision by Friday?",
+        "Do you know that will the committee have reached a decision by Friday?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Do you know if the committee will have reached a decision by Friday?",
+      "hint": "Use 'if', and move 'will' back after the subject.",
+      "explanation": "'If' introduces the embedded question, keeping statement word order: 'the committee will have reached'.",
+      "grammarRule": "Mastery Review: Embedded Yes/No & Perfect Questions"
+    },
+    {
+      "id": "qf_l188_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Has this particular model been discontinued?",
+      "sentence": "Has this particular model been discontinued?",
+      "options": [
+        "Do you happen to know has this particular model been discontinued?",
+        "Do you happen to know if this particular model has been discontinued?",
+        "Do you happen to know this particular model if has been discontinued?",
+        "Do you happen to know that this particular model has been discontinued?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Do you happen to know if this particular model has been discontinued?",
+      "hint": "Use 'if', and move 'has' back after the subject.",
+      "explanation": "'If' connects the embedded question, with statement word order: 'this particular model has been discontinued'.",
+      "grammarRule": "Mastery Review: Embedded Yes/No & Perfect Questions"
+    },
+    {
+      "id": "qf_l189_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The lawyers have been arguing over this clause for nearly a month.",
+      "sentence": "The lawyers have been arguing over this clause for nearly a month.",
+      "options": [
+        "What have the lawyers been arguing over for nearly a month?",
+        "What do the lawyers have been arguing over for nearly a month?",
+        "What have the lawyers been argue over for nearly a month?",
+        "What the lawyers have been arguing over for nearly a month?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "What have the lawyers been arguing over for nearly a month?",
+      "hint": "Move 'have' after the question word, keeping 'been arguing over' together.",
+      "explanation": "'Have' moves after the question word, and the phrase 'been arguing over' remains together as one unit.",
+      "grammarRule": "Mastery Review: Prepositional & Perfect Continuous Questions"
+    },
+    {
+      "id": "qf_l189_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "She's been relying on her savings since she lost her job.",
+      "sentence": "She's been relying on her savings since she lost her job.",
+      "options": [
+        "What does she has been relying on since she lost her job?",
+        "What has she been rely on since she lost her job?",
+        "What she has been relying on since she lost her job?",
+        "What has she been relying on since she lost her job?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "What has she been relying on since she lost her job?",
+      "hint": "Move 'has' after 'what', keeping 'been relying on' together.",
+      "explanation": "'Has' moves after the question word, and 'been relying on' stays together, with the preposition 'on' at the end.",
+      "grammarRule": "Mastery Review: Prepositional & Perfect Continuous Questions"
+    },
+    {
+      "id": "qf_l189_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The whole team has been waiting on approval from legal for two weeks.",
+      "sentence": "The whole team has been waiting on approval from legal for two weeks.",
+      "options": [
+        "How long has the whole team been waiting on approval from legal?",
+        "How long does the whole team have been waiting on approval from legal?",
+        "How long has the whole team been wait on approval from legal?",
+        "How long the whole team has been waiting on approval from legal?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "How long has the whole team been waiting on approval from legal?",
+      "hint": "Move 'has' after the question phrase, keeping 'been waiting on' together.",
+      "explanation": "'Has' moves after the question phrase, and 'been waiting on' stays together as the present perfect continuous verb phrase.",
+      "grammarRule": "Mastery Review: Prepositional & Perfect Continuous Questions"
+    },
+    {
+      "id": "qf_l190_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I was certain the contractor would have finished the roof by now, but there's no sign of progress.",
+      "sentence": "I was certain the contractor would have finished the roof by now, but there's no sign of progress.",
+      "options": [
+        "The contractor wouldn't have finished the roof by now?",
+        "Wouldn't the contractor have finished the roof by now?",
+        "Won't the contractor have finished the roof by now?",
+        "Wouldn't the contractor have finish the roof by now?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Wouldn't the contractor have finished the roof by now?",
+      "hint": "Move 'wouldn't' to the front, keeping 'have finished' together.",
+      "explanation": "'Wouldn't have' questions an assumption about the past. It moves to the front, and 'have finished' stays together.",
+      "grammarRule": "Mastery Review: Mixed Capstone"
+    },
+    {
+      "id": "qf_l190_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Someone must have alerted the press before the announcement was even made.",
+      "sentence": "Someone must have alerted the press before the announcement was even made.",
+      "options": [
+        "Who could alerted have the press before the announcement was even made?",
+        "Who could have alerted the press before the announcement was even made?",
+        "Who have could alerted the press before the announcement was even made?",
+        "Who could have alert the press before the announcement was even made?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Who could have alerted the press before the announcement was even made?",
+      "hint": "Move 'could' after 'who', keeping 'have alerted' together.",
+      "explanation": "'Could' moves after the question word, and 'have alerted' stays together as the modal perfect verb phrase.",
+      "grammarRule": "Mastery Review: Mixed Capstone"
+    },
+    {
+      "id": "qf_l190_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "It's unbelievable that nobody double-checked these figures before the report went out.",
+      "sentence": "It's unbelievable that nobody double-checked these figures before the report went out.",
+      "options": [
+        "It isn't unbelievable that nobody double-checked these figures before the report went out?",
+        "Doesn't it unbelievable that nobody double-checked these figures before the report went out?",
+        "Isn't it unbelievable that nobody double-checked these figures before the report went out?",
+        "Isn't unbelievable it that nobody double-checked these figures before the report went out?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Isn't it unbelievable that nobody double-checked these figures before the report went out?",
+      "hint": "Move 'isn't' to the front, right before 'it'.",
+      "explanation": "'Isn't' moves to the front, right before 'it', forming this rhetorical negative question.",
+      "grammarRule": "Mastery Review: Mixed Capstone"
+    }
+  ]
 }

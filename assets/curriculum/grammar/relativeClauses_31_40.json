@@ -1,547 +1,547 @@
 {
-    "gameType": "relativeClauses",
-    "batchIndex": 4,
-    "levels": "31-40",
-    "quests": [
-        {
-            "id": "rc_l31_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The candidate ___ we interviewed had great references.",
-            "hint": "Hidden clause: 'we interviewed ___.' A candidate for a job is a person.",
-            "explanation": "The candidate is the object of 'interviewed', and because a candidate is a person, 'who' is the correct pronoun.",
-            "options": [
-                "which",
-                "whose",
-                "who",
-                "where"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l31_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The trailer ___ I watched made the movie look amazing.",
-            "hint": "Hidden clause: 'I watched ___.' A film trailer is a thing.",
-            "explanation": "Since the trailer is the object of 'watched' and is a thing, 'which' is correct, not 'who'.",
-            "options": [
-                "who",
-                "whose",
-                "when",
-                "which"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l31_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The therapist ___ I see every week is very patient.",
-            "hint": "Hidden clause: 'I see ___ every week.' A therapist is a person you see.",
-            "explanation": "The therapist is the object of 'see', and since a therapist is a person, the pronoun must be 'who'.",
-            "options": [
-                "who",
-                "which",
-                "whose",
-                "why"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l32_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The blanket ___ I knitted took me a month.",
-            "hint": "Hidden clause: 'I knitted ___.' A blanket is a thing you make.",
-            "explanation": "The blanket is the object of 'knitted'. As a thing, it takes 'which', not a pronoun reserved for people.",
-            "options": [
-                "who",
-                "which",
-                "whose",
-                "where"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l32_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The agent ___ I booked through gave me a discount.",
-            "hint": "The preposition 'through' is stranded at the end - trace it back to the person it refers to.",
-            "explanation": "Even though 'through' is left at the end, its object is the agent, a person, so 'who' is the correct pronoun.",
-            "options": [
-                "which",
-                "whose",
-                "who",
-                "when"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l32_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The bag ___ I picked turned out to be fake.",
-            "hint": "Hidden clause: 'I picked ___.' A bag is a thing being chosen.",
-            "explanation": "Since the bag is the object of 'picked' and is a thing, 'which' is correct rather than 'why'.",
-            "options": [
-                "who",
-                "whose",
-                "why",
-                "which"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l33_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The sister ___ I trust most lives abroad.",
-            "hint": "Hidden clause: 'I trust ___ most.' A sister is a person.",
-            "explanation": "The sister is the object of 'trust', and since she is a person, 'who' is needed instead of 'which'.",
-            "options": [
-                "who",
-                "which",
-                "whose",
-                "where"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l33_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The project ___ we submitted received the highest grade.",
-            "hint": "Hidden clause: 'we submitted ___.' A school project is a thing.",
-            "explanation": "The project is the object of 'submitted'. As a thing, it takes 'which', not a time word like 'when'.",
-            "options": [
-                "who",
-                "which",
-                "whose",
-                "when"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l33_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The caller ___ I spoke to refused to leave a number.",
-            "hint": "The preposition 'to' is stranded at the end of the clause - its object is still a person.",
-            "explanation": "Although 'to' appears at the end, its object is the caller, a person, so the pronoun 'who' is correct.",
-            "options": [
-                "which",
-                "whose",
-                "who",
-                "why"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l34_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The cake ___ I baked yesterday collapsed in the oven.",
-            "hint": "A cake isn't a person, so rule out every people-only option before choosing.",
-            "explanation": "'That' is a natural, everyday alternative to 'which' for things in object position. 'Who' and 'whose' are impossible since a cake is not a person.",
-            "options": [
-                "who",
-                "whose",
-                "where",
-                "that"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "that",
-            "grammarRule": "Relative Clauses"
-        },
-        {
-            "id": "rc_l34_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The phone ___ I bought last year still works perfectly.",
-            "hint": "Phones aren't people - eliminate the people-only pronouns first.",
-            "explanation": "Because a phone is a thing, 'that' works naturally as the object pronoun here. 'Who' could never apply to an object.",
-            "options": [
-                "that",
-                "who",
-                "whose",
-                "when"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "that",
-            "grammarRule": "Relative Clauses"
-        },
-        {
-            "id": "rc_l34_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The colleague ___ I trained left the company.",
-            "hint": "A colleague is a person - but 'which' can never describe a person, so cross that one out immediately.",
-            "explanation": "'That' is a common, neutral way to refer to a person in object position. 'Which' is impossible because it never refers to people.",
-            "options": [
-                "which",
-                "that",
-                "whose",
-                "why"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "that",
-            "grammarRule": "Relative Clauses"
-        },
-        {
-            "id": "rc_l35_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "This is the best concert ___ I have ever attended.",
-            "hint": "You've seen this pattern before: a superlative like 'best' pulls in one particular connector instead of 'which'.",
-            "explanation": "After superlatives such as 'the best', natural English strongly prefers 'that' over 'which', the same pattern you practiced with subjects earlier.",
-            "options": [
-                "which",
-                "who",
-                "that",
-                "whom"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "that",
-            "grammarRule": "Relative Clauses"
-        },
-        {
-            "id": "rc_l35_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "That was the hardest test ___ I have ever taken.",
-            "hint": "Same superlative pattern as before - 'hardest' behaves just like 'best'.",
-            "explanation": "'The hardest' is a superlative, and superlatives are conventionally followed by 'that' rather than 'which' in natural English.",
-            "options": [
-                "which",
-                "who",
-                "whom",
-                "that"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "that",
-            "grammarRule": "Relative Clauses"
-        },
-        {
-            "id": "rc_l35_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "This is the only city ___ I would love to live in.",
-            "hint": "'Only' triggers the same connector you've now seen several times with superlatives.",
-            "explanation": "Just like superlatives, 'the only' is followed by 'that' rather than 'which' in idiomatic English.",
-            "options": [
-                "that",
-                "which",
-                "who",
-                "whom"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "that",
-            "grammarRule": "Relative Clauses"
-        },
-        {
-            "id": "rc_l36_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "Everything ___ I packed fit into one suitcase.",
-            "hint": "Indefinite words like 'everything' call for the same connector as before - not 'which'.",
-            "explanation": "After indefinite pronouns such as 'everything', English speakers naturally use 'that' rather than 'which'.",
-            "options": [
-                "which",
-                "that",
-                "who",
-                "whom"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "that",
-            "grammarRule": "Relative Clauses"
-        },
-        {
-            "id": "rc_l36_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "Nothing ___ the doctors tried seemed to help.",
-            "hint": "Same family of trigger words as 'everything' - apply the same rule.",
-            "explanation": "'Nothing' belongs to the same group of indefinite pronouns that prefer 'that' over 'which'.",
-            "options": [
-                "which",
-                "who",
-                "that",
-                "whom"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "that",
-            "grammarRule": "Relative Clauses"
-        },
-        {
-            "id": "rc_l36_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "Anything ___ you say will be recorded.",
-            "hint": "This indefinite word follows the same pattern you've now seen three times.",
-            "explanation": "Like 'everything' and 'nothing', the word 'anything' is naturally followed by 'that' instead of 'which'.",
-            "options": [
-                "which",
-                "who",
-                "whom",
-                "that"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "that",
-            "grammarRule": "Relative Clauses"
-        },
-        {
-            "id": "rc_l37_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "I thanked the stylist and the products ___ transformed my look.",
-            "hint": "The subject names a person and some things together - one connector has to cover both.",
-            "explanation": "Because 'the stylist and the products' mixes a person with things, only 'that' can refer to both - 'who' would leave out the products, and 'which' would leave out the stylist.",
-            "options": [
-                "that",
-                "which",
-                "who",
-                "whom"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "that",
-            "grammarRule": "Relative Clauses"
-        },
-        {
-            "id": "rc_l37_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "I will never forget the people and the memories ___ shaped my childhood.",
-            "hint": "Again, the antecedent combines people and things, so only one connector works for both.",
-            "explanation": "Since 'the people and the memories' combines a person-category with a thing-category, 'that' is needed to refer to both at once.",
-            "options": [
-                "which",
-                "that",
-                "who",
-                "whom"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "that",
-            "grammarRule": "Relative Clauses"
-        },
-        {
-            "id": "rc_l37_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "This is the most useful tool ___ the team has built.",
-            "hint": "A superlative shows up again - recall which connector that pattern favors.",
-            "explanation": "Following the superlative 'the most useful', 'that' is the natural choice over 'which', continuing the pattern from earlier levels.",
-            "options": [
-                "which",
-                "who",
-                "that",
-                "whom"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "that",
-            "grammarRule": "Relative Clauses"
-        },
-        {
-            "id": "rc_l38_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The captain ___ I spoke to reassured the passengers.",
-            "hint": "The preposition 'to' is stranded at the end, but its object is still a person.",
-            "explanation": "Even with 'to' left at the end, its object is the captain, a person, so 'who' is correct.",
-            "options": [
-                "which",
-                "whose",
-                "where",
-                "who"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l38_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The update ___ I installed fixed the bug.",
-            "hint": "Hidden clause: 'I installed ___.' A software update is a thing.",
-            "explanation": "The update is the object of 'installed'. As a thing, it takes 'which', not 'when'.",
-            "options": [
-                "which",
-                "who",
-                "whose",
-                "when"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l38_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "This is the funniest show ___ I have watched all year.",
-            "hint": "A superlative ('funniest') appears again - the same rule from earlier levels applies.",
-            "explanation": "After the superlative 'the funniest', 'that' is the conventional choice instead of 'which'.",
-            "options": [
-                "which",
-                "that",
-                "who",
-                "whom"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "that",
-            "grammarRule": "Relative Clauses"
-        },
-        {
-            "id": "rc_l39_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The mentor ___ I admire gave me great advice.",
-            "hint": "Hidden clause: 'I admire ___.' A mentor is a person.",
-            "explanation": "The mentor is the object of 'admire', and since a mentor is a person, 'who' is required.",
-            "options": [
-                "which",
-                "whose",
-                "who",
-                "where"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l39_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The receipt ___ I kept proved the purchase.",
-            "hint": "Hidden clause: 'I kept ___.' A receipt is a thing.",
-            "explanation": "The receipt is the object of 'kept'. As a thing, it takes 'which' rather than 'who'.",
-            "options": [
-                "who",
-                "whose",
-                "when",
-                "which"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l39_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "All ___ I wanted was a quiet evening.",
-            "hint": "'All' behaves like the indefinite words you practiced earlier (everything, nothing, anything).",
-            "explanation": "Like 'everything' and 'nothing', the word 'all' is conventionally followed by 'that' rather than 'which'.",
-            "options": [
-                "that",
-                "which",
-                "who",
-                "whom"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "that",
-            "grammarRule": "Relative Clauses"
-        },
-        {
-            "id": "rc_l40_q1",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The supplier ___ we chose offered the best price.",
-            "hint": "Hidden clause: 'we chose ___.' A supplier here refers to a person or company representative acting as one.",
-            "explanation": "The supplier is the object of 'chose', and since the supplier is treated as a person here, 'who' is correct.",
-            "options": [
-                "which",
-                "who",
-                "whose",
-                "where"
-            ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "who",
-            "grammarRule": "Relative Pronoun 'who'"
-        },
-        {
-            "id": "rc_l40_q2",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "The supplement ___ I take every morning boosts my energy.",
-            "hint": "Hidden clause: 'I take ___ every morning.' A supplement is a thing.",
-            "explanation": "The supplement is the object of 'take'. As a thing, 'which' is correct, not a time word.",
-            "options": [
-                "who",
-                "whose",
-                "which",
-                "when"
-            ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "which",
-            "grammarRule": "Relative Pronoun 'which'"
-        },
-        {
-            "id": "rc_l40_q3",
-            "instruction": "CAST THE RELATIVE LINK",
-            "interactionType": "Fishing Cast",
-            "subtype": "relativeClauses",
-            "question": "This is the clearest explanation ___ I have ever read.",
-            "hint": "Superlative pattern one more time - 'clearest' behaves exactly like 'best' or 'funniest'.",
-            "explanation": "Following the superlative 'the clearest', 'that' completes the pattern you've now practiced across many levels.",
-            "options": [
-                "which",
-                "who",
-                "whom",
-                "that"
-            ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "that",
-            "grammarRule": "Relative Clauses"
-        }
-    ]
+  "gameType": "relativeClauses",
+  "batchIndex": 4,
+  "levels": "31-40",
+  "quests": [
+    {
+      "id": "rc_l31_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The professor ___ lectures are always packed teaches on Tuesday mornings.",
+      "hint": "The lectures belong to the professor - which pronoun shows possession?",
+      "explanation": "'Whose' shows that the lectures belong to the professor being described.",
+      "options": [
+        "whose",
+        "who",
+        "which",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "whose",
+      "grammarRule": "Relative Pronoun 'whose'"
+    },
+    {
+      "id": "rc_l31_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "All ___ the students needed was a little more time to prepare.",
+      "hint": "After 'all,' which pronoun is the standard, idiomatic choice?",
+      "explanation": "After 'all' used this way, 'that' is the standard relative pronoun.",
+      "options": [
+        "that",
+        "which",
+        "who",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "that",
+      "grammarRule": "Relative Pronoun 'that'"
+    },
+    {
+      "id": "rc_l31_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "This is the easiest course ___ the school currently offers.",
+      "hint": "After a superlative like 'the easiest,' which pronoun is most natural?",
+      "explanation": "After superlatives, 'that' is the natural, idiomatic choice in everyday English.",
+      "options": [
+        "that",
+        "which",
+        "who",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "that",
+      "grammarRule": "Relative Pronoun 'that'"
+    },
+    {
+      "id": "rc_l32_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "We discussed the students and the projects ___ impressed the judges most.",
+      "hint": "The clause covers both people AND things - which pronoun works for both?",
+      "explanation": "'That' is used because the clause refers to a mix of people and things.",
+      "options": [
+        "that",
+        "who",
+        "which",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "that",
+      "grammarRule": "Relative Pronoun 'that'"
+    },
+    {
+      "id": "rc_l32_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The student ___ essay won the contest is only sixteen years old.",
+      "hint": "The essay belongs to the student - which pronoun shows that?",
+      "explanation": "'Whose' connects the essay to the student it belongs to.",
+      "options": [
+        "whose",
+        "who",
+        "which",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "whose",
+      "grammarRule": "Relative Pronoun 'whose'"
+    },
+    {
+      "id": "rc_l32_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "This is the only classroom ___ has working air conditioning.",
+      "hint": "After 'the only,' which pronoun sounds most natural?",
+      "explanation": "After 'the only,' 'that' is the natural, idiomatic choice.",
+      "options": [
+        "that",
+        "which",
+        "who",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "that",
+      "grammarRule": "Relative Pronoun 'that'"
+    },
+    {
+      "id": "rc_l33_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "Nothing ___ the teacher explained made sense to me at first.",
+      "hint": "After 'nothing,' which pronoun is the standard choice?",
+      "explanation": "'That' is the standard relative pronoun after indefinite words like 'nothing.'",
+      "options": [
+        "that",
+        "which",
+        "who",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "that",
+      "grammarRule": "Relative Pronoun 'that'"
+    },
+    {
+      "id": "rc_l33_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The school ___ program was just ranked first hired three new teachers.",
+      "hint": "The program belongs to the school - which pronoun shows possession, even for a place?",
+      "explanation": "'Whose' can show possession for institutions as well as people, so it fits here.",
+      "options": [
+        "whose",
+        "who",
+        "which",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "whose",
+      "grammarRule": "Relative Pronoun 'whose'"
+    },
+    {
+      "id": "rc_l33_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "This is the hardest exam ___ our class has ever taken.",
+      "hint": "After a superlative like 'the hardest,' which pronoun sounds most natural?",
+      "explanation": "After superlatives, 'that' is the natural, idiomatic choice.",
+      "options": [
+        "that",
+        "which",
+        "who",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "that",
+      "grammarRule": "Relative Pronoun 'that'"
+    },
+    {
+      "id": "rc_l34_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The author ___ books I loved as a child just published a memoir.",
+      "hint": "The books belong to the author - which pronoun shows possession?",
+      "explanation": "'Whose' connects the books to the author who wrote them.",
+      "options": [
+        "whose",
+        "who",
+        "which",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "whose",
+      "grammarRule": "Relative Pronoun 'whose'"
+    },
+    {
+      "id": "rc_l34_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "We packed the books and the notebooks ___ we needed for the exam.",
+      "hint": "Wait - both items here are things. Which pronoun still works, and reads naturally, for a simple list of things?",
+      "explanation": "'That' works naturally for things in a defining clause, especially when listing several items together.",
+      "options": [
+        "that",
+        "who",
+        "which",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "that",
+      "grammarRule": "Relative Pronoun 'that'"
+    },
+    {
+      "id": "rc_l34_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "This is the busiest week ___ our office has had all year.",
+      "hint": "After a superlative like 'the busiest,' which pronoun is most natural?",
+      "explanation": "After superlatives, 'that' is the natural, idiomatic choice in everyday English.",
+      "options": [
+        "that",
+        "which",
+        "who",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "that",
+      "grammarRule": "Relative Pronoun 'that'"
+    },
+    {
+      "id": "rc_l35_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "Everything ___ the guide told us turned out to be completely accurate.",
+      "hint": "After 'everything,' which pronoun is the standard choice?",
+      "explanation": "'That' is the standard relative pronoun after indefinite words like 'everything.'",
+      "options": [
+        "that",
+        "which",
+        "who",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "that",
+      "grammarRule": "Relative Pronoun 'that'"
+    },
+    {
+      "id": "rc_l35_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The hotel ___ rooms overlook the beach charges a premium rate.",
+      "hint": "The rooms belong to the hotel - which pronoun shows possession, even for a place?",
+      "explanation": "'Whose' can describe possession for a place or organization, not only people.",
+      "options": [
+        "whose",
+        "who",
+        "which",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "whose",
+      "grammarRule": "Relative Pronoun 'whose'"
+    },
+    {
+      "id": "rc_l35_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "This is the longest layover ___ we have ever had.",
+      "hint": "After a superlative like 'the longest,' which pronoun sounds most natural?",
+      "explanation": "After superlatives, 'that' is the natural, idiomatic choice.",
+      "options": [
+        "that",
+        "which",
+        "who",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "that",
+      "grammarRule": "Relative Pronoun 'that'"
+    },
+    {
+      "id": "rc_l36_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The tourists ___ luggage was lost had to wait at the airport for hours.",
+      "hint": "The luggage belongs to the tourists - which pronoun shows that?",
+      "explanation": "'Whose' connects the luggage to the tourists it belongs to.",
+      "options": [
+        "whose",
+        "who",
+        "which",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "whose",
+      "grammarRule": "Relative Pronoun 'whose'"
+    },
+    {
+      "id": "rc_l36_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "We spoke with the guides and the drivers ___ helped us on the tour.",
+      "hint": "The clause covers two different groups of people - guides and drivers - listed together. Which pronoun reads most naturally?",
+      "explanation": "'That' reads naturally here, smoothly covering both groups mentioned together.",
+      "options": [
+        "that",
+        "who",
+        "which",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "that",
+      "grammarRule": "Relative Pronoun 'that'"
+    },
+    {
+      "id": "rc_l36_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "This is the only souvenir shop ___ stays open after sunset.",
+      "hint": "After 'the only,' which pronoun sounds most idiomatic?",
+      "explanation": "After 'the only,' 'that' is the natural, idiomatic choice.",
+      "options": [
+        "that",
+        "which",
+        "who",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "that",
+      "grammarRule": "Relative Pronoun 'that'"
+    },
+    {
+      "id": "rc_l37_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "All ___ I want for my birthday is a quiet dinner with family.",
+      "hint": "After 'all,' which pronoun is the standard, idiomatic choice?",
+      "explanation": "After 'all' used this way, 'that' is the standard relative pronoun.",
+      "options": [
+        "that",
+        "which",
+        "who",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "that",
+      "grammarRule": "Relative Pronoun 'that'"
+    },
+    {
+      "id": "rc_l37_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The bride ___ dress was designed by her sister looked stunning.",
+      "hint": "The dress belongs to the bride - which pronoun shows possession?",
+      "explanation": "'Whose' shows that the dress belongs to the bride being described.",
+      "options": [
+        "whose",
+        "who",
+        "which",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "whose",
+      "grammarRule": "Relative Pronoun 'whose'"
+    },
+    {
+      "id": "rc_l37_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "This is the sweetest cake ___ I have ever tasted.",
+      "hint": "After a superlative like 'the sweetest,' which pronoun sounds most natural?",
+      "explanation": "After superlatives, 'that' is the natural, idiomatic choice in everyday English.",
+      "options": [
+        "that",
+        "which",
+        "who",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "that",
+      "grammarRule": "Relative Pronoun 'that'"
+    },
+    {
+      "id": "rc_l38_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "Something ___ was baking in the oven smelled absolutely delicious.",
+      "hint": "After 'something,' which pronoun is the standard choice?",
+      "explanation": "'That' is the standard relative pronoun after indefinite words like 'something.'",
+      "options": [
+        "that",
+        "which",
+        "who",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "that",
+      "grammarRule": "Relative Pronoun 'that'"
+    },
+    {
+      "id": "rc_l38_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The chef ___ recipe won the competition trained in three countries.",
+      "hint": "The recipe belongs to the chef - which pronoun shows possession?",
+      "explanation": "'Whose' connects the recipe to the chef who created it.",
+      "options": [
+        "whose",
+        "who",
+        "which",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "whose",
+      "grammarRule": "Relative Pronoun 'whose'"
+    },
+    {
+      "id": "rc_l38_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "This is the only bakery ___ still makes bread by hand.",
+      "hint": "After 'the only,' which pronoun sounds most idiomatic?",
+      "explanation": "After 'the only,' 'that' is the natural, idiomatic choice.",
+      "options": [
+        "that",
+        "which",
+        "who",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "that",
+      "grammarRule": "Relative Pronoun 'that'"
+    },
+    {
+      "id": "rc_l39_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The director ___ films always break box office records rarely gives interviews.",
+      "hint": "The films belong to the director - which pronoun shows that?",
+      "explanation": "'Whose' connects the films to the director who made them.",
+      "options": [
+        "whose",
+        "who",
+        "which",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "whose",
+      "grammarRule": "Relative Pronoun 'whose'"
+    },
+    {
+      "id": "rc_l39_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "We loved the actors and the scenery ___ made the film so memorable.",
+      "hint": "The clause covers both people AND things together - which pronoun works for both?",
+      "explanation": "'That' can refer to a mix of people and things, unlike 'who' or 'which' alone.",
+      "options": [
+        "that",
+        "who",
+        "which",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "that",
+      "grammarRule": "Relative Pronoun 'that'"
+    },
+    {
+      "id": "rc_l39_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "This is the most exciting series ___ I have watched all year.",
+      "hint": "After a superlative like 'the most exciting,' which pronoun sounds most natural?",
+      "explanation": "After superlatives, 'that' is the natural, idiomatic choice in everyday English.",
+      "options": [
+        "that",
+        "which",
+        "who",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "that",
+      "grammarRule": "Relative Pronoun 'that'"
+    },
+    {
+      "id": "rc_l40_q1",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "Everything ___ happens in the final episode ties the whole story together.",
+      "hint": "After 'everything,' which pronoun is the standard choice?",
+      "explanation": "'That' is the standard relative pronoun after indefinite words like 'everything.'",
+      "options": [
+        "that",
+        "which",
+        "who",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "that",
+      "grammarRule": "Relative Pronoun 'that'"
+    },
+    {
+      "id": "rc_l40_q2",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "The band ___ drummer just quit is looking for a replacement before the tour.",
+      "hint": "The drummer belongs to the band - which pronoun shows that, even for a group?",
+      "explanation": "'Whose' can show possession for a group like a band, not only for one person.",
+      "options": [
+        "whose",
+        "who",
+        "which",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "whose",
+      "grammarRule": "Relative Pronoun 'whose'"
+    },
+    {
+      "id": "rc_l40_q3",
+      "instruction": "CAST THE RELATIVE LINK",
+      "interactionType": "Fishing Cast",
+      "subtype": "relativeClauses",
+      "question": "This is the loudest concert ___ I have ever attended.",
+      "hint": "After a superlative like 'the loudest,' which pronoun sounds most natural?",
+      "explanation": "After superlatives, 'that' is the natural, idiomatic choice in everyday English.",
+      "options": [
+        "that",
+        "which",
+        "who",
+        "whom"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "that",
+      "grammarRule": "Relative Pronoun 'that'"
+    }
+  ]
 }

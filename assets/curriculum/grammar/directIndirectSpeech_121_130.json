@@ -8,540 +8,540 @@
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'I believe the experiment was conducted without proper oversight.'",
+            "question": "Convert to reported speech: She said, 'The report is reviewed every month.'",
             "options": [
-                "She said she believed the experiment had been conducted without proper oversight.",
-                "She said she believed the experiment was conducted without proper oversight.",
-                "She said she believes the experiment had been conducted without proper oversight."
+                "She said that the report was reviewed every month.",
+                "She said that the report is reviewed every month.",
+                "She said that the report had been reviewed every month."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She said she believed the experiment had been conducted without proper oversight.",
-            "sentence": "She said, 'I believe the experiment was conducted without proper oversight.'",
-            "hint": "'Believe' → 'believed'. 'Was conducted' → 'had been conducted'. The embedded passive also shifts.",
-            "explanation": "'Believe' → 'believed'. The embedded passive 'was conducted' → 'had been conducted'. Both the main verb and the embedded passive must shift.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "She said that the report was reviewed every month.",
+            "sentence": "She said, 'The report is reviewed every month.'",
+            "hint": "This sentence is passive; the verb just needs one simple step back.",
+            "explanation": "'Is reviewed' (present simple passive) shifts to 'was reviewed' (past simple passive) — one step back.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l121_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The chairman asked, 'Why hasn't the report been circulated to all board members?'",
+            "question": "Convert to reported speech: The author contended, 'The data supports a different conclusion.'",
             "options": [
-                "The chairman demanded to know why the report hadn't been circulated to all board members.",
-                "The chairman demanded to know why hasn't the report been circulated to all board members.",
-                "The chairman demanded to know why the report hasn't been circulated to all board members."
+                "The author contended that the data supports a different conclusion.",
+                "The author contended that the data supported a different conclusion.",
+                "The author contended that the data had supported a different conclusion."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The chairman demanded to know why the report hadn't been circulated to all board members.",
-            "sentence": "The chairman asked, 'Why hasn't the report been circulated to all board members?'",
-            "hint": "'Hasn't been circulated' → 'hadn't been circulated'. Statement order. Reporting verb: 'demanded to know'.",
-            "explanation": "Present perfect passive negative → past perfect passive negative. Statement word order is required. 'Demanded to know' suits the forceful nature of the question.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The author contended that the data supported a different conclusion.",
+            "sentence": "The author contended, 'The data supports a different conclusion.'",
+            "hint": "Shift the verb back one simple step; 'contended' reports someone arguing a position.",
+            "explanation": "Present simple 'supports' shifts to past simple 'supported' — one step back, not to past perfect.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l121_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The ethics board said, 'Make sure that all participants give their informed consent before proceeding.'",
+            "question": "Convert to reported speech: He asked, 'Do you know why the meeting was postponed?'",
             "options": [
-                "The ethics board required researchers to make sure that all participants gave their informed consent before proceeding.",
-                "The ethics board required researchers to make sure that all participants give their informed consent before proceeding.",
-                "The ethics board required researchers to make sure all participants had given their informed consent before proceeding."
+                "He asked whether I knew why the meeting was postponed.",
+                "He asked whether I knew why the meeting had been postponed.",
+                "He asked if I know why the meeting was postponed."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The ethics board required researchers to make sure that all participants gave their informed consent before proceeding.",
-            "sentence": "The ethics board said, 'Make sure that all participants give their informed consent before proceeding.'",
-            "hint": "'Give' in the embedded clause → 'gave'. 'Had given' would be an over-shift here.",
-            "explanation": "'Make sure' → 'to make sure'. 'Give their consent' → 'gave their consent'. 'Had given' is an over-shift - the original 'give' is present simple, so it shifts to 'gave'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "He asked whether I knew why the meeting had been postponed.",
+            "sentence": "He asked, 'Do you know why the meeting was postponed?'",
+            "hint": "This has two layers: a yes/no question about knowing, and a wh-question inside it — both shift.",
+            "explanation": "'Know' shifts to 'knew' (whether-question), and 'was postponed' (already past) shifts back further to 'had been postponed' (embedded wh-question).",
+            "grammarRule": "Mixed/Complex Transformation"
         },
         {
             "id": "dis_l122_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The researcher wrote, 'The results appear to confirm our hypothesis.'",
+            "question": "Convert to reported speech: He said, 'The building was designed by a famous architect.'",
             "options": [
-                "The researcher wrote that the results appeared to confirm their hypothesis.",
-                "The researcher wrote that the results appear to confirm their hypothesis.",
-                "The researcher wrote that the results appeared to have confirmed their hypothesis."
+                "He said that the building has been designed by a famous architect.",
+                "He said that the building was designed by a famous architect.",
+                "He said that the building had been designed by a famous architect."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The researcher wrote that the results appeared to confirm their hypothesis.",
-            "sentence": "The researcher wrote, 'The results appear to confirm our hypothesis.'",
-            "hint": "'Appear' → 'appeared'. 'Our' → 'their'. 'To confirm' stays - no shift in infinitives.",
-            "explanation": "'Appear' → 'appeared'. 'Our' → 'their'. The infinitive 'to confirm' stays unchanged. 'To have confirmed' would be an over-shift.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "He said that the building had been designed by a famous architect.",
+            "sentence": "He said, 'The building was designed by a famous architect.'",
+            "hint": "This past passive shifts even further back, to past perfect passive.",
+            "explanation": "'Was designed' (past simple passive) shifts to 'had been designed' (past perfect passive).",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l122_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The economist was asked, 'How has globalization affected income inequality?'",
+            "question": "Convert to reported speech: The analyst speculated, 'The market will recover soon.'",
             "options": [
-                "The economist was asked how globalization had affected income inequality.",
-                "The economist was asked how has globalization affected income inequality.",
-                "The economist was asked how globalization has affected income inequality."
+                "The analyst speculated that the market would recover soon.",
+                "The analyst speculated that the market had recovered soon.",
+                "The analyst speculated that the market will recover soon."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The economist was asked how globalization had affected income inequality.",
-            "sentence": "The economist was asked, 'How has globalization affected income inequality?'",
-            "hint": "'Has affected' → 'had affected'. Statement order.",
-            "explanation": "'Has affected' (present perfect) → 'had affected' (past perfect). Use statement word order: 'how globalization had affected'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The analyst speculated that the market would recover soon.",
+            "sentence": "The analyst speculated, 'The market will recover soon.'",
+            "hint": "'Will' shifts to 'would', not further, in reported speech.",
+            "explanation": "'Will' shifts to 'would' — a modal shift, not a full past-perfect shift.",
+            "grammarRule": "Modal Verb Backshift"
         },
         {
             "id": "dis_l122_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The professor said, 'When citing sources, use the format prescribed by your institution.'",
+            "question": "Convert to reported speech: The agency urged farmers, 'Reduce pesticide use.'",
             "options": [
-                "The professor told students that when citing sources, they should use the format prescribed by their institution.",
-                "The professor told students when citing sources, use the format prescribed by your institution.",
-                "The professor told students that when citing sources, you should use the format prescribed by your institution."
+                "The agency urged farmers that they reduce pesticide use.",
+                "The agency urged farmers to reduce pesticide use.",
+                "The agency urged farmers reduce pesticide use."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The professor told students that when citing sources, they should use the format prescribed by their institution.",
-            "sentence": "The professor said, 'When citing sources, use the format prescribed by your institution.'",
-            "hint": "Imperative with fronted time clause. 'Use' → 'they should use'. 'Your' → 'their'.",
-            "explanation": "The imperative 'use' → 'they should use' in the that-clause. 'Your institution' → 'their institution'. The participial clause 'when citing sources' stays.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The agency urged farmers to reduce pesticide use.",
+            "sentence": "The agency urged farmers, 'Reduce pesticide use.'",
+            "hint": "'Urged' works like 'told' — a command shifts to 'urged + people + to + verb'.",
+            "explanation": "Commands are reported with 'urged + object + to-infinitive'. 'Reduce pesticide use' becomes 'to reduce pesticide use'.",
+            "grammarRule": "Reported Commands & Requests"
         },
         {
             "id": "dis_l123_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The study concluded, 'The data strongly supports the conclusion that climate change is accelerating.'",
+            "question": "Convert to reported speech: They said, 'The proposal has been approved.'",
             "options": [
-                "The study concluded that the data strongly supported the conclusion that climate change was accelerating.",
-                "The study concluded that the data strongly supports the conclusion that climate change is accelerating.",
-                "The study concluded that the data strongly supported the conclusion that climate change had been accelerating."
+                "They said that the proposal was approved.",
+                "They said that the proposal had been approved.",
+                "They said that the proposal has been approved."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The study concluded that the data strongly supported the conclusion that climate change was accelerating.",
-            "sentence": "The study concluded, 'The data strongly supports the conclusion that climate change is accelerating.'",
-            "hint": "'Supports' → 'supported'. 'Is accelerating' → 'was accelerating'. Both shift.",
-            "explanation": "Two shifts: 'supports' → 'supported' and 'is accelerating' → 'was accelerating'. 'Had been accelerating' would be an over-shift for the embedded clause.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "They said that the proposal had been approved.",
+            "sentence": "They said, 'The proposal has been approved.'",
+            "hint": "Present perfect passive shifts to past perfect passive, not to simple past.",
+            "explanation": "'Has been approved' (present perfect passive) shifts to 'had been approved' (past perfect passive).",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l123_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The researcher asked, 'What percentage of respondents agreed with the statement?'",
+            "question": "Convert to reported speech: The director acknowledged, 'The launch was delayed unnecessarily.'",
             "options": [
-                "The researcher asked what percentage of respondents had agreed with the statement.",
-                "The researcher asked what percentage of respondents agreed with the statement.",
-                "The researcher asked what percentage did respondents agree with the statement."
+                "The director acknowledged that the launch has been delayed unnecessarily.",
+                "The director acknowledged that the launch was delayed unnecessarily.",
+                "The director acknowledged that the launch had been delayed unnecessarily."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The researcher asked what percentage of respondents had agreed with the statement.",
-            "sentence": "The researcher asked, 'What percentage of respondents agreed with the statement?'",
-            "hint": "'Agreed' (past simple) → 'had agreed' (past perfect). Statement order.",
-            "explanation": "Past simple 'agreed' → past perfect 'had agreed'. Use statement word order. Avoid 'did' in reported questions.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The director acknowledged that the launch had been delayed unnecessarily.",
+            "sentence": "The director acknowledged, 'The launch was delayed unnecessarily.'",
+            "hint": "This past passive shifts even further back; 'acknowledged' reports someone admitting a fact.",
+            "explanation": "'Was delayed' (past simple passive) shifts to 'had been delayed' (past perfect passive).",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l123_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The academic supervisor said, 'Cross-reference your findings with existing literature before drawing conclusions.'",
+            "question": "Convert to reported speech: She asked, 'Do you understand why the treaty failed?'",
             "options": [
-                "The academic supervisor instructed the student to cross-reference findings with existing literature before drawing conclusions.",
-                "The academic supervisor instructed the student to cross-reference your findings with existing literature before drawing conclusions.",
-                "The academic supervisor said cross-reference your findings with existing literature before drawing conclusions."
+                "She asked if I understand why the treaty failed.",
+                "She asked whether I understood why the treaty had failed.",
+                "She asked whether I understood why the treaty failed."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The academic supervisor instructed the student to cross-reference findings with existing literature before drawing conclusions.",
-            "sentence": "The academic supervisor said, 'Cross-reference your findings with existing literature before drawing conclusions.'",
-            "hint": "Imperative: 'instructed + student + to + cross-reference'. 'Your findings' → 'findings' (pronoun dropped as subject is clear).",
-            "explanation": "'Cross-reference' → 'to cross-reference'. 'Your findings' becomes 'findings' as the referent is now clear from context.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "She asked whether I understood why the treaty had failed.",
+            "sentence": "She asked, 'Do you understand why the treaty failed?'",
+            "hint": "This has two layers: a yes/no question about understanding, and a wh-question inside it — both shift.",
+            "explanation": "'Understand' shifts to 'understood' (whether-question), and 'failed' (already past) shifts back further to 'had failed' (embedded wh-question).",
+            "grammarRule": "Mixed/Complex Transformation"
         },
         {
             "id": "dis_l124_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'I've been reconsidering our findings, and I think we may have overlooked something important.'",
+            "question": "Convert to reported speech: The competitor conceded, 'Our product is more expensive.'",
             "options": [
-                "She told the team she had been reconsidering their findings, and she thought they might have overlooked something important.",
-                "She told the team she's been reconsidering their findings, and she thinks they may have overlooked something.",
-                "She told the team she had been reconsidering their findings, and she thought they may have overlooked something important."
+                "The competitor conceded that our product was more expensive.",
+                "The competitor conceded that their product is more expensive.",
+                "The competitor conceded that their product was more expensive."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She told the team she had been reconsidering their findings, and she thought they might have overlooked something important.",
-            "sentence": "She said, 'I've been reconsidering our findings, and I think we may have overlooked something important.'",
-            "hint": "'Have been reconsidering' → 'had been reconsidering'. 'Think' → 'thought'. 'May have' → 'might have'. 'We' → 'they'. 'Our' → 'their'.",
-            "explanation": "Multiple shifts: 'have been reconsidering' → 'had been reconsidering', 'think' → 'thought', 'may have' → 'might have', 'we' → 'they', 'our' → 'their'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The competitor conceded that their product was more expensive.",
+            "sentence": "The competitor conceded, 'Our product is more expensive.'",
+            "hint": "Two changes happen together: the verb tense, and the possessive word.",
+            "explanation": "'Is' shifts to 'was', and 'our' shifts to 'their'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l124_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The reviewer asked, 'How robust were the testing procedures used in the study?'",
+            "question": "Convert to reported speech: The report said, 'Emissions are monitored closely.'",
             "options": [
-                "The reviewer asked how robust the testing procedures used in the study had been.",
-                "The reviewer asked how robust were the testing procedures used in the study.",
-                "The reviewer asked how robust the testing procedures had been using in the study."
+                "The report said that emissions are monitored closely.",
+                "The report said that emissions were monitored closely.",
+                "The report said that emissions had been monitored closely."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The reviewer asked how robust the testing procedures used in the study had been.",
-            "sentence": "The reviewer asked, 'How robust were the testing procedures used in the study?'",
-            "hint": "'Were... robust' → 'the testing procedures had been'. Statement order: adjective complement after 'how'.",
-            "explanation": "'Were robust' → 'had been'. Statement word order places the subject before the verb: 'how robust the testing procedures had been'. 'Had been using' is wrong - 'used' is a past participle adjective here.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The report said that emissions were monitored closely.",
+            "sentence": "The report said, 'Emissions are monitored closely.'",
+            "hint": "Notice the passive form here — it shifts back exactly one tense, like any other present-tense verb.",
+            "explanation": "'Are monitored' (present simple passive) shifts to 'were monitored' (past simple passive) — one step back.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l124_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The standard operating procedure said, 'Document any deviations from the protocol and report them to the supervisor.'",
+            "question": "Convert to reported speech: He said, 'I suspect the theory will be disproven.'",
             "options": [
-                "The standard operating procedure required researchers to document any deviations from the protocol and report them to the supervisor.",
-                "The standard operating procedure required researchers to document any deviations from the protocol and reporting them to the supervisor.",
-                "The standard operating procedure said document any deviations from the protocol and report them to the supervisor."
+                "He said that he suspects the theory would be disproven.",
+                "He said that he suspected the theory will be disproven.",
+                "He said that he suspected the theory would be disproven."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The standard operating procedure required researchers to document any deviations from the protocol and report them to the supervisor.",
-            "sentence": "The standard operating procedure said, 'Document any deviations from the protocol and report them to the supervisor.'",
-            "hint": "Double imperative: 'required + researchers + to + document... and report'. Parallel infinitive structure.",
-            "explanation": "Two parallel imperatives → 'to document... and report'. Using 'reporting' breaks the parallel infinitive structure.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "He said that he suspected the theory would be disproven.",
+            "sentence": "He said, 'I suspect the theory will be disproven.'",
+            "hint": "This sentence has a clause inside a clause — both verbs backshift together.",
+            "explanation": "'Suspect' shifts to 'suspected', and 'will' shifts to 'would' — both clauses backshift together.",
+            "grammarRule": "Mixed/Complex Transformation"
         },
         {
             "id": "dis_l125_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The report noted, 'The treatment has been more effective for some patients than for others.'",
+            "question": "Convert to reported speech: The delegate contended, 'The agreement favors wealthier nations.'",
             "options": [
-                "The report noted that the treatment had been more effective for some patients than for others.",
-                "The report noted that the treatment has been more effective for some patients than others.",
-                "The report noted that the treatment was more effective for some patients than for others."
+                "The delegate contended that the agreement had favored wealthier nations.",
+                "The delegate contended that the agreement favors wealthier nations.",
+                "The delegate contended that the agreement favored wealthier nations."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The report noted that the treatment had been more effective for some patients than for others.",
-            "sentence": "The report noted, 'The treatment has been more effective for some patients than for others.'",
-            "hint": "'Has been' → 'had been'. The comparative structure stays. Note: 'than for others' not 'than others'.",
-            "explanation": "'Has been more effective' → 'had been more effective'. The preposition 'for' must be retained: 'than for others'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The delegate contended that the agreement favored wealthier nations.",
+            "sentence": "The delegate contended, 'The agreement favors wealthier nations.'",
+            "hint": "Shift the verb back one simple step, not further.",
+            "explanation": "Present simple 'favors' shifts to past simple 'favored' — one step back, not to past perfect.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l125_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The peer reviewer asked, 'Were the experimental conditions sufficiently controlled?'",
+            "question": "Convert to reported speech: She said, 'The merger is being negotiated.'",
             "options": [
-                "The peer reviewer asked whether the experimental conditions had been sufficiently controlled.",
-                "The peer reviewer asked whether the experimental conditions were sufficiently controlled.",
-                "The peer reviewer asked were the experimental conditions sufficiently controlled."
+                "She said that the merger is being negotiated.",
+                "She said that the merger was being negotiated.",
+                "She said that the merger had been negotiated."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The peer reviewer asked whether the experimental conditions had been sufficiently controlled.",
-            "sentence": "The peer reviewer asked, 'Were the experimental conditions sufficiently controlled?'",
-            "hint": "Past simple passive → past perfect passive. Use 'whether' and statement order.",
-            "explanation": "'Were... controlled' (past simple passive) → 'had been... controlled' (past perfect passive). Use 'whether'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "She said that the merger was being negotiated.",
+            "sentence": "She said, 'The merger is being negotiated.'",
+            "hint": "This is a present continuous passive; shift it back one step to past continuous passive.",
+            "explanation": "'Is being negotiated' (present continuous passive) shifts to 'was being negotiated' (past continuous passive).",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l125_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The research methodology guide said, 'Situate your research within the broader academic debate.'",
+            "question": "Convert to reported speech: He asked, 'Has the hypothesis been tested?'",
             "options": [
-                "The research methodology guide told scholars to situate their research within the broader academic debate.",
-                "The research methodology guide told scholars to situate your research within the broader academic debate.",
-                "The research methodology guide said situate your research within the broader academic debate."
+                "He asked has the hypothesis been tested.",
+                "He asked whether the hypothesis had been tested.",
+                "He asked whether the hypothesis has been tested."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The research methodology guide told scholars to situate their research within the broader academic debate.",
-            "sentence": "The research methodology guide said, 'Situate your research within the broader academic debate.'",
-            "hint": "Imperative: 'told + scholars + to + situate'. 'Your' → 'their'.",
-            "explanation": "'Situate' is an imperative → 'told scholars to situate their research within the broader academic debate'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "He asked whether the hypothesis had been tested.",
+            "sentence": "He asked, 'Has the hypothesis been tested?'",
+            "hint": "'Whether' reports the question, with statement word order and shifted tense.",
+            "explanation": "'Whether' introduces the question, word order becomes statement order, and 'has been tested' shifts to 'had been tested'.",
+            "grammarRule": "Reported Yes/No Questions"
         },
         {
             "id": "dis_l126_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The team said, 'We acknowledge there are significant limitations to our findings.'",
+            "question": "Convert to reported speech: The columnist speculated, 'Talks may resume next month.'",
             "options": [
-                "The team acknowledged there were significant limitations to their findings.",
-                "The team acknowledged there are significant limitations to their findings.",
-                "The team acknowledged there had been significant limitations to their findings."
+                "The columnist speculated that talks might resume next month.",
+                "The columnist speculated that talks might resume the following month.",
+                "The columnist speculated that talks may resume the following month."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The team acknowledged there were significant limitations to their findings.",
-            "sentence": "The team said, 'We acknowledge there are significant limitations to our findings.'",
-            "hint": "'Acknowledge' becomes reporting verb. 'Are' → 'were'. 'Our' → 'their'.",
-            "explanation": "The performative verb 'acknowledge' becomes the reporting verb. 'Are' → 'were'. 'Our' → 'their'. 'Had been' would be an over-shift.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The columnist speculated that talks might resume the following month.",
+            "sentence": "The columnist speculated, 'Talks may resume next month.'",
+            "hint": "Both 'may' and 'next month' shift together here.",
+            "explanation": "'May' shifts to 'might', and 'next month' shifts to 'the following month'.",
+            "grammarRule": "Modal Verb Backshift"
         },
         {
             "id": "dis_l126_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The researcher asked, 'At what point did the control group start to show different results?'",
+            "question": "Convert to reported speech: They said, 'We calculate that costs will rise.'",
             "options": [
-                "The researcher asked at what point the control group had started to show different results.",
-                "The researcher asked at what point did the control group start to show different results.",
-                "The researcher asked at what point the control group started to show different results."
+                "They said that they calculated that costs will rise.",
+                "They said that they calculated that costs would rise.",
+                "They said that they calculate that costs would rise."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The researcher asked at what point the control group had started to show different results.",
-            "sentence": "The researcher asked, 'At what point did the control group start to show different results?'",
-            "hint": "Drop 'did'. 'Start' → 'had started'. Statement order.",
-            "explanation": "Drop 'did'. 'Start' → 'had started' (past perfect). Use statement word order: 'at what point the control group had started'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "They said that they calculated that costs would rise.",
+            "sentence": "They said, 'We calculate that costs will rise.'",
+            "hint": "Two verbs need to shift: the main verb and the verb inside the embedded clause.",
+            "explanation": "'Calculate' shifts to 'calculated', and 'will' shifts to 'would' — both clauses backshift together.",
+            "grammarRule": "Mixed/Complex Transformation"
         },
         {
             "id": "dis_l126_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The essay-writing guide said, 'Present your argument clearly and support it with evidence.'",
+            "question": "Convert to reported speech: Compliance warned staff, 'Don't discuss this deal publicly.'",
             "options": [
-                "The essay-writing guide advised students to present their argument clearly and support it with evidence.",
-                "The essay-writing guide advised students to present your argument clearly and support it with evidence.",
-                "The essay-writing guide said present your argument clearly and support it with evidence."
+                "Compliance warned staff not to discuss this deal publicly.",
+                "Compliance warned staff don't discuss that deal publicly.",
+                "Compliance warned staff not to discuss that deal publicly."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The essay-writing guide advised students to present their argument clearly and support it with evidence.",
-            "sentence": "The essay-writing guide said, 'Present your argument clearly and support it with evidence.'",
-            "hint": "Double imperative: 'advised + students + to + present... and support'. 'Your' → 'their'.",
-            "explanation": "Two parallel imperatives → 'to present their argument clearly and support it'. 'Your argument' → 'their argument'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Compliance warned staff not to discuss that deal publicly.",
+            "sentence": "Compliance warned staff, 'Don't discuss this deal publicly.'",
+            "hint": "Negative commands shift to 'not to + verb', and 'this' shifts too.",
+            "explanation": "'Don't discuss' becomes 'not to discuss', and 'this' shifts to 'that'.",
+            "grammarRule": "Reported Commands & Requests"
         },
         {
             "id": "dis_l127_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The minister said, 'The amendment to the legislation will come into effect next year.'",
+            "question": "Convert to reported speech: The paper said, 'The samples were collected over two years.'",
             "options": [
-                "The minister confirmed the amendment to the legislation would come into effect the following year.",
-                "The minister confirmed the amendment to the legislation will come into effect next year.",
-                "The minister confirmed the amendment to the legislation was coming into effect the following year."
+                "The paper said that the samples have been collected over two years.",
+                "The paper said that the samples had been collected over two years.",
+                "The paper said that the samples were collected over two years."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The minister confirmed the amendment to the legislation would come into effect the following year.",
-            "sentence": "The minister said, 'The amendment to the legislation will come into effect next year.'",
-            "hint": "'Will come' → 'would come'. 'Next year' → 'the following year'. 'Was coming' changes the aspect.",
-            "explanation": "'Will come' → 'would come'. 'Next year' → 'the following year'. 'Was coming into effect' changes from simple to continuous unnecessarily.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The paper said that the samples had been collected over two years.",
+            "sentence": "The paper said, 'The samples were collected over two years.'",
+            "hint": "Since this passive verb was already past, it moves one more step back, to past perfect passive.",
+            "explanation": "'Were collected' (past simple passive) shifts to 'had been collected' (past perfect passive).",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l127_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The statistician asked, 'Has the variance in the data been accounted for?'",
+            "question": "Convert to reported speech: The minister acknowledged, 'Our policy needs revision.'",
             "options": [
-                "The statistician asked whether the variance in the data had been accounted for.",
-                "The statistician asked has the variance in the data been accounted for.",
-                "The statistician asked whether the variance in the data was accounted for."
+                "The minister acknowledged that their policy needed revision.",
+                "The minister acknowledged that our policy needed revision.",
+                "The minister acknowledged that their policy needs revision."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The statistician asked whether the variance in the data had been accounted for.",
-            "sentence": "The statistician asked, 'Has the variance in the data been accounted for?'",
-            "hint": "'Has been accounted for' → 'had been accounted for'. Use 'whether'. Preserve 'for' at the end.",
-            "explanation": "Present perfect passive 'has been accounted for' → past perfect passive 'had been accounted for'. Use 'whether'. The preposition 'for' must be retained.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The minister acknowledged that their policy needed revision.",
+            "sentence": "The minister acknowledged, 'Our policy needs revision.'",
+            "hint": "Watch for both shifts here — the backshifted verb, and the possessive that now matches the speaker.",
+            "explanation": "'Needs' shifts to 'needed', and 'our' shifts to 'their'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l127_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The lab guide said, 'Identify the key variables and control for confounding factors.'",
+            "question": "Convert to reported speech: She asked, 'Do you know how the spill was contained?'",
             "options": [
-                "The lab guide told researchers to identify the key variables and control for confounding factors.",
-                "The lab guide told researchers to identify the key variables and to controlling for confounding factors.",
-                "The lab guide said identify the key variables and control for confounding factors."
+                "She asked if I know how the spill was contained.",
+                "She asked whether I knew how the spill had been contained.",
+                "She asked whether I knew how the spill was contained."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The lab guide told researchers to identify the key variables and control for confounding factors.",
-            "sentence": "The lab guide said, 'Identify the key variables and control for confounding factors.'",
-            "hint": "Double imperative with parallel structure: 'told + researchers + to + identify... and control for'.",
-            "explanation": "'Identify' and 'control' are parallel imperatives → 'to identify... and control for'. 'To controlling' breaks the parallel infinitive structure.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "She asked whether I knew how the spill had been contained.",
+            "sentence": "She asked, 'Do you know how the spill was contained?'",
+            "hint": "This has two layers: a yes/no question about knowing, and a wh-question inside it — both shift.",
+            "explanation": "'Know' shifts to 'knew' (whether-question), and 'was contained' (already past) shifts back further to 'had been contained' (embedded wh-question).",
+            "grammarRule": "Mixed/Complex Transformation"
         },
         {
             "id": "dis_l128_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'I strongly believe that equal access to education is a fundamental human right.'",
+            "question": "Convert to reported speech: The critic conceded, 'The film has some genuine strengths.'",
             "options": [
-                "She stated that she strongly believed equal access to education was a fundamental human right.",
-                "She stated that she strongly believes equal access to education is a fundamental human right.",
-                "She stated that she strongly believed equal access to education had been a fundamental human right."
+                "The critic conceded that the film has some genuine strengths.",
+                "The critic conceded that the film had some genuine strengths.",
+                "The critic conceded that the film had had some genuine strengths."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She stated that she strongly believed equal access to education was a fundamental human right.",
-            "sentence": "She said, 'I strongly believe that equal access to education is a fundamental human right.'",
-            "hint": "'Believe' → 'believed'. 'Is' → 'was'. Standard backshift applies even for strongly held beliefs.",
-            "explanation": "'Believe' → 'believed'. 'Is' → 'was'. In standard reported speech, tense shifts apply even to strongly held beliefs. 'Had been' would be an over-shift.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The critic conceded that the film had some genuine strengths.",
+            "sentence": "The critic conceded, 'The film has some genuine strengths.'",
+            "hint": "Just one step back is needed here — don't over-shift to past perfect.",
+            "explanation": "Present simple 'has' shifts to past simple 'had' — one step back, not to past perfect 'had had'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l128_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The examiner asked, 'Which theoretical framework informed your research design?'",
+            "question": "Convert to reported speech: The study said, 'Forests are being cleared at an alarming rate.'",
             "options": [
-                "The examiner asked which theoretical framework had informed their research design.",
-                "The examiner asked which theoretical framework informed their research design.",
-                "The examiner asked which theoretical framework did inform their research design."
+                "The study said that forests are being cleared at an alarming rate.",
+                "The study said that forests were being cleared at an alarming rate.",
+                "The study said that forests had been cleared at an alarming rate."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The examiner asked which theoretical framework had informed their research design.",
-            "sentence": "The examiner asked, 'Which theoretical framework informed your research design?'",
-            "hint": "'Informed' → 'had informed'. 'Your' → 'their'. Statement order.",
-            "explanation": "Past simple 'informed' → past perfect 'had informed'. 'Your research design' → 'their research design'. Statement word order is used.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The study said that forests were being cleared at an alarming rate.",
+            "sentence": "The study said, 'Forests are being cleared at an alarming rate.'",
+            "hint": "This is a present continuous passive; shift it back one step to past continuous passive.",
+            "explanation": "'Are being cleared' (present continuous passive) shifts to 'were being cleared' (past continuous passive).",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l128_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The lecturer said, 'Engage critically with the sources you use, rather than summarizing them.'",
+            "question": "Convert to reported speech: The professor said, 'Correlation does not imply causation.'",
             "options": [
-                "The lecturer advised students to engage critically with the sources they used, rather than summarizing them.",
-                "The lecturer advised students to engage critically with the sources you use, rather than summarizing them.",
-                "The lecturer said engage critically with the sources you use, rather than summarizing them."
+                "The professor said that correlation does not imply causation.",
+                "The professor said that correlation did not imply causation.",
+                "The professor said that correlation had not implied causation."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The lecturer advised students to engage critically with the sources they used, rather than summarizing them.",
-            "sentence": "The lecturer said, 'Engage critically with the sources you use, rather than summarizing them.'",
-            "hint": "Imperative with relative clause. 'Use' → 'used'. 'You' → 'they'. 'Them' stays.",
-            "explanation": "'Engage critically' → 'to engage critically'. 'The sources you use' → 'the sources they used'. 'Summarizing them' stays unchanged.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The professor said that correlation does not imply causation.",
+            "sentence": "The professor said, 'Correlation does not imply causation.'",
+            "hint": "This is a widely accepted principle that's still valid — it doesn't need to shift tense.",
+            "explanation": "General truths and widely accepted principles often stay in the present tense in reported speech.",
+            "grammarRule": "No-Shift Exceptions"
         },
         {
             "id": "dis_l129_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The critic said, 'The policy, as currently written, creates more problems than it solves.'",
+            "question": "Convert to reported speech: The union contended, 'Wages have not kept pace with inflation.'",
             "options": [
-                "The critic argued that the policy, as currently written, created more problems than it solved.",
-                "The critic argued that the policy, as currently written, creates more problems than it solves.",
-                "The critic argued that the policy, as then written, had created more problems than it had solved."
+                "The union contended that wages had not kept pace with inflation.",
+                "The union contended that wages have not kept pace with inflation.",
+                "The union contended that wages did not keep pace with inflation."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The critic argued that the policy, as currently written, created more problems than it solved.",
-            "sentence": "The critic said, 'The policy, as currently written, creates more problems than it solves.'",
-            "hint": "'Creates' → 'created'. 'Solves' → 'solved'. 'Currently' stays (describes the state at that time). No over-shift.",
-            "explanation": "'Creates' → 'created' and 'solves' → 'solved'. 'Currently' is retained. 'Had created' and 'had solved' are over-shifts.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The union contended that wages had not kept pace with inflation.",
+            "sentence": "The union contended, 'Wages have not kept pace with inflation.'",
+            "hint": "Present perfect shifts to past perfect, not to simple past.",
+            "explanation": "'Have not kept' (present perfect) shifts to 'had not kept' (past perfect).",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l129_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The reviewer asked, 'To what extent were participants randomly assigned to groups?'",
+            "question": "Convert to reported speech: He said, 'I believe the summit will produce real progress.'",
             "options": [
-                "The reviewer asked to what extent participants had been randomly assigned to groups.",
-                "The reviewer asked to what extent were participants randomly assigned to groups.",
-                "The reviewer asked to what extent participants were randomly assigned to groups."
+                "He said that he believed the summit would produce real progress.",
+                "He said that he believed the summit will produce real progress.",
+                "He said that he believes the summit would produce real progress."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The reviewer asked to what extent participants had been randomly assigned to groups.",
-            "sentence": "The reviewer asked, 'To what extent were participants randomly assigned to groups?'",
-            "hint": "'Were assigned' → 'had been assigned'. Statement order.",
-            "explanation": "Past simple passive 'were randomly assigned' → past perfect passive 'had been randomly assigned'. Use statement word order.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "He said that he believed the summit would produce real progress.",
+            "sentence": "He said, 'I believe the summit will produce real progress.'",
+            "hint": "Watch for two verbs here: the reporting verb's own clause, and the clause embedded inside it.",
+            "explanation": "'Believe' shifts to 'believed', and 'will' shifts to 'would' — both clauses backshift together.",
+            "grammarRule": "Mixed/Complex Transformation"
         },
         {
             "id": "dis_l129_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The statistics professor said, 'Distinguish between correlation and causation in your analysis.'",
+            "question": "Convert to reported speech: The board asked, 'Has the budget been finalized?'",
             "options": [
-                "The statistics professor told students to distinguish between correlation and causation in their analysis.",
-                "The statistics professor told students to distinguish between correlation and causation in your analysis.",
-                "The statistics professor said distinguish between correlation and causation in your analysis."
+                "The board asked if the budget had been finalized.",
+                "The board asked if the budget has been finalized.",
+                "The board asked has the budget been finalized."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The statistics professor told students to distinguish between correlation and causation in their analysis.",
-            "sentence": "The statistics professor said, 'Distinguish between correlation and causation in your analysis.'",
-            "hint": "Imperative: 'told + students + to + distinguish'. 'Your' → 'their'.",
-            "explanation": "'Distinguish' is an imperative → 'told students to distinguish between correlation and causation in their analysis'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The board asked if the budget had been finalized.",
+            "sentence": "The board asked, 'Has the budget been finalized?'",
+            "hint": "Yes/No questions use 'if', with statement word order and shifted tense.",
+            "explanation": "'If' introduces the question, word order becomes statement order, and 'has been finalized' shifts to 'had been finalized'.",
+            "grammarRule": "Reported Yes/No Questions"
         },
         {
             "id": "dis_l130_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The researcher noted, 'The findings are consistent with those of previous studies.'",
+            "question": "Convert to reported speech: The committee said, 'New guidelines are being drafted.'",
             "options": [
-                "The researcher noted the findings were consistent with those of previous studies.",
-                "The researcher noted the findings are consistent with those of previous studies.",
-                "The researcher noted the findings had been consistent with those of previous studies."
+                "The committee said that new guidelines had been drafted.",
+                "The committee said that new guidelines were being drafted.",
+                "The committee said that new guidelines are being drafted."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The researcher noted the findings were consistent with those of previous studies.",
-            "sentence": "The researcher noted, 'The findings are consistent with those of previous studies.'",
-            "hint": "'Are consistent' → 'were consistent'. 'Had been consistent' would be an over-shift.",
-            "explanation": "'Are consistent' → 'were consistent'. 'Had been consistent' is an over-shift - the present simple simply shifts to past simple.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The committee said that new guidelines were being drafted.",
+            "sentence": "The committee said, 'New guidelines are being drafted.'",
+            "hint": "This is a present continuous passive; shift it back one step to past continuous passive.",
+            "explanation": "'Are being drafted' (present continuous passive) shifts to 'were being drafted' (past continuous passive).",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l130_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The examiner asked, 'Why was a qualitative rather than quantitative approach chosen?'",
+            "question": "Convert to reported speech: Analysts speculated, 'Interest rates could fall further.'",
             "options": [
-                "The examiner asked why a qualitative rather than quantitative approach had been chosen.",
-                "The examiner asked why was a qualitative rather than quantitative approach chosen.",
-                "The examiner asked why a qualitative rather than quantitative approach was chosen."
+                "Analysts speculated that interest rates could fall further.",
+                "Analysts speculated that interest rates can fall further.",
+                "Analysts speculated that interest rates could have fallen further."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The examiner asked why a qualitative rather than quantitative approach had been chosen.",
-            "sentence": "The examiner asked, 'Why was a qualitative rather than quantitative approach chosen?'",
-            "hint": "Past simple passive → past perfect passive. Statement order.",
-            "explanation": "'Was chosen' (past passive) → 'had been chosen' (past perfect passive). Use statement word order.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "Analysts speculated that interest rates could fall further.",
+            "sentence": "Analysts speculated, 'Interest rates could fall further.'",
+            "hint": "This modal is already in its 'reported speech' form.",
+            "explanation": "'Could' is already backshifted, so it stays the same in reported speech.",
+            "grammarRule": "No-Shift Exceptions"
         },
         {
             "id": "dis_l130_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The peer reviewer said, 'Test your hypothesis rigorously before publishing your results.'",
+            "question": "Convert to reported speech: She said, 'I trust that the process was handled fairly.'",
             "options": [
-                "The peer reviewer urged scientists to test their hypothesis rigorously before publishing their results.",
-                "The peer reviewer urged scientists to test your hypothesis rigorously before publishing your results.",
-                "The peer reviewer said test your hypothesis rigorously before publishing your results."
+                "She said that she trusted that the process was handled fairly.",
+                "She said that she trusts that the process had been handled fairly.",
+                "She said that she trusted that the process had been handled fairly."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The peer reviewer urged scientists to test their hypothesis rigorously before publishing their results.",
-            "sentence": "The peer reviewer said, 'Test your hypothesis rigorously before publishing your results.'",
-            "hint": "Imperative: 'urged + scientists + to + test'. 'Your hypothesis' and 'your results' → 'their hypothesis' and 'their results'.",
-            "explanation": "'Test' is an imperative → 'urged scientists to test their hypothesis rigorously before publishing their results'. Both 'your' references → 'their'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "She said that she trusted that the process had been handled fairly.",
+            "sentence": "She said, 'I trust that the process was handled fairly.'",
+            "hint": "Two things shift: the main verb, and the already-past passive verb shifts back an extra step.",
+            "explanation": "'Trust' shifts to 'trusted', and 'was handled' (already past) shifts back further to 'had been handled'.",
+            "grammarRule": "Mixed/Complex Transformation"
         }
     ]
 }

@@ -1,577 +1,577 @@
 {
-    "gameType": "questionFormatter",
-    "batchIndex": 5,
-    "levels": "41-50",
-    "quests": [
-        {
-            "id": "qf_l41_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "This room is cleaned every day.",
-            "sentence": "This room is cleaned every day.",
-            "options": [
-                "Is this room cleaned every day?",
-                "This room is cleaned every day?",
-                "Are this room cleaned every day?",
-                "Does someone clean this room every day?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Is this room cleaned every day?",
-            "hint": "This is passive voice - invert 'is' with 'this room' and keep the past participle as it is.",
-            "explanation": "In passive voice, 'this room' receives the action rather than doing it. The question inverts 'is' with 'this room', and the past participle stays unchanged.",
-            "grammarRule": "Verb 'To Be' Questions"
-        },
-        {
-            "id": "qf_l41_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The emails are sent automatically.",
-            "sentence": "The emails are sent automatically.",
-            "options": [
-                "Are the emails sent automatically?",
-                "The emails are sent automatically?",
-                "Is the emails sent automatically?",
-                "Do they send the emails automatically?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Are the emails sent automatically?",
-            "hint": "Look for who/what receives the action. Invert 'are' and 'the emails'.",
-            "explanation": "Passive-voice questions form the same way as 'to be' questions: 'are' moves before 'the emails', because 'are' is the auxiliary, not the main verb.",
-            "grammarRule": "Verb 'To Be' Questions"
-        },
-        {
-            "id": "qf_l41_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Dinner is cooked by my mother.",
-            "sentence": "Dinner is cooked by my mother.",
-            "options": [
-                "Is dinner cooked by my mother?",
-                "Dinner is cooked by my mother?",
-                "Are dinner cooked by my mother?",
-                "Does my mother cook dinner?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Is dinner cooked by my mother?",
-            "hint": "Passive questions invert 'to be', just like continuous tenses do.",
-            "explanation": "In passive voice, 'dinner' receives the action rather than doing it. The question inverts 'is' with 'dinner', and the past participle stays unchanged.",
-            "grammarRule": "Verb 'To Be' Questions"
-        },
-        {
-            "id": "qf_l42_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The window was broken last night.",
-            "sentence": "The window was broken last night.",
-            "options": [
-                "Was the window broken last night?",
-                "The window was broken last night?",
-                "Were the window broken last night?",
-                "Did someone break the window last night?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Was the window broken last night?",
-            "hint": "This is passive voice - invert 'was' with 'the window' and keep the past participle as it is.",
-            "explanation": "In passive voice, 'the window' receives the action rather than doing it. The question inverts 'was' with 'the window', and the past participle stays unchanged.",
-            "grammarRule": "Verb 'To Be' Questions"
-        },
-        {
-            "id": "qf_l42_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The books were delivered this morning.",
-            "sentence": "The books were delivered this morning.",
-            "options": [
-                "Were the books delivered this morning?",
-                "The books were delivered this morning?",
-                "Was the books delivered this morning?",
-                "Did they deliver the books this morning?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Were the books delivered this morning?",
-            "hint": "Look for who/what receives the action. Invert 'were' and 'the books'.",
-            "explanation": "Passive-voice questions form the same way as 'to be' questions: 'were' moves before 'the books', because 'were' is the auxiliary, not the main verb.",
-            "grammarRule": "Verb 'To Be' Questions"
-        },
-        {
-            "id": "qf_l42_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The patient was treated immediately.",
-            "sentence": "The patient was treated immediately.",
-            "options": [
-                "Was the patient treated immediately?",
-                "The patient was treated immediately?",
-                "Were the patient treated immediately?",
-                "Did the doctor treat the patient immediately?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Was the patient treated immediately?",
-            "hint": "Passive questions invert 'to be', just like continuous tenses do.",
-            "explanation": "In passive voice, 'the patient' receives the action rather than doing it. The question inverts 'was' with 'the patient', and the past participle stays unchanged.",
-            "grammarRule": "Verb 'To Be' Questions"
-        },
-        {
-            "id": "qf_l43_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The bridge is being repaired.",
-            "sentence": "The bridge is being repaired.",
-            "options": [
-                "Is the bridge being repaired?",
-                "The bridge is being repaired?",
-                "Are the bridge being repaired?",
-                "Is the bridge repaired?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Is the bridge being repaired?",
-            "hint": "Invert 'is' with 'the bridge' and keep 'being + past participle' together.",
-            "explanation": "This sentence combines passive voice with the continuous aspect: 'is' + being + past participle. Only 'is' inverts with 'the bridge'; 'being' never moves or changes.",
-            "grammarRule": "Verb 'To Be' Questions"
-        },
-        {
-            "id": "qf_l43_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The new phones are being tested right now.",
-            "sentence": "The new phones are being tested right now.",
-            "options": [
-                "Are the new phones being tested right now?",
-                "The new phones are being tested right now?",
-                "Is the new phones being tested right now?",
-                "Are the new phones tested right now?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Are the new phones being tested right now?",
-            "hint": "This is passive + continuous combined - only the 'to be' auxiliary moves.",
-            "explanation": "'Are' is the auxiliary for both the passive and the continuous meaning here, so it alone inverts with 'the new phones'.",
-            "grammarRule": "Verb 'To Be' Questions"
-        },
-        {
-            "id": "qf_l43_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The road is being widened.",
-            "sentence": "The road is being widened.",
-            "options": [
-                "Is the road being widened?",
-                "The road is being widened?",
-                "Are the road being widened?",
-                "Is the road widened?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Is the road being widened?",
-            "hint": "Invert 'is' with 'the road' and keep 'being + past participle' together.",
-            "explanation": "This sentence combines passive voice with the continuous aspect: 'is' + being + past participle. Only 'is' inverts with 'the road'; 'being' never moves or changes.",
-            "grammarRule": "Verb 'To Be' Questions"
-        },
-        {
-            "id": "qf_l44_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The car was being washed when it rained.",
-            "sentence": "The car was being washed when it rained.",
-            "options": [
-                "Was the car being washed when it rained?",
-                "The car was being washed when it rained?",
-                "Were the car being washed when it rained?",
-                "Was the car washed when it rained?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Was the car being washed when it rained?",
-            "hint": "This is passive + continuous combined - only the 'to be' auxiliary moves.",
-            "explanation": "'Was' is the auxiliary for both the passive and the continuous meaning here, so it alone inverts with 'the car'.",
-            "grammarRule": "Verb 'To Be' Questions"
-        },
-        {
-            "id": "qf_l44_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The reports were being checked all morning.",
-            "sentence": "The reports were being checked all morning.",
-            "options": [
-                "Were the reports being checked all morning?",
-                "The reports were being checked all morning?",
-                "Was the reports being checked all morning?",
-                "Were the reports checked all morning?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Were the reports being checked all morning?",
-            "hint": "Invert 'were' with 'the reports' and keep 'being + past participle' together.",
-            "explanation": "This sentence combines passive voice with the continuous aspect: 'were' + being + past participle. Only 'were' inverts with 'the reports'; 'being' never moves or changes.",
-            "grammarRule": "Verb 'To Be' Questions"
-        },
-        {
-            "id": "qf_l44_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The patients were being examined when the fire alarm went off.",
-            "sentence": "The patients were being examined when the fire alarm went off.",
-            "options": [
-                "Were the patients being examined when the fire alarm went off?",
-                "The patients were being examined when the fire alarm went off?",
-                "Was the patients being examined when the fire alarm went off?",
-                "Were the patients examined when the fire alarm went off?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Were the patients being examined when the fire alarm went off?",
-            "hint": "This is passive + continuous combined - only the 'to be' auxiliary moves.",
-            "explanation": "'Were' is the auxiliary for both the passive and the continuous meaning here, so it alone inverts with 'the patients'.",
-            "grammarRule": "Verb 'To Be' Questions"
-        },
-        {
-            "id": "qf_l45_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The problem has been solved.",
-            "sentence": "The problem has been solved.",
-            "options": [
-                "Has the problem been solved?",
-                "The problem has been solved?",
-                "Has the problem solved?",
-                "Have the problem been solved?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Has the problem been solved?",
-            "hint": "Invert 'has' with 'the problem'; 'been' stays right where it is, before the past participle.",
-            "explanation": "This sentence is passive and perfect together: 'has' + been + past participle. 'Has' inverts with 'the problem'; 'been' is never moved.",
-            "grammarRule": "Present Perfect Questions"
-        },
-        {
-            "id": "qf_l45_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "All the tickets have been sold.",
-            "sentence": "All the tickets have been sold.",
-            "options": [
-                "Have all the tickets been sold?",
-                "All the tickets have been sold?",
-                "Have all the tickets sold?",
-                "Has all the tickets been sold?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Have all the tickets been sold?",
-            "hint": "This combines passive voice with the perfect aspect - only the first auxiliary inverts.",
-            "explanation": "'Have' is the auxiliary matched to 'all the tickets'; it moves to the front while 'been' and the past participle stay together.",
-            "grammarRule": "Present Perfect Questions"
-        },
-        {
-            "id": "qf_l45_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The deadline has been moved to next week.",
-            "sentence": "The deadline has been moved to next week.",
-            "options": [
-                "Has the deadline been moved to next week?",
-                "The deadline has been moved to next week?",
-                "Has the deadline moved to next week?",
-                "Have the deadline been moved to next week?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Has the deadline been moved to next week?",
-            "hint": "Invert 'has' with 'the deadline'; 'been' stays right where it is, before the past participle.",
-            "explanation": "This sentence is passive and perfect together: 'has' + been + past participle. 'Has' inverts with 'the deadline'; 'been' is never moved.",
-            "grammarRule": "Present Perfect Questions"
-        },
-        {
-            "id": "qf_l46_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The documents had been signed before the meeting.",
-            "sentence": "The documents had been signed before the meeting.",
-            "options": [
-                "Had the documents been signed before the meeting?",
-                "The documents had been signed before the meeting?",
-                "Had the documents signed before the meeting?",
-                "Has the documents been signed before the meeting?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Had the documents been signed before the meeting?",
-            "hint": "Move 'had' before the subject to form the question; 'been' stays after the subject.",
-            "explanation": "'Had been' is the past-perfect passive auxiliary. 'Had' moves before the subject, while 'been' and the past participle stay in place. This is the same pattern as the active past perfect.",
-            "grammarRule": "Past Perfect Questions"
-        },
-        {
-            "id": "qf_l46_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The data had been backed up before the crash.",
-            "sentence": "The data had been backed up before the crash.",
-            "options": [
-                "Had the data been backed up before the crash?",
-                "The data had been backed up before the crash?",
-                "Had the data backed up before the crash?",
-                "Have the data been backed up before the crash?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Had the data been backed up before the crash?",
-            "hint": "Invert 'had' with the subject; 'been backed up' stays as one unit after the subject.",
-            "explanation": "In the past-perfect passive, 'had' is the only auxiliary that inverts. 'Been backed up' is the verb phrase and remains unchanged after the subject.",
-            "grammarRule": "Past Perfect Questions"
-        },
-        {
-            "id": "qf_l46_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The flight had been cancelled an hour earlier.",
-            "sentence": "The flight had been cancelled an hour earlier.",
-            "options": [
-                "Had the flight been cancelled an hour earlier?",
-                "The flight had been cancelled an hour earlier?",
-                "Had the flight cancelled an hour earlier?",
-                "Have the flight been cancelled an hour earlier?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Had the flight been cancelled an hour earlier?",
-            "hint": "Move 'had' before 'the flight'; 'been cancelled' stays together after it.",
-            "explanation": "Past-perfect passive questions are formed by moving 'had' before the subject. 'Been + past participle' is the passive verb phrase and always stays together.",
-            "grammarRule": "Past Perfect Questions"
-        },
-        {
-            "id": "qf_l47_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The results will be announced tomorrow.",
-            "sentence": "The results will be announced tomorrow.",
-            "options": [
-                "Will the results be announced tomorrow?",
-                "The results will be announced tomorrow?",
-                "Will the results been announced tomorrow?",
-                "Are the results announced tomorrow?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Will the results be announced tomorrow?",
-            "hint": "Move 'will' before the subject; 'be announced' stays together after it.",
-            "explanation": "Future passive questions move 'will' before the subject. The verb phrase 'be + past participle' stays unchanged - 'will be announced', not 'will been announced'.",
-            "grammarRule": "Modal Questions"
-        },
-        {
-            "id": "qf_l47_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The package will be delivered today.",
-            "sentence": "The package will be delivered today.",
-            "options": [
-                "Will the package be delivered today?",
-                "The package will be delivered today?",
-                "Will the package been delivered today?",
-                "Does the package get delivered today?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Will the package be delivered today?",
-            "hint": "Invert 'will' and 'the package'; keep 'be delivered' exactly as is.",
-            "explanation": "In the future passive, 'will' acts as the question auxiliary. 'Be delivered' is the passive infinitive, always used after 'will' - never 'been delivered'.",
-            "grammarRule": "Modal Questions"
-        },
-        {
-            "id": "qf_l47_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The new policy will be implemented next month.",
-            "sentence": "The new policy will be implemented next month.",
-            "options": [
-                "Will the new policy be implemented next month?",
-                "The new policy will be implemented next month?",
-                "Is the new policy implemented next month?",
-                "Will the new policy been implemented next month?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Will the new policy be implemented next month?",
-            "hint": "Move 'will' to the front; 'be implemented' follows directly after the subject.",
-            "explanation": "Future passive: 'will' inverts with the subject, and 'be + past participle' stays intact. The key error to avoid is using 'been' instead of 'be' after 'will'.",
-            "grammarRule": "Modal Questions"
-        },
-        {
-            "id": "qf_l48_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "English is spoken in many countries.",
-            "sentence": "English is spoken in many countries.",
-            "options": [
-                "Is English spoken in many countries?",
-                "Does English speak in many countries?",
-                "Do people speak English in many countries?",
-                "Is English speaking in many countries?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Is English spoken in many countries?",
-            "hint": "The sentence uses passive voice ('is spoken') - use 'is' as the question auxiliary, not 'does'.",
-            "explanation": "This sentence is in the passive voice, so 'is' is the auxiliary. Inverting 'is' and 'English' forms the question. Using 'does' would wrongly create an active question.",
-            "grammarRule": "Verb 'To Be' Questions"
-        },
-        {
-            "id": "qf_l48_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The new café is opening next week.",
-            "sentence": "The new café is opening next week.",
-            "options": [
-                "Is the new café opening next week?",
-                "Does the new café open next week?",
-                "Will the new café be opened next week?",
-                "Is the new café being opened next week?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Is the new café opening next week?",
-            "hint": "This is a present-continuous active statement - invert 'is' and 'the new café'.",
-            "explanation": "This is an active present-continuous sentence. Only 'is' moves - it's not passive here because 'opening' is not a past participle, so 'Is the new café opening?' is the correct question form.",
-            "grammarRule": "Verb 'To Be' Questions"
-        },
-        {
-            "id": "qf_l48_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The children were taken to school by their father.",
-            "sentence": "The children were taken to school by their father.",
-            "options": [
-                "Were the children taken to school by their father?",
-                "Did the children take to school by their father?",
-                "Was the children taken to school by their father?",
-                "Were the children being taken to school by their father?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Were the children taken to school by their father?",
-            "hint": "The subject 'the children' is plural and the tense is past passive - use 'were'.",
-            "explanation": "Past passive with a plural subject requires 'were', not 'was'. Moving 'were' before 'the children' forms the question; the rest of the verb phrase stays unchanged.",
-            "grammarRule": "Verb 'To Be' Questions"
-        },
-        {
-            "id": "qf_l49_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "This novel was written by a famous author.",
-            "sentence": "This novel was written by a famous author.",
-            "options": [
-                "Was this novel written by a famous author?",
-                "Did a famous author write this novel?",
-                "Were this novel written by a famous author?",
-                "Has this novel been written by a famous author?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Was this novel written by a famous author?",
-            "hint": "The sentence is past passive and 'this novel' is singular - use 'was'.",
-            "explanation": "Past passive singular subjects use 'was'. Inverting 'was' and 'this novel' forms the passive question. 'Did' would shift the sentence to an active question about the author.",
-            "grammarRule": "Verb 'To Be' Questions"
-        },
-        {
-            "id": "qf_l49_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The award was given to her by the committee.",
-            "sentence": "The award was given to her by the committee.",
-            "options": [
-                "Was the award given to her by the committee?",
-                "Did the committee give the award to her?",
-                "Were the award given to her by the committee?",
-                "Has the award been given to her by the committee?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Was the award given to her by the committee?",
-            "hint": "Singular subject + past passive = 'was'. Just invert 'was' and 'the award'.",
-            "explanation": "The subject 'the award' is singular and the tense is past, so 'was' is the correct auxiliary. Inverting it with the subject creates the passive question without changing the verb phrase.",
-            "grammarRule": "Verb 'To Be' Questions"
-        },
-        {
-            "id": "qf_l49_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The speech was delivered by the president.",
-            "sentence": "The speech was delivered by the president.",
-            "options": [
-                "Was the speech delivered by the president?",
-                "Did the president deliver the speech?",
-                "Were the speech delivered by the president?",
-                "Is the speech delivered by the president?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Was the speech delivered by the president?",
-            "hint": "Keep it passive - 'was' inverts with 'the speech'; don't switch to an active question.",
-            "explanation": "Inverting 'was' and 'the speech' keeps the question in the passive voice, which matches the original. Changing it to 'Did the president deliver...' would be correct English but would switch to the active voice, altering the focus of the sentence.",
-            "grammarRule": "Verb 'To Be' Questions"
-        },
-        {
-            "id": "qf_l50_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The documents are reviewed weekly.",
-            "sentence": "The documents are reviewed weekly.",
-            "options": [
-                "Are the documents reviewed weekly?",
-                "Do the documents review weekly?",
-                "Is the documents reviewed weekly?",
-                "Have the documents been reviewed weekly?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Are the documents reviewed weekly?",
-            "hint": "'The documents' is the passive subject (plural, present) - invert 'are'.",
-            "explanation": "'The documents' is plural, so the passive uses 'are'. Inverting 'are' with the subject forms the question. 'Do' would be wrong because this is passive, not active.",
-            "grammarRule": "Verb 'To Be' Questions"
-        },
-        {
-            "id": "qf_l50_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "This app is updated automatically.",
-            "sentence": "This app is updated automatically.",
-            "options": [
-                "Is this app updated automatically?",
-                "Does this app update automatically?",
-                "Are this app updated automatically?",
-                "Has this app been updated automatically?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Is this app updated automatically?",
-            "hint": "Singular subject 'this app' + present passive - invert 'is'.",
-            "explanation": "'This app' is singular, so the present passive uses 'is'. Moving 'is' to the front creates the question. 'Does update' would be an active question with a different meaning.",
-            "grammarRule": "Verb 'To Be' Questions"
-        },
-        {
-            "id": "qf_l50_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The winners will be announced at the ceremony.",
-            "sentence": "The winners will be announced at the ceremony.",
-            "options": [
-                "Will the winners be announced at the ceremony?",
-                "Are the winners announced at the ceremony?",
-                "Will the winners been announced at the ceremony?",
-                "Do they announce the winners at the ceremony?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Will the winners be announced at the ceremony?",
-            "hint": "Future passive: 'will' moves first; 'be announced' stays together.",
-            "explanation": "'Will' is the question auxiliary for future passive. 'Be announced' must stay intact - 'been announced' would incorrectly use the past participle of 'be' instead of the infinitive.",
-            "grammarRule": "Modal Questions"
-        }
-    ]
+  "gameType": "questionFormatter",
+  "batchIndex": 5,
+  "levels": "41-50",
+  "quests": [
+    {
+      "id": "qf_l41_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "This room is cleaned every day by the staff.",
+      "sentence": "This room is cleaned every day by the staff.",
+      "options": [
+        "Is this room cleaned every day?",
+        "Does this room cleaned every day?",
+        "Is this room clean every day?",
+        "This room is cleaned every day?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Is this room cleaned every day?",
+      "hint": "Move 'is' to the front - passive questions don't need 'does'.",
+      "explanation": "Passive sentences already contain 'be', so the question is formed by moving 'is' to the front; no extra 'does' is needed.",
+      "grammarRule": "Passive Voice Questions: Present Simple"
+    },
+    {
+      "id": "qf_l41_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The emails are sent automatically by the system.",
+      "sentence": "The emails are sent automatically by the system.",
+      "options": [
+        "Do the emails sent automatically?",
+        "Are the emails sent automatically?",
+        "Are the emails send automatically?",
+        "The emails are sent automatically?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Are the emails sent automatically?",
+      "hint": "'Emails' is plural, so use 'Are', moved to the front.",
+      "explanation": "Plural subjects in the passive take 'are'. Moving 'are' to the front is the only change needed to form the question.",
+      "grammarRule": "Passive Voice Questions: Present Simple"
+    },
+    {
+      "id": "qf_l41_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Dinner is cooked by my mother every evening.",
+      "sentence": "Dinner is cooked by my mother every evening.",
+      "options": [
+        "Does dinner cooked by my mother every evening?",
+        "Is dinner cook by my mother every evening?",
+        "Dinner is cooked by my mother every evening?",
+        "Is dinner cooked by my mother every evening?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Is dinner cooked by my mother every evening?",
+      "hint": "Move 'is' to the front, keeping 'cooked' unchanged.",
+      "explanation": "In the passive present simple, 'is' moves to the front, and the past participle 'cooked' stays exactly the same.",
+      "grammarRule": "Passive Voice Questions: Present Simple"
+    },
+    {
+      "id": "qf_l42_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The window was broken during the storm last night.",
+      "sentence": "The window was broken during the storm last night.",
+      "options": [
+        "Did the window broken during the storm last night?",
+        "Was the window break during the storm last night?",
+        "Was the window broken during the storm last night?",
+        "The window was broken during the storm last night?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Was the window broken during the storm last night?",
+      "hint": "Move 'was' to the front, keeping 'broken' unchanged.",
+      "explanation": "In the passive past simple, 'was' moves to the front for a singular subject, and the participle 'broken' does not change.",
+      "grammarRule": "Passive Voice Questions: Past Simple"
+    },
+    {
+      "id": "qf_l42_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The books were delivered to the library this morning.",
+      "sentence": "The books were delivered to the library this morning.",
+      "options": [
+        "Were the books delivered to the library this morning?",
+        "Did the books delivered to the library this morning?",
+        "Were the books deliver to the library this morning?",
+        "The books were delivered to the library this morning?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Were the books delivered to the library this morning?",
+      "hint": "'Books' is plural, so use 'Were', moved to the front.",
+      "explanation": "Plural subjects in the passive past take 'were'. Moving it to the front is the only step needed to form the question.",
+      "grammarRule": "Passive Voice Questions: Past Simple"
+    },
+    {
+      "id": "qf_l42_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The patient was treated immediately by the emergency team.",
+      "sentence": "The patient was treated immediately by the emergency team.",
+      "options": [
+        "Did the patient treated immediately?",
+        "Was the patient treated immediately?",
+        "Was the patient treat immediately?",
+        "The patient was treated immediately?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Was the patient treated immediately?",
+      "hint": "Move 'was' to the front, keeping 'treated' unchanged.",
+      "explanation": "'Was' moves to the front to form the passive question, and the participle 'treated' remains the same throughout.",
+      "grammarRule": "Passive Voice Questions: Past Simple"
+    },
+    {
+      "id": "qf_l43_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "This bridge is inspected by engineers every year.",
+      "sentence": "This bridge is inspected by engineers every year.",
+      "options": [
+        "How often is this bridge inspected?",
+        "How often does this bridge inspected?",
+        "How often is this bridge inspect?",
+        "How often this bridge is inspected?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "How often is this bridge inspected?",
+      "hint": "Move 'is' after the question word - no 'does' needed in the passive.",
+      "explanation": "Passive wh-questions move 'is/are' after the question word; there's no need for 'does' since 'be' is already the auxiliary.",
+      "grammarRule": "Passive Voice Wh-Questions: Present Simple"
+    },
+    {
+      "id": "qf_l43_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "These products are made in three different factories.",
+      "sentence": "These products are made in three different factories.",
+      "options": [
+        "Where do these products made?",
+        "Where are these products make?",
+        "Where these products are made?",
+        "Where are these products made?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Where are these products made?",
+      "hint": "Move 'are' after the question word, keeping 'made' unchanged.",
+      "explanation": "'Are' moves after the question word in this passive question, and the participle 'made' stays exactly the same.",
+      "grammarRule": "Passive Voice Wh-Questions: Present Simple"
+    },
+    {
+      "id": "qf_l43_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The award is given to the top student each year.",
+      "sentence": "The award is given to the top student each year.",
+      "options": [
+        "Who is the award given to each year?",
+        "Who does the award given to each year?",
+        "Who is the award give to each year?",
+        "Who the award is given to each year?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Who is the award given to each year?",
+      "hint": "Move 'is' after the question word, keeping 'given' unchanged.",
+      "explanation": "In this passive wh-question, 'is' moves after 'who', and the participle 'given' is unchanged.",
+      "grammarRule": "Passive Voice Wh-Questions: Present Simple"
+    },
+    {
+      "id": "qf_l44_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The bridge was designed by a famous architect.",
+      "sentence": "The bridge was designed by a famous architect.",
+      "options": [
+        "Who was the bridge designed by?",
+        "Who did the bridge designed by?",
+        "Who was the bridge design by?",
+        "Who the bridge was designed by?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Who was the bridge designed by?",
+      "hint": "Move 'was' after the question word, keeping 'designed' unchanged.",
+      "explanation": "Passive past wh-questions move 'was/were' after the question word, and the participle 'designed' stays exactly the same.",
+      "grammarRule": "Passive Voice Wh-Questions: Past Simple"
+    },
+    {
+      "id": "qf_l44_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The proposal was rejected for budget reasons.",
+      "sentence": "The proposal was rejected for budget reasons.",
+      "options": [
+        "Why was the proposal rejected?",
+        "Why did the proposal rejected?",
+        "Why was the proposal reject?",
+        "Why the proposal was rejected?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Why was the proposal rejected?",
+      "hint": "Move 'was' after 'why', keeping 'rejected' unchanged.",
+      "explanation": "'Was' moves after the question word to form this passive question, while 'rejected' remains in its participle form.",
+      "grammarRule": "Passive Voice Wh-Questions: Past Simple"
+    },
+    {
+      "id": "qf_l44_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The missing files were found in an old cabinet.",
+      "sentence": "The missing files were found in an old cabinet.",
+      "options": [
+        "Where were the missing files found?",
+        "Where did the missing files found?",
+        "Where were the missing files find?",
+        "Where the missing files were found?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Where were the missing files found?",
+      "hint": "'Files' is plural, so use 'Were', moved after the question word.",
+      "explanation": "Plural subjects take 'were' in the passive past. It moves after the question word, and 'found' does not change.",
+      "grammarRule": "Passive Voice Wh-Questions: Past Simple"
+    },
+    {
+      "id": "qf_l45_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "This stain can be removed with a little vinegar.",
+      "sentence": "This stain can be removed with a little vinegar.",
+      "options": [
+        "How can this stain be removed?",
+        "How can this stain removed?",
+        "How does this stain can be removed?",
+        "How can this stain be remove?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "How can this stain be removed?",
+      "hint": "Keep 'be' before the participle, and move 'can' after the question word.",
+      "explanation": "Modal passive questions keep the structure 'modal + be + participle'. 'Can' moves after the question word, and 'be removed' stays together.",
+      "grammarRule": "Passive Voice Questions: Modals"
+    },
+    {
+      "id": "qf_l45_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The package will be delivered by Friday.",
+      "sentence": "The package will be delivered by Friday.",
+      "options": [
+        "When will the package delivered?",
+        "When will the package be delivered?",
+        "When does the package will be delivered?",
+        "When will the package be deliver?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "When will the package be delivered?",
+      "hint": "Keep 'be delivered' together, moving only 'will' after the question word.",
+      "explanation": "'Will' moves after the question word, while 'be delivered' stays together as a unit - this is the passive modal structure.",
+      "grammarRule": "Passive Voice Questions: Modals"
+    },
+    {
+      "id": "qf_l45_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The issue should be reported to the manager right away.",
+      "sentence": "The issue should be reported to the manager right away.",
+      "options": [
+        "Why should the issue reported right away?",
+        "Why does the issue should be reported right away?",
+        "Why should the issue be report right away?",
+        "Why should the issue be reported right away?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Why should the issue be reported right away?",
+      "hint": "Move 'should' after the question word, keeping 'be reported' together.",
+      "explanation": "In modal passive questions, the modal moves after the question word, and 'be reported' remains together as the passive verb phrase.",
+      "grammarRule": "Passive Voice Questions: Modals"
+    },
+    {
+      "id": "qf_l46_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The contract has been signed by both parties.",
+      "sentence": "The contract has been signed by both parties.",
+      "options": [
+        "Does the contract has been signed by both parties?",
+        "Has the contract be signed by both parties?",
+        "Has the contract been signed by both parties?",
+        "The contract has been signed by both parties?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Has the contract been signed by both parties?",
+      "hint": "Move 'has' to the front, keeping 'been signed' together.",
+      "explanation": "In the passive present perfect, 'has' moves to the front, and 'been signed' stays together as one unit.",
+      "grammarRule": "Passive Voice Questions: Present Perfect"
+    },
+    {
+      "id": "qf_l46_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The rooms have been cleaned already.",
+      "sentence": "The rooms have been cleaned already.",
+      "options": [
+        "Do the rooms have been cleaned already?",
+        "Have the rooms been cleaned already?",
+        "Have the rooms be cleaned already?",
+        "The rooms have been cleaned already?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Have the rooms been cleaned already?",
+      "hint": "'Rooms' is plural, so use 'Have', moved to the front.",
+      "explanation": "Plural subjects take 'have' in the passive present perfect, and 'been cleaned' remains together as the passive verb phrase.",
+      "grammarRule": "Passive Voice Questions: Present Perfect"
+    },
+    {
+      "id": "qf_l46_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The results have not been announced yet.",
+      "sentence": "The results have not been announced yet.",
+      "options": [
+        "Do the results have been announced yet?",
+        "Have the results be announced yet?",
+        "The results have not been announced yet?",
+        "Have the results been announced yet?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Have the results been announced yet?",
+      "hint": "Drop 'not' and move 'have' to the front to form the plain question.",
+      "explanation": "To form the question, 'have' moves to the front and 'been announced' stays together; 'not' is only needed in the negative statement.",
+      "grammarRule": "Passive Voice Questions: Present Perfect"
+    },
+    {
+      "id": "qf_l47_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The bridge has been closed for repairs since Monday.",
+      "sentence": "The bridge has been closed for repairs since Monday.",
+      "options": [
+        "How long does the bridge has been closed for repairs?",
+        "How long has the bridge be closed for repairs?",
+        "How long the bridge has been closed for repairs?",
+        "How long has the bridge been closed for repairs?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "How long has the bridge been closed for repairs?",
+      "hint": "Move 'has' after the question phrase, keeping 'been closed' together.",
+      "explanation": "'Has' moves after the question phrase, and 'been closed' stays together as the passive present perfect verb phrase.",
+      "grammarRule": "Passive Voice Wh-Questions: Present Perfect"
+    },
+    {
+      "id": "qf_l47_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Three suspects have been questioned by detectives.",
+      "sentence": "Three suspects have been questioned by detectives.",
+      "options": [
+        "How many suspects do detectives have been questioned?",
+        "How many suspects have been question by detectives?",
+        "How many suspects detectives have been questioned by?",
+        "How many suspects have been questioned by detectives?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "How many suspects have been questioned by detectives?",
+      "hint": "Keep 'have been questioned' together after the question phrase.",
+      "explanation": "'Have' moves after the question phrase, and the phrase 'been questioned' remains together as the passive verb form.",
+      "grammarRule": "Passive Voice Wh-Questions: Present Perfect"
+    },
+    {
+      "id": "qf_l47_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The novel has been translated into twenty languages.",
+      "sentence": "The novel has been translated into twenty languages.",
+      "options": [
+        "How many languages does the novel has been translated into?",
+        "How many languages has the novel be translated into?",
+        "How many languages has the novel been translated into?",
+        "How many languages the novel has been translated into?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "How many languages has the novel been translated into?",
+      "hint": "Move 'has' after the question phrase, keeping 'been translated' together.",
+      "explanation": "As with other passive present perfect questions, 'has' moves after the question phrase, and 'been translated' stays together.",
+      "grammarRule": "Passive Voice Wh-Questions: Present Perfect"
+    },
+    {
+      "id": "qf_l48_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The building had been demolished before the new project began.",
+      "sentence": "The building had been demolished before the new project began.",
+      "options": [
+        "Had the building been demolished before the new project began?",
+        "Did the building had been demolished before the new project began?",
+        "Had the building be demolished before the new project began?",
+        "The building had been demolished before the new project began?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Had the building been demolished before the new project began?",
+      "hint": "Move 'had' to the front, keeping 'been demolished' together.",
+      "explanation": "In the passive past perfect, 'had' moves to the front for any subject, and 'been demolished' remains together.",
+      "grammarRule": "Passive Voice Questions: Past Perfect"
+    },
+    {
+      "id": "qf_l48_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The tickets had already been sold before we arrived.",
+      "sentence": "The tickets had already been sold before we arrived.",
+      "options": [
+        "Did the tickets had already been sold before we arrived?",
+        "Had the tickets already be sold before we arrived?",
+        "Had the tickets already been sold before we arrived?",
+        "The tickets had already been sold before we arrived?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Had the tickets already been sold before we arrived?",
+      "hint": "Move 'had' to the front, keeping 'been sold' together.",
+      "explanation": "'Had' moves to the front to form the question, and 'been sold' stays together as the passive past perfect verb phrase.",
+      "grammarRule": "Passive Voice Questions: Past Perfect"
+    },
+    {
+      "id": "qf_l48_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The message had been deleted by mistake.",
+      "sentence": "The message had been deleted by mistake.",
+      "options": [
+        "Did the message had been deleted by mistake?",
+        "Had the message be deleted by mistake?",
+        "Had the message been deleted by mistake?",
+        "The message had been deleted by mistake?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Had the message been deleted by mistake?",
+      "hint": "Move 'had' to the front, keeping 'been deleted' together.",
+      "explanation": "As with all passive past perfect questions, 'had' moves to the front, and 'been deleted' remains together as one unit.",
+      "grammarRule": "Passive Voice Questions: Past Perfect"
+    },
+    {
+      "id": "qf_l49_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The evidence had been removed before the police arrived.",
+      "sentence": "The evidence had been removed before the police arrived.",
+      "options": [
+        "Why did the evidence had been removed before the police arrived?",
+        "Why had the evidence be removed before the police arrived?",
+        "Why the evidence had been removed before the police arrived?",
+        "Why had the evidence been removed before the police arrived?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Why had the evidence been removed before the police arrived?",
+      "hint": "Move 'had' after the question word, keeping 'been removed' together.",
+      "explanation": "'Had' moves after the question word, and 'been removed' stays together as the passive past perfect verb phrase.",
+      "grammarRule": "Passive Voice Wh-Questions: Past Perfect"
+    },
+    {
+      "id": "qf_l49_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Two of the paintings had been sold before the auction even started.",
+      "sentence": "Two of the paintings had been sold before the auction even started.",
+      "options": [
+        "How many paintings did been sold before the auction started?",
+        "How many paintings had been sold before the auction started?",
+        "How many paintings had been sell before the auction started?",
+        "How many paintings been had sold before the auction started?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "How many paintings had been sold before the auction started?",
+      "hint": "Keep 'had been sold' in that order after the question phrase.",
+      "explanation": "The correct order keeps 'had' before 'been sold'; reversing or changing any part breaks the passive past perfect structure.",
+      "grammarRule": "Passive Voice Wh-Questions: Past Perfect"
+    },
+    {
+      "id": "qf_l49_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The letter had been written by an anonymous admirer.",
+      "sentence": "The letter had been written by an anonymous admirer.",
+      "options": [
+        "Who did the letter had been written by?",
+        "Who had the letter be written by?",
+        "Who had the letter been written by?",
+        "Who the letter had been written by?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Who had the letter been written by?",
+      "hint": "Move 'had' after 'who', keeping 'been written' together.",
+      "explanation": "'Had' moves after the question word 'who', and 'been written' remains together as the passive past perfect verb phrase.",
+      "grammarRule": "Passive Voice Wh-Questions: Past Perfect"
+    },
+    {
+      "id": "qf_l50_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The new policy was announced during yesterday's meeting.",
+      "sentence": "The new policy was announced during yesterday's meeting.",
+      "options": [
+        "When did the new policy announced?",
+        "When was the new policy announce?",
+        "When was the new policy announced?",
+        "When the new policy was announced?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "When was the new policy announced?",
+      "hint": "Move 'was' after the question word, keeping 'announced' unchanged.",
+      "explanation": "This passive past question moves 'was' after the question word, and the participle 'announced' remains unchanged.",
+      "grammarRule": "Passive Voice Questions: Mixed Review"
+    },
+    {
+      "id": "qf_l50_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "All the invoices have been checked twice by the accountant.",
+      "sentence": "All the invoices have been checked twice by the accountant.",
+      "options": [
+        "How many times do the invoices have been checked?",
+        "How many times have the invoices been checked?",
+        "How many times have the invoices be checked?",
+        "How many times the invoices have been checked?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "How many times have the invoices been checked?",
+      "hint": "Keep 'have been checked' together after the question phrase.",
+      "explanation": "'Have' moves after the question phrase, and 'been checked' stays together, matching the passive present perfect pattern.",
+      "grammarRule": "Passive Voice Questions: Mixed Review"
+    },
+    {
+      "id": "qf_l50_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "This song was written and recorded in just one afternoon.",
+      "sentence": "This song was written and recorded in just one afternoon.",
+      "options": [
+        "How did this song written and recorded?",
+        "How was this song write and record?",
+        "How was this song written and recorded?",
+        "How this song was written and recorded?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "How was this song written and recorded?",
+      "hint": "Move 'was' after the question word, keeping both participles unchanged.",
+      "explanation": "'Was' moves after the question word, and both passive participles, 'written' and 'recorded', stay exactly the same.",
+      "grammarRule": "Passive Voice Questions: Mixed Review"
+    }
+  ]
 }

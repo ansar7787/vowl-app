@@ -1,577 +1,577 @@
 {
-    "gameType": "questionFormatter",
-    "batchIndex": 4,
-    "levels": "31-40",
-    "quests": [
-        {
-            "id": "qf_l31_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She works at the hospital, ___?",
-            "sentence": "She works at the hospital, ___?",
-            "options": [
-                "She works at the hospital, doesn't she?",
-                "She works at the hospital, does she?",
-                "Does she work at the hospital?",
-                "She works at the hospital, doesn't he?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She works at the hospital, doesn't she?",
-            "hint": "A positive statement takes the opposite polarity in its tag.",
-            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'does' with the matching pronoun, just with reversed polarity.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l31_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "You like spicy food, ___?",
-            "sentence": "You like spicy food, ___?",
-            "options": [
-                "You like spicy food, don't you?",
-                "You like spicy food, do you?",
-                "Do you like spicy food?",
-                "You like spicy food, doesn't she?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "You like spicy food, don't you?",
-            "hint": "Tag questions flip the polarity: positive statement, negative tag (or the reverse).",
-            "explanation": "The short tag at the end echoes the sentence's own auxiliary ('do') and subject pronoun, but with the opposite polarity from the main clause, since the statement is positive.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l31_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "They play football every Saturday, ___?",
-            "sentence": "They play football every Saturday, ___?",
-            "options": [
-                "They play football every Saturday, don't they?",
-                "They play football every Saturday, do they?",
-                "Do they play football every Saturday?",
-                "They play football every Saturday, doesn't she?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They play football every Saturday, don't they?",
-            "hint": "Match the tag's auxiliary and pronoun to the main clause, but reverse the polarity.",
-            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'do' with the matching pronoun, just with reversed polarity.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l32_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She doesn't eat meat, ___?",
-            "sentence": "She doesn't eat meat, ___?",
-            "options": [
-                "She doesn't eat meat, does she?",
-                "She doesn't eat meat, doesn't she?",
-                "Does she eat meat?",
-                "She doesn't eat meat, does he?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She doesn't eat meat, does she?",
-            "hint": "A negative statement takes the opposite polarity in its tag.",
-            "explanation": "Tag questions reverse polarity: a negative statement needs the opposite tag. Here the tag repeats the auxiliary 'does' with the matching pronoun, just with reversed polarity.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l32_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "He doesn't own a car, ___?",
-            "sentence": "He doesn't own a car, ___?",
-            "options": [
-                "He doesn't own a car, does he?",
-                "He doesn't own a car, doesn't he?",
-                "Does he own a car?",
-                "He doesn't own a car, does she?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He doesn't own a car, does he?",
-            "hint": "Tag questions flip the polarity: positive statement, negative tag (or the reverse).",
-            "explanation": "The short tag at the end echoes the sentence's own auxiliary ('does') and subject pronoun, but with the opposite polarity from the main clause, since the statement is negative.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l32_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "They don't work on weekends, ___?",
-            "sentence": "They don't work on weekends, ___?",
-            "options": [
-                "They don't work on weekends, do they?",
-                "They don't work on weekends, don't they?",
-                "Do they work on weekends?",
-                "They don't work on weekends, does she?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They don't work on weekends, do they?",
-            "hint": "Match the tag's auxiliary and pronoun to the main clause, but reverse the polarity.",
-            "explanation": "Tag questions reverse polarity: a negative statement needs the opposite tag. Here the tag repeats the auxiliary 'do' with the matching pronoun, just with reversed polarity.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l33_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "He is very talented, ___?",
-            "sentence": "He is very talented, ___?",
-            "options": [
-                "He is very talented, isn't he?",
-                "He is very talented, is he?",
-                "Is he very talented?",
-                "He is very talented, isn't she?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He is very talented, isn't he?",
-            "hint": "A positive statement takes the opposite polarity in its tag.",
-            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'is' with the matching pronoun, just with reversed polarity.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l33_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "They are ready to leave, ___?",
-            "sentence": "They are ready to leave, ___?",
-            "options": [
-                "They are ready to leave, aren't they?",
-                "They are ready to leave, are they?",
-                "Are they ready to leave?",
-                "They are ready to leave, aren't we?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They are ready to leave, aren't they?",
-            "hint": "Tag questions flip the polarity: positive statement, negative tag (or the reverse).",
-            "explanation": "The short tag at the end echoes the sentence's own auxiliary ('are') and subject pronoun, but with the opposite polarity from the main clause, since the statement is positive.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l33_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She isn't feeling well, ___?",
-            "sentence": "She isn't feeling well, ___?",
-            "options": [
-                "She isn't feeling well, is she?",
-                "She isn't feeling well, isn't she?",
-                "Is she feeling well?",
-                "She isn't feeling well, is he?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She isn't feeling well, is she?",
-            "hint": "Match the tag's auxiliary and pronoun to the main clause, but reverse the polarity.",
-            "explanation": "Tag questions reverse polarity: a negative statement needs the opposite tag. Here the tag repeats the auxiliary 'is' with the matching pronoun, just with reversed polarity.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l34_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "He passed his driving test, ___?",
-            "sentence": "He passed his driving test, ___?",
-            "options": [
-                "He passed his driving test, didn't he?",
-                "He passed his driving test, did he?",
-                "Did he pass his driving test?",
-                "He passed his driving test, didn't she?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He passed his driving test, didn't he?",
-            "hint": "A positive statement takes the opposite polarity in its tag.",
-            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'did' with the matching pronoun, just with reversed polarity.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l34_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "They didn't enjoy the film, ___?",
-            "sentence": "They didn't enjoy the film, ___?",
-            "options": [
-                "They didn't enjoy the film, did they?",
-                "They didn't enjoy the film, didn't they?",
-                "Did they enjoy the film?",
-                "They didn't enjoy the film, does she?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They didn't enjoy the film, did they?",
-            "hint": "Tag questions flip the polarity: positive statement, negative tag (or the reverse).",
-            "explanation": "The short tag at the end echoes the sentence's own auxiliary ('did') and subject pronoun, but with the opposite polarity from the main clause, since the statement is negative.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l34_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She called you last night, ___?",
-            "sentence": "She called you last night, ___?",
-            "options": [
-                "She called you last night, didn't she?",
-                "She called you last night, did she?",
-                "Did she call you last night?",
-                "She called you last night, didn't he?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She called you last night, didn't she?",
-            "hint": "Match the tag's auxiliary and pronoun to the main clause, but reverse the polarity.",
-            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'did' with the matching pronoun, just with reversed polarity.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l35_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The weather was awful, ___?",
-            "sentence": "The weather was awful, ___?",
-            "options": [
-                "The weather was awful, wasn't it?",
-                "The weather was awful, was it?",
-                "Was the weather awful?",
-                "The weather was awful, weren't they?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The weather was awful, wasn't it?",
-            "hint": "A positive statement takes the opposite polarity in its tag.",
-            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'was' with the matching pronoun, just with reversed polarity.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l35_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "They were late for the meeting, ___?",
-            "sentence": "They were late for the meeting, ___?",
-            "options": [
-                "They were late for the meeting, weren't they?",
-                "They were late for the meeting, were they?",
-                "Were they late for the meeting?",
-                "They were late for the meeting, wasn't she?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They were late for the meeting, weren't they?",
-            "hint": "Tag questions flip the polarity: positive statement, negative tag (or the reverse).",
-            "explanation": "The short tag at the end echoes the sentence's own auxiliary ('were') and subject pronoun, but with the opposite polarity from the main clause, since the statement is positive.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l35_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She wasn't at school yesterday, ___?",
-            "sentence": "She wasn't at school yesterday, ___?",
-            "options": [
-                "She wasn't at school yesterday, was she?",
-                "She wasn't at school yesterday, wasn't she?",
-                "Was she at school yesterday?",
-                "She wasn't at school yesterday, was he?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She wasn't at school yesterday, was she?",
-            "hint": "Match the tag's auxiliary and pronoun to the main clause, but reverse the polarity.",
-            "explanation": "Tag questions reverse polarity: a negative statement needs the opposite tag. Here the tag repeats the auxiliary 'was' with the matching pronoun, just with reversed polarity.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l36_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She has visited Paris before, ___?",
-            "sentence": "She has visited Paris before, ___?",
-            "options": [
-                "She has visited Paris before, hasn't she?",
-                "She has visited Paris before, has she?",
-                "Has she visited Paris before?",
-                "She has visited Paris before, hasn't he?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She has visited Paris before, hasn't she?",
-            "hint": "A positive statement takes the opposite polarity in its tag.",
-            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'has' with the matching pronoun, just with reversed polarity.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l36_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "They haven't decided yet, ___?",
-            "sentence": "They haven't decided yet, ___?",
-            "options": [
-                "They haven't decided yet, have they?",
-                "They haven't decided yet, haven't they?",
-                "Have they decided yet?",
-                "They haven't decided yet, has she?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They haven't decided yet, have they?",
-            "hint": "Tag questions flip the polarity: positive statement, negative tag (or the reverse).",
-            "explanation": "The short tag at the end echoes the sentence's own auxiliary ('have') and subject pronoun, but with the opposite polarity from the main clause, since the statement is negative.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l36_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "He has already eaten, ___?",
-            "sentence": "He has already eaten, ___?",
-            "options": [
-                "He has already eaten, hasn't he?",
-                "He has already eaten, has he?",
-                "Has he already eaten?",
-                "He has already eaten, haven't they?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He has already eaten, hasn't he?",
-            "hint": "Match the tag's auxiliary and pronoun to the main clause, but reverse the polarity.",
-            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'has' with the matching pronoun, just with reversed polarity.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l37_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She will be back soon, ___?",
-            "sentence": "She will be back soon, ___?",
-            "options": [
-                "She will be back soon, won't she?",
-                "She will be back soon, will she?",
-                "Will she be back soon?",
-                "She will be back soon, won't he?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She will be back soon, won't she?",
-            "hint": "A positive statement takes the opposite polarity in its tag.",
-            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'will' with the matching pronoun, just with reversed polarity.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l37_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "He won't forget the appointment, ___?",
-            "sentence": "He won't forget the appointment, ___?",
-            "options": [
-                "He won't forget the appointment, will he?",
-                "He won't forget the appointment, won't he?",
-                "Will he forget the appointment?",
-                "He won't forget the appointment, won't she?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He won't forget the appointment, will he?",
-            "hint": "Tag questions flip the polarity: positive statement, negative tag (or the reverse).",
-            "explanation": "The short tag at the end echoes the sentence's own auxiliary ('will') and subject pronoun, but with the opposite polarity from the main clause, since the statement is negative.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l37_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "They will enjoy the party, ___?",
-            "sentence": "They will enjoy the party, ___?",
-            "options": [
-                "They will enjoy the party, won't they?",
-                "They will enjoy the party, will they?",
-                "Will they enjoy the party?",
-                "They will enjoy the party, won't she?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They will enjoy the party, won't they?",
-            "hint": "Match the tag's auxiliary and pronoun to the main clause, but reverse the polarity.",
-            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'will' with the matching pronoun, just with reversed polarity.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l38_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She can speak three languages, ___?",
-            "sentence": "She can speak three languages, ___?",
-            "options": [
-                "She can speak three languages, can't she?",
-                "She can speak three languages, can she?",
-                "Can she speak three languages?",
-                "She can speak three languages, can't he?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She can speak three languages, can't she?",
-            "hint": "A positive statement takes the opposite polarity in its tag.",
-            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'can' with the matching pronoun, just with reversed polarity.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l38_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "He can't attend the event, ___?",
-            "sentence": "He can't attend the event, ___?",
-            "options": [
-                "He can't attend the event, can he?",
-                "He can't attend the event, can't he?",
-                "Can he attend the event?",
-                "He can't attend the event, can't she?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He can't attend the event, can he?",
-            "hint": "Tag questions flip the polarity: positive statement, negative tag (or the reverse).",
-            "explanation": "The short tag at the end echoes the sentence's own auxiliary ('can') and subject pronoun, but with the opposite polarity from the main clause, since the statement is negative.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l38_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "They could see the mountains, ___?",
-            "sentence": "They could see the mountains, ___?",
-            "options": [
-                "They could see the mountains, couldn't they?",
-                "They could see the mountains, could they?",
-                "Could they see the mountains?",
-                "They could see the mountains, can't she?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They could see the mountains, couldn't they?",
-            "hint": "Match the tag's auxiliary and pronoun to the main clause, but reverse the polarity.",
-            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'could' with the matching pronoun, just with reversed polarity.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l39_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "You aren't coming with us, ___?",
-            "sentence": "You aren't coming with us, ___?",
-            "options": [
-                "You aren't coming with us, are you?",
-                "You aren't coming with us, aren't you?",
-                "Are you coming with us?",
-                "You aren't coming with us, is she?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "You aren't coming with us, are you?",
-            "hint": "A negative statement takes the opposite polarity in its tag.",
-            "explanation": "Tag questions reverse polarity: a negative statement needs the opposite tag. Here the tag repeats the auxiliary 'are' with the matching pronoun, just with reversed polarity.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l39_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "I am next in the queue, ___?",
-            "sentence": "I am next in the queue, ___?",
-            "options": [
-                "I am next in the queue, aren't I?",
-                "I am next in the queue, am I?",
-                "Am I next in the queue?",
-                "I am next in the queue, isn't it?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "I am next in the queue, aren't I?",
-            "hint": "The special tag for 'I am ...' is 'aren't I?' - not 'amn't I?' which doesn't exist in English.",
-            "explanation": "'I am' uses the unusual tag 'aren't I?' This is the only grammatically accepted contracted tag for 'I am' in standard English. 'Am I?' would be a plain question, not a tag.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l39_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "You are the new student, ___?",
-            "sentence": "You are the new student, ___?",
-            "options": [
-                "You are the new student, aren't you?",
-                "You are the new student, are you?",
-                "Are you the new student?",
-                "You are the new student, isn't she?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "You are the new student, aren't you?",
-            "hint": "Match the tag's auxiliary and pronoun to the main clause, but reverse the polarity.",
-            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'are' with the matching pronoun, just with reversed polarity.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l40_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She should rest more, ___?",
-            "sentence": "She should rest more, ___?",
-            "options": [
-                "She should rest more, shouldn't she?",
-                "She should rest more, should she?",
-                "Should she rest more?",
-                "She should rest more, shouldn't he?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She should rest more, shouldn't she?",
-            "hint": "A positive statement takes the opposite polarity in its tag.",
-            "explanation": "Tag questions reverse polarity: a positive statement needs the opposite tag. Here the tag repeats the auxiliary 'should' with the matching pronoun, just with reversed polarity.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l40_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "They have been waiting for an hour, ___?",
-            "sentence": "They have been waiting for an hour, ___?",
-            "options": [
-                "They have been waiting for an hour, haven't they?",
-                "They have been waiting for an hour, have they?",
-                "Have they been waiting for an hour?",
-                "They have been waiting for an hour, hasn't she?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They have been waiting for an hour, haven't they?",
-            "hint": "Tag questions flip the polarity: positive statement, negative tag (or the reverse).",
-            "explanation": "The short tag at the end echoes the sentence's own auxiliary ('have') and subject pronoun, but with the opposite polarity from the main clause, since the statement is positive.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l40_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "You wouldn't do that, ___?",
-            "sentence": "You wouldn't do that, ___?",
-            "options": [
-                "You wouldn't do that, would you?",
-                "You wouldn't do that, wouldn't you?",
-                "Would you do that?",
-                "You wouldn't do that, won't he?"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "You wouldn't do that, would you?",
-            "hint": "Match the tag's auxiliary and pronoun to the main clause, but reverse the polarity.",
-            "explanation": "Tag questions reverse polarity: a negative statement needs the opposite tag. Here the tag repeats the auxiliary 'would' with the matching pronoun, just with reversed polarity.",
-            "grammarRule": "Question Formation"
-        }
-    ]
+  "gameType": "questionFormatter",
+  "batchIndex": 4,
+  "levels": "31-40",
+  "quests": [
+    {
+      "id": "qf_l31_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Everyone assumes Tom eats meat, but he doesn't.",
+      "sentence": "Everyone assumes Tom eats meat, but he doesn't.",
+      "options": [
+        "Tom doesn't eat meat?",
+        "Doesn't Tom eat meat?",
+        "Don't Tom eat meat?",
+        "Doesn't Tom eats meat?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Doesn't Tom eat meat?",
+      "hint": "Use 'Doesn't' for a singular subject, then the base verb.",
+      "explanation": "Negative present simple questions for singular subjects use 'Doesn't', moved to the front, with the main verb in its base form.",
+      "grammarRule": "Negative Questions: Present Simple"
+    },
+    {
+      "id": "qf_l31_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I assumed they lived nearby, but apparently they don't.",
+      "sentence": "I assumed they lived nearby, but apparently they don't.",
+      "options": [
+        "Don't they live nearby?",
+        "They don't live nearby?",
+        "Doesn't they live nearby?",
+        "Don't they lives nearby?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Don't they live nearby?",
+      "hint": "'They' is plural, so use 'Don't', moved to the front.",
+      "explanation": "For plural subjects, negative present simple questions use 'Don't' at the front, and the main verb keeps its base form.",
+      "grammarRule": "Negative Questions: Present Simple"
+    },
+    {
+      "id": "qf_l31_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I was told you don't like spicy food, but you just ordered the hottest dish.",
+      "sentence": "I was told you don't like spicy food, but you just ordered the hottest dish.",
+      "options": [
+        "You don't like spicy food?",
+        "Doesn't you like spicy food?",
+        "Don't you likes spicy food?",
+        "Don't you like spicy food?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Don't you like spicy food?",
+      "hint": "'You' always pairs with 'Don't' in a negative question, never 'Doesn't'.",
+      "explanation": "The pronoun 'you' always takes 'don't', even in the negative question form, moved to the front of the sentence.",
+      "grammarRule": "Negative Questions: Present Simple"
+    },
+    {
+      "id": "qf_l32_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I heard the store had a sale, but you say you didn't go.",
+      "sentence": "I heard the store had a sale, but you say you didn't go.",
+      "options": [
+        "You didn't go to the sale?",
+        "Doesn't you go to the sale?",
+        "Didn't you went to the sale?",
+        "Didn't you go to the sale?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Didn't you go to the sale?",
+      "hint": "'Didn't' works for every subject in the past - move it to the front.",
+      "explanation": "Negative past simple questions use 'didn't' for any subject, moved to the front, and the verb stays in its base form, 'go'.",
+      "grammarRule": "Negative Questions: Past Simple"
+    },
+    {
+      "id": "qf_l32_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I was sure she called earlier, but maybe she didn't.",
+      "sentence": "I was sure she called earlier, but maybe she didn't.",
+      "options": [
+        "She didn't call earlier?",
+        "Doesn't she call earlier?",
+        "Didn't she call earlier?",
+        "Didn't she called earlier?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Didn't she call earlier?",
+      "hint": "Move 'didn't' to the front, and keep the verb in its base form.",
+      "explanation": "'Didn't' moves to the front for negative past questions, and the verb 'call' stays in its base form rather than the past tense.",
+      "grammarRule": "Negative Questions: Past Simple"
+    },
+    {
+      "id": "qf_l32_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "It looked like they finished the project, but they say they didn't.",
+      "sentence": "It looked like they finished the project, but they say they didn't.",
+      "options": [
+        "They didn't finish the project?",
+        "Doesn't they finish the project?",
+        "Didn't they finish the project?",
+        "Didn't they finished the project?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Didn't they finish the project?",
+      "hint": "'Didn't' is the same for every subject - just move it to the front.",
+      "explanation": "As with all negative past simple questions, 'didn't' moves to the front, and the main verb returns to its base form, 'finish'.",
+      "grammarRule": "Negative Questions: Past Simple"
+    },
+    {
+      "id": "qf_l33_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Everyone says the museum is free on Sundays, but you paid for a ticket.",
+      "sentence": "Everyone says the museum is free on Sundays, but you paid for a ticket.",
+      "options": [
+        "Isn't the museum free on Sundays?",
+        "The museum isn't free on Sundays?",
+        "Doesn't the museum free on Sundays?",
+        "Isn't the museum frees on Sundays?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Isn't the museum free on Sundays?",
+      "hint": "'Isn't' simply moves to the front - no extra 'do' is needed with 'be'.",
+      "explanation": "With 'be' verbs, the negative form 'isn't' moves to the front on its own. No additional auxiliary like 'does' is ever added.",
+      "grammarRule": "Negative Questions: Verb 'To Be' (Present)"
+    },
+    {
+      "id": "qf_l33_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I thought your parents were coming to the ceremony, but I don't see them.",
+      "sentence": "I thought your parents were coming to the ceremony, but I don't see them.",
+      "options": [
+        "Your parents aren't coming to the ceremony?",
+        "Doesn't your parents coming to the ceremony?",
+        "Aren't your parents coming to the ceremony?",
+        "Isn't your parents coming to the ceremony?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Aren't your parents coming to the ceremony?",
+      "hint": "'Parents' is plural, so use 'Aren't', moved to the front.",
+      "explanation": "Plural subjects take 'aren't' in the negative question form, and it simply moves to the front of the sentence.",
+      "grammarRule": "Negative Questions: Verb 'To Be' (Present)"
+    },
+    {
+      "id": "qf_l33_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I assumed I was on the guest list, but the host looked confused.",
+      "sentence": "I assumed I was on the guest list, but the host looked confused.",
+      "options": [
+        "I am not on the guest list?",
+        "Amn't I on the guest list?",
+        "Isn't I on the guest list?",
+        "Aren't I on the guest list?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Aren't I on the guest list?",
+      "hint": "With 'I', English uses 'Aren't' in negative questions, even though 'am' is used in statements.",
+      "explanation": "Although 'I' pairs with 'am' in statements, negative questions with 'I' use the special form 'aren't', as in 'Aren't I...?'",
+      "grammarRule": "Negative Questions: Verb 'To Be' (Present)"
+    },
+    {
+      "id": "qf_l34_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I was told the flight was delayed, but the board shows it's on time.",
+      "sentence": "I was told the flight was delayed, but the board shows it's on time.",
+      "options": [
+        "The flight wasn't delayed?",
+        "Didn't the flight delayed?",
+        "Wasn't the flight delayed?",
+        "Wasn't the flight delaying?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Wasn't the flight delayed?",
+      "hint": "'Wasn't' moves to the front - no extra 'do' needed.",
+      "explanation": "'Wasn't' is the past negative form of 'be' for singular subjects, and it moves to the front without any extra auxiliary.",
+      "grammarRule": "Negative Questions: Verb 'To Be' (Past)"
+    },
+    {
+      "id": "qf_l34_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I heard the roads were closed, but we drove through without any trouble.",
+      "sentence": "I heard the roads were closed, but we drove through without any trouble.",
+      "options": [
+        "The roads weren't closed?",
+        "Didn't the roads closed?",
+        "Weren't the roads closed?",
+        "Wasn't the roads closed?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Weren't the roads closed?",
+      "hint": "'Roads' is plural, so use 'Weren't', moved to the front.",
+      "explanation": "Plural subjects take 'weren't' in the past negative question form, moved simply to the beginning of the sentence.",
+      "grammarRule": "Negative Questions: Verb 'To Be' (Past)"
+    },
+    {
+      "id": "qf_l34_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I assumed I was invited to the rehearsal, but no one told me the time.",
+      "sentence": "I assumed I was invited to the rehearsal, but no one told me the time.",
+      "options": [
+        "Wasn't I invited to the rehearsal?",
+        "I wasn't invited to the rehearsal?",
+        "Weren't I invited to the rehearsal?",
+        "Wasn't I invite to the rehearsal?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Wasn't I invited to the rehearsal?",
+      "hint": "'I' pairs with 'wasn't' in the past, unlike the exception used with 'aren't' in the present.",
+      "explanation": "In the past tense, 'I' regularly pairs with 'wasn't' - unlike the present tense exception 'aren't I', which doesn't apply here.",
+      "grammarRule": "Negative Questions: Verb 'To Be' (Past)"
+    },
+    {
+      "id": "qf_l35_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I was sure he had called the client, but the client says otherwise.",
+      "sentence": "I was sure he had called the client, but the client says otherwise.",
+      "options": [
+        "He hasn't called the client?",
+        "Didn't he called the client?",
+        "Hasn't he call the client?",
+        "Hasn't he called the client?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Hasn't he called the client?",
+      "hint": "'Hasn't' moves to the front, and the participle 'called' stays unchanged.",
+      "explanation": "'Hasn't' is the negative present perfect form for singular subjects. It moves to the front, and 'called' does not change.",
+      "grammarRule": "Negative Questions: Present Perfect"
+    },
+    {
+      "id": "qf_l35_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I assumed we had covered this topic already, but half the class looks confused.",
+      "sentence": "I assumed we had covered this topic already, but half the class looks confused.",
+      "options": [
+        "We haven't covered this topic already?",
+        "Didn't we covered this topic already?",
+        "Haven't we cover this topic already?",
+        "Haven't we covered this topic already?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Haven't we covered this topic already?",
+      "hint": "'Haven't' moves to the front, and 'covered' stays unchanged.",
+      "explanation": "'Haven't' is used with 'we' in the negative present perfect. It moves to the front, and the participle 'covered' remains the same.",
+      "grammarRule": "Negative Questions: Present Perfect"
+    },
+    {
+      "id": "qf_l35_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I thought you had finished packing, but your suitcase is still empty.",
+      "sentence": "I thought you had finished packing, but your suitcase is still empty.",
+      "options": [
+        "You haven't finished packing?",
+        "Haven't you finished packing?",
+        "Didn't you finished packing?",
+        "Haven't you finish packing?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Haven't you finished packing?",
+      "hint": "'You' takes 'haven't', which moves to the front of the question.",
+      "explanation": "'Haven't' pairs with 'you' in the negative present perfect, moving to the front while 'finished' stays exactly the same.",
+      "grammarRule": "Negative Questions: Present Perfect"
+    },
+    {
+      "id": "qf_l36_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I assumed you could join us this weekend, but your message sounded uncertain.",
+      "sentence": "I assumed you could join us this weekend, but your message sounded uncertain.",
+      "options": [
+        "You can't join us this weekend?",
+        "Doesn't you can join us this weekend?",
+        "Can't you join us this weekend?",
+        "Can't you joining us this weekend?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Can't you join us this weekend?",
+      "hint": "'Can't' moves to the front on its own, just like other modals.",
+      "explanation": "Negative modal questions move 'can't' to the front without any extra auxiliary, and the main verb stays in its base form.",
+      "grammarRule": "Negative Questions: Modals"
+    },
+    {
+      "id": "qf_l36_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I thought they would help with the move, but no one showed up.",
+      "sentence": "I thought they would help with the move, but no one showed up.",
+      "options": [
+        "They won't help with the move?",
+        "Won't they help with the move?",
+        "Doesn't they will help with the move?",
+        "Won't they helping with the move?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Won't they help with the move?",
+      "hint": "'Won't' moves to the front, and the verb stays in its base form.",
+      "explanation": "'Won't' is a modal negative, so it moves to the front on its own, and the main verb 'help' remains in its base form.",
+      "grammarRule": "Negative Questions: Modals"
+    },
+    {
+      "id": "qf_l36_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I feel like we should tell him the truth, even though it's uncomfortable.",
+      "sentence": "I feel like we should tell him the truth, even though it's uncomfortable.",
+      "options": [
+        "We shouldn't tell him the truth?",
+        "Shouldn't we tell him the truth?",
+        "Doesn't we should tell him the truth?",
+        "Shouldn't we telling him the truth?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Shouldn't we tell him the truth?",
+      "hint": "'Shouldn't' moves to the front, just like other modals.",
+      "explanation": "As with all modal questions, 'shouldn't' moves to the front on its own, and the verb 'tell' stays in its base form.",
+      "grammarRule": "Negative Questions: Modals"
+    },
+    {
+      "id": "qf_l37_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I was told he was resting today, yet I hear noise from his room.",
+      "sentence": "I was told he was resting today, yet I hear noise from his room.",
+      "options": [
+        "He isn't resting today?",
+        "Doesn't he resting today?",
+        "Isn't he resting today?",
+        "Isn't he rest today?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Isn't he resting today?",
+      "hint": "'Isn't' moves to the front, and the verb keeps its '-ing' ending.",
+      "explanation": "Negative present continuous questions move 'isn't' to the front, while the main verb keeps its '-ing' form, 'resting'.",
+      "grammarRule": "Negative Questions: Present Continuous"
+    },
+    {
+      "id": "qf_l37_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I assumed the printers were working, but nothing is coming out.",
+      "sentence": "I assumed the printers were working, but nothing is coming out.",
+      "options": [
+        "The printers aren't working?",
+        "Aren't the printers working?",
+        "Doesn't the printers working?",
+        "Aren't the printers work?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Aren't the printers working?",
+      "hint": "'Printers' is plural, so use 'Aren't', and keep the '-ing' form.",
+      "explanation": "Plural subjects take 'aren't' in the negative continuous question, and the verb 'working' keeps its '-ing' ending.",
+      "grammarRule": "Negative Questions: Present Continuous"
+    },
+    {
+      "id": "qf_l37_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I thought I was making progress, but my coach seems unimpressed.",
+      "sentence": "I thought I was making progress, but my coach seems unimpressed.",
+      "options": [
+        "Aren't I making progress?",
+        "I am not making progress?",
+        "Isn't I making progress?",
+        "Aren't I make progress?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Aren't I making progress?",
+      "hint": "As with the simple present, 'I' pairs with 'aren't' in negative questions.",
+      "explanation": "Just like other negative questions with 'I', the continuous form also uses 'aren't', keeping the verb as 'making'.",
+      "grammarRule": "Negative Questions: Present Continuous"
+    },
+    {
+      "id": "qf_l38_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I was sure he was watching the kids, but they were alone in the yard.",
+      "sentence": "I was sure he was watching the kids, but they were alone in the yard.",
+      "options": [
+        "Wasn't he watching the kids?",
+        "He wasn't watching the kids?",
+        "Didn't he watching the kids?",
+        "Wasn't he watch the kids?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Wasn't he watching the kids?",
+      "hint": "'Wasn't' moves to the front, and the verb keeps its '-ing' form.",
+      "explanation": "Negative past continuous questions move 'wasn't' to the front, and the verb keeps its '-ing' ending, 'watching'.",
+      "grammarRule": "Negative Questions: Past Continuous"
+    },
+    {
+      "id": "qf_l38_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I thought the neighbors were renovating last week, but their house looks untouched.",
+      "sentence": "I thought the neighbors were renovating last week, but their house looks untouched.",
+      "options": [
+        "The neighbors weren't renovating last week?",
+        "Weren't the neighbors renovating last week?",
+        "Didn't the neighbors renovating last week?",
+        "Weren't the neighbors renovate last week?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Weren't the neighbors renovating last week?",
+      "hint": "'Neighbors' is plural, so use 'Weren't', and keep the verb in its '-ing' form.",
+      "explanation": "Plural subjects take 'weren't', moved to the front, while the verb 'renovating' keeps its '-ing' ending.",
+      "grammarRule": "Negative Questions: Past Continuous"
+    },
+    {
+      "id": "qf_l38_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I assumed I was making enough noise to wake someone, but no one stirred.",
+      "sentence": "I assumed I was making enough noise to wake someone, but no one stirred.",
+      "options": [
+        "I wasn't making enough noise?",
+        "Weren't I making enough noise?",
+        "Wasn't I make enough noise?",
+        "Wasn't I making enough noise?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Wasn't I making enough noise?",
+      "hint": "'I' pairs with 'wasn't' in the past, moved to the front of the question.",
+      "explanation": "In the past continuous, 'I' regularly takes 'wasn't', which moves to the front while 'making' keeps its '-ing' form.",
+      "grammarRule": "Negative Questions: Past Continuous"
+    },
+    {
+      "id": "qf_l39_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I was told the manager approved the request, but she looks surprised by it.",
+      "sentence": "I was told the manager approved the request, but she looks surprised by it.",
+      "options": [
+        "The manager didn't approve the request?",
+        "Doesn't the manager approved the request?",
+        "Didn't the manager approve the request?",
+        "Didn't the manager approved the request?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Didn't the manager approve the request?",
+      "hint": "Use 'didn't' for a past action, and keep the verb in its base form.",
+      "explanation": "This is a past action, so the negative question needs 'didn't', with the verb 'approve' in its base form, not the past tense.",
+      "grammarRule": "Negative Questions: Mixed Tenses"
+    },
+    {
+      "id": "qf_l39_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I assumed the visa application was processed by now, but the website still shows 'pending'.",
+      "sentence": "I assumed the visa application was processed by now, but the website still shows 'pending'.",
+      "options": [
+        "The visa application hasn't been processed by now?",
+        "Didn't the visa application been processed by now?",
+        "Hasn't the visa application be processed by now?",
+        "Hasn't the visa application been processed by now?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Hasn't the visa application been processed by now?",
+      "hint": "This describes a result up to now, so use the present perfect negative, 'hasn't'.",
+      "explanation": "Since this connects a past action to the present result, the present perfect negative 'hasn't...been processed' is correct here.",
+      "grammarRule": "Negative Questions: Mixed Tenses"
+    },
+    {
+      "id": "qf_l39_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I thought we were allowed to bring carry-on bags, but the airline says otherwise.",
+      "sentence": "I thought we were allowed to bring carry-on bags, but the airline says otherwise.",
+      "options": [
+        "We aren't allowed to bring carry-on bags?",
+        "Doesn't we allowed to bring carry-on bags?",
+        "Aren't we allow to bring carry-on bags?",
+        "Aren't we allowed to bring carry-on bags?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Aren't we allowed to bring carry-on bags?",
+      "hint": "'Allowed' describes a current rule, so use the 'be' negative, 'aren't'.",
+      "explanation": "'Allowed' functions here as a passive adjective describing a rule, so the negative question uses 'be' ('aren't'), not 'do'.",
+      "grammarRule": "Negative Questions: Mixed Tenses"
+    },
+    {
+      "id": "qf_l40_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I heard the bakery closes early on Sundays, but the lights are still on at 6 PM.",
+      "sentence": "I heard the bakery closes early on Sundays, but the lights are still on at 6 PM.",
+      "options": [
+        "Doesn't the bakery close early on Sundays?",
+        "The bakery doesn't close early on Sundays?",
+        "Isn't the bakery close early on Sundays?",
+        "Doesn't the bakery closes early on Sundays?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Doesn't the bakery close early on Sundays?",
+      "hint": "This is a routine present-tense fact, so use 'doesn't' with the base verb.",
+      "explanation": "Since this describes a regular schedule, the present simple negative 'doesn't close' is correct, not a 'be' form.",
+      "grammarRule": "Negative Questions: Mixed Review"
+    },
+    {
+      "id": "qf_l40_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I assumed you had already met my sister, since you seemed to recognize her.",
+      "sentence": "I assumed you had already met my sister, since you seemed to recognize her.",
+      "options": [
+        "You haven't already met my sister?",
+        "Didn't you already met my sister?",
+        "Haven't you already met my sister?",
+        "Haven't you already meet my sister?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Haven't you already met my sister?",
+      "hint": "This links the past to now, so use the present perfect negative, 'haven't'.",
+      "explanation": "Because the meeting's effect continues into the present, the present perfect negative 'haven't met' fits best here.",
+      "grammarRule": "Negative Questions: Mixed Review"
+    },
+    {
+      "id": "qf_l40_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I thought the kids would be excited about the trip, but they seem indifferent.",
+      "sentence": "I thought the kids would be excited about the trip, but they seem indifferent.",
+      "options": [
+        "The kids won't be excited about the trip?",
+        "Doesn't the kids will be excited about the trip?",
+        "Won't the kids being excited about the trip?",
+        "Won't the kids be excited about the trip?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Won't the kids be excited about the trip?",
+      "hint": "'Would/will' about a future feeling calls for the modal negative, 'won't'.",
+      "explanation": "Since this expresses an expectation about a future reaction, the modal negative 'won't' is correct, with the base verb 'be'.",
+      "grammarRule": "Negative Questions: Mixed Review"
+    }
+  ]
 }

@@ -8,540 +8,540 @@
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: He said, 'I work in a bank.'",
+            "question": "Convert to reported speech: She said, 'My computer works perfectly.'",
             "options": [
-                "He said he worked in a bank.",
-                "He said he works in a bank.",
-                "He said that I worked in a bank."
+                "She said that her computer works perfectly.",
+                "She said that my computer worked perfectly.",
+                "She said that her computer worked perfectly."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He said he worked in a bank.",
-            "sentence": "He said, 'I work in a bank.'",
-            "hint": "Present simple ('work') shifts to past simple ('worked') in reported speech.",
-            "explanation": "'Work' (present simple) becomes 'worked' (past simple). The pronoun 'I' shifts to 'he'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "She said that her computer worked perfectly.",
+            "sentence": "She said, 'My computer works perfectly.'",
+            "hint": "Both the possessive word and the verb shift here.",
+            "explanation": "'My' shifts to 'her', and 'works' shifts to 'worked'.",
+            "grammarRule": "Pronoun & Possessive Shift"
         },
         {
             "id": "dis_l11_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'I don't eat red meat.'",
+            "question": "Convert to reported speech: The teacher said, 'I expect good behavior.'",
             "options": [
-                "She said she didn't eat red meat.",
-                "She said she doesn't eat red meat.",
-                "She said she hadn't eaten red meat."
+                "The teacher said that I expected good behavior.",
+                "The teacher said that she expected good behavior.",
+                "The teacher said that she expects good behavior."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said she didn't eat red meat.",
-            "sentence": "She said, 'I don't eat red meat.'",
-            "hint": "'Don't eat' (negative present simple) shifts to 'didn't eat' (negative past simple).",
-            "explanation": "Negative present simple ('don't eat') shifts to negative past simple ('didn't eat') in reported speech.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The teacher said that she expected good behavior.",
+            "sentence": "The teacher said, 'I expect good behavior.'",
+            "hint": "Shift the verb, and match the pronoun to the teacher.",
+            "explanation": "Present simple 'expect' shifts to past simple 'expected', and 'I' becomes 'she'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l11_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: Mum said, 'Come inside before it rains.'",
+            "question": "Convert to reported speech: My parents said, 'We are planning a trip.'",
             "options": [
-                "Mum told me to come inside before it rained.",
-                "Mum said me to come inside before it rained.",
-                "Mum told me to come inside before it rains."
+                "My parents said that they are planning a trip.",
+                "My parents said that they were planning a trip.",
+                "My parents said that we were planning a trip."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Mum told me to come inside before it rained.",
-            "sentence": "Mum said, 'Come inside before it rains.'",
-            "hint": "The imperative is reported as 'told + object + to + infinitive'. The verb in the subordinate clause also shifts.",
-            "explanation": "The imperative 'Come inside' becomes 'told me to come inside'. The conditional verb 'rains' shifts to 'rained'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "My parents said that they were planning a trip.",
+            "sentence": "My parents said, 'We are planning a trip.'",
+            "hint": "Shift the tense, and change 'we' since your parents are the ones being reported.",
+            "explanation": "'Are planning' shifts to 'were planning', and 'we' becomes 'they'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l12_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: He said, 'I'll be there by 7 o'clock.'",
+            "question": "Convert to reported speech: He said, 'I prefer tea to coffee.'",
             "options": [
-                "He promised he would be there by 7 o'clock.",
-                "He promised he will be there by 7 o'clock.",
-                "He promised he would have been there by 7 o'clock."
+                "He said that he prefers tea to coffee.",
+                "He said that I preferred tea to coffee.",
+                "He said that he preferred tea to coffee."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He promised he would be there by 7 o'clock.",
-            "sentence": "He said, 'I'll be there by 7 o'clock.'",
-            "hint": "'Will' shifts to 'would'. Promises are naturally reported with 'promised'.",
-            "explanation": "'I'll' (I will) becomes 'would'. The verb 'said' can be replaced by 'promised' to convey the speaker's intention.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "He said that he preferred tea to coffee.",
+            "sentence": "He said, 'I prefer tea to coffee.'",
+            "hint": "Shift the verb, and match the pronoun to him.",
+            "explanation": "Present simple 'prefer' shifts to past simple 'preferred', and 'I' becomes 'he'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l12_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She asked, 'Are you coming to the party?'",
+            "question": "Convert to reported speech: The players said, 'Our coach is strict.'",
             "options": [
-                "She asked if I was coming to the party.",
-                "She asked if I am coming to the party.",
-                "She asked was I coming to the party."
+                "The players said that their coach is strict.",
+                "The players said that their coach was strict.",
+                "The players said that our coach was strict."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She asked if I was coming to the party.",
-            "sentence": "She asked, 'Are you coming to the party?'",
-            "hint": "Yes/No questions use 'if'. 'Are' shifts to 'was'. Statement word order is used.",
-            "explanation": "Yes/No questions in reported speech use 'if' followed by statement word order. 'Are coming' → 'was coming'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The players said that their coach was strict.",
+            "sentence": "The players said, 'Our coach is strict.'",
+            "hint": "'Our' belongs to the players, so it must shift too.",
+            "explanation": "'Our' shifts to 'their', and 'is' shifts to 'was'.",
+            "grammarRule": "Pronoun & Possessive Shift"
         },
         {
             "id": "dis_l12_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: He said, 'I don't understand the instructions.'",
+            "question": "Convert to reported speech: She said, 'I am looking for a gift.'",
             "options": [
-                "He said he didn't understand the instructions.",
-                "He said he doesn't understand the instructions.",
-                "He said he hadn't understood the instructions."
+                "She said that she is looking for a gift.",
+                "She said that she was looking for a gift.",
+                "She said that she looks for a gift."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He said he didn't understand the instructions.",
-            "sentence": "He said, 'I don't understand the instructions.'",
-            "hint": "'Don't understand' shifts to 'didn't understand'.",
-            "explanation": "Present simple negative 'don't understand' becomes past simple negative 'didn't understand' in reported speech.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "She said that she was looking for a gift.",
+            "sentence": "She said, 'I am looking for a gift.'",
+            "hint": "The continuous tense shifts one step back.",
+            "explanation": "'Am looking' shifts to 'was looking' — one full step back, not to simple present.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l13_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She asked, 'Where do you buy your groceries?'",
+            "question": "Convert to reported speech: The nurse said, 'I check patients every hour.'",
             "options": [
-                "She asked where I bought my groceries.",
-                "She asked where do I buy my groceries.",
-                "She asked where I buy my groceries."
+                "The nurse said that I checked patients every hour.",
+                "The nurse said that she checked patients every hour.",
+                "The nurse said that she checks patients every hour."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She asked where I bought my groceries.",
-            "sentence": "She asked, 'Where do you buy your groceries?'",
-            "hint": "Wh-questions use statement word order. 'Do' disappears and 'buy' shifts to 'bought'.",
-            "explanation": "In reported wh-questions, drop the auxiliary 'do' and use statement order. 'Buy' shifts to 'bought', 'your' shifts to 'my'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The nurse said that she checked patients every hour.",
+            "sentence": "The nurse said, 'I check patients every hour.'",
+            "hint": "Shift the habitual verb, and match the pronoun.",
+            "explanation": "Present simple 'check' shifts to past simple 'checked', and 'I' becomes 'she'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l13_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: He said, 'I can speak three languages.'",
+            "question": "Convert to reported speech: The vet said, 'Your cat needs a checkup.'",
             "options": [
-                "He said he could speak three languages.",
-                "He said he can speak three languages.",
-                "He said he speaks three languages."
+                "The vet said that my cat needed a checkup.",
+                "The vet said that your cat needed a checkup.",
+                "The vet said that my cat needs a checkup."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He said he could speak three languages.",
-            "sentence": "He said, 'I can speak three languages.'",
-            "hint": "'Can' shifts to 'could' in reported speech.",
-            "explanation": "'Can' becomes 'could' in reported speech. The pronoun 'I' shifts to 'he'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The vet said that my cat needed a checkup.",
+            "sentence": "The vet said, 'Your cat needs a checkup.'",
+            "hint": "'Your' shifts to match who is being spoken to, and the verb shifts too.",
+            "explanation": "'Your' shifts to 'my' (I'm the one being spoken to), and 'needs' shifts to 'needed'.",
+            "grammarRule": "Pronoun & Possessive Shift"
         },
         {
             "id": "dis_l13_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The teacher said, 'Don't run on the stairs.'",
+            "question": "Convert to reported speech: My cousins said, 'We are visiting the museum.'",
             "options": [
-                "The teacher told us not to run on the stairs.",
-                "The teacher told us to not running on the stairs.",
-                "The teacher said don't run on the stairs."
+                "My cousins said that they were visiting the museum.",
+                "My cousins said that we were visiting the museum.",
+                "My cousins said that they are visiting the museum."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The teacher told us not to run on the stairs.",
-            "sentence": "The teacher said, 'Don't run on the stairs.'",
-            "hint": "Negative imperatives are reported with 'told + object + not to + infinitive'.",
-            "explanation": "Negative commands use 'told + object + not to + infinitive'. 'Don't run' becomes 'not to run'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "My cousins said that they were visiting the museum.",
+            "sentence": "My cousins said, 'We are visiting the museum.'",
+            "hint": "Shift the tense, and change 'we' since your cousins are being reported.",
+            "explanation": "'Are visiting' shifts to 'were visiting', and 'we' becomes 'they'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l14_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'I have broken my phone.'",
+            "question": "Convert to reported speech: He said, 'I check my email first thing.'",
             "options": [
-                "She said she had broken her phone.",
-                "She said she has broken her phone.",
-                "She said she broke her phone."
+                "He said that he checked my email first thing.",
+                "He said that he checked his email first thing.",
+                "He said that he checks his email first thing."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said she had broken her phone.",
-            "sentence": "She said, 'I have broken my phone.'",
-            "hint": "Present perfect ('have broken') shifts to past perfect ('had broken'). Pronouns also shift.",
-            "explanation": "'Have broken' (present perfect) becomes 'had broken' (past perfect). 'I' → 'she', 'my' → 'her'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "He said that he checked his email first thing.",
+            "sentence": "He said, 'I check my email first thing.'",
+            "hint": "Both the verb and the possessive word shift here.",
+            "explanation": "'Check' shifts to 'checked', and 'my' shifts to 'his'.",
+            "grammarRule": "Pronoun & Possessive Shift"
         },
         {
             "id": "dis_l14_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: They said, 'We went to Rome last summer.'",
+            "question": "Convert to reported speech: She said, 'I enjoy old movies.'",
             "options": [
-                "They said they had gone to Rome the previous summer.",
-                "They said they went to Rome last summer.",
-                "They said they have gone to Rome the previous summer."
+                "She said that I enjoyed old movies.",
+                "She said that she enjoyed old movies.",
+                "She said that she enjoys old movies."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They said they had gone to Rome the previous summer.",
-            "sentence": "They said, 'We went to Rome last summer.'",
-            "hint": "Past simple ('went') shifts to past perfect ('had gone'). 'Last' shifts to 'the previous'.",
-            "explanation": "'Went' (past simple) shifts to 'had gone' (past perfect). 'Last summer' becomes 'the previous summer'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "She said that she enjoyed old movies.",
+            "sentence": "She said, 'I enjoy old movies.'",
+            "hint": "Shift the verb, and match the pronoun to her.",
+            "explanation": "Present simple 'enjoy' shifts to past simple 'enjoyed', and 'I' becomes 'she'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l14_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: He asked, 'Do you know where the post office is?'",
+            "question": "Convert to reported speech: My grandma said, 'I am knitting a scarf.'",
             "options": [
-                "He asked if I knew where the post office was.",
-                "He asked do I know where the post office is.",
-                "He asked if I know where the post office is."
+                "My grandma said that she knits a scarf.",
+                "My grandma said that she was knitting a scarf.",
+                "My grandma said that she is knitting a scarf."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He asked if I knew where the post office was.",
-            "sentence": "He asked, 'Do you know where the post office is?'",
-            "hint": "Yes/No question with embedded question. Both verbs shift. Use 'if' and statement order.",
-            "explanation": "'Do you know' → 'if I knew' (tense shift + statement order). 'Is' in the embedded clause also shifts to 'was'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "My grandma said that she was knitting a scarf.",
+            "sentence": "My grandma said, 'I am knitting a scarf.'",
+            "hint": "The continuous tense shifts one step back in time.",
+            "explanation": "'Am knitting' shifts to 'was knitting' — one step back, not to simple present.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l15_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'My children are playing in the garden.'",
+            "question": "Convert to reported speech: The engineer said, 'I test every device twice.'",
             "options": [
-                "She said her children were playing in the garden.",
-                "She said her children are playing in the garden.",
-                "She said my children were playing in the garden."
+                "The engineer said that he tested every device twice.",
+                "The engineer said that I tested every device twice.",
+                "The engineer said that he tests every device twice."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She said her children were playing in the garden.",
-            "sentence": "She said, 'My children are playing in the garden.'",
-            "hint": "Present continuous ('are playing') shifts to past continuous ('were playing'). 'My' shifts to 'her'.",
-            "explanation": "'Are playing' becomes 'were playing'. The possessive 'my' shifts to 'her'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The engineer said that he tested every device twice.",
+            "sentence": "The engineer said, 'I test every device twice.'",
+            "hint": "Shift the habitual verb, and match the pronoun.",
+            "explanation": "Present simple 'test' shifts to past simple 'tested', and 'I' becomes 'he'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l15_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: He asked, 'What are you looking for?'",
+            "question": "Convert to reported speech: The students said, 'Our project is finished.'",
             "options": [
-                "He asked what I was looking for.",
-                "He asked what are you looking for.",
-                "He asked what I am looking for."
+                "The students said that our project was finished.",
+                "The students said that their project was finished.",
+                "The students said that their project is finished."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He asked what I was looking for.",
-            "sentence": "He asked, 'What are you looking for?'",
-            "hint": "Wh-question: use statement order and shift tense. 'Are looking' → 'was looking'.",
-            "explanation": "In reported wh-questions, use statement word order and shift the tense. 'Are looking' becomes 'was looking'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The students said that their project was finished.",
+            "sentence": "The students said, 'Our project is finished.'",
+            "hint": "'Our' belongs to the students, so it must shift too.",
+            "explanation": "'Our' shifts to 'their', and 'is' shifts to 'was'.",
+            "grammarRule": "Pronoun & Possessive Shift"
         },
         {
             "id": "dis_l15_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: Dad said, 'Pack your bag and get ready.'",
+            "question": "Convert to reported speech: The reporter said, 'The storm is approaching.'",
             "options": [
-                "Dad told me to pack my bag and get ready.",
-                "Dad said pack your bag and get ready.",
-                "Dad told me pack my bag and get ready."
+                "The reporter said that the storm was approaching.",
+                "The reporter said that the storm is approaching.",
+                "The reporter said that the storm had approached."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "Dad told me to pack my bag and get ready.",
-            "sentence": "Dad said, 'Pack your bag and get ready.'",
-            "hint": "Double imperative: both verbs reported as 'to pack... and get ready'. Pronoun shifts.",
-            "explanation": "Both imperatives use 'to + infinitive'. 'Your bag' becomes 'my bag' as the perspective shifts to the listener.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The reporter said that the storm was approaching.",
+            "sentence": "The reporter said, 'The storm is approaching.'",
+            "hint": "Shift the continuous tense just one step back.",
+            "explanation": "'Is approaching' shifts to 'was approaching' — one step back, not to past perfect.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l16_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'I must take this medicine twice a day.'",
+            "question": "Convert to reported speech: The chef said, 'I use fresh herbs.'",
             "options": [
-                "She said she had to take that medicine twice a day.",
-                "She said she must take this medicine twice a day.",
-                "She said she must take that medicine twice a day."
+                "The chef said that he uses fresh herbs.",
+                "The chef said that he used fresh herbs.",
+                "The chef said that I used fresh herbs."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said she had to take that medicine twice a day.",
-            "sentence": "She said, 'I must take this medicine twice a day.'",
-            "hint": "'Must' → 'had to', 'this' → 'that', 'I' → 'she'.",
-            "explanation": "'Must' shifts to 'had to'. The deictic 'this' shifts to 'that'. The pronoun 'I' becomes 'she'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The chef said that he used fresh herbs.",
+            "sentence": "The chef said, 'I use fresh herbs.'",
+            "hint": "Shift the verb, and match the pronoun to the chef.",
+            "explanation": "Present simple 'use' shifts to past simple 'used', and 'I' becomes 'he'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l16_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: He asked, 'May I sit here?'",
+            "question": "Convert to reported speech: The doctor said, 'Your test results are normal.'",
             "options": [
-                "He asked whether he might sit there.",
-                "He asked if he may sit there.",
-                "He asked whether he might sit here."
+                "The doctor said that your test results were normal.",
+                "The doctor said that my test results are normal.",
+                "The doctor said that my test results were normal."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He asked whether he might sit there.",
-            "sentence": "He asked, 'May I sit here?'",
-            "hint": "'May' shifts to 'might', 'I' → 'he', and 'here' → 'there'. Use 'whether' or 'if'.",
-            "explanation": "'May' shifts to 'might', 'I' becomes 'he', and 'here' becomes 'there'. Both 'whether' and 'if' are acceptable.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The doctor said that my test results were normal.",
+            "sentence": "The doctor said, 'Your test results are normal.'",
+            "hint": "'Your' shifts to match who is being spoken to.",
+            "explanation": "'Your' shifts to 'my', and 'are' shifts to 'were'.",
+            "grammarRule": "Pronoun & Possessive Shift"
         },
         {
             "id": "dis_l16_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'I saw the accident three days ago.'",
+            "question": "Convert to reported speech: The fans said, 'We are cheering loudly.'",
             "options": [
-                "She said she had seen the accident three days before.",
-                "She said she saw the accident three days ago.",
-                "She said she had seen the accident three days ago."
+                "The fans said that we were cheering loudly.",
+                "The fans said that they were cheering loudly.",
+                "The fans said that they are cheering loudly."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said she had seen the accident three days before.",
-            "sentence": "She said, 'I saw the accident three days ago.'",
-            "hint": "'Saw' shifts to 'had seen'. 'Ago' shifts to 'before'.",
-            "explanation": "'Saw' (past simple) shifts to 'had seen' (past perfect). 'Ago' becomes 'before' in reported speech.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The fans said that they were cheering loudly.",
+            "sentence": "The fans said, 'We are cheering loudly.'",
+            "hint": "Shift the tense, and change 'we' since the fans are being reported.",
+            "explanation": "'Are cheering' shifts to 'were cheering', and 'we' becomes 'they'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l17_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: He said, 'There will be a big storm tonight.'",
+            "question": "Convert to reported speech: My uncle said, 'I travel a lot for work.'",
             "options": [
-                "He said there would be a big storm that night.",
-                "He said there will be a big storm tonight.",
-                "He said there would be a big storm tonight."
+                "My uncle said that I traveled a lot for work.",
+                "My uncle said that he traveled a lot for work.",
+                "My uncle said that he travels a lot for work."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He said there would be a big storm that night.",
-            "sentence": "He said, 'There will be a big storm tonight.'",
-            "hint": "'Will' shifts to 'would'. 'Tonight' shifts to 'that night'.",
-            "explanation": "'Will be' becomes 'would be'. The time word 'tonight' shifts to 'that night'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "My uncle said that he traveled a lot for work.",
+            "sentence": "My uncle said, 'I travel a lot for work.'",
+            "hint": "Shift the verb, and match the pronoun to your uncle.",
+            "explanation": "Present simple 'travel' shifts to past simple 'traveled', and 'I' becomes 'he'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l17_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She asked, 'Have you ever been to Japan?'",
+            "question": "Convert to reported speech: She replied, 'I update the app every week.'",
             "options": [
-                "She asked if I had ever been to Japan.",
-                "She asked if I have ever been to Japan.",
-                "She asked had I ever been to Japan."
+                "She replied that she updates the app every week.",
+                "She replied that I updated the app every week.",
+                "She replied that she updated the app every week."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She asked if I had ever been to Japan.",
-            "sentence": "She asked, 'Have you ever been to Japan?'",
-            "hint": "Yes/No question: use 'if', statement order, shift present perfect to past perfect.",
-            "explanation": "Present perfect 'have been' shifts to past perfect 'had been'. Use 'if' and statement word order.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "She replied that she updated the app every week.",
+            "sentence": "She replied, 'I update the app every week.'",
+            "hint": "Shift the habitual verb, and match the pronoun to her.",
+            "explanation": "Present simple 'update' shifts to past simple 'updated', and 'I' becomes 'she'. 'Replied' works just like 'said' here.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l17_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The teacher said, 'Stand in a line and wait your turn.'",
+            "question": "Convert to reported speech: The neighbors said, 'Our garden looks beautiful.'",
             "options": [
-                "The teacher told the students to stand in a line and wait their turn.",
-                "The teacher said that the students stand in a line and wait their turn.",
-                "The teacher told the students stand in a line and wait their turn."
+                "The neighbors said that their garden looked beautiful.",
+                "The neighbors said that their garden looks beautiful.",
+                "The neighbors said that our garden looked beautiful."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The teacher told the students to stand in a line and wait their turn.",
-            "sentence": "The teacher said, 'Stand in a line and wait your turn.'",
-            "hint": "Double imperative: 'told + object + to + infinitive' for both verbs. 'Your' shifts to 'their'.",
-            "explanation": "Both imperatives are reported with 'to + infinitive'. 'Your turn' shifts to 'their turn'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The neighbors said that their garden looked beautiful.",
+            "sentence": "The neighbors said, 'Our garden looks beautiful.'",
+            "hint": "'Our' belongs to the neighbors, so it shifts too.",
+            "explanation": "'Our' shifts to 'their', and 'looks' shifts to 'looked'.",
+            "grammarRule": "Pronoun & Possessive Shift"
         },
         {
             "id": "dis_l18_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'I am meeting my boss at noon.'",
+            "question": "Convert to reported speech: My mom told me, 'Close the door.'",
             "options": [
-                "She said she was meeting her boss at noon.",
-                "She said she is meeting her boss at noon.",
-                "She said she was meeting my boss at noon."
+                "My mom told me close the door.",
+                "My mom told me that I close the door.",
+                "My mom told me to close the door."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said she was meeting her boss at noon.",
-            "sentence": "She said, 'I am meeting my boss at noon.'",
-            "hint": "Present continuous shifts to past continuous. 'My' shifts to 'her'.",
-            "explanation": "'Am meeting' becomes 'was meeting'. The possessive 'my' shifts to 'her'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "My mom told me to close the door.",
+            "sentence": "My mom told me, 'Close the door.'",
+            "hint": "A command is reported with 'told + person + to + verb'.",
+            "explanation": "Commands are reported using 'told + object + to-infinitive'. 'Close the door' becomes 'to close the door' — note the missing 'to' or wrong structure in the other options.",
+            "grammarRule": "Reported Commands & Requests"
         },
         {
             "id": "dis_l18_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: He asked, 'When does the supermarket close?'",
+            "question": "Convert to reported speech: The principal said, 'I visit every classroom.'",
             "options": [
-                "He asked when the supermarket closed.",
-                "He asked when does the supermarket close.",
-                "He asked when the supermarket closes."
+                "The principal said that she visits every classroom.",
+                "The principal said that I visited every classroom.",
+                "The principal said that she visited every classroom."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He asked when the supermarket closed.",
-            "sentence": "He asked, 'When does the supermarket close?'",
-            "hint": "Wh-question: statement order, no 'does', and 'close' shifts to 'closed'.",
-            "explanation": "Drop the auxiliary 'does', use statement order, and shift 'close' to 'closed'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The principal said that she visited every classroom.",
+            "sentence": "The principal said, 'I visit every classroom.'",
+            "hint": "Shift the habitual verb, and match the pronoun.",
+            "explanation": "Present simple 'visit' shifts to past simple 'visited', and 'I' becomes 'she'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l18_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The doctor said, 'You should get more sleep.'",
+            "question": "Convert to reported speech: The waiter said, 'Our special is soup.'",
             "options": [
-                "The doctor advised me to get more sleep.",
-                "The doctor advised me that I should get more sleep.",
-                "The doctor told me getting more sleep."
+                "The waiter said that their special is soup.",
+                "The waiter said that their special was soup.",
+                "The waiter said that our special was soup."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The doctor advised me to get more sleep.",
-            "sentence": "The doctor said, 'You should get more sleep.'",
-            "hint": "Advice with 'should' is best reported as 'advised + object + to + infinitive'.",
-            "explanation": "'You should get more sleep' is a piece of advice. It is most naturally reported as 'advised me to get more sleep'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The waiter said that their special was soup.",
+            "sentence": "The waiter said, 'Our special is soup.'",
+            "hint": "'Our' belongs to the restaurant staff, so it shifts too.",
+            "explanation": "'Our' shifts to 'their', and 'is' shifts to 'was'.",
+            "grammarRule": "Pronoun & Possessive Shift"
         },
         {
             "id": "dis_l19_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: They said, 'We haven't decided yet.'",
+            "question": "Convert to reported speech: The dentist told me, 'Brush twice a day.'",
             "options": [
-                "They said they hadn't decided yet.",
-                "They said they haven't decided yet.",
-                "They said they didn't decide yet."
+                "The dentist told me brush twice a day.",
+                "The dentist told me that I brush twice a day.",
+                "The dentist told me to brush twice a day."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They said they hadn't decided yet.",
-            "sentence": "They said, 'We haven't decided yet.'",
-            "hint": "Present perfect negative ('haven't decided') shifts to past perfect negative ('hadn't decided').",
-            "explanation": "'Haven't decided' (present perfect) shifts to 'hadn't decided' (past perfect) in reported speech.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The dentist told me to brush twice a day.",
+            "sentence": "The dentist told me, 'Brush twice a day.'",
+            "hint": "A command shifts to 'told + person + to + verb'.",
+            "explanation": "Commands are reported with 'told + object + to-infinitive'. 'Brush twice a day' becomes 'to brush twice a day'.",
+            "grammarRule": "Reported Commands & Requests"
         },
         {
             "id": "dis_l19_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: He asked, 'How did you get here so quickly?'",
+            "question": "Convert to reported speech: He said, 'I watch cartoons on Saturdays.'",
             "options": [
-                "He asked how I had got there so quickly.",
-                "He asked how I got here so quickly.",
-                "He asked how did I get there so quickly."
+                "He said that I watched cartoons on Saturdays.",
+                "He said that he watches cartoons on Saturdays.",
+                "He said that he watched cartoons on Saturdays."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He asked how I had got there so quickly.",
-            "sentence": "He asked, 'How did you get here so quickly?'",
-            "hint": "Wh-question: drop 'did', use statement order, backshift tense, and shift 'here' to 'there'.",
-            "explanation": "Drop 'did', use statement word order, shift 'got' to 'had got', and change 'here' to 'there'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "He said that he watched cartoons on Saturdays.",
+            "sentence": "He said, 'I watch cartoons on Saturdays.'",
+            "hint": "Shift the habitual verb, and match the pronoun to him.",
+            "explanation": "Present simple 'watch' shifts to past simple 'watched', and 'I' becomes 'he'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l19_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'Would you mind closing the window?'",
+            "question": "Convert to reported speech: The zookeeper said, 'The lions are resting.'",
             "options": [
-                "She asked me to close the window.",
-                "She asked me if I would mind to close the window.",
-                "She told me closing the window."
+                "The zookeeper said that the lions are resting.",
+                "The zookeeper said that the lions were resting.",
+                "The zookeeper said that the lions had rested."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She asked me to close the window.",
-            "sentence": "She said, 'Would you mind closing the window?'",
-            "hint": "'Would you mind...?' is a polite request reported as 'asked + object + to + infinitive'.",
-            "explanation": "'Would you mind closing the window?' is a polite request. The most natural reported form is 'asked me to close the window'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The zookeeper said that the lions were resting.",
+            "sentence": "The zookeeper said, 'The lions are resting.'",
+            "hint": "Shift the continuous tense just one step back.",
+            "explanation": "'Are resting' shifts to 'were resting' — one step back, not to past perfect.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l20_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: He said, 'I can't remember where I put my wallet.'",
+            "question": "Convert to reported speech: She added, 'I finish work at five.'",
             "options": [
-                "He said he couldn't remember where he had put his wallet.",
-                "He said he can't remember where he put his wallet.",
-                "He said he couldn't remember where I put my wallet."
+                "She added that she finished work at five.",
+                "She added that she finishes work at five.",
+                "She added that I finished work at five."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He said he couldn't remember where he had put his wallet.",
-            "sentence": "He said, 'I can't remember where I put my wallet.'",
-            "hint": "'Can't' → 'couldn't', 'put' → 'had put', 'I/my' → 'he/his'.",
-            "explanation": "'Can't' becomes 'couldn't'. 'Put' (past simple in embedded clause) shifts to 'had put'. Pronouns 'I' → 'he', 'my' → 'his'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "She added that she finished work at five.",
+            "sentence": "She added, 'I finish work at five.'",
+            "hint": "Shift the habitual verb, and match the pronoun to her.",
+            "explanation": "Present simple 'finish' shifts to past simple 'finished', and 'I' becomes 'she'. 'Added' introduces reported speech just like 'said'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l20_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She asked, 'Did anyone see what happened?'",
+            "question": "Convert to reported speech: The kids said, 'Our teacher is kind.'",
             "options": [
-                "She asked if anyone had seen what had happened.",
-                "She asked if anyone saw what happened.",
-                "She asked did anyone see what happened."
+                "The kids said that their teacher was kind.",
+                "The kids said that our teacher was kind.",
+                "The kids said that their teacher is kind."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She asked if anyone had seen what had happened.",
-            "sentence": "She asked, 'Did anyone see what happened?'",
-            "hint": "Yes/No question: 'did' disappears, both verbs shift back, and 'if' is added.",
-            "explanation": "'Did' disappears. 'See' shifts to 'had seen' and 'happened' shifts to 'had happened'. Use 'if' and statement order.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The kids said that their teacher was kind.",
+            "sentence": "The kids said, 'Our teacher is kind.'",
+            "hint": "'Our' belongs to the kids, so it shifts too.",
+            "explanation": "'Our' shifts to 'their', and 'is' shifts to 'was'.",
+            "grammarRule": "Pronoun & Possessive Shift"
         },
         {
             "id": "dis_l20_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: He said, 'I want to go back to university.'",
+            "question": "Convert to reported speech: The coach told us, 'Run three laps.'",
             "options": [
-                "He said he wanted to go back to university.",
-                "He said he wants to go back to university.",
-                "He said he had wanted to go back to university."
+                "The coach told us run three laps.",
+                "The coach told us that we run three laps.",
+                "The coach told us to run three laps."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He said he wanted to go back to university.",
-            "sentence": "He said, 'I want to go back to university.'",
-            "hint": "'Want' (present simple) shifts to 'wanted' (past simple).",
-            "explanation": "'Want' becomes 'wanted' in reported speech. The pronoun 'I' shifts to 'he'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The coach told us to run three laps.",
+            "sentence": "The coach told us, 'Run three laps.'",
+            "hint": "A command shifts to 'told + people + to + verb'.",
+            "explanation": "Commands are reported with 'told + object + to-infinitive'. 'Run three laps' becomes 'to run three laps'.",
+            "grammarRule": "Reported Commands & Requests"
         }
     ]
 }

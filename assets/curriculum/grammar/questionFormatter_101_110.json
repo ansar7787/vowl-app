@@ -1,577 +1,577 @@
 {
-    "gameType": "questionFormatter",
-    "batchIndex": 11,
-    "levels": "101-110",
-    "quests": [
-        {
-            "id": "qf_l101_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "I wish I _____ more time to travel.",
-            "sentence": "I wish I _____ more time to travel.",
-            "options": [
-                "had",
-                "have",
-                "would have",
-                "had had"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "had",
-            "hint": "'Wish + past simple' expresses a wish about a present situation that is not true.",
-            "explanation": "'Wish + past simple' expresses a regret about the present: 'I wish I had' = I don't have time, but I want to. 'Have' (present simple) cannot follow 'wish' for present regret. 'Had had' (past perfect) is used for past regrets with 'wish'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l101_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She wishes she _____ how to play the piano.",
-            "sentence": "She wishes she _____ how to play the piano.",
-            "options": [
-                "knew",
-                "knows",
-                "would know",
-                "known"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "knew",
-            "hint": "'Wish + past simple' - 'knew' is the past form of 'know' for a present wish.",
-            "explanation": "'Wish + past simple' describes an untrue present: she doesn't know how to play. 'Knows' is a real present-simple fact. 'Known' is a past participle, not a simple past. 'Would know' is used for complaints about other people's behaviour, not your own.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l101_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "He wishes he _____ harder when he was at university.",
-            "sentence": "He wishes he _____ harder when he was at university.",
-            "options": [
-                "had studied",
-                "studied",
-                "would study",
-                "studies"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "had studied",
-            "hint": "'Wish + past perfect' expresses a regret about a past situation that cannot be changed.",
-            "explanation": "'Wish + past perfect' refers to a past situation we regret: he didn't study hard and regrets it now. 'Wish + past simple' would express a present wish. 'Would study' after 'wish' is used for complaints about someone else's behaviour, not past regrets.",
-            "grammarRule": "Past Perfect Questions"
-        },
-        {
-            "id": "qf_l102_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "I wish you _____ make so much noise.",
-            "sentence": "I wish you _____ make so much noise.",
-            "options": [
-                "wouldn't",
-                "don't",
-                "didn't",
-                "won't"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "wouldn't",
-            "hint": "'Wish + would(n't)' expresses a complaint about someone's current behaviour.",
-            "explanation": "'Wish + would/wouldn't + base verb' complains about a present habit or behaviour. 'Wish + didn't' would be for a present fact, not a request for change. 'Won't' cannot follow 'wish' in this structure.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l102_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She wishes her neighbour _____ his music down.",
-            "sentence": "She wishes her neighbour _____ his music down.",
-            "options": [
-                "would turn",
-                "turned",
-                "turns",
-                "had turned"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "would turn",
-            "hint": "'Wish + would + base verb' = a complaint/wish directed at someone else's behaviour.",
-            "explanation": "'Wish + would' expresses a desire for someone else to change their behaviour. It cannot be used when the subjects of 'wish' and 'would' are the same person. 'Turned' expresses a present wish about a fact.",
-            "grammarRule": "Modal Questions"
-        },
-        {
-            "id": "qf_l102_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "He wishes he _____ leave work early today.",
-            "sentence": "He wishes he _____ leave work early today.",
-            "options": [
-                "could",
-                "would",
-                "can",
-                "will"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "could",
-            "hint": "'Wish + could' expresses a desire for a present ability or possibility.",
-            "explanation": "'Wish + could' expresses a present wish about ability or permission - he wants to but probably can't. 'Wish + would' is for wishing about someone else's behaviour. 'Can/will' cannot follow 'wish' for this meaning.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l103_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "I'd rather _____ coffee than tea, please.",
-            "sentence": "I'd rather _____ coffee than tea, please.",
-            "options": [
-                "have",
-                "to have",
-                "having",
-                "had"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "have",
-            "hint": "'Would rather' is followed by a bare infinitive (no 'to') for your own preference.",
-            "explanation": "'Would rather + bare infinitive' expresses personal preference. No 'to' is used. 'Having' (gerund) is wrong here.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l103_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "I'd rather you _____ early tomorrow.",
-            "sentence": "I'd rather you _____ early tomorrow.",
-            "options": [
-                "came",
-                "come",
-                "to come",
-                "had come"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "came",
-            "hint": "'Would rather + subject + past simple' expresses a preference about someone else's action.",
-            "explanation": "When the subject after 'would rather' differs from the main subject, use past simple: 'I'd rather you came.' This is a subjunctive-like use. 'Come' (present) and 'to come' (infinitive) are both incorrect here.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l103_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She'd rather he _____ that in front of everyone.",
-            "sentence": "She'd rather he _____ that in front of everyone.",
-            "options": [
-                "hadn't said",
-                "didn't say",
-                "hasn't said",
-                "wouldn't say"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "hadn't said",
-            "hint": "'Would rather + subject + past perfect' = a preference about a past action (regret).",
-            "explanation": "'Would rather + past perfect' refers to a past action someone wishes had been different. 'Hadn't said' (past perfect) expresses this regret. 'Didn't say' (past simple) is for present/future preferences.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l104_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "It's time we _____ this decision.",
-            "sentence": "It's time we _____ this decision.",
-            "options": [
-                "made",
-                "make",
-                "to make",
-                "making"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "made",
-            "hint": "'It's time + subject + past simple' - the past form signals urgency about the present.",
-            "explanation": "'It's time + subject + past simple' expresses that something should happen now and is overdue. The past simple here does not mean past time - it signals urgency. The infinitive ('to make') is used in 'it's time to make', which has a different structure (no subject).",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l104_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "It's high time he _____ up and took responsibility.",
-            "sentence": "It's high time he _____ up and took responsibility.",
-            "options": [
-                "grew",
-                "grow",
-                "to grow",
-                "would grow"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "grew",
-            "hint": "'It's high time + subject + past simple' - stronger urgency than 'it's time'.",
-            "explanation": "'It's high time' adds frustration or impatience. Both 'it's time' and 'it's high time' require past simple after the subject. 'Grew' signals that this should have happened long ago.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l104_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Isn't it about time you _____ your own place?",
-            "sentence": "Isn't it about time you _____ your own place?",
-            "options": [
-                "got",
-                "get",
-                "to get",
-                "will get"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "got",
-            "hint": "'About time + subject + past simple' - same subjunctive-like pattern.",
-            "explanation": "'About time + subject + past simple' follows the same pattern as 'it's time'. The past simple 'got' expresses that this should have happened already. The question form adds a rhetorical edge.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l105_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The committee recommended that she _____ a full report.",
-            "sentence": "The committee recommended that she _____ a full report.",
-            "options": [
-                "submit",
-                "submits",
-                "should submit",
-                "submitted"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "submit",
-            "hint": "Formal subjunctive after 'recommend that': bare infinitive, no -s even for 3rd person singular.",
-            "explanation": "After verbs like 'recommend, suggest, insist, demand', formal English uses the present subjunctive (bare infinitive for all subjects): 'she submit', not 'she submits'. 'Should submit' is an informal alternative that is also widely accepted.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l105_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The doctor insisted that he _____ the medication for a full month.",
-            "sentence": "The doctor insisted that he _____ the medication for a full month.",
-            "options": [
-                "take",
-                "takes",
-                "took",
-                "should take"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "take",
-            "hint": "Formal subjunctive after 'insist that': bare infinitive regardless of subject.",
-            "explanation": "The formal subjunctive uses the base verb for all subjects including third-person singular. 'Insist that he take' (not 'takes'). This pattern is standard in American English and formal British English.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l105_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "It is essential that every employee _____ the new protocols.",
-            "sentence": "It is essential that every employee _____ the new protocols.",
-            "options": [
-                "follow",
-                "follows",
-                "should follow",
-                "followed"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "follow",
-            "hint": "After 'it is essential/vital/important that': formal subjunctive = bare infinitive.",
-            "explanation": "After expressions like 'it is essential/vital/necessary/important that', formal English uses the subjunctive (base verb): 'every employee follow' (not 'follows'). 'Should follow' is the informal equivalent and is also widely accepted.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l106_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "If she had studied medicine, she _____ a doctor now.",
-            "sentence": "If she had studied medicine, she _____ a doctor now.",
-            "options": [
-                "would be",
-                "would have been",
-                "will be",
-                "was"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "would be",
-            "hint": "Mixed conditional: past unreal condition + present result → 'would be' (not 'would have been').",
-            "explanation": "Mixed conditionals combine a third-conditional 'if' clause (past perfect) with a second-conditional result (present: 'would be'). This shows how a past decision affects the present. 'Would have been' would be a pure third conditional (past result).",
-            "grammarRule": "Modal Questions"
-        },
-        {
-            "id": "qf_l106_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "If he were more patient, he _____ fewer mistakes yesterday.",
-            "sentence": "If he were more patient, he _____ fewer mistakes yesterday.",
-            "options": [
-                "would have made",
-                "would make",
-                "will have made",
-                "had made"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "would have made",
-            "hint": "Reversed mixed conditional: present character condition + past result → 'would have + past participle'.",
-            "explanation": "This mixed conditional uses a second-conditional 'if' clause (present character) with a third-conditional result (past). The person's present nature caused a past consequence.",
-            "grammarRule": "Modal Questions"
-        },
-        {
-            "id": "qf_l106_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "If I hadn't moved to this city, I _____ my best friend now.",
-            "sentence": "If I hadn't moved to this city, I _____ my best friend now.",
-            "options": [
-                "wouldn't know",
-                "wouldn't have known",
-                "didn't know",
-                "hadn't known"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "wouldn't know",
-            "hint": "Past unreal condition → present result: 'wouldn't know' (present, not past perfect).",
-            "explanation": "Mixed conditional: 'if I hadn't moved' (past) affects 'I wouldn't know now' (present). The result is about the present state, so 'would + base verb', not 'would have + past participle'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l107_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She's been working for 18 hours. She _____ be exhausted.",
-            "sentence": "She's been working for 18 hours. She _____ be exhausted.",
-            "options": [
-                "must",
-                "should",
-                "can",
-                "would"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "must",
-            "hint": "'Must' = strong logical deduction from evidence. 'Should' = weaker expectation.",
-            "explanation": "'Must' expresses strong logical deduction: 18 hours of work → she must be exhausted (near certain). 'Should' expresses expectation ('she should be tired by now'), which is weaker. 'Can + be' for deduction only works in negatives ('can't be').",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l107_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "He just ate a full meal. He _____ be hungry.",
-            "sentence": "He just ate a full meal. He _____ be hungry.",
-            "options": [
-                "can't",
-                "mustn't",
-                "shouldn't",
-                "wouldn't"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "can't",
-            "hint": "'Can't' = logical deduction of near-impossibility.",
-            "explanation": "'Can't be' expresses that something is logically impossible or highly unlikely: having just eaten, being hungry is contradictory. 'Mustn't be' expresses prohibition, not deduction. 'Shouldn't be' = weaker expectation.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l107_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "There's a light on upstairs. Someone _____ be home.",
-            "sentence": "There's a light on upstairs. Someone _____ be home.",
-            "options": [
-                "must",
-                "should",
-                "would",
-                "shall"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "must",
-            "hint": "'Must' = confident deduction from present evidence (the light).",
-            "explanation": "The visible light provides evidence for a confident deduction: 'must be' = almost certainly true. 'Should be' means 'I expect them to be home' - weaker, expectation-based rather than evidence-based.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l108_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She _____ brought so much food - there are leftovers for a week.",
-            "sentence": "She _____ brought so much food - there are leftovers for a week.",
-            "options": [
-                "needn't have",
-                "didn't need to",
-                "shouldn't have",
-                "mustn't have"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "needn't have",
-            "hint": "'Needn't have + past participle' = she did it, but it wasn't necessary.",
-            "explanation": "'Needn't have + past participle' means the action was done but was unnecessary in retrospect. 'Didn't need to' means she knew before and therefore didn't do it. The leftovers prove she did bring the food, so 'needn't have' is correct.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l108_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "You _____ told me you were coming - I would have prepared more.",
-            "sentence": "You _____ told me you were coming - I would have prepared more.",
-            "options": [
-                "should have",
-                "could have",
-                "would have",
-                "ought to"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "should have",
-            "hint": "'Should have + past participle' = the right thing to do, but it didn't happen (mild criticism).",
-            "explanation": "'Should have told me' expresses a past obligation that wasn't fulfilled - mild criticism. 'Could have' implies ability, not obligation. 'Ought to' would need 'have' after it: 'ought to have told'.",
-            "grammarRule": "Modal Questions"
-        },
-        {
-            "id": "qf_l108_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "He _____ to stay late - his boss had already left.",
-            "sentence": "He _____ to stay late - his boss had already left.",
-            "options": [
-                "didn't need",
-                "needn't have",
-                "mustn't have",
-                "shouldn't have"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "didn't need",
-            "hint": "'Didn't need to' = it wasn't necessary, and he probably didn't do it.",
-            "explanation": "'Didn't need to' implies both that staying was unnecessary and (knowing this) he probably didn't stay. 'Needn't have' means he did stay unnecessarily. Here, since the boss was gone, staying was unnecessary - and he likely didn't.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l109_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The project was expensive. _____, the results were impressive.",
-            "sentence": "The project was expensive. _____, the results were impressive.",
-            "options": [
-                "Nevertheless",
-                "However",
-                "Moreover",
-                "Despite this"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Nevertheless",
-            "hint": "'Nevertheless' overcomes an implied obstacle - more forceful than 'however' here.",
-            "explanation": "Both 'nevertheless' and 'however' express contrast. 'Nevertheless' specifically overcomes an obstacle: despite the cost, the results were impressive. 'Moreover' adds information. 'Despite this' is also correct here and equally emphatic.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l109_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "_____ working full-time, she manages to study every evening.",
-            "sentence": "_____ working full-time, she manages to study every evening.",
-            "options": [
-                "Despite",
-                "Although",
-                "Even though",
-                "However"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Despite",
-            "hint": "'Despite' is a preposition followed by a noun/gerund - not a clause.",
-            "explanation": "'Despite + noun phrase/gerund' expresses concession: 'Despite working full-time'. 'Although/even though' are conjunctions and need a full clause with subject and verb: 'Although she works full-time...' 'However' connects two separate sentences and cannot start a clause this way.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l109_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She is highly qualified. _____, she has extensive experience.",
-            "sentence": "She is highly qualified. _____, she has extensive experience.",
-            "options": [
-                "Furthermore",
-                "Nevertheless",
-                "However",
-                "On the other hand"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Furthermore",
-            "hint": "'Furthermore/moreover/in addition' add information. 'Nevertheless/however' introduce contrast.",
-            "explanation": "'Furthermore' adds information that reinforces the previous point. Both being qualified and experienced support the same positive conclusion. 'Nevertheless' and 'however' would introduce contrast, which is inappropriate here.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l110_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The roads were icy. _____, many accidents occurred.",
-            "sentence": "The roads were icy. _____, many accidents occurred.",
-            "options": [
-                "As a result",
-                "Because",
-                "Since",
-                "For"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "As a result",
-            "hint": "'As a result' introduces a result between two sentences. 'Because/since' introduce a cause clause (need a subject+verb).",
-            "explanation": "'As a result' connects two complete sentences, introducing a consequence. 'Because', 'since', and 'as' are subordinating conjunctions that introduce clauses within a sentence: 'Because the roads were icy, many accidents occurred.'",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l110_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She took an umbrella _____ it wouldn't rain.",
-            "sentence": "She took an umbrella _____ it wouldn't rain.",
-            "options": [
-                "in case",
-                "so that",
-                "because",
-                "since"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "in case",
-            "hint": "'In case' = precaution against something that might happen (not because it is happening).",
-            "explanation": "'In case' expresses precaution: she prepared for possible rain. 'So that' expresses purpose ('so that she wouldn't get wet'). 'Because' expresses reason for a past fact - but it wasn't raining when she left.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l110_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "She spoke slowly _____ everyone could understand her.",
-            "sentence": "She spoke slowly _____ everyone could understand her.",
-            "options": [
-                "so that",
-                "so as to",
-                "in order to",
-                "because"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so that",
-            "hint": "'So that + clause (with subject)' expresses purpose when both clauses have different subjects.",
-            "explanation": "'So that + subject + verb' expresses purpose when the subjects differ: 'she spoke slowly so that everyone could understand'. 'So as to/in order to' use infinitives and imply the same subject: 'she spoke slowly so as to be understood'.",
-            "grammarRule": "Question Formation"
-        }
-    ]
+  "gameType": "questionFormatter",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "id": "qf_l101_q1",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "She works from home on Fridays.",
+      "sentence": "She works from home on Fridays.",
+      "options": [
+        "She works from home on Fridays, does she?",
+        "She works from home on Fridays, doesn't she?",
+        "She works from home on Fridays, isn't she?",
+        "She works from home on Fridays, doesn't it?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "She works from home on Fridays, doesn't she?",
+      "hint": "The statement is positive, so the tag should be negative: 'doesn't she?'",
+      "explanation": "A positive statement takes a negative tag. Since the main verb is 'works' (present simple, singular), the tag uses 'doesn't she'.",
+      "grammarRule": "Tag Questions: Present Simple"
+    },
+    {
+      "id": "qf_l101_q2",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Your parents don't live far from here.",
+      "sentence": "Your parents don't live far from here.",
+      "options": [
+        "Your parents don't live far from here, don't they?",
+        "Your parents don't live far from here, do they?",
+        "Your parents don't live far from here, do you?",
+        "Your parents don't live far from here, are they?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Your parents don't live far from here, do they?",
+      "hint": "The statement is negative, so the tag should be positive: 'do they?'",
+      "explanation": "A negative statement takes a positive tag. Since the subject is 'your parents' (they), the tag is 'do they'.",
+      "grammarRule": "Tag Questions: Present Simple"
+    },
+    {
+      "id": "qf_l101_q3",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The kids share a bedroom.",
+      "sentence": "The kids share a bedroom.",
+      "options": [
+        "The kids share a bedroom, do they?",
+        "The kids share a bedroom, aren't they?",
+        "The kids share a bedroom, don't they?",
+        "The kids share a bedroom, doesn't they?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The kids share a bedroom, don't they?",
+      "hint": "The statement is positive and plural, so the tag needs a negative plural form: 'don't they?'",
+      "explanation": "A positive statement takes a negative tag, and since 'the kids' is plural, the tag uses 'don't they'.",
+      "grammarRule": "Tag Questions: Present Simple"
+    },
+    {
+      "id": "qf_l102_q1",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "He finished the marathon in under four hours.",
+      "sentence": "He finished the marathon in under four hours.",
+      "options": [
+        "He finished the marathon in under four hours, did he?",
+        "He finished the marathon in under four hours, didn't he?",
+        "He finished the marathon in under four hours, wasn't he?",
+        "He finished the marathon in under four hours, hasn't he?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "He finished the marathon in under four hours, didn't he?",
+      "hint": "The statement is positive past tense, so use the negative tag 'didn't he?'",
+      "explanation": "A positive past-tense statement takes a negative tag with 'did': 'didn't he', matching the subject 'he'.",
+      "grammarRule": "Tag Questions: Past Simple"
+    },
+    {
+      "id": "qf_l102_q2",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "They didn't enjoy the long flight.",
+      "sentence": "They didn't enjoy the long flight.",
+      "options": [
+        "They didn't enjoy the long flight, didn't they?",
+        "They didn't enjoy the long flight, did they?",
+        "They didn't enjoy the long flight, do they?",
+        "They didn't enjoy the long flight, weren't they?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "They didn't enjoy the long flight, did they?",
+      "hint": "The statement is negative, so use the positive tag 'did they?'",
+      "explanation": "A negative past-tense statement takes a positive tag, 'did they', matching the subject and the past tense.",
+      "grammarRule": "Tag Questions: Past Simple"
+    },
+    {
+      "id": "qf_l102_q3",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The store closed early yesterday.",
+      "sentence": "The store closed early yesterday.",
+      "options": [
+        "The store closed early yesterday, did it?",
+        "The store closed early yesterday, wasn't it?",
+        "The store closed early yesterday, didn't it?",
+        "The store closed early yesterday, hasn't it?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The store closed early yesterday, didn't it?",
+      "hint": "The statement is positive past tense, so use 'didn't it?'",
+      "explanation": "This positive past-tense statement takes the negative tag 'didn't it', matching the subject 'it' (the store).",
+      "grammarRule": "Tag Questions: Past Simple"
+    },
+    {
+      "id": "qf_l103_q1",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The instructions are pretty confusing.",
+      "sentence": "The instructions are pretty confusing.",
+      "options": [
+        "The instructions are pretty confusing, don't they?",
+        "The instructions are pretty confusing, are they?",
+        "The instructions are pretty confusing, aren't they?",
+        "The instructions are pretty confusing, isn't they?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The instructions are pretty confusing, aren't they?",
+      "hint": "'Be' tags simply repeat 'be' in negative form: 'aren't they?'",
+      "explanation": "With 'be' verbs, the tag reuses 'be' rather than 'do'. Since the statement is positive and plural, the tag is 'aren't they'.",
+      "grammarRule": "Tag Questions: Verb 'To Be'"
+    },
+    {
+      "id": "qf_l103_q2",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "You weren't at the meeting yesterday.",
+      "sentence": "You weren't at the meeting yesterday.",
+      "options": [
+        "You weren't at the meeting yesterday, weren't you?",
+        "You weren't at the meeting yesterday, did you?",
+        "You weren't at the meeting yesterday, are you?",
+        "You weren't at the meeting yesterday, were you?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "You weren't at the meeting yesterday, were you?",
+      "hint": "The statement is negative, so use the positive tag 'were you?'",
+      "explanation": "A negative statement with 'be' takes a positive tag using 'be': 'were you', matching the past tense.",
+      "grammarRule": "Tag Questions: Verb 'To Be'"
+    },
+    {
+      "id": "qf_l103_q3",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I am your first customer today.",
+      "sentence": "I am your first customer today.",
+      "options": [
+        "I am your first customer today, do I?",
+        "I am your first customer today, aren't I?",
+        "I am your first customer today, isn't I?",
+        "I am your first customer today, amn't I?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "I am your first customer today, aren't I?",
+      "hint": "'I am' takes the special tag 'aren't I?', not 'amn't I?'",
+      "explanation": "Although 'I' pairs with 'am' in statements, the standard tag question form is the irregular 'aren't I?'",
+      "grammarRule": "Tag Questions: Verb 'To Be'"
+    },
+    {
+      "id": "qf_l104_q1",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "You're listening to the new podcast episode.",
+      "sentence": "You're listening to the new podcast episode.",
+      "options": [
+        "You're listening to the new podcast episode, don't you?",
+        "You're listening to the new podcast episode, aren't you?",
+        "You're listening to the new podcast episode, are you?",
+        "You're listening to the new podcast episode, isn't you?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "You're listening to the new podcast episode, aren't you?",
+      "hint": "'Be' tags reuse 'be': the tag here is 'aren't you?'",
+      "explanation": "Since the statement uses 'are' (continuous tense), the tag reuses 'be' in its negative form: 'aren't you'.",
+      "grammarRule": "Tag Questions: Present Continuous"
+    },
+    {
+      "id": "qf_l104_q2",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The baby isn't sleeping well tonight.",
+      "sentence": "The baby isn't sleeping well tonight.",
+      "options": [
+        "The baby isn't sleeping well tonight, isn't it?",
+        "The baby isn't sleeping well tonight, doesn't it?",
+        "The baby isn't sleeping well tonight, is she?",
+        "The baby isn't sleeping well tonight, is it?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The baby isn't sleeping well tonight, is it?",
+      "hint": "The statement is negative, so use the positive tag 'is it?'",
+      "explanation": "A negative statement takes a positive tag. Since 'the baby' is referred to as 'it' here, the tag is 'is it'.",
+      "grammarRule": "Tag Questions: Present Continuous"
+    },
+    {
+      "id": "qf_l104_q3",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "We're making good progress on the renovation.",
+      "sentence": "We're making good progress on the renovation.",
+      "options": [
+        "We're making good progress on the renovation, don't we?",
+        "We're making good progress on the renovation, aren't we?",
+        "We're making good progress on the renovation, are we?",
+        "We're making good progress on the renovation, isn't we?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "We're making good progress on the renovation, aren't we?",
+      "hint": "The tag reuses 'be': 'aren't we?'",
+      "explanation": "Since the statement uses 'are' (present continuous), the tag reuses 'be' in its negative form, matching the subject 'we'.",
+      "grammarRule": "Tag Questions: Present Continuous"
+    },
+    {
+      "id": "qf_l105_q1",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "She has already left for the airport.",
+      "sentence": "She has already left for the airport.",
+      "options": [
+        "She has already left for the airport, has she?",
+        "She has already left for the airport, hasn't she?",
+        "She has already left for the airport, didn't she?",
+        "She has already left for the airport, doesn't she?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "She has already left for the airport, hasn't she?",
+      "hint": "The tag reuses 'has': 'hasn't she?'",
+      "explanation": "Present perfect tags reuse 'has/have'. Since the statement is positive, the tag is negative: 'hasn't she'.",
+      "grammarRule": "Tag Questions: Present Perfect"
+    },
+    {
+      "id": "qf_l105_q2",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "You haven't tried the new café yet.",
+      "sentence": "You haven't tried the new café yet.",
+      "options": [
+        "You haven't tried the new café yet, haven't you?",
+        "You haven't tried the new café yet, have you?",
+        "You haven't tried the new café yet, did you?",
+        "You haven't tried the new café yet, do you?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "You haven't tried the new café yet, have you?",
+      "hint": "The statement is negative, so the tag should be positive: 'have you?'",
+      "explanation": "A negative present perfect statement takes a positive tag: 'have you', reusing the same auxiliary.",
+      "grammarRule": "Tag Questions: Present Perfect"
+    },
+    {
+      "id": "qf_l105_q3",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The committee has approved the new budget.",
+      "sentence": "The committee has approved the new budget.",
+      "options": [
+        "The committee has approved the new budget, has it?",
+        "The committee has approved the new budget, hasn't it?",
+        "The committee has approved the new budget, didn't it?",
+        "The committee has approved the new budget, haven't it?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The committee has approved the new budget, hasn't it?",
+      "hint": "The tag reuses 'has' in its negative form: 'hasn't it?'",
+      "explanation": "Since the statement uses 'has' and is positive, the tag is negative and reuses the same auxiliary: 'hasn't it'.",
+      "grammarRule": "Tag Questions: Present Perfect"
+    },
+    {
+      "id": "qf_l106_q1",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "You can fix this problem easily.",
+      "sentence": "You can fix this problem easily.",
+      "options": [
+        "You can fix this problem easily, can't you?",
+        "You can fix this problem easily, do you?",
+        "You can fix this problem easily, can you?",
+        "You can fix this problem easily, couldn't you?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "You can fix this problem easily, can't you?",
+      "hint": "The tag reuses the modal 'can' in its negative form.",
+      "explanation": "Modal tags reuse the same modal. Since the statement is positive, the tag is negative: 'can't you'.",
+      "grammarRule": "Tag Questions: Modals"
+    },
+    {
+      "id": "qf_l106_q2",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "They won't mind waiting a few extra minutes.",
+      "sentence": "They won't mind waiting a few extra minutes.",
+      "options": [
+        "They won't mind waiting a few extra minutes, won't they?",
+        "They won't mind waiting a few extra minutes, will they?",
+        "They won't mind waiting a few extra minutes, do they?",
+        "They won't mind waiting a few extra minutes, would they?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "They won't mind waiting a few extra minutes, will they?",
+      "hint": "The statement is negative, so the tag should be positive: 'will they?'",
+      "explanation": "A negative statement with 'won't' takes a positive tag using the same modal: 'will they'.",
+      "grammarRule": "Tag Questions: Modals"
+    },
+    {
+      "id": "qf_l106_q3",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "We should leave a bit earlier next time.",
+      "sentence": "We should leave a bit earlier next time.",
+      "options": [
+        "We should leave a bit earlier next time, do we?",
+        "We should leave a bit earlier next time, should we?",
+        "We should leave a bit earlier next time, wouldn't we?",
+        "We should leave a bit earlier next time, shouldn't we?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "We should leave a bit earlier next time, shouldn't we?",
+      "hint": "The tag reuses the modal 'should' in its negative form.",
+      "explanation": "Since the statement is positive, the tag is negative and reuses the same modal: 'shouldn't we'.",
+      "grammarRule": "Tag Questions: Modals"
+    },
+    {
+      "id": "qf_l107_q1",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Close the window before you leave.",
+      "sentence": "Close the window before you leave.",
+      "options": [
+        "Close the window before you leave, do you?",
+        "Close the window before you leave, won't you?",
+        "Close the window before you leave, don't you?",
+        "Close the window before you leave, will you?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Close the window before you leave, will you?",
+      "hint": "Commands typically take the tag 'will you?'",
+      "explanation": "Imperative sentences (commands/requests) commonly take the tag 'will you?', regardless of the missing subject.",
+      "grammarRule": "Tag Questions: Imperatives & 'Let's'"
+    },
+    {
+      "id": "qf_l107_q2",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Let's grab lunch after the meeting.",
+      "sentence": "Let's grab lunch after the meeting.",
+      "options": [
+        "Let's grab lunch after the meeting, will we?",
+        "Let's grab lunch after the meeting, shall we?",
+        "Let's grab lunch after the meeting, don't we?",
+        "Let's grab lunch after the meeting, shan't we?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Let's grab lunch after the meeting, shall we?",
+      "hint": "'Let's' suggestions always take the tag 'shall we?'",
+      "explanation": "Sentences starting with 'Let's' always take the fixed tag 'shall we?', regardless of the verb that follows.",
+      "grammarRule": "Tag Questions: Imperatives & 'Let's'"
+    },
+    {
+      "id": "qf_l107_q3",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Take a seat, please.",
+      "sentence": "Take a seat, please.",
+      "options": [
+        "Take a seat, please, do you?",
+        "Take a seat, please, will you?",
+        "Take a seat, please, won't you?",
+        "Take a seat, please, don't you?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Take a seat, please, will you?",
+      "hint": "Commands typically take the tag 'will you?'",
+      "explanation": "As with other commands, this imperative sentence takes the standard tag 'will you?'",
+      "grammarRule": "Tag Questions: Imperatives & 'Let's'"
+    },
+    {
+      "id": "qf_l108_q1",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "There isn't any milk left in the fridge.",
+      "sentence": "There isn't any milk left in the fridge.",
+      "options": [
+        "There isn't any milk left in the fridge, is there?",
+        "There isn't any milk left in the fridge, isn't there?",
+        "There isn't any milk left in the fridge, are there?",
+        "There isn't any milk left in the fridge, does it?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "There isn't any milk left in the fridge, is there?",
+      "hint": "The statement is negative, so use the positive tag 'is there?'",
+      "explanation": "A negative 'there is' statement takes a positive tag: 'is there', keeping 'there' as the tag subject.",
+      "grammarRule": "Tag Questions: There Is / There Are"
+    },
+    {
+      "id": "qf_l108_q2",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "There are several typos in this document.",
+      "sentence": "There are several typos in this document.",
+      "options": [
+        "There are several typos in this document, aren't there?",
+        "There are several typos in this document, don't there?",
+        "There are several typos in this document, are there?",
+        "There are several typos in this document, isn't there?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "There are several typos in this document, aren't there?",
+      "hint": "The statement is positive and plural, so use 'aren't there?'",
+      "explanation": "A positive 'there are' statement (plural) takes the negative tag 'aren't there'.",
+      "grammarRule": "Tag Questions: There Is / There Are"
+    },
+    {
+      "id": "qf_l108_q3",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "There was a small problem with the order.",
+      "sentence": "There was a small problem with the order.",
+      "options": [
+        "There was a small problem with the order, was there?",
+        "There was a small problem with the order, wasn't it?",
+        "There was a small problem with the order, didn't there?",
+        "There was a small problem with the order, wasn't there?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "There was a small problem with the order, wasn't there?",
+      "hint": "The statement is positive, so use the negative tag 'wasn't there?'",
+      "explanation": "A positive 'there was' statement takes the negative tag 'wasn't there', keeping 'there' as the tag subject.",
+      "grammarRule": "Tag Questions: There Is / There Are"
+    },
+    {
+      "id": "qf_l109_q1",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "She never complains about her workload.",
+      "sentence": "She never complains about her workload.",
+      "options": [
+        "She never complains about her workload, doesn't she?",
+        "She never complains about her workload, does she?",
+        "She never complains about her workload, is she?",
+        "She never complains about her workload, did she?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "She never complains about her workload, does she?",
+      "hint": "'Never' makes the statement negative in meaning, so use a positive tag.",
+      "explanation": "Words like 'never' act as negatives, so even though there's no 'not', the tag is still positive: 'does she'.",
+      "grammarRule": "Tag Questions: Negative Adverbs"
+    },
+    {
+      "id": "qf_l109_q2",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "They rarely eat out during the week.",
+      "sentence": "They rarely eat out during the week.",
+      "options": [
+        "They rarely eat out during the week, don't they?",
+        "They rarely eat out during the week, do they?",
+        "They rarely eat out during the week, are they?",
+        "They rarely eat out during the week, did they?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "They rarely eat out during the week, do they?",
+      "hint": "'Rarely' functions as a negative, so the tag should be positive.",
+      "explanation": "'Rarely' has negative meaning, so the tag is positive, not negative: 'do they'.",
+      "grammarRule": "Tag Questions: Negative Adverbs"
+    },
+    {
+      "id": "qf_l109_q3",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "He hardly ever calls his old college friends.",
+      "sentence": "He hardly ever calls his old college friends.",
+      "options": [
+        "He hardly ever calls his old college friends, doesn't he?",
+        "He hardly ever calls his old college friends, is he?",
+        "He hardly ever calls his old college friends, does he?",
+        "He hardly ever calls his old college friends, did he?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "He hardly ever calls his old college friends, does he?",
+      "hint": "'Hardly ever' works like a negative, so the tag should be positive.",
+      "explanation": "'Hardly ever' carries negative meaning, so the statement needs a positive tag: 'does he'.",
+      "grammarRule": "Tag Questions: Negative Adverbs"
+    },
+    {
+      "id": "qf_l110_q1",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "You haven't seen this movie before.",
+      "sentence": "You haven't seen this movie before.",
+      "options": [
+        "You haven't seen this movie before, haven't you?",
+        "You haven't seen this movie before, did you?",
+        "You haven't seen this movie before, do you?",
+        "You haven't seen this movie before, have you?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "You haven't seen this movie before, have you?",
+      "hint": "The statement is negative, so use the positive tag 'have you?'",
+      "explanation": "A negative present perfect statement takes a positive tag, reusing the same auxiliary: 'have you'.",
+      "grammarRule": "Tag Questions: Mixed Review"
+    },
+    {
+      "id": "qf_l110_q2",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Let's take a short break.",
+      "sentence": "Let's take a short break.",
+      "options": [
+        "Let's take a short break, will we?",
+        "Let's take a short break, shall we?",
+        "Let's take a short break, don't we?",
+        "Let's take a short break, do we?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Let's take a short break, shall we?",
+      "hint": "'Let's' suggestions always take 'shall we?'",
+      "explanation": "As with all 'Let's' suggestions, the fixed tag 'shall we?' is used, regardless of the main verb.",
+      "grammarRule": "Tag Questions: Mixed Review"
+    },
+    {
+      "id": "qf_l110_q3",
+      "instruction": "Complete the tag question correctly.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "There aren't enough chairs for everyone.",
+      "sentence": "There aren't enough chairs for everyone.",
+      "options": [
+        "There aren't enough chairs for everyone, are there?",
+        "There aren't enough chairs for everyone, aren't there?",
+        "There aren't enough chairs for everyone, is there?",
+        "There aren't enough chairs for everyone, don't there?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "There aren't enough chairs for everyone, are there?",
+      "hint": "The statement is negative, so use the positive tag 'are there?'",
+      "explanation": "A negative 'there are' statement takes a positive tag: 'are there', keeping 'there' as the tag subject.",
+      "grammarRule": "Tag Questions: Mixed Review"
+    }
+  ]
 }

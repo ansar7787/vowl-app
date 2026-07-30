@@ -1,577 +1,577 @@
 {
-    "gameType": "questionFormatter",
-    "batchIndex": 16,
-    "levels": "151-160",
-    "quests": [
-        {
-            "id": "qf_l151_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "'Had the government intervened sooner, many lives _____ been saved.'",
-            "sentence": "'Had the government intervened sooner, many lives _____ been saved.'",
-            "options": [
-                "could have",
-                "would",
-                "might",
-                "should"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "could have",
-            "hint": "Third conditional result clause: modal + 'have' + past participle.",
-            "explanation": "Third conditional result clauses use 'could/would/might + have + past participle'. 'Could have been saved' expresses possibility. 'Would have been saved' expresses certainty. 'Should have been saved' implies they should have been (moral judgment). All three are grammatically correct with slightly different nuances.",
-            "grammarRule": "Modal Questions"
-        },
-        {
-            "id": "qf_l151_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which uses the past perfect most precisely?",
-            "sentence": "Which uses the past perfect most precisely?",
-            "options": [
-                "By the time the results were published, the team had already dissolved.",
-                "When the results were published, the team dissolved.",
-                "The team dissolved when the results were published.",
-                "The results were published and the team had dissolved."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "By the time the results were published, the team had already dissolved.",
-            "hint": "'By the time + simple past' → past perfect marks the earlier past event.",
-            "explanation": "'By the time the results were published, the team had already dissolved' correctly uses the past perfect to mark the earlier event (dissolution before publication). 'When the results were published, the team dissolved' makes the events simultaneous.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l151_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Choose the best continuation: 'The hypothesis was supported by the data. _____, three limitations must be acknowledged.'",
-            "sentence": "Choose the best continuation: 'The hypothesis was supported by the data. _____, three limitations must be acknowledged.'",
-            "options": [
-                "Nevertheless",
-                "Despite this",
-                "Although",
-                "Regardless"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Nevertheless",
-            "hint": "'Nevertheless' concedes and contrasts between two full sentences - ideal for academic transitions.",
-            "explanation": "'Nevertheless' acknowledges the positive finding while signalling an important qualification. 'Despite this' is also possible. 'Although' would require restructuring into a single sentence. 'Regardless' is informal and too absolute.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l152_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Formal equivalent of 'The sales went up by a lot last quarter':",
-            "sentence": "Formal equivalent of 'The sales went up by a lot last quarter':",
-            "options": [
-                "Sales increased substantially in the previous quarter.",
-                "Sales went up a lot in the last quarter.",
-                "There was a big go-up in sales last quarter.",
-                "Sales were hugely increased in the previous quarter."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Sales increased substantially in the previous quarter.",
-            "hint": "Avoid phrasal verbs ('went up → increased') and informal quantifiers ('a lot → substantially').",
-            "explanation": "'Increased substantially' replaces the phrasal verb 'went up' and the informal 'a lot'. 'Previous quarter' is more formal. 'Were hugely increased' is passive but 'hugely' is informal. 'Big go-up' is not standard English.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l152_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The extent to which social media _____ mental health remains debated.",
-            "sentence": "The extent to which social media _____ mental health remains debated.",
-            "options": [
-                "affects",
-                "effect",
-                "is affecting",
-                "has affected"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "affects",
-            "hint": "In a noun clause, use present simple for a general ongoing relationship.",
-            "explanation": "The noun clause 'to which social media affects mental health' contains a general ongoing relationship - present simple is appropriate for general truths. 'Effect' is a noun. 'Is affecting' (continuous) and 'has affected' (perfect) are less neutral for stating a general research question.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l152_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which is the most grammatically precise relative clause?",
-            "sentence": "Which is the most grammatically precise relative clause?",
-            "options": [
-                "The researcher whose work was cited most frequently won the award.",
-                "The researcher which work was cited most frequently won the award.",
-                "The researcher who work was cited most frequently won the award.",
-                "The researcher of whom work was cited most frequently won the award."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The researcher whose work was cited most frequently won the award.",
-            "hint": "'Whose' is the possessive relative pronoun for people - the only correct form here.",
-            "explanation": "'Whose' is the possessive relative pronoun: 'the researcher whose work'. 'Which' is for things. 'Who' is nominative (subject), not possessive. 'Of whom' is used for people ('of whom we know little') but 'of whom work' is not the right structure for possession.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l153_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence correctly uses an absolute phrase?",
-            "sentence": "Which sentence correctly uses an absolute phrase?",
-            "options": [
-                "The deadline approaching, the team worked through the night.",
-                "With the deadline was approaching, the team worked through the night.",
-                "As the deadline approaching, the team worked through the night.",
-                "The deadline having approached, the team worked through the night."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The deadline approaching, the team worked through the night.",
-            "hint": "Absolute phrase = noun + present participle (no verb 'to be'). Perfect participle = event already complete.",
-            "explanation": "An absolute phrase is a noun + participle without a linking verb: 'the deadline approaching'. 'With the deadline was approaching' has a redundant 'was'. 'As the deadline approaching' needs a finite verb after 'as'. 'Having approached' would mean the deadline had already passed.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l153_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "He spoke _____ clearly that even the people in the back could hear him.",
-            "sentence": "He spoke _____ clearly that even the people in the back could hear him.",
-            "options": [
-                "so",
-                "such",
-                "very",
-                "too"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so",
-            "hint": "'So + adverb + that' - degree result clause. 'Such' needs a noun.",
-            "explanation": "'So clearly that' uses 'so + adverb + that-clause' for result. 'Such' requires an adjective + noun: 'such a clear voice that'. 'Very clearly' doesn't combine with 'that' in this result structure. 'Too clearly' implies an excess preventing something.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l153_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence demonstrates correct fronting for emphasis?",
-            "sentence": "Which sentence demonstrates correct fronting for emphasis?",
-            "options": [
-                "The courage of her convictions - that is what drove her forward.",
-                "What drove her forward was her courage of convictions.",
-                "It was courage that she drove forward with.",
-                "She drove forward with courage was the key."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The courage of her convictions - that is what drove her forward.",
-            "hint": "Fronting with a dash + demonstrative creates strong emphasis on the fronted noun phrase.",
-            "explanation": "'The courage of her convictions - that is what drove her forward' uses fronting with a demonstrative to emphasise. 'What drove her forward was her courage' (wh-cleft) is also emphatic. 'It was courage that she drove forward with' is an it-cleft but awkward. 'She drove forward with courage was the key' is a run-on sentence.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l154_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Choose the most precise verb: 'The new evidence _____ the previous theory.'",
-            "sentence": "Choose the most precise verb: 'The new evidence _____ the previous theory.'",
-            "options": [
-                "undermined",
-                "disproved",
-                "challenged",
-                "broke"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "undermined",
-            "hint": "'Undermined' = gradually weakened foundations without necessarily disproving.",
-            "explanation": "'Undermined' suggests gradual erosion of the theory's foundations without conclusively disproving it. 'Disproved' implies definitive refutation. 'Challenged' suggests questioning without weakening. 'Broke' is too informal.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l154_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "_____ the project succeed, we will have proved our critics wrong.",
-            "sentence": "_____ the project succeed, we will have proved our critics wrong.",
-            "options": [
-                "Should",
-                "If",
-                "Were",
-                "Had"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Should",
-            "hint": "Inverted conditional with 'should' for a future open condition.",
-            "explanation": "'Should the project succeed' = 'If the project succeeds' - inverted future open conditional. 'Should' is used when the condition is possible but not certain. 'Were' would be for a hypothetical (second conditional). 'Had' would be third conditional (past).",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l154_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence uses 'only' with the most precise focus?",
-            "sentence": "Which sentence uses 'only' with the most precise focus?",
-            "options": [
-                "She told only her sister, no one else.",
-                "She only told her sister, no one else.",
-                "Only she told her sister, no one else.",
-                "She told her only sister, no one else."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She told only her sister, no one else.",
-            "hint": "The position of 'only' determines what it modifies - place it immediately before the word it restricts.",
-            "explanation": "In formal English, 'only' should be placed immediately before the element it modifies. 'She told only her sister' = she restricted disclosure to her sister. 'Only she told' = no one else told her sister. 'Her only sister' = she has one sister. 'She only told' is informal but ambiguous.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l155_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence uses the passive voice appropriately?",
-            "sentence": "Which sentence uses the passive voice appropriately?",
-            "options": [
-                "The suspect was arrested by officers at the scene.",
-                "Officers arrested the suspect at the scene.",
-                "The suspect arrested by officers at the scene.",
-                "At the scene, was the suspect arrested."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The suspect was arrested by officers at the scene.",
-            "hint": "Passive is appropriate when the recipient of the action is more important than the agent.",
-            "explanation": "The passive ('was arrested') is appropriate when the focus is on the suspect rather than the officers. The active ('officers arrested') shifts focus. 'The suspect arrested' is missing 'was'. 'Was the suspect arrested' is a question form.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l155_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "The _____ of the merger depends on regulatory approval.",
-            "sentence": "The _____ of the merger depends on regulatory approval.",
-            "options": [
-                "outcome",
-                "output",
-                "result",
-                "consequence"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "outcome",
-            "hint": "'Outcome of a process' = what eventually happens. 'Consequence' often implies negative result. 'Output' = production.",
-            "explanation": "'Outcome' refers to what a process leads to - appropriate for an uncertain future result. 'Consequence' usually implies a significant, often negative result. 'Output' refers to production quantity. 'Result' can work but 'outcome' is more nuanced for uncertain futures.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l155_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which best completes the analogy: 'Just as exercise benefits the body, _____ benefits the mind.'",
-            "sentence": "Which best completes the analogy: 'Just as exercise benefits the body, _____ benefits the mind.'",
-            "options": [
-                "so too does reading",
-                "reading also does",
-                "reading benefits also",
-                "so reading"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "so too does reading",
-            "hint": "'Just as...so too does...' inverts the second clause for formal parallel structure.",
-            "explanation": "'Just as X, so too does Y' is the formal parallel structure with subject-auxiliary inversion following 'so too'. 'Reading also does' is not inverted. 'Reading benefits also' has the adverb in the wrong position. 'So reading' is incomplete.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l156_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence is grammatically complete and most formal?",
-            "sentence": "Which sentence is grammatically complete and most formal?",
-            "options": [
-                "The committee has yet to reach a consensus.",
-                "The committee still haven't reached any consensus.",
-                "A consensus hasn't been reached yet by the committee.",
-                "They have yet to reach a consensus, the committee."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The committee has yet to reach a consensus.",
-            "hint": "'Has yet to + base verb' = formal equivalent of 'still hasn't + past participle'.",
-            "explanation": "'Have yet to + base verb' is a formal alternative to 'still haven't': 'has yet to reach' = still hasn't reached. 'Still haven't reached' is correct but informal. 'A consensus hasn't been reached yet by the committee' is passive but 'yet by the committee' is awkward. The right-dislocated structure ('...the committee') is informal.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l156_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Choose the most precise expression: 'This may suggest _____ correlation between stress and productivity.'",
-            "sentence": "Choose the most precise expression: 'This may suggest _____ correlation between stress and productivity.'",
-            "options": [
-                "a negative",
-                "the negative",
-                "a negating",
-                "some negative of"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "a negative",
-            "hint": "'A negative correlation' is the precise technical collocation.",
-            "explanation": "'A negative correlation' is the correct technical term from research: an inverse relationship. 'The negative correlation' would refer to a specific previously mentioned one. 'A negating correlation' is not a standard term. 'Some negative of' is grammatically invalid.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l156_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence correctly uses a gerund phrase as subject?",
-            "sentence": "Which sentence correctly uses a gerund phrase as subject?",
-            "options": [
-                "Designing effective policies requires an understanding of both economics and human behaviour.",
-                "To design effective policies requires understanding of both.",
-                "Design of effective policies require understanding economics and human behaviour.",
-                "Designing effective policies require an understanding of economics."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Designing effective policies requires an understanding of both economics and human behaviour.",
-            "hint": "Gerund phrase as subject takes a singular verb.",
-            "explanation": "A gerund phrase ('Designing effective policies') is a singular subject and takes a singular verb ('requires'). 'Design of effective policies' (nominalisation) is also correct but 'require' (plural) is wrong with a singular subject. Infinitive as subject ('To design') can also take a singular verb but is more formal.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l157_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which option correctly uses 'former' and 'latter'?",
-            "sentence": "Which option correctly uses 'former' and 'latter'?",
-            "options": [
-                "Between speed and accuracy, the latter is more important in this context.",
-                "Between speed and accuracy, the former is accuracy.",
-                "Between speed and accuracy, the latter refers to speed.",
-                "Between speed and accuracy, the former being accuracy."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Between speed and accuracy, the latter is more important in this context.",
-            "hint": "'Former' = first mentioned; 'latter' = second mentioned. Accuracy is second, so 'latter'.",
-            "explanation": "'Former' refers to the first item; 'latter' to the second. Speed was mentioned first (former), accuracy second (latter). 'The latter is more important' = accuracy is more important. The other options assign the terms incorrectly.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l157_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which uses parallel structure correctly?",
-            "sentence": "Which uses parallel structure correctly?",
-            "options": [
-                "The report was clear, concise, and well-organised.",
-                "The report was clear, concisely written, and had good organisation.",
-                "The report was clear, written concisely, and well-organised.",
-                "The report was clearly written, concise, and organised well."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The report was clear, concise, and well-organised.",
-            "hint": "Parallel structure: all items in a list must use the same grammatical form.",
-            "explanation": "Parallel structure requires all items in a list to use the same grammatical form. 'Clear, concise, and well-organised' are all adjectives. The other options mix adjectives, adverb phrases, and past participle phrases, breaking the parallel.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l157_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence avoids a split infinitive in a formal context?",
-            "sentence": "Which sentence avoids a split infinitive in a formal context?",
-            "options": [
-                "She decided to review the data thoroughly.",
-                "She decided to thoroughly review the data.",
-                "She thoroughly decided to review the data.",
-                "She decided thoroughly to review the data."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She decided to review the data thoroughly.",
-            "hint": "To avoid a split infinitive, place the adverb after the infinitive phrase or elsewhere.",
-            "explanation": "A split infinitive places an adverb between 'to' and the base verb ('to thoroughly review'). In formal writing, it is traditionally avoided: 'to review the data thoroughly' is preferred. The adverb 'thoroughly' at the start ('thoroughly decided') modifies the decision, not the reviewing.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l158_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence is free of redundancy?",
-            "sentence": "Which sentence is free of redundancy?",
-            "options": [
-                "The deadline is 5 PM today.",
-                "The deadline is at 5 PM today in the afternoon.",
-                "The deadline is 5 PM on the afternoon of today.",
-                "The deadline is today at 5 PM today."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The deadline is 5 PM today.",
-            "hint": "Avoid redundant expressions: '5 PM' implies afternoon; 'today' shouldn't be repeated.",
-            "explanation": "'The deadline is 5 PM today' is concise. '5 PM in the afternoon' is redundant because 'PM' already means afternoon/evening. 'On the afternoon of today' is wordy. Repeating 'today' is obvious redundancy.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l158_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Identify the misplaced modifier: 'She almost drove her children to school every day.'",
-            "sentence": "Identify the misplaced modifier: 'She almost drove her children to school every day.'",
-            "options": [
-                "'almost' should be moved to modify 'every day', not 'drove'.",
-                "'drove' should be 'drived'",
-                "'almost' is correctly placed",
-                "'every day' should be 'each day'"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "'almost' should be moved to modify 'every day', not 'drove'.",
-            "hint": "'Almost drove' implies she nearly drove (but didn't). The intended meaning is 'almost every day'.",
-            "explanation": "As written, 'almost drove' implies she nearly (but didn't quite) drive them. The intended meaning is likely 'she drove them almost every day' (most days). The modifier 'almost' must be placed immediately before what it modifies.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l158_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence correctly uses 'respectively'?",
-            "sentence": "Which sentence correctly uses 'respectively'?",
-            "options": [
-                "The first and second prizes were won by Alice and Bob, respectively.",
-                "The first prize was won by Alice and Bob, respectively.",
-                "Alice and Bob won the prizes, respectively, which were first and second.",
-                "Respectively, Alice and Bob won the first and second prizes."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The first and second prizes were won by Alice and Bob, respectively.",
-            "hint": "'Respectively' maps two parallel lists in order: Alice → first, Bob → second.",
-            "explanation": "'Respectively' connects two parallel lists in the same order. It only works with matching pairs in the same sequence. 'Respectively' at the start of a sentence or with misaligned lists is incorrect. With a single prize, 'respectively' makes no sense.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l159_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence uses 'due to' most correctly in formal writing?",
-            "sentence": "Which sentence uses 'due to' most correctly in formal writing?",
-            "options": [
-                "The delay was due to bad weather.",
-                "Due to bad weather, the flight was delayed.",
-                "Due to she was sick, she missed the meeting.",
-                "She missed the meeting due to she was sick."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The delay was due to bad weather.",
-            "hint": "Traditional rule: 'due to' modifies a noun; it should not introduce an adverbial clause.",
-            "explanation": "Traditionally, 'due to' is an adjective phrase modifying a noun: 'the delay (noun) was due to weather'. 'Due to bad weather, the flight was delayed' treats 'due to' as an adverbial - widely accepted in modern usage but avoided in strict formal writing (use 'because of' instead). 'Due to she was sick' is always wrong - 'due to' takes a noun, never a clause.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l159_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Choose the most precise academic verb: 'The researchers _____ that the drug reduced inflammation.'",
-            "sentence": "Choose the most precise academic verb: 'The researchers _____ that the drug reduced inflammation.'",
-            "options": [
-                "concluded",
-                "thought",
-                "believed",
-                "found out"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "concluded",
-            "hint": "'Concluded' signals a formal inference from data. 'Thought/believed' are too subjective.",
-            "explanation": "'Concluded' implies a reasoned inference from evidence - appropriate after research. 'Found' is also widely used academically. 'Thought' and 'believed' imply subjective opinion. 'Found out' is informal.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l159_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which correctly expresses a concessive relationship?",
-            "sentence": "Which correctly expresses a concessive relationship?",
-            "options": [
-                "Albeit expensive, the treatment proved highly effective.",
-                "Albeit it was expensive, the treatment proved highly effective.",
-                "Although expensive, but the treatment proved highly effective.",
-                "Despite it was expensive, the treatment proved highly effective."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Albeit expensive, the treatment proved highly effective.",
-            "hint": "'Albeit' = 'even though it is' - takes an adjective/adverb phrase, not a full clause.",
-            "explanation": "'Albeit + adjective/adverb/noun phrase' is a literary concessive conjunction. 'Albeit expensive' is correct. 'Albeit it was expensive' adds a redundant subject+verb. 'Although expensive, but...' mixes two connectors. 'Despite it was expensive' uses 'despite' with a clause (incorrect).",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l160_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "What is the effect of fronting in: 'This approach we find most compelling.'?",
-            "sentence": "What is the effect of fronting in: 'This approach we find most compelling.'?",
-            "options": [
-                "It places maximum emphasis on 'this approach' as the topic of discussion.",
-                "It signals that 'we' is the subject of 'find'.",
-                "It indicates the speaker is unsure about the approach.",
-                "It is a grammatical error - the object cannot be fronted."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "It places maximum emphasis on 'this approach' as the topic of discussion.",
-            "hint": "Fronting the object ('This approach') creates topicalization - making it the discourse topic.",
-            "explanation": "Fronting moves the object to the front for emphasis or to establish it as the discourse topic. 'This approach [object] we find most compelling.' This is called topicalization and is grammatically correct - not an error.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l160_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Choose the sentence that uses 'which' correctly in formal writing:",
-            "sentence": "Choose the sentence that uses 'which' correctly in formal writing:",
-            "options": [
-                "She submitted the report, which had taken three weeks to complete.",
-                "She submitted the report which had took three weeks to complete.",
-                "She submitted the report, that had taken three weeks to complete.",
-                "She submitted the report which was taken three weeks to complete."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She submitted the report, which had taken three weeks to complete.",
-            "hint": "Non-defining relative clause (with comma) uses 'which'; 'that' cannot be used here.",
-            "explanation": "Non-defining relative clauses use 'which', never 'that'. Commas set off non-defining clauses. 'Had took' is a double-marked past (wrong). 'Was taken three weeks' misuses the passive ('took' is active; passive would be 'it took three weeks').",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l160_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which option uses the correct article with a proper noun?",
-            "sentence": "Which option uses the correct article with a proper noun?",
-            "options": [
-                "She works for the United Nations.",
-                "She works for United Nations.",
-                "She works for a United Nations.",
-                "She works for The United Nations."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She works for the United Nations.",
-            "hint": "Named organisations like 'the United Nations' always take 'the' (lowercase in running text).",
-            "explanation": "'The United Nations' takes 'the' because it is a named organisation - like 'the BBC', 'the EU', 'the European Commission'. In running text, 'the' is not capitalised unless at the start of a sentence.",
-            "grammarRule": "Question Formation"
-        }
-    ]
+  "gameType": "questionFormatter",
+  "batchIndex": 16,
+  "levels": "151-160",
+  "quests": [
+    {
+      "id": "qf_l151_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "It's possible that she left her phone at the restaurant.",
+      "sentence": "It's possible that she left her phone at the restaurant.",
+      "options": [
+        "Does she could have left her phone at the restaurant?",
+        "Could she have leave her phone at the restaurant?",
+        "Could she have left her phone at the restaurant?",
+        "Could she left her phone at the restaurant?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Could she have left her phone at the restaurant?",
+      "hint": "Use 'could have' plus the past participle, with 'could' moved to the front.",
+      "explanation": "'Could have' expresses a past possibility. 'Could' moves to the front, and 'have left' stays together as one unit.",
+      "grammarRule": "Modal Perfect Questions: Could Have"
+    },
+    {
+      "id": "qf_l151_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "It's possible that they missed the last train.",
+      "sentence": "It's possible that they missed the last train.",
+      "options": [
+        "Does they could have missed the last train?",
+        "Could they have miss the last train?",
+        "Could they missed the last train?",
+        "Could they have missed the last train?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Could they have missed the last train?",
+      "hint": "Move 'could' to the front, keeping 'have missed' together.",
+      "explanation": "'Could' moves to the front of the question, and 'have missed' remains together as the modal perfect verb phrase.",
+      "grammarRule": "Modal Perfect Questions: Could Have"
+    },
+    {
+      "id": "qf_l151_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "It's possible that he took the wrong exit.",
+      "sentence": "It's possible that he took the wrong exit.",
+      "options": [
+        "Could he have taken the wrong exit?",
+        "Does he could have taken the wrong exit?",
+        "Could he have take the wrong exit?",
+        "Could he taken the wrong exit?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Could he have taken the wrong exit?",
+      "hint": "Move 'could' to the front, keeping 'have taken' together.",
+      "explanation": "'Could' moves to the front, and 'have taken' stays together, forming the modal perfect question about a past possibility.",
+      "grammarRule": "Modal Perfect Questions: Could Have"
+    },
+    {
+      "id": "qf_l152_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Perhaps she forgot about the appointment.",
+      "sentence": "Perhaps she forgot about the appointment.",
+      "options": [
+        "Does she might have forgotten about the appointment?",
+        "Might she have forget about the appointment?",
+        "Might she have forgotten about the appointment?",
+        "Might she forgotten about the appointment?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Might she have forgotten about the appointment?",
+      "hint": "Move 'might' to the front, keeping 'have forgotten' together.",
+      "explanation": "'Might have' expresses a tentative past possibility. 'Might' moves to the front, and 'have forgotten' stays together.",
+      "grammarRule": "Modal Perfect Questions: Might Have"
+    },
+    {
+      "id": "qf_l152_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Perhaps the delivery driver got lost.",
+      "sentence": "Perhaps the delivery driver got lost.",
+      "options": [
+        "Does the delivery driver might have gotten lost?",
+        "Might the delivery driver have get lost?",
+        "Might the delivery driver gotten lost?",
+        "Might the delivery driver have gotten lost?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Might the delivery driver have gotten lost?",
+      "hint": "Move 'might' after the subject, keeping 'have gotten' together.",
+      "explanation": "'Might' moves right after the subject, and 'have gotten' remains together as the modal perfect verb phrase.",
+      "grammarRule": "Modal Perfect Questions: Might Have"
+    },
+    {
+      "id": "qf_l152_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Perhaps they misunderstood the instructions.",
+      "sentence": "Perhaps they misunderstood the instructions.",
+      "options": [
+        "Does they might have misunderstood the instructions?",
+        "Might they have misunderstand the instructions?",
+        "Might they misunderstood the instructions?",
+        "Might they have misunderstood the instructions?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Might they have misunderstood the instructions?",
+      "hint": "Move 'might' to the front, keeping 'have misunderstood' together.",
+      "explanation": "'Might' moves to the front, and 'have misunderstood' stays together, forming this tentative past possibility question.",
+      "grammarRule": "Modal Perfect Questions: Might Have"
+    },
+    {
+      "id": "qf_l153_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "It seems very likely that she already left for work.",
+      "sentence": "It seems very likely that she already left for work.",
+      "options": [
+        "Does she must have already left for work?",
+        "Must she have already leave for work?",
+        "Must she have already left for work?",
+        "Must she already left for work?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Must she have already left for work?",
+      "hint": "Move 'must' to the front, keeping 'have left' together.",
+      "explanation": "'Must have' expresses near-certainty about the past. 'Must' moves to the front, and 'have left' stays together.",
+      "grammarRule": "Modal Perfect Questions: Must Have"
+    },
+    {
+      "id": "qf_l153_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "It seems very likely that they forgot to lock the door.",
+      "sentence": "It seems very likely that they forgot to lock the door.",
+      "options": [
+        "Does they must have forgotten to lock the door?",
+        "Must they have forget to lock the door?",
+        "Must they have forgotten to lock the door?",
+        "Must they forgotten to lock the door?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Must they have forgotten to lock the door?",
+      "hint": "Move 'must' to the front, keeping 'have forgotten' together.",
+      "explanation": "'Must' moves to the front, and 'have forgotten' remains together as the modal perfect verb phrase.",
+      "grammarRule": "Modal Perfect Questions: Must Have"
+    },
+    {
+      "id": "qf_l153_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "It seems very likely that he took a wrong turn somewhere.",
+      "sentence": "It seems very likely that he took a wrong turn somewhere.",
+      "options": [
+        "Must he have taken a wrong turn somewhere?",
+        "Does he must have taken a wrong turn somewhere?",
+        "Must he have take a wrong turn somewhere?",
+        "Must he taken a wrong turn somewhere?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Must he have taken a wrong turn somewhere?",
+      "hint": "Move 'must' to the front, keeping 'have taken' together.",
+      "explanation": "'Must' moves to the front, and 'have taken' stays together, forming this strong-certainty question about the past.",
+      "grammarRule": "Modal Perfect Questions: Must Have"
+    },
+    {
+      "id": "qf_l154_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I wonder if we should have booked the tickets earlier.",
+      "sentence": "I wonder if we should have booked the tickets earlier.",
+      "options": [
+        "Do we should have booked the tickets earlier?",
+        "Should we have book the tickets earlier?",
+        "Should we have booked the tickets earlier?",
+        "Should we booked the tickets earlier?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Should we have booked the tickets earlier?",
+      "hint": "Move 'should' to the front, keeping 'have booked' together.",
+      "explanation": "'Should have' questions a missed opportunity. 'Should' moves to the front, and 'have booked' stays together.",
+      "grammarRule": "Modal Perfect Questions: Should Have"
+    },
+    {
+      "id": "qf_l154_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I wonder if she should have told him the truth sooner.",
+      "sentence": "I wonder if she should have told him the truth sooner.",
+      "options": [
+        "Does she should have told him the truth sooner?",
+        "Should she have told him the truth sooner?",
+        "Should she have tell him the truth sooner?",
+        "Should she told him the truth sooner?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Should she have told him the truth sooner?",
+      "hint": "Move 'should' to the front, keeping 'have told' together.",
+      "explanation": "'Should' moves to the front, and 'have told' remains together as the modal perfect verb phrase.",
+      "grammarRule": "Modal Perfect Questions: Should Have"
+    },
+    {
+      "id": "qf_l154_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I wonder if they should have double-checked the numbers.",
+      "sentence": "I wonder if they should have double-checked the numbers.",
+      "options": [
+        "Do they should have double-checked the numbers?",
+        "Should they have double-checked the numbers?",
+        "Should they have double-check the numbers?",
+        "Should they double-checked the numbers?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Should they have double-checked the numbers?",
+      "hint": "Move 'should' to the front, keeping 'have double-checked' together.",
+      "explanation": "'Should' moves to the front, and 'have double-checked' stays together, forming this question about a possible missed step.",
+      "grammarRule": "Modal Perfect Questions: Should Have"
+    },
+    {
+      "id": "qf_l155_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "There's a reason she might have canceled the trip.",
+      "sentence": "There's a reason she might have canceled the trip.",
+      "options": [
+        "Why does she might have canceled the trip?",
+        "Why might she have cancel the trip?",
+        "Why might she canceled the trip?",
+        "Why might she have canceled the trip?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Why might she have canceled the trip?",
+      "hint": "Move 'might' after 'why', keeping 'have canceled' together.",
+      "explanation": "'Might' moves after the question word, and 'have canceled' stays together as the modal perfect verb phrase.",
+      "grammarRule": "Modal Perfect Wh-Questions"
+    },
+    {
+      "id": "qf_l155_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "There's some explanation for how the fire could have started.",
+      "sentence": "There's some explanation for how the fire could have started.",
+      "options": [
+        "How does the fire could have started?",
+        "How could the fire have start?",
+        "How could the fire started?",
+        "How could the fire have started?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "How could the fire have started?",
+      "hint": "Move 'could' after 'how', keeping 'have started' together.",
+      "explanation": "'Could' moves after the question word, and 'have started' remains together as the modal perfect verb phrase.",
+      "grammarRule": "Modal Perfect Wh-Questions"
+    },
+    {
+      "id": "qf_l155_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Something must have happened to delay them this much.",
+      "sentence": "Something must have happened to delay them this much.",
+      "options": [
+        "What does must have happened to delay them this much?",
+        "What must have happened to delay them this much?",
+        "What must have happen to delay them this much?",
+        "What must happened to delay them this much?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "What must have happened to delay them this much?",
+      "hint": "Since 'what' is the subject here, simply keep 'must have happened' together.",
+      "explanation": "Because 'what' replaces the subject, the question keeps the same order: 'what must have happened'.",
+      "grammarRule": "Modal Perfect Wh-Questions"
+    },
+    {
+      "id": "qf_l156_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I was sure he would have remembered her birthday, but he seems surprised when I mention it.",
+      "sentence": "I was sure he would have remembered her birthday, but he seems surprised when I mention it.",
+      "options": [
+        "Doesn't he wouldn't have remembered her birthday?",
+        "Wouldn't he have remembered her birthday?",
+        "Wouldn't he have remember her birthday?",
+        "Wouldn't he remembered her birthday?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Wouldn't he have remembered her birthday?",
+      "hint": "Move 'wouldn't' to the front, keeping 'have remembered' together.",
+      "explanation": "'Wouldn't have' questions an assumption about the past. It moves to the front, and 'have remembered' stays together.",
+      "grammarRule": "Modal Perfect Negative Questions"
+    },
+    {
+      "id": "qf_l156_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I assumed they would have received the notice by now, but they say they haven't seen anything.",
+      "sentence": "I assumed they would have received the notice by now, but they say they haven't seen anything.",
+      "options": [
+        "Wouldn't they have received the notice by now?",
+        "Doesn't they wouldn't have received the notice by now?",
+        "Wouldn't they have receive the notice by now?",
+        "Wouldn't they received the notice by now?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Wouldn't they have received the notice by now?",
+      "hint": "Move 'wouldn't' to the front, keeping 'have received' together.",
+      "explanation": "'Wouldn't' moves to the front, and 'have received' remains together as the modal perfect verb phrase.",
+      "grammarRule": "Modal Perfect Negative Questions"
+    },
+    {
+      "id": "qf_l156_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I assumed she shouldn't have needed help, given her experience, but she asked for some anyway.",
+      "sentence": "I assumed she shouldn't have needed help, given her experience, but she asked for some anyway.",
+      "options": [
+        "Doesn't she shouldn't have needed help, given her experience?",
+        "Shouldn't she have need help, given her experience?",
+        "Shouldn't she needed help, given her experience?",
+        "Shouldn't she have needed help, given her experience?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Shouldn't she have needed help, given her experience?",
+      "hint": "Move 'shouldn't' to the front, keeping 'have needed' together.",
+      "explanation": "'Shouldn't have' questions an expectation about the past. It moves to the front, and 'have needed' stays together.",
+      "grammarRule": "Modal Perfect Negative Questions"
+    },
+    {
+      "id": "qf_l157_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "It's possible the package was left with a neighbor.",
+      "sentence": "It's possible the package was left with a neighbor.",
+      "options": [
+        "Could the package have been left with a neighbor?",
+        "Does the package could have been left with a neighbor?",
+        "Could the package have been leave with a neighbor?",
+        "Could the package been have left with a neighbor?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Could the package have been left with a neighbor?",
+      "hint": "Keep 'have been left' together, moving only 'could' to the front.",
+      "explanation": "'Could' moves to the front, and 'have been left' stays together as the modal perfect passive verb phrase.",
+      "grammarRule": "Modal Perfect Passive Questions"
+    },
+    {
+      "id": "qf_l157_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "It seems very likely the documents were signed already.",
+      "sentence": "It seems very likely the documents were signed already.",
+      "options": [
+        "Does the documents must have been signed already?",
+        "Must the documents have been sign already?",
+        "Must the documents have been signed already?",
+        "Must the documents been have signed already?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Must the documents have been signed already?",
+      "hint": "Keep 'have been signed' together, moving only 'must' to the front.",
+      "explanation": "'Must' moves to the front, and 'have been signed' remains together as the modal perfect passive verb phrase.",
+      "grammarRule": "Modal Perfect Passive Questions"
+    },
+    {
+      "id": "qf_l157_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Perhaps the email was sent to the wrong address.",
+      "sentence": "Perhaps the email was sent to the wrong address.",
+      "options": [
+        "Might the email have been sent to the wrong address?",
+        "Does the email might have been sent to the wrong address?",
+        "Might the email have been send to the wrong address?",
+        "Might the email been have sent to the wrong address?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Might the email have been sent to the wrong address?",
+      "hint": "Keep 'have been sent' together, moving only 'might' to the front.",
+      "explanation": "'Might' moves to the front, and 'have been sent' stays together as the modal perfect passive verb phrase.",
+      "grammarRule": "Modal Perfect Passive Questions"
+    },
+    {
+      "id": "qf_l158_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Someone must have left this note on the desk.",
+      "sentence": "Someone must have left this note on the desk.",
+      "options": [
+        "Who does could have left this note on the desk?",
+        "Who could have left this note on the desk?",
+        "Who could have leave this note on the desk?",
+        "Who could left this note on the desk?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Who could have left this note on the desk?",
+      "hint": "Move 'could' after 'who', keeping 'have left' together.",
+      "explanation": "'Could' moves after the question word, and 'have left' stays together as the modal perfect verb phrase.",
+      "grammarRule": "Modal Perfect Wh-Questions: Who / Where / What"
+    },
+    {
+      "id": "qf_l158_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The car must have broken down somewhere on the highway.",
+      "sentence": "The car must have broken down somewhere on the highway.",
+      "options": [
+        "Where does the car could have broken down?",
+        "Where could the car have break down?",
+        "Where could the car broken down?",
+        "Where could the car have broken down?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Where could the car have broken down?",
+      "hint": "Move 'could' after 'where', keeping 'have broken down' together.",
+      "explanation": "'Could' moves after the question word, and 'have broken down' remains together as the modal perfect verb phrase.",
+      "grammarRule": "Modal Perfect Wh-Questions: Who / Where / What"
+    },
+    {
+      "id": "qf_l158_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Something must have gone wrong with the shipment.",
+      "sentence": "Something must have gone wrong with the shipment.",
+      "options": [
+        "What does could have gone wrong with the shipment?",
+        "What could have gone wrong with the shipment?",
+        "What could have go wrong with the shipment?",
+        "What could gone wrong with the shipment?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "What could have gone wrong with the shipment?",
+      "hint": "Since 'what' is the subject here, simply keep 'could have gone' together.",
+      "explanation": "Because 'what' replaces the subject, the order stays the same: 'what could have gone wrong'.",
+      "grammarRule": "Modal Perfect Wh-Questions: Who / Where / What"
+    },
+    {
+      "id": "qf_l159_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "It's possible the witness misremembered the details.",
+      "sentence": "It's possible the witness misremembered the details.",
+      "options": [
+        "Does the witness could have misremembered the details?",
+        "Could the witness have misremember the details?",
+        "Could the witness have misremembered the details?",
+        "Could the witness misremembered the details?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Could the witness have misremembered the details?",
+      "hint": "Move 'could' to the front, keeping 'have misremembered' together.",
+      "explanation": "'Could' moves to the front, and 'have misremembered' stays together as the modal perfect verb phrase.",
+      "grammarRule": "Modal Perfect Questions: Mixed Reinforcement"
+    },
+    {
+      "id": "qf_l159_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "It seems very likely the battery died overnight.",
+      "sentence": "It seems very likely the battery died overnight.",
+      "options": [
+        "Does the battery must have died overnight?",
+        "Must the battery have died overnight?",
+        "Must the battery have die overnight?",
+        "Must the battery died overnight?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Must the battery have died overnight?",
+      "hint": "Move 'must' to the front, keeping 'have died' together.",
+      "explanation": "'Must' moves to the front, and 'have died' remains together as the modal perfect verb phrase.",
+      "grammarRule": "Modal Perfect Questions: Mixed Reinforcement"
+    },
+    {
+      "id": "qf_l159_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Perhaps she misheard the announcement at the gate.",
+      "sentence": "Perhaps she misheard the announcement at the gate.",
+      "options": [
+        "Does she might have misheard the announcement at the gate?",
+        "Might she have mishear the announcement at the gate?",
+        "Might she misheard the announcement at the gate?",
+        "Might she have misheard the announcement at the gate?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Might she have misheard the announcement at the gate?",
+      "hint": "Move 'might' to the front, keeping 'have misheard' together.",
+      "explanation": "'Might' moves to the front, and 'have misheard' stays together, forming this tentative question about the past.",
+      "grammarRule": "Modal Perfect Questions: Mixed Reinforcement"
+    },
+    {
+      "id": "qf_l160_q1",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "I was certain they would have called if there was a problem, but the phone never rang.",
+      "sentence": "I was certain they would have called if there was a problem, but the phone never rang.",
+      "options": [
+        "Doesn't they wouldn't have called if there was a problem?",
+        "Wouldn't they have call if there was a problem?",
+        "Wouldn't they have called if there was a problem?",
+        "Wouldn't they called if there was a problem?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Wouldn't they have called if there was a problem?",
+      "hint": "Move 'wouldn't' to the front, keeping 'have called' together.",
+      "explanation": "'Wouldn't have' questions an assumption about the past. It moves to the front, and 'have called' stays together.",
+      "grammarRule": "Modal Perfect Questions: Mixed Review"
+    },
+    {
+      "id": "qf_l160_q2",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "It's possible the flight was rescheduled without notice.",
+      "sentence": "It's possible the flight was rescheduled without notice.",
+      "options": [
+        "Does the flight could have been rescheduled without notice?",
+        "Could the flight have been reschedule without notice?",
+        "Could the flight have been rescheduled without notice?",
+        "Could the flight been have rescheduled without notice?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Could the flight have been rescheduled without notice?",
+      "hint": "Keep 'have been rescheduled' together, moving only 'could' to the front.",
+      "explanation": "'Could' moves to the front, and 'have been rescheduled' stays together as the modal perfect passive verb phrase.",
+      "grammarRule": "Modal Perfect Questions: Mixed Review"
+    },
+    {
+      "id": "qf_l160_q3",
+      "instruction": "Turn the statement into a question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Something must have distracted the driver just before the turn.",
+      "sentence": "Something must have distracted the driver just before the turn.",
+      "options": [
+        "What does could have distracted the driver just before the turn?",
+        "What could have distract the driver just before the turn?",
+        "What could have distracted the driver just before the turn?",
+        "What could distracted the driver just before the turn?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "What could have distracted the driver just before the turn?",
+      "hint": "Since 'what' is the subject here, simply keep 'could have distracted' together.",
+      "explanation": "Because 'what' replaces the subject, the word order stays the same: 'what could have distracted'.",
+      "grammarRule": "Modal Perfect Questions: Mixed Review"
+    }
+  ]
 }

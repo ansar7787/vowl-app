@@ -1,577 +1,577 @@
 {
-    "gameType": "questionFormatter",
-    "batchIndex": 17,
-    "levels": "161-170",
-    "quests": [
-        {
-            "id": "qf_l161_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence uses 'as' with greatest precision?",
-            "sentence": "Which sentence uses 'as' with greatest precision?",
-            "options": [
-                "As a result of the restructuring, profits rose sharply.",
-                "As the restructuring, profits rose sharply.",
-                "As the profits rose, restructuring resulted.",
-                "As sharply the profits rose from restructuring."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "As a result of the restructuring, profits rose sharply.",
-            "hint": "'As a result of + noun' is the precise causal connector.",
-            "explanation": "'As a result of + noun phrase' expresses cause-and-effect. Bare 'as' alone cannot introduce a noun phrase for causation. 'As the restructuring' would mean 'while the restructuring was happening', not 'because of it'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l161_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "_____ of the research budget went on equipment, with the rest allocated to personnel.",
-            "sentence": "_____ of the research budget went on equipment, with the rest allocated to personnel.",
-            "options": [
-                "The bulk",
-                "The majority",
-                "Most",
-                "A large proportion"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The bulk",
-            "hint": "'The bulk of' = the largest part of something - precise for financial context.",
-            "explanation": "'The bulk of' means the largest part of something, with a connotation of substantial majority. 'The majority of' is also acceptable. 'Most' is less formal. 'A large proportion of' hedges more. 'The bulk of' is most precise for formal financial context.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l161_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which is the most natural nominalisation of 'Many people left the area'?",
-            "sentence": "Which is the most natural nominalisation of 'Many people left the area'?",
-            "options": [
-                "There was a significant exodus from the area.",
-                "A significant leaving of people from the area happened.",
-                "Many leavings happened from the area.",
-                "There was a departure by many from the area."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "There was a significant exodus from the area.",
-            "hint": "'Exodus' is the precise formal noun for mass departure.",
-            "explanation": "'Exodus' is the precise noun for mass departure. 'Significant leaving' and 'many leavings' are awkward - 'leaving' in this sense is rarely countable. 'A departure by many' is valid but less precise and elegant.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l162_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "What does 'had had' mean in: 'She had had enough of the delays.'?",
-            "sentence": "What does 'had had' mean in: 'She had had enough of the delays.'?",
-            "options": [
-                "It is past perfect of 'have' (experience): she had experienced enough delays by that point.",
-                "It is a typing error - only one 'had' is needed.",
-                "The first 'had' is auxiliary; the second means 'received'.",
-                "It uses 'had' as a main verb twice, which is redundant."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "It is past perfect of 'have' (experience): she had experienced enough delays by that point.",
-            "hint": "'Had had' = past perfect of 'to have' as a main verb: first 'had' is auxiliary, second is main verb.",
-            "explanation": "'Had had' is the past perfect of 'to have' as a main verb ('have' meaning experience/receive). The first 'had' is the auxiliary forming the past perfect; the second 'had' is the past simple of the main verb 'to have'. So 'she had had enough' = by that moment, she had experienced enough.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l162_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "'The book that I was telling you about has been published.' What does 'that' refer to?",
-            "sentence": "'The book that I was telling you about has been published.' What does 'that' refer to?",
-            "options": [
-                "It is the object of 'about' in the relative clause ('about which').",
-                "It is the subject of the relative clause.",
-                "It is a conjunction linking two clauses.",
-                "It is a demonstrative pronoun referring to publication."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "It is the object of 'about' in the relative clause ('about which').",
-            "hint": "'That' replaces 'which' as the object of the preposition 'about' at the end of the relative clause.",
-            "explanation": "In 'the book that I was telling you about', 'that' is the object of the preposition 'about' (formal: 'the book about which I was telling you'). In informal English, the preposition moves to the end and 'that' or zero-pronoun replaces 'which'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l162_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence most elegantly avoids ending with a preposition in formal writing?",
-            "sentence": "Which sentence most elegantly avoids ending with a preposition in formal writing?",
-            "options": [
-                "This is the proposal on which we should focus.",
-                "This is the proposal we should focus on.",
-                "This is the proposal which we should focus on.",
-                "This is the proposal that we should be focusing on."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "This is the proposal on which we should focus.",
-            "hint": "Fronting the preposition ('on which') avoids ending the relative clause with a preposition.",
-            "explanation": "In formal written English, prepositions are traditionally placed before the relative pronoun: 'on which we should focus'. The informal 'focus on' at the end is widely accepted in modern English but less preferred in formal writing. 'That' cannot follow a preposition, so 'on that' would be ungrammatical.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l163_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "'The conditions that need to be met are as follows: ...' - What is the function of 'as follows'?",
-            "sentence": "'The conditions that need to be met are as follows: ...' - What is the function of 'as follows'?",
-            "options": [
-                "It is a fixed phrase introducing a list or explanation that comes next.",
-                "It means 'as previously stated'.",
-                "It introduces a comparison.",
-                "It signals the conclusion of a list."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "It is a fixed phrase introducing a list or explanation that comes next.",
-            "hint": "'As follows' introduces what comes next - typically a list or specification.",
-            "explanation": "'As follows:' is a fixed phrase used before a list or specification. It introduces what comes immediately after, not what has been said before. It always ends with a colon and is followed by the list or explanation.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l163_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which correctly uses 'the former' and 'the latter' in a complex sentence?",
-            "sentence": "Which correctly uses 'the former' and 'the latter' in a complex sentence?",
-            "options": [
-                "Between innovation and efficiency, the former drives growth while the latter reduces costs.",
-                "Between innovation and efficiency, the latter drives growth while the former reduces costs.",
-                "Between innovation, efficiency, and quality, the latter is most important.",
-                "The former and latter both refer to innovation and efficiency respectively."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Between innovation and efficiency, the former drives growth while the latter reduces costs.",
-            "hint": "'Former' = first mentioned; 'latter' = second mentioned. They only work for exactly two referents.",
-            "explanation": "'Former' and 'latter' are only used when exactly two items have been mentioned. With three or more items, use 'the last mentioned' or repeat the noun. Innovation is mentioned first (former → drives growth); efficiency is second (latter → reduces costs).",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l163_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence uses 'whatever' as a concessive pronoun correctly?",
-            "sentence": "Which sentence uses 'whatever' as a concessive pronoun correctly?",
-            "options": [
-                "Whatever happens, we will support your decision.",
-                "Whatever it happens, we will support your decision.",
-                "Whatever happens to, we will support your decision.",
-                "However happens, we will support your decision."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Whatever happens, we will support your decision.",
-            "hint": "'Whatever happens' = 'regardless of what happens' - 'whatever' is the subject of the embedded clause.",
-            "explanation": "'Whatever happens' = 'no matter what happens'. 'Whatever' is a relative pronoun that also functions as the subject of the embedded clause - no additional 'it' or 'to' is needed. 'However happens' is wrong because 'however' modifies adjectives/adverbs, not verbs.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l164_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Identify the most precise word: 'The scandal _____ serious questions about corporate governance.'",
-            "sentence": "Identify the most precise word: 'The scandal _____ serious questions about corporate governance.'",
-            "options": [
-                "raised",
-                "asked",
-                "made",
-                "produced"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "raised",
-            "hint": "'Raise questions' = bring questions to attention - the standard collocation.",
-            "explanation": "'Raise questions' is the standard collocation meaning to bring questions to public attention. 'Ask questions' requires a human subject. 'Make questions' is not a standard collocation. 'Produce questions' is grammatically possible but unidiomatic.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l164_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence avoids the error with 'comprise'?",
-            "sentence": "Which sentence avoids the error with 'comprise'?",
-            "options": [
-                "The team comprises five members.",
-                "The team is comprised of five members.",
-                "The team comprises of five members.",
-                "Five members are comprised by the team."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The team comprises five members.",
-            "hint": "'Comprise' means 'consist of/include' - it takes a direct object with no preposition.",
-            "explanation": "'Comprise' means 'consist of': 'the team comprises five members' = 'the team consists of five members'. It never takes 'of' directly: 'comprises of' is incorrect. 'Is comprised of' is widely used but traditionally considered incorrect - 'comprises' or 'consists of' are preferred.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l164_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "'Less' vs 'fewer': which is correct? 'We need _____ resources and _____ staff.'",
-            "sentence": "'Less' vs 'fewer': which is correct? 'We need _____ resources and _____ staff.'",
-            "options": [
-                "fewer / fewer",
-                "less / less",
-                "fewer / less",
-                "less / fewer"
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "fewer / fewer",
-            "hint": "'Fewer' = countable nouns; 'less' = uncountable nouns. Both 'resources' and 'staff' are countable here.",
-            "explanation": "'Fewer' is used with countable nouns; 'less' with uncountable. 'Resources' and 'staff' are both countable (individual resources, individual staff members), so both take 'fewer'. 'Staff' as a collective noun can be tricky - but in context of reducing numbers, 'fewer staff' is correct.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l165_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence uses 'such as' vs 'like' correctly in formal writing?",
-            "sentence": "Which sentence uses 'such as' vs 'like' correctly in formal writing?",
-            "options": [
-                "In subjects such as maths and science, precision is crucial.",
-                "In subjects like maths and science, precision is crucial.",
-                "In subjects such as maths and like science, precision is crucial.",
-                "In subjects including such as maths, precision is crucial."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "In subjects such as maths and science, precision is crucial.",
-            "hint": "'Such as' introduces examples in formal writing; 'like' is informal (and sometimes considered incorrect for examples).",
-            "explanation": "In formal writing, 'such as' is preferred for introducing examples. 'Like' is commonly used informally but traditional grammar discourages using 'like' (a preposition of similarity) for introducing examples. 'Such as' clearly signals 'for example'. 'Including such as' is redundant.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l165_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Choose the correctly punctuated sentence with a non-defining relative clause:",
-            "sentence": "Choose the correctly punctuated sentence with a non-defining relative clause:",
-            "options": [
-                "My sister, who lives in Tokyo, is visiting next month.",
-                "My sister who lives in Tokyo is visiting next month.",
-                "My sister, that lives in Tokyo, is visiting next month.",
-                "My sister who, lives in Tokyo, is visiting next month."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "My sister, who lives in Tokyo, is visiting next month.",
-            "hint": "Non-defining relative clauses are set off by commas and use 'who', never 'that'.",
-            "explanation": "Non-defining relative clauses (adding non-essential information) must be set off by commas and use 'who' for people, never 'that'. Without commas, the clause becomes defining (implying you have multiple sisters). 'That' cannot be used in non-defining clauses.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l165_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which correctly expresses a counterfactual using inversion?",
-            "sentence": "Which correctly expresses a counterfactual using inversion?",
-            "options": [
-                "Were the evidence stronger, we could proceed.",
-                "If would the evidence be stronger, we could proceed.",
-                "Had the evidence been stronger, we could proceed now.",
-                "Should the evidence be stronger, we would have proceeded."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Were the evidence stronger, we could proceed.",
-            "hint": "'Were + subject + adjective' = inverted second conditional for present/future hypothetical.",
-            "explanation": "'Were the evidence stronger' = 'If the evidence were stronger' - inverted second conditional for a current hypothetical. 'Had the evidence been stronger, we could proceed now' is a mixed conditional (past condition, present result) - also grammatically valid but different in meaning.",
-            "grammarRule": "Verb 'To Be' Questions"
-        },
-        {
-            "id": "qf_l166_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence uses 'that' as a complementizer correctly?",
-            "sentence": "Which sentence uses 'that' as a complementizer correctly?",
-            "options": [
-                "The fact that she resigned shocked everyone.",
-                "The fact which she resigned shocked everyone.",
-                "The fact about that she resigned shocked everyone.",
-                "The fact of she resigned shocked everyone."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The fact that she resigned shocked everyone.",
-            "hint": "'The fact that + clause' - 'that' is a complementizer introducing a noun complement clause.",
-            "explanation": "'The fact that + clause' is the noun complement structure. 'Which' would introduce a relative clause. 'About that' creates a prepositional phrase that cannot directly introduce a complement clause in this structure. 'Of she resigned' requires a gerund: 'of her resigning'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l166_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence demonstrates correct use of inversion after 'nor'?",
-            "sentence": "Which sentence demonstrates correct use of inversion after 'nor'?",
-            "options": [
-                "She didn't attend the conference, nor did her colleagues.",
-                "She didn't attend the conference, nor her colleagues did.",
-                "She didn't attend the conference, nor her colleagues attended.",
-                "She didn't attend the conference, nor do her colleagues."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She didn't attend the conference, nor did her colleagues.",
-            "hint": "After 'nor', subject-auxiliary inversion is required: 'nor did...'",
-            "explanation": "'Nor' at the start of a clause triggers subject-auxiliary inversion: 'nor did her colleagues'. This parallels the inversion after 'neither'. 'Nor her colleagues did' (no inversion) is informal or non-standard. The tense must match: 'didn't attend' → 'nor did'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l166_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which best describes the function of 'do' in: 'I do think you should reconsider.'?",
-            "sentence": "Which best describes the function of 'do' in: 'I do think you should reconsider.'?",
-            "options": [
-                "Emphatic 'do' adds stress to the main verb in an affirmative sentence.",
-                "'Do' is the main verb, meaning 'perform' or 'carry out'.",
-                "'Do' forms a present-simple question structure.",
-                "'Do' is a redundant auxiliary that adds no meaning."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Emphatic 'do' adds stress to the main verb in an affirmative sentence.",
-            "hint": "Emphatic 'do/does/did' before the base verb in affirmative sentences adds stress or contradiction.",
-            "explanation": "Emphatic 'do' in affirmative statements adds stress or counters a previous negative: 'I do think' = I genuinely think (emphasising sincerity). This is not a question ('Do I think?'). The 'do' changes the prosody - it is spoken with stress - and adds no new proposition, but it does add a pragmatic meaning of emphasis.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l167_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "'Providing that all documents are submitted, the visa will be approved.' Which type of conditional is this?",
-            "sentence": "'Providing that all documents are submitted, the visa will be approved.' Which type of conditional is this?",
-            "options": [
-                "It is a real conditional (first conditional equivalent) with a formal connector.",
-                "It is a third conditional expressing a past hypothetical.",
-                "It is a second conditional expressing an imaginary scenario.",
-                "It is a mixed conditional combining past and present."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "It is a real conditional (first conditional equivalent) with a formal connector.",
-            "hint": "'Providing that' = 'as long as' = a positive condition for a real future result.",
-            "explanation": "'Providing that all documents are submitted' introduces a real, achievable condition. The result is a future certainty if the condition is met. This is equivalent to a first conditional but uses a formal connector instead of 'if'. Third and second conditionals are for hypothetical or past scenarios.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l167_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which correctly uses a participle clause to express a reason?",
-            "sentence": "Which correctly uses a participle clause to express a reason?",
-            "options": [
-                "Not knowing the answer, she remained silent.",
-                "Not knowing the answer, the silence was maintained.",
-                "The answer not knowing, she remained silent.",
-                "Because not knowing the answer, she remained silent."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Not knowing the answer, she remained silent.",
-            "hint": "Participle clause expressing reason: subject of participle must match subject of main clause.",
-            "explanation": "'Not knowing the answer, she remained silent' is correct - 'she' is both the one who doesn't know and the one who stays silent. 'Not knowing the answer, the silence was maintained' is a dangling modifier - silence can't know things. 'Because not knowing' is ungrammatical - use 'because she didn't know'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l167_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "What is the rhetorical effect of: 'The question is not whether we can afford to invest in education, but whether we can afford not to.'?",
-            "sentence": "What is the rhetorical effect of: 'The question is not whether we can afford to invest in education, but whether we can afford not to.'?",
-            "options": [
-                "It uses antithesis to create a paradox that strengthens the argument for investment.",
-                "It uses a conditional structure to express uncertainty about investment.",
-                "It is an indirect question embedded in a declarative sentence.",
-                "It uses ellipsis to avoid repeating 'invest in education'."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "It uses antithesis to create a paradox that strengthens the argument for investment.",
-            "hint": "Antithesis ('not X but Y') creates emphasis by setting up and reversing the expected argument.",
-            "explanation": "This sentence uses antithesis: 'not whether we can afford... but whether we can afford not to'. By reversing the cost argument, it implies that not investing is the greater financial risk. The 'not to' at the end is also an example of ellipsis (omitting 'invest in education'). The antithesis creates rhetorical force.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l168_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Identify the tense and aspect: 'By next June, she will have been working here for a decade.'",
-            "sentence": "Identify the tense and aspect: 'By next June, she will have been working here for a decade.'",
-            "options": [
-                "Future perfect continuous - action ongoing from past up to a future point.",
-                "Future simple - prediction about next June.",
-                "Present perfect continuous - action ongoing to the present.",
-                "Future continuous - action happening at the moment of next June."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Future perfect continuous - action ongoing from past up to a future point.",
-            "hint": "'Will have been + V-ing' = future perfect continuous, projecting a continuous span to a future point.",
-            "explanation": "'Will have been working' is the future perfect continuous. It projects a span of continuous action ('been working') that will have been completed by a future point ('by next June'). This expresses both the completion and the ongoing nature of the duration.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l168_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which correctly uses 'be to' for future obligation?",
-            "sentence": "Which correctly uses 'be to' for future obligation?",
-            "options": [
-                "You are to report to the main office immediately.",
-                "You are to be reporting to the main office immediately.",
-                "You are reporting to the main office immediately.",
-                "You have to be reporting to the main office immediately."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "You are to report to the main office immediately.",
-            "hint": "'Be + to-infinitive' expresses official obligation or arrangement for the near future.",
-            "explanation": "'Be to + base infinitive' expresses an arrangement, instruction, or obligation - especially in official/formal contexts. It often appears in headlines and official orders: 'You are to report...' = 'You must report / You are required to report.' 'Be to + continuous infinitive' is not standard for this use.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l168_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence correctly uses 'let alone'?",
-            "sentence": "Which sentence correctly uses 'let alone'?",
-            "options": [
-                "She can't afford a holiday, let alone a new car.",
-                "She can't afford a holiday, let alone she can't afford a new car.",
-                "Let alone a holiday, she can't afford a new car.",
-                "She can't a holiday afford, let alone a car new."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She can't afford a holiday, let alone a new car.",
-            "hint": "'Let alone' introduces a more extreme item in a negative context - the second item must be harder to achieve.",
-            "explanation": "'Let alone' is used after a negative to introduce something even less possible: 'can't afford a holiday, let alone a new car' (a car is more expensive). The second item must be a step beyond the first in the same negative direction. 'Let alone' is followed directly by the noun/phrase, not a full clause.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l169_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence correctly uses 'used to' vs 'would' for past habits?",
-            "sentence": "Which sentence correctly uses 'used to' vs 'would' for past habits?",
-            "options": [
-                "She used to live near the sea, and she would often walk on the beach.",
-                "She would live near the sea, and she used to often walk on the beach.",
-                "She used to live near the sea, and she used to often walk on the beach.",
-                "She would have lived near the sea, and she would often walk on the beach."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She used to live near the sea, and she would often walk on the beach.",
-            "hint": "'Used to' = past state OR habit; 'would' = past habit ONLY (not states). Both can describe habits.",
-            "explanation": "'Used to' can describe past states ('used to live') and habits. 'Would' can only describe habits, not states - 'would live' for a state sounds unnatural. Both 'used to walk' and 'would walk' are correct for habitual past actions. The sentence correctly uses 'used to' for the state (living) and 'would' for the habit (walking).",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l169_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which is the correct interpretation of: 'You should have seen her face!'?",
-            "sentence": "Which is the correct interpretation of: 'You should have seen her face!'?",
-            "options": [
-                "It expresses regret that the listener missed a remarkable experience.",
-                "It expresses an obligation to look at someone's face.",
-                "It expresses a past deduction about what the listener saw.",
-                "It expresses a future obligation using a past modal."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "It expresses regret that the listener missed a remarkable experience.",
-            "hint": "'Should have + past participle' in exclamative contexts = expressing what a pity someone missed.",
-            "explanation": "'You should have seen' in an exclamative context means 'it's a pity you didn't see it - it was remarkable'. This is an informal use of 'should have' to express regret on behalf of the listener. It does not express obligation (that would need a serious context) or deduction.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l169_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence uses 'may have' vs 'might have' with the correct nuance?",
-            "sentence": "Which sentence uses 'may have' vs 'might have' with the correct nuance?",
-            "options": [
-                "She may have taken the wrong exit - I'm not certain either way.",
-                "She might have taken the wrong exit - we know she did.",
-                "She may have taken the wrong exit - it's theoretically possible but very unlikely.",
-                "She might have taken the wrong exit - it's not allowed."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She may have taken the wrong exit - I'm not certain either way.",
-            "hint": "'May have' and 'might have' are both used for past possibility; 'might have' is often slightly less certain.",
-            "explanation": "Both 'may have' and 'might have' express past possibility/uncertainty. 'May have' tends to be used when the possibility seems more equal (50/50). 'Might have' is often slightly more tentative. The key is that both express genuine uncertainty - not certainty ('we know she did') or prohibition ('not allowed').",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l170_q1",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which correctly demonstrates subject-verb inversion after a negative fronted expression?",
-            "sentence": "Which correctly demonstrates subject-verb inversion after a negative fronted expression?",
-            "options": [
-                "Under no circumstances should you share your password.",
-                "Under no circumstances you should share your password.",
-                "Under no circumstances do you share your password.",
-                "Under no circumstances you share your password."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Under no circumstances should you share your password.",
-            "hint": "Negative fronting ('Under no circumstances') triggers subject-auxiliary inversion.",
-            "explanation": "Negative fronted expressions like 'Under no circumstances', 'On no account', 'In no way' trigger subject-auxiliary inversion: 'should you share'. 'You should share' (no inversion) is the non-emphatic statement form. 'Do you share' would imply a question about general habit.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l170_q2",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence uses 'what' as a relative pronoun (free relative) correctly?",
-            "sentence": "Which sentence uses 'what' as a relative pronoun (free relative) correctly?",
-            "options": [
-                "What she told me shocked everyone in the room.",
-                "What she told me it shocked everyone in the room.",
-                "What did she tell me shocked everyone in the room.",
-                "The thing what she told me shocked everyone in the room."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "What she told me shocked everyone in the room.",
-            "hint": "Free relative 'What she told me' = 'the thing that she told me' - 'what' is both determiner and relative pronoun.",
-            "explanation": "A free relative clause ('what she told me') functions as a noun phrase meaning 'the thing(s) that she told me'. 'What' simultaneously refers to the content and introduces the clause. Adding 'it' creates a double subject. 'What did she tell me' inverts for a question, which is wrong here. 'The thing what' is ungrammatical - use 'the thing that'.",
-            "grammarRule": "Question Formation"
-        },
-        {
-            "id": "qf_l170_q3",
-            "instruction": "Turn the statement into a question.",
-            "subtype": "questionFormatter",
-            "interactionType": "Crank Logic",
-            "question": "Which sentence correctly uses the subjunctive in a formal wish?",
-            "sentence": "Which sentence correctly uses the subjunctive in a formal wish?",
-            "options": [
-                "The proposal requires that each member submit a signed declaration.",
-                "The proposal requires that each member submits a signed declaration.",
-                "The proposal requires each member to submit a signed declaration.",
-                "The proposal requires each member submitting a signed declaration."
-            ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The proposal requires that each member submit a signed declaration.",
-            "hint": "After 'require that', the formal subjunctive uses the base verb (no -s for 3rd person).",
-            "explanation": "After 'require/insist/demand that', the subjunctive uses the base verb for all subjects: 'each member submit' (not 'submits'). 'Requires each member to submit' (infinitive) is also grammatically correct and widely used. Both the subjunctive and the infinitive construction are acceptable.",
-            "grammarRule": "Question Formation"
-        }
-    ]
+  "gameType": "questionFormatter",
+  "batchIndex": 17,
+  "levels": "161-170",
+  "quests": [
+    {
+      "id": "qf_l161_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Why was the shipment delayed at customs?",
+      "sentence": "Why was the shipment delayed at customs?",
+      "options": [
+        "I was wondering if you could tell me why was the shipment delayed at customs?",
+        "I was wondering if you could tell me why the shipment was delayed at customs?",
+        "I was wondering if you could tell me why the shipment delayed was at customs?",
+        "I was wondering if you could tell me that why the shipment was delayed at customs?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "I was wondering if you could tell me why the shipment was delayed at customs?",
+      "hint": "Keep statement word order inside the embedded clause: 'the shipment was delayed'.",
+      "explanation": "Even in this longer, more formal frame, the embedded clause keeps statement word order: 'why the shipment was delayed', not 'why was the shipment'.",
+      "grammarRule": "Formal Embedded Questions: 'I Was Wondering If You Could Tell Me...'"
+    },
+    {
+      "id": "qf_l161_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "How much will the renovation ultimately cost?",
+      "sentence": "How much will the renovation ultimately cost?",
+      "options": [
+        "I was wondering if you could tell me how much will the renovation ultimately cost?",
+        "I was wondering if you could tell me how much the renovation cost will ultimately?",
+        "I was wondering if you could tell me that how much the renovation will ultimately cost?",
+        "I was wondering if you could tell me how much the renovation will ultimately cost?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "I was wondering if you could tell me how much the renovation will ultimately cost?",
+      "hint": "Move 'will' back after the subject, keeping statement word order.",
+      "explanation": "The embedded clause uses statement word order: 'the renovation will ultimately cost', not 'will the renovation cost'.",
+      "grammarRule": "Formal Embedded Questions: 'I Was Wondering If You Could Tell Me...'"
+    },
+    {
+      "id": "qf_l161_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Who will be representing the company at the conference?",
+      "sentence": "Who will be representing the company at the conference?",
+      "options": [
+        "I was wondering if you could tell me who's will be representing the company at the conference?",
+        "I was wondering if you could tell me who will be representing the company at the conference?",
+        "I was wondering if you could tell me will who be representing the company at the conference?",
+        "I was wondering if you could tell me who will representing be the company at the conference?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "I was wondering if you could tell me who will be representing the company at the conference?",
+      "hint": "Since 'who' is the subject here, the word order doesn't change at all.",
+      "explanation": "Because 'who' is already the subject of the original question, embedding it keeps the exact same word order: 'who will be representing'.",
+      "grammarRule": "Formal Embedded Questions: 'I Was Wondering If You Could Tell Me...'"
+    },
+    {
+      "id": "qf_l162_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Why has the delivery been delayed so many times?",
+      "sentence": "Why has the delivery been delayed so many times?",
+      "options": [
+        "Might I ask why the delivery has been delayed so many times?",
+        "Might I ask why has the delivery been delayed so many times?",
+        "Might I ask why the delivery been has delayed so many times?",
+        "Might I ask that why the delivery has been delayed so many times?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Might I ask why the delivery has been delayed so many times?",
+      "hint": "Move 'has' back after the subject, keeping 'been delayed' together.",
+      "explanation": "This formal embedded question keeps statement word order: 'the delivery has been delayed', not 'has the delivery been'.",
+      "grammarRule": "Formal Embedded Questions: 'Might I Ask...?'"
+    },
+    {
+      "id": "qf_l162_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "What time does the board meeting officially begin?",
+      "sentence": "What time does the board meeting officially begin?",
+      "options": [
+        "Might I ask what time does the board meeting officially begin?",
+        "Might I ask what time the board meeting officially begin?",
+        "Might I ask that what time does the board meeting officially begin?",
+        "Might I ask what time the board meeting officially begins?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Might I ask what time the board meeting officially begins?",
+      "hint": "No 'does' is needed - the verb shows agreement with -s by itself.",
+      "explanation": "Inside the embedded clause, 'does' disappears, and the verb agrees directly with the subject: 'the meeting officially begins'.",
+      "grammarRule": "Formal Embedded Questions: 'Might I Ask...?'"
+    },
+    {
+      "id": "qf_l162_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "How were these figures originally calculated?",
+      "sentence": "How were these figures originally calculated?",
+      "options": [
+        "Might I ask how were these figures originally calculated?",
+        "Might I ask how these figures originally were calculated?",
+        "Might I ask how these figures were originally calculated?",
+        "Might I ask that how were these figures originally calculated?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Might I ask how these figures were originally calculated?",
+      "hint": "Move 'were' back after the subject, keeping 'calculated' unchanged.",
+      "explanation": "The embedded clause uses statement word order: 'these figures were calculated', not 'were these figures calculated'.",
+      "grammarRule": "Formal Embedded Questions: 'Might I Ask...?'"
+    },
+    {
+      "id": "qf_l163_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "When will the final decision be announced?",
+      "sentence": "When will the final decision be announced?",
+      "options": [
+        "Would it be possible to find out when will the final decision be announced?",
+        "Would it be possible to find out when the final decision be will announced?",
+        "Would it be possible to find out that when the final decision will be announced?",
+        "Would it be possible to find out when the final decision will be announced?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Would it be possible to find out when the final decision will be announced?",
+      "hint": "Move 'will' back after the subject, keeping 'be announced' together.",
+      "explanation": "The embedded clause keeps statement word order: 'the decision will be announced', not 'will the decision be'.",
+      "grammarRule": "Formal Embedded Questions: 'Would It Be Possible To Find Out...?'"
+    },
+    {
+      "id": "qf_l163_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Why did the board reject the initial proposal?",
+      "sentence": "Why did the board reject the initial proposal?",
+      "options": [
+        "Would it be possible to find out why did the board reject the initial proposal?",
+        "Would it be possible to find out why the board did reject the initial proposal?",
+        "Would it be possible to find out that why the board rejected the initial proposal?",
+        "Would it be possible to find out why the board rejected the initial proposal?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Would it be possible to find out why the board rejected the initial proposal?",
+      "hint": "'Did' disappears in the embedded clause, so the verb shows the past tense on its own.",
+      "explanation": "Embedded questions drop 'did': 'why the board rejected', with statement word order throughout.",
+      "grammarRule": "Formal Embedded Questions: 'Would It Be Possible To Find Out...?'"
+    },
+    {
+      "id": "qf_l163_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "How much revenue has the new product generated?",
+      "sentence": "How much revenue has the new product generated?",
+      "options": [
+        "Would it be possible to find out how much revenue the new product has generated?",
+        "Would it be possible to find out how much revenue has the new product generated?",
+        "Would it be possible to find out how much revenue the new product generated has?",
+        "Would it be possible to find out that how much revenue has the new product generated?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Would it be possible to find out how much revenue the new product has generated?",
+      "hint": "Move 'has' back after the subject, keeping 'generated' unchanged.",
+      "explanation": "The embedded clause uses statement word order: 'the product has generated', not 'has the product generated'.",
+      "grammarRule": "Formal Embedded Questions: 'Would It Be Possible To Find Out...?'"
+    },
+    {
+      "id": "qf_l164_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Why did the meeting end early even though the agenda wasn't finished?",
+      "sentence": "Why did the meeting end early even though the agenda wasn't finished?",
+      "options": [
+        "Do you have any idea why did the meeting end early even though the agenda wasn't finished?",
+        "Do you have any idea why the meeting did end early even though the agenda wasn't finished?",
+        "Do you have any idea that why the meeting ended early even though the agenda wasn't finished?",
+        "Do you have any idea why the meeting ended early even though the agenda wasn't finished?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Do you have any idea why the meeting ended early even though the agenda wasn't finished?",
+      "hint": "Drop 'did', and let the verb carry the past tense - the 'even though' clause stays attached at the end.",
+      "explanation": "Embedded questions drop 'did': 'why the meeting ended early', while the subordinate clause 'even though...' stays attached exactly as before.",
+      "grammarRule": "Multi-Clause Embedded Questions"
+    },
+    {
+      "id": "qf_l164_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "What should we do if the flight gets canceled?",
+      "sentence": "What should we do if the flight gets canceled?",
+      "options": [
+        "Could you advise me what should we do if the flight gets canceled?",
+        "Could you advise me what we do should if the flight gets canceled?",
+        "Could you advise me what we should do if the flight gets canceled?",
+        "Could you advise me that what should we do if the flight gets canceled?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Could you advise me what we should do if the flight gets canceled?",
+      "hint": "Move 'should' back after the subject - the 'if' clause stays attached at the end.",
+      "explanation": "Embedded questions use statement word order: 'we should do', while 'if the flight gets canceled' stays attached exactly as before.",
+      "grammarRule": "Multi-Clause Embedded Questions"
+    },
+    {
+      "id": "qf_l164_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "How did the team recover after losing their star player?",
+      "sentence": "How did the team recover after losing their star player?",
+      "options": [
+        "Do you know how did the team recover after losing their star player?",
+        "Do you know how the team did recover after losing their star player?",
+        "Do you know how the team recovered after losing their star player?",
+        "Do you know that how the team recovered after losing their star player?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Do you know how the team recovered after losing their star player?",
+      "hint": "Drop 'did', and let the verb carry the past tense - the 'after' phrase stays attached at the end.",
+      "explanation": "Embedded questions drop 'did': 'how the team recovered', while 'after losing their star player' stays attached exactly as before.",
+      "grammarRule": "Multi-Clause Embedded Questions"
+    },
+    {
+      "id": "qf_l165_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Why hasn't the vendor responded even though we sent three emails?",
+      "sentence": "Why hasn't the vendor responded even though we sent three emails?",
+      "options": [
+        "Can you explain why hasn't the vendor responded even though we sent three emails?",
+        "Can you explain why the vendor hasn't responded even though we sent three emails?",
+        "Can you explain why the vendor responded hasn't even though we sent three emails?",
+        "Can you explain that why the vendor hasn't responded even though we sent three emails?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Can you explain why the vendor hasn't responded even though we sent three emails?",
+      "hint": "Move 'hasn't' back after the subject, keeping the 'even though' clause attached.",
+      "explanation": "The embedded clause keeps statement word order: 'the vendor hasn't responded', while 'even though we sent three emails' stays attached at the end.",
+      "grammarRule": "Multi-Clause Embedded Questions: Reason Clauses"
+    },
+    {
+      "id": "qf_l165_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "What happened after the power went out during the presentation?",
+      "sentence": "What happened after the power went out during the presentation?",
+      "options": [
+        "Do you know what did happen after the power went out during the presentation?",
+        "Do you know what happened did after the power went out during the presentation?",
+        "Do you know what happened after the power went out during the presentation?",
+        "Do you know that what happened after the power went out during the presentation?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Do you know what happened after the power went out during the presentation?",
+      "hint": "Since 'what' is the subject here, the word order doesn't change at all.",
+      "explanation": "Because 'what' is already the subject, the embedded form keeps the same word order: 'what happened', with the 'after' clause unchanged.",
+      "grammarRule": "Multi-Clause Embedded Questions: Reason Clauses"
+    },
+    {
+      "id": "qf_l165_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "How much does the repair cost including labor and parts?",
+      "sentence": "How much does the repair cost including labor and parts?",
+      "options": [
+        "Could you tell me how much does the repair cost including labor and parts?",
+        "Could you tell me how much the repair cost does including labor and parts?",
+        "Could you tell me how much the repair costs including labor and parts?",
+        "Could you tell me that how much does the repair cost including labor and parts?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Could you tell me how much the repair costs including labor and parts?",
+      "hint": "Drop 'does', and let the verb take its -s again - the 'including' phrase stays attached.",
+      "explanation": "Embedded questions drop 'does': 'the repair costs', while 'including labor and parts' remains attached exactly as before.",
+      "grammarRule": "Multi-Clause Embedded Questions: Reason Clauses"
+    },
+    {
+      "id": "qf_l166_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Which department handles international shipping requests?",
+      "sentence": "Which department handles international shipping requests?",
+      "options": [
+        "Do you know offhand which department does handle international shipping requests?",
+        "Do you know offhand which department handle international shipping requests?",
+        "Do you know offhand that which department handles international shipping requests?",
+        "Do you know offhand which department handles international shipping requests?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Do you know offhand which department handles international shipping requests?",
+      "hint": "Since 'which department' is the subject here, the word order doesn't change.",
+      "explanation": "Because 'which department' is already the subject, the embedded form keeps the same word order: 'which department handles'.",
+      "grammarRule": "Formal Embedded Questions: Mixed Frames"
+    },
+    {
+      "id": "qf_l166_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Why does this clause override the earlier agreement?",
+      "sentence": "Why does this clause override the earlier agreement?",
+      "options": [
+        "Could you possibly clarify why does this clause override the earlier agreement?",
+        "Could you possibly clarify why this clause overrides the earlier agreement?",
+        "Could you possibly clarify why this clause override the earlier agreement?",
+        "Could you possibly clarify that why this clause overrides the earlier agreement?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Could you possibly clarify why this clause overrides the earlier agreement?",
+      "hint": "Take out 'does' inside the clause, and let the verb take its -s again.",
+      "explanation": "Inside the embedded clause, 'does' disappears, and the verb agrees directly with the subject: 'this clause overrides'.",
+      "grammarRule": "Formal Embedded Questions: Mixed Frames"
+    },
+    {
+      "id": "qf_l166_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "How long has this regulation been in effect?",
+      "sentence": "How long has this regulation been in effect?",
+      "options": [
+        "Could you possibly clarify how long this regulation has been in effect?",
+        "Could you possibly clarify how long has this regulation been in effect?",
+        "Could you possibly clarify how long this regulation been has in effect?",
+        "Could you possibly clarify that how long has this regulation been in effect?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Could you possibly clarify how long this regulation has been in effect?",
+      "hint": "Move 'has' back after the subject, keeping 'been in effect' together.",
+      "explanation": "The embedded clause uses statement word order: 'this regulation has been in effect', not 'has this regulation been'.",
+      "grammarRule": "Formal Embedded Questions: Mixed Frames"
+    },
+    {
+      "id": "qf_l167_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Has the shareholder vote been finalized?",
+      "sentence": "Has the shareholder vote been finalized?",
+      "options": [
+        "Could you confirm whether has the shareholder vote been finalized?",
+        "Could you confirm whether the shareholder vote has been finalized?",
+        "Could you confirm the shareholder vote whether has been finalized?",
+        "Could you confirm that has the shareholder vote been finalized?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Could you confirm whether the shareholder vote has been finalized?",
+      "hint": "Use 'whether', and move 'has' back after the subject.",
+      "explanation": "'Whether' introduces the embedded question, with statement word order: 'the vote has been finalized'.",
+      "grammarRule": "Formal Embedded Yes/No Questions"
+    },
+    {
+      "id": "qf_l167_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Does this clause apply retroactively?",
+      "sentence": "Does this clause apply retroactively?",
+      "options": [
+        "Might I ask whether does this clause apply retroactively?",
+        "Might I ask this clause whether applies retroactively?",
+        "Might I ask that does this clause apply retroactively?",
+        "Might I ask whether this clause applies retroactively?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Might I ask whether this clause applies retroactively?",
+      "hint": "Use 'whether', drop 'does', and let the verb take its -s again.",
+      "explanation": "'Whether' connects the embedded question, and 'does' disappears while the verb takes its normal form: 'this clause applies'.",
+      "grammarRule": "Formal Embedded Yes/No Questions"
+    },
+    {
+      "id": "qf_l167_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Will the merger require regulatory approval?",
+      "sentence": "Will the merger require regulatory approval?",
+      "options": [
+        "Would it be possible to find out whether will the merger require regulatory approval?",
+        "Would it be possible to find out the merger whether will require regulatory approval?",
+        "Would it be possible to find out that will the merger require regulatory approval?",
+        "Would it be possible to find out whether the merger will require regulatory approval?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Would it be possible to find out whether the merger will require regulatory approval?",
+      "hint": "Use 'whether', and move 'will' back after the subject.",
+      "explanation": "'Whether' introduces the embedded question, keeping statement word order: 'the merger will require'.",
+      "grammarRule": "Formal Embedded Yes/No Questions"
+    },
+    {
+      "id": "qf_l168_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Why did the negotiations collapse right before the deadline?",
+      "sentence": "Why did the negotiations collapse right before the deadline?",
+      "options": [
+        "Do you have any idea why did the negotiations collapse right before the deadline?",
+        "Do you have any idea why the negotiations did collapse right before the deadline?",
+        "Do you have any idea why the negotiations collapsed right before the deadline?",
+        "Do you have any idea that why the negotiations collapsed right before the deadline?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Do you have any idea why the negotiations collapsed right before the deadline?",
+      "hint": "Drop 'did', and let the verb carry the past tense - the 'before' phrase stays attached.",
+      "explanation": "Embedded questions drop 'did': 'why the negotiations collapsed', while 'right before the deadline' remains attached exactly as before.",
+      "grammarRule": "Multi-Clause Embedded Questions: Reinforcement"
+    },
+    {
+      "id": "qf_l168_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "What will happen to the staff if the merger goes through?",
+      "sentence": "What will happen to the staff if the merger goes through?",
+      "options": [
+        "Could you tell me what happen will to the staff if the merger goes through?",
+        "Could you tell me what does will happen to the staff if the merger goes through?",
+        "Could you tell me that what will happen to the staff if the merger goes through?",
+        "Could you tell me what will happen to the staff if the merger goes through?"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Could you tell me what will happen to the staff if the merger goes through?",
+      "hint": "Since 'what' is the subject here, the word order doesn't change at all.",
+      "explanation": "Because 'what' is already the subject, the embedded form keeps the same word order: 'what will happen', with the 'if' clause unchanged.",
+      "grammarRule": "Multi-Clause Embedded Questions: Reinforcement"
+    },
+    {
+      "id": "qf_l168_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "How much has the company invested since the expansion began?",
+      "sentence": "How much has the company invested since the expansion began?",
+      "options": [
+        "Do you know how much the company has invested since the expansion began?",
+        "Do you know how much has the company invested since the expansion began?",
+        "Do you know how much the company invested has since the expansion began?",
+        "Do you know that how much has the company invested since the expansion began?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Do you know how much the company has invested since the expansion began?",
+      "hint": "Move 'has' back after the subject, keeping 'invested' unchanged - the 'since' clause stays attached.",
+      "explanation": "The embedded clause uses statement word order: 'the company has invested', while 'since the expansion began' remains attached at the end.",
+      "grammarRule": "Multi-Clause Embedded Questions: Reinforcement"
+    },
+    {
+      "id": "qf_l169_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Why was the shipment rerouted without any explanation?",
+      "sentence": "Why was the shipment rerouted without any explanation?",
+      "options": [
+        "Might I ask why was the shipment rerouted without any explanation?",
+        "Might I ask why the shipment rerouted was without any explanation?",
+        "Might I ask why the shipment was rerouted without any explanation?",
+        "Might I ask that why the shipment was rerouted without any explanation?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Might I ask why the shipment was rerouted without any explanation?",
+      "hint": "Move 'was' back after the subject, keeping 'rerouted' unchanged.",
+      "explanation": "The embedded clause keeps statement word order: 'the shipment was rerouted', not 'was the shipment rerouted'.",
+      "grammarRule": "Formal Embedded Questions: Mixed Reinforcement"
+    },
+    {
+      "id": "qf_l169_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Has the audit uncovered any discrepancies so far?",
+      "sentence": "Has the audit uncovered any discrepancies so far?",
+      "options": [
+        "Would it be possible to find out whether the audit has uncovered any discrepancies so far?",
+        "Would it be possible to find out whether has the audit uncovered any discrepancies so far?",
+        "Would it be possible to find out the audit whether has uncovered any discrepancies so far?",
+        "Would it be possible to find out that has the audit uncovered any discrepancies so far?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Would it be possible to find out whether the audit has uncovered any discrepancies so far?",
+      "hint": "Use 'whether', and move 'has' back after the subject.",
+      "explanation": "'Whether' introduces the embedded question, with statement word order: 'the audit has uncovered'.",
+      "grammarRule": "Formal Embedded Questions: Mixed Reinforcement"
+    },
+    {
+      "id": "qf_l169_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Who authorized this unusual change in procedure?",
+      "sentence": "Who authorized this unusual change in procedure?",
+      "options": [
+        "Do you happen to know who authorized this unusual change in procedure?",
+        "Do you happen to know who did authorize this unusual change in procedure?",
+        "Do you happen to know who authorize did this unusual change in procedure?",
+        "Do you happen to know that who authorized this unusual change in procedure?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Do you happen to know who authorized this unusual change in procedure?",
+      "hint": "Since 'who' is the subject here, the word order doesn't change at all.",
+      "explanation": "Because 'who' is already the subject, the embedded form keeps the same word order: 'who authorized'.",
+      "grammarRule": "Formal Embedded Questions: Mixed Reinforcement"
+    },
+    {
+      "id": "qf_l170_q1",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Why did the client cancel the contract so abruptly?",
+      "sentence": "Why did the client cancel the contract so abruptly?",
+      "options": [
+        "Could you possibly clarify why the client canceled the contract so abruptly?",
+        "Could you possibly clarify why did the client cancel the contract so abruptly?",
+        "Could you possibly clarify why the client did cancel the contract so abruptly?",
+        "Could you possibly clarify that why the client canceled the contract so abruptly?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Could you possibly clarify why the client canceled the contract so abruptly?",
+      "hint": "Remove 'did' entirely, letting the main verb carry the past tense on its own.",
+      "explanation": "Embedded questions drop 'did': 'why the client canceled', with statement word order throughout.",
+      "grammarRule": "Formal Embedded Questions: Mixed Review"
+    },
+    {
+      "id": "qf_l170_q2",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "Will the updated policy apply to existing customers?",
+      "sentence": "Will the updated policy apply to existing customers?",
+      "options": [
+        "Do you know whether will the updated policy apply to existing customers?",
+        "Do you know whether the updated policy will apply to existing customers?",
+        "Do you know the updated policy whether will apply to existing customers?",
+        "Do you know that will the updated policy apply to existing customers?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Do you know whether the updated policy will apply to existing customers?",
+      "hint": "Use 'whether', and move 'will' back after the subject.",
+      "explanation": "'Whether' introduces the embedded question, keeping statement word order: 'the policy will apply'.",
+      "grammarRule": "Formal Embedded Questions: Mixed Review"
+    },
+    {
+      "id": "qf_l170_q3",
+      "instruction": "Turn this into a polite indirect question.",
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "How much progress has the team made since the last review?",
+      "sentence": "How much progress has the team made since the last review?",
+      "options": [
+        "I was wondering if you could tell me how much progress the team has made since the last review?",
+        "I was wondering if you could tell me how much progress has the team made since the last review?",
+        "I was wondering if you could tell me how much progress the team made has since the last review?",
+        "I was wondering if you could tell me that how much progress has the team made since the last review?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "I was wondering if you could tell me how much progress the team has made since the last review?",
+      "hint": "Move 'has' back after the subject, keeping 'made' unchanged.",
+      "explanation": "The embedded clause uses statement word order: 'the team has made', not 'has the team made'.",
+      "grammarRule": "Formal Embedded Questions: Mixed Review"
+    }
+  ]
 }

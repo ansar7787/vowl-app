@@ -8,540 +8,540 @@
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'I have been feeling unwell since Monday.'",
+            "question": "Convert to reported speech: He said, 'I finished the project.'",
             "options": [
-                "She said she had been feeling unwell since Monday.",
-                "She said she has been feeling unwell since Monday.",
-                "She said she had felt unwell since Monday."
+                "He said that he finished the project.",
+                "He said that he has finished the project.",
+                "He said that he had finished the project."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said she had been feeling unwell since Monday.",
-            "sentence": "She said, 'I have been feeling unwell since Monday.'",
-            "hint": "Present perfect continuous → past perfect continuous. The time reference 'since Monday' stays.",
-            "explanation": "'Have been feeling' shifts to 'had been feeling'. The continuous aspect must be preserved. 'Since Monday' is unchanged.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "He said that he had finished the project.",
+            "sentence": "He said, 'I finished the project.'",
+            "hint": "A past simple verb in direct speech shifts even further back, to past perfect.",
+            "explanation": "'Finished' (past simple) shifts to 'had finished' (past perfect) because the direct speech was already in the past.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l41_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: He asked, 'Would you prefer tea or coffee?'",
+            "question": "Convert to reported speech: She said, 'It may snow tonight.'",
             "options": [
-                "He asked whether I would prefer tea or coffee.",
-                "He asked whether would I prefer tea or coffee.",
-                "He asked if I prefer tea or coffee."
+                "She said that it might snow that night.",
+                "She said that it might snow tonight.",
+                "She said that it may snow that night."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He asked whether I would prefer tea or coffee.",
-            "sentence": "He asked, 'Would you prefer tea or coffee?'",
-            "hint": "'Would' stays. 'You' → 'I'. Use 'whether' for alternative-choice questions.",
-            "explanation": "'Would' does not shift further. 'You' becomes 'I'. 'Whether' is preferred when there are two alternatives.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "She said that it might snow that night.",
+            "sentence": "She said, 'It may snow tonight.'",
+            "hint": "'May' shifts to 'might', and the time word shifts too.",
+            "explanation": "'May' shifts to 'might', and 'tonight' shifts to 'that night'.",
+            "grammarRule": "Modal Verb Backshift"
         },
         {
             "id": "dis_l41_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'Please don't make changes without consulting me first.'",
+            "question": "Convert to reported speech: She said, 'Don't skip breakfast.'",
             "options": [
-                "She asked them not to make any changes without consulting her first.",
-                "She asked them to not make changes without consulting me first.",
-                "She told them don't make any changes without consulting her first."
+                "She said don't skip breakfast.",
+                "She said not to skip breakfast.",
+                "She said that I don't skip breakfast."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She asked them not to make any changes without consulting her first.",
-            "sentence": "She said, 'Please don't make changes without consulting me first.'",
-            "hint": "Polite negative command: 'asked + them + not to'. 'Me' → 'her'.",
-            "explanation": "'Please don't make' → 'asked them not to make'. 'Consulting me' → 'consulting her'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "She said not to skip breakfast.",
+            "sentence": "She said, 'Don't skip breakfast.'",
+            "hint": "Negative commands shift to 'not to + verb', without a person or 'said that'.",
+            "explanation": "Negative commands are reported with 'not to + infinitive'. 'Don't skip breakfast' becomes 'not to skip breakfast'.",
+            "grammarRule": "Reported Commands & Requests"
         },
         {
             "id": "dis_l42_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: They said, 'We won't be able to meet the deadline unless we get more resources.'",
+            "question": "Convert to reported speech: She said, 'I downloaded the file.'",
             "options": [
-                "They said they wouldn't be able to meet the deadline unless they got more resources.",
-                "They said they won't be able to meet the deadline unless they get more resources.",
-                "They said they wouldn't be able to meet the deadline unless they had got more resources."
+                "She said that she has downloaded the file.",
+                "She said that she had downloaded the file.",
+                "She said that she downloaded the file."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "They said they wouldn't be able to meet the deadline unless they got more resources.",
-            "sentence": "They said, 'We won't be able to meet the deadline unless we get more resources.'",
-            "hint": "'Won't' → 'wouldn't'. 'We' → 'they'. In the conditional clause, 'get' → 'got'.",
-            "explanation": "'Won't' → 'wouldn't'. In the conditional clause, 'get' shifts to 'got'. Both clauses must be updated.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "She said that she had downloaded the file.",
+            "sentence": "She said, 'I downloaded the file.'",
+            "hint": "The past simple verb shifts even further back, to past perfect.",
+            "explanation": "'Downloaded' (past simple) shifts to 'had downloaded' (past perfect) in reported speech.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l42_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The account manager asked, 'Did the client receive the proposal we sent yesterday?'",
+            "question": "Convert to reported speech: He said, 'I must submit this by Monday.'",
             "options": [
-                "The account manager asked if the client had received the proposal they had sent the day before.",
-                "The account manager asked if the client received the proposal they sent yesterday.",
-                "The account manager asked did the client receive the proposal they sent the day before."
+                "He said that he had to submit this by Monday.",
+                "He said that he must submit this by Monday.",
+                "He said that he had to submit that by Monday."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The account manager asked if the client had received the proposal they had sent the day before.",
-            "sentence": "The account manager asked, 'Did the client receive the proposal we sent yesterday?'",
-            "hint": "Multiple shifts: 'did receive' → 'had received', 'sent' → 'had sent', 'yesterday' → 'the day before'.",
-            "explanation": "Both verbs shift back: 'receive' → 'had received', 'sent' → 'had sent'. 'Yesterday' → 'the day before'. Use 'if' and statement order.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "He said that he had to submit that by Monday.",
+            "sentence": "He said, 'I must submit this by Monday.'",
+            "hint": "'Must' (obligation) shifts to 'had to', and 'this' shifts to 'that'.",
+            "explanation": "'Must' shifts to 'had to' when expressing obligation, and 'this' shifts to 'that'.",
+            "grammarRule": "Modal Verb Backshift"
         },
         {
             "id": "dis_l42_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The CEO said, 'Don't release any information to the press without authorization.'",
+            "question": "Convert to reported speech: Mom warned, 'Don't touch the stove.'",
             "options": [
-                "The CEO told the staff not to release any information to the press without authorization.",
-                "The CEO said the staff to not release any information to the press.",
-                "The CEO warned not releasing any information to the press without authorization."
+                "Mom warned me not to touch the stove.",
+                "Mom warned me to not touch the stove.",
+                "Mom warned me don't touch the stove."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The CEO told the staff not to release any information to the press without authorization.",
-            "sentence": "The CEO said, 'Don't release any information to the press without authorization.'",
-            "hint": "Prohibition: 'told + staff + not to + release'.",
-            "explanation": "'Don't release' is a prohibition → 'told the staff not to release any information to the press without authorization'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "Mom warned me not to touch the stove.",
+            "sentence": "Mom warned, 'Don't touch the stove.'",
+            "hint": "Negative warnings shift to 'warned + person + not to + verb'.",
+            "explanation": "Negative commands use 'warned + object + not to + infinitive'. 'Don't touch' becomes 'not to touch'.",
+            "grammarRule": "Reported Commands & Requests"
         },
         {
             "id": "dis_l43_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: He said, 'She has just started her new job and is enjoying it.'",
+            "question": "Convert to reported speech: He said, 'I called you yesterday.'",
             "options": [
-                "He said she had just started her new job and was enjoying it.",
-                "He said she has just started her new job and is enjoying it.",
-                "He said she had just started her new job and had been enjoying it."
+                "He said that he called me the day before.",
+                "He said that he had called me the day before.",
+                "He said that he had called me yesterday."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He said she had just started her new job and was enjoying it.",
-            "sentence": "He said, 'She has just started her new job and is enjoying it.'",
-            "hint": "Two tenses shift: 'has started' → 'had started', 'is enjoying' → 'was enjoying'.",
-            "explanation": "Both clauses shift: 'has just started' → 'had just started', 'is enjoying' → 'was enjoying'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "He said that he had called me the day before.",
+            "sentence": "He said, 'I called you yesterday.'",
+            "hint": "'Yesterday' shifts to 'the day before', and the tense shifts back an extra step.",
+            "explanation": "'Called' shifts to 'had called' (an extra step back since it was already past), and 'yesterday' shifts to 'the day before'.",
+            "grammarRule": "Time & Place Reference Shift"
         },
         {
             "id": "dis_l43_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She asked, 'What made you decide to study abroad?'",
+            "question": "Convert to reported speech: She said, 'I may visit Rome next.'",
             "options": [
-                "She asked what had made me decide to study abroad.",
-                "She asked what made me decide to study abroad.",
-                "She asked what did make me decide to study abroad."
+                "She said that she might visit Rome next.",
+                "She said that I might visit Rome next.",
+                "She said that she may visit Rome next."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She asked what had made me decide to study abroad.",
-            "sentence": "She asked, 'What made you decide to study abroad?'",
-            "hint": "'Made' (past simple) → 'had made' (past perfect). 'You' → 'me'. Statement order.",
-            "explanation": "Past simple 'made' shifts to past perfect 'had made'. 'You' → 'me'. Use statement word order.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "She said that she might visit Rome next.",
+            "sentence": "She said, 'I may visit Rome next.'",
+            "hint": "'May' shifts to 'might' in reported speech.",
+            "explanation": "'May' shifts to 'might', and 'I' becomes 'she'.",
+            "grammarRule": "Modal Verb Backshift"
         },
         {
             "id": "dis_l43_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The media teacher said, 'Always verify the source before sharing information online.'",
+            "question": "Convert to reported speech: They said, 'We watched the whole series.'",
             "options": [
-                "The media teacher told us to always verify the source before sharing information online.",
-                "The media teacher said always verify the source before sharing information online.",
-                "The media teacher told us always verifying the source before sharing information online."
+                "They said that we had watched the whole series.",
+                "They said that they watched the whole series.",
+                "They said that they had watched the whole series."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The media teacher told us to always verify the source before sharing information online.",
-            "sentence": "The media teacher said, 'Always verify the source before sharing information online.'",
-            "hint": "Imperative with adverb 'always': 'told + us + to + always verify'.",
-            "explanation": "'Always verify' is an imperative → 'told us to always verify the source before sharing information online'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "They said that they had watched the whole series.",
+            "sentence": "They said, 'We watched the whole series.'",
+            "hint": "Two things move together in this one: the verb tense and the pronoun.",
+            "explanation": "'Watched' shifts to 'had watched', and 'we' shifts to 'they'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l44_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'I'm afraid I can't attend the event.'",
+            "question": "Convert to reported speech: She said, 'I must rest for a week.'",
             "options": [
-                "She said she was afraid she couldn't attend the event.",
-                "She said she is afraid she can't attend the event.",
-                "She said she was afraid she couldn't have attended the event."
+                "She said that she had to rest for a week.",
+                "She said that she must rest for a week.",
+                "She said that I had to rest for a week."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She said she was afraid she couldn't attend the event.",
-            "sentence": "She said, 'I'm afraid I can't attend the event.'",
-            "hint": "'Am' → 'was', 'can't' → 'couldn't'. Both shifts required.",
-            "explanation": "'I'm afraid' → 'she was afraid'. 'Can't attend' → 'couldn't attend'. Both verbs must be shifted.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "She said that she had to rest for a week.",
+            "sentence": "She said, 'I must rest for a week.'",
+            "hint": "'Must' (obligation) shifts to 'had to' in reported speech.",
+            "explanation": "'Must' shifts to 'had to' when expressing obligation, and 'I' becomes 'she'.",
+            "grammarRule": "Modal Verb Backshift"
         },
         {
             "id": "dis_l44_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: He asked, 'How long will it take to process the application?'",
+            "question": "Convert to reported speech: The technician told me, 'Don't restart the computer.'",
             "options": [
-                "He asked how long it would take to process the application.",
-                "He asked how long will it take to process the application.",
-                "He asked how long it takes to process the application."
+                "The technician told me to not restart the computer.",
+                "The technician told me not to restart the computer.",
+                "The technician told me don't restart the computer."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "He asked how long it would take to process the application.",
-            "sentence": "He asked, 'How long will it take to process the application?'",
-            "hint": "'Will take' → 'would take'. Statement word order used.",
-            "explanation": "'Will take' shifts to 'would take'. Drop the auxiliary order and use statement word order.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The technician told me not to restart the computer.",
+            "sentence": "The technician told me, 'Don't restart the computer.'",
+            "hint": "Negative commands shift to 'told + person + not to + verb'.",
+            "explanation": "Negative commands use 'told + object + not to + infinitive'. 'Don't restart' becomes 'not to restart'.",
+            "grammarRule": "Reported Commands & Requests"
         },
         {
             "id": "dis_l44_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The security officer said, 'Contact us immediately if you notice anything suspicious.'",
+            "question": "Convert to reported speech: He said, 'I started this job two years ago.'",
             "options": [
-                "The security officer told residents to contact them immediately if they noticed anything suspicious.",
-                "The security officer told residents to contact us immediately if you noticed anything suspicious.",
-                "The security officer said contact us immediately if you notice anything suspicious."
+                "He said that he had started that job two years before.",
+                "He said that he started that job two years before.",
+                "He said that he had started that job two years ago."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The security officer told residents to contact them immediately if they noticed anything suspicious.",
-            "sentence": "The security officer said, 'Contact us immediately if you notice anything suspicious.'",
-            "hint": "Imperative + conditional: 'told + residents + to + contact'. Pronouns and verb in clause shift.",
-            "explanation": "'Contact us' → 'to contact them'. In the conditional clause, 'notice' → 'noticed'. Pronouns shift throughout.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "He said that he had started that job two years before.",
+            "sentence": "He said, 'I started this job two years ago.'",
+            "hint": "'Ago' shifts to 'before', and the tense shifts back an extra step.",
+            "explanation": "'Started' shifts to 'had started', 'this' shifts to 'that', and 'ago' shifts to 'before'.",
+            "grammarRule": "Time & Place Reference Shift"
         },
         {
             "id": "dis_l45_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: They said, 'We were planning a surprise party when she walked in.'",
+            "question": "Convert to reported speech: She said, 'I returned the shoes.'",
             "options": [
-                "They said they had been planning a surprise party when she walked in.",
-                "They said they were planning a surprise party when she walked in.",
-                "They said they had been planning a surprise party when she had walked in."
+                "She said that she had returned the shoes.",
+                "She said that she has returned the shoes.",
+                "She said that she returned the shoes."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "They said they had been planning a surprise party when she walked in.",
-            "sentence": "They said, 'We were planning a surprise party when she walked in.'",
-            "hint": "'Were planning' → 'had been planning'. 'Walked in' stays as past simple (it marks the interrupting action).",
-            "explanation": "'Were planning' (past continuous) shifts to 'had been planning' (past perfect continuous). 'Walked in' stays as past simple.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "She said that she had returned the shoes.",
+            "sentence": "She said, 'I returned the shoes.'",
+            "hint": "This verb is already past simple, so in reported speech it moves one more step back.",
+            "explanation": "'Returned' (past simple) shifts to 'had returned' (past perfect).",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l45_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The IT manager asked, 'Has anyone reported problems with the new system?'",
+            "question": "Convert to reported speech: He said, 'I may work from home tomorrow.'",
             "options": [
-                "The IT manager asked if anyone had reported problems with the new system.",
-                "The IT manager asked if anyone has reported problems with the new system.",
-                "The IT manager asked had anyone reported problems with the new system."
+                "He said that he may work from home the next day.",
+                "He said that he might work from home the next day.",
+                "He said that he might work from home tomorrow."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The IT manager asked if anyone had reported problems with the new system.",
-            "sentence": "The IT manager asked, 'Has anyone reported problems with the new system?'",
-            "hint": "'Has reported' → 'had reported'. Use 'if' and statement order.",
-            "explanation": "'Has reported' (present perfect) shifts to 'had reported' (past perfect). Use 'if' for yes/no questions.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "He said that he might work from home the next day.",
+            "sentence": "He said, 'I may work from home tomorrow.'",
+            "hint": "Both 'may' and 'tomorrow' shift together here.",
+            "explanation": "'May' shifts to 'might', and 'tomorrow' shifts to 'the next day'.",
+            "grammarRule": "Modal Verb Backshift"
         },
         {
             "id": "dis_l45_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The travel guide said, 'Charge your device fully before you travel.'",
+            "question": "Convert to reported speech: The coach told us, 'Practice every day.'",
             "options": [
-                "The travel guide told us to charge our devices fully before travelling.",
-                "The travel guide said charge your device fully before you travel.",
-                "The travel guide told us to charge your device fully before you travel."
+                "The coach told us practice every day.",
+                "The coach told us that we practice every day.",
+                "The coach told us to practice every day."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The travel guide told us to charge our devices fully before travelling.",
-            "sentence": "The travel guide said, 'Charge your device fully before you travel.'",
-            "hint": "Imperative: 'told + us + to + charge'. 'Your' → 'our'. The infinitive clause becomes a gerund.",
-            "explanation": "'Charge' is an imperative → 'told us to charge'. 'Your device' → 'our devices'. 'Before you travel' → 'before travelling'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The coach told us to practice every day.",
+            "sentence": "The coach told us, 'Practice every day.'",
+            "hint": "A command shifts to 'told + people + to + verb'.",
+            "explanation": "Commands are reported with 'told + object + to-infinitive'. 'Practice every day' becomes 'to practice every day'.",
+            "grammarRule": "Reported Commands & Requests"
         },
         {
             "id": "dis_l46_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'I've never eaten sushi before, but I'd like to try it.'",
+            "question": "Convert to reported speech: She said, 'I must renew my passport.'",
             "options": [
-                "She said she had never eaten sushi before, but she would like to try it.",
-                "She said she has never eaten sushi before, but she'd like to try it.",
-                "She said she had never eaten sushi before, but she would have liked to try it."
+                "She said that she had to renew my passport.",
+                "She said that she had to renew her passport.",
+                "She said that she must renew her passport."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said she had never eaten sushi before, but she would like to try it.",
-            "sentence": "She said, 'I've never eaten sushi before, but I'd like to try it.'",
-            "hint": "Two shifts: 'have eaten' → 'had eaten', 'would like' stays as 'would like'.",
-            "explanation": "'Have never eaten' shifts to 'had never eaten'. 'I'd like' (would like) stays as 'would like' - 'would' does not shift further.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "She said that she had to renew her passport.",
+            "sentence": "She said, 'I must renew my passport.'",
+            "hint": "Both the modal and the possessive word shift here.",
+            "explanation": "'Must' shifts to 'had to', and 'my' shifts to 'her'.",
+            "grammarRule": "Modal Verb Backshift"
         },
         {
             "id": "dis_l46_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: He asked, 'When were you last in contact with her?'",
+            "question": "Convert to reported speech: My cousin said, 'I visited them last week.'",
             "options": [
-                "He asked when I had last been in contact with her.",
-                "He asked when I was last in contact with her.",
-                "He asked when were I last in contact with her."
+                "My cousin said that she had visited them the week before.",
+                "My cousin said that she had visited them last week.",
+                "My cousin said that she visited them the week before."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "He asked when I had last been in contact with her.",
-            "sentence": "He asked, 'When were you last in contact with her?'",
-            "hint": "'Were' → 'had been'. 'You' → 'I'. Statement order.",
-            "explanation": "Past simple 'were' shifts to past perfect 'had been'. 'You' → 'I'. Statement word order is used.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "My cousin said that she had visited them the week before.",
+            "sentence": "My cousin said, 'I visited them last week.'",
+            "hint": "'Last week' shifts to 'the week before', and the tense shifts back an extra step.",
+            "explanation": "'Visited' shifts to 'had visited', and 'last week' shifts to 'the week before'.",
+            "grammarRule": "Time & Place Reference Shift"
         },
         {
             "id": "dis_l46_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The solicitor said, 'Read through the contract carefully before signing it.'",
+            "question": "Convert to reported speech: He said, 'I backed up all my files.'",
             "options": [
-                "The solicitor advised me to read through the contract carefully before signing it.",
-                "The solicitor advised reading the contract carefully before signing.",
-                "The solicitor told read through the contract carefully before signing it."
+                "He said that he had backed up all his files.",
+                "He said that he backed up all his files.",
+                "He said that he had backed up all my files."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The solicitor advised me to read through the contract carefully before signing it.",
-            "sentence": "The solicitor said, 'Read through the contract carefully before signing it.'",
-            "hint": "Imperative: 'advised + me + to + read through'.",
-            "explanation": "'Read through' is an imperative → 'advised me to read through the contract carefully before signing it'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "He said that he had backed up all his files.",
+            "sentence": "He said, 'I backed up all my files.'",
+            "hint": "Watch for both shifts here — the backshifted verb, and the possessive that now matches the speaker.",
+            "explanation": "'Backed up' shifts to 'had backed up', and 'my' shifts to 'his'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l47_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'I'm not sure whether I'll be available that evening.'",
+            "question": "Convert to reported speech: The doctor told me, 'Don't lift heavy objects.'",
             "options": [
-                "She said she wasn't sure whether she would be available that evening.",
-                "She said she isn't sure whether she will be available that evening.",
-                "She said she hadn't been sure whether she would be available that evening."
+                "The doctor told me don't lift heavy objects.",
+                "The doctor told me not to lift heavy objects.",
+                "The doctor told me to not lift heavy objects."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She said she wasn't sure whether she would be available that evening.",
-            "sentence": "She said, 'I'm not sure whether I'll be available that evening.'",
-            "hint": "'Am not sure' → 'wasn't sure'. 'Will be' → 'would be'.",
-            "explanation": "'Am not sure' shifts to 'wasn't sure'. 'Will be' shifts to 'would be'. The pronoun 'I' → 'she'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The doctor told me not to lift heavy objects.",
+            "sentence": "The doctor told me, 'Don't lift heavy objects.'",
+            "hint": "Negative commands shift to 'told + person + not to + verb'.",
+            "explanation": "Negative commands use 'told + object + not to + infinitive'. 'Don't lift' becomes 'not to lift'.",
+            "grammarRule": "Reported Commands & Requests"
         },
         {
             "id": "dis_l47_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She asked, 'Which platform should I use for the presentation?'",
+            "question": "Convert to reported speech: She said, 'I may join the book club.'",
             "options": [
-                "She asked which platform she should use for the presentation.",
-                "She asked which platform should she use for the presentation.",
-                "She asked which platform I should use for the presentation."
+                "She said that she might join the book club.",
+                "She said that I might join the book club.",
+                "She said that she may join the book club."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She asked which platform she should use for the presentation.",
-            "sentence": "She asked, 'Which platform should I use for the presentation?'",
-            "hint": "'Should' stays. 'I' → 'she'. Statement order used.",
-            "explanation": "'Should' does not shift further. 'I' → 'she'. Use statement word order (no inversion).",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "She said that she might join the book club.",
+            "sentence": "She said, 'I may join the book club.'",
+            "hint": "'May' shifts to 'might' in reported speech.",
+            "explanation": "'May' shifts to 'might', and 'I' becomes 'she'.",
+            "grammarRule": "Modal Verb Backshift"
         },
         {
             "id": "dis_l47_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The invigilator said, 'Do not begin the exam until you are told to.'",
+            "question": "Convert to reported speech: He said, 'The meeting happened here yesterday.'",
             "options": [
-                "The invigilator told students not to begin the exam until they were told to.",
-                "The invigilator told students not to begin the exam until you are told to.",
-                "The invigilator said do not begin the exam until you are told to."
+                "He said that the meeting had happened there the day before.",
+                "He said that the meeting had happened here yesterday.",
+                "He said that the meeting happened there the day before."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The invigilator told students not to begin the exam until they were told to.",
-            "sentence": "The invigilator said, 'Do not begin the exam until you are told to.'",
-            "hint": "Negative imperative with subordinate clause: 'told + students + not to begin'. Pronouns shift.",
-            "explanation": "'Do not begin' → 'not to begin'. 'You' → 'they' and 'are told' → 'were told'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "He said that the meeting had happened there the day before.",
+            "sentence": "He said, 'The meeting happened here yesterday.'",
+            "hint": "Both 'here' and 'yesterday' shift, and the tense goes back an extra step.",
+            "explanation": "'Happened' shifts to 'had happened', 'here' shifts to 'there', and 'yesterday' shifts to 'the day before'.",
+            "grammarRule": "Time & Place Reference Shift"
         },
         {
             "id": "dis_l48_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The supervisor said, 'She could have avoided the mistake if she had been more careful.'",
+            "question": "Convert to reported speech: My parents said, 'We raised four children.'",
             "options": [
-                "The supervisor said she could have avoided the mistake if she had been more careful.",
-                "The supervisor said she can have avoided the mistake if she had been more careful.",
-                "The supervisor said she could avoid the mistake if she were more careful."
+                "My parents said that they had raised four children.",
+                "My parents said that they raised four children.",
+                "My parents said that we had raised four children."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The supervisor said she could have avoided the mistake if she had been more careful.",
-            "sentence": "The supervisor said, 'She could have avoided the mistake if she had been more careful.'",
-            "hint": "Third conditional: 'could have avoided' and 'had been' are already past. They remain unchanged.",
-            "explanation": "Third conditional structures cannot shift further back. 'Could have avoided' and 'had been more careful' remain unchanged.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "My parents said that they had raised four children.",
+            "sentence": "My parents said, 'We raised four children.'",
+            "hint": "This one shifts on two fronts — the tense, and the pronoun referring to the speaker.",
+            "explanation": "'Raised' shifts to 'had raised', and 'we' shifts to 'they'.",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l48_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The trainer asked, 'Are you sure you've understood all the instructions?'",
+            "question": "Convert to reported speech: The student said, 'I must study for the exam.'",
             "options": [
-                "The trainer asked if I was sure I had understood all the instructions.",
-                "The trainer asked if I am sure I've understood all the instructions.",
-                "The trainer asked if I was sure I understood all the instructions."
+                "The student said that he must study for the exam.",
+                "The student said that I had to study for the exam.",
+                "The student said that he had to study for the exam."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "The trainer asked if I was sure I had understood all the instructions.",
-            "sentence": "The trainer asked, 'Are you sure you've understood all the instructions?'",
-            "hint": "'Are sure' → 'was sure'. 'Have understood' → 'had understood'. Two shifts.",
-            "explanation": "'Are' → 'was' and 'have understood' → 'had understood'. Both verbs in this complex question must shift.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The student said that he had to study for the exam.",
+            "sentence": "The student said, 'I must study for the exam.'",
+            "hint": "'Must' (obligation) shifts to 'had to' in reported speech.",
+            "explanation": "'Must' shifts to 'had to', and 'I' becomes 'he'.",
+            "grammarRule": "Modal Verb Backshift"
         },
         {
             "id": "dis_l48_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The usher said, 'Switch off all electronic devices during the show.'",
+            "question": "Convert to reported speech: The manager warned us, 'Don't miss the deadline.'",
             "options": [
-                "The usher told the audience to switch off all electronic devices during the show.",
-                "The usher said to switch off all electronic devices during the show.",
-                "The usher told the audience switching off all electronic devices during the show."
+                "The manager warned us not to miss the deadline.",
+                "The manager warned us don't miss the deadline.",
+                "The manager warned us to not miss the deadline."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The usher told the audience to switch off all electronic devices during the show.",
-            "sentence": "The usher said, 'Switch off all electronic devices during the show.'",
-            "hint": "Imperative: 'told + audience + to + switch off'.",
-            "explanation": "'Switch off' is an imperative → 'told the audience to switch off all electronic devices during the show'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The manager warned us not to miss the deadline.",
+            "sentence": "The manager warned us, 'Don't miss the deadline.'",
+            "hint": "Negative commands shift to 'warned + people + not to + verb'.",
+            "explanation": "Negative commands use 'warned + object + not to + infinitive'. 'Don't miss' becomes 'not to miss'.",
+            "grammarRule": "Reported Commands & Requests"
         },
         {
             "id": "dis_l49_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She said, 'I'd been hoping to get a window seat.'",
+            "question": "Convert to reported speech: He said, 'I may need surgery.'",
             "options": [
-                "She said she had been hoping to get a window seat.",
-                "She said she has been hoping to get a window seat.",
-                "She said she was hoping to get a window seat."
+                "He said that he might need surgery.",
+                "He said that he may need surgery.",
+                "He said that I might need surgery."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "She said she had been hoping to get a window seat.",
-            "sentence": "She said, 'I'd been hoping to get a window seat.'",
-            "hint": "'I'd been hoping' = 'I had been hoping'. Past perfect continuous stays as past perfect continuous.",
-            "explanation": "'I'd been hoping' = 'I had been hoping' (past perfect continuous). This does not shift further in reported speech.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "He said that he might need surgery.",
+            "sentence": "He said, 'I may need surgery.'",
+            "hint": "'May' shifts to 'might' in reported speech.",
+            "explanation": "'May' shifts to 'might', and 'I' becomes 'he'.",
+            "grammarRule": "Modal Verb Backshift"
         },
         {
             "id": "dis_l49_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: She asked, 'Why didn't you tell me about this sooner?'",
+            "question": "Convert to reported speech: She said, 'I bought this dress last month.'",
             "options": [
-                "She asked why I hadn't told her about it sooner.",
-                "She asked why I didn't tell her about this sooner.",
-                "She asked why hadn't I told her about it sooner."
+                "She said that she had bought this dress last month.",
+                "She said that she had bought that dress the month before.",
+                "She said that she bought that dress the month before."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "She asked why I hadn't told her about it sooner.",
-            "sentence": "She asked, 'Why didn't you tell me about this sooner?'",
-            "hint": "'Didn't tell' → 'hadn't told'. 'Me' → 'her'. 'This' → 'it'. Statement order.",
-            "explanation": "'Didn't tell' shifts to 'hadn't told'. 'Me' → 'her'. 'This' → 'it'. Use statement word order.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "She said that she had bought that dress the month before.",
+            "sentence": "She said, 'I bought this dress last month.'",
+            "hint": "'This' and 'last month' both shift, and the tense goes back an extra step.",
+            "explanation": "'Bought' shifts to 'had bought', 'this' shifts to 'that', and 'last month' shifts to 'the month before'.",
+            "grammarRule": "Time & Place Reference Shift"
         },
         {
             "id": "dis_l49_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The nutritionist said, 'Try to eat at least five portions of fruit and vegetables a day.'",
+            "question": "Convert to reported speech: He said, 'I enjoyed the concert.'",
             "options": [
-                "The nutritionist advised us to try to eat at least five portions of fruit and vegetables a day.",
-                "The nutritionist said try to eat at least five portions a day.",
-                "The nutritionist told trying to eat at least five portions of fruit and vegetables a day."
+                "He said that he had enjoyed the concert.",
+                "He said that he enjoyed the concert.",
+                "He said that he has enjoyed the concert."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The nutritionist advised us to try to eat at least five portions of fruit and vegetables a day.",
-            "sentence": "The nutritionist said, 'Try to eat at least five portions of fruit and vegetables a day.'",
-            "hint": "Imperative: 'advised + us + to + try to eat'.",
-            "explanation": "'Try to eat' is an imperative → 'advised us to try to eat at least five portions a day'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "He said that he had enjoyed the concert.",
+            "sentence": "He said, 'I enjoyed the concert.'",
+            "hint": "Since the direct speech was already in the past, this verb shifts an extra step to past perfect.",
+            "explanation": "'Enjoyed' (past simple) shifts to 'had enjoyed' (past perfect).",
+            "grammarRule": "Tense Backshift"
         },
         {
             "id": "dis_l50_q1",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The product manager said, 'We haven't received any complaints about the new design.'",
+            "question": "Convert to reported speech: The soldier said, 'I must follow orders.'",
             "options": [
-                "The product manager said they hadn't received any complaints about the new design.",
-                "The product manager said they haven't received any complaints about the new design.",
-                "The product manager said we hadn't received any complaints about the new design."
+                "The soldier said that he had to follow orders.",
+                "The soldier said that he must follow orders.",
+                "The soldier said that I had to follow orders."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The product manager said they hadn't received any complaints about the new design.",
-            "sentence": "The product manager said, 'We haven't received any complaints about the new design.'",
-            "hint": "'Haven't received' → 'hadn't received'. 'We' → 'they'.",
-            "explanation": "'Haven't received' shifts to 'hadn't received'. 'We' shifts to 'they'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The soldier said that he had to follow orders.",
+            "sentence": "The soldier said, 'I must follow orders.'",
+            "hint": "'Must' (obligation) shifts to 'had to' in reported speech.",
+            "explanation": "'Must' shifts to 'had to', and 'I' becomes 'he'.",
+            "grammarRule": "Modal Verb Backshift"
         },
         {
             "id": "dis_l50_q2",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: The stakeholder asked, 'Why is this project running over budget?'",
+            "question": "Convert to reported speech: The lifeguard warned us, 'Don't swim past the flags.'",
             "options": [
-                "The stakeholder asked why that project was running over budget.",
-                "The stakeholder asked why is this project running over budget.",
-                "The stakeholder asked why this project was running over budget."
+                "The lifeguard warned us not to swim past the flags.",
+                "The lifeguard warned us to not swim past the flags.",
+                "The lifeguard warned us don't swim past the flags."
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "The stakeholder asked why that project was running over budget.",
-            "sentence": "The stakeholder asked, 'Why is this project running over budget?'",
-            "hint": "'Is running' → 'was running'. 'This' → 'that'. Statement order.",
-            "explanation": "'Is running' → 'was running'. 'This' → 'that'. Use statement word order.",
-            "grammarRule": "Reported Speech"
+            "correctAnswer": "The lifeguard warned us not to swim past the flags.",
+            "sentence": "The lifeguard warned us, 'Don't swim past the flags.'",
+            "hint": "Negative commands shift to 'warned + people + not to + verb'.",
+            "explanation": "Negative commands use 'warned + object + not to + infinitive'. 'Don't swim' becomes 'not to swim'.",
+            "grammarRule": "Reported Commands & Requests"
         },
         {
             "id": "dis_l50_q3",
             "instruction": "TRANSFORM THE SPEECH",
             "subtype": "directIndirectSpeech",
             "interactionType": "Mirror Flip",
-            "question": "Convert to reported speech: Her mentor said, 'Get a good night's sleep before the big interview.'",
+            "question": "Convert to reported speech: He said, 'I saw her here two days ago.'",
             "options": [
-                "Her mentor advised her to get a good night's sleep before the big interview.",
-                "Her mentor told get a good night's sleep before the big interview.",
-                "Her mentor said to getting a good night's sleep before the big interview."
+                "He said that he had seen her here two days ago.",
+                "He said that he saw her there two days before.",
+                "He said that he had seen her there two days before."
             ],
-            "correctAnswerIndex": 0,
-            "correctAnswer": "Her mentor advised her to get a good night's sleep before the big interview.",
-            "sentence": "Her mentor said, 'Get a good night's sleep before the big interview.'",
-            "hint": "Imperative: 'advised + her + to + get'.",
-            "explanation": "'Get' is an imperative → 'advised her to get a good night's sleep before the big interview'.",
-            "grammarRule": "Reported Speech"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "He said that he had seen her there two days before.",
+            "sentence": "He said, 'I saw her here two days ago.'",
+            "hint": "'Here' and 'ago' both shift, and the tense goes back an extra step.",
+            "explanation": "'Saw' shifts to 'had seen', 'here' shifts to 'there', and 'ago' shifts to 'before'.",
+            "grammarRule": "Time & Place Reference Shift"
         }
     ]
 }
