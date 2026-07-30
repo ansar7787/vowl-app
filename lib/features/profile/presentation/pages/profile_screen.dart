@@ -1067,8 +1067,7 @@ class _EditNameSheetContentState extends State<_EditNameSheetContent> {
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 }
 
