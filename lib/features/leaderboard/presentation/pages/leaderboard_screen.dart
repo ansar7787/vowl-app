@@ -52,36 +52,6 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
       create: (_) => di.sl<LeaderboardBloc>()..add(LoadLeaderboard(isKids: _isKidsMode)),
       child: Scaffold(
         backgroundColor: bgColor,
-        extendBodyBehindAppBar: true,
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(64.h),
-          child: ClipRect(
-            child: BackdropFilter(
-              filter: ui.ImageFilter.blur(sigmaX: 16, sigmaY: 16),
-              child: AppBar(
-                backgroundColor: (isDark ? const Color(0xFF0F172A) : Colors.white).withValues(alpha: 0.75),
-                elevation: 0,
-                scrolledUnderElevation: 0,
-                automaticallyImplyLeading: false,
-                title: _LeaderboardToggle(
-                  isKidsMode: _isKidsMode,
-                  onToggle: (bool isKids) {
-                    if (_isKidsMode == isKids) return;
-                    setState(() => _isKidsMode = isKids);
-                    context.read<LeaderboardBloc>().add(LoadLeaderboard(isKids: isKids));
-                  },
-                ),
-                bottom: PreferredSize(
-                  preferredSize: const Size.fromHeight(1),
-                  child: Container(
-                    height: 1,
-                    color: (isDark ? Colors.white : Colors.black).withValues(alpha: 0.05),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ),
         body: BlocBuilder<LeaderboardBloc, LeaderboardState>(
           builder: (context, state) {
             final currentUser = context.select<AuthBloc, UserEntity?>(
@@ -93,24 +63,42 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                 const MeshGradientBackground(showLetters: false),
                 
                 // Content Layer
-                Positioned.fill(
-                  child: Builder(
-                    builder: (context) {
-                      if (state is LeaderboardLoaded) {
-                        return _LeaderboardContent(state: state, currentUser: currentUser);
-                      } else if (state is LeaderboardLoading || state is LeaderboardInitial) {
-                        return const LeaderboardShimmerLoading();
-                      } else if (state is LeaderboardError) {
-                        return _LeaderboardErrorView(
-                          message: state.message,
-                          onRetry: () => context.read<LeaderboardBloc>().add(
-                            LoadLeaderboard(isKids: _isKidsMode),
-                          ),
-                        );
-                      }
-                      return const SizedBox.shrink();
-                    }
-                  ),
+                Column(
+                  children: [
+                    SizedBox(height: MediaQuery.of(context).padding.top + 8.h),
+                    
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 4.h),
+                      child: _LeaderboardToggle(
+                        isKidsMode: _isKidsMode,
+                        onToggle: (bool isKids) {
+                          if (_isKidsMode == isKids) return;
+                          setState(() => _isKidsMode = isKids);
+                          context.read<LeaderboardBloc>().add(LoadLeaderboard(isKids: isKids));
+                        },
+                      ),
+                    ),
+                    
+                    Expanded(
+                      child: Builder(
+                        builder: (context) {
+                          if (state is LeaderboardLoaded) {
+                            return _LeaderboardContent(state: state, currentUser: currentUser);
+                          } else if (state is LeaderboardLoading || state is LeaderboardInitial) {
+                            return const LeaderboardShimmerLoading();
+                          } else if (state is LeaderboardError) {
+                            return _LeaderboardErrorView(
+                              message: state.message,
+                              onRetry: () => context.read<LeaderboardBloc>().add(
+                                LoadLeaderboard(isKids: _isKidsMode),
+                              ),
+                            );
+                          }
+                          return const SizedBox.shrink();
+                        }
+                      ),
+                    ),
+                  ],
                 ),
               ],
             );
