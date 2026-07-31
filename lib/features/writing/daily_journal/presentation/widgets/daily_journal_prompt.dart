@@ -24,7 +24,9 @@ class DailyJournalPrompt extends StatelessWidget {
       color: primaryColor.withValues(alpha: isDark ? 0.05 : 0.08),
       child: Stack(
         children: [
-          const TechPatternOverlay(opacity: 0.05),
+          const Positioned.fill(
+            child: TechPatternOverlay(opacity: 0.05),
+          ),
           Row(
             children: [
               Icon(
