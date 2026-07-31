@@ -59,7 +59,9 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          const TechPatternOverlay(opacity: 0.05),
+          Positioned.fill(
+            child: const TechPatternOverlay(opacity: 0.05),
+          ),
           RichText(
             textAlign: TextAlign.center,
             text: TextSpan(

@@ -57,9 +57,10 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
   }
 
   void _submitAnswer(bool isAnswered) {
-    final WritingQuest? quest =
-        (context.read<WritingBloc>().state as WritingLoaded).currentQuest
-            as WritingQuest?;
+    final currentState = context.read<WritingBloc>().state;
+    if (currentState is! WritingLoaded) return;
+
+    final WritingQuest? quest = currentState.currentQuest as WritingQuest?;
     if (quest == null || isAnswered || _selectedCorrection == null) return;
 
     final bool correct = _selectedCorrection == quest.correctAnswer;
