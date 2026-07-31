@@ -173,6 +173,27 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
       return;
     }
 
+    int nonKeywordCount = 0;
+    for (var word in wordsList) {
+      final cleanWord = word.replaceAll(RegExp(r'[^\w\s]'), '');
+      if (!availableKeywords.any((kw) => kw.toLowerCase() == cleanWord)) {
+        nonKeywordCount++;
+      }
+    }
+    
+    // We require at least 50% of the minimum words to be "glue/structure" words 
+    // to prevent students from just chaining booster keywords together (word salad).
+    if (nonKeywordCount < (minWords * 0.5).ceil()) {
+      CustomSnackBar.show(
+        context: context,
+        message: "This looks like a list of keywords! Please write full, complete sentences connecting the words.",
+        type: CustomSnackBarType.warning,
+      );
+      _hapticService.warning();
+      setState(() => _isSubmitting = false);
+      return;
+    }
+
     // ML Kit Language ID Gibberish Check
     final langIdService = di.sl<LanguageIdService>();
     final language = await langIdService.identifyLanguage(composedText);
