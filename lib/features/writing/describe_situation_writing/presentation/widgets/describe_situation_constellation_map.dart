@@ -47,13 +47,19 @@ class DescribeSituationConstellationMap extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: isExpanded
                         ? color
-                        : (isDark ? Colors.white10 : Colors.black12),
+                        : (isDark ? Colors.white.withValues(alpha: 0.1) : Colors.white),
                     shape: BoxShape.circle,
                     boxShadow: [
                       if (isExpanded)
                         BoxShadow(
                           color: color.withValues(alpha: 0.5),
                           blurRadius: 15,
+                        )
+                      else if (!isDark)
+                        BoxShadow(
+                          color: Colors.black.withValues(alpha: 0.05),
+                          blurRadius: 10,
+                          offset: const Offset(0, 4),
                         ),
                     ],
                   ),
