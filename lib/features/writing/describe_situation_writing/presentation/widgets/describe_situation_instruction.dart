@@ -22,7 +22,7 @@ class DescribeSituationInstruction extends StatelessWidget {
         border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisSize: MainAxisSize.max,
         children: [
           Icon(Icons.auto_fix_high_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
