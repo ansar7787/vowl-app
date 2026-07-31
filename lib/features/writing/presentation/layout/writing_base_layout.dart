@@ -157,6 +157,7 @@ class _WritingBaseLayoutState extends State<WritingBaseLayout> {
                     : null;
 
                 return Scaffold(
+                  resizeToAvoidBottomInset: false,
                   backgroundColor: theme.backgroundColors[1],
                   body: Stack(
                     children: [

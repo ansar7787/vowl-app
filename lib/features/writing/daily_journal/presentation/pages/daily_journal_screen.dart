@@ -77,6 +77,16 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
       }
     }
 
+    if (_wordCount < 10) {
+      CustomSnackBar.show(
+        context: context,
+        message: "Keep writing! A valid journal entry requires at least 10 words.",
+        type: CustomSnackBarType.info,
+      );
+      _hapticService.selection();
+      return;
+    }
+
     bool isMinLengthMet = _wordCount >= 10;
     bool isKeywordsMet = matchedCount >= 2;
 
