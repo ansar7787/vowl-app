@@ -1,4 +1,6 @@
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -44,6 +46,9 @@ class DailyJournalBoosterTokens extends StatelessWidget {
 
             return GestureDetector(
               onTap: () {
+                // Speak the token loudly so they learn pronunciation!
+                di.sl<TtsService>().speak(k);
+
                 if (!isUsed) {
                   CustomSnackBar.show(
                     context: context,
