@@ -91,10 +91,14 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
     if (selection.isValid) {
       final before = text.substring(0, selection.start);
       final after = text.substring(selection.end);
-      if (before.isNotEmpty && !before.endsWith(' ') && !before.endsWith('\n')) {
+      if (before.isNotEmpty &&
+          !before.endsWith(' ') &&
+          !before.endsWith('\n')) {
         insertText = ' $insertText';
       }
-      if (after.isNotEmpty && !after.startsWith(' ') && !after.startsWith('\n')) {
+      if (after.isNotEmpty &&
+          !after.startsWith(' ') &&
+          !after.startsWith('\n')) {
         insertText = '$insertText ';
       }
       newText = text.replaceRange(selection.start, selection.end, insertText);
@@ -125,7 +129,9 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
     List<String> availableKeywords,
     bool isAnswered,
   ) async {
-    if (isAnswered || _textController.text.trim().isEmpty || _isSubmitting) return;
+    if (isAnswered || _textController.text.trim().isEmpty || _isSubmitting) {
+      return;
+    }
 
     setState(() => _isSubmitting = true);
 
@@ -180,13 +186,14 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
         nonKeywordCount++;
       }
     }
-    
-    // We require at least 50% of the minimum words to be "glue/structure" words 
+
+    // We require at least 50% of the minimum words to be "glue/structure" words
     // to prevent students from just chaining booster keywords together (word salad).
     if (nonKeywordCount < (minWords * 0.5).ceil()) {
       CustomSnackBar.show(
         context: context,
-        message: "This looks like a list of keywords! Please write full, complete sentences connecting the words.",
+        message:
+            "This looks like a list of keywords! Please write full, complete sentences connecting the words.",
         type: CustomSnackBarType.warning,
       );
       _hapticService.warning();
@@ -252,7 +259,9 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
-        final WritingQuest? quest = isLoaded ? state.currentQuest as WritingQuest? : null;
+        final WritingQuest? quest = isLoaded
+            ? state.currentQuest as WritingQuest?
+            : null;
 
         if (quest != null) {
           _lastQuest = quest;
@@ -381,5 +390,3 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
     );
   }
 }
-
-
