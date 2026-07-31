@@ -36,6 +36,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
   final _soundService = di.sl<SoundService>();
 
   String? _selectedCorrection;
+  WritingQuest? _lastQuest;
 
   bool _showConfetti = false;
 
@@ -100,14 +101,6 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
             enableDoubleUp: true,
           );
         }
-
-        if (state is WritingGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () =>
-                context.read<WritingBloc>().add(const RestoreLife()),
-          );
-        }
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
@@ -115,7 +108,13 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
             ? state.currentQuest as WritingQuest?
             : null;
 
-        final options = quest?.options ?? [];
+        if (quest != null) {
+          _lastQuest = quest;
+        }
+
+        final activeQuest = quest ?? _lastQuest;
+
+        final options = activeQuest?.options ?? [];
         final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
         final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
 
@@ -127,7 +126,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
           showConfetti: _showConfetti,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
-          child: quest == null
+          child: activeQuest == null
               ? const SizedBox()
               : SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
@@ -137,12 +136,13 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
                       children: [
                         SizedBox(height: 16.h),
                         CorrectionWritingInstruction(
+                          instruction: activeQuest.instruction,
                           primaryColor: theme.primaryColor,
                         ),
                         SizedBox(height: 24.h),
 
                         CorrectionWritingSentenceCard(
-                          passage: quest.passage ?? "",
+                          passage: activeQuest.passage ?? "",
                           selectedCorrection: _selectedCorrection,
                           color: theme.primaryColor,
                           isDark: isDark,

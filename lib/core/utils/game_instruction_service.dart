@@ -704,18 +704,18 @@ class GameInstructionService {
           "PRO TIP: Clear subject lines and direct greetings set the professional tone.",
     ),
     GameSubtype.correctionWriting: GameBriefing(
-      title: "Deep Editor",
+      title: "Syntax Auditor",
       icon: Icons.fact_check_rounded,
       objective:
-          "Polish and rewrite the paragraph to fix all structural issues.",
+          "Identify and replace the errored syntax phrase. Mastering structural accuracy ensures your writing is professional, clear, and highly effective in real-world communication.",
       rules: [
-        "Check all rules",
-        "Improve logical flow",
-        "Aim for 100% accuracy",
+        "Identify the error",
+        "Select correct syntax",
+        "Ensure 100% accuracy",
       ],
-      actionText: "Final Polish",
+      actionText: "Audit Syntax",
       tip:
-          "PRO TIP: Look for repetitive words and swap them for rich synonyms!",
+          "PRO TIP: Read the sentence out loud in your head! Clunky phrasing often reveals the grammatical flaw.",
     ),
     GameSubtype.essayDrafting: GameBriefing(
       title: "Essay Architect",

@@ -50,7 +50,7 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [ ] Daily Journal (`dailyJournal`)
 - [ ] Summarize Story (`summarizeStoryWriting`)
 - [ ] Writing Email (`writingEmail`)
-- [ ] Correction Writing (`correctionWriting`)
+- [x] ✅ Correction Writing (`correctionWriting`)
 - [ ] Essay Drafting (`essayDrafting`)
 
 ## Grammar (19)

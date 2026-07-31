@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class CorrectionWritingInstruction extends StatelessWidget {
+  final String instruction;
   final Color primaryColor;
 
-  const CorrectionWritingInstruction({super.key, required this.primaryColor});
+  const CorrectionWritingInstruction({
+    super.key,
+    required this.instruction,
+    required this.primaryColor,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +26,21 @@ class CorrectionWritingInstruction extends StatelessWidget {
         children: [
           Icon(Icons.auto_fix_high_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text(
-            "IDENTIFY AND REPLACE THE ERRORED SYNTAX PHRASE",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
-              letterSpacing: 1.5,
+          Expanded(
+            child: Text(
+              context.tr(
+                'games.correctionWriting_instruction',
+                fallback: instruction,
+              ).toUpperCase(),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: primaryColor,
+                letterSpacing: 1.5,
+              ),
+              maxLines: 2,
+              textAlign: TextAlign.center,
             ),
           ),
         ],
