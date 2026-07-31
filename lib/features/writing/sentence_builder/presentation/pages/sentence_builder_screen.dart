@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -109,6 +109,14 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
             coins: state.coinsEarned,
             title: 'SYNTAX ARCHITECT!',
             enableDoubleUp: true,
+          );
+        }
+
+        if (state is WritingGameOver) {
+          GameDialogHelper.showGameOver(
+            context,
+            onRestore: () =>
+                context.read<WritingBloc>().add(const RestoreLife()),
           );
         }
       },
