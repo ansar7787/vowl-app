@@ -43,7 +43,7 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 ## Writing (11)
 - [ ] Sentence Builder (`sentenceBuilder`)
 - [x] ✅ Complete Sentence (`completeSentence`)
-- [ ] Describe Situation (`describeSituationWriting`)
+- [x] ✅ Describe Situation (`describeSituationWriting`)
 - [ ] Fix The Sentence (`fixTheSentence`)
 - [ ] Short Answer (`shortAnswerWriting`)
 - [ ] Opinion Writing (`opinionWriting`)

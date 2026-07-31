@@ -626,11 +626,11 @@ class GameInstructionService {
       title: "Context Scribe",
       icon: Icons.description_rounded,
       objective:
-          "Write a descriptive paragraph based on the scenario or image.",
+          "Tap the floating emojis to discover keywords and write a descriptive paragraph based on the scenario. Mastering descriptive writing ensures you can paint clear pictures with words in real-world communication.",
       rules: [
+        "Tap emojis for keywords",
         "Use vivid adjectives",
         "Be specific & clear",
-        "Show, don't just tell",
       ],
       actionText: "Scribe Scene",
       tip: "PRO TIP: Use sensory words! Describe what is seen, heard, or felt.",

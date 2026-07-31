@@ -11,6 +11,9 @@ import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 import 'package:vowl/features/writing/describe_situation_writing/presentation/widgets/describe_situation_instruction.dart';
 import 'package:vowl/features/writing/describe_situation_writing/presentation/widgets/describe_situation_prompt_card.dart';
@@ -33,6 +36,7 @@ class DescribeSituationScreen extends StatefulWidget {
 
 class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
   final _hapticService = di.sl<HapticService>();
+  final _soundService = di.sl<SoundService>();
   final _textController = TextEditingController();
 
   final List<String> _usedKeywords = [];
@@ -40,6 +44,8 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
 
   bool _showConfetti = false;
   int _wordCount = 0;
+  WritingQuest? _lastQuest;
+  bool _isSubmitting = false;
 
   @override
   void initState() {
@@ -103,12 +109,14 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
     });
   }
 
-  void _submitAnswer(
+  Future<void> _submitAnswer(
     int minWords,
     List<String> availableKeywords,
     bool isAnswered,
-  ) {
-    if (isAnswered) return;
+  ) async {
+    if (isAnswered || _textController.text.trim().isEmpty || _isSubmitting) return;
+
+    setState(() => _isSubmitting = true);
 
     final composedText = _textController.text.trim().toLowerCase();
 
@@ -119,12 +127,53 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
       }
     }
 
-    bool isMinWordsMet = _wordCount >= minWords;
-    bool isKeywordsMet = matchedCount >= 2;
+    if (_wordCount < minWords) {
+      CustomSnackBar.show(
+        context: context,
+        message: "Keep writing! You need at least $minWords words.",
+        type: CustomSnackBarType.info,
+      );
+      _hapticService.selection();
+      setState(() => _isSubmitting = false);
+      return;
+    }
 
-    final isCorrect = isMinWordsMet && isKeywordsMet;
+    if (matchedCount < 2) {
+      CustomSnackBar.show(
+        context: context,
+        message: "Inject at least 2 narrative keywords from the emojis!",
+        type: CustomSnackBarType.warning,
+      );
+      _hapticService.selection();
+      setState(() => _isSubmitting = false);
+      return;
+    }
 
-    context.read<WritingBloc>().add(SubmitAnswer(isCorrect));
+    // ML Kit Language ID Gibberish Check
+    final langIdService = di.sl<LanguageIdService>();
+    final language = await langIdService.identifyLanguage(composedText);
+
+    if (!mounted) return;
+
+    if (language == 'und') {
+      CustomSnackBar.show(
+        context: context,
+        message: "This looks like gibberish! Please write a real description.",
+        type: CustomSnackBarType.warning,
+      );
+      _hapticService.warning();
+      setState(() => _isSubmitting = false);
+      return;
+    }
+
+    _hapticService.success();
+    _soundService.playCorrect();
+
+    context.read<WritingBloc>().add(SubmitAnswer(true));
+
+    if (mounted) {
+      setState(() => _isSubmitting = false);
+    }
   }
 
   @override
@@ -155,22 +204,20 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
             enableDoubleUp: true,
           );
         }
-
-        if (state is WritingGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () =>
-                context.read<WritingBloc>().add(const RestoreLife()),
-          );
-        }
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
-        final WritingQuest? quest = isLoaded ? state.currentQuest : null;
+        final WritingQuest? quest = isLoaded ? state.currentQuest as WritingQuest? : null;
 
-        final emojis = quest?.emojis ?? ["ðŸŒ‹", "ðŸ’§", "ðŸ”¬", "ðŸ "];
+        if (quest != null) {
+          _lastQuest = quest;
+        }
+
+        final activeQuest = quest ?? _lastQuest;
+
+        final emojis = activeQuest?.emojis ?? ["🌍", "💧", "🔬", "🚀"];
         final rawKeywords =
-            quest?.keywords ??
+            activeQuest?.keywords ??
             {
               "0": ["VENTING", "MAGMA", "PLUME"],
               "1": ["OCEANIC", "THERMAL", "PRESSURE"],
@@ -181,19 +228,21 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
         final allKeywordPool = rawKeywords.values
             .expand((element) => element)
             .toList();
-        final minWords = quest?.minWords ?? 15;
+        final minWords = activeQuest?.minWords ?? 15;
         final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
         final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
+        final bool isFinalFailure = state.livesRemaining == 0;
 
         return WritingBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
           isAnswered: isAnswered,
           isCorrect: isCorrect,
+          isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
-          child: quest == null
+          child: activeQuest == null
               ? const SizedBox()
               : SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
@@ -204,11 +253,12 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
                         SizedBox(height: 16.h),
                         DescribeSituationInstruction(
                           primaryColor: theme.primaryColor,
+                          instruction: activeQuest.instruction,
                         ),
                         SizedBox(height: 24.h),
 
                         DescribeSituationPromptCard(
-                          prompt: quest.situation ?? "",
+                          prompt: activeQuest.situation ?? "",
                           color: theme.primaryColor,
                           isDark: isDark,
                         ),
