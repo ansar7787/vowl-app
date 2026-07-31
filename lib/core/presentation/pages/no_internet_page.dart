@@ -1,8 +1,10 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
 /// Premium glassmorphic offline page with accessible retry interaction.
@@ -38,9 +40,14 @@ class _NoInternetPageState extends State<NoInternetPage> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
-      backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
-      body: Stack(
-        children: [
+      backgroundColor: Colors.transparent, // Let underlying app show through
+      body: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+        child: Container(
+          color: (isDark ? const Color(0xFF0F172A) : Colors.white)
+              .withValues(alpha: 0.85),
+          child: Stack(
+            children: [
           // ── Background glow accents ─────────────────────────────────
           RepaintBoundary(
             child: Stack(
@@ -156,6 +163,50 @@ class _NoInternetPageState extends State<NoInternetPage> {
                             .animate()
                             .fadeIn(delay: 600.ms, duration: 600.ms)
                             .moveY(begin: 20, end: 0),
+
+                        SizedBox(height: 24.h),
+
+                        // Premium Upsell Button for Offline Mode
+                        GestureDetector(
+                          onTap: () {
+                            Haptics.vibrate(HapticsType.light);
+                            AppRouter.router.push(AppRouter.premiumRoute);
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 14.h, horizontal: 24.w),
+                            decoration: BoxDecoration(
+                              color: Colors.amber.withValues(alpha: 0.15),
+                              borderRadius: BorderRadius.circular(16.r),
+                              border: Border.all(
+                                  color: Colors.amber.withValues(alpha: 0.5)),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(LucideIcons.crown,
+                                    color: Colors.amber, size: 20.r),
+                                SizedBox(width: 8.w),
+                                Flexible(
+                                  child: Text(
+                                    context.tr('connectivity.go_premium',
+                                        fallback: 'Play Offline with Premium'),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      color: Colors.amber,
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        )
+                            .animate()
+                            .fadeIn(delay: 800.ms, duration: 600.ms)
+                            .moveY(begin: 10, end: 0),
                       ],
                     ),
                   ),
@@ -163,7 +214,9 @@ class _NoInternetPageState extends State<NoInternetPage> {
               },
             ),
           ),
-        ],
+            ],
+          ),
+        ),
       ),
     );
   }

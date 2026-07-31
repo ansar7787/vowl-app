@@ -36,9 +36,10 @@ class NetworkInfoImpl implements NetworkInfo {
   Future<bool> get isConnected async {
     if (_isPremiumOverride) return true;
     try {
-      // Defensive timeout protection: prevents hanging indefinitely on highly congested networks.
+      // Defensive timeout protection: increased to 10 seconds to gracefully handle
+      // slow 3G/Edge networks without prematurely punishing the user.
       return await _connectionChecker.hasInternetAccess.timeout(
-        const Duration(seconds: 4),
+        const Duration(seconds: 10),
         onTimeout: () => false,
       );
     } catch (_) {

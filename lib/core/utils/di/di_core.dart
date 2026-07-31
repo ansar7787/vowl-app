@@ -51,7 +51,19 @@ Future<void> initExternalAndCore(GetIt sl) async {
   sl.registerLazySingleton<FirebaseStorage>(() => FirebaseStorage.instance);
   sl.registerLazySingleton<FirebaseMessaging>(() => FirebaseMessaging.instance);
   sl.registerLazySingleton<GoogleSignIn>(() => GoogleSignIn());
-  sl.registerLazySingleton<InternetConnection>(() => InternetConnection());
+  sl.registerLazySingleton<InternetConnection>(() => InternetConnection.createInstance(
+        checkInterval: const Duration(seconds: 5),
+        customCheckOptions: [
+          InternetCheckOption(
+            uri: Uri.parse('https://one.one.one.one'),
+            timeout: const Duration(seconds: 10),
+          ),
+          InternetCheckOption(
+            uri: Uri.parse('https://jsonplaceholder.typicode.com/todos/1'),
+            timeout: const Duration(seconds: 10),
+          ),
+        ],
+      ));
   sl.registerLazySingleton<FirebaseRemoteConfig>(
     () => FirebaseRemoteConfig.instance,
   );
