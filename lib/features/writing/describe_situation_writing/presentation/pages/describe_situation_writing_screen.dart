@@ -149,6 +149,19 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
       return;
     }
 
+    final wordsList = composedText.split(RegExp(r'\s+'));
+    final uniqueWords = wordsList.toSet();
+    if (uniqueWords.length < (minWords * 0.5).ceil()) {
+      CustomSnackBar.show(
+        context: context,
+        message: "Your description lacks variety. Try using different words!",
+        type: CustomSnackBarType.warning,
+      );
+      _hapticService.warning();
+      setState(() => _isSubmitting = false);
+      return;
+    }
+
     // ML Kit Language ID Gibberish Check
     final langIdService = di.sl<LanguageIdService>();
     final language = await langIdService.identifyLanguage(composedText);

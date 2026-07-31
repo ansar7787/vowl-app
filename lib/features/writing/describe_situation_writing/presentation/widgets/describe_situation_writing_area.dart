@@ -36,6 +36,12 @@ class DescribeSituationWritingArea extends StatelessWidget {
           TextField(
             controller: textController,
             maxLines: 4,
+            maxLength: 400,
+            buildCounter: (context,
+                    {required currentLength,
+                    required isFocused,
+                    maxLength}) =>
+                null,
             style: TextStyle(
               fontFamily: 'RobotoMono',
               color: isDark ? Colors.white : Colors.black87,
