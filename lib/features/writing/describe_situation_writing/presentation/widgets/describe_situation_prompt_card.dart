@@ -59,9 +59,9 @@ class DescribeSituationPromptCard extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 20.sp,
+                    fontSize: 15.sp,
                     color: isDark ? Colors.white : const Color(0xFF1E293B),
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w600,
                     height: 1.4,
                     letterSpacing: 0.3,
                   ),
