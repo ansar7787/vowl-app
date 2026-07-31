@@ -18,10 +18,30 @@ class DailyJournalPrompt extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GlassTile(
+    return Container(
       padding: EdgeInsets.all(20.r),
-      borderRadius: BorderRadius.circular(24.r),
-      color: primaryColor.withValues(alpha: isDark ? 0.05 : 0.08),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(24.r),
+        gradient: LinearGradient(
+          colors: [
+            primaryColor.withValues(alpha: isDark ? 0.2 : 0.15),
+            primaryColor.withValues(alpha: isDark ? 0.05 : 0.05),
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.3),
+          width: 1.5,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: primaryColor.withValues(alpha: 0.1),
+            blurRadius: 20,
+            offset: const Offset(0, 10),
+          ),
+        ],
+      ),
       child: Stack(
         children: [
           const Positioned.fill(
