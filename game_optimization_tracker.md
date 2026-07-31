@@ -51,7 +51,7 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [ ] Summarize Story (`summarizeStoryWriting`)
 - [ ] Writing Email (`writingEmail`)
 - [x] ✅ Correction Writing (`correctionWriting`)
-- [ ] Essay Drafting (`essayDrafting`)
+- [x] ✅ Essay Drafting (`essayDrafting`)
 
 ## Grammar (19)
 - [ ] Grammar Quest (`grammarQuest`)

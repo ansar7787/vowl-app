@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class EssayDraftingInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String instruction;
 
-  const EssayDraftingInstruction({super.key, required this.primaryColor});
+  const EssayDraftingInstruction({
+    super.key, 
+    required this.primaryColor,
+    required this.instruction,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +26,17 @@ class EssayDraftingInstruction extends StatelessWidget {
         children: [
           Icon(Icons.architecture_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text(
-            "CONSTRUCT THE STRUCTURAL BLUEPRINT",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
-              letterSpacing: 1.5,
+          Flexible(
+            child: Text(
+              context.tr('games.essayDrafting_instruction', fallback: instruction),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: primaryColor,
+                letterSpacing: 1.5,
+              ),
             ),
           ),
         ],

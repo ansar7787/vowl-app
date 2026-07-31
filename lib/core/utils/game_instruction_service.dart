@@ -721,13 +721,13 @@ class GameInstructionService {
       title: "Essay Architect",
       icon: Icons.article_rounded,
       objective:
-          "Draft a structured essay with an introduction, body, and conclusion.",
+          "Sequence the paragraph blocks into their correct logical structure. Mastering structural progression ensures your ideas flow logically, making your writing persuasive and clear in real-world communication.",
       rules: [
-        "Clear thesis",
-        "Logical body paragraphs",
-        "Strong closing summary",
+        "Find the opening claim",
+        "Sequence supporting reasons",
+        "Lock the structural blueprint",
       ],
-      actionText: "Draft Essay",
+      actionText: "Construct Blueprint",
       tip: "PRO TIP: Ensure each body paragraph has a clear topic sentence.",
     ),
     // 5. Grammar

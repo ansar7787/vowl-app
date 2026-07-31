@@ -34,6 +34,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
   final _hapticService = di.sl<HapticService>();
 
   final Map<String, String?> _blueprintSlots = {};
+  WritingQuest? _lastQuest;
 
   bool _showConfetti = false;
 
@@ -105,7 +106,6 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
     return BlocConsumer<WritingBloc, WritingState>(
       listenWhen: (prev, curr) =>
           (curr is WritingGameComplete && prev is! WritingGameComplete) ||
-          (curr is WritingGameOver && prev is! WritingGameOver) ||
           (curr is WritingLoaded && curr.lastAnswerCorrect == null),
       listener: (context, state) {
         if (state is WritingLoaded && state.lastAnswerCorrect == null) {
@@ -127,14 +127,6 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
             enableDoubleUp: true,
           );
         }
-
-        if (state is WritingGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () =>
-                context.read<WritingBloc>().add(const RestoreLife()),
-          );
-        }
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
@@ -142,22 +134,30 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
             ? state.currentQuest as WritingQuest?
             : null;
 
-        final options = quest?.options ?? [];
+        if (quest != null) {
+          _lastQuest = quest;
+        }
+
+        final activeQuest = quest ?? _lastQuest;
+
+        final options = activeQuest?.options ?? [];
         final slotsFilled =
             _blueprintSlots.values.every((v) => v != null) &&
             _blueprintSlots.isNotEmpty;
         final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
         final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
+        final bool isFinalFailure = state.livesRemaining == 0;
 
         return WritingBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
           isAnswered: isAnswered,
           isCorrect: isCorrect,
+          isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
-          child: quest == null
+          child: activeQuest == null
               ? const SizedBox()
               : SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
@@ -168,11 +168,12 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                         SizedBox(height: 16.h),
                         EssayDraftingInstruction(
                           primaryColor: theme.primaryColor,
+                          instruction: activeQuest.instruction ?? "",
                         ),
                         SizedBox(height: 24.h),
 
                         EssayDraftingTopicBanner(
-                          topic: quest.essayTopic ?? "",
+                          topic: activeQuest.essayTopic ?? "",
                           color: theme.primaryColor,
                           isDark: isDark,
                         ),
