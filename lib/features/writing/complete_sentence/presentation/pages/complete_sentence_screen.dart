@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -10,6 +10,7 @@ import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_instruction.dart';
 import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_target_wall.dart';
 import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_ballista_ammo.dart';
@@ -193,7 +194,9 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
           // Passing it here caused a double dispatch â€” now a no-op.
           onHint: () {},
           child: quest == null
-              ? const SizedBox.shrink()
+              ? (_lastQuest == null
+                  ? GameShimmerLoading(primaryColor: _theme.primaryColor)
+                  : const SizedBox.shrink())
               : Stack(
                   key: _stackKey,
                   children: [

@@ -48,6 +48,7 @@ class CompleteSentenceInstruction extends StatelessWidget {
                       )
                       .toUpperCase(),
                   textAlign: TextAlign.center,
+                  maxLines: null,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 10.sp,
