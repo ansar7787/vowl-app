@@ -8,600 +8,600 @@
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "A software developer noticed a bug causing the app to crash on older devices. She isolated the problem in the code and wrote a patch to fix it. After testing, the update was released to all users.",
+            "story": "Although the marketing budget had been cut in half, the team still needed to launch the new product on time. They focused their limited funds on social media instead of print ads. The launch reached more customers than any previous campaign.",
             "options": [
-                "The developer noticed a bug crashing the app on older devices.",
-                "She isolated the problem and wrote a code patch.",
-                "The update was tested and released to all users.",
-                "The developer ignored the bug and closed the report."
+                "The company decided to delay the launch by several months.",
+                "The marketing budget was cut in half before the product launch.",
+                "The team focused their limited funds on social media instead of print ads.",
+                "The launch reached more customers than any previous campaign."
             ],
             "correctOrder": [
-                0,
                 1,
-                2
+                2,
+                3
             ],
-            "hint": "Follow the debugging story: identifying, fixing, then releasing. One frame replaces action with inaction.",
-            "explanation": "Software bug-fix narratives show identification, targeted resolution, and release. The distractor replaces professional action with neglect."
+            "hint": "Notice what actually happens to the launch date despite the budget cut.",
+            "explanation": "Because the launch reaches more customers than any previous campaign, an option delaying it by months contradicts it happening on schedule."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L41_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The marketing team created a campaign for a new product launch. They designed social media posts, a promotional video, and printed flyers. The campaign reached over a million people within the first week.",
+            "story": "Since the office building's elevator had been out of service for a week, employees on higher floors grew frustrated. Management arranged a temporary shuttle to a nearby building with a working lift. Most employees said the shuttle made the inconvenience manageable.",
             "options": [
-                "The campaign failed to attract any public interest.",
-                "The marketing team created a new product campaign.",
-                "They designed social media posts, a video, and flyers.",
-                "The campaign reached over a million people in one week."
+                "The office elevator had been out of service for a week.",
+                "Employees refused to use the shuttle at all.",
+                "Management arranged a temporary shuttle to a nearby building with a working lift.",
+                "Most employees said the temporary shuttle made the inconvenience manageable."
             ],
             "correctOrder": [
-                1,
+                0,
                 2,
                 3
             ],
-            "hint": "Trace the campaign: creation, producing diverse materials, then the reach. One frame replaces wide reach with failure.",
-            "explanation": "Marketing campaign narratives show creation, multi-channel delivery, and a large audience. The distractor replaces success with failure."
+            "hint": "Check whether each option matches how employees actually respond to the shuttle.",
+            "explanation": "Since most employees say the shuttle made things manageable, an option showing outright refusal to use it contradicts that reported response."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L41_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The patient arrived at the clinic complaining of severe back pain. The doctor ordered an X-ray and reviewed the images carefully. A course of physiotherapy was prescribed.",
+            "story": "Despite growing up in a family with no musicians, Tomas became fascinated with the violin at age seven. He practiced alone in his room every day after school. By sixteen, he was accepted into a prestigious music academy.",
             "options": [
-                "The patient arrived complaining of severe back pain.",
-                "The doctor ordered and reviewed an X-ray.",
-                "The doctor dismissed the patient without any examination.",
-                "A course of physiotherapy was prescribed."
+                "Tomas grew up in a family with no musicians but became fascinated with the violin at age seven.",
+                "Tomas practiced alone in his room every day after school.",
+                "Tomas gave up the violin before his tenth birthday.",
+                "By sixteen, Tomas was accepted into a prestigious music academy."
             ],
             "correctOrder": [
                 0,
                 1,
                 3
             ],
-            "hint": "Sequence the clinical story: arrival, examination with imaging, then treatment. One frame replaces care with dismissal.",
-            "explanation": "Clinical narratives show presenting a problem, diagnostic investigation, and prescribing treatment. The distractor replaces care with dismissal."
+            "hint": "Read the ending closely: it tells you what actually became of Tomas's violin practice.",
+            "explanation": "Because Tomas is accepted into a music academy at sixteen, an option ending his violin practice before age ten contradicts that later achievement."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L42_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "A journalist discovered that a local factory was dumping chemicals into a river. She gathered water samples and scientific evidence. Her investigation led to the factory being fined and closed.",
+            "story": "A regional airline had struggled with customer complaints for years before hiring a new head of service. She retrained every staff member on handling delays with empathy. Customer satisfaction scores rose for the first time in a decade.",
             "options": [
-                "A journalist discovered a factory dumping chemicals in a river.",
-                "The journalist decided not to pursue the story further.",
-                "She gathered water samples and scientific evidence.",
-                "Her investigation led to the factory being fined and closed."
+                "A regional airline had struggled with customer complaints for years before hiring a new head of service.",
+                "She retrained every staff member on handling delays with empathy.",
+                "Customer satisfaction scores rose for the first time in a decade.",
+                "Customer satisfaction scores fell even lower than before."
             ],
             "correctOrder": [
                 0,
-                2,
-                3
+                1,
+                2
             ],
-            "hint": "Follow the investigative story: discovering, gathering evidence, then the outcome. One frame abandons the investigation.",
-            "explanation": "Investigative journalism narratives show discovery, evidence gathering, and an impactful outcome. The distractor removes the publication and consequence."
+            "hint": "Track cause and effect: retraining staff leads to scores rising for the first time in a decade. One option reverses that.",
+            "explanation": "Since satisfaction scores rise for the first time in a decade, an option claiming they fell even lower reverses the airline's own turnaround."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L42_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The company introduced a flexible working policy for all employees. Managers were trained on how to support remote teams effectively. Staff satisfaction scores rose significantly in the following survey.",
+            "story": "A city planner noticed that a busy intersection had caused several accidents over the past year. The city installed a roundabout instead of traffic lights. Accidents at that intersection dropped to almost zero.",
             "options": [
-                "The company introduced a flexible working policy.",
-                "Managers were trained to support remote teams effectively.",
-                "Staff satisfaction scores rose significantly in the next survey.",
-                "Most employees refused to adopt the new policy."
+                "The roundabout caused even more accidents than before.",
+                "A city planner noticed that a busy intersection had caused several accidents over the past year.",
+                "The city installed a roundabout instead of traffic lights.",
+                "Accidents at that intersection dropped to almost zero."
             ],
             "correctOrder": [
-                0,
                 1,
-                2
+                2,
+                3
             ],
-            "hint": "Trace the policy change: introduction, manager training, then the positive outcome. One frame replaces the positive result with refusal.",
-            "explanation": "Workplace policy narratives show introduction, training, and a measurable improvement. The distractor replaces improved satisfaction with resistance."
+            "hint": "Notice what happens to accidents at the intersection once the roundabout is built.",
+            "explanation": "Because accidents drop to almost zero after the roundabout is installed, an option claiming it caused even more accidents reverses that safety result."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L42_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The engineer inspected the wind turbine after a fault alert was triggered. She climbed the turbine and identified a worn gear in the gearbox. The part was replaced and the turbine was fully operational again.",
+            "story": "A young chef had been rejected from culinary school twice before finally being accepted on her third attempt. She worked twice as hard as her classmates to catch up. She graduated at the top of her class two years later.",
             "options": [
-                "The turbine was decommissioned and removed from service.",
-                "The engineer inspected the wind turbine after a fault alert.",
-                "She climbed it and identified a worn gear in the gearbox.",
-                "The part was replaced and the turbine was operational again."
+                "A young chef had been rejected from culinary school twice before finally being accepted on her third attempt.",
+                "She dropped out of culinary school after one semester.",
+                "She worked twice as hard as her classmates to catch up.",
+                "She graduated at the top of her class two years later."
             ],
             "correctOrder": [
-                1,
+                0,
                 2,
                 3
             ],
-            "hint": "Sequence the repair: responding to the fault, identifying the problem, then fixing it. One frame decommissions the turbine instead of repairing it.",
-            "explanation": "Engineering repair narratives show fault detection, diagnosis, and resolution. The distractor replaces a successful repair with permanent decommissioning."
+            "hint": "This story moves in a clear line from rejection to extra effort to graduating top of the class. Find the sentence outside it.",
+            "explanation": "Since the chef graduates at the top of her class, an option showing her dropping out after one semester contradicts that eventual achievement."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L43_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The restaurant received a one-star hygiene rating from the inspector. The owner deep-cleaned the kitchen and retrained the entire kitchen staff. At the reinspection, the restaurant achieved a five-star rating.",
+            "story": "A software company noticed that new users often abandoned the app within its first few minutes of use. Designers simplified the sign-up process from ten steps down to three. New user retention improved significantly within the following quarter.",
             "options": [
-                "The restaurant received a one-star hygiene rating.",
-                "The owner deep-cleaned and retrained the kitchen staff.",
-                "The owner ignored the hygiene report and stayed open.",
-                "The restaurant achieved five stars at reinspection."
+                "A software company noticed that new users often abandoned the app within its first few minutes of use.",
+                "Designers simplified the sign-up process from ten steps down to three.",
+                "New user retention stayed exactly the same as before.",
+                "New user retention improved significantly within the following quarter."
             ],
             "correctOrder": [
                 0,
                 1,
                 3
             ],
-            "hint": "Follow the improvement story: receiving a poor rating, taking action, then the result. One frame ignores the warning.",
-            "explanation": "Improvement narratives show a poor result, corrective action, and a dramatically better outcome. The distractor replaces action with complacency."
+            "hint": "Ask which option matches what actually happened to retention after the sign-up process was simplified.",
+            "explanation": "Because retention improves significantly the following quarter, an option claiming it stayed exactly the same contradicts that measured result."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L43_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "A new urban farm was created on an unused rooftop in the city. Volunteers built raised beds and installed an irrigation system. Fresh vegetables were sold to local restaurants within the first harvest.",
+            "story": "A rural hospital had long struggled to recruit specialist doctors willing to relocate. Administrators began offering remote consultations with city-based specialists instead. Patients gained access to expert care without ever leaving town.",
             "options": [
-                "A new urban farm was created on a city rooftop.",
-                "The urban farm project ran out of funding before it opened.",
-                "Volunteers built raised beds and installed irrigation.",
-                "Fresh vegetables were sold to local restaurants at first harvest."
+                "A rural hospital had long struggled to recruit specialist doctors willing to relocate.",
+                "Administrators began offering remote consultations with city-based specialists instead.",
+                "Patients gained access to expert care without ever leaving town.",
+                "Patients still had to travel far to see any specialist."
             ],
             "correctOrder": [
                 0,
-                2,
-                3
+                1,
+                2
             ],
-            "hint": "Trace the urban farm: creation, volunteer effort, then producing and selling. One frame ends the project before it opens.",
-            "explanation": "Community enterprise narratives show creation, preparation, and successful production. The distractor prevents the project from even opening."
+            "hint": "One of these four sentences quietly contradicts what patients actually gain from the remote consultations.",
+            "explanation": "Since patients gain access to expert care without leaving town, an option claiming they still had to travel far contradicts that stated benefit."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L43_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The elderly man had been unable to leave his flat for months due to mobility problems. A local charity provided him with a motorised wheelchair. He was able to go outside independently for the first time in a year.",
+            "story": "A retired engineer had always regretted never learning to paint during his working years. He enrolled in a beginner's art class shortly after retiring. Within two years, his paintings were displayed in a local gallery.",
             "options": [
-                "The elderly man was unable to leave his flat for months.",
-                "A local charity provided him with a motorised wheelchair.",
-                "He went outside independently for the first time in a year.",
-                "The charity was unable to help and turned him away."
+                "He quit the art class after the very first lesson.",
+                "A retired engineer had always regretted never learning to paint during his working years.",
+                "He enrolled in a beginner's art class shortly after retiring.",
+                "Within two years, his paintings were displayed in a local gallery."
             ],
             "correctOrder": [
-                0,
                 1,
-                2
+                2,
+                3
             ],
-            "hint": "Sequence the support story: the problem, the charity's help, then the outcome. One frame refuses the help.",
-            "explanation": "Support narratives show a need, an organisation providing assistance, and a life-changing outcome. The distractor removes the positive intervention."
+            "hint": "Notice what happens to the engineer's paintings within two years of enrolling.",
+            "explanation": "Because his paintings are displayed in a gallery within two years, an option showing him quitting after the first lesson contradicts that later achievement."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L44_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The architect submitted plans for a new community arts centre. The planning committee reviewed the proposal over three weeks. Approval was granted and construction began the following month.",
+            "story": "Because remote work had become permanent, a marketing firm decided its large downtown office was no longer necessary. It moved to a much smaller shared workspace instead. The company saved a substantial amount on rent each year.",
             "options": [
-                "The planning committee rejected the application outright.",
-                "The architect submitted plans for a community arts centre.",
-                "The planning committee reviewed the proposal for three weeks.",
-                "Approval was granted and construction began."
+                "A marketing firm decided its large downtown office was no longer necessary once remote work became permanent.",
+                "The company's rent costs increased after the move.",
+                "The firm moved to a much smaller shared workspace instead.",
+                "The company saved a substantial amount on rent each year."
             ],
             "correctOrder": [
-                1,
+                0,
                 2,
                 3
             ],
-            "hint": "Follow the approval process: submitting, reviewing, then approving and building. One frame rejects the application.",
-            "explanation": "Planning narratives show submission, review, and approval. The distractor replaces approval with rejection."
+            "hint": "Check whether each option matches what actually happened to the firm's rent after downsizing.",
+            "explanation": "Since the firm saves a substantial amount on rent, an option claiming rent costs increased after the move reverses that financial outcome."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L44_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The health campaign encouraged people to walk ten thousand steps a day. Wristband trackers were distributed free at local surgeries. After six months, participants reported improved energy and lower blood pressure.",
+            "story": "A veteran teacher noticed that students seemed increasingly anxious before every exam. She began each exam with five minutes of simple breathing exercises. Reported exam anxiety among her students dropped noticeably.",
             "options": [
-                "The health campaign encouraged ten thousand steps a day.",
-                "Wristband trackers were distributed free at local surgeries.",
-                "Most participants found the step target impossible to achieve.",
-                "Participants reported better energy and lower blood pressure."
+                "A veteran teacher noticed that students seemed increasingly anxious before every exam.",
+                "She began each exam with five minutes of simple breathing exercises.",
+                "Reported exam anxiety among her students increased even further.",
+                "Reported exam anxiety among her students dropped noticeably."
             ],
             "correctOrder": [
                 0,
                 1,
                 3
             ],
-            "hint": "Trace the health campaign: encouraging steps, distributing trackers, then the outcomes. One frame replaces positive outcomes with failure.",
-            "explanation": "Health campaign narratives show a target, a tool for tracking, and measurable health improvements. The distractor replaces improvement with failure."
+            "hint": "Read the ending closely: it tells you what actually happened to students' exam anxiety.",
+            "explanation": "Because reported anxiety drops noticeably after the breathing exercises begin, an option claiming it increased further contradicts that measured change."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L44_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The teacher noticed that several students were struggling with fractions. She redesigned her lessons to include visual models and group activities. Assessment scores for the class improved by the end of the term.",
+            "story": "A small vineyard had been losing money for three consecutive years before a new manager arrived. She focused the vineyard's marketing on a single signature wine. The vineyard turned a profit for the first time in years.",
             "options": [
-                "The teacher noticed students struggling with fractions.",
-                "The students continued to struggle despite the changes.",
-                "She redesigned lessons with visual models and group activities.",
-                "Assessment scores improved by the end of the term."
+                "A small vineyard had been losing money for three consecutive years before a new manager arrived.",
+                "The new manager focused the vineyard's marketing on a single signature wine.",
+                "The vineyard turned a profit for the first time in years.",
+                "The vineyard closed down within the following year."
             ],
             "correctOrder": [
                 0,
-                2,
-                3
+                1,
+                2
             ],
-            "hint": "Sequence the teaching response: noticing, adapting teaching, then the improved result. One frame replaces improvement with continued struggle.",
-            "explanation": "Pedagogical response narratives show identification of a gap, creative adaptation, and measurable improvement. The distractor denies the improvement."
+            "hint": "Track cause and effect here: a focused strategy leads to the first profit in years. One option reverses that.",
+            "explanation": "Since the vineyard turns a profit for the first time in years, an option claiming it closed down the following year contradicts that turnaround."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L45_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The new data privacy law came into effect on the first of January. Companies were required to update their privacy policies and inform customers. Several large firms faced fines for failing to comply.",
+            "story": "A logistics manager realized that drivers were taking inefficient routes across the city each day. The company adopted route-planning software recommended by another firm. Average delivery times fell by nearly twenty percent.",
             "options": [
-                "The new data privacy law came into effect in January.",
-                "Companies updated privacy policies and informed customers.",
-                "Several large firms were fined for failing to comply.",
-                "All companies complied with the law without any issues."
+                "Average delivery times rose by nearly twenty percent.",
+                "A logistics manager realized that drivers were taking inefficient routes across the city each day.",
+                "The company adopted route-planning software recommended by another firm.",
+                "Average delivery times fell by nearly twenty percent."
             ],
             "correctOrder": [
-                0,
                 1,
-                2
+                2,
+                3
             ],
-            "hint": "Follow the legal story: the law taking effect, companies complying or not, then consequences. One frame removes all consequences.",
-            "explanation": "Regulatory narratives show a law taking effect, a compliance requirement, and consequences for non-compliance. The distractor removes all consequences, contradicting the story."
+            "hint": "Notice what actually happens to delivery times once the new software is adopted.",
+            "explanation": "Because delivery times fall by nearly twenty percent, an option claiming they rose by that same amount reverses the story's measured outcome."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L45_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The university launched a mental health awareness week across all its campuses. Students and staff attended workshops, panel discussions, and wellbeing sessions. The initiative prompted a significant rise in students seeking counselling support.",
+            "story": "A nonprofit organization found it increasingly difficult to secure donations through traditional mail campaigns. It shifted its entire fundraising effort to social media instead. Donations increased by more than double within one year.",
             "options": [
-                "Students were too busy with coursework to attend any sessions.",
-                "The university launched a mental health awareness week.",
-                "Students and staff attended workshops and wellbeing sessions.",
-                "The week prompted a rise in students seeking counselling."
+                "A nonprofit organization found it increasingly difficult to secure donations through traditional mail campaigns.",
+                "Donations to the organization declined by half that year.",
+                "The organization shifted its entire fundraising effort to social media instead.",
+                "Donations increased by more than double within one year."
             ],
             "correctOrder": [
-                1,
+                0,
                 2,
                 3
             ],
-            "hint": "Trace the initiative: launching, attendance, then the measurable impact. One frame replaces good attendance with avoidance.",
-            "explanation": "Awareness campaign narratives show a launch, active participation, and a positive behavioural outcome. The distractor replaces participation with absence."
+            "hint": "Ask which option matches what actually happened to donations after the shift to social media.",
+            "explanation": "Since donations more than double within one year, an option claiming they declined by half reverses that financial result entirely."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L45_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The documentary filmmaker spent a year following a family through a refugee camp. She edited the footage into a powerful ninety-minute film. The film won a humanitarian award at an international festival.",
+            "story": "A young violinist had been told by several teachers that she lacked natural talent. She chose to practice for an extra hour every single day. She eventually earned a spot in a national youth orchestra.",
             "options": [
-                "The filmmaker spent a year documenting a refugee family.",
-                "She edited the footage into a ninety-minute film.",
-                "The footage was too disturbing to be aired and was shelved.",
-                "The film won a humanitarian award at an international festival."
+                "A young violinist had been told by several teachers that she lacked natural talent.",
+                "She chose to practice for an extra hour every single day.",
+                "She quit playing the violin after hearing that criticism.",
+                "She eventually earned a spot in a national youth orchestra."
             ],
             "correctOrder": [
                 0,
                 1,
                 3
             ],
-            "hint": "Sequence the film-making story: the year of filming, editing, then winning an award. One frame removes the film from public view.",
-            "explanation": "Documentary narratives show sustained observation, editorial work, and critical recognition. The distractor replaces award recognition with shelving."
+            "hint": "One of these four sentences quietly contradicts what the violinist does after hearing the criticism.",
+            "explanation": "Because she eventually earns a spot in a national youth orchestra, an option showing her quitting after the criticism contradicts that later success."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L46_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "A marine biologist collected water samples from three locations along the coastline. Back in the laboratory, she tested each sample for levels of microplastics. Her results revealed dangerously high concentrations near the harbour.",
+            "story": "A city's recycling program had a participation rate of under twenty percent for several years. Officials redesigned the bins with clearer, color-coded instructions. Participation rose to nearly sixty percent within a year.",
             "options": [
-                "The biologist collected water samples from three coastline locations.",
-                "All samples showed normal safe levels of microplastics.",
-                "She tested each sample for microplastic levels in the lab.",
-                "Results revealed dangerous concentrations near the harbour."
+                "A city's recycling program had a participation rate of under twenty percent for several years.",
+                "Officials redesigned the bins with clearer, color-coded instructions.",
+                "Participation rose to nearly sixty percent within a year.",
+                "Participation stayed under twenty percent despite the redesign."
             ],
             "correctOrder": [
                 0,
-                2,
-                3
+                1,
+                2
             ],
-            "hint": "Follow the scientific study: collecting, testing, then the findings. One frame reverses the alarming results.",
-            "explanation": "Environmental science narratives show collection, laboratory analysis, and a significant finding. The distractor replaces a concerning result with a normal one."
+            "hint": "This story moves in a clear line from low participation to a redesign to sixty percent participation. Find the sentence outside it.",
+            "explanation": "Because participation rises to nearly sixty percent, an option claiming it stayed under twenty percent denies the redesign's actual impact."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L46_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The new managing director reviewed the company's five-year financial report on her first day. She identified three departments that were consistently underperforming. She restructured those departments and set new measurable targets.",
+            "story": "A small clothing brand relied entirely on a single overseas supplier for years. A shipping delay left the brand without inventory for a full month. The owner began working with two local suppliers instead.",
             "options": [
-                "The MD reviewed the five-year financial report on her first day.",
-                "She identified three consistently underperforming departments.",
-                "She restructured those departments and set new targets.",
-                "She decided all departments were performing well and made no changes."
+                "The owner decided to close the business rather than adapt.",
+                "A small clothing brand relied entirely on a single overseas supplier for years.",
+                "A shipping delay left the brand without inventory for a full month.",
+                "The owner began working with two local suppliers instead."
             ],
             "correctOrder": [
-                0,
                 1,
-                2
+                2,
+                3
             ],
-            "hint": "Trace the management story: reviewing, identifying problems, then restructuring. One frame denies the problems and removes the action.",
-            "explanation": "Leadership narratives show analysis, problem identification, and decisive action. The distractor replaces action with complacency."
+            "hint": "Notice how the brand's owner actually responds to the shipping crisis.",
+            "explanation": "Since the owner begins working with two local suppliers, an option showing the business closing instead contradicts that practical adaptation."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L46_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The community radio station launched a new evening talk show. Listeners were invited to phone in with questions for local politicians. The first broadcast attracted the highest audience the station had seen in ten years.",
+            "story": "A father noticed his daughter had grown quiet and withdrawn after starting a new school. He began setting aside twenty minutes each evening just to listen to her. She gradually opened up and seemed happier within a few weeks.",
             "options": [
-                "The show received so few calls that it was cancelled after the pilot.",
-                "The community radio station launched a new evening talk show.",
-                "Listeners phoned in with questions for local politicians.",
-                "The first broadcast attracted the station's highest audience in ten years."
+                "A father noticed his daughter had grown quiet and withdrawn after starting a new school.",
+                "She became even more withdrawn as the weeks passed.",
+                "He began setting aside twenty minutes each evening just to listen to her.",
+                "His daughter gradually opened up and seemed happier within a few weeks."
             ],
             "correctOrder": [
-                1,
+                0,
                 2,
                 3
             ],
-            "hint": "Sequence the radio launch: launching the show, listener participation, then the record audience. One frame replaces success with cancellation.",
-            "explanation": "Media launch narratives show introduction, audience engagement, and a record-breaking outcome. The distractor replaces success with cancellation."
+            "hint": "Check whether each option matches how the daughter's mood actually changes over the following weeks.",
+            "explanation": "Because the daughter gradually opens up and seems happier, an option claiming she became more withdrawn reverses that emotional improvement."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L47_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The small business owner applied for a government start-up grant. She submitted a detailed business plan and three years of financial projections. The grant was approved within eight weeks.",
+            "story": "A manufacturing plant had one of the highest defect rates in its entire industry. Engineers added a simple quality-check step earlier in the process. The defect rate fell to among the lowest in the industry.",
             "options": [
-                "The business owner applied for a government start-up grant.",
-                "She submitted a business plan and three years of projections.",
-                "The grant application was rejected without explanation.",
-                "The grant was approved within eight weeks."
+                "A manufacturing plant had one of the highest defect rates in its entire industry.",
+                "Engineers added a simple quality-check step earlier in the process.",
+                "The defect rate remained the highest in the industry.",
+                "The defect rate fell to among the lowest in the industry."
             ],
             "correctOrder": [
                 0,
                 1,
                 3
             ],
-            "hint": "Follow the grant story: applying, submitting documents, then receiving approval. One frame replaces approval with rejection.",
-            "explanation": "Business grant narratives show application, submission of strong evidence, and approval. The distractor replaces approval with rejection."
+            "hint": "Read the ending closely: it tells you where the plant's defect rate actually ends up.",
+            "explanation": "Because the defect rate falls to among the lowest in the industry, an option claiming it remained the highest denies that measured improvement."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L47_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The hospital introduced a new electronic patient record system. All clinical staff attended training sessions over two weeks. The system went live and reduced administrative errors significantly.",
+            "story": "A regional newspaper had been losing subscribers steadily for almost a decade. It launched a free daily newsletter to attract younger readers. Subscriptions grew for the first time in ten years.",
             "options": [
-                "The hospital introduced a new electronic record system.",
-                "The new system caused so many errors that it was withdrawn.",
-                "Clinical staff attended training sessions over two weeks.",
-                "The system went live and reduced administrative errors."
+                "A regional newspaper had been losing subscribers steadily for almost a decade.",
+                "The newspaper launched a free daily newsletter to attract younger readers.",
+                "Subscriptions grew for the first time in ten years.",
+                "Subscriptions continued falling at the same steady rate."
             ],
             "correctOrder": [
                 0,
-                2,
-                3
+                1,
+                2
             ],
-            "hint": "Trace the system change: introduction, training, then successful go-live. One frame replaces success with withdrawal.",
-            "explanation": "Digital transformation narratives show introduction, staff training, and a measurable improvement. The distractor replaces success with a failed rollout."
+            "hint": "Track cause and effect: the newsletter leads to subscriptions growing for the first time in ten years. One option reverses that.",
+            "explanation": "Since subscriptions grow for the first time in a decade, an option claiming they kept falling at the same rate denies that turnaround."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L47_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The architect was commissioned to redesign a Victorian market hall. She carefully restored the original ironwork and tiled floors. She added a modern glass roof while preserving the building's historic character.",
+            "story": "A young athlete tore a ligament just months before an important national competition. She followed a strict physical therapy program every single day. She competed and placed in the top three at the competition.",
             "options": [
-                "The architect was commissioned to redesign a Victorian market hall.",
-                "She restored the original ironwork and tiled floors.",
-                "She added a modern glass roof preserving the historic character.",
-                "The original building was demolished to make way for a modern one."
+                "She was unable to compete at all due to the injury.",
+                "A young athlete tore a ligament just months before an important national competition.",
+                "She followed a strict physical therapy program every single day.",
+                "She competed and placed in the top three at the competition."
             ],
             "correctOrder": [
-                0,
                 1,
-                2
+                2,
+                3
             ],
-            "hint": "Sequence the restoration: the commission, careful preservation, then adding modern elements. One frame replaces restoration with demolition.",
-            "explanation": "Architectural restoration narratives show commissioning, careful preservation, and sympathetic addition. The distractor replaces restoration with demolition."
+            "hint": "Notice what the athlete actually manages to do at the competition itself.",
+            "explanation": "Because she competes and places in the top three, an option claiming she was unable to compete at all contradicts that outcome directly."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L48_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "A secondary school introduced a mentoring programme pairing older students with younger ones. Older students received training in active listening and communication. Student wellbeing and attainment both improved across the school.",
+            "story": "A city government had received repeated complaints about long wait times at the vehicle registration office. It introduced an online booking system for appointments. Average wait times dropped from hours to under fifteen minutes.",
             "options": [
-                "Younger students found the mentoring unhelpful and withdrew.",
-                "The school introduced a mentoring programme pairing students.",
-                "Older students were trained in listening and communication.",
-                "Student wellbeing and attainment improved across the school."
+                "A city government had received repeated complaints about long wait times at the vehicle registration office.",
+                "Average wait times increased even further after the change.",
+                "The government introduced an online booking system for appointments.",
+                "Average wait times dropped from hours to under fifteen minutes."
             ],
             "correctOrder": [
-                1,
+                0,
                 2,
                 3
             ],
-            "hint": "Follow the mentoring story: the programme introduction, training, then the outcome. One frame replaces improved outcomes with withdrawal.",
-            "explanation": "Mentoring programme narratives show introduction, preparation, and measurable gains in wellbeing and attainment. The distractor replaces success with withdrawal."
+            "hint": "Ask which option matches what actually happened to wait times after online booking began.",
+            "explanation": "Since wait times drop from hours to under fifteen minutes, an option claiming they increased further reverses that clear improvement."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L48_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The city council piloted a night-time street safety scheme in two districts. Officers patrolled on foot and encouraged safer behaviour in entertainment areas. Violent incidents in those areas fell by thirty per cent.",
+            "story": "A small brewery had struggled for years to distinguish itself in a crowded market. It began sourcing all its ingredients from farms within fifty miles. Its local-sourcing story helped it stand out and grow quickly.",
             "options": [
-                "The council piloted a night-time street safety scheme.",
-                "Officers patrolled and encouraged safer behaviour in those areas.",
-                "Crime increased in the pilot areas despite the patrols.",
-                "Violent incidents fell by thirty per cent."
+                "A small brewery had struggled for years to distinguish itself in a crowded market.",
+                "The brewery began sourcing all its ingredients from farms within fifty miles.",
+                "The brewery closed down due to a lack of customer interest.",
+                "The brewery's local-sourcing story helped it stand out and grow quickly."
             ],
             "correctOrder": [
                 0,
                 1,
                 3
             ],
-            "hint": "Trace the safety scheme: piloting, active patrolling, then the crime reduction. One frame replaces reduction with an increase.",
-            "explanation": "Safety scheme narratives show piloting, active intervention, and a measurable reduction in crime. The distractor reverses the outcome."
+            "hint": "One of these four sentences quietly contradicts what actually happens to the brewery's growth.",
+            "explanation": "Because the local-sourcing story helps the brewery grow quickly, an option closing it down for lack of interest contradicts that described growth."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L48_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The natural history museum partnered with a local school to create an exhibition made by children. Students researched local ecosystems and designed informational panels. The exhibition was displayed publicly for two months.",
+            "story": "A university researcher spent five years failing to replicate a promising early result. She adjusted one small variable that earlier studies had overlooked. Her corrected experiment finally confirmed the original finding.",
             "options": [
-                "The museum partnered with a local school for a children's exhibition.",
-                "The museum rejected the students' work as too simplistic.",
-                "Students researched ecosystems and designed informational panels.",
-                "The exhibition was displayed publicly for two months."
+                "A university researcher spent five years failing to replicate a promising early result.",
+                "She adjusted one small variable that earlier studies had overlooked.",
+                "Her corrected experiment finally confirmed the original finding.",
+                "She abandoned the research project after the third year."
             ],
             "correctOrder": [
                 0,
-                2,
-                3
+                1,
+                2
             ],
-            "hint": "Sequence the collaboration: partnering, students creating, then public display. One frame replaces display with rejection.",
-            "explanation": "Educational partnership narratives show collaboration, student creation, and public showcase. The distractor replaces recognition with rejection of the students' work."
+            "hint": "This story moves in a clear line from years of failure to one key adjustment to confirmation. Find the sentence outside it.",
+            "explanation": "Because her corrected experiment finally confirms the finding, an option showing her abandoning the project in year three contradicts that eventual success."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L49_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The environmental charity organised a coastal clean-up day. Volunteers collected seven tonnes of plastic waste from the beach. The charity published its findings to raise awareness of ocean pollution.",
+            "story": "A mid-sized hotel chain noticed guest satisfaction scores had been falling for two straight years. It retrained front-desk staff to resolve complaints on the spot rather than escalating them. Guest satisfaction scores rebounded within a single year.",
             "options": [
-                "The environmental charity organised a coastal clean-up day.",
-                "Volunteers collected seven tonnes of plastic from the beach.",
-                "The charity published its findings to raise awareness.",
-                "Volunteers collected very little rubbish and left early."
+                "Guest satisfaction scores continued declining for a third year.",
+                "A mid-sized hotel chain noticed guest satisfaction scores had been falling for two straight years.",
+                "The chain retrained front-desk staff to resolve complaints on the spot rather than escalating them.",
+                "Guest satisfaction scores rebounded within a single year."
             ],
             "correctOrder": [
-                0,
                 1,
-                2
+                2,
+                3
             ],
-            "hint": "Follow the clean-up story: organising, collecting, then publishing findings. One frame replaces a large collection with a small one and early departure.",
-            "explanation": "Awareness campaign narratives show organisation, significant effort, and publication of findings. The distractor replaces effectiveness with failure."
+            "hint": "Notice what happens to guest satisfaction once front-desk staff are retrained.",
+            "explanation": "Since satisfaction scores rebound within a single year, an option claiming they kept declining for a third year denies that recovery."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L49_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The city opened a new innovation hub for tech start-ups. Entrepreneurs moved in and began sharing resources, ideas, and expertise. Within a year, three of the resident companies had secured significant investment.",
+            "story": "A tech start-up spent its first eighteen months burning through investor funding without a clear product. The founders narrowed their focus to a single simple feature customers actually wanted. The company became profitable within six months of that decision.",
             "options": [
-                "Most start-ups moved out after failing to attract investors.",
-                "The city opened an innovation hub for tech start-ups.",
-                "Entrepreneurs moved in and shared resources and ideas.",
-                "Three companies secured significant investment within a year."
+                "A tech start-up spent its first eighteen months burning through investor funding without a clear product.",
+                "The company ran out of funding and shut down entirely.",
+                "The founders narrowed their focus to a single simple feature customers actually wanted.",
+                "The company became profitable within six months of that decision."
             ],
             "correctOrder": [
-                1,
+                0,
                 2,
                 3
             ],
-            "hint": "Trace the hub story: opening, collaborative activity, then investment outcomes. One frame replaces success with mass departure.",
-            "explanation": "Innovation hub narratives show opening, collaborative culture, and financial success. The distractor replaces investment success with failure."
+            "hint": "Check whether each option matches what actually happens to the start-up after narrowing its focus.",
+            "explanation": "Because the company becomes profitable within six months of the pivot, an option shutting it down entirely contradicts that financial turnaround."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L49_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The accountant identified a significant error in the company's quarterly tax return. She corrected the figures and submitted an amendment before the deadline. The tax authority confirmed the amendment was accepted.",
+            "story": "A community theater had seen ticket sales fall sharply after a nearby multiplex cinema opened. It began staging plays written entirely by local residents. Ticket sales climbed back to their highest level in years.",
             "options": [
-                "The accountant identified a significant tax return error.",
-                "She corrected the figures and submitted an amendment.",
-                "The company was fined heavily for the error in the tax return.",
-                "The tax authority confirmed the amendment was accepted."
+                "A community theater had seen ticket sales fall sharply after a nearby multiplex cinema opened.",
+                "The theater began staging plays written entirely by local residents.",
+                "Ticket sales fell even further after the change.",
+                "Ticket sales climbed back to their highest level in years."
             ],
             "correctOrder": [
                 0,
                 1,
                 3
             ],
-            "hint": "Sequence the correction: identifying the error, submitting an amendment, then the authority's response. One frame replaces acceptance with a fine.",
-            "explanation": "Professional correction narratives show identifying a mistake, acting to correct it, and receiving a positive response. The distractor replaces acceptance with a penalty."
+            "hint": "Read the ending closely: it tells you what actually happened to the theater's ticket sales.",
+            "explanation": "Since ticket sales climb back to their highest level in years, an option claiming they fell even further contradicts that recovery."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L50_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The councillor raised concerns about traffic congestion near the primary school. She proposed a timed road closure during morning and afternoon pick-up times. The measure was trialled for six months and deemed a success.",
+            "story": "A regional bank had seen younger customers close their accounts at an alarming rate. It launched a mobile app with no monthly fees for accounts under a certain balance. New account openings among younger customers rose sharply.",
             "options": [
-                "The councillor raised concerns about traffic near the school.",
-                "Residents rejected the road closure scheme and it was dropped.",
-                "She proposed timed road closures at pick-up times.",
-                "The measure was trialled for six months and deemed successful."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Follow the policy story: raising concerns, proposing a measure, then the outcome. One frame replaces the trial with rejection.",
-            "explanation": "Local policy narratives show identifying a problem, proposing a targeted measure, and a successful trial period. The distractor replaces success with community rejection."
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L50_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "Film Strip",
-            "story": "The personal trainer designed a twelve-week fitness programme for her client. She monitored progress weekly and adjusted the plan when necessary. By week twelve, the client had achieved all their fitness goals.",
-            "options": [
-                "The trainer designed a twelve-week fitness programme.",
-                "She monitored weekly progress and adjusted the plan as needed.",
-                "By week twelve the client had achieved all fitness goals.",
-                "The client abandoned the programme after just three weeks."
+                "A regional bank had seen younger customers close their accounts at an alarming rate.",
+                "The bank launched a mobile app with no monthly fees for accounts under a certain balance.",
+                "New account openings among younger customers rose sharply.",
+                "Younger customers continued closing their accounts at the same rate."
             ],
             "correctOrder": [
                 0,
                 1,
                 2
             ],
-            "hint": "Trace the fitness story: designing, monitoring and adapting, then the result. One frame ends the programme prematurely.",
-            "explanation": "Personal development narratives show a structured plan, ongoing adjustment, and goal achievement. The distractor replaces the completed journey with early abandonment."
+            "hint": "Track cause and effect: the fee-free app leads to a sharp rise in new accounts. One option reverses that.",
+            "explanation": "Because new account openings rise sharply among younger customers, an option claiming they kept closing accounts at the same rate denies that shift."
         },
         {
-            "id": "WRT_SUMMARIZESTORYWRITING_L50_Q3",
+            "id": "WRT_SUMMARIZESTORYWRITING_L50_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The novelist spent four years writing her debut novel. She submitted the manuscript to fifteen publishers before receiving an offer. The book was published to critical acclaim and sold over a hundred thousand copies.",
+            "story": "A struggling minor league baseball team had some of the lowest attendance in the league. Management introduced affordable family ticket bundles for weekend games. Weekend attendance nearly tripled within one season.",
             "options": [
-                "Every publisher rejected the novel and it was never published.",
-                "The novelist spent four years writing her debut novel.",
-                "She submitted to fifteen publishers before receiving an offer.",
-                "The book was published to critical acclaim and high sales."
+                "Weekend attendance remained just as low as before.",
+                "A struggling minor league baseball team had some of the lowest attendance in the league.",
+                "Management introduced affordable family ticket bundles for weekend games.",
+                "Weekend attendance nearly tripled within one season."
             ],
             "correctOrder": [
                 1,
                 2,
                 3
             ],
-            "hint": "Sequence the publishing story: writing, submitting widely, then success. One frame ends with universal rejection.",
-            "explanation": "Creative achievement narratives show sustained effort, persistence through rejection, and eventual success. The distractor removes the success entirely."
+            "hint": "Ask which option matches what actually happened to weekend attendance after the ticket bundles launched.",
+            "explanation": "Since weekend attendance nearly triples within one season, an option claiming it remained just as low denies that measured jump."
+        },
+        {
+            "id": "WRT_SUMMARIZESTORYWRITING_L50_Q3",
+            "instruction": "Arrange the story in the correct order.",
+            "subtype": "summarizeStoryWriting",
+            "interactionType": "Film Strip",
+            "story": "A talented but unknown illustrator had been rejected by publishers for over three years. She began posting her work daily on a public online platform instead. A publisher eventually discovered her work and offered her a book deal.",
+            "options": [
+                "A talented but unknown illustrator had been rejected by publishers for over three years.",
+                "She deleted her online portfolio out of frustration.",
+                "She began posting her work daily on a public online platform instead.",
+                "A publisher eventually discovered her illustrations online and offered her a book deal."
+            ],
+            "correctOrder": [
+                0,
+                2,
+                3
+            ],
+            "hint": "One of these four sentences quietly contradicts what the illustrator does with her online platform.",
+            "explanation": "Because a publisher eventually discovers her work online and offers a book deal, an option showing her deleting her portfolio contradicts that path to success."
         }
     ]
 }

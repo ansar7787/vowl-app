@@ -1,487 +1,487 @@
 {
-    "gameType": "situationSpeaking",
-    "batchIndex": 17,
-    "levels": "161-170",
-    "quests": [
-        {
-            "id": "SPK_SITUATIONSPEAKING_L161_Q1",
-            "interactionType": "Scene Scrubber",
-            "hint": "Deliver an authoritative expert opinion: 'Based on the totality of evidence available, my professional assessment is that…'",
-            "explanation": "'Based on the totality of evidence' signals comprehensive consideration rather than selective data. 'Professional assessment' distinguishes an expert judgment from a personal opinion - important in formal expert contexts.",
-            "situationText": "A government committee has asked for your expert professional opinion on a complex scientific matter.",
-            "sampleAnswer": "Based on the totality of the evidence available to us, my professional assessment is that the intervention is both safe and effective for the target population when applied under the conditions specified.",
-            "correctAnswer": "intervention is safe and effective for the target population",
-            "acceptedSynonyms": [
-                "intervention is safe and effective for the target population",
-                "totality of the evidence",
-                "professional assessment",
-                "expert testimony"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L161_Q2",
-            "interactionType": "Scene Scrubber",
-            "hint": "Qualify an expert position precisely: 'This conclusion holds within the parameters studied. Beyond those parameters, I would exercise caution.'",
-            "explanation": "'Holds within the parameters studied' is precise, responsible expert language. 'I would exercise caution beyond those parameters' shows intellectual honesty about the boundaries of your expert knowledge.",
-            "situationText": "You are giving expert testimony and a lawyer is pushing you to generalize your findings more broadly.",
-            "sampleAnswer": "This conclusion holds firmly within the parameters of the populations and conditions we studied. Beyond those specific parameters, I would strongly caution against direct extrapolation without further empirical evidence.",
-            "correctAnswer": "strongly caution against extrapolation beyond those parameters",
-            "acceptedSynonyms": [
-                "strongly caution against extrapolation beyond those parameters",
-                "holds firmly within the parameters studied",
-                "further empirical evidence needed",
-                "qualified expert position"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L161_Q3",
-            "interactionType": "Scene Scrubber",
-            "hint": "Acknowledge the limits of expertise: 'That question falls outside my specific area of expertise, but I can direct you to colleagues who are better placed to answer it.'",
-            "explanation": "'Outside my specific area of expertise' is a confident, honest boundary statement. Offering to direct someone to the right expert shows professional integrity and a commitment to accuracy over appearing omniscient.",
-            "situationText": "An interviewer asks you a question that lies just outside your specific area of specialized expertise.",
-            "sampleAnswer": "That question falls just outside my specific area of expertise, and I wouldn't want to speculate. I can direct you to colleagues in adjacent fields who are genuinely better placed than I am to give you an authoritative answer.",
-            "correctAnswer": "that question falls just outside my specific area of expertise",
-            "acceptedSynonyms": [
-                "that question falls just outside my specific area of expertise",
-                "would not want to speculate",
-                "direct you to colleagues",
-                "acknowledging limits of expertise"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L162_Q1",
-            "interactionType": "Scene Scrubber",
-            "hint": "Propose a policy: 'I am proposing that we introduce a graduated carbon tax, phased in over five years, beginning at twenty dollars per tonne.'",
-            "explanation": "A strong English policy proposal is specific about mechanism, timeline, and starting point. Vague proposals ('we should do something about carbon') invite challenge; specific ones ('graduated tax, phased over five years') demonstrate serious preparation.",
-            "situationText": "You are presenting a policy proposal to a legislative committee on environmental taxation.",
-            "sampleAnswer": "I am proposing the introduction of a graduated carbon tax, phased in over five years beginning at twenty dollars per tonne, with revenues ringfenced entirely for clean energy transition programmes.",
-            "correctAnswer": "graduated carbon tax phased in over five years beginning at twenty dollars",
-            "acceptedSynonyms": [
-                "graduated carbon tax phased in over five years beginning at twenty dollars",
-                "revenues ringfenced for clean energy",
-                "proposing a policy",
-                "specific policy proposal"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L162_Q2",
-            "interactionType": "Scene Scrubber",
-            "hint": "Analyse a policy: 'This policy addresses the symptom effectively while leaving the underlying structural cause largely untouched.'",
-            "explanation": "'Addresses the symptom while leaving the structural cause untouched' is a sophisticated analytical critique. It distinguishes between surface effectiveness and deeper systemic inadequacy - a hallmark of advanced policy analysis.",
-            "situationText": "A policy review asks you to evaluate the effectiveness of an existing government housing policy.",
-            "sampleAnswer": "This policy addresses the immediate affordability symptom effectively but leaves the underlying structural cause - insufficient supply - largely untouched. Without planning reform, the problem will inevitably resurface.",
-            "correctAnswer": "addresses the symptom while leaving the structural cause untouched",
-            "acceptedSynonyms": [
-                "addresses the symptom while leaving the structural cause untouched",
-                "insufficient supply unchanged",
-                "planning reform required",
-                "analysing a policy"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L162_Q3",
-            "interactionType": "Scene Scrubber",
-            "hint": "Critique a proposed policy: 'The policy is well-intentioned, but the evidence base supporting it is surprisingly thin and the distributional effects are concerning.'",
-            "explanation": "'Well-intentioned but…' concedes the positive motivation before a substantive critique - showing intellectual fairness. 'Surprisingly thin evidence base' and 'concerning distributional effects' are two distinct, precise lines of critique.",
-            "situationText": "An academic policy forum asks you to critically evaluate a recently announced government social policy.",
-            "sampleAnswer": "The policy is clearly well-intentioned, but the evidence base supporting its central mechanism is surprisingly thin, and the distributional effects on the lowest income deciles are genuinely concerning and underexplored.",
-            "correctAnswer": "evidence base is surprisingly thin and distributional effects are concerning",
-            "acceptedSynonyms": [
-                "evidence base is surprisingly thin and distributional effects are concerning",
-                "well-intentioned but",
-                "lowest income deciles underexplored",
-                "critiquing a proposed policy"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L163_Q1",
-            "interactionType": "Scene Scrubber",
-            "hint": "Make the scientific case for climate action: 'The evidence shows we have a rapidly closing window to avoid the most catastrophic impacts.'",
-            "explanation": "'Rapidly closing window' is a precise and urgent phrase for describing the narrowing timeframe for climate action. 'Most catastrophic impacts' refers to the IPCC's scenarios for temperature rises above 1.5 degrees Celsius.",
-            "situationText": "A parliamentary select committee has invited you to make the scientific case for urgent climate action.",
-            "sampleAnswer": "The evidence is unambiguous: we have a rapidly closing window to avoid the most catastrophic and irreversible impacts of climate change. Every year of delay narrows our options and increases the long-term cost.",
-            "correctAnswer": "rapidly closing window to avoid the most catastrophic impacts",
-            "acceptedSynonyms": [
-                "rapidly closing window to avoid the most catastrophic impacts",
-                "every year of delay narrows options",
-                "making the scientific case",
-                "climate urgency argument"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L163_Q2",
-            "interactionType": "Scene Scrubber",
-            "hint": "Discuss governmental climate responsibility: 'Governments must put a meaningful price on carbon - voluntary corporate action alone will never be sufficient.'",
-            "explanation": "'Meaningful price on carbon' and 'voluntary corporate action alone will never be sufficient' are precise, well-established positions in climate policy discourse. Using them shows familiarity with the substantive policy debate.",
-            "situationText": "An international climate summit is debating what governments must do, as opposed to what businesses should do.",
-            "sampleAnswer": "Governments must put a meaningful and rising price on carbon. Voluntary corporate action, however genuine and well-intentioned, will never move fast enough at the scale we need. Structural incentives must change.",
-            "correctAnswer": "meaningful and rising price on carbon",
-            "acceptedSynonyms": [
-                "meaningful and rising price on carbon",
-                "voluntary corporate action will never be sufficient",
-                "structural incentives must change",
-                "government climate responsibility"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L163_Q3",
-            "interactionType": "Scene Scrubber",
-            "hint": "Argue for systemic environmental change: 'The transition to a low-carbon economy is not just an environmental imperative but an economic opportunity of historic scale.'",
-            "explanation": "'Not just an environmental imperative but an economic opportunity' reframes the climate transition from a cost or sacrifice to a strategic economic opportunity - a highly effective rhetorical and substantive move in policy advocacy.",
-            "situationText": "A business leadership forum is debating whether the green transition is an economic burden or opportunity.",
-            "sampleAnswer": "The transition to a low-carbon economy is not just a moral or environmental imperative. Done well, it represents an economic opportunity of genuinely historic scale - in jobs, technology, and competitive advantage.",
-            "correctAnswer": "not just an environmental imperative but an economic opportunity of historic scale",
-            "acceptedSynonyms": [
-                "not just an environmental imperative but an economic opportunity of historic scale",
-                "jobs technology and competitive advantage",
-                "green transition as opportunity",
-                "reframing the green transition"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L164_Q1",
-            "interactionType": "Scene Scrubber",
-            "hint": "Distinguish equity from equality: 'Equality means giving everyone the same thing. Equity means giving people what they specifically need to achieve the same outcome.'",
-            "explanation": "Defining equity and equality precisely is essential in social justice discourse. 'Giving everyone the same thing' versus 'giving people what they need to achieve the same outcome' captures the crucial distinction clearly and memorably.",
-            "situationText": "A social policy seminar asks you to explain clearly the difference between equity and equality.",
-            "sampleAnswer": "Equality means giving everyone the same thing. Equity means recognizing that people start from different positions and giving each person what they specifically need to reach the same outcome. These require very different interventions.",
-            "correctAnswer": "equity means giving people what they specifically need to achieve the same outcome",
-            "acceptedSynonyms": [
-                "equity means giving people what they specifically need to achieve the same outcome",
-                "equality means giving everyone the same thing",
-                "different starting positions",
-                "equity versus equality"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L164_Q2",
-            "interactionType": "Scene Scrubber",
-            "hint": "Discuss structural inequality: 'Poverty is not simply a personal failing - it is a structural outcome of specific policy choices made over decades.'",
-            "explanation": "'Structural outcome of specific policy choices' is a key phrase in social justice analysis. It locates the cause of poverty in systems rather than individuals - a fundamental and important shift in analytical framing.",
-            "situationText": "An academic panel is debating the root causes of persistent poverty in wealthy societies.",
-            "sampleAnswer": "Poverty is not simply a personal failing, as some argue. It is a structural outcome of specific policy choices - on housing, wages, education funding, and social security - made and sustained over many decades.",
-            "correctAnswer": "structural outcome of specific policy choices made over decades",
-            "acceptedSynonyms": [
-                "structural outcome of specific policy choices made over decades",
-                "not simply a personal failing",
-                "housing wages education and social security",
-                "structural inequality analysis"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L164_Q3",
-            "interactionType": "Scene Scrubber",
-            "hint": "Propose solutions to systemic issues: 'Closing the opportunity gap requires not just individual support programmes but structural reform at the policy level.'",
-            "explanation": "'Closing the opportunity gap' is the standard English phrase for reducing inequality of opportunity. 'Not just individual support but structural reform' signals you understand the limitations of treating structural problems with individual-level solutions.",
-            "situationText": "A social policy conference asks for your recommendations for meaningfully reducing educational inequality.",
-            "sampleAnswer": "Closing the educational opportunity gap requires not just individual tutoring programmes, however well-designed, but genuine structural reform - to school funding formulas, teacher distribution, and early childhood provision.",
-            "correctAnswer": "structural reform at the policy level not just individual support programmes",
-            "acceptedSynonyms": [
-                "structural reform at the policy level not just individual support programmes",
-                "school funding formulas and teacher distribution",
-                "closing the opportunity gap",
-                "proposing solutions to inequality"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L165_Q1",
-            "interactionType": "Scene Scrubber",
-            "hint": "Analyse economics analytically: 'The monetary policy response was appropriate given the inflationary environment, though it carried significant distributional costs.'",
-            "explanation": "'Appropriate given the inflationary environment' places the policy in its specific economic context. 'Distributional costs' refers to unequal impacts across income groups - a sophisticated economic analysis point.",
-            "situationText": "An economics panel asks you to evaluate the central bank's monetary policy response to recent inflation.",
-            "sampleAnswer": "The monetary policy response was appropriate given the severity of the inflationary environment, though it carried significant distributional costs - particularly for mortgage holders and lower-income households with less savings buffer.",
-            "correctAnswer": "significant distributional costs particularly for mortgage holders",
-            "acceptedSynonyms": [
-                "significant distributional costs particularly for mortgage holders",
-                "appropriate given the inflationary environment",
-                "monetary policy response",
-                "evaluating economic policy"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L165_Q2",
-            "interactionType": "Scene Scrubber",
-            "hint": "Apply economic theory: 'Classical economic theory would predict that wage increases lead to inflation, but recent empirical evidence complicates that picture considerably.'",
-            "explanation": "'Classical theory would predict… but recent evidence complicates that' is a sophisticated academic structure for showing you know both the theory and its empirical limitations - a mark of genuine analytical maturity.",
-            "situationText": "Your economics seminar asks you to apply economic theory to recent labour market data and explain any discrepancies.",
-            "sampleAnswer": "Classical theory would predict that the current wage increases should generate significant inflation. But recent empirical evidence complicates that picture considerably - suggesting structural changes in how price-setting actually works.",
-            "correctAnswer": "classical theory would predict but recent evidence complicates that picture",
-            "acceptedSynonyms": [
-                "classical theory would predict but recent evidence complicates that picture",
-                "wage increases and significant inflation",
-                "structural changes in price-setting",
-                "applying economic theory to data"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L165_Q3",
-            "interactionType": "Scene Scrubber",
-            "hint": "Make an economic prediction with appropriate caveats: 'Our modelling suggests output will grow by two percent next year, assuming stable energy prices and no major external shocks.'",
-            "explanation": "'Our modelling suggests… assuming…' is the standard structure for economic forecasting - it gives a specific prediction while immediately identifying the key assumptions on which that prediction depends. Both are essential for responsible forecasting.",
-            "situationText": "A financial conference asks you to give your economic growth projection for the coming year.",
-            "sampleAnswer": "Our modelling suggests the economy will expand by approximately two percent next year, assuming broadly stable energy prices and the absence of any major external demand or supply shocks. Those are significant assumptions.",
-            "correctAnswer": "two percent assuming stable energy prices and no major external shocks",
-            "acceptedSynonyms": [
-                "two percent assuming stable energy prices and no major external shocks",
-                "significant assumptions",
-                "our modelling suggests",
-                "economic growth projection"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L166_Q1",
-            "interactionType": "Scene Scrubber",
-            "hint": "Discuss hypothesis formation: 'A robust hypothesis must be specific, falsifiable, and grounded in the existing theoretical literature.'",
-            "explanation": "'Specific, falsifiable, and grounded in the literature' are the three key criteria for a good scientific hypothesis. Being able to articulate these criteria clearly is a fundamental scientific literacy and communication skill.",
-            "situationText": "A research methods class asks you to explain what makes a genuinely good scientific hypothesis.",
-            "sampleAnswer": "A robust hypothesis must be specific enough to test, falsifiable - meaning it could in principle be proven wrong - and grounded in the existing theoretical literature. Without these three properties, it's not testable science.",
-            "correctAnswer": "specific falsifiable and grounded in the existing theoretical literature",
-            "acceptedSynonyms": [
-                "specific falsifiable and grounded in the existing theoretical literature",
-                "could in principle be proven wrong",
-                "not testable science without these",
-                "what makes a good scientific hypothesis"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L166_Q2",
-            "interactionType": "Scene Scrubber",
-            "hint": "Evaluate research evidence: 'The study's findings are compelling, but the small sample size and self-reporting methodology warrant caution about generalizability.'",
-            "explanation": "'Compelling but… sample size… self-reporting… generalizability' are four key research evaluation concepts. Being able to apply these critical criteria to a specific study marks advanced research literacy in English.",
-            "situationText": "Your research methods professor asks you to critically evaluate the strength of evidence from a published study.",
-            "sampleAnswer": "The study's findings are genuinely compelling. However, the small sample size and reliance on self-reporting methodology warrant some caution about how broadly generalizable these findings are to other populations or contexts.",
-            "correctAnswer": "compelling but sample size and self-reporting warrant caution",
-            "acceptedSynonyms": [
-                "compelling but sample size and self-reporting warrant caution",
-                "not fully generalizable to other populations",
-                "compelling findings but",
-                "evaluating research evidence"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L166_Q3",
-            "interactionType": "Scene Scrubber",
-            "hint": "Discuss the replication crisis: 'The replication crisis reveals that the scientific method's self-correcting mechanism depends entirely on researchers actually attempting replication - which happens too rarely.'",
-            "explanation": "'Replication crisis', 'self-correcting mechanism', and 'replication' are key science communication terms. This sophisticated observation - that a theoretical protection requires a practical action that rarely happens - shows nuanced understanding.",
-            "situationText": "A philosophy of science seminar is discussing the implications of the scientific replication crisis for how we trust research.",
-            "sampleAnswer": "The replication crisis reveals something important: the scientific method's theoretical self-correcting mechanism only works if researchers actually attempt replication. In practice, that happens far too rarely given current incentive structures.",
-            "correctAnswer": "self-correcting mechanism depends on researchers actually attempting replication",
-            "acceptedSynonyms": [
-                "self-correcting mechanism depends on researchers actually attempting replication",
-                "happens far too rarely",
-                "current incentive structures",
-                "the replication crisis"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L167_Q1",
-            "interactionType": "Scene Scrubber",
-            "hint": "Use Socratic questioning: 'If we accept that premise, then we must also accept X - and if we accept X, do we not also have to accept Y?'",
-            "explanation": "The Socratic method works by following an argument to its logical conclusions and then testing whether those conclusions are acceptable. 'If we accept… then we must also accept' is the fundamental move of Socratic philosophical dialogue.",
-            "situationText": "You are facilitating a Socratic seminar discussion on a fundamental ethical question with your philosophy class.",
-            "sampleAnswer": "If we accept the premise that all lives have equal value - which I think most of us would - then we must also accept that our collective obligations are significantly larger than we typically acknowledge. Can we consistently hold both?",
-            "correctAnswer": "if we accept that all lives have equal value then our obligations are larger",
-            "acceptedSynonyms": [
-                "if we accept that all lives have equal value then our obligations are larger",
-                "can we consistently hold both",
-                "Socratic if we accept then we must",
-                "Socratic questioning technique"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L167_Q2",
-            "interactionType": "Scene Scrubber",
-            "hint": "Evaluate logical validity: 'The argument is valid in form - the conclusion does follow from the premises - but the first premise is empirically false.'",
-            "explanation": "'Valid in form' means the logical structure is correct: if the premises were true, the conclusion would follow. 'The premise is empirically false' means the structure is sound but the content is wrong - a crucial philosophical distinction.",
-            "situationText": "A logic class asks you to evaluate whether an argument is both valid in form and sound in its content.",
-            "sampleAnswer": "The argument is valid in its logical form - the conclusion does follow necessarily from the premises. But the first premise is empirically false, which means the argument fails on soundness despite being structurally correct.",
-            "correctAnswer": "valid in form but the first premise is empirically false",
-            "acceptedSynonyms": [
-                "valid in form but the first premise is empirically false",
-                "conclusion follows necessarily from premises",
-                "fails on soundness despite valid form",
-                "evaluating logical validity"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L167_Q3",
-            "interactionType": "Scene Scrubber",
-            "hint": "Defend a philosophical premise: 'I hold that moral claims can be objectively true - not merely culturally relative - and here is why this is a defensible position.'",
-            "explanation": "'Moral claims can be objectively true' states a position in metaethics (moral realism). 'Not merely culturally relative' directly engages the main competing view (moral relativism). This shows you are engaging the actual philosophical debate.",
-            "situationText": "A philosophy seminar asks you to defend your metaethical position on whether moral claims can be objectively true.",
-            "sampleAnswer": "I hold that moral claims can be objectively true and not merely culturally relative. The strongest defense of this position is that relativism itself makes it impossible to criticize any moral system, however horrific its conclusions.",
-            "correctAnswer": "moral claims can be objectively true not merely culturally relative",
-            "acceptedSynonyms": [
-                "moral claims can be objectively true not merely culturally relative",
-                "relativism makes it impossible to criticise any moral system",
-                "the strongest defense is",
-                "defending a philosophical position"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L168_Q1",
-            "interactionType": "Scene Scrubber",
-            "hint": "Perform textual analysis: 'A close reading of the text reveals that the author undermines their own stated thesis through a pattern of strategic omissions.'",
-            "explanation": "'Close reading' is the standard literary analysis methodology. 'Strategic omissions' suggests the author's choices are deliberate - a more sophisticated analytical claim than simply pointing out what is missing.",
-            "situationText": "A graduate literature seminar asks you to demonstrate a close reading of a short passage of literary text.",
-            "sampleAnswer": "A close reading of the passage reveals something striking: the author's syntax consistently fragments at precisely the moments of highest emotional stakes, enacting the very instability the text claims to describe.",
-            "correctAnswer": "syntax consistently fragments at the moments of highest emotional stakes",
-            "acceptedSynonyms": [
-                "syntax consistently fragments at the moments of highest emotional stakes",
-                "enacting the instability",
-                "close reading reveals",
-                "performing a literary close reading"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L168_Q2",
-            "interactionType": "Scene Scrubber",
-            "hint": "Discuss authorial intent: 'While authorial intent provides useful biographical context, reader response theory argues that meaning is ultimately constructed by the reader.'",
-            "explanation": "Referencing both 'authorial intent' and 'reader response theory' shows familiarity with the central debate in literary hermeneutics. This positions you as someone who can engage with opposing critical frameworks at once.",
-            "situationText": "A literary criticism seminar debates whether a text's meaning is determined by the author's intention or the reader's interpretation.",
-            "sampleAnswer": "While authorial intent provides useful contextual information, reader response theory persuasively argues that meaning is ultimately constructed in the encounter between text and reader - not deposited there by the author in advance.",
-            "correctAnswer": "meaning is ultimately constructed in the encounter between text and reader",
-            "acceptedSynonyms": [
-                "meaning is ultimately constructed in the encounter between text and reader",
-                "reader response theory",
-                "authorial intent provides useful context",
-                "reader response literary theory"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L168_Q3",
-            "interactionType": "Scene Scrubber",
-            "hint": "Apply literary theory: 'Through a Marxist reading, the novel's resolution functions as an ideological closure that naturalizes the existing power structure rather than questioning it.'",
-            "explanation": "'Marxist reading', 'ideological closure', 'naturalizes the existing power structure' are key literary theory terms from cultural materialism. Using these concepts correctly demonstrates sophisticated literary critical fluency.",
-            "situationText": "Your graduate seminar asks you to apply a theoretical framework of your choice to a specific literary text.",
-            "sampleAnswer": "Through a Marxist reading, the novel's resolution functions as an ideological closure - it makes the existing social arrangement appear natural and inevitable rather than historically contingent and therefore open to challenge.",
-            "correctAnswer": "ideological closure naturalizes the existing social arrangement",
-            "acceptedSynonyms": [
-                "ideological closure naturalizes the existing social arrangement",
-                "Marxist reading",
-                "historically contingent therefore open to challenge",
-                "applying Marxist literary theory"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L169_Q1",
-            "interactionType": "Scene Scrubber",
-            "hint": "Analyse political power: 'Power in liberal democracies operates not only through legislation and coercion but through the shaping of what people consider thinkable.'",
-            "explanation": "'Not only through legislation and coercion but through shaping what people consider thinkable' describes Foucauldian disciplinary power - a sophisticated political theory observation about how power operates through discourse as well as force.",
-            "situationText": "A political theory seminar is discussing how power actually operates in contemporary liberal democratic societies.",
-            "sampleAnswer": "Power in liberal democracies operates not only through explicit legislation and coercion, but through shaping the very horizon of what citizens consider possible or thinkable. That is a subtler and more pervasive form of control.",
-            "correctAnswer": "shaping what citizens consider possible or thinkable",
-            "acceptedSynonyms": [
-                "shaping what citizens consider possible or thinkable",
-                "not only through legislation and coercion",
-                "subtler and more pervasive form of control",
-                "analysing political power"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L169_Q2",
-            "interactionType": "Scene Scrubber",
-            "hint": "Analyse institutional behavior: 'Institutions tend to optimize for their own continuity rather than for their stated social purpose - which is a fundamental principal-agent problem.'",
-            "explanation": "'Optimize for their own continuity rather than their stated purpose' is a precise critique of institutional drift. 'Principal-agent problem' correctly names the economic concept that describes this misalignment of incentives.",
-            "situationText": "A political science seminar is discussing why public institutions often seem to resist the reforms they nominally support.",
-            "sampleAnswer": "Institutions naturally tend to optimize for their own continuity and resource preservation rather than for their stated social purpose. This is a classic principal-agent problem at an institutional level - and it is very hard to solve.",
-            "correctAnswer": "optimize for their own continuity rather than their stated social purpose",
-            "acceptedSynonyms": [
-                "optimize for their own continuity rather than their stated social purpose",
-                "classic principal-agent problem at institutional level",
-                "very hard to solve",
-                "analysing institutional behaviour"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L169_Q3",
-            "interactionType": "Scene Scrubber",
-            "hint": "Apply political theory to a current event: 'This episode illustrates precisely what theorists mean by the concept of democratic backsliding - the gradual erosion of institutional norms without a single decisive rupture.'",
-            "explanation": "'Democratic backsliding' is a key contemporary political science term. 'Gradual erosion without a single decisive rupture' is the precise distinguishing characteristic of democratic backsliding as opposed to military coups or sudden regime change.",
-            "situationText": "A political theory class asks you to apply the concept of democratic backsliding to a contemporary political situation.",
-            "sampleAnswer": "This episode illustrates precisely what theorists mean by democratic backsliding - the gradual erosion of institutional norms and judicial independence without any single decisive moment that clearly constitutes a coup. That is what makes it so dangerous.",
-            "correctAnswer": "gradual erosion of institutional norms without any single decisive moment",
-            "acceptedSynonyms": [
-                "gradual erosion of institutional norms without any single decisive moment",
-                "democratic backsliding",
-                "what makes it so dangerous",
-                "applying political theory"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L170_Q1",
-            "interactionType": "Scene Scrubber",
-            "hint": "Connect disciplines: 'What economics and psychology both reveal, from entirely different methodologies, is that human decision-making is fundamentally non-rational in systematic and predictable ways.'",
-            "explanation": "'From entirely different methodologies' highlights that two disciplines arrive at the same conclusion independently - which is stronger evidence than one discipline alone. This cross-disciplinary synthesis is a hallmark of advanced academic thinking.",
-            "situationText": "An interdisciplinary symposium asks you to identify an insight that two or more academic disciplines share.",
-            "sampleAnswer": "What economics and psychology both reveal, from entirely different methodological starting points, is that human decision-making is fundamentally and systematically non-rational in ways that are highly predictable and exploitable.",
-            "correctAnswer": "human decision-making is fundamentally and systematically non-rational",
-            "acceptedSynonyms": [
-                "human decision-making is fundamentally and systematically non-rational",
-                "from entirely different methodological starting points",
-                "highly predictable and exploitable",
-                "interdisciplinary insight"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L170_Q2",
-            "interactionType": "Scene Scrubber",
-            "hint": "Propose a cross-domain solution: 'The most effective intervention here will need to draw on insights from both behavioural science and public policy design simultaneously.'",
-            "explanation": "'Draw on insights from both' explicitly frames a solution as requiring multiple disciplinary inputs. 'Simultaneously' signals the need for genuine integration rather than sequential application of separate fields.",
-            "situationText": "A complex urban planning challenge is being discussed and no single discipline has a sufficient answer.",
-            "sampleAnswer": "The most effective intervention here will need to draw simultaneously on insights from both behavioural science and public policy design. Neither field alone has an adequate answer to the complexity of what we are facing.",
-            "correctAnswer": "draw simultaneously on insights from both behavioural science and public policy",
-            "acceptedSynonyms": [
-                "draw simultaneously on insights from both behavioural science and public policy",
-                "neither field alone has an adequate answer",
-                "best solutions require interdisciplinary thinking",
-                "cross-domain solution"
-            ],
-            "instruction": "Respond to the situation."
-        },
-        {
-            "id": "SPK_SITUATIONSPEAKING_L170_Q3",
-            "interactionType": "Scene Scrubber",
-            "hint": "Synthesize across frameworks: 'While these three frameworks each illuminate something important, a complete account requires integrating their distinct insights into a coherent unified view.'",
-            "explanation": "'Each illuminate something important' generously acknowledges each framework before arguing for synthesis. 'Requires integrating… into a coherent unified view' is the precise language for theoretical synthesis - the highest level of academic analysis.",
-            "situationText": "A doctoral seminar asks you to evaluate three competing theoretical frameworks and propose a synthesis.",
-            "sampleAnswer": "While each of these three frameworks illuminates something genuinely important that the others miss, a fully adequate account of the phenomenon requires integrating their distinct insights into a coherent and unified theoretical view.",
-            "correctAnswer": "integrating their distinct insights into a coherent and unified theoretical view",
-            "acceptedSynonyms": [
-                "integrating their distinct insights into a coherent and unified theoretical view",
-                "each illuminates something genuinely important",
-                "a fully adequate account requires",
-                "theoretical synthesis"
-            ],
-            "instruction": "Respond to the situation."
-        }
-    ]
+  "gameType": "situationSpeaking",
+  "batchIndex": 17,
+  "levels": "161-170",
+  "quests": [
+    {
+      "id": "SPK_SITUATIONSPEAKING_L161_Q1",
+      "interactionType": "Scene Scrubber",
+      "hint": "Deliver an authoritative expert opinion: 'Based on the totality of evidence available, my professional assessment is that…'",
+      "explanation": "'Based on the totality of evidence' signals comprehensive consideration rather than selective data. 'Professional assessment' distinguishes an expert judgment from a personal opinion - important in formal expert contexts.",
+      "situationText": "A government committee has asked for your expert professional opinion on a complex scientific matter.",
+      "sampleAnswer": "Based on the totality of the evidence available to us, my professional assessment is that the intervention is both safe and effective for the target population when applied under the conditions specified.",
+      "correctAnswer": "intervention is safe and effective for the target population",
+      "acceptedSynonyms": [
+        "intervention is safe and effective for the target population",
+        "totality of the evidence",
+        "professional assessment",
+        "expert testimony"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L161_Q2",
+      "interactionType": "Scene Scrubber",
+      "hint": "Qualify an expert position precisely: 'This conclusion holds within the parameters studied. Beyond those parameters, I would exercise caution.'",
+      "explanation": "'Holds within the parameters studied' is precise, responsible expert language. 'I would exercise caution beyond those parameters' shows intellectual honesty about the boundaries of your expert knowledge.",
+      "situationText": "You are giving expert testimony and a lawyer is pushing you to generalize your findings more broadly.",
+      "sampleAnswer": "This conclusion holds firmly within the parameters of the populations and conditions we studied. Beyond those specific parameters, I would strongly caution against direct extrapolation without further empirical evidence.",
+      "correctAnswer": "strongly caution against extrapolation beyond those parameters",
+      "acceptedSynonyms": [
+        "strongly caution against extrapolation beyond those parameters",
+        "holds firmly within the parameters studied",
+        "further empirical evidence needed",
+        "qualified expert position"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L161_Q3",
+      "interactionType": "Scene Scrubber",
+      "hint": "Acknowledge the limits of expertise: 'That question falls outside my specific area of expertise, but I can direct you to colleagues who are better placed to answer it.'",
+      "explanation": "'Outside my specific area of expertise' is a confident, honest boundary statement. Offering to direct someone to the right expert shows professional integrity and a commitment to accuracy over appearing omniscient.",
+      "situationText": "An interviewer asks you a question that lies just outside your specific area of specialized expertise.",
+      "sampleAnswer": "That question falls just outside my specific area of expertise, and I wouldn't want to speculate. I can direct you to colleagues in adjacent fields who are genuinely better placed than I am to give you an authoritative answer.",
+      "correctAnswer": "that question falls just outside my specific area of expertise",
+      "acceptedSynonyms": [
+        "that question falls just outside my specific area of expertise",
+        "would not want to speculate",
+        "direct you to colleagues",
+        "acknowledging limits of expertise"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L162_Q1",
+      "interactionType": "Scene Scrubber",
+      "hint": "Propose a policy: 'I am proposing that we introduce a graduated carbon tax, phased in over five years, beginning at twenty dollars per tonne.'",
+      "explanation": "A strong English policy proposal is specific about mechanism, timeline, and starting point. Vague proposals ('we should do something about carbon') invite challenge; specific ones ('graduated tax, phased over five years') demonstrate serious preparation.",
+      "situationText": "You are presenting a policy proposal to a legislative committee on environmental taxation.",
+      "sampleAnswer": "I am proposing the introduction of a graduated carbon tax, phased in over five years beginning at twenty dollars per tonne, with revenues ringfenced entirely for clean energy transition programmes.",
+      "correctAnswer": "graduated carbon tax phased in over five years beginning at twenty dollars",
+      "acceptedSynonyms": [
+        "graduated carbon tax phased in over five years beginning at twenty dollars",
+        "revenues ringfenced for clean energy",
+        "proposing a policy",
+        "specific policy proposal"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L162_Q2",
+      "interactionType": "Scene Scrubber",
+      "hint": "Analyse a policy: 'This policy addresses the symptom effectively while leaving the underlying structural cause largely untouched.'",
+      "explanation": "'Addresses the symptom while leaving the structural cause untouched' is a sophisticated analytical critique. It distinguishes between surface effectiveness and deeper systemic inadequacy - a hallmark of advanced policy analysis.",
+      "situationText": "A policy review asks you to evaluate the effectiveness of an existing government housing policy.",
+      "sampleAnswer": "This policy addresses the immediate affordability symptom effectively but leaves the underlying structural cause - insufficient supply - largely untouched. Without planning reform, the problem will inevitably resurface.",
+      "correctAnswer": "addresses the symptom while leaving the structural cause untouched",
+      "acceptedSynonyms": [
+        "addresses the symptom while leaving the structural cause untouched",
+        "insufficient supply unchanged",
+        "planning reform required",
+        "analysing a policy"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L162_Q3",
+      "interactionType": "Scene Scrubber",
+      "hint": "Critique a proposed policy: 'The policy is well-intentioned, but the evidence base supporting it is surprisingly thin and the distributional effects are concerning.'",
+      "explanation": "'Well-intentioned but…' concedes the positive motivation before a substantive critique - showing intellectual fairness. 'Surprisingly thin evidence base' and 'concerning distributional effects' are two distinct, precise lines of critique.",
+      "situationText": "An academic policy forum asks you to critically evaluate a recently announced government social policy.",
+      "sampleAnswer": "The policy is clearly well-intentioned, but the evidence base supporting its central mechanism is surprisingly thin, and the distributional effects on the lowest income deciles are genuinely concerning and underexplored.",
+      "correctAnswer": "evidence base is surprisingly thin and distributional effects are concerning",
+      "acceptedSynonyms": [
+        "evidence base is surprisingly thin and distributional effects are concerning",
+        "well-intentioned but",
+        "lowest income deciles underexplored",
+        "critiquing a proposed policy"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L163_Q1",
+      "interactionType": "Scene Scrubber",
+      "hint": "Make the scientific case for climate action: 'The evidence shows we have a rapidly closing window to avoid the most catastrophic impacts.'",
+      "explanation": "'Rapidly closing window' is a precise and urgent phrase for describing the narrowing timeframe for climate action. 'Most catastrophic impacts' refers to the IPCC's scenarios for temperature rises above 1.5 degrees Celsius.",
+      "situationText": "A parliamentary select committee has invited you to make the scientific case for urgent climate action.",
+      "sampleAnswer": "The evidence is unambiguous: we have a rapidly closing window to avoid the most catastrophic and irreversible impacts of climate change. Every year of delay narrows our options and increases the long-term cost.",
+      "correctAnswer": "rapidly closing window to avoid the most catastrophic impacts",
+      "acceptedSynonyms": [
+        "rapidly closing window to avoid the most catastrophic impacts",
+        "every year of delay narrows options",
+        "making the scientific case",
+        "climate urgency argument"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L163_Q2",
+      "interactionType": "Scene Scrubber",
+      "hint": "Avoid a false choice: 'I don't think it's an either/or question - we need both moving together.'",
+      "explanation": "Reframing a forced-choice debate as a false dichotomy is a sophisticated rhetorical move. It shows you can see past an oversimplified either/or framing to a more accurate, nuanced reality, without dodging the question.",
+      "situationText": "An international climate summit is debating whether government regulation or business innovation will do more to drive the energy transition.",
+      "sampleAnswer": "I don't think it's really an either/or question. Government sets the direction through regulation and incentives, but business innovation is what actually delivers the technology at scale. We need both moving together.",
+      "correctAnswer": "need both moving together",
+      "acceptedSynonyms": [
+        "need both moving together",
+        "not really an either or question",
+        "government sets direction business delivers scale",
+        "avoiding a false dichotomy"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L163_Q3",
+      "interactionType": "Scene Scrubber",
+      "hint": "Argue for systemic environmental change: 'The transition to a low-carbon economy is not just an environmental imperative but an economic opportunity of historic scale.'",
+      "explanation": "'Not just an environmental imperative but an economic opportunity' reframes the climate transition from a cost or sacrifice to a strategic economic opportunity - a highly effective rhetorical and substantive move in policy advocacy.",
+      "situationText": "A business leadership forum is debating whether the green transition is an economic burden or opportunity.",
+      "sampleAnswer": "The transition to a low-carbon economy is not just a moral or environmental imperative. Done well, it represents an economic opportunity of genuinely historic scale - in jobs, technology, and competitive advantage.",
+      "correctAnswer": "not just an environmental imperative but an economic opportunity of historic scale",
+      "acceptedSynonyms": [
+        "not just an environmental imperative but an economic opportunity of historic scale",
+        "jobs technology and competitive advantage",
+        "green transition as opportunity",
+        "reframing the green transition"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L164_Q1",
+      "interactionType": "Scene Scrubber",
+      "hint": "Distinguish equity from equality: 'Equality means giving everyone the same thing. Equity means giving people what they specifically need to achieve the same outcome.'",
+      "explanation": "Defining equity and equality precisely is essential in social justice discourse. 'Giving everyone the same thing' versus 'giving people what they need to achieve the same outcome' captures the crucial distinction clearly and memorably.",
+      "situationText": "A social policy seminar asks you to explain clearly the difference between equity and equality.",
+      "sampleAnswer": "Equality means giving everyone the same thing. Equity means recognizing that people start from different positions and giving each person what they specifically need to reach the same outcome. These require very different interventions.",
+      "correctAnswer": "equity means giving people what they specifically need to achieve the same outcome",
+      "acceptedSynonyms": [
+        "equity means giving people what they specifically need to achieve the same outcome",
+        "equality means giving everyone the same thing",
+        "different starting positions",
+        "equity versus equality"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L164_Q2",
+      "interactionType": "Scene Scrubber",
+      "hint": "Resist a false binary: 'I think the honest answer is both matter, and pretending otherwise oversimplifies a complex picture.'",
+      "explanation": "When a debate forces a choice between two real factors, naming that both matter isn't a cop-out - it's often the most intellectually honest position. This lets you sound balanced without sounding evasive.",
+      "situationText": "An academic panel is debating how much of an individual's economic outcome is shaped by personal choices versus circumstances beyond their control.",
+      "sampleAnswer": "I think the honest answer is both matter, and pretending otherwise oversimplifies a genuinely complex picture. Individual effort clearly matters, but so do the conditions - schools, job markets, family wealth - that shape which choices are even available to someone.",
+      "correctAnswer": "both matter and pretending otherwise oversimplifies",
+      "acceptedSynonyms": [
+        "both matter and pretending otherwise oversimplifies",
+        "individual effort and circumstances beyond control",
+        "genuinely complex picture",
+        "resisting a false binary"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L164_Q3",
+      "interactionType": "Scene Scrubber",
+      "hint": "Combine short-term and long-term solutions: 'We need both individual support now, and structural reform to address why the gap exists.'",
+      "explanation": "'We need both X and Y' is a strong way to answer 'what should we do' without oversimplifying a genuinely layered problem. It shows you can hold a short-term fix and a long-term cause in mind at the same time.",
+      "situationText": "A social policy conference asks for your recommendations for meaningfully reducing educational inequality.",
+      "sampleAnswer": "My honest recommendation is that we need both: individual support programmes that help students right now, and slower structural reform to funding and access that addresses why the gap exists in the first place. Neither alone will be enough.",
+      "correctAnswer": "need both individual support and structural reform",
+      "acceptedSynonyms": [
+        "need both individual support and structural reform",
+        "neither alone will be enough",
+        "short-term and long-term solutions",
+        "layered problems need layered solutions"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L165_Q1",
+      "interactionType": "Scene Scrubber",
+      "hint": "Analyse economics analytically: 'The monetary policy response was appropriate given the inflationary environment, though it carried significant distributional costs.'",
+      "explanation": "'Appropriate given the inflationary environment' places the policy in its specific economic context. 'Distributional costs' refers to unequal impacts across income groups - a sophisticated economic analysis point.",
+      "situationText": "An economics panel asks you to evaluate the central bank's monetary policy response to recent inflation.",
+      "sampleAnswer": "The monetary policy response was appropriate given the severity of the inflationary environment, though it carried significant distributional costs - particularly for mortgage holders and lower-income households with less savings buffer.",
+      "correctAnswer": "significant distributional costs particularly for mortgage holders",
+      "acceptedSynonyms": [
+        "significant distributional costs particularly for mortgage holders",
+        "appropriate given the inflationary environment",
+        "monetary policy response",
+        "evaluating economic policy"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L165_Q2",
+      "interactionType": "Scene Scrubber",
+      "hint": "Apply economic theory: 'Classical economic theory would predict that wage increases lead to inflation, but recent empirical evidence complicates that picture considerably.'",
+      "explanation": "'Classical theory would predict… but recent evidence complicates that' is a sophisticated academic structure for showing you know both the theory and its empirical limitations - a mark of genuine analytical maturity.",
+      "situationText": "Your economics seminar asks you to apply economic theory to recent labour market data and explain any discrepancies.",
+      "sampleAnswer": "Classical theory would predict that the current wage increases should generate significant inflation. But recent empirical evidence complicates that picture considerably - suggesting structural changes in how price-setting actually works.",
+      "correctAnswer": "classical theory would predict but recent evidence complicates that picture",
+      "acceptedSynonyms": [
+        "classical theory would predict but recent evidence complicates that picture",
+        "wage increases and significant inflation",
+        "structural changes in price-setting",
+        "applying economic theory to data"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L165_Q3",
+      "interactionType": "Scene Scrubber",
+      "hint": "Make an economic prediction with appropriate caveats: 'Our modelling suggests output will grow by two percent next year, assuming stable energy prices and no major external shocks.'",
+      "explanation": "'Our modelling suggests… assuming…' is the standard structure for economic forecasting - it gives a specific prediction while immediately identifying the key assumptions on which that prediction depends. Both are essential for responsible forecasting.",
+      "situationText": "A financial conference asks you to give your economic growth projection for the coming year.",
+      "sampleAnswer": "Our modelling suggests the economy will expand by approximately two percent next year, assuming broadly stable energy prices and the absence of any major external demand or supply shocks. Those are significant assumptions.",
+      "correctAnswer": "two percent assuming stable energy prices and no major external shocks",
+      "acceptedSynonyms": [
+        "two percent assuming stable energy prices and no major external shocks",
+        "significant assumptions",
+        "our modelling suggests",
+        "economic growth projection"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L166_Q1",
+      "interactionType": "Scene Scrubber",
+      "hint": "Discuss hypothesis formation: 'A robust hypothesis must be specific, falsifiable, and grounded in the existing theoretical literature.'",
+      "explanation": "'Specific, falsifiable, and grounded in the literature' are the three key criteria for a good scientific hypothesis. Being able to articulate these criteria clearly is a fundamental scientific literacy and communication skill.",
+      "situationText": "A research methods class asks you to explain what makes a genuinely good scientific hypothesis.",
+      "sampleAnswer": "A robust hypothesis must be specific enough to test, falsifiable - meaning it could in principle be proven wrong - and grounded in the existing theoretical literature. Without these three properties, it's not testable science.",
+      "correctAnswer": "specific falsifiable and grounded in the existing theoretical literature",
+      "acceptedSynonyms": [
+        "specific falsifiable and grounded in the existing theoretical literature",
+        "could in principle be proven wrong",
+        "not testable science without these",
+        "what makes a good scientific hypothesis"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L166_Q2",
+      "interactionType": "Scene Scrubber",
+      "hint": "Evaluate research evidence: 'The study's findings are compelling, but the small sample size and self-reporting methodology warrant caution about generalizability.'",
+      "explanation": "'Compelling but… sample size… self-reporting… generalizability' are four key research evaluation concepts. Being able to apply these critical criteria to a specific study marks advanced research literacy in English.",
+      "situationText": "Your research methods professor asks you to critically evaluate the strength of evidence from a published study.",
+      "sampleAnswer": "The study's findings are genuinely compelling. However, the small sample size and reliance on self-reporting methodology warrant some caution about how broadly generalizable these findings are to other populations or contexts.",
+      "correctAnswer": "compelling but sample size and self-reporting warrant caution",
+      "acceptedSynonyms": [
+        "compelling but sample size and self-reporting warrant caution",
+        "not fully generalizable to other populations",
+        "compelling findings but",
+        "evaluating research evidence"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L166_Q3",
+      "interactionType": "Scene Scrubber",
+      "hint": "Discuss the replication crisis: 'The replication crisis reveals that the scientific method's self-correcting mechanism depends entirely on researchers actually attempting replication - which happens too rarely.'",
+      "explanation": "'Replication crisis', 'self-correcting mechanism', and 'replication' are key science communication terms. This sophisticated observation - that a theoretical protection requires a practical action that rarely happens - shows nuanced understanding.",
+      "situationText": "A philosophy of science seminar is discussing the implications of the scientific replication crisis for how we trust research.",
+      "sampleAnswer": "The replication crisis reveals something important: the scientific method's theoretical self-correcting mechanism only works if researchers actually attempt replication. In practice, that happens far too rarely given current incentive structures.",
+      "correctAnswer": "self-correcting mechanism depends on researchers actually attempting replication",
+      "acceptedSynonyms": [
+        "self-correcting mechanism depends on researchers actually attempting replication",
+        "happens far too rarely",
+        "current incentive structures",
+        "the replication crisis"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L167_Q1",
+      "interactionType": "Scene Scrubber",
+      "hint": "Use Socratic questioning: 'If we accept that premise, then we must also accept X - and if we accept X, do we not also have to accept Y?'",
+      "explanation": "The Socratic method works by following an argument to its logical conclusions and then testing whether those conclusions are acceptable. 'If we accept… then we must also accept' is the fundamental move of Socratic philosophical dialogue.",
+      "situationText": "You are facilitating a Socratic seminar discussion on a fundamental ethical question with your philosophy class.",
+      "sampleAnswer": "If we accept the premise that all lives have equal value - which I think most of us would - then we must also accept that our collective obligations are significantly larger than we typically acknowledge. Can we consistently hold both?",
+      "correctAnswer": "if we accept that all lives have equal value then our obligations are larger",
+      "acceptedSynonyms": [
+        "if we accept that all lives have equal value then our obligations are larger",
+        "can we consistently hold both",
+        "Socratic if we accept then we must",
+        "Socratic questioning technique"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L167_Q2",
+      "interactionType": "Scene Scrubber",
+      "hint": "Evaluate logical validity: 'The argument is valid in form - the conclusion does follow from the premises - but the first premise is empirically false.'",
+      "explanation": "'Valid in form' means the logical structure is correct: if the premises were true, the conclusion would follow. 'The premise is empirically false' means the structure is sound but the content is wrong - a crucial philosophical distinction.",
+      "situationText": "A logic class asks you to evaluate whether an argument is both valid in form and sound in its content.",
+      "sampleAnswer": "The argument is valid in its logical form - the conclusion does follow necessarily from the premises. But the first premise is empirically false, which means the argument fails on soundness despite being structurally correct.",
+      "correctAnswer": "valid in form but the first premise is empirically false",
+      "acceptedSynonyms": [
+        "valid in form but the first premise is empirically false",
+        "conclusion follows necessarily from premises",
+        "fails on soundness despite valid form",
+        "evaluating logical validity"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L167_Q3",
+      "interactionType": "Scene Scrubber",
+      "hint": "State a position and defend it: 'My position is that…, and here is the strongest reason I hold it.'",
+      "explanation": "Taking a clear position and then defending it with your single strongest reason is more persuasive than listing five weak ones. On a genuinely unsettled question, the quality of your reasoning matters more than which side you land on.",
+      "situationText": "A technology ethics panel asks you to state and defend your position on whether companies should be allowed to use AI to screen job candidates.",
+      "sampleAnswer": "My position is that AI screening should be allowed but tightly regulated. The strongest reason is that it can reduce certain human biases in early screening, but only if the system itself is regularly audited for new biases it might introduce.",
+      "correctAnswer": "should be allowed but tightly regulated",
+      "acceptedSynonyms": [
+        "should be allowed but tightly regulated",
+        "reduce human bias but must be audited",
+        "strongest reason I hold this position",
+        "defending an ethical position"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L168_Q1",
+      "interactionType": "Scene Scrubber",
+      "hint": "Analyse technique precisely: 'What builds the tension here isn't the dialogue at all - it's the silence and the pacing.'",
+      "explanation": "Naming a specific technique, like pacing or silence, is far more convincing than a vague reaction such as 'it felt tense.' Specific analysis is what separates genuine critique from a simple opinion.",
+      "situationText": "A film discussion group asks you to explain how a director builds tension using pacing and silence rather than dialogue.",
+      "sampleAnswer": "What builds the tension here isn't the dialogue at all - it's the long, uncomfortable silences and the way the camera lingers just a beat too long on each character's face. It makes the audience do the emotional work.",
+      "correctAnswer": "silence and pacing build the tension not the dialogue",
+      "acceptedSynonyms": [
+        "silence and pacing build the tension not the dialogue",
+        "camera lingers a beat too long",
+        "audience does the emotional work",
+        "analysing film technique"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L168_Q2",
+      "interactionType": "Scene Scrubber",
+      "hint": "Read between the lines: 'Reading between the lines, I think what they're actually telling us is…'",
+      "explanation": "'Reading between the lines' means interpreting the real message behind polite or indirect wording. This is an essential professional skill in workplace cultures where direct criticism is often softened.",
+      "situationText": "A colleague asks you to help interpret a vaguely worded email from a client that seems to be hinting at a bigger problem.",
+      "sampleAnswer": "Reading between the lines, I don't think this is really about the deadline at all. I think they're telling us, politely, that they've lost some confidence in the project and want more visibility.",
+      "correctAnswer": "reading between the lines",
+      "acceptedSynonyms": [
+        "reading between the lines",
+        "lost confidence in the project",
+        "not really about the deadline",
+        "interpreting indirect communication"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L168_Q3",
+      "interactionType": "Scene Scrubber",
+      "hint": "Identify the real appeal: 'On the surface this ad is about the product, but the actual appeal being made is to…'",
+      "explanation": "Distinguishing the surface subject of an ad from its underlying emotional appeal is core to advertising literacy. Naming what appeal is really being made shows you can see past the obvious pitch.",
+      "situationText": "Your marketing team is reviewing a competitor's advertisement and discussing what emotional appeal it is really making.",
+      "sampleAnswer": "On the surface this ad is about the car, but the actual appeal being made is to status and belonging - notice how every scene centres on how other people look at the driver, not on the car itself.",
+      "correctAnswer": "actual appeal being made is to status and belonging",
+      "acceptedSynonyms": [
+        "actual appeal being made is to status and belonging",
+        "surface subject versus underlying appeal",
+        "psychological appeal the ad is making",
+        "advertising literacy analysis"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L169_Q1",
+      "interactionType": "Scene Scrubber",
+      "hint": "Analyse normalization: 'Once everyone around you treats something as normal, it stops registering as a choice at all.'",
+      "explanation": "'Stops registering as a choice' captures how gradual normalization works - each small step feels reasonable in context, even when the cumulative pattern would shock an outsider. It's a genuinely useful way to think about organizational culture.",
+      "situationText": "A business ethics class is discussing how a company's culture can normalize practices that would seem clearly wrong to an outsider.",
+      "sampleAnswer": "Once everyone around you treats something as completely normal, it stops registering as a choice at all - that's how a whole team can end up somewhere none of them would have agreed to if you'd described it to them on day one.",
+      "correctAnswer": "stops registering as a choice at all",
+      "acceptedSynonyms": [
+        "stops registering as a choice at all",
+        "gradual normalization",
+        "none of them would have agreed to it on day one",
+        "how culture shapes behaviour"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L169_Q2",
+      "interactionType": "Scene Scrubber",
+      "hint": "Name the incentive problem: 'The people making the decision aren't the ones who bear the cost if it fails - that's the real issue.'",
+      "explanation": "Misaligned incentives, where the person deciding doesn't feel the consequences of a bad decision, explain a huge amount of organizational dysfunction. Naming the incentive, not just the bad decision, is the sharper analysis.",
+      "situationText": "Your management seminar is discussing why some companies keep investing in a failing project long after the warning signs are obvious.",
+      "sampleAnswer": "I think the real issue is incentives. The people making the call to keep funding it aren't the ones who'll be blamed if it fails, and admitting they were wrong feels riskier to them than quietly continuing.",
+      "correctAnswer": "people making the decision are not the ones who bear the cost",
+      "acceptedSynonyms": [
+        "people making the decision are not the ones who bear the cost",
+        "misaligned incentives",
+        "admitting it was wrong feels riskier",
+        "why organizations keep funding failure"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L169_Q3",
+      "interactionType": "Scene Scrubber",
+      "hint": "Describe gradual erosion: 'It's rarely one bad decision - it's usually death by a thousand small compromises.'",
+      "explanation": "'Death by a thousand small compromises' captures how decline is often gradual and cumulative rather than sudden. It's a vivid, memorable way to describe a slow, hard-to-pinpoint deterioration in a team, relationship, or organization.",
+      "situationText": "A colleague asks how a healthy team culture can slowly turn toxic without anyone ever making one single obvious bad decision.",
+      "sampleAnswer": "It's rarely one bad decision - it's usually death by a thousand small compromises. Someone lets one thing slide, then it's normal, then the next small thing slides too, until you look up and the culture has completely changed.",
+      "correctAnswer": "death by a thousand small compromises",
+      "acceptedSynonyms": [
+        "death by a thousand small compromises",
+        "someone lets one thing slide",
+        "gradual erosion of culture",
+        "how decline happens slowly"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L170_Q1",
+      "interactionType": "Scene Scrubber",
+      "hint": "Connect disciplines: 'What economics and psychology both reveal, from entirely different methodologies, is that human decision-making is fundamentally non-rational in systematic and predictable ways.'",
+      "explanation": "'From entirely different methodologies' highlights that two disciplines arrive at the same conclusion independently - which is stronger evidence than one discipline alone. This cross-disciplinary synthesis is a hallmark of advanced academic thinking.",
+      "situationText": "An interdisciplinary symposium asks you to identify an insight that two or more academic disciplines share.",
+      "sampleAnswer": "What economics and psychology both reveal, from entirely different methodological starting points, is that human decision-making is fundamentally and systematically non-rational in ways that are highly predictable and exploitable.",
+      "correctAnswer": "human decision-making is fundamentally and systematically non-rational",
+      "acceptedSynonyms": [
+        "human decision-making is fundamentally and systematically non-rational",
+        "from entirely different methodological starting points",
+        "highly predictable and exploitable",
+        "interdisciplinary insight"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L170_Q2",
+      "interactionType": "Scene Scrubber",
+      "hint": "Propose a cross-domain solution: 'The most effective intervention here will need to draw on insights from both behavioural science and public policy design simultaneously.'",
+      "explanation": "'Draw on insights from both' explicitly frames a solution as requiring multiple disciplinary inputs. 'Simultaneously' signals the need for genuine integration rather than sequential application of separate fields.",
+      "situationText": "A complex urban planning challenge is being discussed and no single discipline has a sufficient answer.",
+      "sampleAnswer": "The most effective intervention here will need to draw simultaneously on insights from both behavioural science and public policy design. Neither field alone has an adequate answer to the complexity of what we are facing.",
+      "correctAnswer": "draw simultaneously on insights from both behavioural science and public policy",
+      "acceptedSynonyms": [
+        "draw simultaneously on insights from both behavioural science and public policy",
+        "neither field alone has an adequate answer",
+        "best solutions require interdisciplinary thinking",
+        "cross-domain solution"
+      ],
+      "instruction": "Respond to the situation."
+    },
+    {
+      "id": "SPK_SITUATIONSPEAKING_L170_Q3",
+      "interactionType": "Scene Scrubber",
+      "hint": "Synthesize competing ideas: 'Each proposal gets something right that the others miss - the strongest path forward probably combines all three.'",
+      "explanation": "'Each gets something right that the others miss' avoids picking a false winner among genuinely different ideas. It signals you've taken every proposal seriously rather than simply backing your favourite.",
+      "situationText": "Your leadership team has three genuinely different proposals for solving the same problem, and you've been asked to find a way forward.",
+      "sampleAnswer": "I think each proposal gets something right that the others miss. The strongest path forward is probably a combination: Option A's speed, Option B's cost control, and Option C's attention to the customer experience.",
+      "correctAnswer": "each proposal gets something right that the others miss",
+      "acceptedSynonyms": [
+        "each proposal gets something right that the others miss",
+        "strongest path forward combines all three",
+        "taken every proposal seriously",
+        "synthesizing competing ideas"
+      ],
+      "instruction": "Respond to the situation."
+    }
+  ]
 }

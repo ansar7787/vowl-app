@@ -8,600 +8,600 @@
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The expert witness in a product liability case provided an opinion that a pharmaceutical compound's metabolite profile showed the company had been aware of a hepatotoxic degradation pathway during pre-clinical development. On cross-examination counsel elicited that her opinion was based on internal documents not disclosed in her expert report. The trial judge excluded her opinion and directed the jury to disregard it.",
+            "story": "Two competing pharmaceutical firms had spent a decade suing each other over overlapping patent claims on a single molecule. A newly appointed general counsel at one firm proposed a cross-licensing agreement instead of pursuing further litigation. Both firms brought competing generic versions to market within the same fiscal year.",
             "options": [
-                "The expert's opinion was based on company documents she had not disclosed in her report.",
-                "Defendant's counsel elicited this undisclosed basis on cross-examination.",
-                "The judge excluded the expert's opinion and directed the jury to disregard it.",
-                "The judge admitted the expert opinion and allowed the jury to weigh its evidential value."
+                "Only one of the two firms managed to bring a version to market that year.",
+                "Two competing pharmaceutical firms had spent a decade suing each other over overlapping patent claims on a single molecule.",
+                "A newly appointed general counsel at one firm proposed a cross-licensing agreement instead of pursuing further litigation.",
+                "Both firms brought competing generic versions to market within the same fiscal year."
             ],
             "correctOrder": [
-                0,
                 1,
-                2
+                2,
+                3
             ],
-            "hint": "Follow: undisclosed basis, its discovery, then exclusion. One frame admits the opinion.",
-            "explanation": "Expert evidence narratives show finding an undisclosed basis, cross-examination eliciting it, and judicial exclusion. The distractor admits the evidence."
+            "hint": "Notice what actually happens with both firms once the cross-licensing agreement is in place.",
+            "explanation": "Because both firms bring versions to market the same year, an option claiming only one succeeded contradicts that specific outcome."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L161_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "A judicial review challenged a prosecutorial policy weighting victim statement provision in charging decisions as disproportionately disadvantaging domestic abuse victims who had been intimidated into withdrawing statements. The court found the policy violated the investigative obligation under Article 3 ECHR. The policy was quashed.",
+            "story": "A multinational retailer's supply chain had grown so fragile that a single port closure halted deliveries across an entire continent. Executives diversified sourcing across three geographically separated ports rather than relying on one. A subsequent closure at one of the three ports caused only a minor, localized delay.",
             "options": [
-                "The court found the policy was within the prosecutor's lawful discretion and dismissed the challenge.",
-                "A JR challenged a charging policy weighting victim statements as disadvantaging domestic abuse victims.",
-                "The court found the policy violated the Article 3 investigative obligation.",
-                "The policy was quashed."
+                "A multinational retailer's supply chain had grown so fragile that a single port closure halted deliveries across an entire continent.",
+                "A subsequent port closure again halted deliveries across the entire continent.",
+                "Executives diversified sourcing across three geographically separated ports rather than relying on one.",
+                "A subsequent closure at one of the three ports caused only a minor, localized delay."
             ],
             "correctOrder": [
-                1,
+                0,
                 2,
                 3
             ],
-            "hint": "Trace: the Article 3 challenge, the court's finding, then quashing. One frame dismisses the challenge.",
-            "explanation": "ECHR JR narratives show an Article 3 challenge, a finding of violation, and quashing the policy. The distractor dismisses the challenge."
+            "hint": "Check whether each option matches the scale of disruption from the subsequent closure.",
+            "explanation": "Because the subsequent closure causes only a minor, localized delay, an option claiming it again halted continent-wide deliveries contradicts that specific scale."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L161_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The insolvency practitioner appointed liquidator identified potential preference and transaction at undervalue claims in the six months preceding the company's insolvency. She obtained pre-action disclosure of bank and board records. Analysis established three payments totalling two point eight million pounds were recoverable and judgment was obtained.",
+            "story": "A national broadcaster's flagship investigative program had lost nearly a third of its audience after switching to a shorter runtime. Producers restored the original runtime but moved the broadcast to a later evening slot. The audience recovered fully within two broadcast seasons.",
             "options": [
-                "The liquidator identified potential preference and undervalue claims in the six months before insolvency.",
-                "Pre-action disclosure of bank and board records was obtained.",
-                "Pre-action disclosure found no evidence of transactions susceptible to recovery.",
-                "Three recoverable payments of two point eight million pounds were established and judgment obtained."
+                "A national broadcaster's flagship investigative program had lost nearly a third of its audience after switching to a shorter runtime.",
+                "Producers restored the original runtime but moved the broadcast to a later evening slot.",
+                "The audience continued shrinking despite the schedule change.",
+                "The audience recovered fully within two broadcast seasons."
             ],
             "correctOrder": [
                 0,
                 1,
                 3
             ],
-            "hint": "Sequence: identifying claims, obtaining disclosure, then establishing recovery and judgment. One frame finds no recoverable transactions.",
-            "explanation": "Insolvency litigation narratives show identifying claims, obtaining disclosure, and establishing recoverable transactions. The distractor removes recovery."
+            "hint": "Read the ending closely: it tells you what actually happens to the audience over two seasons.",
+            "explanation": "Because the audience recovers fully within two seasons, an option claiming it kept shrinking contradicts that measured recovery."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L162_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "Strategic litigation on behalf of a Jamaican national established before the Court of Appeal that the Home Office's deportation machinery applied a rebuttable presumption incompatibly overriding Article 8 proportionality assessments. The court issued a declaration of incompatibility. Parliament subsequently passed remedial legislation.",
+            "story": "A regional court's interpretation of a specific tax statute had been so inconsistent that two businesses in identical circumstances received opposite rulings. An appellate panel issued a binding interpretation resolving the ambiguity for all future cases. The business that had received the unfavorable ruling successfully appealed under the new binding interpretation.",
             "options": [
-                "The litigation established the deportation machinery incompatibly overrode Article 8 proportionality.",
-                "The court found the deportation machinery was proportionate and compatible with Article 8.",
-                "The court issued a declaration of incompatibility.",
-                "Parliament subsequently passed remedial legislation."
+                "A regional court's interpretation of a specific tax statute had been so inconsistent that two businesses in identical circumstances received opposite rulings.",
+                "An appellate panel issued a binding interpretation resolving the ambiguity for all future cases.",
+                "The business that had received the unfavorable ruling successfully appealed under the new binding interpretation.",
+                "The business that had received the unfavorable ruling chose not to appeal at all."
             ],
             "correctOrder": [
                 0,
-                2,
-                3
+                1,
+                2
             ],
-            "hint": "Follow: the incompatibility finding, the declaration, then remedial legislation. One frame finds compatibility.",
-            "explanation": "Human rights litigation narratives show establishing incompatibility, a declaration, and parliamentary remedy. The distractor finds compatibility."
+            "hint": "Notice what the disadvantaged business actually does once the binding interpretation is issued.",
+            "explanation": "Because that business successfully appeals under the new interpretation, an option claiming it chose not to appeal contradicts that specific action."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L162_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "A forensic insolvency accountant reconstructed a company's finances from fragmentary bank records and identified three hundred and twenty thousand pounds in unrecorded cash withdrawals. She cross-referenced the withdrawals with the sole director's personal property acquisitions. She produced a report identifying assets susceptible to recovery for creditors.",
+            "story": "A regional energy consortium's long-term supply contract had locked in prices so far above the eventual market rate that member utilities faced mounting losses. Consortium lawyers negotiated an early exit clause tied to a specific market-index threshold. Member utilities exercised that clause the moment the index crossed the agreed threshold.",
             "options": [
-                "The accountant reconstructed finances from fragmentary records identifying unrecorded cash withdrawals.",
-                "She cross-referenced withdrawals with the director's personal property acquisitions.",
-                "She produced a report identifying assets recoverable for creditors.",
-                "Her reconstruction found all withdrawals were legitimately recorded in the company's accounts."
+                "Member utilities let the exit clause expire without ever using it.",
+                "A regional energy consortium's long-term supply contract had locked in prices so far above the eventual market rate that member utilities faced mounting losses.",
+                "Consortium lawyers negotiated an early exit clause tied to a specific market-index threshold.",
+                "Member utilities exercised that clause the moment the index crossed the agreed threshold."
             ],
             "correctOrder": [
-                0,
                 1,
-                2
+                2,
+                3
             ],
-            "hint": "Trace: financial reconstruction, cross-referencing, then identifying recoverable assets. One frame finds legitimate recording.",
-            "explanation": "Insolvency forensic accounting narratives show reconstruction, cross-referencing personal acquisitions, and identifying recoverable assets. The distractor finds legitimate recording."
+            "hint": "Check whether the utilities actually use the exit clause once the threshold is crossed.",
+            "explanation": "Because utilities exercise the clause the moment the threshold is crossed, an option claiming they let it expire unused contradicts that action."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L162_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "A machine learning model predicting serious crime re-offending was found in a bias audit to assign higher risk scores to remanded defendants rather than those released on bail, creating a circularity bias. The agency withdrew the model pending fundamental redesign. The redesign incorporated counterfactual fairness constraints.",
+            "story": "A cross-border logistics firm's customs declarations had been flagged so often for discrepancies that two neighboring countries considered a joint audit. The firm voluntarily opened its records to both countries' customs authorities before any audit was formally announced. Both countries closed their inquiries without finding any wrongdoing.",
             "options": [
-                "The bias audit found no systematic bias and the model was deployed operationally.",
-                "A bias audit found the re-offending model assigned higher scores to remanded defendants, creating a circularity bias.",
-                "The agency withdrew the model pending fundamental redesign.",
-                "The redesign incorporated counterfactual fairness constraints."
+                "A cross-border logistics firm's customs declarations had been flagged so often for discrepancies that two neighboring countries considered a joint audit.",
+                "Both countries formally announced a joint audit before the firm opened its records.",
+                "The firm voluntarily opened its records to both countries' customs authorities before any audit was formally announced.",
+                "Both countries closed their inquiries without finding any wrongdoing."
             ],
             "correctOrder": [
-                1,
+                0,
                 2,
                 3
             ],
-            "hint": "Sequence: finding circularity bias, withdrawal, then redesign with fairness constraints. One frame finds no bias and deploys.",
-            "explanation": "Algorithmic fairness narratives show finding circularity bias, withdrawing the model, and redesigning with constraints. The distractor finds no bias."
+            "hint": "Notice the actual order of events: does the audit announcement or the voluntary disclosure come first?",
+            "explanation": "Because the firm opens its records before any audit was formally announced, an option reversing that order contradicts the sequence described."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L163_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "A structural engineer investigating a failed post-tensioned concrete floor slab found chloride-induced corrosion of prestressing tendons caused by inadequate cover depth in the original construction. She produced a liability report attributing responsibility to the original contractor. The developer commenced breach of contract proceedings.",
+            "story": "A regional airline and its largest competitor had matched each other's fare cuts for so long that both carriers approached insolvency. Both carriers independently and without coordination raised fares on their most contested routes within the same month. Regulators investigated the simultaneous increases but found no evidence of unlawful coordination.",
             "options": [
-                "The engineer found chloride-induced tendon corrosion from inadequate cover in original construction.",
-                "She produced a liability report attributing responsibility to the original contractor.",
-                "The report attributed failure to design deficiencies rather than construction errors.",
-                "The developer commenced breach of contract proceedings against the contractor."
+                "A regional airline and its largest competitor had matched each other's fare cuts for so long that both carriers approached insolvency.",
+                "Both carriers independently and without coordination raised fares on their most contested routes within the same month.",
+                "Regulators found clear evidence that the two carriers had coordinated the increases unlawfully.",
+                "Regulators investigated the simultaneous increases but found no evidence of unlawful coordination."
             ],
             "correctOrder": [
                 0,
                 1,
                 3
             ],
-            "hint": "Follow: identifying the cause, the liability report, then commencing proceedings. One frame attributes to design not construction.",
-            "explanation": "Structural failure narratives show identifying the cause, a liability report, and commencing proceedings. The distractor changes attribution."
+            "hint": "Notice what regulators actually conclude after investigating the simultaneous fare increases.",
+            "explanation": "Because regulators find no evidence of unlawful coordination, an option claiming they found clear evidence of it reverses that specific finding."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L163_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "An environmental prosecutor brought a sewage pollution case relying on automated monitoring data, river condition assessments, and internal communications showing the utility had prioritised avoiding enforcement over fixing infrastructure. The utility was fined ninety million pounds and ordered to implement a nine-hundred-million-pound capital programme.",
+            "story": "A regional dairy cooperative's export certification had been suspended after a single contaminated batch was traced back to one member farm. The cooperative isolated that farm's output entirely while certifying every other member farm individually. Export certification was restored for every farm except the one linked to the contamination.",
             "options": [
-                "The prosecution relied on monitoring data, river assessments, and internal comms showing enforcement avoidance.",
-                "The court found the monitoring data was unreliable and the prosecution collapsed.",
-                "The utility was fined ninety million pounds.",
-                "It was ordered to implement a nine-hundred-million-pound capital programme."
+                "A regional dairy cooperative's export certification had been suspended after a single contaminated batch was traced back to one member farm.",
+                "The cooperative isolated that farm's output entirely while certifying every other member farm individually.",
+                "Export certification was restored for every farm except the one linked to the contamination.",
+                "Export certification was restored for every farm, including the one linked to the contamination."
             ],
             "correctOrder": [
                 0,
-                2,
-                3
+                1,
+                2
             ],
-            "hint": "Trace: the prosecution evidence, the fine, then the capital programme order. One frame collapses the prosecution.",
-            "explanation": "Environmental prosecution narratives show multiple evidence strands, a substantial fine, and a capital programme order. The distractor collapses the case."
+            "hint": "Check whether the contaminated farm's certification is actually restored along with the others.",
+            "explanation": "Because certification is restored for every farm except the one linked to contamination, an option including that farm in the restoration contradicts that specific exception."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L163_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "A clinical negligence barrister found that a lost imaging request had meant red flag symptoms for epidural abscess went uninvestigated. She instructed a spinal neurosurgeon as causation expert. The expert concluded that prompt imaging would on the balance of probabilities have led to earlier drainage and avoided the injury.",
+            "story": "A national broadcasting union and a major network had failed to reach a contract agreement despite eleven rounds of formal negotiation. Both sides agreed to binding arbitration on the two remaining unresolved issues only. The arbitrator's ruling on those two issues allowed the full contract to be finalized.",
             "options": [
-                "Records showed red flag symptoms were identified but the imaging request was lost in the referral system.",
-                "A spinal neurosurgeon was instructed to provide a causation opinion.",
-                "The expert concluded prompt imaging would on balance have avoided the injury.",
-                "The expert concluded the injury was an unavoidable consequence of the infection's progression."
+                "The union rejected the arbitrator's ruling and continued the strike indefinitely.",
+                "A national broadcasting union and a major network had failed to reach a contract agreement despite eleven rounds of formal negotiation.",
+                "Both sides agreed to binding arbitration on the two remaining unresolved issues only.",
+                "The arbitrator's ruling on those two issues allowed the full contract to be finalized."
             ],
             "correctOrder": [
-                0,
                 1,
-                2
+                2,
+                3
             ],
-            "hint": "Sequence: finding the lost request, instructing the expert, then the favourable causation opinion. One frame gives an unfavourable opinion.",
-            "explanation": "Clinical negligence narratives show finding a system failure, instructing an expert, and a favourable causation opinion. The distractor gives an unfavourable opinion."
+            "hint": "Read the ending closely: it tells you whether the contract is actually finalized.",
+            "explanation": "Because the arbitrator's ruling allows the full contract to be finalized, an option claiming the union rejected it and continued striking contradicts that resolution."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L164_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "A constitutional law academic published a paper arguing that Henry VIII clauses in the Retained EU Law Act allowing ministers to amend primary legislation by statutory instrument violated parliamentary sovereignty. The paper was widely cited in parliamentary debates. A joint committee recommended the clauses be removed and the government accepted the amendment.",
+            "story": "A biotechnology firm's flagship drug had shown promising results in two independent trials but failed to replicate in a third, larger trial. Statisticians discovered the third trial had enrolled a patient population with a key genetic difference from the first two. A fourth trial matching the original population confirmed the drug's original promising results.",
             "options": [
-                "The government insisted the Henry VIII clauses were constitutionally proper and retained them.",
-                "The academic argued Henry VIII clauses in the Retained EU Law Act violated parliamentary sovereignty.",
-                "The paper was widely cited in parliamentary debates on the bill.",
-                "A joint committee recommended removal and the government accepted the amendment."
+                "A biotechnology firm's flagship drug had shown promising results in two independent trials but failed to replicate in a third, larger trial.",
+                "The firm discontinued the drug's development after the third trial's results.",
+                "Statisticians discovered the third trial had enrolled a patient population with a key genetic difference from the first two.",
+                "A fourth trial matching the original population confirmed the drug's original promising results."
             ],
             "correctOrder": [
-                1,
+                0,
                 2,
                 3
             ],
-            "hint": "Follow: the academic paper, parliamentary citation, then the government's acceptance. One frame retains the clauses.",
-            "explanation": "Constitutional law narratives show an academic argument, parliamentary citation, and a government concession. The distractor retains the clauses."
+            "hint": "Notice what the firm actually does once the genetic difference is identified.",
+            "explanation": "Because a fourth trial confirms the original results, an option showing the firm discontinuing development after the third trial contradicts that later confirmation."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L164_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "An independent expert found a disclosing party's keyword search had captured less than thirty per cent of likely relevant documents. She recommended technology-assisted review with predictive coding. The court ordered the supplementary review and required the disclosing party to bear the costs.",
+            "story": "A shipping conglomerate's two largest subsidiaries had spent years competing for the same regional clients, undercutting each other's margins. Corporate leadership merged the two subsidiaries' regional sales teams into a single unit. Combined regional margins exceeded what either subsidiary had achieved independently.",
             "options": [
-                "The expert found the keyword search captured under thirty per cent of likely relevant documents.",
-                "She recommended technology-assisted review with a trained predictive coding model.",
-                "The court found the keyword search was adequate and declined to order supplementary review.",
-                "The court ordered the review and required the disclosing party to bear the costs."
+                "A shipping conglomerate's two largest subsidiaries had spent years competing for the same regional clients, undercutting each other's margins.",
+                "Corporate leadership merged the two subsidiaries' regional sales teams into a single unit.",
+                "Combined regional margins fell below what either subsidiary had achieved independently.",
+                "Combined regional margins exceeded what either subsidiary had achieved independently."
             ],
             "correctOrder": [
                 0,
                 1,
                 3
             ],
-            "hint": "Trace: the inadequate search finding, the recommendation, then the court's order. One frame finds the search adequate.",
-            "explanation": "Disclosure review narratives show finding inadequate search, recommending predictive coding, and a court order. The distractor finds the search adequate."
+            "hint": "Track cause and effect: merging the sales teams leads to margins exceeding either subsidiary's prior results. One option reverses that.",
+            "explanation": "Because combined margins exceed what either achieved alone, an option claiming they fell below reverses that measured outcome."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L164_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "Regulatory counsel identified that the transitional provisions of a new financial benchmark regulation failed to address contracts requiring court approval for variation of a fundamental term. She drafted a legislative fix and submitted it to the government department. The department incorporated her draft into a Financial Services Act amendment.",
+            "story": "A national library's rare manuscript collection had two separate items catalogued under the same accession number for nearly a century. Archivists discovered the error while cross-referencing the collection against a newly acquired donor's private records. Both manuscripts were assigned separate accession numbers and correctly attributed for the first time.",
             "options": [
-                "Regulatory counsel found transitional provisions failed to address court-approval requirements for benchmark variation.",
-                "The department found existing contract variation mechanisms were adequate and declined to legislate.",
-                "She drafted a legislative fix and submitted it to the relevant government department.",
-                "The department incorporated her draft into a Financial Services Act amendment."
+                "A national library's rare manuscript collection had two separate items catalogued under the same accession number for nearly a century.",
+                "Archivists discovered the error while cross-referencing the collection against a newly acquired donor's private records.",
+                "Both manuscripts were assigned separate accession numbers and correctly attributed for the first time.",
+                "Only one of the two manuscripts was ever correctly reattributed."
             ],
             "correctOrder": [
                 0,
-                2,
-                3
+                1,
+                2
             ],
-            "hint": "Sequence: identifying the gap, drafting a fix, then its incorporation. One frame finds existing mechanisms adequate.",
-            "explanation": "Regulatory law narratives show identifying a legislative gap, drafting a fix, and incorporation into primary legislation. The distractor finds existing mechanisms adequate."
+            "hint": "Check whether both manuscripts actually receive separate, correct attribution.",
+            "explanation": "Because both manuscripts are correctly attributed, an option claiming only one was ever reattributed contradicts that complete resolution."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L165_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "A specialist planning barrister identified that a minerals enforcement notice was ultra vires because the local planning authority had failed to consult the mineral planning authority before issuing it. She lodged an appeal to the planning inspectorate. The inspector agreed the failure to consult rendered the notice a nullity.",
+            "story": "A regional water utility and a neighboring agricultural district had disputed the same aquifer's allocation rights for over a decade. Both parties commissioned a joint hydrological study rather than continuing separate, conflicting assessments. The joint study's findings formed the basis of an allocation agreement both parties signed.",
             "options": [
-                "The barrister found the enforcement notice was ultra vires for failure to consult the mineral planning authority.",
-                "She lodged an appeal to the planning inspectorate.",
-                "The inspector agreed the failure to consult rendered the notice a nullity.",
-                "The inspector upheld the enforcement notice finding the consultation duty did not apply."
+                "The agricultural district rejected the joint study's findings and continued the dispute.",
+                "A regional water utility and a neighboring agricultural district had disputed the same aquifer's allocation rights for over a decade.",
+                "Both parties commissioned a joint hydrological study rather than continuing separate, conflicting assessments.",
+                "The joint study's findings formed the basis of an allocation agreement both parties signed."
             ],
             "correctOrder": [
-                0,
                 1,
-                2
+                2,
+                3
             ],
-            "hint": "Follow: identifying the ultra vires ground, lodging the appeal, then the inspector's ruling. One frame upholds the notice.",
-            "explanation": "Planning enforcement narratives show an ultra vires ground, an appeal, and the notice declared a nullity. The distractor upholds the notice."
+            "hint": "Notice what the agricultural district actually does once the joint study is complete.",
+            "explanation": "Because both parties sign an allocation agreement based on the study, an option showing the district rejecting the findings contradicts that resolution."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L165_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "An anti-money laundering officer identified implausible cash instructions, internally inconsistent funding documentation, and a contradicted urgency explanation in a residential conveyancing transaction. She declined to act, submitted a suspicious activity report, and requested NCA consent. The NCA refused consent within seven days confirming the SAR warranted further investigation.",
+            "story": "A national telecommunications carrier and a smaller regional competitor had both claimed the same underused frequency band for expansion. Regulators split the band, awarding each carrier a distinct, non-overlapping portion. Both carriers expanded their networks using their respective portions without further dispute.",
             "options": [
-                "The NCA granted consent within seven days and the transaction was completed.",
-                "The officer identified implausible instructions, inconsistent documentation, and a contradicted urgency explanation.",
-                "She declined to act, submitted a SAR, and requested NCA consent.",
-                "The NCA refused consent within seven days confirming the SAR warranted investigation."
+                "A national telecommunications carrier and a smaller regional competitor had both claimed the same underused frequency band for expansion.",
+                "The national carrier challenged the split and was awarded the entire band.",
+                "Regulators split the band, awarding each carrier a distinct, non-overlapping portion.",
+                "Both carriers expanded their networks using their respective portions without further dispute."
             ],
             "correctOrder": [
-                1,
+                0,
                 2,
                 3
             ],
-            "hint": "Trace: the multiple red flags, submitting SAR and requesting consent, then NCA refusal. One frame has the NCA grant consent.",
-            "explanation": "Anti-money laundering narratives show multiple red flags, a SAR and consent request, and NCA refusal. The distractor grants consent."
+            "hint": "Read the ending closely: it tells you whether the national carrier actually challenges and wins the entire band.",
+            "explanation": "Because both carriers expand using their respective portions without further dispute, an option showing a successful challenge for the entire band contradicts that resolution."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L165_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "A procurement lawyer found that a standstill notice contained a scoring error affecting tenderer rankings. She advised that proceeding to signature carried a significant automatic suspension risk. The authority re-ran the evaluation which produced a different winner for the affected lot.",
+            "story": "Two regional hospital networks had spent years disputing which one held the rights to a shared trauma-response contract with the state. The state proposed splitting trauma response by geographic zone rather than awarding a single exclusive contract. Both networks accepted the zoned arrangement and response times improved across the entire region.",
             "options": [
-                "The lawyer found a scoring error in the standstill notice had affected the ranking of tenderers.",
-                "She advised that proceeding to signature carried a significant automatic suspension risk.",
-                "The authority proceeded to contract signature accepting the procurement risk.",
-                "The authority re-ran the evaluation which produced a different winner for the affected lot."
+                "Two regional hospital networks had spent years disputing which one held the rights to a shared trauma-response contract with the state.",
+                "The state proposed splitting trauma response by geographic zone rather than awarding a single exclusive contract.",
+                "One network rejected the zoned arrangement and continued the legal dispute alone.",
+                "Both networks accepted the zoned arrangement and response times improved across the entire region."
             ],
             "correctOrder": [
                 0,
                 1,
                 3
             ],
-            "hint": "Sequence: the scoring error, the suspension risk advice, then re-evaluation with a different winner. One frame proceeds to signature.",
-            "explanation": "Procurement law narratives show a scoring error, advising on legal risk, and re-evaluation producing a different winner. The distractor proceeds despite the risk."
+            "hint": "Check whether both networks actually accept the zoned arrangement.",
+            "explanation": "Because both networks accept the arrangement and response times improve, an option showing one network rejecting it contradicts that mutual acceptance."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L166_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "An international trade law expert found a state subsidy for domestic solar panel manufacturers was specific to the industry and caused serious prejudice by displacing a competitor's exports in a third country market. She concluded an actionable WTO claim could be brought and prepared a dispute settlement submission.",
+            "story": "A national grid operator's two regional divisions had each blamed the other for a cascading blackout that affected several million customers. An independent engineering review traced the actual cause to a single relay failure in a division neither had blamed. Both divisions jointly funded upgrades to prevent a similar failure across the entire grid.",
             "options": [
-                "The expert found the solar panel subsidy was specific and caused serious prejudice displacing exports.",
-                "She concluded the subsidy was a permissible measure under the Agreement's general exceptions.",
-                "She concluded an actionable WTO claim could be brought.",
-                "She prepared a dispute settlement submission."
+                "A national grid operator's two regional divisions had each blamed the other for a cascading blackout that affected several million customers.",
+                "An independent engineering review traced the actual cause to a single relay failure in a division neither had blamed.",
+                "Both divisions jointly funded upgrades to prevent a similar failure across the entire grid.",
+                "Each division continued blaming the other even after the review's findings."
             ],
             "correctOrder": [
                 0,
-                2,
-                3
+                1,
+                2
             ],
-            "hint": "Follow: the specificity and prejudice finding, the actionability conclusion, then the submission. One frame finds a general exception applies.",
-            "explanation": "WTO dispute narratives show finding specificity and prejudice, concluding actionability, and preparing a submission. The distractor finds a general exception."
+            "hint": "Notice how both divisions actually respond once the independent review identifies the true cause.",
+            "explanation": "Because both divisions jointly fund upgrades after the review, an option claiming they kept blaming each other contradicts that collaborative response."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L166_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "A public law solicitor advised a local authority that a proposed public spaces protection order restricting rough sleeping was likely unlawful as rough sleeping did not meet the statutory test for activities having a detrimental effect on the quality of life in the locality. She recommended alternative frameworks be explored. The authority abandoned the PSPO approach.",
+            "story": "A regional insurance pool's two largest member companies had disagreed for years over how claims from a shared catastrophe fund should be split. An actuarial consultant proposed splitting claims proportionally to each company's total premium volume. Both companies adopted the proportional formula without further dispute.",
             "options": [
-                "The solicitor concluded the PSPO for rough sleeping was likely unlawful as the statutory test was not met.",
-                "She recommended alternative statutory frameworks.",
-                "The authority abandoned the PSPO approach.",
-                "The solicitor advised the PSPO was a lawful exercise of the authority's protective powers."
+                "One company rejected the proportional formula and withdrew from the pool entirely.",
+                "A regional insurance pool's two largest member companies had disagreed for years over how claims from a shared catastrophe fund should be split.",
+                "An actuarial consultant proposed splitting claims proportionally to each company's total premium volume.",
+                "Both companies adopted the proportional formula without further dispute."
             ],
             "correctOrder": [
-                0,
                 1,
-                2
+                2,
+                3
             ],
-            "hint": "Trace: the unlawfulness conclusion, the recommendation, then abandoning the PSPO. One frame finds the PSPO lawful.",
-            "explanation": "Public spaces law narratives show finding likely unlawfulness, recommending alternatives, and abandoning the approach. The distractor finds the PSPO lawful."
+            "hint": "Check whether both companies actually adopt the proposed formula.",
+            "explanation": "Because both companies adopt the formula without further dispute, an option showing one withdrawing entirely contradicts that mutual agreement."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L166_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "A corporate governance adviser found that a proposed related party transaction between a listed company and its controlling shareholder lacked an independent valuation required by UK listing rules. She advised that proceeding would constitute a material breach. The transaction was restructured with a new independent valuation.",
+            "story": "Two rival seed companies had each claimed patent rights to a nearly identical drought-resistant crop variety developed independently. A patent tribunal determined both varieties had been developed independently and genuinely differed in one key genetic marker. Both companies received separate patents and were free to sell their respective varieties.",
             "options": [
-                "She advised the existing valuation was adequate and the transaction could proceed as structured.",
-                "The adviser found the related party transaction lacked an independent valuation required by listing rules.",
-                "She advised that proceeding would constitute a material breach.",
-                "The transaction was restructured with a new independent valuation."
+                "Two rival seed companies had each claimed patent rights to a nearly identical drought-resistant crop variety developed independently.",
+                "The tribunal awarded the sole patent to just one of the two companies.",
+                "A patent tribunal determined both varieties had been developed independently and genuinely differed in one key genetic marker.",
+                "Both companies received separate patents and were free to sell their respective varieties."
             ],
             "correctOrder": [
-                1,
+                0,
                 2,
                 3
             ],
-            "hint": "Sequence: finding the valuation not independent, advising on material breach, then restructuring. One frame finds the valuation adequate.",
-            "explanation": "Listing rules narratives show finding an independence failure, advising on material breach, and restructuring. The distractor finds the valuation adequate."
+            "hint": "Read the ending closely: it tells you whether both companies actually receive separate patents.",
+            "explanation": "Because both companies receive separate patents, an option claiming only one received the sole patent contradicts that dual outcome."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L167_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "A specialist pension lawyer concluded that a benefit exchange mechanism was within the trustees' discretion but required member consent and an actuarial certificate. The trustees conducted a member consultation and obtained actuarial certification. The scheme was implemented.",
+            "story": "A national research consortium's two lead scientists had reached opposite conclusions from what appeared to be the same underlying dataset. A data-integrity audit found one dataset had silently excluded a subset of outlier results the other had included. Reanalyzing both datasets with matching criteria produced a single, consistent conclusion both scientists accepted.",
             "options": [
-                "The lawyer found the benefit exchange was within discretion but required member consent and an actuarial certificate.",
-                "The trustees conducted a consultation and obtained actuarial certification.",
-                "The lawyer advised the benefit exchange required primary legislation and could not be implemented by trustees.",
-                "The scheme was implemented."
+                "A national research consortium's two lead scientists had reached opposite conclusions from what appeared to be the same underlying dataset.",
+                "A data-integrity audit found one dataset had silently excluded a subset of outlier results the other had included.",
+                "The two scientists continued publishing contradictory conclusions even after the audit.",
+                "Reanalyzing both datasets with matching criteria produced a single, consistent conclusion both scientists accepted."
             ],
             "correctOrder": [
                 0,
                 1,
                 3
             ],
-            "hint": "Follow: conditions identified, trustees fulfilling them, then implementing the scheme. One frame requires primary legislation.",
-            "explanation": "Pension trust narratives show identifying conditions, meeting them through consultation and certification, and implementing. The distractor requires primary legislation."
+            "hint": "Notice what actually happens to the scientists' conclusions once the datasets are reanalyzed.",
+            "explanation": "Because reanalysis produces a single conclusion both accept, an option claiming they kept publishing contradictory conclusions afterward contradicts that resolution."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L167_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "A senior criminal barrister found a cold case conviction rested on an identification made under highly suggestive conditions. She instructed an eyewitness psychology expert who prepared a reliability report. She submitted a Criminal Cases Review Commission application citing the fresh expert evidence and changed scientific understanding.",
+            "story": "A regional bar association's ethics committee had issued two conflicting opinions on the same disputed billing practice within the same year. The committee's chair called an emergency session to resolve the contradiction before the next annual review. The emergency session produced a single, unified opinion adopted unanimously.",
             "options": [
-                "The barrister found the conviction rested on identification made under highly suggestive conditions.",
-                "The CCRC refused the application finding the expert evidence did not meet the fresh evidence test.",
-                "She instructed an eyewitness psychology expert who prepared a reliability report.",
-                "She submitted a CCRC application citing the fresh evidence and changed scientific understanding."
+                "A regional bar association's ethics committee had issued two conflicting opinions on the same disputed billing practice within the same year.",
+                "The committee's chair called an emergency session to resolve the contradiction before the next annual review.",
+                "The emergency session produced a single, unified opinion adopted unanimously.",
+                "The contradiction remained unresolved going into the next annual review."
             ],
             "correctOrder": [
                 0,
-                2,
-                3
+                1,
+                2
             ],
-            "hint": "Trace: identifying the unsafe identification, instructing the expert, then the CCRC application. One frame has the CCRC refuse.",
-            "explanation": "CCRC application narratives show identifying an unsafe identification, expert instruction, and a CCRC application. The distractor has the CCRC refuse."
+            "hint": "Check whether the contradiction is actually resolved before the next annual review.",
+            "explanation": "Because the emergency session produces a unanimous unified opinion, an option claiming the contradiction remained unresolved contradicts that outcome."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L167_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "A root cause analysis of a wrong-site surgery never event found the surgical safety checklist had been completed retrospectively, the time-out was performed incorrectly, and time pressure from a scheduling overrun existed. A learning report recommended human factors training, revised scheduling protocols, and independent checklist audit. The trust implemented all three recommendations within six months.",
+            "story": "A multinational bank's two regional compliance offices had each cleared the same suspicious transaction independently, unaware the other had also reviewed it. A centralized compliance audit discovered both offices had missed the same red flag in the transaction's origin. The bank froze the account and reported the transaction to regulators immediately after the audit.",
             "options": [
-                "Root cause analysis found retrospective checklist completion, incorrect time-out, and scheduling time pressure.",
-                "A learning report recommended human factors training, scheduling revisions, and checklist audit.",
-                "The trust implemented all three recommendations within six months.",
-                "The root cause analysis found the surgical checklist had been completed correctly in real time."
+                "The bank took no further action after the audit's findings.",
+                "A multinational bank's two regional compliance offices had each cleared the same suspicious transaction independently, unaware the other had also reviewed it.",
+                "A centralized compliance audit discovered both offices had missed the same red flag in the transaction's origin.",
+                "The bank froze the account and reported the transaction to regulators immediately after the audit."
             ],
             "correctOrder": [
-                0,
                 1,
-                2
+                2,
+                3
             ],
-            "hint": "Sequence: finding the three failure modes, the three recommendations, then implementation. One frame finds the checklist correct.",
-            "explanation": "Never event narratives show finding multiple failure modes, making specific recommendations, and implementing them. The distractor removes a key finding."
+            "hint": "Read the ending closely: it tells you whether the bank actually acts on the audit's findings.",
+            "explanation": "Because the bank freezes the account and reports the transaction immediately, an option claiming it took no further action contradicts that response."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L168_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "An upper tribunal advocate argued that the First-tier Tribunal had erred under the Mental Capacity Act by failing to adequately consider the person's past wishes and feelings as required by section four. The upper tribunal agreed the FTT had applied an overly paternalistic assessment. The decision was set aside and remitted for rehearing.",
+            "story": "A national arts council's two regional panels had rated the same touring exhibition so differently that funding decisions became inconsistent across regions. The council merged both panels into a single national review board with a unified rubric. Funding decisions for touring exhibitions became consistent across every region the following cycle.",
             "options": [
-                "The upper tribunal found the FTT had applied the best interests test correctly.",
-                "The advocate argued the FTT had failed to adequately consider past wishes and feelings under section four.",
-                "The upper tribunal agreed the FTT applied an overly paternalistic assessment.",
-                "The decision was set aside and remitted for rehearing."
+                "A national arts council's two regional panels had rated the same touring exhibition so differently that funding decisions became inconsistent across regions.",
+                "Funding decisions remained just as inconsistent across regions the following cycle.",
+                "The council merged both panels into a single national review board with a unified rubric.",
+                "Funding decisions for touring exhibitions became consistent across every region the following cycle."
             ],
             "correctOrder": [
-                1,
+                0,
                 2,
                 3
             ],
-            "hint": "Follow: the section four argument, the upper tribunal's agreement, then remittal. One frame finds the FTT correct.",
-            "explanation": "Mental capacity appeal narratives show arguing a section four failure, finding overly paternalistic assessment, and remitting. The distractor finds the FTT correct."
+            "hint": "Track cause and effect: a unified rubric leads to consistent funding decisions. One option reverses that.",
+            "explanation": "Because decisions become consistent across every region, an option claiming they remained just as inconsistent reverses that measured outcome."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L168_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "A specialist charity lawyer advised that a religious organisation's proposed exclusion of individuals in same-sex relationships from leadership roles in charitable activities was likely unlawful unless an organised religion exception applied. She analysed the exception and concluded it was unlikely to extend beyond religious worship to charitable service delivery. The organisation reconsidered the policy.",
+            "story": "A national customs service's two border crossings had applied the same tariff schedule so differently that importers routinely rerouted shipments to whichever crossing charged less. Headquarters standardized tariff calculation software identically across both crossings. Tariff assessments became identical at both crossings, eliminating the incentive to reroute shipments.",
             "options": [
-                "The lawyer found the exclusion was likely unlawful unless the organised religion exception applied.",
-                "She concluded the exception was unlikely to extend to charitable service delivery.",
-                "She concluded the exception clearly extended to all the organisation's charitable activities.",
-                "The organisation reconsidered the policy."
+                "A national customs service's two border crossings had applied the same tariff schedule so differently that importers routinely rerouted shipments to whichever crossing charged less.",
+                "Headquarters standardized tariff calculation software identically across both crossings.",
+                "Importers continued rerouting shipments to whichever crossing charged less.",
+                "Tariff assessments became identical at both crossings, eliminating the incentive to reroute shipments."
             ],
             "correctOrder": [
                 0,
                 1,
                 3
             ],
-            "hint": "Trace: the likely unlawfulness, the exception analysis, then the reconsideration. One frame extends the exception to all activities.",
-            "explanation": "Equality law narratives show finding likely unlawfulness, analysing the exception narrowly, and a policy reconsideration. The distractor extends the exception."
+            "hint": "Check whether each option matches what actually happens to shipment rerouting after standardization.",
+            "explanation": "Because assessments become identical, eliminating the rerouting incentive, an option claiming rerouting continued contradicts that measured outcome."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L168_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "A public interest practitioner found a local authority's blanket refusal of housing benefit claims for asylum seekers with limited leave to remain was unlawful for failing to apply statutory eligibility criteria individually. She brought a test case. The high court granted a mandatory injunction requiring individual statutory determination of all pending claims.",
+            "story": "A regional utility commission's two staff economists had produced sharply different cost projections for the same proposed pipeline. An external reviewer found one projection had used outdated steel-price data from three years earlier. The corrected projection became the commission's official cost estimate for the pipeline.",
             "options": [
-                "The practitioner found the blanket refusal failed to apply statutory eligibility criteria individually.",
-                "The high court found the blanket policy was a lawful exercise of administrative discretion.",
-                "She brought a test case.",
-                "The high court granted a mandatory injunction requiring individual determination of pending claims."
+                "A regional utility commission's two staff economists had produced sharply different cost projections for the same proposed pipeline.",
+                "An external reviewer found one projection had used outdated steel-price data from three years earlier.",
+                "The corrected projection became the commission's official cost estimate for the pipeline.",
+                "The commission adopted the projection based on outdated data as its official estimate."
             ],
             "correctOrder": [
                 0,
-                2,
-                3
+                1,
+                2
             ],
-            "hint": "Sequence: finding the unlawful policy, bringing the test case, then the mandatory injunction. One frame finds the policy lawful.",
-            "explanation": "Public interest law narratives show finding an unlawful blanket policy, a test case, and a mandatory injunction. The distractor finds the policy lawful."
+            "hint": "Notice which projection the commission actually adopts as its official estimate.",
+            "explanation": "Because the corrected projection becomes the official estimate, an option claiming the outdated one was adopted instead contradicts that specific choice."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L169_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "An investment arbitration tribunal heard that a host state had retroactively amended a feed-in tariff for solar energy investors. The tribunal found while the adjustment was within regulatory autonomy, the retroactive element was unforeseeable to a prudent investor and violated the fair and equitable treatment standard. Compensation was awarded.",
+            "story": "A national securities regulator's two enforcement divisions had each opened separate, uncoordinated investigations into the same trading firm. Senior leadership consolidated both investigations under a single lead investigator to avoid duplicated effort. The consolidated investigation concluded in half the time either separate investigation would likely have taken.",
             "options": [
-                "The applicant argued the retroactive tariff amendment constituted an FET breach and indirect expropriation.",
-                "The tribunal found the retroactive element was unforeseeable and violated the FET standard.",
-                "Compensation was awarded.",
-                "The tribunal found both the adjustment and its retroactive application were within the state's sovereign prerogative."
+                "The consolidated investigation took longer than either separate investigation had originally projected.",
+                "A national securities regulator's two enforcement divisions had each opened separate, uncoordinated investigations into the same trading firm.",
+                "Senior leadership consolidated both investigations under a single lead investigator to avoid duplicated effort.",
+                "The consolidated investigation concluded in half the time either separate investigation would likely have taken."
             ],
             "correctOrder": [
-                0,
                 1,
-                2
+                2,
+                3
             ],
-            "hint": "Follow: the argument, the tribunal's nuanced finding on retroactivity, then compensation. One frame finds full state prerogative.",
-            "explanation": "Investment arbitration narratives show an FET argument, a nuanced retroactivity finding, and compensation. The distractor finds full state prerogative."
+            "hint": "Track cause and effect: consolidation leads to the investigation concluding faster. One option reverses that.",
+            "explanation": "Because the consolidated investigation concludes in half the projected time, an option claiming it took longer reverses that measured outcome."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L169_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "A compliance officer identified that an algorithm in a bank's systematic internaliser was executing client orders in a way that routinely advantaged the bank's own positions through sub-millisecond sequencing in violation of the best execution obligation. She recommended immediate suspension pending review. The algorithm was suspended and a market abuse risk assessment was commissioned.",
+            "story": "A national maritime authority's two regional offices had issued conflicting safety certifications to the same class of fishing vessel. Headquarters revoked both regional certifications and issued a single national standard instead. Every vessel in that class was recertified under the unified national standard within the year.",
             "options": [
-                "The general counsel found the execution sequencing was within regulatory tolerances and the algorithm continued.",
-                "The compliance officer identified the algorithm violated best execution by advantaging the bank's own positions.",
-                "She recommended immediate suspension pending review.",
-                "The algorithm was suspended and a market abuse risk assessment was commissioned."
+                "A national maritime authority's two regional offices had issued conflicting safety certifications to the same class of fishing vessel.",
+                "Several vessels in that class remained uncertified at year's end.",
+                "Headquarters revoked both regional certifications and issued a single national standard instead.",
+                "Every vessel in that class was recertified under the unified national standard within the year."
             ],
             "correctOrder": [
-                1,
+                0,
                 2,
                 3
             ],
-            "hint": "Trace: identifying the best execution violation, recommending suspension, then the suspension and risk assessment. One frame finds the sequencing within tolerances.",
-            "explanation": "Market conduct narratives show identifying a best execution breach, recommending suspension, and commissioning a risk assessment. The distractor finds the sequencing within tolerances."
+            "hint": "Check whether every vessel in the class is actually recertified within the year.",
+            "explanation": "Because every vessel is recertified within the year, an option claiming several remained uncertified contradicts that complete outcome."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L169_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The academic in administrative law published a series of papers arguing that the Supreme Court's prorogation decision had altered the constitutional balance between courts and executive in ways raising questions about separation of powers. His analysis influenced a government consultation on judicial review. The consultation led to legislation codifying certain prerogative powers.",
+            "story": "A national food-safety agency's two testing laboratories had reported different contamination thresholds for the same imported product line. An independent review found one laboratory's equipment had not been recalibrated in over two years. Recalibrating that equipment brought both laboratories' results into close agreement.",
             "options": [
-                "The academic argued the prorogation ruling had altered the constitutional balance between courts and executive.",
-                "His analysis influenced a government consultation on judicial review boundaries.",
-                "The government rejected the academic's analysis and proposed no legislative change.",
-                "The consultation led to legislation codifying certain prerogative powers."
+                "A national food-safety agency's two testing laboratories had reported different contamination thresholds for the same imported product line.",
+                "An independent review found one laboratory's equipment had not been recalibrated in over two years.",
+                "The two laboratories' results diverged even further after the recalibration.",
+                "Recalibrating that equipment brought both laboratories' results into close agreement."
             ],
             "correctOrder": [
                 0,
                 1,
                 3
             ],
-            "hint": "Sequence: the academic argument, influencing the consultation, then legislation. One frame has the consultation reject the analysis.",
-            "explanation": "Constitutional scholarship narratives show an academic argument, influencing a consultation, and resulting legislation. The distractor has the consultation reject the argument."
+            "hint": "Notice what actually happens to the two laboratories' results after recalibration.",
+            "explanation": "Because recalibration brings both results into close agreement, an option claiming they diverged even further reverses that measured outcome."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L170_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "A specialist advisor to the Sentencing Council submitted evidence-based proposals arguing that guidelines for possession with intent to supply class A drugs produced disproportionate outcomes for coerced county lines runners. The council agreed to consult on revised guidelines. Revised guidelines with a new harm and culpability framework explicitly addressing coerced roles were published.",
+            "story": "A national air-traffic authority's two adjacent control sectors had each cleared conflicting flight paths through the same congested corridor. Controllers from both sectors adopted a shared real-time coordination protocol for that specific corridor. No further path conflicts in that corridor have been recorded in the two years since.",
             "options": [
-                "The advisor argued guidelines produced disproportionate outcomes for coerced county lines runners.",
-                "The council rejected the proposals finding existing guidelines provided adequate judicial discretion.",
-                "The council agreed to consult on revised guidelines.",
-                "Revised guidelines with a new framework addressing coercion were published."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Follow: the evidence-based proposals, the council agreeing to consult, then the revised guidelines. One frame rejects the proposals.",
-            "explanation": "Sentencing reform narratives show proposals, a commitment to consult, and revised guidelines. The distractor has the council reject the proposals."
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L170_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "Film Strip",
-            "story": "The specialist immigration judge identified a pattern in the tribunal's asylum jurisprudence where country guidance decisions on a particular state had not been updated for eleven years despite significant changes in the factual country conditions. She submitted a formal note to the presidential guidance unit recommending a new country guidance case be listed. A new country guidance case was expedited, heard, and new guidance was issued.",
-            "options": [
-                "The judge found country guidance on a state had not been updated for eleven years despite changed conditions.",
-                "She recommended to the presidential guidance unit that a new case be listed.",
-                "A new country guidance case was expedited, heard, and new guidance issued.",
-                "The presidential guidance unit found the eleven-year-old guidance remained current and declined to list a new case."
+                "A national air-traffic authority's two adjacent control sectors had each cleared conflicting flight paths through the same congested corridor.",
+                "Controllers from both sectors adopted a shared real-time coordination protocol for that specific corridor.",
+                "No further path conflicts in that corridor have been recorded in the two years since.",
+                "Path conflicts in that corridor became even more frequent after the new protocol."
             ],
             "correctOrder": [
                 0,
                 1,
                 2
             ],
-            "hint": "Trace: identifying the outdated guidance, recommending a new case, then the expedited guidance. One frame finds the guidance current.",
-            "explanation": "Immigration jurisprudence narratives show identifying outdated guidance, recommending a new case, and new guidance being issued. The distractor finds the guidance current."
+            "hint": "Check whether each option matches what the passage says about conflicts in the two years since.",
+            "explanation": "Because no further conflicts have been recorded in two years, an option claiming they became more frequent contradicts that record."
         },
         {
-            "id": "WRT_SUMMARIZESTORYWRITING_L170_Q3",
+            "id": "WRT_SUMMARIZESTORYWRITING_L170_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The judicial committee of the Privy Council considered an appeal from a Caribbean jurisdiction on the question of whether mandatory minimum sentencing for certain drug offences violated the constitutional right against cruel and unusual punishment. Applying a proportionality analysis, the board held that a mandatory minimum of fifteen years for a small-scale courier amounted to grossly disproportionate punishment. It declared the provision unconstitutional.",
+            "story": "A regional bar exam board's two grading panels had produced pass rates so different that candidates in one region protested the disparity. The board introduced a shared calibration exercise requiring both panels to grade identical sample answers first. Pass rates between the two panels converged within a narrow, statistically expected range.",
             "options": [
-                "The board found the mandatory minimum was within the constitutional margin of legislative discretion.",
-                "The Privy Council considered whether mandatory minimum drug sentences violated the right against cruel punishment.",
-                "Applying proportionality, it held fifteen years for a small-scale courier was grossly disproportionate.",
-                "It declared the provision unconstitutional."
+                "Pass rates between the two panels remained just as disparate as before.",
+                "A regional bar exam board's two grading panels had produced pass rates so different that candidates in one region protested the disparity.",
+                "The board introduced a shared calibration exercise requiring both panels to grade identical sample answers first.",
+                "Pass rates between the two panels converged within a narrow, statistically expected range."
             ],
             "correctOrder": [
                 1,
                 2,
                 3
             ],
-            "hint": "Sequence: the constitutional question, the proportionality finding, then the declaration. One frame finds the minimum within discretion.",
-            "explanation": "Privy Council constitutional narratives show a constitutional question, a proportionality finding of gross disproportionality, and a declaration of unconstitutionality. The distractor finds the minimum within legislative discretion."
+            "hint": "Track cause and effect: shared calibration leads to converging pass rates. One option reverses that.",
+            "explanation": "Because pass rates converge within an expected range, an option claiming they remained just as disparate reverses that measured outcome."
+        },
+        {
+            "id": "WRT_SUMMARIZESTORYWRITING_L170_Q3",
+            "instruction": "Arrange the story in the correct order.",
+            "subtype": "summarizeStoryWriting",
+            "interactionType": "Film Strip",
+            "story": "A multinational auditing firm's two regional practices had reached opposite conclusions about the same client's financial statements. The firm's global quality-review office examined both practices' underlying workpapers directly. The review determined one practice had failed to apply the firm's own updated accounting guidance.",
+            "options": [
+                "A multinational auditing firm's two regional practices had reached opposite conclusions about the same client's financial statements.",
+                "The review found both practices had applied the guidance correctly and simply disagreed in judgment.",
+                "The firm's global quality-review office examined both practices' underlying workpapers directly.",
+                "The review determined one practice had failed to apply the firm's own updated accounting guidance."
+            ],
+            "correctOrder": [
+                0,
+                2,
+                3
+            ],
+            "hint": "Notice what the review actually determines about the two practices' work.",
+            "explanation": "Because the review finds one practice failed to apply the updated guidance, an option claiming both applied it correctly reverses that specific finding."
         }
     ]
 }

@@ -8,600 +8,600 @@
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "Mum made a shopping list before going out. She drove to the supermarket and put items in her trolley. She paid at the checkout and drove home.",
+            "story": "Wei applied for a summer job at the bookstore. The manager asked her a few questions about books. She started working there the following Monday.",
             "options": [
-                "Mum made a shopping list before going out.",
-                "She put items in her trolley at the supermarket.",
-                "She paid at the checkout and drove home.",
-                "Mum forgot the shopping list at home."
+                "Wei applied for a summer job at the bookstore.",
+                "The manager asked Wei a few questions about books.",
+                "Wei never heard back from the bookstore.",
+                "Wei started working there the following Monday."
             ],
             "correctOrder": [
                 0,
                 1,
-                2
+                3
             ],
-            "hint": "Look for the shopping sequence: preparing the list, filling the trolley, then paying. One frame contradicts the preparation step.",
-            "explanation": "Shopping narratives show preparation, selection, and payment as the three key stages."
+            "hint": "Trace the job search from application to interview to result. One option breaks that chain.",
+            "explanation": "Because Wei actually starts working the following Monday, an option claiming she never heard back cannot be part of this story."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L11_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The dog barked loudly at the front door. Tom went to see who was there. He opened the door and found a friend standing outside.",
+            "story": "Carlos wanted to send photos to his cousin quickly. He downloaded a messaging app onto his phone. He sent the photos within a few seconds.",
             "options": [
-                "Tom ignored the barking and stayed asleep.",
-                "The dog barked loudly at the front door.",
-                "Tom went to see who was there.",
-                "Tom opened the door and found a friend."
+                "Carlos wanted to send photos to his cousin quickly.",
+                "Carlos downloaded a messaging app onto his phone.",
+                "Carlos sent the photos within a few seconds.",
+                "Carlos could not find a way to send the photos."
             ],
             "correctOrder": [
+                0,
                 1,
-                2,
-                3
+                2
             ],
-            "hint": "Follow the sequence: the dog barks, Tom investigates, then opens the door. One frame shows the wrong response.",
-            "explanation": "Cause-and-effect narratives show a signal, an investigation, and a discovery. The distractor replaces action with inaction."
+            "hint": "This story has one clear throughline: a need, a solution, a result. Spot the sentence that breaks away from it.",
+            "explanation": "Since the passage confirms Carlos sends the photos within seconds, an option claiming he found no way to send them contradicts the outcome."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L11_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "Ella set the oven to the right temperature. She placed the pizza on the baking tray and put it inside. After fifteen minutes, she took out the golden pizza.",
+            "story": "The bus to the city center was completely full. Hana decided to wait for the next one. She arrived only ten minutes later than planned.",
             "options": [
-                "Ella set the oven to the right temperature.",
-                "She placed the pizza in the oven.",
-                "Ella ordered a pizza for home delivery.",
-                "Ella took out the golden pizza after fifteen minutes."
+                "Hana pushed her way onto the crowded bus.",
+                "The bus to the city center was completely full.",
+                "Hana decided to wait for the next one.",
+                "Hana arrived only ten minutes later than planned."
             ],
             "correctOrder": [
-                0,
                 1,
+                2,
                 3
             ],
-            "hint": "Follow the cooking steps: preheating, placing, then removing. One frame skips the cooking process entirely.",
-            "explanation": "Cooking narratives follow preparation, cooking, and completion. The distractor replaces home cooking with a delivery order."
+            "hint": "Check whether each option matches Hana's actual decision, not a different possible choice.",
+            "explanation": "The passage states Hana chose to wait for the next bus, so an option showing her forcing her way onto the full one contradicts that choice."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L12_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "Leo felt cold and wrapped himself in a blanket. He made a hot cup of tea and sat by the fireplace. After an hour he felt much warmer.",
+            "story": "Diego forgot to buy milk for his cereal. He decided to have toast instead. He enjoyed his breakfast just as much.",
             "options": [
-                "Leo felt cold and wrapped himself in a blanket.",
-                "Leo went outside for a walk in the cold.",
-                "He made a hot cup of tea by the fireplace.",
-                "Leo felt much warmer after an hour."
+                "Diego forgot to buy milk for his cereal.",
+                "Diego skipped breakfast completely that morning.",
+                "Diego decided to have toast instead.",
+                "Diego enjoyed his breakfast just as much."
             ],
             "correctOrder": [
                 0,
                 2,
                 3
             ],
-            "hint": "Sequence the comfort story: feeling cold, warming up, then the result. One frame contradicts the cosy setting.",
-            "explanation": "Comfort narratives move from discomfort to action to relief. The distractor replaces warmth-seeking with exposure to the cold."
+            "hint": "Notice how the morning actually turns out before ruling any option in or out.",
+            "explanation": "Because Diego actually eats toast and enjoys it, an option claiming he skipped breakfast entirely cannot be accurate."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L12_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "Nina woke up feeling unwell. She told her mum, who took her temperature. Her mum gave her some medicine and told her to rest in bed.",
+            "story": "Grandma's old recipe box was covered in dust. Mia cleaned it and read every card carefully. She chose one recipe to cook for dinner.",
             "options": [
-                "Nina woke up feeling unwell.",
-                "Her mum took her temperature.",
-                "Nina's mum gave her medicine and told her to rest.",
-                "Nina went to school despite feeling unwell."
+                "Grandma's old recipe box was covered in dust.",
+                "Mia cleaned it and read every card carefully.",
+                "Mia threw the old recipe box away.",
+                "Mia chose one recipe to cook for dinner."
             ],
             "correctOrder": [
                 0,
                 1,
-                2
+                3
             ],
-            "hint": "Follow the health sequence: feeling sick, being checked, then receiving care. One frame ignores the illness.",
-            "explanation": "Home healthcare stories show reporting, diagnosing, and treating as the three steps. The distractor bypasses care entirely."
+            "hint": "Ask which option matches what Mia actually does with the box, not what seems dramatic.",
+            "explanation": "Since Mia goes on to choose a recipe from the box, an option showing her throwing it away has no place in this sequence."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L12_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "It was getting dark outside. Kim closed the curtains and switched on the living room lamp. She settled on the sofa with a book.",
+            "story": "The math teacher explained a new topic on the whiteboard. Students asked questions when they felt confused. By the end of class, most students understood it well.",
             "options": [
-                "Kim went to bed immediately when it got dark.",
-                "It was getting dark outside.",
-                "Kim closed the curtains and switched on the lamp.",
-                "Kim settled on the sofa with a book."
+                "The math teacher explained a new topic on the whiteboard.",
+                "Students asked questions when they felt confused.",
+                "Most students understood the topic well by the end of class.",
+                "Most students were still confused after the lesson."
             ],
             "correctOrder": [
+                0,
                 1,
-                2,
-                3
+                2
             ],
-            "hint": "Trace the evening routine: noticing the dark, preparing the room, then relaxing. One frame skips the relaxation step.",
-            "explanation": "Evening routine narratives follow: noticing dark, preparing comfort, and settling down. The distractor skips to bedtime too early."
+            "hint": "One of these four sentences quietly contradicts how the lesson actually ends.",
+            "explanation": "The passage confirms most students understood the topic by class's end, so an option claiming lingering confusion contradicts that result."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L13_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "Grandpa sat down in his garden and picked up his newspaper. He read the news stories slowly and carefully. After finishing, he fell asleep in his chair.",
+            "story": "Sofia felt dizzy after skipping lunch at work. She ate a piece of fruit from her bag. She felt steady again within a few minutes.",
             "options": [
-                "Grandpa sat down and picked up his newspaper.",
-                "He read the news stories slowly and carefully.",
-                "Grandpa threw away the newspaper unread.",
-                "Grandpa fell asleep in his chair after finishing."
+                "Sofia's dizziness got much worse afterward.",
+                "Sofia felt dizzy after skipping lunch at work.",
+                "Sofia ate a piece of fruit from her bag.",
+                "Sofia felt steady again within a few minutes."
             ],
             "correctOrder": [
-                0,
                 1,
+                2,
                 3
             ],
-            "hint": "Sequence the garden reading: sitting down, reading, then the result. One frame contradicts the whole activity.",
-            "explanation": "Relaxation narratives show settling, doing an activity, and the resulting calm. The distractor removes the activity entirely."
+            "hint": "Read the ending closely; it tells you which option cannot be true.",
+            "explanation": "Because Sofia feels steady again within minutes, an option claiming her dizziness worsened directly contradicts the story's outcome."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L13_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The park was full of fallen leaves. A group of children gathered them into a big pile. They took turns jumping into the pile with shouts of joy.",
+            "story": "The shoe store was having a big sale on sneakers. Marcus tried on several pairs before deciding. He walked out with a comfortable new pair.",
             "options": [
-                "The park was full of fallen leaves.",
-                "The park gardener immediately swept the leaves away.",
-                "Children gathered the leaves into a big pile.",
-                "The children took turns jumping into the pile."
+                "The shoe store was having a big sale on sneakers.",
+                "Marcus could not find any sneakers in his size.",
+                "Marcus tried on several pairs before deciding.",
+                "Marcus walked out with a comfortable new pair."
             ],
             "correctOrder": [
                 0,
                 2,
                 3
             ],
-            "hint": "Follow the autumn play: noticing the leaves, gathering them, then playing. One frame introduces an adult who stops the fun.",
-            "explanation": "Play narratives show setting, preparation, and enjoyment. The distractor introduces an authority figure who prevents the play."
+            "hint": "Picture the trip step by step: the sale, trying pairs, then the purchase. One option breaks that order.",
+            "explanation": "Since Marcus ends up walking out with a new pair, an option claiming nothing was available in his size contradicts the story from the start."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L13_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "Mike noticed his bicycle tyre was flat. He found the puncture repair kit in the garage. He fixed the tyre and pumped it back up before school.",
+            "story": "The art museum opened a new exhibit about ancient Egypt. Visitors could see real artifacts up close. Many people said it was the best exhibit of the year.",
             "options": [
-                "Mike noticed his bicycle tyre was flat.",
-                "He found the puncture repair kit in the garage.",
-                "Mike fixed the tyre and pumped it up before school.",
-                "Mike left his bicycle at home and walked to school."
+                "The art museum opened a new exhibit about ancient Egypt.",
+                "Visitors could see real artifacts up close.",
+                "Visitors said the new exhibit was disappointing.",
+                "Many people called it the best exhibit of the year."
             ],
             "correctOrder": [
                 0,
                 1,
-                2
+                3
             ],
-            "hint": "Follow the problem-solving story: noticing, finding a solution, then fixing. One frame skips the repair entirely.",
-            "explanation": "Repair narratives show noticing a problem, locating the tools, and solving it. The distractor replaces fixing with avoidance."
+            "hint": "Look for the option that reverses the crowd's actual reaction rather than reporting it.",
+            "explanation": "Because visitors call it the best exhibit of the year, an option describing disappointment reverses the positive reception the passage describes."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L14_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The team meeting was scheduled for nine o'clock. Everyone arrived and sat around the table. The manager opened the meeting and shared the day's plan.",
+            "story": "The office printer jammed right before an important meeting. Yuki carefully removed the stuck paper. The printer worked perfectly again in time for the meeting.",
             "options": [
-                "The meeting was postponed until the following week.",
-                "The team meeting was scheduled for nine o'clock.",
-                "Everyone arrived and sat around the table.",
-                "The manager opened the meeting and shared the plan."
+                "The office printer jammed right before an important meeting.",
+                "Yuki carefully removed the stuck paper.",
+                "The printer worked perfectly again in time for the meeting.",
+                "The meeting was canceled because of the broken printer."
             ],
             "correctOrder": [
+                0,
                 1,
-                2,
-                3
+                2
             ],
-            "hint": "Sequence the meeting story: the schedule, arrival, then the start. One frame postpones the event.",
-            "explanation": "Meeting narratives show scheduling, gathering, and starting. The distractor delays the event rather than letting it begin."
+            "hint": "A reliable summary never adds an event the passage doesn't mention; check for that here.",
+            "explanation": "The passage confirms the printer worked again in time for the meeting, so an option canceling the meeting entirely invents an event that never happens."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L14_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "It started raining heavily during the picnic. The family quickly packed up the food and blankets. They ran to the car and drove home laughing.",
+            "story": "The airline announced a delay for the evening flight. Passengers waited in the lounge with free snacks. The flight finally departed two hours later.",
             "options": [
-                "It started raining heavily during the picnic.",
-                "The family quickly packed up the food and blankets.",
-                "The family stayed outside and continued the picnic.",
-                "They ran to the car and drove home laughing."
+                "The flight was canceled for the rest of the day.",
+                "The airline announced a delay for the evening flight.",
+                "Passengers waited in the lounge with free snacks.",
+                "The flight finally departed two hours later."
             ],
             "correctOrder": [
-                0,
                 1,
+                2,
                 3
             ],
-            "hint": "Follow the rain story: the rain starts, the family packs up, then they leave. One frame ignores the rain entirely.",
-            "explanation": "Disruption narratives show an unexpected event, a response, and a resolution. The distractor pretends the disruption did not happen."
+            "hint": "Match each option to a specific moment in the passage; one option matches nothing at all.",
+            "explanation": "Because the flight actually departs two hours later, an option claiming a full-day cancellation has no matching moment in the story."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L14_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "Oliver found a ten-pound note on the pavement. He looked around to see if anyone had dropped it. He handed it in at the nearby police station.",
+            "story": "Nora's phone battery died while she was out shopping. She found a charging station near the entrance. Her phone was fully charged within an hour.",
             "options": [
-                "Oliver found a ten-pound note on the pavement.",
-                "Oliver put the money in his pocket and walked on.",
-                "He looked around to see if anyone had dropped it.",
-                "Oliver handed the note in at the police station."
+                "Nora's phone battery died while she was out shopping.",
+                "Nora could not find anywhere to charge her phone.",
+                "Nora found a charging station near the entrance.",
+                "Nora's phone was fully charged within an hour."
             ],
             "correctOrder": [
                 0,
                 2,
                 3
             ],
-            "hint": "Sequence the honest action: finding, checking, then handing in. One frame shows dishonesty instead.",
-            "explanation": "Honest-action narratives show discovery, consideration, and doing the right thing. The distractor replaces honesty with selfishness."
+            "hint": "Think about what actually changes by the end of the story. One option denies that it does.",
+            "explanation": "Since Nora's phone is fully charged within the hour, an option claiming she found nowhere to charge it denies the story's own resolution."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L15_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "Sophie wanted to bake biscuits for her class. She followed the recipe step by step. The biscuits came out perfectly and everyone enjoyed them.",
+            "story": "The city announced plans to build a new playground downtown. Residents shared their ideas at a public meeting. Construction began just two months later.",
             "options": [
-                "Sophie decided to bake biscuits for her class.",
-                "She followed the recipe step by step.",
-                "The biscuits came out perfectly and everyone enjoyed them.",
-                "Sophie forgot to bring the biscuits to school."
+                "The city announced plans to build a new playground downtown.",
+                "Residents shared their ideas at a public meeting.",
+                "The playground project was quietly canceled.",
+                "Construction began just two months later."
             ],
             "correctOrder": [
                 0,
                 1,
-                2
+                3
             ],
-            "hint": "Trace the baking story: planning, following the recipe, then the outcome. One frame removes the successful delivery.",
-            "explanation": "Preparation-for-others narratives show intent, careful execution, and a shared reward. The distractor removes the sharing."
+            "hint": "This story moves in a clear line from announcement to input to action. Find the sentence that steps outside it.",
+            "explanation": "Because construction actually begins two months later, an option claiming the whole project was canceled contradicts the story's ending."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L15_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "Harry planted a small oak tree in the garden. He watered it every day for a whole year. The little tree grew tall and strong by the following spring.",
+            "story": "The food truck festival attracted visitors from nearby towns. Vendors sold dishes from many different countries. Long lines formed at the most popular stalls.",
             "options": [
-                "The oak tree was removed by the council.",
-                "Harry planted a small oak tree in the garden.",
-                "He watered it every day for a whole year.",
-                "The tree grew tall and strong by the following spring."
+                "The food truck festival attracted visitors from nearby towns.",
+                "Vendors sold dishes from many different countries.",
+                "Long lines formed at the most popular stalls.",
+                "Very few visitors showed any interest in the festival."
             ],
             "correctOrder": [
+                0,
                 1,
-                2,
-                3
+                2
             ],
-            "hint": "Follow the growth story: planting, consistent care, then the result. One frame replaces growth with removal.",
-            "explanation": "Nurturing narratives follow plant, tend, and grow. The distractor introduces an authority that removes the tree."
+            "hint": "Check whether each option matches the turnout the passage actually describes.",
+            "explanation": "Since long lines form at the most popular stalls, an option claiming almost no one showed interest contradicts the described turnout."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L15_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The kitchen was in a terrible mess after the party. The family worked together to wash the dishes and mop the floor. By bedtime, the kitchen was spotless.",
+            "story": "The debate team prepared for weeks before the regional competition. They practiced arguing both sides of each topic. Their hard work earned them second place overall.",
             "options": [
-                "The kitchen was a terrible mess after the party.",
-                "The family worked together to wash and mop.",
-                "The family hired a cleaner to do the job.",
-                "By bedtime, the kitchen was spotless."
+                "The debate team finished in last place.",
+                "The debate team prepared for weeks before the regional competition.",
+                "They practiced arguing both sides of each topic.",
+                "Their hard work earned them second place overall."
             ],
             "correctOrder": [
-                0,
                 1,
+                2,
                 3
             ],
-            "hint": "Sequence the cleanup: the mess, working together, then the result. One frame replaces effort with outsourcing.",
-            "explanation": "Teamwork narratives show a problem, a shared response, and a clean result. The distractor replaces family cooperation with a hired service."
+            "hint": "Notice how the competition actually ends, then rule out any option that contradicts it.",
+            "explanation": "The passage states the team earned second place, so an option claiming they finished last directly contradicts that result."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L16_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The village had no playground for the children. Local families wrote a letter to the council. The council approved the project and built a playground.",
+            "story": "The clinic started offering free flu vaccines every October. Hundreds of people signed up in the first week. Flu cases in the area dropped noticeably that winter.",
             "options": [
-                "The village had no playground for children.",
-                "The council rejected the families' request.",
-                "Local families wrote a letter to the council.",
-                "The council approved and built a playground."
+                "The clinic started offering free flu vaccines every October.",
+                "Flu cases in the area increased sharply that winter.",
+                "Hundreds of people signed up in the first week.",
+                "Flu cases in the area dropped noticeably that winter."
             ],
             "correctOrder": [
                 0,
                 2,
                 3
             ],
-            "hint": "Follow the community story: identifying a need, requesting action, then the result. One frame reverses the outcome.",
-            "explanation": "Community advocacy stories show a need, a request, and approval. The distractor replaces approval with rejection."
+            "hint": "Track cause and effect here: the program leads to sign-ups leads to fewer flu cases. One option reverses that chain.",
+            "explanation": "Because the passage confirms flu cases dropped that winter, an option claiming they rose sharply reverses the story's actual result."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L16_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The car would not start on a cold winter morning. Dad called roadside assistance. The technician arrived and fixed the problem within twenty minutes.",
+            "story": "Two coworkers disagreed about how to organize the files. They discussed both ideas calmly during lunch. They combined the best parts of each plan.",
             "options": [
-                "The car would not start on a cold winter morning.",
-                "Dad called roadside assistance for help.",
-                "The technician arrived and fixed the problem quickly.",
-                "Dad sold the car and bought a new one."
+                "Two coworkers disagreed about how to organize the files.",
+                "They discussed both ideas calmly during lunch.",
+                "The disagreement turned into a shouting match.",
+                "They combined the best parts of each plan."
             ],
             "correctOrder": [
                 0,
                 1,
-                2
+                3
             ],
-            "hint": "Sequence the breakdown: the problem, calling help, then the fix. One frame gives an extreme response to a small problem.",
-            "explanation": "Breakdown narratives show a problem, a call for help, and a quick repair. The distractor replaces a simple fix with a drastic decision."
+            "hint": "Ask which option matches how the coworkers actually resolved things, not how conflicts sometimes go.",
+            "explanation": "Since the coworkers discuss things calmly and combine their ideas, an option describing a shouting match contradicts how the disagreement was actually resolved."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L16_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The children entered the library very quietly. They chose their books and found comfortable seats. They read in silence for the rest of the afternoon.",
+            "story": "The comedian tried out new jokes at a small club. The audience laughed at almost every one. She used the same jokes in her next big show.",
             "options": [
-                "The children made so much noise that they were asked to leave.",
-                "The children entered the library very quietly.",
-                "They chose their books and found seats.",
-                "They read in silence for the afternoon."
+                "The comedian tried out new jokes at a small club.",
+                "The audience laughed at almost every one.",
+                "The comedian used the same jokes in her next big show.",
+                "The audience sat in complete silence."
             ],
             "correctOrder": [
+                0,
                 1,
-                2,
-                3
+                2
             ],
-            "hint": "Follow the library visit: entering quietly, selecting, then reading. One frame reverses the respectful behaviour.",
-            "explanation": "Respectful visit narratives show appropriate entry, selection, and quiet activity. The distractor introduces disruptive behaviour."
+            "hint": "One of these four sentences quietly contradicts the crowd's actual reaction.",
+            "explanation": "Because the audience laughs at almost every joke, an option describing complete silence contradicts the reaction described in the passage."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L17_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "Maya received a birthday card in the post. She opened it and read the kind message inside. She called her friend to say thank you.",
+            "story": "Layla's favorite jacket had a broken zipper. She took it to a tailor near her house. The tailor fixed it for a small fee.",
             "options": [
-                "Maya received a birthday card in the post.",
-                "She opened it and read the kind message inside.",
-                "Maya threw the birthday card in the bin.",
-                "Maya called her friend to say thank you."
+                "Layla threw the jacket away instead of fixing it.",
+                "Layla's favorite jacket had a broken zipper.",
+                "Layla took it to a tailor near her house.",
+                "The tailor fixed it for a small fee."
             ],
             "correctOrder": [
-                0,
                 1,
+                2,
                 3
             ],
-            "hint": "Trace the gratitude story: receiving, reading, then responding. One frame replaces gratitude with indifference.",
-            "explanation": "Gratitude narratives show receiving, reading, and responding with appreciation. The distractor removes all gratitude from the outcome."
+            "hint": "Read the ending closely; it tells you which option cannot be true here.",
+            "explanation": "Since the tailor actually fixes the jacket, an option showing Layla throwing it away instead contradicts the story's own resolution."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L17_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The old oak tree fell across the road in the storm. A local farmer came with a chainsaw to cut it up. By morning the road was clear again.",
+            "story": "The app kept crashing every time Farah opened it. She reported the issue to the developers. A software update fixed the problem the following week.",
             "options": [
-                "The old oak tree fell across the road in the storm.",
-                "The road stayed blocked for the entire week.",
-                "A local farmer came with a chainsaw to cut it up.",
-                "The road was clear again by morning."
+                "The app kept crashing every time Farah opened it.",
+                "The developers ignored Farah's report completely.",
+                "Farah reported the issue to the developers.",
+                "A software update fixed the problem the following week."
             ],
             "correctOrder": [
                 0,
                 2,
                 3
             ],
-            "hint": "Follow the storm story: the tree falls, a farmer clears it, then the road is open. One frame extends the blockage.",
-            "explanation": "Problem-resolution narratives show an event, a helper, and a successful outcome. The distractor replaces resolution with a prolonged problem."
+            "hint": "Picture the sequence step by step: the bug, the report, then the fix. One option breaks that order.",
+            "explanation": "Because an update fixes the problem the following week, an option claiming the report was ignored contradicts the resolution the story describes."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L17_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The children set up a lemonade stand outside their house. They made fresh lemonade and wrote a price sign. By the afternoon they had sold every cup.",
+            "story": "Dad promised to teach Mateo how to swim this summer. They practiced at the pool every weekend. By August, Mateo could swim across the whole pool.",
             "options": [
-                "The children set up a lemonade stand outside.",
-                "They made fresh lemonade and wrote a price sign.",
-                "They had sold every cup by the afternoon.",
-                "Nobody stopped to buy any lemonade all day."
+                "Dad promised to teach Mateo how to swim this summer.",
+                "They practiced at the pool every weekend.",
+                "Mateo refused to go near the pool all summer.",
+                "By August, Mateo could swim across the whole pool."
             ],
             "correctOrder": [
                 0,
                 1,
-                2
+                3
             ],
-            "hint": "Sequence the business story: setting up, preparing the product, then selling it. One frame replaces success with failure.",
-            "explanation": "Small business narratives show setup, production, and success. The distractor replaces a sold-out ending with no sales at all."
+            "hint": "Compare what you might expect with what the story's ending actually confirms.",
+            "explanation": "The passage confirms Mateo can swim across the pool by August, so an option claiming he avoided the pool all summer contradicts that progress."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L18_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "Ava lost her phone at school. She asked her friends if anyone had seen it. Her teacher found it in the classroom and returned it to her.",
+            "story": "A small fire broke out in the apartment building's kitchen. A neighbor smelled smoke and called for help. Firefighters put it out before it could spread.",
             "options": [
-                "Ava bought a brand-new phone to replace it.",
-                "Ava lost her phone at school.",
-                "She asked her friends if anyone had seen it.",
-                "Her teacher found the phone and returned it."
+                "A small fire broke out in the apartment building's kitchen.",
+                "A neighbor smelled smoke and called for help.",
+                "Firefighters put it out before it could spread.",
+                "The fire spread through the entire building."
             ],
             "correctOrder": [
+                0,
                 1,
-                2,
-                3
+                2
             ],
-            "hint": "Follow the lost-item story: losing, searching, then recovery. One frame replaces recovery with a new purchase.",
-            "explanation": "Lost-and-found narratives progress from loss to search to recovery. The distractor bypasses the search and returns directly to replacement."
+            "hint": "This story moves in a clear line from the fire to the response to the outcome. Spot the sentence outside that line.",
+            "explanation": "Since firefighters put out the fire before it spreads, an option claiming it consumed the whole building contradicts the passage directly."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L18_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The young nurse arrived at the ward early for her shift. She checked each patient's notes carefully before starting her rounds. She gave everyone their morning medication on time.",
+            "story": "The train to the coast was running fifteen minutes early. Elin almost missed it while buying a coffee. She sprinted and jumped on just in time.",
             "options": [
-                "The nurse arrived at the ward early for her shift.",
-                "She checked each patient's notes carefully.",
-                "The nurse arrived late and missed the morning rounds.",
-                "She gave everyone their morning medication on time."
+                "Elin missed the train and had to wait for the next one.",
+                "The train to the coast was running fifteen minutes early.",
+                "Elin almost missed it while buying a coffee.",
+                "Elin sprinted and jumped on just in time."
             ],
             "correctOrder": [
-                0,
                 1,
+                2,
                 3
             ],
-            "hint": "Sequence the nursing shift: arriving early, checking notes, then giving medication. One frame contradicts the dedication shown.",
-            "explanation": "Professional duty narratives show punctuality, preparation, and careful execution. The distractor replaces dedication with tardiness."
+            "hint": "Notice how the close call actually resolves before ruling any option in or out.",
+            "explanation": "Because Elin sprints and makes the train just in time, an option claiming she missed it entirely contradicts the story's outcome."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L18_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The bakery ran out of bread early on Sunday morning. The baker made a new batch immediately. Fresh loaves were ready by ten o'clock.",
+            "story": "The new coffee shop offered a free pastry with every order on opening day. A long line formed before it even opened. Every pastry sold out within an hour.",
             "options": [
-                "The bakery ran out of bread early on Sunday.",
-                "The bakery closed for the rest of the day.",
-                "The baker made a new batch immediately.",
-                "Fresh loaves were ready by ten o'clock."
+                "The new coffee shop offered a free pastry with every order on opening day.",
+                "Almost no customers visited the coffee shop that day.",
+                "A long line formed before it even opened.",
+                "Every pastry sold out within an hour."
             ],
             "correctOrder": [
                 0,
                 2,
                 3
             ],
-            "hint": "Follow the supply story: running out, responding quickly, then restocking. One frame closes the shop instead of restocking.",
-            "explanation": "Supply-problem narratives show a shortage, a quick response, and successful restocking. The distractor replaces action with closure."
+            "hint": "Ask which option matches the turnout the passage describes, not a quieter opening day.",
+            "explanation": "Since a long line forms and every pastry sells out, an option claiming almost no customers came directly contradicts the described turnout."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L19_Q1",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The bus was ten minutes late arriving at the stop. Passengers stood waiting in the cold. When it finally came, everyone got on and took their seats.",
+            "story": "The school announced a science fair for the spring term. Kian built a small model volcano for his project. Judges awarded him first place in his category.",
             "options": [
-                "The bus was ten minutes late at the stop.",
-                "Passengers stood waiting in the cold.",
-                "Everyone got on and took their seats when it arrived.",
-                "The bus never arrived and passengers went home."
+                "The school announced a science fair for the spring term.",
+                "Kian built a small model volcano for his project.",
+                "Kian's project was disqualified before judging began.",
+                "Judges awarded Kian first place in his category."
             ],
             "correctOrder": [
                 0,
                 1,
-                2
+                3
             ],
-            "hint": "Sequence the delay story: the late bus, waiting in the cold, then boarding. One frame removes the arrival entirely.",
-            "explanation": "Delay narratives show a problem, a period of waiting, and eventual resolution. The distractor removes the resolution."
+            "hint": "Check each option against the result the passage actually confirms.",
+            "explanation": "The passage confirms Kian won first place, so an option claiming his project was disqualified before judging cannot be part of this story."
         },
         {
             "id": "WRT_SUMMARIZESTORYWRITING_L19_Q2",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The cat climbed to the top of the garden tree. It was too frightened to climb back down. The fire brigade came and rescued it safely.",
+            "story": "The small shop hired an extra worker for the holiday season. Business was busier than the owner expected. The extra help kept customers happy and served quickly.",
             "options": [
-                "The cat jumped down and landed on its feet.",
-                "The cat climbed to the top of the garden tree.",
-                "The cat was too frightened to climb down.",
-                "The fire brigade came and rescued the cat safely."
-            ],
-            "correctOrder": [
-                1,
-                2,
-                3
-            ],
-            "hint": "Follow the rescue story: climbing up, being stuck, then being rescued. One frame shows the cat rescuing itself.",
-            "explanation": "Rescue narratives show a problem, a stuck situation, and a professional solution. The distractor replaces external help with self-rescue."
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L19_Q3",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "Film Strip",
-            "story": "The library introduced a new reading challenge for children. Each child chose five books to read over the summer. Those who finished received a special certificate.",
-            "options": [
-                "The library introduced a new reading challenge.",
-                "Each child chose five books to read over summer.",
-                "Most children gave up after reading just one book.",
-                "Children who finished received a special certificate."
-            ],
-            "correctOrder": [
-                0,
-                1,
-                3
-            ],
-            "hint": "Trace the reading challenge: introduction, choosing books, then the reward. One frame replaces success with failure.",
-            "explanation": "Incentive narratives show a challenge, participation, and a reward for completion. The distractor replaces completion with giving up."
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L20_Q1",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "Film Strip",
-            "story": "The new park café opened on a sunny Saturday. People came from all over the neighbourhood to try the coffee. By noon it was completely full.",
-            "options": [
-                "The new park café opened on a sunny Saturday.",
-                "The café struggled to attract any customers at first.",
-                "People from the neighbourhood came to try the coffee.",
-                "The café was completely full by noon."
-            ],
-            "correctOrder": [
-                0,
-                2,
-                3
-            ],
-            "hint": "Follow the opening story: the opening day, people arriving, then the full café. One frame replaces success with slow business.",
-            "explanation": "Business opening stories show launch, customer arrival, and full capacity. The distractor replaces instant success with slow business."
-        },
-        {
-            "id": "WRT_SUMMARIZESTORYWRITING_L20_Q2",
-            "instruction": "Arrange the story in the correct order.",
-            "subtype": "summarizeStoryWriting",
-            "interactionType": "Film Strip",
-            "story": "Fred could not remember where he had parked his car. He walked up and down the car park pressing his key fob. The car beeped and the lights flashed.",
-            "options": [
-                "Fred could not remember where he had parked.",
-                "He walked around pressing his key fob.",
-                "The car beeped and the lights flashed to guide him.",
-                "Fred reported his car as stolen to the police."
+                "The small shop hired an extra worker for the holiday season.",
+                "Business was busier than the owner expected.",
+                "The extra help kept customers happy and served quickly.",
+                "Customers complained about slow service all season."
             ],
             "correctOrder": [
                 0,
                 1,
                 2
             ],
-            "hint": "Sequence the search: forgetting, searching actively, then finding by sound. One frame jumps to an extreme action.",
-            "explanation": "Lost-car narratives show forgetting, searching, and locating using technology. The distractor replaces a simple solution with a panic response."
+            "hint": "Look for the option that reverses the shop's actual outcome rather than reporting it.",
+            "explanation": "Since customers are kept happy and served quickly, an option describing constant complaints reverses the outcome the passage describes."
         },
         {
-            "id": "WRT_SUMMARIZESTORYWRITING_L20_Q3",
+            "id": "WRT_SUMMARIZESTORYWRITING_L19_Q3",
             "instruction": "Arrange the story in the correct order.",
             "subtype": "summarizeStoryWriting",
             "interactionType": "Film Strip",
-            "story": "The children finished school early because of a staff training day. They went to the park and played until dark. Their parents picked them up at the park gate.",
+            "story": "Tariq had not stretched before his morning run in weeks. He pulled a muscle in his leg. He rested for a week and stretched carefully before running again.",
             "options": [
-                "The children went straight home and did their homework.",
-                "Children finished school early for a training day.",
-                "They went to the park and played until dark.",
-                "Their parents picked them up at the park gate."
+                "Tariq ignored the injury and kept running every day.",
+                "Tariq had not stretched before his morning run in weeks.",
+                "Tariq pulled a muscle in his leg.",
+                "Tariq rested for a week and stretched carefully before running again."
             ],
             "correctOrder": [
                 1,
                 2,
                 3
             ],
-            "hint": "Follow the unexpected free afternoon: early finish, playing, then being collected. One frame replaces fun with immediate homework.",
-            "explanation": "Unexpected free time narratives show an early end, free activity, and a safe return home. The distractor replaces play with study."
+            "hint": "One of these four sentences quietly contradicts how Tariq actually responds to the injury.",
+            "explanation": "Because Tariq rests and stretches carefully afterward, an option showing him ignoring the injury and running daily contradicts his actual response."
+        },
+        {
+            "id": "WRT_SUMMARIZESTORYWRITING_L20_Q1",
+            "instruction": "Arrange the story in the correct order.",
+            "subtype": "summarizeStoryWriting",
+            "interactionType": "Film Strip",
+            "story": "Heavy rain flooded the street outside the school gates. Teachers guided students through a dry side entrance instead. Everyone got to class safely and only slightly late.",
+            "options": [
+                "Heavy rain flooded the street outside the school gates.",
+                "Several students got soaked and had to go home.",
+                "Teachers guided students through a dry side entrance instead.",
+                "Everyone got to class safely and only slightly late."
+            ],
+            "correctOrder": [
+                0,
+                2,
+                3
+            ],
+            "hint": "Trace the sequence from the flood to the workaround to the arrival. One option breaks that chain.",
+            "explanation": "The passage confirms everyone arrived safely through the dry entrance, so an option showing students soaked and sent home contradicts that outcome."
+        },
+        {
+            "id": "WRT_SUMMARIZESTORYWRITING_L20_Q2",
+            "instruction": "Arrange the story in the correct order.",
+            "subtype": "summarizeStoryWriting",
+            "interactionType": "Film Strip",
+            "story": "Amara's daughter outgrew all of her winter clothes. They visited a secondhand shop to find replacements. They found a full new wardrobe for a fraction of the price.",
+            "options": [
+                "Amara's daughter outgrew all of her winter clothes.",
+                "Amara and her daughter visited a secondhand shop to find replacements.",
+                "The secondhand shop had nothing in her daughter's size.",
+                "They found a full new wardrobe for a fraction of the price."
+            ],
+            "correctOrder": [
+                0,
+                1,
+                3
+            ],
+            "hint": "Ask which option matches what Amara and her daughter actually find at the shop.",
+            "explanation": "Since they find a full wardrobe at a low price, an option claiming nothing was available in her size contradicts that successful trip."
+        },
+        {
+            "id": "WRT_SUMMARIZESTORYWRITING_L20_Q3",
+            "instruction": "Arrange the story in the correct order.",
+            "subtype": "summarizeStoryWriting",
+            "interactionType": "Film Strip",
+            "story": "The neighborhood organized an outdoor movie night in the park. Families brought blankets and homemade snacks. Everyone agreed it should become a monthly event.",
+            "options": [
+                "The neighborhood organized an outdoor movie night in the park.",
+                "Families brought blankets and homemade snacks.",
+                "Everyone agreed it should become a monthly event.",
+                "Almost no families showed any interest in coming."
+            ],
+            "correctOrder": [
+                0,
+                1,
+                2
+            ],
+            "hint": "Think about what actually happens by the end of the story. One option denies it.",
+            "explanation": "Because everyone agrees the event should become monthly, an option claiming almost no families were interested denies the story's own ending."
         }
     ]
 }
