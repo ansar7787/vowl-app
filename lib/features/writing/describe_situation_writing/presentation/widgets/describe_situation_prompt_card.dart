@@ -18,7 +18,6 @@ class DescribeSituationPromptCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
         color: color.withValues(alpha: isDark ? 0.05 : 0.08),
         borderRadius: BorderRadius.circular(24.r),
@@ -28,7 +27,7 @@ class DescribeSituationPromptCard extends StatelessWidget {
         children: [
           const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 8.w),
+            padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 20.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
