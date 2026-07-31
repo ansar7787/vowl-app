@@ -24,148 +24,128 @@ class DescribeSituationConstellationMap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double availableWidth = MediaQuery.of(context).size.width - 48.w;
-    final int count = emojis.length;
-    final double step = count > 1 ? (availableWidth - 80.w) / (count - 1) : 0;
-
     return Container(
-      height: 180.h,
+      width: double.infinity,
       decoration: BoxDecoration(
         color: color.withValues(alpha: isDark ? 0.03 : 0.05),
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(color: isDark ? Colors.white10 : Colors.black12),
       ),
-      child: Stack(
-        children: List.generate(emojis.length, (index) {
-          final isExpanded = expandedEmojiIndex == index;
-
-          final double leftPos = count > 1
-              ? 15.w + (index * step)
-              : (availableWidth - 50.r) / 2;
-          final double topPos = (index % 2 == 0) ? 25.h : 95.h;
-          final showLeft = index >= count / 2;
-
-          return Positioned(
-            left: showLeft ? null : leftPos,
-            right: showLeft ? (availableWidth - leftPos - 50.r) : null,
-            top: topPos,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (isExpanded && showLeft) ...[
-                  Container(
-                    padding: EdgeInsets.all(6.r),
-                    decoration: BoxDecoration(
-                      color: isDark ? Colors.black87 : Colors.white,
-                      borderRadius: BorderRadius.circular(12.r),
-                      border: Border.all(color: color),
-                      boxShadow: const [
-                        BoxShadow(color: Colors.black26, blurRadius: 10),
-                      ],
+      padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 16.w),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: List.generate(emojis.length, (index) {
+              final isExpanded = expandedEmojiIndex == index;
+              return GestureDetector(
+                onTap: () => onEmojiTap(index),
+                child: Container(
+                  width: 55.r,
+                  height: 55.r,
+                  decoration: BoxDecoration(
+                    color: isExpanded
+                        ? color
+                        : (isDark ? Colors.white10 : Colors.black12),
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      if (isExpanded)
+                        BoxShadow(
+                          color: color.withValues(alpha: 0.5),
+                          blurRadius: 15,
+                        ),
+                    ],
+                  ),
+                  child: Center(
+                    child: Text(
+                      emojis[index],
+                      style: TextStyle(fontSize: 26.sp),
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: (keywords[index.toString()] ?? [])
-                          .map(
-                            (k) => TextButton(
-                              onPressed: () => onInjectKeyword(k),
-                              style: TextButton.styleFrom(
-                                minimumSize: Size.zero,
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 8.w,
-                                  vertical: 4.h,
-                                ),
-                              ),
-                              child: Text(
-                                k,
-                                style: TextStyle(
-                                  fontFamily: 'RobotoMono',
-                                  color: isDark ? Colors.white : Colors.black87,
-                                  fontSize: 11.sp,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
+                  ),
+                )
+                .animate(
+                  target: isExpanded ? 1 : 0,
+                )
+                .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1)),
+              );
+            }),
+          ),
+          
+          AnimatedSize(
+            duration: 300.ms,
+            curve: Curves.easeOutCubic,
+            child: expandedEmojiIndex != null
+                ? Padding(
+                    padding: EdgeInsets.only(top: 20.h),
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.all(16.r),
+                      decoration: BoxDecoration(
+                        color: isDark ? Colors.black87 : Colors.white,
+                        borderRadius: BorderRadius.circular(16.r),
+                        border: Border.all(color: color.withValues(alpha: 0.3)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: color.withValues(alpha: 0.1),
+                            blurRadius: 20,
+                            offset: const Offset(0, 5),
                           )
-                          .toList(),
-                    ),
-                  ).animate().scale(alignment: Alignment.centerRight).fadeIn(),
-                  SizedBox(width: 8.w),
-                ],
-                GestureDetector(
-                  onTap: () => onEmojiTap(index),
-                  child:
-                      Container(
-                            width: 50.r,
-                            height: 50.r,
-                            decoration: BoxDecoration(
-                              color: isExpanded
-                                  ? color
-                                  : (isDark ? Colors.white10 : Colors.black12),
-                              shape: BoxShape.circle,
-                              boxShadow: [
-                                if (isExpanded)
-                                  BoxShadow(
-                                    color: color.withValues(alpha: 0.5),
-                                    blurRadius: 15,
-                                  ),
-                              ],
+                        ],
+                      ),
+                      child: Column(
+                        children: [
+                          Text(
+                            "TAP TO INJECT:",
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w900,
+                              color: color.withValues(alpha: 0.8),
+                              letterSpacing: 1.5,
                             ),
-                            child: Center(
-                              child: Text(
-                                emojis[index],
-                                style: TextStyle(fontSize: 22.sp),
-                              ),
-                            ),
-                          )
-                          .animate(onPlay: (c) => c.repeat())
-                          .shimmer(duration: 2.seconds),
-                ),
-                if (isExpanded && !showLeft) ...[
-                  SizedBox(width: 8.w),
-                  Container(
-                    padding: EdgeInsets.all(6.r),
-                    decoration: BoxDecoration(
-                      color: isDark ? Colors.black87 : Colors.white,
-                      borderRadius: BorderRadius.circular(12.r),
-                      border: Border.all(color: color),
-                      boxShadow: const [
-                        BoxShadow(color: Colors.black26, blurRadius: 10),
-                      ],
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: (keywords[index.toString()] ?? [])
-                          .map(
-                            (k) => TextButton(
-                              onPressed: () => onInjectKeyword(k),
-                              style: TextButton.styleFrom(
-                                minimumSize: Size.zero,
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 8.w,
-                                  vertical: 4.h,
-                                ),
-                              ),
-                              child: Text(
-                                k,
-                                style: TextStyle(
-                                  fontFamily: 'RobotoMono',
-                                  color: isDark ? Colors.white : Colors.black87,
-                                  fontSize: 11.sp,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          )
-                          .toList(),
-                    ),
-                  ).animate().scale(alignment: Alignment.centerLeft).fadeIn(),
-                ],
-              ],
-            ),
-          );
-        }),
+                          ),
+                          SizedBox(height: 12.h),
+                          Wrap(
+                            spacing: 12.w,
+                            runSpacing: 12.h,
+                            alignment: WrapAlignment.center,
+                            children: (keywords[expandedEmojiIndex.toString()] ?? [])
+                                .map((k) => InkWell(
+                                      onTap: () => onInjectKeyword(k),
+                                      borderRadius: BorderRadius.circular(12.r),
+                                      child: Container(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 16.w,
+                                          vertical: 8.h,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: color.withValues(alpha: 0.1),
+                                          borderRadius: BorderRadius.circular(12.r),
+                                          border: Border.all(
+                                            color: color.withValues(alpha: 0.3),
+                                          ),
+                                        ),
+                                        child: Text(
+                                          k,
+                                          style: TextStyle(
+                                            fontFamily: 'RobotoMono',
+                                            color: isDark ? Colors.white : Colors.black87,
+                                            fontSize: 13.sp,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+                                    ))
+                                .toList(),
+                          ),
+                        ],
+                      ),
+                    ).animate().fadeIn().slideY(begin: 0.2, end: 0),
+                  )
+                : const SizedBox(width: double.infinity, height: 0),
+          ),
+        ],
       ),
     );
   }

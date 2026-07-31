@@ -87,12 +87,23 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
 
     String newText;
     int newCursorPosition;
-
+    String insertText = keyword;
     if (selection.isValid) {
-      newText = text.replaceRange(selection.start, selection.end, keyword);
-      newCursorPosition = selection.start + keyword.length;
+      final before = text.substring(0, selection.start);
+      final after = text.substring(selection.end);
+      if (before.isNotEmpty && !before.endsWith(' ') && !before.endsWith('\n')) {
+        insertText = ' $insertText';
+      }
+      if (after.isNotEmpty && !after.startsWith(' ') && !after.startsWith('\n')) {
+        insertText = '$insertText ';
+      }
+      newText = text.replaceRange(selection.start, selection.end, insertText);
+      newCursorPosition = selection.start + insertText.length;
     } else {
-      newText = text.isEmpty ? keyword : "$text $keyword";
+      if (text.isNotEmpty && !text.endsWith(' ') && !text.endsWith('\n')) {
+        insertText = ' $insertText';
+      }
+      newText = text + insertText;
       newCursorPosition = newText.length;
     }
 
