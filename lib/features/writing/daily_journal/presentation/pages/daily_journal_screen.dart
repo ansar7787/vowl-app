@@ -13,6 +13,7 @@ import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
+import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 import 'package:vowl/features/writing/daily_journal/presentation/widgets/daily_journal_instruction.dart';
 import 'package:vowl/features/writing/daily_journal/presentation/widgets/daily_journal_prompt.dart';
@@ -41,6 +42,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
   int _wordCount = 0;
   double _journalProgress = 0.0;
   WritingQuest? _lastQuest;
+  bool _isSubmitting = false;
 
   @override
   void initState() {
@@ -66,8 +68,10 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
     });
   }
 
-  void _submitAnswer(List<String> targetKeywords, bool isAnswered) {
-    if (isAnswered || _controller.text.trim().isEmpty) return;
+  Future<void> _submitAnswer(List<String> targetKeywords, bool isAnswered) async {
+    if (isAnswered || _controller.text.trim().isEmpty || _isSubmitting) return;
+
+    setState(() => _isSubmitting = true);
 
     final text = _controller.text.trim().toLowerCase();
 
@@ -85,6 +89,24 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
         type: CustomSnackBarType.info,
       );
       _hapticService.selection();
+      setState(() => _isSubmitting = false);
+      return;
+    }
+
+    // ML Kit Language ID Gibberish Check
+    final langIdService = di.sl<LanguageIdService>();
+    final language = await langIdService.identifyLanguage(text);
+
+    if (!mounted) return;
+
+    if (language == 'und') {
+      CustomSnackBar.show(
+        context: context,
+        message: "This looks like gibberish! Please write real English words.",
+        type: CustomSnackBarType.warning,
+      );
+      _hapticService.warning();
+      setState(() => _isSubmitting = false);
       return;
     }
 
@@ -102,6 +124,10 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
     }
 
     context.read<WritingBloc>().add(SubmitAnswer(isCorrect));
+    
+    if (mounted) {
+      setState(() => _isSubmitting = false);
+    }
   }
 
   @override

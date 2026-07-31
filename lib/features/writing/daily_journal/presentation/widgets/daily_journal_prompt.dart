@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class DailyJournalPrompt extends StatelessWidget {
   final String text;
@@ -44,9 +43,7 @@ class DailyJournalPrompt extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          const Positioned.fill(
-            child: TechPatternOverlay(opacity: 0.05),
-          ),
+          const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
           Row(
             children: [
               Icon(
