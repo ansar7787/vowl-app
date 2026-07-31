@@ -27,7 +27,7 @@ class ShortAnswerQuillPrompt extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          const TechPatternOverlay(opacity: 0.05),
+          const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
           Column(
             children: [
               Icon(Icons.auto_stories_rounded, color: color, size: 32.r)

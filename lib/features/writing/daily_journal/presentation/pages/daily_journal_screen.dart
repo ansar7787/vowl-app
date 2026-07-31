@@ -93,6 +93,17 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
       return;
     }
 
+    if (matchedCount < 2) {
+      CustomSnackBar.show(
+        context: context,
+        message: "Use at least 2 reflection terms to complete your entry!",
+        type: CustomSnackBarType.warning,
+      );
+      _hapticService.selection();
+      setState(() => _isSubmitting = false);
+      return;
+    }
+
     // ML Kit Language ID Gibberish Check
     final langIdService = di.sl<LanguageIdService>();
     final language = await langIdService.identifyLanguage(text);
@@ -110,20 +121,10 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
       return;
     }
 
-    bool isMinLengthMet = _wordCount >= 10;
-    bool isKeywordsMet = matchedCount >= 2;
+    _hapticService.success();
+    _soundService.playCorrect();
 
-    final isCorrect = isMinLengthMet && isKeywordsMet;
-
-    if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
-    } else {
-      _hapticService.error();
-      _soundService.playWrong();
-    }
-
-    context.read<WritingBloc>().add(SubmitAnswer(isCorrect));
+    context.read<WritingBloc>().add(SubmitAnswer(true));
     
     if (mounted) {
       setState(() => _isSubmitting = false);

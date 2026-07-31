@@ -65,7 +65,7 @@ class MinimalPairsDroneOption extends StatelessWidget {
                 ),
                 child: Stack(
                   children: [
-                    const TechPatternOverlay(opacity: 0.05),
+                    const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
                     Center(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,

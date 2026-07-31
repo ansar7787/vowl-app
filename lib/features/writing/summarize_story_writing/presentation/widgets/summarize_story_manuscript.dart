@@ -26,7 +26,7 @@ class SummarizeStoryManuscript extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          const TechPatternOverlay(opacity: 0.05),
+          const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
           SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: Text(

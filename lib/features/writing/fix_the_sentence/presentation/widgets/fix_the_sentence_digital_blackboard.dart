@@ -40,7 +40,7 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
       child: Stack(
         alignment: Alignment.center,
         children: [
-          const TechPatternOverlay(opacity: 0.05),
+          const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
           Padding(
             padding: EdgeInsets.all(16.r),
             child: RichText(

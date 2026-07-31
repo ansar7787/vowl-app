@@ -70,6 +70,11 @@ class DailyJournalPrompt extends StatelessWidget {
           ),
         ],
       ),
+    )
+    .animate(onPlay: (c) => c.repeat(reverse: true))
+    .shimmer(
+      duration: 4.seconds,
+      color: primaryColor.withValues(alpha: 0.1),
     );
   }
 }
