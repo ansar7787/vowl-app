@@ -39,6 +39,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
   bool _showConfetti = false;
   int _wordCount = 0;
   double _journalProgress = 0.0;
+  WritingQuest? _lastQuest;
 
   @override
   void initState() {
@@ -120,14 +121,6 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
             enableDoubleUp: true,
           );
         }
-
-        if (state is WritingGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () =>
-                context.read<WritingBloc>().add(const RestoreLife()),
-          );
-        }
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
@@ -135,11 +128,17 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
             ? state.currentQuest as WritingQuest?
             : null;
 
+        if (quest != null) {
+          _lastQuest = quest;
+        }
+
+        final activeQuest = quest ?? _lastQuest;
+
         final targetKeywords =
-            quest?.options ?? ["submersible", "mariana", "trench"];
+            activeQuest?.options ?? ["submersible", "mariana", "trench"];
         final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
         final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
-        final bool isFinalFailure = isLoaded ? state.isFinalFailure : false;
+        final bool isFinalFailure = state.livesRemaining == 0;
 
         return WritingBaseLayout(
           gameType: widget.gameType,
@@ -150,7 +149,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
           showConfetti: _showConfetti,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
-          child: quest == null
+          child: activeQuest == null
               ? const SizedBox()
               : SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
@@ -161,11 +160,12 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
                         SizedBox(height: 16.h),
                         DailyJournalInstruction(
                           primaryColor: theme.primaryColor,
+                          instruction: activeQuest.instruction,
                         ),
                         SizedBox(height: 24.h),
 
                         DailyJournalPrompt(
-                          text: quest.prompt ?? "",
+                          text: activeQuest.prompt ?? "",
                           primaryColor: theme.primaryColor,
                           isDark: isDark,
                         ),

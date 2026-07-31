@@ -671,7 +671,7 @@ class GameInstructionService {
       title: "Daily Chronicler",
       icon: Icons.auto_stories_rounded,
       objective:
-          "Write a short personal journal reflection based on the prompt.",
+          "Read the prompt and write a short personal journal reflection. Mastering this helps you articulate your daily experiences logically in real-world conversations.",
       rules: [
         "Be reflective",
         "Use appropriate tenses",
@@ -679,7 +679,7 @@ class GameInstructionService {
       ],
       actionText: "Log Entry",
       tip:
-          "PRO TIP: Use sequential markers like 'First', 'Later', and 'Eventually'.",
+          "PRO TIP: Use sequential markers like 'First', 'Later', and 'Eventually' to organize your thoughts.",
     ),
     GameSubtype.summarizeStoryWriting: GameBriefing(
       title: "Essence Extractor",

@@ -47,7 +47,7 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [ ] Fix The Sentence (`fixTheSentence`)
 - [ ] Short Answer (`shortAnswerWriting`)
 - [ ] Opinion Writing (`opinionWriting`)
-- [ ] Daily Journal (`dailyJournal`)
+- [x] ✅ Daily Journal (`dailyJournal`)
 - [ ] Summarize Story (`summarizeStoryWriting`)
 - [ ] Writing Email (`writingEmail`)
 - [x] ✅ Correction Writing (`correctionWriting`)

@@ -121,6 +121,6 @@ class DailyJournalScratchArea extends StatelessWidget {
           ),
         ],
       ),
-    ).animate(target: journalProgress).shimmer(duration: 2.seconds);
+    );
   }
 }
