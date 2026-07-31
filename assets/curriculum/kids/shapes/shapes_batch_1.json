@@ -1,562 +1,622 @@
 [
-    {
+  {
+    "level": 1,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L1_Q1",
+        "gameType": "shapes",
         "level": 1,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L1_Q1",
-                "gameType": "shapes",
-                "level": 1,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Square",
-                    "Rectangle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "🟩",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            },
-            {
-                "id": "KIDS_SHAPES_L1_Q2",
-                "gameType": "shapes",
-                "level": 1,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Circle",
-                    "Rectangle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "🔵",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            },
-            {
-                "id": "KIDS_SHAPES_L1_Q3",
-                "gameType": "shapes",
-                "level": 1,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Triangle",
-                    "Circle",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "🔺",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which shape matches a big round pizza fresh out of the oven?",
+        "question": "Circle",
+        "correctAnswer": "Circle",
+        "options": [
+          "Circle",
+          "Triangle",
+          "Square"
+        ],
+        "hint": "Think of something round that has no corners at all.",
+        "emoji": "🍕",
+        "explanation": "A pizza is round all over with no straight edges, just like a circle!",
+        "funFact": "A circle is perfectly round, so every point on its edge is the same distance from the middle.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L1_Q2",
+        "gameType": "shapes",
+        "level": 1,
+        "instruction": "Which shape matches a small gift box wrapped for a birthday?",
+        "question": "Square",
+        "correctAnswer": "Square",
+        "options": [
+          "Rectangle",
+          "Circle",
+          "Square"
+        ],
+        "hint": "Think of a shape with four sides that are all the same length.",
+        "emoji": "🎁",
+        "explanation": "A gift box like this has four equal sides and four corners, just like a square!",
+        "funFact": "Every side of a square is exactly the same length as the others.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L1_Q3",
+        "gameType": "shapes",
+        "level": 1,
+        "instruction": "Which shape matches a slice of cheesy pizza cut from the middle?",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
+        "options": [
+          "Rectangle",
+          "Triangle",
+          "Circle"
+        ],
+        "hint": "Think of a shape with three straight sides and three corners.",
+        "emoji": "🍕",
+        "explanation": "A pizza slice has three straight sides that meet at three points, just like a triangle!",
+        "funFact": "A triangle is the only shape with just three sides and three corners.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 2,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L2_Q1",
+        "gameType": "shapes",
         "level": 2,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L2_Q1",
-                "gameType": "shapes",
-                "level": 2,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Triangle",
-                    "Rectangle",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "🟦",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            },
-            {
-                "id": "KIDS_SHAPES_L2_Q2",
-                "gameType": "shapes",
-                "level": 2,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Circle",
-                    "Square",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "🟩",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            },
-            {
-                "id": "KIDS_SHAPES_L2_Q3",
-                "gameType": "shapes",
-                "level": 2,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Circle",
-                    "Triangle",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "🔵",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which shape matches a wooden front door with a shiny handle?",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
+        "options": [
+          "Rectangle",
+          "Circle",
+          "Square"
+        ],
+        "hint": "Think of a shape with two long sides and two short sides.",
+        "emoji": "🚪",
+        "explanation": "A door is taller than it is wide, with four corners, just like a rectangle!",
+        "funFact": "A rectangle always has two pairs of matching sides, but they aren't all equal like a square.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L2_Q2",
+        "gameType": "shapes",
+        "level": 2,
+        "instruction": "Which shape matches a shiny coin you might find in your pocket?",
+        "question": "Circle",
+        "correctAnswer": "Circle",
+        "options": [
+          "Rectangle",
+          "Circle",
+          "Triangle"
+        ],
+        "hint": "Think of something round that can roll in every direction.",
+        "emoji": "🪙",
+        "explanation": "A coin is perfectly round with a smooth edge, just like a circle!",
+        "funFact": "Circles can roll smoothly because their edge has no flat parts or corners.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L2_Q3",
+        "gameType": "shapes",
+        "level": 2,
+        "instruction": "Which shape matches a single cracker on a lunch plate?",
+        "question": "Square",
+        "correctAnswer": "Square",
+        "options": [
+          "Square",
+          "Circle",
+          "Triangle"
+        ],
+        "hint": "Think of a shape where every side matches every other side.",
+        "emoji": "🧇",
+        "explanation": "A cracker like this has four equal sides and four sharp corners, just like a square!",
+        "funFact": "A square is actually a special kind of rectangle with all sides equal.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 3,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L3_Q1",
+        "gameType": "shapes",
         "level": 3,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L3_Q1",
-                "gameType": "shapes",
-                "level": 3,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Circle",
-                    "Triangle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "🔺",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            },
-            {
-                "id": "KIDS_SHAPES_L3_Q2",
-                "gameType": "shapes",
-                "level": 3,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Triangle",
-                    "Square",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "🟦",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            },
-            {
-                "id": "KIDS_SHAPES_L3_Q3",
-                "gameType": "shapes",
-                "level": 3,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Triangle",
-                    "Square",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "🟩",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which shape matches a colorful sailboat's sail catching the wind?",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
+        "options": [
+          "Circle",
+          "Triangle",
+          "Rectangle"
+        ],
+        "hint": "Think of a shape with three straight sides that come to a point.",
+        "emoji": "⛵",
+        "explanation": "A sail comes to a point at the top with three straight sides, just like a triangle!",
+        "funFact": "Triangles are strong shapes, which is why you see them holding up bridges and roofs.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L3_Q2",
+        "gameType": "shapes",
+        "level": 3,
+        "instruction": "Which shape matches a chocolate bar broken into one long piece?",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
+        "options": [
+          "Triangle",
+          "Rectangle",
+          "Square"
+        ],
+        "hint": "Think of a shape that is longer on two sides than the other two.",
+        "emoji": "🍫",
+        "explanation": "A chocolate bar is long and thin with four corners, just like a rectangle!",
+        "funFact": "Rectangles are everywhere — doors, books, and phones are all rectangle-shaped.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L3_Q3",
+        "gameType": "shapes",
+        "level": 3,
+        "instruction": "Which shape matches a big yellow sun shining in the sky?",
+        "question": "Circle",
+        "correctAnswer": "Circle",
+        "options": [
+          "Rectangle",
+          "Circle",
+          "Square"
+        ],
+        "hint": "Think of a shape that looks the same no matter which way you turn it.",
+        "emoji": "☀️",
+        "explanation": "The sun looks perfectly round from here on Earth, just like a circle!",
+        "funFact": "No matter how you spin a circle, it always looks exactly the same.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 4,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L4_Q1",
+        "gameType": "shapes",
         "level": 4,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L4_Q1",
-                "gameType": "shapes",
-                "level": 4,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Circle",
-                    "Rectangle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "🔵",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            },
-            {
-                "id": "KIDS_SHAPES_L4_Q2",
-                "gameType": "shapes",
-                "level": 4,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Triangle",
-                    "Rectangle",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "🔺",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            },
-            {
-                "id": "KIDS_SHAPES_L4_Q3",
-                "gameType": "shapes",
-                "level": 4,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Rectangle",
-                    "Circle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "🟦",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which shape matches one tile on a checkerboard floor?",
+        "question": "Square",
+        "correctAnswer": "Square",
+        "options": [
+          "Triangle",
+          "Square",
+          "Rectangle"
+        ],
+        "hint": "Think of a shape with four equal sides and four straight corners.",
+        "emoji": "🏁",
+        "explanation": "A checkerboard tile has four matching sides and four square corners, just like a square!",
+        "funFact": "If you spin a square a quarter turn, it looks exactly the same as before.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L4_Q2",
+        "gameType": "shapes",
+        "level": 4,
+        "instruction": "Which shape matches a tall mountain peak covered in snow?",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
+        "options": [
+          "Circle",
+          "Rectangle",
+          "Triangle"
+        ],
+        "hint": "Think of a shape that starts wide at the bottom and comes to one point.",
+        "emoji": "⛰️",
+        "explanation": "A mountain peak is wide at the bottom and narrows to a single point, just like a triangle!",
+        "funFact": "A triangle always has three corners, no matter how tall or short it looks.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L4_Q3",
+        "gameType": "shapes",
+        "level": 4,
+        "instruction": "Which shape matches a flat book lying closed on a desk?",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
+        "options": [
+          "Rectangle",
+          "Square",
+          "Circle"
+        ],
+        "hint": "Think of a shape with four corners, longer on one side than the other.",
+        "emoji": "📕",
+        "explanation": "A closed book is longer than it is wide, with four straight corners, just like a rectangle!",
+        "funFact": "Rectangles have four corners that are all perfect square corners, just like a square does.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 5,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L5_Q1",
+        "gameType": "shapes",
         "level": 5,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L5_Q1",
-                "gameType": "shapes",
-                "level": 5,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Rectangle",
-                    "Triangle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "🟩",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            },
-            {
-                "id": "KIDS_SHAPES_L5_Q2",
-                "gameType": "shapes",
-                "level": 5,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Circle",
-                    "Triangle",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "🔵",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            },
-            {
-                "id": "KIDS_SHAPES_L5_Q3",
-                "gameType": "shapes",
-                "level": 5,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Square",
-                    "Triangle",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "🔺",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which shape matches a big soap bubble floating through the air?",
+        "question": "Circle",
+        "correctAnswer": "Circle",
+        "options": [
+          "Square",
+          "Triangle",
+          "Circle"
+        ],
+        "hint": "Think of a shape with a smooth curved edge and no corners.",
+        "emoji": "🫧",
+        "explanation": "A soap bubble is perfectly round with a smooth curved edge, just like a circle!",
+        "funFact": "Bubbles form circles because round shapes are the strongest way to hold air inside.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L5_Q2",
+        "gameType": "shapes",
+        "level": 5,
+        "instruction": "Which shape matches a folded paper napkin at a dinner table?",
+        "question": "Square",
+        "correctAnswer": "Square",
+        "options": [
+          "Square",
+          "Rectangle",
+          "Circle"
+        ],
+        "hint": "Think of a shape where all four sides are exactly the same length.",
+        "emoji": "🧻",
+        "explanation": "A folded napkin has four equal sides and four corners, just like a square!",
+        "funFact": "Squares are so balanced that you can fold one in half four different ways and it still matches.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L5_Q3",
+        "gameType": "shapes",
+        "level": 5,
+        "instruction": "Which shape matches a pointy party hat worn at a celebration?",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
+        "options": [
+          "Square",
+          "Triangle",
+          "Circle"
+        ],
+        "hint": "Think of a shape with three sides that meet together at the top.",
+        "emoji": "🎉",
+        "explanation": "A party hat is wide at the bottom and comes to a point at the top, just like a triangle!",
+        "funFact": "Triangles are the only shape that can never bend out of shape once the sides are set.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 6,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L6_Q1",
+        "gameType": "shapes",
         "level": 6,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L6_Q1",
-                "gameType": "shapes",
-                "level": 6,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Circle",
-                    "Triangle",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "🟦",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            },
-            {
-                "id": "KIDS_SHAPES_L6_Q2",
-                "gameType": "shapes",
-                "level": 6,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Circle",
-                    "Triangle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "🟩",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            },
-            {
-                "id": "KIDS_SHAPES_L6_Q3",
-                "gameType": "shapes",
-                "level": 6,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Square",
-                    "Circle",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "🔵",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which shape matches a flat-screen television on the wall?",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
+        "options": [
+          "Triangle",
+          "Rectangle",
+          "Square"
+        ],
+        "hint": "Think of a shape with four corners and two sides longer than the others.",
+        "emoji": "📺",
+        "explanation": "A television screen is wider than it is tall, with four corners, just like a rectangle!",
+        "funFact": "Most screens — TVs, phones, and tablets — are shaped like rectangles.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L6_Q2",
+        "gameType": "shapes",
+        "level": 6,
+        "instruction": "Which shape matches a round steering wheel in a car?",
+        "question": "Circle",
+        "correctAnswer": "Circle",
+        "options": [
+          "Rectangle",
+          "Circle",
+          "Triangle"
+        ],
+        "hint": "Think of a shape you could spin around and around forever.",
+        "emoji": "🚗",
+        "explanation": "A steering wheel is round all the way around, just like a circle!",
+        "funFact": "Wheels are circles because a round shape rolls smoothly without bumping.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L6_Q3",
+        "gameType": "shapes",
+        "level": 6,
+        "instruction": "Which shape matches a single waffle square fresh off the iron?",
+        "question": "Square",
+        "correctAnswer": "Square",
+        "options": [
+          "Circle",
+          "Square",
+          "Rectangle"
+        ],
+        "hint": "Think of a shape with four matching sides, like a tiny box.",
+        "emoji": "🧇",
+        "explanation": "A waffle square has four equal sides and four corners, just like a square!",
+        "funFact": "A square looks the same whether you flip it, spin it, or turn it upside down.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 7,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L7_Q1",
+        "gameType": "shapes",
         "level": 7,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L7_Q1",
-                "gameType": "shapes",
-                "level": 7,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Triangle",
-                    "Circle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "🔺",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            },
-            {
-                "id": "KIDS_SHAPES_L7_Q2",
-                "gameType": "shapes",
-                "level": 7,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Rectangle",
-                    "Triangle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "🟦",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            },
-            {
-                "id": "KIDS_SHAPES_L7_Q3",
-                "gameType": "shapes",
-                "level": 7,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Triangle",
-                    "Rectangle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "🟩",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which shape matches a warning road sign that means yield?",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
+        "options": [
+          "Triangle",
+          "Rectangle",
+          "Circle"
+        ],
+        "hint": "Think of a shape with three points, one at the very top.",
+        "emoji": "⚠️",
+        "explanation": "A yield sign has three straight sides meeting at three points, just like a triangle!",
+        "funFact": "Road signs often use triangles because the pointed shape catches a driver's eye.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L7_Q2",
+        "gameType": "shapes",
+        "level": 7,
+        "instruction": "Which shape matches a brick used to build a garden wall?",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
+        "options": [
+          "Square",
+          "Rectangle",
+          "Triangle"
+        ],
+        "hint": "Think of a shape that is longer than it is tall, with four corners.",
+        "emoji": "🧱",
+        "explanation": "A brick is longer on two sides than the other two, with four corners, just like a rectangle!",
+        "funFact": "Builders love rectangle bricks because they stack together neatly in rows.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L7_Q3",
+        "gameType": "shapes",
+        "level": 7,
+        "instruction": "Which shape matches a warm round cookie fresh from the oven?",
+        "question": "Circle",
+        "correctAnswer": "Circle",
+        "options": [
+          "Square",
+          "Circle",
+          "Triangle"
+        ],
+        "hint": "Think of a shape with one smooth curved edge and no corners.",
+        "emoji": "🍪",
+        "explanation": "A cookie is round all over with no straight edges, just like a circle!",
+        "funFact": "A circle has no corners at all, which is why it can spin in place forever.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 8,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L8_Q1",
+        "gameType": "shapes",
         "level": 8,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L8_Q1",
-                "gameType": "shapes",
-                "level": 8,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Circle",
-                    "Rectangle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "🔵",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            },
-            {
-                "id": "KIDS_SHAPES_L8_Q2",
-                "gameType": "shapes",
-                "level": 8,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Triangle",
-                    "Square",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "🔺",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            },
-            {
-                "id": "KIDS_SHAPES_L8_Q3",
-                "gameType": "shapes",
-                "level": 8,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Triangle",
-                    "Rectangle",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "🟦",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which shape matches a single square cracker stacked in a box?",
+        "question": "Square",
+        "correctAnswer": "Square",
+        "options": [
+          "Triangle",
+          "Square",
+          "Circle"
+        ],
+        "hint": "Think of a shape shaped exactly like a tiny, even box.",
+        "emoji": "🍘",
+        "explanation": "A square cracker has four equal sides and four corners, just like a square!",
+        "funFact": "If you measure every side of a square, they will always match perfectly.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L8_Q2",
+        "gameType": "shapes",
+        "level": 8,
+        "instruction": "Which shape matches a musical triangle instrument you ring with a stick?",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
+        "options": [
+          "Rectangle",
+          "Triangle",
+          "Circle"
+        ],
+        "hint": "Think of a shape made from three straight metal sides.",
+        "emoji": "🎶",
+        "explanation": "A musical triangle is bent into three straight sides meeting at three corners, just like the shape triangle!",
+        "funFact": "The triangle instrument got its name because it is shaped exactly like the triangle shape.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L8_Q3",
+        "gameType": "shapes",
+        "level": 8,
+        "instruction": "Which shape matches a long envelope waiting to be mailed?",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
+        "options": [
+          "Rectangle",
+          "Circle",
+          "Square"
+        ],
+        "hint": "Think of a shape longer on two sides than the other two, with four corners.",
+        "emoji": "✉️",
+        "explanation": "An envelope is longer than it is tall, with four straight corners, just like a rectangle!",
+        "funFact": "Rectangles are a favorite shape for envelopes because letters slide in easily.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 9,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L9_Q1",
+        "gameType": "shapes",
         "level": 9,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L9_Q1",
-                "gameType": "shapes",
-                "level": 9,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Square",
-                    "Rectangle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "🟩",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            },
-            {
-                "id": "KIDS_SHAPES_L9_Q2",
-                "gameType": "shapes",
-                "level": 9,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Rectangle",
-                    "Square",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "🔵",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            },
-            {
-                "id": "KIDS_SHAPES_L9_Q3",
-                "gameType": "shapes",
-                "level": 9,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Rectangle",
-                    "Triangle",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "🔺",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which shape matches a big round clock hanging on the wall?",
+        "question": "Circle",
+        "correctAnswer": "Circle",
+        "options": [
+          "Square",
+          "Circle",
+          "Rectangle"
+        ],
+        "hint": "Think of a shape with a curved edge that goes all the way around.",
+        "emoji": "🕐",
+        "explanation": "A clock face is round all the way around, just like a circle!",
+        "funFact": "Clocks are often circles because the hands can spin smoothly around the middle.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L9_Q2",
+        "gameType": "shapes",
+        "level": 9,
+        "instruction": "Which shape matches a windowpane with four equal sides?",
+        "question": "Square",
+        "correctAnswer": "Square",
+        "options": [
+          "Square",
+          "Triangle",
+          "Rectangle"
+        ],
+        "hint": "Think of a shape where every side is exactly as long as the next.",
+        "emoji": "🪟",
+        "explanation": "This windowpane has four matching sides and four corners, just like a square!",
+        "funFact": "A square has four right-angle corners, meaning each corner forms a perfect L shape.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L9_Q3",
+        "gameType": "shapes",
+        "level": 9,
+        "instruction": "Which shape matches a crunchy nacho chip ready for dipping?",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
+        "options": [
+          "Circle",
+          "Square",
+          "Triangle"
+        ],
+        "hint": "Think of a shape with three straight edges and three points.",
+        "emoji": "🌮",
+        "explanation": "A nacho chip has three straight sides meeting at three corners, just like a triangle!",
+        "funFact": "Triangles are one of the strongest shapes, which is why chip makers love this design.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 10,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L10_Q1",
+        "gameType": "shapes",
         "level": 10,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L10_Q1",
-                "gameType": "shapes",
-                "level": 10,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Square",
-                    "Circle",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "🟦",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            },
-            {
-                "id": "KIDS_SHAPES_L10_Q2",
-                "gameType": "shapes",
-                "level": 10,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Circle",
-                    "Square",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "🟩",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            },
-            {
-                "id": "KIDS_SHAPES_L10_Q3",
-                "gameType": "shapes",
-                "level": 10,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Circle",
-                    "Triangle",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "🔵",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            }
-        ]
-    }
+        "instruction": "Which shape matches a laptop computer screen?",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
+        "options": [
+          "Square",
+          "Rectangle",
+          "Circle"
+        ],
+        "hint": "Think of a shape wider than it is tall, with four straight corners.",
+        "emoji": "💻",
+        "explanation": "A laptop screen is wider than it is tall, with four corners, just like a rectangle!",
+        "funFact": "Rectangles are a popular shape for screens because they fit words and pictures neatly.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L10_Q2",
+        "gameType": "shapes",
+        "level": 10,
+        "instruction": "Which shape matches a colorful frisbee flying through the park?",
+        "question": "Circle",
+        "correctAnswer": "Circle",
+        "options": [
+          "Circle",
+          "Rectangle",
+          "Triangle"
+        ],
+        "hint": "Think of a shape that spins smoothly with no corners to catch the wind.",
+        "emoji": "🥏",
+        "explanation": "A frisbee is round all over with a smooth curved edge, just like a circle!",
+        "funFact": "Frisbees fly well because their round shape spins evenly through the air.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L10_Q3",
+        "gameType": "shapes",
+        "level": 10,
+        "instruction": "Which shape matches a bathroom floor tile with four matching sides?",
+        "question": "Square",
+        "correctAnswer": "Square",
+        "options": [
+          "Triangle",
+          "Square",
+          "Rectangle"
+        ],
+        "hint": "Think of a shape where all four sides are the exact same length.",
+        "emoji": "🚿",
+        "explanation": "This floor tile has four equal sides and four corners, just like a square!",
+        "funFact": "Square tiles fit together perfectly with no gaps, covering a whole floor neatly.",
+        "subtype": "basic_2d_shapes",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  }
 ]

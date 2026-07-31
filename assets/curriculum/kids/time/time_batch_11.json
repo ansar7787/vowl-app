@@ -1,562 +1,622 @@
 [
-    {
+  {
+    "level": 101,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L101_Q1",
+        "gameType": "time",
         "level": 101,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L101_Q1",
-                "gameType": "time",
-                "level": 101,
-                "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
-                "question": "9:00 PM",
-                "correctAnswer": "9:00 PM",
-                "options": [
-                    "12:00 PM",
-                    "8:00 AM",
-                    "9:00 PM"
-                ],
-                "hint": "Select the correct hour: 9:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 9:00 PM, the moon is up high and nocturnal owls wake up for the night!"
-            },
-            {
-                "id": "KIDS_TIME_L101_Q2",
-                "gameType": "time",
-                "level": 101,
-                "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
-                "question": "8:00 AM",
-                "correctAnswer": "8:00 AM",
-                "options": [
-                    "8:00 AM",
-                    "4:00 PM",
-                    "12:00 PM"
-                ],
-                "hint": "Select the correct hour: 8:00 AM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 8:00 AM, the bright sun is shining and morning birds sing to wake us up!"
-            },
-            {
-                "id": "KIDS_TIME_L101_Q3",
-                "gameType": "time",
-                "level": 101,
-                "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
-                "question": "12:00 PM",
-                "correctAnswer": "12:00 PM",
-                "options": [
-                    "12:00 PM",
-                    "9:00 PM",
-                    "4:00 PM"
-                ],
-                "hint": "Select the correct hour: 12:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "12:00 PM is also called Noon, which is when the sun is highest in the sky!"
-            }
-        ]
-    },
-    {
+        "instruction": "It is five minutes past seven, and the toast just popped up. What time is it?",
+        "question": "7:05 AM",
+        "correctAnswer": "7:05 AM",
+        "options": [
+          "7:10 AM",
+          "7:05 AM",
+          "7:00 AM"
+        ],
+        "hint": "Each number on the clock face stands for 5 minutes — after seven, the minute hand is on 1.",
+        "emoji": "⏱️",
+        "explanation": "Since 5 minutes have passed seven, the clock reads 7:05 AM.",
+        "funFact": "Toasters often pop bread right when it turns golden brown.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L101_Q2",
+        "gameType": "time",
+        "level": 101,
+        "instruction": "The minute hand rests on the 2 and the hour hand sits just past the 3, in the afternoon. What time is it?",
+        "question": "3:10 PM",
+        "correctAnswer": "3:10 PM",
+        "options": [
+          "3:05 PM",
+          "3:10 PM",
+          "3:15 PM"
+        ],
+        "hint": "Starting from three o'clock, count by fives until you reach 10 minutes.",
+        "emoji": "🕐",
+        "explanation": "3:10 PM is 10 minutes after three o'clock — the minute hand rests on 2.",
+        "funFact": "A ten-minute mark is a great way to practice reading a clock closely.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L101_Q3",
+        "gameType": "time",
+        "level": 101,
+        "instruction": "It is twenty minutes past nine, and the last light is switched off. What time is it?",
+        "question": "9:20 PM",
+        "correctAnswer": "9:20 PM",
+        "options": [
+          "9:15 PM",
+          "9:20 PM",
+          "9:25 PM"
+        ],
+        "hint": "After nine o'clock, the minute hand on 4 means 4 times 5, which is 20 minutes.",
+        "emoji": "⏱️",
+        "explanation": "The minute hand on 4 means 4 × 5 = 20 minutes, so the time is 9:20 PM.",
+        "funFact": "Switching off the last light is often the very final step of the night.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 102,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L102_Q1",
+        "gameType": "time",
         "level": 102,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L102_Q1",
-                "gameType": "time",
-                "level": 102,
-                "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
-                "question": "4:00 PM",
-                "correctAnswer": "4:00 PM",
-                "options": [
-                    "4:00 PM",
-                    "12:00 PM",
-                    "8:00 AM"
-                ],
-                "hint": "Select the correct hour: 4:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 4:00 PM, school is usually over and it's the perfect time to play outside!"
-            },
-            {
-                "id": "KIDS_TIME_L102_Q2",
-                "gameType": "time",
-                "level": 102,
-                "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
-                "question": "9:00 PM",
-                "correctAnswer": "9:00 PM",
-                "options": [
-                    "9:00 PM",
-                    "8:00 AM",
-                    "12:00 PM"
-                ],
-                "hint": "Select the correct hour: 9:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 9:00 PM, the moon is up high and nocturnal owls wake up for the night!"
-            },
-            {
-                "id": "KIDS_TIME_L102_Q3",
-                "gameType": "time",
-                "level": 102,
-                "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
-                "question": "8:00 AM",
-                "correctAnswer": "8:00 AM",
-                "options": [
-                    "4:00 PM",
-                    "9:00 PM",
-                    "8:00 AM"
-                ],
-                "hint": "Select the correct hour: 8:00 AM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 8:00 AM, the bright sun is shining and morning birds sing to wake us up!"
-            }
-        ]
-    },
-    {
+        "instruction": "The minute hand rests on the 2 and the hour hand is just past the 8, in the morning. What time is it?",
+        "question": "8:10 AM",
+        "correctAnswer": "8:10 AM",
+        "options": [
+          "8:10 AM",
+          "8:05 AM",
+          "8:15 AM"
+        ],
+        "hint": "Each number on the clock face stands for 5 minutes — after eight, the minute hand is on 2.",
+        "emoji": "🕐",
+        "explanation": "Since 10 minutes have passed eight, the clock reads 8:10 AM.",
+        "funFact": "8:10 AM is a common time to still be settling into the school day.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L102_Q2",
+        "gameType": "time",
+        "level": 102,
+        "instruction": "It is five minutes past twelve, and the lunch line just begins to move. What time is it?",
+        "question": "12:05 PM",
+        "correctAnswer": "12:05 PM",
+        "options": [
+          "12:00 PM",
+          "12:05 PM",
+          "12:10 PM"
+        ],
+        "hint": "Starting from twelve o'clock, count by fives until you reach 5 minutes.",
+        "emoji": "⏱️",
+        "explanation": "12:05 PM is 5 minutes after twelve o'clock — the minute hand rests on 1.",
+        "funFact": "Lunch lines often start moving right as the bell rings for noon.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L102_Q3",
+        "gameType": "time",
+        "level": 102,
+        "instruction": "It is twenty minutes past four, and the playground is buzzing with laughter. What time is it?",
+        "question": "4:20 PM",
+        "correctAnswer": "4:20 PM",
+        "options": [
+          "4:25 PM",
+          "4:15 PM",
+          "4:20 PM"
+        ],
+        "hint": "After four o'clock, the minute hand on 4 means 4 times 5, which is 20 minutes.",
+        "emoji": "⏱️",
+        "explanation": "The minute hand on 4 means 4 × 5 = 20 minutes, so the time is 4:20 PM.",
+        "funFact": "Playgrounds are often loudest with laughter in the mid-afternoon.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 103,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L103_Q1",
+        "gameType": "time",
         "level": 103,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L103_Q1",
-                "gameType": "time",
-                "level": 103,
-                "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
-                "question": "12:00 PM",
-                "correctAnswer": "12:00 PM",
-                "options": [
-                    "8:00 AM",
-                    "12:00 PM",
-                    "9:00 PM"
-                ],
-                "hint": "Select the correct hour: 12:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "12:00 PM is also called Noon, which is when the sun is highest in the sky!"
-            },
-            {
-                "id": "KIDS_TIME_L103_Q2",
-                "gameType": "time",
-                "level": 103,
-                "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
-                "question": "4:00 PM",
-                "correctAnswer": "4:00 PM",
-                "options": [
-                    "9:00 PM",
-                    "12:00 PM",
-                    "4:00 PM"
-                ],
-                "hint": "Select the correct hour: 4:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 4:00 PM, school is usually over and it's the perfect time to play outside!"
-            },
-            {
-                "id": "KIDS_TIME_L103_Q3",
-                "gameType": "time",
-                "level": 103,
-                "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
-                "question": "9:00 PM",
-                "correctAnswer": "9:00 PM",
-                "options": [
-                    "12:00 PM",
-                    "8:00 AM",
-                    "9:00 PM"
-                ],
-                "hint": "Select the correct hour: 9:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 9:00 PM, the moon is up high and nocturnal owls wake up for the night!"
-            }
-        ]
-    },
-    {
+        "instruction": "It is twenty-five minutes past six, and the sky is turning a soft gold. What time is it?",
+        "question": "6:25 AM",
+        "correctAnswer": "6:25 AM",
+        "options": [
+          "6:25 AM",
+          "6:30 AM",
+          "6:20 AM"
+        ],
+        "hint": "Each number on the clock face stands for 5 minutes — after six, the minute hand is on 5.",
+        "emoji": "⏱️",
+        "explanation": "Since 25 minutes have passed six, the clock reads 6:25 AM.",
+        "funFact": "A golden morning sky often means sunrise is nearly complete.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L103_Q2",
+        "gameType": "time",
+        "level": 103,
+        "instruction": "The minute hand rests on the 2 and the hour hand is just past the 1, in the afternoon. What time is it?",
+        "question": "1:10 PM",
+        "correctAnswer": "1:10 PM",
+        "options": [
+          "1:15 PM",
+          "1:10 PM",
+          "1:05 PM"
+        ],
+        "hint": "Starting from one o'clock, count by fives until you reach 10 minutes.",
+        "emoji": "🕐",
+        "explanation": "1:10 PM is 10 minutes after one o'clock — the minute hand rests on 2.",
+        "funFact": "1:10 PM is a common time for an afternoon lesson to be getting started.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L103_Q3",
+        "gameType": "time",
+        "level": 103,
+        "instruction": "It is thirty-five minutes past seven, and the tub is nearly drained. What time is it?",
+        "question": "7:35 PM",
+        "correctAnswer": "7:35 PM",
+        "options": [
+          "7:40 PM",
+          "7:30 PM",
+          "7:35 PM"
+        ],
+        "hint": "After seven o'clock, the minute hand on 7 means 7 times 5, which is 35 minutes.",
+        "emoji": "⏱️",
+        "explanation": "The minute hand on 7 means 7 × 5 = 35 minutes, so the time is 7:35 PM.",
+        "funFact": "Draining a tub is often one of the last steps of bath time.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 104,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L104_Q1",
+        "gameType": "time",
         "level": 104,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L104_Q1",
-                "gameType": "time",
-                "level": 104,
-                "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
-                "question": "8:00 AM",
-                "correctAnswer": "8:00 AM",
-                "options": [
-                    "12:00 PM",
-                    "4:00 PM",
-                    "8:00 AM"
-                ],
-                "hint": "Select the correct hour: 8:00 AM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 8:00 AM, the bright sun is shining and morning birds sing to wake us up!"
-            },
-            {
-                "id": "KIDS_TIME_L104_Q2",
-                "gameType": "time",
-                "level": 104,
-                "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
-                "question": "12:00 PM",
-                "correctAnswer": "12:00 PM",
-                "options": [
-                    "4:00 PM",
-                    "8:00 AM",
-                    "12:00 PM"
-                ],
-                "hint": "Select the correct hour: 12:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "12:00 PM is also called Noon, which is when the sun is highest in the sky!"
-            },
-            {
-                "id": "KIDS_TIME_L104_Q3",
-                "gameType": "time",
-                "level": 104,
-                "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
-                "question": "4:00 PM",
-                "correctAnswer": "4:00 PM",
-                "options": [
-                    "8:00 AM",
-                    "12:00 PM",
-                    "4:00 PM"
-                ],
-                "hint": "Select the correct hour: 4:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 4:00 PM, school is usually over and it's the perfect time to play outside!"
-            }
-        ]
-    },
-    {
+        "instruction": "It is forty minutes past six, and slippers shuffle toward the kitchen. What time is it?",
+        "question": "6:40 AM",
+        "correctAnswer": "6:40 AM",
+        "options": [
+          "6:35 AM",
+          "6:45 AM",
+          "6:40 AM"
+        ],
+        "hint": "Each number on the clock face stands for 5 minutes — after six, the minute hand is on 8.",
+        "emoji": "⏱️",
+        "explanation": "Since 40 minutes have passed six, the clock reads 6:40 AM.",
+        "funFact": "Shuffling slippers are a cozy sound in a quiet early morning.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L104_Q2",
+        "gameType": "time",
+        "level": 104,
+        "instruction": "The minute hand rests on the 4 and the hour hand is just past the 11, in the morning. What time is it?",
+        "question": "11:20 AM",
+        "correctAnswer": "11:20 AM",
+        "options": [
+          "11:25 AM",
+          "11:15 AM",
+          "11:20 AM"
+        ],
+        "hint": "Starting from eleven o'clock, count by fives until you reach 20 minutes.",
+        "emoji": "🕐",
+        "explanation": "11:20 AM is 20 minutes after eleven o'clock — the minute hand rests on 4.",
+        "funFact": "11:20 AM is a common time for a morning lesson to be wrapping up.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L104_Q3",
+        "gameType": "time",
+        "level": 104,
+        "instruction": "It is fifty minutes past nine, and the last yawn escapes before sleep. What time is it?",
+        "question": "9:50 PM",
+        "correctAnswer": "9:50 PM",
+        "options": [
+          "9:45 PM",
+          "9:55 PM",
+          "9:50 PM"
+        ],
+        "hint": "After nine o'clock, the minute hand on 10 means 10 times 5, which is 50 minutes.",
+        "emoji": "⏱️",
+        "explanation": "The minute hand on 10 means 10 × 5 = 50 minutes, so the time is 9:50 PM.",
+        "funFact": "A big yawn is often one of the last signs before falling asleep.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 105,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L105_Q1",
+        "gameType": "time",
         "level": 105,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L105_Q1",
-                "gameType": "time",
-                "level": 105,
-                "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
-                "question": "9:00 PM",
-                "correctAnswer": "9:00 PM",
-                "options": [
-                    "9:00 PM",
-                    "4:00 PM",
-                    "12:00 PM"
-                ],
-                "hint": "Select the correct hour: 9:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 9:00 PM, the moon is up high and nocturnal owls wake up for the night!"
-            },
-            {
-                "id": "KIDS_TIME_L105_Q2",
-                "gameType": "time",
-                "level": 105,
-                "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
-                "question": "8:00 AM",
-                "correctAnswer": "8:00 AM",
-                "options": [
-                    "4:00 PM",
-                    "12:00 PM",
-                    "8:00 AM"
-                ],
-                "hint": "Select the correct hour: 8:00 AM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 8:00 AM, the bright sun is shining and morning birds sing to wake us up!"
-            },
-            {
-                "id": "KIDS_TIME_L105_Q3",
-                "gameType": "time",
-                "level": 105,
-                "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
-                "question": "12:00 PM",
-                "correctAnswer": "12:00 PM",
-                "options": [
-                    "12:00 PM",
-                    "9:00 PM",
-                    "8:00 AM"
-                ],
-                "hint": "Select the correct hour: 12:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "12:00 PM is also called Noon, which is when the sun is highest in the sky!"
-            }
-        ]
-    },
-    {
+        "instruction": "The minute hand rests on the 10 and the hour hand is just past the 7, in the morning. What time is it?",
+        "question": "7:50 AM",
+        "correctAnswer": "7:50 AM",
+        "options": [
+          "7:50 AM",
+          "7:55 AM",
+          "7:45 AM"
+        ],
+        "hint": "Each number on the clock face stands for 5 minutes — after seven, the minute hand is on 10.",
+        "emoji": "🕐",
+        "explanation": "Since 50 minutes have passed seven, the clock reads 7:50 AM.",
+        "funFact": "7:50 AM is a common time to be making the final rush to school.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L105_Q2",
+        "gameType": "time",
+        "level": 105,
+        "instruction": "It is twenty minutes past two, and a puzzle piece finally clicks into place. What time is it?",
+        "question": "2:20 PM",
+        "correctAnswer": "2:20 PM",
+        "options": [
+          "2:20 PM",
+          "2:25 PM",
+          "2:15 PM"
+        ],
+        "hint": "Starting from two o'clock, count by fives until you reach 20 minutes.",
+        "emoji": "⏱️",
+        "explanation": "2:20 PM is 20 minutes after two o'clock — the minute hand rests on 4.",
+        "funFact": "That satisfying click means a puzzle piece has found its perfect spot.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L105_Q3",
+        "gameType": "time",
+        "level": 105,
+        "instruction": "It is fifty-five minutes past eight, just before nine o'clock arrives. What time is it?",
+        "question": "8:55 PM",
+        "correctAnswer": "8:55 PM",
+        "options": [
+          "8:55 PM",
+          "9:00 PM",
+          "8:50 PM"
+        ],
+        "hint": "After eight o'clock, the minute hand on 11 means 11 times 5, which is 55 minutes.",
+        "emoji": "⏱️",
+        "explanation": "The minute hand on 11 means 11 × 5 = 55 minutes, so the time is 8:55 PM.",
+        "funFact": "The last few minutes before nine o'clock can feel extra sleepy.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 106,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L106_Q1",
+        "gameType": "time",
         "level": 106,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L106_Q1",
-                "gameType": "time",
-                "level": 106,
-                "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
-                "question": "4:00 PM",
-                "correctAnswer": "4:00 PM",
-                "options": [
-                    "4:00 PM",
-                    "12:00 PM",
-                    "8:00 AM"
-                ],
-                "hint": "Select the correct hour: 4:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 4:00 PM, school is usually over and it's the perfect time to play outside!"
-            },
-            {
-                "id": "KIDS_TIME_L106_Q2",
-                "gameType": "time",
-                "level": 106,
-                "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
-                "question": "9:00 PM",
-                "correctAnswer": "9:00 PM",
-                "options": [
-                    "9:00 PM",
-                    "12:00 PM",
-                    "4:00 PM"
-                ],
-                "hint": "Select the correct hour: 9:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 9:00 PM, the moon is up high and nocturnal owls wake up for the night!"
-            },
-            {
-                "id": "KIDS_TIME_L106_Q3",
-                "gameType": "time",
-                "level": 106,
-                "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
-                "question": "8:00 AM",
-                "correctAnswer": "8:00 AM",
-                "options": [
-                    "9:00 PM",
-                    "8:00 AM",
-                    "4:00 PM"
-                ],
-                "hint": "Select the correct hour: 8:00 AM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 8:00 AM, the bright sun is shining and morning birds sing to wake us up!"
-            }
-        ]
-    },
-    {
+        "instruction": "It is ten minutes past ten, and the library cart rolls into the room. What time is it?",
+        "question": "10:10 AM",
+        "correctAnswer": "10:10 AM",
+        "options": [
+          "10:10 AM",
+          "10:15 AM",
+          "10:05 AM"
+        ],
+        "hint": "Each number on the clock face stands for 5 minutes — after ten, the minute hand is on 2.",
+        "emoji": "⏱️",
+        "explanation": "Since 10 minutes have passed ten, the clock reads 10:10 AM.",
+        "funFact": "Library carts often bring a fresh batch of books to choose from.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L106_Q2",
+        "gameType": "time",
+        "level": 106,
+        "instruction": "The minute hand rests on the 4 and the hour hand is just past the 5, in the evening. What time is it?",
+        "question": "5:20 PM",
+        "correctAnswer": "5:20 PM",
+        "options": [
+          "5:20 PM",
+          "5:15 PM",
+          "5:25 PM"
+        ],
+        "hint": "Starting from five o'clock, count by fives until you reach 20 minutes.",
+        "emoji": "🕐",
+        "explanation": "5:20 PM is 20 minutes after five o'clock — the minute hand rests on 4.",
+        "funFact": "5:20 PM is a common time for evening plans to be getting started.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L106_Q3",
+        "gameType": "time",
+        "level": 106,
+        "instruction": "It is thirty-five minutes past eleven, and tummies begin to rumble for lunch. What time is it?",
+        "question": "11:35 AM",
+        "correctAnswer": "11:35 AM",
+        "options": [
+          "11:40 AM",
+          "11:35 AM",
+          "11:30 AM"
+        ],
+        "hint": "After eleven o'clock, the minute hand on 7 means 7 times 5, which is 35 minutes.",
+        "emoji": "⏱️",
+        "explanation": "The minute hand on 7 means 7 × 5 = 35 minutes, so the time is 11:35 AM.",
+        "funFact": "Rumbling tummies are a clear sign that lunchtime is getting close.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 107,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L107_Q1",
+        "gameType": "time",
         "level": 107,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L107_Q1",
-                "gameType": "time",
-                "level": 107,
-                "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
-                "question": "12:00 PM",
-                "correctAnswer": "12:00 PM",
-                "options": [
-                    "4:00 PM",
-                    "9:00 PM",
-                    "12:00 PM"
-                ],
-                "hint": "Select the correct hour: 12:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "12:00 PM is also called Noon, which is when the sun is highest in the sky!"
-            },
-            {
-                "id": "KIDS_TIME_L107_Q2",
-                "gameType": "time",
-                "level": 107,
-                "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
-                "question": "4:00 PM",
-                "correctAnswer": "4:00 PM",
-                "options": [
-                    "4:00 PM",
-                    "9:00 PM",
-                    "12:00 PM"
-                ],
-                "hint": "Select the correct hour: 4:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 4:00 PM, school is usually over and it's the perfect time to play outside!"
-            },
-            {
-                "id": "KIDS_TIME_L107_Q3",
-                "gameType": "time",
-                "level": 107,
-                "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
-                "question": "9:00 PM",
-                "correctAnswer": "9:00 PM",
-                "options": [
-                    "9:00 PM",
-                    "8:00 AM",
-                    "12:00 PM"
-                ],
-                "hint": "Select the correct hour: 9:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 9:00 PM, the moon is up high and nocturnal owls wake up for the night!"
-            }
-        ]
-    },
-    {
+        "instruction": "It is forty minutes past three, and backpacks are nearly zipped for home. What time is it?",
+        "question": "3:40 PM",
+        "correctAnswer": "3:40 PM",
+        "options": [
+          "3:35 PM",
+          "3:40 PM",
+          "3:45 PM"
+        ],
+        "hint": "Each number on the clock face stands for 5 minutes — after three, the minute hand is on 8.",
+        "emoji": "⏱️",
+        "explanation": "Since 40 minutes have passed three, the clock reads 3:40 PM.",
+        "funFact": "Zipping up a backpack is often the last step before heading home.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L107_Q2",
+        "gameType": "time",
+        "level": 107,
+        "instruction": "The minute hand rests on the 10 and the hour hand is just past the 4, in the afternoon. What time is it?",
+        "question": "4:50 PM",
+        "correctAnswer": "4:50 PM",
+        "options": [
+          "4:45 PM",
+          "4:55 PM",
+          "4:50 PM"
+        ],
+        "hint": "Starting from four o'clock, count by fives until you reach 50 minutes.",
+        "emoji": "🕐",
+        "explanation": "4:50 PM is 50 minutes after four o'clock — the minute hand rests on 10.",
+        "funFact": "4:50 PM is a common time for afternoon plans to be winding down.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L107_Q3",
+        "gameType": "time",
+        "level": 107,
+        "instruction": "It is twenty-five minutes past one, and a new chapter begins in story time. What time is it?",
+        "question": "1:25 PM",
+        "correctAnswer": "1:25 PM",
+        "options": [
+          "1:25 PM",
+          "1:20 PM",
+          "1:30 PM"
+        ],
+        "hint": "After one o'clock, the minute hand on 5 means 5 times 5, which is 25 minutes.",
+        "emoji": "⏱️",
+        "explanation": "The minute hand on 5 means 5 × 5 = 25 minutes, so the time is 1:25 PM.",
+        "funFact": "Starting a new chapter is an exciting moment in any good book.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 108,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L108_Q1",
+        "gameType": "time",
         "level": 108,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L108_Q1",
-                "gameType": "time",
-                "level": 108,
-                "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
-                "question": "8:00 AM",
-                "correctAnswer": "8:00 AM",
-                "options": [
-                    "8:00 AM",
-                    "12:00 PM",
-                    "4:00 PM"
-                ],
-                "hint": "Select the correct hour: 8:00 AM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 8:00 AM, the bright sun is shining and morning birds sing to wake us up!"
-            },
-            {
-                "id": "KIDS_TIME_L108_Q2",
-                "gameType": "time",
-                "level": 108,
-                "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
-                "question": "12:00 PM",
-                "correctAnswer": "12:00 PM",
-                "options": [
-                    "4:00 PM",
-                    "12:00 PM",
-                    "9:00 PM"
-                ],
-                "hint": "Select the correct hour: 12:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "12:00 PM is also called Noon, which is when the sun is highest in the sky!"
-            },
-            {
-                "id": "KIDS_TIME_L108_Q3",
-                "gameType": "time",
-                "level": 108,
-                "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
-                "question": "4:00 PM",
-                "correctAnswer": "4:00 PM",
-                "options": [
-                    "4:00 PM",
-                    "12:00 PM",
-                    "9:00 PM"
-                ],
-                "hint": "Select the correct hour: 4:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 4:00 PM, school is usually over and it's the perfect time to play outside!"
-            }
-        ]
-    },
-    {
+        "instruction": "It is fifty-five minutes past seven, and the front door swings open for school. What time is it?",
+        "question": "7:55 AM",
+        "correctAnswer": "7:55 AM",
+        "options": [
+          "7:55 AM",
+          "8:00 AM",
+          "7:50 AM"
+        ],
+        "hint": "Each number on the clock face stands for 5 minutes — after seven, the minute hand is on 11.",
+        "emoji": "⏱️",
+        "explanation": "Since 55 minutes have passed seven, the clock reads 7:55 AM.",
+        "funFact": "A swinging front door often means someone is racing off to school.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L108_Q2",
+        "gameType": "time",
+        "level": 108,
+        "instruction": "The minute hand rests on the 7 and the hour hand is just past the 2, in the afternoon. What time is it?",
+        "question": "2:35 PM",
+        "correctAnswer": "2:35 PM",
+        "options": [
+          "2:40 PM",
+          "2:35 PM",
+          "2:30 PM"
+        ],
+        "hint": "Starting from two o'clock, count by fives until you reach 35 minutes.",
+        "emoji": "🕐",
+        "explanation": "2:35 PM is 35 minutes after two o'clock — the minute hand rests on 7.",
+        "funFact": "2:35 PM is a common time for an afternoon activity to be well underway.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L108_Q3",
+        "gameType": "time",
+        "level": 108,
+        "instruction": "It is five minutes past nine, and the very first lesson has just begun. What time is it?",
+        "question": "9:05 AM",
+        "correctAnswer": "9:05 AM",
+        "options": [
+          "9:10 AM",
+          "9:00 AM",
+          "9:05 AM"
+        ],
+        "hint": "After nine o'clock, the minute hand on 1 means 1 times 5, which is 5 minutes.",
+        "emoji": "⏱️",
+        "explanation": "The minute hand on 1 means 1 × 5 = 5 minutes, so the time is 9:05 AM.",
+        "funFact": "The very first lesson of the day often sets the tone for learning.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 109,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L109_Q1",
+        "gameType": "time",
         "level": 109,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L109_Q1",
-                "gameType": "time",
-                "level": 109,
-                "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
-                "question": "9:00 PM",
-                "correctAnswer": "9:00 PM",
-                "options": [
-                    "9:00 PM",
-                    "12:00 PM",
-                    "4:00 PM"
-                ],
-                "hint": "Select the correct hour: 9:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 9:00 PM, the moon is up high and nocturnal owls wake up for the night!"
-            },
-            {
-                "id": "KIDS_TIME_L109_Q2",
-                "gameType": "time",
-                "level": 109,
-                "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
-                "question": "8:00 AM",
-                "correctAnswer": "8:00 AM",
-                "options": [
-                    "8:00 AM",
-                    "12:00 PM",
-                    "4:00 PM"
-                ],
-                "hint": "Select the correct hour: 8:00 AM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 8:00 AM, the bright sun is shining and morning birds sing to wake us up!"
-            },
-            {
-                "id": "KIDS_TIME_L109_Q3",
-                "gameType": "time",
-                "level": 109,
-                "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
-                "question": "12:00 PM",
-                "correctAnswer": "12:00 PM",
-                "options": [
-                    "9:00 PM",
-                    "4:00 PM",
-                    "12:00 PM"
-                ],
-                "hint": "Select the correct hour: 12:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "12:00 PM is also called Noon, which is when the sun is highest in the sky!"
-            }
-        ]
-    },
-    {
+        "instruction": "It is forty minutes past twelve, and the last lunch tray is being cleared. What time is it?",
+        "question": "12:40 PM",
+        "correctAnswer": "12:40 PM",
+        "options": [
+          "12:45 PM",
+          "12:35 PM",
+          "12:40 PM"
+        ],
+        "hint": "Each number on the clock face stands for 5 minutes — after twelve, the minute hand is on 8.",
+        "emoji": "⏱️",
+        "explanation": "Since 40 minutes have passed twelve, the clock reads 12:40 PM.",
+        "funFact": "Clearing the last tray usually means the lunch period is ending.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L109_Q2",
+        "gameType": "time",
+        "level": 109,
+        "instruction": "The minute hand rests on the 2 and the hour hand is just past the 6, in the evening. What time is it?",
+        "question": "6:10 PM",
+        "correctAnswer": "6:10 PM",
+        "options": [
+          "6:10 PM",
+          "6:05 PM",
+          "6:15 PM"
+        ],
+        "hint": "Starting from six o'clock, count by fives until you reach 10 minutes.",
+        "emoji": "🕐",
+        "explanation": "6:10 PM is 10 minutes after six o'clock — the minute hand rests on 2.",
+        "funFact": "6:10 PM is a common time for an evening meal to be just getting started.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L109_Q3",
+        "gameType": "time",
+        "level": 109,
+        "instruction": "It is fifty minutes past ten, and the class lines up right before recess ends. What time is it?",
+        "question": "10:50 AM",
+        "correctAnswer": "10:50 AM",
+        "options": [
+          "10:55 AM",
+          "10:50 AM",
+          "10:45 AM"
+        ],
+        "hint": "After ten o'clock, the minute hand on 10 means 10 times 5, which is 50 minutes.",
+        "emoji": "⏱️",
+        "explanation": "The minute hand on 10 means 10 × 5 = 50 minutes, so the time is 10:50 AM.",
+        "funFact": "Lining up is often the signal that recess is coming to a close.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 110,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L110_Q1",
+        "gameType": "time",
         "level": 110,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L110_Q1",
-                "gameType": "time",
-                "level": 110,
-                "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
-                "question": "4:00 PM",
-                "correctAnswer": "4:00 PM",
-                "options": [
-                    "9:00 PM",
-                    "8:00 AM",
-                    "4:00 PM"
-                ],
-                "hint": "Select the correct hour: 4:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 4:00 PM, school is usually over and it's the perfect time to play outside!"
-            },
-            {
-                "id": "KIDS_TIME_L110_Q2",
-                "gameType": "time",
-                "level": 110,
-                "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
-                "question": "9:00 PM",
-                "correctAnswer": "9:00 PM",
-                "options": [
-                    "9:00 PM",
-                    "8:00 AM",
-                    "12:00 PM"
-                ],
-                "hint": "Select the correct hour: 9:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 9:00 PM, the moon is up high and nocturnal owls wake up for the night!"
-            },
-            {
-                "id": "KIDS_TIME_L110_Q3",
-                "gameType": "time",
-                "level": 110,
-                "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
-                "question": "8:00 AM",
-                "correctAnswer": "8:00 AM",
-                "options": [
-                    "9:00 PM",
-                    "8:00 AM",
-                    "4:00 PM"
-                ],
-                "hint": "Select the correct hour: 8:00 AM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 8:00 AM, the bright sun is shining and morning birds sing to wake us up!"
-            }
-        ]
-    }
+        "instruction": "The minute hand rests on the 11 and the hour hand is just past the 1, in the afternoon. What time is it?",
+        "question": "1:55 PM",
+        "correctAnswer": "1:55 PM",
+        "options": [
+          "2:00 PM",
+          "1:55 PM",
+          "1:50 PM"
+        ],
+        "hint": "Each number on the clock face stands for 5 minutes — after one, the minute hand is on 11.",
+        "emoji": "🕐",
+        "explanation": "Since 55 minutes have passed one, the clock reads 1:55 PM.",
+        "funFact": "1:55 PM is a common time to be just moments from a new hour.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L110_Q2",
+        "gameType": "time",
+        "level": 110,
+        "instruction": "It is twenty minutes past eight, and the classroom door is propped wide open. What time is it?",
+        "question": "8:20 AM",
+        "correctAnswer": "8:20 AM",
+        "options": [
+          "8:20 AM",
+          "8:15 AM",
+          "8:25 AM"
+        ],
+        "hint": "Starting from eight o'clock, count by fives until you reach 20 minutes.",
+        "emoji": "⏱️",
+        "explanation": "8:20 AM is 20 minutes after eight o'clock — the minute hand rests on 4.",
+        "funFact": "A wide-open classroom door often welcomes children in for the day.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L110_Q3",
+        "gameType": "time",
+        "level": 110,
+        "instruction": "It is thirty-five minutes past five, and the table is nearly set for dinner. What time is it?",
+        "question": "5:35 PM",
+        "correctAnswer": "5:35 PM",
+        "options": [
+          "5:30 PM",
+          "5:40 PM",
+          "5:35 PM"
+        ],
+        "hint": "After five o'clock, the minute hand on 7 means 7 times 5, which is 35 minutes.",
+        "emoji": "⏱️",
+        "explanation": "The minute hand on 7 means 7 × 5 = 35 minutes, so the time is 5:35 PM.",
+        "funFact": "Setting the table is often one of the last steps before a meal begins.",
+        "subtype": "five_minute_intervals",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  }
 ]

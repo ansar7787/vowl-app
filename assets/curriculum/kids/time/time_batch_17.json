@@ -1,562 +1,622 @@
 [
-    {
+  {
+    "level": 161,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L161_Q1",
+        "gameType": "time",
         "level": 161,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L161_Q1",
-                "gameType": "time",
-                "level": 161,
-                "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
-                "question": "9:00 PM",
-                "correctAnswer": "9:00 PM",
-                "options": [
-                    "4:00 PM",
-                    "9:00 PM",
-                    "12:00 PM"
-                ],
-                "hint": "Select the correct hour: 9:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 9:00 PM, the moon is up high and nocturnal owls wake up for the night!"
-            },
-            {
-                "id": "KIDS_TIME_L161_Q2",
-                "gameType": "time",
-                "level": 161,
-                "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
-                "question": "8:00 AM",
-                "correctAnswer": "8:00 AM",
-                "options": [
-                    "4:00 PM",
-                    "9:00 PM",
-                    "8:00 AM"
-                ],
-                "hint": "Select the correct hour: 8:00 AM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 8:00 AM, the bright sun is shining and morning birds sing to wake us up!"
-            },
-            {
-                "id": "KIDS_TIME_L161_Q3",
-                "gameType": "time",
-                "level": 161,
-                "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
-                "question": "12:00 PM",
-                "correctAnswer": "12:00 PM",
-                "options": [
-                    "8:00 AM",
-                    "4:00 PM",
-                    "12:00 PM"
-                ],
-                "hint": "Select the correct hour: 12:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "12:00 PM is also called Noon, which is when the sun is highest in the sky!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which time is earliest: 8:30 AM, 2:15 PM, or 6:00 PM?",
+        "question": "8:30 AM",
+        "correctAnswer": "8:30 AM",
+        "options": [
+          "2:15 PM",
+          "6:00 PM",
+          "8:30 AM"
+        ],
+        "hint": "Look at 8:30 AM, 2:15 PM, 6:00 PM — check which are AM and which are PM first.",
+        "emoji": "⏳",
+        "explanation": "Comparing all three, 8:30 AM happens first, ahead of 2:15 PM and 6:00 PM.",
+        "funFact": "Every AM time happens before every PM time on the very same day.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L161_Q2",
+        "gameType": "time",
+        "level": 161,
+        "instruction": "Recess is at 9:00 AM. Lunch is at 12:00 PM. Which happens first?",
+        "question": "9:00 AM",
+        "correctAnswer": "9:00 AM",
+        "options": [
+          "12:00 PM",
+          "3:00 PM",
+          "9:00 AM"
+        ],
+        "hint": "Picture a daily schedule with 9:00 AM and 12:00 PM on it.",
+        "emoji": "📅",
+        "explanation": "Comparing the two times, 9:00 AM is the earlier one.",
+        "funFact": "Recess is a common mid-morning break before the midday meal.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L161_Q3",
+        "gameType": "time",
+        "level": 161,
+        "instruction": "The school day begins at 9:00 AM and lasts 6 hours. What time does it end?",
+        "question": "3:00 PM",
+        "correctAnswer": "3:00 PM",
+        "options": [
+          "4:00 PM",
+          "3:00 PM",
+          "2:00 PM"
+        ],
+        "hint": "Counting 6 hours past 9:00 AM lands you at the answer.",
+        "emoji": "🗓️",
+        "explanation": "For the school day, 6 hours after 9:00 AM is 3:00 PM.",
+        "funFact": "Six hours is a common length for a full school day.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 162,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L162_Q1",
+        "gameType": "time",
         "level": 162,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L162_Q1",
-                "gameType": "time",
-                "level": 162,
-                "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
-                "question": "4:00 PM",
-                "correctAnswer": "4:00 PM",
-                "options": [
-                    "8:00 AM",
-                    "9:00 PM",
-                    "4:00 PM"
-                ],
-                "hint": "Select the correct hour: 4:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 4:00 PM, school is usually over and it's the perfect time to play outside!"
-            },
-            {
-                "id": "KIDS_TIME_L162_Q2",
-                "gameType": "time",
-                "level": 162,
-                "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
-                "question": "9:00 PM",
-                "correctAnswer": "9:00 PM",
-                "options": [
-                    "8:00 AM",
-                    "9:00 PM",
-                    "4:00 PM"
-                ],
-                "hint": "Select the correct hour: 9:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 9:00 PM, the moon is up high and nocturnal owls wake up for the night!"
-            },
-            {
-                "id": "KIDS_TIME_L162_Q3",
-                "gameType": "time",
-                "level": 162,
-                "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
-                "question": "8:00 AM",
-                "correctAnswer": "8:00 AM",
-                "options": [
-                    "8:00 AM",
-                    "12:00 PM",
-                    "4:00 PM"
-                ],
-                "hint": "Select the correct hour: 8:00 AM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 8:00 AM, the bright sun is shining and morning birds sing to wake us up!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which time is latest: 7:15 AM, 1:00 PM, or 9:45 PM?",
+        "question": "9:45 PM",
+        "correctAnswer": "9:45 PM",
+        "options": [
+          "9:45 PM",
+          "7:15 AM",
+          "1:00 PM"
+        ],
+        "hint": "Look at 7:15 AM, 1:00 PM, 9:45 PM — check which are AM and which are PM first.",
+        "emoji": "⏳",
+        "explanation": "Comparing all three, 9:45 PM happens last, after 7:15 AM and 1:00 PM.",
+        "funFact": "Evening times with PM are always later in the day than morning AM times.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L162_Q2",
+        "gameType": "time",
+        "level": 162,
+        "instruction": "Breakfast is at 7:30 AM. The school bus comes at 8:15 AM. Which happens first?",
+        "question": "7:30 AM",
+        "correctAnswer": "7:30 AM",
+        "options": [
+          "7:30 AM",
+          "8:15 AM",
+          "9:00 AM"
+        ],
+        "hint": "Picture a daily schedule with 7:30 AM and 8:15 AM on it.",
+        "emoji": "📅",
+        "explanation": "Comparing the two times, 7:30 AM is the earlier one.",
+        "funFact": "Breakfast usually happens before the school bus arrives.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L162_Q3",
+        "gameType": "time",
+        "level": 162,
+        "instruction": "The county fair opens at 9:00 AM and runs for 5 hours. What time does it close for the afternoon break?",
+        "question": "2:00 PM",
+        "correctAnswer": "2:00 PM",
+        "options": [
+          "3:00 PM",
+          "2:00 PM",
+          "1:00 PM"
+        ],
+        "hint": "Counting 5 hours past 9:00 AM lands you at the answer.",
+        "emoji": "🗓️",
+        "explanation": "For the county fair, 5 hours after 9:00 AM is 2:00 PM.",
+        "funFact": "Five hours gives visitors plenty of time to enjoy fair rides and games.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 163,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L163_Q1",
+        "gameType": "time",
         "level": 163,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L163_Q1",
-                "gameType": "time",
-                "level": 163,
-                "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
-                "question": "12:00 PM",
-                "correctAnswer": "12:00 PM",
-                "options": [
-                    "9:00 PM",
-                    "4:00 PM",
-                    "12:00 PM"
-                ],
-                "hint": "Select the correct hour: 12:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "12:00 PM is also called Noon, which is when the sun is highest in the sky!"
-            },
-            {
-                "id": "KIDS_TIME_L163_Q2",
-                "gameType": "time",
-                "level": 163,
-                "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
-                "question": "4:00 PM",
-                "correctAnswer": "4:00 PM",
-                "options": [
-                    "4:00 PM",
-                    "12:00 PM",
-                    "9:00 PM"
-                ],
-                "hint": "Select the correct hour: 4:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 4:00 PM, school is usually over and it's the perfect time to play outside!"
-            },
-            {
-                "id": "KIDS_TIME_L163_Q3",
-                "gameType": "time",
-                "level": 163,
-                "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
-                "question": "9:00 PM",
-                "correctAnswer": "9:00 PM",
-                "options": [
-                    "9:00 PM",
-                    "4:00 PM",
-                    "12:00 PM"
-                ],
-                "hint": "Select the correct hour: 9:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 9:00 PM, the moon is up high and nocturnal owls wake up for the night!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which time is earliest: 6:45 AM, 11:30 AM, or 4:00 PM?",
+        "question": "6:45 AM",
+        "correctAnswer": "6:45 AM",
+        "options": [
+          "6:45 AM",
+          "11:30 AM",
+          "4:00 PM"
+        ],
+        "hint": "Look at 6:45 AM, 11:30 AM, 4:00 PM — check which are AM and which are PM first.",
+        "emoji": "⏳",
+        "explanation": "Comparing all three, 6:45 AM happens first, ahead of 11:30 AM and 4:00 PM.",
+        "funFact": "The clock keeps moving forward through morning, noon, and afternoon in that order.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L163_Q2",
+        "gameType": "time",
+        "level": 163,
+        "instruction": "Art class is at 11:00 AM. Lunch is at 12:30 PM. Which happens first?",
+        "question": "11:00 AM",
+        "correctAnswer": "11:00 AM",
+        "options": [
+          "12:30 PM",
+          "2:00 PM",
+          "11:00 AM"
+        ],
+        "hint": "Picture a daily schedule with 11:00 AM and 12:30 PM on it.",
+        "emoji": "📅",
+        "explanation": "Comparing the two times, 11:00 AM is the earlier one.",
+        "funFact": "Art class often happens in the late morning, right before lunch.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L163_Q3",
+        "gameType": "time",
+        "level": 163,
+        "instruction": "The art museum opens at 9:00 AM and stays open 4 hours before its afternoon break. What time does the break begin?",
+        "question": "1:00 PM",
+        "correctAnswer": "1:00 PM",
+        "options": [
+          "2:00 PM",
+          "12:00 PM",
+          "1:00 PM"
+        ],
+        "hint": "Counting 4 hours past 9:00 AM lands you at the answer.",
+        "emoji": "🗓️",
+        "explanation": "For the art museum, 4 hours after 9:00 AM is 1:00 PM.",
+        "funFact": "Four hours gives visitors plenty of time to see every painting.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 164,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L164_Q1",
+        "gameType": "time",
         "level": 164,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L164_Q1",
-                "gameType": "time",
-                "level": 164,
-                "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
-                "question": "8:00 AM",
-                "correctAnswer": "8:00 AM",
-                "options": [
-                    "4:00 PM",
-                    "9:00 PM",
-                    "8:00 AM"
-                ],
-                "hint": "Select the correct hour: 8:00 AM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 8:00 AM, the bright sun is shining and morning birds sing to wake us up!"
-            },
-            {
-                "id": "KIDS_TIME_L164_Q2",
-                "gameType": "time",
-                "level": 164,
-                "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
-                "question": "12:00 PM",
-                "correctAnswer": "12:00 PM",
-                "options": [
-                    "9:00 PM",
-                    "4:00 PM",
-                    "12:00 PM"
-                ],
-                "hint": "Select the correct hour: 12:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "12:00 PM is also called Noon, which is when the sun is highest in the sky!"
-            },
-            {
-                "id": "KIDS_TIME_L164_Q3",
-                "gameType": "time",
-                "level": 164,
-                "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
-                "question": "4:00 PM",
-                "correctAnswer": "4:00 PM",
-                "options": [
-                    "4:00 PM",
-                    "8:00 AM",
-                    "12:00 PM"
-                ],
-                "hint": "Select the correct hour: 4:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 4:00 PM, school is usually over and it's the perfect time to play outside!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which time is latest: 9:15 AM, 12:45 PM, or 5:00 PM?",
+        "question": "5:00 PM",
+        "correctAnswer": "5:00 PM",
+        "options": [
+          "9:15 AM",
+          "12:45 PM",
+          "5:00 PM"
+        ],
+        "hint": "Look at 9:15 AM, 12:45 PM, 5:00 PM — check which are AM and which are PM first.",
+        "emoji": "⏳",
+        "explanation": "Comparing all three, 5:00 PM happens last, after 9:15 AM and 12:45 PM.",
+        "funFact": "Afternoon and evening PM times always come after morning AM times.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L164_Q2",
+        "gameType": "time",
+        "level": 164,
+        "instruction": "The library visit is at 10:00 AM. Swim class is at 1:00 PM. Which happens first?",
+        "question": "10:00 AM",
+        "correctAnswer": "10:00 AM",
+        "options": [
+          "10:00 AM",
+          "3:00 PM",
+          "1:00 PM"
+        ],
+        "hint": "Picture a daily schedule with 10:00 AM and 1:00 PM on it.",
+        "emoji": "📅",
+        "explanation": "Comparing the two times, 10:00 AM is the earlier one.",
+        "funFact": "A morning library visit is a calm way to start the school day.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L164_Q3",
+        "gameType": "time",
+        "level": 164,
+        "instruction": "The amusement park opens at 10:00 AM and the family stays for 6 hours. What time do they leave?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
+        "options": [
+          "4:00 PM",
+          "3:00 PM",
+          "5:00 PM"
+        ],
+        "hint": "Counting 6 hours past 10:00 AM lands you at the answer.",
+        "emoji": "🗓️",
+        "explanation": "For the amusement park, 6 hours after 10:00 AM is 4:00 PM.",
+        "funFact": "Six hours at an amusement park allows time for lots of rides.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 165,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L165_Q1",
+        "gameType": "time",
         "level": 165,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L165_Q1",
-                "gameType": "time",
-                "level": 165,
-                "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
-                "question": "9:00 PM",
-                "correctAnswer": "9:00 PM",
-                "options": [
-                    "9:00 PM",
-                    "12:00 PM",
-                    "4:00 PM"
-                ],
-                "hint": "Select the correct hour: 9:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 9:00 PM, the moon is up high and nocturnal owls wake up for the night!"
-            },
-            {
-                "id": "KIDS_TIME_L165_Q2",
-                "gameType": "time",
-                "level": 165,
-                "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
-                "question": "8:00 AM",
-                "correctAnswer": "8:00 AM",
-                "options": [
-                    "12:00 PM",
-                    "4:00 PM",
-                    "8:00 AM"
-                ],
-                "hint": "Select the correct hour: 8:00 AM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 8:00 AM, the bright sun is shining and morning birds sing to wake us up!"
-            },
-            {
-                "id": "KIDS_TIME_L165_Q3",
-                "gameType": "time",
-                "level": 165,
-                "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
-                "question": "12:00 PM",
-                "correctAnswer": "12:00 PM",
-                "options": [
-                    "8:00 AM",
-                    "9:00 PM",
-                    "12:00 PM"
-                ],
-                "hint": "Select the correct hour: 12:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "12:00 PM is also called Noon, which is when the sun is highest in the sky!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which time is earliest: 7:00 AM, 12:15 PM, or 8:00 PM?",
+        "question": "7:00 AM",
+        "correctAnswer": "7:00 AM",
+        "options": [
+          "7:00 AM",
+          "12:15 PM",
+          "8:00 PM"
+        ],
+        "hint": "Look at 7:00 AM, 12:15 PM, 8:00 PM — check which are AM and which are PM first.",
+        "emoji": "⏳",
+        "explanation": "Comparing all three, 7:00 AM happens first, ahead of 12:15 PM and 8:00 PM.",
+        "funFact": "Any time written with AM comes before noon, and PM comes after.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L165_Q2",
+        "gameType": "time",
+        "level": 165,
+        "instruction": "School starts at 8:00 AM. The first recess is at 10:15 AM. Which happens first?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
+        "options": [
+          "8:00 AM",
+          "10:15 AM",
+          "12:00 PM"
+        ],
+        "hint": "Picture a daily schedule with 8:00 AM and 10:15 AM on it.",
+        "emoji": "📅",
+        "explanation": "Comparing the two times, 8:00 AM is the earlier one.",
+        "funFact": "The start of the school day always comes before the first recess.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L165_Q3",
+        "gameType": "time",
+        "level": 165,
+        "instruction": "The science fair opens at 10:00 AM and runs for 5 hours. What time does it end?",
+        "question": "3:00 PM",
+        "correctAnswer": "3:00 PM",
+        "options": [
+          "3:00 PM",
+          "4:00 PM",
+          "2:00 PM"
+        ],
+        "hint": "Counting 5 hours past 10:00 AM lands you at the answer.",
+        "emoji": "🗓️",
+        "explanation": "For the science fair, 5 hours after 10:00 AM is 3:00 PM.",
+        "funFact": "Five hours gives every student time to show off their project.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 166,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L166_Q1",
+        "gameType": "time",
         "level": 166,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L166_Q1",
-                "gameType": "time",
-                "level": 166,
-                "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
-                "question": "4:00 PM",
-                "correctAnswer": "4:00 PM",
-                "options": [
-                    "12:00 PM",
-                    "9:00 PM",
-                    "4:00 PM"
-                ],
-                "hint": "Select the correct hour: 4:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 4:00 PM, school is usually over and it's the perfect time to play outside!"
-            },
-            {
-                "id": "KIDS_TIME_L166_Q2",
-                "gameType": "time",
-                "level": 166,
-                "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
-                "question": "9:00 PM",
-                "correctAnswer": "9:00 PM",
-                "options": [
-                    "8:00 AM",
-                    "4:00 PM",
-                    "9:00 PM"
-                ],
-                "hint": "Select the correct hour: 9:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 9:00 PM, the moon is up high and nocturnal owls wake up for the night!"
-            },
-            {
-                "id": "KIDS_TIME_L166_Q3",
-                "gameType": "time",
-                "level": 166,
-                "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
-                "question": "8:00 AM",
-                "correctAnswer": "8:00 AM",
-                "options": [
-                    "8:00 AM",
-                    "9:00 PM",
-                    "4:00 PM"
-                ],
-                "hint": "Select the correct hour: 8:00 AM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 8:00 AM, the bright sun is shining and morning birds sing to wake us up!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which time is latest: 6:45 AM, 2:00 PM, or 6:30 PM?",
+        "question": "6:30 PM",
+        "correctAnswer": "6:30 PM",
+        "options": [
+          "6:45 AM",
+          "2:00 PM",
+          "6:30 PM"
+        ],
+        "hint": "Look at 6:45 AM, 2:00 PM, 6:30 PM — check which are AM and which are PM first.",
+        "emoji": "⏳",
+        "explanation": "Comparing all three, 6:30 PM happens last, after 6:45 AM and 2:00 PM.",
+        "funFact": "Even a late afternoon PM time comes after any time in the morning.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L166_Q2",
+        "gameType": "time",
+        "level": 166,
+        "instruction": "Music class is at 9:30 AM. The class trip to the park is at 1:00 PM. Which happens first?",
+        "question": "9:30 AM",
+        "correctAnswer": "9:30 AM",
+        "options": [
+          "9:30 AM",
+          "3:00 PM",
+          "1:00 PM"
+        ],
+        "hint": "Picture a daily schedule with 9:30 AM and 1:00 PM on it.",
+        "emoji": "📅",
+        "explanation": "Comparing the two times, 9:30 AM is the earlier one.",
+        "funFact": "Morning music class often comes before an afternoon outing.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L166_Q3",
+        "gameType": "time",
+        "level": 166,
+        "instruction": "The road trip begins at 8:00 AM and lasts 6 hours. What time does the family arrive?",
+        "question": "2:00 PM",
+        "correctAnswer": "2:00 PM",
+        "options": [
+          "3:00 PM",
+          "1:00 PM",
+          "2:00 PM"
+        ],
+        "hint": "Counting 6 hours past 8:00 AM lands you at the answer.",
+        "emoji": "🗓️",
+        "explanation": "For the road trip, 6 hours after 8:00 AM is 2:00 PM.",
+        "funFact": "Six hours can carry a family a long way down the road.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 167,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L167_Q1",
+        "gameType": "time",
         "level": 167,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L167_Q1",
-                "gameType": "time",
-                "level": 167,
-                "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
-                "question": "12:00 PM",
-                "correctAnswer": "12:00 PM",
-                "options": [
-                    "12:00 PM",
-                    "8:00 AM",
-                    "4:00 PM"
-                ],
-                "hint": "Select the correct hour: 12:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "12:00 PM is also called Noon, which is when the sun is highest in the sky!"
-            },
-            {
-                "id": "KIDS_TIME_L167_Q2",
-                "gameType": "time",
-                "level": 167,
-                "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
-                "question": "4:00 PM",
-                "correctAnswer": "4:00 PM",
-                "options": [
-                    "8:00 AM",
-                    "12:00 PM",
-                    "4:00 PM"
-                ],
-                "hint": "Select the correct hour: 4:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 4:00 PM, school is usually over and it's the perfect time to play outside!"
-            },
-            {
-                "id": "KIDS_TIME_L167_Q3",
-                "gameType": "time",
-                "level": 167,
-                "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
-                "question": "9:00 PM",
-                "correctAnswer": "9:00 PM",
-                "options": [
-                    "8:00 AM",
-                    "12:00 PM",
-                    "9:00 PM"
-                ],
-                "hint": "Select the correct hour: 9:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 9:00 PM, the moon is up high and nocturnal owls wake up for the night!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which time is earliest: 6:15 AM, 3:30 PM, or 9:00 PM?",
+        "question": "6:15 AM",
+        "correctAnswer": "6:15 AM",
+        "options": [
+          "6:15 AM",
+          "9:00 PM",
+          "3:30 PM"
+        ],
+        "hint": "Look at 6:15 AM, 3:30 PM, 9:00 PM — check which are AM and which are PM first.",
+        "emoji": "⏳",
+        "explanation": "Comparing all three, 6:15 AM happens first, ahead of 3:30 PM and 9:00 PM.",
+        "funFact": "Early morning AM times are the very first hours of a new day.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L167_Q2",
+        "gameType": "time",
+        "level": 167,
+        "instruction": "Lunch is at 12:00 PM. Afternoon recess is at 2:00 PM. Which happens first?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
+        "options": [
+          "12:00 PM",
+          "4:00 PM",
+          "2:00 PM"
+        ],
+        "hint": "Picture a daily schedule with 12:00 PM and 2:00 PM on it.",
+        "emoji": "📅",
+        "explanation": "Comparing the two times, 12:00 PM is the earlier one.",
+        "funFact": "Lunch usually comes before the afternoon recess break.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L167_Q3",
+        "gameType": "time",
+        "level": 167,
+        "instruction": "The farmers market opens at 8:00 AM and stays open 5 hours. What time does it close?",
+        "question": "1:00 PM",
+        "correctAnswer": "1:00 PM",
+        "options": [
+          "2:00 PM",
+          "1:00 PM",
+          "12:00 PM"
+        ],
+        "hint": "Counting 5 hours past 8:00 AM lands you at the answer.",
+        "emoji": "🗓️",
+        "explanation": "For the farmers market, 5 hours after 8:00 AM is 1:00 PM.",
+        "funFact": "Five hours gives shoppers plenty of time to visit every stall.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 168,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L168_Q1",
+        "gameType": "time",
         "level": 168,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L168_Q1",
-                "gameType": "time",
-                "level": 168,
-                "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
-                "question": "8:00 AM",
-                "correctAnswer": "8:00 AM",
-                "options": [
-                    "8:00 AM",
-                    "4:00 PM",
-                    "12:00 PM"
-                ],
-                "hint": "Select the correct hour: 8:00 AM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 8:00 AM, the bright sun is shining and morning birds sing to wake us up!"
-            },
-            {
-                "id": "KIDS_TIME_L168_Q2",
-                "gameType": "time",
-                "level": 168,
-                "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
-                "question": "12:00 PM",
-                "correctAnswer": "12:00 PM",
-                "options": [
-                    "4:00 PM",
-                    "12:00 PM",
-                    "9:00 PM"
-                ],
-                "hint": "Select the correct hour: 12:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "12:00 PM is also called Noon, which is when the sun is highest in the sky!"
-            },
-            {
-                "id": "KIDS_TIME_L168_Q3",
-                "gameType": "time",
-                "level": 168,
-                "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
-                "question": "4:00 PM",
-                "correctAnswer": "4:00 PM",
-                "options": [
-                    "12:00 PM",
-                    "9:00 PM",
-                    "4:00 PM"
-                ],
-                "hint": "Select the correct hour: 4:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 4:00 PM, school is usually over and it's the perfect time to play outside!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which time is latest: 8:00 AM, 4:45 PM, or 10:00 PM?",
+        "question": "10:00 PM",
+        "correctAnswer": "10:00 PM",
+        "options": [
+          "8:00 AM",
+          "4:45 PM",
+          "10:00 PM"
+        ],
+        "hint": "Look at 8:00 AM, 4:45 PM, 10:00 PM — check which are AM and which are PM first.",
+        "emoji": "⏳",
+        "explanation": "Comparing all three, 10:00 PM happens last, after 8:00 AM and 4:45 PM.",
+        "funFact": "Nighttime PM hours are the very last hours of the day.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L168_Q2",
+        "gameType": "time",
+        "level": 168,
+        "instruction": "Homework time is at 3:00 PM. Dinner is at 6:00 PM. Which happens first?",
+        "question": "3:00 PM",
+        "correctAnswer": "3:00 PM",
+        "options": [
+          "6:00 PM",
+          "8:00 PM",
+          "3:00 PM"
+        ],
+        "hint": "Picture a daily schedule with 3:00 PM and 6:00 PM on it.",
+        "emoji": "📅",
+        "explanation": "Comparing the two times, 3:00 PM is the earlier one.",
+        "funFact": "Homework is often finished before the family sits down for dinner.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L168_Q3",
+        "gameType": "time",
+        "level": 168,
+        "instruction": "The county parade begins at 12:00 PM and festivities continue for 4 hours. What time do they end?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
+        "options": [
+          "4:00 PM",
+          "3:00 PM",
+          "5:00 PM"
+        ],
+        "hint": "Counting 4 hours past 12:00 PM lands you at the answer.",
+        "emoji": "🗓️",
+        "explanation": "For the county parade, 4 hours after 12:00 PM is 4:00 PM.",
+        "funFact": "Four hours gives a parade plenty of time to pass through town.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 169,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L169_Q1",
+        "gameType": "time",
         "level": 169,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L169_Q1",
-                "gameType": "time",
-                "level": 169,
-                "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
-                "question": "9:00 PM",
-                "correctAnswer": "9:00 PM",
-                "options": [
-                    "9:00 PM",
-                    "4:00 PM",
-                    "12:00 PM"
-                ],
-                "hint": "Select the correct hour: 9:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 9:00 PM, the moon is up high and nocturnal owls wake up for the night!"
-            },
-            {
-                "id": "KIDS_TIME_L169_Q2",
-                "gameType": "time",
-                "level": 169,
-                "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
-                "question": "8:00 AM",
-                "correctAnswer": "8:00 AM",
-                "options": [
-                    "4:00 PM",
-                    "9:00 PM",
-                    "8:00 AM"
-                ],
-                "hint": "Select the correct hour: 8:00 AM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 8:00 AM, the bright sun is shining and morning birds sing to wake us up!"
-            },
-            {
-                "id": "KIDS_TIME_L169_Q3",
-                "gameType": "time",
-                "level": 169,
-                "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
-                "question": "12:00 PM",
-                "correctAnswer": "12:00 PM",
-                "options": [
-                    "12:00 PM",
-                    "4:00 PM",
-                    "8:00 AM"
-                ],
-                "hint": "Select the correct hour: 12:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "12:00 PM is also called Noon, which is when the sun is highest in the sky!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which time is earliest: 7:45 AM, 1:15 PM, or 5:30 PM?",
+        "question": "7:45 AM",
+        "correctAnswer": "7:45 AM",
+        "options": [
+          "1:15 PM",
+          "5:30 PM",
+          "7:45 AM"
+        ],
+        "hint": "Look at 7:45 AM, 1:15 PM, 5:30 PM — check which are AM and which are PM first.",
+        "emoji": "⏳",
+        "explanation": "Comparing all three, 7:45 AM happens first, ahead of 1:15 PM and 5:30 PM.",
+        "funFact": "Comparing hours works best when you first check AM or PM.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L169_Q2",
+        "gameType": "time",
+        "level": 169,
+        "instruction": "The class trip departs at 9:00 AM. The picnic lunch is at 12:30 PM. Which happens first?",
+        "question": "9:00 AM",
+        "correctAnswer": "9:00 AM",
+        "options": [
+          "2:00 PM",
+          "9:00 AM",
+          "12:30 PM"
+        ],
+        "hint": "Picture a daily schedule with 9:00 AM and 12:30 PM on it.",
+        "emoji": "📅",
+        "explanation": "Comparing the two times, 9:00 AM is the earlier one.",
+        "funFact": "A class trip often departs well before the midday picnic.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L169_Q3",
+        "gameType": "time",
+        "level": 169,
+        "instruction": "The bake sale setup begins at 7:00 AM and takes 5 hours to finish. What time is everything ready?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
+        "options": [
+          "11:00 AM",
+          "12:00 PM",
+          "1:00 PM"
+        ],
+        "hint": "Counting 5 hours past 7:00 AM lands you at the answer.",
+        "emoji": "🗓️",
+        "explanation": "For the bake sale setup, 5 hours after 7:00 AM is 12:00 PM.",
+        "funFact": "Five hours gives plenty of time to bake and set up every table.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 170,
+    "quests": [
+      {
+        "id": "KIDS_TIME_L170_Q1",
+        "gameType": "time",
         "level": 170,
-        "quests": [
-            {
-                "id": "KIDS_TIME_L170_Q1",
-                "gameType": "time",
-                "level": 170,
-                "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
-                "question": "4:00 PM",
-                "correctAnswer": "4:00 PM",
-                "options": [
-                    "4:00 PM",
-                    "9:00 PM",
-                    "12:00 PM"
-                ],
-                "hint": "Select the correct hour: 4:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 4:00 PM, school is usually over and it's the perfect time to play outside!"
-            },
-            {
-                "id": "KIDS_TIME_L170_Q2",
-                "gameType": "time",
-                "level": 170,
-                "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
-                "question": "9:00 PM",
-                "correctAnswer": "9:00 PM",
-                "options": [
-                    "8:00 AM",
-                    "12:00 PM",
-                    "9:00 PM"
-                ],
-                "hint": "Select the correct hour: 9:00 PM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 9:00 PM, the moon is up high and nocturnal owls wake up for the night!"
-            },
-            {
-                "id": "KIDS_TIME_L170_Q3",
-                "gameType": "time",
-                "level": 170,
-                "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
-                "question": "8:00 AM",
-                "correctAnswer": "8:00 AM",
-                "options": [
-                    "8:00 AM",
-                    "12:00 PM",
-                    "9:00 PM"
-                ],
-                "hint": "Select the correct hour: 8:00 AM.",
-                "emoji": "⌚",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "At 8:00 AM, the bright sun is shining and morning birds sing to wake us up!"
-            }
-        ]
-    }
+        "instruction": "Which time is latest: 6:00 AM, 11:45 AM, or 7:15 PM?",
+        "question": "7:15 PM",
+        "correctAnswer": "7:15 PM",
+        "options": [
+          "6:00 AM",
+          "11:45 AM",
+          "7:15 PM"
+        ],
+        "hint": "Look at 6:00 AM, 11:45 AM, 7:15 PM — check which are AM and which are PM first.",
+        "emoji": "⏳",
+        "explanation": "Comparing all three, 7:15 PM happens last, after 6:00 AM and 11:45 AM.",
+        "funFact": "When comparing times, PM hours always outrank AM hours from the same day.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L170_Q2",
+        "gameType": "time",
+        "level": 170,
+        "instruction": "The class assembly is at 10:30 AM. Afternoon reading time is at 1:30 PM. Which happens first?",
+        "question": "10:30 AM",
+        "correctAnswer": "10:30 AM",
+        "options": [
+          "1:30 PM",
+          "10:30 AM",
+          "3:00 PM"
+        ],
+        "hint": "Picture a daily schedule with 10:30 AM and 1:30 PM on it.",
+        "emoji": "📅",
+        "explanation": "Comparing the two times, 10:30 AM is the earlier one.",
+        "funFact": "Morning assemblies often set the tone for the rest of the school day.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_TIME_L170_Q3",
+        "gameType": "time",
+        "level": 170,
+        "instruction": "The garden club begins planting at 9:00 AM and works for 4 hours. What time do they finish?",
+        "question": "1:00 PM",
+        "correctAnswer": "1:00 PM",
+        "options": [
+          "2:00 PM",
+          "1:00 PM",
+          "12:00 PM"
+        ],
+        "hint": "Counting 4 hours past 9:00 AM lands you at the answer.",
+        "emoji": "🗓️",
+        "explanation": "For the garden club, 4 hours after 9:00 AM is 1:00 PM.",
+        "funFact": "Four hours gives a garden club plenty of time to plant a whole bed of flowers.",
+        "subtype": "schedule_reasoning",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  }
 ]

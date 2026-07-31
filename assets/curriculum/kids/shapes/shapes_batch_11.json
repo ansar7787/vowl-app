@@ -1,562 +1,622 @@
 [
-    {
+  {
+    "level": 101,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L101_Q1",
+        "gameType": "shapes",
         "level": 101,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L101_Q1",
-                "gameType": "shapes",
-                "level": 101,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Square",
-                    "Rectangle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            },
-            {
-                "id": "KIDS_SHAPES_L101_Q2",
-                "gameType": "shapes",
-                "level": 101,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Square",
-                    "Circle",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            },
-            {
-                "id": "KIDS_SHAPES_L101_Q3",
-                "gameType": "shapes",
-                "level": 101,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Square",
-                    "Circle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which solid shape matches a basketball bouncing on the court?",
+        "question": "Sphere",
+        "correctAnswer": "Sphere",
+        "options": [
+          "Cube",
+          "Sphere",
+          "Cylinder"
+        ],
+        "hint": "Think of a solid shape that can roll smoothly in every direction.",
+        "emoji": "🏀",
+        "explanation": "A basketball is round all over in every direction, just like a sphere!",
+        "funFact": "A sphere is like a 3D circle — every point on its surface is the same distance from the center.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L101_Q2",
+        "gameType": "shapes",
+        "level": 101,
+        "instruction": "Which solid shape matches a single die you roll in a board game?",
+        "question": "Cube",
+        "correctAnswer": "Cube",
+        "options": [
+          "Sphere",
+          "Cube",
+          "Rectangular Prism"
+        ],
+        "hint": "Think of a solid shape with 6 flat square faces.",
+        "emoji": "🎲",
+        "explanation": "A die has 6 flat square faces, just like a cube!",
+        "funFact": "Every face of a cube is a perfect square, and all 6 faces are exactly the same size.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L101_Q3",
+        "gameType": "shapes",
+        "level": 101,
+        "instruction": "Which solid shape matches a scoop of ice cream on a cone?",
+        "question": "Cone",
+        "correctAnswer": "Cone",
+        "options": [
+          "Cone",
+          "Sphere",
+          "Cylinder"
+        ],
+        "hint": "Think of a solid shape with a round flat bottom that narrows to one point.",
+        "emoji": "🍦",
+        "explanation": "An ice cream cone has a round flat top that narrows down to a point, just like a cone!",
+        "funFact": "A cone has just one flat circle face and one curved surface leading to a point.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 102,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L102_Q1",
+        "gameType": "shapes",
         "level": 102,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L102_Q1",
-                "gameType": "shapes",
-                "level": 102,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Rectangle",
-                    "Circle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            },
-            {
-                "id": "KIDS_SHAPES_L102_Q2",
-                "gameType": "shapes",
-                "level": 102,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Rectangle",
-                    "Square",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            },
-            {
-                "id": "KIDS_SHAPES_L102_Q3",
-                "gameType": "shapes",
-                "level": 102,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Triangle",
-                    "Square",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which solid shape matches a can of soup on the pantry shelf?",
+        "question": "Cylinder",
+        "correctAnswer": "Cylinder",
+        "options": [
+          "Cube",
+          "Cone",
+          "Cylinder"
+        ],
+        "hint": "Think of a solid shape with two flat circle ends and a curved side.",
+        "emoji": "🥫",
+        "explanation": "A soup can has two flat circle ends and a curved side connecting them, just like a cylinder!",
+        "funFact": "Cylinders are great for cans because they're strong and stack neatly.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L102_Q2",
+        "gameType": "shapes",
+        "level": 102,
+        "instruction": "Which solid shape matches the great stone pyramids in Egypt?",
+        "question": "Pyramid",
+        "correctAnswer": "Pyramid",
+        "options": [
+          "Cube",
+          "Pyramid",
+          "Cone"
+        ],
+        "hint": "Think of a solid shape with a flat base and triangle sides meeting at one top point.",
+        "emoji": "🏜️",
+        "explanation": "An Egyptian pyramid has a flat base with triangle sides meeting at a single top point, just like a pyramid!",
+        "funFact": "The ancient Egyptian pyramids are some of the oldest and largest structures ever built.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L102_Q3",
+        "gameType": "shapes",
+        "level": 102,
+        "instruction": "Which solid shape matches a tissue box sitting on a table?",
+        "question": "Rectangular Prism",
+        "correctAnswer": "Rectangular Prism",
+        "options": [
+          "Cube",
+          "Cylinder",
+          "Rectangular Prism"
+        ],
+        "hint": "Think of a solid shape with 6 flat rectangle faces, like a stretched cube.",
+        "emoji": "📦",
+        "explanation": "A tissue box has 6 flat rectangle faces, just like a rectangular prism!",
+        "funFact": "A rectangular prism is like a cube that has been stretched longer in one direction.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 103,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L103_Q1",
+        "gameType": "shapes",
         "level": 103,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L103_Q1",
-                "gameType": "shapes",
-                "level": 103,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Rectangle",
-                    "Circle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            },
-            {
-                "id": "KIDS_SHAPES_L103_Q2",
-                "gameType": "shapes",
-                "level": 103,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Triangle",
-                    "Circle",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            },
-            {
-                "id": "KIDS_SHAPES_L103_Q3",
-                "gameType": "shapes",
-                "level": 103,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Square",
-                    "Circle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which solid shape matches a round orange sitting in a fruit bowl?",
+        "question": "Sphere",
+        "correctAnswer": "Sphere",
+        "options": [
+          "Sphere",
+          "Cylinder",
+          "Cube"
+        ],
+        "hint": "Think of a solid shape that looks round from every single angle.",
+        "emoji": "🍊",
+        "explanation": "An orange is round from every angle, just like a sphere!",
+        "funFact": "Many fruits grow into a sphere shape because it's a very efficient way to hold juice and seeds inside.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L103_Q2",
+        "gameType": "shapes",
+        "level": 103,
+        "instruction": "Which solid shape matches a single sugar cube dropped into tea?",
+        "question": "Cube",
+        "correctAnswer": "Cube",
+        "options": [
+          "Cube",
+          "Sphere",
+          "Pyramid"
+        ],
+        "hint": "Think of a solid shape where every face is an identical flat square.",
+        "emoji": "🧊",
+        "explanation": "A sugar cube has 6 identical flat square faces, just like a cube!",
+        "funFact": "Ice cube trays are named after this shape because the ice comes out as little cubes.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L103_Q3",
+        "gameType": "shapes",
+        "level": 103,
+        "instruction": "Which solid shape matches a colorful party hat worn at a celebration?",
+        "question": "Cone",
+        "correctAnswer": "Cone",
+        "options": [
+          "Cylinder",
+          "Cone",
+          "Pyramid"
+        ],
+        "hint": "Think of a solid shape that is wide and round at the bottom, narrowing to a point.",
+        "emoji": "🎉",
+        "explanation": "A party hat is wide and round at the bottom and narrows to a point, just like a cone!",
+        "funFact": "Cone-shaped hats are a popular party design because they sit neatly on your head.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 104,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L104_Q1",
+        "gameType": "shapes",
         "level": 104,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L104_Q1",
-                "gameType": "shapes",
-                "level": 104,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Rectangle",
-                    "Triangle",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            },
-            {
-                "id": "KIDS_SHAPES_L104_Q2",
-                "gameType": "shapes",
-                "level": 104,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Circle",
-                    "Triangle",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            },
-            {
-                "id": "KIDS_SHAPES_L104_Q3",
-                "gameType": "shapes",
-                "level": 104,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Circle",
-                    "Rectangle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which solid shape matches a roll of paper towels in the kitchen?",
+        "question": "Cylinder",
+        "correctAnswer": "Cylinder",
+        "options": [
+          "Rectangular Prism",
+          "Cylinder",
+          "Cone"
+        ],
+        "hint": "Think of a solid shape shaped like a tube, round on both ends.",
+        "emoji": "🧻",
+        "explanation": "A paper towel roll is shaped like a tube with round ends, just like a cylinder!",
+        "funFact": "Cylinders are a common shape for anything that needs to roll or unroll smoothly.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L104_Q2",
+        "gameType": "shapes",
+        "level": 104,
+        "instruction": "Which solid shape matches a small paperweight shaped with a pointed top?",
+        "question": "Pyramid",
+        "correctAnswer": "Pyramid",
+        "options": [
+          "Cube",
+          "Pyramid",
+          "Cone"
+        ],
+        "hint": "Think of a solid shape with flat triangle sides meeting at one point above a flat base.",
+        "emoji": "🔺",
+        "explanation": "This paperweight has flat triangle sides meeting at a point above a flat base, just like a pyramid!",
+        "funFact": "Pyramids are known for being very stable because of their wide, heavy base.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L104_Q3",
+        "gameType": "shapes",
+        "level": 104,
+        "instruction": "Which solid shape matches a cereal box standing on the shelf?",
+        "question": "Rectangular Prism",
+        "correctAnswer": "Rectangular Prism",
+        "options": [
+          "Cube",
+          "Rectangular Prism",
+          "Pyramid"
+        ],
+        "hint": "Think of a solid shape like a stretched box with 6 flat rectangle faces.",
+        "emoji": "📦",
+        "explanation": "A cereal box has 6 flat rectangle faces, just like a rectangular prism!",
+        "funFact": "Rectangular prisms are a favorite shape for packaging because they stack so neatly.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 105,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L105_Q1",
+        "gameType": "shapes",
         "level": 105,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L105_Q1",
-                "gameType": "shapes",
-                "level": 105,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Rectangle",
-                    "Circle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            },
-            {
-                "id": "KIDS_SHAPES_L105_Q2",
-                "gameType": "shapes",
-                "level": 105,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Circle",
-                    "Rectangle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            },
-            {
-                "id": "KIDS_SHAPES_L105_Q3",
-                "gameType": "shapes",
-                "level": 105,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Circle",
-                    "Triangle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which solid shape matches a shiny marble rolling across the floor?",
+        "question": "Sphere",
+        "correctAnswer": "Sphere",
+        "options": [
+          "Sphere",
+          "Cone",
+          "Cube"
+        ],
+        "hint": "Think of a solid shape with absolutely no flat parts anywhere.",
+        "emoji": "⚪",
+        "explanation": "A marble is round all over with no flat parts, just like a sphere!",
+        "funFact": "Marbles roll so smoothly because a sphere has no edges or corners to catch on the ground.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L105_Q2",
+        "gameType": "shapes",
+        "level": 105,
+        "instruction": "Which solid shape matches a wooden building block used to stack a tower?",
+        "question": "Cube",
+        "correctAnswer": "Cube",
+        "options": [
+          "Sphere",
+          "Rectangular Prism",
+          "Cube"
+        ],
+        "hint": "Think of a solid shape with 6 equal square faces, perfect for stacking.",
+        "emoji": "🧱",
+        "explanation": "A wooden block like this has 6 equal square faces, just like a cube!",
+        "funFact": "Cubes stack neatly on top of each other because every face is flat and equal.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L105_Q3",
+        "gameType": "shapes",
+        "level": 105,
+        "instruction": "Which solid shape matches an orange traffic cone placed on the road?",
+        "question": "Cone",
+        "correctAnswer": "Cone",
+        "options": [
+          "Cylinder",
+          "Cone",
+          "Pyramid"
+        ],
+        "hint": "Think of a solid shape with a wide flat bottom that narrows straight up to a point.",
+        "emoji": "🚧",
+        "explanation": "A traffic cone has a wide flat bottom that narrows up to a point, just like a cone!",
+        "funFact": "Cone shapes are easy to spot and hard to knock over because of their wide base.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 106,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L106_Q1",
+        "gameType": "shapes",
         "level": 106,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L106_Q1",
-                "gameType": "shapes",
-                "level": 106,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Triangle",
-                    "Rectangle",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            },
-            {
-                "id": "KIDS_SHAPES_L106_Q2",
-                "gameType": "shapes",
-                "level": 106,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Triangle",
-                    "Circle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            },
-            {
-                "id": "KIDS_SHAPES_L106_Q3",
-                "gameType": "shapes",
-                "level": 106,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Circle",
-                    "Square",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which solid shape matches a lit candle on a birthday cake?",
+        "question": "Cylinder",
+        "correctAnswer": "Cylinder",
+        "options": [
+          "Cone",
+          "Cylinder",
+          "Cube"
+        ],
+        "hint": "Think of a solid shape shaped like a tall tube with flat round ends.",
+        "emoji": "🕯️",
+        "explanation": "A candle is shaped like a tall tube with round ends, just like a cylinder!",
+        "funFact": "Cylinders burn evenly because their round shape lets wax melt at the same rate all around.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L106_Q2",
+        "gameType": "shapes",
+        "level": 106,
+        "instruction": "Which solid shape matches a shoebox waiting to be packed?",
+        "question": "Rectangular Prism",
+        "correctAnswer": "Rectangular Prism",
+        "options": [
+          "Cylinder",
+          "Cube",
+          "Rectangular Prism"
+        ],
+        "hint": "Think of a solid shape with 6 flat rectangle faces, longer than a cube.",
+        "emoji": "👟",
+        "explanation": "A shoebox has 6 flat rectangle faces, just like a rectangular prism!",
+        "funFact": "Rectangular prisms come in many sizes, from tiny boxes to giant shipping containers.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L106_Q3",
+        "gameType": "shapes",
+        "level": 106,
+        "instruction": "Which solid shape matches planet Earth as seen from outer space?",
+        "question": "Sphere",
+        "correctAnswer": "Sphere",
+        "options": [
+          "Cylinder",
+          "Cone",
+          "Sphere"
+        ],
+        "hint": "Think of a solid shape that looks round no matter which side you view.",
+        "emoji": "🌍",
+        "explanation": "Planet Earth looks round from every angle in space, just like a sphere!",
+        "funFact": "Gravity pulls planets into a round sphere shape as they form.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 107,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L107_Q1",
+        "gameType": "shapes",
         "level": 107,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L107_Q1",
-                "gameType": "shapes",
-                "level": 107,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Triangle",
-                    "Circle",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            },
-            {
-                "id": "KIDS_SHAPES_L107_Q2",
-                "gameType": "shapes",
-                "level": 107,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Square",
-                    "Rectangle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            },
-            {
-                "id": "KIDS_SHAPES_L107_Q3",
-                "gameType": "shapes",
-                "level": 107,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Triangle",
-                    "Rectangle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which solid shape matches a tent with triangle-shaped sides meeting at the top?",
+        "question": "Pyramid",
+        "correctAnswer": "Pyramid",
+        "options": [
+          "Cube",
+          "Pyramid",
+          "Cone"
+        ],
+        "hint": "Think of a solid shape with a flat base and slanted sides meeting at one peak.",
+        "emoji": "⛺",
+        "explanation": "This tent has a flat base with slanted sides meeting at one peak, just like a pyramid!",
+        "funFact": "Pyramid-shaped tents shed rain easily because water slides right down the slanted sides.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L107_Q2",
+        "gameType": "shapes",
+        "level": 107,
+        "instruction": "Which solid shape matches a small block of cheese cut for a snack?",
+        "question": "Cube",
+        "correctAnswer": "Cube",
+        "options": [
+          "Rectangular Prism",
+          "Cube",
+          "Sphere"
+        ],
+        "hint": "Think of a solid shape with 6 equal flat square faces.",
+        "emoji": "🧀",
+        "explanation": "A cheese cube has 6 equal flat square faces, just like a cube!",
+        "funFact": "Cutting food into cube shapes makes it easy to measure equal little bites.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L107_Q3",
+        "gameType": "shapes",
+        "level": 107,
+        "instruction": "Which solid shape matches a wooden rolling pin used for baking?",
+        "question": "Cylinder",
+        "correctAnswer": "Cylinder",
+        "options": [
+          "Sphere",
+          "Cone",
+          "Cylinder"
+        ],
+        "hint": "Think of a solid shape like a long tube, round at both ends.",
+        "emoji": "🥖",
+        "explanation": "A rolling pin is shaped like a long tube with round ends, just like a cylinder!",
+        "funFact": "The round cylinder shape of a rolling pin helps it flatten dough evenly.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 108,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L108_Q1",
+        "gameType": "shapes",
         "level": 108,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L108_Q1",
-                "gameType": "shapes",
-                "level": 108,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Circle",
-                    "Rectangle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            },
-            {
-                "id": "KIDS_SHAPES_L108_Q2",
-                "gameType": "shapes",
-                "level": 108,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Triangle",
-                    "Circle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            },
-            {
-                "id": "KIDS_SHAPES_L108_Q3",
-                "gameType": "shapes",
-                "level": 108,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Triangle",
-                    "Rectangle",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which solid shape matches a gumball dropped from a machine?",
+        "question": "Sphere",
+        "correctAnswer": "Sphere",
+        "options": [
+          "Cylinder",
+          "Sphere",
+          "Cube"
+        ],
+        "hint": "Think of a solid shape that is perfectly round in every direction.",
+        "emoji": "🍬",
+        "explanation": "A gumball is perfectly round in every direction, just like a sphere!",
+        "funFact": "Gumball machines work well because spheres roll smoothly down the chute.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L108_Q2",
+        "gameType": "shapes",
+        "level": 108,
+        "instruction": "Which solid shape matches a loaf of bread wrapped and ready to slice?",
+        "question": "Rectangular Prism",
+        "correctAnswer": "Rectangular Prism",
+        "options": [
+          "Cylinder",
+          "Cube",
+          "Rectangular Prism"
+        ],
+        "hint": "Think of a solid shape longer than a cube, with 6 flat rectangle faces.",
+        "emoji": "🍞",
+        "explanation": "A loaf of bread has 6 flat rectangle faces, just like a rectangular prism!",
+        "funFact": "Bread is often baked in rectangular prism pans so every slice comes out even.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L108_Q3",
+        "gameType": "shapes",
+        "level": 108,
+        "instruction": "Which solid shape matches a glass paperweight with slanted sides meeting at a point?",
+        "question": "Pyramid",
+        "correctAnswer": "Pyramid",
+        "options": [
+          "Pyramid",
+          "Cube",
+          "Cone"
+        ],
+        "hint": "Think of a solid shape with a flat base and sides that slant up to one peak.",
+        "emoji": "🔻",
+        "explanation": "This paperweight has a flat base and sides that slant up to one peak, just like a pyramid!",
+        "funFact": "A pyramid's wide base and narrow top make it a very sturdy shape for a desk decoration.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 109,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L109_Q1",
+        "gameType": "shapes",
         "level": 109,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L109_Q1",
-                "gameType": "shapes",
-                "level": 109,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Square",
-                    "Circle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            },
-            {
-                "id": "KIDS_SHAPES_L109_Q2",
-                "gameType": "shapes",
-                "level": 109,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Rectangle",
-                    "Triangle",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            },
-            {
-                "id": "KIDS_SHAPES_L109_Q3",
-                "gameType": "shapes",
-                "level": 109,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Rectangle",
-                    "Circle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which solid shape matches a Rubik's cube ready to be twisted and solved?",
+        "question": "Cube",
+        "correctAnswer": "Cube",
+        "options": [
+          "Sphere",
+          "Cube",
+          "Rectangular Prism"
+        ],
+        "hint": "Think of a solid shape with 6 equal square faces, perfect for a twisty puzzle.",
+        "emoji": "🎲",
+        "explanation": "A Rubik's cube has 6 equal square faces, just like a cube!",
+        "funFact": "Each face of a Rubik's cube is divided into 9 smaller squares that can twist and turn.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L109_Q2",
+        "gameType": "shapes",
+        "level": 109,
+        "instruction": "Which solid shape matches a megaphone used to cheer loudly at a game?",
+        "question": "Cone",
+        "correctAnswer": "Cone",
+        "options": [
+          "Pyramid",
+          "Cone",
+          "Cylinder"
+        ],
+        "hint": "Think of a solid shape narrow at one end and wide and open at the other.",
+        "emoji": "📣",
+        "explanation": "A megaphone is narrow at the mouth end and wide at the open end, just like a cone!",
+        "funFact": "The cone shape of a megaphone helps direct sound further in one direction.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L109_Q3",
+        "gameType": "shapes",
+        "level": 109,
+        "instruction": "Which solid shape matches a battery that powers a flashlight?",
+        "question": "Cylinder",
+        "correctAnswer": "Cylinder",
+        "options": [
+          "Rectangular Prism",
+          "Cylinder",
+          "Cone"
+        ],
+        "hint": "Think of a solid shape shaped like a small tube with flat round ends.",
+        "emoji": "🔋",
+        "explanation": "A battery is shaped like a small tube with flat round ends, just like a cylinder!",
+        "funFact": "Cylinder-shaped batteries fit snugly into round slots inside a flashlight or remote.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 110,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L110_Q1",
+        "gameType": "shapes",
         "level": 110,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L110_Q1",
-                "gameType": "shapes",
-                "level": 110,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Circle",
-                    "Rectangle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            },
-            {
-                "id": "KIDS_SHAPES_L110_Q2",
-                "gameType": "shapes",
-                "level": 110,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Circle",
-                    "Rectangle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            },
-            {
-                "id": "KIDS_SHAPES_L110_Q3",
-                "gameType": "shapes",
-                "level": 110,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Rectangle",
-                    "Circle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            }
-        ]
-    }
+        "instruction": "Which solid shape matches a snow globe's glass ball before it's shaken?",
+        "question": "Sphere",
+        "correctAnswer": "Sphere",
+        "options": [
+          "Cube",
+          "Cylinder",
+          "Sphere"
+        ],
+        "hint": "Think of a solid shape curved evenly all the way around, with no flat parts.",
+        "emoji": "❄️",
+        "explanation": "A snow globe's glass ball is curved evenly all around, just like a sphere!",
+        "funFact": "The round sphere shape of a snow globe lets you see the whole scene inside from any angle.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L110_Q2",
+        "gameType": "shapes",
+        "level": 110,
+        "instruction": "Which solid shape matches a chunky brick used to build a wall?",
+        "question": "Rectangular Prism",
+        "correctAnswer": "Rectangular Prism",
+        "options": [
+          "Rectangular Prism",
+          "Pyramid",
+          "Cube"
+        ],
+        "hint": "Think of a solid shape with 6 flat rectangle faces, sturdy and stackable.",
+        "emoji": "🧱",
+        "explanation": "A brick has 6 flat rectangle faces, just like a rectangular prism!",
+        "funFact": "Rectangular prism bricks stack together neatly to build strong, even walls.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L110_Q3",
+        "gameType": "shapes",
+        "level": 110,
+        "instruction": "Which solid shape matches a triangular roof rising above a tower?",
+        "question": "Pyramid",
+        "correctAnswer": "Pyramid",
+        "options": [
+          "Pyramid",
+          "Cone",
+          "Rectangular Prism"
+        ],
+        "hint": "Think of a solid shape with slanted triangle sides meeting at a single top point.",
+        "emoji": "🗼",
+        "explanation": "This tower roof has slanted triangle sides meeting at one top point, just like a pyramid!",
+        "funFact": "Sloped pyramid roofs help rain and snow slide off instead of piling up.",
+        "subtype": "intro_3d_shapes",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  }
 ]

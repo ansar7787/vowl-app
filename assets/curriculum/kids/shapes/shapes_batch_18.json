@@ -1,562 +1,622 @@
 [
-    {
+  {
+    "level": 171,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L171_Q1",
+        "gameType": "shapes",
         "level": 171,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L171_Q1",
-                "gameType": "shapes",
-                "level": 171,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Rectangle",
-                    "Triangle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            },
-            {
-                "id": "KIDS_SHAPES_L171_Q2",
-                "gameType": "shapes",
-                "level": 171,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Triangle",
-                    "Circle",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            },
-            {
-                "id": "KIDS_SHAPES_L171_Q3",
-                "gameType": "shapes",
-                "level": 171,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Square",
-                    "Circle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            }
-        ]
-    },
-    {
+        "instruction": "Sphere, Cube, Sphere, Cube, Sphere, ___? What comes next in this pattern of solid shapes?",
+        "question": "Cube",
+        "correctAnswer": "Cube",
+        "options": [
+          "Cylinder",
+          "Sphere",
+          "Cube"
+        ],
+        "hint": "Look at how Sphere and Cube keep taking turns — which one comes right after Sphere?",
+        "emoji": "🎲",
+        "explanation": "This pattern alternates Sphere, Cube, so after Sphere comes Cube again.",
+        "funFact": "Patterns can be built from solid 3D shapes too, not just flat 2D ones.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L171_Q2",
+        "gameType": "shapes",
+        "level": 171,
+        "instruction": "Which shape shares the exact same 4 lines of symmetry as a square, because it's really just a square standing on its point?",
+        "question": "Diamond",
+        "correctAnswer": "Diamond",
+        "options": [
+          "Rectangle",
+          "Pentagon",
+          "Diamond"
+        ],
+        "hint": "Think back — this shape is simply a square, tilted to balance on one corner.",
+        "emoji": "💎",
+        "explanation": "A diamond has the same 4 lines of symmetry as a square, since it's really the same shape just turned.",
+        "funFact": "Turning a shape never changes how many lines of symmetry it has.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L171_Q3",
+        "gameType": "shapes",
+        "level": 171,
+        "instruction": "Star, Heart, Star, Heart, Star, ___? What comes next in this pattern?",
+        "question": "Heart",
+        "correctAnswer": "Heart",
+        "options": [
+          "Heart",
+          "Circle",
+          "Star"
+        ],
+        "hint": "Follow the back-and-forth between Star and Heart to find what comes next.",
+        "emoji": "❤️",
+        "explanation": "This pattern alternates Star, Heart. The sequence just ended on Star, so Heart comes next.",
+        "funFact": "Alternating patterns are predictable because they only ever use two shapes, taking turns.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 172,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L172_Q1",
+        "gameType": "shapes",
         "level": 172,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L172_Q1",
-                "gameType": "shapes",
-                "level": 172,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Circle",
-                    "Rectangle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            },
-            {
-                "id": "KIDS_SHAPES_L172_Q2",
-                "gameType": "shapes",
-                "level": 172,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Square",
-                    "Triangle",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            },
-            {
-                "id": "KIDS_SHAPES_L172_Q3",
-                "gameType": "shapes",
-                "level": 172,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Circle",
-                    "Rectangle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            }
-        ]
-    },
-    {
+        "instruction": "Hexagon, Hexagon, Octagon, Octagon, Hexagon, Hexagon, Octagon, Octagon, ___? What comes next in this pattern?",
+        "question": "Hexagon",
+        "correctAnswer": "Hexagon",
+        "options": [
+          "Pentagon",
+          "Hexagon",
+          "Octagon"
+        ],
+        "hint": "This pattern repeats Hexagon, Hexagon, Octagon, Octagon over and over — count carefully to see where you are.",
+        "emoji": "🐝",
+        "explanation": "This pattern repeats Hexagon, Hexagon, Octagon, Octagon. The sequence just finished a full group ending in two Octagons, so a new group begins with Hexagon.",
+        "funFact": "Pattern puzzles like this help build sharp attention to detail.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L172_Q2",
+        "gameType": "shapes",
+        "level": 172,
+        "instruction": "Pentagon, Hexagon, Octagon, Pentagon, Hexagon, Octagon, Pentagon, Hexagon, ___? What comes next in this pattern?",
+        "question": "Octagon",
+        "correctAnswer": "Octagon",
+        "options": [
+          "Octagon",
+          "Hexagon",
+          "Pentagon"
+        ],
+        "hint": "This pattern repeats Pentagon, Hexagon, Octagon over and over — count carefully to see where you are.",
+        "emoji": "🛑",
+        "explanation": "This pattern repeats Pentagon, Hexagon, Octagon. The sequence just gave Pentagon, Hexagon — so Octagon completes the group.",
+        "funFact": "This pattern uses shapes in order of their side count: 5, then 6, then 8.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L172_Q3",
+        "gameType": "shapes",
+        "level": 172,
+        "instruction": "Oval, Oval, Circle, Oval, Oval, Circle, Oval, ___? What comes next in this pattern?",
+        "question": "Oval",
+        "correctAnswer": "Oval",
+        "options": [
+          "Oval",
+          "Square",
+          "Circle"
+        ],
+        "hint": "This pattern repeats Oval, Oval, Circle over and over — count carefully to see where you are.",
+        "emoji": "🥚",
+        "explanation": "This pattern repeats Oval, Oval, Circle. The sequence just gave one Oval to start a new group, so a second Oval comes next.",
+        "funFact": "Careful counting is the key to solving any repeating pattern.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 173,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L173_Q1",
+        "gameType": "shapes",
         "level": 173,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L173_Q1",
-                "gameType": "shapes",
-                "level": 173,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Square",
-                    "Rectangle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            },
-            {
-                "id": "KIDS_SHAPES_L173_Q2",
-                "gameType": "shapes",
-                "level": 173,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Square",
-                    "Rectangle",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            },
-            {
-                "id": "KIDS_SHAPES_L173_Q3",
-                "gameType": "shapes",
-                "level": 173,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Triangle",
-                    "Square",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            }
-        ]
-    },
-    {
+        "instruction": "Hexagon, Pentagon, Hexagon, Pentagon, Hexagon, ___? What comes next in this pattern?",
+        "question": "Pentagon",
+        "correctAnswer": "Pentagon",
+        "options": [
+          "Pentagon",
+          "Octagon",
+          "Hexagon"
+        ],
+        "hint": "Look at how Hexagon and Pentagon keep taking turns — which one comes right after Hexagon?",
+        "emoji": "🏠",
+        "explanation": "This pattern alternates Hexagon, Pentagon, so after Hexagon comes Pentagon again.",
+        "funFact": "Even shapes with lots of sides can be used in simple alternating patterns.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L173_Q2",
+        "gameType": "shapes",
+        "level": 173,
+        "instruction": "Cube, Pyramid, Cube, Pyramid, Cube, ___? What comes next in this pattern of solid shapes?",
+        "question": "Pyramid",
+        "correctAnswer": "Pyramid",
+        "options": [
+          "Cube",
+          "Cone",
+          "Pyramid"
+        ],
+        "hint": "Follow the back-and-forth between Cube and Pyramid to find what comes next.",
+        "emoji": "🗻",
+        "explanation": "This pattern alternates Cube, Pyramid, so after Cube comes Pyramid again.",
+        "funFact": "Alternating solid-shape patterns work exactly the same way as flat-shape patterns.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L173_Q3",
+        "gameType": "shapes",
+        "level": 173,
+        "instruction": "Cone, Cube, Sphere, Cone, Cube, Sphere, Cone, Cube, ___? What comes next in this pattern of solid shapes?",
+        "question": "Sphere",
+        "correctAnswer": "Sphere",
+        "options": [
+          "Cone",
+          "Cube",
+          "Sphere"
+        ],
+        "hint": "Break this into groups of Cone, Cube, Sphere to spot what comes next.",
+        "emoji": "🏀",
+        "explanation": "This pattern repeats Cone, Cube, Sphere, so after Cone, Cube comes Sphere again.",
+        "funFact": "Three-shape patterns work the same way whether the shapes are flat or solid.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 174,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L174_Q1",
+        "gameType": "shapes",
         "level": 174,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L174_Q1",
-                "gameType": "shapes",
-                "level": 174,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Rectangle",
-                    "Triangle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            },
-            {
-                "id": "KIDS_SHAPES_L174_Q2",
-                "gameType": "shapes",
-                "level": 174,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Circle",
-                    "Rectangle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            },
-            {
-                "id": "KIDS_SHAPES_L174_Q3",
-                "gameType": "shapes",
-                "level": 174,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Square",
-                    "Circle",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            }
-        ]
-    },
-    {
+        "instruction": "Square, Square, Triangle, Triangle, Square, Square, Triangle, Triangle, ___? What comes next in this pattern?",
+        "question": "Square",
+        "correctAnswer": "Square",
+        "options": [
+          "Triangle",
+          "Square",
+          "Circle"
+        ],
+        "hint": "This pattern repeats Square, Square, Triangle, Triangle over and over — count carefully to see where you are.",
+        "emoji": "🟩",
+        "explanation": "This pattern repeats Square, Square, Triangle, Triangle, so after two triangles comes a square to start the next group.",
+        "funFact": "Patterns with pairs of matching shapes are a fun variation on simple alternating patterns.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L174_Q2",
+        "gameType": "shapes",
+        "level": 174,
+        "instruction": "Pentagon, Star, Pentagon, Star, Pentagon, ___? What comes next in this pattern?",
+        "question": "Star",
+        "correctAnswer": "Star",
+        "options": [
+          "Hexagon",
+          "Star",
+          "Pentagon"
+        ],
+        "hint": "Follow the back-and-forth between Pentagon and Star to find what comes next.",
+        "emoji": "⭐",
+        "explanation": "This pattern alternates Pentagon, Star. The sequence just ended on Pentagon, so Star comes next.",
+        "funFact": "Remember, a pentagon and a 5-pointed star are closely related — a pentagon hides inside every star!",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L174_Q3",
+        "gameType": "shapes",
+        "level": 174,
+        "instruction": "Square, Triangle, Triangle, Square, Triangle, Triangle, Square, Triangle, ___? What comes next in this pattern?",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
+        "options": [
+          "Triangle",
+          "Circle",
+          "Square"
+        ],
+        "hint": "Look for the repeating group of three: Square, Triangle, Triangle — then find your place in it.",
+        "emoji": "🔺",
+        "explanation": "This pattern repeats Square, Triangle, Triangle, so after Square, Triangle comes another Triangle.",
+        "funFact": "Even a three-shape group can start to feel tricky if two of the shapes repeat inside it.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 175,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L175_Q1",
+        "gameType": "shapes",
         "level": 175,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L175_Q1",
-                "gameType": "shapes",
-                "level": 175,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Triangle",
-                    "Square",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            },
-            {
-                "id": "KIDS_SHAPES_L175_Q2",
-                "gameType": "shapes",
-                "level": 175,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Rectangle",
-                    "Square",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            },
-            {
-                "id": "KIDS_SHAPES_L175_Q3",
-                "gameType": "shapes",
-                "level": 175,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Square",
-                    "Triangle",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which shape, with its infinite lines of symmetry, could you use to end almost any symmetry pattern with total confidence?",
+        "question": "Circle",
+        "correctAnswer": "Circle",
+        "options": [
+          "Circle",
+          "Square",
+          "Octagon"
+        ],
+        "hint": "Think back to the very first symmetry lesson in this band — the shape that beats every other shape.",
+        "emoji": "🔵",
+        "explanation": "A circle's infinite lines of symmetry make it the most symmetrical shape you've learned in this entire game.",
+        "funFact": "You've now learned that a regular shape's lines of symmetry usually match its sides — except for a circle, which simply has no limit.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L175_Q2",
+        "gameType": "shapes",
+        "level": 175,
+        "instruction": "Cube, Sphere, Cone, Cylinder, Cube, Sphere, Cone, Cylinder, Cube, Sphere, ___? What comes next in this longer pattern of solid shapes?",
+        "question": "Cone",
+        "correctAnswer": "Cone",
+        "options": [
+          "Cone",
+          "Cylinder",
+          "Cube"
+        ],
+        "hint": "This pattern repeats Cube, Sphere, Cone, Cylinder over and over — count carefully to see where you are.",
+        "emoji": "🍦",
+        "explanation": "This pattern repeats Cube, Sphere, Cone, Cylinder. The sequence just gave Cube, Sphere — so Cone comes next.",
+        "funFact": "Even a four-shape repeating pattern is easy to solve once you spot the full group.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L175_Q3",
+        "gameType": "shapes",
+        "level": 175,
+        "instruction": "Circle, Crescent, Circle, Crescent, Circle, ___? What comes next in this pattern?",
+        "question": "Crescent",
+        "correctAnswer": "Crescent",
+        "options": [
+          "Oval",
+          "Crescent",
+          "Circle"
+        ],
+        "hint": "Look at how Circle and Crescent keep taking turns — which one comes right after Circle?",
+        "emoji": "🌙",
+        "explanation": "This pattern alternates Circle, Crescent, so after Circle comes Crescent again.",
+        "funFact": "This pattern looks a bit like the moon changing shape through its different phases!",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 176,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L176_Q1",
+        "gameType": "shapes",
         "level": 176,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L176_Q1",
-                "gameType": "shapes",
-                "level": 176,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Rectangle",
-                    "Square",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            },
-            {
-                "id": "KIDS_SHAPES_L176_Q2",
-                "gameType": "shapes",
-                "level": 176,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Rectangle",
-                    "Square",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            },
-            {
-                "id": "KIDS_SHAPES_L176_Q3",
-                "gameType": "shapes",
-                "level": 176,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Circle",
-                    "Square",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            }
-        ]
-    },
-    {
+        "instruction": "Sphere, Sphere, Cube, Sphere, Sphere, Cube, Sphere, Sphere, ___? What comes next in this pattern of solid shapes?",
+        "question": "Cube",
+        "correctAnswer": "Cube",
+        "options": [
+          "Sphere",
+          "Cylinder",
+          "Cube"
+        ],
+        "hint": "Break this into groups of Sphere, Sphere, Cube to spot what comes next.",
+        "emoji": "🎲",
+        "explanation": "This pattern repeats Sphere, Sphere, Cube, so after two spheres comes a cube.",
+        "funFact": "This same repeating trick works whether you're looking at flat shapes or solid ones.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L176_Q2",
+        "gameType": "shapes",
+        "level": 176,
+        "instruction": "Cone, Cylinder, Cone, Cylinder, Cone, ___? What comes next in this pattern of solid shapes?",
+        "question": "Cylinder",
+        "correctAnswer": "Cylinder",
+        "options": [
+          "Sphere",
+          "Cylinder",
+          "Cone"
+        ],
+        "hint": "This pattern swaps between Cone and Cylinder every single time.",
+        "emoji": "🥫",
+        "explanation": "This pattern alternates Cone, Cylinder, so after Cone comes Cylinder again.",
+        "funFact": "Just like flat shapes, solid shapes can alternate back and forth in a simple pattern.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L176_Q3",
+        "gameType": "shapes",
+        "level": 176,
+        "instruction": "Square, Diamond, Square, Diamond, Square, ___? What comes next in this pattern?",
+        "question": "Diamond",
+        "correctAnswer": "Diamond",
+        "options": [
+          "Diamond",
+          "Triangle",
+          "Square"
+        ],
+        "hint": "This pattern swaps between Square and Diamond every single time.",
+        "emoji": "💎",
+        "explanation": "This pattern alternates Square, Diamond, so after Square comes Diamond again.",
+        "funFact": "Remember, a diamond is really just a square standing on its point!",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 177,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L177_Q1",
+        "gameType": "shapes",
         "level": 177,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L177_Q1",
-                "gameType": "shapes",
-                "level": 177,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Triangle",
-                    "Square",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            },
-            {
-                "id": "KIDS_SHAPES_L177_Q2",
-                "gameType": "shapes",
-                "level": 177,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Circle",
-                    "Rectangle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            },
-            {
-                "id": "KIDS_SHAPES_L177_Q3",
-                "gameType": "shapes",
-                "level": 177,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Rectangle",
-                    "Triangle",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            }
-        ]
-    },
-    {
+        "instruction": "Heart, Heart, Diamond, Diamond, Heart, Heart, Diamond, Diamond, ___? What comes next in this pattern?",
+        "question": "Heart",
+        "correctAnswer": "Heart",
+        "options": [
+          "Star",
+          "Diamond",
+          "Heart"
+        ],
+        "hint": "Look for the repeating group of four: Heart, Heart, Diamond, Diamond — then find your place in it.",
+        "emoji": "❤️",
+        "explanation": "This pattern repeats Heart, Heart, Diamond, Diamond, so after two diamonds comes a heart to start the next group.",
+        "funFact": "Patterns that use pairs of shapes can feel extra fun and rhythmic.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L177_Q2",
+        "gameType": "shapes",
+        "level": 177,
+        "instruction": "Square, Pentagon, Hexagon, Square, Pentagon, Hexagon, Square, Pentagon, ___? What comes next in this pattern?",
+        "question": "Hexagon",
+        "correctAnswer": "Hexagon",
+        "options": [
+          "Hexagon",
+          "Square",
+          "Pentagon"
+        ],
+        "hint": "This pattern repeats Square, Pentagon, Hexagon over and over — count carefully to see where you are.",
+        "emoji": "🐝",
+        "explanation": "This pattern repeats Square, Pentagon, Hexagon, so after Square, Pentagon comes Hexagon again.",
+        "funFact": "This pattern is extra fun because it also counts up in sides: 4, 5, then 6.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L177_Q3",
+        "gameType": "shapes",
+        "level": 177,
+        "instruction": "Hexagon, Octagon, Hexagon, Octagon, Hexagon, Octagon, Hexagon, ___? What comes next in this pattern?",
+        "question": "Octagon",
+        "correctAnswer": "Octagon",
+        "options": [
+          "Hexagon",
+          "Pentagon",
+          "Octagon"
+        ],
+        "hint": "Follow the back-and-forth between Hexagon and Octagon to find what comes next.",
+        "emoji": "🛑",
+        "explanation": "This pattern alternates Hexagon, Octagon, so after Hexagon comes Octagon again.",
+        "funFact": "Even after many repeats, an alternating pattern never changes its simple back-and-forth rule.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 178,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L178_Q1",
+        "gameType": "shapes",
         "level": 178,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L178_Q1",
-                "gameType": "shapes",
-                "level": 178,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Circle",
-                    "Rectangle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            },
-            {
-                "id": "KIDS_SHAPES_L178_Q2",
-                "gameType": "shapes",
-                "level": 178,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Circle",
-                    "Square",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            },
-            {
-                "id": "KIDS_SHAPES_L178_Q3",
-                "gameType": "shapes",
-                "level": 178,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Triangle",
-                    "Rectangle",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            }
-        ]
-    },
-    {
+        "instruction": "Circle, Oval, Circle, Oval, Circle, ___? What comes next in this pattern?",
+        "question": "Oval",
+        "correctAnswer": "Oval",
+        "options": [
+          "Circle",
+          "Heart",
+          "Oval"
+        ],
+        "hint": "This pattern swaps between Circle and Oval every single time.",
+        "emoji": "🥚",
+        "explanation": "This pattern alternates Circle, Oval. The sequence just ended on Circle, so Oval comes next.",
+        "funFact": "Even two similar curved shapes like circle and oval can form a clear alternating pattern.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L178_Q2",
+        "gameType": "shapes",
+        "level": 178,
+        "instruction": "Square, Pentagon, Square, Pentagon, Square, Pentagon, Square, ___? What comes next in this final pattern?",
+        "question": "Pentagon",
+        "correctAnswer": "Pentagon",
+        "options": [
+          "Pentagon",
+          "Square",
+          "Hexagon"
+        ],
+        "hint": "Look at how Square and Pentagon keep taking turns — which one comes right after Square?",
+        "emoji": "🏠",
+        "explanation": "This pattern alternates Square, Pentagon, so after Square comes Pentagon again.",
+        "funFact": "You've now practiced spotting patterns with two shapes, three shapes, and even four shapes in a row!",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L178_Q3",
+        "gameType": "shapes",
+        "level": 178,
+        "instruction": "Cone, Pyramid, Cone, Pyramid, Cone, ___? What comes next in this pattern of solid shapes?",
+        "question": "Pyramid",
+        "correctAnswer": "Pyramid",
+        "options": [
+          "Cone",
+          "Pyramid",
+          "Cube"
+        ],
+        "hint": "This pattern swaps between Cone and Pyramid every single time.",
+        "emoji": "🗻",
+        "explanation": "This pattern alternates Cone, Pyramid, so after Cone comes Pyramid again.",
+        "funFact": "Cones and pyramids are similar because they both narrow to a single point at the top.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 179,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L179_Q1",
+        "gameType": "shapes",
         "level": 179,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L179_Q1",
-                "gameType": "shapes",
-                "level": 179,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Rectangle",
-                    "Square",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            },
-            {
-                "id": "KIDS_SHAPES_L179_Q2",
-                "gameType": "shapes",
-                "level": 179,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Rectangle",
-                    "Square",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            },
-            {
-                "id": "KIDS_SHAPES_L179_Q3",
-                "gameType": "shapes",
-                "level": 179,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Square",
-                    "Circle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which shape has only 2 lines of symmetry, even though it has 4 sides?",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
+        "options": [
+          "Square",
+          "Rectangle",
+          "Pentagon"
+        ],
+        "hint": "Think about the shape where only the middle-straight folds match, not the corner-to-corner folds.",
+        "emoji": "🟦",
+        "explanation": "A rectangle has only 2 lines of symmetry — straight down the middle each way — because its sides aren't all equal.",
+        "funFact": "Unlike a square, a rectangle's 4 sides don't all match, so it has fewer lines of symmetry than sides.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L179_Q2",
+        "gameType": "shapes",
+        "level": 179,
+        "instruction": "Cube, Rectangular Prism, Cube, Rectangular Prism, Cube, ___? What comes next in this pattern of solid shapes?",
+        "question": "Rectangular Prism",
+        "correctAnswer": "Rectangular Prism",
+        "options": [
+          "Rectangular Prism",
+          "Pyramid",
+          "Cube"
+        ],
+        "hint": "This pattern swaps between Cube and Rectangular Prism every single time.",
+        "emoji": "📦",
+        "explanation": "This pattern alternates Cube, Rectangular Prism, so after Cube comes Rectangular Prism again.",
+        "funFact": "A cube and a rectangular prism are closely related, which makes a fun pattern pair.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L179_Q3",
+        "gameType": "shapes",
+        "level": 179,
+        "instruction": "Cube, Cube, Sphere, Cube, Cube, Sphere, Cube, Cube, ___? What comes next in this final pattern of solid shapes?",
+        "question": "Sphere",
+        "correctAnswer": "Sphere",
+        "options": [
+          "Sphere",
+          "Cylinder",
+          "Cube"
+        ],
+        "hint": "Break this into groups of Cube, Cube, Sphere to spot what comes next.",
+        "emoji": "🏀",
+        "explanation": "This pattern repeats Cube, Cube, Sphere, so after two cubes comes a sphere, just as it has every time before.",
+        "funFact": "Whether flat or solid, every pattern in this band followed the very same simple rule: find the repeating group, then continue it.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 180,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L180_Q1",
+        "gameType": "shapes",
         "level": 180,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L180_Q1",
-                "gameType": "shapes",
-                "level": 180,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Circle",
-                    "Square",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            },
-            {
-                "id": "KIDS_SHAPES_L180_Q2",
-                "gameType": "shapes",
-                "level": 180,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Circle",
-                    "Rectangle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            },
-            {
-                "id": "KIDS_SHAPES_L180_Q3",
-                "gameType": "shapes",
-                "level": 180,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Triangle",
-                    "Circle",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            }
-        ]
-    }
+        "instruction": "Rectangle, Square, Rectangle, Square, Rectangle, ___? What comes next in this pattern?",
+        "question": "Square",
+        "correctAnswer": "Square",
+        "options": [
+          "Square",
+          "Diamond",
+          "Rectangle"
+        ],
+        "hint": "Look at how Rectangle and Square keep taking turns — which one comes right after Rectangle?",
+        "emoji": "🟩",
+        "explanation": "This pattern alternates Rectangle, Square. The sequence just ended on Rectangle, so Square comes next.",
+        "funFact": "Even two shapes that look similar, like rectangle and square, can make a clear pattern.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L180_Q2",
+        "gameType": "shapes",
+        "level": 180,
+        "instruction": "Heart, Diamond, Star, Heart, Diamond, Star, Heart, Diamond, ___? What comes next in this pattern?",
+        "question": "Star",
+        "correctAnswer": "Star",
+        "options": [
+          "Heart",
+          "Star",
+          "Diamond"
+        ],
+        "hint": "Look for the repeating group of three: Heart, Diamond, Star — then find your place in it.",
+        "emoji": "⭐",
+        "explanation": "This pattern repeats Heart, Diamond, Star, so after Heart, Diamond comes Star again.",
+        "funFact": "Patterns with three different pointy shapes can be some of the trickiest to memorize.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L180_Q3",
+        "gameType": "shapes",
+        "level": 180,
+        "instruction": "Circle, Circle, Square, Square, Triangle, Triangle, Circle, Circle, Square, Square, ___? What comes next in this longer pattern?",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
+        "options": [
+          "Triangle",
+          "Square",
+          "Circle"
+        ],
+        "hint": "Look closely — this pattern repeats a group of six shapes, in pairs: circle, circle, square, square, triangle, triangle.",
+        "emoji": "🔺",
+        "explanation": "This pattern repeats pairs of Circle, Square, Triangle, so after this pair of squares comes a pair of triangles.",
+        "funFact": "Longer patterns just combine simpler ideas — here, it's pairs of three different shapes.",
+        "subtype": "symmetry_and_patterns",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  }
 ]

@@ -1,562 +1,622 @@
 [
-    {
+  {
+    "level": 71,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L71_Q1",
+        "gameType": "shapes",
         "level": 71,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L71_Q1",
-                "gameType": "shapes",
-                "level": 71,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Triangle",
-                    "Square",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            },
-            {
-                "id": "KIDS_SHAPES_L71_Q2",
-                "gameType": "shapes",
-                "level": 71,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Triangle",
-                    "Square",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            },
-            {
-                "id": "KIDS_SHAPES_L71_Q3",
-                "gameType": "shapes",
-                "level": 71,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Circle",
-                    "Square",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which shape has 5 sides and 5 corners, right between a square and a hexagon in side count?",
+        "question": "Pentagon",
+        "correctAnswer": "Pentagon",
+        "options": [
+          "Pentagon",
+          "Square",
+          "Hexagon"
+        ],
+        "hint": "This shape has one more side than a square, and one fewer than a hexagon.",
+        "emoji": "🏠",
+        "explanation": "A pentagon's 5 sides sit exactly between a square's 4 and a hexagon's 6.",
+        "funFact": "Lining up shapes by side count goes: triangle, square, pentagon, hexagon, octagon.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L71_Q2",
+        "gameType": "shapes",
+        "level": 71,
+        "instruction": "Which shape has more sides than any other shape you've learned in this game so far?",
+        "question": "Octagon",
+        "correctAnswer": "Octagon",
+        "options": [
+          "Hexagon",
+          "Octagon",
+          "Pentagon"
+        ],
+        "hint": "Think of the shape used for stop signs, with the highest side count yet.",
+        "emoji": "🛑",
+        "explanation": "With 8 sides, an octagon has more straight sides than any shape learned so far.",
+        "funFact": "If a shape had even more sides, it would start to look almost round, like a circle.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L71_Q3",
+        "gameType": "shapes",
+        "level": 71,
+        "instruction": "Which shape has 4 equal sides but a different corner arrangement than a typical square?",
+        "question": "Diamond",
+        "correctAnswer": "Diamond",
+        "options": [
+          "Pentagon",
+          "Diamond",
+          "Square"
+        ],
+        "hint": "Look for the shape whose top and bottom corners point instead of lying flat.",
+        "emoji": "💎",
+        "explanation": "A diamond has 4 equal sides just like a square, but arranged so its corners point instead of lying flat.",
+        "funFact": "Some card games use the diamond shape as one of their four playing card suits.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 72,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L72_Q1",
+        "gameType": "shapes",
         "level": 72,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L72_Q1",
-                "gameType": "shapes",
-                "level": 72,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Circle",
-                    "Rectangle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            },
-            {
-                "id": "KIDS_SHAPES_L72_Q2",
-                "gameType": "shapes",
-                "level": 72,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Triangle",
-                    "Circle",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            },
-            {
-                "id": "KIDS_SHAPES_L72_Q3",
-                "gameType": "shapes",
-                "level": 72,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Rectangle",
-                    "Circle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which shape matches the cross-section of a new, unsharpened pencil?",
+        "question": "Hexagon",
+        "correctAnswer": "Hexagon",
+        "options": [
+          "Hexagon",
+          "Octagon",
+          "Pentagon"
+        ],
+        "hint": "Think of a shape with 6 flat sides running the length of the pencil.",
+        "emoji": "✏️",
+        "explanation": "Many pencils have a 6-sided cross-section, just like a hexagon.",
+        "funFact": "Hexagon pencils are less likely to roll off a slanted desk than round ones.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L72_Q2",
+        "gameType": "shapes",
+        "level": 72,
+        "instruction": "Which shape has 4 equal sides and sits flat on one full side, unlike a diamond?",
+        "question": "Square",
+        "correctAnswer": "Square",
+        "options": [
+          "Diamond",
+          "Square",
+          "Pentagon"
+        ],
+        "hint": "Look for the shape that rests on a flat bottom edge, not a pointed corner.",
+        "emoji": "🟩",
+        "explanation": "A square rests flat on one whole side, while a diamond balances on a single point.",
+        "funFact": "A square and a diamond can actually be the exact same shape, just turned differently.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L72_Q3",
+        "gameType": "shapes",
+        "level": 72,
+        "instruction": "Which shape can be drawn by combining a square with a triangle sitting right on top of it?",
+        "question": "Pentagon",
+        "correctAnswer": "Pentagon",
+        "options": [
+          "Square",
+          "Pentagon",
+          "Triangle"
+        ],
+        "hint": "Think of a house outline: a square base topped by a pointed roof, drawn as one shape.",
+        "emoji": "🏠",
+        "explanation": "A square topped by a triangle roof combines into one 5-sided pentagon outline.",
+        "funFact": "Artists often draw simple houses this way because it naturally forms a pentagon.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 73,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L73_Q1",
+        "gameType": "shapes",
         "level": 73,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L73_Q1",
-                "gameType": "shapes",
-                "level": 73,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Triangle",
-                    "Circle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            },
-            {
-                "id": "KIDS_SHAPES_L73_Q2",
-                "gameType": "shapes",
-                "level": 73,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Rectangle",
-                    "Square",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            },
-            {
-                "id": "KIDS_SHAPES_L73_Q3",
-                "gameType": "shapes",
-                "level": 73,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Rectangle",
-                    "Square",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which shape has 8 sides, each one shorter than the sides of a big square drawn the same width?",
+        "question": "Octagon",
+        "correctAnswer": "Octagon",
+        "options": [
+          "Hexagon",
+          "Square",
+          "Octagon"
+        ],
+        "hint": "Think of a square with each corner sliced off to add four extra sides.",
+        "emoji": "🛑",
+        "explanation": "Slicing each corner off a square adds four new sides, turning it into an 8-sided octagon.",
+        "funFact": "You can turn a square into an octagon just by snipping each corner at an angle.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L73_Q2",
+        "gameType": "shapes",
+        "level": 73,
+        "instruction": "Which shape do you get by slicing just two corners off a square, adding two new sides?",
+        "question": "Hexagon",
+        "correctAnswer": "Hexagon",
+        "options": [
+          "Pentagon",
+          "Octagon",
+          "Hexagon"
+        ],
+        "hint": "A square has 4 sides — slicing two corners adds two more.",
+        "emoji": "🐝",
+        "explanation": "Adding two new sides to a square's 4 sides makes 6 sides total, just like a hexagon.",
+        "funFact": "Playing with corner cuts is a fun way to see how polygons are related to each other.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L73_Q3",
+        "gameType": "shapes",
+        "level": 73,
+        "instruction": "Which shape do you get by slicing just one corner off a square, adding one new side?",
+        "question": "Pentagon",
+        "correctAnswer": "Pentagon",
+        "options": [
+          "Hexagon",
+          "Square",
+          "Pentagon"
+        ],
+        "hint": "A square has 4 sides — slicing one corner adds just one more.",
+        "emoji": "🏠",
+        "explanation": "Adding one new side to a square's 4 sides makes 5 sides total, just like a pentagon.",
+        "funFact": "This corner-slicing trick shows exactly how a pentagon relates to a square.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 74,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L74_Q1",
+        "gameType": "shapes",
         "level": 74,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L74_Q1",
-                "gameType": "shapes",
-                "level": 74,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Triangle",
-                    "Circle",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            },
-            {
-                "id": "KIDS_SHAPES_L74_Q2",
-                "gameType": "shapes",
-                "level": 74,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Circle",
-                    "Triangle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            },
-            {
-                "id": "KIDS_SHAPES_L74_Q3",
-                "gameType": "shapes",
-                "level": 74,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Square",
-                    "Rectangle",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which shape has no corners to slice off, no matter how you try?",
+        "question": "Circle",
+        "correctAnswer": "Circle",
+        "options": [
+          "Hexagon",
+          "Octagon",
+          "Circle"
+        ],
+        "hint": "Look for the one shape that never had any corners to begin with.",
+        "emoji": "🔵",
+        "explanation": "A circle never has corners to slice, since its whole edge is one smooth curve.",
+        "funFact": "This is exactly why circles are considered the roundest and smoothest shape of all.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L74_Q2",
+        "gameType": "shapes",
+        "level": 74,
+        "instruction": "Which shape has 3 sides, the fewest of any shape that could be turned into a pentagon by adding sides?",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
+        "options": [
+          "Pentagon",
+          "Square",
+          "Triangle"
+        ],
+        "hint": "You would need to add 2 sides to this shape to reach a pentagon's 5.",
+        "emoji": "🔺",
+        "explanation": "Adding 2 sides to a triangle's 3 sides makes 5 total, matching a pentagon.",
+        "funFact": "Triangles are the starting point for building up to almost every other straight-sided shape.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L74_Q3",
+        "gameType": "shapes",
+        "level": 74,
+        "instruction": "Which shape needs exactly 5 more sides than a triangle to be complete?",
+        "question": "Octagon",
+        "correctAnswer": "Octagon",
+        "options": [
+          "Pentagon",
+          "Octagon",
+          "Hexagon"
+        ],
+        "hint": "A triangle has 3 sides — this shape needs 5 more to reach its full count.",
+        "emoji": "🛑",
+        "explanation": "Adding 5 sides to a triangle's 3 sides makes 8 total, matching an octagon.",
+        "funFact": "Counting up from a triangle, you pass through square, pentagon, hexagon, and heptagon before reaching octagon.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 75,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L75_Q1",
+        "gameType": "shapes",
         "level": 75,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L75_Q1",
-                "gameType": "shapes",
-                "level": 75,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Rectangle",
-                    "Circle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            },
-            {
-                "id": "KIDS_SHAPES_L75_Q2",
-                "gameType": "shapes",
-                "level": 75,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Rectangle",
-                    "Triangle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            },
-            {
-                "id": "KIDS_SHAPES_L75_Q3",
-                "gameType": "shapes",
-                "level": 75,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Triangle",
-                    "Rectangle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which shape has a smooth curved edge, but unlike a circle, is clearly longer in one direction?",
+        "question": "Oval",
+        "correctAnswer": "Oval",
+        "options": [
+          "Oval",
+          "Circle",
+          "Hexagon"
+        ],
+        "hint": "Look for the shape that curves like a circle but looks a bit stretched.",
+        "emoji": "🥚",
+        "explanation": "An oval curves smoothly like a circle, but stretches longer in one direction.",
+        "funFact": "Ovals appear anywhere a circle looks gently squeezed or pulled longer.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L75_Q2",
+        "gameType": "shapes",
+        "level": 75,
+        "instruction": "Which shape matches the pattern often seen painted on the ground near a garden path?",
+        "question": "Hexagon",
+        "correctAnswer": "Hexagon",
+        "options": [
+          "Hexagon",
+          "Square",
+          "Pentagon"
+        ],
+        "hint": "Think of a shape with 6 sides, like the pattern on a honeycomb.",
+        "emoji": "🍯",
+        "explanation": "Honeycomb-style hexagon patterns are a popular design for garden paths and tiles.",
+        "funFact": "Hexagon tiles fit together with no wasted space, just like real honeycomb.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L75_Q3",
+        "gameType": "shapes",
+        "level": 75,
+        "instruction": "Which shape has 5 sides, the same number of points as a classic star shape?",
+        "question": "Pentagon",
+        "correctAnswer": "Pentagon",
+        "options": [
+          "Pentagon",
+          "Square",
+          "Hexagon"
+        ],
+        "hint": "Count the points on a star — this shape has the same number of sides.",
+        "emoji": "🏠",
+        "explanation": "A pentagon has 5 sides, matching the 5 points of a classic star.",
+        "funFact": "If you connect the 5 outer points of a star with straight lines, you can draw a pentagon inside it.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 76,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L76_Q1",
+        "gameType": "shapes",
         "level": 76,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L76_Q1",
-                "gameType": "shapes",
-                "level": 76,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Circle",
-                    "Rectangle",
-                    "Square"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            },
-            {
-                "id": "KIDS_SHAPES_L76_Q2",
-                "gameType": "shapes",
-                "level": 76,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Rectangle",
-                    "Triangle",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            },
-            {
-                "id": "KIDS_SHAPES_L76_Q3",
-                "gameType": "shapes",
-                "level": 76,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Rectangle",
-                    "Circle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which shape, if you added just 1 side, would become a pentagon?",
+        "question": "Square",
+        "correctAnswer": "Square",
+        "options": [
+          "Square",
+          "Triangle",
+          "Pentagon"
+        ],
+        "hint": "Think of the 4-sided shape that is just one side short of a pentagon.",
+        "emoji": "🟩",
+        "explanation": "Adding just 1 side to a square's 4 sides makes 5, turning it into a pentagon.",
+        "funFact": "This is a handy way to remember that a pentagon has one more side than a square.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L76_Q2",
+        "gameType": "shapes",
+        "level": 76,
+        "instruction": "Which shape, if you removed 2 sides, would become a hexagon?",
+        "question": "Octagon",
+        "correctAnswer": "Octagon",
+        "options": [
+          "Hexagon",
+          "Octagon",
+          "Pentagon"
+        ],
+        "hint": "Think of the 8-sided shape that has exactly 2 more sides than a hexagon.",
+        "emoji": "🛑",
+        "explanation": "Removing 2 sides from an octagon's 8 sides leaves 6, turning it into a hexagon.",
+        "funFact": "This kind of side-counting helps you see how all the polygons connect to each other.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L76_Q3",
+        "gameType": "shapes",
+        "level": 76,
+        "instruction": "Which shape, even though it has 4 equal sides like a square, is never described as sitting flat on an edge?",
+        "question": "Diamond",
+        "correctAnswer": "Diamond",
+        "options": [
+          "Square",
+          "Diamond",
+          "Pentagon"
+        ],
+        "hint": "Look for the shape that always seems to be balancing on a corner instead.",
+        "emoji": "💎",
+        "explanation": "A diamond always appears balancing on a corner, unlike a square which sits flat on an edge.",
+        "funFact": "This is really just a square, drawn turned on its point instead of its side.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 77,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L77_Q1",
+        "gameType": "shapes",
         "level": 77,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L77_Q1",
-                "gameType": "shapes",
-                "level": 77,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Circle",
-                    "Square",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            },
-            {
-                "id": "KIDS_SHAPES_L77_Q2",
-                "gameType": "shapes",
-                "level": 77,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Circle",
-                    "Triangle",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            },
-            {
-                "id": "KIDS_SHAPES_L77_Q3",
-                "gameType": "shapes",
-                "level": 77,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Triangle",
-                    "Circle",
-                    "Rectangle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which shape appears both in honeycomb cells and on the flat faces of some pencils?",
+        "question": "Hexagon",
+        "correctAnswer": "Hexagon",
+        "options": [
+          "Hexagon",
+          "Octagon",
+          "Pentagon"
+        ],
+        "hint": "Think of the 6-sided shape shared by bees and pencil makers.",
+        "emoji": "🐝",
+        "explanation": "Both honeycomb cells and many pencils use the 6-sided hexagon shape.",
+        "funFact": "Hexagons show up in nature and in everyday objects because they fit together so efficiently.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L77_Q2",
+        "gameType": "shapes",
+        "level": 77,
+        "instruction": "Which shape appears on both stop signs and some gazebo buildings?",
+        "question": "Octagon",
+        "correctAnswer": "Octagon",
+        "options": [
+          "Octagon",
+          "Square",
+          "Hexagon"
+        ],
+        "hint": "Think of the 8-sided shape shared by road signs and garden buildings.",
+        "emoji": "🏛️",
+        "explanation": "Both stop signs and some gazebos use the 8-sided octagon shape.",
+        "funFact": "An octagon's many flat sides make it useful for both signs and small buildings.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L77_Q3",
+        "gameType": "shapes",
+        "level": 77,
+        "instruction": "Which shape appears on both home plate and some simple house drawings?",
+        "question": "Pentagon",
+        "correctAnswer": "Pentagon",
+        "options": [
+          "Hexagon",
+          "Pentagon",
+          "Square"
+        ],
+        "hint": "Think of the 5-sided shape shared by a baseball field and a house outline.",
+        "emoji": "🏠",
+        "explanation": "Both home plate and simple house drawings use the 5-sided pentagon shape.",
+        "funFact": "Noticing the same shape in different places is a great way to remember it.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 78,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L78_Q1",
+        "gameType": "shapes",
         "level": 78,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L78_Q1",
-                "gameType": "shapes",
-                "level": 78,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Rectangle",
-                    "Square",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            },
-            {
-                "id": "KIDS_SHAPES_L78_Q2",
-                "gameType": "shapes",
-                "level": 78,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Triangle",
-                    "Square",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            },
-            {
-                "id": "KIDS_SHAPES_L78_Q3",
-                "gameType": "shapes",
-                "level": 78,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Triangle",
-                    "Rectangle",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which shape has points instead of plain corners, setting it apart from a hexagon or pentagon?",
+        "question": "Star",
+        "correctAnswer": "Star",
+        "options": [
+          "Pentagon",
+          "Star",
+          "Hexagon"
+        ],
+        "hint": "Look for the shape with sharp spikes poking outward, not a smooth polygon edge.",
+        "emoji": "⭐",
+        "explanation": "A star has sharp points poking outward, unlike the plain corners of a hexagon or pentagon.",
+        "funFact": "A star shape is actually made from two overlapping triangles in some classic designs.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L78_Q2",
+        "gameType": "shapes",
+        "level": 78,
+        "instruction": "Which shape has 4 sides and 4 corners, but would need 4 MORE sides to become an octagon?",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
+        "options": [
+          "Square",
+          "Rectangle",
+          "Octagon"
+        ],
+        "hint": "An octagon has 8 sides — this shape has exactly half that many.",
+        "emoji": "🟦",
+        "explanation": "A rectangle's 4 sides are exactly half of an octagon's 8 sides.",
+        "funFact": "Doubling the sides of a 4-sided shape is one way to imagine building an octagon.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L78_Q3",
+        "gameType": "shapes",
+        "level": 78,
+        "instruction": "Which shape has no sides to count at all, making every side-counting question about it a trick question?",
+        "question": "Circle",
+        "correctAnswer": "Circle",
+        "options": [
+          "Hexagon",
+          "Octagon",
+          "Circle"
+        ],
+        "hint": "Look for the shape that is one continuous curve with nothing to count.",
+        "emoji": "🔵",
+        "explanation": "A circle has no straight sides at all, so there is nothing to count — its edge is one smooth curve.",
+        "funFact": "Mathematicians describe a circle's edge with a special curved measurement instead of counting sides.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 79,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L79_Q1",
+        "gameType": "shapes",
         "level": 79,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L79_Q1",
-                "gameType": "shapes",
-                "level": 79,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Rectangle",
-                    "Square",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            },
-            {
-                "id": "KIDS_SHAPES_L79_Q2",
-                "gameType": "shapes",
-                "level": 79,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Rectangle",
-                    "Triangle",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            },
-            {
-                "id": "KIDS_SHAPES_L79_Q3",
-                "gameType": "shapes",
-                "level": 79,
-                "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
-                "question": "Square",
-                "correctAnswer": "Square",
-                "options": [
-                    "Square",
-                    "Circle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect square!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A square has four equal sides, just like a perfect cardboard gift box!"
-            }
-        ]
-    },
-    {
+        "instruction": "Which shape sits between a square and a hexagon if you line up shapes by their number of sides?",
+        "question": "Pentagon",
+        "correctAnswer": "Pentagon",
+        "options": [
+          "Pentagon",
+          "Square",
+          "Hexagon"
+        ],
+        "hint": "This shape has one more side than 4, and one fewer than 6.",
+        "emoji": "🏠",
+        "explanation": "A pentagon's 5 sides place it right between a square's 4 and a hexagon's 6.",
+        "funFact": "Lining shapes up by side count is a great way to see how they're all connected.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L79_Q2",
+        "gameType": "shapes",
+        "level": 79,
+        "instruction": "Which shape sits between a pentagon and an octagon if you count up by sides, two at a time?",
+        "question": "Hexagon",
+        "correctAnswer": "Hexagon",
+        "options": [
+          "Hexagon",
+          "Pentagon",
+          "Octagon"
+        ],
+        "hint": "This shape has one more side than a pentagon, and two fewer than an octagon.",
+        "emoji": "🐝",
+        "explanation": "A hexagon's 6 sides sit between a pentagon's 5 and an octagon's 8.",
+        "funFact": "Between hexagon and octagon there's actually one more shape you haven't met yet, called a heptagon, with 7 sides.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L79_Q3",
+        "gameType": "shapes",
+        "level": 79,
+        "instruction": "Which shape has the most sides of every shape you have learned in this game so far?",
+        "question": "Octagon",
+        "correctAnswer": "Octagon",
+        "options": [
+          "Pentagon",
+          "Hexagon",
+          "Octagon"
+        ],
+        "hint": "Think of the shape used for stop signs — it has more sides than any other shape here.",
+        "emoji": "🛑",
+        "explanation": "With 8 sides, an octagon has more sides than any other shape introduced so far in this game.",
+        "funFact": "As shapes gain more and more sides, they start to look rounder, closer to a circle.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  },
+  {
+    "level": 80,
+    "quests": [
+      {
+        "id": "KIDS_SHAPES_L80_Q1",
+        "gameType": "shapes",
         "level": 80,
-        "quests": [
-            {
-                "id": "KIDS_SHAPES_L80_Q1",
-                "gameType": "shapes",
-                "level": 80,
-                "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
-                "question": "Circle",
-                "correctAnswer": "Circle",
-                "options": [
-                    "Square",
-                    "Rectangle",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect circle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A circle has no corners at all and goes round and round like a wheel!"
-            },
-            {
-                "id": "KIDS_SHAPES_L80_Q2",
-                "gameType": "shapes",
-                "level": 80,
-                "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
-                "question": "Triangle",
-                "correctAnswer": "Triangle",
-                "options": [
-                    "Rectangle",
-                    "Triangle",
-                    "Circle"
-                ],
-                "hint": "It looks like a perfect triangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A triangle has three points, just like a yummy slice of pizza!"
-            },
-            {
-                "id": "KIDS_SHAPES_L80_Q3",
-                "gameType": "shapes",
-                "level": 80,
-                "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
-                "question": "Rectangle",
-                "correctAnswer": "Rectangle",
-                "options": [
-                    "Rectangle",
-                    "Circle",
-                    "Triangle"
-                ],
-                "hint": "It looks like a perfect rectangle!",
-                "emoji": "💠",
-                "explanation": "Take your time and look closely. You'll get it right next time!",
-                "funFact": "A rectangle has two long sides and two short sides, like a tall door!"
-            }
-        ]
-    }
+        "instruction": "Which shape, alongside squares and hexagons, is one of only three regular shapes that tile a floor with zero gaps?",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
+        "options": [
+          "Octagon",
+          "Triangle",
+          "Pentagon"
+        ],
+        "hint": "This shape has just 3 sides, the fewest of the three floor-tiling shapes.",
+        "emoji": "🔺",
+        "explanation": "Triangles, squares, and hexagons are the only three regular shapes that tile a floor perfectly, with zero gaps.",
+        "funFact": "Even though pentagons and octagons are nice shapes, they cannot tile a floor alone without gaps.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L80_Q2",
+        "gameType": "shapes",
+        "level": 80,
+        "instruction": "Which shape, like a circle, has zero corners, but is not perfectly round?",
+        "question": "Oval",
+        "correctAnswer": "Oval",
+        "options": [
+          "Oval",
+          "Circle",
+          "Hexagon"
+        ],
+        "hint": "Look for the shape that curves smoothly but looks a little stretched compared to a circle.",
+        "emoji": "🥚",
+        "explanation": "An oval has zero corners just like a circle, but it is stretched instead of perfectly round.",
+        "funFact": "You could think of an oval as a circle's stretched-out cousin.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      },
+      {
+        "id": "KIDS_SHAPES_L80_Q3",
+        "gameType": "shapes",
+        "level": 80,
+        "instruction": "Which shape do you get if you keep slicing corners off a hexagon until it has 8 sides?",
+        "question": "Octagon",
+        "correctAnswer": "Octagon",
+        "options": [
+          "Pentagon",
+          "Hexagon",
+          "Octagon"
+        ],
+        "hint": "A hexagon has 6 sides — slicing corners can add just enough to reach 8.",
+        "emoji": "🛑",
+        "explanation": "Slicing corners off a hexagon to add 2 more sides gives you an 8-sided octagon.",
+        "funFact": "This corner-slicing pattern is a fun way to build up from triangle all the way to octagon.",
+        "subtype": "more_sides_and_curves",
+        "interactionType": "multiple_choice"
+      }
+    ]
+  }
 ]
