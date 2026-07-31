@@ -27,31 +27,47 @@ class DescribeSituationPromptCard extends StatelessWidget {
       child: Stack(
         children: [
           const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "SITUATION PROMPT",
-                style: TextStyle(
-                  fontFamily: 'RobotoMono',
-                  fontSize: 11.sp,
-                  color: color,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1.5,
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 8.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.lightbulb_outline_rounded,
+                      color: color,
+                      size: 16.r,
+                    ),
+                    SizedBox(width: 8.w),
+                    Text(
+                      "SITUATION PROMPT",
+                      style: TextStyle(
+                        fontFamily: 'RobotoMono',
+                        fontSize: 11.sp,
+                        color: color,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.5,
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-              SizedBox(height: 8.h),
-              Text(
-                prompt,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  color: isDark ? Colors.white70 : Colors.black87,
-                  fontWeight: FontWeight.bold,
-                  height: 1.4,
+                SizedBox(height: 16.h),
+                Text(
+                  prompt,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 20.sp,
+                    color: isDark ? Colors.white : const Color(0xFF1E293B),
+                    fontWeight: FontWeight.w800,
+                    height: 1.4,
+                    letterSpacing: 0.3,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),
