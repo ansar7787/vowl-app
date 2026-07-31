@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_background_renderer.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
@@ -820,56 +820,13 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
   }
 
   Widget _buildBackground(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return Stack(
-      children: [
-        MeshGradientBackground(
-          colors: isDark
-              ? [
-                  widget.primaryColor.withAlpha(100),
-                  const Color(0xFF0F172A),
-                  widget.primaryColor.withAlpha(80),
-                ]
-              : [
-                  widget.primaryColor.withAlpha(60),
-                  const Color(0xFFF8FAFC),
-                  widget.primaryColor.withAlpha(40),
-                ],
-        ).animate().fadeIn(duration: 400.ms),
-        // Decorative clouds
-        Positioned(top: 100.h, left: -100.w, child: _buildCloud(context, 180.w))
-            .animate(onPlay: (controller) => controller.repeat(reverse: true))
-            .moveX(
-              begin: 0,
-              end: 200,
-              duration: 10.seconds,
-              curve: Curves.easeInOutSine,
-            ),
-
-        Positioned(
-              bottom: 250.h,
-              right: -100.w,
-              child: _buildCloud(context, 160.w),
-            )
-            .animate(onPlay: (controller) => controller.repeat(reverse: true))
-            .moveX(
-              begin: 0,
-              end: -250,
-              duration: 14.seconds,
-              curve: Curves.easeInOutSine,
-            ),
-      ],
-    );
-  }
-
-  Widget _buildCloud(BuildContext context, double width) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return Icon(
-      Icons.cloud_rounded,
-      color: (isDark ? Colors.white.withAlpha(15) : Colors.white).withAlpha(
-        180,
-      ),
-      size: width,
+    return Positioned.fill(
+      child: KidsBackgroundRenderer(
+        painterName: 'KidsWorldBackground', // Uses the newly optimized default Sky Blue theme
+        shaderName: '',
+        primaryColor: widget.primaryColor,
+        gameType: widget.gameType,
+      ).animate().fadeIn(duration: 400.ms),
     );
   }
 
