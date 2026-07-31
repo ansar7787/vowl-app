@@ -102,6 +102,14 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
             enableDoubleUp: true,
           );
         }
+
+        if (state is WritingGameOver) {
+          GameDialogHelper.showGameOver(
+            context,
+            onRestore: () =>
+                context.read<WritingBloc>().add(const RestoreLife()),
+          );
+        }
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
