@@ -176,6 +176,12 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               _visualConfig = quest.visualConfig;
             });
             _shuffleSentences(quest.sentences ?? [], quest.correctOrder);
+          } else if (state.lastAnswerCorrect == null) {
+            setState(() {
+              _isAnswered = false;
+              _isCorrect = null;
+            });
+            _shuffleSentences(quest.sentences ?? [], quest.correctOrder);
           }
           _lastLives = state.livesRemaining;
           if (state.isHintVisible) {
@@ -243,6 +249,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                 GameDialogHelper.showHintAdDialog(
                   context,
                   onHintEarned: () {
+                    if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
                     bloc.add(ShowEliteHint());
                   },
                 );
