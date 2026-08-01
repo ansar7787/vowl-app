@@ -35,12 +35,12 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  final int _lastProcessedIndex = -1;
-  final int _lastLives = 3;
+  int _lastProcessedIndex = -1;
+  int _lastLives = 3;
   AccentQuest? _lastQuest;
   bool _isAnswered = false;
   bool? _isCorrect;
-  final bool _showConfetti = false;
+  bool _showConfetti = false;
 
   List<String> _shuffledOptions = [];
   int _shuffledCorrectIndex = 0;
