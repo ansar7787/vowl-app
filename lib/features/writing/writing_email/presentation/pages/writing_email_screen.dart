@@ -41,6 +41,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
     'SIGN-OFF': null,
   };
 
+  List<String> _shuffledOptions = [];
   bool _showConfetti = false;
   WritingQuest? _lastQuest;
 
@@ -115,6 +116,8 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
         if (state is WritingLoaded && state.lastAnswerCorrect == null) {
           setState(() {
             _slots.updateAll((k, v) => null);
+            final quest = state.currentQuest;
+            _shuffledOptions = List<String>.from(quest.options ?? [])..shuffle();
           });
         }
         if (state is WritingGameComplete) {
@@ -190,7 +193,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                         SizedBox(height: 24.h),
 
                         WritingEmailDataStream(
-                          items: options,
+                          items: _shuffledOptions.isNotEmpty ? _shuffledOptions : options,
                           slots: _slots,
                           color: theme.primaryColor,
                           isDark: isDark,
