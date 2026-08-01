@@ -59,6 +59,18 @@ class _SummarizeStoryWritingScreenState
     });
   }
 
+  void _onTapOption(String sentence, bool isAnswered) {
+    if (isAnswered) return;
+    
+    final firstEmptyIdx = _slots.indexWhere((s) => s.sentence == null);
+    if (firstEmptyIdx != -1) {
+      _hapticService.success();
+      setState(() {
+        _slots[firstEmptyIdx].sentence = sentence;
+      });
+    }
+  }
+
   void _removeFrame(int slotIdx, bool isAnswered) {
     if (isAnswered) return;
     _hapticService.selection();
@@ -204,6 +216,7 @@ class _SummarizeStoryWritingScreenState
                           slots: _slots,
                           color: theme.primaryColor,
                           isDark: isDark,
+                          onTapOption: (text) => _onTapOption(text, isAnswered),
                         ),
                         SizedBox(height: 32.h),
 

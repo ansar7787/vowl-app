@@ -7,6 +7,7 @@ class SummarizeStoryFrameVault extends StatelessWidget {
   final List<DescribeFrameSlot> slots;
   final Color color;
   final bool isDark;
+  final void Function(String text)? onTapOption;
 
   const SummarizeStoryFrameVault({
     super.key,
@@ -14,6 +15,7 @@ class SummarizeStoryFrameVault extends StatelessWidget {
     required this.slots,
     required this.color,
     required this.isDark,
+    this.onTapOption,
   });
 
   @override
@@ -61,7 +63,10 @@ class SummarizeStoryFrameVault extends StatelessWidget {
               opacity: 0.3,
               child: _buildOptionCard(o, context),
             ),
-            child: _buildOptionCard(o, context),
+            child: GestureDetector(
+              onTap: () => onTapOption?.call(o),
+              child: _buildOptionCard(o, context),
+            ),
           ),
         );
       }).toList(),
