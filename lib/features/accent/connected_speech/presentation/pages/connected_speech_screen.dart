@@ -36,7 +36,8 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
   final _soundService = di.sl<SoundService>();
 
   int _lastProcessedIndex = -1;
-  int? _lastLives;
+  int _lastLives = 3;
+  AccentQuest? _lastQuest;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -98,7 +99,8 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
     return BlocConsumer<AccentBloc, AccentState>(
       listener: (context, state) {
         if (state is AccentLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          _lastQuest = state.currentQuest as AccentQuest;
+          final livesChanged = (state.livesRemaining > _lastLives);
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
               (state.lastAnswerCorrect == null && _isAnswered)) {
@@ -135,8 +137,8 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
       },
       builder: (context, state) {
         final AccentQuest? quest = (state is AccentLoaded)
-            ? state.currentQuest as AccentQuest?
-            : null;
+            ? state.currentQuest as AccentQuest
+            : _lastQuest;
         final options = quest?.options ?? ["A", "B"];
         final mediaQuery = MediaQuery.of(context);
 

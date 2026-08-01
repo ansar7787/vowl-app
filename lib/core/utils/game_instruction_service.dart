@@ -1262,7 +1262,7 @@ class GameInstructionService {
       title: "Connected Speech",
       icon: Icons.settings_input_composite_rounded,
       objective:
-          "Native speakers link words together. Listen closely to how the words connect, then choose the card that shows the correct sound change.",
+          "Native speakers link words together. Listen closely to how the words connect, then choose the card that shows the correct sound change. Mastering connected speech ensures you can understand fast native speakers and sound fluent yourself in real-world communication.",
       rules: [
         "Listen to the linked words",
         "Notice which sound changes or drops",

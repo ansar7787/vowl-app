@@ -113,7 +113,6 @@ class ConnectedSpeechLinkerCards extends StatelessWidget {
                     text,
                     textAlign: TextAlign.center,
                     maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: isCompact ? 12.sp : 14.sp,
