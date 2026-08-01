@@ -186,7 +186,6 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
               _isCorrect = null;
               _selectedIndex = null;
             });
-            _initializeOptions(state.currentQuest);
           }
           if (state.lastAnswerCorrect == false) {
             setState(() {
@@ -234,7 +233,6 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
-              _wrongIndices = [];
             });
             context.read<EliteMasteryBloc>().add(NextEliteQuestion());
           },
