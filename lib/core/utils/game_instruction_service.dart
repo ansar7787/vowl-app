@@ -661,15 +661,15 @@ class GameInstructionService {
       title: "Vocal Pen",
       icon: Icons.rate_review_rounded,
       objective:
-          "Write a brief statement expressing and defending your opinion.",
+          "Analyze the statements and categorize them as supporting or opposing the given opinion. Mastering this logical classification improves your ability to structure persuasive arguments in real-world communication.",
       rules: [
-        "State opinion",
-        "Provide one solid reason",
-        "Use persuasive language",
+        "Read the prompt",
+        "Weigh the arguments",
+        "Balance the scale",
       ],
-      actionText: "Express View",
+      actionText: "Balance Scale",
       tip:
-          "PRO TIP: Use transitions like 'In my view', 'For instance', or 'Consequently'.",
+          "PRO TIP: A 'Pro' always supports the prompt's opinion, while a 'Con' highlights a drawback or opposing view.",
     ),
     GameSubtype.dailyJournal: GameBriefing(
       title: "Daily Chronicler",

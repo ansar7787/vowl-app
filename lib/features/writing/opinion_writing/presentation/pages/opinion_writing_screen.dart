@@ -38,6 +38,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
 
   double _scaleRotation = 0.0;
   bool _showConfetti = false;
+  WritingQuest? _lastQuest;
 
   @override
   void initState() {
@@ -134,29 +135,26 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
             enableDoubleUp: true,
           );
         }
-
-        if (state is WritingGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () =>
-                context.read<WritingBloc>().add(const RestoreLife()),
-          );
-        }
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
-        final WritingQuest? quest = isLoaded ? state.currentQuest : null;
+        if (isLoaded) {
+          _lastQuest = state.currentQuest;
+        }
+        final WritingQuest? quest = isLoaded ? state.currentQuest : _lastQuest;
 
         final options = quest?.options ?? [];
         final totalPlaced = _leftPanArgs.length + _rightPanArgs.length;
         final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
         final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
+        final bool isFinalFailure = isLoaded ? state.isFinalFailure : (state is WritingGameOver);
 
         return WritingBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
           isAnswered: isAnswered,
           isCorrect: isCorrect,
+          isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
