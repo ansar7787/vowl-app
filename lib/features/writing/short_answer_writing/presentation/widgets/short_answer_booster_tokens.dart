@@ -19,22 +19,29 @@ class ShortAnswerBoosterTokens extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          "BOOSTER KEYWORDS REQUIRED (USE AT LEAST 2)",
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 10.sp,
-            color: isDark ? Colors.white54 : Colors.black54,
-            fontWeight: FontWeight.bold,
-          ),
+        Row(
+          children: [
+            Icon(Icons.radar_rounded, size: 14.r, color: isDark ? Colors.white54 : Colors.black54),
+            SizedBox(width: 8.w),
+            Text(
+              "REQUIRED KEYWORDS (USE AT LEAST 2)",
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                color: isDark ? Colors.white54 : Colors.black54,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 1.2,
+              ),
+            ),
+          ],
         ),
         SizedBox(height: 12.h),
         Wrap(
           spacing: 12.w,
           runSpacing: 8.h,
-          alignment: WrapAlignment.center,
+          alignment: WrapAlignment.start,
           children: keywords.map((k) {
             final bool isUsed = text.contains(k.toLowerCase());
             final successColor = isDark

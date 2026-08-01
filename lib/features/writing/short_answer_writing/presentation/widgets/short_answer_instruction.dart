@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'package:vowl/core/utils/locale_service.dart';
+
 class ShortAnswerInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String? instruction;
 
-  const ShortAnswerInstruction({super.key, required this.primaryColor});
+  const ShortAnswerInstruction({
+    super.key, 
+    required this.primaryColor,
+    this.instruction,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +27,21 @@ class ShortAnswerInstruction extends StatelessWidget {
         children: [
           Icon(Icons.history_edu_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text(
-            "DRIP YOUR THOUGHTS INTO THE WELL",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
-              letterSpacing: 1.5,
+          Flexible(
+            child: Text(
+              context.tr(
+                'games.shortAnswerWriting_instruction',
+                fallback: instruction ?? "DRIP YOUR THOUGHTS INTO THE WELL",
+              ).toUpperCase(),
+              textAlign: TextAlign.center,
+              maxLines: null,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: primaryColor,
+                letterSpacing: 1.5,
+              ),
             ),
           ),
         ],

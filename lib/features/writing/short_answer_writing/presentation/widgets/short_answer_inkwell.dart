@@ -24,94 +24,116 @@ class ShortAnswerInkwell extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(20.r),
+      padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
-        color: isDark ? Colors.black87 : Colors.white,
+        color: isDark ? const Color(0xFF121212) : Colors.white,
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
-          color: isDark ? Colors.white10 : Colors.black12,
-          width: 3,
+          color: isAnswered ? color.withValues(alpha: 0.5) : (isDark ? Colors.white12 : Colors.black12),
+          width: 2,
         ),
-        boxShadow: [
+        boxShadow: isAnswered ? [
           BoxShadow(
-            color: color.withValues(alpha: 0.15),
-            blurRadius: 20,
+            color: color.withValues(alpha: 0.2),
+            blurRadius: 30,
             spreadRadius: -5,
           ),
+        ] : [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 10,
+            spreadRadius: 2,
+          )
         ],
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Icon(Icons.edit_note_rounded, size: 18.r, color: color),
+                  SizedBox(width: 8.w),
+                  Text(
+                    "YOUR RESPONSE",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.sp,
+                      color: color,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                ],
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                decoration: BoxDecoration(
+                  color: wordCount >= 10
+                      ? (isDark ? Colors.greenAccent.withValues(alpha: 0.1) : const Color(0xFF16A34A).withValues(alpha: 0.1))
+                      : (isDark ? Colors.white10 : Colors.black12),
+                  borderRadius: BorderRadius.circular(12.r),
+                ),
+                child: Text(
+                  "$wordCount / 10 WORDS MIN",
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 9.sp,
+                    color: wordCount >= 10
+                        ? (isDark ? Colors.greenAccent : const Color(0xFF16A34A))
+                        : (isDark ? Colors.white54 : Colors.black54),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 16.h),
           TextField(
             controller: controller,
             maxLines: 5,
             enabled: !isAnswered,
             style: TextStyle(
-              fontFamily: 'Spectral',
+              fontFamily: 'Outfit',
               fontSize: 16.sp,
               color: isDark ? Colors.white : Colors.black87,
-              height: 1.5,
-              fontWeight: FontWeight.bold,
+              height: 1.6,
+              fontWeight: FontWeight.w500,
             ),
             decoration: InputDecoration(
-              hintText: "Let the ink flow...",
+              hintText: "Type your analytical response here...",
               hintStyle: TextStyle(
-                fontFamily: 'Spectral',
+                fontFamily: 'Outfit',
                 color: isDark ? Colors.white30 : Colors.black38,
+                fontWeight: FontWeight.w400,
               ),
               border: InputBorder.none,
             ),
           ),
-          SizedBox(height: 16.h),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "Ink volume:",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  color: color,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Text(
-                "$wordCount words",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  color: wordCount >= 10
-                      ? (isDark ? Colors.greenAccent : const Color(0xFF16A34A))
-                      : (isDark ? Colors.redAccent : const Color(0xFFDC2626)),
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 8.h),
+          SizedBox(height: 12.h),
           Stack(
             children: [
               Container(
                 width: double.infinity,
-                height: 6.h,
+                height: 4.h,
                 decoration: BoxDecoration(
                   color: isDark ? Colors.white10 : Colors.black12,
-                  borderRadius: BorderRadius.circular(3.r),
+                  borderRadius: BorderRadius.circular(2.r),
                 ),
               ),
               AnimatedContainer(
                 duration: 300.milliseconds,
-                width: MediaQuery.of(context).size.width * inkLevel * 0.7,
-                height: 6.h,
+                width: MediaQuery.of(context).size.width * inkLevel * 0.8,
+                height: 4.h,
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [color, color.withValues(alpha: 0.5)],
-                  ),
-                  borderRadius: BorderRadius.circular(3.r),
+                  color: color,
+                  borderRadius: BorderRadius.circular(2.r),
                   boxShadow: [
                     BoxShadow(
-                      color: color.withValues(alpha: 0.4),
-                      blurRadius: 8,
+                      color: color.withValues(alpha: 0.6),
+                      blurRadius: 6,
                     ),
                   ],
                 ),
@@ -120,6 +142,6 @@ class ShortAnswerInkwell extends StatelessWidget {
           ),
         ],
       ),
-    ).animate(target: inkLevel).shimmer(duration: 2.seconds);
+    );
   }
 }

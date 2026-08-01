@@ -34,6 +34,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
   bool _showConfetti = false;
   double _inkLevel = 0.0;
   int _wordCount = 0;
+  WritingQuest? _lastQuest;
 
   @override
   void initState() {
@@ -107,20 +108,13 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
             enableDoubleUp: true,
           );
         }
-
-        if (state is WritingGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () =>
-                context.read<WritingBloc>().add(const RestoreLife()),
-          );
-        }
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
-        final WritingQuest? quest = isLoaded
-            ? state.currentQuest as WritingQuest?
-            : null;
+        if (isLoaded && state.currentQuest != _lastQuest) {
+          _lastQuest = state.currentQuest;
+        }
+        final WritingQuest? quest = isLoaded ? state.currentQuest : _lastQuest;
 
         final targetKeywords =
             quest?.options ?? ["bacteria", "sulfide", "chemosynthesis"];
@@ -148,6 +142,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                         SizedBox(height: 16.h),
                         ShortAnswerInstruction(
                           primaryColor: theme.primaryColor,
+                          instruction: quest.instruction,
                         ),
                         SizedBox(height: 24.h),
 

@@ -41,6 +41,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
   };
 
   bool _showConfetti = false;
+  WritingQuest? _lastQuest;
 
   @override
   void initState() {
@@ -125,31 +126,26 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
             enableDoubleUp: true,
           );
         }
-
-        if (state is WritingGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () =>
-                context.read<WritingBloc>().add(const RestoreLife()),
-          );
-        }
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
-        final WritingQuest? quest = isLoaded
-            ? state.currentQuest as WritingQuest?
-            : null;
+        if (isLoaded && state.currentQuest != _lastQuest) {
+          _lastQuest = state.currentQuest;
+        }
+        final WritingQuest? quest = isLoaded ? state.currentQuest : _lastQuest;
 
         final options = quest?.options ?? [];
         final slotsFilled = _slots.values.every((v) => v != null);
         final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
         final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
+        final bool isFinalFailure = isLoaded ? state.isFinalFailure : false;
 
         return WritingBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
           isAnswered: isAnswered,
           isCorrect: isCorrect,
+          isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
@@ -164,6 +160,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                         SizedBox(height: 16.h),
                         WritingEmailInstruction(
                           primaryColor: theme.primaryColor,
+                          instruction: quest.instruction,
                         ),
                         SizedBox(height: 24.h),
 

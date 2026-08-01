@@ -652,7 +652,7 @@ class GameInstructionService {
     GameSubtype.shortAnswerWriting: GameBriefing(
       title: "Briefing Pro",
       icon: Icons.short_text_rounded,
-      objective: "Write a brief, concise, and direct response to the prompt.",
+      objective: "Write a brief, concise, and direct response to the prompt. Mastering clear short-form writing ensures you can communicate ideas effectively and professionally in real-world scenarios.",
       rules: ["Be direct", "Stay on topic", "Mind your grammar"],
       actionText: "Submit Answer",
       tip: "PRO TIP: Get straight to the point! Keep it short and accurate.",
@@ -702,7 +702,7 @@ class GameInstructionService {
     GameSubtype.writingEmail: GameBriefing(
       title: "Email Expert",
       icon: Icons.alternate_email_rounded,
-      objective: "Compose a professional and contextually appropriate email.",
+      objective: "Compose a professional and contextually appropriate email by arranging its key parts. Mastering email structure ensures your writing is clear, polite, and effective for real-world communication.",
       rules: [
         "Use right greeting",
         "State clear purpose",

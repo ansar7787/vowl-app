@@ -45,11 +45,11 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [x] ✅ Complete Sentence (`completeSentence`)
 - [x] ✅ Describe Situation (`describeSituationWriting`)
 - [x] ✅ Fix The Sentence (`fixTheSentence`)
-- [ ] Short Answer (`shortAnswerWriting`)
+- [x] ✅ Short Answer (`shortAnswerWriting`)
 - [x] ✅ Opinion Writing (`opinionWriting`)
 - [x] ✅ Daily Journal (`dailyJournal`)
 - [x] ✅ Summarize Story (`summarizeStoryWriting`)
-- [ ] Writing Email (`writingEmail`)
+- [x] ✅ Writing Email (`writingEmail`)
 - [x] ✅ Correction Writing (`correctionWriting`)
 - [x] ✅ Essay Drafting (`essayDrafting`)
 
