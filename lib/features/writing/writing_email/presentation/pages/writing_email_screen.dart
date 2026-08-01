@@ -86,7 +86,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
             _slots[key] = null;
           }
         });
-        _slots[targetSlot] = data;
+        _slots[targetSlot!] = data;
       });
     } else {
       _hapticService.error();

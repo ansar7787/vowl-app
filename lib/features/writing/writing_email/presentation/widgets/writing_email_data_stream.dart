@@ -89,8 +89,8 @@ class WritingEmailDataStream extends StatelessWidget {
                   ),
                 ),
               ),
-            )
-            .toList(),
+            ),
+          ).toList(),
       ),
     );
   }
