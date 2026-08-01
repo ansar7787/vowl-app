@@ -8,510 +8,510 @@
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Vent Logic 21-1] Hydrothermal vents release mineral-rich venting plumes. Because sunlight cannot reach these depths, local species rely entirely on chemical energy instead of solar energy.",
-            "question": "What can be logically inferred about the primary energy source in hydrothermal vent ecosystems?",
+            "passage": "[A Rescheduled Meeting] The meeting was originally set for 10 a.m., but Diego's calendar invite now shows 2 p.m. with a new video link attached. His manager also sent a message apologizing for the short notice.",
+            "question": "What can be inferred about the meeting?",
             "options": [
-                "They are independent of solar energy pathways",
-                "They rely heavily on seasonal agricultural cycles",
-                "They require surface air exchanges to function",
-                "They are driven primarily by moon tidal patterns"
+                "It happened earlier than planned.",
+                "It will now take place in person instead of online.",
+                "It was rescheduled to a later time.",
+                "It was cancelled completely."
             ],
-            "correctAnswer": "They are independent of solar energy pathways",
-            "hint": "Determine whether sunlight plays a role in sustaining species at these ocean floor depths. (Diving calibration index 21-1)",
-            "explanation": "Since the passage states they rely entirely on chemical energy due to zero sunlight, they are independent of solar energy. [Verified by Deduction Synthesis Unit 21]."
+            "correctAnswer": "It was rescheduled to a later time.",
+            "hint": "Compare the original time with the new time on the invite.",
+            "explanation": "A new time, a new video link, and an apology for short notice all point to the meeting being moved later, not cancelled."
         },
         {
             "id": "RDG_READINGINFERENCE_L21_Q2",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Kelp Drift 21-2] Kelp plants grow at rapid vertical rates exceeding 60 centimeters a day to reach the ocean's sunlit surface zone.",
-            "question": "Based on their rapid upward growth pattern, what is kelp highly dependent on for survival?",
+            "passage": "[Snow in the Mountains] Because of heavy snow in the mountains, the airline is offering free rebooking for anyone flying through the regional airport this week. Several travelers are already calling to change their tickets.",
+            "question": "What can be inferred about flights through the regional airport?",
             "options": [
-                "Access to solar energy at the surface",
-                "Extremely cold freezing temperatures",
-                "Complete darkness in deep ocean trenches",
-                "Frequent volcanic magma eruptions"
+                "They have been permanently shut down.",
+                "They are likely to be delayed or cancelled.",
+                "They are cheaper than usual this week.",
+                "They are running earlier than scheduled."
             ],
-            "correctAnswer": "Access to solar energy at the surface",
-            "hint": "Focus on the goal of their rapid vertical upward growth direction. (Diving calibration index 21-2)",
-            "explanation": "The kelp grows rapidly upward specifically to reach the sunlit zone, showing high dependency on solar energy. [Verified by Deduction Synthesis Unit 21]."
+            "correctAnswer": "They are likely to be delayed or cancelled.",
+            "hint": "Think about why an airline would offer free rebooking during bad weather.",
+            "explanation": "Free rebooking during heavy snow strongly suggests the airline expects delays or cancellations at that airport."
         },
         {
             "id": "RDG_READINGINFERENCE_L21_Q3",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Biolum Clue 21-3] Deep creatures use biological bioluminescence to attract prey, distract predators, and communicate in absolute darkness.",
-            "question": "What can be inferred about the visibility of deep-sea creatures without bioluminescence?",
+            "passage": "[A Password Reset] The new app update asks users to reset their passwords, and the company's support page mentions unusual login attempts from several accounts last week.",
+            "question": "What can be inferred about the reason for the password reset?",
             "options": [
-                "They would be extremely difficult to detect in the dark",
-                "They would emit bright neon solar reflections",
-                "They would rely exclusively on green leaves for cover",
-                "They would change colors to match tropical corals"
+                "The reset is unrelated to account safety.",
+                "The company wants to make the app slower.",
+                "The update removed the login feature.",
+                "The company may be responding to a security concern."
             ],
-            "correctAnswer": "They would be extremely difficult to detect in the dark",
-            "hint": "Consider the visual environment of the pitch-black deep sea when bioluminescent tools are absent. (Diving calibration index 21-3)",
-            "explanation": "Without biological cold light, objects are completely hidden in the pitch-black deep waters. [Verified by Deduction Synthesis Unit 21]."
+            "correctAnswer": "The company may be responding to a security concern.",
+            "hint": "Notice what the support page mentions right alongside the password reset request.",
+            "explanation": "Mentioning unusual login attempts alongside a forced password reset suggests the company is addressing a possible security issue."
         },
         {
             "id": "RDG_READINGINFERENCE_L22_Q1",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Coral Sync 22-1] Cold deep-sea corals do not host symbiotic algae, unlike shallow tropical corals which rely heavily on algae photosynthesis.",
-            "question": "How do deep-sea corals differ from shallow-water corals regarding nourishment?",
+            "passage": "[Lemon Cookies] Every time her sister visits, Nadia bakes a batch of lemon cookies, even though she rarely bakes for anyone else. Her sister always leaves with a full container to take home.",
+            "question": "What can be inferred about Nadia's sister?",
             "options": [
-                "They survive without algae-driven photosynthesis",
-                "They require direct exposure to solar rays",
-                "They feed exclusively on warm volcanic magma",
-                "They migrate continuously across different oceans"
+                "She particularly enjoys Nadia's lemon cookies.",
+                "She dislikes sweet food.",
+                "She never visits Nadia's home.",
+                "She bakes the cookies herself."
             ],
-            "correctAnswer": "They survive without algae-driven photosynthesis",
-            "hint": "Contrast their lack of symbiotic algae with shallow tropical corals. (Diving calibration index 22-1)",
-            "explanation": "Because they do not host symbiotic algae, deep-sea corals do not rely on photosynthesis for nourishment. [Verified by Deduction Synthesis Unit 22]."
+            "correctAnswer": "She particularly enjoys Nadia's lemon cookies.",
+            "hint": "Think about why Nadia would make this specific treat only for one visitor.",
+            "explanation": "Baking a special treat only for her sister, who always takes some home, suggests the sister especially enjoys those cookies."
         },
         {
             "id": "RDG_READINGINFERENCE_L22_Q2",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Upwell Flow 22-2] Coastal upwelling brings cold, nutrient-rich deep waters to the surface, triggering massive blooms of plankton.",
-            "question": "What would likely occur if wind patterns that drive coastal upwelling stopped?",
+            "passage": "[Swimsuits on Sale] The store manager marks down the swimsuits by sixty percent and moves the winter coats to the front window display.",
+            "question": "What can be inferred about the season?",
             "options": [
-                "Surface nutrient levels and plankton blooms would drop",
-                "Deep-sea hydrothermal vents would freeze over",
-                "Kelp forest holdfasts would detach from rock",
-                "Bioluminescent creatures would migrate to land"
+                "The store is closing down permanently.",
+                "It is the middle of a heat wave.",
+                "Summer is ending and colder weather is approaching.",
+                "Winter is ending and summer is approaching."
             ],
-            "correctAnswer": "Surface nutrient levels and plankton blooms would drop",
-            "hint": "Trace the causal chain from wind-driven upwelling to surface plankton feeding circles. (Diving calibration index 22-2)",
-            "explanation": "Without wind driving the upwelling suction, the supply of cold, nutrient-packed deep water to the surface would diminish. [Verified by Deduction Synthesis Unit 22]."
+            "correctAnswer": "Summer is ending and colder weather is approaching.",
+            "hint": "Think about which items are being discounted and which are being promoted instead.",
+            "explanation": "Discounting swimsuits while featuring winter coats suggests the store is preparing customers for the colder months ahead."
         },
         {
             "id": "RDG_READINGINFERENCE_L22_Q3",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Vent Logic 22-3] Hydrothermal vents release mineral-rich venting plumes. Because sunlight cannot reach these depths, local species rely entirely on chemical energy instead of solar energy.",
-            "question": "What can be logically inferred about the primary energy source in hydrothermal vent ecosystems?",
+            "passage": "[Evening Walks] After weeks of skipping his evening walks, Mr. Patel's doctor notices his blood pressure has risen slightly and recommends he start walking again.",
+            "question": "What can be inferred about the connection between walking and Mr. Patel's health?",
             "options": [
-                "They are independent of solar energy pathways",
-                "They rely heavily on seasonal agricultural cycles",
-                "They require surface air exchanges to function",
-                "They are driven primarily by moon tidal patterns"
+                "His blood pressure dropped after he stopped walking.",
+                "The doctor is unrelated to his walking habits.",
+                "Walking has no effect on his blood pressure.",
+                "Regular walking likely helped keep his blood pressure lower."
             ],
-            "correctAnswer": "They are independent of solar energy pathways",
-            "hint": "Determine whether sunlight plays a role in sustaining species at these ocean floor depths. (Diving calibration index 22-3)",
-            "explanation": "Since the passage states they rely entirely on chemical energy due to zero sunlight, they are independent of solar energy. [Verified by Deduction Synthesis Unit 22]."
+            "correctAnswer": "Regular walking likely helped keep his blood pressure lower.",
+            "hint": "Think about what changed right before his blood pressure went up.",
+            "explanation": "Since his blood pressure rose after he stopped his regular walks, the passage suggests walking had been helping manage it."
         },
         {
             "id": "RDG_READINGINFERENCE_L23_Q1",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Kelp Drift 23-1] Kelp plants grow at rapid vertical rates exceeding 60 centimeters a day to reach the ocean's sunlit surface zone.",
-            "question": "Based on their rapid upward growth pattern, what is kelp highly dependent on for survival?",
+            "passage": "[An Extended Deadline] The professor extends the essay deadline by one week after nearly the entire class asks for more time during office hours.",
+            "question": "What can be inferred about the original deadline?",
             "options": [
-                "Access to solar energy at the surface",
-                "Extremely cold freezing temperatures",
-                "Complete darkness in deep ocean trenches",
-                "Frequent volcanic magma eruptions"
+                "It was extended by a full month.",
+                "No students needed extra time.",
+                "It gave students far too much time.",
+                "Many students found it difficult to meet."
             ],
-            "correctAnswer": "Access to solar energy at the surface",
-            "hint": "Focus on the goal of their rapid vertical upward growth direction. (Diving calibration index 23-1)",
-            "explanation": "The kelp grows rapidly upward specifically to reach the sunlit zone, showing high dependency on solar energy. [Verified by Deduction Synthesis Unit 23]."
+            "correctAnswer": "Many students found it difficult to meet.",
+            "hint": "Think about why a professor would change a deadline for almost the whole class.",
+            "explanation": "Extending the deadline because nearly the whole class requested more time suggests many students struggled to finish by the original date."
         },
         {
             "id": "RDG_READINGINFERENCE_L23_Q2",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Biolum Clue 23-2] Deep creatures use biological bioluminescence to attract prey, distract predators, and communicate in absolute darkness.",
-            "question": "What can be inferred about the visibility of deep-sea creatures without bioluminescence?",
+            "passage": "[Long Lines at the Museum] The museum adds a second exhibit hall and extends its weekend hours after months of long lines at the entrance.",
+            "question": "What can be inferred about the museum's popularity?",
             "options": [
-                "They would be extremely difficult to detect in the dark",
-                "They would emit bright neon solar reflections",
-                "They would rely exclusively on green leaves for cover",
-                "They would change colors to match tropical corals"
+                "More visitors have been coming than expected.",
+                "Visitor numbers have been dropping.",
+                "The museum is planning to close.",
+                "The museum removed an exhibit due to low interest."
             ],
-            "correctAnswer": "They would be extremely difficult to detect in the dark",
-            "hint": "Consider the visual environment of the pitch-black deep sea when bioluminescent tools are absent. (Diving calibration index 23-2)",
-            "explanation": "Without biological cold light, objects are completely hidden in the pitch-black deep waters. [Verified by Deduction Synthesis Unit 23]."
+            "correctAnswer": "More visitors have been coming than expected.",
+            "hint": "Think about why long lines would lead to more space and longer hours.",
+            "explanation": "Adding space and extending hours after months of long lines suggests visitor numbers have grown beyond what the museum expected."
         },
         {
             "id": "RDG_READINGINFERENCE_L23_Q3",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Coral Sync 23-3] Cold deep-sea corals do not host symbiotic algae, unlike shallow tropical corals which rely heavily on algae photosynthesis.",
-            "question": "How do deep-sea corals differ from shallow-water corals regarding nourishment?",
+            "passage": "[New Trees and Lamps] The neighborhood association plants new trees along the main street and installs solar-powered lamps at every corner.",
+            "question": "What can be inferred about the neighborhood association's goals?",
             "options": [
-                "They survive without algae-driven photosynthesis",
-                "They require direct exposure to solar rays",
-                "They feed exclusively on warm volcanic magma",
-                "They migrate continuously across different oceans"
+                "They want to make the street more difficult to walk on.",
+                "They want to improve the appearance and safety of the area.",
+                "They are trying to reduce the number of trees.",
+                "They plan to remove all street lighting."
             ],
-            "correctAnswer": "They survive without algae-driven photosynthesis",
-            "hint": "Contrast their lack of symbiotic algae with shallow tropical corals. (Diving calibration index 23-3)",
-            "explanation": "Because they do not host symbiotic algae, deep-sea corals do not rely on photosynthesis for nourishment. [Verified by Deduction Synthesis Unit 23]."
+            "correctAnswer": "They want to improve the appearance and safety of the area.",
+            "hint": "Think about what new trees and better lighting typically achieve for a neighborhood.",
+            "explanation": "Planting trees and adding lighting both point to an effort to make the neighborhood more attractive and safer."
         },
         {
             "id": "RDG_READINGINFERENCE_L24_Q1",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Upwell Flow 24-1] Coastal upwelling brings cold, nutrient-rich deep waters to the surface, triggering massive blooms of plankton.",
-            "question": "What would likely occur if wind patterns that drive coastal upwelling stopped?",
+            "passage": "[Faster Than Expected] The restaurant's delivery app shows a thirty-five-minute wait, but Farid's order arrives at his door after only twelve minutes.",
+            "question": "What can be inferred about the delivery time?",
             "options": [
-                "Surface nutrient levels and plankton blooms would drop",
-                "Deep-sea hydrothermal vents would freeze over",
-                "Kelp forest holdfasts would detach from rock",
-                "Bioluminescent creatures would migrate to land"
+                "The order never actually arrived.",
+                "It was faster than the app had predicted.",
+                "It matched the app's prediction exactly.",
+                "It took longer than the app estimated."
             ],
-            "correctAnswer": "Surface nutrient levels and plankton blooms would drop",
-            "hint": "Trace the causal chain from wind-driven upwelling to surface plankton feeding circles. (Diving calibration index 24-1)",
-            "explanation": "Without wind driving the upwelling suction, the supply of cold, nutrient-packed deep water to the surface would diminish. [Verified by Deduction Synthesis Unit 24]."
+            "correctAnswer": "It was faster than the app had predicted.",
+            "hint": "Compare the number the app showed with how long it actually took.",
+            "explanation": "Twelve minutes is much shorter than the predicted thirty-five, so the delivery arrived faster than expected."
         },
         {
             "id": "RDG_READINGINFERENCE_L24_Q2",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Vent Logic 24-2] Hydrothermal vents release mineral-rich venting plumes. Because sunlight cannot reach these depths, local species rely entirely on chemical energy instead of solar energy.",
-            "question": "What can be logically inferred about the primary energy source in hydrothermal vent ecosystems?",
+            "passage": "[A Programmed Thermostat] The smart thermostat lowers the temperature automatically every night at eleven and raises it again at six in the morning, without anyone touching the controls.",
+            "question": "What can be inferred about the thermostat?",
             "options": [
-                "They are independent of solar energy pathways",
-                "They rely heavily on seasonal agricultural cycles",
-                "They require surface air exchanges to function",
-                "They are driven primarily by moon tidal patterns"
+                "Someone adjusts it manually every night.",
+                "It changes temperature completely at random.",
+                "It is broken and needs replacing.",
+                "It has been programmed to follow a set schedule."
             ],
-            "correctAnswer": "They are independent of solar energy pathways",
-            "hint": "Determine whether sunlight plays a role in sustaining species at these ocean floor depths. (Diving calibration index 24-2)",
-            "explanation": "Since the passage states they rely entirely on chemical energy due to zero sunlight, they are independent of solar energy. [Verified by Deduction Synthesis Unit 24]."
+            "correctAnswer": "It has been programmed to follow a set schedule.",
+            "hint": "Think about what happening at the exact same times every day and night suggests.",
+            "explanation": "Changing at the same two times every day, without anyone touching it, suggests the thermostat follows a programmed schedule."
         },
         {
             "id": "RDG_READINGINFERENCE_L24_Q3",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Kelp Drift 24-3] Kelp plants grow at rapid vertical rates exceeding 60 centimeters a day to reach the ocean's sunlit surface zone.",
-            "question": "Based on their rapid upward growth pattern, what is kelp highly dependent on for survival?",
+            "passage": "[Extra Questions at the Border] At the border crossing, officials ask Elena extra questions and search her bag more carefully than the travelers ahead of her.",
+            "question": "What can be inferred about Elena's situation at the border?",
             "options": [
-                "Access to solar energy at the surface",
-                "Extremely cold freezing temperatures",
-                "Complete darkness in deep ocean trenches",
-                "Frequent volcanic magma eruptions"
+                "Something about her trip drew additional attention.",
+                "She was allowed to skip the checkpoint entirely.",
+                "She was treated exactly like everyone else.",
+                "The officials recognized her as a frequent traveler with no issues."
             ],
-            "correctAnswer": "Access to solar energy at the surface",
-            "hint": "Focus on the goal of their rapid vertical upward growth direction. (Diving calibration index 24-3)",
-            "explanation": "The kelp grows rapidly upward specifically to reach the sunlit zone, showing high dependency on solar energy. [Verified by Deduction Synthesis Unit 24]."
+            "correctAnswer": "Something about her trip drew additional attention.",
+            "hint": "Compare how Elena was treated with how the other travelers were treated.",
+            "explanation": "Extra questions and a more thorough bag search, compared to other travelers, suggest something in Elena's case caught the officials' attention."
         },
         {
             "id": "RDG_READINGINFERENCE_L25_Q1",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Biolum Clue 25-1] Deep creatures use biological bioluminescence to attract prey, distract predators, and communicate in absolute darkness.",
-            "question": "What can be inferred about the visibility of deep-sea creatures without bioluminescence?",
+            "passage": "[Two Job Offers] Two of the four interns are asked to stay on as full-time employees at the end of the summer, while the other two receive polite thank-you emails.",
+            "question": "What can be inferred about the two interns who received thank-you emails?",
             "options": [
-                "They would be extremely difficult to detect in the dark",
-                "They would emit bright neon solar reflections",
-                "They would rely exclusively on green leaves for cover",
-                "They would change colors to match tropical corals"
+                "They were promoted to management.",
+                "They will start immediately as full-time staff.",
+                "They quit before the internship ended.",
+                "They were not offered permanent positions."
             ],
-            "correctAnswer": "They would be extremely difficult to detect in the dark",
-            "hint": "Consider the visual environment of the pitch-black deep sea when bioluminescent tools are absent. (Diving calibration index 25-1)",
-            "explanation": "Without biological cold light, objects are completely hidden in the pitch-black deep waters. [Verified by Deduction Synthesis Unit 25]."
+            "correctAnswer": "They were not offered permanent positions.",
+            "hint": "Think about what usually happens when someone is thanked but not offered a role.",
+            "explanation": "A polite thank-you email, without a job offer, suggests those two interns were not selected for permanent positions."
         },
         {
             "id": "RDG_READINGINFERENCE_L25_Q2",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Coral Sync 25-2] Cold deep-sea corals do not host symbiotic algae, unlike shallow tropical corals which rely heavily on algae photosynthesis.",
-            "question": "How do deep-sea corals differ from shallow-water corals regarding nourishment?",
+            "passage": "[A Photo on the Table] Grandpa keeps a small photo of his late wife on the kitchen table and gently touches the frame every morning before making his coffee.",
+            "question": "What can be inferred about Grandpa's feelings?",
             "options": [
-                "They survive without algae-driven photosynthesis",
-                "They require direct exposure to solar rays",
-                "They feed exclusively on warm volcanic magma",
-                "They migrate continuously across different oceans"
+                "He recently met someone new to replace her.",
+                "He has forgotten about his wife.",
+                "He still deeply misses his wife.",
+                "He dislikes looking at old photos."
             ],
-            "correctAnswer": "They survive without algae-driven photosynthesis",
-            "hint": "Contrast their lack of symbiotic algae with shallow tropical corals. (Diving calibration index 25-2)",
-            "explanation": "Because they do not host symbiotic algae, deep-sea corals do not rely on photosynthesis for nourishment. [Verified by Deduction Synthesis Unit 25]."
+            "correctAnswer": "He still deeply misses his wife.",
+            "hint": "Think about what a daily, gentle gesture toward a photo usually reveals.",
+            "explanation": "Touching the photo gently every single morning suggests Grandpa still holds strong feelings of love and loss for his late wife."
         },
         {
             "id": "RDG_READINGINFERENCE_L25_Q3",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Upwell Flow 25-3] Coastal upwelling brings cold, nutrient-rich deep waters to the surface, triggering massive blooms of plankton.",
-            "question": "What would likely occur if wind patterns that drive coastal upwelling stopped?",
+            "passage": "[A Returned Blender] The customer returns the blender for the third time this year, and the store clerk quietly notes the model number in a separate file.",
+            "question": "What can be inferred about the blender model?",
             "options": [
-                "Surface nutrient levels and plankton blooms would drop",
-                "Deep-sea hydrothermal vents would freeze over",
-                "Kelp forest holdfasts would detach from rock",
-                "Bioluminescent creatures would migrate to land"
+                "It was recently redesigned and improved.",
+                "It may have a recurring problem.",
+                "It is the store's best-selling product.",
+                "It has never had any issues before."
             ],
-            "correctAnswer": "Surface nutrient levels and plankton blooms would drop",
-            "hint": "Trace the causal chain from wind-driven upwelling to surface plankton feeding circles. (Diving calibration index 25-3)",
-            "explanation": "Without wind driving the upwelling suction, the supply of cold, nutrient-packed deep water to the surface would diminish. [Verified by Deduction Synthesis Unit 25]."
+            "correctAnswer": "It may have a recurring problem.",
+            "hint": "Think about why a clerk would start keeping separate notes about one specific model.",
+            "explanation": "Three returns in one year, along with the clerk tracking the model separately, suggest this blender has a recurring issue."
         },
         {
             "id": "RDG_READINGINFERENCE_L26_Q1",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Vent Logic 26-1] Hydrothermal vents release mineral-rich venting plumes. Because sunlight cannot reach these depths, local species rely entirely on chemical energy instead of solar energy.",
-            "question": "What can be logically inferred about the primary energy source in hydrothermal vent ecosystems?",
+            "passage": "[A Standing Desk] Since switching to a standing desk, Mr. Osei mentions to coworkers that his afternoon back pain has almost completely disappeared.",
+            "question": "What can be inferred about the standing desk?",
             "options": [
-                "They are independent of solar energy pathways",
-                "They rely heavily on seasonal agricultural cycles",
-                "They require surface air exchanges to function",
-                "They are driven primarily by moon tidal patterns"
+                "It had no connection to his back pain.",
+                "It made his back pain much worse.",
+                "It seems to have helped reduce his back pain.",
+                "It caused him to leave his job."
             ],
-            "correctAnswer": "They are independent of solar energy pathways",
-            "hint": "Determine whether sunlight plays a role in sustaining species at these ocean floor depths. (Diving calibration index 26-1)",
-            "explanation": "Since the passage states they rely entirely on chemical energy due to zero sunlight, they are independent of solar energy. [Verified by Deduction Synthesis Unit 26]."
+            "correctAnswer": "It seems to have helped reduce his back pain.",
+            "hint": "Think about what changed right after he started using the new desk.",
+            "explanation": "His back pain nearly disappearing after switching desks suggests the standing desk played a role in the improvement."
         },
         {
             "id": "RDG_READINGINFERENCE_L26_Q2",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Kelp Drift 26-2] Kelp plants grow at rapid vertical rates exceeding 60 centimeters a day to reach the ocean's sunlit surface zone.",
-            "question": "Based on their rapid upward growth pattern, what is kelp highly dependent on for survival?",
+            "passage": "[Mixed Reviews] Reviewers praise the film's visual effects but repeatedly mention that the story feels confusing and drags on for too long.",
+            "question": "What can be inferred about the reviewers' overall opinion of the film?",
             "options": [
-                "Access to solar energy at the surface",
-                "Extremely cold freezing temperatures",
-                "Complete darkness in deep ocean trenches",
-                "Frequent volcanic magma eruptions"
+                "They think the film is perfect in every way.",
+                "They have mixed feelings about the film.",
+                "They believe the visual effects were poor.",
+                "They found the story clear and exciting."
             ],
-            "correctAnswer": "Access to solar energy at the surface",
-            "hint": "Focus on the goal of their rapid vertical upward growth direction. (Diving calibration index 26-2)",
-            "explanation": "The kelp grows rapidly upward specifically to reach the sunlit zone, showing high dependency on solar energy. [Verified by Deduction Synthesis Unit 26]."
+            "correctAnswer": "They have mixed feelings about the film.",
+            "hint": "Notice that the reviewers praise one part but criticize another part.",
+            "explanation": "Praising the effects while criticizing the story suggests the reviewers see both strengths and weaknesses, meaning their opinion is mixed."
         },
         {
             "id": "RDG_READINGINFERENCE_L26_Q3",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Biolum Clue 26-3] Deep creatures use biological bioluminescence to attract prey, distract predators, and communicate in absolute darkness.",
-            "question": "What can be inferred about the visibility of deep-sea creatures without bioluminescence?",
+            "passage": "[Improving Grades] After the tutoring sessions began twice a week, Marcus's math quiz scores rose from failing grades to consistent passes within a month.",
+            "question": "What can be inferred about the tutoring sessions?",
             "options": [
-                "They would be extremely difficult to detect in the dark",
-                "They would emit bright neon solar reflections",
-                "They would rely exclusively on green leaves for cover",
-                "They would change colors to match tropical corals"
+                "They had no effect on his grades.",
+                "They likely helped improve Marcus's math skills.",
+                "They caused his grades to drop further.",
+                "They focused only on subjects other than math."
             ],
-            "correctAnswer": "They would be extremely difficult to detect in the dark",
-            "hint": "Consider the visual environment of the pitch-black deep sea when bioluminescent tools are absent. (Diving calibration index 26-3)",
-            "explanation": "Without biological cold light, objects are completely hidden in the pitch-black deep waters. [Verified by Deduction Synthesis Unit 26]."
+            "correctAnswer": "They likely helped improve Marcus's math skills.",
+            "hint": "Compare Marcus's grades before and after the tutoring started.",
+            "explanation": "Scores rising from failing to passing soon after tutoring began suggests the sessions helped improve his math performance."
         },
         {
             "id": "RDG_READINGINFERENCE_L27_Q1",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Coral Sync 27-1] Cold deep-sea corals do not host symbiotic algae, unlike shallow tropical corals which rely heavily on algae photosynthesis.",
-            "question": "How do deep-sea corals differ from shallow-water corals regarding nourishment?",
+            "passage": "[A Loyal Guest] The hotel upgrades Priya to a room with an ocean view and leaves a handwritten note thanking her for being a loyal guest for ten years.",
+            "question": "What can be inferred about Priya?",
             "options": [
-                "They survive without algae-driven photosynthesis",
-                "They require direct exposure to solar rays",
-                "They feed exclusively on warm volcanic magma",
-                "They migrate continuously across different oceans"
+                "She has stayed at this hotel many times before.",
+                "She works as a manager at the hotel.",
+                "She complained about her previous room.",
+                "This is her very first visit to the hotel."
             ],
-            "correctAnswer": "They survive without algae-driven photosynthesis",
-            "hint": "Contrast their lack of symbiotic algae with shallow tropical corals. (Diving calibration index 27-1)",
-            "explanation": "Because they do not host symbiotic algae, deep-sea corals do not rely on photosynthesis for nourishment. [Verified by Deduction Synthesis Unit 27]."
+            "correctAnswer": "She has stayed at this hotel many times before.",
+            "hint": "Think about what 'loyal guest for ten years' tells you about her history with the hotel.",
+            "explanation": "A note thanking her for ten years of loyalty shows Priya has been a returning guest at this hotel for a long time."
         },
         {
             "id": "RDG_READINGINFERENCE_L27_Q2",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Upwell Flow 27-2] Coastal upwelling brings cold, nutrient-rich deep waters to the surface, triggering massive blooms of plankton.",
-            "question": "What would likely occur if wind patterns that drive coastal upwelling stopped?",
+            "passage": "[Ten Thousand Steps] The fitness tracker buzzes on Wen's wrist and displays a message congratulating her for reaching ten thousand steps, a goal she has missed the past two weeks.",
+            "question": "What can be inferred about Wen's activity level today?",
             "options": [
-                "Surface nutrient levels and plankton blooms would drop",
-                "Deep-sea hydrothermal vents would freeze over",
-                "Kelp forest holdfasts would detach from rock",
-                "Bioluminescent creatures would migrate to land"
+                "She has been more active than she was recently.",
+                "She never reaches this goal.",
+                "The tracker is malfunctioning.",
+                "She has been less active than usual."
             ],
-            "correctAnswer": "Surface nutrient levels and plankton blooms would drop",
-            "hint": "Trace the causal chain from wind-driven upwelling to surface plankton feeding circles. (Diving calibration index 27-2)",
-            "explanation": "Without wind driving the upwelling suction, the supply of cold, nutrient-packed deep water to the surface would diminish. [Verified by Deduction Synthesis Unit 27]."
+            "correctAnswer": "She has been more active than she was recently.",
+            "hint": "Compare today's result with what happened during the past two weeks.",
+            "explanation": "Reaching a goal she had missed for two weeks suggests Wen has been noticeably more active today than in recent days."
         },
         {
             "id": "RDG_READINGINFERENCE_L27_Q3",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Vent Logic 27-3] Hydrothermal vents release mineral-rich venting plumes. Because sunlight cannot reach these depths, local species rely entirely on chemical energy instead of solar energy.",
-            "question": "What can be logically inferred about the primary energy source in hydrothermal vent ecosystems?",
+            "passage": "[Standing Room Only] Residents pack the town hall meeting, and several stand along the back wall after all the chairs are taken.",
+            "question": "What can be inferred about the topic of the meeting?",
             "options": [
-                "They are independent of solar energy pathways",
-                "They rely heavily on seasonal agricultural cycles",
-                "They require surface air exchanges to function",
-                "They are driven primarily by moon tidal patterns"
+                "Only a few people were invited.",
+                "It interests almost no one in town.",
+                "It was cancelled before it began.",
+                "It is important to many residents."
             ],
-            "correctAnswer": "They are independent of solar energy pathways",
-            "hint": "Determine whether sunlight plays a role in sustaining species at these ocean floor depths. (Diving calibration index 27-3)",
-            "explanation": "Since the passage states they rely entirely on chemical energy due to zero sunlight, they are independent of solar energy. [Verified by Deduction Synthesis Unit 27]."
+            "correctAnswer": "It is important to many residents.",
+            "hint": "Think about what a full room with standing attendees suggests about interest in the topic.",
+            "explanation": "A packed hall with people standing because all seats are taken suggests the meeting's topic matters to many residents."
         },
         {
             "id": "RDG_READINGINFERENCE_L28_Q1",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Kelp Drift 28-1] Kelp plants grow at rapid vertical rates exceeding 60 centimeters a day to reach the ocean's sunlit surface zone.",
-            "question": "Based on their rapid upward growth pattern, what is kelp highly dependent on for survival?",
+            "passage": "[Sold Out by Nine] The bakery sells out of its sourdough loaves by nine every morning, so regular customers now start arriving before the doors even open.",
+            "question": "What can be inferred about the sourdough bread?",
             "options": [
-                "Access to solar energy at the surface",
-                "Extremely cold freezing temperatures",
-                "Complete darkness in deep ocean trenches",
-                "Frequent volcanic magma eruptions"
+                "It is only available in the afternoon.",
+                "It is in high demand among customers.",
+                "It is unpopular and often left unsold.",
+                "The bakery stopped making it."
             ],
-            "correctAnswer": "Access to solar energy at the surface",
-            "hint": "Focus on the goal of their rapid vertical upward growth direction. (Diving calibration index 28-1)",
-            "explanation": "The kelp grows rapidly upward specifically to reach the sunlit zone, showing high dependency on solar energy. [Verified by Deduction Synthesis Unit 28]."
+            "correctAnswer": "It is in high demand among customers.",
+            "hint": "Think about why customers would start arriving before the store opens.",
+            "explanation": "Selling out early and customers arriving before opening both suggest the sourdough bread is very popular."
         },
         {
             "id": "RDG_READINGINFERENCE_L28_Q2",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Biolum Clue 28-2] Deep creatures use biological bioluminescence to attract prey, distract predators, and communicate in absolute darkness.",
-            "question": "What can be inferred about the visibility of deep-sea creatures without bioluminescence?",
+            "passage": "[The Wrong Dish] The waiter brings the wrong dish twice, and by the third attempt, the family decides to order dessert instead of a main course.",
+            "question": "What can be inferred about the family's mood?",
             "options": [
-                "They would be extremely difficult to detect in the dark",
-                "They would emit bright neon solar reflections",
-                "They would rely exclusively on green leaves for cover",
-                "They would change colors to match tropical corals"
+                "They are likely feeling frustrated with the service.",
+                "They planned to skip dinner from the start.",
+                "They are celebrating a special occasion.",
+                "They are extremely satisfied with the service."
             ],
-            "correctAnswer": "They would be extremely difficult to detect in the dark",
-            "hint": "Consider the visual environment of the pitch-black deep sea when bioluminescent tools are absent. (Diving calibration index 28-2)",
-            "explanation": "Without biological cold light, objects are completely hidden in the pitch-black deep waters. [Verified by Deduction Synthesis Unit 28]."
+            "correctAnswer": "They are likely feeling frustrated with the service.",
+            "hint": "Think about how repeated mistakes with an order would affect a customer's patience.",
+            "explanation": "Giving up on a main course after two wrong dishes suggests the family's patience wore thin due to the repeated mistakes."
         },
         {
             "id": "RDG_READINGINFERENCE_L28_Q3",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Coral Sync 28-3] Cold deep-sea corals do not host symbiotic algae, unlike shallow tropical corals which rely heavily on algae photosynthesis.",
-            "question": "How do deep-sea corals differ from shallow-water corals regarding nourishment?",
+            "passage": "[Cooking Alone] Every holiday, Aunt Rosa insists on cooking the entire meal alone, waving away any offers of help from her nieces and nephews.",
+            "question": "What can be inferred about Aunt Rosa?",
             "options": [
-                "They survive without algae-driven photosynthesis",
-                "They require direct exposure to solar rays",
-                "They feed exclusively on warm volcanic magma",
-                "They migrate continuously across different oceans"
+                "She prefers to handle the cooking by herself.",
+                "She dislikes cooking for the family.",
+                "She is unable to cook at all.",
+                "She always asks others to cook instead."
             ],
-            "correctAnswer": "They survive without algae-driven photosynthesis",
-            "hint": "Contrast their lack of symbiotic algae with shallow tropical corals. (Diving calibration index 28-3)",
-            "explanation": "Because they do not host symbiotic algae, deep-sea corals do not rely on photosynthesis for nourishment. [Verified by Deduction Synthesis Unit 28]."
+            "correctAnswer": "She prefers to handle the cooking by herself.",
+            "hint": "Think about what refusing help, holiday after holiday, says about her preference.",
+            "explanation": "Consistently waving away help suggests Aunt Rosa prefers to be the one in charge of the holiday cooking."
         },
         {
             "id": "RDG_READINGINFERENCE_L29_Q1",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Upwell Flow 29-1] Coastal upwelling brings cold, nutrient-rich deep waters to the surface, triggering massive blooms of plankton.",
-            "question": "What would likely occur if wind patterns that drive coastal upwelling stopped?",
+            "passage": "[Cancelled Tour Dates] The band cancels its last three tour dates after the lead singer is seen leaving a doctor's office with a bandage around her throat.",
+            "question": "What can be inferred about the reason for the cancellations?",
             "options": [
-                "Surface nutrient levels and plankton blooms would drop",
-                "Deep-sea hydrothermal vents would freeze over",
-                "Kelp forest holdfasts would detach from rock",
-                "Bioluminescent creatures would migrate to land"
+                "The venue was closed for renovations.",
+                "The singer likely has a throat injury or illness.",
+                "Ticket sales were too low to continue.",
+                "The band lost interest in performing."
             ],
-            "correctAnswer": "Surface nutrient levels and plankton blooms would drop",
-            "hint": "Trace the causal chain from wind-driven upwelling to surface plankton feeding circles. (Diving calibration index 29-1)",
-            "explanation": "Without wind driving the upwelling suction, the supply of cold, nutrient-packed deep water to the surface would diminish. [Verified by Deduction Synthesis Unit 29]."
+            "correctAnswer": "The singer likely has a throat injury or illness.",
+            "hint": "Think about what a bandage around the throat suggests for a singer.",
+            "explanation": "A bandaged throat and cancelled shows strongly suggest the singer is dealing with a throat problem that prevents her from performing."
         },
         {
             "id": "RDG_READINGINFERENCE_L29_Q2",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Vent Logic 29-2] Hydrothermal vents release mineral-rich venting plumes. Because sunlight cannot reach these depths, local species rely entirely on chemical energy instead of solar energy.",
-            "question": "What can be logically inferred about the primary energy source in hydrothermal vent ecosystems?",
+            "passage": "[A Shorter Work Week] After the company switches to a four-day work week, employee sick-day requests drop noticeably over the following two months.",
+            "question": "What can be inferred about the four-day work week?",
             "options": [
-                "They are independent of solar energy pathways",
-                "They rely heavily on seasonal agricultural cycles",
-                "They require surface air exchanges to function",
-                "They are driven primarily by moon tidal patterns"
+                "It made no difference to employee health.",
+                "It may have improved employees' overall well-being.",
+                "It caused employees to take more sick days.",
+                "It led the company to hire fewer workers."
             ],
-            "correctAnswer": "They are independent of solar energy pathways",
-            "hint": "Determine whether sunlight plays a role in sustaining species at these ocean floor depths. (Diving calibration index 29-2)",
-            "explanation": "Since the passage states they rely entirely on chemical energy due to zero sunlight, they are independent of solar energy. [Verified by Deduction Synthesis Unit 29]."
+            "correctAnswer": "It may have improved employees' overall well-being.",
+            "hint": "Think about what a drop in sick days right after the schedule change suggests.",
+            "explanation": "Fewer sick-day requests after the shorter work week suggests the new schedule may have benefited employees' health."
         },
         {
             "id": "RDG_READINGINFERENCE_L29_Q3",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Kelp Drift 29-3] Kelp plants grow at rapid vertical rates exceeding 60 centimeters a day to reach the ocean's sunlit surface zone.",
-            "question": "Based on their rapid upward growth pattern, what is kelp highly dependent on for survival?",
+            "passage": "[A Standing Ovation] The comedian's new special receives a standing ovation on opening night, and the theater quickly adds five more shows to the schedule.",
+            "question": "What can be inferred about the opening night reception?",
             "options": [
-                "Access to solar energy at the surface",
-                "Extremely cold freezing temperatures",
-                "Complete darkness in deep ocean trenches",
-                "Frequent volcanic magma eruptions"
+                "The theater cancelled all future shows.",
+                "The audience responded very positively.",
+                "The audience was largely disappointed.",
+                "The audience left before the show ended."
             ],
-            "correctAnswer": "Access to solar energy at the surface",
-            "hint": "Focus on the goal of their rapid vertical upward growth direction. (Diving calibration index 29-3)",
-            "explanation": "The kelp grows rapidly upward specifically to reach the sunlit zone, showing high dependency on solar energy. [Verified by Deduction Synthesis Unit 29]."
+            "correctAnswer": "The audience responded very positively.",
+            "hint": "Think about why a theater would add extra shows right after opening night.",
+            "explanation": "A standing ovation followed immediately by more scheduled shows suggests the audience loved the opening night performance."
         },
         {
             "id": "RDG_READINGINFERENCE_L30_Q1",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Biolum Clue 30-1] Deep creatures use biological bioluminescence to attract prey, distract predators, and communicate in absolute darkness.",
-            "question": "What can be inferred about the visibility of deep-sea creatures without bioluminescence?",
+            "passage": "[An Empty Fuel Gauge] The rental car's fuel gauge shows nearly empty, but the map app suggests the nearest gas station is forty minutes away.",
+            "question": "What can be inferred about the driver's situation?",
             "options": [
-                "They would be extremely difficult to detect in the dark",
-                "They would emit bright neon solar reflections",
-                "They would rely exclusively on green leaves for cover",
-                "They would change colors to match tropical corals"
+                "They have more than enough fuel for the trip.",
+                "They are right next to a gas station.",
+                "They may struggle to reach a gas station in time.",
+                "The car does not use fuel at all."
             ],
-            "correctAnswer": "They would be extremely difficult to detect in the dark",
-            "hint": "Consider the visual environment of the pitch-black deep sea when bioluminescent tools are absent. (Diving calibration index 30-1)",
-            "explanation": "Without biological cold light, objects are completely hidden in the pitch-black deep waters. [Verified by Deduction Synthesis Unit 30]."
+            "correctAnswer": "They may struggle to reach a gas station in time.",
+            "hint": "Think about what an almost-empty tank combined with a distant gas station suggests.",
+            "explanation": "A nearly empty tank and a gas station forty minutes away suggest the driver may run out of fuel before arriving."
         },
         {
             "id": "RDG_READINGINFERENCE_L30_Q2",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Coral Sync 30-2] Cold deep-sea corals do not host symbiotic algae, unlike shallow tropical corals which rely heavily on algae photosynthesis.",
-            "question": "How do deep-sea corals differ from shallow-water corals regarding nourishment?",
+            "passage": "[A Missed Notification] The security camera footage shows a delivery driver leaving a package, but the homeowner's doorbell app never sends a notification.",
+            "question": "What can be inferred about the doorbell app?",
             "options": [
-                "They survive without algae-driven photosynthesis",
-                "They require direct exposure to solar rays",
-                "They feed exclusively on warm volcanic magma",
-                "They migrate continuously across different oceans"
+                "It sent multiple notifications instantly.",
+                "It worked perfectly as expected.",
+                "There was no delivery to detect.",
+                "It may have failed to detect the delivery."
             ],
-            "correctAnswer": "They survive without algae-driven photosynthesis",
-            "hint": "Contrast their lack of symbiotic algae with shallow tropical corals. (Diving calibration index 30-2)",
-            "explanation": "Because they do not host symbiotic algae, deep-sea corals do not rely on photosynthesis for nourishment. [Verified by Deduction Synthesis Unit 30]."
+            "correctAnswer": "It may have failed to detect the delivery.",
+            "hint": "Compare what the camera recorded with what the app actually reported.",
+            "explanation": "A delivery clearly happening on camera, with no notification sent, suggests the doorbell app failed to register the event."
         },
         {
             "id": "RDG_READINGINFERENCE_L30_Q3",
             "instruction": "Read the passage and select the correct inference.",
             "subtype": "readingInference",
             "interactionType": "Clue Glow",
-            "passage": "[Upwell Flow 30-3] Coastal upwelling brings cold, nutrient-rich deep waters to the surface, triggering massive blooms of plankton.",
-            "question": "What would likely occur if wind patterns that drive coastal upwelling stopped?",
+            "passage": "[Lights Out] Every light in the house switches off at exactly the same second, and the refrigerator stops humming in the kitchen.",
+            "question": "What can be inferred about the house?",
             "options": [
-                "Surface nutrient levels and plankton blooms would drop",
-                "Deep-sea hydrothermal vents would freeze over",
-                "Kelp forest holdfasts would detach from rock",
-                "Bioluminescent creatures would migrate to land"
+                "Someone turned off each light individually.",
+                "It has lost electrical power.",
+                "The electricity bill was just paid.",
+                "New appliances were just installed."
             ],
-            "correctAnswer": "Surface nutrient levels and plankton blooms would drop",
-            "hint": "Trace the causal chain from wind-driven upwelling to surface plankton feeding circles. (Diving calibration index 30-3)",
-            "explanation": "Without wind driving the upwelling suction, the supply of cold, nutrient-packed deep water to the surface would diminish. [Verified by Deduction Synthesis Unit 30]."
+            "correctAnswer": "It has lost electrical power.",
+            "hint": "Think about what would cause every light and appliance to stop at once.",
+            "explanation": "All the lights and the refrigerator stopping at the exact same moment suggest a power outage rather than someone turning things off one by one."
         }
     ]
 }
