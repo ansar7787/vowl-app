@@ -170,14 +170,14 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
                         OpinionWritingInstruction(
                           primaryColor: theme.primaryColor,
                         ),
-                        SizedBox(height: 24.h),
+                        SizedBox(height: 16.h),
 
                         OpinionWritingThesisCard(
                           text: quest.prompt ?? "",
                           color: theme.primaryColor,
                           isDark: isDark,
                         ),
-                        SizedBox(height: 24.h),
+                        SizedBox(height: 8.h),
 
                         OpinionWritingScaleInterface(
                           scaleRotation: _scaleRotation,
@@ -190,7 +190,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
                           onRemoveArg: (arg, isLeft) =>
                               _removeArg(arg, isLeft, isAnswered),
                         ),
-                        SizedBox(height: 32.h),
+                        SizedBox(height: 16.h),
 
                         OpinionWritingArgumentStones(
                           options: options,
@@ -199,7 +199,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
                           color: theme.primaryColor,
                           isDark: isDark,
                         ),
-                        SizedBox(height: 36.h),
+                        SizedBox(height: 24.h),
 
                         if (!isAnswered)
                           ScaleButton(
@@ -226,7 +226,9 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
                               ),
                               child: Center(
                                 child: Text(
-                                  "BALANCE THE TRUTH",
+                                  totalPlaced == 4
+                                      ? "BALANCE THE TRUTH"
+                                      : "PLACE ${4 - totalPlaced} MORE CARDS",
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 16.sp,

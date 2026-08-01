@@ -25,8 +25,9 @@ class OpinionWritingScaleInterface extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 250.h,
+      height: 270.h,
       child: Stack(
+        clipBehavior: Clip.none,
         alignment: Alignment.center,
         children: [
           Positioned(
@@ -49,6 +50,7 @@ class OpinionWritingScaleInterface extends StatelessWidget {
             curve: Curves.elasticOut,
             turns: scaleRotation / (2 * 3.14159),
             child: Stack(
+              clipBehavior: Clip.none,
               alignment: Alignment.center,
               children: [
                 Container(
@@ -100,10 +102,12 @@ class OpinionWritingScaleInterface extends StatelessWidget {
             ),
             Container(
               width: 125.w,
-              constraints: BoxConstraints(minHeight: 100.h),
+              constraints: BoxConstraints(minHeight: 120.h),
               padding: EdgeInsets.all(8.r),
               decoration: BoxDecoration(
-                color: isDark ? Colors.black87 : Colors.white,
+                color: highlight
+                    ? successColor.withValues(alpha: 0.15)
+                    : (isDark ? Colors.black87 : Colors.white),
                 borderRadius: BorderRadius.circular(16.r),
                 border: Border.all(
                   color: highlight
@@ -133,51 +137,65 @@ class OpinionWritingScaleInterface extends StatelessWidget {
                   if (args.isEmpty)
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 20.h),
-                      child: Text(
-                        "Drag argument here",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          color: isDark ? Colors.white24 : Colors.black26,
-                          fontSize: 9.sp,
-                        ),
+                      child: Column(
+                        children: [
+                          Icon(
+                            Icons.download_rounded,
+                            color: isDark ? Colors.white24 : Colors.black26,
+                            size: 20.r,
+                          ),
+                          SizedBox(height: 6.h),
+                          Text(
+                            "Drop card here",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              color: isDark ? Colors.white38 : Colors.black38,
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                  Wrap(
-                    spacing: 4.w,
-                    runSpacing: 4.h,
-                    children: args
-                        .map(
-                          (a) => GestureDetector(
-                            onTap: () => onRemoveArg(a, isLeft),
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 6.w,
-                                vertical: 4.h,
-                              ),
-                              decoration: BoxDecoration(
-                                color: color.withValues(alpha: 0.1),
-                                borderRadius: BorderRadius.circular(8.r),
-                                border: Border.all(
-                                  color: color.withValues(alpha: 0.3),
+                  if (args.isNotEmpty)
+                    Column(
+                      children: args
+                          .map(
+                            (a) => GestureDetector(
+                              onTap: () => onRemoveArg(a, isLeft),
+                              child: Container(
+                                width: double.infinity,
+                                margin: EdgeInsets.only(bottom: 6.h),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 8.w,
+                                  vertical: 8.h,
                                 ),
-                              ),
-                              child: Text(
-                                a,
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  color: isDark
-                                      ? Colors.white70
-                                      : Colors.black87,
-                                  fontSize: 8.sp,
-                                  fontWeight: FontWeight.bold,
+                                decoration: BoxDecoration(
+                                  color: isDark ? Colors.grey.shade900 : Colors.grey.shade100,
+                                  borderRadius: BorderRadius.circular(12.r),
+                                  border: Border.all(
+                                    color: color.withValues(alpha: 0.4),
+                                    width: 1.5,
+                                  ),
                                 ),
-                              ),
-                            ).animate().scale().fadeIn(),
-                          ),
-                        )
-                        .toList(),
-                  ),
+                                child: Text(
+                                  a,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    color: isDark
+                                        ? Colors.white
+                                        : Colors.black87,
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ).animate().scale().fadeIn(),
+                            ),
+                          )
+                          .toList(),
+                    ),
                 ],
               ),
             ),

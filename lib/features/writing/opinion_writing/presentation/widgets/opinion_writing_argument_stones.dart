@@ -25,8 +25,8 @@ class OpinionWritingArgumentStones extends StatelessWidget {
     return Container(
       constraints: BoxConstraints(minHeight: 80.h),
       child: Wrap(
-        spacing: 10.w,
-        runSpacing: 10.h,
+        spacing: 8.w,
+        runSpacing: 8.h,
         alignment: WrapAlignment.center,
         children: availableOptions
             .map(
@@ -38,7 +38,7 @@ class OpinionWritingArgumentStones extends StatelessWidget {
                     width: 140.w,
                     padding: EdgeInsets.symmetric(
                       horizontal: 14.w,
-                      vertical: 8.h,
+                      vertical: 10.h,
                     ),
                     decoration: BoxDecoration(
                       color: color,
@@ -52,6 +52,7 @@ class OpinionWritingArgumentStones extends StatelessWidget {
                     ),
                     child: Text(
                       o,
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         color: Colors.white,
@@ -61,11 +62,36 @@ class OpinionWritingArgumentStones extends StatelessWidget {
                     ),
                   ),
                 ),
+                childWhenDragging: Container(
+                  width: 140.w,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 14.w,
+                    vertical: 10.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: isDark ? Colors.black26 : Colors.black12,
+                    borderRadius: BorderRadius.circular(16.r),
+                    border: Border.all(
+                      color: color.withValues(alpha: 0.1),
+                      width: 2,
+                    ),
+                  ),
+                  child: Text(
+                    o,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: Colors.transparent,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 10.sp,
+                    ),
+                  ),
+                ),
                 child: Container(
                   width: 140.w,
                   padding: EdgeInsets.symmetric(
                     horizontal: 14.w,
-                    vertical: 8.h,
+                    vertical: 10.h,
                   ),
                   decoration: BoxDecoration(
                     color: isDark ? Colors.black87 : Colors.white,
@@ -88,7 +114,7 @@ class OpinionWritingArgumentStones extends StatelessWidget {
                       fontFamily: 'Outfit',
                       color: isDark ? Colors.white70 : Colors.black87,
                       fontWeight: FontWeight.bold,
-                      fontSize: 9.sp,
+                      fontSize: 10.sp,
                     ),
                   ),
                 ),
