@@ -42,6 +42,9 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
   bool? _isCorrect;
   bool _showConfetti = false;
 
+  List<String> _shuffledOptions = [];
+  int _shuffledCorrectIndex = 0;
+
   int? _selectedIndex;
   Timer? _resetTimer;
 
@@ -105,6 +108,20 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
               livesChanged ||
               (state.lastAnswerCorrect == null && _isAnswered)) {
             _resetTimer?.cancel();
+            
+            final quest = state.currentQuest;
+            if (quest != null) {
+              final originalOptions = quest.options ?? [];
+              final originalCorrectIndex = quest.correctAnswerIndex ?? 0;
+              final originalCorrectAnswer = originalOptions.isNotEmpty && originalCorrectIndex < originalOptions.length 
+                  ? originalOptions[originalCorrectIndex] 
+                  : "";
+              
+              _shuffledOptions = List.from(originalOptions)..shuffle();
+              _shuffledCorrectIndex = _shuffledOptions.indexOf(originalCorrectAnswer);
+              if (_shuffledCorrectIndex == -1) _shuffledCorrectIndex = 0;
+            }
+
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -139,7 +156,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
         final AccentQuest? quest = (state is AccentLoaded)
             ? state.currentQuest
             : _lastQuest;
-        final options = quest?.options ?? ["A", "B"];
+        final options = _shuffledOptions.isNotEmpty ? _shuffledOptions : (quest?.options ?? ["A", "B"]);
         final mediaQuery = MediaQuery.of(context);
 
         return MediaQuery(
@@ -237,8 +254,9 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                     ConnectedSpeechLinkerCards(
                                       key: ValueKey(quest.id),
                                       options: options,
-                                      correctIndex:
-                                          quest.correctAnswerIndex ?? 0,
+                                      correctIndex: _shuffledOptions.isNotEmpty 
+                                          ? _shuffledCorrectIndex 
+                                          : (quest.correctAnswerIndex ?? 0),
                                       color: theme.primaryColor,
                                       isDark: isDark,
                                       isAnswered: _isAnswered,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class ConnectedSpeechPromptCard extends StatelessWidget {
   final String word;
@@ -36,7 +37,7 @@ class ConnectedSpeechPromptCard extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  "TARGET PHRASE",
+                  context.tr('games.target_phrase', fallback: 'TARGET PHRASE'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: isCompact ? 8.sp : 10.sp,
