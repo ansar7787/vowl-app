@@ -639,11 +639,15 @@ class GameInstructionService {
       title: "Clarity Editor",
       icon: Icons.edit_rounded,
       objective:
-          "Scan the sentence and correct grammatical and stylistic errors.",
-      rules: ["Find the flaw", "Rewrite for clarity", "3 Hearts left"],
+          "Scrub the logical decay and select the correct replacement word. Mastering structural clarity ensures your writing is professional and highly effective in real-world communication.",
+      rules: [
+        "Locate the error",
+        "Scrub the decay away",
+        "Select correct replacement",
+      ],
       actionText: "Apply Edit",
       tip:
-          "PRO TIP: Read it out loud in your head! If it sounds clumsy, revise it.",
+          "PRO TIP: Read the sentence out loud in your head! If it sounds clumsy, revise it.",
     ),
     GameSubtype.shortAnswerWriting: GameBriefing(
       title: "Briefing Pro",

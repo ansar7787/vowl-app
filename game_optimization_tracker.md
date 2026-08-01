@@ -2,9 +2,6 @@
 
 Track the progress of UI and learning optimizations across all 122 game modules.
 
-## Global Optimizations
-- [x] ✅ Global Font Migration (Migrate 202 instances of RobotoMono to Outfit)
-
 ## Speaking (10)
 - [ ] Repeat Sentence (`repeatSentence`)
 - [ ] Speak Missing Word (`speakMissingWord`)
@@ -47,7 +44,7 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [ ] Sentence Builder (`sentenceBuilder`)
 - [x] ✅ Complete Sentence (`completeSentence`)
 - [x] ✅ Describe Situation (`describeSituationWriting`)
-- [ ] Fix The Sentence (`fixTheSentence`)
+- [x] ✅ Fix The Sentence (`fixTheSentence`)
 - [ ] Short Answer (`shortAnswerWriting`)
 - [ ] Opinion Writing (`opinionWriting`)
 - [x] ✅ Daily Journal (`dailyJournal`)

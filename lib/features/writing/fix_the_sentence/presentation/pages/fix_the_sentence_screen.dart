@@ -38,6 +38,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
   String? _selectedOption;
   bool _showConfetti = false;
   int _erasedAmount = 0;
+  WritingQuest? _lastQuest;
 
   @override
   void initState() {
@@ -103,12 +104,14 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
-        final WritingQuest? quest = isLoaded ? state.currentQuest : null;
+        if (isLoaded) _lastQuest = state.currentQuest;
+        final WritingQuest? quest = isLoaded ? state.currentQuest : _lastQuest;
         final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
         final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
 
         return WritingBaseLayout(
           gameType: widget.gameType,
+          isFinalFailure: isLoaded ? state.isFinalFailure : false,
           level: widget.level,
           isAnswered: isAnswered,
           isCorrect: isCorrect,
@@ -127,6 +130,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
                         FixTheSentenceInstruction(
                           isWiped: _isWiped,
                           primaryColor: theme.primaryColor,
+                          instruction: quest.instruction ?? "",
                         ),
                         SizedBox(height: 32.h),
 
