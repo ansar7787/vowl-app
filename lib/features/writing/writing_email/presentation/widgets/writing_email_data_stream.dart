@@ -57,7 +57,7 @@ class WritingEmailDataStream extends StatelessWidget {
                   ),
                 ),
                 child: Container(
-                  width: 140.w,
+                  width: double.infinity,
                   padding: EdgeInsets.all(12.r),
                   decoration: BoxDecoration(
                     color: isDark ? Colors.black87 : Colors.white,

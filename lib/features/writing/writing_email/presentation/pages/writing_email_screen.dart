@@ -222,7 +222,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                               ),
                               child: Center(
                                 child: Text(
-                                  "TRANSMIT DISPATCH",
+                                  "SEND EMAIL",
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 16.sp,
