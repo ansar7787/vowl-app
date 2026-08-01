@@ -31,10 +31,10 @@ class OpinionWritingScaleInterface extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           Positioned(
-            bottom: 0,
+            top: 20.h,
             child: Container(
               width: 12.w,
-              height: 160.h,
+              height: 180.h,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [color.withValues(alpha: 0.5), color],
@@ -45,31 +45,45 @@ class OpinionWritingScaleInterface extends StatelessWidget {
               ),
             ),
           ),
-          AnimatedRotation(
-            duration: 600.milliseconds,
-            curve: Curves.elasticOut,
-            turns: scaleRotation / (2 * 3.14159),
-            child: Stack(
-              clipBehavior: Clip.none,
-              alignment: Alignment.center,
-              children: [
-                Container(
-                  width: 280.w,
-                  height: 10.h,
-                  decoration: BoxDecoration(
-                    color: color,
-                    borderRadius: BorderRadius.circular(5.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: color.withValues(alpha: 0.3),
-                        blurRadius: 20,
+          Positioned(
+            top: 20.h,
+            child: AnimatedRotation(
+              duration: 600.milliseconds,
+              curve: Curves.elasticOut,
+              turns: scaleRotation / (2 * 3.14159),
+              alignment: Alignment.topCenter,
+              child: SizedBox(
+                width: 280.w,
+                height: 250.h,
+                child: Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    Positioned(
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      child: Center(
+                        child: Container(
+                          width: 280.w,
+                          height: 10.h,
+                          decoration: BoxDecoration(
+                            color: color,
+                            borderRadius: BorderRadius.circular(5.r),
+                            boxShadow: [
+                              BoxShadow(
+                                color: color.withValues(alpha: 0.3),
+                                blurRadius: 20,
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
-                    ],
-                  ),
+                    ),
+                    Positioned(left: 0, top: 5.h, child: _buildPan(true)),
+                    Positioned(right: 0, top: 5.h, child: _buildPan(false)),
+                  ],
                 ),
-                Positioned(left: 0, child: _buildPan(true)),
-                Positioned(right: 0, child: _buildPan(false)),
-              ],
+              ),
             ),
           ),
         ],
