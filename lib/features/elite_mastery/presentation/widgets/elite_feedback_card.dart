@@ -94,17 +94,19 @@ class EliteFeedbackCard extends StatelessWidget {
         ? _resolveCorrectAnswer(state.currentQuest)
         : null;
 
+    final bool shouldRevealPedagogy = _success || state.isFinalFailure;
+
     final usageContext = state.currentQuest.usageContext;
     final hasUsageContext =
-        usageContext != null && usageContext.trim().isNotEmpty;
+        shouldRevealPedagogy && usageContext != null && usageContext.trim().isNotEmpty;
 
     final spellingRule = state.currentQuest.spellingRule;
     final hasSpellingRule =
-        spellingRule != null && spellingRule.trim().isNotEmpty;
+        shouldRevealPedagogy && spellingRule != null && spellingRule.trim().isNotEmpty;
 
     final sequenceLogic = state.currentQuest.sequenceLogic;
     final hasSequenceLogic =
-        sequenceLogic != null && sequenceLogic.trim().isNotEmpty;
+        shouldRevealPedagogy && sequenceLogic != null && sequenceLogic.trim().isNotEmpty;
 
     // Curriculum "why" note (e.g. the stress/linking/intonation rule behind
     // the sentence). Shown on both success and failure — reinforcing the

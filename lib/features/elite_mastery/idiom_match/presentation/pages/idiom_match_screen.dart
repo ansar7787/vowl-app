@@ -223,16 +223,19 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
               ? (state.isFinalFailure || state.livesRemaining <= 0)
               : false,
           showConfetti: _showConfetti,
-          title: context.tr(
-            'games.idiomMatch_instruction',
-            fallback: 'Select the matching idiom.',
-          ),
+          title:
+              quest?.instruction ??
+              context.tr(
+                'games.idiomMatch_instruction',
+                fallback: 'Select the matching idiom.',
+              ),
           visualConfig: quest?.visualConfig,
           onContinue: () {
             setState(() {
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
+              _wrongIndices = [];
             });
             context.read<EliteMasteryBloc>().add(NextEliteQuestion());
           },

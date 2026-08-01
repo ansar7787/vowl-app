@@ -282,6 +282,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
             setState(() {
               _isAnswered = false;
               _isCorrect = null;
+              _attempts = 0;
               _lastWords = "";
               _matchedIndices = {};
             });
@@ -314,8 +315,10 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
         }
       },
       builder: (context, state) {
+        final quest = (state is EliteMasteryLoaded) ? state.currentQuest : null;
+
         return EliteBaseLayout(
-            onTutorPass: _tutorPass,
+          onTutorPass: _tutorPass,
           gameType: widget.gameType,
           level: widget.level,
           isAnswered: _isAnswered,
@@ -325,14 +328,17 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
               (state is EliteMasteryLoaded && state.isFinalFailure) ||
               state.livesRemaining <= 0,
           showConfetti: _showConfetti,
-          title: context.tr(
-            'games.accent_shadowing_instruction',
-            fallback: 'Listen and repeat the sentence exactly as you hear it.',
-          ),
+          title:
+              quest?.instruction ??
+              context.tr(
+                'games.accent_shadowing_instruction',
+                fallback: 'Listen and repeat the sentence exactly as you hear it.',
+              ),
           onContinue: () {
             setState(() {
               _isAnswered = false;
               _isCorrect = null;
+              _attempts = 0;
               _lastWords = "";
               _matchedIndices = {};
             });

@@ -231,6 +231,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               // on every single question transition across all 200 levels.
               _isAnswered = false;
               _isCorrect = null;
+            _currentOrder = [];
             });
             context.read<EliteMasteryBloc>().add(NextEliteQuestion());
           },
