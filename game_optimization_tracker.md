@@ -115,7 +115,7 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [ ] Emergency Hub (`emergencyHub`)
 
 ## Elite Mastery (4)
-- [ ] Story Builder (`storyBuilder`)
+- [x] ✅ Story Builder (`storyBuilder`)
 - [x] ✅ Idiom Match (`idiomMatch`)
 - [x] ✅ Speed Spelling (`speedSpelling`)
 - [x] ✅ Accent Shadowing (`accentShadowing`)

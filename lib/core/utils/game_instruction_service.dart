@@ -1404,7 +1404,7 @@ class GameInstructionService {
       title: "Story Builder",
       icon: Icons.reorder_rounded,
       objective:
-          "Arrange the scrambled sentences into the correct logical order.",
+          "Arrange the scrambled sentences into the correct logical order to master paragraph cohesion, which is highly useful for clear and effective communication.",
       rules: [
         "Tap sentences in order",
         "1 mistake loses 1 life",

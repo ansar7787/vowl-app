@@ -39,7 +39,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
   bool? _isCorrect;
   VisualConfig? _visualConfig;
   String? _lastQuestId;
-  int? _lastLives;
+  int _lastLives = 3;
 
   // Below this available height, use tighter spacing. See the identical
   // constant in accent_shadowing_screen.dart / idiom_match_screen.dart /
@@ -162,7 +162,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
           );
         } else if (state is EliteMasteryLoaded) {
           final quest = state.currentQuest;
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          final livesChanged = (state.livesRemaining > _lastLives);
 
           // FIX: these mutations used to happen directly on the fields,
           // outside any setState, relying entirely on `_shuffleSentences`'s
@@ -198,8 +198,6 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is EliteMasteryLoaded) ? state.currentQuest : null;
-
         return EliteBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
@@ -210,12 +208,10 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               ? (state.isFinalFailure || state.livesRemaining <= 0)
               : false,
           showConfetti: _showConfetti,
-          title:
-              quest?.instruction ??
-              context.tr(
-                'games.story_builder_title',
-                fallback: 'Story Builder',
-              ),
+          title: context.tr(
+            'games.story_builder_instruction',
+            fallback: 'Assemble the fragments into a correct story.',
+          ),
           visualConfig: _visualConfig,
           onContinue: () {
             setState(() {
