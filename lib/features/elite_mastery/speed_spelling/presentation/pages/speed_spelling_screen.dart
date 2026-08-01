@@ -93,7 +93,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
 
   void _submit(String correctWord) {
     if (_isAnswered) return;
-    if (_shuffledChars.isNotEmpty || _currentInput.isEmpty) return;
+    if (_currentInput.length != correctWord.length) return;
     final isCorrect = _currentInput.toLowerCase() == correctWord.toLowerCase();
 
     _attempts++;
@@ -345,7 +345,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
             if (!_isAnswered) ...[
               Builder(
                 builder: (context) {
-                  final canSubmit = _shuffledChars.isEmpty && _currentInput.isNotEmpty;
+                  final canSubmit = _currentInput.length == (quest.word?.length ?? 0);
                   return Semantics(
                     button: true,
                     label: context.tr('games.submit_caps', fallback: 'SUBMIT'),
