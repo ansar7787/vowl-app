@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
+import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
@@ -40,6 +41,8 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
   bool _showConfetti = false;
   int _erasedAmount = 0;
   WritingQuest? _lastQuest;
+  List<String>? _shuffledOptions;
+  final _ttsService = di.sl<TtsService>();
 
   @override
   void initState() {
@@ -105,7 +108,10 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
-        if (isLoaded) _lastQuest = state.currentQuest;
+        if (isLoaded && state.currentQuest != _lastQuest) {
+          _lastQuest = state.currentQuest;
+          _shuffledOptions = List.from(_lastQuest!.options ?? [])..shuffle();
+        }
         final WritingQuest? quest = isLoaded ? state.currentQuest : _lastQuest;
         final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
         final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
@@ -155,7 +161,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
 
                         if (_isWiped)
                           FixTheSentenceCorrectionOptions(
-                            options: quest.options ?? [],
+                            options: _shuffledOptions ?? quest.options ?? [],
                             correct: quest.correctAnswer ?? "",
                             color: theme.primaryColor,
                             isDark: isDark,
@@ -164,6 +170,12 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
                               setState(() => _selectedOption = selected);
                               final bool isAnsCorrect = selected == correct;
                               context.read<WritingBloc>().add(SubmitAnswer(isAnsCorrect));
+                              if (isAnsCorrect) {
+                                final fullText = quest.passage ?? "";
+                                final targetWord = quest.missingWord ?? "";
+                                final correctedText = fullText.replaceFirst(targetWord, selected);
+                                _ttsService.speak(correctedText);
+                              }
                             },
                           ),
 
