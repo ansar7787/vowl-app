@@ -222,8 +222,8 @@ class GameInstructionService {
           "Tap the floating letters to spell the target word correctly. Mastering spelling patterns ensures your written communication is professional and easily understood in the real world.",
       rules: [
         "Spelling must be exact",
-        "1 mistake loses 1 life",
-        "2 mistakes queues it to the end",
+        "Sound out the syllables",
+        "Review before submitting",
       ],
       actionText: "Start Spelling",
       tip:
@@ -235,9 +235,9 @@ class GameInstructionService {
       objective:
           "Match the idiom to its real meaning. Mastering idioms helps you speak more naturally and understand native speakers in everyday conversations.",
       rules: [
-        "Read the context scenario",
-        "Select the matching idiom",
-        "Master casual speech",
+        "Analyze the context clue",
+        "Identify the core meaning",
+        "Match the perfect idiom",
       ],
       actionText: "Match Idiom",
       tip:
@@ -1406,9 +1406,9 @@ class GameInstructionService {
       objective:
           "Arrange the scrambled sentences into the correct logical order to master paragraph cohesion, which is highly useful for clear and effective communication.",
       rules: [
-        "Tap sentences in order",
-        "1 mistake loses 1 life",
-        "2 mistakes queues it to the end",
+        "Identify the starting sentence",
+        "Look for logical transitions",
+        "Build a cohesive paragraph",
       ],
       actionText: "Build Story",
       tip:
