@@ -99,7 +99,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
     return BlocConsumer<AccentBloc, AccentState>(
       listener: (context, state) {
         if (state is AccentLoaded) {
-          _lastQuest = state.currentQuest as AccentQuest;
+          _lastQuest = state.currentQuest;
           final livesChanged = (state.livesRemaining > _lastLives);
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
@@ -137,7 +137,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
       },
       builder: (context, state) {
         final AccentQuest? quest = (state is AccentLoaded)
-            ? state.currentQuest as AccentQuest
+            ? state.currentQuest
             : _lastQuest;
         final options = quest?.options ?? ["A", "B"];
         final mediaQuery = MediaQuery.of(context);
