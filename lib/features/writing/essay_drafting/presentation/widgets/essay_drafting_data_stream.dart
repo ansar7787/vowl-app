@@ -20,24 +20,21 @@ class EssayDraftingDataStream extends StatelessWidget {
     final placed = slots.values.toSet();
     final availableItems = items.where((i) => !placed.contains(i)).toList();
 
-    return Container(
-      constraints: BoxConstraints(minHeight: 80.h),
-      child: Wrap(
-        spacing: 12.w,
-        runSpacing: 12.h,
-        alignment: WrapAlignment.center,
-        children: availableItems
-            .map(
-              (i) => Draggable<String>(
+    return Column(
+      children: availableItems
+          .map(
+            (i) => Padding(
+              padding: EdgeInsets.only(bottom: 12.h),
+              child: Draggable<String>(
                 data: i,
                 feedback: Material(
                   color: Colors.transparent,
                   child: Container(
-                    width: 260.w,
-                    padding: EdgeInsets.all(12.r),
+                    width: MediaQuery.of(context).size.width - 48.w,
+                    padding: EdgeInsets.all(16.r),
                     decoration: BoxDecoration(
                       color: color,
-                      borderRadius: BorderRadius.circular(12.r),
+                      borderRadius: BorderRadius.circular(16.r),
                       boxShadow: [
                         BoxShadow(
                           color: color.withValues(alpha: 0.4),
@@ -47,18 +44,20 @@ class EssayDraftingDataStream extends StatelessWidget {
                     ),
                     child: Text(
                       i,
+                      textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontFamily: 'RobotoMono',
+                        fontFamily: 'Outfit',
                         color: Colors.white,
-                        fontSize: 10.sp,
+                        fontSize: 12.sp,
                         fontWeight: FontWeight.bold,
+                        height: 1.3,
                       ),
                     ),
                   ),
                 ),
                 child: Container(
-                  width: 140.w,
-                  padding: EdgeInsets.all(12.r),
+                  width: double.infinity,
+                  padding: EdgeInsets.all(16.r),
                   decoration: BoxDecoration(
                     color: isDark ? Colors.black87 : Colors.white,
                     borderRadius: BorderRadius.circular(16.r),
@@ -77,17 +76,18 @@ class EssayDraftingDataStream extends StatelessWidget {
                     i,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontFamily: 'RobotoMono',
+                      fontFamily: 'Outfit',
                       color: isDark ? Colors.white70 : Colors.black87,
-                      fontSize: 9.sp,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w600,
+                      height: 1.3,
                     ),
                   ),
                 ),
               ),
-            )
-            .toList(),
-      ),
+            ),
+          )
+          .toList(),
     );
   }
 }
