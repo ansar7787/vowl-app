@@ -23,71 +23,79 @@ class SummarizeStoryFrameVault extends StatelessWidget {
         .where((o) => !slottedSentences.contains(o))
         .toList();
 
-    return Container(
-      constraints: BoxConstraints(minHeight: 60.h),
-      child: Wrap(
-        spacing: 10.w,
-        runSpacing: 10.h,
-        alignment: WrapAlignment.center,
-        children: availableOptions
-            .map(
-              (o) => Draggable<String>(
-                data: o,
-                feedback: Material(
-                  color: Colors.transparent,
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 16.w,
-                      vertical: 10.h,
+    return Column(
+      children: availableOptions.map((o) {
+        return Padding(
+          padding: EdgeInsets.only(bottom: 12.h),
+          child: Draggable<String>(
+            data: o,
+            feedback: Material(
+              color: Colors.transparent,
+              child: Container(
+                width: MediaQuery.of(context).size.width - 48.w,
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+                decoration: BoxDecoration(
+                  color: color,
+                  borderRadius: BorderRadius.circular(16.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: color.withValues(alpha: 0.4),
+                      blurRadius: 10,
+                      offset: const Offset(0, 4),
                     ),
-                    decoration: BoxDecoration(
-                      color: color,
-                      borderRadius: BorderRadius.circular(20.r),
-                    ),
-                    child: Text(
-                      o,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        color: Colors.white,
-                        fontSize: 11.sp,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
+                  ],
                 ),
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 16.w,
-                    vertical: 10.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: isDark ? Colors.black87 : Colors.white,
-                    borderRadius: BorderRadius.circular(20.r),
-                    border: Border.all(
-                      color: color.withValues(alpha: 0.3),
-                      width: 2,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: color.withValues(alpha: isDark ? 0.35 : 0.15),
-                        blurRadius: 6,
-                      ),
-                    ],
-                  ),
-                  child: Text(
-                    o,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: isDark ? Colors.white : Colors.black87,
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
+                child: Text(
+                  o,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    color: Colors.white,
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
-            )
-            .toList(),
+            ),
+            childWhenDragging: Opacity(
+              opacity: 0.3,
+              child: _buildOptionCard(o, context),
+            ),
+            child: _buildOptionCard(o, context),
+          ),
+        );
+      }).toList(),
+    );
+  }
+
+  Widget _buildOptionCard(String text, BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(
+          color: color.withValues(alpha: 0.3),
+          width: 2,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: color.withValues(alpha: 0.1),
+            blurRadius: 8,
+            offset: const Offset(0, 3),
+          ),
+        ],
+      ),
+      child: Text(
+        text,
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          color: isDark ? Colors.white : Colors.black87,
+          fontSize: 14.sp,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }

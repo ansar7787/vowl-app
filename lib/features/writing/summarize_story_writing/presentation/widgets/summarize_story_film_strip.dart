@@ -21,102 +21,86 @@ class SummarizeStoryFilmStrip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 16.h),
-      decoration: BoxDecoration(
-        color: Colors.black,
-        border: Border.symmetric(
-          horizontal: BorderSide(color: color.withValues(alpha: 0.3), width: 4),
-        ),
-      ),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: List.generate(
-              8,
-              (i) => Container(
-                width: 8.w,
-                height: 8.h,
+    return Column(
+      children: slots.map((slot) {
+        return Padding(
+          padding: EdgeInsets.only(bottom: 16.h),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                width: 32.r,
+                height: 32.r,
                 decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.2),
+                  color: color.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
+                  border: Border.all(color: color.withValues(alpha: 0.3)),
                 ),
-              ),
-            ),
-          ),
-          SizedBox(height: 10.h),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: slots
-                .map(
-                  (slot) => DragTarget<String>(
-                    onAcceptWithDetails: (details) =>
-                        onDropFrame(slot.index, details.data),
-                    builder: (context, candidateData, rejectedData) {
-                      final text = slot.sentence;
-                      return GestureDetector(
-                        onTap: () => onRemoveFrame(slot.index),
-                        child:
-                            Container(
-                                  width: 100.w,
-                                  height: 90.h,
-                                  padding: EdgeInsets.all(8.r),
-                                  decoration: BoxDecoration(
-                                    color: text != null
-                                        ? color.withValues(alpha: 0.15)
-                                        : Colors.white10,
-                                    borderRadius: BorderRadius.circular(12.r),
-                                    border: Border.all(
-                                      color: text != null
-                                          ? color
-                                          : (candidateData.isNotEmpty
-                                                ? color.withValues(alpha: 0.5)
-                                                : Colors.white24),
-                                      width: 2,
-                                    ),
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      text ?? "[SLOT ${slot.index + 1}]",
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        color: text != null
-                                            ? Colors.white
-                                            : Colors.white30,
-                                        fontSize: 10.sp,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                )
-                                .animate(target: text != null ? 1 : 0)
-                                .scale()
-                                .fadeIn(),
-                      );
-                    },
+                child: Center(
+                  child: Text(
+                    "${slot.index + 1}",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w900,
+                      color: color,
+                    ),
                   ),
-                )
-                .toList(),
-          ),
-          SizedBox(height: 10.h),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: List.generate(
-              8,
-              (i) => Container(
-                width: 8.w,
-                height: 8.h,
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.2),
-                  shape: BoxShape.circle,
                 ),
               ),
-            ),
+              SizedBox(width: 12.w),
+              Expanded(
+                child: DragTarget<String>(
+                  onAcceptWithDetails: (details) =>
+                      onDropFrame(slot.index, details.data),
+                  builder: (context, candidateData, rejectedData) {
+                    final text = slot.sentence;
+                    final isHovering = candidateData.isNotEmpty;
+
+                    return GestureDetector(
+                      onTap: () => onRemoveFrame(slot.index),
+                      child: Container(
+                        minHeight: 60.h,
+                        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                        decoration: BoxDecoration(
+                          color: text != null
+                              ? color.withValues(alpha: 0.15)
+                              : (isHovering
+                                  ? color.withValues(alpha: 0.05)
+                                  : (isDark ? Colors.black12 : Colors.black.withValues(alpha: 0.02))),
+                          borderRadius: BorderRadius.circular(16.r),
+                          border: Border.all(
+                            color: text != null
+                                ? color
+                                : (isHovering
+                                    ? color.withValues(alpha: 0.5)
+                                    : (isDark ? Colors.white24 : Colors.black12)),
+                            width: 2,
+                          ),
+                        ),
+                        child: Center(
+                          child: Text(
+                            text ?? "Drop event here...",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.bold,
+                              color: text != null
+                                  ? (isDark ? Colors.white : Colors.black87)
+                                  : (isDark ? Colors.white30 : Colors.black38),
+                            ),
+                          ),
+                        ),
+                      ).animate(target: text != null ? 1 : 0).scale(begin: const Offset(1, 1), end: const Offset(1.02, 1.02)).tint(color: color.withValues(alpha: 0.1)),
+                    );
+                  },
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
+        );
+      }).toList(),
     );
   }
 }

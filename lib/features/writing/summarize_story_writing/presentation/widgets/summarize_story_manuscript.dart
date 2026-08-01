@@ -17,28 +17,35 @@ class SummarizeStoryManuscript extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: BoxConstraints(maxHeight: 180.h),
-      padding: EdgeInsets.all(20.r),
+      width: double.infinity,
+      padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: isDark ? 0.05 : 0.08),
+        color: isDark ? const Color(0xFF1E293B) : Colors.white,
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: isDark ? Colors.white12 : Colors.black12),
+        border: Border.all(
+          color: color.withValues(alpha: 0.3),
+          width: 2,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: color.withValues(alpha: 0.1),
+            blurRadius: 15,
+            offset: const Offset(0, 5),
+          ),
+        ],
       ),
       child: Stack(
         children: [
           const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
-          SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Text(
-              story,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                color: isDark ? Colors.white70 : Colors.black87,
-                height: 1.5,
-                fontWeight: FontWeight.bold,
-              ),
+          Text(
+            story,
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 16.sp,
+              color: isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF334155),
+              height: 1.5,
+              fontWeight: FontWeight.w600,
             ),
           ),
         ],

@@ -18,7 +18,7 @@ import 'package:vowl/features/writing/summarize_story_writing/presentation/widge
 import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_manuscript.dart';
 import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_film_strip.dart';
 import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_frame_vault.dart';
-import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_projector_crank.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class SummarizeStoryWritingScreen extends StatefulWidget {
   final int level;
@@ -45,7 +45,6 @@ class _SummarizeStoryWritingScreenState
   ];
 
   bool _showConfetti = false;
-  double _crankProgress = 0.0;
   WritingQuest? _lastQuest;
 
   @override
@@ -69,28 +68,10 @@ class _SummarizeStoryWritingScreenState
     _hapticService.selection();
     setState(() {
       _slots[slotIdx].sentence = null;
-      _crankProgress = 0.0;
     });
   }
 
-  void _onCrank(double delta, bool isAnswered) {
-    if (isAnswered) return;
 
-    final isSlotsFilled = _slots.every((s) => s.sentence != null);
-    if (!isSlotsFilled) return;
-
-    setState(() {
-      _crankProgress = (_crankProgress + delta.abs() / 450).clamp(0.0, 1.0);
-    });
-
-    if (_crankProgress % 0.15 < 0.02) {
-      _hapticService.selection();
-    }
-
-    if (_crankProgress >= 1.0) {
-      _submitAnswer(isAnswered);
-    }
-  }
 
   void _submitAnswer(bool isAnswered) {
     if (isAnswered) return;
@@ -132,7 +113,6 @@ class _SummarizeStoryWritingScreenState
       listener: (context, state) {
         if (state is WritingLoaded && state.lastAnswerCorrect == null) {
           setState(() {
-            _crankProgress = 0.0;
             for (var slot in _slots) {
               slot.sentence = null;
             }
@@ -222,11 +202,35 @@ class _SummarizeStoryWritingScreenState
                         SizedBox(height: 32.h),
 
                         if (isSlotsFilled && !isAnswered)
-                          SummarizeStoryProjectorCrank(
-                            crankProgress: _crankProgress,
-                            color: theme.primaryColor,
-                            isDark: isDark,
-                            onCrank: (delta) => _onCrank(delta, isAnswered),
+                          ScaleButton(
+                            onTap: () => _submitAnswer(isAnswered),
+                            child: Container(
+                              width: double.infinity,
+                              padding: EdgeInsets.symmetric(vertical: 18.h),
+                              decoration: BoxDecoration(
+                                color: theme.primaryColor,
+                                borderRadius: BorderRadius.circular(20.r),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: theme.primaryColor.withValues(alpha: 0.4),
+                                    blurRadius: 15,
+                                    offset: const Offset(0, 5),
+                                  ),
+                                ],
+                              ),
+                              child: Center(
+                                child: Text(
+                                  context.tr('common.check_answer', fallback: 'CHECK ANSWER'),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 18.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: Colors.white,
+                                    letterSpacing: 2,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
 
                         SizedBox(height: 60.h),
