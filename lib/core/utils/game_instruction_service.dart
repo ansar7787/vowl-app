@@ -243,6 +243,20 @@ class GameInstructionService {
       tip:
           "PRO TIP: Idioms rarely mean what the individual words mean literally. Think about the feeling or situation they describe!",
     ),
+    GameSubtype.consonantClarity: GameBriefing(
+      title: "Consonant Clarity",
+      icon: Icons.record_voice_over_rounded,
+      objective:
+          "Identify the correct target consonant phoneme. Mastering clear consonant pronunciation prevents misunderstandings and makes your spoken English sound natural and crisp in real-world conversations.",
+      rules: [
+        "Listen to the target word",
+        "Identify the correct sound",
+        "Tap the matching consonant",
+      ],
+      actionText: "Identify Sound",
+      tip:
+          "PRO TIP: Pay attention to whether your vocal cords vibrate (voiced) or not (voiceless) when you make the sound!",
+    ),
     // 2. Speaking
     GameSubtype.repeatSentence: GameBriefing(
       title: "Echo Master",

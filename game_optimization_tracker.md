@@ -94,7 +94,7 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [ ] Syllable Stress (`syllableStress`)
 - [ ] Word Linking (`wordLinking`)
 - [ ] Shadowing Challenge (`shadowingChallenge`)
-- [ ] Vowel Distinction (`vowelDistinction`)
+- [x] ✅ Vowel Distinction (`vowelDistinction`)
 - [x] ✅ Consonant Clarity (`consonantClarity`)
 - [x] ✅ Pitch Pattern Match (`pitchPatternMatch`)
 - [ ] Speed Variance (`speedVariance`)

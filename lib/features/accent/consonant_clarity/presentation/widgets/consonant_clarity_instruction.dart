@@ -4,12 +4,10 @@ import 'package:vowl/core/utils/locale_service.dart';
 
 class ConsonantClarityInstruction extends StatelessWidget {
   final Color primaryColor;
-  final String instruction;
 
   const ConsonantClarityInstruction({
     super.key,
     required this.primaryColor,
-    required this.instruction,
   });
 
   @override

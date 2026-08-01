@@ -145,6 +145,8 @@ class AccentFeedbackCard extends StatelessWidget {
             ...[
               if (state.currentQuest.phoneticRule != null)
                 (icon: Icons.psychology_rounded, capsKey: 'games.phonetic_rule_caps', capsFallback: 'PHONETIC RULE', titleKey: 'games.phonetic_rule', titleFallback: 'Phonetic Rule', rule: state.currentQuest.phoneticRule!),
+              if (state.currentQuest.mouthPosition != null)
+                (icon: Icons.face_retouching_natural_rounded, capsKey: 'games.mouth_position_caps', capsFallback: 'MOUTH POSITION', titleKey: 'games.mouth_position', titleFallback: 'Mouth Position', rule: state.currentQuest.mouthPosition!),
               if (state.currentQuest.dialectNote != null)
                 (icon: Icons.public, capsKey: 'games.dialect_note_caps', capsFallback: 'DIALECT NOTE', titleKey: 'games.dialect_note', titleFallback: 'Dialect Note', rule: state.currentQuest.dialectNote!),
               if (state.currentQuest.pitchRule != null)
