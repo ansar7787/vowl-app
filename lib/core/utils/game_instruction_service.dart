@@ -215,6 +215,20 @@ class GameInstructionService {
 
   // Large centralized static register matching GameSubtypes to their Briefing parameters.
   static const Map<GameSubtype, GameBriefing> _briefings = {
+    GameSubtype.speedSpelling: GameBriefing(
+      title: "Speed Spelling",
+      icon: Icons.bolt_rounded,
+      objective:
+          "Tap the floating letters to spell the target word correctly. Mastering spelling patterns ensures your written communication is professional and easily understood in the real world.",
+      rules: [
+        "Spelling must be exact",
+        "1 mistake loses 1 life",
+        "2 mistakes queues it to the end",
+      ],
+      actionText: "Start Spelling",
+      tip:
+          "PRO TIP: Sound the word out slowly in your head before tapping the letters.",
+    ),
     GameSubtype.idiomMatch: GameBriefing(
       title: "Idiom Master",
       icon: Icons.lightbulb_rounded,

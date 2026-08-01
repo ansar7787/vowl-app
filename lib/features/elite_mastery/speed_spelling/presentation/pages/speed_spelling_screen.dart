@@ -206,15 +206,11 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
           isAnswered: _isAnswered,
           state: state,
           isCorrect: _isCorrect,
-          isFinalFailure: (state is EliteMasteryLoaded)
-              ? (state.isFinalFailure || state.livesRemaining <= 0)
-              : false,
+          isFinalFailure: state.livesRemaining <= 0 || (state is EliteMasteryLoaded && state.isFinalFailure),
           showConfetti: _showConfetti,
-          title:
-              quest?.instruction ??
-              context.tr(
-                'games.speed_spelling_title_fallback',
-                fallback: 'Speed Spelling',
+          title: context.tr(
+                'games.speedSpelling_instruction',
+                fallback: 'Spell the word using the provided letters.',
               ),
           onContinue: () {
             setState(() {
