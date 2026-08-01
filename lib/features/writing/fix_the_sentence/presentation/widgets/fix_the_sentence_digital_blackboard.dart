@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 import 'package:vowl/features/writing/fix_the_sentence/presentation/widgets/fix_the_sentence_scratch_overlay_painter.dart';
 
@@ -131,6 +132,22 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                                           : const Color(0xFFDC2626),
                                     ),
                                   ),
+                                  if (erasePoints.isEmpty)
+                                    Positioned.fill(
+                                      child: IgnorePointer(
+                                        child: Center(
+                                          child: Icon(
+                                            Icons.swipe_rounded,
+                                            size: 24.r,
+                                            color: isDark ? Colors.white70 : Colors.black54,
+                                          )
+                                          .animate(onPlay: (c) => c.repeat())
+                                          .moveX(begin: -15, end: 15, duration: 1.seconds, curve: Curves.easeInOutSine)
+                                          .fadeIn(duration: 400.ms)
+                                          .fadeOut(delay: 600.ms, duration: 400.ms),
+                                        ),
+                                      ),
+                                    ),
                                   if (erasePoints.isNotEmpty)
                                     Positioned.fill(
                                       child: CustomPaint(

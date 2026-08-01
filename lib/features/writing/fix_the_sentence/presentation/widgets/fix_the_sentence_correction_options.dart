@@ -21,7 +21,8 @@ class FixTheSentenceWipedAlert extends StatelessWidget {
         border: Border.all(color: displayColor.withValues(alpha: 0.3)),
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
             Icons.check_circle_outline_rounded,
@@ -29,13 +30,16 @@ class FixTheSentenceWipedAlert extends StatelessWidget {
             size: 16.r,
           ),
           SizedBox(width: 8.w),
-          Text(
-            "DECAY WIPED! CHOOSE REPLACEMENT CELL",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.bold,
-              color: displayColor,
+          Flexible(
+            child: Text(
+              "DECAY WIPED! CHOOSE REPLACEMENT CELL",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.bold,
+                color: displayColor,
+              ),
             ),
           ),
         ],
