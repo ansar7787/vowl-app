@@ -39,6 +39,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
   double _scaleRotation = 0.0;
   bool _showConfetti = false;
   WritingQuest? _lastQuest;
+  List<String> _shuffledOptions = [];
 
   @override
   void initState() {
@@ -123,6 +124,10 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
             _leftPanArgs.clear();
             _rightPanArgs.clear();
             _scaleRotation = 0.0;
+            
+            // Randomize options for pedagogical integrity
+            _shuffledOptions = List.from(state.currentQuest.options ?? []);
+            _shuffledOptions.shuffle();
           });
         }
         if (state is WritingGameComplete) {
@@ -143,7 +148,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
         }
         final WritingQuest? quest = isLoaded ? state.currentQuest : _lastQuest;
 
-        final options = quest?.options ?? [];
+        final options = _shuffledOptions.isNotEmpty ? _shuffledOptions : (quest?.options ?? []);
         final totalPlaced = _leftPanArgs.length + _rightPanArgs.length;
         final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
         final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
