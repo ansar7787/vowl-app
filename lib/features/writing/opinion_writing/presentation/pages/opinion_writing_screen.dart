@@ -64,7 +64,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
       }
 
       double diff = (_leftPanArgs.length - _rightPanArgs.length).toDouble();
-      _scaleRotation = (diff * 0.1).clamp(-0.3, 0.3);
+      _scaleRotation = (diff * 0.06).clamp(-0.15, 0.15);
     });
   }
 
@@ -79,7 +79,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
       }
 
       double diff = (_leftPanArgs.length - _rightPanArgs.length).toDouble();
-      _scaleRotation = (diff * 0.1).clamp(-0.3, 0.3);
+      _scaleRotation = (diff * 0.06).clamp(-0.15, 0.15);
     });
   }
 

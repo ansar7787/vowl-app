@@ -53,7 +53,7 @@ class OpinionWritingScaleInterface extends StatelessWidget {
               turns: scaleRotation / (2 * 3.14159),
               alignment: Alignment.topCenter,
               child: SizedBox(
-                width: 280.w,
+                width: 250.w,
                 height: 250.h,
                 child: Stack(
                   clipBehavior: Clip.none,
@@ -64,7 +64,7 @@ class OpinionWritingScaleInterface extends StatelessWidget {
                       right: 0,
                       child: Center(
                         child: Container(
-                          width: 280.w,
+                          width: 250.w,
                           height: 10.h,
                           decoration: BoxDecoration(
                             color: color,
@@ -115,7 +115,7 @@ class OpinionWritingScaleInterface extends StatelessWidget {
               color: color.withValues(alpha: 0.4),
             ),
             Container(
-              width: 125.w,
+              width: 120.w,
               constraints: BoxConstraints(minHeight: 120.h),
               padding: EdgeInsets.all(8.r),
               decoration: BoxDecoration(
