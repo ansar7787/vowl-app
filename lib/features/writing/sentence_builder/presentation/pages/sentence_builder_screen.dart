@@ -106,7 +106,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
         }
 
         if (state is WritingLoaded && state.lastAnswerCorrect == true) {
-          _ttsService.speak(state.currentQuest.correctAnswer!);
+          _ttsService.speak(state.currentQuest.correctAnswer ?? '');
         }
 
         if (state is WritingGameComplete) {
