@@ -42,7 +42,7 @@ class SummarizeStoryManuscript extends StatelessWidget {
             textAlign: TextAlign.justify,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 16.sp,
+              fontSize: 14.sp,
               color: isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF334155),
               height: 1.5,
               fontWeight: FontWeight.w500,

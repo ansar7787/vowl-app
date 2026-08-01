@@ -51,7 +51,7 @@ class SummarizeStoryFrameVault extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     color: Colors.white,
-                    fontSize: 14.sp,
+                    fontSize: 12.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -86,7 +86,7 @@ class SummarizeStoryFrameVault extends StatelessWidget {
         style: TextStyle(
           fontFamily: 'Outfit',
           color: isDark ? Colors.white : Colors.black87,
-          fontSize: 14.sp,
+          fontSize: 12.sp,
           fontWeight: FontWeight.bold,
         ),
       ),

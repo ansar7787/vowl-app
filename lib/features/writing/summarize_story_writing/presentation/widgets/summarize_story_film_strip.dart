@@ -41,7 +41,7 @@ class SummarizeStoryFilmStrip extends StatelessWidget {
                     "${slot.index + 1}",
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 14.sp,
+                      fontSize: 12.sp,
                       fontWeight: FontWeight.w900,
                       color: color,
                     ),
@@ -84,7 +84,7 @@ class SummarizeStoryFilmStrip extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 14.sp,
+                              fontSize: 12.sp,
                               fontWeight: FontWeight.bold,
                               color: text != null
                                   ? (isDark ? Colors.white : Colors.black87)
