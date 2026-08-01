@@ -67,24 +67,26 @@ class EssayDraftingHexSlot extends StatelessWidget {
                   child: Text(
                     slotKey.toUpperCase(),
                     style: TextStyle(
-                      fontFamily: 'RobotoMono',
+                      fontFamily: 'Outfit',
                       color: color,
-                      fontSize: 8.sp,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 9.sp,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 1.2,
                     ),
                   ),
                 ),
                 SizedBox(width: 16.w),
                 Expanded(
                   child: Text(
-                    slotValue ?? "--- DROP LOGIC MODULE HERE ---",
+                    slotValue ?? "Drop paragraph block here...",
                     style: TextStyle(
-                      fontFamily: 'RobotoMono',
+                      fontFamily: 'Outfit',
                       color: hasData
                           ? (isDark ? Colors.white70 : Colors.black87)
                           : (isDark ? Colors.white24 : Colors.black26),
-                      fontSize: 10.sp,
-                      fontWeight: hasData ? FontWeight.bold : FontWeight.normal,
+                      fontSize: 12.sp,
+                      fontWeight: hasData ? FontWeight.w600 : FontWeight.normal,
+                      height: 1.3,
                     ),
                   ),
                 ),
