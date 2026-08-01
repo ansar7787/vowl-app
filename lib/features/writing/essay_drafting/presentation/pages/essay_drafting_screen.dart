@@ -35,6 +35,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
 
   final Map<String, String?> _blueprintSlots = {};
   WritingQuest? _lastQuest;
+  List<String> _shuffledOptions = [];
 
   bool _showConfetti = false;
 
@@ -115,6 +116,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
             for (var point in (quest.requiredPoints ?? [])) {
               _blueprintSlots[point] = null;
             }
+            _shuffledOptions = List<String>.from(quest.options ?? [])..shuffle();
           });
         }
         if (state is WritingGameComplete) {
@@ -193,12 +195,12 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                         SizedBox(height: 24.h),
 
                         EssayDraftingDataStream(
-                          items: options,
+                          items: _shuffledOptions.isNotEmpty ? _shuffledOptions : options,
                           slots: _blueprintSlots,
                           color: theme.primaryColor,
                           isDark: isDark,
                         ),
-                        SizedBox(height: 32.h),
+                        SizedBox(height: 16.h),
 
                         if (!isAnswered)
                           ScaleButton(
@@ -237,8 +239,6 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                               ),
                             ),
                           ),
-
-                        SizedBox(height: 60.h),
                       ],
                     ),
                   ),
