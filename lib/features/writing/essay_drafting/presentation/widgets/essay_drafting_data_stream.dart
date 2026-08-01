@@ -27,6 +27,10 @@ class EssayDraftingDataStream extends StatelessWidget {
               padding: EdgeInsets.only(bottom: 12.h),
               child: Draggable<String>(
                 data: i,
+                childWhenDragging: SizedBox(
+                  width: double.infinity,
+                  height: 60.h,
+                ),
                 feedback: Material(
                   color: Colors.transparent,
                   child: Container(
