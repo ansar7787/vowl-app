@@ -1400,20 +1400,6 @@ class GameInstructionService {
       tip:
           "PRO TIP: Look for transition words like 'However' or 'Therefore' to link sentences!",
     ),
-    GameSubtype.idiomMatch: GameBriefing(
-      title: "Idiom Match",
-      icon: Icons.psychology_rounded,
-      objective:
-          "Select the correct meaning for the highlighted English idiom.",
-      rules: [
-        "Read the context carefully",
-        "1 mistake loses 1 life",
-        "2 mistakes queues it to the end",
-      ],
-      actionText: "Match Idiom",
-      tip:
-          "PRO TIP: Don't take idioms literally! They usually describe a feeling or situation.",
-    ),
     GameSubtype.speedSpelling: GameBriefing(
       title: "Speed Spelling",
       icon: Icons.spellcheck_rounded,
