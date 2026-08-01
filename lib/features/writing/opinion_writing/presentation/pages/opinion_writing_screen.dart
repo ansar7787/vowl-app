@@ -195,7 +195,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
                           onRemoveArg: (arg, isLeft) =>
                               _removeArg(arg, isLeft, isAnswered),
                         ),
-                        SizedBox(height: 16.h),
+                        SizedBox(height: 8.h),
 
                         OpinionWritingArgumentStones(
                           options: options,

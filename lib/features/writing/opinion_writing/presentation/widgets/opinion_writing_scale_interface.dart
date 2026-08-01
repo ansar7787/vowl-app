@@ -25,7 +25,7 @@ class OpinionWritingScaleInterface extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 270.h,
+      height: 210.h,
       child: Stack(
         clipBehavior: Clip.none,
         alignment: Alignment.center,
