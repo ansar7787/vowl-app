@@ -91,23 +91,39 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
+                    Container(
+                      padding: EdgeInsets.all(8.r),
+                      decoration: BoxDecoration(
+                        color: (isCorrect || isSelected)
+                            ? Colors.green.withValues(alpha: 0.15)
+                            : (isWrong
+                                ? Colors.red.withValues(alpha: 0.15)
+                                : primaryColor.withValues(alpha: 0.15)),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Icon(
+                        isCorrect
+                            ? Icons.check_rounded
+                            : (isWrong ? Icons.close_rounded : Icons.psychology_alt_rounded),
+                        color: (isCorrect || isSelected)
+                            ? Colors.green
+                            : (isWrong ? Colors.redAccent : primaryColor),
+                        size: 20.r,
+                      ),
+                    ),
+                    SizedBox(width: 16.w),
                     Expanded(
                       child: Text(
                         option,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w500,
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.bold,
                           color: textColor,
+                          height: 1.3,
                         ),
                       ),
                     ),
-                    if (isWrong)
-                      Icon(
-                        Icons.cancel_rounded,
-                        color: Colors.redAccent,
-                        size: 24.r,
-                      ).animate().shake(duration: 400.ms),
                   ],
                 ),
               ),

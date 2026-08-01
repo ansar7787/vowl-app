@@ -311,17 +311,62 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
             if (quest.question != null && quest.question!.isNotEmpty) ...[
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: Text(
-                  quest.question!,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: isCompact ? 16.sp : 18.sp,
-                    fontWeight: FontWeight.w600,
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.9)
-                        : const Color(0xFF0F172A),
-                    height: 1.4,
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.all(24.r),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(24.r),
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: isDark
+                          ? [
+                              Colors.white.withValues(alpha: 0.1),
+                              Colors.white.withValues(alpha: 0.02),
+                            ]
+                          : [
+                              Colors.white,
+                              Colors.white.withValues(alpha: 0.7),
+                            ],
+                    ),
+                    border: Border.all(
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.15)
+                          : theme.primaryColor.withValues(alpha: 0.3),
+                      width: 1.5,
+                    ),
+                    boxShadow: [
+                      if (!isDark)
+                        BoxShadow(
+                          color: theme.primaryColor.withValues(alpha: 0.15),
+                          blurRadius: 24,
+                          offset: const Offset(0, 12),
+                        ),
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.format_quote_rounded,
+                        color: theme.primaryColor.withValues(alpha: 0.6),
+                        size: 32.r,
+                      ),
+                      SizedBox(height: 8.h),
+                      Text(
+                        quest.question!,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: isCompact ? 18.sp : 22.sp,
+                          fontWeight: FontWeight.bold,
+                          color: isDark
+                              ? Colors.white
+                              : const Color(0xFF0F172A),
+                          height: 1.4,
+                          letterSpacing: 0.3,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
