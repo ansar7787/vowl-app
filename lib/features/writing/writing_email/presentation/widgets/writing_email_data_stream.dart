@@ -6,6 +6,7 @@ class WritingEmailDataStream extends StatelessWidget {
   final Map<String, String?> slots;
   final Color color;
   final bool isDark;
+  final Function(String) onTapItem;
 
   const WritingEmailDataStream({
     super.key,
@@ -13,6 +14,7 @@ class WritingEmailDataStream extends StatelessWidget {
     required this.slots,
     required this.color,
     required this.isDark,
+    required this.onTapItem,
   });
 
   @override
@@ -28,8 +30,10 @@ class WritingEmailDataStream extends StatelessWidget {
         alignment: WrapAlignment.center,
         children: availableItems
             .map(
-              (i) => Draggable<String>(
-                data: i,
+              (i) => GestureDetector(
+                onTap: () => onTapItem(i),
+                child: Draggable<String>(
+                  data: i,
                 feedback: Material(
                   color: Colors.transparent,
                   child: Container(

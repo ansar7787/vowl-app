@@ -67,6 +67,32 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
     });
   }
 
+  void _onTapOption(String data, bool isAnswered) {
+    if (isAnswered) return;
+
+    String? targetSlot;
+    for (final key in ['SUBJECT', 'SALUTATION', 'BODY', 'SIGN-OFF']) {
+      if (_slots[key] == null) {
+        targetSlot = key;
+        break;
+      }
+    }
+
+    if (targetSlot != null) {
+      _hapticService.success();
+      setState(() {
+        _slots.forEach((key, val) {
+          if (val == data) {
+            _slots[key] = null;
+          }
+        });
+        _slots[targetSlot] = data;
+      });
+    } else {
+      _hapticService.error();
+    }
+  }
+
   void _clearSlot(String slotKey, bool isAnswered) {
     if (isAnswered || _slots[slotKey] == null) return;
     _hapticService.selection();
@@ -197,6 +223,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                           slots: _slots,
                           color: theme.primaryColor,
                           isDark: isDark,
+                          onTapItem: (data) => _onTapOption(data, isAnswered),
                         ),
                         SizedBox(height: 32.h),
 
