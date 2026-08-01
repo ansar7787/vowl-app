@@ -357,8 +357,8 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: isCompact ? 18.sp : 22.sp,
-                          fontWeight: FontWeight.bold,
+                          fontSize: isCompact ? 16.sp : 18.sp,
+                          fontWeight: FontWeight.w600,
                           color: isDark
                               ? Colors.white
                               : const Color(0xFF0F172A),

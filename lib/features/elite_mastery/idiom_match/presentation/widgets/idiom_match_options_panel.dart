@@ -117,8 +117,8 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
                         option,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.bold,
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w500,
                           color: textColor,
                           height: 1.3,
                         ),
