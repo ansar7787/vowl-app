@@ -688,11 +688,16 @@ class GameInstructionService {
     GameSubtype.summarizeStoryWriting: GameBriefing(
       title: "Essence Extractor",
       icon: Icons.compress_rounded,
-      objective: "Read the story and draft a concise, objective summary.",
-      rules: ["Remove fluff", "Highlight key events", "Stay objective"],
+      objective:
+          "Read the story and arrange the key events in chronological order to form a concise summary. Mastering summary writing helps you process complex information and communicate ideas clearly in the real world.",
+      rules: [
+        "Read carefully",
+        "Sequence the events",
+        "Exclude incorrect details",
+      ],
       actionText: "Summarize Now",
       tip:
-          "PRO TIP: Identify the 'Who', 'What', 'Where', and 'Why' of the plot.",
+          "PRO TIP: A good summary only includes events that actually happened in the story!",
     ),
     GameSubtype.writingEmail: GameBriefing(
       title: "Email Expert",

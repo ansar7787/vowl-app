@@ -10,6 +10,7 @@ import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 import 'package:vowl/features/writing/summarize_story_writing/presentation/models/describe_frame_slot.dart';
@@ -45,6 +46,7 @@ class _SummarizeStoryWritingScreenState
 
   bool _showConfetti = false;
   double _crankProgress = 0.0;
+  WritingQuest? _lastQuest;
 
   @override
   void initState() {
@@ -157,9 +159,11 @@ class _SummarizeStoryWritingScreenState
       },
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
-        final WritingQuest? quest = isLoaded
-            ? state.currentQuest as WritingQuest?
-            : null;
+        if (isLoaded) {
+          _lastQuest = state.currentQuest as WritingQuest?;
+        }
+        
+        final WritingQuest? quest = _lastQuest;
 
         final options = quest?.options ?? [];
         final isSlotsFilled = _slots.every((s) => s.sentence != null);
@@ -184,7 +188,10 @@ class _SummarizeStoryWritingScreenState
                       children: [
                         SizedBox(height: 16.h),
                         SummarizeStoryWritingInstruction(
-                          instruction: quest.instruction,
+                          instruction: context.tr(
+                            'games.summarizeStoryWriting_instruction',
+                            fallback: quest.instruction,
+                          ),
                           primaryColor: theme.primaryColor,
                         ),
                         SizedBox(height: 24.h),
