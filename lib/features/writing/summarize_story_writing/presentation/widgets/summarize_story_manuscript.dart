@@ -39,13 +39,13 @@ class SummarizeStoryManuscript extends StatelessWidget {
           const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
           Text(
             story,
-            textAlign: TextAlign.left,
+            textAlign: TextAlign.justify,
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 16.sp,
               color: isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF334155),
               height: 1.5,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w500,
             ),
           ),
         ],

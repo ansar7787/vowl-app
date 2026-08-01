@@ -38,11 +38,7 @@ class _SummarizeStoryWritingScreenState
     extends State<SummarizeStoryWritingScreen> {
   final _hapticService = di.sl<HapticService>();
 
-  final List<DescribeFrameSlot> _slots = [
-    DescribeFrameSlot(index: 0),
-    DescribeFrameSlot(index: 1),
-    DescribeFrameSlot(index: 2),
-  ];
+  List<DescribeFrameSlot> _slots = [];
 
   bool _showConfetti = false;
   WritingQuest? _lastQuest;
@@ -86,7 +82,7 @@ class _SummarizeStoryWritingScreenState
     final correctIndices = quest.correctOrder ?? [0, 1, 2];
 
     bool isAllCorrect = true;
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < _slots.length; i++) {
       final slotSentence = _slots[i].sentence;
       final targetIdx = correctIndices[i];
       final targetSentence = options[targetIdx];
@@ -140,7 +136,17 @@ class _SummarizeStoryWritingScreenState
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
         if (isLoaded) {
-          _lastQuest = state.currentQuest as WritingQuest?;
+          final newQuest = state.currentQuest as WritingQuest?;
+          if (_lastQuest?.id != newQuest?.id) {
+            _lastQuest = newQuest;
+            if (newQuest != null) {
+              final correctCount = newQuest.correctOrder?.length ?? 3;
+              _slots = List.generate(
+                correctCount,
+                (i) => DescribeFrameSlot(index: i),
+              );
+            }
+          }
         }
         
         final WritingQuest? quest = _lastQuest;
