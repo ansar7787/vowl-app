@@ -11,15 +11,15 @@
             "prompt": "Write an email to a senior manager requesting an increase in the project budget.",
             "options": [
                 "DUE TO UNFORESEEN SCOPE EXPANSION IN PROJECT MERIDIAN, I AM REQUESTING AN ADDITIONAL £15,000 TO COVER EXTENDED CONTRACTOR HOURS AND SPECIALIST SOFTWARE LICENSING.",
-                "YOURS SINCERELY,\nROBERT WALSH, PROJECT MANAGER",
+                "SUBJECT: BUDGET INCREASE REQUEST - PROJECT MERIDIAN (ADDITIONAL £15,000)",
                 "DEAR MS CAMPBELL,",
-                "SUBJECT: BUDGET INCREASE REQUEST - PROJECT MERIDIAN (ADDITIONAL £15,000)"
+                "YOURS SINCERELY,\nROBERT WALSH, PROJECT MANAGER"
             ],
             "correctOrder": [
-                3,
+                1,
                 2,
                 0,
-                1
+                3
             ],
             "hint": "Amount and project name are in the subject; the manager is addressed formally; the reason for increase and specific cost breakdown are in the body; the project manager signs with role.",
             "explanation": "Naming specific costs - 'contractor hours AND specialist software' - is far more persuasive than a vague budget overrun claim. Breaking down the £15,000 into components gives the senior manager confidence in the accuracy of the request."
@@ -31,16 +31,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email justifying additional expenditure on a marketing campaign.",
             "options": [
-                "YOURS SINCERELY,\nNICOLA JAMES, MARKETING DIRECTOR",
+                "DEAR FINANCE COMMITTEE,",
+                "KIND REGARDS,\nNICOLA JAMES, MARKETING DIRECTOR",
                 "THE ADDITIONAL £6,000 SPEND ON DIGITAL ADVERTISING IN Q3 WAS JUSTIFIED BY A 34% UPLIFT IN WEBSITE CONVERSIONS THAT GENERATED AN ESTIMATED £48,000 IN ADDITIONAL REVENUE.",
-                "SUBJECT: JUSTIFICATION FOR ADDITIONAL MARKETING SPEND - Q3 CAMPAIGN",
-                "DEAR FINANCE COMMITTEE,"
+                "SUBJECT: JUSTIFICATION FOR ADDITIONAL MARKETING SPEND - Q3 CAMPAIGN"
             ],
             "correctOrder": [
-                2,
                 3,
-                1,
-                0
+                0,
+                2,
+                1
             ],
             "hint": "The additional spend and campaign are in the subject; the committee is addressed formally; the ROI calculation - cost versus revenue - is made clearly in the body; the director signs with role.",
             "explanation": "The most powerful justification for marketing spend is ROI - spending £6,000 to generate £48,000 is an 8x return. Always quantify the return when justifying budget decisions to a finance committee."
@@ -52,15 +52,15 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a budget holder sending a quarterly budget performance report.",
             "options": [
-                "DEAR BUDGET COMMITTEE,",
                 "SUBJECT: Q3 BUDGET REPORT - OPERATIONS DEPARTMENT",
+                "PLEASE FIND ATTACHED THE Q3 BUDGET REPORT FOR THE OPERATIONS DEPARTMENT - WE ARE CURRENTLY 4% UNDER BUDGET AND PROJECT TO FINISH THE YEAR WITHIN THE APPROVED ALLOCATION.",
                 "BEST REGARDS,\nDANA FOX, HEAD OF OPERATIONS",
-                "PLEASE FIND ATTACHED THE Q3 BUDGET REPORT FOR THE OPERATIONS DEPARTMENT - WE ARE CURRENTLY 4% UNDER BUDGET AND PROJECT TO FINISH THE YEAR WITHIN THE APPROVED ALLOCATION."
+                "DEAR BUDGET COMMITTEE,"
             ],
             "correctOrder": [
-                1,
                 0,
                 3,
+                1,
                 2
             ],
             "hint": "The quarter and department are in the subject; the committee is addressed; attachment, variance, and year-end projection are in the body; the head of operations signs with role.",
@@ -73,16 +73,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a health and safety officer reporting a workplace incident.",
             "options": [
+                "YOURS FAITHFULLY,\nGARY MARSH, WAREHOUSE SUPERVISOR",
+                "SUBJECT: HEALTH AND SAFETY INCIDENT REPORT - WAREHOUSE A, 12 JUNE",
                 "I AM REPORTING A NEAR-MISS INCIDENT IN WAREHOUSE A ON 12 JUNE AT 14:30, WHERE A FORKLIFT NARROWLY AVOIDED COLLIDING WITH A PEDESTRIAN CROSSING ZONE.",
-                "YOURS SINCERELY,\nGARY MARSH, WAREHOUSE SUPERVISOR",
-                "DEAR HEALTH AND SAFETY OFFICER,",
-                "SUBJECT: HEALTH AND SAFETY INCIDENT REPORT - WAREHOUSE A, 12 JUNE"
+                "DEAR HEALTH AND SAFETY OFFICER,"
             ],
             "correctOrder": [
+                1,
                 3,
                 2,
-                0,
-                1
+                0
             ],
             "hint": "Location and date are in the subject; the correct officer is addressed; incident type, location, time, and description are in the body; the supervisor signs with role.",
             "explanation": "Near-miss reporting is as important as accident reporting - near-misses reveal hazards before injuries occur. Including precise time and location creates a verifiable record for the incident investigation."
@@ -94,14 +94,14 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email following up on a workplace risk assessment that is overdue.",
             "options": [
-                "YOURS SINCERELY,\nSANDRA NORTON, HEALTH AND SAFETY MANAGER",
+                "BEST REGARDS,\nSANDRA NORTON, HEALTH AND SAFETY MANAGER",
                 "THE STATUTORY RISK ASSESSMENT FOR THE CHEMICAL STORAGE AREA IN BUILDING B WAS DUE ON 1 MAY AND REMAINS OUTSTANDING - I WOULD BE GRATEFUL IF THIS COULD BE PRIORITISED AS A MATTER OF URGENCY.",
-                "SUBJECT: OVERDUE RISK ASSESSMENT - CHEMICAL STORAGE AREA, BUILDING B",
-                "DEAR FACILITIES MANAGER,"
+                "DEAR FACILITIES MANAGER,",
+                "SUBJECT: OVERDUE RISK ASSESSMENT - CHEMICAL STORAGE AREA, BUILDING B"
             ],
             "correctOrder": [
-                2,
                 3,
+                2,
                 1,
                 0
             ],
@@ -115,16 +115,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a training provider requesting mandatory health and safety training for new staff.",
             "options": [
+                "KIND REGARDS,\nTRACY BELL, HR MANAGER",
                 "DEAR TRAINING COORDINATOR,",
-                "SUBJECT: MANDATORY HEALTH AND SAFETY TRAINING FOR 12 NEW EMPLOYEES",
-                "YOURS SINCERELY,\nTRACY BELL, HR MANAGER",
-                "WE HAVE 12 NEW EMPLOYEES JOINING ON 1 AUGUST WHO REQUIRE MANDATORY MANUAL HANDLING AND FIRE SAFETY TRAINING - PLEASE CONFIRM YOUR AVAILABILITY AND COST FOR A FULL-DAY INDUCTION SESSION."
+                "WE HAVE 12 NEW EMPLOYEES JOINING ON 1 AUGUST WHO REQUIRE MANDATORY MANUAL HANDLING AND FIRE SAFETY TRAINING - PLEASE CONFIRM YOUR AVAILABILITY AND COST FOR A FULL-DAY INDUCTION SESSION.",
+                "SUBJECT: MANDATORY HEALTH AND SAFETY TRAINING FOR 12 NEW EMPLOYEES"
             ],
             "correctOrder": [
-                1,
-                0,
                 3,
-                2
+                1,
+                2,
+                0
             ],
             "hint": "Training type and number of employees are in the subject; the coordinator is addressed; number, start date, specific training types, and two questions are in the body; HR manager signs with role.",
             "explanation": "Specifying both types of mandatory training ('manual handling AND fire safety') in one email ensures a comprehensive induction is costed. Asking for both availability AND cost upfront enables a booking decision in one email exchange."
@@ -136,16 +136,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a team requesting a meeting to review performance against monthly targets.",
             "options": [
+                "SUBJECT: TEAM PERFORMANCE REVIEW MEETING - THURSDAY 2 PM, MEETING ROOM 3",
                 "I WOULD LIKE TO MEET THIS THURSDAY AT 2 PM IN MEETING ROOM 3 TO REVIEW OUR PERFORMANCE AGAINST THE JULY TARGETS AND PLAN OUR APPROACH FOR THE FINAL QUARTER.",
                 "BEST REGARDS,\nOWEN HARRIS, SALES DIRECTOR",
-                "DEAR SALES TEAM,",
-                "SUBJECT: TEAM PERFORMANCE REVIEW MEETING - THURSDAY 2 PM, MEETING ROOM 3"
+                "DEAR SALES TEAM,"
             ],
             "correctOrder": [
-                3,
-                2,
                 0,
-                1
+                3,
+                1,
+                2
             ],
             "hint": "Meeting time and purpose are in the subject; the team is addressed; time, room, review purpose, and forward planning are in the body; the director signs with role.",
             "explanation": "Including the meeting room in the subject prevents the common confusion about where to meet. Combining review of past performance with future planning in one meeting is efficient and gives the team a complete picture."
@@ -157,14 +157,14 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to HR requesting updated performance data for an employee appraisal.",
             "options": [
-                "YOURS SINCERELY,\nINGA ROSS, TEAM LEADER",
+                "BEST REGARDS,\nINGA ROSS, TEAM LEADER",
                 "I AM PREPARING FOR THE ANNUAL APPRAISAL CYCLE COMMENCING 14 SEPTEMBER AND REQUIRE THE ATTENDANCE, PERFORMANCE RATING, AND TRAINING COMPLETION DATA FOR MY TEAM OF SEVEN.",
-                "SUBJECT: DATA REQUEST - PERFORMANCE METRICS FOR ANNUAL APPRAISAL CYCLE",
-                "DEAR HR DATA TEAM,"
+                "DEAR HR DATA TEAM,",
+                "SUBJECT: DATA REQUEST - PERFORMANCE METRICS FOR ANNUAL APPRAISAL CYCLE"
             ],
             "correctOrder": [
-                2,
                 3,
+                2,
                 1,
                 0
             ],
@@ -178,16 +178,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to senior management summarising team performance data for the quarter.",
             "options": [
-                "DEAR MANAGEMENT BOARD,",
-                "SUBJECT: Q2 SALES TEAM PERFORMANCE SUMMARY - EXCEEDS TARGET BY 11%",
                 "BEST REGARDS,\nOWEN HARRIS, SALES DIRECTOR",
-                "I AM PLEASED TO REPORT THAT THE SALES TEAM EXCEEDED ITS Q2 TARGET BY 11%, ACHIEVING REVENUE OF £2.3M AGAINST A £2.07M TARGET, DRIVEN BY STRONG PERFORMANCE IN THE NORTHERN REGION."
+                "I AM PLEASED TO REPORT THAT THE SALES TEAM EXCEEDED ITS Q2 TARGET BY 11%, ACHIEVING REVENUE OF £2.3M AGAINST A £2.07M TARGET, DRIVEN BY STRONG PERFORMANCE IN THE NORTHERN REGION.",
+                "SUBJECT: Q2 SALES TEAM PERFORMANCE SUMMARY - EXCEEDS TARGET BY 11%",
+                "DEAR MANAGEMENT BOARD,"
             ],
             "correctOrder": [
-                1,
-                0,
+                2,
                 3,
-                2
+                1,
+                0
             ],
             "hint": "Result and quarter are in the subject; the board is addressed formally; actual and target figures, percentage overperformance, and driver are in the body; the director signs with role.",
             "explanation": "Including both the absolute figures ('£2.3M vs £2.07M') and the percentage overperformance ('11%') tells the board precisely how strong the result is. Identifying the key driver ('Northern Region') adds analytical depth."
@@ -199,16 +199,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to HR asking about pension contribution options as a new employee.",
             "options": [
-                "I JOINED THE COMPANY ON 1 JUNE AND WOULD LIKE CLARIFICATION ON THE PENSION CONTRIBUTION OPTIONS AVAILABLE, INCLUDING WHETHER I CAN INCREASE MY CONTRIBUTION ABOVE THE MINIMUM RATE.",
-                "YOURS SINCERELY,\nJAMES FORD",
+                "KIND REGARDS,\nJAMES FORD",
                 "DEAR HR BENEFITS TEAM,",
+                "I JOINED THE COMPANY ON 1 JUNE AND WOULD LIKE CLARIFICATION ON THE PENSION CONTRIBUTION OPTIONS AVAILABLE, INCLUDING WHETHER I CAN INCREASE MY CONTRIBUTION ABOVE THE MINIMUM RATE.",
                 "SUBJECT: PENSION CONTRIBUTION ENQUIRY - NEW EMPLOYEE QUERY"
             ],
             "correctOrder": [
                 3,
+                1,
                 2,
-                0,
-                1
+                0
             ],
             "hint": "Benefits and new employee status are in the subject; HR benefits team is addressed; start date, pension question, and specific enhancement enquiry are in the body; formal closing used.",
             "explanation": "Mentioning your start date ('1 June') helps HR confirm you have reached the three-month qualifying period, which often determines pension eligibility. Asking specifically about increasing contributions shows financial awareness."
@@ -220,16 +220,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to HR requesting shared parental leave arrangements.",
             "options": [
-                "YOURS SINCERELY,\nDANIEL WALSH",
-                "MY PARTNER AND I HAVE AGREED TO SHARE PARENTAL LEAVE FOLLOWING THE BIRTH OF OUR CHILD IN JANUARY AND I WISH TO TAKE MY PORTION FROM 1 FEBRUARY FOR A PERIOD OF EIGHT WEEKS.",
                 "SUBJECT: SHARED PARENTAL LEAVE APPLICATION - EXPECTED START 1 FEBRUARY",
-                "DEAR HR DEPARTMENT,"
+                "YOURS FAITHFULLY,\nDANIEL WALSH",
+                "DEAR HR DEPARTMENT,",
+                "MY PARTNER AND I HAVE AGREED TO SHARE PARENTAL LEAVE FOLLOWING THE BIRTH OF OUR CHILD IN JANUARY AND I WISH TO TAKE MY PORTION FROM 1 FEBRUARY FOR A PERIOD OF EIGHT WEEKS."
             ],
             "correctOrder": [
+                0,
                 2,
                 3,
-                1,
-                0
+                1
             ],
             "hint": "Leave type and start date are in the subject; HR is addressed formally; context, start date, and duration are clearly stated in the body; formal closing is used.",
             "explanation": "Specifying the proposed start date and duration ('1 February for eight weeks') gives HR all the information they need to calculate pay, arrange cover, and confirm eligibility. Shared parental leave requests should be submitted in writing as formal documentation."
@@ -243,14 +243,14 @@
             "options": [
                 "DEAR RACHEL,",
                 "SUBJECT: REQUEST TO DISCUSS FLEXIBLE WORKING APPLICATION - CONFIDENTIAL",
-                "YOURS SINCERELY,\nPAULINE GRANT",
-                "I WOULD LIKE TO REQUEST A MEETING TO DISCUSS MY FORTHCOMING FLEXIBLE WORKING APPLICATION AND EXPLORE HOW A CHANGE TO MY HOURS COULD WORK FOR BOTH MYSELF AND THE TEAM."
+                "I WOULD LIKE TO REQUEST A MEETING TO DISCUSS MY FORTHCOMING FLEXIBLE WORKING APPLICATION AND EXPLORE HOW A CHANGE TO MY HOURS COULD WORK FOR BOTH MYSELF AND THE TEAM.",
+                "YOURS SINCERELY,\nPAULINE GRANT"
             ],
             "correctOrder": [
                 1,
                 0,
-                3,
-                2
+                2,
+                3
             ],
             "hint": "The purpose and confidentiality are in the subject; the manager is addressed by first name; the meeting purpose and collaborative framing are in the body; formal closing maintains the professional tone.",
             "explanation": "Marking the subject 'CONFIDENTIAL' signals sensitivity and prevents others from seeing the subject in shared inboxes. Framing the request as beneficial to 'both myself and the team' shows you have considered the business impact."
@@ -262,16 +262,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a supplier raising concerns about delayed deliveries.",
             "options": [
-                "OVER THE PAST SIX WEEKS, THREE CONSECUTIVE DELIVERIES HAVE ARRIVED BETWEEN FIVE AND TWELVE DAYS LATE, CAUSING PRODUCTION LINE DISRUPTIONS THAT ARE NOW FINANCIALLY IMPACTING OUR BUSINESS.",
-                "YOURS SINCERELY,\nKEITH BURNS, OPERATIONS DIRECTOR",
                 "DEAR ACCOUNT MANAGER,",
+                "OVER THE PAST SIX WEEKS, THREE CONSECUTIVE DELIVERIES HAVE ARRIVED BETWEEN FIVE AND TWELVE DAYS LATE, CAUSING PRODUCTION LINE DISRUPTIONS THAT ARE NOW FINANCIALLY IMPACTING OUR BUSINESS.",
+                "BEST REGARDS,\nKEITH BURNS, OPERATIONS DIRECTOR",
                 "SUBJECT: FORMAL CONCERN - REPEATED DELIVERY DELAYS AFFECTING PRODUCTION"
             ],
             "correctOrder": [
                 3,
-                2,
                 0,
-                1
+                1,
+                2
             ],
             "hint": "Concern level and impact are in the subject; the account manager is addressed; specific data (six weeks, three deliveries, day ranges) and business impact are in the body; the director signs with role.",
             "explanation": "Quantifying the problem precisely - 'three consecutive deliveries, five to twelve days late over six weeks' - creates a compelling, evidence-based case that is very hard for the supplier to dismiss or minimise."
@@ -283,16 +283,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a logistics provider requesting a revised delivery schedule.",
             "options": [
-                "YOURS SINCERELY,\nSTEPHANIE CHAN, SUPPLY CHAIN MANAGER",
-                "GIVEN OUR CURRENT PRODUCTION DEMANDS, I WOULD LIKE TO PROPOSE THE FOLLOWING REVISED DELIVERY SCHEDULE FOR THE THREE OUTSTANDING ORDERS AND REQUEST CONFIRMATION BY FRIDAY 18TH.",
                 "SUBJECT: REVISED DELIVERY SCHEDULE REQUEST - ORDERS 7814, 7832, 7901",
-                "DEAR LOGISTICS TEAM,"
+                "DEAR LOGISTICS TEAM,",
+                "KIND REGARDS,\nSTEPHANIE CHAN, SUPPLY CHAIN MANAGER",
+                "GIVEN OUR CURRENT PRODUCTION DEMANDS, I WOULD LIKE TO PROPOSE THE FOLLOWING REVISED DELIVERY SCHEDULE FOR THE THREE OUTSTANDING ORDERS AND REQUEST CONFIRMATION BY FRIDAY 18TH."
             ],
             "correctOrder": [
-                2,
-                3,
+                0,
                 1,
-                0
+                3,
+                2
             ],
             "hint": "Order numbers and revision purpose are in the subject; the team is addressed; business context, proposed revision, and response deadline are in the body; the supply chain manager signs with role.",
             "explanation": "Including the order numbers in the subject line ensures the logistics team immediately knows which orders are being discussed. Setting a response deadline ('Friday 18th') creates urgency and helps your own planning."
@@ -304,16 +304,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a supplier formally notifying them of an order cancellation.",
             "options": [
-                "DEAR SUPPLIER RELATIONS TEAM,",
-                "SUBJECT: ORDER CANCELLATION NOTICE - ORDER NO. 8841 (FORCE MAJEURE)",
                 "YOURS FAITHFULLY,\nVINCENT MARSH, MANAGING DIRECTOR",
-                "DUE TO UNFORESEEN CIRCUMSTANCES CONSTITUTING A FORCE MAJEURE EVENT, I AM FORMALLY NOTIFYING YOU OF THE IMMEDIATE CANCELLATION OF ORDER 8841 PLACED ON 22 MAY."
+                "DUE TO UNFORESEEN CIRCUMSTANCES CONSTITUTING A FORCE MAJEURE EVENT, I AM FORMALLY NOTIFYING YOU OF THE IMMEDIATE CANCELLATION OF ORDER 8841 PLACED ON 22 MAY.",
+                "DEAR SUPPLIER RELATIONS TEAM,",
+                "SUBJECT: ORDER CANCELLATION NOTICE - ORDER NO. 8841 (FORCE MAJEURE)"
             ],
             "correctOrder": [
-                1,
-                0,
                 3,
-                2
+                2,
+                1,
+                0
             ],
             "hint": "Cancellation and legal basis are in the subject; the team is addressed; legal term, order number, and order date form the formal notice; MD signs formally.",
             "explanation": "'Force majeure' is a specific legal term that must appear in writing when invoking that contractual clause. The order date ('22 May') establishes the transaction record for any subsequent legal or financial resolution."
@@ -325,16 +325,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a solicitor asking for advice on a contractual dispute.",
             "options": [
-                "I AM IN A CONTRACTUAL DISPUTE WITH A SUPPLIER WHO HAS FAILED TO DELIVER AGREED GOODS AND I SEEK YOUR ADVICE ON THE LEGAL OPTIONS AVAILABLE TO US UNDER THE CONTRACT TERMS.",
                 "YOURS SINCERELY,\nHENRY CROSS, MANAGING DIRECTOR",
-                "DEAR MS WALSH,",
-                "SUBJECT: REQUEST FOR LEGAL ADVICE - CONTRACT DISPUTE WITH SUPPLIER"
+                "SUBJECT: REQUEST FOR LEGAL ADVICE - CONTRACT DISPUTE WITH SUPPLIER",
+                "I AM IN A CONTRACTUAL DISPUTE WITH A SUPPLIER WHO HAS FAILED TO DELIVER AGREED GOODS AND I SEEK YOUR ADVICE ON THE LEGAL OPTIONS AVAILABLE TO US UNDER THE CONTRACT TERMS.",
+                "DEAR MS WALSH,"
             ],
             "correctOrder": [
+                1,
                 3,
                 2,
-                0,
-                1
+                0
             ],
             "hint": "Legal matter type and subject are in the subject; the solicitor is addressed formally by name; the dispute, failure, and specific legal question are in the body; the MD signs with role.",
             "explanation": "Writing to a solicitor requires precise language - 'failed to deliver agreed goods' is factual and legally meaningful. Asking for 'legal options available under the contract terms' is more precise than 'what can I do', which guides the solicitor's advice."
@@ -367,16 +367,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a solicitor requesting a copy of signed contract documentation.",
             "options": [
-                "DEAR MS WALSH,",
-                "SUBJECT: REQUEST FOR CONTRACT DOCUMENTATION - LEASE AGREEMENT REF: LA-447",
+                "PLEASE COULD YOU FORWARD A CERTIFIED COPY OF THE SIGNED LEASE AGREEMENT FOR REFERENCE LA-447 FOR OUR RECORDS, AS WE REQUIRE THIS FOR AN INSURANCE AUDIT NEXT WEEK.",
                 "YOURS SINCERELY,\nHENRY CROSS",
-                "PLEASE COULD YOU FORWARD A CERTIFIED COPY OF THE SIGNED LEASE AGREEMENT FOR REFERENCE LA-447 FOR OUR RECORDS, AS WE REQUIRE THIS FOR AN INSURANCE AUDIT NEXT WEEK."
+                "SUBJECT: REQUEST FOR CONTRACT DOCUMENTATION - LEASE AGREEMENT REF: LA-447",
+                "DEAR MS WALSH,"
             ],
             "correctOrder": [
-                1,
-                0,
+                2,
                 3,
-                2
+                0,
+                1
             ],
             "hint": "Document type and reference are in the subject; the solicitor is addressed by name; specific document, certification requirement, and audit reason are in the body; formal closing used.",
             "explanation": "Requesting a 'certified copy' specifically is more precise than 'a copy' - it tells the solicitor the document needs an official stamp or signature confirming authenticity. Giving the reason ('insurance audit') explains the urgency."
@@ -389,15 +389,15 @@
             "prompt": "Write an email to a journalist submitting a press release about a company announcement.",
             "options": [
                 "PLEASE FIND ATTACHED A PRESS RELEASE REGARDING NEXUS CONSULTING'S EXPANSION INTO THE EUROPEAN MARKET - THIS IS EMBARGOED UNTIL 1 JULY AND I AM AVAILABLE FOR FURTHER COMMENT OR INTERVIEW.",
-                "YOURS SINCERELY,\nPHILIP NORTON, HEAD OF COMMUNICATIONS",
                 "DEAR EMMA HAYES,",
+                "YOURS SINCERELY,\nPHILIP NORTON, HEAD OF COMMUNICATIONS",
                 "SUBJECT: PRESS RELEASE - NEXUS EXPANDS INTO EUROPEAN MARKET (EMBARGOED UNTIL 1 JULY)"
             ],
             "correctOrder": [
                 3,
-                2,
+                1,
                 0,
-                1
+                2
             ],
             "hint": "Announcement and embargo date are in the subject; the journalist is addressed by name; attachment, embargo note, and offer to comment are in the body; communications head signs with role.",
             "explanation": "Embargo notices must appear in both the subject line AND the email body to ensure the journalist does not publish early by mistake. Offering to comment or give an interview increases the chance of the story being covered."
@@ -411,12 +411,12 @@
             "options": [
                 "YOURS FAITHFULLY,\nCATHERINE BLAKE, CEO",
                 "YOUR ARTICLE OF 14 JUNE STATES THAT OUR COMPANY MADE A LOSS OF £2.1M IN 2024, WHICH IS FACTUALLY INCORRECT - THE CORRECT FIGURE IS A PROFIT OF £2.1M, AS CONFIRMED IN OUR AUDITED ACCOUNTS.",
-                "SUBJECT: FORMAL CORRECTION REQUEST - ARTICLE PUBLISHED 14 JUNE, BUSINESS SECTION",
-                "DEAR EDITOR,"
+                "DEAR EDITOR,",
+                "SUBJECT: FORMAL CORRECTION REQUEST - ARTICLE PUBLISHED 14 JUNE, BUSINESS SECTION"
             ],
             "correctOrder": [
-                2,
                 3,
+                2,
                 1,
                 0
             ],
@@ -431,15 +431,15 @@
             "prompt": "Write an email to a journalist responding to a request for a company statement.",
             "options": [
                 "DEAR JAMES OKAFOR,",
-                "SUBJECT: COMPANY STATEMENT - RESPONSE TO YOUR ENQUIRY OF 20 JUNE",
                 "YOURS SINCERELY,\nPHILIP NORTON, HEAD OF COMMUNICATIONS",
+                "SUBJECT: COMPANY STATEMENT - RESPONSE TO YOUR ENQUIRY OF 20 JUNE",
                 "THANK YOU FOR YOUR ENQUIRY - NEXUS CONSULTING CONFIRMS THAT ALL OPERATIONS REMAIN FULLY COMPLIANT WITH CURRENT ENVIRONMENTAL REGULATIONS AND WE WELCOME ANY OPPORTUNITY TO DISCUSS OUR SUSTAINABILITY COMMITMENTS FURTHER."
             ],
             "correctOrder": [
-                1,
+                2,
                 0,
                 3,
-                2
+                1
             ],
             "hint": "Response purpose and enquiry date are in the subject; journalist addressed by name; acknowledgement, company statement, and offer for further discussion are in the body; communications head signs.",
             "explanation": "A media response should acknowledge the enquiry, deliver a clear and positive statement, and invite further engagement. Offering to discuss further ('welcome any opportunity') demonstrates transparency and confidence."
@@ -451,16 +451,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to an external contractor requesting a project cost quotation.",
             "options": [
+                "DEAR CONTRACTOR,",
                 "WE ARE PLANNING TO REFURBISH 400 SQUARE METRES OF OFFICE SPACE AND WOULD LIKE TO RECEIVE A DETAILED QUOTATION INCLUDING MATERIALS, LABOUR, AND AN INDICATIVE TIMELINE.",
                 "YOURS FAITHFULLY,\nBRIAN SHAW, FACILITIES MANAGER",
-                "DEAR CONTRACTOR,",
                 "SUBJECT: QUOTATION REQUEST - OFFICE REFURBISHMENT, 400 SQUARE METRES"
             ],
             "correctOrder": [
                 3,
-                2,
                 0,
-                1
+                1,
+                2
             ],
             "hint": "Project type and scale are in the subject; the contractor is addressed formally (no name known); space size, and three specific quotation components are requested; facilities manager signs.",
             "explanation": "Specifying the three quotation components - 'materials, labour, and timeline' - ensures you receive a detailed quote you can compare against other contractors, rather than a vague estimated total."
@@ -472,16 +472,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email reviewing and accepting a contractor's project proposal.",
             "options": [
+                "SUBJECT: ACCEPTANCE OF PROPOSAL - OFFICE REFURBISHMENT PROJECT REF: PR-772",
                 "YOURS SINCERELY,\nBRIAN SHAW, FACILITIES MANAGER",
                 "WE HAVE REVIEWED YOUR PROPOSAL FOR THE OFFICE REFURBISHMENT AND ARE PLEASED TO ACCEPT IT - PLEASE FORWARD THE FORMAL CONTRACT FOR SIGNATURE AT YOUR EARLIEST CONVENIENCE.",
-                "SUBJECT: ACCEPTANCE OF PROPOSAL - OFFICE REFURBISHMENT PROJECT REF: PR-772",
                 "DEAR MR BLAKE,"
             ],
             "correctOrder": [
-                2,
+                0,
                 3,
-                1,
-                0
+                2,
+                1
             ],
             "hint": "Acceptance and project reference are in the subject; the contractor is addressed by name (now known); acceptance, and next step request are in the body; facilities manager signs with role.",
             "explanation": "The critical phrase is 'please forward the formal contract for signature' - this is the standard business step after accepting a proposal and ensures the agreement is legally documented before work begins."
@@ -493,16 +493,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a contractor formally terminating their contract due to poor performance.",
             "options": [
+                "YOURS SINCERELY,\nBRIAN SHAW, FACILITIES MANAGER",
+                "FOLLOWING THREE WRITTEN WARNINGS REGARDING SUBSTANDARD WORKMANSHIP, I AM WRITING TO FORMALLY NOTIFY YOU THAT YOUR CONTRACT, SA-115, IS TERMINATED WITH IMMEDIATE EFFECT.",
                 "DEAR MR BLAKE,",
-                "SUBJECT: CONTRACT TERMINATION NOTICE - SERVICE AGREEMENT REF: SA-115",
-                "YOURS FAITHFULLY,\nBRIAN SHAW, FACILITIES MANAGER",
-                "FOLLOWING THREE WRITTEN WARNINGS REGARDING SUBSTANDARD WORKMANSHIP, I AM WRITING TO FORMALLY NOTIFY YOU THAT YOUR CONTRACT, SA-115, IS TERMINATED WITH IMMEDIATE EFFECT."
+                "SUBJECT: CONTRACT TERMINATION NOTICE - SERVICE AGREEMENT REF: SA-115"
             ],
             "correctOrder": [
-                1,
-                0,
                 3,
-                2
+                2,
+                1,
+                0
             ],
             "hint": "Termination and contract reference are in the subject; contractor addressed formally; evidence of prior warnings, contract reference, and termination basis are in the body; formal closing required.",
             "explanation": "'With immediate effect' is the legally precise term for instant termination. Citing the three prior written warnings is essential - it establishes that due process was followed, which is critical for any potential employment dispute."
@@ -514,16 +514,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to an IT security team reporting a suspected data breach.",
             "options": [
-                "AT APPROXIMATELY 2:45 PM TODAY, I NOTICED UNUSUAL ACTIVITY IN THE CUSTOMER DATABASE THAT MAY INDICATE UNAUTHORISED ACCESS - I HAVE LOCKED MY TERMINAL AND AM AWAITING YOUR IMMEDIATE GUIDANCE.",
-                "YOURS SINCERELY,\nRAHEL TESFAYE, DATA CONTROLLER",
                 "DEAR INFORMATION SECURITY TEAM,",
+                "AT APPROXIMATELY 2:45 PM TODAY, I NOTICED UNUSUAL ACTIVITY IN THE CUSTOMER DATABASE THAT MAY INDICATE UNAUTHORISED ACCESS - I HAVE LOCKED MY TERMINAL AND AM AWAITING YOUR IMMEDIATE GUIDANCE.",
+                "KIND REGARDS,\nRAHEL TESFAYE, DATA CONTROLLER",
                 "SUBJECT: URGENT - POSSIBLE DATA BREACH, CUSTOMER DATABASE - REPORTED 3 PM TODAY"
             ],
             "correctOrder": [
                 3,
-                2,
                 0,
-                1
+                1,
+                2
             ],
             "hint": "Urgency and breach type are in the subject; the security team is addressed; time, suspicious activity, immediate action taken, and request for guidance are in the body; the data controller signs with role.",
             "explanation": "Reporting the time of discovery ('2:45 PM') is critical for incident response - it starts the 72-hour GDPR notification clock. Reporting that you have 'locked the terminal' shows correct immediate response to a suspected breach."
@@ -535,16 +535,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a legal team asking about the company's GDPR compliance obligations.",
             "options": [
-                "YOURS SINCERELY,\nRAHEL TESFAYE, DATA CONTROLLER",
-                "WE HAVE RECEIVED OUR FIRST DATA SUBJECT ACCESS REQUEST AND I SEEK CLARIFICATION ON OUR LEGAL OBLIGATIONS TO RESPOND, INCLUDING THE APPLICABLE DEADLINE AND FORMAT REQUIREMENTS.",
+                "DEAR DATA PROTECTION COUNSEL,",
                 "SUBJECT: GDPR COMPLIANCE ENQUIRY - DATA SUBJECT ACCESS REQUEST OBLIGATIONS",
-                "DEAR DATA PROTECTION COUNSEL,"
+                "WE HAVE RECEIVED OUR FIRST DATA SUBJECT ACCESS REQUEST AND I SEEK CLARIFICATION ON OUR LEGAL OBLIGATIONS TO RESPOND, INCLUDING THE APPLICABLE DEADLINE AND FORMAT REQUIREMENTS.",
+                "YOURS FAITHFULLY,\nRAHEL TESFAYE, DATA CONTROLLER"
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
-                0
+                0,
+                2,
+                3
             ],
             "hint": "Regulation and specific obligation are in the subject; the counsel is addressed by role; the trigger event and three specific questions are in the body; the data controller signs with role.",
             "explanation": "A Data Subject Access Request (DSAR) triggers specific legal obligations under GDPR - you have one calendar month to respond. Asking about deadline AND format requirements in one email gets both the legal and procedural answers at once."
@@ -556,15 +556,15 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a management board requesting approval for a data security audit.",
             "options": [
-                "DEAR BOARD OF DIRECTORS,",
                 "SUBJECT: BOARD APPROVAL REQUIRED - ANNUAL DATA SECURITY AUDIT",
-                "YOURS SINCERELY,\nRAHEL TESFAYE, DATA CONTROLLER",
-                "I AM SEEKING BOARD APPROVAL TO COMMISSION OUR ANNUAL DATA SECURITY AUDIT WITH CYBERGUARD LLP - THE ESTIMATED COST IS £12,000 AND THE AUDIT IS REQUIRED FOR ISO 27001 COMPLIANCE."
+                "I AM SEEKING BOARD APPROVAL TO COMMISSION OUR ANNUAL DATA SECURITY AUDIT WITH CYBERGUARD LLP - THE ESTIMATED COST IS £12,000 AND THE AUDIT IS REQUIRED FOR ISO 27001 COMPLIANCE.",
+                "BEST REGARDS,\nRAHEL TESFAYE, DATA CONTROLLER",
+                "DEAR BOARD OF DIRECTORS,"
             ],
             "correctOrder": [
-                1,
                 0,
                 3,
+                1,
                 2
             ],
             "hint": "Approval purpose and audit type are in the subject; the full board is addressed; the chosen auditor, cost, and compliance reason are all stated; the data controller signs with role.",
@@ -577,16 +577,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a Member of Parliament about a local planning proposal.",
             "options": [
+                "DEAR MS HARRISON MP,",
                 "I AM WRITING AS A RESIDENT OF GREENWAY PARK TO EXPRESS MY STRONG OBJECTION TO THE PROPOSED INDUSTRIAL DEVELOPMENT, WHICH I BELIEVE WILL SIGNIFICANTLY HARM THE LOCAL ENVIRONMENT AND COMMUNITY.",
                 "YOURS SINCERELY,\nGEOFFREY BALL",
-                "DEAR MS HARRISON MP,",
                 "SUBJECT: OBJECTION TO PROPOSED INDUSTRIAL DEVELOPMENT - GREENWAY PARK"
             ],
             "correctOrder": [
                 3,
-                2,
                 0,
-                1
+                1,
+                2
             ],
             "hint": "Issue and location are in the subject; the MP is addressed with their title ('MP'); local resident identity and objection grounds are in the body; formal closing is used.",
             "explanation": "Addressing your MP with 'Dear Ms Harrison MP' (including the MP suffix) is the correct formal salutation. Identifying yourself as a local resident ('of Greenway Park') establishes your legitimate stake in the planning matter."
@@ -598,15 +598,15 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a local planning department asking about the process to appeal a planning decision.",
             "options": [
-                "YOURS SINCERELY,\nNORMAN GRANT",
-                "MY PLANNING APPLICATION P/2024/0441 WAS REFUSED ON 10 JUNE AND I WOULD LIKE TO UNDERSTAND THE FORMAL APPEAL PROCESS, APPLICABLE DEADLINES, AND REQUIRED DOCUMENTATION.",
+                "YOURS FAITHFULLY,\nNORMAN GRANT",
+                "DEAR PLANNING APPEALS OFFICER,",
                 "SUBJECT: APPEAL PROCESS ENQUIRY - REFUSED PLANNING APPLICATION REF: P/2024/0441",
-                "DEAR PLANNING APPEALS OFFICER,"
+                "MY PLANNING APPLICATION P/2024/0441 WAS REFUSED ON 10 JUNE AND I WOULD LIKE TO UNDERSTAND THE FORMAL APPEAL PROCESS, APPLICABLE DEADLINES, AND REQUIRED DOCUMENTATION."
             ],
             "correctOrder": [
                 2,
-                3,
                 1,
+                3,
                 0
             ],
             "hint": "Application reference and appeal purpose are in the subject; the appeals officer is addressed; application number, refusal date, and three process questions are in the body.",
@@ -619,16 +619,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a government department asking for clarification on a new housing policy.",
             "options": [
-                "DEAR POLICY ENQUIRIES TEAM,",
                 "SUBJECT: POLICY CLARIFICATION REQUEST - FIRST HOMES SCHEME ELIGIBILITY",
-                "YOURS SINCERELY,\nANNA COLE, DEVELOPMENT DIRECTOR",
-                "I AM A HOUSING DEVELOPER AND WOULD LIKE CLARIFICATION ON WHETHER OUR PROPOSED DEVELOPMENT OF 24 AFFORDABLE HOMES QUALIFIES UNDER THE FIRST HOMES SCHEME REQUIREMENTS."
+                "KIND REGARDS,\nANNA COLE, DEVELOPMENT DIRECTOR",
+                "I AM A HOUSING DEVELOPER AND WOULD LIKE CLARIFICATION ON WHETHER OUR PROPOSED DEVELOPMENT OF 24 AFFORDABLE HOMES QUALIFIES UNDER THE FIRST HOMES SCHEME REQUIREMENTS.",
+                "DEAR POLICY ENQUIRIES TEAM,"
             ],
             "correctOrder": [
-                1,
                 0,
                 3,
-                2
+                2,
+                1
             ],
             "hint": "Policy name and enquiry purpose are in the subject; the team is addressed; professional role, development scale, and specific scheme question are in the body; director signs formally.",
             "explanation": "Identifying yourself as a housing developer ('Development Director') and specifying the project scale ('24 affordable homes') gives the policy team enough context to give you a precise, applicable answer rather than a generic overview."

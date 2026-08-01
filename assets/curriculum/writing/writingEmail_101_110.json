@@ -8,369 +8,369 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write a formal email to an investment bank initiating merger negotiations.",
+            "prompt": "Write an email to a new client negotiating the scope and rate for freelance work.",
             "options": [
-                "YOURS SINCERELY,\nDR HELEN MARSH, CEO",
-                "I AM WRITING IN MY CAPACITY AS CEO OF NEXUS CONSULTING TO INITIATE PRELIMINARY AND STRICTLY CONFIDENTIAL DISCUSSIONS REGARDING A POTENTIAL MERGER BETWEEN OUR TWO ORGANISATIONS.",
-                "SUBJECT: INITIATION OF CONFIDENTIAL MERGER DISCUSSIONS - PROJECT FALCON",
-                "DEAR MR ROTHWELL,"
+                "BEST REGARDS,\nANNIKA BERGSTROM",
+                "SUBJECT: PROPOSED SCOPE AND RATE FOR THE WEBSITE PROJECT",
+                "DEAR MR OYELARAN,",
+                "HAVING REVIEWED YOUR BRIEF IN DETAIL, I ESTIMATE THE FULL REDESIGN WOULD TAKE APPROXIMATELY SIX WEEKS AT MY STANDARD RATE OF £450 PER DAY, THOUGH I WOULD BE HAPPY TO DISCUSS A FIXED PROJECT FEE INSTEAD IF THAT WOULD SUIT YOUR BUDGETING PREFERENCES BETTER."
             ],
             "correctOrder": [
+                1,
                 2,
                 3,
-                1,
                 0
             ],
-            "hint": "The subject uses code name 'Falcon' - standard M&A practice. The CEO signs in capacity. Find the formal professional initiation in the body and the code-named subject.",
-            "explanation": "Using a code name ('Project Falcon') is standard M&A practice to maintain confidentiality. 'In my capacity as CEO' is precise formal language that establishes authority to initiate such discussions."
+            "hint": "The subject frames this as a proposal, not a demand; the client is addressed by name; the estimate, the rate, and a flexible alternative are set out in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Offering an alternative pricing structure ('a fixed project fee instead') shows genuine flexibility rather than a take-it-or-leave-it position, which tends to open a negotiation rather than close it. Giving a specific time estimate alongside the rate helps the client judge value, not just cost."
         },
         {
             "id": "WRT_WRITINGEMAIL_L101_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to legal advisers requesting a comprehensive due diligence scope document.",
+            "prompt": "Write an email to a business partner proposing a compromise after a disagreement about your company's direction.",
             "options": [
-                "PLEASE PREPARE A COMPREHENSIVE DUE DILIGENCE SCOPE DOCUMENT COVERING LEGAL, FINANCIAL, REGULATORY, AND OPERATIONAL MATTERS FOR PHASE 1 OF PROJECT FALCON BY 15 NOVEMBER.",
-                "DEAR DUE DILIGENCE COUNSEL,",
-                "YOURS SINCERELY,\nDR HELEN MARSH, CEO",
-                "SUBJECT: DUE DILIGENCE SCOPE REQUEST - PROJECT FALCON PHASE 1"
+                "SUBJECT: A POSSIBLE WAY FORWARD ON OUR DISAGREEMENT",
+                "DEAR JONAS,",
+                "KIND REGARDS,\nOLUWADAMILARE FASHOLA",
+                "HAVING HAD TIME TO REFLECT ON OUR CONVERSATION, I STILL BELIEVE WE SHOULD PRIORITISE THE EUROPEAN MARKET FIRST, BUT I CAN SEE THE MERIT IN YOUR CONCERNS ABOUT CASH FLOW, SO WOULD YOU BE OPEN TO TRIALLING THE EXPANSION ON A SMALLER SCALE BEFORE COMMITTING FULLY?"
             ],
             "correctOrder": [
-                3,
-                1,
                 0,
+                1,
+                3,
                 2
             ],
-            "hint": "Four due diligence categories are in the body. The phase and deadline are critical. Note the formal instruction 'please prepare' as the opening of the body.",
-            "explanation": "'Please prepare' is a formal instruction to legal advisers. Listing four specific categories - legal, financial, regulatory, operational - ensures comprehensive coverage and prevents advisers from narrowing the scope without authority."
+            "hint": "A calm, solution-focused tone is set in the subject; the partner is addressed by first name; acknowledgement of their view, a restated position, and a genuine compromise are in the body; 'KIND REGARDS' closes even-handedly.",
+            "explanation": "Genuinely acknowledging the other person's concern ('I can see the merit in your concerns') before proposing a middle ground makes a compromise far more likely to be accepted. Suggesting a smaller-scale trial turns a stalemate into a practical next step both sides can agree to test."
         },
         {
             "id": "WRT_WRITINGEMAIL_L101_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to the board presenting a merger integration plan.",
+            "prompt": "Write an email to a former employer requesting a reference letter needed for a mortgage application.",
             "options": [
-                "I AM PRESENTING THE ONE-HUNDRED-DAY INTEGRATION PLAN FOR THE FALCON MERGER, COVERING ORGANISATIONAL STRUCTURE, SYSTEM MIGRATION, CLIENT COMMUNICATION, AND CULTURAL ALIGNMENT.",
-                "YOURS SINCERELY,\nDR HELEN MARSH, CEO",
-                "DEAR BOARD OF DIRECTORS,",
-                "SUBJECT: MERGER INTEGRATION PLAN - PROJECT FALCON POST-COMPLETION"
+                "MY MORTGAGE PROVIDER HAS ASKED FOR A REFERENCE CONFIRMING MY EMPLOYMENT DATES AND SALARY DURING MY TIME AT YOUR COMPANY, SO I WOULD BE VERY GRATEFUL IF YOU COULD CONFIRM THESE DETAILS ON COMPANY LETTERHEAD BEFORE THE END OF THE MONTH, IF AT ALL POSSIBLE.",
+                "DEAR MS WHITFIELD,",
+                "YOURS SINCERELY,\nEMEKA OBI",
+                "SUBJECT: REFERENCE REQUEST FOR A MORTGAGE APPLICATION"
             ],
             "correctOrder": [
                 3,
-                2,
+                1,
                 0,
-                1
+                2
             ],
-            "hint": "The integration timeframe and four pillars are in the body. The code name continues. The board is addressed formally. Find the subject first.",
-            "explanation": "A one-hundred-day integration plan covering four pillars - structure, systems, clients, culture - represents the four most critical merger integration dimensions. Presenting all four simultaneously signals comprehensive planning."
+            "hint": "The purpose is specific in the subject; the former manager is addressed by name; the exact information needed and a reasonable deadline are in the body; the closing matches this named greeting.",
+            "explanation": "Specifying exactly what the reference needs to confirm ('employment dates and salary') saves your former employer from guessing what format is required. Softening the deadline with 'if at all possible' respects that this is a favour, not an obligation."
         },
         {
             "id": "WRT_WRITINGEMAIL_L102_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write a confidential email to HR following a whistleblower disclosure.",
+            "prompt": "Write a diplomatic email to your manager raising a concern that workload is unevenly distributed across the team.",
             "options": [
-                "YOURS SINCERELY,\nCHIEF COMPLIANCE OFFICER",
-                "A WHISTLEBLOWER DISCLOSURE HAS BEEN RECEIVED UNDER OUR SPEAK-UP POLICY ALLEGING FINANCIAL IRREGULARITIES IN THE ACCOUNTS PAYABLE FUNCTION - I RECOMMEND IMMEDIATE ESCALATION TO THE AUDIT COMMITTEE.",
-                "SUBJECT: CONFIDENTIAL - WHISTLEBLOWER DISCLOSURE RECEIVED, IMMEDIATE REVIEW REQUIRED",
-                "DEAR HEAD OF HR,"
+                "DEAR NATALIA,",
+                "SUBJECT: A THOUGHT ABOUT HOW WORK IS CURRENTLY SHARED ACROSS THE TEAM",
+                "BEST REGARDS,\nFIONNUALA MCBRIDE",
+                "I DON'T WANT THIS TO SOUND LIKE A COMPLAINT ABOUT ANY ONE PERSON, BUT I HAVE NOTICED THAT A FEW OF US HAVE BEEN CONSISTENTLY TAKING ON THE URGENT CLIENT CASES, AND I WONDERED WHETHER IT MIGHT BE WORTH REVIEWING HOW THESE ARE ASSIGNED GOING FORWARD."
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
-                0
+                0,
+                3,
+                2
             ],
-            "hint": "The subject flags urgency and confidentiality. The disclosure allegation and escalation recommendation are in the body. The CCO signs by role title, not name.",
-            "explanation": "Recommending escalation to the Audit Committee rather than line management is the correct governance response to a financial irregularity allegation - it bypasses potentially implicated management and ensures independence."
+            "hint": "A careful, non-accusatory framing is used in the subject; the manager is addressed by first name; the disclaimer, the observation, and a gentle suggestion are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Opening with 'I don't want this to sound like a complaint about any one person' pre-empts the manager becoming defensive and keeps focus on the process, not individuals. Framing the ask as 'worth reviewing' rather than 'unfair' invites collaboration instead of a defensive response."
         },
         {
             "id": "WRT_WRITINGEMAIL_L102_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to the audit committee formally reporting a financial misconduct investigation.",
+            "prompt": "Write an email to HR requesting mediation for an ongoing disagreement with a colleague.",
             "options": [
-                "FOLLOWING THE WHISTLEBLOWER DISCLOSURE RECEIVED ON 3 NOVEMBER, AN INDEPENDENT INVESTIGATION HAS BEEN COMMISSIONED - PRELIMINARY FINDINGS WILL BE PRESENTED TO THE COMMITTEE ON 20 NOVEMBER.",
-                "DEAR AUDIT COMMITTEE CHAIR,",
-                "YOURS SINCERELY,\nCHIEF COMPLIANCE OFFICER",
-                "SUBJECT: AUDIT COMMITTEE BRIEFING - FINANCIAL MISCONDUCT INVESTIGATION STATUS"
+                "SUBJECT: REQUEST FOR SUPPORT WITH AN ONGOING DISAGREEMENT",
+                "DEAR HR TEAM,",
+                "I HAVE BEEN TRYING TO RESOLVE A DISAGREEMENT WITH A COLLEAGUE DIRECTLY OVER THE PAST FEW WEEKS WITHOUT MUCH PROGRESS, AND AS IT IS BEGINNING TO AFFECT OUR ABILITY TO WORK TOGETHER, I WOULD LIKE TO ASK WHETHER A MEDIATED CONVERSATION COULD BE ARRANGED.",
+                "YOURS FAITHFULLY,\nSEBASTIAN KRAUSE"
             ],
             "correctOrder": [
-                3,
-                1,
                 0,
-                2
+                1,
+                2,
+                3
             ],
-            "hint": "The investigation status and committee context are in the subject. The disclosure date, independent investigation, and briefing date are in the body. The formal closing signals official escalation.",
-            "explanation": "Commissioning an 'independent investigation' - rather than an internal one - is critical when management may be involved. Giving a specific briefing date ('20 November') commits the CCO to a timeline."
+            "hint": "The request is stated calmly in the subject; HR is addressed by role, not name; the attempts already made and the impact on work are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Mentioning that you have 'tried to resolve it directly' first shows HR you approached this reasonably rather than escalating too quickly. Framing the impact in terms of working together, rather than blame, keeps the request focused on a solution."
         },
         {
             "id": "WRT_WRITINGEMAIL_L102_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to an employee notifying them of a formal disciplinary hearing.",
+            "prompt": "Write an email to your manager thoughtfully responding to constructive criticism you received in a review.",
             "options": [
-                "YOU ARE REQUIRED TO ATTEND A FORMAL DISCIPLINARY HEARING ON 27 NOVEMBER AT 10AM - YOU ARE ENTITLED TO BE ACCOMPANIED BY A UNION REPRESENTATIVE OR WORKPLACE COLLEAGUE OF YOUR CHOICE.",
-                "YOURS SINCERELY,\nHEAD OF HUMAN RESOURCES",
-                "DEAR MR HAYES,",
-                "SUBJECT: FORMAL DISCIPLINARY HEARING NOTICE - 27 NOVEMBER AT 10AM"
+                "SUBJECT: FOLLOWING UP ON YOUR FEEDBACK FROM TUESDAY",
+                "I HAVE BEEN THINKING OVER WHAT YOU SAID ABOUT MY REPORTS SOMETIMES LACKING A CLEAR RECOMMENDATION AT THE END, AND I THINK YOU'RE RIGHT - I WOULD LIKE TO TRY ADDING A SHORT 'NEXT STEPS' SECTION TO EVERY REPORT FROM NOW ON, IF THAT SOUNDS USEFUL TO YOU.",
+                "DEAR TOM,",
+                "BEST REGARDS,\nCHIOMA ADEYINKA"
             ],
             "correctOrder": [
-                3,
-                2,
                 0,
-                1
+                2,
+                1,
+                3
             ],
-            "hint": "Date and time are in the subject. The required attendance and right to accompaniment are in the body - both are statutory. The HR head signs by role, not name.",
-            "explanation": "Notifying the employee of their right to accompaniment is a legal requirement in UK employment law. The hearing notice must include the date, time, and this statutory right to be legally valid."
+            "hint": "A reflective, mature tone is set in the subject; the manager is addressed by first name; genuine acceptance of the feedback and a concrete plan to act on it are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Genuinely agreeing with the feedback ('I think you're right') rather than simply acknowledging it shows real self-reflection, which managers value highly. Proposing a specific, actionable change demonstrates that the feedback has already led to a plan, not just good intentions."
         },
         {
             "id": "WRT_WRITINGEMAIL_L103_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a board nominating committee presenting a governance review report.",
+            "prompt": "Write an email formally disputing a parking fine you believe was issued unfairly, including your evidence.",
             "options": [
-                "YOURS SINCERELY,\nSIR JAMES HUNT, SENIOR INDEPENDENT DIRECTOR",
-                "THE INDEPENDENT GOVERNANCE REVIEW CONCLUDES THAT BOARD COMPOSITION, SUCCESSION PLANNING, AND COMMITTEE EFFECTIVENESS ALL REQUIRE STRENGTHENING - THREE SPECIFIC RECOMMENDATIONS ARE DETAILED IN THE ATTACHED REPORT.",
-                "SUBJECT: BOARD GOVERNANCE REVIEW - FINDINGS AND RECOMMENDATIONS 2024",
-                "DEAR NOMINATIONS COMMITTEE,"
+                "DEAR PARKING APPEALS TEAM,",
+                "SUBJECT: FORMAL APPEAL AGAINST PARKING CHARGE NOTICE PN-88214",
+                "I AM APPEALING CHARGE NOTICE PN-88214, ISSUED ON 4 MARCH, AS I HAD A VALID PAY-AND-DISPLAY TICKET AT THE TIME, WHICH MUST HAVE FALLEN FROM THE DASHBOARD - I HAVE ATTACHED A PHOTOGRAPH OF THE TICKET AND A BANK STATEMENT SHOWING THE PAYMENT.",
+                "YOURS FAITHFULLY,\nGRZEGORZ ADAMCZYK"
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
-                0
+                0,
+                2,
+                3
             ],
-            "hint": "The three governance areas requiring strengthening are in the body. The three-recommendation count previews the report. The Senior Independent Director signs - an important independent role.",
-            "explanation": "A governance review presented by the Senior Independent Director (SID) carries particular weight - they are the board's internal watchdog. Summarising findings as three named weaknesses upfront enables focused committee discussion."
+            "hint": "The notice number is central to the subject; the appeals team is addressed by role, not name; your explanation and two specific pieces of evidence are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Referencing the exact charge notice number ensures the appeal is matched to the correct case immediately. Listing your evidence specifically - the photograph and the bank statement - rather than just claiming innocence, gives the appeal real weight."
         },
         {
             "id": "WRT_WRITINGEMAIL_L103_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to shareholders announcing the outcomes of the annual governance review.",
+            "prompt": "Write an email responding to a debt collection letter that you believe was sent in error.",
             "options": [
-                "I AM WRITING TO CONFIRM THAT THE ANNUAL GOVERNANCE REVIEW HAS CONCLUDED AND THE BOARD HAS APPROVED THREE GOVERNANCE ENHANCEMENTS, WHICH ARE DETAILED IN THE ACCOMPANYING GOVERNANCE STATEMENT.",
-                "DEAR SHAREHOLDER,",
-                "YOURS SINCERELY,\nSIR JAMES HUNT, CHAIR",
-                "SUBJECT: SHAREHOLDER COMMUNICATION - ANNUAL GOVERNANCE REVIEW OUTCOMES"
+                "SUBJECT: DISPUTE - DEBT REFERENCE DC-30291 APPEARS TO BE AN ERROR",
+                "DEAR RECOVERIES TEAM,",
+                "YOURS FAITHFULLY,\nMARGARETHE VOSS",
+                "I RECEIVED YOUR LETTER REGARDING AN OUTSTANDING BALANCE ON ACCOUNT DC-30291, BUT MY RECORDS SHOW THIS ACCOUNT WAS CLOSED AND FULLY PAID IN JANUARY, SO I WOULD BE GRATEFUL IF YOU COULD INVESTIGATE THIS BEFORE ANY FURTHER ACTION IS TAKEN."
             ],
             "correctOrder": [
-                3,
-                1,
                 0,
+                1,
+                3,
                 2
             ],
-            "hint": "The governance outcomes and shareholder communication are in the subject. The three enhancements and accompanying document are referenced. The Chair signs - appropriate for shareholder communications.",
-            "explanation": "Shareholder communications on governance matters are sent by the Chair, not the CEO, to signal that the board is exercising its independent oversight function. Referring to a 'Governance Statement' provides the full detail."
+            "hint": "The account reference and your position are in the subject; the recoveries team is addressed by role, not name; the letter received and your contradicting evidence are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Referring to your own records ('this account was closed and fully paid in January') puts the burden on the company to investigate rather than you having to prove a negative. Asking them to pause 'before any further action is taken' is a reasonable, firm request while the matter is unresolved."
         },
         {
             "id": "WRT_WRITINGEMAIL_L103_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email formally proposing a candidate for appointment as an independent director.",
+            "prompt": "Write an email requesting a formal apology and resolution after a serious customer service failure.",
             "options": [
-                "I PROPOSE THE APPOINTMENT OF MS AMANDA WEI AS AN INDEPENDENT NON-EXECUTIVE DIRECTOR - SHE BRINGS DEEP EXPERTISE IN FINANCIAL SERVICES REGULATION AND HAS COMPLETED OUR INDEPENDENCE ASSESSMENT.",
-                "YOURS SINCERELY,\nSIR JAMES HUNT, CHAIR",
-                "DEAR NOMINATIONS COMMITTEE,",
-                "SUBJECT: DIRECTOR APPOINTMENT PROPOSAL - MS AMANDA WEI TO INDEPENDENT NED ROLE"
+                "DEAR CUSTOMER RELATIONS MANAGER,",
+                "YOURS FAITHFULLY,\nTHADDEUS OKONJO",
+                "SUBJECT: REQUEST FOR A FORMAL RESPONSE - ORDER REF 991827",
+                "AFTER THREE UNANSWERED EMAILS AND TWO CALLS WHERE I WAS PROMISED A CALLBACK THAT NEVER CAME, I AM WRITING ONE FINAL TIME TO ASK FOR A PROPER RESPONSE TO MY ORIGINAL COMPLAINT, TOGETHER WITH AN EXPLANATION OF WHY IT HAS BEEN HANDLED SO POORLY."
             ],
             "correctOrder": [
-                3,
                 2,
                 0,
+                3,
                 1
             ],
-            "hint": "Candidate name and role type are in the subject. The candidate's expertise and independence confirmation are in the body. The Chair proposes NED appointments to the nominations committee.",
-            "explanation": "Confirming that the candidate has 'completed our independence assessment' is a corporate governance requirement - it confirms there are no conflicts of interest that would compromise her independence on the board."
+            "hint": "The order reference and seriousness are in the subject; the manager is addressed by role, not name; the history of failed contact and the specific, firm request are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Documenting the exact history of failed contact ('three unanswered emails and two calls') builds a clear, hard-to-dismiss timeline of poor service. Asking for both a resolution and an explanation addresses the original problem and the company's handling of it."
         },
         {
             "id": "WRT_WRITINGEMAIL_L104_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write a formal letter to a competitor alleging infringement of a registered design.",
+            "prompt": "Write an email to a professor asking them to write a strong recommendation letter for a competitive graduate programme.",
             "options": [
-                "YOURS FAITHFULLY,\nGEORGIA HUNT, CHIEF LEGAL OFFICER",
-                "WE ARE IN POSSESSION OF EVIDENCE THAT YOUR PRODUCT RANGE LAUNCHED IN SEPTEMBER INFRINGES UK REGISTERED DESIGN NO. 6011228 AND WE HEREBY FORMALLY DEMAND IMMEDIATE CESSATION OF ITS MANUFACTURE AND SALE.",
-                "SUBJECT: FORMAL NOTICE OF REGISTERED DESIGN INFRINGEMENT - UK DESIGN NO. 6011228",
-                "DEAR LEGAL COUNSEL,"
+                "YOURS SINCERELY,\nADAEZE NNAMDI",
+                "I AM APPLYING TO SEVERAL COMPETITIVE MSC PROGRAMMES WITH A DEADLINE OF 15 JANUARY, AND GIVEN HOW MUCH I LEARNED WORKING ON YOUR RESEARCH PROJECT LAST YEAR, I WOULD BE HONOURED IF YOU WOULD BE WILLING TO WRITE ME A RECOMMENDATION, IDEALLY DRAWING ON THAT EXPERIENCE.",
+                "DEAR PROFESSOR HARGREAVES,",
+                "SUBJECT: RECOMMENDATION LETTER REQUEST - MSC APPLICATIONS"
             ],
             "correctOrder": [
-                2,
                 3,
+                2,
                 1,
                 0
             ],
-            "hint": "The design registration number is in both subject and body. The formal demand for cessation is in the body. 'YOURS FAITHFULLY' closes since legal counsel is addressed as a role. Find the subject first.",
-            "explanation": "A design infringement notice must cite the exact registration number, identify the infringing product, and make a specific demand ('immediate cessation'). 'We hereby formally demand' is the correct legal formula for such notices."
+            "hint": "The deadline is stated clearly in the subject; the professor is addressed formally by name and title; the deadline, the shared history, and a specific angle to draw on are in the body; the closing matches this named greeting.",
+            "explanation": "Suggesting what the letter could focus on ('drawing on that experience') makes it far easier for a busy professor to write something specific and strong rather than generic. Giving the deadline early, with enough notice, is essential when requesting academic references."
         },
         {
             "id": "WRT_WRITINGEMAIL_L104_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to internal legal counsel requesting preparation of an IP settlement agreement.",
+            "prompt": "Write an email to a lecturer appealing a grade you believe was marked too harshly, with reasoned academic justification.",
             "options": [
-                "PLEASE PREPARE A SETTLEMENT AGREEMENT INCORPORATING A ROYALTY-BEARING LICENCE AT 4.5% OF NET SALES, A CONFIDENTIALITY CLAUSE, AND AN ACKNOWLEDGEMENT OF INFRINGEMENT FROM THE DEFENDANT.",
-                "DEAR LEGAL TEAM,",
-                "YOURS SINCERELY,\nGEORGIA HUNT, CHIEF LEGAL OFFICER",
-                "SUBJECT: SETTLEMENT AGREEMENT INSTRUCTIONS - DESIGN INFRINGEMENT DISPUTE"
+                "DEAR DR ASANTE,",
+                "SUBJECT: QUERY REGARDING THE MARK FOR MY RESEARCH METHODS ESSAY",
+                "HAVING REVIEWED THE FEEDBACK ON MY RESEARCH METHODS ESSAY, I UNDERSTAND THE CRITICISM OF MY LITERATURE REVIEW, BUT I BELIEVE MY METHODOLOGY SECTION FULLY MET THE CRITERIA OUTLINED IN THE MARKING RUBRIC, SO I WOULD APPRECIATE THE OPPORTUNITY TO DISCUSS THIS FURTHER BEFORE THE GRADE IS FINALISED.",
+                "YOURS SINCERELY,\nKRISTOF NAGY"
             ],
             "correctOrder": [
-                3,
                 1,
                 0,
-                2
+                2,
+                3
             ],
-            "hint": "The settlement purpose is in the subject. Three settlement terms - royalty rate, confidentiality, and acknowledgement - are specified. The CLO instructs internal legal as the authority.",
-            "explanation": "Specifying all three settlement terms - royalty rate (4.5%), confidentiality, and formal infringement acknowledgement - prevents the legal team from omitting a key element. Settlement terms must be precise to be enforceable."
+            "hint": "A measured, academic tone is set in the subject; the lecturer is addressed formally by name and title; acceptance of some feedback, a specific counter-argument, and a respectful request are in the body; the closing matches this named greeting.",
+            "explanation": "Accepting part of the feedback ('I understand the criticism of my literature review') before disputing another part shows this is a considered academic argument, not a blanket objection to a lower mark. Referring directly to the marking rubric grounds your case in the university's own criteria rather than personal opinion."
         },
         {
             "id": "WRT_WRITINGEMAIL_L104_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to the board reporting the resolution of an intellectual property dispute.",
+            "prompt": "Write an email to a department head proposing an independent study topic for your final year.",
             "options": [
-                "I AM PLEASED TO REPORT THAT THE DESIGN INFRINGEMENT DISPUTE HAS BEEN RESOLVED BY WAY OF SETTLEMENT - THE COMPANY WILL RECEIVE ROYALTY INCOME OF APPROXIMATELY £120,000 ANNUALLY FROM Q1.",
-                "YOURS SINCERELY,\nGEORGIA HUNT, CLO",
-                "DEAR BOARD,",
-                "SUBJECT: IP DISPUTE RESOLVED - SETTLEMENT EXECUTED, ROYALTY INCOME FROM Q1"
+                "SUBJECT: PROPOSAL FOR AN INDEPENDENT STUDY PROJECT",
+                "DEAR DR FENWICK,",
+                "HAVING ENJOYED THE MODULE ON URBAN GEOGRAPHY LAST YEAR, I WOULD LIKE TO PROPOSE AN INDEPENDENT STUDY PROJECT EXAMINING HOW POCKET PARKS AFFECT COMMUNITY WELLBEING IN THIS CITY, AND I WOULD WELCOME THE CHANCE TO DISCUSS WHETHER THIS WOULD BE A SUITABLE TOPIC AND WHO MIGHT SUPERVISE IT.",
+                "YOURS SINCERELY,\nOLUWASEUN BALOGUN"
             ],
             "correctOrder": [
-                3,
-                2,
                 0,
-                1
+                1,
+                2,
+                3
             ],
-            "hint": "Resolution and financial outcome are in the subject. The settlement mechanism and annual income figure are in the body. The CLO signs with her abbreviated title for the board.",
-            "explanation": "An IP dispute resolution board report is most impactful when it converts the legal outcome into a financial benefit - '£120,000 annually from Q1' tells the board precisely what the resolution is worth commercially."
+            "hint": "The specific proposal is in the subject; the department head is addressed formally by name and title; the motivation, the precise topic, and a request for guidance are in the body; the closing matches this named greeting.",
+            "explanation": "Proposing a precise, well-defined topic ('how pocket parks affect community wellbeing') rather than a broad area of interest shows genuine preparation. Asking about both suitability and supervision in one email efficiently covers the two things the department head needs to consider."
         },
         {
             "id": "WRT_WRITINGEMAIL_L105_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to all staff announcing an updated data privacy policy.",
+            "prompt": "Write an email to your siblings proposing a fair, shared approach to caring for an ageing parent.",
             "options": [
-                "YOURS SINCERELY,\nDATA PROTECTION OFFICER",
-                "OUR DATA PRIVACY POLICY HAS BEEN UPDATED TO REFLECT CHANGES IN THE UK GDPR FRAMEWORK - ALL STAFF ARE REQUIRED TO READ AND ACKNOWLEDGE THE REVISED POLICY VIA THE INTRANET BY 15 DECEMBER.",
-                "SUBJECT: UPDATED DATA PRIVACY POLICY - MANDATORY REVIEW BY ALL STAFF",
-                "DEAR ALL,"
+                "LOVE,\nEMILY",
+                "DEAR TOM AND LOUISE,",
+                "SUBJECT: THINKING TOGETHER ABOUT SUPPORTING MUM",
+                "I KNOW WE HAVE ALL BEEN QUIETLY WORRIED ABOUT HOW MUCH MUM IS MANAGING ON HER OWN LATELY, SO RATHER THAN THIS FALLING MAINLY ON ONE OF US, I WONDERED WHETHER WE COULD EACH TAKE ON A REGULAR DAY TO VISIT AND SHARE ANY COSTS BETWEEN US EQUALLY."
             ],
             "correctOrder": [
                 2,
-                3,
                 1,
+                3,
                 0
             ],
-            "hint": "Policy update and mandatory deadline are in the subject. Regulatory basis, action required, method, and deadline are in the body. The DPO signs by role - GDPR requires this role to be identifiable.",
-            "explanation": "A mandatory policy review email must specify both the mechanism ('via the intranet') and the deadline ('15 December'). Citing the regulatory basis ('UK GDPR changes') explains why the update was necessary."
+            "hint": "A caring, inclusive tone opens the subject; siblings are addressed together by name; the shared concern and a fair, concrete proposal are in the body; 'LOVE' closes as a family member, not a formal contact.",
+            "explanation": "Naming the shared feeling ('we have all been quietly worried') before making a request unites the siblings rather than singling anyone out for not doing enough. Proposing something concrete and equal - a regular day each, shared costs - turns a sensitive topic into a practical plan."
         },
         {
             "id": "WRT_WRITINGEMAIL_L105_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a third-party data processor confirming compliance with updated DPA terms.",
+            "prompt": "Write a kind but firm email diplomatically declining to lend money to a family member.",
             "options": [
-                "OUR UPDATED DATA PROCESSING AGREEMENT REFLECTS THE REVISED UK GDPR REQUIREMENTS - PLEASE CONFIRM YOUR ORGANISATION'S COMPLIANCE WITH THE NEW TERMS BY RETURNING THE SIGNED ADDENDUM BY 30 NOVEMBER.",
-                "DEAR DATA PROTECTION MANAGER,",
-                "YOURS SINCERELY,\nDATA PROTECTION OFFICER",
-                "SUBJECT: DATA PROCESSING AGREEMENT UPDATE - CONFIRMATION OF COMPLIANCE REQUIRED"
+                "DEAR DANNY,",
+                "LOVE ALWAYS,\nHANNAH",
+                "SUBJECT: ABOUT YOUR MESSAGE LAST WEEK",
+                "I HAVE THOUGHT CAREFULLY ABOUT WHAT YOU ASKED, AND WHILE I REALLY WISH I COULD HELP, I AM NOT IN A POSITION TO LEND MONEY RIGHT NOW WITHOUT PUTTING MY OWN PLANS AT RISK - I HOPE YOU UNDERSTAND, AND I AM HAPPY TO HELP YOU THINK THROUGH OTHER OPTIONS IF THAT WOULD BE USEFUL."
             ],
             "correctOrder": [
-                3,
-                1,
+                2,
                 0,
-                2
+                3,
+                1
             ],
-            "hint": "Agreement type and compliance request are in the subject. Updated DPA, regulatory basis, action required, and deadline are in the body. The DPO signs by role as the regulatory-facing officer.",
-            "explanation": "A data processing agreement update must require a signed addendum by a specific date - oral agreement is insufficient under GDPR. The '30 November' deadline creates a clear contractual deadline for the processor to comply."
+            "hint": "A gentle, non-specific opener suits the sensitive subject; a family member is addressed warmly by first name; genuine care, a clear boundary, and an alternative offer of help are in the body; a warm family sign-off closes it.",
+            "explanation": "Saying 'I really wish I could help' before the refusal shows the decision was not made lightly, which softens a difficult message considerably. Offering a different kind of help - thinking through other options - shows continued support without compromising your own financial boundary."
         },
         {
             "id": "WRT_WRITINGEMAIL_L105_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to the data protection regulator notifying them of a personal data breach.",
+            "prompt": "Write a thoughtful condolence email to a colleague who recently lost a family member.",
             "options": [
-                "WE ARE NOTIFYING THE ICO OF A PERSONAL DATA BREACH DISCOVERED ON 7 NOVEMBER AFFECTING AN ESTIMATED 1,200 DATA SUBJECTS - THE BREACH HAS BEEN CONTAINED AND A FULL INCIDENT REPORT IS ATTACHED.",
-                "YOURS SINCERELY,\nDATA PROTECTION OFFICER",
-                "DEAR ICO CASE OFFICER,",
-                "SUBJECT: MANDATORY BREACH NOTIFICATION - ICO REFERENCE REQUESTED"
+                "I WAS SO SORRY TO HEAR ABOUT YOUR FATHER, AND I WANTED YOU TO KNOW THAT THERE IS ABSOLUTELY NO RUSH TO GET BACK TO WORK - PLEASE TAKE ALL THE TIME YOU NEED, AND LET ME KNOW IF THERE IS ANYTHING AT ALL I CAN TAKE OFF YOUR PLATE IN THE MEANTIME.",
+                "SUBJECT: THINKING OF YOU",
+                "WITH DEEPEST SYMPATHY,\nRAFAEL MENDES",
+                "DEAR SOPHIA,"
             ],
             "correctOrder": [
+                1,
                 3,
-                2,
                 0,
-                1
+                2
             ],
-            "hint": "Mandatory notification and regulator context are in the subject. Breach date, number of subjects, containment confirmation, and attached report are in the body. All are required GDPR elements.",
-            "explanation": "GDPR Article 33 requires breach notifications to the ICO within 72 hours. The notification must include: discovery date, number of subjects affected, containment action taken, and the full incident report. All four appear in this email."
+            "hint": "A gentle, simple phrase suits the subject for a sensitive message; the colleague is addressed warmly by first name; sincere sympathy, reassurance about work, and a genuine offer of help are in the body; a heartfelt closing suits the tone.",
+            "explanation": "Explicitly removing pressure about work ('no rush to get back') is often more comforting during grief than any other single sentence you could write. Offering to take something specific 'off your plate' feels more genuine and useful than a vague 'let me know if you need anything'."
         },
         {
             "id": "WRT_WRITINGEMAIL_L106_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write a formal email to a senior executive notifying them of termination of employment.",
+            "prompt": "Write an email to your landlord asking to end your tenancy early due to a job relocation.",
             "options": [
-                "YOURS SINCERELY,\nLADY ANNE WEST, CHAIR",
-                "I AM WRITING IN MY CAPACITY AS CHAIR OF THE BOARD TO FORMALLY NOTIFY YOU THAT YOUR EMPLOYMENT AS CHIEF OPERATING OFFICER IS TERMINATED WITH IMMEDIATE EFFECT AS OF TODAY'S DATE.",
-                "SUBJECT: TERMINATION OF EMPLOYMENT - CONFIDENTIAL AND WITHOUT PREJUDICE",
-                "DEAR MR GRAHAM,"
+                "YOURS SINCERELY,\nBARNABY FITZGERALD",
+                "I HAVE JUST BEEN OFFERED A ROLE IN EDINBURGH THAT I AM UNABLE TO TURN DOWN, WHICH MEANS I WOULD NEED TO LEAVE THE FLAT TWO MONTHS BEFORE MY TENANCY IS DUE TO END, SO I WOULD LIKE TO ASK WHETHER YOU WOULD CONSIDER AN EARLY RELEASE, PARTICULARLY IF I CAN HELP FIND A REPLACEMENT TENANT.",
+                "DEAR MRS AKINTOLA,",
+                "SUBJECT: REQUEST TO END MY TENANCY EARLY - JOB RELOCATION"
             ],
             "correctOrder": [
-                2,
                 3,
+                2,
                 1,
                 0
             ],
-            "hint": "The subject includes 'without prejudice' - critical legal protection. The Chair is the correct authority to terminate a C-suite appointment. The effective date is clear. Find the subject first.",
-            "explanation": "'Without prejudice' protects the communication from being used in legal proceedings - essential when terminating a senior executive who may contest the decision. The Chair terminates C-suite appointments, not the CEO."
+            "hint": "The reason and request are summarised in the subject; the landlord is addressed by name; the genuine reason, the specific timing, and a helpful offer are in the body; the closing matches this named greeting.",
+            "explanation": "Explaining that the opportunity is one you are 'unable to turn down' gives a landlord a credible, sympathetic reason rather than a vague excuse. Offering to help find a replacement tenant addresses the landlord's main concern - lost rent - directly."
         },
         {
             "id": "WRT_WRITINGEMAIL_L106_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a departing executive's legal team proposing separation agreement terms.",
+            "prompt": "Write an email formally disputing a deduction from your tenancy deposit, with evidence.",
             "options": [
-                "WITHOUT PREJUDICE AND IN FULL AND FINAL SETTLEMENT, WE PROPOSE THE FOLLOWING TERMS: NINE MONTHS' SALARY IN LIEU OF NOTICE, A MUTUAL NON-DISPARAGEMENT CLAUSE, AND A PAYMENT OF £50,000 IN COMPENSATION.",
-                "DEAR COUNSEL,",
-                "YOURS SINCERELY,\nLADY ANNE WEST, CHAIR",
-                "SUBJECT: SETTLEMENT TERMS PROPOSAL - MR GRAHAM SEPARATION"
+                "DEAR MR SANTOS,",
+                "SUBJECT: DISPUTE OF DEPOSIT DEDUCTION - FLAT 3, 18 ORCHARD ROAD",
+                "YOURS SINCERELY,\nWILHELMINA HARTLEY",
+                "I NOTICED A £180 DEDUCTION FOR 'CARPET CLEANING' IN YOUR DEPOSIT BREAKDOWN, BUT THE CHECK-IN INVENTORY YOU PROVIDED ALREADY NOTES MARKS ON THE CARPET FROM BEFORE I MOVED IN, SO I WOULD LIKE TO ASK THAT THIS CHARGE BE REMOVED OR EXPLAINED FURTHER."
             ],
             "correctOrder": [
-                3,
                 1,
                 0,
+                3,
                 2
             ],
-            "hint": "'Without prejudice and in full and final settlement' are the three key legal formulas in the body. Three settlement terms follow. The Chair proposes to legal counsel rather than to the executive directly.",
-            "explanation": "'Full and final settlement' means the executive cannot bring further claims. Three terms - pay in lieu, non-disparagement, and compensation - represent the standard components of a senior executive separation package."
+            "hint": "The property and issue are specific in the subject; the landlord is addressed by name; the disputed amount and the evidence contradicting it are in the body; the closing matches this named greeting.",
+            "explanation": "Referring to the landlord's own check-in inventory as evidence is far stronger than simply disagreeing with the charge. Asking that the charge be 'removed or explained further' leaves room for a genuine misunderstanding while still standing firm on the facts."
         },
         {
             "id": "WRT_WRITINGEMAIL_L106_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write a formal reference email for a departing executive to a prospective employer.",
+            "prompt": "Write an email to prospective housemates proposing how bills and rent will be shared fairly.",
             "options": [
-                "I AM PLEASED TO PROVIDE A REFERENCE FOR MR GRAHAM HAYES, WHO SERVED AS CHIEF OPERATING OFFICER FROM 2019 TO 2024 AND DURING THAT TIME DELIVERED TRANSFORMATIONAL OPERATIONAL IMPROVEMENTS.",
-                "YOURS SINCERELY,\nLADY ANNE WEST, FORMER CHAIR",
-                "DEAR HIRING COMMITTEE,",
-                "SUBJECT: PROFESSIONAL REFERENCE - MR GRAHAM HAYES, FORMER COO"
+                "AS THE ROOMS ARE DIFFERENT SIZES, I THOUGHT IT MIGHT BE FAIRER TO SPLIT RENT ACCORDING TO ROOM SIZE RATHER THAN EQUALLY, BUT SHARE HOUSEHOLD BILLS LIKE ENERGY AND INTERNET EQUALLY BETWEEN ALL OF US - LET ME KNOW IF YOU'D RATHER DISCUSS THIS IN PERSON INSTEAD.",
+                "THANKS,\nISAAC OYELARAN",
+                "HI EVERYONE,",
+                "SUBJECT: PROPOSED SPLIT FOR RENT AND BILLS"
             ],
             "correctOrder": [
                 3,
@@ -378,260 +378,260 @@
                 0,
                 1
             ],
-            "hint": "Reference type and candidate are in the subject. The former title, tenure dates, and substantive achievement are in the body. 'Former Chair' distinguishes the role from current capacity.",
-            "explanation": "A reference that cites specific tenure dates ('2019–2024') and names a concrete achievement ('transformational operational improvements') is far more credible than generic praise. 'Former Chair' identifies the authority behind the reference."
+            "hint": "A practical proposal is summarised in the subject; the group is addressed informally; the reasoning and specific arrangement are in the body; a brief, friendly sign-off closes it and leaves room for discussion.",
+            "explanation": "Explaining the reasoning behind the proposal ('as the rooms are different sizes') helps housemates understand it as fair rather than arbitrary. Offering to discuss it in person shows you see this as an open conversation, not a final decision being imposed."
         },
         {
             "id": "WRT_WRITINGEMAIL_L107_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a counterparty requesting renegotiation of key contract terms.",
+            "prompt": "Write an email appealing an insurance company's decision to deny a claim, including supporting medical evidence.",
             "options": [
-                "YOURS SINCERELY,\nSTEPHEN FORD, MANAGING DIRECTOR",
-                "IN LIGHT OF MATERIAL CHANGES IN MARKET CONDITIONS SINCE THE EXECUTION OF SA-2019-441, I WISH TO INVOKE OUR CONTRACTUAL RENEGOTIATION CLAUSE AND PROPOSE A MEETING TO DISCUSS REVISED COMMERCIAL TERMS.",
-                "SUBJECT: REQUEST TO RENEGOTIATE KEY TERMS - SERVICE AGREEMENT SA-2019-441",
-                "DEAR MR PATEL,"
+                "MY CLAIM WAS DECLINED ON THE GROUNDS THAT THE TREATMENT WAS 'NOT MEDICALLY NECESSARY', BUT I HAVE ENCLOSED A LETTER FROM MY CONSULTANT CONFIRMING THAT THE PROCEDURE WAS ESSENTIAL, AND I WOULD LIKE TO REQUEST A FORMAL REVIEW OF THIS DECISION.",
+                "YOURS FAITHFULLY,\nOKSANA PETRENKO",
+                "DEAR CLAIMS APPEALS TEAM,",
+                "SUBJECT: FORMAL APPEAL - CLAIM REF HC-55210 DECLINED IN ERROR"
             ],
             "correctOrder": [
-                2,
                 3,
-                1,
-                0
+                2,
+                0,
+                1
             ],
-            "hint": "Contract reference and renegotiation purpose are in the subject. The material change basis and contractual clause invocation are in the body - both essential for a valid renegotiation notice.",
-            "explanation": "'Material changes in market conditions' is the standard legal justification for invoking a renegotiation clause. Citing the specific clause right in the email establishes that you are acting within your contractual rights."
+            "hint": "The claim reference and the reason for appeal are in the subject; the appeals team is addressed by role, not name; the original reason for decline and the counter-evidence are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Quoting the insurer's own wording ('not medically necessary') makes it clear exactly what is being challenged. Enclosing evidence directly from your consultant carries far more weight in an appeal than a personal account of your symptoms alone."
         },
         {
             "id": "WRT_WRITINGEMAIL_L107_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a contract counterparty invoking a force majeure clause.",
+            "prompt": "Write an email to your GP practice requesting a second medical opinion through the proper referral process.",
             "options": [
-                "I AM HEREBY NOTIFYING YOU THAT A FORCE MAJEURE EVENT, NAMELY THE GLOBAL SEMICONDUCTOR SHORTAGE, HAS RENDERED PERFORMANCE OF OUR OBLIGATIONS UNDER SA-2019-441 TEMPORARILY IMPOSSIBLE.",
-                "DEAR MR PATEL,",
-                "YOURS SINCERELY,\nSTEPHEN FORD, MANAGING DIRECTOR",
-                "SUBJECT: FORCE MAJEURE NOTIFICATION - CONTRACT SA-2019-441 OBLIGATIONS SUSPENDED"
+                "SUBJECT: REQUEST FOR A SECOND OPINION - REFERRAL NEEDED",
+                "I HAVE THOUGHT CAREFULLY ABOUT MY RECENT DIAGNOSIS AND, WHILE I APPRECIATE YOUR TIME EXPLAINING IT, I WOULD FEEL MORE AT EASE WITH A SECOND OPINION BEFORE DECIDING ON TREATMENT, SO I WOULD BE GRATEFUL IF YOU COULD ARRANGE THE NECESSARY REFERRAL.",
+                "DEAR DR CHUKWUEMEKA,",
+                "YOURS SINCERELY,\nBEATRIZ CARVALHO"
             ],
             "correctOrder": [
-                3,
-                1,
                 0,
-                2
+                2,
+                1,
+                3
             ],
-            "hint": "Force majeure and contract reference are in the subject. The specific qualifying event, 'hereby notifying', and the performance impact are in the body. This is a formal legal notification.",
-            "explanation": "'Hereby notifying' is essential - it establishes the date of formal notification, which starts the contractual force majeure clock. Naming the specific event ('global semiconductor shortage') identifies the qualifying circumstance."
+            "hint": "The purpose is stated respectfully in the subject; the doctor is addressed formally by name; appreciation, a clear personal reason, and the specific request are in the body; the closing matches this named greeting.",
+            "explanation": "Thanking the doctor for their time before requesting a second opinion keeps the relationship respectful rather than implying distrust. Framing the request around feeling 'more at ease', a personal and reasonable motivation, avoids sounding like a challenge to their judgement."
         },
         {
             "id": "WRT_WRITINGEMAIL_L107_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email proposing a six-month extension to an existing commercial contract.",
+            "prompt": "Write an email to a care home's management team advocating for a relative's specific care needs.",
             "options": [
-                "IN LIEU OF RENEGOTIATION, I PROPOSE A SIX-MONTH EXTENSION OF SA-2019-441 ON EXISTING TERMS, COMMENCING UPON THE CURRENT EXPIRY DATE, TO ALLOW MARKET CONDITIONS TO NORMALISE.",
-                "YOURS SINCERELY,\nSTEPHEN FORD, MANAGING DIRECTOR",
-                "DEAR MR PATEL,",
-                "SUBJECT: SIX-MONTH CONTRACT EXTENSION PROPOSAL - SA-2019-441"
+                "HAVING VISITED MY MOTHER SEVERAL TIMES THIS MONTH, I HAVE NOTICED SHE SEEMS MUCH MORE SETTLED WHEN SHE HAS COMPANY DURING MEALTIMES, SO I WOULD LIKE TO ASK WHETHER HER CARE PLAN COULD BE ADJUSTED TO ENSURE SHE IS SEATED WITH THE SAME SMALL GROUP EACH DAY.",
+                "SUBJECT: A REQUEST REGARDING MY MOTHER'S CARE PLAN",
+                "YOURS FAITHFULLY,\nCONSTANCE ADEBAYO",
+                "DEAR CARE MANAGEMENT TEAM,"
             ],
             "correctOrder": [
+                1,
                 3,
-                2,
                 0,
-                1
+                2
             ],
-            "hint": "Extension duration and contract reference are in the subject. 'In lieu of renegotiation', existing terms, commencement basis, and commercial rationale are in the body.",
-            "explanation": "'In lieu of renegotiation' signals this is an alternative proposal to the more contentious renegotiation. 'On existing terms' is the most commercially straightforward extension - no new negotiation needed."
+            "hint": "The purpose is respectful and specific in the subject; the care team is addressed by role, not name; your first-hand observation and a precise suggested change are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Basing the request on direct observation ('having visited several times this month') gives the care team genuine, first-hand insight rather than a general worry. Suggesting one specific, manageable change is far more likely to be actioned than a broad request to 'improve her care'."
         },
         {
             "id": "WRT_WRITINGEMAIL_L108_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to staff announcing a formal redundancy consultation process.",
+            "prompt": "Write an email to an international colleague proposing meeting times that are fair given the time difference between you.",
             "options": [
-                "YOURS SINCERELY,\nCHRIEF EXECUTIVE OFFICER",
-                "FOLLOWING A REVIEW OF OUR OPERATIONAL STRUCTURE, THE COMPANY IS PROPOSING A REDUCTION OF TWENTY-FIVE ROLES AND IS COMMENCING A FORMAL THIRTY-DAY COLLECTIVE CONSULTATION PERIOD FROM TODAY.",
-                "SUBJECT: FORMAL REDUNDANCY CONSULTATION - WORKFORCE REDUCTION PROPOSAL",
-                "DEAR ALL,"
+                "I KNOW OUR CURRENT MEETING SLOT OF 8 A.M. YOUR TIME HAS BEEN QUITE EARLY FOR YOU, SO I WOULD LIKE TO PROPOSE ALTERNATING BETWEEN AN EARLY SLOT FOR ME AND A LATE ONE FOR YOU EACH WEEK, SO THAT NEITHER OF US IS ALWAYS THE ONE MAKING THE SACRIFICE.",
+                "BEST REGARDS,\nOLUWATOSIN ADEYEMI",
+                "DEAR YUKI,",
+                "SUBJECT: FINDING A FAIR MEETING TIME ACROSS OUR TIME ZONES"
             ],
             "correctOrder": [
-                2,
                 3,
-                1,
-                0
+                2,
+                0,
+                1
             ],
-            "hint": "The subject uses 'formal' and 'proposal' - legally significant. The number of roles, 'proposing' (not 'deciding'), and the 30-day consultation period are all legally required elements. Find the subject first.",
-            "explanation": "The word 'proposing' rather than 'deciding' is legally critical in redundancy - it signals the consultation is genuine and a decision has not already been made. The 30-day collective consultation period is a UK legal requirement for 20+ redundancies."
+            "hint": "The fairness issue is named plainly in the subject; the colleague is addressed by first name; the acknowledgement of the current imbalance and a fair alternating solution are in the body; 'BEST REGARDS' closes considerately.",
+            "explanation": "Acknowledging the inconvenience the colleague has been absorbing ('quite early for you') shows genuine awareness of their experience, not just your own convenience. Proposing an alternating arrangement demonstrates fairness in a way a fixed time never could."
         },
         {
             "id": "WRT_WRITINGEMAIL_L108_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to an employee individually notifying them they are at risk of redundancy.",
+            "prompt": "Write an email diplomatically clarifying a cultural misunderstanding with an overseas business partner.",
             "options": [
-                "I AM WRITING TO INFORM YOU THAT YOUR ROLE OF OPERATIONS ANALYST HAS BEEN IDENTIFIED AS BEING AT RISK OF REDUNDANCY AS PART OF THE CURRENT CONSULTATION PROCESS - YOU ARE INVITED TO A CONSULTATION MEETING ON 18 NOVEMBER.",
-                "DEAR JAMES,",
-                "YOURS SINCERELY,\nANNA BLAKE, HR DIRECTOR",
-                "SUBJECT: AT RISK OF REDUNDANCY NOTIFICATION - CONFIDENTIAL - YOUR ROLE"
+                "I WANTED TO FOLLOW UP ON YESTERDAY'S CALL, AS I THINK MY DIRECTNESS ABOUT THE TIMELINE MAY HAVE COME ACROSS MORE BLUNTLY THAN I INTENDED - I HAVE GREAT RESPECT FOR YOUR TEAM'S WORK, AND I SIMPLY WANTED TO UNDERSTAND THE CURRENT STATUS BETTER.",
+                "DEAR MR TANAKA,",
+                "SUBJECT: A QUICK CLARIFICATION FROM OUR CALL YESTERDAY",
+                "WITH RESPECT,\nCHARLOTTE PEMBERTON"
             ],
             "correctOrder": [
-                3,
+                2,
                 1,
                 0,
-                2
+                3
             ],
-            "hint": "'At risk' (not 'redundant') is legally precise - it signals the process is ongoing. The role, consultation process, and meeting date are in the body. 'Confidential' in the subject protects the employee's dignity.",
-            "explanation": "UK law requires employees to be notified individually that their specific role is 'at risk' - not that they are redundant. The distinction matters: 'at risk' means the consultation may result in a different outcome."
+            "hint": "A gentle, self-aware framing is used in the subject; the partner is addressed formally by name; genuine self-reflection and a respectful clarification of intent are in the body; 'WITH RESPECT' closes with cultural sensitivity.",
+            "explanation": "Taking responsibility for how your tone may have landed ('may have come across more bluntly than I intended') shows cultural awareness without being asked to. Reaffirming respect for the other party's work repairs the relationship before any further business discussion continues."
         },
         {
             "id": "WRT_WRITINGEMAIL_L108_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to HR presenting proposed redundancy severance terms for committee approval.",
+            "prompt": "Write a warm email welcoming a new international colleague to the team and offering to help them settle in.",
             "options": [
-                "I AM SEEKING COMMITTEE APPROVAL FOR SEVERANCE TERMS OF STATUTORY MINIMUM PLUS SIX WEEKS' ENHANCED PAY PER YEAR OF SERVICE, APPLICABLE TO ALL TWENTY-FIVE ROLES AT RISK.",
-                "YOURS SINCERELY,\nANNA BLAKE, HR DIRECTOR",
-                "DEAR HR COMMITTEE,",
-                "SUBJECT: REDUNDANCY SEVERANCE TERMS - COMMITTEE APPROVAL REQUESTED"
+                "WARMLY,\nDECLAN O'SULLIVAN",
+                "DEAR ELENA,",
+                "WELCOME TO THE TEAM - WE ARE ALL DELIGHTED YOU HAVE JOINED US FROM MADRID, AND IF IT WOULD BE USEFUL, I WOULD BE HAPPY TO SHOW YOU AROUND THE AREA THIS WEEK OR ANSWER ANY QUESTIONS ABOUT HOW THINGS WORK HERE THAT MIGHT NOT BE OBVIOUS AT FIRST.",
+                "SUBJECT: WELCOME TO THE TEAM, AND A FEW OFFERS OF HELP"
             ],
             "correctOrder": [
                 3,
+                1,
                 2,
-                0,
-                1
+                0
             ],
-            "hint": "The approval request is in the subject. Two tiers of severance - statutory minimum plus enhanced - and scope (25 roles) are in the body. The HR director seeks committee authority for the financial commitment.",
-            "explanation": "Presenting severance as 'statutory minimum plus enhanced pay' gives the committee a clear financial structure. Specifying the exact enhancement ('six weeks per year') means the committee can model the total liability before approving."
+            "hint": "A genuine welcome is in the subject; the new colleague is addressed warmly by first name; the welcome and two specific, practical offers of help are in the body; 'WARMLY' closes with genuine friendliness.",
+            "explanation": "Naming where the new colleague has moved from shows you have taken a personal interest, not just noted a new name on the team list. Offering two specific, low-pressure kinds of help makes the offer easy to accept rather than a vague, easily-ignored gesture."
         },
         {
             "id": "WRT_WRITINGEMAIL_L109_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a regulator responding formally to a notice of regulatory sanction.",
+            "prompt": "Write an email formally proposing a road safety improvement to your local council, with reasoning.",
             "options": [
-                "YOURS SINCERELY,\nCHIEF COMPLIANCE OFFICER, NEXUS CONSULTING",
-                "WE ACKNOWLEDGE RECEIPT OF SANCTION NOTICE FCA-2024-0811 AND FORMALLY CONTEST THE BASIS OF THE SANCTION ON THE GROUNDS THAT OUR CONDUCT WAS AT ALL TIMES COMPLIANT WITH THE APPLICABLE REGULATORY FRAMEWORK.",
-                "SUBJECT: FORMAL RESPONSE TO REGULATORY SANCTION NOTICE REF: FCA-2024-0811",
-                "DEAR SUPERVISORY TEAM,"
+                "THERE HAVE BEEN THREE NEAR-MISSES OUTSIDE THE PRIMARY SCHOOL ON MILL ROAD THIS TERM ALONE, ACCORDING TO PARENTS I HAVE SPOKEN TO, SO ON BEHALF OF SEVERAL LOCAL FAMILIES I WOULD LIKE TO FORMALLY REQUEST THAT A ZEBRA CROSSING BE CONSIDERED FOR THIS STRETCH OF ROAD.",
+                "DEAR HIGHWAYS TEAM,",
+                "YOURS FAITHFULLY,\nMORWENNA TREVELYAN",
+                "SUBJECT: PROPOSAL FOR A PEDESTRIAN CROSSING ON MILL ROAD"
             ],
             "correctOrder": [
-                2,
                 3,
                 1,
-                0
+                0,
+                2
             ],
-            "hint": "Sanction reference and formal response are in the subject. The notice reference, formal contest, and specific grounds for contest are in the body. The CCO is the correct officer for regulatory correspondence.",
-            "explanation": "'At all times compliant with the applicable regulatory framework' is the precise legal formula for contesting a regulatory sanction - it establishes full compliance as the defence position from which any subsequent legal arguments will flow."
+            "hint": "The specific proposal and location are in the subject; the highways team is addressed by role, not name; concrete evidence and the collective request are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Citing a specific, recent statistic ('three near-misses this term') is far more persuasive to a council than a general sense that a road feels unsafe. Writing 'on behalf of several local families' shows this is a shared community concern, which councils tend to prioritise over individual complaints."
         },
         {
             "id": "WRT_WRITINGEMAIL_L109_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to senior leadership briefing them on the regulatory sanction response strategy.",
+            "prompt": "Write an email organising neighbours to submit a joint objection to a planning application.",
             "options": [
-                "I AM BRIEFING YOU ON OUR STRATEGY TO CONTEST THE FCA SANCTION: WE HAVE ENGAGED LINKLATERS AS EXTERNAL COUNSEL AND BELIEVE WE HAVE A STRONG CASE ON BOTH PROCEDURAL AND SUBSTANTIVE GROUNDS.",
-                "DEAR BOARD,",
-                "YOURS SINCERELY,\nCHIEF COMPLIANCE OFFICER",
-                "SUBJECT: REGULATORY SANCTION STRATEGY - BOARD BRIEFING AND LEGAL POSITION"
+                "DEAR NEIGHBOURS,",
+                "AS SEVERAL OF US HAVE SIMILAR CONCERNS ABOUT THE PROPOSED EXTENSION AT NUMBER 12 BLOCKING LIGHT TO OUR GARDENS, I THOUGHT IT MIGHT BE MORE EFFECTIVE TO SUBMIT A SINGLE JOINT OBJECTION RATHER THAN SEVERAL SEPARATE ONES - WOULD ANYONE BE WILLING TO HELP ME DRAFT IT THIS WEEK?",
+                "SUBJECT: SHALL WE RESPOND TOGETHER TO THE PLANNING APPLICATION?",
+                "BEST WISHES,\nAUGUSTINE OKAFOR"
             ],
             "correctOrder": [
-                3,
-                1,
+                2,
                 0,
-                2
+                1,
+                3
             ],
-            "hint": "Strategy and board audience are in the subject. External counsel name, contest basis (procedural and substantive), and confident assessment are in the body. The CCO briefs the board.",
-            "explanation": "Naming the external counsel ('Linklaters') signals the seriousness of the legal challenge and gives the board confidence in the quality of representation. Distinguishing 'procedural and substantive grounds' shows a two-pronged legal defence."
+            "hint": "A collaborative question is in the subject; neighbours are addressed as a group; the shared concern, the practical reasoning, and a call for help are in the body; 'BEST WISHES' closes on good community terms.",
+            "explanation": "Explaining why a joint objection would be 'more effective' shows practical thinking, not just organising for its own sake. Ending with a specific, time-bound call to action ('help me draft it this week') is more likely to produce real volunteers than a vague request for support."
         },
         {
             "id": "WRT_WRITINGEMAIL_L109_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a regulator submitting a compliance remediation timeline.",
+            "prompt": "Write an email requesting a meeting with your local council representative about a community concern.",
             "options": [
-                "WITHOUT PREJUDICE TO OUR CONTEST, WE SUBMIT THE FOLLOWING REMEDIATION TIMELINE: PROCESS REDESIGN BY 28 FEBRUARY, STAFF RETRAINING BY 31 MARCH, AND INDEPENDENT AUDIT BY 30 APRIL.",
-                "YOURS SINCERELY,\nCHIEF COMPLIANCE OFFICER, NEXUS CONSULTING",
-                "DEAR SUPERVISORY TEAM,",
-                "SUBJECT: COMPLIANCE REMEDIATION TIMELINE - RESPONSE TO FCA-2024-0811"
+                "YOURS SINCERELY,\nPHILIPPA ASANTE-MENSAH",
+                "DEAR COUNCILLOR ASHWORTH,",
+                "AS SOMEONE WHO USES THE LOCAL LIBRARY REGULARLY WITH MY CHILDREN, I WAS VERY CONCERNED TO READ ABOUT THE PROPOSED CLOSURE, AND I WOULD BE GRATEFUL FOR THE OPPORTUNITY TO MEET WITH YOU BRIEFLY TO SHARE WHY THIS SERVICE MATTERS SO MUCH TO LOCAL FAMILIES.",
+                "SUBJECT: REQUEST FOR A MEETING - CONCERNS ABOUT THE LIBRARY CLOSURE"
             ],
             "correctOrder": [
                 3,
+                1,
                 2,
-                0,
-                1
+                0
             ],
-            "hint": "'Without prejudice to our contest' preserves the legal position while cooperating. Three remediation steps with specific dates are in the body - required by the regulator. The sanction reference connects to the notice.",
-            "explanation": "'Without prejudice to our contest' is a critical legal phrase - it means submitting the remediation plan does not constitute admission of the breach. Three dated milestones show the regulator a credible compliance path."
+            "hint": "The concern and request are specific in the subject; the councillor is addressed formally by name and title; your personal connection to the issue and the request for a meeting are in the body; the closing matches this named greeting.",
+            "explanation": "Establishing a personal connection to the issue ('someone who uses the library regularly with my children') makes the request feel grounded in real experience rather than abstract concern. Asking to 'share why this matters', rather than simply objecting, positions the meeting as constructive dialogue."
         },
         {
             "id": "WRT_WRITINGEMAIL_L110_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to an overseas partner formalising the terms of a joint venture proposal.",
+            "prompt": "Write an email to your manager making a well-reasoned case for a promotion.",
             "options": [
-                "YOURS SINCERELY,\nDR HELEN MARSH, CEO",
-                "I AM PLEASED TO PROPOSE THE FOLLOWING HEADS OF TERMS FOR OUR JOINT VENTURE: A 60:40 EQUITY SPLIT IN FAVOUR OF NEXUS, A THREE-YEAR INITIAL TERM, AND A SHARED PROFIT DISTRIBUTION OF 50:50.",
-                "SUBJECT: JOINT VENTURE TERMS PROPOSAL - NEXUS CONSULTING AND KUALA LUMPUR TECH GROUP",
-                "DEAR MR WAN,"
+                "OVER THE PAST YEAR I HAVE TAKEN ON RESPONSIBILITIES BEYOND MY CURRENT ROLE, INCLUDING LEADING THE ONBOARDING OF TWO NEW TEAM MEMBERS AND MANAGING THE CLIENT DASHBOARD PROJECT INDEPENDENTLY, SO I WOULD LIKE TO REQUEST A MEETING TO DISCUSS WHETHER A PROMOTION TO SENIOR ANALYST MIGHT NOW BE APPROPRIATE.",
+                "BEST REGARDS,\nOLUWAFEMI ADEBOLA",
+                "SUBJECT: REQUEST TO DISCUSS A PROMOTION TO SENIOR ANALYST",
+                "DEAR REBECCA,"
             ],
             "correctOrder": [
                 2,
                 3,
-                1,
-                0
+                0,
+                1
             ],
-            "hint": "Both parties and proposal type are in the subject. Three specific heads of terms - equity, duration, profit distribution - are in the body. Note the different equity and profit splits.",
-            "explanation": "The distinction between equity split (60:40) and profit distribution (50:50) is commercially significant - Nexus holds majority control but shares profits equally, a common compromise in JV negotiations."
+            "hint": "The specific role sought is in the subject; the manager is addressed by first name; two concrete pieces of evidence and the specific request are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Listing two specific, verifiable achievements is far more persuasive than a general claim of being 'ready for more responsibility'. Framing this as a meeting to 'discuss whether' rather than a demand invites a genuine conversation while still making your case clearly."
         },
         {
             "id": "WRT_WRITINGEMAIL_L110_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to legal counsel instructing them to review a joint venture shareholder agreement.",
+            "prompt": "Write an email accepting a new job offer while negotiating a flexible working arrangement as a condition.",
             "options": [
-                "PLEASE REVIEW THE ATTACHED DRAFT SHAREHOLDER AGREEMENT FOR THE KUALA LUMPUR TECH GROUP JOINT VENTURE, WITH PARTICULAR FOCUS ON THE DEADLOCK RESOLUTION, EXIT PROVISIONS, AND GOVERNING LAW CLAUSES.",
-                "DEAR CORPORATE LAW TEAM,",
-                "YOURS SINCERELY,\nGEORGIA HUNT, CLO",
-                "SUBJECT: REVIEW INSTRUCTION - JV SHAREHOLDER AGREEMENT DRAFT: KL TECH GROUP"
+                "YOURS SINCERELY,\nBENEDIKT SCHMIDT",
+                "I AM DELIGHTED TO ACCEPT THE OFFER FOR THE MARKETING COORDINATOR ROLE AND AM VERY MUCH LOOKING FORWARD TO JOINING THE TEAM - BEFORE I CONFIRM MY START DATE, COULD YOU LET ME KNOW WHETHER ONE DAY OF REMOTE WORKING PER WEEK WOULD BE POSSIBLE, AS DISCUSSED BRIEFLY AT INTERVIEW?",
+                "DEAR MS BRENNAN,",
+                "SUBJECT: DELIGHTED TO ACCEPT - ONE QUESTION ABOUT FLEXIBILITY"
             ],
             "correctOrder": [
                 3,
+                2,
                 1,
-                0,
-                2
+                0
             ],
-            "hint": "Document type and JV partner are in the subject. The three specific clause areas requiring focus are in the body. The CLO instructs legal counsel on priorities.",
-            "explanation": "Instructing counsel to focus on 'deadlock resolution, exit provisions, and governing law' identifies the three clauses most likely to cause future disputes in a cross-border JV. Deadlock and exit clauses determine how the JV ends; governing law determines which country's courts apply."
+            "hint": "Genuine enthusiasm is paired with the outstanding question in the subject; the hiring manager is addressed by name; clear acceptance and a specific, previously-discussed request are in the body; the closing matches this named greeting.",
+            "explanation": "Leading with clear, enthusiastic acceptance before raising a condition ensures the request doesn't read as reluctance to join. Referring back to something 'discussed briefly at interview' reminds the employer this isn't a new demand, just a detail worth confirming in writing."
         },
         {
             "id": "WRT_WRITINGEMAIL_L110_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write a joint venture commencement email to the partner organisation confirming all conditions are met.",
+            "prompt": "Write an email gracefully declining a job offer while leaving the door open for future opportunities.",
             "options": [
-                "I AM PLEASED TO CONFIRM THAT ALL CONDITIONS PRECEDENT TO THE JOINT VENTURE HAVE BEEN SATISFIED AND THE JV FORMALLY COMMENCES ON 1 JANUARY 2025 - IT IS A PRIVILEGE TO PARTNER WITH KUALA LUMPUR TECH GROUP.",
-                "YOURS SINCERELY,\nDR HELEN MARSH, CEO",
-                "DEAR MR WAN,",
-                "SUBJECT: JV COMMENCEMENT CONFIRMED - ALL CONDITIONS PRECEDENT SATISFIED"
+                "DEAR MR ODUYA,",
+                "YOURS SINCERELY,\nANASTASIA PAVLOVA",
+                "SUBJECT: THANK YOU FOR THE OFFER - MY DECISION",
+                "AFTER A GREAT DEAL OF THOUGHT, I HAVE DECIDED TO DECLINE THE OFFER, AS I HAVE ACCEPTED A ROLE THAT ALIGNS SLIGHTLY MORE CLOSELY WITH MY LONG-TERM GOALS - I GENUINELY ENJOYED MEETING YOUR TEAM AND WOULD WELCOME THE CHANCE TO STAY IN TOUCH FOR FUTURE OPPORTUNITIES."
             ],
             "correctOrder": [
-                3,
                 2,
                 0,
+                3,
                 1
             ],
-            "hint": "'Conditions precedent satisfied' is the legal trigger for commencement. The start date and warm closing are in the body. The subject confirms the legal readiness. Find the subject line first.",
-            "explanation": "'All conditions precedent satisfied' is the exact legal formula that confirms the JV can begin. Conditions precedent are the legal prerequisites agreed in the JV agreement - their satisfaction triggers formal commencement."
+            "hint": "A polite, appreciative tone opens the subject; the hiring manager is addressed by name; the decision, a brief and honest reason, and a genuine wish to stay connected are in the body; the closing matches this named greeting.",
+            "explanation": "Giving a brief, honest reason for declining, rather than none at all, shows respect for the time the company invested in the process. Explicitly requesting to 'stay in touch' keeps a valuable professional relationship alive even though this particular offer wasn't right."
         }
     ]
 }

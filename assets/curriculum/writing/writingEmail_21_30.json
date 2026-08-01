@@ -11,18 +11,18 @@
             "prompt": "Write an email applying for a part-time job at a local bookshop.",
             "options": [
                 "DEAR HIRING MANAGER,",
-                "YOURS SINCERELY,\nMARCUS OWEN",
                 "SUBJECT: APPLICATION FOR PART-TIME SALES ASSISTANT POSITION",
+                "YOURS FAITHFULLY,\nMARCUS OWEN",
                 "I AM WRITING TO APPLY FOR THE PART-TIME SALES ASSISTANT POSITION ADVERTISED ON YOUR WEBSITE AND HAVE ATTACHED MY CV FOR YOUR CONSIDERATION."
             ],
             "correctOrder": [
-                2,
+                1,
                 0,
                 3,
-                1
+                2
             ],
-            "hint": "The job title goes in the subject; 'DEAR HIRING MANAGER' is used when you don't know the recruiter's name; mentioning the CV attachment is important; 'YOURS SINCERELY' closes the formal application.",
-            "explanation": "When the recruiter's name is unknown, 'Dear Hiring Manager' is more targeted than 'Dear Sir or Madam'. Always mention attachments like a CV in the body so the reader knows to look for them."
+            "hint": "The job title goes in the subject; 'DEAR HIRING MANAGER' is used when you don't know the recruiter's name; mentioning the CV attachment is important; the closing must match this unnamed greeting.",
+            "explanation": "When the recruiter's name is unknown, 'Dear Hiring Manager' is more targeted than 'Dear Sir or Madam' - and because you still don't know their name, 'Yours faithfully' is the correct closing, not 'Yours sincerely'."
         },
         {
             "id": "WRT_WRITINGEMAIL_L21_Q2",
@@ -31,16 +31,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a bank asking about the process for opening a savings account.",
             "options": [
-                "DEAR CUSTOMER SERVICES TEAM,",
-                "KIND REGARDS,\nPENNY LUCAS",
                 "SUBJECT: ENQUIRY ABOUT OPENING A SAVINGS ACCOUNT",
-                "I WOULD LIKE TO OPEN A SAVINGS ACCOUNT AND WONDER IF YOU COULD TELL ME WHAT IDENTIFICATION I NEED TO BRING AND WHETHER I CAN BOOK AN APPOINTMENT ONLINE."
+                "I WOULD LIKE TO OPEN A SAVINGS ACCOUNT AND WONDER IF YOU COULD TELL ME WHAT IDENTIFICATION I NEED TO BRING AND WHETHER I CAN BOOK AN APPOINTMENT ONLINE.",
+                "DEAR CUSTOMER SERVICES TEAM,",
+                "KIND REGARDS,\nPENNY LUCAS"
             ],
             "correctOrder": [
-                2,
                 0,
-                3,
-                1
+                2,
+                1,
+                3
             ],
             "hint": "The purpose is in the subject; the team is addressed professionally; two specific procedural questions are asked; 'KIND REGARDS' closes the banking enquiry.",
             "explanation": "Asking about two practical aspects - required ID AND online appointment booking - in one email demonstrates good planning. Specific questions lead to more useful answers than vague enquiries."
@@ -52,19 +52,19 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a retailer asking for information about returning a damaged product.",
             "options": [
+                "I RECEIVED MY ORDER LAST TUESDAY AND THE ITEM ARRIVED DAMAGED - PLEASE COULD YOU TELL ME HOW TO INITIATE A RETURN AND RECEIVE A REPLACEMENT?",
+                "KIND REGARDS,\nTRACEY BALL",
                 "DEAR RETURNS DEPARTMENT,",
-                "YOURS SINCERELY,\nTRACEY BALL",
-                "SUBJECT: RETURN REQUEST FOR DAMAGED PRODUCT - ORDER #9217",
-                "I RECEIVED MY ORDER LAST TUESDAY AND THE ITEM ARRIVED DAMAGED - PLEASE COULD YOU TELL ME HOW TO INITIATE A RETURN AND RECEIVE A REPLACEMENT?"
+                "SUBJECT: RETURN REQUEST FOR DAMAGED PRODUCT - ORDER #9217"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
-            "hint": "The return and order number are in the subject; the right department is addressed; the problem and two-part request are in the body; 'YOURS SINCERELY' closes the formal customer complaint.",
-            "explanation": "Including the order number in the subject line allows customer service to pull up your account instantly, speeding up the resolution. Asking for both the return process AND a replacement shows you want a solution."
+            "hint": "The return and order number are in the subject; the right department is addressed; the problem and two-part request are in the body; 'KIND REGARDS' closes the customer complaint politely.",
+            "explanation": "Including the order number in the subject line allows customer service to pull up your account instantly, speeding up the resolution. 'Kind regards' works well here since you're writing to a department rather than a named contact."
         },
         {
             "id": "WRT_WRITINGEMAIL_L22_Q1",
@@ -73,16 +73,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write a work email requesting a team meeting to discuss a project update.",
             "options": [
-                "DEAR TEAM,",
-                "BEST REGARDS,\nSTEVE PALMER",
+                "I WOULD LIKE TO ARRANGE A BRIEF TEAM MEETING EARLY NEXT WEEK TO DISCUSS THE LATEST UPDATES ON PROJECT AURORA AND OUR NEXT STEPS.",
                 "SUBJECT: REQUEST FOR TEAM MEETING - PROJECT AURORA UPDATE",
-                "I WOULD LIKE TO ARRANGE A BRIEF TEAM MEETING EARLY NEXT WEEK TO DISCUSS THE LATEST UPDATES ON PROJECT AURORA AND OUR NEXT STEPS."
+                "BEST REGARDS,\nSTEVE PALMER",
+                "DEAR TEAM,"
             ],
             "correctOrder": [
-                2,
-                0,
+                1,
                 3,
-                1
+                0,
+                2
             ],
             "hint": "Project name and meeting purpose are in the subject; 'DEAR TEAM' addresses the group; the reason and timing are in the body; 'BEST REGARDS' closes professionally.",
             "explanation": "'Best regards' is the standard professional closing in business emails. Including the project name in the subject line allows team members to prepare before the meeting."
@@ -94,16 +94,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to your HR department requesting annual leave.",
             "options": [
-                "DEAR HR TEAM,",
                 "SUBJECT: ANNUAL LEAVE REQUEST - 12 TO 16 AUGUST",
-                "KIND REGARDS,\nDANIELLE FOX",
-                "I WOULD LIKE TO REQUEST ANNUAL LEAVE FROM MONDAY 12 AUGUST TO FRIDAY 16 AUGUST AND WILL ENSURE ALL MY TASKS ARE COVERED BEFORE I GO."
+                "DEAR HR TEAM,",
+                "I WOULD LIKE TO REQUEST ANNUAL LEAVE FROM MONDAY 12 AUGUST TO FRIDAY 16 AUGUST AND WILL ENSURE ALL MY TASKS ARE COVERED BEFORE I GO.",
+                "KIND REGARDS,\nDANIELLE FOX"
             ],
             "correctOrder": [
-                1,
                 0,
-                3,
-                2
+                1,
+                2,
+                3
             ],
             "hint": "Both dates are in the subject; HR is addressed professionally; the specific dates and handover commitment are in the body; 'KIND REGARDS' closes the internal work email.",
             "explanation": "Including both start and end dates in the subject line makes it easy to check your request against the team calendar. Offering to cover tasks beforehand shows professionalism and consideration for colleagues."
@@ -116,15 +116,15 @@
             "prompt": "Write an email to your manager notifying them that you are ill and cannot come to work.",
             "options": [
                 "DEAR KATE,",
+                "I AM UNWELL TODAY AND WILL NOT BE ABLE TO COME INTO THE OFFICE - I WILL KEEP YOU UPDATED AND HOPE TO BE BACK TOMORROW.",
                 "BEST WISHES,\nNEIL",
-                "SUBJECT: SICK DAY NOTIFICATION - UNABLE TO COME IN TODAY",
-                "I AM UNWELL TODAY AND WILL NOT BE ABLE TO COME INTO THE OFFICE - I WILL KEEP YOU UPDATED AND HOPE TO BE BACK TOMORROW."
+                "SUBJECT: SICK DAY NOTIFICATION - UNABLE TO COME IN TODAY"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                0,
+                1,
+                2
             ],
             "hint": "The purpose is clear in the subject; the manager is addressed by first name (informal workplace); the situation and update promise are in the body; 'BEST WISHES' closes warmly.",
             "explanation": "In many workplaces, emailing your manager directly by first name is normal. Promising to keep them updated ('will keep you updated') and giving an expected return date shows professionalism even when unwell."
@@ -136,14 +136,14 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email following up on a job application submitted two weeks ago.",
             "options": [
-                "DEAR MS HENDRICKS,",
-                "YOURS SINCERELY,\nLEWIS HART",
                 "SUBJECT: FOLLOW-UP ON MY APPLICATION - MARKETING EXECUTIVE ROLE",
+                "YOURS SINCERELY,\nLEWIS HART",
+                "DEAR MS HENDRICKS,",
                 "I SUBMITTED MY APPLICATION FOR THE MARKETING EXECUTIVE ROLE ON 3 JUNE AND I AM WRITING TO POLITELY FOLLOW UP AND CONFIRM IT WAS RECEIVED."
             ],
             "correctOrder": [
-                2,
                 0,
+                2,
                 3,
                 1
             ],
@@ -158,14 +158,14 @@
             "prompt": "Write an email to a training provider asking about a first aid course.",
             "options": [
                 "DEAR TRAINING TEAM,",
-                "SUBJECT: ENQUIRY ABOUT FIRST AID TRAINING COURSES",
+                "I AM LOOKING TO COMPLETE A FIRST AID CERTIFICATION AND WOULD LIKE TO KNOW WHEN YOUR NEXT AVAILABLE COURSE RUNS AND WHAT THE FEE IS.",
                 "MANY THANKS,\nABIGAIL PRICE",
-                "I AM LOOKING TO COMPLETE A FIRST AID CERTIFICATION AND WOULD LIKE TO KNOW WHEN YOUR NEXT AVAILABLE COURSE RUNS AND WHAT THE FEE IS."
+                "SUBJECT: ENQUIRY ABOUT FIRST AID TRAINING COURSES"
             ],
             "correctOrder": [
-                1,
-                0,
                 3,
+                0,
+                1,
                 2
             ],
             "hint": "The training type and course are in the subject; the team is addressed; the two key questions (dates and fee) are in the body; 'MANY THANKS' closes the professional course enquiry.",
@@ -178,19 +178,19 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email confirming your attendance at an industry conference.",
             "options": [
+                "I AM PLEASED TO CONFIRM MY ATTENDANCE AT THE TECH SUMMIT ON 14 SEPTEMBER AND LOOK FORWARD TO THE PROGRAMME.",
                 "DEAR EVENTS TEAM,",
-                "YOURS SINCERELY,\nVINCENT MARSH",
-                "SUBJECT: ATTENDANCE CONFIRMATION - TECH SUMMIT 14 SEPTEMBER",
-                "I AM PLEASED TO CONFIRM MY ATTENDANCE AT THE TECH SUMMIT ON 14 SEPTEMBER AND LOOK FORWARD TO THE PROGRAMME."
+                "BEST REGARDS,\nVINCENT MARSH",
+                "SUBJECT: ATTENDANCE CONFIRMATION - TECH SUMMIT 14 SEPTEMBER"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Event name and date are in the subject; the events team is addressed formally; confirmation and anticipation are in the body; 'YOURS SINCERELY' closes the formal confirmation.",
-            "explanation": "Confirming attendance promptly helps event organisers plan catering and seating. Adding 'look forward to the programme' shows genuine enthusiasm and professionalism."
+            "hint": "Event name and date are in the subject; the events team is addressed formally; confirmation and anticipation are in the body; 'BEST REGARDS' closes warmly and professionally.",
+            "explanation": "Confirming attendance promptly helps event organisers plan catering and seating. 'Best regards' suits a team rather than a named individual, so it fits better here than 'Yours sincerely'."
         },
         {
             "id": "WRT_WRITINGEMAIL_L24_Q1",
@@ -199,16 +199,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a hotel requesting a room reservation.",
             "options": [
-                "DEAR RESERVATIONS TEAM,",
-                "KIND REGARDS,\nBRIDGET DOYLE",
+                "I WOULD LIKE TO BOOK A DOUBLE ROOM FOR THREE NIGHTS FROM 5 TO 8 OCTOBER AND WOULD APPRECIATE KNOWING YOUR CURRENT RATES.",
                 "SUBJECT: ROOM RESERVATION REQUEST - 5 TO 8 OCTOBER",
-                "I WOULD LIKE TO BOOK A DOUBLE ROOM FOR THREE NIGHTS FROM 5 TO 8 OCTOBER AND WOULD APPRECIATE KNOWING YOUR CURRENT RATES."
+                "KIND REGARDS,\nBRIDGET DOYLE",
+                "DEAR RESERVATIONS TEAM,"
             ],
             "correctOrder": [
-                2,
-                0,
+                1,
                 3,
-                1
+                0,
+                2
             ],
             "hint": "Dates and reservation purpose are in the subject; the reservations team is addressed; room type, duration, and a price enquiry are in the body; 'KIND REGARDS' closes the hotel email.",
             "explanation": "Specifying the room type (double) and exact dates gives the hotel all they need to check availability instantly. Asking about rates at the same time avoids a back-and-forth exchange."
@@ -220,19 +220,19 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to an airline asking to change a flight booking.",
             "options": [
-                "DEAR CUSTOMER SERVICES,",
                 "SUBJECT: FLIGHT CHANGE REQUEST - BOOKING REF: AB4321",
-                "YOURS SINCERELY,\nPATRICK DUNN",
+                "YOURS FAITHFULLY,\nPATRICK DUNN",
+                "DEAR CUSTOMER SERVICES,",
                 "I NEED TO CHANGE MY OUTBOUND FLIGHT FROM 10 JULY TO 12 JULY DUE TO AN UNEXPECTED WORK COMMITMENT AND WOULD LIKE TO KNOW IF THIS IS POSSIBLE AND ANY APPLICABLE FEES."
             ],
             "correctOrder": [
-                1,
                 0,
+                2,
                 3,
-                2
+                1
             ],
-            "hint": "The booking reference and purpose are in the subject; customer services is addressed; reason, new date, and fee question are in the body; 'YOURS SINCERELY' closes the formal request.",
-            "explanation": "Including the booking reference in the subject allows airlines to pull up your booking immediately. Giving a reason for the change ('unexpected work commitment') establishes context for the request."
+            "hint": "The booking reference and purpose are in the subject; customer services is addressed by role, not name; reason, new date, and fee question are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Including the booking reference in the subject allows airlines to pull up your booking immediately. Since 'Customer Services' isn't a named person, 'Yours faithfully' is the grammatically correct closing."
         },
         {
             "id": "WRT_WRITINGEMAIL_L24_Q3",
@@ -242,15 +242,15 @@
             "prompt": "Write an email to an insurance company enquiring about travel cover.",
             "options": [
                 "DEAR INSURANCE TEAM,",
-                "MANY THANKS,\nFELICITY WARD",
+                "I AM PLANNING A TWO-WEEK HOLIDAY TO SPAIN IN AUGUST AND WOULD LIKE INFORMATION ABOUT YOUR SINGLE-TRIP TRAVEL INSURANCE OPTIONS AND PRICES.",
                 "SUBJECT: ENQUIRY ABOUT SINGLE-TRIP TRAVEL INSURANCE",
-                "I AM PLANNING A TWO-WEEK HOLIDAY TO SPAIN IN AUGUST AND WOULD LIKE INFORMATION ABOUT YOUR SINGLE-TRIP TRAVEL INSURANCE OPTIONS AND PRICES."
+                "MANY THANKS,\nFELICITY WARD"
             ],
             "correctOrder": [
                 2,
                 0,
-                3,
-                1
+                1,
+                3
             ],
             "hint": "The type of cover and trip length are in the subject; the team is addressed; destination, duration, and cover type are mentioned in the body; 'MANY THANKS' closes the insurance enquiry.",
             "explanation": "Specifying the destination and duration upfront ensures the insurer gives you accurate quotes rather than generic options. Mentioning you are looking at 'options and prices' signals you are comparing before buying."
@@ -262,19 +262,19 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write a polite email to a neighbour about noise from their parties at weekends.",
             "options": [
-                "DEAR NEXT-DOOR NEIGHBOUR,",
                 "YOURS SINCERELY,\nALAN CROSS",
                 "SUBJECT: CONCERN ABOUT WEEKEND NOISE LEVELS",
-                "I HOPE THIS EMAIL FINDS YOU WELL - I WANTED TO RAISE POLITELY THAT THE NOISE FROM YOUR WEEKEND GATHERINGS HAS BEEN AFFECTING MY FAMILY'S SLEEP."
+                "I HOPE THIS EMAIL FINDS YOU WELL - I WANTED TO RAISE POLITELY THAT THE NOISE FROM YOUR WEEKEND GATHERINGS HAS BEEN AFFECTING MY FAMILY'S SLEEP.",
+                "DEAR DAVID,"
             ],
             "correctOrder": [
-                2,
-                0,
+                1,
                 3,
-                1
+                2,
+                0
             ],
-            "hint": "The concern topic is in the subject without being aggressive; 'DEAR NEXT-DOOR NEIGHBOUR' is used when you don't know their name; the polite complaint is in the body; 'YOURS SINCERELY' maintains formality.",
-            "explanation": "Using a neutral subject like 'Concern about noise levels' rather than 'YOUR LOUD PARTIES' sets a non-confrontational tone. Starting with 'I hope this email finds you well' softens a potentially sensitive complaint."
+            "hint": "The concern topic is in the subject without being aggressive; the neighbour is addressed by first name; the polite complaint is in the body; 'YOURS SINCERELY' closes formally despite the first-name greeting.",
+            "explanation": "Using a neutral subject like 'Concern about noise levels' rather than 'YOUR LOUD PARTIES' sets a non-confrontational tone. Starting with 'I hope this email finds you well' softens a sensitive complaint, even to someone you know by name."
         },
         {
             "id": "WRT_WRITINGEMAIL_L25_Q2",
@@ -283,16 +283,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to your landlord asking for urgent repairs to a leaking tap.",
             "options": [
-                "DEAR MR JOHNSON,",
                 "SUBJECT: URGENT REPAIR REQUEST - LEAKING TAP IN KITCHEN",
-                "YOURS SINCERELY,\nCAREN MILLS",
-                "THE KITCHEN TAP HAS BEEN LEAKING FOR THE PAST THREE DAYS AND THE SITUATION IS GETTING WORSE - I WOULD BE GRATEFUL IF YOU COULD ARRANGE A PLUMBER AS SOON AS POSSIBLE."
+                "DEAR MR JOHNSON,",
+                "THE KITCHEN TAP HAS BEEN LEAKING FOR THE PAST THREE DAYS AND THE SITUATION IS GETTING WORSE - I WOULD BE GRATEFUL IF YOU COULD ARRANGE A PLUMBER AS SOON AS POSSIBLE.",
+                "YOURS SINCERELY,\nCAREN MILLS"
             ],
             "correctOrder": [
-                1,
                 0,
-                3,
-                2
+                1,
+                2,
+                3
             ],
             "hint": "The urgency and problem are in the subject; the landlord is addressed formally by name; duration, worsening, and the specific request are in the body; 'YOURS SINCERELY' closes formally.",
             "explanation": "Marking the subject 'URGENT' and giving a timeline ('three days') establishes both urgency and evidence. A formal closing to a landlord ('Yours sincerely') reflects a professional tenant-landlord relationship."
@@ -304,16 +304,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to your landlord reporting damage to the living room ceiling.",
             "options": [
-                "DEAR MS ADEYEMI,",
                 "YOURS SINCERELY,\nSIMON CRANE",
-                "SUBJECT: REPORT OF CEILING DAMAGE - FLAT 4, 22 BARTON ROAD",
-                "I AM WRITING TO REPORT THAT THERE IS A LARGE DAMP PATCH ON THE LIVING ROOM CEILING WHICH I BELIEVE MAY BE DUE TO A LEAK FROM THE FLAT ABOVE."
+                "I AM WRITING TO REPORT THAT THERE IS A LARGE DAMP PATCH ON THE LIVING ROOM CEILING WHICH I BELIEVE MAY BE DUE TO A LEAK FROM THE FLAT ABOVE.",
+                "DEAR MS ADEYEMI,",
+                "SUBJECT: REPORT OF CEILING DAMAGE - FLAT 4, 22 BARTON ROAD"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                2,
+                1,
+                0
             ],
             "hint": "Address and damage type are in the subject; the landlord is addressed by name; the problem and suspected cause are in the body; 'YOURS SINCERELY' maintains the formal tenant-landlord tone.",
             "explanation": "Including your flat address in the subject helps a landlord with multiple properties identify your property immediately. Offering a possible cause ('leak from above') is helpful but the word 'believe' signals you are not certain."
@@ -326,18 +326,18 @@
             "prompt": "Write an email to a school admin office asking about the admission process.",
             "options": [
                 "DEAR ADMISSIONS TEAM,",
-                "YOURS SINCERELY,\nHELEN BURKE",
                 "SUBJECT: ENQUIRY ABOUT YEAR 7 ADMISSION FOR SEPTEMBER",
-                "MY DAUGHTER IS DUE TO START SECONDARY SCHOOL IN SEPTEMBER AND I WOULD LIKE TO KNOW HOW TO APPLY FOR A PLACE AND WHAT THE APPLICATION DEADLINE IS."
+                "MY DAUGHTER IS DUE TO START SECONDARY SCHOOL IN SEPTEMBER AND I WOULD LIKE TO KNOW HOW TO APPLY FOR A PLACE AND WHAT THE APPLICATION DEADLINE IS.",
+                "YOURS FAITHFULLY,\nHELEN BURKE"
             ],
             "correctOrder": [
-                2,
+                1,
                 0,
-                3,
-                1
+                2,
+                3
             ],
-            "hint": "The year group and entry date are in the subject; the admissions team is addressed correctly; the two key application questions are in the body; 'YOURS SINCERELY' closes formally.",
-            "explanation": "For school admissions, specifying the year group and intended start date in the subject makes your enquiry immediately clear. Asking about both the process AND the deadline ensures you don't miss a key date."
+            "hint": "The year group and entry date are in the subject; the admissions team is addressed by role, not name; the two key application questions are in the body; the closing must match this unnamed greeting.",
+            "explanation": "For school admissions, specifying the year group and intended start date in the subject makes your enquiry immediately clear. Because you don't have a named contact, 'Yours faithfully' is correct here rather than 'Yours sincerely'."
         },
         {
             "id": "WRT_WRITINGEMAIL_L26_Q2",
@@ -346,14 +346,14 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a teacher requesting a meeting to discuss your child's progress.",
             "options": [
-                "DEAR MR HASSAN,",
                 "SUBJECT: REQUEST TO MEET AND DISCUSS MY SON'S PROGRESS",
+                "DEAR MR HASSAN,",
                 "YOURS SINCERELY,\nMRS CAROL SMART",
                 "I WOULD LIKE TO ARRANGE A SHORT MEETING WITH YOU AT A TIME THAT IS CONVENIENT TO DISCUSS HOW MY SON THOMAS IS GETTING ON IN YOUR CLASS."
             ],
             "correctOrder": [
-                1,
                 0,
+                1,
                 3,
                 2
             ],
@@ -367,19 +367,19 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a school asking about the uniform requirements for new pupils.",
             "options": [
+                "KIND REGARDS,\nMRS TINA WALSH",
                 "DEAR SCHOOL OFFICE,",
-                "YOURS SINCERELY,\nMRS TINA WALSH",
                 "SUBJECT: QUESTION ABOUT SCHOOL UNIFORM FOR NEW PUPILS",
                 "MY SON WILL BE JOINING YOUR SCHOOL IN SEPTEMBER AND I WOULD LIKE TO KNOW WHAT THE FULL UNIFORM REQUIREMENT IS AND WHERE IT CAN BE PURCHASED."
             ],
             "correctOrder": [
                 2,
-                0,
+                1,
                 3,
-                1
+                0
             ],
-            "hint": "New pupil status and topic are in the subject; the school office is addressed; two practical questions are in the body; 'YOURS SINCERELY' closes the formal parent email.",
-            "explanation": "Asking where the uniform can be purchased is just as important as knowing what it is - this saves a follow-up call. Formal emails to schools from parents should use 'Yours sincerely' regardless of tone."
+            "hint": "New pupil status and topic are in the subject; the school office is addressed by role, not name; two practical questions are in the body; 'KIND REGARDS' closes politely.",
+            "explanation": "Asking where the uniform can be purchased is just as important as knowing what it is - this saves a follow-up email. 'Kind regards' is a safe, friendly choice whenever you're writing to an office rather than a named person."
         },
         {
             "id": "WRT_WRITINGEMAIL_L27_Q1",
@@ -388,16 +388,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a retailer asking them to review your complaint about a product.",
             "options": [
+                "I PURCHASED A FOOD PROCESSOR FROM YOUR WEBSITE ON 2 AUGUST AND IT STOPPED WORKING AFTER JUST THREE USES - I AM REQUESTING AN URGENT REVIEW OF MY COMPLAINT.",
                 "DEAR CUSTOMER SERVICES MANAGER,",
-                "YOURS FAITHFULLY,\nPAULA SCOTT",
                 "SUBJECT: FORMAL COMPLAINT - DEFECTIVE PRODUCT RECEIVED",
-                "I PURCHASED A FOOD PROCESSOR FROM YOUR WEBSITE ON 2 AUGUST AND IT STOPPED WORKING AFTER JUST THREE USES - I AM REQUESTING AN URGENT REVIEW OF MY COMPLAINT."
+                "YOURS FAITHFULLY,\nPAULA SCOTT"
             ],
             "correctOrder": [
                 2,
+                1,
                 0,
-                3,
-                1
+                3
             ],
             "hint": "The complaint level and product are in the subject; the manager is addressed formally but without a name; purchase date, problem, and request are in the body; 'YOURS FAITHFULLY' closes (no named recipient).",
             "explanation": "The word 'FORMAL' in the subject signals this is an escalated complaint, not a casual query. Including purchase date and the number of uses ('three uses') provides specific evidence that supports your case."
@@ -409,19 +409,19 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a retailer requesting a refund for a product that has not arrived.",
             "options": [
-                "DEAR RETURNS TEAM,",
+                "REGARDS,\nGABRIELLE HUNT",
                 "SUBJECT: REFUND REQUEST - ORDER NOT ARRIVED AFTER 14 DAYS",
-                "YOURS SINCERELY,\nGABRIELLE HUNT",
+                "DEAR RETURNS TEAM,",
                 "I PLACED AN ORDER ON 1 SEPTEMBER AND IT HAS NOW BEEN FOURTEEN DAYS WITH NO DELIVERY - I WOULD LIKE A FULL REFUND AS I NO LONGER WISH TO WAIT."
             ],
             "correctOrder": [
                 1,
-                0,
+                2,
                 3,
-                2
+                0
             ],
-            "hint": "Refund and timeframe are in the subject; the returns team is addressed; order date, waiting time, and clear refund request are in the body; 'YOURS SINCERELY' closes formally.",
-            "explanation": "Stating both the order date and the number of days waited provides a clear, factual account that is harder for customer services to dispute. The closing 'as I no longer wish to wait' makes your position clear."
+            "hint": "Refund and timeframe are in the subject; the returns team is addressed by role, not name; order date, waiting time, and clear refund request are in the body; 'REGARDS' closes firmly but politely.",
+            "explanation": "Stating both the order date and the number of days waited provides a clear, factual account that is harder for customer services to dispute. A short 'Regards' keeps the tone brisk and businesslike, matching your firm request."
         },
         {
             "id": "WRT_WRITINGEMAIL_L27_Q3",
@@ -430,16 +430,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a delivery company about a parcel that has not arrived.",
             "options": [
-                "DEAR DELIVERY SUPPORT TEAM,",
                 "YOURS FAITHFULLY,\nROBERT PAYNE",
                 "SUBJECT: MISSING PARCEL - TRACKING NUMBER UK8837261",
-                "I HAVE BEEN WAITING FOR A PARCEL WITH TRACKING NUMBER UK8837261 FOR TEN DAYS AND THE TRACKING PAGE SHOWS IT HAS NOT BEEN UPDATED SINCE 5 JUNE."
+                "I HAVE BEEN WAITING FOR A PARCEL WITH TRACKING NUMBER UK8837261 FOR TEN DAYS AND THE TRACKING PAGE SHOWS IT HAS NOT BEEN UPDATED SINCE 5 JUNE.",
+                "DEAR DELIVERY SUPPORT TEAM,"
             ],
             "correctOrder": [
-                2,
-                0,
+                1,
                 3,
-                1
+                2,
+                0
             ],
             "hint": "Tracking number and 'missing' are in the subject; the support team is addressed generically; all key details (tracking number, days waited, last update) are in the body; 'YOURS FAITHFULLY' closes.",
             "explanation": "Including the tracking number in the subject means support staff can locate the parcel before they even open the email. Citing the lack of tracking updates provides objective evidence that the parcel is delayed, not just late."
@@ -451,16 +451,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a property owner offering to rent a spare room.",
             "options": [
-                "DEAR MR HARRIS,",
                 "YOURS SINCERELY,\nFRANKIE BURNS",
+                "DEAR MR HARRIS,",
                 "SUBJECT: INTEREST IN RENTING THE SPARE ROOM IN YOUR HOME",
                 "I SAW YOUR ADVERTISEMENT FOR A ROOM TO LET AND WOULD LIKE TO ENQUIRE FURTHER - I AM A WORKING PROFESSIONAL WITH EXCELLENT REFERENCES AVAILABLE."
             ],
             "correctOrder": [
                 2,
-                0,
+                1,
                 3,
-                1
+                0
             ],
             "hint": "The rental purpose is in the subject; the owner is addressed by name; key relevant information (working professional, references) is in the body; 'YOURS SINCERELY' closes the semi-formal enquiry.",
             "explanation": "Mentioning you are a 'working professional with excellent references' immediately reassures a potential landlord. Keeping the initial enquiry brief and offering more detail on request is a professional approach."
@@ -472,19 +472,19 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email responding to a job advertisement for a receptionist role.",
             "options": [
-                "DEAR HIRING MANAGER,",
+                "I AM WRITING IN RESPONSE TO YOUR ADVERTISEMENT FOR A RECEPTIONIST AND BELIEVE MY THREE YEARS OF EXPERIENCE IN CUSTOMER-FACING ROLES MAKES ME AN EXCELLENT CANDIDATE.",
                 "SUBJECT: APPLICATION FOR RECEPTIONIST ROLE - ADVERTISED ON JOBS TODAY",
-                "YOURS SINCERELY,\nSHARLENE GRANT",
-                "I AM WRITING IN RESPONSE TO YOUR ADVERTISEMENT FOR A RECEPTIONIST AND BELIEVE MY THREE YEARS OF EXPERIENCE IN CUSTOMER-FACING ROLES MAKES ME AN EXCELLENT CANDIDATE."
+                "YOURS FAITHFULLY,\nSHARLENE GRANT",
+                "DEAR HIRING MANAGER,"
             ],
             "correctOrder": [
                 1,
-                0,
                 3,
+                0,
                 2
             ],
-            "hint": "Job title and source are in the subject; hiring manager is addressed formally (name unknown); the experience and relevance are in the body; 'YOURS SINCERELY' closes the job application.",
-            "explanation": "Mentioning where you saw the advertisement ('Jobs Today') tells the employer which of their channels is effective. Citing specific years of experience ('three years') is more persuasive than vague claims like 'I have experience'."
+            "hint": "Job title and source are in the subject; the hiring manager is addressed by role, not name; the experience and relevance are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Mentioning where you saw the advertisement tells the employer which of their channels is effective. As with any 'Dear Hiring Manager' letter, 'Yours faithfully' is the correct closing since you don't know their name."
         },
         {
             "id": "WRT_WRITINGEMAIL_L28_Q3",
@@ -493,16 +493,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to your manager requesting a pay rise discussion.",
             "options": [
+                "I HAVE BEEN IN MY CURRENT ROLE FOR EIGHTEEN MONTHS AND FEEL MY PERFORMANCE AND CONTRIBUTIONS JUSTIFY A DISCUSSION ABOUT A SALARY REVIEW.",
                 "DEAR JANET,",
                 "YOURS SINCERELY,\nTIMOTHY ASH",
-                "SUBJECT: REQUEST TO DISCUSS A SALARY REVIEW",
-                "I HAVE BEEN IN MY CURRENT ROLE FOR EIGHTEEN MONTHS AND FEEL MY PERFORMANCE AND CONTRIBUTIONS JUSTIFY A DISCUSSION ABOUT A SALARY REVIEW."
+                "SUBJECT: REQUEST TO DISCUSS A SALARY REVIEW"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
             "hint": "The purpose is clearly but professionally stated in the subject; the manager is addressed by first name (workplace norm); length of service and merit form the basis in the body; 'YOURS SINCERELY' closes respectfully.",
             "explanation": "Framing a pay request as a 'discussion' rather than a 'demand' creates space for negotiation. Citing tenure ('eighteen months') and performance gives concrete reasons rather than just stating you want more money."
@@ -514,16 +514,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a GP surgery asking for a referral to a specialist.",
             "options": [
-                "DEAR DR FLETCHER,",
-                "YOURS SINCERELY,\nBEATRICE KNIGHT",
                 "SUBJECT: REFERRAL REQUEST TO A DERMATOLOGIST",
-                "I AM WRITING TO ASK WHETHER YOU WOULD BE ABLE TO REFER ME TO A DERMATOLOGIST AS I HAVE HAD A PERSISTENT SKIN CONDITION THAT HAS NOT IMPROVED OVER THE PAST SIX MONTHS."
+                "I AM WRITING TO ASK WHETHER YOU WOULD BE ABLE TO REFER ME TO A DERMATOLOGIST AS I HAVE HAD A PERSISTENT SKIN CONDITION THAT HAS NOT IMPROVED OVER THE PAST SIX MONTHS.",
+                "YOURS SINCERELY,\nBEATRICE KNIGHT",
+                "DEAR DR FLETCHER,"
             ],
             "correctOrder": [
-                2,
                 0,
                 3,
-                1
+                1,
+                2
             ],
             "hint": "The speciality is in the subject; the GP is addressed formally by name; the medical reason and duration are clearly stated in the body; 'YOURS SINCERELY' closes the medical correspondence.",
             "explanation": "Being specific about duration ('six months') gives the doctor clinical context for making a referral decision. Formal medical correspondence always uses 'Yours sincerely' or 'Yours faithfully' rather than casual closings."
@@ -535,16 +535,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a dentist asking about NHS dental checkup availability.",
             "options": [
-                "DEAR RECEPTION TEAM,",
                 "SUBJECT: ENQUIRY ABOUT NHS CHECKUP APPOINTMENTS",
-                "MANY THANKS,\nKATIE MACK",
-                "I AM LOOKING FOR AN NHS DENTIST AND WOULD LIKE TO KNOW IF YOUR PRACTICE IS CURRENTLY ACCEPTING NEW NHS PATIENTS AND WHEN CHECKUP APPOINTMENTS ARE AVAILABLE."
+                "DEAR RECEPTION TEAM,",
+                "I AM LOOKING FOR AN NHS DENTIST AND WOULD LIKE TO KNOW IF YOUR PRACTICE IS CURRENTLY ACCEPTING NEW NHS PATIENTS AND WHEN CHECKUP APPOINTMENTS ARE AVAILABLE.",
+                "MANY THANKS,\nKATIE MACK"
             ],
             "correctOrder": [
-                1,
                 0,
-                3,
-                2
+                1,
+                2,
+                3
             ],
             "hint": "The NHS and checkup are in the subject; the reception team is addressed; two key questions - accepting patients and availability - are in the body; 'MANY THANKS' closes the healthcare enquiry.",
             "explanation": "Asking both whether a practice is accepting new patients AND when appointments are available in one email is efficient. It avoids a situation where you find out they are accepting patients but then have to email again about dates."
@@ -556,19 +556,19 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a health insurance provider asking about cover for dental treatment.",
             "options": [
-                "DEAR CUSTOMER SERVICES TEAM,",
-                "YOURS SINCERELY,\nNICK COLE",
+                "I HAVE A HEALTH INSURANCE POLICY WITH YOU AND WOULD LIKE TO KNOW WHETHER ROUTINE DENTAL TREATMENT AND EMERGENCY DENTAL CARE ARE INCLUDED IN MY COVER.",
                 "SUBJECT: ENQUIRY ABOUT DENTAL COVER UNDER MY POLICY",
-                "I HAVE A HEALTH INSURANCE POLICY WITH YOU AND WOULD LIKE TO KNOW WHETHER ROUTINE DENTAL TREATMENT AND EMERGENCY DENTAL CARE ARE INCLUDED IN MY COVER."
+                "DEAR CUSTOMER SERVICES TEAM,",
+                "BEST REGARDS,\nNICK COLE"
             ],
             "correctOrder": [
+                1,
                 2,
                 0,
-                3,
-                1
+                3
             ],
-            "hint": "The policy type and query topic are in the subject; the customer services team is addressed; two specific types of dental care are queried in the body; 'YOURS SINCERELY' closes the formal insurance enquiry.",
-            "explanation": "Distinguishing between 'routine' and 'emergency' dental care in the question shows you understand different types of dental cover may apply different terms. This specificity leads to a clearer, more useful answer."
+            "hint": "The policy type and query topic are in the subject; the customer services team is addressed by role, not name; two specific types of dental care are queried in the body; 'BEST REGARDS' closes politely.",
+            "explanation": "Distinguishing between 'routine' and 'emergency' dental care shows you understand different types of cover may apply different terms. 'Best regards' is a natural, modern choice when writing to a team rather than a named adviser."
         },
         {
             "id": "WRT_WRITINGEMAIL_L30_Q1",
@@ -577,16 +577,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a library asking about joining their reading group.",
             "options": [
-                "DEAR READING GROUP COORDINATOR,",
                 "KIND REGARDS,\nJOSEPHINE LAMB",
+                "DEAR READING GROUP COORDINATOR,",
                 "SUBJECT: INTEREST IN JOINING THE MONTHLY READING GROUP",
                 "I WOULD LIKE TO JOIN YOUR MONTHLY READING GROUP AND WONDER IF THERE ARE CURRENTLY ANY PLACES AVAILABLE AND HOW I CAN SIGN UP."
             ],
             "correctOrder": [
                 2,
-                0,
+                1,
                 3,
-                1
+                0
             ],
             "hint": "The activity and frequency are in the subject; the right coordinator is addressed; availability and sign-up are both asked about in the body; 'KIND REGARDS' closes the community enquiry.",
             "explanation": "Addressing the 'Reading Group Coordinator' rather than the general library team shows you have identified who to contact. Asking whether places are available before asking how to sign up is a logical, polite approach."
@@ -598,19 +598,19 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email inviting a colleague to participate in a charity fundraiser.",
             "options": [
-                "DEAR MARCUS,",
+                "WE ARE ORGANISING A CHARITY QUIZ NIGHT ON THURSDAY 18TH IN AID OF THE LOCAL FOODBANK AND WOULD LOVE FOR YOU TO JOIN OUR TEAM.",
+                "HI MARCUS,",
                 "SUBJECT: INVITATION TO TAKE PART IN OUR CHARITY QUIZ NIGHT",
-                "BEST WISHES,\nJENNIFER SHAH",
-                "WE ARE ORGANISING A CHARITY QUIZ NIGHT ON THURSDAY 18TH IN AID OF THE LOCAL FOODBANK AND WOULD LOVE FOR YOU TO JOIN OUR TEAM."
+                "SEE YOU THERE,\nJENNIFER"
             ],
             "correctOrder": [
+                2,
                 1,
                 0,
-                3,
-                2
+                3
             ],
-            "hint": "Charity and event type are in the subject; the colleague is addressed informally; the event details, charity, and invitation are in the body; 'BEST WISHES' closes warmly.",
-            "explanation": "Naming the charity ('local foodbank') immediately gives the invitation context and social value. 'Best wishes' is appropriate for a colleague in a friendly but professional environment."
+            "hint": "Charity and event type are in the subject; a colleague is greeted casually by first name; the event details, charity, and invitation are in the body; a friendly, informal sign-off closes the invitation.",
+            "explanation": "Between colleagues who know each other well, a casual 'Hi' and a first-name sign-off fit a fun, informal invitation better than a stiffly formal one. Naming the charity immediately gives the invitation context and social value."
         },
         {
             "id": "WRT_WRITINGEMAIL_L30_Q3",
@@ -620,15 +620,15 @@
             "prompt": "Write an email thanking volunteers after a community event.",
             "options": [
                 "DEAR VOLUNTEERS,",
-                "WITH WARMEST THANKS,\nTHE EVENTS COMMITTEE",
                 "SUBJECT: THANK YOU TO ALL OUR WONDERFUL VOLUNTEERS",
-                "I WANTED TO THANK EACH AND EVERY ONE OF YOU FOR YOUR INCREDIBLE HARD WORK AT LAST SATURDAY'S COMMUNITY FAIR - THE EVENT WOULD NOT HAVE BEEN POSSIBLE WITHOUT YOU."
+                "I WANTED TO THANK EACH AND EVERY ONE OF YOU FOR YOUR INCREDIBLE HARD WORK AT LAST SATURDAY'S COMMUNITY FAIR - THE EVENT WOULD NOT HAVE BEEN POSSIBLE WITHOUT YOU.",
+                "WITH WARMEST THANKS,\nTHE EVENTS COMMITTEE"
             ],
             "correctOrder": [
-                2,
+                1,
                 0,
-                3,
-                1
+                2,
+                3
             ],
             "hint": "'DEAR VOLUNTEERS' addresses the group collectively; 'WITH WARMEST THANKS' is the appropriate warm closing; the specific event and genuine praise form the body; the committee signs as a whole.",
             "explanation": "Signing as 'The Events Committee' makes the thanks feel official and representative of the whole organisation. Saying the event 'would not have been possible without you' expresses true appreciation rather than just polite acknowledgement."

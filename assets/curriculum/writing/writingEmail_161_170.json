@@ -8,75 +8,75 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a foreign state legal team raising a treaty-based investment arbitration claim.",
+            "prompt": "Write an exceptionally tactful email declining to continue working with a difficult but long-standing, important client.",
             "options": [
-                "YOURS SINCERELY,\nLEAD ARBITRATION COUNSEL, NEXUS CONSULTING",
-                "NEXUS CONSULTING HEREBY SUBMITS NOTICE OF ARBITRATION UNDER THE ICSID CONVENTION AND THE UK-UKRAINE BILATERAL INVESTMENT TREATY ARTICLE 8, CLAIMING DAMAGES OF USD 45M FOR UNLAWFUL EXPROPRIATION OF OUR KYIV OPERATIONS.",
-                "SUBJECT: NOTICE OF ARBITRATION - ICSID CLAIM UNDER UK-UKRAINE BILATERAL INVESTMENT TREATY",
-                "DEAR MINISTRY OF JUSTICE,"
+                "SUBJECT: A HONEST REFLECTION ON OUR WORKING RELATIONSHIP",
+                "WITH LASTING RESPECT AND GRATITUDE,\nMARGARET OKONJO",
+                "DEAR MR HALVORSEN,",
+                "OVER OUR SEVEN YEARS WORKING TOGETHER, I HAVE GENUINELY VALUED THE TRUST YOU HAVE PLACED IN US, WHICH IS WHY I WANT TO BE HONEST THAT I NO LONGER BELIEVE WE ARE THE RIGHT PARTNER TO MEET YOUR EVOLVING NEEDS, AND I WOULD LIKE TO HELP ENSURE A SMOOTH TRANSITION TO WHOEVER YOU CHOOSE NEXT."
             ],
             "correctOrder": [
+                0,
                 2,
                 3,
-                1,
-                0
+                1
             ],
-            "hint": "The treaty and arbitration forum are in the subject. 'Hereby submits', ICSID Convention, BIT article, claim quantum, and specific legal wrong (expropriation) are in the body - a formal treaty arbitration notice.",
-            "explanation": "Investment treaty arbitration requires citing the specific treaty provision (BIT Article 8) and the arbitral forum (ICSID). The claim of 'unlawful expropriation' is the substantive violation - it triggers state responsibility under international law."
+            "hint": "A reflective, honest tone is signalled in the subject; the client is addressed formally by name; genuine appreciation for the history and a graceful, forward-looking conclusion are in the body; the closing conveys enduring respect.",
+            "explanation": "Naming the exact duration of the relationship ('seven years') honours its history before delivering difficult news. Offering active help with the transition transforms what could feel like abandonment into a considerate, professional parting that protects both reputations."
         },
         {
             "id": "WRT_WRITINGEMAIL_L161_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to an international arbitration tribunal raising a jurisdictional objection.",
+            "prompt": "Write a carefully worded email to HR raising a compassionate concern about a colleague's wellbeing, through the proper channel.",
             "options": [
-                "THE RESPONDENT STATE OBJECTS TO THE TRIBUNAL'S JURISDICTION ON THE GROUNDS THAT NEXUS CONSULTING'S ALLEGED INVESTMENT DOES NOT CONSTITUTE A 'QUALIFYING INVESTMENT' WITHIN THE MEANING OF ARTICLE 1 OF THE UK-UKRAINE BIT.",
-                "DEAR ARBITRAL TRIBUNAL,",
-                "YOURS SINCERELY,\nAGENT FOR THE RESPONDENT STATE",
-                "SUBJECT: JURISDICTIONAL OBJECTION - CLAIMANT LACKS QUALIFYING INVESTMENT UNDER ARTICLE 1"
+                "SUBJECT: A CONCERN I WANT TO RAISE SENSITIVELY, WITH CARE",
+                "WITH CARE FOR MY COLLEAGUE,\nDESMOND ATKINSON",
+                "I HAVE NOTICED A NOTICEABLE CHANGE IN A COLLEAGUE OVER THE PAST FEW WEEKS - SEEMING WITHDRAWN AND UNUSUALLY EXHAUSTED - AND WHILE I DON'T WANT TO OVERSTEP, I WANTED TO FLAG THIS GENTLY IN CASE IT WOULD BE HELPFUL FOR SOMEONE TRAINED IN THIS AREA TO CHECK IN WITH THEM.",
+                "DEAR HR TEAM,"
             ],
             "correctOrder": [
-                3,
-                1,
                 0,
-                2
+                3,
+                2,
+                1
             ],
-            "hint": "Jurisdictional objection and treaty basis are in the subject. Objector, respondent role, specific definition challenged, and treaty article are in the body - a formal preliminary objection to arbitral jurisdiction.",
-            "explanation": "A jurisdictional objection must identify the specific definitional provision being challenged (Article 1's definition of 'qualifying investment'). If upheld, it terminates the arbitration before the merits are heard - the highest-stakes procedural motion in investment arbitration."
+            "hint": "A caring, careful tone is signalled in the subject; HR is addressed by role, not name; the specific, observed changes and a considerate, non-diagnostic request are in the body; the closing conveys genuine care.",
+            "explanation": "Describing only observable behaviour - 'withdrawn and unusually exhausted' - rather than speculating about a cause keeps the concern appropriate and avoids overstepping into matters that aren't yours to diagnose. Explicitly deferring to 'someone trained in this area' shows respect for professional boundaries while still acting on genuine care."
         },
         {
             "id": "WRT_WRITINGEMAIL_L161_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a state's foreign ministry summarising an investor-state arbitration award.",
+            "prompt": "Write a sophisticated email proposing fresh terms to break a stalled, high-stakes negotiation impasse with a business partner.",
             "options": [
-                "THE ICSID TRIBUNAL HAS ISSUED ITS FINAL AWARD FINDING THAT UKRAINE UNLAWFULLY EXPROPRIATED NEXUS CONSULTING'S INVESTMENT AND ORDERING COMPENSATION OF USD 38M PLUS INTEREST AT LIBOR+2%.",
-                "YOURS SINCERELY,\nLEGAL DIRECTOR, NEXUS CONSULTING",
-                "DEAR MINISTER,",
-                "SUBJECT: ICSID ARBITRAL AWARD - STATE ORDERED TO PAY USD 38M TO NEXUS CONSULTING"
+                "HAVING BOTH DUG INTO OUR RESPECTIVE POSITIONS ON THE REVENUE SPLIT, I WONDER WHETHER WE ARE FOCUSING ON THE WRONG VARIABLE ENTIRELY - RATHER THAN ARGUING OVER PERCENTAGES, WOULD YOU BE OPEN TO EXPLORING A STRUCTURE BASED ON GROWTH MILESTONES INSTEAD, SO THAT BOTH OF US BENEFIT MORE AS THE VENTURE SUCCEEDS?",
+                "DEAR CONSTANCE,",
+                "WITH OPTIMISM FOR WHAT WE CAN BUILD TOGETHER,\nFIONA MACLEOD",
+                "SUBJECT: A FRESH WAY THROUGH OUR CURRENT IMPASSE"
             ],
             "correctOrder": [
                 3,
-                2,
+                1,
                 0,
-                1
+                2
             ],
-            "hint": "Award outcome and parties are in the subject. Tribunal finding, legal wrong confirmed, award quantum, and interest basis are in the body - a complete ICSID award summary to senior government.",
-            "explanation": "LIBOR+2% interest rate is the standard post-award interest in international arbitration. The combination of the principal award (USD 38M) and the ongoing interest rate determines the total cost of non-payment - important for the state's decision on whether to appeal or comply."
+            "hint": "A fresh, reframing tone is signalled in the subject; the business partner is addressed by first name; acknowledgement of the stalemate and a genuinely creative alternative are in the body; the closing conveys renewed optimism.",
+            "explanation": "Naming the stalemate honestly ('both dug into our respective positions') before proposing a way out shows self-awareness rather than simply repeating your original position more forcefully. Reframing the entire basis of negotiation - from a fixed split to shared growth milestones - is a sophisticated move that can genuinely unlock a conversation stuck in a loop."
         },
         {
             "id": "WRT_WRITINGEMAIL_L162_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a nuclear safety authority submitting a safety case for a new reactor design.",
+            "prompt": "Write a thoughtful, formal email raising a significant ethical concern within an organisation's leadership.",
             "options": [
-                "YOURS SINCERELY,\nCHIEF NUCLEAR SAFETY OFFICER, NEXUS ENERGY",
-                "NEXUS ENERGY SUBMITS ITS APPLICATION FOR GENERIC DESIGN ASSESSMENT OF THE NEXUS-SMR REACTOR - THE SUBMISSION INCLUDES THE PRELIMINARY SAFETY REPORT, NUCLEAR SAFETY TECHNICAL ASSESSMENT GUIDE RESPONSES, AND ENVIRONMENTAL SAFETY CASE.",
-                "SUBJECT: GENERIC DESIGN ASSESSMENT SUBMISSION - NEXUS SMALL MODULAR REACTOR",
-                "DEAR OFFICE FOR NUCLEAR REGULATION,"
+                "WITH RESPECT AND GENUINE CONCERN FOR OUR REPUTATION,\nTARIQ HUSSAIN",
+                "HAVING NOTICED THAT SEVERAL RECENT SUPPLIER CONTRACTS WERE AWARDED WITHOUT THE COMPETITIVE PROCESS OUR OWN POLICY REQUIRES, I FELT IT WAS IMPORTANT TO RAISE THIS DIRECTLY WITH YOU, AS I BELIEVE MAINTAINING TRUST IN OUR PROCUREMENT PROCESS MATTERS MORE THAN ANY SHORT-TERM CONVENIENCE.",
+                "SUBJECT: A CONCERN I BELIEVE THE LEADERSHIP TEAM SHOULD BE AWARE OF",
+                "DEAR LEADERSHIP TEAM,"
             ],
             "correctOrder": [
                 2,
@@ -84,230 +84,230 @@
                 1,
                 0
             ],
-            "hint": "Reactor type and assessment process are in the subject. Three submission documents - PSR, NSTAG responses, and environmental safety case - are in the body. The ONR requires all three for GDA.",
-            "explanation": "GDA (Generic Design Assessment) by the ONR is the UK regulatory process for approving new reactor designs before site licensing. Three documents - Preliminary Safety Report, NSTAG guide responses, and environmental safety case - constitute the standard GDA submission package."
+            "hint": "A serious, principled tone is signalled in the subject; leadership is addressed together; the specific observed practice and the underlying value at stake are in the body; the closing conveys respectful, genuine concern.",
+            "explanation": "Describing the specific practice observed - contracts awarded without the required process - gives leadership something concrete to investigate rather than a vague worry. Framing the concern around protecting long-term trust, rather than accusing anyone of wrongdoing, keeps the tone constructive and focused on the organisation's wellbeing."
         },
         {
             "id": "WRT_WRITINGEMAIL_L162_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a government authority establishing the terms of nuclear liability indemnification.",
+            "prompt": "Write an eloquent email declining to formally endorse a leadership decision you disagree with, while remaining supportive.",
             "options": [
-                "NEXUS ENERGY REQUESTS FORMAL INDEMNIFICATION OF THIRD-PARTY NUCLEAR LIABILITY ABOVE THE OPERATOR'S £1.2BN INSURANCE THRESHOLD IN ACCORDANCE WITH THE PARIS CONVENTION ON NUCLEAR THIRD PARTY LIABILITY.",
-                "DEAR ENERGY MINISTER,",
-                "YOURS SINCERELY,\nCEO, NEXUS ENERGY",
-                "SUBJECT: NUCLEAR LIABILITY INDEMNIFICATION FRAMEWORK - PARIS CONVENTION COMPLIANCE"
+                "WITH CONTINUED COMMITMENT TO THE TEAM,\nCELESTE DUBOIS",
+                "DEAR SENIOR TEAM,",
+                "SUBJECT: MY HONEST POSITION ON THE PROPOSED RESTRUCTURE",
+                "WHILE I RESPECT THAT THE DECISION HAS BEEN MADE AND WILL SUPPORT ITS IMPLEMENTATION FULLY, I WOULD LIKE IT NOTED THAT I DO NOT PERSONALLY BELIEVE THE PROPOSED TIMELINE ALLOWS ENOUGH TIME FOR A SMOOTH TRANSITION, AND I HOPE THIS PERSPECTIVE WILL BE CONSIDERED IF ADJUSTMENTS BECOME NECESSARY."
             ],
             "correctOrder": [
-                3,
+                2,
                 1,
-                0,
-                2
+                3,
+                0
             ],
-            "hint": "Indemnification type and convention basis are in the subject. Operator liability insurance threshold, government indemnification request, and Paris Convention reference are in the body.",
-            "explanation": "Under the Paris Convention, nuclear operators are liable up to their insurance capacity (£1.2bn); the state provides indemnification above that level. This channelled liability system is the international framework for nuclear damage compensation."
+            "hint": "A measured, honest tone is signalled in the subject; the senior team is addressed together; genuine commitment to implementation alongside an honest, recorded reservation are in the body; the closing affirms lasting commitment.",
+            "explanation": "Separating genuine support for implementing a decision from personal disagreement with it is a sophisticated, mature distinction that shows professionalism without suppressing honest opinion. Asking for the reservation to be 'noted', rather than demanding the decision be reversed, respects the leadership's authority while still placing your view on record."
         },
         {
             "id": "WRT_WRITINGEMAIL_L162_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a nuclear operator confirming government indemnity has been formalised.",
+            "prompt": "Write a carefully balanced email raising a serious conflict of interest concern about a colleague's dual role.",
             "options": [
-                "THE SECRETARY OF STATE CONFIRMS THAT THE GOVERNMENT INDEMNITY FOR THIRD-PARTY NUCLEAR LIABILITY ABOVE £1.2BN HAS BEEN FORMALISED UNDER THE NUCLEAR INSTALLATIONS ACT 1965 AND IS EFFECTIVE UPON REACTOR COMMISSIONING.",
-                "YOURS SINCERELY,\nDEPARTMENT FOR ENERGY SECURITY, UK GOVERNMENT",
-                "DEAR CEO,",
-                "SUBJECT: NUCLEAR INDEMNITY CONFIRMED - GOVERNMENT COVERS LIABILITY ABOVE £1.2BN"
+                "AS A COLLEAGUE INVOLVED IN SELECTING SUPPLIERS ALSO HOLDS A FAMILY CONNECTION TO ONE OF THE BIDDING COMPANIES, I WANTED TO RAISE THIS SO IT CAN BE PROPERLY REVIEWED - I HAVE NO REASON TO BELIEVE ANYTHING IMPROPER HAS OCCURRED, BUT I THINK IT IS IMPORTANT THE PROCESS IS SEEN TO BE FAIR.",
+                "DEAR COMPLIANCE TEAM,",
+                "YOURS FAITHFULLY,\nKWABENA MENSAH",
+                "SUBJECT: A CONFLICT OF INTEREST I FEEL SHOULD BE REVIEWED"
             ],
             "correctOrder": [
                 3,
-                2,
+                1,
                 0,
-                1
+                2
             ],
-            "hint": "Indemnity confirmation and threshold are in the subject. Secretary of State authority, statute, coverage trigger (commissioning), and effective date are in the body - a formal government indemnity confirmation.",
-            "explanation": "The Nuclear Installations Act 1965 is the UK statutory basis for nuclear operator liability. The government indemnity takes effect 'upon commissioning' - the formal start of nuclear operations - which is the exact moment when liability risk materialises."
+            "hint": "A balanced, careful tone is signalled in the subject; the compliance team is addressed by role, not name; the specific factual situation and an explicit note of good faith are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Explicitly stating 'I have no reason to believe anything improper has occurred' is crucial - it raises the structural issue without making an accusation against a colleague. Framing the concern around perceived fairness, not just actual wrongdoing, reflects sophisticated understanding of why conflicts of interest matter even when no harm is intended."
         },
         {
             "id": "WRT_WRITINGEMAIL_L163_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to international creditors requesting a sovereign debt restructuring negotiation.",
+            "prompt": "Write an exceptionally tactful email mediating a long-standing, complex disagreement between two family members.",
             "options": [
-                "YOURS SINCERELY,\nMINISTER OF FINANCE, REPUBLIC OF MERIDIA",
-                "THE REPUBLIC OF MERIDIA FORMALLY REQUESTS ENGAGEMENT OF THE AD HOC CREDITOR COMMITTEE TO NEGOTIATE A CONSENSUAL RESTRUCTURING OF ITS EXTERNAL SOVEREIGN DEBT TOTALLING USD 8.4BN.",
-                "SUBJECT: SOVEREIGN DEBT RESTRUCTURING - REPUBLIC OF MERIDIA PROPOSES CREDITOR TALKS",
-                "DEAR CREDITOR COMMITTEE,"
+                "WITH LOVE FOR YOU BOTH,\nCLARA",
+                "SUBJECT: SOMETHING I HOPE WE CAN FINALLY PUT TO REST",
+                "I KNOW THIS DISAGREEMENT GOES BACK FURTHER THAN I FULLY UNDERSTAND, AND I DON'T WANT TO TAKE SIDES, BUT WATCHING IT KEEP FAMILY GATHERINGS TENSE HAS BEEN HARD FOR ALL OF US - WOULD YOU BOTH BE WILLING TO HAVE ONE HONEST CONVERSATION, WITH ME THERE ONLY IF YOU'D FIND THAT HELPFUL?",
+                "DEAR UNCLE PATRICK AND AUNT ROSALIND,"
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
+                3,
+                2,
                 0
             ],
-            "hint": "Sovereign debtor and restructuring type are in the subject. Formal request, creditor committee engagement, restructuring basis (consensual), and total debt quantum are in the body.",
-            "explanation": "A 'consensual restructuring' is preferred to a unilateral default - it seeks negotiated agreement with creditors rather than imposing terms. The total debt quantum (USD 8.4bn) establishes the scale of restructuring needed for the creditor committee to assess feasibility."
+            "hint": "A gentle, non-taking-sides tone is signalled in the subject; both family members are addressed together with equal respect; genuine humility, the shared cost of the rift, and a careful offer are in the body; the closing shows love for both.",
+            "explanation": "Explicitly stating 'I don't want to take sides' is essential when mediating between two people you love, as it preserves your relationship with both. Offering your presence only 'if you'd find that helpful' respects their autonomy to resolve it themselves rather than imposing yourself into the conversation."
         },
         {
             "id": "WRT_WRITINGEMAIL_L163_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a creditor committee proposing collective action clause activation.",
+            "prompt": "Write a sensitive, carefully worded email beginning a family conversation about a parent's future care wishes.",
             "options": [
-                "MERIDIA PROPOSES ACTIVATION OF THE COLLECTIVE ACTION CLAUSE ACROSS THE 2019-2024 BOND SERIES - IF 75% MAJORITY IS ACHIEVED, THE RESTRUCTURING TERMS BIND ALL HOLDOUT CREDITORS.",
-                "DEAR CREDITOR COMMITTEE,",
-                "YOURS SINCERELY,\nMINISTER OF FINANCE, REPUBLIC OF MERIDIA",
-                "SUBJECT: COLLECTIVE ACTION CLAUSE ACTIVATION - MERIDIA BOND SERIES 2019-2024"
+                "DEAR MUM,",
+                "WITH ALL MY LOVE,\nEMILY",
+                "I KNOW THIS ISN'T AN EASY THING TO THINK ABOUT, BUT I WOULD LIKE US TO TALK, WHENEVER YOU FEEL READY, ABOUT WHAT MATTERS MOST TO YOU FOR YOUR FUTURE CARE, SO THAT WE ALL UNDERSTAND YOUR WISHES CLEARLY AND YOU DON'T HAVE TO WORRY ABOUT ANY OF US GUESSING LATER.",
+                "SUBJECT: A CONVERSATION WE SHOULD HAVE, WHEN YOU'RE READY"
             ],
             "correctOrder": [
                 3,
-                1,
                 0,
-                2
+                2,
+                1
             ],
-            "hint": "CAC activation and bond series are in the subject. CAC mechanism, voting threshold, and holdout creditor binding effect are in the body - the three key CAC parameters.",
-            "explanation": "The Collective Action Clause (CAC) solves the holdout creditor problem in sovereign debt - if 75% of bondholders agree to restructure, the terms bind the remaining 25% who would otherwise hold out for full payment and frustrate the restructuring."
+            "hint": "A gentle, patient tone is signalled in the subject; a parent is addressed warmly; genuine sensitivity and a reassuring purpose for the conversation are in the body; the closing conveys deep love.",
+            "explanation": "Explicitly putting the timing in the parent's control ('whenever you feel ready') respects their autonomy over an emotionally difficult topic rather than forcing the conversation. Framing the purpose as understanding 'your wishes clearly' reassures the parent this is about honouring their voice, not making decisions around them."
         },
         {
             "id": "WRT_WRITINGEMAIL_L163_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to the IMF requesting a balance of payments support programme.",
+            "prompt": "Write an eloquent email expressing complex, mixed emotions to a partner about your last child leaving home.",
             "options": [
-                "THE REPUBLIC OF MERIDIA FORMALLY REQUESTS AN IMF EXTENDED FUND FACILITY PROGRAMME TO ADDRESS ITS BALANCE OF PAYMENTS CRISIS - WE ARE COMMITTED TO THE STRUCTURAL REFORMS NECESSARY FOR PROGRAMME ELIGIBILITY.",
-                "YOURS SINCERELY,\nMINISTER OF FINANCE, REPUBLIC OF MERIDIA",
-                "DEAR IMF MANAGING DIRECTOR,",
-                "SUBJECT: PROGRAMME REQUEST - REPUBLIC OF MERIDIA BALANCE OF PAYMENTS SUPPORT"
+                "WITH ALL MY LOVE, ALWAYS,\nSARAH",
+                "SUBJECT: A STRANGE MIX OF FEELINGS TODAY",
+                "DEAR JAMES,",
+                "WATCHING LUCY DRIVE AWAY THIS MORNING LEFT ME FEELING SO PROUD I COULD BURST, YET SO STRANGELY EMPTY IN THE HOUSE AFTERWARDS, AND I WANTED TO TELL YOU BOTH THINGS AT ONCE, BECAUSE I THINK ONLY YOU WILL TRULY UNDERSTAND HOW BOTH CAN BE TRUE TOGETHER."
             ],
             "correctOrder": [
-                3,
+                1,
                 2,
-                0,
-                1
+                3,
+                0
             ],
-            "hint": "Programme type and crisis are in the subject. EFF request, BoP crisis, and structural reform commitment are in the body - the three elements of a formal IMF programme request.",
-            "explanation": "The EFF (Extended Fund Facility) is the IMF's medium-term support facility for countries with balance of payments problems requiring deep structural adjustment. The commitment to 'structural reforms' is the quid pro quo the IMF requires for programme approval."
+            "hint": "An honest, layered emotional tone opens the subject; a partner is addressed intimately by first name; two contrasting genuine feelings are held together in the body; the closing conveys deep, lasting love.",
+            "explanation": "Naming two seemingly contradictory emotions - pride and emptiness - and holding them together, rather than picking one, captures the genuine complexity of this life milestone. Trusting a partner specifically to 'understand how both can be true' reflects the deep, unspoken understanding built over a long relationship."
         },
         {
             "id": "WRT_WRITINGEMAIL_L164_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to an international financial regulator raising concerns about unregulated digital asset activities.",
+            "prompt": "Write a capstone recommendation letter email for a truly exceptional former student applying for a prestigious fellowship.",
             "options": [
-                "YOURS SINCERELY,\nCHIEF RISK OFFICER, NEXUS BANK",
-                "WE DRAW THE FSB'S ATTENTION TO THE REGULATORY GAP CREATED BY DECENTRALISED FINANCE PROTOCOLS OPERATING OUTSIDE EXISTING FINANCIAL SERVICES REGULATORY FRAMEWORKS - POSING SYSTEMIC RISK TO TRADITIONAL FINANCIAL MARKETS.",
-                "SUBJECT: UNREGULATED DIGITAL ASSET CONCERN - DEFI PROTOCOL REGULATORY GAP",
-                "DEAR FINANCIAL STABILITY BOARD,"
+                "DEAR SELECTION COMMITTEE,",
+                "SUBJECT: RECOMMENDATION FOR AMARA OKONKWO - FELLOWSHIP APPLICATION",
+                "IN TWENTY-TWO YEARS OF TEACHING, I HAVE RARELY ENCOUNTERED A STUDENT WHO COMBINES AMARA'S INTELLECTUAL RIGOUR WITH SUCH GENUINE HUMILITY - HER INDEPENDENT RESEARCH ON URBAN WATER SCARCITY WAS, WITHOUT EXAGGERATION, PUBLISHABLE WORK, AND I RECOMMEND HER WITHOUT ANY RESERVATION WHATSOEVER.",
+                "YOURS FAITHFULLY,\nPROFESSOR HALVORSEN"
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
-                0
+                0,
+                2,
+                3
             ],
-            "hint": "Regulatory gap and risk type are in the subject. FSB, DeFi protocols, regulatory framework gap, and systemic risk assertion are in the body - a formal FSB notification raising a macro-prudential concern.",
-            "explanation": "The FSB (Financial Stability Board) coordinates global financial regulation. DeFi protocols operating outside regulatory frameworks create systemic risk because they lack the capital requirements, conduct standards, and resolution frameworks of regulated institutions."
+            "hint": "The candidate's name anchors the formal subject; the committee is addressed by role, not name; a career-spanning comparison and a specific, striking achievement are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Anchoring the praise in a career-long comparison ('in twenty-two years of teaching') gives extraordinary weight to the recommendation. Describing the specific quality of the work as 'publishable', a precise and meaningful standard, is far more powerful than generic superlatives like 'brilliant' or 'outstanding'."
         },
         {
             "id": "WRT_WRITINGEMAIL_L164_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a legal team requesting advice on classifying a digital token under securities law.",
+            "prompt": "Write an eloquent email formally declining a prestigious professional opportunity for well-reasoned personal reasons.",
             "options": [
-                "PLEASE ADVISE ON WHETHER THE NEXUS UTILITY TOKEN, WHICH PROVIDES ACCESS TO OUR AI PLATFORM, CONSTITUTES A 'SECURITY' UNDER THE FCA'S FINANCIAL PROMOTIONS ORDER - THE CLASSIFICATION DETERMINES OUR MARKETING OBLIGATIONS.",
-                "DEAR FINTECH LEGAL TEAM,",
-                "YOURS SINCERELY,\nCHIEF LEGAL OFFICER, NEXUS DIGITAL",
-                "SUBJECT: SECURITIES LAW ADVICE REQUEST - UTILITY TOKEN vs SECURITY TOKEN CLASSIFICATION"
+                "IT IS WITH GENUINE REGRET, AND AFTER A GREAT DEAL OF REFLECTION, THAT I HAVE DECIDED TO DECLINE THE FELLOWSHIP - AS DEEPLY MEANINGFUL AS THIS OPPORTUNITY IS, THE EIGHTEEN-MONTH RELOCATION IS SIMPLY NOT COMPATIBLE WITH MY FAMILY'S CIRCUMSTANCES RIGHT NOW, AND I HOPE YOU WILL UNDERSTAND.",
+                "SUBJECT: A DIFFICULT BUT CONSIDERED DECISION",
+                "DEAR PROFESSOR HALVORSEN,",
+                "WITH SINCERE GRATITUDE FOR YOUR CONFIDENCE IN ME,\nROISIN DELANEY"
             ],
             "correctOrder": [
-                3,
                 1,
+                2,
                 0,
-                2
+                3
             ],
-            "hint": "Classification question and legal act are in the subject. Token description, FCA test reference, and commercial consequence of classification are in the body - the complete legal advice instruction.",
-            "explanation": "The Financial Promotions Order classification determines whether a token can be freely marketed or requires FCA-compliant promotions. Utility tokens (access to services) are generally outside the definition; security tokens (investment returns) require full FCA regulatory compliance."
+            "hint": "Genuine regret is signalled in the subject; the mentor figure is addressed formally by name and title; heartfelt appreciation and an honest, specific reason are in the body; the closing conveys sincere gratitude.",
+            "explanation": "Describing the decision as made 'with genuine regret' and 'after a great deal of reflection' shows this wasn't taken lightly, honouring the significance of the opportunity. Giving a specific, concrete reason - an eighteen-month relocation - rather than a vague excuse, respects the reader enough to be honest about the real constraint."
         },
         {
             "id": "WRT_WRITINGEMAIL_L164_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to institutional investors presenting a regulated digital asset custody solution.",
+            "prompt": "Write a sophisticated, respectful formal complaint about a serious issue with an academic supervisor, through proper university channels.",
             "options": [
-                "NEXUS DIGITAL CUSTODY OFFERS FCA-REGISTERED INSTITUTIONAL DIGITAL ASSET CUSTODY WITH COLD STORAGE SECURITY, £50M INSURANCE COVERAGE, AND FULL SOC 2 TYPE II OPERATIONAL CERTIFICATION.",
-                "YOURS SINCERELY,\nCEO, NEXUS DIGITAL",
-                "DEAR CHIEF INVESTMENT OFFICER,",
-                "SUBJECT: DIGITAL ASSET CUSTODY SOLUTION - FCA-REGISTERED, INSURED TO £50M"
+                "SUBJECT: FORMAL CONCERN REGARDING SUPERVISORY SUPPORT",
+                "DEAR GRADUATE SCHOOL OFFICE,",
+                "OVER THE PAST TWO TERMS, I HAVE RECEIVED NO SUBSTANTIVE FEEDBACK ON THREE SUCCESSIVE CHAPTER DRAFTS DESPITE REPEATED REQUESTS, WHICH IS NOW MEANINGFULLY DELAYING MY PROGRESS, SO I WOULD LIKE TO FORMALLY RAISE THIS AND ASK WHETHER AN INTERIM CO-SUPERVISOR MIGHT BE APPOINTED WHILE THE MATTER IS RESOLVED.",
+                "YOURS FAITHFULLY,\nVIKRAM MALHOTRA"
             ],
             "correctOrder": [
-                3,
-                2,
                 0,
-                1
+                1,
+                2,
+                3
             ],
-            "hint": "Regulatory status and insurance level are in the subject. FCA registration, cold storage method, insurance limit, and SOC 2 certification are the four institutional trust-building elements in the body.",
-            "explanation": "Institutional investors require four assurances before entrusting digital assets: regulatory registration (FCA), security method (cold storage), insurance coverage (£50M), and operational audit certification (SOC 2 Type II). All four address the most common institutional due diligence questions."
+            "hint": "A serious, factual tone is signalled in the subject; the graduate office is addressed by role, not name; a specific, documented pattern and a constructive proposed remedy are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Quantifying the problem precisely - 'three successive chapter drafts' over 'two terms' - transforms a vague frustration into a documented, serious pattern the office must take seriously. Proposing a specific, practical solution - an interim co-supervisor - shows you are seeking resolution, not simply lodging a complaint."
         },
         {
             "id": "WRT_WRITINGEMAIL_L165_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a tax authority submitting a formal Pillar Two GloBE information return.",
+            "prompt": "Write an eloquent letter to a Member of Parliament presenting a nuanced argument on a complex policy matter.",
             "options": [
-                "YOURS SINCERELY,\nCHIEF TAX OFFICER, NEXUS CONSULTING",
-                "NEXUS CONSULTING SUBMITS ITS FY2024 GLOBE INFORMATION RETURN IN COMPLIANCE WITH THE OECD PILLAR TWO FRAMEWORK - THE RETURN IDENTIFIES THREE CONSTITUENT ENTITIES WITH EFFECTIVE TAX RATES BELOW THE 15% GLOBAL MINIMUM.",
-                "SUBJECT: PILLAR TWO GLOBE INFORMATION RETURN - NEXUS GROUP FY2024",
-                "DEAR OECD PILLAR TWO REPORTING TEAM,"
+                "AS SOMEONE WHO HAS BOTH USED AND WORKED WITHIN LOCAL SOCIAL CARE SERVICES, I UNDERSTAND THE FINANCIAL PRESSURES BEHIND THE PROPOSED CHANGES, YET I BELIEVE THE CURRENT PROPOSAL SHIFTS TOO MUCH RISK ONTO FAMILIES WITH THE LEAST CAPACITY TO ABSORB IT, AND I WOULD WELCOME THE CHANCE TO DISCUSS A FAIRER ALTERNATIVE.",
+                "SUBJECT: A CONSTITUENT'S PERSPECTIVE ON THE PROPOSED CHANGES TO SOCIAL CARE FUNDING",
+                "DEAR MR ASHWORTH MP,",
+                "YOURS SINCERELY,\nAGNIESZKA NOWAKOWSKA"
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
-                0
+                2,
+                0,
+                3
             ],
-            "hint": "Return type and framework are in the subject. Return submission, compliance basis, and three below-threshold entities are in the body - key elements of a GloBE information return.",
-            "explanation": "The GloBE Information Return (GIR) is the Pillar Two compliance filing identifying low-taxed constituent entities. Identifying three entities below 15% tells the tax authority which jurisdictions will trigger top-up tax liability under the Income Inclusion Rule."
+            "hint": "A constituent perspective is signalled respectfully in the subject; the MP is addressed formally with the correct title; genuine understanding of both sides and a specific, reasoned concern are in the body; the closing matches this named greeting.",
+            "explanation": "Establishing personal, dual perspective - having 'both used and worked within' the system - gives the argument unusual credibility and nuance. Acknowledging the genuine 'financial pressures' behind the policy, rather than dismissing them, allows the specific criticism that follows to be heard as constructive, not merely oppositional."
         },
         {
             "id": "WRT_WRITINGEMAIL_L165_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a Pillar Two implementation team requesting analysis of qualified domestic minimum tax design.",
+            "prompt": "Write a sophisticated formal submission responding to a public consultation on a significant local issue.",
             "options": [
-                "PLEASE ANALYSE THE OPTIMAL QUALIFIED DOMESTIC MINIMUM TAX DESIGN FOR OUR THREE LOW-TAXED JURISDICTIONS TO ENSURE THE TOP-UP TAX IS COLLECTED DOMESTICALLY RATHER THAN BY THE PARENT JURISDICTION.",
-                "DEAR INTERNATIONAL TAX TEAM,",
-                "YOURS SINCERELY,\nCHIEF TAX OFFICER",
-                "SUBJECT: QDMT DESIGN ANALYSIS - MINIMISING PILLAR TWO INCOME INCLUSION RULE EXPOSURE"
+                "SUBJECT: RESPONSE TO PUBLIC CONSULTATION - PROPOSED TRAFFIC SCHEME",
+                "WHILE WE SUPPORT THE OVERALL GOAL OF REDUCING THROUGH-TRAFFIC, THE PROPOSED SCHEME WOULD REDIRECT VEHICLES DIRECTLY PAST TWO PRIMARY SCHOOLS DURING PICK-UP HOURS, SO WE WOULD LIKE TO FORMALLY REQUEST THAT AN ALTERNATIVE ROUTING BE MODELLED BEFORE THE SCHEME IS FINALISED.",
+                "DEAR CONSULTATION TEAM,",
+                "YOURS FAITHFULLY,\nLEANDRO SILVA, ON BEHALF OF THE MILLBROOK RESIDENTS' ASSOCIATION"
             ],
             "correctOrder": [
-                3,
-                1,
                 0,
-                2
+                2,
+                1,
+                3
             ],
-            "hint": "QDMT type and objective are in the subject. Three target jurisdictions, optimisation goal (domestic vs parent collection), and analytical purpose are in the body.",
-            "explanation": "A QDMT (Qualified Domestic Minimum Top-up Tax) allows a country to collect the Pillar Two top-up tax itself, rather than the parent country's jurisdiction. This keeps tax revenue in the source country - a significant fiscal incentive for governments to implement QDMTs."
+            "hint": "The formal consultation response is clear in the subject; the consultation team is addressed by role, not name; a balanced position and a specific, safety-focused request are in the body; the closing identifies the residents' group.",
+            "explanation": "Supporting the 'overall goal' before raising a concern demonstrates a constructive, good-faith submission rather than blanket opposition. Highlighting a specific, safety-related consequence - traffic near two schools during pick-up - gives planners a precise, compelling detail to model and address."
         },
         {
             "id": "WRT_WRITINGEMAIL_L165_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a multinational's board summarising Pillar Two financial exposure.",
+            "prompt": "Write an eloquent email rallying a community around a complex, long-term local initiative.",
             "options": [
-                "OUR PILLAR TWO ANALYSIS IDENTIFIES AN ESTIMATED ADDITIONAL TAX LIABILITY OF £3.2M IN FY2025, ARISING PRIMARILY FROM OUR CAYMAN ISLANDS AND IRELAND CONSTITUENT ENTITIES WHERE ETRS ARE BELOW 15%.",
-                "YOURS SINCERELY,\nCHIEF TAX OFFICER",
-                "DEAR BOARD OF DIRECTORS,",
-                "SUBJECT: PILLAR TWO FINANCIAL IMPACT ASSESSMENT - ESTIMATED ADDITIONAL TAX: £3.2M"
+                "THE RIVERBANK OUR GRANDPARENTS ONCE SWAM IN HAS BEEN FENCED OFF AND NEGLECTED FOR DECADES, BUT WITH COUNCIL SUPPORT NOW WITHIN REACH, I BELIEVE WE HAVE A GENUINE CHANCE TO RESTORE IT OVER THE NEXT DECADE - NOT FOR OURSELVES, BUT FOR THE CHILDREN WHO WILL ONE DAY SWIM THERE TOO.",
+                "WITH HOPE FOR WHAT WE CAN BUILD TOGETHER,\nYOSHIKO MURAKAMI",
+                "DEAR NEIGHBOURS,",
+                "SUBJECT: A TEN-YEAR VISION FOR OUR RIVERBANK - AND WHY IT STARTS NOW"
             ],
             "correctOrder": [
                 3,
@@ -315,41 +315,41 @@
                 0,
                 1
             ],
-            "hint": "Financial impact and framework are in the subject. Total liability estimate, tax year, and two below-threshold jurisdictions are in the body - a board-level Pillar Two exposure summary.",
-            "explanation": "The board needs three facts: the total additional tax (£3.2M), when it arises (FY2025), and which jurisdictions create it (Cayman and Ireland). These three facts allow the board to decide whether to restructure operations in those jurisdictions to reduce the liability."
+            "hint": "A long-term, inspiring vision is signalled in the subject; the whole community is addressed together; an evocative historical detail and a generational purpose are in the body; the closing conveys shared hope.",
+            "explanation": "Invoking a specific, generational memory - 'the riverbank our grandparents once swam in' - creates emotional resonance that a purely practical appeal would lack. Framing the initiative around future children, not present convenience, gives a decade-long project the kind of meaning that sustains community commitment over time."
         },
         {
             "id": "WRT_WRITINGEMAIL_L166_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a technology company alleging that an AI system caused a financial loss.",
+            "prompt": "Write an email navigating a nuanced business etiquette misunderstanding with international partners with grace.",
             "options": [
-                "YOURS SINCERELY,\nCHIEF LEGAL OFFICER, NEXUS TRADING",
-                "NEXUS TRADING FORMALLY CLAIMS £2.1M IN DAMAGES ARISING FROM THE FAILURE OF YOUR AI TRADING ALGORITHM ON 14 OCTOBER, WHICH EXECUTED UNAUTHORISED TRADES IN DIRECT CONTRAVENTION OF OUR RISK PARAMETERS.",
-                "SUBJECT: FORMAL CLAIM - AI SYSTEM FAILURE CAUSING £2.1M FINANCIAL LOSS",
-                "DEAR CHIEF LEGAL OFFICER,"
+                "DEAR MR TANAKA,",
+                "ON REFLECTION, I REALISE THAT MY SUGGESTION TO FINALISE TERMS ON OUR FIRST CALL MAY HAVE FELT RUSHED GIVEN HOW MUCH VALUE YOUR TEAM RIGHTLY PLACES ON BUILDING TRUST OVER TIME, AND I WANT YOU TO KNOW WE ARE ENTIRELY HAPPY TO PROCEED AT WHATEVER PACE FEELS RIGHT TO YOUR SIDE.",
+                "SUBJECT: REFLECTING ON OUR RECENT EXCHANGE",
+                "WITH RESPECT FOR YOUR APPROACH,\nBARNABY REID"
             ],
             "correctOrder": [
                 2,
-                3,
+                0,
                 1,
-                0
+                3
             ],
-            "hint": "Claim type and quantum are in the subject. Claimant, claim amount, incident date, system failure description, and specific contravention are in the body - a formal AI liability claim.",
-            "explanation": "An AI liability claim must identify the specific failure (unauthorised trades), the resultant loss (£2.1M), and the violated parameter (risk limits). These three elements establish the duty, breach, and causation required for a negligence claim."
+            "hint": "A reflective, self-aware tone is signalled in the subject; the partner is addressed formally by name; genuine cultural insight and a flexible, respectful accommodation are in the body; the closing conveys real respect.",
+            "explanation": "Demonstrating specific cultural insight - recognising the value placed on 'building trust over time' - shows genuine understanding rather than a generic apology. Explicitly deferring to 'whatever pace feels right to your side' hands control back to the partner in a way that repairs the relationship through respect, not just words."
         },
         {
             "id": "WRT_WRITINGEMAIL_L166_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to an AI regulator proposing a liability framework for autonomous AI decision-making.",
+            "prompt": "Write a sophisticated email negotiating the general terms of a multi-party international collaboration agreement.",
             "options": [
-                "WE PROPOSE THAT STRICT LIABILITY SHOULD APPLY TO HIGH-RISK AI SYSTEMS UNDER THE UK AI REGULATION FRAMEWORK - OPERATORS SHOULD BEAR LIABILITY WITHOUT PROOF OF FAULT FOR DAMAGE CAUSED BY AI SYSTEMS IN CRITICAL SECTORS.",
-                "DEAR AI REGULATION CONSULTATION TEAM,",
-                "YOURS SINCERELY,\nCHIEF LEGAL OFFICER, NEXUS CONSULTING",
-                "SUBJECT: AI LIABILITY FRAMEWORK PROPOSAL - STRICT LIABILITY FOR HIGH-RISK AI SYSTEMS"
+                "HAVING REFLECTED ON OUR DISCUSSIONS ACROSS ALL THREE ORGANISATIONS, I WOULD LIKE TO PROPOSE A SIMPLE GUIDING PRINCIPLE: EACH PARTY CONTRIBUTES WHAT IT DOES BEST, SHARES COSTS IN PROPORTION TO EXPECTED BENEFIT, AND WE REVIEW THE ARRANGEMENT TOGETHER EVERY SIX MONTHS TO KEEP IT FAIR FOR EVERYONE.",
+                "DEAR PARTNERS,",
+                "WITH ENTHUSIASM FOR WHAT WE CAN ACHIEVE TOGETHER,\nCHIOMA EZEUDU",
+                "SUBJECT: PROPOSED FRAMEWORK FOR OUR THREE-WAY COLLABORATION"
             ],
             "correctOrder": [
                 3,
@@ -357,20 +357,20 @@
                 0,
                 2
             ],
-            "hint": "Liability type and framework are in the subject. Strict liability standard, high-risk classification, UK framework, fault-free liability, and critical sectors scope are in the body.",
-            "explanation": "Strict liability (no fault required) is proposed for high-risk AI because AI systems are complex, opaque, and difficult for victims to challenge technically. This shifts the burden from injured parties (who cannot prove the algorithm was negligent) to operators (who can design and monitor their systems)."
+            "hint": "A unifying framework is signalled in the subject; all partner organisations are addressed together; a simple guiding principle and a fairness mechanism are in the body; the closing conveys shared enthusiasm.",
+            "explanation": "Proposing one simple, memorable guiding principle makes a complex three-way arrangement far easier for all parties to understand and agree to than a lengthy list of specific terms. Building in a regular review every six months shows the framework is designed to stay fair over time, not fixed rigidly from the outset."
         },
         {
             "id": "WRT_WRITINGEMAIL_L166_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a law commission requesting consultation input on AI legal personhood.",
+            "prompt": "Write an eloquent email bridging a significant difference in professional expectations with an overseas team.",
             "options": [
-                "NEXUS CONSULTING SUBMITS THAT AUTONOMOUS AI SYSTEMS SHOULD NOT YET ACQUIRE LEGAL PERSONHOOD BUT THAT OPERATORS SHOULD BEAR STRICT VICARIOUS LIABILITY FOR AI-EXECUTED TRANSACTIONS.",
-                "YOURS SINCERELY,\nCHIEF LEGAL OFFICER, NEXUS CONSULTING",
-                "DEAR LAW COMMISSION CONSULTATION TEAM,",
-                "SUBJECT: CONSULTATION RESPONSE - AI LEGAL PERSONHOOD AND CAPACITY TO CONTRACT"
+                "I HAVE NOTICED THAT WHAT MY TEAM CONSIDERS A QUICK CLARIFYING QUESTION SOMETIMES SEEMS TO BE RECEIVED AS A CHALLENGE TO A DECISION ALREADY MADE, SO RATHER THAN EITHER OF US ADJUSTING ALONE, I WOULD LOVE TO SPEND SOME TIME UNDERSTANDING HOW YOUR TEAM PREFERS FEEDBACK TO BE RAISED.",
+                "WITH GENUINE RESPECT FOR YOUR WAYS OF WORKING,\nSTELLAN BERGQVIST",
+                "DEAR TEAM IN MUMBAI,",
+                "SUBJECT: UNDERSTANDING EACH OTHER'S WAYS OF WORKING BETTER"
             ],
             "correctOrder": [
                 3,
@@ -378,260 +378,260 @@
                 0,
                 1
             ],
-            "hint": "Consultation topic and position are in the subject. Two-part position - no AI personhood yet, but operator vicarious liability - and 'autonomous AI systems' are in the body.",
-            "explanation": "The 'vicarious liability for AI-executed transactions' proposal closes the legal liability gap without granting AI full legal personhood (which raises profound philosophical and regulatory complexity). It treats AI as an agent of its operator - legally analogous to employees."
+            "hint": "A thoughtful observation opens the subject; the overseas team is addressed together and specifically; a specific cultural pattern noticed and a mutual, collaborative solution are in the body; the closing conveys genuine respect.",
+            "explanation": "Describing the specific pattern noticed - a question being received as a challenge - names the exact friction point precisely and without blame on either side. Framing the solution as mutual understanding, 'rather than either of us adjusting alone', reflects genuine cross-cultural maturity rather than expecting one side to simply conform to the other."
         },
         {
             "id": "WRT_WRITINGEMAIL_L167_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a litigation funder raising a climate change liability claim against a government.",
+            "prompt": "Write an email negotiating a complex, amicable exit from a significant volunteer leadership role you have held for years.",
             "options": [
-                "YOURS SINCERELY,\nCLIMATE LITIGATION LEAD, NEXUS ENVIRONMENT",
-                "WE SEEK THIRD-PARTY FUNDING FOR A JUDICIAL REVIEW OF THE UK GOVERNMENT'S FAILURE TO ADOPT LEGALLY ADEQUATE CARBON REDUCTION MEASURES UNDER THE CLIMATE CHANGE ACT 2008.",
-                "SUBJECT: CLIMATE LITIGATION FUNDING REQUEST - NEXUS v UK GOVERNMENT: CARBON TARGETS",
-                "DEAR LITIGATION FUNDING COMMITTEE,"
+                "AFTER SIX YEARS AS CHAIR, I BELIEVE THE ORGANISATION WOULD BENEFIT FROM FRESH LEADERSHIP, SO RATHER THAN STEPPING DOWN ABRUPTLY, I WOULD LIKE TO PROPOSE A SIX-MONTH TRANSITION DURING WHICH I MENTOR MY SUCCESSOR AND GRADUALLY HAND OVER EXTERNAL RELATIONSHIPS WE HAVE BUILT TOGETHER.",
+                "WITH LASTING COMMITMENT TO THE CAUSE,\nIMOGEN ASHCROFT",
+                "SUBJECT: PLANNING A GRACEFUL HANDOVER OF THE CHAIR ROLE",
+                "DEAR TRUSTEES,"
             ],
             "correctOrder": [
                 2,
                 3,
-                1,
-                0
+                0,
+                1
             ],
-            "hint": "Case type and parties are in the subject. Funding request, judicial review mechanism, government failure allegation, and statutory basis (CCA 2008) are in the body.",
-            "explanation": "Climate litigation uses judicial review (challenging government decisions as unlawful) rather than private law claims. The Climate Change Act 2008 creates legally binding carbon budgets - government failure to adopt adequate measures is potentially justiciable."
+            "hint": "A thoughtful, planned transition is signalled in the subject; the trustees are addressed together; the reasoning and a specific, structured handover plan are in the body; the closing affirms lasting commitment to the cause.",
+            "explanation": "Framing the departure around what would benefit the organisation, rather than personal reasons, shows genuine leadership even in stepping back. Proposing a specific, structured transition - mentoring a successor over six months - demonstrates the kind of careful planning that protects an organisation from losing hard-won external relationships."
         },
         {
             "id": "WRT_WRITINGEMAIL_L167_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a court submitting a climate duty of care claim against a major oil company.",
+            "prompt": "Write a sophisticated email negotiating the graceful wind-down of a small business partnership.",
             "options": [
-                "NEXUS ENVIRONMENT FILES A CLAIM IN NEGLIGENCE AGAINST MERIDIA OIL CORPORATION FOR BREACH OF A DUTY OF CARE TO REDUCE CLIMATE CHANGE EMISSIONS - RELYING ON THE JURISPRUDENCE ESTABLISHED IN MILIEUDEFENSIE v SHELL.",
-                "DEAR HIGH COURT REGISTRY,",
-                "YOURS SINCERELY,\nCLIMATE LITIGATION COUNSEL, NEXUS ENVIRONMENT",
-                "SUBJECT: CLAIM FORM SUBMISSION - NEXUS ENVIRONMENT v MERIDIA OIL (CLIMATE DUTY OF CARE)"
+                "WITH RESPECT FOR WHAT WE BUILT,\nRAFAEL DOS SANTOS",
+                "HAVING BOTH ACKNOWLEDGED THAT NEITHER OF US HAS THE ENERGY TO CONTINUE GROWING THE BUSINESS THE WAY IT DESERVES, I WOULD RATHER WE WIND IT DOWN DELIBERATELY AND WELL - HONOURING EXISTING CLIENT COMMITMENTS OVER THE NEXT SIX MONTHS - THAN LET IT SLOWLY FADE IN A WAY THAT DOES NEITHER OF US CREDIT.",
+                "SUBJECT: A THOUGHTFUL WAY TO WIND DOWN, TOGETHER",
+                "DEAR MARCUS,"
             ],
             "correctOrder": [
+                2,
                 3,
                 1,
-                0,
-                2
+                0
             ],
-            "hint": "Parties and legal basis are in the subject. Claim type (negligence), defendant, duty of care breach, emissions causation, and precedent case (Shell) are in the body.",
-            "explanation": "The Milieudefensie v Shell case (Netherlands, 2021) established that companies can owe a duty of care to reduce emissions. Citing this precedent shows the court the established jurisprudential basis for extending the duty of care to climate harm."
+            "hint": "A shared, honest acknowledgement is signalled in the subject; the business partner is addressed by first name; genuine honesty and a specific, dignified plan are in the body; the closing honours the shared history.",
+            "explanation": "Building the proposal on something 'both acknowledged' together avoids one partner appearing to force the other's hand. Choosing to wind down 'deliberately and well' rather than let the business 'slowly fade' reflects real maturity in ending something rather than letting it end badly through neglect."
         },
         {
             "id": "WRT_WRITINGEMAIL_L167_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to institutional shareholders presenting the evidence base for a climate litigation case.",
+            "prompt": "Write an eloquent, diplomatic email addressing irreconcilable creative differences that are ending a professional collaboration.",
             "options": [
-                "OUR EXPERT EVIDENCE DEMONSTRATES A STATISTICALLY SIGNIFICANT CAUSAL LINK BETWEEN MERIDIA OIL'S HISTORICAL EMISSIONS AND QUANTIFIABLE CLIMATE DAMAGES - WE REQUEST YOUR SUPPORT AS A SHAREHOLDER AMICUS.",
-                "YOURS SINCERELY,\nCLIMATE LITIGATION LEAD, NEXUS ENVIRONMENT",
-                "DEAR CHIEF INVESTMENT OFFICER,",
-                "SUBJECT: CLIMATE LITIGATION EVIDENCE BRIEFING - NEXUS ENVIRONMENT v MERIDIA OIL"
+                "DEAR ISABELLA,",
+                "AFTER MONTHS OF TRYING TO FIND COMMON GROUND ON THE ALBUM'S DIRECTION, I HAVE COME TO BELIEVE OUR CREATIVE VISIONS HAVE SIMPLY GROWN APART RATHER THAN ANY LACK OF EFFORT ON EITHER SIDE, AND I THINK WE WOULD BOTH DO BETTER WORK PURSUING THIS SEPARATELY THAN CONTINUING TO COMPROMISE.",
+                "SUBJECT: AN HONEST REFLECTION ON WHERE WE'VE ARRIVED",
+                "WITH GENUINE ADMIRATION FOR YOUR TALENT,\nADAEZE IKECHUKWU"
             ],
             "correctOrder": [
-                3,
                 2,
                 0,
-                1
+                1,
+                3
             ],
-            "hint": "Briefing purpose and parties are in the subject. Expert evidence, causation finding, climate damages, and amicus request are in the body - a shareholder engagement strategy for climate litigation support.",
-            "explanation": "Establishing 'statistically significant causal links' between corporate emissions and climate damages is the critical evidential hurdle in climate litigation. Requesting shareholder support as an 'amicus curiae' (friend of the court) leverages institutional ownership to amplify the legal challenge."
+            "hint": "A reflective, honest tone is signalled in the subject; the collaborator is addressed by first name; acknowledgement of genuine effort and a clear-eyed conclusion are in the body; the closing conveys real admiration.",
+            "explanation": "Attributing the split to visions that 'grown apart' rather than blame protects both parties' dignity and the value of the work already done together. Suggesting both would 'do better work' separately reframes the ending positively, as a decision that serves the art itself, not a personal falling-out."
         },
         {
             "id": "WRT_WRITINGEMAIL_L168_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a government authority invoking force majeure due to a pandemic.",
+            "prompt": "Write a sensitive, well-crafted email coordinating caregiving responsibilities among siblings for a parent with a serious illness.",
             "options": [
-                "YOURS SINCERELY,\nCHIEF EXECUTIVE OFFICER, NEXUS CONSULTING",
-                "NEXUS CONSULTING FORMALLY INVOKES FORCE MAJEURE UNDER CONTRACT GOV-2020-0441 ON THE GROUNDS THAT THE COVID-19 PANDEMIC CONSTITUTES AN UNFORESEEABLE EVENT PREVENTING CONTRACTUAL PERFORMANCE.",
-                "SUBJECT: FORCE MAJEURE NOTIFICATION - COVID-19 PANDEMIC: CONTRACT REF: GOV-2020-0441",
-                "DEAR CONTRACT MANAGEMENT TEAM,"
+                "NOW THAT MUM'S TREATMENT SCHEDULE IS CONFIRMED, I THINK IT WOULD HELP US ALL, AND HER, IF WE SET UP A SHARED ROTA COVERING HOSPITAL APPOINTMENTS AND DAILY CHECK-INS, RATHER THAN EACH OF US TRYING TO HELP WHENEVER WE CAN AND SOMETIMES OVERLAPPING OR MISSING GAPS.",
+                "SUBJECT: WORKING OUT A CARE ROTA TOGETHER FOR MUM",
+                "LOVE TO YOU BOTH,\nEMILY",
+                "DEAR TOM AND LOUISE,"
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
-                0
+                3,
+                0,
+                2
             ],
-            "hint": "Force majeure event and contract reference are in the subject. 'Formally invokes', contract reference, qualifying event (COVID-19), and performance prevention are in the body.",
-            "explanation": "The three elements of a valid force majeure notification: the clause is formally invoked, the qualifying event (COVID-19) is identified, and the causal link to performance impossibility is stated. All three must appear for the notification to be contractually valid."
+            "hint": "A practical, caring purpose is signalled in the subject; siblings are addressed together by name; the specific situation and a clear, organised proposal are in the body; the closing conveys family love.",
+            "explanation": "Proposing a 'shared rota' rather than informal help acknowledges that good intentions alone can lead to gaps or overlaps during a genuinely difficult time. Framing the plan as helping 'us all, and her' keeps the focus on practical support for the parent while acknowledging the toll on the whole family."
         },
         {
             "id": "WRT_WRITINGEMAIL_L168_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a government department requesting pandemic emergency indemnification.",
+            "prompt": "Write an eloquent email requesting a formal case conference to review a complex, ongoing care situation for a family member.",
             "options": [
-                "NEXUS HEALTHCARE REQUESTS FORMAL GOVERNMENT INDEMNIFICATION FOR CLINICAL NEGLIGENCE CLAIMS ARISING FROM PANDEMIC-RELATED CARE DECISIONS MADE IN EXTRAORDINARY CIRCUMSTANCES DURING THE COVID-19 EMERGENCY.",
-                "DEAR DEPARTMENT OF HEALTH,",
-                "YOURS SINCERELY,\nCHIEF EXECUTIVE, NEXUS HEALTHCARE",
-                "SUBJECT: PANDEMIC INDEMNITY REQUEST - HEALTHCARE SERVICES CONTRACT REF: NHS-2020-0991"
+                "SUBJECT: REQUEST FOR A CASE CONFERENCE - MY FATHER'S ONGOING CARE",
+                "DEAR CARE COORDINATION TEAM,",
+                "YOURS FAITHFULLY,\nPIOTR ZIELINSKI",
+                "AS MY FATHER IS NOW BEING SEEN BY THREE DIFFERENT SPECIALISTS WHO DO NOT APPEAR TO BE COMMUNICATING WITH ONE ANOTHER, WE WOULD BE GRATEFUL IF A FORMAL CASE CONFERENCE COULD BE ARRANGED SO THAT EVERYONE INVOLVED IN HIS CARE CAN AGREE A SINGLE, COORDINATED PLAN GOING FORWARD."
             ],
             "correctOrder": [
-                3,
-                1,
                 0,
+                1,
+                3,
                 2
             ],
-            "hint": "Indemnity type and contract are in the subject. Specific liability type (clinical negligence), circumstance qualifier (pandemic extraordinary conditions), and indemnity basis are in the body.",
-            "explanation": "Healthcare providers seeking pandemic indemnification argue that clinical decisions made under pandemic resource constraints should not be assessed against normal negligence standards. Government indemnity acknowledges that extraordinary circumstances require extraordinary risk allocation."
+            "hint": "The formal request is clear in the subject; the care team is addressed by role, not name; the specific coordination problem and its practical remedy are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Identifying the precise problem - three specialists 'not communicating with one another' - gives the request a clear, actionable justification rather than a general worry about care quality. Asking for 'a single, coordinated plan' shows exactly what a successful outcome from the case conference would look like."
         },
         {
             "id": "WRT_WRITINGEMAIL_L168_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a pandemic preparedness agency proposing a framework for future contractual pandemic clauses.",
+            "prompt": "Write a compassionate but clear email advocating for a family member's stated care preferences to be respected by a care team.",
             "options": [
-                "NEXUS CONSULTING PROPOSES A STANDARD 'PANDEMIC PREPAREDNESS CLAUSE' FOR GOVERNMENT CONTRACTS - INCORPORATING PRE-AGREED FORCE MAJEURE TRIGGERS, GOVERNMENT INDEMNITY THRESHOLDS, AND COST-SHARING MECHANISMS.",
-                "YOURS SINCERELY,\nCHIEF LEGAL OFFICER, NEXUS CONSULTING",
-                "DEAR LEGAL POLICY TEAM,",
-                "SUBJECT: PANDEMIC PREPAREDNESS CLAUSE PROPOSAL - STANDARD CONTRACT TEMPLATE"
+                "SUBJECT: MAKING SURE MY MOTHER'S WISHES ARE CLEARLY UNDERSTOOD",
+                "WITH GRATITUDE FOR YOUR CARE,\nHANNAH OKAFOR",
+                "DEAR CARE TEAM,",
+                "MY MOTHER HAS BEEN VERY CLEAR THAT SHE WOULD PREFER TO REMAIN AT HOME FOR AS LONG AS POSSIBLE, WITH ADDITIONAL SUPPORT BROUGHT IN RATHER THAN MOVING INTO RESIDENTIAL CARE, AND WE WOULD BE GRATEFUL IF THIS COULD BE CLEARLY RECORDED AND CONSIDERED IN ANY FUTURE PLANNING DISCUSSIONS."
             ],
             "correctOrder": [
-                3,
-                2,
                 0,
+                2,
+                3,
                 1
             ],
-            "hint": "Proposal type and target are in the subject. Three clause components - force majeure triggers, indemnity thresholds, and cost-sharing - are in the body - a complete pandemic preparedness contractual framework.",
-            "explanation": "A pandemic preparedness clause solves a drafting problem in government contracts: pandemic force majeure is now foreseeable (post-COVID), so clauses should pre-agree the triggers, indemnity thresholds, and cost-sharing rather than leaving these to negotiation during a crisis."
+            "hint": "A respectful, clear purpose is signalled in the subject; the care team is addressed by role, not name; the specific stated preference and a request for it to be formally recorded are in the body; the closing conveys genuine gratitude.",
+            "explanation": "Stating the preference as something the mother 'has been very clear' about centres her own voice and wishes, not just the family's opinion on her behalf. Asking for this to be 'clearly recorded' ensures the preference is formally documented and carries weight in future care decisions, not just remembered informally."
         },
         {
             "id": "WRT_WRITINGEMAIL_L169_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a space resources company proposing a mining rights framework for asteroid resources.",
+            "prompt": "Write a masterful, persuasive email proposing to convert a successful side business into a full-time venture, to a potential partner.",
             "options": [
-                "YOURS SINCERELY,\nCHIEF LEGAL OFFICER, NEXUS SPACE",
-                "NEXUS SPACE PROPOSES A BILATERAL AGREEMENT WITH YOUR ORGANISATION ESTABLISHING A COOPERATIVE ASTEROID MINING FRAMEWORK CONSISTENT WITH THE OUTER SPACE TREATY'S NON-APPROPRIATION PRINCIPLE.",
-                "SUBJECT: ASTEROID MINING RIGHTS PROPOSAL - OUTER SPACE TREATY COMPLIANT FRAMEWORK",
-                "DEAR LEGAL AFFAIRS DIRECTOR,"
+                "WITH GENUINE EXCITEMENT FOR WHAT'S NEXT,\nDIMITRI PAPADOPOULOS",
+                "SUBJECT: READY TO TAKE THIS FULL-TIME - WOULD YOU JOIN ME?",
+                "AFTER TWO YEARS RUNNING THIS ALONGSIDE MY FULL-TIME JOB, THE CANDLE BUSINESS HAS GROWN TO A POINT WHERE I CAN NO LONGER GIVE IT THE ATTENTION IT DESERVES PART-TIME, AND GIVEN YOUR BACKGROUND IN RETAIL OPERATIONS, I THINK WE COULD BUILD SOMETHING REMARKABLE TOGETHER IF YOU WOULD CONSIDER JOINING ME FULL-TIME.",
+                "DEAR SAMUEL,"
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
+                3,
+                2,
                 0
             ],
-            "hint": "Mining rights type and treaty reference are in the subject. Bilateral agreement, cooperative framework, and OST non-appropriation compliance are in the body - an international space law compliance framework.",
-            "explanation": "The Outer Space Treaty (1967) prohibits national appropriation of outer space resources, but the US Commercial Space Launch Competitiveness Act (2015) allows companies to own extracted resources. A bilateral cooperative framework navigates this ambiguity."
+            "hint": "A confident, inviting proposal is signalled in the subject; the potential partner is addressed by first name; the track record and a specific, complementary reason for partnership are in the body; the closing conveys genuine excitement.",
+            "explanation": "Citing the specific constraint that prompted the decision - the business has outgrown being part-time - grounds an ambitious pitch in genuine, demonstrated need. Naming the partner's specific relevant background shows this is a considered invitation to the right person, not a generic search for anyone willing to join."
         },
         {
             "id": "WRT_WRITINGEMAIL_L169_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a national space agency requesting a domestic space mining licence.",
+            "prompt": "Write an eloquent, persuasive email securing a significant venue partnership for a major charitable event.",
             "options": [
-                "NEXUS SPACE APPLIES FOR A DOMESTIC SPACE RESOURCE MINING LICENCE UNDER THE SPACE INDUSTRY ACT 2018 FOR AN ASTEROID PROSPECTING MISSION TARGETING NEAR-EARTH ASTEROID 2019-ALPHA.",
-                "DEAR LICENSING AUTHORITY,",
-                "YOURS SINCERELY,\nCHIEF EXECUTIVE, NEXUS SPACE",
-                "SUBJECT: SPACE RESOURCE MINING LICENCE APPLICATION - NEXUS SPACE ASTEROID MISSION"
+                "YOUR HALL'S BEAUTIFUL HIGH CEILINGS AND HISTORIC CHARACTER WOULD BE THE PERFECT BACKDROP FOR OUR ANNUAL FUNDRAISING GALA, WHICH LAST YEAR RAISED OVER £40,000 FOR LOCAL FAMILIES, AND WE WOULD BE DELIGHTED TO FEATURE YOUR VENUE PROMINENTLY ACROSS ALL OUR MARKETING AND MEDIA COVERAGE.",
+                "WITH HOPE FOR A WONDERFUL PARTNERSHIP,\nWENDY ACHTERBERG",
+                "DEAR MS FAIRWEATHER,",
+                "SUBJECT: WOULD YOU HOST THE MOST IMPORTANT NIGHT OF OUR YEAR?"
             ],
             "correctOrder": [
                 3,
-                1,
+                2,
                 0,
-                2
+                1
             ],
-            "hint": "Licence type and mission are in the subject. Domestic licence application, statutory basis (Space Industry Act 2018), mission type, and target asteroid are in the body.",
-            "explanation": "The Space Industry Act 2018 enables UK companies to obtain space activity licences. A 'prospecting mission' licence precedes an extraction licence - establishing the legal and commercial precedent for asteroid resource rights under UK domestic law."
+            "hint": "A flattering, specific opening is in the subject; the venue owner is addressed formally by name; a specific compliment, proven impact, and a mutual benefit are in the body; the closing conveys genuine hope.",
+            "explanation": "Complimenting specific, tangible features of the venue - 'high ceilings and historic character' - shows genuine appreciation rather than a generic pitch sent to every venue in town. Citing the exact amount raised last year gives the venue owner concrete evidence of the event's scale and the exposure they would receive."
         },
         {
             "id": "WRT_WRITINGEMAIL_L169_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to an international space law body proposing amendments to the Outer Space Treaty.",
+            "prompt": "Write a sophisticated email negotiating the terms of a complex, high-value freelance consulting contract.",
             "options": [
-                "NEXUS SPACE SUBMITS A PROPOSAL FOR CONSIDERATION BY COPUOS THAT THE OUTER SPACE TREATY BE AMENDED TO PERMIT COMMERCIAL ENTITIES TO ACQUIRE PROPERTY RIGHTS OVER EXTRACTED SPACE RESOURCES.",
-                "YOURS SINCERELY,\nCHIEF LEGAL OFFICER, NEXUS SPACE",
-                "DEAR UN COMMITTEE ON THE PEACEFUL USES OF OUTER SPACE,",
-                "SUBJECT: OUTER SPACE TREATY AMENDMENT PROPOSAL - SPACE RESOURCES EXTRACTION RIGHTS"
+                "HAVING CONSIDERED THE SCOPE YOU OUTLINED, I WOULD LIKE TO PROPOSE A DAY RATE OF £900 WITH A MINIMUM COMMITMENT OF EIGHT DAYS ACROSS THE PROJECT, PLUS A SEPARATE, SMALLER SUCCESS FEE TIED TO THE SPECIFIC COST SAVINGS WE IDENTIFY TOGETHER, SO THAT MY INCENTIVES ARE FULLY ALIGNED WITH YOURS.",
+                "DEAR MR OYELARAN,",
+                "SUBJECT: PROPOSED TERMS FOR THE STRATEGY CONSULTING ENGAGEMENT",
+                "BEST REGARDS,\nSAMUEL OTIENO"
             ],
             "correctOrder": [
-                3,
                 2,
+                1,
                 0,
-                1
+                3
             ],
-            "hint": "Amendment type and treaty are in the subject. COPUOS forum, amendment proposal, and specific property rights request are in the body - a formal international law reform proposal.",
-            "explanation": "COPUOS (Committee on the Peaceful Uses of Outer Space) is the UN body that oversees the OST. Proposing treaty amendment through COPUOS is the correct international law reform route - the body has 102 member states with voting power over treaty amendments."
+            "hint": "A confident, specific proposal is in the subject; the client is addressed by name; a clear rate structure and a compelling rationale for the incentive alignment are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Proposing a precise fee structure, including a minimum commitment, shows the terms have been carefully considered rather than left vague. Explaining the reasoning behind a success fee - aligning your incentives with the client's - is a sophisticated persuasive move that reframes your fee as evidence of confidence in your own value."
         },
         {
             "id": "WRT_WRITINGEMAIL_L170_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a cybersecurity authority alerting them to a quantum computing threat to encryption.",
+            "prompt": "Write an eloquent farewell email after a long, significant career, reflecting on what it has meant to you.",
             "options": [
-                "YOURS SINCERELY,\nCHIEF INFORMATION SECURITY OFFICER, NEXUS RESEARCH",
-                "NEXUS RESEARCH HAS IDENTIFIED THAT OUR CURRENT RSA-2048 ENCRYPTION INFRASTRUCTURE IS VULNERABLE TO QUANTUM ATTACKS ANTICIPATED WITHIN FIVE TO SEVEN YEARS - IMMEDIATE MIGRATION TO POST-QUANTUM CRYPTOGRAPHIC STANDARDS IS RECOMMENDED.",
-                "SUBJECT: QUANTUM COMPUTING CRYPTOGRAPHIC VULNERABILITY ALERT - URGENT",
-                "DEAR NATIONAL CYBER SECURITY CENTRE,"
+                "WITH LOVE AND LASTING GRATITUDE,\nCLEMENTINE ROSS",
+                "SUBJECT: AFTER THIRTY-FIVE YEARS, A FEW WORDS OF THANKS",
+                "WHEN I STARTED HERE THIRTY-FIVE YEARS AGO, I NEVER IMAGINED I WOULD SPEND MY WHOLE CAREER IN ONE PLACE, BUT THIS TEAM HAS FELT LESS LIKE A WORKPLACE AND MORE LIKE A SECOND FAMILY, AND I LEAVE CARRYING FAR MORE GRATITUDE THAN I COULD EVER PROPERLY PUT INTO WORDS.",
+                "DEAR EVERYONE,"
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
+                3,
+                2,
                 0
             ],
-            "hint": "Quantum threat and urgency are in the subject. Specific algorithm at risk (RSA-2048), attack timeline (5-7 years), and migration recommendation are in the body.",
-            "explanation": "RSA-2048 is vulnerable to Shor's algorithm running on a sufficiently large quantum computer. The 5-7 year timeline represents the current technical consensus on when cryptographically relevant quantum computers will emerge - making migration to NIST post-quantum standards urgent now."
+            "hint": "A milestone career length anchors the subject; the whole team is addressed warmly together; genuine reflection and heartfelt gratitude are in the body; the closing conveys deep, lasting warmth.",
+            "explanation": "Naming the exact career length ('thirty-five years') gives the farewell genuine weight and context for what follows. Describing the workplace as feeling like 'a second family' rather than simply thanking colleagues reflects the kind of deep, personal reflection that marks a truly meaningful career ending."
         },
         {
             "id": "WRT_WRITINGEMAIL_L170_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a financial institution's board presenting a post-quantum cryptography migration plan.",
+            "prompt": "Write a sophisticated, warm email formally transitioning long-term clients to a successor as you retire.",
             "options": [
-                "I PRESENT A THREE-YEAR MIGRATION PLAN TO NIST-APPROVED POST-QUANTUM CRYPTOGRAPHIC ALGORITHMS - PHASE 1 REPLACES RSA-2048 IN CUSTOMER AUTHENTICATION, PHASE 2 ADDRESSES INTERNAL SYSTEMS, AND PHASE 3 COVERS LEGACY INFRASTRUCTURE.",
-                "DEAR TECHNOLOGY BOARD,",
-                "YOURS SINCERELY,\nCHIEF INFORMATION SECURITY OFFICER",
-                "SUBJECT: POST-QUANTUM CRYPTOGRAPHY MIGRATION PLAN - THREE-YEAR IMPLEMENTATION"
+                "WITH DEEP GRATITUDE FOR YOUR TRUST,\nNNAMDI EZEALOR",
+                "AS I PREPARE TO RETIRE AT THE END OF THIS MONTH, I WANTED TO PERSONALLY INTRODUCE YOU TO OLIVIA, WHO WILL BE TAKING OVER YOUR ACCOUNT AND WHO I HAVE PERSONALLY MENTORED FOR THE PAST TWO YEARS - I HAVE NO DOUBT SHE WILL LOOK AFTER YOU AS CAREFULLY AS I HAVE TRIED TO OVER OUR FIFTEEN YEARS TOGETHER.",
+                "DEAR MRS OKONKWO,",
+                "SUBJECT: A PERSONAL INTRODUCTION, AND MY HEARTFELT THANKS"
             ],
             "correctOrder": [
                 3,
+                2,
                 1,
-                0,
-                2
+                0
             ],
-            "hint": "Migration type and duration are in the subject. Three phases with specific systems addressed are in the body - a board-level PQC migration roadmap.",
-            "explanation": "NIST approved four post-quantum cryptographic algorithms in 2024 (CRYSTALS-Kyber, CRYSTALS-Dilithium, etc.). A phased migration - customer-facing first, then internal, then legacy - prioritises the highest-impact and most-exposed systems while managing migration complexity."
+            "hint": "A personal, warm transition is signalled in the subject; the long-term client is addressed formally by name; the timing, a personal introduction, and genuine reassurance are in the body; the closing conveys heartfelt gratitude.",
+            "explanation": "Making a 'personal introduction' rather than a generic notice reassures a long-term client that the relationship, not just the account, is being carefully handed over. Mentioning that you 'personally mentored' the successor for two years gives the client genuine confidence in the continuity of care they can expect."
         },
         {
             "id": "WRT_WRITINGEMAIL_L170_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a key supplier requesting confirmation of their post-quantum cryptography readiness.",
+            "prompt": "Write an eloquent email marking the end of a significant multi-year collaboration with genuine warmth.",
             "options": [
-                "AS PART OF OUR SUPPLY CHAIN QUANTUM RISK ASSESSMENT, WE REQUEST CONFIRMATION OF YOUR ORGANISATION'S POST-QUANTUM CRYPTOGRAPHY READINESS TIMELINE AND THE CRYPTOGRAPHIC ALGORITHMS CURRENTLY IN USE.",
-                "YOURS SINCERELY,\nCHIEF INFORMATION SECURITY OFFICER, NEXUS CONSULTING",
-                "DEAR CHIEF INFORMATION SECURITY OFFICER,",
-                "SUBJECT: PQC READINESS ASSESSMENT REQUEST - SUPPLY CHAIN CRYPTOGRAPHIC RISK"
+                "WITH LASTING FRIENDSHIP AND PRIDE,\nBEATRIZ MONTEIRO",
+                "DEAR ELENA,",
+                "AS WE CLOSE OUT THIS FINAL PHASE OF OUR COLLABORATION, I WANTED TO PAUSE AND REFLECT ON HOW MUCH WE HAVE BUILT TOGETHER - FROM A ROUGH SKETCH ON A NAPKIN FOUR YEARS AGO TO SOMETHING NOW USED BY THOUSANDS OF PEOPLE EVERY DAY, AND I WILL ALWAYS BE PROUD OF WHAT WE CREATED.",
+                "SUBJECT: WHAT AN INCREDIBLE FOUR YEARS THIS HAS BEEN"
             ],
             "correctOrder": [
                 3,
+                1,
                 2,
-                0,
-                1
+                0
             ],
-            "hint": "Assessment type and supply chain context are in the subject. Supply chain risk framing, two specific questions (timeline and algorithms in use) are in the body - a supply chain PQC due diligence request.",
-            "explanation": "Supply chain cryptographic risk is a systemic vulnerability - a supplier using vulnerable RSA encryption creates an entry point for attackers. Asking for both the timeline (when they will migrate) and current algorithms (what is at risk now) gives the full risk picture."
+            "hint": "Genuine warmth and reflection open the subject; the collaborator is addressed by first name; a vivid contrast between humble origins and the final achievement is in the body; the closing conveys lasting friendship.",
+            "explanation": "Contrasting the origin - 'a rough sketch on a napkin' - with the eventual scale creates a genuinely moving sense of the journey shared. Ending on 'always be proud', rather than simply saying goodbye, gives the collaboration's conclusion the emotional significance it deserves after four meaningful years."
         }
     ]
 }

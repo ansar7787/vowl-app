@@ -8,630 +8,630 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write a formal email to a financial regulator raising concerns about algorithmic trading practices.",
+            "prompt": "Write an email as a self-employed person formally contesting an error in your tax assessment.",
             "options": [
-                "WE ARE REPORTING OBSERVED TRADING PATTERNS IN NEXUS SECURITIES THAT WE BELIEVE MAY CONSTITUTE ALGORITHMIC MARKET MANIPULATION UNDER ARTICLE 12 OF THE MARKET ABUSE REGULATION.",
-                "YOURS SINCERELY,\nCHIEF COMPLIANCE OFFICER, NEXUS BANK",
-                "DEAR MARKET OVERSIGHT TEAM,",
-                "SUBJECT: ALGORITHMIC TRADING CONCERN - POTENTIAL MARKET MANIPULATION - FCA NOTIFICATION"
+                "DEAR ASSESSMENTS TEAM,",
+                "SUBJECT: FORMAL DISPUTE - ASSESSMENT REFERENCE TX-77213",
+                "YOUR ASSESSMENT APPEARS TO HAVE COUNTED A CLIENT PAYMENT TWICE, ONCE UNDER THE INVOICE DATE AND ONCE UNDER THE PAYMENT DATE, WHICH HAS INFLATED MY DECLARED INCOME BY APPROXIMATELY £3,000, SO I WOULD LIKE TO FORMALLY REQUEST A CORRECTION BASED ON THE BANK STATEMENTS I HAVE ATTACHED.",
+                "YOURS FAITHFULLY,\nMARGARET OKONJO"
             ],
             "correctOrder": [
-                3,
-                2,
+                1,
                 0,
-                1
+                2,
+                3
             ],
-            "hint": "Trading type and regulatory concern are in the subject. Observed conduct, belief threshold, and specific MAR article are in the body - a formal market abuse notification using precise regulatory language.",
-            "explanation": "MAR Article 12 defines market manipulation. Reporting 'observed patterns we believe may constitute' - not 'do constitute' - is the correct standard of certainty for a suspicious transaction report. Overclaiming (saying definitively) could expose the reporter to liability."
+            "hint": "The reference number anchors the formal subject; the assessments team is addressed by role, not name; the specific error and the supporting evidence are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Identifying the precise mechanism of the error - counting one payment under two different dates - shows genuine understanding of the mistake rather than a general complaint about the total. Attaching bank statements as evidence gives the authority everything needed to verify and correct the figure quickly."
         },
         {
             "id": "WRT_WRITINGEMAIL_L151_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to an algorithm development team directing them to disable a trading algorithm pending review.",
+            "prompt": "Write an email negotiating a structured payment plan with a tax authority for a genuine outstanding balance.",
             "options": [
-                "YOURS SINCERELY,\nCHIEF RISK OFFICER",
-                "WITH IMMEDIATE EFFECT, SUSPEND ALL TRADING ACTIVITY UNDER ALGORITHM NEXUS-HFT-7 PENDING THE OUTCOME OF A COMPLIANCE REVIEW THAT HAS BEEN INITIATED BY THE CHIEF COMPLIANCE OFFICER.",
-                "SUBJECT: URGENT - SUSPEND ALGORITHM NEXUS-HFT-7 IMMEDIATELY PENDING COMPLIANCE REVIEW",
-                "DEAR QUANTITATIVE TRADING TEAM,"
+                "DEAR DEBT MANAGEMENT TEAM,",
+                "YOURS FAITHFULLY,\nADAEZE NWACHUKWU",
+                "I FULLY ACCEPT THE OUTSTANDING BALANCE OF £4,200 IS OWED, BUT GIVEN A RECENT DROP IN INCOME, I WOULD LIKE TO PROPOSE CLEARING IT THROUGH TEN MONTHLY INSTALMENTS OF £420 RATHER THAN IN ONE PAYMENT, WHICH I CAN COMMIT TO WITHOUT MISSING ANY OTHER OBLIGATIONS.",
+                "SUBJECT: PROPOSED PAYMENT PLAN FOR OUTSTANDING BALANCE - REF TX-40218"
             ],
             "correctOrder": [
-                2,
                 3,
-                1,
-                0
+                0,
+                2,
+                1
             ],
-            "hint": "Urgency, algorithm name, and suspension reason are in the subject. 'Immediate effect', specific algorithm, compliance review basis, and CCO authority are in the body - a formal trading halt instruction.",
-            "explanation": "'With immediate effect' is the instruction that triggers immediate cessation of all trading activity. Naming the specific algorithm ('NEXUS-HFT-7') prevents any confusion about which system should be suspended. The CCO's authority for the review is cited for governance clarity."
+            "hint": "A cooperative tone is signalled in the subject; the debt management team is addressed by role, not name; acceptance of the debt and a specific, realistic instalment plan are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Accepting the debt outright ('I fully accept the outstanding balance is owed') builds credibility before proposing an alternative payment structure. Offering an exact, calculated instalment plan rather than a vague request for 'more time' shows this is a genuine, considered proposal."
         },
         {
             "id": "WRT_WRITINGEMAIL_L151_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a regulator providing an account of a self-reported algorithmic trading concern.",
+            "prompt": "Write an email formally requesting a review of a significant pension decision you believe was calculated incorrectly.",
             "options": [
-                "NEXUS BANK SELF-REPORTS UNDER FCA PRINCIPLE 11 (OPEN AND COOPERATIVE WITH THE REGULATOR) A SUSPECTED ALGORITHMIC TRADING IRREGULARITY - THE ALGORITHM HAS BEEN SUSPENDED AND AN INTERNAL INVESTIGATION IS UNDERWAY.",
-                "DEAR SUPERVISORY TEAM,",
-                "YOURS SINCERELY,\nCHIEF COMPLIANCE OFFICER, NEXUS BANK",
-                "SUBJECT: SELF-REPORTING UNDER FCA PRINCIPLE 11 - ALGORITHMIC TRADING IRREGULARITY"
+                "SUBJECT: REQUEST FOR REVIEW - PENSION CALCULATION REFERENCE PN-55021",
+                "THE STATEMENT I RECEIVED APPEARS TO HAVE USED MY PART-TIME SALARY FROM 2019 RATHER THAN THE HIGHER FULL-TIME SALARY I HAD BEEN EARNING SINCE 2021, WHICH WOULD SIGNIFICANTLY AFFECT MY FINAL ENTITLEMENT, SO I WOULD BE GRATEFUL IF THIS COULD BE FORMALLY REVIEWED.",
+                "DEAR PENSIONS REVIEW TEAM,",
+                "YOURS FAITHFULLY,\nDESMOND ATKINSON"
             ],
             "correctOrder": [
-                3,
-                1,
                 0,
-                2
+                2,
+                1,
+                3
             ],
-            "hint": "Self-reporting and FCA principle are in the subject. Principle citation, irregularity type, suspension action, and investigation commencement are in the body - a textbook Principle 11 self-report.",
-            "explanation": "FCA Principle 11 requires firms to be 'open and cooperative with the FCA'. Self-reporting before the regulator discovers an issue is both a regulatory obligation and a mitigating factor in enforcement proceedings. Citing the principle by number demonstrates regulatory literacy."
+            "hint": "The reference number is central to the formal subject; the review team is addressed by role, not name; the specific discrepancy and its significant consequence are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Pinpointing the exact figures used in error - the wrong year's salary - gives the review team a precise, actionable starting point rather than a vague sense that the number looks wrong. Noting that this would 'significantly affect' your final entitlement justifies the seriousness of a formal review."
         },
         {
             "id": "WRT_WRITINGEMAIL_L152_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to in-house counsel requesting legal advice on establishing an SPV for structured finance.",
+            "prompt": "Write an email formally proposing a significant strategic change in direction to a co-founder.",
             "options": [
-                "PLEASE ADVISE ON THE OPTIMAL LEGAL STRUCTURE FOR AN SPV TO ISSUE ASSET-BACKED SECURITIES COLLATERALISED BY OUR TRADE RECEIVABLES PORTFOLIO - FOCUS ON BANKRUPTCY REMOTENESS AND TAX EFFICIENCY.",
-                "YOURS SINCERELY,\nCHIEF FINANCIAL OFFICER",
-                "DEAR STRUCTURED FINANCE COUNSEL,",
-                "SUBJECT: LEGAL ADVICE REQUEST - SPV ESTABLISHMENT FOR STRUCTURED FINANCE TRANSACTION"
+                "HAVING ANALYSED OUR LAST TWO YEARS OF SALES DATA, I BELIEVE WE SHOULD SERIOUSLY CONSIDER SHIFTING FROM ONE-OFF SALES TO A SUBSCRIPTION MODEL, AS OUR REPEAT CUSTOMERS ALREADY BEHAVE LIKE SUBSCRIBERS INFORMALLY, AND I WOULD LIKE TO WALK YOU THROUGH THE NUMBERS BEFORE OUR NEXT PLANNING MEETING.",
+                "SUBJECT: A PROPOSAL WORTH SERIOUS DISCUSSION - MOVING TO SUBSCRIPTIONS",
+                "DEAR JULIA,",
+                "BEST REGARDS,\nFIONA MACLEOD"
             ],
             "correctOrder": [
-                3,
+                1,
                 2,
                 0,
-                1
+                3
             ],
-            "hint": "Transaction type and SPV purpose are in the subject. Asset type (trade receivables), target structure (ABS), and two key legal parameters (bankruptcy remoteness, tax efficiency) are in the body.",
-            "explanation": "Two critical legal requirements for an ABS SPV - bankruptcy remoteness (the SPV's assets cannot be claimed by the originator's creditors) and tax efficiency (minimising withholding taxes on distributions) - must be addressed simultaneously in structure design."
+            "hint": "A serious strategic proposal is signalled in the subject; the co-founder is addressed by first name; the evidence behind the idea and an offer to explain further are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Grounding the proposal in 'two years of sales data' rather than instinct gives a co-founder genuine reason to take a major strategic idea seriously. Observing that customers 'already behave like subscribers informally' is a compelling, evidence-based argument that the shift would build on existing behaviour, not fight against it."
         },
         {
             "id": "WRT_WRITINGEMAIL_L152_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to investors in an ABS transaction providing a monthly investor report.",
+            "prompt": "Write an email negotiating exclusive supply terms with a growing business partner, in general commercial terms.",
             "options": [
-                "YOURS SINCERELY,\nTRUSTEE, NEXUS TRADE RECEIVABLES ABS",
-                "THE NOVEMBER 2024 INVESTOR REPORT IS ATTACHED - THE COLLATERAL POOL PERFORMANCE SHOWS AN ANNUALISED DEFAULT RATE OF 1.2%, SIXTY-DAY DELINQUENCY OF 0.8%, AND EXCESS SPREAD OF 3.4%.",
-                "SUBJECT: NEXUS TRADE RECEIVABLES ABS - MONTHLY INVESTOR REPORT: NOVEMBER 2024",
-                "DEAR NOTEHOLDER,"
+                "GIVEN HOW WELL OUR PRODUCTS HAVE SOLD THROUGH YOUR STORES OVER THE PAST YEAR, WE WOULD LIKE TO PROPOSE AN EXCLUSIVE SUPPLY ARRANGEMENT FOR YOUR REGION IN EXCHANGE FOR A GUARANTEED MINIMUM ORDER OF 500 UNITS PER QUARTER, WHICH WOULD ALLOW US TO PLAN PRODUCTION WITH MORE CONFIDENCE.",
+                "BEST REGARDS,\nTARIQ HUSSAIN",
+                "SUBJECT: PROPOSAL FOR AN EXCLUSIVE SUPPLY ARRANGEMENT",
+                "DEAR MR ASANTE,"
             ],
             "correctOrder": [
                 2,
                 3,
-                1,
-                0
+                0,
+                1
             ],
-            "hint": "Transaction name and report month are in the subject. Three performance metrics - default rate, delinquency, and excess spread - are in the body. The trustee issues the mandatory investor report.",
-            "explanation": "Three key ABS performance metrics - default rate (1.2%), 60-day delinquency (0.8%), and excess spread (3.4%) - give noteholders the information needed to monitor credit quality. Excess spread is the buffer protecting noteholders from losses."
+            "hint": "The specific proposal is in the subject; the business partner is addressed by name; the track record and a clear, mutually beneficial exchange are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Citing the products' strong performance 'over the past year' shows the exclusivity proposal is based on proven success, not speculation. Framing the exchange clearly - exclusivity for a guaranteed minimum order - gives both sides a concrete, balanced basis for negotiation."
         },
         {
             "id": "WRT_WRITINGEMAIL_L152_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a rating agency requesting an update to an ABS rating following improved collateral performance.",
+            "prompt": "Write a persuasive email to attract a talented candidate to join your growing small business.",
             "options": [
-                "WE REQUEST A RATING REVIEW FOR THE NEXUS TRADE RECEIVABLES ABS FOLLOWING TWELVE CONSECUTIVE MONTHS OF OUTPERFORMANCE - DEFAULTS HAVE RUN AT 40% BELOW THE ORIGINAL STRESS CASE.",
-                "DEAR RATING COMMITTEE,",
-                "YOURS SINCERELY,\nCHIEF FINANCIAL OFFICER",
-                "SUBJECT: RATING REVIEW REQUEST - NEXUS TRADE RECEIVABLES ABS PERFORMANCE UPDATE"
+                "BEST REGARDS,\nCELESTE DUBOIS",
+                "DEAR AMARA,",
+                "SUBJECT: WE WOULD LOVE YOU TO CONSIDER JOINING US",
+                "HAVING FOLLOWED YOUR WORK ON THE CITY COUNCIL'S DIGITAL PROJECTS FOR SOME TIME, I THINK YOU WOULD BE AN EXCEPTIONAL FIT FOR OUR SMALL BUT GROWING TEAM, AND WHILE WE CAN'T YET MATCH A LARGE COMPANY'S SALARY, WE CAN OFFER GENUINE OWNERSHIP OVER PRODUCTS THAT REACH THOUSANDS OF USERS WITHIN MONTHS."
             ],
             "correctOrder": [
-                3,
+                2,
                 1,
-                0,
-                2
+                3,
+                0
             ],
-            "hint": "Rating review purpose and transaction are in the subject. Duration of outperformance and specific improvement versus stress case are in the body - compelling evidence for a rating upgrade.",
-            "explanation": "'40% below the original stress case' is the most powerful possible performance argument - it shows the collateral has significantly exceeded even the pessimistic scenario modelled at deal inception. Twelve consecutive months establishes this is a trend, not a single good month."
+            "hint": "A genuine, personalised invitation is in the subject; the candidate is addressed by first name; specific admiration and an honest trade-off (salary versus ownership) are in the body; 'BEST REGARDS' closes warmly.",
+            "explanation": "Referencing specific, verifiable work ('the city council's digital projects') shows genuine research rather than a generic recruitment message. Being honest about what a small business can't offer, alongside what it genuinely can, builds far more credibility than an overstated pitch."
         },
         {
             "id": "WRT_WRITINGEMAIL_L153_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a hospital board requesting approval for a merger with a competing NHS trust.",
+            "prompt": "Write an email formally requesting an urgent case review for a medical referral that has been seriously delayed.",
             "options": [
-                "I AM SEEKING BOARD APPROVAL TO SUBMIT THE PHASE 1 MERGER NOTIFICATION TO THE CMA FOR THE PROPOSED MERGER WITH NORTHGATE NHS TRUST, WHICH WILL CREATE A COMBINED TRUST SERVING 800,000 PATIENTS.",
-                "YOURS SINCERELY,\nCHIEF EXECUTIVE, NEXUS HEALTH NHS TRUST",
-                "DEAR BOARD OF GOVERNORS,",
-                "SUBJECT: BOARD APPROVAL REQUEST - MERGER WITH NORTHGATE NHS TRUST: PHASE 1 CMA FILING"
+                "SUBJECT: URGENT REVIEW REQUESTED - REFERRAL DELAYED SIX MONTHS",
+                "DEAR REFERRALS TEAM,",
+                "YOURS FAITHFULLY,\nKWABENA MENSAH",
+                "MY GP REFERRED ME FOR A CARDIOLOGY ASSESSMENT SIX MONTHS AGO, WELL BEYOND YOUR STATED EIGHTEEN-WEEK TARGET, AND AS MY SYMPTOMS HAVE SINCE WORSENED, I WOULD LIKE TO FORMALLY REQUEST THAT MY CASE BE REVIEWED URGENTLY RATHER THAN LEFT ON THE STANDARD WAITING LIST."
             ],
             "correctOrder": [
-                3,
-                2,
                 0,
-                1
+                1,
+                3,
+                2
             ],
-            "hint": "Merger parties and CMA phase are in the subject. Board approval request, CMA notification purpose, and combined patient population impact are in the body.",
-            "explanation": "NHS mergers require CMA approval as well as NHS England/ICB approval - the two regulatory tracks are separate. Framing the merger as serving 800,000 patients positions the strategic rationale as a public health benefit."
+            "hint": "Urgency and the delay are both signalled in the subject; the referrals team is addressed by role, not name; the timeline, the missed target, and the change in your condition are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Referencing the service's own 'eighteen-week target' shows the delay is measured against their stated standard, not just your personal frustration. Noting that symptoms have 'since worsened' gives a clear, clinical reason for urgent prioritisation rather than simply requesting to be seen sooner."
         },
         {
             "id": "WRT_WRITINGEMAIL_L153_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to the CMA providing the Phase 1 voluntary NHS trust merger notification.",
+            "prompt": "Write a sophisticated email appealing for continued funding of an ongoing medical treatment.",
             "options": [
-                "YOURS SINCERELY,\nLEGAL ADVISER TO THE MERGING TRUSTS",
-                "NEXUS HEALTH NHS TRUST AND NORTHGATE NHS TRUST SUBMIT THIS VOLUNTARY PHASE 1 MERGER NOTIFICATION AND ASSERT THAT THE MERGER WILL NOT RESULT IN A SUBSTANTIAL LESSENING OF COMPETITION IN HEALTHCARE MARKETS.",
-                "SUBJECT: VOLUNTARY PHASE 1 NOTIFICATION - NEXUS HEALTH AND NORTHGATE NHS TRUST MERGER",
-                "DEAR MERGERS CASE TEAM,"
+                "ALTHOUGH THE STANDARD COURSE OF SIX SESSIONS HAS ENDED, MY CONSULTANT'S LETTER, ENCLOSED, CONFIRMS THAT CONTINUED PHYSIOTHERAPY IS LIKELY TO PREVENT A MORE SERIOUS SURGICAL INTERVENTION LATER, SO I WOULD LIKE TO FORMALLY REQUEST THAT FUNDING BE EXTENDED FOR A FURTHER SIX SESSIONS.",
+                "YOURS FAITHFULLY,\nROISIN DELANEY",
+                "SUBJECT: APPEAL FOR CONTINUED FUNDING - ONGOING PHYSIOTHERAPY TREATMENT",
+                "DEAR FUNDING REVIEW PANEL,"
             ],
             "correctOrder": [
                 2,
                 3,
-                1,
-                0
+                0,
+                1
             ],
-            "hint": "Both trusts and notification type are in the subject. Voluntary notification, anti-SLC assertion, and healthcare market reference are in the body - the three key Phase 1 filing components.",
-            "explanation": "The substantive competition test for NHS mergers is the 'Substantial Lessening of Competition' standard. Making the anti-SLC assertion proactively in the notification is the standard opening position - it puts the argument before the CMA from the outset."
+            "hint": "The specific request is central to the subject; the funding panel is addressed by role, not name; professional supporting evidence and the long-term justification are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Enclosing a consultant's letter as evidence moves the appeal beyond personal opinion into professional medical judgement. Framing continued treatment as preventing 'a more serious surgical intervention later' gives the panel a strong, practical reason - both clinical and financial - to approve the extension."
         },
         {
             "id": "WRT_WRITINGEMAIL_L153_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to CMA offering a behavioural remedy to secure Phase 1 clearance.",
+            "prompt": "Write a formal email advocating for a change in care approach for a family member with a long-term health condition.",
             "options": [
-                "TO ADDRESS THE CMA'S PHASE 1 CONCERNS REGARDING PATIENT CHOICE, WE OFFER BEHAVIOURAL UNDERTAKINGS - SPECIFICALLY, TO MAINTAIN SEPARATE ACCIDENT AND EMERGENCY DEPARTMENTS FOR THREE YEARS POST-MERGER.",
-                "DEAR MERGERS CASE TEAM,",
-                "YOURS SINCERELY,\nLEGAL ADVISER TO THE MERGING TRUSTS",
-                "SUBJECT: REMEDY PROPOSAL - BEHAVIOURAL UNDERTAKINGS OFFERED TO SECURE CMA CLEARANCE"
+                "SUBJECT: REQUESTING A REVIEW OF MY MOTHER'S CARE APPROACH",
+                "YOURS FAITHFULLY,\nVIKRAM MALHOTRA",
+                "DEAR CARE COORDINATION TEAM,",
+                "HAVING OBSERVED MY MOTHER CLOSELY OVER THE PAST FEW MONTHS, WE BELIEVE HER CURRENT MEDICATION SCHEDULE, WHICH REQUIRES FOUR SEPARATE DAILY VISITS, COULD BE CONSOLIDATED INTO TWO WITHOUT COMPROMISING HER CARE, AND WE WOULD WELCOME A REVIEW WITH HER CONSULTANT TO DISCUSS THIS."
             ],
             "correctOrder": [
-                3,
-                1,
                 0,
-                2
+                2,
+                3,
+                1
             ],
-            "hint": "Remedy type and clearance purpose are in the subject. CMA concern, specific remedy, and time-limited commitment are in the body - a standard CMA remedy offer.",
-            "explanation": "Behavioural undertakings (maintaining separate A&E departments) address the patient choice concern without requiring structural remedies (asset disposal). A three-year time limit makes the commitment more acceptable to the merging parties."
+            "hint": "The purpose is respectful and specific in the subject; the care team is addressed by role, not name; first-hand observation and a specific, reasoned suggestion are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Grounding the request in direct, sustained observation ('over the past few months') gives the care team genuine family insight rather than a passing concern. Proposing a specific, practical change - consolidating visits - while explicitly not compromising care shows the request is thoughtful, not simply about convenience."
         },
         {
             "id": "WRT_WRITINGEMAIL_L154_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a domestic intelligence authority requesting guidance on lawful interception of communications.",
+            "prompt": "Write a thoughtful, well-reasoned email discussing a major relocation decision that would affect a blended family.",
             "options": [
-                "PLEASE CONFIRM THE TECHNICAL REQUIREMENTS FOR COMPLIANCE WITH LAWFUL INTERCEPTION ORDERS UNDER THE TELECOMMUNICATIONS (INTERCEPTION AND PRIVACY) ACT 2016 FOR OUR PROPOSED NETWORK UPGRADE.",
-                "YOURS SINCERELY,\nCHIEF TECHNOLOGY OFFICER, NEXUS TELECOMS",
-                "DEAR TECHNICAL CAPABILITY TEAM,",
-                "SUBJECT: LAWFUL INTERCEPTION GUIDANCE REQUEST - TIPA 2016 COMPLIANCE"
+                "DEAR DAVID,",
+                "SUBJECT: THINKING THROUGH THE MANCHESTER OPPORTUNITY TOGETHER",
+                "I KNOW THE JOB OFFER IN MANCHESTER WOULD BE WONDERFUL FOR MY CAREER, BUT BEFORE WE DECIDE ANYTHING, I WANT US TO TALK PROPERLY ABOUT HOW A MOVE WOULD AFFECT YOUR CHILDREN'S SCHOOLING AND THEIR RELATIONSHIP WITH THEIR OTHER PARENT, AS THIS DECISION NEEDS TO WORK FOR ALL OF US, NOT JUST ME.",
+                "LOVE,\nHANNAH"
             ],
             "correctOrder": [
-                3,
-                2,
+                1,
                 0,
-                1
+                2,
+                3
             ],
-            "hint": "Act reference and guidance purpose are in the subject. Specific statutory basis, compliance context, and network upgrade trigger are in the body - a technical compliance enquiry to the appropriate authority.",
-            "explanation": "Telecoms operators have obligations to maintain technical capability for lawful interception. Clarifying requirements before a network upgrade prevents costly post-implementation modifications to achieve compliance."
+            "hint": "A collaborative, careful tone opens the subject; a partner is addressed by first name; genuine excitement balanced with concern for the whole family is in the body; 'LOVE' closes as a partner, not a formal contact.",
+            "explanation": "Naming a specific, real concern - schooling and the other parent's relationship with the children - shows genuine consideration for a blended family's complexity, not just personal ambition. Explicitly stating the decision 'needs to work for all of us' reframes a personal career opportunity as a shared family decision."
         },
         {
             "id": "WRT_WRITINGEMAIL_L154_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to legal counsel challenging an overbroad government data access request.",
+            "prompt": "Write an email formally requesting a reasoned exception within a standard visa or immigration process, in plain terms.",
             "options": [
-                "YOURS SINCERELY,\nCHIEF LEGAL OFFICER, NEXUS TELECOMS",
-                "WE ARE CHALLENGING THE SCOPE OF A GOVERNMENT DATA ACCESS REQUEST UNDER SECTION 94 OF THE TELECOMMUNICATIONS ACT 1984 AS DISPROPORTIONATE AND INSUFFICIENTLY SPECIFIC UNDER THE NECESSITY TEST.",
-                "SUBJECT: CHALLENGE TO GOVERNMENT DATA ACCESS REQUEST - DISPROPORTIONATE SCOPE",
-                "DEAR GOVERNMENT RELATIONS COUNSEL,"
+                "WHILE I UNDERSTAND THE STANDARD PROCESSING TIME IS TWELVE WEEKS, MY FATHER'S DETERIORATING HEALTH MEANS I NEED TO TRAVEL URGENTLY, SO I WOULD LIKE TO FORMALLY REQUEST THAT MY APPLICATION BE CONSIDERED FOR EXPEDITED PROCESSING ON COMPASSIONATE GROUNDS, WITH MEDICAL EVIDENCE ATTACHED.",
+                "YOURS FAITHFULLY,\nAGNIESZKA NOWAKOWSKA",
+                "DEAR CASEWORKER TEAM,",
+                "SUBJECT: REQUEST FOR CONSIDERATION OF EXCEPTIONAL CIRCUMSTANCES"
             ],
             "correctOrder": [
-                2,
                 3,
-                1,
-                0
+                2,
+                0,
+                1
             ],
-            "hint": "Challenge basis and statutory reference are in the subject. Section 94 reference, disproportionality argument, and necessity test invocation are in the body - a technically precise legal challenge.",
-            "explanation": "Section 94 of the Telecommunications Act 1984 gives the government broad data access powers. Challenging on 'disproportionality and insufficiently specific' grounds invokes the European Court of Human Rights necessity test, which requires requests to be targeted, not bulk."
+            "hint": "Formal, respectful language suits the subject; the casework team is addressed by role, not name; acknowledgement of the standard process and the specific compassionate grounds are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Acknowledging the 'standard processing time' first shows respect for the normal process before requesting an exception. Providing medical evidence directly supports the 'compassionate grounds' being claimed, giving the caseworker a concrete, verifiable basis to consider expediting the case."
         },
         {
             "id": "WRT_WRITINGEMAIL_L154_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a government authority confirming compliance with a lawful data disclosure order.",
+            "prompt": "Write an eloquent letter supporting a friend's residency application as a character reference.",
             "options": [
-                "NEXUS TELECOMS CONFIRMS COMPLIANCE WITH DISCLOSURE ORDER GO-2024-0441 AND HAS PROVIDED THE SPECIFIED DATA - WE CONFIRM THIS DISCLOSURE WAS MADE IN ACCORDANCE WITH OUR LEGAL OBLIGATIONS AND ALL APPLICABLE SAFEGUARDS.",
-                "DEAR HOME OFFICE TEAM,",
-                "YOURS SINCERELY,\nCHIEF LEGAL OFFICER, NEXUS TELECOMS",
-                "SUBJECT: DISCLOSURE COMPLIANCE CONFIRMATION - ORDER REF: GO-2024-0441"
+                "I HAVE KNOWN OLUWASEUN FOR OVER EIGHT YEARS AS A NEIGHBOUR AND FRIEND, AND IN THAT TIME I HAVE SEEN HIM VOLUNTEER AT OUR LOCAL FOOD BANK EVERY SINGLE WEEK, ORGANISE OUR STREET'S ANNUAL CLEAN-UP DAY, AND SUPPORT COUNTLESS NEIGHBOURS THROUGH DIFFICULT TIMES - I CANNOT THINK OF A MORE VALUABLE MEMBER OF OUR COMMUNITY.",
+                "YOURS FAITHFULLY,\nMARGARETHE HOFFMANN",
+                "SUBJECT: CHARACTER REFERENCE FOR OLUWASEUN ADEBAYO",
+                "DEAR CASEWORKER TEAM,"
             ],
             "correctOrder": [
+                2,
                 3,
-                1,
                 0,
-                2
+                1
             ],
-            "hint": "Compliance confirmation and order reference are in the subject. Order compliance, data provision, legal basis, and safeguards compliance are all confirmed in the body - a formal compliance confirmation to the requesting authority.",
-            "explanation": "Confirming both compliance and safeguards in the same letter creates a complete compliance audit trail. The safeguards reference ('all applicable safeguards') is important - it shows the company did not simply comply but did so in a rights-respecting manner."
+            "hint": "The applicant's full name anchors the subject; the caseworker team is addressed by role, not name; the length of acquaintance and specific, concrete examples of character are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Citing specific, verifiable actions - volunteering weekly, organising an annual event - is far more persuasive than general praise like 'a wonderful person'. Stating the exact length of the friendship establishes credibility as a genuine, long-term witness to the applicant's character."
         },
         {
             "id": "WRT_WRITINGEMAIL_L155_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a board establishing a whistleblowing policy framework.",
+            "prompt": "Write an email mediating a serious dispute between two community organisations sharing a resource, proposing fair terms.",
             "options": [
-                "I AM SEEKING AUDIT COMMITTEE APPROVAL FOR A REVISED SPEAK-UP POLICY INCORPORATING ANONYMOUS REPORTING CHANNELS, EXTERNAL WHISTLEBLOWER HOTLINE, AND WRITTEN NON-RETALIATION GUARANTEES FOR REPORTERS.",
-                "YOURS SINCERELY,\nCHIEF COMPLIANCE OFFICER",
-                "DEAR AUDIT COMMITTEE,",
-                "SUBJECT: BOARD APPROVAL REQUEST - SPEAK-UP POLICY AND WHISTLEBLOWING FRAMEWORK"
+                "DEAR BOTH GROUPS,",
+                "SUBJECT: A PROPOSED WAY TO SHARE THE HALL FAIRLY GOING FORWARD",
+                "HAVING LISTENED TO BOTH THE DRAMA SOCIETY AND THE YOUTH CLUB'S CONCERNS ABOUT HALL BOOKINGS, IT SEEMS THE REAL ISSUE IS THE LACK OF A CLEAR BOOKING SYSTEM RATHER THAN EITHER GROUP ACTING UNFAIRLY, SO I WOULD LIKE TO PROPOSE A SHARED ONLINE CALENDAR THAT BOTH GROUPS CAN ACCESS AND UPDATE DIRECTLY.",
+                "BEST REGARDS,\nLEANDRO SILVA"
             ],
             "correctOrder": [
-                3,
-                2,
+                1,
                 0,
-                1
+                2,
+                3
             ],
-            "hint": "Policy type and approval request are in the subject. Three policy components - anonymous channels, external hotline, and non-retaliation guarantee - are in the body. The Audit Committee is the correct governance body for whistleblowing oversight.",
-            "explanation": "Three elements make a credible speak-up policy: anonymous reporting channels (overcoming fear of identification), an external hotline (bypassing internal management), and written non-retaliation protection (a legally binding guarantee). All three reduce barriers to disclosure."
+            "hint": "A resolution-focused tone is in the subject; both groups are addressed together; a neutral reframing of the conflict and a specific practical solution are in the body; 'BEST REGARDS' closes constructively.",
+            "explanation": "Reframing the dispute around a systems problem - no clear booking process - rather than blaming either group helps both sides move past the conflict without anyone losing face. Proposing one specific, practical tool gives both organisations something concrete to adopt rather than continuing to negotiate case by case."
         },
         {
             "id": "WRT_WRITINGEMAIL_L155_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to all staff communicating the new whistleblowing speak-up policy.",
+            "prompt": "Write a diplomatic email formally and honestly addressing a serious breach of trust in a long friendship.",
             "options": [
-                "YOURS SINCERELY,\nCHIEF EXECUTIVE OFFICER",
-                "OUR NEW SPEAK-UP POLICY IS NOW LIVE - ALL STAFF CAN REPORT CONCERNS ANONYMOUSLY VIA OUR EXTERNAL HOTLINE (0800 SPEAK UP) OR BY WRITING TO THE AUDIT COMMITTEE DIRECTLY AT AUDITCOMMITTEE@NEXUS.COM.",
-                "SUBJECT: NEW SPEAK-UP POLICY - PROTECTING THOSE WHO REPORT WRONGDOING",
-                "DEAR ALL,"
+                "I HOPE WE CAN TALK SOON,\nSOPHIE",
+                "SUBJECT: SOMETHING I NEED TO TALK TO YOU ABOUT HONESTLY",
+                "DEAR REBECCA,",
+                "I HAVE STRUGGLED WITH HOW TO SAY THIS, BUT FINDING OUT YOU HAD SHARED SOMETHING I TOLD YOU IN CONFIDENCE HAS REALLY HURT ME, AND BEFORE I DECIDE HOW I FEEL ABOUT OUR FRIENDSHIP GOING FORWARD, I WOULD LIKE THE CHANCE TO UNDERSTAND WHY IT HAPPENED, IF YOU ARE WILLING TO TALK."
             ],
             "correctOrder": [
+                1,
                 2,
                 3,
-                1,
                 0
             ],
-            "hint": "Policy launch and protection message are in the subject. Two reporting channels with contact details are in the body - making the policy immediately actionable for any staff member reading it.",
-            "explanation": "Including actual contact details (phone number AND email address) in the policy launch email is critical - a policy without actionable contact information creates a barrier at the most important moment, when someone wants to report something."
+            "hint": "An honest, vulnerable opener suits the sensitive subject; a close friend is addressed by first name; genuine hurt, honesty, and an openness to dialogue are in the body; the closing leaves the door open.",
+            "explanation": "Naming the specific breach - sharing something told 'in confidence' - avoids a vague accusation and gives the friend a clear understanding of what caused the hurt. Framing this as wanting to 'understand why' before deciding anything shows a genuine willingness to repair the friendship rather than ending it abruptly."
         },
         {
             "id": "WRT_WRITINGEMAIL_L155_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to the audit committee reporting on the outcome of a whistleblower investigation.",
+            "prompt": "Write a sophisticated email taking full ownership of a significant professional mistake and proposing how to fix it.",
             "options": [
-                "THE INDEPENDENT INVESTIGATION INTO THE SPEAK-UP DISCLOSURE RECEIVED ON 14 OCTOBER HAS CONCLUDED - THE ALLEGATION WAS FOUND TO BE SUBSTANTIATED AND THREE REMEDIAL ACTIONS HAVE BEEN IMPLEMENTED.",
-                "DEAR AUDIT COMMITTEE CHAIR,",
-                "YOURS SINCERELY,\nCHIEF COMPLIANCE OFFICER",
-                "SUBJECT: SPEAK-UP INVESTIGATION OUTCOME - CONFIDENTIAL REPORT TO AUDIT COMMITTEE"
+                "THE INCORRECT FIGURES IN TUESDAY'S CLIENT REPORT WERE ENTIRELY MY ERROR, RESULTING FROM A COPY-PASTE MISTAKE I SHOULD HAVE CAUGHT ON REVIEW, AND I HAVE ALREADY PREPARED A CORRECTED VERSION ALONGSIDE A SHORT NOTE EXPLAINING THE MIX-UP TO THE CLIENT DIRECTLY.",
+                "WITH SINCERE APOLOGIES,\nYOSHIKO MURAKAMI",
+                "SUBJECT: TAKING FULL RESPONSIBILITY FOR THE ERROR IN TUESDAY'S REPORT",
+                "DEAR ANNIKA,"
             ],
             "correctOrder": [
+                2,
                 3,
-                1,
                 0,
-                2
+                1
             ],
-            "hint": "Investigation outcome and confidentiality are in the subject. Disclosure date, investigation conclusion, substantiation finding, and three remedial actions are in the body - a complete investigation outcome report.",
-            "explanation": "The most important finding in any whistleblower investigation report is whether the allegation was 'substantiated' - this determines whether the company must act. Three remedial actions signal the concern has been taken seriously and addressed."
+            "hint": "Full accountability is signalled directly in the subject; the manager is addressed by first name; a clear explanation of the error and a concrete corrective plan are in the body; the closing conveys genuine regret.",
+            "explanation": "Taking full, specific ownership ('entirely my error') without deflecting or minimising builds far more trust than a vague apology. Having already prepared both a correction and client communication shows the mistake is already being actively resolved, not just acknowledged."
         },
         {
             "id": "WRT_WRITINGEMAIL_L156_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to investment bank advisers instructing them to structure a convertible bond issuance.",
+            "prompt": "Write a compelling strategic case for a significant change in direction to a small organisation's leadership.",
             "options": [
-                "PLEASE STRUCTURE A £150M CONVERTIBLE BOND ISSUANCE WITH A FIVE-YEAR MATURITY, A COUPON OF 2.5%, A CONVERSION PREMIUM OF 30% OVER THE PREVAILING SHARE PRICE, AND A CALL OPTION AFTER YEAR THREE.",
-                "YOURS SINCERELY,\nCHIEF FINANCIAL OFFICER, NEXUS CONSULTING",
-                "DEAR CAPITAL MARKETS TEAM,",
-                "SUBJECT: CONVERTIBLE BOND STRUCTURE INSTRUCTION - £150M ISSUANCE: 5-YEAR TERM"
+                "DEAR TRUSTEES,",
+                "SUBJECT: A CASE FOR RETHINKING OUR VOLUNTEER MODEL",
+                "OUR VOLUNTEER RETENTION HAS FALLEN FROM 70% TO 40% OVER TWO YEARS, AND HAVING SPOKEN TO SEVERAL WHO LEFT, I BELIEVE THE CAUSE IS A LACK OF CLEAR PROGRESSION ROUTES RATHER THAN THE ROLES THEMSELVES, SO I WOULD LIKE TO PROPOSE INTRODUCING A SIMPLE THREE-TIER VOLUNTEER STRUCTURE THIS YEAR.",
+                "BEST REGARDS,\nBARNABY REID"
             ],
             "correctOrder": [
-                3,
-                2,
+                1,
                 0,
-                1
+                2,
+                3
             ],
-            "hint": "Issuance size and maturity are in the subject. Four structural parameters - size, maturity, coupon, conversion premium, and call option - are in the body. The CFO specifies all terms for the capital markets team.",
-            "explanation": "Four convertible bond parameters - coupon (2.5%), conversion premium (30%), maturity (5 years), and call option (after year 3) - define the instrument completely. The call option gives the issuer the right to redeem early if the share price rises above the conversion level."
+            "hint": "A data-driven case is signalled in the subject; the trustees are addressed together; a specific statistic, the diagnosed cause, and a concrete proposal are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Presenting a specific, striking statistic ('fallen from 70% to 40%') immediately establishes the seriousness of the issue to trustees. Backing the diagnosis with direct conversations with departed volunteers, rather than assumption, makes the proposed solution far more credible."
         },
         {
             "id": "WRT_WRITINGEMAIL_L156_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to institutional investors marketing a convertible bond offering.",
+            "prompt": "Write a sophisticated appeal to reverse a professional licensing decision, with a structured, evidence-based argument.",
             "options": [
-                "YOURS SINCERELY,\nCAPITAL MARKETS ORIGINATION, NEXUS BANK",
-                "WE INVITE YOU TO PARTICIPATE IN THE NEXUS CONSULTING £150M CONVERTIBLE BOND OFFERING - THE BONDS OFFER DOWNSIDE PROTECTION VIA THE 2.5% COUPON AND EQUITY UPSIDE THROUGH THE CONVERSION FEATURE.",
-                "SUBJECT: INVESTMENT OPPORTUNITY - NEXUS CONSULTING £150M CONVERTIBLE BONDS",
-                "DEAR FIXED INCOME INVESTOR,"
+                "SUBJECT: FORMAL APPEAL - LICENCE RENEWAL DECISION REF LC-88521",
+                "DEAR LICENSING APPEALS BOARD,",
+                "THE DECISION LETTER CITES A SINGLE LATE SUBMISSION AS THE REASON FOR NON-RENEWAL, YET MY RECORDS SHOW THIS WAS DUE TO A CONFIRMED TECHNICAL FAULT ON YOUR OWN PORTAL, EVIDENCED BY THE ATTACHED ERROR SCREENSHOTS AND TIMESTAMPS, SO I WOULD LIKE TO FORMALLY REQUEST THAT THIS DECISION BE RECONSIDERED.",
+                "YOURS FAITHFULLY,\nCHIOMA EZEUDU"
             ],
             "correctOrder": [
-                2,
-                3,
+                0,
                 1,
-                0
+                2,
+                3
             ],
-            "hint": "Deal size and instrument type are in the subject. Issuer, size, downside protection (coupon), and upside (conversion) are in the body - the two-sided investment proposition for convertible bond investors.",
-            "explanation": "The convertible bond investor proposition is deliberately dual: bond-like downside protection (coupon) plus equity-like upside (conversion). Marketing the instrument by naming both attractions captures both fixed-income and equity-oriented investors."
+            "hint": "The reference number anchors the formal subject; the appeals board is addressed by role, not name; the disputed reason and concrete, timestamped evidence are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Directly quoting the stated reason for the decision shows exactly what is being challenged. Providing timestamped, verifiable evidence of a technical fault on the authority's own system makes the appeal very difficult to dismiss, since it points to their error rather than yours."
         },
         {
             "id": "WRT_WRITINGEMAIL_L156_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to the company's CFO confirming successful convertible bond book closure.",
+            "prompt": "Write an eloquent tribute email marking a significant milestone in a small organisation's history.",
             "options": [
-                "I AM DELIGHTED TO REPORT THAT THE NEXUS CONSULTING CONVERTIBLE BOND ISSUANCE HAS BEEN SUCCESSFULLY PRICED AND THE BOOK IS 3.2 TIMES OVERSUBSCRIBED - SETTLEMENT PROCEEDS OF £150M WILL BE RECEIVED ON 18 NOVEMBER.",
-                "DEAR CHIEF FINANCIAL OFFICER,",
-                "YOURS SINCERELY,\nCAPITAL MARKETS ORIGINATION, NEXUS BANK",
-                "SUBJECT: CONVERTIBLE BOND BOOK CLOSED - £150M RAISED, 3.2X OVERSUBSCRIBED"
+                "WITH DEEP GRATITUDE,\nSTELLAN BERGQVIST",
+                "TWENTY-FIVE YEARS AGO, THREE VOLUNTEERS BEGAN HANDING OUT TINNED FOOD FROM A CHURCH HALL; TODAY, THAT SAME SPIRIT FEEDS OVER 400 FAMILIES A WEEK ACROSS FOUR SITES, AND NONE OF IT WOULD HAVE BEEN POSSIBLE WITHOUT EVERY SINGLE ONE OF YOU WHO HAS GIVEN TIME, MONEY, OR SIMPLY KINDNESS ALONG THE WAY.",
+                "SUBJECT: CELEBRATING TWENTY-FIVE YEARS OF OUR FOOD BANK",
+                "DEAR ALL OUR SUPPORTERS,"
             ],
             "correctOrder": [
+                2,
                 3,
                 1,
-                0,
-                2
+                0
             ],
-            "hint": "Deal success and oversubscription are in the subject. Pricing completion, oversubscription ratio, and settlement date with proceeds are in the body - the three facts the CFO needs after deal completion.",
-            "explanation": "3.2x oversubscribed means investors wanted £480M of bonds for the £150M on offer. This is strong investor demand signalling that the pricing was attractive. The settlement date ('18 November') tells the CFO exactly when the cash arrives."
+            "hint": "A milestone anniversary anchors the subject; all supporters are addressed warmly together; the origin story and current impact are contrasted in the body; the closing conveys heartfelt gratitude.",
+            "explanation": "Contrasting the humble origin - 'three volunteers', 'a church hall' - with the current scale creates a genuinely moving sense of progress over twenty-five years. Naming the different forms of contribution - time, money, kindness - ensures every kind of supporter feels personally recognised in the tribute."
         },
         {
             "id": "WRT_WRITINGEMAIL_L157_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to pension scheme trustees requesting consent for a pension transfer.",
+            "prompt": "Write an email requesting consular assistance for a family member who is facing a serious problem while travelling abroad.",
             "options": [
-                "I WRITE TO REQUEST CONSENT TO TRANSFER MY DEFINED BENEFIT PENSION ENTITLEMENT - CASH EQUIVALENT TRANSFER VALUE OF £284,000 - TO A PERSONAL PENSION ARRANGEMENT THAT I HAVE SELECTED.",
-                "YOURS SINCERELY,\nMARGARET CROSS",
-                "DEAR TRUSTEE BOARD,",
-                "SUBJECT: PENSION TRANSFER REQUEST - DEFINED BENEFIT TO PERSONAL PENSION: CETV £284,000"
+                "YOURS FAITHFULLY,\nIMOGEN ASHCROFT",
+                "DEAR CONSULAR ASSISTANCE TEAM,",
+                "MY BROTHER, A BRITISH CITIZEN, WAS HOSPITALISED FOLLOWING AN ACCIDENT WHILE TRAVELLING IN THAILAND, AND AS HIS NEXT OF KIN, I WOULD BE GRATEFUL FOR GUIDANCE ON HOW THE EMBASSY CAN SUPPORT US WITH COMMUNICATION WITH THE HOSPITAL AND ANY NECESSARY DOCUMENTATION FOR HIS RETURN HOME.",
+                "SUBJECT: URGENT REQUEST FOR CONSULAR ASSISTANCE - BRITISH CITIZEN HOSPITALISED"
             ],
             "correctOrder": [
                 3,
+                1,
                 2,
-                0,
-                1
+                0
             ],
-            "hint": "Transfer type and CETV are in the subject. DB entitlement, specific CETV, and target arrangement are in the body - the three elements required for a DB pension transfer request.",
-            "explanation": "The CETV (Cash Equivalent Transfer Value) is the amount the scheme will pay to the receiving arrangement. For DB transfers over £30,000, independent financial advice is legally required - this email initiates the trustee consent process as the first step."
+            "hint": "Urgency and the core situation are in the subject; the consular team is addressed by role, not name; your relationship to the person and two specific forms of support requested are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Establishing your relationship as 'next of kin' immediately clarifies your standing to request assistance on someone else's behalf. Asking about two distinct, practical needs - hospital communication and return documentation - covers the areas where consular support is genuinely most useful."
         },
         {
             "id": "WRT_WRITINGEMAIL_L157_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a pension scheme member warning them of pension transfer scam risks.",
+            "prompt": "Write an email negotiating a resolution to a customs dispute affecting a small business's imported shipment.",
             "options": [
-                "YOURS SINCERELY,\nPENSION SCHEME TRUSTEES",
-                "BEFORE PROCEEDING WITH YOUR TRANSFER REQUEST, WE ARE REQUIRED TO ALERT YOU TO THE RISK OF PENSION LIBERATION FRAUD - WE RECOMMEND YOU CHECK THE RECEIVING SCHEME AGAINST THE FCA REGISTER.",
-                "SUBJECT: PENSION SCAM WARNING - PLEASE READ BEFORE PROCEEDING WITH TRANSFER",
-                "DEAR SCHEME MEMBER,"
+                "DEAR CUSTOMS ENQUIRIES TEAM,",
+                "YOURS FAITHFULLY,\nRAFAEL DOS SANTOS",
+                "SUBJECT: QUERY REGARDING DUTY CHARGED ON SHIPMENT REF SH-88214",
+                "OUR SHIPMENT OF HANDMADE TEXTILES HAS BEEN CHARGED IMPORT DUTY AT THE STANDARD RATE, BUT WE BELIEVE IT SHOULD QUALIFY FOR THE REDUCED RATE UNDER THE HANDICRAFT EXEMPTION, AS SUPPORTED BY THE CERTIFICATE OF ORIGIN ATTACHED, SO WE WOULD LIKE TO REQUEST A REVIEW OF THE CLASSIFICATION."
             ],
             "correctOrder": [
                 2,
+                0,
                 3,
-                1,
-                0
+                1
             ],
-            "hint": "Scam warning and urgency are in the subject. Legal alert obligation, specific fraud type (pension liberation), and FCA register check recommendation are in the body - a mandatory trustee warning communication.",
-            "explanation": "Pension liberation fraud (unlawfully accessing pension funds before age 55) costs victims their retirement savings and creates significant tax liabilities. Trustees are legally required to issue scam warnings and recommend FCA register verification before approving transfers."
+            "hint": "The shipment reference anchors the formal subject; the customs team is addressed by role, not name; the disputed classification and the supporting document are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Naming the specific exemption being claimed shows genuine knowledge of the relevant rules rather than a general objection to the charge. Attaching a certificate of origin gives customs officials the exact documentation needed to reassess the classification without further correspondence."
         },
         {
             "id": "WRT_WRITINGEMAIL_L157_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email from the pension scheme to an independent financial adviser confirming a transfer is proceeding.",
+            "prompt": "Write an email coordinating the complex logistics of a family reunion involving relatives travelling from several different countries.",
             "options": [
-                "AS THE RECEIVING SCHEME ADVISER, PLEASE FIND ENCLOSED THE ACTUARIAL CERTIFICATE AND CETV LETTER REQUIRED FOR THE DEFINED BENEFIT TRANSFER OF £284,000 - PLEASE CONFIRM RECEIPT AND CONFIRM THE MEMBER HAS TAKEN REGULATED ADVICE.",
-                "DEAR FINANCIAL ADVISER,",
-                "YOURS SINCERELY,\nPENSION SCHEME ADMINISTRATOR",
-                "SUBJECT: DB TRANSFER PROCEEDING - ACTUARIAL CERTIFICATE AND CETV LETTER ENCLOSED"
+                "AS WE NOW HAVE FAMILY CONFIRMED FROM CANADA, AUSTRALIA, AND KENYA, I THINK IT MAKES SENSE TO SETTLE ON THE FIRST WEEK OF AUGUST, WHICH SEEMS TO WORK ACROSS ALL THE TIME ZONES AND SCHOOL HOLIDAYS INVOLVED, SO PLEASE CONFIRM YOUR FLIGHTS AS SOON AS YOU CAN SO WE CAN BOOK THE VENUE.",
+                "SUBJECT: PULLING TOGETHER THE PLANS FOR OUR BIG REUNION",
+                "LOVE TO ALL,\nGRANDMA ROSALIND",
+                "DEAR EVERYONE,"
             ],
             "correctOrder": [
-                3,
                 1,
+                3,
                 0,
                 2
             ],
-            "hint": "Transfer type and enclosed documents are in the subject. Two required documents and the regulated advice confirmation request are in the body - the two legal prerequisites for a valid DB transfer.",
-            "explanation": "Two documents are legally required for a DB transfer: the actuarial certificate (confirming the CETV is accurate) and confirmation of regulated independent financial advice. Without both, the transfer cannot legally proceed under FCA pension transfer rules."
+            "hint": "The scale of coordination is clear in the subject; the whole extended family is addressed together; the countries involved and a specific proposed date are in the body; a warm family sign-off closes it.",
+            "explanation": "Naming the specific countries involved shows the sender has genuinely thought through everyone's circumstances, not just picked a convenient date for themselves. Asking for flight confirmation 'as soon as you can' creates helpful urgency without being demanding, given how many people's schedules need to align."
         },
         {
             "id": "WRT_WRITINGEMAIL_L158_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a new corporate client completing enhanced know-your-customer checks.",
+            "prompt": "Write a sophisticated email negotiating terms to become a part-time consultant after leaving full-time employment.",
             "options": [
-                "AS PART OF ENHANCED DUE DILIGENCE REQUIRED UNDER THE MONEY LAUNDERING REGULATIONS 2017, WE REQUIRE CERTIFIED COPIES OF YOUR COMPANY REGISTRATION, ULTIMATE BENEFICIAL OWNERSHIP STRUCTURE, AND SOURCE OF FUNDS EVIDENCE.",
-                "YOURS SINCERELY,\nCOMPLIANCE TEAM, NEXUS FINANCIAL SERVICES",
-                "DEAR CHIEF FINANCIAL OFFICER,",
-                "SUBJECT: ENHANCED DUE DILIGENCE REQUIREMENT - NEW CLIENT ONBOARDING: VOLKOV CORP"
+                "BEST REGARDS,\nADAEZE IKECHUKWU",
+                "SUBJECT: PROPOSAL - CONTINUING AS A PART-TIME CONSULTANT AFTER MY DEPARTURE",
+                "DEAR REBECCA,",
+                "AS I PREPARE TO LEAVE FULL-TIME EMPLOYMENT NEXT MONTH, I WOULD LIKE TO PROPOSE CONTINUING TO SUPPORT THE TEAM ON A CONSULTANCY BASIS FOR UP TO TWO DAYS A MONTH, WHICH WOULD ALLOW YOU TO RETAIN MY PROJECT KNOWLEDGE WHILE GIVING ME THE FLEXIBILITY I AM SEEKING IN THIS NEXT CHAPTER."
             ],
             "correctOrder": [
-                3,
+                1,
                 2,
-                0,
-                1
+                3,
+                0
             ],
-            "hint": "EDD requirement and client name are in the subject. Regulatory basis (MLR 2017), three specific documents required, and the 'certified copies' standard are in the body.",
-            "explanation": "Three EDD documents - company registration (legal entity identity), UBO structure (who ultimately controls), and source of funds (where the money comes from) - are the three pillars of enhanced due diligence under the Money Laundering Regulations 2017."
+            "hint": "A clear, specific proposal is in the subject; the manager is addressed by first name; the timing, the proposed arrangement, and the mutual benefit are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Proposing a specific, limited commitment - 'up to two days a month' - makes the arrangement easy for the employer to evaluate rather than an open-ended offer. Framing the mutual benefit - retained knowledge for them, flexibility for you - makes the proposal feel like a genuine win-win rather than a favour being asked."
         },
         {
             "id": "WRT_WRITINGEMAIL_L158_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a compliance team reporting a suspicious transaction and recommending filing an SAR.",
+            "prompt": "Write an email as a business owner formally proposing to begin succession planning conversations ahead of retirement.",
             "options": [
-                "YOURS SINCERELY,\nKYC ANALYST, NEXUS FINANCIAL SERVICES",
-                "WE RECOMMEND FILING A SUSPICIOUS ACTIVITY REPORT WITH THE NCA REGARDING TRANSACTION TXN-441221, AS THE PATTERN OF TRANSFERS IS INCONSISTENT WITH THE CLIENT'S STATED BUSINESS ACTIVITY AND SOURCE OF FUNDS.",
-                "SUBJECT: SUSPICIOUS ACTIVITY REPORT RECOMMENDATION - TRANSACTION REF: TXN-441221",
-                "DEAR MLRO,"
+                "SUBJECT: STARTING A CONVERSATION ABOUT THE FUTURE OF THE BUSINESS",
+                "BEST REGARDS,\nPIOTR ZIELINSKI",
+                "AS I AM PLANNING TO RETIRE WITHIN THE NEXT THREE YEARS, I THINK IT IS IMPORTANT WE BEGIN DISCUSSING SUCCESSION EARLY RATHER THAN LEAVING IT UNTIL THE LAST MINUTE, SO I WOULD LIKE TO PROPOSE A SERIES OF INFORMAL CONVERSATIONS OVER THE COMING MONTHS TO EXPLORE WHAT THIS MIGHT LOOK LIKE.",
+                "DEAR SENIOR TEAM,"
             ],
             "correctOrder": [
-                2,
+                0,
                 3,
-                1,
-                0
+                2,
+                1
             ],
-            "hint": "SAR recommendation and transaction reference are in the subject. 'We recommend filing', specific regulator (NCA), transaction reference, and specific inconsistency grounds are in the body.",
-            "explanation": "SARs are filed with the NCA (National Crime Agency) under the Proceeds of Crime Act 2002. The grounds - 'inconsistent with stated business and source of funds' - are the two standard ML red flags that trigger a SAR filing obligation."
+            "hint": "A forward-thinking tone is signalled in the subject; the senior team is addressed together; the timeline and a low-pressure, exploratory proposal are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Giving a specific but flexible timeline ('within the next three years') shows this is planned, considered timing rather than a sudden announcement. Proposing 'informal conversations' rather than a formal process immediately lowers the pressure and invites genuine, open discussion."
         },
         {
             "id": "WRT_WRITINGEMAIL_L158_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a client notifying them that their account has been suspended pending KYC review.",
+            "prompt": "Write an eloquent, persuasive email seeking a meaningful long-term mentorship commitment from a respected senior figure.",
             "options": [
-                "YOUR ACCOUNT HAS BEEN TEMPORARILY SUSPENDED PENDING A REGULATORY COMPLIANCE REVIEW - TO REACTIVATE YOUR ACCOUNT, PLEASE PROVIDE CERTIFIED IDENTIFICATION AND PROOF OF ADDRESS WITHIN FOURTEEN DAYS.",
-                "DEAR ACCOUNT HOLDER,",
-                "YOURS SINCERELY,\nCOMPLIANCE TEAM, NEXUS BANK",
-                "SUBJECT: ACCOUNT SUSPENDED PENDING COMPLIANCE REVIEW - PLEASE PROVIDE DOCUMENTS"
+                "WITH SINCERE ADMIRATION,\nHANNAH OKAFOR",
+                "SUBJECT: WOULD YOU CONSIDER BEING MY MENTOR?",
+                "HAVING ADMIRED YOUR CAREER IN PUBLIC HEALTH FOR SEVERAL YEARS, I WOULD BE DEEPLY HONOURED IF YOU WOULD CONSIDER MENTORING ME AS I MOVE INTO THIS FIELD - EVEN A SHORT CALL EVERY FEW MONTHS WOULD MEAN A GREAT DEAL, AND I WOULD ENTIRELY UNDERSTAND IF YOUR SCHEDULE DOESN'T ALLOW IT.",
+                "DEAR DR ASANTE,"
             ],
             "correctOrder": [
-                3,
                 1,
-                0,
-                2
+                3,
+                2,
+                0
             ],
-            "hint": "Suspension notice and reason are in the subject. Suspension basis, two required documents, certification requirement, and fourteen-day deadline are in the body - a complete account suspension notice.",
-            "explanation": "Fourteen days is the standard document request period for KYC remediation. Requiring 'certified' copies (as opposed to scanned copies) provides the evidential quality needed to satisfy regulatory standards under the Money Laundering Regulations."
+            "hint": "A heartfelt, direct request is in the subject; the mentor is addressed formally by name and title; genuine admiration and a low-pressure, flexible proposal are in the body; the closing conveys sincere respect.",
+            "explanation": "Proposing something modest - 'a short call every few months' - makes a significant ask feel far more manageable for a busy senior figure to accept. Explicitly acknowledging you would 'understand' a decline removes any pressure, which paradoxically often makes people more willing to say yes."
         },
         {
             "id": "WRT_WRITINGEMAIL_L159_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a tax authority submitting a transfer pricing analysis for a related-party transaction.",
+            "prompt": "Write a sophisticated formal complaint escalating a serious pattern of failures in a public healthcare service.",
             "options": [
-                "WE SUBMIT OUR TRANSFER PRICING DOCUMENTATION FOR FY2024 RELATED PARTY TRANSACTIONS - THE ANALYSIS APPLIES THE COMPARABLE UNCONTROLLED PRICE METHOD AND DEMONSTRATES ARM'S LENGTH PRICING.",
-                "YOURS SINCERELY,\nCHIEF TAX OFFICER, NEXUS CONSULTING",
-                "DEAR TRANSFER PRICING TEAM,",
-                "SUBJECT: TRANSFER PRICING DOCUMENTATION - RELATED PARTY TRANSACTIONS FY2024"
+                "SUBJECT: FORMAL COMPLAINT - REPEATED FAILURES IN MY FATHER'S CARE",
+                "YOURS FAITHFULLY,\nDIMITRI PAPADOPOULOS",
+                "OVER THE PAST THREE MONTHS, MY FATHER'S MEDICATION HAS BEEN INCORRECTLY ADMINISTERED ON TWO SEPARATE OCCASIONS, AND DESPITE RAISING BOTH INCIDENTS VERBALLY AT THE TIME, NO FORMAL RECORD OR FOLLOW-UP APPEARS TO HAVE BEEN MADE, SO I AM NOW ESCALATING THIS FORMALLY IN WRITING.",
+                "DEAR PATIENT EXPERIENCE TEAM,"
             ],
             "correctOrder": [
+                0,
                 3,
                 2,
-                0,
                 1
             ],
-            "hint": "Transfer pricing and tax year are in the subject. Documentation submission, CUP method application, and arm's length demonstration are in the body - three key TP documentation elements.",
-            "explanation": "The Comparable Uncontrolled Price (CUP) method compares the controlled transaction to similar transactions between independent parties - the most direct arm's length test. Demonstrating arm's length pricing is the OECD BEPS standard."
+            "hint": "The seriousness and pattern are clear in the subject; the patient experience team is addressed by role, not name; the specific incidents and the lack of follow-up are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Documenting 'two separate occasions' over a specific timeframe establishes a pattern rather than an isolated mistake, which is taken far more seriously. Noting that verbal complaints produced 'no formal record' justifies escalating in writing to ensure a proper, documented response this time."
         },
         {
             "id": "WRT_WRITINGEMAIL_L159_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to the HMRC requesting an advance pricing agreement for intercompany transactions.",
+            "prompt": "Write a persuasive, plain-English email formally appealing a visa refusal decision.",
             "options": [
-                "YOURS SINCERELY,\nCHIEF TAX OFFICER, NEXUS CONSULTING",
-                "NEXUS CONSULTING REQUESTS AN ADVANCE PRICING AGREEMENT CONFIRMING THE ARM'S LENGTH PRICE FOR INTRAGROUP MANAGEMENT SERVICES CHARGED BY THE UK PARENT TO ITS NINE OVERSEAS SUBSIDIARIES.",
-                "SUBJECT: ADVANCE PRICING AGREEMENT REQUEST - NEXUS GROUP INTRAGROUP SERVICES",
-                "DEAR APA TEAM,"
+                "DEAR APPEALS TEAM,",
+                "YOURS FAITHFULLY,\nWENDY ACHTERBERG",
+                "THE REFUSAL LETTER STATES THAT INSUFFICIENT FINANCIAL EVIDENCE WAS PROVIDED, YET THE BANK STATEMENTS SUBMITTED CLEARLY SHOW SIX MONTHS OF CONSISTENT SAVINGS ABOVE THE REQUIRED THRESHOLD, SO I WOULD LIKE TO FORMALLY APPEAL THIS DECISION WITH THE SAME DOCUMENTS RESUBMITTED FOR CLARITY.",
+                "SUBJECT: FORMAL APPEAL AGAINST VISA REFUSAL - APPLICATION REF VS-77214"
             ],
             "correctOrder": [
-                2,
                 3,
-                1,
-                0
+                0,
+                2,
+                1
             ],
-            "hint": "APA type and transaction are in the subject. APA request, specific transaction type (management services), and scope (UK parent + 9 subsidiaries) are in the body.",
-            "explanation": "An APA provides tax certainty - HMRC agrees in advance that the transfer pricing methodology is acceptable, eliminating future adjustment risk. The scope (UK parent charging 9 subsidiaries) defines the transaction to which the APA will apply."
+            "hint": "The application reference anchors the formal subject; the appeals team is addressed by role, not name; the specific stated reason and the contradicting evidence are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Quoting the exact reason given for refusal shows precisely what is being challenged, rather than a general objection to the outcome. Pointing to specific evidence already submitted, clearly meeting the stated requirement, makes a strong, focused case that the original decision overlooked existing proof."
         },
         {
             "id": "WRT_WRITINGEMAIL_L159_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to external tax counsel requesting an opinion on OECD Pillar Two implications.",
+            "prompt": "Write an eloquent formal objection to a local planning decision, with a well-reasoned argument.",
             "options": [
-                "PLEASE PROVIDE A FORMAL OPINION ON WHETHER NEXUS CONSULTING'S CURRENT EFFECTIVE TAX RATE OF 11.8% IN CERTAIN JURISDICTIONS CREATES A QUALIFIED DOMESTIC MINIMUM TAX LIABILITY UNDER THE OECD PILLAR TWO RULES.",
-                "DEAR INTERNATIONAL TAX TEAM,",
-                "YOURS SINCERELY,\nCHIEF TAX OFFICER",
-                "SUBJECT: PILLAR TWO OPINION REQUEST - NEXUS GROUP EFFECTIVE TAX RATE ANALYSIS"
+                "WHILE WE SUPPORT NEW HOUSING IN PRINCIPLE, THE PROPOSED FOUR-STOREY BUILDING WOULD OVERSHADOW THE ONLY SOUTH-FACING GARDENS ON OUR STREET FOR MOST OF THE WINTER, SO WE WOULD LIKE TO FORMALLY OBJECT UNLESS THE HEIGHT IS REDUCED TO MATCH THE SURROUNDING PROPERTIES.",
+                "SUBJECT: FORMAL OBJECTION - PLANNING APPLICATION REF PA-99214",
+                "DEAR PLANNING DEPARTMENT,",
+                "YOURS FAITHFULLY,\nSAMUEL OTIENO"
             ],
             "correctOrder": [
-                3,
                 1,
+                2,
                 0,
-                2
+                3
             ],
-            "hint": "Pillar Two and analysis type are in the subject. Effective tax rate, 'certain jurisdictions', QDMT liability test, and Pillar Two reference are in the body - a sophisticated international tax question requiring specialist counsel.",
-            "explanation": "The OECD Pillar Two global minimum tax is 15%. An ETR of 11.8% in certain jurisdictions is below the minimum - this triggers the QDMT mechanism, requiring the parent country to 'top up' the tax to 15%. The opinion will identify which jurisdictions trigger this liability."
+            "hint": "The application reference anchors the formal subject; the planning department is addressed by role, not name; a balanced position and a specific, reasoned condition are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Opening with support for housing 'in principle' shows this is a reasoned objection to a specific detail, not blanket opposition to development. Proposing a specific condition - matching the surrounding height - gives planners a constructive way to address the objection rather than a simple yes-or-no decision."
         },
         {
             "id": "WRT_WRITINGEMAIL_L160_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to UK insolvency practitioners notifying them of a cross-border insolvency proceeding.",
+            "prompt": "Write a sophisticated, persuasive email opening a conversation with a major donor about a significant future gift.",
             "options": [
-                "NEXUS CONSULTING PTE (SINGAPORE) HAS ENTERED JUDICIAL MANAGEMENT AND SEEKS RECOGNITION OF THE PROCEEDINGS IN ENGLAND AND WALES UNDER THE CROSS-BORDER INSOLVENCY REGULATIONS 2006.",
-                "YOURS SINCERELY,\nJOINT JUDICIAL MANAGERS, NEXUS CONSULTING PTE",
-                "DEAR INSOLVENCY PRACTITIONERS,",
-                "SUBJECT: CROSS-BORDER INSOLVENCY NOTIFICATION - UNCITRAL MODEL LAW RECOGNITION SOUGHT"
+                "WITH DEEP APPRECIATION,\nCLEMENTINE ROSS",
+                "SUBJECT: A CONVERSATION ABOUT THE FUTURE OF OUR SCHOLARSHIP FUND",
+                "DEAR MRS FAIRWEATHER,",
+                "YOUR SUPPORT HAS ALREADY HELPED FOURTEEN STUDENTS COMPLETE THEIR DEGREES WHO OTHERWISE COULDN'T HAVE AFFORDED TO, AND I WONDERED WHETHER YOU MIGHT BE OPEN TO A CONVERSATION ABOUT HOW A FUTURE GIFT COULD HELP US TURN THIS INTO A PERMANENT, SELF-SUSTAINING FUND FOR GENERATIONS OF STUDENTS TO COME."
             ],
             "correctOrder": [
-                3,
+                1,
                 2,
-                0,
-                1
+                3,
+                0
             ],
-            "hint": "Recognition request and legal basis are in the subject. Foreign jurisdiction, insolvency procedure (judicial management), and UK recognition law are in the body - a formal cross-border insolvency notification.",
-            "explanation": "The Cross-Border Insolvency Regulations 2006 implement the UNCITRAL Model Law in England and Wales. Recognition of a foreign proceeding gives UK courts the power to support the Singaporean insolvency by protecting assets located in England."
+            "hint": "A meaningful legacy conversation is signalled gently in the subject; the donor is addressed formally by name; a specific, moving impact figure and a long-term vision are in the body; the closing conveys genuine appreciation.",
+            "explanation": "Citing a specific, human impact figure - 'fourteen students' - reminds the donor of the tangible difference already made before proposing anything further. Framing the ask around a 'permanent, self-sustaining fund' offers a compelling, lasting vision rather than simply requesting another one-off donation."
         },
         {
             "id": "WRT_WRITINGEMAIL_L160_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a foreign court requesting recognition of English insolvency proceedings.",
+            "prompt": "Write an email formally and elegantly declining a significant award while expressing genuine gratitude.",
             "options": [
-                "YOURS SINCERELY,\nJOINT ADMINISTRATORS, NEXUS CONSULTING LTD (IN ADMINISTRATION)",
-                "THE JOINT ADMINISTRATORS OF NEXUS CONSULTING LTD REQUEST RECOGNITION OF THE ENGLISH ADMINISTRATION PROCEEDINGS UNDER SINGAPORE'S CROSS-BORDER INSOLVENCY FRAMEWORK TO PROTECT ASSETS HELD IN SINGAPORE.",
-                "SUBJECT: RECOGNITION REQUEST - ENGLISH ADMINISTRATION PROCEEDINGS IN SINGAPORE",
-                "DEAR SUPREME COURT REGISTRY,"
+                "WITH SINCERE GRATITUDE,\nNNAMDI EZEALOR",
+                "I AM DEEPLY TOUCHED TO HAVE BEEN CONSIDERED FOR THIS AWARD, BUT AS THE WORK RECOGNISED WAS TRULY A TEAM EFFORT, I WOULD BE MORE COMFORTABLE IF THE RECOGNITION WERE SHARED WITH THE FULL TEAM RATHER THAN ATTRIBUTED TO ME ALONE, AND I HOPE YOU WILL UNDERSTAND THIS REQUEST.",
+                "DEAR AWARDS COMMITTEE,",
+                "SUBJECT: A HEARTFELT THANK YOU, AND A REQUEST"
             ],
             "correctOrder": [
-                2,
                 3,
+                2,
                 1,
                 0
             ],
-            "hint": "Recognition type and foreign jurisdiction are in the subject. English proceeding type, recognition request, Singapore legal framework, and asset protection purpose are in the body.",
-            "explanation": "The Singapore cross-border insolvency framework (adopting the UNCITRAL Model Law) enables recognition of foreign proceedings. Recognition grants the administrators access to Singapore courts to protect and recover assets - without it, they have no authority in that jurisdiction."
+            "hint": "Genuine gratitude opens the subject; the committee is addressed by role, not name; heartfelt appreciation and a gracious, specific request are in the body; the closing conveys real sincerity.",
+            "explanation": "Expressing being 'deeply touched' before declining ensures the response reads as gracious humility, not false modesty or rejection. Requesting the recognition be shared with the team, rather than simply refusing it, offers a constructive alternative that still allows the achievement to be celebrated."
         },
         {
             "id": "WRT_WRITINGEMAIL_L160_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to creditors of a cross-border insolvency presenting the proposed international restructuring plan.",
+            "prompt": "Write an eloquent capstone email summarising the impact of a multi-year community initiative to its supporters.",
             "options": [
-                "THE JOINT ADMINISTRATORS PRESENT THE PROPOSED CROSS-BORDER RESTRUCTURING PLAN FOR CREDITOR APPROVAL AT THE MEETING ON 12 DECEMBER - THE PLAN PROVIDES ESTIMATED RETURNS OF 62 CENTS PER POUND TO UNSECURED CREDITORS.",
-                "DEAR CREDITOR,",
-                "YOURS SINCERELY,\nJOINT ADMINISTRATORS",
-                "SUBJECT: INTERNATIONAL RESTRUCTURING PLAN - CROSS-BORDER CREDITOR MEETING 12 DECEMBER"
+                "SUBJECT: FIVE YEARS ON - WHAT WE HAVE ACHIEVED TOGETHER",
+                "WITH HEARTFELT THANKS FOR FIVE REMARKABLE YEARS,\nBEATRIZ MONTEIRO",
+                "DEAR ALL OUR SUPPORTERS,",
+                "WHEN WE STARTED THIS LITERACY PROJECT FIVE YEARS AGO WITH JUST TWELVE CHILDREN AND ONE VOLUNTEER, WE COULD NOT HAVE IMAGINED WE WOULD NOW BE SUPPORTING OVER 500 CHILDREN ACROSS TEN SCHOOLS, AND EVERY SINGLE MILESTONE ALONG THE WAY HAS BEEN MADE POSSIBLE BY PEOPLE LIKE YOU."
             ],
             "correctOrder": [
-                3,
-                1,
                 0,
-                2
+                2,
+                3,
+                1
             ],
-            "hint": "Meeting date and plan type are in the subject. Meeting date, creditor vote, and estimated return per pound are in the body - the three pieces of information every creditor needs before voting on a restructuring plan.",
-            "explanation": "62 cents in the pound (62%) is the estimated recovery rate for unsecured creditors. Creditors will compare this to the likely alternative - liquidation, which typically returns much less. This comparison drives the creditor vote in favour of the plan."
+            "hint": "A five-year milestone anchors the subject; all supporters are addressed warmly together; the humble beginning and the current scale are contrasted in the body; the closing conveys deep, genuine thanks.",
+            "explanation": "Contrasting the original scale - 'twelve children and one volunteer' - with the current reach makes the growth feel genuinely remarkable rather than just stating a number. Crediting supporters directly for 'every single milestone' ensures the achievement feels shared, not just reported to them from a distance."
         }
     ]
 }

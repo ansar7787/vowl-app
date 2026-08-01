@@ -8,630 +8,630 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a client strategy team presenting a retention analysis.",
+            "prompt": "Write an email to an online learning platform requesting a refund for a course you cancelled.",
             "options": [
-                "I AM PLEASED TO REPORT THAT OUR Q3 CHURN RATE HAS FALLEN FROM 14% TO 8% FOLLOWING THE INTRODUCTION OF OUR PROACTIVE ENGAGEMENT PROGRAMME LAUNCHED IN JULY.",
-                "BEST REGARDS,\nELLEN WADE, CLIENT DIRECTOR",
-                "DEAR CLIENT SUCCESS TEAM,",
-                "SUBJECT: CLIENT RETENTION ANALYSIS - Q3 CHURN RATE 8% (DOWN FROM 14%)"
+                "KIND REGARDS,\nSAOIRSE DOYLE",
+                "SUBJECT: REFUND REQUEST - CANCELLED COURSE ENROLMENT",
+                "DEAR SUPPORT TEAM,",
+                "I CANCELLED MY ENROLMENT ON THE DIGITAL MARKETING COURSE WITHIN THE FOURTEEN-DAY COOLING-OFF PERIOD, AS STATED IN YOUR TERMS, BUT I HAVE NOT YET RECEIVED THE £120 REFUND THAT WAS PROMISED TO ME BY EMAIL."
             ],
             "correctOrder": [
-                3,
+                1,
                 2,
-                0,
-                1
+                3,
+                0
             ],
-            "hint": "The key metric and improvement are in the subject; the team is addressed; before-and-after churn rates and the causal intervention are in the body; director signs with role.",
-            "explanation": "Showing both the before rate ('14%') and after rate ('8%') and linking the improvement to a specific programme ('proactive engagement launched in July') makes a complete cause-and-effect argument. This is the standard format for a performance report."
+            "hint": "The situation is summarised in the subject; the support team is addressed by role, not name; the policy you followed, the amount, and the missing refund are in the body; 'KIND REGARDS' closes firmly but politely.",
+            "explanation": "Referencing the company's own policy ('as stated in your terms') strengthens your case far more than simply asking nicely. Including the exact amount promised makes the request easy to verify and act on quickly."
         },
         {
             "id": "WRT_WRITINGEMAIL_L91_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to clients asking them to complete a satisfaction survey.",
+            "prompt": "Write an email to a streaming service asking why you were charged after already cancelling your subscription.",
             "options": [
-                "WE WOULD GREATLY APPRECIATE TWO MINUTES OF YOUR TIME TO COMPLETE OUR ANNUAL CLIENT SATISFACTION SURVEY - YOUR RESPONSES DIRECTLY SHAPE HOW WE IMPROVE OUR SERVICE TO YOU.",
-                "DEAR VALUED CLIENT,",
-                "WITH KIND REGARDS,\nNEXUS CLIENT SUCCESS TEAM",
-                "SUBJECT: YOUR FEEDBACK MATTERS - TWO-MINUTE CLIENT SURVEY"
+                "I CANCELLED MY SUBSCRIPTION ON 2 MAY AND RECEIVED A CONFIRMATION EMAIL AT THE TIME, YET I WAS STILL CHARGED £9.99 ON 2 JUNE, SO I WOULD LIKE TO ASK WHY THIS HAPPENED AND REQUEST THAT THE CHARGE BE REVERSED.",
+                "YOURS FAITHFULLY,\nMATTEO ESPOSITO",
+                "SUBJECT: CHARGED AFTER CANCELLATION - ACCOUNT QUERY",
+                "DEAR BILLING TEAM,"
             ],
             "correctOrder": [
+                2,
                 3,
-                1,
                 0,
-                2
+                1
             ],
-            "hint": "Time commitment and purpose are in the subject; clients are addressed warmly; brevity, direct impact promise, and the benefit to the client are in the body; team signs warmly.",
-            "explanation": "Two nudges increase survey completion: telling clients it will take only two minutes AND explaining that responses directly affect service quality. The subject line previewing the time commitment ('two-minute') reduces the barrier to clicking."
+            "hint": "The core problem is in the subject; the billing team is addressed by role, not name; the cancellation date, the proof you have, and the unexpected charge are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Mentioning that you have a confirmation email is important evidence that pre-empts the company simply denying the cancellation happened. Asking both 'why' and for a reversal covers both an explanation and a solution in one message."
         },
         {
             "id": "WRT_WRITINGEMAIL_L91_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to senior leaders presenting a client churn analysis and strategy recommendation.",
+            "prompt": "Write an email to a delivery company about a recurring problem with parcels being left in the wrong place.",
             "options": [
-                "YOURS SINCERELY,\nELLEN WADE, CLIENT DIRECTOR",
-                "OUR ANALYSIS IDENTIFIES THE THREE PRIMARY CAUSES OF CLIENT CHURN AS INADEQUATE ONBOARDING, SLOW RESPONSE TIMES, AND LACK OF PERSONALISED REPORTING - I RECOMMEND ADDRESSING ALL THREE IN Q1.",
-                "SUBJECT: CLIENT CHURN ANALYSIS - TOP THREE CAUSES AND RECOMMENDED ACTIONS",
-                "DEAR LEADERSHIP TEAM,"
+                "THIS IS THE THIRD TIME IN A MONTH THAT ONE OF YOUR DRIVERS HAS LEFT MY PARCEL WITH A NEIGHBOUR TWO DOORS DOWN INSTEAD OF FOLLOWING THE DELIVERY NOTES ON MY ACCOUNT, AND I WOULD BE GRATEFUL IF THIS COULD BE FLAGGED WITH THE LOCAL ROUND.",
+                "DEAR CUSTOMER CARE TEAM,",
+                "REGARDS,\nBIANCA ALMEIDA",
+                "SUBJECT: RECURRING ISSUE - PARCELS LEFT WITH THE WRONG NEIGHBOUR"
             ],
             "correctOrder": [
-                2,
                 3,
                 1,
-                0
+                0,
+                2
             ],
-            "hint": "Analysis type and number of causes are in the subject; leadership is addressed; three specific churn drivers and a quarter-based action recommendation are in the body; director signs formally.",
-            "explanation": "Naming three specific causes is far more actionable than a vague 'poor service' finding. Ending with 'I recommend addressing all three in Q1' makes the email a recommendation, not just an analysis - more useful to leaders who need to make decisions."
+            "hint": "The pattern, not just one incident, is flagged in the subject; the team is addressed by role, not name; the frequency and the specific request are in the body; 'REGARDS' closes briskly and firmly.",
+            "explanation": "Emphasising that this is 'the third time' turns an isolated complaint into a pattern that is harder to dismiss. Asking for the issue to be 'flagged with the local round' targets the actual cause rather than just complaining about a single delivery."
         },
         {
             "id": "WRT_WRITINGEMAIL_L92_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to the board formally requesting approval for next year's budget.",
+            "prompt": "Write an email to your local council proposing to turn an unused plot of land into a community garden.",
             "options": [
-                "I AM REQUESTING BOARD APPROVAL FOR A TOTAL DEPARTMENTAL BUDGET OF £2.4M FOR FINANCIAL YEAR 2025, REPRESENTING A 3.2% INCREASE ON FY2024 TO ACCOMMODATE PLANNED HEADCOUNT GROWTH.",
-                "YOURS SINCERELY,\nCHRIS FORD, OPERATIONS DIRECTOR",
-                "DEAR FINANCE COMMITTEE,",
-                "SUBJECT: BUDGET APPROVAL REQUEST - FY2025 DEPARTMENTAL ALLOCATION"
+                "THE PATCH OF LAND AT THE END OF BIRCH LANE HAS BEEN EMPTY FOR SEVERAL YEARS, AND A GROUP OF US LOCAL RESIDENTS WOULD LIKE TO TRANSFORM IT INTO A SHARED COMMUNITY GARDEN, SO WE WANTED TO ASK WHAT THE PROCESS WOULD BE FOR REQUESTING PERMISSION TO USE IT.",
+                "SUBJECT: PROPOSAL TO USE THE UNUSED LAND ON BIRCH LANE",
+                "KIND REGARDS,\nDESMOND OKORO",
+                "DEAR COMMUNITY PROJECTS TEAM,"
             ],
             "correctOrder": [
+                1,
                 3,
-                2,
                 0,
-                1
+                2
             ],
-            "hint": "Budget type and year are in the subject; the finance committee is addressed formally; total amount, year-on-year increase percentage, and justification (headcount growth) are all in the body; director signs with role.",
-            "explanation": "A budget request must include three elements: the total requested ('£2.4M'), the percentage change ('3.2% increase'), and the specific justification ('headcount growth'). These three facts enable an informed committee decision."
+            "hint": "The location and idea are in the subject; the relevant team is addressed by role, not name; the current state of the land, the proposal, and the process question are in the body; 'KIND REGARDS' closes the civic proposal.",
+            "explanation": "Describing the land's current state ('empty for several years') frames the proposal as improving an eyesore rather than asking for something new. Mentioning that a group of residents supports the idea, not just one person, gives the request more weight."
         },
         {
             "id": "WRT_WRITINGEMAIL_L92_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email presenting a cost reduction plan to senior management.",
+            "prompt": "Write an email to your neighbours proposing a street party to celebrate a local anniversary.",
             "options": [
-                "I AM PROPOSING A COST REDUCTION PLAN THAT IDENTIFIES £180,000 IN ANNUAL SAVINGS THROUGH CONSOLIDATING SOFTWARE LICENCES (£60K), RENEGOTIATING SUPPLIER CONTRACTS (£80K), AND REDUCING TRAVEL (£40K).",
-                "DEAR MANAGEMENT BOARD,",
-                "YOURS SINCERELY,\nCHRIS FORD, OPERATIONS DIRECTOR",
-                "SUBJECT: COST REDUCTION PLAN - £180,000 ANNUAL SAVING PROPOSAL"
+                "SUBJECT: SHALL WE THROW A STREET PARTY THIS SUMMER?",
+                "HI NEIGHBOURS,",
+                "LET ME KNOW YOUR THOUGHTS,\nPETRONELLA HAYES",
+                "AS THIS YEAR MARKS TWENTY YEARS SINCE OUR STREET WAS BUILT, I THOUGHT IT MIGHT BE LOVELY TO CLOSE THE ROAD FOR AN AFTERNOON IN AUGUST AND CELEBRATE TOGETHER - I AM HAPPY TO LOOK INTO THE COUNCIL PERMIT IF ENOUGH OF US ARE INTERESTED."
             ],
             "correctOrder": [
-                3,
-                1,
                 0,
+                1,
+                3,
                 2
             ],
-            "hint": "Total saving and plan type are in the subject; the board is addressed formally; three specific saving initiatives with individual amounts totalling £180K are in the body; director signs formally.",
-            "explanation": "The most credible cost reduction plan shows individual components that add up to the total - £60K + £80K + £40K = £180K. This breakdown proves the number is real and allows the board to approve or adjust individual elements."
+            "hint": "A friendly, inviting question is in the subject; the neighbours are greeted informally as a group; the occasion, the idea, and an offer to help organise are in the body; a warm, open sign-off closes it.",
+            "explanation": "Giving a specific reason for the celebration ('twenty years since our street was built') makes the idea feel more meaningful than a generic 'let's have a party'. Offering to handle the practical first step (the permit) makes it easier for neighbours to say yes without extra effort."
         },
         {
             "id": "WRT_WRITINGEMAIL_L92_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to the finance team presenting a five-year financial forecast.",
+            "prompt": "Write an email to your residents' association about noise coming from the shared courtyard late at night.",
             "options": [
-                "YOURS SINCERELY,\nCHRIS FORD, OPERATIONS DIRECTOR",
-                "I AM PRESENTING OUR FIVE-YEAR FINANCIAL FORECAST WHICH PROJECTS COMPOUND ANNUAL REVENUE GROWTH OF 12%, REACHING £18M BY FY2029, UNDERPINNED BY THE ASSUMPTION OF THREE NEW PRODUCT LAUNCHES.",
-                "SUBJECT: FIVE-YEAR FINANCIAL FORECAST - FY2025–2029 PROJECTIONS",
-                "DEAR FINANCE COMMITTEE,"
+                "SUBJECT: LATE-NIGHT NOISE IN THE SHARED COURTYARD",
+                "DEAR RESIDENTS' ASSOCIATION,",
+                "OVER THE LAST FEW WEEKENDS THERE HAS BEEN LOUD NOISE FROM THE SHARED COURTYARD WELL AFTER MIDNIGHT, AND SEVERAL OF US IN THE BUILDING WOULD APPRECIATE A REMINDER BEING SENT ROUND ABOUT THE AGREED QUIET HOURS.",
+                "YOURS FAITHFULLY,\nCONSTANCE OYELARAN"
             ],
             "correctOrder": [
-                2,
-                3,
+                0,
                 1,
-                0
+                2,
+                3
             ],
-            "hint": "Time horizon and forecast purpose are in the subject; finance committee addressed formally; CAGR, absolute revenue target, and assumption basis are in the body; director signs formally.",
-            "explanation": "The three-element forecast formula - growth rate ('12% CAGR'), end-state absolute ('£18M by 2029'), and assumption basis ('three new product launches') - is the standard structure for presenting a credible financial forecast to a committee."
+            "hint": "The issue and location are in the subject; the association is addressed by role, not name; the pattern of the problem and the suggested solution are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Mentioning 'several of us' rather than framing it as a personal complaint makes the issue feel like a shared concern the association should address. Suggesting a mild, practical solution - a reminder about existing rules - is easier to act on than demanding punishment."
         },
         {
             "id": "WRT_WRITINGEMAIL_L93_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to all staff announcing a team restructure.",
+            "prompt": "Write an email to a professional body asking what qualifications you would need to move into a new career area.",
             "options": [
-                "I AM WRITING TO ANNOUNCE THAT THE OPERATIONS TEAM WILL BE RESTRUCTURED FROM 1 JULY TO BETTER ALIGN OUR CAPABILITIES WITH OUR GROWTH STRATEGY - INDIVIDUAL ROLE CHANGES WILL BE COMMUNICATED IN PERSON.",
-                "BEST REGARDS,\nCHRIS FORD, OPERATIONS DIRECTOR",
-                "DEAR ALL,",
-                "SUBJECT: IMPORTANT ANNOUNCEMENT - OPERATIONS TEAM RESTRUCTURE FROM 1 JULY"
+                "SUBJECT: QUALIFICATION REQUIREMENTS FOR MOVING INTO PROJECT MANAGEMENT",
+                "DEAR MEMBERSHIP ENQUIRIES,",
+                "I HAVE SPENT THE LAST SIX YEARS WORKING IN OPERATIONS AND AM CONSIDERING A MOVE INTO PROJECT MANAGEMENT, SO I WOULD LIKE TO ASK WHICH OF YOUR QUALIFICATIONS WOULD BE MOST RECOGNISED BY EMPLOYERS FOR SOMEONE WITH MY BACKGROUND.",
+                "YOURS FAITHFULLY,\nGABRIEL LINDGREN"
             ],
             "correctOrder": [
-                3,
-                2,
                 0,
-                1
+                1,
+                2,
+                3
             ],
-            "hint": "Announcement type and date are in the subject; all staff are addressed; restructure, effective date, strategic rationale, and process for individual communications are in the body; director signs with role.",
-            "explanation": "Promising that role changes will be communicated 'in person' is critical in restructure announcements - it shows respect for affected employees and prevents rumours from spreading before people receive their news directly."
+            "hint": "The career change is named in the subject; the enquiries team is addressed by role, not name; your relevant background and the specific question are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Mentioning your existing experience ('six years in operations') helps the professional body recommend a qualification suited to your level, not a beginner's course. Asking specifically what employers recognise, rather than what qualifications simply exist, keeps the answer practical."
         },
         {
             "id": "WRT_WRITINGEMAIL_L93_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email formally notifying an employee of their new role following a restructure.",
+            "prompt": "Write an email to a colleague in another department asking to shadow them for a day to learn more about their role.",
             "options": [
-                "AS A RESULT OF THE RESTRUCTURE, YOUR ROLE WILL CHANGE FROM OPERATIONS ANALYST TO SENIOR OPERATIONS SPECIALIST WITH EFFECT FROM 1 JULY - A FULL REVISED JOB DESCRIPTION IS ATTACHED.",
-                "DEAR JAMES,",
-                "YOURS SINCERELY,\nCHRIS FORD, OPERATIONS DIRECTOR",
-                "SUBJECT: YOUR NEW ROLE FOLLOWING TEAM RESTRUCTURE - EFFECTIVE 1 JULY"
+                "DEAR PRIYA,",
+                "I HAVE ALWAYS BEEN CURIOUS ABOUT HOW THE DESIGN TEAM'S WORK FITS TOGETHER WITH OURS, AND I WONDERED WHETHER YOU WOULD BE HAPPY FOR ME TO SHADOW YOU FOR A DAY AT SOME POINT NEXT MONTH, IF YOUR MANAGER IS ALSO HAPPY WITH THE IDEA.",
+                "SUBJECT: COULD I SHADOW YOU FOR A DAY?",
+                "BEST WISHES,\nCONNOR MCALLISTER"
             ],
             "correctOrder": [
-                3,
-                1,
+                2,
                 0,
-                2
+                1,
+                3
             ],
-            "hint": "New role and effective date are in the subject; the employee is addressed by name; old role, new role, effective date, and attached job description are all in the body; director signs formally.",
-            "explanation": "A role change notification must include both the old AND new role titles to be unambiguous. Attaching the revised job description ensures the employee immediately understands their new responsibilities without a follow-up request."
+            "hint": "The request is stated directly in the subject; the colleague is addressed by first name; the genuine interest, the flexible timing, and respect for approval are in the body; 'BEST WISHES' closes warmly.",
+            "explanation": "Explaining your genuine interest ('curious about how the work fits together') makes the request feel thoughtful rather than random. Acknowledging that their manager would also need to agree shows awareness of workplace processes."
         },
         {
             "id": "WRT_WRITINGEMAIL_L93_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a manager outlining new responsibilities following a restructure.",
+            "prompt": "Write an email reconnecting with someone you met at a networking event several months ago.",
             "options": [
-                "BEST REGARDS,\nCHRIS FORD, DIRECTOR",
-                "FOLLOWING THE RESTRUCTURE, YOU WILL TAKE ON DIRECT LINE MANAGEMENT RESPONSIBILITY FOR THE THREE OPERATIONS ANALYSTS PREVIOUSLY REPORTING TO JAMES BLAKE WITH EFFECT FROM 1 JULY.",
-                "SUBJECT: REVISED RESPONSIBILITIES - PEOPLE MANAGEMENT ADDED TO YOUR ROLE",
-                "DEAR SARAH,"
+                "DEAR AISHA,",
+                "SUBJECT: GREAT MEETING YOU AT THE FINTECH MEETUP",
+                "WE MET BRIEFLY AT THE FINTECH MEETUP BACK IN THE SPRING AND YOU MENTIONED YOUR TEAM WAS LOOKING INTO AUTOMATING PART OF YOUR REPORTING PROCESS - I HAVE SINCE WORKED ON A SIMILAR PROJECT AND WOULD LOVE TO SHARE WHAT I LEARNED, IF YOU'D FIND IT USEFUL.",
+                "BEST REGARDS,\nDESMOND ABARA"
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
-                0
+                0,
+                2,
+                3
             ],
-            "hint": "New responsibility type and role are in the subject; the manager addressed by first name; specific new responsibility, the three team members, their previous line manager, and effective date are all in the body.",
-            "explanation": "Specifying which team members will now report to Sarah ('the three Operations Analysts previously reporting to James') prevents ambiguity about who is in scope and ensures a smooth reporting line transition."
+            "hint": "A specific shared memory is in the subject; the contact is addressed by name; the reminder of where you met, a relevant update, and a low-pressure offer are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Reminding the person exactly where and when you met, plus a detail from the conversation, jogs their memory far better than a vague 'great meeting you'. Offering something useful ('share what I learned') gives them a clear reason to reply, rather than just reconnecting for its own sake."
         },
         {
             "id": "WRT_WRITINGEMAIL_L94_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to an IT board proposing a cloud migration technology upgrade.",
+            "prompt": "Write an email to HR requesting reasonable adjustments at work due to a health condition.",
             "options": [
-                "I AM PROPOSING THE MIGRATION OF OUR CORE INFRASTRUCTURE TO CLOUD-BASED SERVICES, WHICH OUR ANALYSIS PROJECTS WILL DELIVER A 340% ROI OVER THREE YEARS THROUGH REDUCED HARDWARE AND SUPPORT COSTS.",
-                "YOURS SINCERELY,\nTIM HART, IT DIRECTOR",
-                "DEAR TECHNOLOGY BOARD,",
-                "SUBJECT: CLOUD MIGRATION PROPOSAL - ESTIMATED ROI 340% OVER THREE YEARS"
+                "YOURS FAITHFULLY,\nTAMSIN OYELOWO",
+                "SUBJECT: REQUEST FOR WORKPLACE ADJUSTMENTS",
+                "I WAS RECENTLY DIAGNOSED WITH A CONDITION THAT MAKES LONG PERIODS AT A SCREEN UNCOMFORTABLE, AND MY DOCTOR HAS SUGGESTED REGULAR SHORT BREAKS AND AN ADJUSTABLE MONITOR STAND, SO I WOULD LIKE TO ARRANGE A TIME TO DISCUSS HOW THIS COULD WORK IN PRACTICE.",
+                "DEAR HR TEAM,"
             ],
             "correctOrder": [
+                1,
                 3,
                 2,
-                0,
-                1
+                0
             ],
-            "hint": "ROI and proposal type are in the subject; the technology board is addressed formally; migration proposal, ROI figure, time horizon, and cost drivers are in the body; IT director signs with role.",
-            "explanation": "Leading the subject with the ROI ('340% over three years') rather than the technology ('cloud migration') makes the proposal immediately appealing to a board audience who think in financial terms rather than technical ones."
+            "hint": "The purpose is stated plainly in the subject; HR is addressed by role, not name; the medical context and specific suggested adjustments are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Referencing medical advice ('my doctor has suggested') gives HR a credible basis for the adjustments rather than a personal preference. Suggesting specific, practical changes rather than just saying 'I need help' makes the conversation easier to have."
         },
         {
             "id": "WRT_WRITINGEMAIL_L94_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email outlining a digital transformation roadmap to senior leadership.",
+            "prompt": "Write an email to a specialist clinic asking about current waiting times for an appointment.",
             "options": [
-                "I AM PRESENTING OUR EIGHTEEN-MONTH DIGITAL TRANSFORMATION ROADMAP, WHICH COVERS THREE PHASES: INFRASTRUCTURE MIGRATION (Q1–Q2), PROCESS AUTOMATION (Q3–Q4), AND AI INTEGRATION (MONTHS 13–18).",
-                "DEAR EXECUTIVE COMMITTEE,",
-                "YOURS SINCERELY,\nTIM HART, IT DIRECTOR",
-                "SUBJECT: DIGITAL TRANSFORMATION ROADMAP - 18-MONTH DELIVERY PLAN"
+                "KIND REGARDS,\nOLUWASEUN BANJOKO",
+                "MY GP HAS REFERRED ME FOR AN ASSESSMENT AT YOUR CLINIC, BUT I HAVE NOT YET RECEIVED A DATE, SO I WOULD LIKE TO ASK ROUGHLY HOW LONG NEW PATIENTS ARE CURRENTLY WAITING AND WHETHER THERE IS A WAY TO CHECK MY POSITION ON THE LIST.",
+                "SUBJECT: CURRENT WAITING TIMES FOR A NEW PATIENT APPOINTMENT",
+                "DEAR APPOINTMENTS TEAM,"
             ],
             "correctOrder": [
+                2,
                 3,
                 1,
-                0,
-                2
+                0
             ],
-            "hint": "Roadmap type and duration are in the subject; the executive committee is addressed formally; three phases with specific quarter-based timelines are in the body; director signs with role.",
-            "explanation": "Phasing a transformation into three stages with named quarters gives leadership a clear mental picture of sequencing and milestones. The phase names also tell leadership what each stage delivers, which helps them understand the strategic logic."
+            "hint": "The purpose is clear in the subject; the appointments team is addressed by role, not name; the referral context and two related questions are in the body; 'KIND REGARDS' closes politely.",
+            "explanation": "Mentioning the referral already exists ('my GP has referred me') helps the clinic locate your case rather than treating this as a fresh enquiry. Asking about both the general wait and your specific position covers the two things patients usually want to know."
         },
         {
             "id": "WRT_WRITINGEMAIL_L94_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a board proposing a significant IT infrastructure investment.",
+            "prompt": "Write an email to your employer's occupational health team discussing a phased return to work after illness.",
             "options": [
-                "YOURS SINCERELY,\nTIM HART, IT DIRECTOR",
-                "I AM REQUESTING BOARD APPROVAL FOR AN £890,000 INVESTMENT IN A COMPREHENSIVE CYBERSECURITY UPGRADE, NECESSARY TO ACHIEVE AND MAINTAIN ISO 27001 CERTIFICATION AND PROTECT AGAINST EVOLVING THREATS.",
-                "SUBJECT: IT INVESTMENT REQUEST - CYBERSECURITY UPGRADE: £890,000",
-                "DEAR BOARD OF DIRECTORS,"
+                "HAVING BEEN SIGNED OFF FOR THE PAST SIX WEEKS, I FEEL READY TO RETURN BUT WOULD LIKE TO EASE BACK IN GRADUALLY, SO I WOULD LIKE TO DISCUSS STARTING WITH THREE DAYS A WEEK FOR A FORTNIGHT BEFORE RETURNING TO MY FULL SCHEDULE.",
+                "YOURS FAITHFULLY,\nROISIN KEEGAN",
+                "SUBJECT: DISCUSSING A PHASED RETURN TO WORK",
+                "DEAR OCCUPATIONAL HEALTH TEAM,"
             ],
             "correctOrder": [
                 2,
                 3,
-                1,
-                0
+                0,
+                1
             ],
-            "hint": "Investment amount and type are in the subject; the board is addressed formally; exact cost, two specific justifications (ISO 27001 AND evolving threats) are in the body; director signs formally.",
-            "explanation": "Two compelling justifications for cybersecurity investment - compliance ('ISO 27001') and risk management ('evolving threats') - address the board's two biggest concerns: regulatory exposure and operational security."
+            "hint": "The topic is summed up in the subject; the occupational health team is addressed by role, not name; your readiness and a specific phased plan are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Proposing a concrete plan ('three days a week for a fortnight') gives the team something specific to review rather than an open-ended discussion. Mentioning you feel 'ready' but still want a gradual return shows self-awareness that supports a smoother transition."
         },
         {
             "id": "WRT_WRITINGEMAIL_L95_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to HR presenting a training needs analysis for the sales team.",
+            "prompt": "Write an email to family members helping to organise your father's seventieth birthday celebration.",
             "options": [
-                "OUR TRAINING NEEDS ANALYSIS IDENTIFIES THREE PRIORITY SKILL GAPS IN THE SALES TEAM: ADVANCED NEGOTIATION, DATA-DRIVEN SELLING, AND DIGITAL PLATFORM PROFICIENCY - I RECOMMEND ADDRESSING ALL THREE IN Q2.",
-                "YOURS SINCERELY,\nOWEN HARRIS, SALES DIRECTOR",
-                "DEAR L&D TEAM,",
-                "SUBJECT: TRAINING NEEDS ANALYSIS - SALES TEAM SKILLS GAP REPORT"
+                "SUBJECT: PLANNING DAD'S 70TH - A FEW IDEAS",
+                "HI EVERYONE,",
+                "AS DAD'S 70TH IS COMING UP IN NOVEMBER, I THOUGHT WE COULD HIRE THE FUNCTION ROOM AT THE BOWLS CLUB FOR A SATURDAY AFTERNOON AND SPLIT THE COST BETWEEN US - LET ME KNOW IF YOU'RE FREE THAT WEEKEND AND HAPPY TO CHIP IN.",
+                "LOVE,\nISLA FERGUSON"
             ],
             "correctOrder": [
-                3,
-                2,
                 0,
-                1
+                1,
+                2,
+                3
             ],
-            "hint": "Training type and team are in the subject; the L&D team is addressed; three specific skill gaps and a quarterly action timeline are in the body; sales director signs with role.",
-            "explanation": "Three specific skill gaps are more actionable than a general 'needs improvement' finding. Naming them precisely allows L&D to source appropriate training providers or design specific programmes for each gap."
+            "hint": "The occasion and a concrete suggestion are in the subject; family is greeted informally as a group; the idea, the venue, and the practical ask are in the body; a warm family sign-off closes it.",
+            "explanation": "Proposing one specific idea, rather than asking 'what should we do', gives the family something concrete to react to and refine together. Addressing both availability and cost in the same message avoids several rounds of separate messages."
         },
         {
             "id": "WRT_WRITINGEMAIL_L95_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a training provider briefing them for a customised corporate training programme.",
+            "prompt": "Write an email to a wedding venue asking about availability and what is included in their reception packages.",
             "options": [
-                "WE REQUIRE A BESPOKE LEADERSHIP DEVELOPMENT PROGRAMME FOR FORTY FIRST-LINE MANAGERS, COVERING COACHING SKILLS, PERFORMANCE MANAGEMENT, AND CHANGE LEADERSHIP - DELIVERY TO BEGIN IN SEPTEMBER.",
-                "DEAR PROGRAMME DIRECTOR,",
-                "YOURS SINCERELY,\nAMY CHEN, HEAD OF LEARNING AND DEVELOPMENT",
-                "SUBJECT: TRAINING BRIEF - LEADERSHIP DEVELOPMENT PROGRAMME, 40 MANAGERS"
+                "SUBJECT: ENQUIRY ABOUT WEDDING RECEPTIONS - SUMMER NEXT YEAR",
+                "WE ARE HOPING TO HOLD OUR WEDDING RECEPTION FOR AROUND SEVENTY GUESTS NEXT JULY, AND WE WOULD LOVE TO KNOW WHETHER YOU HAVE AVAILABILITY THAT MONTH, AS WELL AS WHAT IS TYPICALLY INCLUDED IN YOUR STANDARD PACKAGE.",
+                "DEAR EVENTS TEAM,",
+                "KIND REGARDS,\nTHEODORE AND MEI LIN CHOW"
             ],
             "correctOrder": [
-                3,
-                1,
                 0,
-                2
+                2,
+                1,
+                3
             ],
-            "hint": "Programme type and group size are in the subject; the programme director is addressed formally; exact number, management level, three topics, and start month are in the body; L&D head signs with role.",
-            "explanation": "A training brief must specify who ('forty first-line managers'), what ('coaching, performance, change'), and when ('September'). These three constraints enable the provider to develop an accurate proposal."
+            "hint": "Guest number and timing are in the subject; the events team is addressed by role, not name; the guest count, the month, and two linked questions are in the body; 'KIND REGARDS' closes as a couple.",
+            "explanation": "Providing the guest number and month upfront lets the venue check real availability instead of sending a generic brochure. Asking what's 'typically included' invites a full answer about catering, décor, and timings rather than just a yes-or-no on the date."
         },
         {
             "id": "WRT_WRITINGEMAIL_L95_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email reporting the outcome of a skills gap assessment to senior leadership.",
+            "prompt": "Write a warm, casual email from a grandparent to grandchildren who live far away, sharing news and asking about their lives.",
             "options": [
-                "YOURS SINCERELY,\nAMY CHEN, HEAD OF LEARNING AND DEVELOPMENT",
-                "OUR COMPANY-WIDE SKILLS GAP ASSESSMENT IDENTIFIED SIX PRIORITY AREAS FOR INVESTMENT, WITH DIGITAL SKILLS AND DATA LITERACY EMERGING AS THE MOST URGENT CROSS-DEPARTMENTAL REQUIREMENTS.",
-                "SUBJECT: SKILLS GAP ASSESSMENT RESULTS - SIX KEY GAPS IDENTIFIED COMPANY-WIDE",
-                "DEAR LEADERSHIP TEAM,"
+                "ALL OUR LOVE,\nGRANDMA AND GRANDAD",
+                "HELLO MY DARLINGS,",
+                "THE GARDEN IS LOOKING BEAUTIFUL THIS SUMMER AND YOUR GRANDAD FINALLY FIXED THE OLD SWING YOU BOTH USED TO LOVE, SO WE KEEP THINKING OF YOU - HOW IS SCHOOL GOING, AND HAVE YOU BEEN UP TO ANYTHING EXCITING LATELY?",
+                "SUBJECT: MISSING YOU BOTH SO MUCH!"
             ],
             "correctOrder": [
-                2,
                 3,
                 1,
+                2,
                 0
             ],
-            "hint": "Assessment type and scale of finding are in the subject; leadership is addressed; total number of gaps and the two most urgent are named in the body; L&D head signs formally.",
-            "explanation": "When reporting to leadership, naming the total gaps ('six') provides scope, and identifying the two most urgent ('digital skills and data literacy') creates a clear priority for resourcing decisions. More detail belongs in the attached report."
+            "hint": "An affectionate exclamation opens the subject; grandchildren are greeted with warm, informal language; a happy home update and genuine questions about their lives are in the body; a loving family sign-off closes it.",
+            "explanation": "Sharing a small, specific memory ('the old swing you both used to love') makes the email feel personal rather than a generic update. Ending with genuine questions invites a reply, which matters even more when family live far apart."
         },
         {
             "id": "WRT_WRITINGEMAIL_L96_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a procurement team launching a new supplier procurement policy.",
+            "prompt": "Write an email to an airline requesting compensation for a flight that was delayed by more than six hours.",
             "options": [
-                "I AM WRITING TO NOTIFY YOU THAT THE UPDATED SUPPLIER PROCUREMENT POLICY WILL TAKE EFFECT ON 1 SEPTEMBER - ALL FUTURE SUPPLIER ONBOARDING MUST FOLLOW THE ATTACHED REVISED PROCEDURE.",
-                "YOURS SINCERELY,\nHANNA SHAW, CHIEF PROCUREMENT OFFICER",
-                "DEAR PROCUREMENT TEAM,",
-                "SUBJECT: NEW PROCUREMENT POLICY EFFECTIVE 1 SEPTEMBER - MANDATORY COMPLIANCE"
+                "YOURS FAITHFULLY,\nESZTER VARGA",
+                "FLIGHT BA249 FROM LONDON TO LISBON ON 8 JUNE WAS DELAYED BY OVER SIX HOURS DUE TO A TECHNICAL FAULT, CAUSING ME TO MISS A PRE-BOOKED AIRPORT TRANSFER, SO I WOULD LIKE TO REQUEST THE COMPENSATION I UNDERSTAND I AM ENTITLED TO UNDER PASSENGER RIGHTS RULES.",
+                "SUBJECT: COMPENSATION REQUEST - FLIGHT BA249 DELAYED SIX HOURS",
+                "DEAR CUSTOMER RELATIONS,"
             ],
             "correctOrder": [
-                3,
                 2,
-                0,
-                1
+                3,
+                1,
+                0
             ],
-            "hint": "Policy name and date are in the subject; the team is addressed; effective date, scope, and attachment are in the body; CPO signs with role.",
-            "explanation": "The word 'MANDATORY' in the subject line distinguishes this from optional guidance. The attachment reference ('revised procedure') tells recipients exactly where to find what they need to comply, making action immediate and unambiguous."
+            "hint": "The flight number, route, and delay length are in the subject; customer relations is addressed by role, not name; the cause, the knock-on effect, and the entitlement being claimed are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Including the flight number and exact delay length gives the airline everything needed to verify your claim immediately. Mentioning the practical impact - a missed transfer - alongside the compensation claim reinforces that the delay caused real disruption, not just inconvenience."
         },
         {
             "id": "WRT_WRITINGEMAIL_L96_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a supplier team presenting evaluation criteria for a new vendor selection.",
+            "prompt": "Write an email to a car hire company querying an unexpected extra charge on your final bill.",
             "options": [
-                "THE VENDOR SELECTION PROCESS WILL EVALUATE SUPPLIERS AGAINST FOUR CRITERIA: PRICE (30%), TECHNICAL CAPABILITY (35%), DELIVERY RECORD (25%), AND SUSTAINABILITY CREDENTIALS (10%).",
-                "DEAR VENDOR ASSESSMENT TEAM,",
-                "YOURS SINCERELY,\nHANNA SHAW, CHIEF PROCUREMENT OFFICER",
-                "SUBJECT: VENDOR SELECTION CRITERIA - Q2 TECHNOLOGY PROCUREMENT EXERCISE"
+                "SUBJECT: UNEXPLAINED CHARGE ON MY FINAL INVOICE - BOOKING REF 77213",
+                "I RETURNED THE CAR WITH A FULL TANK AND NO DAMAGE, AS CONFIRMED BY YOUR OWN STAFF AT DROP-OFF, YET MY FINAL INVOICE INCLUDES A £45 'CLEANING FEE' THAT WAS NEVER MENTIONED AT THE TIME, AND I WOULD LIKE THIS EXPLAINED OR REMOVED.",
+                "REGARDS,\nDOMINIK NOWAK",
+                "DEAR BILLING TEAM,"
             ],
             "correctOrder": [
+                0,
                 3,
                 1,
-                0,
                 2
             ],
-            "hint": "Selection process and purpose are in the subject; the team is addressed; four criteria with specific percentage weightings are given in the body; CPO signs formally.",
-            "explanation": "Providing weighted criteria - and ensuring they sum to 100% - demonstrates a rigorous, fair selection process. This approach is also essential for transparency if unsuccessful suppliers later challenge the selection decision."
+            "hint": "The booking reference and issue are in the subject; the billing team is addressed by role, not name; the evidence in your favour and the unexplained charge are in the body; 'REGARDS' closes firmly.",
+            "explanation": "Mentioning that staff confirmed the car's condition at drop-off is strong evidence that undercuts the disputed fee. Asking for the charge to be 'explained or removed' gives the company two fair ways to resolve it, rather than only demanding a refund."
         },
         {
             "id": "WRT_WRITINGEMAIL_L96_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a supplier informing them that a contract is due for renewal.",
+            "prompt": "Write an email to a tour operator about a serious problem during a package holiday, such as unfinished building work at the resort.",
             "options": [
-                "YOURS SINCERELY,\nHANNA SHAW, CPO",
-                "I WISH TO NOTIFY YOU THAT OUR CURRENT SERVICE AGREEMENT SA-441 EXPIRES ON 31 MARCH AND I WOULD LIKE TO OPEN DISCUSSIONS ABOUT RENEWAL TERMS AND ANY PROPOSED CHANGES TO THE SERVICE SCOPE.",
-                "SUBJECT: CONTRACT RENEWAL NOTICE - AGREEMENT REF: SA-441 EXPIRES 31 MARCH",
-                "DEAR ACCOUNT MANAGER,"
+                "DEAR CUSTOMER SERVICES,",
+                "SUBJECT: FORMAL COMPLAINT - UNFINISHED BUILDING WORK AT THE RESORT",
+                "ON ARRIVAL AT THE RESORT ADVERTISED AS 'FULLY COMPLETE', WE FOUND ACTIVE CONSTRUCTION WORK RUNNING FROM 8 A.M. DAILY JUST METRES FROM OUR ROOM, WHICH SEVERELY AFFECTED OUR HOLIDAY, AND I WOULD LIKE TO FORMALLY REQUEST A PARTIAL REFUND IN LINE WITH YOUR HOLIDAY GUARANTEE.",
+                "YOURS FAITHFULLY,\nCAMILA FERREIRA"
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
-                0
+                0,
+                2,
+                3
             ],
-            "hint": "Renewal notice and contract reference are in the subject; the account manager is addressed by role; expiry date, specific agreement, and scope for renegotiation are in the body; CPO signs with abbreviation.",
-            "explanation": "Notifying a supplier about contract renewal proactively - before the expiry date - allows time for commercial negotiation rather than a rushed renewal on old terms. Flagging interest in 'changes to scope' signals this will be a substantive negotiation."
+            "hint": "The word 'FORMAL' signals seriousness in the subject; customer services is addressed by role, not name; the mismatch between what was advertised and reality, plus the specific remedy, are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Quoting the operator's own description ('fully complete') highlights the exact gap between promise and reality. Referring to their 'holiday guarantee' by name shows you have researched your rights, which tends to result in a faster, more serious response."
         },
         {
             "id": "WRT_WRITINGEMAIL_L97_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a sustainability board presenting an environmental impact report.",
+            "prompt": "Write an email to an evening class provider asking whether their courses are suitable for someone working full-time.",
             "options": [
-                "I AM PLEASED TO PRESENT OUR 2024 ENVIRONMENTAL IMPACT REPORT, WHICH SHOWS A 22% REDUCTION IN CARBON EMISSIONS, ACHIEVEMENT OF OUR 2024 RENEWABLE ENERGY TARGET, AND ZERO LANDFILL FOR THE SECOND CONSECUTIVE YEAR.",
-                "YOURS SINCERELY,\nGEORGE WALSH, SUSTAINABILITY DIRECTOR",
-                "DEAR SUSTAINABILITY COMMITTEE,",
-                "SUBJECT: ANNUAL ENVIRONMENTAL IMPACT REPORT 2024 - CARBON REDUCED BY 22%"
+                "I WORK FULL-TIME AND CAN ONLY ATTEND CLASSES IN THE EVENING OR AT WEEKENDS, SO BEFORE ENROLLING ON YOUR SPANISH COURSE I WOULD LIKE TO CHECK THE EXACT CLASS TIMES AND WHETHER MISSED SESSIONS CAN BE CAUGHT UP THROUGH RECORDINGS.",
+                "DEAR COURSE ENQUIRIES,",
+                "KIND REGARDS,\nBARTOSZ KOWALSKI",
+                "SUBJECT: ARE YOUR COURSES SUITABLE FOR FULL-TIME WORKERS?"
             ],
             "correctOrder": [
                 3,
-                2,
+                1,
                 0,
-                1
+                2
             ],
-            "hint": "Headline metric and report type are in the subject; the committee is addressed formally; three specific environmental achievements are in the body; sustainability director signs with role.",
-            "explanation": "Three specific, measurable environmental achievements - carbon reduction, renewable target, and zero landfill - make a much more credible sustainability report than vague commitments. Each metric demonstrates progress against a different environmental pillar."
+            "hint": "The direct question is in the subject; the enquiries team is addressed by role, not name; your constraint and two specific practical questions are in the body; 'KIND REGARDS' closes politely.",
+            "explanation": "Stating your constraint clearly ('can only attend in the evening or at weekends') helps the provider give a genuinely useful answer rather than a generic course description. Asking about catching up on missed sessions shows realistic planning for a busy schedule."
         },
         {
             "id": "WRT_WRITINGEMAIL_L97_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a leadership team proposing carbon reduction targets for the next five years.",
+            "prompt": "Write an email to your child's teacher asking about extra support because they are struggling with reading.",
             "options": [
-                "I AM PROPOSING THAT THE COMPANY ADOPTS A NET ZERO CARBON TARGET BY 2035, UNDERPINNED BY ANNUAL 15% REDUCTIONS FROM 2025 ONWARDS AND VERIFIED BY AN INDEPENDENT THIRD PARTY.",
-                "DEAR EXECUTIVE COMMITTEE,",
-                "YOURS SINCERELY,\nGEORGE WALSH, SUSTAINABILITY DIRECTOR",
-                "SUBJECT: CARBON REDUCTION TARGET PROPOSAL - NET ZERO BY 2035"
+                "THEO HAS BEEN FINDING READING QUITE DIFFICULT THIS TERM AND HAS STARTED TO SAY HE 'DOESN'T LIKE BOOKS', WHICH WORRIES US, SO WE WOULD LIKE TO ASK WHETHER THE SCHOOL OFFERS ANY EXTRA READING SUPPORT AND HOW WE MIGHT HELP AT HOME TOO.",
+                "YOURS SINCERELY,\nNADIA AND PHILIP OKON",
+                "SUBJECT: EXTRA SUPPORT WITH READING FOR THEO",
+                "DEAR MR ADEBAYO,"
             ],
             "correctOrder": [
+                2,
                 3,
-                1,
                 0,
-                2
+                1
             ],
-            "hint": "Target and year are in the subject; the executive committee is addressed; net zero deadline, annual reduction rate, and third-party verification are in the body; director signs formally.",
-            "explanation": "Three elements make a credible net zero commitment: the target date ('2035'), the pathway ('15% annual reduction'), and verification mechanism ('independent third party'). Without all three, it is a pledge without substance."
+            "hint": "The subject names the child and the concern; the teacher is addressed by name; the specific worry, a telling quote from the child, and two questions are in the body; the closing matches this named greeting.",
+            "explanation": "Including a direct quote from the child ('doesn't like books') gives the teacher real insight into how the difficulty is affecting him emotionally, not just academically. Asking how to help 'at home too' shows the parents want to be partners in the solution, not just request a fix."
         },
         {
             "id": "WRT_WRITINGEMAIL_L97_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to suppliers introducing new environmental compliance requirements.",
+            "prompt": "Write a warm email to a teacher from years ago, letting them know about an achievement they helped inspire.",
             "options": [
-                "YOURS SINCERELY,\nGEORGE WALSH, SUSTAINABILITY DIRECTOR",
-                "FROM Q1 2025, ALL SUPPLIERS TO NEXUS CONSULTING MUST PROVIDE AN ANNUAL CARBON AUDIT REPORT AND DEMONSTRATE COMPLIANCE WITH OUR UPDATED ENVIRONMENTAL SUPPLY CHAIN STANDARDS.",
-                "SUBJECT: NEW ENVIRONMENTAL COMPLIANCE REQUIREMENTS FOR ALL SUPPLIERS - EFFECTIVE Q1 2025",
-                "DEAR VALUED SUPPLIER,"
+                "WITH HEARTFELT THANKS,\nOLUWATOBI ADEYEMI",
+                "SUBJECT: YOU PROBABLY WON'T REMEMBER ME, BUT...",
+                "I WAS IN YOUR YEAR 10 ENGLISH CLASS ABOUT FIFTEEN YEARS AGO, AND I WANTED TO LET YOU KNOW THAT YOUR ENCOURAGEMENT TO KEEP WRITING EVENTUALLY LED ME TO PUBLISH MY FIRST NOVEL LAST MONTH - IT WOULDN'T HAVE HAPPENED WITHOUT YOU.",
+                "DEAR MRS ATKINSON,"
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
+                3,
+                2,
                 0
             ],
-            "hint": "Compliance type and effective date are in the subject; suppliers are addressed respectfully; two specific new requirements and the timeline are in the body; director signs formally.",
-            "explanation": "Addressing suppliers as 'valued' while setting mandatory requirements ('must provide') strikes the right tone - firm but respectful. Specifying two concrete requirements means suppliers know exactly what they need to do to remain on the approved list."
+            "hint": "A humble, uncertain opener suits the subject; the teacher is addressed formally by name, reflecting the relationship; the shared history and the achievement are in the body; a heartfelt closing suits the emotional tone.",
+            "explanation": "Giving a specific timeframe and class ('Year 10 English, about fifteen years ago') helps a teacher who has taught hundreds of students place you immediately. Naming the exact achievement and crediting them directly makes the message genuinely moving rather than a vague thank-you."
         },
         {
             "id": "WRT_WRITINGEMAIL_L98_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a board presenting a market entry strategy for a new geographic region.",
+            "prompt": "Write a diplomatic email to a neighbour about a hedge that is growing over your shared boundary.",
             "options": [
-                "I AM PRESENTING OUR PROPOSED ENTRY STRATEGY FOR SOUTHEAST ASIA, WHICH RECOMMENDS A PHASED APPROACH BEGINNING WITH SINGAPORE AS A HUB MARKET BEFORE EXPANDING TO INDONESIA AND VIETNAM IN YEAR TWO.",
-                "YOURS SINCERELY,\nCLARE JAMES, STRATEGY DIRECTOR",
-                "DEAR STRATEGY BOARD,",
-                "SUBJECT: MARKET ENTRY STRATEGY - SOUTHEAST ASIA EXPANSION PLAN"
+                "DEAR MR AND MRS FIELDING,",
+                "BEST WISHES,\nCORNELIUS ASANTE",
+                "SUBJECT: THE HEDGE BETWEEN OUR GARDENS",
+                "I HOPE YOU DON'T MIND ME RAISING THIS, BUT THE HEDGE ALONG OUR SHARED FENCE HAS GROWN QUITE A BIT THIS YEAR AND IS NOW BLOCKING MOST OF THE LIGHT TO OUR KITCHEN WINDOW - WOULD YOU BE OPEN TO TRIMMING IT BACK, OR WOULD YOU LIKE US TO ARRANGE IT AND SPLIT THE COST?"
             ],
             "correctOrder": [
-                3,
                 2,
                 0,
+                3,
                 1
             ],
-            "hint": "Region and strategy type are in the subject; the board is addressed formally; phased approach, hub market, and year two targets are in the body; strategy director signs with role.",
-            "explanation": "A market entry strategy email to the board needs to convey the logic quickly: a hub-and-spoke model starting with Singapore before expanding is a risk-managed approach that the board can immediately visualise. Details go in the attached strategy document."
+            "hint": "A neutral, low-key subject avoids sounding like a complaint; the neighbours are addressed formally by name; the issue and two fair-sounding solutions are offered in the body; 'BEST WISHES' keeps the tone friendly.",
+            "explanation": "Opening with 'I hope you don't mind me raising this' softens what could otherwise feel confrontational between neighbours. Offering two options, including one where you share the cost, shows you are looking for a fair compromise rather than simply demanding action."
         },
         {
             "id": "WRT_WRITINGEMAIL_L98_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email briefing a country management team on a new market entry plan.",
+            "prompt": "Write an email to a housing association about a repair that has been done before but keeps breaking again.",
             "options": [
-                "I AM PLEASED TO CONFIRM THAT OUR SINGAPORE MARKET LAUNCH WILL PROCEED ON 1 JUNE - THE TEAM BRIEF DECK IS ATTACHED AND I WOULD LIKE ALL TEAM LEADERS TO REVIEW IT BEFORE OUR FRIDAY CALL.",
-                "DEAR SINGAPORE LAUNCH TEAM,",
-                "BEST REGARDS,\nCLARE JAMES, STRATEGY DIRECTOR",
-                "SUBJECT: SINGAPORE MARKET ENTRY BRIEFING - LAUNCH DATE CONFIRMED AS 1 JUNE"
+                "YOURS FAITHFULLY,\nWINIFRED CHUKWU",
+                "DEAR REPAIRS TEAM,",
+                "SUBJECT: RECURRING FAULT - BOILER FIXED IN MARCH, BROKEN AGAIN",
+                "YOUR ENGINEER REPAIRED THE BOILER IN MARCH, BUT IT HAS NOW STOPPED WORKING FOR THE THIRD TIME IN FOUR MONTHS, SO RATHER THAN ANOTHER TEMPORARY FIX, I WOULD LIKE TO ASK WHETHER THE UNIT COULD BE PROPERLY ASSESSED FOR REPLACEMENT."
             ],
             "correctOrder": [
-                3,
+                2,
                 1,
-                0,
-                2
+                3,
+                0
             ],
-            "hint": "Location and launch date are in the subject; the country team is addressed; launch confirmation, attachment, and action deadline for team leaders are in the body; director signs with role.",
-            "explanation": "Combining the launch confirmation with a specific action ('review the deck before Friday') and a purpose ('Friday call') creates a clear sequence: confirm → review → discuss. This prevents the briefing from being passive."
+            "hint": "The repeated nature of the fault is clear in the subject; the repairs team is addressed by role, not name; the repair history and a request for a longer-term solution are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Giving the repair history ('the third time in four months') makes clear that another quick fix is not an acceptable long-term answer. Asking for a proper assessment, rather than simply another repair, pushes for a genuine solution rather than a repeat of the same outcome."
         },
         {
             "id": "WRT_WRITINGEMAIL_L98_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email requesting a country risk assessment before entering a new market.",
+            "prompt": "Write an email to a building management company questioning a sudden increase in your service charge.",
             "options": [
-                "YOURS SINCERELY,\nCLARE JAMES, STRATEGY DIRECTOR",
-                "AHEAD OF OUR YEAR TWO EXPANSION INTO INDONESIA AND VIETNAM, WE REQUIRE FORMAL COUNTRY RISK ASSESSMENTS COVERING POLITICAL STABILITY, REGULATORY ENVIRONMENT, AND CURRENCY RISK.",
-                "SUBJECT: COUNTRY RISK ASSESSMENT REQUEST - INDONESIA AND VIETNAM EXPANSION",
-                "DEAR RISK MANAGEMENT TEAM,"
+                "DEAR PROPERTY MANAGEMENT TEAM,",
+                "SUBJECT: QUERY ABOUT THIS YEAR'S SERVICE CHARGE INCREASE",
+                "YOURS FAITHFULLY,\nHENRIETTA OSEI",
+                "I NOTICED THIS YEAR'S SERVICE CHARGE HAS RISEN BY NEARLY 30% COMPARED TO LAST YEAR WITHOUT ANY EXPLANATION IN THE PAPERWORK, SO I WOULD BE GRATEFUL IF YOU COULD PROVIDE A BREAKDOWN OF WHERE THE ADDITIONAL COSTS HAVE COME FROM."
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
-                0
+                0,
+                3,
+                2
             ],
-            "hint": "Countries and assessment purpose are in the subject; the risk team is addressed; expansion context and three specific risk categories are requested in the body; director signs formally.",
-            "explanation": "Requesting three specific risk categories - political, regulatory, and currency - ensures a comprehensive assessment rather than one that covers only the most visible risk. Each category addresses a different dimension of market entry risk."
+            "hint": "The specific increase is in the subject; the team is addressed by role, not name; the comparison to last year and the request for a breakdown are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Giving the exact percentage increase makes the query precise and harder to brush off with a vague reply. Asking specifically for a 'breakdown', rather than just 'an explanation', signals that you expect an itemised, transparent answer."
         },
         {
             "id": "WRT_WRITINGEMAIL_L99_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to all staff sharing the results of an anonymous employee survey.",
+            "prompt": "Write an email to a charity proposing a fundraising event idea.",
             "options": [
-                "THANK YOU TO THE 87% OF STAFF WHO COMPLETED THE EMPLOYEE SURVEY - THE KEY THEMES ARE CAREER DEVELOPMENT OPPORTUNITIES, WORK-LIFE BALANCE, AND TEAM COMMUNICATION, WHICH WE WILL PRIORITISE IN OUR ACTION PLAN.",
-                "BEST REGARDS,\nHR DIRECTOR",
-                "DEAR ALL,",
-                "SUBJECT: EMPLOYEE SURVEY RESULTS - KEY THEMES AND NEXT STEPS"
+                "DEAR FUNDRAISING TEAM,",
+                "MANY THANKS,\nFLORENCE MBEKI",
+                "SUBJECT: IDEA FOR A FUNDRAISING EVENT - SPONSORED SWIM",
+                "I HAVE BEEN SUPPORTING YOUR CHARITY FOR A FEW YEARS AND WOULD LOVE TO ORGANISE A SPONSORED SWIM AT MY LOCAL POOL IN SEPTEMBER, SO I WANTED TO CHECK WHETHER YOU PROVIDE SPONSORSHIP FORMS OR PROMOTIONAL MATERIALS FOR SUPPORTER-LED EVENTS LIKE THIS."
             ],
             "correctOrder": [
-                3,
                 2,
                 0,
+                3,
                 1
             ],
-            "hint": "Survey type and purpose are in the subject; all staff are addressed; participation rate, three top themes, and commitment to an action plan are all in the body; HR director signs.",
-            "explanation": "Sharing the participation rate ('87%') validates the survey's credibility and acknowledges staff contribution. Committing to an action plan rather than simply reporting results is what transforms a survey from a tick-box exercise into a genuine engagement tool."
+            "hint": "The specific event idea is in the subject; the fundraising team is addressed by role, not name; your history of support, the idea, and a practical question are in the body; 'MANY THANKS' closes appreciatively.",
+            "explanation": "Mentioning your history as a supporter helps establish trust before asking the charity for practical help. Asking specifically about sponsorship forms and promotional materials shows you have thought through the logistics, not just the idea itself."
         },
         {
             "id": "WRT_WRITINGEMAIL_L99_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a wellbeing committee proposing new employee wellbeing initiatives.",
+            "prompt": "Write an email to a charity asking about regular, long-term volunteering rather than a one-off event.",
             "options": [
-                "I AM PROPOSING THREE NEW WELLBEING INITIATIVES FOR Q2 LAUNCH: A MENTAL HEALTH FIRST AIDER NETWORK, FLEXIBLE WORKING POLICY EXTENSION, AND A SUBSIDISED GYM MEMBERSHIP SCHEME.",
-                "DEAR WELLBEING COMMITTEE,",
-                "BEST REGARDS,\nSARAH GRANT, HR DIRECTOR",
-                "SUBJECT: WELLBEING INITIATIVE PROPOSAL - THREE PROGRAMMES FOR Q2 LAUNCH"
+                "DEAR VOLUNTEERING TEAM,",
+                "KIND REGARDS,\nEDOARDO RICCI",
+                "RATHER THAN A SINGLE EVENT, I WOULD LIKE TO COMMIT TO VOLUNTEERING REGULARLY, IDEALLY ONE MORNING A WEEK ON AN ONGOING BASIS, SO I WOULD LIKE TO ASK WHAT ROLES ARE CURRENTLY AVAILABLE ON THAT KIND OF SCHEDULE.",
+                "SUBJECT: INTEREST IN REGULAR VOLUNTEERING, NOT JUST A ONE-OFF"
             ],
             "correctOrder": [
                 3,
-                1,
                 0,
-                2
+                2,
+                1
             ],
-            "hint": "Number of initiatives and timeline are in the subject; the committee is addressed; three specific wellbeing programmes are named in the body; HR director signs with role.",
-            "explanation": "Three concrete programme names - mental health, flexible working, subsidised gym - give the committee a clear, visualisable package to evaluate. The Q2 timeline provides the urgency needed for a committee decision."
+            "hint": "The type of commitment is specified clearly in the subject; the volunteering team is addressed by role, not name; the preferred pattern and the specific question are in the body; 'KIND REGARDS' closes politely.",
+            "explanation": "Being explicit that you want an 'ongoing' commitment, not a one-off, helps the charity match you to a role suited for long-term volunteers. Suggesting a specific pattern ('one morning a week') makes it easy for them to check what's actually available."
         },
         {
             "id": "WRT_WRITINGEMAIL_L99_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to senior leaders presenting an employee engagement strategy.",
+            "prompt": "Write an email to a local business asking if they would sponsor a community fun run.",
             "options": [
-                "YOURS SINCERELY,\nSARAH GRANT, HR DIRECTOR",
-                "I AM PRESENTING A THREE-PILLAR EMPLOYEE ENGAGEMENT STRATEGY TARGETING AN 80% ENGAGEMENT SCORE BY YEAR END, ENCOMPASSING CAREER DEVELOPMENT, LEADERSHIP COMMUNICATION, AND REWARDS AND RECOGNITION.",
-                "SUBJECT: EMPLOYEE ENGAGEMENT STRATEGY - TARGETING 80% ENGAGEMENT BY YEAR END",
-                "DEAR LEADERSHIP TEAM,"
+                "DEAR MS FALOLA,",
+                "SUBJECT: SPONSORSHIP REQUEST - ANNUAL COMMUNITY FUN RUN",
+                "BEST REGARDS,\nJEREMIAH OSEI-BONSU",
+                "OUR ANNUAL COMMUNITY FUN RUN IS TAKING PLACE ON 21 SEPTEMBER AND USUALLY ATTRACTS AROUND 300 LOCAL RUNNERS, SO WE WONDERED WHETHER YOUR BAKERY WOULD BE INTERESTED IN SPONSORING THE WATER STATION IN EXCHANGE FOR YOUR LOGO ON OUR BANNERS AND WEBSITE."
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
-                0
+                0,
+                3,
+                2
             ],
-            "hint": "Target and strategy type are in the subject; leadership is addressed; engagement target, three pillars, and timeline are in the body; director signs formally.",
-            "explanation": "A three-pillar framework - career development, leadership communication, and recognition - covers the three most evidence-based drivers of employee engagement. Setting an '80% engagement score' target gives leaders a specific, measurable outcome to hold HR accountable to."
+            "hint": "The event and specific ask are in the subject; the business owner is addressed by name; the event's scale and a clear, mutually beneficial offer are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Including attendance numbers ('around 300 local runners') helps a business owner judge the visibility they would gain from sponsoring. Proposing a specific, mutually beneficial exchange - sponsorship for logo placement - is far more persuasive than a general request for money."
         },
         {
             "id": "WRT_WRITINGEMAIL_L100_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to all senior staff announcing the annual strategy review cycle.",
+            "prompt": "Write a professional and gracious email resigning from your job.",
             "options": [
-                "I AM WRITING TO LAUNCH THIS YEAR'S ANNUAL STRATEGY REVIEW - EACH DEPARTMENT IS REQUESTED TO SUBMIT ITS STRATEGIC OBJECTIVES AND BUDGET REQUIREMENTS FOR 2025 BY 30 NOVEMBER.",
-                "BEST REGARDS,\nCHIEF EXECUTIVE OFFICER",
-                "DEAR HEADS OF DEPARTMENT,",
-                "SUBJECT: ANNUAL STRATEGY REVIEW - SUBMISSIONS REQUIRED BY 30 NOVEMBER"
+                "YOURS SINCERELY,\nABIGAIL NAKAMURA",
+                "SUBJECT: RESIGNATION - LAST WORKING DAY 15 SEPTEMBER",
+                "DEAR CAMILLE,",
+                "AFTER A GREAT DEAL OF THOUGHT, I HAVE DECIDED TO ACCEPT A NEW OPPORTUNITY AND AM WRITING TO FORMALLY RESIGN FROM MY ROLE, WITH MY LAST WORKING DAY BEING 15 SEPTEMBER IN LINE WITH MY NOTICE PERIOD - I AM VERY GRATEFUL FOR EVERYTHING I HAVE LEARNED HERE."
             ],
             "correctOrder": [
-                3,
+                1,
                 2,
-                0,
-                1
+                3,
+                0
             ],
-            "hint": "Review process and deadline are in the subject; heads of department are addressed by role; process launch, two submission requirements, and deadline are in the body; CEO signs by role.",
-            "explanation": "Addressing 'Heads of Department' by role rather than individually when sending a company-wide request is standard in large organisations. Two clear deliverables - 'objectives AND budget requirements' - prevent departmental heads from submitting incomplete information."
+            "hint": "The purpose and exact last day are in the subject; the manager is addressed by first name; the decision, the notice period, and genuine gratitude are in the body; the closing matches this named greeting.",
+            "explanation": "Stating the exact last working day upfront, and confirming it matches your notice period, removes any ambiguity for planning handover. Ending on genuine gratitude, rather than only the practical details, leaves a positive final impression."
         },
         {
             "id": "WRT_WRITINGEMAIL_L100_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a management team presenting updated annual strategic objectives.",
+            "prompt": "Write a warm farewell email to your whole team on your last day at a company.",
             "options": [
-                "PLEASE FIND ATTACHED THE UPDATED STRATEGIC OBJECTIVES FOR 2025, INCORPORATING DEPARTMENT INPUT FROM THE ANNUAL REVIEW - KEY PRIORITIES ARE REVENUE GROWTH, TALENT RETENTION, AND TECHNOLOGY TRANSFORMATION.",
-                "DEAR MANAGEMENT BOARD,",
-                "YOURS SINCERELY,\nCHIEF EXECUTIVE OFFICER",
-                "SUBJECT: 2025 STRATEGIC OBJECTIVES - UPDATED FRAMEWORK FOR BOARD APPROVAL"
+                "WARMEST WISHES,\nOLIVER BRANNIGAN",
+                "DEAR ALL,",
+                "SUBJECT: THANK YOU - IT'S BEEN A PLEASURE",
+                "TODAY IS MY LAST DAY, AND I WANTED TO SAY A GENUINE THANK YOU TO EACH OF YOU FOR MAKING THE LAST FOUR YEARS SO ENJOYABLE - I WILL PARTICULARLY MISS OUR MONDAY MORNING COFFEE CATCH-UPS, AND I HOPE WE STAY IN TOUCH."
             ],
             "correctOrder": [
-                3,
+                2,
                 1,
-                0,
-                2
+                3,
+                0
             ],
-            "hint": "Year and update purpose are in the subject; the board is addressed formally; attachment, process acknowledged, and three headline priorities are in the body; CEO signs by role.",
-            "explanation": "Acknowledging that department input was incorporated ('incorporating department input') validates the review process. Three strategic priorities give the board a clear picture without requiring them to read the full document before approval."
+            "hint": "A heartfelt thank-you is in the subject; the whole team is addressed together; the timeframe, a specific fond memory, and a wish to stay in touch are in the body; 'WARMEST WISHES' closes with genuine feeling.",
+            "explanation": "Mentioning a specific, small tradition ('Monday morning coffee catch-ups') makes a farewell email feel personal rather than a copy-paste template. Ending with 'I hope we stay in touch' leaves the relationship open rather than sounding final and closed."
         },
         {
             "id": "WRT_WRITINGEMAIL_L100_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email presenting a department's performance against annual objectives to senior management.",
+            "prompt": "Write a casual email congratulating a close friend on passing a major professional exam.",
             "options": [
-                "YOURS SINCERELY,\nCHRIS FORD, OPERATIONS DIRECTOR",
-                "I AM PLEASED TO REPORT THAT THE OPERATIONS DEPARTMENT ACHIEVED OR EXCEEDED ALL FIVE OF ITS 2024 STRATEGIC OBJECTIVES, WITH OUTSTANDING PERFORMANCE IN COST MANAGEMENT AND PROCESS EFFICIENCY.",
-                "SUBJECT: OPERATIONS DEPARTMENT - 2024 ANNUAL PERFORMANCE vs OBJECTIVES",
-                "DEAR EXECUTIVE COMMITTEE,"
+                "I JUST SAW YOUR MESSAGE AND I AM SO INCREDIBLY PROUD OF YOU - ALL THOSE WEEKENDS YOU SPENT STUDYING INSTEAD OF GOING OUT HAVE FINALLY PAID OFF, AND I THINK WE NEED TO CELEBRATE PROPERLY THIS WEEKEND.",
+                "SUBJECT: YOU DID IT!!",
+                "SO PROUD OF YOU,\nZARA",
+                "HI PRIYA,"
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
-                0
+                3,
+                0,
+                2
             ],
-            "hint": "Department and performance context are in the subject; the executive committee is addressed formally; achievement level, number of objectives, and two highlight areas are in the body; director signs formally.",
-            "explanation": "Reporting that ALL five objectives were achieved ('all five') is the critical headline. Highlighting two outstanding areas ('cost management, process efficiency') adds depth without requiring the committee to read the full report to understand the best results."
+            "hint": "Excited punctuation suits the subject; a close friend is greeted casually by first name; genuine excitement, a specific acknowledgement of their effort, and a suggestion to celebrate are in the body; an affectionate sign-off closes it.",
+            "explanation": "Referencing the actual sacrifice behind the achievement ('all those weekends studying instead of going out') shows you have really been paying attention to their journey, not just the result. Suggesting a specific way to celebrate turns congratulations into a genuine plan to spend time together."
         }
     ]
 }

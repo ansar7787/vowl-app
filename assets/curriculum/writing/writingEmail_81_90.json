@@ -8,54 +8,54 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a board of directors presenting an annual performance report.",
+            "prompt": "Write an email to your manager proposing a change to how your team handles customer enquiries.",
             "options": [
-                "I AM PLEASED TO PRESENT THE 2024 ANNUAL PERFORMANCE REPORT, WHICH DEMONSTRATES AN 18% INCREASE IN REVENUE, A REDUCTION IN OPERATING COSTS BY 6%, AND EXPANSION INTO THREE NEW MARKETS.",
-                "YOURS SINCERELY,\nMARGARET CROSS, CHIEF EXECUTIVE OFFICER",
-                "DEAR BOARD OF DIRECTORS,",
-                "SUBJECT: ANNUAL PERFORMANCE REPORT 2024 - BOARD PRESENTATION SUMMARY"
+                "I HAVE NOTICED THAT ENQUIRIES OFTEN SIT UNANSWERED OVER THE WEEKEND, SO I WOULD LIKE TO SUGGEST INTRODUCING A ROTA SO THAT SOMEONE IS ALWAYS AVAILABLE TO RESPOND WITHIN TWENTY-FOUR HOURS.",
+                "DEAR SIMON,",
+                "SUBJECT: SUGGESTION TO IMPROVE OUR CUSTOMER ENQUIRY PROCESS",
+                "BEST REGARDS,\nOLIVIA HART"
             ],
             "correctOrder": [
-                3,
                 2,
+                1,
                 0,
-                1
+                3
             ],
-            "hint": "Report type and year are in the subject; the full board is addressed; three specific headline metrics - revenue growth, cost reduction, market expansion - are in the body; the CEO signs formally.",
-            "explanation": "Three specific metrics (revenue +18%, costs -6%, three new markets) give the board an immediate performance snapshot. A CEO report to the board must lead with quantifiable results - narrative context comes later in the report itself."
+            "hint": "The problem being solved is in the subject; the manager is addressed by first name; the observation and proposed solution form the body; 'BEST REGARDS' closes the internal suggestion politely.",
+            "explanation": "Backing up a suggestion with a specific observation ('enquiries sit unanswered over the weekend') is far more persuasive than simply saying the process needs improving. Proposing a concrete solution, not just naming a problem, shows initiative."
         },
         {
             "id": "WRT_WRITINGEMAIL_L81_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write a board email recommending a significant capital investment.",
+            "prompt": "Write an email to a recruiter after a successful interview, asking to discuss your possible start date.",
             "options": [
-                "FOLLOWING A TWELVE-MONTH FEASIBILITY STUDY, THE EXECUTIVE TEAM RECOMMENDS THE BOARD APPROVES A CAPITAL EXPENDITURE OF £4.2M FOR A NEW MANUFACTURING PLANT PROJECTED TO DELIVER 27% CAPACITY GROWTH BY 2027.",
-                "DEAR BOARD,",
-                "YOURS SINCERELY,\nMARGARET CROSS, CEO",
-                "SUBJECT: INVESTMENT RECOMMENDATION - NEW MANUFACTURING PLANT: £4.2M CAPEX"
+                "YOURS SINCERELY,\nDANIEL FOX",
+                "THANK YOU FOR SUCH AN ENJOYABLE INTERVIEW YESTERDAY - I REMAIN VERY KEEN ON THE ROLE AND WOULD LIKE TO DISCUSS A POSSIBLE START DATE, AS I WOULD NEED TO GIVE FOUR WEEKS' NOTICE TO MY CURRENT EMPLOYER.",
+                "DEAR MS OKONKWO,",
+                "SUBJECT: FOLLOWING UP ON YESTERDAY'S INTERVIEW - START DATE"
             ],
             "correctOrder": [
                 3,
+                2,
                 1,
-                0,
-                2
+                0
             ],
-            "hint": "Investment type and amount are in the subject; the board is addressed; the study duration, exact capex figure, and projected return are all in the body; CEO signs formally.",
-            "explanation": "A capital investment recommendation must include: the evidence base ('twelve-month feasibility study'), the exact cost ('£4.2M'), and the projected return ('27% capacity'). Without all three, the board lacks sufficient information to vote."
+            "hint": "The interview and topic are in the subject; the recruiter is addressed by name; your enthusiasm and a practical constraint (notice period) are in the body; the closing matches this named greeting.",
+            "explanation": "Mentioning your notice period upfront helps the employer plan realistically rather than assuming you can start immediately. Reaffirming your interest in the same sentence as a practical question keeps the tone positive rather than purely transactional."
         },
         {
             "id": "WRT_WRITINGEMAIL_L81_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a board nominating committee recommending a new non-executive director.",
+            "prompt": "Write an email to your manager requesting approval to fund a professional course.",
             "options": [
-                "YOURS SINCERELY,\nMARGARET CROSS, CEO",
-                "I WISH TO NOMINATE DR PATRICIA WALSH FOR APPOINTMENT AS A NON-EXECUTIVE DIRECTOR - SHE BRINGS TWENTY YEARS OF FINANCIAL SERVICES EXPERTISE AND CURRENTLY SITS ON TWO FTSE 250 BOARDS.",
-                "SUBJECT: NON-EXECUTIVE DIRECTOR NOMINATION - DR PATRICIA WALSH",
-                "DEAR NOMINATIONS COMMITTEE,"
+                "KIND REGARDS,\nPRIYA NAIR",
+                "I HAVE FOUND A PART-TIME PROJECT MANAGEMENT COURSE THAT WOULD DIRECTLY SUPPORT MY WORK ON THE CURRENT ROLLOUT, AND I WOULD BE GRATEFUL IF THE TEAM COULD COVER THE £450 COURSE FEE.",
+                "SUBJECT: REQUEST TO FUND A PROJECT MANAGEMENT COURSE",
+                "DEAR HANNAH,"
             ],
             "correctOrder": [
                 2,
@@ -63,566 +63,545 @@
                 1,
                 0
             ],
-            "hint": "Nomination type and nominee name are in the subject; the committee is addressed formally; nominee's credentials (years, sector, current board roles) form the justification in the body.",
-            "explanation": "A board nomination email needs to make the case quickly: specific experience ('twenty years in financial services') and current board-level credibility ('two FTSE 250 boards') are the two most important selection criteria for a NED role."
+            "hint": "The course and purpose are in the subject; the manager is addressed by first name; the relevance to current work and the specific cost are in the body; 'KIND REGARDS' closes the funding request.",
+            "explanation": "Linking the course directly to a current project ('supports my work on the rollout') makes the request easier to justify than general career development. Stating the exact cost upfront saves the manager from having to ask before deciding."
         },
         {
             "id": "WRT_WRITINGEMAIL_L82_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a marketing team presenting a campaign strategy proposal.",
+            "prompt": "Write an email to your team organising a leaving collection for a retiring colleague.",
             "options": [
-                "I AM PROPOSING A MULTI-CHANNEL Q4 CAMPAIGN TARGETING £500K IN ADDITIONAL REVENUE - THE STRATEGY COMBINES DIGITAL ADVERTISING, INFLUENCER PARTNERSHIPS, AND EMAIL NURTURE SEQUENCES.",
-                "BEST REGARDS,\nVICTORIA LANE, MARKETING DIRECTOR",
-                "DEAR MARKETING TEAM,",
-                "SUBJECT: Q4 CAMPAIGN STRATEGY PROPOSAL - TARGET: £500K REVENUE"
+                "SUBJECT: LEAVING COLLECTION FOR MARGARET'S RETIREMENT",
+                "AS MOST OF YOU KNOW, MARGARET IS RETIRING AT THE END OF THE MONTH AFTER TWENTY-TWO YEARS WITH THE COMPANY, SO I AM COLLECTING CONTRIBUTIONS FOR A GIFT AND CARD - PLEASE LET ME KNOW IF YOU WOULD LIKE TO CONTRIBUTE.",
+                "DEAR TEAM,",
+                "BEST WISHES,\nJORDAN LEWIS"
             ],
             "correctOrder": [
-                3,
-                2,
                 0,
-                1
+                2,
+                1,
+                3
             ],
-            "hint": "Campaign and target are in the subject; the team is addressed; revenue target and three strategy components are in the body; marketing director signs with role.",
-            "explanation": "Combining a financial target ('£500K revenue') with three specific tactical channels gives the team both the commercial goal and the methodological framework. This bridges strategy and execution in one succinct email."
+            "hint": "The occasion and person are in the subject; the whole team is addressed together; the background and how to take part are in the body; 'BEST WISHES' closes warmly.",
+            "explanation": "Including a meaningful detail ('twenty-two years with the company') makes the collection feel personal rather than routine. Phrasing it as 'let me know if you would like to' rather than assuming participation keeps the invitation pressure-free."
         },
         {
             "id": "WRT_WRITINGEMAIL_L82_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email proposing a brand partnership with a complementary business.",
+            "prompt": "Write an email to your landlord asking permission to put up shelves in your rented flat.",
             "options": [
-                "I BELIEVE THERE IS A NATURAL STRATEGIC ALIGNMENT BETWEEN NEXUS CONSULTING AND EVERGREEN WELLNESS THAT COULD DELIVER SIGNIFICANT AUDIENCE GROWTH FOR BOTH BRANDS THROUGH A CO-BRANDED CONTENT PARTNERSHIP.",
-                "DEAR ALEX MASON,",
-                "BEST REGARDS,\nVICTORIA LANE, MARKETING DIRECTOR",
-                "SUBJECT: BRAND PARTNERSHIP PROPOSAL - NEXUS X EVERGREEN WELLNESS"
+                "YOURS SINCERELY,\nKAI ANDERSSON",
+                "DEAR MRS OYELARAN,",
+                "SUBJECT: PERMISSION REQUEST - PUTTING UP SHELVES IN THE LIVING ROOM",
+                "I WOULD LIKE TO PUT UP TWO SMALL BOOKSHELVES IN THE LIVING ROOM AND WOULD BE HAPPY TO USE A PROFESSIONAL FITTER AND FILL ANY HOLES BEFORE I EVENTUALLY MOVE OUT, IF THAT WOULD PUT YOUR MIND AT EASE."
             ],
             "correctOrder": [
-                3,
+                2,
                 1,
-                0,
-                2
+                3,
+                0
             ],
-            "hint": "Both brands and partnership type are in the subject; the contact is addressed by name; strategic alignment rationale and mutual benefit are in the body; marketing director signs with role.",
-            "explanation": "'Mutual audience growth for both brands' is the key phrase - it frames the partnership as genuinely bilateral. A co-branded content partnership is a low-risk, high-visibility arrangement that is easier to agree to than a financial partnership."
+            "hint": "The request and room are in the subject; the landlord is addressed by name; the proposal and reassurance about restoring the wall are in the body; the closing matches this named greeting.",
+            "explanation": "Offering a reassurance ('fill any holes before I move out') before the landlord even raises a concern shows consideration and makes approval more likely. Small, specific requests like this are usually best asked directly rather than left until moving-out time."
         },
         {
             "id": "WRT_WRITINGEMAIL_L82_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email presenting Q3 campaign results to senior leadership.",
+            "prompt": "Write a casual email to an old friend you have lost touch with, suggesting you meet up.",
             "options": [
-                "BEST REGARDS,\nVICTORIA LANE, MARKETING DIRECTOR",
-                "THE Q3 DIGITAL CAMPAIGN DELIVERED A 142% RETURN ON AD SPEND, GENERATING £284,000 IN ATTRIBUTED REVENUE FROM A £200,000 INVESTMENT, EXCEEDING OUR TARGET BY 19 PERCENTAGE POINTS.",
-                "SUBJECT: Q3 CAMPAIGN RESULTS - 142% RETURN ON AD SPEND ACHIEVED",
-                "DEAR LEADERSHIP TEAM,"
+                "HI SOPHIE,",
+                "I KNOW IT'S BEEN AGES SINCE WE LAST SPOKE, BUT I SAW A PHOTO OF YOUR NEW PUPPY ONLINE AND REALISED HOW MUCH I MISS CATCHING UP WITH YOU - ANY CHANCE YOU'RE FREE FOR A COFFEE SOMETIME SOON?",
+                "CAN'T WAIT TO HEAR FROM YOU,\nRUBY",
+                "SUBJECT: IT'S BEEN WAY TOO LONG!"
             ],
             "correctOrder": [
-                2,
                 3,
+                0,
                 1,
-                0
+                2
             ],
-            "hint": "Campaign results and headline metric are in the subject; leadership is addressed; ROAS, revenue, investment, and overperformance are all quantified in the body; director signs with role.",
-            "explanation": "The most compelling marketing result combines the ratio ('142% ROAS') with the absolute figures ('£284K from £200K investment') AND the overperformance ('19pp above target'). This three-level quantification leaves no room for doubt about the campaign's success."
+            "hint": "A warm, informal exclamation opens the subject; an old friend is greeted casually by first name; the reason for getting back in touch and a low-pressure suggestion are in the body; a friendly sign-off closes it.",
+            "explanation": "Mentioning a specific, genuine reason for reaching out ('saw a photo of your new puppy') feels far warmer than a generic 'let's catch up' message. Suggesting something low-commitment like coffee makes it easy for your friend to say yes."
         },
         {
             "id": "WRT_WRITINGEMAIL_L83_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to staff announcing a company merger.",
+            "prompt": "Write an email to your GP surgery requesting a copy of your medical records.",
             "options": [
-                "I AM WRITING TO ANNOUNCE THAT NEXUS CONSULTING HAS AGREED TO MERGE WITH PRAXIS GROUP - THIS IS AN EXCITING DEVELOPMENT THAT WILL STRENGTHEN OUR MARKET POSITION AND CREATE NEW OPPORTUNITIES FOR ALL EMPLOYEES.",
-                "WITH WARM REGARDS,\nMARGARET CROSS, CEO",
-                "DEAR ALL,",
-                "SUBJECT: IMPORTANT ANNOUNCEMENT - NEXUS CONSULTING MERGER WITH PRAXIS GROUP"
+                "YOURS FAITHFULLY,\nELENA VASQUEZ",
+                "SUBJECT: REQUEST FOR A COPY OF MY MEDICAL RECORDS",
+                "DEAR PRACTICE MANAGER,",
+                "I AM MOVING ABROAD NEXT MONTH AND WILL NEED TO REGISTER WITH A NEW DOCTOR, SO I WOULD BE GRATEFUL IF YOU COULD LET ME KNOW HOW TO REQUEST A COPY OF MY FULL MEDICAL RECORDS AND HOW LONG THIS USUALLY TAKES."
             ],
             "correctOrder": [
-                3,
+                1,
                 2,
-                0,
-                1
+                3,
+                0
             ],
-            "hint": "Announcement type and both company names are in the subject; all staff are addressed; merger confirmation, positive framing, and employee benefit are all included; CEO signs with warm closing.",
-            "explanation": "The word 'exciting' in an announcement email is deliberate - it frames the merger positively before employees have time to feel anxious. Mentioning employee opportunities directly addresses the first question most staff will have."
+            "hint": "The request and reason are in the subject; the practice manager is addressed by role, not name; the reason for moving and two practical questions are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Explaining why you need the records ('registering with a new doctor abroad') helps the surgery process your request appropriately. Since you don't know the practice manager's name personally, 'Yours faithfully' is the correct closing here."
         },
         {
             "id": "WRT_WRITINGEMAIL_L83_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email requesting due diligence information ahead of a company acquisition.",
+            "prompt": "Write an email to a university asking to defer the start of your course by one year.",
             "options": [
-                "AS PART OF OUR PROPOSED ACQUISITION OF DELTA TECH LTD, WE REQUIRE SUBMISSION OF THE ATTACHED DUE DILIGENCE CHECKLIST BY 30 JUNE TO MAINTAIN THE PROPOSED COMPLETION TIMELINE.",
-                "DEAR MR PATEL,",
-                "YOURS SINCERELY,\nJAMES FORD, DEAL LEAD",
-                "SUBJECT: DUE DILIGENCE INFORMATION REQUEST - ACQUISITION OF DELTA TECH LTD"
+                "YOURS FAITHFULLY,\nTOBIAS LINDQVIST",
+                "DEAR ADMISSIONS TUTOR,",
+                "I HAVE BEEN OFFERED A PLACE ON THE BA HISTORY COURSE STARTING THIS SEPTEMBER, BUT DUE TO A FAMILY SITUATION I NEED TO STAY CLOSE TO HOME THIS YEAR, SO I WOULD LIKE TO ASK WHETHER I COULD DEFER MY PLACE UNTIL THE FOLLOWING SEPTEMBER.",
+                "SUBJECT: REQUEST TO DEFER MY OFFER TO NEXT SEPTEMBER"
             ],
             "correctOrder": [
                 3,
                 1,
-                0,
-                2
+                2,
+                0
             ],
-            "hint": "Acquisition target and request type are in the subject; the contact is addressed formally; legal process context, attachment reference, and deadline are in the body; deal lead signs with role.",
-            "explanation": "In M&A due diligence, the deadline ('30 June') must appear in the email because it is part of the deal timeline. Attaching a checklist rather than listing items demonstrates professionalism and completeness."
+            "hint": "The course and request are in the subject; the tutor is addressed by role, not name; the offer, the reason, and the specific request are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Giving a brief, honest reason ('a family situation') without oversharing personal details is the right level of detail for this kind of request. Naming the exact course helps admissions staff locate your application quickly."
         },
         {
             "id": "WRT_WRITINGEMAIL_L83_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to investors updating them on an acquisition process.",
+            "prompt": "Write an email to a hotel asking if you can check in early for a special occasion.",
             "options": [
-                "YOURS SINCERELY,\nMARGARET CROSS, CEO",
-                "I AM PLEASED TO REPORT THAT THE ACQUISITION OF DELTA TECH LTD IS PROGRESSING ON SCHEDULE - DUE DILIGENCE IS 80% COMPLETE AND WE ANTICIPATE FORMAL COMPLETION BY 15 AUGUST.",
-                "SUBJECT: ACQUISITION UPDATE - DELTA TECH LTD DEAL PROGRESS REPORT",
-                "DEAR INVESTORS,"
+                "MANY THANKS,\nCHIDI EZEALOR",
+                "DEAR RECEPTION TEAM,",
+                "SUBJECT: EARLY CHECK-IN REQUEST FOR OUR ANNIVERSARY STAY",
+                "WE ARE STAYING WITH YOU ON 14 SEPTEMBER TO CELEBRATE OUR TENTH WEDDING ANNIVERSARY AND WOULD LOVE TO CHECK IN EARLY IF A ROOM HAPPENS TO BE READY, AS OUR FLIGHT LANDS AT 9 A.M."
             ],
             "correctOrder": [
                 2,
-                3,
                 1,
+                3,
                 0
             ],
-            "hint": "Update type and target company are in the subject; investors are addressed collectively; progress percentage and completion date projection are in the body; CEO signs formally.",
-            "explanation": "Investor communications need two things: a current status ('80% complete') and a projected timeline ('15 August completion'). Together they answer the only question investors really have: is this on track?"
+            "hint": "The occasion and request are in the subject; the reception team is addressed; the date, the special reason, and the flight time are all in the body; 'MANY THANKS' closes the friendly request.",
+            "explanation": "Mentioning the occasion ('tenth wedding anniversary') often encourages hotel staff to go the extra mile if they can. Explaining why you're asking - an early flight - gives a genuine, practical reason rather than just a preference."
         },
         {
             "id": "WRT_WRITINGEMAIL_L84_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a procurement team notifying them of a supply chain disruption.",
+            "prompt": "Write an email to your manager proposing two fixed remote-working days per week.",
             "options": [
-                "I MUST ALERT YOU THAT OUR PRIMARY SUPPLIER OF COMPONENT SC-881 HAS NOTIFIED US OF A SIX-WEEK DELAY DUE TO PORT CONGESTION, WHICH WILL IMPACT PRODUCTION LINES FROM 1 MARCH.",
-                "YOURS SINCERELY,\nKAREN SHAW, SUPPLY CHAIN DIRECTOR",
-                "DEAR PROCUREMENT TEAM,",
-                "SUBJECT: SUPPLY CHAIN DISRUPTION ALERT - COMPONENT REF: SC-881 DELAY"
+                "BEST REGARDS,\nAMARA OKAFOR",
+                "SUBJECT: PROPOSAL - TWO REGULAR WORKING-FROM-HOME DAYS",
+                "DEAR RICHARD,",
+                "HAVING NOW WORKED FROM HOME OCCASIONALLY OVER THE PAST FEW MONTHS, I HAVE FOUND I AM MOST PRODUCTIVE ON FOCUSED TASKS AT HOME, SO I WOULD LIKE TO PROPOSE MAKING TUESDAYS AND THURSDAYS MY REGULAR REMOTE DAYS GOING FORWARD."
             ],
             "correctOrder": [
-                3,
+                1,
                 2,
-                0,
-                1
+                3,
+                0
             ],
-            "hint": "Disruption type and component are in the subject; the team is addressed; supplier notification, delay duration, cause, and production impact date are in the body; director signs with role.",
-            "explanation": "A supply chain disruption alert needs to communicate four things immediately: WHAT is delayed, HOW LONG the delay is, WHY it has happened, and WHEN production will be affected. This email does all four in one body sentence."
+            "hint": "The proposal is in the subject; the manager is addressed by first name; the evidence from experience and the specific days requested are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Grounding the request in evidence ('found I am most productive on focused tasks at home') is more convincing than simply asking for flexibility. Proposing specific days, rather than a vague arrangement, makes it easy for the manager to say yes."
         },
         {
             "id": "WRT_WRITINGEMAIL_L84_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email proposing an alternative supplier to mitigate a supply chain risk.",
+            "prompt": "You run a small café. Write an email reply to a customer who left a critical review online.",
             "options": [
-                "TO MITIGATE THE RISK FROM THE SC-881 SUPPLY DISRUPTION, I PROPOSE ENGAGING TITANCORE LTD AS AN ALTERNATIVE SUPPLIER - THEY CAN DELIVER THE REQUIRED QUANTITY WITHIN THREE WEEKS AT A 7% PRICE PREMIUM.",
-                "DEAR PROCUREMENT COMMITTEE,",
-                "YOURS SINCERELY,\nKAREN SHAW, SUPPLY CHAIN DIRECTOR",
-                "SUBJECT: ALTERNATIVE SUPPLIER PROPOSAL - COMPONENT SC-881 CONTINGENCY PLAN"
+                "WARM REGARDS,\nFRANCESCA CONTI",
+                "THANK YOU FOR TAKING THE TIME TO SHARE YOUR EXPERIENCE - I AM SORRY TO HEAR YOUR ORDER TOOK SO LONG ON SATURDAY, AND I WOULD LOVE THE CHANCE TO PUT THIS RIGHT WITH A COMPLIMENTARY COFFEE NEXT TIME YOU VISIT.",
+                "SUBJECT: THANK YOU FOR YOUR FEEDBACK, MR DAVIES",
+                "DEAR MR DAVIES,"
             ],
             "correctOrder": [
+                2,
                 3,
                 1,
-                0,
-                2
+                0
             ],
-            "hint": "Contingency framing and component are in the subject; the committee is addressed formally; specific alternative, delivery timeline, and cost premium are all in the body; director signs with role.",
-            "explanation": "A contingency proposal must include the cost premium so decision-makers can weigh it against the cost of production downtime. '7%' is a concrete, comparable figure. Naming the alternative supplier ('Titancore') makes the proposal immediately actionable."
+            "hint": "A personal, non-defensive tone is set in the subject; the customer is addressed by name; the acknowledgement, apology, and gesture of goodwill are in the body; 'WARM REGARDS' closes warmly and professionally.",
+            "explanation": "Responding to criticism with genuine acknowledgement rather than excuses protects your business's reputation far more effectively. Offering a specific, small gesture ('a complimentary coffee') shows good faith without over-promising."
         },
         {
             "id": "WRT_WRITINGEMAIL_L84_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email requesting an audit of current supplier performance standards.",
+            "prompt": "Write an email to a gym asking if they offer a discount for a group of colleagues joining together.",
             "options": [
-                "YOURS SINCERELY,\nKAREN SHAW, SUPPLY CHAIN DIRECTOR",
-                "FOLLOWING RECENT SUPPLY DISRUPTIONS, I AM PROPOSING A FORMAL AUDIT OF OUR TWENTY-THREE ACTIVE SUPPLIERS AGAINST OUR DELIVERY, QUALITY, AND COMPLIANCE STANDARDS DURING THIS QUARTER.",
-                "SUBJECT: SUPPLIER PERFORMANCE AUDIT REQUEST - Q2 REVIEW CYCLE",
-                "DEAR PROCUREMENT COMMITTEE,"
+                "DEAR MEMBERSHIP TEAM,",
+                "A GROUP OF EIGHT COLLEAGUES FROM MY OFFICE ARE INTERESTED IN JOINING TOGETHER, SO I WOULD LIKE TO ASK WHETHER YOU OFFER A CORPORATE OR GROUP RATE, AND IF SO, WHAT DOCUMENTATION WE WOULD NEED TO PROVIDE.",
+                "KIND REGARDS,\nLEO BENNETT",
+                "SUBJECT: ENQUIRY ABOUT CORPORATE MEMBERSHIP RATES"
             ],
             "correctOrder": [
-                2,
                 3,
+                0,
                 1,
-                0
+                2
             ],
-            "hint": "Audit purpose and review cycle are in the subject; the committee is addressed; business context, scope (23 suppliers), and three evaluation criteria are in the body; director signs.",
-            "explanation": "Specifying the number of suppliers ('twenty-three') and three evaluation criteria - delivery, quality, and compliance - gives the procurement committee a complete picture of the audit's scope and enables accurate resourcing."
+            "hint": "The type of enquiry is in the subject; the team is addressed by role, not name; the group size and two related questions are in the body; 'KIND REGARDS' closes politely.",
+            "explanation": "Giving the exact group size ('eight colleagues') allows the gym to quote an accurate rate rather than a generic one. Asking about paperwork in the same email avoids a frustrating back-and-forth once the group is ready to sign up."
         },
         {
             "id": "WRT_WRITINGEMAIL_L85_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write a crisis communication email to customers about a data breach.",
+            "prompt": "Write an email to your bank disputing a fee you believe was charged incorrectly.",
             "options": [
-                "WE ARE WRITING TO INFORM YOU THAT WE HAVE IDENTIFIED A SECURITY INCIDENT THAT MAY HAVE AFFECTED CUSTOMER ACCOUNT INFORMATION - WE HAVE SECURED THE BREACH AND ARE CONDUCTING A FULL INVESTIGATION.",
-                "YOURS SINCERELY,\nMARGARET CROSS, CEO",
-                "DEAR VALUED CUSTOMER,",
-                "SUBJECT: IMPORTANT SECURITY NOTICE - YOUR ACCOUNT DATA PROTECTION"
+                "SUBJECT: DISPUTED CHARGE - £25 OVERDRAFT FEE ON 3 JULY",
+                "I NOTICED A £25 OVERDRAFT FEE ON MY ACCOUNT DATED 3 JULY, BUT ACCORDING TO MY OWN RECORDS MY BALANCE DID NOT GO BELOW ZERO THAT WEEK, SO I WOULD BE GRATEFUL IF YOU COULD LOOK INTO THIS AND REFUND THE CHARGE IF IT WAS APPLIED IN ERROR.",
+                "YOURS FAITHFULLY,\nMARTINA KOVACS",
+                "DEAR CUSTOMER SERVICES,"
             ],
             "correctOrder": [
-                3,
-                2,
                 0,
-                1
+                3,
+                1,
+                2
             ],
-            "hint": "Security notice framing is in the subject; customers are addressed formally; breach notification, data type at risk, immediate action taken, and investigation are all in the body; CEO signs for authority.",
-            "explanation": "A GDPR-compliant customer breach notification must include: what happened, what data may be affected, and what action has been taken. The subject line avoids panic but is clear. CEO sign-off signals the seriousness of the company's response."
+            "hint": "The disputed amount and date are in the subject; customer services is addressed by role, not name; your evidence and the specific request are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Stating your own records ('my balance did not go below zero') gives the bank a concrete reason to investigate rather than dismiss your query. Asking for a refund 'if it was applied in error' is fair and avoids sounding accusatory before the facts are confirmed."
         },
         {
             "id": "WRT_WRITINGEMAIL_L85_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to staff updating them on a company crisis and business continuity measures.",
+            "prompt": "Write an email to a university library asking for an extension on a book you need for your dissertation.",
             "options": [
-                "FOLLOWING THE CYBER INCIDENT, ALL CORE OPERATIONS HAVE BEEN RESTORED ON OUR BACKUP SYSTEMS - A FULL INCIDENT REVIEW WILL TAKE PLACE NEXT WEEK AND WE WILL SHARE FINDINGS WITH ALL STAFF.",
-                "DEAR ALL,",
-                "BEST REGARDS,\nMARGARET CROSS, CEO",
-                "SUBJECT: BUSINESS CONTINUITY UPDATE - CURRENT OPERATIONS STATUS"
+                "SUBJECT: RENEWAL REQUEST - REFERENCE COPY NEEDED FOR DISSERTATION",
+                "DEAR LIBRARY TEAM,",
+                "I STILL NEED THE COPY OF 'ECONOMIC HISTORY OF EUROPE' THAT IS DUE BACK TOMORROW, AS SEVERAL CHAPTERS ARE ESSENTIAL TO MY DISSERTATION, SO I WOULD LIKE TO ASK WHETHER I COULD RENEW IT FOR A FURTHER TWO WEEKS.",
+                "KIND REGARDS,\nSAMUEL OTIENO"
             ],
             "correctOrder": [
-                3,
-                1,
                 0,
-                2
+                1,
+                2,
+                3
             ],
-            "hint": "Update purpose and operational status are in the subject; all staff are addressed; operations restored, backup system context, and follow-up review commitment are in the body; CEO signs.",
-            "explanation": "The most important message in a business continuity update is that operations are restored - this reassures staff that their jobs and workflows are unaffected. Committing to share the investigation findings builds internal trust."
+            "hint": "The book and deadline are in the subject; the library team is addressed; the reason it's needed and the specific renewal period are in the body; 'KIND REGARDS' closes the polite request.",
+            "explanation": "Naming the exact book and explaining why it matters ('essential to my dissertation') gives library staff a clear reason to prioritise your renewal. Asking for a specific length of extension is easier to approve than an open-ended request."
         },
         {
             "id": "WRT_WRITINGEMAIL_L85_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a regulator notifying them of a reportable operational incident.",
+            "prompt": "Write an email to your landlord proposing a smaller rent increase than the one they suggested.",
             "options": [
-                "YOURS SINCERELY,\nMARGARET CROSS, CEO",
-                "WE ARE HEREBY FULFILLING OUR OBLIGATION TO NOTIFY YOU OF AN OPERATIONAL DISRUPTION THAT OCCURRED ON 7 AUGUST AND AFFECTED OUR CORE PROCESSING SYSTEMS FOR A PERIOD OF THREE HOURS.",
-                "SUBJECT: MANDATORY INCIDENT NOTIFICATION - OPERATIONAL DISRUPTION, 7 AUGUST",
-                "DEAR REGULATORY COMPLIANCE TEAM,"
+                "THANK YOU FOR LETTING ME KNOW ABOUT THE PROPOSED INCREASE - I UNDERSTAND COSTS ARE RISING, BUT A JUMP OF £150 A MONTH WOULD BE DIFFICULT FOR ME RIGHT NOW, SO I WOULD LIKE TO PROPOSE AN INCREASE OF £75 INSTEAD, WITH A REVIEW AGAIN NEXT YEAR.",
+                "DEAR MR ABARA,",
+                "SUBJECT: RESPONSE TO PROPOSED RENT INCREASE",
+                "YOURS SINCERELY,\nFREYA JOHANSSON"
             ],
             "correctOrder": [
                 2,
-                3,
                 1,
-                0
+                0,
+                3
             ],
-            "hint": "Mandatory notification and incident date are in the subject; the regulatory team is addressed; compliance obligation, incident date, nature, and duration are all in the body; CEO signs formally.",
-            "explanation": "'Hereby fulfilling our obligation to notify' is the precise legal language of a mandatory regulatory notification. Including both the incident date and duration meets the regulator's minimum reporting requirements."
+            "hint": "The topic is stated plainly in the subject; the landlord is addressed by name; acknowledgement of their position, your constraint, and a specific counter-proposal are in the body; the closing matches this named greeting.",
+            "explanation": "Opening with understanding ('I understand costs are rising') before disagreeing makes a counter-offer far more likely to be well received. Proposing a specific figure and a future review date shows you are negotiating in good faith, not simply refusing."
         },
         {
             "id": "WRT_WRITINGEMAIL_L86_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to HR conducting a formal annual performance review of an employee.",
+            "prompt": "Write an email to a former manager asking if they would write you a professional recommendation.",
             "options": [
-                "I AM SUBMITTING MY ASSESSMENT OF HELEN WARREN'S ANNUAL PERFORMANCE - SHE HAS CONSISTENTLY EXCEEDED HER TARGETS, DELIVERED THREE HIGH-PROFILE PROJECTS, AND DEMONSTRATED STRONG LEADERSHIP QUALITIES.",
-                "YOURS SINCERELY,\nADAM COLE, LINE MANAGER",
-                "DEAR HR REVIEW PANEL,",
-                "SUBJECT: ANNUAL PERFORMANCE REVIEW - HELEN WARREN, SENIOR ANALYST"
+                "WARMLY,\nNOAH FERREIRA",
+                "SUBJECT: WOULD YOU BE WILLING TO WRITE ME A RECOMMENDATION?",
+                "DEAR CLAIRE,",
+                "I AM CURRENTLY APPLYING FOR SENIOR ANALYST ROLES AND WOULD BE VERY GRATEFUL IF YOU WOULD BE WILLING TO WRITE ME A SHORT RECOMMENDATION, PARTICULARLY REFLECTING ON THE REPORTING SYSTEM I BUILT DURING MY TIME ON YOUR TEAM."
             ],
             "correctOrder": [
-                3,
+                1,
                 2,
-                0,
-                1
+                3,
+                0
             ],
-            "hint": "Review type and employee name are in the subject; the HR panel is addressed; three specific positive performance dimensions are in the body; line manager signs with role.",
-            "explanation": "A performance review email should provide specific evidence, not vague praise. 'Exceeded targets', 'three high-profile projects', and 'strong leadership' are three distinct evidence types that support an overall positive assessment."
+            "hint": "The request is stated directly in the subject; the former manager is addressed warmly by first name; the context and a specific achievement to mention are in the body; 'WARMLY' closes on a personal note.",
+            "explanation": "Suggesting a specific achievement to mention ('the reporting system I built') makes it much easier for a busy former manager to write something detailed rather than generic. A warm, familiar closing suits someone you worked closely with."
         },
         {
             "id": "WRT_WRITINGEMAIL_L86_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to HR formally recommending an employee for promotion.",
+            "prompt": "Write a group email to colleagues coordinating a surprise leaving party for a teammate.",
             "options": [
-                "I AM FORMALLY RECOMMENDING HELEN WARREN FOR PROMOTION TO ASSOCIATE DIRECTOR - HER CONSISTENT OVERPERFORMANCE, GROWING TEAM RESPONSIBILITIES, AND MARKET-LEADING TECHNICAL EXPERTISE FULLY JUSTIFY THIS ADVANCEMENT.",
-                "DEAR HR DIRECTOR,",
-                "YOURS SINCERELY,\nADAM COLE, DIRECTOR",
-                "SUBJECT: PROMOTION RECOMMENDATION - HELEN WARREN TO ASSOCIATE DIRECTOR"
+                "SUBJECT: SHHH - SURPRISE PARTY FOR JAKE ON FRIDAY!",
+                "AS YOU KNOW, JAKE IS LEAVING FOR HIS NEW JOB NEXT WEEK, SO WE ARE PLANNING A SURPRISE GATHERING AT THE ROSE AND CROWN AT 5.30 ON FRIDAY - PLEASE KEEP IT QUIET AND LET ME KNOW IF YOU CAN MAKE IT.",
+                "SEE YOU THERE,\nMIA THOMPSON",
+                "HI EVERYONE,"
             ],
             "correctOrder": [
+                0,
                 3,
                 1,
-                0,
                 2
             ],
-            "hint": "Promotion type, employee, and target role are in the subject; HR director is addressed formally; three justification reasons - performance, responsibility, expertise - are in the body; director signs with role.",
-            "explanation": "A promotion recommendation needs to answer 'why now and why this person' - three specific reasons do this effectively. 'Formally recommending' signals this is a considered management decision, not a casual suggestion."
+            "hint": "An urgent, secretive tone is set in the subject; the whole group is greeted informally; the plan, location, time, and request for secrecy are in the body; a casual sign-off closes it.",
+            "explanation": "Capital letters and an exclamation mark in the subject line suit an exciting, secretive group message like this one - a tone that would feel wrong in a formal email. Explicitly asking people to 'keep it quiet' is essential when planning a surprise."
         },
         {
             "id": "WRT_WRITINGEMAIL_L86_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email informing an employee of an approved salary adjustment.",
+            "prompt": "Write an email to your car insurance company asking to add a named driver to your policy.",
             "options": [
-                "BEST REGARDS,\nADAM COLE, DIRECTOR",
-                "I AM PLEASED TO CONFIRM THAT YOUR SALARY WILL INCREASE BY £4,500 TO £72,000 PER ANNUM WITH EFFECT FROM 1 OCTOBER, REFLECTING YOUR OUTSTANDING CONTRIBUTIONS THIS YEAR.",
-                "SUBJECT: SALARY ADJUSTMENT CONFIRMATION - EFFECTIVE 1 OCTOBER",
-                "DEAR HELEN,"
+                "DEAR POLICY SERVICES TEAM,",
+                "KIND REGARDS,\nISOBEL MACKENZIE",
+                "SUBJECT: REQUEST TO ADD A NAMED DRIVER - POLICY REF: CV88214",
+                "I WOULD LIKE TO ADD MY PARTNER TO MY POLICY AS A NAMED DRIVER FROM NEXT MONTH, AND I WOULD BE GRATEFUL IF YOU COULD LET ME KNOW WHAT INFORMATION YOU NEED FROM ME AND WHETHER THIS WILL AFFECT MY MONTHLY PREMIUM."
             ],
             "correctOrder": [
                 2,
+                0,
                 3,
-                1,
-                0
+                1
             ],
-            "hint": "Salary change and date are in the subject; employee addressed by first name (established relationship); exact new salary, increase amount, and effective date are all confirmed; director signs with role.",
-            "explanation": "A salary confirmation email must state the new salary in full ('£72,000'), the increase amount ('£4,500'), and the exact effective date. Vague confirmations ('a pay rise from next month') create confusion and potential payroll disputes."
+            "hint": "The policy reference and request are in the subject; the team is addressed by role, not name; the specific request and two follow-up questions are in the body; 'KIND REGARDS' closes politely.",
+            "explanation": "Including your policy reference number in the subject lets the insurer pull up your account immediately. Asking about the effect on your premium in the same email avoids being surprised by a price change later."
         },
         {
             "id": "WRT_WRITINGEMAIL_L87_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write a product recall notice to customers about a safety issue.",
+            "prompt": "Write an email to your manager requesting a private meeting to discuss your current workload.",
             "options": [
-                "WE ARE WRITING TO INFORM YOU THAT PRODUCT BATCH 4412 HAS BEEN RECALLED DUE TO A POTENTIAL SAFETY DEFECT - PLEASE STOP USING THE PRODUCT IMMEDIATELY AND CONTACT US FOR A FULL REFUND.",
-                "YOURS SINCERELY,\nNEXUS CONSUMER PRODUCTS, CUSTOMER SAFETY TEAM",
-                "DEAR CUSTOMER,",
-                "SUBJECT: IMPORTANT SAFETY NOTICE - RECALL OF PRODUCT BATCH 4412"
+                "SUBJECT: COULD WE FIND TIME TO DISCUSS MY WORKLOAD?",
+                "OVER THE LAST FEW WEEKS I HAVE BEEN STRUGGLING TO KEEP UP WITH BOTH THE CLIENT ACCOUNTS AND THE NEW ONBOARDING PROJECT, AND I WOULD REALLY APPRECIATE A CHANCE TO SIT DOWN WITH YOU AND WORK OUT A MORE MANAGEABLE BALANCE.",
+                "BEST REGARDS,\nTHEO MARSDEN",
+                "DEAR ANDREA,"
             ],
             "correctOrder": [
-                3,
-                2,
                 0,
-                1
+                3,
+                1,
+                2
             ],
-            "hint": "Urgency and batch number are in the subject; customers addressed formally; recall notice, safety defect, immediate action instruction, and refund offer are all in the body.",
-            "explanation": "A product recall email must include: the batch number, the reason for recall, a clear instruction to stop using it, and the remedy (full refund). These four elements are legally required in most jurisdictions and must appear in the first communication."
+            "hint": "A gentle, non-alarming question opens the subject; the manager is addressed by first name; the specific pressures and a constructive request for a conversation are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Naming the two specific pressures ('client accounts' and 'the onboarding project') helps your manager understand the problem immediately rather than guessing. Framing the request as wanting to 'work out a balance' together keeps the tone collaborative, not confrontational."
         },
         {
             "id": "WRT_WRITINGEMAIL_L87_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a quality control team formally reporting a product manufacturing failure.",
+            "prompt": "Write an email to your child's school explaining a change in family circumstances that may affect them.",
             "options": [
-                "I AM REPORTING THAT PRODUCTION RUN 14–17 JUNE HAS FAILED OUR INTERNAL QUALITY STANDARDS DUE TO AN IDENTIFIED CONTAMINATION ISSUE IN BATCH 4412, AFFECTING AN ESTIMATED 12,000 UNITS.",
-                "DEAR QC COMMITTEE,",
-                "YOURS SINCERELY,\nDAVID WELLS, QUALITY DIRECTOR",
-                "SUBJECT: QUALITY CONTROL FAILURE REPORT - PRODUCTION RUN 14-17 JUNE"
+                "YOURS SINCERELY,\nBEATRIX SOLBERG",
+                "DEAR MRS ABIODUN,",
+                "I WANTED TO LET YOU KNOW THAT LUCA'S GRANDFATHER, WHO HE IS VERY CLOSE TO, WAS RECENTLY ADMITTED TO HOSPITAL, AND HE HAS SEEMED QUIETER THAN USUAL AT HOME - I WOULD BE GRATEFUL IF HIS TEACHERS COULD KEEP A GENTLE EYE ON HIM.",
+                "SUBJECT: A CHANGE AT HOME THAT MAY AFFECT LUCA THIS TERM"
             ],
             "correctOrder": [
                 3,
                 1,
-                0,
-                2
+                2,
+                0
             ],
-            "hint": "Date range and failure type are in the subject; the QC committee is addressed formally; production dates, failure type, root cause, and scale of impact are in the body; director signs with role.",
-            "explanation": "Quantifying the impact ('12,000 units') immediately tells the QC committee the scale of the problem and what they are dealing with. Identifying the root cause ('contamination in batch 4412') focuses the investigation."
+            "hint": "A sensitive summary is in the subject; the teacher is addressed by name; the situation, its effect at home, and a gentle request are in the body; the closing matches this named, caring tone.",
+            "explanation": "Giving the school just enough context to understand the child's behaviour, without excessive detail, respects both privacy and the teacher's need to know. Asking staff to 'keep a gentle eye' rather than demanding special treatment sets a reasonable, collaborative tone."
         },
         {
             "id": "WRT_WRITINGEMAIL_L87_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to customers explaining the full refund process for a recalled product.",
+            "prompt": "Write an email to a conference organiser asking whether a discounted rate is available for students.",
             "options": [
-                "YOURS SINCERELY,\nNEXUS CONSUMER PRODUCTS, CUSTOMER SAFETY TEAM",
-                "TO CLAIM YOUR FULL REFUND FOR THE RECALLED PRODUCT, PLEASE RETURN THE ITEM BY 30 SEPTEMBER VIA OUR FREEPOST LABEL - YOUR REFUND WILL BE PROCESSED WITHIN SEVEN WORKING DAYS OF RECEIPT.",
-                "SUBJECT: RECALL REFUND PROCESS - HOW TO CLAIM YOUR FULL REFUND",
-                "DEAR CUSTOMER,"
+                "MANY THANKS,\nOMAR SHEIKH",
+                "SUBJECT: DOES YOUR CONFERENCE OFFER A STUDENT RATE?",
+                "DEAR EVENTS TEAM,",
+                "I AM A FULL-TIME MASTER'S STUDENT WITH A STRONG INTEREST IN ATTENDING YOUR CONFERENCE IN OCTOBER, BUT THE STANDARD TICKET IS BEYOND MY BUDGET, SO I WANTED TO ASK WHETHER A DISCOUNTED STUDENT RATE IS AVAILABLE."
             ],
             "correctOrder": [
+                1,
                 2,
                 3,
-                1,
                 0
             ],
-            "hint": "Refund process and action are in the subject; customers addressed formally; return method, deadline, refund processing timeline, and prepaid return are all in the body.",
-            "explanation": "A recall refund process email must answer three questions: HOW to return (freepost), BY WHEN (30 September), and WHEN they will get their money back (seven days). Freepost is essential - customers should not pay to return a defective product."
+            "hint": "The direct question is in the subject; the team is addressed by role, not name; your status, genuine interest, and the specific request are in the body; 'MANY THANKS' closes the polite enquiry.",
+            "explanation": "Being upfront and specific ('the standard ticket is beyond my budget') rather than vague is a confident, reasonable way to ask about a discount. Mentioning genuine interest in the conference, not just the price, shows this isn't only about the discount."
         },
         {
             "id": "WRT_WRITINGEMAIL_L88_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email proposing a strategic partnership agreement to a company's CEO.",
+            "prompt": "Write a thank-you email to a mentor who recently gave you valuable career advice.",
             "options": [
-                "I AM PROPOSING A STRATEGIC PARTNERSHIP BETWEEN OUR ORGANISATIONS TO JOINTLY ENTER THE UAE AND SAUDI ARABIAN MARKETS, COMBINING YOUR REGIONAL EXPERTISE WITH OUR TECHNOLOGY PLATFORM.",
-                "YOURS SINCERELY,\nDR HELEN MARSH, CEO",
-                "DEAR MR AL-RASHID,",
-                "SUBJECT: STRATEGIC PARTNERSHIP PROPOSAL - JOINT MARKET ENTRY IN THE MIDDLE EAST"
+                "WITH GRATITUDE,\nISAAC WEBB",
+                "DEAR GRACE,",
+                "I JUST WANTED TO SAY THANK YOU FOR TAKING THE TIME TO TALK THROUGH MY CAREER OPTIONS LAST WEEK - YOUR SUGGESTION TO SPEAK TO THE OPERATIONS TEAM DIRECTLY HAS ALREADY LED TO A REALLY USEFUL CONVERSATION.",
+                "SUBJECT: THANK YOU FOR YOUR ADVICE LAST WEEK"
             ],
             "correctOrder": [
                 3,
+                1,
                 2,
-                0,
-                1
+                0
             ],
-            "hint": "Partnership type and geographic scope are in the subject; the CEO is addressed formally by name; mutual benefit logic - regional expertise plus technology - is the rationale in the body; CEO signs with title.",
-            "explanation": "The partnership rationale 'your regional expertise plus our technology' is a classic complementary asset argument - each party contributes something the other lacks. This is the most persuasive foundation for a joint market entry proposal."
+            "hint": "A simple thank-you is in the subject; the mentor is addressed warmly by first name; the specific advice and its result are in the body; 'WITH GRATITUDE' closes on a genuinely appreciative note.",
+            "explanation": "Mentioning the specific outcome of the advice ('already led to a really useful conversation') shows a mentor that their time made a real difference, not just that you were being polite. A closing like 'With gratitude' fits a heartfelt thank-you better than a routine one like 'Kind regards'."
         },
         {
             "id": "WRT_WRITINGEMAIL_L88_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email outlining proposed joint venture terms for legal review.",
+            "prompt": "Write an email to your letting agency reporting a pest problem in your rented flat.",
             "options": [
-                "I AM FORWARDING THE HEADS OF TERMS FOR OUR PROPOSED JOINT VENTURE WITH AL-RASHID GROUP FOR LEGAL REVIEW - THE KEY TERMS INCLUDE A 51:49 EQUITY SPLIT AND A FIVE-YEAR INITIAL TERM.",
-                "DEAR LEGAL COUNSEL,",
-                "YOURS SINCERELY,\nDR HELEN MARSH, CEO",
-                "SUBJECT: JOINT VENTURE HEADS OF TERMS - NEXUS AND AL-RASHID GROUP"
+                "OVER THE PAST WEEK I HAVE SEEN CLEAR SIGNS OF MICE IN THE KITCHEN, INCLUDING DROPPINGS NEAR THE COOKER, AND I WOULD BE GRATEFUL IF YOU COULD ARRANGE FOR PEST CONTROL TO VISIT AS SOON AS POSSIBLE.",
+                "SUBJECT: PEST CONTROL NEEDED - MICE IN THE KITCHEN",
+                "YOURS FAITHFULLY,\nADAORA NWOSU",
+                "DEAR PROPERTY MANAGEMENT TEAM,"
             ],
             "correctOrder": [
-                3,
                 1,
+                3,
                 0,
                 2
             ],
-            "hint": "JV parties and terms purpose are in the subject; legal counsel is addressed formally; two critical JV terms - equity split and duration - are highlighted; CEO signs formally.",
-            "explanation": "Highlighting the two most commercially significant terms - equity split ('51:49') and duration ('five years') - in the forwarding email helps legal counsel focus their review on the most negotiation-sensitive points."
+            "hint": "The problem and location are in the subject; the team is addressed by role, not name; the evidence and the urgent request are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Describing specific evidence ('droppings near the cooker') rather than just saying 'we have mice' gives the agency clear proof to act on quickly. Pest problems are usually treated as urgent, so it's reasonable to ask for a prompt visit."
         },
         {
             "id": "WRT_WRITINGEMAIL_L88_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a partner confirming execution of a partnership agreement.",
+            "prompt": "Write an email to a company politely asking for feedback after your job application was rejected.",
             "options": [
-                "YOURS SINCERELY,\nDR HELEN MARSH, CEO",
-                "I AM DELIGHTED TO CONFIRM THAT THE PARTNERSHIP AGREEMENT BETWEEN OUR ORGANISATIONS HAS BEEN EXECUTED AND THE FORMAL PARTNERSHIP COMMENCES ON 1 JANUARY 2025.",
-                "SUBJECT: PARTNERSHIP AGREEMENT EXECUTED - COMMENCEMENT DATE 1 JANUARY 2025",
-                "DEAR MR AL-RASHID,"
+                "THANK YOU FOR LETTING ME KNOW THE OUTCOME OF MY APPLICATION FOR THE DATA ANALYST ROLE - WHILE I AM NATURALLY DISAPPOINTED, I WOULD REALLY VALUE ANY FEEDBACK YOU COULD SHARE TO HELP ME IMPROVE FOR FUTURE APPLICATIONS.",
+                "DEAR MR OKAFOR,",
+                "SUBJECT: REQUEST FOR FEEDBACK ON MY RECENT APPLICATION",
+                "YOURS SINCERELY,\nHANNAH OSEI-TUTU"
             ],
             "correctOrder": [
                 2,
-                3,
                 1,
-                0
+                0,
+                3
             ],
-            "hint": "Execution confirmation and start date are in the subject; partner addressed formally by name; agreement execution and commencement date are confirmed in the body; CEO signs formally.",
-            "explanation": "The three most important facts in an agreement confirmation email are: the agreement has been executed (legally binding), by both parties (implied by 'our organisations'), and the start date. These three facts complete the legal paper trail."
+            "hint": "A polite, professional request is in the subject; the recruiter is addressed by name; gracious acknowledgement of the decision and a specific ask for feedback are in the body; the closing matches this named greeting.",
+            "explanation": "Accepting the outcome gracefully before asking for feedback keeps the door open for future opportunities with the same company. Framing the request around self-improvement ('to help me improve') rather than challenging the decision comes across as mature and professional."
         },
         {
             "id": "WRT_WRITINGEMAIL_L89_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email submitting a regulatory compliance report to a government body.",
+            "prompt": "You run a small business. Write an email to a supplier asking to extend your payment terms from 14 to 30 days.",
             "options": [
-                "PLEASE FIND ENCLOSED NEXUS CONSULTING'S ANNUAL COMPLIANCE REPORT FOR REGULATORY YEAR 2024 - ALL REQUIRED SCHEDULES HAVE BEEN COMPLETED AND THE REPORT HAS BEEN APPROVED BY OUR BOARD.",
-                "YOURS SINCERELY,\nCHIEF COMPLIANCE OFFICER, NEXUS CONSULTING",
-                "DEAR SUPERVISORY TEAM,",
-                "SUBJECT: ANNUAL COMPLIANCE REPORT SUBMISSION - FCA REGULATORY YEAR 2024"
+                "WE HAVE VALUED WORKING WITH YOU OVER THE PAST YEAR AND OUR ORDERS HAVE GROWN STEADILY, SO AS WE SCALE UP I WOULD LIKE TO ASK WHETHER YOU WOULD CONSIDER MOVING OUR PAYMENT TERMS FROM 14 TO 30 DAYS, IN LINE WITH MOST OF OUR OTHER SUPPLIERS.",
+                "DEAR MR PATTERSON,",
+                "SUBJECT: REQUEST TO EXTEND OUR PAYMENT TERMS TO 30 DAYS",
+                "BEST REGARDS,\nYUSUF IBRAHIM"
             ],
             "correctOrder": [
-                3,
                 2,
+                1,
                 0,
-                1
+                3
             ],
-            "hint": "Report type and regulatory year are in the subject; the supervisory team is addressed formally; submission of report, completeness of schedules, and board approval are in the body; the CCO signs by role.",
-            "explanation": "Confirming that all schedules are complete AND that the board has approved the report are two critical compliance assurances. Regulators need both: complete data AND appropriate sign-off authority."
+            "hint": "The specific request is in the subject; the supplier contact is addressed by name; the relationship history, the reason, and the comparison to other suppliers are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Opening with the positive relationship ('valued working with you') before making a request softens what could otherwise feel like a demand. Comparing the request to standard industry practice ('in line with most of our other suppliers') makes it feel reasonable rather than one-sided."
         },
         {
             "id": "WRT_WRITINGEMAIL_L89_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a management board presenting the findings of a regulatory audit.",
+            "prompt": "Write an email to your fitness instructor explaining an injury and asking for modified exercises.",
             "options": [
-                "THE RECENT FCA AUDIT IDENTIFIED THREE AREAS REQUIRING REMEDIATION - CUSTOMER ONBOARDING DOCUMENTATION, TRANSACTION MONITORING THRESHOLDS, AND STAFF TRAINING RECORDS - ALL DUE BY 30 SEPTEMBER.",
-                "DEAR BOARD,",
-                "YOURS SINCERELY,\nCHIEF COMPLIANCE OFFICER, NEXUS CONSULTING",
-                "SUBJECT: REGULATORY AUDIT FINDINGS - THREE ACTIONS REQUIRED BY 30 SEPTEMBER"
+                "SUBJECT: REQUEST FOR MODIFIED EXERCISES DUE TO A KNEE INJURY",
+                "DEAR COACH REYES,",
+                "MANY THANKS,\nCLARA DUBOIS",
+                "I HURT MY KNEE PLAYING FOOTBALL AT THE WEEKEND AND MY PHYSIOTHERAPIST HAS ADVISED ME TO AVOID DEEP SQUATS FOR THE NEXT FEW WEEKS, SO I WANTED TO LET YOU KNOW BEFORE THURSDAY'S CLASS IN CASE YOU CAN SUGGEST ALTERNATIVES."
             ],
             "correctOrder": [
-                3,
-                1,
                 0,
+                1,
+                3,
                 2
             ],
-            "hint": "Audit findings and deadline are in the subject; board is addressed concisely; three specific remediation areas and the compliance deadline are in the body; CCO signs by role.",
-            "explanation": "The three compliance areas must be named specifically - vague references to 'issues found' do not enable the board to assign responsibility or resources. Including the deadline in the subject line ('30 September') gives directors an immediate sense of urgency."
+            "hint": "The injury is named in the subject; the instructor is addressed by name and title; the cause, the medical advice, and a practical heads-up are in the body; 'MANY THANKS' closes appreciatively.",
+            "explanation": "Mentioning professional advice ('my physiotherapist has advised') gives the instructor a clear, medically-grounded reason to adapt the session for you. Letting them know before the class, rather than mentioning it on arrival, gives them time to plan alternatives."
         },
         {
             "id": "WRT_WRITINGEMAIL_L89_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a regulator presenting a compliance improvement plan.",
+            "prompt": "Write an email to a nursery asking about the settling-in process for your child before they start.",
             "options": [
-                "YOURS SINCERELY,\nCHIEF COMPLIANCE OFFICER, NEXUS CONSULTING",
-                "PLEASE FIND ATTACHED OUR COMPLIANCE IMPROVEMENT PLAN IN RESPONSE TO AUDIT FINDINGS REF: FCA/24/119 - ALL THREE IDENTIFIED AREAS HAVE BEEN ADDRESSED WITH SPECIFIC REMEDIATION ACTIONS AND COMPLETION DATES.",
-                "SUBJECT: COMPLIANCE IMPROVEMENT PLAN - RESPONSE TO AUDIT FINDINGS REF: FCA/24/119",
-                "DEAR SUPERVISORY TEAM,"
+                "KIND REGARDS,\nWENDY AND MARCUS TAN",
+                "DEAR NURSERY TEAM,",
+                "SUBJECT: QUESTION ABOUT THE SETTLING-IN PROCESS FOR NEW CHILDREN",
+                "OUR DAUGHTER WILL BE STARTING WITH YOU IN SEPTEMBER AND, AS THIS WILL BE HER FIRST TIME AWAY FROM US REGULARLY, WE WOULD LIKE TO ASK HOW THE SETTLING-IN SESSIONS WORK AND HOW MANY WE WOULD TYPICALLY NEED TO ATTEND TOGETHER BEFOREHAND."
             ],
             "correctOrder": [
                 2,
-                3,
                 1,
+                3,
                 0
             ],
-            "hint": "Audit reference and response purpose are in the subject; the supervisory team is addressed; all three areas addressed, actions specified, and dates committed are confirmed; CCO signs formally.",
-            "explanation": "A regulatory response must explicitly confirm that ALL identified issues have been addressed - silence on any one area implies non-compliance. Referencing the audit number precisely links the response to the correct regulatory file."
+            "hint": "The purpose is in the subject; the nursery team is addressed; the context (first time away from parents) and two specific questions are in the body; 'KIND REGARDS' closes as a couple.",
+            "explanation": "Explaining that this is your child's 'first time away from us regularly' helps staff understand the family's needs, not just the logistics. Asking how many sessions are typical shows you are planning ahead rather than leaving it to the last minute."
         },
         {
             "id": "WRT_WRITINGEMAIL_L90_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a marketing team announcing a new product launch date.",
+            "prompt": "Write an email to your team suggesting an idea for the next office social event.",
             "options": [
-                "I AM PLEASED TO CONFIRM THAT OUR PRODUCT HORIZON X WILL LAUNCH ON 1 MARCH - ALL MARKETING MATERIALS MUST BE FINALISED BY 15 FEBRUARY AND AGENCY BRIEFINGS SHOULD BE SENT BY THIS FRIDAY.",
-                "BEST REGARDS,\nVICTORIA LANE, MARKETING DIRECTOR",
-                "DEAR LAUNCH TEAM,",
-                "SUBJECT: PRODUCT LAUNCH DATE CONFIRMED - HORIZON X GOES LIVE 1 MARCH"
+                "HI TEAM,",
+                "LET ME KNOW WHAT YOU THINK,\nFELIX ROMANO",
+                "SUBJECT: IDEA FOR OUR NEXT TEAM SOCIAL - ESCAPE ROOM?",
+                "AFTER A FEW PEOPLE MENTIONED WANTING TO DO SOMETHING DIFFERENT THIS TIME, I LOOKED INTO A LOCAL ESCAPE ROOM THAT CAN TAKE GROUPS OF UP TO TWELVE, AND I THINK IT COULD BE A FUN WAY TO MIX UP OUR USUAL PUB TRIPS."
             ],
             "correctOrder": [
-                3,
                 2,
                 0,
+                3,
                 1
             ],
-            "hint": "Product name and launch date are in the subject; the team is addressed; launch date and two internal deadlines with their dates are in the body; director signs with role.",
-            "explanation": "An internal launch announcement is most valuable when it cascades two or more clear action deadlines for the team. Specific dates - 15 February and 'this Friday' - immediately tell team members what they need to prioritise."
+            "hint": "A specific idea is proposed right in the subject; the team is greeted informally; the origin of the idea and a practical detail (group size) are in the body; a casual, inviting sign-off closes it.",
+            "explanation": "Referencing that 'a few people mentioned wanting something different' shows the idea responds to real feedback, not just personal preference. Including a practical detail like group capacity shows you've already done some groundwork, making the idea easier to say yes to."
         },
         {
             "id": "WRT_WRITINGEMAIL_L90_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a board presenting market research findings ahead of a product launch.",
+            "prompt": "Write an email to your manager formally requesting two weeks of unpaid leave for a family matter.",
             "options": [
-                "OUR PRE-LAUNCH CONSUMER STUDY FOUND THAT 78% OF PARTICIPANTS EXPRESSED STRONG PURCHASE INTENT FOR HORIZON X, WITH PRICE AND EASE-OF-USE CITED AS THE PRIMARY DECISION DRIVERS.",
-                "DEAR BOARD,",
-                "BEST REGARDS,\nVICTORIA LANE, MARKETING DIRECTOR",
-                "SUBJECT: MARKET RESEARCH SUMMARY - HORIZON X PRE-LAUNCH CONSUMER STUDY"
-            ],
-            "correctOrder": [
-                3,
-                1,
-                0,
-                2
-            ],
-            "hint": "Research type and product are in the subject; board is addressed; key finding (78%), two success drivers are in the body; director signs with role.",
-            "explanation": "The most impactful market research presentation to a board requires one headline number ('78% purchase intent') and the two 'why' factors - price and ease-of-use. This tells the board both the commercial opportunity and the product positioning priorities."
-        },
-        {
-            "id": "WRT_WRITINGEMAIL_L90_Q3",
-            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
-            "subtype": "writingEmail",
-            "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a launch team confirming readiness for a product launch.",
-            "options": [
-                "BEST REGARDS,\nVICTORIA LANE, MARKETING DIRECTOR",
-                "I AM PLEASED TO CONFIRM THAT ALL LAUNCH DEPENDENCIES HAVE BEEN MET - MARKETING ASSETS ARE APPROVED, DISTRIBUTION IS STAGED, AND CUSTOMER SUPPORT IS FULLY BRIEFED FOR TOMORROW'S GO-LIVE.",
-                "SUBJECT: LAUNCH READINESS CONFIRMED - HORIZON X GO-LIVE TOMORROW",
-                "DEAR LAUNCH TEAM,"
+                "YOURS SINCERELY,\nPETRA NOVAK",
+                "DUE TO A SERIOUS FAMILY MATTER I NEED TO ATTEND TO IN PERSON, I WOULD LIKE TO FORMALLY REQUEST TWO WEEKS OF UNPAID LEAVE FROM 14 OCTOBER, AND I AM HAPPY TO DISCUSS HOW MY WORKLOAD CAN BE COVERED BEFOREHAND.",
+                "SUBJECT: REQUEST FOR TWO WEEKS' UNPAID LEAVE",
+                "DEAR MR WHITTAKER,"
             ],
             "correctOrder": [
                 2,
@@ -630,8 +609,29 @@
                 1,
                 0
             ],
-            "hint": "Launch confirmation and timing are in the subject; the team is addressed; three launch dependencies - marketing, distribution, support - are confirmed; director signs with role.",
-            "explanation": "A launch readiness email must confirm each critical dependency individually: marketing, distribution, and customer support. Confirming all three explicitly prevents last-minute assumptions and gives the whole team confidence to proceed."
+            "hint": "The request and duration are in the subject; the manager is addressed by name; the reason (kept private), the exact dates, and an offer to help with handover are in the body; the closing matches this named greeting.",
+            "explanation": "Keeping the reason general ('a serious family matter') is entirely acceptable - you are not obliged to share private details to justify a leave request. Offering to help plan handover cover, rather than waiting to be asked, shows responsibility even while dealing with a difficult situation."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L90_Q3",
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "Write an email to a local newspaper suggesting a positive story about a community project.",
+            "options": [
+                "SUBJECT: STORY SUGGESTION - COMMUNITY GARDEN TURNING ONE YEAR OLD",
+                "YOURS FAITHFULLY,\nROSALIND PIKE",
+                "DEAR EDITOR,",
+                "OUR COMMUNITY GARDEN ON ELM STREET IS CELEBRATING ITS FIRST BIRTHDAY THIS MONTH, HAVING GROWN FROM AN EMPTY PLOT INTO A SPACE USED BY OVER FORTY LOCAL FAMILIES, AND I THOUGHT IT MIGHT MAKE A LOVELY LOCAL STORY."
+            ],
+            "correctOrder": [
+                0,
+                2,
+                3,
+                1
+            ],
+            "hint": "The story idea is in the subject; the editor is addressed by role, not name; the background and a specific, uplifting statistic are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Including a concrete statistic ('over forty local families') helps an editor quickly judge the story's local interest and scale. Suggesting a story rather than demanding coverage keeps the tone appropriately modest for a first approach."
         }
     ]
 }

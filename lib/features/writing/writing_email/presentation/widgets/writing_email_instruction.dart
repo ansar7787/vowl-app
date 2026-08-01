@@ -31,7 +31,7 @@ class WritingEmailInstruction extends StatelessWidget {
             child: Text(
               context.tr(
                 'games.writingEmail_instruction',
-                fallback: instruction ?? "SEQUENCE THE DATA PACKETS INTO THE NEURAL SLOTS",
+                fallback: instruction ?? "Arrange the email into the correct order.",
               ).toUpperCase(),
               textAlign: TextAlign.center,
               maxLines: null,

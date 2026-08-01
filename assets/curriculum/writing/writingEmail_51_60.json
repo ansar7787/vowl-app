@@ -10,16 +10,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a university professor requesting access to unpublished research data for a study.",
             "options": [
+                "I AM A PHD RESEARCHER AT THE UNIVERSITY OF BRISTOL STUDYING SOLAR PANEL EFFICIENCY AND WOULD LIKE TO REQUEST ACCESS TO YOUR UNPUBLISHED DATASET ON PHOTOVOLTAIC OUTPUT RATES.",
                 "DEAR PROFESSOR MALIK,",
                 "YOURS SINCERELY,\nDR ANNA REID",
-                "SUBJECT: DATA ACCESS REQUEST FOR RENEWABLE ENERGY RESEARCH STUDY",
-                "I AM A PHD RESEARCHER AT THE UNIVERSITY OF BRISTOL STUDYING SOLAR PANEL EFFICIENCY AND WOULD LIKE TO REQUEST ACCESS TO YOUR UNPUBLISHED DATASET ON PHOTOVOLTAIC OUTPUT RATES."
+                "SUBJECT: DATA ACCESS REQUEST FOR RENEWABLE ENERGY RESEARCH STUDY"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
             "hint": "The research topic and data type are in the subject; the professor is addressed formally by name; research institution, study topic, and specific dataset are in the body.",
             "explanation": "Specifying the exact dataset you need ('photovoltaic output rates') shows you have done your research and know precisely what you are asking for. Giving your institution and research topic establishes your academic credibility."
@@ -31,16 +31,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to participants asking them to take part in a consumer behaviour survey.",
             "options": [
-                "I AM CONDUCTING RESEARCH INTO ONLINE SHOPPING HABITS AND INVITE YOU TO COMPLETE A SHORT FIVE-MINUTE SURVEY - YOUR ANONYMOUS RESPONSES WILL GREATLY CONTRIBUTE TO THIS STUDY.",
-                "MANY THANKS FOR YOUR TIME,\nJESSICA BROWN",
+                "SUBJECT: INVITATION TO PARTICIPATE IN A SHORT CONSUMER SURVEY",
                 "DEAR COLLEAGUE,",
-                "SUBJECT: INVITATION TO PARTICIPATE IN A SHORT CONSUMER SURVEY"
+                "MANY THANKS FOR YOUR TIME,\nJESSICA BROWN",
+                "I AM CONDUCTING RESEARCH INTO ONLINE SHOPPING HABITS AND INVITE YOU TO COMPLETE A SHORT FIVE-MINUTE SURVEY - YOUR ANONYMOUS RESPONSES WILL GREATLY CONTRIBUTE TO THIS STUDY."
             ],
             "correctOrder": [
-                3,
-                2,
                 0,
-                1
+                1,
+                3,
+                2
             ],
             "hint": "The survey type and time commitment are in the subject; 'DEAR COLLEAGUE' is a professional group greeting; anonymity and short duration reassure participants; the closing thanks participants in advance.",
             "explanation": "Highlighting that the survey is anonymous and only five minutes long removes the two most common barriers to participation - concerns about privacy and time. Thanking participants in the closing is a courtesy that encourages a positive response."
@@ -52,16 +52,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a research team following up on survey results that were promised.",
             "options": [
-                "DEAR DR CHEN,",
-                "SUBJECT: FOLLOW-UP ON SURVEY RESULTS - CUSTOMER SATISFACTION STUDY",
                 "KIND REGARDS,\nMICHAEL NORRIS",
-                "I AM WRITING TO FOLLOW UP ON THE CUSTOMER SATISFACTION SURVEY RESULTS THAT WERE DUE ON 14 OCTOBER - WE ARE KEEN TO INCORPORATE THE FINDINGS INTO OUR QUARTERLY REPORT."
+                "SUBJECT: FOLLOW-UP ON SURVEY RESULTS - CUSTOMER SATISFACTION STUDY",
+                "I AM WRITING TO FOLLOW UP ON THE CUSTOMER SATISFACTION SURVEY RESULTS THAT WERE DUE ON 14 OCTOBER - WE ARE KEEN TO INCORPORATE THE FINDINGS INTO OUR QUARTERLY REPORT.",
+                "DEAR DR CHEN,"
             ],
             "correctOrder": [
                 1,
-                0,
                 3,
-                2
+                2,
+                0
             ],
             "hint": "The survey and deadline are in the subject; the researcher is addressed formally by title; original due date and business reason are in the body; 'KIND REGARDS' closes professionally.",
             "explanation": "Mentioning the original deadline ('14 October') creates a clear, factual basis for the follow-up without sounding accusatory. Explaining why the results are needed ('quarterly report') gives context and urgency."
@@ -73,18 +73,18 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a training company asking about a project management certification course.",
             "options": [
+                "KIND REGARDS,\nDEAN WATKINS",
+                "I AM INTERESTED IN OBTAINING PRINCE2 CERTIFICATION AND WOULD LIKE TO KNOW WHEN YOUR NEXT AVAILABLE CLASSROOM COURSE RUNS, HOW LONG IT LASTS, AND THE TOTAL COST.",
                 "DEAR TRAINING COORDINATOR,",
-                "YOURS SINCERELY,\nDEAN WATKINS",
-                "SUBJECT: ENQUIRY ABOUT PROJECT MANAGEMENT CERTIFICATION - PRINCE2",
-                "I AM INTERESTED IN OBTAINING PRINCE2 CERTIFICATION AND WOULD LIKE TO KNOW WHEN YOUR NEXT AVAILABLE CLASSROOM COURSE RUNS, HOW LONG IT LASTS, AND THE TOTAL COST."
+                "SUBJECT: ENQUIRY ABOUT PROJECT MANAGEMENT CERTIFICATION - PRINCE2"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                2,
+                1,
+                0
             ],
-            "hint": "The specific certification is in the subject; the coordinator is addressed; three linked questions - dates, duration, cost - are in the body; 'YOURS SINCERELY' closes the professional enquiry.",
+            "hint": "The specific certification is in the subject; the coordinator is addressed by role, not name; three linked questions - dates, duration, cost - are in the body; 'KIND REGARDS' closes the professional enquiry.",
             "explanation": "Asking three related questions in one email ('when, how long, and cost') gives you everything you need to make a decision about booking without further back-and-forth correspondence."
         },
         {
@@ -94,18 +94,18 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a professional body registering for an industry workshop.",
             "options": [
-                "I WOULD LIKE TO REGISTER FOR THE ADVANCED DATA ANALYTICS WORKSHOP ON 10 NOVEMBER AND HAVE ATTACHED MY COMPLETED REGISTRATION FORM AND PROOF OF MEMBERSHIP AS REQUIRED.",
-                "YOURS SINCERELY,\nFRANCES HUNT",
+                "BEST REGARDS,\nFRANCES HUNT",
+                "SUBJECT: WORKSHOP REGISTRATION - ADVANCED DATA ANALYTICS, 10 NOVEMBER",
                 "DEAR EVENTS TEAM,",
-                "SUBJECT: WORKSHOP REGISTRATION - ADVANCED DATA ANALYTICS, 10 NOVEMBER"
+                "I WOULD LIKE TO REGISTER FOR THE ADVANCED DATA ANALYTICS WORKSHOP ON 10 NOVEMBER AND HAVE ATTACHED MY COMPLETED REGISTRATION FORM AND PROOF OF MEMBERSHIP AS REQUIRED."
             ],
             "correctOrder": [
-                3,
+                1,
                 2,
-                0,
-                1
+                3,
+                0
             ],
-            "hint": "The workshop and date are in the subject; the team is addressed; registration intent, attachments, and compliance with requirements are in the body; 'YOURS SINCERELY' closes formally.",
+            "hint": "The workshop and date are in the subject; the team is addressed by role, not name; registration intent, attachments, and compliance with requirements are in the body; 'BEST REGARDS' closes formally.",
             "explanation": "Confirming you have attached all required documents ('registration form and proof of membership') prevents a follow-up request from the organiser and speeds up your registration."
         },
         {
@@ -115,18 +115,18 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a conference organiser confirming registration and requesting accessibility arrangements.",
             "options": [
+                "YOURS FAITHFULLY,\nHAYLEY FORD",
                 "DEAR ACCESSIBILITY COORDINATOR,",
-                "SUBJECT: REGISTRATION CONFIRMATION AND ACCESSIBILITY REQUEST - BIOMED CONFERENCE",
-                "YOURS SINCERELY,\nHAYLEY FORD",
-                "I HAVE REGISTERED FOR THE BIOMED CONFERENCE ON 22 MARCH AND WOULD LIKE TO REQUEST A SIGN LANGUAGE INTERPRETER AND ACCESSIBLE SEATING FOR THE DURATION OF THE EVENT."
+                "I HAVE REGISTERED FOR THE BIOMED CONFERENCE ON 22 MARCH AND WOULD LIKE TO REQUEST A SIGN LANGUAGE INTERPRETER AND ACCESSIBLE SEATING FOR THE DURATION OF THE EVENT.",
+                "SUBJECT: REGISTRATION CONFIRMATION AND ACCESSIBILITY REQUEST - BIOMED CONFERENCE"
             ],
             "correctOrder": [
-                1,
-                0,
                 3,
-                2
+                1,
+                2,
+                0
             ],
-            "hint": "Both purposes are in the subject; the correct coordinator is addressed; registration is confirmed and specific accessibility needs are stated; 'YOURS SINCERELY' closes formally.",
+            "hint": "Both purposes are in the subject; the correct coordinator is addressed by role, not name; registration is confirmed and specific accessibility needs are stated; the closing must match this unnamed greeting.",
             "explanation": "Addressing the 'Accessibility Coordinator' specifically ensures your request reaches the right person. Being specific about needs ('sign language interpreter AND accessible seating') allows precise arrangements to be made."
         },
         {
@@ -136,16 +136,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write a staff email notifying colleagues of the office holiday closure schedule.",
             "options": [
-                "DEAR ALL,",
                 "BEST REGARDS,\nOFFICE MANAGER",
-                "SUBJECT: OFFICE CLOSURE DATES - CHRISTMAS AND NEW YEAR 2025",
-                "PLEASE NOTE THAT THE OFFICE WILL BE CLOSED FROM 24 DECEMBER TO 2 JANUARY INCLUSIVE - ALL URGENT MATTERS SHOULD BE DIRECTED TO THE ON-CALL TEAM VIA THE EMERGENCY LINE."
+                "DEAR ALL,",
+                "PLEASE NOTE THAT THE OFFICE WILL BE CLOSED FROM 24 DECEMBER TO 2 JANUARY INCLUSIVE - ALL URGENT MATTERS SHOULD BE DIRECTED TO THE ON-CALL TEAM VIA THE EMERGENCY LINE.",
+                "SUBJECT: OFFICE CLOSURE DATES - CHRISTMAS AND NEW YEAR 2025"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                2,
+                0
             ],
             "hint": "Closure dates are summarised in the subject; 'DEAR ALL' addresses the whole team; dates, emergency contact, and instructions are in the body; 'BEST REGARDS' closes the internal notice.",
             "explanation": "Including an emergency contact procedure is essential for a holiday closure notice - staff need to know how to handle urgent matters. 'Dear all' is the standard opening for a company-wide internal announcement."
@@ -157,18 +157,18 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to HR asking about flexible working hours to accommodate childcare commitments.",
             "options": [
-                "I WOULD LIKE TO ARRANGE A MEETING TO DISCUSS A FLEXIBLE WORKING ARRANGEMENT AS MY CHILDCARE NEEDS HAVE RECENTLY CHANGED AND I NEED TO ADJUST MY START AND FINISH TIMES.",
-                "YOURS SINCERELY,\nMELISSA GRANT",
                 "DEAR HR BUSINESS PARTNER,",
-                "SUBJECT: REQUEST TO DISCUSS FLEXIBLE WORKING ARRANGEMENTS"
+                "I WOULD LIKE TO ARRANGE A MEETING TO DISCUSS A FLEXIBLE WORKING ARRANGEMENT AS MY CHILDCARE NEEDS HAVE RECENTLY CHANGED AND I NEED TO ADJUST MY START AND FINISH TIMES.",
+                "SUBJECT: REQUEST TO DISCUSS FLEXIBLE WORKING ARRANGEMENTS",
+                "KIND REGARDS,\nMELISSA GRANT"
             ],
             "correctOrder": [
-                3,
                 2,
                 0,
-                1
+                1,
+                3
             ],
-            "hint": "The purpose is in the subject; the correct HR role is addressed; the request for a meeting, reason, and specific change needed are in the body; 'YOURS SINCERELY' closes the formal HR request.",
+            "hint": "The purpose is in the subject; the correct HR role is addressed by role, not name; the request for a meeting, reason, and specific change needed are in the body; 'KIND REGARDS' closes the formal HR request.",
             "explanation": "Requesting a meeting rather than demanding a change immediately shows you respect the formal process. Specifying that your needs are about 'start and finish times' is more focused than a vague 'flexible working' request."
         },
         {
@@ -179,15 +179,15 @@
             "prompt": "Write an email to an employee confirming a flexible working request has been approved.",
             "options": [
                 "DEAR MELISSA,",
-                "SUBJECT: FLEXIBLE WORKING REQUEST APPROVED - AMENDED HOURS FROM 1 MARCH",
                 "KIND REGARDS,\nSARAH JONES, HR BUSINESS PARTNER",
-                "I AM PLEASED TO CONFIRM THAT YOUR REQUEST TO AMEND YOUR WORKING HOURS TO 8AM–4PM FROM 1 MARCH HAS BEEN APPROVED, SUBJECT TO A THREE-MONTH REVIEW."
+                "I AM PLEASED TO CONFIRM THAT YOUR REQUEST TO AMEND YOUR WORKING HOURS TO 8AM–4PM FROM 1 MARCH HAS BEEN APPROVED, SUBJECT TO A THREE-MONTH REVIEW.",
+                "SUBJECT: FLEXIBLE WORKING REQUEST APPROVED - AMENDED HOURS FROM 1 MARCH"
             ],
             "correctOrder": [
-                1,
-                0,
                 3,
-                2
+                0,
+                2,
+                1
             ],
             "hint": "The approval and start date are in the subject; the employee is addressed by first name; the approved hours, start date, and review condition are confirmed; the HR role is included in the sign-off.",
             "explanation": "Including 'subject to a three-month review' is standard practice for flexible working approvals - it protects both parties. Including your job title in the sign-off ('HR Business Partner') adds professionalism and authority to the decision."
@@ -199,18 +199,18 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to an estate agent asking about a residential property for sale.",
             "options": [
+                "I SAW YOUR LISTING FOR 34 MAPLE ROAD AND WOULD LIKE TO ARRANGE A VIEWING - PLEASE COULD YOU ALSO CONFIRM WHETHER THE PROPERTY IS SOLD SUBJECT TO CONTRACT OR STILL FULLY AVAILABLE?",
                 "DEAR PROPERTY TEAM,",
-                "YOURS SINCERELY,\nTOM BRIGGS",
                 "SUBJECT: ENQUIRY ABOUT 34 MAPLE ROAD - LISTED AT £425,000",
-                "I SAW YOUR LISTING FOR 34 MAPLE ROAD AND WOULD LIKE TO ARRANGE A VIEWING - PLEASE COULD YOU ALSO CONFIRM WHETHER THE PROPERTY IS SOLD SUBJECT TO CONTRACT OR STILL FULLY AVAILABLE?"
+                "BEST REGARDS,\nTOM BRIGGS"
             ],
             "correctOrder": [
                 2,
+                1,
                 0,
-                3,
-                1
+                3
             ],
-            "hint": "Property address and price are in the subject; the team is addressed; viewing request and availability status question are in the body; 'YOURS SINCERELY' closes formally.",
+            "hint": "Property address and price are in the subject; the team is addressed by role, not name; viewing request and availability status question are in the body; 'BEST REGARDS' closes formally.",
             "explanation": "Asking about STC status ('sold subject to contract') before arranging a viewing saves wasted time. Including the asking price in the subject shows you are looking at the correct listing, which is helpful when agents have multiple properties."
         },
         {
@@ -220,16 +220,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a mortgage adviser asking about first-time buyer options.",
             "options": [
+                "SUBJECT: FIRST-TIME BUYER MORTGAGE ENQUIRY - BUDGET £220,000",
                 "I AM A FIRST-TIME BUYER WITH A DEPOSIT OF £22,000 AND AM LOOKING TO PURCHASE A PROPERTY OF AROUND £220,000 - I WOULD WELCOME GUIDANCE ON WHICH MORTGAGE PRODUCTS MIGHT SUIT MY CIRCUMSTANCES.",
-                "YOURS SINCERELY,\nCALLUM SHAW",
                 "DEAR MS HOLT,",
-                "SUBJECT: FIRST-TIME BUYER MORTGAGE ENQUIRY - BUDGET £220,000"
+                "YOURS SINCERELY,\nCALLUM SHAW"
             ],
             "correctOrder": [
-                3,
-                2,
                 0,
-                1
+                2,
+                1,
+                3
             ],
             "hint": "Buyer status and budget are in the subject; the adviser is addressed by name; deposit, budget, and type of guidance sought are all in the body; 'YOURS SINCERELY' closes the financial enquiry.",
             "explanation": "Providing key financial figures - deposit (£22,000) and purchase price (£220,000) - upfront allows the mortgage adviser to calculate the loan-to-value ratio immediately and recommend suitable products."
@@ -241,16 +241,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to an estate agent asking to schedule a second viewing of a property.",
             "options": [
-                "DEAR JAMES,",
-                "SUBJECT: REQUEST FOR SECOND VIEWING - 34 MAPLE ROAD",
+                "FOLLOWING OUR FIRST VIEWING LAST WEEK, I WOULD LIKE TO ARRANGE A SECOND VIEWING OF 34 MAPLE ROAD - I AM PARTICULARLY KEEN TO EXAMINE THE ROOF AND LOFT SPACE MORE CAREFULLY.",
                 "KIND REGARDS,\nTOM BRIGGS",
-                "FOLLOWING OUR FIRST VIEWING LAST WEEK, I WOULD LIKE TO ARRANGE A SECOND VIEWING OF 34 MAPLE ROAD - I AM PARTICULARLY KEEN TO EXAMINE THE ROOF AND LOFT SPACE MORE CAREFULLY."
+                "SUBJECT: REQUEST FOR SECOND VIEWING - 34 MAPLE ROAD",
+                "DEAR JAMES,"
             ],
             "correctOrder": [
-                1,
-                0,
+                2,
                 3,
-                2
+                0,
+                1
             ],
             "hint": "Property address and viewing number are in the subject; the agent is addressed by first name (established relationship); timing, property address, and specific focus areas are in the body.",
             "explanation": "Giving a specific reason for the second viewing ('roof and loft space') shows you are serious and organised. This also allows the estate agent to prepare relevant information about those areas of the property."
@@ -263,15 +263,15 @@
             "prompt": "Write an email to a personal trainer asking about booking one-to-one sessions.",
             "options": [
                 "DEAR PERSONAL TRAINING TEAM,",
+                "I AM LOOKING TO IMPROVE MY OVERALL FITNESS AND STRENGTH AND WOULD LIKE TO KNOW THE COST PER SESSION, MINIMUM COMMITMENT, AND TRAINER AVAILABILITY ON WEEKDAY MORNINGS.",
                 "KIND REGARDS,\nVICTOR HALL",
-                "SUBJECT: ENQUIRY ABOUT ONE-TO-ONE PERSONAL TRAINING SESSIONS",
-                "I AM LOOKING TO IMPROVE MY OVERALL FITNESS AND STRENGTH AND WOULD LIKE TO KNOW THE COST PER SESSION, MINIMUM COMMITMENT, AND TRAINER AVAILABILITY ON WEEKDAY MORNINGS."
+                "SUBJECT: ENQUIRY ABOUT ONE-TO-ONE PERSONAL TRAINING SESSIONS"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                0,
+                1,
+                2
             ],
             "hint": "The service type is in the subject; the team is addressed; three practical questions - cost, commitment, and availability - are in the body; 'KIND REGARDS' closes the health enquiry.",
             "explanation": "Asking about 'minimum commitment' is a smart question - many personal trainers require a set number of sessions to be paid upfront. Specifying 'weekday mornings' narrows the schedule search to your available time."
@@ -283,15 +283,15 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a nutritionist requesting a dietary consultation appointment.",
             "options": [
-                "I AM LOOKING TO IMPROVE MY DIET FOLLOWING RECENT BLOOD TESTS WHICH SHOWED ELEVATED CHOLESTEROL AND WOULD LIKE TO BOOK AN INITIAL CONSULTATION WITH YOU AT YOUR EARLIEST CONVENIENCE.",
+                "SUBJECT: APPOINTMENT REQUEST FOR DIETARY CONSULTATION",
                 "YOURS SINCERELY,\nSHARON MILLS",
-                "DEAR DR PATEL,",
-                "SUBJECT: APPOINTMENT REQUEST FOR DIETARY CONSULTATION"
+                "I AM LOOKING TO IMPROVE MY DIET FOLLOWING RECENT BLOOD TESTS WHICH SHOWED ELEVATED CHOLESTEROL AND WOULD LIKE TO BOOK AN INITIAL CONSULTATION WITH YOU AT YOUR EARLIEST CONVENIENCE.",
+                "DEAR DR PATEL,"
             ],
             "correctOrder": [
+                0,
                 3,
                 2,
-                0,
                 1
             ],
             "hint": "The consultation purpose is in the subject; the nutritionist is addressed formally; medical context and booking request are in the body; 'YOURS SINCERELY' closes professionally.",
@@ -304,16 +304,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a wellness centre asking about mindfulness and stress management programmes.",
             "options": [
+                "KIND REGARDS,\nLYNNE FOSTER",
                 "DEAR WELLNESS TEAM,",
                 "SUBJECT: ENQUIRY ABOUT MINDFULNESS AND STRESS MANAGEMENT COURSES",
-                "KIND REGARDS,\nLYNNE FOSTER",
                 "I AM EXPERIENCING HIGH LEVELS OF WORKPLACE STRESS AND WOULD LIKE TO KNOW WHAT MINDFULNESS COURSES OR STRESS MANAGEMENT WORKSHOPS YOU CURRENTLY OFFER AND THEIR COSTS."
             ],
             "correctOrder": [
+                2,
                 1,
-                0,
                 3,
-                2
+                0
             ],
             "hint": "Programme types are in the subject; the team is addressed; personal context and two practical questions are in the body; 'KIND REGARDS' closes the health and wellbeing enquiry.",
             "explanation": "Mentioning workplace stress as the context for the enquiry helps the wellness team recommend the most relevant programme for your specific situation, rather than giving a generic list of all their offerings."
@@ -326,15 +326,15 @@
             "prompt": "Write an email to a manager reporting a team member's extended sick leave.",
             "options": [
                 "DEAR CLAIRE,",
-                "BEST REGARDS,\nTOM BARKER, TEAM LEADER",
                 "SUBJECT: UPDATE ON TEAM MEMBER ABSENCE - WEEK THREE",
+                "BEST REGARDS,\nTOM BARKER, TEAM LEADER",
                 "I AM WRITING TO CONFIRM THAT JAMES RILEY HAS NOW BEEN ABSENT FOR THREE CONSECUTIVE WEEKS DUE TO ILLNESS AND I BELIEVE AN OCCUPATIONAL HEALTH REFERRAL MAY NOW BE APPROPRIATE."
             ],
             "correctOrder": [
-                2,
+                1,
                 0,
                 3,
-                1
+                2
             ],
             "hint": "The absence and duration are in the subject; the manager is addressed by first name (workplace norm); duration, name, and occupational health recommendation are in the body; job title appears in the sign-off.",
             "explanation": "Specifying the number of consecutive weeks ('three') establishes whether the absence meets the company's threshold for occupational health referral. Including the employee's full name ensures there is no ambiguity about who is being discussed."
@@ -346,16 +346,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a department manager arranging cover for a team member on planned leave.",
             "options": [
-                "ALICE MORGAN WILL BE ON ANNUAL LEAVE FROM 12 TO 19 JUNE AND I PROPOSE THAT HER KEY RESPONSIBILITIES ARE COVERED BY PAUL DANES AND RUTH SIMS DURING THIS PERIOD.",
                 "BEST REGARDS,\nLINDA CROSS, OPERATIONS MANAGER",
-                "DEAR DEPARTMENT MANAGER,",
-                "SUBJECT: COVER ARRANGEMENTS FOR ALICE MORGAN - 12 TO 19 JUNE"
+                "ALICE MORGAN WILL BE ON ANNUAL LEAVE FROM 12 TO 19 JUNE AND I PROPOSE THAT HER KEY RESPONSIBILITIES ARE COVERED BY PAUL DANES AND RUTH SIMS DURING THIS PERIOD.",
+                "SUBJECT: COVER ARRANGEMENTS FOR ALICE MORGAN - 12 TO 19 JUNE",
+                "DEAR DEPARTMENT MANAGER,"
             ],
             "correctOrder": [
-                3,
                 2,
-                0,
-                1
+                3,
+                1,
+                0
             ],
             "hint": "The person and dates are in the subject; the manager is addressed by role; absence period and proposed cover arrangements are in the body; the sender's title appears in the sign-off.",
             "explanation": "Proposing specific cover ('Paul Danes and Ruth Sims') rather than just flagging the absence shows proactive management. Naming individuals makes the proposal concrete and actionable for the department manager."
@@ -367,16 +367,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a team member confirming a change to their shift pattern.",
             "options": [
-                "DEAR MARCUS,",
+                "I AM WRITING TO CONFIRM THAT YOUR SHIFT PATTERN WILL CHANGE FROM MONDAY–FRIDAY DAYS TO A ROTATING THREE-SHIFT PATTERN EFFECTIVE FROM 1 JULY, AS DISCUSSED IN OUR MEETING ON 5 JUNE.",
                 "SUBJECT: SHIFT PATTERN CHANGE CONFIRMED - EFFECTIVE 1 JULY",
-                "BEST REGARDS,\nJEAN PORTER, SHIFT SUPERVISOR",
-                "I AM WRITING TO CONFIRM THAT YOUR SHIFT PATTERN WILL CHANGE FROM MONDAY–FRIDAY DAYS TO A ROTATING THREE-SHIFT PATTERN EFFECTIVE FROM 1 JULY, AS DISCUSSED IN OUR MEETING ON 5 JUNE."
+                "DEAR MARCUS,",
+                "BEST REGARDS,\nJEAN PORTER, SHIFT SUPERVISOR"
             ],
             "correctOrder": [
                 1,
+                2,
                 0,
-                3,
-                2
+                3
             ],
             "hint": "The change and start date are in the subject; the team member is addressed by first name; old pattern, new pattern, start date, and meeting reference are in the body.",
             "explanation": "Referencing the meeting ('as discussed on 5 June') creates an audit trail and confirms both parties were part of the decision. Including both the old AND new shift pattern avoids any confusion about what is changing."
@@ -388,16 +388,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a supplier requesting materials for an urgent project.",
             "options": [
+                "WE URGENTLY NEED 500 UNITS OF COMPONENT REF: SC-447 DELIVERED BY 15 JULY FOR OUR PROJECT STERLING DEADLINE - PLEASE CONFIRM AVAILABILITY AND DELIVERY TIMELINE BY RETURN.",
                 "DEAR SUPPLY CHAIN MANAGER,",
-                "YOURS SINCERELY,\nKEVIN DALY, PROCUREMENT MANAGER",
                 "SUBJECT: URGENT MATERIALS REQUEST - PROJECT STERLING DEADLINE 18 JULY",
-                "WE URGENTLY NEED 500 UNITS OF COMPONENT REF: SC-447 DELIVERED BY 15 JULY FOR OUR PROJECT STERLING DEADLINE - PLEASE CONFIRM AVAILABILITY AND DELIVERY TIMELINE BY RETURN."
+                "YOURS FAITHFULLY,\nKEVIN DALY, PROCUREMENT MANAGER"
             ],
             "correctOrder": [
                 2,
+                1,
                 0,
-                3,
-                1
+                3
             ],
             "hint": "Urgency, project, and deadline are in the subject; the manager is addressed formally; quantity, component reference, delivery date, project name, and response request are all in the body.",
             "explanation": "'By return' means reply immediately and is used in urgent business correspondence. Including the component reference number ('SC-447') eliminates any potential confusion about which item is needed."
@@ -409,16 +409,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a procurement team asking about the process for onboarding a new supplier.",
             "options": [
-                "WE HAVE IDENTIFIED TITAN MATERIALS LTD AS A POTENTIAL NEW SUPPLIER AND WOULD LIKE TO UNDERSTAND THE STEPS REQUIRED FOR FORMAL ONBOARDING AND THE ESTIMATED TIMELINE TO APPROVAL.",
-                "BEST REGARDS,\nFATIMA HASSAN, OPERATIONS DIRECTOR",
                 "DEAR PROCUREMENT TEAM,",
-                "SUBJECT: NEW SUPPLIER ONBOARDING ENQUIRY - TITAN MATERIALS LTD"
+                "SUBJECT: NEW SUPPLIER ONBOARDING ENQUIRY - TITAN MATERIALS LTD",
+                "WE HAVE IDENTIFIED TITAN MATERIALS LTD AS A POTENTIAL NEW SUPPLIER AND WOULD LIKE TO UNDERSTAND THE STEPS REQUIRED FOR FORMAL ONBOARDING AND THE ESTIMATED TIMELINE TO APPROVAL.",
+                "BEST REGARDS,\nFATIMA HASSAN, OPERATIONS DIRECTOR"
             ],
             "correctOrder": [
-                3,
-                2,
+                1,
                 0,
-                1
+                2,
+                3
             ],
             "hint": "Supplier name and purpose are in the subject; the team is addressed; specific supplier name, process, and timeline questions are in the body; director title is in the sign-off.",
             "explanation": "Naming the specific supplier ('Titan Materials Ltd') in both subject and body shows you have already done due diligence on the candidate. Asking about both the steps AND the timeline gives complete picture of the onboarding process."
@@ -430,15 +430,15 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to an existing supplier negotiating improved payment terms.",
             "options": [
+                "GIVEN OUR THREE-YEAR RELATIONSHIP AND CONSISTENT PAYMENT RECORD, I WOULD LIKE TO PROPOSE MOVING FROM 30-DAY TO 60-DAY PAYMENT TERMS FROM THE START OF NEXT QUARTER.",
                 "DEAR MICHELLE,",
-                "SUBJECT: REQUEST TO DISCUSS REVISED PAYMENT TERMS - ACCOUNT REF: PO-221",
                 "BEST REGARDS,\nSANDRA COOK, FINANCE DIRECTOR",
-                "GIVEN OUR THREE-YEAR RELATIONSHIP AND CONSISTENT PAYMENT RECORD, I WOULD LIKE TO PROPOSE MOVING FROM 30-DAY TO 60-DAY PAYMENT TERMS FROM THE START OF NEXT QUARTER."
+                "SUBJECT: REQUEST TO DISCUSS REVISED PAYMENT TERMS - ACCOUNT REF: PO-221"
             ],
             "correctOrder": [
+                3,
                 1,
                 0,
-                3,
                 2
             ],
             "hint": "The account reference and purpose are in the subject; the contact is addressed by first name (established relationship); the loyalty context, current terms, and proposed new terms are in the body.",
@@ -451,16 +451,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a customer acknowledging their complaint and promising investigation.",
             "options": [
+                "SUBJECT: ACKNOWLEDGEMENT OF YOUR COMPLAINT - REF: C-5501",
                 "DEAR MR HASSAN,",
                 "YOURS SINCERELY,\nCUSTOMER RELATIONS TEAM",
-                "SUBJECT: ACKNOWLEDGEMENT OF YOUR COMPLAINT - REF: C-5501",
                 "THANK YOU FOR CONTACTING US REGARDING YOUR RECENT EXPERIENCE - WE ARE SORRY TO HEAR OF YOUR DISSATISFACTION AND WILL INVESTIGATE YOUR COMPLAINT FULLY WITHIN FIVE WORKING DAYS."
             ],
             "correctOrder": [
-                2,
                 0,
+                1,
                 3,
-                1
+                2
             ],
             "hint": "Complaint reference is in the subject; the customer is addressed formally by name; acknowledgement, apology, and five-day commitment are in the body; team name closes formally.",
             "explanation": "Giving a specific investigation timeline ('five working days') is essential in complaint acknowledgements - vague promises ('we'll look into it') erode customer confidence. Acknowledging dissatisfaction without admitting liability is also important."
@@ -473,15 +473,15 @@
             "prompt": "Write an email to a customer providing a full resolution to their complaint.",
             "options": [
                 "FOLLOWING OUR INVESTIGATION, WE HAVE DISPATCHED A REPLACEMENT ORDER AT NO ADDITIONAL COST, WHICH YOU SHOULD RECEIVE WITHIN TWO BUSINESS DAYS - WE SINCERELY APOLOGISE FOR THE INCONVENIENCE CAUSED.",
-                "YOURS SINCERELY,\nCLARE HUNT, CUSTOMER RELATIONS MANAGER",
                 "DEAR MR HASSAN,",
-                "SUBJECT: COMPLAINT RESOLVED - ORDER REPLACEMENT DISPATCHED - REF: C-5501"
+                "SUBJECT: COMPLAINT RESOLVED - ORDER REPLACEMENT DISPATCHED - REF: C-5501",
+                "YOURS SINCERELY,\nCLARE HUNT, CUSTOMER RELATIONS MANAGER"
             ],
             "correctOrder": [
-                3,
                 2,
+                1,
                 0,
-                1
+                3
             ],
             "hint": "The resolution and reference are in the subject; the customer is addressed formally; investigation outcome, replacement, delivery timeline, and sincere apology are in the body.",
             "explanation": "A complete resolution email includes three elements: what action was taken, when it will arrive, and a genuine apology. Including the complaint reference number allows the customer to track the correspondence easily."
@@ -493,16 +493,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a customer offering a goodwill gesture after a service failure.",
             "options": [
-                "DEAR MR HASSAN,",
-                "SUBJECT: GOODWILL GESTURE FOLLOWING YOUR RECENT EXPERIENCE - REF: C-5501",
                 "KIND REGARDS,\nCLARE HUNT, CUSTOMER RELATIONS MANAGER",
-                "AS A GESTURE OF GOODWILL FOR THE INCONVENIENCE YOU EXPERIENCED, WE ARE PLEASED TO OFFER YOU A 20% DISCOUNT VOUCHER ON YOUR NEXT ORDER, VALID FOR SIX MONTHS."
+                "DEAR MR HASSAN,",
+                "AS A GESTURE OF GOODWILL FOR THE INCONVENIENCE YOU EXPERIENCED, WE ARE PLEASED TO OFFER YOU A 20% DISCOUNT VOUCHER ON YOUR NEXT ORDER, VALID FOR SIX MONTHS.",
+                "SUBJECT: GOODWILL GESTURE FOLLOWING YOUR RECENT EXPERIENCE - REF: C-5501"
             ],
             "correctOrder": [
-                1,
-                0,
                 3,
-                2
+                1,
+                2,
+                0
             ],
             "hint": "The goodwill gesture and reference are in the subject; the customer is addressed; the specific offer with percentage and validity period are in the body; 'KIND REGARDS' closes warmly.",
             "explanation": "Specifying the voucher value ('20%') and validity period ('six months') makes the offer concrete and valuable. Vague gestures like 'something off your next order' are less effective at restoring customer goodwill."
@@ -516,13 +516,13 @@
             "options": [
                 "DEAR VOLUNTEER COORDINATOR,",
                 "MANY THANKS,\nFLORA GREEN",
-                "SUBJECT: VOLUNTEER ROLE ENQUIRY - GREENFIELD MUSIC FESTIVAL 2025",
-                "I AM INTERESTED IN VOLUNTEERING AT THE GREENFIELD MUSIC FESTIVAL IN 2025 AND WOULD LIKE TO KNOW WHAT ROLES ARE AVAILABLE, THE EXPECTED TIME COMMITMENT, AND ANY PERKS SUCH AS FREE ENTRY."
+                "I AM INTERESTED IN VOLUNTEERING AT THE GREENFIELD MUSIC FESTIVAL IN 2025 AND WOULD LIKE TO KNOW WHAT ROLES ARE AVAILABLE, THE EXPECTED TIME COMMITMENT, AND ANY PERKS SUCH AS FREE ENTRY.",
+                "SUBJECT: VOLUNTEER ROLE ENQUIRY - GREENFIELD MUSIC FESTIVAL 2025"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
+                0,
+                2,
                 1
             ],
             "hint": "Festival name and enquiry purpose are in the subject; the coordinator is addressed; three practical questions - roles, time, perks - are in the body; 'MANY THANKS' closes engagingly.",
@@ -535,15 +535,15 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a hotel booking accommodation for a festival weekend.",
             "options": [
-                "I WOULD LIKE TO BOOK A TWIN ROOM FOR THREE NIGHTS FROM 15 TO 17 AUGUST AND WISH TO CONFIRM WHETHER EARLY CHECK-IN ON THE 15TH AT 10AM IS POSSIBLE.",
+                "SUBJECT: ROOM BOOKING REQUEST - GREENFIELD FESTIVAL WEEKEND 15-17 AUGUST",
                 "KIND REGARDS,\nFLORA GREEN",
-                "DEAR RESERVATIONS TEAM,",
-                "SUBJECT: ROOM BOOKING REQUEST - GREENFIELD FESTIVAL WEEKEND 15-17 AUGUST"
+                "I WOULD LIKE TO BOOK A TWIN ROOM FOR THREE NIGHTS FROM 15 TO 17 AUGUST AND WISH TO CONFIRM WHETHER EARLY CHECK-IN ON THE 15TH AT 10AM IS POSSIBLE.",
+                "DEAR RESERVATIONS TEAM,"
             ],
             "correctOrder": [
+                0,
                 3,
                 2,
-                0,
                 1
             ],
             "hint": "Festival link, room type, and dates are in the subject; the team is addressed; room type, dates, and early check-in question are in the body; 'KIND REGARDS' closes the booking email.",
@@ -556,14 +556,14 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a festival security company asking about their services for an outdoor event.",
             "options": [
-                "DEAR EVENT SECURITY TEAM,",
                 "SUBJECT: SECURITY SERVICES ENQUIRY - OUTDOOR FESTIVAL, 5,000 ATTENDEES",
-                "YOURS SINCERELY,\nDAVID LYNCH, EVENT DIRECTOR",
+                "DEAR EVENT SECURITY TEAM,",
+                "KIND REGARDS,\nDAVID LYNCH, EVENT DIRECTOR",
                 "I AM ORGANISING AN OUTDOOR FESTIVAL EXPECTED TO ATTRACT 5,000 ATTENDEES AND WOULD LIKE TO KNOW YOUR AVAILABILITY, STAFFING CAPACITY, AND PRICING FOR A TWO-DAY EVENT."
             ],
             "correctOrder": [
-                1,
                 0,
+                1,
                 3,
                 2
             ],
@@ -578,14 +578,14 @@
             "prompt": "Write an email to a grant-awarding body applying for project funding.",
             "options": [
                 "DEAR GRANTS COMMITTEE,",
-                "YOURS SINCERELY,\nMARY QUINN, PROJECT COORDINATOR",
-                "SUBJECT: GRANT APPLICATION - COMMUNITY ARTS PROJECT 'COLOUR THE STREETS'",
-                "I AM APPLYING FOR A GRANT OF £8,500 TO FUND A COMMUNITY ARTS PROJECT THAT WILL COMMISSION LOCAL ARTISTS TO PRODUCE MURALS ACROSS FIVE PUBLIC SPACES IN BRISTOL."
+                "YOURS FAITHFULLY,\nMARY QUINN, PROJECT COORDINATOR",
+                "I AM APPLYING FOR A GRANT OF £8,500 TO FUND A COMMUNITY ARTS PROJECT THAT WILL COMMISSION LOCAL ARTISTS TO PRODUCE MURALS ACROSS FIVE PUBLIC SPACES IN BRISTOL.",
+                "SUBJECT: GRANT APPLICATION - COMMUNITY ARTS PROJECT 'COLOUR THE STREETS'"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
+                0,
+                2,
                 1
             ],
             "hint": "Project name and grant type are in the subject; the committee is addressed formally; amount requested, project description, and impact are in the body; the role is in the sign-off.",
@@ -598,16 +598,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a funding body asking about eligibility for a specific grant programme.",
             "options": [
-                "OUR ORGANISATION IS A REGISTERED CIC WITH AN ANNUAL TURNOVER BELOW £50,000 AND I WOULD LIKE TO CONFIRM WHETHER WE MEET THE ELIGIBILITY CRITERIA FOR YOUR SMALL GRANTS SCHEME.",
-                "YOURS SINCERELY,\nCARLOS VEGA, DIRECTOR",
+                "BEST REGARDS,\nCARLOS VEGA, DIRECTOR",
                 "DEAR FUNDING TEAM,",
-                "SUBJECT: ELIGIBILITY ENQUIRY - CREATIVE INDUSTRIES SMALL GRANT SCHEME"
+                "SUBJECT: ELIGIBILITY ENQUIRY - CREATIVE INDUSTRIES SMALL GRANT SCHEME",
+                "OUR ORGANISATION IS A REGISTERED CIC WITH AN ANNUAL TURNOVER BELOW £50,000 AND I WOULD LIKE TO CONFIRM WHETHER WE MEET THE ELIGIBILITY CRITERIA FOR YOUR SMALL GRANTS SCHEME."
             ],
             "correctOrder": [
-                3,
                 2,
-                0,
-                1
+                1,
+                3,
+                0
             ],
             "hint": "Scheme name and eligibility purpose are in the subject; the team is addressed; CIC status, turnover threshold, and eligibility question are in the body; the director signs formally.",
             "explanation": "Providing the key qualifying data - legal structure ('registered CIC') and turnover - upfront allows the funding team to check eligibility against their criteria immediately, saving everyone time."
@@ -619,16 +619,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email submitting a community project proposal for council approval.",
             "options": [
+                "PLEASE FIND ENCLOSED OUR PROPOSAL FOR A NEW COMMUNITY GARDEN ON THE RIVERSIDE SITE - THE PROJECT AIMS TO ENGAGE 200 LOCAL RESIDENTS AND CREATE FOUR PART-TIME VOLUNTEER POSITIONS.",
                 "DEAR COMMUNITY INVESTMENT BOARD,",
                 "SUBJECT: PROJECT PROPOSAL SUBMISSION - RIVERSIDE COMMUNITY GARDEN",
-                "YOURS SINCERELY,\nTANYA REED, PROJECT LEAD",
-                "PLEASE FIND ENCLOSED OUR PROPOSAL FOR A NEW COMMUNITY GARDEN ON THE RIVERSIDE SITE - THE PROJECT AIMS TO ENGAGE 200 LOCAL RESIDENTS AND CREATE FOUR PART-TIME VOLUNTEER POSITIONS."
+                "KIND REGARDS,\nTANYA REED, PROJECT LEAD"
             ],
             "correctOrder": [
+                2,
                 1,
                 0,
-                3,
-                2
+                3
             ],
             "hint": "Project name and submission purpose are in the subject; the board is addressed formally; attachment, goals, and impact figures are in the body; the project lead signs formally.",
             "explanation": "Including specific impact numbers - '200 residents' and '4 volunteer positions' - makes the proposal more compelling and concrete. Grant bodies and councils respond better to measurable outcomes than to vague claims of community benefit."

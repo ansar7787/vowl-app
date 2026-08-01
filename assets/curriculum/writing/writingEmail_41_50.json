@@ -10,16 +10,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a company applying for a work experience placement.",
             "options": [
-                "DEAR MS PORTER,",
-                "YOURS SINCERELY,\nKAYLA BURNS",
+                "I AM A YEAR 11 STUDENT WITH A STRONG INTEREST IN MARKETING AND I BELIEVE A WORK EXPERIENCE PLACEMENT WITH YOUR COMPANY WOULD BE INVALUABLE TO MY FUTURE CAREER DEVELOPMENT.",
                 "SUBJECT: APPLICATION FOR WORK EXPERIENCE PLACEMENT - SUMMER",
-                "I AM A YEAR 11 STUDENT WITH A STRONG INTEREST IN MARKETING AND I BELIEVE A WORK EXPERIENCE PLACEMENT WITH YOUR COMPANY WOULD BE INVALUABLE TO MY FUTURE CAREER DEVELOPMENT."
+                "DEAR MS PORTER,",
+                "YOURS SINCERELY,\nKAYLA BURNS"
             ],
             "correctOrder": [
+                1,
                 2,
                 0,
-                3,
-                1
+                3
             ],
             "hint": "Year group, interest, and purpose are in the subject; the contact is addressed by name; key selling points (year group, interest, value) are made in the body; 'YOURS SINCERELY' closes the formal student application.",
             "explanation": "A formal work experience application should 'sell' the student in the body paragraph by linking their interests to the company. Naming the contact ('Ms Porter') rather than 'Hiring Manager' shows research and personal effort."
@@ -31,18 +31,18 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a recruitment agency enquiring about graduate internship opportunities.",
             "options": [
-                "I RECENTLY GRADUATED WITH A 2:1 IN COMMUNICATIONS AND AM SEEKING A PAID INTERNSHIP IN THE MEDIA SECTOR - I WOULD WELCOME ANY SUITABLE OPPORTUNITIES YOU MAY HAVE.",
-                "YOURS SINCERELY,\nCAITLIN MARSH",
                 "DEAR RECRUITMENT TEAM,",
+                "I RECENTLY GRADUATED WITH A 2:1 IN COMMUNICATIONS AND AM SEEKING A PAID INTERNSHIP IN THE MEDIA SECTOR - I WOULD WELCOME ANY SUITABLE OPPORTUNITIES YOU MAY HAVE.",
+                "KIND REGARDS,\nCAITLIN MARSH",
                 "SUBJECT: GRADUATE INTERNSHIP ENQUIRY - MEDIA AND COMMUNICATIONS"
             ],
             "correctOrder": [
                 3,
-                2,
                 0,
-                1
+                1,
+                2
             ],
-            "hint": "Sector and qualification are in the subject; the agency is addressed; degree classification, sector preference, and offer to share opportunities are in the body; 'YOURS SINCERELY' closes the professional enquiry.",
+            "hint": "Sector and qualification are in the subject; the agency is addressed by role, not name; degree classification, sector preference, and offer to share opportunities are in the body; 'KIND REGARDS' closes the professional enquiry.",
             "explanation": "Stating your degree classification ('2:1') immediately establishes your academic achievement. Specifying you are looking for a 'paid internship' is important - it saves time for both parties if the agency only handles unpaid placements."
         },
         {
@@ -52,18 +52,18 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a university admissions office asking about an undergraduate application.",
             "options": [
-                "DEAR ADMISSIONS OFFICE,",
                 "SUBJECT: UNDERGRADUATE APPLICATION ENQUIRY - COMPUTER SCIENCE",
-                "YOURS SINCERELY,\nNATAN OSEI",
-                "I AM APPLYING TO STUDY COMPUTER SCIENCE AND WOULD LIKE TO KNOW WHETHER APPLICANTS ARE REQUIRED TO SUBMIT A PORTFOLIO IN ADDITION TO THEIR UCAS APPLICATION."
+                "I AM APPLYING TO STUDY COMPUTER SCIENCE AND WOULD LIKE TO KNOW WHETHER APPLICANTS ARE REQUIRED TO SUBMIT A PORTFOLIO IN ADDITION TO THEIR UCAS APPLICATION.",
+                "YOURS FAITHFULLY,\nNATAN OSEI",
+                "DEAR ADMISSIONS OFFICE,"
             ],
             "correctOrder": [
-                1,
                 0,
                 3,
+                1,
                 2
             ],
-            "hint": "Subject and degree level are in the subject; the admissions office is addressed; the degree name and specific process question are in the body; 'YOURS SINCERELY' closes the student enquiry.",
+            "hint": "Subject and degree level are in the subject; the admissions office is addressed by role, not name; the degree name and specific process question are in the body; the closing must match this unnamed greeting.",
             "explanation": "The question 'in addition to their UCAS application' shows the student already knows the standard route and is asking about additional requirements - a more informed and focused enquiry than asking from scratch."
         },
         {
@@ -74,15 +74,15 @@
             "prompt": "Write a professional email requesting a reference for a job application.",
             "options": [
                 "DEAR DR CRANE,",
+                "I AM APPLYING FOR A MARKETING MANAGER ROLE AND HOPE YOU WOULD BE WILLING TO ACT AS A PROFESSIONAL REFEREE - I HAVE ATTACHED A COPY OF MY CV FOR YOUR REFERENCE.",
                 "YOURS SINCERELY,\nREBECCA FOX",
-                "SUBJECT: REFERENCE REQUEST FOR MARKETING MANAGER APPLICATION",
-                "I AM APPLYING FOR A MARKETING MANAGER ROLE AND HOPE YOU WOULD BE WILLING TO ACT AS A PROFESSIONAL REFEREE - I HAVE ATTACHED A COPY OF MY CV FOR YOUR REFERENCE."
+                "SUBJECT: REFERENCE REQUEST FOR MARKETING MANAGER APPLICATION"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                0,
+                1,
+                2
             ],
             "hint": "The role and purpose are in the subject; the referee is addressed formally by title; a polite request, the attached CV, and acknowledgement of their time are in the body; 'YOURS SINCERELY' closes.",
             "explanation": "Always attach your CV when requesting a reference so the referee has up-to-date information about your career to draw on. Using 'hope you would be willing' rather than assuming agreement is the correct level of politeness for a reference request."
@@ -94,16 +94,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email following up on a job interview to thank the panel.",
             "options": [
-                "I WANTED TO THANK YOU BOTH FOR THE OPPORTUNITY TO INTERVIEW YESTERDAY - I THOROUGHLY ENJOYED THE CONVERSATION AND REMAIN VERY INTERESTED IN THE ROLE.",
                 "YOURS SINCERELY,\nDEMI LOVELL",
-                "DEAR MR HARRISON AND MS CHEN,",
-                "SUBJECT: THANK YOU FOLLOWING YESTERDAY'S INTERVIEW"
+                "SUBJECT: THANK YOU FOLLOWING YESTERDAY'S INTERVIEW",
+                "I WANTED TO THANK YOU BOTH FOR THE OPPORTUNITY TO INTERVIEW YESTERDAY - I THOROUGHLY ENJOYED THE CONVERSATION AND REMAIN VERY INTERESTED IN THE ROLE.",
+                "DEAR MR HARRISON AND MS CHEN,"
             ],
             "correctOrder": [
+                1,
                 3,
                 2,
-                0,
-                1
+                0
             ],
             "hint": "The interview and timing are in the subject; both interviewers are addressed by name; the thanks, positive engagement, and continued interest form the body; 'YOURS SINCERELY' closes professionally.",
             "explanation": "Addressing both interviewers by name ('Mr Harrison and Ms Chen') shows attention to detail and respect. Reaffirming your interest in the role ('remain very interested') reinforces your commitment, which is valuable post-interview."
@@ -115,16 +115,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a recruiter withdrawing your application for a role.",
             "options": [
-                "DEAR MS PIERCE,",
-                "SUBJECT: WITHDRAWAL OF APPLICATION - ACCOUNT MANAGER ROLE",
+                "I AM WRITING TO WITHDRAW MY APPLICATION FOR THE ACCOUNT MANAGER POSITION - I HAVE ACCEPTED ANOTHER OFFER AND APOLOGISE FOR ANY INCONVENIENCE THIS CAUSES.",
                 "YOURS SINCERELY,\nHARRIS BELL",
-                "I AM WRITING TO WITHDRAW MY APPLICATION FOR THE ACCOUNT MANAGER POSITION - I HAVE ACCEPTED ANOTHER OFFER AND APOLOGISE FOR ANY INCONVENIENCE THIS CAUSES."
+                "DEAR MS PIERCE,",
+                "SUBJECT: WITHDRAWAL OF APPLICATION - ACCOUNT MANAGER ROLE"
             ],
             "correctOrder": [
-                1,
-                0,
                 3,
-                2
+                2,
+                0,
+                1
             ],
             "hint": "The role and action are in the subject; the recruiter is addressed by name; the decision and brief reason are given, with an apology for inconvenience; 'YOURS SINCERELY' closes professionally.",
             "explanation": "Always withdraw a job application formally and promptly - it frees the recruiter to move on and leaves a positive impression of your professionalism. You don't need to give a detailed reason; a brief explanation ('accepted another offer') is sufficient."
@@ -136,16 +136,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write a formal complaint email to a company about a faulty product.",
             "options": [
+                "I PURCHASED A LAPTOP MODEL X200 FROM YOUR ONLINE STORE ON 10 MARCH AND THE SCREEN HAS DEVELOPED A SIGNIFICANT FAULT WITHIN THE THIRTY-DAY GUARANTEE PERIOD.",
                 "DEAR CUSTOMER SERVICES MANAGER,",
-                "YOURS FAITHFULLY,\nTARIQ HUSSAIN",
                 "SUBJECT: FORMAL COMPLAINT - DEFECTIVE LAPTOP MODEL X200",
-                "I PURCHASED A LAPTOP MODEL X200 FROM YOUR ONLINE STORE ON 10 MARCH AND THE SCREEN HAS DEVELOPED A SIGNIFICANT FAULT WITHIN THE THIRTY-DAY GUARANTEE PERIOD."
+                "YOURS FAITHFULLY,\nTARIQ HUSSAIN"
             ],
             "correctOrder": [
                 2,
+                1,
                 0,
-                3,
-                1
+                3
             ],
             "hint": "Formal complaint and product model are in the subject; no named individual requires 'YOURS FAITHFULLY'; purchase date and fault within guarantee period form the key evidence in the body.",
             "explanation": "The most powerful element of a product complaint is establishing that the fault occurred within the guarantee period. This creates a legal and contractual basis for a remedy. The word 'FORMAL' in the subject signals an escalated complaint."
@@ -157,15 +157,15 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email escalating an unresolved customer complaint to a manager.",
             "options": [
-                "I RAISED A COMPLAINT ON 5 APRIL WITH REFERENCE C8847 WHICH REMAINS UNRESOLVED - I AM NOW REQUESTING AN ESCALATION TO A SENIOR MANAGER AND A RESPONSE WITHIN FIVE WORKING DAYS.",
+                "SUBJECT: ESCALATION REQUEST - UNRESOLVED COMPLAINT REF: C8847",
                 "YOURS FAITHFULLY,\nSHARON WELLS",
-                "DEAR COMPLAINTS MANAGER,",
-                "SUBJECT: ESCALATION REQUEST - UNRESOLVED COMPLAINT REF: C8847"
+                "I RAISED A COMPLAINT ON 5 APRIL WITH REFERENCE C8847 WHICH REMAINS UNRESOLVED - I AM NOW REQUESTING AN ESCALATION TO A SENIOR MANAGER AND A RESPONSE WITHIN FIVE WORKING DAYS.",
+                "DEAR COMPLAINTS MANAGER,"
             ],
             "correctOrder": [
+                0,
                 3,
                 2,
-                0,
                 1
             ],
             "hint": "The escalation and reference number are in the subject; the complaints manager is addressed; the original date, reference number, and specific demands (escalation and timeline) are in the body.",
@@ -178,15 +178,15 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a company requesting compensation for a cancelled service.",
             "options": [
-                "DEAR CUSTOMER RELATIONS TEAM,",
+                "MY INTERNET SERVICE WAS UNEXPECTEDLY CANCELLED WITHOUT NOTICE ON 18 MAY, CAUSING SIGNIFICANT DISRUPTION TO MY WORK, AND I AM FORMALLY REQUESTING APPROPRIATE COMPENSATION.",
                 "SUBJECT: COMPENSATION REQUEST FOLLOWING SERVICE CANCELLATION",
                 "YOURS FAITHFULLY,\nDENISE CROSS",
-                "MY INTERNET SERVICE WAS UNEXPECTEDLY CANCELLED WITHOUT NOTICE ON 18 MAY, CAUSING SIGNIFICANT DISRUPTION TO MY WORK, AND I AM FORMALLY REQUESTING APPROPRIATE COMPENSATION."
+                "DEAR CUSTOMER RELATIONS TEAM,"
             ],
             "correctOrder": [
                 1,
-                0,
                 3,
+                0,
                 2
             ],
             "hint": "Purpose and reason are in the subject; the team is addressed formally; the incident date, impact, and formal compensation request are in the body; 'YOURS FAITHFULLY' closes the complaint.",
@@ -199,18 +199,18 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to an industry conference organiser asking about attending.",
             "options": [
-                "DEAR CONFERENCE SECRETARIAT,",
-                "YOURS SINCERELY,\nMARCINE DUPONT",
+                "BEST REGARDS,\nMARCINE DUPONT",
                 "SUBJECT: ATTENDANCE ENQUIRY - DIGITAL FUTURES CONFERENCE 2025",
-                "I AM THE HEAD OF DIGITAL STRATEGY AT NOVA TECH AND WOULD LIKE TO KNOW WHETHER DELEGATE PLACES ARE STILL AVAILABLE FOR THE DIGITAL FUTURES CONFERENCE AND THE REGISTRATION PROCESS."
+                "I AM THE HEAD OF DIGITAL STRATEGY AT NOVA TECH AND WOULD LIKE TO KNOW WHETHER DELEGATE PLACES ARE STILL AVAILABLE FOR THE DIGITAL FUTURES CONFERENCE AND THE REGISTRATION PROCESS.",
+                "DEAR CONFERENCE SECRETARIAT,"
             ],
             "correctOrder": [
-                2,
-                0,
+                1,
                 3,
-                1
+                2,
+                0
             ],
-            "hint": "Conference name and year are in the subject; the secretariat is addressed formally; role, company, availability, and registration questions are in the body; 'YOURS SINCERELY' closes professionally.",
+            "hint": "Conference name and year are in the subject; the secretariat is addressed by role, not name; role, company, availability, and registration questions are in the body; 'BEST REGARDS' closes professionally.",
             "explanation": "Mentioning your role and company ('Head of Digital Strategy at Nova Tech') establishes your professional relevance for a targeted industry conference. Two linked questions - availability and registration - are efficiently combined."
         },
         {
@@ -221,17 +221,17 @@
             "prompt": "Write an email to a conference organiser requesting to present at an event.",
             "options": [
                 "I WOULD LIKE TO PROPOSE A PRESENTATION ON AI-DRIVEN CUSTOMER ANALYTICS FOR THE DIGITAL FUTURES CONFERENCE AND HAVE ATTACHED AN ABSTRACT FOR YOUR CONSIDERATION.",
-                "YOURS SINCERELY,\nPROF. IOANNIS ALEXIS",
-                "DEAR PROGRAMME COMMITTEE,",
-                "SUBJECT: SPEAKER PROPOSAL SUBMISSION - DIGITAL FUTURES 2025"
+                "SUBJECT: SPEAKER PROPOSAL SUBMISSION - DIGITAL FUTURES 2025",
+                "YOURS FAITHFULLY,\nPROF. IOANNIS ALEXIS",
+                "DEAR PROGRAMME COMMITTEE,"
             ],
             "correctOrder": [
+                1,
                 3,
-                2,
                 0,
-                1
+                2
             ],
-            "hint": "Proposal and conference name are in the subject; the programme committee is addressed; the session topic and attached abstract are mentioned in the body; 'YOURS SINCERELY' closes the academic/professional submission.",
+            "hint": "Proposal and conference name are in the subject; the programme committee is addressed by role, not name; the session topic and attached abstract are mentioned in the body; the closing must match this unnamed greeting.",
             "explanation": "Mentioning the attached abstract ('for your consideration') is essential - most conference proposals require an abstract. Using an academic title ('Prof.') in the sign-off establishes authority and credibility."
         },
         {
@@ -262,16 +262,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a lecturer submitting an academic assignment with a cover note.",
             "options": [
-                "DEAR DR AHMED,",
                 "YOURS SINCERELY,\nSARA KHAN",
                 "SUBJECT: ASSIGNMENT SUBMISSION - ESSAY ON CLIMATE POLICY (MODULE: ENV301)",
-                "PLEASE FIND ATTACHED MY ESSAY ON CLIMATE POLICY FOR MODULE ENV301 - I HAVE ADDRESSED ALL FOUR ASSESSMENT CRITERIA AND THE WORD COUNT IS 2,498 WORDS."
+                "PLEASE FIND ATTACHED MY ESSAY ON CLIMATE POLICY FOR MODULE ENV301 - I HAVE ADDRESSED ALL FOUR ASSESSMENT CRITERIA AND THE WORD COUNT IS 2,498 WORDS.",
+                "DEAR DR AHMED,"
             ],
             "correctOrder": [
-                2,
-                0,
+                1,
                 3,
-                1
+                2,
+                0
             ],
             "hint": "Assignment and module are in the subject; the lecturer is addressed by title; the attachment, criteria addressed, and word count form the body; 'YOURS SINCERELY' closes the formal academic email.",
             "explanation": "Confirming you have addressed all assessment criteria reassures the marker before they begin reading. Including the exact word count demonstrates compliance with the brief - a small detail that shows academic professionalism."
@@ -285,12 +285,12 @@
             "options": [
                 "I AM WRITING TO RESPECTFULLY REQUEST A SHORT EXTENSION ON THE RESEARCH METHODS ESSAY DUE ON 30 NOVEMBER AS I HAVE BEEN UNWELL THIS WEEK AND HAVE BEEN UNABLE TO COMPLETE IT.",
                 "YOURS SINCERELY,\nANTHONY SHAW",
-                "DEAR PROFESSOR GRANT,",
-                "SUBJECT: REQUEST FOR DEADLINE EXTENSION - RESEARCH METHODS ESSAY"
+                "SUBJECT: REQUEST FOR DEADLINE EXTENSION - RESEARCH METHODS ESSAY",
+                "DEAR PROFESSOR GRANT,"
             ],
             "correctOrder": [
-                3,
                 2,
+                3,
                 0,
                 1
             ],
@@ -304,18 +304,18 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a university support service asking for academic help.",
             "options": [
+                "I AM STRUGGLING WITH THE STATISTICS ELEMENTS OF MY PSYCHOLOGY DEGREE AND WOULD LIKE TO KNOW WHAT SUPPORT SERVICES AND WORKSHOPS ARE AVAILABLE TO STUDENTS.",
                 "DEAR ACADEMIC SUPPORT TEAM,",
                 "SUBJECT: REQUEST FOR ACADEMIC SUPPORT - STATISTICS ASSIGNMENTS",
-                "YOURS SINCERELY,\nCLOE MARTIN",
-                "I AM STRUGGLING WITH THE STATISTICS ELEMENTS OF MY PSYCHOLOGY DEGREE AND WOULD LIKE TO KNOW WHAT SUPPORT SERVICES AND WORKSHOPS ARE AVAILABLE TO STUDENTS."
+                "KIND REGARDS,\nCLOE MARTIN"
             ],
             "correctOrder": [
+                2,
                 1,
                 0,
-                3,
-                2
+                3
             ],
-            "hint": "The subject and problem are clearly in the subject; the team is addressed; the course, specific difficulty, and two types of support are asked about in the body; 'YOURS SINCERELY' closes.",
+            "hint": "The subject and problem are clearly in the subject; the team is addressed by role, not name; the course, specific difficulty, and two types of support are asked about in the body; 'KIND REGARDS' closes.",
             "explanation": "Being specific about what you are struggling with ('statistics elements') allows the support team to direct you to the most relevant service. Asking about both 'support services' and 'workshops' shows you are aware that multiple options may exist."
         },
         {
@@ -325,16 +325,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a website customer service team about a problem with an online account.",
             "options": [
-                "DEAR CUSTOMER SUPPORT TEAM,",
-                "YOURS SINCERELY,\nBRENDAN HAYES",
+                "BEST REGARDS,\nBRENDAN HAYES",
                 "SUBJECT: ACCOUNT ACCESS PROBLEM - CANNOT LOG IN SINCE UPDATE",
-                "SINCE YOUR WEBSITE WAS UPDATED ON MONDAY, I HAVE BEEN UNABLE TO LOG INTO MY ACCOUNT DESPITE USING THE CORRECT CREDENTIALS - PLEASE COULD YOU INVESTIGATE AND RESTORE MY ACCESS?"
+                "SINCE YOUR WEBSITE WAS UPDATED ON MONDAY, I HAVE BEEN UNABLE TO LOG INTO MY ACCOUNT DESPITE USING THE CORRECT CREDENTIALS - PLEASE COULD YOU INVESTIGATE AND RESTORE MY ACCESS?",
+                "DEAR CUSTOMER SUPPORT TEAM,"
             ],
             "correctOrder": [
-                2,
-                0,
+                1,
                 3,
-                1
+                2,
+                0
             ],
             "hint": "The problem and trigger are in the subject; the support team is addressed; the cause (website update), duration, credentials used, and request to restore access are in the body.",
             "explanation": "Linking the problem to a specific trigger ('since the website was updated') immediately directs support to check whether the update caused widespread login issues. Stating you are using 'correct credentials' rules out user error."
@@ -346,16 +346,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to an online service asking for a password reset assistance.",
             "options": [
-                "I HAVE REQUESTED A PASSWORD RESET THREE TIMES BUT THE RESET EMAIL IS NOT ARRIVING IN MY INBOX OR SPAM FOLDER - PLEASE COULD YOU MANUALLY RESET MY PASSWORD?",
-                "YOURS SINCERELY,\nKATE MORRISON",
                 "DEAR TECHNICAL SUPPORT,",
+                "I HAVE REQUESTED A PASSWORD RESET THREE TIMES BUT THE RESET EMAIL IS NOT ARRIVING IN MY INBOX OR SPAM FOLDER - PLEASE COULD YOU MANUALLY RESET MY PASSWORD?",
+                "KIND REGARDS,\nKATE MORRISON",
                 "SUBJECT: PASSWORD RESET REQUEST - UNABLE TO RECEIVE RESET EMAIL"
             ],
             "correctOrder": [
                 3,
-                2,
                 0,
-                1
+                1,
+                2
             ],
             "hint": "The specific problem is in the subject; technical support is addressed; the number of attempts, the spam folder check, and the manual reset request are all in the body.",
             "explanation": "Confirming you have checked the spam folder ('inbox or spam folder') removes the most common technical support response and moves the issue forward immediately. Stating the number of attempts ('three times') shows persistence."
@@ -388,15 +388,15 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a travel company booking a school trip to a museum.",
             "options": [
+                "I AM A TEACHER ORGANISING A SCHOOL TRIP FOR 35 YEAR 9 PUPILS TO THE SCIENCE MUSEUM IN OCTOBER AND WOULD LIKE TO ENQUIRE ABOUT GROUP BOOKING RATES AND AVAILABLE DATES.",
+                "YOURS FAITHFULLY,\nMS TANYA FORD",
                 "DEAR SCHOOL TRIPS COORDINATOR,",
-                "YOURS SINCERELY,\nMS TANYA FORD",
-                "SUBJECT: BOOKING REQUEST - SCHOOL TRIP FOR 35 PUPILS TO THE SCIENCE MUSEUM",
-                "I AM A TEACHER ORGANISING A SCHOOL TRIP FOR 35 YEAR 9 PUPILS TO THE SCIENCE MUSEUM IN OCTOBER AND WOULD LIKE TO ENQUIRE ABOUT GROUP BOOKING RATES AND AVAILABLE DATES."
+                "SUBJECT: BOOKING REQUEST - SCHOOL TRIP FOR 35 PUPILS TO THE SCIENCE MUSEUM"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
             "hint": "Group size, year group, and destination are in the subject; the coordinator is addressed; all essential trip details are in the body with two linked questions; the teacher signs with title.",
@@ -409,16 +409,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a venue asking about health and safety procedures for a school visit.",
             "options": [
+                "KIND REGARDS,\nMR PAUL ASHBY",
                 "I AM ORGANISING A SCHOOL TRIP FOR THIRTY YEAR 8 PUPILS AND NEED TO CONFIRM YOUR RISK ASSESSMENT PROCEDURES, EMERGENCY PROTOCOLS, AND STAFF-TO-PUPIL RATIO REQUIREMENTS BEFORE BOOKING.",
-                "YOURS SINCERELY,\nMR PAUL ASHBY",
                 "DEAR HEALTH AND SAFETY OFFICER,",
                 "SUBJECT: HEALTH AND SAFETY ENQUIRY - SCHOOL GROUP VISIT"
             ],
             "correctOrder": [
                 3,
                 2,
-                0,
-                1
+                1,
+                0
             ],
             "hint": "Purpose and audience are in the subject; the correct officer is addressed; three specific procedural questions are listed in the body; the teacher signs formally with title.",
             "explanation": "Addressing the 'Health and Safety Officer' rather than general enquiries ensures your safety questions reach the right person. Confirming safety requirements BEFORE booking is the responsible and professional order of events."
@@ -430,16 +430,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a national park requesting permission for a school outdoor education activity.",
             "options": [
-                "DEAR NATIONAL PARK AUTHORITY,",
                 "SUBJECT: PERMISSION REQUEST - OUTDOOR EDUCATION ACTIVITY AT DARTMOOR",
-                "YOURS SINCERELY,\nMISS EMMA STONE",
+                "YOURS FAITHFULLY,\nMISS EMMA STONE",
+                "DEAR NATIONAL PARK AUTHORITY,",
                 "I AM A TEACHER PLANNING AN ORIENTEERING ACTIVITY FOR MY YEAR 10 GEOGRAPHY CLASS AT DARTMOOR AND WOULD LIKE TO KNOW WHAT PERMISSIONS OR PERMITS ARE REQUIRED FOR EDUCATIONAL GROUPS."
             ],
             "correctOrder": [
-                1,
                 0,
+                2,
                 3,
-                2
+                1
             ],
             "hint": "Activity type and location are in the subject; the authority is addressed formally; the teacher's role, class details, specific activity, and permission question are in the body.",
             "explanation": "Specifying the activity type ('orienteering') and the educational context ('Year 10 Geography class') allows the park authority to identify which permit category applies. Using 'what permissions or permits are required' is open-ended and captures all requirements."
@@ -451,15 +451,15 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a local council asking about joining a neighbourhood regeneration project.",
             "options": [
+                "I AM A LOCAL BUSINESS OWNER ON HIGH STREET AND WOULD LIKE TO UNDERSTAND HOW LOCAL RESIDENTS AND BUSINESSES CAN CONTRIBUTE TO OR PARTICIPATE IN THE REGENERATION PROJECT.",
+                "BEST REGARDS,\nVINCENT RAY",
                 "DEAR PROJECT MANAGER,",
-                "YOURS SINCERELY,\nVINCENT RAY",
-                "SUBJECT: INTEREST IN JOINING THE HIGH STREET REGENERATION PROJECT",
-                "I AM A LOCAL BUSINESS OWNER ON HIGH STREET AND WOULD LIKE TO UNDERSTAND HOW LOCAL RESIDENTS AND BUSINESSES CAN CONTRIBUTE TO OR PARTICIPATE IN THE REGENERATION PROJECT."
+                "SUBJECT: INTEREST IN JOINING THE HIGH STREET REGENERATION PROJECT"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
             "hint": "Project name and purpose are in the subject; the project manager is addressed; the sender's stake (local business owner) and the participation question are in the body.",
@@ -473,17 +473,17 @@
             "prompt": "Write an email to a council volunteering for a local environmental clean-up day.",
             "options": [
                 "I WOULD LIKE TO VOLUNTEER FOR THE RIVERSIDE CLEAN-UP EVENT ON 22 JUNE AND WONDER IF I COULD ALSO BRING FOUR FRIENDS TO HELP - PLEASE LET ME KNOW WHAT TO BRING.",
-                "YOURS SINCERELY,\nKELLY GRANT",
-                "DEAR ENVIRONMENTAL SERVICES TEAM,",
-                "SUBJECT: VOLUNTEERING FOR THE RIVERSIDE CLEAN-UP ON 22 JUNE"
+                "SUBJECT: VOLUNTEERING FOR THE RIVERSIDE CLEAN-UP ON 22 JUNE",
+                "KIND REGARDS,\nKELLY GRANT",
+                "DEAR ENVIRONMENTAL SERVICES TEAM,"
             ],
             "correctOrder": [
+                1,
                 3,
-                2,
                 0,
-                1
+                2
             ],
-            "hint": "Volunteering and event details are in the subject; the team is addressed; participation, extra volunteers, and a practical question are in the body; 'YOURS SINCERELY' closes the civic email.",
+            "hint": "Volunteering and event details are in the subject; the team is addressed by role, not name; participation, extra volunteers, and a practical question are in the body; 'KIND REGARDS' closes the civic email.",
             "explanation": "Asking whether you can bring additional people is considerate - it increases the volunteer numbers while checking it is welcome. Asking 'what to bring' shows you are prepared to be practical and hands-on."
         },
         {
@@ -493,16 +493,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a council to report a pothole on a residential road.",
             "options": [
-                "DEAR HIGHWAYS MAINTENANCE TEAM,",
                 "SUBJECT: REPORT OF DANGEROUS POTHOLE - MAPLE GROVE, NEAR NO. 14",
-                "YOURS SINCERELY,\nTOMAS WALSH",
-                "I AM WRITING TO REPORT A LARGE AND POTENTIALLY DANGEROUS POTHOLE ON MAPLE GROVE NEAR HOUSE NUMBER 14 WHICH I BELIEVE COULD CAUSE DAMAGE TO VEHICLES OR INJURY TO CYCLISTS."
+                "YOURS FAITHFULLY,\nTOMAS WALSH",
+                "I AM WRITING TO REPORT A LARGE AND POTENTIALLY DANGEROUS POTHOLE ON MAPLE GROVE NEAR HOUSE NUMBER 14 WHICH I BELIEVE COULD CAUSE DAMAGE TO VEHICLES OR INJURY TO CYCLISTS.",
+                "DEAR HIGHWAYS MAINTENANCE TEAM,"
             ],
             "correctOrder": [
-                1,
                 0,
                 3,
-                2
+                2,
+                1
             ],
             "hint": "The issue and precise location are in the subject; the correct council team is addressed; the exact location, size assessment, and safety risks are in the body.",
             "explanation": "Providing a precise location ('near No. 14') is essential for the highways team to find and fix the pothole. Mentioning the safety risks to vehicles and cyclists establishes the urgency and public interest in a quick repair."
@@ -514,16 +514,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a restaurant asking about options for someone with a nut allergy.",
             "options": [
-                "DEAR RESTAURANT MANAGER,",
                 "KIND REGARDS,\nALEX WONG",
                 "SUBJECT: DIETARY REQUIREMENT ENQUIRY - NUT ALLERGY",
+                "DEAR RESTAURANT MANAGER,",
                 "I AM BOOKING A TABLE FOR SATURDAY EVENING AND ONE OF MY GUESTS HAS A SEVERE NUT ALLERGY - COULD YOU CONFIRM WHETHER YOUR KITCHEN CAN SAFELY ACCOMMODATE THIS DIETARY REQUIREMENT?"
             ],
             "correctOrder": [
+                1,
                 2,
-                0,
                 3,
-                1
+                0
             ],
             "hint": "Dietary requirement and severity are in the subject; the manager is addressed; the booking context, allergy severity, and safety confirmation request are in the body.",
             "explanation": "The word 'severe' in the email signals to the kitchen that this is not a mild preference but a potentially life-threatening requirement. Always ask about allergens in advance when booking, especially for severe allergies."
@@ -535,18 +535,18 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a food supplier asking for a full list of allergen information.",
             "options": [
-                "I AM A CATERING MANAGER AND NEED TO CONFIRM FULL ALLERGEN DECLARATIONS FOR ALL 14 REGULATED ALLERGENS ACROSS YOUR PRODUCT RANGE FOR OUR CATERING COMPLIANCE REQUIREMENTS.",
-                "YOURS SINCERELY,\nCHRISTINE HUNT",
                 "DEAR QUALITY ASSURANCE TEAM,",
+                "KIND REGARDS,\nCHRISTINE HUNT",
+                "I AM A CATERING MANAGER AND NEED TO CONFIRM FULL ALLERGEN DECLARATIONS FOR ALL 14 REGULATED ALLERGENS ACROSS YOUR PRODUCT RANGE FOR OUR CATERING COMPLIANCE REQUIREMENTS.",
                 "SUBJECT: ALLERGEN INFORMATION REQUEST FOR YOUR PRODUCT RANGE"
             ],
             "correctOrder": [
                 3,
-                2,
                 0,
+                2,
                 1
             ],
-            "hint": "Allergen information and product scope are in the subject; the QA team is addressed; the professional role, all 14 allergens, and the compliance reason are stated; 'YOURS SINCERELY' closes.",
+            "hint": "Allergen information and product scope are in the subject; the QA team is addressed by role, not name; the professional role, all 14 allergens, and the compliance reason are stated; 'KIND REGARDS' closes.",
             "explanation": "Mentioning 'all 14 regulated allergens' shows professional knowledge of food safety legislation (EU Food Information Regulation). Giving the business reason ('catering compliance') explains why complete information is legally necessary."
         },
         {
@@ -556,18 +556,18 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a hotel catering team asking about menus for a large corporate event.",
             "options": [
-                "DEAR CATERING AND EVENTS MANAGER,",
+                "I AM ORGANISING A CORPORATE DINNER FOR 80 GUESTS ON 14 NOVEMBER AND WOULD LIKE TO DISCUSS YOUR SET MENU OPTIONS, PRICING, AND ABILITY TO ACCOMMODATE VARIOUS DIETARY REQUIREMENTS.",
                 "SUBJECT: CATERING ENQUIRY - CORPORATE DINNER FOR 80 GUESTS",
-                "YOURS SINCERELY,\nMONICA GRANT",
-                "I AM ORGANISING A CORPORATE DINNER FOR 80 GUESTS ON 14 NOVEMBER AND WOULD LIKE TO DISCUSS YOUR SET MENU OPTIONS, PRICING, AND ABILITY TO ACCOMMODATE VARIOUS DIETARY REQUIREMENTS."
+                "DEAR CATERING AND EVENTS MANAGER,",
+                "BEST REGARDS,\nMONICA GRANT"
             ],
             "correctOrder": [
                 1,
+                2,
                 0,
-                3,
-                2
+                3
             ],
-            "hint": "Guest number, event type, and date are in the subject; the right manager is addressed; three specific requirements (menus, pricing, dietary) are in the body; 'YOURS SINCERELY' closes.",
+            "hint": "Guest number, event type, and date are in the subject; the right manager is addressed by role, not name; three specific requirements (menus, pricing, dietary) are in the body; 'BEST REGARDS' closes.",
             "explanation": "Listing all three requirements - menus, pricing, and dietary options - in one email means the catering manager can prepare a complete proposal rather than a partial one. Including the exact guest number (80) is essential for catering planning."
         },
         {
@@ -577,16 +577,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email introducing yourself to a new corporate client.",
             "options": [
-                "DEAR MS RAMIREZ,",
                 "YOURS SINCERELY,\nDARREN WALSH",
-                "SUBJECT: INTRODUCTION - YOUR NEW ACCOUNT MANAGER AT NEXUS CONSULTING",
-                "I AM DELIGHTED TO INTRODUCE MYSELF AS YOUR NEW ACCOUNT MANAGER AT NEXUS CONSULTING AND LOOK FORWARD TO BUILDING A STRONG AND PRODUCTIVE WORKING RELATIONSHIP WITH YOU."
+                "DEAR MS RAMIREZ,",
+                "I AM DELIGHTED TO INTRODUCE MYSELF AS YOUR NEW ACCOUNT MANAGER AT NEXUS CONSULTING AND LOOK FORWARD TO BUILDING A STRONG AND PRODUCTIVE WORKING RELATIONSHIP WITH YOU.",
+                "SUBJECT: INTRODUCTION - YOUR NEW ACCOUNT MANAGER AT NEXUS CONSULTING"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                2,
+                0
             ],
             "hint": "Your role and company are clearly stated in the subject; the client is addressed formally by name; the introduction and forward-looking statement form the body; 'YOURS SINCERELY' closes professionally.",
             "explanation": "An introductory email to a new client should be warm but professional. The phrase 'strong and productive working relationship' signals both personal rapport and business value. Always address the client by name when you know it."
@@ -599,15 +599,15 @@
             "prompt": "Write an email following up with a client after an important business meeting.",
             "options": [
                 "THANK YOU FOR MEETING WITH ME TODAY - I HAVE SUMMARISED THE KEY ACTION POINTS BELOW AND LOOK FORWARD TO PROGRESSING THE PROJECT TOGETHER IN THE COMING WEEKS.",
-                "BEST REGARDS,\nHELENA CROSS",
                 "DEAR NICOLAS,",
+                "BEST REGARDS,\nHELENA CROSS",
                 "SUBJECT: FOLLOW-UP FROM OUR MEETING ON 5 JUNE - KEY ACTION POINTS"
             ],
             "correctOrder": [
                 3,
-                2,
+                1,
                 0,
-                1
+                2
             ],
             "hint": "The meeting date and purpose are in the subject; the client is addressed by first name (established relationship); gratitude and action points are in the body; 'BEST REGARDS' closes warmly.",
             "explanation": "'Best regards' is the standard professional closing in ongoing business relationships. Referencing the meeting date in the subject helps both parties locate the email easily in their inboxes later."
@@ -620,15 +620,15 @@
             "prompt": "Write an email sending a project progress update to an important client.",
             "options": [
                 "DEAR MR YAMAMOTO,",
-                "SUBJECT: PROJECT HORIZON - PROGRESS UPDATE: WEEK 6",
                 "WITH KIND REGARDS,\nSAMANTHA ROSS",
-                "I AM WRITING TO SHARE OUR WEEK SIX PROGRESS REPORT FOR PROJECT HORIZON - WE ARE ON SCHEDULE AND WILL SHARE THE NEXT MILESTONE DELIVERABLE BY FRIDAY."
+                "I AM WRITING TO SHARE OUR WEEK SIX PROGRESS REPORT FOR PROJECT HORIZON - WE ARE ON SCHEDULE AND WILL SHARE THE NEXT MILESTONE DELIVERABLE BY FRIDAY.",
+                "SUBJECT: PROJECT HORIZON - PROGRESS UPDATE: WEEK 6"
             ],
             "correctOrder": [
-                1,
-                0,
                 3,
-                2
+                0,
+                2,
+                1
             ],
             "hint": "Project name and update timing are in the subject; the client is addressed formally by name; current status and next milestone deadline are in the body; 'WITH KIND REGARDS' closes professionally.",
             "explanation": "Including both the status ('on schedule') and the next milestone date ('by Friday') is the most reassuring combination for a client. It tells them what has been done and what to expect next, which manages expectations proactively."

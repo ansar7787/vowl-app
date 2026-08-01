@@ -8,411 +8,411 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a class action claims administrator notifying them of a potential class member.",
+            "prompt": "Write an email proposing an internal move to a completely different department within your company.",
             "options": [
-                "I WISH TO REGISTER AS A POTENTIAL CLASS MEMBER IN THE NEXUS MORTGAGE MIS-SELLING CLASS ACTION - MY MORTGAGE WAS SOLD BY NEXUS IN 2017 AND I BELIEVE THE TERMS WERE MISREPRESENTED TO ME.",
-                "DEAR CLAIMS ADMINISTRATOR,",
-                "YOURS SINCERELY,\nANNE FIELD",
-                "SUBJECT: CLASS MEMBER NOTIFICATION - NEXUS MORTGAGE MIS-SELLING CLASS ACTION"
+                "SUBJECT: EXPLORING A MOVE INTO THE PRODUCT TEAM",
+                "DEAR REBECCA,",
+                "HAVING SPENT THE LAST THREE YEARS IN CUSTOMER SUPPORT, I HAVE DEVELOPED A GENUINE INTEREST IN PRODUCT DEVELOPMENT AND HAVE BEEN INFORMALLY SHADOWING THE PRODUCT TEAM ON FRIDAYS, SO I WOULD LIKE TO ASK WHETHER WE COULD DISCUSS A FORMAL TRANSFER ONCE A SUITABLE OPENING ARISES.",
+                "BEST REGARDS,\nMARGARET OKONJO"
             ],
             "correctOrder": [
-                3,
-                1,
                 0,
-                2
+                1,
+                2,
+                3
             ],
-            "hint": "Class action name and notification purpose are in the subject. Purchase year, alleged misrepresentation, and class membership basis are in the body. The claimant registers directly with the administrator.",
-            "explanation": "Class actions are managed centrally by an administrator. Early registration ensures potential class members are included in any settlement calculation. The specific date ('2017') and misrepresentation allegation establish the factual basis for inclusion."
+            "hint": "The specific move is named in the subject; the manager is addressed by first name; your background, the concrete evidence of initiative, and the specific request are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Mentioning that you have already been 'informally shadowing the product team' shows genuine, demonstrated interest rather than a passing idea. Asking to discuss a transfer 'once a suitable opening arises' is realistic and considerate of the company's current staffing needs."
         },
         {
             "id": "WRT_WRITINGEMAIL_L131_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to defendant solicitors proposing terms for a class action settlement fund.",
+            "prompt": "Write an email proposing a job-share arrangement to your manager for your current role.",
             "options": [
-                "YOURS SINCERELY,\nCLASS ACTION LEAD SOLICITOR",
-                "THE CLAIMANT CLASS PROPOSES A SETTLEMENT FUND OF £14M, TO BE DISTRIBUTED PRO RATA ACROSS ALL 4,200 REGISTERED CLAIMANTS, WITH LEGAL COSTS CAPPED AT 25% OF THE TOTAL FUND.",
-                "SUBJECT: CLASS ACTION SETTLEMENT PROPOSAL - £14M FUND FOR 4,200 CLAIMANTS",
-                "DEAR LEAD COUNSEL,"
+                "DEAR DANIEL,",
+                "SUBJECT: PROPOSAL - JOB-SHARE ARRANGEMENT FOR MY ROLE",
+                "BEST REGARDS,\nCHIDIEBERE OKONKWO",
+                "HAVING SPOKEN INFORMALLY WITH A COLLEAGUE WHO IS ALSO INTERESTED IN REDUCED HOURS, I WOULD LIKE TO PROPOSE THAT WE SPLIT MY CURRENT ROLE INTO A JOB-SHARE, EACH WORKING TWO AND A HALF DAYS WITH A HALF-DAY HANDOVER OVERLAP TO ENSURE NOTHING IS MISSED BETWEEN US."
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
-                0
+                0,
+                3,
+                2
             ],
-            "hint": "Settlement amount and claimant number are in the subject. Fund size, distribution basis, claimant number, and costs cap are in the body - four critical class action settlement parameters.",
-            "explanation": "Pro rata distribution (equal shares adjusted for individual loss) is the fairest class action settlement method. The 25% legal costs cap is important - without it, legal fees can consume an excessive share of the settlement fund."
+            "hint": "The specific arrangement is named in the subject; the manager is addressed by first name; the background and a detailed, workable structure are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Proposing a specific structure, including a handover overlap, shows you have thought through the practical challenges of a job-share, not just the appeal of reduced hours. Mentioning that a colleague is already on board makes the proposal immediately actionable rather than hypothetical."
         },
         {
             "id": "WRT_WRITINGEMAIL_L131_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to all class members announcing approval of a class action settlement.",
+            "prompt": "Write an email formally requesting a temporary secondment to another team or project.",
             "options": [
-                "THE COURT HAS APPROVED THE £14M CLASS ACTION SETTLEMENT - YOUR PRO RATA PAYMENT WILL BE CALCULATED AND DISTRIBUTED BY THE ADMINISTRATOR WITHIN SIXTY DAYS OF THIS NOTICE.",
-                "YOURS SINCERELY,\nCLASS ACTION ADMINISTRATOR",
-                "DEAR REGISTERED CLASS MEMBER,",
-                "SUBJECT: CLASS ACTION SETTLEMENT APPROVED - YOUR PAYMENT WILL BE PROCESSED"
+                "I UNDERSTAND THE ANALYTICS TEAM IS LOOKING FOR TEMPORARY SUPPORT ON THE CUSTOMER INSIGHTS PROJECT, AND GIVEN MY BACKGROUND IN DATA, I WOULD LIKE TO FORMALLY REQUEST A THREE-MONTH SECONDMENT, WITH MY CURRENT RESPONSIBILITIES COVERED BY SOMEONE WITHIN OUR TEAM DURING THAT TIME.",
+                "DEAR PRIYA,",
+                "BEST REGARDS,\nFOLASADE BANJOKO",
+                "SUBJECT: REQUEST FOR A THREE-MONTH SECONDMENT TO THE ANALYTICS TEAM"
             ],
             "correctOrder": [
                 3,
-                2,
+                1,
                 0,
-                1
+                2
             ],
-            "hint": "Settlement approval and payment promise are in the subject. Court approval, distribution mechanism, and sixty-day timeline are in the body - all the information class members need to act.",
-            "explanation": "The sixty-day distribution timeline sets realistic expectations for class members. Court approval ('the court has approved') is the critical trigger - it confirms the settlement is legally binding and payment will proceed."
+            "hint": "The specific duration and destination are in the subject; the manager is addressed by first name; the relevant background and a plan for covering your absence are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Specifying an exact duration ('three-month secondment') makes the request feel like a defined, low-risk trial rather than an open-ended departure. Proactively addressing how your current role would be covered removes the manager's most obvious objection before they even raise it."
         },
         {
             "id": "WRT_WRITINGEMAIL_L132_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a foreign counterparty specifying the governing law for a dispute resolution clause.",
+            "prompt": "Write an email escalating a warranty dispute directly to a manufacturer after the retailer failed to help.",
             "options": [
-                "WE PROPOSE THAT THE AGREEMENT BE GOVERNED BY ENGLISH LAW AND THAT ANY DISPUTES BE RESOLVED BY ARBITRATION IN LONDON UNDER THE ICC RULES - PLEASE CONFIRM WHETHER THIS IS ACCEPTABLE.",
-                "DEAR MS KOZLOV,",
-                "YOURS SINCERELY,\nGEORGIA HUNT, CLO",
-                "SUBJECT: GOVERNING LAW PROPOSAL - ENGLISH LAW AND LONDON ARBITRATION"
+                "DEAR CUSTOMER CARE TEAM,",
+                "HAVING BEEN TOLD BY THE RETAILER THAT THIS IS A MANUFACTURING FAULT OUTSIDE THEIR CONTROL, I AM CONTACTING YOU DIRECTLY REGARDING MY WASHING MACHINE, WHICH STOPPED WORKING AFTER JUST FOUR MONTHS, WELL WITHIN THE TWO-YEAR WARRANTY PERIOD STATED ON YOUR WEBSITE.",
+                "YOURS FAITHFULLY,\nOLUWATOSIN ADEBAYO",
+                "SUBJECT: WARRANTY CLAIM - RETAILER UNABLE TO RESOLVE, ESCALATING TO YOU DIRECTLY"
             ],
             "correctOrder": [
                 3,
-                1,
                 0,
+                1,
                 2
             ],
-            "hint": "Governing law and arbitration forum are in the subject. English law, London seat, and ICC rules are three specific choices in the body - each must be agreed. The CLO proposes to the counterparty's representative.",
-            "explanation": "Three elements define international arbitration: the governing law (English law), the seat of arbitration (London), and the procedural rules (ICC). All three must be negotiated and agreed - a vague 'arbitration' clause without these is unenforceable."
+            "hint": "The escalation and reason are clear in the subject; the manufacturer is addressed by role, not name; the retailer's position, the fault, and the warranty terms are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Explaining that the retailer redirected you to the manufacturer justifies going directly to head office rather than appearing to skip a step. Citing the exact warranty period from their own website removes any ambiguity about whether the claim is valid."
         },
         {
             "id": "WRT_WRITINGEMAIL_L132_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to the ICC arbitration secretariat registering a formal arbitration claim.",
+            "prompt": "Write an email formally requesting compensation from a contractor after a home renovation was completed to a poor standard.",
             "options": [
-                "YOURS SINCERELY,\nGEORGIA HUNT, CLO",
-                "NEXUS CONSULTING HEREBY FILES A REQUEST FOR ARBITRATION AGAINST KOZLOV GROUP FOR BREACH OF CONTRACT UNDER SERVICE AGREEMENT SA-2022-881, CLAIMING DAMAGES OF £2.4M.",
-                "SUBJECT: ARBITRATION REQUEST - NEXUS v KOZLOV GROUP - ICC ARBITRATION",
-                "DEAR SECRETARIAT,"
+                "SUBJECT: FORMAL REQUEST FOR REMEDIAL WORK - KITCHEN RENOVATION",
+                "YOURS SINCERELY,\nADAEZE OKORO",
+                "HAVING NOW HAD TWO INDEPENDENT TRADESPEOPLE LOOK AT THE TILING, BOTH HAVE CONFIRMED THE WORK DOES NOT MEET A REASONABLE STANDARD, SO I WOULD LIKE TO FORMALLY REQUEST THAT YOU EITHER RETURN TO COMPLETE THE REMEDIAL WORK AT NO ADDITIONAL COST OR REFUND THE RELEVANT PORTION OF THE INVOICE.",
+                "DEAR MR CONNOLLY,"
             ],
             "correctOrder": [
-                2,
+                0,
                 3,
-                1,
-                0
+                2,
+                1
             ],
-            "hint": "Parties and arbitration type are in the subject. 'Hereby files' is the filing formula, claim basis, contract reference, and quantum are in the body - all required for an ICC Request for Arbitration.",
-            "explanation": "'Hereby files a Request for Arbitration' is the correct formal formula for initiating ICC proceedings. The claim quantum ('£2.4M') and contract reference must appear in the initial filing to define the scope of the arbitration."
+            "hint": "The formal request is central to the subject; the contractor is addressed by name; independent evidence and two acceptable remedies are in the body; the closing matches this named greeting.",
+            "explanation": "Citing two independent professional opinions makes the complaint about verified quality, not personal dissatisfaction. Offering two acceptable outcomes - remedial work or a partial refund - gives the contractor a clear, fair way to resolve the matter rather than a single ultimatum."
         },
         {
             "id": "WRT_WRITINGEMAIL_L132_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to senior management summarising a cross-border arbitration award.",
+            "prompt": "Write an email negotiating a fair settlement with a contractor after a dispute over the standard of completed work.",
             "options": [
-                "THE ICC ARBITRAL TRIBUNAL HAS ISSUED ITS FINAL AWARD IN NEXUS'S FAVOUR - KOZLOV GROUP IS ORDERED TO PAY £2.1M IN DAMAGES PLUS £340,000 IN LEGAL COSTS WITHIN THIRTY DAYS.",
-                "YOURS SINCERELY,\nGEORGIA HUNT, CLO",
-                "DEAR BOARD,",
-                "SUBJECT: ARBITRATION AWARD - NEXUS WINS £2.1M DAMAGES AGAINST KOZLOV GROUP"
+                "DEAR MS FERREIRA,",
+                "SUBJECT: PROPOSED WAY TO SETTLE OUR DISAGREEMENT",
+                "RATHER THAN CONTINUE GOING BACK AND FORTH, I WOULD LIKE TO PROPOSE A PRACTICAL SOLUTION: I WILL PAY THE OUTSTANDING £400 BALANCE IN FULL IF YOU AGREE TO SEND SOMEONE TO REPAIR THE TWO CRACKED TILES WE DISCUSSED, WHICH I BELIEVE IS A FAIR RESOLUTION FOR BOTH OF US.",
+                "BEST REGARDS,\nDESMOND ATKINSON"
             ],
             "correctOrder": [
-                3,
-                2,
+                1,
                 0,
-                1
+                2,
+                3
             ],
-            "hint": "Award outcome and parties are in the subject. Award in favour of Nexus, damages quantum, legal costs, and enforcement deadline are in the body - a complete award summary for the board.",
-            "explanation": "The CLO presents the award to the board with three key figures: damages (£2.1M), legal costs recovered (£340K), and enforcement deadline (thirty days). All three determine the net financial outcome for the company."
+            "hint": "A practical, forward-looking tone is in the subject; the contractor is addressed by name; a specific proposed exchange - payment for repair - is in the body; 'BEST REGARDS' closes on fair terms.",
+            "explanation": "Proposing an exact exchange - full payment in return for a specific repair - gives both sides something concrete to agree to, ending a stalemate. Framing the outcome as 'fair for both of us' signals genuine compromise rather than a one-sided demand."
         },
         {
             "id": "WRT_WRITINGEMAIL_L133_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a company's board presenting a legal opinion on director disqualification risk.",
+            "prompt": "Write a sensitive email to a sibling proposing that the family begin discussing power of attorney arrangements for an ageing parent.",
             "options": [
-                "OUR EXTERNAL COUNSEL HAS CONCLUDED THAT THE BOARD'S CONDUCT IN RELATION TO THE 2022 PAYMENT DEFERRALS PRESENTS A MATERIAL RISK OF DIRECTOR DISQUALIFICATION PROCEEDINGS UNDER THE COMPANY DIRECTORS DISQUALIFICATION ACT 1986.",
-                "DEAR BOARD OF DIRECTORS,",
-                "YOURS SINCERELY,\nGEORGIA HUNT, CLO",
-                "SUBJECT: LEGAL OPINION - DIRECTOR DISQUALIFICATION RISK ASSESSMENT"
+                "LOVE,\nCLAIRE",
+                "I KNOW THIS ISN'T AN EASY TOPIC, BUT GIVEN MUM'S RECENT HEALTH SCARE, I THINK IT WOULD BE WISE FOR US TO START A GENTLE CONVERSATION WITH HER ABOUT SETTING UP POWER OF ATTORNEY WHILE SHE IS STILL FULLY ABLE TO MAKE THAT DECISION HERSELF, RATHER THAN WAITING UNTIL IT FEELS URGENT.",
+                "SUBJECT: A SENSITIVE TOPIC WE SHOULD PROBABLY DISCUSS",
+                "DEAR JAMES,"
             ],
             "correctOrder": [
+                2,
                 3,
                 1,
-                0,
-                2
+                0
             ],
-            "hint": "Risk assessment and legal basis are in the subject. External counsel conclusion, specific conduct cited, risk level, and statutory reference are in the body - a formal legal warning to the board.",
-            "explanation": "The statutory reference ('CDDA 1986') establishes the specific legal risk framework. Citing the specific conduct ('2022 payment deferrals') allows board members to assess their individual exposure. 'Material risk' is a specific legal risk threshold requiring action."
+            "hint": "A gentle, careful framing is used in the subject; a sibling is addressed by first name; the sensitive context and a reasoned, timely suggestion are in the body; 'LOVE' closes as a family member.",
+            "explanation": "Acknowledging directly that 'this isn't an easy topic' shows emotional awareness before raising something difficult. Emphasising that the conversation should happen 'while she is still fully able to make that decision herself' respects the parent's autonomy rather than making decisions about her."
         },
         {
             "id": "WRT_WRITINGEMAIL_L133_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to the Insolvency Service formally contesting director disqualification proceedings.",
+            "prompt": "Write a formal email to a school requesting a formal assessment of your child's additional learning needs.",
             "options": [
-                "YOURS SINCERELY,\nGEORGIA HUNT, CLO",
-                "WE FORMALLY CONTEST THE PROPOSED DISQUALIFICATION OF DR HELEN MARSH ON THE GROUNDS THAT HER CONDUCT WAS AT ALL TIMES CONSISTENT WITH THE DUTIES OF A DIRECTOR UNDER THE COMPANIES ACT 2006.",
-                "SUBJECT: FORMAL RESPONSE TO DISQUALIFICATION PROCEEDINGS - DIRECTOR HELEN MARSH",
-                "DEAR CASE OFFICER,"
+                "DEAR MRS ADEYEMI,",
+                "YOURS SINCERELY,\nGODWIN AND KEMI NNAJI",
+                "SUBJECT: REQUEST FOR A FORMAL LEARNING NEEDS ASSESSMENT",
+                "HAVING NOTICED THAT OUR SON CONTINUES TO STRUGGLE WITH READING DESPITE EXTRA SUPPORT THIS TERM, WE WOULD LIKE TO FORMALLY REQUEST THAT THE SCHOOL ARRANGE A PROPER ASSESSMENT TO CHECK WHETHER AN UNDERLYING LEARNING DIFFERENCE MIGHT BE CONTRIBUTING TO THE DIFFICULTY."
             ],
             "correctOrder": [
                 2,
+                0,
                 3,
-                1,
-                0
+                1
             ],
-            "hint": "Director name and formal response are in the subject. 'Formally contest', director identity, and legal basis (Companies Act 2006 duties) are in the body - the three elements of a formal disqualification defence.",
-            "explanation": "Citing Companies Act 2006 director duties establishes the legal standard against which conduct is judged. A conduct-based defence - 'consistent with director duties at all times' - is the most direct way to contest a disqualification allegation."
+            "hint": "The formal request is central to the subject; the teacher is addressed by name; the pattern already observed and the specific, reasoned request are in the body; the closing matches this named greeting, signed by both parents.",
+            "explanation": "Mentioning that the struggle persists 'despite extra support this term' shows the usual measures have already been tried, justifying a more formal step. Framing the request around checking for 'an underlying learning difference' focuses on the child's wellbeing rather than blaming the school."
         },
         {
             "id": "WRT_WRITINGEMAIL_L133_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to the board presenting a proposed undertaking to the Insolvency Service as an alternative to disqualification.",
+            "prompt": "Write a tactful email to siblings proposing a fair approach to a sensitive family inheritance conversation.",
             "options": [
-                "TO AVOID CONTESTED DISQUALIFICATION PROCEEDINGS, OUR COUNSEL PROPOSES OFFERING AN UNDERTAKING RESTRICTING DR MARSH'S DIRECTORSHIPS FOR TWO YEARS IN EXCHANGE FOR CESSATION OF INSOLVENCY SERVICE PROCEEDINGS.",
-                "YOURS SINCERELY,\nGEORGIA HUNT, CLO",
-                "DEAR BOARD,",
-                "SUBJECT: DIRECTOR DISQUALIFICATION - UNDERTAKING PROPOSED TO AVOID PROCEEDINGS"
+                "SUBJECT: A GENTLE SUGGESTION ABOUT DAD'S WILL",
+                "I DON'T WANT THIS TO FEEL AWKWARD BETWEEN US, BUT I THINK IT MIGHT BE HELPFUL IF THE THREE OF US SAT DOWN TOGETHER BEFORE MEETING THE SOLICITOR, JUST SO WE ARE ALL ALIGNED AND DAD ISN'T PUT IN THE MIDDLE OF ANY DISAGREEMENTS BETWEEN US.",
+                "DEAR SARAH AND TOM,",
+                "LOVE,\nMICHAEL"
             ],
             "correctOrder": [
-                3,
-                2,
                 0,
-                1
+                2,
+                1,
+                3
             ],
-            "hint": "Undertaking and avoidance purpose are in the subject. The undertaking terms - two-year restriction and cessation of proceedings - are proposed to the board for approval before being offered.",
-            "explanation": "An undertaking to the Insolvency Service is a negotiated alternative to a contested disqualification - the director accepts a restriction but avoids a court finding. Two years is toward the shorter end of the 2-15 year disqualification spectrum."
+            "hint": "A careful, reassuring tone is signalled in the subject; siblings are addressed together by name; genuine care about family harmony and a practical, protective suggestion are in the body; 'LOVE' closes warmly as family.",
+            "explanation": "Naming the risk directly - not wanting it to feel 'awkward' - shows self-awareness about how sensitive the topic is. Framing the meeting as protecting the parent from being 'put in the middle' reframes the conversation around care for the parent, not the siblings' own interests."
         },
         {
             "id": "WRT_WRITINGEMAIL_L134_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a counterparty formally invoking the material adverse effect clause in a contract.",
+            "prompt": "Write an email submitting a research ethics application to a university committee, explained in plain terms.",
             "options": [
-                "NEXUS CONSULTING FORMALLY INVOKES THE MATERIAL ADVERSE EFFECT CLAUSE UNDER AGREEMENT PA-2022-0881, CITING THE TARGET COMPANY'S 40% REVENUE DECLINE AS CONSTITUTING A QUALIFYING MAE EVENT.",
-                "DEAR MR PETROV,",
-                "YOURS SINCERELY,\nDR HELEN MARSH, CEO",
-                "SUBJECT: MATERIAL ADVERSE EFFECT NOTICE - AGREEMENT REF: PA-2022-0881"
+                "DEAR ETHICS COMMITTEE,",
+                "YOURS FAITHFULLY,\nFIONA MACLEOD",
+                "SUBJECT: ETHICS APPLICATION SUBMISSION - INTERVIEW-BASED STUDY",
+                "I AM SUBMITTING MY APPLICATION FOR A STUDY INVOLVING INTERVIEWS WITH FIFTEEN PARTICIPANTS ABOUT THEIR EXPERIENCES OF REMOTE WORKING, AND I HAVE INCLUDED A CONSENT FORM, A DEBRIEF SHEET, AND A CLEAR EXPLANATION OF HOW PARTICIPANT DATA WILL BE ANONYMISED THROUGHOUT."
             ],
             "correctOrder": [
-                3,
-                1,
+                2,
                 0,
-                2
+                3,
+                1
             ],
-            "hint": "MAE clause and agreement reference are in the subject. 'Formally invokes', agreement reference, specific qualifying event, and quantification are in the body - a formal legal notice.",
-            "explanation": "The 40% revenue decline must be quantified precisely - MAE clauses typically require a material threshold. Citing 'formally invokes' and 'qualifying MAE event' uses the language of the contract clause itself, which is essential for enforceability."
+            "hint": "The study type is named in the subject; the committee is addressed by role, not name; the study's scope and the three key documents included are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Listing the specific documents included - consent form, debrief sheet, anonymisation plan - shows the committee the application is complete, reducing the chance of it being sent back for missing information. Stating the exact number of participants and topic gives reviewers the scope at a glance."
         },
         {
             "id": "WRT_WRITINGEMAIL_L134_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a counterparty formally terminating a contract following an MAE event.",
+            "prompt": "Write an email making a well-reasoned case to your employer for a three-month career break.",
             "options": [
-                "YOURS SINCERELY,\nDR HELEN MARSH, CEO",
-                "PURSUANT TO OUR MAE NOTICE OF 14 NOVEMBER, AND THE FAILURE TO CURE WITHIN THE STIPULATED PERIOD, NEXUS CONSULTING HEREBY TERMINATES AGREEMENT PA-2022-0881 WITH IMMEDIATE EFFECT.",
-                "SUBJECT: CONTRACT TERMINATION NOTICE - MAE-TRIGGERED TERMINATION - REF: PA-2022-0881",
-                "DEAR MR PETROV,"
+                "DEAR ANNIKA,",
+                "HAVING WORKED CONTINUOUSLY FOR SEVEN YEARS WITHOUT AN EXTENDED BREAK, I WOULD LIKE TO REQUEST THREE MONTHS OF UNPAID LEAVE NEXT SPRING, AND I HAVE ALREADY IDENTIFIED TWO COLLEAGUES WHO COULD COVER MY KEY RESPONSIBILITIES BETWEEN THEM DURING MY ABSENCE.",
+                "SUBJECT: REQUEST FOR A THREE-MONTH CAREER BREAK",
+                "BEST REGARDS,\nOLUWADAMILOLA ADESIDA"
             ],
             "correctOrder": [
                 2,
-                3,
+                0,
                 1,
-                0
+                3
             ],
-            "hint": "Termination and MAE basis are in the subject. Prior notice reference, failed cure period, 'hereby terminates', and immediate effect are in the body - the legally precise sequence for MAE-triggered termination.",
-            "explanation": "The sequence is legally critical: prior MAE notice → failed cure period → formal termination. This sequence proves the party followed the contractual process correctly, protecting against wrongful termination claims."
+            "hint": "The specific request is in the subject; the manager is addressed by first name; your tenure, the reasoning, and a concrete coverage plan are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Citing your tenure ('seven years without an extended break') gives the request context and shows this isn't a sudden or frequent ask. Having already identified cover for your responsibilities removes the main practical concern before the manager even has to think about it."
         },
         {
             "id": "WRT_WRITINGEMAIL_L134_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to legal counsel requesting advice on damages recoverable following MAE termination.",
+            "prompt": "Write an email formally responding to being denied a promotion, requesting detailed feedback for the future.",
             "options": [
-                "FOLLOWING OUR TERMINATION OF AGREEMENT PA-2022-0881 ON MAE GROUNDS, PLEASE ADVISE ON THE RECOVERABLE DAMAGES WE MAY CLAIM, INCLUDING WASTED COSTS, EXPECTATION LOSSES, AND RELIANCE LOSSES.",
-                "YOURS SINCERELY,\nDR HELEN MARSH, CEO",
-                "DEAR DISPUTES COUNSEL,",
-                "SUBJECT: DAMAGES ASSESSMENT REQUEST - POST-MAE TERMINATION - AGREEMENT PA-2022-0881"
+                "SUBJECT: THANK YOU FOR LETTING ME KNOW - REQUESTING FEEDBACK",
+                "THANK YOU FOR TAKING THE TIME TO EXPLAIN THE DECISION - WHILE I AM NATURALLY DISAPPOINTED, I WOULD FIND IT VERY HELPFUL TO UNDERSTAND SPECIFICALLY WHAT THE SUCCESSFUL CANDIDATE DEMONSTRATED THAT I DID NOT, SO THAT I CAN FOCUS MY DEVELOPMENT IN THE RIGHT AREAS BEFORE THE NEXT OPPORTUNITY ARISES.",
+                "BEST REGARDS,\nCHIOMA EZEIGWE",
+                "DEAR MARCUS,"
             ],
             "correctOrder": [
-                3,
-                2,
                 0,
-                1
+                3,
+                1,
+                2
             ],
-            "hint": "Damages type and termination context are in the subject. Three damages categories - wasted costs, expectation losses, and reliance losses - are all specified for legal advice. The CEO instructs disputes counsel.",
-            "explanation": "The three damages categories - wasted costs (due diligence etc.), expectation losses (lost profits from the deal), and reliance losses (costs incurred in anticipation of completion) - represent the three main heads of loss recoverable following a wrongful termination or failed deal."
+            "hint": "A gracious, forward-looking tone is in the subject; the manager is addressed by first name; genuine acceptance and a specific, developmental request for feedback are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Accepting the decision gracefully before asking for feedback keeps the relationship positive and shows maturity. Asking specifically what the successful candidate 'demonstrated that I did not' invites concrete, comparative feedback rather than vague reassurance."
         },
         {
             "id": "WRT_WRITINGEMAIL_L135_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a financial adviser instructing them to establish an offshore holding structure.",
+            "prompt": "Write a cover email accompanying a small nonprofit's grant application to a funding body.",
             "options": [
-                "PLEASE ESTABLISH A SPECIAL PURPOSE VEHICLE IN THE CAYMAN ISLANDS TO HOLD THE GROUP'S INTERNATIONAL INTELLECTUAL PROPERTY ASSETS - THE SPV SHOULD BE INCORPORATED WITHIN THIRTY DAYS.",
-                "DEAR CORPORATE STRUCTURING TEAM,",
-                "YOURS SINCERELY,\nCHIEF FINANCIAL OFFICER, NEXUS GROUP",
-                "SUBJECT: OFFSHORE HOLDING STRUCTURE INSTRUCTION - CAYMAN ISLANDS SPV"
+                "PLEASE FIND ATTACHED OUR APPLICATION FOR £8,000 TO EXPAND OUR AFTER-SCHOOL LITERACY PROGRAMME, WHICH CURRENTLY SUPPORTS FORTY CHILDREN ACROSS THREE LOCAL SCHOOLS, AND WE WOULD BE HAPPY TO ARRANGE A SITE VISIT IF THAT WOULD BE HELPFUL TO YOUR ASSESSMENT.",
+                "YOURS FAITHFULLY,\nTARIQ HUSSAIN",
+                "DEAR GRANTS TEAM,",
+                "SUBJECT: GRANT APPLICATION - AFTER-SCHOOL LITERACY PROGRAMME"
             ],
             "correctOrder": [
                 3,
-                1,
+                2,
                 0,
-                2
+                1
             ],
-            "hint": "Structure type and jurisdiction are in the subject. SPV purpose (IP holding), location (Cayman), asset class, and 30-day timeline are in the body - the four required parameters for an SPV incorporation instruction.",
-            "explanation": "A Cayman Islands SPV for IP holding is a common international tax planning structure. Specifying the asset class ('international IP assets') and timeline ('thirty days') gives the corporate structuring team a complete instruction to execute."
+            "hint": "The exact amount and purpose are in the subject; the grants team is addressed by role, not name; the current impact and an offer of further evidence are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Stating the current reach ('forty children across three local schools') gives the funder concrete evidence the programme already works before asking for expansion funding. Offering a site visit shows confidence and transparency about the programme's real-world impact."
         },
         {
             "id": "WRT_WRITINGEMAIL_L135_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a compliance team asking for an assessment of beneficial ownership disclosure obligations.",
+            "prompt": "Write an email formally thanking a major donor and reporting on the impact of their gift.",
             "options": [
-                "YOURS SINCERELY,\nCHIEF FINANCIAL OFFICER",
-                "FOLLOWING THE ESTABLISHMENT OF THE CAYMAN SPV, PLEASE ASSESS WHETHER ANY CHANGES TO THE UK PERSONS WITH SIGNIFICANT CONTROL REGISTER ARE REQUIRED AND FILE ANY NECESSARY UPDATES WITHIN TEN DAYS.",
-                "SUBJECT: BENEFICIAL OWNERSHIP DISCLOSURE - PSC REGISTER UPDATE REQUIRED",
-                "DEAR COMPLIANCE TEAM,"
+                "WITH SINCERE GRATITUDE,\nFLORENCE ADEBAYO",
+                "DEAR MR HARGREAVES,",
+                "THANKS TO YOUR GENEROUS DONATION EARLIER THIS YEAR, WE WERE ABLE TO PROVIDE WINTER COATS TO OVER 200 CHILDREN IN OUR AREA, AND I WANTED TO SHARE A FEW PHOTOS FROM THE DISTRIBUTION DAY SO YOU CAN SEE THE DIRECT IMPACT OF YOUR SUPPORT.",
+                "SUBJECT: THE DIFFERENCE YOUR GIFT HAS MADE - AN UPDATE"
             ],
             "correctOrder": [
-                2,
                 3,
                 1,
+                2,
                 0
             ],
-            "hint": "PSC register and disclosure obligation are in the subject. SPV context, PSC assessment requirement, and ten-day filing deadline are in the body - a compliance instruction with a legal filing deadline.",
-            "explanation": "UK PSC register obligations apply to any person or entity that indirectly controls a UK company. An offshore SPV may create new indirect control layers that must be disclosed. The ten-day deadline reflects the Companies Act filing requirement."
+            "hint": "The tone of genuine appreciation is in the subject; the donor is addressed formally by name; a specific, measurable outcome and a personal touch (photos) are in the body; the closing conveys heartfelt thanks.",
+            "explanation": "Giving a specific, measurable outcome ('over 200 children') turns a general thank-you into tangible proof of impact, which matters enormously to donors. Offering to share photos makes the update feel personal and real, rather than a routine report."
         },
         {
             "id": "WRT_WRITINGEMAIL_L135_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a tax counsel requesting assessment of OECD Pillar Two implications for an offshore structure.",
+            "prompt": "Write an email proposing a partnership between your small charity and another local community organisation.",
             "options": [
-                "PLEASE ASSESS THE IMPLICATIONS OF THE OECD PILLAR TWO GLOBAL MINIMUM TAX RULES FOR OUR NEWLY ESTABLISHED CAYMAN SPV, SPECIFICALLY WHETHER ANY QUALIFIED DOMESTIC MINIMUM TAX LIABILITY ARISES.",
-                "YOURS SINCERELY,\nCHIEF FINANCIAL OFFICER",
-                "DEAR TAX COUNSEL,",
-                "SUBJECT: PILLAR TWO ASSESSMENT REQUEST - CAYMAN SPV STRUCTURE IMPLICATIONS"
+                "BEST REGARDS,\nCELESTE DUBOIS",
+                "DEAR MS OKAFOR,",
+                "SUBJECT: A POSSIBLE PARTNERSHIP BETWEEN OUR ORGANISATIONS",
+                "HAVING ADMIRED YOUR ORGANISATION'S WORK WITH LOCAL FAMILIES FOR SOME TIME, I THINK THERE COULD BE REAL VALUE IN COMBINING OUR FOOD BANK'S RESOURCES WITH YOUR ESTABLISHED COMMUNITY NETWORK, AND I WOULD LOVE TO EXPLORE WHETHER A JOINT MONTHLY DISTRIBUTION EVENT MIGHT WORK FOR BOTH OF US."
             ],
             "correctOrder": [
-                3,
                 2,
-                0,
-                1
+                1,
+                3,
+                0
             ],
-            "hint": "Pillar Two and structure type are in the subject. Specific OECD framework, Cayman SPV, and QDMT liability question are in the body - sophisticated international tax inquiry requiring specialist advice.",
-            "explanation": "OECD Pillar Two introduces a 15% global minimum tax. A Cayman SPV in a zero-tax jurisdiction may trigger the QDMT mechanism in the country of the parent company. This is a highly technical tax question requiring specialist Pillar Two expertise."
+            "hint": "A collaborative proposal is signalled in the subject; the contact is addressed by name; genuine admiration and a specific, mutually beneficial idea are in the body; 'BEST REGARDS' closes warmly and professionally.",
+            "explanation": "Naming a specific reason for admiration ('work with local families') makes the outreach feel genuine rather than a generic partnership pitch. Proposing one concrete idea - a joint monthly event - gives the other organisation something specific to react to rather than an open-ended suggestion to 'work together'."
         },
         {
             "id": "WRT_WRITINGEMAIL_L136_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a banking regulator requesting confirmation of capital adequacy following a stress test.",
+            "prompt": "Write an email negotiating relocation support with your employer before an international transfer.",
             "options": [
-                "FOLLOWING COMPLETION OF THE INTERNAL STRESS TEST, WE CONFIRM THAT NEXUS BANK MAINTAINS A CET1 RATIO OF 14.2%, COMFORTABLY ABOVE THE 10.5% REGULATORY MINIMUM REQUIREMENT.",
-                "DEAR SUPERVISORY TEAM,",
-                "YOURS SINCERELY,\nCHIEF RISK OFFICER, NEXUS BANK",
-                "SUBJECT: CAPITAL ADEQUACY CONFIRMATION - POST-STRESS TEST REGULATORY SUBMISSION"
+                "DEAR HR TEAM,",
+                "AHEAD OF MY TRANSFER TO THE BERLIN OFFICE IN SEPTEMBER, I WOULD LIKE TO ASK WHAT RELOCATION SUPPORT IS TYPICALLY OFFERED, PARTICULARLY REGARDING TEMPORARY ACCOMMODATION FOR THE FIRST MONTH AND ANY ASSISTANCE WITH THE VISA APPLICATION PROCESS FOR MY PARTNER.",
+                "SUBJECT: RELOCATION SUPPORT - BERLIN TRANSFER",
+                "BEST REGARDS,\nKWABENA MENSAH"
             ],
             "correctOrder": [
-                3,
-                1,
+                2,
                 0,
-                2
+                1,
+                3
             ],
-            "hint": "Capital measure and confirmation type are in the subject. CET1 ratio, specific ratio achieved, and regulatory minimum are in the body - the standard format for a capital adequacy confirmation.",
-            "explanation": "CET1 (Common Equity Tier 1) is the highest quality regulatory capital. A ratio of 14.2% against a 10.5% minimum provides a 3.7 percentage point buffer - communicating this headroom reassures the regulator of capital resilience."
+            "hint": "The transfer and destination are in the subject; HR is addressed by role, not name; the timing and two specific areas of support requested are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Asking about two distinct, practical needs - temporary housing and a partner's visa - covers the areas that most affect a smooth international move. Mentioning the exact timing helps HR check what support is realistic to arrange in time."
         },
         {
             "id": "WRT_WRITINGEMAIL_L136_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a bank's board presenting the results of a regulatory stress test.",
+            "prompt": "Write a respectful email to a new landlord overseas, navigating unfamiliar rental customs by asking clarifying questions.",
             "options": [
-                "YOURS SINCERELY,\nCHIEF RISK OFFICER",
-                "I AM PLEASED TO REPORT THAT NEXUS BANK HAS PASSED ALL THREE STRESS TEST SCENARIOS - SEVERE ECONOMIC DOWNTURN, CYBERATTACK, AND SOVEREIGN DEBT CRISIS - MAINTAINING CAPITAL ABOVE REGULATORY MINIMUMS IN EACH.",
-                "SUBJECT: REGULATORY STRESS TEST RESULTS - NEXUS BANK PASSES ALL SCENARIOS",
-                "DEAR BOARD,"
+                "BEST REGARDS,\nHIROSHI TANAKA",
+                "DEAR MR ALMEIDA,",
+                "AS THIS IS MY FIRST TIME RENTING IN PORTUGAL, I WANT TO MAKE SURE I UNDERSTAND THE PROCESS CORRECTLY BEFORE SIGNING - COULD YOU CONFIRM WHETHER THE DEPOSIT IS TYPICALLY HELD BY A THIRD PARTY, AND WHAT THE USUAL NOTICE PERIOD IS IF I NEED TO LEAVE EARLY?",
+                "SUBJECT: A FEW QUESTIONS BEFORE SIGNING THE LEASE"
             ],
             "correctOrder": [
-                2,
                 3,
                 1,
+                2,
                 0
             ],
-            "hint": "Stress test outcome and bank are in the subject. Three specific scenarios and the headline pass result are in the body - the most important board-level risk reporting format.",
-            "explanation": "Naming all three stress test scenarios - economic downturn, cyberattack, and sovereign debt crisis - gives the board confidence that capital resilience was tested against diverse risk types, not just the most obvious economic scenario."
+            "hint": "A polite acknowledgement of unfamiliarity is in the subject; the landlord is addressed by name; the context and two specific, practical questions are in the body; 'BEST REGARDS' closes respectfully.",
+            "explanation": "Being upfront that this is 'my first time renting' here invites the landlord to explain things clearly rather than assuming familiarity with local customs. Asking two specific, practical questions shows genuine preparation rather than general nervousness about the process."
         },
         {
             "id": "WRT_WRITINGEMAIL_L136_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a banking regulator submitting a capital restoration plan.",
+            "prompt": "Write an email to a former employer requesting documentation needed for an overseas work visa application.",
             "options": [
-                "FOLLOWING OUR STRESS TEST FAILURE IN THE SEVERE RECESSION SCENARIO, WE SUBMIT A CAPITAL RESTORATION PLAN TARGETING A CET1 RATIO OF 11.5% BY 31 DECEMBER THROUGH RETAINED EARNINGS AND ASSET DISPOSALS.",
-                "YOURS SINCERELY,\nCHIEF RISK OFFICER, NEXUS BANK",
-                "DEAR SUPERVISORY TEAM,",
-                "SUBJECT: CAPITAL RESTORATION PLAN SUBMISSION - CET1 RATIO IMPROVEMENT TARGET"
+                "SUBJECT: DOCUMENTATION REQUEST FOR MY VISA APPLICATION",
+                "YOURS SINCERELY,\nROISIN DELANEY",
+                "DEAR MR NAKASHIMA,",
+                "AS PART OF MY VISA APPLICATION FOR MY UPCOMING MOVE TO CANADA, I HAVE BEEN ASKED TO PROVIDE A LETTER CONFIRMING MY JOB TITLE, SALARY, AND EMPLOYMENT DATES DURING MY TIME AT YOUR COMPANY, AND I WOULD BE VERY GRATEFUL IF THIS COULD BE PROVIDED ON OFFICIAL LETTERHEAD."
             ],
             "correctOrder": [
-                3,
-                2,
                 0,
+                2,
+                3,
                 1
             ],
-            "hint": "Restoration plan and capital measure are in the subject. Stress test failure context, target ratio, deadline, and two mechanisms for capital restoration are in the body.",
-            "explanation": "Two capital restoration mechanisms - retained earnings (organic) and asset disposals (balance sheet reduction) - represent the two standard pathways for rebuilding capital ratios. Presenting both shows a credible and diversified recovery strategy."
+            "hint": "The specific documentation need is in the subject; the former employer is addressed by name; the context and the exact details required are in the body; the closing matches this named greeting.",
+            "explanation": "Listing precisely what the visa office requires - job title, salary, dates - saves the former employer from having to guess the correct format. Requesting official letterhead specifically shows awareness that immigration authorities often require this level of formality."
         },
         {
             "id": "WRT_WRITINGEMAIL_L137_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a compliance team instructing them to conduct sanctions screening on a new client.",
+            "prompt": "You run a small business. Write an email diplomatically explaining a price increase to your loyal customers.",
             "options": [
-                "PLEASE CONDUCT COMPREHENSIVE OFAC, EU, AND UK SANCTIONS SCREENING ON VOLKOV TRADING CO BEFORE WE PROCEED WITH ONBOARDING - NO BUSINESS RELATIONSHIP IS TO COMMENCE UNTIL CLEARANCE IS CONFIRMED.",
-                "DEAR COMPLIANCE TEAM,",
-                "YOURS SINCERELY,\nCHIEF COMPLIANCE OFFICER",
-                "SUBJECT: SANCTIONS SCREENING INSTRUCTION - NEW CLIENT: VOLKOV TRADING CO"
+                "SUBJECT: AN HONEST UPDATE ABOUT OUR PRICES FROM NEXT MONTH",
+                "DEAR VALUED CUSTOMERS,",
+                "WITH THANKS FOR YOUR CONTINUED SUPPORT,\nTHE TEAM AT MILL LANE BAKERY",
+                "AFTER HOLDING OUR PRICES FOR THREE YEARS DESPITE RISING INGREDIENT COSTS, WE HAVE HAD TO MAKE A SMALL INCREASE OF 50P ACROSS OUR MENU FROM NEXT MONTH, AND WE WANTED YOU TO HEAR THIS DIRECTLY FROM US RATHER THAN NOTICE IT WITHOUT EXPLANATION."
             ],
             "correctOrder": [
-                3,
-                1,
                 0,
+                1,
+                3,
                 2
             ],
-            "hint": "Three sanctions regimes and client name are in the subject. Three specific screening lists, prohibition on proceeding, and clearance condition are in the body - a complete sanctions compliance instruction.",
-            "explanation": "Screening against three sanctions regimes - OFAC (US), EU, and UK - is required for any business with exposure to international markets. The prohibition on proceeding until clearance is confirmed is the critical compliance control."
+            "hint": "Honesty about the change is signalled in the subject; loyal customers are addressed warmly as a group; the history, the specific small increase, and the reason for writing proactively are in the body; the closing thanks them warmly.",
+            "explanation": "Mentioning that prices were held for 'three years' frames the increase as a last resort, not a routine decision. Explaining that you wanted customers to 'hear this directly' rather than notice it unexplained builds trust even while delivering unwelcome news."
         },
         {
             "id": "WRT_WRITINGEMAIL_L137_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a client notifying them that their onboarding has been delayed due to sanctions checks.",
+            "prompt": "You run a small business. Write an email replying to a customer who complained publicly on social media, aiming to resolve the issue privately.",
             "options": [
-                "YOURS SINCERELY,\nCOMPLIANCE OPERATIONS TEAM",
-                "WE WRITE TO INFORM YOU THAT YOUR CLIENT ONBOARDING HAS BEEN TEMPORARILY PAUSED PENDING COMPLETION OF ADDITIONAL COMPLIANCE VERIFICATION PROCEDURES REQUIRED UNDER OUR REGULATORY OBLIGATIONS.",
-                "SUBJECT: ONBOARDING DELAY NOTIFICATION - ADDITIONAL COMPLIANCE VERIFICATION REQUIRED",
-                "DEAR MR VOLKOV,"
+                "WITH SINCERE APOLOGIES,\nRAJIV MEHTA",
+                "I SAW YOUR POST ABOUT THE DELAYED ORDER AND I AM GENUINELY SORRY THIS HAPPENED - RATHER THAN GOING BACK AND FORTH PUBLICLY, I WOULD LOVE THE CHANCE TO PUT THIS RIGHT DIRECTLY, SO COULD YOU LET ME KNOW YOUR ORDER NUMBER SO I CAN LOOK INTO IT PERSONALLY TODAY?",
+                "SUBJECT: SO SORRY ABOUT YOUR EXPERIENCE - LET'S SORT THIS OUT",
+                "DEAR MS HARRINGTON,"
             ],
             "correctOrder": [
                 2,
@@ -420,218 +420,218 @@
                 1,
                 0
             ],
-            "hint": "Delay purpose and process are in the subject. Neutral language ('additional compliance verification') avoids referencing sanctions directly - legally and commercially sensitive. The regulatory basis is cited without specifics.",
-            "explanation": "Sanctions screening delays are communicated to clients in deliberately neutral language - referencing 'sanctions screening' directly can create legal risk or prematurely damage a client relationship if the screening ultimately clears. 'Additional compliance verification' is the standard industry euphemism."
+            "hint": "A genuine, non-defensive apology is signalled in the subject; the customer is addressed by name; acknowledgement, a reason for moving the conversation private, and a specific next step are in the body; the closing conveys real regret.",
+            "explanation": "Acknowledging the post directly, rather than ignoring it, shows the business is genuinely listening rather than avoiding public criticism. Moving the conversation to a private channel while still responding warmly protects both the customer's experience and the business's reputation."
         },
         {
             "id": "WRT_WRITINGEMAIL_L137_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a regulator notifying them of a prohibited sanctions list match identified during screening.",
+            "prompt": "You run a small business. Write an email announcing that your shop is relocating, with grace and reassurance for customers.",
             "options": [
-                "WE ARE MAKING A MANDATORY NOTIFICATION UNDER THE FINANCIAL SANCTIONS REGULATIONS OF A CONFIRMED MATCH BETWEEN A PROSPECTIVE CLIENT AND THE UK CONSOLIDATED SANCTIONS LIST.",
-                "YOURS SINCERELY,\nCHIEF COMPLIANCE OFFICER, NEXUS FINANCIAL SERVICES",
-                "DEAR OFSI CASE TEAM,",
-                "SUBJECT: MANDATORY SANCTIONS MATCH NOTIFICATION - UK OFSI - REF: OFSI/2024/0881"
+                "AFTER FIVE WONDERFUL YEARS ON HIGH STREET, WE ARE MOVING TO A LARGER SPACE ON CHURCH LANE FROM 1 SEPTEMBER, WHICH WILL FINALLY GIVE US ROOM FOR THE SEATING AREA SO MANY OF YOU HAVE ASKED FOR OVER THE YEARS.",
+                "SEE YOU THERE,\nTHE TEAM AT RIVERSIDE COFFEE",
+                "SUBJECT: EXCITING NEWS - WE'RE MOVING (JUST DOWN THE ROAD!)",
+                "DEAR CUSTOMERS,"
             ],
             "correctOrder": [
-                3,
                 2,
+                3,
                 0,
                 1
             ],
-            "hint": "Mandatory notification and OFSI reference are in the subject. Regulatory basis, notification type, and match confirmation are in the body - a formal OFSI notification using required language.",
-            "explanation": "Notifying OFSI (Office of Financial Sanctions Implementation) of a sanctions match is a mandatory legal obligation under the Policing and Crime Act 2017. Failure to report is itself a criminal offence. The notification triggers a formal OFSI investigation."
+            "hint": "Genuine excitement is signalled in the subject; customers are addressed warmly as a group; the history, the new location, and a benefit for customers are in the body; a warm, inviting sign-off closes it.",
+            "explanation": "Framing the move around a benefit customers have specifically requested ('the seating area so many of you have asked for') turns potentially unsettling news into something to look forward to. Naming the exact new location and date removes any uncertainty about where and when to find the business."
         },
         {
             "id": "WRT_WRITINGEMAIL_L138_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a hospital trust submitting a response to a healthcare procurement tender.",
+            "prompt": "You run a small business. Write an email pitching a collaboration idea to a local content creator.",
             "options": [
-                "PLEASE FIND ENCLOSED OUR TENDER SUBMISSION FOR THE COMMUNITY HEALTH SERVICES CONTRACT - WE HAVE ADDRESSED ALL THIRTY-FIVE EVALUATION CRITERIA AND ATTACH SUPPORTING CLINICAL EVIDENCE.",
-                "DEAR TENDER EVALUATION TEAM,",
-                "YOURS SINCERELY,\nCHIEF EXECUTIVE, COMMUNITY CARE PARTNERS LTD",
-                "SUBJECT: TENDER SUBMISSION - COMMUNITY HEALTH SERVICES CONTRACT - REF: NHS-2024-0441"
+                "I HAVE FOLLOWED YOUR BAKING CONTENT FOR A WHILE AND THINK YOUR STYLE WOULD BE A GREAT FIT FOR OUR NEW SOURDOUGH RANGE, SO I WOULD LOVE TO SEND YOU A FREE HAMPER TO TRY WITH NO OBLIGATION TO POST, JUST TO SEE IF IT SPARKS ANY IDEAS FOR YOUR AUDIENCE.",
+                "SUBJECT: A COLLABORATION IDEA FOR YOUR CHANNEL",
+                "DEAR ISABELLA,",
+                "BEST REGARDS,\nVIKRAM MALHOTRA"
             ],
             "correctOrder": [
-                3,
                 1,
+                2,
                 0,
-                2
+                3
             ],
-            "hint": "Reference and tender purpose are in the subject. Completeness (all 35 criteria), submission confirmation, and clinical evidence attachment are in the body - three critical tender submission elements.",
-            "explanation": "Confirming you have addressed ALL evaluation criteria is essential in NHS procurement - missing a single criterion can result in automatic disqualification. Attaching 'clinical evidence' signals the service is evidence-based, which NHS evaluators specifically require."
+            "hint": "A specific, complimentary opening is in the subject; the content creator is addressed by first name; genuine familiarity with their work and a low-pressure offer are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Referencing specific content ('your baking content') shows genuine familiarity rather than a mass-sent pitch. Explicitly removing pressure ('no obligation to post') makes the offer far more appealing and likely to be accepted than a demand for guaranteed coverage."
         },
         {
             "id": "WRT_WRITINGEMAIL_L138_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a healthcare provider setting out the service level agreement for a new contract.",
+            "prompt": "Write an email proposing a paid partnership feature to a local newspaper or publication.",
             "options": [
-                "YOURS SINCERELY,\nHEAD OF COMMISSIONING, NHS NORTH MIDLANDS",
-                "THE FOLLOWING SERVICE LEVELS APPLY UNDER CONTRACT NHS-2024-0441: PATIENT RESPONSE WITHIN FOUR HOURS, MONTHLY CLINICAL AUDIT REPORTS, AND ZERO TOLERANCE FOR SERIOUS CLINICAL INCIDENTS UNREPORTED TO CQC.",
-                "SUBJECT: SERVICE LEVEL AGREEMENT - COMMUNITY HEALTH SERVICES CONTRACT NHS-2024-0441",
-                "DEAR CLINICAL OPERATIONS DIRECTOR,"
+                "I NOTICED YOUR 'MEET YOUR LOCAL TRADERS' SERIES AND THINK OUR TEN-YEAR-OLD FAMILY BUSINESS WOULD MAKE FOR AN INTERESTING FEATURE, SO I WOULD LIKE TO ASK WHAT A SPONSORED PLACEMENT WOULD COST AND WHAT IT WOULD TYPICALLY INCLUDE.",
+                "BEST REGARDS,\nAGNIESZKA NOWAKOWSKA",
+                "SUBJECT: PARTNERSHIP PROPOSAL - FEATURED LOCAL BUSINESS SERIES",
+                "DEAR ADVERTISING TEAM,"
             ],
             "correctOrder": [
                 2,
                 3,
-                1,
-                0
+                0,
+                1
             ],
-            "hint": "SLA and contract reference are in the subject. Three specific service levels - response time, reporting, and CQC notification - are in the body. The commissioning head issues the SLA.",
-            "explanation": "Three specific SLA metrics - clinical response time (4 hours), reporting frequency (monthly), and a zero-tolerance safety requirement - give the provider precise, measurable performance standards. All three are standard NHS commissioning requirements."
+            "hint": "Reference to an existing series anchors the subject; the advertising team is addressed by role, not name; genuine interest and two specific practical questions are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Referencing an existing series by name shows you have done research rather than sending a generic pitch. Asking both about cost and what's included covers the two things a small business genuinely needs to know before committing to any paid feature."
         },
         {
             "id": "WRT_WRITINGEMAIL_L138_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to an NHS commissioner formally raising a service delivery concern.",
+            "prompt": "Write a plain-English email pitching your small business idea to a potential investor.",
             "options": [
-                "I AM RAISING A FORMAL CONCERN UNDER CLAUSE 18 OF CONTRACT NHS-2024-0441 - AVERAGE PATIENT RESPONSE TIMES HAVE EXCEEDED THE FOUR-HOUR SLA BY AN AVERAGE OF 87 MINUTES OVER THREE CONSECUTIVE MONTHS.",
-                "YOURS SINCERELY,\nHEAD OF COMMISSIONING",
-                "DEAR CONTRACT MANAGER,",
-                "SUBJECT: FORMAL CONTRACT PERFORMANCE CONCERN - RESPONSE TIME BREACH, CONTRACT NHS-2024-0441"
+                "BEST REGARDS,\nLEANDRO SILVA",
+                "SUBJECT: INVESTMENT OPPORTUNITY - GROWING OUR LOCAL DELIVERY SERVICE",
+                "OUR LOCAL GROCERY DELIVERY SERVICE HAS GROWN TO 300 REGULAR CUSTOMERS IN JUST EIGHTEEN MONTHS WITHOUT ANY OUTSIDE FUNDING, AND WE ARE NOW LOOKING FOR £25,000 TO BUY A SECOND VAN AND HIRE ONE MORE DRIVER, SO WE WOULD LOVE THE CHANCE TO SHOW YOU OUR NUMBERS IN PERSON.",
+                "DEAR MR ASHWORTH,"
             ],
             "correctOrder": [
+                1,
                 3,
                 2,
-                0,
-                1
+                0
             ],
-            "hint": "Concern level and contract reference are in the subject. Specific clause, SLA standard, actual performance, and duration of breach are in the body - all required for a formal contract performance notice.",
-            "explanation": "Citing the specific clause ('Clause 18'), the SLA threshold (4 hours), the actual breach (87 minutes over target), and the duration (3 consecutive months) creates an irrefutable factual case that triggers the formal contract review mechanism."
+            "hint": "A specific, evidence-based opening is in the subject; the potential investor is addressed by name; growth so far, the exact ask, and its purpose are in the body; 'BEST REGARDS' closes confidently.",
+            "explanation": "Leading with a specific, verifiable achievement ('300 regular customers in eighteen months without any outside funding') builds credibility before any request for money. Stating exactly what the investment would buy - a van and a driver - shows the funds have a clear, sensible purpose."
         },
         {
             "id": "WRT_WRITINGEMAIL_L139_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a government department bidding to become a private finance initiative partner.",
+            "prompt": "Write a formal thank-you email to a client as a long, successful project comes to an end.",
             "options": [
-                "NEXUS CONSULTING SUBMITS ITS EXPRESSION OF INTEREST TO PARTICIPATE IN THE TRANSPORT INFRASTRUCTURE PUBLIC-PRIVATE PARTNERSHIP - WE BRING £500M IN COMMITTED EQUITY FINANCING AND TWENTY YEARS OF INFRASTRUCTURE EXPERIENCE.",
-                "DEAR PPP PROCUREMENT TEAM,",
-                "YOURS SINCERELY,\nDR HELEN MARSH, CEO",
-                "SUBJECT: PPP PROPOSAL - NEXUS CONSULTING BID FOR TRANSPORT INFRASTRUCTURE PROJECT"
+                "AS WE COMPLETE THE FINAL HANDOVER OF YOUR REBRAND THIS WEEK, I WANTED TO SAY HOW MUCH WE HAVE ENJOYED WORKING WITH YOUR TEAM OVER THE PAST SIX MONTHS, AND I HOPE THE NEW BRAND SERVES THE BUSINESS WELL FOR MANY YEARS TO COME.",
+                "SUBJECT: THANK YOU AS WE WRAP UP THE REBRAND PROJECT",
+                "DEAR MS OYELARAN,",
+                "WITH THANKS AND BEST WISHES,\nYOSHIKO MURAKAMI"
             ],
             "correctOrder": [
-                3,
                 1,
+                2,
                 0,
-                2
+                3
             ],
-            "hint": "PPP type and project are in the subject. Expression of interest, equity commitment, and track record are the three commercial differentiators in the body. The CEO submits the EOI.",
-            "explanation": "PPP bids must demonstrate financial capacity (£500M equity) and operational credibility (20 years experience). These two factors - capital and competence - are the primary selection criteria for infrastructure concessions."
+            "hint": "A warm sense of closure is signalled in the subject; the client is addressed formally by name; the project's completion, genuine appreciation, and a hopeful note about the future are in the body; the closing conveys warmth and goodwill.",
+            "explanation": "Marking the exact moment of completion ('the final handover this week') gives the message a clear sense of occasion rather than a routine sign-off. Ending with a genuine hope for the brand's future shows continued investment in the client's success beyond the contract itself."
         },
         {
             "id": "WRT_WRITINGEMAIL_L139_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a government partner establishing the concession agreement's revenue-sharing terms.",
+            "prompt": "Write a heartfelt but professional email to a team celebrating a colleague's retirement after many years of service.",
             "options": [
-                "YOURS SINCERELY,\nDR HELEN MARSH, CEO",
-                "WE PROPOSE THE FOLLOWING REVENUE SHARING ARRANGEMENT: NEXUS RETAINS 100% OF REVENUE UP TO A £40M THRESHOLD, WITH REVENUE ABOVE THIS SHARED 60:40 IN THE GOVERNMENT'S FAVOUR.",
-                "SUBJECT: CONCESSION AGREEMENT COMMERCIAL TERMS - REVENUE SHARING PROPOSAL",
-                "DEAR PPP NEGOTIATIONS TEAM,"
+                "AS DAVID PREPARES TO RETIRE AFTER AN INCREDIBLE THIRTY YEARS WITH THE COMPANY, I WANTED TO TAKE A MOMENT TO RECOGNISE THE COUNTLESS COLLEAGUES HE HAS MENTORED AND THE STEADY, CALM PRESENCE HE HAS BROUGHT TO EVERY TEAM HE HAS BEEN PART OF.",
+                "DEAR ALL,",
+                "SUBJECT: CELEBRATING DAVID'S 30 YEARS WITH US",
+                "WITH GREAT RESPECT,\nBARNABY REID"
             ],
             "correctOrder": [
                 2,
-                3,
                 1,
-                0
+                0,
+                3
             ],
-            "hint": "Concession and revenue sharing are in the subject. Threshold amount, below-threshold retention, and above-threshold sharing ratio are in the body - the three parameters of a tiered revenue sharing arrangement.",
-            "explanation": "A tiered revenue share - full private retention below the threshold and government majority share above it - is standard in PPP concessions. It incentivises the private partner to maximise revenue while ensuring government captures the upside above a guaranteed base."
+            "hint": "A celebratory milestone is in the subject; the whole team is addressed together; specific, genuine recognition of the person's contribution is in the body; the closing conveys real respect.",
+            "explanation": "Citing the exact milestone ('thirty years') gives the tribute real weight and specificity. Naming concrete qualities - mentoring others, a calm presence - makes the recognition feel personal and earned, rather than a generic retirement message."
         },
         {
             "id": "WRT_WRITINGEMAIL_L139_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a government authority requesting a government guarantee for infrastructure project financing.",
+            "prompt": "Write an email formally closing out a consulting engagement with a summary of what was achieved.",
             "options": [
-                "TO SECURE THE £200M SENIOR DEBT FACILITY REQUIRED FOR THE TRANSPORT INFRASTRUCTURE PROJECT, WE RESPECTFULLY REQUEST A GOVERNMENT GUARANTEE COVERING 80% OF THE PRINCIPAL AMOUNT IN THE EVENT OF PROJECT DEFAULT.",
-                "YOURS SINCERELY,\nDR HELEN MARSH, CEO",
-                "DEAR INFRASTRUCTURE FINANCE TEAM,",
-                "SUBJECT: GOVERNMENT GUARANTEE REQUEST - £200M SENIOR DEBT FACILITY"
+                "DEAR MR HALVORSEN,",
+                "BEST REGARDS,\nCHIOMA EZEUDU",
+                "AS OUR THREE-MONTH ENGAGEMENT DRAWS TO A CLOSE, I WANTED TO SUMMARISE WHAT WE ACHIEVED TOGETHER: A REVISED WORKFLOW THAT HAS ALREADY REDUCED PROCESSING TIME BY 20%, AND A TRAINING PLAN YOUR TEAM CAN CONTINUE TO BUILD ON INDEPENDENTLY GOING FORWARD.",
+                "SUBJECT: CLOSING SUMMARY - OPERATIONS REVIEW ENGAGEMENT"
             ],
             "correctOrder": [
                 3,
-                2,
                 0,
+                2,
                 1
             ],
-            "hint": "Guarantee amount and purpose are in the subject. Debt facility size, guarantee percentage, and trigger event (default) are in the body - the three key parameters of a government guarantee request.",
-            "explanation": "An 80% guarantee covering £160M of a £200M facility reduces the lenders' risk sufficiently to make the debt commercially viable. The trigger - 'project default' - precisely defines when the guarantee would be called, which is what the government's Treasury will scrutinise."
+            "hint": "A clear sense of closure is in the subject; the client is addressed by name; a specific, measurable outcome and what the client can continue independently are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Providing a measurable result ('reduced processing time by 20%') gives the client concrete proof of value from the engagement. Mentioning what the team can 'continue to build on independently' reassures the client that your departure won't undo the progress made."
         },
         {
             "id": "WRT_WRITINGEMAIL_L140_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to an organisation's board reporting a significant cybersecurity breach.",
+            "prompt": "Write an email as a manager mediating between two team members in conflict, proposing a constructive way forward.",
             "options": [
-                "AT 3AM TODAY, NEXUS CONSULTING'S CORE SYSTEMS WERE SUBJECTED TO A RANSOMWARE ATTACK - OUR INCIDENT RESPONSE TEAM HAS ISOLATED THE AFFECTED SERVERS AND ENGAGED MANDIANT AS EXTERNAL CYBERSECURITY EXPERTS.",
-                "DEAR BOARD OF DIRECTORS,",
-                "YOURS SINCERELY,\nCHIEF INFORMATION SECURITY OFFICER",
-                "SUBJECT: CRITICAL CYBERSECURITY INCIDENT - RANSOMWARE ATTACK - BOARD NOTIFICATION"
+                "HAVING HEARD BOTH OF YOUR PERSPECTIVES SEPARATELY, IT SEEMS THE CORE ISSUE IS UNCLEAR OWNERSHIP OF THE CLIENT HANDOVER PROCESS RATHER THAN ANYTHING PERSONAL BETWEEN YOU, SO I WOULD LIKE TO PROPOSE WE MEET TOGETHER THIS WEEK TO AGREE A CLEAR, WRITTEN PROCESS GOING FORWARD.",
+                "SUBJECT: A WAY FORWARD FOR YOU BOTH",
+                "DEAR SOPHIE AND MARCUS,",
+                "BEST REGARDS,\nSTELLAN BERGQVIST"
             ],
             "correctOrder": [
-                3,
                 1,
+                2,
                 0,
-                2
+                3
             ],
-            "hint": "Attack type and urgency are in the subject. Discovery time, attack type, affected systems, immediate actions (isolation), and external expert engagement are in the body - a complete initial incident report.",
-            "explanation": "The CISO reports directly to the board for a critical incident. Three initial response actions - isolate, investigate, engage external experts - are the correct immediate cyber incident response steps. Mandiant is named to give the board confidence in the expertise engaged."
+            "hint": "A resolution-focused tone is in the subject; both colleagues are addressed together by name; a neutral reframing of the issue and a specific proposed next step are in the body; 'BEST REGARDS' closes constructively.",
+            "explanation": "Reframing the conflict as a process issue rather than a personal one ('nothing personal between you') helps both parties feel less defensive going into a shared conversation. Proposing a specific outcome - a written process - gives the meeting a clear, practical purpose rather than simply airing grievances again."
         },
         {
             "id": "WRT_WRITINGEMAIL_L140_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to customers explaining a service outage caused by a cybersecurity incident.",
+            "prompt": "Write an email formally requesting an exception to a standard policy due to genuinely unusual circumstances, with reasoning.",
             "options": [
-                "YOURS SINCERELY,\nNEXUS CONSULTING CUSTOMER COMMUNICATIONS TEAM",
-                "WE ARE EXPERIENCING A TECHNICAL ISSUE AFFECTING OUR SYSTEMS - OUR TEAMS ARE WORKING TO RESTORE FULL SERVICE AS QUICKLY AS POSSIBLE AND WE WILL PROVIDE AN UPDATE WITHIN SIX HOURS.",
-                "SUBJECT: SERVICE DISRUPTION NOTICE - SYSTEMS TEMPORARILY UNAVAILABLE",
-                "DEAR CUSTOMER,"
+                "I UNDERSTAND YOUR STANDARD POLICY ONLY ALLOWS REFUNDS WITHIN THIRTY DAYS, BUT AS I WAS HOSPITALISED FOR MOST OF THAT PERIOD AND UNABLE TO TEST THE EQUIPMENT, I WOULD LIKE TO FORMALLY REQUEST AN EXCEPTION GIVEN THESE GENUINELY UNUSUAL CIRCUMSTANCES.",
+                "YOURS FAITHFULLY,\nIMOGEN ASHCROFT",
+                "SUBJECT: REQUEST FOR AN EXCEPTION TO THE STANDARD REFUND POLICY",
+                "DEAR CUSTOMER SERVICES,"
             ],
             "correctOrder": [
                 2,
                 3,
-                1,
-                0
+                0,
+                1
             ],
-            "hint": "Neutral service disruption language is used in the subject. Non-disclosure of 'ransomware' protects the investigation. Six-hour update commitment manages customer expectations. Technical team reassurance is provided.",
-            "explanation": "Customer-facing cyber incident communications deliberately omit the word 'ransomware' - disclosing attack details can assist attackers, create panic, and trigger regulatory issues before the investigation is complete. 'Technical issue' is the correct interim communication."
+            "hint": "The request for an exception is central to the subject; customer services is addressed by role, not name; acknowledgement of the standard policy and the specific unusual circumstance are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Explicitly acknowledging the standard policy first shows you understand you are asking for something outside the norm, not simply ignoring the rules. Providing a specific, verifiable reason - hospitalisation - gives the company genuine grounds to make a fair exception."
         },
         {
             "id": "WRT_WRITINGEMAIL_L140_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a cybersecurity regulator formally reporting a material cyber incident.",
+            "prompt": "Write an email professionally proposing to end a long-standing but underperforming supplier relationship.",
             "options": [
-                "NEXUS CONSULTING HEREBY MAKES MANDATORY NOTIFICATION OF A MATERIAL CYBER INCIDENT UNDER FCA OPERATIONAL RESILIENCE RULES - THE RANSOMWARE ATTACK COMMENCED AT 3AM ON 15 NOVEMBER AND IS CONTAINED.",
-                "YOURS SINCERELY,\nCHIEF INFORMATION SECURITY OFFICER, NEXUS CONSULTING",
-                "DEAR SUPERVISORY TEAM,",
-                "SUBJECT: MATERIAL CYBER INCIDENT NOTIFICATION - FCA MANDATORY REPORT - 15 NOVEMBER"
+                "SUBJECT: A DIFFICULT BUT NECESSARY CONVERSATION ABOUT OUR ARRANGEMENT",
+                "AFTER FIVE GOOD YEARS WORKING TOGETHER, I WANT TO BE HONEST WITH YOU THAT THE LAST THREE DELIVERIES HAVE FALLEN SHORT OF THE STANDARD WE HAVE RELIED ON, AND HAVING SEEN NO IMPROVEMENT DESPITE RAISING THIS TWICE, WE HAVE REGRETFULLY DECIDED TO MOVE OUR ACCOUNT TO ANOTHER SUPPLIER FROM NEXT MONTH.",
+                "DEAR MR OYELARAN,",
+                "WITH THANKS FOR YOUR YEARS OF SERVICE,\nRAFAEL DOS SANTOS"
             ],
             "correctOrder": [
-                3,
-                2,
                 0,
-                1
+                2,
+                1,
+                3
             ],
-            "hint": "Mandatory notification, regulator, and incident date are in the subject. 'Hereby makes mandatory notification', regulatory reference, attack type, time, and containment confirmation are in the body.",
-            "explanation": "FCA-regulated firms must make mandatory cyber incident notifications promptly. 'Hereby makes mandatory notification under FCA Operational Resilience Rules' is the precise regulatory formula. Confirming containment ('is contained') is the most important operational fact for the regulator."
+            "hint": "Difficulty is acknowledged honestly in the subject; the supplier is addressed by name; genuine appreciation for the history, the specific reasons, and the clear decision are in the body; the closing thanks them for the relationship.",
+            "explanation": "Acknowledging 'five good years' before delivering difficult news shows the relationship was valued, not dismissed lightly. Referencing that the issue was 'raised twice' before this decision demonstrates the supplier had a fair opportunity to improve before the account was moved."
         }
     ]
 }

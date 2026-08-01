@@ -10,16 +10,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a senior manager requesting an emergency meeting.",
             "options": [
-                "I NEED TO DISCUSS AN URGENT MATTER THAT HAS ARISEN THIS MORNING WHICH HAS SIGNIFICANT IMPLICATIONS FOR THE COMPANY'S CONTRACT WITH MERIDIAN GROUP - PLEASE CAN WE MEET TODAY?",
-                "YOURS SINCERELY,\nCAROLINE WEST",
+                "KIND REGARDS,\nCAROLINE WEST",
                 "DEAR DIRECTOR,",
-                "SUBJECT: URGENT - REQUEST FOR EMERGENCY MEETING TODAY"
+                "SUBJECT: URGENT - REQUEST FOR EMERGENCY MEETING TODAY",
+                "I NEED TO DISCUSS AN URGENT MATTER THAT HAS ARISEN THIS MORNING WHICH HAS SIGNIFICANT IMPLICATIONS FOR THE COMPANY'S CONTRACT WITH MERIDIAN GROUP - PLEASE CAN WE MEET TODAY?"
             ],
             "correctOrder": [
-                3,
                 2,
-                0,
-                1
+                1,
+                3,
+                0
             ],
             "hint": "Urgency is flagged in the subject; the director is addressed formally; the stakes and specific contract mentioned justify urgency; today's meeting is requested; formal closing maintains professional tone.",
             "explanation": "Giving just enough information to justify the urgency ('Meridian Group contract implications') without over-explaining by email is correct - some matters are too sensitive to commit to email and should be discussed in person."
@@ -31,16 +31,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email asking a decision-maker to clarify the basis of a business decision.",
             "options": [
-                "YOURS SINCERELY,\nHELEN MARSH, PRODUCT DIRECTOR",
                 "I SEEK CLARIFICATION ON THE DECISION TO DISCONTINUE THE PRODUCT LINE ANNOUNCED IN MONDAY'S MEETING - SPECIFICALLY, I WOULD LIKE TO UNDERSTAND THE FINANCIAL AND STRATEGIC RATIONALE.",
                 "SUBJECT: REQUEST FOR CLARIFICATION - PRODUCT LINE DISCONTINUATION DECISION",
+                "YOURS SINCERELY,\nHELEN MARSH, PRODUCT DIRECTOR",
                 "DEAR MR CHEN,"
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
-                0
+                3,
+                0,
+                2
             ],
             "hint": "The decision and clarification purpose are in the subject; the decision-maker is addressed formally; the meeting reference and two types of rationale are requested in the body.",
             "explanation": "Asking for both 'financial AND strategic rationale' is a professional way to request a fuller explanation - decisions are rarely made for one reason alone. Referencing 'Monday's meeting' provides an unambiguous anchor point."
@@ -52,16 +52,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email formally appealing a management decision about a team restructure.",
             "options": [
-                "DEAR HR DIRECTOR,",
                 "SUBJECT: FORMAL APPEAL AGAINST TEAM RESTRUCTURE DECISION - REF: HR-2024-441",
-                "YOURS SINCERELY,\nMAX TURNER, ENGINEERING MANAGER",
-                "I AM FORMALLY APPEALING THE DECISION TO RESTRUCTURE MY TEAM UNDER REFERENCE HR-2024-441, ON THE GROUNDS THAT THE PROCESS DID NOT COMPLY WITH THE COMPANY'S CONSULTATION POLICY."
+                "BEST REGARDS,\nMAX TURNER, ENGINEERING MANAGER",
+                "I AM FORMALLY APPEALING THE DECISION TO RESTRUCTURE MY TEAM UNDER REFERENCE HR-2024-441, ON THE GROUNDS THAT THE PROCESS DID NOT COMPLY WITH THE COMPANY'S CONSULTATION POLICY.",
+                "DEAR HR DIRECTOR,"
             ],
             "correctOrder": [
-                1,
                 0,
                 3,
-                2
+                2,
+                1
             ],
             "hint": "Formal appeal and reference number are in the subject; the HR director is addressed; appeal basis and specific policy breach are clearly stated in the body; the manager signs with role.",
             "explanation": "Citing a specific policy breach ('did not comply with consultation policy') is far stronger than simply saying you disagree with the decision. A procedural appeal based on non-compliance is more likely to succeed than one based solely on preference."
@@ -73,16 +73,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to an insurance company to initiate a home insurance claim.",
             "options": [
-                "I AM WRITING TO INITIATE A CLAIM UNDER MY HOME INSURANCE POLICY HI-77441 FOR DAMAGE CAUSED BY A BURST PIPE ON 8 JULY, WHICH AFFECTED THE KITCHEN AND DINING ROOM.",
-                "YOURS SINCERELY,\nMARY BLAKE",
+                "KIND REGARDS,\nMARY BLAKE",
                 "DEAR CLAIMS TEAM,",
+                "I AM WRITING TO INITIATE A CLAIM UNDER MY HOME INSURANCE POLICY HI-77441 FOR DAMAGE CAUSED BY A BURST PIPE ON 8 JULY, WHICH AFFECTED THE KITCHEN AND DINING ROOM.",
                 "SUBJECT: HOME INSURANCE CLAIM - BURST PIPE DAMAGE - POLICY REF: HI-77441"
             ],
             "correctOrder": [
                 3,
+                1,
                 2,
-                0,
-                1
+                0
             ],
             "hint": "Claim type, cause, and policy reference are in the subject; claims team is addressed; policy number, incident date, type of damage, and rooms affected are all in the body.",
             "explanation": "A claims email must include all key facts upfront: policy number, incident date, cause, and damage scope. The more specific the initial submission, the faster the claim is assessed and allocated to an adjuster."
@@ -94,15 +94,15 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to an insurer chasing settlement of an approved insurance claim.",
             "options": [
-                "YOURS SINCERELY,\nMARY BLAKE",
-                "MY CLAIM C-9912 WAS APPROVED ON 12 JUNE AND PAYMENT WAS EXPECTED WITHIN TEN WORKING DAYS - IT IS NOW FOUR WEEKS LATER AND I HAVE NOT RECEIVED THE SETTLEMENT.",
+                "BEST REGARDS,\nMARY BLAKE",
+                "DEAR CLAIMS SETTLEMENT TEAM,",
                 "SUBJECT: SETTLEMENT CHASE - CLAIM REF: C-9912, APPROVED 4 WEEKS AGO",
-                "DEAR CLAIMS SETTLEMENT TEAM,"
+                "MY CLAIM C-9912 WAS APPROVED ON 12 JUNE AND PAYMENT WAS EXPECTED WITHIN TEN WORKING DAYS - IT IS NOW FOUR WEEKS LATER AND I HAVE NOT RECEIVED THE SETTLEMENT."
             ],
             "correctOrder": [
                 2,
-                3,
                 1,
+                3,
                 0
             ],
             "hint": "Overdue settlement and reference are in the subject; the settlement team is addressed; claim reference, approval date, expected timeline, and actual wait time are all in the body.",
@@ -115,16 +115,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to an insurance ombudsman disputing a claim rejection.",
             "options": [
-                "DEAR INSURANCE OMBUDSMAN,",
                 "SUBJECT: DISPUTE OF CLAIM REJECTION - POLICY REF: HI-77441, CLAIM REF: C-9912",
-                "YOURS FAITHFULLY,\nMARY BLAKE",
-                "I AM WRITING TO DISPUTE THE REJECTION OF CLAIM C-9912 UNDER POLICY HI-77441 - THE REJECTION LETTER CITED A PRE-EXISTING CONDITION CLAUSE WHICH I BELIEVE WAS NOT DISCLOSED TO ME WHEN I PURCHASED THE POLICY."
+                "I AM WRITING TO DISPUTE THE REJECTION OF CLAIM C-9912 UNDER POLICY HI-77441 - THE REJECTION LETTER CITED A PRE-EXISTING CONDITION CLAUSE WHICH I BELIEVE WAS NOT DISCLOSED TO ME WHEN I PURCHASED THE POLICY.",
+                "DEAR INSURANCE OMBUDSMAN,",
+                "YOURS FAITHFULLY,\nMARY BLAKE"
             ],
             "correctOrder": [
-                1,
                 0,
-                3,
-                2
+                2,
+                1,
+                3
             ],
             "hint": "Dispute purpose and both references are in the subject; the ombudsman is addressed formally (no named individual); rejection grounds and specific dispute basis are in the body; 'YOURS FAITHFULLY' closes the official dispute.",
             "explanation": "Escalating to an ombudsman requires formal language and 'Yours faithfully'. Identifying the specific clause being disputed ('pre-existing condition, not disclosed at purchase') frames this as a mis-selling argument, which is a strong ground for ombudsman review."
@@ -157,16 +157,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to an architect requesting revisions to a proposed design.",
             "options": [
+                "SUBJECT: REVISION REQUEST - PHASE 1 EXTENSION DRAWINGS, REF: ARC-124",
                 "YOURS SINCERELY,\nCAROL HUNT",
                 "HAVING REVIEWED THE PHASE 1 DRAWINGS FOR REF: ARC-124, I WOULD LIKE TO REQUEST THAT THE SOUTH-FACING WINDOW IS ENLARGED AND THE UTILITY ROOM IS REPOSITIONED TO THE EAST WALL.",
-                "SUBJECT: REVISION REQUEST - PHASE 1 EXTENSION DRAWINGS, REF: ARC-124",
                 "DEAR MR WELLS,"
             ],
             "correctOrder": [
-                2,
+                0,
                 3,
-                1,
-                0
+                2,
+                1
             ],
             "hint": "Revision purpose and drawing reference are in the subject; the architect is addressed by name; two specific revisions with directional precision are requested in the body.",
             "explanation": "Architectural revisions must be precise - 'south-facing window enlarged' and 'east wall repositioning' are the kind of specific, locationally accurate requests that architects need to execute changes correctly. Vague feedback leads to more iterations."
@@ -179,14 +179,14 @@
             "prompt": "Write an email to an architect approving the final plans for a building project.",
             "options": [
                 "DEAR MR WELLS,",
-                "SUBJECT: FORMAL APPROVAL OF FINAL PLANS - HOME EXTENSION REF: ARC-124",
+                "I AM PLEASED TO GIVE MY FORMAL APPROVAL TO THE REVISED FINAL PLANS FOR THE HOME EXTENSION, REF: ARC-124 - PLEASE PROCEED WITH THE PLANNING PERMISSION SUBMISSION.",
                 "YOURS SINCERELY,\nCAROL HUNT",
-                "I AM PLEASED TO GIVE MY FORMAL APPROVAL TO THE REVISED FINAL PLANS FOR THE HOME EXTENSION, REF: ARC-124 - PLEASE PROCEED WITH THE PLANNING PERMISSION SUBMISSION."
+                "SUBJECT: FORMAL APPROVAL OF FINAL PLANS - HOME EXTENSION REF: ARC-124"
             ],
             "correctOrder": [
-                1,
-                0,
                 3,
+                0,
+                1,
                 2
             ],
             "hint": "Approval and reference are in the subject; the architect is addressed by name; formal approval and next step instruction are in the body; 'YOURS SINCERELY' closes the formal instruction.",
@@ -199,16 +199,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a software company requesting a product demonstration.",
             "options": [
-                "WE ARE EVALUATING HR SOFTWARE SOLUTIONS FOR OUR 350-PERSON ORGANISATION AND WOULD LIKE TO SCHEDULE A PRODUCT DEMONSTRATION FOCUSING ON PAYROLL INTEGRATION AND EMPLOYEE SELF-SERVICE FEATURES.",
-                "YOURS SINCERELY,\nLIAM BAKER, HR DIRECTOR",
                 "DEAR SALES TEAM,",
-                "SUBJECT: DEMONSTRATION REQUEST - ENTERPRISE HR SOFTWARE PLATFORM"
+                "SUBJECT: DEMONSTRATION REQUEST - ENTERPRISE HR SOFTWARE PLATFORM",
+                "KIND REGARDS,\nLIAM BAKER, HR DIRECTOR",
+                "WE ARE EVALUATING HR SOFTWARE SOLUTIONS FOR OUR 350-PERSON ORGANISATION AND WOULD LIKE TO SCHEDULE A PRODUCT DEMONSTRATION FOCUSING ON PAYROLL INTEGRATION AND EMPLOYEE SELF-SERVICE FEATURES."
             ],
             "correctOrder": [
-                3,
-                2,
+                1,
                 0,
-                1
+                3,
+                2
             ],
             "hint": "Product type and purpose are in the subject; the sales team is addressed; company size and two specific features of interest are in the body; HR director signs with role.",
             "explanation": "Specifying exactly which features interest you ('payroll integration AND self-service') means the product demo is tailored to your needs rather than a generic overview. Stating company size ('350 people') helps the sales team identify the correct pricing tier."
@@ -220,16 +220,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email following up after a product trial period has ended.",
             "options": [
-                "YOURS SINCERELY,\nCHRISTINE RAY, OPERATIONS DIRECTOR",
-                "OUR THIRTY-DAY TRIAL OF THE NEXUS CRM PLATFORM HAS CONCLUDED AND I AM PLEASED TO REPORT THAT THE FEEDBACK FROM OUR TEAM WAS BROADLY POSITIVE - I WOULD LIKE TO DISCUSS PRICING FOR A FULL LICENCE.",
                 "SUBJECT: POST-TRIAL FEEDBACK AND NEXT STEPS - NEXUS CRM PLATFORM",
-                "DEAR ACCOUNT MANAGER,"
+                "BEST REGARDS,\nCHRISTINE RAY, OPERATIONS DIRECTOR",
+                "DEAR ACCOUNT MANAGER,",
+                "OUR THIRTY-DAY TRIAL OF THE NEXUS CRM PLATFORM HAS CONCLUDED AND I AM PLEASED TO REPORT THAT THE FEEDBACK FROM OUR TEAM WAS BROADLY POSITIVE - I WOULD LIKE TO DISCUSS PRICING FOR A FULL LICENCE."
             ],
             "correctOrder": [
+                0,
                 2,
                 3,
-                1,
-                0
+                1
             ],
             "hint": "Trial outcome and next steps are in the subject; the account manager is addressed; trial duration, team feedback summary, and purchasing intent are in the body; director signs with role.",
             "explanation": "Signalling purchasing intent immediately ('I would like to discuss pricing') is the most efficient way to follow up after a trial - it tells the account manager you are a warm lead and prompts a faster commercial response."
@@ -241,16 +241,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a technology vendor requesting technical specifications for a product.",
             "options": [
-                "DEAR TECHNICAL SALES TEAM,",
                 "SUBJECT: TECHNICAL SPECIFICATION REQUEST - CLOUD STORAGE SOLUTION",
-                "YOURS SINCERELY,\nOSCARES RAMOS, IT INFRASTRUCTURE MANAGER",
-                "OUR IT TEAM REQUIRES DETAILED TECHNICAL SPECIFICATIONS FOR YOUR CLOUD STORAGE SOLUTION, INCLUDING DATA ENCRYPTION STANDARDS, UPTIME SLA, AND DISASTER RECOVERY PROTOCOL."
+                "OUR IT TEAM REQUIRES DETAILED TECHNICAL SPECIFICATIONS FOR YOUR CLOUD STORAGE SOLUTION, INCLUDING DATA ENCRYPTION STANDARDS, UPTIME SLA, AND DISASTER RECOVERY PROTOCOL.",
+                "DEAR TECHNICAL SALES TEAM,",
+                "KIND REGARDS,\nOSCARES RAMOS, IT INFRASTRUCTURE MANAGER"
             ],
             "correctOrder": [
-                1,
                 0,
-                3,
-                2
+                2,
+                1,
+                3
             ],
             "hint": "Product type and request are in the subject; the technical team is addressed; three specific technical requirements are listed in the body; IT manager signs with role.",
             "explanation": "Listing specific technical requirements - encryption standard, SLA, and disaster recovery - shows technical literacy and ensures the vendor's response addresses your actual evaluation criteria rather than generic marketing claims."
@@ -262,16 +262,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a union representative seeking advice on a potential unfair treatment issue.",
             "options": [
-                "I BELIEVE I HAVE BEEN TREATED UNFAIRLY IN RELATION TO A RECENT PROMOTION DECISION AND WOULD LIKE YOUR CONFIDENTIAL ADVICE ON WHETHER THIS CONSTITUTES A GRIEVANCE UNDER COMPANY POLICY.",
-                "YOURS SINCERELY,\nDEAN WATSON",
                 "DEAR UNION REPRESENTATIVE,",
-                "SUBJECT: REQUEST FOR UNION ADVICE - POSSIBLE UNFAIR TREATMENT AT WORK"
+                "SUBJECT: REQUEST FOR UNION ADVICE - POSSIBLE UNFAIR TREATMENT AT WORK",
+                "I BELIEVE I HAVE BEEN TREATED UNFAIRLY IN RELATION TO A RECENT PROMOTION DECISION AND WOULD LIKE YOUR CONFIDENTIAL ADVICE ON WHETHER THIS CONSTITUTES A GRIEVANCE UNDER COMPANY POLICY.",
+                "YOURS FAITHFULLY,\nDEAN WATSON"
             ],
             "correctOrder": [
-                3,
-                2,
+                1,
                 0,
-                1
+                2,
+                3
             ],
             "hint": "Issue type and purpose are in the subject; the union rep is addressed formally; the specific concern and confidentiality requirement are in the body; formal closing maintains professionalism.",
             "explanation": "Asking specifically whether the situation 'constitutes a grievance' shows legal awareness and focuses the union representative's advice on the key question. The word 'confidential' signals this is a sensitive personnel matter."
@@ -283,16 +283,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to HR formally raising a workplace grievance.",
             "options": [
-                "YOURS SINCERELY,\nDEAN WATSON",
-                "I AM FORMALLY RAISING A GRIEVANCE UNDER THE COMPANY'S GRIEVANCE POLICY REGARDING THE PROMOTION PROCESS FOR THE SENIOR ANALYST ROLE, WHICH I BELIEVE INVOLVED DISCRIMINATORY SELECTION CRITERIA.",
                 "SUBJECT: FORMAL GRIEVANCE - DISCRIMINATORY PROMOTION PROCESS",
+                "I AM FORMALLY RAISING A GRIEVANCE UNDER THE COMPANY'S GRIEVANCE POLICY REGARDING THE PROMOTION PROCESS FOR THE SENIOR ANALYST ROLE, WHICH I BELIEVE INVOLVED DISCRIMINATORY SELECTION CRITERIA.",
+                "BEST REGARDS,\nDEAN WATSON",
                 "DEAR HR DIRECTOR,"
             ],
             "correctOrder": [
-                2,
+                0,
                 3,
                 1,
-                0
+                2
             ],
             "hint": "Formal grievance and discrimination ground are in the subject; the HR director is addressed; formal policy invocation, role, and discrimination allegation are in the body; formal closing is used.",
             "explanation": "The phrase 'formally raising a grievance under the company's grievance policy' is legally significant - it triggers the employer's formal process obligations. Citing a specific protected characteristic ('discriminatory') strengthens the grounds considerably."
@@ -304,16 +304,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to an employment lawyer requesting initial advice on a workplace dispute.",
             "options": [
-                "DEAR MS ROPER,",
-                "SUBJECT: REQUEST FOR INITIAL EMPLOYMENT LAW ADVICE",
                 "YOURS SINCERELY,\nDEAN WATSON",
-                "I AM AN EMPLOYEE WHO BELIEVES I HAVE BEEN DISCRIMINATED AGAINST IN A RECENT PROMOTION PROCESS AND WOULD LIKE INITIAL ADVICE ON MY LEGAL OPTIONS, INCLUDING THE POTENTIAL FOR AN EMPLOYMENT TRIBUNAL CLAIM."
+                "DEAR MS ROPER,",
+                "I AM AN EMPLOYEE WHO BELIEVES I HAVE BEEN DISCRIMINATED AGAINST IN A RECENT PROMOTION PROCESS AND WOULD LIKE INITIAL ADVICE ON MY LEGAL OPTIONS, INCLUDING THE POTENTIAL FOR AN EMPLOYMENT TRIBUNAL CLAIM.",
+                "SUBJECT: REQUEST FOR INITIAL EMPLOYMENT LAW ADVICE"
             ],
             "correctOrder": [
-                1,
-                0,
                 3,
-                2
+                1,
+                2,
+                0
             ],
             "hint": "Purpose and legal area are in the subject; the lawyer is addressed by name; the situation, belief, and specific legal question (including tribunal) are in the body; formal closing used.",
             "explanation": "Mentioning 'employment tribunal' signals you are aware this is a potential legal claim, not just an internal complaint. Seeking 'initial advice' is the correct first step before committing to legal action."
@@ -325,16 +325,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a company's CSR team asking about their sustainability practices.",
             "options": [
+                "KIND REGARDS,\nFIONA CHASE, PROCUREMENT MANAGER",
                 "WE ARE CONDUCTING A SUPPLIER DUE DILIGENCE REVIEW AND WOULD LIKE INFORMATION ON YOUR CARBON REDUCTION TARGETS, RENEWABLE ENERGY USAGE, AND SUPPLY CHAIN ETHICS POLICIES.",
-                "YOURS SINCERELY,\nFIONA CHASE, PROCUREMENT MANAGER",
-                "DEAR CSR TEAM,",
-                "SUBJECT: SUSTAINABILITY PRACTICES ENQUIRY - POTENTIAL SUPPLIER ASSESSMENT"
+                "SUBJECT: SUSTAINABILITY PRACTICES ENQUIRY - POTENTIAL SUPPLIER ASSESSMENT",
+                "DEAR CSR TEAM,"
             ],
             "correctOrder": [
-                3,
                 2,
-                0,
-                1
+                3,
+                1,
+                0
             ],
             "hint": "CSR purpose and context are in the subject; the CSR team is addressed; due diligence context and three specific sustainability areas are in the body; procurement manager signs with role.",
             "explanation": "Framing the enquiry as 'supplier due diligence' rather than a casual query signals that the answers will inform a real commercial decision. Three specific areas prevent a vague response and ensure the information is comparable across suppliers."
@@ -346,16 +346,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email requesting a company's environmental impact report for a regulatory submission.",
             "options": [
-                "YOURS SINCERELY,\nDEAN COLE, ENVIRONMENTAL MANAGER",
-                "WE REQUIRE A COPY OF YOUR CERTIFIED ENVIRONMENTAL IMPACT REPORT FOR THE CURRENT REPORTING PERIOD AS PART OF A REGULATORY SUBMISSION REQUIRED BY THE ENVIRONMENT AGENCY BY 30 SEPTEMBER.",
                 "SUBJECT: REQUEST FOR ENVIRONMENTAL IMPACT REPORT - REGULATORY SUBMISSION",
-                "DEAR ENVIRONMENTAL COMPLIANCE TEAM,"
+                "WE REQUIRE A COPY OF YOUR CERTIFIED ENVIRONMENTAL IMPACT REPORT FOR THE CURRENT REPORTING PERIOD AS PART OF A REGULATORY SUBMISSION REQUIRED BY THE ENVIRONMENT AGENCY BY 30 SEPTEMBER.",
+                "DEAR ENVIRONMENTAL COMPLIANCE TEAM,",
+                "YOURS FAITHFULLY,\nDEAN COLE, ENVIRONMENTAL MANAGER"
             ],
             "correctOrder": [
+                0,
                 2,
-                3,
                 1,
-                0
+                3
             ],
             "hint": "Report type and regulatory purpose are in the subject; the compliance team is addressed; 'certified', reporting period, regulatory body, and submission deadline are all in the body.",
             "explanation": "The word 'certified' is important - it specifies that you need an official, verified report, not a draft or summary. Mentioning the regulator ('Environment Agency') and deadline creates legitimate urgency."
@@ -367,15 +367,15 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a client confirming your company's environmental commitments.",
             "options": [
-                "DEAR MS RILEY,",
                 "SUBJECT: CONFIRMATION OF ENVIRONMENTAL COMMITMENTS - NEXUS CONSULTING",
+                "I AM PLEASED TO CONFIRM THAT NEXUS CONSULTING IS COMMITTED TO ACHIEVING NET ZERO BY 2040 AND HOLDS ISO 14001 CERTIFICATION - FULL DETAILS ARE INCLUDED IN THE ATTACHED SUSTAINABILITY REPORT.",
                 "YOURS SINCERELY,\nGEORGE WALSH, SUSTAINABILITY DIRECTOR",
-                "I AM PLEASED TO CONFIRM THAT NEXUS CONSULTING IS COMMITTED TO ACHIEVING NET ZERO BY 2040 AND HOLDS ISO 14001 CERTIFICATION - FULL DETAILS ARE INCLUDED IN THE ATTACHED SUSTAINABILITY REPORT."
+                "DEAR MS RILEY,"
             ],
             "correctOrder": [
-                1,
                 0,
                 3,
+                1,
                 2
             ],
             "hint": "Company and commitment topic are in the subject; the client is addressed by name; net zero target, certification, and attached evidence are in the body; the director signs with role.",
@@ -388,16 +388,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a legal team asking about intellectual property protection for a new product.",
             "options": [
+                "SUBJECT: IP PROTECTION ENQUIRY - NEW PRODUCT LAUNCH: PROJECT NOVA",
                 "WE ARE PREPARING TO LAUNCH A NEW PRODUCT UNDER PROJECT NOVA AND SEEK ADVICE ON THE MOST APPROPRIATE FORMS OF INTELLECTUAL PROPERTY PROTECTION, INCLUDING PATENT AND TRADEMARK OPTIONS.",
-                "YOURS SINCERELY,\nBEATRICE WALSH, INNOVATION DIRECTOR",
                 "DEAR IP COUNSEL,",
-                "SUBJECT: IP PROTECTION ENQUIRY - NEW PRODUCT LAUNCH: PROJECT NOVA"
+                "YOURS FAITHFULLY,\nBEATRICE WALSH, INNOVATION DIRECTOR"
             ],
             "correctOrder": [
-                3,
-                2,
                 0,
-                1
+                2,
+                1,
+                3
             ],
             "hint": "IP type and project name are in the subject; the IP counsel is addressed formally; product stage, two specific IP forms, and advice request are in the body; director signs with role.",
             "explanation": "Asking about both patent AND trademark options shows awareness that different IP forms protect different aspects of a product - patents protect inventions, trademarks protect brands. Naming the project helps legal create a file."
@@ -409,16 +409,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a creative agency requesting confirmation of copyright ownership for produced assets.",
             "options": [
-                "YOURS SINCERELY,\nREBECCA FORD, MARKETING DIRECTOR",
-                "UPON REVIEW OF OUR AGREEMENT, WE REQUIRE WRITTEN CONFIRMATION THAT ALL CREATIVE ASSETS PRODUCED UNDER CONTRACT CA-881 ARE WHOLLY OWNED BY NEXUS CONSULTING UPON PAYMENT.",
                 "SUBJECT: COPYRIGHT OWNERSHIP CLARIFICATION - CAMPAIGN MATERIALS, REF: CA-881",
+                "UPON REVIEW OF OUR AGREEMENT, WE REQUIRE WRITTEN CONFIRMATION THAT ALL CREATIVE ASSETS PRODUCED UNDER CONTRACT CA-881 ARE WHOLLY OWNED BY NEXUS CONSULTING UPON PAYMENT.",
+                "KIND REGARDS,\nREBECCA FORD, MARKETING DIRECTOR",
                 "DEAR ACCOUNT MANAGER,"
             ],
             "correctOrder": [
-                2,
+                0,
                 3,
                 1,
-                0
+                2
             ],
             "hint": "IP ownership and contract reference are in the subject; the account manager is addressed; contract reference, assets in question, and ownership condition are stated; director signs with role.",
             "explanation": "Requesting 'written confirmation' of copyright transfer is legally significant - verbal or implied agreements are insufficient. Specifying 'upon payment' is the standard contractual trigger for copyright assignment."
@@ -430,16 +430,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a competitor formally notifying them of a trademark infringement.",
             "options": [
-                "DEAR LEGAL COUNSEL,",
                 "SUBJECT: FORMAL TRADEMARK INFRINGEMENT NOTICE - UK TRADEMARK NO. 3,012,447",
                 "YOURS FAITHFULLY,\nGEORGIA HUNT, CHIEF LEGAL OFFICER",
+                "DEAR LEGAL COUNSEL,",
                 "IT HAS COME TO OUR ATTENTION THAT YOUR PRODUCT BRANDING INFRINGES UK REGISTERED TRADEMARK NO. 3,012,447 AND WE FORMALLY REQUEST THAT THE INFRINGING USE CEASES WITHIN 14 DAYS."
             ],
             "correctOrder": [
-                1,
                 0,
+                2,
                 3,
-                2
+                1
             ],
             "hint": "Infringement type and trademark number are in the subject; the legal counsel is addressed formally; the trademark number, infringement, and 14-day demand are in the body; 'YOURS FAITHFULLY' closes the legal notice.",
             "explanation": "A trademark infringement notice must include the specific trademark registration number, identify the infringement, and set a clear deadline ('14 days'). The deadline creates legal certainty about when litigation may follow."
@@ -451,16 +451,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a headteacher raising a concern about a bullying incident.",
             "options": [
-                "I AM WRITING TO BRING TO YOUR URGENT ATTENTION AN INCIDENT OF BULLYING INVOLVING MY DAUGHTER SOPHIE HAYES IN YEAR 9 THAT OCCURRED ON THE SCHOOL PREMISES LAST WEDNESDAY.",
-                "YOURS SINCERELY,\nMRS LINDA HAYES",
                 "DEAR MR GRAHAM,",
-                "SUBJECT: URGENT CONCERN - BULLYING INCIDENT INVOLVING MY CHILD"
+                "I AM WRITING TO BRING TO YOUR URGENT ATTENTION AN INCIDENT OF BULLYING INVOLVING MY DAUGHTER SOPHIE HAYES IN YEAR 9 THAT OCCURRED ON THE SCHOOL PREMISES LAST WEDNESDAY.",
+                "SUBJECT: URGENT CONCERN - BULLYING INCIDENT INVOLVING MY CHILD",
+                "YOURS SINCERELY,\nMRS LINDA HAYES"
             ],
             "correctOrder": [
-                3,
                 2,
                 0,
-                1
+                1,
+                3
             ],
             "hint": "Urgency and issue type are in the subject; the headteacher is addressed by name; the specific incident, child's name, year group, and day are in the body; the parent signs formally with title.",
             "explanation": "Providing the child's full name, year group, and day of the incident gives the headteacher all they need to investigate immediately. Writing to the headteacher directly for bullying signals the seriousness of the concern."
@@ -472,16 +472,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a teacher requesting an urgent meeting about a student's welfare.",
             "options": [
+                "SUBJECT: URGENT MEETING REQUEST - WELFARE CONCERN FOR SOPHIE HAYES, YEAR 9",
                 "YOURS SINCERELY,\nMRS LINDA HAYES",
                 "I AM CONCERNED ABOUT RECENT CHANGES IN MY DAUGHTER SOPHIE'S BEHAVIOUR AND EMOTIONAL WELLBEING AND WOULD LIKE TO ARRANGE AN URGENT MEETING WITH YOU AND THE PASTORAL TEAM.",
-                "SUBJECT: URGENT MEETING REQUEST - WELFARE CONCERN FOR SOPHIE HAYES, YEAR 9",
                 "DEAR MS COOPER,"
             ],
             "correctOrder": [
-                2,
+                0,
                 3,
-                1,
-                0
+                2,
+                1
             ],
             "hint": "Student name, year, and welfare concern are in the subject; the teacher is addressed by name; the concern, specific changes, and meeting with pastoral team are in the body.",
             "explanation": "Asking for a meeting that includes 'the pastoral team' shows you are serious about a multi-professional response. Mentioning both 'behaviour AND emotional wellbeing' signals you are describing a pattern, not a single incident."
@@ -494,15 +494,15 @@
             "prompt": "Write an email formally appealing a school's exclusion decision.",
             "options": [
                 "DEAR EXCLUSION APPEAL PANEL,",
-                "SUBJECT: FORMAL APPEAL AGAINST EXCLUSION - SOPHIE HAYES, YEAR 9",
                 "YOURS FAITHFULLY,\nMRS LINDA HAYES",
-                "I AM FORMALLY APPEALING THE DECISION TO EXCLUDE MY DAUGHTER SOPHIE HAYES (YEAR 9) ON THE GROUNDS THAT THE DISCIPLINARY PROCEDURE WAS NOT FOLLOWED CORRECTLY AND MITIGATING CIRCUMSTANCES WERE NOT CONSIDERED."
+                "I AM FORMALLY APPEALING THE DECISION TO EXCLUDE MY DAUGHTER SOPHIE HAYES (YEAR 9) ON THE GROUNDS THAT THE DISCIPLINARY PROCEDURE WAS NOT FOLLOWED CORRECTLY AND MITIGATING CIRCUMSTANCES WERE NOT CONSIDERED.",
+                "SUBJECT: FORMAL APPEAL AGAINST EXCLUSION - SOPHIE HAYES, YEAR 9"
             ],
             "correctOrder": [
-                1,
-                0,
                 3,
-                2
+                0,
+                2,
+                1
             ],
             "hint": "Formal appeal and student details are in the subject; the appeal panel is addressed as a body; procedural breach and mitigating circumstances are the two grounds stated; 'YOURS FAITHFULLY' closes the official appeal.",
             "explanation": "A school exclusion appeal needs specific grounds - 'procedure not followed' and 'mitigating circumstances not considered' are two of the strongest legally recognised grounds. The panel address requires 'Yours faithfully' as no individual is named."
@@ -514,16 +514,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a local council applying for a community events grant.",
             "options": [
-                "WE ARE APPLYING FOR A COMMUNITY EVENTS GRANT TO SUPPORT THE RIVERSIDE SUMMER FESTIVAL, WHICH WILL SERVE AN ESTIMATED AUDIENCE OF 3,000 LOCAL RESIDENTS ACROSS FOUR FREE EVENTS.",
-                "YOURS SINCERELY,\nPATRICK REED, FESTIVAL DIRECTOR",
                 "DEAR GRANTS COORDINATOR,",
-                "SUBJECT: COMMUNITY EVENTS GRANT APPLICATION - RIVERSIDE SUMMER FESTIVAL"
+                "WE ARE APPLYING FOR A COMMUNITY EVENTS GRANT TO SUPPORT THE RIVERSIDE SUMMER FESTIVAL, WHICH WILL SERVE AN ESTIMATED AUDIENCE OF 3,000 LOCAL RESIDENTS ACROSS FOUR FREE EVENTS.",
+                "SUBJECT: COMMUNITY EVENTS GRANT APPLICATION - RIVERSIDE SUMMER FESTIVAL",
+                "KIND REGARDS,\nPATRICK REED, FESTIVAL DIRECTOR"
             ],
             "correctOrder": [
-                3,
                 2,
                 0,
-                1
+                1,
+                3
             ],
             "hint": "Grant type and event name are in the subject; the coordinator is addressed; key impact figures - audience size and event number - and free-entry commitment are in the body; director signs with role.",
             "explanation": "Grants committees respond to measurable community impact. Two specific numbers - '3,000 residents' and 'four events' - plus the 'free' access point are the strongest case for public funding of a community event."
@@ -535,15 +535,15 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to the council requesting a decision on a community centre funding application.",
             "options": [
-                "YOURS SINCERELY,\nPATRICK REED",
+                "BEST REGARDS,\nPATRICK REED",
+                "DEAR GRANTS TEAM,",
                 "OUR FUNDING APPLICATION FOR THE ROSEWOOD COMMUNITY CENTRE WAS SUBMITTED ON 1 APRIL AND WE HAVE NOT YET RECEIVED AN ACKNOWLEDGEMENT OR DECISION - PLEASE COULD YOU CONFIRM THE STATUS?",
-                "SUBJECT: FOLLOW-UP ON COMMUNITY CENTRE FUNDING APPLICATION - SUBMITTED 1 APRIL",
-                "DEAR GRANTS TEAM,"
+                "SUBJECT: FOLLOW-UP ON COMMUNITY CENTRE FUNDING APPLICATION - SUBMITTED 1 APRIL"
             ],
             "correctOrder": [
-                2,
                 3,
                 1,
+                2,
                 0
             ],
             "hint": "Application topic and submission date are in the subject; the grants team is addressed; application name, submission date, missing acknowledgement, and specific status question are in the body.",
@@ -556,16 +556,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a council planning officer asking about obtaining listed building consent.",
             "options": [
+                "YOURS FAITHFULLY,\nCHARLOTTE WISE",
                 "DEAR PLANNING OFFICER,",
                 "SUBJECT: LISTED BUILDING CONSENT ENQUIRY - COACH HOUSE, MILL LANE, DORCHESTER",
-                "YOURS SINCERELY,\nCHARLOTTE WISE",
                 "I OWN A GRADE II LISTED COACH HOUSE AND WISH TO UNDERTAKE SYMPATHETIC INTERNAL ALTERATIONS - PLEASE COULD YOU ADVISE ON THE LISTED BUILDING CONSENT PROCESS AND DOCUMENTATION REQUIRED?"
             ],
             "correctOrder": [
+                2,
                 1,
-                0,
                 3,
-                2
+                0
             ],
             "hint": "Building grade and location are in the subject; the planning officer is addressed; building type, grade, intended work type, and process questions are in the body; formal closing is used.",
             "explanation": "The word 'sympathetic' is important in listed building applications - it signals you understand that alterations must respect the building's historic character, which is what planners look for. Asking about documentation prevents wasted time."
@@ -578,15 +578,15 @@
             "prompt": "Write an email to an international business contact proposing a strategic partnership.",
             "options": [
                 "I AM THE CEO OF NEXUS CONSULTING AND BELIEVE THERE IS A COMPELLING OPPORTUNITY FOR OUR TWO ORGANISATIONS TO COLLABORATE ON DIGITAL TRANSFORMATION PROJECTS ACROSS THE ASIA-PACIFIC REGION.",
+                "SUBJECT: PARTNERSHIP PROPOSAL - NEXUS CONSULTING AND TOKYO DIGITAL GROUP",
                 "YOURS SINCERELY,\nDR HELEN MARSH, CEO",
-                "DEAR MR TANAKA,",
-                "SUBJECT: PARTNERSHIP PROPOSAL - NEXUS CONSULTING AND TOKYO DIGITAL GROUP"
+                "DEAR MR TANAKA,"
             ],
             "correctOrder": [
+                1,
                 3,
-                2,
                 0,
-                1
+                2
             ],
             "hint": "Both company names and proposal type are in the subject; the international contact is addressed formally by name; sender's role, opportunity, and geographic scope are in the body; CEO signs with title.",
             "explanation": "Naming both companies in the subject signals mutual benefit from the outset. Using 'Dr' in the sign-off establishes academic and professional credibility, which may be significant in Japanese business culture."
@@ -598,16 +598,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email setting up an international video conference with overseas partners.",
             "options": [
-                "YOURS SINCERELY,\nDR HELEN MARSH, CEO",
-                "I WOULD LIKE TO PROPOSE A VIDEO CONFERENCE ON THURSDAY 14 NOVEMBER AT 9AM LONDON TIME (5PM TOKYO TIME) TO DISCUSS INITIAL PARTNERSHIP TERMS AND NEXT STEPS.",
                 "SUBJECT: MEETING REQUEST - NEXUS AND TOKYO DIGITAL JOINT STRATEGY SESSION",
-                "DEAR MR TANAKA,"
+                "DEAR MR TANAKA,",
+                "I WOULD LIKE TO PROPOSE A VIDEO CONFERENCE ON THURSDAY 14 NOVEMBER AT 9AM LONDON TIME (5PM TOKYO TIME) TO DISCUSS INITIAL PARTNERSHIP TERMS AND NEXT STEPS.",
+                "YOURS SINCERELY,\nDR HELEN MARSH, CEO"
             ],
             "correctOrder": [
-                2,
-                3,
+                0,
                 1,
-                0
+                2,
+                3
             ],
             "hint": "Meeting purpose and partners are in the subject; the contact is addressed by name; meeting format, date, and both time zones are given in the body; CEO signs formally.",
             "explanation": "Including both time zones - London AND Tokyo - is essential for international meetings. It shows cultural consideration and prevents the classic confusion about who has misunderstood the time. Always specify the time zone reference ('London time')."
@@ -619,16 +619,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to an overseas partner confirming receipt of an international purchase order.",
             "options": [
+                "I WRITE TO CONFIRM RECEIPT OF PURCHASE ORDER TDG-2024-0812 FOR TWELVE MONTHS OF DIGITAL CONSULTING SERVICES - WE WILL PROCESS YOUR ORDER AND ISSUE AN INVOICE WITHIN THREE BUSINESS DAYS.",
                 "DEAR MR TANAKA,",
                 "SUBJECT: ORDER CONFIRMATION - PURCHASE ORDER TDG-2024-0812 RECEIVED",
-                "YOURS SINCERELY,\nDR HELEN MARSH, CEO",
-                "I WRITE TO CONFIRM RECEIPT OF PURCHASE ORDER TDG-2024-0812 FOR TWELVE MONTHS OF DIGITAL CONSULTING SERVICES - WE WILL PROCESS YOUR ORDER AND ISSUE AN INVOICE WITHIN THREE BUSINESS DAYS."
+                "YOURS SINCERELY,\nDR HELEN MARSH, CEO"
             ],
             "correctOrder": [
+                2,
                 1,
                 0,
-                3,
-                2
+                3
             ],
             "hint": "Order reference and confirmation purpose are in the subject; the partner is addressed formally; order reference, service description, and timeline for invoice are in the body.",
             "explanation": "Confirming the purchase order number, the service agreed, and the invoicing timeline gives the overseas partner a complete record for their accounts payable team. Three business days is the standard professional timeline for invoice generation."

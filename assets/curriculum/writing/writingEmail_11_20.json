@@ -10,16 +10,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write a friendly email introducing yourself to a new classmate.",
             "options": [
-                "DEAR ZOE,",
-                "BEST WISHES,\nALEX",
                 "SUBJECT: HI FROM YOUR NEW CLASSMATE",
-                "MY NAME IS ALEX AND I JUST JOINED YOUR CLASS - I HOPE WE GET TO KNOW EACH OTHER AND BECOME GOOD FRIENDS."
+                "MY NAME IS ALEX AND I JUST JOINED YOUR CLASS - I HOPE WE GET TO KNOW EACH OTHER AND BECOME GOOD FRIENDS.",
+                "BEST WISHES,\nALEX",
+                "DEAR ZOE,"
             ],
             "correctOrder": [
-                2,
                 0,
                 3,
-                1
+                1,
+                2
             ],
             "hint": "The self-introduction purpose is in the subject; 'DEAR ZOE' opens warmly; the introduction and hope for friendship are in the body; 'BEST WISHES' closes politely.",
             "explanation": "Even casual emails benefit from a clear structure. Writing to a new classmate sits between formal and informal - 'Dear' and 'Best wishes' are polite but not overly formal for a peer."
@@ -31,19 +31,19 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a music school asking about piano lessons.",
             "options": [
-                "DEAR MUSIC SCHOOL OFFICE,",
-                "YOURS SINCERELY,\nOLIVER MARSH",
                 "SUBJECT: ENQUIRY ABOUT PIANO LESSONS FOR A TEENAGER",
+                "DEAR MUSIC SCHOOL OFFICE,",
+                "KIND REGARDS,\nOLIVER MARSH",
                 "I AM FOURTEEN YEARS OLD AND WOULD LIKE TO KNOW WHETHER YOU OFFER INDIVIDUAL PIANO LESSONS AND WHAT THE TERM FEES ARE."
             ],
             "correctOrder": [
-                2,
                 0,
+                1,
                 3,
-                1
+                2
             ],
-            "hint": "The instrument, type of lesson, and learner age are in the subject; the formal school office is addressed; two questions form the body; 'YOURS SINCERELY' closes the formal enquiry.",
-            "explanation": "Stating your age upfront is useful when enquiring about lessons, as schools may have different prices or schedules for different age groups. Always ask about both availability AND cost to get a complete picture."
+            "hint": "The instrument, lesson type, and age are in the subject; the school office is addressed by role, not name; two questions form the body; 'KIND REGARDS' closes politely.",
+            "explanation": "'Kind regards' fits an enquiry to a general office better than 'Yours sincerely', which should be kept for emails to a named person. Always ask about both availability AND cost to get a complete picture."
         },
         {
             "id": "WRT_WRITINGEMAIL_L11_Q3",
@@ -52,15 +52,15 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email thanking a friend for giving you career advice.",
             "options": [
-                "DEAR CAROLINE,",
+                "I REALLY APPRECIATED THE TIME YOU TOOK TO TALK THROUGH MY CAREER OPTIONS WITH ME - YOUR ADVICE HAS GIVEN ME GREAT CLARITY.",
                 "WITH WARM WISHES,\nBEN",
                 "SUBJECT: THANK YOU FOR YOUR WONDERFUL CAREER ADVICE",
-                "I REALLY APPRECIATED THE TIME YOU TOOK TO TALK THROUGH MY CAREER OPTIONS WITH ME - YOUR ADVICE HAS GIVEN ME GREAT CLARITY."
+                "DEAR CAROLINE,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
+                0,
                 1
             ],
             "hint": "'DEAR CAROLINE' opens warmly but respectfully; the appreciation and outcome are in the body; 'WITH WARM WISHES' closes sincerely; the subject captures the theme.",
@@ -95,15 +95,15 @@
             "prompt": "Write an email inviting a cousin on a day trip to the seaside.",
             "options": [
                 "HI CHARLIE,",
-                "CAN'T WAIT,\nMIA",
+                "I AM PLANNING A DAY TRIP TO WHITBY NEXT SATURDAY AND WAS WONDERING IF YOU WOULD LIKE TO COME ALONG FOR THE ADVENTURE.",
                 "SUBJECT: DAY TRIP TO THE SEASIDE - INTERESTED?",
-                "I AM PLANNING A DAY TRIP TO WHITBY NEXT SATURDAY AND WAS WONDERING IF YOU WOULD LIKE TO COME ALONG FOR THE ADVENTURE."
+                "CAN'T WAIT,\nMIA"
             ],
             "correctOrder": [
                 2,
                 0,
-                3,
-                1
+                1,
+                3
             ],
             "hint": "'HI CHARLIE' is a casual cousin greeting; 'CAN'T WAIT' is an enthusiastic, informal closing; the invitation details are in the body; the subject question creates excitement.",
             "explanation": "Casual trip invitations can use energetic closings like 'Can't wait!' which reflects genuine excitement. Adding the destination name ('Whitby') makes the invitation more concrete and appealing."
@@ -115,16 +115,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a colleague who is off sick wishing them a speedy recovery.",
             "options": [
-                "DEAR ANNA,",
                 "WARMLY,\nTHE ACCOUNTS TEAM",
                 "SUBJECT: GET WELL SOON - WE ARE THINKING OF YOU",
-                "WE ARE ALL SORRY TO HEAR YOU ARE UNWELL AND HOPE YOU MAKE A SPEEDY RECOVERY - PLEASE DON'T WORRY ABOUT WORK."
+                "WE ARE ALL SORRY TO HEAR YOU ARE UNWELL AND HOPE YOU MAKE A SPEEDY RECOVERY - PLEASE DON'T WORRY ABOUT WORK.",
+                "DEAR ANNA,"
             ],
             "correctOrder": [
-                2,
-                0,
+                1,
                 3,
-                1
+                2,
+                0
             ],
             "hint": "The caring message is in the subject; 'DEAR ANNA' is a warm professional greeting; reassurance and well-wishes are in the body; 'WARMLY' closes with genuine human warmth.",
             "explanation": "Signing off from a team ('The Accounts Team') is appropriate when writing on behalf of a group. Telling someone 'don't worry about work' removes a significant source of stress during illness."
@@ -136,16 +136,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email asking a community centre about when the photography club meets.",
             "options": [
-                "DEAR COMMUNITY CENTRE MANAGER,",
                 "KIND REGARDS,\nRAY HOLLOWAY",
                 "SUBJECT: QUESTION ABOUT THE PHOTOGRAPHY CLUB MEETING TIMES",
+                "DEAR COMMUNITY CENTRE MANAGER,",
                 "I AM INTERESTED IN JOINING THE PHOTOGRAPHY CLUB AND WOULD LIKE TO KNOW WHAT DAY AND TIME THE CLUB MEETS EACH WEEK."
             ],
             "correctOrder": [
+                1,
                 2,
-                0,
                 3,
-                1
+                0
             ],
             "hint": "The club and meeting times are in the subject; the manager is addressed formally; the question covers both day and time; 'KIND REGARDS' closes the public service enquiry.",
             "explanation": "Asking for both the day AND the time in one question is more efficient than two separate emails. 'Kind regards' is a universally safe and professional closing for public organisations."
@@ -158,15 +158,15 @@
             "prompt": "Write an email congratulating a friend who has been promoted at work.",
             "options": [
                 "DEAR JAMES,",
-                "BEST WISHES,\nFIONA",
                 "SUBJECT: MASSIVE CONGRATULATIONS ON YOUR PROMOTION!",
+                "BEST WISHES,\nFIONA",
                 "I WAS THRILLED TO HEAR ABOUT YOUR PROMOTION TO SENIOR MANAGER - YOU HAVE WORKED INCREDIBLY HARD AND EVERY BIT OF IT IS WELL DESERVED."
             ],
             "correctOrder": [
-                2,
+                1,
                 0,
                 3,
-                1
+                2
             ],
             "hint": "'DEAR JAMES' is the warm friendly greeting; the praise in the body is sincere and specific; 'BEST WISHES' closes; the enthusiastic subject sets the celebratory tone.",
             "explanation": "Using specific language like 'Senior Manager' shows you paid attention to the details of your friend's news. Saying it is 'well deserved' makes the congratulations feel personal rather than formulaic."
@@ -179,15 +179,15 @@
             "prompt": "Write an email to an online retailer requesting a refund for a damaged item.",
             "options": [
                 "DEAR CUSTOMER SERVICES,",
-                "YOURS FAITHFULLY,\nDAWN MITCHELL",
+                "I RECEIVED MY ORDER ON MONDAY AND UNFORTUNATELY THE ITEM WAS DAMAGED ON ARRIVAL - I WOULD LIKE TO REQUEST A FULL REFUND.",
                 "SUBJECT: REFUND REQUEST - DAMAGED ITEM ORDER #4821",
-                "I RECEIVED MY ORDER ON MONDAY AND UNFORTUNATELY THE ITEM WAS DAMAGED ON ARRIVAL - I WOULD LIKE TO REQUEST A FULL REFUND."
+                "YOURS FAITHFULLY,\nDAWN MITCHELL"
             ],
             "correctOrder": [
                 2,
                 0,
-                3,
-                1
+                1,
+                3
             ],
             "hint": "The order number in the subject helps customer services find your account immediately; 'DEAR CUSTOMER SERVICES' without a name requires 'YOURS FAITHFULLY'; the damage and request are in the body.",
             "explanation": "Including an order number in the subject line speeds up customer service responses enormously. When writing to an unknown recipient, 'Yours faithfully' is the correct formal closing in British English."
@@ -199,16 +199,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a friend thanking them for cooking a lovely meal.",
             "options": [
-                "DEAR LUCY,",
                 "WITH LOVE,\nSAM",
-                "SUBJECT: THANK YOU FOR THE MOST DELICIOUS DINNER",
-                "WHAT A WONDERFUL EVENING! THANK YOU SO MUCH FOR COOKING SUCH A DELICIOUS MEAL - THE PASTA WAS ABSOLUTELY OUTSTANDING."
+                "DEAR LUCY,",
+                "WHAT A WONDERFUL EVENING! THANK YOU SO MUCH FOR COOKING SUCH A DELICIOUS MEAL - THE PASTA WAS ABSOLUTELY OUTSTANDING.",
+                "SUBJECT: THANK YOU FOR THE MOST DELICIOUS DINNER"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                2,
+                0
             ],
             "hint": "'DEAR LUCY' opens warmly; 'WITH LOVE' closes affectionately between friends; the specific dish mentioned in the body makes the thanks genuine; the enthusiastic subject sets the tone.",
             "explanation": "Mentioning a specific dish you enjoyed ('the pasta') demonstrates that your praise is genuine, not just polite. Starting with 'What a wonderful evening!' creates an enthusiastic, personal opening."
@@ -221,15 +221,15 @@
             "prompt": "Write an email to a teacher asking for the holiday homework details.",
             "options": [
                 "DEAR MRS COOPER,",
+                "COULD YOU PLEASE REMIND ME OF THE HOLIDAY HOMEWORK THAT WAS SET IN TODAY'S LESSON, AS I AM WORRIED I WROTE IT DOWN INCORRECTLY?",
                 "YOURS SINCERELY,\nNATASHA BELL",
-                "SUBJECT: QUESTION ABOUT HOLIDAY HOMEWORK",
-                "COULD YOU PLEASE REMIND ME OF THE HOLIDAY HOMEWORK THAT WAS SET IN TODAY'S LESSON, AS I AM WORRIED I WROTE IT DOWN INCORRECTLY?"
+                "SUBJECT: QUESTION ABOUT HOLIDAY HOMEWORK"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                0,
+                1,
+                2
             ],
             "hint": "The homework topic is in the subject; 'DEAR MRS COOPER' addresses the teacher formally; the honest reason ('wrote it down incorrectly') is given in the body; 'YOURS SINCERELY' closes respectfully.",
             "explanation": "Being honest about why you are asking ('worried I wrote it down incorrectly') is more effective than just asking for the information. It shows self-awareness and responsibility."
@@ -241,14 +241,14 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write a first email to a pen pal abroad introducing yourself.",
             "options": [
-                "DEAR ASTRID,",
-                "BEST WISHES,\nLIAM",
                 "SUBJECT: GREETINGS FROM YOUR NEW PEN PAL IN SCOTLAND",
+                "BEST WISHES,\nLIAM",
+                "DEAR ASTRID,",
                 "MY NAME IS LIAM AND I LIVE IN EDINBURGH - I ENJOY FOOTBALL AND READING AND I LOOK FORWARD TO WRITING TO YOU REGULARLY."
             ],
             "correctOrder": [
-                2,
                 0,
+                2,
                 3,
                 1
             ],
@@ -262,15 +262,15 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email inviting your aunt to a birthday dinner.",
             "options": [
-                "DEAR AUNT PATRICIA,",
+                "I AM HAVING A SMALL BIRTHDAY DINNER ON FRIDAY THE 20TH AT 7 PM AND WOULD LOVE FOR YOU TO JOIN US.",
                 "WITH MUCH LOVE,\nEMILY",
                 "SUBJECT: INVITATION TO MY BIRTHDAY DINNER ON FRIDAY 20TH",
-                "I AM HAVING A SMALL BIRTHDAY DINNER ON FRIDAY THE 20TH AT 7 PM AND WOULD LOVE FOR YOU TO JOIN US."
+                "DEAR AUNT PATRICIA,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
+                0,
                 1
             ],
             "hint": "The occasion, date, and time go in the subject; 'DEAR AUNT PATRICIA' addresses family warmly; the key details are in the body; 'WITH MUCH LOVE' closes affectionately.",
@@ -283,19 +283,19 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a sports club asking about an upcoming event.",
             "options": [
+                "YOURS FAITHFULLY,\nTYLER JAMES",
                 "DEAR EVENTS COORDINATOR,",
-                "YOURS SINCERELY,\nTYLER JAMES",
                 "SUBJECT: QUESTION ABOUT THE HALF-MARATHON IN OCTOBER",
                 "I AM INTERESTED IN TAKING PART IN YOUR HALF-MARATHON IN OCTOBER AND WOULD LIKE TO KNOW HOW TO REGISTER AND WHAT THE ENTRY FEE IS."
             ],
             "correctOrder": [
                 2,
-                0,
+                1,
                 3,
-                1
+                0
             ],
-            "hint": "The event and month are in the subject; the correct role is addressed formally; the two key questions are in the body; 'YOURS SINCERELY' closes the formal sports club enquiry.",
-            "explanation": "Using the correct role title - 'Events Coordinator' - rather than just 'Team' shows you have paid attention to who handles registrations. Asking about how to register AND the fee covers the two most important questions together."
+            "hint": "The event and month are in the subject; 'EVENTS COORDINATOR' names a role, not a person; the two key questions are in the body; the closing must match an unnamed greeting.",
+            "explanation": "Addressing someone by their job title, like 'Events Coordinator', is more precise than 'Team', but it still isn't their name - so 'Yours faithfully' is the correct closing, not 'Yours sincerely'."
         },
         {
             "id": "WRT_WRITINGEMAIL_L15_Q3",
@@ -304,16 +304,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email thanking a neighbour for helping you move house.",
             "options": [
-                "DEAR RICHARD AND HELEN,",
                 "WITH WARMEST THANKS,\nTHE MURPHY FAMILY",
                 "SUBJECT: THANK YOU SO MUCH FOR HELPING US MOVE",
-                "WE ARE SO GRATEFUL FOR ALL THE HELP YOU GAVE US WITH OUR MOVE LAST WEEKEND - WE COULD NOT HAVE DONE IT WITHOUT YOU."
+                "WE ARE SO GRATEFUL FOR ALL THE HELP YOU GAVE US WITH OUR MOVE LAST WEEKEND - WE COULD NOT HAVE DONE IT WITHOUT YOU.",
+                "DEAR RICHARD AND HELEN,"
             ],
             "correctOrder": [
-                2,
-                0,
+                1,
                 3,
-                1
+                2,
+                0
             ],
             "hint": "'DEAR RICHARD AND HELEN' addresses both people; 'WITH WARMEST THANKS' expresses deep gratitude in the closing; the specific help and sentiment form the body.",
             "explanation": "'With warmest thanks' is a closing specifically suited to expressing deep gratitude. Signing as a family ('The Murphy Family') is natural when the help was given to the whole household."
@@ -325,16 +325,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a cinema asking about a specific film screening.",
             "options": [
+                "SUBJECT: QUESTION ABOUT SHOWINGS OF THE NEW SCIENCE DOCUMENTARY",
                 "DEAR CINEMA OFFICE,",
                 "MANY THANKS,\nROBERT GRAY",
-                "SUBJECT: QUESTION ABOUT SHOWINGS OF THE NEW SCIENCE DOCUMENTARY",
                 "PLEASE COULD YOU LET ME KNOW WHEN THE NEW SCIENCE DOCUMENTARY IS BEING SHOWN AND WHETHER IT IS SUBTITLED?"
             ],
             "correctOrder": [
-                2,
                 0,
+                1,
                 3,
-                1
+                2
             ],
             "hint": "The film type is in the subject; the office is addressed simply; two practical questions are asked in the body; 'MANY THANKS' closes the routine customer enquiry.",
             "explanation": "'Please could you let me know' is a polite, standard phrase in British English customer enquiries. Asking about subtitles alongside screening times is considerate for those who need them."
@@ -347,15 +347,15 @@
             "prompt": "Write an apology email for missing a friend's birthday dinner.",
             "options": [
                 "DEAR NINA,",
-                "WITH APOLOGIES AND LOVE,\nCHRIS",
+                "I AM REALLY SORRY FOR MISSING YOUR BIRTHDAY DINNER LAST NIGHT - MY CAR BROKE DOWN AND I WAS STUCK WAITING FOR RECOVERY.",
                 "SUBJECT: I AM SO SORRY I MISSED YOUR BIRTHDAY DINNER",
-                "I AM REALLY SORRY FOR MISSING YOUR BIRTHDAY DINNER LAST NIGHT - MY CAR BROKE DOWN AND I WAS STUCK WAITING FOR RECOVERY."
+                "WITH APOLOGIES AND LOVE,\nCHRIS"
             ],
             "correctOrder": [
                 2,
                 0,
-                3,
-                1
+                1,
+                3
             ],
             "hint": "The apology is in the subject; 'DEAR NINA' opens warmly but seriously; the reason for absence is explained in the body; the combined closing shows both apology and affection.",
             "explanation": "A good apology email includes a clear reason (not just an excuse) and shows genuine regret. The closing 'With apologies and love' cleverly combines the apologetic tone with the warmth appropriate between close friends."
@@ -367,16 +367,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email congratulating a younger relative on a great exam result.",
             "options": [
-                "DEAR THEO,",
                 "SO MUCH LOVE,\nAUNT CLAIRE",
+                "WE ARE SO INCREDIBLY PROUD OF YOUR EXAM RESULTS - ALL THAT HARD WORK AND REVISION YOU PUT IN HAS CLEARLY PAID OFF.",
                 "SUBJECT: CONGRATULATIONS ON YOUR BRILLIANT EXAM RESULTS!",
-                "WE ARE SO INCREDIBLY PROUD OF YOUR EXAM RESULTS - ALL THAT HARD WORK AND REVISION YOU PUT IN HAS CLEARLY PAID OFF."
+                "DEAR THEO,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
-                1
+                1,
+                0
             ],
             "hint": "'DEAR THEO' addresses the young relative warmly; 'SO MUCH LOVE' is an affectionate family closing; specific acknowledgement of hard work makes the praise meaningful.",
             "explanation": "Acknowledging the effort behind the results ('all that hard work and revision') is more meaningful than just praising the grades. Family closings like 'So much love' are perfectly appropriate from an aunt to a nephew or niece."
@@ -388,19 +388,19 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a tourist information centre asking about local attractions.",
             "options": [
-                "DEAR TOURIST INFORMATION CENTRE,",
-                "YOURS SINCERELY,\nMARTINA BANKS",
                 "SUBJECT: REQUEST FOR INFORMATION ABOUT LOCAL ATTRACTIONS",
+                "KIND REGARDS,\nMARTINA BANKS",
+                "DEAR TOURIST INFORMATION CENTRE,",
                 "I AM VISITING YOUR TOWN NEXT MONTH WITH MY FAMILY AND WOULD LOVE TO RECEIVE A LIST OF YOUR RECOMMENDED LOCAL ATTRACTIONS AND EVENTS."
             ],
             "correctOrder": [
-                2,
                 0,
+                2,
                 3,
                 1
             ],
-            "hint": "The visit purpose is in the subject; the centre is formally addressed; the request is clear in the body; 'YOURS SINCERELY' closes the visitor enquiry.",
-            "explanation": "Mentioning that you are travelling with family helps the tourist office tailor their recommendations. A formal but friendly tone is appropriate when writing to a public information service."
+            "hint": "The visit purpose is in the subject; the centre is addressed by role, not name; the request is in the body; 'KIND REGARDS' closes in a friendly, approachable way.",
+            "explanation": "A public information service like a tourist office responds well to a friendly 'Kind regards', which suits an unnamed recipient better than 'Yours sincerely'. Mentioning that you're travelling with family helps them tailor their recommendations."
         },
         {
             "id": "WRT_WRITINGEMAIL_L17_Q2",
@@ -411,13 +411,13 @@
             "options": [
                 "DEAR SOPHIE,",
                 "LOVE FROM,\nNIAMH",
-                "SUBJECT: THANK YOU FOR LENDING ME THE NOVEL",
-                "I FINISHED THE BOOK YOU LENT ME AND I ABSOLUTELY LOVED IT - THANK YOU SO MUCH, I WILL BRING IT BACK THIS WEEK."
+                "I FINISHED THE BOOK YOU LENT ME AND I ABSOLUTELY LOVED IT - THANK YOU SO MUCH, I WILL BRING IT BACK THIS WEEK.",
+                "SUBJECT: THANK YOU FOR LENDING ME THE NOVEL"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
+                0,
+                2,
                 1
             ],
             "hint": "'DEAR SOPHIE' opens the friendly email; 'LOVE FROM' closes casually between friends; the response to the book and the promise to return it form the body.",
@@ -430,19 +430,19 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a gym asking about fitness classes for beginners.",
             "options": [
-                "DEAR PERSONAL TRAINING TEAM,",
-                "YOURS SINCERELY,\nDOMINIC WALSH",
                 "SUBJECT: ENQUIRY ABOUT BEGINNER FITNESS CLASSES",
-                "I AM NEW TO EXERCISE AND WOULD LIKE TO KNOW WHAT FITNESS CLASSES YOU RUN FOR BEGINNERS AND HOW I CAN BOOK A PLACE."
+                "I AM NEW TO EXERCISE AND WOULD LIKE TO KNOW WHAT FITNESS CLASSES YOU RUN FOR BEGINNERS AND HOW I CAN BOOK A PLACE.",
+                "BEST REGARDS,\nDOMINIC WALSH",
+                "DEAR PERSONAL TRAINING TEAM,"
             ],
             "correctOrder": [
-                2,
                 0,
                 3,
-                1
+                1,
+                2
             ],
-            "hint": "The target audience (beginners) is in the subject; the right team is addressed; two practical questions are asked; 'YOURS SINCERELY' closes the health-related enquiry.",
-            "explanation": "Describing yourself as 'new to exercise' immediately tells the fitness team what level of class to recommend. Asking both what is available AND how to book means you can act on the answer straight away."
+            "hint": "The target audience (beginners) is in the subject; the team is addressed by role, not name; two practical questions are in the body; 'BEST REGARDS' closes warmly and professionally.",
+            "explanation": "Describing yourself as 'new to exercise' immediately tells the fitness team what level to recommend. 'Best regards' is a warm, modern closing that doesn't wrongly assume you know a specific person's name."
         },
         {
             "id": "WRT_WRITINGEMAIL_L18_Q1",
@@ -451,16 +451,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a friend inviting them to watch a film at your house.",
             "options": [
-                "HI JAKE,",
-                "SEE YOU THEN, HOPEFULLY!\nCALLUM",
                 "SUBJECT: FILM NIGHT AT MINE - ARE YOU FREE FRIDAY?",
-                "I AM HAVING A FILM NIGHT AT MY PLACE ON FRIDAY - WOULD YOU LIKE TO COME OVER AT ABOUT 7 PM?"
+                "HI JAKE,",
+                "I AM HAVING A FILM NIGHT AT MY PLACE ON FRIDAY - WOULD YOU LIKE TO COME OVER AT ABOUT 7 PM?",
+                "SEE YOU THEN, HOPEFULLY!\nCALLUM"
             ],
             "correctOrder": [
-                2,
                 0,
-                3,
-                1
+                1,
+                2,
+                3
             ],
             "hint": "'HI JAKE' is the casual friendly opening; the playful closing reflects the informal invitation; the simple plan is in the body; the casual subject sets the fun tone.",
             "explanation": "Informal emails to friends can use highly casual language throughout. A subject like 'Film night at mine' gets the message across immediately. 'See you then, hopefully!' adds a light, cheerful tone."
@@ -472,16 +472,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to the local council asking about recycling services.",
             "options": [
-                "DEAR WASTE MANAGEMENT SERVICES,",
                 "KIND REGARDS,\nSANDRA PRICE",
                 "SUBJECT: QUESTION ABOUT RECYCLING COLLECTION IN MY AREA",
+                "DEAR WASTE MANAGEMENT SERVICES,",
                 "I WOULD LIKE TO KNOW WHICH DAYS RECYCLING IS COLLECTED IN MY STREET AND WHETHER GLASS CAN BE INCLUDED IN THE KERBSIDE BOX."
             ],
             "correctOrder": [
+                1,
                 2,
-                0,
                 3,
-                1
+                0
             ],
             "hint": "The recycling topic is in the subject; the correct service department is addressed; two specific practical questions are in the body; 'KIND REGARDS' closes the public service enquiry.",
             "explanation": "Addressing the specific department ('Waste Management Services') rather than 'the Council' in general ensures your email reaches the right team faster. Two specific questions are more helpful than a vague enquiry."
@@ -493,16 +493,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write a thank-you email for receiving a gift voucher.",
             "options": [
+                "THANK YOU SO MUCH FOR THE GIFT VOUCHER - I AM GOING TO USE IT TO BUY A NEW BOOK I HAVE HAD MY EYE ON FOR A WHILE.",
                 "DEAR UNCLE PAUL,",
-                "WITH LOVE,\nELLA",
                 "SUBJECT: THANK YOU FOR THE GIFT VOUCHER",
-                "THANK YOU SO MUCH FOR THE GIFT VOUCHER - I AM GOING TO USE IT TO BUY A NEW BOOK I HAVE HAD MY EYE ON FOR A WHILE."
+                "WITH LOVE,\nELLA"
             ],
             "correctOrder": [
                 2,
+                1,
                 0,
-                3,
-                1
+                3
             ],
             "hint": "'DEAR UNCLE PAUL' opens warmly for a family member; 'WITH LOVE' closes affectionately; the plan to use the voucher shows thoughtfulness in the body.",
             "explanation": "Telling the gift giver how you plan to use a voucher ('a new book I have had my eye on') makes the thank-you feel personalised rather than a generic response. It also shows that the gift will be put to good use."
@@ -514,19 +514,19 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a council asking about volunteering opportunities.",
             "options": [
-                "DEAR COMMUNITY SERVICES TEAM,",
-                "YOURS SINCERELY,\nBRENDA HAYES",
+                "YOURS FAITHFULLY,\nBRENDA HAYES",
                 "SUBJECT: INTEREST IN VOLUNTEERING WITH THE COUNCIL",
+                "DEAR COMMUNITY SERVICES TEAM,",
                 "I AM AN ADULT LOOKING TO GIVE SOMETHING BACK TO MY COMMUNITY AND WOULD LIKE TO KNOW WHAT VOLUNTEERING ROLES YOU CURRENTLY HAVE AVAILABLE."
             ],
             "correctOrder": [
+                1,
                 2,
-                0,
                 3,
-                1
+                0
             ],
-            "hint": "The purpose (volunteering) and context are in the subject; the team is addressed formally; the motivation and question form the body; 'YOURS SINCERELY' closes the civic enquiry.",
-            "explanation": "Explaining your motivation ('give something back to my community') before asking for information helps the reader understand your commitment and may result in a more helpful response."
+            "hint": "The purpose (volunteering) is in the subject; 'COMMUNITY SERVICES TEAM' names a team, not a person; the motivation and question form the body; the closing must match this unnamed greeting.",
+            "explanation": "Because the email is addressed to a team rather than a named individual, 'Yours faithfully' is the grammatically correct closing here, not 'Yours sincerely'. Explaining your motivation upfront often results in a more helpful reply."
         },
         {
             "id": "WRT_WRITINGEMAIL_L19_Q2",
@@ -535,16 +535,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email congratulating a friend on the birth of a new baby.",
             "options": [
-                "DEAR KATE AND TOM,",
-                "WITH LOVE AND BEST WISHES,\nTHE GRIFFITHS FAMILY",
                 "SUBJECT: CONGRATULATIONS ON THE ARRIVAL OF YOUR BABY!",
-                "WE WERE OVERJOYED TO HEAR THE WONDERFUL NEWS OF YOUR NEW BABY'S ARRIVAL - CONGRATULATIONS TO YOU BOTH, YOU WILL BE AMAZING PARENTS."
+                "WE WERE OVERJOYED TO HEAR THE WONDERFUL NEWS OF YOUR NEW BABY'S ARRIVAL - CONGRATULATIONS TO YOU BOTH, YOU WILL BE AMAZING PARENTS.",
+                "DEAR KATE AND TOM,",
+                "WITH LOVE AND BEST WISHES,\nTHE GRIFFITHS FAMILY"
             ],
             "correctOrder": [
-                2,
                 0,
-                3,
-                1
+                2,
+                1,
+                3
             ],
             "hint": "Both parents are addressed; the combined closing 'With love and best wishes' suits a very special occasion; the heartfelt message is in the body; the joyful subject sets the tone.",
             "explanation": "Writing to both parents as a couple ('Kate and Tom') and signing as a whole family creates a sense of shared celebration. 'With love and best wishes' combines warmth with good wishes for the future."
@@ -556,16 +556,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a council asking about parking permits in a residential area.",
             "options": [
-                "DEAR PARKING SERVICES TEAM,",
-                "KIND REGARDS,\nIAN ROSS",
                 "SUBJECT: ENQUIRY ABOUT RESIDENT PARKING PERMITS",
-                "I HAVE RECENTLY MOVED TO MAPLE AVENUE AND WOULD LIKE TO KNOW HOW TO APPLY FOR A RESIDENT PARKING PERMIT FOR MY VEHICLE."
+                "I HAVE RECENTLY MOVED TO MAPLE AVENUE AND WOULD LIKE TO KNOW HOW TO APPLY FOR A RESIDENT PARKING PERMIT FOR MY VEHICLE.",
+                "KIND REGARDS,\nIAN ROSS",
+                "DEAR PARKING SERVICES TEAM,"
             ],
             "correctOrder": [
-                2,
                 0,
                 3,
-                1
+                1,
+                2
             ],
             "hint": "The permit topic and area type are in the subject; the relevant team is addressed; the reason for enquiring and the question are in the body; 'KIND REGARDS' closes the local authority enquiry.",
             "explanation": "Mentioning that you recently moved explains why you need the information now rather than before. 'Kind regards' is ideal for functional administrative enquiries like parking permits."
@@ -577,15 +577,15 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write a goodbye email to colleagues on your last day at a company.",
             "options": [
-                "DEAR TEAM,",
-                "WITH WARMEST WISHES FOR YOUR FUTURE,\nAMY ROBERTS",
                 "SUBJECT: MY LAST DAY - THANK YOU ALL SO MUCH",
-                "TODAY IS MY FINAL DAY AT THE COMPANY AND I WANT TO THANK EACH OF YOU FOR THE MEMORIES, LAUGHS, AND SUPPORT OVER THE YEARS."
+                "WITH WARMEST WISHES FOR YOUR FUTURE,\nAMY ROBERTS",
+                "TODAY IS MY FINAL DAY AT THE COMPANY AND I WANT TO THANK EACH OF YOU FOR THE MEMORIES, LAUGHS, AND SUPPORT OVER THE YEARS.",
+                "DEAR TEAM,"
             ],
             "correctOrder": [
-                2,
                 0,
                 3,
+                2,
                 1
             ],
             "hint": "'DEAR TEAM' addresses the group; the personal thanks are in the body; the warm and slightly formal closing suits a professional farewell; the subject signals this is a goodbye.",
@@ -598,16 +598,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a local events website asking about upcoming activities.",
             "options": [
-                "DEAR EVENTS WEBSITE TEAM,",
                 "MANY THANKS,\nVICKY SPENCER",
                 "SUBJECT: QUESTION ABOUT UPCOMING EVENTS IN THE LOCAL AREA",
-                "I HAVE JUST MOVED TO THE AREA AND WOULD LOVE TO KNOW ABOUT ANY UPCOMING COMMUNITY EVENTS, MARKETS, OR ACTIVITIES HAPPENING NEARBY."
+                "I HAVE JUST MOVED TO THE AREA AND WOULD LOVE TO KNOW ABOUT ANY UPCOMING COMMUNITY EVENTS, MARKETS, OR ACTIVITIES HAPPENING NEARBY.",
+                "DEAR EVENTS WEBSITE TEAM,"
             ],
             "correctOrder": [
-                2,
-                0,
+                1,
                 3,
-                1
+                2,
+                0
             ],
             "hint": "The general purpose is in the subject; the team is addressed simply; the reason for asking and type of event sought are in the body; 'MANY THANKS' closes the community enquiry.",
             "explanation": "Explaining you have just moved justifies why you are asking about local events. Listing the types of events you are interested in ('markets, activities') helps the team give you a more tailored response."
@@ -619,16 +619,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email thanking someone who provided a reference for a job application.",
             "options": [
-                "DEAR DR HAMMOND,",
                 "YOURS SINCERELY,\nGEORGIA BLAKE",
-                "SUBJECT: THANK YOU FOR PROVIDING MY REFERENCE",
-                "I WANTED TO THANK YOU SINCERELY FOR AGREEING TO ACT AS MY REFERENCE - I AM DELIGHTED TO LET YOU KNOW THAT I HAVE BEEN OFFERED THE JOB."
+                "I WANTED TO THANK YOU SINCERELY FOR AGREEING TO ACT AS MY REFERENCE - I AM DELIGHTED TO LET YOU KNOW THAT I HAVE BEEN OFFERED THE JOB.",
+                "DEAR DR HAMMOND,",
+                "SUBJECT: THANK YOU FOR PROVIDING MY REFERENCE"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                2,
+                1,
+                0
             ],
             "hint": "'DEAR DR HAMMOND' uses the formal professional title; sharing the good news in the body makes the thanks more meaningful; 'YOURS SINCERELY' closes the professional correspondence.",
             "explanation": "A reference thank-you email becomes much more powerful when you share the outcome ('I have been offered the job'). It lets your referee know their support made a difference. Always use the person's title when they are a doctor or professor."

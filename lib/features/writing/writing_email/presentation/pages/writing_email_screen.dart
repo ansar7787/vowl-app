@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
@@ -138,7 +139,9 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
         final slotsFilled = _slots.values.every((v) => v != null);
         final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
         final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
-        final bool isFinalFailure = isLoaded ? state.isFinalFailure : false;
+        
+        final lives = state.livesRemaining;
+        final bool isFinalFailure = isLoaded ? state.isFinalFailure : (lives == 0);
 
         return WritingBaseLayout(
           gameType: widget.gameType,
@@ -149,9 +152,11 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
           showConfetti: _showConfetti,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : SingleChildScrollView(
+          child: (state is WritingLoading || _lastQuest == null)
+              ? GameShimmerLoading(primaryColor: theme.primaryColor)
+              : quest == null
+                  ? const SizedBox.shrink()
+                  : SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 24.w),

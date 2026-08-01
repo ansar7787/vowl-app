@@ -8,180 +8,180 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a Supreme Court registry submitting a constitutional challenge to an emergency powers act.",
+            "prompt": "Write a masterfully tactful email delivering disappointing news to someone who has been extremely generous to you.",
             "options": [
-                "NEXUS LAW FILES A CLAIM ASSERTING THAT SECTIONS 14-17 OF THE EMERGENCY POWERS ACT 2024 ARE INCOMPATIBLE WITH ARTICLES 5, 8, AND 10 OF THE EUROPEAN CONVENTION ON HUMAN RIGHTS.",
-                "DEAR SUPREME COURT REGISTRY,",
-                "YOURS SINCERELY,\nLEAD CONSTITUTIONAL COUNSEL, NEXUS LAW",
-                "SUBJECT: CONSTITUTIONAL CHALLENGE - EMERGENCY POWERS ACT 2024 INCOMPATIBILITY WITH HUMAN RIGHTS ACT"
+                "AFTER EVERYTHING YOU HAVE DONE TO SUPPORT MY STUDIES, IT PAINS ME TO TELL YOU THAT I HAVE DECIDED NOT TO PURSUE MEDICINE AFTER ALL - NOT BECAUSE OF ANYTHING LACKING IN YOUR SUPPORT, BUT BECAUSE I HAVE DISCOVERED A DIFFERENT PATH THAT FEELS TRULY MINE, AND I HOPE YOU CAN SHARE IN MY EXCITEMENT FOR IT.",
+                "WITH ENDLESS GRATITUDE FOR YOUR BELIEF IN ME,\nMARGARET OKONJO",
+                "DEAR MRS FAIRWEATHER,",
+                "SUBJECT: SOMETHING DIFFICULT I NEED TO TELL YOU, WITH ONLY GRATITUDE"
             ],
             "correctOrder": [
                 3,
-                1,
+                2,
                 0,
-                2
+                1
             ],
-            "hint": "Act sections and HRA incompatibility are in the subject. Claim filing, specific sections challenged (14-17), and three ECHR articles are in the body - a formal constitutional challenge.",
-            "explanation": "UK courts issue Declarations of Incompatibility under the Human Rights Act 1998 when legislation conflicts with the European Convention. Three Articles - 5 (liberty), 8 (privacy), and 10 (expression) - identify the fundamental rights the emergency powers allegedly violate."
+            "hint": "Gratitude is woven directly into the difficult subject; the generous benefactor is addressed formally by name; genuine appreciation, honest news, and reassurance are carefully balanced in the body; the closing conveys lasting gratitude.",
+            "explanation": "Leading with 'it pains me' before the news itself shows the weight given to the relationship, not just the decision. Explicitly ruling out 'anything lacking in your support' as the cause protects the benefactor from feeling their generosity was wasted, which is the single most important reassurance in this kind of message."
         },
         {
             "id": "WRT_WRITINGEMAIL_L181_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a government minister requesting emergency legislative reform following a constitutional ruling.",
+            "prompt": "Write an exceptionally nuanced email giving honest feedback that you know will be difficult for the recipient to hear.",
             "options": [
-                "FOLLOWING THE SUPREME COURT'S DECLARATION OF INCOMPATIBILITY REGARDING SECTIONS 14-17 OF THE EMERGENCY POWERS ACT 2024, WE FORMALLY REQUEST EXPEDITED REMEDIAL ORDER PROCEEDINGS TO CURE THE INCOMPATIBILITY.",
-                "YOURS SINCERELY,\nLEAD CONSTITUTIONAL COUNSEL, NEXUS LAW",
-                "DEAR SECRETARY OF STATE,",
-                "SUBJECT: LEGISLATIVE REFORM REQUEST - SUPREME COURT DECLARATION OF INCOMPATIBILITY"
+                "DEAR DANIEL,",
+                "WITH RESPECT FOR YOUR AMBITION,\nDESMOND ATKINSON",
+                "SUBJECT: THE HONEST FEEDBACK YOU ASKED FOR",
+                "YOU ASKED ME TO BE HONEST, SO I WILL BE: THE BUSINESS PLAN IS WELL-RESEARCHED, BUT I DON'T THINK IT ACCOUNTS FOR HOW MUCH CAPITAL YOU WOULD NEED BEFORE BREAKING EVEN, AND I WOULD RATHER TELL YOU THIS NOW, WHEN YOU CAN STILL ADJUST, THAN STAY QUIET AND WATCH YOU DISCOVER IT THE HARD WAY."
             ],
             "correctOrder": [
-                3,
                 2,
                 0,
+                3,
                 1
             ],
-            "hint": "Reform type and court ruling are in the subject. Declaration of incompatibility, specific sections, and remedial order request are in the body - the correct legislative response process.",
-            "explanation": "A Remedial Order under the Human Rights Act allows the government to amend incompatible legislation quickly - faster than a full Parliamentary Bill. Requesting 'expedited' proceedings acknowledges that fundamental rights violations require urgent remedy."
+            "hint": "Honesty is signalled directly in the subject; the friend is addressed by first name; a genuine strength, the specific concern, and the reasoning for speaking up now are in the body; the closing conveys real respect.",
+            "explanation": "Referencing that honesty was explicitly requested ('you asked me to be honest') gives you permission to be direct without seeming harsh. Explaining why you're raising it now - 'when you can still adjust' - reframes potentially painful feedback as an act of genuine care rather than criticism for its own sake."
         },
         {
             "id": "WRT_WRITINGEMAIL_L181_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to the UN Human Rights Committee petitioning for review of a constitutional rights violation.",
+            "prompt": "Write a masterful email taking complete ownership of a significant breach of trust you caused, and beginning to repair it.",
             "options": [
-                "YOURS SINCERELY,\nINTERNATIONAL HUMAN RIGHTS COUNSEL, NEXUS LAW",
-                "PURSUANT TO THE OPTIONAL PROTOCOL TO THE ICCPR, NEXUS LAW SUBMITS AN INDIVIDUAL COMMUNICATION ON BEHALF OF MR JAMES MORGAN ALLEGING VIOLATIONS OF ARTICLES 9, 14, AND 17 OF THE ICCPR BY THE UK.",
-                "SUBJECT: INDIVIDUAL COMMUNICATION - OPTIONAL PROTOCOL TO ICCPR - HRC PETITION",
-                "DEAR HUMAN RIGHTS COMMITTEE SECRETARIAT,"
+                "I SHOULD HAVE TOLD YOU DIRECTLY THAT I DISAGREED WITH THE DECISION INSTEAD OF VOICING IT TO OTHERS FIRST, AND I UNDERSTAND WHY THAT FEELS LIKE A BETRAYAL - I AM NOT ASKING YOU TO FORGIVE ME RIGHT AWAY, ONLY TO KNOW THAT I UNDERSTAND EXACTLY WHAT I DID WRONG AND WHY IT MATTERS.",
+                "SUBJECT: I BROKE YOUR TRUST, AND I OWE YOU A FULL EXPLANATION",
+                "DEAR PRIYA,",
+                "WITH DEEP REGRET AND RESPECT,\nFIONA MACLEOD"
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
-                0
+                2,
+                0,
+                3
             ],
-            "hint": "Protocol type and committee are in the subject. Protocol basis, individual communication type, claimant, three ICCPR articles violated, and respondent state are in the body.",
-            "explanation": "The Optional Protocol to the ICCPR allows individuals to petition the UN Human Rights Committee after exhausting domestic remedies. Three articles - 9 (liberty), 14 (fair trial), and 17 (privacy) - mirror the ECHR violations, creating a parallel international law claim."
+            "hint": "Full ownership is signalled directly in the subject; the person hurt is addressed by first name; a precise account of the wrongdoing and genuine understanding of its impact are in the body; the closing conveys deep, sincere regret.",
+            "explanation": "Describing precisely what should have happened instead - 'told you directly... instead of voicing it to others first' - shows genuine understanding of the specific harm caused, not a vague apology. Explicitly not asking for immediate forgiveness respects that trust takes time to rebuild and cannot be demanded."
         },
         {
             "id": "WRT_WRITINGEMAIL_L182_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a military prosecutor presenting evidence in an international humanitarian law case.",
+            "prompt": "Write an eloquent, expertly persuasive email convincing a hesitant group to take a bold but necessary risk.",
             "options": [
-                "WE SUBMIT EVIDENCE FOR REVIEW OF THE TARGETING DECISION OF 14 NOVEMBER - THE ATTACK ON THE IDENTIFIED STRUCTURE MUST BE ASSESSED AGAINST THE IHL PROPORTIONALITY PRINCIPLE UNDER AP I ARTICLE 51(5)(b).",
-                "DEAR MILITARY PROSECUTOR,",
-                "YOURS SINCERELY,\nINTERNATIONAL HUMANITARIAN LAW COUNSEL",
-                "SUBJECT: IHL EVIDENCE SUBMISSION - TARGETING DECISION REVIEW - INCIDENT REPORT 14/NOV"
+                "DEAR TRUSTEES,",
+                "WITH CONVICTION FOR OUR FUTURE,\nTARIQ HUSSAIN",
+                "I UNDERSTAND THE INSTINCT TO PLAY IT SAFE WITH OUR RESERVES, BUT EVERY YEAR WE DELAY INVESTING IN DIGITAL SERVICES, WE FALL FURTHER BEHIND THE COMMUNITIES WE EXIST TO SERVE, SO I BELIEVE THE TRUE RISK LIES NOT IN ACTING, BUT IN THE SLOW, QUIET DECLINE OF DOING NOTHING AT ALL.",
+                "SUBJECT: WHY STANDING STILL IS THE RISKIEST OPTION OF ALL"
             ],
             "correctOrder": [
                 3,
-                1,
                 0,
-                2
+                2,
+                1
             ],
-            "hint": "IHL principle and article are in the subject. Evidence submission, targeting decision date, assessed location, and specific API proportionality article are in the body.",
-            "explanation": "Additional Protocol I Article 51(5)(b) prohibits attacks 'which may be expected to cause incidental loss of civilian life… which would be excessive in relation to the concrete and direct military advantage'. This is the primary IHL targeting rule for proportionality assessment."
+            "hint": "A reframing challenge is posed directly in the subject; the trustees are addressed together; genuine acknowledgement of caution and a compelling reversal of the risk argument are in the body; the closing conveys deep conviction.",
+            "explanation": "Acknowledging the 'instinct to play it safe' respectfully before challenging it shows the argument understands, rather than dismisses, the audience's caution. Reframing inaction itself as the true risk - 'slow, quiet decline' - is a masterful rhetorical move that shifts the entire frame of the decision."
         },
         {
             "id": "WRT_WRITINGEMAIL_L182_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to the International Criminal Court submitting a referral for war crimes investigation.",
+            "prompt": "Write a masterful email reframing a significant setback as a valuable turning point for stakeholders.",
             "options": [
-                "THE STATE PARTY REFERS THE SITUATION OF MERIDIA TO THE PROSECUTOR UNDER ARTICLE 14 OF THE ROME STATUTE, ALLEGING SYSTEMATIC ATTACKS ON CIVILIAN INFRASTRUCTURE CONSTITUTING WAR CRIMES UNDER ARTICLE 8(2)(a).",
-                "YOURS SINCERELY,\nMINISTER OF FOREIGN AFFAIRS",
-                "DEAR OFFICE OF THE PROSECUTOR,",
-                "SUBJECT: ICC REFERRAL - ARTICLE 14 ROME STATUTE - WAR CRIMES: CIVILIAN TARGETING"
+                "DEAR INVESTORS,",
+                "WITH GENUINE CONFIDENCE IN WHAT COMES NEXT,\nCELESTE DUBOIS",
+                "SUBJECT: WHAT THIS SETBACK HAS TAUGHT US, AND WHY I'M MORE CONFIDENT, NOT LESS",
+                "LOSING OUR LARGEST CLIENT WAS PAINFUL, BUT IT FORCED US TO DISCOVER THAT OUR SMALLER CLIENTS ARE FAR MORE PROFITABLE PER HOUR OF WORK, AND WE ARE NOW REBUILDING AROUND THAT INSIGHT WITH A CLEARER, STRONGER BUSINESS THAN THE ONE WE HAD BEFORE THIS HAPPENED."
             ],
             "correctOrder": [
-                3,
                 2,
                 0,
+                3,
                 1
             ],
-            "hint": "Referral basis and alleged crime are in the subject. State party referral mechanism, Rome Statute articles (14 and 8(2)(a)), and systematic civilian infrastructure attacks are in the body.",
-            "explanation": "Article 14 State Party Referrals are one of three ICC trigger mechanisms. Article 8(2)(a) Rome Statute defines war crimes - 'willful killing, torture, extensive destruction of civilian property'. Specifying both the referral article and the substantive crime article gives the Prosecutor the legal basis to investigate."
+            "hint": "A confident reframing is signalled in the subject; investors are addressed together; honest acknowledgement of pain and a genuine, evidence-based silver lining are in the body; the closing conveys real confidence.",
+            "explanation": "Admitting the setback 'was painful' before reframing it keeps the message credible rather than dismissively upbeat. Grounding the positive reframe in a specific, discovered insight - smaller clients being 'more profitable per hour' - makes the confidence feel earned rather than merely optimistic spin."
         },
         {
             "id": "WRT_WRITINGEMAIL_L182_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a UN Security Council requesting peace-keeping intervention authorisation.",
+            "prompt": "Write an expertly crafted email inspiring genuine, lasting commitment to a cause from previously lukewarm supporters.",
             "options": [
-                "YOURS SINCERELY,\nMINISTER OF FOREIGN AFFAIRS",
-                "THE STATE PARTY FORMALLY REQUESTS THE SECURITY COUNCIL TO ADOPT A RESOLUTION UNDER CHAPTER VII OF THE UN CHARTER AUTHORISING A MULTILATERAL PEACE-KEEPING OPERATION IN MERIDIA TO PROTECT CIVILIANS.",
-                "SUBJECT: UNSC RESOLUTION REQUEST - CHAPTER VII AUTHORISATION: MERIDIA HUMANITARIAN CRISIS",
-                "DEAR SECURITY COUNCIL PRESIDENCY,"
+                "DEAR SUPPORTERS,",
+                "SUBJECT: WHAT I THINK YOU'VE BEEN WAITING FOR, WITHOUT REALISING IT",
+                "WITH HOPE FOR A DEEPER PARTNERSHIP,\nKWABENA MENSAH",
+                "I SUSPECT MANY OF YOU HAVE DONATED OUT OF POLITENESS RATHER THAN CONVICTION, AND I DON'T BLAME YOU - WE HAVEN'T ALWAYS MADE OUR IMPACT CLEAR - SO LET ME SHOW YOU EXACTLY WHAT YOUR PAST SUPPORT HAS ACHIEVED, IN THE HOPE THAT YOU'LL WANT TO BE PART OF WHAT COMES NEXT FOR THE RIGHT REASONS."
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
-                0
+                0,
+                3,
+                2
             ],
-            "hint": "Chapter VII and humanitarian basis are in the subject. Formal request, UNSC resolution, Chapter VII authority, and civilian protection mandate are in the body.",
-            "explanation": "Chapter VII of the UN Charter authorises the Security Council to mandate enforcement actions - including military intervention - to address threats to peace. 'Civilian protection' as the mandate purpose triggers the Responsibility to Protect doctrine, which requires five P3 members' consent."
+            "hint": "A disarmingly honest observation opens the subject; supporters are addressed together; genuine self-awareness and an invitation to reconsider for authentic reasons are in the body; the closing conveys hope for real partnership.",
+            "explanation": "Naming the uncomfortable truth - donations 'out of politeness rather than conviction' - with genuine self-awareness disarms scepticism far more effectively than an enthusiastic appeal would. Taking responsibility for not making impact clear, rather than blaming supporters for lukewarm interest, is a sophisticated persuasive move that builds trust before making the actual case."
         },
         {
             "id": "WRT_WRITINGEMAIL_L183_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a digital markets regulator proposing minimum interoperability standards for messaging platforms.",
+            "prompt": "Write a masterfully compassionate email informing clients of a colleague's sudden serious illness and how their work will continue, with dignity.",
             "options": [
-                "WE PROPOSE MANDATORY INTEROPERABILITY STANDARDS FOR LARGE END-TO-END ENCRYPTED MESSAGING PLATFORMS, REQUIRING SECURE MESSAGE PASSING BETWEEN PLATFORMS WITHOUT COMPROMISING ENCRYPTION INTEGRITY.",
-                "DEAR DIGITAL COMPETITION EXPERT PANEL,",
-                "YOURS SINCERELY,\nCHIEF TECHNOLOGY OFFICER, NEXUS DIGITAL",
-                "SUBJECT: INTEROPERABILITY STANDARD PROPOSAL - END-TO-END ENCRYPTED MESSAGING PLATFORMS"
+                "WITH CARE, ON BEHALF OF THE WHOLE TEAM,\nROISIN DELANEY",
+                "SUBJECT: AN UPDATE ABOUT YOUR ACCOUNT, AND SOME NEWS ABOUT MARCUS",
+                "DEAR MR OYELARAN,",
+                "MARCUS, WHO HAS BEEN LOOKING AFTER YOUR ACCOUNT, IS UNABLE TO WORK WHILE HE FOCUSES ON A SERIOUS HEALTH MATTER, AND WHILE I WON'T SHARE DETAILS THAT AREN'T MINE TO SHARE, I WANT TO REASSURE YOU THAT I WILL PERSONALLY OVERSEE YOUR PROJECT UNTIL HE IS ABLE TO RETURN, WITH NOTHING FALLING THROUGH THE CRACKS."
             ],
             "correctOrder": [
-                3,
                 1,
-                0,
-                2
+                2,
+                3,
+                0
             ],
-            "hint": "Standard type and platform focus are in the subject. Mandatory interoperability, E2EE platforms, cross-platform message passing, and encryption integrity preservation are in the body.",
-            "explanation": "Interoperability for E2EE messaging is technically complex - it requires a cryptographic protocol (like the Signal Protocol) to work across different platforms without either party needing to decrypt and re-encrypt messages at the gateway. This is the key technical challenge the proposal must address."
+            "hint": "A caring, dignified tone is signalled in the subject; the client is addressed formally by name; respectful discretion about the colleague and clear reassurance about continuity are in the body; the closing conveys genuine team care.",
+            "explanation": "Explicitly protecting the colleague's privacy - 'won't share details that aren't mine to share' - shows real respect and dignity, which any careful reader will appreciate even without knowing the specifics. Providing concrete reassurance about continuity gives the client exactly what they need practically, without requiring painful detail."
         },
         {
             "id": "WRT_WRITINGEMAIL_L183_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a competition authority requesting mandatory default settings reform for an operating system.",
+            "prompt": "Write an exceptionally sensitive email informing a team of a beloved colleague's passing, with genuine grace.",
             "options": [
-                "NEXUS BROWSER REQUESTS CMA INVESTIGATION OF THE DEFAULT BROWSER SETTINGS IN THE DOMINANT MOBILE OPERATING SYSTEM, WHICH WE ALLEGE CONSTITUTES AN ABUSE OF DOMINANT POSITION UNDER CHAPTER II OF THE COMPETITION ACT 1998.",
-                "YOURS SINCERELY,\nCHIEF LEGAL OFFICER, NEXUS BROWSER",
-                "DEAR COMPETITION AND MARKETS AUTHORITY,",
-                "SUBJECT: DEFAULT SETTINGS REFORM REQUEST - MOBILE OS ANTI-COMPETITIVE DEFAULT BROWSER"
+                "IT IS WITH GREAT SADNESS THAT I MUST TELL YOU DAVID PASSED AWAY PEACEFULLY OVER THE WEEKEND, SURROUNDED BY HIS FAMILY - THERE IS NO RIGHT WAY TO FEEL RIGHT NOW, SO PLEASE TAKE WHATEVER TIME AND SPACE YOU NEED, AND KNOW THAT SUPPORT IS AVAILABLE FOR ANYONE WHO WOULD LIKE IT.",
+                "SUBJECT: SAD NEWS ABOUT DAVID, AND HOW WE WILL SUPPORT EACH OTHER",
+                "DEAR TEAM,",
+                "WITH SHARED SORROW AND CARE FOR EACH OF YOU,\nVIKRAM MALHOTRA"
             ],
             "correctOrder": [
-                3,
+                1,
                 2,
                 0,
-                1
+                3
             ],
-            "hint": "Default settings type and allegation are in the subject. Investigation request, dominant OS, alleged abuse, and CA 1998 Chapter II basis are in the body - a formal competition complaint.",
-            "explanation": "Chapter II Competition Act 1998 (equivalent to Article 102 TFEU) prohibits abuse of dominant position. Pre-installed default browser settings that favour the OS developer's own browser (as found in EU v Google Android) constitute a classic leveraging abuse of dominance."
+            "hint": "Gentle, dignified language suits this sensitive subject; the whole team is addressed together with care; the news is delivered simply, followed by permission to grieve and an offer of support; the closing conveys shared sorrow.",
+            "explanation": "Delivering the news plainly and gently, without euphemism or excessive detail, respects both the gravity of the moment and the reader's need for clarity. Explicitly saying 'there is no right way to feel' gives colleagues permission to grieve in their own way, which is often the most valuable thing such a message can offer."
         },
         {
             "id": "WRT_WRITINGEMAIL_L183_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a platform company issuing a DMA interoperability compliance order.",
+            "prompt": "Write a masterful email offering comfort and practical support to a close friend going through profound loss.",
             "options": [
-                "YOURS SINCERELY,\nDG CONNECT, EUROPEAN COMMISSION",
-                "PURSUANT TO ARTICLE 7 OF THE DIGITAL MARKETS ACT, THE EUROPEAN COMMISSION ORDERS NEXUS PLATFORM TO ENABLE FULL INTEROPERABILITY OF ITS MESSAGING SERVICE WITH THIRD-PARTY MESSAGING APPLICATIONS BY 31 MARCH.",
-                "SUBJECT: DMA INTEROPERABILITY ORDER - NEXUS PLATFORM: COMPLIANCE REQUIRED BY 31 MARCH",
-                "DEAR CHIEF REGULATORY OFFICER,"
+                "WITH ALL MY LOVE, WHENEVER YOU'RE READY,\nRUBY",
+                "I AM NOT GOING TO PRETEND I KNOW WHAT TO SAY, BUT I WANTED YOU TO KNOW I AM THINKING OF YOU EVERY DAY, AND RATHER THAN ASK WHAT YOU NEED, I HAVE JUST GONE AHEAD AND ARRANGED FOR DINNER TO BE DROPPED OFF ON TUESDAY - PLEASE DON'T FEEL YOU NEED TO REPLY TO THIS AT ALL.",
+                "SUBJECT: NO NEED TO REPLY - JUST WANTED YOU TO KNOW I'M HERE",
+                "DEAR SOPHIE,"
             ],
             "correctOrder": [
                 2,
@@ -189,41 +189,41 @@
                 1,
                 0
             ],
-            "hint": "DMA article and compliance deadline are in the subject. Article 7 mandate, Commission order, platform name, specific interoperability requirement, and compliance deadline are in the body.",
-            "explanation": "DMA Article 7 requires gatekeepers to open their messaging services to interoperability with third-party providers. The Commission issues binding orders to enforce compliance - non-compliance can result in fines of up to 10% of global annual turnover."
+            "hint": "Gentle, unpressured warmth suits the subject; a close friend is addressed by first name; honest humility, quiet care, and practical action (not just words) are in the body; the closing removes any pressure to respond.",
+            "explanation": "Admitting honestly that you don't 'know what to say' is often more comforting than searching for perfect words, because it feels genuine rather than rehearsed. Taking practical action - arranging dinner - rather than just offering vague help, removes the burden from a grieving friend of having to think of what they need."
         },
         {
             "id": "WRT_WRITINGEMAIL_L184_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a medical regulator reporting an adverse pharmacovigilance signal.",
+            "prompt": "Write a masterful email resolving a seemingly impossible three-way negotiation deadlock.",
             "options": [
-                "NEXUS PHARMA SUBMITS AN EXPEDITED SAFETY REPORT FOR AN UNEXPECTED SERIOUS ADVERSE REACTION IDENTIFIED IN POST-MARKET SURVEILLANCE OF NX-2201 - FIVE CASES OF HEPATOTOXICITY WERE REPORTED IN WEEK 48.",
-                "DEAR MHRA PHARMACOVIGILANCE TEAM,",
-                "YOURS SINCERELY,\nCHIEF MEDICAL OFFICER, NEXUS PHARMA",
-                "SUBJECT: EXPEDITED PHARMACOVIGILANCE REPORT - UNEXPECTED ADVERSE REACTION: NX-2201"
+                "WITH CONFIDENCE WE CAN ALL WIN HERE,\nAGNIESZKA NOWAKOWSKA",
+                "SUBJECT: A WAY THROUGH THAT I BELIEVE SERVES ALL THREE OF US",
+                "DEAR PARTNERS,",
+                "HAVING LISTENED TO EACH OF YOUR POSITIONS SEPARATELY, I NOTICED THAT EACH OF US IS PRIORITISING A DIFFERENT ELEMENT OF THE DEAL - SPEED, CONTROL, AND COST - RATHER THAN ACTUALLY DISAGREEING ON VALUE, SO I WOULD LIKE TO PROPOSE A STRUCTURE WHERE EACH PARTY LEADS ON THE ELEMENT THEY CARE ABOUT MOST."
             ],
             "correctOrder": [
-                3,
                 1,
-                0,
-                2
+                2,
+                3,
+                0
             ],
-            "hint": "Report type and drug are in the subject. Expedited report, unexpected reaction type, surveillance context, number of cases, and week of identification are in the body.",
-            "explanation": "MHRA requires expedited reporting of unexpected serious adverse reactions (USARs) within 15 days. Five cases of hepatotoxicity (liver damage) in a single week is a statistically significant safety signal that warrants immediate regulatory review and potential label update."
+            "hint": "A unifying diagnostic insight is signalled in the subject; all three partners are addressed together; a sophisticated analysis of underlying priorities and a creative structural solution are in the body; the closing conveys genuine confidence.",
+            "explanation": "Diagnosing that each party values a different element - 'speed, control, and cost' - rather than disagreeing on the deal's overall value is a genuinely expert negotiating insight that can unlock deadlocks others miss. Proposing a structure where 'each party leads' on their priority turns three competing demands into a single coherent solution."
         },
         {
             "id": "WRT_WRITINGEMAIL_L184_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a company's medical officers proposing a risk minimisation strategy for a drug.",
+            "prompt": "Write an expertly calibrated email that firmly holds a position while preserving a vital relationship.",
             "options": [
-                "IN RESPONSE TO THE HEPATOTOXICITY SIGNAL, I PROPOSE A RISK MINIMISATION STRATEGY COMPRISING ENHANCED PRESCRIBER EDUCATION, MANDATORY LIVER FUNCTION TESTING BEFORE TREATMENT INITIATION, AND UPDATED PRODUCT LABELLING.",
-                "YOURS SINCERELY,\nCHIEF MEDICAL OFFICER, NEXUS PHARMA",
-                "DEAR SAFETY COMMITTEE,",
-                "SUBJECT: RISK MINIMISATION STRATEGY PROPOSAL - HEPATOTOXICITY SIGNAL: NX-2201"
+                "I WANT TO BE ENTIRELY CLEAR THAT £15,000 REMAINS MY FINAL PRICE FOR THIS WORK, NOT BECAUSE I DON'T VALUE OUR RELATIONSHIP - I DO, DEEPLY - BUT BECAUSE UNDERCUTTING MY OWN RATES WOULD UNDERMINE THE QUALITY I KNOW YOU ACTUALLY WANT FROM ME.",
+                "WITH RESPECT AND HOPE WE CAN AGREE,\nLEANDRO SILVA",
+                "DEAR MR HALVORSEN,",
+                "SUBJECT: HOLDING FIRM ON THIS, WHILE VALUING YOU ENORMOUSLY"
             ],
             "correctOrder": [
                 3,
@@ -231,377 +231,335 @@
                 0,
                 1
             ],
-            "hint": "Risk minimisation type and drug signal are in the subject. Three specific risk minimisation measures - education, liver testing, and label update - are in the body. The CMO proposes to the safety committee.",
-            "explanation": "A three-element risk minimisation strategy - prescriber education (awareness), liver function testing (detection), and label update (information) - represents the proportionate response to a hepatotoxicity signal that allows continued marketing while protecting patients."
+            "hint": "Firm clarity is signalled directly in the subject; the client is addressed formally by name; an unambiguous position and a genuine, relationship-preserving reason for it are in the body; the closing conveys respectful hope.",
+            "explanation": "Stating the position with total clarity - 'entirely clear', 'final price' - avoids any ambiguity that might invite further negotiation you don't intend to have. Explaining the firmness through genuine care about quality, rather than stubbornness, allows you to hold your ground while the relationship remains warm."
         },
         {
             "id": "WRT_WRITINGEMAIL_L184_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to prescribers providing an urgent pharmacovigilance safety update.",
+            "prompt": "Write a masterful email negotiating your way out of a genuine no-win situation with grace.",
             "options": [
-                "YOURS SINCERELY,\nCHIEF MEDICAL OFFICER, NEXUS PHARMA",
-                "AN IMPORTANT SAFETY NOTICE REGARDING NX-2201: POST-MARKET SURVEILLANCE HAS IDENTIFIED CASES OF HEPATOTOXICITY - PLEASE PERFORM LIVER FUNCTION TESTS BEFORE INITIATING TREATMENT AND MONITOR PATIENTS MONTHLY.",
-                "SUBJECT: URGENT DRUG SAFETY UPDATE - NX-2201: RISK OF HEPATOTOXICITY",
-                "DEAR PRESCRIBER,"
+                "WITH HONESTY, EVEN WHEN IT'S HARD,\nYOSHIKO MURAKAMI",
+                "WHATEVER I DECIDE HERE DISAPPOINTS SOMEONE I RESPECT, SO RATHER THAN PRETEND THERE IS A PERFECT ANSWER, I WOULD LIKE TO BE HONEST ABOUT THE TRADE-OFF I AM MAKING AND WHY, AND TRUST THAT YOU WOULD RATHER HAVE MY HONESTY THAN A DECISION DRESSED UP AS SOMETHING IT ISN'T.",
+                "DEAR REBECCA,",
+                "SUBJECT: THE HONEST TRUTH ABOUT WHERE THIS LEAVES ME"
             ],
             "correctOrder": [
-                2,
                 3,
+                2,
                 1,
                 0
             ],
-            "hint": "Urgency, drug, and risk type are in the subject. Safety notice, identified risk, and two specific prescriber actions (pre-treatment LFT and monthly monitoring) are in the body.",
-            "explanation": "A prescriber safety communication must specify the risk, the pre-treatment action (LFT screening), and the ongoing monitoring requirement (monthly). This 'Dear Doctor' letter triggers immediate prescriber behaviour change - the most direct patient protection measure."
+            "hint": "Honest acknowledgement of an impossible situation opens the subject; the colleague is addressed by first name; genuine transparency about the trade-off is in the body; the closing conveys real, hard-won honesty.",
+            "explanation": "Naming the situation plainly as one where 'whatever I decide... disappoints someone' shows real maturity rather than pretending a perfect solution exists. Trusting the reader to prefer 'honesty' over a dressed-up decision reflects deep respect for the relationship even in a genuinely difficult moment."
         },
         {
             "id": "WRT_WRITINGEMAIL_L185_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a nuclear arms control authority filing a notification under a non-proliferation treaty.",
+            "prompt": "Write an eloquent, morally serious email addressing a community's response to a genuine local tragedy, with dignity and hope.",
             "options": [
-                "THE REPUBLIC OF NEXIA SUBMITS ITS ANNUAL ADDITIONAL PROTOCOL DECLARATION UNDER ARTICLE 2 OF INFCIRC/540, PROVIDING A COMPREHENSIVE ACCOUNT OF ALL NUCLEAR MATERIAL AND FACILITIES.",
-                "DEAR IAEA SAFEGUARDS SECRETARIAT,",
-                "YOURS SINCERELY,\nMINISTER OF FOREIGN AFFAIRS, REPUBLIC OF NEXIA",
-                "SUBJECT: IAEA SAFEGUARDS NOTIFICATION - ADDITIONAL PROTOCOL DECLARATION SUBMISSION"
+                "SUBJECT: HOLDING EACH OTHER THROUGH THIS DIFFICULT TIME",
+                "THE LOSS OF THE THOMPSON FAMILY'S HOME TO FIRE THIS WEEK HAS SHAKEN ALL OF US, AND WHILE NOTHING CAN UNDO WHAT HAPPENED, I HAVE BEEN MOVED TO SEE HOW QUICKLY THIS STREET HAS COME TOGETHER - IF YOU ARE ABLE TO HELP IN ANY WAY, HOWEVER SMALL, PLEASE REACH OUT.",
+                "WITH SOLIDARITY AND HOPE,\nBARNABY REID",
+                "DEAR NEIGHBOURS,"
             ],
             "correctOrder": [
+                0,
                 3,
                 1,
-                0,
                 2
             ],
-            "hint": "Safeguards type and protocol reference are in the subject. Annual declaration, AP article, INFCIRC number, and comprehensive coverage confirmation are in the body.",
-            "explanation": "INFCIRC/540 is the model Additional Protocol - a voluntary strengthening measure beyond the Non-Proliferation Treaty's basic safeguards. Article 2 requires declarations of all nuclear material, facilities, and related activities - the most comprehensive transparency commitment available."
+            "hint": "A dignified, community-minded tone is signalled in the subject; neighbours are addressed together; honest acknowledgement of the tragedy and genuine hope in the community's response are in the body; the closing conveys solidarity.",
+            "explanation": "Naming the specific event honestly, without minimising it, respects the seriousness of what happened to the affected family. Highlighting how the community has 'quickly come together', rather than dwelling only on the tragedy, offers genuine hope alongside acknowledgement of real pain."
         },
         {
             "id": "WRT_WRITINGEMAIL_L185_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a UN body alleging non-compliance with nuclear safeguard obligations.",
+            "prompt": "Write a masterful email uniting a community around shared values after a period of internal conflict.",
             "options": [
-                "THE REPUBLIC OF NEXIA REFERS THE SAFEGUARDS NON-COMPLIANCE OF THE REPUBLIC OF MERIDIA TO THE IAEA BOARD, CITING EVIDENCE OF UNDECLARED NUCLEAR ACTIVITIES AT THE SITE IDENTIFIED AS FACILITY X.",
-                "YOURS SINCERELY,\nMINISTER OF FOREIGN AFFAIRS, REPUBLIC OF NEXIA",
-                "DEAR IAEA BOARD OF GOVERNORS,",
-                "SUBJECT: SAFEGUARDS NON-COMPLIANCE ALLEGATION - IAEA BOARD OF GOVERNORS REFERRAL"
+                "THE DISAGREEMENTS OF THE PAST FEW MONTHS HAVE BEEN DIFFICULT FOR ALL OF US, BUT I BELIEVE EVERY PERSON IN THIS GROUP JOINED FOR THE SAME REASON - A GENUINE LOVE OF THIS COMMUNITY - AND I WOULD LIKE US TO FOCUS OUR NEXT MEETING ON REMEMBERING THAT, BEFORE WE DECIDE ANYTHING ELSE.",
+                "SUBJECT: REMEMBERING WHAT BROUGHT US TOGETHER IN THE FIRST PLACE",
+                "WITH HOPE FOR WHAT UNITES US,\nCHIOMA EZEUDU",
+                "DEAR MEMBERS,"
             ],
             "correctOrder": [
+                1,
                 3,
-                2,
                 0,
-                1
+                2
             ],
-            "hint": "Non-compliance allegation and referral body are in the subject. Referring state, respondent state, Board referral mechanism, evidence reference, and specific facility are in the body.",
-            "explanation": "Referral to the IAEA Board of Governors is the formal mechanism for addressing safeguards non-compliance. If the Board finds non-compliance, it can refer the matter to the UN Security Council - the pathway from IAEA finding to potential sanctions."
+            "hint": "A unifying, healing tone is signalled in the subject; members are addressed together; honest acknowledgement of conflict and a generous, shared reason for belonging are in the body; the closing conveys real hope.",
+            "explanation": "Acknowledging the conflict directly as 'difficult for all of us' rather than avoiding it shows genuine leadership through a hard period. Reminding everyone of the shared motivation that brought them together in the first place is a sophisticated way to rebuild unity before tackling any specific disagreement."
         },
         {
             "id": "WRT_WRITINGEMAIL_L185_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a government requesting urgent consultations under a mutual defence treaty.",
+            "prompt": "Write an expertly crafted email holding a local authority accountable while remaining entirely professional and constructive.",
             "options": [
-                "YOURS SINCERELY,\nMINISTER OF DEFENCE, REPUBLIC OF NEXIA",
-                "NEXIA FORMALLY REQUESTS URGENT CONSULTATIONS UNDER ARTICLE V OF THE MUTUAL DEFENCE TREATY IN RESPONSE TO THE NUCLEAR CAPABILITY DEVELOPMENT BY A TREATY-DEFINED ADVERSARY STATE.",
-                "SUBJECT: URGENT TREATY CONSULTATIONS REQUESTED - NUCLEAR THREAT: ARTICLE V INVOCATION",
-                "DEAR SECRETARY OF STATE,"
+                "DEAR COUNCIL LEADER,",
+                "AT LAST YEAR'S MEETING, THE COUNCIL PUBLICLY COMMITTED TO REPAIRING THE FLOOD DEFENCES BY THIS SPRING, YET NO WORK HAS BEGUN, SO ON BEHALF OF RESIDENTS WHO HAVE ALREADY EXPERIENCED TWO FLOODS WHILE WAITING, I WOULD RESPECTFULLY ASK FOR A CLEAR, PUBLIC TIMELINE FOR WHEN THIS WILL NOW BE DELIVERED.",
+                "SUBJECT: HOLDING TO THE COMMITMENT MADE TO OUR COMMUNITY",
+                "YOURS FAITHFULLY,\nSTELLAN BERGQVIST"
             ],
             "correctOrder": [
                 2,
-                3,
+                0,
                 1,
-                0
+                3
             ],
-            "hint": "Treaty article and threat type are in the subject. Formal consultation request, Article V basis, capability development basis, and adversary state classification are in the body.",
-            "explanation": "Article V consultation clauses in mutual defence treaties (like NATO Article 4) require immediate Allied consultation when a party's security is threatened. Invoking Article V (as opposed to Article IV-equivalent consultation) signals the most serious level of threat."
+            "hint": "Accountability is signalled respectfully in the subject; the council leader is addressed by role and title, not by personal name; the specific broken commitment and its real consequence are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Citing the exact original commitment gives the accountability request a factual, undeniable basis rather than a general complaint about slow progress. Mentioning the concrete consequence residents have already faced - 'two floods while waiting' - makes clear this is a genuinely serious matter, not routine impatience."
         },
         {
             "id": "WRT_WRITINGEMAIL_L186_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a competition authority quantifying antitrust damages for an overcharge claim.",
+            "prompt": "Write a masterful email reflecting on an entire career's worth of lessons, shared generously with the next generation.",
             "options": [
-                "OUR ECONOMIC EXPERTS HAVE QUANTIFIED THE CARTEL OVERCHARGE USING THE COMPARATOR COUNTERFACTUAL METHOD - THE TOTAL OVERCHARGE SUFFERED BY NEXUS CONSULTING OVER THE CARTEL PERIOD IS ESTIMATED AT £12.4M.",
-                "DEAR LITIGATION TEAM,",
-                "YOURS SINCERELY,\nCHIEF LEGAL OFFICER, NEXUS CONSULTING",
-                "SUBJECT: ANTITRUST DAMAGES QUANTUM - CARTEL OVERCHARGE ANALYSIS: £12.4M CLAIM"
+                "IF I COULD DISTIL FORTY YEARS OF PRACTISING MEDICINE INTO ONE LESSON, IT WOULD BE THIS: THE PATIENTS I REMEMBER MOST ARE NOT THE CASES I SOLVED BRILLIANTLY, BUT THE ONES WHERE I SIMPLY SAT DOWN, LISTENED PROPERLY, AND MADE SOMEONE FEEL TRULY SEEN.",
+                "SUBJECT: FORTY YEARS OF LESSONS, PASSED ON TO YOU",
+                "DEAR NEW GRADUATES,",
+                "WITH HOPE FOR THE CARE YOU WILL GIVE,\nDR IMOGEN ASHCROFT"
             ],
             "correctOrder": [
-                3,
                 1,
+                2,
                 0,
-                2
+                3
             ],
-            "hint": "Claim type and quantum are in the subject. Economic methodology (comparator counterfactual), overcharge quantification, and total claim figure are in the body.",
-            "explanation": "The comparator counterfactual method (comparing cartel prices to a non-cartelised comparable market) is the most widely accepted damages quantification methodology in EU and UK competition law. The European Commission's Practical Guide endorses this approach."
+            "hint": "A career-spanning distillation is signalled in the subject; new graduates are addressed together; a genuine, hard-won insight is offered in the body; the closing expresses hope for their future practice.",
+            "explanation": "Distilling forty years into a single, specific lesson is far more powerful and memorable than a broad summary of career achievements. Choosing a lesson about listening rather than technical brilliance reflects genuine wisdom about what actually matters most, learned only through real experience over time."
         },
         {
             "id": "WRT_WRITINGEMAIL_L186_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to external economists instructing them on a passing-on defence analysis.",
+            "prompt": "Write an eloquent email honestly and lovingly saying goodbye to a place that shaped you profoundly.",
             "options": [
-                "THE DEFENDANT HAS RAISED A PASSING-ON DEFENCE - PLEASE ANALYSE WHETHER NEXUS CONSULTING PASSED ANY PORTION OF THE CARTEL OVERCHARGE TO ITS DOWNSTREAM CUSTOMERS, WHICH WOULD REDUCE OUR RECOVERABLE DAMAGES.",
-                "YOURS SINCERELY,\nCHIEF LEGAL OFFICER, NEXUS CONSULTING",
-                "DEAR ECONOMIC EXPERTS,",
-                "SUBJECT: PASSING-ON DEFENCE ANALYSIS REQUEST - ANTITRUST OVERCHARGE CLAIM: NEXUS v CARTELISTS"
+                "SUBJECT: THANK YOU, OLD BUILDING, FOR EVERYTHING",
+                "WITH GRATITUDE FOR EVERYTHING THOSE WALLS HELD,\nRAFAEL DOS SANTOS",
+                "DEAR COLLEAGUES, PAST AND PRESENT,",
+                "AS THEY PREPARE TO DEMOLISH THE OLD MILL WHERE THIS COMPANY BEGAN, I WANTED TO SAY THAT WHILE IT WAS ALWAYS JUST BRICK AND DRAUGHTY WINDOWS, IT WAS ALSO WHERE I LEARNED WHO I WANTED TO BECOME, AND I WILL CARRY THAT WITH ME LONG AFTER THE BUILDING ITSELF IS GONE."
             ],
             "correctOrder": [
-                3,
-                2,
                 0,
+                2,
+                3,
                 1
             ],
-            "hint": "Defence type and case are in the subject. Defendant's defence, analysis scope, and damages-reduction implication are in the body - a complex economic instruction.",
-            "explanation": "The passing-on defence argues that the claimant passed the cartel overcharge downstream to customers, so it suffered no net loss. EU Directive 2014/104 codifies the passing-on defence - if successful, it reduces the recoverable damages by the amount passed on."
+            "hint": "A bittersweet farewell is signalled in the subject; past and present colleagues are addressed together; honest, grounded detail and genuine emotional meaning are in the body; the closing conveys lasting gratitude.",
+            "explanation": "Grounding the sentiment in an honest, unglamorous detail - 'just brick and draughty windows' - before revealing its deeper meaning makes the tribute feel genuine rather than sentimental for its own sake. Separating what will 'carry with me' from the physical building itself is a sophisticated way of honouring a place's true significance."
         },
         {
             "id": "WRT_WRITINGEMAIL_L186_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a court filing antitrust damages evidence following a cartel infringement finding.",
+            "prompt": "Write an expertly crafted email passing on a family's most important values to the next generation, in writing.",
             "options": [
-                "YOURS SINCERELY,\nCOURTS-ADMITTED EXPERT ECONOMIST, NEXUS CONSULTING",
-                "NEXUS CONSULTING FILES THE EXPERT ECONOMIC REPORT QUANTIFYING OVERCHARGE DAMAGES OF £12.4M, NET OF ANY PASSING-ON, FOR THE COURT'S ASSESSMENT IN CLAIM HC-2024-441.",
-                "SUBJECT: ANTITRUST DAMAGES EVIDENCE FILING - NEXUS v CARTELISTS - HIGH COURT CLAIM HC-2024-441",
-                "DEAR HIGH COURT REGISTRY,"
+                "DEAR EMILY,",
+                "SUBJECT: THE THINGS I MOST WANT YOU TO CARRY WITH YOU",
+                "WITH ALL MY LOVE, ALWAYS AND FOREVER,\nMUM",
+                "AS YOU START THIS NEW CHAPTER FAR FROM HOME, I WANTED TO WRITE DOWN THE THINGS OUR FAMILY HAS ALWAYS BELIEVED IN, NOT AS RULES TO FOLLOW, BUT AS A REMINDER OF WHO YOU ARE: BE GENEROUS EVEN WHEN IT COSTS YOU SOMETHING, AND ALWAYS COME HOME FOR THE PEOPLE WHO NEED YOU MOST."
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
-                0
+                0,
+                3,
+                2
             ],
-            "hint": "Claim reference and evidence type are in the subject. Expert report filing, damages quantum, passing-on adjustment, and court assessment purpose are in the body.",
-            "explanation": "The key phrase 'net of any passing-on' addresses the passing-on defence proactively - the expert's £12.4M already accounts for any downstream pass-through, making the damages figure more robust against the defendant's primary attack on quantum."
+            "hint": "A heartfelt intention opens the subject; a child is addressed lovingly by first name; the reason for writing and a specific, meaningful value are in the body; the closing conveys enduring maternal love.",
+            "explanation": "Framing the values as 'a reminder of who you are' rather than 'rules to follow' respects the child's independence while still passing on something meaningful. Offering one specific, concrete value rather than a long list makes the message something that can genuinely be carried and remembered."
         },
         {
             "id": "WRT_WRITINGEMAIL_L187_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a national court asserting universal jurisdiction over a war crimes suspect.",
+            "prompt": "Write a masterful email making a genuinely difficult judgment call under uncertainty, owning the decision fully.",
             "options": [
-                "NEXUS HUMAN RIGHTS REQUESTS PROSECUTION OF COLONEL ALEXEI ZELENOV FOR WAR CRIMES UNDER THE UK'S UNIVERSAL JURISDICTION PROVISIONS OF THE INTERNATIONAL CRIMINAL COURT ACT 2001.",
-                "DEAR ATTORNEY GENERAL,",
-                "YOURS SINCERELY,\nDIRECTOR, NEXUS HUMAN RIGHTS",
-                "SUBJECT: UNIVERSAL JURISDICTION PROSECUTION REQUEST - WAR CRIMES: COLONEL ZELENOV"
+                "WITH FULL OWNERSHIP OF THIS CALL,\nADAEZE IKECHUKWU",
+                "DEAR TEAM,",
+                "WITH NO PERFECT OPTION AVAILABLE AND THE WEATHER FORECAST UNCERTAIN UNTIL THE LAST POSSIBLE MOMENT, I HAVE DECIDED TO CANCEL TOMORROW'S OUTDOOR EVENT RATHER THAN RISK SAFETY - I KNOW THIS DISAPPOINTS MANY OF YOU, AND I TAKE FULL RESPONSIBILITY FOR THAT DISAPPOINTMENT AS THE COST OF THE RIGHT DECISION.",
+                "SUBJECT: THE DECISION I HAVE MADE, AND WHY"
             ],
             "correctOrder": [
                 3,
                 1,
-                0,
-                2
+                2,
+                0
             ],
-            "hint": "Jurisdiction type and suspect are in the subject. Prosecution request, specific named suspect, legal basis (ICCA 2001), and universal jurisdiction provision are in the body.",
-            "explanation": "The International Criminal Court Act 2001 gives UK courts universal jurisdiction over war crimes, regardless of where they were committed. Unlike crimes requiring a territorial connection, universal jurisdiction allows prosecution of foreign nationals for crimes against foreign victims anywhere in the world."
+            "hint": "Ownership of a hard call is signalled directly in the subject; the team is addressed together; honest acknowledgement of uncertainty and full acceptance of the consequence are in the body; the closing conveys complete accountability.",
+            "explanation": "Acknowledging 'no perfect option available' honestly, rather than pretending the decision was obvious, respects the genuine difficulty of the judgment call. Taking 'full responsibility' for the resulting disappointment, rather than blaming the weather or circumstances, models the kind of leadership that owns hard decisions completely."
         },
         {
             "id": "WRT_WRITINGEMAIL_L187_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to an international court requesting extradition under an international criminal law treaty.",
+            "prompt": "Write an expertly balanced email addressing the competing genuine needs of two different groups fairly.",
             "options": [
-                "THE UK GOVERNMENT REQUESTS THE EXTRADITION OF COLONEL ALEXEI ZELENOV FROM YOUR JURISDICTION FOR TRIAL ON WAR CRIMES CHARGES UNDER THE INTERNATIONAL CRIMES CONVENTION - THE WARRANT IS ENCLOSED.",
-                "YOURS SINCERELY,\nUK ATTORNEY GENERAL",
-                "DEAR JUDICIAL AUTHORITY,",
-                "SUBJECT: EXTRADITION REQUEST - COLONEL ZELENOV - INTERNATIONAL CRIMES CONVENTION"
+                "I RECOGNISE THAT RESIDENTS GENUINELY NEED QUIET EVENINGS AND BUSINESSES GENUINELY NEED EVENING TRADE TO SURVIVE, AND RATHER THAN PRETEND ONE GROUP'S NEEDS MATTER MORE, I WOULD LIKE TO PROPOSE A COMPROMISE - EXTENDED HOURS ON FRIDAYS AND SATURDAYS ONLY - THAT GENUINELY TRIES TO HONOUR BOTH.",
+                "DEAR RESIDENTS AND BUSINESS OWNERS,",
+                "SUBJECT: TRYING TO BE FAIR TO EVERYONE, EVEN WHEN IT'S HARD",
+                "WITH RESPECT FOR EVERYONE INVOLVED,\nPIOTR ZIELINSKI"
             ],
             "correctOrder": [
-                3,
                 2,
+                1,
                 0,
-                1
+                3
             ],
-            "hint": "Extradition request and suspect are in the subject. Government authority, extradition basis (ICC Convention), crime category, warrant enclosure are in the body - a formal extradition request.",
-            "explanation": "Extradition requests for international crimes must be based on a treaty - the International Crimes Convention provides the legal basis. The warrant must accompany the request - it identifies the charges and is the document on which the requested state's court will rule."
+            "hint": "Fairness to both sides is signalled in the subject; both groups are addressed together with equal respect; genuine validation of both competing needs and a real compromise are in the body; the closing conveys respect for everyone.",
+            "explanation": "Validating both needs as equally 'genuine', rather than favouring either group, models the kind of fairness that builds trust with both sides in a dispute. Proposing a specific, limited compromise - weekend-only extended hours - shows a real, considered attempt at balance rather than simply picking a side."
         },
         {
             "id": "WRT_WRITINGEMAIL_L187_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to an international criminal court prosecution team submitting evidence for a war crimes case.",
+            "prompt": "Write a masterful email acknowledging genuine complexity in a situation that others want to see as simple.",
             "options": [
-                "YOURS SINCERELY,\nDIRECTOR, NEXUS HUMAN RIGHTS",
-                "NEXUS HUMAN RIGHTS SUBMITS SATELLITE IMAGERY, INTERCEPTED COMMUNICATIONS, AND VICTIM TESTIMONIES AS EVIDENCE IN SUPPORT OF THE PROSECUTION OF COLONEL ZELENOV IN ICC CASE OTP-2024-441.",
-                "SUBJECT: EVIDENCE SUBMISSION - COLONEL ZELENOV PROSECUTION - ICC CASE OTP-2024-441",
-                "DEAR OFFICE OF THE PROSECUTOR,"
+                "I UNDERSTAND THE APPEAL OF SIMPLY BANNING THE PRACTICE OUTRIGHT, BUT HAVING SPOKEN TO THE PEOPLE IT WOULD AFFECT, I BELIEVE THE REALITY IS MORE COMPLICATED THAN THAT, AND I WOULD RATHER WE TAKE THE TIME TO UNDERSTAND THE NUANCE THAN MAKE A DECISION THAT FEELS DECISIVE BUT CAUSES UNINTENDED HARM.",
+                "DEAR COMMITTEE,",
+                "WITH RESPECT FOR A DIFFICULT QUESTION,\nHANNAH OKAFOR",
+                "SUBJECT: WHY I DON'T THINK THIS IS AS SIMPLE AS IT LOOKS"
             ],
             "correctOrder": [
-                2,
                 3,
                 1,
-                0
+                0,
+                2
             ],
-            "hint": "Case reference and evidence submission purpose are in the subject. Three evidence types - satellite imagery, intercepted communications, and victim testimonies - cover documentary, electronic, and witness evidence categories.",
-            "explanation": "The three evidence categories - satellite imagery (confirms destruction), intercepted communications (establishes command responsibility), and victim testimonies (humanises the crime) - together satisfy the ICC's standard of 'reasonable grounds to believe' at the investigation stage."
+            "hint": "A thoughtful challenge to oversimplification is signalled in the subject; the committee is addressed together; genuine acknowledgement of the simple appeal and a case for nuance are in the body; the closing conveys respect for complexity.",
+            "explanation": "Acknowledging the 'appeal' of a simple solution before challenging it shows you understand why others want a quick answer, rather than dismissing their preference. Grounding the case for complexity in having 'spoken to the people it would affect' gives the argument real, human weight rather than abstract caution."
         },
         {
             "id": "WRT_WRITINGEMAIL_L188_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a pension board presenting a longevity risk transfer transaction.",
+            "prompt": "Write an exceptionally wise email helping two people you love resolve their differences without taking sides.",
             "options": [
-                "I PROPOSE A BULK ANNUITY BUY-IN WITH NEXUS LIFE FOR THE £1.4BN SCHEME - THE INSURER ASSUMES THE LONGEVITY RISK FOR ALL 4,200 PENSIONERS, PROVIDING CERTAINTY OF LIABILITY MATCHING.",
-                "DEAR TRUSTEE BOARD,",
-                "YOURS SINCERELY,\nPENSION SCHEME ACTUARY",
-                "SUBJECT: LONGEVITY RISK TRANSFER PROPOSAL - BULK ANNUITY BUY-IN: £1.4BN SCHEME"
+                "DEAR MUM AND DAD,",
+                "SUBJECT: I LOVE YOU BOTH, AND I WON'T CHOOSE A SIDE",
+                "I KNOW YOU BOTH WANT ME TO UNDERSTAND YOUR SIDE OF THIS, BUT I HAVE DECIDED I WON'T BE THE JUDGE BETWEEN YOU - WHAT I WILL DO IS LOVE YOU BOTH EQUALLY AND HOPE THAT, IN TIME, YOU FIND YOUR OWN WAY BACK TO EACH OTHER, OR AT LEAST TO PEACE.",
+                "WITH LOVE FOR YOU BOTH, ALWAYS,\nSOPHIE"
             ],
             "correctOrder": [
-                3,
                 1,
                 0,
-                2
+                2,
+                3
             ],
-            "hint": "Transaction type and scheme size are in the subject. Buy-in definition, insurer, risk transferred (longevity), pensioner number, and liability matching certainty are in the body.",
-            "explanation": "A bulk annuity buy-in transfers longevity risk (the risk that pensioners live longer than expected) to an insurer. Unlike a buy-out (full scheme wind-up), a buy-in keeps the scheme open but insures the pensioner liabilities - the most common route to de-risking."
+            "hint": "A wise, boundaried love opens the subject; both parents are addressed together equally; a clear refusal to take sides and a genuine hope for their reconciliation are in the body; the closing affirms equal, lasting love.",
+            "explanation": "Explicitly refusing to 'be the judge' protects the relationship with both parents and models genuine emotional wisdom rather than getting drawn into taking sides. Hoping they find their own way to 'peace', rather than demanding reconciliation, respects that this resolution isn't yours to control."
         },
         {
             "id": "WRT_WRITINGEMAIL_L188_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to an insurance company requesting terms for an insurance-linked security.",
+            "prompt": "Write a masterful email repairing a friendship after a long silence caused by mutual avoidance.",
             "options": [
-                "NEXUS LIFE SEEKS TO TRANSFER LONGEVITY RISK FROM OUR £1.4BN BULK ANNUITY PORTFOLIO TO THE CAPITAL MARKETS VIA AN INSURANCE-LINKED SECURITY BACKED BY A CATASTROPHIC MORTALITY BOND.",
-                "YOURS SINCERELY,\nCHIEF RISK OFFICER, NEXUS LIFE",
-                "DEAR STRUCTURED PRODUCTS TEAM,",
-                "SUBJECT: ILS STRUCTURING REQUEST - LONGEVITY SWAP BACKED BY CATASTROPHIC BOND"
+                "I DON'T EVEN FULLY REMEMBER WHY WE STOPPED TALKING, ONLY THAT NEITHER OF US REACHED OUT AND THE SILENCE GREW UNTIL IT FELT TOO BIG TO BREAK - I DON'T WANT TO LET PRIDE COST ME A FRIENDSHIP THAT MEANT SO MUCH, SO HERE I AM, BREAKING IT FIRST.",
+                "HOPING TO HEAR FROM YOU,\nDANIEL",
+                "SUBJECT: I THINK WE BOTH LET THIS GO ON TOO LONG",
+                "DEAR MARCUS,"
             ],
             "correctOrder": [
-                3,
                 2,
+                3,
                 0,
                 1
             ],
-            "hint": "ILS type and risk transfer direction are in the subject. Risk transfer direction (insurer to capital markets), portfolio size, ILS type (cat mortality bond), and structural approach are in the body.",
-            "explanation": "Insurance-linked securities (ILS) allow insurers to transfer insurance risk to capital market investors who are not correlated with financial market risks. A catastrophic mortality bond pays out if mortality rates spike catastrophically - providing the insurer's longevity swap with reinsurance from capital markets."
+            "hint": "An honest, self-aware admission opens the subject; the old friend is addressed directly by first name; genuine honesty about mutual avoidance and a brave first step are in the body; the closing conveys open hope.",
+            "explanation": "Admitting honestly that you 'don't even fully remember why' the silence began removes any pretence of a justified grudge and makes reconciliation far easier for both people. Naming pride as the real obstacle, and choosing to overcome it by 'breaking it first', shows real emotional courage."
         },
         {
             "id": "WRT_WRITINGEMAIL_L188_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a pension scheme regarding trigger mechanisms in a longevity swap.",
+            "prompt": "Write an expertly tender email expressing complex love and pride to a child who is becoming independent.",
             "options": [
-                "YOURS SINCERELY,\nPENSION SCHEME ACTUARY",
-                "THE LONGEVITY SWAP TRIGGER IS DEFINED AS ACTUAL MORTALITY RATES FALLING MORE THAN 15% BELOW THE PROJECTED MORTALITY TABLE - AT THIS THRESHOLD, THE SWAP COUNTERPARTY COMPENSATES THE SCHEME FOR EXCESS LONGEVITY.",
-                "SUBJECT: LONGEVITY SWAP TRIGGER MECHANISM - DEFINED THRESHOLD AND SETTLEMENT",
-                "DEAR PENSION TRUSTEE BOARD,"
+                "DEAR THEO,",
+                "SUBJECT: WATCHING YOU BECOME YOU",
+                "WITH PRIDE AND LOVE BEYOND WORDS,\nDAD",
+                "THERE IS A PARTICULAR ACHE THAT COMES WITH WATCHING YOU NEED ME LESS EACH YEAR, EVEN AS I COULDN'T BE PROUDER OF THE PERSON YOU ARE BECOMING - I WANT YOU TO KNOW BOTH FEELINGS ARE TRUE AT ONCE, AND I WOULDN'T HAVE IT ANY OTHER WAY, EVEN IF PART OF ME WISHES YOU COULD STAY SMALL A LITTLE LONGER."
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
-                0
+                0,
+                3,
+                2
             ],
-            "hint": "Trigger type and threshold are in the subject. Trigger definition (15% below projected mortality), compensation mechanism, and counterparty obligation are in the body.",
-            "explanation": "The 15% trigger threshold means the swap only pays out when longevity significantly exceeds projections - it is catastrophe protection, not normal variation insurance. This 'cliff' structure makes the swap cheaper while still protecting against the most severe longevity scenarios."
+            "hint": "A tender, honest emotional complexity opens the subject; a child is addressed intimately by first name; two genuinely conflicting feelings are held together honestly in the body; the closing conveys immeasurable love and pride.",
+            "explanation": "Naming the specific 'particular ache' of a child needing you less, alongside genuine pride, captures a deeply true parental experience that simpler messages often flatten into only celebration. Holding both feelings as 'true at once' rather than resolving the tension reflects real emotional sophistication about love and growth."
         },
         {
             "id": "WRT_WRITINGEMAIL_L189_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a mining company requesting an environmental impact baseline study for a deep-sea mining licence.",
+            "prompt": "Write a masterful email defending an unpopular but well-reasoned position with genuine intellectual humility.",
             "options": [
-                "BEFORE SUBMITTING YOUR DEEP-SEA MINING LICENCE APPLICATION TO THE INTERNATIONAL SEABED AUTHORITY, A COMPREHENSIVE ENVIRONMENTAL BASELINE STUDY OF ISA SITE 77 MUST BE COMPLETED AND INDEPENDENTLY VERIFIED.",
-                "DEAR CHIEF SCIENTIFIC OFFICER,",
-                "YOURS SINCERELY,\nDEEP-SEA MINERAL REGULATORY ADVISOR, NEXUS ENVIRONMENT",
-                "SUBJECT: ENVIRONMENTAL BASELINE STUDY REQUIREMENT - DSM LICENCE APPLICATION: ISA SITE 77"
+                "SUBJECT: WHY I STILL DISAGREE, THOUGH I RESPECT THE OTHER VIEW",
+                "WITH RESPECT FOR THIS DISCUSSION,\nDIMITRI PAPADOPOULOS",
+                "DEAR COLLEAGUES,",
+                "I AM AWARE MY POSITION ON THIS IS NOW THE MINORITY VIEW IN THE ROOM, AND I HOLD IT WITH GENUINE HUMILITY RATHER THAN CERTAINTY, BUT HAVING WEIGHED THE EVIDENCE CAREFULLY, I STILL BELIEVE THE LONGER-TERM APPROACH SERVES OUR STUDENTS BETTER, AND I WANTED TO EXPLAIN WHY BEFORE WE VOTE."
             ],
             "correctOrder": [
-                3,
-                1,
                 0,
-                2
+                2,
+                3,
+                1
             ],
-            "hint": "Study type and ISA site are in the subject. ISA licence context, baseline study requirement, site identification, and independent verification are in the body.",
-            "explanation": "The ISA requires environmental baseline studies before mining licence approval under UNCLOS Part XI. The study establishes pre-mining ecosystem conditions - essential for monitoring impact and determining whether the 'serious harm' threshold under ISA Regulations has been crossed."
+            "hint": "Intellectual humility is signalled directly in the subject; colleagues are addressed together; genuine acknowledgement of being outnumbered and reasoned conviction are in the body; the closing conveys respect for the process.",
+            "explanation": "Explicitly holding the position 'with genuine humility rather than certainty' models real intellectual honesty rather than stubborn confidence. Explaining the reasoning 'before we vote', rather than after losing, shows this is a genuine contribution to the discussion, not sour grapes about the outcome."
         },
         {
             "id": "WRT_WRITINGEMAIL_L189_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to the ISA asserting that a deep-sea mining operation has exceeded permitted environmental impact.",
+            "prompt": "Write an eloquent email securing support for a creative vision that others don't yet see clearly.",
             "options": [
-                "NEXUS ENVIRONMENT SUBMITS EVIDENCE THAT MINING OPERATIONS AT ISA SITE 77 HAVE EXCEEDED THE 'SERIOUS HARM TO THE MARINE ENVIRONMENT' THRESHOLD UNDER UNCLOS PART XI AND ISA REGULATION 31.",
-                "YOURS SINCERELY,\nDIRECTOR, NEXUS ENVIRONMENT",
-                "DEAR ISA LEGAL AND TECHNICAL COMMISSION,",
-                "SUBJECT: ENVIRONMENTAL IMPACT COMPLAINT - DSM SITE 77 EXCEEDS 'SERIOUS HARM' THRESHOLD"
+                "SUBJECT: I KNOW THIS SOUNDS STRANGE ON PAPER - LET ME EXPLAIN WHY IT ISN'T",
+                "WITH EXCITEMENT FOR WHAT THIS COULD BECOME,\nWENDY ACHTERBERG",
+                "I UNDERSTAND THAT SETTING THE PLAY IN A LAUNDERETTE INSTEAD OF A PALACE SOUNDS ODD WHEN YOU FIRST HEAR IT, BUT WHAT DREW ME TO IT IS THAT BOTH ARE PLACES PEOPLE WAIT, WATCH, AND REVEAL THEMSELVES TO STRANGERS - I BELIEVE IT WILL MAKE THE STORY FEEL MORE HUMAN, NOT LESS GRAND.",
+                "DEAR PRODUCTION TEAM,"
             ],
             "correctOrder": [
+                0,
                 3,
                 2,
-                0,
                 1
             ],
-            "hint": "Environmental impact and legal threshold are in the subject. Evidence submission, two legal sources (UNCLOS Part XI and ISA Regulation 31), and specific threshold exceedance are in the body.",
-            "explanation": "The 'serious harm' standard in UNCLOS Part XI and ISA Regulations is the critical threshold - the ISA can suspend or terminate mining rights if this standard is exceeded. Two legal sources strengthen the complaint by showing the threshold exists in both the treaty and its implementing regulations."
+            "hint": "Honest acknowledgement of an unusual idea opens the subject; the creative team is addressed together; genuine understanding of scepticism and a compelling, specific artistic reasoning are in the body; the closing conveys real excitement.",
+            "explanation": "Acknowledging upfront that the idea 'sounds odd' disarms scepticism before it can harden into resistance. Explaining the specific artistic reasoning - two settings sharing a deeper thematic quality - gives the vision genuine intellectual substance rather than asking for blind trust in an unconventional choice."
         },
         {
             "id": "WRT_WRITINGEMAIL_L189_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a government sponsoring state outlining liability for deep-sea mining contractor failures.",
+            "prompt": "Write an expertly crafted email of graceful disagreement with a widely respected authority in your field.",
             "options": [
-                "YOURS SINCERELY,\nINTERNATIONAL OCEAN LAW COUNSEL, NEXUS LAW",
-                "THE ICJ'S 2011 ADVISORY OPINION ESTABLISHES THAT SPONSORING STATES OWE DUE DILIGENCE OBLIGATIONS FOR THEIR CONTRACTORS' DEEP-SEA MINING ACTIVITIES - NON-COMPLIANCE MAY TRIGGER STATE LIABILITY.",
-                "SUBJECT: SPONSORING STATE LIABILITY BRIEFING - ISA ADVISORY OPINION IMPLICATIONS",
-                "DEAR MINISTER OF NATURAL RESOURCES,"
-            ],
-            "correctOrder": [
-                2,
-                3,
-                1,
-                0
-            ],
-            "hint": "Liability type and advisory opinion are in the subject. ICJ advisory opinion citation, due diligence obligation, contractor activity scope, and state liability trigger are in the body.",
-            "explanation": "The ICJ's 2011 Advisory Opinion on Responsibilities of Sponsoring States established that states bear 'direct obligations' to ensure their sponsored miners comply with ISA regulations. Unlike traditional state liability (requiring proof of breach), due diligence liability is based on failure to take all reasonable measures to prevent harm."
-        },
-        {
-            "id": "WRT_WRITINGEMAIL_L190_Q1",
-            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
-            "subtype": "writingEmail",
-            "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a technology regulator submitting an algorithmic accountability compliance report.",
-            "options": [
-                "NEXUS AI SUBMITS ITS ANNUAL ALGORITHMIC ACCOUNTABILITY REPORT DEMONSTRATING COMPLIANCE WITH EU AI ACT ARTICLE 13 TRANSPARENCY REQUIREMENTS FOR OUR HIGH-RISK AI SYSTEM DEPLOYED IN CREDIT SCORING.",
-                "DEAR AI REGULATORY AUTHORITY,",
-                "YOURS SINCERELY,\nCHIEF AI OFFICER, NEXUS AI",
-                "SUBJECT: ALGORITHMIC ACCOUNTABILITY COMPLIANCE REPORT - EU AI ACT ARTICLE 13 TRANSPARENCY"
-            ],
-            "correctOrder": [
-                3,
-                1,
-                0,
-                2
-            ],
-            "hint": "Compliance type and AI Act article are in the subject. Annual report, Article 13 compliance, high-risk AI classification, and specific deployment context (credit scoring) are in the body.",
-            "explanation": "EU AI Act Article 13 requires high-risk AI systems (including credit scoring) to be transparent - users must be able to understand how the system works and challenge its outputs. Annual compliance reports demonstrate ongoing regulatory adherence."
-        },
-        {
-            "id": "WRT_WRITINGEMAIL_L190_Q2",
-            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
-            "subtype": "writingEmail",
-            "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a bank's board raising concerns about algorithmic bias in an AI credit scoring system.",
-            "options": [
-                "OUR ALGORITHMIC AUDIT HAS IDENTIFIED STATISTICALLY SIGNIFICANT DISPARATE IMPACT ON APPLICANTS FROM ETHNIC MINORITY GROUPS IN OUR AI CREDIT SCORING SYSTEM, POTENTIALLY VIOLATING THE EQUALITY ACT 2010.",
-                "YOURS SINCERELY,\nCHIEF AI OFFICER",
-                "DEAR AUDIT COMMITTEE,",
-                "SUBJECT: ALGORITHMIC BIAS CONCERN - AI CREDIT SCORING: PROTECTED CHARACTERISTIC DISCRIMINATION"
+                "YOUR WORK HAS SHAPED HOW I THINK ABOUT THIS ENTIRE FIELD, WHICH IS EXACTLY WHY I FELT I OWED YOU A DIRECT NOTE RATHER THAN A QUIET FOOTNOTE: MY OWN DATA SUGGESTS THE EFFECT YOU DESCRIBE MAY NOT HOLD IN URBAN SETTINGS, AND I WOULD VALUE YOUR THOUGHTS ON WHERE MY ANALYSIS MIGHT BE GOING WRONG.",
+                "WITH GREAT RESPECT AND CURIOSITY,\nDR SAMUEL OTIENO",
+                "DEAR PROFESSOR HALVORSEN,",
+                "SUBJECT: A RESPECTFUL CHALLENGE TO YOUR RECENT FINDINGS"
             ],
             "correctOrder": [
                 3,
@@ -609,20 +567,20 @@
                 0,
                 1
             ],
-            "hint": "Bias type and protected characteristic are in the subject. Audit finding, statistical evidence, affected group, and EA 2010 violation risk are in the body - a formal algorithmic bias alert to the audit committee.",
-            "explanation": "Disparate impact discrimination (where a facially neutral policy disproportionately affects a protected group) is prohibited under the Equality Act 2010 even without discriminatory intent. An AI audit finding of statistically significant disparate impact triggers immediate remediation obligations."
+            "hint": "Respectful challenge is signalled directly in the subject; the respected authority is addressed formally by name and title; genuine acknowledgement of their influence and specific, humble disagreement are in the body; the closing conveys respect and curiosity.",
+            "explanation": "Acknowledging that the recipient's work has 'shaped how I think about this entire field' before disagreeing shows genuine respect, not flattery, given the specific challenge that follows. Framing the disagreement as a question - 'where my analysis might be going wrong' - reflects real intellectual humility even while presenting a serious challenge."
         },
         {
-            "id": "WRT_WRITINGEMAIL_L190_Q3",
+            "id": "WRT_WRITINGEMAIL_L190_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to an AI developer requesting an independent audit of an AI recruitment screening tool.",
+            "prompt": "Write a masterful email that captures a genuinely complex, mixed truth about a major life decision without oversimplifying it.",
             "options": [
-                "YOURS SINCERELY,\nCHIEF LEGAL OFFICER, NEXUS CONSULTING",
-                "NEXUS CONSULTING INSTRUCTS YOUR FIRM TO CONDUCT AN INDEPENDENT ALGORITHMIC AUDIT OF OUR RECRUITMENT SCREENING AI TOOL, ASSESSING DISPARATE IMPACT ACROSS ALL NINE PROTECTED CHARACTERISTICS OF THE EQUALITY ACT 2010.",
-                "SUBJECT: INDEPENDENT AI AUDIT INSTRUCTION - RECRUITMENT SCREENING TOOL: BIAS ASSESSMENT",
-                "DEAR AI AUDIT FIRM,"
+                "WITH LOVE FOR THIS CITY AND ALL OF YOU IN IT,\nCLEMENTINE ROSS",
+                "LEAVING THIS CITY IS BOTH THE RIGHT DECISION AND A GENUINE HEARTBREAK, AND I HAVE STOPPED TRYING TO RESOLVE THOSE TWO FACTS INTO ONE SIMPLE FEELING - INSTEAD, I AM CHOOSING TO LET THEM SIT TOGETHER, HONESTLY, AS I SAY GOODBYE TO A PLACE THAT GAVE ME SO MUCH.",
+                "SUBJECT: THE HONEST, COMPLICATED TRUTH ABOUT LEAVING",
+                "DEAR FRIENDS,"
             ],
             "correctOrder": [
                 2,
@@ -630,8 +588,50 @@
                 1,
                 0
             ],
-            "hint": "Audit type and tool are in the subject. Independent audit instruction, specific AI tool, all nine protected characteristics, and Equality Act 2010 reference are in the body.",
-            "explanation": "The nine protected characteristics under the Equality Act 2010 (age, disability, gender reassignment, marriage/civil partnership, pregnancy/maternity, race, religion/belief, sex, sexual orientation) must ALL be assessed - an audit covering only some would be legally inadequate."
+            "hint": "Genuine emotional complexity opens the subject; friends are addressed warmly together; two honestly conflicting truths are held together without resolution in the body; the closing conveys deep, layered love.",
+            "explanation": "Explicitly refusing to resolve the contradiction into 'one simple feeling' reflects real emotional maturity about how major life decisions genuinely feel. Choosing to let both truths 'sit together, honestly' rather than picking one is itself the sophisticated skill this message demonstrates."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L190_Q2",
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "Write an eloquent email of profound thanks to someone whose quiet, unseen work made everything else possible.",
+            "options": [
+                "NO ONE STANDS UP AT AWARDS EVENINGS TO THANK THE PERSON WHO QUIETLY KEPT THE ACCOUNTS BALANCED FOR TWENTY YEARS, BUT I WANT YOU TO KNOW THAT EVERY PROJECT WE EVER CELEBRATED PUBLICLY ONLY HAPPENED BECAUSE OF THE UNSEEN WORK YOU DID, WEEK AFTER WEEK, WITHOUT EVER ASKING FOR RECOGNITION.",
+                "SUBJECT: THE PERSON NO ONE THANKS ENOUGH",
+                "DEAR MARGARET,",
+                "WITH GRATITUDE THAT IS LONG OVERDUE,\nNNAMDI EZEALOR"
+            ],
+            "correctOrder": [
+                1,
+                2,
+                0,
+                3
+            ],
+            "hint": "A quietly powerful tribute opens the subject; the unsung contributor is addressed warmly by name; honest acknowledgement of overlooked work and specific, genuine credit are in the body; the closing conveys long-overdue gratitude.",
+            "explanation": "Naming the specific pattern of being overlooked - 'no one stands up at awards evenings' - gives the tribute real, pointed meaning rather than generic thanks. Directly crediting visible successes to this person's 'unseen work' is a genuinely eloquent way of finally giving deserved recognition."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L190_Q3",
+            "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "Write a masterful email marking the true end of a significant chapter, honest about both grief and gratitude.",
+            "options": [
+                "SUBJECT: CLOSING THIS CHAPTER, HONESTLY",
+                "I WON'T PRETEND THIS ENDING DOESN'T HURT, BECAUSE IT DOES, BUT I ALSO KNOW THAT WHAT WE BUILT TOGETHER OVER THESE EIGHT YEARS WAS REAL AND MATTERED, AND I WOULD RATHER CLOSE THIS CHAPTER HONESTLY, HOLDING BOTH THE GRIEF AND THE GRATITUDE, THAN PRETEND IT WAS EASY TO LET GO.",
+                "WITH BOTH GRIEF AND GRATITUDE, IN EQUAL MEASURE,\nBEATRIZ MONTEIRO",
+                "DEAR EVERYONE WHO WAS PART OF THIS,"
+            ],
+            "correctOrder": [
+                0,
+                3,
+                1,
+                2
+            ],
+            "hint": "Honest, unresolved emotion opens the subject; everyone involved is addressed together warmly; genuine grief and genuine gratitude are both honoured without either being minimised in the body; the closing holds both feelings equally.",
+            "explanation": "Refusing to pretend the ending 'doesn't hurt' while also affirming what was built keeps the message genuinely honest rather than falsely tidy. Closing by holding 'both the grief and the gratitude... in equal measure' is the mark of true expert-level emotional writing: resisting the urge to simplify a complex, real ending into a single tidy emotion."
         }
     ]
 }

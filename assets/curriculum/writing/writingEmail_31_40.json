@@ -10,16 +10,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a business contact exploring a potential collaboration.",
             "options": [
-                "DEAR MR ADEYEMI,",
                 "YOURS SINCERELY,\nDIANA THORNTON",
+                "DEAR MR ADEYEMI,",
                 "SUBJECT: INTEREST IN EXPLORING A POTENTIAL BUSINESS PARTNERSHIP",
                 "I AM THE MANAGING DIRECTOR OF CLEARVIEW SOLUTIONS AND BELIEVE THERE MAY BE A MUTUALLY BENEFICIAL OPPORTUNITY TO COLLABORATE ON SUSTAINABLE PACKAGING."
             ],
             "correctOrder": [
                 2,
-                0,
+                1,
                 3,
-                1
+                0
             ],
             "hint": "The purpose and interest are in the subject; the contact is addressed formally by name; the sender's role and the opportunity are introduced in the body; 'YOURS SINCERELY' closes professionally.",
             "explanation": "Introducing your own role ('Managing Director of Clearview Solutions') immediately establishes credibility. The phrase 'mutually beneficial' signals that you see value for both parties, not just your own company."
@@ -31,18 +31,18 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to your insurance provider asking about coverage for a specific claim.",
             "options": [
-                "DEAR CLAIMS TEAM,",
                 "SUBJECT: QUESTION ABOUT CLAIM COVERAGE UNDER POLICY REF: HM2201",
-                "YOURS SINCERELY,\nMELANIE COX",
-                "I WOULD LIKE TO KNOW WHETHER MY CURRENT HOME INSURANCE POLICY COVERS ACCIDENTAL DAMAGE TO KITCHEN APPLIANCES AND, IF SO, HOW TO MAKE A CLAIM."
+                "DEAR CLAIMS TEAM,",
+                "I WOULD LIKE TO KNOW WHETHER MY CURRENT HOME INSURANCE POLICY COVERS ACCIDENTAL DAMAGE TO KITCHEN APPLIANCES AND, IF SO, HOW TO MAKE A CLAIM.",
+                "KIND REGARDS,\nMELANIE COX"
             ],
             "correctOrder": [
-                1,
                 0,
-                3,
-                2
+                1,
+                2,
+                3
             ],
-            "hint": "Policy reference and coverage query are in the subject; the claims team is addressed; two linked questions are in the body; 'YOURS SINCERELY' closes the insurance correspondence.",
+            "hint": "Policy reference and coverage query are in the subject; the claims team is addressed by role, not name; two linked questions are in the body; 'KIND REGARDS' closes the insurance correspondence politely.",
             "explanation": "Using the policy reference number in the subject allows the claims team to access your policy before replying, making the response more accurate and faster. Two-part questions like 'whether it's covered AND how to claim' save a follow-up email."
         },
         {
@@ -53,15 +53,15 @@
             "prompt": "Write an email to a supplier following up on an outstanding delivery order.",
             "options": [
                 "DEAR SUPPLY TEAM,",
-                "YOURS SINCERELY,\nGARRETT LEE",
+                "I AM WRITING TO FOLLOW UP ON ORDER NUMBER 5512 PLACED ON 4 APRIL, WHICH WAS DUE FOR DELIVERY BY 18 APRIL BUT HAS NOT YET ARRIVED.",
                 "SUBJECT: FOLLOW-UP ON OUTSTANDING ORDER NO. 5512",
-                "I AM WRITING TO FOLLOW UP ON ORDER NUMBER 5512 PLACED ON 4 APRIL, WHICH WAS DUE FOR DELIVERY BY 18 APRIL BUT HAS NOT YET ARRIVED."
+                "REGARDS,\nGARRETT LEE"
             ],
             "correctOrder": [
                 2,
                 0,
-                3,
-                1
+                1,
+                3
             ],
             "hint": "Order number and follow-up purpose are in the subject; the team is addressed; specific order number, order date, and expected delivery date are all in the body.",
             "explanation": "Three specific data points - order number, order date, and delivery deadline - make it very easy for the supplier to identify and investigate your order immediately. Objective facts are more persuasive than expressions of frustration."
@@ -74,15 +74,15 @@
             "prompt": "Write an email to a pharmacist asking about renewing a repeat prescription.",
             "options": [
                 "DEAR PHARMACY TEAM,",
+                "I WOULD LIKE TO REQUEST A RENEWAL OF MY REPEAT PRESCRIPTION FOR AMOXICILLIN AND WONDER IF I NEED TO COME IN OR IF THIS CAN BE DONE BY EMAIL.",
                 "MANY THANKS,\nJULIA SMART",
-                "SUBJECT: REQUEST TO RENEW REPEAT PRESCRIPTION",
-                "I WOULD LIKE TO REQUEST A RENEWAL OF MY REPEAT PRESCRIPTION FOR AMOXICILLIN AND WONDER IF I NEED TO COME IN OR IF THIS CAN BE DONE BY EMAIL."
+                "SUBJECT: REQUEST TO RENEW REPEAT PRESCRIPTION"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                0,
+                1,
+                2
             ],
             "hint": "The medication and request are in the subject; the pharmacy team is addressed; the medication name and process question are in the body; 'MANY THANKS' closes the healthcare request.",
             "explanation": "Naming the medication ('Amoxicillin') specifically avoids any confusion. Asking whether the renewal can be done remotely ('by email') shows consideration for your own time and the pharmacy's workload."
@@ -94,16 +94,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a specialist doctor asking for a second medical opinion.",
             "options": [
-                "DEAR DR PATEL,",
-                "SUBJECT: REQUEST FOR SECOND OPINION ON RECENT DIAGNOSIS",
                 "YOURS SINCERELY,\nANDREW FORD",
-                "I WAS RECENTLY DIAGNOSED WITH A CONDITION BY ANOTHER SPECIALIST AND, FOLLOWING CAREFUL CONSIDERATION, I WOULD LIKE TO SEEK A SECOND OPINION AT YOUR CLINIC."
+                "I WAS RECENTLY DIAGNOSED WITH A CONDITION BY ANOTHER SPECIALIST AND, FOLLOWING CAREFUL CONSIDERATION, I WOULD LIKE TO SEEK A SECOND OPINION AT YOUR CLINIC.",
+                "DEAR DR PATEL,",
+                "SUBJECT: REQUEST FOR SECOND OPINION ON RECENT DIAGNOSIS"
             ],
             "correctOrder": [
-                1,
-                0,
                 3,
-                2
+                2,
+                1,
+                0
             ],
             "hint": "The purpose is diplomatically stated in the subject; the doctor is addressed formally by name; the reason for seeking a second opinion is given respectfully; 'YOURS SINCERELY' closes professionally.",
             "explanation": "'Following careful consideration' signals that this decision was not impulsive, which is important in a medical context. The diplomatic phrasing avoids implying the first doctor was wrong, which is both polite and appropriate."
@@ -115,18 +115,18 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a hospital booking team to arrange a health screening appointment.",
             "options": [
-                "DEAR SCREENING UNIT,",
-                "YOURS SINCERELY,\nDAVID MARSH",
                 "SUBJECT: BOOKING REQUEST FOR OVER-50S HEALTH SCREENING",
-                "I AM FIFTY-TWO YEARS OLD AND WOULD LIKE TO BOOK A PLACE ON YOUR OVER-50S HEALTH SCREENING PROGRAMME - PLEASE COULD YOU ADVISE ON AVAILABLE DATES?"
+                "I AM FIFTY-TWO YEARS OLD AND WOULD LIKE TO BOOK A PLACE ON YOUR OVER-50S HEALTH SCREENING PROGRAMME - PLEASE COULD YOU ADVISE ON AVAILABLE DATES?",
+                "YOURS FAITHFULLY,\nDAVID MARSH",
+                "DEAR SCREENING UNIT,"
             ],
             "correctOrder": [
-                2,
                 0,
                 3,
-                1
+                1,
+                2
             ],
-            "hint": "The screening type and age group are in the subject; the correct unit is addressed; age, request, and date question are in the body; 'YOURS SINCERELY' closes formally.",
+            "hint": "The screening type and age group are in the subject; the correct unit is addressed by role, not name; age, request, and date question are in the body; the closing must match this unnamed greeting.",
             "explanation": "Stating your age ('fifty-two') immediately confirms your eligibility for the over-50s programme. 'Please could you advise' is a polite, professional phrasing for requesting information from a healthcare organisation."
         },
         {
@@ -137,17 +137,17 @@
             "prompt": "Write an email to a removal company asking about the cost of moving house.",
             "options": [
                 "DEAR REMOVALS TEAM,",
-                "YOURS SINCERELY,\nPAULINE WEBB",
                 "SUBJECT: QUOTE REQUEST FOR HOUSE REMOVAL - JULY AVAILABILITY",
-                "I AM MOVING FROM A THREE-BEDROOM HOUSE IN LEEDS TO MANCHESTER IN JULY AND WOULD LIKE A QUOTE FOR YOUR REMOVAL AND PACKING SERVICES."
+                "I AM MOVING FROM A THREE-BEDROOM HOUSE IN LEEDS TO MANCHESTER IN JULY AND WOULD LIKE A QUOTE FOR YOUR REMOVAL AND PACKING SERVICES.",
+                "KIND REGARDS,\nPAULINE WEBB"
             ],
             "correctOrder": [
-                2,
+                1,
                 0,
-                3,
-                1
+                2,
+                3
             ],
-            "hint": "Month, type of service, and quote request are in the subject; the team is addressed; all relevant moving details are in the body; 'YOURS SINCERELY' closes the service enquiry.",
+            "hint": "Month, type of service, and quote request are in the subject; the team is addressed by role, not name; all relevant moving details are in the body; 'KIND REGARDS' closes the service enquiry.",
             "explanation": "Providing specific details - number of bedrooms, origin, and destination - in the body gives the removal company enough information to generate an accurate quote rather than a vague estimate."
         },
         {
@@ -157,16 +157,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a storage company asking about renting a unit.",
             "options": [
-                "DEAR STORAGE SOLUTIONS TEAM,",
                 "SUBJECT: ENQUIRY ABOUT SELF-STORAGE UNIT SIZES AND PRICES",
                 "KIND REGARDS,\nRUTH OLSON",
+                "DEAR STORAGE SOLUTIONS TEAM,",
                 "I NEED TO STORE THE CONTENTS OF A ONE-BEDROOM FLAT FOR APPROXIMATELY THREE MONTHS AND WOULD LIKE INFORMATION ON AVAILABLE UNIT SIZES AND MONTHLY COSTS."
             ],
             "correctOrder": [
-                1,
                 0,
+                2,
                 3,
-                2
+                1
             ],
             "hint": "Storage type and pricing are in the subject; the team is addressed; volume of belongings and duration are in the body; 'KIND REGARDS' closes the straightforward service enquiry.",
             "explanation": "Describing what needs to be stored ('contents of a one-bedroom flat') gives the storage company enough context to suggest an appropriate unit size. Always confirm the duration when enquiring about storage, as prices often vary."
@@ -179,15 +179,15 @@
             "prompt": "Write an email to your landlord giving one month's notice to vacate a rented property.",
             "options": [
                 "DEAR MRS THOMPSON,",
-                "YOURS SINCERELY,\nCLARE HUNT",
+                "I AM WRITING TO GIVE YOU ONE CALENDAR MONTH'S FORMAL NOTICE OF MY INTENTION TO VACATE THE ABOVE PROPERTY, WITH MY LAST DAY BEING 31 AUGUST.",
                 "SUBJECT: ONE MONTH'S NOTICE TO VACATE - FLAT 2, 9 SPRING ROAD",
-                "I AM WRITING TO GIVE YOU ONE CALENDAR MONTH'S FORMAL NOTICE OF MY INTENTION TO VACATE THE ABOVE PROPERTY, WITH MY LAST DAY BEING 31 AUGUST."
+                "YOURS SINCERELY,\nCLARE HUNT"
             ],
             "correctOrder": [
                 2,
                 0,
-                3,
-                1
+                1,
+                3
             ],
             "hint": "The notice type and property address are in the subject; the landlord is addressed formally; the notice period and exact leave date are stated in the body; 'YOURS SINCERELY' closes the legal correspondence.",
             "explanation": "Specifying the exact leave date ('31 August') avoids any dispute over when the notice period ends. The phrase 'formal notice of my intention to vacate' uses the correct legal language expected in tenancy correspondence."
@@ -199,14 +199,14 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a running club to register for an upcoming marathon.",
             "options": [
-                "DEAR RACE REGISTRATION TEAM,",
-                "MANY THANKS,\nSTUART MILLS",
                 "SUBJECT: MARATHON REGISTRATION ENQUIRY - NOVEMBER RACE",
+                "MANY THANKS,\nSTUART MILLS",
+                "DEAR RACE REGISTRATION TEAM,",
                 "I AM KEEN TO ENTER THE NOVEMBER MARATHON AND WOULD LIKE TO KNOW HOW TO REGISTER, WHAT THE ENTRY FEE IS, AND THE REGISTRATION DEADLINE."
             ],
             "correctOrder": [
-                2,
                 0,
+                2,
                 3,
                 1
             ],
@@ -222,7 +222,7 @@
             "options": [
                 "DEAR TRANSPORT PLANNING TEAM,",
                 "SUBJECT: REQUEST FOR INFORMATION ON SAFE CYCLING ROUTES",
-                "YOURS SINCERELY,\nBECKY LANE",
+                "YOURS FAITHFULLY,\nBECKY LANE",
                 "I HAVE RECENTLY STARTED CYCLING TO WORK AND WOULD LIKE TO KNOW IF THE COUNCIL HAS A RECOMMENDED ROUTE MAP FOR SAFE CYCLING IN THE TOWN CENTRE."
             ],
             "correctOrder": [
@@ -231,7 +231,7 @@
                 3,
                 2
             ],
-            "hint": "Cycling and safety are in the subject; the correct council team is addressed; the reason for cycling and the specific request are in the body; 'YOURS SINCERELY' closes formally.",
+            "hint": "Cycling and safety are in the subject; the correct council team is addressed by role, not name; the reason for cycling and the specific request are in the body; the closing must match this unnamed greeting.",
             "explanation": "Mentioning 'recently started cycling to work' shows you are a genuine new cyclist, not just a researcher. Asking for a 'recommended route map' is specific and gives the council a clear, actionable request to respond to."
         },
         {
@@ -241,18 +241,18 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a sports centre asking about one-to-one tennis coaching.",
             "options": [
+                "I AM AN INTERMEDIATE TENNIS PLAYER LOOKING TO IMPROVE MY GAME AND WOULD LIKE TO KNOW IF YOU OFFER INDIVIDUAL COACHING SESSIONS AND WHAT THE HOURLY RATE IS.",
                 "DEAR SPORTS CENTRE MANAGER,",
-                "YOURS SINCERELY,\nWENDY BROOKS",
-                "SUBJECT: ENQUIRY ABOUT ONE-TO-ONE TENNIS COACHING",
-                "I AM AN INTERMEDIATE TENNIS PLAYER LOOKING TO IMPROVE MY GAME AND WOULD LIKE TO KNOW IF YOU OFFER INDIVIDUAL COACHING SESSIONS AND WHAT THE HOURLY RATE IS."
+                "BEST REGARDS,\nWENDY BROOKS",
+                "SUBJECT: ENQUIRY ABOUT ONE-TO-ONE TENNIS COACHING"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "The sport and coaching type are in the subject; the manager is addressed formally; ability level, request, and hourly rate question are in the body; 'YOURS SINCERELY' closes.",
+            "hint": "The sport and coaching type are in the subject; the manager is addressed by role, not name; ability level, request, and hourly rate question are in the body; 'BEST REGARDS' closes warmly.",
             "explanation": "Identifying your ability level ('intermediate') is very useful for a coach or sports centre to know, as it determines the coaching approach. Asking about both availability and hourly rate in one email streamlines the enquiry process."
         },
         {
@@ -262,16 +262,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to your company's IT helpdesk reporting a computer fault.",
             "options": [
-                "DEAR IT HELPDESK,",
                 "BEST REGARDS,\nSIMON TAYLOR",
-                "SUBJECT: URGENT - LAPTOP NOT STARTING SINCE THIS MORNING",
-                "MY LAPTOP HAS FAILED TO START SINCE THIS MORNING AND I AM UNABLE TO ACCESS ANY FILES OR ATTEND MY ONLINE MEETINGS - PLEASE COULD YOU ASSIST URGENTLY?"
+                "MY LAPTOP HAS FAILED TO START SINCE THIS MORNING AND I AM UNABLE TO ACCESS ANY FILES OR ATTEND MY ONLINE MEETINGS - PLEASE COULD YOU ASSIST URGENTLY?",
+                "DEAR IT HELPDESK,",
+                "SUBJECT: URGENT - LAPTOP NOT STARTING SINCE THIS MORNING"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                2,
+                1,
+                0
             ],
             "hint": "The urgency and fault are clear in the subject; the IT team is addressed professionally; the problem, impact, and urgency are in the body; 'BEST REGARDS' closes the internal work email.",
             "explanation": "Using 'URGENT' in the subject when it genuinely is urgent is appropriate. Describing the impact ('unable to attend meetings') helps IT prioritise your ticket over non-urgent requests."
@@ -283,14 +283,14 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to your IT manager asking about the process for renewing software licenses.",
             "options": [
-                "DEAR IT MANAGER,",
                 "SUBJECT: QUESTION ABOUT SOFTWARE LICENCE RENEWAL PROCESS",
+                "DEAR IT MANAGER,",
                 "BEST REGARDS,\nNAOMI FOSTER",
                 "SEVERAL OF OUR TEAM'S SOFTWARE LICENCES ARE DUE TO EXPIRE NEXT MONTH AND I WOULD LIKE TO KNOW THE PROCESS FOR RENEWING THEM AND ANY ASSOCIATED COSTS."
             ],
             "correctOrder": [
-                1,
                 0,
+                1,
                 3,
                 2
             ],
@@ -304,15 +304,15 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to your IT team reporting a potential cybersecurity concern.",
             "options": [
-                "DEAR SECURITY TEAM,",
+                "I RECEIVED AN EMAIL THIS MORNING THAT APPEARS TO BE A PHISHING ATTEMPT - I DID NOT CLICK ANY LINKS BUT AM FORWARDING IT TO YOU FOR ANALYSIS.",
                 "BEST REGARDS,\nHUGH BAKER",
                 "SUBJECT: URGENT - POSSIBLE PHISHING EMAIL RECEIVED",
-                "I RECEIVED AN EMAIL THIS MORNING THAT APPEARS TO BE A PHISHING ATTEMPT - I DID NOT CLICK ANY LINKS BUT AM FORWARDING IT TO YOU FOR ANALYSIS."
+                "DEAR SECURITY TEAM,"
             ],
             "correctOrder": [
                 2,
-                0,
                 3,
+                0,
                 1
             ],
             "hint": "Urgency and type of threat are in the subject; the security team is addressed; the nature of the email, the user's response, and next action are in the body.",
@@ -325,18 +325,18 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a consulate asking about the visa application process.",
             "options": [
-                "DEAR VISA SERVICES TEAM,",
-                "YOURS SINCERELY,\nMARIA GRANT",
                 "SUBJECT: ENQUIRY ABOUT VISA REQUIREMENTS FOR VISITING SPAIN",
-                "I AM A BRITISH CITIZEN PLANNING TO VISIT SPAIN FOR THREE WEEKS IN AUGUST AND WOULD LIKE TO KNOW WHETHER A VISA IS REQUIRED AND HOW TO APPLY."
+                "I AM A BRITISH CITIZEN PLANNING TO VISIT SPAIN FOR THREE WEEKS IN AUGUST AND WOULD LIKE TO KNOW WHETHER A VISA IS REQUIRED AND HOW TO APPLY.",
+                "YOURS FAITHFULLY,\nMARIA GRANT",
+                "DEAR VISA SERVICES TEAM,"
             ],
             "correctOrder": [
-                2,
                 0,
                 3,
-                1
+                1,
+                2
             ],
-            "hint": "Destination and visa query are in the subject; the correct team is addressed; nationality, trip duration, and two specific questions are in the body; 'YOURS SINCERELY' closes officially.",
+            "hint": "Destination and visa query are in the subject; the correct team is addressed by role, not name; nationality, trip duration, and two specific questions are in the body; the closing must match this unnamed greeting.",
             "explanation": "Providing nationality ('British citizen') and trip duration immediately helps the consulate give an accurate answer, as visa requirements depend heavily on both factors. Asking whether a visa is needed AND how to apply is a logical two-step question."
         },
         {
@@ -346,18 +346,18 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to the passport office asking about renewing a passport urgently.",
             "options": [
-                "DEAR PASSPORT SERVICES,",
                 "SUBJECT: URGENT PASSPORT RENEWAL - TRAVEL DATE IN THREE WEEKS",
-                "YOURS SINCERELY,\nFIONA JAMES",
+                "KIND REGARDS,\nFIONA JAMES",
+                "DEAR PASSPORT SERVICES,",
                 "MY PASSPORT IS DUE TO EXPIRE IN ONE MONTH AND I AM TRAVELLING IN THREE WEEKS - PLEASE COULD YOU ADVISE ON THE PROCESS FOR AN URGENT PASSPORT RENEWAL?"
             ],
             "correctOrder": [
-                1,
                 0,
+                2,
                 3,
-                2
+                1
             ],
-            "hint": "Urgency and travel timeline are in the subject; the passport services team is addressed; the expiry date, travel date, and urgent request are all in the body; 'YOURS SINCERELY' closes officially.",
+            "hint": "Urgency and travel timeline are in the subject; the passport team is addressed by role, not name; the expiry date, travel date, and urgent request are all in the body; 'KIND REGARDS' closes efficiently.",
             "explanation": "Including specific timeframes ('expires in one month', 'travelling in three weeks') creates a clear, factual picture of the urgency. The contrast between these two dates is what justifies requesting the expedited process."
         },
         {
@@ -367,18 +367,18 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a government authority asking about replacing a lost identity document.",
             "options": [
-                "DEAR DVLA SERVICES TEAM,",
-                "YOURS SINCERELY,\nBEN WATTS",
                 "SUBJECT: REQUEST FOR INFORMATION ON REPLACING A LOST DRIVING LICENCE",
-                "I HAVE RECENTLY LOST MY DRIVING LICENCE AND WOULD LIKE TO KNOW THE PROCESS FOR APPLYING FOR A REPLACEMENT AND HOW LONG IT IS LIKELY TO TAKE."
+                "DEAR DVLA SERVICES TEAM,",
+                "I HAVE RECENTLY LOST MY DRIVING LICENCE AND WOULD LIKE TO KNOW THE PROCESS FOR APPLYING FOR A REPLACEMENT AND HOW LONG IT IS LIKELY TO TAKE.",
+                "YOURS FAITHFULLY,\nBEN WATTS"
             ],
             "correctOrder": [
-                2,
                 0,
-                3,
-                1
+                1,
+                2,
+                3
             ],
-            "hint": "Document type and replacement request are in the subject; the relevant authority is addressed; the situation and two key questions are in the body; 'YOURS SINCERELY' closes the official correspondence.",
+            "hint": "Document type and replacement request are in the subject; the relevant authority is addressed by role, not name; the situation and two key questions are in the body; the closing must match this unnamed greeting.",
             "explanation": "Asking both about the process AND the processing time in one email gives you all the information you need. 'How long it is likely to take' is a practical question that helps with planning if you need the licence for a specific date."
         },
         {
@@ -388,18 +388,18 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a bank enquiring about personal loan options.",
             "options": [
-                "DEAR LOANS TEAM,",
-                "YOURS SINCERELY,\nCHRIS NORTON",
                 "SUBJECT: ENQUIRY ABOUT PERSONAL LOAN OPTIONS",
-                "I AM LOOKING TO BORROW £5,000 FOR HOME IMPROVEMENTS AND WOULD LIKE TO KNOW WHAT PERSONAL LOAN RATES AND REPAYMENT PERIODS ARE AVAILABLE TO EXISTING CUSTOMERS."
+                "I AM LOOKING TO BORROW £5,000 FOR HOME IMPROVEMENTS AND WOULD LIKE TO KNOW WHAT PERSONAL LOAN RATES AND REPAYMENT PERIODS ARE AVAILABLE TO EXISTING CUSTOMERS.",
+                "BEST REGARDS,\nCHRIS NORTON",
+                "DEAR LOANS TEAM,"
             ],
             "correctOrder": [
-                2,
                 0,
                 3,
-                1
+                1,
+                2
             ],
-            "hint": "Loan purpose and amount are in the subject; the loans team is addressed; loan amount, purpose, and two specific questions are in the body; 'YOURS SINCERELY' closes the financial correspondence.",
+            "hint": "Loan purpose and amount are in the subject; the loans team is addressed by role, not name; loan amount, purpose, and two specific questions are in the body; 'BEST REGARDS' closes the financial correspondence professionally.",
             "explanation": "Specifying the loan amount and purpose ('home improvements') immediately allows the bank to identify appropriate loan products. Asking specifically as 'existing customers' may unlock preferential rates."
         },
         {
@@ -409,16 +409,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a financial adviser asking about investment options for savings.",
             "options": [
-                "DEAR MS HENRY,",
+                "I HAVE £10,000 IN SAVINGS THAT I WOULD LIKE TO INVEST OVER THE NEXT FIVE YEARS AND I AM INTERESTED IN YOUR PROFESSIONAL ADVICE ON THE BEST AVAILABLE OPTIONS.",
                 "SUBJECT: ENQUIRY ABOUT INVESTMENT OPTIONS FOR £10,000 SAVINGS",
-                "YOURS SINCERELY,\nGARY BLAKE",
-                "I HAVE £10,000 IN SAVINGS THAT I WOULD LIKE TO INVEST OVER THE NEXT FIVE YEARS AND I AM INTERESTED IN YOUR PROFESSIONAL ADVICE ON THE BEST AVAILABLE OPTIONS."
+                "DEAR MS HENRY,",
+                "YOURS SINCERELY,\nGARY BLAKE"
             ],
             "correctOrder": [
                 1,
+                2,
                 0,
-                3,
-                2
+                3
             ],
             "hint": "Amount, timeframe, and investment purpose are in the subject; the adviser is addressed formally by name; the key facts - amount, horizon, and advice request - are in the body.",
             "explanation": "Giving both the investment amount AND the time horizon ('five years') enables the financial adviser to recommend suitable products at the right risk level. Seeking 'professional advice' frames this as a formal consultation."
@@ -430,16 +430,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to your bank reporting a suspected fraudulent charge on your account.",
             "options": [
-                "DEAR FRAUD TEAM,",
-                "YOURS FAITHFULLY,\nLAURA HUNT",
+                "I NOTICED AN UNRECOGNISED CHARGE OF £87.50 ON MY ACCOUNT ON 12 JUNE AND BELIEVE IT MAY BE FRAUDULENT - I WOULD LIKE THIS INVESTIGATED AND MY CARD BLOCKED IMMEDIATELY.",
                 "SUBJECT: URGENT - SUSPECTED FRAUDULENT TRANSACTION ON MY ACCOUNT",
-                "I NOTICED AN UNRECOGNISED CHARGE OF £87.50 ON MY ACCOUNT ON 12 JUNE AND BELIEVE IT MAY BE FRAUDULENT - I WOULD LIKE THIS INVESTIGATED AND MY CARD BLOCKED IMMEDIATELY."
+                "YOURS FAITHFULLY,\nLAURA HUNT",
+                "DEAR FRAUD TEAM,"
             ],
             "correctOrder": [
-                2,
-                0,
+                1,
                 3,
-                1
+                0,
+                2
             ],
             "hint": "Urgency and fraud are in the subject; the fraud team is addressed; the transaction amount, date, and two requests (investigate AND block) are in the body; 'YOURS FAITHFULLY' closes (no named recipient).",
             "explanation": "Providing the exact charge amount and date makes it easier for the fraud team to identify the transaction immediately. Asking for both an investigation AND card blocking shows you understand the appropriate two-pronged response to potential fraud."
@@ -451,16 +451,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to your energy provider to report a gas leak concern.",
             "options": [
-                "DEAR EMERGENCY SERVICES TEAM,",
-                "YOURS FAITHFULLY,\nPETER WOOD",
                 "SUBJECT: URGENT - POSSIBLE GAS LEAK AT MY PROPERTY",
-                "I HAVE DETECTED A SMELL THAT MAY INDICATE A GAS LEAK AT MY PROPERTY - I HAVE EVACUATED THE BUILDING AND AM REQUESTING IMMEDIATE ASSISTANCE."
+                "I HAVE DETECTED A SMELL THAT MAY INDICATE A GAS LEAK AT MY PROPERTY - I HAVE EVACUATED THE BUILDING AND AM REQUESTING IMMEDIATE ASSISTANCE.",
+                "YOURS FAITHFULLY,\nPETER WOOD",
+                "DEAR EMERGENCY SERVICES TEAM,"
             ],
             "correctOrder": [
-                2,
                 0,
                 3,
-                1
+                1,
+                2
             ],
             "hint": "Urgency and safety risk are in the subject; the emergency team is addressed; the situation, action taken, and request are in the body; 'YOURS FAITHFULLY' closes this emergency communication.",
             "explanation": "In an emergency email, the subject line must communicate urgency and risk immediately. Stating that you have already evacuated shows you have taken the correct safety action, which is important information for the emergency response team."
@@ -472,16 +472,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to your energy supplier requesting installation of a smart meter.",
             "options": [
-                "DEAR SMART METER TEAM,",
+                "I AM AN EXISTING CUSTOMER AND WOULD LIKE TO ARRANGE INSTALLATION OF A SMART METER AT MY HOME - COULD YOU ADVISE ON AVAILABILITY AND THE INSTALLATION PROCESS?",
                 "SUBJECT: REQUEST TO INSTALL A SMART METER AT MY PROPERTY",
-                "KIND REGARDS,\nSUSAN RILEY",
-                "I AM AN EXISTING CUSTOMER AND WOULD LIKE TO ARRANGE INSTALLATION OF A SMART METER AT MY HOME - COULD YOU ADVISE ON AVAILABILITY AND THE INSTALLATION PROCESS?"
+                "DEAR SMART METER TEAM,",
+                "KIND REGARDS,\nSUSAN RILEY"
             ],
             "correctOrder": [
                 1,
+                2,
                 0,
-                3,
-                2
+                3
             ],
             "hint": "The request type is in the subject; the right team is addressed; existing customer status, two questions about availability and process are in the body; 'KIND REGARDS' closes the customer service email.",
             "explanation": "Identifying yourself as an 'existing customer' at the start of the body helps the representative locate your account. Asking both about availability (when?) and process (how?) in one email is efficient."
@@ -494,17 +494,17 @@
             "prompt": "Write an email to your energy provider asking to query an unexpectedly high bill.",
             "options": [
                 "DEAR BILLING TEAM,",
-                "YOURS SINCERELY,\nJULIE CROSS",
-                "SUBJECT: QUERY ABOUT UNUSUALLY HIGH ENERGY BILL - ACCOUNT NO. EL4417",
-                "MY ENERGY BILL FOR MARCH WAS SIGNIFICANTLY HIGHER THAN USUAL AND I WOULD LIKE AN EXPLANATION AS TO WHY THE CHARGES ARE SO MUCH GREATER THAN PREVIOUS MONTHS."
+                "KIND REGARDS,\nJULIE CROSS",
+                "MY ENERGY BILL FOR MARCH WAS SIGNIFICANTLY HIGHER THAN USUAL AND I WOULD LIKE AN EXPLANATION AS TO WHY THE CHARGES ARE SO MUCH GREATER THAN PREVIOUS MONTHS.",
+                "SUBJECT: QUERY ABOUT UNUSUALLY HIGH ENERGY BILL - ACCOUNT NO. EL4417"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
+                0,
+                2,
                 1
             ],
-            "hint": "Account number and bill query are in the subject; the billing team is addressed; the billing month and comparison to previous months are in the body; 'YOURS SINCERELY' closes the customer complaint.",
+            "hint": "Account number and bill query are in the subject; the billing team is addressed by role, not name; the billing month and comparison to previous months are in the body; 'KIND REGARDS' closes the query politely.",
             "explanation": "Including your account number in the subject is the most important step in billing queries - it allows the team to pull up your account and billing history immediately. Referencing 'previous months' asks them to investigate the discrepancy."
         },
         {
@@ -514,18 +514,18 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to your university asking to change your module choices.",
             "options": [
+                "I AM CURRENTLY STUDYING BA ENGLISH IN YEAR TWO AND WOULD LIKE TO SWAP THE VICTORIAN LITERATURE MODULE FOR THE CONTEMPORARY WRITING MODULE FOR THIS SEMESTER.",
                 "DEAR ACADEMIC REGISTRY,",
-                "YOURS SINCERELY,\nAMY PRICE",
-                "SUBJECT: MODULE CHANGE REQUEST - STUDENT ID 20194456",
-                "I AM CURRENTLY STUDYING BA ENGLISH IN YEAR TWO AND WOULD LIKE TO SWAP THE VICTORIAN LITERATURE MODULE FOR THE CONTEMPORARY WRITING MODULE FOR THIS SEMESTER."
+                "YOURS FAITHFULLY,\nAMY PRICE",
+                "SUBJECT: MODULE CHANGE REQUEST - STUDENT ID 20194456"
             ],
             "correctOrder": [
-                2,
-                0,
                 3,
-                1
+                1,
+                0,
+                2
             ],
-            "hint": "Student ID and change type are in the subject; the correct registry is addressed; specific course, year, and module names are in the body; 'YOURS SINCERELY' closes the formal academic request.",
+            "hint": "Student ID and change type are in the subject; the registry is addressed by role, not name; specific course, year, and module names are in the body; the closing must match this unnamed greeting.",
             "explanation": "Including your student ID in the subject allows registry to locate your record before they open the email. Using the full module names ('Victorian Literature', 'Contemporary Writing') avoids any ambiguity about which courses you mean."
         },
         {
@@ -535,18 +535,18 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a university accommodation office asking about room availability.",
             "options": [
-                "DEAR ACCOMMODATION OFFICE,",
                 "SUBJECT: ENQUIRY ABOUT STUDENT ACCOMMODATION FOR NEXT ACADEMIC YEAR",
-                "YOURS SINCERELY,\nROSE HALL",
-                "I AM A SECOND-YEAR STUDENT AND WOULD LIKE TO KNOW WHETHER EN-SUITE ROOMS IN UNIVERSITY HALLS ARE AVAILABLE FOR NEXT YEAR AND HOW TO APPLY."
+                "I AM A SECOND-YEAR STUDENT AND WOULD LIKE TO KNOW WHETHER EN-SUITE ROOMS IN UNIVERSITY HALLS ARE AVAILABLE FOR NEXT YEAR AND HOW TO APPLY.",
+                "DEAR ACCOMMODATION OFFICE,",
+                "KIND REGARDS,\nROSE HALL"
             ],
             "correctOrder": [
-                1,
                 0,
-                3,
-                2
+                2,
+                1,
+                3
             ],
-            "hint": "Year group and accommodation type are in the subject; the accommodation office is addressed; year of study, room type, and process question are in the body; 'YOURS SINCERELY' closes.",
+            "hint": "Year group and accommodation type are in the subject; the accommodation office is addressed by role, not name; year of study, room type, and process question are in the body; 'KIND REGARDS' closes.",
             "explanation": "Specifying 'en-suite' shows you know what type of accommodation you want. Asking about availability AND the application process in one email is efficient and shows forward planning."
         },
         {
@@ -556,15 +556,15 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to your university scholarship office enquiring about funding eligibility.",
             "options": [
+                "I AM AN INTERNATIONAL STUDENT FROM NIGERIA CURRENTLY IN MY FIRST YEAR AND WOULD LIKE TO KNOW WHETHER I AM ELIGIBLE TO APPLY FOR ANY OF YOUR AVAILABLE SCHOLARSHIPS.",
+                "BEST REGARDS,\nCHIBUZOR OKAFOR",
                 "DEAR SCHOLARSHIPS TEAM,",
-                "YOURS SINCERELY,\nCHIBUZOR OKAFOR",
-                "SUBJECT: SCHOLARSHIP ELIGIBILITY ENQUIRY - INTERNATIONAL STUDENT",
-                "I AM AN INTERNATIONAL STUDENT FROM NIGERIA CURRENTLY IN MY FIRST YEAR AND WOULD LIKE TO KNOW WHETHER I AM ELIGIBLE TO APPLY FOR ANY OF YOUR AVAILABLE SCHOLARSHIPS."
+                "SUBJECT: SCHOLARSHIP ELIGIBILITY ENQUIRY - INTERNATIONAL STUDENT"
             ],
             "correctOrder": [
+                3,
                 2,
                 0,
-                3,
                 1
             ],
             "hint": "Eligibility and student status are in the subject; the scholarships team is addressed; key identifying information (nationality, year) and the eligibility question are in the body.",
@@ -577,18 +577,18 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a garage reporting a fault with your car.",
             "options": [
-                "DEAR SERVICE TEAM,",
-                "YOURS SINCERELY,\nSTUART JAMES",
                 "SUBJECT: CAR FAULT REPORT - STRANGE NOISE FROM ENGINE",
-                "MY CAR HAS BEEN MAKING A CLICKING SOUND FROM THE ENGINE WHEN ACCELERATING FOR THE PAST WEEK AND I WOULD LIKE TO BOOK A DIAGNOSTIC APPOINTMENT."
+                "DEAR SERVICE TEAM,",
+                "MY CAR HAS BEEN MAKING A CLICKING SOUND FROM THE ENGINE WHEN ACCELERATING FOR THE PAST WEEK AND I WOULD LIKE TO BOOK A DIAGNOSTIC APPOINTMENT.",
+                "KIND REGARDS,\nSTUART JAMES"
             ],
             "correctOrder": [
-                2,
                 0,
-                3,
-                1
+                1,
+                2,
+                3
             ],
-            "hint": "The fault type and urgency are in the subject; the service team is addressed; the symptom, duration, and specific booking request are in the body; 'YOURS SINCERELY' closes professionally.",
+            "hint": "The fault type and urgency are in the subject; the service team is addressed by role, not name; the symptom, duration, and specific booking request are in the body; 'KIND REGARDS' closes professionally.",
             "explanation": "Describing the fault precisely ('clicking sound when accelerating') is more useful to a mechanic than saying 'something sounds wrong'. Requesting a 'diagnostic appointment' shows you know the correct automotive terminology."
         },
         {
@@ -599,17 +599,17 @@
             "prompt": "Write an email to the DVLA asking how to book a vehicle inspection.",
             "options": [
                 "DEAR DVLA ENQUIRIES TEAM,",
+                "I HAVE RECENTLY IMPORTED A VEHICLE AND WOULD LIKE TO KNOW HOW TO BOOK THE REQUIRED INSPECTION AND WHAT DOCUMENTS I NEED TO BRING.",
                 "SUBJECT: QUESTION ABOUT BOOKING AN MOT-EQUIVALENT INSPECTION",
-                "YOURS SINCERELY,\nRAIMUND BRAUN",
-                "I HAVE RECENTLY IMPORTED A VEHICLE AND WOULD LIKE TO KNOW HOW TO BOOK THE REQUIRED INSPECTION AND WHAT DOCUMENTS I NEED TO BRING."
+                "BEST REGARDS,\nRAIMUND BRAUN"
             ],
             "correctOrder": [
-                1,
+                2,
                 0,
-                3,
-                2
+                1,
+                3
             ],
-            "hint": "Inspection purpose and vehicle type are in the subject; the DVLA team is addressed; the reason for the inspection and document question are in the body; 'YOURS SINCERELY' closes formally.",
+            "hint": "Inspection purpose and vehicle type are in the subject; the team is addressed by role, not name; the reason for the inspection and document question are in the body; 'BEST REGARDS' closes formally.",
             "explanation": "Mentioning 'recently imported' immediately explains why you need this particular type of inspection. Asking about documents to bring is essential so you don't have to make a second trip if something is missing."
         },
         {
@@ -619,16 +619,16 @@
             "interactionType": "Slot Sorter",
             "prompt": "Write an email to a council disputing a parking fine.",
             "options": [
+                "I AM WRITING TO FORMALLY APPEAL AGAINST PENALTY NOTICE 118274 ISSUED ON 14 MAY, AS I BELIEVE IT WAS ISSUED INCORRECTLY BECAUSE I HELD A VALID PARKING PERMIT AT THE TIME.",
                 "DEAR PARKING APPEALS TEAM,",
-                "YOURS FAITHFULLY,\nDENISE HUNT",
                 "SUBJECT: FORMAL APPEAL AGAINST PARKING PENALTY NOTICE NO. 118274",
-                "I AM WRITING TO FORMALLY APPEAL AGAINST PENALTY NOTICE 118274 ISSUED ON 14 MAY, AS I BELIEVE IT WAS ISSUED INCORRECTLY BECAUSE I HELD A VALID PARKING PERMIT AT THE TIME."
+                "YOURS FAITHFULLY,\nDENISE HUNT"
             ],
             "correctOrder": [
                 2,
+                1,
                 0,
-                3,
-                1
+                3
             ],
             "hint": "The appeal and penalty notice number are in the subject; the appeals team is addressed formally; the notice number, issue date, and grounds for appeal are all in the body.",
             "explanation": "Including the penalty notice number in the subject line is essential for appeals as it identifies which fine you are disputing. Stating your specific grounds ('held a valid permit') is far more effective than simply saying the fine is wrong."

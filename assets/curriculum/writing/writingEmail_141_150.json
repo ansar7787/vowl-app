@@ -8,453 +8,453 @@
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a sovereign wealth fund proposing a co-investment in a real estate portfolio.",
+            "prompt": "You run a small business. Write an email transparently addressing a significant service disruption that has affected many customers.",
             "options": [
-                "NEXUS REAL ESTATE PROPOSES A CO-INVESTMENT OPPORTUNITY IN A PRIME LONDON OFFICE PORTFOLIO VALUED AT £400M - WE SEEK A 40% EQUITY PARTNER FOR A FIVE-YEAR HOLD WITH A TARGET NET IRR OF 12%.",
-                "YOURS SINCERELY,\nDR HELEN MARSH, MANAGING PARTNER",
-                "DEAR CHIEF INVESTMENT OFFICER,",
-                "SUBJECT: CO-INVESTMENT PROPOSAL - £400M PRIME LONDON OFFICE PORTFOLIO"
+                "SUBJECT: AN HONEST EXPLANATION OF THIS WEEK'S DISRUPTION, AND WHAT WE ARE DOING ABOUT IT",
+                "WITH SINCERE APOLOGIES AND THANKS FOR YOUR PATIENCE,\nTHE TEAM AT NORTHFIELD SUPPLIES",
+                "DEAR CUSTOMERS,",
+                "RATHER THAN OFFER A VAGUE APOLOGY, WE WANT TO BE FULLY TRANSPARENT: A FAILURE IN OUR ORDER-PROCESSING SYSTEM ON TUESDAY LEFT AROUND 400 ORDERS DELAYED BY UP TO THREE DAYS, AND WE HAVE SINCE BROUGHT IN AN INDEPENDENT SPECIALIST TO ENSURE THE UNDERLYING ISSUE CANNOT RECUR."
             ],
             "correctOrder": [
-                3,
-                2,
                 0,
+                2,
+                3,
                 1
             ],
-            "hint": "Investment size and asset class are in the subject. Portfolio value, equity stake sought, hold period, and IRR target are the four investment parameters in the body. The managing partner approaches the CIO.",
-            "explanation": "The four parameters - portfolio value (£400M), equity stake (40%), hold period (5 years), and IRR target (12%) - give a sovereign wealth fund CIO all the information needed for a first-stage investment committee screening."
+            "hint": "A commitment to honesty is signalled directly in the subject; all affected customers are addressed together; the specific scale of the problem and a concrete corrective action are in the body; the closing conveys genuine accountability.",
+            "explanation": "Committing explicitly to transparency ('rather than offer a vague apology') and then following through with specific numbers builds far more trust than a generic statement of regret. Naming a concrete corrective step - bringing in an independent specialist - reassures customers the business is genuinely addressing the root cause, not just apologising for the symptom."
         },
         {
             "id": "WRT_WRITINGEMAIL_L141_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to legal advisers requesting preparation of a co-investment term sheet.",
+            "prompt": "Write an email managing a public relations-sensitive customer situation with grace, accountability, and a genuine resolution.",
             "options": [
-                "YOURS SINCERELY,\nDR HELEN MARSH, MANAGING PARTNER",
-                "PLEASE PREPARE A CO-INVESTMENT TERM SHEET FOR THE GULF SOVEREIGN FUND REFLECTING A 60:40 EQUITY SPLIT, A FIVE-YEAR HOLD, A 12% TARGET IRR, AND NEXUS'S RIGHTS AS LEAD ASSET MANAGER.",
-                "SUBJECT: TERM SHEET INSTRUCTION - LONDON OFFICE CO-INVESTMENT WITH GULF SOVEREIGN FUND",
-                "DEAR REAL ESTATE COUNSEL,"
+                "SUBJECT: TAKING FULL RESPONSIBILITY, AND HOW WE INTEND TO PUT THIS RIGHT",
+                "WITH SINCERE APOLOGIES,\nMARGARET OKONJO",
+                "HAVING NOW REVIEWED WHAT HAPPENED WITH YOUR ORDER IN FULL, I WANT TO BE CLEAR THAT THIS WAS ENTIRELY OUR ERROR AND NOT A REFLECTION OF ANY FAULT ON YOUR PART, SO IN ADDITION TO A COMPLETE REFUND, I WOULD LIKE TO PERSONALLY ENSURE YOUR NEXT ORDER IS HANDLED WITH THE CARE IT DESERVES.",
+                "DEAR MR ASANTE,"
             ],
             "correctOrder": [
-                2,
+                0,
                 3,
-                1,
-                0
+                2,
+                1
             ],
-            "hint": "Deal parties and term sheet purpose are in the subject. Four specific term sheet parameters and the management rights are in the body. The managing partner instructs counsel after in-principle agreement.",
-            "explanation": "The five term sheet parameters - equity split, hold period, IRR target, management rights, and lead manager designation - are the commercially critical points. All five must be accurately reflected to avoid misunderstanding at the legal drafting stage."
+            "hint": "Genuine accountability is signalled clearly in the subject; the customer is addressed formally by name; a full acceptance of responsibility and two concrete remedies are in the body; the closing conveys real regret.",
+            "explanation": "Explicitly stating the fault was 'entirely our error' removes any ambiguity that might otherwise frustrate an already unhappy customer. Offering personal oversight of the next order, beyond just a refund, signals genuine commitment to rebuilding trust rather than simply closing the complaint."
         },
         {
             "id": "WRT_WRITINGEMAIL_L141_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to the co-investor confirming execution of the co-investment agreement.",
+            "prompt": "You run a small business. Write an email calmly and professionally addressing a serious but exaggerated controversy that has spread online.",
             "options": [
-                "I AM DELIGHTED TO CONFIRM THAT THE CO-INVESTMENT AGREEMENT HAS BEEN EXECUTED BY BOTH PARTIES AND THE LONDON OFFICE PORTFOLIO FUND FORMALLY CLOSES ON 1 DECEMBER - EQUITY WILL BE DRAWN ON CLOSING.",
-                "DEAR CHIEF INVESTMENT OFFICER,",
-                "YOURS SINCERELY,\nDR HELEN MARSH, MANAGING PARTNER",
-                "SUBJECT: CO-INVESTMENT AGREEMENT EXECUTED - LONDON PORTFOLIO FUND CLOSES 1 DECEMBER"
+                "SUBJECT: ADDRESSING THE RECENT ONLINE DISCUSSION ABOUT OUR BUSINESS",
+                "WE ARE AWARE OF THE RECENT DISCUSSION ONLINE REGARDING OUR SUPPLY CHAIN, AND WHILE WE UNDERSTAND WHY THIS HAS CAUSED CONCERN, WE WANT TO CLARIFY THE FACTS DIRECTLY: OUR ENTIRE SUPPLIER LIST IS PUBLICLY AVAILABLE ON OUR WEBSITE, AND WE WELCOME ANY FURTHER QUESTIONS YOU MAY HAVE.",
+                "DEAR CUSTOMERS AND SUPPORTERS,",
+                "WITH THANKS FOR YOUR CONTINUED TRUST,\nTHE FOUNDERS OF WILLOWBROOK GOODS"
             ],
             "correctOrder": [
-                3,
-                1,
                 0,
-                2
+                2,
+                1,
+                3
             ],
-            "hint": "Agreement execution and closing date are in the subject. Both parties' execution, portfolio fund name, closing date, and equity draw timing are all confirmed in the body.",
-            "explanation": "Three facts confirm a real estate fund close: both parties executed, the fund closes on a specific date, and equity is drawn on closing. These three elements together represent the legal and financial completion of the co-investment."
+            "hint": "A calm, factual tone is signalled in the subject; customers and supporters are addressed together; acknowledgement of the concern and a specific, verifiable fact are in the body; the closing reaffirms trust.",
+            "explanation": "Acknowledging the concern directly, without being defensive or dismissive, prevents the response itself from becoming part of the controversy. Pointing to a specific, checkable fact - a public supplier list - gives sceptical readers something concrete to verify rather than asking them to simply take the business's word for it."
         },
         {
             "id": "WRT_WRITINGEMAIL_L142_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a carbon credit registry registering a new carbon offset project.",
+            "prompt": "Write a compelling but plain-English email requesting research funding from a university internal grants committee.",
             "options": [
-                "WE ARE REGISTERING A NEW VOLUNTARY CARBON MARKET PROJECT - AN AMAZON REFORESTATION INITIATIVE VERIFIED UNDER THE VERRA VCS STANDARD - ESTIMATED TO GENERATE 50,000 CARBON CREDITS ANNUALLY.",
-                "YOURS SINCERELY,\nHEAD OF SUSTAINABILITY, NEXUS GREEN",
-                "DEAR REGISTRY ADMINISTRATOR,",
-                "SUBJECT: CARBON CREDIT REGISTRATION - AMAZON REFORESTATION PROJECT: 50,000 CREDITS"
+                "DEAR RESEARCH GRANTS COMMITTEE,",
+                "YOURS FAITHFULLY,\nDR DESMOND ATKINSON",
+                "SUBJECT: INTERNAL GRANT APPLICATION - COMMUNITY HEALTH LITERACY STUDY",
+                "OUR PRELIMINARY STUDY OF FORTY PARTICIPANTS SUGGESTS THAT SIMPLIFIED HEALTH LEAFLETS SIGNIFICANTLY IMPROVE MEDICATION UNDERSTANDING AMONG OLDER ADULTS, AND WE ARE NOW SEEKING £15,000 TO EXPAND THE STUDY TO THREE HUNDRED PARTICIPANTS ACROSS TWO REGIONS TO TEST WHETHER THIS FINDING HOLDS AT SCALE."
             ],
             "correctOrder": [
-                3,
                 2,
                 0,
+                3,
                 1
             ],
-            "hint": "Project type, location, and scale are in the subject. VCM project type, location, verification standard, and annual credit generation are in the body - the four required registration elements.",
-            "explanation": "The Verra VCS (Voluntary Carbon Standard) is the most widely used verification standard in the voluntary carbon market. Citing it confirms the project meets rigorous third-party additionality and permanence requirements."
+            "hint": "The study topic is central to the subject; the committee is addressed by role, not name; the preliminary evidence and the specific scaling request are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Leading with a specific, promising preliminary finding gives the committee immediate confidence the larger study is worth funding. Framing the request as testing whether the finding 'holds at scale' shows methodological rigour rather than simply assuming the result will repeat."
         },
         {
             "id": "WRT_WRITINGEMAIL_L142_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a corporate buyer proposing the sale of verified carbon credits.",
+            "prompt": "Write a respectful but firm email formally requesting that co-authorship credit be corrected on a published academic paper.",
             "options": [
-                "YOURS SINCERELY,\nHEAD OF SUSTAINABILITY, NEXUS GREEN",
-                "WE OFFER 10,000 VERRA VCS-VERIFIED AMAZON REFORESTATION CARBON CREDITS AT £15 PER CREDIT - THE CREDITS HAVE BEEN INDEPENDENTLY VERIFIED AND ARE AVAILABLE FOR IMMEDIATE RETIREMENT.",
-                "SUBJECT: CARBON CREDIT SALE PROPOSAL - 10,000 VCS CREDITS AT £15 PER CREDIT",
-                "DEAR SUSTAINABILITY DIRECTOR,"
+                "SUBJECT: REQUEST TO CORRECT AUTHORSHIP - PAPER REF J-2024-0817",
+                "YOURS FAITHFULLY,\nDR ADAEZE NWACHUKWU",
+                "HAVING CONTRIBUTED SUBSTANTIALLY TO THE DATA ANALYSIS AND METHODOLOGY SECTIONS OF THIS PAPER, I WAS SURPRISED TO FIND MY NAME OMITTED FROM THE FINAL PUBLISHED VERSION, AND I WOULD LIKE TO FORMALLY REQUEST THAT A CORRECTION BE ISSUED TO REFLECT MY CONTRIBUTION ACCURATELY.",
+                "DEAR JOURNAL EDITOR,"
             ],
             "correctOrder": [
-                2,
+                0,
                 3,
-                1,
-                0
+                2,
+                1
             ],
-            "hint": "Credit volume, standard, and price are in the subject. Volume, price, verification status, and retirement availability are in the body - the four commercial parameters of a carbon credit sale.",
-            "explanation": "'Available for immediate retirement' is commercially important - it means the credits can be applied to the buyer's net zero claims without delay. VCS verification provides the third-party assurance corporate buyers need to prevent greenwashing accusations."
+            "hint": "The paper reference anchors the formal subject; the editor is addressed by role, not name; the specific contribution and the precise, professional request are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Specifying exactly what you contributed ('data analysis and methodology sections') gives the editor concrete grounds to investigate rather than a vague grievance. Requesting a formal correction, the standard academic remedy, shows familiarity with proper publishing procedure."
         },
         {
             "id": "WRT_WRITINGEMAIL_L142_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a sustainability accounting standards body reporting carbon credit retirement.",
+            "prompt": "Write a respectful email to a journal editor querying a peer review decision you believe overlooked key evidence.",
             "options": [
-                "NEXUS CONSULTING HEREBY NOTIFIES THE RETIREMENT OF 10,000 VCS AMAZON REFORESTATION CREDITS AGAINST OUR FY2024 EMISSIONS - THE SERIAL NUMBERS ARE LISTED IN THE ATTACHED RETIREMENT CERTIFICATE.",
-                "DEAR REGISTRY TEAM,",
-                "YOURS SINCERELY,\nCHIEF SUSTAINABILITY OFFICER, NEXUS CONSULTING",
-                "SUBJECT: CARBON CREDIT RETIREMENT NOTIFICATION - 10,000 CREDITS RETIRED FOR FY2024"
+                "DEAR DR HALVORSEN,",
+                "YOURS SINCERELY,\nPROF. KRISTOF NAGY",
+                "HAVING READ THE REVIEWERS' COMMENTS CAREFULLY, I NOTICE THAT REVIEWER TWO'S CONCERN ABOUT SAMPLE SIZE APPEARS TO OVERLOOK THE POWER CALCULATION PROVIDED IN SECTION 3.2, SO I WOULD BE GRATEFUL FOR THE OPPORTUNITY TO ADDRESS THIS DIRECTLY BEFORE A FINAL DECISION IS CONFIRMED.",
+                "SUBJECT: QUERY REGARDING THE REVIEW DECISION - MANUSCRIPT REF M-4471"
             ],
             "correctOrder": [
                 3,
-                1,
                 0,
-                2
+                2,
+                1
             ],
-            "hint": "'Hereby notifies retirement' is the formal registry formula. Credit volume, standard, project type, fiscal year, and serial number reference are in the body - all required for a valid retirement record.",
-            "explanation": "Carbon credit retirement is irreversible - once retired, credits cannot be resold. The serial numbers are the unique identifiers that prevent double-counting. The retirement certificate creates the permanent record that supports the company's net zero claim."
+            "hint": "The manuscript reference anchors the formal subject; the editor is addressed formally by name and title; a specific, evidence-based point of disagreement and a respectful request are in the body; the closing matches this named greeting.",
+            "explanation": "Pointing to a precise section ('the power calculation in Section 3.2') that appears to have been overlooked gives the editor something concrete to check rather than a general objection to the outcome. Framing this as wanting to 'address this directly' rather than demanding reversal keeps the tone collegial and professional."
         },
         {
             "id": "WRT_WRITINGEMAIL_L143_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a pharmaceutical regulatory authority submitting a new drug licensing application.",
+            "prompt": "Write an email negotiating amicable but firm exit terms from a long-term business partnership.",
             "options": [
-                "NEXUS PHARMA SUBMITS ITS MARKETING AUTHORISATION APPLICATION FOR NX-2201, A NOVEL ONCOLOGY COMPOUND, UNDER THE CENTRALISED PROCEDURE - THE FULL DOSSIER COMPRISING CTD MODULES 1-5 IS ENCLOSED.",
-                "YOURS SINCERELY,\nREGULATORY AFFAIRS DIRECTOR, NEXUS PHARMA",
-                "DEAR REGULATORY AFFAIRS TEAM,",
-                "SUBJECT: MARKETING AUTHORISATION APPLICATION - DRUG CANDIDATE NX-2201"
+                "SUBJECT: PROPOSED TERMS FOR AN AMICABLE SEPARATION OF OUR PARTNERSHIP",
+                "WITH RESPECT AND GOOD WILL,\nFIONA MACLEOD",
+                "AFTER MUCH REFLECTION, I BELIEVE THE FAIREST WAY FORWARD IS FOR ME TO BUY OUT YOUR 40% SHARE AT THE INDEPENDENTLY VALUED FIGURE OF £180,000, PAID OVER EIGHTEEN MONTHS, WHICH WOULD ALLOW THE BUSINESS TO CONTINUE TRADING STEADILY WHILE GIVING YOU CERTAINTY OVER THE TIMELINE.",
+                "DEAR THEODORE,"
             ],
             "correctOrder": [
+                0,
                 3,
                 2,
-                0,
                 1
             ],
-            "hint": "Drug candidate and application type are in the subject. Compound name, therapeutic area, regulatory procedure, and CTD module completeness are in the body - all required for an EMA submission.",
-            "explanation": "The CTD (Common Technical Document) Modules 1-5 is the standard EMA dossier format. Confirming all five modules are enclosed signals the submission is complete - incomplete dossiers are returned without assessment."
+            "hint": "A fair, forward-looking framing is in the subject; the business partner is addressed by first name; the specific proposed structure and its benefits for both parties are in the body; the closing conveys genuine goodwill.",
+            "explanation": "Anchoring the offer to an 'independently valued figure' removes any suggestion of an unfair, self-serving number. Explaining the benefit to both sides - business continuity for you, payment certainty for your partner - frames the proposal as genuinely balanced rather than one-sided."
         },
         {
             "id": "WRT_WRITINGEMAIL_L143_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a pharmaceutical licensing partner proposing commercialisation terms.",
+            "prompt": "Write an email proposing a significant change to a long-standing family business arrangement, respectfully.",
             "options": [
-                "YOURS SINCERELY,\nCEO, NEXUS PHARMA",
-                "NEXUS PHARMA PROPOSES A LICENSING ARRANGEMENT FOR NX-2201'S EUROPEAN COMMERCIALISATION RIGHTS - KEY TERMS INCLUDE A £5M UPFRONT FEE, DEVELOPMENT MILESTONES OF £15M, AND A 12% ROYALTY ON NET SALES.",
-                "SUBJECT: LICENSING PROPOSAL - NX-2201 EUROPEAN COMMERCIALISATION RIGHTS",
-                "DEAR HEAD OF BUSINESS DEVELOPMENT,"
+                "WITH LOVE AND RESPECT,\nMARCUS",
+                "SUBJECT: A PROPOSAL FOR THE NEXT CHAPTER OF THE FAMILY BUSINESS",
+                "DEAR DAD,",
+                "HAVING RUN THE DAY-TO-DAY OPERATIONS FOR FIVE YEARS NOW, I WOULD LIKE TO PROPOSE FORMALLY TRANSFERRING MY TITLE FROM MANAGER TO CO-OWNER, WITH AN AGREED SHAREHOLDING TO REFLECT THIS, WHICH I THINK WOULD BETTER MATCH THE RESPONSIBILITY I HAVE ALREADY BEEN CARRYING."
             ],
             "correctOrder": [
+                1,
                 2,
                 3,
-                1,
                 0
             ],
-            "hint": "Drug candidate and licensing territory are in the subject. Three commercial deal terms - upfront, milestones, and royalty - are the standard pharma licensing deal structure in the body.",
-            "explanation": "The three-element pharma licensing structure - upfront fee, milestone payments, and sales royalties - represents decreasing risk for the licensor: upfront is guaranteed, milestones depend on development success, and royalties on commercial success."
+            "hint": "A respectful but confident framing is in the subject; a parent is addressed warmly; the track record and the specific structural proposal are in the body; the closing balances family warmth with the seriousness of the topic.",
+            "explanation": "Citing a specific track record ('running day-to-day operations for five years') grounds the request in demonstrated responsibility rather than entitlement. Proposing a precise structural change - title and shareholding - gives a sensitive family conversation a clear, practical focus."
         },
         {
             "id": "WRT_WRITINGEMAIL_L143_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a pharmaceutical partner notifying them that the drug has received regulatory approval.",
+            "prompt": "Write an email calmly and professionally negotiating a fair severance arrangement after being made redundant.",
             "options": [
-                "I AM DELIGHTED TO INFORM YOU THAT NX-2201 HAS RECEIVED FULL MARKETING AUTHORISATION FROM THE EUROPEAN MEDICINES AGENCY - THE MILESTONE PAYMENT OF £4M IS NOW DUE UNDER OUR LICENSING AGREEMENT.",
-                "DEAR CEO,",
-                "YOURS SINCERELY,\nCEO, NEXUS PHARMA",
-                "SUBJECT: REGULATORY APPROVAL ACHIEVED - NX-2201 APPROVED BY EMA FOR EUROPEAN MARKET"
+                "YOURS FAITHFULLY,\nADAEZE OKONKWO",
+                "DEAR HR TEAM,",
+                "HAVING REVIEWED THE PROPOSED SEVERANCE PACKAGE, I NOTICE IT DOES NOT ACCOUNT FOR MY OUTSTANDING ANNUAL LEAVE OR THE PROFESSIONAL QUALIFICATION I COMPLETED LAST YEAR AT THE COMPANY'S REQUEST, SO I WOULD LIKE TO DISCUSS WHETHER THE TERMS COULD BE REVISED TO REFLECT THESE TWO POINTS.",
+                "SUBJECT: DISCUSSING THE PROPOSED SEVERANCE TERMS"
             ],
             "correctOrder": [
                 3,
                 1,
-                0,
-                2
+                2,
+                0
             ],
-            "hint": "Approval and regulator are in the subject. EMA authorisation, marketing authorisation status, and milestone payment trigger are in the body. The milestone payment is contractually triggered by regulatory approval.",
-            "explanation": "Connecting the approval news to the milestone payment trigger ('now due under our licensing agreement') immediately activates the commercial consequence of the regulatory event. This is the most important sentence for the licensor's finance team."
+            "hint": "A calm, specific framing is in the subject; HR is addressed by role, not name; two precise, factual omissions are identified in the body; the closing must match this unnamed greeting.",
+            "explanation": "Identifying two specific, factual omissions - unused leave and a company-requested qualification - gives HR concrete points to review rather than a general sense of unfairness. Staying calm and specific, rather than emotional, keeps the negotiation professional during an inherently difficult moment."
         },
         {
             "id": "WRT_WRITINGEMAIL_L144_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to investment banks requesting proposals for a real estate securitisation.",
+            "prompt": "Write an email on behalf of a community group formally raising the local impact of a large company's planned development.",
             "options": [
-                "WE SEEK PROPOSALS FROM INVESTMENT BANKS FOR THE STRUCTURING AND PLACEMENT OF AN £800M COMMERCIAL MORTGAGE-BACKED SECURITISATION OF OUR PRIME LONDON OFFICE PORTFOLIO.",
-                "YOURS SINCERELY,\nCHIEF FINANCIAL OFFICER, NEXUS REAL ESTATE",
-                "DEAR STRUCTURED FINANCE TEAM,",
-                "SUBJECT: REQUEST FOR PROPOSAL - £800M CMBS SECURITISATION OF OFFICE PORTFOLIO"
+                "SUBJECT: COMMUNITY CONCERNS REGARDING THE PROPOSED WAREHOUSE DEVELOPMENT",
+                "YOURS FAITHFULLY,\nMARGARETHE HOFFMANN",
+                "WRITING ON BEHALF OF OVER SIXTY LOCAL RESIDENTS, I WOULD LIKE TO FORMALLY RAISE OUR SHARED CONCERN ABOUT THE INCREASED LORRY TRAFFIC YOUR PROPOSED WAREHOUSE WOULD BRING THROUGH A RESIDENTIAL STREET WITH TWO SCHOOLS, AND WE WOULD WELCOME A MEETING TO DISCUSS POSSIBLE ALTERNATIVES.",
+                "DEAR CORPORATE AFFAIRS TEAM,"
             ],
             "correctOrder": [
+                0,
                 3,
                 2,
-                0,
                 1
             ],
-            "hint": "Transaction size and type are in the subject. Asset type (CMBS), deal size, and portfolio description are in the body - the key parameters for an investment bank to assess the mandate.",
-            "explanation": "CMBS (Commercial Mortgage-Backed Securities) is the specific securitisation vehicle for commercial real estate debt. Specifying the portfolio as 'prime London offices' indicates the asset quality the bank can use to assess debt pricing."
+            "hint": "Representing a group is stated clearly in the subject; the company's team is addressed by role, not name; the scale of representation and a specific, serious concern are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Stating you represent 'over sixty local residents' immediately signals this is a significant, organised concern rather than an individual complaint. Naming a specific, safety-related detail - two schools on the route - gives the company a compelling, hard-to-dismiss reason to engage constructively."
         },
         {
             "id": "WRT_WRITINGEMAIL_L144_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a credit rating agency requesting a pre-sale rating assessment.",
+            "prompt": "Write an email formally representing a tenants' group in negotiation with a property management company.",
             "options": [
-                "YOURS SINCERELY,\nCHIEF FINANCIAL OFFICER, NEXUS REAL ESTATE",
-                "WE REQUEST A PRE-SALE CREDIT RATING ASSESSMENT FOR THE SENIOR TRANCHE OF OUR PLANNED £800M CMBS TRANSACTION - THE SENIOR TRANCHE IS EXPECTED TO BE SIZED AT £640M (80% OF TOTAL ISSUANCE).",
-                "SUBJECT: PRE-SALE RATING REQUEST - £800M LONDON CMBS - EXPECTED RATING: AAA SENIOR",
-                "DEAR RATING COMMITTEE,"
+                "DEAR PROPERTY MANAGEMENT TEAM,",
+                "I HAVE BEEN ASKED TO REPRESENT THE TENANTS OF RIVERSIDE COURT REGARDING THE PROPOSED 15% SERVICE CHARGE INCREASE, AND WHILE WE UNDERSTAND COSTS RISE OVER TIME, WE WOULD LIKE TO FORMALLY REQUEST AN ITEMISED BREAKDOWN BEFORE THE INCREASE IS FINALISED.",
+                "YOURS FAITHFULLY,\nTARIQ HUSSAIN, ON BEHALF OF THE RIVERSIDE COURT TENANTS' GROUP",
+                "SUBJECT: FORMAL REPRESENTATION - TENANTS OF RIVERSIDE COURT"
             ],
             "correctOrder": [
-                2,
                 3,
+                0,
                 1,
-                0
+                2
             ],
-            "hint": "Expected rating and deal size are in the subject. Tranche type, absolute size, and loan-to-value implied ratio are in the body. The CFO requests from the rating committee at the pre-deal stage.",
-            "explanation": "The 80% senior tranche (£640M of £800M) implies 20% subordinated/equity below it - a standard CMBS structure. The rating agency will focus on the senior tranche because AAA rating is essential for pension fund and insurance company investment eligibility."
+            "hint": "The formal representation is named in the subject; the management company is addressed by role, not name; the specific figure and the reasoned request for transparency are in the body; the closing identifies you as a group representative.",
+            "explanation": "Stating clearly that you have been 'asked to represent' the tenants establishes legitimate authority to negotiate on the group's behalf. Acknowledging that 'costs rise over time' before requesting transparency shows the group is being reasonable, not obstructive, which tends to secure a more cooperative response."
         },
         {
             "id": "WRT_WRITINGEMAIL_L144_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to investors in a securitisation notifying them of a rating downgrade.",
+            "prompt": "Write a tactful email advocating through proper channels for a colleague who you believe has been treated unfairly.",
             "options": [
-                "MOODY'S HAS DOWNGRADED THE SENIOR NOTES IN THE NEXUS OFFICE CMBS FROM AAA TO AA, CITING INCREASED VACANCY RATES IN THE UNDERLYING PORTFOLIO - THE FULL RATING RATIONALE IS ATTACHED.",
-                "DEAR NOTEHOLDER,",
-                "YOURS SINCERELY,\nTRUSTEE, NEXUS OFFICE CMBS",
-                "SUBJECT: RATING ACTION NOTIFICATION - SENIOR NOTES DOWNGRADED FROM AAA TO AA"
+                "SUBJECT: A CONCERN I WOULD LIKE TO RAISE ON BEHALF OF A COLLEAGUE",
+                "DEAR HR TEAM,",
+                "I AM WRITING WITH THE KNOWLEDGE AND CONSENT OF MY COLLEAGUE TO RAISE A CONCERN THAT THEY HAVE BEEN OVERLOOKED FOR TRAINING OPPORTUNITIES OFFERED TO OTHERS IN SIMILAR ROLES, AND WE WOULD BOTH WELCOME THE CHANCE TO DISCUSS THIS FURTHER WITH THE APPROPRIATE PERSON.",
+                "YOURS FAITHFULLY,\nCHIDINMA EZEUDU"
             ],
             "correctOrder": [
-                3,
-                1,
                 0,
-                2
+                1,
+                2,
+                3
             ],
-            "hint": "Rating action and magnitude are in the subject. Rating agency, direction of change, cited reason (vacancy rates), and attached rationale are in the body. The trustee notifies noteholders of the material rating event.",
-            "explanation": "The trustee's obligation to notify noteholders of a rating action is a standard CMBS indenture requirement. Citing the specific reason ('increased vacancy rates') allows noteholders to assess whether the underlying credit concern is likely to be temporary or permanent."
+            "hint": "Advocacy on behalf of another is clear in the subject; HR is addressed by role, not name; explicit consent, the specific concern, and a joint request for discussion are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Explicitly stating you are writing 'with the knowledge and consent' of your colleague is essential, as raising someone else's concern without permission could easily backfire or breach their trust. Naming a specific, comparable pattern - training opportunities given to similar roles - gives HR concrete grounds to investigate."
         },
         {
             "id": "WRT_WRITINGEMAIL_L145_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a litigation funder proposing a funding arrangement for commercial litigation.",
+            "prompt": "Write a nuanced email declining to continue involvement in a project without damaging the working relationship.",
             "options": [
-                "NEXUS CONSULTING SEEKS THIRD-PARTY LITIGATION FUNDING FOR A £12M BREACH OF CONTRACT CLAIM - WE PROPOSE A FUNDING ARRANGEMENT UNDER WHICH THE FUNDER COVERS ALL COSTS IN EXCHANGE FOR 30% OF PROCEEDS.",
-                "YOURS SINCERELY,\nGEORGIA HUNT, CLO",
-                "DEAR INVESTMENT COMMITTEE,",
-                "SUBJECT: LITIGATION FUNDING PROPOSAL - £12M CLAIM AGAINST DELTA SYSTEMS"
+                "HAVING THOUGHT THIS THROUGH CAREFULLY, I HAVE DECIDED TO STEP BACK FROM THE STEERING GROUP AFTER THIS PHASE CONCLUDES, NOT BECAUSE OF ANY ISSUE WITH THE PROJECT ITSELF, BUT SIMPLY BECAUSE MY OTHER COMMITMENTS NO LONGER LEAVE ME ABLE TO CONTRIBUTE AT THE LEVEL THIS DESERVES.",
+                "SUBJECT: A CAREFUL UPDATE ON MY INVOLVEMENT GOING FORWARD",
+                "DEAR ISABELLA,",
+                "WITH CONTINUED SUPPORT FOR THE PROJECT,\nCELESTE DUBOIS"
             ],
             "correctOrder": [
-                3,
+                1,
                 2,
                 0,
-                1
+                3
             ],
-            "hint": "Claim size and funding purpose are in the subject. Claim type, value, funder's cost coverage, and success fee percentage are in the body - the four commercial terms of a litigation funding proposal.",
-            "explanation": "Litigation funding arrangements typically offer a success fee of 25-40% of proceeds. A 30% share of a £12M claim represents a potential return of £3.6M for the funder - sufficient to cover legal costs and deliver a return commensurate with the risk."
+            "hint": "A careful, considered tone is signalled in the subject; the project lead is addressed by first name; genuine reassurance and an honest, non-critical reason are in the body; the closing affirms continued goodwill.",
+            "explanation": "Explicitly ruling out any 'issue with the project itself' pre-empts the reader from taking the decision personally or reading criticism into it. Framing the decision around your own capacity, rather than the project's shortcomings, allows you to withdraw gracefully while preserving the relationship."
         },
         {
             "id": "WRT_WRITINGEMAIL_L145_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to external litigators outlining the terms of an agreed litigation funding arrangement.",
+            "prompt": "Write an email gracefully navigating a sensitive disagreement with a long-standing mentor.",
             "options": [
-                "YOURS SINCERELY,\nGEORGIA HUNT, CLO",
-                "THE LITIGATION FUNDING AGREEMENT WITH HARBOUR LITIGATION FUNDING HAS BEEN EXECUTED - PLEASE PROCEED WITH FILING THE CLAIM IN THE HIGH COURT AND CONFIRM THE FILING DATE WITHIN 48 HOURS.",
-                "SUBJECT: LITIGATION FUNDING AGREEMENT EXECUTED - NEXUS v DELTA - PROCEED WITH FILING",
-                "DEAR DISPUTES TEAM,"
+                "I HAVE ENORMOUS RESPECT FOR YOUR GUIDANCE OVER THE YEARS, WHICH IS EXACTLY WHY I WANTED TO BE HONEST THAT I SEE THIS PARTICULAR DECISION DIFFERENTLY, AND I WOULD VALUE THE CHANCE TO TALK IT THROUGH WITH YOU RATHER THAN LET AN UNSPOKEN DISAGREEMENT SIT BETWEEN US.",
+                "DEAR PROFESSOR HALVORSEN,",
+                "SUBJECT: WANTING TO TALK THROUGH SOMETHING HONESTLY",
+                "WITH CONTINUED RESPECT,\nKWABENA MENSAH"
             ],
             "correctOrder": [
                 2,
-                3,
                 1,
-                0
+                0,
+                3
             ],
-            "hint": "Agreement execution and instruction are in the subject. Funder name, execution confirmation, filing instruction, forum, and response deadline are in the body. The CLO instructs litigators to proceed after funding is secured.",
-            "explanation": "Naming the funder ('Harbour Litigation Funding') in the instruction gives litigators the information they need to include in the claim as required by court rules for third-party funded cases. The 48-hour response deadline ensures the filing date is confirmed promptly."
+            "hint": "A respectful but honest tone is signalled in the subject; the mentor is addressed formally by name and title; genuine respect, an honest disagreement, and a desire for open dialogue are in the body; the closing affirms lasting respect.",
+            "explanation": "Leading with genuine, specific respect ('enormous respect for your guidance over the years') before raising a disagreement shows the relationship matters more than being right. Preferring to 'talk it through' rather than let things go unspoken reflects real emotional maturity in handling conflict with someone you value."
         },
         {
             "id": "WRT_WRITINGEMAIL_L145_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a litigation funder reporting the outcome of funded litigation.",
+            "prompt": "Write a diplomatic email requesting a significant change to a long-standing professional working relationship.",
             "options": [
-                "THE HIGH COURT HAS AWARDED NEXUS CONSULTING JUDGEMENT OF £10.8M AGAINST DELTA SYSTEMS - YOUR 30% SUCCESS FEE OF £3.24M IS PAYABLE WITHIN FOURTEEN DAYS OF SETTLEMENT.",
-                "DEAR INVESTMENT DIRECTOR,",
-                "YOURS SINCERELY,\nGEORGIA HUNT, CLO",
-                "SUBJECT: LITIGATION OUTCOME - JUDGEMENT IN FAVOUR OF NEXUS: £10.8M AWARDED"
+                "SUBJECT: THINKING ABOUT HOW WE WORK TOGETHER GOING FORWARD",
+                "DEAR CONSTANCE,",
+                "WITH THANKS FOR YEARS OF GOOD WORK TOGETHER,\nROISIN DELANEY",
+                "OVER THE YEARS OUR ARRANGEMENT HAS SERVED US BOTH WELL, BUT AS MY BUSINESS HAS GROWN I FIND I NEED A MORE STRUCTURED MONTHLY RETAINER RATHER THAN OUR CURRENT AD HOC ARRANGEMENT, SO I WOULD LIKE TO PROPOSE WE DISCUSS WHAT THIS MIGHT LOOK LIKE FOR BOTH OF US."
             ],
             "correctOrder": [
-                3,
-                1,
                 0,
+                1,
+                3,
                 2
             ],
-            "hint": "Judgement amount and outcome are in the subject. Award, success fee calculation, exact amount, and payment deadline are in the body - the financial close of the funding arrangement.",
-            "explanation": "The 30% calculation: £10.8M × 30% = £3.24M - showing the maths explicitly avoids any dispute about the amount owed. Fourteen days is the standard payment term for litigation success fees in funding agreements."
+            "hint": "A reflective, appreciative tone is in the subject; the long-standing collaborator is addressed by first name; genuine acknowledgement of history and a specific, structured proposal are in the body; the closing conveys lasting appreciation.",
+            "explanation": "Acknowledging that the current arrangement 'has served us both well' honours the history of the relationship before proposing to change it. Framing the new structure as something to discuss 'for both of us' invites genuine negotiation rather than presenting the change as a decision already made."
         },
         {
             "id": "WRT_WRITINGEMAIL_L146_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a law firm requesting a legal opinion on a technology licensing agreement.",
+            "prompt": "Write a plain-English email formally disputing a significant error affecting your pension savings.",
             "options": [
-                "PLEASE PROVIDE A FORMAL LEGAL OPINION ON THE PROPOSED TECHNOLOGY LICENSING AGREEMENT, WITH PARTICULAR FOCUS ON THE SOURCE CODE ESCROW PROVISIONS, IP OWNERSHIP CLAUSES, AND LICENSE FEE ENFORCEMENT MECHANISMS.",
-                "YOURS SINCERELY,\nGEORGIA HUNT, CLO",
-                "DEAR TECHNOLOGY LAW TEAM,",
-                "SUBJECT: LEGAL OPINION REQUEST - SOURCE CODE ESCROW AND LICENSE AGREEMENT"
+                "HAVING REVIEWED MY ANNUAL STATEMENT, I HAVE FOUND THAT EMPLOYER CONTRIBUTIONS APPEAR TO BE MISSING FOR FOUR MONTHS LAST YEAR, WHICH I HAVE CROSS-CHECKED AGAINST MY PAYSLIPS, SO I WOULD LIKE TO FORMALLY REQUEST THAT THIS BE INVESTIGATED AND CORRECTED AS A MATTER OF PRIORITY.",
+                "SUBJECT: FORMAL DISPUTE - INCORRECT CONTRIBUTIONS TO MY PENSION",
+                "YOURS FAITHFULLY,\nVIKRAM MALHOTRA",
+                "DEAR PENSIONS TEAM,"
             ],
             "correctOrder": [
+                1,
                 3,
-                2,
                 0,
-                1
+                2
             ],
-            "hint": "Agreement type and focus areas are in the subject. Three specific legal opinion topics - escrow, IP ownership, and fee enforcement - are in the body. The CLO commissions an external legal opinion.",
-            "explanation": "Three focal areas - source code escrow (what happens if the licensor fails), IP ownership (who owns what), and fee enforcement (how are royalties collected) - represent the three biggest commercial risks in technology licensing agreements."
+            "hint": "The formal dispute is clear in the subject; the pensions team is addressed by role, not name; the specific discrepancy and your own verification are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Mentioning that you have 'cross-checked against my payslips' shows the discrepancy is verified, not just suspected, which strengthens the case considerably. Framing pension errors as needing priority attention is reasonable given how significantly they can compound over time if left unresolved."
         },
         {
             "id": "WRT_WRITINGEMAIL_L146_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a technology company proposing software licensing terms.",
+            "prompt": "Write an email calmly negotiating a realistic debt repayment plan directly with a creditor.",
             "options": [
-                "YOURS SINCERELY,\nCHIEF COMMERCIAL OFFICER, NEXUS ANALYTICS",
-                "WE PROPOSE AN ENTERPRISE-WIDE SOFTWARE LICENCE FOR YOUR ANALYTICS PLATFORM AT £180,000 PER ANNUM - THE LICENCE INCLUDES UNLIMITED USER SEATS, ANNUAL UPDATES, AND TIER-ONE TECHNICAL SUPPORT.",
-                "SUBJECT: SOFTWARE LICENSE PROPOSAL - ENTERPRISE-WIDE DEPLOYMENT: £180,000 PER ANNUM",
-                "DEAR CHIEF COMMERCIAL OFFICER,"
+                "DEAR RECOVERIES TEAM,",
+                "RATHER THAN LET THIS BALANCE CONTINUE TO GO UNADDRESSED, I WOULD LIKE TO PROPOSE A REALISTIC REPAYMENT PLAN OF £75 A MONTH, WHICH I HAVE CALCULATED CAREFULLY BASED ON MY CURRENT INCOME AND ESSENTIAL OUTGOINGS, AND I AM COMMITTED TO KEEPING TO THIS CONSISTENTLY.",
+                "YOURS FAITHFULLY,\nBEATRIZ CARVALHO",
+                "SUBJECT: PROPOSED REPAYMENT PLAN FOR MY OUTSTANDING BALANCE"
             ],
             "correctOrder": [
-                2,
                 3,
+                0,
                 1,
-                0
+                2
             ],
-            "hint": "License type and annual fee are in the subject. Three included licence components - unlimited seats, annual updates, and support tier - are in the body alongside the annual fee.",
-            "explanation": "An enterprise licence proposal must specify what is included beyond the core software: unlimited seats (removes per-user pricing complexity), annual updates (ensures currency), and Tier-One support (defines response time expectations). All three justify the premium pricing."
+            "hint": "A proactive, solution-focused tone is in the subject; the recoveries team is addressed by role, not name; a specific, carefully calculated proposal and a genuine commitment are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Proposing a specific figure you have 'calculated carefully' shows the offer is realistic and sustainable, not a token gesture designed to be rejected. Committing explicitly to consistency reassures the creditor this is a genuine plan rather than a one-off payment to delay further action."
         },
         {
             "id": "WRT_WRITINGEMAIL_L146_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a licensor formally notifying them that a technology licence fee payment is overdue.",
+            "prompt": "Write an email requesting a formal, detailed reassessment of a large insurance claim decision.",
             "options": [
-                "LICENCE FEE PAYMENT LIC-2024-441 OF £45,000 WAS DUE ON 1 OCTOBER AND REMAINS UNPAID - UNDER OUR AGREEMENT, INTEREST IS NOW ACCRUING AT 8% PER ANNUM AND WE RESERVE ALL RIGHTS TO SUSPEND LICENCE ACCESS.",
-                "DEAR FINANCE TEAM,",
-                "YOURS SINCERELY,\nCHIEF COMMERCIAL OFFICER, NEXUS ANALYTICS",
-                "SUBJECT: OVERDUE LICENSE FEE NOTICE - PAYMENT REF: LIC-2024-441 (28 DAYS OVERDUE)"
+                "YOURS FAITHFULLY,\nAGNIESZKA NOWAKOWSKA",
+                "YOUR ASSESSMENT VALUED THE FIRE DAMAGE AT £22,000, YET THE INDEPENDENT LOSS ADJUSTER I COMMISSIONED SEPARATELY ARRIVED AT £34,000 BASED ON THE SAME PROPERTY, SO I WOULD LIKE TO FORMALLY REQUEST A DETAILED REASSESSMENT THAT TAKES BOTH FIGURES INTO ACCOUNT.",
+                "DEAR CLAIMS REVIEW TEAM,",
+                "SUBJECT: FORMAL REQUEST FOR REASSESSMENT - CLAIM REF PR-99214"
             ],
             "correctOrder": [
                 3,
+                2,
                 1,
-                0,
-                2
+                0
             ],
-            "hint": "Overdue notice and duration are in the subject. Payment reference, amount, due date, interest clause, and licence suspension warning are all in the body - a complete contractual demand.",
-            "explanation": "Two contractual remedies are cited: interest accrual (8% per annum, per the Late Payment of Commercial Debts Act) and licence suspension. Both are the standard contractual consequences of non-payment that motivate prompt settlement."
+            "hint": "The claim reference and the core dispute are in the subject; the review team is addressed by role, not name; the two contrasting valuations are set out clearly in the body; the closing must match this unnamed greeting.",
+            "explanation": "Presenting two specific, contrasting figures side by side makes the size of the discrepancy immediately clear and difficult to dismiss. Commissioning an 'independent' assessment adds credibility that a personal estimate alone would lack in a formal dispute."
         },
         {
             "id": "WRT_WRITINGEMAIL_L147_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a trade finance bank requesting a letter of credit for an international purchase order.",
+            "prompt": "Write a compelling, well-argued proposal for a major community initiative to a funding body.",
             "options": [
-                "PLEASE ISSUE AN IRREVOCABLE DOCUMENTARY LETTER OF CREDIT FOR USD 1.4M IN FAVOUR OF SAIGON COMPONENTS CO - THE LC SHOULD BE SUBJECT TO UCP 600 AND SHOULD EXPIRE ON 31 MARCH.",
-                "YOURS SINCERELY,\nCHIEF FINANCIAL OFFICER, NEXUS MANUFACTURING",
-                "DEAR TRADE FINANCE TEAM,",
-                "SUBJECT: LETTER OF CREDIT REQUEST - IMPORT FROM VIETNAM - USD 1.4M"
+                "YOURS FAITHFULLY,\nLEANDRO SILVA",
+                "SUBJECT: PROPOSAL - A FREE WINTER MEALS PROGRAMME FOR ELDERLY RESIDENTS",
+                "DEAR FUNDING PANEL,",
+                "WITH LOCAL DATA SHOWING THAT NEARLY 300 ELDERLY RESIDENTS IN OUR WARD LIVE ALONE, WE ARE PROPOSING A WINTER MEALS PROGRAMME DELIVERING HOT, NUTRITIOUS FOOD TWICE WEEKLY, AND WE BELIEVE THIS £12,000 INVESTMENT WOULD MEASURABLY REDUCE WINTER HOSPITAL ADMISSIONS RELATED TO MALNUTRITION AND ISOLATION."
             ],
             "correctOrder": [
-                3,
+                1,
                 2,
-                0,
-                1
+                3,
+                0
             ],
-            "hint": "LC amount and trade context are in the subject. 'Irrevocable', beneficiary name, UCP 600 rule reference, and expiry date are in the body - all required for a letter of credit instruction.",
-            "explanation": "An irrevocable LC cannot be cancelled without the beneficiary's consent - this is the bank's payment guarantee to the exporter. UCP 600 is the ICC's standard rules for documentary credits used globally in trade finance."
+            "hint": "The proposal and its beneficiaries are named in the subject; the funding panel is addressed by role, not name; specific local data and a clear, persuasive outcome are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Opening with specific local data ('nearly 300 elderly residents') grounds the proposal in genuine local need rather than a general good cause. Connecting the investment to a measurable outcome - reduced hospital admissions - gives funders a concrete way to judge the initiative's value."
         },
         {
             "id": "WRT_WRITINGEMAIL_L147_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a supplier confirming dispatch of complying LC documents.",
+            "prompt": "Write a persuasive but respectful email appealing a significant academic dismissal decision.",
             "options": [
-                "YOURS SINCERELY,\nEXPORT FINANCE MANAGER, SAIGON COMPONENTS",
-                "WE HEREBY CONFIRM THAT THE DOCUMENTS FOR LETTER OF CREDIT LC-2024-0881 HAVE BEEN PRESENTED TO YOUR BANK AND CONSTITUTE A COMPLYING PRESENTATION UNDER UCP 600 - PAYMENT IS DUE WITHIN FIVE BANKING DAYS.",
-                "SUBJECT: LC DOCUMENT SUBMISSION - COMPLYING PRESENTATION CONFIRMED - REF: LC-2024-0881",
-                "DEAR TRADE FINANCE TEAM,"
+                "SUBJECT: FORMAL APPEAL AGAINST DISMISSAL FROM THE PROGRAMME",
+                "YOURS FAITHFULLY,\nYOSHIKO MURAKAMI",
+                "WHILE I FULLY ACCEPT THAT MY ATTENDANCE FELL BELOW THE REQUIRED STANDARD LAST TERM, I BELIEVE THE PANEL WAS NOT MADE AWARE THAT THIS COINCIDED WITH A SERIOUS FAMILY BEREAVEMENT, SUPPORTING EVIDENCE FOR WHICH I HAVE NOW ATTACHED, AND I WOULD RESPECTFULLY ASK THAT MY CASE BE RECONSIDERED IN LIGHT OF THIS.",
+                "DEAR APPEALS PANEL,"
             ],
             "correctOrder": [
-                2,
+                0,
                 3,
-                1,
-                0
+                2,
+                1
             ],
-            "hint": "Complying presentation and LC reference are in the subject. 'Hereby confirms', LC number, complying status, UCP 600 basis, and payment timeline are in the body - a formal complying presentation notice.",
-            "explanation": "'Complying presentation' is the technical term under UCP 600 meaning all documents meet the LC requirements. Once a complying presentation is accepted, the bank is contractually obligated to pay - the payment timeline ('five banking days') is set by the LC terms."
+            "hint": "The formal appeal is clear in the subject; the panel is addressed by role, not name; genuine acceptance of the facts, missing context, and supporting evidence are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Accepting the factual basis of the original decision ('I fully accept that my attendance fell below the required standard') before introducing new context makes the appeal far more credible than an outright denial. Attaching supporting evidence for the previously unknown circumstance gives the panel a concrete, verifiable reason to reconsider."
         },
         {
             "id": "WRT_WRITINGEMAIL_L147_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a trade finance bank disputing a non-compliant document rejection.",
+            "prompt": "Write an eloquent email nominating a community member for a significant local award.",
             "options": [
-                "WE DISPUTE YOUR REJECTION OF DOCUMENTS UNDER LC-2024-0881 ON THE GROUNDS THAT THE ALLEGED DISCREPANCY IN THE BILL OF LADING DATE IS A TYPOGRAPHICAL ERROR, NOT A DOCUMENTARY DISCREPANCY UNDER UCP 600.",
-                "DEAR DOCUMENTARY CREDITS TEAM,",
-                "YOURS SINCERELY,\nEXPORT FINANCE MANAGER, SAIGON COMPONENTS",
-                "SUBJECT: DISPUTE OF DOCUMENT REJECTION - LC REF: LC-2024-0881 - NON-COMPLIANCE CONTESTED"
+                "YOURS FAITHFULLY,\nBARNABY REID",
+                "FOR OVER FIFTEEN YEARS, MRS OYELARAN HAS RUN A FREE WEEKLY HOMEWORK CLUB FROM HER OWN LIVING ROOM, ASKING FOR NOTHING IN RETURN, AND HAS QUIETLY HELPED DOZENS OF LOCAL CHILDREN WHO MIGHT OTHERWISE HAVE FALLEN BEHIND - I CAN THINK OF NO ONE MORE DESERVING OF THIS RECOGNITION.",
+                "DEAR AWARDS COMMITTEE,",
+                "SUBJECT: NOMINATION FOR THE COMMUNITY CHAMPION AWARD - MRS PATRICIA OYELARAN"
             ],
             "correctOrder": [
                 3,
+                2,
                 1,
-                0,
-                2
+                0
             ],
-            "hint": "Dispute and LC reference are in the subject. 'Dispute', specific rejection reason, grounds for contest (typographical vs documentary discrepancy), and UCP 600 reference are in the body.",
-            "explanation": "Under UCP 600, banks may only reject documents for genuine documentary discrepancies. A typographical error that does not affect the commercial meaning of the document is contested on the grounds that UCP 600 banks must honour facially complying presentations."
+            "hint": "The nominee's name and the award are in the subject; the committee is addressed by role, not name; a specific, moving example of long-term impact is in the body; the closing must match this unnamed greeting.",
+            "explanation": "Providing a specific, vivid detail - 'fifteen years', 'her own living room', 'asking for nothing in return' - makes the nomination memorable and genuinely persuasive rather than generic praise. Ending with a direct, heartfelt statement of conviction reinforces just how deserving you believe the nomination to be."
         },
         {
             "id": "WRT_WRITINGEMAIL_L148_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a distressed debt fund proposing the acquisition of non-performing loans.",
+            "prompt": "Write a carefully worded email reaching out to address a long-standing family rift, seeking reconciliation.",
             "options": [
-                "NEXUS CREDIT PROPOSES TO ACQUIRE YOUR NON-PERFORMING LOAN PORTFOLIO WITH A FACE VALUE OF £120M AT A PRICE OF 42 CENTS ON THE POUND, REFLECTING OUR RECOVERY ANALYSIS AND RISK PREMIUM.",
-                "YOURS SINCERELY,\nCHIEF INVESTMENT OFFICER, NEXUS CREDIT",
-                "DEAR PORTFOLIO MANAGER,",
-                "SUBJECT: NPL PORTFOLIO ACQUISITION PROPOSAL - £120M FACE VALUE AT 42 CENTS"
+                "IT HAS BEEN FAR TOO LONG SINCE WE LAST SPOKE, AND WHILE I WON'T PRETEND EVERYTHING THAT HAPPENED BETWEEN US DIDN'T HURT, I HAVE COME TO REALISE THAT I VALUE HAVING YOU IN MY LIFE MORE THAN I VALUE BEING RIGHT ABOUT WHAT HAPPENED - WOULD YOU BE OPEN TO MEETING FOR COFFEE SOMETIME?",
+                "WITH LOVE, HOPING TO HEAR FROM YOU,\nCLARA",
+                "DEAR AUNT ROSALIND,",
+                "SUBJECT: I HAVE BEEN THINKING ABOUT US"
             ],
             "correctOrder": [
                 3,
@@ -462,62 +462,62 @@
                 0,
                 1
             ],
-            "hint": "NPL portfolio size and bid price are in the subject. Face value, bid price in cents on the pound, and analytical basis are in the body - a standard distressed debt bid.",
-            "explanation": "Distressed debt is priced 'cents on the pound' (or 'cents on the dollar') - here 42 cents means Nexus is paying £50.4M (42% × £120M). The recovery analysis and risk premium are the two inputs that justify the bid price."
+            "hint": "A gentle, reflective opener suits the sensitive subject; a family member is addressed warmly by name; honest acknowledgement of past hurt and a genuine wish for reconciliation are in the body; the closing conveys hope and warmth.",
+            "explanation": "Acknowledging honestly that 'everything that happened... did hurt' rather than pretending the rift never occurred makes the reconciliation attempt feel genuine, not superficial. Prioritising the relationship over being 'right' is often the single most important sentence in repairing a long family disagreement."
         },
         {
             "id": "WRT_WRITINGEMAIL_L148_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a bank's board requesting approval for a non-performing loan sale.",
+            "prompt": "Write a diplomatic email navigating a sensitive co-parenting logistics discussion with an ex-partner.",
             "options": [
-                "YOURS SINCERELY,\nCHIEF FINANCIAL OFFICER",
-                "I AM SEEKING BOARD APPROVAL TO SELL THE £120M NPL PORTFOLIO TO NEXUS CREDIT AT 42 CENTS ON THE POUND, GENERATING PROCEEDS OF £50.4M AND REDUCING RISK-WEIGHTED ASSETS BY £120M.",
-                "SUBJECT: BOARD APPROVAL REQUEST - NPL PORTFOLIO SALE AT 42 CENTS ON THE POUND",
-                "DEAR BOARD,"
+                "THANKS,\nSOPHIE",
+                "DEAR DANIEL,",
+                "SUBJECT: SORTING OUT THE SCHOOL HOLIDAY SCHEDULE",
+                "AS THE SUMMER HOLIDAYS ARE COMING UP, I WANTED TO SUGGEST WE SPLIT THE SIX WEEKS EVENLY AGAIN LIKE LAST YEAR, BUT WITH THE FIRST WEEK WITH YOU THIS TIME SINCE I HAD IT LAST SUMMER - LET ME KNOW IF THAT WORKS FOR YOUR SIDE BEFORE I BOOK ANYTHING."
             ],
             "correctOrder": [
                 2,
-                3,
                 1,
+                3,
                 0
             ],
-            "hint": "Deal and price are in the subject. Buyer, price, cash proceeds, and RWA reduction benefit are in the body - a complete board approval request for a balance sheet disposal.",
-            "explanation": "The dual benefit - cash proceeds (£50.4M) and RWA reduction (£120M) - is the most compelling argument for selling NPLs. RWA reduction improves capital ratios, which is why regulators often encourage NPL sales during stress periods."
+            "hint": "A practical, forward-looking tone is in the subject; a co-parent is addressed by first name; a fair, specific proposal based on precedent is in the body; a brief, businesslike sign-off closes it.",
+            "explanation": "Referencing 'like last year' as precedent gives the proposal a fair, consistent basis rather than appearing to favour one parent. Checking availability 'before I book anything' shows respect for the other parent's plans rather than presenting the schedule as already decided."
         },
         {
             "id": "WRT_WRITINGEMAIL_L148_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to borrowers in an acquired NPL portfolio notifying them of the change of ownership.",
+            "prompt": "Write a thoughtful, mature email setting a kind but firm boundary with a demanding family member.",
             "options": [
-                "WE WRITE TO INFORM YOU THAT YOUR LOAN HAS BEEN TRANSFERRED FROM DELTA BANK TO NEXUS CREDIT UNDER THE CONSUMER CREDIT ACT - YOUR LOAN TERMS REMAIN UNCHANGED AND PAYMENTS SHOULD NOW BE MADE TO NEXUS CREDIT.",
-                "DEAR BORROWER,",
-                "YOURS SINCERELY,\nNEXUS CREDIT CUSTOMER SERVICES",
-                "SUBJECT: IMPORTANT NOTICE - YOUR LOAN HAS BEEN TRANSFERRED TO NEXUS CREDIT"
+                "I LOVE BEING ABLE TO HELP WHENEVER I CAN, BUT I HAVE REALISED I NEED TO BE HONEST THAT CALLING ME EVERY EVENING DURING MY WORK HOURS ISN'T SOMETHING I CAN KEEP UP WITH RIGHT NOW - COULD WE AGREE ON A REGULAR TIME AT WEEKENDS INSTEAD, WHEN I CAN GIVE YOU MY FULL ATTENTION?",
+                "SUBJECT: SOMETHING I NEED TO BE HONEST ABOUT",
+                "DEAR MUM,",
+                "LOVE ALWAYS,\nEMILY"
             ],
             "correctOrder": [
-                3,
                 1,
+                2,
                 0,
-                2
+                3
             ],
-            "hint": "Notification purpose and direction of change are in the subject. Previous lender, new lender, legal basis (Consumer Credit Act), unchanged terms, and new payment instructions are in the body.",
-            "explanation": "Under the Consumer Credit Act, borrowers must be notified when their loan is transferred. Two critical reassurances - terms unchanged and new payment details - prevent borrower confusion and default from misdirected payments."
+            "hint": "A caring but honest opener suits the sensitive subject; a parent is addressed warmly; genuine love, a clear boundary, and a considerate alternative are in the body; the closing reaffirms love despite the boundary.",
+            "explanation": "Opening with genuine affection ('I love being able to help') before the boundary shows this isn't rejection, just a practical limit. Proposing a specific alternative - a regular weekend time - offers a real solution rather than simply withdrawing availability."
         },
         {
             "id": "WRT_WRITINGEMAIL_L149_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a corporate buyer assessing voluntary carbon market credit quality.",
+            "prompt": "Write a carefully worded email raising a genuine ethical concern about a business practice through the proper internal channel.",
             "options": [
-                "IN RESPONSE TO YOUR REQUEST, WE ASSESS THAT GOLD STANDARD CREDITS ARE PREFERABLE FOR CORPORATE CLAIMS DUE TO THEIR ADDITIONAL SUSTAINABLE DEVELOPMENT GOAL INDICATORS BEYOND CARBON QUANTIFICATION ALONE.",
-                "YOURS SINCERELY,\nCARBON ADVISORY TEAM, NEXUS SUSTAINABILITY",
-                "DEAR SUSTAINABILITY DIRECTOR,",
-                "SUBJECT: CARBON CREDIT QUALITY ASSESSMENT - GOLD STANDARD vs VCS CERTIFICATION"
+                "I HAVE NOTICED THAT SOME RETURNED ITEMS ARE BEING RESOLD AS 'NEW' WITHOUT THE INSPECTION PROCESS OUR POLICY REQUIRES, AND AS THIS COULD BOTH MISLEAD CUSTOMERS AND EXPOSE THE COMPANY TO RISK, I WANTED TO RAISE IT THROUGH THE PROPER CHANNEL BEFORE IT BECOMES A LARGER ISSUE.",
+                "YOURS FAITHFULLY,\nCHIOMA EZEUDU",
+                "DEAR COMPLIANCE TEAM,",
+                "SUBJECT: A CONCERN I WOULD LIKE TO RAISE ABOUT OUR RETURNS PROCESS"
             ],
             "correctOrder": [
                 3,
@@ -525,113 +525,113 @@
                 0,
                 1
             ],
-            "hint": "Two standards and comparison purpose are in the subject. Gold Standard preference, rationale (SDG indicators), and the additional-to-carbon criterion are in the body - an expert quality assessment.",
-            "explanation": "Gold Standard credits include UN SDG indicators (e.g., biodiversity, local employment) beyond simple carbon quantification. For corporate buyers seeking to demonstrate broader sustainability impact rather than just carbon offsetting, this additional verification adds significant value."
+            "hint": "A careful, responsible tone is signalled in the subject; the compliance team is addressed by role, not name; the specific practice observed and its two consequences are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Describing the specific practice observed, rather than a vague sense that 'something isn't right', gives compliance a clear, investigable issue. Explaining both consequences - misleading customers and company risk - shows the concern is about genuine harm, not personal complaint."
         },
         {
             "id": "WRT_WRITINGEMAIL_L149_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a carbon project developer requesting an additionality assessment for a new project.",
+            "prompt": "Write a professional email formally declining to participate in a business practice you find ethically uncomfortable.",
             "options": [
-                "YOURS SINCERELY,\nVCS PROGRAMME ADMINISTRATOR",
-                "BEFORE PROCEEDING WITH CREDIT REGISTRATION, YOU MUST DEMONSTRATE ADDITIONALITY - SPECIFICALLY, THAT THE WIND PROJECT WOULD NOT HAVE BEEN FINANCIALLY VIABLE WITHOUT CARBON CREDIT REVENUE.",
-                "SUBJECT: ADDITIONALITY ASSESSMENT REQUIREMENT - WIND ENERGY PROJECT, KERALA, INDIA",
-                "DEAR PROJECT DEVELOPER,"
+                "HAVING THOUGHT THIS OVER CAREFULLY, I DON'T FEEL COMFORTABLE LEADING A CAMPAIGN THAT IMPLIES OUR PRODUCT HAS BEEN CLINICALLY PROVEN WHEN THE EVIDENCE IS STILL PRELIMINARY, SO I WOULD LIKE TO STEP BACK FROM THIS PARTICULAR PROJECT WHILE REMAINING FULLY COMMITTED TO THE REST OF MY ROLE.",
+                "SUBJECT: MY POSITION ON THE PROPOSED MARKETING APPROACH",
+                "DEAR REBECCA,",
+                "BEST REGARDS,\nSTELLAN BERGQVIST"
             ],
             "correctOrder": [
-                2,
-                3,
                 1,
-                0
+                2,
+                0,
+                3
             ],
-            "hint": "Assessment type and project location are in the subject. Additionality requirement and specific financial additionality test are in the body - the core regulatory requirement for voluntary carbon market registration.",
-            "explanation": "Additionality is the cornerstone of carbon market integrity - without it, companies buy credits for projects that would have happened anyway, delivering no real climate benefit. Financial additionality ('would not be viable without credit revenue') is the most common test."
+            "hint": "A measured, principled tone is in the subject; the manager is addressed by first name; the specific ethical concern and a professional way of stepping back are in the body; 'BEST REGARDS' closes respectfully.",
+            "explanation": "Naming the precise issue - a claim not supported by the evidence - shows this is a considered ethical position, not vague discomfort. Explicitly reaffirming commitment to 'the rest of my role' reassures the manager this is about one specific project, not a wider unwillingness to contribute."
         },
         {
             "id": "WRT_WRITINGEMAIL_L149_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a corporate reporting team advising on voluntary carbon offset reporting standards.",
+            "prompt": "Write a considered email resigning from a volunteer board position due to a genuine disagreement over direction.",
             "options": [
-                "YOUR VOLUNTARY CARBON OFFSET DISCLOSURES SHOULD ALIGN WITH THE GHG PROTOCOL CORPORATE STANDARD AND TCFD RECOMMENDATIONS - OFFSETS MUST BE SEPARATELY REPORTED FROM EMISSION REDUCTIONS TO AVOID GREENWASHING.",
-                "DEAR SUSTAINABILITY REPORTING TEAM,",
-                "YOURS SINCERELY,\nCARBON REPORTING ADVISOR, NEXUS SUSTAINABILITY",
-                "SUBJECT: CARBON OFFSET REPORTING GUIDANCE - TCFD AND GHG PROTOCOL ALIGNMENT"
+                "DEAR FELLOW TRUSTEES,",
+                "WITH CONTINUED SUPPORT FOR THE CAUSE,\nIMOGEN ASHCROFT",
+                "SUBJECT: MY RESIGNATION FROM THE BOARD, WITH THANKS",
+                "AFTER MUCH REFLECTION, I HAVE DECIDED TO STEP DOWN FROM THE BOARD, AS I NO LONGER FEEL ABLE TO SUPPORT THE DIRECTION TOWARDS PAID MEMBERSHIP, BUT I WANT TO BE CLEAR THAT THIS REFLECTS A DIFFERENCE OF VIEW RATHER THAN ANY LOSS OF BELIEF IN WHAT THIS ORGANISATION DOES."
             ],
             "correctOrder": [
-                3,
-                1,
+                2,
                 0,
-                2
+                3,
+                1
             ],
-            "hint": "Two reporting standards and alignment purpose are in the subject. GHG Protocol, TCFD alignment, and the critical separation of offsets from reductions are in the body - expert sustainability reporting advice.",
-            "explanation": "The requirement to report offsets SEPARATELY from emission reductions is critical for anti-greenwashing compliance. Combining them suggests reductions were made when in fact emissions were only offset - a practice increasingly scrutinised by regulators and investors."
+            "hint": "A respectful sense of closure is in the subject; fellow trustees are addressed together; the honest reason for resigning and reassurance about your continued belief in the cause are in the body; the closing affirms lasting support.",
+            "explanation": "Naming the specific disagreement - 'the direction towards paid membership' - is more honest and useful to the board than a vague resignation. Clarifying that this is 'a difference of view rather than any loss of belief' allows you to leave gracefully without appearing to abandon the cause itself."
         },
         {
             "id": "WRT_WRITINGEMAIL_L150_Q1",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to an insurance underwriter submitting a specialist risk for coverage assessment.",
+            "prompt": "Write an eloquent letter to a local newspaper on a matter of genuine public importance in your community.",
             "options": [
-                "WE SEEK INSURANCE COVERAGE OF £240M FOR A COMMERCIAL SATELLITE LAUNCH SCHEDULED FOR MARCH 2026 - THE SUBMISSION INCLUDES LAUNCH VEHICLE SPECIFICATIONS, PAYLOAD DETAILS, AND MISSION RISK ANALYSIS.",
-                "YOURS SINCERELY,\nSPACE RISK MANAGER, NEXUS VENTURES",
-                "DEAR SPECIALIST UNDERWRITING TEAM,",
-                "SUBJECT: SPECIALIST RISK SUBMISSION - SATELLITE LAUNCH INSURANCE: £240M COVERAGE"
+                "DEAR EDITOR,",
+                "SUBJECT: LETTER FOR PUBLICATION - OUR DISAPPEARING GREEN SPACES",
+                "IN THE PAST DECADE, OUR TOWN HAS LOST THREE OF ITS FIVE PUBLIC PARKS TO DEVELOPMENT, AND WHILE EACH DECISION MAY HAVE SEEMED REASONABLE IN ISOLATION, THE CUMULATIVE EFFECT IS A TOWN WHERE CHILDREN HAVE FAR FEWER PLACES LEFT TO SIMPLY PLAY OUTDOORS.",
+                "YOURS FAITHFULLY,\nRAFAEL DOS SANTOS"
             ],
             "correctOrder": [
-                3,
-                2,
+                1,
                 0,
-                1
+                2,
+                3
             ],
-            "hint": "Coverage amount and risk type are in the subject. Coverage sought, launch schedule, and three submission components are in the body - the three documents required for specialist space insurance underwriting.",
-            "explanation": "Satellite launch insurance is one of the most specialised lines of insurance. The three submission documents - launch vehicle specs, payload details, and mission risk analysis - provide the underwriter with the technical data needed to price and assess coverage."
+            "hint": "The public issue is named in the subject; the editor is addressed by role, not name; a specific statistic and its cumulative, human consequence are in the body; the closing must match this unnamed greeting.",
+            "explanation": "Providing a precise statistic ('three of its five public parks') gives the argument factual weight rather than relying on general nostalgia. Framing the consequence in human terms - children with fewer places to play - makes an abstract planning issue feel immediate and important to readers."
         },
         {
             "id": "WRT_WRITINGEMAIL_L150_Q2",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to an insured client confirming specialist insurance coverage and policy terms.",
+            "prompt": "Write a formally structured email petitioning a local authority for a significant policy reconsideration.",
             "options": [
-                "YOURS SINCERELY,\nSPACE RISK UNDERWRITER, LLOYD'S SYNDICATE 1881",
-                "WE ARE PLEASED TO CONFIRM COVERAGE OF £240M FOR YOUR MARCH 2026 SATELLITE LAUNCH UNDER POLICY SL-2026-0001 - THE POLICY ATTACHES ON LAUNCH AND INCLUDES THIRD PARTY LIABILITY UP TO £500M.",
-                "SUBJECT: COVERAGE CONFIRMATION - SATELLITE LAUNCH INSURANCE POLICY: REF SL-2026-0001",
-                "DEAR SPACE RISK MANAGER,"
+                "DEAR COUNCIL LEADER,",
+                "YOURS FAITHFULLY,\nADAEZE IKECHUKWU, ON BEHALF OF THE SAVE OUR LIBRARY CAMPAIGN",
+                "OUR PETITION, SIGNED BY OVER 1,200 RESIDENTS, ASKS THE COUNCIL TO RECONSIDER THE PROPOSED REDUCTION IN LIBRARY OPENING HOURS, PARTICULARLY GIVEN THAT THE LIBRARY IS THE ONLY FREE INDOOR SPACE AVAILABLE TO MANY FAMILIES DURING SCHOOL HOLIDAYS.",
+                "SUBJECT: FORMAL PETITION FOR RECONSIDERATION - LIBRARY OPENING HOURS"
             ],
             "correctOrder": [
-                2,
                 3,
-                1,
-                0
+                0,
+                2,
+                1
             ],
-            "hint": "Policy reference and coverage are in the subject. Coverage amount, launch date, policy attachment point, and additional third-party liability limit are in the body - complete insurance confirmation.",
-            "explanation": "The policy attaches 'on launch' - meaning coverage begins at the moment of launch, not before. Third-party liability (£500M) covers damage to property or people if the launch goes wrong - typically required by the launch range authority."
+            "hint": "The scale of the petition is in the subject; the council leader is addressed formally by role; the exact number of signatures and a specific, compelling reason are in the body; the closing identifies the campaign group.",
+            "explanation": "Citing the exact number of signatures ('over 1,200 residents') demonstrates significant, quantifiable public support that is difficult for a council to dismiss. Highlighting the library's specific role as 'the only free indoor space' during holidays gives a compelling, concrete reason beyond general fondness for the service."
         },
         {
             "id": "WRT_WRITINGEMAIL_L150_Q3",
             "instruction": "ARRANGE THE EMAIL PARTS INTO THE CORRECT ORDER",
             "subtype": "writingEmail",
             "interactionType": "Slot Sorter",
-            "prompt": "Write an email to a satellite insurance claims team notifying them of a total loss claim.",
+            "prompt": "Write a sophisticated email coordinating a significant community project across several different stakeholder groups.",
             "options": [
-                "WE ARE NOTIFYING A TOTAL LOSS CLAIM UNDER POLICY SL-2026-0001 FOLLOWING THE COMPLETE FAILURE OF THE MARCH 2026 SATELLITE LAUNCH - THE CLAIM AMOUNT IS £240M, BEING THE FULL POLICY LIMIT.",
-                "DEAR CLAIMS TEAM,",
-                "YOURS SINCERELY,\nSPACE RISK MANAGER, NEXUS VENTURES",
-                "SUBJECT: TOTAL LOSS CLAIM - SATELLITE LAUNCH FAILURE - POLICY SL-2026-0001"
+                "AS WE BRING TOGETHER THE COUNCIL, THE WILDLIFE TRUST, AND OUR VOLUNTEER GROUP FOR THE RIVERSIDE RESTORATION PROJECT, I WANTED TO PROPOSE A SINGLE SHARED TIMELINE SO THAT EACH ORGANISATION'S CONTRIBUTION IS CLEAR AND WE AVOID ANY DUPLICATED EFFORT BETWEEN US.",
+                "BEST REGARDS,\nPIOTR ZIELINSKI",
+                "SUBJECT: COORDINATING THE RIVERSIDE RESTORATION PROJECT ACROSS OUR PARTNERS",
+                "DEAR PARTNERS,"
             ],
             "correctOrder": [
+                2,
                 3,
-                1,
                 0,
-                2
+                1
             ],
-            "hint": "Loss type and policy reference are in the subject. Total loss claim, launch failure, claim amount (full policy limit), and notification date are in the body - a complete insurance total loss notification.",
-            "explanation": "A total loss claim notification must identify the policy, describe the qualifying event (launch failure), and state the claim amount. In satellite insurance, 'complete failure' typically triggers the total loss provision - a partial satellite deployment may only trigger partial loss."
+            "hint": "The multi-partner project is named in the subject; all partner organisations are addressed together; the coordination challenge and a specific proposed solution are in the body; 'BEST REGARDS' closes professionally.",
+            "explanation": "Naming all three distinct partner organisations shows genuine awareness of the coordination challenge involved in a multi-stakeholder project. Proposing one 'single shared timeline' offers a practical, concrete tool to prevent the confusion and duplicated effort that often undermines projects with many partners."
         }
     ]
 }
