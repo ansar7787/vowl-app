@@ -105,31 +105,33 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                               );
                             },
                           )
-                        : GestureDetector(
-                            onPanUpdate: (details) =>
-                                onErase(details.localPosition),
-                            child: Container(
-                              margin: EdgeInsets.symmetric(horizontal: 8.w),
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 12.w,
-                                vertical: 6.h,
-                              ),
-                              decoration: BoxDecoration(
-                                color: color.withValues(alpha: 0.15),
-                                borderRadius: BorderRadius.circular(10.r),
-                                border: Border.all(color: color, width: 2),
-                              ),
+                        : Container(
+                            margin: EdgeInsets.symmetric(horizontal: 8.w),
+                            decoration: BoxDecoration(
+                              color: color.withValues(alpha: 0.15),
+                              borderRadius: BorderRadius.circular(10.r),
+                              border: Border.all(color: color, width: 2),
+                            ),
+                            child: GestureDetector(
+                              onPanUpdate: (details) =>
+                                  onErase(details.localPosition),
                               child: Stack(
                                 children: [
-                                  Text(
-                                    targetWord.toUpperCase(),
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 13.sp,
-                                      fontWeight: FontWeight.w900,
-                                      color: isDark
-                                          ? Colors.redAccent
-                                          : const Color(0xFFDC2626),
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 12.w,
+                                      vertical: 6.h,
+                                    ),
+                                    child: Text(
+                                      targetWord.toUpperCase(),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 13.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: isDark
+                                            ? Colors.redAccent
+                                            : const Color(0xFFDC2626),
+                                      ),
                                     ),
                                   ),
                                   if (erasePoints.isEmpty)
