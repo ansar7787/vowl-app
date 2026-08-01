@@ -191,17 +191,20 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
         final options = quest?.options ?? const [];
         final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
         final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
+        final bool isFinalFailure = isLoaded ? state.isFinalFailure : (state.livesRemaining == 0);
 
         return WritingBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
           isAnswered: isAnswered,
           isCorrect: isCorrect,
+          isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti,
+          useScrolling: true,
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
           // FIX: WritingHintUsed is dispatched inside WritingGameHeader.
-          // Passing it here caused a double dispatch â€” now a no-op.
+          // Passing it here caused a double dispatch — now a no-op.
           onHint: () {},
           child: quest == null
               ? (_lastQuest == null
@@ -210,7 +213,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
               : Stack(
                   key: _stackKey,
                   children: [
-                    // Scrollable body content â€” extracted to reduce build() size.
+                    // Scrollable body content — extracted to reduce build() size.
                     _CompleteSentenceBody(
                       quest: quest,
                       options: options,
@@ -222,7 +225,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
                       isDark: isDark,
                       onBridgeStart: (pos) => _onBridgeStart(pos, isAnswered),
                       onBridgeUpdate: (pos) => _onBridgeUpdate(pos, isAnswered),
-                      // FIX: screen owns correctAnswer â€” widgets only report selected.
+                      // FIX: screen owns correctAnswer — widgets only report selected.
                       onFire: (selected) => _onFire(
                         selected,
                         quest.correctAnswer ?? '',
@@ -292,12 +295,10 @@ class _CompleteSentenceBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      physics: const BouncingScrollPhysics(),
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
-        child: Column(
-          children: [
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: Column(
+        children: [
             SizedBox(height: 16.h),
             CompleteSentenceInstruction(primaryColor: theme.primaryColor),
             SizedBox(height: 32.h),
@@ -355,8 +356,7 @@ class _CompleteSentenceBody extends StatelessWidget {
             ), // Provide enough bottom padding for the WritingFeedbackCard
           ],
         ),
-      ),
-    );
+      );
   }
 }
 

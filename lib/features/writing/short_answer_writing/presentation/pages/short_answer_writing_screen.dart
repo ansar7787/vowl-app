@@ -171,28 +171,27 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti,
+          useScrolling: true,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 16.h),
-                        ShortAnswerInstruction(
-                          primaryColor: theme.primaryColor,
-                          instruction: quest.instruction,
-                        ),
-                        SizedBox(height: 24.h),
+              : Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  child: Column(
+                    children: [
+                      SizedBox(height: 16.h),
+                      ShortAnswerInstruction(
+                        primaryColor: theme.primaryColor,
+                        instruction: quest.instruction,
+                      ),
+                      SizedBox(height: 24.h),
 
-                        ShortAnswerQuillPrompt(
-                          prompt: quest.prompt ?? "",
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                        ),
+                      ShortAnswerQuillPrompt(
+                        prompt: quest.prompt ?? "",
+                        color: theme.primaryColor,
+                        isDark: isDark,
+                      ),
                         SizedBox(height: 24.h),
 
                         ShortAnswerBoosterTokens(
@@ -254,7 +253,6 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                       ],
                     ),
                   ),
-                ),
         );
       },
     );

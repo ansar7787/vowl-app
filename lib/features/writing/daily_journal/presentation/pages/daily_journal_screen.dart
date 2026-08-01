@@ -209,16 +209,15 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti,
+          useScrolling: true,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
           child: activeQuest == null
               ? const SizedBox()
-              : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    child: Column(
-                      children: [
+              : Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  child: Column(
+                    children: [
                         SizedBox(height: 16.h),
                         DailyJournalInstruction(
                           primaryColor: theme.primaryColor,
@@ -292,11 +291,8 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
                       ],
                     ),
                   ),
-                ),
         );
       },
     );
   }
 }
-
-

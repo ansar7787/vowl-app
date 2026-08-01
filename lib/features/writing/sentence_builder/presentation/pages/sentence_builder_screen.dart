@@ -190,6 +190,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti,
+          useScrolling: true,
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
           // FIX: WritingHintUsed is already dispatched inside WritingGameHeader.
@@ -256,12 +257,10 @@ class _SentenceBuilderBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      physics: const BouncingScrollPhysics(),
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
-        child: Column(
-          children: [
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: Column(
+        children: [
             SizedBox(height: 16.h),
             SentenceBuilderInstruction(
               primaryColor: theme.primaryColor,
@@ -321,8 +320,7 @@ class _SentenceBuilderBody extends StatelessWidget {
             SizedBox(height: 60.h),
           ],
         ),
-      ),
-    );
+      );
   }
 }
 

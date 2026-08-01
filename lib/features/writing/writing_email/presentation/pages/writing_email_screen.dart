@@ -181,18 +181,17 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti,
+          useScrolling: true,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
           child: (state is WritingLoading || _lastQuest == null)
               ? GameShimmerLoading(primaryColor: theme.primaryColor)
               : quest == null
                   ? const SizedBox.shrink()
-                  : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    child: Column(
-                      children: [
+                  : Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      child: Column(
+                        children: [
                         SizedBox(height: 16.h),
                         WritingEmailInstruction(
                           primaryColor: theme.primaryColor,
@@ -307,11 +306,8 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                       ],
                     ),
                   ),
-                ),
         );
       },
     );
   }
 }
-
-
