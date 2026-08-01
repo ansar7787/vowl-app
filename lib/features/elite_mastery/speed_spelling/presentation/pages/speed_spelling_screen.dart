@@ -93,6 +93,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
 
   void _submit(String correctWord) {
     if (_isAnswered) return;
+    if (_shuffledChars.isNotEmpty || _currentInput.isEmpty) return;
     final isCorrect = _currentInput.toLowerCase() == correctWord.toLowerCase();
 
     _attempts++;
@@ -341,16 +342,21 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
               onCharTap: (char, index) => _onCharTap(char, index),
             ),
             SizedBox(height: isCompact ? 16.h : 32.h),
-            if (!_isAnswered)
-              Semantics(
-                button: true,
-                label: context.tr('games.submit_caps', fallback: 'SUBMIT'),
-                excludeSemantics: true,
-                child: ScaleButton(
+            if (!_isAnswered) ...[
+              Builder(
+                builder: (context) {
+                  final canSubmit = _shuffledChars.isEmpty && _currentInput.isNotEmpty;
+                  return Semantics(
+                    button: true,
+                    label: context.tr('games.submit_caps', fallback: 'SUBMIT'),
+                    excludeSemantics: true,
+                    child: Opacity(
+                      opacity: canSubmit ? 1.0 : 0.5,
+                      child: ScaleButton(
                   // FIX: was `_submit(quest.word!)` — see _onClear for
                   // rationale. An empty fallback just resolves to "wrong
                   // answer" rather than crashing the screen outright.
-                  onTap: () => _submit(quest.word ?? ''),
+                  onTap: canSubmit ? () => _submit(quest.word ?? '') : null,
                   child: Container(
                     width: double.infinity,
                     // FIX: height was purely padding-driven (14-20.h
@@ -389,8 +395,11 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
                       ),
                     ),
                   ),
+                  ),
                 ),
-              ),
+              );
+            }),
+            ],
           ],
         );
       },
