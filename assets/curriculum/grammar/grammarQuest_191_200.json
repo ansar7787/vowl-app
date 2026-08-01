@@ -10,16 +10,16 @@
             "interactionType": "choice",
             "question": "Which sentence demonstrates the highest level of syntactic complexity?",
             "options": [
-                "It rained.",
+                "The committee had a meeting because of the rain.",
                 "She left when it rained.",
-                "Having anticipated that the situation, already precarious, might deteriorate further, the committee convened an emergency session.",
-                "The committee had a meeting because of the rain."
+                "It rained.",
+                "Having anticipated that the situation, already precarious, might deteriorate further, the committee convened an emergency session."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Having anticipated that the situation, already precarious, might deteriorate further, the committee convened an emergency session.",
             "hint": "Expert-level writing integrates multiple embedded structures.",
             "explanation": "Option C demonstrates the highest complexity: 'Having anticipated' (perfect participle clause) + 'that the situation' (embedded noun clause) + 'already precarious' (appositive adjective) + 'might deteriorate further' (modal + infinitive) - all nested within a single, grammatically controlled sentence.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Syntactic Complexity / Inversion"
         },
         {
             "id": "gq_l191_q2",
@@ -28,34 +28,34 @@
             "interactionType": "choice",
             "question": "'Scarcely had the ink dried on the agreement when the first violation occurred.' This exemplifies:",
             "options": [
-                "A zero conditional",
-                "Past perfect continuous",
                 "Temporal inversion with negative adverb",
-                "A passive reporting structure"
+                "A passive reporting structure",
+                "Past perfect continuous",
+                "A zero conditional"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "Temporal inversion with negative adverb",
             "hint": "Inversion after negative temporal adverbial 'scarcely'.",
             "explanation": "'Scarcely had + subject + past participle + when' triggers inversion: Scarcely had the ink dried... This negative temporal adverbial forces subject-auxiliary inversion. It is equivalent to: Almost immediately after the ink had dried, a violation occurred.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Syntactic Complexity / Inversion"
         },
         {
             "id": "gq_l191_q3",
             "instruction": "RESOLVE THE PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The phrase 'to all intents and purposes' means:",
+            "question": "Little did the committee anticipate how contentious the proposal ___ become.",
             "options": [
-                "In all practical respects",
-                "In every legal document",
-                "For all experimental purposes",
-                "To everyone's intentions"
+                "would",
+                "should",
+                "did",
+                "will"
             ],
             "correctAnswerIndex": 0,
-            "correctAnswer": "In all practical respects",
-            "hint": "This is a fixed formal idiom meaning 'in every practical way'.",
-            "explanation": "'To all intents and purposes' = in every practical way; effectively; for all practical purposes: The project is, to all intents and purposes, complete. This is a fixed legal/formal expression that has become a standard idiom in formal English.",
-            "grammarRule": "Basic Grammar"
+            "correctAnswer": "would",
+            "hint": "This describes an unfulfilled future expectation, viewed from a point in the past.",
+            "explanation": "'Would' expresses a future-in-the-past: from the committee's past viewpoint, they didn't anticipate how contentious it would later become. 'Little did + subject + verb' is inversion after a negative adverbial, matching 'rarely,' 'never,' and 'seldom'. 'Will' doesn't shift back for past reporting; 'did' and 'should' don't fit this meaning.",
+            "grammarRule": "Syntactic Complexity / Inversion"
         },
         {
             "id": "gq_l192_q1",
@@ -64,16 +64,16 @@
             "interactionType": "choice",
             "question": "Which sentence most effectively avoids a dangling participle?",
             "options": [
-                "Walking through the park, the flowers were beautiful.",
-                "Walking through the park, I noticed the beautiful flowers.",
                 "The flowers were beautiful, walking through the park.",
-                "To walk through the park, the flowers are beautiful."
+                "To walk through the park, the flowers are beautiful.",
+                "Walking through the park, I noticed the beautiful flowers.",
+                "Walking through the park, the flowers were beautiful."
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "Walking through the park, I noticed the beautiful flowers.",
             "hint": "The participial phrase must share its subject with the main clause.",
             "explanation": "'Walking through the park, I noticed the flowers.' = I was walking, and I noticed. The subject of 'walking' (I) matches the subject of the main clause (I). Options A, C, D have dangling participles - flowers, I, and flowers did not walk through the park.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Dangling Participles / Subjunctive"
         },
         {
             "id": "gq_l192_q2",
@@ -82,16 +82,16 @@
             "interactionType": "choice",
             "question": "'The greater the investment in education, ___ for social mobility.' Complete correctly.",
             "options": [
-                "greater are the opportunities",
-                "the greater the opportunities",
+                "greater opportunities there are",
                 "the opportunities are greater",
-                "greater opportunities there are"
+                "greater are the opportunities",
+                "the greater the opportunities"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 3,
             "correctAnswer": "the greater the opportunities",
             "hint": "Double comparative: 'the greater..., the greater...'",
             "explanation": "The double comparative requires: 'The + comparative, the + comparative': The greater the investment in education, the greater the opportunities for social mobility. Both parts must use the same structure: 'the + comparative + noun phrase'.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Dangling Participles / Subjunctive"
         },
         {
             "id": "gq_l192_q3",
@@ -109,7 +109,7 @@
             "correctAnswer": "She insisted that the report be submitted by noon.",
             "hint": "Mandative subjunctive: base form for all subjects after certain verbs.",
             "explanation": "'Insisted that the report be submitted' - the subjunctive uses the base form 'be' (not 'is', not 'was') in formal English. The mandative subjunctive: insist/demand/suggest/recommend + that + subject + base verb. No '-s' for third person, no 'should' (optional), no modal 'would'.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Dangling Participles / Subjunctive"
         },
         {
             "id": "gq_l193_q1",
@@ -119,15 +119,15 @@
             "question": "'Not only is the policy misguided, but it is also counterproductive.' The inversion in this sentence is triggered by:",
             "options": [
                 "A negative adverb at the start",
-                "'But it is also'",
                 "The word 'only'",
-                "'Not only...but also' correlative conjunction"
+                "'Not only...but also' correlative conjunction",
+                "'But it is also'"
             ],
             "correctAnswerIndex": 0,
             "correctAnswer": "A negative adverb at the start",
             "hint": "'Not only' at the start of a sentence triggers subject-auxiliary inversion.",
             "explanation": "'Not only + auxiliary + subject': Not only is the policy misguided... The inversion is triggered by 'Not only' beginning the sentence. The second clause ('but it is also counterproductive') does not invert. This is a formal emphatic structure.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Inversion / Comment Clauses / Free Relatives"
         },
         {
             "id": "gq_l193_q2",
@@ -136,34 +136,34 @@
             "interactionType": "choice",
             "question": "Which sentence correctly uses a comment clause?",
             "options": [
-                "She was, I believe, the most qualified candidate.",
+                "She was, believing I, the most qualified candidate.",
                 "She was I believe the most qualified candidate.",
                 "She was, I believing, the most qualified candidate.",
-                "She was, believing I, the most qualified candidate."
+                "She was, I believe, the most qualified candidate."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "She was, I believe, the most qualified candidate.",
             "hint": "Comment clauses are set off with commas and inserted parenthetically.",
             "explanation": "Comment clauses (I believe, I think, it seems, one might argue) are inserted parenthetically into a sentence and set off with commas: She was, I believe, the most qualified candidate. They express the speaker's attitude without disrupting the main clause.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Inversion / Comment Clauses / Free Relatives"
         },
         {
             "id": "gq_l193_q3",
             "instruction": "RESOLVE THE PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'The results, whatever their limitations, provide a useful baseline.' 'Whatever their limitations' is:",
+            "question": "___ their limitations, the results provide a genuinely useful baseline for future research.",
             "options": [
-                "A non-restrictive relative clause",
-                "A concessive free relative clause",
-                "A result clause",
-                "A conditional clause"
+                "Whichever",
+                "Whatever",
+                "However",
+                "Whoever"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "A concessive free relative clause",
-            "hint": "'Whatever + noun phrase' = a concessive free relative clause.",
-            "explanation": "'Whatever their limitations' = no matter what their limitations are. This is a concessive free relative clause - 'whatever' introduces a clause that means 'regardless of what'. It can be paraphrased as 'even though they have limitations'.",
-            "grammarRule": "Basic Grammar"
+            "correctAnswer": "Whatever",
+            "hint": "This word combines with a noun phrase, not an adjective, to mean 'no matter what'.",
+            "explanation": "'Whatever + noun phrase' means 'no matter what... are/is': Whatever their limitations, the results are useful. 'However' combines with an adjective or adverb, not a noun (however limited); 'whichever' implies a choice among set options; 'whoever' refers to people.",
+            "grammarRule": "Inversion / Comment Clauses / Free Relatives"
         },
         {
             "id": "gq_l194_q1",
@@ -172,16 +172,16 @@
             "interactionType": "choice",
             "question": "Which use of 'would' expresses a past habitual action?",
             "options": [
-                "I would like to help you.",
-                "In those days, we would walk miles to school.",
                 "I thought he would come.",
+                "In those days, we would walk miles to school.",
+                "I would like to help you.",
                 "Would you close the door?"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "In those days, we would walk miles to school.",
             "hint": "'Would' + base verb for past habits in narrative contexts.",
             "explanation": "'Would + base verb' expresses past habitual actions in formal/literary narrative: In those days, we would walk miles to school = we used to walk miles. This use of 'would' is similar to 'used to' but is more literary and formal.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Past Habitual 'Would' / Concessive Inversion"
         },
         {
             "id": "gq_l194_q2",
@@ -190,16 +190,16 @@
             "interactionType": "choice",
             "question": "'Try as they might, they could not find a solution.' The structure 'try as they might' means:",
             "options": [
-                "If they try very hard",
                 "Although they tried as hard as they could",
-                "Even if they tried",
-                "When they tried hard"
+                "If they try very hard",
+                "When they tried hard",
+                "Even if they tried"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "Although they tried as hard as they could",
             "hint": "'Verb + as + subject + modal' = a concessive of effort.",
             "explanation": "'Try as they might' = although they tried as hard as they could. This is a literary concessive inversion: Verb + as + subject + modal. It is equivalent to 'No matter how hard they tried' or 'Even though they tried hard'. Common in formal and literary English.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Past Habitual 'Would' / Concessive Inversion"
         },
         {
             "id": "gq_l194_q3",
@@ -208,16 +208,16 @@
             "interactionType": "choice",
             "question": "Which sentence correctly uses 'were it not for'?",
             "options": [
-                "Were it not for her support, I would fail.",
-                "Were not it for her support, I would fail.",
+                "Was it not for her support, I would fail.",
                 "Were it not for her support, I will fail.",
-                "Was it not for her support, I would fail."
+                "Were not it for her support, I would fail.",
+                "Were it not for her support, I would fail."
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 3,
             "correctAnswer": "Were it not for her support, I would fail.",
             "hint": "'Were it not for + noun, subject + would + base verb' is a fixed formal conditional.",
             "explanation": "'Were it not for + noun phrase, subject + would/could + base verb': Were it not for her support, I would fail. This is a fixed formal second conditional structure. Always 'were' (never 'was'), always 'would/could' in the result clause. No inversion in the result clause.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Past Habitual 'Would' / Concessive Inversion"
         },
         {
             "id": "gq_l195_q1",
@@ -226,34 +226,34 @@
             "interactionType": "choice",
             "question": "'The report, long awaited and eagerly anticipated, finally appeared.' The commas here enclose:",
             "options": [
-                "A defining relative clause",
-                "A non-defining appositive adjective phrase",
+                "A conditional clause",
                 "A result clause",
-                "A conditional clause"
+                "A non-defining appositive adjective phrase",
+                "A defining relative clause"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "A non-defining appositive adjective phrase",
             "hint": "Two past participles form an appositive adjective phrase.",
             "explanation": "'Long awaited and eagerly anticipated' is a non-defining appositive adjective phrase - it describes the report with additional information. It is set off with commas because it adds extra (non-essential) information. Both past participles are used adjectivally.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Appositive Phrases / Emphatic Inversion"
         },
         {
             "id": "gq_l195_q2",
             "instruction": "RESOLVE THE PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'Sooner or later, the truth will out.' The word 'out' in this sentence functions as:",
+            "question": "Such is the complexity of the case ___ even experts remain divided.",
             "options": [
-                "A preposition",
-                "An adjective",
-                "An intransitive adverbial particle",
-                "A conjunction"
+                "which",
+                "so",
+                "as",
+                "that"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "An intransitive adverbial particle",
-            "hint": "'Out' here is an intransitive particle meaning 'come out' or 'emerge'.",
-            "explanation": "'The truth will out' = the truth will come out/emerge eventually. 'Out' is an intransitive particle (it has no object) indicating movement or revelation. This is an archaic/literary idiom meaning truth cannot be permanently concealed. 'Out' functions adverbially.",
-            "grammarRule": "Basic Grammar"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "that",
+            "hint": "'Such is + noun' is completed by which conjunction before the result clause?",
+            "explanation": "'Such is the complexity...that' is a fixed emphatic inverted structure = 'The complexity is such that...': Such is the complexity of the case that even experts remain divided. 'As,' 'which,' and 'so' don't complete this specific fixed pattern.",
+            "grammarRule": "Appositive Phrases / Emphatic Inversion"
         },
         {
             "id": "gq_l195_q3",
@@ -271,133 +271,133 @@
             "correctAnswer": "Would that he were here with us now.",
             "hint": "'Would that + subject + were' is a formal archaic wish structure.",
             "explanation": "'Would that + subject + were...' is a formal/archaic expression of a wish: Would that he were here. This uses the past subjunctive 'were' (not 'was') and the construction 'would that' (= I wish). It is more literary than 'I wish he were here'.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Appositive Phrases / Emphatic Inversion"
         },
         {
             "id": "gq_l196_q1",
             "instruction": "RESOLVE THE PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The term 'garden path sentence' refers to:",
+            "question": "Compelling ___ it may initially appear, the evidence does not actually support the defendant's account.",
             "options": [
-                "A sentence about gardening",
-                "A sentence that initially misleads readers about its structure",
-                "A sentence with a missing subject",
-                "A sentence containing a metaphor"
+                "so",
+                "that",
+                "as",
+                "than"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "A sentence that initially misleads readers about its structure",
-            "hint": "Garden path sentences exploit syntactic ambiguity.",
-            "explanation": "A garden path sentence initially leads readers to parse it one way, then forces a reanalysis: 'The horse raced past the barn fell.' Readers initially parse 'raced' as the main verb, then discover 'fell' is and 'raced past the barn' is a reduced relative clause modifying 'the horse'.",
-            "grammarRule": "Basic Grammar"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "as",
+            "hint": "This formal inverted concessive structure echoes 'Simple as it may seem...'",
+            "explanation": "'Adjective + as + subject + verb' means 'although [subject] is [adjective]': Compelling as it may appear, the evidence doesn't hold up. This mirrors the pattern 'Simple as it may seem, the truth is often complex.' 'Than,' 'so,' and 'that' don't complete this inverted concessive structure.",
+            "grammarRule": "Concessive Inversion / Infinitive Complements"
         },
         {
             "id": "gq_l196_q2",
             "instruction": "RESOLVE THE PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "In 'I expect the situation to improve', the phrase 'the situation to improve' is:",
+            "question": "The board does not ___ the market to recover before the next fiscal year.",
             "options": [
-                "A gerund phrase",
-                "A non-finite complement clause with accusative and infinitive",
-                "A relative clause",
-                "A result clause"
+                "expect that",
+                "expect of",
+                "expect for",
+                "expect"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "A non-finite complement clause with accusative and infinitive",
-            "hint": "'Expect + object + to-infinitive' is an accusative-and-infinitive construction.",
-            "explanation": "'Expect + noun phrase + to + base verb' is an accusative-and-infinitive (ACI) construction: I expect the situation to improve = I expect that the situation will improve. The noun phrase ('the situation') is the subject of the embedded infinitive. Common with: expect, believe, consider, find, want, allow, cause.",
-            "grammarRule": "Basic Grammar"
+            "correctAnswerIndex": 3,
+            "correctAnswer": "expect",
+            "hint": "This verb takes an object directly followed by a to-infinitive, with no extra word in between.",
+            "explanation": "'Expect + object + to-infinitive': the board does not expect the market to recover. No preposition or conjunction goes between 'expect' and its object. The same pattern applies to want, believe, consider, and allow. 'Expect that' would need a full clause instead; 'expect for/of' aren't standard here.",
+            "grammarRule": "Concessive Inversion / Infinitive Complements"
         },
         {
             "id": "gq_l196_q3",
             "instruction": "RESOLVE THE PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which sentence contains a correctly formed apodosis and protasis?",
+            "question": "Which sentence correctly forms a first conditional?",
             "options": [
-                "If it rain, we cancel it.",
+                "If it would rain, the event will be cancelled.",
                 "It would be cancelled, if it rains.",
-                "If it rains tomorrow, the event will be cancelled.",
-                "If it would rain, the event will be cancelled."
+                "If it rain, we cancel it.",
+                "If it rains tomorrow, the event will be cancelled."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "If it rains tomorrow, the event will be cancelled.",
-            "hint": "Protasis (if-clause) + apodosis (result clause) in first conditional.",
-            "explanation": "First conditional: protasis (if + present simple) + apodosis (will + base verb): If it rains tomorrow (protasis), the event will be cancelled (apodosis). The protasis sets the condition; the apodosis gives the result. Never 'would' in the protasis of first conditional.",
-            "grammarRule": "Basic Grammar"
+            "hint": "First conditional: if + present simple, followed by will + base verb.",
+            "explanation": "First conditional structure is: if + present simple (the condition), will + base verb (the result): If it rains tomorrow, the event will be cancelled. The other options misuse the base form ('if it rain'), reverse the natural clause order, or wrongly use 'would' in the if-clause.",
+            "grammarRule": "Concessive Inversion / Infinitive Complements"
         },
         {
             "id": "gq_l197_q1",
             "instruction": "RESOLVE THE PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'He gave what can only be described as a masterclass.' The phrase 'what can only be described as' is:",
+            "question": "What the committee failed to anticipate ___ the sheer scale of public opposition.",
             "options": [
-                "A relative clause replacing a noun",
-                "A cleft structure",
-                "A nominal free relative clause functioning as direct object",
-                "A comment clause"
+                "were",
+                "have been",
+                "was",
+                "is"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "A nominal free relative clause functioning as direct object",
-            "hint": "'What can only be described as' is a nominal free relative clause.",
-            "explanation": "'What can only be described as a masterclass' functions as the direct object of 'gave'. It is a nominal free relative clause - 'what' introduces a clause that functions as a noun phrase. 'What' here means 'the thing that'. This structure is used for formal description with emphasis.",
-            "grammarRule": "Basic Grammar"
+            "correctAnswer": "was",
+            "hint": "The whole 'what' clause acts as a single subject - is it singular or plural?",
+            "explanation": "'What the committee failed to anticipate' functions as a single, singular subject, so it takes 'was': What they failed to anticipate was the scale of opposition. This pattern always takes a singular verb, regardless of what follows. 'Were' wrongly treats it as plural; 'is'/'have been' shift incorrectly to present tense.",
+            "grammarRule": "Wh-Clause Subjects / Relative Pronouns"
         },
         {
             "id": "gq_l197_q2",
             "instruction": "RESOLVE THE PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'Much remains to be done.' What grammatical feature makes this sentence notable?",
+            "question": "___ remains to be done before the project can be considered complete.",
             "options": [
-                "It uses an irregular verb form.",
-                "'Much' functions as a pronoun subject with an infinitive passive complement.",
-                "It contains a hidden conditional.",
-                "'Remains' is used in a passive sense."
+                "Much",
+                "A lot",
+                "Many",
+                "Plenty"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "'Much' functions as a pronoun subject with an infinitive passive complement.",
-            "hint": "'Much' as a pronoun subject with a passive infinitive complement.",
-            "explanation": "'Much remains to be done' = there is much that still needs to be done. 'Much' functions as an indefinite pronoun (subject), 'remains' is the main verb, 'to be done' is a passive infinitive complement. This is a formal, economical construction.",
-            "grammarRule": "Basic Grammar"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Much",
+            "hint": "In this formal, slightly literary register, which pronoun is most appropriate?",
+            "explanation": "In formal or literary register, 'much' functions as an economical pronoun subject: Much remains to be done. 'A lot' and 'plenty' are common in everyday speech but suit this formal register less well; 'many' is for countable plural nouns, not used as a standalone pronoun here.",
+            "grammarRule": "Wh-Clause Subjects / Relative Pronouns"
         },
         {
             "id": "gq_l197_q3",
             "instruction": "RESOLVE THE PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Which sentence most accurately exemplifies 'elegant variation' (and its potential pitfall)?",
+            "question": "He met the manager, ___ turned out to be an old university friend.",
             "options": [
-                "He met the manager. The manager was friendly.",
-                "He met the manager. She was friendly.",
-                "He met the executive. The administrator proved amiable. The official was personable.",
-                "He met the manager, who was friendly."
+                "who",
+                "whom",
+                "which",
+                "that"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "He met the executive. The administrator proved amiable. The official was personable.",
-            "hint": "Elegant variation uses synonyms to avoid repetition - but can create confusion.",
-            "explanation": "Elegant variation avoids repeating a noun by using synonyms (executive, administrator, official). While it avoids repetition, it can mislead readers into thinking different people are being referred to. Good style prefers pronouns or natural repetition over confusing synonyms.",
-            "grammarRule": "Basic Grammar"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "who",
+            "hint": "This comma-separated relative clause refers to a person and needs a subject pronoun.",
+            "explanation": "'Who' is correct for a non-restrictive relative clause referring to a person in subject position: the manager, who turned out to be a friend. 'Which' is for things, not people; 'that' isn't used after a comma in non-restrictive clauses; 'whom' would only be needed for an object pronoun.",
+            "grammarRule": "Wh-Clause Subjects / Relative Pronouns"
         },
         {
             "id": "gq_l198_q1",
             "instruction": "RESOLVE THE PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "'The more we learn, the more we realise how much we do not know.' This sentence illustrates:",
+            "question": "Central to the committee's reasoning ___ the belief that transparency improves outcomes.",
             "options": [
-                "Zero conditional expressing scientific fact",
-                "Double comparative expressing a proportional relationship",
-                "Parallel structure using gerunds",
-                "A complex conditional with modal verbs"
+                "have been",
+                "is",
+                "are",
+                "was"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Double comparative expressing a proportional relationship",
-            "hint": "The double comparative expresses that two things increase together.",
-            "explanation": "'The more...the more' is a double comparative: as one quantity increases, another increases proportionally. 'The more we learn, the more we realise...' Both parts use 'the + comparative (more) + clause'. This is a philosophically rich use of a grammatical structure.",
-            "grammarRule": "Basic Grammar"
+            "correctAnswer": "is",
+            "hint": "This is an inverted sentence - find the true subject after the verb to check agreement.",
+            "explanation": "'Central to the committee's reasoning is the belief...' inverts normal word order for emphasis. The true subject is 'the belief' (singular), so the verb is 'is', not 'are'. This mirrors the earlier pattern 'Central to the author's argument is the claim that...'",
+            "grammarRule": "Inverted Emphatic Structures / Fronting"
         },
         {
             "id": "gq_l198_q2",
@@ -406,8 +406,8 @@
             "interactionType": "choice",
             "question": "Identify the rhetorical function of fronting in: 'This, above all else, we must remember.'",
             "options": [
-                "To introduce a new topic",
                 "To express a conditional",
+                "To introduce a new topic",
                 "To place extraordinary emphasis on 'this'",
                 "To avoid using the passive voice"
             ],
@@ -415,7 +415,7 @@
             "correctAnswer": "To place extraordinary emphasis on 'this'",
             "hint": "Fronting places the object at the start for maximum emphasis.",
             "explanation": "'This' is fronted (moved to the start) for rhetorical emphasis: we must remember THIS above all else. Fronting inverts normal SVO order and draws maximum attention to the fronted element. Common in speeches and literary writing for dramatic effect.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Inverted Emphatic Structures / Fronting"
         },
         {
             "id": "gq_l198_q3",
@@ -424,16 +424,16 @@
             "interactionType": "choice",
             "question": "Which best describes the function of 'do' in: 'He does understand the implications, but chooses to ignore them.'",
             "options": [
-                "Auxiliary for question formation",
                 "Emphatic 'do' to assert truth against a doubt or denial",
+                "Auxiliary for question formation",
                 "Habitual past marker",
                 "Substitutive 'do' replacing a verb phrase"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "Emphatic 'do' to assert truth against a doubt or denial",
             "hint": "Emphatic 'do' asserts the reality of an action.",
             "explanation": "Emphatic 'do/does/did' stresses that something is genuinely true, often contradicting a doubt: He DOES understand - he just ignores it. This is emphatic 'do' in present tense, third person singular. It adds stress and asserts truth against an implied or stated contradiction.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Inverted Emphatic Structures / Fronting"
         },
         {
             "id": "gq_l199_q1",
@@ -442,16 +442,16 @@
             "interactionType": "choice",
             "question": "In academic discourse, the phrase 'it bears noting that' functions as:",
             "options": [
-                "A passive reporting structure",
-                "A meta-discourse marker drawing attention to important information",
                 "A concessive clause",
-                "A cleft sentence"
+                "A cleft sentence",
+                "A meta-discourse marker drawing attention to important information",
+                "A passive reporting structure"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "A meta-discourse marker drawing attention to important information",
             "hint": "Meta-discourse markers guide readers through the argument.",
             "explanation": "'It bears noting that' = it is worth pointing out that. This is a meta-discourse marker - language that comments on the discourse itself rather than on the content. Meta-discourse markers guide readers: it should be noted, as mentioned above, turning now to, it is worth emphasising.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Discourse Markers / Hedging"
         },
         {
             "id": "gq_l199_q2",
@@ -460,16 +460,16 @@
             "interactionType": "choice",
             "question": "'The study, for all its methodological rigour, fails to address ecological validity.' 'For all its' is equivalent to:",
             "options": [
-                "Because of all its",
                 "Despite all its",
-                "In addition to all its",
-                "Given that it has"
+                "Because of all its",
+                "Given that it has",
+                "In addition to all its"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "Despite all its",
             "hint": "'For all its + noun' = despite all its - a formal concessive phrase.",
             "explanation": "'For all its + noun' = despite all its: For all its rigour (= despite its rigour), the study fails to address... This is a formal concessive phrase. It acknowledges a positive quality while introducing a criticism. Very common in academic evaluation and literary criticism.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Discourse Markers / Hedging"
         },
         {
             "id": "gq_l199_q3",
@@ -478,8 +478,8 @@
             "interactionType": "choice",
             "question": "Which sentence demonstrates the most sophisticated use of epistemic modality?",
             "options": [
-                "The results show that X causes Y.",
                 "X might possibly cause Y in some cases.",
+                "The results show that X causes Y.",
                 "The available evidence would appear to suggest a possible causal relationship between X and Y.",
                 "X could maybe cause Y."
             ],
@@ -487,25 +487,25 @@
             "correctAnswer": "The available evidence would appear to suggest a possible causal relationship between X and Y.",
             "hint": "Expert epistemic modality stacks hedging layers appropriately.",
             "explanation": "'The evidence would appear to suggest a possible causal relationship' = expert hedging: 'would appear' (conditional seeming), 'suggest' (not prove), 'possible' (uncertain adjective), 'causal relationship' (formal noun). This is appropriately cautious and precise. 'Might possibly' and 'could maybe' are redundant; 'show that X causes Y' is overclaimed.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Discourse Markers / Hedging"
         },
         {
             "id": "gq_l200_q1",
             "instruction": "RESOLVE THE PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "A learner who has completed all 200 levels of this curriculum has primarily practised which overarching skill?",
+            "question": "Rarely, if ever, ___ a policy achieve such broad consensus so quickly.",
             "options": [
-                "Memorising lists of vocabulary",
-                "Recognising and applying grammatical patterns in context",
-                "Learning to write computer programs",
-                "Translating between two languages"
+                "did",
+                "does",
+                "has",
+                "will"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "Recognising and applying grammatical patterns in context",
-            "hint": "Grammar mastery means recognising and applying patterns in context.",
-            "explanation": "This curriculum has covered grammar in context: from basic verb forms and articles to expert-level academic structures, modality, discourse organisation, and rhetorical grammar. The core skill is pattern recognition and application - understanding why a form is used, not just what it is.",
-            "grammarRule": "Basic Grammar"
+            "correctAnswer": "does",
+            "hint": "'Rarely, if ever' at the start triggers inversion - which auxiliary fits a general truth?",
+            "explanation": "'Rarely, if ever' is a negative adverbial that triggers subject-auxiliary inversion, like 'rarely,' 'never,' and 'seldom': Rarely does a policy achieve such consensus. 'Does' fits a general, timeless statement. 'Did' would shift this to one specific past event; 'has' and 'will' don't fit the intended general-truth meaning.",
+            "grammarRule": "Inversion Mastery / Relative Clauses"
         },
         {
             "id": "gq_l200_q2",
@@ -523,25 +523,25 @@
             "correctAnswer": "Defining clauses identify which one; non-defining add extra information about something already identified.",
             "hint": "The key difference is the function of the clause in the sentence.",
             "explanation": "Defining relative clauses (no commas) identify which person/thing is meant: The book that I recommended. Non-defining relative clauses (with commas) add extra information: My sister, who is a nurse, works nights. Without the defining clause, we don't know which; without the non-defining clause, we still know who.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Inversion Mastery / Relative Clauses"
         },
         {
             "id": "gq_l200_q3",
             "instruction": "RESOLVE THE PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "What is the most important principle for a proficient English user at the expert level?",
+            "question": "So thoroughly reasoned ___ the proposal that not a single objection was raised.",
             "options": [
-                "Using the longest and most complex sentences possible.",
-                "Understanding that grammar rules exist to serve communication, and knowing when to apply, adapt, or depart from them.",
-                "Avoiding all informal language at all times.",
-                "Always using passive voice in formal writing."
+                "has been",
+                "did",
+                "was",
+                "were"
             ],
-            "correctAnswerIndex": 1,
-            "correctAnswer": "Understanding that grammar rules exist to serve communication, and knowing when to apply, adapt, or depart from them.",
-            "hint": "Expert grammar use means knowing rules well enough to use them flexibly.",
-            "explanation": "The highest level of grammatical competence is not about rigid rule-following but about understanding why rules exist - what communicative purpose they serve - and knowing when to apply them, when to adapt them for effect, and when register or context calls for different choices. Grammar serves meaning, not the other way around.",
-            "grammarRule": "Basic Grammar"
+            "correctAnswerIndex": 2,
+            "correctAnswer": "was",
+            "hint": "This inverted structure places the auxiliary before the subject for emphasis - which one fits a singular subject?",
+            "explanation": "'So + participle + was + subject + that' inverts for emphasis: So thoroughly reasoned was the proposal that no objection was raised (= The proposal was so thoroughly reasoned that...). This echoes the earlier pattern 'So severe is the damage that recovery may take decades.' 'Did,' 'has been,' and 'were' don't fit this inverted pattern with a singular subject.",
+            "grammarRule": "Inversion Mastery / Relative Clauses"
         }
     ]
 }

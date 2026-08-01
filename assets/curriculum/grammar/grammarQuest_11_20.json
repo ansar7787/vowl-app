@@ -10,16 +10,16 @@
             "interactionType": "choice",
             "question": "I have three ___ in my bag.",
             "options": [
-                "boxs",
-                "boxies",
+                "boxes",
                 "box",
-                "boxes"
+                "boxs",
+                "boxies"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "boxes",
             "hint": "Nouns ending in -x, -ch, -sh, -ss add -es in the plural.",
             "explanation": "Nouns ending in -x, -ch, -sh, -ss add '-es': box → boxes, watch → watches, dish → dishes, class → classes. Regular nouns just add '-s': book → books.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Plural Nouns"
         },
         {
             "id": "gq_l11_q2",
@@ -29,15 +29,15 @@
             "question": "There are two ___ in the garden.",
             "options": [
                 "childs",
-                "childrens",
+                "children",
                 "child",
-                "children"
+                "childrens"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "children",
             "hint": "'Child' has an irregular plural - it does not add -s.",
             "explanation": "'Child' has the irregular plural 'children'. Other irregular plurals: man → men, woman → women, tooth → teeth, foot → feet, mouse → mice. These must be memorised.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Plural Nouns"
         },
         {
             "id": "gq_l11_q3",
@@ -46,16 +46,16 @@
             "interactionType": "choice",
             "question": "She has five ___.",
             "options": [
+                "photos",
                 "photoes",
                 "photo's",
-                "photoss",
-                "photos"
+                "photoss"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "photos",
             "hint": "Most nouns ending in a vowel + -o just add -s.",
             "explanation": "Most nouns ending in -o add '-s': photo → photos, video → videos, piano → pianos. Some add '-es': potato → potatoes, tomato → tomatoes. 'Photos' is correct.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Plural Nouns"
         },
         {
             "id": "gq_l12_q1",
@@ -64,16 +64,16 @@
             "interactionType": "choice",
             "question": "Mount Everest is ___ than any other mountain.",
             "options": [
-                "tallest",
                 "more tall",
-                "most tall",
-                "taller"
+                "taller",
+                "tallest",
+                "most tall"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "taller",
             "hint": "Short adjectives (one syllable) add -er for comparatives.",
             "explanation": "Short adjectives add '-er' for comparatives: tall → taller, fast → faster, big → bigger. Always use 'than' after the comparative: taller than. Long adjectives use 'more': more interesting.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Comparative Adjectives"
         },
         {
             "id": "gq_l12_q2",
@@ -82,16 +82,16 @@
             "interactionType": "choice",
             "question": "This exam is ___ than I expected.",
             "options": [
-                "difficulter",
-                "most difficult",
+                "more difficult",
                 "difficultest",
-                "more difficult"
+                "difficulter",
+                "most difficult"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "more difficult",
             "hint": "Long adjectives use 'more' for comparatives.",
             "explanation": "Adjectives with three or more syllables use 'more' for comparatives: more difficult, more interesting, more expensive. Never 'difficulter' - that's a common error.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Comparative Adjectives"
         },
         {
             "id": "gq_l12_q3",
@@ -100,8 +100,8 @@
             "interactionType": "choice",
             "question": "Today is ___ day of the year.",
             "options": [
-                "hotter",
                 "hot",
+                "hotter",
                 "hottest",
                 "the hottest"
             ],
@@ -109,7 +109,7 @@
             "correctAnswer": "the hottest",
             "hint": "Superlatives need 'the' before them.",
             "explanation": "Superlatives say something is at the top level. One-syllable adjectives: add '-est' with 'the': the hottest, the tallest, the biggest. Note the doubled consonant in 'hottest' (consonant-vowel-consonant rule).",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Comparative Adjectives"
         },
         {
             "id": "gq_l13_q1",
@@ -118,16 +118,16 @@
             "interactionType": "choice",
             "question": "My sister ___ speak four languages.",
             "options": [
-                "cans",
-                "is can",
                 "able",
-                "can"
+                "can",
+                "cans",
+                "is can"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "can",
             "hint": "Modal verbs never add -s for third person.",
             "explanation": "'Can' is a modal verb and never changes form. We never say 'cans' or 'she cans'. It is always 'can' for all subjects: I can, she can, they can. Modal verbs are always followed by the base verb.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Modal 'Can' (Ability)"
         },
         {
             "id": "gq_l13_q2",
@@ -136,16 +136,16 @@
             "interactionType": "choice",
             "question": "___ you swim?",
             "options": [
-                "Do",
-                "Are",
                 "Have",
+                "Are",
+                "Do",
                 "Can"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "Can",
             "hint": "Use the modal verb to ask about ability.",
             "explanation": "Use 'Can' to ask about ability: Can you swim? Don't say 'Do you can swim?' Modal verbs form questions by inverting with the subject: Can you...? Will she...? Should we...?",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Modal 'Can' (Ability)"
         },
         {
             "id": "gq_l13_q3",
@@ -154,16 +154,16 @@
             "interactionType": "choice",
             "question": "He ___ lift heavy boxes at all.",
             "options": [
-                "can",
-                "cans",
+                "can't",
                 "cannot't",
-                "can't"
+                "cans",
+                "can"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "can't",
             "hint": "'At all' signals a negative meaning - use 'can't'.",
             "explanation": "'Can't' = cannot. 'He can't lift heavy boxes at all' means he is completely unable to. 'At all' makes a negative stronger: I can't sleep at all. I don't understand it at all.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Modal 'Can' (Ability)"
         },
         {
             "id": "gq_l14_q1",
@@ -172,16 +172,16 @@
             "interactionType": "choice",
             "question": "She is wearing ___ dress.",
             "options": [
-                "a red beautiful",
                 "beautiful red a",
+                "a beautiful red",
                 "beautiful a red",
-                "a beautiful red"
+                "a red beautiful"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "a beautiful red",
             "hint": "In English, the article comes first, then adjectives, then the noun.",
             "explanation": "English word order for noun phrases: article (a/the) + adjectives + noun. So: a beautiful red dress. The adjective comes between the article and the noun. Never 'a dress beautiful'.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Adjective Order"
         },
         {
             "id": "gq_l14_q2",
@@ -191,15 +191,15 @@
             "question": "The ___ gave an interesting lecture.",
             "options": [
                 "teacher old",
-                "old the teacher",
+                "teacher the old",
                 "old teacher",
-                "teacher the old"
+                "old the teacher"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "old teacher",
             "hint": "Adjectives come directly before the noun.",
             "explanation": "Adjectives come before nouns: the old teacher, not 'the teacher old'. The article (the) comes before the adjective: the + old + teacher. This is the basic English noun phrase order.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Adjective Order"
         },
         {
             "id": "gq_l14_q3",
@@ -208,16 +208,16 @@
             "interactionType": "choice",
             "question": "It was ___ night.",
             "options": [
+                "a cold stormy dark",
                 "a dark cold stormy",
                 "a stormy cold dark",
-                "a cold dark stormy",
-                "a cold stormy dark"
+                "a cold dark stormy"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "a cold dark stormy",
             "hint": "Multiple adjectives follow a general order: quality → temperature → general.",
             "explanation": "English has a standard adjective order: cold (temperature) + dark (general description/light) + stormy (condition/weather): a cold, dark, stormy night. The general order is: opinion → size → age → temperature → colour → origin.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Adjective Order"
         },
         {
             "id": "gq_l15_q1",
@@ -226,16 +226,16 @@
             "interactionType": "choice",
             "question": "___ does she live?",
             "options": [
+                "Where",
                 "What",
-                "Who",
                 "When",
-                "Where"
+                "Who"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "Where",
             "hint": "This question asks about a place.",
             "explanation": "Question words: Where = place, When = time, What = thing or action, Who = person, Why = reason, How = manner. 'Where does she live?' asks about her location.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Question Words"
         },
         {
             "id": "gq_l15_q2",
@@ -245,15 +245,15 @@
             "question": "___ is your favourite colour?",
             "options": [
                 "When",
-                "Who",
                 "Where",
+                "Who",
                 "What"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "What",
             "hint": "This asks about a thing - which word is used for things?",
             "explanation": "'What' asks about things, objects, ideas, or general information: What is your name? What colour do you like? What time is it? Use 'Who' for people: Who is that?",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Question Words"
         },
         {
             "id": "gq_l15_q3",
@@ -263,15 +263,15 @@
             "question": "___ did they arrive so late?",
             "options": [
                 "Where",
-                "When",
                 "Who",
+                "When",
                 "Why"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "Why",
             "hint": "This question expects an answer explaining a reason.",
             "explanation": "'Why' asks for a reason or cause: Why are you late? → Because I missed the bus. Don't confuse 'Why' (reason) with 'When' (time) or 'Where' (place).",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Question Words"
         },
         {
             "id": "gq_l16_q1",
@@ -280,16 +280,16 @@
             "interactionType": "choice",
             "question": "She ___ eats breakfast.",
             "options": [
-                "never always",
-                "never",
+                "often always",
                 "always",
-                "often always"
+                "never always",
+                "never"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "always",
             "hint": "The sentence means she eats breakfast 100% of the time.",
             "explanation": "Frequency adverbs: always (100%), usually (80%), often (60%), sometimes (40%), rarely (20%), never (0%). They go before the main verb but after 'be': She always eats breakfast. He is always late.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Adverbs of Frequency"
         },
         {
             "id": "gq_l16_q2",
@@ -298,16 +298,16 @@
             "interactionType": "choice",
             "question": "He is ___ late for work.",
             "options": [
-                "never",
-                "ever",
+                "always",
                 "yet",
-                "always"
+                "never",
+                "ever"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "always",
             "hint": "With the verb 'be', frequency adverbs come after it.",
             "explanation": "With 'be', frequency adverbs come AFTER the verb: He is always late. He is never early. With other verbs, they come BEFORE: He always arrives late. He never misses a meeting.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Adverbs of Frequency"
         },
         {
             "id": "gq_l16_q3",
@@ -316,16 +316,16 @@
             "interactionType": "choice",
             "question": "I ___ miss the bus - I'm always on time.",
             "options": [
-                "always",
                 "sometimes",
-                "usually",
-                "never"
+                "never",
+                "always",
+                "usually"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "never",
             "hint": "If you're always on time, how often do you miss the bus?",
             "explanation": "If you are 'always on time', you 'never' miss the bus. Never = 0% of the time. Always = 100%. The two parts of the sentence must be logically consistent.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Adverbs of Frequency"
         },
         {
             "id": "gq_l17_q1",
@@ -334,16 +334,16 @@
             "interactionType": "choice",
             "question": "Look! The children ___ in the rain.",
             "options": [
+                "played",
                 "play",
                 "plays",
-                "played",
                 "are playing"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "are playing",
             "hint": "'Look!' signals something happening right now.",
             "explanation": "Present continuous (am/is/are + -ing) describes actions happening right now. Signal words: look!, now, at the moment, currently. 'The children are playing' = they are doing it right now.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Present Continuous"
         },
         {
             "id": "gq_l17_q2",
@@ -352,8 +352,8 @@
             "interactionType": "choice",
             "question": "She ___ a book at the moment.",
             "options": [
-                "read",
                 "reads",
+                "read",
                 "reading",
                 "is reading"
             ],
@@ -361,7 +361,7 @@
             "correctAnswer": "is reading",
             "hint": "'At the moment' tells you the action is happening now.",
             "explanation": "'At the moment' signals present continuous. Form: subject + am/is/are + verb-ing. 'She is reading a book at the moment.' Not just 'reading' - you need the auxiliary 'is'.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Present Continuous"
         },
         {
             "id": "gq_l17_q3",
@@ -370,16 +370,16 @@
             "interactionType": "choice",
             "question": "I ___ to music while I cook.",
             "options": [
-                "is listening",
+                "am listening",
                 "are listening",
-                "listening",
-                "am listening"
+                "is listening",
+                "listening"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "am listening",
             "hint": "Present continuous with 'I' uses 'am'.",
             "explanation": "For present continuous: I + am, He/She/It + is, You/We/They + are. 'I am listening to music while I cook.' Never 'I is' or 'I are'.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Present Continuous"
         },
         {
             "id": "gq_l18_q1",
@@ -388,16 +388,16 @@
             "interactionType": "choice",
             "question": "They ___ visit their grandparents next weekend.",
             "options": [
-                "will going to",
+                "are going to",
                 "going to",
                 "go to",
-                "are going to"
+                "will going to"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "are going to",
             "hint": "'Going to' needs a 'be' verb before it.",
             "explanation": "'Going to' requires the verb 'be': I am going to, He is going to, They are going to. Use 'going to' for decided plans or intentions: They are going to visit their grandparents.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Future with 'Going To'"
         },
         {
             "id": "gq_l18_q2",
@@ -406,16 +406,16 @@
             "interactionType": "choice",
             "question": "She ___ study medicine at university.",
             "options": [
-                "goes to",
                 "going to",
+                "is going to",
                 "will going to",
-                "is going to"
+                "goes to"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "is going to",
             "hint": "She has already decided - use 'be going to' for pre-made plans.",
             "explanation": "Use 'be going to' when a decision was made before the moment of speaking: She is going to study medicine. Use 'will' for spontaneous decisions: Oh, I'll help you! (decided right now).",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Future with 'Going To'"
         },
         {
             "id": "gq_l18_q3",
@@ -424,16 +424,16 @@
             "interactionType": "choice",
             "question": "Look at those clouds! It ___ rain.",
             "options": [
-                "going to",
                 "goes to",
-                "will going",
-                "is going to"
+                "is going to",
+                "going to",
+                "will going"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "is going to",
             "hint": "We can see clouds - visible evidence points to 'going to'.",
             "explanation": "Use 'going to' when there is visible evidence for a prediction: Look at the clouds - it is going to rain! Use 'will' for general predictions with no visible evidence: I think it will rain tomorrow.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Future with 'Going To'"
         },
         {
             "id": "gq_l19_q1",
@@ -442,16 +442,16 @@
             "interactionType": "choice",
             "question": "I was tired, ___ I went to bed early.",
             "options": [
-                "but",
                 "or",
                 "however",
-                "so"
+                "so",
+                "but"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "so",
             "hint": "The second clause shows a result of the first.",
             "explanation": "'So' connects a cause and its result: I was tired, so I went to bed early. 'But' shows contrast. 'Because' explains a reason. 'Or' offers an alternative. 'So' = result.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Coordinating Conjunctions"
         },
         {
             "id": "gq_l19_q2",
@@ -460,16 +460,16 @@
             "interactionType": "choice",
             "question": "She loves dancing, ___ she hates singing.",
             "options": [
-                "because",
-                "so",
                 "and",
-                "but"
+                "because",
+                "but",
+                "so"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "but",
             "hint": "These two ideas are opposite - which word shows contrast?",
             "explanation": "'But' shows contrast between two ideas: She loves dancing, but she hates singing. Use 'and' to add similar ideas, 'because' for reasons, and 'so' for results.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Coordinating Conjunctions"
         },
         {
             "id": "gq_l19_q3",
@@ -478,16 +478,16 @@
             "interactionType": "choice",
             "question": "He passed the exam ___ he studied hard.",
             "options": [
-                "but",
+                "because",
                 "yet",
-                "however",
-                "because"
+                "but",
+                "however"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "because",
             "hint": "The second clause explains why he passed.",
             "explanation": "'Because' introduces a reason: He passed because he studied hard. Don't confuse 'because' (conjunction + clause) with 'because of' (preposition + noun phrase: because of his hard work).",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Coordinating Conjunctions"
         },
         {
             "id": "gq_l20_q1",
@@ -497,15 +497,15 @@
             "question": "She ___ like spicy food.",
             "options": [
                 "don't",
-                "isn't",
+                "doesn't",
                 "not",
-                "doesn't"
+                "isn't"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "doesn't",
             "hint": "Third person singular uses 'doesn't' in negative sentences.",
             "explanation": "In simple present negative, use 'doesn't' for he/she/it and 'don't' for I/you/we/they. The main verb stays in base form: She doesn't like (not 'She doesn't likes').",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Negatives (Present Forms)"
         },
         {
             "id": "gq_l20_q2",
@@ -514,16 +514,16 @@
             "interactionType": "choice",
             "question": "They ___ at home right now - they're at work.",
             "options": [
+                "not",
                 "don't",
                 "isn't",
-                "not",
                 "aren't"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "aren't",
             "hint": "'Be' doesn't use 'don't'/'doesn't' - it takes 'not' directly.",
             "explanation": "To make 'be' negative, add 'not' after it: They are not = They aren't. Never 'They don't be'. 'Don't'/'doesn't' is only used with action verbs (like, want, know), not with 'be'.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Negatives (Present Forms)"
         },
         {
             "id": "gq_l20_q3",
@@ -532,8 +532,8 @@
             "interactionType": "choice",
             "question": "I ___ finished my homework yet.",
             "options": [
-                "don't",
                 "am not",
+                "don't",
                 "didn't",
                 "haven't"
             ],
@@ -541,7 +541,7 @@
             "correctAnswer": "haven't",
             "hint": "'Yet' is a signal word for present perfect.",
             "explanation": "'Yet' is used with present perfect. Negative present perfect: have/has + not = haven't/hasn't. 'I haven't finished my homework yet.' 'Yet' goes at the end of the sentence.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Negatives (Present Forms)"
         }
     ]
 }

@@ -10,16 +10,16 @@
             "interactionType": "choice",
             "question": "I ___ a student.",
             "options": [
-                "is",
-                "are",
                 "am",
-                "be"
+                "is",
+                "be",
+                "are"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 0,
             "correctAnswer": "am",
             "hint": "Use 'am' only with 'I'.",
             "explanation": "'Am' is used exclusively with 'I'. 'Is' is for he/she/it. 'Are' is for you/we/they. Example: I am happy. She is happy. They are happy.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Verb 'To Be' (Present)"
         },
         {
             "id": "gq_l1_q2",
@@ -29,15 +29,15 @@
             "question": "She ___ very kind.",
             "options": [
                 "am",
-                "are",
                 "be",
+                "are",
                 "is"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "is",
             "hint": "Third person singular (he/she/it) uses 'is'.",
             "explanation": "With he, she, or it we always use 'is'. This is the third person singular form of 'be'. Example: He is tall. She is kind. It is cold.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Verb 'To Be' (Present)"
         },
         {
             "id": "gq_l1_q3",
@@ -46,16 +46,16 @@
             "interactionType": "choice",
             "question": "They ___ good friends.",
             "options": [
+                "are",
                 "is",
                 "am",
-                "was",
-                "are"
+                "was"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "are",
             "hint": "Plural subjects (they, we) use 'are'.",
             "explanation": "'Are' is used with plural subjects and with 'you'. They are friends. We are happy. You are welcome. Remember: singular → is, plural → are.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Verb 'To Be' (Present)"
         },
         {
             "id": "gq_l2_q1",
@@ -64,16 +64,16 @@
             "interactionType": "choice",
             "question": "He ___ a new bicycle.",
             "options": [
-                "have",
-                "haves",
+                "has",
                 "having",
-                "has"
+                "haves",
+                "have"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "has",
             "hint": "He is third person singular - use 'has', not 'have'.",
             "explanation": "With he, she, or it, use 'has'. With I, you, we, they, use 'have'. So: I have a bike. She has a bike. They have bikes.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Verb 'To Have'"
         },
         {
             "id": "gq_l2_q2",
@@ -83,15 +83,15 @@
             "question": "We ___ a big house.",
             "options": [
                 "has",
-                "haves",
                 "having",
+                "haves",
                 "have"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "have",
             "hint": "'We' is plural - use 'have'.",
             "explanation": "Use 'have' with I, you, we, and they. Use 'has' only with he, she, or it. 'We have a big house' is correct.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Verb 'To Have'"
         },
         {
             "id": "gq_l2_q3",
@@ -100,16 +100,16 @@
             "interactionType": "choice",
             "question": "The cat ___ green eyes.",
             "options": [
-                "have",
-                "haves",
+                "having",
                 "has",
-                "having"
+                "haves",
+                "have"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "has",
             "hint": "'The cat' = it (singular). Which form goes with 'it'?",
             "explanation": "'The cat' is a singular noun (like 'it'), so we use 'has': The cat has green eyes. Animals and objects take 'has' in the third person singular.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Verb 'To Have'"
         },
         {
             "id": "gq_l3_q1",
@@ -120,14 +120,14 @@
             "options": [
                 "go",
                 "going",
-                "gone",
-                "goes"
+                "goes",
+                "gone"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "goes",
             "hint": "Third person singular adds -s or -es to the base verb.",
             "explanation": "In simple present, he/she/it adds '-s' or '-es' to the base verb. 'Go' becomes 'goes'. Example: She goes to school. He watches TV. It works well.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Present Simple (3rd Person)"
         },
         {
             "id": "gq_l3_q2",
@@ -136,16 +136,16 @@
             "interactionType": "choice",
             "question": "The dog ___ loudly at night.",
             "options": [
-                "bark",
+                "barks",
                 "barked",
-                "barking",
-                "barks"
+                "bark",
+                "barking"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "barks",
             "hint": "Add -s for he/she/it in simple present.",
             "explanation": "For third person singular in simple present, add '-s': bark → barks. The dog barks. The cat meows. The phone rings. Regular verbs just add '-s'.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Present Simple (3rd Person)"
         },
         {
             "id": "gq_l3_q3",
@@ -154,16 +154,16 @@
             "interactionType": "choice",
             "question": "My parents ___ coffee every morning.",
             "options": [
+                "drink",
                 "drinks",
-                "drinked",
                 "drinking",
-                "drink"
+                "drinked"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "drink",
             "hint": "'My parents' = they (plural) - no -s needed.",
             "explanation": "Plural subjects do not add '-s'. My parents (= they) drink coffee. Compare: My father drinks coffee (singular = he).",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Present Simple (3rd Person)"
         },
         {
             "id": "gq_l4_q1",
@@ -172,16 +172,16 @@
             "interactionType": "choice",
             "question": "She ___ her homework last night.",
             "options": [
-                "finish",
-                "finishes",
                 "finishing",
-                "finished"
+                "finishes",
+                "finished",
+                "finish"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "finished",
             "hint": "'Last night' is a past time signal - add -ed.",
             "explanation": "To make the simple past of regular verbs, add '-ed'. 'Last night' tells us it is in the past. finish → finished. Other examples: walk → walked, watch → watched.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Past Simple (Regular Verbs)"
         },
         {
             "id": "gq_l4_q2",
@@ -190,16 +190,16 @@
             "interactionType": "choice",
             "question": "They ___ football in the park yesterday.",
             "options": [
-                "play",
-                "plays",
+                "played",
                 "playing",
-                "played"
+                "plays",
+                "play"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "played",
             "hint": "'Yesterday' signals simple past.",
             "explanation": "Time words like 'yesterday', 'last week', and 'ago' tell you to use simple past. Regular verbs: add '-ed'. play → played. They played football yesterday.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Past Simple (Regular Verbs)"
         },
         {
             "id": "gq_l4_q3",
@@ -209,15 +209,15 @@
             "question": "I ___ a letter to my friend last week.",
             "options": [
                 "send",
-                "sends",
+                "sent",
                 "sending",
-                "sent"
+                "sends"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "sent",
             "hint": "'Send' is irregular - its past form is not 'sended'.",
             "explanation": "'Send' is an irregular verb: send → sent. Irregular verbs change completely rather than adding '-ed'. Other examples: buy → bought, think → thought, bring → brought.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Past Simple (Regular Verbs)"
         },
         {
             "id": "gq_l5_q1",
@@ -226,16 +226,16 @@
             "interactionType": "choice",
             "question": "We ___ to the beach last summer.",
             "options": [
-                "go",
                 "goes",
-                "gone",
-                "went"
+                "went",
+                "go",
+                "gone"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "went",
             "hint": "'Go' is irregular - its simple past is a different word.",
             "explanation": "'Go' has the irregular past 'went'. Never say 'goed'. Other irregular verbs you must memorise: come → came, run → ran, eat → ate, drink → drank.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Past Simple (Irregular Verbs)"
         },
         {
             "id": "gq_l5_q2",
@@ -244,16 +244,16 @@
             "interactionType": "choice",
             "question": "She ___ a delicious cake for the party.",
             "options": [
-                "maked",
+                "made",
                 "makes",
                 "make",
-                "made"
+                "maked"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "made",
             "hint": "'Make' is irregular - never 'maked'.",
             "explanation": "The simple past of 'make' is 'made'. She made a cake. Other irregular pasts: take → took, give → gave, come → came. You must memorise these.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Past Simple (Irregular Verbs)"
         },
         {
             "id": "gq_l5_q3",
@@ -262,16 +262,16 @@
             "interactionType": "choice",
             "question": "I ___ a great film on TV last night.",
             "options": [
-                "seen",
-                "see",
                 "sees",
+                "see",
+                "seen",
                 "saw"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "saw",
             "hint": "'Saw' is the simple past; 'seen' is the past participle.",
             "explanation": "The simple past of 'see' is 'saw'. 'Seen' is the past participle (used with 'have'): I have seen. For simple past, use 'saw': I saw a great film.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Past Simple (Irregular Verbs)"
         },
         {
             "id": "gq_l6_q1",
@@ -280,16 +280,16 @@
             "interactionType": "choice",
             "question": "She is ___ honest person.",
             "options": [
-                "a",
+                "an",
                 "the",
-                "some",
-                "an"
+                "a",
+                "some"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "an",
             "hint": "Choose 'a' or 'an' based on the sound that follows, not the letter.",
             "explanation": "Use 'an' before vowel sounds. 'Honest' has a silent 'h', so it sounds like it starts with 'o'. Therefore: an honest person. Also: an hour, an heir. The rule is about sound, not spelling.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Articles: A/An"
         },
         {
             "id": "gq_l6_q2",
@@ -298,16 +298,16 @@
             "interactionType": "choice",
             "question": "He bought ___ umbrella.",
             "options": [
-                "a",
                 "the",
-                "an",
-                "some"
+                "a",
+                "some",
+                "an"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "an",
             "hint": "'Umbrella' starts with a vowel sound /ʌ/.",
             "explanation": "Use 'an' before vowel sounds (a, e, i, o, u): an umbrella, an apple, an orange, an idea. Use 'a' before consonant sounds: a cat, a dog, a university (sounds like 'yoo').",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Articles: A/An"
         },
         {
             "id": "gq_l6_q3",
@@ -316,16 +316,16 @@
             "interactionType": "choice",
             "question": "I saw ___ dog in the garden.",
             "options": [
-                "an",
-                "the",
+                "a",
                 "some",
-                "a"
+                "the",
+                "an"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "a",
             "hint": "First mention of a countable noun - use 'a' or 'an'.",
             "explanation": "Use 'a' for the first mention of a singular countable noun: I saw a dog. (We don't know which dog yet.) Use 'the' when we know which one: The dog barked at me.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Articles: A/An"
         },
         {
             "id": "gq_l7_q1",
@@ -334,16 +334,16 @@
             "interactionType": "choice",
             "question": "My birthday is ___ March.",
             "options": [
+                "in",
                 "on",
-                "at",
                 "by",
-                "in"
+                "at"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "in",
             "hint": "Months use 'in'.",
             "explanation": "Use 'in' for months, years, and seasons: in March, in 2024, in summer. Use 'on' for days and dates: on Monday, on 5 March. Use 'at' for clock times: at 9 o'clock.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Prepositions of Time"
         },
         {
             "id": "gq_l7_q2",
@@ -354,14 +354,14 @@
             "options": [
                 "in",
                 "on",
-                "by",
-                "at"
+                "at",
+                "by"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "at",
             "hint": "Specific clock times use 'at'.",
             "explanation": "Use 'at' for specific times: at 9 o'clock, at noon, at midnight. Remember the pattern: in (months/years/seasons), on (days/dates), at (times).",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Prepositions of Time"
         },
         {
             "id": "gq_l7_q3",
@@ -370,16 +370,16 @@
             "interactionType": "choice",
             "question": "We have school ___ Monday.",
             "options": [
+                "by",
                 "at",
                 "in",
-                "by",
                 "on"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "on",
             "hint": "Days of the week use 'on'.",
             "explanation": "Use 'on' for days: on Monday, on Friday, on Christmas Day. Use 'in' for months and years: in March, in 2025. Use 'at' for times: at 8 am.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Prepositions of Time"
         },
         {
             "id": "gq_l8_q1",
@@ -388,16 +388,16 @@
             "interactionType": "choice",
             "question": "___ a bird on the roof.",
             "options": [
-                "There are",
-                "There am",
                 "There be",
-                "There is"
+                "There is",
+                "There am",
+                "There are"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "There is",
             "hint": "Look at 'a bird' - is it singular or plural?",
             "explanation": "Use 'There is' for singular nouns and uncountable nouns. Use 'There are' for plural nouns. 'A bird' is singular, so: There is a bird on the roof.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "There Is / There Are"
         },
         {
             "id": "gq_l8_q2",
@@ -406,16 +406,16 @@
             "interactionType": "choice",
             "question": "___ many books on the shelf.",
             "options": [
-                "There is",
-                "There am",
                 "There be",
-                "There are"
+                "There are",
+                "There is",
+                "There am"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "There are",
             "hint": "'Many books' is plural - which form matches?",
             "explanation": "'Many books' is plural, so use 'There are': There are many books on the shelf. 'There is' is for singular nouns: There is a book.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "There Is / There Are"
         },
         {
             "id": "gq_l8_q3",
@@ -424,16 +424,16 @@
             "interactionType": "choice",
             "question": "___ any milk in the fridge?",
             "options": [
-                "Is there",
                 "Am there",
+                "Is there",
                 "Be there",
                 "Are there"
             ],
-            "correctAnswerIndex": 0,
+            "correctAnswerIndex": 1,
             "correctAnswer": "Is there",
             "hint": "'Milk' is uncountable - treat it as singular in questions.",
             "explanation": "Uncountable nouns (milk, water, rice) use 'Is there' in questions: Is there any milk? For plural countable nouns: Are there any apples?",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "There Is / There Are"
         },
         {
             "id": "gq_l9_q1",
@@ -442,16 +442,16 @@
             "interactionType": "choice",
             "question": "Tom forgot ___ keys at home.",
             "options": [
-                "her",
-                "their",
                 "its",
-                "his"
+                "her",
+                "his",
+                "their"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "his",
             "hint": "Tom is male - choose the correct possessive adjective.",
             "explanation": "Tom is male, so use 'his'. Female = her (Sarah forgot her keys). Plural = their (They forgot their keys). It = its (The cat lost its toy).",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Possessive Adjectives"
         },
         {
             "id": "gq_l9_q2",
@@ -461,15 +461,15 @@
             "question": "The children left ___ shoes outside.",
             "options": [
                 "his",
-                "her",
                 "its",
+                "her",
                 "their"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "their",
             "hint": "'The children' is plural.",
             "explanation": "Use 'their' for plural subjects. The children (= they) left their shoes. Compare: He left his shoes. She left her shoes. It lost its collar.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Possessive Adjectives"
         },
         {
             "id": "gq_l9_q3",
@@ -479,15 +479,15 @@
             "question": "We forgot ___ tickets at the hotel.",
             "options": [
                 "their",
-                "its",
+                "our",
                 "her",
-                "our"
+                "its"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "our",
             "hint": "'We' uses which possessive adjective?",
             "explanation": "Possessive adjectives: I → my, you → your, he → his, she → her, it → its, we → our, they → their. We forgot our tickets.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Possessive Adjectives"
         },
         {
             "id": "gq_l10_q1",
@@ -496,8 +496,8 @@
             "interactionType": "choice",
             "question": "Can you help ___? I'm lost.",
             "options": [
-                "I",
                 "my",
+                "I",
                 "mine",
                 "me"
             ],
@@ -505,7 +505,7 @@
             "correctAnswer": "me",
             "hint": "After a verb, use an object pronoun, not a subject pronoun.",
             "explanation": "Object pronouns come after verbs and prepositions: help me, see him, call her. 'I' is a subject pronoun - use 'me' as the object. Can you help me?",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Object Pronouns"
         },
         {
             "id": "gq_l10_q2",
@@ -514,16 +514,16 @@
             "interactionType": "choice",
             "question": "I saw ___ at the supermarket yesterday.",
             "options": [
-                "they",
-                "their",
                 "themselves",
-                "them"
+                "they",
+                "them",
+                "their"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "them",
             "hint": "After an action verb like 'saw', use an object pronoun.",
             "explanation": "After action verbs, use object pronouns: me, you, him, her, it, us, them. 'I saw them' (not 'they'). Subject pronouns (they) cannot follow verbs directly.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Object Pronouns"
         },
         {
             "id": "gq_l10_q3",
@@ -533,15 +533,15 @@
             "question": "She gave the book to ___.",
             "options": [
                 "he",
-                "his",
                 "himself",
+                "his",
                 "him"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "him",
             "hint": "After a preposition like 'to', use an object pronoun.",
             "explanation": "After prepositions (to, for, with, about, from), always use object pronouns: to him, for her, with us, about them. Never use subject pronouns after prepositions.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Object Pronouns"
         }
     ]
 }

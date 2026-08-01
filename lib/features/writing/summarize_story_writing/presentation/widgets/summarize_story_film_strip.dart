@@ -60,7 +60,7 @@ class SummarizeStoryFilmStrip extends StatelessWidget {
                     return GestureDetector(
                       onTap: () => onRemoveFrame(slot.index),
                       child: Container(
-                        minHeight: 60.h,
+                        constraints: BoxConstraints(minHeight: 60.h),
                         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
                         decoration: BoxDecoration(
                           color: text != null

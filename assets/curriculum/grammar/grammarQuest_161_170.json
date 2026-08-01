@@ -10,16 +10,16 @@
             "interactionType": "choice",
             "question": "The data ___ that the correlation, while strong, is not causal.",
             "options": [
-                "suggests",
+                "seem to suggest",
                 "imply",
-                "would seem to suggest",
-                "seem to suggest"
+                "suggests",
+                "would seem to suggest"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 3,
             "correctAnswer": "would seem to suggest",
             "hint": "Which option provides the most appropriately hedged academic claim?",
             "explanation": "'Would seem to suggest' is highly hedged - three layers of caution: 'would' (conditional/tentative), 'seem' (appearance, not certainty), 'suggest' (not prove). Ideal for cautious academic claims where certainty is limited.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Hedging Language (Academic Caution)"
         },
         {
             "id": "gq_l161_q2",
@@ -29,15 +29,15 @@
             "question": "Further investigation is ___ to establish a causal link.",
             "options": [
                 "required",
-                "needed",
+                "warranted",
                 "necessary",
-                "warranted"
+                "needed"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "warranted",
             "hint": "Which word formally means 'justified by evidence'?",
             "explanation": "'Warranted' = justified: Further investigation is warranted. It implies the evidence is sufficient to justify more research. 'Required' and 'needed' are more common but less precise. 'Warranted' suggests the investigation is earned by the data.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Hedging Language (Academic Caution)"
         },
         {
             "id": "gq_l161_q3",
@@ -46,16 +46,16 @@
             "interactionType": "choice",
             "question": "The extent ___ these findings can be generalised remains unclear.",
             "options": [
-                "that",
-                "in which",
+                "to which",
                 "by which",
-                "to which"
+                "that",
+                "in which"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "to which",
-            "hint": "Which relative structure fits 'the extent ___'?",
+            "hint": "This fixed academic phrase expresses 'how much' formally.",
             "explanation": "'The extent to which' = how much: The extent to which these findings can be generalised remains unclear. This is a key academic phrase. 'To which' is the correct formal relative structure - not 'that' or 'in which'.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Hedging Language (Academic Caution)"
         },
         {
             "id": "gq_l162_q1",
@@ -64,52 +64,52 @@
             "interactionType": "choice",
             "question": "Which sentence best demonstrates expert-level academic hedging?",
             "options": [
-                "The results prove that diet causes depression.",
-                "Our results show diet causes depression.",
+                "Obviously, diet definitely causes depression.",
                 "The results may indicate a possible association between diet and depression.",
-                "Obviously, diet definitely causes depression."
+                "The results prove that diet causes depression.",
+                "Our results show diet causes depression."
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "The results may indicate a possible association between diet and depression.",
             "hint": "Expert hedging uses multiple layers of caution.",
             "explanation": "Expert academic hedging: 'may indicate' (modal + reporting verb), 'possible association' (hedged noun phrase), 'between diet and depression' (cautious phrasing). Avoid 'prove', 'show' (too certain), 'obviously', 'definitely' (inappropriate in academic writing).",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Preposition + Gerund / Passive Idioms"
         },
         {
             "id": "gq_l162_q2",
             "instruction": "RESOLVE THE PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The transition between paragraphs is achieved ___ the use of pronoun reference.",
+            "question": "The transition between paragraphs is achieved through ___ pronoun reference consistently.",
             "options": [
-                "via",
-                "through",
-                "by means of",
-                "All three are correct"
+                "use",
+                "to use",
+                "used",
+                "using"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "All three are correct",
-            "hint": "Can all three express method or means here?",
-            "explanation": "All three work: achieved through/via/by means of the use of pronoun reference. 'Through' = by the process of. 'Via' = by way of. 'By means of' = using the method of. 'By means of' is the most formal. All are grammatically correct.",
-            "grammarRule": "Basic Grammar"
+            "correctAnswer": "using",
+            "hint": "Prepositions like 'through' are followed by which verb form?",
+            "explanation": "Prepositions are always followed by a gerund, never a base verb or infinitive: achieved through using pronoun reference. 'Use,' 'used,' and 'to use' cannot follow a preposition directly.",
+            "grammarRule": "Preposition + Gerund / Passive Idioms"
         },
         {
             "id": "gq_l162_q3",
             "instruction": "RESOLVE THE PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The author's ___ is clear from the choice of emotive vocabulary.",
+            "question": "The author's viewpoint ___ clear from the deliberate choice of emotive vocabulary throughout the passage.",
             "options": [
-                "viewpoint",
-                "standpoint",
-                "perspective",
-                "All three are correct"
+                "is made",
+                "makes",
+                "made",
+                "making"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "All three are correct",
-            "hint": "Which nouns refer to the author's subjective point of view?",
-            "explanation": "Viewpoint, standpoint, and perspective are all synonyms meaning a particular point of view: The author's viewpoint/standpoint/perspective is clear from emotive vocabulary. 'Perspective' is slightly more neutral; 'standpoint' implies a more fixed position.",
-            "grammarRule": "Basic Grammar"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is made",
+            "hint": "'Make something clear' - how does this phrase work in the passive voice?",
+            "explanation": "'Be made clear' is the passive form of 'make something clear': the viewpoint is made clear by the vocabulary. 'Made' alone, 'making,' and 'makes' don't form a complete, grammatical passive verb phrase here.",
+            "grammarRule": "Preposition + Gerund / Passive Idioms"
         },
         {
             "id": "gq_l163_q1",
@@ -118,16 +118,16 @@
             "interactionType": "choice",
             "question": "Whether ___ the project is viable remains to be determined.",
             "options": [
-                "or",
-                "or indeed",
                 "otherwise",
+                "or indeed",
+                "or",
                 "or not"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "or not",
             "hint": "'Whether or not' in embedded clauses.",
             "explanation": "'Whether or not + subject + verb': Whether or not the project is viable remains to be determined. 'Or not' emphasises that both possibilities are open. 'Whether' alone is also acceptable but 'or not' adds emphasis and clarity.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Whether vs. If / Formal Structures"
         },
         {
             "id": "gq_l163_q2",
@@ -136,34 +136,34 @@
             "interactionType": "choice",
             "question": "___ it be proved that he knew about the fraud is the key question.",
             "options": [
+                "If",
                 "What",
                 "That",
-                "If",
                 "Whether"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "Whether",
             "hint": "Which word introduces a clause functioning as the subject?",
             "explanation": "'Whether + subject + verb' can function as a noun clause subject: Whether it can be proved... is the key question. 'If' can introduce object noun clauses but NOT subject noun clauses. Only 'Whether' works in subject position.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Whether vs. If / Formal Structures"
         },
         {
             "id": "gq_l163_q3",
             "instruction": "RESOLVE THE PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The question ___ who is responsible remains unanswered.",
+            "question": "Which sentence uses the most formal structure to introduce this embedded question?",
             "options": [
-                "about",
-                "of",
-                "as to",
-                "All three are correct"
+                "The question about who is responsible remains unanswered.",
+                "The question as to who is responsible remains unanswered.",
+                "The question of who is responsible remains unanswered.",
+                "The question that who is responsible remains unanswered."
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "All three are correct",
-            "hint": "Multiple prepositions can introduce the embedded question here.",
-            "explanation": "'The question of who...', 'The question about who...', 'The question as to who...' are all valid. 'As to' is the most formal. All three prepositions can precede embedded questions that function as noun phrases.",
-            "grammarRule": "Basic Grammar"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The question as to who is responsible remains unanswered.",
+            "hint": "One phrase is distinctly more formal than the others, and one option isn't grammatical at all.",
+            "explanation": "'The question as to who...' is the most formal way to introduce an embedded question, suited to academic or official writing. 'Of' and 'about' are less formal but still grammatical. 'That who is responsible' is not standard English - 'that' can't combine with an embedded question this way.",
+            "grammarRule": "Whether vs. If / Formal Structures"
         },
         {
             "id": "gq_l164_q1",
@@ -174,14 +174,14 @@
             "options": [
                 "is",
                 "were",
-                "had been",
-                "was"
+                "was",
+                "had been"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "was",
             "hint": "What tense fits this narrative moment?",
             "explanation": "Simple past passive: Not a word was spoken = complete silence. 'Not a word' is singular, so 'was', not 'were'. This is a literary/formal construction for dramatic effect, common in narrative and formal writing.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Formal and Literary Structures"
         },
         {
             "id": "gq_l164_q2",
@@ -190,16 +190,16 @@
             "interactionType": "choice",
             "question": "To say the meeting went badly ___ an understatement.",
             "options": [
-                "was",
-                "is",
+                "would be",
                 "seems",
-                "would be"
+                "was",
+                "is"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "would be",
             "hint": "The meeting is being assessed with litotes - formal understatement.",
             "explanation": "'To say... would be an understatement' = that description is not strong enough. 'Would be' is used here in a litotic understatement: To say the meeting went badly would be an understatement (it went terribly).",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Formal and Literary Structures"
         },
         {
             "id": "gq_l164_q3",
@@ -208,16 +208,16 @@
             "interactionType": "choice",
             "question": "Her words, carefully chosen ___ they were, failed to convince him.",
             "options": [
-                "however",
-                "while",
+                "as",
                 "though",
-                "as"
+                "however",
+                "while"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "as",
             "hint": "'Carefully chosen as they were' - an inverted concessive.",
             "explanation": "'Adjective/Adverb + as + subject + verb' = even though: Carefully chosen as they were, her words failed to convince him. This formal literary concessive inverts normal order. 'Though' can replace 'as' in this pattern.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Formal and Literary Structures"
         },
         {
             "id": "gq_l165_q1",
@@ -226,16 +226,16 @@
             "interactionType": "choice",
             "question": "The results ___ be interpreted with caution given the small sample size.",
             "options": [
+                "should",
                 "must",
-                "would",
                 "ought to",
-                "should"
+                "would"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "should",
             "hint": "Which modal gives an academic recommendation?",
             "explanation": "'Should' gives a recommendation: The results should be interpreted with caution. In academic writing, 'should' advises without being overly prescriptive. 'Must' is stronger (obligation). 'Would' is hypothetical. 'Should' is the most appropriate here.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Modals of Academic Caution"
         },
         {
             "id": "gq_l165_q2",
@@ -244,16 +244,16 @@
             "interactionType": "choice",
             "question": "This finding ___ have significant implications for future research.",
             "options": [
-                "can",
                 "must",
-                "ought to",
-                "may"
+                "can",
+                "may",
+                "ought to"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "may",
             "hint": "Cautious possibility about implications in academic writing.",
             "explanation": "'May' expresses possibility in formal academic contexts: This finding may have significant implications. It is more formal than 'might' and appropriate for research writing. 'Can' expresses ability, not possibility here.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Modals of Academic Caution"
         },
         {
             "id": "gq_l165_q3",
@@ -262,16 +262,16 @@
             "interactionType": "choice",
             "question": "These anomalies ___ explained by errors in the data collection process.",
             "options": [
-                "might be",
-                "should be",
                 "would be",
-                "could have been"
+                "should be",
+                "could have been",
+                "might be"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "could have been",
             "hint": "Speculating about the past cause of past anomalies.",
             "explanation": "'Could have been' = a past possibility or explanation: These anomalies could have been explained by data collection errors. This speculates about a past cause. 'Might have been' is also correct. Both express uncertainty about what happened.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Modals of Academic Caution"
         },
         {
             "id": "gq_l166_q1",
@@ -280,16 +280,16 @@
             "interactionType": "choice",
             "question": "The report ___ last week contained several errors.",
             "options": [
-                "which published",
-                "that published",
+                "published",
                 "being published",
-                "published"
+                "that published",
+                "which published"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "published",
             "hint": "A past participle can reduce a passive relative clause.",
             "explanation": "Reduced relative clause: 'The report published last week' = 'The report which was published last week.' Passive relative clauses (which was + past participle) can be reduced to just the past participle. This is common in formal written English.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Reduced Relative Clauses"
         },
         {
             "id": "gq_l166_q2",
@@ -298,16 +298,16 @@
             "interactionType": "choice",
             "question": "The scientist ___ the Nobel Prize gave a memorable speech.",
             "options": [
-                "who was awarded",
                 "awarded",
                 "who awarded",
+                "who was awarded",
                 "being awarded"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 0,
             "correctAnswer": "awarded",
             "hint": "Which form reduces an active relative clause?",
             "explanation": "'The scientist awarded the Nobel Prize' = 'The scientist who was awarded the Nobel Prize.' When 'who was' is removed, the past participle remains. This is a reduced passive relative clause where the past participle 'awarded' does the work.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Reduced Relative Clauses"
         },
         {
             "id": "gq_l166_q3",
@@ -316,8 +316,8 @@
             "interactionType": "choice",
             "question": "Any evidence ___ the hypothesis will be carefully considered.",
             "options": [
-                "supports",
                 "that supported",
+                "supports",
                 "supporting",
                 "which is supported"
             ],
@@ -325,25 +325,25 @@
             "correctAnswer": "supporting",
             "hint": "Present participle reduces an active relative clause.",
             "explanation": "'Evidence supporting the hypothesis' = 'Evidence that supports the hypothesis.' Active relative clauses (that + verb) can be reduced to a present participle: 'supporting'. This is common in academic and formal writing.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Reduced Relative Clauses"
         },
         {
             "id": "gq_l167_q1",
             "instruction": "RESOLVE THE PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "This is ___ the scope of this paper.",
+            "question": "A full discussion of this issue lies ___ the scope of the present paper and is left for future research.",
             "options": [
-                "out of",
-                "outside",
                 "beyond",
-                "All are commonly used"
+                "above",
+                "outer",
+                "farther"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "All are commonly used",
-            "hint": "Which phrase means outside the limits of what is covered?",
-            "explanation": "'Beyond the scope', 'outside the scope', and 'out of the scope of this paper' are all used. 'Beyond the scope' is the most common academic expression. 'Out of scope' (without 'the') is used in project management. All are acceptable.",
-            "grammarRule": "Basic Grammar"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "beyond",
+            "hint": "Which word means 'outside the limits of' when paired with 'scope'?",
+            "explanation": "'Beyond the scope' is the standard academic collocation meaning outside the limits of what's covered: this issue lies beyond the scope of the paper. 'Farther,' 'above,' and 'outer' don't combine naturally with 'scope' in this fixed phrase.",
+            "grammarRule": "Fixed Prepositional Phrases"
         },
         {
             "id": "gq_l167_q2",
@@ -353,33 +353,33 @@
             "question": "The study was conducted ___ the auspices of the university.",
             "options": [
                 "within",
+                "under",
                 "beneath",
-                "beyond",
-                "under"
+                "beyond"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "under",
             "hint": "'Under the auspices of' = with the support or patronage of.",
             "explanation": "'Under the auspices of' = with the support, protection, or authority of: conducted under the auspices of the university. This is a set formal phrase. 'Under' here means 'with the sponsorship or authority of'.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Fixed Prepositional Phrases"
         },
         {
             "id": "gq_l167_q3",
             "instruction": "RESOLVE THE PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ closer scrutiny, the methodology reveals significant weaknesses.",
+            "question": "___ closer scrutiny, the methodology reveals significant weaknesses that were not immediately apparent.",
             "options": [
-                "With",
                 "On",
-                "Both A and B are correct",
-                "Under"
+                "For",
+                "At",
+                "By"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "Both A and B are correct",
-            "hint": "Can multiple prepositions introduce this type of scrutiny?",
-            "explanation": "Both 'On closer scrutiny' and 'Under closer scrutiny' are used in formal writing. 'On closer scrutiny' = when examined more carefully (most common). 'Under closer scrutiny' = being examined closely. Both are correct and natural.",
-            "grammarRule": "Basic Grammar"
+            "correctAnswerIndex": 0,
+            "correctAnswer": "On",
+            "hint": "Which preposition pairs with 'scrutiny' to mean 'when examined more carefully'?",
+            "explanation": "'On closer scrutiny/inspection/examination' is the standard fixed phrase meaning 'when examined more carefully': on closer scrutiny, the methodology reveals weaknesses. 'At,' 'by,' and 'for' are not used in this fixed expression.",
+            "grammarRule": "Fixed Prepositional Phrases"
         },
         {
             "id": "gq_l168_q1",
@@ -389,69 +389,69 @@
             "question": "This study is ___ in scope to the one conducted by Smith (2019).",
             "options": [
                 "comparative in",
+                "larger of",
                 "similar in",
-                "broader by",
-                "larger of"
+                "broader by"
             ],
-            "correctAnswerIndex": 1,
+            "correctAnswerIndex": 2,
             "correctAnswer": "similar in",
-            "hint": "Which structure compares the scope of two studies?",
+            "hint": "Which phrase expresses 'resembling' when comparing two studies?",
             "explanation": "'Similar in scope to' = resembling in terms of scope: This study is similar in scope to Smith (2019). Use 'similar in + dimension + to' for comparisons: similar in size, similar in quality, similar in nature.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Preposition Precision / Latin Comparatives"
         },
         {
             "id": "gq_l168_q2",
             "instruction": "RESOLVE THE PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The results are ___ those of previous studies.",
+            "question": "The results are strikingly ___ those of previous studies, lending further support to the original hypothesis.",
             "options": [
                 "comparable with",
                 "consistent with",
-                "comparable as",
-                "both A and B are correct"
+                "compared with",
+                "comparable as"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "both A and B are correct",
-            "hint": "Can both 'comparable with' and 'consistent with' be used?",
-            "explanation": "Both work but with different meanings: 'Comparable with' = similar enough to compare. 'Consistent with' = in agreement with, matching. In this context, both are correct but 'consistent with' specifically says the results agree with or match previous findings.",
-            "grammarRule": "Basic Grammar"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "consistent with",
+            "hint": "The results don't just resemble earlier work - they actively support the same conclusion.",
+            "explanation": "'Consistent with' means being in agreement with, matching: results consistent with the hypothesis lend it support. 'Comparable with' only means similar enough to be compared - it doesn't necessarily mean they agree. 'Comparable as' and 'compared with' aren't grammatical directly after 'are ___ those of'.",
+            "grammarRule": "Preposition Precision / Latin Comparatives"
         },
         {
             "id": "gq_l168_q3",
             "instruction": "RESOLVE THE PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "The current results are ___ inferior to those of the control group.",
+            "question": "The current results are far inferior ___ those of the control group, a difference too large to attribute to chance.",
             "options": [
-                "markedly",
-                "far more",
-                "notably",
-                "Both A and C are correct"
+                "than",
+                "of",
+                "from",
+                "to"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "Both A and C are correct",
-            "hint": "Which adverbs can intensify a comparative adjective like inferior?",
-            "explanation": "Both \"markedly\" and \"notably\" can modify a comparative: markedly inferior, notably inferior. They mean noticeably or significantly. \"Far more inferior\" is redundant because \"inferior\" is already comparative - never use \"more\" with it.",
-            "grammarRule": "Basic Grammar"
+            "correctAnswer": "to",
+            "hint": "'Inferior' is a Latin-derived comparative that takes a different preposition than regular '-er' comparatives.",
+            "explanation": "'Inferior to' (never 'inferior than') is correct: results inferior to the control group. Words like inferior, superior, senior, junior, and prior are Latin-derived comparatives that pair with 'to', unlike ordinary English comparatives (taller than, better than).",
+            "grammarRule": "Preposition Precision / Latin Comparatives"
         },
         {
             "id": "gq_l169_q1",
             "instruction": "RESOLVE THE PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "Had the vaccine been approved sooner, millions ___ have been saved.",
+            "question": "Had the vaccine ___ approved sooner, millions of lives could have been saved.",
             "options": [
-                "would",
-                "could",
-                "might",
-                "All of these are possible"
+                "being",
+                "be",
+                "was",
+                "been"
             ],
             "correctAnswerIndex": 3,
-            "correctAnswer": "All of these are possible",
-            "hint": "Third conditional result clause - can multiple modals work?",
-            "explanation": "All three modals work in the third conditional result clause: 'would have been saved' (certain result), 'could have been saved' (possible result), 'might have been saved' (uncertain possibility). Each expresses a different degree of certainty.",
-            "grammarRule": "Basic Grammar"
+            "correctAnswer": "been",
+            "hint": "Inverted third conditional: 'Had + subject + ___ + past participle'.",
+            "explanation": "'Had the vaccine been approved' is inverted third conditional = 'If the vaccine had been approved'. The structure is Had + subject + been + past participle for the passive. 'Be,' 'being,' and 'was' don't fit this fixed inverted pattern.",
+            "grammarRule": "Conditional Inversion (Formal)"
         },
         {
             "id": "gq_l169_q2",
@@ -462,14 +462,14 @@
             "options": [
                 "will",
                 "shall",
-                "must",
-                "would"
+                "would",
+                "must"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "would",
             "hint": "Formal second conditional inversion - which modal in the result clause?",
             "explanation": "'Were + subject + to + infinitive' is formal second conditional inversion: Were this programme to be cancelled, thousands would lose support. The result clause uses 'would' for the hypothetical/unreal result.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Conditional Inversion (Formal)"
         },
         {
             "id": "gq_l169_q3",
@@ -478,16 +478,16 @@
             "interactionType": "choice",
             "question": "Should the committee ___ to reconvene, all members must attend.",
             "options": [
-                "have decided",
-                "decided",
                 "have been deciding",
-                "decide"
+                "decided",
+                "decide",
+                "have decided"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "decide",
             "hint": "'Should + subject + base verb' = formal first conditional.",
             "explanation": "'Should + subject + base verb' is a formal conditional: Should the committee decide to reconvene, all members must attend. This inversion equals 'If the committee decides to reconvene...' Common in formal notices and official communications.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Conditional Inversion (Formal)"
         },
         {
             "id": "gq_l170_q1",
@@ -496,16 +496,16 @@
             "interactionType": "choice",
             "question": "It is ___ from the evidence that the policy has failed.",
             "options": [
-                "apparently",
-                "apparent that clear",
                 "clear and apparent",
+                "apparent that clear",
+                "apparently",
                 "apparent"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "apparent",
             "hint": "After 'It is', which adjective is needed?",
             "explanation": "'It is apparent/clear/evident that...' uses an adjective after 'is': It is apparent from the evidence that the policy has failed. 'Apparent' = obvious, clear. 'Apparently' is an adverb - wrong after 'is + adjective' structure.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Concessive Prepositions vs. Cause Connectors"
         },
         {
             "id": "gq_l170_q2",
@@ -515,33 +515,33 @@
             "question": "The committee's conclusion, ___ controversial, deserves serious consideration.",
             "options": [
                 "when",
-                "if",
                 "in case",
+                "if",
                 "while"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "while",
             "hint": "An embedded parenthetical concession - which conjunction works?",
             "explanation": "'While + adjective' in parenthetical clauses: The committee's conclusion, while controversial, deserves consideration. 'While' here = 'even though it is'. This is an elliptical concessive clause: while (it is) controversial.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Concessive Prepositions vs. Cause Connectors"
         },
         {
             "id": "gq_l170_q3",
             "instruction": "RESOLVE THE PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "___ the limitations of this approach, it remains the most practical solution.",
+            "question": "___ its well-documented limitations, this approach remains, in the view of most practitioners, the most practical available solution.",
             "options": [
-                "Notwithstanding",
-                "Acknowledging",
+                "Due to",
                 "Despite",
-                "All three are correct"
+                "Because of",
+                "As a result of"
             ],
-            "correctAnswerIndex": 3,
-            "correctAnswer": "All three are correct",
-            "hint": "Can multiple expressions introduce this concession?",
-            "explanation": "All three work: Notwithstanding the limitations (very formal), Acknowledging the limitations (formal/academic), Despite the limitations (standard formal). All correctly introduce a concessive phrase. 'Notwithstanding' is most formal, often used in legal writing.",
-            "grammarRule": "Basic Grammar"
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Despite",
+            "hint": "Does the sentence show a limitation causing the outcome, or a contrast with it?",
+            "explanation": "'Despite' introduces a contrast: despite its limitations, the approach remains practical - the limitations don't prevent this. 'Because of,' 'due to,' and 'as a result of' would all wrongly suggest the limitations are the cause of it being practical - an illogical relationship.",
+            "grammarRule": "Concessive Prepositions vs. Cause Connectors"
         }
     ]
 }

@@ -11,15 +11,15 @@
             "question": "The man ___ I told you about is here.",
             "options": [
                 "who",
-                "which",
                 "whose",
-                "whom"
+                "whom",
+                "which"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "whom",
             "hint": "The pronoun is the object of 'told' - use the formal object form.",
             "explanation": "In relative clauses where the pronoun is the object, use 'whom' (formal) or 'who/that' (informal): the man whom I told you about. In defining relative clauses, the pronoun can also be omitted: the man I told you about.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Relative Clauses (Advanced)"
         },
         {
             "id": "gq_l81_q2",
@@ -37,7 +37,7 @@
             "correctAnswer": "who",
             "hint": "Extra information about 'my sister' - which pronoun?",
             "explanation": "Non-defining relative clauses add extra, non-essential information. They use commas and can only use 'who' (for people), never 'that'. My sister, who is a nurse, works night shifts. Remove the clause and the sentence still makes sense.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Relative Clauses (Advanced)"
         },
         {
             "id": "gq_l81_q3",
@@ -46,16 +46,16 @@
             "interactionType": "choice",
             "question": "The reason ___ she left is still a mystery.",
             "options": [
-                "for which",
                 "that",
-                "when",
-                "why"
+                "why",
+                "for which",
+                "when"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "when",
+            "correctAnswerIndex": 1,
+            "correctAnswer": "why",
             "hint": "A reason clause uses a specific relative adverb.",
             "explanation": "'The reason why...' is the natural pattern: The reason why she left is still a mystery. 'Why' acts as a relative adverb. You can also omit 'why': The reason she left. 'For which' is very formal but also possible.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Relative Clauses (Advanced)"
         },
         {
             "id": "gq_l82_q1",
@@ -65,15 +65,15 @@
             "question": "I ___ what you mean.",
             "options": [
                 "am understanding",
-                "was understanding",
                 "have understood",
-                "understand"
+                "understand",
+                "was understanding"
             ],
             "correctAnswerIndex": 2,
-            "correctAnswer": "have understood",
+            "correctAnswer": "understand",
             "hint": "Is 'understand' a state or an action?",
             "explanation": "Stative verbs describe states, not actions, and are NOT used in continuous forms. Examples: understand, know, believe, love, hate, want, need, belong, seem, appear. 'I understand' is correct; 'I am understanding' is wrong.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Stative vs. Dynamic Verbs"
         },
         {
             "id": "gq_l82_q2",
@@ -83,33 +83,33 @@
             "question": "This bag ___ to my mother.",
             "options": [
                 "is belonging",
-                "has been belonging",
                 "having belonged",
+                "has been belonging",
                 "belongs"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "belongs",
             "hint": "'Belong' is stative - can it be used in continuous form?",
             "explanation": "'Belong' is a stative verb expressing ownership. It cannot normally be used in continuous tenses: This bag belongs to my mother. 'Is belonging' is incorrect. Stative verbs describe a state, not an ongoing action.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Stative vs. Dynamic Verbs"
         },
         {
             "id": "gq_l82_q3",
             "instruction": "RESOLVE THE PATTERN",
             "subtype": "grammarQuest",
             "interactionType": "choice",
-            "question": "She ___ what she's tasting right now - she's a professional taster.",
+            "question": "She ___ each sample carefully before writing her review - she's a professional wine taster.",
             "options": [
-                "tastes",
                 "taste",
-                "has been tasting",
-                "is tasting"
+                "tastes",
+                "is tasting",
+                "has been tasting"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "is tasting",
-            "hint": "Here 'taste' is used as a dynamic verb for an active, ongoing process.",
-            "explanation": "Some verbs are both stative and dynamic. 'Taste' (stative): It tastes good. 'Taste' (dynamic): She is tasting the soup = she is actively doing it right now. Context determines the meaning.",
-            "grammarRule": "Basic Grammar"
+            "hint": "Here 'taste' describes an active process happening right now, not a fixed quality.",
+            "explanation": "Some verbs are both stative and dynamic. 'Taste' (stative): The soup tastes good. 'Taste' (dynamic): She is tasting each sample = she is actively doing it right now. Context tells you which meaning is intended.",
+            "grammarRule": "Stative vs. Dynamic Verbs"
         },
         {
             "id": "gq_l83_q1",
@@ -118,16 +118,16 @@
             "interactionType": "choice",
             "question": "___ you study regularly, you will improve.",
             "options": [
-                "Unless",
                 "Even if",
-                "Whereas",
-                "As long as"
+                "As long as",
+                "Unless",
+                "Whereas"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "As long as",
             "hint": "Which conditional word means 'on the condition that'?",
             "explanation": "'As long as' = on the condition that: As long as you study regularly, you will improve. 'Unless' = if not: You won't improve unless you study. Both are conditional, but they work in different ways.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Conditional Conjunctions"
         },
         {
             "id": "gq_l83_q2",
@@ -136,16 +136,16 @@
             "interactionType": "choice",
             "question": "___ you finish by 5 pm, you can leave early.",
             "options": [
-                "Unless",
-                "As if",
                 "Even though",
-                "Provided that"
+                "Provided that",
+                "As if",
+                "Unless"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "Provided that",
             "hint": "Which phrase means 'if and only if this condition is met'?",
             "explanation": "'Provided that' = on the condition that: Provided that you finish by 5 pm, you can leave early. Also: Providing that, As long as. These express a condition for a permission or arrangement.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Conditional Conjunctions"
         },
         {
             "id": "gq_l83_q3",
@@ -154,16 +154,16 @@
             "interactionType": "choice",
             "question": "I won't lend you my car ___ you promise to drive carefully.",
             "options": [
-                "as long as",
                 "provided that",
+                "unless",
                 "if",
-                "unless"
+                "as long as"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "unless",
             "hint": "The sentence is negative - which word means 'except if'?",
             "explanation": "'Unless' = except if / if not: I won't lend you my car unless you promise to drive carefully = I will only lend it IF you promise. 'Unless' introduces the condition that prevents the negative result.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Conditional Conjunctions"
         },
         {
             "id": "gq_l84_q1",
@@ -172,16 +172,16 @@
             "interactionType": "choice",
             "question": "___ the economic situation, investors are cautious.",
             "options": [
+                "Due to",
                 "In spite of",
                 "Because of",
-                "Due to",
                 "In view of"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "In view of",
             "hint": "Which phrase means 'considering' or 'given' the situation?",
             "explanation": "'In view of' = considering, given: In view of the economic situation, investors are cautious. Compare: Due to/Because of = as a result of (cause), In spite of/Despite = although (concession).",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Formal Prepositional Phrases"
         },
         {
             "id": "gq_l84_q2",
@@ -190,16 +190,16 @@
             "interactionType": "choice",
             "question": "She completed the project ___ schedule.",
             "options": [
-                "in accordance to",
                 "before",
-                "in front of",
-                "ahead of"
+                "ahead of",
+                "in accordance to",
+                "in front of"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "ahead of",
             "hint": "Which phrase means 'earlier than planned'?",
             "explanation": "'Ahead of schedule' = earlier than planned. Collocations: ahead of schedule (early), behind schedule (late), on schedule (on time). 'In front of' is about physical position, not time.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Formal Prepositional Phrases"
         },
         {
             "id": "gq_l84_q3",
@@ -208,16 +208,16 @@
             "interactionType": "choice",
             "question": "She agreed ___ her manager's advice.",
             "options": [
-                "in following",
-                "with following",
                 "on following",
-                "to follow"
+                "in following",
+                "to follow",
+                "with following"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "to follow",
             "hint": "'Agree to do something' means to consent.",
             "explanation": "'Agree to + infinitive' = consent to do: She agreed to follow her manager's advice. 'Agree with' = share someone's opinion: I agree with you. 'Agree on' = reach consensus: They agreed on a plan.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Formal Prepositional Phrases"
         },
         {
             "id": "gq_l85_q1",
@@ -226,16 +226,16 @@
             "interactionType": "choice",
             "question": "What surprised me most ___ how quickly she recovered.",
             "options": [
+                "was",
                 "were",
                 "is",
-                "are",
-                "was"
+                "are"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "was",
             "hint": "Cleft sentence about a past observation - which tense?",
             "explanation": "In cleft sentences with 'What + subject + verb', use past tense for past situations: What surprised me was... Use present for ongoing: What surprises me is... Here, 'surprised' = past, so 'was'.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Cleft Sentences (Past)"
         },
         {
             "id": "gq_l85_q2",
@@ -244,16 +244,16 @@
             "interactionType": "choice",
             "question": "It ___ Maria who first noticed the problem.",
             "options": [
-                "has been",
+                "was",
                 "is",
                 "has",
-                "was"
+                "has been"
             ],
-            "correctAnswerIndex": 2,
-            "correctAnswer": "has",
-            "hint": "Cleft sentence about a past event - which tense?",
+            "correctAnswerIndex": 0,
+            "correctAnswer": "was",
+            "hint": "This cleft sentence describes something that happened in the past - which verb form?",
             "explanation": "'It was + noun phrase + who/that': It was Maria who first noticed the problem. This is a past event, so 'was'. 'It is' would be used for present situations or general truths.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Cleft Sentences (Past)"
         },
         {
             "id": "gq_l85_q3",
@@ -262,16 +262,16 @@
             "interactionType": "choice",
             "question": "What the company ___ is a better marketing strategy.",
             "options": [
-                "are needing",
-                "is needing",
                 "needed",
-                "needs"
+                "are needing",
+                "needs",
+                "is needing"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "needs",
             "hint": "'Need' is stative - which form is appropriate in present tense?",
             "explanation": "'Need' is often stative and doesn't normally use continuous form: What the company needs is a better strategy. 'Is needing' is unusual. What + the company + needs = the thing the company requires.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Cleft Sentences (Past)"
         },
         {
             "id": "gq_l86_q1",
@@ -281,15 +281,15 @@
             "question": "The water is ___ boiling - don't touch it!",
             "options": [
                 "a little",
-                "very",
+                "absolutely",
                 "quite",
-                "absolutely"
+                "very"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "absolutely",
             "hint": "Non-gradable/extreme adjectives use 'absolutely', not 'very'.",
             "explanation": "Some adjectives are extreme/non-gradable: boiling, freezing, exhausted, delicious, terrible, perfect, furious. Use 'absolutely' with these: absolutely boiling. Use 'very' with gradable adjectives: very hot.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Intensifiers with Extreme Adjectives"
         },
         {
             "id": "gq_l86_q2",
@@ -298,16 +298,16 @@
             "interactionType": "choice",
             "question": "This food is ___ delicious!",
             "options": [
+                "absolutely",
                 "very",
-                "rather",
                 "a bit",
-                "absolutely"
+                "rather"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "absolutely",
             "hint": "'Delicious' is an extreme adjective - which intensifier is correct?",
             "explanation": "'Absolutely' is used before extreme (non-gradable) adjectives: absolutely delicious, absolutely perfect, absolutely awful. 'Very delicious' is incorrect - 'delicious' is already an extreme word; you cannot grade it further.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Intensifiers with Extreme Adjectives"
         },
         {
             "id": "gq_l86_q3",
@@ -316,16 +316,16 @@
             "interactionType": "choice",
             "question": "She was ___ exhausted after the marathon.",
             "options": [
-                "very",
                 "rather",
+                "completely",
                 "slightly",
-                "completely"
+                "very"
             ],
             "correctAnswerIndex": 1,
-            "correctAnswer": "rather",
+            "correctAnswer": "completely",
             "hint": "Non-gradable adjectives like 'exhausted' pair with 'completely'.",
             "explanation": "'Completely' and 'absolutely' are used with extreme adjectives: completely exhausted, absolutely exhausted. 'Very exhausted' is commonly heard in informal speech but is technically imprecise.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Intensifiers with Extreme Adjectives"
         },
         {
             "id": "gq_l87_q1",
@@ -334,16 +334,16 @@
             "interactionType": "choice",
             "question": "The formal equivalent of 'We need to talk about this' is:",
             "options": [
+                "I would like to discuss this matter with you.",
                 "I should tell you this stuff.",
                 "I need a chat with you.",
-                "Let's have a talk.",
-                "I would like to discuss this matter with you."
+                "Let's have a talk."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 0,
             "correctAnswer": "I would like to discuss this matter with you.",
             "hint": "Which option uses formal vocabulary and full verb forms?",
             "explanation": "Formal: I would like to discuss this matter with you. Key: 'would like' (formal) vs 'need' (neutral); 'discuss' (formal) vs 'talk about' (neutral); 'matter' (formal) vs 'thing' (vague/informal).",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Formal Register / Vocabulary"
         },
         {
             "id": "gq_l87_q2",
@@ -352,16 +352,16 @@
             "interactionType": "choice",
             "question": "Which is the most formal synonym for 'use'?",
             "options": [
-                "make use of",
                 "use up",
-                "utilize",
-                "employ"
+                "employ",
+                "make use of",
+                "utilize"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "employ",
             "hint": "Which verb has the highest formality level?",
             "explanation": "Level of formality: utilise > employ > make use of > use. Both 'employ' and 'utilise' are formal synonyms for 'use' in professional/academic contexts. 'Use up' means to exhaust a supply.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Formal Register / Vocabulary"
         },
         {
             "id": "gq_l87_q3",
@@ -370,16 +370,16 @@
             "interactionType": "choice",
             "question": "The most formal version of 'We need to start again' is:",
             "options": [
-                "Let's start over.",
                 "We've gotta redo this.",
+                "It will be necessary to recommence.",
                 "We should start it again.",
-                "It will be necessary to recommence."
+                "Let's start over."
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "It will be necessary to recommence.",
             "hint": "Which option uses the most formal vocabulary and structure?",
             "explanation": "'It will be necessary to recommence' uses formal vocabulary ('recommence' = begin again) and an impersonal structure ('It will be necessary to...'). Avoid contractions and informal words in formal contexts.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Formal Register / Vocabulary"
         },
         {
             "id": "gq_l88_q1",
@@ -388,16 +388,16 @@
             "interactionType": "choice",
             "question": "She gave ___ a present.",
             "options": [
-                "me him",
-                "him me",
                 "to him me",
-                "him"
+                "him",
+                "him me",
+                "me him"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "him",
             "hint": "Two objects after 'give' - which order?",
             "explanation": "Double object verbs: give + indirect object (person) + direct object (thing): She gave him a present. Or: She gave a present to him. Without 'to', the person (indirect) must come before the thing (direct).",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Indirect Objects and Word Order"
         },
         {
             "id": "gq_l88_q2",
@@ -406,16 +406,16 @@
             "interactionType": "choice",
             "question": "He showed ___ his paintings.",
             "options": [
-                "to us his",
                 "his to us",
-                "his us",
-                "us his"
+                "to us his",
+                "us his",
+                "his us"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "us his",
             "hint": "Indirect object before direct object - which order is correct?",
             "explanation": "Double object: show + person + thing: He showed us his paintings. Alternative: He showed his paintings to us. Without a preposition, the person (indirect) must come before the thing (direct).",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Indirect Objects and Word Order"
         },
         {
             "id": "gq_l88_q3",
@@ -424,16 +424,16 @@
             "interactionType": "choice",
             "question": "Can you explain ___ the problem?",
             "options": [
-                "me",
-                "for me",
                 "me to",
-                "to me"
+                "me",
+                "to me",
+                "for me"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 2,
             "correctAnswer": "to me",
             "hint": "Some verbs always use a preposition with the indirect object.",
             "explanation": "Some verbs always require 'to' before the indirect object: explain to me, describe to him, suggest to her, announce to them. Unlike give/show/tell, these verbs cannot use the 'person + thing' order without a preposition.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Indirect Objects and Word Order"
         },
         {
             "id": "gq_l89_q1",
@@ -442,16 +442,16 @@
             "interactionType": "choice",
             "question": "___ leaving the house, she always checks her email.",
             "options": [
-                "Until",
+                "Before",
                 "While",
                 "After",
-                "Before"
+                "Until"
             ],
             "correctAnswerIndex": 2,
             "correctAnswer": "After",
             "hint": "Which time conjunction means she does this first, then leaves?",
             "explanation": "'Before' = earlier than another action: Before leaving, she checks her email (checking happens first). 'After' = later. 'While' = at the same time. 'Until' = up to a point in time.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Time Conjunctions"
         },
         {
             "id": "gq_l89_q2",
@@ -461,15 +461,15 @@
             "question": "The lights went out ___ we were watching the film.",
             "options": [
                 "since",
-                "during",
                 "as soon as",
+                "during",
                 "while"
             ],
-            "correctAnswerIndex": 2,
+            "correctAnswerIndex": 1,
             "correctAnswer": "as soon as",
             "hint": "Something interrupted an ongoing action.",
             "explanation": "'While + past continuous' for an interrupted action: The lights went out while we were watching the film. 'During' is a preposition followed by a noun: during the film. 'As soon as' means immediately after.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Time Conjunctions"
         },
         {
             "id": "gq_l89_q3",
@@ -479,15 +479,15 @@
             "question": "___ I hear back from them, I'll let you know.",
             "options": [
                 "Since",
-                "While",
                 "Until",
+                "While",
                 "As soon as"
             ],
             "correctAnswerIndex": 3,
             "correctAnswer": "As soon as",
             "hint": "We want to express 'immediately when I hear back'.",
             "explanation": "'As soon as' = immediately when: As soon as I hear back, I'll let you know. Compare: When I hear back (at that time), Until I hear back (up to that point), Once I hear back (very similar to 'as soon as').",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Time Conjunctions"
         },
         {
             "id": "gq_l90_q1",
@@ -496,16 +496,16 @@
             "interactionType": "choice",
             "question": "The film was ___ good but not quite excellent.",
             "options": [
-                "very",
-                "rather",
                 "fairly",
+                "rather",
+                "very",
                 "quite"
             ],
             "correctAnswerIndex": 1,
             "correctAnswer": "rather",
             "hint": "Which intensifier means 'to a moderate extent' in British English?",
             "explanation": "In British English, 'quite' is often a weak intensifier: quite good = fairly good (not outstanding). 'Rather' is slightly stronger: rather good. Order: quite good < rather good < very good < extremely good.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Degree Adverbs"
         },
         {
             "id": "gq_l90_q2",
@@ -515,15 +515,15 @@
             "question": "He is ___ the most talented player on the team.",
             "options": [
                 "much more",
-                "very far",
+                "by far",
                 "so far",
-                "by far"
+                "very far"
             ],
-            "correctAnswerIndex": 3,
+            "correctAnswerIndex": 1,
             "correctAnswer": "by far",
             "hint": "We want to say he is clearly, obviously the best.",
             "explanation": "'By far' emphasises the greatest degree: He is by far the most talented. 'By far + superlative' says something is clearly the most/best/worst. Never 'very far the most'.",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Degree Adverbs"
         },
         {
             "id": "gq_l90_q3",
@@ -532,8 +532,8 @@
             "interactionType": "choice",
             "question": "The presentation was ___ a success.",
             "options": [
-                "quite",
                 "rather a",
+                "quite",
                 "something like a",
                 "something of"
             ],
@@ -541,7 +541,7 @@
             "correctAnswer": "something of",
             "hint": "Which expression means 'to some extent a success' with a hint of reservation?",
             "explanation": "'Something of a success' = to some degree a success, but with some reservation. It hedges: The presentation was something of a success. Compare: quite a success (positive) vs something of a success (slightly more cautious).",
-            "grammarRule": "Basic Grammar"
+            "grammarRule": "Degree Adverbs"
         }
     ]
 }
