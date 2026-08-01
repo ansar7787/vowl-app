@@ -198,8 +198,6 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is EliteMasteryLoaded) ? state.currentQuest : null;
-
         return EliteBaseLayout(
           gameType: widget.gameType,
           level: widget.level,

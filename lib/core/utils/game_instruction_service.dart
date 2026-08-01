@@ -1414,19 +1414,6 @@ class GameInstructionService {
       tip:
           "PRO TIP: Look for transition words like 'However' or 'Therefore' to link sentences!",
     ),
-    GameSubtype.speedSpelling: GameBriefing(
-      title: "Speed Spelling",
-      icon: Icons.spellcheck_rounded,
-      objective: "Listen to the audio and tap the letters to spell the word.",
-      rules: [
-        "Spelling must be exact",
-        "1 mistake loses 1 life",
-        "2 mistakes queues it to the end",
-      ],
-      actionText: "Start Spelling",
-      tip:
-          "PRO TIP: Sound the word out slowly in your head before tapping the letters.",
-    ),
     GameSubtype.accentShadowing: GameBriefing(
       title: "Accent Shadowing",
       icon: Icons.record_voice_over_rounded,
