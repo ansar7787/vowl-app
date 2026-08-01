@@ -5,6 +5,9 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
@@ -29,6 +32,7 @@ class ShortAnswerScreen extends StatefulWidget {
 }
 
 class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
+  final _hapticService = di.sl<HapticService>();
   final _answerController = TextEditingController();
 
   bool _showConfetti = false;
@@ -63,7 +67,29 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
   void _submitAnswer(List<String> targetKeywords, bool isAnswered) {
     if (isAnswered || _answerController.text.trim().isEmpty) return;
 
-    final text = _answerController.text.trim().toLowerCase();
+    final rawText = _answerController.text.trim();
+    if (!RegExp(r'^[A-Z]').hasMatch(rawText)) {
+      CustomSnackBar.show(
+        context: context,
+        message: "Please start your answer with a capital letter.",
+        type: CustomSnackBarType.warning,
+      );
+      _hapticService.selection();
+      return;
+    }
+
+    final lastChar = rawText.isNotEmpty ? rawText[rawText.length - 1] : '';
+    if (!['.', '!', '?'].contains(lastChar)) {
+      CustomSnackBar.show(
+        context: context,
+        message: "Please end your answer with proper punctuation (., !, or ?).",
+        type: CustomSnackBarType.warning,
+      );
+      _hapticService.selection();
+      return;
+    }
+
+    final text = rawText.toLowerCase();
 
     int matchedCount = 0;
     for (var kw in targetKeywords) {
@@ -72,12 +98,28 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
       }
     }
 
-    bool isMinLengthMet = _wordCount >= 10;
-    bool isKeywordsMet = matchedCount >= 2;
+    if (_wordCount < 10) {
+      CustomSnackBar.show(
+        context: context,
+        message: "Keep writing! A valid answer requires at least 10 words.",
+        type: CustomSnackBarType.info,
+      );
+      _hapticService.selection();
+      return;
+    }
 
-    final isCorrect = isMinLengthMet && isKeywordsMet;
+    if (matchedCount < 2) {
+      CustomSnackBar.show(
+        context: context,
+        message: "Use at least 2 key terms to complete your answer!",
+        type: CustomSnackBarType.warning,
+      );
+      _hapticService.selection();
+      return;
+    }
 
-    context.read<WritingBloc>().add(SubmitAnswer(isCorrect));
+    _hapticService.success();
+    context.read<WritingBloc>().add(SubmitAnswer(true));
   }
 
   @override

@@ -10,11 +10,14 @@ import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_instruction.dart';
 import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_target_wall.dart';
 import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_ballista_ammo.dart';
 import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_trajectory_painter.dart';
+import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_keyboard_input.dart';
 
 // ---------------------------------------------------------------------------
 // Immutable record for drag state â€” replaces two nullable Offset fields.
@@ -121,7 +124,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
     });
 
     final isCorrect =
-        selected.trim().toLowerCase() == correct.trim().toLowerCase();
+        selected.trim().toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '') == correct.trim().toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '');
 
     // Clear trajectory immediately on fire â€” no lingering aim line.
     _dragNotifier.value = null;
@@ -211,6 +214,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
                     _CompleteSentenceBody(
                       quest: quest,
                       options: options,
+                      level: widget.level,
                       selectedProjectile: _selectedProjectile,
                       isAnswered: isAnswered,
                       isCorrect: isCorrect,
@@ -262,6 +266,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
 class _CompleteSentenceBody extends StatelessWidget {
   final dynamic quest;
   final List<String> options;
+  final int level;
   final String? selectedProjectile;
   final bool isAnswered;
   final bool? isCorrect;
@@ -274,6 +279,7 @@ class _CompleteSentenceBody extends StatelessWidget {
   const _CompleteSentenceBody({
     required this.quest,
     required this.options,
+    required this.level,
     required this.selectedProjectile,
     required this.isAnswered,
     required this.isCorrect,
@@ -305,15 +311,45 @@ class _CompleteSentenceBody extends StatelessWidget {
               onFire: onFire,
             ),
             SizedBox(height: 32.h),
-            CompleteSentenceBallistaAmmo(
-              options: options,
-              color: theme.primaryColor,
-              isDark: isDark,
-              onBridgeStart: onBridgeStart,
-              onBridgeUpdate: onBridgeUpdate,
-              // FIX: onFire now receives only the fired word.
-              onFire: onFire,
-            ),
+            if (level >= 6) ...[
+              GestureDetector(
+                onTap: () {
+                  CustomSnackBar.show(
+                    context: context,
+                    message: "Hard Mode! Dragging is disabled. Please type your answer below.",
+                    type: CustomSnackBarType.info,
+                  );
+                },
+                child: AbsorbPointer(
+                  child: Opacity(
+                    opacity: 0.8,
+                    child: CompleteSentenceBallistaAmmo(
+                      options: options,
+                      color: theme.primaryColor,
+                      isDark: isDark,
+                      onBridgeStart: (_) {},
+                      onBridgeUpdate: (_) {},
+                      onFire: (_) {},
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.h),
+              CompleteSentenceKeyboardInput(
+                color: theme.primaryColor,
+                isDark: isDark,
+                onFire: onFire,
+              ),
+            ] else
+              CompleteSentenceBallistaAmmo(
+                options: options,
+                color: theme.primaryColor,
+                isDark: isDark,
+                onBridgeStart: onBridgeStart,
+                onBridgeUpdate: onBridgeUpdate,
+                // FIX: onFire now receives only the fired word.
+                onFire: onFire,
+              ),
             SizedBox(
               height: 160.h,
             ), // Provide enough bottom padding for the WritingFeedbackCard

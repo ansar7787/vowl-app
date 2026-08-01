@@ -12,9 +12,11 @@ import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/writing/sentence_builder/presentation/widgets/sentence_builder_instruction.dart';
 import 'package:vowl/features/writing/sentence_builder/presentation/widgets/sentence_builder_workbench.dart';
 import 'package:vowl/features/writing/sentence_builder/presentation/widgets/sentence_builder_piece_pool.dart';
+import 'package:vowl/features/writing/sentence_builder/presentation/widgets/sentence_builder_keyboard_input.dart';
 
 class SentenceBuilderScreen extends StatefulWidget {
   final int level;
@@ -39,6 +41,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
   
   dynamic _lastQuest;
 
+  final _textController = TextEditingController();
   final List<String> _assembledPieces = [];
   bool _showConfetti = false;
 
@@ -65,6 +68,12 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
     }
   }
 
+  @override
+  void dispose() {
+    _textController.dispose();
+    super.dispose();
+  }
+
   void _onSnap(String piece, bool isAnswered) {
     if (isAnswered) return;
     _hapticService.success();
@@ -78,10 +87,35 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
   }
 
   void _submitAnswer(String correct, bool isAnswered) {
-    if (isAnswered || _assembledPieces.isEmpty) return;
+    final isHardMode = widget.level >= 6;
+    if (isAnswered || (!isHardMode && _assembledPieces.isEmpty) || (isHardMode && _textController.text.trim().isEmpty)) return;
+
+    if (isHardMode) {
+      final rawText = _textController.text.trim();
+      if (!RegExp(r'^[A-Z]').hasMatch(rawText)) {
+        CustomSnackBar.show(
+          context: context,
+          message: "Please start your sentence with a capital letter.",
+          type: CustomSnackBarType.warning,
+        );
+        _hapticService.selection();
+        return;
+      }
+
+      final lastChar = rawText.isNotEmpty ? rawText[rawText.length - 1] : '';
+      if (!['.', '!', '?'].contains(lastChar)) {
+        CustomSnackBar.show(
+          context: context,
+          message: "Please end your sentence with proper punctuation (., !, or ?).",
+          type: CustomSnackBarType.warning,
+        );
+        _hapticService.selection();
+        return;
+      }
+    }
 
     // FIX: normalize both sides before comparison.
-    final built = _normalizeAnswer(_assembledPieces.join(' '));
+    final built = _normalizeAnswer(isHardMode ? _textController.text : _assembledPieces.join(' '));
     final expected = _normalizeAnswer(correct);
     final isCorrect = built == expected;
 
@@ -103,6 +137,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
           // New question loaded or retry triggered â€” clear the selected option.
           setState(() {
             _assembledPieces.clear();
+            _textController.clear();
           });
         }
 
@@ -166,6 +201,8 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
               : _SentenceBuilderBody(
                   quest: quest,
                   pool: pool,
+                  level: widget.level,
+                  textController: _textController,
                   assembledPieces: _assembledPieces,
                   isAnswered: isAnswered,
                   isCorrect: isCorrect,
@@ -191,6 +228,8 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
 class _SentenceBuilderBody extends StatelessWidget {
   final dynamic quest;
   final List<String> pool;
+  final int level;
+  final TextEditingController textController;
   final List<String> assembledPieces;
   final bool isAnswered;
   final bool? isCorrect;
@@ -203,6 +242,8 @@ class _SentenceBuilderBody extends StatelessWidget {
   const _SentenceBuilderBody({
     required this.quest,
     required this.pool,
+    required this.level,
+    required this.textController,
     required this.assembledPieces,
     required this.isAnswered,
     required this.isCorrect,
@@ -228,23 +269,51 @@ class _SentenceBuilderBody extends StatelessWidget {
             ),
             SizedBox(height: 32.h),
 
-            SentenceBuilderWorkbench(
-              assembledPieces: assembledPieces,
-              color: theme.primaryColor,
-              isDark: isDark,
-              onSnap: onSnap,
-              onRemovePiece: onRemovePiece,
-            ),
-            SizedBox(height: 32.h),
-
-            // FIX: onSnap wired through so tap-to-add works alongside drag.
-            SentenceBuilderPiecePool(
-              pool: pool,
-              assembledPieces: assembledPieces,
-              color: theme.primaryColor,
-              isDark: isDark,
-              onSnap: onSnap,
-            ),
+            if (level >= 6) ...[
+              GestureDetector(
+                onTap: () {
+                  CustomSnackBar.show(
+                    context: context,
+                    message: "Hard Mode! Dragging is disabled. Please type your answer below.",
+                    type: CustomSnackBarType.info,
+                  );
+                },
+                child: AbsorbPointer(
+                  child: Opacity(
+                    opacity: 0.8,
+                    child: SentenceBuilderPiecePool(
+                      pool: pool,
+                      assembledPieces: const [],
+                      color: theme.primaryColor,
+                      isDark: isDark,
+                      onSnap: (_) {},
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.h),
+              SentenceBuilderKeyboardInput(
+                controller: textController,
+                color: theme.primaryColor,
+                isDark: isDark,
+              ),
+            ] else ...[
+              SentenceBuilderWorkbench(
+                assembledPieces: assembledPieces,
+                color: theme.primaryColor,
+                isDark: isDark,
+                onSnap: onSnap,
+                onRemovePiece: onRemovePiece,
+              ),
+              SizedBox(height: 32.h),
+              SentenceBuilderPiecePool(
+                pool: pool,
+                assembledPieces: assembledPieces,
+                color: theme.primaryColor,
+                isDark: isDark,
+                onSnap: onSnap,
+              ),
+            ],
 
 
             SizedBox(height: 40.h),

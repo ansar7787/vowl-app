@@ -73,7 +73,31 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
 
     setState(() => _isSubmitting = true);
 
-    final text = _controller.text.trim().toLowerCase();
+    final rawText = _controller.text.trim();
+    if (!RegExp(r'^[A-Z]').hasMatch(rawText)) {
+      CustomSnackBar.show(
+        context: context,
+        message: "Please start your journal entry with a capital letter.",
+        type: CustomSnackBarType.warning,
+      );
+      _hapticService.selection();
+      setState(() => _isSubmitting = false);
+      return;
+    }
+
+    final lastChar = rawText.isNotEmpty ? rawText[rawText.length - 1] : '';
+    if (!['.', '!', '?'].contains(lastChar)) {
+      CustomSnackBar.show(
+        context: context,
+        message: "Please end your entry with a full stop, exclamation mark, or question mark.",
+        type: CustomSnackBarType.warning,
+      );
+      _hapticService.selection();
+      setState(() => _isSubmitting = false);
+      return;
+    }
+
+    final text = rawText.toLowerCase();
 
     int matchedCount = 0;
     for (var kw in targetKeywords) {

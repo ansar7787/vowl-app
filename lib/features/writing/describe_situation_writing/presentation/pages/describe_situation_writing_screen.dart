@@ -135,7 +135,31 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
 
     setState(() => _isSubmitting = true);
 
-    final composedText = _textController.text.trim().toLowerCase();
+    final rawText = _textController.text.trim();
+    if (!RegExp(r'^[A-Z]').hasMatch(rawText)) {
+      CustomSnackBar.show(
+        context: context,
+        message: "Please start your description with a capital letter.",
+        type: CustomSnackBarType.warning,
+      );
+      _hapticService.selection();
+      setState(() => _isSubmitting = false);
+      return;
+    }
+
+    final lastChar = rawText.isNotEmpty ? rawText[rawText.length - 1] : '';
+    if (!['.', '!', '?'].contains(lastChar)) {
+      CustomSnackBar.show(
+        context: context,
+        message: "Please end your description with proper punctuation (., !, or ?).",
+        type: CustomSnackBarType.warning,
+      );
+      _hapticService.selection();
+      setState(() => _isSubmitting = false);
+      return;
+    }
+
+    final composedText = rawText.toLowerCase();
 
     int matchedCount = 0;
     for (var kw in availableKeywords) {

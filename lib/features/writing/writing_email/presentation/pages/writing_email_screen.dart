@@ -12,11 +12,13 @@ import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_instruction.dart';
 import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_prompt_card.dart';
 import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_hex_slot.dart';
 import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_data_stream.dart';
+import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_keyboard_input.dart';
 
 class WritingEmailScreen extends StatefulWidget {
   final int level;
@@ -216,16 +218,52 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                             onClearSlot: (key) => _clearSlot(key, isAnswered),
                           ),
                         ),
-                        SizedBox(height: 24.h),
-
-                        WritingEmailDataStream(
-                          items: _shuffledOptions.isNotEmpty ? _shuffledOptions : options,
-                          slots: _slots,
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                          onTapItem: (data) => _onTapOption(data, isAnswered),
-                        ),
-                        SizedBox(height: 32.h),
+                        if (!slotsFilled && !isAnswered) ...[
+                          SizedBox(height: 24.h),
+                          if (widget.level >= 6) ...[
+                            GestureDetector(
+                              onTap: () {
+                                CustomSnackBar.show(
+                                  context: context,
+                                  message: "Hard Mode! Tapping is disabled. Please type your answer below.",
+                                  type: CustomSnackBarType.info,
+                                );
+                              },
+                              child: AbsorbPointer(
+                                child: Opacity(
+                                  opacity: 0.8,
+                                  child: WritingEmailDataStream(
+                                    items: options, // Show full list for reference
+                                    slots: _slots,
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                    onTapItem: (_) {}, // Disabled
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 16.h),
+                            WritingEmailKeyboardInput(
+                              validOptions: options
+                                  .where((opt) => !_slots.values.contains(opt))
+                                  .toList(),
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                              onValidInput: (data) =>
+                                  _onTapOption(data, isAnswered),
+                            ),
+                          ] else
+                            WritingEmailDataStream(
+                              items: _shuffledOptions.isNotEmpty ? _shuffledOptions : options,
+                              slots: _slots,
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                              onTapItem: (data) => _onTapOption(data, isAnswered),
+                            ),
+                          SizedBox(height: 32.h),
+                        ] else ...[
+                          SizedBox(height: 48.h),
+                        ],
 
                         if (!isAnswered)
                           ScaleButton(
