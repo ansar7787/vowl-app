@@ -62,7 +62,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
 
     if (_erasedAmount > 35) {
       _hapticService.success();
-      _soundService.playCorrect();
+      _soundService.playHint();
       setState(() => _isWiped = true);
     }
   }
