@@ -215,6 +215,20 @@ class GameInstructionService {
 
   // Large centralized static register matching GameSubtypes to their Briefing parameters.
   static const Map<GameSubtype, GameBriefing> _briefings = {
+    GameSubtype.idiomMatch: GameBriefing(
+      title: "Idiom Master",
+      icon: Icons.lightbulb_rounded,
+      objective:
+          "Match the idiom to its real meaning. Mastering idioms helps you speak more naturally and understand native speakers in everyday conversations.",
+      rules: [
+        "Read the context scenario",
+        "Select the matching idiom",
+        "Master casual speech",
+      ],
+      actionText: "Match Idiom",
+      tip:
+          "PRO TIP: Idioms rarely mean what the individual words mean literally. Think about the feeling or situation they describe!",
+    ),
     // 2. Speaking
     GameSubtype.repeatSentence: GameBriefing(
       title: "Echo Master",

@@ -116,7 +116,7 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 
 ## Elite Mastery (4)
 - [ ] Story Builder (`storyBuilder`)
-- [ ] Idiom Match (`idiomMatch`)
+- [x] ✅ Idiom Match (`idiomMatch`)
 - [ ] Speed Spelling (`speedSpelling`)
 - [x] ✅ Accent Shadowing (`accentShadowing`)
 

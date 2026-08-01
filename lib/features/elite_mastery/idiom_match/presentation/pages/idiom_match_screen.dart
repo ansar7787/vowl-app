@@ -39,7 +39,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
   bool? _isCorrect;
   List<int> _wrongIndices = []; // Stores indices relative to the SHUFFLED list
   String? _lastQuestId;
-  int? _lastLives;
+  int _lastLives = 3;
 
   // Below this available height, use tighter spacing so the question text,
   // hint card, and all 4 options comfortably fit without the player needing
@@ -164,7 +164,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
             enableDoubleUp: true,
           );
         } else if (state is EliteMasteryLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          final livesChanged = (state.livesRemaining > _lastLives);
 
           // FIX: these four lines used to mutate fields directly, outside
           // any setState, relying entirely on `_initializeOptions`'s own
@@ -224,9 +224,10 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
               ? (state.isFinalFailure || state.livesRemaining <= 0)
               : false,
           showConfetti: _showConfetti,
-          title:
-              quest?.instruction ??
-              context.tr('games.idiom_master_title', fallback: 'Idiom Master'),
+          title: context.tr(
+            'games.idiomMatch_instruction',
+            fallback: 'Select the matching idiom.',
+          ),
           visualConfig: quest?.visualConfig,
           onContinue: () {
             setState(() {
