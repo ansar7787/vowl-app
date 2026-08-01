@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
@@ -31,6 +32,7 @@ class SentenceBuilderScreen extends StatefulWidget {
 
 class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
   final _hapticService = di.sl<HapticService>();
+  final _ttsService = di.sl<TtsService>();
 
   // PERF FIX: cached so getTheme() isn't called on every build().
   late dynamic _theme;
@@ -44,7 +46,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
   // ".toLowerCase()" alone fails when correctAnswer has double-spaces or
   // when assembled pieces are joined with inconsistent spacing.
   static String _normalizeAnswer(String s) =>
-      s.trim().toLowerCase().replaceAll(RegExp(r'\s+'), ' ');
+      s.trim().toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '').replaceAll(RegExp(r'\s+'), ' ');
 
   @override
   void initState() {
@@ -101,6 +103,10 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
           setState(() {
             _assembledPieces.clear();
           });
+        }
+
+        if (state is WritingLoaded && state.lastAnswerCorrect == true) {
+          _ttsService.speak(state.currentQuest.correctAnswer!);
         }
 
         if (state is WritingGameComplete) {

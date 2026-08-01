@@ -48,7 +48,7 @@ class SentenceBuilderWorkbench extends StatelessWidget {
             child: assembledPieces.isEmpty
                 ? _EmptyPlaceholder(color: color, isDark: isDark)
                 : Wrap(
-                    spacing: 8.w,
+                    spacing: -10.w,
                     runSpacing: 8.h,
                     children: assembledPieces.asMap().entries.map((e) {
                       return Semantics(

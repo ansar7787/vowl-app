@@ -20,8 +20,15 @@ class SentenceBuilderJigsawPiece extends StatelessWidget {
     this.isDragging = false,
   });
 
+  String _formatText(String word) {
+    if (word == 'I' || word == "I'm" || word == "I'll" || word == "I've" || word == "I'd") return word;
+    return word.toLowerCase();
+  }
+
   @override
   Widget build(BuildContext context) {
+    final displayText = _formatText(text);
+
     final piece = Semantics(
       label: isAssembled
           ? '$text — tap to remove from workbench'
@@ -30,75 +37,137 @@ class SentenceBuilderJigsawPiece extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: ConstrainedBox(
-          // FIX: cap width at 70% of screen width so long single words
-          // (e.g. "extraordinarily") don't overflow the Wrap layout on
-          // small phones (320px) or landscape mode.
-          constraints: BoxConstraints(maxWidth: 0.7.sw),
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-            decoration: BoxDecoration(
-              color: isAssembled
-                  ? color.withValues(alpha: 0.25)
-                  : (isDark ? Colors.black45 : Colors.white),
-              border: Border.all(
-                color: isAssembled
-                    ? color
-                    : (isDark ? Colors.white24 : Colors.black12),
-                width: 2,
-              ),
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(8.r),
-                bottomLeft: Radius.circular(8.r),
-                topRight: Radius.circular(20.r),
-                bottomRight: Radius.circular(20.r),
-              ),
-              boxShadow: [
-                if (isDragging || isAssembled)
-                  BoxShadow(
-                    color: color.withValues(alpha: 0.35),
-                    blurRadius: 10,
-                  ),
-              ],
+          constraints: BoxConstraints(maxWidth: 0.8.sw),
+          child: CustomPaint(
+            painter: _PuzzlePiecePainter(
+              color: color,
+              shadowColor: color.withValues(alpha: 0.35),
+              isAssembled: isAssembled,
+              isDark: isDark,
+              isDragging: isDragging,
             ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Flexible(
-                  child: Text(
-                    text,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.bold,
-                      color: isDark ? Colors.white : Colors.black87,
-                    ),
-                  ),
-                ),
-                if (!isAssembled) ...[
-                  SizedBox(width: 8.w),
-                  ExcludeSemantics(
-                    child: Icon(
-                      Icons.extension_rounded,
-                      size: 14.r,
-                      color: isDark ? Colors.white24 : Colors.black26,
+            child: Padding(
+              // The left notch padding and right tab padding ensure text doesn't clip
+              padding: EdgeInsets.only(
+                left: 20.w, 
+                right: 28.w, 
+                top: 12.h, 
+                bottom: 12.h,
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Flexible(
+                    child: Text(
+                      displayText,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w800,
+                        color: isDark ? Colors.white : Colors.black87,
+                      ),
                     ),
                   ),
                 ],
-              ],
+              ),
             ),
           ),
         ),
       ),
     );
 
-    // FIX: shimmer plays ONCE when a piece first enters the workbench
-    // (widget is mounted with isAssembled == true).
-    // Previously: .animate(target: isAssembled ? 1 : 0) kept animation
-    // controllers alive for ALL pool pieces, driving them at target:0
-    // (reverse) — wasted animation resources on every unassembled piece.
     if (isAssembled) {
       return piece.animate().shimmer(duration: 600.ms);
     }
     return piece;
+  }
+}
+
+class _PuzzlePiecePainter extends CustomPainter {
+  final Color color;
+  final Color shadowColor;
+  final bool isAssembled;
+  final bool isDark;
+  final bool isDragging;
+
+  _PuzzlePiecePainter({
+    required this.color,
+    required this.shadowColor,
+    required this.isAssembled,
+    required this.isDark,
+    required this.isDragging,
+  });
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final tabSize = 12.0.w;
+    final radius = 10.0.r;
+    
+    final path = Path();
+    
+    // Start top-left after radius
+    path.moveTo(radius, 0);
+    path.lineTo(size.width - radius - tabSize, 0);
+    
+    // Top-right corner
+    path.quadraticBezierTo(size.width - tabSize, 0, size.width - tabSize, radius);
+    
+    // Right tab (outward)
+    path.lineTo(size.width - tabSize, size.height / 2 - tabSize + 2);
+    path.quadraticBezierTo(size.width, size.height / 2 - tabSize + 2, size.width, size.height / 2);
+    path.quadraticBezierTo(size.width, size.height / 2 + tabSize - 2, size.width - tabSize, size.height / 2 + tabSize - 2);
+    
+    // Bottom-right corner
+    path.lineTo(size.width - tabSize, size.height - radius);
+    path.quadraticBezierTo(size.width - tabSize, size.height, size.width - tabSize - radius, size.height);
+    
+    // Bottom edge
+    path.lineTo(radius, size.height);
+    
+    // Bottom-left corner
+    path.quadraticBezierTo(0, size.height, 0, size.height - radius);
+    
+    // Left notch (inward)
+    path.lineTo(0, size.height / 2 + tabSize - 2);
+    path.quadraticBezierTo(tabSize, size.height / 2 + tabSize - 2, tabSize, size.height / 2);
+    path.quadraticBezierTo(tabSize, size.height / 2 - tabSize + 2, 0, size.height / 2 - tabSize + 2);
+    
+    // Top-left corner
+    path.lineTo(0, radius);
+    path.quadraticBezierTo(0, 0, radius, 0);
+    
+    path.close();
+
+    // Draw shadow
+    if (isDragging || isAssembled) {
+       canvas.drawShadow(path, shadowColor, 8, false);
+    } else {
+       canvas.drawShadow(path, Colors.black.withValues(alpha: isDark ? 0.3 : 0.05), 4, false);
+    }
+
+    // Draw background
+    final paint = Paint()
+      ..color = isAssembled 
+          ? color.withValues(alpha: 0.25) 
+          : (isDark ? const Color(0xFF1E293B) : Colors.white)
+      ..style = PaintingStyle.fill;
+    
+    canvas.drawPath(path, paint);
+
+    // Draw border
+    final borderPaint = Paint()
+      ..color = isAssembled ? color : (isDark ? Colors.white24 : Colors.black12)
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 2.0;
+      
+    canvas.drawPath(path, borderPaint);
+  }
+
+  @override
+  bool shouldRepaint(covariant _PuzzlePiecePainter oldDelegate) {
+    return oldDelegate.color != color ||
+           oldDelegate.isAssembled != isAssembled ||
+           oldDelegate.isDark != isDark ||
+           oldDelegate.isDragging != isDragging;
   }
 }
