@@ -168,7 +168,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                         SizedBox(height: 16.h),
                         EssayDraftingInstruction(
                           primaryColor: theme.primaryColor,
-                          instruction: activeQuest.instruction ?? "",
+                          instruction: activeQuest.instruction,
                         ),
                         SizedBox(height: 24.h),
 
