@@ -44,7 +44,7 @@ class ConnectedSpeechLinkerCards extends StatelessWidget {
   Widget _buildLinkerCard(String text, int index) {
     final bool isSelected = selectedIndex == index;
     final bool correct = index == correctIndex;
-    final bool showResult = isAnswered && isSelected;
+    final bool showResult = isAnswered && (isSelected || correct);
 
     Color cardColor = isDark
         ? const Color(0xFF1E293B).withValues(alpha: 0.7)
