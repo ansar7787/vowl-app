@@ -158,7 +158,7 @@ class TopicContainmentBin extends StatelessWidget {
                                     child: Text(
                                       w.toUpperCase(),
                                       style: TextStyle(
-                                        fontFamily: 'RobotoMono',
+                                        fontFamily: 'Outfit',
                                         fontSize: 9.sp,
                                         color: color.withValues(alpha: 0.8),
                                         fontWeight: FontWeight.bold,
@@ -200,7 +200,7 @@ class TopicContainmentBin extends StatelessWidget {
                       Text(
                         label.toUpperCase(),
                         style: TextStyle(
-                          fontFamily: 'RobotoMono',
+                          fontFamily: 'Outfit',
                           fontSize: 10.sp,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,

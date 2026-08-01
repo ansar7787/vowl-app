@@ -75,7 +75,7 @@ class ElevatorPitchRecordControl extends StatelessWidget {
               : "HOLD LENS TO RECORD PITCH & TAP SHAFT TO BOOST",
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontFamily: 'RobotoMono',
+            fontFamily: 'Outfit',
             fontSize: 9.sp,
             color: Colors.grey,
             letterSpacing: 1.5,

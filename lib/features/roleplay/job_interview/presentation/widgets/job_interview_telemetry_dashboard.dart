@@ -60,7 +60,7 @@ class JobInterviewTelemetryDashboard extends StatelessWidget {
                 Text(
                   "PROFESSIONAL HARMONICS:",
                   style: TextStyle(
-                    fontFamily: 'RobotoMono',
+                    fontFamily: 'Outfit',
                     fontSize: 9.sp,
                     color: ringColor,
                     letterSpacing: 1.5,

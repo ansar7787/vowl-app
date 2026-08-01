@@ -170,7 +170,7 @@ class QuestHintButton extends StatelessWidget {
                             child: Text(
                               '$hintCount',
                               style: TextStyle(
-                                fontFamily: 'RobotoMono',
+                                fontFamily: 'Outfit',
                                 fontSize: 9.sp,
                                 fontWeight: FontWeight.w900,
                                 color: Colors.white,

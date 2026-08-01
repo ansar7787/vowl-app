@@ -25,7 +25,7 @@ class CorrectionWritingVault extends StatelessWidget {
         Text(
           "AVAILABLE SYNTACTIC CORRECTIONS",
           style: TextStyle(
-            fontFamily: 'RobotoMono',
+            fontFamily: 'Outfit',
             fontSize: 10.sp,
             color: isDark ? Colors.white54 : Colors.black54,
             fontWeight: FontWeight.bold,
@@ -63,7 +63,7 @@ class CorrectionWritingVault extends StatelessWidget {
                 child: Text(
                   opt,
                   style: TextStyle(
-                    fontFamily: 'RobotoMono',
+                    fontFamily: 'Outfit',
                     color: isSelected
                         ? color
                         : (isDark ? Colors.white70 : Colors.black87),

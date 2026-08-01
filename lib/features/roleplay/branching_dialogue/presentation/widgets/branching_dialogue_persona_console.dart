@@ -64,7 +64,7 @@ class BranchingDialoguePersonaConsole extends StatelessWidget {
                     Text(
                       quest.roleName?.toUpperCase() ?? "TELEMETRY AGENT",
                       style: TextStyle(
-                        fontFamily: 'RobotoMono',
+                        fontFamily: 'Outfit',
                         fontSize: 16.sp,
                         fontWeight: FontWeight.bold,
                         color: color,

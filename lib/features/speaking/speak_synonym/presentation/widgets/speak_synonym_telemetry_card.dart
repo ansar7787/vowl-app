@@ -38,7 +38,7 @@ class SpeakSynonymTelemetryCard extends StatelessWidget {
               Text(
                 "CAPTURED LEXICAL RESPONSE",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   color: Colors.grey,
                   letterSpacing: 1.0,

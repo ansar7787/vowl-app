@@ -84,7 +84,7 @@ class ReadingSpeedPulseZone extends StatelessWidget {
                                   child: Text(
                                     "${timerValue}S",
                                     style: TextStyle(
-                                      fontFamily: 'RobotoMono',
+                                      fontFamily: 'Outfit',
                                       color: isDark ? Colors.white : color,
                                       fontSize: 26.sp,
                                       fontWeight: FontWeight.bold,

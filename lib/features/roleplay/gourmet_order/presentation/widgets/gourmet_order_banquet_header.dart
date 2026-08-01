@@ -57,7 +57,7 @@ class GourmetOrderBanquetHeader extends StatelessWidget {
                 Text(
                   "CLIENT ORDER TICKET SPECIFICATION:",
                   style: TextStyle(
-                    fontFamily: 'RobotoMono',
+                    fontFamily: 'Outfit',
                     fontSize: 10.sp,
                     color: color,
                     letterSpacing: 1.5,

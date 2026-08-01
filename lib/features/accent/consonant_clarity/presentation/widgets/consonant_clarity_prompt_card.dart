@@ -38,7 +38,7 @@ class ConsonantClarityPromptCard extends StatelessWidget {
                 Text(
                   "TARGET WORD",
                   style: TextStyle(
-                    fontFamily: 'RobotoMono',
+                    fontFamily: 'Outfit',
                     fontSize: 10.sp,
                     fontWeight: FontWeight.bold,
                     color: color,

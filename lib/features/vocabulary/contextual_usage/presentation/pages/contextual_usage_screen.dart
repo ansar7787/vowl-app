@@ -199,7 +199,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                         quest.instruction.toUpperCase(),
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontFamily: 'RobotoMono',
+                          fontFamily: 'Outfit',
                           fontSize: 11.sp,
                           color: color,
                           letterSpacing: 2,
@@ -212,7 +212,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                         quest.instruction.toUpperCase(),
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontFamily: 'RobotoMono',
+                          fontFamily: 'Outfit',
                           fontSize: 11.sp,
                           color: color,
                           letterSpacing: 2,

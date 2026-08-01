@@ -185,7 +185,7 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
                               : "PINCH/SQUEEZE THE TUBE TO DISTILL CORE CONCEPTS",
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            fontFamily: 'RobotoMono',
+                            fontFamily: 'Outfit',
                             color: _isDistilled
                                 ? Colors.greenAccent
                                 : theme.primaryColor.withValues(alpha: 0.6),

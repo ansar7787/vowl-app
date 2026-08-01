@@ -169,7 +169,7 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
                             child: Text(
                               "$selectOrderIndex",
                               style: TextStyle(
-                                fontFamily: 'RobotoMono',
+                                fontFamily: 'Outfit',
                                 fontSize: 8.sp,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,

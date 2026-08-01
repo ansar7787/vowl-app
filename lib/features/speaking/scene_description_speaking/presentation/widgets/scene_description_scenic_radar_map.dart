@@ -82,7 +82,7 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
                   Text(
                     "${inspectedHotspots.length} OF 3 FEATURES STABILIZED",
                     style: TextStyle(
-                      fontFamily: 'RobotoMono',
+                      fontFamily: 'Outfit',
                       fontSize: 10.sp,
                       color: inspectedHotspots.length == 3
                           ? Colors.greenAccent
@@ -167,7 +167,7 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
             Text(
               hotspotLabels[index].toUpperCase(),
               style: TextStyle(
-                fontFamily: 'RobotoMono',
+                fontFamily: 'Outfit',
                 fontSize: 8.sp,
                 color: isInspected
                     ? Colors.greenAccent

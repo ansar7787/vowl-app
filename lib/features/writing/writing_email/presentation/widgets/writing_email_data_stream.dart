@@ -48,7 +48,7 @@ class WritingEmailDataStream extends StatelessWidget {
                     child: Text(
                       i,
                       style: TextStyle(
-                        fontFamily: 'RobotoMono',
+                        fontFamily: 'Outfit',
                         color: Colors.white,
                         fontSize: 10.sp,
                         fontWeight: FontWeight.bold,
@@ -77,7 +77,7 @@ class WritingEmailDataStream extends StatelessWidget {
                     i,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontFamily: 'RobotoMono',
+                      fontFamily: 'Outfit',
                       color: isDark ? Colors.white70 : Colors.black87,
                       fontSize: 9.sp,
                       fontWeight: FontWeight.bold,

@@ -96,7 +96,7 @@ class VowelDistinctionSpectralSlider extends StatelessWidget {
                   child: Text(
                     text,
                     style: TextStyle(
-                      fontFamily: 'RobotoMono',
+                      fontFamily: 'Outfit',
                       fontSize: 20.sp,
                       fontWeight: FontWeight.bold,
                       color: textColor,

@@ -146,7 +146,7 @@ class ConflictResolverDialConsole extends StatelessWidget {
               Text(
                 "DIAL LEVEL: ",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   color: Colors.grey,
                   letterSpacing: 1.5,
@@ -155,7 +155,7 @@ class ConflictResolverDialConsole extends StatelessWidget {
               Text(
                 "${(rotation * 100).toInt()}% empathy",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 12.sp,
                   fontWeight: FontWeight.bold,
                   color: isMatched

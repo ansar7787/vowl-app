@@ -98,7 +98,7 @@ class SynonymWordShard extends StatelessWidget {
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
-                              fontFamily: 'RobotoMono',
+                              fontFamily: 'Outfit',
                               fontSize: 12.sp,
                               color: isDark ? Colors.white : Colors.black87,
                               fontWeight: FontWeight.bold,

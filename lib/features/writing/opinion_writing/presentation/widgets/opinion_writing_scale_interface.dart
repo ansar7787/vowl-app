@@ -123,7 +123,7 @@ class OpinionWritingScaleInterface extends StatelessWidget {
                   Text(
                     isLeft ? "PROS" : "CONS",
                     style: TextStyle(
-                      fontFamily: 'RobotoMono',
+                      fontFamily: 'Outfit',
                       color: headerColor,
                       fontSize: 10.sp,
                       fontWeight: FontWeight.bold,
@@ -137,7 +137,7 @@ class OpinionWritingScaleInterface extends StatelessWidget {
                         "Drag argument here",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontFamily: 'RobotoMono',
+                          fontFamily: 'Outfit',
                           color: isDark ? Colors.white24 : Colors.black26,
                           fontSize: 9.sp,
                         ),
@@ -165,7 +165,7 @@ class OpinionWritingScaleInterface extends StatelessWidget {
                               child: Text(
                                 a,
                                 style: TextStyle(
-                                  fontFamily: 'RobotoMono',
+                                  fontFamily: 'Outfit',
                                   color: isDark
                                       ? Colors.white70
                                       : Colors.black87,

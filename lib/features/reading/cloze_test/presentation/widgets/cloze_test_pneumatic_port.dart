@@ -113,7 +113,7 @@ class ClozeTestPneumaticPort extends StatelessWidget {
                               child: Text(
                                 dockedOption?.toUpperCase() ?? "DRAG HERE",
                                 style: TextStyle(
-                                  fontFamily: 'RobotoMono',
+                                  fontFamily: 'Outfit',
                                   fontSize: 12.sp,
                                   color: dockedOption != null
                                       ? (isDark ? Colors.white : Colors.black87)

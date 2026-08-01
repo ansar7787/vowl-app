@@ -69,7 +69,7 @@ class ShortAnswerInkwell extends StatelessWidget {
               Text(
                 "Ink volume:",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   color: color,
                   fontWeight: FontWeight.bold,
@@ -78,7 +78,7 @@ class ShortAnswerInkwell extends StatelessWidget {
               Text(
                 "$wordCount words",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   color: wordCount >= 10
                       ? (isDark ? Colors.greenAccent : const Color(0xFF16A34A))

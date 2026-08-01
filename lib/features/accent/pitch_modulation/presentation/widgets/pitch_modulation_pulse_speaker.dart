@@ -45,7 +45,7 @@ class PitchModulationPulseSpeaker extends StatelessWidget {
                 "HEAR\nMODULATION",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   color: color,
                   fontSize: 8.sp,
                   fontWeight: FontWeight.bold,

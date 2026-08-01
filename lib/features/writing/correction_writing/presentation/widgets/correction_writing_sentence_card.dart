@@ -104,7 +104,7 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
                         Text(
                           selectedCorrection ?? errorText.toUpperCase(),
                           style: TextStyle(
-                            fontFamily: 'RobotoMono',
+                            fontFamily: 'Outfit',
                             fontSize: 14.sp,
                             color: selectedCorrection != null
                                 ? Colors.greenAccent

@@ -64,7 +64,7 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                       Text(
                         "DAILY IDIOM",
                         style: TextStyle(
-                          fontFamily: 'RobotoMono',
+                          fontFamily: 'Outfit',
                           fontSize: 10.sp,
                           color: primaryColor,
                           letterSpacing: 1.5,
@@ -112,7 +112,7 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                           Text(
                             "SPEAK THIS",
                             style: TextStyle(
-                              fontFamily: 'RobotoMono',
+                              fontFamily: 'Outfit',
                               fontSize: 9.sp,
                               fontWeight: FontWeight.bold,
                               color: primaryColor,
@@ -215,7 +215,7 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                           Text(
                             "SWIPE TO REVEAL IDIOM",
                             style: TextStyle(
-                              fontFamily: 'RobotoMono',
+                              fontFamily: 'Outfit',
                               fontSize: 10.sp,
                               color: Colors.white,
                               fontWeight: FontWeight.bold,

@@ -31,7 +31,7 @@ class YesNoSpeakingAuditionCard extends StatelessWidget {
               Text(
                 "COMPARE PHRASE STRUCTURES",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   color: primaryColor,
                   letterSpacing: 1.5,
@@ -60,7 +60,7 @@ class YesNoSpeakingAuditionCard extends StatelessWidget {
                       Text(
                         "REPLAY AUDIO",
                         style: TextStyle(
-                          fontFamily: 'RobotoMono',
+                          fontFamily: 'Outfit',
                           fontSize: 10.sp,
                           color: primaryColor,
                           fontWeight: FontWeight.bold,
@@ -77,7 +77,7 @@ class YesNoSpeakingAuditionCard extends StatelessWidget {
           Text(
             "WRITTEN TARGET CARD:",
             style: TextStyle(
-              fontFamily: 'RobotoMono',
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               color: Colors.grey,
             ),

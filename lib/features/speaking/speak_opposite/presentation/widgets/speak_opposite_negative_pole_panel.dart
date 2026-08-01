@@ -54,7 +54,7 @@ class SpeakOppositeNegativePolePanel extends StatelessWidget {
           Text(
             charged ? "POLAR FUSION SECURED!" : "NEGATIVE POLE ANTIPODE",
             style: TextStyle(
-              fontFamily: 'RobotoMono',
+              fontFamily: 'Outfit',
               fontSize: 12.sp,
               fontWeight: FontWeight.bold,
               color: charged ? Colors.cyanAccent : Colors.grey,

@@ -71,7 +71,7 @@ class ConflictResolverConflictCard extends StatelessWidget {
                 Text(
                   "CONFLICT SCENARIO DETECTED:",
                   style: TextStyle(
-                    fontFamily: 'RobotoMono',
+                    fontFamily: 'Outfit',
                     fontSize: 10.sp,
                     color: emotionalColor,
                     letterSpacing: 1.5,

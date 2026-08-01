@@ -76,7 +76,7 @@ class _TopicDraggableWordState extends State<TopicDraggableWord> {
                         widget.word.toUpperCase(),
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontFamily: 'RobotoMono',
+                          fontFamily: 'Outfit',
                           fontSize: 14.sp, // Reduced font for extra small card
                           fontWeight: FontWeight.bold,
                           color: widget.isDark ? Colors.white : Colors.black87,

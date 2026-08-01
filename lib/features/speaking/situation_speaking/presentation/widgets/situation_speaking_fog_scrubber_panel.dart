@@ -65,7 +65,7 @@ class SituationSpeakingFogScrubberPanel extends StatelessWidget {
                         Text(
                           "THE SOCIAL SCENE",
                           style: TextStyle(
-                            fontFamily: 'RobotoMono',
+                            fontFamily: 'Outfit',
                             fontSize: 10.sp,
                             color: primaryColor,
                             letterSpacing: 1.5,
@@ -134,7 +134,7 @@ class SituationSpeakingFogScrubberPanel extends StatelessWidget {
                           Text(
                             "SWIPE TO WIPE CONDENSATION",
                             style: TextStyle(
-                              fontFamily: 'RobotoMono',
+                              fontFamily: 'Outfit',
                               fontSize: 10.sp,
                               color: isDark
                                   ? Colors.black54

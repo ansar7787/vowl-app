@@ -49,7 +49,7 @@ class ContextCluesEvidenceSentence extends StatelessWidget {
         return TextSpan(
           text: "$word ",
           style: TextStyle(
-            fontFamily: 'RobotoMono',
+            fontFamily: 'Outfit',
             fontSize: isCompact ? 14.sp : 20.sp,
             height: isCompact ? 1.3 : 1.6,
             color: Colors.black.withValues(alpha: 0.8),
@@ -76,7 +76,7 @@ class ContextCluesEvidenceSentence extends StatelessWidget {
         child: Text(
           selectedOption?.toUpperCase() ?? "???",
           style: TextStyle(
-            fontFamily: 'RobotoMono',
+            fontFamily: 'Outfit',
             fontSize: isCompact ? 14.sp : 20.sp,
             fontWeight: FontWeight.bold,
             color: isCorrect == true ? Colors.green : Colors.red,

@@ -43,7 +43,7 @@ class MedicalConsultDiagnosticTray extends StatelessWidget {
               Text(
                 "ANATOMICAL DIAGNOSTICS SLATE",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   color: color,
                   letterSpacing: 2,

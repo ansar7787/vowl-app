@@ -38,7 +38,7 @@ class ContextCluesEvidenceTags extends StatelessWidget {
               Text(
                 "IDENTIFY REDACTED COMPONENT",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   fontWeight: FontWeight.bold,
                   color: color.withValues(alpha: 0.7),
@@ -105,7 +105,7 @@ class ContextCluesEvidenceTags extends StatelessWidget {
                             child: Text(
                               o.toUpperCase(),
                               style: TextStyle(
-                                fontFamily: 'RobotoMono',
+                                fontFamily: 'Outfit',
                                 fontSize: 13.sp,
                                 fontWeight: FontWeight.bold,
                                 color: showCorrect

@@ -91,7 +91,7 @@ class SyllableStressDrumConsole extends StatelessWidget {
               Text(
                 text.toUpperCase(),
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
                   color: isSelected || (isAnswered && index == correct)

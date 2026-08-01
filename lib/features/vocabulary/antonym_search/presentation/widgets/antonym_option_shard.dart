@@ -74,7 +74,7 @@ class AntonymOptionShard extends StatelessWidget {
                             child: Text(
                               text.toUpperCase(),
                               style: TextStyle(
-                                fontFamily: 'RobotoMono',
+                                fontFamily: 'Outfit',
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.bold,
                                 color: isDark ? Colors.white : Colors.black87,

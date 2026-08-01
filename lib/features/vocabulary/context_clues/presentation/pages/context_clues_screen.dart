@@ -257,7 +257,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
               child: Text(
                 quest.instruction.toUpperCase(),
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 9.sp,
                   color: color.withValues(alpha: 0.4),
                   letterSpacing: 1,

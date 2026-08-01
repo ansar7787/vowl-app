@@ -126,7 +126,7 @@ class DialogueRoleplayMicTrigger extends StatelessWidget {
                 : "HOLD MICROPHONE TO REPLY TO ROLEPLAY PARTNER",
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontFamily: 'RobotoMono',
+              fontFamily: 'Outfit',
               fontSize: 9.sp,
               color: Colors.grey,
               letterSpacing: 1.5,

@@ -158,7 +158,7 @@ class _ThesisPaperContentState extends State<_ThesisPaperContent> {
   );
 
   static TextStyle _answerStyle(Color color) => TextStyle(
-    fontFamily: 'RobotoMono',
+    fontFamily: 'Outfit',
     color: color,
     fontWeight: FontWeight.bold,
     fontSize: 15,
@@ -250,7 +250,7 @@ class _AnswerSlot extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 maxLines: 1,
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   color: pendingColor,
                   fontSize: 9,
                   letterSpacing: 1,

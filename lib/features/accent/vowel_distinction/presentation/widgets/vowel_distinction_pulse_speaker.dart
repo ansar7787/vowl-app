@@ -44,7 +44,7 @@ class VowelDistinctionPulseSpeaker extends StatelessWidget {
               Text(
                 "HEAR VOWEL",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   color: color,
                   fontSize: 8.sp,
                   fontWeight: FontWeight.bold,

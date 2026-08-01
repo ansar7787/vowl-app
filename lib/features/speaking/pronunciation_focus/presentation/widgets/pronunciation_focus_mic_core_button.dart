@@ -110,7 +110,7 @@ class PronunciationFocusMicCoreButton extends StatelessWidget {
                 : "HOLD SIZZLE CORE TO RECORD PHONEME ACCENT",
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontFamily: 'RobotoMono',
+              fontFamily: 'Outfit',
               fontSize: 9.sp,
               color: Colors.grey,
               letterSpacing: 1.5,

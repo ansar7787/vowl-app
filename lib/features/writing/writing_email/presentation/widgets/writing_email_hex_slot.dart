@@ -68,7 +68,7 @@ class WritingEmailHexSlot extends StatelessWidget {
                   child: Text(
                     slotKey,
                     style: TextStyle(
-                      fontFamily: 'RobotoMono',
+                      fontFamily: 'Outfit',
                       color: color,
                       fontSize: 9.sp,
                       fontWeight: FontWeight.bold,
@@ -80,7 +80,7 @@ class WritingEmailHexSlot extends StatelessWidget {
                   child: Text(
                     slotValue ?? "--- PULL NEURAL SEGMENT HERE ---",
                     style: TextStyle(
-                      fontFamily: 'RobotoMono',
+                      fontFamily: 'Outfit',
                       color: hasData
                           ? (isDark ? Colors.white70 : Colors.black87)
                           : (isDark ? Colors.white24 : Colors.black26),

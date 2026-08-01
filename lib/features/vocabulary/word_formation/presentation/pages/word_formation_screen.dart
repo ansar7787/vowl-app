@@ -404,7 +404,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                                         : root)
                                     .toUpperCase(),
                                 style: TextStyle(
-                                  fontFamily: 'RobotoMono',
+                                  fontFamily: 'Outfit',
                                   fontSize: 24.sp,
                                   fontWeight: FontWeight.w900,
                                   color: isDark
@@ -423,7 +423,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                                 Text(
                                   suffix.toUpperCase(),
                                   style: TextStyle(
-                                    fontFamily: 'RobotoMono',
+                                    fontFamily: 'Outfit',
                                     fontSize: 20.sp,
                                     fontWeight: FontWeight.bold,
                                     color: color,

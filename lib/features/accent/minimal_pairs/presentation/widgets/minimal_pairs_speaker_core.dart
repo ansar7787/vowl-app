@@ -49,7 +49,7 @@ class MinimalPairsSpeakerCore extends StatelessWidget {
                         "TAP TO\nPLAY",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontFamily: 'RobotoMono',
+                          fontFamily: 'Outfit',
                           color: color,
                           fontSize: 9.sp,
                           fontWeight: FontWeight.bold,

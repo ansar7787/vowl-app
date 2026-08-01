@@ -30,7 +30,7 @@ class SpeakSynonymHeader extends StatelessWidget {
               Text(
                 "LEXICAL SYNONYM SEED",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   fontWeight: FontWeight.bold,
                   color: Colors.greenAccent,

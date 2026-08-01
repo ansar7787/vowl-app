@@ -28,7 +28,7 @@ class DailyExpressionHeader extends StatelessWidget {
           Text(
             instruction.toUpperCase(),
             style: TextStyle(
-              fontFamily: 'RobotoMono',
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.bold,
               color: primaryColor,

@@ -23,7 +23,7 @@ class FastSpeechDecoderGauges extends StatelessWidget {
             Text(
               "VELOCITY SENSOR",
               style: TextStyle(
-                fontFamily: 'RobotoMono',
+                fontFamily: 'Outfit',
                 fontSize: 10.sp,
                 color: color.withValues(alpha: 0.7),
               ),
@@ -34,7 +34,7 @@ class FastSpeechDecoderGauges extends StatelessWidget {
         Text(
           "${speed.toStringAsFixed(1)}X",
           style: TextStyle(
-            fontFamily: 'RobotoMono',
+            fontFamily: 'Outfit',
             fontSize: 36.sp,
             fontWeight: FontWeight.w900,
             color: color,

@@ -25,7 +25,7 @@ class AntonymNebulaCore extends StatelessWidget {
         Text(
           "DRAG TO OPPOSITE",
           style: TextStyle(
-            fontFamily: 'RobotoMono',
+            fontFamily: 'Outfit',
             fontSize: 12.sp,
             fontWeight: FontWeight.bold,
             color: color,
@@ -64,7 +64,7 @@ class AntonymNebulaCore extends StatelessWidget {
                       Text(
                         targetIsPositive ? "[+]" : "[-]",
                         style: TextStyle(
-                          fontFamily: 'RobotoMono',
+                          fontFamily: 'Outfit',
                           fontSize: 16.sp,
                           fontWeight: FontWeight.bold,
                           color: color,

@@ -42,7 +42,7 @@ class SpeakOppositePositivePolePanel extends StatelessWidget {
                   Text(
                     "POSITIVE POLE SENSOR",
                     style: TextStyle(
-                      fontFamily: 'RobotoMono',
+                      fontFamily: 'Outfit',
                       fontSize: 10.sp,
                       color: Colors.grey.shade400,
                       letterSpacing: 1.0,

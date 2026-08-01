@@ -141,7 +141,7 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
       child: Text(
         label,
         style: TextStyle(
-          fontFamily: 'RobotoMono',
+          fontFamily: 'Outfit',
           fontSize: 10.sp,
           fontWeight: FontWeight.bold,
           color: isActive ? Colors.white : color,

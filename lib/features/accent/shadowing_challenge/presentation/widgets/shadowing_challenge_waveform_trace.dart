@@ -59,7 +59,7 @@ class ShadowingChallengeWaveformTrace extends StatelessWidget {
                 Text(
                   isPreviewing ? "PLAYING PHONETIC WAVE" : "WAVE READY",
                   style: TextStyle(
-                    fontFamily: 'RobotoMono',
+                    fontFamily: 'Outfit',
                     color: isDark ? Colors.white60 : Colors.black54,
                     fontSize: 9.sp,
                     fontWeight: FontWeight.bold,

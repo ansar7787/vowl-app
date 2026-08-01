@@ -38,7 +38,7 @@ class PronunciationFocusTelemetryCard extends StatelessWidget {
               Text(
                 "DECODED PHONETIC SPEECH",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   color: Colors.grey,
                   letterSpacing: 1.0,

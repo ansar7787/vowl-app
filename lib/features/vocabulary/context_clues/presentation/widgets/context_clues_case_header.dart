@@ -44,7 +44,7 @@ class ContextCluesCaseHeader extends StatelessWidget {
                 child: Text(
                   "CASE #$level-${questIndex + 1}",
                   style: TextStyle(
-                    fontFamily: 'RobotoMono',
+                    fontFamily: 'Outfit',
                     fontSize: 12.sp,
                     color: color,
                     fontWeight: FontWeight.bold,

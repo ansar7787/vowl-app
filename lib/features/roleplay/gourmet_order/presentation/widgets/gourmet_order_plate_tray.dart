@@ -43,7 +43,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
               Text(
                 "BANQUET PLATE TRAY",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   color: color,
                   letterSpacing: 2,

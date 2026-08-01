@@ -34,7 +34,7 @@ class SpeakSynonymSentencePanel extends StatelessWidget {
               Text(
                 "SUBSTITUTE HIGHLIGHTED SEED",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   color: Colors.grey.shade400,
                   letterSpacing: 1.0,

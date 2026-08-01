@@ -87,7 +87,7 @@ class GuessTitleCargoCrate extends StatelessWidget {
                         : Text(
                             "DRAG & DROP TITLE HERE",
                             style: TextStyle(
-                              fontFamily: 'RobotoMono',
+                              fontFamily: 'Outfit',
                               color: color.withValues(
                                 alpha: isHovered ? 0.8 : 0.4,
                               ),

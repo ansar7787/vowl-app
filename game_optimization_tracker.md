@@ -2,6 +2,9 @@
 
 Track the progress of UI and learning optimizations across all 122 game modules.
 
+## Global Optimizations
+- [x] ✅ Global Font Migration (Migrate 202 instances of RobotoMono to Outfit)
+
 ## Speaking (10)
 - [ ] Repeat Sentence (`repeatSentence`)
 - [ ] Speak Missing Word (`speakMissingWord`)

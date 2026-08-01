@@ -43,7 +43,7 @@ class SentenceOrderReadingStoneSlab extends StatelessWidget {
                 child: Text(
                   "${index + 1}",
                   style: TextStyle(
-                    fontFamily: 'RobotoMono',
+                    fontFamily: 'Outfit',
                     color: color,
                     fontSize: 14.sp,
                     fontWeight: FontWeight.bold,

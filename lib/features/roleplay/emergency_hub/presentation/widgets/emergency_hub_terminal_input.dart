@@ -44,7 +44,7 @@ class EmergencyHubTerminalInput extends StatelessWidget {
               Text(
                 "DECRYPTION KEYBOARD SLATE",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   color: isCodeValid ? Colors.greenAccent : Colors.amberAccent,
                   letterSpacing: 1.5,
@@ -64,7 +64,7 @@ class EmergencyHubTerminalInput extends StatelessWidget {
             controller: controller,
             onChanged: (_) => onChanged(),
             style: TextStyle(
-              fontFamily: 'RobotoMono',
+              fontFamily: 'Outfit',
               fontSize: 18.sp,
               color: isCodeValid ? Colors.greenAccent : Colors.redAccent,
               fontWeight: FontWeight.bold,
@@ -73,7 +73,7 @@ class EmergencyHubTerminalInput extends StatelessWidget {
             decoration: InputDecoration(
               hintText: "ENTER CODE (e.g. CODE RED 99)",
               hintStyle: TextStyle(
-                fontFamily: 'RobotoMono',
+                fontFamily: 'Outfit',
                 fontSize: 14.sp,
                 color: isDark ? Colors.white24 : Colors.black26,
                 letterSpacing: 1.5,

@@ -96,7 +96,7 @@ class RepeatSentenceTactileMic extends StatelessWidget {
               ? "RELEASE LENS TO PROCESS PHONEMES"
               : "HOLD LENS TO RECORD YOUR SPEECH",
           style: TextStyle(
-            fontFamily: 'RobotoMono',
+            fontFamily: 'Outfit',
             fontSize: 9.sp,
             color: Colors.grey,
             letterSpacing: 1.5,

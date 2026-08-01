@@ -46,7 +46,7 @@ class ConnectedSpeechPulseSpeaker extends StatelessWidget {
               Text(
                 "HEAR PHRASE",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   color: color,
                   fontSize: 8.sp,
                   fontWeight: FontWeight.bold,

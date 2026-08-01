@@ -38,7 +38,7 @@ class ConnectedSpeechPromptCard extends StatelessWidget {
                 Text(
                   "TARGET PHRASE",
                   style: TextStyle(
-                    fontFamily: 'RobotoMono',
+                    fontFamily: 'Outfit',
                     fontSize: isCompact ? 8.sp : 10.sp,
                     fontWeight: FontWeight.bold,
                     color: color,

@@ -87,7 +87,7 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                                 child: Text(
                                   selectedReplacement?.toUpperCase() ?? "____",
                                   style: TextStyle(
-                                    fontFamily: 'RobotoMono',
+                                    fontFamily: 'Outfit',
                                     fontSize: 13.sp,
                                     fontWeight: FontWeight.w900,
                                     color: selectedReplacement != null
@@ -121,7 +121,7 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                                   Text(
                                     targetWord.toUpperCase(),
                                     style: TextStyle(
-                                      fontFamily: 'RobotoMono',
+                                      fontFamily: 'Outfit',
                                       fontSize: 13.sp,
                                       fontWeight: FontWeight.w900,
                                       color: isDark

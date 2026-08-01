@@ -65,7 +65,7 @@ class SpeedVarianceTempoDial extends StatelessWidget {
         Text(
           isDragging ? "MAINTAINING SPEED..." : "ROTATE DIAL OR TAP PREFERENCE",
           style: TextStyle(
-            fontFamily: 'RobotoMono',
+            fontFamily: 'Outfit',
             fontSize: 10.sp,
             fontWeight: FontWeight.bold,
             color: color.withValues(alpha: 0.8),
@@ -180,7 +180,7 @@ class SpeedVarianceTempoDial extends StatelessWidget {
                     text,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontFamily: 'RobotoMono',
+                      fontFamily: 'Outfit',
                       fontSize: 11.sp,
                       fontWeight: FontWeight.bold,
                       color: textColor,

@@ -90,7 +90,7 @@ class SkimmingScanningTerminal extends StatelessWidget {
                         child: Text(
                           word,
                           style: TextStyle(
-                            fontFamily: 'RobotoMono',
+                            fontFamily: 'Outfit',
                             fontSize: 18.sp,
                             color: isTapped
                                 ? Colors.greenAccent

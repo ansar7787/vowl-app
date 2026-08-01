@@ -42,7 +42,7 @@ class PhrasalVerbsLcd extends StatelessWidget {
                   Text(
                     "DECRYPTING TARGET",
                     style: TextStyle(
-                      fontFamily: 'RobotoMono',
+                      fontFamily: 'Outfit',
                       fontSize: 10.sp,
                       fontWeight: FontWeight.bold,
                       color: color,

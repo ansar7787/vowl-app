@@ -34,7 +34,7 @@ class PronunciationFocusHeader extends StatelessWidget {
               Text(
                 "THERMOGRAPHIC ACCENT CALIBRATOR",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   fontWeight: FontWeight.bold,
                   color: Colors.orangeAccent,

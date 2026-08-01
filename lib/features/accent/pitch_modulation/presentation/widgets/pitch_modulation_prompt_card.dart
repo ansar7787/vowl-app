@@ -36,7 +36,7 @@ class PitchModulationPromptCard extends StatelessWidget {
                 Text(
                   "TARGET PHRASE",
                   style: TextStyle(
-                    fontFamily: 'RobotoMono',
+                    fontFamily: 'Outfit',
                     fontSize: 8.sp,
                     fontWeight: FontWeight.bold,
                     color: color,

@@ -32,7 +32,7 @@ class FixTheSentenceWipedAlert extends StatelessWidget {
           Text(
             "DECAY WIPED! CHOOSE REPLACEMENT CELL",
             style: TextStyle(
-              fontFamily: 'RobotoMono',
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.bold,
               color: displayColor,
@@ -90,7 +90,7 @@ class FixTheSentenceCorrectionOptions extends StatelessWidget {
                 Text(
                   o.toUpperCase(),
                   style: TextStyle(
-                    fontFamily: 'RobotoMono',
+                    fontFamily: 'Outfit',
                     fontSize: 12.sp,
                     fontWeight: FontWeight.bold,
                     color: isDark ? Colors.white : Colors.black87,

@@ -170,7 +170,7 @@ class EmergencyHubValveChamber extends StatelessWidget {
               Text(
                 "VALVE LEVEL: ",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   color: Colors.grey,
                   letterSpacing: 1.5,
@@ -181,7 +181,7 @@ class EmergencyHubValveChamber extends StatelessWidget {
                     ? "ALIGNED (READY)"
                     : "LOCK PENDING (TURN TO 90%)",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 11.sp,
                   color: isValveAligned ? Colors.greenAccent : Colors.redAccent,
                   fontWeight: FontWeight.bold,

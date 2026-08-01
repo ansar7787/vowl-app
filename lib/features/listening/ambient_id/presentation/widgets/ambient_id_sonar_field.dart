@@ -172,7 +172,7 @@ class AmbientIdSonarField extends StatelessWidget {
                     text.toUpperCase(),
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontFamily: 'RobotoMono',
+                      fontFamily: 'Outfit',
                       fontSize: 8.sp,
                       fontWeight: FontWeight.w900,
                       color: Colors.white,

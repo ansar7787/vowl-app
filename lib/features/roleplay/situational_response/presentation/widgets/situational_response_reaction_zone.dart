@@ -144,7 +144,7 @@ class SituationalResponseReactionZone extends StatelessWidget {
               Text(
                 label,
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 8.sp,
                   fontWeight: FontWeight.bold,
                   color: coreColor,
@@ -156,7 +156,7 @@ class SituationalResponseReactionZone extends StatelessWidget {
                 Text(
                   "${(12 * (1.0 - timerValue)).ceil()}s",
                   style: TextStyle(
-                    fontFamily: 'RobotoMono',
+                    fontFamily: 'Outfit',
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w900,
                     color: coreColor,

@@ -77,7 +77,7 @@ class MinimalPairsDroneOption extends StatelessWidget {
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
-                                fontFamily: 'RobotoMono',
+                                fontFamily: 'Outfit',
                                 fontSize: 18.sp,
                                 fontWeight: FontWeight.bold,
                                 color: isDark ? Colors.white : Colors.black87,
@@ -97,7 +97,7 @@ class MinimalPairsDroneOption extends StatelessWidget {
                             child: Text(
                               ipa,
                               style: TextStyle(
-                                fontFamily: 'RobotoMono',
+                                fontFamily: 'Outfit',
                                 fontSize: 11.sp,
                                 fontWeight: FontWeight.bold,
                                 color: color,

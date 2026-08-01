@@ -127,7 +127,7 @@ class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
                                   : "WRONG DISHES")
                             : "SERVING PLATTER",
                         style: TextStyle(
-                          fontFamily: 'RobotoMono',
+                          fontFamily: 'Outfit',
                           fontSize: 10.sp,
                           color: ringColor.withValues(
                             alpha: isActiveGlow ? 0.9 : 0.35,

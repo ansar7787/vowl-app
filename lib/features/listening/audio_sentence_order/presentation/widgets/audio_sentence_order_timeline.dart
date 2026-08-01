@@ -43,7 +43,7 @@ class AudioSentenceOrderTimeline extends StatelessWidget {
               child: Text(
                 slots[index].isEmpty ? "???" : slots[index],
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 14.sp,
                   fontWeight: FontWeight.bold,
                   color: slots[index].isEmpty

@@ -27,7 +27,7 @@ class DailyJournalBoosterTokens extends StatelessWidget {
         Text(
           "REQUIRED REFLECTION TERMS (USE AT LEAST 2)",
           style: TextStyle(
-            fontFamily: 'RobotoMono',
+            fontFamily: 'Outfit',
             fontSize: 10.sp,
             color: isDark ? Colors.white54 : Colors.black54,
             fontWeight: FontWeight.bold,
@@ -89,7 +89,7 @@ class DailyJournalBoosterTokens extends StatelessWidget {
                     Text(
                       k.toUpperCase(),
                       style: TextStyle(
-                        fontFamily: 'RobotoMono',
+                        fontFamily: 'Outfit',
                         color: isUsed
                             ? Colors.greenAccent
                             : (isDark ? Colors.white60 : Colors.black54),

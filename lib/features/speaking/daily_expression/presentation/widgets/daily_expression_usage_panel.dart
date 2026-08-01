@@ -45,7 +45,7 @@ class DailyExpressionUsagePanel extends StatelessWidget {
                 Text(
                   "CONTEXTUAL SAMPLE USAGE",
                   style: TextStyle(
-                    fontFamily: 'RobotoMono',
+                    fontFamily: 'Outfit',
                     fontSize: 10.sp,
                     color: Colors.grey,
                     letterSpacing: 1.0,

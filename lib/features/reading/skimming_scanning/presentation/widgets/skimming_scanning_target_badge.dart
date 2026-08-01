@@ -36,7 +36,7 @@ class SkimmingScanningTargetBadge extends StatelessWidget {
           Text(
             "ACQUIRE: ${item.toUpperCase()}",
             style: TextStyle(
-              fontFamily: 'RobotoMono',
+              fontFamily: 'Outfit',
               fontSize: 16.sp,
               fontWeight: FontWeight.w900,
               color: color,

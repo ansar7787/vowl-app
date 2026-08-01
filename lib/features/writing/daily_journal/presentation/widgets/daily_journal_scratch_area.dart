@@ -69,7 +69,7 @@ class DailyJournalScratchArea extends StatelessWidget {
               Text(
                 "Reflective depth:",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   color: color,
                   fontWeight: FontWeight.bold,
@@ -78,7 +78,7 @@ class DailyJournalScratchArea extends StatelessWidget {
               Text(
                 "$wordCount words",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   color: wordCount >= 10
                       ? Colors.greenAccent

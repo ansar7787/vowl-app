@@ -27,7 +27,7 @@ class SceneDescriptionExplorerGuideCard extends StatelessWidget {
             child: Text(
               "TAP ANY OF THE PULSING SONAR HOTSPOTS ON THE SCENE CARD ABOVE TO INSPECT AND RECORD YOUR DESCRIPTION.",
               style: TextStyle(
-                fontFamily: 'RobotoMono',
+                fontFamily: 'Outfit',
                 fontSize: 9.sp,
                 color: Colors.grey,
                 height: 1.4,

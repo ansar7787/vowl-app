@@ -41,7 +41,7 @@ class SceneDescriptionActivePromptCard extends StatelessWidget {
               Text(
                 "DESCRIBE COMPONENT",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   color: primaryColor,
                   letterSpacing: 1.0,

@@ -44,7 +44,7 @@ class AudioFillBlanksInput extends StatelessWidget {
         inputFormatters: [LengthLimitingTextInputFormatter(maxLength)],
         onSubmitted: onSubmitted,
         style: TextStyle(
-          fontFamily: 'RobotoMono',
+          fontFamily: 'Outfit',
           fontSize: 22.sp,
           fontWeight: FontWeight.w900,
           color: primaryColor,
@@ -54,7 +54,7 @@ class AudioFillBlanksInput extends StatelessWidget {
           counterText: '',
           hintText: 'TYPE THE MISSING DATA',
           hintStyle: TextStyle(
-            fontFamily: 'RobotoMono',
+            fontFamily: 'Outfit',
             fontSize: 14.sp,
             color: Colors.grey.withValues(alpha: 0.5),
           ),

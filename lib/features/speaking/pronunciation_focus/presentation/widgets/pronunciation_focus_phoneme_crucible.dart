@@ -38,7 +38,7 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
               Text(
                 "TARGET PHONETIC CORE",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   color: Colors.grey.shade400,
                   letterSpacing: 1.0,
@@ -66,7 +66,7 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
                       Text(
                         "POSITION GUIDE",
                         style: TextStyle(
-                          fontFamily: 'RobotoMono',
+                          fontFamily: 'Outfit',
                           fontSize: 9.sp,
                           color: Colors.orangeAccent,
                           fontWeight: FontWeight.bold,

@@ -97,7 +97,7 @@ class YesNoSpeakingTactileMic extends StatelessWidget {
               : "HOLD LENS TO RECORD TARGET SENTENCE",
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontFamily: 'RobotoMono',
+            fontFamily: 'Outfit',
             fontSize: 9.sp,
             color: Colors.grey,
             letterSpacing: 1.5,

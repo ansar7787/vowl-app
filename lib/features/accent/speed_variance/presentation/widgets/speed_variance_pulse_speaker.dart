@@ -45,7 +45,7 @@ class SpeedVariancePulseSpeaker extends StatelessWidget {
                 "HEAR\nSPEED",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   color: color,
                   fontSize: 8.sp,
                   fontWeight: FontWeight.bold,

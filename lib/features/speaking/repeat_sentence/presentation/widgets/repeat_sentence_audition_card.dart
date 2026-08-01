@@ -31,7 +31,7 @@ class RepeatSentenceAuditionCard extends StatelessWidget {
               Text(
                 "TARGET STATEMENT TO REPEAT",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   color: primaryColor,
                   letterSpacing: 1.5,
@@ -60,7 +60,7 @@ class RepeatSentenceAuditionCard extends StatelessWidget {
                       Text(
                         "LISTEN",
                         style: TextStyle(
-                          fontFamily: 'RobotoMono',
+                          fontFamily: 'Outfit',
                           fontSize: 10.sp,
                           color: primaryColor,
                           fontWeight: FontWeight.bold,

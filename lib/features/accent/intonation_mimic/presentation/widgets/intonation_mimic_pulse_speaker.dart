@@ -45,7 +45,7 @@ class IntonationMimicPulseSpeaker extends StatelessWidget {
                 "HEAR\nRIDE",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   color: color,
                   fontSize: 8.sp,
                   fontWeight: FontWeight.bold,

@@ -29,7 +29,7 @@ class TopicBatchCounter extends StatelessWidget {
           Text(
             "BATCH PROGRESS: $count / $total",
             style: TextStyle(
-              fontFamily: 'RobotoMono',
+              fontFamily: 'Outfit',
               color: color.withValues(alpha: 0.8),
               fontSize: 10.sp,
               fontWeight: FontWeight.bold,

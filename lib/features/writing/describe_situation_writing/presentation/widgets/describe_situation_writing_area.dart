@@ -43,7 +43,7 @@ class DescribeSituationWritingArea extends StatelessWidget {
                     maxLength}) =>
                 null,
             style: TextStyle(
-              fontFamily: 'RobotoMono',
+              fontFamily: 'Outfit',
               color: isDark ? Colors.white : Colors.black87,
               fontSize: 14.sp,
             ),
@@ -65,7 +65,7 @@ class DescribeSituationWritingArea extends StatelessWidget {
               Text(
                 "Booster words used: ${usedKeywords.length}",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   color: color,
                   fontWeight: FontWeight.bold,
@@ -88,7 +88,7 @@ class DescribeSituationWritingArea extends StatelessWidget {
                     child: Text(
                       "$wordCount / $minWords words",
                       style: TextStyle(
-                        fontFamily: 'RobotoMono',
+                        fontFamily: 'Outfit',
                         fontSize: 10.sp,
                         color: displayColor,
                         fontWeight: FontWeight.bold,

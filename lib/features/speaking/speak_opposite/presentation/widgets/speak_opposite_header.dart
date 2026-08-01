@@ -26,7 +26,7 @@ class SpeakOppositeHeader extends StatelessWidget {
           Text(
             instruction?.toUpperCase() ?? "POLAR ELECTROMAGNETIC CONDUIT",
             style: TextStyle(
-              fontFamily: 'RobotoMono',
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.bold,
               color: Colors.redAccent,

@@ -43,7 +43,7 @@ class AntonymPulsar extends StatelessWidget {
               child: Text(
                 isTop ? "POSITIVE PULSAR [+]" : "NEGATIVE PULSAR [-]",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w900,
                   color: color.withValues(alpha: isActive ? 1.0 : 0.3),

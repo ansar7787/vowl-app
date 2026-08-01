@@ -439,7 +439,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                                     child: Text(
                                       _flickedWord!.toUpperCase(),
                                       style: TextStyle(
-                                        fontFamily: 'RobotoMono',
+                                        fontFamily: 'Outfit',
                                         fontSize: 14.sp,
                                         fontWeight: FontWeight.bold,
                                         color: isDark
@@ -497,7 +497,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                   Text(
                     "FLICK TO SORT",
                     style: TextStyle(
-                      fontFamily: 'RobotoMono',
+                      fontFamily: 'Outfit',
                       fontSize: 10.sp,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -519,7 +519,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
           child: Text(
             text.toUpperCase(),
             style: TextStyle(
-              fontFamily: 'RobotoMono',
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               fontWeight: FontWeight.bold,
               color: color.withValues(alpha: 0.9),

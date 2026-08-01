@@ -157,7 +157,7 @@ class ElevatorPitchChamberConsole extends StatelessWidget {
                       Text(
                         "LIVE TELEMETRY SPECTRUM",
                         style: TextStyle(
-                          fontFamily: 'RobotoMono',
+                          fontFamily: 'Outfit',
                           fontSize: 10.sp,
                           color: color,
                           letterSpacing: 1.5,

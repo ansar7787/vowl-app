@@ -36,7 +36,7 @@ class SynonymInstructionHeader extends StatelessWidget {
               Text(
                 instruction.toUpperCase(),
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 12.sp,
                   fontWeight: FontWeight.bold,
                   color: color,

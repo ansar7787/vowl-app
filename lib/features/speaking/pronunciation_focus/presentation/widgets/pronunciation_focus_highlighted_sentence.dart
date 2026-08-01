@@ -95,7 +95,7 @@ class PronunciationFocusHighlightedSentence extends StatelessWidget {
               Text(
                 "HEATMAP SENTENCE (TAP TO LISTEN)",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   color: Colors.grey,
                 ),

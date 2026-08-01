@@ -45,7 +45,7 @@ class WordLinkingPulseSpeaker extends StatelessWidget {
                 "HEAR\nLINKING",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   color: color,
                   fontSize: 8.sp,
                   fontWeight: FontWeight.bold,

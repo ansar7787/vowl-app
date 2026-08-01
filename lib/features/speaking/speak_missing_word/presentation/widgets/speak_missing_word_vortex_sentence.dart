@@ -26,7 +26,7 @@ class SpeakMissingWordVortexSentence extends StatelessWidget {
           Text(
             "VOCAL SENTENCE CONSTRUCTOR",
             style: TextStyle(
-              fontFamily: 'RobotoMono',
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               color: primaryColor,
               letterSpacing: 1.5,
@@ -58,7 +58,7 @@ class SpeakMissingWordVortexSentence extends StatelessWidget {
               child: Text(
                 "LOCKED OPTION: ${insertedWord.toUpperCase()}",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   color: Colors.greenAccent,
                   fontWeight: FontWeight.bold,

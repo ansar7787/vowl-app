@@ -57,7 +57,7 @@ class ElevatorPitchPromptCard extends StatelessWidget {
                 Text(
                   "ELEVATOR SPEECH PROMPT:",
                   style: TextStyle(
-                    fontFamily: 'RobotoMono',
+                    fontFamily: 'Outfit',
                     fontSize: 10.sp,
                     color: color,
                     letterSpacing: 1.5,

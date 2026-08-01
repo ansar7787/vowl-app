@@ -58,7 +58,7 @@ class ReadAndMatchTerminal extends StatelessWidget {
           text.contains("]") ? text.split("]").last.trim() : text,
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontFamily: 'RobotoMono',
+            fontFamily: 'Outfit',
             fontSize: 13.sp,
             color: isMatched || isActive
                 ? (isDark ? Colors.white : color)

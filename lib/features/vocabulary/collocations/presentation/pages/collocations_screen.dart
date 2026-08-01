@@ -322,7 +322,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
             instruction.toUpperCase(),
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontFamily: 'RobotoMono',
+              fontFamily: 'Outfit',
               fontSize: 12.sp,
               fontWeight: FontWeight.bold,
               color: color,

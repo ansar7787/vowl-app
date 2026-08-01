@@ -352,7 +352,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
               Text(
                 "VAULT SECURITY: L-${widget.level}",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 12.sp,
                   fontWeight: FontWeight.bold,
                   color: color,

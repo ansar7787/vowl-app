@@ -135,7 +135,7 @@ class DescribeSituationConstellationMap extends StatelessWidget {
                                         child: Text(
                                           k,
                                           style: TextStyle(
-                                            fontFamily: 'RobotoMono',
+                                            fontFamily: 'Outfit',
                                             color: isDark ? Colors.white : Colors.black87,
                                             fontSize: 13.sp,
                                             fontWeight: FontWeight.bold,

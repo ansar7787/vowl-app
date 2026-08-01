@@ -53,7 +53,7 @@ class MedicalConsultPatientRecord extends StatelessWidget {
                 Text(
                   "ADMITTED CLINICAL COMPLAINT:",
                   style: TextStyle(
-                    fontFamily: 'RobotoMono',
+                    fontFamily: 'Outfit',
                     fontSize: 10.sp,
                     color: color,
                     letterSpacing: 1.5,

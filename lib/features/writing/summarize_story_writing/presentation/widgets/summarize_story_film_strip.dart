@@ -81,7 +81,7 @@ class SummarizeStoryFilmStrip extends StatelessWidget {
                                       text ?? "[SLOT ${slot.index + 1}]",
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                        fontFamily: 'RobotoMono',
+                                        fontFamily: 'Outfit',
                                         color: text != null
                                             ? Colors.white
                                             : Colors.white30,

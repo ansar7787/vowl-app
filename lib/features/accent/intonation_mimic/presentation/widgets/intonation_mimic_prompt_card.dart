@@ -36,7 +36,7 @@ class IntonationMimicPromptCard extends StatelessWidget {
                 Text(
                   "TARGET SENTENCE",
                   style: TextStyle(
-                    fontFamily: 'RobotoMono',
+                    fontFamily: 'Outfit',
                     fontSize: 8.sp,
                     fontWeight: FontWeight.bold,
                     color: color,

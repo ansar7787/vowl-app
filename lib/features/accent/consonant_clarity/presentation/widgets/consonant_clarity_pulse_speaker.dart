@@ -44,7 +44,7 @@ class ConsonantClarityPulseSpeaker extends StatelessWidget {
               Text(
                 "HEAR CONSONANT",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   color: color,
                   fontSize: 8.sp,
                   fontWeight: FontWeight.bold,

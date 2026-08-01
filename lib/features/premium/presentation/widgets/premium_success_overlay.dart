@@ -158,7 +158,7 @@ class PremiumSuccessOverlay extends StatelessWidget {
                           transactionId!,
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            fontFamily: 'RobotoMono',
+                            fontFamily: 'Outfit',
                             fontSize: 12.sp,
                             color: Colors.white,
                             fontWeight: FontWeight.w600,

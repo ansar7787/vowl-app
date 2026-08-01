@@ -184,7 +184,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
                               : (quest.instruction.toUpperCase()),
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            fontFamily: 'RobotoMono',
+                            fontFamily: 'Outfit',
                             color: _isAnswered
                                 ? Colors.greenAccent
                                 : theme.primaryColor,

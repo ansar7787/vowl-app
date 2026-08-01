@@ -31,7 +31,7 @@ class SpeakMissingWordTelemetryCard extends StatelessWidget {
           Text(
             "VOCAL DECRYPTION OUTPUT",
             style: TextStyle(
-              fontFamily: 'RobotoMono',
+              fontFamily: 'Outfit',
               fontSize: 9.sp,
               color: Colors.grey,
               letterSpacing: 1.5,

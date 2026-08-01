@@ -43,7 +43,7 @@ class SituationalResponseSceneDisplay extends StatelessWidget {
               Text(
                 "ACTIVE SCENARIO",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 12.sp,
                   fontWeight: FontWeight.bold,
                   color: color,

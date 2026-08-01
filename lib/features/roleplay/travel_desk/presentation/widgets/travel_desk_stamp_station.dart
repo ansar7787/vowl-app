@@ -36,7 +36,7 @@ class TravelDeskStampStation extends StatelessWidget {
               Text(
                 "STAMP SLAM TERMINAL",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   color: color,
                   letterSpacing: 2,

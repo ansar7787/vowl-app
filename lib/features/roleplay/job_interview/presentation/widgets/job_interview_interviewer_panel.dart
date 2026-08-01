@@ -54,7 +54,7 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
                   Text(
                     "CHIEF EXECUTIVE V-407",
                     style: TextStyle(
-                      fontFamily: 'RobotoMono',
+                      fontFamily: 'Outfit',
                       fontSize: 10.sp,
                       color: color,
                       fontWeight: FontWeight.bold,
@@ -64,7 +64,7 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
                   Text(
                     "ACTIVE BIO-TRANSCEIVER",
                     style: TextStyle(
-                      fontFamily: 'RobotoMono',
+                      fontFamily: 'Outfit',
                       fontSize: 7.sp,
                       color: color.withValues(alpha: 0.5),
                     ),

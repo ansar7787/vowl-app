@@ -64,7 +64,7 @@ class PrefixSuffixDockingTerminal extends StatelessWidget {
                         Text(
                           text.toUpperCase(),
                           style: TextStyle(
-                            fontFamily: 'RobotoMono',
+                            fontFamily: 'Outfit',
                             fontSize: 16.sp,
                             fontWeight: FontWeight.bold,
                             color: primaryColor,

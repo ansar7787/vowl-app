@@ -131,7 +131,7 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
                     Text(
                       title,
                       style: TextStyle(
-                        fontFamily: 'RobotoMono',
+                        fontFamily: 'Outfit',
                         fontSize: 9.sp,
                         color: highlight ? Colors.greenAccent : color,
                         fontWeight: FontWeight.bold,

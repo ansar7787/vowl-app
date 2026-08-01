@@ -77,7 +77,7 @@ class ClozeTestFuelCells extends StatelessWidget {
           Text(
             text.toUpperCase(),
             style: TextStyle(
-              fontFamily: 'RobotoMono',
+              fontFamily: 'Outfit',
               fontSize: 12.sp,
               fontWeight: FontWeight.bold,
               color: isDark ? Colors.white : Colors.black87,

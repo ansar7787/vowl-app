@@ -45,7 +45,7 @@ class PitchPatternMatchPulseSpeaker extends StatelessWidget {
                 "HEAR\nSTRESS",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   color: color,
                   fontSize: 8.sp,
                   fontWeight: FontWeight.bold,

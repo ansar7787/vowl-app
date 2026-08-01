@@ -1219,7 +1219,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                           fallback: 'Status OK',
                         ),
                         style: TextStyle(
-                          fontFamily: 'RobotoMono',
+                          fontFamily: 'Outfit',
                           fontSize: 8.sp,
                           fontWeight: FontWeight.w700,
                           color: primaryColor.withValues(alpha: 0.8),

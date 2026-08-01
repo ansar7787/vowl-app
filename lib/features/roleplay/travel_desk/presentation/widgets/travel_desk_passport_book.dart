@@ -60,7 +60,7 @@ class TravelDeskPassportBook extends StatelessWidget {
               Text(
                 "BIOMETRIC PASSPORT BOOKLET",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   color: color.withValues(alpha: 0.7),
                   letterSpacing: 1.5,
@@ -180,7 +180,7 @@ class TravelDeskPassportBook extends StatelessWidget {
                           maxLines: 3,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
-                            fontFamily: 'RobotoMono',
+                            fontFamily: 'Outfit',
                             fontSize: 12.sp,
                             color: isDark
                                 ? Colors.white.withValues(alpha: 0.9)
@@ -192,7 +192,7 @@ class TravelDeskPassportBook extends StatelessWidget {
                         Text(
                           "PAGE 0${index + 1}",
                           style: TextStyle(
-                            fontFamily: 'RobotoMono',
+                            fontFamily: 'Outfit',
                             fontSize: 8.sp,
                             color: color.withValues(alpha: 0.4),
                           ),
@@ -244,7 +244,7 @@ class TravelDeskPassportBook extends StatelessWidget {
                               child: Text(
                                 (isCorrect ?? false) ? "APPROVED" : "DENIED",
                                 style: TextStyle(
-                                  fontFamily: 'RobotoMono',
+                                  fontFamily: 'Outfit',
                                   fontSize: 13.sp,
                                   fontWeight: FontWeight.w900,
                                   color: (isCorrect ?? false)

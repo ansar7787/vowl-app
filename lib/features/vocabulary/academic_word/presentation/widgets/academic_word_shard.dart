@@ -43,7 +43,7 @@ class AcademicWordShard extends StatelessWidget {
       (70.h).clamp(44.0, (maxHeight * 0.10).clamp(44.0, 72.0));
 
   static TextStyle _textStyle(Color textColor) => TextStyle(
-    fontFamily: 'RobotoMono',
+    fontFamily: 'Outfit',
     fontSize: 15,
     fontWeight: FontWeight.w900,
     color: textColor,

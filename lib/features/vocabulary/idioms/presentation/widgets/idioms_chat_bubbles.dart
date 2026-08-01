@@ -25,7 +25,7 @@ class IdiomsSystemMessage extends StatelessWidget {
         child: Text(
           text,
           style: TextStyle(
-            fontFamily: 'RobotoMono',
+            fontFamily: 'Outfit',
             fontSize: 9.sp,
             color: color,
             letterSpacing: 1.5,

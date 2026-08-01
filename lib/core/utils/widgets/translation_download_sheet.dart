@@ -198,7 +198,7 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
           Text(
                 '${(_progress * 100).toInt()}%',
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 32.sp,
                   fontWeight: FontWeight.w900,
                   foreground: Paint()

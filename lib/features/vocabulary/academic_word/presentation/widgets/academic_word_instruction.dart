@@ -15,7 +15,7 @@ class AcademicWordInstruction extends StatelessWidget {
   });
 
   static TextStyle _labelStyle(Color color) => TextStyle(
-    fontFamily: 'RobotoMono',
+    fontFamily: 'Outfit',
     fontSize: 11,
     fontWeight: FontWeight.bold,
     color: color,

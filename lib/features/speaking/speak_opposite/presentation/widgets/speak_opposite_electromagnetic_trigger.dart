@@ -129,7 +129,7 @@ class SpeakOppositeElectromagneticTrigger extends StatelessWidget {
               : "HOLD TO BRIDGE POLAR OPPOSITE",
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontFamily: 'RobotoMono',
+            fontFamily: 'Outfit',
             fontSize: 9.sp,
             color: Colors.grey,
             letterSpacing: 1.5,

@@ -58,7 +58,7 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
                           : "SIGNAL COLLAPSED")
                     : "CONSTELLATION HARMONICS",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 11.sp,
                   fontWeight: FontWeight.bold,
                   color: outlineColor,

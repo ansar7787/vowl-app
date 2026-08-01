@@ -327,7 +327,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
           Text(
             "EMOJIFY: SECURE CHANNEL",
             style: TextStyle(
-              fontFamily: 'RobotoMono',
+              fontFamily: 'Outfit',
               fontSize: 10.sp,
               color: color,
               letterSpacing: 2,

@@ -70,7 +70,7 @@ class WordLinkingSentenceField extends StatelessWidget {
       child: Text(
         word.toUpperCase(),
         style: TextStyle(
-          fontFamily: 'RobotoMono',
+          fontFamily: 'Outfit',
           fontSize: 15.sp,
           fontWeight: FontWeight.bold,
           color: isDark ? Colors.white : Colors.black87,

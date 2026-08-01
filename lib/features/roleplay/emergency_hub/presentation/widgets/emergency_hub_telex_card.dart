@@ -59,7 +59,7 @@ class EmergencyHubTelexCard extends StatelessWidget {
               Text(
                 "CRITICAL INCOMING HAZARD ALERT",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   fontSize: 10.sp,
                   color: Colors.redAccent,
                   letterSpacing: 2.0,

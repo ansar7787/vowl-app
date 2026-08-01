@@ -53,7 +53,7 @@ class OpinionWritingArgumentStones extends StatelessWidget {
                     child: Text(
                       o,
                       style: TextStyle(
-                        fontFamily: 'RobotoMono',
+                        fontFamily: 'Outfit',
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 10.sp,
@@ -85,7 +85,7 @@ class OpinionWritingArgumentStones extends StatelessWidget {
                     o,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontFamily: 'RobotoMono',
+                      fontFamily: 'Outfit',
                       color: isDark ? Colors.white70 : Colors.black87,
                       fontWeight: FontWeight.bold,
                       fontSize: 9.sp,

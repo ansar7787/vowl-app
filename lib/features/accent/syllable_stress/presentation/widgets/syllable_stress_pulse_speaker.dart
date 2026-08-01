@@ -44,7 +44,7 @@ class SyllableStressPulseSpeaker extends StatelessWidget {
               Text(
                 "HEAR STRESS",
                 style: TextStyle(
-                  fontFamily: 'RobotoMono',
+                  fontFamily: 'Outfit',
                   color: color,
                   fontSize: 8.sp,
                   fontWeight: FontWeight.bold,
