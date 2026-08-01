@@ -35,12 +35,12 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  int _lastProcessedIndex = -1;
-  int _lastLives = 3;
+  final int _lastProcessedIndex = -1;
+  final int _lastLives = 3;
   AccentQuest? _lastQuest;
   bool _isAnswered = false;
   bool? _isCorrect;
-  bool _showConfetti = false;
+  final bool _showConfetti = false;
 
   List<String> _shuffledOptions = [];
   int _shuffledCorrectIndex = 0;
@@ -108,16 +108,20 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
               livesChanged ||
               (state.lastAnswerCorrect == null && _isAnswered)) {
             _resetTimer?.cancel();
-            
+
             final quest = state.currentQuest;
             final originalOptions = quest.options ?? [];
             final originalCorrectIndex = quest.correctAnswerIndex ?? 0;
-            final originalCorrectAnswer = originalOptions.isNotEmpty && originalCorrectIndex < originalOptions.length 
-                ? originalOptions[originalCorrectIndex] 
+            final originalCorrectAnswer =
+                originalOptions.isNotEmpty &&
+                    originalCorrectIndex < originalOptions.length
+                ? originalOptions[originalCorrectIndex]
                 : "";
-            
+
             _shuffledOptions = List.from(originalOptions)..shuffle();
-            _shuffledCorrectIndex = _shuffledOptions.indexOf(originalCorrectAnswer);
+            _shuffledCorrectIndex = _shuffledOptions.indexOf(
+              originalCorrectAnswer,
+            );
             if (_shuffledCorrectIndex == -1) _shuffledCorrectIndex = 0;
 
             setState(() {
@@ -153,7 +157,9 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
         final AccentQuest? quest = (state is AccentLoaded)
             ? state.currentQuest
             : _lastQuest;
-        final options = _shuffledOptions.isNotEmpty ? _shuffledOptions : (quest?.options ?? ["A", "B"]);
+        final options = _shuffledOptions.isNotEmpty
+            ? _shuffledOptions
+            : (quest?.options ?? ["A", "B"]);
         final mediaQuery = MediaQuery.of(context);
 
         return MediaQuery(
@@ -251,8 +257,8 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                     ConnectedSpeechLinkerCards(
                                       key: ValueKey(quest.id),
                                       options: options,
-                                      correctIndex: _shuffledOptions.isNotEmpty 
-                                          ? _shuffledCorrectIndex 
+                                      correctIndex: _shuffledOptions.isNotEmpty
+                                          ? _shuffledCorrectIndex
                                           : (quest.correctAnswerIndex ?? 0),
                                       color: theme.primaryColor,
                                       isDark: isDark,
