@@ -132,6 +132,9 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
   ) async {
     final s = state;
     if (s is! WritingLoaded || s.livesRemaining <= 0) return;
+    
+    // Prevent duplicate submissions from rapid taps while state is transitioning
+    if (s.lastAnswerCorrect != null) return;
 
     if (!event.isCorrect) {
       final newLives = s.livesRemaining - 1;
