@@ -15,6 +15,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 import 'package:vowl/features/writing/fix_the_sentence/presentation/widgets/fix_the_sentence_instruction.dart';
 import 'package:vowl/features/writing/fix_the_sentence/presentation/widgets/fix_the_sentence_digital_blackboard.dart';
+import 'package:vowl/features/writing/fix_the_sentence/presentation/widgets/fix_the_sentence_correction_options.dart';
 
 class FixTheSentenceScreen extends StatefulWidget {
   final int level;
@@ -146,6 +147,25 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
                         ),
                         SizedBox(height: 32.h),
 
+                        if (_isWiped && !isAnswered)
+                          FixTheSentenceWipedAlert(
+                            primaryColor: theme.primaryColor,
+                          ),
+                        if (_isWiped && !isAnswered) SizedBox(height: 16.h),
+
+                        if (_isWiped)
+                          FixTheSentenceCorrectionOptions(
+                            options: quest.options ?? [],
+                            correct: quest.correctAnswer ?? "",
+                            color: theme.primaryColor,
+                            isDark: isDark,
+                            onSelect: (selected, correct) {
+                              if (isAnswered) return;
+                              setState(() => _selectedOption = selected);
+                              final bool isAnsCorrect = selected == correct;
+                              context.read<WritingBloc>().add(SubmitAnswer(isAnsCorrect));
+                            },
+                          ),
 
                         SizedBox(height: 60.h),
                       ],
