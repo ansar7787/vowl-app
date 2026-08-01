@@ -334,6 +334,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _lastWords = "";
+              _matchedIndices = {};
             });
             context.read<EliteMasteryBloc>().add(NextEliteQuestion());
           },

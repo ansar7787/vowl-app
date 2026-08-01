@@ -94,10 +94,6 @@ class EliteFeedbackCard extends StatelessWidget {
         ? _resolveCorrectAnswer(state.currentQuest)
         : null;
 
-    final shadowingFocus = state.currentQuest.shadowingFocus;
-    final hasShadowingFocus =
-        shadowingFocus != null && shadowingFocus.trim().isNotEmpty;
-
     final usageContext = state.currentQuest.usageContext;
     final hasUsageContext =
         usageContext != null && usageContext.trim().isNotEmpty;
@@ -180,19 +176,6 @@ class EliteFeedbackCard extends StatelessWidget {
                       capsFallback: 'EXPLANATION',
                       titleKey: 'games.explanation',
                       titleFallback: 'Explanation',
-                    ),
-                  ],
-                  if (hasShadowingFocus) ...[
-                    SizedBox(height: 16.h),
-                    PedagogicalRuleBox(
-                      rule: shadowingFocus,
-                      shadowColor: _shadowColor,
-                      isDark: isDark,
-                      icon: Icons.record_voice_over_rounded,
-                      capsKey: 'games.shadowing_focus_caps',
-                      capsFallback: 'SHADOWING FOCUS',
-                      titleKey: 'games.shadowing_focus',
-                      titleFallback: 'Shadowing Focus',
                     ),
                   ],
                   if (hasUsageContext) ...[

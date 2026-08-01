@@ -1417,15 +1417,15 @@ class GameInstructionService {
       title: "Accent Shadowing",
       icon: Icons.record_voice_over_rounded,
       objective:
-          "Speak clearly to match the exact accent and rhythm of the speaker.",
+          "Listen carefully to the native speaker and repeat the sentence, matching their exact pronunciation, stress, and rhythm.",
       rules: [
-        "Listen to the phrase",
-        "Match the exact rhythm",
-        "Speak with clarity",
+        "Listen to the example",
+        "Record your voice",
+        "Match the accent",
       ],
       actionText: "Start Shadowing",
       tip:
-          "PRO TIP: Focus on the stressed syllables and connected speech patterns!",
+          "PRO TIP: Pay close attention to which syllables are stressed—it makes a huge difference!",
     ),
   };
 

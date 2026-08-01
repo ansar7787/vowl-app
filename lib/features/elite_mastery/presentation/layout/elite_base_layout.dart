@@ -165,6 +165,7 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
 
     return BlocListener<EliteMasteryBloc, EliteMasteryState>(
       listenWhen: (previous, current) {
+        if (current is EliteMasteryGameOver && previous is! EliteMasteryGameOver) return true;
         if (current is! EliteMasteryLoaded) return false;
         if (previous is! EliteMasteryLoaded) return true;
         return previous.currentIndex != current.currentIndex ||
@@ -206,6 +207,15 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
   // ── BLoC listener ────────────────────────────────────────────────────────
 
   void _onBlocStateChange(BuildContext context, EliteMasteryState state) {
+    if (state is EliteMasteryGameOver) {
+      GameDialogHelper.showGameOver(
+        context,
+        onRestore: () =>
+            context.read<EliteMasteryBloc>().add(const RestoreEliteLife()),
+        onTutorPass: widget.onTutorPass,
+      );
+      return;
+    }
     if (state is! EliteMasteryLoaded) return;
     if (state.currentIndex != _lastIndex) _lastIndex = state.currentIndex;
     _lastQuest = state.currentQuest;
