@@ -34,7 +34,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
   final _soundService = di.sl<SoundService>();
   bool _showConfetti = false;
 
-  List<String> _currentOrder = [];
+  List<int> _currentOrder = [];
   bool _isAnswered = false;
   bool? _isCorrect;
   VisualConfig? _visualConfig;
@@ -77,13 +77,13 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
       return;
     }
 
-    List<String> shuffled = List.from(sentences);
+    List<int> shuffled = List.generate(sentences.length, (i) => i);
     // Shuffle until it's NOT the correct order
     int safetyCounter = 0;
     do {
       shuffled.shuffle();
       safetyCounter++;
-    } while (_isCorrectSequence(shuffled, sentences, correctOrder) &&
+    } while (_isCorrectSequence(shuffled, correctOrder) &&
         safetyCounter < 10);
 
     setState(() {
@@ -92,26 +92,23 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
   }
 
   bool _isCorrectSequence(
-    List<String> current,
-    List<String> original,
+    List<int> current,
     List<int>? correctIndices,
   ) {
     if (correctIndices == null || current.length != correctIndices.length) {
       return false;
     }
     for (int i = 0; i < current.length; i++) {
-      final originalIndex = original.indexOf(current[i]);
-      if (originalIndex != correctIndices[i]) return false;
+      if (current[i] != correctIndices[i]) return false;
     }
     return true;
   }
 
-  void _submitOrder(List<int>? correctOrder, List<String> originalSentences) {
+  void _submitOrder(List<int>? correctOrder) {
     if (correctOrder == null || _isAnswered) return;
 
     bool isCorrect = _isCorrectSequence(
       _currentOrder,
-      originalSentences,
       correctOrder,
     );
 
@@ -351,23 +348,15 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               children: [
                 for (int i = 0; i < _currentOrder.length; i++)
                   Padding(
-                    // FIX: was `ValueKey("${quest.id}_${_currentOrder[i]}_$i")`
-                    // — including the *current display position* `i` in the
-                    // key meant the key changed on every single reorder
-                    // (since `i` is exactly what moves), which defeats
-                    // ReorderableListView's whole purpose for using keys:
-                    // tracking "this specific tile moved from position A to
-                    // B" so the built-in reorder transition can animate it
-                    // smoothly. Keying on the sentence's *original* index
-                    // (stable regardless of its current display position)
-                    // fixes this while still being unique per tile.
+                    // Keying on the original index is perfectly stable and
+                    // prevents duplicate-key crashes if sentences are identical.
                     key: ValueKey(
-                      '${quest.id}_${quest.sentences?.indexOf(_currentOrder[i]) ?? i}',
+                      '${quest.id}_${_currentOrder[i]}',
                     ),
                     padding: EdgeInsets.only(bottom: isCompact ? 10.h : 14.h),
                     child: StoryBuilderNarrativeTile(
                       index: i,
-                      sentence: _currentOrder[i],
+                      sentence: quest.sentences![_currentOrder[i]],
                       quest: quest,
                       isHintVisible: state.isHintVisible,
                       isDark: isDark,
@@ -388,8 +377,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                 ),
                 excludeSemantics: true,
                 child: ScaleButton(
-                  onTap: () =>
-                      _submitOrder(quest.correctOrder, quest.sentences ?? []),
+                  onTap: () => _submitOrder(quest.correctOrder),
                   child: Container(
                     width: double.infinity,
                     // FIX: height was purely padding-driven, sitting right
