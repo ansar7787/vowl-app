@@ -22,20 +22,26 @@ class OpinionWritingArgumentStones extends StatelessWidget {
     final placed = leftPanArgs.toSet()..addAll(rightPanArgs);
     final availableOptions = options.where((o) => !placed.contains(o)).toList();
 
-    return Container(
-      constraints: BoxConstraints(minHeight: 80.h),
-      child: Wrap(
-        spacing: 8.w,
-        runSpacing: 8.h,
-        alignment: WrapAlignment.center,
-        children: availableOptions
-            .map(
-              (o) => Draggable<String>(
-                data: o,
-                feedback: Material(
-                  color: Colors.transparent,
-                  child: Container(
-                    width: 140.w,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        // Calculate exact width to ensure exactly 2 cards fit per row (2x2 grid)
+        final double cardWidth = (constraints.maxWidth - 12.w) / 2;
+
+        return Container(
+          constraints: BoxConstraints(minHeight: 80.h),
+          width: double.infinity,
+          child: Wrap(
+            spacing: 8.w,
+            runSpacing: 8.h,
+            alignment: WrapAlignment.center,
+            children: availableOptions
+                .map(
+                  (o) => Draggable<String>(
+                    data: o,
+                    feedback: Material(
+                      color: Colors.transparent,
+                      child: Container(
+                        width: cardWidth,
                     padding: EdgeInsets.symmetric(
                       horizontal: 14.w,
                       vertical: 10.h,
@@ -63,7 +69,7 @@ class OpinionWritingArgumentStones extends StatelessWidget {
                   ),
                 ),
                 childWhenDragging: Container(
-                  width: 140.w,
+                  width: cardWidth,
                   padding: EdgeInsets.symmetric(
                     horizontal: 14.w,
                     vertical: 10.h,
@@ -88,7 +94,7 @@ class OpinionWritingArgumentStones extends StatelessWidget {
                   ),
                 ),
                 child: Container(
-                  width: 140.w,
+                  width: cardWidth,
                   padding: EdgeInsets.symmetric(
                     horizontal: 14.w,
                     vertical: 10.h,
@@ -122,6 +128,8 @@ class OpinionWritingArgumentStones extends StatelessWidget {
             )
             .toList(),
       ),
+    );
+      },
     );
   }
 }
