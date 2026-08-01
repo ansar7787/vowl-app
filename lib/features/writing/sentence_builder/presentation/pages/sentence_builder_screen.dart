@@ -96,7 +96,8 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
       listenWhen: (prev, curr) =>
           (curr is WritingGameComplete && prev is! WritingGameComplete) ||
           (curr is WritingGameOver && prev is! WritingGameOver) ||
-          (curr is WritingLoaded && curr.lastAnswerCorrect == null),
+          (curr is WritingLoaded && prev is! WritingLoaded) ||
+          (prev is WritingLoaded && curr is WritingLoaded && prev.lastAnswerCorrect != curr.lastAnswerCorrect),
       listener: (context, state) {
         if (state is WritingLoaded && state.lastAnswerCorrect == null) {
           // New question loaded or retry triggered â€” clear the selected option.

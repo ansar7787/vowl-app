@@ -51,8 +51,8 @@ class SentenceBuilderJigsawPiece extends StatelessWidget {
               padding: EdgeInsets.only(
                 left: 20.w, 
                 right: 28.w, 
-                top: 12.h, 
-                bottom: 12.h,
+                top: 10.h, 
+                bottom: 10.h,
               ),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
@@ -64,6 +64,7 @@ class SentenceBuilderJigsawPiece extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 15.sp,
                         fontWeight: FontWeight.w800,
+                        height: 1.2,
                         color: isDark ? Colors.white : Colors.black87,
                       ),
                     ),
