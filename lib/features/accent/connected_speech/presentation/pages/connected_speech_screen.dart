@@ -110,17 +110,15 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
             _resetTimer?.cancel();
             
             final quest = state.currentQuest;
-            if (quest != null) {
-              final originalOptions = quest.options ?? [];
-              final originalCorrectIndex = quest.correctAnswerIndex ?? 0;
-              final originalCorrectAnswer = originalOptions.isNotEmpty && originalCorrectIndex < originalOptions.length 
-                  ? originalOptions[originalCorrectIndex] 
-                  : "";
-              
-              _shuffledOptions = List.from(originalOptions)..shuffle();
-              _shuffledCorrectIndex = _shuffledOptions.indexOf(originalCorrectAnswer);
-              if (_shuffledCorrectIndex == -1) _shuffledCorrectIndex = 0;
-            }
+            final originalOptions = quest.options ?? [];
+            final originalCorrectIndex = quest.correctAnswerIndex ?? 0;
+            final originalCorrectAnswer = originalOptions.isNotEmpty && originalCorrectIndex < originalOptions.length 
+                ? originalOptions[originalCorrectIndex] 
+                : "";
+            
+            _shuffledOptions = List.from(originalOptions)..shuffle();
+            _shuffledCorrectIndex = _shuffledOptions.indexOf(originalCorrectAnswer);
+            if (_shuffledCorrectIndex == -1) _shuffledCorrectIndex = 0;
 
             setState(() {
               _lastProcessedIndex = state.currentIndex;
@@ -130,8 +128,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
               _selectedIndex = null;
             });
             // Proactively auto-play sound on question load
-            final quest = state.currentQuest as AccentQuest?;
-            if (quest != null && quest.textToSpeak != null) {
+            if (quest.textToSpeak != null) {
               Future.delayed(500.milliseconds, () {
                 if (mounted) {
                   _soundService.playTts(quest.textToSpeak!);
