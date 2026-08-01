@@ -599,7 +599,7 @@ class GameInstructionService {
       title: "Sentence Architect",
       icon: Icons.architecture_rounded,
       objective:
-          "Arrange sentence fragments into a grammatically correct order.",
+          "Arrange sentence fragments into a grammatically correct order. Mastering sentence structure ensures your writing is clear, professional, and easily understood in real-world communication.",
       rules: [
         "Start with Subject",
         "Identify the Verb",

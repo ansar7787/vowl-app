@@ -34,6 +34,8 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
 
   // PERF FIX: cached so getTheme() isn't called on every build().
   late dynamic _theme;
+  
+  dynamic _lastQuest;
 
   final List<String> _assembledPieces = [];
   bool _showConfetti = false;
@@ -113,11 +115,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
         }
 
         if (state is WritingGameOver) {
-          GameDialogHelper.showGameOver(
-            context,
-            onRestore: () =>
-                context.read<WritingBloc>().add(const RestoreLife()),
-          );
+          // Handled globally by the base layout.
         }
       },
       // PERF FIX: only rebuild when the quest itself changes, not on every
@@ -132,16 +130,23 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
               prev.lastAnswerCorrect != curr.lastAnswerCorrect),
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
-        final quest = isLoaded ? state.currentQuest : null;
+        if (isLoaded) {
+          _lastQuest = state.currentQuest;
+        }
+        final quest = isLoaded ? state.currentQuest : _lastQuest;
         final pool = quest?.shuffledWords ?? const [];
         final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
         final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
+        
+        final lives = state.livesRemaining;
+        final isFinalFailure = isLoaded ? state.isFinalFailure : (lives == 0);
 
         return WritingBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
           isAnswered: isAnswered,
           isCorrect: isCorrect,
+          isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti,
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
@@ -210,7 +215,10 @@ class _SentenceBuilderBody extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 16.h),
-            SentenceBuilderInstruction(primaryColor: theme.primaryColor),
+            SentenceBuilderInstruction(
+              primaryColor: theme.primaryColor,
+              instruction: quest.instruction,
+            ),
             SizedBox(height: 32.h),
 
             SentenceBuilderWorkbench(

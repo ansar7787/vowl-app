@@ -41,7 +41,7 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [ ] Skimming/Scanning (`skimmingScanning`)
 
 ## Writing (11)
-- [ ] Sentence Builder (`sentenceBuilder`)
+- [x] ✅ Sentence Builder (`sentenceBuilder`)
 - [x] ✅ Complete Sentence (`completeSentence`)
 - [x] ✅ Describe Situation (`describeSituationWriting`)
 - [x] ✅ Fix The Sentence (`fixTheSentence`)
