@@ -28,6 +28,8 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final parts = fullText.split(targetWord);
+    final String prefix = parts.isNotEmpty ? parts[0] : "";
+    final String suffix = parts.length > 1 ? parts.sublist(1).join(targetWord) : "";
 
     return Container(
       width: double.infinity,
@@ -53,7 +55,7 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                   height: 1.5,
                 ),
                 children: [
-                  if (parts.isNotEmpty) TextSpan(text: parts[0]),
+                  if (prefix.isNotEmpty) TextSpan(text: prefix),
                   WidgetSpan(
                     alignment: PlaceholderAlignment.middle,
                     child: isWiped
@@ -143,7 +145,7 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                             ),
                           ),
                   ),
-                  if (parts.length > 1) TextSpan(text: parts[1]),
+                  if (suffix.isNotEmpty) TextSpan(text: suffix),
                 ],
               ),
             ),
