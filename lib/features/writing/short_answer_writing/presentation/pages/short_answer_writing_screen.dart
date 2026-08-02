@@ -113,6 +113,8 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
     final languageIdService = di.sl<LanguageIdService>();
     final String languageCode = await languageIdService.identifyLanguage(rawText);
     
+    if (!mounted) return;
+    
     if (languageCode != 'en') {
       CustomSnackBar.show(
         context: context,
