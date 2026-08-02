@@ -43,6 +43,9 @@ abstract class SoundService {
   /// Downloads and streams sound assets from internet endpoints.
   Future<void> playUrl(String url);
 
+  /// Plays a local audio file from the device storage.
+  Future<void> playFile(String filePath);
+
   /// Triggers synthesized speech generation using Text-to-Speech.
   Future<void> playTts(String text, {double speed = 0.4, String? locale});
 
@@ -239,6 +242,22 @@ class SoundServiceImpl implements SoundService {
     } catch (e) {
       di.sl<AppLogger>().error(
         'SoundService: Error playing sound (url)',
+        error: e,
+      );
+    }
+  }
+
+  @override
+  Future<void> playFile(String filePath) async {
+    await _initFuture;
+    if (_isMuted) return;
+    try {
+      if (_player.state == PlayerState.playing) await _player.stop();
+      await _player.setSource(DeviceFileSource(filePath));
+      await _player.resume();
+    } catch (e) {
+      di.sl<AppLogger>().error(
+        'SoundService: Error playing sound (file)',
         error: e,
       );
     }

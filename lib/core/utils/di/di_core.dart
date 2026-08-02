@@ -15,6 +15,7 @@ import 'package:vowl/core/utils/local_smart_tutor.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/payment_service.dart';
 import 'package:vowl/core/utils/speech_service.dart';
+import 'package:vowl/core/utils/audio_recording_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/data/services/asset_quest_service.dart';
 import 'package:vowl/core/utils/story_service.dart';
@@ -139,6 +140,10 @@ Future<void> initExternalAndCore(GetIt sl) async {
     () => CoinPacksService(firestore: sl<FirebaseFirestore>()),
   );
   sl.registerLazySingleton<SpeechService>(() => SpeechService());
+  sl.registerLazySingleton<AudioRecordingService>(
+    () => AudioRecordingService(),
+    dispose: (service) => service.dispose(),
+  );
   sl.registerLazySingleton<KidsTTSService>(() => KidsTTSService());
   sl.registerLazySingleton<KidsAudioService>(() => KidsAudioService());
   sl.registerLazySingleton<AssetQuestService>(() => AssetQuestService());
