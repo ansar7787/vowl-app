@@ -428,9 +428,13 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
       return Column(
         children: [
           GestureDetector(
-            onTapDown: (_) => _startRecording(),
-            onTapUp: (_) => _stopRecording(),
-            onTapCancel: () => _stopRecording(),
+            onTap: () {
+              if (_isRecording) {
+                _stopRecording();
+              } else {
+                _startRecording();
+              }
+            },
             child: Container(
               width: 80.r,
               height: 80.r,
@@ -454,7 +458,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
           ),
           SizedBox(height: 10.h),
           Text(
-            _isRecording ? "Listening... Release to stop" : "Hold to Record",
+            _isRecording ? "Listening... Tap to stop" : "Tap to Record",
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 14.sp,
