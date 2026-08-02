@@ -364,7 +364,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                                       correctIndex: _currentOptions.isNotEmpty ? _currentCorrectIndex : quest.correctAnswerIndex ?? 0,
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
-                                                      isAnswered: _isAnswered,
+                                                isAnswered: _isAnswered || _phase1Passed,
                                                       selectedDroneIndex:
                                                           _selectedDroneIndex,
                                                       onShoot: _onShoot,
@@ -397,7 +397,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                                 correctIndex: _currentOptions.isNotEmpty ? _currentCorrectIndex : quest.correctAnswerIndex ?? 0,
                                                 color: theme.primaryColor,
                                                 isDark: isDark,
-                                                isAnswered: _isAnswered,
+                                                isAnswered: _isAnswered || _phase1Passed,
                                                 selectedDroneIndex:
                                                     _selectedDroneIndex,
                                                 onShoot: _onShoot,
@@ -424,9 +424,22 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
     );
   }
   Widget _buildPhase2Panel(Color primaryColor, bool isCompact) {
-    if (!_hasRecorded) {
-      return Column(
-        children: [
+    return Column(
+      children: [
+        Divider(color: primaryColor.withValues(alpha: 0.2), thickness: 2),
+        SizedBox(height: 8.h),
+        Text(
+          "PHASE 2: SPEAKING",
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 14.sp,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1.5,
+            color: primaryColor,
+          ),
+        ),
+        SizedBox(height: 16.h),
+        if (!_hasRecorded) ...[
           GestureDetector(
             onTap: () {
               if (_isRecording) {
@@ -466,13 +479,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
               color: _isRecording ? Colors.red : Colors.grey[600],
             ),
           ).animate(target: _isRecording ? 1 : 0).fade(),
-        ],
-      ).animate().slideY(begin: 0.2).fadeIn();
-    }
-
-    if (_isPlaying) {
-      return Column(
-        children: [
+        ] else if (_isPlaying) ...[
           const CircularProgressIndicator(),
           SizedBox(height: 10.h),
           Text(
@@ -484,54 +491,50 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
               color: primaryColor,
             ),
           ),
-        ],
-      ).animate().fadeIn();
-    }
-
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            _buildEvalButton(
-              title: "Needs Work",
-              icon: LucideIcons.x,
-              color: Colors.red,
-              onTap: () => _submitPhase2Evaluation(false),
-            ),
-            GestureDetector(
-              onTap: _playComparison,
-              child: Container(
-                padding: EdgeInsets.all(12.r),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: primaryColor.withValues(alpha: 0.1),
+        ] else ...[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              _buildEvalButton(
+                title: "Needs Work",
+                icon: LucideIcons.x,
+                color: Colors.red,
+                onTap: () => _submitPhase2Evaluation(false),
+              ),
+              GestureDetector(
+                onTap: _playComparison,
+                child: Container(
+                  padding: EdgeInsets.all(12.r),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: primaryColor.withValues(alpha: 0.1),
+                  ),
+                  child: Icon(LucideIcons.play, color: primaryColor, size: 24.sp),
                 ),
-                child: Icon(LucideIcons.play, color: primaryColor, size: 24.sp),
+              ),
+              _buildEvalButton(
+                title: "Nailed It",
+                icon: LucideIcons.check,
+                color: Colors.green,
+                onTap: () => _submitPhase2Evaluation(true),
+              ),
+            ],
+          ),
+          if (!isCompact) ...[
+            SizedBox(height: 10.h),
+            Text(
+              "Be honest! Did you match the native speaker?",
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w500,
+                color: Colors.grey[600],
               ),
             ),
-            _buildEvalButton(
-              title: "Nailed It",
-              icon: LucideIcons.check,
-              color: Colors.green,
-              onTap: () => _submitPhase2Evaluation(true),
-            ),
           ],
-        ),
-        if (!isCompact) ...[
-          SizedBox(height: 10.h),
-          Text(
-            "Be honest! Did you match the native speaker?",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey[600],
-            ),
-          ),
         ],
       ],
-    ).animate().fadeIn().slideY(begin: 0.2);
+    ).animate().slideY(begin: 0.2).fadeIn();
   }
 
   Widget _buildEvalButton({
