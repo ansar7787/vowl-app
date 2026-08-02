@@ -43,7 +43,8 @@ class ShortAnswerBoosterTokens extends StatelessWidget {
           runSpacing: 8.h,
           alignment: WrapAlignment.start,
           children: keywords.map((k) {
-            final bool isUsed = text.contains(k.toLowerCase());
+            final kwLower = k.toLowerCase();
+            final bool isUsed = RegExp(r'\b' + RegExp.escape(kwLower) + r'\b').hasMatch(text);
             final successColor = isDark
                 ? Colors.greenAccent
                 : const Color(0xFF16A34A);

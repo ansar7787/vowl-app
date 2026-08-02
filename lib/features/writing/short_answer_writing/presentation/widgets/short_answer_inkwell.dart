@@ -52,22 +52,28 @@ class ShortAnswerInkwell extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: [
-                  Icon(Icons.edit_note_rounded, size: 18.r, color: color),
-                  SizedBox(width: 8.w),
-                  Text(
-                    "YOUR RESPONSE",
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      color: color,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 1.5,
+              Expanded(
+                child: Row(
+                  children: [
+                    Icon(Icons.edit_note_rounded, size: 18.r, color: color),
+                    SizedBox(width: 8.w),
+                    Expanded(
+                      child: Text(
+                        "YOUR RESPONSE",
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 10.sp,
+                          color: color,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1.5,
+                        ),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
+              SizedBox(width: 8.w),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
                 decoration: BoxDecoration(

@@ -93,7 +93,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
 
     int matchedCount = 0;
     for (var kw in targetKeywords) {
-      if (text.contains(kw.toLowerCase())) {
+      if (RegExp(r'\b' + RegExp.escape(kw.toLowerCase()) + r'\b').hasMatch(text)) {
         matchedCount++;
       }
     }
