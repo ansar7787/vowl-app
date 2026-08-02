@@ -243,6 +243,18 @@ class GameInstructionService {
       tip:
           "PRO TIP: Idioms rarely mean what the individual words mean literally. Think about the feeling or situation they describe!",
     ),
+    GameSubtype.minimalPairs: GameBriefing(
+      title: "Minimal Pairs",
+      icon: Icons.hearing_rounded,
+      objective: "Listen to the word and select the correct matching sound. Mastering minimal pairs helps you distinguish subtle vowel length and tension differences, ensuring your spoken English is clear and easily understood.",
+      rules: [
+        "Listen to the target word",
+        "Notice vowel length and tension",
+        "Select the exact phonetic match",
+      ],
+      actionText: "Identify Sound",
+      tip: "PRO TIP: Pay attention to whether the vowel feels quick and relaxed, or long and stretched!",
+    ),
     GameSubtype.consonantClarity: GameBriefing(
       title: "Consonant Clarity",
       icon: Icons.record_voice_over_rounded,
@@ -1138,19 +1150,7 @@ class GameInstructionService {
           "Nuance is key! Choose the word that logically belongs in the sentence.",
     ),
     // 7. Accent
-    GameSubtype.minimalPairs: GameBriefing(
-      title: "Sound Sorter",
-      icon: Icons.compare_arrows_rounded,
-      objective:
-          "Master subtle phonetic differences by selecting the exact word you hear.",
-      rules: [
-        "Listen to the speaker",
-        "Identify the subtle sound",
-        "Select the correct option",
-      ],
-      actionText: "Sort Sounds",
-      tip: "PRO TIP: Pay close attention to vowel length and tension!",
-    ),
+
     GameSubtype.intonationMimic: GameBriefing(
       title: "Intonation Mimic",
       icon: Icons.waves_rounded,

@@ -74,8 +74,6 @@ class MinimalPairsDroneOption extends StatelessWidget {
                             child: Text(
                               word.toUpperCase(),
                               textAlign: TextAlign.center,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 18.sp,

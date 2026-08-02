@@ -16,6 +16,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
 import 'package:vowl/features/accent/presentation/constants/accent_game_constants.dart';
 import 'package:vowl/features/accent/presentation/widgets/accent_content_body.dart';
@@ -81,6 +82,7 @@ class _AccentBaseLayoutState extends State<AccentBaseLayout> {
   int _lastIndex = -1;
   int _lastLives = AccentGameConstants.maxLives;
   late bool _showBriefing;
+  AccentQuest? _lastQuest;
 
   @override
   void initState() {
@@ -127,6 +129,7 @@ class _AccentBaseLayoutState extends State<AccentBaseLayout> {
         }
 
         if (state is! AccentLoaded) return;
+        _lastQuest = state.currentQuest as AccentQuest?;
 
         if (state.currentIndex != _lastIndex) {
           _lastIndex = state.currentIndex;
@@ -214,7 +217,7 @@ class _AccentBaseLayoutState extends State<AccentBaseLayout> {
                     ),
                   ),
 
-                  if (state is AccentLoading)
+                  if (state is AccentLoading && _lastQuest == null)
                     GameShimmerLoading(primaryColor: primaryColor)
                   else ...[
                     SafeArea(
