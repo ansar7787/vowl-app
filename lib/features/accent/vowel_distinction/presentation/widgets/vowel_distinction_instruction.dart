@@ -22,9 +22,11 @@ class VowelDistinctionInstruction extends StatelessWidget {
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Icon(Icons.tune_rounded, size: 14.r, color: color),
-          SizedBox(width: 12.w),
+          SizedBox(width: 8.w),
           Flexible(
             child: Text(
               instruction.trim().isEmpty
@@ -41,6 +43,8 @@ class VowelDistinctionInstruction extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(width: 8.w),
+          Icon(Icons.tune_rounded, size: 14.r, color: Colors.transparent),
         ],
       ),
     );
