@@ -16,6 +16,7 @@ import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_v
 import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_variance_prompt_card.dart';
 import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_variance_pulse_speaker.dart';
 import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_variance_tempo_dial.dart';
+import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
 
 class SpeedVarianceScreen extends StatefulWidget {
   final int level;
@@ -43,6 +44,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
   double _dialRotation = 0.0;
   bool _isDragging = false;
   int? _selectedIndex;
+  bool _phase1Passed = false;
 
   @override
   void initState() {
@@ -76,7 +78,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
   }
 
   void _onDialRotate(DragUpdateDetails details, int correct) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
 
     final double dx = details.delta.dx;
     final double dy = details.delta.dy;
@@ -105,7 +107,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
   }
 
   void _onDialRelease() {
-    if (_isAnswered || !_isDragging) return;
+    if (_isAnswered || _phase1Passed || !_isDragging) return;
     setState(() {
       _isDragging = false;
       if (!_isAnswered) {
@@ -115,7 +117,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
   }
 
   void _submitChoice(int index, int correct) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
     setState(() {
       _selectedIndex = index;
       _dialRotation = index == 0 ? -0.8 : 0.8;
@@ -128,11 +130,10 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
+        _phase1Passed = true;
       });
       _scrollToBottom();
-      context.read<AccentBloc>().add(const SubmitAnswer(true));
+      // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -140,6 +141,27 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
         _isAnswered = true;
         _isCorrect = false;
       });
+      _scrollToBottom();
+      context.read<AccentBloc>().add(const SubmitAnswer(false));
+    }
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered) return;
+    
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      _scrollToBottom();
+      context.read<AccentBloc>().add(const SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
       _scrollToBottom();
       context.read<AccentBloc>().add(const SubmitAnswer(false));
     }
@@ -166,6 +188,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
               _dialRotation = 0.0;
               _selectedIndex = null;
               _isDragging = false;
+              _phase1Passed = false;
             });
             // Proactively auto-play sound on question load
             final quest = state.currentQuest as AccentQuest?;
@@ -255,10 +278,12 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                               SizedBox(height: gapTop),
                               SpeedVarianceInstruction(
                                 color: theme.primaryColor,
-                                instruction: context.tr(
-                                  'games.speed_variance_instruction',
-                                  fallback: quest.instruction,
-                                ),
+                                instruction: _phase1Passed
+                                  ? "Great job! Now record yourself saying the word."
+                                  : context.tr(
+                                    'games.speed_variance_instruction',
+                                    fallback: quest.instruction,
+                                  ),
                               ),
                               SizedBox(height: gapInstruction),
                               SpeedVariancePromptCard(
@@ -284,7 +309,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                                 correctIndex: quest.correctAnswerIndex ?? 0,
                                 color: theme.primaryColor,
                                 isDark: isDark,
-                                isAnswered: _isAnswered,
+                                isAnswered: _isAnswered || _phase1Passed,
                                 isDragging: _isDragging,
                                 dialRotation: _dialRotation,
                                 selectedIndex: _selectedIndex,
@@ -292,8 +317,16 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                                 onDialRelease: _onDialRelease,
                                 onSubmitChoice: _submitChoice,
                               ),
+                              SizedBox(height: gapBottom),
+                              if (_phase1Passed)
+                                AccentSelfEvaluationPanel(
+                                  textToSpeak: quest.textToSpeak ?? "",
+                                  primaryColor: theme.primaryColor,
+                                  isCompact: false, // Dial uses fixed size
+                                  onEvaluate: _submitPhase2Evaluation,
+                                ),
                               SizedBox(
-                                height: gapBottom + (_isAnswered ? 180.h : 0),
+                                height: _isAnswered ? 180.h : 0,
                               ),
                             ],
                           ),

@@ -18,6 +18,7 @@ import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/inton
 import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/intonation_mimic_rollercoaster.dart';
 import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/intonation_mimic_pulse_speaker.dart';
 import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/intonation_mimic_vertical_fader.dart';
+import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
 
 
 class IntonationMimicScreen extends StatefulWidget {
@@ -46,6 +47,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
   bool _showConfetti = false;
   double _sliderValue = 0.5;
   int? _selectedIndex;
+  bool _phase1Passed = false;
 
   // Pitch ride animation parameters
   double _cartPosition = 0.0;
@@ -124,10 +126,9 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
+        _phase1Passed = true;
       });
-      context.read<AccentBloc>().add(SubmitAnswer(true));
+      // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -135,6 +136,25 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
         _isAnswered = true;
         _isCorrect = false;
       });
+      context.read<AccentBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered) return;
+    
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      context.read<AccentBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
   }
@@ -162,6 +182,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
               _selectedIndex = null;
               _cartPosition = 0.0;
               _isRiding = false;
+              _phase1Passed = false;
             });
             // Proactively auto-play sound and trigger ride effect on load
             final quest = state.currentQuest;
@@ -273,7 +294,9 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                     SizedBox(height: gapTop),
                                     IntonationMimicInstruction(
                                       color: theme.primaryColor,
-                                      instruction: context.tr('games.intonation_mimic_instruction', fallback: "Identify the intonation"),
+                                      instruction: _phase1Passed
+                                        ? "Great job! Now record yourself saying the word."
+                                        : context.tr('games.intonation_mimic_instruction', fallback: "Identify the intonation"),
                                     ),
                                     SizedBox(height: gapInstruction),
 
@@ -300,7 +323,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                           ),
                                     SizedBox(height: gapPrompt),
 
-                                    if (_isAnswered) ...[
+                                    if (_isAnswered || _phase1Passed) ...[
                                       IntonationMimicRollercoaster(
                                         contour: contour,
                                         color: theme.primaryColor,
@@ -328,7 +351,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                           quest.correctAnswerIndex ?? 0,
                                       color: theme.primaryColor,
                                       isDark: isDark,
-                                      isAnswered: _isAnswered,
+                                      isAnswered: _isAnswered || _phase1Passed,
                                       selectedIndex: _selectedIndex,
                                       sliderValue: _sliderValue,
                                       topIndex: topIndex,
@@ -338,6 +361,14 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                     ),
 
                                     SizedBox(height: gapBottom),
+                                    if (_phase1Passed)
+                                      AccentSelfEvaluationPanel(
+                                        textToSpeak: quest.textToSpeak ?? "",
+                                        primaryColor: theme.primaryColor,
+                                        isCompact: isCompact,
+                                        onEvaluate: _submitPhase2Evaluation,
+                                      ),
+                                    SizedBox(height: _isAnswered ? 180.h : 0),
                                   ],
                                 ),
                               ],

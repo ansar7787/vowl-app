@@ -18,6 +18,7 @@ import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pi
 import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pitch_pattern_match_melodic_canvas.dart';
 import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pitch_pattern_match_pulse_speaker.dart';
 import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pitch_pattern_match_vertical_fader.dart';
+import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
 
 class PitchPatternMatchScreen extends StatefulWidget {
   final int level;
@@ -45,6 +46,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
   bool _showConfetti = false;
   double _sliderValue = 0.5;
   int? _selectedIndex;
+  bool _phase1Passed = false;
   AccentQuest? _lastQuest;
 
   double _previewProgress = 0.0;
@@ -112,7 +114,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
   }
 
   void _onSliderUpdate(double value, int correct) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
     setState(() => _sliderValue = value);
 
     // Auto-lock when reaching ends:
@@ -125,7 +127,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
   }
 
   void _submitChoice(int index, int correct) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
     setState(() {
       _selectedIndex = index;
       _sliderValue = index == 0 ? 1.0 : 0.0;
@@ -137,11 +139,10 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
+        _phase1Passed = true;
       });
       _scrollToBottom();
-      context.read<AccentBloc>().add(SubmitAnswer(true));
+      // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -149,6 +150,27 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
         _isAnswered = true;
         _isCorrect = false;
       });
+      _scrollToBottom();
+      context.read<AccentBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered) return;
+    
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      _scrollToBottom();
+      context.read<AccentBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
       _scrollToBottom();
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
@@ -174,6 +196,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
               _selectedIndex = null;
               _previewProgress = 0.0;
               _isPreviewing = false;
+              _phase1Passed = false;
             });
             // Proactively auto-play sound on question load
             final quest = state.currentQuest as AccentQuest?;
@@ -271,7 +294,9 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                   children: [
                                     PitchPatternMatchInstruction(
                                       color: theme.primaryColor,
-                                      instruction: context.tr('games.pitch_pattern_match_instruction', fallback: 'Identify the pitch pattern'),
+                                      instruction: _phase1Passed
+                                        ? "Great job! Now record yourself saying the word."
+                                        : context.tr('games.pitch_pattern_match_instruction', fallback: 'Identify the pitch pattern'),
                                     ),
                                     SizedBox(height: gapInstruction),
 
@@ -282,13 +307,13 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                     ),
                                     SizedBox(height: gapPrompt),
 
-                                    if (_isAnswered) ...[
+                                    if (_isAnswered || _phase1Passed) ...[
                                       PitchPatternMatchMelodicCanvas(
                                         pattern: pattern,
                                         color: theme.primaryColor,
                                         isDark: isDark,
                                         isPreviewing: _isPreviewing,
-                                        isAnswered: _isAnswered,
+                                        isAnswered: _isAnswered || _phase1Passed,
                                         previewProgress: _previewProgress,
                                       ),
                                       SizedBox(height: gapSpeaker),
@@ -311,13 +336,21 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                           quest.correctAnswerIndex ?? 0,
                                       color: theme.primaryColor,
                                       isDark: isDark,
-                                      isAnswered: _isAnswered,
+                                      isAnswered: _isAnswered || _phase1Passed,
                                       selectedIndex: _selectedIndex,
                                       sliderValue: _sliderValue,
                                       onSubmitChoice: _submitChoice,
                                       onSliderUpdate: _onSliderUpdate,
                                     ),
-                                    SizedBox(height: gapBottom + (_isAnswered ? 180.h : 0)),
+                                    SizedBox(height: gapBottom),
+                                    if (_phase1Passed)
+                                      AccentSelfEvaluationPanel(
+                                        textToSpeak: quest.textToSpeak ?? "",
+                                        primaryColor: theme.primaryColor,
+                                        isCompact: false, // Fader takes fixed height
+                                        onEvaluate: _submitPhase2Evaluation,
+                                      ),
+                                    SizedBox(height: _isAnswered ? 180.h : 0),
                                   ],
                                 ),
                               ],

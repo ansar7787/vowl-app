@@ -16,6 +16,7 @@ import 'package:vowl/features/accent/pitch_modulation/presentation/widgets/pitch
 import 'package:vowl/features/accent/pitch_modulation/presentation/widgets/pitch_modulation_prompt_card.dart';
 import 'package:vowl/features/accent/pitch_modulation/presentation/widgets/pitch_modulation_pulse_speaker.dart';
 import 'package:vowl/features/accent/pitch_modulation/presentation/widgets/pitch_modulation_dial_control.dart';
+import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
 
 
 class PitchModulationScreen extends StatefulWidget {
@@ -44,6 +45,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
   double _dialRotation = 0.0;
   bool _isDragging = false;
   int? _selectedIndex;
+  bool _phase1Passed = false;
   AccentQuest? _lastQuest;
 
   @override
@@ -72,7 +74,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
   }
 
   void _onDialRotate(DragUpdateDetails details, int correct) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
     setState(() {
       _isDragging = true;
       // UP drag = negative delta.dy. We want UP to increase rotation to +1.0.
@@ -91,7 +93,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
   }
 
   void _onDialRelease() {
-    if (_isAnswered || !_isDragging) return;
+    if (_isAnswered || _phase1Passed || !_isDragging) return;
     setState(() {
       _isDragging = false;
       if (!_isAnswered) {
@@ -101,7 +103,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
   }
 
   void _submitChoice(int index, int correct) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
     setState(() {
       _selectedIndex = index;
       _dialRotation = index == 0 ? -0.8 : 0.8;
@@ -114,11 +116,10 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
+        _phase1Passed = true;
       });
       _scrollToBottom();
-      context.read<AccentBloc>().add(SubmitAnswer(true));
+      // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -126,6 +127,27 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
         _isAnswered = true;
         _isCorrect = false;
       });
+      _scrollToBottom();
+      context.read<AccentBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered) return;
+    
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      _scrollToBottom();
+      context.read<AccentBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
       _scrollToBottom();
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
@@ -150,6 +172,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
               _dialRotation = 0.0;
               _selectedIndex = null;
               _isDragging = false;
+              _phase1Passed = false;
             });
             // Proactively auto-play sound on question load
             final quest = state.currentQuest as AccentQuest?;
@@ -249,7 +272,9 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                     SizedBox(height: gapTop),
                                     PitchModulationInstruction(
                                       color: theme.primaryColor,
-                                      instruction: context.tr('games.pitch_modulation_instruction', fallback: "Listen carefully and choose the pitch pattern you hear."),
+                                      instruction: _phase1Passed
+                                        ? "Great job! Now record yourself saying the word."
+                                        : context.tr('games.pitch_modulation_instruction', fallback: "Listen carefully and choose the pitch pattern you hear."),
                                     ),
                                     SizedBox(height: gapInstruction),
 
@@ -277,7 +302,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                           quest.correctAnswerIndex ?? 0,
                                       color: theme.primaryColor,
                                       isDark: isDark,
-                                      isAnswered: _isAnswered,
+                                      isAnswered: _isAnswered || _phase1Passed,
                                       isDragging: _isDragging,
                                       dialRotation: _dialRotation,
                                       selectedIndex: _selectedIndex,
@@ -286,7 +311,15 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                       onSubmitChoice: _submitChoice,
                                     ),
 
-                                    SizedBox(height: gapBottom + (_isAnswered ? 180.h : 0)),
+                                    SizedBox(height: gapBottom),
+                                    if (_phase1Passed)
+                                      AccentSelfEvaluationPanel(
+                                        textToSpeak: quest.textToSpeak ?? "",
+                                        primaryColor: theme.primaryColor,
+                                        isCompact: false, // Dial takes fixed height, compact check not strongly needed here
+                                        onEvaluate: _submitPhase2Evaluation,
+                                      ),
+                                    SizedBox(height: _isAnswered ? 180.h : 0),
                                   ],
                                 ),
                               ],
