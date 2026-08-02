@@ -4,10 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class SituationalResponseInstruction extends StatelessWidget {
   final Color primaryColor;
   final String? instruction;
+  final bool isDark;
 
   const SituationalResponseInstruction({
     super.key,
     required this.primaryColor,
+    required this.isDark,
     this.instruction,
   });
 
@@ -41,7 +43,7 @@ class SituationalResponseInstruction extends StatelessWidget {
             fontFamily: 'Outfit',
             fontSize: 16.sp,
             fontWeight: FontWeight.w500,
-            color: Colors.grey.shade400,
+            color: isDark ? Colors.grey.shade400 : Colors.black54,
           ),
         ),
       ],

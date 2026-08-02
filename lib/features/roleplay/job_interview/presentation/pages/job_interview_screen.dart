@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -13,6 +13,7 @@ import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_interview_instruction.dart';
+import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_interview_explanation_panel.dart';
 import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_interview_telemetry_dashboard.dart';
 import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_interview_interviewer_panel.dart';
 import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_interview_response_console.dart';
@@ -42,6 +43,10 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+
+  // Shuffled state
+  List<String> _shuffledOptions = [];
+  int _shuffledCorrectIndex = -1;
 
   // Track professionalism thermometer score (default start at 0.5)
   double _mercuryLevel = 0.5;
@@ -117,6 +122,14 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
+              
+              if (state.currentQuest.options != null) {
+                final options = List<String>.from(state.currentQuest.options!);
+                final correctOption = options[state.currentQuest.correctAnswerIndex ?? 0];
+                options.shuffle();
+                _shuffledOptions = options;
+                _shuffledCorrectIndex = options.indexOf(correctOption);
+              }
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -136,7 +149,6 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
       },
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
-        final options = quest?.options ?? [];
 
         return RoleplayBaseLayout(
           gameType: widget.gameType,
@@ -162,6 +174,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                           JobInterviewInstruction(
                             primaryColor: theme.primaryColor,
                             instruction: quest.instruction,
+                            isDark: isDark,
                           ),
                           SizedBox(height: isCompact ? 10.h : 16.h),
 
@@ -184,8 +197,8 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
 
                           // Option response cards
                           JobInterviewResponseConsole(
-                            options: options,
-                            correctIndex: quest.correctAnswerIndex ?? 0,
+                            options: _shuffledOptions,
+                            correctIndex: _shuffledCorrectIndex,
                             color: theme.primaryColor,
                             isDark: isDark,
                             selectedIndex: _selectedIndex,
@@ -196,6 +209,19 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                           SizedBox(height: isCompact ? 12.h : 20.h),
 
                           // Post-answer review cards
+                          AnimatedCrossFade(
+                            firstChild: const SizedBox(),
+                            secondChild: JobInterviewExplanationPanel(
+                              quest: quest,
+                              isDark: isDark,
+                              isCorrect: _isCorrect,
+                              primaryColor: theme.primaryColor,
+                            ),
+                            crossFadeState: _isAnswered
+                                ? CrossFadeState.showSecond
+                                : CrossFadeState.showFirst,
+                            duration: const Duration(milliseconds: 450),
+                          ),
                           SizedBox(height: isCompact ? 40.h : 80.h),
                         ],
                       ),

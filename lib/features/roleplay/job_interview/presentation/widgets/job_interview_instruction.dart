@@ -4,10 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class JobInterviewInstruction extends StatelessWidget {
   final Color primaryColor;
   final String? instruction;
+  final bool isDark;
 
   const JobInterviewInstruction({
     super.key,
     required this.primaryColor,
+    required this.isDark,
     this.instruction,
   });
 
@@ -42,7 +44,7 @@ class JobInterviewInstruction extends StatelessWidget {
             fontFamily: 'Outfit',
             fontSize: 14.sp,
             fontWeight: FontWeight.w500,
-            color: Colors.grey.shade400,
+            color: isDark ? Colors.grey.shade400 : Colors.black54,
           ),
         ),
       ],

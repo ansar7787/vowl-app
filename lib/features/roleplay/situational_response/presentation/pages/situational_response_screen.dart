@@ -1,4 +1,4 @@
-﻿import 'dart:async';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -45,6 +45,10 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
   bool? _isCorrect;
   bool _showConfetti = false;
   int? _selectedOrbIndex;
+
+  // Shuffled state
+  List<String> _shuffledOptions = [];
+  int _shuffledCorrectIndex = -1;
 
   // Real-time ticking sound throttling
   int _lastTickSecond = -1;
@@ -165,6 +169,14 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
               _isAnswered = false;
               _isCorrect = null;
               _selectedOrbIndex = null;
+              
+              if (state.currentQuest.options != null) {
+                final options = List<String>.from(state.currentQuest.options!);
+                final correctOption = options[state.currentQuest.correctAnswerIndex ?? 0];
+                options.shuffle();
+                _shuffledOptions = options;
+                _shuffledCorrectIndex = options.indexOf(correctOption);
+              }
             });
             _startTimer();
             // Auto play dialogue context
@@ -193,7 +205,6 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
       },
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
-        final options = quest?.options ?? [];
 
         return RoleplayBaseLayout(
           gameType: widget.gameType,
@@ -219,6 +230,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                           SituationalResponseInstruction(
                             primaryColor: theme.primaryColor,
                             instruction: quest.instruction,
+                            isDark: isDark,
                           ),
                           SizedBox(height: isCompact ? 10.h : 16.h),
                           SituationalResponseSceneDisplay(
@@ -229,8 +241,8 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                           ),
                           SizedBox(height: isCompact ? 16.h : 24.h),
                           SituationalResponseReactionZone(
-                            options: options,
-                            correctIndex: quest.correctAnswerIndex ?? 0,
+                            options: _shuffledOptions,
+                            correctIndex: _shuffledCorrectIndex,
                             color: theme.primaryColor,
                             isDark: isDark,
                             timerValue: _timerController.value,
