@@ -16,10 +16,9 @@ import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_
 // Removed unused MinimalPairsPromptCard import
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_speaker_core.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_drone_option.dart';
+import 'package:vowl/core/utils/audio_recording_service.dart';
 import 'package:vowl/features/elite_mastery/accent_shadowing/presentation/widgets/accent_shadowing_mic_trigger.dart';
-import 'package:speech_to_text/speech_to_text.dart';
-import 'package:vowl/core/utils/speech_service.dart';
-import 'package:vowl/core/utils/text_similarity_helper.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/features/accent/presentation/constants/accent_game_constants.dart';
 
 class MinimalPairsScreen extends StatefulWidget {
@@ -47,9 +46,13 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
   bool _showConfetti = false;
   int? _selectedDroneIndex;
   
-  final _speechService = di.sl<SpeechService>();
-  bool _isListening = false;
-  String _lastWords = "";
+  final _audioRecorder = di.sl<AudioRecordingService>();
+
+  bool _phase1Passed = false;
+  bool _isRecording = false;
+  bool _hasRecorded = false;
+  bool _isPlaying = false;
+  String? _recordingPath;
 
   String? _shuffledQuestId;
   List<Map<String, String>> _currentOptions = [];
@@ -86,93 +89,85 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
 
   @override
   void dispose() {
-    if (_isListening) {
-      _speechService.stop();
+    if (_isRecording) {
+      _audioRecorder.stopRecording();
     }
     super.dispose();
   }
 
-  Future<void> _toggleListening() async {
-    if (_isAnswered) return;
-    if (_isListening) {
-      setState(() {
-        _isListening = false;
-      });
-      await _speechService.stop();
-    } else {
-      final available = await _speechService.initializeStt();
-      if (available) {
+  Future<void> _startRecording() async {
+    if (_isAnswered || _isPlaying) return;
+    
+    final hasPermission = await _audioRecorder.hasPermission();
+    if (hasPermission) {
+      _hapticService.selection();
+      final started = await _audioRecorder.startRecording();
+      if (started && mounted) {
         setState(() {
-          _isListening = true;
-          _lastWords = "";
+          _isRecording = true;
+          _hasRecorded = false;
+          _recordingPath = null;
         });
-        _speechService.listen(
-          pauseFor: const Duration(milliseconds: 1500), // Snappy 1.5s stop
-          listenMode: ListenMode.confirmation, // Better for short commands
-          onResult: (candidates, isFinal) {
-            if (candidates.isEmpty) return;
-            final text = candidates.first;
-            if (mounted) {
-              setState(() {
-                _lastWords = text;
-              });
-              
-              int bestIndex = -1;
-              double bestScore = 0.0;
-              
-              // Evaluate ALL candidates to find the best match
-              for (String candidate in candidates) {
-                final String lowerCand = candidate.toLowerCase().trim();
-                final List<String> candWords = lowerCand.split(RegExp(r'\s+'));
-                
-                for (int i = 0; i < _currentOptions.length; i++) {
-                  final String optWord = _currentOptions[i]['word']!.toLowerCase().trim();
-                  
-                  if (lowerCand == optWord || candWords.contains(optWord)) {
-                    bestIndex = i;
-                    bestScore = 1.0;
-                    break;
-                  }
-                  
-                  final double score = TextSimilarityHelper.levenshteinSimilarity(lowerCand, optWord);
-                  if (score > bestScore) {
-                    bestScore = score;
-                    bestIndex = i;
-                  }
-                }
-                if (bestScore == 1.0) break;
-              }
-              
-              // Progression Guarantee Logic:
-              if (bestScore == 1.0) {
-                // Perfect match: Instant shoot
-                _speechService.stop();
-                setState(() => _isListening = false);
-                _onShoot(bestIndex, _currentCorrectIndex);
-              } else if (isFinal) {
-                // User stopped speaking. Game MUST progress.
-                _speechService.stop();
-                setState(() => _isListening = false);
-                
-                int finalIndex = bestIndex;
-                // If they mumbled completely random gibberish (score < 0.3), force a wrong answer.
-                if (finalIndex == -1 || bestScore < 0.3) {
-                  finalIndex = _currentCorrectIndex == 0 ? 1 : 0;
-                }
-                _onShoot(finalIndex, _currentCorrectIndex);
-              }
-            }
-          },
-          onDone: () {
-            if (mounted && _isListening) {
-              setState(() {
-                _isListening = false;
-              });
-            }
-          },
-        );
-        _hapticService.selection();
       }
+    }
+  }
+
+  Future<void> _stopRecording() async {
+    if (!_isRecording) return;
+    
+    _hapticService.selection();
+    final path = await _audioRecorder.stopRecording();
+    
+    if (mounted) {
+      setState(() {
+        _isRecording = false;
+        if (path != null) {
+          _recordingPath = path;
+          _hasRecorded = true;
+        }
+      });
+      if (_hasRecorded) {
+        _playComparison();
+      }
+    }
+  }
+
+  Future<void> _playComparison() async {
+    if (_isPlaying || _recordingPath == null || _lastQuest?.textToSpeak == null) return;
+    
+    setState(() => _isPlaying = true);
+    
+    // Play Native
+    await _soundService.playTts(_lastQuest!.textToSpeak!);
+    await Future.delayed(const Duration(milliseconds: 1200));
+    
+    // Play User
+    if (mounted) {
+      await _soundService.playFile(_recordingPath!);
+      await Future.delayed(const Duration(milliseconds: 1200));
+    }
+    
+    if (mounted) {
+      setState(() => _isPlaying = false);
+    }
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered) return;
+    
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      context.read<AccentBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      context.read<AccentBloc>().add(SubmitAnswer(false));
     }
   }
 
@@ -182,15 +177,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
   }
 
   void _onShoot(int index, int correctIndex) {
-    if (_isAnswered) return;
-
-    // GUARANTEE: Instantly kill the mic to prevent double-triggers from late STT callbacks!
-    if (_isListening) {
-      _speechService.stop();
-      setState(() {
-        _isListening = false;
-      });
-    }
+    if (_isAnswered || _phase1Passed) return;
 
     final bool correct = index == correctIndex;
     setState(() {
@@ -201,10 +188,9 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
+        _phase1Passed = true;
       });
-      context.read<AccentBloc>().add(SubmitAnswer(true));
+      // Do NOT submit yet! Wait for Phase 2.
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -234,8 +220,11 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedDroneIndex = null;
-              _isListening = false;
-              _lastWords = "";
+              _phase1Passed = false;
+              _isRecording = false;
+              _hasRecorded = false;
+              _isPlaying = false;
+              _recordingPath = null;
             });
             // Proactively auto-play phonetic sound on question load
             final quest = state.currentQuest as AccentQuest?;
@@ -330,7 +319,9 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                     SizedBox(height: gapTop),
                                     MinimalPairsInstruction(
                                       color: theme.primaryColor,
-                                      instruction: context.tr('games.minimal_pairs_instruction', fallback: quest.instruction),
+                                      instruction: _phase1Passed 
+                                        ? "Great job! Now record yourself saying the word to evaluate your accent."
+                                        : context.tr('games.minimal_pairs_instruction', fallback: quest.instruction),
                                     ),
                                   ],
                                 ),
@@ -416,32 +407,8 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                           ),
                                           
                                     SizedBox(height: isCompact ? 16.h : 24.h),
-                                    if (_lastWords.isNotEmpty)
-                                      Container(
-                                        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
-                                        decoration: BoxDecoration(
-                                          color: theme.primaryColor.withValues(alpha: 0.1),
-                                          borderRadius: BorderRadius.circular(15.r),
-                                        ),
-                                        child: Text(
-                                          _lastWords,
-                                          style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 16.sp,
-                                            fontWeight: FontWeight.w600,
-                                            color: theme.primaryColor,
-                                          ),
-                                        ),
-                                      ).animate().fadeIn(),
-                                    SizedBox(height: isCompact ? 16.h : 24.h),
-                                    AccentShadowingMicTrigger(
-                                      isListening: _isListening,
-                                      onTap: _toggleListening,
-                                      primaryColor: theme.primaryColor,
-                                      attempts: 0,
-                                      isAnswered: _isAnswered,
-                                    ),
-
+                                    if (_phase1Passed)
+                                      _buildPhase2Panel(theme.primaryColor, isCompact),
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),
@@ -455,6 +422,146 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
           ),
         );
       },
+    );
+  }
+  Widget _buildPhase2Panel(Color primaryColor, bool isCompact) {
+    if (!_hasRecorded) {
+      return Column(
+        children: [
+          GestureDetector(
+            onTapDown: (_) => _startRecording(),
+            onTapUp: (_) => _stopRecording(),
+            onTapCancel: () => _stopRecording(),
+            child: Container(
+              width: 80.r,
+              height: 80.r,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: _isRecording ? Colors.red : primaryColor,
+                boxShadow: [
+                  BoxShadow(
+                    color: (_isRecording ? Colors.red : primaryColor).withValues(alpha: 0.4),
+                    blurRadius: 20,
+                    spreadRadius: _isRecording ? 8 : 0,
+                  ),
+                ],
+              ),
+              child: Icon(
+                _isRecording ? Icons.stop_rounded : Icons.mic_rounded,
+                color: Colors.white,
+                size: 40.r,
+              ),
+            ).animate(target: _isRecording ? 1 : 0).scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1)),
+          ),
+          SizedBox(height: 10.h),
+          Text(
+            _isRecording ? "Listening... Release to stop" : "Hold to Record",
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w600,
+              color: _isRecording ? Colors.red : Colors.grey[600],
+            ),
+          ).animate(target: _isRecording ? 1 : 0).fade(),
+        ],
+      ).animate().slideY(begin: 0.2).fadeIn();
+    }
+
+    if (_isPlaying) {
+      return Column(
+        children: [
+          const CircularProgressIndicator(),
+          SizedBox(height: 10.h),
+          Text(
+            "Playing comparison...",
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w600,
+              color: primaryColor,
+            ),
+          ),
+        ],
+      ).animate().fadeIn();
+    }
+
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            _buildEvalButton(
+              title: "Needs Work",
+              icon: LucideIcons.x,
+              color: Colors.red,
+              onTap: () => _submitPhase2Evaluation(false),
+            ),
+            GestureDetector(
+              onTap: _playComparison,
+              child: Container(
+                padding: EdgeInsets.all(12.r),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: primaryColor.withValues(alpha: 0.1),
+                ),
+                child: Icon(LucideIcons.play, color: primaryColor, size: 24.sp),
+              ),
+            ),
+            _buildEvalButton(
+              title: "Nailed It",
+              icon: LucideIcons.check,
+              color: Colors.green,
+              onTap: () => _submitPhase2Evaluation(true),
+            ),
+          ],
+        ),
+        if (!isCompact) ...[
+          SizedBox(height: 10.h),
+          Text(
+            "Be honest! Did you match the native speaker?",
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w500,
+              color: Colors.grey[600],
+            ),
+          ),
+        ],
+      ],
+    ).animate().fadeIn().slideY(begin: 0.2);
+  }
+
+  Widget _buildEvalButton({
+    required String title,
+    required IconData icon,
+    required Color color,
+    required VoidCallback onTap,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(color: color.withValues(alpha: 0.5), width: 2),
+        ),
+        child: Column(
+          children: [
+            Icon(icon, color: color, size: 24.sp),
+            SizedBox(height: 4.h),
+            Text(
+              title,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w700,
+                color: color,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
