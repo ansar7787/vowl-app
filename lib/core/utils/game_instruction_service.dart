@@ -246,14 +246,16 @@ class GameInstructionService {
     GameSubtype.minimalPairs: GameBriefing(
       title: "Minimal Pairs",
       icon: Icons.hearing_rounded,
-      objective: "Listen to the word and select the correct matching sound. Mastering minimal pairs helps you distinguish subtle vowel length and tension differences, ensuring your spoken English is clear and easily understood.",
+      objective:
+          "Listen to the word and select the correct matching sound. Mastering minimal pairs helps you distinguish subtle vowel length and tension differences, ensuring your spoken English is clear and easily understood.",
       rules: [
         "Listen to the target word",
         "Notice vowel length and tension",
         "Select the exact phonetic match",
       ],
       actionText: "Identify Sound",
-      tip: "PRO TIP: Pay attention to whether the vowel feels quick and relaxed, or long and stretched!",
+      tip:
+          "PRO TIP: Pay attention to whether the vowel feels quick and relaxed, or long and stretched!",
     ),
     GameSubtype.consonantClarity: GameBriefing(
       title: "Consonant Clarity",
@@ -749,7 +751,8 @@ class GameInstructionService {
     GameSubtype.shortAnswerWriting: GameBriefing(
       title: "Briefing Pro",
       icon: Icons.short_text_rounded,
-      objective: "Write a brief, concise, and direct response to the prompt. Mastering clear short-form writing ensures you can communicate ideas effectively and professionally in real-world scenarios.",
+      objective:
+          "Write a brief, concise, and direct response to the prompt. Mastering clear short-form writing ensures you can communicate ideas effectively and professionally in real-world scenarios.",
       rules: ["Be direct", "Stay on topic", "Mind your grammar"],
       actionText: "Submit Answer",
       tip: "PRO TIP: Get straight to the point! Keep it short and accurate.",
@@ -759,11 +762,7 @@ class GameInstructionService {
       icon: Icons.rate_review_rounded,
       objective:
           "Analyze the statements and categorize them as supporting or opposing the given opinion. Mastering this logical classification improves your ability to structure persuasive arguments in real-world communication.",
-      rules: [
-        "Read the prompt",
-        "Weigh the arguments",
-        "Balance the scale",
-      ],
+      rules: ["Read the prompt", "Weigh the arguments", "Balance the scale"],
       actionText: "Balance Scale",
       tip:
           "PRO TIP: A 'Pro' always supports the prompt's opinion, while a 'Con' highlights a drawback or opposing view.",
@@ -799,7 +798,8 @@ class GameInstructionService {
     GameSubtype.writingEmail: GameBriefing(
       title: "Email Expert",
       icon: Icons.alternate_email_rounded,
-      objective: "Compose a professional and contextually appropriate email by arranging its key parts. Mastering email structure ensures your writing is clear, polite, and effective for real-world communication.",
+      objective:
+          "Compose a professional and contextually appropriate email by arranging its key parts. Mastering email structure ensures your writing is clear, polite, and effective for real-world communication.",
       rules: [
         "Use right greeting",
         "State clear purpose",
@@ -1191,8 +1191,8 @@ class GameInstructionService {
       tip:
           "Nuance is key! Choose the word that logically belongs in the sentence.",
     ),
-    // 7. Accent
 
+    // 7. Accent
     GameSubtype.intonationMimic: GameBriefing(
       title: "Intonation Mimic",
       icon: Icons.waves_rounded,
@@ -1251,27 +1251,25 @@ class GameInstructionService {
           "PRO TIP: Vowels are a spectrum! Slide carefully until you find the exact sound.",
     ),
 
-
     GameSubtype.speedVariance: GameBriefing(
-      title: "Speaking Speed",
+      title: "Speed Variance",
       icon: Icons.speed_rounded,
       objective:
-          "Listen to the phrase and identify if it was spoken at a fast, medium, or slow tempo.",
-      rules: ["Listen to the speed", "Check the options", "Select the tempo"],
-      actionText: "Select Speed",
-      tip:
-          "PRO TIP: Even when people speak fast, the words still link together smoothly.",
+          "Listen carefully and identify the speaking speed of the phrase. Mastering speed variance helps you understand native speakers across different real-world tempos and contexts.",
+      rules: [
+        "Listen to the phrase",
+        "Analyze the tempo",
+        "Select the correct speed",
+      ],
+      actionText: "Identify Speed",
+      tip: "PRO TIP: Pay attention to whether the speaker is rushing or speaking carefully to emphasize a point!",
     ),
     GameSubtype.dialectDrill: GameBriefing(
       title: "Dialect Drill",
       icon: Icons.public_rounded,
       objective:
           "Identify and distinguish regional pronunciations to master global communication.",
-      rules: [
-        "Listen closely",
-        "Compare pronunciations",
-        "Select region",
-      ],
+      rules: ["Listen closely", "Compare pronunciations", "Select region"],
       actionText: "Start Drill",
       tip:
           "PRO TIP: Pay attention to vowel shapes! American English often flattens vowels, while British English rounds them.",
@@ -1418,16 +1416,13 @@ class GameInstructionService {
       tip:
           "PRO TIP: Look for transition words like 'However' or 'Therefore' to link sentences!",
     ),
+
     GameSubtype.accentShadowing: GameBriefing(
       title: "Accent Shadowing",
       icon: Icons.record_voice_over_rounded,
       objective:
           "Listen carefully to the native speaker and repeat the sentence, matching their exact pronunciation, stress, and rhythm.",
-      rules: [
-        "Listen to the example",
-        "Record your voice",
-        "Match the accent",
-      ],
+      rules: ["Listen to the example", "Record your voice", "Match the accent"],
       actionText: "Start Shadowing",
       tip:
           "PRO TIP: Pay close attention to which syllables are stressed—it makes a huge difference!",

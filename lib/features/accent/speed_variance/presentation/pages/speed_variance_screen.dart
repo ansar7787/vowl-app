@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -16,7 +16,6 @@ import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_v
 import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_variance_prompt_card.dart';
 import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_variance_pulse_speaker.dart';
 import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_variance_tempo_dial.dart';
-
 
 class SpeedVarianceScreen extends StatefulWidget {
   final int level;
@@ -53,6 +52,12 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
     );
   }
 
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
   void _scrollToBottom() {
     Future.delayed(const Duration(milliseconds: 100), () {
       if (_scrollController.hasClients) {
@@ -65,26 +70,36 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
     });
   }
 
-  void _playTts(String text) {
+  void _playTts(String text, {double? speed}) {
     _hapticService.selection();
-    _soundService.playTts(text);
+    _soundService.playTts(text, speed: speed ?? 0.4);
   }
 
   void _onDialRotate(DragUpdateDetails details, int correct) {
     if (_isAnswered) return;
+
+    final double dx = details.delta.dx;
+    final double dy = details.delta.dy;
+    final double x = details.localPosition.dx;
+    final double y = details.localPosition.dy;
+
+    final bool isTopHalf = y < 50.r;
+    final bool isLeftHalf = x < 50.r;
+
+    final double hRot = isTopHalf ? dx : -dx;
+    final double vRot = isLeftHalf ? -dy : dy;
+    final double totalRot = (hRot + vRot) / 30.0;
+
     setState(() {
       _isDragging = true;
-      _dialRotation = (_dialRotation + details.delta.dx / 100.0).clamp(
-        -1.0,
-        1.0,
-      );
+      _dialRotation = (_dialRotation + totalRot).clamp(-1.0, 1.0);
     });
     _hapticService.selection();
 
     // Auto-lock when reaching ends
-    if (_dialRotation < -0.6) {
+    if (_dialRotation < -0.8) {
       _submitChoice(0, correct);
-    } else if (_dialRotation > 0.6) {
+    } else if (_dialRotation > 0.8) {
       _submitChoice(1, correct);
     }
   }
@@ -117,7 +132,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
         _isCorrect = true;
       });
       _scrollToBottom();
-      context.read<AccentBloc>().add(SubmitAnswer(true));
+      context.read<AccentBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -126,7 +141,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
         _isCorrect = false;
       });
       _scrollToBottom();
-      context.read<AccentBloc>().add(SubmitAnswer(false));
+      context.read<AccentBloc>().add(const SubmitAnswer(false));
     }
   }
 
@@ -138,9 +153,11 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
     return BlocConsumer<AccentBloc, AccentState>(
       listener: (context, state) {
         if (state is AccentLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          final currentLives = state.livesRemaining;
+          final livesRestored =
+              _lastLives != null && currentLives > _lastLives!;
           if (state.currentIndex != _lastProcessedIndex ||
-              livesChanged ||
+              livesRestored ||
               (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
@@ -155,7 +172,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
             if (quest != null && quest.textToSpeak != null) {
               Future.delayed(500.milliseconds, () {
                 if (mounted) {
-                  _soundService.playTts(quest.textToSpeak!);
+                  _playTts(quest.textToSpeak!, speed: quest.targetSpeed);
                 }
               });
             }
@@ -174,10 +191,11 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
         }
       },
       builder: (context, state) {
-        final AccentQuest? quest = (state is AccentLoaded)
-            ? state.currentQuest as AccentQuest?
-            : null;
-        final options = quest?.options ?? ["A", "B"];
+        if (state is! AccentLoaded) return const SizedBox();
+        final quest = state.currentQuest;
+        final options = quest.options ?? [];
+        if (options.length < 2) return const SizedBox();
+
         final mediaQuery = MediaQuery.of(context);
 
         return MediaQuery(
@@ -190,109 +208,105 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
             isAnswered: _isAnswered,
             isCorrect: _isCorrect,
             showConfetti: _showConfetti,
-            onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
-            onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
-            child: quest == null
-                ? const SizedBox()
-                : LayoutBuilder(
-                    builder: (context, constraints) {
-                      final maxHeight = constraints.maxHeight;
-                      final double estimatedContentHeight =
-                          24.h +
-                          90.h +
-                          80.h +
-                          140.h +
-                          (_isAnswered ? 180.h : 0);
-                      final remainingHeight =
-                          maxHeight - estimatedContentHeight;
+            onContinue: () =>
+                context.read<AccentBloc>().add(const NextQuestion()),
+            onHint: () =>
+                context.read<AccentBloc>().add(const AccentHintUsed()),
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                final maxHeight = constraints.maxHeight;
+                final double estimatedContentHeight =
+                    24.h + 90.h + 80.h + 140.h + (_isAnswered ? 180.h : 0);
+                final remainingHeight = maxHeight - estimatedContentHeight;
 
-                      final double gapUnit = remainingHeight > 0
-                          ? remainingHeight / 8
-                          : 0;
-                      final double gapTop = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(8.0, 24.0)
-                          : 8.0;
-                      final double gapInstruction = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(8.0, 24.0)
-                          : 8.0;
-                      final double gapPrompt = remainingHeight > 0
-                          ? (gapUnit * 1.5).clamp(12.0, 32.0)
-                          : 12.0;
-                      final double gapSpeaker = remainingHeight > 0
-                          ? (gapUnit * 2).clamp(16.0, 48.0)
-                          : 16.0;
-                      
-                      final double gapBottom = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(12.0, 40.0)
-                          : 12.0;
+                final double gapUnit = remainingHeight > 0
+                    ? remainingHeight / 8
+                    : 0;
+                final double gapTop = remainingHeight > 0
+                    ? (gapUnit * 1).clamp(8.0, 24.0)
+                    : 8.0;
+                final double gapInstruction = remainingHeight > 0
+                    ? (gapUnit * 1).clamp(8.0, 24.0)
+                    : 8.0;
+                final double gapPrompt = remainingHeight > 0
+                    ? (gapUnit * 1.5).clamp(12.0, 32.0)
+                    : 12.0;
+                final double gapSpeaker = remainingHeight > 0
+                    ? (gapUnit * 2).clamp(16.0, 48.0)
+                    : 16.0;
 
-                      return SingleChildScrollView(
-                        controller: _scrollController,
-                        physics: const BouncingScrollPhysics(),
-                        child: ConstrainedBox(
-                          constraints: BoxConstraints(minHeight: maxHeight),
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapTop),
-                                    SpeedVarianceInstruction(
-                                      color: theme.primaryColor,
-                                      instruction: context.tr('games.speed_variance_instruction', fallback: quest.instruction),
-                                    ),
-                                    SizedBox(height: gapInstruction),
-                                    SpeedVariancePromptCard(
-                                      word: quest.word ?? "",
-                                      color: theme.primaryColor,
-                                      isDark: isDark,
-                                    ),
-                                    SizedBox(height: gapPrompt),
-                                    SpeedVariancePulseSpeaker(
-                                      text: quest.textToSpeak ?? "",
-                                      color: theme.primaryColor,
-                                      onPlayTts: _playTts,
-                                    ),
-                                  ],
+                final double gapBottom = remainingHeight > 0
+                    ? (gapUnit * 1).clamp(12.0, 40.0)
+                    : 12.0;
+
+                return SingleChildScrollView(
+                  controller: _scrollController,
+                  physics: const BouncingScrollPhysics(),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(minHeight: maxHeight),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              SizedBox(height: gapTop),
+                              SpeedVarianceInstruction(
+                                color: theme.primaryColor,
+                                instruction: context.tr(
+                                  'games.speed_variance_instruction',
+                                  fallback: quest.instruction,
                                 ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapSpeaker),
-                                    SpeedVarianceTempoDial(
-                                      options: options,
-                                      correctIndex:
-                                          quest.correctAnswerIndex ?? 0,
-                                      color: theme.primaryColor,
-                                      isDark: isDark,
-                                      isAnswered: _isAnswered,
-                                      isDragging: _isDragging,
-                                      dialRotation: _dialRotation,
-                                      selectedIndex: _selectedIndex,
-                                      onDialRotate: _onDialRotate,
-                                      onDialRelease: _onDialRelease,
-                                      onSubmitChoice: _submitChoice,
-                                    ),
-                                    SizedBox(height: gapBottom + (_isAnswered ? 180.h : 0)),
-                                  ],
-                                ),
-                              ],
-                            ),
+                              ),
+                              SizedBox(height: gapInstruction),
+                              SpeedVariancePromptCard(
+                                word: quest.word ?? "",
+                                color: theme.primaryColor,
+                                isDark: isDark,
+                              ),
+                              SizedBox(height: gapPrompt),
+                              SpeedVariancePulseSpeaker(
+                                text: quest.textToSpeak ?? "",
+                                color: theme.primaryColor,
+                                onPlayTts: (text) =>
+                                    _playTts(text, speed: quest.targetSpeed),
+                              ),
+                            ],
                           ),
-                        ),
-                      );
-                    },
+                          Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              SizedBox(height: gapSpeaker),
+                              SpeedVarianceTempoDial(
+                                options: options,
+                                correctIndex: quest.correctAnswerIndex ?? 0,
+                                color: theme.primaryColor,
+                                isDark: isDark,
+                                isAnswered: _isAnswered,
+                                isDragging: _isDragging,
+                                dialRotation: _dialRotation,
+                                selectedIndex: _selectedIndex,
+                                onDialRotate: _onDialRotate,
+                                onDialRelease: _onDialRelease,
+                                onSubmitChoice: _submitChoice,
+                              ),
+                              SizedBox(
+                                height: gapBottom + (_isAnswered ? 180.h : 0),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
+                );
+              },
+            ),
           ),
         );
       },
     );
   }
 }
-
-
-
-

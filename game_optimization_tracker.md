@@ -97,7 +97,7 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [x] ✅ Vowel Distinction (`vowelDistinction`)
 - [x] ✅ Consonant Clarity (`consonantClarity`)
 - [x] ✅ Pitch Pattern Match (`pitchPatternMatch`)
-- [ ] Speed Variance (`speedVariance`)
+- [x] ✅ Speed Variance (`speedVariance`)
 - [x] ✅ Dialect Drill (`dialectDrill`)
 - [x] ✅ Connected Speech (`connectedSpeech`)
 - [x] ✅ Pitch Modulation (`pitchModulation`)

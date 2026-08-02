@@ -21,17 +21,16 @@ class SpeedVarianceInstruction extends StatelessWidget {
         border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisSize: MainAxisSize.max,
         children: [
           Icon(Icons.speed_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
-          Flexible(
+          Expanded(
             child: Text(
               instruction.trim().isEmpty
                   ? "IDENTIFY THE SPEAKING SPEED"
                   : instruction.toUpperCase(),
               textAlign: TextAlign.center,
-              maxLines: null,
               style: TextStyle(fontSize: 8.sp, letterSpacing: 1.5),
             ),
           ),
