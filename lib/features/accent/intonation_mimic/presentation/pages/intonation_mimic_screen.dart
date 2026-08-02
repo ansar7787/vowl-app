@@ -191,7 +191,10 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
         final AccentQuest? quest = (state is AccentLoaded)
             ? state.currentQuest
             : _lastQuest;
-        final options = quest?.options ?? ["A", "B"];
+        final List<String> options = List.from(quest?.options ?? ["A", "B"]);
+        while (options.length < 2) {
+          options.add("Unknown Option");
+        }
         final contour = quest?.intonationMap ?? [1, 2, 1, 0];
         final mediaQuery = MediaQuery.of(context);
         
