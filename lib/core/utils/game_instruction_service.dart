@@ -269,6 +269,20 @@ class GameInstructionService {
       tip:
           "PRO TIP: Pay attention to whether your vocal cords vibrate (voiced) or not (voiceless) when you make the sound!",
     ),
+    GameSubtype.pitchModulation: GameBriefing(
+      title: "Pitch Modulation",
+      icon: Icons.show_chart_rounded,
+      objective:
+          "Listen carefully and identify the correct pitch pattern of the spoken phrase. Mastering pitch modulation helps convey the right emotion, intent, and nuance in real-world conversations.",
+      rules: [
+        "Listen to the phrase",
+        "Analyze the pitch contour",
+        "Select the correct pattern",
+      ],
+      actionText: "Identify Pitch",
+      tip:
+          "PRO TIP: Pay attention to whether the voice rises or falls at the end of the phrase to determine its exact meaning!",
+    ),
 
     // 2. Speaking
     GameSubtype.repeatSentence: GameBriefing(
