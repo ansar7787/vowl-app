@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -16,6 +16,7 @@ import 'package:vowl/features/accent/word_linking/presentation/widgets/word_link
 import 'package:vowl/features/accent/word_linking/presentation/widgets/word_linking_prompt_card.dart';
 import 'package:vowl/features/accent/word_linking/presentation/widgets/word_linking_pulse_speaker.dart';
 import 'package:vowl/features/accent/word_linking/presentation/widgets/word_linking_sentence_field.dart';
+import 'package:vowl/features/accent/presentation/constants/accent_game_constants.dart';
 
 class WordLinkingScreen extends StatefulWidget {
   final int level;
@@ -36,11 +37,12 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
   final _soundService = di.sl<SoundService>();
 
   int _lastProcessedIndex = -1;
-  int? _lastLives;
+  int _lastLives = AccentGameConstants.maxLives;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
   int? _selectedNodeIndex;
+  AccentQuest? _lastQuest;
 
   @override
   void initState() {
@@ -107,7 +109,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
     return BlocConsumer<AccentBloc, AccentState>(
       listener: (context, state) {
         if (state is AccentLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          final livesChanged = (state.livesRemaining > _lastLives);
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
               (state.lastAnswerCorrect == null && _isAnswered)) {
@@ -119,6 +121,9 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
             });
             // Proactively auto-play phonetic sound on question load
             final quest = state.currentQuest as AccentQuest?;
+            if (quest != null) {
+              _lastQuest = quest;
+            }
             if (quest != null && quest.textToSpeak != null) {
               Future.delayed(500.milliseconds, () {
                 if (mounted) {
@@ -143,7 +148,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
       builder: (context, state) {
         final AccentQuest? quest = (state is AccentLoaded)
             ? state.currentQuest as AccentQuest?
-            : null;
+            : _lastQuest;
         final words = quest?.words ?? [];
         final mediaQuery = MediaQuery.of(context);
 

@@ -313,6 +313,20 @@ class GameInstructionService {
       tip:
           "PRO TIP: Try saying the sentence aloud exactly as you hear it. Feeling the sounds connect in your mouth will reveal the answer!",
     ),
+    GameSubtype.wordLinking: GameBriefing(
+      title: "Word Linking",
+      icon: Icons.link_rounded,
+      objective:
+          "Identify the correct word linking pattern. Mastering word linking ensures your spoken English sounds smooth, connected, and natural.",
+      rules: [
+        "Listen to the phrase",
+        "Find where sounds fuse",
+        "Select the linked words",
+      ],
+      actionText: "Identify Link",
+      tip:
+          "PRO TIP: Pay attention to where the final consonant of one word connects directly to the opening vowel of the next!",
+    ),
 
     // 2. Speaking
     GameSubtype.repeatSentence: GameBriefing(

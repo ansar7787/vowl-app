@@ -92,7 +92,7 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [x] ✅ Minimal Pairs (`minimalPairs`)
 - [x] ✅ Intonation Mimic (`intonationMimic`)
 - [✅] Syllable Stress (`syllableStress`)
-- [ ] Word Linking (`wordLinking`)
+- [x] ✅ Word Linking (`wordLinking`)
 - [x] ✅ Shadowing Challenge (`shadowingChallenge`)
 - [x] ✅ Vowel Distinction (`vowelDistinction`)
 - [x] ✅ Consonant Clarity (`consonantClarity`)
