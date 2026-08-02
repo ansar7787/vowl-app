@@ -44,14 +44,17 @@ class SyllableStressPromptCard extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 8.h),
-                Text(
-                  word.toUpperCase(),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 28.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : Colors.black87,
-                    letterSpacing: 4,
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    word.toUpperCase(),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 28.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isDark ? Colors.white : Colors.black87,
+                      letterSpacing: 4,
+                    ),
                   ),
                 ),
               ],

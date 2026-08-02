@@ -88,15 +88,21 @@ class SyllableStressDrumConsole extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                text.toUpperCase(),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.bold,
-                  color: isSelected || (isAnswered && index == correct)
-                      ? contentColor
-                      : (isDark ? Colors.white : Colors.black87),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 4.w),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    text.toUpperCase(),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.bold,
+                      color: isSelected || (isAnswered && index == correct)
+                          ? contentColor
+                          : (isDark ? Colors.white : Colors.black87),
+                    ),
+                  ),
                 ),
               ),
               if (index == correct && isAnswered) ...[
