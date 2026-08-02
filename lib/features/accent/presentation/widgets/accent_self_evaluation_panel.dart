@@ -158,8 +158,30 @@ class _AccentSelfEvaluationPanelState extends State<AccentSelfEvaluationPanel> {
             ),
           ).animate(target: _isRecording ? 1 : 0).fade(),
         ] else if (_isPlaying) ...[
-          const CircularProgressIndicator(),
-          SizedBox(height: 10.h),
+          Container(
+            height: 70.r,
+            width: 70.r,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: widget.primaryColor.withValues(alpha: 0.15),
+            ),
+            child: Center(
+              child: Icon(
+                Icons.graphic_eq_rounded,
+                color: widget.primaryColor,
+                size: 32.sp,
+              ),
+            ),
+          )
+              .animate(onPlay: (controller) => controller.repeat(reverse: true))
+              .scale(
+                begin: const Offset(0.9, 0.9),
+                end: const Offset(1.15, 1.15),
+                duration: 600.ms,
+                curve: Curves.easeInOut,
+              )
+              .fade(begin: 0.6, end: 1.0),
+          SizedBox(height: 12.h),
           Text(
             "Playing comparison...",
             style: TextStyle(
@@ -168,7 +190,7 @@ class _AccentSelfEvaluationPanelState extends State<AccentSelfEvaluationPanel> {
               fontWeight: FontWeight.w600,
               color: widget.primaryColor,
             ),
-          ),
+          ).animate(onPlay: (controller) => controller.repeat(reverse: true)).fade(begin: 0.5, end: 1.0, duration: 800.ms),
         ] else ...[
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -182,12 +204,18 @@ class _AccentSelfEvaluationPanelState extends State<AccentSelfEvaluationPanel> {
               GestureDetector(
                 onTap: _playComparison,
                 child: Container(
-                  padding: EdgeInsets.all(12.r),
+                  height: 60.r,
+                  width: 60.r,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: widget.primaryColor.withValues(alpha: 0.1),
+                    color: widget.primaryColor.withValues(alpha: 0.15),
                   ),
-                  child: Icon(LucideIcons.play, color: widget.primaryColor, size: 24.sp),
+                  child: Center(
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 4.r), // Center the play icon visually
+                      child: Icon(Icons.play_arrow_rounded, color: widget.primaryColor, size: 36.sp),
+                    ),
+                  ),
                 ),
               ),
               _buildEvalButton(
