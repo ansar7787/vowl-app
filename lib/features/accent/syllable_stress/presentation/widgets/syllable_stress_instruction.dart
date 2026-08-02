@@ -22,6 +22,7 @@ class SyllableStressInstruction extends StatelessWidget {
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Icon(Icons.speaker_group_rounded, size: 14.r, color: color),
           SizedBox(width: 12.w),
@@ -41,6 +42,8 @@ class SyllableStressInstruction extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(width: 12.w),
+          Icon(Icons.speaker_group_rounded, size: 14.r, color: Colors.transparent),
         ],
       ),
     );
