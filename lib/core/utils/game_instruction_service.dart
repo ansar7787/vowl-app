@@ -283,6 +283,20 @@ class GameInstructionService {
       tip:
           "PRO TIP: Pay attention to whether the voice rises or falls at the end of the phrase to determine its exact meaning!",
     ),
+    GameSubtype.pitchPatternMatch: GameBriefing(
+      title: "Pitch Pattern Match",
+      icon: Icons.music_note_rounded,
+      objective:
+          "Identify the correct emphasis in the sentence based on the context. Mastering pitch patterns helps you communicate nuance and meaning accurately in spoken English.",
+      rules: [
+        "Listen to the sentence",
+        "Analyze the emphasis",
+        "Identify the correct pattern",
+      ],
+      actionText: "Identify Pattern",
+      tip:
+          "PRO TIP: Pay attention to which word is stressed—it completely changes the sentence's meaning!",
+    ),
 
     // 2. Speaking
     GameSubtype.repeatSentence: GameBriefing(
