@@ -108,8 +108,8 @@ class WordLinkingSentenceField extends StatelessWidget {
       onTap: () => onNodeTap(index, correctPair, words),
       child:
           Container(
-                width: 32.r,
-                height: 32.r,
+                width: 44.r,
+                height: 44.r,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: isSelected || (isAnswered && correct)
@@ -126,7 +126,7 @@ class WordLinkingSentenceField extends StatelessWidget {
                       : [],
                 ),
                 child: Center(
-                  child: Icon(Icons.link_rounded, size: 16.r, color: nodeColor),
+                  child: Icon(Icons.link_rounded, size: 22.r, color: nodeColor),
                 ),
               )
               .animate(onPlay: (c) => c.repeat(reverse: true))

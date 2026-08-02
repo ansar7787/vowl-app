@@ -47,9 +47,9 @@ class WordLinkingPulseSpeaker extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   color: color,
-                  fontSize: 8.sp,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1,
+                  fontSize: 10.sp,
+                  fontWeight: FontWeight.w900,
+                  letterSpacing: 1.5,
                 ),
               ),
             ],

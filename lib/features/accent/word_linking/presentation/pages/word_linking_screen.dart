@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/domain/entities/game_quest.dart';
+
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -10,7 +9,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
 import 'package:vowl/features/accent/presentation/layout/accent_base_layout.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/features/accent/word_linking/presentation/widgets/word_linking_instruction.dart';
 import 'package:vowl/features/accent/word_linking/presentation/widgets/word_linking_pulse_speaker.dart';
