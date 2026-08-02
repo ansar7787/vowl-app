@@ -429,7 +429,10 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                             onSubmitChoice: _submitChoice,
                                             onSliderUpdate: _onSliderUpdate,
                                           ),
-                                    SizedBox(height: gapBottom + (_isAnswered ? 180.h : 0)),
+                                    SizedBox(height: gapBottom),
+                                    if (_phase1Passed)
+                                      _buildPhase2Panel(theme.primaryColor, isCompact),
+                                    SizedBox(height: _isAnswered ? 180.h : 0),
                                   ],
                                 ),
                               ],
@@ -442,6 +445,154 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
           ),
         );
       },
+    );
+  }
+
+  Widget _buildPhase2Panel(Color primaryColor, bool isCompact) {
+    return Column(
+      children: [
+        Divider(color: primaryColor.withValues(alpha: 0.2), thickness: 2),
+        SizedBox(height: 8.h),
+        Text(
+          "PHASE 2: SPEAKING",
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 14.sp,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1.5,
+            color: primaryColor,
+          ),
+        ),
+        SizedBox(height: 16.h),
+        if (!_hasRecorded) ...[
+          GestureDetector(
+            onTap: () {
+              if (_isRecording) {
+                _stopRecording();
+              } else {
+                _startRecording();
+              }
+            },
+            child: Container(
+              width: 80.r,
+              height: 80.r,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: _isRecording ? Colors.red : primaryColor,
+                boxShadow: [
+                  BoxShadow(
+                    color: (_isRecording ? Colors.red : primaryColor).withValues(alpha: 0.4),
+                    blurRadius: 20,
+                    spreadRadius: _isRecording ? 8 : 0,
+                  ),
+                ],
+              ),
+              child: Icon(
+                _isRecording ? Icons.stop_rounded : Icons.mic_rounded,
+                color: Colors.white,
+                size: 40.r,
+              ),
+            ).animate(target: _isRecording ? 1 : 0).scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1)),
+          ),
+          SizedBox(height: 10.h),
+          Text(
+            _isRecording ? "Listening... Tap to stop" : "Tap to Record",
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w600,
+              color: _isRecording ? Colors.red : Colors.grey[600],
+            ),
+          ).animate(target: _isRecording ? 1 : 0).fade(),
+        ] else if (_isPlaying) ...[
+          const CircularProgressIndicator(),
+          SizedBox(height: 10.h),
+          Text(
+            "Playing comparison...",
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w600,
+              color: primaryColor,
+            ),
+          ),
+        ] else ...[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              _buildEvalButton(
+                title: "Needs Work",
+                icon: LucideIcons.x,
+                color: Colors.red,
+                onTap: () => _submitPhase2Evaluation(false),
+              ),
+              GestureDetector(
+                onTap: _playComparison,
+                child: Container(
+                  padding: EdgeInsets.all(12.r),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: primaryColor.withValues(alpha: 0.1),
+                  ),
+                  child: Icon(LucideIcons.play, color: primaryColor, size: 24.sp),
+                ),
+              ),
+              _buildEvalButton(
+                title: "Nailed It",
+                icon: LucideIcons.check,
+                color: Colors.green,
+                onTap: () => _submitPhase2Evaluation(true),
+              ),
+            ],
+          ),
+          if (!isCompact) ...[
+            SizedBox(height: 10.h),
+            Text(
+              "Be honest! Did you match the native speaker?",
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w500,
+                color: Colors.grey[600],
+              ),
+            ),
+          ],
+        ],
+      ],
+    ).animate().slideY(begin: 0.2).fadeIn();
+  }
+
+  Widget _buildEvalButton({
+    required String title,
+    required IconData icon,
+    required Color color,
+    required VoidCallback onTap,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(color: color.withValues(alpha: 0.5), width: 2),
+        ),
+        child: Column(
+          children: [
+            Icon(icon, color: color, size: 24.sp),
+            SizedBox(height: 4.h),
+            Text(
+              title,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w700,
+                color: color,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
