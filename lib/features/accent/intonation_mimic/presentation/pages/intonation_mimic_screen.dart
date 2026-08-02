@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -259,7 +258,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                     SizedBox(height: gapTop),
                                     IntonationMimicInstruction(
                                       color: theme.primaryColor,
-                                      instruction: context.tr('games.intonation_mimic_instruction', fallback: quest.instruction),
+                                      instruction: context.tr('games.intonation_mimic_instruction', fallback: "Identify the intonation"),
                                     ),
                                     SizedBox(height: gapInstruction),
 
