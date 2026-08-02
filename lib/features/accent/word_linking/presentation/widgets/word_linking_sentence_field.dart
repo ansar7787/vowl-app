@@ -150,7 +150,7 @@ class WordLinkingSentenceField extends StatelessWidget {
               )
               .shimmer(
                 duration: 2.seconds,
-                color: isDark ? Colors.white34 : color.withValues(alpha: 0.3),
+                color: isDark ? Colors.white38 : color.withValues(alpha: 0.3),
               )
               .scale(
                 begin: const Offset(1, 1),
