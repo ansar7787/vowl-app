@@ -8,6 +8,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
@@ -64,7 +65,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
     });
   }
 
-  void _submitAnswer(List<String> targetKeywords, bool isAnswered) {
+  Future<void> _submitAnswer(List<String> targetKeywords, bool isAnswered) async {
     if (isAnswered || _answerController.text.trim().isEmpty) return;
 
     final rawText = _answerController.text.trim();
@@ -103,6 +104,20 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
         context: context,
         message: "Keep writing! A valid answer requires at least 10 words.",
         type: CustomSnackBarType.info,
+      );
+      _hapticService.selection();
+      return;
+    }
+
+    // --- ML KIT LANGUAGE ID CHECK ---
+    final languageIdService = di.sl<LanguageIdService>();
+    final String languageCode = await languageIdService.identifyLanguage(rawText);
+    
+    if (languageCode != 'en') {
+      CustomSnackBar.show(
+        context: context,
+        message: "Your answer must be written in English. Please write a natural sentence!",
+        type: CustomSnackBarType.warning,
       );
       _hapticService.selection();
       return;
