@@ -20,6 +20,7 @@ import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/sh
 import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/shadowing_challenge_pulse_speaker.dart';
 import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/shadowing_challenge_dialogue_list.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
 
 class ShadowingChallengeScreen extends StatefulWidget {
   final int level;
@@ -47,6 +48,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
   bool _showConfetti = false;
 
   int? _selectedIndex;
+  bool _phase1Passed = false;
 
   @override
   void initState() {
@@ -80,7 +82,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
   }
 
   void _submitChoice(int index, int correct) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
     setState(() {
       _selectedIndex = index;
     });
@@ -91,11 +93,10 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
+        _phase1Passed = true;
       });
       _scrollToBottom();
-      context.read<AccentBloc>().add(SubmitAnswer(true));
+      // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -103,6 +104,27 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
         _isAnswered = true;
         _isCorrect = false;
       });
+      _scrollToBottom();
+      context.read<AccentBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered) return;
+    
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      _scrollToBottom();
+      context.read<AccentBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
       _scrollToBottom();
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
@@ -124,6 +146,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _phase1Passed = false;
 
               _selectedIndex = null;
             });
@@ -192,7 +215,9 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                               children: [
                                 ShadowingChallengeInstruction(
                                   color: theme.primaryColor,
-                                  instruction: context.tr('games.shadowing_challenge_instruction', fallback: quest.instruction),
+                                  instruction: _phase1Passed
+                                      ? "Great job! Now record yourself saying the phrase."
+                                      : context.tr('games.shadowing_challenge_instruction', fallback: quest.instruction),
                                 ),
                                 SizedBox(height: 16.h),
                                 ShadowingChallengePromptCard(
@@ -213,10 +238,18 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                   correctIndex: correctIndex,
                                   color: theme.primaryColor,
                                   isDark: isDark,
-                                  isAnswered: _isAnswered,
+                                  isAnswered: _isAnswered || _phase1Passed,
                                   selectedIndex: _selectedIndex,
                                   onSubmitChoice: _submitChoice,
                                 ),
+                                SizedBox(height: 24.h),
+                                if (_phase1Passed)
+                                  AccentSelfEvaluationPanel(
+                                    textToSpeak: quest.textToSpeak ?? "",
+                                    primaryColor: theme.primaryColor,
+                                    isCompact: false,
+                                    onEvaluate: _submitPhase2Evaluation,
+                                  ),
                                 SizedBox(height: _isAnswered ? 200.h : 24.h),
                               ],
                             ),

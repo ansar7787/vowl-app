@@ -17,6 +17,7 @@ import 'package:vowl/features/accent/connected_speech/presentation/widgets/conne
 import 'package:vowl/features/accent/connected_speech/presentation/widgets/connected_speech_prompt_card.dart';
 import 'package:vowl/features/accent/connected_speech/presentation/widgets/connected_speech_pulse_speaker.dart';
 import 'package:vowl/features/accent/connected_speech/presentation/widgets/connected_speech_linker_cards.dart';
+import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
 
 class ConnectedSpeechScreen extends StatefulWidget {
   final int level;
@@ -46,6 +47,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
   int _shuffledCorrectIndex = 0;
 
   int? _selectedIndex;
+  bool _phase1Passed = false;
   Timer? _resetTimer;
 
   @override
@@ -68,7 +70,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
   }
 
   void _submitChoice(int index, int correct) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
     setState(() {
       _selectedIndex = index;
     });
@@ -79,10 +81,9 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
+        _phase1Passed = true;
       });
-      context.read<AccentBloc>().add(SubmitAnswer(true));
+      // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -90,6 +91,25 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
         _isAnswered = true;
         _isCorrect = false;
       });
+      context.read<AccentBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered) return;
+    
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      context.read<AccentBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
   }
@@ -130,6 +150,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
               _isCorrect = null;
 
               _selectedIndex = null;
+              _phase1Passed = false;
             });
             // Proactively auto-play sound on question load
             if (quest.textToSpeak != null) {
@@ -226,11 +247,13 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                     SizedBox(height: gapTop),
                                     ConnectedSpeechInstruction(
                                       primaryColor: theme.primaryColor,
-                                      instruction: context.tr(
-                                        'games.connected_speech_instruction',
-                                        fallback:
-                                            "SELECT THE CORRECT SOUND CHANGE",
-                                      ),
+                                      instruction: _phase1Passed
+                                          ? "Great job! Now record yourself saying the phrase."
+                                          : context.tr(
+                                              'games.connected_speech_instruction',
+                                              fallback:
+                                                  "SELECT THE CORRECT SOUND CHANGE",
+                                            ),
                                       isCompact: isCompact,
                                     ),
                                     SizedBox(height: gapInstruction),
@@ -262,12 +285,20 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                           : (quest.correctAnswerIndex ?? 0),
                                       color: theme.primaryColor,
                                       isDark: isDark,
-                                      isAnswered: _isAnswered,
+                                      isAnswered: _isAnswered || _phase1Passed,
                                       selectedIndex: _selectedIndex,
                                       onSubmitChoice: _submitChoice,
                                       isCompact: isCompact,
                                     ),
                                     SizedBox(height: gapBottom),
+                                    if (_phase1Passed)
+                                      AccentSelfEvaluationPanel(
+                                        textToSpeak: quest.textToSpeak ?? "",
+                                        primaryColor: theme.primaryColor,
+                                        isCompact: isCompact,
+                                        onEvaluate: _submitPhase2Evaluation,
+                                      ),
+                                    SizedBox(height: _isAnswered ? 180.h : 0),
                                   ],
                                 ),
                               ],

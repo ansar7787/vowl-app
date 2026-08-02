@@ -16,6 +16,7 @@ import 'package:vowl/features/accent/word_linking/presentation/widgets/word_link
 import 'package:vowl/features/accent/word_linking/presentation/widgets/word_linking_pulse_speaker.dart';
 import 'package:vowl/features/accent/word_linking/presentation/widgets/word_linking_sentence_field.dart';
 import 'package:vowl/features/accent/presentation/constants/accent_game_constants.dart';
+import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
 
 class WordLinkingScreen extends StatefulWidget {
   final int level;
@@ -41,6 +42,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
   bool? _isCorrect;
   bool _showConfetti = false;
   int? _selectedNodeIndex;
+  bool _phase1Passed = false;
   AccentQuest? _lastQuest;
 
   @override
@@ -69,7 +71,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
   }
 
   void _onNodeTap(int index, String correctPair, List<String> words) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
 
     setState(() {
       _selectedNodeIndex = index;
@@ -83,11 +85,10 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
+        _phase1Passed = true;
       });
       _scrollToBottom();
-      context.read<AccentBloc>().add(SubmitAnswer(true));
+      // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -95,6 +96,27 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
         _isAnswered = true;
         _isCorrect = false;
       });
+      _scrollToBottom();
+      context.read<AccentBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered) return;
+    
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      _scrollToBottom();
+      context.read<AccentBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
       _scrollToBottom();
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
@@ -117,6 +139,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedNodeIndex = null;
+              _phase1Passed = false;
             });
             // Proactively auto-play phonetic sound on question load
             final quest = state.currentQuest as AccentQuest?;
@@ -218,14 +241,18 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                             ),
                                             child: WordLinkingInstruction(
                                               color: theme.primaryColor,
-                                              instruction: context.tr('games.word_linking_instruction', fallback: quest.instruction),
+                                              instruction: _phase1Passed
+                                                  ? "Great job! Now record yourself saying the phrase."
+                                                  : context.tr('games.word_linking_instruction', fallback: quest.instruction),
                                             ),
                                           ),
                                         ),
                                       )
                                     : WordLinkingInstruction(
                                         color: theme.primaryColor,
-                                        instruction: context.tr('games.word_linking_instruction', fallback: quest.instruction),
+                                        instruction: _phase1Passed
+                                            ? "Great job! Now record yourself saying the phrase."
+                                            : context.tr('games.word_linking_instruction', fallback: quest.instruction),
                                       ),
                                 SizedBox(height: gapInstruction),
                                 WordLinkingPulseSpeaker(
@@ -247,7 +274,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                                       quest.correctAnswer ?? "",
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
-                                                  isAnswered: _isAnswered,
+                                                  isAnswered: _isAnswered || _phase1Passed,
                                                   selectedNodeIndex:
                                                       _selectedNodeIndex,
                                                   onNodeTap: _onNodeTap,
@@ -261,12 +288,20 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                                 quest.correctAnswer ?? "",
                                             color: theme.primaryColor,
                                             isDark: isDark,
-                                            isAnswered: _isAnswered,
+                                            isAnswered: _isAnswered || _phase1Passed,
                                             selectedNodeIndex:
                                                 _selectedNodeIndex,
                                             onNodeTap: _onNodeTap,
                                           ),
-                                SizedBox(height: gapBottom + (_isAnswered ? 180.h : 0)),
+                                SizedBox(height: gapBottom),
+                                if (_phase1Passed)
+                                  AccentSelfEvaluationPanel(
+                                    textToSpeak: quest.textToSpeak ?? "",
+                                    primaryColor: theme.primaryColor,
+                                    isCompact: isCompact,
+                                    onEvaluate: _submitPhase2Evaluation,
+                                  ),
+                                SizedBox(height: _isAnswered ? 180.h : 0),
                               ],
                             ),
                           ),
