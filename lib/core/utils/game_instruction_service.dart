@@ -1237,18 +1237,18 @@ class GameInstructionService {
     ),
 
     GameSubtype.vowelDistinction: GameBriefing(
-      title: "Vowel Sounds",
-      icon: Icons.cyclone_rounded,
+      title: "Vowel Distinction",
+      icon: Icons.tune_rounded,
       objective:
-          "Listen to the vowel sound and use the horizontal slider to find the perfect match.",
+          "Listen carefully and match the correct vowel sound. Mastering vowel tension helps you differentiate between similar-sounding words in real-world conversations.",
       rules: [
-        "Listen to the open sound",
-        "Slide left or right",
-        "Lock your answer",
+        "Listen to the target word",
+        "Analyze the vowel tension",
+        "Select the exact match",
       ],
-      actionText: "Find Vowel",
+      actionText: "Identify Sound",
       tip:
-          "PRO TIP: Vowels are a spectrum! Slide carefully until you find the exact sound.",
+          "PRO TIP: Pay attention to whether the vowel feels short and relaxed, or long and tense!",
     ),
 
     GameSubtype.speedVariance: GameBriefing(

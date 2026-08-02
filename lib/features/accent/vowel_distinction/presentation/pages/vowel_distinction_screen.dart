@@ -1,4 +1,4 @@
-﻿import 'dart:async';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -129,7 +129,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
     return BlocConsumer<AccentBloc, AccentState>(
       listener: (context, state) {
         if (state is AccentLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
               (state.lastAnswerCorrect == null && _isAnswered)) {
@@ -244,14 +244,14 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                                 child:
                                                     VowelDistinctionInstruction(
                                                       color: theme.primaryColor,
-                                                      instruction: context.tr('games.vowel_distinction_instruction', fallback: quest.instruction),
+                                                      instruction: context.tr('games.vowel_distinction_instruction', fallback: 'Match the vowel sound'),
                                                     ),
                                               ),
                                             ),
                                           )
                                         : VowelDistinctionInstruction(
                                             color: theme.primaryColor,
-                                            instruction: context.tr('games.vowel_distinction_instruction', fallback: quest.instruction),
+                                            instruction: context.tr('games.vowel_distinction_instruction', fallback: 'Match the vowel sound'),
                                           ),
                                     SizedBox(height: gapInstruction),
 
