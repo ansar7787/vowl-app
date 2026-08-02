@@ -203,7 +203,6 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
         if (state is AccentLoading) {
           return const Scaffold(body: Center(child: CircularProgressIndicator()));
         } else if (state is AccentLoaded) {
-          final quest = state.currentQuest;
           final targetWord = _currentOptions[_currentCorrectIndex]['word'] ?? '';
           final targetIpa = _currentOptions[_currentCorrectIndex]['ipa'] ?? '';
 
