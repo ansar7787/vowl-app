@@ -115,11 +115,12 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
     if (_isAnswered) return;
     setState(() => _sliderValue = value);
 
-    // Auto-lock when reaching ends
-    if (value < 0.1) {
-      _submitChoice(0, correct);
-    } else if (value > 0.9) {
-      _submitChoice(1, correct);
+    // Auto-lock when reaching ends:
+    // With quarterTurns: 3, 1.0 is top and 0.0 is bottom.
+    if (value > 0.9) {
+      _submitChoice(0, correct); // Select top card (index 0)
+    } else if (value < 0.1) {
+      _submitChoice(1, correct); // Select bottom card (index 1)
     }
   }
 
@@ -127,7 +128,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
     if (_isAnswered) return;
     setState(() {
       _selectedIndex = index;
-      _sliderValue = index == 0 ? 0.0 : 1.0;
+      _sliderValue = index == 0 ? 1.0 : 0.0;
     });
 
     bool isCorrect = index == correct;
