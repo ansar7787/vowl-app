@@ -1235,20 +1235,6 @@ class GameInstructionService {
       tip:
           "PRO TIP: The stressed part of a word is always louder and slightly longer.",
     ),
-    GameSubtype.wordLinking: GameBriefing(
-      title: "Connect Words",
-      icon: Icons.link_rounded,
-      objective:
-          "Listen to how two separate words are linked together into one smooth sound.",
-      rules: [
-        "Listen to the gap",
-        "Find the linked words",
-        "Choose the correct link",
-      ],
-      actionText: "Link Words",
-      tip:
-          "PRO TIP: English speakers often push the end of one word into the start of the next.",
-    ),
 
     GameSubtype.vowelDistinction: GameBriefing(
       title: "Vowel Distinction",
