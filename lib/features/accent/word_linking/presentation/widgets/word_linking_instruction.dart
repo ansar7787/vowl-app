@@ -34,7 +34,7 @@ class WordLinkingInstruction extends StatelessWidget {
               maxLines: null,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 8.sp,
+                fontSize: 11.sp,
                 fontWeight: FontWeight.w900,
                 color: color,
                 letterSpacing: 1.5,

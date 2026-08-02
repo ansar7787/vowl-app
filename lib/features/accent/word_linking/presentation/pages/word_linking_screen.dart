@@ -13,7 +13,6 @@ import 'package:vowl/features/accent/presentation/layout/accent_base_layout.dart
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/features/accent/word_linking/presentation/widgets/word_linking_instruction.dart';
-import 'package:vowl/features/accent/word_linking/presentation/widgets/word_linking_prompt_card.dart';
 import 'package:vowl/features/accent/word_linking/presentation/widgets/word_linking_pulse_speaker.dart';
 import 'package:vowl/features/accent/word_linking/presentation/widgets/word_linking_sentence_field.dart';
 import 'package:vowl/features/accent/presentation/constants/accent_game_constants.dart';
@@ -174,31 +173,27 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
 
                       final double estimatedContentHeight =
                           24.h +
-                          (isCompact ? 90.h : 120.h) +
-                          80.h +
-                          (isCompact ? 130.h : 172.h) +
+                          80.h + // Speaker
+                          (isCompact ? 130.h : 172.h) + // Sentence Field
                           (_isAnswered ? 180.h : 0);
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
                       final double gapUnit = remainingHeight > 0
-                          ? remainingHeight / 8
+                          ? remainingHeight / 6
                           : 0;
                       final double gapTop = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(8.0, 24.0)
+                          ? (gapUnit * 1).clamp(8.0, 32.0)
                           : 8.0;
                       final double gapInstruction = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(8.0, 24.0)
-                          : 8.0;
-                      final double gapPrompt = remainingHeight > 0
-                          ? (gapUnit * 1.5).clamp(12.0, 32.0)
+                          ? (gapUnit * 1.5).clamp(12.0, 40.0)
                           : 12.0;
                       final double gapSpeaker = remainingHeight > 0
-                          ? (gapUnit * 2).clamp(16.0, 48.0)
+                          ? (gapUnit * 2).clamp(16.0, 56.0)
                           : 16.0;
                       
                       final double gapBottom = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(12.0, 40.0)
+                          ? (gapUnit * 1.5).clamp(12.0, 48.0)
                           : 12.0;
 
                       return SingleChildScrollView(
@@ -235,25 +230,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                           ),
                                     SizedBox(height: gapInstruction),
 
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 90.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
-                                                child: WordLinkingPromptCard(
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
-                                                ),
-                                              ),
-                                            ),
-                                          )
-                                        : WordLinkingPromptCard(
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                          ),
-                                    SizedBox(height: gapPrompt),
+
 
                                     WordLinkingPulseSpeaker(
                                       text: quest.textToSpeak ?? "",
