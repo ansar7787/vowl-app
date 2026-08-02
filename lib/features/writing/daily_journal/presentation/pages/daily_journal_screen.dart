@@ -13,6 +13,7 @@ import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
 import 'package:vowl/features/writing/presentation/layout/writing_base_layout.dart';
+import 'package:vowl/core/utils/gibberish_detector_service.dart';
 import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 import 'package:vowl/features/writing/daily_journal/presentation/widgets/daily_journal_instruction.dart';
@@ -128,16 +129,21 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
       return;
     }
 
+    if (!GibberishDetectorService.isNaturalSentence(context, rawText)) {
+      setState(() => _isSubmitting = false);
+      return;
+    }
+
     // ML Kit Language ID Gibberish Check
     final langIdService = di.sl<LanguageIdService>();
     final language = await langIdService.identifyLanguage(text);
 
     if (!mounted) return;
 
-    if (language == 'und') {
+    if (language != 'en') {
       CustomSnackBar.show(
         context: context,
-        message: "This looks like gibberish! Please write real English words.",
+        message: "Your answer must be written in English. Please write a natural sentence!",
         type: CustomSnackBarType.warning,
       );
       _hapticService.warning();
