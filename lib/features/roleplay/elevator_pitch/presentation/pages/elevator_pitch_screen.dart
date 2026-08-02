@@ -1,4 +1,4 @@
-﻿import 'dart:async';
+import 'dart:async';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -142,7 +142,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
     _startPhysicalEngine();
 
     _speechService.listen(
-      onResult: (candidates) {
+      onResult: (candidates, _) {
           if (candidates.isEmpty) return;
           _spokenCandidates = candidates;
           final text = candidates.first;

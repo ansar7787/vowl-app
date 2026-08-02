@@ -122,7 +122,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
     });
 
     _speechService.listen(
-      onResult: (candidates) {
+      onResult: (candidates, _) {
           if (candidates.isEmpty) return;
           
           final text = candidates.first;

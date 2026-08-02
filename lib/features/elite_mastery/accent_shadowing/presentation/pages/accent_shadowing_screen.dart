@@ -90,7 +90,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
           _lastWords = "";
         });
         _speechService.listen(
-          onResult: (candidates) {
+          onResult: (candidates, _) {
           if (candidates.isEmpty) return;
           _spokenCandidates = candidates;
           final text = candidates.first;

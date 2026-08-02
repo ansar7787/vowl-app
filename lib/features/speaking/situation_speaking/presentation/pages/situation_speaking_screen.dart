@@ -1,4 +1,4 @@
-﻿import 'dart:async';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -94,7 +94,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
     });
 
     _speechService.listen(
-      onResult: (candidates) {
+      onResult: (candidates, _) {
           if (candidates.isEmpty) return;
           
           final text = candidates.first;

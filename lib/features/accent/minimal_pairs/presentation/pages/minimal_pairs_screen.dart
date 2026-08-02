@@ -16,6 +16,10 @@ import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_
 // Removed unused MinimalPairsPromptCard import
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_speaker_core.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_drone_option.dart';
+import 'package:vowl/features/elite_mastery/accent_shadowing/presentation/widgets/accent_shadowing_mic_trigger.dart';
+import 'package:speech_to_text/speech_to_text.dart';
+import 'package:vowl/core/utils/speech_service.dart';
+import 'package:vowl/core/utils/text_similarity_helper.dart';
 import 'package:vowl/features/accent/presentation/constants/accent_game_constants.dart';
 
 class MinimalPairsScreen extends StatefulWidget {
@@ -42,6 +46,10 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
   bool? _isCorrect;
   bool _showConfetti = false;
   int? _selectedDroneIndex;
+  
+  final _speechService = di.sl<SpeechService>();
+  bool _isListening = false;
+  String _lastWords = "";
 
   String? _shuffledQuestId;
   List<Map<String, String>> _currentOptions = [];
@@ -76,6 +84,98 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
     );
   }
 
+  @override
+  void dispose() {
+    if (_isListening) {
+      _speechService.stop();
+    }
+    super.dispose();
+  }
+
+  Future<void> _toggleListening() async {
+    if (_isAnswered) return;
+    if (_isListening) {
+      setState(() {
+        _isListening = false;
+      });
+      await _speechService.stop();
+    } else {
+      final available = await _speechService.initializeStt();
+      if (available) {
+        setState(() {
+          _isListening = true;
+          _lastWords = "";
+        });
+        _speechService.listen(
+          pauseFor: const Duration(milliseconds: 1500), // Snappy 1.5s stop
+          listenMode: ListenMode.confirmation, // Better for short commands
+          onResult: (candidates, isFinal) {
+            if (candidates.isEmpty) return;
+            final text = candidates.first;
+            if (mounted) {
+              setState(() {
+                _lastWords = text;
+              });
+              
+              int bestIndex = -1;
+              double bestScore = 0.0;
+              
+              // Evaluate ALL candidates to find the best match
+              for (String candidate in candidates) {
+                final String lowerCand = candidate.toLowerCase().trim();
+                final List<String> candWords = lowerCand.split(RegExp(r'\s+'));
+                
+                for (int i = 0; i < _currentOptions.length; i++) {
+                  final String optWord = _currentOptions[i]['word']!.toLowerCase().trim();
+                  
+                  if (lowerCand == optWord || candWords.contains(optWord)) {
+                    bestIndex = i;
+                    bestScore = 1.0;
+                    break;
+                  }
+                  
+                  final double score = TextSimilarityHelper.levenshteinSimilarity(lowerCand, optWord);
+                  if (score > bestScore) {
+                    bestScore = score;
+                    bestIndex = i;
+                  }
+                }
+                if (bestScore == 1.0) break;
+              }
+              
+              // Progression Guarantee Logic:
+              if (bestScore == 1.0) {
+                // Perfect match: Instant shoot
+                _speechService.stop();
+                setState(() => _isListening = false);
+                _onShoot(bestIndex, _currentCorrectIndex);
+              } else if (isFinal) {
+                // User stopped speaking. Game MUST progress.
+                _speechService.stop();
+                setState(() => _isListening = false);
+                
+                int finalIndex = bestIndex;
+                // If they mumbled completely random gibberish (score < 0.3), force a wrong answer.
+                if (finalIndex == -1 || bestScore < 0.3) {
+                  finalIndex = _currentCorrectIndex == 0 ? 1 : 0;
+                }
+                _onShoot(finalIndex, _currentCorrectIndex);
+              }
+            }
+          },
+          onDone: () {
+            if (mounted && _isListening) {
+              setState(() {
+                _isListening = false;
+              });
+            }
+          },
+        );
+        _hapticService.selection();
+      }
+    }
+  }
+
   void _playTts(String text) {
     _hapticService.selection();
     _soundService.playTts(text);
@@ -83,6 +183,14 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
 
   void _onShoot(int index, int correctIndex) {
     if (_isAnswered) return;
+
+    // GUARANTEE: Instantly kill the mic to prevent double-triggers from late STT callbacks!
+    if (_isListening) {
+      _speechService.stop();
+      setState(() {
+        _isListening = false;
+      });
+    }
 
     final bool correct = index == correctIndex;
     setState(() {
@@ -126,6 +234,8 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedDroneIndex = null;
+              _isListening = false;
+              _lastWords = "";
             });
             // Proactively auto-play phonetic sound on question load
             final quest = state.currentQuest as AccentQuest?;
@@ -304,6 +414,33 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                               ),
                                             ],
                                           ),
+                                          
+                                    SizedBox(height: isCompact ? 16.h : 24.h),
+                                    if (_lastWords.isNotEmpty)
+                                      Container(
+                                        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
+                                        decoration: BoxDecoration(
+                                          color: theme.primaryColor.withValues(alpha: 0.1),
+                                          borderRadius: BorderRadius.circular(15.r),
+                                        ),
+                                        child: Text(
+                                          _lastWords,
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 16.sp,
+                                            fontWeight: FontWeight.w600,
+                                            color: theme.primaryColor,
+                                          ),
+                                        ),
+                                      ).animate().fadeIn(),
+                                    SizedBox(height: isCompact ? 16.h : 24.h),
+                                    AccentShadowingMicTrigger(
+                                      isListening: _isListening,
+                                      onTap: _toggleListening,
+                                      primaryColor: theme.primaryColor,
+                                      attempts: 0,
+                                      isAnswered: _isAnswered,
+                                    ),
 
                                     SizedBox(height: gapBottom),
                                   ],

@@ -48,8 +48,11 @@ abstract class SpeechService {
   /// so this only adds capability, in line with the explicit "void async"
   /// production-readiness audit category.
   Future<void> listen({
-    required Function(List<String>) onResult,
+    required Function(List<String>, bool) onResult,
     required VoidCallback onDone,
+    String? localeId,
+    Duration? pauseFor,
+    ListenMode listenMode = ListenMode.dictation,
   });
 }
 
@@ -212,8 +215,11 @@ class SpeechServiceImpl implements SpeechService {
 
   @override
   Future<void> listen({
-    required Function(List<String>) onResult,
+    required Function(List<String>, bool) onResult,
     required VoidCallback onDone,
+    String? localeId,
+    Duration? pauseFor,
+    ListenMode listenMode = ListenMode.dictation,
   }) async {
     _onDoneCallback = onDone;
     if (!_isSttInitialized) {
@@ -228,13 +234,14 @@ class SpeechServiceImpl implements SpeechService {
           for (var alternate in result.alternates) {
             candidates.add(alternate.recognizedWords);
           }
-          onResult(candidates.toList());
+          onResult(candidates.toList(), result.finalResult);
         },
         listenOptions: SpeechListenOptions(
+          localeId: localeId,
           listenFor: const Duration(seconds: 45),
-          pauseFor: const Duration(seconds: 15), // Highly patient for learners
+          pauseFor: pauseFor ?? const Duration(seconds: 15), // Highly patient for learners
           partialResults: true,
-          listenMode: ListenMode.dictation, // Continuous speech shadowing support
+          listenMode: listenMode, // Continuous speech shadowing support
         ),
       );
     } catch (e) {

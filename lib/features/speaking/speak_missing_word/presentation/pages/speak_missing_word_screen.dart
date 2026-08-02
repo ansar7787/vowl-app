@@ -1,4 +1,4 @@
-﻿import 'dart:math' as math;
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -182,7 +182,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
     });
 
     _speechService.listen(
-      onResult: (candidates) {
+      onResult: (candidates, _) {
           if (candidates.isEmpty) return;
           
           final text = candidates.first;
