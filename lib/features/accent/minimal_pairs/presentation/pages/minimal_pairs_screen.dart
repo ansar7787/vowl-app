@@ -10,15 +10,15 @@ import 'package:vowl/core/utils/audio_recording_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 
+import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
-import 'package:vowl/features/accent/presentation/widgets/accent_base_layout.dart';
+import 'package:vowl/features/accent/presentation/layout/accent_base_layout.dart';
 import 'package:vowl/features/accent/presentation/constants/accent_game_constants.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_instruction.dart';
-import 'package:vowl/features/elite_mastery/accent_shadowing/presentation/widgets/accent_shadowing_mic_trigger.dart';
 
 class MinimalPairsScreen extends StatefulWidget {
-  final String gameType;
+  final GameSubtype gameType;
   final int level;
 
   const MinimalPairsScreen({
@@ -204,7 +204,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
         if (state is AccentLoading) {
           return const Scaffold(body: Center(child: CircularProgressIndicator()));
         } else if (state is AccentLoaded) {
-          final quest = state.currentQuest as AccentQuest;
+          final quest = state.currentQuest;
           final targetWord = _currentOptions[_currentCorrectIndex]['word'] ?? '';
           final targetIpa = _currentOptions[_currentCorrectIndex]['ipa'] ?? '';
 
@@ -216,6 +216,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
             isCorrect: _isCorrect,
             quest: quest,
             onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
+            onHint: () {},
             child: Column(
               children: [
                 SizedBox(height: 20.h),
@@ -279,9 +280,26 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                     onTapDown: (_) => _startRecording(),
                     onTapUp: (_) => _stopRecording(),
                     onTapCancel: () => _stopRecording(),
-                    child: AccentShadowingMicTrigger(
-                      isListening: _isRecording,
-                    ),
+                    child: Container(
+                      width: 100.r,
+                      height: 100.r,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: _isRecording ? Colors.red : theme.primaryColor,
+                        boxShadow: [
+                          BoxShadow(
+                            color: (_isRecording ? Colors.red : theme.primaryColor).withValues(alpha: 0.4),
+                            blurRadius: 30,
+                            spreadRadius: _isRecording ? 10 : 0,
+                          ),
+                        ],
+                      ),
+                      child: Icon(
+                        _isRecording ? Icons.stop_rounded : Icons.mic_rounded,
+                        color: Colors.white,
+                        size: 48.r,
+                      ),
+                    ).animate(target: _isRecording ? 1 : 0).scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1)),
                   ),
                   SizedBox(height: 15.h),
                   Text(
@@ -290,7 +308,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                       fontFamily: 'Outfit',
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
-                      color: _isRecording ? AccentGameColors.wrongRed : Colors.grey[600],
+                      color: _isRecording ? Colors.red : Colors.grey[600],
                     ),
                   ).animate(target: _isRecording ? 1 : 0).fade(),
                 ] else ...[
@@ -314,7 +332,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                         _buildEvalButton(
                           title: "Needs Work",
                           icon: LucideIcons.x,
-                          color: AccentGameColors.wrongRed,
+                          color: Colors.red,
                           onTap: () => _submitEvaluation(false),
                         ),
                         GestureDetector(
@@ -331,7 +349,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                         _buildEvalButton(
                           title: "Nailed It",
                           icon: LucideIcons.check,
-                          color: AccentGameColors.correctGreen,
+                          color: Colors.green,
                           onTap: () => _submitEvaluation(true),
                         ),
                       ],
