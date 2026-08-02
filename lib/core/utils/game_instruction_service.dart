@@ -1235,20 +1235,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: English speakers often push the end of one word into the start of the next.",
     ),
-    GameSubtype.shadowingChallenge: GameBriefing(
-      title: "Shadow Challenge",
-      icon: Icons.bolt_rounded,
-      objective:
-          "Listen to the speaker and tap the correct dialogue bubble to shadow their voice.",
-      rules: [
-        "Listen to the sentence",
-        "Read the chat bubbles",
-        "Tap the exact match",
-      ],
-      actionText: "Start Shadowing",
-      tip:
-          "PRO TIP: Don't overthink! Pick the sentence that exactly matches the audio.",
-    ),
+
     GameSubtype.vowelDistinction: GameBriefing(
       title: "Vowel Sounds",
       icon: Icons.cyclone_rounded,
