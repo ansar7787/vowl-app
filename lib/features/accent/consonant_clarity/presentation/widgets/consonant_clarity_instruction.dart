@@ -4,10 +4,12 @@ import 'package:vowl/core/utils/locale_service.dart';
 
 class ConsonantClarityInstruction extends StatelessWidget {
   final Color primaryColor;
+  final String? instruction;
 
   const ConsonantClarityInstruction({
     super.key,
     required this.primaryColor,
+    this.instruction,
   });
 
   @override
@@ -30,7 +32,7 @@ class ConsonantClarityInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              context.tr(
+              instruction ?? context.tr(
                 'games.consonantClarity_instruction',
                 fallback: 'Tap the correct consonant sound.',
               ).toUpperCase(),

@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -85,7 +84,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
 
   void _submitPhase2Evaluation(bool nailedIt) {
     if (_isAnswered) return;
-    
+
     setState(() {
       _isAnswered = true;
       _isCorrect = nailedIt;
@@ -153,7 +152,8 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
     return BlocConsumer<AccentBloc, AccentState>(
       listener: (context, state) {
         if (state is AccentLoaded) {
-          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+          final livesChanged =
+              _lastLives != null && state.livesRemaining > _lastLives!;
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
               (state.lastAnswerCorrect == null && _isAnswered)) {
@@ -240,7 +240,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                       final double gapSpeaker = remainingHeight > 0
                           ? (gapUnit * 2).clamp(16.0, 48.0)
                           : 16.0;
-                      
+
                       final double gapBottom = remainingHeight > 0
                           ? (gapUnit * 1).clamp(12.0, 40.0)
                           : 12.0;
@@ -266,21 +266,28 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                               fit: BoxFit.scaleDown,
                                               child: SizedBox(
                                                 width: maxWidth - 48.w,
-                                                child:
-                                                    VowelDistinctionInstruction(
-                                                      color: theme.primaryColor,
-                                                      instruction: _phase1Passed 
-                                                        ? "Great job! Now record yourself saying the word."
-                                                        : context.tr('games.vowel_distinction_instruction', fallback: 'Match the vowel sound'),
-                                                    ),
+                                                child: VowelDistinctionInstruction(
+                                                  color: theme.primaryColor,
+                                                  instruction: _phase1Passed
+                                                      ? "Great job! Now record yourself saying the word."
+                                                      : context.tr(
+                                                          'games.vowel_distinction_instruction',
+                                                          fallback:
+                                                              'Match the vowel sound',
+                                                        ),
+                                                ),
                                               ),
                                             ),
                                           )
                                         : VowelDistinctionInstruction(
                                             color: theme.primaryColor,
-                                            instruction: _phase1Passed 
-                                              ? "Great job! Now record yourself saying the word."
-                                              : context.tr('games.vowel_distinction_instruction', fallback: 'Match the vowel sound'),
+                                            instruction: _phase1Passed
+                                                ? "Great job! Now record yourself saying the word."
+                                                : context.tr(
+                                                    'games.vowel_distinction_instruction',
+                                                    fallback:
+                                                        'Match the vowel sound',
+                                                  ),
                                           ),
                                     SizedBox(height: gapInstruction),
 
@@ -333,7 +340,9 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                                       0,
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
-                                                  isAnswered: _isAnswered || _phase1Passed,
+                                                  isAnswered:
+                                                      _isAnswered ||
+                                                      _phase1Passed,
                                                   selectedIndex: _selectedIndex,
                                                   sliderValue: _sliderValue,
                                                   onSubmitChoice: _submitChoice,
@@ -349,7 +358,8 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                                 quest.correctAnswerIndex ?? 0,
                                             color: theme.primaryColor,
                                             isDark: isDark,
-                                            isAnswered: _isAnswered || _phase1Passed,
+                                            isAnswered:
+                                                _isAnswered || _phase1Passed,
                                             selectedIndex: _selectedIndex,
                                             sliderValue: _sliderValue,
                                             onSubmitChoice: _submitChoice,
@@ -379,7 +389,3 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
     );
   }
 }
-
-
-
-

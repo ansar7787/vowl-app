@@ -15,6 +15,7 @@ import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/cons
 import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/consonant_clarity_prompt_card.dart';
 import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/consonant_clarity_pulse_speaker.dart';
 import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/consonant_clarity_tactile_grid.dart';
+import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
 
 class ConsonantClarityScreen extends StatefulWidget {
   final int level;
@@ -42,6 +43,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
   bool _showConfetti = false;
 
   int? _selectedIndex;
+  bool _phase1Passed = false;
 
   String? _shuffledQuestId;
   int _shuffledRetryCount = -1;
@@ -105,11 +107,10 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
+        _phase1Passed = true;
       });
       _scrollToBottom();
-      context.read<AccentBloc>().add(SubmitAnswer(true));
+      // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -117,6 +118,27 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
         _isAnswered = true;
         _isCorrect = false;
       });
+      _scrollToBottom();
+      context.read<AccentBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered) return;
+    
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      _scrollToBottom();
+      context.read<AccentBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
       _scrollToBottom();
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
@@ -139,6 +161,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
+              _phase1Passed = false;
             });
             // Proactively auto-play sound on question load
             final quest = state.currentQuest as AccentQuest?;
@@ -254,12 +277,18 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                                     ConsonantClarityInstruction(
                                                       primaryColor:
                                                           theme.primaryColor,
+                                                      instruction: _phase1Passed 
+                                                        ? "Great job! Now record yourself saying the word." 
+                                                        : null,
                                                     ),
                                               ),
                                             ),
                                           )
                                         : ConsonantClarityInstruction(
                                             primaryColor: theme.primaryColor,
+                                            instruction: _phase1Passed 
+                                              ? "Great job! Now record yourself saying the word." 
+                                              : null,
                                           ),
                                     SizedBox(height: gapInstruction),
 
@@ -275,7 +304,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                                       word: quest.word ?? "",
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
-                                                      isAnswered: _isAnswered,
+                                                      isAnswered: _isAnswered || _phase1Passed,
                                                     ),
                                               ),
                                             ),
@@ -284,7 +313,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                             word: quest.word ?? "",
                                             color: theme.primaryColor,
                                             isDark: isDark,
-                                            isAnswered: _isAnswered,
+                                            isAnswered: _isAnswered || _phase1Passed,
                                           ),
                                     SizedBox(height: gapPrompt),
 
@@ -311,7 +340,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                                   correctIndex: correctIndex,
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
-                                                  isAnswered: _isAnswered,
+                                                  isAnswered: _isAnswered || _phase1Passed,
                                                   selectedIndex: _selectedIndex,
                                                   onSubmitChoice: _submitChoice,
                                                 ),
@@ -323,11 +352,19 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                             correctIndex: correctIndex,
                                             color: theme.primaryColor,
                                             isDark: isDark,
-                                            isAnswered: _isAnswered,
+                                            isAnswered: _isAnswered || _phase1Passed,
                                             selectedIndex: _selectedIndex,
                                             onSubmitChoice: _submitChoice,
                                           ),
-                                    SizedBox(height: gapBottom + (_isAnswered ? 180.h : 0)),
+                                    SizedBox(height: gapBottom),
+                                    if (_phase1Passed)
+                                      AccentSelfEvaluationPanel(
+                                        textToSpeak: quest.textToSpeak ?? "",
+                                        primaryColor: theme.primaryColor,
+                                        isCompact: isCompact,
+                                        onEvaluate: _submitPhase2Evaluation,
+                                      ),
+                                    SizedBox(height: _isAnswered ? 180.h : 0),
                                   ],
                                 ),
                               ],

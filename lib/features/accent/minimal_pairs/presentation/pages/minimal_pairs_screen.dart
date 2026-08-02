@@ -13,7 +13,6 @@ import 'package:vowl/features/accent/presentation/layout/accent_base_layout.dart
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_instruction.dart';
-// Removed unused MinimalPairsPromptCard import
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_speaker_core.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_drone_option.dart';
 import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
@@ -43,7 +42,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
   bool? _isCorrect;
   bool _showConfetti = false;
   int? _selectedDroneIndex;
-  
+
   bool _phase1Passed = false;
 
   String? _shuffledQuestId;
@@ -52,21 +51,27 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
 
   void _ensureOptionsShuffled(AccentQuest quest) {
     if (_shuffledQuestId == quest.id) return;
-    
+
     _shuffledQuestId = quest.id;
-    
+
     final originalOptions = [
       {'word': quest.word1 ?? '', 'ipa': quest.ipa1 ?? ''},
       {'word': quest.word2 ?? '', 'ipa': quest.ipa2 ?? ''},
     ];
-    
+
     final correctAnswerStr = quest.correctAnswer;
-        
+
     _currentOptions = List.from(originalOptions)..shuffle();
     if (correctAnswerStr != null) {
-        _currentCorrectIndex = _currentOptions.indexWhere((opt) => opt['word'] == correctAnswerStr);
+      _currentCorrectIndex = _currentOptions.indexWhere(
+        (opt) => opt['word'] == correctAnswerStr,
+      );
     } else {
-        _currentCorrectIndex = _currentOptions.indexWhere((opt) => opt['word'] == originalOptions[quest.correctAnswerIndex ?? 0]['word']);
+      _currentCorrectIndex = _currentOptions.indexWhere(
+        (opt) =>
+            opt['word'] ==
+            originalOptions[quest.correctAnswerIndex ?? 0]['word'],
+      );
     }
     if (_currentCorrectIndex == -1) _currentCorrectIndex = 0;
   }
@@ -86,7 +91,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
 
   void _submitPhase2Evaluation(bool nailedIt) {
     if (_isAnswered) return;
-    
+
     setState(() {
       _isAnswered = true;
       _isCorrect = nailedIt;
@@ -181,11 +186,11 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
         final AccentQuest? quest = (state is AccentLoaded)
             ? state.currentQuest as AccentQuest?
             : _lastQuest;
-            
+
         if (quest != null && !_isAnswered) {
           _ensureOptionsShuffled(quest);
         }
-        
+
         final mediaQuery = MediaQuery.of(context);
 
         return MediaQuery(
@@ -247,9 +252,12 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                     SizedBox(height: gapTop),
                                     MinimalPairsInstruction(
                                       color: theme.primaryColor,
-                                      instruction: _phase1Passed 
-                                        ? "Great job! Now record yourself saying the word to evaluate your accent."
-                                        : context.tr('games.minimal_pairs_instruction', fallback: quest.instruction),
+                                      instruction: _phase1Passed
+                                          ? "Great job! Now record yourself saying the word to evaluate your accent."
+                                          : context.tr(
+                                              'games.minimal_pairs_instruction',
+                                              fallback: quest.instruction,
+                                            ),
                                     ),
                                   ],
                                 ),
@@ -276,9 +284,22 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                                   children: [
                                                     MinimalPairsDroneOption(
                                                       index: 0,
-                                                      word: _currentOptions.isNotEmpty ? _currentOptions[0]['word']! : quest.word1 ?? "",
-                                                      ipa: _currentOptions.isNotEmpty ? _currentOptions[0]['ipa']! : quest.ipa1 ?? "",
-                                                      correctIndex: _currentOptions.isNotEmpty ? _currentCorrectIndex : quest.correctAnswerIndex ?? 0,
+                                                      word:
+                                                          _currentOptions
+                                                              .isNotEmpty
+                                                          ? _currentOptions[0]['word']!
+                                                          : quest.word1 ?? "",
+                                                      ipa:
+                                                          _currentOptions
+                                                              .isNotEmpty
+                                                          ? _currentOptions[0]['ipa']!
+                                                          : quest.ipa1 ?? "",
+                                                      correctIndex:
+                                                          _currentOptions
+                                                              .isNotEmpty
+                                                          ? _currentCorrectIndex
+                                                          : quest.correctAnswerIndex ??
+                                                                0,
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       isAnswered: _isAnswered,
@@ -288,12 +309,27 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                                     ),
                                                     MinimalPairsDroneOption(
                                                       index: 1,
-                                                      word: _currentOptions.isNotEmpty ? _currentOptions[1]['word']! : quest.word2 ?? "",
-                                                      ipa: _currentOptions.isNotEmpty ? _currentOptions[1]['ipa']! : quest.ipa2 ?? "",
-                                                      correctIndex: _currentOptions.isNotEmpty ? _currentCorrectIndex : quest.correctAnswerIndex ?? 0,
+                                                      word:
+                                                          _currentOptions
+                                                              .isNotEmpty
+                                                          ? _currentOptions[1]['word']!
+                                                          : quest.word2 ?? "",
+                                                      ipa:
+                                                          _currentOptions
+                                                              .isNotEmpty
+                                                          ? _currentOptions[1]['ipa']!
+                                                          : quest.ipa2 ?? "",
+                                                      correctIndex:
+                                                          _currentOptions
+                                                              .isNotEmpty
+                                                          ? _currentCorrectIndex
+                                                          : quest.correctAnswerIndex ??
+                                                                0,
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
-                                                isAnswered: _isAnswered || _phase1Passed,
+                                                      isAnswered:
+                                                          _isAnswered ||
+                                                          _phase1Passed,
                                                       selectedDroneIndex:
                                                           _selectedDroneIndex,
                                                       onShoot: _onShoot,
@@ -309,9 +345,17 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                             children: [
                                               MinimalPairsDroneOption(
                                                 index: 0,
-                                                word: _currentOptions.isNotEmpty ? _currentOptions[0]['word']! : quest.word1 ?? "",
-                                                ipa: _currentOptions.isNotEmpty ? _currentOptions[0]['ipa']! : quest.ipa1 ?? "",
-                                                correctIndex: _currentOptions.isNotEmpty ? _currentCorrectIndex : quest.correctAnswerIndex ?? 0,
+                                                word: _currentOptions.isNotEmpty
+                                                    ? _currentOptions[0]['word']!
+                                                    : quest.word1 ?? "",
+                                                ipa: _currentOptions.isNotEmpty
+                                                    ? _currentOptions[0]['ipa']!
+                                                    : quest.ipa1 ?? "",
+                                                correctIndex:
+                                                    _currentOptions.isNotEmpty
+                                                    ? _currentCorrectIndex
+                                                    : quest.correctAnswerIndex ??
+                                                          0,
                                                 color: theme.primaryColor,
                                                 isDark: isDark,
                                                 isAnswered: _isAnswered,
@@ -321,19 +365,29 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                               ),
                                               MinimalPairsDroneOption(
                                                 index: 1,
-                                                word: _currentOptions.isNotEmpty ? _currentOptions[1]['word']! : quest.word2 ?? "",
-                                                ipa: _currentOptions.isNotEmpty ? _currentOptions[1]['ipa']! : quest.ipa2 ?? "",
-                                                correctIndex: _currentOptions.isNotEmpty ? _currentCorrectIndex : quest.correctAnswerIndex ?? 0,
+                                                word: _currentOptions.isNotEmpty
+                                                    ? _currentOptions[1]['word']!
+                                                    : quest.word2 ?? "",
+                                                ipa: _currentOptions.isNotEmpty
+                                                    ? _currentOptions[1]['ipa']!
+                                                    : quest.ipa2 ?? "",
+                                                correctIndex:
+                                                    _currentOptions.isNotEmpty
+                                                    ? _currentCorrectIndex
+                                                    : quest.correctAnswerIndex ??
+                                                          0,
                                                 color: theme.primaryColor,
                                                 isDark: isDark,
-                                                isAnswered: _isAnswered || _phase1Passed,
+                                                isAnswered:
+                                                    _isAnswered ||
+                                                    _phase1Passed,
                                                 selectedDroneIndex:
                                                     _selectedDroneIndex,
                                                 onShoot: _onShoot,
                                               ),
                                             ],
                                           ),
-                                          
+
                                     SizedBox(height: isCompact ? 16.h : 24.h),
                                     if (_phase1Passed)
                                       AccentSelfEvaluationPanel(
