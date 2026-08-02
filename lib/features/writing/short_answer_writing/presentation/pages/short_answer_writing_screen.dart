@@ -185,6 +185,17 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
       _hapticService.selection();
       return;
     }
+
+    final uniqueWords = wordsList.map((w) => w.toLowerCase()).toSet();
+    if (wordsList.isNotEmpty && (uniqueWords.length / wordsList.length) < 0.4) {
+      CustomSnackBar.show(
+        context: context,
+        message: "Please write a natural sentence. Too many repeated words!",
+        type: CustomSnackBarType.warning,
+      );
+      _hapticService.selection();
+      return;
+    }
     // ---------------------------------
 
     if (matchedCount < 2) {
