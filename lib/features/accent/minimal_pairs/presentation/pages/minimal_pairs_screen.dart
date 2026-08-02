@@ -302,7 +302,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                                                 0,
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
-                                                      isAnswered: _isAnswered,
+                                                      isAnswered: _isAnswered || _phase1Passed,
                                                       selectedDroneIndex:
                                                           _selectedDroneIndex,
                                                       onShoot: _onShoot,
@@ -358,7 +358,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                                           0,
                                                 color: theme.primaryColor,
                                                 isDark: isDark,
-                                                isAnswered: _isAnswered,
+                                                isAnswered: _isAnswered || _phase1Passed,
                                                 selectedDroneIndex:
                                                     _selectedDroneIndex,
                                                 onShoot: _onShoot,

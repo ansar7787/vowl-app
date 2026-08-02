@@ -102,7 +102,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
   }
 
   void _onSliderUpdate(double value, int correct, int topIndex, int bottomIndex) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
     setState(() => _sliderValue = value);
 
     // Auto-lock when reaching ends
@@ -114,7 +114,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
   }
 
   void _submitChoice(int index, int correct, int topIndex, int bottomIndex) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
     setState(() {
       _selectedIndex = index;
       _sliderValue = index == topIndex ? 1.0 : 0.0;

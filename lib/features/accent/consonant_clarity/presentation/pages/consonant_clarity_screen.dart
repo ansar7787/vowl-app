@@ -96,7 +96,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
   }
 
   void _submitChoice(int index, int correct) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
     setState(() {
       _selectedIndex = index;
     });

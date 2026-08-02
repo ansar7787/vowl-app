@@ -70,7 +70,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
   }
 
   void _onPadTap(int index, int correct) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
 
     setState(() {
       _selectedIndex = index;
