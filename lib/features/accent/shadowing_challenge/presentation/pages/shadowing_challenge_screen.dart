@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -153,7 +154,13 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
         final AccentQuest? quest = (state is AccentLoaded)
             ? state.currentQuest as AccentQuest?
             : null;
-        final options = quest?.options ?? ["A", "B"];
+        final rawOptions = quest?.options ?? ["A", "B"];
+        final options = List<String>.from(rawOptions)
+          ..shuffle(Random(quest?.id.hashCode ?? 0));
+        
+        final correctIndex = quest?.correctAnswer != null 
+            ? options.indexOf(quest!.correctAnswer!) 
+            : (quest?.correctAnswerIndex ?? 0);
         final mediaQuery = MediaQuery.of(context);
 
         return MediaQuery(
@@ -203,8 +210,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                 SizedBox(height: 32.h),
                                 ShadowingChallengeDialogueList(
                                   options: options,
-                                  correctIndex:
-                                      quest.correctAnswerIndex ?? 0,
+                                  correctIndex: correctIndex,
                                   color: theme.primaryColor,
                                   isDark: isDark,
                                   isAnswered: _isAnswered,
