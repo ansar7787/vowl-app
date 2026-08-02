@@ -1288,20 +1288,6 @@ class GameInstructionService {
       tip:
           "PRO TIP: Try saying the words fast yourself! If you force every single letter, it feels unnatural. Real speech takes shortcuts.",
     ),
-    GameSubtype.pitchModulation: GameBriefing(
-      title: "Voice Emotion",
-      icon: Icons.legend_toggle_rounded,
-      objective:
-          "Listen to the speaker's pitch and select the matching modulation pattern to master how English speakers convey energy and emotion through voice.",
-      rules: [
-        "Listen to the pitch",
-        "Analyze the emotion",
-        "Select the correct pattern",
-      ],
-      actionText: "Select Emotion",
-      tip:
-          "PRO TIP: A rising-falling pitch often shows energy or warmth, while a falling-rising pitch can signal hesitation or mild concern.",
-    ),
     // 8. Roleplay
     GameSubtype.branchingDialogue: GameBriefing(
       title: "Social Simulator",
