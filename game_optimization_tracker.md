@@ -144,17 +144,4 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [ ] Jobs
 - [ ] Time
 
-## Accent Category: Progression & UX Strategy (Implemented)
-*Status: Complete*
-
-**Objective:** Prevent choice paralysis across the 12 Accent games and provide structured phonetic progression.
-
-- [x] ✅ **Implement "Daily Accent Mix" (Core Loop):** Vowl auto-selects 3 games daily (e.g., 1 Foundation, 1 Rhythm, 1 Flow) instead of forcing users to choose from a 12-game list. *Upgraded to Adaptive Smart Engine that picks weakest games.*
-- [x] ✅ **Design "Skill Radar" (Progress Tracker):** Create a 4-point Radar Chart (Pronunciation, Rhythm, Intonation, Flow) to visually track mastery across all 12 games.
-- [x] ✅ **Categorize Games into Tiers (Backend/UI Mapping):**
-  - **Tier 1 (Foundations):** Vowel Distinction, Consonant Clarity, Minimal Pairs
-  - **Tier 2 (Rhythm):** Syllable Stress, Pitch Modulation, Speed Variance
-  - **Tier 3 (Flow):** Word Linking, Connected Speech, Intonation Mimic, Pitch Pattern Match
-  - **Tier 4 (Elite):** Shadowing Challenge, Dialect Drill
-- [x] ✅ **Build "Practice Library":** Moved the raw list of 12 games into a secondary list below the dashboard for users who want targeted practice.
 
