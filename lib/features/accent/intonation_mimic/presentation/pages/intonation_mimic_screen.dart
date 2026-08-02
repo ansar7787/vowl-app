@@ -99,23 +99,23 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
     });
   }
 
-  void _onSliderUpdate(double value, int correct) {
+  void _onSliderUpdate(double value, int correct, int topIndex, int bottomIndex) {
     if (_isAnswered) return;
     setState(() => _sliderValue = value);
 
     // Auto-lock when reaching ends
     if (value < 0.1) {
-      _submitChoice(1, correct);
+      _submitChoice(bottomIndex, correct, topIndex, bottomIndex);
     } else if (value > 0.9) {
-      _submitChoice(0, correct);
+      _submitChoice(topIndex, correct, topIndex, bottomIndex);
     }
   }
 
-  void _submitChoice(int index, int correct) {
+  void _submitChoice(int index, int correct, int topIndex, int bottomIndex) {
     if (_isAnswered) return;
     setState(() {
       _selectedIndex = index;
-      _sliderValue = index == 0 ? 1.0 : 0.0;
+      _sliderValue = index == topIndex ? 1.0 : 0.0;
     });
 
     bool isCorrect = index == correct;
@@ -194,6 +194,17 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
         final options = quest?.options ?? ["A", "B"];
         final contour = quest?.intonationMap ?? [1, 2, 1, 0];
         final mediaQuery = MediaQuery.of(context);
+        
+        int topIndex = options.indexWhere((o) => o.toLowerCase().contains('rising'));
+        int bottomIndex = options.indexWhere((o) => o.toLowerCase().contains('falling'));
+        if (topIndex == -1 && bottomIndex == -1) {
+          topIndex = 1;
+          bottomIndex = 0;
+        } else if (topIndex == -1) {
+          topIndex = bottomIndex == 0 ? 1 : 0;
+        } else if (bottomIndex == -1) {
+          bottomIndex = topIndex == 0 ? 1 : 0;
+        }
 
         return MediaQuery(
           data: mediaQuery.copyWith(
@@ -317,8 +328,10 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                       isAnswered: _isAnswered,
                                       selectedIndex: _selectedIndex,
                                       sliderValue: _sliderValue,
-                                      onSubmitChoice: _submitChoice,
-                                      onSliderUpdate: _onSliderUpdate,
+                                      topIndex: topIndex,
+                                      bottomIndex: bottomIndex,
+                                      onSubmitChoice: (idx, correct) => _submitChoice(idx, correct, topIndex, bottomIndex),
+                                      onSliderUpdate: (val, correct) => _onSliderUpdate(val, correct, topIndex, bottomIndex),
                                     ),
 
                                     SizedBox(height: gapBottom),

@@ -11,6 +11,8 @@ class IntonationMimicVerticalFader extends StatelessWidget {
   final bool isAnswered;
   final int? selectedIndex;
   final double sliderValue;
+  final int topIndex;
+  final int bottomIndex;
   final Function(int, int) onSubmitChoice;
   final Function(double, int) onSliderUpdate;
 
@@ -23,6 +25,8 @@ class IntonationMimicVerticalFader extends StatelessWidget {
     required this.isAnswered,
     required this.selectedIndex,
     required this.sliderValue,
+    required this.topIndex,
+    required this.bottomIndex,
     required this.onSubmitChoice,
     required this.onSliderUpdate,
   });
@@ -36,9 +40,9 @@ class IntonationMimicVerticalFader extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              _buildPitchOption(options[0], 0, Icons.arrow_upward_rounded),
+              _buildPitchOption(options[topIndex], topIndex, Icons.arrow_upward_rounded),
               SizedBox(height: 12.h),
-              _buildPitchOption(options[1], 1, Icons.arrow_downward_rounded),
+              _buildPitchOption(options[bottomIndex], bottomIndex, Icons.arrow_downward_rounded),
             ],
           ),
         ),
