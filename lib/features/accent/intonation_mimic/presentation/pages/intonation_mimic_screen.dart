@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -104,9 +105,9 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
 
     // Auto-lock when reaching ends
     if (value < 0.1) {
-      _submitChoice(0, correct);
-    } else if (value > 0.9) {
       _submitChoice(1, correct);
+    } else if (value > 0.9) {
+      _submitChoice(0, correct);
     }
   }
 
@@ -114,7 +115,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
     if (_isAnswered) return;
     setState(() {
       _selectedIndex = index;
-      _sliderValue = index == 0 ? 0.0 : 1.0;
+      _sliderValue = index == 0 ? 1.0 : 0.0;
     });
 
     bool isCorrect = index == correct;

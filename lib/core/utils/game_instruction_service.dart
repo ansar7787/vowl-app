@@ -257,20 +257,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Pay attention to whether your vocal cords vibrate (voiced) or not (voiceless) when you make the sound!",
     ),
-    GameSubtype.intonationMimic: GameBriefing(
-      title: "Intonation Mimic",
-      icon: Icons.waves_rounded,
-      objective:
-          "Identify the correct intonation pattern of the spoken phrase. Mastering pitch changes helps you convey exact meaning and emotion naturally.",
-      rules: [
-        "Listen to the phrase carefully",
-        "Trace the pitch direction",
-        "Identify the pattern",
-      ],
-      actionText: "Analyze Pitch",
-      tip:
-          "PRO TIP: Statements generally fall at the end, while Yes/No questions rise!",
-    ),
+
     // 2. Speaking
     GameSubtype.repeatSentence: GameBriefing(
       title: "Echo Master",
