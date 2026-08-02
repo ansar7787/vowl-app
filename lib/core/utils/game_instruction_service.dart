@@ -1220,20 +1220,7 @@ class GameInstructionService {
       tip:
           "PRO TIP: Vowels are a spectrum! Slide carefully until you find the exact sound.",
     ),
-    GameSubtype.consonantClarity: GameBriefing(
-      title: "Crystal Consonants",
-      icon: Icons.graphic_eq_rounded,
-      objective:
-          "Identify the target consonant to refine your pronunciation and clear up real-world communication.",
-      rules: [
-        "Listen to the target word",
-        "Analyze the mouth position",
-        "Select the precise consonant",
-      ],
-      actionText: "Analyze Sound",
-      tip:
-          "PRO TIP: Feel where your tongue and lips are placed—physical awareness is key!",
-    ),
+
     GameSubtype.pitchPatternMatch: GameBriefing(
       title: "Musical Melody",
       icon: Icons.music_note_rounded,

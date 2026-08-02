@@ -161,7 +161,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
             showConfetti: _showConfetti,
             onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
             onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
-            child: quest == null && _lastQuest == null
+            child: quest == null
                 ? const SizedBox()
                 : LayoutBuilder(
                     builder: (context, constraints) {

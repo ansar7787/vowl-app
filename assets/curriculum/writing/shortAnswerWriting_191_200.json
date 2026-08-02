@@ -5,22 +5,22 @@
     "quests": [
         {
             "id": "WRT_SHORTANSWERWRITING_L191_Q1",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about what it means for a claim to be apodictic and how such a claim differs from contingent assertions.",
+            "prompt": "Write about the difference between a claim that must be true by pure logic and one that depends on real-world evidence.",
             "options": [
-                "apodictic",
-                "claim",
-                "irrefutable"
+                "logic",
+                "depend",
+                "evidence"
             ],
-            "sampleAnswer": "An apodictic claim asserts something as logically necessary and irrefutable from its own premises, requiring no external verification.",
-            "hint": "Use 'An apodictic claim asserts something as logically necessary and irrefutable from its own premises' and add what it requires.",
-            "explanation": "'Requiring no external verification' distinguishes apodictic from empirical claims - the necessity is internal to the logic."
+            "sampleAnswer": "A claim that must be true by pure logic needs no outside evidence, unlike a claim whose truth depends entirely on how the world happens to be.",
+            "hint": "Define the first type of claim using 'needs no', then define the second type using 'depends on'.",
+            "explanation": "Contrasting 'needs no outside evidence' with 'depends entirely on how the world happens to be' draws a clean, useful line between two very different kinds of truth."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L191_Q2",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
             "prompt": "Write about how Hawking radiation causes black holes to slowly lose mass and eventually evaporate.",
@@ -30,132 +30,132 @@
                 "temperature"
             ],
             "sampleAnswer": "Hawking radiation causes black holes to slowly evaporate by emitting thermal radiation at a temperature inversely proportional to their mass.",
-            "hint": "Use 'Hawking radiation causes black holes to slowly evaporate by emitting thermal radiation at a temperature' and specify.",
+            "hint": "Name the phenomenon and what it causes black holes to do, then specify how temperature relates to mass.",
             "explanation": "'Inversely proportional to their mass' names the precise relationship - smaller black holes are hotter and evaporate faster."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L191_Q3",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about how Sartre describes bad faith as the evasion of existential freedom through self-deception.",
+            "prompt": "Write about how people sometimes deny their own freedom and responsibility to avoid a difficult choice.",
             "options": [
-                "bad faith",
-                "facticity",
-                "deny"
+                "deny",
+                "freedom",
+                "responsibility"
             ],
-            "sampleAnswer": "Sartre describes bad faith as the act of denying one's own facticity or freedom in order to evade existential responsibility.",
-            "hint": "Use 'Sartre describes bad faith as the act of denying one's own facticity or freedom in order to evade' and specify.",
-            "explanation": "'Existential responsibility' is the key Sartrean burden - freedom is inseparable from responsibility for one's choices."
+            "sampleAnswer": "People sometimes deny their own freedom to avoid the responsibility that comes with truly owning a difficult choice.",
+            "hint": "State what people sometimes deny, then explain what they're trying to avoid by denying it.",
+            "explanation": "Linking denial to avoiding 'responsibility that comes with truly owning a difficult choice' captures a real and relatable psychological pattern."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L192_Q1",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about what an architectonic framework achieves in organising a text at the macro level of structure.",
+            "prompt": "Write about how a clear structural outline helps organize a long piece of writing before you draft a single sentence.",
             "options": [
-                "architectonic",
+                "outline",
                 "organize",
-                "macro"
+                "structure"
             ],
-            "sampleAnswer": "An architectonic framework helps writers organize content at the macro level by structuring all major inter-part relations.",
-            "hint": "Use 'An architectonic framework organises a text at the macro level by establishing' and specify what is established.",
-            "explanation": "'Structural relations among all its major parts' names what architectonics manages - not content but inter-part organisation."
+            "sampleAnswer": "A clear structural outline helps writers organize a long piece before drafting, mapping how every part will relate to the whole.",
+            "hint": "Name the planning tool, then explain what it helps writers do before they start drafting.",
+            "explanation": "'Mapping how every part will relate to the whole' is the real value of an outline - it solves structural problems before they become expensive to fix."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L192_Q2",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about how Shannon entropy quantifies the maximum information capacity of a communication channel.",
+            "prompt": "Write about how engineers calculate the absolute limit on how much data a communication channel can carry.",
             "options": [
-                "entropy",
-                "Shannon",
-                "channel capacity"
+                "calculate",
+                "channel",
+                "limit"
             ],
-            "sampleAnswer": "Shannon entropy quantifies the theoretical maximum channel capacity for transmitting information reliably without error.",
-            "hint": "Use 'Shannon entropy quantifies the theoretical maximum channel capacity for transmitting information reliably without' and specify.",
-            "explanation": "'Without error' names the key constraint - Shannon's limit is the maximum reliable transmission rate given noise."
+            "sampleAnswer": "Engineers calculate the theoretical limit on how much data a communication channel can carry before errors become unavoidable.",
+            "hint": "Name what engineers calculate, then specify what happens once that limit is crossed.",
+            "explanation": "'Before errors become unavoidable' names the real constraint - every channel has a ceiling, no matter how good the technology."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L192_Q3",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about how Adorno's negative dialectics refuses identity thinking by insisting on the nonidentical remainder.",
+            "prompt": "Write about why forcing a messy, complicated situation into one simple category can distort the truth.",
             "options": [
-                "negate",
-                "identity thinking",
-                "nonidentical"
+                "messy",
+                "category",
+                "distort"
             ],
-            "sampleAnswer": "Adorno's negative dialectics negates identity thinking by insisting on the nonidentical remainder that every concept necessarily excludes.",
-            "hint": "Use 'Adorno's negative dialectics negates identity thinking by insisting on the nonidentical remainder that' and end precisely.",
-            "explanation": "'Every concept necessarily excludes' shows that the problem is structural - conceptual thought always produces a remainder."
+            "sampleAnswer": "Forcing a messy, complicated situation into one simple category can distort the truth by erasing exactly the details that mattered most.",
+            "hint": "State what forcing a situation into one category can do, then explain exactly what gets lost.",
+            "explanation": "'Erasing exactly the details that mattered most' is the real cost of oversimplification - the parts that don't fit are often the most important ones."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L193_Q1",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about how expert writers achieve maximum rhetorical effect through lexical precision and the avoidance of circumlocution.",
+            "prompt": "Write about why expert writers choose one precise word instead of a wordy, roundabout phrase.",
             "options": [
-                "periperiasis",
-                "circumlocution",
-                "avoid"
+                "precise",
+                "wordy",
+                "roundabout"
             ],
-            "sampleAnswer": "Expert writers avoid circumlocution - a habit sometimes called periperiasis - by selecting only the most precise term.",
-            "hint": "Use 'Expert writers achieve maximum rhetorical effect by avoiding all circumlocution and selecting' and specify the standard.",
-            "explanation": "'Only the most precise available term' sets a superlative standard - precision, not adequacy, is the expert goal."
+            "sampleAnswer": "Expert writers choose one precise word instead of a wordy, roundabout phrase that only dilutes their meaning.",
+            "hint": "State what expert writers choose, then contrast it with the wordy alternative they avoid.",
+            "explanation": "Calling the alternative 'wordy' and 'roundabout' emphasizes the cost of imprecision - readers have to work harder to extract the same meaning."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L193_Q2",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about how proteomics maps protein interaction networks to reveal the functional organisation of the cell.",
+            "prompt": "Write about how researchers map the complex web of interactions between proteins inside a living cell.",
             "options": [
-                "protein interaction",
-                "network",
+                "protein",
+                "interaction",
                 "map"
             ],
-            "sampleAnswer": "Proteomics maps the complete protein interaction network of a cell to reveal its functional organisation and regulatory architecture.",
-            "hint": "Use 'Proteomics maps the complete protein interaction network of a cell to reveal' and name the two things revealed.",
-            "explanation": "'Functional organisation and regulatory architecture' names both structural and dynamic aspects of the proteome."
+            "sampleAnswer": "Researchers map the complex web of protein interactions inside a living cell to understand how its systems actually function.",
+            "hint": "Name what researchers map inside a cell, then state the ultimate purpose of doing so.",
+            "explanation": "'Understand how its systems actually function' names the payoff - mapping interactions reveals function that studying single proteins alone would miss."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L193_Q3",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about how Wittgenstein argues that meaning is constituted through use within a form of life.",
+            "prompt": "Write about how the true meaning of a word often becomes clear only through watching how people actually use it.",
             "options": [
-                "language game",
-                "practice",
-                "meaning"
+                "meaning",
+                "clear",
+                "actually"
             ],
-            "sampleAnswer": "Wittgenstein argues that meaning is constituted through linguistic practice within a language game embedded in a shared form of life.",
-            "hint": "Use 'Wittgenstein argues that meaning is constituted through linguistic practice within a language game embedded in' and specify.",
-            "explanation": "'A shared form of life' is the Wittgensteinian ground - language games only work within shared human practices and contexts."
+            "sampleAnswer": "The true meaning of a word often becomes clear only through watching how people actually use it in real conversation.",
+            "hint": "State when a word's true meaning becomes clear, then specify where you have to look to see it.",
+            "explanation": "'In real conversation' is the key phrase - it grounds an abstract question about meaning in something every reader has direct experience with."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L194_Q1",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about how the most generative theoretical analyses traverse contradictions rather than resolving them away.",
+            "prompt": "Write about why the best essays explore a genuine tension in their topic instead of pretending it doesn't exist.",
             "options": [
-                "traverse",
-                "contradiction",
-                "productive"
+                "tension",
+                "pretend",
+                "explore"
             ],
-            "sampleAnswer": "The most productive theoretical analyses traverse contradictions rather than eliminating them, deriving insight from the tension itself.",
-            "hint": "Use 'The most productive theoretical analyses traverse contradictions rather than eliminating them, deriving insight from' and end.",
-            "explanation": "'Deriving insight from the tension itself' shows that contradiction is a resource, not an obstacle, in expert analysis."
+            "sampleAnswer": "The best essays explore a genuine tension in their topic instead of pretending it doesn't exist or smoothing it over.",
+            "hint": "State what the best essays do with tension in their topic, then contrast this with two weaker alternatives.",
+            "explanation": "Naming two weak alternatives ('pretending it doesn't exist or smoothing it over') makes the stronger choice - genuinely engaging the tension - feel earned by comparison."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L194_Q2",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
             "prompt": "Write about how inflationary cosmology explains the remarkable uniformity of the observable universe.",
@@ -165,87 +165,87 @@
                 "universe"
             ],
             "sampleAnswer": "Inflationary cosmology proposes the early universe underwent rapid expansion, an inflation that smoothed initial inhomogeneities.",
-            "hint": "Use 'Inflationary cosmology proposes that the early universe underwent an epoch of rapid exponential expansion that' and add a result clause.",
-            "explanation": "'Smoothed initial inhomogeneities' is the precise consequence - inflation explains the uniformity of the cosmic microwave background."
+            "hint": "Name the theory, then describe the early-universe event and its effect on uniformity.",
+            "explanation": "'Smoothed initial inhomogeneities' is the precise consequence - inflation explains the uniformity of the early universe."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L194_Q3",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about how Badiou defines an event as a radical ontological rupture that transforms an existing situation.",
+            "prompt": "Write about how a single unexpected event can suddenly make something possible that seemed impossible before.",
             "options": [
-                "event",
-                "rupture",
-                "ontology"
+                "unexpected",
+                "possible",
+                "impossible"
             ],
-            "sampleAnswer": "For Badiou, an event is a radical rupture in ontology that introduces what was previously impossible into the situation.",
-            "hint": "Use 'For Badiou, an event is a radical ontological rupture that transforms an existing situation by introducing' and end.",
-            "explanation": "'What was previously impossible' is the key Badiouian criterion - the event makes the impossible suddenly possible."
+            "sampleAnswer": "A single unexpected event can suddenly make something possible that had seemed completely impossible only moments before.",
+            "hint": "State what kind of event can do this, then contrast the before-and-after using 'possible' and 'impossible'.",
+            "explanation": "Contrasting 'possible' and 'impossible' in one sentence captures the dramatic, sudden nature of the shift being described."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L195_Q1",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about how the Duhem-Quine thesis complicates the falsification of scientific theories.",
+            "prompt": "Write about why a single disappointing experimental result rarely overturns an entire well-supported scientific theory.",
             "options": [
-                "falsify",
-                "auxiliary hypothesis",
-                "Duhem-Quine"
+                "overturn",
+                "well-supported",
+                "single"
             ],
-            "sampleAnswer": "The Duhem-Quine thesis reveals that auxiliary hypothesis protect core theories, making it difficult to falsify any theory directly.",
-            "hint": "Use 'The Duhem-Quine thesis shows that auxiliary hypotheses insulate core theories from direct falsification by' and name the mechanism.",
-            "explanation": "'Absorbing anomalous results' names how auxiliary hypotheses function - they take the evidential hit instead of the core theory."
+            "sampleAnswer": "A single disappointing result rarely overturns an entire well-supported scientific theory, since one anomaly is usually explained away first.",
+            "hint": "State what a single result rarely does to a well-supported theory, then explain what usually happens to that result first.",
+            "explanation": "'Usually explained away first' captures a realistic pattern in science - a lone anomaly gets scrutinized before it's allowed to threaten an established theory."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L195_Q2",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about how RNA sequencing reveals differential gene expression patterns across experimental conditions.",
+            "prompt": "Write about how scientists compare gene activity between a healthy sample and a diseased one to find meaningful differences.",
             "options": [
-                "RNA-seq",
-                "expression profile",
-                "differential"
+                "compare",
+                "sample",
+                "difference"
             ],
-            "sampleAnswer": "RNA-seq reveals differential gene expression profiles across experimental conditions at single-gene resolution and genome-wide scale.",
-            "hint": "Use 'RNA-seq reveals differential gene expression profiles across experimental conditions at single-gene resolution and' and add scale.",
-            "explanation": "'Genome-wide scale' contrasts with 'single-gene resolution' - RNA-seq operates at both micro and macro levels simultaneously."
+            "sampleAnswer": "Scientists compare gene activity between a healthy sample and a diseased one to identify the difference that actually matters.",
+            "hint": "Name the two samples being compared, then state what scientists are trying to identify.",
+            "explanation": "'The difference that actually matters' is precise - the goal isn't just noticing differences, but isolating the ones connected to the disease."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L195_Q3",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about how Butler argues that only those recognised as having grievable lives receive full moral recognition.",
+            "prompt": "Write about why some news stories about tragedy receive far more public attention and sympathy than others.",
             "options": [
-                "grievable",
-                "precarious life",
-                "recognize"
+                "sympathy",
+                "attention",
+                "tragedy"
             ],
-            "sampleAnswer": "Butler argues that only lives recognize as grievable and precarious life are accorded full moral and political recognition.",
-            "hint": "Use 'Butler argues that only those whose lives are recognised as grievable and precarious are accorded' and specify what they receive.",
-            "explanation": "'Full moral and political recognition' names the entitlement - grievability is the condition for being counted as a life."
+            "sampleAnswer": "Some stories of tragedy receive far more public sympathy and attention than others, often for reasons that have little to do with the scale of suffering.",
+            "hint": "State what some tragedies receive more of than others, then comment on whether this always tracks the actual scale of suffering.",
+            "explanation": "Noting the gap 'has little to do with the scale of suffering' invites a genuinely important question about which stories the media and public choose to elevate."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L196_Q1",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about what conceptual analysis does by decomposing a concept into its necessary and sufficient conditions.",
+            "prompt": "Write about how breaking a complicated idea into its basic parts can make it easier to define clearly.",
             "options": [
-                "decompose",
-                "constituent",
-                "concept"
+                "break down",
+                "basic part",
+                "define"
             ],
-            "sampleAnswer": "Conceptual analysis decomposes a complex concept into its constituent necessary and sufficient conditions to reveal its logical structure.",
-            "hint": "Use 'Conceptual analysis decomposes a complex concept into its constituent necessary and sufficient conditions to reveal' and end.",
-            "explanation": "'Logical structure' is what is revealed - not the empirical facts about the concept but its definitional architecture."
+            "sampleAnswer": "To break down a complicated idea into its basic parts often makes it far easier to define clearly and precisely.",
+            "hint": "State what breaking an idea into parts does, then describe the effect on clarity.",
+            "explanation": "This is a foundational thinking strategy across many fields - complexity becomes manageable once you isolate and name the individual pieces."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L196_Q2",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
             "prompt": "Write about how the many-worlds interpretation of quantum mechanics posits branching parallel universes.",
@@ -255,72 +255,72 @@
                 "quantum"
             ],
             "sampleAnswer": "The many-worlds interpretation posits that every quantum measurement causes branching into parallel, non-communicating universes.",
-            "hint": "Use 'The many-worlds interpretation posits that every quantum measurement causes branching into parallel, non-communicating' and specify.",
-            "explanation": "'Non-communicating universes' is the key phrase - the branches cannot interact after separation."
+            "hint": "Name the interpretation, then describe what happens to the universe at every quantum measurement.",
+            "explanation": "'Non-communicating universes' is the key phrase - once the branches separate, they cannot interact with one another again."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L196_Q3",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about how Kripke's notion of rigid designators explains how names refer across possible worlds.",
+            "prompt": "Write about how a person's name still refers to them even in an imagined situation where every fact about their life is different.",
             "options": [
-                "rigid designator",
                 "refer",
-                "modal context"
+                "imagined",
+                "fact"
             ],
-            "sampleAnswer": "A rigid designator refers to the same object across all modal contexts and possible worlds, regardless of how the object is described.",
-            "hint": "Use 'A rigid designator refers to the same object across all modal contexts and possible worlds, regardless of' and specify.",
-            "explanation": "'Regardless of how the object is described' distinguishes rigid from non-rigid designation - it is the object, not the description."
+            "sampleAnswer": "A person's name still refers to them even in an imagined situation where every single fact about their life is different.",
+            "hint": "State what still works even in an imagined scenario, then specify how much about that scenario has changed.",
+            "explanation": "This is a genuinely strange and interesting puzzle about language - it shows that names can behave differently from ordinary descriptions."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L197_Q1",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about how expert academic writers foreground their epistemic stance through precise hedge and stance markers.",
+            "prompt": "Write about how a strong closing paragraph can leave the reader with a clear sense of the writer's confidence in their argument.",
             "options": [
-                "foreground",
-                "stance marker",
-                "hedge"
+                "confidence",
+                "closing",
+                "clear"
             ],
-            "sampleAnswer": "Expert academic writers foreground their epistemic stance by deploying precisely calibrated hedge and stance markers throughout the text.",
-            "hint": "Use 'Expert academic writers foreground their epistemic stance by deploying precisely calibrated hedge and stance markers' and add scope.",
-            "explanation": "'Precisely calibrated' shows that expert hedging is deliberate and measured - it conveys exactly the right level of certainty."
+            "sampleAnswer": "A strong closing paragraph leaves the reader with a clear sense of the writer's confidence in the argument just made.",
+            "hint": "Name what a strong closing leaves the reader with, then specify whose confidence it reflects.",
+            "explanation": "Ending on a note of 'clear confidence' matters - readers remember how an argument concludes more than how carefully it hedged along the way."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L197_Q2",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about how neural oscillations synchronise across distributed brain networks to coordinate complex cognition.",
+            "prompt": "Write about how different regions of the brain must work together in coordination to produce complex thought.",
             "options": [
-                "oscillation",
-                "synchronize",
-                "network"
+                "coordinate",
+                "region",
+                "complex"
             ],
-            "sampleAnswer": "Neural oscillations synchronize across distributed cortical networks to coordinate the complex cognitive processes underlying attention and memory.",
-            "hint": "Use 'Neural oscillations synchronize across distributed cortical networks to coordinate' and name two cognitive processes.",
-            "explanation": "'Attention and memory' are two distinct cognitive processes - naming them shows the breadth of oscillatory coordination."
+            "sampleAnswer": "Different regions of the brain must coordinate closely with one another to produce genuinely complex thought and behavior.",
+            "hint": "Name what different brain regions must do together, then specify the kind of thought this produces.",
+            "explanation": "This reflects a key shift in neuroscience - complex thought isn't located in one single brain area, it emerges from coordination across many."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L197_Q3",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about how Lyotard defines the postmodern condition as incredulity toward grand narratives that legitimate knowledge.",
+            "prompt": "Write about why people today are often more skeptical of big, sweeping explanations for how the world works.",
             "options": [
-                "grand narrative",
-                "legitimate",
-                "postmodern"
+                "skeptical",
+                "sweeping",
+                "explanation"
             ],
-            "sampleAnswer": "Lyotard defines the postmodern as an incredulity toward grand narratives that historically legitimated science, justice, and progress.",
-            "hint": "Use 'Lyotard defines the postmodern as an incredulity toward grand narratives that historically legitimated' and list the narratives.",
-            "explanation": "'Science, justice, and progress' are the three specific metanarratives Lyotard targets - each once legitimated knowledge claims."
+            "sampleAnswer": "People today are often more skeptical of sweeping explanations that claim to account for how the entire world works.",
+            "hint": "State how people tend to react to big explanations today, then describe the scope such explanations claim to cover.",
+            "explanation": "Describing explanations as 'sweeping' hints at the reason for the skepticism - the bigger and neater the claim, the more it invites careful scrutiny."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L198_Q1",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
             "prompt": "Write about how expert prose transmits the maximum amount of information using the minimum number of words.",
@@ -329,13 +329,13 @@
                 "minimum words",
                 "achieve"
             ],
-            "sampleAnswer": "Expert prose must achieve maximum information transfer using the minimum words, ensuring nothing wastes a single word.",
-            "hint": "Use 'Expert prose achieves the maximum transmission of information by selecting words that carry the maximum' and end precisely.",
-            "explanation": "'Maximum semantic load with minimum count' defines expert economy precisely - every word must earn its place."
+            "sampleAnswer": "Expert prose achieves maximum information transfer using minimum words, so that not a single word feels wasted.",
+            "hint": "State what expert prose achieves in terms of information and word count, then add a result clause about waste.",
+            "explanation": "'Not a single word feels wasted' is the real test of economical prose - every word should be doing real work in the sentence."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L198_Q2",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
             "prompt": "Write about how the cosmological constant serves as the leading explanation for the accelerating expansion of the universe.",
@@ -344,28 +344,28 @@
                 "expansion",
                 "accelerate"
             ],
-            "sampleAnswer": "The cosmological constant drives and helps accelerate the accelerating cosmic expansion observed at cosmological scales.",
+            "sampleAnswer": "The cosmological constant is the leading explanation for the accelerating expansion of the universe observed at the largest cosmic scales.",
             "hint": "Use 'The cosmological constant is the leading theoretical explanation for the observed accelerating expansion of the universe at' and end.",
-            "explanation": "'At cosmological scales' scopes the claim - the acceleration is only measurable across vast intergalactic distances."
+            "explanation": "'At the largest cosmic scales' scopes the claim precisely - the acceleration is only measurable across vast intergalactic distances."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L198_Q3",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about how Frege's distinction between sense and reference resolves puzzles about identity statements.",
+            "prompt": "Write about how two different descriptions can refer to the exact same real-world thing without anyone realizing it at first.",
             "options": [
-                "Frege",
-                "sense",
-                "determine"
+                "description",
+                "refer",
+                "realize"
             ],
-            "sampleAnswer": "For Frege, the sense of an expression determines its reference by providing a mode of presentation that picks out a unique object.",
-            "hint": "Use 'For Frege, the sense of an expression determines its reference by providing a mode of presentation that' and specify.",
-            "explanation": "'Picks out a unique object' is the function of reference - the sense is the path and the referent is the destination."
+            "sampleAnswer": "Two different descriptions can refer to the exact same real-world thing without anyone realizing it until much later.",
+            "hint": "State what two different descriptions can share, then specify how long it can take for anyone to notice.",
+            "explanation": "'Until much later' captures something genuinely interesting about language and discovery - two labels can quietly point at one thing for a long time before anyone connects them."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L199_Q1",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
             "prompt": "Write about how a well-crafted concluding sentence can clinch an argument by revealing its inevitable implication.",
@@ -375,83 +375,83 @@
                 "inevitable"
             ],
             "sampleAnswer": "The final sentence clinches the argument by revealing its most important implication as logically inevitable and practically urgent.",
-            "hint": "Use 'The final sentence clinches the argument by revealing its most important implication as' and add two adjectives.",
+            "hint": "State what the final sentence does to the argument, then describe the implication with two adjectives.",
             "explanation": "'Logically inevitable and practically urgent' names two types of force: intellectual necessity and real-world consequence."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L199_Q2",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about how the holographic principle proposes that all the information in a volume is encoded on its boundary.",
+            "prompt": "Write about a surprising scientific idea: that all the information about a space could theoretically be described using only its outer surface.",
             "options": [
                 "information",
-                "encode",
-                "boundary"
+                "surface",
+                "describe"
             ],
-            "sampleAnswer": "The holographic principle proposes that all the information contained within a three-dimensional volume is encoded on its two-dimensional boundary.",
-            "hint": "Use 'The holographic principle proposes that all the information contained within a three-dimensional volume is encoded on its' and specify.",
-            "explanation": "'Two-dimensional boundary' is the key claim - dimensionality is reduced by one in the holographic encoding."
+            "sampleAnswer": "One surprising scientific idea proposes that all the information within a space could theoretically be described using only its outer surface.",
+            "hint": "Introduce the idea as surprising, then state what could theoretically be described using only a surface.",
+            "explanation": "Calling the idea 'surprising' is honest framing - reducing a description of a whole space down to just its surface defies ordinary intuition."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L199_Q3",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about how Hegel's concept of Aufhebung simultaneously negates, preserves, and elevates through dialectical sublation.",
+            "prompt": "Write about how an old idea can be refined by a new one without being completely thrown away in the process.",
             "options": [
-                "aufhebung",
-                "sublate",
-                "preserve"
+                "refine",
+                "thrown away",
+                "idea"
             ],
-            "sampleAnswer": "Hegelian Aufhebung must sublate and preserve what is true in opposing terms while elevating them into higher unity.",
-            "hint": "Use 'Hegelian Aufhebung sublates opposing terms by simultaneously negating, preserving, and elevating them into' and end.",
-            "explanation": "Three parallel gerunds ('negating, preserving, and elevating') model the three simultaneous movements of Aufhebung exactly."
+            "sampleAnswer": "A good new idea can refine an old one without the old one being simply thrown away in the process.",
+            "hint": "State what a good new idea can do to an old one, then clarify what does NOT happen to the old idea.",
+            "explanation": "Clarifying what does not happen (the old idea being thrown away) is a precise way to describe genuine intellectual progress, as opposed to simple replacement."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L200_Q1",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about how a master of a discipline transforms inherited knowledge through original and rigorous intellectual synthesis.",
+            "prompt": "Write about how a master chef can take a traditional recipe and transform it into something genuinely original.",
             "options": [
                 "master",
-                "discipline",
+                "traditional",
                 "transform"
             ],
-            "sampleAnswer": "A true master of their discipline transforms inherited knowledge through original synthesis that advances the field itself.",
-            "hint": "Use 'A true master of their discipline transforms inherited knowledge through original synthesis that' and add a result clause.",
-            "explanation": "'Advances the field itself' is the ultimate standard - not just excellent work but work that moves the discipline forward."
+            "sampleAnswer": "A master chef can take a traditional recipe passed down for generations and transform it into something genuinely original.",
+            "hint": "Name the kind of expert, then describe what they do to a traditional recipe.",
+            "explanation": "Using a concrete example (a master chef and a recipe) makes an abstract claim about mastery and innovation immediately easy to picture, in any discipline."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L200_Q2",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about what a grand unified theory seeks to achieve by unifying the remaining fundamental forces of nature.",
+            "prompt": "Write about why final-round negotiators often make their biggest concessions only when a deadline is about to expire.",
             "options": [
-                "unify",
-                "fundamental force",
-                "standard model"
+                "concession",
+                "deadline",
+                "expire"
             ],
-            "sampleAnswer": "A grand unified theory seeks to unify the remaining fundamental forces into a single framework that extends beyond the Standard Model.",
-            "hint": "Use 'A grand unified theory seeks to unify the remaining fundamental forces into a single framework that extends beyond' and specify.",
-            "explanation": "'Extends beyond the Standard Model' names both the limit and the goal - GUT moves where the Standard Model stops."
+            "sampleAnswer": "Negotiators often save their biggest concessions for the very end, offering them only as a deadline is about to expire.",
+            "hint": "State when negotiators tend to make their biggest concessions, then specify the exact timing that triggers this.",
+            "explanation": "This is a well-documented negotiation pattern - a ticking deadline creates pressure that unlocks flexibility neither side showed earlier in the conversation."
         },
         {
             "id": "WRT_SHORTANSWERWRITING_L200_Q3",
-            "instruction": "Type an academic description containing all booster terms",
+            "instruction": "Write a short, natural answer to the prompt below, using all three key words.",
             "subtype": "shortAnswerWriting",
             "interactionType": "Ink Drip",
-            "prompt": "Write about how Nagarjuna's concept of sunyata holds that all phenomena are empty of intrinsic being.",
+            "prompt": "Write about why nothing in nature can be fully understood in complete isolation from everything around it.",
             "options": [
-                "sunyata",
-                "emptiness",
-                "dependent"
+                "isolation",
+                "interconnected",
+                "nature"
             ],
-            "sampleAnswer": "Nagarjuna's concept of sunyata, or emptiness, holds that all phenomena are empty of intrinsic being and exist only dependently.",
-            "hint": "Use 'Nagarjuna's sunyata holds that all phenomena are empty of intrinsic being and exist only dependently, through' and end.",
-            "explanation": "'Interdependent origination' is the Buddhist doctrine that pairs with sunyata - things exist only through relation to others."
+            "sampleAnswer": "Nothing in nature can be fully understood in isolation, since every living thing exists as part of a deeply interconnected system.",
+            "hint": "State what can't be understood alone, then explain what larger system every living thing belongs to.",
+            "explanation": "This ecological insight applies far beyond biology - systems thinking, in general, reminds us that context and relationship often matter as much as the thing itself."
         }
     ]
 }
