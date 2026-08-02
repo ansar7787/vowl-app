@@ -14,6 +14,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_magic_chest.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_watch_earn_card.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_category_grid.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_smart_mix_widget.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_zone_home_header.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
@@ -142,6 +143,10 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                         showNotification: _showModernNotification,
                       ),
                     ),
+                  ),
+
+                  SliverToBoxAdapter(
+                    child: KidsSmartMixWidget(isDark: isDark),
                   ),
 
                   KidsCategoryGrid(isDark: isDark),

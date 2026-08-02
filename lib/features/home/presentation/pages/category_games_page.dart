@@ -16,6 +16,9 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/curriculum_service.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/presentation/widgets/category_radar_chart.dart';
+import 'package:vowl/core/presentation/widgets/adaptive_smart_mix_widget.dart';
+import 'package:vowl/core/utils/pedagogical_blueprint.dart';
 
 class CategoryGamesPage extends StatefulWidget {
   const CategoryGamesPage({super.key, required this.categoryId});
@@ -86,41 +89,82 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
           // 1. Immersive Mesh Background
           const MeshGradientBackground(showLetters: false),
 
-          // 2. Dynamic Content
-          CustomScrollView(
-            physics: const BouncingScrollPhysics(),
-            slivers: [
-              // Responsive spacer matching the dynamic floating App Bar
-              SliverToBoxAdapter(
-                child: SizedBox(
-                  height: MediaQuery.of(context).padding.top + 90.h,
-                ),
-              ),
+          Builder(
+            builder: (context) {
+              final hasBlueprint = PedagogicalBlueprintMap.getBlueprint(widget.categoryId) != null;
+              return CustomScrollView(
+                physics: const BouncingScrollPhysics(),
+                slivers: [
+                  // Responsive spacer matching the dynamic floating App Bar
+                  SliverToBoxAdapter(
+                    child: SizedBox(
+                      height: MediaQuery.of(context).padding.top + 90.h,
+                    ),
+                  ),
 
-              // 3. Mastery Dashboard Header
-              SliverToBoxAdapter(
-                child: _buildMasteryDashboard(theme, user, games, isDark),
-              ),
+                  // 3. Mastery Dashboard Header
+                  SliverToBoxAdapter(
+                    child: _buildMasteryDashboard(theme, user, games, isDark),
+                  ),
 
-              // 4. Game Grid/List
-              SliverPadding(
-                padding: EdgeInsets.fromLTRB(24.w, 32.h, 24.w, 100.h),
-                sliver: SliverList(
-                  delegate: SliverChildBuilderDelegate((context, index) {
-                    return Padding(
-                      padding: EdgeInsets.only(bottom: 24.h),
-                      child: _buildSpatialGameCard(
-                        context,
-                        user,
-                        games[index],
-                        isDark,
-                        index,
+                  // 3.5 Global Adaptive Learning Dashboard
+                  if (hasBlueprint) ...[
+                    SliverToBoxAdapter(
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 24.h),
+                        child: CategoryRadarChart(
+                          user: user,
+                          primaryColor: theme.primaryColor,
+                          isDark: isDark,
+                          categoryId: widget.categoryId,
+                        ),
                       ),
-                    );
-                  }, childCount: games.length),
-                ),
-              ),
-            ],
+                    ),
+                    SliverToBoxAdapter(
+                      child: AdaptiveSmartMixWidget(
+                        user: user,
+                        isDark: isDark,
+                        categoryId: widget.categoryId,
+                      ),
+                    ),
+                    SliverToBoxAdapter(
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+                        child: Text(
+                          context.tr('category.practice_library', fallback: 'PRACTICE LIBRARY'),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w900,
+                            color: isDark ? Colors.white70 : Colors.black54,
+                            letterSpacing: 2,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+
+                  // 4. Game Grid/List
+                  SliverPadding(
+                    padding: EdgeInsets.fromLTRB(24.w, hasBlueprint ? 8.h : 32.h, 24.w, 100.h),
+                    sliver: SliverList(
+                      delegate: SliverChildBuilderDelegate((context, index) {
+                        return Padding(
+                          padding: EdgeInsets.only(bottom: 24.h),
+                          child: _buildSpatialGameCard(
+                            context,
+                            user,
+                            games[index],
+                            isDark,
+                            index,
+                          ),
+                        );
+                      }, childCount: games.length),
+                    ),
+                  ),
+                ],
+              );
+            }
           ),
 
           // 5. Floating Glass Island AppBar
