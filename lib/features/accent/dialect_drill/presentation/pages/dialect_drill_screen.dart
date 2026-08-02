@@ -38,6 +38,9 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  
+  List<String>? _shuffledOptions;
+  int? _shuffledCorrectIndex;
 
   @override
   void initState() {
@@ -47,10 +50,18 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
     );
   }
 
+  void _shuffleOptions(AccentQuest? quest) {
+    if (quest == null || quest.options == null) return;
+    List<MapEntry<int, String>> indexedOptions = quest.options!.asMap().entries.toList();
+    indexedOptions.shuffle();
+    _shuffledOptions = indexedOptions.map((e) => e.value).toList();
+    _shuffledCorrectIndex = indexedOptions.indexWhere((e) => e.key == (quest.correctAnswerIndex ?? 0));
+  }
+
   void _triggerAutoPlay(AccentQuest quest) {
-    final instruction = quest.instruction;
+    final instruction = quest.instruction.toLowerCase();
     final String targetLocale =
-        instruction.contains(context.tr('games.british', fallback: 'British'))
+        instruction.contains('british')
         ? "en-GB"
         : "en-US";
     _soundService.playTts(quest.word ?? "", locale: targetLocale);
@@ -96,6 +107,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _shuffleOptions(state.currentQuest as AccentQuest?);
             });
             Future.delayed(const Duration(milliseconds: 350), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -116,23 +128,28 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
         }
       },
       builder: (context, state) {
-        final AccentQuest? quest = (state is AccentLoaded)
+        final AccentQuest? originalQuest = (state is AccentLoaded)
             ? state.currentQuest as AccentQuest?
             : _lastQuest;
+
+        if (originalQuest != null && _shuffledOptions == null) {
+          _shuffleOptions(originalQuest);
+        }
+
+        final AccentQuest? quest = originalQuest?.copyWith(
+          options: _shuffledOptions,
+          correctAnswerIndex: _shuffledCorrectIndex,
+        );
 
         final bool isHintUnlocked = (state is AccentLoaded) && state.hintUsed;
 
         String instructionText = quest?.instruction ?? "";
-        if (instructionText.contains(
-          context.tr('games.british', fallback: 'British'),
-        )) {
+        if (instructionText.toLowerCase().contains('british')) {
           instructionText = context.tr(
             'games.dialect_drill_instruction_uk',
             fallback: 'Identify the British pronunciation.',
           );
-        } else if (instructionText.contains(
-          context.tr('games.american', fallback: 'American'),
-        )) {
+        } else if (instructionText.toLowerCase().contains('american')) {
           instructionText = context.tr(
             'games.dialect_drill_instruction_us',
             fallback: 'Identify the American pronunciation.',
