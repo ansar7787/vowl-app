@@ -43,6 +43,31 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
 
   int? _selectedIndex;
 
+  String? _shuffledQuestId;
+  int _shuffledRetryCount = -1;
+  List<String> _currentOptions = [];
+  int _currentCorrectIndex = 0;
+
+  void _ensureOptionsShuffled(AccentQuest quest, int retryCount) {
+    if (_shuffledQuestId == quest.id && _shuffledRetryCount == retryCount) return;
+    
+    _shuffledQuestId = quest.id;
+    _shuffledRetryCount = retryCount;
+    
+    final originalOptions = quest.options ?? ["A", "B"];
+    final originalCorrectIndex = quest.correctAnswerIndex ?? 0;
+    final originalCorrectAnswer = originalOptions.isNotEmpty && originalCorrectIndex < originalOptions.length 
+        ? originalOptions[originalCorrectIndex] 
+        : null;
+        
+    _currentOptions = List.from(originalOptions)..shuffle();
+    if (originalCorrectAnswer != null) {
+        _currentCorrectIndex = _currentOptions.indexOf(originalCorrectAnswer);
+    } else {
+        _currentCorrectIndex = 0;
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -145,8 +170,14 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
         final AccentQuest? quest = (state is AccentLoaded)
             ? state.currentQuest as AccentQuest?
             : _lastQuest;
+            
+        if (quest != null && !_isAnswered) {
+          final currentLives = (state is AccentLoaded) ? state.livesRemaining : _lastLives;
+          _ensureOptionsShuffled(quest, currentLives);
+        }
         
-        final options = quest?.options ?? ["A", "B"];
+        final options = _currentOptions.isEmpty ? (quest?.options ?? ["A", "B"]) : _currentOptions;
+        final correctIndex = _currentOptions.isEmpty ? (quest?.correctAnswerIndex ?? 0) : _currentCorrectIndex;
         final mediaQuery = MediaQuery.of(context);
 
         return MediaQuery(
@@ -277,10 +308,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                                 width: maxWidth - 48.w,
                                                 child: ConsonantClarityTactileGrid(
                                                   options: options,
-                                                  correctIndex:
-                                                      quest
-                                                          .correctAnswerIndex ??
-                                                      0,
+                                                  correctIndex: correctIndex,
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
                                                   isAnswered: _isAnswered,
@@ -292,8 +320,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                           )
                                         : ConsonantClarityTactileGrid(
                                             options: options,
-                                            correctIndex:
-                                                quest.correctAnswerIndex ?? 0,
+                                            correctIndex: correctIndex,
                                             color: theme.primaryColor,
                                             isDark: isDark,
                                             isAnswered: _isAnswered,

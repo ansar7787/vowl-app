@@ -46,14 +46,18 @@ class ConsonantClarityPromptCard extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 8.h),
-                Text(
-                  isAnswered ? word.toUpperCase() : "? ? ?",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 28.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : Colors.black87,
-                    letterSpacing: isAnswered ? 4 : 8,
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    isAnswered ? word.toUpperCase() : "? ? ?",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 28.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isDark ? Colors.white : Colors.black87,
+                      letterSpacing: isAnswered ? 4 : 8,
+                    ),
                   ),
                 ),
               ],
