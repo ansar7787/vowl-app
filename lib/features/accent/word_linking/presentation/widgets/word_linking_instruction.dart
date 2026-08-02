@@ -22,9 +22,10 @@ class WordLinkingInstruction extends StatelessWidget {
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(Icons.link_rounded, size: 14.r, color: color),
-          SizedBox(width: 12.w),
+          SizedBox(width: 8.w),
           Flexible(
             child: Text(
               instruction.trim().isEmpty

@@ -215,8 +215,10 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                             height: 32.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
+                                              child: ConstrainedBox(
+                                                constraints: BoxConstraints(
+                                                  maxWidth: maxWidth - 48.w,
+                                                ),
                                                 child: WordLinkingInstruction(
                                                   color: theme.primaryColor,
                                                   instruction: context.tr('games.word_linking_instruction', fallback: quest.instruction),
