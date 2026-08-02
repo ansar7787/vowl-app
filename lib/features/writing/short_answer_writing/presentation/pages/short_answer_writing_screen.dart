@@ -130,7 +130,6 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
     return BlocConsumer<WritingBloc, WritingState>(
       listenWhen: (prev, curr) =>
           (curr is WritingGameComplete && prev is! WritingGameComplete) ||
-          (curr is WritingGameOver && prev is! WritingGameOver) ||
           (curr is WritingLoaded && curr.lastAnswerCorrect == null),
       listener: (context, state) {
         if (state is WritingLoaded && state.lastAnswerCorrect == null) {
@@ -163,6 +162,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
         final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
         final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
         final bool isFinalFailure = isLoaded ? state.isFinalFailure : false;
+        final int livesRemaining = state.livesRemaining;
 
         return WritingBaseLayout(
           gameType: widget.gameType,
@@ -212,7 +212,49 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                         ),
                         SizedBox(height: 36.h),
 
-                        if (!isAnswered)
+                        if ((isCorrect == true || isFinalFailure) && quest.sampleAnswer != null)
+                          Container(
+                            margin: EdgeInsets.only(bottom: 36.h),
+                            padding: EdgeInsets.all(16.r),
+                            decoration: BoxDecoration(
+                              color: theme.primaryColor.withValues(alpha: 0.1),
+                              borderRadius: BorderRadius.circular(16.r),
+                              border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(Icons.lightbulb_rounded, color: theme.primaryColor, size: 18.r),
+                                    SizedBox(width: 8.w),
+                                    Text(
+                                      "SAMPLE ANSWER",
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: theme.primaryColor,
+                                        letterSpacing: 1.2,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 8.h),
+                                Text(
+                                  quest.sampleAnswer!,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 14.sp,
+                                    color: isDark ? Colors.white : Colors.black87,
+                                    height: 1.5,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+
+                        if (!isAnswered && livesRemaining > 0)
                           ScaleButton(
                             onTap: () =>
                                 _submitAnswer(targetKeywords, isAnswered),

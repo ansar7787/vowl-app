@@ -766,8 +766,12 @@ class GameInstructionService {
       title: "Briefing Pro",
       icon: Icons.short_text_rounded,
       objective:
-          "Write a brief, concise, and direct response to the prompt. Mastering clear short-form writing ensures you can communicate ideas effectively and professionally in real-world scenarios.",
-      rules: ["Be direct", "Stay on topic", "Mind your grammar"],
+          "Write a brief, concise, and direct response to the prompt using the required keywords. Mastering clear short-form writing ensures you can communicate ideas effectively and professionally in real-world scenarios.",
+      rules: [
+        "Use all required keywords",
+        "Check grammar and punctuation",
+        "Write naturally and clearly",
+      ],
       actionText: "Submit Answer",
       tip: "PRO TIP: Get straight to the point! Keep it short and accurate.",
     ),

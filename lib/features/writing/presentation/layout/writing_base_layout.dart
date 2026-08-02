@@ -168,7 +168,7 @@ class _WritingBaseLayoutState extends State<WritingBaseLayout> {
                       InkStreak(
                         color: theme.primaryColor.withValues(alpha: 0.15),
                       ),
-                      if (state is WritingLoading)
+                      if (state is WritingLoading && currentQuest == null)
                         GameShimmerLoading(primaryColor: theme.primaryColor)
                       else ...[
                         SafeArea(

@@ -30,8 +30,8 @@ class ShortAnswerInstruction extends StatelessWidget {
           Flexible(
             child: Text(
               context.tr(
-                'games.shortAnswerWriting_instruction',
-                fallback: instruction ?? "DRIP YOUR THOUGHTS INTO THE WELL",
+                'games.short_answer_writing_instruction',
+                fallback: instruction ?? "Write a short, natural answer to the prompt below.",
               ).toUpperCase(),
               textAlign: TextAlign.center,
               maxLines: null,
