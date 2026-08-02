@@ -133,7 +133,7 @@ class _DialectDrillHologramConsoleState
               ),
               SizedBox(height: 12.h),
               Text(
-                "DRAG PIN TO SELECT",
+                "DRAG PIN OR TAP TO SELECT",
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 10.sp,
@@ -151,51 +151,65 @@ class _DialectDrillHologramConsoleState
   }
 
   Widget _buildDragTarget(int index) {
-    return DragTarget<int>(
-      onWillAcceptWithDetails: (details) {
+    return GestureDetector(
+      onTap: () {
         if (!widget.isAnswered) {
-          if (_hoveredTowerIndex != index) {
-            _hapticService.selection();
-            setState(() => _hoveredTowerIndex = index);
+          _hapticService.selection();
+          final correctIndex = widget.quest.correctAnswerIndex ?? 0;
+          widget.onSubmitAnswer(
+            index,
+            correctIndex,
+            MediaQuery.of(context).size.width,
+          );
+          setState(() => _hoveredTowerIndex = index);
+        }
+      },
+      child: DragTarget<int>(
+        onWillAcceptWithDetails: (details) {
+          if (!widget.isAnswered) {
+            if (_hoveredTowerIndex != index) {
+              _hapticService.selection();
+              setState(() => _hoveredTowerIndex = index);
+            }
+            return true;
           }
-          return true;
-        }
-        return false;
-      },
-      onLeave: (data) {
-        if (_hoveredTowerIndex == index) {
-          setState(() => _hoveredTowerIndex = null);
-        }
-      },
-      onAcceptWithDetails: (details) {
-        final correctIndex = widget.quest.correctAnswerIndex ?? 0;
-        widget.onSubmitAnswer(
-          index,
-          correctIndex,
-          MediaQuery.of(context).size.width,
-        );
-        setState(() => _hoveredTowerIndex = index); // Lock selection visually
-      },
-      builder: (context, candidateData, rejectedData) {
-        String label =
-            widget.quest.options != null && widget.quest.options!.length > index
-            ? widget.quest.options![index]
-            : "TRANS 0${index + 1}";
+          return false;
+        },
+        onLeave: (data) {
+          if (_hoveredTowerIndex == index) {
+            setState(() => _hoveredTowerIndex = null);
+          }
+        },
+        onAcceptWithDetails: (details) {
+          final correctIndex = widget.quest.correctAnswerIndex ?? 0;
+          widget.onSubmitAnswer(
+            index,
+            correctIndex,
+            MediaQuery.of(context).size.width,
+          );
+          setState(() => _hoveredTowerIndex = index); // Lock selection visually
+        },
+        builder: (context, candidateData, rejectedData) {
+          String label =
+              widget.quest.options != null && widget.quest.options!.length > index
+              ? widget.quest.options![index]
+              : "TRANS 0${index + 1}";
 
-        label = label.replaceAll(RegExp(r'\s*\(American\)|\s*\(British\)'), '');
+          label = label.replaceAll(RegExp(r'\s*\(American\)|\s*\(British\)'), '');
 
-        return DialectDrillTransmissionTower(
-          index: index,
-          label: label,
-          maxWidth: MediaQuery.of(context).size.width,
-          color: widget.color,
-          isDark: widget.isDark,
-          isHovered: _hoveredTowerIndex == index || candidateData.isNotEmpty,
-          isAnswered: widget.isAnswered,
-          isCorrect: widget.isCorrect,
-          hoveredTowerIndex: _hoveredTowerIndex,
-        );
-      },
+          return DialectDrillTransmissionTower(
+            index: index,
+            label: label,
+            maxWidth: MediaQuery.of(context).size.width,
+            color: widget.color,
+            isDark: widget.isDark,
+            isHovered: _hoveredTowerIndex == index || candidateData.isNotEmpty,
+            isAnswered: widget.isAnswered,
+            isCorrect: widget.isCorrect,
+            hoveredTowerIndex: _hoveredTowerIndex,
+          );
+        },
+      ),
     );
   }
 }
