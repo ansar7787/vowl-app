@@ -17,7 +17,6 @@ import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_speaker_core.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_drone_option.dart';
 import 'package:vowl/core/utils/audio_recording_service.dart';
-import 'package:vowl/features/elite_mastery/accent_shadowing/presentation/widgets/accent_shadowing_mic_trigger.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/features/accent/presentation/constants/accent_game_constants.dart';
 
