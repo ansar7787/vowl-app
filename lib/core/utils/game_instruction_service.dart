@@ -1211,7 +1211,7 @@ class GameInstructionService {
       title: "Stress Spotter",
       icon: Icons.priority_high_rounded,
       objective:
-          "Listen to the word and identify which part of the word is spoken the loudest.",
+          "Identify the stressed syllable in the spoken word by tapping the correct drum pad. Mastering syllable stress is highly useful because it determines whether a word is understood correctly by native speakers; incorrect stress can completely change a word's meaning.",
       rules: [
         "Listen for the loud part",
         "Check the length",

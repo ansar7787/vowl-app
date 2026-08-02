@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -36,7 +36,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
   final _soundService = di.sl<SoundService>();
 
   int _lastProcessedIndex = -1;
-  int? _lastLives;
+  int _lastLives = 3;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -103,7 +103,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
     return BlocConsumer<AccentBloc, AccentState>(
       listener: (context, state) {
         if (state is AccentLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          final livesChanged = (state.livesRemaining > _lastLives);
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
               (state.lastAnswerCorrect == null && _isAnswered)) {
@@ -216,14 +216,14 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                                 child:
                                                     SyllableStressInstruction(
                                                       color: theme.primaryColor,
-                                                      instruction: context.tr('games.syllable_stress_instruction', fallback: quest.instruction),
+                                                      instruction: context.tr('games.syllable_stress_instruction', fallback: 'Identify the stressed syllable'),
                                                     ),
                                               ),
                                             ),
                                           )
                                         : SyllableStressInstruction(
                                             color: theme.primaryColor,
-                                            instruction: context.tr('games.syllable_stress_instruction', fallback: quest.instruction),
+                                            instruction: context.tr('games.syllable_stress_instruction', fallback: 'Identify the stressed syllable'),
                                           ),
                                     SizedBox(height: gapInstruction),
 
