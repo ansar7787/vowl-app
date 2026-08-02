@@ -14,7 +14,6 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/features/accent/presentation/layout/accent_base_layout.dart';
-import 'package:vowl/features/accent/presentation/constants/accent_game_constants.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_instruction.dart';
 
 class MinimalPairsScreen extends StatefulWidget {
@@ -211,10 +210,8 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
           return AccentBaseLayout(
             gameType: widget.gameType,
             level: widget.level,
-            state: state,
             isAnswered: _isAnswered,
             isCorrect: _isCorrect,
-            quest: quest,
             onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
             onHint: () {},
             child: Column(
@@ -222,6 +219,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                 SizedBox(height: 20.h),
                 MinimalPairsInstruction(
                   instruction: "Listen to the native speaker, then hold the mic to record your own pronunciation of the target word.",
+                  color: theme.primaryColor,
                 ),
                 SizedBox(height: 40.h),
                 
