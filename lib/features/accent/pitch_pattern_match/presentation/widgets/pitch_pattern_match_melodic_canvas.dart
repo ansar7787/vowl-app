@@ -76,6 +76,14 @@ class _BlueprintPainter extends CustomPainter {
     final path = Path();
     if (pattern.isEmpty) return;
 
+    if (pattern.length == 1) {
+      final y = size.height - (pattern[0] / 4.0 * size.height);
+      path.moveTo(0, y);
+      path.lineTo(size.width, y);
+      canvas.drawPath(path, paint);
+      return;
+    }
+
     double dx = size.width / (pattern.length - 1);
     path.moveTo(0, size.height - (pattern[0] / 4.0 * size.height));
 
