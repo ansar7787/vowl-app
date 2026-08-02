@@ -173,83 +173,45 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                 : LayoutBuilder(
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
-                      final double estimatedContentHeight =
-                          24.h +
-                          90.h +
-                          80.h +
-                          140.h +
-                          (_isAnswered ? 180.h : 0);
-                      final remainingHeight =
-                          maxHeight - estimatedContentHeight;
-
-                      final double gapUnit = remainingHeight > 0
-                          ? remainingHeight / 8
-                          : 0;
-                      final double gapTop = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(8.0, 24.0)
-                          : 8.0;
-                      final double gapInstruction = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(8.0, 24.0)
-                          : 8.0;
-
-                      final double gapSpeaker = remainingHeight > 0
-                          ? (gapUnit * 2).clamp(16.0, 48.0)
-                          : 16.0;
-                      
-                      final double gapBottom = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(12.0, 40.0)
-                          : 12.0;
-
                       return SingleChildScrollView(
                         controller: _scrollController,
                         physics: const BouncingScrollPhysics(),
                         child: ConstrainedBox(
                           constraints: BoxConstraints(minHeight: maxHeight),
                           child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapTop),
-                                    ShadowingChallengeInstruction(
-                                      color: theme.primaryColor,
-                                      instruction: context.tr('games.shadowing_challenge_instruction', fallback: quest.instruction),
-                                    ),
-                                    SizedBox(height: gapInstruction),
-                                    ShadowingChallengePromptCard(
-                                      word: quest.word ?? "",
-                                      ipa: quest.phonetic ?? "",
-                                      color: theme.primaryColor,
-                                      isDark: isDark,
-                                    ),
-                                    SizedBox(height: gapSpeaker),
-                                    ShadowingChallengePulseSpeaker(
-                                      text: quest.textToSpeak ?? "",
-                                      color: theme.primaryColor,
-                                      onPlayTts: _playTts,
-                                    ),
-                                  ],
+                                ShadowingChallengeInstruction(
+                                  color: theme.primaryColor,
+                                  instruction: context.tr('games.shadowing_challenge_instruction', fallback: quest.instruction),
                                 ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapSpeaker),
-                                    ShadowingChallengeDialogueList(
-                                      options: options,
-                                      correctIndex:
-                                          quest.correctAnswerIndex ?? 0,
-                                      color: theme.primaryColor,
-                                      isDark: isDark,
-                                      isAnswered: _isAnswered,
-                                      selectedIndex: _selectedIndex,
-                                      onSubmitChoice: _submitChoice,
-                                    ),
-                                    SizedBox(height: gapBottom + (_isAnswered ? 180.h : 0)),
-                                  ],
+                                SizedBox(height: 16.h),
+                                ShadowingChallengePromptCard(
+                                  word: quest.word ?? "",
+                                  ipa: quest.phonetic ?? "",
+                                  color: theme.primaryColor,
+                                  isDark: isDark,
                                 ),
+                                SizedBox(height: 24.h),
+                                ShadowingChallengePulseSpeaker(
+                                  text: quest.textToSpeak ?? "",
+                                  color: theme.primaryColor,
+                                  onPlayTts: _playTts,
+                                ),
+                                SizedBox(height: 32.h),
+                                ShadowingChallengeDialogueList(
+                                  options: options,
+                                  correctIndex:
+                                      quest.correctAnswerIndex ?? 0,
+                                  color: theme.primaryColor,
+                                  isDark: isDark,
+                                  isAnswered: _isAnswered,
+                                  selectedIndex: _selectedIndex,
+                                  onSubmitChoice: _submitChoice,
+                                ),
+                                SizedBox(height: _isAnswered ? 200.h : 24.h),
                               ],
                             ),
                           ),
