@@ -257,6 +257,20 @@ class GameInstructionService {
       tip:
           "PRO TIP: Pay attention to whether your vocal cords vibrate (voiced) or not (voiceless) when you make the sound!",
     ),
+    GameSubtype.dialectDrill: GameBriefing(
+      title: "Dialect Drill",
+      icon: Icons.public_rounded,
+      objective:
+          "Identify subtle pronunciation differences between regional dialects. Mastering dialects ensures you can seamlessly understand diverse speakers in real-world environments.",
+      rules: [
+        "Listen to the target word",
+        "Compare the regional options",
+        "Select the correct dialect",
+      ],
+      actionText: "Analyze Dialect",
+      tip:
+          "PRO TIP: Pay close attention to vowel sounds, as they vary the most across different regions!",
+    ),
     // 2. Speaking
     GameSubtype.repeatSentence: GameBriefing(
       title: "Echo Master",

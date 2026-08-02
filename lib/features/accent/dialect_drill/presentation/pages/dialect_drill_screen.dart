@@ -207,26 +207,32 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                   duration: const Duration(milliseconds: 400),
                                   curve: Curves.easeOut,
                                   child: _isAnswered
-                                      ? DialectFeedbackPanel(
-                                          isCorrect: _isCorrect ?? false,
-                                          word: quest.word ?? "",
-                                          britishPronunciation: brPr.isEmpty
-                                              ? (quest.word ?? "")
-                                              : brPr,
-                                          americanPronunciation: amPr.isEmpty
-                                              ? (quest.word ?? "")
-                                              : amPr,
-                                          hint: isHintUnlocked
-                                              ? quest.hint
-                                              : null,
-                                          explanation: quest.explanation,
-                                          dialectNote: quest.dialectNote,
-                                          isDark: isDark,
-                                          isMidnight: false,
-                                          onPlayAudio: (text, locale) {
-                                            _soundService.playTts(
-                                              text,
-                                              locale: locale,
+                                      ? Builder(
+                                          builder: (context) {
+                                            final bool isSuccess = _isCorrect == true;
+                                            final bool isFinalFailure = state is AccentGameOver;
+                                            final bool showExplanation = isSuccess || isFinalFailure;
+
+                                            return DialectFeedbackPanel(
+                                              isCorrect: _isCorrect ?? false,
+                                              word: quest.word ?? "",
+                                              britishPronunciation: brPr.isEmpty
+                                                  ? (quest.word ?? "")
+                                                  : brPr,
+                                              americanPronunciation: amPr.isEmpty
+                                                  ? (quest.word ?? "")
+                                                  : amPr,
+                                              hint: isHintUnlocked ? quest.hint : null,
+                                              explanation: showExplanation ? quest.explanation : null,
+                                              dialectNote: showExplanation ? quest.dialectNote : null,
+                                              isDark: isDark,
+                                              isMidnight: false,
+                                              onPlayAudio: (text, locale) {
+                                                _soundService.playTts(
+                                                  text,
+                                                  locale: locale,
+                                                );
+                                              },
                                             );
                                           },
                                         )
