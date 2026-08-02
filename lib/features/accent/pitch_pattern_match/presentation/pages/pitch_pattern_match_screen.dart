@@ -181,7 +181,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
               _lastQuest = quest;
             }
             if (quest != null && quest.textToSpeak != null) {
-              Future.delayed(500.milliseconds, () {
+              Future.delayed(const Duration(milliseconds: 500), () {
                 if (mounted) {
                   _soundService.playTts(quest.textToSpeak!);
                   _triggerPreviewWave();

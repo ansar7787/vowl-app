@@ -1250,20 +1250,7 @@ class GameInstructionService {
           "PRO TIP: Vowels are a spectrum! Slide carefully until you find the exact sound.",
     ),
 
-    GameSubtype.pitchPatternMatch: GameBriefing(
-      title: "Musical Melody",
-      icon: Icons.music_note_rounded,
-      objective:
-          "Listen to the melody of the sentence and use the vertical fader to match the pitch.",
-      rules: [
-        "Listen to the melody",
-        "Use the vertical fader",
-        "Lock your choice",
-      ],
-      actionText: "Match Melody",
-      tip:
-          "PRO TIP: Slide the fader up if the speaker's voice gets higher at the end!",
-    ),
+
     GameSubtype.speedVariance: GameBriefing(
       title: "Speaking Speed",
       icon: Icons.speed_rounded,
