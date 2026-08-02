@@ -93,7 +93,7 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [x] ✅ Intonation Mimic (`intonationMimic`)
 - [ ] Syllable Stress (`syllableStress`)
 - [ ] Word Linking (`wordLinking`)
-- [ ] Shadowing Challenge (`shadowingChallenge`)
+- [x] ✅ Shadowing Challenge (`shadowingChallenge`)
 - [x] ✅ Vowel Distinction (`vowelDistinction`)
 - [x] ✅ Consonant Clarity (`consonantClarity`)
 - [x] ✅ Pitch Pattern Match (`pitchPatternMatch`)

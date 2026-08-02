@@ -1,4 +1,4 @@
-﻿import 'dart:async';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,6 +9,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
+import 'package:vowl/features/accent/presentation/constants/accent_game_constants.dart';
 import 'package:vowl/features/accent/presentation/layout/accent_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
@@ -39,7 +40,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
   final _soundService = di.sl<SoundService>();
 
   int _lastProcessedIndex = -1;
-  int? _lastLives;
+  int _lastLives = AccentGameConstants.maxLives;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -114,7 +115,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
     return BlocConsumer<AccentBloc, AccentState>(
       listener: (context, state) {
         if (state is AccentLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          final livesChanged = (state.livesRemaining > _lastLives);
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
               (state.lastAnswerCorrect == null && _isAnswered)) {

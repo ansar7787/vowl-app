@@ -297,6 +297,20 @@ class GameInstructionService {
       tip:
           "PRO TIP: Pay attention to which word is stressed—it completely changes the sentence's meaning!",
     ),
+    GameSubtype.shadowingChallenge: GameBriefing(
+      title: "Shadowing Challenge",
+      icon: Icons.record_voice_over_rounded,
+      objective:
+          "Listen to the spoken sentence and select the correct phonetic rule that explains how the words link or change.",
+      rules: [
+        "Listen to the phrase closely",
+        "Analyze the sound connection",
+        "Select the matching rule",
+      ],
+      actionText: "Identify Pattern",
+      tip:
+          "PRO TIP: Try saying the sentence aloud exactly as you hear it. Feeling the sounds connect in your mouth will reveal the answer!",
+    ),
 
     // 2. Speaking
     GameSubtype.repeatSentence: GameBriefing(
