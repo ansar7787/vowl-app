@@ -17,8 +17,7 @@ import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowe
 import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowel_distinction_prompt_card.dart';
 import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowel_distinction_pulse_speaker.dart';
 import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowel_distinction_spectral_slider.dart';
-import 'package:vowl/core/utils/audio_recording_service.dart';
-import 'package:lucide_icons/lucide_icons.dart';
+import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
 
 class VowelDistinctionScreen extends StatefulWidget {
   final int level;
@@ -46,12 +45,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
   double _sliderValue = 0.5;
   int? _selectedIndex;
 
-  final _audioRecorder = di.sl<AudioRecordingService>();
   bool _phase1Passed = false;
-  bool _isRecording = false;
-  bool _hasRecorded = false;
-  bool _isPlaying = false;
-  String? _recordingPath;
 
   Timer? _mismatchResetTimer;
   Timer? _autoplayTimer;
@@ -66,9 +60,6 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
 
   @override
   void dispose() {
-    if (_isRecording) {
-      _audioRecorder.stopRecording();
-    }
     _mismatchResetTimer?.cancel();
     _autoplayTimer?.cancel();
     _scrollController.dispose();
@@ -90,68 +81,6 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
   void _playTts(String text) {
     _hapticService.selection();
     _soundService.playTts(text);
-  }
-
-  Future<void> _startRecording() async {
-    if (_isAnswered || _isPlaying) return;
-    
-    final hasPermission = await _audioRecorder.hasPermission();
-    if (hasPermission) {
-      _hapticService.selection();
-      final started = await _audioRecorder.startRecording();
-      if (started && mounted) {
-        setState(() {
-          _isRecording = true;
-          _hasRecorded = false;
-          _recordingPath = null;
-        });
-      }
-    }
-  }
-
-  Future<void> _stopRecording() async {
-    if (!_isRecording) return;
-    
-    _hapticService.selection();
-    final path = await _audioRecorder.stopRecording();
-    
-    if (mounted) {
-      setState(() {
-        _isRecording = false;
-        if (path != null) {
-          _recordingPath = path;
-          _hasRecorded = true;
-        }
-      });
-      if (_hasRecorded) {
-        _playComparison();
-      }
-    }
-  }
-
-  Future<void> _playComparison() async {
-    // Assuming the quest context provides the textToSpeak via state
-    final state = context.read<AccentBloc>().state;
-    AccentQuest? quest;
-    if (state is AccentLoaded) quest = state.currentQuest as AccentQuest?;
-    
-    if (_isPlaying || _recordingPath == null || quest?.textToSpeak == null) return;
-    
-    setState(() => _isPlaying = true);
-    
-    // Play Native
-    await _soundService.playTts(quest!.textToSpeak!);
-    await Future.delayed(const Duration(milliseconds: 1200));
-    
-    // Play User
-    if (mounted) {
-      await _soundService.playFile(_recordingPath!);
-      await Future.delayed(const Duration(milliseconds: 1200));
-    }
-    
-    if (mounted) {
-      setState(() => _isPlaying = false);
-    }
   }
 
   void _submitPhase2Evaluation(bool nailedIt) {
@@ -235,10 +164,6 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
               _sliderValue = 0.5;
               _selectedIndex = null;
               _phase1Passed = false;
-              _isRecording = false;
-              _hasRecorded = false;
-              _isPlaying = false;
-              _recordingPath = null;
             });
             // Proactively auto-play sound on question load
             final quest = state.currentQuest as AccentQuest?;
@@ -432,7 +357,12 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                           ),
                                     SizedBox(height: gapBottom),
                                     if (_phase1Passed)
-                                      _buildPhase2Panel(theme.primaryColor, isCompact),
+                                      AccentSelfEvaluationPanel(
+                                        textToSpeak: quest.textToSpeak ?? "",
+                                        primaryColor: theme.primaryColor,
+                                        isCompact: isCompact,
+                                        onEvaluate: _submitPhase2Evaluation,
+                                      ),
                                     SizedBox(height: _isAnswered ? 180.h : 0),
                                   ],
                                 ),
@@ -446,154 +376,6 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
           ),
         );
       },
-    );
-  }
-
-  Widget _buildPhase2Panel(Color primaryColor, bool isCompact) {
-    return Column(
-      children: [
-        Divider(color: primaryColor.withValues(alpha: 0.2), thickness: 2),
-        SizedBox(height: 8.h),
-        Text(
-          "PHASE 2: SPEAKING",
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 14.sp,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 1.5,
-            color: primaryColor,
-          ),
-        ),
-        SizedBox(height: 16.h),
-        if (!_hasRecorded) ...[
-          GestureDetector(
-            onTap: () {
-              if (_isRecording) {
-                _stopRecording();
-              } else {
-                _startRecording();
-              }
-            },
-            child: Container(
-              width: 80.r,
-              height: 80.r,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: _isRecording ? Colors.red : primaryColor,
-                boxShadow: [
-                  BoxShadow(
-                    color: (_isRecording ? Colors.red : primaryColor).withValues(alpha: 0.4),
-                    blurRadius: 20,
-                    spreadRadius: _isRecording ? 8 : 0,
-                  ),
-                ],
-              ),
-              child: Icon(
-                _isRecording ? Icons.stop_rounded : Icons.mic_rounded,
-                color: Colors.white,
-                size: 40.r,
-              ),
-            ).animate(target: _isRecording ? 1 : 0).scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1)),
-          ),
-          SizedBox(height: 10.h),
-          Text(
-            _isRecording ? "Listening... Tap to stop" : "Tap to Record",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w600,
-              color: _isRecording ? Colors.red : Colors.grey[600],
-            ),
-          ).animate(target: _isRecording ? 1 : 0).fade(),
-        ] else if (_isPlaying) ...[
-          const CircularProgressIndicator(),
-          SizedBox(height: 10.h),
-          Text(
-            "Playing comparison...",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w600,
-              color: primaryColor,
-            ),
-          ),
-        ] else ...[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              _buildEvalButton(
-                title: "Needs Work",
-                icon: LucideIcons.x,
-                color: Colors.red,
-                onTap: () => _submitPhase2Evaluation(false),
-              ),
-              GestureDetector(
-                onTap: _playComparison,
-                child: Container(
-                  padding: EdgeInsets.all(12.r),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: primaryColor.withValues(alpha: 0.1),
-                  ),
-                  child: Icon(LucideIcons.play, color: primaryColor, size: 24.sp),
-                ),
-              ),
-              _buildEvalButton(
-                title: "Nailed It",
-                icon: LucideIcons.check,
-                color: Colors.green,
-                onTap: () => _submitPhase2Evaluation(true),
-              ),
-            ],
-          ),
-          if (!isCompact) ...[
-            SizedBox(height: 10.h),
-            Text(
-              "Be honest! Did you match the native speaker?",
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w500,
-                color: Colors.grey[600],
-              ),
-            ),
-          ],
-        ],
-      ],
-    ).animate().slideY(begin: 0.2).fadeIn();
-  }
-
-  Widget _buildEvalButton({
-    required String title,
-    required IconData icon,
-    required Color color,
-    required VoidCallback onTap,
-  }) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-        decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(color: color.withValues(alpha: 0.5), width: 2),
-        ),
-        child: Column(
-          children: [
-            Icon(icon, color: color, size: 24.sp),
-            SizedBox(height: 4.h),
-            Text(
-              title,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w700,
-                color: color,
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }
