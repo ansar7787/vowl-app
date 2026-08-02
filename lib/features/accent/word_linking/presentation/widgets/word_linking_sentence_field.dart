@@ -117,12 +117,14 @@ class WordLinkingSentenceField extends StatelessWidget {
                   color: isSelected || (isAnswered && correct)
                       ? nodeColor.withValues(alpha: 0.2)
                       : isDark
-                          ? Colors.white.withValues(alpha: 0.05)
-                          : Colors.black.withValues(alpha: 0.03),
+                          ? color.withValues(alpha: 0.15)
+                          : color.withValues(alpha: 0.08),
                   border: Border.all(
                       color: isAnswered && !correct && !isSelected
                           ? Colors.transparent
-                          : nodeColor,
+                          : isSelected || isAnswered
+                              ? nodeColor
+                              : color.withValues(alpha: 0.4),
                       width: 2),
                   boxShadow: isSelected || (isAnswered && correct)
                       ? [
@@ -142,11 +144,19 @@ class WordLinkingSentenceField extends StatelessWidget {
                       color: nodeColor),
                 ),
               )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .animate(
+                onPlay: (c) => c.repeat(reverse: true),
+                target: isAnswered ? 0 : 1,
+              )
+              .shimmer(
+                duration: 2.seconds,
+                color: isDark ? Colors.white34 : color.withValues(alpha: 0.3),
+              )
               .scale(
                 begin: const Offset(1, 1),
-                end: const Offset(1.15, 1.15),
-                duration: 2.seconds,
+                end: const Offset(1.1, 1.1),
+                duration: 1.seconds,
+                curve: Curves.easeInOut,
               ),
     );
   }
