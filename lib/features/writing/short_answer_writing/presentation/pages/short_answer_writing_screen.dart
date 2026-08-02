@@ -108,6 +108,68 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
       return;
     }
 
+    // --- GIBBERISH LOOPHOLE CHECKS ---
+    final wordsList = rawText.split(RegExp(r'\s+'));
+    int wordsWithVowels = 0;
+    int maxRepetitions = 0;
+    int currentRepetitions = 1;
+
+    for (int i = 0; i < wordsList.length; i++) {
+      final w = wordsList[i];
+      if (w.length > 25) {
+        CustomSnackBar.show(
+          context: context,
+          message: "Please write natural words. That word is too long!",
+          type: CustomSnackBarType.warning,
+        );
+        _hapticService.selection();
+        return;
+      }
+      if (RegExp(r'(.)\1{2,}').hasMatch(w)) {
+        CustomSnackBar.show(
+          context: context,
+          message: "No keyboard mashing allowed! Please write real words.",
+          type: CustomSnackBarType.warning,
+        );
+        _hapticService.selection();
+        return;
+      }
+      if (RegExp(r'[aeiouy]', caseSensitive: false).hasMatch(w)) {
+        wordsWithVowels++;
+      }
+      if (i > 0) {
+        if (w.toLowerCase() == wordsList[i - 1].toLowerCase()) {
+          currentRepetitions++;
+          if (currentRepetitions > maxRepetitions) {
+            maxRepetitions = currentRepetitions;
+          }
+        } else {
+          currentRepetitions = 1;
+        }
+      }
+    }
+
+    if (maxRepetitions > 3) {
+      CustomSnackBar.show(
+        context: context,
+        message: "Please write a natural sentence without repeating the same word!",
+        type: CustomSnackBarType.warning,
+      );
+      _hapticService.selection();
+      return;
+    }
+
+    if (wordsList.isNotEmpty && (wordsWithVowels / wordsList.length) < 0.5) {
+      CustomSnackBar.show(
+        context: context,
+        message: "Your answer looks like gibberish. Please write a real sentence!",
+        type: CustomSnackBarType.warning,
+      );
+      _hapticService.selection();
+      return;
+    }
+    // ---------------------------------
+
     if (matchedCount < 2) {
       CustomSnackBar.show(
         context: context,
