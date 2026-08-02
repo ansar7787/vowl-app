@@ -93,12 +93,14 @@ class WordLinkingSentenceField extends StatelessWidget {
     final bool correct =
         selectedPair.toLowerCase().trim() == correctPair.toLowerCase().trim();
 
-    Color nodeColor = color.withValues(alpha: 0.3);
+    Color nodeColor = color.withValues(alpha: 0.5);
     if (isAnswered) {
       if (correct) {
         nodeColor = Colors.greenAccent;
       } else if (isSelected) {
         nodeColor = Colors.redAccent;
+      } else {
+        nodeColor = color.withValues(alpha: 0.15); // dim unselected ones
       }
     } else if (isSelected) {
       nodeColor = color;
@@ -114,8 +116,14 @@ class WordLinkingSentenceField extends StatelessWidget {
                   shape: BoxShape.circle,
                   color: isSelected || (isAnswered && correct)
                       ? nodeColor.withValues(alpha: 0.2)
-                      : Colors.transparent,
-                  border: Border.all(color: nodeColor, width: 2),
+                      : isDark
+                          ? Colors.white.withValues(alpha: 0.05)
+                          : Colors.black.withValues(alpha: 0.03),
+                  border: Border.all(
+                      color: isAnswered && !correct && !isSelected
+                          ? Colors.transparent
+                          : nodeColor,
+                      width: 2),
                   boxShadow: isSelected || (isAnswered && correct)
                       ? [
                           BoxShadow(
@@ -126,7 +134,12 @@ class WordLinkingSentenceField extends StatelessWidget {
                       : [],
                 ),
                 child: Center(
-                  child: Icon(Icons.link_rounded, size: 22.r, color: nodeColor),
+                  child: Icon(
+                      isSelected || isAnswered
+                          ? Icons.link_rounded
+                          : Icons.add_link_rounded,
+                      size: 22.r,
+                      color: nodeColor),
                 ),
               )
               .animate(onPlay: (c) => c.repeat(reverse: true))

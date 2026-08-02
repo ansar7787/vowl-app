@@ -204,47 +204,36 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapTop),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 32.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: ConstrainedBox(
-                                                constraints: BoxConstraints(
-                                                  maxWidth: maxWidth - 48.w,
-                                                ),
-                                                child: WordLinkingInstruction(
-                                                  color: theme.primaryColor,
-                                                  instruction: context.tr('games.word_linking_instruction', fallback: quest.instruction),
-                                                ),
-                                              ),
+                                SizedBox(height: gapTop),
+                                isCompact
+                                    ? SizedBox(
+                                        height: 32.h,
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: ConstrainedBox(
+                                            constraints: BoxConstraints(
+                                              maxWidth: maxWidth - 48.w,
                                             ),
-                                          )
-                                        : WordLinkingInstruction(
-                                            color: theme.primaryColor,
-                                            instruction: context.tr('games.word_linking_instruction', fallback: quest.instruction),
+                                            child: WordLinkingInstruction(
+                                              color: theme.primaryColor,
+                                              instruction: context.tr('games.word_linking_instruction', fallback: quest.instruction),
+                                            ),
                                           ),
-                                    SizedBox(height: gapInstruction),
-
-
-
-                                    WordLinkingPulseSpeaker(
-                                      text: quest.textToSpeak ?? "",
-                                      color: theme.primaryColor,
-                                      onPlayTts: _playTts,
-                                    ),
-                                  ],
+                                        ),
+                                      )
+                                    : WordLinkingInstruction(
+                                        color: theme.primaryColor,
+                                        instruction: context.tr('games.word_linking_instruction', fallback: quest.instruction),
+                                      ),
+                                SizedBox(height: gapInstruction),
+                                WordLinkingPulseSpeaker(
+                                  text: quest.textToSpeak ?? "",
+                                  color: theme.primaryColor,
+                                  onPlayTts: _playTts,
                                 ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapSpeaker),
+                                SizedBox(height: gapSpeaker),
                                     isCompact
                                         ? SizedBox(
                                             height: 110.h,
@@ -277,9 +266,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                                 _selectedNodeIndex,
                                             onNodeTap: _onNodeTap,
                                           ),
-                                    SizedBox(height: gapBottom + (_isAnswered ? 180.h : 0)),
-                                  ],
-                                ),
+                                SizedBox(height: gapBottom + (_isAnswered ? 180.h : 0)),
                               ],
                             ),
                           ),
