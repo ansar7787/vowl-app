@@ -16,6 +16,7 @@ import 'package:vowl/features/accent/syllable_stress/presentation/widgets/syllab
 import 'package:vowl/features/accent/syllable_stress/presentation/widgets/syllable_stress_prompt_card.dart';
 import 'package:vowl/features/accent/syllable_stress/presentation/widgets/syllable_stress_pulse_speaker.dart';
 import 'package:vowl/features/accent/syllable_stress/presentation/widgets/syllable_stress_drum_console.dart';
+import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
 
 class SyllableStressScreen extends StatefulWidget {
   final int level;
@@ -41,6 +42,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
   bool? _isCorrect;
   bool _showConfetti = false;
   int? _selectedIndex;
+  bool _phase1Passed = false;
 
   @override
   void initState() {
@@ -78,11 +80,10 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
+        _phase1Passed = true;
       });
       _scrollToBottom();
-      context.read<AccentBloc>().add(SubmitAnswer(true));
+      // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -90,6 +91,27 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
         _isAnswered = true;
         _isCorrect = false;
       });
+      _scrollToBottom();
+      context.read<AccentBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered) return;
+    
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      _scrollToBottom();
+      context.read<AccentBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
       _scrollToBottom();
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
@@ -112,6 +134,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
+              _phase1Passed = false;
             });
             // Proactively auto-play phonetic sound on question load
             final quest = state.currentQuest as AccentQuest?;
@@ -216,14 +239,18 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                                 child:
                                                     SyllableStressInstruction(
                                                       color: theme.primaryColor,
-                                                      instruction: context.tr('games.syllable_stress_instruction', fallback: 'Identify the stressed syllable'),
+                                                      instruction: _phase1Passed
+                                                        ? "Great job! Now record yourself saying the word."
+                                                        : context.tr('games.syllable_stress_instruction', fallback: 'Identify the stressed syllable'),
                                                     ),
                                               ),
                                             ),
                                           )
                                         : SyllableStressInstruction(
                                             color: theme.primaryColor,
-                                            instruction: context.tr('games.syllable_stress_instruction', fallback: 'Identify the stressed syllable'),
+                                            instruction: _phase1Passed
+                                              ? "Great job! Now record yourself saying the word."
+                                              : context.tr('games.syllable_stress_instruction', fallback: 'Identify the stressed syllable'),
                                           ),
                                     SizedBox(height: gapInstruction),
 
@@ -268,31 +295,39 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                               child: SizedBox(
                                                 width: maxWidth - 48.w,
                                                 child: SyllableStressDrumConsole(
-                                                  syllables: syllables,
-                                                  correctIndex:
-                                                      quest
-                                                          .correctAnswerIndex ??
-                                                      0,
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
-                                                  isAnswered: _isAnswered,
-                                                  selectedIndex: _selectedIndex,
-                                                  onPadTap: _onPadTap,
+                                                    syllables: syllables,
+                                                    correctIndex:
+                                                        quest
+                                                            .correctAnswerIndex ??
+                                                        0,
+                                                    color: theme.primaryColor,
+                                                    isDark: isDark,
+                                                    isAnswered: _isAnswered || _phase1Passed,
+                                                    selectedIndex: _selectedIndex,
+                                                    onPadTap: _onPadTap,
+                                                  ),
                                                 ),
                                               ),
+                                            )
+                                          : SyllableStressDrumConsole(
+                                              syllables: syllables,
+                                              correctIndex:
+                                                  quest.correctAnswerIndex ?? 0,
+                                              color: theme.primaryColor,
+                                              isDark: isDark,
+                                              isAnswered: _isAnswered || _phase1Passed,
+                                              selectedIndex: _selectedIndex,
+                                              onPadTap: _onPadTap,
                                             ),
-                                          )
-                                        : SyllableStressDrumConsole(
-                                            syllables: syllables,
-                                            correctIndex:
-                                                quest.correctAnswerIndex ?? 0,
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                            isAnswered: _isAnswered,
-                                            selectedIndex: _selectedIndex,
-                                            onPadTap: _onPadTap,
-                                          ),
-                                    SizedBox(height: gapBottom + (_isAnswered ? 180.h : 0)),
+                                    SizedBox(height: gapBottom),
+                                    if (_phase1Passed)
+                                      AccentSelfEvaluationPanel(
+                                        textToSpeak: quest.textToSpeak ?? "",
+                                        primaryColor: theme.primaryColor,
+                                        isCompact: isCompact,
+                                        onEvaluate: _submitPhase2Evaluation,
+                                      ),
+                                    SizedBox(height: _isAnswered ? 180.h : 0),
                                   ],
                                 ),
                               ],
