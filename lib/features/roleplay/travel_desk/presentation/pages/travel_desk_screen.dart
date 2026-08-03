@@ -16,6 +16,7 @@ import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_d
 import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_desk_customs_terminal.dart';
 import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_desk_passport_book.dart';
 import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_desk_stamp_station.dart';
+import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
 
 class TravelDeskScreen extends StatefulWidget {
   final int level;
@@ -43,6 +44,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _phase1Passed = false;
 
   // Custom drag feedback coordinates
   int? _hoveredIndex;
@@ -81,17 +83,43 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
   }
 
   void _submitStamp(int index, int correctIndex) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
+
+    final isCorrect = index == correctIndex;
 
     setState(() {
       _selectedIndex = index;
-      _isAnswered = true;
-      _isCorrect = index == correctIndex;
     });
 
     _rippleController.forward(from: 0.0);
 
-    if (index == correctIndex) {
+    if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() {
+        _phase1Passed = true;
+      });
+      // Wait for Phase 2
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
+      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered) return;
+
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
       context.read<RoleplayBloc>().add(SubmitAnswer(true));
@@ -117,6 +145,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
               _isCorrect = null;
               _selectedIndex = null;
               _hoveredIndex = null;
+              _phase1Passed = false;
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -138,8 +167,10 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
         final options = quest?.options ?? [];
 
-        return RoleplayBaseLayout(
-          gameType: widget.gameType,
+        return Stack(
+          children: [
+            RoleplayBaseLayout(
+              gameType: widget.gameType,
           level: widget.level,
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
@@ -179,7 +210,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                             isDark: isDark,
                             selectedIndex: _selectedIndex,
                             hoveredIndex: _hoveredIndex,
-                            isAnswered: _isAnswered,
+                            isAnswered: _isAnswered || _phase1Passed,
                             isCorrect: _isCorrect,
                             rippleAnimation: _rippleController,
                             onSubmitStamp: _submitStamp,
@@ -195,7 +226,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                           SizedBox(height: isCompact ? 20.h : 32.h),
 
                           // Stamp slammed terminal console
-                          if (!_isAnswered)
+                          if (!_isAnswered && !_phase1Passed)
                             TravelDeskStampStation(
                               color: theme.primaryColor,
                               isDark: isDark,
@@ -214,6 +245,15 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                     );
                   },
                 ),
+            ),
+            if (_phase1Passed && !_isAnswered && _selectedIndex != null)
+              SpeakToConfirmOverlay(
+                expectedText: options[_selectedIndex!],
+                primaryColor: theme.primaryColor,
+                onConfirmed: () => _submitPhase2Evaluation(true),
+                onSkipped: () => _submitPhase2Evaluation(false),
+              ),
+          ],
         );
       },
     );

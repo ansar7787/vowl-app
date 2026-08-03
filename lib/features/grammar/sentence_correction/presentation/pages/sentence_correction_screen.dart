@@ -8,6 +8,16 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
@@ -16,6 +26,7 @@ import 'package:vowl/features/grammar/sentence_correction/presentation/widgets/s
 import 'package:vowl/features/grammar/sentence_correction/presentation/widgets/sentence_correction_diagnostic_word.dart';
 import 'package:vowl/features/grammar/sentence_correction/presentation/widgets/sentence_correction_options_panel.dart';
 import 'package:vowl/features/grammar/sentence_correction/presentation/widgets/sentence_correction_feedback.dart';
+import 'package:vowl/core/presentation/widgets/type_to_confirm_overlay.dart';
 
 class SentenceCorrectionScreen extends StatefulWidget {
   final int level;
@@ -40,6 +51,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _phase1Passed = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -121,7 +133,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
   }
 
   void _onWordTap(int index) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
     _hapticService.selection();
     setState(() {
       _selectedWordIndex = index;
@@ -164,16 +176,38 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
     if (overallCorrect) {
       _hapticService.heavy();
       _soundService.playCorrect();
+      setState(() {
+        _phase1Passed = true;
+      });
+      // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
+      context.read<GrammarBloc>().add(SubmitAnswer(false));
     }
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered) return;
 
     setState(() {
       _isAnswered = true;
-      _isCorrect = overallCorrect;
+      _isCorrect = nailedIt;
     });
-    context.read<GrammarBloc>().add(SubmitAnswer(overallCorrect));
+
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      context.read<GrammarBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      context.read<GrammarBloc>().add(SubmitAnswer(false));
+    }
   }
 
   @override
@@ -194,6 +228,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _phase1Passed = false;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
             // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
@@ -246,9 +281,11 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
           onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           useScrolling: true,
-          child: quest == null
-              ? const SizedBox()
-              : Column(
+          child: Stack(
+            children: [
+              quest == null
+                  ? const SizedBox()
+                  : Column(
                   children: [
                     SizedBox(height: 10.h),
                     SentenceCorrectionInstruction(
@@ -388,6 +425,15 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
                     SizedBox(height: 20.h),
                   ],
                 ),
+              if (_phase1Passed && !_isAnswered && quest != null)
+                TypeToConfirmOverlay(
+                  expectedText: quest.correctAnswer ?? _selectedOption ?? '',
+                  primaryColor: theme.primaryColor,
+                  onConfirmed: () => _submitPhase2Evaluation(true),
+                  onSkipped: () => _submitPhase2Evaluation(false),
+                ),
+            ],
+          ),
         );
       },
     );

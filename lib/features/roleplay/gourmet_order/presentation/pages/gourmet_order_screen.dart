@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -18,6 +18,7 @@ import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourme
 import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourmet_order_banquet_header.dart';
 import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourmet_order_table_setting.dart';
 import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourmet_order_plate_tray.dart';
+import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
 
 class GourmetOrderScreen extends StatefulWidget {
   final int level;
@@ -45,6 +46,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _phase1Passed = false;
 
   @override
   void initState() {
@@ -80,7 +82,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
   }
 
   void _onItemTapped(String item) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
     _hapticService.selection();
     _soundService.playHint(); // Play synth note
     setState(() {
@@ -93,7 +95,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
   }
 
   void _clearItems() {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
     _hapticService.selection();
     setState(() {
       _selectedItems.clear();
@@ -101,7 +103,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
   }
 
   void _submitAnswer(String correctAnswer) {
-    if (_isAnswered || _selectedItems.isEmpty) return;
+    if (_isAnswered || _phase1Passed || _selectedItems.isEmpty) return;
 
     final targets = correctAnswer
         .split(',')
@@ -113,12 +115,33 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
         targets.length == current.length &&
         targets.every((t) => current.contains(t));
 
+    if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() {
+        _phase1Passed = true;
+      });
+      // Wait for Phase 2
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
+      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered) return;
+
     setState(() {
       _isAnswered = true;
-      _isCorrect = isCorrect;
+      _isCorrect = nailedIt;
     });
 
-    if (isCorrect) {
+    if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
       context.read<RoleplayBloc>().add(SubmitAnswer(true));
@@ -143,6 +166,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
               _isAnswered = false;
               _isCorrect = null;
               _selectedItems.clear();
+              _phase1Passed = false;
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -164,8 +188,10 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
         final options = quest?.options ?? [];
 
-        return RoleplayBaseLayout(
-          gameType: widget.gameType,
+        return Stack(
+          children: [
+            RoleplayBaseLayout(
+              gameType: widget.gameType,
           level: widget.level,
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
@@ -330,6 +356,15 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                     );
                   },
                 ),
+            ),
+            if (_phase1Passed && !_isAnswered && quest != null)
+              SpeakToConfirmOverlay(
+                expectedText: quest.correctAnswer ?? _selectedItems.join(', '),
+                primaryColor: theme.primaryColor,
+                onConfirmed: () => _submitPhase2Evaluation(true),
+                onSkipped: () => _submitPhase2Evaluation(false),
+              ),
+          ],
         );
       },
     );

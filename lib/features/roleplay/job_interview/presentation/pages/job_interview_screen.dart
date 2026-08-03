@@ -17,6 +17,7 @@ import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_in
 import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_interview_telemetry_dashboard.dart';
 import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_interview_interviewer_panel.dart';
 import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_interview_response_console.dart';
+import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
 
 class JobInterviewScreen extends StatefulWidget {
   final int level;
@@ -50,6 +51,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
 
   // Track professionalism thermometer score (default start at 0.5)
   double _mercuryLevel = 0.5;
+  bool _phase1Passed = false;
 
   @override
   void initState() {
@@ -80,24 +82,47 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
   }
 
   void _onOptionSelected(int index, int correctIndex) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
 
     final bool isCorrect = index == correctIndex;
 
     setState(() {
       _selectedIndex = index;
-      _isAnswered = true;
-      _isCorrect = isCorrect;
+    });
 
-      // Update professionalism mercury meter dynamically
-      if (isCorrect) {
+    if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() {
+        _phase1Passed = true;
+      });
+      // Wait for Phase 2
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+        _mercuryLevel = (_mercuryLevel - 0.2).clamp(0.0, 1.0);
+      });
+      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered) return;
+    
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+      if (nailedIt) {
         _mercuryLevel = (_mercuryLevel + 0.25).clamp(0.0, 1.0);
       } else {
         _mercuryLevel = (_mercuryLevel - 0.2).clamp(0.0, 1.0);
       }
     });
 
-    if (isCorrect) {
+    if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
       context.read<RoleplayBloc>().add(SubmitAnswer(true));
@@ -122,6 +147,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
+              _phase1Passed = false;
               
               if (state.currentQuest.options != null) {
                 final options = List<String>.from(state.currentQuest.options!);
@@ -150,8 +176,10 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
 
-        return RoleplayBaseLayout(
-          gameType: widget.gameType,
+        return Stack(
+          children: [
+            RoleplayBaseLayout(
+              gameType: widget.gameType,
           level: widget.level,
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
@@ -202,7 +230,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                             color: theme.primaryColor,
                             isDark: isDark,
                             selectedIndex: _selectedIndex,
-                            isAnswered: _isAnswered,
+                            isAnswered: _isAnswered || _phase1Passed,
                             isCorrect: _isCorrect,
                             onOptionSelected: _onOptionSelected,
                           ),
@@ -228,6 +256,15 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                     );
                   },
                 ),
+            ),
+            if (_phase1Passed && !_isAnswered && _selectedIndex != null)
+              SpeakToConfirmOverlay(
+                expectedText: _shuffledOptions[_selectedIndex!],
+                primaryColor: theme.primaryColor,
+                onConfirmed: () => _submitPhase2Evaluation(true),
+                onSkipped: () => _submitPhase2Evaluation(false),
+              ),
+          ],
         );
       },
     );

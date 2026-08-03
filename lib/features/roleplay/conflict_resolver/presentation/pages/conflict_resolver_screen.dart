@@ -1,4 +1,4 @@
-﻿import 'dart:math' as math;
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,6 +18,7 @@ import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/conflict_resolver/presentation/widgets/conflict_resolver_instruction.dart';
 import 'package:vowl/features/roleplay/conflict_resolver/presentation/widgets/conflict_resolver_conflict_card.dart';
 import 'package:vowl/features/roleplay/conflict_resolver/presentation/widgets/conflict_resolver_dial_console.dart';
+import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
 
 class ConflictResolverScreen extends StatefulWidget {
   final int level;
@@ -45,6 +46,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _phase1Passed = false;
 
   @override
   void initState() {
@@ -81,7 +83,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
 
   // Realistic Physical dial rotation updater utilizing trigonometry
   void _onDialDragged(DragUpdateDetails details, Offset localDialCenter) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
 
     final Offset touchPos = details.localPosition;
     final double dx = touchPos.dx - localDialCenter.dx;
@@ -107,17 +109,38 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
   }
 
   void _submitAnswer(double target) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
 
     // 0.12 empathy tolerance proximity check
     bool isCorrect = (_rotation - target).abs() < 0.12;
 
+    if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() {
+        _phase1Passed = true;
+      });
+      // Wait for Phase 2
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
+      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered) return;
+
     setState(() {
       _isAnswered = true;
-      _isCorrect = isCorrect;
+      _isCorrect = nailedIt;
     });
 
-    if (isCorrect) {
+    if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
       context.read<RoleplayBloc>().add(SubmitAnswer(true));
@@ -142,6 +165,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
               _isAnswered = false;
               _isCorrect = null;
               _rotation = 0.0;
+              _phase1Passed = false;
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -163,8 +187,10 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
         final double empathyTarget = quest?.empathyScore ?? 0.75;
 
-        return RoleplayBaseLayout(
-          gameType: widget.gameType,
+        return Stack(
+          children: [
+            RoleplayBaseLayout(
+              gameType: widget.gameType,
           level: widget.level,
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
@@ -265,6 +291,15 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                     );
                   },
                 ),
+            ),
+            if (_phase1Passed && !_isAnswered && quest != null)
+              SpeakToConfirmOverlay(
+                expectedText: quest.correctAnswer ?? "De-escalating conflict",
+                primaryColor: theme.primaryColor,
+                onConfirmed: () => _submitPhase2Evaluation(true),
+                onSkipped: () => _submitPhase2Evaluation(false),
+              ),
+          ],
         );
       },
     );

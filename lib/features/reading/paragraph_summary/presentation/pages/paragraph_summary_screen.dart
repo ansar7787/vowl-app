@@ -6,6 +6,14 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -14,6 +22,7 @@ import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/par
 import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/paragraph_summary_tube.dart';
 import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/paragraph_summary_option_rack.dart';
 import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/paragraph_summary_result.dart';
+import 'package:vowl/core/presentation/widgets/type_to_confirm_overlay.dart';
 
 class ParagraphSummaryScreen extends StatefulWidget {
   final int level;
@@ -38,6 +47,7 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _phase1Passed = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -79,11 +89,28 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
 
     setState(() {
       _selectedOption = selected;
-      _isAnswered = true;
-      _isCorrect = isCorrect;
     });
 
     if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() => _phase1Passed = true);
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      context.read<ReadingBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered && _isCorrect != null) return;
+
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
       context.read<ReadingBloc>().add(SubmitAnswer(true));
@@ -114,6 +141,7 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
               _isCorrect = null;
               _selectedOption = null;
               _isDistilled = false;
+              _phase1Passed = false;
               _pinchWidth = 1.0;
             });
           } else if (state.lastAnswerCorrect != null && !_isAnswered) {
@@ -150,76 +178,82 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 16.h),
-                        ParagraphSummaryInstruction(
-                          primaryColor: theme.primaryColor,
-                          instruction: quest.instruction,
+              : Stack(
+                  children: [
+                    SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: Column(
+                          children: [
+                            SizedBox(height: 16.h),
+                            ParagraphSummaryInstruction(
+                              primaryColor: theme.primaryColor,
+                              instruction: quest.instruction,
+                            ),
+                            SizedBox(height: 24.h),
+                            GestureDetector(
+                              onScaleUpdate: (details) =>
+                                  _onPinchUpdate(details.scale),
+                              onScaleEnd: (details) => _onPinchEnd(),
+                              child: ParagraphSummaryTube(
+                                passage: quest.passage ?? "",
+                                keywords: quest.keywords ?? [],
+                                color: theme.primaryColor,
+                                isDark: isDark,
+                                pinchWidth: _pinchWidth,
+                                isDistilled: _isDistilled,
+                              ),
+                            ),
+                            SizedBox(height: 16.h),
+                            Text(
+                              _isDistilled
+                                  ? "DISTILLATION COMPLETE! SELECT THE CORE SUMMARY:"
+                                  : "PINCH/SQUEEZE THE TUBE TO DISTILL CORE CONCEPTS",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                color: _isDistilled
+                                    ? Colors.greenAccent
+                                    : theme.primaryColor.withValues(alpha: 0.6),
+                                fontSize: 11.sp,
+                                letterSpacing: 2,
+                              ),
+                            ),
+                            if (_isDistilled) ...[
+                              SizedBox(height: 24.h),
+                              ParagraphSummaryOptionRack(
+                                options: quest.options ?? [],
+                                correctAnswer: quest.correctAnswer ?? "",
+                                color: theme.primaryColor,
+                                isDark: isDark,
+                                selectedOption: _selectedOption,
+                                isAnswered: _isAnswered,
+                                onTapOption: (opt) =>
+                                    _submitAnswer(opt, quest.correctAnswer ?? ""),
+                              ),
+                            ],
+                            if (_isAnswered) ...[
+                              SizedBox(height: 30.h),
+                              ParagraphSummaryResult(
+                                quest: quest,
+                                isCorrect: _isCorrect == true,
+                                isDark: isDark,
+                              ),
+                            ],
+                            SizedBox(height: 60.h),
+                          ],
                         ),
-                        SizedBox(height: 24.h),
-
-                        // Distillation Squeeze Tube
-                        GestureDetector(
-                          onScaleUpdate: (details) =>
-                              _onPinchUpdate(details.scale),
-                          onScaleEnd: (details) => _onPinchEnd(),
-                          child: ParagraphSummaryTube(
-                            passage: quest.passage ?? "",
-                            keywords: quest.keywords ?? [],
-                            color: theme.primaryColor,
-                            isDark: isDark,
-                            pinchWidth: _pinchWidth,
-                            isDistilled: _isDistilled,
-                          ),
-                        ),
-
-                        SizedBox(height: 16.h),
-                        Text(
-                          _isDistilled
-                              ? "DISTILLATION COMPLETE! SELECT THE CORE SUMMARY:"
-                              : "PINCH/SQUEEZE THE TUBE TO DISTILL CORE CONCEPTS",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            color: _isDistilled
-                                ? Colors.greenAccent
-                                : theme.primaryColor.withValues(alpha: 0.6),
-                            fontSize: 11.sp,
-                            letterSpacing: 2,
-                          ),
-                        ),
-
-                        if (_isDistilled) ...[
-                          SizedBox(height: 24.h),
-                          ParagraphSummaryOptionRack(
-                            options: quest.options ?? [],
-                            correctAnswer: quest.correctAnswer ?? "",
-                            color: theme.primaryColor,
-                            isDark: isDark,
-                            selectedOption: _selectedOption,
-                            isAnswered: _isAnswered,
-                            onTapOption: (opt) =>
-                                _submitAnswer(opt, quest.correctAnswer ?? ""),
-                          ),
-                        ],
-
-                        if (_isAnswered) ...[
-                          SizedBox(height: 30.h),
-                          ParagraphSummaryResult(
-                            quest: quest,
-                            isCorrect: _isCorrect == true,
-                            isDark: isDark,
-                          ),
-                        ],
-                        SizedBox(height: 60.h),
-                      ],
+                      ),
                     ),
-                  ),
+                    if (_phase1Passed && (!_isAnswered || _isCorrect == null))
+                      TypeToConfirmOverlay(
+                        expectedText: quest.correctAnswer ?? '',
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitPhase2Evaluation(true),
+                        onSkipped: () => _submitPhase2Evaluation(false),
+                      ),
+                  ],
                 ),
         );
       },

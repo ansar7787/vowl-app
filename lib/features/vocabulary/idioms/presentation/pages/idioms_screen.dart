@@ -15,6 +15,7 @@ import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_painters.dart';
 import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_chat_bubbles.dart';
 import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_option_chip.dart';
+import 'package:vowl/core/presentation/widgets/type_to_confirm_overlay.dart';
 
 class IdiomsScreen extends StatefulWidget {
   final int level;
@@ -36,6 +37,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _phase1Passed = false;
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
   String? _selectedOption;
@@ -63,8 +65,10 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
       if (isCorrect) {
         _hapticService.success();
         _soundService.playCorrect();
-        setState(() => _isCorrect = true);
-        context.read<VocabularyBloc>().add(SubmitAnswer(true));
+        setState(() {
+          _phase1Passed = true;
+        });
+        // Wait for Phase 2
       } else {
         _hapticService.error();
         _soundService.playWrong();
@@ -72,6 +76,25 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
         context.read<VocabularyBloc>().add(SubmitAnswer(false));
       }
     });
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered && _isCorrect != null) return;
+
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      context.read<VocabularyBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+    }
   }
 
   @override
@@ -88,6 +111,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _phase1Passed = false;
               _selectedOption = null;
             });
           } else if (state.lastAnswerCorrect != null && !_isAnswered) {
@@ -157,6 +181,13 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                       ),
                     ),
                     _buildChatInterface(quest, theme.primaryColor, isDarkMode),
+                    if (_phase1Passed && (!_isAnswered || _isCorrect == null) && quest != null)
+                      TypeToConfirmOverlay(
+                        expectedText: quest.correctAnswer ?? '',
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitPhase2Evaluation(true),
+                        onSkipped: () => _submitPhase2Evaluation(false),
+                      ),
                   ],
                 ),
         );

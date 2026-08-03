@@ -14,6 +14,7 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/collocations/presentation/widgets/collocation_anchor_bubble.dart';
 import 'package:vowl/features/vocabulary/collocations/presentation/widgets/collocation_option_bubble.dart';
+import 'package:vowl/core/presentation/widgets/type_to_confirm_overlay.dart';
 
 class CollocationsScreen extends StatefulWidget {
   final int level;
@@ -36,6 +37,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _phase1Passed = false;
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
 
@@ -66,14 +68,34 @@ class _CollocationsScreenState extends State<CollocationsScreen>
       if (isCorrect) {
         _hapticService.success();
         _soundService.playCorrect();
+        setState(() => _phase1Passed = true);
+        // Wait for Phase 2
       } else {
         _hapticService.error();
         _soundService.playWrong();
+        setState(() => _isCorrect = isCorrect);
+        context.read<VocabularyBloc>().add(SubmitAnswer(isCorrect));
       }
-
-      setState(() => _isCorrect = isCorrect);
-      context.read<VocabularyBloc>().add(SubmitAnswer(isCorrect));
     });
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered && _isCorrect != null) return;
+
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      context.read<VocabularyBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+    }
   }
 
   @override
@@ -92,6 +114,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _phase1Passed = false;
               _selectedOption = null;
             });
           } else if (state.lastAnswerCorrect != null && !_isAnswered) {
@@ -147,6 +170,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
               setState(() {
                 _isAnswered = false;
                 _isCorrect = null;
+                _phase1Passed = false;
                 _selectedOption = null;
               });
             } else {
@@ -187,8 +211,10 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                         ? (gapUnit * 2).clamp(12.0, 60.0)
                         : 12.0;
 
-                    return Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    return Stack(
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
                           mainAxisSize: MainAxisSize.min,
@@ -267,7 +293,16 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                           ],
                         ),
                       ],
-                    );
+                    ),
+                    if (_phase1Passed && (!_isAnswered || _isCorrect == null) && quest != null)
+                      TypeToConfirmOverlay(
+                        expectedText: quest.correctAnswer ?? '',
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitPhase2Evaluation(true),
+                        onSkipped: () => _submitPhase2Evaluation(false),
+                      ),
+                  ],
+                );
                   },
                 ),
         );

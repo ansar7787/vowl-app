@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -15,6 +15,7 @@ import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_instruction.dart';
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_persona_console.dart';
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_console_board.dart';
+import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
 
 class BranchingDialogueScreen extends StatefulWidget {
   final int level;
@@ -46,6 +47,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
   Offset _probeOffset = Offset.zero;
   int? _hoveredIndex;
   int? _selectedIndex;
+  bool _phase1Passed = false;
 
   @override
   void initState() {
@@ -81,7 +83,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
   }
 
   void _onProbeDragStart(DragStartDetails details) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
     _springController.stop();
   }
 
@@ -90,7 +92,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
     Offset launchCenter,
     List<Offset> terminalCenters,
   ) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
 
     setState(() {
       _probeOffset += details.delta;
@@ -129,7 +131,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
   }
 
   void _onProbeDragEnd(int correctIndex) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
 
     if (_hoveredIndex != null) {
       _submitChoice(_hoveredIndex!, correctIndex);
@@ -140,17 +142,41 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
   }
 
   void _submitChoice(int index, int correct) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
 
     final isCorrect = index == correct;
     setState(() {
-      _isAnswered = true;
-      _isCorrect = isCorrect;
       _selectedIndex = index;
       _hoveredIndex = null;
     });
 
     if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() {
+        _phase1Passed = true;
+      });
+      // Wait for Phase 2
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
+      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered) return;
+
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
       context.read<RoleplayBloc>().add(SubmitAnswer(true));
@@ -178,6 +204,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
               _probeOffset = Offset.zero;
               _hoveredIndex = null;
               _selectedIndex = null;
+              _phase1Passed = false;
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -199,8 +226,10 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
         final options = quest?.options ?? [];
 
-        return RoleplayBaseLayout(
-          gameType: widget.gameType,
+        return Stack(
+          children: [
+            RoleplayBaseLayout(
+              gameType: widget.gameType,
           level: widget.level,
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
@@ -241,7 +270,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                               probeOffset: _probeOffset,
                               hoveredIndex: _hoveredIndex,
                               selectedIndex: _selectedIndex,
-                              isAnswered: _isAnswered,
+                              isAnswered: _isAnswered || _phase1Passed,
                               onProbeDragStart: _onProbeDragStart,
                               onProbeDragUpdate: _onProbeDragUpdate,
                               onProbeDragEnd: _onProbeDragEnd,
@@ -259,6 +288,15 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                     },
                   ),
                 ),
+            ),
+            if (_phase1Passed && !_isAnswered && _selectedIndex != null)
+              SpeakToConfirmOverlay(
+                expectedText: options[_selectedIndex!],
+                primaryColor: theme.primaryColor,
+                onConfirmed: () => _submitPhase2Evaluation(true),
+                onSkipped: () => _submitPhase2Evaluation(false),
+              ),
+          ],
         );
       },
     );

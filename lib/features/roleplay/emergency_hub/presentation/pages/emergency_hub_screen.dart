@@ -18,6 +18,7 @@ import 'package:vowl/features/roleplay/emergency_hub/presentation/widgets/emerge
 import 'package:vowl/features/roleplay/emergency_hub/presentation/widgets/emergency_hub_telex_card.dart';
 import 'package:vowl/features/roleplay/emergency_hub/presentation/widgets/emergency_hub_terminal_input.dart';
 import 'package:vowl/features/roleplay/emergency_hub/presentation/widgets/emergency_hub_valve_chamber.dart';
+import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
 
 class EmergencyHubScreen extends StatefulWidget {
   final int level;
@@ -45,6 +46,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _phase1Passed = false;
 
   @override
   void initState() {
@@ -79,7 +81,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
 
   // Trigonometry-based circular dial update
   void _onValveDragged(DragUpdateDetails details, Offset localCenter) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
 
     final Offset touchPos = details.localPosition;
     final double dx = touchPos.dx - localCenter.dx;
@@ -99,7 +101,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
   }
 
   void _submitCode(String input, String correctAnswer) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
 
     final String cleanInput = input.trim().replaceAll(' ', '').toLowerCase();
     final String cleanCorrect = correctAnswer
@@ -113,12 +115,33 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
 
     final bool isCorrect = codeMatches && valveAligned;
 
+    if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() {
+        _phase1Passed = true;
+      });
+      // Wait for Phase 2
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
+      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered) return;
+
     setState(() {
       _isAnswered = true;
-      _isCorrect = isCorrect;
+      _isCorrect = nailedIt;
     });
 
-    if (isCorrect) {
+    if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
       context.read<RoleplayBloc>().add(SubmitAnswer(true));
@@ -143,6 +166,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
               _isCorrect = null;
               _rotation = 0.0;
               _codeController.clear();
+              _phase1Passed = false;
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -163,8 +187,10 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
 
-        return RoleplayBaseLayout(
-          gameType: widget.gameType,
+        return Stack(
+          children: [
+            RoleplayBaseLayout(
+              gameType: widget.gameType,
           level: widget.level,
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
@@ -278,6 +304,15 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                     );
                   },
                 ),
+            ),
+            if (_phase1Passed && !_isAnswered && quest != null)
+              SpeakToConfirmOverlay(
+                expectedText: quest.correctAnswer ?? _codeController.text,
+                primaryColor: Colors.redAccent,
+                onConfirmed: () => _submitPhase2Evaluation(true),
+                onSkipped: () => _submitPhase2Evaluation(false),
+              ),
+          ],
         );
       },
     );

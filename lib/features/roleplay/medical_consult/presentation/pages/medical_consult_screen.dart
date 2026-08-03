@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -18,6 +18,7 @@ import 'package:vowl/features/roleplay/medical_consult/presentation/widgets/medi
 import 'package:vowl/features/roleplay/medical_consult/presentation/widgets/medical_consult_patient_record.dart';
 import 'package:vowl/features/roleplay/medical_consult/presentation/widgets/medical_consult_scan_bay.dart';
 import 'package:vowl/features/roleplay/medical_consult/presentation/widgets/medical_consult_diagnostic_tray.dart';
+import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
 
 class MedicalConsultScreen extends StatefulWidget {
   final int level;
@@ -45,6 +46,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _phase1Passed = false;
 
   // Drag coordinate for physical scanning lens
   Offset _scanOffset = Offset.zero;
@@ -121,7 +123,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
     DragUpdateDetails details,
     List<String> availableSymptoms,
   ) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
 
     setState(() {
       _scanOffset += details.delta;
@@ -146,7 +148,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
   }
 
   void _onSymptomTapped(String symptom) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
 
     // Check if item is scanned before selection
     if (!_scannedGlitches.contains(symptom)) {
@@ -165,7 +167,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
   }
 
   void _clearDiagnosis() {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
     _hapticService.selection();
     setState(() {
       _diagnosedSymptoms.clear();
@@ -175,7 +177,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
   }
 
   void _submitDiagnosis(String correctAnswer) {
-    if (_isAnswered || _diagnosedSymptoms.isEmpty) return;
+    if (_isAnswered || _phase1Passed || _diagnosedSymptoms.isEmpty) return;
 
     final targets = correctAnswer
         .split(',')
@@ -189,12 +191,33 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
         targets.length == current.length &&
         targets.every((t) => current.contains(t));
 
+    if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() {
+        _phase1Passed = true;
+      });
+      // Wait for Phase 2
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
+      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered) return;
+
     setState(() {
       _isAnswered = true;
-      _isCorrect = isCorrect;
+      _isCorrect = nailedIt;
     });
 
-    if (isCorrect) {
+    if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
       context.read<RoleplayBloc>().add(SubmitAnswer(true));
@@ -221,6 +244,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
               _diagnosedSymptoms.clear();
               _scannedGlitches.clear();
               _scanOffset = Offset.zero;
+              _phase1Passed = false;
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -242,8 +266,10 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
         final symptoms = quest?.symptoms ?? [];
 
-        return RoleplayBaseLayout(
-          gameType: widget.gameType,
+        return Stack(
+          children: [
+            RoleplayBaseLayout(
+              gameType: widget.gameType,
           level: widget.level,
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
@@ -405,6 +431,15 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                     );
                   },
                 ),
+            ),
+            if (_phase1Passed && !_isAnswered && quest != null)
+              SpeakToConfirmOverlay(
+                expectedText: quest.correctAnswer ?? _diagnosedSymptoms.join(', '),
+                primaryColor: theme.primaryColor,
+                onConfirmed: () => _submitPhase2Evaluation(true),
+                onSkipped: () => _submitPhase2Evaluation(false),
+              ),
+          ],
         );
       },
     );

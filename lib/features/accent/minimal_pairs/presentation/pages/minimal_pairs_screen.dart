@@ -16,7 +16,7 @@ import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_instruction.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_speaker_core.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_drone_option.dart';
-import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
+import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
 import 'package:vowl/features/accent/presentation/constants/accent_game_constants.dart';
 
 class MinimalPairsScreen extends StatefulWidget {
@@ -198,7 +198,9 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
-          child: AccentBaseLayout(
+          child: Stack(
+            children: [
+              AccentBaseLayout(
             gameType: widget.gameType,
             level: widget.level,
             isAnswered: _isAnswered,
@@ -257,7 +259,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                     MinimalPairsInstruction(
                                       color: theme.primaryColor,
                                       instruction: _phase1Passed
-                                          ? "Great job! Now record yourself saying the word to evaluate your accent."
+                                          ? "Great job! Now confirm by speaking the word."
                                           : context.tr(
                                               'games.minimal_pairs_instruction',
                                               fallback: quest.instruction,
@@ -394,13 +396,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                           ),
 
                                     SizedBox(height: isCompact ? 16.h : 24.h),
-                                    if (_phase1Passed)
-                                      AccentSelfEvaluationPanel(
-                                        textToSpeak: quest.textToSpeak ?? "",
-                                        primaryColor: theme.primaryColor,
-                                        isCompact: isCompact,
-                                        onEvaluate: _submitPhase2Evaluation,
-                                      ),
+                                    // Panel removed in favor of SpeakToConfirmOverlay
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),
@@ -412,6 +408,17 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                       );
                     },
                   ),
+              ),
+              if (_phase1Passed && !_isAnswered && quest != null)
+                SpeakToConfirmOverlay(
+                  expectedText: _currentOptions.isNotEmpty 
+                      ? _currentOptions[_currentCorrectIndex]['word']! 
+                      : (quest.correctAnswer ?? quest.word1 ?? ""),
+                  primaryColor: theme.primaryColor,
+                  onConfirmed: () => _submitPhase2Evaluation(true),
+                  onSkipped: () => _submitPhase2Evaluation(false),
+                ),
+            ],
           ),
         );
       },

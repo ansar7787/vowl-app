@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -17,6 +17,7 @@ import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/social_spark/presentation/widgets/social_spark_instruction.dart';
 import 'package:vowl/features/roleplay/social_spark/presentation/widgets/social_spark_connection_monitor.dart';
 import 'package:vowl/features/roleplay/social_spark/presentation/widgets/social_spark_galaxy_board.dart';
+import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
 
 class SocialSparkScreen extends StatefulWidget {
   final int level;
@@ -46,6 +47,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _phase1Passed = false;
 
   @override
   void initState() {
@@ -71,7 +73,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
   }
 
   void _onStarTap(int index) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
     _hapticService.selection();
     _soundService.playHint(); // Play little synth tap note
 
@@ -85,7 +87,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
   }
 
   void _clearSelection() {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
     _hapticService.selection();
     setState(() {
       _selectedIndices.clear();
@@ -93,7 +95,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
   }
 
   void _submitAnswer(List<String> shuffledWords, String correctAnswer) {
-    if (_isAnswered || _selectedIndices.isEmpty) return;
+    if (_isAnswered || _phase1Passed || _selectedIndices.isEmpty) return;
 
     // Assemble sentence in correct tapped order
     final String result = _selectedIndices
@@ -109,12 +111,33 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
 
     final bool isCorrect = sanitizedResult == sanitizedAnswer;
 
+    if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() {
+        _phase1Passed = true;
+      });
+      // Wait for Phase 2
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
+      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered) return;
+
     setState(() {
       _isAnswered = true;
-      _isCorrect = isCorrect;
+      _isCorrect = nailedIt;
     });
 
-    if (isCorrect) {
+    if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
       context.read<RoleplayBloc>().add(SubmitAnswer(true));
@@ -139,6 +162,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndices.clear();
+              _phase1Passed = false;
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -165,8 +189,10 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
             .map((idx) => words[idx])
             .join(' ');
 
-        return RoleplayBaseLayout(
-          gameType: widget.gameType,
+        return Stack(
+          children: [
+            RoleplayBaseLayout(
+              gameType: widget.gameType,
           level: widget.level,
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
@@ -319,6 +345,15 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                     );
                   },
                 ),
+            ),
+            if (_phase1Passed && !_isAnswered && quest != null)
+              SpeakToConfirmOverlay(
+                expectedText: quest.correctAnswer ?? currentText,
+                primaryColor: theme.primaryColor,
+                onConfirmed: () => _submitPhase2Evaluation(true),
+                onSkipped: () => _submitPhase2Evaluation(false),
+              ),
+          ],
         );
       },
     );

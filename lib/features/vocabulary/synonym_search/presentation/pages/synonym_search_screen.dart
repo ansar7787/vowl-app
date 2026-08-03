@@ -17,6 +17,7 @@ import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/syn
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_painters.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_warp_gate.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_word_shard.dart';
+import 'package:vowl/core/presentation/widgets/type_to_confirm_overlay.dart';
 
 class SynonymSearchScreen extends StatefulWidget {
   final int level;
@@ -39,6 +40,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _phase1Passed = false;
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
 
@@ -146,10 +148,9 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
+        _phase1Passed = true;
       });
-      context.read<VocabularyBloc>().add(SubmitAnswer(true));
+      // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -157,6 +158,25 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
         _isAnswered = true;
         _isCorrect = false;
       });
+      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered) return;
+
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      context.read<VocabularyBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
       context.read<VocabularyBloc>().add(SubmitAnswer(false));
     }
   }
@@ -212,6 +232,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _phase1Passed = false;
               _initShards(state.currentQuest.options?.length ?? 0);
             });
           } else if (state.lastAnswerCorrect != null && !_isAnswered) {
@@ -464,6 +485,13 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                         : "WARP THE SYNONYM SHARD",
                                   ),
                           ),
+                          if (_phase1Passed && !_isAnswered && quest != null)
+                            TypeToConfirmOverlay(
+                              expectedText: quest.correctAnswer ?? '',
+                              primaryColor: theme.primaryColor,
+                              onConfirmed: () => _submitPhase2Evaluation(true),
+                              onSkipped: () => _submitPhase2Evaluation(false),
+                            ),
                         ],
                       ),
                     );

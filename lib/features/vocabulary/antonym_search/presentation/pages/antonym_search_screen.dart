@@ -16,6 +16,7 @@ import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/ant
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_pulsar.dart';
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_nebula_core.dart';
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_option_shard.dart';
+import 'package:vowl/core/presentation/widgets/type_to_confirm_overlay.dart';
 
 class AntonymSearchScreen extends StatefulWidget {
   final int level;
@@ -35,6 +36,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _phase1Passed = false;
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
   bool _targetIsPositive = true;
@@ -72,6 +74,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _phase1Passed = false;
               _targetIsPositive = math.Random().nextBool();
               _isFused.clear();
               _shardOffsets.clear();
@@ -212,6 +215,14 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
 
                   if (_activeShardIndex != null)
                     _buildPlasmaThunder(targetColor, isCompact),
+
+                  if (_phase1Passed && !_isAnswered && quest != null)
+                    TypeToConfirmOverlay(
+                      expectedText: quest.correctAnswer ?? '',
+                      primaryColor: theme.primaryColor,
+                      onConfirmed: () => _submitPhase2Evaluation(true),
+                      onSkipped: () => _submitPhase2Evaluation(false),
+                    ),
                 ],
               );
             },
@@ -316,11 +327,29 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     _soundService.playCorrect();
     setState(() {
       _isFused[index] = true;
-      _isAnswered = true;
-      _isCorrect = true;
+      _phase1Passed = true;
       _activeShardIndex = null;
     });
-    context.read<VocabularyBloc>().add(SubmitAnswer(true));
+    // Wait for Phase 2
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered) return;
+
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      context.read<VocabularyBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+    }
   }
 
   void _onFailure(int index) {

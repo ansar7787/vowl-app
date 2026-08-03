@@ -17,6 +17,7 @@ import 'package:vowl/features/roleplay/situational_response/presentation/widgets
 import 'package:vowl/features/roleplay/situational_response/presentation/widgets/situational_response_scene_display.dart';
 import 'package:vowl/features/roleplay/situational_response/presentation/widgets/situational_response_explanation_panel.dart';
 import 'package:vowl/features/roleplay/situational_response/presentation/widgets/situational_response_reaction_zone.dart';
+import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
 
 class SituationalResponseScreen extends StatefulWidget {
   final int level;
@@ -45,6 +46,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
   bool? _isCorrect;
   bool _showConfetti = false;
   int? _selectedOrbIndex;
+  bool _phase1Passed = false;
 
   // Shuffled state
   List<String> _shuffledOptions = [];
@@ -94,7 +96,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
   }
 
   void _checkTickWarnings() {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
 
     // Warn when time is running out (less than 4 seconds remaining)
     final double elapsedRatio = _timerController.value;
@@ -119,7 +121,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
   }
 
   void _triggerTimeoutFailure() {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
     _stopTimer();
     _hapticService.error();
     _soundService.playWrong();
@@ -134,17 +136,41 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
   }
 
   void _onOrbTap(int index, int correctIndex) {
-    if (_isAnswered) return;
+    if (_isAnswered || _phase1Passed) return;
     _stopTimer();
 
     final isCorrect = index == correctIndex;
     setState(() {
-      _isAnswered = true;
-      _isCorrect = isCorrect;
       _selectedOrbIndex = index;
     });
 
     if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() {
+        _phase1Passed = true;
+      });
+      // Wait for Phase 2
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
+      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitPhase2Evaluation(bool nailedIt) {
+    if (_isAnswered) return;
+
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
       context.read<RoleplayBloc>().add(SubmitAnswer(true));
@@ -169,6 +195,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
               _isAnswered = false;
               _isCorrect = null;
               _selectedOrbIndex = null;
+              _phase1Passed = false;
               
               if (state.currentQuest.options != null) {
                 final options = List<String>.from(state.currentQuest.options!);
@@ -206,8 +233,10 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
 
-        return RoleplayBaseLayout(
-          gameType: widget.gameType,
+        return Stack(
+          children: [
+            RoleplayBaseLayout(
+              gameType: widget.gameType,
           level: widget.level,
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
@@ -247,7 +276,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                             isDark: isDark,
                             timerValue: _timerController.value,
                             pulseValue: _pulseController.value,
-                            isAnswered: _isAnswered,
+                            isAnswered: _isAnswered || _phase1Passed,
                             isCorrect: _isCorrect,
                             selectedOrbIndex: _selectedOrbIndex,
                             onOrbTap: _onOrbTap,
@@ -275,6 +304,15 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                     );
                   },
                 ),
+            ),
+            if (_phase1Passed && !_isAnswered && _selectedOrbIndex != null)
+              SpeakToConfirmOverlay(
+                expectedText: _shuffledOptions[_selectedOrbIndex!],
+                primaryColor: theme.primaryColor,
+                onConfirmed: () => _submitPhase2Evaluation(true),
+                onSkipped: () => _submitPhase2Evaluation(false),
+              ),
+          ],
         );
       },
     );

@@ -16,6 +16,7 @@ import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/a
 import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/audio_fill_blanks_jar.dart';
 import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/audio_fill_blanks_canvas.dart';
 import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/audio_fill_blanks_input.dart';
+import 'package:vowl/core/utils/gibberish_detector_service.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Constants
@@ -92,6 +93,10 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
     // Guard: already answered, empty / whitespace-only input, or no answer key.
     final input = _controller.text.trim();
     if (_isAnswered || input.isEmpty || correct == null || correct.isEmpty) {
+      return;
+    }
+
+    if (!GibberishDetectorService.isNaturalSentence(context, input)) {
       return;
     }
 

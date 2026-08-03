@@ -6,6 +6,13 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/presentation/widgets/game_scrollbar.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
@@ -16,7 +23,7 @@ import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/cons
 import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/consonant_clarity_prompt_card.dart';
 import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/consonant_clarity_pulse_speaker.dart';
 import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/consonant_clarity_tactile_grid.dart';
-import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
+import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
 
 class ConsonantClarityScreen extends StatefulWidget {
   final int level;
@@ -205,7 +212,9 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
-          child: AccentBaseLayout(
+          child: Stack(
+            children: [
+              AccentBaseLayout(
             gameType: widget.gameType,
             level: widget.level,
             isAnswered: _isAnswered,
@@ -277,7 +286,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                                       primaryColor:
                                                           theme.primaryColor,
                                                       instruction: _phase1Passed 
-                                                        ? "Great job! Now record yourself saying the word." 
+                                                        ? "Great job! Now confirm by speaking the word." 
                                                         : null,
                                                     ),
                                               ),
@@ -286,7 +295,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                         : ConsonantClarityInstruction(
                                             primaryColor: theme.primaryColor,
                                             instruction: _phase1Passed 
-                                              ? "Great job! Now record yourself saying the word." 
+                                              ? "Great job! Now confirm by speaking the word." 
                                               : null,
                                           ),
                                     SizedBox(height: gapInstruction),
@@ -356,13 +365,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                             onSubmitChoice: _submitChoice,
                                           ),
                                     SizedBox(height: gapBottom),
-                                    if (_phase1Passed)
-                                      AccentSelfEvaluationPanel(
-                                        textToSpeak: quest.textToSpeak ?? "",
-                                        primaryColor: theme.primaryColor,
-                                        isCompact: isCompact,
-                                        onEvaluate: _submitPhase2Evaluation,
-                                      ),
+                                    // Panel removed in favor of SpeakToConfirmOverlay
                                     SizedBox(height: _isAnswered ? 180.h : 0),
                                   ],
                                 ),
@@ -371,16 +374,6 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                           ),
                         ),
                       ),
-                      );
-                    },
-                  ),
-          ),
-        );
-      },
-    );
-  }
-}
-
 
 
 
