@@ -5,6 +5,8 @@ import 'package:vowl/core/presentation/widgets/modern_game_dialog.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/offline_play_gate_service.dart';
+import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/presentation/widgets/victory_flight_overlay.dart';
@@ -51,6 +53,24 @@ class GameDialogHelper {
 
     _sound.playLevelComplete();
     _haptic.success();
+
+    // ── Offline play quota tracking ──────────────────────────────────────
+    // When a free user completes a level while offline, increment the gate
+    // counter. After [OfflinePlayGateService.maxOfflineLevels] completions,
+    // the ConnectivityWrapper will hard-block until reconnection — ensuring
+    // ad revenue isn't permanently bypassed by airplane-mode abuse.
+    // Premium users are unaffected: NetworkInfo.setPremiumOverride makes
+    // their stream always report online, so this path never fires for them.
+    // Fire-and-forget: showCompletion is synchronous void; the quota update
+    // is registered before the next StreamBuilder rebuild in ConnectivityWrapper.
+    di.sl<NetworkInfo>().isConnected.then((connected) {
+      if (!connected) {
+        OfflinePlayGateService.instance.recordOfflineLevel();
+      }
+    }).catchError((_) {
+      // Network check failed — treat as offline to be safe
+      OfflinePlayGateService.instance.recordOfflineLevel();
+    });
 
     final authState = context.read<AuthBloc>().state;
     final userLevel = authState.user?.level ?? 1;
