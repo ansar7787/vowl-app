@@ -234,10 +234,7 @@ class _AccentSelfEvaluationPanelState extends State<AccentSelfEvaluationPanel> {
                     color: widget.primaryColor.withValues(alpha: 0.15),
                   ),
                   child: Center(
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 4.r), // Center the play icon visually
-                      child: Icon(Icons.play_arrow_rounded, color: widget.primaryColor, size: 36.sp),
-                    ),
+                    child: Icon(Icons.play_arrow_rounded, color: widget.primaryColor, size: 36.sp),
                   ),
                 ),
               ),
