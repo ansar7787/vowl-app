@@ -123,17 +123,9 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
   final _ttsService = di.sl<TtsService>();
   final _soundService = di.sl<SoundService>();
 
-  final 
-  final int _lastLives = 3;
-  final int _lastIndex = -1;
 
   late AnimationController _audioController;
-  late bool _showBriefing;
   Timer? _nudgeTimer;
-
-  static const Duration _kNudgeDelay = Duration(milliseconds: 1200);
-  String get _kNudgeMessage =>
-      context.tr('games.kids_nudge', fallback: 'Let\'s go!');
 
   @override
   void initState() {
@@ -142,21 +134,11 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
       vsync: this,
       duration: const Duration(seconds: 3),
     );
-    _showBriefing =
-        widget._effectiveConfig.overrideBriefing ??
-        (widget.level == 1 || widget.level == 100);
   }
 
   @override
   void didUpdateWidget(covariant ListeningBaseLayout oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (oldWidget.level != widget.level) {
-      setState(() {
-        _showBriefing =
-            widget._effectiveConfig.overrideBriefing ??
-            (widget.level == 1 || widget.level == 100);
-      });
-    }
   }
 
   @override
@@ -320,16 +302,6 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
       if (!mounted) return;
       _handleAudioPlay();
     });
-  }
-
-  void _showBriefingOverlay() => setState(() => _showBriefing = true);
-  void _hideBriefing() => setState(() => _showBriefing = false);
-
-  void _confirmExit(BuildContext context) {
-    GameDialogHelper.showExitConfirmation(
-      context,
-      onQuit: () => Navigator.pop(context),
-    );
   }
 }
 

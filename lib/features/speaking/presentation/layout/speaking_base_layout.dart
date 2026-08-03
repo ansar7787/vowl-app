@@ -16,13 +16,7 @@ import 'package:vowl/features/speaking/presentation/widgets/speaking_voice_pulse
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
-// ---------------------------------------------------------------------------
-// Layout constants
-// ---------------------------------------------------------------------------
 
-const int _kNudgeDelayMs = 1200;
-const int _kBriefingTriggerLevel = 1;
-const int _kBriefingTutorialLevel = 100;
 
 
 
