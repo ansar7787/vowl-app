@@ -22,46 +22,54 @@ class OfflineBanner extends StatelessWidget {
       bottom: false,
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-          decoration: BoxDecoration(
-            color: isDark
-                ? const Color(0xFF1E293B).withValues(alpha: 0.95)
-                : Colors.white.withValues(alpha: 0.95),
-            borderRadius: BorderRadius.circular(14.r),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.1),
-                blurRadius: 12,
-                offset: const Offset(0, 4),
+        child: Material(
+          type: MaterialType.transparency,
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+            decoration: BoxDecoration(
+              color: isDark
+                  ? const Color(0xFF1E293B).withValues(alpha: 0.95)
+                  : Colors.white.withValues(alpha: 0.95),
+              borderRadius: BorderRadius.circular(14.r),
+              border: Border.all(
+                color: Colors.amber.withValues(alpha: 0.4),
+                width: 1,
               ),
-            ],
-          ),
-          child: Row(
-            children: [
-              Icon(
-                LucideIcons.wifiOff,
-                color: Colors.amber,
-                size: 18.r,
-              ),
-              SizedBox(width: 10.w),
-              Expanded(
-                child: Text(
-                  context.tr(
-                    'connectivity.offline_banner',
-                    fallback: 'You\'re offline. Progress will sync later.',
-                  ),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w600,
-                    color: isDark ? Colors.white70 : Colors.black87,
-                  ),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.1),
+                  blurRadius: 12,
+                  offset: const Offset(0, 4),
                 ),
-              ),
-            ],
+              ],
+            ),
+            child: Row(
+              children: [
+                Icon(
+                  LucideIcons.wifiOff,
+                  color: Colors.amber,
+                  size: 18.r,
+                ),
+                SizedBox(width: 10.w),
+                Expanded(
+                  child: Text(
+                    context.tr(
+                      'connectivity.offline_banner',
+                      fallback: 'You\'re offline. Progress will sync later.',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w600,
+                      color: isDark ? Colors.white70 : Colors.black87,
+                      decoration: TextDecoration.none, // Removes the yellow underline
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+              ],
+            ),
           ),
         )
             .animate()
