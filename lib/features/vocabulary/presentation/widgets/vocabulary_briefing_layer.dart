@@ -7,7 +7,7 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 class VocabularyBriefingLayer extends StatelessWidget {
   final GameSubtype gameType;
   final int level;
-  final ThemeResult theme;
+  final dynamic theme;
   final VoidCallback onStart;
 
   const VocabularyBriefingLayer({

@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/bloc/game_state_base.dart';
 import 'package:equatable/equatable.dart';
 import 'package:vowl/features/roleplay/presentation/constants/roleplay_constants.dart';
 import '../../../../core/domain/entities/game_quest.dart';

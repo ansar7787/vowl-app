@@ -373,8 +373,10 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
               ), // AccentBaseLayout
               if (_phase1Passed && !_isAnswered)
                 SpeakToConfirmOverlay(
-                  expectedWord: quest?.word ?? "",
-                  onResult: _submitPhase2Evaluation,
+                  expectedText: quest?.word ?? "",
+                  primaryColor: theme.primaryColor,
+                  onConfirmed: () => _submitPhase2Evaluation(true),
+                  onSkipped: () => _submitPhase2Evaluation(false),
                 ),
             ],
           ),
