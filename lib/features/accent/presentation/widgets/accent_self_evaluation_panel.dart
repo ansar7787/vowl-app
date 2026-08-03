@@ -128,8 +128,6 @@ class _AccentSelfEvaluationPanelState extends State<AccentSelfEvaluationPanel> {
             child: Text(
               '"${widget.textToSpeak}"',
               textAlign: TextAlign.center,
-              maxLines: 4,
-              overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: widget.textToSpeak.length > 30 ? 16.sp : 18.sp,
