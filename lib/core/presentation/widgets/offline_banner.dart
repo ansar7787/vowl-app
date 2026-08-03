@@ -29,10 +29,6 @@ class OfflineBanner extends StatelessWidget {
                 ? const Color(0xFF1E293B).withValues(alpha: 0.95)
                 : Colors.white.withValues(alpha: 0.95),
             borderRadius: BorderRadius.circular(14.r),
-            border: Border.all(
-              color: Colors.amber.withValues(alpha: 0.4),
-              width: 1,
-            ),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withValues(alpha: 0.1),
