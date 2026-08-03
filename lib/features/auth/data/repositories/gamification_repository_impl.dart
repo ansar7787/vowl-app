@@ -188,11 +188,13 @@ class GamificationRepositoryImpl
         claimChestTier: claimChestTier,
       );
 
-      // Atomic update (Queued offline)
-      await docRef.update(updates);
-
       // Immediately notify UI so stars can animate based on offline local data
       lastEarnedStars.value = finalStarsEarned;
+
+      // Atomic update (Queued offline)
+      // Fire-and-forget: do NOT await. In the Firebase SDK, awaiting an update
+      // while offline hangs the Future indefinitely until the internet returns.
+      docRef.update(updates).catchError((_) {});
 
       return const Right<Failure, void>(null);
     } catch (e) {
