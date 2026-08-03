@@ -105,151 +105,21 @@ class GamificationRepositoryImpl
         // state or into a discarded retry attempt.
         final userData = UserModel.fromMap(doc.data()!);
 
-        final dailyHistory = Map<String, int>.from(userData.dailyXpHistory);
-        final activities = List<Map<String, dynamic>>.from(
-          userData.recentActivities,
-        );
-        final completedLevels = userData.completedLevels.map(
-          (k, v) => MapEntry(k, List<int>.from(v)),
-        );
-        final unlockedLevels = Map<String, int>.from(userData.unlockedLevels);
-        final starRatings = userData.starRatings.map(
-          (k, v) => MapEntry(k, Map<String, int>.from(v)),
-        );
-        var coinHistoryList = List<Map<String, dynamic>>.from(
-          userData.coinHistory,
-        );
-
-        // ---- Replay detection ----
-        final categoryCompleted = completedLevels[gameType] ?? <int>[];
-        final bool isReplay = categoryCompleted.contains(level);
-
-        // ---- XP multiplier calculation ----
-        var xpMultiplier = 1.0;
-        if (userData.hasPermanentXPBoost) {
-          xpMultiplier *= UserGameConstants.kPermanentXpBoostMultiplier;
-        }
-        if (userData.isDoubleXPActive) {
-          xpMultiplier *= UserGameConstants.kDoubleXpMultiplier;
-        }
-
-        final baseXp = isReplay
-            ? (xpIncrease * UserGameConstants.kReplayXpFraction)
-            : xpIncrease.toDouble();
-        final finalXpIncrease = (baseXp * xpMultiplier).round();
-
-        // ---- Completed & unlocked levels ----
-        if (!isReplay && !isVaultReward) {
-          categoryCompleted.add(level);
-          completedLevels[gameType] = categoryCompleted;
-        }
-
-        final currentUnlocked = unlockedLevels[gameType] ?? 1;
-        if (!isVaultReward && level >= currentUnlocked) {
-          // Free levels (1-10) or Premium users automatically unlock the next level.
-          // Otherwise, the user must explicitly purchase the next level via the Toll Gate.
-          if (level < 10 || userData.isPremium) {
-            unlockedLevels[gameType] = level + 1;
-          }
-        }
-
-        final categoryStars = Map<String, int>.from(
-          starRatings[gameType] ?? <String, int>{},
-        );
-
-        // 1. Update Gameplay Stars
-        if (starsEarned != null) {
-          final currentStars = categoryStars[level.toString()] ?? 0;
-          if (finalStarsEarned > currentStars) {
-            categoryStars[level.toString()] = finalStarsEarned;
-          }
-        }
-
-        // 2. Add Magic Stars
-        if (addMagicStars != null) {
-          final currentMagicStars = categoryStars['magic_stars'] ?? 0;
-          categoryStars['magic_stars'] = currentMagicStars + addMagicStars;
-        }
-
-        // 3. Update Claimed Chest Tier
-        if (claimChestTier != null) {
-          final currentClaimedTier = categoryStars['claimed_chests'] ?? 0;
-          if (claimChestTier > currentClaimedTier) {
-            categoryStars['claimed_chests'] = claimChestTier;
-          }
-        }
-
-        starRatings[gameType] = categoryStars;
-
-        // ---- Daily XP history ----
-        final now = DateTime.now();
-        final todayKey = _dateKey(now);
-        dailyHistory[todayKey] =
-            (dailyHistory[todayKey] ?? 0) + finalXpIncrease;
-        _trimOldestDailyEntries(
-          dailyHistory,
-          UserGameConstants.kDailyXpHistoryLimit,
-        );
-
-        // ---- Recent activities ----
-        // 'titleKey' is a stable lookup key (e.g. into ARB files), not
-        // display text — the previous version baked a pre-formatted English
-        // sentence ('Quest Completed', '+50 XP · +20 Coins') directly into
-        // Firestore, which can never be localized for any of this app's
-        // other 17 target languages no matter what the UI does with it
-        // afterwards. xpEarned/coinsEarned are now separate numeric fields
-        // so the presentation layer can run them through its own
-        // number-formatting and pluralization rules per-locale.
-        activities.insert(0, <String, dynamic>{
-          'titleKey': 'activity.quest_completed',
-          'gameType': gameType,
-          'xpEarned': finalXpIncrease,
-          'coinsEarned': coinIncrease,
-          'timestamp': Timestamp.now(),
-          'type': 'quest',
-        });
-        final trimmedActivities =
-            activities.length > UserGameConstants.kActivityHistoryLimit
-            ? activities.sublist(0, UserGameConstants.kActivityHistoryLimit)
-            : activities;
-
-        // ---- Coin reward calculation ----
-        // Kids Zone games route to kidsCoins; other games route to coins.
-        final isKidsGame = UserGameConstants.kKidsGameTypes.contains(gameType);
-
-        var finalCoinIncrease = (!isVaultReward && isReplay && !isDoubleReward)
-            ? 0
-            : coinIncrease;
-        if (!isReplay && (userData.isPremium || userData.level >= 100)) {
-          finalCoinIncrease = coinIncrease * 2;
-        }
-
-        // ---- Coin history ----
-        // 'coin_history.quest_reward' is a stable key, not English text — see
-        // the recentActivities comment above for why. gameType travels
-        // alongside it as a separate param for the presentation layer to
-        // interpolate however each locale's grammar requires.
-        coinHistoryList = _recordCoinHistory(
-          coinHistoryList,
-          titleKey: 'coin_history.quest_reward',
-          amount: finalCoinIncrease,
-          isEarned: true,
-          params: {'gameType': gameType},
+        final updates = _computeRewardUpdates(
+          userData: userData,
+          gameType: gameType,
+          level: level,
+          xpIncrease: xpIncrease,
+          coinIncrease: coinIncrease,
+          isDoubleReward: isDoubleReward,
+          isVaultReward: isVaultReward,
+          finalStarsEarned: finalStarsEarned,
+          addMagicStars: addMagicStars,
+          claimChestTier: claimChestTier,
         );
 
         // ---- Atomic update ----
-        transaction.update(docRef, {
-          'totalExp': userData.totalExp + finalXpIncrease,
-          (isKidsGame ? 'kidsCoins' : 'coins'): FieldValue.increment(
-            finalCoinIncrease,
-          ),
-          'coinHistory': coinHistoryList,
-          'dailyXpHistory': dailyHistory,
-          'recentActivities': trimmedActivities,
-          'completedLevels': completedLevels,
-          'unlockedLevels': unlockedLevels,
-          'starRatings': starRatings,
-        });
+        transaction.update(docRef, updates);
 
         return const Right<Failure, void>(null);
       });
@@ -263,12 +133,221 @@ class GamificationRepositoryImpl
 
       return result;
     } catch (e) {
+      if (e is FirebaseException && (e.code == 'unavailable' || e.code == 'network-request-failed')) {
+        return _offlineFallbackUpdateUserRewards(
+          docRef: _firestore.collection('users').doc(_firebaseAuth.currentUser!.uid),
+          gameType: gameType,
+          level: level,
+          xpIncrease: xpIncrease,
+          coinIncrease: coinIncrease,
+          isDoubleReward: isDoubleReward,
+          isVaultReward: isVaultReward,
+          finalStarsEarned: starsEarned ?? 3,
+          addMagicStars: addMagicStars,
+          claimChestTier: claimChestTier,
+        );
+      }
       return Left(handleFirebaseException(e));
     }
   }
 
   // ---------------------------------------------------------------------------
-  // updateUnlockedLevel
+  // _offlineFallbackUpdateUserRewards
+  // ---------------------------------------------------------------------------
+
+  Future<Either<Failure, void>> _offlineFallbackUpdateUserRewards({
+    required DocumentReference docRef,
+    required String gameType,
+    required int level,
+    required int xpIncrease,
+    required int coinIncrease,
+    required bool isDoubleReward,
+    required bool isVaultReward,
+    required int finalStarsEarned,
+    int? addMagicStars,
+    int? claimChestTier,
+  }) async {
+    try {
+      final doc = await docRef.get(const GetOptions(source: Source.cache));
+      if (!doc.exists || doc.data() == null) {
+        return Left(ServerFailure('user-data-not-found'));
+      }
+
+      final userData = UserModel.fromMap(doc.data() as Map<String, dynamic>);
+      
+      final updates = _computeRewardUpdates(
+        userData: userData,
+        gameType: gameType,
+        level: level,
+        xpIncrease: xpIncrease,
+        coinIncrease: coinIncrease,
+        isDoubleReward: isDoubleReward,
+        isVaultReward: isVaultReward,
+        finalStarsEarned: finalStarsEarned,
+        addMagicStars: addMagicStars,
+        claimChestTier: claimChestTier,
+      );
+
+      // Atomic update (Queued offline)
+      await docRef.update(updates);
+
+      // Immediately notify UI so stars can animate based on offline local data
+      lastEarnedStars.value = finalStarsEarned;
+
+      return const Right<Failure, void>(null);
+    } catch (e) {
+      return Left(handleFirebaseException(e));
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // _computeRewardUpdates
+  // ---------------------------------------------------------------------------
+
+  Map<String, dynamic> _computeRewardUpdates({
+    required UserModel userData,
+    required String gameType,
+    required int level,
+    required int xpIncrease,
+    required int coinIncrease,
+    required bool isDoubleReward,
+    required bool isVaultReward,
+    required int finalStarsEarned,
+    int? addMagicStars,
+    int? claimChestTier,
+  }) {
+    final dailyHistory = Map<String, int>.from(userData.dailyXpHistory);
+    final activities = List<Map<String, dynamic>>.from(
+      userData.recentActivities,
+    );
+    final completedLevels = userData.completedLevels.map(
+      (k, v) => MapEntry(k, List<int>.from(v)),
+    );
+    final unlockedLevels = Map<String, int>.from(userData.unlockedLevels);
+    final starRatings = userData.starRatings.map(
+      (k, v) => MapEntry(k, Map<String, int>.from(v)),
+    );
+    var coinHistoryList = List<Map<String, dynamic>>.from(
+      userData.coinHistory,
+    );
+
+    // ---- Replay detection ----
+    final categoryCompleted = completedLevels[gameType] ?? <int>[];
+    final bool isReplay = categoryCompleted.contains(level);
+
+    // ---- XP multiplier calculation ----
+    var xpMultiplier = 1.0;
+    if (userData.hasPermanentXPBoost) {
+      xpMultiplier *= UserGameConstants.kPermanentXpBoostMultiplier;
+    }
+    if (userData.isDoubleXPActive) {
+      xpMultiplier *= UserGameConstants.kDoubleXpMultiplier;
+    }
+
+    final baseXp = isReplay
+        ? (xpIncrease * UserGameConstants.kReplayXpFraction)
+        : xpIncrease.toDouble();
+    final finalXpIncrease = (baseXp * xpMultiplier).round();
+
+    // ---- Completed & unlocked levels ----
+    if (!isReplay && !isVaultReward) {
+      categoryCompleted.add(level);
+      completedLevels[gameType] = categoryCompleted;
+    }
+
+    final currentUnlocked = unlockedLevels[gameType] ?? 1;
+    if (!isVaultReward && level >= currentUnlocked) {
+      // Free levels (1-10) or Premium users automatically unlock the next level.
+      // Otherwise, the user must explicitly purchase the next level via the Toll Gate.
+      if (level < 10 || userData.isPremium) {
+        unlockedLevels[gameType] = level + 1;
+      }
+    }
+
+    final categoryStars = Map<String, int>.from(
+      starRatings[gameType] ?? <String, int>{},
+    );
+
+    // 1. Update Gameplay Stars
+    final currentStars = categoryStars[level.toString()] ?? 0;
+    if (finalStarsEarned > currentStars) {
+      categoryStars[level.toString()] = finalStarsEarned;
+    }
+
+    // 2. Add Magic Stars
+    if (addMagicStars != null) {
+      final currentMagicStars = categoryStars['magic_stars'] ?? 0;
+      categoryStars['magic_stars'] = currentMagicStars + addMagicStars;
+    }
+
+    // 3. Update Claimed Chest Tier
+    if (claimChestTier != null) {
+      final currentClaimedTier = categoryStars['claimed_chests'] ?? 0;
+      if (claimChestTier > currentClaimedTier) {
+        categoryStars['claimed_chests'] = claimChestTier;
+      }
+    }
+
+    starRatings[gameType] = categoryStars;
+
+    // ---- Daily XP history ----
+    final now = DateTime.now();
+    final todayKey = _dateKey(now);
+    dailyHistory[todayKey] =
+        (dailyHistory[todayKey] ?? 0) + finalXpIncrease;
+    _trimOldestDailyEntries(
+      dailyHistory,
+      UserGameConstants.kDailyXpHistoryLimit,
+    );
+
+    // ---- Recent activities ----
+    activities.insert(0, <String, dynamic>{
+      'titleKey': 'activity.quest_completed',
+      'gameType': gameType,
+      'xpEarned': finalXpIncrease,
+      'coinsEarned': coinIncrease,
+      'timestamp': Timestamp.now(),
+      'type': 'quest',
+    });
+    final trimmedActivities =
+        activities.length > UserGameConstants.kActivityHistoryLimit
+        ? activities.sublist(0, UserGameConstants.kActivityHistoryLimit)
+        : activities;
+
+    // ---- Coin reward calculation ----
+    final isKidsGame = UserGameConstants.kKidsGameTypes.contains(gameType);
+
+    var finalCoinIncrease = (!isVaultReward && isReplay && !isDoubleReward)
+        ? 0
+        : coinIncrease;
+    if (!isReplay && (userData.isPremium || userData.level >= 100)) {
+      finalCoinIncrease = coinIncrease * 2;
+    }
+
+    // ---- Coin history ----
+    coinHistoryList = _recordCoinHistory(
+      coinHistoryList,
+      titleKey: 'coin_history.quest_reward',
+      amount: finalCoinIncrease,
+      isEarned: true,
+      params: {'gameType': gameType},
+    );
+
+    return {
+      'totalExp': userData.totalExp + finalXpIncrease,
+      (isKidsGame ? 'kidsCoins' : 'coins'): FieldValue.increment(
+        finalCoinIncrease,
+      ),
+      'coinHistory': coinHistoryList,
+      'dailyXpHistory': dailyHistory,
+      'recentActivities': trimmedActivities,
+      'completedLevels': completedLevels,
+      'unlockedLevels': unlockedLevels,
+      'starRatings': starRatings,
+    };
+  }
+
+  // ---------------------------------------------------------------------------  // updateUnlockedLevel
   // ---------------------------------------------------------------------------
 
   @override
