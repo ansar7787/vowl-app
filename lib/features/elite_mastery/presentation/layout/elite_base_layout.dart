@@ -134,7 +134,6 @@ class EliteBaseLayout extends StatelessWidget {
         FetchEliteMasteryQuests(gameType: gameType, level: level),
       ),
       onRestoreLife: () => context.read<EliteMasteryBloc>().add(const RestoreEliteLife()),
-      customTitle: title, // Need to make sure game instructions use title correctly
       backgroundOverlay: Builder(builder: (context) {
         return Stack(
           children: [
@@ -166,7 +165,7 @@ class EliteBaseLayout extends StatelessWidget {
       },
       mascotBuilder: (context, dynamicState, lives) {
         return ElitePeekingMascot(
-          state: dynamicState as EliteMasteryState,
+          state: dynamicState,
           lives: lives,
           isAnswered: isAnswered,
           isCorrect: isCorrect,

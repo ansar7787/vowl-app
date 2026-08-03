@@ -1,667 +1,667 @@
 {
-    "gameType": "readAndMatch",
-    "batchIndex": 1,
-    "levels": "1-10",
-    "quests": [
+  "gameType": "readAndMatch",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "RDG_READANDMATCH_L1_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
         {
-            "id": "RDG_READANDMATCH_L1_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L1-Q1-0] Happy",
-                    "value": "Feeling good and pleased about something."
-                },
-                {
-                    "key": "[L1-Q1-1] Sad",
-                    "value": "Feeling unhappy, often because something bad happened."
-                },
-                {
-                    "key": "[L1-Q1-2] Tired",
-                    "value": "Needing to rest or sleep because you have little energy."
-                }
-            ],
-            "hint": "Think about how each word describes a different feeling.",
-            "explanation": "Happy means you feel good, sad means you feel unhappy, and tired means you need rest. Each word describes a different feeling a person can have."
+          "key": "[L1-Q1-0] Happy",
+          "value": "Feeling pleased or glad about something."
         },
         {
-            "id": "RDG_READANDMATCH_L1_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L1-Q2-0] Breakfast",
-                    "value": "The first meal of the day, eaten in the morning."
-                },
-                {
-                    "key": "[L1-Q2-1] Lunch",
-                    "value": "The meal eaten in the middle of the day."
-                },
-                {
-                    "key": "[L1-Q2-2] Dinner",
-                    "value": "The main meal eaten in the evening."
-                }
-            ],
-            "hint": "Think about the order these meals happen during a day.",
-            "explanation": "Breakfast comes first in the morning, lunch happens in the middle of the day, and dinner is the evening meal. Knowing these words helps you talk about your daily meals."
+          "key": "[L1-Q1-1] Sad",
+          "value": "Feeling unhappy, often because of bad news."
         },
         {
-            "id": "RDG_READANDMATCH_L1_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L1-Q3-0] Mother",
-                    "value": "A woman who has a child."
-                },
-                {
-                    "key": "[L1-Q3-1] Father",
-                    "value": "A man who has a child."
-                },
-                {
-                    "key": "[L1-Q3-2] Sister",
-                    "value": "A girl or woman who has the same parents as you."
-                }
-            ],
-            "hint": "Think about who belongs to your family and how they are related to you.",
-            "explanation": "Mother and father are your parents, and a sister is a female child of the same parents. These are basic family words used every day."
-        },
-        {
-            "id": "RDG_READANDMATCH_L2_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L2-Q1-0] Book",
-                    "value": "A set of printed pages with a cover that you read."
-                },
-                {
-                    "key": "[L2-Q1-1] Pencil",
-                    "value": "A thin tool used for writing or drawing."
-                },
-                {
-                    "key": "[L2-Q1-2] Chair",
-                    "value": "A piece of furniture you sit on."
-                }
-            ],
-            "hint": "Think about common objects you might find in a classroom.",
-            "explanation": "A book is for reading, a pencil is for writing, and a chair is for sitting. These are simple classroom objects every student uses."
-        },
-        {
-            "id": "RDG_READANDMATCH_L2_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L2-Q2-0] Run",
-                    "value": "To move quickly using your legs."
-                },
-                {
-                    "key": "[L2-Q2-1] Walk",
-                    "value": "To move by putting one foot in front of the other slowly."
-                },
-                {
-                    "key": "[L2-Q2-2] Jump",
-                    "value": "To push yourself off the ground into the air."
-                }
-            ],
-            "hint": "Think about how each word describes a different way of moving your body.",
-            "explanation": "Run is fast leg movement, walk is slower and steady, and jump means pushing off the ground. Each verb describes a different physical action."
-        },
-        {
-            "id": "RDG_READANDMATCH_L2_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L2-Q3-0] Doctor",
-                    "value": "A person trained to treat sick people."
-                },
-                {
-                    "key": "[L2-Q3-1] Teacher",
-                    "value": "A person whose job is to help students learn."
-                },
-                {
-                    "key": "[L2-Q3-2] Driver",
-                    "value": "A person who controls and steers a vehicle."
-                }
-            ],
-            "hint": "Think about what job each person does for other people.",
-            "explanation": "A doctor helps sick people get better, a teacher helps students learn, and a driver controls a car or bus. Each word names a different job."
-        },
-        {
-            "id": "RDG_READANDMATCH_L3_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L3-Q1-0] Shirt",
-                    "value": "A piece of clothing worn on the upper body."
-                },
-                {
-                    "key": "[L3-Q1-1] Shoes",
-                    "value": "Items worn to cover and protect your feet."
-                },
-                {
-                    "key": "[L3-Q1-2] Hat",
-                    "value": "A piece of clothing worn on your head."
-                }
-            ],
-            "hint": "Think about which part of the body each clothing item covers.",
-            "explanation": "A shirt covers the body, shoes cover the feet, and a hat covers the head. Each word names clothing for a different body part."
-        },
-        {
-            "id": "RDG_READANDMATCH_L3_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L3-Q2-0] Hot",
-                    "value": "Having a high temperature."
-                },
-                {
-                    "key": "[L3-Q2-1] Cold",
-                    "value": "Having a low temperature."
-                },
-                {
-                    "key": "[L3-Q2-2] Warm",
-                    "value": "Having a temperature that feels pleasant, not hot or cold."
-                }
-            ],
-            "hint": "Think about temperature, from very high to mild to very low.",
-            "explanation": "Hot means very high temperature, cold means very low temperature, and warm is a gentle, pleasant temperature in between. These words describe how something feels."
-        },
-        {
-            "id": "RDG_READANDMATCH_L3_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L3-Q3-0] Bus",
-                    "value": "A large vehicle that carries many passengers on roads."
-                },
-                {
-                    "key": "[L3-Q3-1] Train",
-                    "value": "A vehicle that travels on tracks, often carrying many people."
-                },
-                {
-                    "key": "[L3-Q3-2] Bicycle",
-                    "value": "A two-wheeled vehicle you pedal with your feet."
-                }
-            ],
-            "hint": "Think about different ways people travel from place to place.",
-            "explanation": "A bus and a train both carry many passengers, while a bicycle is powered by pedaling. Each word names a different way to travel."
-        },
-        {
-            "id": "RDG_READANDMATCH_L4_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L4-Q1-0] Kitchen",
-                    "value": "The room in a house where food is cooked."
-                },
-                {
-                    "key": "[L4-Q1-1] Bedroom",
-                    "value": "The room in a house where a person sleeps."
-                },
-                {
-                    "key": "[L4-Q1-2] Bathroom",
-                    "value": "The room in a house used for washing and using the toilet."
-                }
-            ],
-            "hint": "Think about what each room in a house is mainly used for.",
-            "explanation": "The kitchen is for cooking, the bedroom is for sleeping, and the bathroom is for washing. Each word names a room with its own clear purpose."
-        },
-        {
-            "id": "RDG_READANDMATCH_L4_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L4-Q2-0] Open",
-                    "value": "To move something so it is no longer closed."
-                },
-                {
-                    "key": "[L4-Q2-1] Close",
-                    "value": "To move something so it covers an opening."
-                },
-                {
-                    "key": "[L4-Q2-2] Push",
-                    "value": "To use force to move something away from you."
-                }
-            ],
-            "hint": "Think about actions you do with doors and other objects every day.",
-            "explanation": "Open means making something not closed, close means shutting it, and push means moving something away using force. These are common action words."
-        },
-        {
-            "id": "RDG_READANDMATCH_L4_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L4-Q3-0] Monday",
-                    "value": "The first day of the work week in many countries."
-                },
-                {
-                    "key": "[L4-Q3-1] Saturday",
-                    "value": "A weekend day that comes after Friday."
-                },
-                {
-                    "key": "[L4-Q3-2] Today",
-                    "value": "The current day, right now."
-                }
-            ],
-            "hint": "Think about how each word relates to time and the days of the week.",
-            "explanation": "Monday starts the work week, Saturday is a weekend day, and today means the present day. These words help you talk about when things happen."
-        },
-        {
-            "id": "RDG_READANDMATCH_L5_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L5-Q1-0] Apple",
-                    "value": "A round fruit with red, green, or yellow skin."
-                },
-                {
-                    "key": "[L5-Q1-1] Bread",
-                    "value": "A baked food made from flour and water."
-                },
-                {
-                    "key": "[L5-Q1-2] Milk",
-                    "value": "A white liquid produced by cows, used as a drink."
-                }
-            ],
-            "hint": "Think about common foods you might buy at a grocery store.",
-            "explanation": "An apple is a fruit, bread is baked from flour, and milk is a drink from cows. Each word names a different everyday food item."
-        },
-        {
-            "id": "RDG_READANDMATCH_L5_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L5-Q2-0] Buy",
-                    "value": "To get something by paying money for it."
-                },
-                {
-                    "key": "[L5-Q2-1] Sell",
-                    "value": "To give something to someone in exchange for money."
-                },
-                {
-                    "key": "[L5-Q2-2] Pay",
-                    "value": "To give money for something you want."
-                }
-            ],
-            "hint": "Think about the actions people do when they are shopping.",
-            "explanation": "Buy means getting something with money, sell means giving something for money, and pay means handing over money. These words describe different sides of a shopping action."
-        },
-        {
-            "id": "RDG_READANDMATCH_L5_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L5-Q3-0] Big",
-                    "value": "Large in size."
-                },
-                {
-                    "key": "[L5-Q3-1] Small",
-                    "value": "Little in size."
-                },
-                {
-                    "key": "[L5-Q3-2] Tall",
-                    "value": "Having a great height."
-                }
-            ],
-            "hint": "Think about words that describe the size of an object or person.",
-            "explanation": "Big describes something large overall, small describes something little, and tall describes height specifically. These adjectives describe size in different ways."
-        },
-        {
-            "id": "RDG_READANDMATCH_L6_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L6-Q1-0] Dog",
-                    "value": "A common pet animal that barks."
-                },
-                {
-                    "key": "[L6-Q1-1] Cat",
-                    "value": "A common pet animal that meows."
-                },
-                {
-                    "key": "[L6-Q1-2] Bird",
-                    "value": "An animal with feathers that can usually fly."
-                }
-            ],
-            "hint": "Think about the sounds and features of different animals.",
-            "explanation": "A dog barks, a cat meows, and a bird usually has feathers and can fly. Each word names a different type of animal."
-        },
-        {
-            "id": "RDG_READANDMATCH_L6_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L6-Q2-0] Read",
-                    "value": "To look at written words and understand their meaning."
-                },
-                {
-                    "key": "[L6-Q2-1] Write",
-                    "value": "To make letters or words on paper using a pen or pencil."
-                },
-                {
-                    "key": "[L6-Q2-2] Listen",
-                    "value": "To pay attention to sounds in order to hear them."
-                }
-            ],
-            "hint": "Think about the different skills you use when learning a language.",
-            "explanation": "Read means understanding written words, write means putting words on paper, and listen means paying attention to sound. These are all important language skills."
-        },
-        {
-            "id": "RDG_READANDMATCH_L6_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L6-Q3-0] Rain",
-                    "value": "Water that falls from clouds in drops."
-                },
-                {
-                    "key": "[L6-Q3-1] Snow",
-                    "value": "Soft white flakes of frozen water that fall from the sky."
-                },
-                {
-                    "key": "[L6-Q3-2] Wind",
-                    "value": "Air that moves quickly outside."
-                }
-            ],
-            "hint": "Think about different kinds of weather you might see outside.",
-            "explanation": "Rain falls as drops of water, snow falls as frozen flakes, and wind is moving air. Each word names a different type of weather."
-        },
-        {
-            "id": "RDG_READANDMATCH_L7_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L7-Q1-0] Smile",
-                    "value": "To curve your mouth upward to show happiness."
-                },
-                {
-                    "key": "[L7-Q1-1] Cry",
-                    "value": "To produce tears, often because of sadness or pain."
-                },
-                {
-                    "key": "[L7-Q1-2] Laugh",
-                    "value": "To make sounds that show you find something funny."
-                }
-            ],
-            "hint": "Think about how each word shows a different feeling on a person's face.",
-            "explanation": "A smile shows happiness, crying shows sadness or pain, and laughing shows something is funny. Each word describes a different facial expression or reaction."
-        },
-        {
-            "id": "RDG_READANDMATCH_L7_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L7-Q2-0] Doctor's Office",
-                    "value": "A place where you go to see a doctor for a check-up."
-                },
-                {
-                    "key": "[L7-Q2-1] Pharmacy",
-                    "value": "A shop where you can buy medicine."
-                },
-                {
-                    "key": "[L7-Q2-2] Hospital",
-                    "value": "A large building where sick or injured people receive treatment."
-                }
-            ],
-            "hint": "Think about different places connected to health and medicine.",
-            "explanation": "A doctor's office is for check-ups, a pharmacy sells medicine, and a hospital treats sick or injured people. Each place serves a different health need."
-        },
-        {
-            "id": "RDG_READANDMATCH_L7_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L7-Q3-0] Soccer",
-                    "value": "A sport played by kicking a ball into a goal."
-                },
-                {
-                    "key": "[L7-Q3-1] Swimming",
-                    "value": "Moving through water using your arms and legs."
-                },
-                {
-                    "key": "[L7-Q3-2] Dancing",
-                    "value": "Moving your body to music in a rhythmic way."
-                }
-            ],
-            "hint": "Think about different physical activities people enjoy for fun or exercise.",
-            "explanation": "Soccer involves kicking a ball, swimming involves moving through water, and dancing involves moving to music. Each word names a different physical activity."
-        },
-        {
-            "id": "RDG_READANDMATCH_L8_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L8-Q1-0] Phone",
-                    "value": "A device used to make calls and send messages."
-                },
-                {
-                    "key": "[L8-Q1-1] Computer",
-                    "value": "An electronic device used for working, browsing, and storing information."
-                },
-                {
-                    "key": "[L8-Q1-2] Television",
-                    "value": "A device used to watch shows and programs."
-                }
-            ],
-            "hint": "Think about different electronic devices people use at home.",
-            "explanation": "A phone is for calls and messages, a computer is for work and browsing, and a television is for watching shows. Each word names a different everyday device."
-        },
-        {
-            "id": "RDG_READANDMATCH_L8_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L8-Q2-0] Early",
-                    "value": "Happening or arriving before the expected time."
-                },
-                {
-                    "key": "[L8-Q2-1] Late",
-                    "value": "Happening or arriving after the expected time."
-                },
-                {
-                    "key": "[L8-Q2-2] Soon",
-                    "value": "In a short time from now."
-                }
-            ],
-            "hint": "Think about words that describe when something happens compared to an expected time.",
-            "explanation": "Early means before the expected time, late means after it, and soon means a short time from now. These words help you talk about timing."
-        },
-        {
-            "id": "RDG_READANDMATCH_L8_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L8-Q3-0] Window",
-                    "value": "An opening in a wall, usually covered with glass, that lets in light."
-                },
-                {
-                    "key": "[L8-Q3-1] Door",
-                    "value": "An opening used to enter or leave a room or building."
-                },
-                {
-                    "key": "[L8-Q3-2] Roof",
-                    "value": "The covering on top of a building."
-                }
-            ],
-            "hint": "Think about different parts of a building and what each one does.",
-            "explanation": "A window lets light in, a door lets people enter or leave, and a roof covers the top of a building. Each word names a different part of a building."
-        },
-        {
-            "id": "RDG_READANDMATCH_L9_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L9-Q1-0] Friend",
-                    "value": "A person you know well and like spending time with."
-                },
-                {
-                    "key": "[L9-Q1-1] Neighbor",
-                    "value": "A person who lives near you."
-                },
-                {
-                    "key": "[L9-Q1-2] Stranger",
-                    "value": "A person you do not know."
-                }
-            ],
-            "hint": "Think about how close or distant your relationship is with each kind of person.",
-            "explanation": "A friend is someone you like and know well, a neighbor lives nearby, and a stranger is someone you do not know at all. Each word describes a different kind of relationship."
-        },
-        {
-            "id": "RDG_READANDMATCH_L9_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L9-Q2-0] Morning",
-                    "value": "The early part of the day, before noon."
-                },
-                {
-                    "key": "[L9-Q2-1] Afternoon",
-                    "value": "The part of the day between noon and evening."
-                },
-                {
-                    "key": "[L9-Q2-2] Night",
-                    "value": "The part of the day when it is dark, used for sleeping."
-                }
-            ],
-            "hint": "Think about the order these parts of the day happen, from sunrise to sunset.",
-            "explanation": "Morning is the early part of the day, afternoon comes after noon, and night is the dark time used for sleeping. These words divide the day into parts."
-        },
-        {
-            "id": "RDG_READANDMATCH_L9_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L9-Q3-0] Cheap",
-                    "value": "Costing very little money."
-                },
-                {
-                    "key": "[L9-Q3-1] Expensive",
-                    "value": "Costing a lot of money."
-                },
-                {
-                    "key": "[L9-Q3-2] Free",
-                    "value": "Costing no money at all."
-                }
-            ],
-            "hint": "Think about how much money you would need to pay for something.",
-            "explanation": "Cheap means it costs little, expensive means it costs a lot, and free means it costs nothing. These words describe price from low to high."
-        },
-        {
-            "id": "RDG_READANDMATCH_L10_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L10-Q1-0] Airport",
-                    "value": "A place where airplanes take off and land, and passengers board."
-                },
-                {
-                    "key": "[L10-Q1-1] Station",
-                    "value": "A place where trains or buses stop for passengers."
-                },
-                {
-                    "key": "[L10-Q1-2] Hotel",
-                    "value": "A building where travelers pay to sleep for one or more nights."
-                }
-            ],
-            "hint": "Think about different places connected to traveling away from home.",
-            "explanation": "An airport is for airplanes, a station is for trains or buses, and a hotel is where travelers sleep. Each word names a different travel-related place."
-        },
-        {
-            "id": "RDG_READANDMATCH_L10_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L10-Q2-0] Begin",
-                    "value": "To start doing something."
-                },
-                {
-                    "key": "[L10-Q2-1] Finish",
-                    "value": "To complete or stop doing something."
-                },
-                {
-                    "key": "[L10-Q2-2] Continue",
-                    "value": "To keep doing something without stopping."
-                }
-            ],
-            "hint": "Think about the different stages of doing an activity, from start to end.",
-            "explanation": "Begin means to start, finish means to complete, and continue means to keep going. These words describe different stages of an activity."
-        },
-        {
-            "id": "RDG_READANDMATCH_L10_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L10-Q3-0] Quiet",
-                    "value": "Making very little or no noise."
-                },
-                {
-                    "key": "[L10-Q3-1] Loud",
-                    "value": "Making a lot of noise."
-                },
-                {
-                    "key": "[L10-Q3-2] Silent",
-                    "value": "Making no sound at all."
-                }
-            ],
-            "hint": "Think about how much sound or noise each word describes.",
-            "explanation": "Quiet means very little noise, loud means a lot of noise, and silent means no noise at all. These words describe sound from none to a lot."
+          "key": "[L1-Q1-2] Tired",
+          "value": "Needing rest because you have little energy left."
         }
-    ]
+      ],
+      "hint": "Picture how you'd feel in three very different situations.",
+      "explanation": "Happy is a good feeling, like when you get great news. Sad is the opposite — it's how you feel when something disappoints you. Tired is a little different from both; it's about needing sleep, not about good or bad news."
+    },
+    {
+      "id": "RDG_READANDMATCH_L1_Q2",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L1-Q2-0] Breakfast",
+          "value": "The first meal of the day, eaten in the morning."
+        },
+        {
+          "key": "[L1-Q2-1] Lunch",
+          "value": "The meal eaten in the middle of the day."
+        },
+        {
+          "key": "[L1-Q2-2] Dinner",
+          "value": "The main meal, usually eaten in the evening."
+        }
+      ],
+      "hint": "Think of your own day — when does each of these meals happen?",
+      "explanation": "You can remember the order by thinking about your own day: breakfast starts it, lunch comes in the middle, and dinner ends it. All three words are about eating, but the time of day tells them apart."
+    },
+    {
+      "id": "RDG_READANDMATCH_L1_Q3",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L1-Q3-0] Mother",
+          "value": "A woman who has a child."
+        },
+        {
+          "key": "[L1-Q3-1] Father",
+          "value": "A man who has a child."
+        },
+        {
+          "key": "[L1-Q3-2] Sister",
+          "value": "A girl or woman with the same parents as you."
+        }
+      ],
+      "hint": "Each word names someone in your immediate family.",
+      "explanation": "Mother and father are your parents — one is a woman, the other a man. Sister is a step removed from both; she's from your own generation, not the one above you."
+    },
+    {
+      "id": "RDG_READANDMATCH_L2_Q1",
+      "instruction": "Match each word with its definition.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L2-Q1-0] Book",
+          "value": "Pages joined together with words for reading."
+        },
+        {
+          "key": "[L2-Q1-1] Pen",
+          "value": "A tool used for writing with ink."
+        },
+        {
+          "key": "[L2-Q1-2] Chair",
+          "value": "A piece of furniture you sit on."
+        }
+      ],
+      "hint": "Look around a study desk — you'll likely spot all three of these.",
+      "explanation": "A book is for reading, a pen is for writing, and a chair is for sitting. Even though you might use all three in the same room, each object has a completely different job."
+    },
+    {
+      "id": "RDG_READANDMATCH_L2_Q2",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L2-Q2-0] Run",
+          "value": "To move quickly using your legs."
+        },
+        {
+          "key": "[L2-Q2-1] Walk",
+          "value": "To move at a normal, unhurried speed on foot."
+        },
+        {
+          "key": "[L2-Q2-2] Jump",
+          "value": "To push yourself off the ground into the air."
+        }
+      ],
+      "hint": "Imagine three different ways of moving — two on the ground, one off it.",
+      "explanation": "Run and walk both mean moving forward on foot, but running is much faster than walking. Jump breaks the pattern completely — it means leaving the ground, even just for a second."
+    },
+    {
+      "id": "RDG_READANDMATCH_L2_Q3",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L2-Q3-0] Doctor",
+          "value": "A person trained to treat sick people."
+        },
+        {
+          "key": "[L2-Q3-1] Teacher",
+          "value": "A person whose job is to help others learn."
+        },
+        {
+          "key": "[L2-Q3-2] Driver",
+          "value": "A person who operates a vehicle."
+        }
+      ],
+      "hint": "Each word answers the question: what does this person do for work?",
+      "explanation": "A doctor takes care of your health, a teacher helps you learn new things, and a driver takes you somewhere in a vehicle. Each job helps people, just in a different way."
+    },
+    {
+      "id": "RDG_READANDMATCH_L3_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L3-Q1-0] Shirt",
+          "value": "Clothing you wear on the top part of your body."
+        },
+        {
+          "key": "[L3-Q1-1] Shoes",
+          "value": "Items you wear to cover and protect your feet."
+        },
+        {
+          "key": "[L3-Q1-2] Hat",
+          "value": "Clothing you wear on your head."
+        }
+      ],
+      "hint": "From head to toe, each word covers a different part of the body.",
+      "explanation": "A shirt covers your chest and back, shoes protect your feet, and a hat sits on your head. Notice how each word matches a different part of the body, top to bottom."
+    },
+    {
+      "id": "RDG_READANDMATCH_L3_Q2",
+      "instruction": "Match each word with its definition.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L3-Q2-0] Hot",
+          "value": "Having a very high temperature."
+        },
+        {
+          "key": "[L3-Q2-1] Cold",
+          "value": "Having a very low temperature."
+        },
+        {
+          "key": "[L3-Q2-2] Warm",
+          "value": "Having a pleasant, gentle heat — not hot and not cold."
+        }
+      ],
+      "hint": "Where would a cup of coffee sit compared to ice and fire?",
+      "explanation": "Hot and cold are opposites, sitting at either end of the temperature scale. Warm belongs in the middle; it's often used for something comfortable, like a warm bath."
+    },
+    {
+      "id": "RDG_READANDMATCH_L3_Q3",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L3-Q3-0] Bus",
+          "value": "A large vehicle that carries many passengers on roads."
+        },
+        {
+          "key": "[L3-Q3-1] Train",
+          "value": "A vehicle that travels on tracks, often carrying many people."
+        },
+        {
+          "key": "[L3-Q3-2] Bicycle",
+          "value": "A two-wheeled vehicle you ride by pedaling."
+        }
+      ],
+      "hint": "Two of these run on roads, and one runs on tracks.",
+      "explanation": "A bus and a train both carry many passengers, but a bus drives on roads while a train runs on tracks. A bicycle is much smaller — you power it yourself instead of using an engine."
+    },
+    {
+      "id": "RDG_READANDMATCH_L4_Q1",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L4-Q1-0] Kitchen",
+          "value": "The room where meals are cooked."
+        },
+        {
+          "key": "[L4-Q1-1] Bedroom",
+          "value": "The room where a person sleeps."
+        },
+        {
+          "key": "[L4-Q1-2] Bathroom",
+          "value": "The room used for washing and using the toilet."
+        }
+      ],
+      "hint": "Walk through a home in your mind — kitchen, then bedroom, then bathroom.",
+      "explanation": "You cook in the kitchen, sleep in the bedroom, and wash up in the bathroom. Picture your own home and each room's purpose becomes clear."
+    },
+    {
+      "id": "RDG_READANDMATCH_L4_Q2",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L4-Q2-0] Open",
+          "value": "To move something so it is no longer shut."
+        },
+        {
+          "key": "[L4-Q2-1] Close",
+          "value": "To shut something that was open."
+        },
+        {
+          "key": "[L4-Q2-2] Lock",
+          "value": "To fasten something with a key so it cannot be opened."
+        }
+      ],
+      "hint": "All three can describe what you do to a door before leaving home.",
+      "explanation": "Open and close are opposite actions — one lets something in, the other shuts it out. Lock takes close a step further: it makes sure the door stays shut until someone uses a key."
+    },
+    {
+      "id": "RDG_READANDMATCH_L4_Q3",
+      "instruction": "Match each word with its definition.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L4-Q3-0] Yesterday",
+          "value": "The day before today."
+        },
+        {
+          "key": "[L4-Q3-1] Today",
+          "value": "The day that is happening right now."
+        },
+        {
+          "key": "[L4-Q3-2] Tomorrow",
+          "value": "The day after today."
+        }
+      ],
+      "hint": "One of these already happened, one is happening now, and one hasn't happened yet.",
+      "explanation": "Today is the day you're living in right now. Yesterday already passed, and tomorrow hasn't arrived. Together, these three words let you talk about when something happens."
+    },
+    {
+      "id": "RDG_READANDMATCH_L5_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L5-Q1-0] Apple",
+          "value": "A round fruit that grows on trees."
+        },
+        {
+          "key": "[L5-Q1-1] Bread",
+          "value": "A food made from baked flour and water."
+        },
+        {
+          "key": "[L5-Q1-2] Milk",
+          "value": "A white drink that comes from cows or other animals."
+        }
+      ],
+      "hint": "A trip to the grocery store would give you all three of these.",
+      "explanation": "An apple is a fruit you eat whole, bread is baked and usually eaten in slices, and milk is something you drink. All three are common foods, but each one comes from a different source."
+    },
+    {
+      "id": "RDG_READANDMATCH_L5_Q2",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L5-Q2-0] Buy",
+          "value": "To get something by giving money for it."
+        },
+        {
+          "key": "[L5-Q2-1] Sell",
+          "value": "To give something to someone in exchange for money."
+        },
+        {
+          "key": "[L5-Q2-2] Pay",
+          "value": "To give money for something you receive."
+        }
+      ],
+      "hint": "Money changes hands in every one of these actions, just in different directions.",
+      "explanation": "Buy and sell are opposite sides of the same action — one person buys while another sells. Pay is really part of buying: it's the actual moment the money changes hands."
+    },
+    {
+      "id": "RDG_READANDMATCH_L5_Q3",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L5-Q3-0] Big",
+          "value": "Large in size."
+        },
+        {
+          "key": "[L5-Q3-1] Small",
+          "value": "Little in size."
+        },
+        {
+          "key": "[L5-Q3-2] Long",
+          "value": "Having a great length from one end to the other."
+        }
+      ],
+      "hint": "Two of these are opposites — the third measures something a little different.",
+      "explanation": "Big and small are opposites that describe overall size. Long works differently; it describes just one direction, end to end, rather than the whole object."
+    },
+    {
+      "id": "RDG_READANDMATCH_L6_Q1",
+      "instruction": "Match each word with its definition.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L6-Q1-0] Dog",
+          "value": "A common pet animal known for barking and loyalty."
+        },
+        {
+          "key": "[L6-Q1-1] Cat",
+          "value": "A small pet animal known for purring and independence."
+        },
+        {
+          "key": "[L6-Q1-2] Bird",
+          "value": "An animal with feathers and wings that can usually fly."
+        }
+      ],
+      "hint": "You might have one of these curled up at home right now.",
+      "explanation": "Dogs and cats are both popular pets that live indoors, but they behave very differently — dogs bark, cats purr. A bird stands apart from both because it has feathers and can usually fly."
+    },
+    {
+      "id": "RDG_READANDMATCH_L6_Q2",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L6-Q2-0] Read",
+          "value": "To look at words and understand their meaning."
+        },
+        {
+          "key": "[L6-Q2-1] Write",
+          "value": "To make letters or words on paper or a screen."
+        },
+        {
+          "key": "[L6-Q2-2] Listen",
+          "value": "To pay attention to sounds, especially someone speaking."
+        }
+      ],
+      "hint": "Reading, writing, and listening are three separate skills you use to learn a language.",
+      "explanation": "Reading and writing both involve words on a page, but reading is about understanding them while writing is about creating them. Listening breaks that pattern — it uses your ears, not your eyes."
+    },
+    {
+      "id": "RDG_READANDMATCH_L6_Q3",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L6-Q3-0] Rain",
+          "value": "Water that falls from clouds in drops."
+        },
+        {
+          "key": "[L6-Q3-1] Snow",
+          "value": "Soft white ice that falls from the sky in cold weather."
+        },
+        {
+          "key": "[L6-Q3-2] Wind",
+          "value": "Air that moves, sometimes strongly."
+        }
+      ],
+      "hint": "Look up at the sky — what's falling, and what's simply blowing past?",
+      "explanation": "Rain and snow both fall from the sky, but rain is liquid while snow is frozen. Wind breaks the pattern entirely — it's moving air, not something that falls at all."
+    },
+    {
+      "id": "RDG_READANDMATCH_L7_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L7-Q1-0] Smile",
+          "value": "To curve your mouth upward to show happiness."
+        },
+        {
+          "key": "[L7-Q1-1] Cry",
+          "value": "To let tears fall, often from sadness or pain."
+        },
+        {
+          "key": "[L7-Q1-2] Laugh",
+          "value": "To make sounds of happiness, often at something funny."
+        }
+      ],
+      "hint": "Your face changes in a different way for each of these.",
+      "explanation": "Smile and laugh both show happiness, but laughing is louder and usually comes from something funny. Cry sits at the opposite end — it usually shows sadness, not joy."
+    },
+    {
+      "id": "RDG_READANDMATCH_L7_Q2",
+      "instruction": "Match each expression with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L7-Q2-0] Doctor's Office",
+          "value": "A small clinic where you visit a doctor for check-ups."
+        },
+        {
+          "key": "[L7-Q2-1] Pharmacy",
+          "value": "A shop where you collect or buy medicine."
+        },
+        {
+          "key": "[L7-Q2-2] Hospital",
+          "value": "A large building where seriously ill or injured people are treated."
+        }
+      ],
+      "hint": "If you were unwell, you might visit any of these three places.",
+      "explanation": "A doctor's office is usually for quick, routine visits, while a hospital handles more serious problems and often keeps patients overnight. A pharmacy works differently from both — it's where you go afterward to pick up your medicine."
+    },
+    {
+      "id": "RDG_READANDMATCH_L7_Q3",
+      "instruction": "Match each word with its definition.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L7-Q3-0] Soccer",
+          "value": "A sport played by kicking a ball into a goal."
+        },
+        {
+          "key": "[L7-Q3-1] Swimming",
+          "value": "Moving through water using your arms and legs."
+        },
+        {
+          "key": "[L7-Q3-2] Dancing",
+          "value": "Moving your body to the rhythm of music."
+        }
+      ],
+      "hint": "One of these uses a ball, one uses water, and one uses music.",
+      "explanation": "Soccer is a team sport played with a ball, while swimming takes place in water and needs no ball at all. Dancing takes a different angle again — it's about moving to music, not competing or exercising."
+    },
+    {
+      "id": "RDG_READANDMATCH_L8_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L8-Q1-0] Phone",
+          "value": "A device used to call or message other people."
+        },
+        {
+          "key": "[L8-Q1-1] Computer",
+          "value": "An electronic device used for work, browsing, or storing information."
+        },
+        {
+          "key": "[L8-Q1-2] Television",
+          "value": "A screen used mainly for watching shows and movies."
+        }
+      ],
+      "hint": "Each device does something a little different, even if you own all three.",
+      "explanation": "A phone is mainly for talking or messaging someone, while a computer is built for tasks like writing or browsing online. A television stands apart from both — it's mostly for watching, not typing or calling."
+    },
+    {
+      "id": "RDG_READANDMATCH_L8_Q2",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L8-Q2-0] Early",
+          "value": "Before the expected or usual time."
+        },
+        {
+          "key": "[L8-Q2-1] Late",
+          "value": "After the expected or usual time."
+        },
+        {
+          "key": "[L8-Q2-2] Soon",
+          "value": "In a short amount of time from now."
+        }
+      ],
+      "hint": "Two of these compare to an expected time — the third doesn't need one.",
+      "explanation": "Early and late are opposites — one happens before the expected time, the other after. Soon works differently, since it doesn't compare to any expected time; it simply means something will happen shortly."
+    },
+    {
+      "id": "RDG_READANDMATCH_L8_Q3",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L8-Q3-0] Window",
+          "value": "An opening in a wall, usually with glass, that lets in light."
+        },
+        {
+          "key": "[L8-Q3-1] Door",
+          "value": "An opening used to enter or leave a building."
+        },
+        {
+          "key": "[L8-Q3-2] Roof",
+          "value": "The covering on top of a building."
+        }
+      ],
+      "hint": "Walk around the outside of a house and name what you see.",
+      "explanation": "A window lets light in and lets you see outside, while a door is what you actually walk through. The roof isn't part of that pair at all — it sits on top of the building and protects it from the weather."
+    },
+    {
+      "id": "RDG_READANDMATCH_L9_Q1",
+      "instruction": "Match each word with its definition.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L9-Q1-0] Friend",
+          "value": "Someone you know well and like spending time with."
+        },
+        {
+          "key": "[L9-Q1-1] Neighbor",
+          "value": "Someone who lives near you."
+        },
+        {
+          "key": "[L9-Q1-2] Stranger",
+          "value": "Someone you do not know at all."
+        }
+      ],
+      "hint": "How close is each person to you — very close, a bit close, or not at all?",
+      "explanation": "A friend is someone close to you, while a neighbor is simply someone who happens to live nearby — you might not know them well at all. A stranger sits at the far end of that scale: someone you've never met."
+    },
+    {
+      "id": "RDG_READANDMATCH_L9_Q2",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L9-Q2-0] Morning",
+          "value": "The early part of the day, after sunrise."
+        },
+        {
+          "key": "[L9-Q2-1] Afternoon",
+          "value": "The part of the day between noon and evening."
+        },
+        {
+          "key": "[L9-Q2-2] Night",
+          "value": "The part of the day after the sun goes down."
+        }
+      ],
+      "hint": "The day is divided into three parts here — which comes first?",
+      "explanation": "Morning starts the day, afternoon continues it after midday, and night arrives once the sun has set. Together, these three words let you describe what time of day something happens."
+    },
+    {
+      "id": "RDG_READANDMATCH_L9_Q3",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L9-Q3-0] Cheap",
+          "value": "Costing very little money."
+        },
+        {
+          "key": "[L9-Q3-1] Expensive",
+          "value": "Costing a lot of money."
+        },
+        {
+          "key": "[L9-Q3-2] Free",
+          "value": "Costing no money at all."
+        }
+      ],
+      "hint": "Line these up from costing nothing to costing a lot.",
+      "explanation": "Cheap and expensive sit at opposite ends of price — one costs very little, the other a lot. Free goes even further than cheap: it means there's no cost whatsoever."
+    },
+    {
+      "id": "RDG_READANDMATCH_L10_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L10-Q1-0] Airport",
+          "value": "A place where planes take off and land."
+        },
+        {
+          "key": "[L10-Q1-1] Station",
+          "value": "A place where trains or buses stop for passengers."
+        },
+        {
+          "key": "[L10-Q1-2] Hotel",
+          "value": "A place where travelers pay to sleep for a night or more."
+        }
+      ],
+      "hint": "You'd pass through two of these, then stay the night at the third.",
+      "explanation": "An airport is for planes, and a station is for trains or buses — both are places you pass through while traveling. A hotel changes the pattern, since it's where you stay once you arrive, not somewhere you simply pass through."
+    },
+    {
+      "id": "RDG_READANDMATCH_L10_Q2",
+      "instruction": "Match each word with its definition.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L10-Q2-0] Begin",
+          "value": "To start doing something."
+        },
+        {
+          "key": "[L10-Q2-1] Finish",
+          "value": "To complete something and stop doing it."
+        },
+        {
+          "key": "[L10-Q2-2] Continue",
+          "value": "To keep doing something without stopping."
+        }
+      ],
+      "hint": "One of these starts things, one keeps them going, and one ends them.",
+      "explanation": "Begin marks the start of an activity, and finish marks the end. Continue sits between the two — it means the activity keeps going instead of stopping."
+    },
+    {
+      "id": "RDG_READANDMATCH_L10_Q3",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L10-Q3-0] Quiet",
+          "value": "Making very little noise."
+        },
+        {
+          "key": "[L10-Q3-1] Loud",
+          "value": "Making a lot of noise."
+        },
+        {
+          "key": "[L10-Q3-2] Silent",
+          "value": "Making no noise at all."
+        }
+      ],
+      "hint": "Rank these from a little noise down to none at all.",
+      "explanation": "Loud and quiet are opposites, describing a lot of noise versus very little. Silent goes further than quiet — it means there's no sound whatsoever."
+    }
+  ]
 }

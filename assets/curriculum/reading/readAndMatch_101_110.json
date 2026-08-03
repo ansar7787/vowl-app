@@ -1,787 +1,787 @@
 {
-    "gameType": "readAndMatch",
-    "batchIndex": 11,
-    "levels": "101-110",
-    "quests": [
+  "gameType": "readAndMatch",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "id": "RDG_READANDMATCH_L101_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
         {
-            "id": "RDG_READANDMATCH_L101_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L101-Q1-0] Socioeconomic",
-                    "value": "Relating to the combination of social and economic factors affecting a group."
-                },
-                {
-                    "key": "[L101-Q1-1] Disparity",
-                    "value": "A great difference between things, especially in an unfair way."
-                },
-                {
-                    "key": "[L101-Q1-2] Social Mobility",
-                    "value": "The ability of individuals to move between different levels of society."
-                },
-                {
-                    "key": "[L101-Q1-3] Equity",
-                    "value": "The quality of being fair and ensuring everyone gets what they need."
-                }
-            ],
-            "hint": "Think about words connected to social fairness and differences between groups in society.",
-            "explanation": "Socioeconomic relates to social and economic factors together, disparity is a great unfair difference, social mobility is movement between social levels, and equity is giving each person what they need. These words describe social inequality."
+          "key": "[L101-Q1-0] Socioeconomic",
+          "value": "Relating to the combination of social and economic factors affecting a group."
         },
         {
-            "id": "RDG_READANDMATCH_L101_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L101-Q2-0] Decentralized",
-                    "value": "Describing a system where control is distributed rather than held by one authority."
-                },
-                {
-                    "key": "[L101-Q2-1] Scalability",
-                    "value": "The ability of a system or process to grow and handle increased demand."
-                },
-                {
-                    "key": "[L101-Q2-2] Failover",
-                    "value": "The automatic switching to a backup system when the primary one fails."
-                },
-                {
-                    "key": "[L101-Q2-3] Throughput",
-                    "value": "The amount of data or work a system can process in a given time."
-                }
-            ],
-            "hint": "Think about technical terms describing how computer systems and networks are designed.",
-            "explanation": "Decentralized distributes control, scalability allows growth, failover switches to backup when a system fails, and throughput measures data processed per time period. These words describe system architecture."
+          "key": "[L101-Q1-1] Disparity",
+          "value": "A great difference between things, especially in an unfair way."
         },
         {
-            "id": "RDG_READANDMATCH_L101_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L101-Q3-0] Heuristic",
-                    "value": "A practical problem-solving approach that is fast but not always perfect."
-                },
-                {
-                    "key": "[L101-Q3-1] Anchoring",
-                    "value": "A cognitive bias where people rely too heavily on the first information they receive."
-                },
-                {
-                    "key": "[L101-Q3-2] Confirmation Bias",
-                    "value": "The tendency to search for information that confirms existing beliefs."
-                },
-                {
-                    "key": "[L101-Q3-3] Nudge Theory",
-                    "value": "The idea that small indirect suggestions can influence people's behavior."
-                }
-            ],
-            "hint": "Think about words connected to how the brain makes decisions and how behavior can be influenced.",
-            "explanation": "A heuristic is a fast but imperfect approach, anchoring over-relies on first information, confirmation bias favors existing beliefs, and nudge theory uses small suggestions to guide behavior. These words describe behavioral economics."
+          "key": "[L101-Q1-2] Social Mobility",
+          "value": "The ability of individuals to move between different levels of society."
         },
         {
-            "id": "RDG_READANDMATCH_L102_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L102-Q1-0] Sous Vide",
-                    "value": "A method where food is vacuum-sealed and cooked slowly in temperature-controlled water."
-                },
-                {
-                    "key": "[L102-Q1-1] Molecular Gastronomy",
-                    "value": "A cooking style that applies scientific techniques to food preparation."
-                },
-                {
-                    "key": "[L102-Q1-2] Deconstructed Dish",
-                    "value": "A dish where traditional components are presented separately and creatively."
-                },
-                {
-                    "key": "[L102-Q1-3] Infusion",
-                    "value": "The process of steeping ingredients in liquid to extract their flavor."
-                }
-            ],
-            "hint": "Think about words connected to advanced culinary techniques used in professional kitchens.",
-            "explanation": "Sous vide cooks sealed food in water, molecular gastronomy applies science to cooking, a deconstructed dish presents elements separately, and infusion extracts flavor through steeping. These words describe advanced cooking."
-        },
-        {
-            "id": "RDG_READANDMATCH_L102_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L102-Q2-0] Net Neutrality",
-                    "value": "The principle that internet service providers must treat all data equally."
-                },
-                {
-                    "key": "[L102-Q2-1] Dark Web",
-                    "value": "The part of the internet requiring special software to access, often used illegally."
-                },
-                {
-                    "key": "[L102-Q2-2] VPN",
-                    "value": "A service that encrypts your internet connection and masks your location."
-                },
-                {
-                    "key": "[L102-Q2-3] Cache",
-                    "value": "Temporary storage that saves data for faster access in the future."
-                }
-            ],
-            "hint": "Think about words connected to how the internet works and how to stay private online.",
-            "explanation": "Net neutrality ensures equal internet data treatment, the dark web requires special access, a VPN encrypts and hides your location, and a cache stores data for faster future access. These words describe internet infrastructure and privacy."
-        },
-        {
-            "id": "RDG_READANDMATCH_L102_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L102-Q3-0] Anaphylaxis",
-                    "value": "A severe, life-threatening allergic reaction requiring immediate treatment."
-                },
-                {
-                    "key": "[L102-Q3-1] Autoimmune Disease",
-                    "value": "A condition where the immune system attacks the body's own healthy tissue."
-                },
-                {
-                    "key": "[L102-Q3-2] Biomarker",
-                    "value": "A measurable biological indicator used to assess health or disease."
-                },
-                {
-                    "key": "[L102-Q3-3] Endocrinology",
-                    "value": "The branch of medicine dealing with hormones and the endocrine system."
-                }
-            ],
-            "hint": "Think about specialized medical terms relating to complex health conditions.",
-            "explanation": "Anaphylaxis is a severe allergic reaction, an autoimmune disease means the immune system attacks itself, a biomarker measures health, and endocrinology studies hormones. These words describe advanced medical conditions."
-        },
-        {
-            "id": "RDG_READANDMATCH_L103_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L103-Q1-0] Protagonist",
-                    "value": "The main character of a story, around whom the plot revolves."
-                },
-                {
-                    "key": "[L103-Q1-1] Antagonist",
-                    "value": "A character who opposes the protagonist and creates conflict."
-                },
-                {
-                    "key": "[L103-Q1-2] Motif",
-                    "value": "A recurring element, theme, or image in a work of literature or art."
-                },
-                {
-                    "key": "[L103-Q1-3] Subtext",
-                    "value": "An underlying meaning or message not stated directly in a text."
-                }
-            ],
-            "hint": "Think about words used when analyzing the deeper structure and meaning of a story.",
-            "explanation": "The protagonist is the main character, the antagonist opposes them, a motif is a recurring element, and subtext is hidden meaning. These words describe literary analysis."
-        },
-        {
-            "id": "RDG_READANDMATCH_L103_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L103-Q2-0] Stakeholder",
-                    "value": "Any person or group with an interest in or affected by an organization's decisions."
-                },
-                {
-                    "key": "[L103-Q2-1] Transparency",
-                    "value": "The quality of being open and clear about decisions, processes, and information."
-                },
-                {
-                    "key": "[L103-Q2-2] Accountability",
-                    "value": "The obligation to accept responsibility for one's actions and their outcomes."
-                },
-                {
-                    "key": "[L103-Q2-3] Benchmark Reporting",
-                    "value": "Comparing performance against an established standard over time."
-                }
-            ],
-            "hint": "Think about words connected to ethical and responsible management in organizations.",
-            "explanation": "A stakeholder is anyone affected by a decision, transparency means openness, accountability means accepting responsibility, and benchmark reporting compares against standards. These words describe good organizational governance."
-        },
-        {
-            "id": "RDG_READANDMATCH_L103_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L103-Q3-0] Mass Transit",
-                    "value": "Large-scale public transport systems that carry many people, such as subways."
-                },
-                {
-                    "key": "[L103-Q3-1] Rideshare",
-                    "value": "A service that connects passengers to drivers using a mobile app."
-                },
-                {
-                    "key": "[L103-Q3-2] Carbon Offset",
-                    "value": "A reduction in emissions elsewhere to compensate for emissions produced here."
-                },
-                {
-                    "key": "[L103-Q3-3] Congestion Charge",
-                    "value": "A fee charged to drive in a busy urban area to reduce traffic."
-                }
-            ],
-            "hint": "Think about words connected to modern urban transportation and its environmental impact.",
-            "explanation": "Mass transit carries large numbers by public transport, rideshare connects passengers to drivers, a carbon offset compensates for emissions, and a congestion charge reduces city traffic. These words describe urban transport systems."
-        },
-        {
-            "id": "RDG_READANDMATCH_L104_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L104-Q1-0] Epigenetics",
-                    "value": "The study of changes in gene expression that do not involve altering the DNA itself."
-                },
-                {
-                    "key": "[L104-Q1-1] Microbiome",
-                    "value": "The collection of microorganisms living inside and on the human body."
-                },
-                {
-                    "key": "[L104-Q1-2] Telomere",
-                    "value": "The protective cap at the end of a chromosome that shortens with age."
-                },
-                {
-                    "key": "[L104-Q1-3] Neuroplasticity",
-                    "value": "The brain's ability to reorganize itself by forming new neural connections."
-                }
-            ],
-            "hint": "Think about cutting-edge biology terms describing the body at a cellular level.",
-            "explanation": "Epigenetics studies gene expression changes, the microbiome is body microorganisms, telomeres protect chromosomes and shorten with age, and neuroplasticity is the brain's ability to rewire. These words describe advanced body science."
-        },
-        {
-            "id": "RDG_READANDMATCH_L104_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L104-Q2-0] Brand Equity",
-                    "value": "The value added to a product by having a well-known and respected brand name."
-                },
-                {
-                    "key": "[L104-Q2-1] Market Segmentation",
-                    "value": "Dividing a market into distinct groups of consumers with similar needs."
-                },
-                {
-                    "key": "[L104-Q2-2] Omnichannel",
-                    "value": "A retail approach providing a seamless experience across all sales channels."
-                },
-                {
-                    "key": "[L104-Q2-3] Loss Leader",
-                    "value": "A product sold at a loss to attract customers who will then buy other items."
-                }
-            ],
-            "hint": "Think about words connected to advanced marketing and retail strategy.",
-            "explanation": "Brand equity adds value through reputation, market segmentation divides consumers into groups, omnichannel connects all sales channels, and a loss leader attracts customers by selling cheaply. These words describe marketing strategy."
-        },
-        {
-            "id": "RDG_READANDMATCH_L104_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L104-Q3-0] Diplomatic Immunity",
-                    "value": "Protection from legal action granted to foreign diplomats by international law."
-                },
-                {
-                    "key": "[L104-Q3-1] Jurisdiction",
-                    "value": "The official power of a court or authority to make legal decisions in an area."
-                },
-                {
-                    "key": "[L104-Q3-2] Extradition",
-                    "value": "The process of returning a suspected criminal to the country where the crime occurred."
-                },
-                {
-                    "key": "[L104-Q3-3] Habeas Corpus",
-                    "value": "A legal principle requiring a person under arrest to be brought before a court."
-                }
-            ],
-            "hint": "Think about legal and international law terms used in professional or academic discussions.",
-            "explanation": "Diplomatic immunity protects foreign diplomats, jurisdiction is authority to make legal decisions, extradition returns criminals, and habeas corpus protects against unlawful detention. These words describe international and criminal law."
-        },
-        {
-            "id": "RDG_READANDMATCH_L105_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L105-Q1-0] Downsizing",
-                    "value": "Reducing the number of employees or size of a company to cut costs."
-                },
-                {
-                    "key": "[L105-Q1-1] Headcount",
-                    "value": "The total number of people employed by an organization."
-                },
-                {
-                    "key": "[L105-Q1-2] Succession Planning",
-                    "value": "Identifying and training future leaders to fill key roles in an organization."
-                },
-                {
-                    "key": "[L105-Q1-3] Benchmarking",
-                    "value": "Comparing a company's performance to industry standards or competitors."
-                }
-            ],
-            "hint": "Think about words connected to how organizations manage their size and long-term planning.",
-            "explanation": "Downsizing reduces staff numbers, headcount is total employees, succession planning prepares future leaders, and benchmarking compares performance to standards. These words describe organizational management."
-        },
-        {
-            "id": "RDG_READANDMATCH_L105_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L105-Q2-0] Airfare",
-                    "value": "The price charged for a seat on a passenger aircraft."
-                },
-                {
-                    "key": "[L105-Q2-1] Boarding Pass",
-                    "value": "A document that allows a passenger to board a plane."
-                },
-                {
-                    "key": "[L105-Q2-2] Carry-On",
-                    "value": "A bag small enough to be taken into the aircraft cabin."
-                },
-                {
-                    "key": "[L105-Q2-3] Overbooked",
-                    "value": "Describing a flight or hotel with more reservations than available spaces."
-                }
-            ],
-            "hint": "Think about words connected to managing the practical details of flying.",
-            "explanation": "Airfare is the flight ticket price, a boarding pass allows boarding, carry-on is cabin luggage, and overbooked means more reservations than spaces. These words describe common air travel situations."
-        },
-        {
-            "id": "RDG_READANDMATCH_L105_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L105-Q3-0] Bereavement",
-                    "value": "The state of having recently lost a loved one through death."
-                },
-                {
-                    "key": "[L105-Q3-1] Eulogy",
-                    "value": "A speech praising someone who has recently died."
-                },
-                {
-                    "key": "[L105-Q3-2] Condolence",
-                    "value": "An expression of sympathy to someone who has lost a loved one."
-                },
-                {
-                    "key": "[L105-Q3-3] Probate",
-                    "value": "The legal process of administering a deceased person's will and estate."
-                }
-            ],
-            "hint": "Think about words connected to the process of dealing with the death of a family member.",
-            "explanation": "Bereavement is the state of loss after death, a eulogy praises the deceased, a condolence expresses sympathy, and probate handles the legal process of a will. These words describe death and its aftermath."
-        },
-        {
-            "id": "RDG_READANDMATCH_L106_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L106-Q1-0] Deficit Spending",
-                    "value": "When a government spends more than it earns in tax revenue."
-                },
-                {
-                    "key": "[L106-Q1-1] Quantitative Easing",
-                    "value": "A central bank policy of creating money to stimulate a weak economy."
-                },
-                {
-                    "key": "[L106-Q1-2] Trade Surplus",
-                    "value": "When a country exports more than it imports."
-                },
-                {
-                    "key": "[L106-Q1-3] Austerity",
-                    "value": "Government policies that cut public spending to reduce debt."
-                }
-            ],
-            "hint": "Think about words connected to how national governments manage economic problems.",
-            "explanation": "Deficit spending means spending exceeds income, quantitative easing creates money to stimulate growth, a trade surplus means more exports than imports, and austerity cuts spending. These words describe government economic policy."
-        },
-        {
-            "id": "RDG_READANDMATCH_L106_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L106-Q2-0] Biopsy",
-                    "value": "The removal of a small tissue sample for medical examination."
-                },
-                {
-                    "key": "[L106-Q2-1] Radiology",
-                    "value": "The branch of medicine using imaging techniques to diagnose disease."
-                },
-                {
-                    "key": "[L106-Q2-2] Oncology",
-                    "value": "The branch of medicine dealing with cancer."
-                },
-                {
-                    "key": "[L106-Q2-3] Pathology",
-                    "value": "The study of the causes and effects of diseases."
-                }
-            ],
-            "hint": "Think about medical specializations and procedures used to diagnose and study illness.",
-            "explanation": "A biopsy removes tissue for examination, radiology uses imaging for diagnosis, oncology deals with cancer, and pathology studies disease causes. These words describe medical specialties."
-        },
-        {
-            "id": "RDG_READANDMATCH_L106_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L106-Q3-0] Content Creator",
-                    "value": "A person who produces material for digital platforms such as YouTube or blogs."
-                },
-                {
-                    "key": "[L106-Q3-1] Algorithm Bias",
-                    "value": "When an automated system systematically produces unfair outcomes."
-                },
-                {
-                    "key": "[L106-Q3-2] Deepfake",
-                    "value": "Manipulated video or audio that convincingly portrays someone falsely."
-                },
-                {
-                    "key": "[L106-Q3-3] Digital Footprint",
-                    "value": "The trail of data left behind by a person's online activity."
-                }
-            ],
-            "hint": "Think about words connected to digital media, privacy, and risks in the online world.",
-            "explanation": "A content creator makes digital material, algorithm bias produces unfair automated outcomes, deepfakes create false media, and a digital footprint is the data trail online. These words describe digital media and its risks."
-        },
-        {
-            "id": "RDG_READANDMATCH_L107_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L107-Q1-0] Biophilic Design",
-                    "value": "An architectural approach that connects buildings and spaces with nature."
-                },
-                {
-                    "key": "[L107-Q1-1] Load-Bearing Wall",
-                    "value": "A wall that supports the weight of the structure above it."
-                },
-                {
-                    "key": "[L107-Q1-2] Passive Heating",
-                    "value": "Using natural means like sunlight to warm a building without mechanical systems."
-                },
-                {
-                    "key": "[L107-Q1-3] LEED Certification",
-                    "value": "A widely used green building rating system for sustainability."
-                }
-            ],
-            "hint": "Think about words connected to designing and constructing buildings sustainably.",
-            "explanation": "Biophilic design connects buildings to nature, a load-bearing wall supports the structure, passive heating uses natural sunlight, and LEED certification rates building sustainability. These words describe sustainable architecture."
-        },
-        {
-            "id": "RDG_READANDMATCH_L107_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L107-Q2-0] Curriculum Design",
-                    "value": "The process of planning and organizing what will be taught in a course."
-                },
-                {
-                    "key": "[L107-Q2-1] Metacognition",
-                    "value": "Thinking about and being aware of one's own thinking processes."
-                },
-                {
-                    "key": "[L107-Q2-2] Bloom's Taxonomy",
-                    "value": "A framework that classifies educational goals from basic knowledge to creative thinking."
-                },
-                {
-                    "key": "[L107-Q2-3] Scaffolding",
-                    "value": "Providing temporary support to help learners achieve tasks they could not do alone."
-                }
-            ],
-            "hint": "Think about words connected to the science of designing effective education.",
-            "explanation": "Curriculum design plans course content, metacognition means thinking about your own thinking, Bloom's taxonomy classifies learning goals, and scaffolding provides temporary learning support. These words describe educational theory."
-        },
-        {
-            "id": "RDG_READANDMATCH_L107_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L107-Q3-0] Procurement",
-                    "value": "The process of obtaining goods or services, especially for a business."
-                },
-                {
-                    "key": "[L107-Q3-1] Outsource",
-                    "value": "To arrange for an outside company to do work instead of doing it internally."
-                },
-                {
-                    "key": "[L107-Q3-2] Vendor Management",
-                    "value": "The process of overseeing relationships with external suppliers."
-                },
-                {
-                    "key": "[L107-Q3-3] Overhead",
-                    "value": "The ongoing costs of running a business not directly related to production."
-                }
-            ],
-            "hint": "Think about words connected to how companies manage their suppliers and costs.",
-            "explanation": "Procurement is obtaining goods or services, outsource means using an external company, vendor management oversees suppliers, and overhead is ongoing non-production costs. These words describe business operations."
-        },
-        {
-            "id": "RDG_READANDMATCH_L108_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L108-Q1-0] Sustainable Fashion",
-                    "value": "Clothing designed and produced in ways that minimize environmental harm."
-                },
-                {
-                    "key": "[L108-Q1-1] Fast Fashion",
-                    "value": "Inexpensive clothing produced quickly in response to the latest trends."
-                },
-                {
-                    "key": "[L108-Q1-2] Ethical Sourcing",
-                    "value": "Ensuring products are made without exploiting workers or the environment."
-                },
-                {
-                    "key": "[L108-Q1-3] Second-Hand Market",
-                    "value": "A market where used goods are bought and sold."
-                }
-            ],
-            "hint": "Think about words connected to the environmental and ethical side of the clothing industry.",
-            "explanation": "Sustainable fashion minimizes environmental harm, fast fashion is cheap and quick, ethical sourcing avoids exploitation, and the second-hand market deals in used goods. These words describe conscious consumerism in fashion."
-        },
-        {
-            "id": "RDG_READANDMATCH_L108_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L108-Q2-0] Hypertension",
-                    "value": "A medical condition of persistently high blood pressure."
-                },
-                {
-                    "key": "[L108-Q2-1] Arrhythmia",
-                    "value": "An irregular heartbeat, which may be too fast, too slow, or uneven."
-                },
-                {
-                    "key": "[L108-Q2-2] Orthopedics",
-                    "value": "The branch of medicine dealing with the musculoskeletal system."
-                },
-                {
-                    "key": "[L108-Q2-3] Pediatrics",
-                    "value": "The branch of medicine dealing with the health of children."
-                }
-            ],
-            "hint": "Think about medical terms and specialties connected to specific health conditions.",
-            "explanation": "Hypertension is high blood pressure, arrhythmia is an irregular heartbeat, orthopedics covers bones and muscles, and pediatrics covers children's health. These words describe medical conditions and specialties."
-        },
-        {
-            "id": "RDG_READANDMATCH_L108_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L108-Q3-0] Focus Group",
-                    "value": "A small group of people brought together to give opinions about a product or idea."
-                },
-                {
-                    "key": "[L108-Q3-1] Demographics",
-                    "value": "Statistical data about populations, such as age, income, and education."
-                },
-                {
-                    "key": "[L108-Q3-2] Psychographics",
-                    "value": "Information about consumers' lifestyles, values, and personality traits."
-                },
-                {
-                    "key": "[L108-Q3-3] Net Promoter Score",
-                    "value": "A measure of how likely customers are to recommend a business."
-                }
-            ],
-            "hint": "Think about words connected to researching and understanding customers.",
-            "explanation": "A focus group gives opinions on products, demographics are population statistics, psychographics describe consumer values, and net promoter score measures recommendation likelihood. These words describe marketing research tools."
-        },
-        {
-            "id": "RDG_READANDMATCH_L109_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L109-Q1-0] Franchise",
-                    "value": "A system where a business licenses its name and model to independent operators."
-                },
-                {
-                    "key": "[L109-Q1-1] Sole Trader",
-                    "value": "A person who runs a business alone, taking full personal responsibility."
-                },
-                {
-                    "key": "[L109-Q1-2] Limited Company",
-                    "value": "A business structure where owners' personal liability is limited to their shares."
-                },
-                {
-                    "key": "[L109-Q1-3] Social Enterprise",
-                    "value": "A business that prioritizes social or environmental goals alongside profit."
-                }
-            ],
-            "hint": "Think about words connected to different types of business structures and models.",
-            "explanation": "A franchise licenses a business model, a sole trader runs alone with full liability, a limited company limits personal liability, and a social enterprise balances profit with social goals. These words describe business ownership types."
-        },
-        {
-            "id": "RDG_READANDMATCH_L109_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L109-Q2-0] Residency Permit",
-                    "value": "A document allowing a foreign national to live in a country long-term."
-                },
-                {
-                    "key": "[L109-Q2-1] Citizenship",
-                    "value": "The legal status of being a recognized member of a country."
-                },
-                {
-                    "key": "[L109-Q2-2] Assimilation",
-                    "value": "The process of adopting the culture and customs of a new country."
-                },
-                {
-                    "key": "[L109-Q2-3] Bilingual",
-                    "value": "Able to speak two languages fluently."
-                }
-            ],
-            "hint": "Think about words connected to living permanently in a foreign country.",
-            "explanation": "A residency permit allows long-term living abroad, citizenship is full membership of a country, assimilation means adopting a new culture, and bilingual means speaking two languages. These words describe long-term immigration."
-        },
-        {
-            "id": "RDG_READANDMATCH_L109_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L109-Q3-0] Sibling Dynamic",
-                    "value": "The patterns of interaction and influence between brothers and sisters."
-                },
-                {
-                    "key": "[L109-Q3-1] Overprotective",
-                    "value": "Excessively shielding a child from normal risks or challenges."
-                },
-                {
-                    "key": "[L109-Q3-2] Authoritative Parenting",
-                    "value": "A parenting style balancing warmth with clear rules and expectations."
-                },
-                {
-                    "key": "[L109-Q3-3] Adolescence",
-                    "value": "The developmental stage between childhood and adulthood."
-                }
-            ],
-            "hint": "Think about words connected to child development and parenting styles.",
-            "explanation": "Sibling dynamic describes interaction between siblings, overprotective means sheltering a child too much, authoritative parenting balances warmth and rules, and adolescence is the teen development stage. These words describe family development."
-        },
-        {
-            "id": "RDG_READANDMATCH_L110_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L110-Q1-0] Endowment",
-                    "value": "A large donation of money given to an institution to provide permanent income."
-                },
-                {
-                    "key": "[L110-Q1-1] Sabbatical",
-                    "value": "An extended period of leave granted to academics for research or rest."
-                },
-                {
-                    "key": "[L110-Q1-2] Accreditation",
-                    "value": "Official recognition that an institution or course meets required standards."
-                },
-                {
-                    "key": "[L110-Q1-3] Alumni Network",
-                    "value": "The community of former students of a school or university."
-                }
-            ],
-            "hint": "Think about words connected to how universities are funded and organized.",
-            "explanation": "An endowment is a large institutional donation, a sabbatical is extended academic leave, accreditation confirms quality standards, and an alumni network is the community of former students. These words describe university life."
-        },
-        {
-            "id": "RDG_READANDMATCH_L110_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L110-Q2-0] Portfolio Career",
-                    "value": "A career made up of multiple different jobs or income streams simultaneously."
-                },
-                {
-                    "key": "[L110-Q2-1] Knowledge Economy",
-                    "value": "An economy driven by knowledge-based industries rather than manufacturing."
-                },
-                {
-                    "key": "[L110-Q2-2] Upskilling",
-                    "value": "The process of learning new skills to improve performance or employability."
-                },
-                {
-                    "key": "[L110-Q2-3] Executive Burnout",
-                    "value": "Extreme exhaustion experienced by senior professionals from prolonged overwork."
-                }
-            ],
-            "hint": "Think about words connected to how modern careers and the economy are changing.",
-            "explanation": "A portfolio career combines multiple income streams, the knowledge economy is driven by ideas, upskilling means learning new skills, and executive burnout is exhaustion from senior overwork. These words describe modern career trends."
-        },
-        {
-            "id": "RDG_READANDMATCH_L110_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L110-Q3-0] Ecotourism",
-                    "value": "Responsible travel to natural areas that conserves the environment."
-                },
-                {
-                    "key": "[L110-Q3-1] Dark Tourism",
-                    "value": "Travel to places historically associated with death, tragedy, or disaster."
-                },
-                {
-                    "key": "[L110-Q3-2] Voluntourism",
-                    "value": "A type of travel that combines tourism with voluntary work."
-                },
-                {
-                    "key": "[L110-Q3-3] Heritage Site",
-                    "value": "A location recognized for its outstanding historical or cultural importance."
-                }
-            ],
-            "hint": "Think about words connected to different motivations and types of travel.",
-            "explanation": "Ecotourism focuses on conservation, dark tourism visits sites of tragedy, voluntourism combines travel with volunteering, and a heritage site has outstanding historical importance. These words describe different modern travel motivations."
+          "key": "[L101-Q1-3] Equity",
+          "value": "The quality of being fair and ensuring everyone gets what they need."
         }
-    ]
+      ],
+      "hint": "Each word relates to fairness and opportunity across different groups in society.",
+      "explanation": "Socioeconomic describes the mix of social and financial factors shaping someone's life, and disparity is the unfair gap that can result between groups. Social mobility is the ability to move up despite that gap, and equity is different from the other three — the broader goal of fairness that all of this discussion points toward."
+    },
+    {
+      "id": "RDG_READANDMATCH_L101_Q2",
+      "instruction": "Match each term with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L101-Q2-0] Decentralized",
+          "value": "Describing a system where control is distributed rather than held by one authority."
+        },
+        {
+          "key": "[L101-Q2-1] Scalability",
+          "value": "The ability of a system or process to grow and handle increased demand."
+        },
+        {
+          "key": "[L101-Q2-2] Automation",
+          "value": "The use of technology to perform tasks without human involvement."
+        },
+        {
+          "key": "[L101-Q2-3] Efficiency",
+          "value": "The ability to do something well without wasting time, money, or energy."
+        }
+      ],
+      "hint": "Each word relates to how a modern system or business is designed to work well.",
+      "explanation": "Decentralized describes where control sits within a system, spread out rather than held by one authority, while scalability describes whether that system can grow without breaking. Automation reduces the need for people to do repetitive tasks, and efficiency is different from the other three — a general measure of how well any process avoids waste."
+    },
+    {
+      "id": "RDG_READANDMATCH_L101_Q3",
+      "instruction": "Match each phrase with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L101-Q3-0] Confirmation Bias",
+          "value": "The tendency to search for information that confirms existing beliefs."
+        },
+        {
+          "key": "[L101-Q3-1] Snap Judgment",
+          "value": "A quick decision made without much thought or analysis."
+        },
+        {
+          "key": "[L101-Q3-2] Overthinking",
+          "value": "Spending too much time thinking about a decision, often making it harder."
+        },
+        {
+          "key": "[L101-Q3-3] Gut Feeling",
+          "value": "A decision or reaction based on instinct rather than careful thought."
+        }
+      ],
+      "hint": "Each phrase describes a different way people actually make decisions.",
+      "explanation": "A snap judgment is made quickly, almost without thought, while overthinking is nearly the opposite — spending too much time on a decision. Gut feeling relies on instinct rather than analysis, and confirmation bias is different from the other three — it's not a way of deciding, but a habit of only noticing evidence that supports what you already believe."
+    },
+    {
+      "id": "RDG_READANDMATCH_L102_Q1",
+      "instruction": "Match each expression with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L102-Q1-0] Sous Vide",
+          "value": "A method where food is vacuum-sealed and cooked slowly in temperature-controlled water."
+        },
+        {
+          "key": "[L102-Q1-1] Molecular Gastronomy",
+          "value": "A cooking style that applies scientific techniques to food preparation."
+        },
+        {
+          "key": "[L102-Q1-2] Deconstructed Dish",
+          "value": "A dish where traditional components are presented separately and creatively."
+        },
+        {
+          "key": "[L102-Q1-3] Infusion",
+          "value": "The process of steeping ingredients in liquid to extract their flavor."
+        }
+      ],
+      "hint": "Notice how each phrase connects to a modern, creative approach to preparing food.",
+      "explanation": "Sous vide is a precise cooking method using controlled water temperature, and molecular gastronomy applies that kind of scientific precision to food more broadly. Deconstructed dish takes a familiar meal and presents its parts separately, and infusion is different from the other three — simply the process of steeping something to draw out its flavor."
+    },
+    {
+      "id": "RDG_READANDMATCH_L102_Q2",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L102-Q2-0] Net Neutrality",
+          "value": "The principle that internet service providers must treat all data equally."
+        },
+        {
+          "key": "[L102-Q2-1] Dark Web",
+          "value": "The part of the internet requiring special software to access, often used illegally."
+        },
+        {
+          "key": "[L102-Q2-2] VPN",
+          "value": "A service that encrypts your internet connection and masks your location."
+        },
+        {
+          "key": "[L102-Q2-3] Cache",
+          "value": "Temporary storage that saves data for faster access in the future."
+        }
+      ],
+      "hint": "These phrases all tie back to how data moves, or hides, on the internet.",
+      "explanation": "Net neutrality is a principle about how internet providers should treat data, while the dark web is a hidden part of the internet that requires special access. A VPN protects your own data as you browse, and cache is different from the other three — a form of temporary storage that simply makes things load faster."
+    },
+    {
+      "id": "RDG_READANDMATCH_L102_Q3",
+      "instruction": "Match each term with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L102-Q3-0] Anaphylaxis",
+          "value": "A severe, life-threatening allergic reaction requiring immediate treatment."
+        },
+        {
+          "key": "[L102-Q3-1] Autoimmune Disease",
+          "value": "A condition where the immune system attacks the body's own healthy tissue."
+        },
+        {
+          "key": "[L102-Q3-2] Immune Response",
+          "value": "The body's reaction to fight off an infection or foreign substance."
+        },
+        {
+          "key": "[L102-Q3-3] Chronic Condition",
+          "value": "A health problem that lasts a long time or keeps coming back."
+        }
+      ],
+      "hint": "Each of these phrases points to how the body defends itself, or sometimes turns against itself.",
+      "explanation": "Immune response is the body's normal reaction to a threat, and anaphylaxis is a dangerous, extreme version of that same reaction. Autoimmune disease happens when the immune system attacks the body by mistake, and chronic condition is different from the other three — a broader term for any health problem that lasts a long time, immune-related or not."
+    },
+    {
+      "id": "RDG_READANDMATCH_L103_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L103-Q1-0] Protagonist",
+          "value": "The main character of a story, around whom the plot revolves."
+        },
+        {
+          "key": "[L103-Q1-1] Antagonist",
+          "value": "A character who opposes the protagonist and creates conflict."
+        },
+        {
+          "key": "[L103-Q1-2] Motif",
+          "value": "A recurring element, theme, or image in a work of literature or art."
+        },
+        {
+          "key": "[L103-Q1-3] Subtext",
+          "value": "An underlying meaning or message not stated directly in a text."
+        }
+      ],
+      "hint": "Each word names something you'd look for while analyzing a story.",
+      "explanation": "The protagonist and antagonist drive the conflict at the center of a story, one pursuing a goal, the other standing in the way. Motif is a repeated element that reinforces a theme, and subtext is different from the other three — the meaning that sits quietly beneath the surface of what's actually said."
+    },
+    {
+      "id": "RDG_READANDMATCH_L103_Q2",
+      "instruction": "Match each phrase with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L103-Q2-0] Stakeholder",
+          "value": "Any person or group with an interest in or affected by an organization's decisions."
+        },
+        {
+          "key": "[L103-Q2-1] Transparency",
+          "value": "The quality of being open and clear about decisions, processes, and information."
+        },
+        {
+          "key": "[L103-Q2-2] Accountability",
+          "value": "The obligation to accept responsibility for one's actions and their outcomes."
+        },
+        {
+          "key": "[L103-Q2-3] Corporate Responsibility",
+          "value": "A company's duty to act ethically and consider its impact on society."
+        }
+      ],
+      "hint": "Each phrase relates to how an organization behaves toward the people it affects.",
+      "explanation": "A stakeholder is anyone affected by an organization's choices, and transparency means being open with exactly those people about decisions. Accountability means accepting responsibility when something goes wrong, and corporate responsibility is different from the other three — a broader commitment to acting ethically, not just one specific practice."
+    },
+    {
+      "id": "RDG_READANDMATCH_L103_Q3",
+      "instruction": "Match each expression with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L103-Q3-0] Mass Transit",
+          "value": "Large-scale public transport systems that carry many people, such as subways."
+        },
+        {
+          "key": "[L103-Q3-1] Rideshare",
+          "value": "A service that connects passengers to drivers using a mobile app."
+        },
+        {
+          "key": "[L103-Q3-2] Carbon Offset",
+          "value": "A reduction in emissions elsewhere to compensate for emissions produced here."
+        },
+        {
+          "key": "[L103-Q3-3] Congestion Charge",
+          "value": "A fee charged to drive in a busy urban area to reduce traffic."
+        }
+      ],
+      "hint": "Each phrase ties back to how cities try to move people while managing traffic and pollution.",
+      "explanation": "Mass transit and rideshare are both ways of getting around without driving your own car, one using large public systems, the other connecting individual drivers and passengers. Congestion charge discourages driving into busy areas directly, and carbon offset is different from the other three — a way of balancing out emissions rather than avoiding them in the first place."
+    },
+    {
+      "id": "RDG_READANDMATCH_L104_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L104-Q1-0] Sleep Cycle",
+          "value": "The pattern the body follows through different stages of sleep each night."
+        },
+        {
+          "key": "[L104-Q1-1] Willpower",
+          "value": "The ability to control your own actions and resist temptation."
+        },
+        {
+          "key": "[L104-Q1-2] Adrenaline",
+          "value": "A hormone released by the body in response to stress or excitement, increasing energy."
+        },
+        {
+          "key": "[L104-Q1-3] Endurance",
+          "value": "The ability to keep doing something difficult or tiring for a long time."
+        }
+      ],
+      "hint": "Each word relates to how your body and mind perform under pressure or over time.",
+      "explanation": "Sleep cycle affects how rested and focused you feel, while willpower is the mental strength that helps you push through difficulty despite that tiredness. Adrenaline gives a sudden burst of energy in stressful moments, and endurance is different from the other three — the ability to sustain effort steadily over a much longer period."
+    },
+    {
+      "id": "RDG_READANDMATCH_L104_Q2",
+      "instruction": "Match each term with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L104-Q2-0] Brand Loyalty",
+          "value": "A consumer's consistent preference for one brand over its competitors."
+        },
+        {
+          "key": "[L104-Q2-1] Target Audience",
+          "value": "The specific group of people a product or advertisement is designed to reach."
+        },
+        {
+          "key": "[L104-Q2-2] Word of Mouth",
+          "value": "Information or reputation for a product spread by people talking to each other."
+        },
+        {
+          "key": "[L104-Q2-3] Price Point",
+          "value": "The specific price at which a product is offered for sale."
+        }
+      ],
+      "hint": "Every one of these phrases connects to how a company understands and keeps its customers.",
+      "explanation": "A target audience is who a company hopes to reach, and word of mouth is one powerful, unplanned way that message can spread further. Brand loyalty is the reward if it all works, customers coming back again and again, and price point is different from the other three — a practical detail about cost, not about connecting with customers."
+    },
+    {
+      "id": "RDG_READANDMATCH_L104_Q3",
+      "instruction": "Match each phrase with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L104-Q3-0] Diplomatic Immunity",
+          "value": "Protection from legal action granted to foreign diplomats by international law."
+        },
+        {
+          "key": "[L104-Q3-1] Jurisdiction",
+          "value": "The official power of a court or authority to make legal decisions in an area."
+        },
+        {
+          "key": "[L104-Q3-2] Extradition",
+          "value": "The process of returning a suspected criminal to the country where the crime occurred."
+        },
+        {
+          "key": "[L104-Q3-3] Legal Loophole",
+          "value": "A way of avoiding a rule or law without directly breaking it."
+        }
+      ],
+      "hint": "Notice how each phrase connects to the limits and reach of the law.",
+      "explanation": "Jurisdiction defines where a court's authority actually applies, and extradition happens when someone is sent to face charges outside of it. Diplomatic immunity is a specific exception to normal legal authority, and legal loophole is different from the other three — a gap in the rules that lets someone technically avoid them."
+    },
+    {
+      "id": "RDG_READANDMATCH_L105_Q1",
+      "instruction": "Match each expression with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L105-Q1-0] Downsizing",
+          "value": "Reducing the number of employees or size of a company to cut costs."
+        },
+        {
+          "key": "[L105-Q1-1] Headcount",
+          "value": "The total number of people employed by an organization."
+        },
+        {
+          "key": "[L105-Q1-2] Employee Morale",
+          "value": "The overall level of satisfaction and enthusiasm employees feel about their work."
+        },
+        {
+          "key": "[L105-Q1-3] Restructuring",
+          "value": "Reorganizing a company's structure or operations, often to improve efficiency."
+        }
+      ],
+      "hint": "These phrases all tie back to how a company manages its size and its people's spirits.",
+      "explanation": "Headcount simply counts how many people work somewhere, and downsizing reduces that number to cut costs. Restructuring often happens around the same time, reorganizing how the company works, and employee morale is different from the other three — not a company decision at all, but how staff actually feel about their work."
+    },
+    {
+      "id": "RDG_READANDMATCH_L105_Q2",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L105-Q2-0] Airfare",
+          "value": "The price charged for a seat on a passenger aircraft."
+        },
+        {
+          "key": "[L105-Q2-1] Boarding Pass",
+          "value": "A document that allows a passenger to board a plane."
+        },
+        {
+          "key": "[L105-Q2-2] Carry-On",
+          "value": "A bag small enough to be taken into the aircraft cabin."
+        },
+        {
+          "key": "[L105-Q2-3] Overbooked",
+          "value": "Describing a flight or hotel with more reservations than available spaces."
+        }
+      ],
+      "hint": "Each word or phrase relates to a step in flying somewhere.",
+      "explanation": "Airfare is the price you pay before you travel, and a boarding pass is what you'll need once you reach the gate. Carry-on is the bag you bring with you onto the plane, and overbooked is different from the other three — a problem that happens when an airline sells more seats than it actually has."
+    },
+    {
+      "id": "RDG_READANDMATCH_L105_Q3",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L105-Q3-0] Bereavement",
+          "value": "The state of having recently lost a loved one through death."
+        },
+        {
+          "key": "[L105-Q3-1] Eulogy",
+          "value": "A speech praising someone who has recently died."
+        },
+        {
+          "key": "[L105-Q3-2] Condolence",
+          "value": "An expression of sympathy to someone who has lost a loved one."
+        },
+        {
+          "key": "[L105-Q3-3] Probate",
+          "value": "The legal process of administering a deceased person's will and estate."
+        }
+      ],
+      "hint": "Each word relates to what happens after someone close to you has died.",
+      "explanation": "Bereavement describes the loss itself, and condolence is the sympathy others offer because of it. A eulogy is spoken at a funeral to honor the person who died, and probate is different from the other three — the legal process of settling their will and belongings afterward."
+    },
+    {
+      "id": "RDG_READANDMATCH_L106_Q1",
+      "instruction": "Match each term with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L106-Q1-0] Deficit Spending",
+          "value": "When a government spends more than it earns in tax revenue."
+        },
+        {
+          "key": "[L106-Q1-1] Public Debt",
+          "value": "The total amount of money a government owes to lenders."
+        },
+        {
+          "key": "[L106-Q1-2] Trade Surplus",
+          "value": "When a country exports more than it imports."
+        },
+        {
+          "key": "[L106-Q1-3] Austerity",
+          "value": "Government policies that cut public spending to reduce debt."
+        }
+      ],
+      "hint": "Each of these phrases points to how a government manages money on a national scale.",
+      "explanation": "Deficit spending happens when a government spends more than it earns, which adds to the public debt it owes over time. Austerity is often the government's response, cutting spending to bring that debt back down, and trade surplus is different from the other three — it's about exports and imports, not government spending at all."
+    },
+    {
+      "id": "RDG_READANDMATCH_L106_Q2",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L106-Q2-0] Biopsy",
+          "value": "The removal of a small tissue sample for medical examination."
+        },
+        {
+          "key": "[L106-Q2-1] Radiology",
+          "value": "The branch of medicine using imaging techniques to diagnose disease."
+        },
+        {
+          "key": "[L106-Q2-2] Oncology",
+          "value": "The branch of medicine dealing with cancer."
+        },
+        {
+          "key": "[L106-Q2-3] Pathology",
+          "value": "The study of the causes and effects of diseases."
+        }
+      ],
+      "hint": "Each word names a different branch or procedure within modern medicine.",
+      "explanation": "A biopsy removes a tissue sample for testing, and pathology is the field that studies exactly what that sample reveals about disease. Radiology uses imaging instead of physical samples to diagnose problems, and oncology is different from the other three — a specific branch of medicine focused only on treating cancer."
+    },
+    {
+      "id": "RDG_READANDMATCH_L106_Q3",
+      "instruction": "Match each phrase with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L106-Q3-0] Content Creator",
+          "value": "A person who produces material for digital platforms such as YouTube or blogs."
+        },
+        {
+          "key": "[L106-Q3-1] Algorithm Bias",
+          "value": "When an automated system systematically produces unfair outcomes."
+        },
+        {
+          "key": "[L106-Q3-2] Deepfake",
+          "value": "Manipulated video or audio that convincingly portrays someone falsely."
+        },
+        {
+          "key": "[L106-Q3-3] Digital Footprint",
+          "value": "The trail of data left behind by a person's online activity."
+        }
+      ],
+      "hint": "Each phrase relates to living and working online in the age of social media.",
+      "explanation": "A content creator produces material for platforms like YouTube, and algorithm bias can quietly affect who actually sees that content. Deepfake is a more deceptive problem, creating convincing fake footage of real people, and digital footprint is different from the other three — the lasting trail any of us leaves behind online, creator or not."
+    },
+    {
+      "id": "RDG_READANDMATCH_L107_Q1",
+      "instruction": "Match each expression with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L107-Q1-0] Open-Plan Layout",
+          "value": "A design where rooms are combined into one large, undivided space."
+        },
+        {
+          "key": "[L107-Q1-1] Load-Bearing Wall",
+          "value": "A wall that supports the weight of the structure above it."
+        },
+        {
+          "key": "[L107-Q1-2] Passive Heating",
+          "value": "Using natural means like sunlight to warm a building without mechanical systems."
+        },
+        {
+          "key": "[L107-Q1-3] Energy-Efficient",
+          "value": "Describing something designed to use less energy while still functioning well."
+        }
+      ],
+      "hint": "Each phrase ties back to how a modern home is designed and built.",
+      "explanation": "An open-plan layout combines rooms into one large space, though a load-bearing wall can limit how much of that space can actually be opened up. Passive heating uses natural sunlight to warm a home, and energy-efficient is different from the other three — a broader goal of using less energy overall, not one specific design choice."
+    },
+    {
+      "id": "RDG_READANDMATCH_L107_Q2",
+      "instruction": "Match each term with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L107-Q2-0] Curriculum Design",
+          "value": "The process of planning and organizing what will be taught in a course."
+        },
+        {
+          "key": "[L107-Q2-1] Metacognition",
+          "value": "Thinking about and being aware of one's own thinking processes."
+        },
+        {
+          "key": "[L107-Q2-2] Lifelong Learning",
+          "value": "The ongoing, voluntary pursuit of knowledge throughout a person's life."
+        },
+        {
+          "key": "[L107-Q2-3] Rote Learning",
+          "value": "Learning through repetition, often without deep understanding."
+        }
+      ],
+      "hint": "Every one of these phrases connects to how people learn, and how that learning is planned.",
+      "explanation": "Curriculum design plans what gets taught, while rote learning is one method a learner might use, repeating information until it sticks. Metacognition means thinking about your own thinking, noticing what actually helps you learn, and lifelong learning is different from the other three — an attitude of continuing to learn throughout life, not a method or a plan."
+    },
+    {
+      "id": "RDG_READANDMATCH_L107_Q3",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L107-Q3-0] Supplier",
+          "value": "A person or company that provides goods or services to a business."
+        },
+        {
+          "key": "[L107-Q3-1] Outsource",
+          "value": "To arrange for an outside company to do work instead of doing it internally."
+        },
+        {
+          "key": "[L107-Q3-2] Business Partnership",
+          "value": "A formal working relationship between two or more companies or individuals."
+        },
+        {
+          "key": "[L107-Q3-3] Overhead",
+          "value": "The ongoing costs of running a business not directly related to production."
+        }
+      ],
+      "hint": "Each word or phrase relates to how a business works with people outside the company.",
+      "explanation": "A supplier provides goods a business needs, and a company might outsource other work entirely, having an outside company handle it instead. Business partnership is a more formal version of working together, and overhead is different from the other three — the ongoing costs of running things, whether or not any outside help is involved."
+    },
+    {
+      "id": "RDG_READANDMATCH_L108_Q1",
+      "instruction": "Match each phrase with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L108-Q1-0] Sustainable Fashion",
+          "value": "Clothing designed and produced in ways that minimize environmental harm."
+        },
+        {
+          "key": "[L108-Q1-1] Fast Fashion",
+          "value": "Inexpensive clothing produced quickly in response to the latest trends."
+        },
+        {
+          "key": "[L108-Q1-2] Ethical Sourcing",
+          "value": "Ensuring products are made without exploiting workers or the environment."
+        },
+        {
+          "key": "[L108-Q1-3] Second-Hand Market",
+          "value": "A market where used goods are bought and sold."
+        }
+      ],
+      "hint": "Notice how each phrase connects to how clothing is made, bought, or reused.",
+      "explanation": "Sustainable fashion and fast fashion sit at opposite ends of the clothing industry, one prioritizing the environment, the other prioritizing speed and low cost. Ethical sourcing focuses on how materials and labor are treated along the way, and second-hand market is different from the other three — a place to buy and sell clothes that already exist, new or not."
+    },
+    {
+      "id": "RDG_READANDMATCH_L108_Q2",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L108-Q2-0] Hypertension",
+          "value": "A medical condition of persistently high blood pressure."
+        },
+        {
+          "key": "[L108-Q2-1] Arrhythmia",
+          "value": "An irregular heartbeat, which may be too fast, too slow, or uneven."
+        },
+        {
+          "key": "[L108-Q2-2] Orthopedics",
+          "value": "The branch of medicine dealing with the musculoskeletal system."
+        },
+        {
+          "key": "[L108-Q2-3] Pediatrics",
+          "value": "The branch of medicine dealing with the health of children."
+        }
+      ],
+      "hint": "Each word relates to a condition or specialty you'd encounter in a hospital.",
+      "explanation": "Hypertension and arrhythmia are both heart-related conditions, one about pressure, the other about rhythm. Orthopedics is a specialty focused on bones and joints instead, and pediatrics is different from the other three — a specialty defined by the patient's age, not by any particular part of the body."
+    },
+    {
+      "id": "RDG_READANDMATCH_L108_Q3",
+      "instruction": "Match each expression with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L108-Q3-0] Focus Group",
+          "value": "A small group of people brought together to give opinions about a product or idea."
+        },
+        {
+          "key": "[L108-Q3-1] Demographics",
+          "value": "Statistical data about populations, such as age, income, and education."
+        },
+        {
+          "key": "[L108-Q3-2] Consumer Trend",
+          "value": "A noticeable shift in what and how people choose to buy."
+        },
+        {
+          "key": "[L108-Q3-3] Customer Feedback",
+          "value": "Opinions and comments given by customers about a product or service."
+        }
+      ],
+      "hint": "These phrases all tie back to how a business learns what customers actually want.",
+      "explanation": "A focus group gathers a small number of people to share their opinions directly, while demographics look at broader statistics like age and income instead. Consumer trend spots a wider shift in what people want over time, and customer feedback is different from the other three — direct comments from people who have actually used the product."
+    },
+    {
+      "id": "RDG_READANDMATCH_L109_Q1",
+      "instruction": "Match each term with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L109-Q1-0] Franchise",
+          "value": "A system where a business licenses its name and model to independent operators."
+        },
+        {
+          "key": "[L109-Q1-1] Sole Trader",
+          "value": "A person who runs a business alone, taking full personal responsibility."
+        },
+        {
+          "key": "[L109-Q1-2] Limited Company",
+          "value": "A business structure where owners' personal liability is limited to their shares."
+        },
+        {
+          "key": "[L109-Q1-3] Social Enterprise",
+          "value": "A business that prioritizes social or environmental goals alongside profit."
+        }
+      ],
+      "hint": "Each phrase describes a different legal or organizational structure for a business.",
+      "explanation": "A sole trader runs a business alone with full personal responsibility, while a limited company protects the owners from that same personal risk. Franchise lets someone run a business under an established name and system, and social enterprise is different from the other three — defined by its purpose, not its legal structure, prioritizing social good alongside profit."
+    },
+    {
+      "id": "RDG_READANDMATCH_L109_Q2",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L109-Q2-0] Residency Permit",
+          "value": "A document allowing a foreign national to live in a country long-term."
+        },
+        {
+          "key": "[L109-Q2-1] Citizenship",
+          "value": "The legal status of being a recognized member of a country."
+        },
+        {
+          "key": "[L109-Q2-2] Assimilation",
+          "value": "The process of adopting the culture and customs of a new country."
+        },
+        {
+          "key": "[L109-Q2-3] Bilingual",
+          "value": "Able to speak two languages fluently."
+        }
+      ],
+      "hint": "Each word or phrase relates to building a life in a new country.",
+      "explanation": "A residency permit allows someone to live in a country long-term, and citizenship is a deeper legal status that can follow later. Assimilation describes adopting the new culture over time, and bilingual is different from the other three — a language skill, not a legal status or a cultural process."
+    },
+    {
+      "id": "RDG_READANDMATCH_L109_Q3",
+      "instruction": "Match each phrase with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L109-Q3-0] Sibling Dynamic",
+          "value": "The patterns of interaction and influence between brothers and sisters."
+        },
+        {
+          "key": "[L109-Q3-1] Overprotective",
+          "value": "Excessively shielding a child from normal risks or challenges."
+        },
+        {
+          "key": "[L109-Q3-2] Strict Parenting",
+          "value": "A parenting approach with firm rules and high expectations for obedience."
+        },
+        {
+          "key": "[L109-Q3-3] Adolescence",
+          "value": "The developmental stage between childhood and adulthood."
+        }
+      ],
+      "hint": "Each word or phrase relates to family life during the teenage years.",
+      "explanation": "Sibling dynamic describes how brothers and sisters interact with each other, while overprotective and strict parenting both describe a parent's approach, though overprotective focuses on shielding from risk and strict parenting focuses on firm rules. Adolescence is different from the other three — the stage of life all of this is actually happening during, not a relationship or a parenting style."
+    },
+    {
+      "id": "RDG_READANDMATCH_L110_Q1",
+      "instruction": "Match each expression with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L110-Q1-0] Endowment",
+          "value": "A large donation of money given to an institution to provide permanent income."
+        },
+        {
+          "key": "[L110-Q1-1] Sabbatical",
+          "value": "An extended period of leave granted to academics for research or rest."
+        },
+        {
+          "key": "[L110-Q1-2] Accreditation",
+          "value": "Official recognition that an institution or course meets required standards."
+        },
+        {
+          "key": "[L110-Q1-3] Alumni Network",
+          "value": "The community of former students of a school or university."
+        }
+      ],
+      "hint": "Each word or phrase relates to a university, beyond just its students and classes.",
+      "explanation": "An endowment is a large donation that supports a university financially, and a sabbatical is time an academic might take away from teaching, often funded partly by resources like that. Accreditation confirms a university actually meets proper standards, and alumni network is different from the other three — the community of people who already graduated."
+    },
+    {
+      "id": "RDG_READANDMATCH_L110_Q2",
+      "instruction": "Match each term with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L110-Q2-0] Portfolio Career",
+          "value": "A career made up of multiple different jobs or income streams simultaneously."
+        },
+        {
+          "key": "[L110-Q2-1] Career Change",
+          "value": "The act of leaving one profession or job field to pursue a different one."
+        },
+        {
+          "key": "[L110-Q2-2] Upskilling",
+          "value": "The process of learning new skills to improve performance or employability."
+        },
+        {
+          "key": "[L110-Q2-3] Executive Burnout",
+          "value": "Extreme exhaustion experienced by senior professionals from prolonged overwork."
+        }
+      ],
+      "hint": "Each of these phrases points to how a person's working life can shift and evolve.",
+      "explanation": "A portfolio career combines several jobs at once, while a full career change replaces one job field with a completely different one. Upskilling is what often makes either possible, learning new abilities along the way, and executive burnout is different from the other three — a warning sign of exhaustion, not a deliberate career move."
+    },
+    {
+      "id": "RDG_READANDMATCH_L110_Q3",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L110-Q3-0] Ecotourism",
+          "value": "Responsible travel to natural areas that conserves the environment."
+        },
+        {
+          "key": "[L110-Q3-1] Dark Tourism",
+          "value": "Travel to places historically associated with death, tragedy, or disaster."
+        },
+        {
+          "key": "[L110-Q3-2] Voluntourism",
+          "value": "A type of travel that combines tourism with voluntary work."
+        },
+        {
+          "key": "[L110-Q3-3] Heritage Site",
+          "value": "A location recognized for its outstanding historical or cultural importance."
+        }
+      ],
+      "hint": "Each word or phrase describes a different reason people choose to travel.",
+      "explanation": "Ecotourism focuses on protecting nature while traveling, and voluntourism adds volunteer work into the trip as well. Dark tourism takes a very different approach, visiting places linked to tragedy or death, and heritage site is different from the other three — a type of destination itself, not a style of traveling to it."
+    }
+  ]
 }

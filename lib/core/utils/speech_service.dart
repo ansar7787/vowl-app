@@ -30,8 +30,12 @@ abstract class SpeechService {
   /// Speaks a phrase aloud.
   Future<void> speak(String text, {double rate = 0.5, String locale = "en-US"});
 
-  /// Stops all active audio outputs and listening sessions.
+  /// Stops all active audio outputs and listening sessions, processing the final result.
   Future<void> stop();
+
+  /// Immediately cancels the current listening session and forcefully releases
+  /// mic resources without waiting for a final result. Critical for cleanup during long sessions.
+  Future<void> cancel();
 
   /// Requests permissions and registers speech recognition listeners.
   Future<bool> initializeStt();
@@ -169,6 +173,20 @@ class SpeechServiceImpl implements SpeechService {
   }
 
   @override
+  Future<void> cancel() async {
+    await _initFuture;
+    try {
+      await _tts.stop();
+      await _stt.cancel(); // Force-release mic resources immediately
+    } catch (e) {
+      sl<AppLogger>().error(
+        'SpeechService: Speech cancel execution error',
+        error: e,
+      );
+    }
+  }
+
+  @override
   Future<bool> initializeStt() async {
     await _initFuture;
     if (_isSttInitialized) return true;
@@ -228,6 +246,11 @@ class SpeechServiceImpl implements SpeechService {
     }
 
     try {
+      // Aggressively cancel any lingering zombie sessions before starting a new one
+      if (_stt.isListening) {
+        await _stt.cancel();
+      }
+
       await _stt.listen(
         onResult: (result) {
           final Set<String> candidates = {result.recognizedWords};

@@ -1,6 +1,6 @@
 part of 'elite_mastery_bloc.dart';
 
-abstract class EliteMasteryState extends Equatable {
+abstract class EliteMasteryState extends Equatable implements GameStateBase {
   const EliteMasteryState();
 
   /// Natively resolves lives for all states to eliminate UI ternary fallback logic.

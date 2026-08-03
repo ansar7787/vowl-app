@@ -12,6 +12,7 @@ import '../../../../features/auth/domain/usecases/update_user_rewards.dart';
 import '../../../../features/auth/domain/usecases/use_hint.dart';
 import '../../domain/usecases/get_roleplay_quest.dart';
 import '../../domain/usecases/preload_roleplay_quests.dart';
+import '../../../../core/presentation/bloc/game_state_base.dart';
 import 'roleplay_event.dart';
 import 'roleplay_state.dart';
 

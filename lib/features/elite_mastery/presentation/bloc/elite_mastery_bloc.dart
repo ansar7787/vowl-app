@@ -14,6 +14,7 @@ import '../../../../core/utils/haptic_service.dart';
 import '../../../../core/utils/sound_service.dart';
 import '../../../../features/auth/domain/usecases/use_hint.dart';
 import '../../../../core/utils/hint_utility.dart';
+import '../../../../core/presentation/bloc/game_state_base.dart';
 
 part 'elite_mastery_event.dart';
 part 'elite_mastery_state.dart';

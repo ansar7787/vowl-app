@@ -6,13 +6,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/presentation/widgets/game_scrollbar.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
@@ -374,6 +367,19 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                           ),
                         ),
                       ),
-
-
-
+                    ); // GameScrollbar
+                  },
+                ), // LayoutBuilder
+              ), // AccentBaseLayout
+              if (_phase1Passed && !_isAnswered)
+                SpeakToConfirmOverlay(
+                  expectedWord: quest?.word ?? "",
+                  onResult: _submitPhase2Evaluation,
+                ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+}

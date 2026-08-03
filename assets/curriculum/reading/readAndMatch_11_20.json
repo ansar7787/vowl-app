@@ -1,667 +1,667 @@
 {
-    "gameType": "readAndMatch",
-    "batchIndex": 2,
-    "levels": "11-20",
-    "quests": [
+  "gameType": "readAndMatch",
+  "batchIndex": 2,
+  "levels": "11-20",
+  "quests": [
+    {
+      "id": "RDG_READANDMATCH_L11_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
         {
-            "id": "RDG_READANDMATCH_L11_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L11-Q1-0] Classroom",
-                    "value": "A room in a school where students have lessons."
-                },
-                {
-                    "key": "[L11-Q1-1] Playground",
-                    "value": "An outdoor area where children play at school."
-                },
-                {
-                    "key": "[L11-Q1-2] Library",
-                    "value": "A place with many books that people can read or borrow."
-                }
-            ],
-            "hint": "Think about different places you find inside or near a school.",
-            "explanation": "A classroom is for lessons, a playground is for playing, and a library is full of books to read or borrow. Each word names a different school-related place."
+          "key": "[L11-Q1-0] Classroom",
+          "value": "A room where students learn lessons together."
         },
         {
-            "id": "RDG_READANDMATCH_L11_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L11-Q2-0] Wash",
-                    "value": "To clean something using water and soap."
-                },
-                {
-                    "key": "[L11-Q2-1] Dry",
-                    "value": "To remove water from something."
-                },
-                {
-                    "key": "[L11-Q2-2] Clean",
-                    "value": "To remove dirt from something."
-                }
-            ],
-            "hint": "Think about the steps you take when taking care of clothes or dishes.",
-            "explanation": "Wash means to clean with water, dry means to remove the water afterward, and clean means to remove dirt. These words describe related household actions."
+          "key": "[L11-Q1-1] Library",
+          "value": "A building or room with many books to read or borrow."
         },
         {
-            "id": "RDG_READANDMATCH_L11_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L11-Q3-0] Husband",
-                    "value": "A married man, in relation to his wife."
-                },
-                {
-                    "key": "[L11-Q3-1] Wife",
-                    "value": "A married woman, in relation to her husband."
-                },
-                {
-                    "key": "[L11-Q3-2] Baby",
-                    "value": "A very young child, usually under one year old."
-                }
-            ],
-            "hint": "Think about different members of a family and their ages or roles.",
-            "explanation": "A husband and wife are married to each other, and a baby is a very young child. These words describe close family relationships."
-        },
-        {
-            "id": "RDG_READANDMATCH_L12_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L12-Q1-0] Spoon",
-                    "value": "A tool with a small bowl shape, used for eating soup or cereal."
-                },
-                {
-                    "key": "[L12-Q1-1] Fork",
-                    "value": "A tool with pointed parts, used for picking up solid food."
-                },
-                {
-                    "key": "[L12-Q1-2] Knife",
-                    "value": "A tool with a sharp edge, used for cutting food."
-                }
-            ],
-            "hint": "Think about the different tools you use at a dinner table.",
-            "explanation": "A spoon is for soup, a fork is for picking up food, and a knife is for cutting. Each word names a different eating tool."
-        },
-        {
-            "id": "RDG_READANDMATCH_L12_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L12-Q2-0] Lift",
-                    "value": "To raise something up using your hands or arms."
-                },
-                {
-                    "key": "[L12-Q2-1] Pull",
-                    "value": "To move something firmly toward you."
-                },
-                {
-                    "key": "[L12-Q2-2] Carry",
-                    "value": "To hold something and move it from one place to another."
-                }
-            ],
-            "hint": "Think about different ways you can move an object using your hands.",
-            "explanation": "Lift means raising something up, pull means moving something toward you, and carry means holding and moving it. These verbs describe related physical actions."
-        },
-        {
-            "id": "RDG_READANDMATCH_L12_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L12-Q3-0] Yesterday",
-                    "value": "The day before today."
-                },
-                {
-                    "key": "[L12-Q3-1] Tomorrow",
-                    "value": "The day after today."
-                },
-                {
-                    "key": "[L12-Q3-2] Now",
-                    "value": "At this present moment."
-                }
-            ],
-            "hint": "Think about time words that describe the past, the future, and the present.",
-            "explanation": "Yesterday refers to the past, tomorrow refers to the future, and now refers to the present moment. These words help you talk about when something happens."
-        },
-        {
-            "id": "RDG_READANDMATCH_L13_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L13-Q1-0] Umbrella",
-                    "value": "An object you open and hold above you to stay dry in rain."
-                },
-                {
-                    "key": "[L13-Q1-1] Coat",
-                    "value": "A piece of clothing worn over other clothes to stay warm."
-                },
-                {
-                    "key": "[L13-Q1-2] Boots",
-                    "value": "Strong shoes that cover the foot and part of the leg."
-                }
-            ],
-            "hint": "Think about items people use to stay comfortable in cold or wet weather.",
-            "explanation": "An umbrella keeps you dry in rain, a coat keeps you warm, and boots protect your feet and legs. Each word names something used in bad weather."
-        },
-        {
-            "id": "RDG_READANDMATCH_L13_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L13-Q2-0] Borrow",
-                    "value": "To take something with permission, planning to return it."
-                },
-                {
-                    "key": "[L13-Q2-1] Lend",
-                    "value": "To give something to someone, expecting it back later."
-                },
-                {
-                    "key": "[L13-Q2-2] Return",
-                    "value": "To give something back to its owner."
-                }
-            ],
-            "hint": "Think about the steps involved when someone uses another person's item temporarily.",
-            "explanation": "Borrow means taking something temporarily, lend means giving it temporarily, and return means giving it back. These words describe different sides of the same action."
-        },
-        {
-            "id": "RDG_READANDMATCH_L13_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L13-Q3-0] Tooth",
-                    "value": "A hard white part inside the mouth used for biting."
-                },
-                {
-                    "key": "[L13-Q3-1] Finger",
-                    "value": "One of the five parts at the end of a hand."
-                },
-                {
-                    "key": "[L13-Q3-2] Ear",
-                    "value": "The body part used for hearing."
-                }
-            ],
-            "hint": "Think about different parts of the human body and what each one does.",
-            "explanation": "A tooth is used for biting, a finger is part of the hand, and an ear is used for hearing. Each word names a different body part with its own job."
-        },
-        {
-            "id": "RDG_READANDMATCH_L14_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L14-Q1-0] Sunny",
-                    "value": "Describing weather with bright sunshine and few clouds."
-                },
-                {
-                    "key": "[L14-Q1-1] Cloudy",
-                    "value": "Describing weather with many clouds covering the sky."
-                },
-                {
-                    "key": "[L14-Q1-2] Windy",
-                    "value": "Describing weather with strong moving air."
-                }
-            ],
-            "hint": "Think about words that describe the sky and air on different kinds of days.",
-            "explanation": "Sunny means lots of sunshine, cloudy means lots of clouds, and windy means strong moving air. These adjectives describe different types of weather."
-        },
-        {
-            "id": "RDG_READANDMATCH_L14_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L14-Q2-0] Sweet",
-                    "value": "Having a taste like sugar."
-                },
-                {
-                    "key": "[L14-Q2-1] Sour",
-                    "value": "Having a sharp, tangy taste like lemon."
-                },
-                {
-                    "key": "[L14-Q2-2] Salty",
-                    "value": "Having a taste like salt."
-                }
-            ],
-            "hint": "Think about different tastes you might notice when eating food.",
-            "explanation": "Sweet tastes like sugar, sour tastes sharp like lemon, and salty tastes like salt. These words describe different flavors of food."
-        },
-        {
-            "id": "RDG_READANDMATCH_L14_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L14-Q3-0] Street",
-                    "value": "A road in a town or city, often with houses or shops."
-                },
-                {
-                    "key": "[L14-Q3-1] Park",
-                    "value": "An open public area with grass and trees for relaxing or playing."
-                },
-                {
-                    "key": "[L14-Q3-2] Bridge",
-                    "value": "A structure built to cross over a river, road, or valley."
-                }
-            ],
-            "hint": "Think about different places and structures you might see in a town.",
-            "explanation": "A street is a road with houses or shops, a park is a green area for relaxing, and a bridge crosses over something like a river. Each word names a different town feature."
-        },
-        {
-            "id": "RDG_READANDMATCH_L15_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L15-Q1-0] Wallet",
-                    "value": "A small case used to carry money and cards."
-                },
-                {
-                    "key": "[L15-Q1-1] Key",
-                    "value": "A small metal object used to lock or unlock a door."
-                },
-                {
-                    "key": "[L15-Q1-2] Umbrella Stand",
-                    "value": "A container near a door used to hold umbrellas."
-                }
-            ],
-            "hint": "Think about small everyday items people carry or keep near the front door.",
-            "explanation": "A wallet holds money and cards, a key opens locks, and an umbrella stand holds umbrellas near the door. Each word names a small but useful household item."
-        },
-        {
-            "id": "RDG_READANDMATCH_L15_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L15-Q2-0] Arrive",
-                    "value": "To reach a place after traveling."
-                },
-                {
-                    "key": "[L15-Q2-1] Leave",
-                    "value": "To go away from a place."
-                },
-                {
-                    "key": "[L15-Q2-2] Stay",
-                    "value": "To remain in a place without leaving."
-                }
-            ],
-            "hint": "Think about different stages of being at a place: getting there, remaining, and going away.",
-            "explanation": "Arrive means reaching a place, leave means going away from it, and stay means remaining there. These verbs describe different moments connected to a place."
-        },
-        {
-            "id": "RDG_READANDMATCH_L15_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L15-Q3-0] Easy",
-                    "value": "Not difficult; simple to do or understand."
-                },
-                {
-                    "key": "[L15-Q3-1] Difficult",
-                    "value": "Hard to do or understand."
-                },
-                {
-                    "key": "[L15-Q3-2] Possible",
-                    "value": "Able to happen or be done."
-                }
-            ],
-            "hint": "Think about words that describe how hard or achievable a task is.",
-            "explanation": "Easy means simple to do, difficult means hard to do, and possible means able to be done at all. These words describe different levels of challenge."
-        },
-        {
-            "id": "RDG_READANDMATCH_L16_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L16-Q1-0] Pillow",
-                    "value": "A soft cushion used to support your head while sleeping."
-                },
-                {
-                    "key": "[L16-Q1-1] Blanket",
-                    "value": "A large piece of cloth used to keep warm in bed."
-                },
-                {
-                    "key": "[L16-Q1-2] Mirror",
-                    "value": "A flat glass surface that shows your reflection."
-                }
-            ],
-            "hint": "Think about objects you typically find in a bedroom.",
-            "explanation": "A pillow supports your head, a blanket keeps you warm, and a mirror shows your reflection. Each word names a common bedroom item."
-        },
-        {
-            "id": "RDG_READANDMATCH_L16_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L16-Q2-0] Ask",
-                    "value": "To say something in order to get information or help."
-                },
-                {
-                    "key": "[L16-Q2-1] Answer",
-                    "value": "To respond to a question with information."
-                },
-                {
-                    "key": "[L16-Q2-2] Explain",
-                    "value": "To make something clear by describing it in detail."
-                }
-            ],
-            "hint": "Think about the steps involved in a conversation where someone wants information.",
-            "explanation": "Ask means requesting information, answer means responding to a question, and explain means describing something clearly. These words describe parts of communication."
-        },
-        {
-            "id": "RDG_READANDMATCH_L16_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L16-Q3-0] Empty",
-                    "value": "Containing nothing inside."
-                },
-                {
-                    "key": "[L16-Q3-1] Full",
-                    "value": "Containing as much as possible; not empty."
-                },
-                {
-                    "key": "[L16-Q3-2] Heavy",
-                    "value": "Having a lot of weight."
-                }
-            ],
-            "hint": "Think about words that describe how much is inside something or how much it weighs.",
-            "explanation": "Empty means nothing inside, full means containing a lot, and heavy means having a lot of weight. These adjectives describe physical qualities of objects."
-        },
-        {
-            "id": "RDG_READANDMATCH_L17_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L17-Q1-0] Ticket",
-                    "value": "A small piece of paper or card that allows you to travel or enter a place."
-                },
-                {
-                    "key": "[L17-Q1-1] Passport",
-                    "value": "An official document used to travel to other countries."
-                },
-                {
-                    "key": "[L17-Q1-2] Suitcase",
-                    "value": "A case used to carry clothes and belongings when traveling."
-                }
-            ],
-            "hint": "Think about items a person needs when traveling, especially by plane.",
-            "explanation": "A ticket lets you travel or enter a place, a passport is needed for international travel, and a suitcase carries your belongings. Each word names something important for a trip."
-        },
-        {
-            "id": "RDG_READANDMATCH_L17_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L17-Q2-0] Cook",
-                    "value": "To prepare food by heating it."
-                },
-                {
-                    "key": "[L17-Q2-1] Bake",
-                    "value": "To cook food, like bread or cakes, using dry heat in an oven."
-                },
-                {
-                    "key": "[L17-Q2-2] Boil",
-                    "value": "To cook food in very hot, bubbling water."
-                }
-            ],
-            "hint": "Think about different methods used to prepare food using heat.",
-            "explanation": "Cook is a general word for preparing food with heat, bake uses an oven for things like bread, and boil uses hot bubbling water. These words describe different cooking methods."
-        },
-        {
-            "id": "RDG_READANDMATCH_L17_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L17-Q3-0] Brother",
-                    "value": "A boy or man who has the same parents as you."
-                },
-                {
-                    "key": "[L17-Q3-1] Cousin",
-                    "value": "The child of your aunt or uncle."
-                },
-                {
-                    "key": "[L17-Q3-2] Grandmother",
-                    "value": "The mother of your mother or father."
-                }
-            ],
-            "hint": "Think about how each family member is related to you, near or distant.",
-            "explanation": "A brother shares the same parents as you, a cousin is the child of your aunt or uncle, and a grandmother is the mother of one of your parents. Each word describes a different family relationship."
-        },
-        {
-            "id": "RDG_READANDMATCH_L18_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L18-Q1-0] Email",
-                    "value": "A message sent electronically using the internet."
-                },
-                {
-                    "key": "[L18-Q1-1] Password",
-                    "value": "A secret word or set of characters used to access an account."
-                },
-                {
-                    "key": "[L18-Q1-2] Internet",
-                    "value": "A global network that connects computers and allows sharing information."
-                }
-            ],
-            "hint": "Think about basic words connected to using a computer or phone online.",
-            "explanation": "An email is a message sent online, a password protects your account, and the internet is the network connecting computers worldwide. These words are common in everyday technology use."
-        },
-        {
-            "id": "RDG_READANDMATCH_L18_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L18-Q2-0] Healthy",
-                    "value": "In good physical condition, free from illness."
-                },
-                {
-                    "key": "[L18-Q2-1] Sick",
-                    "value": "Not feeling well; suffering from an illness."
-                },
-                {
-                    "key": "[L18-Q2-2] Rest",
-                    "value": "To relax or sleep in order to regain energy."
-                }
-            ],
-            "hint": "Think about words connected to a person's physical condition and recovery.",
-            "explanation": "Healthy means in good condition, sick means having an illness, and rest means relaxing to regain energy. These words are useful for talking about health."
-        },
-        {
-            "id": "RDG_READANDMATCH_L18_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L18-Q3-0] Movie",
-                    "value": "A story shown on a screen, made of moving pictures."
-                },
-                {
-                    "key": "[L18-Q3-1] Song",
-                    "value": "A piece of music with words that is sung."
-                },
-                {
-                    "key": "[L18-Q3-2] Game",
-                    "value": "An activity played for fun, often with rules."
-                }
-            ],
-            "hint": "Think about different kinds of entertainment people enjoy in their free time.",
-            "explanation": "A movie is a filmed story, a song is sung music, and a game is a fun activity with rules. Each word names a different form of entertainment."
-        },
-        {
-            "id": "RDG_READANDMATCH_L19_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L19-Q1-0] Excuse Me",
-                    "value": "A polite phrase used to get someone's attention or apologize briefly."
-                },
-                {
-                    "key": "[L19-Q1-1] Thank You",
-                    "value": "A phrase used to show appreciation for something."
-                },
-                {
-                    "key": "[L19-Q1-2] Please",
-                    "value": "A polite word used when asking for something."
-                }
-            ],
-            "hint": "Think about polite phrases people use often in daily conversation.",
-            "explanation": "Excuse me is used to get attention politely, thank you shows appreciation, and please is used when asking politely. These are common polite expressions in English."
-        },
-        {
-            "id": "RDG_READANDMATCH_L19_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L19-Q2-0] Receipt",
-                    "value": "A printed paper that shows what you bought and how much you paid."
-                },
-                {
-                    "key": "[L19-Q2-1] Discount",
-                    "value": "A reduction in the usual price of something."
-                },
-                {
-                    "key": "[L19-Q2-2] Cashier",
-                    "value": "A person who takes payments in a shop."
-                }
-            ],
-            "hint": "Think about words connected to paying for something in a store.",
-            "explanation": "A receipt proves what you paid for, a discount lowers the price, and a cashier takes your payment. Each word relates to the shopping payment process."
-        },
-        {
-            "id": "RDG_READANDMATCH_L19_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L19-Q3-0] Near",
-                    "value": "Close in distance to something."
-                },
-                {
-                    "key": "[L19-Q3-1] Far",
-                    "value": "A long distance away from something."
-                },
-                {
-                    "key": "[L19-Q3-2] Between",
-                    "value": "In the space that separates two things."
-                }
-            ],
-            "hint": "Think about words that describe how objects or places are positioned relative to each other.",
-            "explanation": "Near means close in distance, far means a long way away, and between means in the middle of two things. These words describe position and distance."
-        },
-        {
-            "id": "RDG_READANDMATCH_L20_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L20-Q1-0] Fire",
-                    "value": "Heat and light produced by something burning."
-                },
-                {
-                    "key": "[L20-Q1-1] Smoke",
-                    "value": "The grey or black gas that rises from something burning."
-                },
-                {
-                    "key": "[L20-Q1-2] Water",
-                    "value": "A clear liquid needed by all living things to survive."
-                }
-            ],
-            "hint": "Think about natural elements you might see during an emergency or everyday life.",
-            "explanation": "Fire produces heat and light, smoke rises from something burning, and water is needed by all living things. These basic nature words are useful in many situations."
-        },
-        {
-            "id": "RDG_READANDMATCH_L20_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L20-Q2-0] Remember",
-                    "value": "To keep information in your mind and recall it later."
-                },
-                {
-                    "key": "[L20-Q2-1] Forget",
-                    "value": "To fail to remember something."
-                },
-                {
-                    "key": "[L20-Q2-2] Learn",
-                    "value": "To gain new knowledge or skill."
-                }
-            ],
-            "hint": "Think about different things your mind does with information over time.",
-            "explanation": "Remember means keeping information in mind, forget means failing to recall it, and learn means gaining new knowledge. These verbs describe mental actions."
-        },
-        {
-            "id": "RDG_READANDMATCH_L20_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L20-Q3-0] Safe",
-                    "value": "Free from danger or harm."
-                },
-                {
-                    "key": "[L20-Q3-1] Dangerous",
-                    "value": "Likely to cause harm or injury."
-                },
-                {
-                    "key": "[L20-Q3-2] Careful",
-                    "value": "Paying close attention in order to avoid danger or mistakes."
-                }
-            ],
-            "hint": "Think about words connected to staying free from harm.",
-            "explanation": "Safe means free from danger, dangerous means likely to cause harm, and careful means paying attention to avoid danger. These words are useful for talking about safety."
+          "key": "[L11-Q1-2] Office",
+          "value": "A room where people go to do work, often at a desk."
         }
-    ]
+      ],
+      "hint": "Each of these is a place, but people go there for different reasons.",
+      "explanation": "A classroom is where lessons happen, while a library is a quieter place built around books. An office breaks the pattern — people go there to work, not to study or read."
+    },
+    {
+      "id": "RDG_READANDMATCH_L11_Q2",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L11-Q2-0] Wash",
+          "value": "To remove dirt from something using water."
+        },
+        {
+          "key": "[L11-Q2-1] Dry",
+          "value": "To remove water or wetness from something."
+        },
+        {
+          "key": "[L11-Q2-2] Clean",
+          "value": "To remove dirt or mess to make something tidy."
+        }
+      ],
+      "hint": "These three actions often happen one after another, like doing laundry.",
+      "explanation": "You wash something to remove dirt with water, then dry it to remove the water itself. Clean is the broader word — it covers the whole job of making something tidy, not just one step."
+    },
+    {
+      "id": "RDG_READANDMATCH_L11_Q3",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L11-Q3-0] Husband",
+          "value": "A married man, in relation to his spouse."
+        },
+        {
+          "key": "[L11-Q3-1] Wife",
+          "value": "A married woman, in relation to her spouse."
+        },
+        {
+          "key": "[L11-Q3-2] Child",
+          "value": "A young person, or someone's son or daughter."
+        }
+      ],
+      "hint": "These words describe people connected by marriage and family.",
+      "explanation": "Husband and wife describe two married partners — one male, one female. Child is a different kind of family word; it describes a son or daughter, not a spouse."
+    },
+    {
+      "id": "RDG_READANDMATCH_L12_Q1",
+      "instruction": "Match each word with its definition.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L12-Q1-0] Spoon",
+          "value": "A tool with a small bowl shape, used for eating soup or soft food."
+        },
+        {
+          "key": "[L12-Q1-1] Fork",
+          "value": "A tool with pointed prongs, used for picking up food."
+        },
+        {
+          "key": "[L12-Q1-2] Knife",
+          "value": "A tool with a sharp edge, used for cutting food."
+        }
+      ],
+      "hint": "You'll find all three of these next to your plate at dinner.",
+      "explanation": "A spoon works well for soup or anything soft, while a fork is better for holding solid pieces of food still. A knife takes on a different job entirely — cutting the food into smaller pieces."
+    },
+    {
+      "id": "RDG_READANDMATCH_L12_Q2",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L12-Q2-0] Lift",
+          "value": "To raise something up from a lower position."
+        },
+        {
+          "key": "[L12-Q2-1] Pull",
+          "value": "To move something toward yourself using force."
+        },
+        {
+          "key": "[L12-Q2-2] Carry",
+          "value": "To hold and move something from one place to another."
+        }
+      ],
+      "hint": "Each of these actions describes what your arms can do with a heavy object.",
+      "explanation": "Lift means raising something up, while pull means dragging it toward you. Carry is different from both — it's about moving something from place to place once you're already holding it."
+    },
+    {
+      "id": "RDG_READANDMATCH_L12_Q3",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L12-Q3-0] Always",
+          "value": "At every time, without exception."
+        },
+        {
+          "key": "[L12-Q3-1] Never",
+          "value": "At no time, not ever."
+        },
+        {
+          "key": "[L12-Q3-2] Sometimes",
+          "value": "On some occasions, but not every time."
+        }
+      ],
+      "hint": "These words tell you how often something happens, from all the time to none at all.",
+      "explanation": "Always and never sit at opposite ends of frequency — one means every time, the other means not once. Sometimes lands in the middle, describing something that happens on occasion but not consistently."
+    },
+    {
+      "id": "RDG_READANDMATCH_L13_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L13-Q1-0] Umbrella",
+          "value": "A folding tool you hold above you to stay dry in the rain."
+        },
+        {
+          "key": "[L13-Q1-1] Coat",
+          "value": "A piece of clothing worn over other clothes to keep warm."
+        },
+        {
+          "key": "[L13-Q1-2] Boots",
+          "value": "Sturdy shoes that cover the foot and ankle, often worn in bad weather."
+        }
+      ],
+      "hint": "You might reach for all three of these on a cold, rainy day.",
+      "explanation": "An umbrella keeps rain off your head, while a coat keeps your body warm. Boots handle a different part of the job — protecting your feet from cold or wet ground."
+    },
+    {
+      "id": "RDG_READANDMATCH_L13_Q2",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L13-Q2-0] Borrow",
+          "value": "To take something with a plan to give it back later."
+        },
+        {
+          "key": "[L13-Q2-1] Lend",
+          "value": "To let someone use something of yours, expecting it back."
+        },
+        {
+          "key": "[L13-Q2-2] Return",
+          "value": "To give something back to its owner."
+        }
+      ],
+      "hint": "Two of these describe opposite sides of the same exchange.",
+      "explanation": "Borrow and lend describe the same event from two different people's viewpoints — one takes, the other gives. Return closes the story: it's the final step, when the item goes back to its owner."
+    },
+    {
+      "id": "RDG_READANDMATCH_L13_Q3",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L13-Q3-0] Tooth",
+          "value": "A hard, white part inside your mouth used for chewing."
+        },
+        {
+          "key": "[L13-Q3-1] Finger",
+          "value": "One of the five thin parts at the end of your hand."
+        },
+        {
+          "key": "[L13-Q3-2] Ear",
+          "value": "The part of your body used for hearing."
+        }
+      ],
+      "hint": "Each word names a small but important part of the body.",
+      "explanation": "A tooth helps you chew, a finger helps you hold and touch things, and an ear lets you hear sounds. Each one has a clearly different job on the body."
+    },
+    {
+      "id": "RDG_READANDMATCH_L14_Q1",
+      "instruction": "Match each word with its definition.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L14-Q1-0] Sunny",
+          "value": "Having clear skies with bright sunshine."
+        },
+        {
+          "key": "[L14-Q1-1] Cloudy",
+          "value": "Having the sky covered mostly by clouds."
+        },
+        {
+          "key": "[L14-Q1-2] Windy",
+          "value": "Having strong-moving air."
+        }
+      ],
+      "hint": "Look up — is the sky clear, covered, or is the air simply moving fast?",
+      "explanation": "Sunny and cloudy both describe how the sky looks, but in opposite ways — one is bright, the other is covered. Windy describes something else altogether: how strongly the air is moving, not how the sky looks."
+    },
+    {
+      "id": "RDG_READANDMATCH_L14_Q2",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L14-Q2-0] Sweet",
+          "value": "Having a taste like sugar."
+        },
+        {
+          "key": "[L14-Q2-1] Sour",
+          "value": "Having a sharp, acidic taste like a lemon."
+        },
+        {
+          "key": "[L14-Q2-2] Salty",
+          "value": "Having a taste like salt."
+        }
+      ],
+      "hint": "Imagine tasting sugar, then a lemon, then a potato chip.",
+      "explanation": "Sweet reminds most people of sugar, while sour brings a sharp taste like biting into a lemon. Salty takes yet another direction, matching the taste of salt itself."
+    },
+    {
+      "id": "RDG_READANDMATCH_L14_Q3",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L14-Q3-0] Street",
+          "value": "A road in a town or city, usually with buildings on each side."
+        },
+        {
+          "key": "[L14-Q3-1] Park",
+          "value": "An open, green area for relaxing or playing outdoors."
+        },
+        {
+          "key": "[L14-Q3-2] Bridge",
+          "value": "A structure built to cross over a river, road, or valley."
+        }
+      ],
+      "hint": "Each word names something you'd pass while walking through a city.",
+      "explanation": "A street is lined with buildings and traffic, while a park is an open green space for relaxing. A bridge serves a very different purpose — it simply helps you cross from one side to another."
+    },
+    {
+      "id": "RDG_READANDMATCH_L15_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L15-Q1-0] Wallet",
+          "value": "A small case used to carry money and cards."
+        },
+        {
+          "key": "[L15-Q1-1] Keys",
+          "value": "Small metal tools used to lock or unlock something."
+        },
+        {
+          "key": "[L15-Q1-2] Glasses",
+          "value": "Lenses worn over the eyes to help you see better."
+        }
+      ],
+      "hint": "These are three small items people often check for before leaving the house.",
+      "explanation": "A wallet holds your money and cards, while keys let you lock and unlock doors. Glasses handle a completely different job — helping your eyes see clearly."
+    },
+    {
+      "id": "RDG_READANDMATCH_L15_Q2",
+      "instruction": "Match each word with its definition.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L15-Q2-0] Arrive",
+          "value": "To reach a place after traveling."
+        },
+        {
+          "key": "[L15-Q2-1] Leave",
+          "value": "To go away from a place."
+        },
+        {
+          "key": "[L15-Q2-2] Stay",
+          "value": "To remain in a place without leaving."
+        }
+      ],
+      "hint": "Picture a trip: one word starts it, one word ends it, and one word pauses it.",
+      "explanation": "Arrive marks the moment you reach a place, while leave marks the moment you go. Stay works differently from both — it means staying put, without any movement at all."
+    },
+    {
+      "id": "RDG_READANDMATCH_L15_Q3",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L15-Q3-0] Easy",
+          "value": "Able to be done without much effort."
+        },
+        {
+          "key": "[L15-Q3-1] Difficult",
+          "value": "Hard to do, needing real effort."
+        },
+        {
+          "key": "[L15-Q3-2] Impossible",
+          "value": "Not able to be done at all."
+        }
+      ],
+      "hint": "Rank these from something simple to something that truly cannot be done.",
+      "explanation": "Easy and difficult sit at two points on the same scale, describing how much effort a task takes. Impossible goes past both of them — it means the task can't be done no matter how much effort you give it."
+    },
+    {
+      "id": "RDG_READANDMATCH_L16_Q1",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L16-Q1-0] Pillow",
+          "value": "A soft cushion you rest your head on while sleeping."
+        },
+        {
+          "key": "[L16-Q1-1] Blanket",
+          "value": "A large piece of soft fabric used to keep warm in bed."
+        },
+        {
+          "key": "[L16-Q1-2] Mirror",
+          "value": "A piece of glass that shows your reflection."
+        }
+      ],
+      "hint": "Two of these are for sleeping, and one is for checking how you look.",
+      "explanation": "A pillow supports your head, and a blanket keeps your whole body warm — both are made for sleeping. A mirror has nothing to do with sleep at all; it simply reflects whatever stands in front of it."
+    },
+    {
+      "id": "RDG_READANDMATCH_L16_Q2",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L16-Q2-0] Ask",
+          "value": "To put a question to someone."
+        },
+        {
+          "key": "[L16-Q2-1] Answer",
+          "value": "To reply to a question."
+        },
+        {
+          "key": "[L16-Q2-2] Explain",
+          "value": "To describe something clearly so it can be understood."
+        }
+      ],
+      "hint": "These words describe the back-and-forth of a conversation.",
+      "explanation": "Ask starts the exchange with a question, and answer responds to it directly. Explain goes further than a simple answer — it means giving enough detail for something to be truly understood."
+    },
+    {
+      "id": "RDG_READANDMATCH_L16_Q3",
+      "instruction": "Match each word with its definition.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L16-Q3-0] Empty",
+          "value": "Having nothing inside."
+        },
+        {
+          "key": "[L16-Q3-1] Full",
+          "value": "Holding as much as possible; not able to hold more."
+        },
+        {
+          "key": "[L16-Q3-2] Broken",
+          "value": "Damaged and no longer working correctly."
+        }
+      ],
+      "hint": "Two of these describe how much is inside something — the third describes its condition.",
+      "explanation": "Empty and full are opposites that describe how much is inside a container. Broken changes the subject entirely — it's about damage and condition, not about how much space is used."
+    },
+    {
+      "id": "RDG_READANDMATCH_L17_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L17-Q1-0] Ticket",
+          "value": "A small piece of paper or digital pass that lets you travel or enter somewhere."
+        },
+        {
+          "key": "[L17-Q1-1] Passport",
+          "value": "An official document that proves your identity when traveling abroad."
+        },
+        {
+          "key": "[L17-Q1-2] Suitcase",
+          "value": "A case used to carry clothes and belongings while traveling."
+        }
+      ],
+      "hint": "You'd need to check for all three of these before a flight abroad.",
+      "explanation": "A ticket lets you board, and a passport proves who you are once you land. A suitcase serves a different purpose altogether — it simply carries your belongings along with you."
+    },
+    {
+      "id": "RDG_READANDMATCH_L17_Q2",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L17-Q2-0] Cook",
+          "value": "To prepare food using heat, in any way."
+        },
+        {
+          "key": "[L17-Q2-1] Bake",
+          "value": "To cook food using dry heat, usually in an oven."
+        },
+        {
+          "key": "[L17-Q2-2] Boil",
+          "value": "To cook food in water that has reached its highest temperature."
+        }
+      ],
+      "hint": "One of these is a general word, and the other two describe specific methods.",
+      "explanation": "Cook is the general word for preparing food with heat, no matter the method. Bake and boil are two specific ways of doing that — one uses an oven, and the other uses bubbling water."
+    },
+    {
+      "id": "RDG_READANDMATCH_L17_Q3",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L17-Q3-0] Brother",
+          "value": "A boy or man with the same parents as you."
+        },
+        {
+          "key": "[L17-Q3-1] Cousin",
+          "value": "The child of your aunt or uncle."
+        },
+        {
+          "key": "[L17-Q3-2] Grandmother",
+          "value": "The mother of your mother or father."
+        }
+      ],
+      "hint": "Each word describes a family member from a different branch of the family tree.",
+      "explanation": "A brother shares your own parents, while a cousin comes from your aunt or uncle's side of the family. A grandmother sits in a different generation entirely — she's a parent of one of your own parents."
+    },
+    {
+      "id": "RDG_READANDMATCH_L18_Q1",
+      "instruction": "Match each word with its definition.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L18-Q1-0] Email",
+          "value": "A message sent electronically over the internet."
+        },
+        {
+          "key": "[L18-Q1-1] Password",
+          "value": "A secret word or code used to protect an account."
+        },
+        {
+          "key": "[L18-Q1-2] Wifi",
+          "value": "A wireless connection that lets devices access the internet."
+        }
+      ],
+      "hint": "All three of these are things you need to check your messages online.",
+      "explanation": "An email is the message itself, while a password is what protects your account from other people. Wifi plays a different role — it's the connection that lets your device reach the internet in the first place."
+    },
+    {
+      "id": "RDG_READANDMATCH_L18_Q2",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L18-Q2-0] Healthy",
+          "value": "In good physical condition, without illness."
+        },
+        {
+          "key": "[L18-Q2-1] Sick",
+          "value": "Feeling unwell or suffering from an illness."
+        },
+        {
+          "key": "[L18-Q2-2] Rest",
+          "value": "To relax or sleep in order to recover energy."
+        }
+      ],
+      "hint": "Two of these describe how your body feels, and one describes what helps it.",
+      "explanation": "Healthy and sick sit at opposite ends of wellbeing — one means you're well, the other means you're not. Rest is different from both; it's an action you take, often to move from sick back toward healthy."
+    },
+    {
+      "id": "RDG_READANDMATCH_L18_Q3",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L18-Q3-0] Movie",
+          "value": "A story shown on screen through moving pictures."
+        },
+        {
+          "key": "[L18-Q3-1] Song",
+          "value": "A piece of music with words, meant to be sung."
+        },
+        {
+          "key": "[L18-Q3-2] Game",
+          "value": "An activity played for fun, often with rules."
+        }
+      ],
+      "hint": "Each word names a different way people enjoy their free time.",
+      "explanation": "A movie tells a story through pictures, and a song delivers a message through music. A game takes a different form again — it invites you to actively play, not just watch or listen."
+    },
+    {
+      "id": "RDG_READANDMATCH_L19_Q1",
+      "instruction": "Match each expression with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L19-Q1-0] Excuse Me",
+          "value": "Words used to politely get someone's attention or apologize for a small interruption."
+        },
+        {
+          "key": "[L19-Q1-1] Thank You",
+          "value": "Words used to show gratitude for something."
+        },
+        {
+          "key": "[L19-Q1-2] Please",
+          "value": "A word added to a request to make it more polite."
+        }
+      ],
+      "hint": "All three of these are polite phrases you'll use many times a day.",
+      "explanation": "Excuse me helps you politely interrupt or get attention, while thank you shows gratitude after someone helps you. Please works earlier in that timeline — it softens a request before anyone has done anything yet."
+    },
+    {
+      "id": "RDG_READANDMATCH_L19_Q2",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L19-Q2-0] Receipt",
+          "value": "A printed or digital record showing what you paid for."
+        },
+        {
+          "key": "[L19-Q2-1] Discount",
+          "value": "A reduction in the usual price of something."
+        },
+        {
+          "key": "[L19-Q2-2] Cashier",
+          "value": "A person who takes payments at a shop or store."
+        }
+      ],
+      "hint": "Each word relates to a different moment in the process of paying at a store.",
+      "explanation": "A discount lowers the price before you pay, and a cashier is the person who takes your payment. A receipt comes last of all — it's your proof of the purchase after everything is done."
+    },
+    {
+      "id": "RDG_READANDMATCH_L19_Q3",
+      "instruction": "Match each word with its definition.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L19-Q3-0] Near",
+          "value": "Close to something in distance."
+        },
+        {
+          "key": "[L19-Q3-1] Far",
+          "value": "A long distance away from something."
+        },
+        {
+          "key": "[L19-Q3-2] Between",
+          "value": "In the space that separates two things."
+        }
+      ],
+      "hint": "These words describe where one thing is compared to another.",
+      "explanation": "Near and far are opposites that describe distance — one is close, the other isn't. Between describes something else entirely: a position in the middle, with something on each side."
+    },
+    {
+      "id": "RDG_READANDMATCH_L20_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L20-Q1-0] Fire",
+          "value": "Flames that burn and produce heat and light."
+        },
+        {
+          "key": "[L20-Q1-1] Smoke",
+          "value": "The gray or black cloud that rises from something burning."
+        },
+        {
+          "key": "[L20-Q1-2] Exit",
+          "value": "A way out of a building, especially in an emergency."
+        }
+      ],
+      "hint": "If one of these appears, you should look for the other right away.",
+      "explanation": "Fire is the flame itself, and smoke is the cloud it produces as it burns. An exit is your safe response to both — the way out if either one puts you in danger."
+    },
+    {
+      "id": "RDG_READANDMATCH_L20_Q2",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L20-Q2-0] Remember",
+          "value": "To keep information in your mind and recall it later."
+        },
+        {
+          "key": "[L20-Q2-1] Forget",
+          "value": "To fail to remember something."
+        },
+        {
+          "key": "[L20-Q2-2] Learn",
+          "value": "To gain new knowledge or a new skill."
+        }
+      ],
+      "hint": "One of these happens before the other two even become possible.",
+      "explanation": "You have to learn something before you can either remember or forget it. Remember and forget are opposites that come afterward, describing whether that information stays in your mind or slips away."
+    },
+    {
+      "id": "RDG_READANDMATCH_L20_Q3",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L20-Q3-0] Safe",
+          "value": "Free from harm or risk."
+        },
+        {
+          "key": "[L20-Q3-1] Dangerous",
+          "value": "Likely to cause harm or injury."
+        },
+        {
+          "key": "[L20-Q3-2] Careful",
+          "value": "Paying close attention to avoid mistakes or harm."
+        }
+      ],
+      "hint": "Two of these describe a situation, and one describes how a person behaves in it.",
+      "explanation": "Safe and dangerous describe a place or situation — one carries little risk, the other carries a lot. Careful describes a person's behavior instead, especially the kind of behavior that helps turn a dangerous situation into a safe one."
+    }
+  ]
 }

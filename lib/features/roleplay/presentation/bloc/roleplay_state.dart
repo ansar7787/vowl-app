@@ -47,7 +47,7 @@ WrongAnswerResult processWrongAnswer(RoleplayLoaded state) {
 // versions. If your project targets Dart 3.0+ you can optionally add the
 // `sealed` modifier to RoleplayState for exhaustive switch checking.
 
-import 'package:vowl/core/presentation/bloc/game_state_base.dart';
+
 
 /// Root state class.
 abstract class RoleplayState extends Equatable implements GameStateBase {

@@ -9,6 +9,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/core/utils/text_similarity_helper.dart';
 import 'package:vowl/core/utils/ml_services/language_id_service.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 /// Universal "Speak to Confirm" overlay that slides up after a correct
 /// click/drag answer, requiring the user to say the answer aloud before
@@ -87,6 +88,8 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay>
   List<String> _spokenCandidates = [];
   int _attempts = 0;
   _ConfirmResult? _result;
+  bool _isLoadingPrefs = true;
+  bool _globalSkipEnabled = false;
 
   late final AnimationController _pulseController;
 
@@ -97,12 +100,28 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay>
       vsync: this,
       duration: const Duration(milliseconds: 1200),
     )..repeat(reverse: true);
+    _checkGlobalSkip();
+  }
+
+  Future<void> _checkGlobalSkip() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final skipEnabled = prefs.getBool('skip_speech_enabled') ?? false;
+      if (!mounted) return;
+      if (skipEnabled) {
+        widget.onSkipped();
+      } else {
+        setState(() => _isLoadingPrefs = false);
+      }
+    } catch (_) {
+      if (mounted) setState(() => _isLoadingPrefs = false);
+    }
   }
 
   @override
   void dispose() {
     _pulseController.dispose();
-    _speechService.stop();
+    _speechService.cancel();
     super.dispose();
   }
 
@@ -204,6 +223,8 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay>
 
   @override
   Widget build(BuildContext context) {
+    if (_isLoadingPrefs) return const SizedBox.shrink();
+
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Positioned(
@@ -413,20 +434,71 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay>
             if (widget.allowSkip && _result != _ConfirmResult.success)
               Padding(
                 padding: EdgeInsets.only(top: 12.h),
-                child: ScaleButton(
-                  onTap: widget.onSkipped,
-                  child: Text(
-                    _attempts >= widget.maxAttempts
-                        ? 'CONTINUE'
-                        : 'SKIP',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.w700,
-                      color: subtitleColor,
-                      letterSpacing: 1.5,
+                child: Column(
+                  children: [
+                    ScaleButton(
+                      onTap: () async {
+                        if (_globalSkipEnabled) {
+                          final prefs = await SharedPreferences.getInstance();
+                          await prefs.setBool('skip_speech_enabled', true);
+                        }
+                        widget.onSkipped();
+                      },
+                      child: Text(
+                        _attempts >= widget.maxAttempts
+                            ? 'CONTINUE'
+                            : 'CAN\'T SPEAK NOW',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w700,
+                          color: subtitleColor,
+                          letterSpacing: 1.5,
+                        ),
+                      ),
                     ),
-                  ),
+                    if (_attempts < widget.maxAttempts) ...[
+                      SizedBox(height: 8.h),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            height: 24.r,
+                            width: 24.r,
+                            child: Checkbox(
+                              value: _globalSkipEnabled,
+                              onChanged: (val) {
+                                setState(() {
+                                  _globalSkipEnabled = val ?? false;
+                                });
+                              },
+                              activeColor: widget.primaryColor,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(4.r),
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 4.w),
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                _globalSkipEnabled = !_globalSkipEnabled;
+                              });
+                            },
+                            child: Text(
+                              'Skip all speaking tasks for now',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w500,
+                                color: subtitleColor.withValues(alpha: 0.8),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ],
                 ),
               ),
 

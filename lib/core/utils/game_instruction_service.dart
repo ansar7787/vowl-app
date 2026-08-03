@@ -102,7 +102,8 @@ class GameInstructionService {
         return const GameBriefing(
           title: "Voice Mastery",
           icon: Icons.record_voice_over_rounded,
-          objective: "Tap mic and repeat the phrase clearly at a natural pace.",
+          objective:
+              "Tap mic and repeat the phrase clearly at a natural pace. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
           rules: [
             "Find a quiet place",
             "Speak at a natural pace",
@@ -116,7 +117,8 @@ class GameInstructionService {
         return const GameBriefing(
           title: "Audio Analysis",
           icon: Icons.headphones_rounded,
-          objective: "Listen carefully and choose the correct answer option.",
+          objective:
+              "Listen carefully and choose the correct answer option. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
           rules: ["Use headphones", "Focus on intonation", "Identify keywords"],
           actionText: "Initialize Feed",
           tip:
@@ -127,7 +129,7 @@ class GameInstructionService {
           title: "Text Comprehension",
           icon: Icons.menu_book_rounded,
           objective:
-              "Read the passage carefully and answer the comprehension questions.",
+              "Read the passage carefully and answer the comprehension questions. Mastering reading comprehension allows you to quickly extract key information in the real world.",
           rules: [
             "Read the whole text",
             "Identify main ideas",
@@ -142,7 +144,7 @@ class GameInstructionService {
           title: "Sentence Construction",
           icon: Icons.edit_note_rounded,
           objective:
-              "Arrange the words in the correct order to build a complete sentence.",
+              "Arrange the words in the correct order to build a complete sentence. Mastering this skill ensures your written communication is clear, professional, and effective.",
           rules: [
             "Check your spelling",
             "Check punctuation",
@@ -157,7 +159,7 @@ class GameInstructionService {
           title: "Structural Logic",
           icon: Icons.architecture_rounded,
           objective:
-              "Fix the underlying structural errors to complete the sentence.",
+              "Fix the underlying structural errors to complete the sentence. Mastering structural rules ensures your English is accurate and easily understood.",
           rules: [
             "Identify errors",
             "Choose the correction",
@@ -172,7 +174,7 @@ class GameInstructionService {
           title: "Word Power",
           icon: Icons.auto_awesome_rounded,
           objective:
-              "Match words to their correct definitions to expand your vocabulary.",
+              "Match words to their correct definitions to expand your vocabulary. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
           rules: [
             "Memorize the meanings",
             "Understand context",
@@ -187,7 +189,7 @@ class GameInstructionService {
           title: "Phonetic Drill",
           icon: Icons.music_note_rounded,
           objective:
-              "Focus on rhythm and pitch. Sound exactly like a native speaker.",
+              "Focus on rhythm and pitch. Sound exactly like a native speaker. Mastering pronunciation ensures your spoken English sounds clear and natural.",
           rules: [
             "Listen to intonation",
             "Mimic the rhythm",
@@ -202,7 +204,7 @@ class GameInstructionService {
           title: "Social Simulation",
           icon: Icons.groups_rounded,
           objective:
-              "Navigate social scenarios by selecting the best conversational response.",
+              "Navigate social scenarios by selecting the best conversational response. Mastering situational responses ensures you can navigate social interactions with confidence.",
           rules: ["Stay in character", "Think of the goal", "React naturally"],
           actionText: "Enter Scenario",
           tip:
@@ -219,7 +221,7 @@ class GameInstructionService {
       title: "Speed Spelling",
       icon: Icons.bolt_rounded,
       objective:
-          "Tap the floating letters to spell the target word correctly. Mastering spelling patterns ensures your written communication is professional and easily understood in the real world.",
+          "Tap the floating letters to spell the target word correctly. Mastering this skill ensures your written communication is clear, professional, and effective.",
       rules: [
         "Spelling must be exact",
         "Sound out the syllables",
@@ -233,7 +235,7 @@ class GameInstructionService {
       title: "Idiom Master",
       icon: Icons.lightbulb_rounded,
       objective:
-          "Match the idiom to its real meaning. Mastering idioms helps you speak more naturally and understand native speakers in everyday conversations.",
+          "Match the idiom to its real meaning. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
       rules: [
         "Analyze the context clue",
         "Identify the core meaning",
@@ -247,7 +249,7 @@ class GameInstructionService {
       title: "Minimal Pairs",
       icon: Icons.hearing_rounded,
       objective:
-          "Listen to the word and select the correct matching sound. Mastering minimal pairs helps you distinguish subtle vowel length and tension differences, ensuring your spoken English is clear and easily understood.",
+          "Listen to the word and select the correct matching sound. Mastering pronunciation ensures your spoken English sounds clear and natural.",
       rules: [
         "Listen to the target word",
         "Notice vowel length and tension",
@@ -261,7 +263,7 @@ class GameInstructionService {
       title: "Consonant Clarity",
       icon: Icons.record_voice_over_rounded,
       objective:
-          "Identify the correct target consonant phoneme. Mastering clear consonant pronunciation prevents misunderstandings and makes your spoken English sound natural and crisp in real-world conversations.",
+          "Identify the target consonant to refine your pronunciation and clear up real-world communication. Mastering pronunciation ensures your spoken English sounds clear and natural.",
       rules: [
         "Listen to the target word",
         "Identify the correct sound",
@@ -275,7 +277,7 @@ class GameInstructionService {
       title: "Pitch Modulation",
       icon: Icons.show_chart_rounded,
       objective:
-          "Listen carefully and identify the correct pitch pattern of the spoken phrase. Mastering pitch modulation helps convey the right emotion, intent, and nuance in real-world conversations.",
+          "Listen to the speaker's pitch and select the matching modulation pattern to master how English speakers convey energy and emotion through voice. Mastering pronunciation ensures your spoken English sounds clear and natural.",
       rules: [
         "Listen to the phrase",
         "Analyze the pitch contour",
@@ -289,7 +291,7 @@ class GameInstructionService {
       title: "Pitch Pattern Match",
       icon: Icons.music_note_rounded,
       objective:
-          "Identify the correct emphasis in the sentence based on the context. Mastering pitch patterns helps you communicate nuance and meaning accurately in spoken English.",
+          "Replicate the musical timing and pitch contour of the full sentence. Mastering pronunciation ensures your spoken English sounds clear and natural.",
       rules: [
         "Listen to the sentence",
         "Analyze the emphasis",
@@ -303,7 +305,7 @@ class GameInstructionService {
       title: "Shadowing Challenge",
       icon: Icons.record_voice_over_rounded,
       objective:
-          "Listen to the spoken sentence and select the correct phonetic rule that explains how the words link or change.",
+          "Listen to the spoken sentence and select the correct phonetic rule that explains how the words link or change. Mastering pronunciation ensures your spoken English sounds clear and natural.",
       rules: [
         "Listen to the phrase closely",
         "Analyze the sound connection",
@@ -317,7 +319,7 @@ class GameInstructionService {
       title: "Word Linking",
       icon: Icons.link_rounded,
       objective:
-          "Identify the correct word linking pattern. Mastering word linking ensures your spoken English sounds smooth, connected, and natural.",
+          "Master word boundary linking to speak with native fluid rhythms. Mastering pronunciation ensures your spoken English sounds clear and natural.",
       rules: [
         "Listen to the phrase",
         "Find where sounds fuse",
@@ -333,7 +335,7 @@ class GameInstructionService {
       title: "Echo Master",
       icon: Icons.graphic_eq_rounded,
       objective:
-          "Listen carefully and repeat the sentence matching cadence and wave patterns.",
+          "Listen carefully and repeat the sentence matching cadence and wave patterns. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
       rules: ["Hold mic to record", "Trace sound wave", "Master the cadence"],
       actionText: "Start Echo",
       tip:
@@ -343,7 +345,7 @@ class GameInstructionService {
       title: "Vocal Decoder",
       icon: Icons.find_in_page_rounded,
       objective:
-          "Read the prompt and speak the missing word clearly to fill the blank.",
+          "Read the prompt and speak the missing word clearly to fill the blank. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
       rules: [
         "Identify the gap",
         "Speak the word clearly",
@@ -357,7 +359,7 @@ class GameInstructionService {
       title: "Crisis Communicator",
       icon: Icons.emergency_rounded,
       objective:
-          "Orally provide a clear, direct solution to the real-world scenario.",
+          "Orally provide a clear, direct solution to the real-world scenario. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
       rules: [
         "Understand context",
         "Speak your solution",
@@ -371,7 +373,7 @@ class GameInstructionService {
       title: "Visual Narrator",
       icon: Icons.image_search_rounded,
       objective:
-          "Describe the image scene clearly using descriptive adjectives.",
+          "Describe the image scene clearly using descriptive adjectives. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
       rules: [
         "Analyze the image",
         "Speak descriptive details",
@@ -385,7 +387,7 @@ class GameInstructionService {
       title: "Voice Validator",
       icon: Icons.fact_check_rounded,
       objective:
-          "Answer the factual questions firmly with a spoken 'Yes' or 'No'.",
+          "Answer the factual questions firmly with a spoken 'Yes' or 'No'. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
       rules: [
         "Listen to the question",
         "Speak confirmation clearly",
@@ -398,7 +400,8 @@ class GameInstructionService {
     GameSubtype.speakSynonym: GameBriefing(
       title: "Lexical Speaker",
       icon: Icons.library_books_rounded,
-      objective: "Orally state a correct synonym for the target word.",
+      objective:
+          "Orally state a correct synonym for the target word. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
       rules: [
         "Find similar meaning",
         "Speak synonym clearly",
@@ -412,7 +415,7 @@ class GameInstructionService {
       title: "Scene Architect",
       icon: Icons.theater_comedy_rounded,
       objective:
-          "Speak your roleplay script lines with correct emotion and phrasing.",
+          "Speak your roleplay script lines with correct emotion and phrasing. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
       rules: ["Follow the script", "Speak with feeling", "Keep the flow going"],
       actionText: "Enter Scene",
       tip:
@@ -422,7 +425,7 @@ class GameInstructionService {
       title: "Phonetic Precision",
       icon: Icons.record_voice_over_rounded,
       objective:
-          "Perfect mouth movements to pronounce challenging sounds and clusters.",
+          "Perfect mouth movements to pronounce challenging sounds and clusters. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
       rules: [
         "Focus on mouth shape",
         "Repeat target phoneme",
@@ -435,7 +438,8 @@ class GameInstructionService {
     GameSubtype.speakOpposite: GameBriefing(
       title: "Antonym Orator",
       icon: Icons.compare_arrows_rounded,
-      objective: "Orally state the direct opposite/antonym of the prompt word.",
+      objective:
+          "Orally state the direct opposite/antonym of the prompt word. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
       rules: ["Analyze target", "Speak the antonym", "Maintain accuracy"],
       actionText: "Vocalize Opposite",
       tip:
@@ -445,7 +449,7 @@ class GameInstructionService {
       title: "Social Fluent",
       icon: Icons.chat_bubble_rounded,
       objective:
-          "Master common daily idioms to speak naturally and connect with native speakers in real-world conversations.",
+          "Master common daily idioms to speak naturally and connect with native speakers in real-world conversations. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
       rules: [
         "Swipe to reveal idiom",
         "Listen to expression",
@@ -460,7 +464,7 @@ class GameInstructionService {
       title: "Ink Decoder",
       icon: Icons.water_drop_rounded,
       objective:
-          "Listen to the audio feed and type the missing words in the transcript.",
+          "Listen to the audio feed and type the missing words in the transcript. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
       rules: [
         "Smear the ink",
         "Listen for the gap",
@@ -473,7 +477,8 @@ class GameInstructionService {
     GameSubtype.audioMultipleChoice: GameBriefing(
       title: "Sonic Satellites",
       icon: Icons.track_changes_rounded,
-      objective: "Listen to the audio passage and select the correct answer.",
+      objective:
+          "Listen to the audio passage and select the correct answer. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
       rules: [
         "Spin satellites",
         "Listen to speaker",
@@ -486,7 +491,7 @@ class GameInstructionService {
       title: "Timeline Scrubber",
       icon: Icons.waves_rounded,
       objective:
-          "Listen and arrange the spoken segments in their correct chronological order.",
+          "Listen and arrange the spoken segments in their correct chronological order. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
       rules: [
         "Listen to stream",
         "Snap segments to timeline",
@@ -500,7 +505,7 @@ class GameInstructionService {
       title: "Signal Validator",
       icon: Icons.verified_user_rounded,
       objective:
-          "Listen to the speaker and verify if the claim is true or false.",
+          "Listen to the speaker and verify if the claim is true or false. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
       rules: [
         "Analyze the claim",
         "Compare with audio data",
@@ -514,7 +519,7 @@ class GameInstructionService {
       title: "Thematic Linker",
       icon: Icons.category_rounded,
       objective:
-          "Listen to the audio sound and match it with the correct visual image.",
+          "Listen to the audio sound and match it with the correct visual image. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
       rules: ["Scan tiles", "Match sound to symbol", "Confirm thematic link"],
       actionText: "Confirm Link",
       tip:
@@ -523,7 +528,8 @@ class GameInstructionService {
     GameSubtype.fastSpeechDecoder: GameBriefing(
       title: "Nuance Calibrator",
       icon: Icons.settings_input_composite_rounded,
-      objective: "Decode rapid native speech by picking out word boundaries.",
+      objective:
+          "Decode rapid native speech by picking out word boundaries. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
       rules: [
         "Rotate gears",
         "Listen for speed transitions",
@@ -537,7 +543,7 @@ class GameInstructionService {
       title: "Sentiment Prober",
       icon: Icons.psychology_rounded,
       objective:
-          "Identify the speaker's emotional state from their pitch and tone.",
+          "Identify the speaker's emotional state from their pitch and tone. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
       rules: [
         "Navigate core",
         "Analyze pitch & rhythm",
@@ -551,7 +557,7 @@ class GameInstructionService {
       title: "Spotlight Search",
       icon: Icons.flashlight_on_rounded,
       objective:
-          "Listen for specific names, numbers, or details within the passage.",
+          "Listen for specific names, numbers, or details within the passage. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
       rules: ["Scan details", "Listen for target keywords", "Identify match"],
       actionText: "Start Search",
       tip:
@@ -561,7 +567,7 @@ class GameInstructionService {
       title: "Inference Lens",
       icon: Icons.biotech_rounded,
       objective:
-          "Infer implications in the spoken passage that are not explicitly stated.",
+          "Infer implications in the spoken passage that are not explicitly stated. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
       rules: [
         "Read between waves",
         "Deduce the subtext",
@@ -575,7 +581,7 @@ class GameInstructionService {
       title: "Spatial Anchor",
       icon: Icons.radar_rounded,
       objective:
-          "Sharpen your situational awareness by identifying environments solely through their ambient soundscape, essential for real-world immersion.",
+          "Sharpen your situational awareness by identifying environments solely through their ambient soundscape, essential for real-world immersion. Mastering audio analysis helps you accurately understand native speakers in real-world conversations.",
       rules: [
         "Listen to background noise",
         "Scan the radar options",
@@ -590,7 +596,7 @@ class GameInstructionService {
       title: "Insight Analyst",
       icon: Icons.fact_check_rounded,
       objective:
-          "Read the passage and select correct answers to comprehension questions.",
+          "Read the passage and select correct answers to comprehension questions. Mastering reading comprehension allows you to quickly extract key information in the real world.",
       rules: ["Refer back to text", "Verify every detail", "Think critically"],
       actionText: "Analyze Text",
       tip:
@@ -600,7 +606,7 @@ class GameInstructionService {
       title: "Lexical Linker",
       icon: Icons.menu_book_rounded,
       objective:
-          "Find and match word definitions directly within the passage context.",
+          "Find and match word definitions directly within the passage context. Mastering reading comprehension allows you to quickly extract key information in the real world.",
       rules: ["Analyze context", "Match word to meaning", "Build vocabulary"],
       actionText: "Link Words",
       tip:
@@ -609,7 +615,8 @@ class GameInstructionService {
     GameSubtype.trueFalseReading: GameBriefing(
       title: "Truth Verifier",
       icon: Icons.verified_user_rounded,
-      objective: "Determine if statements are true or false based on the text.",
+      objective:
+          "Determine if statements are true or false based on the text. Mastering reading comprehension allows you to quickly extract key information in the real world.",
       rules: ["Locate the evidence", "Check for nuances", "Validate truth"],
       actionText: "Verify Truth",
       tip: "Be careful of 'absolute' words like 'always', 'never', or 'only'!",
@@ -618,7 +625,7 @@ class GameInstructionService {
       title: "Structure Architect",
       icon: Icons.architecture_rounded,
       objective:
-          "Arrange scrambled sentences into their logical paragraph order.",
+          "Arrange scrambled sentences into their logical paragraph order. Mastering reading comprehension allows you to quickly extract key information in the real world.",
       rules: ["Find the logic", "Check transitions", "Rebuild the system"],
       actionText: "Rebuild Flow",
       tip:
@@ -627,7 +634,8 @@ class GameInstructionService {
     GameSubtype.readingSpeedCheck: GameBriefing(
       title: "Velocity Reader",
       icon: Icons.speed_rounded,
-      objective: "Test your reading speed and comprehension under a timer.",
+      objective:
+          "Test your reading speed and comprehension under a timer. Mastering reading comprehension allows you to quickly extract key information in the real world.",
       rules: ["Read fast", "Maintain accuracy", "Beat the timer"],
       actionText: "Race Timer",
       tip:
@@ -636,7 +644,8 @@ class GameInstructionService {
     GameSubtype.guessTitle: GameBriefing(
       title: "Title Tactician",
       icon: Icons.title_rounded,
-      objective: "Read the passage and choose the most appropriate title.",
+      objective:
+          "Read the passage and choose the most appropriate title. Mastering reading comprehension allows you to quickly extract key information in the real world.",
       rules: ["Identify main theme", "Check all options", "Summarize the core"],
       actionText: "Deduce Title",
       tip:
@@ -645,7 +654,8 @@ class GameInstructionService {
     GameSubtype.readAndMatch: GameBriefing(
       title: "Semantic Bridge",
       icon: Icons.bolt_rounded,
-      objective: "Connect related facts and concepts from the reading passage.",
+      objective:
+          "Connect related facts and concepts from the reading passage. Mastering reading comprehension allows you to quickly extract key information in the real world.",
       rules: ["Bridge the gaps", "Use lasers to link", "Confirm relationships"],
       actionText: "Bridge Gaps",
       tip:
@@ -655,7 +665,7 @@ class GameInstructionService {
       title: "Summary Sieve",
       icon: Icons.short_text_rounded,
       objective:
-          "Select the single sentence that best summarizes the paragraph.",
+          "Select the single sentence that best summarizes the paragraph. Mastering reading comprehension allows you to quickly extract key information in the real world.",
       rules: ["Filter out details", "Find the main point", "Stay objective"],
       actionText: "Summarize Now",
       tip:
@@ -665,7 +675,7 @@ class GameInstructionService {
       title: "Subtext Sleuth",
       icon: Icons.biotech_rounded,
       objective:
-          "Identify implications in the text that are not explicitly stated.",
+          "Identify implications in the text that are not explicitly stated. Mastering reading comprehension allows you to quickly extract key information in the real world.",
       rules: ["Read between lines", "Detect subtext", "Infer correctly"],
       actionText: "Deduce Subtext",
       tip: "The author's tone and choice of words often hide a deeper meaning.",
@@ -674,7 +684,7 @@ class GameInstructionService {
       title: "Logical Finisher",
       icon: Icons.last_page_rounded,
       objective:
-          "Predict the most logical conclusion based on the reading text.",
+          "Predict the most logical conclusion based on the reading text. Mastering reading comprehension allows you to quickly extract key information in the real world.",
       rules: ["Follow the logic", "Predict outcome", "Verify with evidence"],
       actionText: "Predict Final",
       tip:
@@ -684,7 +694,7 @@ class GameInstructionService {
       title: "Context Mastery",
       icon: Icons.format_color_text_rounded,
       objective:
-          "Drag the correct word into the blank to complete the sentence.",
+          "Drag the correct word into the blank to complete the sentence. Mastering reading comprehension allows you to quickly extract key information in the real world.",
       rules: [
         "Read the full context",
         "Check the grammar fit",
@@ -697,7 +707,8 @@ class GameInstructionService {
     GameSubtype.skimmingScanning: GameBriefing(
       title: "Skim & Scan",
       icon: Icons.search_rounded,
-      objective: "Scan the text fast to locate specific facts or main ideas.",
+      objective:
+          "Scan the text fast to locate specific facts or main ideas. Mastering reading comprehension allows you to quickly extract key information in the real world.",
       rules: [
         "Speed is crucial",
         "Ignore filler words",
@@ -712,7 +723,7 @@ class GameInstructionService {
       title: "Sentence Architect",
       icon: Icons.architecture_rounded,
       objective:
-          "Arrange sentence fragments into a grammatically correct order. Mastering sentence structure ensures your writing is clear, professional, and easily understood in real-world communication.",
+          "Arrange sentence fragments into a grammatically correct order. Mastering this skill ensures your written communication is clear, professional, and effective.",
       rules: [
         "Start with Subject",
         "Identify the Verb",
@@ -725,7 +736,7 @@ class GameInstructionService {
       title: "Fragment Fixer",
       icon: Icons.healing_rounded,
       objective:
-          "Launch the correct word fragment into the sentence gap. Mastering sentence structure ensures your writing is clear, professional, and easily understood in real-world communication.",
+          "Launch the correct word fragment into the sentence gap. Mastering this skill ensures your written communication is clear, professional, and effective.",
       rules: [
         "Identify missing part",
         "Maintain the tone",
@@ -739,7 +750,7 @@ class GameInstructionService {
       title: "Context Scribe",
       icon: Icons.description_rounded,
       objective:
-          "Tap the floating emojis to discover keywords and write a descriptive paragraph based on the scenario. Mastering descriptive writing ensures you can paint clear pictures with words in real-world communication.",
+          "Tap the floating emojis to discover keywords and write a descriptive paragraph based on the scenario. Mastering this skill ensures your written communication is clear, professional, and effective.",
       rules: [
         "Tap emojis for keywords",
         "Use vivid adjectives",
@@ -752,7 +763,7 @@ class GameInstructionService {
       title: "Clarity Editor",
       icon: Icons.edit_rounded,
       objective:
-          "Scrub the logical decay and select the correct replacement word. Mastering structural clarity ensures your writing is professional and highly effective in real-world communication.",
+          "Scrub the logical decay and select the correct replacement word. Mastering this skill ensures your written communication is clear, professional, and effective.",
       rules: [
         "Locate the error",
         "Scrub the decay away",
@@ -766,7 +777,7 @@ class GameInstructionService {
       title: "Briefing Pro",
       icon: Icons.short_text_rounded,
       objective:
-          "Write a brief, concise, and direct response to the prompt using the required keywords. Mastering clear short-form writing ensures you can communicate ideas effectively and professionally in real-world scenarios.",
+          "Write a brief, concise, and direct response to the prompt using the required keywords. Mastering this skill ensures your written communication is clear, professional, and effective.",
       rules: [
         "Use all required keywords",
         "Check grammar and punctuation",
@@ -779,7 +790,7 @@ class GameInstructionService {
       title: "Vocal Pen",
       icon: Icons.rate_review_rounded,
       objective:
-          "Analyze the statements and categorize them as supporting or opposing the given opinion. Mastering this logical classification improves your ability to structure persuasive arguments in real-world communication.",
+          "Analyze the statements and categorize them as supporting or opposing the given opinion. Mastering this skill ensures your written communication is clear, professional, and effective.",
       rules: ["Read the prompt", "Weigh the arguments", "Balance the scale"],
       actionText: "Balance Scale",
       tip:
@@ -789,7 +800,7 @@ class GameInstructionService {
       title: "Daily Chronicler",
       icon: Icons.auto_stories_rounded,
       objective:
-          "Read the prompt and write a short personal journal reflection. Mastering this helps you articulate your daily experiences logically in real-world conversations.",
+          "Read the prompt and write a short personal journal reflection. Mastering this skill ensures your written communication is clear, professional, and effective.",
       rules: [
         "Be reflective",
         "Use appropriate tenses",
@@ -803,7 +814,7 @@ class GameInstructionService {
       title: "Essence Extractor",
       icon: Icons.compress_rounded,
       objective:
-          "Read the story and arrange the key events in chronological order to form a concise summary. Mastering summary writing helps you process complex information and communicate ideas clearly in the real world.",
+          "Read the story and arrange the key events in chronological order to form a concise summary. Mastering this skill ensures your written communication is clear, professional, and effective.",
       rules: [
         "Read carefully",
         "Sequence the events",
@@ -817,7 +828,7 @@ class GameInstructionService {
       title: "Email Expert",
       icon: Icons.alternate_email_rounded,
       objective:
-          "Compose a professional and contextually appropriate email by arranging its key parts. Mastering email structure ensures your writing is clear, polite, and effective for real-world communication.",
+          "Compose a professional and contextually appropriate email by arranging its key parts. Mastering this skill ensures your written communication is clear, professional, and effective.",
       rules: [
         "Use right greeting",
         "State clear purpose",
@@ -831,7 +842,7 @@ class GameInstructionService {
       title: "Syntax Auditor",
       icon: Icons.fact_check_rounded,
       objective:
-          "Identify and replace the errored syntax phrase. Mastering structural accuracy ensures your writing is professional, clear, and highly effective in real-world communication.",
+          "Identify and replace the errored syntax phrase. Mastering this skill ensures your written communication is clear, professional, and effective.",
       rules: [
         "Identify the error",
         "Select correct syntax",
@@ -845,7 +856,7 @@ class GameInstructionService {
       title: "Essay Architect",
       icon: Icons.article_rounded,
       objective:
-          "Sequence the paragraph blocks into their correct logical structure. Mastering structural progression ensures your ideas flow logically, making your writing persuasive and clear in real-world communication.",
+          "Sequence the paragraph blocks into their correct logical structure. Mastering this skill ensures your written communication is clear, professional, and effective.",
       rules: [
         "Find the opening claim",
         "Sequence supporting reasons",
@@ -859,7 +870,7 @@ class GameInstructionService {
       title: "Grammar Core",
       icon: Icons.gavel_rounded,
       objective:
-          "Identify and choose the correct form to complete the sentence.",
+          "Identify and choose the correct form to complete the sentence. Mastering structural rules ensures your English is accurate and easily understood.",
       rules: ["Identify errors", "Choose the correction", "Master the rules"],
       actionText: "Fix Structure",
       tip:
@@ -869,7 +880,7 @@ class GameInstructionService {
       title: "Error Auditor",
       icon: Icons.spellcheck_rounded,
       objective:
-          "Scan the text for grammatical errors and apply the correct fix.",
+          "Scan the text for grammatical errors, apply the correct fix, and type the final answer to lock it in. Mastering structural rules ensures your English is accurate and easily understood.",
       rules: ["Find the glitch", "Apply the fix", "Verify the meaning"],
       actionText: "Audit Text",
       tip:
@@ -878,7 +889,8 @@ class GameInstructionService {
     GameSubtype.wordReorder: GameBriefing(
       title: "Syntax Reorder",
       icon: Icons.reorder_rounded,
-      objective: "Arrange scrambled words into a grammatically sound sentence.",
+      objective:
+          "Arrange scrambled words into a grammatically sound sentence. Mastering structural rules ensures your English is accurate and easily understood.",
       rules: [
         "Identify the subject",
         "Find the main verb",
@@ -891,7 +903,8 @@ class GameInstructionService {
     GameSubtype.tenseMastery: GameBriefing(
       title: "Tense Mastery",
       icon: Icons.history_toggle_off_rounded,
-      objective: "Select or place verbs in their correct chronological tenses.",
+      objective:
+          "Select or place verbs in their correct chronological tenses. Mastering structural rules ensures your English is accurate and easily understood.",
       rules: [
         "Check for time markers",
         "Identify frequency",
@@ -905,7 +918,7 @@ class GameInstructionService {
       title: "Lexical Anatomy",
       icon: Icons.category_rounded,
       objective:
-          "Identify and label the correct parts of speech in the sentence.",
+          "Identify and label the correct parts of speech in the sentence. Mastering structural rules ensures your English is accurate and easily understood.",
       rules: [
         "Analyze word function",
         "Categorize correctly",
@@ -918,7 +931,8 @@ class GameInstructionService {
     GameSubtype.subjectVerbAgreement: GameBriefing(
       title: "Agreement Sync",
       icon: Icons.sync_rounded,
-      objective: "Choose the correct verb form to match the subject.",
+      objective:
+          "Choose the correct verb form to match the subject. Mastering structural rules ensures your English is accurate and easily understood.",
       rules: [
         "Identify subject",
         "Check singular vs plural",
@@ -931,7 +945,8 @@ class GameInstructionService {
     GameSubtype.clauseConnector: GameBriefing(
       title: "Clause Linker",
       icon: Icons.link_rounded,
-      objective: "Choose the appropriate conjunction to connect the clauses.",
+      objective:
+          "Choose the appropriate conjunction to connect the clauses. Mastering structural rules ensures your English is accurate and easily understood.",
       rules: [
         "Analyze relationship",
         "Choose the connector",
@@ -945,7 +960,7 @@ class GameInstructionService {
       title: "Voice Swap",
       icon: Icons.swap_horiz_rounded,
       objective:
-          "Switch between Active and Passive voice without changing the meaning.",
+          "Switch between Active and Passive voice without changing the meaning, then type the structure to confirm. Mastering structural rules ensures your English is accurate and easily understood.",
       rules: [
         "Identify the agent",
         "Change the verb form",
@@ -959,7 +974,7 @@ class GameInstructionService {
       title: "Inquiry Logic",
       icon: Icons.help_outline_rounded,
       objective:
-          "Arrange words or choose forms to create an accurate question.",
+          "Arrange words or choose forms to create an accurate question. Mastering structural rules ensures your English is accurate and easily understood.",
       rules: ["Invert subject/verb", "Add auxiliary verbs", "Match the tense"],
       actionText: "Format Inquiry",
       tip:
@@ -969,7 +984,7 @@ class GameInstructionService {
       title: "Article Orb",
       icon: Icons.bubble_chart_rounded,
       objective:
-          "Insert the correct article to complete the sentence structure and specify the noun.",
+          "Insert the correct article to complete the sentence structure and specify the noun. Mastering structural rules ensures your English is accurate and easily understood.",
       rules: [
         "Read the sentence context",
         "Check if noun is specific",
@@ -983,7 +998,7 @@ class GameInstructionService {
       title: "Modifier Map",
       icon: Icons.location_on_rounded,
       objective:
-          "Place modifiers in the correct position to clarify the sentence.",
+          "Place modifiers in the correct position to clarify the sentence. Mastering structural rules ensures your English is accurate and easily understood.",
       rules: [
         "Avoid dangling modifiers",
         "Link to target word",
@@ -996,7 +1011,8 @@ class GameInstructionService {
     GameSubtype.modalsSelection: GameBriefing(
       title: "Modal Matrix",
       icon: Icons.grid_view_rounded,
-      objective: "Select the modal verb that best fits the sentence's context.",
+      objective:
+          "Select the modal verb that best fits the sentence's context. Mastering structural rules ensures your English is accurate and easily understood.",
       rules: [
         "Analyze the mood",
         "Check for permission/duty",
@@ -1009,7 +1025,8 @@ class GameInstructionService {
     GameSubtype.prepositionChoice: GameBriefing(
       title: "Position Pro",
       icon: Icons.directions_rounded,
-      objective: "Choose the correct preposition to complete the sentence.",
+      objective:
+          "Choose the correct preposition to complete the sentence. Mastering structural rules ensures your English is accurate and easily understood.",
       rules: [
         "Analyze spatial data",
         "Check time markers",
@@ -1023,7 +1040,7 @@ class GameInstructionService {
       title: "Pronoun Pivot",
       icon: Icons.people_rounded,
       objective:
-          "Select the correct pronoun that clearly resolves the sentence.",
+          "Select the correct pronoun that clearly resolves the sentence. Mastering structural rules ensures your English is accurate and easily understood.",
       rules: [
         "Find the antecedent",
         "Match gender & number",
@@ -1037,7 +1054,7 @@ class GameInstructionService {
       title: "Symbol Scribe",
       icon: Icons.short_text_rounded,
       objective:
-          "Place commas, periods, or semi-colons in the correct locations.",
+          "Place commas, periods, or semi-colons in the correct locations. Mastering structural rules ensures your English is accurate and easily understood.",
       rules: [
         "Separate list items",
         "Connect related ideas",
@@ -1051,7 +1068,7 @@ class GameInstructionService {
       title: "Relative Rail",
       icon: Icons.linear_scale_rounded,
       objective:
-          "Use relative pronouns (who, which, that) to connect the clauses.",
+          "Use relative pronouns (who, which, that) to connect the clauses. Mastering structural rules ensures your English is accurate and easily understood.",
       rules: ["Identify the noun", "Choose the pronoun", "Link the detail"],
       actionText: "Link Relative",
       tip:
@@ -1061,7 +1078,7 @@ class GameInstructionService {
       title: "If-Logic",
       icon: Icons.alt_route_rounded,
       objective:
-          "Complete the conditional sentence using the correct verb form.",
+          "Complete the conditional sentence and type the final structure to lock it in. Mastering structural rules ensures your English is accurate and easily understood.",
       rules: [
         "Identify the condition",
         "Match the tense sequence",
@@ -1074,7 +1091,8 @@ class GameInstructionService {
     GameSubtype.conjunctions: GameBriefing(
       title: "Logic Junction",
       icon: Icons.join_inner_rounded,
-      objective: "Select the correct conjunction to bridge the thoughts.",
+      objective:
+          "Select the correct conjunction to bridge the thoughts. Mastering structural rules ensures your English is accurate and easily understood.",
       rules: [
         "Compare/Contrast ideas",
         "Identify cause/effect",
@@ -1087,7 +1105,7 @@ class GameInstructionService {
       title: "Speech Shift",
       icon: Icons.forum_rounded,
       objective:
-          "Convert direct quotes into reported speech with correct tenses.",
+          "Convert direct quotes into reported speech with correct tenses, then type the final sentence to verify. Mastering structural rules ensures your English is accurate and easily understood.",
       rules: [
         "Shift tenses backward",
         "Update time markers",
@@ -1101,7 +1119,8 @@ class GameInstructionService {
     GameSubtype.flashcards: GameBriefing(
       title: "Flashcards",
       icon: Icons.style_rounded,
-      objective: "Tap to flip flashcards and swipe through to master terms.",
+      objective:
+          "Tap to flip flashcards and swipe through to master terms. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
       rules: ["Tap to flip", "Swipe Right = Known", "Swipe Left = Review"],
       actionText: "Master Now",
       tip:
@@ -1110,7 +1129,8 @@ class GameInstructionService {
     GameSubtype.synonymSearch: GameBriefing(
       title: "Word Warp",
       icon: Icons.cyclone,
-      objective: "Identify and match the correct synonym for the target word.",
+      objective:
+          "Identify and match the correct synonym for the target word. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
       rules: ["Find the twin", "Drag into Warp Gate", "Avoid distractions"],
       actionText: "Start Warp",
       tip: "Focus on the core meaning, and filter out visual distractions!",
@@ -1118,7 +1138,8 @@ class GameInstructionService {
     GameSubtype.antonymSearch: GameBriefing(
       title: "Polarity Pull",
       icon: Icons.electrical_services_rounded,
-      objective: "Identify and select the correct antonym for the target word.",
+      objective:
+          "Identify and select the correct antonym for the target word. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
       rules: ["Find the Antonym", "Opposites Attract", "3 Hearts left"],
       actionText: "Start Pull",
       tip: "Opposite meaning = Opposite pole! Match them quickly.",
@@ -1126,7 +1147,8 @@ class GameInstructionService {
     GameSubtype.contextClues: GameBriefing(
       title: "Detective Lens",
       icon: Icons.search_rounded,
-      objective: "Use context clues to identify the meaning of unknown words.",
+      objective:
+          "Use context clues to identify the meaning of unknown words. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
       rules: ["Drag to reveal clues", "Analyze context", "3 Hearts left"],
       actionText: "Start Scan",
       tip: "Clues often hide right next to the redacted or highlighted word!",
@@ -1135,7 +1157,7 @@ class GameInstructionService {
       title: "Verb Vault",
       icon: Icons.vpn_key_rounded,
       objective:
-          "Select correct prepositions or particles to complete phrasal verbs.",
+          "Select correct prepositions or particles to complete phrasal verbs. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
       rules: ["Read Definition", "Select Particle", "Crack Vault"],
       actionText: "Start Hack",
       tip:
@@ -1144,7 +1166,8 @@ class GameInstructionService {
     GameSubtype.idioms: GameBriefing(
       title: "Emojify",
       icon: Icons.forum_rounded,
-      objective: "Decode emojis and phrases into correct English idioms.",
+      objective:
+          "Decode emojis and phrases into correct English idioms. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
       rules: ["Interpret emojis", "Select matching idiom", "3 Hearts left"],
       actionText: "Send Message",
       tip: "Idioms are colorful cultural keys! Don't take them literally.",
@@ -1153,7 +1176,7 @@ class GameInstructionService {
       title: "Thesis Thrust",
       icon: Icons.auto_stories_rounded,
       objective:
-          "Read the context carefully and select the advanced vocabulary word that fits perfectly.",
+          "Read the context carefully and select the advanced vocabulary word that fits perfectly. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
       rules: [
         "Read the passage",
         "Analyze the context",
@@ -1166,7 +1189,8 @@ class GameInstructionService {
     GameSubtype.topicVocab: GameBriefing(
       title: "Topic Nexus",
       icon: Icons.category_rounded,
-      objective: "Sort words into their correct thematic category bins.",
+      objective:
+          "Sort words into their correct thematic category bins. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
       rules: ["Analyze the word", "Swipe into matching bin", "Clear the queue"],
       actionText: "Start Sorting",
       tip: "Sorting by topic builds semantic memory 2x faster!",
@@ -1174,7 +1198,8 @@ class GameInstructionService {
     GameSubtype.wordFormation: GameBriefing(
       title: "Morpheme Mixer",
       icon: Icons.science_rounded,
-      objective: "Combine prefixes, suffixes, and roots to form correct words.",
+      objective:
+          "Combine prefixes, suffixes, and roots to form correct words. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
       rules: ["Analyze root", "Slide suffix", "Form word"],
       actionText: "Ready to Mix?",
       tip: "Suffixes change words from verbs to nouns or adjectives!",
@@ -1183,7 +1208,7 @@ class GameInstructionService {
       title: "Word Roots",
       icon: Icons.spa_rounded,
       objective:
-          "Build words by attaching the correct prefixes or suffixes to roots.",
+          "Build words by attaching the correct prefixes or suffixes to roots. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
       rules: ["Analyze root", "Attach correct affix", "3 Hearts left"],
       actionText: "Build Words",
       tip:
@@ -1193,7 +1218,7 @@ class GameInstructionService {
       title: "Pair Pop",
       icon: Icons.bubble_chart_rounded,
       objective:
-          "Match words that naturally pair together (e.g., 'make a decision').",
+          "Match words that naturally pair together (e.g., 'make a decision'). Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
       rules: ["Analyze anchor", "Select partner bubble", "Fuse the pair"],
       actionText: "Initiate Fusion",
       tip:
@@ -1203,7 +1228,7 @@ class GameInstructionService {
       title: "Usage Unfold",
       icon: Icons.auto_stories_rounded,
       objective:
-          "Identify the word that fits perfectly in the context of the sentence.",
+          "Identify the word that fits perfectly in the context of the sentence. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
       rules: ["Evaluate context", "Unfold the correct fit", "3 Hearts left"],
       actionText: "Unfold Truth",
       tip:
@@ -1215,7 +1240,7 @@ class GameInstructionService {
       title: "Intonation Mimic",
       icon: Icons.waves_rounded,
       objective:
-          "Listen to the sentence and identify its pitch pattern to master the natural melody of the language, which is highly useful for conveying emotion and intent clearly.",
+          "Listen to the sentence and identify its pitch pattern to master the natural melody of the language Mastering pronunciation ensures your spoken English sounds clear and natural.",
       rules: [
         "Listen to the sentence",
         "Analyze pitch direction",
@@ -1229,7 +1254,7 @@ class GameInstructionService {
       title: "Stress Spotter",
       icon: Icons.priority_high_rounded,
       objective:
-          "Identify the stressed syllable in the spoken word by tapping the correct drum pad. Mastering syllable stress is highly useful because it determines whether a word is understood correctly by native speakers; incorrect stress can completely change a word's meaning.",
+          "Identify the stressed syllable in the spoken word by tapping the correct drum pad. Mastering pronunciation ensures your spoken English sounds clear and natural.",
       rules: [
         "Listen for the loud part",
         "Check the length",
@@ -1244,7 +1269,7 @@ class GameInstructionService {
       title: "Vowel Distinction",
       icon: Icons.tune_rounded,
       objective:
-          "Listen carefully and match the correct vowel sound. Mastering vowel tension helps you differentiate between similar-sounding words in real-world conversations.",
+          "Isolate and master differences between subtle English vowel phonemes. Mastering pronunciation ensures your spoken English sounds clear and natural.",
       rules: [
         "Listen to the target word",
         "Analyze the vowel tension",
@@ -1259,20 +1284,21 @@ class GameInstructionService {
       title: "Speed Variance",
       icon: Icons.speed_rounded,
       objective:
-          "Listen carefully and identify the speaking speed of the phrase. Mastering speed variance helps you understand native speakers across different real-world tempos and contexts.",
+          "Listen carefully and identify the speaking speed of the phrase. Mastering pronunciation ensures your spoken English sounds clear and natural.",
       rules: [
         "Listen to the phrase",
         "Analyze the tempo",
         "Select the correct speed",
       ],
       actionText: "Identify Speed",
-      tip: "PRO TIP: Pay attention to whether the speaker is rushing or speaking carefully to emphasize a point!",
+      tip:
+          "PRO TIP: Pay attention to whether the speaker is rushing or speaking carefully to emphasize a point!",
     ),
     GameSubtype.dialectDrill: GameBriefing(
       title: "Dialect Drill",
       icon: Icons.public_rounded,
       objective:
-          "Identify and distinguish regional pronunciations to master global communication.",
+          "Identify and distinguish regional pronunciations to master global communication. Mastering pronunciation ensures your spoken English sounds clear and natural.",
       rules: ["Listen closely", "Compare pronunciations", "Select region"],
       actionText: "Start Drill",
       tip:
@@ -1282,7 +1308,7 @@ class GameInstructionService {
       title: "Connected Speech",
       icon: Icons.settings_input_composite_rounded,
       objective:
-          "Native speakers link words together. Listen closely to how the words connect, then choose the card that shows the correct sound change. Mastering connected speech ensures you can understand fast native speakers and sound fluent yourself in real-world communication.",
+          "Listen closely to how the words connect and choose the correct sound change card. Mastering pronunciation ensures your spoken English sounds clear and natural.",
       rules: [
         "Listen to the linked words",
         "Notice which sound changes or drops",
@@ -1297,7 +1323,7 @@ class GameInstructionService {
       title: "Social Simulator",
       icon: Icons.forum_rounded,
       objective:
-          "Tap an answer or drag the decision probe to select the most natural, context-appropriate conversational response.",
+          "Tap an answer or drag the decision probe to select the most natural, context-appropriate conversational response. Mastering situational responses ensures you can navigate social interactions with confidence.",
       rules: ["Analyze the scene", "Flick decision probe", "React naturally"],
       actionText: "Enter Simulation",
       tip:
@@ -1307,7 +1333,7 @@ class GameInstructionService {
       title: "Reflex Responder",
       icon: Icons.flash_on_rounded,
       objective:
-          "Choose the most appropriate and polite social response for the scenario.",
+          "Choose the most appropriate and polite social response for the scenario. Mastering situational responses ensures you can navigate social interactions with confidence.",
       rules: ["Match social tone", "Be polite/direct", "3 Hearts left"],
       actionText: "Respond Now",
       tip:
@@ -1317,7 +1343,7 @@ class GameInstructionService {
       title: "Career Closer",
       icon: Icons.business_center_rounded,
       objective:
-          "Choose professional responses to nail your high-stakes job interview.",
+          "Choose professional responses to nail your high-stakes job interview. Mastering situational responses ensures you can navigate social interactions with confidence.",
       rules: ["Be professional", "Highlight core skills", "Stay confident"],
       actionText: "Start Interview",
       tip:
@@ -1327,7 +1353,7 @@ class GameInstructionService {
       title: "Health Liaison",
       icon: Icons.medical_services_rounded,
       objective:
-          "Clearly explain symptoms or follow a doctor's detailed instructions.",
+          "Clearly explain symptoms or follow a doctor's detailed instructions. Mastering situational responses ensures you can navigate social interactions with confidence.",
       rules: ["Be accurate", "Describe physical feelings", "3 Hearts left"],
       actionText: "Start Consult",
       tip:
@@ -1337,7 +1363,7 @@ class GameInstructionService {
       title: "Order Master",
       icon: Icons.restaurant_rounded,
       objective:
-          "Order food, request custom adjustments, and settle restaurant bills.",
+          "Order food, request custom adjustments, and settle restaurant bills. Mastering situational responses ensures you can navigate social interactions with confidence.",
       rules: [
         "Be highly polite",
         "Check details carefully",
@@ -1351,7 +1377,7 @@ class GameInstructionService {
       title: "Global Traveler",
       icon: Icons.flight_takeoff_rounded,
       objective:
-          "Manage check-ins, navigate directions, and handle hotel booking requests.",
+          "Manage check-ins, navigate directions, and handle hotel booking requests. Mastering situational responses ensures you can navigate social interactions with confidence.",
       rules: ["Check travel tickets", "Follow directions", "Ask for support"],
       actionText: "Start Journey",
       tip:
@@ -1361,7 +1387,7 @@ class GameInstructionService {
       title: "Peace Maker",
       icon: Icons.handshake_rounded,
       objective:
-          "Resolve conversational arguments and misunderstandings using tactful words.",
+          "Resolve conversational arguments and misunderstandings using tactful words. Mastering situational responses ensures you can navigate social interactions with confidence.",
       rules: [
         "Use 'I' statements",
         "Acknowledge feelings",
@@ -1375,7 +1401,7 @@ class GameInstructionService {
       title: "Pitch Perfect",
       icon: Icons.rocket_launch_rounded,
       objective:
-          "Deliver a compelling, high-impact business message in 30 seconds.",
+          "Deliver a compelling, high-impact business message in 30 seconds. Mastering situational responses ensures you can navigate social interactions with confidence.",
       rules: ["Be concise", "High emotional impact", "3 Hearts left"],
       actionText: "Start Pitch",
       tip:
@@ -1385,7 +1411,7 @@ class GameInstructionService {
       title: "Charisma Core",
       icon: Icons.celebration_rounded,
       objective:
-          "Initiate and sustain engaging small talk with new acquaintances.",
+          "Initiate and sustain engaging small talk with new acquaintances. Mastering situational responses ensures you can navigate social interactions with confidence.",
       rules: [
         "Ask open questions",
         "Show high interest",
@@ -1399,7 +1425,7 @@ class GameInstructionService {
       title: "Emergency Voice",
       icon: Icons.emergency_share_rounded,
       objective:
-          "Communicate clearly and stay calm under pressure in crisis scenarios.",
+          "Communicate clearly and stay calm under pressure in crisis scenarios. Mastering situational responses ensures you can navigate social interactions with confidence.",
       rules: ["Stay highly calm", "State location first", "Be exact & concise"],
       actionText: "Help Now",
       tip:
@@ -1410,7 +1436,7 @@ class GameInstructionService {
       title: "Story Builder",
       icon: Icons.reorder_rounded,
       objective:
-          "Arrange the scrambled sentences into the correct logical order to master paragraph cohesion, which is highly useful for clear and effective communication.",
+          "Arrange the scrambled sentences into the correct logical order to master paragraph cohesion Mastering this skill ensures your written communication is clear, professional, and effective.",
       rules: [
         "Identify the starting sentence",
         "Look for logical transitions",
@@ -1425,7 +1451,7 @@ class GameInstructionService {
       title: "Accent Shadowing",
       icon: Icons.record_voice_over_rounded,
       objective:
-          "Listen carefully to the native speaker and repeat the sentence, matching their exact pronunciation, stress, and rhythm.",
+          "Speak clearly to match the exact accent and rhythm of the speaker. Mastering pronunciation ensures your spoken English sounds clear and natural.",
       rules: ["Listen to the example", "Record your voice", "Match the accent"],
       actionText: "Start Shadowing",
       tip:

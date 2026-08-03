@@ -7,8 +7,9 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/text_similarity_helper.dart';
 import 'package:vowl/core/utils/gibberish_detector_service.dart';
-
-/// Universal "Type to Confirm" overlay that slides up after a correct
+import 'package:vowl/core/utils/ad_service.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 /// click/drag answer, requiring the user to type the answer before
 /// proceeding.
 class TypeToConfirmOverlay extends StatefulWidget {
@@ -357,17 +358,41 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
               Padding(
                 padding: EdgeInsets.only(top: 12.h),
                 child: ScaleButton(
-                  onTap: widget.onSkipped,
-                  child: Text(
-                    _attempts >= widget.maxAttempts ? 'CONTINUE' : 'SKIP',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.w700,
-                      color: subtitleColor,
-                      letterSpacing: 1.5,
-                    ),
-                  ),
+                  onTap: () {
+                    if (_attempts >= widget.maxAttempts) {
+                      widget.onSkipped();
+                      return;
+                    }
+                    final user = context.read<AuthBloc>().state.user;
+                    final isPremium = user?.isPremium ?? false;
+                    if (isPremium) {
+                      widget.onSkipped();
+                    } else {
+                      di.sl<AdService>().showRewardedAd(
+                        context: context,
+                        isPremium: false,
+                        onUserEarnedReward: (_) {
+                          if (mounted) widget.onSkipped();
+                        },
+                        onDismissed: () {},
+                      );
+                    }
+                  },
+                  child: Builder(builder: (context) {
+                    final isPremium = context.watch<AuthBloc>().state.user?.isPremium ?? false;
+                    return Text(
+                      _attempts >= widget.maxAttempts
+                          ? 'CONTINUE'
+                          : (isPremium ? 'SKIP' : 'WATCH AD TO BYPASS'),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w700,
+                        color: subtitleColor,
+                        letterSpacing: 1.5,
+                      ),
+                    );
+                  }),
                 ),
               ),
 

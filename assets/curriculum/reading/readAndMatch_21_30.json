@@ -1,667 +1,667 @@
 {
-    "gameType": "readAndMatch",
-    "batchIndex": 3,
-    "levels": "21-30",
-    "quests": [
+  "gameType": "readAndMatch",
+  "batchIndex": 3,
+  "levels": "21-30",
+  "quests": [
+    {
+      "id": "RDG_READANDMATCH_L21_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
         {
-            "id": "RDG_READANDMATCH_L21_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L21-Q1-0] Schedule",
-                    "value": "A plan that shows when events or activities will happen."
-                },
-                {
-                    "key": "[L21-Q1-1] Deadline",
-                    "value": "The latest time by which something must be finished."
-                },
-                {
-                    "key": "[L21-Q1-2] Appointment",
-                    "value": "An arranged time to meet someone or do something."
-                }
-            ],
-            "hint": "Think about words people use to organize their time and plans.",
-            "explanation": "A schedule shows planned events, a deadline is the final time something is due, and an appointment is an arranged meeting time. These words help you talk about planning."
+          "key": "[L21-Q1-0] Schedule",
+          "value": "A plan that shows when events or activities will happen."
         },
         {
-            "id": "RDG_READANDMATCH_L21_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L21-Q2-0] Recipe",
-                    "value": "A set of instructions for preparing a particular dish."
-                },
-                {
-                    "key": "[L21-Q2-1] Ingredient",
-                    "value": "One of the foods used to make a dish."
-                },
-                {
-                    "key": "[L21-Q2-2] Portion",
-                    "value": "An amount of food served to one person."
-                }
-            ],
-            "hint": "Think about words used when talking about cooking a meal.",
-            "explanation": "A recipe gives instructions for a dish, an ingredient is one of the foods used in it, and a portion is the amount served to one person. These words are useful in the kitchen."
+          "key": "[L21-Q1-1] Deadline",
+          "value": "The latest time by which something must be finished."
         },
         {
-            "id": "RDG_READANDMATCH_L21_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L21-Q3-0] Crowded",
-                    "value": "Full of many people in a small space."
-                },
-                {
-                    "key": "[L21-Q3-1] Spacious",
-                    "value": "Having a lot of room; not crowded."
-                },
-                {
-                    "key": "[L21-Q3-2] Comfortable",
-                    "value": "Giving a pleasant feeling of physical ease."
-                }
-            ],
-            "hint": "Think about words that describe how a place feels in terms of space and comfort.",
-            "explanation": "Crowded means full of people, spacious means having plenty of room, and comfortable means giving a pleasant feeling of ease. These words describe the feel of a place."
-        },
-        {
-            "id": "RDG_READANDMATCH_L22_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L22-Q1-0] Apply",
-                    "value": "To formally request something, such as a job, often in writing."
-                },
-                {
-                    "key": "[L22-Q1-1] Resume",
-                    "value": "A document listing a person's education and work experience."
-                },
-                {
-                    "key": "[L22-Q1-2] Interview",
-                    "value": "A formal meeting where someone is asked questions, often for a job."
-                }
-            ],
-            "hint": "Think about steps a person takes when looking for a new job.",
-            "explanation": "Apply means formally requesting a job, a resume lists your experience, and an interview is a meeting where you answer questions. These words describe the job-search process."
-        },
-        {
-            "id": "RDG_READANDMATCH_L22_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L22-Q2-0] Allergy",
-                    "value": "A reaction the body has to a substance that is usually harmless."
-                },
-                {
-                    "key": "[L22-Q2-1] Symptom",
-                    "value": "A sign that shows a person may be ill."
-                },
-                {
-                    "key": "[L22-Q2-2] Prescription",
-                    "value": "A doctor's written order for medicine."
-                }
-            ],
-            "hint": "Think about words connected to visiting a doctor when you feel unwell.",
-            "explanation": "An allergy is a reaction to a harmless substance, a symptom is a sign of illness, and a prescription is a doctor's order for medicine. These words are common in health conversations."
-        },
-        {
-            "id": "RDG_READANDMATCH_L22_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L22-Q3-0] Reservation",
-                    "value": "An arrangement to keep a place, such as a table or room, for later use."
-                },
-                {
-                    "key": "[L22-Q3-1] Itinerary",
-                    "value": "A planned route or schedule for a journey."
-                },
-                {
-                    "key": "[L22-Q3-2] Luggage",
-                    "value": "The bags and suitcases a traveler carries."
-                }
-            ],
-            "hint": "Think about words connected to planning and taking a trip.",
-            "explanation": "A reservation holds a place for later use, an itinerary is the planned schedule of a trip, and luggage is the bags you carry. These words are useful for travel."
-        },
-        {
-            "id": "RDG_READANDMATCH_L23_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L23-Q1-0] Sibling",
-                    "value": "A brother or sister."
-                },
-                {
-                    "key": "[L23-Q1-1] Relative",
-                    "value": "A person connected to you by family ties."
-                },
-                {
-                    "key": "[L23-Q1-2] Household",
-                    "value": "A group of people, often family, who live together in one home."
-                }
-            ],
-            "hint": "Think about words that describe family connections more broadly than just parents and children.",
-            "explanation": "A sibling is a brother or sister, a relative is anyone connected by family ties, and a household is the group living together in one home. These words describe family in a wider sense."
-        },
-        {
-            "id": "RDG_READANDMATCH_L23_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L23-Q2-0] Bargain",
-                    "value": "An item sold at a lower price than usual; a good deal."
-                },
-                {
-                    "key": "[L23-Q2-1] Refund",
-                    "value": "Money given back after a returned purchase."
-                },
-                {
-                    "key": "[L23-Q2-2] Warranty",
-                    "value": "A company's written promise to repair or replace a faulty product."
-                }
-            ],
-            "hint": "Think about words connected to getting a good deal or returning something you bought.",
-            "explanation": "A bargain is something sold cheaply, a refund is money given back for a return, and a warranty promises free repair if something breaks. These words are useful when shopping."
-        },
-        {
-            "id": "RDG_READANDMATCH_L23_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L23-Q3-0] Leftovers",
-                    "value": "Food that remains after a meal and is saved for later."
-                },
-                {
-                    "key": "[L23-Q3-1] Spoiled",
-                    "value": "Describing food that has gone bad and is no longer safe to eat."
-                },
-                {
-                    "key": "[L23-Q3-2] Fresh",
-                    "value": "Recently made or picked; not old or spoiled."
-                }
-            ],
-            "hint": "Think about words that describe the condition of food after it has been stored for a while.",
-            "explanation": "Leftovers are saved food from an earlier meal, spoiled means food has gone bad, and fresh means recently made or picked. These words describe food condition over time."
-        },
-        {
-            "id": "RDG_READANDMATCH_L24_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L24-Q1-0] Update",
-                    "value": "To add new or recent information to something."
-                },
-                {
-                    "key": "[L24-Q1-1] Download",
-                    "value": "To copy a file or program from the internet to a device."
-                },
-                {
-                    "key": "[L24-Q1-2] Notification",
-                    "value": "A short message that alerts you to something new."
-                }
-            ],
-            "hint": "Think about common words used when talking about phones, apps, or computers.",
-            "explanation": "Update means adding new information, download means copying a file from the internet, and a notification is an alert message. These words are common in everyday technology."
-        },
-        {
-            "id": "RDG_READANDMATCH_L24_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L24-Q2-0] Diagnosis",
-                    "value": "A doctor's identification of what illness a patient has."
-                },
-                {
-                    "key": "[L24-Q2-1] Treatment",
-                    "value": "Medical care given to help a patient recover."
-                },
-                {
-                    "key": "[L24-Q2-2] Recovery",
-                    "value": "The process of becoming healthy again after illness or injury."
-                }
-            ],
-            "hint": "Think about the stages a patient goes through after becoming ill.",
-            "explanation": "A diagnosis identifies the illness, treatment is the care given to help, and recovery is becoming healthy again. These words describe stages of dealing with illness."
-        },
-        {
-            "id": "RDG_READANDMATCH_L24_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L24-Q3-0] Audience",
-                    "value": "The group of people watching or listening to a performance."
-                },
-                {
-                    "key": "[L24-Q3-1] Performance",
-                    "value": "An act of presenting a show, play, or piece of music to others."
-                },
-                {
-                    "key": "[L24-Q3-2] Applause",
-                    "value": "Clapping used to show approval or enjoyment."
-                }
-            ],
-            "hint": "Think about words connected to watching a live show or concert.",
-            "explanation": "An audience watches a performance, a performance is the show itself, and applause is the clapping that shows approval. These words describe parts of a live event."
-        },
-        {
-            "id": "RDG_READANDMATCH_L25_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L25-Q1-0] Commute",
-                    "value": "To regularly travel between home and work."
-                },
-                {
-                    "key": "[L25-Q1-1] Overtime",
-                    "value": "Extra time worked beyond the normal working hours."
-                },
-                {
-                    "key": "[L25-Q1-2] Colleague",
-                    "value": "A person you work with."
-                }
-            ],
-            "hint": "Think about words connected to a typical working day.",
-            "explanation": "A commute is the regular trip to and from work, overtime is extra working hours, and a colleague is someone you work with. These words describe parts of work life."
-        },
-        {
-            "id": "RDG_READANDMATCH_L25_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L25-Q2-0] Souvenir",
-                    "value": "An object kept to remember a place or trip."
-                },
-                {
-                    "key": "[L25-Q2-1] Sightseeing",
-                    "value": "Visiting interesting or famous places as a tourist."
-                },
-                {
-                    "key": "[L25-Q2-2] Guide",
-                    "value": "A person who shows tourists around a place."
-                }
-            ],
-            "hint": "Think about words connected to being a tourist in a new city.",
-            "explanation": "A souvenir helps you remember a trip, sightseeing means visiting famous places, and a guide shows tourists around. These words are useful when traveling as a tourist."
-        },
-        {
-            "id": "RDG_READANDMATCH_L25_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L25-Q3-0] Curious",
-                    "value": "Eager to learn or know about something."
-                },
-                {
-                    "key": "[L25-Q3-1] Confident",
-                    "value": "Feeling sure about your own abilities."
-                },
-                {
-                    "key": "[L25-Q3-2] Nervous",
-                    "value": "Feeling worried or anxious about something."
-                }
-            ],
-            "hint": "Think about words that describe different feelings a person might have before doing something new.",
-            "explanation": "Curious means eager to learn, confident means feeling sure of yourself, and nervous means feeling worried. These words describe different emotional states."
-        },
-        {
-            "id": "RDG_READANDMATCH_L26_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L26-Q1-0] Assignment",
-                    "value": "A piece of work given to a student to complete."
-                },
-                {
-                    "key": "[L26-Q1-1] Grade",
-                    "value": "A mark given to show the quality of a student's work."
-                },
-                {
-                    "key": "[L26-Q1-2] Classmate",
-                    "value": "A student who is in the same class as you."
-                }
-            ],
-            "hint": "Think about words connected to school work and student life.",
-            "explanation": "An assignment is school work to complete, a grade is the mark given for it, and a classmate is a fellow student. These words are common in school conversations."
-        },
-        {
-            "id": "RDG_READANDMATCH_L26_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L26-Q2-0] Budget",
-                    "value": "A plan for how to spend a certain amount of money."
-                },
-                {
-                    "key": "[L26-Q2-1] Save",
-                    "value": "To keep money instead of spending it."
-                },
-                {
-                    "key": "[L26-Q2-2] Spend",
-                    "value": "To use money to pay for something."
-                }
-            ],
-            "hint": "Think about words connected to managing your money.",
-            "explanation": "A budget is a plan for spending money, save means keeping money instead of using it, and spend means using money to pay for things. These words describe how people manage money."
-        },
-        {
-            "id": "RDG_READANDMATCH_L26_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L26-Q3-0] Volunteer",
-                    "value": "A person who offers to do work without being paid."
-                },
-                {
-                    "key": "[L26-Q3-1] Donate",
-                    "value": "To give something, often money or goods, to help others."
-                },
-                {
-                    "key": "[L26-Q3-2] Charity",
-                    "value": "An organization that helps people in need."
-                }
-            ],
-            "hint": "Think about words connected to helping others in the community.",
-            "explanation": "A volunteer offers unpaid help, donate means giving something to help others, and a charity is an organization that helps people in need. These words describe ways of helping others."
-        },
-        {
-            "id": "RDG_READANDMATCH_L27_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L27-Q1-0] Diet",
-                    "value": "The food a person usually eats."
-                },
-                {
-                    "key": "[L27-Q1-1] Nutrition",
-                    "value": "The process of getting the food needed for health and growth."
-                },
-                {
-                    "key": "[L27-Q1-2] Portion Size",
-                    "value": "The amount of food served or eaten at one time."
-                }
-            ],
-            "hint": "Think about words connected to eating in a healthy way.",
-            "explanation": "A diet is the food a person usually eats, nutrition is about getting the right food for health, and portion size is how much food is eaten at once. These words relate to healthy eating."
-        },
-        {
-            "id": "RDG_READANDMATCH_L27_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L27-Q2-0] Subscription",
-                    "value": "A regular payment made to receive a service or product."
-                },
-                {
-                    "key": "[L27-Q2-1] Account",
-                    "value": "A record kept by a company of a customer's details and activity."
-                },
-                {
-                    "key": "[L27-Q2-2] Username",
-                    "value": "The name a person uses to log into an online account."
-                }
-            ],
-            "hint": "Think about words connected to signing up for an online service.",
-            "explanation": "A subscription is a regular payment for a service, an account is your record with a company, and a username is the name you use to log in. These words are common with online services."
-        },
-        {
-            "id": "RDG_READANDMATCH_L27_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L27-Q3-0] Tradition",
-                    "value": "A custom or belief passed down through generations."
-                },
-                {
-                    "key": "[L27-Q3-1] Celebration",
-                    "value": "An event held to mark a special occasion."
-                },
-                {
-                    "key": "[L27-Q3-2] Custom",
-                    "value": "A usual way of behaving that is specific to a group or place."
-                }
-            ],
-            "hint": "Think about words connected to special family or cultural events.",
-            "explanation": "A tradition is passed down through generations, a celebration marks a special occasion, and a custom is a usual way of behaving in a group. These words describe cultural practices."
-        },
-        {
-            "id": "RDG_READANDMATCH_L28_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L28-Q1-0] Punctual",
-                    "value": "Arriving or doing something at the agreed time; not late."
-                },
-                {
-                    "key": "[L28-Q1-1] Reliable",
-                    "value": "Able to be trusted to do what is expected."
-                },
-                {
-                    "key": "[L28-Q1-2] Organized",
-                    "value": "Arranged in a tidy, well-planned way."
-                }
-            ],
-            "hint": "Think about positive qualities that make someone good at their job.",
-            "explanation": "Punctual means arriving on time, reliable means able to be trusted, and organized means well-planned and tidy. These words describe positive personal qualities at work."
-        },
-        {
-            "id": "RDG_READANDMATCH_L28_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L28-Q2-0] Delay",
-                    "value": "A period of time when something is made to happen later than planned."
-                },
-                {
-                    "key": "[L28-Q2-1] Connection",
-                    "value": "A flight or transport link that allows a traveler to continue their journey."
-                },
-                {
-                    "key": "[L28-Q2-2] Boarding",
-                    "value": "The process of getting onto a plane, train, or bus."
-                }
-            ],
-            "hint": "Think about words connected to traveling through an airport.",
-            "explanation": "A delay makes something happen later than planned, a connection is a link to continue your journey, and boarding is getting onto your transport. These words are common at airports."
-        },
-        {
-            "id": "RDG_READANDMATCH_L28_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L28-Q3-0] Generous",
-                    "value": "Willing to give more of something, such as money or time, than is necessary."
-                },
-                {
-                    "key": "[L28-Q3-1] Patient",
-                    "value": "Able to wait calmly without becoming annoyed."
-                },
-                {
-                    "key": "[L28-Q3-2] Honest",
-                    "value": "Telling the truth and not lying or cheating."
-                }
-            ],
-            "hint": "Think about positive character traits a person can have.",
-            "explanation": "Generous means willing to give freely, patient means able to wait calmly, and honest means telling the truth. These words describe positive personal qualities."
-        },
-        {
-            "id": "RDG_READANDMATCH_L29_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L29-Q1-0] Ingredient List",
-                    "value": "The part of food packaging that names everything used to make the product."
-                },
-                {
-                    "key": "[L29-Q1-1] Expiration Date",
-                    "value": "The date after which a food product should not be eaten."
-                },
-                {
-                    "key": "[L29-Q1-2] Organic",
-                    "value": "Describing food grown without artificial chemicals."
-                }
-            ],
-            "hint": "Think about information you might check on food packaging before buying it.",
-            "explanation": "An ingredient list names what is in the food, an expiration date shows when it should no longer be eaten, and organic describes food grown without artificial chemicals. These words help when reading food labels."
-        },
-        {
-            "id": "RDG_READANDMATCH_L29_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L29-Q2-0] Device",
-                    "value": "A piece of equipment made for a particular purpose, especially electronic."
-                },
-                {
-                    "key": "[L29-Q2-1] Battery",
-                    "value": "A device that stores and provides electrical power."
-                },
-                {
-                    "key": "[L29-Q2-2] Charger",
-                    "value": "A device used to add power back into a battery."
-                }
-            ],
-            "hint": "Think about words connected to keeping an electronic device powered.",
-            "explanation": "A device is a piece of electronic equipment, a battery stores power for it, and a charger adds power back into the battery. These words are common with phones and other gadgets."
-        },
-        {
-            "id": "RDG_READANDMATCH_L29_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L29-Q3-0] Apologize",
-                    "value": "To say sorry for something you did wrong."
-                },
-                {
-                    "key": "[L29-Q3-1] Forgive",
-                    "value": "To stop being angry at someone for something they did."
-                },
-                {
-                    "key": "[L29-Q3-2] Misunderstand",
-                    "value": "To understand something incorrectly."
-                }
-            ],
-            "hint": "Think about words connected to resolving a disagreement between people.",
-            "explanation": "Apologize means saying sorry, forgive means no longer being angry, and misunderstand means understanding something incorrectly. These words are useful for talking about conflict and resolution."
-        },
-        {
-            "id": "RDG_READANDMATCH_L30_Q1",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L30-Q1-0] Instructor",
-                    "value": "A person who teaches a skill or subject, especially practical."
-                },
-                {
-                    "key": "[L30-Q1-1] Curriculum",
-                    "value": "The subjects and content taught in a school or course."
-                },
-                {
-                    "key": "[L30-Q1-2] Semester",
-                    "value": "One of the two main periods a school year is divided into."
-                }
-            ],
-            "hint": "Think about words connected to how a school or course is organized.",
-            "explanation": "An instructor teaches a skill, the curriculum is what is taught, and a semester is one part of the school year. These words describe parts of formal education."
-        },
-        {
-            "id": "RDG_READANDMATCH_L30_Q2",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L30-Q2-0] Negotiate",
-                    "value": "To discuss something in order to reach an agreement."
-                },
-                {
-                    "key": "[L30-Q2-1] Compromise",
-                    "value": "An agreement reached when each side gives up something."
-                },
-                {
-                    "key": "[L30-Q2-2] Decision",
-                    "value": "A choice made after thinking about the options."
-                }
-            ],
-            "hint": "Think about words connected to two people trying to reach an agreement.",
-            "explanation": "Negotiate means discussing to reach an agreement, a compromise is the agreement where both sides give something up, and a decision is a final choice. These words describe steps in resolving a disagreement."
-        },
-        {
-            "id": "RDG_READANDMATCH_L30_Q3",
-            "instruction": "Match the words with their meanings.",
-            "subtype": "readAndMatch",
-            "interactionType": "Laser Link",
-            "pairs": [
-                {
-                    "key": "[L30-Q3-0] Forecast",
-                    "value": "A statement about what the weather is expected to be like."
-                },
-                {
-                    "key": "[L30-Q3-1] Temperature",
-                    "value": "A measurement of how hot or cold something is."
-                },
-                {
-                    "key": "[L30-Q3-2] Humidity",
-                    "value": "The amount of moisture present in the air."
-                }
-            ],
-            "hint": "Think about words used when talking about the weather report.",
-            "explanation": "A forecast predicts future weather, temperature measures how hot or cold it is, and humidity measures moisture in the air. These words are common in weather reports."
+          "key": "[L21-Q1-2] Appointment",
+          "value": "An arranged time to meet someone or do something."
         }
-    ]
+      ],
+      "hint": "Each word plays a role in how people organize their time at work or school.",
+      "explanation": "A schedule lays out when things will happen, while a deadline marks the final moment something is due. An appointment is more specific than both — it's a single arranged meeting at a set time."
+    },
+    {
+      "id": "RDG_READANDMATCH_L21_Q2",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L21-Q2-0] Recipe",
+          "value": "A set of instructions for preparing a particular dish."
+        },
+        {
+          "key": "[L21-Q2-1] Ingredient",
+          "value": "One of the foods used to make a dish."
+        },
+        {
+          "key": "[L21-Q2-2] Portion",
+          "value": "An amount of food served to one person."
+        }
+      ],
+      "hint": "Picture cooking a meal from start to finish — what would you need along the way?",
+      "explanation": "A recipe tells you what to do, and an ingredient is one of the foods you need to do it. Portion comes at the very end — it's simply how much of the finished dish ends up on one plate."
+    },
+    {
+      "id": "RDG_READANDMATCH_L21_Q3",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L21-Q3-0] Crowded",
+          "value": "Full of many people in a small space."
+        },
+        {
+          "key": "[L21-Q3-1] Spacious",
+          "value": "Having a lot of room; not crowded."
+        },
+        {
+          "key": "[L21-Q3-2] Comfortable",
+          "value": "Giving a pleasant feeling of physical ease."
+        }
+      ],
+      "hint": "Two of these describe how much space there is, and one describes how it feels to be there.",
+      "explanation": "Crowded and spacious are opposites, describing whether a place is packed with people or has plenty of room. Comfortable takes the idea further — it's about the feeling a place gives you, not just how much space it has."
+    },
+    {
+      "id": "RDG_READANDMATCH_L22_Q1",
+      "instruction": "Match each word with its definition.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L22-Q1-0] Apply",
+          "value": "To formally request something, such as a job, often in writing."
+        },
+        {
+          "key": "[L22-Q1-1] Resume",
+          "value": "A document listing a person's education and work experience."
+        },
+        {
+          "key": "[L22-Q1-2] Interview",
+          "value": "A formal meeting where someone is asked questions, often for a job."
+        }
+      ],
+      "hint": "These words describe three stages of looking for a new job, in order.",
+      "explanation": "You apply first, often by sending a resume that lists your experience. If your resume catches attention, an interview usually follows — the stage where someone finally meets you in person."
+    },
+    {
+      "id": "RDG_READANDMATCH_L22_Q2",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L22-Q2-0] Allergy",
+          "value": "A reaction the body has to a substance that is usually harmless."
+        },
+        {
+          "key": "[L22-Q2-1] Symptom",
+          "value": "A sign that shows a person may be ill."
+        },
+        {
+          "key": "[L22-Q2-2] Prescription",
+          "value": "A doctor's written order for medicine."
+        }
+      ],
+      "hint": "One of these is a cause, one is a sign, and one is a solution.",
+      "explanation": "An allergy is a reaction your body has, and a symptom is any sign that something's wrong, whether from an allergy or another illness. A prescription comes later — it's the doctor's answer to what caused the symptom in the first place."
+    },
+    {
+      "id": "RDG_READANDMATCH_L22_Q3",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L22-Q3-0] Reservation",
+          "value": "An arrangement to keep a place, such as a table or room, for later use."
+        },
+        {
+          "key": "[L22-Q3-1] Itinerary",
+          "value": "A planned route or schedule for a journey."
+        },
+        {
+          "key": "[L22-Q3-2] Luggage",
+          "value": "The bags and suitcases a traveler carries."
+        }
+      ],
+      "hint": "Each word matters at a different point in a trip — before, during, and while packing.",
+      "explanation": "A reservation is made in advance to hold a place, and an itinerary maps out the whole journey once it's planned. Luggage is separate from both — it's simply what you physically carry along the way."
+    },
+    {
+      "id": "RDG_READANDMATCH_L23_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L23-Q1-0] Sibling",
+          "value": "A brother or sister."
+        },
+        {
+          "key": "[L23-Q1-1] Relative",
+          "value": "A person connected to you by family ties."
+        },
+        {
+          "key": "[L23-Q1-2] Household",
+          "value": "A group of people, often family, who live together in one home."
+        }
+      ],
+      "hint": "One of these words is broad, one is specific, and one isn't really about family ties at all.",
+      "explanation": "Sibling refers specifically to a brother or sister, while relative is the broader term for anyone connected to you by family. Household shifts the focus entirely — it's about who lives together, which doesn't always mean they're related."
+    },
+    {
+      "id": "RDG_READANDMATCH_L23_Q2",
+      "instruction": "Match each word with its definition.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L23-Q2-0] Bargain",
+          "value": "An item sold at a lower price than usual; a good deal."
+        },
+        {
+          "key": "[L23-Q2-1] Refund",
+          "value": "Money given back after a returned purchase."
+        },
+        {
+          "key": "[L23-Q2-2] Warranty",
+          "value": "A company's written promise to repair or replace a faulty product."
+        }
+      ],
+      "hint": "These words describe three different things that can happen around a purchase.",
+      "explanation": "A bargain is a good price at the moment of buying, while a refund gives your money back after the purchase is undone. A warranty looks further ahead than both — it's a promise about what happens if the product breaks later."
+    },
+    {
+      "id": "RDG_READANDMATCH_L23_Q3",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L23-Q3-0] Leftovers",
+          "value": "Food that remains after a meal and is saved for later."
+        },
+        {
+          "key": "[L23-Q3-1] Spoiled",
+          "value": "Describing food that has gone bad and is no longer safe to eat."
+        },
+        {
+          "key": "[L23-Q3-2] Fresh",
+          "value": "Recently made or picked; not old or spoiled."
+        }
+      ],
+      "hint": "Picture food right after cooking, food saved for tomorrow, and food left too long.",
+      "explanation": "Fresh and spoiled sit at opposite ends of food quality — one is safe to eat, the other isn't. Leftovers is a different kind of word altogether; it simply means food saved from an earlier meal, whether it's still fresh or has gone bad."
+    },
+    {
+      "id": "RDG_READANDMATCH_L24_Q1",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L24-Q1-0] Update",
+          "value": "To add new or recent information to something."
+        },
+        {
+          "key": "[L24-Q1-1] Download",
+          "value": "To copy a file or program from the internet to a device."
+        },
+        {
+          "key": "[L24-Q1-2] Notification",
+          "value": "A short message that alerts you to something new."
+        }
+      ],
+      "hint": "Each word describes something that happens on your phone or computer.",
+      "explanation": "You download something to bring it onto your device, and you update it later to keep it current. A notification is unrelated to either action directly — it's simply the alert that tells you something happened."
+    },
+    {
+      "id": "RDG_READANDMATCH_L24_Q2",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L24-Q2-0] Diagnosis",
+          "value": "A doctor's identification of what illness a patient has."
+        },
+        {
+          "key": "[L24-Q2-1] Treatment",
+          "value": "Medical care given to help a patient recover."
+        },
+        {
+          "key": "[L24-Q2-2] Recovery",
+          "value": "The process of becoming healthy again after illness or injury."
+        }
+      ],
+      "hint": "These words follow the order of getting sick and getting better.",
+      "explanation": "A diagnosis identifies what's wrong first, and treatment is the care given afterward to fix it. Recovery comes last of all — it's the process of returning to health once treatment has done its job."
+    },
+    {
+      "id": "RDG_READANDMATCH_L24_Q3",
+      "instruction": "Match each word with its definition.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L24-Q3-0] Audience",
+          "value": "The group of people watching or listening to a performance."
+        },
+        {
+          "key": "[L24-Q3-1] Performance",
+          "value": "An act of presenting a show, play, or piece of music to others."
+        },
+        {
+          "key": "[L24-Q3-2] Applause",
+          "value": "Clapping used to show approval or enjoyment."
+        }
+      ],
+      "hint": "One word is the people watching, one is the show, and one is their reaction.",
+      "explanation": "A performance is what happens on stage, and the audience is who watches it happen. Applause comes only at the end — it's how the audience reacts once the performance is over."
+    },
+    {
+      "id": "RDG_READANDMATCH_L25_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L25-Q1-0] Commute",
+          "value": "To regularly travel between home and work."
+        },
+        {
+          "key": "[L25-Q1-1] Overtime",
+          "value": "Extra time worked beyond the normal working hours."
+        },
+        {
+          "key": "[L25-Q1-2] Colleague",
+          "value": "A person you work with."
+        }
+      ],
+      "hint": "Each word relates to a different part of a normal workday.",
+      "explanation": "A commute happens before and after work, getting you there and back. Overtime and colleague both relate to time at work itself, but overtime is about extra hours while a colleague is simply a person you work alongside."
+    },
+    {
+      "id": "RDG_READANDMATCH_L25_Q2",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L25-Q2-0] Souvenir",
+          "value": "An object kept to remember a place or trip."
+        },
+        {
+          "key": "[L25-Q2-1] Sightseeing",
+          "value": "Visiting interesting or famous places as a tourist."
+        },
+        {
+          "key": "[L25-Q2-2] Guide",
+          "value": "A person who shows tourists around a place."
+        }
+      ],
+      "hint": "One word is an activity, one is a person, and one is an object you take home.",
+      "explanation": "Sightseeing is the activity of visiting interesting places, and a guide is the person who often leads that activity. A souvenir is what's left once the trip is over — an object you keep to remember it by."
+    },
+    {
+      "id": "RDG_READANDMATCH_L25_Q3",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L25-Q3-0] Curious",
+          "value": "Eager to learn or know about something."
+        },
+        {
+          "key": "[L25-Q3-1] Confident",
+          "value": "Feeling sure about your own abilities."
+        },
+        {
+          "key": "[L25-Q3-2] Nervous",
+          "value": "Feeling worried or anxious about something."
+        }
+      ],
+      "hint": "These words describe three very different feelings before trying something new.",
+      "explanation": "Curious describes wanting to know more, while confident describes trusting your own ability to succeed. Nervous pulls in the opposite direction from confident — it's the worry that things might not go well."
+    },
+    {
+      "id": "RDG_READANDMATCH_L26_Q1",
+      "instruction": "Match each word with its definition.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L26-Q1-0] Assignment",
+          "value": "A piece of work given to a student to complete."
+        },
+        {
+          "key": "[L26-Q1-1] Grade",
+          "value": "A mark given to show the quality of a student's work."
+        },
+        {
+          "key": "[L26-Q1-2] Classmate",
+          "value": "A student who is in the same class as you."
+        }
+      ],
+      "hint": "Picture a school project: the work itself, the mark it earns, and the people around you.",
+      "explanation": "An assignment is the work a student is given to complete, and a grade is the mark it later receives. Classmate is a different kind of word — it describes a person, not a piece of work."
+    },
+    {
+      "id": "RDG_READANDMATCH_L26_Q2",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L26-Q2-0] Budget",
+          "value": "A plan for how to spend a certain amount of money."
+        },
+        {
+          "key": "[L26-Q2-1] Save",
+          "value": "To keep money instead of spending it."
+        },
+        {
+          "key": "[L26-Q2-2] Spend",
+          "value": "To use money to pay for something."
+        }
+      ],
+      "hint": "One word is a plan, and the other two are opposite actions with money.",
+      "explanation": "A budget is the plan that guides your money decisions. Save and spend are the two opposite actions that plan is meant to balance — one keeps money aside, the other lets it go."
+    },
+    {
+      "id": "RDG_READANDMATCH_L26_Q3",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L26-Q3-0] Volunteer",
+          "value": "A person who offers to do work without being paid."
+        },
+        {
+          "key": "[L26-Q3-1] Donate",
+          "value": "To give something, often money or goods, to help others."
+        },
+        {
+          "key": "[L26-Q3-2] Charity",
+          "value": "An organization that helps people in need."
+        }
+      ],
+      "hint": "Each word describes a different way people help others without expecting payment.",
+      "explanation": "A volunteer gives their time and effort for free, while to donate means giving money or goods instead. A charity is different from both actions — it's the organization that receives this kind of help and puts it to use."
+    },
+    {
+      "id": "RDG_READANDMATCH_L27_Q1",
+      "instruction": "Match each term with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L27-Q1-0] Diet",
+          "value": "The food a person usually eats."
+        },
+        {
+          "key": "[L27-Q1-1] Nutrition",
+          "value": "The process of getting the food needed for health and growth."
+        },
+        {
+          "key": "[L27-Q1-2] Portion Size",
+          "value": "The amount of food served or eaten at one time."
+        }
+      ],
+      "hint": "One word describes what you eat overall, one is about health value, and one is about amount.",
+      "explanation": "Diet describes the pattern of food someone usually eats, and nutrition is about how well that food supports the body's health. Portion size is a narrower idea — it's just the amount of food served at any one time."
+    },
+    {
+      "id": "RDG_READANDMATCH_L27_Q2",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L27-Q2-0] Subscription",
+          "value": "A regular payment made to receive a service or product."
+        },
+        {
+          "key": "[L27-Q2-1] Account",
+          "value": "A record kept by a company of a customer's details and activity."
+        },
+        {
+          "key": "[L27-Q2-2] Username",
+          "value": "The name a person uses to log into an online account."
+        }
+      ],
+      "hint": "Think about what you need to keep using an online service every month.",
+      "explanation": "A subscription is the ongoing payment that keeps a service running for you, and an account is where your information and activity are stored. A username is more specific than both — it's simply the name you type in to log into that account."
+    },
+    {
+      "id": "RDG_READANDMATCH_L27_Q3",
+      "instruction": "Match each word with its definition.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L27-Q3-0] Tradition",
+          "value": "A custom or belief passed down through generations."
+        },
+        {
+          "key": "[L27-Q3-1] Celebration",
+          "value": "An event held to mark a special occasion."
+        },
+        {
+          "key": "[L27-Q3-2] Custom",
+          "value": "A usual way of behaving that is specific to a group or place."
+        }
+      ],
+      "hint": "These words all relate to how a culture marks special moments.",
+      "explanation": "Tradition and custom are close in meaning, both describing something passed down and repeated over time. Celebration is a little different — it's a specific event, often built around one of those traditions or customs."
+    },
+    {
+      "id": "RDG_READANDMATCH_L28_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L28-Q1-0] Punctual",
+          "value": "Arriving or doing something at the agreed time; not late."
+        },
+        {
+          "key": "[L28-Q1-1] Reliable",
+          "value": "Able to be trusted to do what is expected."
+        },
+        {
+          "key": "[L28-Q1-2] Organized",
+          "value": "Arranged in a tidy, well-planned way."
+        }
+      ],
+      "hint": "Each word describes a positive quality an employer might look for.",
+      "explanation": "Punctual is specifically about time — arriving when expected. Reliable is broader, covering whether someone can be trusted in general, while organized focuses on how neatly someone plans and arranges their work."
+    },
+    {
+      "id": "RDG_READANDMATCH_L28_Q2",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L28-Q2-0] Delay",
+          "value": "A period of time when something is made to happen later than planned."
+        },
+        {
+          "key": "[L28-Q2-1] Connection",
+          "value": "A flight or transport link that allows a traveler to continue their journey."
+        },
+        {
+          "key": "[L28-Q2-2] Boarding",
+          "value": "The process of getting onto a plane, train, or bus."
+        }
+      ],
+      "hint": "Picture waiting at an airport gate — what might happen, and in what order?",
+      "explanation": "Boarding happens first, as passengers get onto the plane, and a connection comes later if the trip continues on another flight. A delay is different from both — it's not a step in the journey but something that can disrupt any step along the way."
+    },
+    {
+      "id": "RDG_READANDMATCH_L28_Q3",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L28-Q3-0] Generous",
+          "value": "Willing to give more of something, such as money or time, than is necessary."
+        },
+        {
+          "key": "[L28-Q3-1] Patient",
+          "value": "Able to wait calmly without becoming annoyed."
+        },
+        {
+          "key": "[L28-Q3-2] Honest",
+          "value": "Telling the truth and not lying or cheating."
+        }
+      ],
+      "hint": "Each word describes a different kind of good character.",
+      "explanation": "Generous is about giving more than expected, while patient is about staying calm while waiting. Honest stands apart from both — it's about telling the truth, not about giving or waiting."
+    },
+    {
+      "id": "RDG_READANDMATCH_L29_Q1",
+      "instruction": "Match each phrase with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L29-Q1-0] Ingredient List",
+          "value": "The part of food packaging that names everything used to make the product."
+        },
+        {
+          "key": "[L29-Q1-1] Expiration Date",
+          "value": "The date after which a food product should not be eaten."
+        },
+        {
+          "key": "[L29-Q1-2] Organic",
+          "value": "Describing food grown without artificial chemicals."
+        }
+      ],
+      "hint": "Picture reading the label on a food package before buying it.",
+      "explanation": "The ingredient list tells you what's inside the product, and the expiration date tells you how long it stays safe to eat. Organic is a different kind of label — it describes how the food was grown, not what's in it or how long it lasts."
+    },
+    {
+      "id": "RDG_READANDMATCH_L29_Q2",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L29-Q2-0] Device",
+          "value": "A piece of equipment made for a particular purpose, especially electronic."
+        },
+        {
+          "key": "[L29-Q2-1] Battery",
+          "value": "A device that stores and provides electrical power."
+        },
+        {
+          "key": "[L29-Q2-2] Charger",
+          "value": "A device used to add power back into a battery."
+        }
+      ],
+      "hint": "One word is general, and the other two work together to keep it powered.",
+      "explanation": "Device is the general word for any piece of equipment, especially electronic ones. A battery stores the power that keeps a device running, and a charger is what refills that battery once it runs low."
+    },
+    {
+      "id": "RDG_READANDMATCH_L29_Q3",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L29-Q3-0] Apologize",
+          "value": "To say sorry for something you did wrong."
+        },
+        {
+          "key": "[L29-Q3-1] Forgive",
+          "value": "To stop being angry at someone for something they did."
+        },
+        {
+          "key": "[L29-Q3-2] Misunderstand",
+          "value": "To understand something incorrectly."
+        }
+      ],
+      "hint": "Picture an argument between two people, from the mistake to making peace.",
+      "explanation": "To misunderstand means getting something wrong in the first place, which can lead to an apology from whoever made the mistake. Forgive completes the story — it's the other person's choice to let go of their anger afterward."
+    },
+    {
+      "id": "RDG_READANDMATCH_L30_Q1",
+      "instruction": "Match each word with its meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L30-Q1-0] Instructor",
+          "value": "A person who teaches a skill or subject, especially practical."
+        },
+        {
+          "key": "[L30-Q1-1] Curriculum",
+          "value": "The subjects and content taught in a school or course."
+        },
+        {
+          "key": "[L30-Q1-2] Semester",
+          "value": "One of the two main periods a school year is divided into."
+        }
+      ],
+      "hint": "One word is a person, one is the content taught, and one is a period of time.",
+      "explanation": "An instructor is the person doing the teaching, and the curriculum is what they actually teach. Semester is unrelated to either directly — it's simply the block of time, often several months, during which that teaching happens."
+    },
+    {
+      "id": "RDG_READANDMATCH_L30_Q2",
+      "instruction": "Match each word with its definition.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L30-Q2-0] Negotiate",
+          "value": "To discuss something in order to reach an agreement."
+        },
+        {
+          "key": "[L30-Q2-1] Compromise",
+          "value": "An agreement reached when each side gives up something."
+        },
+        {
+          "key": "[L30-Q2-2] Decision",
+          "value": "A choice made after thinking about the options."
+        }
+      ],
+      "hint": "Picture two people trying to agree on something neither fully wants.",
+      "explanation": "To negotiate is the process of discussing to reach an agreement, and a compromise is often the result — each side gives up a little. Decision is a broader word than both; it simply means any choice made after thinking something through, negotiated or not."
+    },
+    {
+      "id": "RDG_READANDMATCH_L30_Q3",
+      "instruction": "Match each word with its correct meaning.",
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L30-Q3-0] Forecast",
+          "value": "A statement about what the weather is expected to be like."
+        },
+        {
+          "key": "[L30-Q3-1] Temperature",
+          "value": "A measurement of how hot or cold something is."
+        },
+        {
+          "key": "[L30-Q3-2] Humidity",
+          "value": "The amount of moisture present in the air."
+        }
+      ],
+      "hint": "One word predicts the weather, and the other two measure parts of it.",
+      "explanation": "A forecast predicts what the weather will be like before it happens. Temperature and humidity are both measurements within that forecast — one tracks heat, the other tracks moisture in the air."
+    }
+  ]
 }
