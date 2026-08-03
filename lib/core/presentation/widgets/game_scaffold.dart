@@ -7,8 +7,8 @@ import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
-import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_error_view.dart'; // TODO: make a common GameErrorView
-import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_briefing_layer.dart'; // TODO: make a common GameBriefingLayer
+import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_error_view.dart';
+import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_briefing_layer.dart';
 
 class GameScaffold<S> extends StatelessWidget {
   final S state;

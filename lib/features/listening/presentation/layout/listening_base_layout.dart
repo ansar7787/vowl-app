@@ -17,7 +17,6 @@ import 'package:vowl/features/listening/presentation/widgets/listening_base_layo
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/listening/presentation/widgets/listening_header.dart';
 import 'package:vowl/features/listening/presentation/widgets/listening_peeking_mascot.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
