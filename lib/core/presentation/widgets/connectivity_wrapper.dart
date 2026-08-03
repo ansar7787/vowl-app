@@ -33,16 +33,7 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
   String _currentLocation = '';
   bool _wasOffline = false;
 
-  /// Routes that genuinely require an active internet connection and should
-  /// ALWAYS display a full-screen block when offline (regardless of quota).
-  static const _hardBlockRoutes = <String>{
-    AppRouter.loginRoute,
-    AppRouter.signupRoute,
-    AppRouter.forgotPasswordRoute,
-    AppRouter.verifyEmailRoute,
-    AppRouter.leaderboardRoute,
-    AppRouter.kidsLeaderboardRoute,
-  };
+
 
   /// Routes where even the soft offline banner should be suppressed.
   static const _offlineSilentRoutes = <String>{
@@ -129,25 +120,16 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
 
         // ── Determine overlay strategy ──────────────────────────────────
 
-        // 1. Always hard-block auth/leaderboard routes when offline
-        final bool isHardBlockRoute =
-            _hardBlockRoutes.contains(_currentLocation);
-
-        // 2. Check if offline quota is exhausted
+        // 1. Check if offline quota is exhausted
         final bool isQuotaExhausted = gate.isOfflineQuotaExhausted;
 
-        // 3. Hard block for auth routes (show NoInternetPage)
-        final bool shouldShowNoInternet = isOffline && isHardBlockRoute;
-
-        // 4. Quota exhausted block for gameplay routes (show OfflineQuotaExhaustedPage)
+        // 2. Quota exhausted block for gameplay routes (show OfflineQuotaExhaustedPage)
         final bool shouldShowQuotaBlock = isOffline &&
-            !isHardBlockRoute &&
             isQuotaExhausted &&
             !_offlineSilentRoutes.contains(_currentLocation);
 
-        // 5. Soft banner: offline but within grace period, not on silent route
+        // 3. Soft banner: offline but within grace period, not on silent route
         final bool shouldShowBanner = isOffline &&
-            !shouldShowNoInternet &&
             !shouldShowQuotaBlock &&
             !_offlineSilentRoutes.contains(_currentLocation);
 
@@ -157,7 +139,7 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
             // Always keep the Navigator alive to preserve state
             widget.child,
 
-            // Overlay layer: either NoInternetPage OR OfflineQuotaExhaustedPage
+            // Overlay layer: OfflineQuotaExhaustedPage
             Positioned.fill(
               child: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 400),
@@ -167,27 +149,22 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
                     (Widget child, Animation<double> animation) {
                   return FadeTransition(opacity: animation, child: child);
                 },
-                child: shouldShowNoInternet
-                    ? NoInternetPage(
-                        key: const ValueKey('connectivity_auth_block'),
+                child: shouldShowQuotaBlock
+                    ? OfflineQuotaExhaustedPage(
+                        key: const ValueKey('connectivity_quota_block'),
                         onRetry: _handleRetry,
+                        onAdWatched: _handleAdWatchedOffline,
                       )
-                    : shouldShowQuotaBlock
-                        ? OfflineQuotaExhaustedPage(
-                            key: const ValueKey('connectivity_quota_block'),
-                            onRetry: _handleRetry,
-                            onAdWatched: _handleAdWatchedOffline,
-                          )
-                        : const SizedBox.shrink(
-                            key: ValueKey('connectivity_clear'),
-                          ),
+                    : const SizedBox.shrink(
+                        key: ValueKey('connectivity_clear'),
+                      ),
               ),
             ),
 
             // Soft banner: non-blocking notification within grace period
             if (shouldShowBanner)
               const Positioned(
-                top: 0,
+                bottom: 40,
                 left: 0,
                 right: 0,
                 child: OfflineBanner(
