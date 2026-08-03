@@ -293,6 +293,7 @@ class AdService {
   void showInterstitialAd({
     required VoidCallback onDismissed,
     required bool isPremium,
+    bool force = false,
   }) {
     // 1. Premium bypass — never show ads to premium users.
     if (isPremium) {
@@ -303,7 +304,7 @@ class AdService {
     // 2. Frequency gate — enforce levelsPerInterstitial policy.
     //    FIX (CRITICAL-3): No internal increment here. The counter was
     //    already updated by recordLevelCompletion() before this call.
-    if (_completedLevelsSinceLastAd < levelsPerInterstitial) {
+    if (!force && _completedLevelsSinceLastAd < levelsPerInterstitial) {
       if (kDebugMode) {
         debugPrint(
           'AdService: Interstitial skipped '
@@ -323,7 +324,7 @@ class AdService {
 
     // 4. Cooldown gate — prevent back-to-back ads within the cooldown window.
     final now = DateTime.now();
-    if (_lastInterstitialTime != null) {
+    if (!force && _lastInterstitialTime != null) {
       final elapsed = now.difference(_lastInterstitialTime!);
       if (elapsed.inMinutes < interstitialCooldownMinutes) {
         if (kDebugMode) {

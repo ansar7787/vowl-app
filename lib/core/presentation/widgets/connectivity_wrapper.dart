@@ -93,6 +93,7 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
     final adService = di.sl<AdService>();
     adService.showInterstitialAd(
       isPremium: false,
+      force: true, // Bypass frequency/cooldown gates on reconnect
       onDismissed: () {
         gate.resetQuotaAfterAd();
         if (mounted) setState(() {});
