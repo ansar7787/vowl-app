@@ -116,6 +116,24 @@ class _AccentSelfEvaluationPanelState extends State<AccentSelfEvaluationPanel> {
             color: widget.primaryColor,
           ),
         ),
+        SizedBox(height: 12.h),
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+          decoration: BoxDecoration(
+            color: widget.primaryColor.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(12.r),
+            border: Border.all(color: widget.primaryColor.withValues(alpha: 0.3)),
+          ),
+          child: Text(
+            '"${widget.textToSpeak}"',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ),
         SizedBox(height: 16.h),
         if (!_hasRecorded) ...[
           GestureDetector(
