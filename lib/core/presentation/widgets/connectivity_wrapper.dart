@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:vowl/core/network/network_info.dart';
-import 'package:vowl/core/presentation/pages/no_internet_page.dart';
 import 'package:vowl/core/presentation/pages/offline_quota_exhausted_page.dart';
 import 'package:vowl/core/presentation/widgets/offline_banner.dart';
 import 'package:vowl/core/utils/ad_service.dart';
@@ -14,10 +13,11 @@ import 'package:vowl/core/utils/offline_play_gate_service.dart';
 ///
 ///  - **Online:** renders [child] normally. If a reconnect-ad is pending,
 ///    shows an interstitial ad and then resets the offline quota.
-///  - **Offline + auth route:** full-screen [NoInternetPage] (hard block).
-///  - **Offline + gameplay, quota remaining:** [OfflineBanner] (soft, non-blocking).
+///  - **Offline + gameplay, quota remaining:** [OfflineBanner] (soft, non-blocking pill).
 ///  - **Offline + gameplay, quota exhausted:** [OfflineQuotaExhaustedPage]
 ///    with "Watch Ad" / "Reconnect" / "Go Premium" options.
+///  - **Offline + non-gameplay routes:** no blocking overlay; the underlying
+///    screen handles its own error/skeleton states (e.g. login, settings).
 ///  - **Premium users:** never see offline restrictions because
 ///    [NetworkInfo.setPremiumOverride] forces the stream to always emit online.
 class ConnectivityWrapper extends StatefulWidget {
@@ -32,8 +32,6 @@ class ConnectivityWrapper extends StatefulWidget {
 class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
   String _currentLocation = '';
   bool _wasOffline = false;
-
-
 
   /// Routes where the soft offline banner should be suppressed.
   static const _offlineSilentRoutes = <String>{
