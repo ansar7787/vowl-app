@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -96,7 +96,6 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
         _isAnswered = true;
         _isCorrect = false;
       });
-      _scrollToBottom();
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
   }
@@ -112,12 +111,10 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
     if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
-      _scrollToBottom();
       context.read<AccentBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      _scrollToBottom();
       context.read<AccentBloc>().add(SubmitAnswer(false));
     }
   }

@@ -115,14 +115,16 @@ class MinimalPairsDroneOption extends StatelessWidget {
                 duration: (2 + index).seconds,
               ),
 
-          if (isAnswered && isSelected) ...[
-            SizedBox(height: 10.h),
-            Icon(
+          SizedBox(height: 10.h),
+          AnimatedOpacity(
+            duration: const Duration(milliseconds: 200),
+            opacity: (isAnswered && isSelected) ? 1.0 : 0.0,
+            child: Icon(
               correct ? Icons.check_circle_rounded : Icons.cancel_rounded,
               color: correct ? Colors.greenAccent : Colors.redAccent,
               size: 20.r,
-            ).animate().scale(),
-          ],
+            ).animate(target: (isAnswered && isSelected) ? 1 : 0).scale(),
+          ),
         ],
       ),
     );
