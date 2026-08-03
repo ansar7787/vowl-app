@@ -35,11 +35,27 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
 
 
 
-  /// Routes where even the soft offline banner should be suppressed.
+  /// Routes where the soft offline banner should be suppressed.
   static const _offlineSilentRoutes = <String>{
     AppRouter.premiumRoute,
     AppRouter.splashRoute,
     AppRouter.ageGateRoute,
+  };
+
+  /// Routes that should never trigger the Quota Exhausted block.
+  /// This ensures users are never locked out of logging in or accessing settings.
+  static const _nonGameplayRoutes = <String>{
+    AppRouter.loginRoute,
+    AppRouter.signupRoute,
+    AppRouter.forgotPasswordRoute,
+    AppRouter.verifyEmailRoute,
+    AppRouter.splashRoute,
+    AppRouter.ageGateRoute,
+    AppRouter.premiumRoute,
+    AppRouter.settingsRoute,
+    AppRouter.profileRoute,
+    AppRouter.leaderboardRoute,
+    AppRouter.kidsLeaderboardRoute,
   };
 
   @override
@@ -130,7 +146,7 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
         // 2. Quota exhausted block for gameplay routes (show OfflineQuotaExhaustedPage)
         final bool shouldShowQuotaBlock = isOffline &&
             isQuotaExhausted &&
-            !_offlineSilentRoutes.contains(_currentLocation);
+            !_nonGameplayRoutes.contains(_currentLocation);
 
         // 3. Soft banner: offline but within grace period, not on silent route
         final bool shouldShowBanner = isOffline &&
