@@ -34,7 +34,7 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [ ] Reading Speed Check (`readingSpeedCheck`)
 - [ ] Guess Title (`guessTitle`)
 - [ ] Read and Match (`readAndMatch`)
-- [ ] Paragraph Summary (`paragraphSummary`)
+- [x] ✅ Paragraph Summary (`paragraphSummary`) — TypeToConfirm deployed
 - [ ] Reading Inference (`readingInference`)
 - [ ] Reading Conclusion (`readingConclusion`)
 - [x] ✅ Cloze Test (`clozeTest`)
@@ -55,13 +55,13 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 
 ## Grammar (19)
 - [ ] Grammar Quest (`grammarQuest`)
-- [ ] Sentence Correction (`sentenceCorrection`)
+- [x] ✅ Sentence Correction (`sentenceCorrection`) — TypeToConfirm deployed
 - [ ] Word Reorder (`wordReorder`)
 - [ ] Tense Mastery (`tenseMastery`)
 - [ ] Parts of Speech (`partsOfSpeech`)
 - [ ] Subject-Verb Agreement (`subjectVerbAgreement`)
 - [ ] Clause Connector (`clauseConnector`)
-- [ ] Voice Swap (`voiceSwap`)
+- [x] ✅ Voice Swap (`voiceSwap`) — TypeToConfirm deployed
 - [ ] Question Formatter (`questionFormatter`)
 - [x] ✅ Article Insertion (`articleInsertion`)
 - [ ] Modifier Placement (`modifierPlacement`)
@@ -70,49 +70,49 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [ ] Pronoun Resolution (`pronounResolution`)
 - [ ] Punctuation Mastery (`punctuationMastery`)
 - [ ] Relative Clauses (`relativeClauses`)
-- [ ] Conditionals (`conditionals`)
+- [x] ✅ Conditionals (`conditionals`) — TypeToConfirm deployed
 - [ ] Conjunctions (`conjunctions`)
-- [ ] Direct/Indirect Speech (`directIndirectSpeech`)
+- [x] ✅ Direct/Indirect Speech (`directIndirectSpeech`) — TypeToConfirm deployed
 
 ## Vocabulary (12)
 - [ ] Flashcards (`flashcards`)
-- [ ] Synonym Search (`synonymSearch`)
-- [ ] Antonym Search (`antonymSearch`)
+- [x] ✅ Synonym Search (`synonymSearch`) — TypeToConfirm deployed
+- [x] ✅ Antonym Search (`antonymSearch`) — TypeToConfirm deployed
 - [ ] Context Clues (`contextClues`)
 - [ ] Phrasal Verbs (`phrasalVerbs`)
-- [ ] Idioms (`idioms`)
+- [x] ✅ Idioms (`idioms`) — TypeToConfirm deployed
 - [x] ✅ Academic Word (`academicWord`)
 - [ ] Topic Vocab (`topicVocab`)
 - [ ] Word Formation (`wordFormation`)
 - [ ] Prefix/Suffix (`prefixSuffix`)
-- [ ] Collocations (`collocations`)
+- [x] ✅ Collocations (`collocations`) — TypeToConfirm deployed
 - [ ] Contextual Usage (`contextualUsage`)
 
 ## Accent (12)
-- [x] ✅ Minimal Pairs (`minimalPairs`)
+- [x] ✅ Minimal Pairs (`minimalPairs`) — SpeakToConfirm deployed
 - [x] ✅ Intonation Mimic (`intonationMimic`)
 - [x] ✅ Syllable Stress (`syllableStress`)
 - [x] ✅ Word Linking (`wordLinking`)
 - [x] ✅ Shadowing Challenge (`shadowingChallenge`)
-- [x] ✅ Vowel Distinction (`vowelDistinction`)
-- [x] ✅ Consonant Clarity (`consonantClarity`)
+- [x] ✅ Vowel Distinction (`vowelDistinction`) — SpeakToConfirm deployed
+- [x] ✅ Consonant Clarity (`consonantClarity`) — SpeakToConfirm deployed
 - [x] ✅ Pitch Pattern Match (`pitchPatternMatch`)
 - [x] ✅ Speed Variance (`speedVariance`)
 - [x] ✅ Dialect Drill (`dialectDrill`)
-- [x] ✅ Connected Speech (`connectedSpeech`)
+- [x] ✅ Connected Speech (`connectedSpeech`) — SpeakToConfirm deployed
 - [x] ✅ Pitch Modulation (`pitchModulation`)
 
 ## Roleplay (10)
-- [x] ✅ Branching Dialogue (`branchingDialogue`)
-- [x] ✅ Situational Response (`situationalResponse`)
-- [x] ✅ Job Interview (`jobInterview`)
-- [ ] Medical Consult (`medicalConsult`)
-- [ ] Gourmet Order (`gourmetOrder`)
-- [ ] Travel Desk (`travelDesk`)
-- [ ] Conflict Resolver (`conflictResolver`)
-- [ ] Elevator Pitch (`elevatorPitch`)
-- [ ] Social Spark (`socialSpark`)
-- [ ] Emergency Hub (`emergencyHub`)
+- [x] ✅ Branching Dialogue (`branchingDialogue`) — SpeakToConfirm deployed
+- [x] ✅ Situational Response (`situationalResponse`) — SpeakToConfirm deployed
+- [x] ✅ Job Interview (`jobInterview`) — SpeakToConfirm deployed
+- [x] ✅ Medical Consult (`medicalConsult`) — SpeakToConfirm deployed
+- [x] ✅ Gourmet Order (`gourmetOrder`) — SpeakToConfirm deployed
+- [x] ✅ Travel Desk (`travelDesk`) — SpeakToConfirm deployed
+- [x] ✅ Conflict Resolver (`conflictResolver`) — SpeakToConfirm deployed
+- [x] ✅ Elevator Pitch (`elevatorPitch`) — Native speech mechanics
+- [x] ✅ Social Spark (`socialSpark`) — SpeakToConfirm deployed
+- [x] ✅ Emergency Hub (`emergencyHub`) — SpeakToConfirm deployed
 
 ## Elite Mastery (4)
 - [x] ✅ Story Builder (`storyBuilder`)
@@ -143,5 +143,4 @@ Track the progress of UI and learning optimizations across all 122 game modules.
 - [ ] Weather
 - [ ] Jobs
 - [ ] Time
-
 

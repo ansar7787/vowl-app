@@ -249,11 +249,11 @@ class GameInstructionService {
       title: "Minimal Pairs",
       icon: Icons.hearing_rounded,
       objective:
-          "Listen to the word and select the correct matching sound. Mastering pronunciation ensures your spoken English sounds clear and natural.",
+          "Listen to the word, select the correct matching sound, then speak it aloud to lock in the pronunciation. Mastering pronunciation ensures your spoken English sounds clear and natural.",
       rules: [
         "Listen to the target word",
-        "Notice vowel length and tension",
         "Select the exact phonetic match",
+        "Speak the answer to confirm",
       ],
       actionText: "Identify Sound",
       tip:
@@ -263,11 +263,11 @@ class GameInstructionService {
       title: "Consonant Clarity",
       icon: Icons.record_voice_over_rounded,
       objective:
-          "Identify the target consonant to refine your pronunciation and clear up real-world communication. Mastering pronunciation ensures your spoken English sounds clear and natural.",
+          "Identify the target consonant, then speak the word aloud to confirm your pronunciation. Mastering pronunciation ensures your spoken English sounds clear and natural.",
       rules: [
         "Listen to the target word",
-        "Identify the correct sound",
         "Tap the matching consonant",
+        "Speak to confirm your answer",
       ],
       actionText: "Identify Sound",
       tip:
@@ -880,8 +880,8 @@ class GameInstructionService {
       title: "Error Auditor",
       icon: Icons.spellcheck_rounded,
       objective:
-          "Scan the text for grammatical errors, apply the correct fix, and type the final answer to lock it in. Mastering structural rules ensures your English is accurate and easily understood.",
-      rules: ["Find the glitch", "Apply the fix", "Verify the meaning"],
+          "Scan the text for grammatical errors, apply the correct fix, then type the corrected sentence to lock it in. Mastering structural rules ensures your English is accurate and easily understood.",
+      rules: ["Find the glitch", "Apply the fix", "Type to confirm answer"],
       actionText: "Audit Text",
       tip:
           "PRO TIP: Focus on subject-verb agreement first—it's the most common source of errors!",
@@ -964,7 +964,7 @@ class GameInstructionService {
       rules: [
         "Identify the agent",
         "Change the verb form",
-        "Keep meaning intact",
+        "Type the sentence to confirm",
       ],
       actionText: "Swap Voice",
       tip:
@@ -1082,7 +1082,7 @@ class GameInstructionService {
       rules: [
         "Identify the condition",
         "Match the tense sequence",
-        "Predict the result",
+        "Type the clause to confirm",
       ],
       actionText: "Solve Logic",
       tip:
@@ -1109,7 +1109,7 @@ class GameInstructionService {
       rules: [
         "Shift tenses backward",
         "Update time markers",
-        "Correct tenses & pronouns",
+        "Type the sentence to confirm",
       ],
       actionText: "Report Speech",
       tip:
@@ -1269,11 +1269,11 @@ class GameInstructionService {
       title: "Vowel Distinction",
       icon: Icons.tune_rounded,
       objective:
-          "Isolate and master differences between subtle English vowel phonemes. Mastering pronunciation ensures your spoken English sounds clear and natural.",
+          "Isolate subtle English vowel phonemes, select the exact match, then speak it aloud to solidify your pronunciation. Mastering pronunciation ensures your spoken English sounds clear and natural.",
       rules: [
         "Listen to the target word",
-        "Analyze the vowel tension",
         "Select the exact match",
+        "Speak to confirm your answer",
       ],
       actionText: "Identify Sound",
       tip:
@@ -1308,11 +1308,11 @@ class GameInstructionService {
       title: "Connected Speech",
       icon: Icons.settings_input_composite_rounded,
       objective:
-          "Listen closely to how the words connect and choose the correct sound change card. Mastering pronunciation ensures your spoken English sounds clear and natural.",
+          "Listen closely to how the words connect, choose the correct sound change, then speak the phrase aloud to confirm. Mastering pronunciation ensures your spoken English sounds clear and natural.",
       rules: [
         "Listen to the linked words",
-        "Notice which sound changes or drops",
         "Select the rule that applies",
+        "Speak to confirm your answer",
       ],
       actionText: "Connect Words",
       tip:
@@ -1324,7 +1324,7 @@ class GameInstructionService {
       icon: Icons.forum_rounded,
       objective:
           "Tap an answer or drag the decision probe to select the most natural, context-appropriate conversational response. Mastering situational responses ensures you can navigate social interactions with confidence.",
-      rules: ["Analyze the scene", "Flick decision probe", "React naturally"],
+      rules: ["Analyze the scene", "Select your response", "Speak to confirm"],
       actionText: "Enter Simulation",
       tip:
           "PRO TIP: Pay attention to the subtle social cues! Being polite and direct often opens the right doors.",
@@ -1344,7 +1344,7 @@ class GameInstructionService {
       icon: Icons.business_center_rounded,
       objective:
           "Choose professional responses to nail your high-stakes job interview. Mastering situational responses ensures you can navigate social interactions with confidence.",
-      rules: ["Be professional", "Highlight core skills", "Stay confident"],
+      rules: ["Be professional", "Select the best answer", "Speak to confirm"],
       actionText: "Start Interview",
       tip:
           "PRO TIP: Frame replies to show how your experience solves their business needs.",
