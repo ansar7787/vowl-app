@@ -14,7 +14,7 @@ import 'package:vowl/features/listening/presentation/bloc/listening_event.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/features/listening/presentation/widgets/listening_audio_player.dart';
 import 'package:vowl/features/listening/presentation/widgets/listening_base_layout_config.dart';
-import 'package:vowl/features/listening/presentation/widgets/listening_feedback_card.dart';
+import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/listening/presentation/widgets/listening_header.dart';
 import 'package:vowl/features/listening/presentation/widgets/listening_peeking_mascot.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -277,12 +277,23 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
           },
           feedbackBuilder: (context, s) {
             if (s is! ListeningLoaded) return const SizedBox.shrink();
-            return ListeningFeedbackCard(
-              state: s,
+            
+            final quest = s.currentQuest;
+            String? explanation = quest.explanation;
+            if (explanation == null && widget.isCorrect == false && widget.isFinalFailure) {
+               if (quest.correctAnswerIndex != null && quest.options != null && quest.options!.isNotEmpty) {
+                   explanation = quest.options![quest.correctAnswerIndex!];
+               }
+            }
+            
+            return GameFeedbackCard(
               isCorrect: widget.isCorrect,
-              theme: theme,
-              isDark: isDark,
+              isFinalFailure: widget.isFinalFailure,
+              livesRemaining: s.livesRemaining,
               onContinue: widget.onContinue,
+              isDark: isDark,
+              primaryColor: theme.primaryColor as Color,
+              explanation: explanation,
             );
           },
         );

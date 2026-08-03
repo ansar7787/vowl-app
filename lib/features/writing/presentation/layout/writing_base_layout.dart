@@ -13,7 +13,7 @@ import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
 import 'package:vowl/core/presentation/widgets/writing/ink_streak.dart';
 import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
-import 'package:vowl/features/writing/presentation/widgets/writing_feedback_card.dart';
+import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
@@ -112,14 +112,21 @@ class WritingBaseLayout extends StatelessWidget {
         return _buildPeekingMascot(context, state, lives, mascotId, mascotName);
       },
       feedbackBuilder: (context, state) {
+        if (state is! WritingLoaded) return const SizedBox.shrink();
         final isDark = Theme.of(context).brightness == Brightness.dark;
         final theme = LevelThemeHelper.getTheme('writing', isDark: isDark, level: level);
-        return WritingFeedbackCard(
-          state: state,
+        final quest = state.currentQuest;
+
+        return GameFeedbackCard(
           isCorrect: isCorrect,
+          isFinalFailure: isFinalFailure,
+          livesRemaining: state.livesRemaining,
           onContinue: onContinue,
           isDark: isDark,
-          theme: theme,
+          primaryColor: theme.primaryColor as Color,
+          explanation: quest.explanation,
+          sampleAnswer: quest.sampleAnswer,
+          requiredPoints: quest.requiredPoints,
         );
       },
     );

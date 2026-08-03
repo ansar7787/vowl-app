@@ -7,7 +7,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/core/presentation/widgets/grammar/logic_circuit.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/features/grammar/presentation/widgets/grammar_feedback_card.dart';
+import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/grammar/presentation/widgets/grammar_game_header.dart';
 import 'package:vowl/features/grammar/presentation/widgets/grammar_peeking_mascot.dart';
 
@@ -106,11 +106,28 @@ class GrammarBaseLayout extends StatelessWidget {
         );
       },
       feedbackBuilder: (context, state) {
-        return GrammarFeedbackCard(
-          state: state,
+        if (state is! GrammarLoaded) return const SizedBox.shrink();
+        final isDark = Theme.of(context).brightness == Brightness.dark;
+        final theme = LevelThemeHelper.getTheme('grammar', level: level, isDark: isDark);
+        
+        final quest = state.currentQuest;
+        String? explanation = quest.explanation;
+        if (explanation == null && isCorrect == false && isFinalFailure) {
+           explanation = (quest.options != null && quest.correctAnswerIndex != null
+               ? quest.options![quest.correctAnswerIndex!]
+               : null);
+        }
+
+        return GameFeedbackCard(
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
+          livesRemaining: state.livesRemaining,
           onContinue: onContinue,
+          isDark: isDark,
+          primaryColor: theme.primaryColor as Color,
+          explanation: explanation,
+          ruleTitle: 'GRAMMAR RULE',
+          ruleContent: quest.grammarRule,
         );
       },
     );

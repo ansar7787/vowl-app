@@ -9,7 +9,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/constants/reading_constants.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_content_area.dart';
-import 'package:vowl/features/reading/presentation/widgets/reading_feedback_card.dart';
+import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_header.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_passage_area.dart';
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
@@ -151,14 +151,22 @@ class ReadingBaseLayout extends StatelessWidget {
             if (s is! ReadingLoaded) return const SizedBox.shrink();
             final isDark = Theme.of(context).brightness == Brightness.dark;
             final theme = LevelThemeHelper.getTheme(gameType.name, isDark: isDark, level: level);
-            return ReadingFeedbackCard(
+            final quest = s.currentQuest;
+            String? explanation = quest.explanation;
+            if (explanation == null && isCorrect == false && isFinalFailure) {
+              if (quest.correctAnswerIndex != null && quest.options != null && quest.options!.isNotEmpty) {
+                 explanation = quest.options![quest.correctAnswerIndex!];
+              }
+            }
+
+            return GameFeedbackCard(
               isCorrect: isCorrect,
-              lives: s.livesRemaining,
-              isFinalFailure: s.isFinalFailure,
-              currentQuest: s.currentQuest,
+              isFinalFailure: isFinalFailure,
+              livesRemaining: s.livesRemaining,
               onContinue: onContinue,
-              primaryColor: theme.primaryColor,
               isDark: isDark,
+              primaryColor: theme.primaryColor as Color,
+              explanation: explanation,
             );
           },
         );

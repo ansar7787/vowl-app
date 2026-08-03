@@ -10,10 +10,13 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
-import 'package:vowl/features/speaking/presentation/widgets/speaking_feedback_card.dart';
+import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/speaking/presentation/widgets/speaking_game_header.dart';
 import 'package:vowl/features/speaking/presentation/widgets/speaking_peeking_mascot.dart';
 import 'package:vowl/features/speaking/presentation/widgets/speaking_voice_pulse_bg.dart';
+import 'package:vowl/core/presentation/layout/game_base_layout.dart';
+import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
+import 'package:vowl/core/presentation/bloc/game_state_base.dart';
 
 // ---------------------------------------------------------------------------
 // Layout constants
@@ -23,9 +26,7 @@ const int _kNudgeDelayMs = 1200;
 const int _kBriefingTriggerLevel = 1;
 const int _kBriefingTutorialLevel = 100;
 
-import 'package:vowl/core/presentation/layout/game_base_layout.dart';
-import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
-import 'package:vowl/core/presentation/bloc/game_state_base.dart';
+
 
 // =============================================================================
 // SpeakingBaseLayout
@@ -93,7 +94,6 @@ class SpeakingBaseLayout extends StatelessWidget {
       showConfetti: showConfetti,
       useScrolling: useScrolling,
       disablePadding: disablePadding,
-      horizontalPadding: 24.w,
     );
 
     return GameBaseLayout<SpeakingBloc, SpeakingState>(
@@ -149,11 +149,24 @@ class SpeakingBaseLayout extends StatelessWidget {
       feedbackBuilder: (context, state) {
         if (state is! SpeakingLoaded) return const SizedBox.shrink();
         final isDark = Theme.of(context).brightness == Brightness.dark;
-        return SpeakingFeedbackCard(
-          state: state,
-          success: isCorrect ?? false,
+        final theme = LevelThemeHelper.getTheme('speaking', level: level, isDark: isDark);
+        
+        final quest = state.currentQuest;
+        String? explanation = quest.explanation;
+        if (explanation == null && isCorrect == false && isFinalFailure) {
+           if (quest.correctAnswerIndex != null && quest.options != null && quest.options!.isNotEmpty) {
+               explanation = quest.options![quest.correctAnswerIndex!];
+           }
+        }
+
+        return GameFeedbackCard(
+          isCorrect: isCorrect,
+          isFinalFailure: isFinalFailure,
+          livesRemaining: state.livesRemaining,
           onContinue: onContinue,
           isDark: isDark,
+          primaryColor: theme.primaryColor as Color,
+          explanation: explanation,
           onTutorPass: onTutorPass,
         );
       },

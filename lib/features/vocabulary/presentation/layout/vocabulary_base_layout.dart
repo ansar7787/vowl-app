@@ -6,7 +6,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_header.dart';
 import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_peeking_mascot.dart';
-import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_feedback_card.dart';
+import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/vocabulary/presentation/themes/vocab_level_theme.dart';
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
@@ -88,13 +88,26 @@ class VocabularyBaseLayout extends StatelessWidget {
         );
       },
       feedbackBuilder: (context, state) {
+        if (state is! VocabularyLoaded) return const SizedBox.shrink();
         final isDark = Theme.of(context).brightness == Brightness.dark;
-        return VocabularyFeedbackCard(
-          state: state,
-          isDark: isDark,
+        final theme = VocabLevelTheme.from(LevelThemeHelper.getTheme(gameType.name, isDark: isDark, level: level));
+        
+        final quest = state.currentQuest;
+        String? explanation = quest.explanation;
+        if (explanation == null && isCorrect == false && isFinalFailure) {
+           if (quest.correctAnswerIndex != null && quest.options != null && quest.options!.isNotEmpty) {
+               explanation = quest.options![quest.correctAnswerIndex!];
+           }
+        }
+
+        return GameFeedbackCard(
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
+          livesRemaining: state.livesRemaining,
           onContinue: onContinue,
+          isDark: isDark,
+          primaryColor: theme.primaryColor as Color,
+          explanation: explanation,
         );
       },
     );
