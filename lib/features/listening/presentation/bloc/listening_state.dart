@@ -1,11 +1,13 @@
 import 'package:equatable/equatable.dart';
 import '../../domain/entities/listening_quest.dart';
 
+import 'package:vowl/core/presentation/bloc/game_state_base.dart';
+
 /// All possible states emitted by [ListeningBloc].
-abstract class ListeningState extends Equatable {
+abstract class ListeningState extends Equatable implements GameStateBase {
   const ListeningState();
 
-  /// Natively resolves lives for all states to eliminate UI ternary fallback logic.
+  @override
   int get livesRemaining => 3;
 
   @override
@@ -13,18 +15,19 @@ abstract class ListeningState extends Equatable {
 }
 
 /// Initial state before any [FetchListeningQuests] event is dispatched.
-class ListeningInitial extends ListeningState {
+class ListeningInitial extends ListeningState implements GameInitialState {
   const ListeningInitial();
 }
 
 /// Quests are being fetched from the data layer.
-class ListeningLoading extends ListeningState {
+class ListeningLoading extends ListeningState implements GameLoadingState {
   const ListeningLoading();
 }
 
 /// Quests have loaded and the game is actively in progress.
-class ListeningLoaded extends ListeningState {
+class ListeningLoaded extends ListeningState implements GameLoadedState {
   final List<ListeningQuest> quests;
+  @override
   final int currentIndex;
   @override
   final int livesRemaining;
@@ -33,14 +36,26 @@ class ListeningLoaded extends ListeningState {
   ///
   /// This field is **always replaced** by [copyWith] — pass `null` explicitly
   /// to clear it (retry state). No sentinel object is required.
+  @override
   final bool? lastAnswerCorrect;
 
+  @override
   final bool hintUsed;
   final int wrongCount;
+  @override
   final bool isFinalFailure;
 
   /// Convenience accessor — safe only when [quests] is non-empty.
   ListeningQuest get currentQuest => quests[currentIndex];
+
+  @override
+  ListeningQuest? get currentQuestOrNull =>
+      (currentIndex >= 0 && currentIndex < quests.length)
+      ? quests[currentIndex]
+      : null;
+
+  @override
+  int get totalQuests => quests.length;
 
   const ListeningLoaded({
     required this.quests,
@@ -85,7 +100,8 @@ class ListeningLoaded extends ListeningState {
 }
 
 /// A recoverable error state with a user-facing message.
-class ListeningError extends ListeningState {
+class ListeningError extends ListeningState implements GameErrorState {
+  @override
   final String message;
 
   /// Raw exception text. **Never** display this to users — internal use only.
@@ -98,8 +114,10 @@ class ListeningError extends ListeningState {
 }
 
 /// Player successfully completed all questions in the level.
-class ListeningGameComplete extends ListeningState {
+class ListeningGameComplete extends ListeningState implements GameCompleteState {
+  @override
   final int xpEarned;
+  @override
   final int coinsEarned;
 
   /// The canonical quest count for the level (not the retry-inflated total).
@@ -116,7 +134,7 @@ class ListeningGameComplete extends ListeningState {
 }
 
 /// Player ran out of lives before completing the level.
-class ListeningGameOver extends ListeningState {
+class ListeningGameOver extends ListeningState implements GameOverState {
   /// Full (possibly retry-inflated) quest list preserved for life-restore.
   final List<ListeningQuest> quests;
   final int currentIndex;

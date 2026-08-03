@@ -47,11 +47,14 @@ WrongAnswerResult processWrongAnswer(RoleplayLoaded state) {
 // versions. If your project targets Dart 3.0+ you can optionally add the
 // `sealed` modifier to RoleplayState for exhaustive switch checking.
 
+import 'package:vowl/core/presentation/bloc/game_state_base.dart';
+
 /// Root state class.
-abstract class RoleplayState extends Equatable {
+abstract class RoleplayState extends Equatable implements GameStateBase {
   const RoleplayState();
 
   /// Natively resolves lives for all states to eliminate UI ternary fallback logic.
+  @override
   int get livesRemaining => kRoleplayDefaultLives;
 
   @override
@@ -60,19 +63,22 @@ abstract class RoleplayState extends Equatable {
 
 // ── Transient states ───────────────────────────────────────────────────────
 
-class RoleplayInitial extends RoleplayState {
+class RoleplayInitial extends RoleplayState implements GameInitialState {
   const RoleplayInitial();
 }
 
-class RoleplayLoading extends RoleplayState {
+class RoleplayLoading extends RoleplayState implements GameLoadingState {
   const RoleplayLoading();
 }
 
 // ── Error state ────────────────────────────────────────────────────────────
 
-class RoleplayError extends RoleplayState {
+// ── Error state ────────────────────────────────────────────────────────────
+
+class RoleplayError extends RoleplayState implements GameErrorState {
   const RoleplayError(this.message, {this.technicalError});
 
+  @override
   final String message;
 
   /// Populated for logging purposes only.
@@ -85,7 +91,7 @@ class RoleplayError extends RoleplayState {
 
 // ── Active game state ──────────────────────────────────────────────────────
 
-class RoleplayLoaded extends RoleplayState {
+class RoleplayLoaded extends RoleplayState implements GameLoadedState {
   const RoleplayLoaded({
     required this.quests,
     required this.currentIndex,
@@ -101,19 +107,31 @@ class RoleplayLoaded extends RoleplayState {
   });
 
   final List<RoleplayQuest> quests;
+  @override
   final int currentIndex;
   final String? currentNodeId;
   @override
   final int livesRemaining;
+  @override
   final bool? lastAnswerCorrect;
+  @override
   final bool hintUsed;
   final String? errorMessage;
   final GameSubtype gameType;
   final int level;
   final int wrongCount;
+  @override
   final bool isFinalFailure;
 
   RoleplayQuest get currentQuest => quests[currentIndex];
+  
+  @override
+  RoleplayQuest? get currentQuestOrNull => 
+      (currentIndex >= 0 && currentIndex < quests.length) ? quests[currentIndex] : null;
+
+  @override
+  int get totalQuests => quests.length;
+
   DialogueNode? get currentNode =>
       currentQuest.dialogues?[currentNodeId ?? 'start'];
 
@@ -161,7 +179,9 @@ class RoleplayLoaded extends RoleplayState {
 
 // ── Terminal states ────────────────────────────────────────────────────────
 
-class RoleplayGameComplete extends RoleplayState {
+// ── Terminal states ────────────────────────────────────────────────────────
+
+class RoleplayGameComplete extends RoleplayState implements GameCompleteState {
   const RoleplayGameComplete({
     required this.xpEarned,
     required this.coinsEarned,
@@ -169,7 +189,9 @@ class RoleplayGameComplete extends RoleplayState {
     required this.lastState,
   });
 
+  @override
   final int xpEarned;
+  @override
   final int coinsEarned;
   final int questCount;
 
@@ -183,7 +205,7 @@ class RoleplayGameComplete extends RoleplayState {
   List<Object?> get props => [xpEarned, coinsEarned, questCount];
 }
 
-class RoleplayGameOver extends RoleplayState {
+class RoleplayGameOver extends RoleplayState implements GameOverState {
   const RoleplayGameOver({
     required this.quests,
     required this.currentIndex,

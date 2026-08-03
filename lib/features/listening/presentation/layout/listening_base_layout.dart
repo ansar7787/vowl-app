@@ -1,20 +1,13 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/game_instruction_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/presentation/widgets/game_error_widget.dart';
-import 'package:vowl/core/presentation/widgets/quest_briefing_overlay.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_event.dart';
@@ -26,6 +19,10 @@ import 'package:vowl/features/listening/presentation/widgets/listening_header.da
 import 'package:vowl/features/listening/presentation/widgets/listening_peeking_mascot.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+
+import 'package:vowl/core/presentation/layout/game_base_layout.dart';
+import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
+import 'package:vowl/core/presentation/bloc/game_state_base.dart';
 
 // =============================================================================
 // ListeningBaseLayout
@@ -191,187 +188,109 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
       isDark: isDark,
     );
 
-    // Resolve mascotId: prefer explicit param, fall back to AuthBloc for
-    // existing call-sites that don't pass it.
     final resolvedMascotId =
         widget.mascotId ??
-        context.read<AuthBloc>().state.user?.vowlMascot ??
+        context.select<AuthBloc, String?>(
+          (bloc) => bloc.state.user?.vowlMascot,
+        ) ??
         'vowl_prime';
 
     final effectiveConfig = widget._effectiveConfig;
 
-    return BlocConsumer<ListeningBloc, ListeningState>(
-      listenWhen: (prev, curr) {
-        if (curr is! ListeningLoaded) return false;
-        if (prev is! ListeningLoaded) return true;
-        return prev.currentIndex != curr.currentIndex ||
-            prev.livesRemaining != curr.livesRemaining;
-      },
-      listener: _onStateChange,
+    return BlocBuilder<ListeningBloc, ListeningState>(
       builder: (context, state) {
-        if (state is ListeningError) {
-          return _ErrorScaffold(
-            theme: theme,
-            message: state.message,
-            onRetry: () => context.read<ListeningBloc>().add(
-              FetchListeningQuests(
-                gameType: widget.gameType,
-                level: widget.level,
-              ),
-            ),
-          );
-        }
+        final currentQuest = state is ListeningLoaded ? state.currentQuest : null;
 
-        final isComplete = state is ListeningGameComplete;
-        final progress = _resolveProgress(state, isComplete);
-        final lives = state.livesRemaining;
-        final currentQuest = state is ListeningLoaded
-            ? state.currentQuest
-            : null;
+        final wrappedChild = LayoutBuilder(
+          builder: (ctx, constraints) {
+            final isWide = constraints.maxWidth >= 600;
+            return isWide
+                ? _TabletLayoutContent(
+                    widget: widget,
+                    state: state,
+                    theme: theme,
+                    isDark: isDark,
+                    lives: state.livesRemaining,
+                    currentQuest: currentQuest,
+                    soundService: _soundService,
+                    audioController: _audioController,
+                    effectiveConfig: effectiveConfig,
+                    resolvedMascotId: resolvedMascotId,
+                    onAudioPlay: _handleAudioPlay,
+                  )
+                : _PhoneLayoutContent(
+                    widget: widget,
+                    state: state,
+                    theme: theme,
+                    isDark: isDark,
+                    lives: state.livesRemaining,
+                    currentQuest: currentQuest,
+                    soundService: _soundService,
+                    audioController: _audioController,
+                    effectiveConfig: effectiveConfig,
+                    resolvedMascotId: resolvedMascotId,
+                    onAudioPlay: _handleAudioPlay,
+                  );
+          },
+        );
 
-        // Resolved once — not called 6× per frame.
-        final briefing = _showBriefing
-            ? GameInstructionService.getBriefing(
+        final config = GameScaffoldConfig(
+          gameType: widget.gameType,
+          level: widget.level,
+          child: wrappedChild,
+          isAnswered: widget.isAnswered,
+          isCorrect: widget.isCorrect,
+          isFinalFailure: widget.isFinalFailure,
+          onContinue: widget.onContinue,
+          onHint: () => _dispatchHint(context),
+          showConfetti: effectiveConfig.showConfetti,
+          useScrolling: false, // Handled internally
+          disablePadding: true, // Handled internally
+        );
+
+        return GameBaseLayout<ListeningBloc, ListeningState>(
+          config: config,
+          stateMapper: (s) => s,
+          onRetry: () => context.read<ListeningBloc>().add(
+            FetchListeningQuests(gameType: widget.gameType, level: widget.level),
+          ),
+          onRestoreLife: () => context.read<ListeningBloc>().add(const RestoreLife()),
+          headerBuilder: (context, s, progress, lvs) {
+            final currentQuest = s is ListeningLoaded ? s.currentQuest : null;
+            return ListeningHeader(
+              level: widget.level,
+              progress: progress,
+              lives: lvs,
+              state: s,
+              quest: currentQuest,
+              theme: theme,
+              isDark: isDark,
+              isAnswered: widget.isAnswered,
+              soundService: _soundService,
+              onHint: () => _dispatchHint(context),
+              onShowBriefing: () {}, // GameBaseLayout handles briefing
+              onBack: () => GameDialogHelper.showExitConfirmation(
                 context,
-                widget.gameType,
-                'Listening',
-                level: widget.level,
-              )
-            : null;
-
-        return PopScope(
-          canPop: isComplete,
-          onPopInvokedWithResult: (didPop, _) {
-            if (didPop) return;
-            GameDialogHelper.showExitConfirmation(
-              context,
-              onQuit: () => Navigator.of(context).pop(),
+                onQuit: () => Navigator.of(context).pop(),
+              ),
             );
           },
-          child: MediaQuery(
-            data: MediaQuery.of(context).copyWith(
-              textScaler: MediaQuery.of(
-                context,
-              ).textScaler.clamp(maxScaleFactor: 1.3),
-            ),
-            child: Scaffold(
-              backgroundColor: theme.backgroundColors[1],
-              resizeToAvoidBottomInset: false,
-              body: LayoutBuilder(
-                builder: (ctx, constraints) {
-                  final isWide = constraints.maxWidth >= 600;
-                  return Stack(
-                    children: [
-                      Container(color: theme.backgroundColors[1]),
-                      MeshGradientBackground(colors: theme.backgroundColors),
-
-                      if (state is ListeningLoading)
-                        GameShimmerLoading(primaryColor: theme.primaryColor)
-                      else
-                        SafeArea(
-                          child: isWide
-                              ? _TabletLayout(
-                                  widget: widget,
-                                  state: state,
-                                  theme: theme,
-                                  isDark: isDark,
-                                  lives: lives,
-                                  progress: progress,
-                                  currentQuest: currentQuest,
-                                  soundService: _soundService,
-                                  audioController: _audioController,
-                                  effectiveConfig: effectiveConfig,
-                                  resolvedMascotId: resolvedMascotId,
-                                  onAudioPlay: _handleAudioPlay,
-                                  onHint: _dispatchHint,
-                                  onShowBriefing: _showBriefingOverlay,
-                                  onBack: _confirmExit,
-                                )
-                              : _PhoneLayout(
-                                  widget: widget,
-                                  state: state,
-                                  theme: theme,
-                                  isDark: isDark,
-                                  lives: lives,
-                                  progress: progress,
-                                  currentQuest: currentQuest,
-                                  soundService: _soundService,
-                                  audioController: _audioController,
-                                  effectiveConfig: effectiveConfig,
-                                  resolvedMascotId: resolvedMascotId,
-                                  onAudioPlay: _handleAudioPlay,
-                                  onHint: _dispatchHint,
-                                  onShowBriefing: _showBriefingOverlay,
-                                  onBack: _confirmExit,
-                                ),
-                        ),
-
-                      // Feedback card — ListeningLoaded typed; no unsafe cast.
-                      if (widget.isAnswered && state is ListeningLoaded)
-                        Positioned(
-                          bottom: 0,
-                          left: 0,
-                          right: 0,
-                          child: ListeningFeedbackCard(
-                            state: state,
-                            isCorrect: widget.isCorrect,
-                            theme: theme,
-                            isDark: isDark,
-                            onContinue: widget.onContinue,
-                          ),
-                        ),
-
-                      if (effectiveConfig.showConfetti) const GameConfetti(),
-
-                      if (_showBriefing && briefing != null)
-                        QuestBriefingOverlay(
-                          title: briefing.title,
-                          objective: briefing.objective,
-                          rules: briefing.rules,
-                          actionText: briefing.actionText,
-                          tip: briefing.tip,
-                          icon: briefing.icon,
-                          primaryColor: theme.primaryColor,
-                          onStart: _hideBriefing,
-                        ),
-                    ],
-                  );
-                },
-              ),
-            ),
-          ),
+          feedbackBuilder: (context, s) {
+            if (s is! ListeningLoaded) return const SizedBox.shrink();
+            return ListeningFeedbackCard(
+              state: s,
+              isCorrect: widget.isCorrect,
+              theme: theme,
+              isDark: isDark,
+              onContinue: widget.onContinue,
+            );
+          },
         );
       },
     );
   }
 
-  // ── BlocConsumer listener ──────────────────────────────────────────────────
-
-  void _onStateChange(BuildContext context, ListeningState state) {
-    if (state is! ListeningLoaded) return;
-    if (state.currentIndex != _lastIndex) _lastIndex = state.currentIndex;
-    final droppedToLastLife = _lastLives == 2 && state.livesRemaining == 1;
-    if (droppedToLastLife && !_hasSpokenNudge) {
-      _hasSpokenNudge = true;
-      _nudgeTimer?.cancel();
-      _nudgeTimer = Timer(_kNudgeDelay, () {
-        if (!mounted) return;
-        _ttsService.stop();
-        _ttsService.speak(_kNudgeMessage);
-        di.sl<HapticService>().warning();
-      });
-    }
-    _lastLives = state.livesRemaining;
-  }
-
   // ── Helpers ────────────────────────────────────────────────────────────────
-
-  double _resolveProgress(ListeningState state, bool isComplete) {
-    if (state is ListeningLoaded) {
-      return (state.currentIndex + 1) / state.quests.length;
-    }
-    return isComplete ? 1.0 : 0.0;
-  }
 
   void _dispatchHint(BuildContext context) {
     context.read<ListeningBloc>().add(const ListeningHintUsed());
@@ -405,63 +324,41 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
 }
 
 // =============================================================================
-// _PhoneLayout  (single column)
+// =============================================================================
+// _PhoneLayoutContent  (single column content)
 // =============================================================================
 
-class _PhoneLayout extends StatelessWidget {
+class _PhoneLayoutContent extends StatelessWidget {
   final ListeningBaseLayout widget;
   final ListeningState state;
   final dynamic theme;
   final bool isDark;
   final int lives;
-  final double progress;
   final dynamic currentQuest;
   final SoundService soundService;
   final AnimationController audioController;
   final ListeningBaseLayoutConfig effectiveConfig;
   final String resolvedMascotId;
   final VoidCallback onAudioPlay;
-  final void Function(BuildContext) onHint;
-  final VoidCallback onShowBriefing;
-  final void Function(BuildContext) onBack;
 
-  const _PhoneLayout({
+  const _PhoneLayoutContent({
     required this.widget,
     required this.state,
     required this.theme,
     required this.isDark,
     required this.lives,
-    required this.progress,
     required this.currentQuest,
     required this.soundService,
     required this.audioController,
     required this.effectiveConfig,
     required this.resolvedMascotId,
     required this.onAudioPlay,
-    required this.onHint,
-    required this.onShowBriefing,
-    required this.onBack,
   });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 10.h),
-        ListeningHeader(
-          level: widget.level,
-          progress: progress,
-          lives: lives,
-          state: state,
-          quest: currentQuest,
-          theme: theme,
-          isDark: isDark,
-          isAnswered: widget.isAnswered,
-          soundService: soundService,
-          onHint: () => onHint(context),
-          onShowBriefing: onShowBriefing,
-          onBack: () => onBack(context),
-        ),
         if (widget.audioUrl != null && !widget.isAnswered)
           ListeningAudioPlayer(
             theme: theme,
@@ -509,63 +406,41 @@ class _PhoneLayout extends StatelessWidget {
 }
 
 // =============================================================================
-// _TabletLayout  (side-by-side ≥ 600 px)
+// =============================================================================
+// _TabletLayoutContent  (side-by-side content)
 // =============================================================================
 
-class _TabletLayout extends StatelessWidget {
+class _TabletLayoutContent extends StatelessWidget {
   final ListeningBaseLayout widget;
   final ListeningState state;
   final dynamic theme;
   final bool isDark;
   final int lives;
-  final double progress;
   final dynamic currentQuest;
   final SoundService soundService;
   final AnimationController audioController;
   final ListeningBaseLayoutConfig effectiveConfig;
   final String resolvedMascotId;
   final VoidCallback onAudioPlay;
-  final void Function(BuildContext) onHint;
-  final VoidCallback onShowBriefing;
-  final void Function(BuildContext) onBack;
 
-  const _TabletLayout({
+  const _TabletLayoutContent({
     required this.widget,
     required this.state,
     required this.theme,
     required this.isDark,
     required this.lives,
-    required this.progress,
     required this.currentQuest,
     required this.soundService,
     required this.audioController,
     required this.effectiveConfig,
     required this.resolvedMascotId,
     required this.onAudioPlay,
-    required this.onHint,
-    required this.onShowBriefing,
-    required this.onBack,
   });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 10.h),
-        ListeningHeader(
-          level: widget.level,
-          progress: progress,
-          lives: lives,
-          state: state,
-          quest: currentQuest,
-          theme: theme,
-          isDark: isDark,
-          isAnswered: widget.isAnswered,
-          soundService: soundService,
-          onHint: () => onHint(context),
-          onShowBriefing: onShowBriefing,
-          onBack: () => onBack(context),
-        ),
         Expanded(
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -671,30 +546,4 @@ class _ContentArea extends StatelessWidget {
 }
 
 // =============================================================================
-// _ErrorScaffold
-// =============================================================================
 
-class _ErrorScaffold extends StatelessWidget {
-  final dynamic theme;
-  final String message;
-  final VoidCallback onRetry;
-
-  const _ErrorScaffold({
-    required this.theme,
-    required this.message,
-    required this.onRetry,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: theme.backgroundColors[1],
-      body: GameErrorWidget(
-        message: message,
-        onRetry: onRetry,
-        onBack: () => Navigator.pop(context),
-        primaryColor: theme.primaryColor,
-      ),
-    );
-  }
-}

@@ -2,6 +2,8 @@ import 'package:equatable/equatable.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import '../../domain/entities/writing_quest.dart';
 
+import 'package:vowl/core/presentation/bloc/game_state_base.dart';
+
 // ---------------------------------------------------------------------------
 // Writing Feature — States
 // Single responsibility: only state definitions live here.
@@ -12,10 +14,10 @@ import '../../domain/entities/writing_quest.dart';
 // NextQuestion handler reads them, and keeps each state fully self-contained.
 // ---------------------------------------------------------------------------
 
-abstract class WritingState extends Equatable {
+abstract class WritingState extends Equatable implements GameStateBase {
   const WritingState();
 
-  /// Natively resolves lives for all states to eliminate UI ternary fallback logic.
+  @override
   int get livesRemaining => 3;
 
   @override
@@ -23,24 +25,28 @@ abstract class WritingState extends Equatable {
 }
 
 /// Initial state before any quests are fetched.
-class WritingInitial extends WritingState {
+class WritingInitial extends WritingState implements GameInitialState {
   const WritingInitial();
 }
 
 /// Quest fetch in progress.
-class WritingLoading extends WritingState {
+class WritingLoading extends WritingState implements GameLoadingState {
   const WritingLoading();
 }
 
 /// Quests loaded and gameplay is active.
-class WritingLoaded extends WritingState {
+class WritingLoaded extends WritingState implements GameLoadedState {
   final List<WritingQuest> quests;
+  @override
   final int currentIndex;
   @override
   final int livesRemaining;
+  @override
   final bool? lastAnswerCorrect;
+  @override
   final bool hintUsed;
   final int wrongCount;
+  @override
   final bool isFinalFailure;
 
   // FIX: Moved from mutable WritingBloc instance fields — state is now
@@ -49,6 +55,15 @@ class WritingLoaded extends WritingState {
   final int level;
 
   WritingQuest get currentQuest => quests[currentIndex];
+
+  @override
+  WritingQuest? get currentQuestOrNull =>
+      (currentIndex >= 0 && currentIndex < quests.length)
+      ? quests[currentIndex]
+      : null;
+
+  @override
+  int get totalQuests => quests.length;
 
   const WritingLoaded({
     required this.quests,
@@ -102,8 +117,9 @@ class WritingLoaded extends WritingState {
 }
 
 /// Unrecoverable fetch or runtime error.
-class WritingError extends WritingState {
+class WritingError extends WritingState implements GameErrorState {
   /// User-facing message. Never expose [technicalError] to the UI.
+  @override
   final String message;
 
   /// Internal detail for crash analytics only.
@@ -116,8 +132,10 @@ class WritingError extends WritingState {
 }
 
 /// Level successfully completed.
-class WritingGameComplete extends WritingState {
+class WritingGameComplete extends WritingState implements GameCompleteState {
+  @override
   final int xpEarned;
+  @override
   final int coinsEarned;
   final int questCount;
   // Retained for analytics and result screen routing.
@@ -143,7 +161,7 @@ class WritingGameComplete extends WritingState {
 }
 
 /// All lives exhausted. Carries enough data to restore if the user pays to continue.
-class WritingGameOver extends WritingState {
+class WritingGameOver extends WritingState implements GameOverState {
   final List<WritingQuest> quests;
   final int currentIndex;
   final GameSubtype gameType;

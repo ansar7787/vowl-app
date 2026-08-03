@@ -1,6 +1,8 @@
 import 'package:equatable/equatable.dart';
 import '../../domain/entities/grammar_quest.dart';
 
+import 'package:vowl/core/presentation/bloc/game_state_base.dart';
+
 // ---------------------------------------------------------------------------
 // Answer status enum
 // ---------------------------------------------------------------------------
@@ -43,26 +45,28 @@ enum AnswerStatus {
 // States
 // ---------------------------------------------------------------------------
 
-abstract class GrammarState extends Equatable {
+abstract class GrammarState extends Equatable implements GameStateBase {
   const GrammarState();
 
   /// Natively resolves lives for all states to eliminate UI ternary fallback logic.
+  @override
   int get livesRemaining => 3;
 
   @override
   List<Object?> get props => [];
 }
 
-class GrammarInitial extends GrammarState {
+class GrammarInitial extends GrammarState implements GameInitialState {
   const GrammarInitial();
 }
 
-class GrammarLoading extends GrammarState {
+class GrammarLoading extends GrammarState implements GameLoadingState {
   const GrammarLoading();
 }
 
-class GrammarLoaded extends GrammarState {
+class GrammarLoaded extends GrammarState implements GameLoadedState {
   final List<GrammarQuest> quests;
+  @override
   final int currentIndex;
   @override
   final int livesRemaining;
@@ -71,8 +75,13 @@ class GrammarLoaded extends GrammarState {
   /// Resets to [AnswerStatus.unanswered] when advancing to the next question.
   final AnswerStatus answerStatus;
 
+  @override
+  bool? get lastAnswerCorrect => answerStatus.asBoolOrNull;
+
+  @override
   final bool hintUsed;
   final int wrongCount;
+  @override
   final bool isFinalFailure;
 
   GrammarLoaded({
@@ -98,6 +107,15 @@ class GrammarLoaded extends GrammarState {
     );
     return quests[currentIndex];
   }
+
+  @override
+  GrammarQuest? get currentQuestOrNull =>
+      (currentIndex >= 0 && currentIndex < quests.length)
+      ? quests[currentIndex]
+      : null;
+
+  @override
+  int get totalQuests => quests.length;
 
   @override
   List<Object?> get props => [
@@ -131,7 +149,8 @@ class GrammarLoaded extends GrammarState {
   }
 }
 
-class GrammarError extends GrammarState {
+class GrammarError extends GrammarState implements GameErrorState {
+  @override
   final String message;
 
   /// Internal diagnostic detail. Must never be rendered directly in production
@@ -144,8 +163,10 @@ class GrammarError extends GrammarState {
   List<Object?> get props => [message, technicalError];
 }
 
-class GrammarGameComplete extends GrammarState {
+class GrammarGameComplete extends GrammarState implements GameCompleteState {
+  @override
   final int xpEarned;
+  @override
   final int coinsEarned;
   final int questCount;
 
@@ -159,7 +180,7 @@ class GrammarGameComplete extends GrammarState {
   List<Object?> get props => [xpEarned, coinsEarned, questCount];
 }
 
-class GrammarGameOver extends GrammarState {
+class GrammarGameOver extends GrammarState implements GameOverState {
   final List<GrammarQuest> quests;
   final int currentIndex;
 

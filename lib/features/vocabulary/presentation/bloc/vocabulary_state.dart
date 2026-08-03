@@ -2,12 +2,15 @@ import 'package:equatable/equatable.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_event.dart';
 
+import 'package:vowl/core/presentation/bloc/game_state_base.dart';
+
 // ─── Base state ───────────────────────────────────────────────────────────────
 
-abstract class VocabularyState extends Equatable {
+abstract class VocabularyState extends Equatable implements GameStateBase {
   const VocabularyState();
 
   /// Natively resolves lives for all states to eliminate UI ternary fallback logic.
+  @override
   int get livesRemaining => 3;
 
   @override
@@ -17,28 +20,32 @@ abstract class VocabularyState extends Equatable {
 // ─── Concrete states ──────────────────────────────────────────────────────────
 
 /// The BLoC has been created but no fetch has been dispatched yet.
-class VocabularyInitial extends VocabularyState {
+class VocabularyInitial extends VocabularyState implements GameInitialState {
   const VocabularyInitial();
 }
 
 /// A network fetch is in progress.  The UI should show a loading indicator.
-class VocabularyLoading extends VocabularyState {
+class VocabularyLoading extends VocabularyState implements GameLoadingState {
   const VocabularyLoading();
 }
 
 /// Quests are loaded and the player is actively answering questions.
-class VocabularyLoaded extends VocabularyState {
+class VocabularyLoaded extends VocabularyState implements GameLoadedState {
   final List<VocabularyQuest> quests;
+  @override
   final int currentIndex;
   @override
   final int livesRemaining;
 
   /// `true` = last answer correct, `false` = wrong, `null` = no answer yet /
   /// intentionally cleared (use [clearLastAnswerCorrect] in [copyWith]).
+  @override
   final bool? lastAnswerCorrect;
 
+  @override
   final bool hintUsed;
   final int wrongCount;
+  @override
   final bool isFinalFailure;
   final int hintsAvailable;
 
@@ -71,10 +78,14 @@ class VocabularyLoaded extends VocabularyState {
 
   /// Safe nullable getter — returns `null` instead of throwing when the
   /// index is out of bounds.  Use this in BlocListener and build methods.
+  @override
   VocabularyQuest? get currentQuestOrNull =>
       (currentIndex >= 0 && currentIndex < quests.length)
       ? quests[currentIndex]
       : null;
+
+  @override
+  int get totalQuests => quests.length;
 
   // ── copyWith ─────────────────────────────────────────────────────────────
 
@@ -121,8 +132,9 @@ class VocabularyLoaded extends VocabularyState {
 }
 
 /// A fetch or persistence operation failed.
-class VocabularyError extends VocabularyState {
+class VocabularyError extends VocabularyState implements GameErrorState {
   /// User-facing message — safe to display in UI.
+  @override
   final String message;
 
   /// Internal diagnostic detail — must NEVER be rendered in production UI or
@@ -136,8 +148,10 @@ class VocabularyError extends VocabularyState {
 }
 
 /// All quests answered successfully — rewards have been persisted.
-class VocabularyGameComplete extends VocabularyState {
+class VocabularyGameComplete extends VocabularyState implements GameCompleteState {
+  @override
   final int xpEarned;
+  @override
   final int coinsEarned;
   final int questCount;
 
@@ -153,7 +167,7 @@ class VocabularyGameComplete extends VocabularyState {
 
 /// The player ran out of lives.  Carries enough context for a revive to
 /// restore the session via [RestoreLife].
-class VocabularyGameOver extends VocabularyState {
+class VocabularyGameOver extends VocabularyState implements GameOverState {
   final List<VocabularyQuest> quests;
   final int currentIndex;
 

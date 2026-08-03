@@ -2,6 +2,8 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import '../../domain/entities/reading_quest.dart';
 
+import 'package:vowl/core/presentation/bloc/game_state_base.dart';
+
 // ---------------------------------------------------------------------------
 // copyWith sentinel
 // ---------------------------------------------------------------------------
@@ -14,10 +16,11 @@ const _kCopyWithUndefined = Object();
 // Base
 // ---------------------------------------------------------------------------
 
-abstract class ReadingState extends Equatable {
+abstract class ReadingState extends Equatable implements GameStateBase {
   const ReadingState();
 
   /// Natively resolves lives for all states to eliminate UI ternary fallback logic.
+  @override
   int get livesRemaining => 3;
 
   @override
@@ -29,18 +32,19 @@ abstract class ReadingState extends Equatable {
 // ---------------------------------------------------------------------------
 
 /// Initial state before any quests are loaded.
-class ReadingInitial extends ReadingState {
+class ReadingInitial extends ReadingState implements GameInitialState {
   const ReadingInitial();
 }
 
 /// Quests are being fetched from the repository.
-class ReadingLoading extends ReadingState {
+class ReadingLoading extends ReadingState implements GameLoadingState {
   const ReadingLoading();
 }
 
 /// Quests loaded; the game loop is active.
-class ReadingLoaded extends ReadingState {
+class ReadingLoaded extends ReadingState implements GameLoadedState {
   final List<ReadingQuest> quests;
+  @override
   final int currentIndex;
   @override
   final int livesRemaining;
@@ -48,8 +52,10 @@ class ReadingLoaded extends ReadingState {
   /// `null`  — question not yet answered this turn.
   /// `true`  — player answered correctly.
   /// `false` — player answered incorrectly.
+  @override
   final bool? lastAnswerCorrect;
 
+  @override
   final bool hintUsed;
 
   /// Consecutive wrong-answer count for the current question.
@@ -58,10 +64,20 @@ class ReadingLoaded extends ReadingState {
 
   /// True when the correct answer has been revealed and the player
   /// must tap context.tr('common.continue_text', fallback: 'Continue') to move on (question re-queued at the end).
+  @override
   final bool isFinalFailure;
 
   /// Always valid while in this state — [currentIndex] is guarded by the BLoC.
   ReadingQuest get currentQuest => quests[currentIndex];
+
+  @override
+  ReadingQuest? get currentQuestOrNull =>
+      (currentIndex >= 0 && currentIndex < quests.length)
+      ? quests[currentIndex]
+      : null;
+
+  @override
+  int get totalQuests => quests.length;
 
   const ReadingLoaded({
     required this.quests,
@@ -115,8 +131,9 @@ class ReadingLoaded extends ReadingState {
 }
 
 /// A non-recoverable error occurred (network failure, empty data, etc.).
-class ReadingError extends ReadingState {
+class ReadingError extends ReadingState implements GameErrorState {
   /// User-safe message suitable for display in the UI.
+  @override
   final String message;
 
   /// Internal diagnostic detail. Never render this in the UI directly —
@@ -131,8 +148,10 @@ class ReadingError extends ReadingState {
 }
 
 /// All quests answered successfully — level complete.
-class ReadingGameComplete extends ReadingState {
+class ReadingGameComplete extends ReadingState implements GameCompleteState {
+  @override
   final int xpEarned;
+  @override
   final int coinsEarned;
   final int questCount;
 
@@ -147,7 +166,7 @@ class ReadingGameComplete extends ReadingState {
 }
 
 /// Player ran out of lives before completing all quests.
-class ReadingGameOver extends ReadingState {
+class ReadingGameOver extends ReadingState implements GameOverState {
   final List<ReadingQuest> quests;
   final int currentIndex;
 

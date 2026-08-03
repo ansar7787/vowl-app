@@ -2,14 +2,16 @@ import 'package:equatable/equatable.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 
+import 'package:vowl/core/presentation/bloc/game_state_base.dart';
+
 // ---------------------------------------------------------------------------
 // Base state
 // ---------------------------------------------------------------------------
 
-abstract class AccentState extends Equatable {
+abstract class AccentState extends Equatable implements GameStateBase {
   const AccentState();
 
-  /// Natively resolves lives for all states to eliminate UI ternary fallback logic.
+  @override
   int get livesRemaining => 3;
 
   @override
@@ -21,7 +23,7 @@ abstract class AccentState extends Equatable {
 // ---------------------------------------------------------------------------
 
 /// Blank slate — emitted on launch and after [RestartLevel].
-class AccentInitial extends AccentState {
+class AccentInitial extends AccentState implements GameInitialState {
   const AccentInitial();
 }
 
@@ -30,7 +32,7 @@ class AccentInitial extends AccentState {
 // ---------------------------------------------------------------------------
 
 /// Quests are being fetched from the network or local cache.
-class AccentLoading extends AccentState {
+class AccentLoading extends AccentState implements GameLoadingState {
   const AccentLoading();
 }
 
@@ -39,8 +41,9 @@ class AccentLoading extends AccentState {
 // ---------------------------------------------------------------------------
 
 /// Active game session with at least one quest available.
-class AccentLoaded extends AccentState {
+class AccentLoaded extends AccentState implements GameLoadedState {
   final List<AccentQuest> quests;
+  @override
   final int currentIndex;
   @override
   final int livesRemaining;
@@ -48,8 +51,10 @@ class AccentLoaded extends AccentState {
   /// `null`  = no answer submitted yet for this quest.
   /// `true`  = last submitted answer was correct.
   /// `false` = last submitted answer was wrong.
+  @override
   final bool? lastAnswerCorrect;
 
+  @override
   final bool hintUsed;
   final GameSubtype gameType;
   final int level;
@@ -60,9 +65,17 @@ class AccentLoaded extends AccentState {
 
   /// `true` when the player has failed this quest twice (Mastery Loop trigger)
   /// or when lives have been exhausted.
+  @override
   final bool isFinalFailure;
 
   AccentQuest get currentQuest => quests[currentIndex];
+  
+  @override
+  AccentQuest? get currentQuestOrNull => 
+      (currentIndex >= 0 && currentIndex < quests.length) ? quests[currentIndex] : null;
+
+  @override
+  int get totalQuests => quests.length;
 
   const AccentLoaded({
     required this.quests,
@@ -122,7 +135,8 @@ class AccentLoaded extends AccentState {
 // AccentError
 // ---------------------------------------------------------------------------
 
-class AccentError extends AccentState {
+class AccentError extends AccentState implements GameErrorState {
+  @override
   final String message;
 
   /// Raw technical detail for debugging.
@@ -140,8 +154,10 @@ class AccentError extends AccentState {
 // AccentGameComplete
 // ---------------------------------------------------------------------------
 
-class AccentGameComplete extends AccentState {
+class AccentGameComplete extends AccentState implements GameCompleteState {
+  @override
   final int xpEarned;
+  @override
   final int coinsEarned;
   final int questCount;
 
@@ -164,7 +180,7 @@ class AccentGameComplete extends AccentState {
 // AccentGameOver
 // ---------------------------------------------------------------------------
 
-class AccentGameOver extends AccentState {
+class AccentGameOver extends AccentState implements GameOverState {
   final List<AccentQuest> quests;
   final int currentIndex;
   final GameSubtype gameType;

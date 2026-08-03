@@ -3,33 +3,25 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
 import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
 import 'package:vowl/core/presentation/widgets/writing/ink_streak.dart';
-import 'package:vowl/core/presentation/widgets/quest_briefing_overlay.dart';
 import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/features/writing/presentation/widgets/writing_feedback_card.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
-import 'package:vowl/core/utils/game_instruction_service.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/core/presentation/widgets/game_error_widget.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_event.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_state.dart';
-import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/presentation/layout/game_base_layout.dart';
+import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
-class WritingBaseLayout extends StatefulWidget {
+class WritingBaseLayout extends StatelessWidget {
   final GameSubtype gameType;
   final int level;
   final Widget child;
@@ -59,276 +51,77 @@ class WritingBaseLayout extends StatefulWidget {
   });
 
   @override
-  State<WritingBaseLayout> createState() => _WritingBaseLayoutState();
-}
-
-class _WritingBaseLayoutState extends State<WritingBaseLayout> {
-  final _ttsService = di.sl<TtsService>();
-  final _soundService = di.sl<SoundService>();
-  bool _hasSpokenNudge = false;
-  int _lastIndex = -1;
-  int _lastLives = 3;
-  late bool _showBriefing;
-
-  @override
-  void initState() {
-    super.initState();
-    _showBriefing = widget.level == 1 || widget.level == 100;
-  }
-
-  @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
+    final mascotId = context.select<AuthBloc, String>(
+      (bloc) => bloc.state.user?.vowlMascot ?? 'vowl_prime',
+    );
+    final mascotName = mascotId
+        .split('_')
+        .map((e) => '${e[0].toUpperCase()}${e.substring(1)}')
+        .join(' ');
 
-    return BlocListener<WritingBloc, WritingState>(
-      listenWhen: (previous, current) {
-        if (current is WritingLoaded) {
-          if (previous is! WritingLoaded) return true;
-          return previous.currentIndex != current.currentIndex ||
-              previous.livesRemaining != current.livesRemaining;
-        }
-        return false;
-      },
-      listener: (context, state) {
-        if (state is WritingLoaded) {
-          // Detect the exact transition from 2 lives to 1 life
-          final justDroppedToLastLife =
-              _lastLives == 2 && state.livesRemaining == 1;
+    final config = GameScaffoldConfig(
+      gameType: gameType,
+      level: level,
+      child: child,
+      isAnswered: isAnswered,
+      isCorrect: isCorrect,
+      isFinalFailure: isFinalFailure,
+      onContinue: onContinue,
+      onHint: onHint,
+      showConfetti: showConfetti,
+      useScrolling: useScrolling,
+      disablePadding: disablePadding,
+    );
 
-          if (state.currentIndex != _lastIndex) {
-            _lastIndex = state.currentIndex;
-          }
-
-          if (justDroppedToLastLife && !_hasSpokenNudge) {
-            _hasSpokenNudge = true; // Permanent for this session
-            final nudgeMessage = context.tr(
-              'games.kids_nudge',
-              fallback: 'Let\'s go!',
-            );
-            // Delay to allow the "Wrong" sound effect to finish
-            Future.delayed(const Duration(milliseconds: 1200), () {
-              if (mounted) {
-                _ttsService.speak(nudgeMessage);
-                di.sl<HapticService>().warning();
-              }
-            });
-          }
-          _lastLives = state.livesRemaining;
-        }
-      },
-      child: BlocBuilder<WritingBloc, WritingState>(
-        builder: (context, state) {
-          final isComplete = state is WritingGameComplete;
-          if (state is WritingError) {
-            return Scaffold(
-              resizeToAvoidBottomInset: false,
-              backgroundColor: theme.backgroundColors[1],
-              body: GameErrorWidget(
-                message: state.message,
-                onRetry: () => context.read<WritingBloc>().add(
-                  FetchWritingQuests(
-                    gameType: widget.gameType,
-                    level: widget.level,
-                  ),
-                ),
-                onBack: () => Navigator.pop(context),
-                primaryColor: theme.primaryColor,
-              ),
-            );
-          }
-          return PopScope(
-            canPop: isComplete,
-            onPopInvokedWithResult: (didPop, result) {
-              if (didPop) return;
-              GameDialogHelper.showExitConfirmation(
-                this.context,
-                onQuit: () => Navigator.of(this.context).pop(),
-              );
-            },
-            child: Builder(
-              builder: (context) {
-                final progress = (state is WritingLoaded)
-                    ? (state.currentIndex + 1) / state.quests.length
-                    : (state is WritingGameComplete ? 1.0 : 0.0);
-                final lives = state.livesRemaining;
-                final currentQuest = (state is WritingLoaded)
-                    ? state.currentQuest
-                    : null;
-
-                return Scaffold(
-                  resizeToAvoidBottomInset: false,
-                  backgroundColor: theme.backgroundColors[1],
-                  body: Stack(
-                    children: [
-                      Container(
-                        color: theme.backgroundColors[1],
-                      ), // Prevent white splash
-                      MeshGradientBackground(colors: theme.backgroundColors),
-                      InkStreak(
-                        color: theme.primaryColor.withValues(alpha: 0.15),
-                      ),
-                      if (state is WritingLoading && currentQuest == null)
-                        GameShimmerLoading(primaryColor: theme.primaryColor)
-                      else ...[
-                        SafeArea(
-                          child: Column(
-                            children: [
-                              SizedBox(height: 10.h),
-                              _buildHeader(
-                                context,
-                                state,
-                                widget.level,
-                                progress,
-                                lives,
-                                theme,
-                                isDark,
-                                currentQuest,
-                              ),
-
-                              Expanded(
-                                child: Stack(
-                                  clipBehavior: Clip.none,
-                                  children: [
-                                    AnimatedOpacity(
-                                      duration: const Duration(
-                                        milliseconds: 400,
-                                      ),
-                                      opacity: widget.isAnswered ? 0.6 : 1.0,
-                                      child: AbsorbPointer(
-                                        absorbing: widget.isAnswered,
-                                        child: widget.useScrolling
-                                            ? LayoutBuilder(
-                                                builder: (context, constraints) {
-                                                  return SingleChildScrollView(
-                                                    physics:
-                                                        const BouncingScrollPhysics(),
-                                                    child: ConstrainedBox(
-                                                      constraints:
-                                                          BoxConstraints(
-                                                            minHeight:
-                                                                constraints
-                                                                    .maxHeight,
-                                                          ),
-                                                      child: Padding(
-                                                        padding: EdgeInsets.only(
-                                                          left:
-                                                              widget
-                                                                  .disablePadding
-                                                              ? 0
-                                                              : 24.w,
-                                                          right:
-                                                              widget
-                                                                  .disablePadding
-                                                              ? 0
-                                                              : 24.w,
-                                                          top:
-                                                              widget
-                                                                  .disablePadding
-                                                              ? 0
-                                                              : 20.h,
-                                                          bottom:
-                                                              (widget.disablePadding
-                                                                  ? 0
-                                                                  : (widget.isAnswered
-                                                                        ? 200.h
-                                                                        : 40.h)) +
-                                                              MediaQuery.of(
-                                                                    context,
-                                                                  )
-                                                                  .viewInsets
-                                                                  .bottom,
-                                                        ),
-                                                        child: widget.child,
-                                                      ),
-                                                    ),
-                                                  );
-                                                },
-                                              )
-                                            : Padding(
-                                                padding: EdgeInsets.only(
-                                                  left: widget.disablePadding
-                                                      ? 0
-                                                      : 24.w,
-                                                  right: widget.disablePadding
-                                                      ? 0
-                                                      : 24.w,
-                                                  top: widget.disablePadding
-                                                      ? 0
-                                                      : 20.h,
-                                                  bottom:
-                                                      (widget.disablePadding
-                                                          ? 0
-                                                          : (widget.isAnswered
-                                                                ? 200.h
-                                                                : 40.h)) +
-                                                      MediaQuery.of(
-                                                        context,
-                                                      ).viewInsets.bottom,
-                                                ),
-                                                child: widget.child,
-                                              ),
-                                      ),
-                                    ),
-                                    Positioned(
-                                      top: -20.h,
-                                      right: 20.w,
-                                      child: _buildPeekingMascot(state, lives),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                      if (widget.isAnswered &&
-                          state is! WritingGameOver &&
-                          state is! WritingGameComplete)
-                        Positioned(
-                          bottom: 0,
-                          left: 0,
-                          right: 0,
-                          child: WritingFeedbackCard(
-                            state: state,
-                            isCorrect: widget.isCorrect,
-                            onContinue: widget.onContinue,
-                            isDark: isDark,
-                            theme: theme,
-                          ),
-                        ),
-                      if (widget.showConfetti) const GameConfetti(),
-
-                      if (_showBriefing)
-                        Builder(
-                          builder: (context) {
-                            final briefing = GameInstructionService.getBriefing(
-                              context,
-                              widget.gameType,
-                              "Writing",
-                              level: widget.level,
-                            );
-                            return QuestBriefingOverlay(
-                              title: briefing.title,
-                              objective: briefing.objective,
-                              rules: briefing.rules,
-                              actionText: briefing.actionText,
-                              tip: briefing.tip,
-                              icon: briefing.icon,
-                              primaryColor: theme.primaryColor,
-                              onStart: () =>
-                                  setState(() => _showBriefing = false),
-                            );
-                          },
-                        ),
-                    ],
-                  ),
-                );
-              },
+    return GameBaseLayout<WritingBloc, WritingState>(
+      config: config,
+      stateMapper: (s) => s,
+      onRetry: () => context.read<WritingBloc>().add(
+        FetchWritingQuests(gameType: gameType, level: level),
+      ),
+      onRestoreLife: () => context.read<WritingBloc>().add(const RestoreLife()),
+      backgroundOverlay: Builder(
+        builder: (context) {
+          final isDark = Theme.of(context).brightness == Brightness.dark;
+          final theme = LevelThemeHelper.getTheme('writing', level: level, isDark: isDark);
+          return Positioned.fill(
+            child: InkStreak(
+              color: theme.primaryColor.withValues(alpha: 0.15),
             ),
           );
-        },
+        }
       ),
+      headerBuilder: (context, state, progress, lives) {
+        final isDark = Theme.of(context).brightness == Brightness.dark;
+        final theme = LevelThemeHelper.getTheme('writing', isDark: isDark, level: level);
+        final currentQuest = state is WritingLoaded ? state.currentQuestOrNull : null;
+        
+        return _buildHeader(
+          context,
+          state,
+          level,
+          progress,
+          lives,
+          theme,
+          isDark,
+          currentQuest,
+        );
+      },
+      mascotBuilder: (context, state, lives) {
+        return _buildPeekingMascot(context, state, lives, mascotId, mascotName);
+      },
+      feedbackBuilder: (context, state) {
+        final isDark = Theme.of(context).brightness == Brightness.dark;
+        final theme = LevelThemeHelper.getTheme('writing', isDark: isDark, level: level);
+        return WritingFeedbackCard(
+          state: state,
+          isCorrect: isCorrect,
+          onContinue: onContinue,
+          isDark: isDark,
+          theme: theme,
+        );
+      },
     );
   }
 
@@ -342,7 +135,7 @@ class _WritingBaseLayoutState extends State<WritingBaseLayout> {
     bool isDark,
     dynamic quest,
   ) {
-    final hintShouldGlow = lives < 3 && !widget.isAnswered;
+    final hintShouldGlow = lives < 3 && !isAnswered;
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: Row(
@@ -355,34 +148,12 @@ class _WritingBaseLayoutState extends State<WritingBaseLayout> {
               theme: theme,
               isDark: isDark,
               onBack: () => GameDialogHelper.showExitConfirmation(
-                this.context,
-                onQuit: () => Navigator.pop(this.context),
+                context,
+                onQuit: () => Navigator.pop(context),
               ),
             ),
           ),
-          if (quest != null && !widget.isAnswered) ...[
-            // MANUAL BRIEFING TRIGGER (Help Icon)
-            Padding(
-              padding: EdgeInsets.only(left: 8.w),
-              child: ScaleButton(
-                onTap: () => setState(() => _showBriefing = true),
-                child: Container(
-                  padding: EdgeInsets.all(6.r),
-                  decoration: BoxDecoration(
-                    color: theme.primaryColor.withValues(alpha: 0.1),
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: theme.primaryColor.withValues(alpha: 0.2),
-                    ),
-                  ),
-                  child: Icon(
-                    Icons.info_outline_rounded,
-                    size: 16.r,
-                    color: theme.primaryColor,
-                  ),
-                ),
-              ),
-            ),
+          if (quest != null && !isAnswered) ...[
             Padding(
               padding: EdgeInsets.only(left: 8.w),
               child: Row(
@@ -392,10 +163,10 @@ class _WritingBaseLayoutState extends State<WritingBaseLayout> {
                         used: (state is WritingLoaded) ? state.hintUsed : false,
                         primaryColor: theme.primaryColor,
                         hintText: quest.hint,
-                        soundService: _soundService,
+                        soundService: di.sl<SoundService>(),
                         onTap: () {
-                          context.read<WritingBloc>().add(WritingHintUsed());
-                          widget.onHint();
+                          context.read<WritingBloc>().add(const WritingHintUsed());
+                          onHint();
                         },
                       )
                       .animate(
@@ -434,21 +205,20 @@ class _WritingBaseLayoutState extends State<WritingBaseLayout> {
     );
   }
 
-  Widget _buildPeekingMascot(WritingState state, int lives) {
+  Widget _buildPeekingMascot(
+    BuildContext context,
+    WritingState state, 
+    int lives,
+    String mascotId,
+    String mascotName,
+  ) {
     final mascotState = _getMascotState(state, lives);
-    final authState = context.read<AuthBloc>().state;
-    final mascotId = authState.user?.vowlMascot ?? 'vowl_prime';
-    final mascotName = mascotId
-        .split('_')
-        .map((e) => e[0].toUpperCase() + e.substring(1))
-        .join(' ');
-
     String message = "Write with flair! 🖋️";
-    if (widget.isCorrect == true) {
+    if (isCorrect == true) {
       message = "Literary Genius! ✨";
-    } else if (lives < 3 && !widget.isAnswered) {
+    } else if (lives < 3 && !isAnswered) {
       message = "Find your voice! 💡";
-    } else if (widget.isCorrect == false) {
+    } else if (isCorrect == false) {
       message = "Refine the prose! 📜";
     } else if (state is WritingGameComplete) {
       message = "Author Extraordinaire! 🏆";
@@ -504,9 +274,9 @@ class _WritingBaseLayoutState extends State<WritingBaseLayout> {
     if (state is WritingGameComplete) return VowlMascotState.happy;
     if (state is WritingGameOver) return VowlMascotState.worried;
     if (state is WritingLoaded) {
-      if (widget.isCorrect == true) return VowlMascotState.happy;
-      if (lives < 3 && !widget.isAnswered) return VowlMascotState.worried;
-      if (widget.isCorrect == false) return VowlMascotState.thinking;
+      if (isCorrect == true) return VowlMascotState.happy;
+      if (lives < 3 && !isAnswered) return VowlMascotState.worried;
+      if (isCorrect == false) return VowlMascotState.thinking;
     }
     return VowlMascotState.neutral;
   }

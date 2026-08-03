@@ -2,14 +2,16 @@ import 'package:equatable/equatable.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 
+import 'package:vowl/core/presentation/bloc/game_state_base.dart';
+
 // =============================================================================
 // Speaking States
 // =============================================================================
 
-abstract class SpeakingState extends Equatable {
+abstract class SpeakingState extends Equatable implements GameStateBase {
   const SpeakingState();
 
-  /// Natively resolves lives for all states to eliminate UI ternary fallback logic.
+  @override
   int get livesRemaining => 3;
 
   @override
@@ -17,12 +19,12 @@ abstract class SpeakingState extends Equatable {
 }
 
 /// No quests loaded yet; the screen is awaiting a [FetchSpeakingQuests] event.
-class SpeakingInitial extends SpeakingState {
+class SpeakingInitial extends SpeakingState implements GameInitialState {
   const SpeakingInitial();
 }
 
 /// Quests are being fetched from the data layer.
-class SpeakingLoading extends SpeakingState {
+class SpeakingLoading extends SpeakingState implements GameLoadingState {
   const SpeakingLoading();
 }
 
@@ -31,8 +33,9 @@ class SpeakingLoading extends SpeakingState {
 /// [gameType] and [level] are stored here instead of as mutable fields
 /// on [SpeakingBloc] — eliminates the race condition where [RestartLevel]
 /// could leave stale game-type context on the bloc.
-class SpeakingLoaded extends SpeakingState {
+class SpeakingLoaded extends SpeakingState implements GameLoadedState {
   final List<SpeakingQuest> quests;
+  @override
   final int currentIndex;
   @override
   final int livesRemaining;
@@ -44,10 +47,13 @@ class SpeakingLoaded extends SpeakingState {
   /// **copyWith contract:** this field does NOT fall back to `this.value`
   /// when omitted. Omitting it intentionally resets it to `null`.
   /// All call sites that want to preserve the current value must pass it.
+  @override
   final bool? lastAnswerCorrect;
 
+  @override
   final bool hintUsed;
   final int wrongCount;
+  @override
   final bool isFinalFailure;
   final List<int> removedIndices;
   final bool isLetterRevealed;
@@ -59,6 +65,15 @@ class SpeakingLoaded extends SpeakingState {
   final int level;
 
   SpeakingQuest get currentQuest => quests[currentIndex];
+
+  @override
+  SpeakingQuest? get currentQuestOrNull =>
+      (currentIndex >= 0 && currentIndex < quests.length)
+      ? quests[currentIndex]
+      : null;
+
+  @override
+  int get totalQuests => quests.length;
 
   const SpeakingLoaded({
     required this.quests,
@@ -118,8 +133,9 @@ class SpeakingLoaded extends SpeakingState {
 }
 
 /// A non-fatal error occurred (network failure, empty quest list, etc.).
-class SpeakingError extends SpeakingState {
+class SpeakingError extends SpeakingState implements GameErrorState {
   /// User-facing message shown in the error UI.
+  @override
   final String message;
 
   /// Internal detail for logging only — never displayed in the UI.
@@ -132,8 +148,10 @@ class SpeakingError extends SpeakingState {
 }
 
 /// The player successfully completed all quests in the level.
-class SpeakingGameComplete extends SpeakingState {
+class SpeakingGameComplete extends SpeakingState implements GameCompleteState {
+  @override
   final int xpEarned;
+  @override
   final int coinsEarned;
   final int questCount;
 
@@ -152,7 +170,7 @@ class SpeakingGameComplete extends SpeakingState {
 /// Carries [gameType] and [level] so that restore-life flows (tutor pass,
 /// ad reward) can reconstruct a valid [SpeakingLoaded] state without
 /// requiring mutable fields on the BLoC.
-class SpeakingGameOver extends SpeakingState {
+class SpeakingGameOver extends SpeakingState implements GameOverState {
   final List<SpeakingQuest> quests;
   final int currentIndex;
   final GameSubtype gameType;
