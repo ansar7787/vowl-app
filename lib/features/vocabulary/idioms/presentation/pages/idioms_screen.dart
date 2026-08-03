@@ -181,7 +181,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                       ),
                     ),
                     _buildChatInterface(quest, theme.primaryColor, isDarkMode),
-                    if (_isFirstStagePassed && (!_isAnswered || _isCorrect == null) && quest != null)
+                    if (_isFirstStagePassed && (!_isAnswered || _isCorrect == null))
                       TypeToConfirmOverlay(
                         expectedText: quest.correctAnswer ?? '',
                         primaryColor: theme.primaryColor,

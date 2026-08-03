@@ -123,7 +123,7 @@ class WritingBaseLayout extends StatelessWidget {
           livesRemaining: state.livesRemaining,
           onContinue: onContinue,
           isDark: isDark,
-          primaryColor: theme.primaryColor as Color,
+          primaryColor: theme.primaryColor,
           explanation: quest.explanation,
           sampleAnswer: quest.sampleAnswer,
           requiredPoints: quest.requiredPoints,

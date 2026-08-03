@@ -15,7 +15,6 @@ import 'package:vowl/features/accent/presentation/widgets/accent_peeking_mascot.
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
-import 'package:vowl/core/presentation/bloc/game_state_base.dart';
 
 // ---------------------------------------------------------------------------
 // AccentBaseLayout

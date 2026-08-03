@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,7 +8,6 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_event.dart';
@@ -24,7 +22,6 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
-import 'package:vowl/core/presentation/bloc/game_state_base.dart';
 
 // =============================================================================
 // ListeningBaseLayout
@@ -126,9 +123,9 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
   final _ttsService = di.sl<TtsService>();
   final _soundService = di.sl<SoundService>();
 
-  bool _hasSpokenNudge = false;
-  int _lastLives = 3;
-  int _lastIndex = -1;
+  final 
+  final int _lastLives = 3;
+  final int _lastIndex = -1;
 
   late AnimationController _audioController;
   late bool _showBriefing;
@@ -294,7 +291,7 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
               livesRemaining: s.livesRemaining,
               onContinue: widget.onContinue,
               isDark: isDark,
-              primaryColor: theme.primaryColor as Color,
+              primaryColor: theme.primaryColor,
               explanation: explanation,
             );
           },

@@ -13,7 +13,6 @@ import 'package:vowl/features/grammar/presentation/widgets/grammar_peeking_masco
 
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
-import 'package:vowl/core/presentation/bloc/game_state_base.dart';
 
 class GrammarBaseLayout extends StatelessWidget {
   final GameSubtype gameType;
@@ -68,7 +67,7 @@ class GrammarBaseLayout extends StatelessWidget {
           final theme = LevelThemeHelper.getTheme('grammar', level: level, isDark: isDark);
           return Positioned.fill(
             child: LogicCircuit(
-              color: (theme.primaryColor as Color).withValues(alpha: 0.2),
+              color: (theme.primaryColor).withValues(alpha: 0.2),
             ),
           );
         }
@@ -124,7 +123,7 @@ class GrammarBaseLayout extends StatelessWidget {
           livesRemaining: state.livesRemaining,
           onContinue: onContinue,
           isDark: isDark,
-          primaryColor: theme.primaryColor as Color,
+          primaryColor: theme.primaryColor,
           explanation: explanation,
           ruleTitle: 'GRAMMAR RULE',
           ruleContent: quest.grammarRule,

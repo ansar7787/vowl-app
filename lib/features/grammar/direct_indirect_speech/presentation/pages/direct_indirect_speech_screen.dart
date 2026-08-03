@@ -279,7 +279,7 @@ class _DirectIndirectSpeechScreenState
                         ),
                       ],
                     ),
-                    if (_isFirstStagePassed && !_isAnswered && quest != null)
+                    if (_isFirstStagePassed && !_isAnswered)
                       TypeToConfirmOverlay(
                         expectedText: options[_selectedReflection],
                         primaryColor: theme.primaryColor,

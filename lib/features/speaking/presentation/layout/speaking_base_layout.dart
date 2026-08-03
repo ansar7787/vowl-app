@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -16,7 +15,6 @@ import 'package:vowl/features/speaking/presentation/widgets/speaking_peeking_mas
 import 'package:vowl/features/speaking/presentation/widgets/speaking_voice_pulse_bg.dart';
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
-import 'package:vowl/core/presentation/bloc/game_state_base.dart';
 
 // ---------------------------------------------------------------------------
 // Layout constants
@@ -108,7 +106,7 @@ class SpeakingBaseLayout extends StatelessWidget {
           final isDark = Theme.of(context).brightness == Brightness.dark;
           final theme = LevelThemeHelper.getTheme('speaking', level: level, isDark: isDark);
           return SpeakingVoicePulseBg(
-            color: (theme.primaryColor as Color).withValues(alpha: 0.15),
+            color: (theme.primaryColor).withValues(alpha: 0.15),
           );
         },
       ),
@@ -165,7 +163,7 @@ class SpeakingBaseLayout extends StatelessWidget {
           livesRemaining: state.livesRemaining,
           onContinue: onContinue,
           isDark: isDark,
-          primaryColor: theme.primaryColor as Color,
+          primaryColor: theme.primaryColor,
           explanation: explanation,
           onTutorPass: onTutorPass,
         );

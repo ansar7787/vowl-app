@@ -106,7 +106,7 @@ class VocabularyBaseLayout extends StatelessWidget {
           livesRemaining: state.livesRemaining,
           onContinue: onContinue,
           isDark: isDark,
-          primaryColor: theme.primaryColor as Color,
+          primaryColor: theme.primaryColor,
           explanation: explanation,
         );
       },

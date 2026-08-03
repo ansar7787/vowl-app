@@ -73,8 +73,7 @@ class GameScaffold<S> extends StatelessWidget {
           ColoredBox(color: theme.backgroundColors[1]),
           MeshGradientBackground(colors: theme.backgroundColors),
 
-          if (backgroundOverlay != null)
-            backgroundOverlay!,
+          ?backgroundOverlay,
 
           if (currentQuest?.visualConfig != null)
             Positioned.fill(

@@ -18,7 +18,6 @@ import 'package:vowl/features/roleplay/presentation/constants/roleplay_constants
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/roleplay/presentation/widgets/roleplay_peeking_mascot.dart';
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
@@ -127,7 +126,7 @@ class RoleplayBaseLayout extends StatelessWidget {
           final theme = LevelThemeHelper.getTheme('roleplay', level: level);
           return RepaintBoundary(
             child: HarmonicWaves(
-              color: (theme.primaryColor as Color).withValues(alpha: 0.3),
+              color: (theme.primaryColor).withValues(alpha: 0.3),
               height: 150.h,
             ),
           );
@@ -178,7 +177,7 @@ class RoleplayBaseLayout extends StatelessWidget {
           livesRemaining: state.livesRemaining,
           onContinue: onContinue,
           isDark: isDark,
-          primaryColor: theme.primaryColor as Color,
+          primaryColor: theme.primaryColor,
           explanation: explanation,
           onTutorPass: onTutorPass,
         );

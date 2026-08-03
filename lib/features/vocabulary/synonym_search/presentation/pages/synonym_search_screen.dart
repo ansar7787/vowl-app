@@ -485,7 +485,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                         : "WARP THE SYNONYM SHARD",
                                   ),
                           ),
-                          if (_isFirstStagePassed && !_isAnswered && quest != null)
+                          if (_isFirstStagePassed && !_isAnswered)
                             TypeToConfirmOverlay(
                               expectedText: quest.correctAnswer ?? '',
                               primaryColor: theme.primaryColor,

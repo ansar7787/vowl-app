@@ -294,7 +294,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                         ),
                       ],
                     ),
-                    if (_isFirstStagePassed && (!_isAnswered || _isCorrect == null) && quest != null)
+                    if (_isFirstStagePassed && (!_isAnswered || _isCorrect == null))
                       TypeToConfirmOverlay(
                         expectedText: quest.correctAnswer ?? '',
                         primaryColor: theme.primaryColor,

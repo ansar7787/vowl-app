@@ -7,13 +7,11 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
-import 'package:vowl/features/reading/presentation/constants/reading_constants.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_content_area.dart';
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_header.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_passage_area.dart';
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
@@ -165,7 +163,7 @@ class ReadingBaseLayout extends StatelessWidget {
               livesRemaining: s.livesRemaining,
               onContinue: onContinue,
               isDark: isDark,
-              primaryColor: theme.primaryColor as Color,
+              primaryColor: theme.primaryColor,
               explanation: explanation,
             );
           },

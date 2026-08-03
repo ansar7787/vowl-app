@@ -5,13 +5,6 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
@@ -295,7 +288,7 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                             SizedBox(height: isCompact ? 12.h : 40.h),
                           ],
                         ),
-                        if (_isFirstStagePassed && !_isAnswered && quest != null)
+                        if (_isFirstStagePassed && !_isAnswered)
                           TypeToConfirmOverlay(
                             expectedText: quest.correctAnswerCategory ?? quest.correctAnswer ?? '',
                             primaryColor: theme.primaryColor,

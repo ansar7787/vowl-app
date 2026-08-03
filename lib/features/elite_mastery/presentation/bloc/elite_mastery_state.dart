@@ -4,6 +4,7 @@ abstract class EliteMasteryState extends Equatable implements GameStateBase {
   const EliteMasteryState();
 
   /// Natively resolves lives for all states to eliminate UI ternary fallback logic.
+  @override
   int get livesRemaining => 3;
 
   @override
