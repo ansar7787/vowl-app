@@ -227,6 +227,9 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                       final double gapTop = remainingHeight > 0
                           ? (gapUnit * 1).clamp(8.0, 24.0)
                           : 8.0;
+                      final double gapInstruction = remainingHeight > 0
+                          ? (gapUnit * 1.5).clamp(12.0, 32.0)
+                          : 12.0;
 
                       final double gapSpeaker = remainingHeight > 0
                           ? (gapUnit * 2).clamp(16.0, 48.0)
@@ -258,6 +261,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                               fallback: quest.instruction,
                                             ),
                                     ),
+                                    SizedBox(height: gapInstruction),
                                   ],
                                 ),
                                 MinimalPairsSpeakerCore(
