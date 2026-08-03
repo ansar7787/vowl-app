@@ -4,12 +4,12 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
-class VocabularyErrorView extends StatelessWidget {
+class GameErrorView extends StatelessWidget {
   final String message;
   final VoidCallback onRetry;
   final Color primaryColor;
 
-  const VocabularyErrorView({
+  const GameErrorView({
     super.key,
     required this.message,
     required this.onRetry,
@@ -34,7 +34,7 @@ class VocabularyErrorView extends StatelessWidget {
               _ErrorIcon(primaryColor: primaryColor),
               SizedBox(height: 24.h),
               Text(
-                'Investigation Stalled',
+                'Connection Stalled',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',

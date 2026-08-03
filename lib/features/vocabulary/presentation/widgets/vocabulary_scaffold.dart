@@ -11,8 +11,8 @@ import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_header.
 import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_body_area.dart';
 import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_peeking_mascot.dart';
 import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_feedback_card.dart';
-import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_briefing_layer.dart';
-import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_error_view.dart';
+import 'package:vowl/core/presentation/widgets/game_briefing_layer.dart';
+import 'package:vowl/core/presentation/widgets/game_error_view.dart';
 
 class VocabularyScaffold extends StatelessWidget {
   final VocabularyState state;
@@ -81,7 +81,7 @@ class VocabularyScaffold extends StatelessWidget {
 
           // ── Layer 2: Content, Loading, or Error ─────────────────────────
           if (state is VocabularyError)
-            VocabularyErrorView(
+            GameErrorView(
               message: (state as VocabularyError).message,
               primaryColor: theme.primaryColor,
               onRetry: () => context.read<VocabularyBloc>().add(
@@ -168,7 +168,7 @@ class VocabularyScaffold extends StatelessWidget {
 
           // ── Layer 4: Briefing Overlay ───────────────────────────────────
           if (showBriefing)
-            VocabularyBriefingLayer(
+            GameBriefingLayer(
               gameType: config.gameType,
               level: config.level,
               theme: theme,

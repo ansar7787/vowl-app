@@ -3,13 +3,13 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/widgets/quest_briefing_overlay.dart';
 import 'package:vowl/core/utils/game_instruction_service.dart';
 
-class VocabularyBriefingLayer extends StatelessWidget {
+class GameBriefingLayer extends StatelessWidget {
   final GameSubtype gameType;
   final int level;
   final dynamic theme;
   final VoidCallback onStart;
 
-  const VocabularyBriefingLayer({
+  const GameBriefingLayer({
     super.key,
     required this.gameType,
     required this.level,

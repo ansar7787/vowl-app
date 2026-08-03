@@ -7,8 +7,8 @@ import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
-import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_error_view.dart';
-import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_briefing_layer.dart';
+import 'package:vowl/core/presentation/widgets/game_error_view.dart';
+import 'package:vowl/core/presentation/widgets/game_briefing_layer.dart';
 
 class GameScaffold<S> extends StatelessWidget {
   final S state;
@@ -86,7 +86,7 @@ class GameScaffold<S> extends StatelessWidget {
 
           // ── Layer 2: Content, Loading, or Error ─────────────────────────
           if (baseState is GameErrorState)
-            VocabularyErrorView(
+            GameErrorView(
               message: (baseState as GameErrorState).message,
               primaryColor: theme.primaryColor,
               onRetry: onRetry,
@@ -149,10 +149,10 @@ class GameScaffold<S> extends StatelessWidget {
 
           // ── Layer 4: Briefing Overlay ───────────────────────────────────
           if (showBriefing)
-            VocabularyBriefingLayer(
+            GameBriefingLayer(
               gameType: config.gameType,
               level: config.level,
-              theme: theme, // Needs a generic way to pass themes later if it expects VocabLevelTheme
+              theme: theme, 
               onStart: onBriefingDismiss,
             ),
 
