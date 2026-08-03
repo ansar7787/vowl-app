@@ -43,8 +43,7 @@ class AccentContentBody extends StatelessWidget {
     final horizontal =
         0.0; // Let individual game screens manage their horizontal padding
     final top = disablePadding ? 0.0 : 20.h;
-    final bottom =
-        (disablePadding ? 0.0 : (isAnswered ? 200.h : 40.h)) + keyboardBottom;
+    final bottom = (disablePadding ? 0.0 : 40.h) + keyboardBottom;
     return EdgeInsets.only(
       left: horizontal,
       right: horizontal,
