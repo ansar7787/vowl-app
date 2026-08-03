@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vowl/core/presentation/widgets/game_scrollbar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -208,7 +209,8 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
 
-                      return SingleChildScrollView(
+                      return GameScrollbar(
+                        child: SingleChildScrollView(
                         physics: const BouncingScrollPhysics(),
                         child: ConstrainedBox(
                           constraints: BoxConstraints(minHeight: maxHeight),
@@ -299,6 +301,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                       );
                     },
                   ),
+                      ),
           ),
         );
       },

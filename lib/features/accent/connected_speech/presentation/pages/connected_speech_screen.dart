@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:vowl/core/presentation/widgets/game_scrollbar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -231,7 +232,8 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                           ? (gapUnit * 1).clamp(12.0, 40.0)
                           : 12.0;
 
-                      return SingleChildScrollView(
+                      return GameScrollbar(
+                        child: SingleChildScrollView(
                         physics: const BouncingScrollPhysics(),
                         child: ConstrainedBox(
                           constraints: BoxConstraints(minHeight: maxHeight),
@@ -307,6 +309,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                       );
                     },
                   ),
+                      ),
           ),
         );
       },

@@ -1,6 +1,7 @@
-﻿import 'dart:async';
+import 'dart:async';
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:vowl/core/presentation/widgets/game_scrollbar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -200,7 +201,9 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                 : LayoutBuilder(
                     builder: (context, constraints) {
                       final maxHeight = constraints.maxHeight;
-                      return SingleChildScrollView(
+                      return GameScrollbar(
+                        controller: _scrollController,
+                        child: SingleChildScrollView(
                         controller: _scrollController,
                         physics: const BouncingScrollPhysics(),
                         child: ConstrainedBox(
@@ -255,6 +258,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                       );
                     },
                   ),
+                      ),
           ),
         );
       },
